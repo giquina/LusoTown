@@ -1,35 +1,40 @@
 'use client'
 
 import { HeartIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/outline'
+import { useLanguage } from '@/context/LanguageContext'
+import Logo from '@/components/Logo'
 
-const footerLinks = {
+const getFooterLinks = (t: any) => ({
   community: [
-    { name: 'How It Works', href: '/how-it-works' },
-    { name: 'Success Stories', href: '/success-stories' },
-    { name: 'Community Guidelines', href: '/community-guidelines' },
-    { name: 'Safety Center', href: '/safety' },
+    { name: 'Events & Nightlife', href: '/events' },
+    { name: 'Social Groups', href: '/groups' },
+    { name: 'Portuguese Venues', href: '/venues' },
+    { name: 'Community Guidelines (21+)', href: '/community-guidelines' },
   ],
   support: [
     { name: 'Help Center', href: '/help' },
     { name: 'Contact Us', href: '/contact' },
-    { name: 'Report Issue', href: '/contact' },
-    { name: 'Feedback', href: '/contact' },
+    { name: 'Safety & Verification', href: '/safety' },
+    { name: 'Age Verification', href: '/age-verification' },
   ],
   company: [
-    { name: 'About Us', href: '/about' },
-    { name: 'Careers', href: '/careers' },
-    { name: 'Press', href: '/press' },
+    { name: 'About LusoTown', href: '/about' },
+    { name: 'Our Mission', href: '/mission' },
+    { name: 'Success Stories', href: '/stories' },
     { name: 'Blog', href: '/blog' },
   ],
   legal: [
     { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Service', href: '/terms' },
+    { name: 'Terms of Service (21+)', href: '/terms' },
     { name: 'Cookie Policy', href: '/cookies' },
-    { name: 'Data Protection', href: '/data-protection' },
+    { name: 'Age Policy', href: '/age-policy' },
   ],
-}
+})
 
 export default function Footer() {
+  const { t } = useLanguage()
+  const footerLinks = getFooterLinks(t)
+
   return (
     <footer className="bg-gray-900 text-white">
       {/* Main Footer Content */}
@@ -37,25 +42,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1 space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-lg flex items-center justify-center">
-                <HeartIcon className="h-6 w-6 text-white" />
-              </div>
-              <span className="text-2xl font-bold">LusoTown London</span>
-            </div>
+            <Logo size="medium" className="text-white" />
             
             <p className="text-gray-300 leading-relaxed">
-              Connecting Portuguese-speaking communities in London. Unidos pela Língua - United by Language. Join our vibrant community preserving heritage, culture, and building meaningful connections across the Portuguese diaspora.
+              {t('footer.description')}
             </p>
             
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-300">
-                <MapPinIcon className="h-5 w-5 text-primary-400" />
-                <span>London Portuguese Community</span>
+                <MapPinIcon className="h-5 w-5 text-red-400" />
+                <span>London Portuguese Social Network (21+)</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
-                <EnvelopeIcon className="h-5 w-5 text-primary-400" />
-                <span>hello@lusotown.london</span>
+                <EnvelopeIcon className="h-5 w-5 text-green-400" />
+                <span>connect@lusotown.london</span>
               </div>
             </div>
           </div>
@@ -135,9 +135,9 @@ export default function Footer() {
         {/* Newsletter Signup */}
         <div className="mt-16 pt-8 border-t border-gray-800">
           <div className="max-w-md">
-            <h3 className="text-lg font-semibold mb-4 text-white">Stay Connected</h3>
+            <h3 className="text-lg font-semibold mb-4 text-white">{t('footer.newsletter.title')}</h3>
             <p className="text-gray-300 mb-6">
-              Get updates on community events, cultural celebrations, and inspiring stories from our Portuguese-speaking community.
+              {t('footer.newsletter.description')}
             </p>
             <form className="flex gap-3">
               <input
@@ -161,14 +161,14 @@ export default function Footer() {
         <div className="container-width px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} LusoTown London. All rights reserved. Proudly built for the Portuguese-speaking community in London 🌍
+              © {new Date().getFullYear()} LusoTown London. All rights reserved. {t('footer.tagline')}
             </p>
             
             <div className="flex items-center gap-6">
               {/* Social links would go here */}
               <div className="flex items-center gap-2 text-sm text-gray-400">
-                <HeartIcon className="h-4 w-4 text-primary-400" />
-                <span>Unidos pela Língua</span>
+                <HeartIcon className="h-4 w-4 text-red-400" />
+                <span>{t('footer.bottom')}</span>
               </div>
             </div>
           </div>

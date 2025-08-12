@@ -9,52 +9,54 @@ import {
   DocumentTextIcon,
   MapPinIcon,
   HeartIcon,
-  SparklesIcon
+  SparklesIcon,
+  CursorArrowRippleIcon
 } from '@heroicons/react/24/outline'
 import { getImagesByCategory } from '@/lib/profileImages'
+import { useLanguage } from '@/context/LanguageContext'
 
-const features = [
+const getFeatures = (t: any) => [
   {
     icon: CalendarDaysIcon,
-    title: "Events Calendar",
-    description: "Cultural gatherings, community fairs, language practice sessions, and family-friendly activities celebrating Lusophone heritage.",
-    color: "text-green-500",
-    bgColor: "bg-green-50"
+    title: t('features.events.title'),
+    description: t('features.events.description'),
+    color: "text-red-500",
+    bgColor: "bg-red-50"
   },
   {
     icon: UserGroupIcon,
-    title: "Community Groups",
-    description: "Interest-based forums for sharing advice, arranging meetups, and making friends within the Portuguese-speaking community.",
+    title: t('features.groups.title'),
+    description: t('features.groups.description'),
     color: "text-primary-500",
     bgColor: "bg-primary-50"
   },
   {
     icon: BuildingStorefrontIcon,
-    title: "Business Directory",
-    description: "Portuguese restaurants, shops, legal & financial advisors, and services serving the Lusophone community in London.",
+    title: t('features.business.title'),
+    description: t('features.business.description'),
     color: "text-secondary-500",
     bgColor: "bg-secondary-50"
   },
   {
-    icon: BookOpenIcon,
-    title: "Resource Hub",
-    description: "Essential information on housing, jobs, education, and language classes to help you navigate life in London.",
+    icon: CursorArrowRippleIcon,
+    title: t('features.resources.title'),
+    description: t('features.resources.description'),
     color: "text-purple-500",
     bgColor: "bg-purple-50"
   },
   {
     icon: DocumentTextIcon,
-    title: "Stories & Culture",
-    description: "Articles, videos, and user stories celebrating Lusophone traditions, heritage, and life in the UK.",
+    title: t('features.stories.title'),
+    description: t('features.stories.description'),
     color: "text-pink-500",
     bgColor: "bg-pink-50"
   },
   {
     icon: MapPinIcon,
-    title: "Local & Global",
-    description: "Connect Portuguese speakers across London and the UK while staying connected to your roots and heritage.",
-    color: "text-blue-500",
-    bgColor: "bg-blue-50"
+    title: t('features.local.title'),
+    description: t('features.local.description'),
+    color: "text-green-500",
+    bgColor: "bg-green-50"
   }
 ]
 
@@ -80,6 +82,9 @@ const itemVariants = {
 }
 
 export default function Features() {
+  const { t } = useLanguage()
+  const features = getFeatures(t)
+
   return (
     <section className="py-20 bg-white relative overflow-hidden">
       {/* Background decoration */}
@@ -99,14 +104,13 @@ export default function Features() {
         >
           <div className="inline-flex items-center gap-2 bg-primary-50 rounded-full px-4 py-2 text-primary-600 font-medium mb-6">
             <SparklesIcon className="h-4 w-4" />
-            Why Choose LusoTown London
+            {t('features.title')}
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Everything You Need for{' '}
-            <span className="gradient-text">Community Connection</span>
+            <span className="gradient-text">{t('features.subtitle')}</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-            We've thoughtfully designed every feature to help Portuguese speakers in London preserve their heritage, build community, and thrive in the UK.
+            Connect with Portuguese adults (21+) who love nightlife, dining, fitness, and socializing in London. Because you shouldn't navigate this city alone.
           </p>
         </motion.div>
 
@@ -170,7 +174,7 @@ export default function Features() {
             <div className="relative z-10">
               <div className="flex items-center justify-center gap-2 mb-6">
                 <HeartIcon className="h-6 w-6 text-primary-400" />
-                <h3 className="text-2xl font-semibold text-gray-900">Built by Portuguese, for Portuguese</h3>
+                <h3 className="text-2xl font-semibold text-gray-900">21+ Portuguese Social Network</h3>
               </div>
               
               {/* Featured Community Testimonial */}
@@ -179,24 +183,24 @@ export default function Features() {
                   <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg ring-2 ring-white">
                     <img 
                       src={getImagesByCategory('community')[0]?.path || '/profiles/default-avatar.svg'}
-                      alt="LusoTown London founder"
+                      alt="LusoTown London member"
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />
                   </div>
                   <div className="text-left">
-                    <p className="font-semibold text-gray-900">Maria Santos, Founder</p>
-                    <p className="text-sm text-gray-600">Portuguese Community Leader, London</p>
+                    <p className="font-semibold text-gray-900">Carlos Silva, 28</p>
+                    <p className="text-sm text-gray-600">Portuguese Professional, Shoreditch</p>
                   </div>
                 </div>
                 <p className="text-lg text-gray-600 italic mb-4">
-                  "As a Portuguese immigrant in London, I felt the need to create a space where our community could connect, preserve our culture, and support each other."
+                  "I was tired of going to bars alone. Through LusoTown, I found my Portuguese crew for nights out, brunches, and gym sessions. London feels like home now."
                 </p>
               </div>
               
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                LusoTown London was created by Portuguese speakers who understand the challenges of maintaining cultural identity while building a new life in the UK. 
-                Every feature celebrates our heritage while helping you thrive in London.
+                Created by Portuguese adults who know what it's like to feel isolated in a new city. 
+                Every feature is designed to help you build genuine friendships and enjoy London's social scene with your Portuguese tribe.
               </p>
             </div>
           </div>

@@ -5,7 +5,7 @@ import Features from '@/components/Features'
 import EventsShowcase from '@/components/EventsShowcase'
 import SuccessStories from '@/components/SuccessStories'
 import AppDownloadSection from '@/components/AppDownloadSection'
-import Testimonials from '@/components/Testimonials'
+import TestimonialsNew from '@/components/TestimonialsNew'
 import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
 
@@ -54,7 +54,7 @@ export default function Home() {
           <EventsShowcase />
           <SuccessStories />
           <AppDownloadSection />
-          <Testimonials />
+          <TestimonialsNew />
           <CTA />
           <Footer />
         </div>

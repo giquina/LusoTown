@@ -4,6 +4,7 @@ import { Toaster } from 'react-hot-toast'
 import './globals.css'
 import WhatsAppWidget from '@/components/WhatsAppWidget'
 import LiveFeedNotifications from '@/components/LiveFeedNotifications'
+import AgeVerification from '@/components/AgeVerification'
 import { LanguageProvider } from '@/context/LanguageContext'
 
 const inter = Inter({ 
@@ -93,6 +94,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} antialiased`}>
         <LanguageProvider>
+          <AgeVerification />
           {children}
           <WhatsAppWidget />
           <LiveFeedNotifications />
