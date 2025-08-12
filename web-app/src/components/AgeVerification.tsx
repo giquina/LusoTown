@@ -67,36 +67,36 @@ export default function AgeVerification() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
-            className="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl"
+            className="bg-white rounded-2xl p-6 sm:p-8 max-w-md w-full mx-4 shadow-2xl max-h-[90vh] overflow-y-auto"
           >
             <div className="text-center">
               <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <ExclamationTriangleIcon className="h-8 w-8 text-red-600" />
               </div>
               
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
                 {strings.title}
               </h2>
               
-              <p className="text-lg text-gray-700 mb-4 font-medium">
+              <p className="text-base sm:text-lg text-gray-700 mb-4 font-medium">
                 {strings.subtitle}
               </p>
               
-              <p className="text-gray-600 mb-8 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 leading-relaxed">
                 {strings.description}
               </p>
 
               <div className="space-y-3">
                 <button
                   onClick={() => handleVerifyAge(true)}
-                  className="w-full bg-gradient-to-r from-green-600 to-red-600 text-white font-bold py-4 px-6 rounded-xl hover:from-green-700 hover:to-red-700 transition-all duration-200 shadow-lg"
+                  className="w-full bg-gradient-to-r from-green-600 to-red-600 text-white font-bold py-3 sm:py-4 px-4 sm:px-6 rounded-xl hover:from-green-700 hover:to-red-700 transition-all duration-200 shadow-lg text-sm sm:text-base"
                 >
                   {strings.confirm}
                 </button>
                 
                 <button
                   onClick={() => handleVerifyAge(false)}
-                  className="w-full bg-gray-200 text-gray-700 font-medium py-3 px-6 rounded-xl hover:bg-gray-300 transition-colors duration-200"
+                  className="w-full bg-gray-200 text-gray-700 font-medium py-2.5 sm:py-3 px-4 sm:px-6 rounded-xl hover:bg-gray-300 transition-colors duration-200 text-sm sm:text-base"
                 >
                   {strings.deny}
                 </button>

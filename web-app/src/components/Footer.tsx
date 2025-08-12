@@ -38,10 +38,10 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
       {/* Main Footer Content */}
-      <div className="container-width px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12">
+      <div className="container-width px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Column */}
-          <div className="lg:col-span-1 space-y-6">
+          <div className="md:col-span-2 lg:col-span-1 space-y-6">
             <Logo size="medium" className="text-white" />
             
             <p className="text-gray-300 leading-relaxed">
@@ -61,16 +61,16 @@ export default function Footer() {
           </div>
 
           {/* Links Columns */}
-          <div className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="md:col-span-2 lg:col-span-3 grid grid-cols-2 sm:grid-cols-4 gap-6 lg:gap-8">
             {/* Community */}
             <div>
-              <h3 className="text-lg font-semibold mb-6 text-primary-300">Community</h3>
+              <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-primary-300">Community</h3>
               <ul className="space-y-3">
                 {footerLinks.community.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline"
+                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base"
                     >
                       {link.name}
                     </a>
@@ -81,13 +81,13 @@ export default function Footer() {
 
             {/* Support */}
             <div>
-              <h3 className="text-lg font-semibold mb-6 text-secondary-300">Support</h3>
+              <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-secondary-300">Support</h3>
               <ul className="space-y-3">
                 {footerLinks.support.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline"
+                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base"
                     >
                       {link.name}
                     </a>
@@ -98,13 +98,13 @@ export default function Footer() {
 
             {/* Company */}
             <div>
-              <h3 className="text-lg font-semibold mb-6 text-primary-300">Company</h3>
+              <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-primary-300">Company</h3>
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline"
+                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base"
                     >
                       {link.name}
                     </a>
@@ -115,13 +115,13 @@ export default function Footer() {
 
             {/* Legal */}
             <div>
-              <h3 className="text-lg font-semibold mb-6 text-secondary-300">Legal</h3>
+              <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-secondary-300">Legal</h3>
               <ul className="space-y-3">
                 {footerLinks.legal.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline"
+                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base"
                     >
                       {link.name}
                     </a>

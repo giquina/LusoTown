@@ -106,10 +106,10 @@ export default function Features() {
             <SparklesIcon className="h-4 w-4" />
             {t('features.title')}
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             <span className="gradient-text">{t('features.subtitle')}</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
             Connect with Portuguese adults (21+) who love nightlife, dining, fitness, and socializing in London. Because you shouldn't navigate this city alone.
           </p>
         </motion.div>
@@ -128,14 +128,14 @@ export default function Features() {
               variants={itemVariants}
               className="group"
             >
-              <div className="card p-8 h-full hover:scale-105 transition-all duration-300 group-hover:shadow-2xl">
+              <div className="card p-6 sm:p-8 h-full hover:scale-105 transition-all duration-300 group-hover:shadow-2xl">
                 <div className={`w-14 h-14 ${feature.bgColor} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <feature.icon className={`h-7 w-7 ${feature.color}`} />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 group-hover:text-primary-600 transition-colors duration-300">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                   {feature.description}
                 </p>
               </div>

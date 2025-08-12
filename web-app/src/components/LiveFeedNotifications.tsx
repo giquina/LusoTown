@@ -41,127 +41,167 @@ const LiveFeedNotifications = () => {
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
-  // Mock data for realistic notifications
+  // Mock data for realistic Portuguese community notifications
   const mockNotifications: Omit<NotificationItem, 'id' | 'timeAgo'>[] = [
     {
       type: 'signup',
-      name: 'Emma Thompson',
-      location: 'Chelsea',
-      action: 'just joined AdyaTribe',
-      icon: <UserPlusIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-green-400 to-emerald-500'
-    },
-    {
-      type: 'review',
-      name: 'Sarah Mitchell',
-      location: 'Kensington',
-      action: 'left a 5-star review for "Wine Tasting Evening"',
-      icon: <StarIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-yellow-400 to-orange-500'
-    },
-    {
-      type: 'event_join',
-      name: 'Lisa Chen',
-      location: 'Canary Wharf',
-      action: 'signed up for "Thames Path Walking Group"',
-      icon: <CalendarIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-blue-400 to-indigo-500'
-    },
-    {
-      type: 'friendship',
-      name: 'Rachel Davis',
-      location: 'Shoreditch',
-      action: 'made 3 new connections',
-      icon: <HeartIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-pink-400 to-rose-500'
-    },
-    {
-      type: 'chat_join',
-      name: 'Maria Rodriguez',
-      location: 'Hampstead',
-      action: 'joined "Book Club Central" chat room',
-      icon: <ChatBubbleLeftRightIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-purple-400 to-violet-500'
-    },
-    {
-      type: 'signup',
-      name: 'Jessica Wright',
-      location: 'Greenwich',
-      action: 'just joined AdyaTribe',
-      icon: <UserPlusIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-green-400 to-emerald-500'
-    },
-    {
-      type: 'review',
-      name: 'Hannah Wilson',
-      location: 'Richmond',
-      action: 'left a 5-star review for "Pottery Workshop"',
-      icon: <StarIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-yellow-400 to-orange-500'
-    },
-    {
-      type: 'event_join',
-      name: 'Sophie Brown',
-      location: 'Clapham',
-      action: 'signed up for "Sunday Brunch & Book Club"',
-      icon: <CalendarIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-blue-400 to-indigo-500'
-    },
-    {
-      type: 'friendship',
-      name: 'Charlotte Taylor',
-      location: 'Notting Hill',
-      action: 'made 2 new connections',
-      icon: <HeartIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-pink-400 to-rose-500'
-    },
-    {
-      type: 'chat_join',
-      name: 'Amy Johnson',
-      location: 'Brixton',
-      action: 'joined "Fitness Buddies" chat room',
-      icon: <ChatBubbleLeftRightIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-purple-400 to-violet-500'
-    },
-    {
-      type: 'signup',
-      name: 'Grace Park',
-      location: 'Wimbledon',
-      action: 'just joined AdyaTribe',
-      icon: <UserPlusIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-green-400 to-emerald-500'
-    },
-    {
-      type: 'review',
-      name: 'Olivia Martinez',
-      location: 'Fulham',
-      action: 'left a 5-star review for "Art Gallery Tour"',
-      icon: <StarIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-yellow-400 to-orange-500'
-    },
-    {
-      type: 'event_join',
-      name: 'Isabella Garcia',
-      location: 'Marylebone',
-      action: 'signed up for "Wine & Paint Night"',
-      icon: <CalendarIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-blue-400 to-indigo-500'
-    },
-    {
-      type: 'friendship',
-      name: 'Victoria Smith',
+      name: 'Ana Sofia',
       location: 'Camden',
-      action: 'made 4 new connections',
+      action: 'just joined LusoTown London',
+      icon: <UserPlusIcon className="w-4 h-4 text-white" />,
+      gradient: 'from-green-400 to-emerald-500'
+    },
+    {
+      type: 'event_join',
+      name: 'Miguel Santos',
+      location: 'Shoreditch',
+      action: 'joined a Portuguese pub crawl',
+      icon: <CalendarIcon className="w-4 h-4 text-white" />,
+      gradient: 'from-blue-400 to-indigo-500'
+    },
+    {
+      type: 'review',
+      name: 'Beatriz Ferreira',
+      location: 'Kensington',
+      action: 'left a 5-star review for "Fado night at Taberna Real"',
+      icon: <StarIcon className="w-4 h-4 text-white" />,
+      gradient: 'from-yellow-400 to-orange-500'
+    },
+    {
+      type: 'chat_join',
+      name: 'João Pereira',
+      location: 'Canary Wharf',
+      action: 'joined "Weekend Football & Beers" group',
+      icon: <ChatBubbleLeftRightIcon className="w-4 h-4 text-white" />,
+      gradient: 'from-purple-400 to-violet-500'
+    },
+    {
+      type: 'event_join',
+      name: 'Catarina Silva',
+      location: 'Clapham',
+      action: 'attending "Women-only Portuguese Brunch"',
+      icon: <CalendarIcon className="w-4 h-4 text-white" />,
+      gradient: 'from-blue-400 to-indigo-500'
+    },
+    {
+      type: 'friendship',
+      name: 'Ricardo Oliveira',
+      location: 'Brixton',
+      action: 'made 3 new connections at cocktail night',
       icon: <HeartIcon className="w-4 h-4 text-white" />,
       gradient: 'from-pink-400 to-rose-500'
     },
     {
       type: 'signup',
-      name: 'Lucy Anderson',
-      location: 'Putney',
-      action: 'just joined AdyaTribe',
+      name: 'Mariana Costa',
+      location: 'Greenwich',
+      action: 'just joined LusoTown London',
       icon: <UserPlusIcon className="w-4 h-4 text-white" />,
       gradient: 'from-green-400 to-emerald-500'
+    },
+    {
+      type: 'review',
+      name: 'Pedro Almeida',
+      location: 'Notting Hill',
+      action: 'left a 5-star review for "Portuguese Wine Tasting"',
+      icon: <StarIcon className="w-4 h-4 text-white" />,
+      gradient: 'from-yellow-400 to-orange-500'
+    },
+    {
+      type: 'event_join',
+      name: 'Inês Rodrigues',
+      location: 'Hampstead',
+      action: 'signed up for "Late Night Portuguese Dancing"',
+      icon: <CalendarIcon className="w-4 h-4 text-white" />,
+      gradient: 'from-blue-400 to-indigo-500'
+    },
+    {
+      type: 'chat_join',
+      name: 'Gonçalo Martins',
+      location: 'Richmond',
+      action: 'joined "Portuguese Business Networking" chat',
+      icon: <ChatBubbleLeftRightIcon className="w-4 h-4 text-white" />,
+      gradient: 'from-purple-400 to-violet-500'
+    },
+    {
+      type: 'friendship',
+      name: 'Sofia Mendes',
+      location: 'Fulham',
+      action: 'connected with 2 people from Porto',
+      icon: <HeartIcon className="w-4 h-4 text-white" />,
+      gradient: 'from-pink-400 to-rose-500'
+    },
+    {
+      type: 'event_join',
+      name: 'Tiago Carvalho',
+      location: 'Marylebone',
+      action: 'attending "Portuguese Food & Drinks Night"',
+      icon: <CalendarIcon className="w-4 h-4 text-white" />,
+      gradient: 'from-blue-400 to-indigo-500'
+    },
+    {
+      type: 'signup',
+      name: 'Filipa Gonçalves',
+      location: 'Putney',
+      action: 'just joined LusoTown London',
+      icon: <UserPlusIcon className="w-4 h-4 text-white" />,
+      gradient: 'from-green-400 to-emerald-500'
+    },
+    {
+      type: 'review',
+      name: 'André Ribeiro',
+      location: 'Camden',
+      action: 'left a 5-star review for "Portuguese Rooftop Party"',
+      icon: <StarIcon className="w-4 h-4 text-white" />,
+      gradient: 'from-yellow-400 to-orange-500'
+    },
+    {
+      type: 'chat_join',
+      name: 'Lara Fernandes',
+      location: 'Shoreditch',
+      action: 'joined "Portuguese Singles 25+" group',
+      icon: <ChatBubbleLeftRightIcon className="w-4 h-4 text-white" />,
+      gradient: 'from-purple-400 to-violet-500'
+    },
+    {
+      type: 'event_join',
+      name: 'Bruno Neves',
+      location: 'Clapham',
+      action: 'signed up for "Portuguese Comedy Night"',
+      icon: <CalendarIcon className="w-4 h-4 text-white" />,
+      gradient: 'from-blue-400 to-indigo-500'
+    },
+    {
+      type: 'friendship',
+      name: 'Teresa Lopes',
+      location: 'Kensington',
+      action: 'made 4 new friends at wine bar meetup',
+      icon: <HeartIcon className="w-4 h-4 text-white" />,
+      gradient: 'from-pink-400 to-rose-500'
+    },
+    {
+      type: 'review',
+      name: 'Carlos Sousa',
+      location: 'Canary Wharf',
+      action: 'left a 5-star review for "Portuguese Happy Hour"',
+      icon: <StarIcon className="w-4 h-4 text-white" />,
+      gradient: 'from-yellow-400 to-orange-500'
+    },
+    {
+      type: 'event_join',
+      name: 'Helena Pinto',
+      location: 'Brixton',
+      action: 'attending "Brazilian Samba Night"',
+      icon: <CalendarIcon className="w-4 h-4 text-white" />,
+      gradient: 'from-blue-400 to-indigo-500'
+    },
+    {
+      type: 'chat_join',
+      name: 'Rafael Dias',
+      location: 'Greenwich',
+      action: 'joined "Portuguese Football Fans" chat',
+      icon: <ChatBubbleLeftRightIcon className="w-4 h-4 text-white" />,
+      gradient: 'from-purple-400 to-violet-500'
     }
   ]
 
@@ -286,7 +326,7 @@ const LiveFeedNotifications = () => {
             {/* Subtle branding */}
             <div className="mt-2 text-center">
               <p className="text-xs text-gray-400">
-                <span className="font-medium text-primary-500">AdyaTribe</span> • Live Activity
+                <span className="font-medium text-primary-500">LusoTown London</span> • Live Activity
               </p>
             </div>
           </motion.div>

@@ -96,7 +96,7 @@ export default function Header() {
                   className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100 transition-colors"
                 >
                   <div className="w-8 h-8 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-full flex items-center justify-center text-white text-sm font-bold">
-                    {user.name.split(' ').map(n => n[0]).join('')}
+                    {user.name.split(' ').map((n: string) => n[0]).join('')}
                   </div>
                   <div className="text-left">
                     <div className="text-sm font-medium text-gray-900">{user.name.split(' ')[0]}</div>
@@ -172,10 +172,11 @@ export default function Header() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="flex md:hidden relative z-50">
+          <div className="flex md:hidden items-center space-x-2 relative z-50">
+            <LanguageToggle />
             <button
               type="button"
-              className="inline-flex items-center justify-center p-3 rounded-md text-gray-900 hover:text-primary-600 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 transition-colors duration-200 min-h-[44px] min-w-[44px] bg-white border border-gray-300 shadow-md active:bg-gray-50"
+              className="inline-flex items-center justify-center p-3 rounded-md text-gray-900 hover:text-primary-600 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 transition-colors duration-200 min-h-[48px] min-w-[48px] bg-white border border-gray-300 shadow-md active:bg-gray-50"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-expanded={mobileMenuOpen}
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
@@ -225,16 +226,12 @@ export default function Header() {
                 ))}
                 
                 <div className="border-t border-gray-200 pt-4 pb-3">
-                  {/* Language Toggle - Mobile */}
-                  <div className="px-3 pb-4">
-                    <LanguageToggle />
-                  </div>
                   
                   {user ? (
                     <>
                       <div className="flex items-center px-3 pb-3">
                         <div className="w-10 h-10 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">
-                          {user.name.split(' ').map(n => n[0]).join('')}
+                          {user.name.split(' ').map((n: string) => n[0]).join('')}
                         </div>
                         <div>
                           <div className="text-base font-medium text-gray-800">{user.name}</div>

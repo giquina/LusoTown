@@ -169,10 +169,10 @@ export default function TestimonialsNew() {
             <StarIcon className="h-4 w-4 text-yellow-400" />
             {t('testimonials.badge')}
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             <span className="gradient-text">{t('testimonials.title')}</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
             {t('testimonials.subtitle')}
           </p>
         </motion.div>
@@ -191,7 +191,7 @@ export default function TestimonialsNew() {
               variants={cardVariants}
               className="group"
             >
-              <div className="card p-8 h-full hover:scale-105 transition-all duration-300 group-hover:shadow-2xl bg-white/80 backdrop-blur-sm border border-white/50">
+              <div className="card p-6 sm:p-8 h-full hover:scale-105 transition-all duration-300 group-hover:shadow-2xl bg-white/80 backdrop-blur-sm border border-white/50">
                 {/* Quote Icon */}
                 <div className="mb-6">
                   <ChatBubbleLeftIcon className="h-8 w-8 text-primary-300" />
@@ -205,7 +205,7 @@ export default function TestimonialsNew() {
                 </div>
 
                 {/* Testimonial Text */}
-                <blockquote className="text-gray-700 leading-relaxed mb-6 text-base">
+                <blockquote className="text-gray-700 leading-relaxed mb-6 text-sm sm:text-base">
                   "{testimonial.quote}"
                 </blockquote>
 

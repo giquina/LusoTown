@@ -1,17 +1,57 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <!-- Main background gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#1E40AF"/>
-      <stop offset="100%" stop-color="#059669"/>
+      <stop offset="50%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#dc2626"/>
     </linearGradient>
+    
+    <!-- Portuguese flag inspired gradient -->
+    <linearGradient id="flagGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="40%" stop-color="#059669"/>
+      <stop offset="60%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+    
+    <!-- Text shadow effect -->
+    <filter id="textShadow">
+      <feDropShadow dx="0.5" dy="0.5" stdDeviation="0.5" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+    
+    <!-- Bridge glow effect -->
+    <filter id="bridgeGlow">
+      <feGaussianBlur stdDeviation="0.5" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
   
-  <!-- Background circle with gradient -->
-  <rect x="0" y="0" width="32" height="32" rx="8" fill="url(#gradient)"/>
+  <!-- Main background with Portuguese-inspired colors -->
+  <rect x="0" y="0" width="32" height="32" rx="6" fill="url(#bgGradient)"/>
   
-  <!-- LT letters -->
-  <text x="16" y="22" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-weight="bold" font-size="14">LT</text>
+  <!-- Portuguese cultural element - subtle decorative border -->
+  <rect x="1" y="1" width="30" height="30" rx="5" fill="none" stroke="url(#flagGradient)" stroke-width="0.5" opacity="0.7"/>
   
-  <!-- Decorative line -->
-  <rect x="10" y="24" width="12" height="1.5" rx="0.75" fill="white" opacity="0.8"/>
+  <!-- London Bridge inspired element - subtle architectural accent -->
+  <path d="M6 10 L26 10 M8 8 L24 8 M10 12 L22 12" stroke="#f59e0b" stroke-width="0.8" opacity="0.4" filter="url(#bridgeGlow)"/>
+  
+  <!-- Central emblem circle -->
+  <circle cx="16" cy="18" r="8" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+  
+  <!-- LT letters with enhanced typography -->
+  <text x="16" y="23" text-anchor="middle" fill="white" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="12" filter="url(#textShadow)">LT</text>
+  
+  <!-- Portuguese heritage accent - small decorative elements -->
+  <circle cx="9" cy="26" r="1.5" fill="#f59e0b" opacity="0.8"/>
+  <circle cx="23" cy="26" r="1.5" fill="#dc2626" opacity="0.8"/>
+  
+  <!-- London connection - subtle Tower Bridge inspired line -->
+  <rect x="12" y="6" width="8" height="1" rx="0.5" fill="white" opacity="0.6"/>
+  
+  <!-- Community connection symbol - interlinked elements -->
+  <path d="M11 15 Q16 12 21 15" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
 </svg>

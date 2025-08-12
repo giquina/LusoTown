@@ -102,16 +102,16 @@ export default function Hero() {
               transition={{ delay: 0.3, duration: 0.8 }}
               className="space-y-4"
             >
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-tight tracking-tight break-words">
+              <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-tight tracking-tight break-words">
                 {t('hero.title').split(' ').slice(0, 1).join(' ')}{' '}
-                <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 bg-clip-text text-transparent animate-pulse font-extrabold">
+                <span className="block text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 bg-clip-text text-transparent animate-pulse font-extrabold">
                   {t('hero.title').split(' ').slice(1, 2).join(' ')}
                 </span>
-                <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800">
+                <span className="block text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800">
                   {t('hero.title').split(' ').slice(2).join(' ')}
                 </span>
               </h1>
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl font-medium break-words">
+              <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl font-medium break-words">
                 {t('hero.subtitle')}
               </p>
             </motion.div>
@@ -139,7 +139,7 @@ export default function Hero() {
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <item.icon className="h-6 w-6" style={{color: item.color}} />
                   </div>
-                  <span className="text-xs sm:text-sm font-bold text-gray-800 tracking-wide text-center sm:text-left">{item.text}</span>
+                  <span className="text-xs font-bold text-gray-800 tracking-wide text-center">{item.text}</span>
                 </motion.div>
               ))}
             </motion.div>
@@ -158,12 +158,12 @@ export default function Hero() {
                   boxShadow: "0 20px 40px rgba(0,0,0,0.15)"
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="relative group text-lg sm:text-xl font-bold px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 overflow-hidden"
+                className="relative group text-base sm:text-lg md:text-xl font-bold px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 overflow-hidden w-full sm:w-auto text-center"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-green-700 via-red-700 to-yellow-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative z-10 flex items-center justify-center gap-3">
+                <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
                   {t('hero.cta.primary')}
-                  <ArrowRightIcon className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-200" />
+                  <ArrowRightIcon className="h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-1 transition-transform duration-200" />
                 </span>
               </motion.a>
 
@@ -174,7 +174,7 @@ export default function Hero() {
                   backgroundColor: "rgba(255,255,255,0.9)"
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="text-lg sm:text-xl font-bold px-8 sm:px-10 py-4 sm:py-5 bg-white/70 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-green-300"
+                className="text-base sm:text-lg md:text-xl font-bold px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 bg-white/70 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-green-300 w-full sm:w-auto text-center"
               >
                 {t('hero.cta.secondary')}
               </motion.a>

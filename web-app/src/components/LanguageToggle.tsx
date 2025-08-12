@@ -20,12 +20,12 @@ export default function LanguageToggle() {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-200 text-sm font-medium"
+        className="flex items-center space-x-1 sm:space-x-2 px-2 sm:px-3 py-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-200 text-xs sm:text-sm font-medium min-h-[40px] min-w-[40px] justify-center sm:justify-start"
       >
         <GlobeAltIcon className="h-4 w-4" />
-        <span className="hidden sm:inline">{currentLanguage?.name}</span>
-        <span className="sm:hidden">{currentLanguage?.flag}</span>
-        <ChevronDownIcon className={`h-3 w-3 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+        <span className="hidden md:inline">{currentLanguage?.name}</span>
+        <span className="md:hidden text-base">{currentLanguage?.flag}</span>
+        <ChevronDownIcon className={`h-3 w-3 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''} hidden sm:block`} />
       </button>
 
       <AnimatePresence>

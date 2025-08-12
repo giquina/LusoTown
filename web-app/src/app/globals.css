@@ -23,6 +23,19 @@
     box-sizing: border-box;
   }
   
+  /* Ensure proper word breaking for Portuguese text */
+  .text-wrap-balance {
+    text-wrap: balance;
+  }
+  
+  /* Mobile viewport fix for landscape orientation */
+  @media screen and (max-height: 500px) and (orientation: landscape) {
+    .mobile-landscape-fix {
+      height: auto;
+      min-height: auto;
+    }
+  }
+  
   /* Focus styles for accessibility */
   *:focus-visible {
     @apply outline-none ring-2 ring-primary-400 ring-offset-2;
@@ -88,6 +101,21 @@
   /* Mobile-first responsive container */
   .mobile-safe {
     @apply w-full max-w-full overflow-x-hidden;
+  }
+  
+  /* Better mobile touch targets */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+  
+  /* Mobile-optimized text sizing */
+  .text-mobile-friendly {
+    @apply text-base leading-relaxed;
+  }
+  
+  /* Mobile-friendly spacing */
+  .mobile-padding {
+    @apply px-4 py-3 sm:px-6 sm:py-4;
   }
 }
 
