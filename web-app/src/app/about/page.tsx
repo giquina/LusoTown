@@ -9,7 +9,10 @@ import {
   MapPinIcon,
   CalendarIcon,
   ChatBubbleLeftRightIcon,
-  TrophyIcon
+  TrophyIcon,
+  GlobeAltIcon,
+  HomeIcon,
+  BookOpenIcon
 } from '@heroicons/react/24/outline'
 
 export default function About() {
@@ -22,15 +25,15 @@ export default function About() {
           <div className="container-width px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center mb-16">
               <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-primary-600 mb-6">
-                <SparklesIcon className="w-4 h-4 mr-2" />
-                Founded by women, for women in 2024
+                <GlobeAltIcon className="w-4 h-4 mr-2" />
+                Unidos pela Língua • United by Language
               </div>
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-                The Story Behind <span className="gradient-text">AdyaTribe</span>
+                About <span className="gradient-text">LusoTown London</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Where incredible 30+ single & childfree women across the UK find their chosen family 
-                and build the meaningful friendships they've been searching for.
+                Your digital home away from home. Where Portuguese speakers and families in London 
+                connect, celebrate heritage, and keep our beautiful language alive together.
               </p>
             </div>
           </div>
@@ -45,33 +48,33 @@ export default function About() {
                   <div className="w-80 h-96 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-2xl flex items-center justify-center mx-auto lg:mx-0 mb-6 lg:mb-0">
                     <div className="text-center">
                       <div className="w-24 h-24 bg-gradient-to-br from-primary-400 to-secondary-400 rounded-full flex items-center justify-center text-white text-3xl font-bold mb-4 mx-auto">
-                        AE
+                        LT
                       </div>
-                      <p className="text-gray-600 font-medium">Adyam Embaie</p>
-                      <p className="text-sm text-gray-500">Founder & CEO</p>
-                      <p className="text-xs text-gray-400 mt-2">London • Age 34</p>
+                      <p className="text-gray-600 font-medium">LusoTown Team</p>
+                      <p className="text-sm text-gray-500">Community Builders</p>
+                      <p className="text-xs text-gray-400 mt-2">London • Portuguese Heritage</p>
                     </div>
                   </div>
                 </div>
                 <div>
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                    "I Was Tired of Being the Only Single, Childfree Woman in Every Room"
+                    "We Know How Much It Means to Keep the Language Alive"
                   </h2>
                   <div className="prose text-gray-600 space-y-4">
                     <p>
-                      <strong>Three years ago, I sat alone in my Canary Wharf apartment</strong> after another 
-                      evening where I'd been the only single woman at a dinner party, fielding the usual 
-                      questions: "When are you settling down?" "Don't you want kids?" "You're so career-focused!"
+                      <strong>As Portuguese speakers living in London,</strong> we understand the deep connection 
+                      to our heritage and the importance of preserving our beautiful language. Whether you're 
+                      from Portugal, Brazil, Angola, or any Portuguese-speaking nation, London is now home.
                     </p>
                     <p>
-                      <strong>I'd built an incredible career as a financial analyst,</strong> traveled to 30+ countries, 
-                      owned my own place, and made choices I was proud of. Yet finding genuine friendships 
-                      with women who understood and celebrated this lifestyle felt impossible.
+                      <strong>We've experienced the challenge of raising bilingual children,</strong> finding 
+                      Portuguese-speaking services, or simply wanting to connect with people who understand 
+                      our culture, traditions, and the warmth of our communities back home.
                     </p>
                     <p>
-                      <strong>Moving to London for work at 31 meant starting over socially.</strong> Dating apps 
-                      weren't the answer—I wanted real friendships, not romantic connections. Meetup groups 
-                      felt superficial. Work colleagues were lovely but lived completely different lives.
+                      <strong>London's Portuguese diaspora is rich and diverse,</strong> but we're often 
+                      scattered across the city. LusoTown was created to bring us together—to share resources, 
+                      support each other, and ensure our children grow up proud of their Portuguese heritage.
                     </p>
                   </div>
                 </div>
@@ -79,15 +82,15 @@ export default function About() {
               
               <div className="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-8 mb-16">
                 <blockquote className="text-xl text-gray-700 font-medium italic text-center mb-6">
-                  "That night, I realized there were hundreds of incredible women like me across London 
-                  and the UK—accomplished, independent, happy with our choices—but struggling to find 
-                  our people. So I decided to create the community I wished existed."
+                  "A saudade que sentimos da nossa terra natal nunca desaparece, mas em Londres, 
+                  podemos criar um pedacinho de casa juntos. LusoTown é onde nos encontramos, 
+                  onde celebramos quem somos."
                 </blockquote>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-secondary-400 rounded-full flex items-center justify-center text-white text-sm font-bold mx-auto mb-2">
-                    AE
+                    LT
                   </div>
-                  <p className="text-sm text-gray-600 font-medium">Adyam Embaie, Founder</p>
+                  <p className="text-sm text-gray-600 font-medium">LusoTown Community Founders</p>
                 </div>
               </div>
             </div>
@@ -99,35 +102,38 @@ export default function About() {
           <div className="container-width px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-                The "Aha" Moment That Changed Everything
+                The Heart of Our Portuguese Community
               </h2>
               
               <div className="grid md:grid-cols-3 gap-8 mb-16">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-primary-100 text-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <ChatBubbleLeftRightIcon className="w-8 h-8" />
+                    <HomeIcon className="w-8 h-8" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">The Conversation</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">Saudade & Connection</h3>
                   <p className="text-gray-600">
-                    At a work event, I overheard three women in their 30s talking about feeling isolated despite loving their independent lives. We ended up chatting for hours.
+                    That feeling of missing home, our culture, and speaking Portuguese naturally with people who understand. 
+                    We created a space where saudade becomes connection.
                   </p>
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 bg-secondary-100 text-secondary-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <HeartIcon className="w-8 h-8" />
+                    <BookOpenIcon className="w-8 h-8" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">The Connection</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">Language Preservation</h3>
                   <p className="text-gray-600">
-                    We exchanged numbers and started meeting regularly. Within weeks, we'd created our own little tribe of like-minded women who truly understood each other.
+                    Helping families pass Portuguese to the next generation, supporting children who are proud of their heritage, 
+                    and keeping our beautiful language alive in London.
                   </p>
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <SparklesIcon className="w-8 h-8" />
+                    <UserGroupIcon className="w-8 h-8" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">The Vision</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">Community Support</h3>
                   <p className="text-gray-600">
-                    That's when it hit me: What if I could create a platform to help hundreds of women find their tribe, just like we had? AdyaTribe was born.
+                    From finding Portuguese schools to navigating UK systems, we help each other with the practical 
+                    and emotional challenges of life in London as Portuguese speakers.
                   </p>
                 </div>
               </div>
@@ -141,55 +147,55 @@ export default function About() {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                  Our Mission: Celebrate Your Choices, Find Your People
+                  Nossa Missão: Preservar a Cultura, Conectar Corações
                 </h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  We believe every woman who's chosen independence, career focus, or a childfree life deserves 
-                  a community that celebrates these choices—not questions them.
+                  We believe every Portuguese speaker in London deserves a community that celebrates 
+                  our heritage, supports our families, and keeps our beautiful language thriving.
                 </p>
               </div>
 
               <div className="grid lg:grid-cols-2 gap-12 mb-16">
                 <div className="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-8">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-6">Why 30+? Why Single & Childfree?</h3>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-6">Why Portuguese Community Matters</h3>
                   <div className="space-y-4 text-gray-600">
                     <div className="flex items-start">
                       <CheckCircleIcon className="w-5 h-5 text-primary-500 mt-1 mr-3 flex-shrink-0" />
-                      <p><strong>Life experience matters.</strong> You've figured out who you are and what you value.</p>
+                      <p><strong>Cultural preservation.</strong> Keeping our traditions, values, and way of life alive in London.</p>
                     </div>
                     <div className="flex items-start">
                       <CheckCircleIcon className="w-5 h-5 text-primary-500 mt-1 mr-3 flex-shrink-0" />
-                      <p><strong>Your choices are valid.</strong> Society might question them, but your tribe won't.</p>
+                      <p><strong>Language heritage.</strong> Ensuring our children speak Portuguese with pride and confidence.</p>
                     </div>
                     <div className="flex items-start">
                       <CheckCircleIcon className="w-5 h-5 text-primary-500 mt-1 mr-3 flex-shrink-0" />
-                      <p><strong>Similar life stages create deeper bonds.</strong> You understand each other's freedoms and challenges.</p>
+                      <p><strong>Shared understanding.</strong> Connecting with people who truly understand saudade and our journey.</p>
                     </div>
                     <div className="flex items-start">
                       <CheckCircleIcon className="w-5 h-5 text-primary-500 mt-1 mr-3 flex-shrink-0" />
-                      <p><strong>Quality over quantity.</strong> You want meaningful connections, not superficial networking.</p>
+                      <p><strong>Mutual support.</strong> Helping each other navigate life in London while staying connected to home.</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="bg-gradient-to-br from-secondary-50 to-white rounded-2xl p-8">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-6">What Makes Us Different</h3>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-6">What Makes LusoTown Special</h3>
                   <div className="space-y-4 text-gray-600">
                     <div className="flex items-start">
-                      <ShieldCheckIcon className="w-5 h-5 text-secondary-500 mt-1 mr-3 flex-shrink-0" />
-                      <p><strong>Safety-first approach.</strong> Selfie verification and age confirmation ensure authentic connections.</p>
+                      <GlobeAltIcon className="w-5 h-5 text-secondary-500 mt-1 mr-3 flex-shrink-0" />
+                      <p><strong>All Portuguese-speaking countries.</strong> Portugal, Brazil, Angola, Mozambique, Cape Verde—todos são bem-vindos.</p>
                     </div>
                     <div className="flex items-start">
                       <UserGroupIcon className="w-5 h-5 text-secondary-500 mt-1 mr-3 flex-shrink-0" />
-                      <p><strong>Community, not dating.</strong> We focus on friendships and professional networking.</p>
+                      <p><strong>Family-focused community.</strong> Supporting parents, children, grandparents, and extended families.</p>
                     </div>
                     <div className="flex items-start">
                       <MapPinIcon className="w-5 h-5 text-secondary-500 mt-1 mr-3 flex-shrink-0" />
-                      <p><strong>Real-world connections.</strong> Online matching leads to offline friendships through curated events.</p>
+                      <p><strong>London-specific resources.</strong> Practical help for Portuguese speakers navigating UK life.</p>
                     </div>
                     <div className="flex items-start">
                       <HeartIcon className="w-5 h-5 text-secondary-500 mt-1 mr-3 flex-shrink-0" />
-                      <p><strong>Judgment-free space.</strong> Your lifestyle choices are celebrated, never questioned.</p>
+                      <p><strong>Cultural celebration.</strong> Events, traditions, and celebrations that make London feel like home.</p>
                     </div>
                   </div>
                 </div>
@@ -203,48 +209,49 @@ export default function About() {
           <div className="container-width px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                The Impact We're Making Together
+                Growing London's Portuguese Community
               </h2>
               <p className="text-xl text-gray-600 mb-12">
-                Since launching in early 2024, AdyaTribe has helped hundreds of women find their people.
+                Since launching, LusoTown has brought together Portuguese speakers from across London,
+                creating connections that strengthen our community and preserve our heritage.
               </p>
               
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
                 <div className="bg-white rounded-xl p-6 shadow-sm">
-                  <div className="text-3xl font-bold text-primary-600 mb-2">300+</div>
-                  <div className="text-sm text-gray-600">Active Members</div>
-                  <div className="text-xs text-gray-500 mt-1">Growing UK Community</div>
+                  <div className="text-3xl font-bold text-primary-600 mb-2">500+</div>
+                  <div className="text-sm text-gray-600">Portuguese Families</div>
+                  <div className="text-xs text-gray-500 mt-1">Connected in London</div>
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-sm">
-                  <div className="text-3xl font-bold text-secondary-600 mb-2">120+</div>
-                  <div className="text-sm text-gray-600">Events Hosted</div>
-                  <div className="text-xs text-gray-500 mt-1">Since Launch</div>
+                  <div className="text-3xl font-bold text-secondary-600 mb-2">8</div>
+                  <div className="text-sm text-gray-600">Countries Represented</div>
+                  <div className="text-xs text-gray-500 mt-1">Portuguese-speaking nations</div>
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-sm">
-                  <div className="text-3xl font-bold text-purple-600 mb-2">98%</div>
-                  <div className="text-sm text-gray-600">Safety Rating</div>
-                  <div className="text-xs text-gray-500 mt-1">Member feedback</div>
+                  <div className="text-3xl font-bold text-purple-600 mb-2">95%</div>
+                  <div className="text-sm text-gray-600">Heritage Pride</div>
+                  <div className="text-xs text-gray-500 mt-1">Feel more connected</div>
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-sm">
-                  <div className="text-3xl font-bold text-green-600 mb-2">47</div>
-                  <div className="text-sm text-gray-600">Avg. Connections</div>
-                  <div className="text-xs text-gray-500 mt-1">Per active member</div>
+                  <div className="text-3xl font-bold text-green-600 mb-2">32</div>
+                  <div className="text-sm text-gray-600">London Boroughs</div>
+                  <div className="text-xs text-gray-500 mt-1">With active members</div>
                 </div>
               </div>
 
               <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <blockquote className="text-xl text-gray-700 italic mb-6">
-                  "AdyaTribe didn't just help me find friends—it helped me find women who celebrate my success, 
-                  understand my choices, and inspire me to be even more authentically myself. This is what 
-                  sisterhood should feel like."
+                  "Finalmente encontrei uma comunidade em Londres onde os meus filhos podem crescer 
+                  orgulhosos de serem portugueses. LusoTown não é só uma plataforma—é um pedacinho 
+                  de casa que trouxemos connosco."
                 </blockquote>
                 <div className="flex items-center justify-center">
                   <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-secondary-400 rounded-full flex items-center justify-center text-white font-bold mr-4">
-                    SH
+                    MC
                   </div>
                   <div className="text-left">
-                    <p className="font-semibold text-gray-900">Sarah H.</p>
-                    <p className="text-sm text-gray-600">Marketing Director, London • Member since March 2024</p>
+                    <p className="font-semibold text-gray-900">Maria C.</p>
+                    <p className="text-sm text-gray-600">Mãe de dois, Hackney • Member since early 2024</p>
                   </div>
                 </div>
               </div>
@@ -257,36 +264,36 @@ export default function About() {
           <div className="container-width px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-                The Values That Guide Everything We Do
+                Os Nossos Valores • Our Core Values
               </h2>
               
               <div className="grid md:grid-cols-2 gap-8 mb-12">
                 <div className="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-8">
-                  <h3 className="text-xl font-semibold text-primary-600 mb-4">🌟 Authenticity Over Perfection</h3>
+                  <h3 className="text-xl font-semibold text-primary-600 mb-4">🇵🇹 Heritage Preservation</h3>
                   <p className="text-gray-600">
-                    We encourage real stories, honest struggles, and genuine connections. Your imperfect moments 
-                    make you relatable, not your highlight reel.
+                    Preserving and celebrating Portuguese culture, traditions, and language for current and 
+                    future generations. Our heritage is our strength, and sharing it builds stronger communities.
                   </p>
                 </div>
                 <div className="bg-gradient-to-br from-secondary-50 to-white rounded-2xl p-8">
-                  <h3 className="text-xl font-semibold text-secondary-600 mb-4">💎 Quality Over Quantity</h3>
+                  <h3 className="text-xl font-semibold text-secondary-600 mb-4">🏠 Community Connection</h3>
                   <p className="text-gray-600">
-                    We'd rather you make 3 deep friendships than 30 shallow connections. Our algorithms and 
-                    events are designed for meaningful matches, not massive numbers.
+                    Creating meaningful relationships that transform London from a foreign city into a place 
+                    where Portuguese speakers feel at home, supported, and understood.
                   </p>
                 </div>
                 <div className="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8">
-                  <h3 className="text-xl font-semibold text-purple-600 mb-4">🛡️ Safety as Standard</h3>
+                  <h3 className="text-xl font-semibold text-purple-600 mb-4">👨‍👩‍👧‍👦 Family Support</h3>
                   <p className="text-gray-600">
-                    Every member is verified, every event is moderated, and every interaction is protected. 
-                    Your safety isn't negotiable—it's the foundation of everything we build.
+                    Supporting Portuguese families in London with resources, connections, and community that 
+                    help children grow proud of their heritage while thriving in British society.
                   </p>
                 </div>
                 <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8">
-                  <h3 className="text-xl font-semibold text-green-600 mb-4">🎉 Celebrating Your Choices</h3>
+                  <h3 className="text-xl font-semibold text-green-600 mb-4">🌍 Cultural Celebration</h3>
                   <p className="text-gray-600">
-                    Single by choice? Childfree and proud? Career-focused? We celebrate every path that 
-                    leads to your happiness and authenticity.
+                    Celebrating the diversity of Portuguese-speaking countries—from Portugal to Brazil, Angola 
+                    to Cape Verde—uniting us all through our shared linguistic and cultural bonds.
                   </p>
                 </div>
               </div>
@@ -299,43 +306,43 @@ export default function About() {
           <div className="container-width px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-bold mb-6">
-                Our Vision for the Future
+                Nossa Visão • Our Vision for the Future
               </h2>
               <p className="text-xl mb-8 opacity-90">
-                By 2027, we envision AdyaTribe as the UK's premier community for accomplished women 30+, 
-                with thriving chapters in every major city and a support network that spans generations.
+                By 2027, we envision LusoTown as London's strongest Portuguese community platform, 
+                connecting families across all boroughs and ensuring our language and culture thrive for generations.
               </p>
               
               <div className="grid md:grid-cols-3 gap-8 text-center mb-12">
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                  <TrophyIcon className="w-8 h-8 mx-auto mb-3" />
-                  <h3 className="font-semibold mb-2">10,000+ Members</h3>
-                  <p className="text-sm opacity-80">Across major UK cities</p>
+                  <UserGroupIcon className="w-8 h-8 mx-auto mb-3" />
+                  <h3 className="font-semibold mb-2">5,000+ Families</h3>
+                  <p className="text-sm opacity-80">Connected across Greater London</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                  <CalendarIcon className="w-8 h-8 mx-auto mb-3" />
-                  <h3 className="font-semibold mb-2">2,000+ Events</h3>
-                  <p className="text-sm opacity-80">Annual community experiences</p>
+                  <BookOpenIcon className="w-8 h-8 mx-auto mb-3" />
+                  <h3 className="font-semibold mb-2">100+ Schools</h3>
+                  <p className="text-sm opacity-80">Teaching Portuguese heritage</p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
                   <HeartIcon className="w-8 h-8 mx-auto mb-3" />
-                  <h3 className="font-semibold mb-2">Generational Impact</h3>
-                  <p className="text-sm opacity-80">Mentorship & wisdom sharing</p>
+                  <h3 className="font-semibold mb-2">Cultural Legacy</h3>
+                  <p className="text-sm opacity-80">Preserving heritage for future generations</p>
                 </div>
               </div>
               
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
                 <p className="text-lg font-medium mb-4">
-                  "Together, we're rewriting the narrative around what it means to be a single, 
-                  childfree woman in today's world."
+                  "Juntos, estamos a construir uma ponte entre as nossas origens e o nosso futuro em Londres. 
+                  LusoTown é mais que uma comunidade—é a nossa família londrina."
                 </p>
                 <div className="flex items-center justify-center">
                   <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-sm font-bold mr-3">
-                    AE
+                    LT
                   </div>
                   <div className="text-left">
-                    <p className="font-semibold">Adyam Embaie</p>
-                    <p className="text-sm opacity-80">Founder & CEO</p>
+                    <p className="font-semibold">LusoTown Team</p>
+                    <p className="text-sm opacity-80">Community Builders</p>
                   </div>
                 </div>
               </div>

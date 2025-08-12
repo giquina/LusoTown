@@ -14,23 +14,23 @@ import {
 const mobileFeatures = [
   {
     icon: BellIcon,
-    title: "Instant Notifications",
-    description: "Never miss event invites or new group messages"
+    title: "Notificações Instantâneas",
+    description: "Nunca perca convites para eventos ou mensagens do grupo"
   },
   {
     icon: MapPinIcon,
-    title: "Location-Based Events",
-    description: "Find nearby meetups and activities on the go"
+    title: "Eventos Locais",
+    description: "Encontre encontros e atividades portuguesas próximas"
   },
   {
     icon: ChatBubbleLeftRightIcon,
-    title: "Real-Time Chat",
-    description: "Stay connected with your groups anywhere"
+    title: "Chat em Tempo Real",
+    description: "Mantenha-se conectado com a comunidade lusa em qualquer lugar"
   },
   {
     icon: DevicePhoneMobileIcon,
-    title: "Mobile-First Experience",
-    description: "Optimized for seamless mobile community engagement"
+    title: "Experiência Mobile",
+    description: "Otimizado para engagement comunitário sem costura"
   }
 ]
 
@@ -64,13 +64,13 @@ export default function AppDownloadSection() {
             {/* Heading */}
             <div className="space-y-6">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                Take Your{' '}
-                <span className="gradient-text">Community</span>
-                {' '}Everywhere
+                Leve a Sua{' '}
+                <span className="gradient-text">Comunidade</span>
+                {' '}em Todo Lado
               </h2>
               <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-                Never miss out on London meetups, group chats, or new connections. 
-                Get the AdyaTribe mobile app and stay connected to your tribe wherever life takes you.
+                Nunca perca encontros lusos em Londres, chats de grupo ou novas conexões. 
+                Obtenha a aplicação móvel LusoTown e mantenha-se conectado com a comunidade portuguesa onde quer que vá.
               </p>
               <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-6 border border-primary-100/50">
                 <div className="flex items-start gap-4">
@@ -78,8 +78,8 @@ export default function AppDownloadSection() {
                     <SparklesIcon className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 text-lg mb-2">Join 1,000+ verified women 30+</h3>
-                    <p className="text-gray-600">Your community is already growing across London and the UK. Download the app and find your tribe today.</p>
+                    <h3 className="font-bold text-gray-900 text-lg mb-2">Junte-se a 500+ portugueses verificados</h3>
+                    <p className="text-gray-600">A sua comunidade luso-londrina já está a crescer. Descarregue a aplicação e encontre a sua comunidade hoje.</p>
                   </div>
                 </div>
               </div>
@@ -119,7 +119,7 @@ export default function AppDownloadSection() {
               <a 
                 href="#" 
                 className="group inline-flex items-center bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-2xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl shadow-lg"
-                aria-label="Download AdyaTribe on the App Store"
+                aria-label="Descarregue LusoTown na App Store"
               >
                 <div className="mr-5">
                   <svg className="w-10 h-10" viewBox="0 0 24 24" fill="currentColor">
@@ -136,7 +136,7 @@ export default function AppDownloadSection() {
               <a 
                 href="#" 
                 className="group inline-flex items-center bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-2xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl shadow-lg"
-                aria-label="Get AdyaTribe on Google Play"
+                aria-label="Obtenha LusoTown no Google Play"
               >
                 <div className="mr-5">
                   <svg className="w-10 h-10" viewBox="0 0 24 24" fill="currentColor">
@@ -159,16 +159,16 @@ export default function AppDownloadSection() {
               className="space-y-3"
             >
               <p className="text-gray-500 text-sm">
-                Free to download • Available on iOS 14+ and Android 8+
+                Grátis para descarregar • Disponível no iOS 14+ e Android 8+
               </p>
               <div className="flex items-center gap-4 text-sm text-gray-600">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span>100% Safe & Verified</span>
+                  <span>100% Seguro e Verificado</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
-                  <span>London-First Community</span>
+                  <span>Comunidade Luso-Londrina</span>
                 </div>
               </div>
             </motion.div>
@@ -206,7 +206,7 @@ export default function AppDownloadSection() {
                     {/* Header */}
                     <div className="bg-white px-6 py-4 shadow-sm border-b border-gray-100">
                       <div className="flex items-center justify-between">
-                        <h1 className="text-xl font-bold text-gray-900">AdyaTribe</h1>
+                        <h1 className="text-xl font-bold text-gray-900">LusoTown</h1>
                         <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">
                           <BellIcon className="h-4 w-4 text-primary-600" />
                         </div>
@@ -223,12 +223,12 @@ export default function AppDownloadSection() {
                             <UserGroupIcon className="h-5 w-5 text-primary-600" />
                           </div>
                           <div>
-                            <h3 className="font-semibold text-gray-900 text-sm">London Book Club</h3>
-                            <p className="text-xs text-gray-500">3 new messages</p>
+                            <h3 className="font-semibold text-gray-900 text-sm">Clube de Leitura Luso</h3>
+                            <p className="text-xs text-gray-500">3 mensagens novas</p>
                           </div>
                         </div>
                         <div className="bg-gray-50 rounded-lg p-3">
-                          <p className="text-xs text-gray-600">&quot;Anyone read The Seven Moons of Maali Almeida?&quot;</p>
+                          <p className="text-xs text-gray-600">&quot;Alguém leu 'Os Maias' do Eça de Queirós?&quot;</p>
                         </div>
                       </div>
 
@@ -239,8 +239,8 @@ export default function AppDownloadSection() {
                             <CalendarIcon className="h-5 w-5 text-secondary-600" />
                           </div>
                           <div>
-                            <h3 className="font-semibold text-gray-900 text-sm">Weekend Walks</h3>
-                            <p className="text-xs text-gray-500">Tomorrow, 10:00 AM</p>
+                            <h3 className="font-semibold text-gray-900 text-sm">Caminhadas de Fim de Semana</h3>
+                            <p className="text-xs text-gray-500">Amanhã, 10:00</p>
                           </div>
                         </div>
                         <div className="flex items-center gap-2">
@@ -251,7 +251,7 @@ export default function AppDownloadSection() {
 
                       {/* New Connections Card */}
                       <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
-                        <h3 className="font-semibold text-gray-900 text-sm mb-3">New in Your Area</h3>
+                        <h3 className="font-semibold text-gray-900 text-sm mb-3">Novos na Sua Área</h3>
                         <div className="flex -space-x-2">
                           {[1, 2, 3, 4].map((i) => (
                             <div

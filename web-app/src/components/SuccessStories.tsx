@@ -122,7 +122,7 @@ export default function SuccessStories() {
             <span className="gradient-text">Best Friends</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-            These amazing women found their perfect friendship matches through AdyaTribe. Read their inspiring stories of connection, growth, and genuine friendship.
+            These amazing women found their perfect community connections through LusoTown London. Read their inspiring stories of connection, cultural preservation, and genuine friendship in the Portuguese diaspora.
           </p>
         </motion.div>
 

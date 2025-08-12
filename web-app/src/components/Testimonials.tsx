@@ -7,58 +7,58 @@ import { getProfileImage, getImagesByCategory, getImageWithFallback, getAltTextW
 
 const testimonials = [
   {
-    name: "Sarah Chen",
+    name: "Maria Santos",
     age: "34",
-    location: "Clapham, London",
-    imageId: "sarah-chen",
-    quote: "I moved to London at 32 for work and felt so isolated. AdyaTribe helped me find my book club girls and now we're planning a trip to Scotland together! It's like finding your chosen family.",
+    location: "Stockwell, London",
+    imageId: "maria-santos",
+    quote: "Mudei-me do Porto para Londres há 3 anos e sentia muita saudade de casa. No LusoTown encontrei mulheres que entendem a nossa cultura e agora celebramos o São João juntas em Londres! É como ter família aqui.",
     rating: 5,
-    relationship: "Found her London book club tribe"
+    relationship: "Encontrou a sua família portuguesa em Londres"
   },
   {
-    name: "Maya Patel",
-    age: "38", 
-    location: "Shoreditch, London",
-    imageId: "maya-patel",
-    quote: "The walking group I joined through AdyaTribe has become my weekend sanctuary. From Hampstead Heath to Richmond Park, these women push me to explore London while providing incredible support.",
+    name: "Ana Ferreira",
+    age: "29", 
+    location: "Elephant & Castle, London",
+    imageId: "ana-ferreira",
+    quote: "Being Brazilian in London, I struggled to find community that understood my culture. Through LusoTown, I met amazing Portuguese-speaking women who've become my chosen family. We share feijoada recipes and help each other navigate life in London.",
     rating: 5,
-    relationship: "Adventure buddy for life"
+    relationship: "Found her Brazilian-Portuguese sisterhood"
   },
   {
-    name: "Jessica Williams",
+    name: "Carla Mendes",
+    age: "38",
+    location: "Vauxhall, London", 
+    imageId: "carla-mendes",
+    quote: "Como mãe angolana em Londres, era difícil manter as tradições dos meus filhos. As mulheres do LusoTown ajudam-me a ensinar português aos miúdos e organizamos eventos culturais maravilhosos juntas.",
+    rating: 5,
+    relationship: "Preserving Angolan culture for her children"
+  },
+  {
+    name: "Joana Silva",
+    age: "42",
+    location: "South Lambeth, London",
+    imageId: "joana-silva",
+    quote: "After 15 years in London, I thought I'd lost touch with my Portuguese roots. LusoTown reconnected me with women who share the same saudade and helped me rediscover my heritage while thriving in British life.",
+    rating: 5,
+    relationship: "Reconnected with Portuguese heritage"
+  },
+  {
+    name: "Beatriz Costa",
     age: "31",
-    location: "Notting Hill, London", 
-    imageId: "jessica-williams",
-    quote: "As a childfree woman in London, I often felt judged. Here, I found women who celebrate my choices and share similar life goals. We support each other's careers and UK travel dreams.",
+    location: "Brixton, London",
+    imageId: "beatriz-costa",
+    quote: "Working in the City as a Portuguese professional, I felt isolated from my culture. Through LusoTown, I found successful women who balance British career ambitions with Portuguese values. We support each other's dreams.",
     rating: 5,
-    relationship: "Career and travel support system"
+    relationship: "Professional Portuguese network"
   },
   {
-    name: "Emma Johnson",
-    age: "41",
-    location: "Greenwich, London",
-    imageId: "emma-johnson",
-    quote: "After my divorce, I thought making new friends in London would be impossible. The women I met through AdyaTribe helped me rediscover myself and showed me that your 40s can be empowering.",
+    name: "Teresa Rodrigues",
+    age: "36",
+    location: "Oval, London",
+    imageId: "teresa-rodrigues",
+    quote: "Vim de Cabo Verde para Londres jovem e sozinha. No LusoTown encontrei mulheres que me ensinaram a navegar na vida britânica sem perder as minhas raízes. Somos uma verdadeira comunidade lusófona.",
     rating: 5,
-    relationship: "Post-divorce support network"
-  },
-  {
-    name: "Priya Sharma",
-    age: "35",
-    location: "Canary Wharf, London",
-    imageId: "priya-sharma",
-    quote: "The cooking group introduced me to British and international women who've enriched my London experience immeasurably. We explore Borough Market together and share our cultural recipes.",
-    rating: 5,
-    relationship: "Cultural exchange and friendship"
-  },
-  {
-    name: "Lisa Thompson",
-    age: "39",
-    location: "Richmond, London",
-    imageId: "lisa-thompson",
-    quote: "I was skeptical about online friendships, but these London connections are the most genuine I've experienced. The verification process ensures everyone is real and serious about friendship.",
-    rating: 5,
-    relationship: "Genuine London friendships"
+    relationship: "Cape Verdean community support"
   }
 ]
 
@@ -105,14 +105,14 @@ export default function Testimonials() {
         >
           <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 text-primary-600 font-medium mb-6 border border-white/30">
             <StarIcon className="h-4 w-4 text-yellow-400" />
-            Real Stories, Real Friendships
+            Histórias Reais, Amizades Verdadeiras
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Hear from Our{' '}
-            <span className="gradient-text">Amazing Community</span>
+            Conheça a Nossa{' '}
+            <span className="gradient-text">Comunidade Lusófona</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-            Discover how hundreds of women have transformed their social lives and built meaningful connections through AdyaTribe.
+            Descubra como centenas de mulheres portuguesas, brasileiras, angolanas e cabo-verdianas encontraram a sua família em Londres através do LusoTown.
           </p>
         </motion.div>
 
@@ -185,10 +185,10 @@ export default function Testimonials() {
         >
           <div className="text-center mb-12">
             <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-              Meet Your <span className="gradient-text">Future Friends</span>
+              Conheça as Suas <span className="gradient-text">Futuras Amigas</span>
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Join hundreds of amazing women from diverse backgrounds who are building meaningful connections across London and the UK.
+              Junte-se a centenas de mulheres incríveis de países lusófonos que estão a construir ligações significativas em Londres e no Reino Unido.
             </p>
           </div>
           
@@ -227,15 +227,15 @@ export default function Testimonials() {
             <div className="grid sm:grid-cols-3 gap-8">
               <div>
                 <p className="text-4xl font-bold text-primary-400 mb-2">4.9/5</p>
-                <p className="text-gray-600">Average Rating</p>
+                <p className="text-gray-600">Avaliação Média</p>
               </div>
               <div>
-                <p className="text-4xl font-bold text-secondary-400 mb-2">300+</p>
-                <p className="text-gray-600">Verified Members</p>
+                <p className="text-4xl font-bold text-secondary-400 mb-2">250+</p>
+                <p className="text-gray-600">Membros Verificadas</p>
               </div>
               <div>
-                <p className="text-4xl font-bold text-primary-400 mb-2">89%</p>
-                <p className="text-gray-600">Made Real Friends</p>
+                <p className="text-4xl font-bold text-primary-400 mb-2">92%</p>
+                <p className="text-gray-600">Encontraram Amizades Reais</p>
               </div>
             </div>
           </div>
@@ -250,13 +250,13 @@ export default function Testimonials() {
           className="text-center mt-12"
         >
           <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-            Ready to Write Your Own Success Story?
+            Pronta para Escrever a Sua História de Sucesso?
           </h3>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Join hundreds of women who've found their tribe. Your perfect friendship match is just a click away.
+            Junte-se a centenas de mulheres lusófonas que encontraram a sua tribo em Londres. A sua amizade perfeita está apenas a um clique de distância.
           </p>
           <a href="/signup" className="btn-primary text-lg px-10 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 inline-block">
-            Start Your Journey Today
+            Comece a Sua Jornada Hoje
           </a>
         </motion.div>
       </div>

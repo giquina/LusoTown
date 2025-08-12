@@ -1,33 +1,43 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { ShieldCheckIcon, HeartIcon, UserGroupIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline'
+import { ShieldCheckIcon, HeartIcon, UserGroupIcon, ExclamationTriangleIcon, GlobeAltIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline'
 
 export const metadata = {
-  title: 'Community Guidelines | AdyaTribe - Safe Space for Women 30+',
-  description: 'Learn about AdyaTribe community guidelines that ensure a safe, respectful environment for professional women 30+ in London & UK to build meaningful friendships.',
+  title: 'Community Guidelines | LusoTown London - Portuguese Community Standards',
+  description: 'Learn about LusoTown London community guidelines that ensure a respectful, inclusive environment for the Portuguese diaspora community in London.',
 }
 
 export default function CommunityGuidelines() {
   const guidelines = [
     {
       icon: ShieldCheckIcon,
-      title: "Respect & Kindness",
-      description: "Treat every member with respect, empathy, and kindness. No harassment, bullying, or discriminatory language will be tolerated."
+      title: "Respeito (Respect)",
+      description: "Treat all community members with dignity and respect. Value cultural diversity across all Portuguese-speaking countries including Portugal, Brazil, Angola, Mozambique, and others."
     },
     {
-      icon: UserGroupIcon,
-      title: "Authentic Connections",
-      description: "Be genuine in your interactions. Our community values authenticity over networking or sales pitches."
+      icon: GlobeAltIcon,
+      title: "Inclusão (Inclusion)",
+      description: "Welcome all Portuguese speakers regardless of country of origin. Embrace our shared language while celebrating our unique cultural differences."
     },
     {
       icon: HeartIcon,
-      title: "Support Each Other",
-      description: "Offer support, encouragement, and celebrate each other's successes. We lift each other up."
+      title: "Família (Family)",
+      description: "Support each other like extended family. Help fellow Portuguese speakers navigate life in London and maintain strong community bonds across generations."
+    },
+    {
+      icon: UserGroupIcon,
+      title: "Cultura (Culture)",
+      description: "Preserve and celebrate Portuguese heritage through language, traditions, and cultural events. Share our rich cultural diversity with the wider London community."
+    },
+    {
+      icon: BuildingOfficeIcon,
+      title: "Comunidade (Community)",
+      description: "Foster professional networking and mutual support. Help fellow Portuguese speakers thrive in London's business environment while maintaining our cultural identity."
     },
     {
       icon: ExclamationTriangleIcon,
       title: "Report Concerns",
-      description: "If you encounter any behavior that makes you uncomfortable, please report it to our moderation team immediately."
+      description: "If you encounter any behavior that makes you uncomfortable or violates our community standards, please report it to our moderation team immediately."
     }
   ]
 
@@ -42,7 +52,7 @@ export default function CommunityGuidelines() {
                 Community Guidelines
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Creating a safe, supportive space where women 30+ can build meaningful friendships and connections.
+                Creating a respectful, inclusive environment for the Portuguese diaspora community in London to connect, support each other, and celebrate our shared heritage.
               </p>
             </div>
           </div>
@@ -67,25 +77,48 @@ export default function CommunityGuidelines() {
               </div>
 
               <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 mb-16">
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Our Commitment to Safety</h2>
-                <div className="prose prose-lg text-gray-700">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">Nossa Comunidade (Our Community)</h2>
+                <div className="prose prose-lg text-gray-700 space-y-4">
                   <p>
-                    AdyaTribe is committed to maintaining a safe, inclusive environment for all members. 
-                    Our community guidelines are designed to ensure every woman feels respected, 
-                    valued, and protected while building meaningful connections.
+                    LusoTown London is committed to maintaining a respectful, inclusive environment for all Portuguese speakers and their families. 
+                    Our community guidelines ensure everyone feels welcome, valued, and supported while preserving our cultural heritage in London.
                   </p>
+                  
+                  <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">Communication Standards</h3>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Respectful communication in both Portuguese and English</li>
+                    <li>Cultural sensitivity across all Portuguese-speaking countries</li>
+                    <li>Family-friendly language appropriate for all ages</li>
+                    <li>Professional networking ethics in business discussions</li>
+                  </ul>
+                  
+                  <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">Cultural Events & Heritage</h3>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Celebrate traditional Portuguese holidays and festivals</li>
+                    <li>Share cultural knowledge and traditions with younger generations</li>
+                    <li>Support Portuguese language learning and preservation</li>
+                    <li>Promote Portuguese businesses and cultural initiatives in London</li>
+                  </ul>
+                  
+                  <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">Family & Community Support</h3>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Provide guidance for newcomers to London</li>
+                    <li>Share resources for education, healthcare, and legal matters</li>
+                    <li>Support families navigating British systems while maintaining Portuguese identity</li>
+                    <li>Create safe spaces for children and teenagers to connect with their heritage</li>
+                  </ul>
                 </div>
               </div>
 
               <div className="text-center">
                 <p className="text-gray-600 mb-8">
-                  Questions about our community guidelines? We're here to help.
+                  Tem perguntas sobre as nossas diretrizes da comunidade? Estamos aqui para ajudar. / Questions about our community guidelines? We're here to help.
                 </p>
                 <a 
                   href="/contact" 
                   className="btn-primary inline-flex items-center gap-2"
                 >
-                  Contact Our Team
+                  Entre em Contato / Contact Our Team
                 </a>
               </div>
             </div>

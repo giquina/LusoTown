@@ -50,86 +50,82 @@ interface PricingTier {
 
 const pricingTiers: PricingTier[] = [
   {
-    name: 'Free',
+    name: 'Gratuito',
     price: 0,
-    description: 'Perfect for exploring our community and getting started safely',
+    description: 'Perfect for discovering the London Portuguese community',
     icon: <UserIcon className="w-6 h-6" />,
     solidIcon: <UserIcon className="w-6 h-6" />,
     features: [
-      'Basic profile creation',
-      'Browse 5 profiles per day',
-      'Join public chat rooms',
-      'Attend 1 free event per month',
-      'Basic interest matching',
-      'Community guidelines access',
-      'Safety verification process'
+      'Join community groups',
+      'View events calendar',
+      'Basic business directory access',
+      'Community posts viewing',
+      'Access to Portuguese resources',
+      'Safety verification',
+      'Cultural news updates'
     ],
     limitations: [
-      'Limited profile browsing',
-      'No private group access',
-      'No direct messaging',
-      'No premium events',
-      'Standard support only'
+      'Cannot RSVP to events',
+      'Limited business directory features',
+      'No premium resources access',
+      'Basic support only'
     ],
     highlighted: false,
-    buttonText: 'Start Free Today',
+    buttonText: 'Comece Grátis',
     buttonStyle: 'btn-secondary'
   },
   {
-    name: 'Core',
-    price: 12,
-    originalPrice: 15,
-    description: 'Full platform access for meaningful connections & experiences',
+    name: 'Comunidade',
+    price: 15,
+    originalPrice: 18,
+    description: 'Full community access for Portuguese families in London',
     icon: <StarIcon className="w-6 h-6" />,
     solidIcon: <StarIconSolid className="w-6 h-6" />,
     features: [
-      'Unlimited profile browsing',
-      'Advanced matching algorithms',
-      'All chat rooms & private groups',
-      'Unlimited event attendance',
-      'Priority event booking',
-      'Enhanced profile features',
-      'Direct messaging capabilities',
-      'Interest-based group creation',
-      'Monthly virtual meetups',
-      'Expert-led workshops',
+      'Everything in Gratuito, plus:',
+      'Event RSVP and hosting',
+      'Full business directory access',
+      'Cultural resource library',
+      'Portuguese language exchange',
+      'Community job board',
+      'Priority support',
+      'Member-only discussions',
       'Event calendar sync',
-      'Enhanced safety verification'
+      'Networking opportunities'
     ],
     limitations: [
-      'No VIP event access',
+      'No family program access',
       'Standard customer support'
     ],
     highlighted: true,
-    buttonText: 'Choose Core',
+    buttonText: 'Junte-se à Comunidade',
     buttonStyle: 'btn-primary',
-    badge: 'Most Popular'
+    badge: 'Mais Popular'
   },
   {
-    name: 'Premium',
+    name: 'Família',
     price: 25,
-    originalPrice: 35,
-    description: 'VIP experience with exclusive access & personal concierge service',
+    originalPrice: 30,
+    description: 'Premium family experience with exclusive Portuguese programs',
     icon: <Crown className="w-6 h-6" />,
     solidIcon: <Crown className="w-6 h-6" />,
     features: [
-      'Everything in Core, plus:',
-      'VIP events & exclusive experiences',
-      'Personal community concierge',
-      'Advanced privacy controls',
-      'Profile verification badge',
-      'First access to new features',
-      '1-on-1 community guidance sessions',
-      'Private member directory',
-      'VIP event seating & perks',
+      'Everything in Comunidade, plus:',
+      'Family events and activities',
+      'Portuguese language resources',
+      'Children\'s cultural programs',
+      'Premium business networking',
+      'VIP event access',
+      'Heritage preservation activities',
+      'Educational workshops',
+      'Cultural mentorship',
       'Exclusive venue partnerships',
-      'Monthly exclusive experiences',
       'Priority 24/7 support',
-      'Personal introduction service'
+      'Personal community guidance'
     ],
     limitations: [],
     highlighted: false,
-    buttonText: 'Go Premium',
+    buttonText: 'Escolher Família',
     buttonStyle: 'btn-primary bg-gradient-to-r from-purple-500 to-pink-500 border-transparent hover:from-purple-600 hover:to-pink-600'
   }
 ]
@@ -137,68 +133,68 @@ const pricingTiers: PricingTier[] = [
 const features = [
   {
     icon: <ShieldCheckIcon className="w-5 h-5" />,
-    title: 'Safety First Verification',
-    description: 'Selfie verification, age confirmation (30+), and profile authentication ensure authentic connections'
+    title: 'Safe Community Space',
+    description: 'Verified member profiles and moderated discussions ensure a safe environment for Portuguese families'
   },
   {
     icon: <HeartIcon className="w-5 h-5" />,
-    title: 'Meaningful Connections',
-    description: 'Interest-based matching algorithm connects you with women who share your passions and values'
+    title: 'Cultural Heritage',
+    description: 'Connect with fellow Portuguese in London who share your cultural values and traditions'
   },
   {
     icon: <CalendarIcon className="w-5 h-5" />,
-    title: 'Exclusive Events',
-    description: 'Wine tastings, cultural experiences, wellness workshops, and networking events curated for our community'
+    title: 'Portuguese Events',
+    description: 'Fado nights, festival celebrations, business networking, and family activities celebrating Portuguese culture'
   },
   {
     icon: <ChatBubbleLeftRightIcon className="w-5 h-5" />,
-    title: 'Private Group Spaces',
-    description: 'Topic-based chat groups and forums for deeper discussions with like-minded members'
+    title: 'Language Support',
+    description: 'Portuguese language groups, exchange programs, and resources to help maintain your mother tongue'
   },
   {
     icon: <LockClosedIcon className="w-5 h-5" />,
-    title: 'Women-Only Community',
-    description: 'Exclusive space for single, childfree women 30+ to connect without judgment'
+    title: 'Portuguese Community',
+    description: 'Exclusive space for the Portuguese diaspora in London to connect and support each other'
   },
   {
     icon: <TrophyIcon className="w-5 h-5" />,
-    title: 'Professional Network',
-    description: 'Connect with accomplished women, share career insights, and build professional relationships'
+    title: 'Business Network',
+    description: 'Connect with Portuguese entrepreneurs and professionals, share opportunities, and grow together'
   }
 ]
 
 const testimonials = [
   {
-    name: 'Sarah M.',
-    age: 34,
-    location: 'London',
-    membership: 'Core Member',
-    quote: 'AdyaTribe has given me the confidence to embrace my choices. I\'ve found my tribe of amazing women who truly get it.',
+    name: 'Maria S.',
+    age: 35,
+    location: 'Camden, London',
+    membership: 'Membro Comunidade',
+    quote: 'LusoTown ajudou-me a encontrar a minha comunidade portuguesa em Londres. Os meus filhos agora falam português fluentemente!',
     rating: 5
   },
   {
-    name: 'Emma R.',
+    name: 'João R.',
     age: 42,
-    location: 'Manchester',
-    membership: 'Premium Member',
-    quote: 'The events are incredible - from wine tours to book clubs. I\'ve made genuine friendships that extend beyond the platform.',
+    location: 'Stockwell, London',
+    membership: 'Membro Família',
+    quote: 'Through LusoTown, I found Portuguese clients for my business and my family found lifelong friends. Somos uma família!',
     rating: 5
   },
   {
-    name: 'Jessica L.',
-    age: 38,
-    location: 'Edinburgh',
-    membership: 'Core Member',
-    quote: 'Finally, a community where I don\'t have to explain or justify my lifestyle. These women understand and celebrate it.',
+    name: 'Ana L.',
+    age: 28,
+    location: 'East London',
+    membership: 'Membro Comunidade',
+    quote: 'As a young Portuguese professional in London, LusoTown connected me with mentors and cultural events. Sinto-me em casa.',
     rating: 5
   }
 ]
 
 const stats = [
-  { number: '300+', label: 'Active Members', icon: <UsersIcon className="w-6 h-6" /> },
-  { number: '30+', label: 'Monthly Events', icon: <CalendarIcon className="w-6 h-6" /> },
-  { number: '98%', label: 'Safety Rating', icon: <ShieldCheckIconSolid className="w-6 h-6" /> },
-  { number: '4.9/5', label: 'Member Satisfaction', icon: <StarIconSolid className="w-6 h-6" /> }
+  { number: '500+', label: 'Portuguese Members', icon: <UsersIcon className="w-6 h-6" /> },
+  { number: '25+', label: 'Monthly Events', icon: <CalendarIcon className="w-6 h-6" /> },
+  { number: '150+', label: 'Local Businesses', icon: <ShieldCheckIconSolid className="w-6 h-6" /> },
+  { number: '4.8/5', label: 'Community Rating', icon: <StarIconSolid className="w-6 h-6" /> }
 ]
 
 export default function Pricing() {
@@ -218,26 +214,26 @@ export default function Pricing() {
             <div className="text-center mb-16">
               <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-primary-600 mb-6">
                 <ShieldCheckIconSolid className="w-4 h-4 mr-2" />
-                Trusted by 300+ verified women across the UK
+                Confiado por 500+ membros da comunidade portuguesa
               </div>
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                Your Tribe Awaits:
-                <span className="gradient-text"> Choose Your Journey</span>
+                A Sua Comunidade Portuguesa em Londres:
+                <span className="gradient-text"> Escolha o Seu Plano</span>
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                Connect with accomplished, verified women 30+ who celebrate the single, childfree lifestyle. 
-                From meaningful friendships to professional networks, find your perfect community experience.
+                Conecte-se com a vibrante comunidade portuguesa em Londres. 
+                Desde eventos culturais a networking de negócios, encontre a experiência perfeita para si e a sua família.
               </p>
               
               {/* Trust Badges */}
               <div className="flex flex-wrap justify-center gap-6 mb-12 text-sm text-gray-600">
                 <div className="flex items-center">
                   <CameraIcon className="w-4 h-4 mr-2 text-primary-500" />
-                  Selfie Verified
+                  Comunidade Verificada
                 </div>
                 <div className="flex items-center">
                   <ShieldCheckIcon className="w-4 h-4 mr-2 text-primary-500" />
-                  30+ Age Verified
+                  Espaço Seguro
                 </div>
                 <div className="flex items-center">
                   <LockClosedIcon className="w-4 h-4 mr-2 text-primary-500" />
@@ -245,14 +241,14 @@ export default function Pricing() {
                 </div>
                 <div className="flex items-center">
                   <ClockIcon className="w-4 h-4 mr-2 text-primary-500" />
-                  30-Day Guarantee
+                  Garantia 30 Dias
                 </div>
               </div>
               
               {/* Annual/Monthly Toggle */}
               <div className="flex items-center justify-center space-x-4 mb-12">
                 <span className={`text-sm font-medium ${!isAnnual ? 'text-gray-900' : 'text-gray-500'}`}>
-                  Monthly
+                  Mensal
                 </span>
                 <button
                   onClick={() => setIsAnnual(!isAnnual)}
@@ -265,8 +261,8 @@ export default function Pricing() {
                   />
                 </button>
                 <span className={`text-sm font-medium ${isAnnual ? 'text-gray-900' : 'text-gray-500'}`}>
-                  Annual
-                  <span className="ml-1 text-green-600 font-semibold">(Save 20%)</span>
+                  Anual
+                  <span className="ml-1 text-green-600 font-semibold">(Poupe 20%)</span>
                 </span>
               </div>
             </div>
@@ -303,7 +299,7 @@ export default function Pricing() {
                     
                     <div className="mb-6">
                       {tier.price === 0 ? (
-                        <div className="text-4xl font-bold text-gray-900">Free</div>
+                        <div className="text-4xl font-bold text-gray-900">Gratuito</div>
                       ) : (
                         <div className="flex items-center justify-center space-x-2">
                           {isAnnual && tier.originalPrice && (
@@ -321,7 +317,7 @@ export default function Pricing() {
                       )}
                       {isAnnual && tier.price > 0 && (
                         <div className="text-sm text-green-600 font-medium mt-1">
-                          Save £{tier.price * 2} per year
+                          Poupe £{tier.price * 2} por ano
                         </div>
                       )}
                     </div>
@@ -380,10 +376,10 @@ export default function Pricing() {
           <div className="container-width px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                What Our Members Say
+                O Que Dizem os Nossos Membros
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Join hundreds of women who have found their tribe and embraced their authentic selves.
+                Junte-se a centenas de portugueses que encontraram a sua comunidade em Londres.
               </p>
             </div>
 
@@ -418,10 +414,10 @@ export default function Pricing() {
           <div className="container-width px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Compare Membership Features
+                Compare os Planos de Adesão
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                See exactly what's included with each membership tier.
+                Veja exactamente o que está incluído em cada nível de adesão.
               </p>
             </div>
 
@@ -429,23 +425,23 @@ export default function Pricing() {
               <table className="w-full bg-white rounded-xl shadow-lg overflow-hidden">
                 <thead className="bg-gray-50">
                   <tr>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Features</th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">Free</th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-primary-600 bg-primary-50">Core</th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-purple-600">Premium</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Funcionalidades</th>
+                    <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">Gratuito</th>
+                    <th className="px-6 py-4 text-center text-sm font-semibold text-primary-600 bg-primary-50">Comunidade</th>
+                    <th className="px-6 py-4 text-center text-sm font-semibold text-purple-600">Família</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
                   {[
-                    { feature: 'Profile Creation & Browsing', free: '5 per day', core: 'Unlimited', premium: 'Unlimited' },
-                    { feature: 'Event Attendance', free: '1 per month', core: 'Unlimited', premium: 'Unlimited + VIP' },
-                    { feature: 'Chat Groups Access', free: 'Public only', core: 'All groups', premium: 'All + Private directory' },
-                    { feature: 'Direct Messaging', free: false, core: true, premium: true },
-                    { feature: 'Priority Event Booking', free: false, core: true, premium: true },
-                    { feature: 'Personal Concierge', free: false, core: false, premium: true },
-                    { feature: 'VIP Events Access', free: false, core: false, premium: true },
-                    { feature: '1-on-1 Guidance', free: false, core: false, premium: true },
-                    { feature: 'Customer Support', free: 'Standard', core: 'Priority', premium: '24/7 Priority' }
+                    { feature: 'Acesso ao Diretório', free: 'Básico', core: 'Completo', premium: 'Premium + VIP' },
+                    { feature: 'Participação em Eventos', free: 'Apenas visualizar', core: 'RSVP ilimitado', premium: 'Eventos familiares + VIP' },
+                    { feature: 'Grupos de Chat', free: 'Públicos apenas', core: 'Todos os grupos', premium: 'Grupos + Mentoria' },
+                    { feature: 'Recursos Portugueses', free: 'Básico', core: 'Biblioteca completa', premium: 'Programas infantis' },
+                    { feature: 'Networking Empresarial', free: false, core: true, premium: true },
+                    { feature: 'Programas Familiares', free: false, core: false, premium: true },
+                    { feature: 'Eventos Culturais VIP', free: false, core: false, premium: true },
+                    { feature: 'Orientação Pessoal', free: false, core: false, premium: true },
+                    { feature: 'Apoio ao Cliente', free: 'Padrão', core: 'Prioritário', premium: '24/7 Prioritário' }
                   ].map((row, index) => (
                     <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                       <td className="px-6 py-4 text-sm text-gray-900 font-medium">{row.feature}</td>
@@ -495,76 +491,76 @@ export default function Pricing() {
           <div className="container-width px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                See AdyaTribe in Action
+                Veja LusoTown em Ação
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Explore our app features with interactive mockups that showcase how members connect, chat, and build lasting friendships.
+                Explore as funcionalidades da nossa plataforma que mostram como os membros se conectam, participam em eventos e preservam a cultura portuguesa.
               </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
               {/* Profile Card Mockup */}
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Verified Member Profiles</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Perfis de Membros Verificados</h3>
                 <div className="flex justify-center mb-6">
                   <div className="bg-white rounded-2xl shadow-lg p-6 max-w-sm w-full transform hover:scale-105 transition-transform duration-300">
                     <div className="w-16 h-16 bg-gradient-to-br from-primary-400 to-secondary-400 rounded-full flex items-center justify-center text-white font-bold text-lg mb-4 mx-auto">
-                      SH
+                      MS
                     </div>
-                    <h4 className="font-semibold text-gray-900 text-lg">Sarah, 34</h4>
-                    <p className="text-sm text-gray-600 mb-4">Marketing Director • Central London</p>
+                    <h4 className="font-semibold text-gray-900 text-lg">Maria S., 35</h4>
+                    <p className="text-sm text-gray-600 mb-4">Empresária • Camden, London</p>
                     <div className="flex flex-wrap gap-2 justify-center mb-4">
-                      <span className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-xs font-medium">Books</span>
-                      <span className="px-3 py-1 bg-secondary-100 text-secondary-700 rounded-full text-xs font-medium">Yoga</span>
-                      <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Wine</span>
+                      <span className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-xs font-medium">Fado</span>
+                      <span className="px-3 py-1 bg-secondary-100 text-secondary-700 rounded-full text-xs font-medium">Culinária</span>
+                      <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Família</span>
                     </div>
                     <div className="flex items-center justify-center text-green-600 text-sm">
                       <ShieldCheckIcon className="w-4 h-4 mr-1" />
-                      Verified Profile
+                      Membro Verificado
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-600">Authentic profiles with selfie verification and interest-based matching</p>
+                <p className="text-gray-600">Perfis autênticos da comunidade portuguesa com verificação e interesses culturais</p>
               </div>
 
               {/* Chat Room Mockup */}
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Group Chat Communities</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Comunidades de Chat</h3>
                 <div className="flex justify-center mb-6">
                   <div className="bg-white rounded-2xl shadow-lg p-6 max-w-md w-full transform hover:scale-105 transition-transform duration-300">
                     <div className="flex items-center mb-4">
                       <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                        📚
+                        🇵🇹
                       </div>
                       <div className="ml-3">
-                        <h5 className="font-semibold text-gray-900">Book Club Londoners</h5>
-                        <p className="text-sm text-gray-600">45 members • Active now</p>
+                        <h5 className="font-semibold text-gray-900">Portugueses em Londres</h5>
+                        <p className="text-sm text-gray-600">127 membros • Ativo agora</p>
                       </div>
                     </div>
                     <div className="space-y-3">
                       <div className="flex items-start space-x-2">
                         <div className="w-6 h-6 bg-primary-400 rounded-full flex-shrink-0"></div>
                         <div className="bg-gray-100 rounded-lg px-3 py-2 max-w-xs">
-                          <p className="text-sm">Just finished 'Fourth Wing'! Any fantasy recs?</p>
+                          <p className="text-sm">Alguém conhece boa pastelaria portuguesa?</p>
                         </div>
                       </div>
                       <div className="flex items-start space-x-2 justify-end">
                         <div className="bg-primary-500 text-white rounded-lg px-3 py-2 max-w-xs">
-                          <p className="text-sm">Try 'The Priory of the Orange Tree'!</p>
+                          <p className="text-sm">Pastéis de Belém no Borough Market!</p>
                         </div>
                         <div className="w-6 h-6 bg-secondary-400 rounded-full flex-shrink-0"></div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-600">Safe group discussions without the pressure of 1-on-1 dating</p>
+                <p className="text-gray-600">Discussões em português num ambiente seguro e familiar</p>
               </div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               {/* Event Card Mockup */}
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Curated Events</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Eventos Portugueses</h3>
                 <div className="flex justify-center mb-6">
                   <div className="bg-white rounded-2xl shadow-lg overflow-hidden max-w-sm w-full transform hover:scale-105 transition-transform duration-300">
                     <div className="h-32 bg-gradient-to-br from-primary-400 to-secondary-400 flex items-center justify-center">
@@ -573,52 +569,52 @@ export default function Pricing() {
                     <div className="p-4">
                       <div className="flex items-center text-sm text-gray-600 mb-2">
                         <MapPinIcon className="w-4 h-4 mr-1" />
-                        Covent Garden, London
+                        Stockwell, London
                       </div>
-                      <h5 className="font-semibold text-gray-900 mb-2">Wine & Paint Evening</h5>
-                      <p className="text-sm text-gray-600 mb-3">Creative night with fellow book lovers</p>
+                      <h5 className="font-semibold text-gray-900 mb-2">Noite de Fado</h5>
+                      <p className="text-sm text-gray-600 mb-3">Música tradicional com petiscos portugueses</p>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center text-sm text-gray-600">
                           <UsersIcon className="w-4 h-4 mr-1" />
-                          12 attending
+                          23 confirmados
                         </div>
-                        <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">£15</span>
+                        <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">£20</span>
                       </div>
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-600">From wine tastings to career workshops - events for every interest</p>
+                <p className="text-gray-600">Desde festivais culturais a workshops de negócios - eventos para toda a família</p>
               </div>
 
               {/* Safety Verification Demo */}
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Safety First Approach</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Comunidade Segura</h3>
                 <div className="flex justify-center mb-6">
                   <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 max-w-sm w-full transform hover:scale-105 transition-transform duration-300">
                     <div className="flex items-center justify-center mb-4">
                       <ShieldCheckIcon className="w-8 h-8 text-green-600 mr-3" />
                       <div>
-                        <h5 className="font-semibold text-gray-900">Selfie Verification</h5>
-                        <p className="text-sm text-gray-600">AI-powered identity confirmation</p>
+                        <h5 className="font-semibold text-gray-900">Verificação de Membros</h5>
+                        <p className="text-sm text-gray-600">Confirmação de identidade segura</p>
                       </div>
                     </div>
                     <div className="space-y-3">
                       <div className="flex items-center text-sm text-gray-700">
                         <CheckIcon className="w-4 h-4 text-green-600 mr-2" />
-                        Live photo matches profile
+                        Perfis verificados autênticos
                       </div>
                       <div className="flex items-center text-sm text-gray-700">
                         <CheckIcon className="w-4 h-4 text-green-600 mr-2" />
-                        Age verification (30+)
+                        Comunidade moderada
                       </div>
                       <div className="flex items-center text-sm text-gray-700">
                         <CheckIcon className="w-4 h-4 text-green-600 mr-2" />
-                        Real person confirmed
+                        Ambiente familiar e seguro
                       </div>
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-600">Multi-layer verification ensures the safest possible community</p>
+                <p className="text-gray-600">Verificação cuidadosa para garantir a comunidade mais segura possível</p>
               </div>
             </div>
           </div>
@@ -629,32 +625,32 @@ export default function Pricing() {
           <div className="container-width px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Track Your Community Journey
+                Acompanhe a Sua Jornada na Comunidade
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                See your progress, connections, and engagement with a personalized activity dashboard designed for meaningful interactions.
+                Veja o seu progresso, conexões, e envolvimento com um painel personalizado desenhado para interações significativas.
               </p>
             </div>
 
             <div className="max-w-4xl mx-auto">
               <div className="bg-white rounded-2xl shadow-lg p-8 transform hover:scale-105 transition-transform duration-300">
-                <h4 className="font-semibold text-gray-900 mb-6 text-xl text-center">Your AdyaTribe Activity</h4>
+                <h4 className="font-semibold text-gray-900 mb-6 text-xl text-center">A Sua Atividade no LusoTown</h4>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                   <div className="text-center p-4 bg-primary-50 rounded-lg">
-                    <div className="text-3xl font-bold text-primary-600 mb-1">47</div>
-                    <div className="text-sm text-gray-600">Connections Made</div>
+                    <div className="text-3xl font-bold text-primary-600 mb-1">73</div>
+                    <div className="text-sm text-gray-600">Conexões Feitas</div>
                   </div>
                   <div className="text-center p-4 bg-secondary-50 rounded-lg">
-                    <div className="text-3xl font-bold text-secondary-600 mb-1">8</div>
-                    <div className="text-sm text-gray-600">Events Attended</div>
+                    <div className="text-3xl font-bold text-secondary-600 mb-1">12</div>
+                    <div className="text-sm text-gray-600">Eventos Participados</div>
                   </div>
                   <div className="text-center p-4 bg-purple-50 rounded-lg">
-                    <div className="text-3xl font-bold text-purple-600 mb-1">156</div>
-                    <div className="text-sm text-gray-600">Messages Sent</div>
+                    <div className="text-3xl font-bold text-purple-600 mb-1">234</div>
+                    <div className="text-sm text-gray-600">Mensagens Enviadas</div>
                   </div>
                   <div className="text-center p-4 bg-green-50 rounded-lg">
-                    <div className="text-3xl font-bold text-green-600 mb-1">4.9</div>
-                    <div className="text-sm text-gray-600">Member Rating</div>
+                    <div className="text-3xl font-bold text-green-600 mb-1">4.8</div>
+                    <div className="text-sm text-gray-600">Avaliação do Membro</div>
                   </div>
                 </div>
               </div>
@@ -667,10 +663,10 @@ export default function Pricing() {
           <div className="container-width px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Why Choose AdyaTribe?
+                Porquê Escolher LusoTown?
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                More than just a community - we're your support system for creating meaningful connections and experiences.
+                Mais do que apenas uma comunidade - somos o seu sistema de apoio para criar conexões significativas e preservar a cultura portuguesa.
               </p>
             </div>
 
@@ -696,26 +692,26 @@ export default function Pricing() {
                 <ShieldCheckIconSolid className="w-8 h-8" />
               </div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                100% Satisfaction Guarantee
+                Garantia 100% de Satisfação
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                We're so confident you'll love AdyaTribe that we offer a full 30-day money-back guarantee. 
-                If you're not completely satisfied with your membership experience, we'll refund every penny - no questions asked.
+                Estamos tão confiantes de que vai adorar o LusoTown que oferecemos uma garantia completa de 30 dias. 
+                Se não estiver completamente satisfeito com a sua experiência, devolvemos todo o dinheiro - sem perguntas.
               </p>
               <div className="bg-white rounded-lg p-6 inline-block">
-                <p className="text-sm text-gray-600 mb-2">Protected by our guarantee:</p>
+                <p className="text-sm text-gray-600 mb-2">Protegido pela nossa garantia:</p>
                 <div className="flex items-center justify-center space-x-8 text-sm text-gray-700">
                   <div className="flex items-center">
                     <CheckIconSolid className="w-4 h-4 text-green-500 mr-2" />
-                    Full refund within 30 days
+                    Reembolso total em 30 dias
                   </div>
                   <div className="flex items-center">
                     <CheckIconSolid className="w-4 h-4 text-green-500 mr-2" />
-                    No questions asked
+                    Sem perguntas
                   </div>
                   <div className="flex items-center">
                     <CheckIconSolid className="w-4 h-4 text-green-500 mr-2" />
-                    Cancel anytime
+                    Cancele a qualquer momento
                   </div>
                 </div>
               </div>
@@ -728,46 +724,46 @@ export default function Pricing() {
           <div className="container-width px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Questions? We Have Answers
+                Perguntas? Temos Respostas
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Everything you need to know about joining AdyaTribe's community.
+                Tudo o que precisa de saber sobre se juntar à comunidade LusoTown.
               </p>
             </div>
 
             <div className="max-w-4xl mx-auto space-y-6">
               {[
                 {
-                  question: "How does the verification process work?",
-                  answer: "Our multi-step verification ensures authentic connections: (1) Age verification confirms you're 30+, (2) Selfie verification matches your photos to your real identity, (3) Profile review ensures quality and authenticity. This process typically takes 24-48 hours and keeps our community safe and genuine."
+                  question: "Como funciona o processo de verificação?",
+                  answer: "A nossa verificação multi-etapas garante conexões autênticas: (1) Verificação de identidade confirma quem você é, (2) Revisão de perfil garante qualidade e autenticidade, (3) Moderação da comunidade mantém o ambiente seguro. Este processo demora 24-48 horas e mantém a nossa comunidade segura e genuína."
                 },
                 {
-                  question: "What makes AdyaTribe different from other platforms?",
-                  answer: "AdyaTribe is exclusively for single, childfree women 30+. We focus on meaningful friendships and professional networking rather than dating. Our community celebrates this lifestyle choice with curated events, expert workshops, and authentic connections with women who truly understand your journey."
+                  question: "O que torna LusoTown diferente de outras plataformas?",
+                  answer: "LusoTown é exclusivamente para a comunidade portuguesa em Londres. Focamos em conexões culturais significativas, preservação do património, e networking profissional. A nossa comunidade celebra a cultura portuguesa com eventos especiais, workshops, e conexões autênticas com pessoas que partilham a sua herança."
                 },
                 {
-                  question: "Can I change or cancel my membership?",
-                  answer: "Absolutely! You can upgrade, downgrade, or cancel your membership at any time from your account settings. Upgrades take effect immediately with prorated billing. Cancellations remain active until the end of your current billing cycle, after which you'll have access to free tier features."
+                  question: "Posso alterar ou cancelar a minha adesão?",
+                  answer: "Absolutamente! Pode fazer upgrade, downgrade, ou cancelar a sua adesão a qualquer momento nas configurações da conta. Upgrades têm efeito imediato com faturação proporcional. Cancelamentos mantêm-se ativos até ao fim do ciclo de faturação atual."
                 },
                 {
-                  question: "What types of events do you host?",
-                  answer: "Our events range from wine tastings and cultural experiences to professional networking and wellness workshops. Core members access all regular events, while Premium members enjoy exclusive VIP events, private venue access, and curated experiences with limited attendance for more intimate connections."
+                  question: "Que tipos de eventos organizam?",
+                  answer: "Os nossos eventos vão desde noites de fado e celebrações culturais a networking profissional e atividades familiares. Membros Comunidade acedem a todos os eventos regulares, enquanto membros Família desfrutam de eventos VIP exclusivos e programas para crianças."
                 },
                 {
-                  question: "Is my personal information safe?",
-                  answer: "Yes. We're GDPR compliant with enterprise-grade security. Your data is encrypted, never sold to third parties, and you control your privacy settings. Our verification process ensures authentic members while protecting your anonymity until you choose to connect with someone."
+                  question: "A minha informação pessoal está segura?",
+                  answer: "Sim. Somos compatíveis com GDPR com segurança empresarial. Os seus dados são encriptados, nunca vendidos a terceiros, e você controla as suas configurações de privacidade. O nosso processo de verificação garante membros autênticos enquanto protege o seu anonimato."
                 },
                 {
-                  question: "What if I don't find my tribe right away?",
-                  answer: "Building meaningful connections takes time! We offer a 30-day satisfaction guarantee - if you're not happy with your membership experience, contact us for a full refund. Our community concierge (Premium) or support team (Core) can help you find the right groups and events for your interests."
+                  question: "E se não encontrar a minha comunidade imediatamente?",
+                  answer: "Construir conexões significativas leva tempo! Oferecemos uma garantia de satisfação de 30 dias - se não estiver feliz, contacte-nos para um reembolso completo. A nossa equipa de apoio pode ajudá-lo a encontrar os grupos e eventos certos para os seus interesses."
                 },
                 {
-                  question: "Do you have members in my area?",
-                  answer: "We have active communities across the UK, with the highest concentrations in London, Manchester, Edinburgh, Bristol, and Birmingham. Our platform shows local events and members in your area, and we're continuously growing our regional presence based on member demand."
+                  question: "Têm membros na minha área?",
+                  answer: "Temos comunidades ativas por todo Londres, com as maiores concentrações em Stockwell, Camden, East London, e zonas circundantes. A nossa plataforma mostra eventos locais e membros na sua área, expandindo continuamente baseado na procura dos membros."
                 },
                 {
-                  question: "How do I know if this community is right for me?",
-                  answer: "Start with our free membership to explore the community, attend a public event, and get a feel for our culture. If you're a single, childfree woman 30+ looking for authentic connections with like-minded women, you'll likely find your tribe here. Our 30-day guarantee removes all risk from upgrading."
+                  question: "Como sei se esta comunidade é certa para mim?",
+                  answer: "Comece com a nossa adesão gratuita para explorar a comunidade, participar num evento público, e sentir a nossa cultura. Se é português ou de ascendência portuguesa em Londres à procura de conexões autênticas, provavelmente encontrará a sua comunidade aqui."
                 }
               ].map((faq, index) => (
                 <div key={index} className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
@@ -778,10 +774,10 @@ export default function Pricing() {
             </div>
 
             <div className="text-center mt-12">
-              <p className="text-gray-600 mb-4">Still have questions?</p>
+              <p className="text-gray-600 mb-4">Ainda tem perguntas?</p>
               <a href="/contact" className="btn-outline inline-flex items-center">
                 <PhoneIcon className="w-4 h-4 mr-2" />
-                Contact Our Support Team
+                Contacte a Nossa Equipa
               </a>
             </div>
           </div>
@@ -792,10 +788,10 @@ export default function Pricing() {
           <div className="container-width px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Join the Conversation
+                Junte-se à Conversa
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                See how AdyaTribe members are building meaningful connections every day through our platform.
+                Veja como os membros do LusoTown estão a construir conexões significativas todos os dias através da nossa plataforma.
               </p>
             </div>
 
@@ -804,7 +800,7 @@ export default function Pricing() {
               <div className="lg:col-span-2">
                 <div className="bg-white rounded-2xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-lg font-semibold text-gray-900">Community Activity</h3>
+                    <h3 className="text-lg font-semibold text-gray-900">Atividade da Comunidade</h3>
                     <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                   </div>
                   <div className="space-y-4">
@@ -812,11 +808,11 @@ export default function Pricing() {
                       <div className="w-8 h-8 bg-primary-400 rounded-full flex items-center justify-center text-white text-sm font-bold">J</div>
                       <div className="flex-1">
                         <div className="text-sm">
-                          <span className="font-medium text-gray-900">Jessica</span>
-                          <span className="text-gray-600"> joined </span>
-                          <span className="font-medium text-primary-600">Book Club Londoners</span>
+                          <span className="font-medium text-gray-900">João</span>
+                          <span className="text-gray-600"> juntou-se ao </span>
+                          <span className="font-medium text-primary-600">Empresários Portugueses</span>
                         </div>
-                        <div className="text-xs text-gray-500 mt-1">2 minutes ago</div>
+                        <div className="text-xs text-gray-500 mt-1">há 2 minutos</div>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3 p-3 bg-secondary-50 rounded-lg">
@@ -824,24 +820,24 @@ export default function Pricing() {
                       <div className="flex-1">
                         <div className="text-sm">
                           <span className="font-medium text-gray-900">Maria</span>
-                          <span className="text-gray-600"> created event </span>
-                          <span className="font-medium text-secondary-600">Wine Tasting in Canary Wharf</span>
+                          <span className="text-gray-600"> criou evento </span>
+                          <span className="font-medium text-secondary-600">Festival de Santo António</span>
                         </div>
-                        <div className="text-xs text-gray-500 mt-1">15 minutes ago</div>
+                        <div className="text-xs text-gray-500 mt-1">há 15 minutos</div>
                       </div>
                     </div>
                     <div className="flex items-start space-x-3 p-3 bg-green-50 rounded-lg">
                       <div className="w-8 h-8 bg-green-400 rounded-full flex items-center justify-center text-white text-sm font-bold">A</div>
                       <div className="flex-1">
                         <div className="text-sm">
-                          <span className="font-medium text-gray-900">Anna</span>
-                          <span className="text-gray-600"> verified her profile with selfie check</span>
+                          <span className="font-medium text-gray-900">Ana</span>
+                          <span className="text-gray-600"> verificou o seu perfil</span>
                         </div>
-                        <div className="text-xs text-gray-500 mt-1">1 hour ago</div>
+                        <div className="text-xs text-gray-500 mt-1">há 1 hora</div>
                       </div>
                     </div>
                     <div className="text-center pt-4">
-                      <div className="text-sm text-gray-500">12 new activities in the last hour</div>
+                      <div className="text-sm text-gray-500">18 novas atividades na última hora</div>
                     </div>
                   </div>
                 </div>
@@ -852,33 +848,33 @@ export default function Pricing() {
                 <div className="bg-white rounded-2xl shadow-lg p-6 transform hover:scale-105 transition-transform duration-300">
                   <div className="text-center mb-4">
                     <TrophyIcon className="w-8 h-8 text-yellow-500 mx-auto mb-2" />
-                    <h4 className="font-semibold text-gray-900">This Week's Impact</h4>
+                    <h4 className="font-semibold text-gray-900">Impacto desta Semana</h4>
                   </div>
                   <div className="space-y-3">
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-600">New Connections</span>
-                      <span className="font-bold text-primary-600">187</span>
+                      <span className="text-sm text-gray-600">Novas Conexões</span>
+                      <span className="font-bold text-primary-600">143</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-600">Events Hosted</span>
-                      <span className="font-bold text-secondary-600">8</span>
+                      <span className="text-sm text-gray-600">Eventos Realizados</span>
+                      <span className="font-bold text-secondary-600">6</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-600">Messages Sent</span>
-                      <span className="font-bold text-green-600">1,247</span>
+                      <span className="text-sm text-gray-600">Mensagens Enviadas</span>
+                      <span className="font-bold text-green-600">892</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-gray-600">Verified Members</span>
-                      <span className="font-bold text-purple-600">28</span>
+                      <span className="text-sm text-gray-600">Membros Verificados</span>
+                      <span className="font-bold text-purple-600">34</span>
                     </div>
                   </div>
                 </div>
                 
                 <div className="bg-gradient-to-r from-primary-400 to-secondary-400 rounded-2xl p-6 text-white text-center transform hover:scale-105 transition-transform duration-300">
                   <SparklesIcon className="w-8 h-8 mx-auto mb-2" />
-                  <div className="text-lg font-bold mb-1">99.7%</div>
-                  <div className="text-sm opacity-90">Member Satisfaction</div>
-                  <div className="text-xs opacity-75 mt-2">Based on 300+ reviews</div>
+                  <div className="text-lg font-bold mb-1">97.8%</div>
+                  <div className="text-sm opacity-90">Satisfação dos Membros</div>
+                  <div className="text-xs opacity-75 mt-2">Baseado em 500+ avaliações</div>
                 </div>
               </div>
             </div>
@@ -895,15 +891,15 @@ export default function Pricing() {
             <div className="max-w-4xl mx-auto">
               <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium mb-6">
                 <BoltIcon className="w-4 h-4 mr-2" />
-                Join 300+ verified women today
+                Junte-se a 500+ portugueses hoje
               </div>
               
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                Your Tribe is Waiting
+                A Sua Comunidade Está À Espera
               </h2>
               <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-                Don't spend another weekend wondering where your people are. 
-                Join AdyaTribe and discover the community you've been searching for.
+                Não passe mais um fim de semana a perguntar onde está a sua gente. 
+                Junte-se ao LusoTown e descubra a comunidade portuguesa que tem procurado.
               </p>
 
               {/* Urgency Elements */}
@@ -911,26 +907,26 @@ export default function Pricing() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                   <div className="transform hover:scale-110 transition-transform duration-200">
                     <div className="text-2xl font-bold mb-1">24-48hrs</div>
-                    <div className="text-sm opacity-80">Verification Process</div>
+                    <div className="text-sm opacity-80">Processo de Verificação</div>
                   </div>
                   <div className="transform hover:scale-110 transition-transform duration-200">
-                    <div className="text-2xl font-bold mb-1">30 Days</div>
-                    <div className="text-sm opacity-80">Money-Back Guarantee</div>
+                    <div className="text-2xl font-bold mb-1">30 Dias</div>
+                    <div className="text-sm opacity-80">Garantia de Reembolso</div>
                   </div>
                   <div className="transform hover:scale-110 transition-transform duration-200">
-                    <div className="text-2xl font-bold mb-1">30+</div>
-                    <div className="text-sm opacity-80">Events This Month</div>
+                    <div className="text-2xl font-bold mb-1">25+</div>
+                    <div className="text-sm opacity-80">Eventos Este Mês</div>
                   </div>
                 </div>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <a href="/signup" className="btn-secondary bg-white text-primary-600 hover:bg-gray-100 text-lg px-8 py-4 group transform hover:scale-105 transition-all duration-200">
-                  Start Your Journey Free
+                  Comece Grátis a Sua Jornada
                   <ArrowRightIcon className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a href="/login" className="btn-outline border-white text-white hover:bg-white hover:text-primary-600 text-lg px-8 py-4 transform hover:scale-105 transition-all duration-200">
-                  Already a Member? Sign In
+                  Já é Membro? Entrar
                 </a>
               </div>
 
@@ -938,19 +934,19 @@ export default function Pricing() {
               <div className="flex flex-wrap justify-center gap-6 text-sm opacity-80">
                 <div className="flex items-center hover:opacity-100 transition-opacity duration-200">
                   <ShieldCheckIconSolid className="w-4 h-4 mr-2" />
-                  Verified Community
+                  Comunidade Verificada
                 </div>
                 <div className="flex items-center hover:opacity-100 transition-opacity duration-200">
                   <LockClosedIcon className="w-4 h-4 mr-2" />
-                  GDPR Protected
+                  Proteção GDPR
                 </div>
                 <div className="flex items-center hover:opacity-100 transition-opacity duration-200">
                   <HeartIconSolid className="w-4 h-4 mr-2" />
-                  No Judgment Zone
+                  Espaço Sem Julgamentos
                 </div>
                 <div className="flex items-center hover:opacity-100 transition-opacity duration-200">
                   <ClockIcon className="w-4 h-4 mr-2" />
-                  Cancel Anytime
+                  Cancele a Qualquer Momento
                 </div>
               </div>
             </div>

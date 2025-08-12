@@ -2,11 +2,11 @@
 
 import { motion } from 'framer-motion'
 import { 
-  ShieldCheckIcon, 
+  CalendarDaysIcon, 
   UserGroupIcon, 
-  CalendarIcon, 
-  ChatBubbleLeftRightIcon,
-  PhotoIcon,
+  BuildingStorefrontIcon, 
+  BookOpenIcon,
+  DocumentTextIcon,
   MapPinIcon,
   HeartIcon,
   SparklesIcon
@@ -15,44 +15,44 @@ import { getImagesByCategory } from '@/lib/profileImages'
 
 const features = [
   {
-    icon: ShieldCheckIcon,
-    title: "Safe & Verified",
-    description: "Multi-step verification including selfie confirmation ensures authentic, genuine members only.",
+    icon: CalendarDaysIcon,
+    title: "Events Calendar",
+    description: "Cultural gatherings, community fairs, language practice sessions, and family-friendly activities celebrating Lusophone heritage.",
     color: "text-green-500",
     bgColor: "bg-green-50"
   },
   {
     icon: UserGroupIcon,
-    title: "Interest-Based Groups",
-    description: "Join 30+ specialized groups from London walks and book clubs to cooking and UK travel adventures.",
+    title: "Community Groups",
+    description: "Interest-based forums for sharing advice, arranging meetups, and making friends within the Portuguese-speaking community.",
     color: "text-primary-500",
     bgColor: "bg-primary-50"
   },
   {
-    icon: CalendarIcon,
-    title: "Events & Meetups",
-    description: "Discover London events, organize meetups, and RSVP to exciting activities across the UK.",
+    icon: BuildingStorefrontIcon,
+    title: "Business Directory",
+    description: "Portuguese restaurants, shops, legal & financial advisors, and services serving the Lusophone community in London.",
     color: "text-secondary-500",
     bgColor: "bg-secondary-50"
   },
   {
-    icon: ChatBubbleLeftRightIcon,
-    title: "Meaningful Conversations",
-    description: "Connect through thoughtful discussions, group chats, and one-on-one conversations.",
+    icon: BookOpenIcon,
+    title: "Resource Hub",
+    description: "Essential information on housing, jobs, education, and language classes to help you navigate life in London.",
     color: "text-purple-500",
     bgColor: "bg-purple-50"
   },
   {
-    icon: PhotoIcon,
-    title: "Share Your Journey",
-    description: "Document adventures, share experiences, and celebrate milestones with your tribe.",
+    icon: DocumentTextIcon,
+    title: "Stories & Culture",
+    description: "Articles, videos, and user stories celebrating Lusophone traditions, heritage, and life in the UK.",
     color: "text-pink-500",
     bgColor: "bg-pink-50"
   },
   {
     icon: MapPinIcon,
     title: "Local & Global",
-    description: "Find nearby friends for London coffee dates or connect with women across the UK who share your passions.",
+    description: "Connect Portuguese speakers across London and the UK while staying connected to your roots and heritage.",
     color: "text-blue-500",
     bgColor: "bg-blue-50"
   }
@@ -99,14 +99,14 @@ export default function Features() {
         >
           <div className="inline-flex items-center gap-2 bg-primary-50 rounded-full px-4 py-2 text-primary-600 font-medium mb-6">
             <SparklesIcon className="h-4 w-4" />
-            Why Choose AdyaTribe
+            Why Choose LusoTown London
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Everything You Need for{' '}
-            <span className="gradient-text">Authentic Connections</span>
+            <span className="gradient-text">Community Connection</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-            We've thoughtfully designed every feature to help 30+ women build genuine, lasting friendships in a safe and supportive environment.
+            We've thoughtfully designed every feature to help Portuguese speakers in London preserve their heritage, build community, and thrive in the UK.
           </p>
         </motion.div>
 
@@ -157,7 +157,7 @@ export default function Features() {
                     <div key={index} className="aspect-square rounded-xl overflow-hidden">
                       <img 
                         src={photos[index % photos.length]?.path || '/profiles/default-avatar.svg'}
-                        alt={photos[index % photos.length]?.alt || 'AdyaTribe member'}
+                        alt={photos[index % photos.length]?.alt || 'LusoTown London member'}
                         className="w-full h-full object-cover"
                         loading="lazy"
                       />
@@ -170,33 +170,33 @@ export default function Features() {
             <div className="relative z-10">
               <div className="flex items-center justify-center gap-2 mb-6">
                 <HeartIcon className="h-6 w-6 text-primary-400" />
-                <h3 className="text-2xl font-semibold text-gray-900">Built by Women, for Women</h3>
+                <h3 className="text-2xl font-semibold text-gray-900">Built by Portuguese, for Portuguese</h3>
               </div>
               
-              {/* Featured Member Testimonial */}
+              {/* Featured Community Testimonial */}
               <div className="max-w-3xl mx-auto mb-6">
                 <div className="flex items-center justify-center gap-4 mb-4">
                   <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg ring-2 ring-white">
                     <img 
                       src={getImagesByCategory('community')[0]?.path || '/profiles/default-avatar.svg'}
-                      alt="Adyam Embaie, AdyaTribe founder"
+                      alt="LusoTown London founder"
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />
                   </div>
                   <div className="text-left">
-                    <p className="font-semibold text-gray-900">Adyam Embaie, Founder</p>
-                    <p className="text-sm text-gray-600">London, UK</p>
+                    <p className="font-semibold text-gray-900">Maria Santos, Founder</p>
+                    <p className="text-sm text-gray-600">Portuguese Community Leader, London</p>
                   </div>
                 </div>
                 <p className="text-lg text-gray-600 italic mb-4">
-                  "After moving to London and struggling to make authentic friendships in my 30s, I created AdyaTribe to solve a problem I knew hundreds of women faced."
+                  "As a Portuguese immigrant in London, I felt the need to create a space where our community could connect, preserve our culture, and support each other."
                 </p>
               </div>
               
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                AdyaTribe was created by women who understand the unique challenges of making meaningful adult friendships. 
-                Every feature is designed with empathy, safety, and authenticity at its core.
+                LusoTown London was created by Portuguese speakers who understand the challenges of maintaining cultural identity while building a new life in the UK. 
+                Every feature celebrates our heritage while helping you thrive in London.
               </p>
             </div>
           </div>
