@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Bars3Icon, XMarkIcon, HeartIcon, UserCircleIcon, ShieldCheckIcon, UserIcon } from '@heroicons/react/24/outline'
 import { Crown, LogOut } from 'lucide-react'
-import { authService, User } from '@/lib/auth'
+// import { authService, User } from '@/lib/auth'
 import { useRouter } from 'next/navigation'
 
 const publicNavigationLinks = [
@@ -27,32 +27,24 @@ const authenticatedNavigationLinks = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [user, setUser] = useState<User | null>(null)
+  const [user, setUser] = useState<any | null>(null)
   const [showUserMenu, setShowUserMenu] = useState(false)
   const router = useRouter()
 
   useEffect(() => {
-    // Get initial user state
-    const currentUser = authService.getCurrentUser()
-    setUser(currentUser)
-
-    // Listen for auth state changes
-    const unsubscribe = authService.onAuthStateChange((newUser) => {
-      setUser(newUser)
-    })
-
-    // Cleanup listener on unmount
-    return unsubscribe
+    // Auth temporarily disabled for demo
+    // const currentUser = authService.getCurrentUser()
+    // setUser(currentUser)
+    // const unsubscribe = authService.onAuthStateChange((newUser) => {
+    //   setUser(newUser)
+    // })
+    // return unsubscribe
   }, [])
 
   const handleLogout = async () => {
-    try {
-      await authService.logout()
-      setShowUserMenu(false)
-      router.push('/')
-    } catch (error) {
-      console.error('Logout error:', error)
-    }
+    // Auth temporarily disabled for demo
+    setShowUserMenu(false)
+    router.push('/')
   }
 
   const getMembershipBadge = (tier: string) => {
