@@ -1,7 +1,7 @@
 {
-  "name": "adyatribe-platform",
+  "name": "lusotown-london",
   "version": "1.0.0",
-  "description": "AdyaTribe community platform landing page",
+  "description": "LusoTown London - A digital home for Portuguese-speaking communities in London. Connecting cultures, preserving language, building community.",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
@@ -35,13 +35,17 @@
     "typescript": "^5.2.0"
   },
   "keywords": [
+    "lusotown",
+    "portuguese",
+    "lusophone",
+    "london",
     "community",
-    "women",
-    "friendship",
-    "platform",
-    "30+",
-    "childfree"
+    "portugal",
+    "brazil",
+    "angola",
+    "diaspora",
+    "culture"
   ],
-  "author": "AdyaTribe",
+  "author": "LusoTown London",
   "license": "MIT"
 }

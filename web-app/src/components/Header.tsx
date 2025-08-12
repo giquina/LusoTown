@@ -76,7 +76,7 @@ export default function Header() {
               <div className="w-10 h-10 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-lg flex items-center justify-center">
                 <HeartIcon className="h-6 w-6 text-white" />
               </div>
-              <span className="text-2xl font-bold text-gray-900">AdyaTribe</span>
+              <span className="text-2xl font-bold text-gray-900">LusoTown London</span>
             </a>
           </div>
 
@@ -171,7 +171,7 @@ export default function Header() {
                   Log In
                 </a>
                 <a href="/signup" className="btn-primary">
-                  Join Free
+                  Join Community
                 </a>
               </>
             )}
@@ -303,7 +303,7 @@ export default function Header() {
                           className="btn-primary w-full text-center block"
                           onClick={() => setMobileMenuOpen(false)}
                         >
-                          Join Free
+                          Join Community
                         </a>
                       </div>
                     </>

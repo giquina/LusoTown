@@ -8,47 +8,110 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // AdyaTribe brand colors
+        // LusoTown Brand Colors - Unidos pela Língua (United by Language)
+        
+        // Azul Atlântico (Atlantic Blue) - Primary
         primary: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#1e40af', // Main brand color - Deep ocean blue
+          600: '#1e3a8a',
+          700: '#1d4ed8',
+          800: '#1e3a8a',
+          900: '#1e3a8a',
+        },
+        
+        // Verde Esperança (Hope Green) - Secondary
+        secondary: {
+          50: '#ecfdf5',
+          100: '#d1fae5',
+          200: '#a7f3d0',
+          300: '#6ee7b7',
+          400: '#34d399',
+          500: '#059669', // Main secondary - Vibrant emerald
+          600: '#047857',
+          700: '#065f46',
+          800: '#064e3b',
+          900: '#022c22',
+        },
+        
+        // Dourado Sol (Golden Sun) - Accent
+        accent: {
+          50: '#fffbeb',
+          100: '#fef3c7',
+          200: '#fde68a',
+          300: '#fcd34d',
+          400: '#fbbf24',
+          500: '#f59e0b', // Main accent - Warm amber
+          600: '#d97706',
+          700: '#b45309',
+          800: '#92400e',
+          900: '#78350f',
+        },
+        
+        // Vermelho Paixão (Passion Red) - Action
+        action: {
           50: '#fef2f2',
           100: '#fee2e2',
           200: '#fecaca',
           300: '#fca5a5',
-          400: '#ff6b6b', // Main brand color
-          500: '#ef4444',
-          600: '#dc2626',
-          700: '#b91c1c',
-          800: '#991b1b',
+          400: '#f87171',
+          500: '#dc2626', // Main action - Bold red
+          600: '#b91c1c',
+          700: '#991b1b',
+          800: '#7f1d1d',
           900: '#7f1d1d',
         },
-        secondary: {
-          50: '#f0fdfa',
-          100: '#ccfbf1',
-          200: '#b2dfdb',
-          300: '#99d3ce',
-          400: '#4ecdc4', // Main secondary color
-          500: '#26a69a',
-          600: '#2d7d7a',
-          700: '#285e61',
-          800: '#234e52',
-          900: '#1d4044',
+        
+        // Roxo Fado (Fado Purple) - Premium
+        premium: {
+          50: '#faf5ff',
+          100: '#ede9fe',
+          200: '#ddd6fe',
+          300: '#c4b5fd',
+          400: '#a78bfa',
+          500: '#7c3aed', // Main premium - Rich purple
+          600: '#5b21b6',
+          700: '#4c1d95',
+          800: '#3730a3',
+          900: '#312e81',
         },
+        
+        // Coral Tropical (Tropical Coral) - Warm Accent
+        coral: {
+          50: '#fff7ed',
+          100: '#fed7aa',
+          200: '#fed7aa',
+          300: '#fdba74',
+          400: '#fb923c',
+          500: '#f97316', // Main coral - Vibrant coral
+          600: '#ea580c',
+          700: '#c2410c',
+          800: '#9a3412',
+          900: '#7c2d12',
+        },
+        
+        // Updated Neutral colors
         neutral: {
           50: '#fafafa',
           100: '#f5f5f5',
-          200: '#e5e5e5',
-          300: '#d4d4d4',
-          400: '#a3a3a3',
-          500: '#737373',
-          600: '#525252',
-          700: '#404040',
-          800: '#262626',
-          900: '#171717',
+          200: '#e5e7eb',
+          300: '#d1d5db',
+          400: '#9ca3af',
+          500: '#6b7280',
+          600: '#4b5563',
+          700: '#374151',
+          800: '#1f2937',
+          900: '#111827',
         },
+        
         // Text colors matching mobile app
-        text: '#2c2c2c',
-        textSecondary: '#757575',
-        textLight: '#bdbdbd',
+        text: '#1f2937',
+        textSecondary: '#6b7280',
+        textLight: '#9ca3af',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

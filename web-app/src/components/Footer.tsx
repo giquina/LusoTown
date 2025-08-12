@@ -41,21 +41,21 @@ export default function Footer() {
               <div className="w-10 h-10 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-lg flex items-center justify-center">
                 <HeartIcon className="h-6 w-6 text-white" />
               </div>
-              <span className="text-2xl font-bold">AdyaTribe</span>
+              <span className="text-2xl font-bold">LusoTown London</span>
             </div>
             
             <p className="text-gray-300 leading-relaxed">
-              Where amazing women connect, grow, and build lasting friendships. Join our community of 30+ single & childfree women creating meaningful bonds across London and the UK.
+              Connecting Portuguese-speaking communities in London. Unidos pela Língua - United by Language. Join our vibrant community preserving heritage, culture, and building meaningful connections across the Portuguese diaspora.
             </p>
             
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-300">
                 <MapPinIcon className="h-5 w-5 text-primary-400" />
-                <span>London & UK Community</span>
+                <span>London Portuguese Community</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
                 <EnvelopeIcon className="h-5 w-5 text-primary-400" />
-                <span>hello@adyatribe.com</span>
+                <span>hello@lusotown.london</span>
               </div>
             </div>
           </div>
@@ -137,7 +137,7 @@ export default function Footer() {
           <div className="max-w-md">
             <h3 className="text-lg font-semibold mb-4 text-white">Stay Connected</h3>
             <p className="text-gray-300 mb-6">
-              Get updates on new features, community events, and inspiring stories from our members.
+              Get updates on community events, cultural celebrations, and inspiring stories from our Portuguese-speaking community.
             </p>
             <form className="flex gap-3">
               <input
@@ -161,14 +161,14 @@ export default function Footer() {
         <div className="container-width px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} AdyaTribe. All rights reserved. Built with ❤️ for amazing women everywhere.
+              © {new Date().getFullYear()} LusoTown London. All rights reserved. Proudly built for the Portuguese-speaking community in London 🌍
             </p>
             
             <div className="flex items-center gap-6">
               {/* Social links would go here */}
               <div className="flex items-center gap-2 text-sm text-gray-400">
                 <HeartIcon className="h-4 w-4 text-primary-400" />
-                <span>Made by women, for women</span>
+                <span>Unidos pela Língua</span>
               </div>
             </div>
           </div>

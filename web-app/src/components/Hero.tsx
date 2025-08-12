@@ -82,12 +82,12 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.9, y: -20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.6 }}
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-pink-50 via-purple-50 to-indigo-50 border border-pink-200 rounded-2xl px-6 py-3 shadow-lg"
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-green-50 via-red-50 to-yellow-50 border border-green-200 rounded-2xl px-6 py-3 shadow-lg"
             >
               <div className="flex items-center gap-2">
-                <SparklesIcon className="h-5 w-5 text-pink-500" />
-                <span className="text-sm font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
-                  30+ Events Monthly • 300+ Active Members • UK-Wide
+                <SparklesIcon className="h-5 w-5 text-green-600" />
+                <span className="text-sm font-bold bg-gradient-to-r from-green-600 to-red-600 bg-clip-text text-transparent">
+                  London's Portuguese Community • 500+ Members • Cultural Events
                 </span>
               </div>
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
@@ -101,16 +101,16 @@ export default function Hero() {
               className="space-y-4"
             >
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-tight tracking-tight break-words">
-                WHERE{' '}
-                <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent animate-pulse font-extrabold">
-                  AMAZING
+                DISCOVER{' '}
+                <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 bg-clip-text text-transparent animate-pulse font-extrabold">
+                  LUSOTOWN
                 </span>
                 <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800">
-                  WOMEN CONNECT
+                  LONDON
                 </span>
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl font-medium break-words">
-                Join the <span className="font-bold text-pink-600">premier verified community</span> for 30+ single & childfree women in the UK. From wine tastings in Covent Garden to career workshops in Shoreditch—find your tribe and create the social life you've always wanted across <span className="font-bold text-purple-600">London and beyond</span>.
+                A vibrant community platform for <span className="font-bold text-green-600">Portuguese speakers and their families</span> in London. Find cultural events, connect with your heritage, discover Portuguese businesses, and share stories of the <span className="font-bold text-red-600">Lusophone experience</span> in the capital.
               </p>
             </motion.div>
 
@@ -122,9 +122,9 @@ export default function Hero() {
               className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6"
             >
               {[
-                { icon: HeartIcon, text: "30+ EVENTS MONTHLY", color: "#ef4444" },
-                { icon: UsersIcon, text: "300+ VERIFIED MEMBERS", color: "#3b82f6" },
-                { icon: SparklesIcon, text: "98% SAFETY RATING", color: "#f59e0b" }
+                { icon: HeartIcon, text: "CULTURAL EVENTS", color: "#dc2626" },
+                { icon: UsersIcon, text: "500+ COMMUNITY MEMBERS", color: "#059669" },
+                { icon: SparklesIcon, text: "PORTUGUESE BUSINESSES", color: "#d97706" }
               ].map((item, index) => (
                 <motion.div
                   key={item.text}
@@ -156,11 +156,11 @@ export default function Hero() {
                   boxShadow: "0 20px 40px rgba(0,0,0,0.15)"
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="relative group text-lg sm:text-xl font-bold px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 overflow-hidden"
+                className="relative group text-lg sm:text-xl font-bold px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-green-700 via-red-700 to-yellow-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10 flex items-center justify-center gap-3">
-                  JOIN FREE & BROWSE EVENTS
+                  JOIN PORTUGUESE COMMUNITY
                   <ArrowRightIcon className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-200" />
                 </span>
               </motion.a>
@@ -172,9 +172,9 @@ export default function Hero() {
                   backgroundColor: "rgba(255,255,255,0.9)"
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="text-lg sm:text-xl font-bold px-8 sm:px-10 py-4 sm:py-5 bg-white/70 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-purple-300"
+                className="text-lg sm:text-xl font-bold px-8 sm:px-10 py-4 sm:py-5 bg-white/70 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-green-300"
               >
-                VIEW UPCOMING EVENTS
+                EXPLORE CULTURAL EVENTS
               </motion.a>
             </motion.div>
 
@@ -220,8 +220,8 @@ export default function Hero() {
             <div className="relative z-10 bg-white/20 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/30">
               <div className="space-y-6">
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">Join 300+ Women</h3>
-                  <p className="text-gray-600">Already connecting in London</p>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2">Join 500+ Lusophones</h3>
+                  <p className="text-gray-600">Celebrating heritage in London</p>
                 </div>
                 
                 {/* Member Avatars */}
@@ -243,41 +243,41 @@ export default function Hero() {
                         />
                       </motion.div>
                     ))}
-                    <div className="w-12 h-12 rounded-full border-2 border-white shadow-lg bg-gradient-to-r from-primary-400 to-secondary-400 flex items-center justify-center text-white text-xs font-bold">
-                      +300
+                    <div className="w-12 h-12 rounded-full border-2 border-white shadow-lg bg-gradient-to-r from-green-500 to-red-500 flex items-center justify-center text-white text-xs font-bold">
+                      +500
                     </div>
                   </div>
                 </div>
                 
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div className="bg-white/40 rounded-2xl p-4">
-                    <div className="text-3xl font-bold text-pink-600">98%</div>
-                    <div className="text-sm text-gray-600">Success Rate</div>
+                    <div className="text-3xl font-bold text-green-600">50+</div>
+                    <div className="text-sm text-gray-600">Businesses</div>
                   </div>
                   <div className="bg-white/40 rounded-2xl p-4">
-                    <div className="text-3xl font-bold text-purple-600">30+</div>
-                    <div className="text-sm text-gray-600">Monthly Events</div>
+                    <div className="text-3xl font-bold text-red-600">25+</div>
+                    <div className="text-sm text-gray-600">Cultural Events</div>
                   </div>
                 </div>
 
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 bg-white/40 rounded-xl p-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full flex items-center justify-center">
+                    <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-red-500 rounded-full flex items-center justify-center">
                       <HeartIcon className="h-5 w-5 text-white" />
                     </div>
-                    <span className="text-sm font-medium text-gray-700">Verified profiles only</span>
+                    <span className="text-sm font-medium text-gray-700">Heritage preservation</span>
                   </div>
                   <div className="flex items-center gap-3 bg-white/40 rounded-xl p-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full flex items-center justify-center">
+                    <div className="w-10 h-10 bg-gradient-to-r from-yellow-500 to-green-500 rounded-full flex items-center justify-center">
                       <UsersIcon className="h-5 w-5 text-white" />
                     </div>
-                    <span className="text-sm font-medium text-gray-700">Interest-based matching</span>
+                    <span className="text-sm font-medium text-gray-700">Community connections</span>
                   </div>
                   <div className="flex items-center gap-3 bg-white/40 rounded-xl p-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center">
+                    <div className="w-10 h-10 bg-gradient-to-r from-red-500 to-yellow-500 rounded-full flex items-center justify-center">
                       <SparklesIcon className="h-5 w-5 text-white" />
                     </div>
-                    <span className="text-sm font-medium text-gray-700">Weekly local events</span>
+                    <span className="text-sm font-medium text-gray-700">Cultural celebrations</span>
                   </div>
                 </div>
               </div>
