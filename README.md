@@ -1,177 +1,181 @@
-# 🌟 AdyaTribe - Community App Platform
+# LusoTown London
 
-A modern, scalable community platform for 30+ single & childfree women with interest-based groups, events, and safe verification.
+**A digital home for Portuguese-speaking communities in London**
 
-## 📍 **Project Links**
-- **GitHub Repository:** https://github.com/giquina/AdyaTribe
-- **Web Platform:** [AdyaTribe.com](https://adyatribe.com) (deployment ready)
-- **Codespaces:** [Create Cloud Environment](https://github.com/giquina/AdyaTribe) → Code → Codespaces
+LusoTown London is a vibrant online community platform created especially for Portuguese speakers and their families living in London. Whether you've recently moved here, have relatives from Lusophone countries, or simply want to connect with like-minded people who share your language and culture, this platform is your digital home away from home.
 
-## 🚀 Quick Start
+## 🌍 About LusoTown London
+
+We know how much it means to keep the language alive and stay connected to the places and people that shaped us. LusoTown London helps you:
+
+- **Find Events** - Attend local events that celebrate Lusophone culture — from music nights to food festivals and social meetups
+- **Connect** - Meet friends, family, and new acquaintances who understand your heritage and experiences  
+- **Share Stories** - Exchange memories and tips about living in London as a Portuguese speaker or descendant
+- **Discover Businesses** - Find Portuguese-speaking businesses and services that make life easier in London
+- **Build Community** - Create friendships and networks to support one another and celebrate your roots
+
+## 🎯 Target Audience
+
+- Portuguese speakers who have moved to London and want to find a community
+- British-born Lusophone descendants looking to connect with their cultural heritage
+- Families with roots in Portuguese-speaking countries seeking a friendly social space
+- Anyone who values Portuguese language and culture and wants to belong
+
+## ✨ Key Features
+
+### 📅 Events Calendar
+Cultural gatherings, community fairs, language practice sessions, and family-friendly activities
+
+### 👥 Community Groups  
+Interest-based forums for sharing advice, arranging meetups, and making friends
+
+### 🏪 Business Directory
+Restaurants, shops, legal & financial advisors, and more serving the Lusophone community
+
+### 📚 Resource Hub
+Information on housing, jobs, education, and language classes in London
+
+### 📖 Stories & Culture
+Articles, videos, and user stories celebrating Lusophone traditions and life in the UK
+
+## 🌈 Countries & Regions Represented
+
+- **Portugal** 🇵🇹
+- **Brazil** 🇧🇷  
+- **Angola** 🇦🇴
+- **Mozambique** 🇲🇿
+- **Cape Verde** 🇨🇻
+- **Guinea-Bissau** 🇬🇼
+- **São Tomé and Príncipe** 🇸🇹
+- **East Timor** 🇹🇱
+- **Macau** 🇲🇴
+- **Equatorial Guinea** 🇬🇶
+
+And their diaspora communities in London
+
+## 🎨 Brand Colors
+
+Our warm and welcoming palette inspired by the flags and spirit of Portuguese-speaking nations:
+
+- **Emerald Green** (#059669) — Growth, culture, heritage
+- **Deep Ocean Blue** (#1E40AF) — Connection, trust, and calm  
+- **Golden Yellow** (#F59E0B) — Warmth, joy, and community
+- **Warm Red** (#DC2626) — Passion, unity, and celebration
+- **Fado Purple** (#7C3AED) — Cultural traditions and premium experiences
+- **Tropical Coral** (#F97316) — Warm interactions and celebration
+
+## 🛠 Technology Stack
+
+### Web Application
+- **Next.js 14** with TypeScript
+- **Tailwind CSS** for styling with Portuguese-inspired design system
+- **Framer Motion** for animations
+- **Headless UI** for accessible components
+- **Lucide React** for icons
+
+### Backend Infrastructure
+- **Supabase** (PostgreSQL, Authentication, Storage, Edge Functions)
+- **Stripe** for payment processing (planned)
+
+## 🚀 Development Setup
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+- Git
+
+### Installation
 
 ```bash
-# Clone and setup (if working from fresh environment)
-git clone https://github.com/giquina/AdyaTribe.git
-cd AdyaTribe
+# Clone the repository
+git clone https://github.com/yourusername/LusoTown.git
+cd LusoTown
 
-# Setup mobile app (React Native + Expo)
-cd mobile-app
+# Install web app dependencies
+cd web-app
 npm install
-npm start
 
-# Setup web app (Next.js)
-cd ../web-app
-npm install
+# Start development server
 npm run dev
 ```
 
-## 📱 What You're Building
+Visit `http://localhost:3000` to see the application.
 
-### **Mobile App Features:**
-- 🔐 Peanut-style onboarding with selfie verification
-- 💬 Interest-based group chats (30+ groups)
-- 📅 Events with RSVP & Google Maps integration
-- 📸 Photo galleries & pinned resources
-- 💳 Stripe subscription tiers (Free/Premium)
-- 🔔 Push notifications
-- 🛡️ Safety features & reporting
+### Available Scripts
 
-### **Web Platform Features:**
-- 🌐 Complete landing page with hero, features, testimonials
-- 🔐 Authentication with social login (Google, Apple, Facebook)
-- 📖 Success stories and community showcase
-- 🛡️ Safety Center with guidelines and reporting
-- ⚖️ Legal compliance (Privacy Policy, Terms, Help Center)
-- 👥 Community pages and member directory
-- 📅 Events system with RSVP functionality
-- 💬 Forums and discussion boards
-- 👤 Advanced profile management system
-- 📱 Admin dashboard for moderation
+```bash
+# Development
+npm run dev          # Start development server
 
-## 🏗️ Architecture
+# Production  
+npm run build        # Build for production
+npm run start        # Start production server
+npm run export       # Build and export static site
 
-```
-📱 Mobile App (React Native + Expo)
-    ↕️
-🗄️ Supabase Backend (PostgreSQL + Auth + Storage)
-    ↕️  
-🌐 Web Platform (Next.js + TypeScript)
-    ↕️
-💳 Stripe Payments (planned)
+# Code Quality
+npm run lint         # Run ESLint
+npx tsc --noEmit     # Type check without emitting files
 ```
 
-## 🛠️ Tech Stack
-
-- **Mobile:** React Native 0.76.1 + Expo 52.0.0
-- **Backend:** Supabase (PostgreSQL, Auth, Storage, Edge Functions)
-- **Web:** Next.js 14 + TypeScript + Tailwind CSS
-- **UI Components:** Lucide Icons, Heroicons, Headless UI
-- **Payments:** Stripe API (integration ready)
-- **Hosting:** Expo (mobile) + Vercel/Static Export (web)
-
-## 📂 Project Structure
+## 📁 Project Structure
 
 ```
-AdyaTribe/
-├── mobile-app/           # React Native + Expo mobile application
+LusoTown/
+├── web-app/                 # Next.js web application
 │   ├── src/
-│   │   ├── screens/      # Onboarding flow (7 complete steps)
-│   │   ├── constants/    # Design system and styles
-│   │   └── lib/          # Supabase client integration
-├── web-app/              # Next.js web platform
-│   ├── src/
-│   │   ├── app/          # 25+ pages (landing, legal, platform)
-│   │   ├── components/   # 20+ specialized components
-│   │   └── lib/          # Utility libraries and Supabase client
-├── .claude/              # Claude Code agents and configuration
-├── docs/                 # Comprehensive documentation
-├── supabase/             # Database migrations and schema
-└── tasks/                # Project tracking and todos
+│   │   ├── app/            # Next.js 14 app router pages
+│   │   ├── components/     # React components
+│   │   └── lib/           # Utility functions and Supabase client
+│   ├── public/            # Static assets
+│   ├── tailwind.config.js # Tailwind CSS configuration
+│   └── package.json       # Web dependencies
+├── mobile-app/             # React Native + Expo mobile app (future development)
+├── docs/                  # Project documentation
+└── supabase/              # Database migrations and configuration
 ```
 
-## 🎯 Development Phases
+## 🌐 Deployment
 
-- ✅ **Phase 1:** Foundation Complete - Mobile onboarding (7/7 steps)
-- ✅ **Phase 2:** Platform Development Complete - Web app (25+ pages)
-- ✅ **Phase 2.5:** Backend Integration Complete - Supabase production ready
-- 🔄 **Phase 3:** Production Launch - Mobile-to-database integration
-- 📋 **Phase 4:** Real-time features - Chat, notifications, live updates
-- 💰 **Phase 5:** Subscription system - Stripe integration
-- 🚀 **Phase 6:** Scale & Growth - Advanced features
+The web application is configured for static export and can be deployed to various platforms:
 
-## 📚 Key Documentation
+- **Vercel** (recommended for Next.js)
+- **Netlify**
+- **GitHub Pages**
+- Any static hosting service
 
-- **[Development Instructions](DEVELOPMENT_INSTRUCTIONS.md)** - Step-by-step coding guide
-- **[Project Status](PROJECT_STATUS.md)** - Current progress tracker
-- **[GitHub Codespaces Setup](GITHUB_CODESPACES_SETUP.md)** - Cloud development guide
-- **[Claude Assistant Context](CLAUDE_ASSISTANT_CONTEXT.md)** - AI assistant information
-- **[Push to GitHub](PUSH_TO_GITHUB.md)** - Initial setup commands
+### Environment Variables
 
-## 🤖 AI Development Team
+Create a `.env.local` file in the `web-app` directory:
 
-This project uses Claude Code's agent system with specialized documentation:
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+```
 
-**Executable Agents (via Task tool):**
-- **`general-purpose`** - Complex research and multi-step tasks
-- **`feature-planner`** - Breaking down complex features
-- **`onboarding-flow-expert`** - AdyaTribe's 7-step onboarding optimization
-- **`design-system-guardian`** - Design consistency across platforms
-- **`file-consistency-manager`** - Project organization and duplicate management
-- **`react-native-debugger`** - Mobile development and Expo debugging
+## 🤝 Contributing
 
-**Reference Documentation (`.claude/agents/adyatribe/`):**
-- Development team knowledge (UI, UX, React Native, Testing, Supabase)
-- Deployment team expertise (Vercel, DevOps, GitHub Actions)
-- Management and security consultation
+We welcome contributions from the Portuguese-speaking community! Please feel free to:
 
-## 🚀 Getting Started
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-### **For Beginners:**
-1. Read [DEVELOPMENT_INSTRUCTIONS.md](DEVELOPMENT_INSTRUCTIONS.md)
-2. Follow the step-by-step guide
-3. Start with basic customizations
-4. Build features incrementally
+## 📄 License
 
-### **Current Status:**
-- ✅ Mobile app complete - 7/7 onboarding steps functional
-- ✅ Web platform complete - 25+ pages with full feature set
-- ✅ Backend infrastructure - Supabase production ready
-- ✅ Authentication system - Social login integration
-- ✅ Legal compliance - Privacy, Terms, Safety Center
-- 🔄 Backend integration - Connecting mobile onboarding to database
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### **Next Immediate Steps:**
-1. Integrate mobile onboarding with Supabase backend
-2. Implement real-time functionality (chat, notifications)
-3. Set up Stripe payment system
-4. Deploy web platform to production
-5. Prepare mobile app for App Store submission
+## 📞 Contact
 
-## 🎉 Community Impact
+For questions, suggestions, or support:
 
-**Platform Features Designed for Real Connection:**
-- 🔐 **Safety First:** Identity verification, selfie authentication, moderation
-- 👥 **Authentic Community:** 30+ age verification, genuine profiles only
-- 🌟 **Inclusive Space:** Celebrating single & childfree life choices
-- 🎯 **Interest-Based Matching:** 48 interests across 6 categories
-- 📅 **Real-World Events:** From hiking groups to professional networking
-- 💬 **Group-Based Chat:** Community focus, not 1:1 dating
-- 🏆 **Success Stories:** Already helping women build lasting friendships
-
-## 📞 Support & Contact
-
-- **Issues:** Use GitHub Issues for bug reports
-- **Discussions:** GitHub Discussions for feature requests
-- **Documentation:** All guides in `/docs` folder
-- **AI Assistance:** Use Claude agents in `/claude-agents`
+- Website: [LusoTown London](https://lusotown-london.vercel.app)
+- Email: hello@lusotown.london (coming soon)
+- Community: Join our platform to connect directly
 
 ---
 
-**Created with ❤️ for building amazing communities**
+**LusoTown London** - Proudly built for the Portuguese-speaking community in London 🌍
 
-*Join us in creating a platform that brings women together and builds lasting connections!*
-
-
----
-
-*Last Updated: 2025-01-11*
+*Unidos pela Língua* (United by Language)

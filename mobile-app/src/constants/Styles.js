@@ -2,32 +2,52 @@ import { StyleSheet, Dimensions } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
 
-// 🎨 Design System - Think of this as your app's DNA
+// 🎨 LusoTown Design System - Unidos pela Língua (United by Language)
 export const Colors = {
-  // Primary brand colors
-  primary: '#FF6B6B',        // Warm coral - friendly and inviting
-  primaryDark: '#FF5252',    // Deeper coral for interactions
-  primaryLight: '#FFB3BA',   // Light coral for backgrounds
+  // Primary brand colors - Azul Atlântico (Atlantic Blue)
+  primary: '#1E40AF',        // Deep ocean blue - connects all Portuguese nations
+  primaryDark: '#1E3A8A',    // Deep navy for interactions
+  primaryLight: '#DBEAFE',   // Light sky blue for backgrounds
   
-  // Secondary colors
-  secondary: '#4ECDC4',      // Calming teal - trustworthy
-  secondaryDark: '#26A69A',  
-  secondaryLight: '#B2DFDB',
+  // Secondary colors - Verde Esperança (Hope Green)
+  secondary: '#059669',      // Vibrant emerald - lush landscapes
+  secondaryDark: '#047857',  // Forest green
+  secondaryLight: '#D1FAE5', // Soft mint
+  
+  // Accent colors - Dourado Sol (Golden Sun)
+  accent: '#F59E0B',         // Warm amber - optimism and warmth
+  accentDark: '#D97706',     // Deep gold
+  accentLight: '#FEF3C7',    // Cream
+  
+  // Action color - Vermelho Paixão (Passion Red)
+  action: '#DC2626',         // Bold red - passionate spirit
+  actionDark: '#B91C1C',     // Deep crimson
+  actionLight: '#FEE2E2',    // Soft pink
+  
+  // Premium color - Roxo Fado (Fado Purple)
+  premium: '#7C3AED',        // Rich purple - soulful tradition
+  premiumDark: '#5B21B6',    // Deep violet
+  premiumLight: '#EDE9FE',   // Lavender
+  
+  // Warm accent - Coral Tropical (Tropical Coral)
+  coral: '#F97316',          // Vibrant coral - tropical paradise
+  coralDark: '#EA580C',      // Deep coral
+  coralLight: '#FED7AA',     // Peach
   
   // Neutral colors
   background: '#FAFAFA',     // Clean white background
   surface: '#FFFFFF',        // Card backgrounds
-  text: '#2C2C2C',          // Main text color
-  textSecondary: '#757575',  // Secondary text
-  textLight: '#BDBDBD',     // Placeholder text
+  text: '#1F2937',          // Darker main text for better contrast
+  textSecondary: '#6B7280',  // Secondary text
+  textLight: '#9CA3AF',     // Placeholder text
   
-  // Status colors
-  success: '#4CAF50',
-  warning: '#FF9800',
-  error: '#F44336',
+  // Status colors (updated for better accessibility)
+  success: '#059669',        // Using our secondary green
+  warning: '#F59E0B',        // Using our accent amber
+  error: '#DC2626',          // Using our action red
   
   // Special colors
-  border: '#E0E0E0',
+  border: '#E5E7EB',
   shadow: 'rgba(0, 0, 0, 0.1)',
   overlay: 'rgba(0, 0, 0, 0.5)',
 };
