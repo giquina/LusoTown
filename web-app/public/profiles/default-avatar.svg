@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#4ecdc4;stop-opacity:0.1"/>
+    </linearGradient>
+    <linearGradient id="person" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#4ecdc4;stop-opacity:0.8"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="100" fill="url(#bg)" stroke="#e5e7eb" stroke-width="2"/>
+  
+  <!-- Person silhouette -->
+  <g fill="url(#person)">
+    <!-- Head -->
+    <circle cx="100" cy="75" r="25"/>
+    
+    <!-- Body -->
+    <path d="M65 130 Q65 110 75 105 Q90 100 100 100 Q110 100 125 105 Q135 110 135 130 L135 160 Q135 170 125 175 L75 175 Q65 170 65 160 Z"/>
+  </g>
+  
+  <!-- AdyaTribe watermark -->
+  <text x="100" y="190" text-anchor="middle" font-family="system-ui" font-size="8" fill="#9ca3af" opacity="0.7">AdyaTribe</text>
+</svg>

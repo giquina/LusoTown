@@ -1,0 +1,62 @@
+{
+  "name": "AdyaTribe Development Environment",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-expo",
+        "bradlc.vscode-tailwindcss", 
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-json",
+        "formulahendry.auto-rename-tag",
+        "ms-vscode.vscode-typescript-next",
+        "ms-vscode.vscode-eslint",
+        "ms-vscode.js-debug",
+        "GitHubCopilot.github-copilot",
+        "ms-vscode.atom-keybindings"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "explicit"
+        },
+        "typescript.preferences.quoteStyle": "single",
+        "javascript.preferences.quoteStyle": "single",
+        "editor.tabSize": 2,
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 1000
+      }
+    }
+  },
+  
+  "forwardPorts": [19006, 19001, 19002, 3000, 8081],
+  "portsAttributes": {
+    "19006": {
+      "label": "Expo Dev Server",
+      "onAutoForward": "notify"
+    },
+    "19001": {
+      "label": "Expo Metro Bundler",
+      "onAutoForward": "silent"
+    },
+    "3000": {
+      "label": "Web Dashboard",
+      "onAutoForward": "notify"
+    }
+  },
+  
+  "postCreateCommand": "npm install -g @anthropic-ai/claude-code && cd mobile-app && npm install && echo '🎉 AdyaTribe development environment with Claude Code is ready!'",
+  
+  "remoteUser": "node",
+  
+  "mounts": [
+    "source=adyatribe-node-modules,target=${containerWorkspaceFolder}/mobile-app/node_modules,type=volume"
+  ]
+}

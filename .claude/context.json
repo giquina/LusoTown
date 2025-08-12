@@ -1,0 +1,252 @@
+{
+  "project": {
+    "name": "AdyaTribe",
+    "description": "Premium community platform for 30+ single & childfree women",
+    "version": "1.0.0",
+    "phase": "Foundation Complete - Phase 1",
+    "last_updated": "2025-08-09",
+    "repository": "https://github.com/giquina/AdyaTribe"
+  },
+  "file_structure": {
+    "root": "/workspaces/AdyaTribe",
+    "directories": {
+      ".claude/": {
+        "purpose": "Claude Code configuration and agents",
+        "subdirs": {
+          "agents/": "Specialized Claude Code subagents (6 total)",
+          "hooks/": "Git hooks for automated validation and commits",
+          "slash-commands/": "Custom Claude slash command definitions"
+        }
+      },
+      "mobile-app/": {
+        "purpose": "React Native + Expo mobile application",
+        "framework": "React Native 0.76.1 + Expo ~52.0.0",
+        "subdirs": {
+          "src/": "Application source code",
+          "src/screens/": "Screen components",
+          "src/screens/onboarding/": "7-step user registration flow",
+          "src/constants/": "Design system and shared constants"
+        },
+        "key_files": {
+          "App.js": "Main application entry point",
+          "package.json": "Dependencies and scripts",
+          "app.json": "Expo configuration",
+          "babel.config.js": "Babel transpilation config"
+        }
+      },
+      "claude-agents/": {
+        "purpose": "AI assistant team documentation (reference)",
+        "count": 8,
+        "types": ["UI Specialist", "UX Designer", "Project Manager", "React Native Expert", "Vercel Deployment", "Security", "Testing", "DevOps"]
+      },
+      "scripts/": {
+        "purpose": "Automation and utility scripts",
+        "key_files": {
+          "update-docs.js": "Auto-sync documentation with codebase"
+        }
+      },
+      "tasks/": {
+        "purpose": "Central project tracking",
+        "key_files": {
+          "todo.md": "Master task tracker - single source of truth"
+        }
+      },
+      "docs/": {
+        "purpose": "Project documentation",
+        "auto_generated": true
+      },
+      "errors/": {
+        "purpose": "Error tracking and debugging logs",
+        "auto_managed": true
+      }
+    }
+  },
+  "programming_languages": {
+    "primary": "JavaScript (ES6+)",
+    "frameworks": ["React Native", "Expo", "Next.js (planned)"],
+    "styling": ["React Native StyleSheet", "Tailwind CSS (planned)"],
+    "backend": ["Vercel Serverless Functions", "Stripe API"],
+    "database": ["Firebase Firestore (planned)"],
+    "deployment": ["Vercel", "Expo Application Services"]
+  },
+  "key_components": {
+    "mobile_app": {
+      "onboarding": {
+        "FirstNameStep.js": {
+          "purpose": "Collect user first name with validation",
+          "validation": "2+ character requirement",
+          "status": "complete"
+        },
+        "DateOfBirthStep.js": {
+          "purpose": "Age verification for 30+ requirement",
+          "validation": "DateTimePicker with 30+ age check",
+          "status": "complete"
+        },
+        "EmailStep.js": {
+          "purpose": "Email collection with real-time validation",
+          "validation": "Email regex with visual feedback",
+          "status": "complete"
+        },
+        "OnboardingFlow.js": {
+          "purpose": "Main navigation controller for 7 steps",
+          "current_steps": "3/7 implemented",
+          "data_management": "Centralized state with updateUserData"
+        }
+      },
+      "design_system": {
+        "Styles.js": {
+          "purpose": "Complete design system and constants",
+          "colors": {
+            "primary": "#FF6B6B (warm coral)",
+            "secondary": "#4ECDC4 (calming teal)",
+            "background": "#FAFAFA",
+            "text": "#2C2C2C"
+          },
+          "typography": {
+            "h1": "32px bold",
+            "h2": "24px bold", 
+            "body": "16px regular"
+          },
+          "spacing": {
+            "xs": 4, "sm": 8, "md": 16, "lg": 24, "xl": 32, "xxl": 48
+          }
+        }
+      }
+    },
+    "automation": {
+      "update-docs.js": {
+        "purpose": "Auto-sync all documentation with codebase changes",
+        "features": ["README updates", "CLAUDE.md metrics", "project status tracking"],
+        "trigger": "/update-docs slash command"
+      },
+      "pre-commit-validation.js": {
+        "purpose": "Smart commit validation and auto-commit",
+        "validations": ["Syntax checking", "Build validation", "Secret detection"],
+        "auto_commit": "Only when all validations pass"
+      }
+    }
+  },
+  "claude_agents": {
+    "count": 6,
+    "active_agents": {
+      "onboarding-flow-expert": {
+        "purpose": "7-step onboarding workflow specialist",
+        "tools": ["Read", "Edit", "MultiEdit", "Bash", "Grep", "Glob"],
+        "expertise": "User registration flow, validation patterns"
+      },
+      "react-native-debugger": {
+        "purpose": "Mobile debugging and troubleshooting",
+        "tools": ["Read", "Bash", "Grep", "Glob", "Edit"],
+        "expertise": "React Native + Expo issues, build problems"
+      },
+      "design-system-guardian": {
+        "purpose": "UI consistency and accessibility enforcement",
+        "tools": ["Read", "Grep", "Edit", "MultiEdit"],
+        "expertise": "Design system compliance, WCAG guidelines"
+      },
+      "feature-planner": {
+        "purpose": "Complex feature breakdown for beginners",
+        "tools": ["Read", "Write", "Grep", "Glob"],
+        "expertise": "Task decomposition, beginner-friendly planning"
+      },
+      "vercel-deployment-specialist": {
+        "purpose": "Web deployment and hosting expert",
+        "tools": ["Read", "Write", "Bash", "Edit"],
+        "expertise": "Vercel platform, serverless functions, performance"
+      },
+      "file-consistency-manager": {
+        "purpose": "Project organization and duplicate prevention",
+        "tools": ["Read", "Grep", "Glob", "Edit", "MultiEdit", "Bash"],
+        "expertise": "File organization, duplicate detection, project maintenance"
+      }
+    }
+  },
+  "project_status": {
+    "phase": "Foundation Complete",
+    "mobile_app": {
+      "onboarding_steps": "3/7 complete",
+      "completed": ["FirstName", "DateOfBirth", "Email"],
+      "remaining": ["ProfilePicture", "SelfieVerification", "InterestTags", "Welcome"]
+    },
+    "automation": {
+      "documentation_sync": "implemented",
+      "auto_commit": "implemented", 
+      "project_health": "in_progress"
+    },
+    "deployment": {
+      "mobile": "Expo development",
+      "web": "Vercel pipeline setup"
+    }
+  },
+  "dependencies": {
+    "mobile_app": {
+      "runtime": {
+        "react": "^19.1.1",
+        "react-native": "0.76.1",
+        "expo": "~52.0.0",
+        "@react-navigation/native": "latest",
+        "@react-navigation/stack": "latest",
+        "@react-native-community/datetimepicker": "latest",
+        "react-native-safe-area-context": "latest",
+        "react-native-screens": "latest"
+      },
+      "development": {
+        "@babel/core": "latest",
+        "babel-preset-expo": "latest"
+      }
+    }
+  },
+  "architecture_patterns": {
+    "mobile_app": {
+      "navigation": "React Navigation Stack Navigator",
+      "state_management": "React Hooks (useState, useEffect)",
+      "styling": "StyleSheet with design system constants",
+      "data_flow": "Props drilling with centralized state in OnboardingFlow",
+      "validation": "Real-time validation with visual feedback",
+      "error_handling": "Alert dialogs with user-friendly messages"
+    },
+    "project_organization": {
+      "documentation": "Single source of truth in tasks/todo.md",
+      "automation": "Event-driven with hooks and slash commands",
+      "file_consistency": "Automated duplicate detection and cleanup",
+      "version_control": "Git with automated validation before commits"
+    }
+  },
+  "development_workflow": {
+    "methodology": "CLAUDE.md 9-point operating procedure",
+    "task_tracking": "tasks/todo.md centralized tracking",
+    "documentation": "Auto-synced with /update-docs command",
+    "commits": "Validated automatically with pre-commit hooks",
+    "deployment": "Automated via Vercel CLI integration"
+  },
+  "target_audience": {
+    "primary": "30+ single & childfree women",
+    "needs": ["Community", "Friendship", "Shared interests", "Safe environment"],
+    "pain_points": ["Unsafe dating apps", "Difficulty finding like-minded friends"],
+    "value_proposition": "Verified, safe community for meaningful connections"
+  },
+  "next_development_priorities": {
+    "immediate": [
+      "Complete remaining onboarding steps (4-7)",
+      "Implement profile picture upload with validation",
+      "Add selfie verification system",
+      "Create interest selection interface"
+    ],
+    "short_term": [
+      "Firebase integration for data persistence", 
+      "User authentication system",
+      "Basic messaging functionality"
+    ],
+    "medium_term": [
+      "Group creation and management",
+      "Event planning and RSVP system",
+      "Payment integration for premium features"
+    ]
+  },
+  "context_usage": {
+    "purpose": "Maintain repo-wide context during longer Claude sessions",
+    "last_updated": "2025-08-09",
+    "update_frequency": "After major changes or new features",
+    "key_sections": ["file_structure", "key_components", "project_status", "development_workflow"]
+  }
+}

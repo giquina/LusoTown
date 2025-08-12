@@ -1,0 +1,19 @@
+{
+  "name": "auto-commit-validator",
+  "description": "Auto-commits code to GitHub only when validation passes",
+  "trigger": "after-tool-execution",
+  "conditions": {
+    "tools": ["Edit", "MultiEdit", "Write"],
+    "file_patterns": ["*.js", "*.jsx", "*.ts", "*.tsx", "*.json", "*.md"],
+    "exclude_patterns": ["node_modules/**", ".git/**", "build/**", "dist/**"]
+  },
+  "script": ".claude/hooks/pre-commit-validation.js",
+  "timeout": 120,
+  "async": false,
+  "environment": {
+    "CLAUDE_AUTO_PUSH": "true",
+    "NODE_ENV": "development"
+  },
+  "on_failure": "warn",
+  "retry_count": 0
+}
