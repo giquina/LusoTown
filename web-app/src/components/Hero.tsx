@@ -6,9 +6,11 @@ import { ArrowRightIcon, SparklesIcon, HeartIcon, UsersIcon } from '@heroicons/r
 import { useState, useEffect } from 'react'
 import SocialLogin from './SocialLogin'
 import { getImagesByCategory } from '@/lib/profileImages'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const { t } = useLanguage()
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -87,7 +89,7 @@ export default function Hero() {
               <div className="flex items-center gap-2">
                 <SparklesIcon className="h-5 w-5 text-green-600" />
                 <span className="text-sm font-bold bg-gradient-to-r from-green-600 to-red-600 bg-clip-text text-transparent">
-                  London's Portuguese Community • 500+ Members • Cultural Events
+                  {t('hero.badge')}
                 </span>
               </div>
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
@@ -101,16 +103,16 @@ export default function Hero() {
               className="space-y-4"
             >
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-tight tracking-tight break-words">
-                DISCOVER{' '}
+                {t('hero.title').split(' ').slice(0, 1).join(' ')}{' '}
                 <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 bg-clip-text text-transparent animate-pulse font-extrabold">
-                  LUSOTOWN
+                  {t('hero.title').split(' ').slice(1, 2).join(' ')}
                 </span>
                 <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800">
-                  LONDON
+                  {t('hero.title').split(' ').slice(2).join(' ')}
                 </span>
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl font-medium break-words">
-                A vibrant community platform for <span className="font-bold text-green-600">Portuguese speakers and their families</span> in London. Find cultural events, connect with your heritage, discover Portuguese businesses, and share stories of the <span className="font-bold text-red-600">Lusophone experience</span> in the capital.
+                {t('hero.subtitle')}
               </p>
             </motion.div>
 
@@ -160,7 +162,7 @@ export default function Hero() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-green-700 via-red-700 to-yellow-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10 flex items-center justify-center gap-3">
-                  JOIN PORTUGUESE COMMUNITY
+                  {t('hero.cta.primary')}
                   <ArrowRightIcon className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-200" />
                 </span>
               </motion.a>
@@ -174,7 +176,7 @@ export default function Hero() {
                 whileTap={{ scale: 0.95 }}
                 className="text-lg sm:text-xl font-bold px-8 sm:px-10 py-4 sm:py-5 bg-white/70 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-green-300"
               >
-                EXPLORE CULTURAL EVENTS
+                {t('hero.cta.secondary')}
               </motion.a>
             </motion.div>
 

@@ -6,14 +6,17 @@ import { Bars3Icon, XMarkIcon, HeartIcon, UserCircleIcon, ShieldCheckIcon, UserI
 import { Crown, LogOut } from 'lucide-react'
 // import { authService, User } from '@/lib/auth'
 import { useRouter } from 'next/navigation'
+import Logo from '@/components/Logo'
+import LanguageToggle from '@/components/LanguageToggle'
+import { useLanguage } from '@/context/LanguageContext'
 
-const publicNavigationLinks = [
-  { name: 'Events', href: '/events' },
-  { name: 'How It Works', href: '/how-it-works' },
-  { name: 'Community', href: '/community' },
-  { name: 'Pricing', href: '/pricing' },
-  { name: 'About', href: '/about' },
-  { name: 'Contact', href: '/contact' },
+const getNavigationLinks = (t: any) => [
+  { name: t('nav.events'), href: '/events' },
+  { name: t('nav.how-it-works'), href: '/how-it-works' },
+  { name: t('nav.community'), href: '/community' },
+  { name: t('nav.pricing'), href: '/pricing' },
+  { name: t('nav.about'), href: '/about' },
+  { name: t('nav.contact'), href: '/contact' },
 ]
 
 const authenticatedNavigationLinks = [
@@ -30,6 +33,7 @@ export default function Header() {
   const [user, setUser] = useState<any | null>(null)
   const [showUserMenu, setShowUserMenu] = useState(false)
   const router = useRouter()
+  const { t } = useLanguage()
 
   useEffect(() => {
     // Auth temporarily disabled for demo
@@ -56,7 +60,7 @@ export default function Header() {
     return badges[tier as keyof typeof badges] || badges.free
   }
 
-  const navigationLinks = user ? authenticatedNavigationLinks : publicNavigationLinks
+  const navigationLinks = user ? authenticatedNavigationLinks : getNavigationLinks(t)
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 min-h-[64px]">
@@ -64,11 +68,8 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-lg flex items-center justify-center">
-                <HeartIcon className="h-6 w-6 text-white" />
-              </div>
-              <span className="text-2xl font-bold text-gray-900">LusoTown London</span>
+            <a href="/" className="flex items-center">
+              <Logo size="medium" animated />
             </a>
           </div>
 
@@ -87,6 +88,7 @@ export default function Header() {
 
           {/* Desktop CTA / User Menu */}
           <div className="hidden md:flex items-center space-x-4">
+            <LanguageToggle />
             {user ? (
               <div className="relative">
                 <button
@@ -160,10 +162,10 @@ export default function Header() {
                   href="/login"
                   className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
                 >
-                  Log In
+                  {t('nav.login')}
                 </a>
                 <a href="/signup" className="btn-primary">
-                  Join Community
+                  {t('nav.join-community')}
                 </a>
               </>
             )}
@@ -223,6 +225,11 @@ export default function Header() {
                 ))}
                 
                 <div className="border-t border-gray-200 pt-4 pb-3">
+                  {/* Language Toggle - Mobile */}
+                  <div className="px-3 pb-4">
+                    <LanguageToggle />
+                  </div>
+                  
                   {user ? (
                     <>
                       <div className="flex items-center px-3 pb-3">

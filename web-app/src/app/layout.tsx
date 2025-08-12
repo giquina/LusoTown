@@ -4,6 +4,7 @@ import { Toaster } from 'react-hot-toast'
 import './globals.css'
 import WhatsAppWidget from '@/components/WhatsAppWidget'
 import LiveFeedNotifications from '@/components/LiveFeedNotifications'
+import { LanguageProvider } from '@/context/LanguageContext'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -88,12 +89,14 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta name="theme-color" content="#ff6b6b" />
+        <meta name="theme-color" content="#1E40AF" />
       </head>
       <body className={`${inter.className} antialiased`}>
-        {children}
-        <WhatsAppWidget />
-        <LiveFeedNotifications />
+        <LanguageProvider>
+          {children}
+          <WhatsAppWidget />
+          <LiveFeedNotifications />
+        </LanguageProvider>
         <Toaster
           position="top-right"
           toastOptions={{
