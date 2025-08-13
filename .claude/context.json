@@ -1,14 +1,14 @@
 {
   "project": {
-    "name": "AdyaTribe",
-    "description": "Premium community platform for 30+ single & childfree women",
+    "name": "LusoTown London",
+    "description": "Portuguese community platform for Portuguese speakers in London",
     "version": "1.0.0",
-    "phase": "Foundation Complete - Phase 1",
-    "last_updated": "2025-08-09",
-    "repository": "https://github.com/giquina/AdyaTribe"
+    "phase": "LusoTown London Platform Active Development",
+    "last_updated": "2025-08-12",
+    "repository": "https://github.com/giquina/LusoTown"
   },
   "file_structure": {
-    "root": "/workspaces/AdyaTribe",
+    "root": "/workspaces/LusoTown",
     "directories": {
       ".claude/": {
         "purpose": "Claude Code configuration and agents",

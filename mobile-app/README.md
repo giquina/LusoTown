@@ -1,6 +1,6 @@
-# 🌟 AdyaTribe Mobile App
+# 🌟 LusoTown London Mobile App
 
-React Native + Expo community app for 30+ single & childfree women.
+React Native + Expo community app for Portuguese speakers in London.
 
 ## 🚀 Quick Start
 
