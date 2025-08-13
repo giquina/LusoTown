@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import { motion } from 'framer-motion'
 import { ArrowRightIcon, SparklesIcon, HeartIcon, UsersIcon } from '@heroicons/react/24/outline'
 import { useState, useEffect } from 'react'
 import SocialLogin from './SocialLogin'
@@ -9,243 +8,116 @@ import { getImagesByCategory } from '@/lib/profileImages'
 import { useLanguage } from '@/context/LanguageContext'
 
 export default function Hero() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [mounted, setMounted] = useState(false)
   const { t } = useLanguage()
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
-    }
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
+    setMounted(true)
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden w-full" style={{
-      background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,182,193,0.15), transparent 40%), linear-gradient(135deg, #fefefe 0%, #f8f9fa 50%, #f0f4f8 100%)`
-    }}>
-      {/* Background decorative elements */}
+    <section className="relative min-h-screen flex items-center overflow-hidden w-full bg-gradient-to-br from-white via-gray-50 to-blue-50">
+      {/* Background decorative elements - CSS animations instead of framer-motion */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div 
-          animate={{ 
-            rotateX: [0, 5, 0],
-            rotateY: [0, 5, 0],
-            scale: [1, 1.05, 1]
-          }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-pink-200 via-purple-100 to-blue-100 rounded-full opacity-30"
-        />
-        <motion.div 
-          animate={{ 
-            rotateX: [0, -5, 0],
-            rotateY: [0, -5, 0],
-            scale: [1, 1.1, 1]
-          }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-tr from-orange-200 via-pink-100 to-purple-100 rounded-full opacity-25"
-        />
-        <motion.div
-          animate={{ 
-            rotate: [0, 360],
-            scale: [1, 1.2, 1]
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-1/4 left-1/4 w-6 h-6 bg-pink-400 rounded-full opacity-40"
-        />
-        <motion.div
-          animate={{ 
-            y: [0, -20, 0],
-            opacity: [0.3, 0.7, 0.3]
-          }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute top-3/4 right-1/3 w-4 h-4 bg-purple-400 rounded-full"
-        />
-        <motion.div
-          animate={{ 
-            x: [0, 15, 0],
-            scale: [1, 1.3, 1]
-          }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-          className="absolute bottom-1/3 left-2/3 w-3 h-3 bg-blue-400 rounded-full opacity-50"
-        />
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-pink-200 via-purple-100 to-blue-100 rounded-full opacity-30 animate-pulse" />
+        <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-tr from-orange-200 via-pink-100 to-purple-100 rounded-full opacity-25 animate-bounce" style={{ animationDuration: '4s' }} />
+        <div className="absolute top-1/4 left-1/4 w-6 h-6 bg-pink-400 rounded-full opacity-40" />
+        <div className="absolute top-3/4 right-1/3 w-4 h-4 bg-purple-400 rounded-full" />
+        <div className="absolute bottom-1/3 left-2/3 w-3 h-3 bg-blue-400 rounded-full opacity-50" />
       </div>
 
-      <div className="container-width relative z-10 section-padding">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
-          >
-            {/* Smart Personalized Welcome Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: -20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.6 }}
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-green-50 via-red-50 to-yellow-50 border border-green-200 rounded-2xl px-6 py-3 shadow-lg"
-            >
+          <div className={`space-y-8 transition-all duration-1000 ${mounted ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
+            {/* Smart Welcome Badge */}
+            <div className={`inline-flex items-center gap-3 bg-gradient-to-r from-green-50 via-red-50 to-yellow-50 border border-green-200 rounded-2xl px-6 py-3 shadow-lg transition-all duration-700 delay-100 ${mounted ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-5'}`}>
               <div className="flex items-center gap-2">
                 <SparklesIcon className="h-5 w-5 text-green-600" />
                 <span className="text-sm font-bold bg-gradient-to-r from-green-600 to-red-600 bg-clip-text text-transparent">
-                  {t('hero.badge')}
+                  UK Portuguese Community • All Ages Welcome • Culture & Events
                 </span>
               </div>
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            </motion.div>
+            </div>
 
             {/* Main Headlines */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              className="space-y-4"
-            >
-              <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-tight tracking-tight break-words">
-                Welcome to LusoTown — Your Portuguese Home in London
+            <div className={`space-y-4 transition-all duration-1000 delay-300 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-tight tracking-tight">
+                Welcome to <span className="bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 bg-clip-text text-transparent">LusoTown</span> — Your Portuguese Home in London
               </h1>
-              <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl font-medium break-words">
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed max-w-2xl font-medium">
                 Events, friends, culture, and community for Portuguese speakers and friends in London.
               </p>
-            </motion.div>
+            </div>
 
-            {/* Trust Indicators */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.8 }}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6"
-            >
-              {[
-                { icon: HeartIcon, text: "CULTURAL EVENTS", color: "#dc2626" },
-                { icon: UsersIcon, text: "500+ UK COMMUNITY MEMBERS", color: "#059669" },
-                { icon: SparklesIcon, text: "PORTUGUESE BUSINESSES", color: "#d97706" }
-              ].map((item, index) => (
-                <motion.div
-                  key={item.text}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.6 + index * 0.1, duration: 0.5 }}
-                  whileHover={{ scale: 1.05, rotateY: 5 }}
-                  className="group flex items-center gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <item.icon className="h-6 w-6" style={{color: item.color}} />
-                  </div>
-                  <span className="text-xs font-bold text-gray-800 tracking-wide text-center">{item.text}</span>
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4 sm:gap-6"
-            >
-              <motion.a
-                href="/signup"
-                whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: "0 20px 40px rgba(0,0,0,0.15)"
-                }}
-                whileTap={{ scale: 0.95 }}
-                className="relative group text-base sm:text-lg md:text-xl font-bold px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 overflow-hidden w-full sm:w-auto text-center"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-green-700 via-red-700 to-yellow-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
-                  Join the Community
-                  <ArrowRightIcon className="h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-1 transition-transform duration-200" />
-                </span>
-              </motion.a>
-
-              <motion.a
-                href="/events"
-                whileHover={{ 
-                  scale: 1.05,
-                  backgroundColor: "rgba(255,255,255,0.9)"
-                }}
-                whileTap={{ scale: 0.95 }}
-                className="text-base sm:text-lg md:text-xl font-bold px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 bg-white/70 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-green-300 w-full sm:w-auto text-center"
-              >
-                Explore Events
-              </motion.a>
-            </motion.div>
-          </motion.div>
-
-          {/* Right Column - Visual Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="relative"
-          >
-            {/* Member Photos Background */}
-            <div className="absolute inset-0 z-0">
-              <div className="grid grid-cols-3 gap-2 opacity-20 h-full">
-                {getImagesByCategory('community').slice(0, 6).map((photo, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ scale: 0, rotate: -180 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    transition={{ delay: 1 + index * 0.1, duration: 0.5 }}
-                    className="aspect-square rounded-2xl overflow-hidden"
-                  >
-                    <img 
-                      src={photo.path}
-                      alt={photo.alt}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </motion.div>
-                ))}
+            {/* Feature highlights */}
+            <div className={`grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 transition-all duration-1000 delay-500 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+              <div className="group flex items-center gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
+                  <HeartIcon className="h-6 w-6 text-white" />
+                </div>
+                <span className="text-xs font-bold text-gray-800 tracking-wide text-center">CULTURAL EVENTS</span>
+              </div>
+              <div className="group flex items-center gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
+                  <UsersIcon className="h-6 w-6 text-white" />
+                </div>
+                <span className="text-xs font-bold text-gray-800 tracking-wide text-center">500+ UK COMMUNITY MEMBERS</span>
+              </div>
+              <div className="group flex items-center gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
+                  <SparklesIcon className="h-6 w-6 text-white" />
+                </div>
+                <span className="text-xs font-bold text-gray-800 tracking-wide text-center">PORTUGUESE BUSINESSES</span>
               </div>
             </div>
 
+            {/* CTA Buttons */}
+            <div className={`flex flex-col sm:flex-row gap-4 sm:gap-6 transition-all duration-1000 delay-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+              <a
+                href="/signup"
+                className="group relative text-lg font-bold px-8 py-4 bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden w-full sm:w-auto text-center"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-green-700 via-red-700 to-yellow-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="relative z-10 flex items-center justify-center gap-3">
+                  Join the Community
+                  <ArrowRightIcon className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-200" />
+                </span>
+              </a>
+              <a
+                href="/events"
+                className="text-lg font-bold px-8 py-4 bg-white/70 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-green-300 hover:-translate-y-1 w-full sm:w-auto text-center"
+              >
+                Explore Events
+              </a>
+            </div>
+          </div>
+
+          {/* Right Column - Community Showcase */}
+          <div className={`relative transition-all duration-1000 delay-500 ${mounted ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
             <div className="relative z-10 bg-white/20 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/30">
               <div className="space-y-6">
-                {/* Social Login */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8, duration: 0.8 }}
-                  className="text-center"
-                >
-                  <SocialLogin mode="signup" />
-                </motion.div>
-
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-gray-800 mb-2">Join 500+ Portuguese Speakers</h3>
                   <p className="text-gray-600">Celebrating heritage across the UK</p>
                 </div>
-                
-                {/* Member Avatars */}
+
+                {/* Member avatars */}
                 <div className="flex justify-center mb-4">
                   <div className="flex -space-x-3">
-                    {getImagesByCategory('community').slice(0, 4).map((photo, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ x: -20, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{ delay: 0.8 + index * 0.1, duration: 0.4 }}
-                        className="w-12 h-12 rounded-full border-2 border-white shadow-lg overflow-hidden"
-                      >
-                        <img 
-                          src={photo.path}
-                          alt={photo.alt}
-                          className="w-full h-full object-cover"
-                          loading="lazy"
-                        />
-                      </motion.div>
+                    {Array.from({ length: 4 }).map((_, i) => (
+                      <div key={i} className="w-12 h-12 rounded-full border-2 border-white shadow-lg bg-gradient-to-br from-green-400 via-red-400 to-yellow-400 flex items-center justify-center text-white font-bold text-sm">
+                        {['M', 'A', 'J', 'L'][i]}
+                      </div>
                     ))}
                     <div className="w-12 h-12 rounded-full border-2 border-white shadow-lg bg-gradient-to-r from-green-500 to-red-500 flex items-center justify-center text-white text-xs font-bold">
                       +500
                     </div>
                   </div>
                 </div>
-                
+
+                {/* Stats */}
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div className="bg-white/40 rounded-2xl p-4">
                     <div className="text-3xl font-bold text-green-600">75+</div>
@@ -257,39 +129,14 @@ export default function Hero() {
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider">This Week's Events:</div>
-                  <div className="flex items-center gap-3 bg-white/40 rounded-xl p-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center">
-                      <HeartIcon className="h-5 w-5 text-white" />
-                    </div>
-                    <div className="text-left">
-                      <div className="text-sm font-medium text-gray-700">30+ Women's Portuguese Brunch</div>
-                      <div className="text-xs text-gray-500">Saturday • Notting Hill</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3 bg-white/40 rounded-xl p-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-yellow-500 to-red-500 rounded-full flex items-center justify-center">
-                      <SparklesIcon className="h-5 w-5 text-white" />
-                    </div>
-                    <div className="text-left">
-                      <div className="text-sm font-medium text-gray-700">35+ Luxury Fado Evening</div>
-                      <div className="text-xs text-gray-500">Friday • Central London</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3 bg-white/40 rounded-xl p-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center">
-                      <UsersIcon className="h-5 w-5 text-white" />
-                    </div>
-                    <div className="text-left">
-                      <div className="text-sm font-medium text-gray-700">Family Portuguese Football Watch</div>
-                      <div className="text-xs text-gray-500">Sunday • All Ages Welcome</div>
-                    </div>
-                  </div>
+                {/* Quick Social Login */}
+                <div className="space-y-3">
+                  <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider text-center">Quick Join</div>
+                  <SocialLogin mode="signup" />
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

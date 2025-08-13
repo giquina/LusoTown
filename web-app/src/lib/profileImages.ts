@@ -16,37 +16,37 @@ export const profileImages: Record<string, ProfileImage> = {
   'sarah-chen': {
     id: 'sarah-chen',
     path: '/profiles/testimonials/sarah-chen.jpg',
-    alt: 'Sarah Chen - AdyaTribe member from Clapham, London',
+    alt: 'Sarah Chen - LusoTown member from Clapham, London',
     category: 'testimonial'
   },
   'maya-patel': {
     id: 'maya-patel',
     path: '/profiles/testimonials/maya-patel.jpg',
-    alt: 'Maya Patel - AdyaTribe member from Shoreditch, London',
+    alt: 'Maya Patel - LusoTown member from Shoreditch, London',
     category: 'testimonial'
   },
   'jessica-williams': {
     id: 'jessica-williams',
     path: '/profiles/testimonials/jessica-williams.jpg',
-    alt: 'Jessica Williams - AdyaTribe member from Notting Hill, London',
+    alt: 'Jessica Williams - LusoTown member from Notting Hill, London',
     category: 'testimonial'
   },
   'emma-johnson': {
     id: 'emma-johnson',
     path: '/profiles/testimonials/emma-johnson.jpg',
-    alt: 'Emma Johnson - AdyaTribe member from Greenwich, London',
+    alt: 'Emma Johnson - LusoTown member from Greenwich, London',
     category: 'testimonial'
   },
   'priya-sharma': {
     id: 'priya-sharma',
     path: '/profiles/testimonials/priya-sharma.jpg',
-    alt: 'Priya Sharma - AdyaTribe member from Canary Wharf, London',
+    alt: 'Priya Sharma - LusoTown member from Canary Wharf, London',
     category: 'testimonial'
   },
   'lisa-thompson': {
     id: 'lisa-thompson',
     path: '/profiles/testimonials/lisa-thompson.jpg',
-    alt: 'Lisa Thompson - AdyaTribe member from Richmond, London',
+    alt: 'Lisa Thompson - LusoTown member from Richmond, London',
     category: 'testimonial'
   },
 
@@ -54,73 +54,73 @@ export const profileImages: Record<string, ProfileImage> = {
   'community-1': {
     id: 'community-1',
     path: '/profiles/community/member-1.jpg',
-    alt: 'AdyaTribe member - Professional woman smiling',
+    alt: 'LusoTown member - Professional woman smiling',
     category: 'community'
   },
   'community-2': {
     id: 'community-2',
     path: '/profiles/community/member-2.jpg',
-    alt: 'AdyaTribe member - Confident woman in professional setting',
+    alt: 'LusoTown member - Confident woman in professional setting',
     category: 'community'
   },
   'community-3': {
     id: 'community-3',
     path: '/profiles/community/member-3.jpg',
-    alt: 'AdyaTribe member - Diverse professional woman',
+    alt: 'LusoTown member - Diverse professional woman',
     category: 'community'
   },
   'community-4': {
     id: 'community-4',
     path: '/profiles/community/member-4.jpg',
-    alt: 'AdyaTribe member - Woman with warm smile',
+    alt: 'LusoTown member - Woman with warm smile',
     category: 'community'
   },
   'community-5': {
     id: 'community-5',
     path: '/profiles/community/member-5.jpg',
-    alt: 'AdyaTribe member - Professional woman outdoors',
+    alt: 'LusoTown member - Professional woman outdoors',
     category: 'community'
   },
   'community-6': {
     id: 'community-6',
     path: '/profiles/community/member-6.jpg',
-    alt: 'AdyaTribe member - Confident professional woman',
+    alt: 'LusoTown member - Confident professional woman',
     category: 'community'
   },
   'community-7': {
     id: 'community-7',
     path: '/profiles/community/member-7.jpg',
-    alt: 'AdyaTribe member - Woman with authentic smile',
+    alt: 'LusoTown member - Woman with authentic smile',
     category: 'community'
   },
   'community-8': {
     id: 'community-8',
     path: '/profiles/community/member-8.jpg',
-    alt: 'AdyaTribe member - Approachable professional woman',
+    alt: 'LusoTown member - Approachable professional woman',
     category: 'community'
   },
   'community-9': {
     id: 'community-9',
     path: '/profiles/community/member-9.jpg',
-    alt: 'AdyaTribe member - Confident woman in natural lighting',
+    alt: 'LusoTown member - Confident woman in natural lighting',
     category: 'community'
   },
   'community-10': {
     id: 'community-10',
     path: '/profiles/community/member-10.jpg',
-    alt: 'AdyaTribe member - Professional woman with warm expression',
+    alt: 'LusoTown member - Professional woman with warm expression',
     category: 'community'
   },
   'community-11': {
     id: 'community-11',
     path: '/profiles/community/member-11.jpg',
-    alt: 'AdyaTribe member - Diverse woman with bright smile',
+    alt: 'LusoTown member - Diverse woman with bright smile',
     category: 'community'
   },
   'community-12': {
     id: 'community-12',
     path: '/profiles/community/member-12.jpg',
-    alt: 'AdyaTribe member - Woman with authentic expression',
+    alt: 'LusoTown member - Woman with authentic expression',
     category: 'community'
   },
 

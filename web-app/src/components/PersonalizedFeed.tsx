@@ -392,12 +392,13 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
 
       {/* Feed Posts */}
       <div className="space-y-6">
-        {filteredPosts.map((post) => (
-          <motion.div
+        {filteredPosts.map((post, index) => (
+          <div
             key={post.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden"
+            className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden opacity-0 translate-y-5"
+            style={{
+              animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
+            }}
           >
             {/* Post Header */}
             <div className="p-6 pb-4">
@@ -560,7 +561,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>

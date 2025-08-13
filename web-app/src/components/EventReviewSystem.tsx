@@ -256,11 +256,10 @@ export const EventReviewSystem: React.FC<EventReviewSystemProps> = ({
               </p>
             </div>
           ) : (
-            <motion.form
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+            <form
               onSubmit={handleSubmitReview}
-              className="space-y-6"
+              className="space-y-6 opacity-0 translate-y-5 animate-fade-in-up"
+              style={{ animationDelay: '0.1s' }}
             >
               <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-4 rounded-lg border border-primary-100">
                 <h3 className="font-semibold text-gray-900 mb-2">Como foi a sua experiência? • How was your experience?</h3>
@@ -399,7 +398,7 @@ Partilhe o que tornou este evento especial para si e para a nossa comunidade por
                   {isSubmitting ? 'Submitting...' : 'Submit Review • Enviar Avaliação'}
                 </button>
               </div>
-            </motion.form>
+            </form>
           )}
         </div>
       )}
@@ -472,10 +471,9 @@ const ReviewCard: React.FC<{ review: EventReview }> = ({ review }) => {
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:border-gray-200 transition-colors"
+    <div
+      className="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:border-gray-200 transition-colors opacity-0 translate-y-5 animate-fade-in-up"
+      style={{ animationDelay: '0.2s' }}
     >
       <div className="flex items-start gap-4">
         <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-white shadow-lg">
@@ -530,7 +528,7 @@ const ReviewCard: React.FC<{ review: EventReview }> = ({ review }) => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }
 

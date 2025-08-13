@@ -214,11 +214,12 @@ const OverviewTab: React.FC<{ analytics: AnalyticsData }> = ({ analytics }) => {
                   <StarSolidIcon className="w-4 h-4 text-yellow-400" />
                 </div>
                 <div className="flex-1 bg-gray-200 rounded-full h-2">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: `${percentage}%` }}
-                    transition={{ duration: 0.8, delay: (5 - rating) * 0.1 }}
-                    className="h-2 rounded-full bg-gradient-to-r from-primary-400 to-secondary-400"
+                  <div
+                    className="h-2 rounded-full bg-gradient-to-r from-primary-400 to-secondary-400 transition-all duration-700 ease-out"
+                    style={{ 
+                      width: `${percentage}%`,
+                      animationDelay: `${(5 - rating) * 100}ms`
+                    }}
                   />
                 </div>
                 <span className="text-sm text-gray-600 w-12 text-right">{count}</span>
@@ -272,12 +273,12 @@ const CulturalTab: React.FC<{ analytics: AnalyticsData }> = ({ analytics }) => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {culturalMetrics.map((metric, index) => (
-          <motion.div
+          <div
             key={metric.label}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            className={`bg-gradient-to-r ${metric.bgColor} p-6 rounded-lg border border-gray-100`}
+            className={`bg-gradient-to-r ${metric.bgColor} p-6 rounded-lg border border-gray-100 opacity-0 translate-y-5`}
+            style={{
+              animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
+            }}
           >
             <div className="text-center">
               <div className={`text-3xl font-bold ${metric.textColor} mb-2`}>
@@ -294,7 +295,7 @@ const CulturalTab: React.FC<{ analytics: AnalyticsData }> = ({ analytics }) => {
               <h4 className={`font-semibold ${metric.textColor} mb-2`}>{metric.label}</h4>
               <p className="text-sm text-gray-600">{metric.description}</p>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
 
@@ -345,11 +346,12 @@ const TrendsTab: React.FC<{ analytics: AnalyticsData }> = ({ analytics }) => {
                 </div>
                 <div className="flex-1 flex items-center gap-2">
                   <div className="flex-1 bg-gray-200 rounded-full h-2">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={{ width: `${(trend.rating / 5) * 100}%` }}
-                      transition={{ duration: 0.8, delay: index * 0.1 }}
-                      className="h-2 rounded-full bg-gradient-to-r from-primary-400 to-secondary-400"
+                    <div
+                      className="h-2 rounded-full bg-gradient-to-r from-primary-400 to-secondary-400 transition-all duration-700 ease-out"
+                      style={{ 
+                        width: `${(trend.rating / 5) * 100}%`,
+                        animationDelay: `${index * 100}ms`
+                      }}
                     />
                   </div>
                   <div className="flex items-center gap-1">

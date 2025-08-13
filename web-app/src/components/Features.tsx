@@ -60,26 +60,7 @@ const getFeatures = (t: any) => [
   }
 ]
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6
-    }
-  }
-}
+// Removed heavy animation variants - using CSS transitions instead for better performance
 
 export default function Features() {
   const { t } = useLanguage()
@@ -114,19 +95,20 @@ export default function Features() {
           </p>
         </motion.div>
 
-        {/* Features Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+        {/* Features Grid - Optimized with CSS animations */}
+        <div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 opacity-0 translate-y-5 animate-fade-in-up"
+          style={{
+            animation: 'fadeInUp 0.6s ease-out 0.2s forwards'
+          }}
         >
           {features.map((feature, index) => (
-            <motion.div
+            <div
               key={feature.title}
-              variants={itemVariants}
-              className="group"
+              className="group opacity-0 translate-y-5"
+              style={{
+                animation: `fadeInUp 0.6s ease-out ${0.3 + index * 0.1}s both`
+              }}
             >
               <div className="card p-6 sm:p-8 h-full hover:scale-105 transition-all duration-300 group-hover:shadow-2xl">
                 <div className={`w-14 h-14 ${feature.bgColor} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
@@ -139,9 +121,9 @@ export default function Features() {
                   {feature.description}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Trust Indicators with Member Photos */}
         <motion.div

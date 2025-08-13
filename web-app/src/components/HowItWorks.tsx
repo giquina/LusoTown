@@ -57,13 +57,12 @@ export default function HowItWorks() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
-            <motion.div
+            <div
               key={step.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="bg-white rounded-2xl p-6 shadow-lg border border-white/50 text-center hover:shadow-xl transition-all duration-300"
+              className="bg-white rounded-2xl p-6 shadow-lg border border-white/50 text-center hover:shadow-xl transition-all duration-300 opacity-0 translate-y-5"
+              style={{
+                animation: `fadeInUp 0.6s ease-out ${0.3 + index * 0.1}s both`
+              }}
             >
               <div className="text-3xl mb-4">{step.number}</div>
               <div className="w-12 h-12 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -71,7 +70,7 @@ export default function HowItWorks() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">{step.title}</h3>
               <p className="text-gray-600">{step.description}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
 
