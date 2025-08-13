@@ -244,13 +244,13 @@ export default function EventDetailsPage() {
         // In a real implementation, this would call an API to create the post
         console.log('Auto-posting to LusoFeed:', feedPost)
         
-        alert(`Successfully ${status === 'going' ? 'RSVPed' : 'joined waitlist'}!`)
+        alert('success', `Successfully ${status === 'going' ? 'RSVPed' : 'joined waitlist'}!`)
       } else {
-        alert(result.message)
+        alert('error', result.message)
       }
     } catch (error) {
       console.error('Error with RSVP:', error)
-      alert('Failed to process RSVP. Please try again.')
+      alert('error', 'Failed to process RSVP. Please try again.')
     }
     
     setIsSubmitting(false)
@@ -265,13 +265,13 @@ export default function EventDetailsPage() {
       if (result.success) {
         setUserRSVP(null)
         loadEvent() // Refresh event data
-        alert('RSVP cancelled successfully!')
+        alert('success', 'RSVP cancelled successfully!')
       } else {
-        alert(result.message)
+        alert('error', result.message)
       }
     } catch (error) {
       console.error('Error cancelling RSVP:', error)
-      alert('Failed to cancel RSVP. Please try again.')
+      alert('error', 'Failed to cancel RSVP. Please try again.')
     }
   }
 

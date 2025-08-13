@@ -14,7 +14,7 @@ import {
   LanguageIcon,
   BellIcon,
   StarIcon,
-  FilterIcon
+  FunnelIcon as FilterIcon
 } from '@heroicons/react/24/outline'
 import { HeartIcon as HeartSolidIcon, CheckBadgeIcon } from '@heroicons/react/24/solid'
 import { useFollowing, FollowableEntity } from '@/context/FollowingContext'

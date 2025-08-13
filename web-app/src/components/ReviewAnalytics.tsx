@@ -9,7 +9,7 @@ import {
   TrophyIcon,
   HeartIcon,
   ChartPieIcon,
-  TrendingUpIcon,
+  ArrowTrendingUpIcon as TrendingUpIcon,
   CalendarIcon,
   FlagIcon,
   HandThumbUpIcon
