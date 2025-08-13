@@ -10,7 +10,6 @@ import AppDownloadSection from '@/components/AppDownloadSection'
 import TestimonialsNew from '@/components/TestimonialsNew'
 import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
-import WelcomeModal from '@/components/WelcomeModal'
 import { 
   ChatBubbleLeftRightIcon, 
   HeartIcon, 
@@ -54,7 +53,6 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
-      <WelcomeModal />
       <main className="min-h-screen w-full overflow-x-hidden">
         <Header />
         <div className="pt-16 w-full">
