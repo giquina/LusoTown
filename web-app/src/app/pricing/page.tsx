@@ -298,14 +298,14 @@ export default function Pricing() {
             </div>
 
             {/* Pricing Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
               {pricingTiers.map((tier, index) => (
                 <div
                   key={tier.name}
-                  className={`relative rounded-2xl p-8 ${
+                  className={`relative rounded-2xl p-6 ${
                     tier.highlighted
-                      ? 'bg-white border-2 border-primary-400 shadow-xl scale-105'
-                      : 'bg-white border border-gray-200 shadow-lg'
+                      ? 'bg-white border-2 border-primary-400 shadow-xl transform hover:scale-105 transition-all duration-300'
+                      : 'bg-white border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300'
                   }`}
                 >
                   {tier.badge && (
@@ -316,16 +316,17 @@ export default function Pricing() {
                     </div>
                   )}
                   
-                  <div className="text-center mb-8">
-                    <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center ${
-                      tier.name === 'Free' ? 'bg-gray-100 text-gray-600' :
-                      tier.name === 'Core' ? 'bg-primary-100 text-primary-600' :
+                  <div className="text-center mb-6">
+                    <div className={`w-12 h-12 mx-auto mb-4 rounded-xl flex items-center justify-center ${
+                      tier.name === 'Comunidade Grátis' ? 'bg-gray-100 text-gray-600' :
+                      tier.name === 'Membro Comunidade' ? 'bg-primary-100 text-primary-600' :
+                      tier.name === 'Organizador Básico' ? 'bg-secondary-100 text-secondary-600' :
                       'bg-gradient-to-r from-purple-100 to-pink-100 text-purple-600'
                     }`}>
                       {tier.highlighted ? tier.solidIcon : tier.icon}
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{tier.name}</h3>
-                    <p className="text-gray-600 mb-6">{tier.description}</p>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{tier.name}</h3>
+                    <p className="text-sm text-gray-600 mb-4 line-clamp-2">{tier.description}</p>
                     {(tier.name === 'Organizador Básico' || tier.name === 'Organizador Pro') && (
                       <div className="mb-4 p-3 bg-green-50 rounded-lg border border-green-200">
                         <div className="text-sm font-medium text-green-800 mb-1">vs Eventbrite:</div>
@@ -376,27 +377,42 @@ export default function Pricing() {
                       )}
                     </div>
 
-                    <button className={`w-full ${tier.buttonStyle} group`}>
-                      {tier.buttonText}
-                      <ArrowRightIcon className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <button className={`w-full py-3 px-4 rounded-lg font-semibold transition-all duration-200 group ${
+                      tier.name === 'Comunidade Grátis' 
+                        ? 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                        : tier.name === 'Membro Comunidade'
+                        ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white hover:from-primary-600 hover:to-secondary-600 shadow-lg hover:shadow-xl'
+                        : tier.name === 'Organizador Básico'
+                        ? 'bg-gradient-to-r from-secondary-500 to-green-500 text-white hover:from-secondary-600 hover:to-green-600 shadow-lg hover:shadow-xl'
+                        : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 shadow-lg hover:shadow-xl'
+                    }`}>
+                      <span className="flex items-center justify-center">
+                        {tier.buttonText}
+                        <ArrowRightIcon className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </span>
                     </button>
                   </div>
 
                   {/* Features */}
-                  <div className="space-y-3">
-                    {tier.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-start space-x-3">
-                        <CheckIconSolid className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-700 text-sm">{feature}</span>
+                  <div className="space-y-2">
+                    {tier.features.slice(0, 5).map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-start space-x-2">
+                        <CheckIconSolid className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-700 text-xs leading-relaxed">{feature}</span>
                       </div>
                     ))}
+                    {tier.features.length > 5 && (
+                      <div className="text-xs text-gray-500 mt-2">
+                        +{tier.features.length - 5} more features
+                      </div>
+                    )}
                     
                     {tier.limitations.length > 0 && (
-                      <div className="border-t border-gray-200 pt-4 mt-4">
-                        {tier.limitations.map((limitation, limitationIndex) => (
-                          <div key={limitationIndex} className="flex items-start space-x-3 mb-2">
-                            <XMarkIcon className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                            <span className="text-gray-500 text-sm">{limitation}</span>
+                      <div className="border-t border-gray-200 pt-3 mt-3">
+                        {tier.limitations.slice(0, 3).map((limitation, limitationIndex) => (
+                          <div key={limitationIndex} className="flex items-start space-x-2 mb-1">
+                            <XMarkIcon className="w-3 h-3 text-gray-400 flex-shrink-0 mt-1" />
+                            <span className="text-gray-500 text-xs">{limitation}</span>
                           </div>
                         ))}
                       </div>
@@ -829,8 +845,8 @@ export default function Pricing() {
 
             <div className="text-center mt-12">
               <p className="text-gray-600 mb-4">Ainda tem perguntas?</p>
-              <a href="/contact" className="btn-outline inline-flex items-center">
-                <PhoneIcon className="w-4 h-4 mr-2" />
+              <a href="/contact" className="inline-flex items-center gap-2 border-2 border-primary-400 text-primary-600 hover:bg-primary-400 hover:text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200">
+                <PhoneIcon className="w-4 h-4" />
                 Contacte a Nossa Equipa
               </a>
             </div>
@@ -975,11 +991,11 @@ export default function Pricing() {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <a href="/signup" className="btn-secondary bg-white text-primary-600 hover:bg-gray-100 text-lg px-8 py-4 group transform hover:scale-105 transition-all duration-200">
+                <a href="/signup" className="inline-flex items-center gap-2 bg-white text-primary-600 hover:bg-gray-100 text-lg font-semibold px-8 py-4 rounded-xl group transform hover:scale-105 transition-all duration-200 shadow-lg">
                   Comece Grátis a Sua Jornada
-                  <ArrowRightIcon className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
-                <a href="/login" className="btn-outline border-white text-white hover:bg-white hover:text-primary-600 text-lg px-8 py-4 transform hover:scale-105 transition-all duration-200">
+                <a href="/login" className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-primary-600 text-lg font-semibold px-8 py-4 rounded-xl transform hover:scale-105 transition-all duration-200">
                   Já é Membro? Entrar
                 </a>
               </div>

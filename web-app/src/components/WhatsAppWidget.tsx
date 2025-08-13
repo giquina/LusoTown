@@ -19,6 +19,7 @@ const WhatsAppWidget: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([])
   const [currentStep, setCurrentStep] = useState(0)
   const [showWidget, setShowWidget] = useState(false)
+  const [isDismissed, setIsDismissed] = useState(false)
   const [hasInteracted, setHasInteracted] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const { language } = useLanguage()
@@ -289,22 +290,27 @@ const WhatsAppWidget: React.FC = () => {
     setIsMinimized(false)
   }
 
-  if (!showWidget) return null
+  const dismissWidget = () => {
+    setIsDismissed(true)
+    setShowWidget(false)
+  }
+
+  if (!showWidget || isDismissed) return null
 
   return (
-    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 font-sans">
+    <div className="fixed bottom-4 right-4 z-50 font-sans">
       {/* Chat Window */}
       {isOpen && !isMinimized && (
-        <div className="mb-4 bg-white rounded-2xl shadow-2xl border border-gray-200 w-[calc(100vw-2rem)] sm:w-80 md:w-96 lg:w-80 max-w-[calc(100vw-2rem)] max-h-[85vh] sm:max-h-[32rem] flex flex-col animate-scale-in">
+        <div className="mb-3 bg-white rounded-xl shadow-xl border border-gray-200 w-[calc(100vw-2rem)] sm:w-72 max-w-[calc(100vw-2rem)] max-h-[70vh] sm:max-h-96 flex flex-col animate-scale-in">
           {/* Header */}
-          <div className="flex items-center justify-between p-4 bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 text-white rounded-t-2xl">
+          <div className="flex items-center justify-between p-3 bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 text-white rounded-t-xl">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm">
-                <span className="text-green-600 font-bold text-sm">LT</span>
+              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm">
+                <span className="text-green-600 font-bold text-xs">LT</span>
               </div>
               <div>
-                <h3 className="font-semibold text-sm">LusoTown Helper</h3>
-                <p className="text-xs opacity-90">Conectando lusófonos 🌍</p>
+                <h3 className="font-semibold text-sm">LusoTown</h3>
+                <p className="text-xs opacity-90">Helper</p>
               </div>
             </div>
             <div className="flex items-center space-x-2">
@@ -326,28 +332,28 @@ const WhatsAppWidget: React.FC = () => {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 bg-gray-50 min-h-[200px] max-h-[50vh] sm:max-h-80">
+          <div className="flex-1 overflow-y-auto p-3 space-y-2 bg-gray-50 min-h-[150px] max-h-[40vh] sm:max-h-60">
             {messages.map((message) => (
               <div key={message.id} className={`flex ${message.isBot ? 'justify-start' : 'justify-end'}`}>
-                <div className={`max-w-[85%] sm:max-w-xs md:max-w-sm ${
+                <div className={`max-w-[90%] ${
                   message.isBot 
-                    ? 'bg-white text-gray-800 rounded-2xl rounded-bl-md shadow-sm border border-gray-200' 
-                    : 'bg-gradient-to-r from-green-600 to-red-600 text-white rounded-2xl rounded-br-md shadow-sm'
-                } p-3`}>
+                    ? 'bg-white text-gray-800 rounded-xl rounded-bl-md shadow-sm border border-gray-200' 
+                    : 'bg-gradient-to-r from-green-600 to-red-600 text-white rounded-xl rounded-br-md shadow-sm'
+                } p-2.5`}>
                   {message.isBot && message.icon && (
                     <div className="flex items-center space-x-2 mb-2">
                       {message.icon}
                       <span className="text-xs font-medium text-gray-600">LusoTown Helper</span>
                     </div>
                   )}
-                  <p className="text-sm whitespace-pre-line leading-relaxed">{message.text}</p>
+                  <p className="text-xs whitespace-pre-line leading-relaxed">{message.text}</p>
                   {message.options && (
-                    <div className="mt-3 space-y-2">
+                    <div className="mt-2 space-y-1.5">
                       {message.options.map((option, index) => (
                         <button
                           key={index}
                           onClick={() => handleOptionClick(option)}
-                          className="block w-full text-left p-2.5 text-xs bg-gradient-to-r from-green-600 to-red-600 text-white rounded-xl hover:from-green-700 hover:to-red-700 transition-all duration-200 font-medium shadow-sm hover:shadow-md transform hover:scale-[1.02]"
+                          className="block w-full text-left p-2 text-xs bg-gradient-to-r from-green-600 to-red-600 text-white rounded-lg hover:from-green-700 hover:to-red-700 transition-all duration-200 font-medium shadow-sm hover:shadow-md"
                         >
                           {option}
                         </button>
@@ -361,7 +367,7 @@ const WhatsAppWidget: React.FC = () => {
           </div>
 
           {/* Footer */}
-          <div className="p-4 border-t border-gray-200 bg-white rounded-b-2xl">
+          <div className="p-3 border-t border-gray-200 bg-white rounded-b-xl">
             <div className="flex items-center justify-center space-x-2 text-gray-500 text-xs">
               <MessageCircle className="w-4 h-4" />
               <span>{language === 'pt' ? 'Clica nas opções acima para continuar!' : 'Click the options above to continue chatting!'}</span>
@@ -373,7 +379,7 @@ const WhatsAppWidget: React.FC = () => {
       {/* Floating Button */}
       <button
         onClick={toggleWidget}
-        className={`w-16 h-16 bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group relative overflow-hidden ${
+        className={`w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group relative overflow-hidden ${
           isOpen && !isMinimized ? 'scale-90' : 'scale-100 hover:scale-105'
         }`}
         aria-label="Open chat"
@@ -384,12 +390,12 @@ const WhatsAppWidget: React.FC = () => {
         {isOpen && !isMinimized ? (
           <div className="w-6 h-1 bg-white rounded relative z-10"></div>
         ) : (
-          <MessageCircle className="w-7 h-7 text-white group-hover:scale-110 transition-transform duration-200 relative z-10" />
+          <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:scale-110 transition-transform duration-200 relative z-10" />
         )}
         
         {/* Notification Badge */}
         {!hasInteracted && !isOpen && (
-          <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-600 text-white text-xs rounded-full flex items-center justify-center animate-pulse font-bold shadow-lg">
+          <div className="absolute -top-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-red-600 text-white text-xs rounded-full flex items-center justify-center animate-pulse font-bold shadow-lg">
             1
           </div>
         )}
@@ -402,7 +408,7 @@ const WhatsAppWidget: React.FC = () => {
 
       {/* Initial Welcome Tooltip */}
       {!hasInteracted && !isOpen && (
-        <div className="absolute bottom-20 right-0 sm:bottom-20 bg-white p-3 sm:p-4 rounded-xl shadow-xl border border-gray-200 max-w-[280px] sm:max-w-xs animate-fade-in">
+        <div className="absolute bottom-16 right-0 bg-white p-3 rounded-lg shadow-lg border border-gray-200 max-w-[240px] animate-fade-in">
           <div className="text-sm">
             <div className="flex items-center space-x-2 mb-2">
               <Heart className="w-4 h-4 text-green-600" />
@@ -410,10 +416,10 @@ const WhatsAppWidget: React.FC = () => {
                 {language === 'pt' ? 'Bem-vindo à LusoTown!' : 'Welcome to LusoTown!'}
               </strong>
             </div>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-600 leading-relaxed text-sm">
               {language === 'pt' 
-                ? 'Conecta lusófonos globalmente! Organiza ou encontra eventos portugueses 🌍'
-                : 'Connecting Portuguese speakers globally! Organize or find Portuguese events 🌍'
+                ? 'Conecta lusófonos! Eventos portugueses 🌍'
+                : 'Connect Portuguese speakers! Find events 🌍'
               }
             </p>
             <div className="mt-2 text-xs text-red-600 font-medium">
@@ -421,8 +427,17 @@ const WhatsAppWidget: React.FC = () => {
             </div>
           </div>
           {/* Arrow pointing to button */}
-          <div className="absolute -bottom-2 right-8 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-white"></div>
-          <div className="absolute -bottom-3 right-8 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-gray-200"></div>
+          <div className="absolute -bottom-2 right-6 w-0 h-0 border-l-6 border-l-transparent border-r-6 border-r-transparent border-t-6 border-t-white"></div>
+          <div className="absolute -bottom-2.5 right-6 w-0 h-0 border-l-6 border-l-transparent border-r-6 border-r-transparent border-t-6 border-t-gray-200"></div>
+          
+          {/* Close button for tooltip */}
+          <button
+            onClick={dismissWidget}
+            className="absolute top-1 right-2 p-1 rounded-full hover:bg-gray-100 transition-colors"
+            aria-label="Dismiss widget"
+          >
+            <X className="w-3 h-3 text-gray-400" />
+          </button>
         </div>
       )}
     </div>

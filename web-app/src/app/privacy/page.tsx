@@ -13,23 +13,24 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | AdyaTribe - GDPR Compliant Data Protection',
-  description: 'Learn how AdyaTribe protects your privacy and personal data. Our GDPR-compliant privacy policy for the UK\'s premier 30+ women\'s community platform.',
+  title: 'Privacy Policy | LusoTown London - GDPR Compliant Data Protection',
+  description: 'Learn how LusoTown London protects your privacy and personal data. Our GDPR-compliant privacy policy for the UK\'s premier Portuguese community platform.',
   keywords: [
     'privacy policy',
     'GDPR compliance',
     'data protection',
     'UK privacy',
-    'women community privacy',
+    'Portuguese community privacy',
     'personal data protection',
     'privacy rights UK',
     'data security',
-    'privacy policy women',
-    'UK GDPR'
+    'privacy policy Portuguese',
+    'UK GDPR',
+    'LusoTown London'
   ],
   openGraph: {
-    title: 'Privacy Policy | AdyaTribe',
-    description: 'Learn how AdyaTribe protects your privacy and personal data with our GDPR-compliant privacy policy.',
+    title: 'Privacy Policy | LusoTown London',
+    description: 'Learn how LusoTown London protects your privacy and personal data with our GDPR-compliant privacy policy.',
     type: 'website',
     url: '/privacy',
   },

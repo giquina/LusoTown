@@ -12,10 +12,10 @@ const getFooterLinks = (t: any) => ({
     { name: 'Community Guidelines', href: '/community-guidelines' },
   ],
   support: [
+    { name: 'How It Works', href: '/how-it-works' },
     { name: 'Help Center', href: '/help' },
     { name: 'Contact Us', href: '/contact' },
     { name: 'Safety & Verification', href: '/safety' },
-    { name: 'How It Works', href: '/how-it-works' },
   ],
   company: [
     { name: 'About LusoTown', href: '/about' },
@@ -24,10 +24,10 @@ const getFooterLinks = (t: any) => ({
     { name: 'Community Chat', href: '/forums' },
   ],
   legal: [
+    { name: 'Community Guidelines', href: '/community-guidelines' },
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },
     { name: 'Community Safety', href: '/safety' },
-    { name: 'Platform Guidelines', href: '/community-guidelines' },
   ],
 })
 

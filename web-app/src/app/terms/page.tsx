@@ -13,23 +13,24 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | AdyaTribe - Community Guidelines & Platform Rules',
-  description: 'Review AdyaTribe\'s terms of service, community guidelines, and membership requirements for our safe 30+ women\'s community platform.',
+  title: 'Terms of Service | LusoTown London - Portuguese Community Guidelines',
+  description: 'Review LusoTown London\'s terms of service, community guidelines, and membership requirements for our Portuguese community platform.',
   keywords: [
     'terms of service',
     'community guidelines',
     'platform rules',
     'membership terms',
-    'women community rules',
+    'Portuguese community rules',
     'UK terms',
     'community standards',
     'platform policy',
     'user agreement',
-    '30+ women community'
+    'Portuguese diaspora community',
+    'LusoTown London'
   ],
   openGraph: {
-    title: 'Terms of Service | AdyaTribe',
-    description: 'Review AdyaTribe\'s terms of service, community guidelines, and membership requirements.',
+    title: 'Terms of Service | LusoTown London',
+    description: 'Review LusoTown London\'s terms of service, community guidelines, and membership requirements.',
     type: 'website',
     url: '/terms',
   },

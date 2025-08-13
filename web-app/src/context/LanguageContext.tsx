@@ -27,11 +27,11 @@ const translations = {
     'nav.join-community': 'Join Community',
     
     // Hero Section
-    'hero.badge': "UK Portuguese Community • All Ages Welcome • Culture & Events",
-    'hero.title': 'CONNECT WITH LUSOTOWN UK',
-    'hero.subtitle': 'The social platform for Portuguese speakers across the UK. Connect with fellow Portuguese individuals throughout Britain, discover cultural events, find Portuguese communities, and celebrate our heritage together. Welcoming all ages!',
-    'hero.cta.primary': 'JOIN OUR UK COMMUNITY',
-    'hero.cta.secondary': 'EXPLORE UK EVENTS',
+    'hero.badge': "Unidos pela Língua • United by Language",
+    'hero.title': 'Connect. Celebrate. Community.',
+    'hero.subtitle': 'Your home for Portuguese culture in the UK. Find events, make friends, celebrate heritage.',
+    'hero.cta.primary': 'JOIN OUR COMMUNITY',
+    'hero.cta.secondary': 'EXPLORE EVENTS',
     
     // Features
     'features.title': 'Why Choose LusoTown',
@@ -48,6 +48,12 @@ const translations = {
     'features.stories.description': 'Real stories from Portuguese speakers who found their community, preserved their culture, and built meaningful connections through our global platform.',
     'features.local.title': 'Local Communities',
     'features.local.description': 'Connect with Portuguese speakers in your city or region. Find local communities, cultural centers, and Portuguese-speaking groups near you.',
+    'features.culture.title': 'Cultural Heritage',
+    'features.culture.description': 'Celebrate and preserve Portuguese traditions, music, and customs. From Fado nights to traditional festivals, keep our culture alive.',
+    'features.language.title': 'Language Exchange',
+    'features.language.description': 'Practice Portuguese with native speakers and help others learn English. Build connections through language learning.',
+    'features.heritage.title': 'Heritage Connection',
+    'features.heritage.description': 'Connect with your Portuguese roots and share stories with others who understand the journey of preserving culture abroad.',
     
     // Testimonials
     'testimonials.badge': 'Real Stories, Real Connections',
@@ -84,11 +90,11 @@ const translations = {
     'nav.join-community': 'Juntar à Comunidade',
     
     // Hero Section
-    'hero.badge': 'Comunidade Portuguesa UK • Todas as Idades Bem-vindas • Cultura & Eventos',
-    'hero.title': 'CONECTA-TE COM LUSOTOWN UK',
-    'hero.subtitle': 'A plataforma social para falantes de português no Reino Unido. Conecta-te com indivíduos portugueses por toda a Britânia, descobre eventos culturais, encontra comunidades portuguesas, e celebra a nossa herança juntos. Aberto a todas as idades - eventos individuais podem ter requisitos de idade específicos.',
-    'hero.cta.primary': 'JUNTAR À NOSSA COMUNIDADE UK',
-    'hero.cta.secondary': 'EXPLORAR EVENTOS UK',
+    'hero.badge': 'Unidos pela Língua • United by Language',
+    'hero.title': 'Conectar. Celebrar. Comunidade.',
+    'hero.subtitle': 'A tua casa para a cultura portuguesa no Reino Unido. Encontra eventos, faz amigos, celebra a herança.',
+    'hero.cta.primary': 'JUNTAR À COMUNIDADE',
+    'hero.cta.secondary': 'EXPLORAR EVENTOS',
     
     // Features
     'features.title': 'Porquê Escolher a LusoTown',
@@ -105,6 +111,12 @@ const translations = {
     'features.stories.description': 'Histórias reais de falantes de português que encontraram a sua comunidade, preservaram a sua cultura e construíram conexões significativas através da nossa plataforma global.',
     'features.local.title': 'Comunidades Locais',
     'features.local.description': 'Conecta-te com falantes de português na tua cidade ou região. Encontra comunidades locais, centros culturais e grupos portugueses perto de ti.',
+    'features.culture.title': 'Herança Cultural',
+    'features.culture.description': 'Celebra e preserva as tradições, música e costumes portugueses. Desde noites de Fado a festivais tradicionais, mantém a nossa cultura viva.',
+    'features.language.title': 'Intercâmbio Linguístico',
+    'features.language.description': 'Pratica português com falantes nativos e ajuda outros a aprender inglês. Constrói conexões através da aprendizagem de línguas.',
+    'features.heritage.title': 'Conexão da Herança',
+    'features.heritage.description': 'Conecta-te com as tuas raízes portuguesas e partilha histórias com outros que entendem a jornada de preservar a cultura no estrangeiro.',
     
     // Testimonials
     'testimonials.badge': 'Histórias Reais, Conexões Reais',

@@ -12,9 +12,7 @@ import { useLanguage } from '@/context/LanguageContext'
 
 const getNavigationLinks = (t: any) => [
   { name: t('nav.events'), href: '/events' },
-  { name: t('nav.how-it-works'), href: '/how-it-works' },
   { name: t('nav.community'), href: '/community' },
-  { name: t('nav.community-guidelines'), href: '/community-guidelines' },
   { name: t('nav.pricing'), href: '/pricing' },
   { name: t('nav.about'), href: '/about' },
   { name: t('nav.contact'), href: '/contact' },
@@ -171,8 +169,8 @@ export default function Header() {
                 >
                   {t('nav.login')}
                 </a>
-                <a href="/signup" className="bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 text-white font-bold py-2 px-4 rounded-lg shadow-lg hover:from-green-700 hover:via-red-700 hover:to-yellow-700 transition-all duration-200">
-                  {t('nav.join-community')}
+                <a href="/signup" className="bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 text-white font-bold py-2.5 px-6 rounded-lg shadow-lg hover:from-green-700 hover:via-red-700 hover:to-yellow-700 hover:shadow-xl transform hover:scale-105 transition-all duration-200">
+                  JOIN NOW
                 </a>
               </>
             )}
@@ -311,10 +309,10 @@ export default function Header() {
                       <div className="mt-3 px-3">
                         <a 
                           href="/signup"
-                          className="bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:from-green-700 hover:via-red-700 hover:to-yellow-700 transition-all duration-200 w-full text-center block"
+                          className="bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:from-green-700 hover:via-red-700 hover:to-yellow-700 hover:shadow-xl transform hover:scale-105 transition-all duration-200 w-full text-center block"
                           onClick={() => setMobileMenuOpen(false)}
                         >
-                          Join Community
+                          JOIN NOW
                         </a>
                       </div>
                     </>
