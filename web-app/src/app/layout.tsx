@@ -24,6 +24,7 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://lusotown.vercel.app'),
   title: 'LusoTown - UK Portuguese Community Platform',
   description: 'The premier platform for Portuguese-speaking communities across the UK. Connect with culture, find events, discover businesses, and build friendships from London to Scotland.',
   keywords: [
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://lusotown.com',
+    url: 'https://lusotown.vercel.app',
     title: 'LusoTown - UK Portuguese Community Platform',
     description: 'The premier platform for Portuguese-speaking communities across the UK. Connect with culture, find events, discover businesses, and build friendships from London to Scotland.',
     siteName: 'LusoTown',

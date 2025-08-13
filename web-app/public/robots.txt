@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://lusotown.vercel.app/sitemap.xml
+
+# Portuguese Community Platform
+# LusoTown - Connecting Portuguese speakers across the UK
