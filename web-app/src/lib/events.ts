@@ -40,6 +40,15 @@ export interface EventReview {
   createdAt: string
   helpful: number
   membershipTier: 'free' | 'core' | 'premium'
+  // Enhanced review fields
+  culturalValue?: number // 1-5 stars for cultural authenticity
+  organizationQuality?: number // 1-5 stars for organization
+  venueRating?: number // 1-5 stars for venue
+  wouldRecommend?: boolean
+  anonymous?: boolean
+  moderated?: boolean
+  reported?: boolean
+  verified?: boolean
 }
 
 export interface EventPhoto {
@@ -1156,28 +1165,244 @@ export class EventService {
     }
   }
 
-  async addReview(eventId: string, userId: string, reviewData: { rating: number; comment: string; reviewerName: string; membershipTier: string }): Promise<{ success: boolean; message: string }> {
+  async addReview(eventId: string, userId: string, reviewData: { 
+    rating: number; 
+    comment: string; 
+    reviewerName: string; 
+    membershipTier: string;
+    culturalValue?: number;
+    organizationQuality?: number;
+    venueRating?: number;
+    wouldRecommend?: boolean;
+    anonymous?: boolean;
+  }): Promise<{ success: boolean; message: string }> {
     try {
-      // Check if user attended the event
-      const { data: attendance } = await supabase
-        .from('event_attendees')
-        .select('status')
-        .eq('event_id', eventId)
-        .eq('user_id', userId)
-        .eq('status', 'attended')
-        .single()
-
-      if (!attendance) {
-        return { success: false, message: 'You must attend an event to review it' }
+      // For demo purposes, we'll check if user has RSVP'd instead of attended
+      const userRSVPs = await this.getUserRSVPs(userId)
+      const hasRSVP = userRSVPs.some(rsvp => rsvp.eventId === eventId && rsvp.status === 'confirmed')
+      
+      if (!hasRSVP) {
+        return { success: false, message: 'You must RSVP to an event to review it' }
       }
 
-      // In a real implementation, you'd have a reviews table
-      // For now, we'll just return success
+      // Find the event and check if user already reviewed
+      const event = this.events.find(e => e.id === eventId)
+      if (!event) {
+        return { success: false, message: 'Event not found' }
+      }
+
+      const existingReview = event.reviews.find(r => r.userId === userId)
+      if (existingReview) {
+        return { success: false, message: 'You have already reviewed this event' }
+      }
+
+      // Create new review
+      const newReview: EventReview = {
+        id: `rev-${Date.now()}`,
+        eventId,
+        userId,
+        reviewerName: reviewData.reviewerName,
+        rating: reviewData.rating,
+        comment: reviewData.comment,
+        createdAt: new Date().toISOString(),
+        helpful: 0,
+        membershipTier: reviewData.membershipTier as 'free' | 'core' | 'premium',
+        culturalValue: reviewData.culturalValue,
+        organizationQuality: reviewData.organizationQuality,
+        venueRating: reviewData.venueRating,
+        wouldRecommend: reviewData.wouldRecommend,
+        anonymous: reviewData.anonymous,
+        moderated: false,
+        reported: false,
+        verified: false
+      }
+
+      // Add review to event
+      event.reviews.push(newReview)
+      event.totalReviews = event.reviews.length
+
+      // Recalculate average rating
+      const totalRating = event.reviews.reduce((sum, review) => sum + review.rating, 0)
+      event.averageRating = totalRating / event.reviews.length
+
       return { success: true, message: 'Review added successfully' }
     } catch (error) {
       console.error('Error adding review:', error)
       return { success: false, message: 'Failed to add review' }
     }
+  }
+
+  async getEventReviews(eventId: string, options?: {
+    limit?: number;
+    offset?: number;
+    sortBy?: 'date' | 'rating' | 'helpful';
+    sortOrder?: 'asc' | 'desc';
+    filterByRating?: number;
+  }): Promise<EventReview[]> {
+    const event = this.events.find(e => e.id === eventId)
+    if (!event) return []
+
+    let reviews = [...event.reviews]
+
+    // Apply rating filter
+    if (options?.filterByRating) {
+      reviews = reviews.filter(r => r.rating === options.filterByRating)
+    }
+
+    // Apply sorting
+    if (options?.sortBy) {
+      reviews.sort((a, b) => {
+        let comparison = 0
+        switch (options.sortBy) {
+          case 'date':
+            comparison = new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+            break
+          case 'rating':
+            comparison = b.rating - a.rating
+            break
+          case 'helpful':
+            comparison = b.helpful - a.helpful
+            break
+        }
+        return options.sortOrder === 'asc' ? -comparison : comparison
+      })
+    }
+
+    // Apply pagination
+    if (options?.limit || options?.offset) {
+      const start = options?.offset || 0
+      const end = start + (options?.limit || reviews.length)
+      reviews = reviews.slice(start, end)
+    }
+
+    return reviews
+  }
+
+  async markReviewHelpful(reviewId: string, userId: string): Promise<{ success: boolean; message: string }> {
+    try {
+      // Find the review across all events
+      for (const event of this.events) {
+        const review = event.reviews.find(r => r.id === reviewId)
+        if (review) {
+          // In a real implementation, you'd track which users found reviews helpful
+          // For demo purposes, just increment the counter
+          review.helpful++
+          return { success: true, message: 'Marked as helpful' }
+        }
+      }
+      return { success: false, message: 'Review not found' }
+    } catch (error) {
+      console.error('Error marking review helpful:', error)
+      return { success: false, message: 'Failed to mark review as helpful' }
+    }
+  }
+
+  async reportReview(reviewId: string, userId: string, reason: string): Promise<{ success: boolean; message: string }> {
+    try {
+      // Find the review across all events
+      for (const event of this.events) {
+        const review = event.reviews.find(r => r.id === reviewId)
+        if (review) {
+          review.reported = true
+          // In a real implementation, you'd create a report record
+          return { success: true, message: 'Review reported for moderation' }
+        }
+      }
+      return { success: false, message: 'Review not found' }
+    } catch (error) {
+      console.error('Error reporting review:', error)
+      return { success: false, message: 'Failed to report review' }
+    }
+  }
+
+  async getEventAnalytics(eventId: string): Promise<{
+    totalReviews: number;
+    averageRating: number;
+    ratingDistribution: { [key: number]: number };
+    culturalValueAverage: number;
+    organizationAverage: number;
+    venueAverage: number;
+    recommendationPercentage: number;
+    membershipTierBreakdown: { [key: string]: number };
+    monthlyTrends: Array<{ month: string; rating: number; count: number }>;
+  } | null> {
+    const event = this.events.find(e => e.id === eventId)
+    if (!event || !event.reviews.length) return null
+
+    const reviews = event.reviews
+
+    // Rating distribution
+    const ratingDistribution = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 }
+    reviews.forEach(review => {
+      ratingDistribution[review.rating]++
+    })
+
+    // Cultural metrics
+    const culturalReviews = reviews.filter(r => r.culturalValue)
+    const culturalValueAverage = culturalReviews.length > 0 
+      ? culturalReviews.reduce((sum, r) => sum + (r.culturalValue || 0), 0) / culturalReviews.length
+      : 0
+
+    const organizationReviews = reviews.filter(r => r.organizationQuality)
+    const organizationAverage = organizationReviews.length > 0
+      ? organizationReviews.reduce((sum, r) => sum + (r.organizationQuality || 0), 0) / organizationReviews.length
+      : 0
+
+    const venueReviews = reviews.filter(r => r.venueRating)
+    const venueAverage = venueReviews.length > 0
+      ? venueReviews.reduce((sum, r) => sum + (r.venueRating || 0), 0) / venueReviews.length
+      : 0
+
+    // Recommendation percentage
+    const recommendReviews = reviews.filter(r => r.wouldRecommend !== undefined)
+    const recommendationPercentage = recommendReviews.length > 0
+      ? (recommendReviews.filter(r => r.wouldRecommend).length / recommendReviews.length) * 100
+      : 0
+
+    // Membership tier breakdown
+    const membershipTierBreakdown: { [key: string]: number } = { free: 0, core: 0, premium: 0 }
+    reviews.forEach(review => {
+      membershipTierBreakdown[review.membershipTier]++
+    })
+
+    // Monthly trends (simplified for demo)
+    const monthlyTrends = this.calculateMonthlyTrends(reviews)
+
+    return {
+      totalReviews: reviews.length,
+      averageRating: event.averageRating,
+      ratingDistribution,
+      culturalValueAverage,
+      organizationAverage,
+      venueAverage,
+      recommendationPercentage,
+      membershipTierBreakdown,
+      monthlyTrends
+    }
+  }
+
+  private calculateMonthlyTrends(reviews: EventReview[]): Array<{ month: string; rating: number; count: number }> {
+    const monthlyData: { [key: string]: { ratings: number[], count: number } } = {}
+    
+    reviews.forEach(review => {
+      const date = new Date(review.createdAt)
+      const monthKey = date.toISOString().slice(0, 7) // YYYY-MM format
+      
+      if (!monthlyData[monthKey]) {
+        monthlyData[monthKey] = { ratings: [], count: 0 }
+      }
+      
+      monthlyData[monthKey].ratings.push(review.rating)
+      monthlyData[monthKey].count++
+    })
+
+    return Object.entries(monthlyData)
+      .map(([month, data]) => ({
+        month,
+        rating: data.ratings.reduce((sum, rating) => sum + rating, 0) / data.ratings.length,
+        count: data.count
+      }))
+      .sort((a, b) => a.month.localeCompare(b.month))
   }
 
   private canAccessEvent(eventRequirement: string, userTier: string): boolean {

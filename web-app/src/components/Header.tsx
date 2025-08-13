@@ -14,18 +14,15 @@ const getNavigationLinks = (t: any) => [
   { name: t('nav.events'), href: '/events' },
   { name: t('nav.how-it-works'), href: '/how-it-works' },
   { name: t('nav.community'), href: '/community' },
-  { name: t('nav.pricing'), href: '/pricing' },
+  { name: t('nav.community-guidelines'), href: '/community-guidelines' },
   { name: t('nav.about'), href: '/about' },
-  { name: t('nav.contact'), href: '/contact' },
 ]
 
 const authenticatedNavigationLinks = [
-  { name: 'Dashboard', href: '/dashboard' },
-  { name: 'Profiles', href: '/profiles' },
   { name: 'Events', href: '/events' },
-  { name: 'Chat', href: '/chat' },
+  { name: 'Community Feed', href: '/feed' },
   { name: 'Community', href: '/community' },
-  { name: 'Pricing', href: '/pricing' },
+  { name: 'Dashboard', href: '/dashboard' },
 ]
 
 export default function Header() {
@@ -125,6 +122,14 @@ export default function Header() {
                       >
                         <UserIcon className="w-4 h-4" />
                         <span>My Profile</span>
+                      </a>
+                      <a
+                        href="/favorites"
+                        className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        onClick={() => setShowUserMenu(false)}
+                      >
+                        <HeartIcon className="w-4 h-4" />
+                        <span>My Favourites</span>
                       </a>
                       <a
                         href="/dashboard"
@@ -251,6 +256,14 @@ export default function Header() {
                       >
                         <UserIcon className="w-5 h-5" />
                         <span>My Profile</span>
+                      </a>
+                      <a
+                        href="/favorites"
+                        className="flex items-center space-x-2 text-gray-600 hover:text-primary-600 hover:bg-gray-50 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        <HeartIcon className="w-5 h-5" />
+                        <span>My Favourites</span>
                       </a>
                       
                       <a

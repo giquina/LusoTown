@@ -223,7 +223,7 @@ export default function Community() {
                 Find Your <span className="gradient-text">Perfect Group</span>
               </h2>
               <p className="text-lg text-gray-600 mb-12">
-                From weekend adventures to cozy book clubs, there's something for every interest
+                From weekend adventures to cozy book clubs, there's something for every interest. After participating in group activities, members can leave reviews to help improve future experiences - just like Google My Business!
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <motion.div

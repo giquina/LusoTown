@@ -195,7 +195,7 @@ export default function CreateEventPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-lg text-gray-600 mb-8"
               >
-                Bring women together for meaningful experiences and lasting friendships.
+                Bring women together for meaningful experiences and lasting friendships. After your event, attendees can leave reviews to help you improve future events - just like Google My Business!
               </motion.p>
               
               {/* Event Creation Stats */}

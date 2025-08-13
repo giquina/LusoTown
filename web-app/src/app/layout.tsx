@@ -6,6 +6,8 @@ import WhatsAppWidget from '@/components/WhatsAppWidget'
 import LiveFeedNotifications from '@/components/LiveFeedNotifications'
 import UserTypeSelection from '@/components/UserTypeSelection'
 import { LanguageProvider } from '@/context/LanguageContext'
+import { FavoritesProvider } from '@/context/FavoritesContext'
+import FavoriteNotification from '@/components/FavoriteNotification'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -99,10 +101,13 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} antialiased`}>
         <LanguageProvider>
-          <UserTypeSelection />
-          {children}
-          <WhatsAppWidget />
-          <LiveFeedNotifications />
+          <FavoritesProvider>
+            <UserTypeSelection />
+            {children}
+            <WhatsAppWidget />
+            <LiveFeedNotifications />
+            <FavoriteNotification />
+          </FavoritesProvider>
         </LanguageProvider>
         <Toaster
           position="top-right"

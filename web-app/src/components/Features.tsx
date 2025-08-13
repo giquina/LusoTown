@@ -201,6 +201,7 @@ export default function Features() {
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 Created by Portuguese adults who know what it's like to feel isolated in a new city. 
                 Every feature is designed to help you build genuine friendships and enjoy London's social scene with your Portuguese tribe.
+                After participating in events or group activities, members can leave reviews to help improve future experiences - just like Google My Business!
               </p>
             </div>
           </div>

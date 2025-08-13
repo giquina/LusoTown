@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useParams } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   CalendarIcon,
@@ -15,59 +15,17 @@ import {
   ExclamationTriangleIcon,
   InformationCircleIcon,
   ChevronLeftIcon,
-  ChevronRightIcon
+  ChevronRightIcon,
+  ChartBarIcon
 } from '@heroicons/react/24/outline'
 import { HeartIcon as HeartSolidIcon, StarIcon as StarSolidIcon } from '@heroicons/react/24/solid'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import EventReviewSystem from '@/components/EventReviewSystem'
+import ReviewAnalytics from '@/components/ReviewAnalytics'
 import { Event, EventReview, eventService } from '@/lib/events'
 import { authService } from '@/lib/auth'
 
-const ReviewCard = ({ review }: { review: EventReview }) => {
-  return (
-    <div className="bg-white p-6 rounded-xl border border-gray-200">
-      <div className="flex items-start gap-4">
-        <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-white shadow-lg">
-          <img 
-            src={review.profileImage || `https://images.unsplash.com/photo-${review.id === 'rev-1' ? '1494790108755-2616b612b1ac' : '1580489944761-15a19d654956'}?w=100&h=100&fit=crop&crop=face&auto=format`}
-            alt={`${review.reviewerName} profile`}
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
-        </div>
-        
-        <div className="flex-1">
-          <div className="flex items-center gap-2 mb-2">
-            <h4 className="font-semibold text-gray-900">{review.reviewerName}</h4>
-            <div className="flex items-center gap-1">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <StarSolidIcon
-                  key={star}
-                  className={`w-4 h-4 ${star <= review.rating ? 'text-yellow-400' : 'text-gray-200'}`}
-                />
-              ))}
-            </div>
-            <span className="text-sm text-gray-500 capitalize px-2 py-1 bg-gray-100 rounded-full">
-              {review.membershipTier}
-            </span>
-          </div>
-          
-          <p className="text-gray-700 mb-2">{review.comment}</p>
-          
-          <div className="flex items-center gap-4 text-sm text-gray-500">
-            <span>{new Date(review.createdAt).toLocaleDateString('en-GB')}</span>
-            {review.helpful > 0 && (
-              <span className="flex items-center gap-1">
-                <HeartIcon className="w-4 h-4" />
-                {review.helpful} helpful
-              </span>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 const RSVPModal = ({
   isOpen,
@@ -189,6 +147,7 @@ const RSVPModal = ({
 
 export default function EventDetailsPage() {
   const params = useParams()
+  const router = useRouter()
   const eventId = params?.id as string
   
   const [event, setEvent] = useState<Event | null>(null)
@@ -198,10 +157,24 @@ export default function EventDetailsPage() {
   const [userRSVP, setUserRSVP] = useState<'going' | 'waitlist' | null>(null)
   const [isFavorited, setIsFavorited] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [currentUser, setCurrentUser] = useState<any | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [notification, setNotification] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
+  const [showAnalytics, setShowAnalytics] = useState(false)
+  const [userHasRSVPd, setUserHasRSVPd] = useState(false)
 
   useEffect(() => {
+    // Get current user
+    const user = authService.getCurrentUser()
+    setCurrentUser(user)
     loadEvent()
   }, [eventId])
+
+  // Toast notification function
+  const alert = (type: 'success' | 'error', message: string) => {
+    setNotification({ type, message })
+    setTimeout(() => setNotification(null), 3000)
+  }
 
   const loadEvent = async () => {
     if (!eventId) return
@@ -216,13 +189,14 @@ export default function EventDetailsPage() {
       setEvent(eventData)
       
       // Check if user has already RSVP'd (mock for now)
-      const currentUser = authService.getCurrentUser()
-      if (currentUser) {
+      const user = authService.getCurrentUser()
+      if (user) {
         // This would be a real API call
-        const userRSVPs = await eventService.getUserRSVPs(currentUser.id)
+        const userRSVPs = await eventService.getUserRSVPs(user.id)
         const existingRSVP = userRSVPs.find(rsvp => rsvp.eventId === eventId)
         if (existingRSVP) {
           setUserRSVP(existingRSVP.status === 'confirmed' ? 'going' : 'waitlist')
+          setUserHasRSVPd(true)
         }
       }
     } catch (err) {
@@ -233,19 +207,44 @@ export default function EventDetailsPage() {
   }
 
   const handleRSVP = async (status: 'going' | 'waitlist') => {
-    const currentUser = authService.getCurrentUser()
-    if (!currentUser) {
-      // Redirect to login
-      window.location.href = '/login'
+    const user = authService.getCurrentUser()
+    if (!user) {
+      router.push('/login')
       return
     }
 
+    if (!event) return
+
+    setIsSubmitting(true)
+    
     try {
-      const result = await eventService.rsvpToEvent(eventId, currentUser.id, currentUser)
+      const result = await eventService.rsvpToEvent(eventId, user.id, user)
+      
       if (result.success) {
-        setUserRSVP(result.status === 'confirmed' ? 'going' : 'waitlist')
-        // Refresh event data to get updated attendance
-        loadEvent()
+        setUserRSVP(status)
+        
+        // Auto-post to LusoFeed when user RSVPs
+        const feedPost = {
+          type: 'event_rsvp',
+          eventId: eventId,
+          eventName: event.title,
+          eventDate: event.date,
+          eventLocation: event.location,
+          userId: user.id,
+          userName: user.name,
+          userAvatar: user.profileImage,
+          content: `I'm ${status === 'going' ? 'going to' : 'on the waitlist for'} "${event.title}"! Excited to join this event. #EventRSVP #LusoTown`,
+          hashtags: ['EventRSVP', 'LusoTown'],
+          createdAt: new Date().toISOString(),
+          likes: 0,
+          comments: 0,
+          liked: false
+        }
+        
+        // In a real implementation, this would call an API to create the post
+        console.log('Auto-posting to LusoFeed:', feedPost)
+        
+        alert(`Successfully ${status === 'going' ? 'RSVPed' : 'joined waitlist'}!`)
       } else {
         alert(result.message)
       }
@@ -253,17 +252,20 @@ export default function EventDetailsPage() {
       console.error('Error with RSVP:', error)
       alert('Failed to process RSVP. Please try again.')
     }
+    
+    setIsSubmitting(false)
   }
 
   const handleCancelRSVP = async () => {
-    const currentUser = authService.getCurrentUser()
-    if (!currentUser) return
+    const user = authService.getCurrentUser()
+    if (!user) return
 
     try {
-      const result = await eventService.cancelRSVP(eventId, currentUser.id)
+      const result = await eventService.cancelRSVP(eventId, user.id)
       if (result.success) {
         setUserRSVP(null)
         loadEvent() // Refresh event data
+        alert('RSVP cancelled successfully!')
       } else {
         alert(result.message)
       }
@@ -290,6 +292,19 @@ export default function EventDetailsPage() {
     const displayHour = hour % 12 || 12
     return `${displayHour}:${minutes} ${ampm}`
   }
+
+  const handleReviewAdded = (newReview: EventReview) => {
+    if (event) {
+      const updatedEvent = { ...event }
+      updatedEvent.reviews.push(newReview)
+      updatedEvent.totalReviews = updatedEvent.reviews.length
+      const totalRating = updatedEvent.reviews.reduce((sum, review) => sum + review.rating, 0)
+      updatedEvent.averageRating = totalRating / updatedEvent.reviews.length
+      setEvent(updatedEvent)
+    }
+  }
+
+  const isEventHost = currentUser && event && event.hostId === currentUser.id
 
   if (loading) {
     return (
@@ -328,7 +343,7 @@ export default function EventDetailsPage() {
     )
   }
 
-  const spotsLeft = event.maxAttendees - event.currentAttendees
+  const spotsLeft = event ? event.maxAttendees - event.currentAttendees : 0
   const isAlmostFull = spotsLeft <= 3 && spotsLeft > 0
   const isFull = spotsLeft <= 0
 
@@ -721,37 +736,29 @@ export default function EventDetailsPage() {
                   </div>
                 )}
 
-                {/* Reviews */}
-                {event.reviews && event.reviews.length > 0 && (
-                  <div className="bg-white rounded-2xl p-6 shadow-lg">
-                    <div className="flex items-center justify-between mb-6">
-                      <h2 className="text-xl font-bold text-gray-900">Reviews</h2>
-                      <div className="flex items-center gap-2">
-                        <div className="flex items-center">
-                          {[1, 2, 3, 4, 5].map((star) => (
-                            <StarSolidIcon
-                              key={star}
-                              className={`w-5 h-5 ${star <= Math.round(event.averageRating || 0) ? 'text-yellow-400' : 'text-gray-200'}`}
-                            />
-                          ))}
-                        </div>
-                        <span className="font-semibold text-gray-900">{event.averageRating}</span>
-                        <span className="text-gray-500">({event.totalReviews} reviews)</span>
-                      </div>
+                {/* Event Review System */}
+                <EventReviewSystem 
+                  event={event}
+                  userAttended={userHasRSVPd}
+                  onReviewAdded={handleReviewAdded}
+                />
+
+                {/* Review Analytics for Event Hosts */}
+                {isEventHost && (
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <h2 className="text-xl font-bold text-gray-900">Host Analytics</h2>
+                      <button
+                        onClick={() => setShowAnalytics(!showAnalytics)}
+                        className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200"
+                      >
+                        <ChartBarIcon className="w-4 h-4" />
+                        {showAnalytics ? 'Hide Analytics' : 'View Analytics'}
+                      </button>
                     </div>
                     
-                    <div className="space-y-4">
-                      {event.reviews.slice(0, 3).map((review) => (
-                        <ReviewCard key={review.id} review={review} />
-                      ))}
-                    </div>
-
-                    {event.reviews.length > 3 && (
-                      <div className="text-center mt-6">
-                        <button className="text-primary-600 hover:text-primary-700 font-medium">
-                          View all {event.totalReviews} reviews
-                        </button>
-                      </div>
+                    {showAnalytics && (
+                      <ReviewAnalytics eventId={event.id} isEventHost={true} />
                     )}
                   </div>
                 )}
@@ -897,6 +904,33 @@ export default function EventDetailsPage() {
           event={event}
           onRSVP={handleRSVP}
         />
+        
+        {/* Notification Toast */}
+        <AnimatePresence>
+          {notification && (
+            <motion.div
+              initial={{ opacity: 0, y: 50, scale: 0.3 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.2 } }}
+              className="fixed top-4 right-4 z-50"
+            >
+              <div className={`rounded-lg p-4 shadow-lg text-white ${ 
+                notification.type === 'success' 
+                  ? 'bg-green-500' 
+                  : 'bg-red-500'
+              }`}>
+                <div className="flex items-center gap-2">
+                  {notification.type === 'success' ? (
+                    <CheckCircleIcon className="w-5 h-5" />
+                  ) : (
+                    <ExclamationTriangleIcon className="w-5 h-5" />
+                  )}
+                  {notification.message}
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </main>
 
       <Footer />

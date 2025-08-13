@@ -84,39 +84,107 @@ export default function CommunityGuidelines() {
                     Our community guidelines ensure everyone feels welcome, valued, and supported while preserving our cultural heritage in London.
                   </p>
                   
-                  <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">Communication Standards</h3>
-                  <ul className="list-disc pl-6 space-y-2">
-                    <li>Respectful communication in both Portuguese and English</li>
-                    <li>Cultural sensitivity across all Portuguese-speaking countries</li>
-                    <li>Family-friendly language appropriate for all ages</li>
-                    <li>Professional networking ethics in business discussions</li>
-                  </ul>
+                  <div className="bg-white border-l-4 border-primary-500 p-4 rounded-r-lg my-6">
+                    <p className="font-semibold text-primary-700 mb-2">Inclusive Community Statement</p>
+                    <p className="text-gray-700">
+                      This platform is for open-minded people, and we do not discriminate in any way. You are welcome to join our staff, which comes from all the countries that speak Portuguese. 
+                      Whether you're Muslim, atheist, agnostic, or Christian, we just ask you to be respectful and share and teach and help one another in any way you can, 
+                      as life is already challenging as it is. We're making an effort so everyone can get along. That's why we have strict guidelines before attending one of our events. 
+                      We do not create events that are religious driven, as we believe religion views should be private by default. We just want to enjoy life around people that speak our language 
+                      and learn a thing or two whilst in this journey called life.
+                    </p>
+                  </div>
                   
-                  <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">Cultural Events & Heritage</h3>
-                  <ul className="list-disc pl-6 space-y-2">
-                    <li>Celebrate traditional Portuguese holidays and festivals</li>
-                    <li>Share cultural knowledge and traditions with younger generations</li>
-                    <li>Support Portuguese language learning and preservation</li>
-                    <li>Promote Portuguese businesses and cultural initiatives in London</li>
-                  </ul>
+                  <div className="bg-white/60 backdrop-blur-sm rounded-xl p-6 mt-6">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                      <GlobeAltIcon className="w-5 h-5 mr-2 text-primary-600" />
+                      Communication That Connects Hearts
+                    </h3>
+                    <ul className="list-none space-y-3">
+                      <li className="flex items-start">
+                        <span className="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Speak with warmth and respect in Portuguese, English, or any language of the heart</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="w-2 h-2 bg-secondary-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Celebrate the beautiful diversity across all Portuguese-speaking nations</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Use language that welcomes families, children, and people of all ages</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Share professional opportunities with generosity and integrity</span>
+                      </li>
+                    </ul>
+                  </div>
                   
-                  <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">Family & Community Support</h3>
-                  <ul className="list-disc pl-6 space-y-2">
-                    <li>Provide guidance for newcomers to London</li>
-                    <li>Share resources for education, healthcare, and legal matters</li>
-                    <li>Support families navigating British systems while maintaining Portuguese identity</li>
-                    <li>Create safe spaces for children and teenagers to connect with their heritage</li>
-                  </ul>
+                  <div className="bg-white/60 backdrop-blur-sm rounded-xl p-6 mt-6">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                      <HeartIcon className="w-5 h-5 mr-2 text-red-500" />
+                      Cultural Celebration & Heritage
+                    </h3>
+                    <ul className="list-none space-y-3">
+                      <li className="flex items-start">
+                        <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Honor traditional festivals—from Festa do Avante to Festa Junina, São João to Carnival</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Share stories, recipes, music, and traditions with younger generations</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="w-2 h-2 bg-yellow-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Keep our beautiful language alive and thriving in London</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Support Portuguese businesses and cultural initiatives with pride</span>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div className="bg-white/60 backdrop-blur-sm rounded-xl p-6 mt-6">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                      <UserGroupIcon className="w-5 h-5 mr-2 text-indigo-500" />
+                      Family & Community Love
+                    </h3>
+                    <ul className="list-none space-y-3">
+                      <li className="flex items-start">
+                        <span className="w-2 h-2 bg-indigo-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Welcome newcomers with open arms and practical guidance for London life</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="w-2 h-2 bg-teal-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Share resources for education, healthcare, legal matters, and daily navigation</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="w-2 h-2 bg-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Help families thrive in British society while honoring Portuguese identity</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span>Create joyful spaces where children and teens connect with their beautiful heritage</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
 
-              <div className="text-center">
-                <p className="text-gray-600 mb-8">
-                  Tem perguntas sobre as nossas diretrizes da comunidade? Estamos aqui para ajudar. / Questions about our community guidelines? We're here to help.
+              <div className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-2xl p-8 text-center">
+                <h3 className="text-2xl font-bold mb-4">Juntos Somos Mais Fortes • Together We Are Stronger</h3>
+                <p className="text-lg mb-6 opacity-90">
+                  These guidelines aren't rules—they're our promise to each other. A commitment to creating 
+                  the kind of community where every Portuguese speaker in London feels at home, valued, and loved.
+                </p>
+                <p className="text-base mb-8 opacity-80">
+                  Tem perguntas sobre as nossas diretrizes da comunidade? Estamos aqui para ajudar. 
+                  Questions about our community guidelines? We're here to help.
                 </p>
                 <a 
                   href="/contact" 
-                  className="btn-primary inline-flex items-center gap-2"
+                  className="inline-flex items-center gap-2 bg-white text-primary-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors duration-200"
                 >
                   Entre em Contato / Contact Our Team
                 </a>

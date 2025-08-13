@@ -103,16 +103,10 @@ export default function Hero() {
               className="space-y-4"
             >
               <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-tight tracking-tight break-words">
-                {t('hero.title').split(' ').slice(0, 1).join(' ')}{' '}
-                <span className="block text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 bg-clip-text text-transparent animate-pulse font-extrabold">
-                  {t('hero.title').split(' ').slice(1, 2).join(' ')}
-                </span>
-                <span className="block text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800">
-                  {t('hero.title').split(' ').slice(2).join(' ')}
-                </span>
+                Welcome to LusoTown — Your Portuguese Home in London
               </h1>
               <p className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl font-medium break-words">
-                {t('hero.subtitle')}
+                Events, friends, culture, and community for Portuguese speakers and friends in London.
               </p>
             </motion.div>
 
@@ -162,7 +156,7 @@ export default function Hero() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-green-700 via-red-700 to-yellow-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
-                  {t('hero.cta.primary')}
+                  Join the Community
                   <ArrowRightIcon className="h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-1 transition-transform duration-200" />
                 </span>
               </motion.a>
@@ -176,7 +170,7 @@ export default function Hero() {
                 whileTap={{ scale: 0.95 }}
                 className="text-base sm:text-lg md:text-xl font-bold px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 bg-white/70 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-green-300 w-full sm:w-auto text-center"
               >
-                {t('hero.cta.secondary')}
+                Explore Events
               </motion.a>
             </motion.div>
           </motion.div>
@@ -223,7 +217,7 @@ export default function Hero() {
                 </motion.div>
 
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">Join 500+ Lusophones</h3>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2">Join 500+ Portuguese Speakers</h3>
                   <p className="text-gray-600">Celebrating heritage across the UK</p>
                 </div>
                 

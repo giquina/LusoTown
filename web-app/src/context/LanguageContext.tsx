@@ -19,6 +19,7 @@ const translations = {
     'nav.events': 'Events',
     'nav.how-it-works': 'How It Works',
     'nav.community': 'Community',
+    'nav.community-guidelines': 'Community Guidelines',
     'nav.pricing': 'Pricing',
     'nav.about': 'About',
     'nav.contact': 'Contact',
@@ -57,7 +58,7 @@ const translations = {
     'footer.description': 'The platform for Portuguese-speaking communities across the UK. Connect with your Portuguese heritage, find local communities, attend cultural events, and build meaningful friendships. Open to all ages and families. Unidos pela Língua - United by Language.',
     'footer.newsletter.title': 'Stay Connected',
     'footer.newsletter.description': 'Get updates on Portuguese cultural events, community news, and gatherings happening across the UK.',
-    'footer.tagline': 'Connecting Portuguese hearts across the UK 🇵🇹',
+    'footer.tagline': 'Connecting Portuguese hearts across the UK',
     'footer.bottom': 'Unidos pela Língua • UK Community',
     
     // About Page
@@ -75,6 +76,7 @@ const translations = {
     'nav.events': 'Eventos',
     'nav.how-it-works': 'Como Funciona',
     'nav.community': 'Comunidade',
+    'nav.community-guidelines': 'Diretrizes da Comunidade',
     'nav.pricing': 'Preços',
     'nav.about': 'Sobre',
     'nav.contact': 'Contacto',
@@ -113,7 +115,7 @@ const translations = {
     'footer.description': 'A plataforma para comunidades de fala portuguesa no Reino Unido. Conecta-te com a tua herança portuguesa, encontra comunidades locais, participa em eventos culturais e constrói amizades significativas. Aberto a todas as idades e famílias. Unidos pela Língua - United by Language.',
     'footer.newsletter.title': 'Mantém-te Conectado',
     'footer.newsletter.description': 'Recebe atualizações sobre eventos culturais portugueses, notícias da comunidade e encontros por todo o Reino Unido.',
-    'footer.tagline': 'Conectando corações portugueses pelo Reino Unido 🇵🇹',
+    'footer.tagline': 'Conectando corações portugueses pelo Reino Unido',
     'footer.bottom': 'Unidos pela Língua • Comunidade UK',
     
     // About Page

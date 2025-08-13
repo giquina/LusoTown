@@ -1,7 +1,9 @@
 {
+  "buildCommand": "next build",
+  "devCommand": "next dev",
   "framework": "nextjs",
-  "trailingSlash": true,
-  "cleanUrls": true,
+  "installCommand": "npm install",
+  "outputDirectory": ".next",
   "headers": [
     {
       "source": "/(.*)",
@@ -20,8 +22,5 @@
         }
       ]
     }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  }
+  ]
 }

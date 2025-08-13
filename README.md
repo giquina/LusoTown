@@ -1,47 +1,59 @@
-# LusoTown London
+# 🇵🇹 LusoTown - Your Portuguese Home in London 🇵🇹🇧🇷🇦🇴🇲🇿🇨🇻🇬🇼🇸🇹🇹🇱🇲🇴🇬🇶
 
-**A digital home for Portuguese-speaking communities in London**
+LusoTown is your online community platform for Portuguese speakers and friends in London. Whether you're new to the city, have family roots in a Portuguese-speaking country, or simply love our culture and language, this is your space to connect, share, and celebrate.
 
-LusoTown London is a vibrant online community platform created especially for Portuguese speakers and their families living in London. Whether you've recently moved here, have relatives from Lusophone countries, or simply want to connect with like-minded people who share your language and culture, this platform is your digital home away from home.
+## 🌟 Key Features
 
-## 🌍 About LusoTown London
+### 📱 LusoFeed - Community Feed
+- Share updates, photos, and links with the LusoTown community
+- Tag events or businesses you're attending or recommending
+- React with emojis (❤️, 👍, 😂, 😮, 😢, 🤩)
+- Use hashtags to categorize your posts
+- Toggle between English and Portuguese views
 
-We know how much it means to keep the language alive and stay connected to the places and people that shaped us. LusoTown London helps you:
+### ❤️ Save Your Favourites
+- Bookmark events, businesses, and feed posts you love
+- Access all your saved items from your profile
+- Never miss out on your favorite events or businesses
+- Easily share favorites with friends
 
-- **Find Events** - Attend local events that celebrate Lusophone culture — from music nights to food festivals and social meetups
-- **Connect** - Meet friends, family, and new acquaintances who understand your heritage and experiences  
-- **Share Stories** - Exchange memories and tips about living in London as a Portuguese speaker or descendant
-- **Discover Businesses** - Find Portuguese-speaking businesses and services that make life easier in London
-- **Build Community** - Create friendships and networks to support one another and celebrate your roots
+### 🗓️ Auto-Post on RSVP
+- When you RSVP to an event, it automatically creates a post in LusoFeed
+- Share your attendance with the community
+- Build excitement for upcoming events
+- Connect with others going to the same events
 
-## 🎯 Target Audience
+### 🌍 Language Toggle
+- Switch between English and Portuguese views
+- Access content in your preferred language
+- Maintain your connection to Portuguese culture
+- Communicate comfortably with all community members
 
-- Portuguese speakers who have moved to London and want to find a community
-- British-born Lusophone descendants looking to connect with their cultural heritage
-- Families with roots in Portuguese-speaking countries seeking a friendly social space
-- Anyone who values Portuguese language and culture and wants to belong
+## 🎯 What You Can Do
 
-## ✨ Key Features
+### 🎉 Discover & Join Events
+Find cultural festivals, food markets, live music, networking meetups, and more.
 
-### 📅 Events Calendar
-Cultural gatherings, community fairs, language practice sessions, and family-friendly activities
+### 📱 Stay Updated on LusoFeed
+See the latest events, posts, and community updates in real time.
 
-### 👥 Community Groups  
-Interest-based forums for sharing advice, arranging meetups, and making friends
+### 📝 Post & Share with the Community
+Add your own updates, photos, and tips, and tag events or businesses.
 
-### 🏪 Business Directory
-Restaurants, shops, legal & financial advisors, and more serving the Lusophone community
+### ❤️ Save Your Favourites
+Bookmark events, businesses, and posts you love so you never miss out.
 
-### 📚 Resource Hub
-Information on housing, jobs, education, and language classes in London
+### 🏪 Support Portuguese Businesses
+Explore our directory and discover places run by or for Portuguese speakers.
 
-### 📖 Stories & Culture
-Articles, videos, and user stories celebrating Lusophone traditions and life in the UK
+### 👥 Connect with People Like You
+Meet new friends, share experiences, and keep your language and traditions alive in London.
 
-## 🌈 Countries & Regions Represented
+## 🌎 For All Portuguese-Speaking Nations
 
+LusoTown is completely free to join and built for people from:
 - **Portugal** 🇵🇹
-- **Brazil** 🇧🇷  
+- **Brazil** 🇧🇷
 - **Angola** 🇦🇴
 - **Mozambique** 🇲🇿
 - **Cape Verde** 🇨🇻
@@ -51,38 +63,13 @@ Articles, videos, and user stories celebrating Lusophone traditions and life in 
 - **Macau** 🇲🇴
 - **Equatorial Guinea** 🇬🇶
 
-And their diaspora communities in London
+And for anyone who feels part of our Portuguese-speaking world.
 
-## 🎨 Brand Colors
-
-Our warm and welcoming palette inspired by the flags and spirit of Portuguese-speaking nations:
-
-- **Emerald Green** (#059669) — Growth, culture, heritage
-- **Deep Ocean Blue** (#1E40AF) — Connection, trust, and calm  
-- **Golden Yellow** (#F59E0B) — Warmth, joy, and community
-- **Warm Red** (#DC2626) — Passion, unity, and celebration
-- **Fado Purple** (#7C3AED) — Cultural traditions and premium experiences
-- **Tropical Coral** (#F97316) — Warm interactions and celebration
-
-## 🛠 Technology Stack
-
-### Web Application
-- **Next.js 14** with TypeScript
-- **Tailwind CSS** for styling with Portuguese-inspired design system
-- **Framer Motion** for animations
-- **Headless UI** for accessible components
-- **Lucide React** for icons
-
-### Backend Infrastructure
-- **Supabase** (PostgreSQL, Authentication, Storage, Edge Functions)
-- **Stripe** for payment processing (planned)
-
-## 🚀 Development Setup
+## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
-- Git
 
 ### Installation
 
@@ -91,7 +78,7 @@ Our warm and welcoming palette inspired by the flags and spirit of Portuguese-sp
 git clone https://github.com/yourusername/LusoTown.git
 cd LusoTown
 
-# Install web app dependencies
+# Install dependencies
 cd web-app
 npm install
 
@@ -107,17 +94,15 @@ Visit `http://localhost:3000` to see the application.
 # Development
 npm run dev          # Start development server
 
-# Production  
+# Production
 npm run build        # Build for production
 npm run start        # Start production server
-npm run export       # Build and export static site
 
 # Code Quality
 npm run lint         # Run ESLint
-npx tsc --noEmit     # Type check without emitting files
 ```
 
-## 📁 Project Structure
+## 🏗️ Project Structure
 
 ```
 LusoTown/
@@ -125,32 +110,27 @@ LusoTown/
 │   ├── src/
 │   │   ├── app/            # Next.js 14 app router pages
 │   │   ├── components/     # React components
-│   │   └── lib/           # Utility functions and Supabase client
+│   │   ├── context/        # React context providers
+│   │   ├── lib/            # Utility functions and services
+│   │   └── styles/         # Global styles and Tailwind config
 │   ├── public/            # Static assets
-│   ├── tailwind.config.js # Tailwind CSS configuration
 │   └── package.json       # Web dependencies
-├── mobile-app/             # React Native + Expo mobile app (future development)
-├── docs/                  # Project documentation
-└── supabase/              # Database migrations and configuration
+├── README.md              # Project documentation
+└── LICENSE                # MIT License
 ```
 
-## 🌐 Deployment
+## 🛠️ Technology Stack
 
-The web application is configured for static export and can be deployed to various platforms:
+### Frontend
+- **Next.js 14** with TypeScript
+- **Tailwind CSS** for styling with Portuguese-inspired design system
+- **Framer Motion** for animations
+- **Headless UI** for accessible components
+- **Lucide React** for icons
 
-- **Vercel** (recommended for Next.js)
-- **Netlify**
-- **GitHub Pages**
-- Any static hosting service
-
-### Environment Variables
-
-Create a `.env.local` file in the `web-app` directory:
-
-```env
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
-```
+### Backend Infrastructure
+- **Supabase** (PostgreSQL, Authentication, Storage, Edge Functions)
+- **Stripe** for payment processing (planned)
 
 ## 🤝 Contributing
 
@@ -170,7 +150,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For questions, suggestions, or support:
 
-- Website: [LusoTown London](https://lusotown-london.vercel.app)
+- Website: [LusoTown London](https://lusotown.london)
 - Email: hello@lusotown.london (coming soon)
 - Community: Join our platform to connect directly
 

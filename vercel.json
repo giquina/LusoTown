@@ -1,8 +1,9 @@
 {
-  "buildCommand": "cd web-app && npm run build",
-  "devCommand": "cd web-app && npm run dev",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
   "framework": "nextjs",
-  "installCommand": "cd web-app && npm install",
+  "installCommand": "npm install",
+  "outputDirectory": ".next",
   "headers": [
     {
       "source": "/(.*)",

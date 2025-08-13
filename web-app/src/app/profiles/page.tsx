@@ -189,7 +189,7 @@ function ProfilesPageContent() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Discover Members</h1>
-          <p className="text-gray-600">Connect with like-minded women in your community</p>
+          <p className="text-gray-600">Connect with like-minded women in your community. After meeting members at events or in groups, you can leave reviews to help improve future experiences - just like Google My Business!</p>
         </div>
 
         {/* View Mode Tabs */}

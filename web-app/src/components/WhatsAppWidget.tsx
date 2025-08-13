@@ -39,13 +39,13 @@ const WhatsAppWidget: React.FC = () => {
       },
       // Member path  
       {
-        message: "Perfeito! 🎉 You want to find Portuguese events to attend! LusoTown connects you with:\n\n🇵🇹 Portuguese cultural events worldwide\n🍷 Wine tastings, fado nights, festivals\n👥 Portuguese speakers in your area and globally\n🏆 Quality verified events and organizers\n💬 Chat with other Portuguese speakers\n\n*Currently featuring London events, expanding globally soon!*",
+        message: "Perfeito! 🎉 You want to find Portuguese events to attend! LusoTown connects you with:\n\n🎭 Portuguese cultural events worldwide\n🍷 Wine tastings, fado nights, festivals\n👥 Portuguese speakers in your area and globally\n🏆 Quality verified events and organizers\n💬 Chat with other Portuguese speakers\n\n*Currently featuring London events, expanding globally soon!*",
         options: ["Show me London events!", "I'm in another city", "How do I connect with people?", "What types of events?"],
         icon: <Users className="w-4 h-4 text-red-600" />
       },
       // Platform info
       {
-        message: "Excelente! 🌍 LusoTown is the global home for Portuguese speakers:\n\n🎪 **For Event Organizers:** Tools to create, promote, and monetize Portuguese events\n🎭 **For Community Members:** Discover events and connect with Portuguese speakers\n🌐 **Global Reach:** Currently in London, expanding worldwide\n🇵🇹🇧🇷🇦🇴🇲🇿 All Portuguese-speaking countries welcome!\n\nUniting our global Portuguese family!",
+        message: "Excelente! 🌍 LusoTown is the global home for Portuguese speakers:\n\n🎪 **For Event Organizers:** Tools to create, promote, and monetize Portuguese events\n🎭 **For Community Members:** Discover events and connect with Portuguese speakers\n🌐 **Global Reach:** Currently in London, expanding worldwide\n🌍 All Portuguese-speaking countries welcome!\n\nUniting our global Portuguese family!",
         options: ["I want to organize events", "I want to attend events", "Tell me about global expansion", "How do I join?"],
         icon: <Calendar className="w-4 h-4 text-yellow-600" />
       },
@@ -76,13 +76,13 @@ const WhatsAppWidget: React.FC = () => {
       },
       // Member path
       {
-        message: "Perfeito! 🎉 Queres encontrar eventos portugueses para participar! A LusoTown conecta-te com:\n\n🇵🇹 Eventos culturais portugueses em todo o mundo\n🍷 Provas de vinho, noites de fado, festivais\n👥 Lusófonos na tua área e globalmente\n🏆 Eventos e organizadores verificados e de qualidade\n💬 Conversa com outros lusófonos\n\n*Atualmente com eventos em Londres, expandindo globalmente em breve!*",
+        message: "Perfeito! 🎉 Queres encontrar eventos portugueses para participar! A LusoTown conecta-te com:\n\n🎭 Eventos culturais portugueses em todo o mundo\n🍷 Provas de vinho, noites de fado, festivais\n👥 Lusófonos na tua área e globalmente\n🏆 Eventos e organizadores verificados e de qualidade\n💬 Conversa com outros lusófonos\n\n*Atualmente com eventos em Londres, expandindo globalmente em breve!*",
         options: ["Mostra-me eventos em Londres!", "Estou noutra cidade", "Como me conecto com pessoas?", "Que tipos de eventos?"],
         icon: <Users className="w-4 h-4 text-red-600" />
       },
       // Platform info
       {
-        message: "Excelente! 🌍 A LusoTown é o lar global dos lusófonos:\n\n🎪 **Para Organizadores:** Ferramentas para criar, promover e monetizar eventos portugueses\n🎭 **Para Membros da Comunidade:** Descobrir eventos e conectar com lusófonos\n🌐 **Alcance Global:** Atualmente em Londres, expandindo mundialmente\n🇵🇹🇧🇷🇦🇴🇲🇿 Todos os países lusófonos são bem-vindos!\n\nUnindo a nossa família portuguesa global!",
+        message: "Excelente! 🌍 A LusoTown é o lar global dos lusófonos:\n\n🎪 **Para Organizadores:** Ferramentas para criar, promover e monetizar eventos portugueses\n🎭 **Para Membros da Comunidade:** Descobrir eventos e conectar com lusófonos\n🌐 **Alcance Global:** Atualmente em Londres, expandindo mundialmente\n🌍 Todos os países lusófonos são bem-vindos!\n\nUnindo a nossa família portuguesa global!",
         options: ["Quero organizar eventos", "Quero participar em eventos", "Fala-me da expansão global", "Como me junto?"],
         icon: <Calendar className="w-4 h-4 text-yellow-600" />
       },
@@ -412,8 +412,8 @@ const WhatsAppWidget: React.FC = () => {
             </div>
             <p className="text-gray-600 leading-relaxed">
               {language === 'pt' 
-                ? 'Conecta lusófonos globalmente! Organiza ou encontra eventos portugueses 🌍🇵🇹'
-                : 'Connecting Portuguese speakers globally! Organize or find Portuguese events 🌍🇵🇹'
+                ? 'Conecta lusófonos globalmente! Organiza ou encontra eventos portugueses 🌍'
+                : 'Connecting Portuguese speakers globally! Organize or find Portuguese events 🌍'
               }
             </p>
             <div className="mt-2 text-xs text-red-600 font-medium">
