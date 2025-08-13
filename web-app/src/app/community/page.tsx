@@ -523,10 +523,10 @@ export default function Community() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
                 <a 
                   href="/signup" 
-                  className="bg-primary-400 text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary-500 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 inline-flex items-center gap-2"
+                  className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
                 >
-                  Start Your Journey
-                  <ArrowRightIcon className="h-5 w-5" />
+                  JOIN NOW
+                  <ArrowRightIcon className="h-5 w-5 ml-2" />
                 </a>
                 <a 
                   href="/how-it-works" 

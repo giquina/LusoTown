@@ -673,6 +673,30 @@ export default function About() {
             </div>
           </div>
         </section>
+
+        {/* Join CTA Section */}
+        <section className="py-20 bg-white">
+          <div className="container-width px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                Ready to Join Nossa Comunidade?
+              </h2>
+              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                Whether you're from Portugal, Brazil, Angola, or any Portuguese-speaking nation, 
+                your community in London is waiting for you.
+              </p>
+              <a 
+                href="/signup"
+                className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+              >
+                JOIN NOW
+              </a>
+              <p className="text-gray-500 text-sm mt-4">
+                Free to join • Immediate access • UK Portuguese community
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
       <Footer />
     </main>

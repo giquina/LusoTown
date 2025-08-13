@@ -45,19 +45,19 @@
 /* Custom component styles */
 @layer components {
   .btn-primary {
-    @apply bg-primary-400 hover:bg-primary-500 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 focus:ring-2 focus:ring-primary-400 focus:ring-offset-2;
+    @apply bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-bold px-8 py-4 rounded-2xl shadow-2xl hover:shadow-2xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2;
   }
   
   .btn-secondary {
-    @apply bg-secondary-400 hover:bg-secondary-500 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2;
+    @apply bg-white/70 backdrop-blur-lg text-gray-800 border-2 border-gray-200 hover:border-secondary-300 hover:text-secondary-700 font-bold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1 focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2;
   }
   
   .btn-outline {
-    @apply border-2 border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 focus:ring-2 focus:ring-primary-400 focus:ring-offset-2;
+    @apply border-2 border-secondary-600 text-secondary-600 hover:bg-gradient-to-r hover:from-secondary-600 hover:via-action-600 hover:to-accent-600 hover:text-white font-bold px-8 py-4 rounded-2xl transition-all duration-300 focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2;
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent;
   }
   
   .gradient-bg {
