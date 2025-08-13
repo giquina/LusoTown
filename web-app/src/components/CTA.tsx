@@ -75,7 +75,7 @@ export default function CTA() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="space-y-6"
           >
-            <a href="/signup" className="bg-white text-primary-600 hover:bg-gray-50 font-bold text-lg sm:text-xl px-10 sm:px-16 py-5 sm:py-6 rounded-xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 group inline-flex items-center">
+            <a href="/signup" className="bg-white text-primary-600 hover:bg-gray-50 font-bold text-lg sm:text-xl px-10 sm:px-16 py-5 sm:py-6 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 group inline-flex items-center">
               JOIN NOW
               <ArrowRightIcon className="h-6 w-6 ml-3 group-hover:translate-x-1 transition-transform duration-200" />
             </a>

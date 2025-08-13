@@ -140,11 +140,14 @@ export default function HowItWorks() {
                     {step.description}
                   </p>
 
-                  {/* Interactive arrow */}
-                  <div className={`flex items-center gap-2 text-${step.accentColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}>
+                  {/* Interactive CTA Link */}
+                  <a 
+                    href="/signup"
+                    className={`flex items-center gap-2 text-${step.accentColor} opacity-0 group-hover:opacity-100 transition-all duration-300 hover:gap-3 cursor-pointer`}
+                  >
                     <span className="text-sm font-semibold">Get Started</span>
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </div>
+                  </a>
                 </div>
 
                 {/* Connection line for desktop */}

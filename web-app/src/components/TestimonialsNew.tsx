@@ -202,12 +202,15 @@ export default function TestimonialsNew() {
   const currentTestimonials = testimonials[language as keyof typeof testimonials] || testimonials.en
 
   return (
-    <section className="py-20 gradient-bg relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-secondary-50 relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-40 h-40 bg-red-200 rounded-full opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-32 h-32 bg-green-200 rounded-full opacity-20 animate-pulse animation-delay-400"></div>
-        <div className="absolute top-1/2 left-1/2 w-56 h-56 bg-gradient-to-r from-red-100 to-green-100 rounded-full opacity-20 transform -translate-x-1/2 -translate-y-1/2 animate-pulse animation-delay-200"></div>
+        <div className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-br from-accent-200 via-coral-100 to-secondary-100 rounded-full opacity-30 animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-32 h-32 bg-gradient-to-tr from-secondary-200 via-accent-100 to-action-100 rounded-full opacity-25 animate-pulse animation-delay-400"></div>
+        <div className="absolute top-1/2 left-1/2 w-56 h-56 bg-gradient-to-r from-accent-100 via-secondary-100 to-coral-100 rounded-full opacity-20 transform -translate-x-1/2 -translate-y-1/2 animate-pulse animation-delay-200"></div>
+        <div className="absolute top-1/4 left-1/4 w-6 h-6 bg-secondary-400 rounded-full opacity-40"></div>
+        <div className="absolute top-3/4 right-1/3 w-4 h-4 bg-accent-400 rounded-full"></div>
+        <div className="absolute bottom-1/3 left-2/3 w-3 h-3 bg-action-400 rounded-full opacity-50"></div>
       </div>
 
       <div className="container-width section-padding relative z-10">
@@ -341,15 +344,15 @@ export default function TestimonialsNew() {
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-white/50 shadow-lg">
             <div className="grid sm:grid-cols-3 gap-8">
               <div>
-                <p className="text-4xl font-bold text-primary-400 mb-2">4.9/5</p>
+                <p className="text-4xl font-bold text-primary-500 mb-2">4.9/5</p>
                 <p className="text-gray-600">Average Rating</p>
               </div>
               <div>
-                <p className="text-4xl font-bold text-secondary-400 mb-2">15K+</p>
+                <p className="text-4xl font-bold text-secondary-500 mb-2">15K+</p>
                 <p className="text-gray-600">Global Members</p>
               </div>
               <div>
-                <p className="text-4xl font-bold text-red-400 mb-2">50+</p>
+                <p className="text-4xl font-bold text-accent-500 mb-2">50+</p>
                 <p className="text-gray-600">Countries Represented</p>
               </div>
             </div>

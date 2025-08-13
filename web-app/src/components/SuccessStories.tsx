@@ -228,9 +228,9 @@ export default function SuccessStories() {
           </p>
           <a 
             href="/signup" 
-            className="btn-primary text-lg px-10 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 inline-block"
+            className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
           >
-            Start Your Friendship Journey
+            JOIN NOW
           </a>
         </motion.div>
       </div>

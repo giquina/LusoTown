@@ -36,12 +36,15 @@ const mobileFeatures = [
 
 export default function AppDownloadSection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-primary-50 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-secondary-50 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 right-20 w-48 h-48 bg-secondary-100 rounded-full opacity-30 blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-64 h-64 bg-primary-100 rounded-full opacity-20 blur-3xl"></div>
-        <div className="absolute top-1/2 right-1/4 w-32 h-32 bg-purple-100 rounded-full opacity-25 blur-2xl"></div>
+        <div className="absolute top-20 right-20 w-48 h-48 bg-gradient-to-br from-accent-200 via-coral-100 to-secondary-100 rounded-full opacity-30 blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 left-20 w-64 h-64 bg-gradient-to-tr from-secondary-200 via-accent-100 to-action-100 rounded-full opacity-25 blur-3xl"></div>
+        <div className="absolute top-1/2 right-1/4 w-32 h-32 bg-gradient-to-r from-accent-100 to-coral-100 rounded-full opacity-30 blur-2xl"></div>
+        <div className="absolute top-1/4 left-1/4 w-6 h-6 bg-secondary-400 rounded-full opacity-40"></div>
+        <div className="absolute top-3/4 right-1/3 w-4 h-4 bg-accent-400 rounded-full"></div>
+        <div className="absolute bottom-1/3 left-2/3 w-3 h-3 bg-action-400 rounded-full opacity-50"></div>
       </div>
 
       <div className="container-width section-padding relative z-10">
@@ -117,9 +120,11 @@ export default function AppDownloadSection() {
             >
               {/* App Store Button - Enhanced */}
               <a 
-                href="#" 
+                href="https://apps.apple.com/app/lusotown-london" 
                 className="group inline-flex items-center bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-2xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl shadow-lg"
                 aria-label="Descarregue LusoTown na App Store"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <div className="mr-5">
                   <svg className="w-10 h-10" viewBox="0 0 24 24" fill="currentColor">
@@ -134,9 +139,11 @@ export default function AppDownloadSection() {
 
               {/* Google Play Button - Enhanced */}
               <a 
-                href="#" 
+                href="https://play.google.com/store/apps/details?id=com.lusotown.london" 
                 className="group inline-flex items-center bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-2xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl shadow-lg"
                 aria-label="Obtenha LusoTown no Google Play"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <div className="mr-5">
                   <svg className="w-10 h-10" viewBox="0 0 24 24" fill="currentColor">

@@ -16,14 +16,14 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden w-full bg-gradient-to-br from-white via-gray-50 to-blue-50">
+    <section className="relative min-h-screen flex items-center overflow-hidden w-full bg-gradient-to-br from-white via-gray-50 to-secondary-50">
       {/* Background decorative elements - CSS animations instead of framer-motion */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-pink-200 via-purple-100 to-blue-100 rounded-full opacity-30 animate-pulse" />
-        <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-tr from-orange-200 via-pink-100 to-purple-100 rounded-full opacity-25 animate-bounce" style={{ animationDuration: '4s' }} />
-        <div className="absolute top-1/4 left-1/4 w-6 h-6 bg-pink-400 rounded-full opacity-40" />
-        <div className="absolute top-3/4 right-1/3 w-4 h-4 bg-purple-400 rounded-full" />
-        <div className="absolute bottom-1/3 left-2/3 w-3 h-3 bg-blue-400 rounded-full opacity-50" />
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-accent-200 via-coral-100 to-secondary-100 rounded-full opacity-30 animate-pulse" />
+        <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-tr from-secondary-200 via-accent-100 to-action-100 rounded-full opacity-25 animate-bounce" style={{ animationDuration: '4s' }} />
+        <div className="absolute top-1/4 left-1/4 w-6 h-6 bg-secondary-400 rounded-full opacity-40" />
+        <div className="absolute top-3/4 right-1/3 w-4 h-4 bg-accent-400 rounded-full" />
+        <div className="absolute bottom-1/3 left-2/3 w-3 h-3 bg-action-400 rounded-full opacity-50" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
@@ -31,14 +31,14 @@ export default function Hero() {
           {/* Left Column - Content */}
           <div className={`space-y-8 transition-all duration-1000 ${mounted ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
             {/* Smart Welcome Badge */}
-            <div className={`inline-flex items-center gap-3 bg-gradient-to-r from-green-50 via-red-50 to-yellow-50 border border-green-200 rounded-2xl px-6 py-3 shadow-lg transition-all duration-700 delay-100 ${mounted ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-5'}`}>
+            <div className={`inline-flex items-center gap-3 bg-gradient-to-r from-secondary-50 via-accent-50 to-action-50 border border-secondary-200 rounded-2xl px-6 py-3 shadow-lg transition-all duration-700 delay-100 ${mounted ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-5'}`}>
               <div className="flex items-center gap-2">
-                <SparklesIcon className="h-5 w-5 text-green-600" />
-                <span className="text-sm font-bold bg-gradient-to-r from-green-600 to-red-600 bg-clip-text text-transparent">
+                <SparklesIcon className="h-5 w-5 text-secondary-600" />
+                <span className="text-sm font-bold bg-gradient-to-r from-secondary-600 to-action-600 bg-clip-text text-transparent">
                   {t('hero.badge')}
                 </span>
               </div>
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              <div className="w-2 h-2 bg-secondary-400 rounded-full animate-pulse"></div>
             </div>
 
             {/* Main Headlines */}
@@ -54,19 +54,19 @@ export default function Hero() {
             {/* Feature highlights */}
             <div className={`grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 transition-all duration-1000 delay-500 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
               <div className="group flex items-center gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-action-500 to-action-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
                   <HeartIcon className="h-6 w-6 text-white" />
                 </div>
                 <span className="text-xs font-bold text-gray-800 tracking-wide text-center">CULTURAL EVENTS</span>
               </div>
               <div className="group flex items-center gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-secondary-500 to-secondary-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
                   <UsersIcon className="h-6 w-6 text-white" />
                 </div>
                 <span className="text-xs font-bold text-gray-800 tracking-wide text-center">500+ UK COMMUNITY MEMBERS</span>
               </div>
               <div className="group flex items-center gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-500 to-coral-500 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
                   <SparklesIcon className="h-6 w-6 text-white" />
                 </div>
                 <span className="text-xs font-bold text-gray-800 tracking-wide text-center">PORTUGUESE BUSINESSES</span>
@@ -77,9 +77,9 @@ export default function Hero() {
             <div className={`flex flex-col sm:flex-row gap-4 sm:gap-6 transition-all duration-1000 delay-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
               <a
                 href="/signup"
-                className="group relative text-lg font-bold px-8 py-4 bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden w-full sm:w-auto text-center"
+                className="group relative text-lg font-bold px-8 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden w-full sm:w-auto text-center"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-green-700 via-red-700 to-yellow-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-secondary-700 via-action-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   {t('hero.cta.primary')}
                   <ArrowRightIcon className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-200" />
@@ -87,7 +87,7 @@ export default function Hero() {
               </a>
               <a
                 href="/events"
-                className="text-lg font-bold px-8 py-4 bg-white/70 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-green-300 hover:-translate-y-1 w-full sm:w-auto text-center"
+                className="text-lg font-bold px-8 py-4 bg-white/70 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:text-secondary-700 hover:-translate-y-1 w-full sm:w-auto text-center"
               >
                 {t('hero.cta.secondary')}
               </a>

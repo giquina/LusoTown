@@ -23,54 +23,54 @@ const getFeatures = (t: any) => [
     icon: CalendarDaysIcon,
     title: t('features.events.title'),
     description: t('features.events.description'),
-    color: "text-emerald-600",
-    bgColor: "bg-emerald-50",
-    gradient: "from-emerald-500 to-teal-500",
+    color: "text-secondary-600",
+    bgColor: "bg-secondary-50",
+    gradient: "from-secondary-500 to-secondary-600",
     culturalElement: "🎉"
   },
   {
     icon: UserGroupIcon,
     title: t('features.groups.title'),
     description: t('features.groups.description'),
-    color: "text-blue-600",
-    bgColor: "bg-blue-50",
-    gradient: "from-blue-500 to-indigo-500",
+    color: "text-primary-600",
+    bgColor: "bg-primary-50",
+    gradient: "from-primary-500 to-primary-600",
     culturalElement: "🤝"
   },
   {
     icon: BuildingStorefrontIcon,
     title: t('features.business.title'),
     description: t('features.business.description'),
-    color: "text-amber-600",
-    bgColor: "bg-amber-50",
-    gradient: "from-amber-500 to-orange-500",
+    color: "text-accent-600",
+    bgColor: "bg-accent-50",
+    gradient: "from-accent-500 to-accent-600",
     culturalElement: "🏪"
   },
   {
     icon: MusicalNoteIcon,
     title: t('features.culture.title'),
     description: t('features.culture.description'),
-    color: "text-purple-600",
-    bgColor: "bg-purple-50",
-    gradient: "from-purple-500 to-pink-500",
+    color: "text-premium-600",
+    bgColor: "bg-premium-50",
+    gradient: "from-premium-500 to-premium-600",
     culturalElement: "🎵"
   },
   {
     icon: AcademicCapIcon,
     title: t('features.language.title'),
     description: t('features.language.description'),
-    color: "text-rose-600",
-    bgColor: "bg-rose-50",
-    gradient: "from-rose-500 to-red-500",
+    color: "text-action-600",
+    bgColor: "bg-action-50",
+    gradient: "from-action-500 to-action-600",
     culturalElement: "📚"
   },
   {
     icon: GlobeAltIcon,
     title: t('features.heritage.title'),
     description: t('features.heritage.description'),
-    color: "text-green-600",
-    bgColor: "bg-green-50",
-    gradient: "from-green-500 to-emerald-500",
+    color: "text-coral-600",
+    bgColor: "bg-coral-50",
+    gradient: "from-coral-500 to-coral-600",
     culturalElement: "🌍"
   }
 ]
@@ -85,8 +85,9 @@ export default function Features() {
     <section className="py-20 bg-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0">
-        <div className="absolute top-10 right-10 w-32 h-32 bg-primary-100 rounded-full opacity-40"></div>
-        <div className="absolute bottom-10 left-10 w-24 h-24 bg-secondary-100 rounded-full opacity-40"></div>
+        <div className="absolute top-10 right-10 w-32 h-32 bg-secondary-100 rounded-full opacity-40"></div>
+        <div className="absolute bottom-10 left-10 w-24 h-24 bg-accent-100 rounded-full opacity-40"></div>
+        <div className="absolute top-1/2 right-1/4 w-16 h-16 bg-coral-100 rounded-full opacity-30"></div>
       </div>
 
       <div className="container-width section-padding relative z-10">
@@ -98,8 +99,8 @@ export default function Features() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <div className="inline-flex items-center gap-2 bg-primary-50 rounded-full px-4 py-2 text-primary-600 font-medium mb-6">
-            <SparklesIcon className="h-4 w-4" />
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-secondary-50 via-primary-50 to-accent-50 border border-secondary-200 rounded-full px-4 py-2 text-primary-600 font-medium mb-6">
+            <SparklesIcon className="h-4 w-4 text-secondary-600" />
             {t('features.title')}
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
@@ -148,7 +149,7 @@ export default function Features() {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="mt-20 text-center"
         >
-          <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 border border-white shadow-lg relative overflow-hidden">
+          <div className="bg-gradient-to-r from-secondary-50 via-primary-50 to-accent-50 rounded-2xl p-8 border border-secondary-200 shadow-lg relative overflow-hidden">
             {/* Background Member Photos */}
             <div className="absolute inset-0 opacity-5">
               <div className="grid grid-cols-6 gap-2 h-full">
@@ -170,14 +171,14 @@ export default function Features() {
             
             <div className="relative z-10">
               <div className="flex items-center justify-center gap-2 mb-6">
-                <HeartIcon className="h-6 w-6 text-primary-400" />
+                <HeartIcon className="h-6 w-6 text-action-500" />
                 <h3 className="text-2xl font-semibold text-gray-900">Portuguese Social Network</h3>
               </div>
               
               {/* Featured Community Testimonial */}
               <div className="max-w-3xl mx-auto mb-6">
                 <div className="flex items-center justify-center gap-4 mb-4">
-                  <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg ring-2 ring-white">
+                  <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg ring-2 ring-secondary-200">
                     <img 
                       src={getImagesByCategory('community')[0]?.path || '/profiles/default-avatar.svg'}
                       alt="LusoTown London member"

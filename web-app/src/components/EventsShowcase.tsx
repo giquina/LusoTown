@@ -171,11 +171,14 @@ const eventStats = [
 
 export default function EventsShowcase() {
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-secondary-50 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-10 right-10 w-32 h-32 bg-gradient-to-br from-primary-200 to-secondary-200 rounded-full opacity-20 blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-40 h-40 bg-gradient-to-tr from-purple-200 to-pink-200 rounded-full opacity-20 blur-3xl"></div>
+        <div className="absolute top-10 right-10 w-32 h-32 bg-gradient-to-br from-accent-200 via-coral-100 to-secondary-100 rounded-full opacity-30 animate-pulse"></div>
+        <div className="absolute bottom-10 left-10 w-40 h-40 bg-gradient-to-tr from-secondary-200 via-accent-100 to-action-100 rounded-full opacity-25"></div>
+        <div className="absolute top-1/4 left-1/4 w-6 h-6 bg-secondary-400 rounded-full opacity-40"></div>
+        <div className="absolute top-3/4 right-1/3 w-4 h-4 bg-accent-400 rounded-full"></div>
+        <div className="absolute bottom-1/3 left-2/3 w-3 h-3 bg-action-400 rounded-full opacity-50"></div>
       </div>
       
       <div className="container-width px-4 sm:px-6 lg:px-8 relative z-10">
@@ -289,9 +292,12 @@ export default function EventsShowcase() {
                 </div>
 
                 {/* RSVP Button */}
-                <button className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium py-3 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 group-hover:scale-105">
+                <a 
+                  href={`/events/${event.id}`}
+                  className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium py-3 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 group-hover:scale-105 block text-center"
+                >
                   Reserve My Spot
-                </button>
+                </a>
               </div>
             </motion.div>
           ))}
@@ -342,7 +348,7 @@ export default function EventsShowcase() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <div className="bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 rounded-2xl p-8 text-white">
+          <div className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">
               Ready to Connect with Portuguese Culture?
             </h3>
