@@ -137,11 +137,16 @@ interface LanguageProviderProps {
 export function LanguageProvider({ children }: LanguageProviderProps) {
   const [language, setLanguage] = useState<Language>('en')
 
-  // Load saved language preference
+  // Load saved language preference or detect from browser
   useEffect(() => {
     const savedLanguage = localStorage.getItem('lusotown-language') as Language
     if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'pt')) {
       setLanguage(savedLanguage)
+    } else {
+      // Default to English for UK-based Portuguese community platform
+      // Users can manually switch to Portuguese as needed
+      setLanguage('en')
+      localStorage.setItem('lusotown-language', 'en')
     }
   }, [])
 

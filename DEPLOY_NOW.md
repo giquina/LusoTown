@@ -14,12 +14,20 @@
 - Framework: **Next.js** ✅
 - Root Directory: **web-app** ✅  
 - Build Command: **Auto-detected** ✅
+- Environment: **Production** ✅
 - Click **"Deploy"**
 
 ### **Step 4**: Get Live URL
 - Deployment will complete in ~2 minutes
 - You'll get: **`https://lusotown-xxxx.vercel.app`**
+- **Language**: Defaults to English (UK) ✅
 - **Share this URL with your client immediately**
+
+### **Step 5**: Test Live Site
+- ✅ **Welcome Modal**: Bilingual greeting system
+- ✅ **Language Toggle**: English ↔ Portuguese switching
+- ✅ **Mobile Responsive**: Works on all devices
+- ✅ **Performance**: Fast loading optimized site
 
 ---
 
