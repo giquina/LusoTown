@@ -7,6 +7,7 @@ import LiveFeedNotifications from '@/components/LiveFeedNotifications'
 import UserTypeSelection from '@/components/UserTypeSelection'
 import { LanguageProvider } from '@/context/LanguageContext'
 import { FavoritesProvider } from '@/context/FavoritesContext'
+import { FollowingProvider } from '@/context/FollowingContext'
 import FavoriteNotification from '@/components/FavoriteNotification'
 
 const inter = Inter({ 
@@ -68,11 +69,6 @@ export const metadata: Metadata = {
     description: 'The premier platform for Portuguese-speaking communities across the UK. Connect with culture, find events, discover businesses, and build friendships.',
     images: ['/og-image.jpg'],
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
   robots: {
     index: true,
     follow: true,
@@ -84,6 +80,12 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 }
 
 export default function RootLayout({
@@ -102,11 +104,13 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <LanguageProvider>
           <FavoritesProvider>
-            <UserTypeSelection />
-            {children}
-            <WhatsAppWidget />
-            <LiveFeedNotifications />
-            <FavoriteNotification />
+            <FollowingProvider>
+              <UserTypeSelection />
+              {children}
+              <WhatsAppWidget />
+              <LiveFeedNotifications />
+              <FavoriteNotification />
+            </FollowingProvider>
           </FavoritesProvider>
         </LanguageProvider>
         <Toaster

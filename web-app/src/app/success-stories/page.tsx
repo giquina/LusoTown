@@ -463,7 +463,7 @@ export default function SuccessStories() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm opacity-75">
                 <div className="flex items-center justify-center">
                   <CalendarIcon className="w-4 h-4 mr-2" />
-                  30+ Age Requirement
+                  All Ages Welcome
                 </div>
                 <div className="flex items-center justify-center">
                   <HeartIcon className="w-4 h-4 mr-2" />

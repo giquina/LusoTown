@@ -22,23 +22,23 @@ import { authService } from '@/lib/auth'
 const benefits = [
   {
     icon: ShieldCheckIcon,
-    text: "Join 300+ verified women in London & UK",
-    subtext: "Every member verified through our safety process"
+    text: "Join 500+ Portuguese speakers in London",
+    subtext: "Verified community from Portugal, Brazil, Angola & beyond"
   },
   {
     icon: UserGroupIcon,
-    text: "Quality over quantity community",
-    subtext: "Curated groups for meaningful connections"
+    text: "Cultural connection and heritage",
+    subtext: "Preserve language and traditions together"
   },
   {
     icon: SparklesIcon,
-    text: "Exclusive events and experiences",
-    subtext: "Member-only gatherings and activities"
+    text: "Authentic Portuguese experiences",
+    subtext: "Events, festivals, and community gatherings"
   },
   {
     icon: LockClosedIcon,
-    text: "Safe, women-only spaces",
-    subtext: "Moderated environment with strict community guidelines"
+    text: "Safe, inclusive Portuguese community",
+    subtext: "Welcoming space for all ages and backgrounds"
   }
 ]
 
@@ -54,14 +54,14 @@ const testimonials = [
     name: "Sarah C.",
     age: "34",
     location: "Clapham",
-    quote: "Found my book club tribe through AdyaTribe. These friendships feel like chosen family.",
+    quote: "Found my Portuguese community through LusoTown. Feels like family away from home.",
     avatar: getImageWithFallback('sarah-chen')
   },
   {
     name: "Maya P.",
     age: "38",
     location: "Shoreditch", 
-    quote: "The verification process made me feel safe from day one. Real women, real friendships.",
+    quote: "Finally found other Portuguese speakers in London. The events are amazing!",
     avatar: getImageWithFallback('maya-patel')
   }
 ]
@@ -117,7 +117,7 @@ export default function Signup() {
     }
     
     if (!formData.ageConfirmation) {
-      setError('You must confirm you are 30 years old or older')
+      setError('You must confirm you are 21 years old or older')
       return false
     }
     
@@ -184,15 +184,15 @@ export default function Signup() {
                   <div className="w-12 h-12 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-lg flex items-center justify-center shadow-lg">
                     <HeartIcon className="h-6 w-6 text-white" />
                   </div>
-                  <span className="text-2xl font-bold text-gray-900">AdyaTribe</span>
+                  <span className="text-2xl font-bold text-gray-900">LusoTown</span>
                 </div>
                 
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-                  Your Safe Space for <span className="gradient-text">Authentic Friendships</span>
+                  Your Home for <span className="gradient-text">Portuguese Culture</span>
                 </h1>
                 
                 <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-                  A carefully curated community of professional women 30+ in London & UK who value genuine connections over casual networking.
+                  A vibrant community of Portuguese speakers across London celebrating culture, language, and heritage together.
                 </p>
                 
                 <div className="space-y-4 sm:space-y-6 mb-8">
@@ -370,7 +370,7 @@ export default function Signup() {
                     
                     <div>
                       <label htmlFor="ageConfirmation" className="block text-sm font-medium text-gray-700 mb-2">
-                        Age Confirmation
+                        Community Guidelines
                       </label>
                       <div className="flex items-center p-3 border border-gray-300 rounded-lg bg-white/90 backdrop-blur-sm">
                         <input
@@ -384,7 +384,7 @@ export default function Signup() {
                           className="h-4 w-4 text-primary-400 focus:ring-primary-400 border-gray-300 rounded disabled:opacity-50"
                         />
                         <label htmlFor="ageConfirmation" className="ml-3 text-sm text-gray-700">
-                          I confirm I am 30 years old or older
+                          I agree to follow community guidelines and respect all members regardless of age
                         </label>
                       </div>
                     </div>
@@ -409,7 +409,7 @@ export default function Signup() {
                           <div className="w-4 h-4 bg-primary-400 rounded-full flex items-center justify-center flex-shrink-0">
                             <span className="text-white text-xs font-bold">3</span>
                           </div>
-                          <span>Join your local London groups instantly</span>
+                          <span>Connect with Portuguese community in London</span>
                         </div>
                       </div>
                     </div>
@@ -426,7 +426,7 @@ export default function Signup() {
                         className="h-4 w-4 text-primary-400 focus:ring-primary-400 border-gray-300 rounded mt-1 flex-shrink-0 disabled:opacity-50"
                       />
                       <label htmlFor="agreeTerms" className="text-sm text-gray-700">
-                        I agree to AdyaTribe's{' '}
+                        I agree to LusoTown's{' '}
                         <a href="/terms" className="text-primary-400 hover:text-primary-500 underline">Terms of Service</a>,{' '}
                         <a href="/privacy" className="text-primary-400 hover:text-primary-500 underline">Privacy Policy</a>, and{' '}
                         <a href="/community-guidelines" className="text-primary-400 hover:text-primary-500 underline">Community Guidelines</a>

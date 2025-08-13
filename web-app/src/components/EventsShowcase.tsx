@@ -72,8 +72,8 @@ const upcomingEvents = [
     image: "/events/feijoada-samba.jpg",
     color: "from-yellow-400 to-green-400",
     icon: <MusicalNoteIcon className="w-5 h-5" />,
-    ageRestriction: "Women 30+ Only",
-    tags: ["women-only", "30+", "Brazilian", "food", "samba"]
+    ageRestriction: "Women of all ages welcome",
+    tags: ["women-only", "all-ages", "Brazilian", "food", "samba"]
   },
   {
     id: 2,
@@ -94,7 +94,7 @@ const upcomingEvents = [
   },
   {
     id: 3,
-    title: "Lusophone Professional Women 21+ Networking",
+    title: "Lusophone Professional Women Networking - All Ages",
     description: "Career networking for Portuguese-speaking women with no children - child-free evening",
     location: "Canary Wharf, London",
     date: "Thu, 21 Dec", 
@@ -106,8 +106,8 @@ const upcomingEvents = [
     image: "/events/lusophone-networking.jpg",
     color: "from-blue-400 to-purple-400",
     icon: <UsersIcon className="w-5 h-5" />,
-    ageRestriction: "Women 21+ (Child-free)",
-    tags: ["women-only", "21+", "childless", "networking", "professional"]
+    ageRestriction: "Women of all ages welcome",
+    tags: ["women-only", "all-ages", "professional", "networking", "career"]
   },
   {
     id: 4,
@@ -140,7 +140,7 @@ const upcomingEvents = [
     image: "/events/mozambican-bbq.jpg",
     color: "from-orange-400 to-red-400",
     icon: <HeartIcon className="w-5 h-5" />,
-    ageRestriction: "Women Only (No Children)",
+    ageRestriction: "Family-friendly, all ages welcome",
     tags: ["women-only", "childless", "Mozambican", "seafood", "BBQ"]
   },
   {
@@ -157,7 +157,7 @@ const upcomingEvents = [
     image: "/events/portuguese-cinema.jpg",
     color: "from-purple-400 to-pink-400",
     icon: <SparklesIcon className="w-5 h-5" />,
-    ageRestriction: "18+ (Historical Content)",
+    ageRestriction: "Family-friendly, educational content",
     tags: ["Portuguese", "cinema", "history", "culture", "wine"]
   }
 ]
@@ -311,7 +311,7 @@ export default function EventsShowcase() {
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {[
               { name: "Food Festivals", icon: "🍲", count: "25+ events" },
-              { name: "Fado & Music", icon: "🎶", count: "18+ events" },
+              { name: "Fado & Music", icon: "🎶", count: "25+ events" },
               { name: "Football Viewing", icon: "⚽", count: "22+ events" },
               { name: "Women's Gatherings", icon: "👩‍🤝‍👩", count: "30+ events" },
               { name: "Professional Network", icon: "💼", count: "15+ events" },

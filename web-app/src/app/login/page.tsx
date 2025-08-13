@@ -85,23 +85,23 @@ export default function Login() {
                   <div className="w-12 h-12 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-lg flex items-center justify-center">
                     <HeartIcon className="h-6 w-6 text-white" />
                   </div>
-                  <span className="text-2xl font-bold text-gray-900">AdyaTribe</span>
+                  <span className="text-2xl font-bold text-gray-900">LusoTown</span>
                 </div>
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome back!</h1>
-                <p className="text-gray-600">Sign in to connect with your tribe</p>
+                <h1 className="text-3xl font-bold text-gray-900 mb-2">Bem-vindo de volta!</h1>
+                <p className="text-gray-600">Sign in to connect with your Portuguese community</p>
               </div>
 
               {/* Quick Access Helper */}
               <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                <h3 className="text-sm font-medium text-blue-900 mb-2">New to AdyaTribe?</h3>
+                <h3 className="text-sm font-medium text-blue-900 mb-2">New to LusoTown?</h3>
                 <p className="text-xs text-blue-700 mb-3">
-                  Create your account to join our community of verified women 30+
+                  Create your account to join our vibrant Portuguese community in London
                 </p>
                 <a 
                   href="/signup"
                   className="block w-full text-center p-2 bg-primary-400 text-white rounded hover:bg-primary-500 transition-colors text-sm font-medium"
                 >
-                  Join AdyaTribe →
+                  Join LusoTown →
                 </a>
               </div>
 
@@ -204,7 +204,7 @@ export default function Login() {
                   <p className="text-gray-600">
                     Don't have an account?{' '}
                     <a href="/signup" className="text-primary-400 hover:text-primary-500 font-medium">
-                      Join AdyaTribe
+                      Join LusoTown
                     </a>
                   </p>
                 </div>

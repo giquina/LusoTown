@@ -146,7 +146,7 @@ export default function PrivacyPolicy() {
                     <ul className="text-gray-600 space-y-2 ml-4">
                       <li className="flex items-start">
                         <div className="w-2 h-2 bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        First name and age (to verify 30+ requirement)
+                        First name and age (to create your community profile)
                       </li>
                       <li className="flex items-start">
                         <div className="w-2 h-2 bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>

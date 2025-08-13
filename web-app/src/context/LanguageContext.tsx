@@ -29,7 +29,7 @@ const translations = {
     // Hero Section
     'hero.badge': "UK Portuguese Community • All Ages Welcome • Culture & Events",
     'hero.title': 'CONNECT WITH LUSOTOWN UK',
-    'hero.subtitle': 'The social platform for Portuguese speakers across the UK. Connect with fellow Portuguese families and individuals throughout Britain, discover cultural events, find Portuguese communities, and celebrate our heritage together. Open to all ages - individual events may have specific age requirements.',
+    'hero.subtitle': 'The social platform for Portuguese speakers across the UK. Connect with fellow Portuguese families and individuals throughout Britain, discover cultural events, find Portuguese communities, and celebrate our heritage together. Welcoming all ages and families!',
     'hero.cta.primary': 'JOIN OUR UK COMMUNITY',
     'hero.cta.secondary': 'EXPLORE UK EVENTS',
     
@@ -37,7 +37,7 @@ const translations = {
     'features.title': 'Why Choose LusoTown',
     'features.subtitle': 'Your Connection Hub for Portuguese Communities Across the UK',
     'features.events.title': 'Cultural Events & Gatherings',
-    'features.events.description': 'From Fado nights to cultural festivals, traditional celebrations to Portuguese community gatherings - discover and join events across the UK. Events welcome all ages, with specific age requirements noted per event.',
+    'features.events.description': 'From Fado nights to cultural festivals, traditional celebrations to Portuguese community gatherings - discover and join events across the UK. Family-friendly events welcoming all ages and generations.',
     'features.groups.title': 'Portuguese Communities',
     'features.groups.description': 'Connect with Portuguese speakers who share your interests - from cultural preservation to social activities. Make genuine friendships across the UK with families and individuals of all ages.',
     'features.business.title': 'Portuguese Business Network',

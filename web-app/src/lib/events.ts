@@ -102,7 +102,7 @@ export interface Event {
   // Event details
   whatToBring?: string[]
   dresscode?: string
-  ageRestriction?: 'All ages' | '18+' | '21+' | '25+' | '30+' | '35+' | string
+  ageRestriction?: 'All ages' | 'Family-friendly' | 'Open to everyone' | string
   skillLevel?: 'beginner' | 'intermediate' | 'advanced' | 'all'
   accessibility?: string[]
   
@@ -331,7 +331,7 @@ export class EventService {
         totalReviews: 12,
         whatToBring: ['Appetite for Portuguese culture', 'Stories from home to share'],
         dresscode: 'Smart casual',
-        ageRestriction: '21+ (alcohol served)',
+        ageRestriction: 'All ages welcome',
         skillLevel: 'all',
         accessibility: ['Step-free access', 'Accessible toilet facilities'],
         allowWaitlist: true,
@@ -391,7 +391,7 @@ export class EventService {
         totalReviews: 15,
         whatToBring: ['Portugal jersey (optional but encouraged)', 'Loud voice for singing'],
         dresscode: 'Casual, Portugal colours welcome',
-        ageRestriction: '21+ (alcohol venue)',
+        ageRestriction: 'Family-friendly',
         skillLevel: 'all',
         accessibility: ['Ground floor accessible', 'Accessible toilet facilities'],
         allowWaitlist: true,
@@ -455,7 +455,7 @@ export class EventService {
         totalReviews: 8,
         whatToBring: ['Open heart for sharing', 'Stories from your homeland'],
         dresscode: 'Smart casual',
-        ageRestriction: '30+ women only',
+        ageRestriction: 'Women of all ages welcome',
         skillLevel: 'all',
         accessibility: ['Step-free access', 'Quiet environment for conversations'],
         allowWaitlist: true,
@@ -518,7 +518,7 @@ export class EventService {
         totalReviews: 23,
         whatToBring: ['Patience and enthusiasm for language learning', 'Stories to share in Portuguese or English'],
         dresscode: 'Casual',
-        ageRestriction: '21+',
+        ageRestriction: 'All ages welcome',
         skillLevel: 'all',
         accessibility: ['Step-free access', 'Hearing loop available'],
         allowWaitlist: true,
@@ -583,7 +583,7 @@ export class EventService {
         totalReviews: 18,
         whatToBring: ['Comfortable dancing shoes', 'Appetite for Portuguese tradition', 'Plastic hammer (provided if you don\'t have one)'],
         dresscode: 'Smart casual, comfortable for dancing',
-        ageRestriction: '35+',
+        ageRestriction: 'All ages welcome',
         skillLevel: 'all',
         accessibility: ['Step-free access', 'Accessible toilet facilities', 'Seating available for non-dancers'],
         allowWaitlist: true,
@@ -645,7 +645,7 @@ export class EventService {
         totalReviews: 9,
         whatToBring: ['Business cards', 'Open mind for collaboration', 'LinkedIn profile ready'],
         dresscode: 'Business casual',
-        ageRestriction: '25+',
+        ageRestriction: 'All ages welcome',
         skillLevel: 'all',
         accessibility: ['Step-free access', 'Accessible toilet facilities'],
         allowWaitlist: true,
@@ -710,7 +710,7 @@ export class EventService {
         totalReviews: 12,
         whatToBring: ['Laptop or tablet', 'Business ideas/existing business details', 'Notepad for networking'],
         dresscode: 'Business casual',
-        ageRestriction: '21+ (Business focus)',
+        ageRestriction: 'All ages welcome',
         skillLevel: 'beginner',
         accessibility: ['Step-free access', 'Accessible toilet facilities', 'Wi-Fi provided'],
         allowWaitlist: true,

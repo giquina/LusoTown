@@ -37,7 +37,7 @@ export default function UserTypeSelection() {
       title: 'Welcome to LusoTown!',
       subtitle: 'Choose how you\'d like to participate in our community',
       description: 'Connect with Portuguese speakers across the UK. Discover cultural events, join discussions, and celebrate our shared heritage together.',
-      disclaimer: 'Note: Individual events may have their own age restrictions, but our platform welcomes all Portuguese speakers and their families.',
+      disclaimer: 'Our platform welcomes all Portuguese speakers and their families - from children to seniors, everyone is welcome to join our community.',
       organizer: {
         title: 'Event Organizer/Promoter',
         description: 'Share Portuguese culture by creating and promoting events throughout the UK',

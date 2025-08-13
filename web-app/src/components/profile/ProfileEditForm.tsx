@@ -70,8 +70,8 @@ export default function ProfileEditForm({
       const birthDate = new Date(formData.date_of_birth)
       const today = new Date()
       const age = today.getFullYear() - birthDate.getFullYear()
-      if (age < 30) {
-        errors.date_of_birth = 'You must be at least 30 years old'
+      if (age < 13) {
+        errors.date_of_birth = 'Users under 13 require parental consent'
       }
     }
     

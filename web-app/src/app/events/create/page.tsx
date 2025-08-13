@@ -42,7 +42,7 @@ export default function CreateEventPage() {
     whatToExpected: [] as string[],
     whatToBring: [] as string[],
     dresscode: '',
-    ageRestriction: '',
+    ageRestriction: 'All ages welcome',
     skillLevel: 'all' as 'all' | 'beginner' | 'intermediate' | 'advanced',
     accessibility: [] as string[],
     isRecurring: false,
@@ -697,7 +697,7 @@ export default function CreateEventPage() {
                           type="text"
                           value={formData.ageRestriction}
                           onChange={(e) => setFormData({ ...formData, ageRestriction: e.target.value })}
-                          placeholder="e.g., 30+, 21+ (alcohol served)"
+                          placeholder="e.g., All ages welcome, Family-friendly"
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
                         />
                       </div>

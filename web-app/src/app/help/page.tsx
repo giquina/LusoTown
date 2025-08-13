@@ -17,19 +17,19 @@ import {
 } from '@heroicons/react/24/outline'
 
 export const metadata: Metadata = {
-  title: 'Help Center | AdyaTribe - Support, FAQs & User Guides',
-  description: 'Get help with AdyaTribe! Find answers to common questions, contact support, and learn how to make the most of our 30+ women\'s community platform.',
+  title: 'Help Center | LusoTown London - Support, FAQs & User Guides',
+  description: 'Get help with LusoTown London! Find answers to common questions, contact support, and learn how to make the most of our Portuguese community platform.',
   keywords: [
     'help center',
     'support',
     'FAQ',
     'user guide',
-    'AdyaTribe help',
+    'LusoTown help',
     'community support',
     'platform help',
     'user support',
     'how to use',
-    '30+ women help'
+    'Portuguese community help'
   ],
   openGraph: {
     title: 'Help Center | AdyaTribe',
@@ -50,15 +50,15 @@ export default function HelpCenter() {
       color: 'primary',
       faqs: [
         {
-          question: 'How do I join AdyaTribe?',
-          answer: 'Simply download our app or sign up on our website. You\'ll need to verify that you\'re 30+, single/childfree, and complete our safety verification process including a selfie check.'
+          question: 'How do I join LusoTown London?',
+          answer: 'Simply sign up on our website or download our app. Create your profile, share your Portuguese heritage connection, and start connecting with our vibrant community. All ages and families welcome!'
         },
         {
           question: 'What is the verification process?',
-          answer: 'Our verification includes age confirmation, selfie verification for authenticity, and basic profile review. This typically takes 24-48 hours and helps ensure a safe community for all members.'
+          answer: 'Our verification includes basic profile review and community guidelines confirmation. This helps ensure a safe, welcoming environment for Portuguese speakers and their families of all ages.'
         },
         {
-          question: 'Do I need to pay to use AdyaTribe?',
+          question: 'Do I need to pay to use LusoTown London?',
           answer: 'We offer a free membership with basic features. Core membership (£19.99/month) unlocks full community access, unlimited messaging, and event creation. Premium membership (£39.99/month) adds exclusive events and priority support.'
         },
         {

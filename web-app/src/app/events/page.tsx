@@ -603,7 +603,7 @@ export default function EventsPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-lg sm:text-xl text-gray-600 mb-8"
               >
-                Join the Portuguese community across the UK for meaningful experiences, new friendships, and unforgettable cultural adventures. Open to all ages and families - individual events may have specific age requirements.
+                Join the Portuguese community across the UK for meaningful experiences, new friendships, and unforgettable cultural adventures. Family-friendly events welcoming children, adults, and seniors from our Portuguese-speaking community.
               </motion.p>
 
               {/* Event Stats */}

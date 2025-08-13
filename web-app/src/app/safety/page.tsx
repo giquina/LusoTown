@@ -26,8 +26,8 @@ export default function SafetyCenter() {
       color: 'primary'
     },
     {
-      title: '30+ Age Verification',
-      description: 'Age confirmation ensures you\'re connecting with your peer group',
+      title: 'Community Verification',
+      description: 'Profile verification ensures genuine connections across all age groups',
       icon: CheckCircleIcon,
       color: 'secondary'
     },

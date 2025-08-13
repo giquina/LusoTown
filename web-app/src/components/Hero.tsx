@@ -35,7 +35,7 @@ export default function Hero() {
               <div className="flex items-center gap-2">
                 <SparklesIcon className="h-5 w-5 text-green-600" />
                 <span className="text-sm font-bold bg-gradient-to-r from-green-600 to-red-600 bg-clip-text text-transparent">
-                  UK Portuguese Community • All Ages Welcome • Culture & Events
+                  {t('hero.badge')}
                 </span>
               </div>
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
@@ -44,10 +44,10 @@ export default function Hero() {
             {/* Main Headlines */}
             <div className={`space-y-4 transition-all duration-1000 delay-300 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-tight tracking-tight">
-                Welcome to <span className="bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 bg-clip-text text-transparent">LusoTown</span> — Your Portuguese Home in London
+                {t('hero.title')}
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed max-w-2xl font-medium">
-                Events, friends, culture, and community for Portuguese speakers and friends in London.
+                {t('hero.subtitle')}
               </p>
             </div>
 
@@ -81,7 +81,7 @@ export default function Hero() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-green-700 via-red-700 to-yellow-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10 flex items-center justify-center gap-3">
-                  Join the Community
+                  {t('hero.cta.primary')}
                   <ArrowRightIcon className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-200" />
                 </span>
               </a>
@@ -89,7 +89,7 @@ export default function Hero() {
                 href="/events"
                 className="text-lg font-bold px-8 py-4 bg-white/70 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-green-300 hover:-translate-y-1 w-full sm:w-auto text-center"
               >
-                Explore Events
+                {t('hero.cta.secondary')}
               </a>
             </div>
           </div>

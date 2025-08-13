@@ -10,7 +10,10 @@ import {
   MapPinIcon,
   HeartIcon,
   SparklesIcon,
-  CursorArrowRippleIcon
+  CursorArrowRippleIcon,
+  GlobeAltIcon,
+  MusicalNoteIcon,
+  AcademicCapIcon
 } from '@heroicons/react/24/outline'
 import { getImagesByCategory } from '@/lib/profileImages'
 import { useLanguage } from '@/context/LanguageContext'
@@ -20,43 +23,55 @@ const getFeatures = (t: any) => [
     icon: CalendarDaysIcon,
     title: t('features.events.title'),
     description: t('features.events.description'),
-    color: "text-red-500",
-    bgColor: "bg-red-50"
+    color: "text-emerald-600",
+    bgColor: "bg-emerald-50",
+    gradient: "from-emerald-500 to-teal-500",
+    culturalElement: "🎉"
   },
   {
     icon: UserGroupIcon,
     title: t('features.groups.title'),
     description: t('features.groups.description'),
-    color: "text-primary-500",
-    bgColor: "bg-primary-50"
+    color: "text-blue-600",
+    bgColor: "bg-blue-50",
+    gradient: "from-blue-500 to-indigo-500",
+    culturalElement: "🤝"
   },
   {
     icon: BuildingStorefrontIcon,
     title: t('features.business.title'),
     description: t('features.business.description'),
-    color: "text-secondary-500",
-    bgColor: "bg-secondary-50"
+    color: "text-amber-600",
+    bgColor: "bg-amber-50",
+    gradient: "from-amber-500 to-orange-500",
+    culturalElement: "🏪"
   },
   {
-    icon: CursorArrowRippleIcon,
-    title: t('features.resources.title'),
-    description: t('features.resources.description'),
-    color: "text-purple-500",
-    bgColor: "bg-purple-50"
+    icon: MusicalNoteIcon,
+    title: t('features.culture.title'),
+    description: t('features.culture.description'),
+    color: "text-purple-600",
+    bgColor: "bg-purple-50",
+    gradient: "from-purple-500 to-pink-500",
+    culturalElement: "🎵"
   },
   {
-    icon: DocumentTextIcon,
-    title: t('features.stories.title'),
-    description: t('features.stories.description'),
-    color: "text-pink-500",
-    bgColor: "bg-pink-50"
+    icon: AcademicCapIcon,
+    title: t('features.language.title'),
+    description: t('features.language.description'),
+    color: "text-rose-600",
+    bgColor: "bg-rose-50",
+    gradient: "from-rose-500 to-red-500",
+    culturalElement: "📚"
   },
   {
-    icon: MapPinIcon,
-    title: t('features.local.title'),
-    description: t('features.local.description'),
-    color: "text-green-500",
-    bgColor: "bg-green-50"
+    icon: GlobeAltIcon,
+    title: t('features.heritage.title'),
+    description: t('features.heritage.description'),
+    color: "text-green-600",
+    bgColor: "bg-green-50",
+    gradient: "from-green-500 to-emerald-500",
+    culturalElement: "🌍"
   }
 ]
 
@@ -91,7 +106,7 @@ export default function Features() {
             <span className="gradient-text">{t('features.subtitle')}</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
-            Connect with Portuguese adults (21+) who love nightlife, dining, fitness, and socializing in London. Because you shouldn't navigate this city alone.
+            Connect with Portuguese speakers who love nightlife, dining, fitness, and socializing in London. Because you shouldn't navigate this city alone.
           </p>
         </motion.div>
 
@@ -156,7 +171,7 @@ export default function Features() {
             <div className="relative z-10">
               <div className="flex items-center justify-center gap-2 mb-6">
                 <HeartIcon className="h-6 w-6 text-primary-400" />
-                <h3 className="text-2xl font-semibold text-gray-900">21+ Portuguese Social Network</h3>
+                <h3 className="text-2xl font-semibold text-gray-900">Portuguese Social Network</h3>
               </div>
               
               {/* Featured Community Testimonial */}
@@ -171,7 +186,7 @@ export default function Features() {
                     />
                   </div>
                   <div className="text-left">
-                    <p className="font-semibold text-gray-900">Carlos Silva, 28</p>
+                    <p className="font-semibold text-gray-900">Carlos Silva</p>
                     <p className="text-sm text-gray-600">Portuguese Professional, Shoreditch</p>
                   </div>
                 </div>
@@ -181,7 +196,7 @@ export default function Features() {
               </div>
               
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Created by Portuguese adults who know what it's like to feel isolated in a new city. 
+                Created by Portuguese speakers who know what it's like to feel isolated in a new city. 
                 Every feature is designed to help you build genuine friendships and enjoy London's social scene with your Portuguese tribe.
                 After participating in events or group activities, members can leave reviews to help improve future experiences - just like Google My Business!
               </p>
