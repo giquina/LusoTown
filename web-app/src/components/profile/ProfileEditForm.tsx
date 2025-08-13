@@ -330,8 +330,8 @@ export default function ProfileEditForm({
               </div>
               <input
                 type="range"
-                min="18"
-                max="65"
+                min="13"
+                max="80"
                 value={formData.preferences.age_range_min}
                 onChange={(e) => onChange('preferences', { 
                   ...formData.preferences, 
@@ -339,7 +339,7 @@ export default function ProfileEditForm({
                 })}
                 className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
                 style={{
-                  background: `linear-gradient(to right, #FF6B6B 0%, #FF6B6B ${((formData.preferences.age_range_min - 18) / 47) * 100}%, #d1d5db ${((formData.preferences.age_range_min - 18) / 47) * 100}%, #d1d5db 100%)`
+                  background: `linear-gradient(to right, #FF6B6B 0%, #FF6B6B ${((formData.preferences.age_range_min - 13) / 67) * 100}%, #d1d5db ${((formData.preferences.age_range_min - 13) / 67) * 100}%, #d1d5db 100%)`
                 }}
               />
             </div>
@@ -350,8 +350,8 @@ export default function ProfileEditForm({
               </div>
               <input
                 type="range"
-                min="18"
-                max="65"
+                min="13"
+                max="80"
                 value={formData.preferences.age_range_max}
                 onChange={(e) => onChange('preferences', { 
                   ...formData.preferences, 
@@ -359,7 +359,7 @@ export default function ProfileEditForm({
                 })}
                 className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider"
                 style={{
-                  background: `linear-gradient(to right, #FF6B6B 0%, #FF6B6B ${((formData.preferences.age_range_max - 18) / 47) * 100}%, #d1d5db ${((formData.preferences.age_range_max - 18) / 47) * 100}%, #d1d5db 100%)`
+                  background: `linear-gradient(to right, #FF6B6B 0%, #FF6B6B ${((formData.preferences.age_range_max - 13) / 67) * 100}%, #d1d5db ${((formData.preferences.age_range_max - 13) / 67) * 100}%, #d1d5db 100%)`
                 }}
               />
             </div>

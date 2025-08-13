@@ -32,7 +32,7 @@ export default function About() {
                 About <span className="gradient-text">LusoTown London</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                LusoTown is your online community for Portuguese speakers and friends in London. Whether you're new to the city, have family roots in a Portuguese-speaking country, or simply love our culture and language, this is your space to connect, share, and celebrate.
+                LusoTown is your online community for Portuguese speakers and friends in London. Whether you're new to the city, have roots in a Portuguese-speaking country, or simply love our culture and language, this is your space to connect, share, and celebrate.
               </p>
             </div>
           </div>
@@ -66,14 +66,13 @@ export default function About() {
                       from Portugal, Brazil, Angola, or any Portuguese-speaking nation, London is now home.
                     </p>
                     <p>
-                      <strong>We've experienced the challenge of raising bilingual children,</strong> finding 
-                      Portuguese-speaking services, or simply wanting to connect with people who understand 
+                      <strong>We've experienced the challenge of finding</strong> Portuguese-speaking services, or simply wanting to connect with people who understand 
                       our culture, traditions, and the warmth of our communities back home.
                     </p>
                     <p>
                       <strong>London's Portuguese diaspora is rich and diverse,</strong> but we're often 
                       scattered across the city. LusoTown was created to bring us together—to share resources, 
-                      support each other, and ensure our children grow up proud of their Portuguese heritage.
+                      support each other, and preserve our Portuguese heritage.
                     </p>
                   </div>
                 </div>
@@ -188,7 +187,7 @@ export default function About() {
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">Language Preservation</h3>
                   <p className="text-gray-600">
-                    Helping families pass Portuguese to the next generation, supporting children who are proud of their heritage, 
+                    Helping preserve Portuguese language and culture, supporting those who are proud of their heritage, 
                     and keeping our beautiful language alive in London.
                   </p>
                 </div>
@@ -217,7 +216,7 @@ export default function About() {
                 </h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   We believe every Portuguese speaker in London deserves a community that celebrates 
-                  our heritage, supports our families, and keeps our beautiful language thriving.
+                  our heritage, supports our community, and keeps our beautiful language thriving.
                 </p>
               </div>
 
@@ -231,7 +230,7 @@ export default function About() {
                     </div>
                     <div className="flex items-start">
                       <CheckCircleIcon className="w-5 h-5 text-primary-500 mt-1 mr-3 flex-shrink-0" />
-                      <p><strong>Language heritage.</strong> Ensuring our children speak Portuguese with pride and confidence.</p>
+                      <p><strong>Language heritage.</strong> Ensuring Portuguese continues to be spoken with pride and confidence.</p>
                     </div>
                     <div className="flex items-start">
                       <CheckCircleIcon className="w-5 h-5 text-primary-500 mt-1 mr-3 flex-shrink-0" />
@@ -253,7 +252,7 @@ export default function About() {
                     </div>
                     <div className="flex items-start">
                       <UserGroupIcon className="w-5 h-5 text-secondary-500 mt-1 mr-3 flex-shrink-0" />
-                      <p><strong>Family-focused community.</strong> Supporting parents, children, grandparents, and extended families.</p>
+                      <p><strong>Community-focused platform.</strong> Supporting Portuguese speakers and connecting our diaspora.</p>
                     </div>
                     <div className="flex items-start">
                       <MapPinIcon className="w-5 h-5 text-secondary-500 mt-1 mr-3 flex-shrink-0" />
@@ -276,7 +275,7 @@ export default function About() {
                     creating a beautiful tapestry of accents, expressions, and cultural flavors that make our community so vibrant.
                   </p>
                   <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-4 text-center">
-                    <p className="text-gray-700 font-medium">🌍 10 Countries • 4 Continents • 280+ Million Speakers • 1 Beautiful Language Family</p>
+                    <p className="text-gray-700 font-medium">🌍 10 Countries • 4 Continents • 280+ Million Speakers • 1 Beautiful Language Community</p>
                   </div>
                 </div>
                 

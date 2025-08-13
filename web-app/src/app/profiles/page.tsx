@@ -40,7 +40,7 @@ function ProfilesPageContent() {
   const [viewMode, setViewMode] = useState<'recommended' | 'browse' | 'search'>('recommended')
   
   const [filters, setFilters] = useState<ProfileFilters>({
-    ageRange: { min: 25, max: 55 },
+    ageRange: { min: 13, max: 80 },
     location: [],
     interests: [],
     onlineOnly: false
@@ -274,8 +274,8 @@ function ProfilesPageContent() {
                     <div className="flex items-center gap-4">
                       <input
                         type="range"
-                        min="18"
-                        max="65"
+                        min="13"
+                        max="80"
                         value={filters.ageRange.min}
                         onChange={(e) => handleFilterChange('ageRange', { 
                           ...filters.ageRange, 
@@ -288,8 +288,8 @@ function ProfilesPageContent() {
                     <div className="flex items-center gap-4">
                       <input
                         type="range"
-                        min="18"
-                        max="65"
+                        min="13"
+                        max="80"
                         value={filters.ageRange.max}
                         onChange={(e) => handleFilterChange('ageRange', { 
                           ...filters.ageRange, 

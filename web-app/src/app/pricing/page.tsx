@@ -79,7 +79,7 @@ const pricingTiers: PricingTier[] = [
     name: 'Membro Comunidade',
     price: 12,
     originalPrice: 15,
-    description: 'Full community access for Portuguese families across the UK',
+    description: 'Full community access for Portuguese speakers across the UK',
     icon: <StarIcon className="w-6 h-6" />,
     solidIcon: <StarIconSolid className="w-6 h-6" />,
     features: [
@@ -164,7 +164,7 @@ const features = [
   {
     icon: <ShieldCheckIcon className="w-5 h-5" />,
     title: 'Safe Community Space',
-    description: 'Verified member profiles and moderated discussions ensure a safe environment for Portuguese families'
+    description: 'Verified member profiles and moderated discussions ensure a safe environment for Portuguese speakers'
   },
   {
     icon: <HeartIcon className="w-5 h-5" />,
@@ -174,7 +174,7 @@ const features = [
   {
     icon: <CalendarIcon className="w-5 h-5" />,
     title: 'Portuguese Events',
-    description: 'Fado nights, festival celebrations, business networking, and family activities celebrating Portuguese culture nationwide'
+    description: 'Fado nights, festival celebrations, business networking, and cultural activities celebrating Portuguese culture nationwide'
   },
   {
     icon: <ChatBubbleLeftRightIcon className="w-5 h-5" />,
@@ -207,7 +207,7 @@ const testimonials = [
     age: 42,
     location: 'Stockwell, London',
     membership: 'Membro Família',
-    quote: 'Through LusoTown, I found Portuguese clients for my business and my family found lifelong friends. Somos uma família!',
+    quote: 'Through LusoTown, I found Portuguese clients for my business and lifelong friends. Somos uma comunidade!',
     rating: 5
   },
   {
@@ -607,7 +607,7 @@ export default function Pricing() {
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-600">Discussões em português num ambiente seguro e familiar</p>
+                <p className="text-gray-600">Discussões em português num ambiente seguro e acolhedor</p>
               </div>
             </div>
 
@@ -637,7 +637,7 @@ export default function Pricing() {
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-600">Desde festivais culturais a workshops de negócios - eventos para toda a família</p>
+                <p className="text-gray-600">Desde festivais culturais a workshops de negócios - eventos para toda a comunidade</p>
               </div>
 
               {/* Safety Verification Demo */}
@@ -663,7 +663,7 @@ export default function Pricing() {
                       </div>
                       <div className="flex items-center text-sm text-gray-700">
                         <CheckIcon className="w-4 h-4 text-green-600 mr-2" />
-                        Ambiente familiar e seguro
+                        Ambiente acolhedor e seguro
                       </div>
                     </div>
                   </div>
@@ -801,7 +801,7 @@ export default function Pricing() {
                 },
                 {
                   question: "Que tipos de eventos organizam?",
-                  answer: "Os nossos eventos vão desde noites de fado e celebrações culturais a networking profissional e atividades familiares. Membros Comunidade acedem a todos os eventos regulares, enquanto membros Família desfrutam de eventos VIP exclusivos e programas para crianças."
+                  answer: "Os nossos eventos vão desde noites de fado e celebrações culturais a networking profissional e atividades comunitárias. Membros Comunidade acedem a todos os eventos regulares, enquanto membros Premium desfrutam de eventos VIP exclusivos e oportunidades especiais."
                 },
                 {
                   question: "A minha informação pessoal está segura?",

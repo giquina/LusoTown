@@ -29,7 +29,7 @@ const translations = {
     // Hero Section
     'hero.badge': "UK Portuguese Community • All Ages Welcome • Culture & Events",
     'hero.title': 'CONNECT WITH LUSOTOWN UK',
-    'hero.subtitle': 'The social platform for Portuguese speakers across the UK. Connect with fellow Portuguese families and individuals throughout Britain, discover cultural events, find Portuguese communities, and celebrate our heritage together. Welcoming all ages and families!',
+    'hero.subtitle': 'The social platform for Portuguese speakers across the UK. Connect with fellow Portuguese individuals throughout Britain, discover cultural events, find Portuguese communities, and celebrate our heritage together. Welcoming all ages!',
     'hero.cta.primary': 'JOIN OUR UK COMMUNITY',
     'hero.cta.secondary': 'EXPLORE UK EVENTS',
     
@@ -37,9 +37,9 @@ const translations = {
     'features.title': 'Why Choose LusoTown',
     'features.subtitle': 'Your Connection Hub for Portuguese Communities Across the UK',
     'features.events.title': 'Cultural Events & Gatherings',
-    'features.events.description': 'From Fado nights to cultural festivals, traditional celebrations to Portuguese community gatherings - discover and join events across the UK. Family-friendly events welcoming all ages and generations.',
+    'features.events.description': 'From Fado nights to cultural festivals, traditional celebrations to Portuguese community gatherings - discover and join events across the UK. Events welcoming all ages and generations.',
     'features.groups.title': 'Portuguese Communities',
-    'features.groups.description': 'Connect with Portuguese speakers who share your interests - from cultural preservation to social activities. Make genuine friendships across the UK with families and individuals of all ages.',
+    'features.groups.description': 'Connect with Portuguese speakers who share your interests - from cultural preservation to social activities. Make genuine friendships across the UK with individuals of all ages.',
     'features.business.title': 'Portuguese Business Network',
     'features.business.description': 'Discover Portuguese-owned businesses, restaurants, and services across the UK. Support our community and find places where our culture is celebrated.',
     'features.resources.title': 'Community Resources',
@@ -55,7 +55,7 @@ const translations = {
     'testimonials.subtitle': 'Hear from Portuguese speakers who found their community, preserved their heritage, and built lasting connections worldwide',
     
     // Footer
-    'footer.description': 'The platform for Portuguese-speaking communities across the UK. Connect with your Portuguese heritage, find local communities, attend cultural events, and build meaningful friendships. Open to all ages and families. Unidos pela Língua - United by Language.',
+    'footer.description': 'The platform for Portuguese-speaking communities across the UK. Connect with your Portuguese heritage, find local communities, attend cultural events, and build meaningful friendships. Open to all ages. Unidos pela Língua - United by Language.',
     'footer.newsletter.title': 'Stay Connected',
     'footer.newsletter.description': 'Get updates on Portuguese cultural events, community news, and gatherings happening across the UK.',
     'footer.tagline': 'Connecting Portuguese hearts across the UK',
@@ -86,7 +86,7 @@ const translations = {
     // Hero Section
     'hero.badge': 'Comunidade Portuguesa UK • Todas as Idades Bem-vindas • Cultura & Eventos',
     'hero.title': 'CONECTA-TE COM LUSOTOWN UK',
-    'hero.subtitle': 'A plataforma social para falantes de português no Reino Unido. Conecta-te com famílias e indivíduos portugueses por toda a Britânia, descobre eventos culturais, encontra comunidades portuguesas, e celebra a nossa herança juntos. Aberto a todas as idades - eventos individuais podem ter requisitos de idade específicos.',
+    'hero.subtitle': 'A plataforma social para falantes de português no Reino Unido. Conecta-te com indivíduos portugueses por toda a Britânia, descobre eventos culturais, encontra comunidades portuguesas, e celebra a nossa herança juntos. Aberto a todas as idades - eventos individuais podem ter requisitos de idade específicos.',
     'hero.cta.primary': 'JUNTAR À NOSSA COMUNIDADE UK',
     'hero.cta.secondary': 'EXPLORAR EVENTOS UK',
     
@@ -96,7 +96,7 @@ const translations = {
     'features.events.title': 'Eventos Culturais & Encontros',
     'features.events.description': 'Desde noites de Fado a festivais culturais, celebrações tradicionais a encontros comunitários portugueses - descobre e participa em eventos por todo o Reino Unido. Eventos abertos a todas as idades, com requisitos de idade específicos indicados por evento.',
     'features.groups.title': 'Comunidades Portuguesas',
-    'features.groups.description': 'Conecta-te com falantes de português que partilham os teus interesses - desde preservação cultural a atividades sociais. Faz amizades genuínas por todo o Reino Unido com famílias e indivíduos de todas as idades.',
+    'features.groups.description': 'Conecta-te com falantes de português que partilham os teus interesses - desde preservação cultural a atividades sociais. Faz amizades genuínas por todo o Reino Unido com indivíduos de todas as idades.',
     'features.business.title': 'Rede de Negócios Portugueses',
     'features.business.description': 'Descobre negócios portugueses, restaurantes e serviços por todo o Reino Unido. Apoia a nossa comunidade e encontra locais onde a nossa cultura é celebrada.',
     'features.resources.title': 'Recursos Comunitários',
@@ -112,7 +112,7 @@ const translations = {
     'testimonials.subtitle': 'Ouve falantes de português que encontraram a sua comunidade, preservaram a sua herança e construíram conexões duradouras pelo mundo',
     
     // Footer
-    'footer.description': 'A plataforma para comunidades de fala portuguesa no Reino Unido. Conecta-te com a tua herança portuguesa, encontra comunidades locais, participa em eventos culturais e constrói amizades significativas. Aberto a todas as idades e famílias. Unidos pela Língua - United by Language.',
+    'footer.description': 'A plataforma para comunidades de fala portuguesa no Reino Unido. Conecta-te com a tua herança portuguesa, encontra comunidades locais, participa em eventos culturais e constrói amizades significativas. Aberto a todas as idades. Unidos pela Língua - United by Language.',
     'footer.newsletter.title': 'Mantém-te Conectado',
     'footer.newsletter.description': 'Recebe atualizações sobre eventos culturais portugueses, notícias da comunidade e encontros por todo o Reino Unido.',
     'footer.tagline': 'Conectando corações portugueses pelo Reino Unido',

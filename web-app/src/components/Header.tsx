@@ -15,7 +15,9 @@ const getNavigationLinks = (t: any) => [
   { name: t('nav.how-it-works'), href: '/how-it-works' },
   { name: t('nav.community'), href: '/community' },
   { name: t('nav.community-guidelines'), href: '/community-guidelines' },
+  { name: t('nav.pricing'), href: '/pricing' },
   { name: t('nav.about'), href: '/about' },
+  { name: t('nav.contact'), href: '/contact' },
 ]
 
 const authenticatedNavigationLinks = [
