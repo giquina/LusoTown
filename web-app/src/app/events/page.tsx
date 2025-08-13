@@ -215,6 +215,13 @@ const EventCard = ({ event }: { event: Event }) => {
             <ClockIcon className="w-4 h-4" />
             <span>{formatTime(event.time)}{event.endTime && ` - ${formatTime(event.endTime)}`}</span>
           </div>
+          {event.ageRestriction && (
+            <div className="flex items-center gap-1">
+              <span className="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded-full font-medium">
+                {event.ageRestriction}
+              </span>
+            </div>
+          )}
         </div>
 
         {/* Location */}
@@ -596,7 +603,7 @@ export default function EventsPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-lg sm:text-xl text-gray-600 mb-8"
               >
-                Join fellow women in London for meaningful experiences, new friendships, and unforgettable adventures.
+                Join the Portuguese community across the UK for meaningful experiences, new friendships, and unforgettable cultural adventures. Open to all ages and families - individual events may have specific age requirements.
               </motion.p>
 
               {/* Event Stats */}
@@ -608,11 +615,11 @@ export default function EventsPage() {
               >
                 <div className="text-center">
                   <div className="text-2xl sm:text-3xl font-bold text-primary-600 mb-1">150+</div>
-                  <div className="text-sm text-gray-600">Events This Month</div>
+                  <div className="text-sm text-gray-600">UK Events This Month</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-secondary-600 mb-1">300+</div>
-                  <div className="text-sm text-gray-600">Active Members</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-secondary-600 mb-1">500+</div>
+                  <div className="text-sm text-gray-600">UK Community Members</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl sm:text-3xl font-bold text-purple-600 mb-1">4.9</div>
@@ -629,7 +636,7 @@ export default function EventsPage() {
               >
                 <input
                   type="text"
-                  placeholder="Search events by name, location, or interests..."
+                  placeholder="Search events across the UK by name, location, or interests..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && handleSearch()}

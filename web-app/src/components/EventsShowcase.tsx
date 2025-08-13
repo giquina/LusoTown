@@ -60,56 +60,113 @@ const EventImage = ({ event }: { event: typeof upcomingEvents[0] }) => {
 const upcomingEvents = [
   {
     id: 1,
-    title: "Wine & Paint Night",
-    description: "Creative evening with fellow art lovers in a cozy Covent Garden studio",
-    location: "Covent Garden, London",
-    date: "Fri, 15 Dec",
-    time: "7:00 PM",
-    attendees: 12,
-    maxAttendees: 16,
-    price: 25,
-    category: "Art & Culture",
-    image: "/events/wine-paint.jpg",
-    color: "from-purple-400 to-pink-400",
-    icon: <BeakerIcon className="w-5 h-5" />
+    title: "Brazilian Feijoada & Samba - Women 30+ Only",
+    description: "Authentic Brazilian feast with live samba music for mature Portuguese-speaking women",
+    location: "Brixton, London",
+    date: "Sat, 16 Dec",
+    time: "2:00 PM",
+    attendees: 18,
+    maxAttendees: 25,
+    price: 35,
+    category: "Cultural & Food",
+    image: "/events/feijoada-samba.jpg",
+    color: "from-yellow-400 to-green-400",
+    icon: <MusicalNoteIcon className="w-5 h-5" />,
+    ageRestriction: "Women 30+ Only",
+    tags: ["women-only", "30+", "Brazilian", "food", "samba"]
   },
   {
     id: 2,
-    title: "Book Club Brunch",
-    description: "Discuss 'Fourth Wing' over bottomless brunch in trendy Shoreditch",
-    location: "Shoreditch, London", 
+    title: "Portuguese Football: Benfica vs Porto Screening",
+    description: "Watch the classic rivalry with bifanas, Super Bock and passionate Portuguese fans",
+    location: "Little Portugal, Stockwell",
     date: "Sun, 17 Dec",
-    time: "11:00 AM",
-    attendees: 8,
-    maxAttendees: 12,
-    price: 35,
-    category: "Books & Learning",
-    image: "/events/book-brunch.jpg",
-    color: "from-emerald-400 to-teal-400",
-    icon: <BookOpenIcon className="w-5 h-5" />
+    time: "4:00 PM",
+    attendees: 32,
+    maxAttendees: 45,
+    price: 15,
+    category: "Sports & Entertainment",
+    image: "/events/football-screening.jpg",
+    color: "from-red-400 to-green-400",
+    icon: <TicketIcon className="w-5 h-5" />,
+    ageRestriction: "All Ages Welcome",
+    tags: ["football", "Portuguese", "community", "bifanas"]
   },
   {
     id: 3,
-    title: "Jazz Night & Networking",
-    description: "Professional networking with live jazz at an exclusive London venue",
-    location: "Mayfair, London",
+    title: "Lusophone Professional Women 21+ Networking",
+    description: "Career networking for Portuguese-speaking women with no children - child-free evening",
+    location: "Canary Wharf, London",
     date: "Thu, 21 Dec", 
     time: "6:30 PM",
-    attendees: 24,
-    maxAttendees: 30,
-    price: 45,
-    category: "Networking",
-    image: "/events/jazz-networking.jpg",
-    color: "from-amber-400 to-orange-400",
-    icon: <MusicalNoteIcon className="w-5 h-5" />
+    attendees: 14,
+    maxAttendees: 20,
+    price: 42,
+    category: "Professional Networking",
+    image: "/events/lusophone-networking.jpg",
+    color: "from-blue-400 to-purple-400",
+    icon: <UsersIcon className="w-5 h-5" />,
+    ageRestriction: "Women 21+ (Child-free)",
+    tags: ["women-only", "21+", "childless", "networking", "professional"]
+  },
+  {
+    id: 4,
+    title: "Cape Verdean Morna Music & Cachupa Night",
+    description: "Experience Cape Verde's soul music with traditional cachupa stew",
+    location: "East London Cultural Centre",
+    date: "Fri, 22 Dec",
+    time: "7:30 PM",
+    attendees: 22,
+    maxAttendees: 35,
+    price: 28,
+    category: "Cultural & Food",
+    image: "/events/cape-verde-night.jpg",
+    color: "from-teal-400 to-blue-400",
+    icon: <MusicalNoteIcon className="w-5 h-5" />,
+    ageRestriction: "All Ages Welcome",
+    tags: ["Cape Verde", "morna", "cachupa", "music", "culture"]
+  },
+  {
+    id: 5,
+    title: "Mozambican Seafood BBQ - Women Only Gathering",
+    description: "Beachside-style seafood BBQ for Portuguese-speaking women, childless welcome",
+    location: "South London Park",
+    date: "Sat, 23 Dec",
+    time: "1:00 PM",
+    attendees: 16,
+    maxAttendees: 22,
+    price: 38,
+    category: "Cultural & Food",
+    image: "/events/mozambican-bbq.jpg",
+    color: "from-orange-400 to-red-400",
+    icon: <HeartIcon className="w-5 h-5" />,
+    ageRestriction: "Women Only (No Children)",
+    tags: ["women-only", "childless", "Mozambican", "seafood", "BBQ"]
+  },
+  {
+    id: 6,
+    title: "Portuguese Cinema Night: 'Capitães de Abril'",
+    description: "Classic Portuguese film screening with English subtitles and wine",
+    location: "Central London Cinema",
+    date: "Wed, 27 Dec",
+    time: "7:00 PM",
+    attendees: 28,
+    maxAttendees: 40,
+    price: 18,
+    category: "Film & Culture",
+    image: "/events/portuguese-cinema.jpg",
+    color: "from-purple-400 to-pink-400",
+    icon: <SparklesIcon className="w-5 h-5" />,
+    ageRestriction: "18+ (Historical Content)",
+    tags: ["Portuguese", "cinema", "history", "culture", "wine"]
   }
 ]
 
 const eventStats = [
-  { number: "30+", label: "Events This Month", icon: <CalendarDaysIcon className="w-5 h-5" /> },
-  { number: "300+", label: "Active Members", icon: <UsersIcon className="w-5 h-5" /> },
-  { number: "98%", label: "Satisfaction Rate", icon: <HeartIcon className="w-5 h-5" /> },
-  { number: "45+", label: "UK Locations", icon: <MapPinIcon className="w-5 h-5" /> }
+  { number: "40+", label: "Monthly Portuguese Events", icon: <CalendarDaysIcon className="w-5 h-5" /> },
+  { number: "500+", label: "Portuguese Speakers", icon: <UsersIcon className="w-5 h-5" /> },
+  { number: "96%", label: "Cultural Satisfaction", icon: <HeartIcon className="w-5 h-5" /> },
+  { number: "15+", label: "UK Cities", icon: <MapPinIcon className="w-5 h-5" /> }
 ]
 
 export default function EventsShowcase() {
@@ -140,7 +197,7 @@ export default function EventsShowcase() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
           >
-            From Wine Tastings to Career Workshops
+            From Feijoada Lunches to Fado Evenings
           </motion.h2>
           
           <motion.p
@@ -149,8 +206,8 @@ export default function EventsShowcase() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl text-gray-600 max-w-3xl mx-auto"
           >
-            Join curated experiences designed for accomplished women 30+. From intimate dinner parties 
-            to professional networking events, find activities that match your interests and lifestyle.
+            Discover authentic Portuguese-speaking cultural events across the UK. From traditional food festivals 
+            to professional networking, connect with your heritage and build lasting friendships.
           </motion.p>
         </div>
 
@@ -174,7 +231,7 @@ export default function EventsShowcase() {
 
         {/* Featured Events */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {upcomingEvents.map((event, index) => (
+          {upcomingEvents.slice(0, 3).map((event, index) => (
             <motion.div
               key={event.id}
               initial={{ opacity: 0, y: 30 }}
@@ -208,6 +265,10 @@ export default function EventsShowcase() {
                   <div className="flex items-center text-sm text-gray-500">
                     <UsersIcon className="w-4 h-4 mr-2 text-primary-500" />
                     {event.attendees}/{event.maxAttendees} attending
+                  </div>
+                  <div className="flex items-center text-sm text-orange-600 font-medium">
+                    <SparklesIcon className="w-4 h-4 mr-2 text-orange-500" />
+                    {event.ageRestriction}
                   </div>
                 </div>
 
@@ -249,12 +310,12 @@ export default function EventsShowcase() {
           
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {[
-              { name: "Wine & Dining", icon: "🍷", count: "45+ events" },
-              { name: "Art & Culture", icon: "🎨", count: "32+ events" },
-              { name: "Book Clubs", icon: "📚", count: "28+ events" },
-              { name: "Fitness & Wellness", icon: "🧘‍♀️", count: "38+ events" },
-              { name: "Career Network", icon: "💼", count: "22+ events" },
-              { name: "Travel & Adventures", icon: "✈️", count: "15+ events" }
+              { name: "Food Festivals", icon: "🍲", count: "25+ events" },
+              { name: "Fado & Music", icon: "🎶", count: "18+ events" },
+              { name: "Football Viewing", icon: "⚽", count: "22+ events" },
+              { name: "Women's Gatherings", icon: "👩‍🤝‍👩", count: "30+ events" },
+              { name: "Professional Network", icon: "💼", count: "15+ events" },
+              { name: "Cultural Cinema", icon: "🎬", count: "12+ events" }
             ].map((category, index) => (
               <div 
                 key={index}
@@ -281,13 +342,13 @@ export default function EventsShowcase() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <div className="bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl p-8 text-white">
+          <div className="bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">
-              Ready to Join the Fun?
+              Ready to Connect with Portuguese Culture?
             </h3>
             <p className="text-lg opacity-90 mb-6 max-w-2xl mx-auto">
-              Browse our full calendar of events, from intimate dinner parties to exciting weekend getaways. 
-              Your next best friend might be waiting at our next event!
+              Browse our full calendar of authentic Portuguese events, from traditional food festivals to professional networking. 
+              Your Portuguese-speaking community awaits - discover your heritage and make lifelong connections!
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

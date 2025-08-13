@@ -6,28 +6,28 @@ import Logo from '@/components/Logo'
 
 const getFooterLinks = (t: any) => ({
   community: [
-    { name: 'Events & Nightlife', href: '/events' },
-    { name: 'Social Groups', href: '/groups' },
-    { name: 'Portuguese Venues', href: '/venues' },
-    { name: 'Community Guidelines (21+)', href: '/community-guidelines' },
+    { name: 'Events & Culture', href: '/events' },
+    { name: 'Community Groups', href: '/community' },
+    { name: 'Business Directory', href: '/directory' },
+    { name: 'Community Guidelines', href: '/community-guidelines' },
   ],
   support: [
     { name: 'Help Center', href: '/help' },
     { name: 'Contact Us', href: '/contact' },
     { name: 'Safety & Verification', href: '/safety' },
-    { name: 'Age Verification', href: '/age-verification' },
+    { name: 'How It Works', href: '/how-it-works' },
   ],
   company: [
     { name: 'About LusoTown', href: '/about' },
-    { name: 'Our Mission', href: '/mission' },
-    { name: 'Success Stories', href: '/stories' },
-    { name: 'Blog', href: '/blog' },
+    { name: 'Pricing', href: '/pricing' },
+    { name: 'Success Stories', href: '/success-stories' },
+    { name: 'Community Chat', href: '/forums' },
   ],
   legal: [
     { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Service (21+)', href: '/terms' },
-    { name: 'Cookie Policy', href: '/cookies' },
-    { name: 'Age Policy', href: '/age-policy' },
+    { name: 'Terms of Service', href: '/terms' },
+    { name: 'Community Safety', href: '/safety' },
+    { name: 'Platform Guidelines', href: '/community-guidelines' },
   ],
 })
 
@@ -51,11 +51,11 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-300">
                 <MapPinIcon className="h-5 w-5 text-red-400" />
-                <span>London Portuguese Social Network (21+)</span>
+                <span>UK Portuguese Community Platform</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
                 <EnvelopeIcon className="h-5 w-5 text-green-400" />
-                <span>connect@lusotown.london</span>
+                <span>connect@lusotown.co.uk</span>
               </div>
             </div>
           </div>
@@ -161,7 +161,7 @@ export default function Footer() {
         <div className="container-width px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} LusoTown London. All rights reserved. {t('footer.tagline')}
+              © {new Date().getFullYear()} LusoTown UK. All rights reserved. {t('footer.tagline')}
             </p>
             
             <div className="flex items-center gap-6">

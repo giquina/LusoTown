@@ -50,52 +50,55 @@ interface PricingTier {
 
 const pricingTiers: PricingTier[] = [
   {
-    name: 'Gratuito',
+    name: 'Comunidade Grátis',
     price: 0,
-    description: 'Perfect for discovering the London Portuguese community',
+    description: 'Perfect for discovering the UK Portuguese community',
     icon: <UserIcon className="w-6 h-6" />,
     solidIcon: <UserIcon className="w-6 h-6" />,
     features: [
-      'Join community groups',
-      'View events calendar',
+      'Browse Portuguese events across the UK',
+      'Join community groups and discussions',
       'Basic business directory access',
-      'Community posts viewing',
-      'Access to Portuguese resources',
-      'Safety verification',
-      'Cultural news updates'
+      'View cultural content and resources',
+      'Safety verification and member profiles',
+      'Cultural news and updates',
+      'Access to Portuguese language resources'
     ],
     limitations: [
       'Cannot RSVP to events',
+      'Cannot create or publish events',
       'Limited business directory features',
-      'No premium resources access',
-      'Basic support only'
+      'Basic support only',
+      'No event management tools'
     ],
     highlighted: false,
     buttonText: 'Comece Grátis',
     buttonStyle: 'btn-secondary'
   },
   {
-    name: 'Comunidade',
-    price: 15,
-    originalPrice: 18,
-    description: 'Full community access for Portuguese families in London',
+    name: 'Membro Comunidade',
+    price: 12,
+    originalPrice: 15,
+    description: 'Full community access for Portuguese families across the UK',
     icon: <StarIcon className="w-6 h-6" />,
     solidIcon: <StarIconSolid className="w-6 h-6" />,
     features: [
-      'Everything in Gratuito, plus:',
-      'Event RSVP and hosting',
+      'Everything in Grátis, plus:',
+      'RSVP to unlimited events',
+      'Join exclusive member events',
       'Full business directory access',
-      'Cultural resource library',
-      'Portuguese language exchange',
-      'Community job board',
-      'Priority support',
-      'Member-only discussions',
-      'Event calendar sync',
-      'Networking opportunities'
+      'Portuguese cultural resource library',
+      'Language exchange programs',
+      'Community job board access',
+      'Priority customer support',
+      'Member-only discussions and groups',
+      'Event calendar sync and notifications',
+      'Professional networking opportunities'
     ],
     limitations: [
-      'No family program access',
-      'Standard customer support'
+      'Cannot create or publish events',
+      'No event analytics or management tools',
+      'Standard customer support response time'
     ],
     highlighted: true,
     buttonText: 'Junte-se à Comunidade',
@@ -103,29 +106,56 @@ const pricingTiers: PricingTier[] = [
     badge: 'Mais Popular'
   },
   {
-    name: 'Família',
+    name: 'Organizador Básico',
     price: 25,
     originalPrice: 30,
-    description: 'Premium family experience with exclusive Portuguese programs',
+    description: 'Essential tools for Portuguese cultural event organizers',
+    icon: <CalendarIcon className="w-6 h-6" />,
+    solidIcon: <CalendarIcon className="w-6 h-6" />,
+    features: [
+      'Everything in Membro Comunidade, plus:',
+      'Create unlimited FREE events',
+      'Publish paid events with low fees',
+      'Only £0.50 + 1.5% per paid ticket',
+      '60% cheaper than Eventbrite fees',
+      'Basic event analytics and attendee management',
+      'Portuguese marketing templates',
+      'Community promotion in event feed',
+      'Standard customer support',
+      'Event registration and check-in tools'
+    ],
+    limitations: [
+      'Limited advanced analytics',
+      'Standard event placement in feed',
+      'Basic branding options only'
+    ],
+    highlighted: false,
+    buttonText: 'Começar a Organizar',
+    buttonStyle: 'btn-primary bg-gradient-to-r from-green-500 to-blue-500 border-transparent hover:from-green-600 hover:to-blue-600'
+  },
+  {
+    name: 'Organizador Pro',
+    price: 45,
+    originalPrice: 55,
+    description: 'Advanced tools for professional Portuguese event organizers',
     icon: <Crown className="w-6 h-6" />,
     solidIcon: <Crown className="w-6 h-6" />,
     features: [
-      'Everything in Comunidade, plus:',
-      'Family events and activities',
-      'Portuguese language resources',
-      'Children\'s cultural programs',
-      'Premium business networking',
-      'VIP event access',
-      'Heritage preservation activities',
-      'Educational workshops',
-      'Cultural mentorship',
-      'Exclusive venue partnerships',
-      'Priority 24/7 support',
-      'Personal community guidance'
+      'Everything in Organizador Básico, plus:',
+      'Even lower fees: £0.35 + 1.2% per ticket',
+      '70% cheaper than Eventbrite fees',
+      'Advanced event analytics and insights',
+      'Custom event branding and pages',
+      'Priority placement in event feed',
+      'Revenue tracking and detailed reports',
+      'Multiple event locations support',
+      'Recurring event management',
+      'Priority customer support',
+      'Bulk attendee management tools'
     ],
     limitations: [],
     highlighted: false,
-    buttonText: 'Escolher Família',
+    buttonText: 'Upgrade para Pro',
     buttonStyle: 'btn-primary bg-gradient-to-r from-purple-500 to-pink-500 border-transparent hover:from-purple-600 hover:to-pink-600'
   }
 ]
@@ -139,27 +169,27 @@ const features = [
   {
     icon: <HeartIcon className="w-5 h-5" />,
     title: 'Cultural Heritage',
-    description: 'Connect with fellow Portuguese in London who share your cultural values and traditions'
+    description: 'Connect with fellow Portuguese across the UK who share your cultural values and traditions'
   },
   {
     icon: <CalendarIcon className="w-5 h-5" />,
     title: 'Portuguese Events',
-    description: 'Fado nights, festival celebrations, business networking, and family activities celebrating Portuguese culture'
+    description: 'Fado nights, festival celebrations, business networking, and family activities celebrating Portuguese culture nationwide'
   },
   {
     icon: <ChatBubbleLeftRightIcon className="w-5 h-5" />,
     title: 'Language Support',
-    description: 'Portuguese language groups, exchange programs, and resources to help maintain your mother tongue'
+    description: 'Portuguese language groups, exchange programs, and resources to help maintain your mother tongue across the UK'
   },
   {
     icon: <LockClosedIcon className="w-5 h-5" />,
     title: 'Portuguese Community',
-    description: 'Exclusive space for the Portuguese diaspora in London to connect and support each other'
+    description: 'Exclusive space for the Portuguese diaspora in the UK to connect and support each other'
   },
   {
     icon: <TrophyIcon className="w-5 h-5" />,
     title: 'Business Network',
-    description: 'Connect with Portuguese entrepreneurs and professionals, share opportunities, and grow together'
+    description: 'Connect with Portuguese entrepreneurs and professionals across the UK, share opportunities, and grow together'
   }
 ]
 
@@ -217,12 +247,12 @@ export default function Pricing() {
                 Confiado por 500+ membros da comunidade portuguesa
               </div>
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                A Sua Comunidade Portuguesa em Londres:
-                <span className="gradient-text"> Escolha o Seu Plano</span>
+                Comunidade Portuguesa no Reino Unido:
+                <span className="gradient-text"> Mais Barato que Eventbrite</span>
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                Conecte-se com a vibrante comunidade portuguesa em Londres. 
-                Desde eventos culturais a networking de negócios, encontre a experiência perfeita para si e a sua família.
+                Organize eventos portugueses com taxas até 70% mais baixas que Eventbrite. 
+                Conecte-se com milhares de lusófonos por todo o Reino Unido através da nossa plataforma especializada.
               </p>
               
               {/* Trust Badges */}
@@ -296,23 +326,47 @@ export default function Pricing() {
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">{tier.name}</h3>
                     <p className="text-gray-600 mb-6">{tier.description}</p>
+                    {(tier.name === 'Organizador Básico' || tier.name === 'Organizador Pro') && (
+                      <div className="mb-4 p-3 bg-green-50 rounded-lg border border-green-200">
+                        <div className="text-sm font-medium text-green-800 mb-1">vs Eventbrite:</div>
+                        <div className="text-xs text-green-700">
+                          {tier.name === 'Organizador Básico' ? 
+                            'Pague £0.50 + 1.5% vs £0.59 + 6.95%' : 
+                            'Pague £0.35 + 1.2% vs £0.59 + 6.95%'
+                          }
+                        </div>
+                        <div className="text-xs text-green-700 font-semibold">
+                          {tier.name === 'Organizador Básico' ? 'Poupe 60% nas taxas!' : 'Poupe 70% nas taxas!'}
+                        </div>
+                      </div>
+                    )}
                     
                     <div className="mb-6">
                       {tier.price === 0 ? (
                         <div className="text-4xl font-bold text-gray-900">Gratuito</div>
                       ) : (
-                        <div className="flex items-center justify-center space-x-2">
-                          {isAnnual && tier.originalPrice && (
-                            <div className="text-lg text-gray-500 line-through">
-                              £{tier.originalPrice * 12}
+                        <div>
+                          <div className="flex items-center justify-center space-x-2">
+                            {isAnnual && tier.originalPrice && (
+                              <div className="text-lg text-gray-500 line-through">
+                                £{tier.originalPrice * 12}
+                              </div>
+                            )}
+                            <div className="text-4xl font-bold text-gray-900">
+                              £{getDiscountedPrice(tier.price)}
+                            </div>
+                            <div className="text-gray-600">
+                              /{isAnnual ? 'year' : 'month'}
+                            </div>
+                          </div>
+                          {(tier.name === 'Organizador Básico' || tier.name === 'Organizador Pro') && (
+                            <div className="text-sm text-orange-600 font-medium mt-2">
+                              {tier.name === 'Organizador Básico' ? 
+                                '+ £0.50 + 1.5% por bilhete pago' : 
+                                '+ £0.35 + 1.2% por bilhete pago'
+                              }
                             </div>
                           )}
-                          <div className="text-4xl font-bold text-gray-900">
-                            £{getDiscountedPrice(tier.price)}
-                          </div>
-                          <div className="text-gray-600">
-                            /{isAnnual ? 'year' : 'month'}
-                          </div>
                         </div>
                       )}
                       {isAnnual && tier.price > 0 && (
@@ -426,22 +480,22 @@ export default function Pricing() {
                 <thead className="bg-gray-50">
                   <tr>
                     <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Funcionalidades</th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">Gratuito</th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-primary-600 bg-primary-50">Comunidade</th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-purple-600">Família</th>
+                    <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">Grátis</th>
+                    <th className="px-6 py-4 text-center text-sm font-semibold text-primary-600 bg-primary-50">Membro</th>
+                    <th className="px-6 py-4 text-center text-sm font-semibold text-green-600">Organizador</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
                   {[
-                    { feature: 'Acesso ao Diretório', free: 'Básico', core: 'Completo', premium: 'Premium + VIP' },
-                    { feature: 'Participação em Eventos', free: 'Apenas visualizar', core: 'RSVP ilimitado', premium: 'Eventos familiares + VIP' },
-                    { feature: 'Grupos de Chat', free: 'Públicos apenas', core: 'Todos os grupos', premium: 'Grupos + Mentoria' },
-                    { feature: 'Recursos Portugueses', free: 'Básico', core: 'Biblioteca completa', premium: 'Programas infantis' },
-                    { feature: 'Networking Empresarial', free: false, core: true, premium: true },
-                    { feature: 'Programas Familiares', free: false, core: false, premium: true },
-                    { feature: 'Eventos Culturais VIP', free: false, core: false, premium: true },
-                    { feature: 'Orientação Pessoal', free: false, core: false, premium: true },
-                    { feature: 'Apoio ao Cliente', free: 'Padrão', core: 'Prioritário', premium: '24/7 Prioritário' }
+                    { feature: 'Acesso ao Diretório', free: 'Básico', core: 'Completo', premium: 'Premium + Analytics' },
+                    { feature: 'Participação em Eventos', free: 'Apenas visualizar', core: 'RSVP ilimitado', premium: 'RSVP + Criar eventos' },
+                    { feature: 'Grupos de Chat', free: 'Públicos apenas', core: 'Todos os grupos', premium: 'Grupos + Promoção' },
+                    { feature: 'Recursos Portugueses', free: 'Básico', core: 'Biblioteca completa', premium: 'Templates marketing' },
+                    { feature: 'Criação de Eventos', free: false, core: false, premium: true },
+                    { feature: 'Analytics de Eventos', free: false, core: false, premium: true },
+                    { feature: 'Taxas por Bilhete', free: 'N/A', core: 'N/A', premium: '£0.35-0.50 + 1.2-1.5%' },
+                    { feature: 'Branding Personalizado', free: false, core: false, premium: true },
+                    { feature: 'Apoio ao Cliente', free: 'Padrão', core: 'Prioritário', premium: 'Prioritário + Dedicado' }
                   ].map((row, index) => (
                     <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
                       <td className="px-6 py-4 text-sm text-gray-900 font-medium">{row.feature}</td>
@@ -475,7 +529,7 @@ export default function Pricing() {
                             <XMarkIcon className="w-5 h-5 text-gray-400 mx-auto" />
                           )
                         ) : (
-                          <span className="text-sm text-purple-700 font-medium">{row.premium}</span>
+                          <span className="text-sm text-green-700 font-medium">{row.premium}</span>
                         )}
                       </td>
                     </tr>

@@ -4,7 +4,7 @@ import { Toaster } from 'react-hot-toast'
 import './globals.css'
 import WhatsAppWidget from '@/components/WhatsAppWidget'
 import LiveFeedNotifications from '@/components/LiveFeedNotifications'
-import AgeVerification from '@/components/AgeVerification'
+import UserTypeSelection from '@/components/UserTypeSelection'
 import { LanguageProvider } from '@/context/LanguageContext'
 
 const inter = Inter({ 
@@ -21,44 +21,49 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'LusoTown London - Portuguese Community Platform',
-  description: 'A digital home for Portuguese-speaking communities in London. Connect with culture, find events, discover businesses, and build friendships in the heart of the UK.',
+  title: 'LusoTown - UK Portuguese Community Platform',
+  description: 'The premier platform for Portuguese-speaking communities across the UK. Connect with culture, find events, discover businesses, and build friendships from London to Scotland.',
   keywords: [
-    'portuguese community london',
-    'lusophone london',
+    'portuguese community uk',
+    'portuguese london',
+    'lusophone britain',
     'portugal diaspora uk',
-    'brazilian community london',
-    'angolan community london',
-    'portuguese culture london',
+    'brazilian community uk',
+    'angolan community britain',
+    'portuguese culture uk',
     'portuguese events london',
-    'portuguese business directory',
-    'luso diaspora uk',
-    'portuguese speakers london',
-    'lusophone culture uk'
+    'portuguese business directory uk',
+    'luso diaspora britain',
+    'portuguese speakers uk',
+    'lusophone culture britain',
+    'portuguese community platform uk',
+    'portuguese manchester',
+    'portuguese birmingham',
+    'portuguese scotland'
   ],
-  authors: [{ name: 'LusoTown London' }],
-  creator: 'LusoTown London',
-  publisher: 'LusoTown London',
+  authors: [{ name: 'LusoTown' }],
+  creator: 'LusoTown',
+  publisher: 'LusoTown',
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://lusotown.london',
-    title: 'LusoTown London - Portuguese Community Platform',
-    description: 'A digital home for Portuguese-speaking communities in London. Connect with culture, find events, discover businesses, and build friendships in the heart of the UK.',
-    siteName: 'LusoTown London',
+    url: 'https://lusotown.com',
+    title: 'LusoTown - UK Portuguese Community Platform',
+    description: 'The premier platform for Portuguese-speaking communities across the UK. Connect with culture, find events, discover businesses, and build friendships from London to Scotland.',
+    siteName: 'LusoTown',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'LusoTown London - Portuguese Community Platform',
+        alt: 'LusoTown - UK Portuguese Community Platform',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'LusoTown London - Portuguese Community Platform',
-    description: 'A digital home for Portuguese-speaking communities in London. Connect with culture, find events, discover businesses, and build friendships.',
+    title: 'LusoTown - UK Portuguese Community Platform',
+    description: 'The premier platform for Portuguese-speaking communities across the UK. Connect with culture, find events, discover businesses, and build friendships.',
     images: ['/og-image.jpg'],
   },
   viewport: {
@@ -94,7 +99,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} antialiased`}>
         <LanguageProvider>
-          <AgeVerification />
+          <UserTypeSelection />
           {children}
           <WhatsAppWidget />
           <LiveFeedNotifications />

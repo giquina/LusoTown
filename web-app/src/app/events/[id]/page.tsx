@@ -506,6 +506,19 @@ export default function EventDetailsPage() {
                         <div className="text-sm text-gray-500">Attendees</div>
                       </div>
                     </div>
+
+                    {/* Age Restriction */}
+                    {event.ageRestriction && (
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                          <InformationCircleIcon className="w-5 h-5 text-orange-600" />
+                        </div>
+                        <div>
+                          <div className="font-medium text-gray-900">{event.ageRestriction}</div>
+                          <div className="text-sm text-gray-500">Age Requirement</div>
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   {/* Tags */}

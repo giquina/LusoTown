@@ -23,60 +23,80 @@ const WhatsAppWidget: React.FC = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const { language } = useLanguage()
 
-  // Conversation flow for Portuguese social network (21+)
+  // Conversation flow for global Portuguese community platform
   const conversationFlow = {
     en: [
       {
-        message: "Olá! 👋 Welcome to LusoTown London - the social network for Portuguese speakers (21+) in London! I'm here to help you find your Portuguese tribe for nightlife, events, and genuine friendships.",
-        options: ["Tell me about LusoTown", "I want to meet Portuguese people", "What social events do you have?", "Just browsing"],
+        message: "Olá! 👋 Welcome to LusoTown - the global platform connecting Portuguese speakers worldwide! I'm here to help you either organize events for our community or find amazing Portuguese events to attend.",
+        options: ["I want to organize events", "I want to find events to attend", "Tell me about LusoTown", "Just browsing"],
         icon: <Heart className="w-4 h-4 text-green-600" />
       },
+      // Organizer path
       {
-        message: "Fantástico! 🇵🇹 LusoTown connects Portuguese adults in London for real social experiences:\n\n🍻 Portuguese nightlife & bar crawls\n🥘 Restaurant meetups & brunches\n🏋️ Gym groups & fitness sessions\n🎉 Cultural events & parties\n\nNo more going out alone!",
-        options: ["This sounds perfect!", "What about age groups?", "How do I verify I'm Portuguese?", "Tell me about safety"],
+        message: "Fantástico! 🎯 You want to organize events for Portuguese speakers! LusoTown helps you:\n\n📅 Create and promote Portuguese cultural events\n🌍 Reach Portuguese speakers globally (starting with London)\n💰 Monetize your events with our pricing tools\n📈 Track attendance and grow your community\n🎉 Access promotional tools and templates\n\nReady to become a community leader?",
+        options: ["Yes, I want to organize!", "What about pricing my events?", "How do I reach people globally?", "Tell me about promotional tools"],
+        icon: <Calendar className="w-4 h-4 text-green-600" />
+      },
+      // Member path  
+      {
+        message: "Perfeito! 🎉 You want to find Portuguese events to attend! LusoTown connects you with:\n\n🇵🇹 Portuguese cultural events worldwide\n🍷 Wine tastings, fado nights, festivals\n👥 Portuguese speakers in your area and globally\n🏆 Quality verified events and organizers\n💬 Chat with other Portuguese speakers\n\n*Currently featuring London events, expanding globally soon!*",
+        options: ["Show me London events!", "I'm in another city", "How do I connect with people?", "What types of events?"],
         icon: <Users className="w-4 h-4 text-red-600" />
       },
+      // Platform info
       {
-        message: "We have groups for different ages and interests! 🎯\n\n👥 General 21+ social groups\n🍷 30+ professional networking & wine tastings\n💃 35+ sophisticated events & cultural experiences\n👭 Women-only groups (all ages 21+)\n\nAll verified Portuguese speakers!",
-        options: ["Perfect for my age!", "What about women-only events?", "How does verification work?", "Show me upcoming events"],
+        message: "Excelente! 🌍 LusoTown is the global home for Portuguese speakers:\n\n🎪 **For Event Organizers:** Tools to create, promote, and monetize Portuguese events\n🎭 **For Community Members:** Discover events and connect with Portuguese speakers\n🌐 **Global Reach:** Currently in London, expanding worldwide\n🇵🇹🇧🇷🇦🇴🇲🇿 All Portuguese-speaking countries welcome!\n\nUniting our global Portuguese family!",
+        options: ["I want to organize events", "I want to attend events", "Tell me about global expansion", "How do I join?"],
         icon: <Calendar className="w-4 h-4 text-yellow-600" />
       },
+      // Event organizer details
       {
-        message: "Amazing choice! 🌟 Our women-only groups are super popular:\n\n👭 Ladies' brunches in Portuguese areas\n🍷 Wine & cheese nights in Vauxhall\n💃 Salsa dancing classes\n🛍️ Shopping trips to Portuguese markets\n🏋️ Women's fitness groups\n\nSafe, verified, Portuguese-speaking women only!",
-        options: ["I love this!", "How do I join?", "What about mixed groups too?", "Tell me about verification"],
-        icon: <Shield className="w-4 h-4 text-green-600" />
+        message: "Amazing! 🚀 As an event organizer on LusoTown you get:\n\n💡 **Event Creation Tools:** Easy setup for Portuguese cultural events\n💰 **Flexible Pricing:** Free, paid, or donation-based events\n📊 **Analytics:** Track registrations and engagement\n🌍 **Global Reach:** Access to Portuguese speakers worldwide\n📢 **Marketing Support:** Social media templates and promotion\n🎯 **Targeted Audience:** Verified Portuguese speakers only\n\nStart organizing today!",
+        options: ["Sign me up as organizer!", "What about event fees?", "How do I promote globally?", "Show me organizer tools"],
+        icon: <ArrowRight className="w-4 h-4 text-green-600" />
       },
+      // Event attendee details  
       {
-        message: "Excelente! 🎉 Joining is super easy:\n\n1️⃣ Quick signup (must be 21+)\n2️⃣ Portuguese language verification\n3️⃣ Photo verification for safety\n4️⃣ Choose your social interests\n5️⃣ Start attending events immediately!\n\nReady to never be alone in London again?",
-        options: ["Yes, let's do this!", "I have questions about age verification", "What if I'm Brazilian/Angolan?", "Take me to signup"],
-        icon: <ArrowRight className="w-4 h-4 text-red-600" />
+        message: "Incrível! 🎭 As a community member you can:\n\n🎪 **Discover Events:** Portuguese festivals, cultural nights, networking\n🗺️ **London Events Now:** Currently available in London\n🌍 **Global Expansion:** Coming to your city soon!\n👥 **Connect:** Chat with other Portuguese speakers\n💫 **Verified Community:** Safe, authentic Portuguese speakers\n🎯 **Personalized:** Events matched to your interests\n\nJoin our growing Portuguese family!",
+        options: ["Join the community!", "When will you expand to my city?", "What London events are available?", "How do I connect with people?"],
+        icon: <Shield className="w-4 h-4 text-red-600" />
       }
     ],
     pt: [
       {
-        message: "Olá! 👋 Bem-vindo à LusoTown London - a rede social para falantes de português (21+) em Londres! Estou aqui para te ajudar a encontrar a tua tribo portuguesa para vida noturna, eventos e amizades genuínas.",
-        options: ["Conta-me sobre a LusoTown", "Quero conhecer portugueses", "Que eventos sociais têm?", "Só estou a ver"],
+        message: "Olá! 👋 Bem-vindo à LusoTown - a plataforma global que conecta lusófonos em todo o mundo! Estou aqui para te ajudar a organizar eventos para a nossa comunidade ou encontrar eventos portugueses incríveis para participar.",
+        options: ["Quero organizar eventos", "Quero encontrar eventos para participar", "Conta-me sobre a LusoTown", "Só estou a ver"],
         icon: <Heart className="w-4 h-4 text-green-600" />
       },
+      // Organizer path
       {
-        message: "Fantástico! 🇵🇹 A LusoTown conecta adultos portugueses em Londres para experiências sociais reais:\n\n🍻 Vida noturna portuguesa & pub crawls\n🥘 Encontros em restaurantes & brunches\n🏋️ Grupos de ginásio & fitness\n🎉 Eventos culturais & festas\n\nNunca mais saias sozinho!",
-        options: ["Isto parece perfeito!", "E sobre grupos etários?", "Como verifico que sou português?", "Fala-me sobre segurança"],
+        message: "Fantástico! 🎯 Queres organizar eventos para lusófonos! A LusoTown ajuda-te a:\n\n📅 Criar e promover eventos culturais portugueses\n🌍 Alcançar lusófonos globalmente (começando em Londres)\n💰 Monetizar os teus eventos com as nossas ferramentas\n📈 Acompanhar participação e fazer crescer a comunidade\n🎉 Aceder a ferramentas e modelos promocionais\n\nPronto para te tornares um líder comunitário?",
+        options: ["Sim, quero organizar!", "E sobre preços dos eventos?", "Como alcanço pessoas globalmente?", "Fala-me das ferramentas promocionais"],
+        icon: <Calendar className="w-4 h-4 text-green-600" />
+      },
+      // Member path
+      {
+        message: "Perfeito! 🎉 Queres encontrar eventos portugueses para participar! A LusoTown conecta-te com:\n\n🇵🇹 Eventos culturais portugueses em todo o mundo\n🍷 Provas de vinho, noites de fado, festivais\n👥 Lusófonos na tua área e globalmente\n🏆 Eventos e organizadores verificados e de qualidade\n💬 Conversa com outros lusófonos\n\n*Atualmente com eventos em Londres, expandindo globalmente em breve!*",
+        options: ["Mostra-me eventos em Londres!", "Estou noutra cidade", "Como me conecto com pessoas?", "Que tipos de eventos?"],
         icon: <Users className="w-4 h-4 text-red-600" />
       },
+      // Platform info
       {
-        message: "Temos grupos para diferentes idades e interesses! 🎯\n\n👥 Grupos sociais gerais 21+\n🍷 Networking profissional 30+ & degustações de vinho\n💃 Eventos sofisticados 35+ & experiências culturais\n👭 Grupos só para mulheres (todas as idades 21+)\n\nTodos falantes de português verificados!",
-        options: ["Perfeito para a minha idade!", "E eventos só para mulheres?", "Como funciona a verificação?", "Mostra-me eventos próximos"],
+        message: "Excelente! 🌍 A LusoTown é o lar global dos lusófonos:\n\n🎪 **Para Organizadores:** Ferramentas para criar, promover e monetizar eventos portugueses\n🎭 **Para Membros da Comunidade:** Descobrir eventos e conectar com lusófonos\n🌐 **Alcance Global:** Atualmente em Londres, expandindo mundialmente\n🇵🇹🇧🇷🇦🇴🇲🇿 Todos os países lusófonos são bem-vindos!\n\nUnindo a nossa família portuguesa global!",
+        options: ["Quero organizar eventos", "Quero participar em eventos", "Fala-me da expansão global", "Como me junto?"],
         icon: <Calendar className="w-4 h-4 text-yellow-600" />
       },
+      // Event organizer details
       {
-        message: "Escolha incrível! 🌟 Os nossos grupos só para mulheres são super populares:\n\n👭 Brunches de senhoras em áreas portuguesas\n🍷 Noites de vinho & queijo em Vauxhall\n💃 Aulas de dança salsa\n🛍️ Idas às compras a mercados portugueses\n🏋️ Grupos de fitness femininos\n\nSeguro, verificado, só mulheres lusófonas!",
-        options: ["Adoro isto!", "Como me junto?", "E sobre grupos mistos também?", "Fala-me da verificação"],
-        icon: <Shield className="w-4 h-4 text-green-600" />
+        message: "Incrível! 🚀 Como organizador de eventos na LusoTown recebes:\n\n💡 **Ferramentas de Criação:** Configuração fácil para eventos culturais portugueses\n💰 **Preços Flexíveis:** Eventos gratuitos, pagos ou baseados em doações\n📊 **Analytics:** Acompanha inscrições e envolvimento\n🌍 **Alcance Global:** Acesso a lusófonos em todo o mundo\n📢 **Apoio de Marketing:** Modelos e promoção para redes sociais\n🎯 **Audiência Direcionada:** Apenas lusófonos verificados\n\nComeça a organizar hoje!",
+        options: ["Regista-me como organizador!", "E sobre taxas de eventos?", "Como promovo globalmente?", "Mostra-me ferramentas de organizador"],
+        icon: <ArrowRight className="w-4 h-4 text-green-600" />
       },
+      // Event attendee details
       {
-        message: "Excelente! 🎉 Juntar-se é super fácil:\n\n1️⃣ Registo rápido (tens de ter 21+)\n2️⃣ Verificação da língua portuguesa\n3️⃣ Verificação de foto para segurança\n4️⃣ Escolhe os teus interesses sociais\n5️⃣ Começa a participar em eventos imediatamente!\n\nPronto para nunca mais estares sozinho em Londres?",
-        options: ["Sim, vamos a isto!", "Tenho questões sobre verificação de idade", "E se for brasileiro/angolano?", "Leva-me ao registo"],
-        icon: <ArrowRight className="w-4 h-4 text-red-600" />
+        message: "Incrível! 🎭 Como membro da comunidade podes:\n\n🎪 **Descobrir Eventos:** Festivais portugueses, noites culturais, networking\n🗺️ **Eventos em Londres Agora:** Atualmente disponíveis em Londres\n🌍 **Expansão Global:** Chegando à tua cidade em breve!\n👥 **Conectar:** Conversa com outros lusófonos\n💫 **Comunidade Verificada:** Lusófonos seguros e autênticos\n🎯 **Personalizado:** Eventos adaptados aos teus interesses\n\nJunta-te à nossa família portuguesa em crescimento!",
+        options: ["Juntar-me à comunidade!", "Quando expandem para a minha cidade?", "Que eventos há em Londres?", "Como me conecto com pessoas?"],
+        icon: <Shield className="w-4 h-4 text-red-600" />
       }
     ]
   }
@@ -131,15 +151,16 @@ const WhatsAppWidget: React.FC = () => {
     }
     setMessages(prev => [...prev, userMessage])
 
-    // Handle signup actions
-    if (option.includes("let's do this") || option.includes("Take me to signup") || option.includes("signup") || 
-        option.includes("vamos a isto") || option.includes("Leva-me ao registo")) {
+    // Handle signup/registration actions
+    if (option.includes("sign me up") || option.includes("signup") || option.includes("organizer") ||
+        option.includes("regista-me") || option.includes("Leva-me ao registo") || option.includes("Regista-me") ||
+        option.includes("let's start") || option.includes("vamos começar")) {
       setTimeout(() => {
         const finalMessage: Message = {
           id: Date.now() + 1,
           text: language === 'pt' 
-            ? "Fantástico! 🚀 Bem-vindo à tua nova aventura social portuguesa!\n\nA levar-te para a página de registo..." 
-            : "Fantastic! 🚀 Welcome to your new Portuguese social adventure!\n\nTaking you to the signup page...",
+            ? "Fantástico! 🚀 Bem-vindo à LusoTown global!\n\nA levar-te para a página de registo..." 
+            : "Fantastic! 🚀 Welcome to global LusoTown!\n\nTaking you to the signup page...",
           isBot: true,
           timestamp: new Date(),
           icon: <Heart className="w-4 h-4 text-green-600" />
@@ -154,14 +175,36 @@ const WhatsAppWidget: React.FC = () => {
       return
     }
 
-    // Handle "maybe later" responses
+    // Handle join community actions
+    if (option.includes("Join the community") || option.includes("Juntar-me à comunidade")) {
+      setTimeout(() => {
+        const joinMessage: Message = {
+          id: Date.now() + 1,
+          text: language === 'pt' 
+            ? "Excelente escolha! 🎉 Vamos conectar-te com lusófonos em todo o mundo!\n\nA levar-te para te juntares à comunidade..." 
+            : "Excellent choice! 🎉 Let's connect you with Portuguese speakers worldwide!\n\nTaking you to join the community...",
+          isBot: true,
+          timestamp: new Date(),
+          icon: <Users className="w-4 h-4 text-green-600" />
+        }
+        setMessages(prev => [...prev, joinMessage])
+        
+        // Redirect to events page after showing message
+        setTimeout(() => {
+          window.open('/events', '_blank')
+        }, 2000)
+      }, 1000)
+      return
+    }
+
+    // Handle "browsing" responses
     if (option.includes("browsing") || option.includes("Só estou a ver")) {
       setTimeout(() => {
         const laterMessage: Message = {
           id: Date.now() + 1,
           text: language === 'pt'
-            ? "Sem problema! 😊 Estarei aqui sempre que estiveres pronto para explorar a nossa comunidade portuguesa incrível. Sente-te à vontade para navegar no site!"
-            : "No worries at all! 😊 I'll be here whenever you're ready to explore our amazing Portuguese community. Feel free to browse our website!",
+            ? "Sem problema! 😊 Estarei aqui sempre que estiveres pronto para explorar a nossa comunidade portuguesa global. Sente-te à vontade para navegar no site!"
+            : "No worries at all! 😊 I'll be here whenever you're ready to explore our amazing global Portuguese community. Feel free to browse our website!",
           isBot: true,
           timestamp: new Date(),
           icon: <Heart className="w-4 h-4 text-green-600" />
@@ -171,25 +214,48 @@ const WhatsAppWidget: React.FC = () => {
       return
     }
 
-    // Progress through conversation
+    // Handle path selection and routing
     setTimeout(() => {
       const currentFlow = conversationFlow[language as keyof typeof conversationFlow]
-      const nextStep = currentStep + 1
-      if (nextStep < currentFlow.length) {
-        addBotMessage(currentFlow[nextStep])
-        setCurrentStep(nextStep)
+      let nextStepIndex = 1 // Default to first step after intro
+
+      // Route based on user selection
+      if (option.includes("organize") || option.includes("organizar")) {
+        nextStepIndex = 1 // Organizer path
+      } else if (option.includes("find events") || option.includes("attend") || option.includes("encontrar eventos") || option.includes("participar")) {
+        nextStepIndex = 2 // Member/attendee path  
+      } else if (option.includes("Tell me about") || option.includes("Conta-me sobre")) {
+        nextStepIndex = 3 // Platform info path
+      } else if (currentStep === 1 || currentStep === 2) {
+        // Continue with organizer or member specific flows
+        nextStepIndex = 4 // Detailed info for organizers
+      } else if (currentStep === 3) {
+        // From platform info, route based on choice
+        if (option.includes("organize") || option.includes("organizar")) {
+          nextStepIndex = 4 // Organizer details
+        } else {
+          nextStepIndex = 5 // Member details
+        }
       } else {
-        // End of conversation - encourage signup
+        // Default progression
+        nextStepIndex = Math.min(currentStep + 1, currentFlow.length - 1)
+      }
+
+      if (nextStepIndex < currentFlow.length) {
+        addBotMessage(currentFlow[nextStepIndex])
+        setCurrentStep(nextStepIndex)
+      } else {
+        // End of conversation - encourage action
         const finalMessage: Message = {
           id: Date.now() + 1,
           text: language === 'pt'
-            ? "Obrigado por falares comigo! 💕 A LusoTown está aqui para te ajudar a encontrar a tua tribo portuguesa em Londres. Pronto para começar?"
-            : "Thanks for chatting with me! 💕 LusoTown is here to help you find your Portuguese tribe in London. Ready to start?",
+            ? "Obrigado por falares comigo! 💕 A LusoTown está aqui para conectar lusófonos em todo o mundo. Pronto para começar?"
+            : "Thanks for chatting with me! 💕 LusoTown is here to connect Portuguese speakers worldwide. Ready to start?",
           isBot: true,
           timestamp: new Date(),
           options: language === 'pt' 
-            ? ["Sim, regista-me!", "Vou pensar nisso"]
-            : ["Yes, sign me up!", "I'll think about it"],
+            ? ["Sim, vamos começar!", "Vou pensar nisso"]
+            : ["Yes, let's start!", "I'll think about it"],
           icon: <Users className="w-4 h-4 text-red-600" />
         }
         setMessages(prev => [...prev, finalMessage])
@@ -238,7 +304,7 @@ const WhatsAppWidget: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-sm">LusoTown Helper</h3>
-                <p className="text-xs opacity-90">Tua tribo portuguesa 🇵🇹</p>
+                <p className="text-xs opacity-90">Conectando lusófonos 🌍</p>
               </div>
             </div>
             <div className="flex items-center space-x-2">
@@ -346,8 +412,8 @@ const WhatsAppWidget: React.FC = () => {
             </div>
             <p className="text-gray-600 leading-relaxed">
               {language === 'pt' 
-                ? 'Encontra a tua tribo portuguesa em Londres! Fala comigo para começar 🇵🇹'
-                : 'Find your Portuguese tribe in London! Chat with me to get started 🇵🇹'
+                ? 'Conecta lusófonos globalmente! Organiza ou encontra eventos portugueses 🌍🇵🇹'
+                : 'Connecting Portuguese speakers globally! Organize or find Portuguese events 🌍🇵🇹'
               }
             </p>
             <div className="mt-2 text-xs text-red-600 font-medium">

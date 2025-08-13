@@ -125,7 +125,7 @@ export default function Hero() {
             >
               {[
                 { icon: HeartIcon, text: "CULTURAL EVENTS", color: "#dc2626" },
-                { icon: UsersIcon, text: "500+ COMMUNITY MEMBERS", color: "#059669" },
+                { icon: UsersIcon, text: "500+ UK COMMUNITY MEMBERS", color: "#059669" },
                 { icon: SparklesIcon, text: "PORTUGUESE BUSINESSES", color: "#d97706" }
               ].map((item, index) => (
                 <motion.div
@@ -179,15 +179,6 @@ export default function Hero() {
                 {t('hero.cta.secondary')}
               </motion.a>
             </motion.div>
-
-            {/* Social Login */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
-            >
-              <SocialLogin mode="signup" />
-            </motion.div>
           </motion.div>
 
           {/* Right Column - Visual Content */}
@@ -221,9 +212,19 @@ export default function Hero() {
 
             <div className="relative z-10 bg-white/20 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/30">
               <div className="space-y-6">
+                {/* Social Login */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8, duration: 0.8 }}
+                  className="text-center"
+                >
+                  <SocialLogin mode="signup" />
+                </motion.div>
+
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-gray-800 mb-2">Join 500+ Lusophones</h3>
-                  <p className="text-gray-600">Celebrating heritage in London</p>
+                  <p className="text-gray-600">Celebrating heritage across the UK</p>
                 </div>
                 
                 {/* Member Avatars */}
@@ -253,33 +254,43 @@ export default function Hero() {
                 
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div className="bg-white/40 rounded-2xl p-4">
-                    <div className="text-3xl font-bold text-green-600">50+</div>
-                    <div className="text-sm text-gray-600">Businesses</div>
+                    <div className="text-3xl font-bold text-green-600">75+</div>
+                    <div className="text-sm text-gray-600">Portuguese Businesses</div>
                   </div>
                   <div className="bg-white/40 rounded-2xl p-4">
-                    <div className="text-3xl font-bold text-red-600">25+</div>
-                    <div className="text-sm text-gray-600">Cultural Events</div>
+                    <div className="text-3xl font-bold text-red-600">40+</div>
+                    <div className="text-sm text-gray-600">Monthly Events</div>
                   </div>
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-2">
+                  <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider">This Week's Events:</div>
                   <div className="flex items-center gap-3 bg-white/40 rounded-xl p-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-red-500 rounded-full flex items-center justify-center">
+                    <div className="w-10 h-10 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center">
                       <HeartIcon className="h-5 w-5 text-white" />
                     </div>
-                    <span className="text-sm font-medium text-gray-700">Heritage preservation</span>
-                  </div>
-                  <div className="flex items-center gap-3 bg-white/40 rounded-xl p-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-yellow-500 to-green-500 rounded-full flex items-center justify-center">
-                      <UsersIcon className="h-5 w-5 text-white" />
+                    <div className="text-left">
+                      <div className="text-sm font-medium text-gray-700">30+ Women's Portuguese Brunch</div>
+                      <div className="text-xs text-gray-500">Saturday • Notting Hill</div>
                     </div>
-                    <span className="text-sm font-medium text-gray-700">Community connections</span>
                   </div>
                   <div className="flex items-center gap-3 bg-white/40 rounded-xl p-3">
-                    <div className="w-10 h-10 bg-gradient-to-r from-red-500 to-yellow-500 rounded-full flex items-center justify-center">
+                    <div className="w-10 h-10 bg-gradient-to-r from-yellow-500 to-red-500 rounded-full flex items-center justify-center">
                       <SparklesIcon className="h-5 w-5 text-white" />
                     </div>
-                    <span className="text-sm font-medium text-gray-700">Cultural celebrations</span>
+                    <div className="text-left">
+                      <div className="text-sm font-medium text-gray-700">35+ Luxury Fado Evening</div>
+                      <div className="text-xs text-gray-500">Friday • Central London</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 bg-white/40 rounded-xl p-3">
+                    <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center">
+                      <UsersIcon className="h-5 w-5 text-white" />
+                    </div>
+                    <div className="text-left">
+                      <div className="text-sm font-medium text-gray-700">Family Portuguese Football Watch</div>
+                      <div className="text-xs text-gray-500">Sunday • All Ages Welcome</div>
+                    </div>
                   </div>
                 </div>
               </div>

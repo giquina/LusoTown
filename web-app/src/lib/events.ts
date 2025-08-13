@@ -93,7 +93,7 @@ export interface Event {
   // Event details
   whatToBring?: string[]
   dresscode?: string
-  ageRestriction?: string
+  ageRestriction?: 'All ages' | '18+' | '21+' | '25+' | '30+' | '35+' | string
   skillLevel?: 'beginner' | 'intermediate' | 'advanced' | 'all'
   accessibility?: string[]
   
@@ -278,242 +278,6 @@ export class EventService {
 
   private loadDummyData() {
     this.events = [
-      {
-        id: 'event-1',
-        title: 'Sunday Brunch & Book Club',
-        description: 'Join our monthly book club for a delightful brunch and discussion of "The Seven Husbands of Evelyn Hugo"',
-        longDescription: 'Our monthly book club combines the best of both worlds - delicious brunch and stimulating literary discussion. This month we\'re exploring Taylor Jenkins Reid\'s captivating novel "The Seven Husbands of Evelyn Hugo". Come hungry for both food and conversation!\n\nWe meet at the beautiful Ivy Chelsea Garden, known for its stunning interior and excellent brunch menu. The first hour is dedicated to socializing over mimosas and eggs benedict, followed by an engaging discussion about the book.\n\nWhether you\'re a seasoned book club member or new to literary discussions, you\'ll find a warm welcome. Our group of 8-12 women represents diverse backgrounds and perspectives, making for rich conversations.',
-        date: '2024-01-28',
-        time: '11:00',
-        endTime: '13:00',
-        location: 'The Ivy Chelsea Garden',
-        address: '197 King\'s Road, Chelsea, London SW3 5EQ',
-        coordinates: { lat: 51.4876, lng: -0.1697 },
-        category: 'Books & Reading',
-        subcategory: 'Book Clubs',
-        tags: ['book club', 'brunch', 'Chelsea', 'discussion', 'literature'],
-        hostId: 'host-sarah',
-        hostName: 'Sarah Chen',
-        hostImage: getImageWithFallback('emma-wilson'),
-        hostBio: 'Literature enthusiast and event organizer with 5+ years running book clubs',
-        membershipRequired: 'core',
-        price: 35,
-        currency: 'GBP',
-        maxAttendees: 10,
-        minAttendees: 4,
-        currentAttendees: 6,
-        waitlistCount: 2,
-        status: 'published',
-        featured: true,
-        images: [
-          'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&auto=format'
-        ],
-        photos: [
-          {
-            id: 'photo-1',
-            eventId: 'event-1',
-            url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop&auto=format',
-            caption: 'Book club members enjoying brunch and literary discussion',
-            uploadedBy: 'Sarah Chen',
-            uploadedAt: '2024-01-15T13:00:00Z',
-            featured: true
-          },
-          {
-            id: 'photo-2', 
-            eventId: 'event-1',
-            url: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&auto=format',
-            caption: 'Animated discussion about character development',
-            uploadedBy: 'Emma Johnson',
-            uploadedAt: '2024-01-15T13:30:00Z',
-            featured: false
-          },
-          {
-            id: 'photo-3',
-            eventId: 'event-1', 
-            url: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&auto=format',
-            caption: 'Perfect venue with amazing company',
-            uploadedBy: 'Lisa Wang',
-            uploadedAt: '2024-01-15T14:00:00Z',
-            featured: false
-          }
-        ],
-        attendees: [
-          { id: 'att-1', userId: 'user-1', eventId: 'event-1', name: 'Emma Johnson', email: 'emma@example.com', membershipTier: 'core', joinedAt: '2024-01-15T10:00:00Z', status: 'confirmed' },
-          { id: 'att-2', userId: 'user-2', eventId: 'event-1', name: 'Lisa Wang', email: 'lisa@example.com', membershipTier: 'premium', joinedAt: '2024-01-16T14:30:00Z', status: 'confirmed' }
-        ],
-        waitlist: [
-          { id: 'wait-1', userId: 'user-10', eventId: 'event-1', name: 'Hannah Green', email: 'hannah@example.com', membershipTier: 'core', joinedWaitlistAt: '2024-01-20T09:00:00Z', position: 1, notified: false }
-        ],
-        reviews: [
-          { id: 'rev-1', eventId: 'event-1', userId: 'user-1', reviewerName: 'Emma J.', rating: 5, comment: 'Fantastic discussion and lovely venue! Already looking forward to next month.', createdAt: '2024-01-10T16:00:00Z', helpful: 3, membershipTier: 'core' }
-        ],
-        averageRating: 4.8,
-        totalReviews: 8,
-        whatToBring: ['The book (or detailed notes)', 'Appetite for delicious food'],
-        dresscode: 'Smart casual',
-        ageRestriction: '30+',
-        skillLevel: 'all',
-        accessibility: ['Step-free access', 'Accessible toilet facilities'],
-        allowWaitlist: true,
-        requiresApproval: false,
-        refundPolicy: 'Full refund 48h+ in advance, 50% refund 24-48h before',
-        lastBookingTime: '24',
-        createdAt: '2024-01-01T10:00:00Z',
-        updatedAt: '2024-01-20T15:30:00Z',
-        createdBy: 'host-sarah',
-        isRecurring: true,
-        recurringPattern: { frequency: 'monthly', interval: 1, daysOfWeek: [0] },
-        views: 234,
-        favorites: 18,
-        shares: 7,
-        communityGuidelines: true,
-        verifiedEvent: true,
-        reportCount: 0
-      },
-      {
-        id: 'event-2',
-        title: 'Thames Path Walking Group',
-        description: 'Scenic 5-mile walk from Westminster to Tower Bridge with coffee stop',
-        longDescription: 'Join our friendly walking group for a beautiful 5-mile journey along the Thames Path. We\'ll start at Westminster Bridge and end at Tower Bridge, taking in some of London\'s most iconic sights along the way.\n\nThis is a moderate-paced walk suitable for all fitness levels. We make several stops for photos, rest, and conversation. The route includes stunning riverside views, historic landmarks, and plenty of opportunities to chat and get to know fellow walkers.\n\nAfter the walk, we typically grab coffee together (optional) to continue socializing. Our group has been meeting weekly for over a year and has built wonderful friendships along the way.',
-        date: '2024-01-29',
-        time: '10:00',
-        endTime: '12:30',
-        location: 'Westminster Bridge (South Side)',
-        address: 'Westminster Bridge, London SE1 7PB',
-        coordinates: { lat: 51.5007, lng: -0.1246 },
-        category: 'Fitness & Wellness',
-        subcategory: 'Running',
-        tags: ['walking', 'Thames', 'exercise', 'sightseeing', 'outdoor'],
-        hostId: 'host-rachel',
-        hostName: 'Rachel Thompson',
-        hostImage: getImageWithFallback('olivia-taylor'),
-        hostBio: 'Fitness enthusiast and London walking expert',
-        membershipRequired: 'free',
-        price: 0,
-        currency: 'GBP',
-        maxAttendees: 15,
-        currentAttendees: 8,
-        waitlistCount: 0,
-        status: 'published',
-        featured: false,
-        images: [
-          'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=600&h=400&fit=crop&auto=format'
-        ],
-        photos: [
-          {
-            id: 'photo-4',
-            eventId: 'event-2',
-            url: 'https://images.unsplash.com/photo-1594736797933-d0acc43a8f2a?w=400&h=400&fit=crop&auto=format',
-            caption: 'Walking group enjoying Thames views',
-            uploadedBy: 'Rachel Thompson',
-            uploadedAt: '2024-01-22T11:00:00Z',
-            featured: true
-          },
-          {
-            id: 'photo-5',
-            eventId: 'event-2',
-            url: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop&auto=format',
-            caption: 'Coffee break with new friends',
-            uploadedBy: 'Jenny Liu',
-            uploadedAt: '2024-01-22T12:15:00Z',
-            featured: false
-          },
-          {
-            id: 'photo-6',
-            eventId: 'event-2',
-            url: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=400&fit=crop&auto=format',
-            caption: 'Celebrating our Tower Bridge arrival',
-            uploadedBy: 'Maria Santos',
-            uploadedAt: '2024-01-22T12:45:00Z',
-            featured: false
-          }
-        ],
-        attendees: [
-          { id: 'att-3', userId: 'user-3', eventId: 'event-2', name: 'Jenny Liu', email: 'jenny@example.com', membershipTier: 'free', joinedAt: '2024-01-22T09:00:00Z', status: 'confirmed' }
-        ],
-        waitlist: [],
-        reviews: [
-          { id: 'rev-2', eventId: 'event-2', userId: 'user-3', reviewerName: 'Jenny L.', rating: 4, comment: 'Great way to explore London and meet new people. Rachel is a wonderful guide!', createdAt: '2024-01-22T14:00:00Z', helpful: 2, membershipTier: 'free' }
-        ],
-        averageRating: 4.6,
-        totalReviews: 12,
-        whatToBring: ['Comfortable walking shoes', 'Weather-appropriate clothing', 'Water bottle'],
-        skillLevel: 'all',
-        accessibility: ['Step-free route available'],
-        allowWaitlist: true,
-        requiresApproval: false,
-        lastBookingTime: '2',
-        createdAt: '2024-01-15T08:00:00Z',
-        updatedAt: '2024-01-25T12:00:00Z',
-        createdBy: 'host-rachel',
-        isRecurring: true,
-        recurringPattern: { frequency: 'weekly', interval: 1, daysOfWeek: [1] },
-        views: 156,
-        favorites: 12,
-        shares: 3,
-        communityGuidelines: true,
-        verifiedEvent: true,
-        reportCount: 0
-      },
-      {
-        id: 'event-3',
-        title: 'Pottery Workshop & Wine Tasting',
-        description: 'Create ceramic art while enjoying curated wines in a relaxed studio setting',
-        longDescription: 'Combine creativity with relaxation in this unique pottery and wine experience. Spend 3 hours learning pottery basics while tasting carefully selected wines that complement the creative process.\n\nOur expert pottery instructor will guide you through creating your own ceramic piece - whether a bowl, mug, or decorative item. No experience needed! All materials, tools, glazing, and firing are included. Your finished piece will be ready for collection in 2-3 weeks.\n\nThroughout the session, our sommelier will introduce you to 4 different wines, explaining how each pairs with different stages of the creative process. Light cheese and fruit platters are also provided.',
-        date: '2024-01-30',
-        time: '18:30',
-        endTime: '21:30',
-        location: 'Turning Earth Pottery Studio',
-        address: '11 Hoxton Square, London N1 6NU',
-        coordinates: { lat: 51.5267, lng: -0.0823 },
-        category: 'Arts & Culture',
-        subcategory: 'Art Classes',
-        tags: ['pottery', 'wine', 'creative', 'workshop', 'Hoxton'],
-        hostId: 'host-isabella',
-        hostName: 'Isabella Martinez',
-        hostImage: getImageWithFallback('ava-davis'),
-        hostBio: 'Professional ceramicist and wine enthusiast',
-        membershipRequired: 'core',
-        price: 75,
-        currency: 'GBP',
-        maxAttendees: 8,
-        currentAttendees: 6,
-        waitlistCount: 3,
-        status: 'published',
-        featured: true,
-        images: ['/events/pottery-wine-1.jpg', '/events/ceramic-art.jpg'],
-        photos: [],
-        attendees: [
-          { id: 'att-4', userId: 'user-4', eventId: 'event-3', name: 'Grace Park', email: 'grace@example.com', membershipTier: 'premium', joinedAt: '2024-01-18T15:00:00Z', status: 'confirmed' }
-        ],
-        waitlist: [
-          { id: 'wait-2', userId: 'user-11', eventId: 'event-3', name: 'Sophie Brown', email: 'sophie@example.com', membershipTier: 'core', joinedWaitlistAt: '2024-01-23T11:00:00Z', position: 1, notified: false }
-        ],
-        reviews: [],
-        averageRating: 4.9,
-        totalReviews: 6,
-        whatToBring: ['Old clothes or apron', 'Hair tie for long hair'],
-        dresscode: 'Comfortable clothing that can get dirty',
-        ageRestriction: '21+ (alcohol served)',
-        skillLevel: 'beginner',
-        accessibility: ['Step-free access', 'Assistance available for mobility needs'],
-        allowWaitlist: true,
-        requiresApproval: false,
-        refundPolicy: 'Full refund 48h+ in advance, no refund within 48h due to wine ordering',
-        lastBookingTime: '48',
-        createdAt: '2024-01-05T14:00:00Z',
-        updatedAt: '2024-01-24T10:00:00Z',
-        createdBy: 'host-isabella',
-        isRecurring: false,
-        views: 189,
-        favorites: 22,
-        shares: 8,
-        communityGuidelines: true,
-        verifiedEvent: true,
-        reportCount: 0
-      },
       {
         id: 'event-pt-1',
         title: 'Noite de Fado & Vinho Verde - Authentic Portuguese Night',
@@ -887,6 +651,71 @@ export class EventService {
         views: 145,
         favorites: 16,
         shares: 8,
+        communityGuidelines: true,
+        verifiedEvent: true,
+        reportCount: 0
+      },
+      {
+        id: 'event-pt-7',
+        title: 'Portuguese Entrepreneurs Workshop: Digital Marketing & Website Creation',
+        description: 'Learn essential business skills for Portuguese entrepreneurs in London - from digital marketing to creating professional websites',
+        longDescription: 'Empreendedores portugueses em Londres! Join our comprehensive business workshop designed specifically for Portuguese-speaking entrepreneurs who want to grow their businesses in the UK market.\n\nThis intensive 4-hour workshop covers three essential areas:\n\n**Digital Marketing Mastery**: Learn how to reach Portuguese customers in London through social media, Google Ads, and local SEO. Understand the UK market and how to position your Portuguese business for success.\n\n**Website Creation**: Build a professional bilingual website that appeals to both Portuguese and English-speaking customers. Learn about hosting, domain names, and basic web design principles.\n\n**Business Setup in the UK**: Navigate the legal requirements for Portuguese entrepreneurs, understand tax obligations, and learn about business banking and insurance.\n\nOur expert speaker, Sofia Carvalho, is a successful Portuguese tech entrepreneur who built her fintech startup from Lisbon to London. She\'ll share practical insights and real-world examples.\n\nWorkshop includes: Welcome Portuguese coffee & pastéis de nata, comprehensive workbook in Portuguese and English, 1-month follow-up support, and networking lunch with fellow Portuguese entrepreneurs.\n\nPerfect for restaurant owners, consultants, beauty professionals, retail businesses, and any Portuguese speaker looking to start or grow their business in London.',
+        date: '2025-08-25',
+        time: '09:00',
+        endTime: '14:00',
+        location: 'Portuguese Chamber of Commerce London',
+        address: '40 Holborn Circus, London EC1N 2HB',
+        coordinates: { lat: 51.5174, lng: -0.1097 },
+        category: 'Business & Entrepreneurship',
+        subcategory: 'Professional Development',
+        tags: ['business', 'entrepreneurship', 'digital marketing', 'websites', 'Portuguese professionals', 'startup'],
+        hostId: 'host-carlos',
+        hostName: 'Carlos Eduardo Silva',
+        hostImage: getImageWithFallback('carlos-silva'),
+        hostBio: 'Business consultant and mentor for Portuguese entrepreneurs, helping Lusophone businesses succeed in the UK market for 10+ years',
+        membershipRequired: 'free',
+        price: 45,
+        currency: 'GBP',
+        maxAttendees: 30,
+        minAttendees: 10,
+        currentAttendees: 18,
+        waitlistCount: 5,
+        status: 'published',
+        featured: true,
+        images: [
+          'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&auto=format',
+          'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&auto=format'
+        ],
+        photos: [],
+        attendees: [
+          { id: 'att-pt-11', userId: 'user-pt-11', eventId: 'event-pt-7', name: 'Miguel Santos', email: 'miguel@example.com', membershipTier: 'core', joinedAt: '2025-08-15T10:00:00Z', status: 'confirmed' },
+          { id: 'att-pt-12', userId: 'user-pt-12', eventId: 'event-pt-7', name: 'Ana Rodrigues', email: 'ana@example.com', membershipTier: 'premium', joinedAt: '2025-08-16T14:30:00Z', status: 'confirmed' }
+        ],
+        waitlist: [
+          { id: 'wait-pt-3', userId: 'user-pt-13', eventId: 'event-pt-7', name: 'João Pereira', email: 'joao@example.com', membershipTier: 'free', joinedWaitlistAt: '2025-08-17T09:00:00Z', position: 1, notified: false }
+        ],
+        reviews: [
+          { id: 'rev-pt-6', eventId: 'event-pt-7', userId: 'user-pt-14', reviewerName: 'Teresa M.', rating: 5, comment: 'Incredibly useful! Finally understand how to market my Portuguese restaurant to both communities. Sofia\'s examples were perfect.', createdAt: '2025-08-18T15:00:00Z', helpful: 9, membershipTier: 'core' }
+        ],
+        averageRating: 4.7,
+        totalReviews: 12,
+        whatToBring: ['Laptop or tablet', 'Business ideas/existing business details', 'Notepad for networking'],
+        dresscode: 'Business casual',
+        ageRestriction: '21+ (Business focus)',
+        skillLevel: 'beginner',
+        accessibility: ['Step-free access', 'Accessible toilet facilities', 'Wi-Fi provided'],
+        allowWaitlist: true,
+        requiresApproval: false,
+        refundPolicy: 'Full refund 48h+ in advance, workshop materials included',
+        lastBookingTime: '48',
+        createdAt: '2025-08-10T08:00:00Z',
+        updatedAt: '2025-08-17T16:00:00Z',
+        createdBy: 'host-carlos',
+        isRecurring: true,
+        recurringPattern: { frequency: 'monthly', interval: 1, daysOfWeek: [0] },
+        views: 312,
+        favorites: 26,
+        shares: 14,
         communityGuidelines: true,
         verifiedEvent: true,
         reportCount: 0
