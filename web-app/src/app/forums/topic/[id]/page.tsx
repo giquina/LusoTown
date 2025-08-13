@@ -60,7 +60,7 @@ const PostComponent: React.FC<PostComponentProps> = ({
 
   const getRoleBadge = (role: string) => {
     if (role === 'admin') return <span className="px-1.5 py-0.5 bg-purple-100 text-purple-600 text-xs rounded font-medium">Admin</span>
-    if (role === 'moderator') return <span className="px-1.5 py-0.5 bg-blue-100 text-blue-600 text-xs rounded font-medium">Mod</span>
+    if (role === 'moderator') return <span className="px-1.5 py-0.5 bg-primary-100 text-primary-600 text-xs rounded font-medium">Mod</span>
     return null
   }
 
@@ -173,7 +173,7 @@ const PostComponent: React.FC<PostComponentProps> = ({
           {/* Reply button */}
           <button
             onClick={() => setShowReplyForm(!showReplyForm)}
-            className="flex items-center space-x-1 px-2 py-1 rounded hover:bg-blue-50 text-gray-500 hover:text-blue-600 transition-colors"
+            className="flex items-center space-x-1 px-2 py-1 rounded hover:bg-primary-50 text-gray-500 hover:text-primary-600 transition-colors"
           >
             <Reply className="w-4 h-4" />
             <span className="text-sm">Reply</span>
@@ -369,7 +369,7 @@ export default function TopicDetail() {
 
   const getRoleBadge = (role: string) => {
     if (role === 'admin') return <span className="px-1.5 py-0.5 bg-purple-100 text-purple-600 text-xs rounded font-medium">Admin</span>
-    if (role === 'moderator') return <span className="px-1.5 py-0.5 bg-blue-100 text-blue-600 text-xs rounded font-medium">Mod</span>
+    if (role === 'moderator') return <span className="px-1.5 py-0.5 bg-primary-100 text-primary-600 text-xs rounded font-medium">Mod</span>
     return null
   }
 
@@ -453,7 +453,7 @@ export default function TopicDetail() {
                   </span>
                 )}
                 {topic.isAnnouncement && (
-                  <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full font-medium">
+                  <span className="px-2 py-1 bg-primary-100 text-primary-700 text-xs rounded-full font-medium">
                     Announcement
                   </span>
                 )}
@@ -550,8 +550,8 @@ export default function TopicDetail() {
                     onClick={() => setIsFollowing(!isFollowing)}
                     className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-colors ${
                       isFollowing 
-                        ? 'bg-blue-100 text-blue-600' 
-                        : 'hover:bg-blue-50 text-gray-500 hover:text-blue-600'
+                        ? 'bg-primary-100 text-primary-600' 
+                        : 'hover:bg-primary-50 text-gray-500 hover:text-primary-600'
                     }`}
                   >
                     <Heart className={`w-4 h-4 ${isFollowing ? 'fill-current' : ''}`} />
