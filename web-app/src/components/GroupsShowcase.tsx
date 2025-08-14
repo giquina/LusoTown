@@ -134,7 +134,7 @@ export default function GroupsShowcase() {
               </span>
             )}
             {group.cultural_focus.professional_networking && (
-              <span className="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded">
+              <span className="text-xs bg-primary-100 text-primary-800 px-2 py-0.5 rounded">
                 💼 Professional
               </span>
             )}

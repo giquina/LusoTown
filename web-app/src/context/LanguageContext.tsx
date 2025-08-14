@@ -27,7 +27,7 @@ const translations = {
     'nav.about': 'About',
     'nav.contact': 'Contact',
     'nav.login': 'Login',
-    'nav.join-membership': 'Book Experiences',
+    'nav.join-membership': 'Join Now',
     
     // Hero Section
     'hero.badge': "Unidos pela Língua • United by Language",
@@ -504,7 +504,7 @@ const translations = {
     'nav.about': 'Sobre',
     'nav.contact': 'Contacto',
     'nav.login': 'Entrar',
-    'nav.join-membership': 'Reservar Experiências',
+    'nav.join-membership': 'Junte-se',
     
     // Hero Section
     'hero.badge': 'Unidos pela Língua • United by Language',
@@ -979,7 +979,7 @@ const translations = {
     'nav.about': 'Sobre',
     'nav.contact': 'Contato',
     'nav.login': 'Entrar',
-    'nav.join-membership': 'Reservar Experiências',
+    'nav.join-membership': 'Junte-se',
     
     // Hero Section
     'hero.badge': 'Unidos pela Língua • United by Language',

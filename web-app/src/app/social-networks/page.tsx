@@ -67,7 +67,7 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
   const getActivityLevelColor = (level: string) => {
     const colors = {
       very_high: 'text-green-600 bg-green-50',
-      high: 'text-blue-600 bg-blue-50',
+      high: 'text-primary-600 bg-primary-50',
       medium: 'text-yellow-600 bg-yellow-50',
       low: 'text-gray-600 bg-gray-50'
     }
@@ -82,7 +82,7 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
       },
       community_partner: { 
         label: language === 'pt' ? 'Parceiro Comunitário' : 'Community Partner', 
-        color: 'bg-blue-500 text-white'
+        color: 'bg-primary-500 text-white'
       },
       affiliated: { 
         label: language === 'pt' ? 'Afiliado' : 'Affiliated', 
@@ -198,7 +198,7 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
             {network.focus.slice(0, 3).map(focus => (
               <span
                 key={focus}
-                className="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded-full"
+                className="px-2 py-1 bg-primary-50 text-primary-700 text-xs rounded-full"
               >
                 {focus.replace('_', ' ')}
               </span>

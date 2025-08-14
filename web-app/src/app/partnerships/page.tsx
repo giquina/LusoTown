@@ -139,7 +139,7 @@ const PartnershipCard: React.FC<PartnershipCardProps> = ({ partnership }) => {
             {partnership.servicesOffered.slice(0, 3).map(service => (
               <span
                 key={service}
-                className="px-2 py-1 bg-blue-50 text-blue-700 text-xs rounded-full"
+                className="px-2 py-1 bg-primary-50 text-primary-700 text-xs rounded-full"
               >
                 {service}
               </span>
@@ -400,7 +400,7 @@ export default function Partnerships() {
                 <div className="flex items-center gap-2">
                   <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                     benefit.category === 'cultural' ? 'bg-purple-100 text-purple-700' :
-                    benefit.category === 'business' ? 'bg-blue-100 text-blue-700' :
+                    benefit.category === 'business' ? 'bg-primary-100 text-primary-700' :
                     benefit.category === 'education' ? 'bg-green-100 text-green-700' :
                     'bg-gray-100 text-gray-700'
                   }`}>

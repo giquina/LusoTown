@@ -105,10 +105,10 @@ export default function CategoryBadge({
         label: isPortuguese ? 'Viagens de Dia' : 'Day Trips',
         icon: '🚌',
         colors: {
-          default: 'bg-blue-100 text-blue-700 border-blue-200',
-          outlined: 'border-2 border-blue-300 text-blue-700 hover:bg-blue-50',
-          minimal: 'text-blue-600 hover:text-blue-700',
-          selected: 'bg-blue-500 text-white border-blue-500'
+          default: 'bg-primary-100 text-primary-700 border-primary-200',
+          outlined: 'border-2 border-primary-300 text-primary-700 hover:bg-primary-50',
+          minimal: 'text-primary-600 hover:text-primary-700',
+          selected: 'bg-primary-500 text-white border-primary-500'
         }
       },
       'Special Interests': {
