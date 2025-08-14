@@ -387,8 +387,8 @@ const translations = {
     
     // What You Can Do Section
     'what-you-can-do.badge': 'O Que Podes Fazer • What You Can Do',
-    'what-you-can-do.title': 'Encontra a Tua Comunidade Portuguesa em Londres',
-    'what-you-can-do.subtitle': 'Conecta-te com a autêntica cultura portuguesa através de experiências reais nos bairros portugueses vibrantes de Londres',
+    'what-you-can-do.title': 'Encontra a Tua Rede Portuguesa em Londres',
+    'what-you-can-do.subtitle': 'Conecta-te com a autêntica cultura portuguesa em bairros portugueses vibrantes de Londres',
     'what-you-can-do.testimonial': '"Encontrei o meu povo aqui - desde almoços de domingo em Stockwell a noites de Fado em South Kensington"',
     
     'what-you-can-do.events.title': 'Encontra e Participa em Eventos',
@@ -686,7 +686,7 @@ const translations = {
     // Navigation
     'nav.events': 'Eventos',
     'nav.how-it-works': 'Como Funciona',
-    'nav.community': 'Comunidade',
+    'nav.community': 'Membros',
     'nav.community-guidelines': 'Diretrizes da Comunidade',
     'nav.pricing': 'Preços',
     'nav.about': 'Sobre',
