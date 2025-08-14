@@ -3,103 +3,232 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { motion } from 'framer-motion'
-import { StarIcon, CalendarDaysIcon, MapPinIcon, UsersIcon, HeartIcon, ChatBubbleLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
+import { StarIcon, CalendarDaysIcon, MapPinIcon, UsersIcon, HeartIcon, ChatBubbleLeftIcon, ArrowRightIcon, HomeIcon, AcademicCapIcon, BuildingStorefrontIcon, MusicalNoteIcon } from '@heroicons/react/24/outline'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
 import { getImageWithFallback } from '@/lib/profileImages'
+import { useLanguage } from '@/context/LanguageContext'
 
 const communityStats = [
-  { number: '300+', label: 'Verified Members', icon: UsersIcon },
-  { number: '45+', label: 'Weekly Events', icon: CalendarDaysIcon },
-  { number: '12', label: 'Active Groups', icon: HeartIcon },
-  { number: '85%', label: 'Made Real Friends', icon: ChatBubbleLeftIcon }
+  { number: '500+', label: 'Portuguese Community Members', labelPt: 'Membros da Comunidade Portuguesa', icon: UsersIcon },
+  { number: '25+', label: 'Cultural Events Monthly', labelPt: 'Eventos Culturais por Mês', icon: CalendarDaysIcon },
+  { number: '8', label: 'London Boroughs', labelPt: 'Bairros de Londres', icon: MapPinIcon },
+  { number: '10', label: 'Countries Represented', labelPt: 'Países Representados', icon: HeartIcon }
 ]
 
 const recentActivities = [
   {
     type: 'event',
-    title: 'Saturday Morning Yoga in Hyde Park',
-    group: 'Fitness & Wellness',
-    attendees: 8,
-    date: 'This Saturday, 9:00 AM',
-    location: 'Hyde Park Corner',
-    spots: 4
+    title: 'Noite de Fado at Vauxhall Cultural Centre',
+    titlePt: 'Noite de Fado no Centro Cultural Vauxhall',
+    group: 'Portuguese Culture',
+    groupPt: 'Cultura Portuguesa',
+    attendees: 35,
+    date: 'This Friday, 7:30 PM',
+    datePt: 'Esta Sexta, 19:30',
+    location: 'Vauxhall Cultural Centre',
+    locationPt: 'Centro Cultural Vauxhall',
+    spots: 8,
+    flag: '🇵🇹'
   },
   {
     type: 'event', 
-    title: 'Wine Tasting at Borough Market',
-    group: 'Wine & Dine',
-    attendees: 12,
-    date: 'Friday, 6:30 PM',
-    location: 'Borough Market',
-    spots: 2
+    title: 'Brazilian BBQ & Football Watch',
+    titlePt: 'Churrasco Brasileiro e Futebol',
+    group: 'Brazilian Community',
+    groupPt: 'Comunidade Brasileira',
+    attendees: 28,
+    date: 'Sunday, 2:00 PM',
+    datePt: 'Domingo, 14:00',
+    location: 'Stockwell Community Garden',
+    locationPt: 'Jardim Comunitário Stockwell',
+    spots: 12,
+    flag: '🇧🇷'
   },
   {
     type: 'event',
-    title: 'Book Club: "The Seven Husbands of Evelyn Hugo"',
-    group: 'Book Clubs',
-    attendees: 15,
-    date: 'Tuesday, 7:00 PM',
-    location: 'Covent Garden Café',
-    spots: 0
+    title: 'Portuguese Language Exchange',
+    titlePt: 'Intercâmbio de Língua Portuguesa',
+    group: 'Language Learning',
+    groupPt: 'Aprendizagem de Línguas',
+    attendees: 22,
+    date: 'Wednesday, 6:30 PM',
+    datePt: 'Quarta, 18:30',
+    location: 'South Kensington Library',
+    locationPt: 'Biblioteca South Kensington',
+    spots: 0,
+    flag: '🗣️'
   }
 ]
 
 const memberSpotlight = [
   {
-    name: 'Emma',
-    age: 34,
-    location: 'Clapham',
+    name: 'Maria Santos',
+    age: 29,
+    location: 'Stockwell',
+    origin: 'Porto, Portugal',
+    originPt: 'Porto, Portugal',
     image: getImageWithFallback('sarah-chen'),
-    quote: 'Found my weekend hiking crew! 🥾',
-    activity: 'Organized 3 events this month'
+    quote: 'Found my Portuguese family here! From Sunday lunches to Fado nights, I feel at home again.',
+    quotePt: 'Encontrei a minha família portuguesa aqui! Dos almoços de domingo às noites de Fado, sinto-me em casa novamente.',
+    activity: 'Organized 5 cultural events',
+    activityPt: 'Organizou 5 eventos culturais',
+    flag: '🇵🇹'
   },
   {
-    name: 'Priya',
-    age: 31,
-    location: 'Shoreditch',
+    name: 'Carlos Silva',
+    age: 35,
+    location: 'Elephant & Castle',
+    origin: 'São Paulo, Brazil',
+    originPt: 'São Paulo, Brasil',
     image: getImageWithFallback('priya-sharma'),
-    quote: 'The cooking group changed my London experience!',
-    activity: 'Active in 4 groups'
+    quote: 'The Brazilian football group made London feel like home. Saudade no more!',
+    quotePt: 'O grupo de futebol brasileiro fez Londres parecer casa. Acabou a saudade!',
+    activity: 'Active in 6 groups',
+    activityPt: 'Ativo em 6 grupos',
+    flag: '🇧🇷'
   },
   {
-    name: 'Sarah',
-    age: 38,
-    location: 'Richmond',
+    name: 'Ana Fernandes',
+    age: 42,
+    location: 'Vauxhall',
+    origin: 'Luanda, Angola',
+    originPt: 'Luanda, Angola',
     image: getImageWithFallback('maya-patel'),
-    quote: 'Finally found my West End theatre buddies! 🎭',
-    activity: 'Attended 8 events'
+    quote: 'Teaching my children Portuguese culture while building community here.',
+    quotePt: 'Ensinando a cultura portuguesa aos meus filhos enquanto construo comunidade aqui.',
+    activity: 'Family cultural coordinator',
+    activityPt: 'Coordenadora cultural familiar',
+    flag: '🇦🇴'
+  }
+]
+
+// Portuguese community areas in London
+const communityAreas = [
+  {
+    name: 'Stockwell',
+    description: 'Heart of Portuguese London with traditional bakeries and family businesses',
+    descriptionPt: 'Coração de Londres Portuguesa com padarias tradicionais e negócios familiares',
+    highlights: ['Portuguese bakeries', 'Family restaurants', 'Cultural center'],
+    highlightsPt: ['Padarias portuguesas', 'Restaurantes familiares', 'Centro cultural'],
+    members: '150+',
+    icon: '🥖'
+  },
+  {
+    name: 'Vauxhall',
+    description: 'Cultural hub with Portuguese churches and community events',
+    descriptionPt: 'Centro cultural com igrejas portuguesas e eventos comunitários',
+    highlights: ['Portuguese church', 'Cultural events', 'Community center'],
+    highlightsPt: ['Igreja portuguesa', 'Eventos culturais', 'Centro comunitário'],
+    members: '120+',
+    icon: '⛪'
+  },
+  {
+    name: 'South Kensington',
+    description: 'Professional Portuguese community with business networking',
+    descriptionPt: 'Comunidade portuguesa profissional com networking empresarial',
+    highlights: ['Business networking', 'Language exchange', 'Professional meetups'],
+    highlightsPt: ['Networking empresarial', 'Intercâmbio linguístico', 'Encontros profissionais'],
+    members: '80+',
+    icon: '💼'
+  },
+  {
+    name: 'Elephant & Castle',
+    description: 'Diverse Lusophone community from Africa and Brazil',
+    descriptionPt: 'Comunidade lusófona diversa de África e Brasil',
+    highlights: ['Brazilian community', 'African heritage', 'Cultural diversity'],
+    highlightsPt: ['Comunidade brasileira', 'Herança africana', 'Diversidade cultural'],
+    members: '90+',
+    icon: '🌍'
+  }
+]
+
+// Portuguese origin communities
+const originCommunities = [
+  {
+    country: 'Portugal',
+    countryPt: 'Portugal',
+    flag: '🇵🇹',
+    members: '200+',
+    description: 'From Porto to Algarve, maintaining mainland traditions',
+    descriptionPt: 'Do Porto ao Algarve, mantendo tradições continentais',
+    activities: ['Fado nights', 'Traditional festivals', 'Language preservation']
+  },
+  {
+    country: 'Brazil',
+    countryPt: 'Brasil',
+    flag: '🇧🇷',
+    members: '180+',
+    description: 'Vibrant Brazilian culture with samba, football, and warmth',
+    descriptionPt: 'Cultura brasileira vibrante com samba, futebol e calor humano',
+    activities: ['Capoeira classes', 'Football groups', 'Carnival celebrations']
+  },
+  {
+    country: 'Angola',
+    countryPt: 'Angola',
+    flag: '🇦🇴',
+    members: '85+',
+    description: 'Rich Angolan heritage with music, dance, and family traditions',
+    descriptionPt: 'Rica herança angolana com música, dança e tradições familiares',
+    activities: ['Semba dance', 'Cultural workshops', 'Heritage education']
+  },
+  {
+    country: 'Cape Verde',
+    countryPt: 'Cabo Verde',
+    flag: '🇨🇻',
+    members: '45+',
+    description: 'Island culture with Morna music and maritime traditions',
+    descriptionPt: 'Cultura insular com música Morna e tradições marítimas',
+    activities: ['Morna music nights', 'Cultural storytelling', 'Island cuisine']
   }
 ]
 
 export default function Community() {
+  const { language, t } = useLanguage()
+  const isPortuguese = language !== 'en'
+  
   return (
     <main className="min-h-screen">
       <Header />
       <div className="pt-16">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50 relative overflow-hidden">
-          {/* Background decorations */}
+        <section className="py-20 bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50 relative overflow-hidden">
+          {/* Background decorations with Portuguese cultural elements */}
           <div className="absolute inset-0">
             <div className="absolute top-20 left-10 w-40 h-40 bg-primary-200 rounded-full opacity-20 animate-pulse"></div>
             <div className="absolute bottom-20 right-10 w-32 h-32 bg-secondary-200 rounded-full opacity-20 animate-pulse animation-delay-400"></div>
+            <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-accent-200 rounded-full opacity-15 animate-pulse animation-delay-800"></div>
           </div>
 
           <div className="container-width px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="max-w-4xl mx-auto text-center">
+            <div className="max-w-5xl mx-auto text-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
-                <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 text-primary-600 font-medium mb-6 border border-white/30">
-                  <HeartIcon className="h-4 w-4" />
-                  Growing Community of Amazing Women
+                <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 text-primary-600 font-medium mb-6 border border-white/30">
+                  <HeartIcon className="h-5 w-5" />
+                  <span className="text-sm font-semibold">
+                    {isPortuguese ? 'Unidos pela Língua • United by Language' : 'Unidos pela Língua • United by Language'}
+                  </span>
                 </div>
-                <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-                  Our <span className="gradient-text">Vibrant Community</span>
+                <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
+                  {isPortuguese ? (
+                    <>
+                      A Comunidade <span className="gradient-text">Portuguesa</span><br />de Londres
+                    </>
+                  ) : (
+                    <>
+                      The Portuguese <span className="gradient-text">Community</span><br />in London
+                    </>
+                  )}
                 </h1>
-                <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                  Join 300+ verified women across London who are building meaningful friendships, exploring the city, and supporting each other's journeys.
+                <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-4xl mx-auto">
+                  {isPortuguese ? (
+                    'Descobre a vibrante comunidade de falantes de português em Londres. Desde padarias familiares em Stockwell a centros culturais em Vauxhall, desde festivais brasileiros a noites de Fado - aqui é onde 500+ corações portugueses se encontram e se sentem em casa.'
+                  ) : (
+                    'Discover the vibrant Portuguese-speaking community in London. From family bakeries in Stockwell to cultural centers in Vauxhall, from Brazilian festivals to Fado nights - this is where 500+ Portuguese hearts gather and feel at home.'
+                  )}
                 </p>
               </motion.div>
 
@@ -113,10 +242,12 @@ export default function Community() {
                 {communityStats.map((stat, index) => {
                   const Icon = stat.icon
                   return (
-                    <div key={stat.label} className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50">
+                    <div key={stat.label} className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300">
                       <Icon className="h-8 w-8 text-primary-400 mx-auto mb-3" />
-                      <p className="text-2xl font-bold text-gray-900 mb-1">{stat.number}</p>
-                      <p className="text-sm text-gray-600">{stat.label}</p>
+                      <p className="text-3xl font-bold text-gray-900 mb-1">{stat.number}</p>
+                      <p className="text-sm text-gray-600 font-medium">
+                        {isPortuguese ? stat.labelPt : stat.label}
+                      </p>
                     </div>
                   )
                 })}
@@ -133,18 +264,26 @@ export default function Community() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="max-w-4xl mx-auto"
+              className="max-w-6xl mx-auto"
             >
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                  What's <span className="gradient-text">Happening Now</span>
+                  {isPortuguese ? (
+                    <>Eventos <span className="gradient-text">Acontecendo Agora</span></>
+                  ) : (
+                    <>What's <span className="gradient-text">Happening Now</span></>
+                  )}
                 </h2>
                 <p className="text-lg text-gray-600">
-                  Join these exciting events happening this week across London
+                  {isPortuguese ? (
+                    'Junta-te a estes eventos culturais portugueses acontecendo esta semana por Londres'
+                  ) : (
+                    'Join these Portuguese cultural events happening this week across London'
+                  )}
                 </p>
               </div>
 
-              <div className="space-y-4">
+              <div className="grid md:grid-cols-1 gap-6">
                 {recentActivities.map((activity, index) => (
                   <motion.div
                     key={index}
@@ -152,28 +291,34 @@ export default function Community() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 * index, duration: 0.6 }}
-                    className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-6 border border-white/50 hover:shadow-lg transition-all duration-300"
+                    className="bg-gradient-to-r from-primary-50 via-white to-secondary-50 rounded-2xl p-6 border border-white/50 hover:shadow-lg transition-all duration-300"
                   >
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                       <div className="flex-1">
                         <div className="flex items-start gap-4">
-                          <div className="w-12 h-12 bg-primary-400 rounded-full flex items-center justify-center text-white font-semibold text-sm">
-                            {activity.attendees}
+                          <div className="w-16 h-16 bg-gradient-to-br from-primary-400 to-secondary-400 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                            <span className="text-2xl">{activity.flag}</span>
                           </div>
                           <div className="flex-1">
-                            <h3 className="font-semibold text-gray-900 mb-1">{activity.title}</h3>
-                            <div className="flex items-center gap-4 text-sm text-gray-600 mb-2">
+                            <h3 className="font-bold text-gray-900 mb-2 text-lg">
+                              {isPortuguese ? activity.titlePt : activity.title}
+                            </h3>
+                            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3">
                               <span className="inline-flex items-center gap-1">
                                 <CalendarDaysIcon className="h-4 w-4" />
-                                {activity.date}
+                                {isPortuguese ? activity.datePt : activity.date}
                               </span>
                               <span className="inline-flex items-center gap-1">
                                 <MapPinIcon className="h-4 w-4" />
-                                {activity.location}
+                                {isPortuguese ? activity.locationPt : activity.location}
+                              </span>
+                              <span className="inline-flex items-center gap-1">
+                                <UsersIcon className="h-4 w-4" />
+                                {activity.attendees} {isPortuguese ? 'participantes' : 'attendees'}
                               </span>
                             </div>
-                            <span className="inline-block bg-secondary-100 text-secondary-700 px-3 py-1 rounded-full text-xs font-medium">
-                              {activity.group}
+                            <span className="inline-block bg-gradient-to-r from-secondary-100 to-accent-100 text-secondary-700 px-4 py-2 rounded-full text-sm font-semibold">
+                              {isPortuguese ? activity.groupPt : activity.group}
                             </span>
                           </div>
                         </div>
@@ -181,16 +326,16 @@ export default function Community() {
                       <div className="flex items-center gap-4">
                         {activity.spots > 0 ? (
                           <>
-                            <span className="text-sm text-green-600 font-medium">
-                              {activity.spots} spots left
+                            <span className="text-sm text-green-600 font-semibold bg-green-50 px-3 py-2 rounded-lg">
+                              {activity.spots} {isPortuguese ? 'vagas restantes' : 'spots left'}
                             </span>
-                            <button className="bg-primary-400 text-white px-4 py-2 rounded-lg hover:bg-primary-500 transition-colors text-sm font-medium">
-                              Join Event
+                            <button className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-3 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl">
+                              {isPortuguese ? 'Participar' : 'Join Event'}
                             </button>
                           </>
                         ) : (
-                          <span className="text-sm text-gray-500 font-medium bg-gray-100 px-3 py-2 rounded-lg">
-                            Full (Join Waitlist)
+                          <span className="text-sm text-gray-500 font-medium bg-gray-100 px-4 py-2 rounded-lg">
+                            {isPortuguese ? 'Completo (Lista de Espera)' : 'Full (Join Waitlist)'}
                           </span>
                         )}
                       </div>
@@ -199,18 +344,151 @@ export default function Community() {
                 ))}
               </div>
 
-              <div className="text-center mt-8">
-                <button className="inline-flex items-center gap-2 bg-white border border-primary-200 text-primary-600 px-6 py-3 rounded-lg hover:bg-primary-50 transition-colors font-medium">
-                  View All Events
-                  <ArrowRightIcon className="h-4 w-4" />
-                </button>
+              <div className="text-center mt-10">
+                <a 
+                  href="/events"
+                  className="inline-flex items-center gap-2 bg-white border-2 border-primary-200 text-primary-600 px-8 py-4 rounded-xl hover:bg-primary-50 hover:border-primary-300 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl"
+                >
+                  {isPortuguese ? 'Ver Todos os Eventos' : 'View All Events'}
+                  <ArrowRightIcon className="h-5 w-5" />
+                </a>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Interest Groups */}
+        {/* Portuguese Community Areas */}
         <section className="py-16 bg-gradient-to-br from-secondary-50 to-primary-50">
+          <div className="container-width px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="max-w-7xl mx-auto text-center"
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                {isPortuguese ? (
+                  <>Bairros da <span className="gradient-text">Comunidade Portuguesa</span></>
+                ) : (
+                  <>Portuguese Community <span className="gradient-text">Areas</span></>
+                )}
+              </h2>
+              <p className="text-lg text-gray-600 mb-12 max-w-4xl mx-auto">
+                {isPortuguese ? (
+                  'Descobre onde a comunidade portuguesa se reúne em Londres. Cada bairro tem a sua própria personalidade, desde padarias familiares a centros culturais vibrantes.'
+                ) : (
+                  'Discover where the Portuguese community gathers in London. Each area has its own personality, from family bakeries to vibrant cultural centers.'
+                )}
+              </p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {communityAreas.map((area, index) => (
+                  <motion.div
+                    key={area.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 * index, duration: 0.6 }}
+                    className="group"
+                  >
+                    <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-6 text-center hover:scale-105 transition-all duration-300 border border-white/50 h-full">
+                      <div className="w-16 h-16 bg-gradient-to-br from-primary-400 to-secondary-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-3xl">{area.icon}</span>
+                      </div>
+                      <h3 className="text-xl font-bold mb-3 text-gray-900">{area.name}</h3>
+                      <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                        {isPortuguese ? area.descriptionPt : area.description}
+                      </p>
+                      <div className="text-sm text-primary-600 font-bold mb-4 bg-primary-50 py-2 px-3 rounded-lg">
+                        {area.members} {isPortuguese ? 'membros' : 'members'}
+                      </div>
+                      <div className="space-y-2 text-xs text-gray-500 mb-6">
+                        {(isPortuguese ? area.highlightsPt : area.highlights).map((highlight, idx) => (
+                          <p key={idx} className="flex items-center justify-center gap-1">
+                            <CheckCircleIcon className="h-3 w-3 text-secondary-400" />
+                            {highlight}
+                          </p>
+                        ))}
+                      </div>
+                      <button className="w-full bg-gradient-to-r from-primary-50 to-secondary-50 text-primary-600 py-3 rounded-xl hover:from-primary-100 hover:to-secondary-100 transition-all duration-300 font-semibold border border-primary-200">
+                        {isPortuguese ? 'Explorar Área' : 'Explore Area'}
+                      </button>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Portuguese Origins Communities */}
+        <section className="py-16 bg-white">
+          <div className="container-width px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="max-w-7xl mx-auto text-center"
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                {isPortuguese ? (
+                  <>Comunidades por <span className="gradient-text">Origem</span></>
+                ) : (
+                  <>Communities by <span className="gradient-text">Origin</span></>
+                )}
+              </h2>
+              <p className="text-lg text-gray-600 mb-12 max-w-4xl mx-auto">
+                {isPortuguese ? (
+                  'Cada país lusófono traz a sua própria cultura, tradições e calor humano. Encontra a tua comunidade de origem ou descobre outras culturas portuguesas.'
+                ) : (
+                  'Each Portuguese-speaking country brings its own culture, traditions, and warmth. Find your community of origin or discover other Portuguese cultures.'
+                )}
+              </p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {originCommunities.map((community, index) => (
+                  <motion.div
+                    key={community.country}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1 * index, duration: 0.6 }}
+                    className="group"
+                  >
+                    <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg p-6 text-center hover:scale-105 transition-all duration-300 border border-gray-200 h-full">
+                      <div className="w-20 h-20 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-4xl">{community.flag}</span>
+                      </div>
+                      <h3 className="text-xl font-bold mb-3 text-gray-900">
+                        {isPortuguese ? community.countryPt : community.country}
+                      </h3>
+                      <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                        {isPortuguese ? community.descriptionPt : community.description}
+                      </p>
+                      <div className="text-sm text-primary-600 font-bold mb-4 bg-primary-50 py-2 px-3 rounded-lg">
+                        {community.members} {isPortuguese ? 'membros' : 'members'}
+                      </div>
+                      <div className="space-y-2 text-xs text-gray-500 mb-6">
+                        {community.activities.map((activity, idx) => (
+                          <p key={idx} className="flex items-center justify-center gap-1">
+                            <MusicalNoteIcon className="h-3 w-3 text-accent-400" />
+                            {activity}
+                          </p>
+                        ))}
+                      </div>
+                      <button className="w-full bg-gradient-to-r from-secondary-500 to-primary-500 text-white py-3 rounded-xl hover:from-secondary-600 hover:to-primary-600 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl">
+                        {isPortuguese ? 'Juntar-se' : 'Join Community'}
+                      </button>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Member Spotlight */}
+        <section className="py-16 bg-gradient-to-br from-accent-50 to-coral-50">
           <div className="container-width px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -220,181 +498,18 @@ export default function Community() {
               className="max-w-6xl mx-auto text-center"
             >
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Find Your <span className="gradient-text">Perfect Group</span>
+                {isPortuguese ? (
+                  <>Conhece os <span className="gradient-text">Membros da Comunidade</span></>
+                ) : (
+                  <>Meet Our <span className="gradient-text">Community Members</span></>
+                )}
               </h2>
               <p className="text-lg text-gray-600 mb-12">
-                From weekend adventures to cozy book clubs, there's something for every interest. After participating in group activities, members can leave reviews to help improve future experiences - just like Google My Business!
-              </p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1, duration: 0.6 }}
-                  className="group"
-                >
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-8 text-center hover:scale-105 transition-all duration-300 border border-white/50 h-full">
-                    <div className="w-16 h-16 bg-primary-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-2xl">🚶‍♀️</span>
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3">Walking Groups</h3>
-                    <p className="text-gray-600 mb-4">Explore London's parks and hidden gems with like-minded women.</p>
-                    <div className="text-sm text-primary-600 font-medium mb-4">35 active members</div>
-                    <div className="space-y-2 text-sm text-gray-500">
-                      <p>• Hampstead Heath walks</p>
-                      <p>• Richmond Park adventures</p>
-                      <p>• Thames Path explorations</p>
-                    </div>
-                    <button className="mt-6 w-full bg-primary-50 text-primary-600 py-2 rounded-lg hover:bg-primary-100 transition-colors font-medium">
-                      Join Group
-                    </button>
-                  </div>
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2, duration: 0.6 }}
-                  className="group"
-                >
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-8 text-center hover:scale-105 transition-all duration-300 border border-white/50 h-full">
-                    <div className="w-16 h-16 bg-secondary-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-2xl">🍷</span>
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3">Wine & Dine</h3>
-                    <p className="text-gray-600 mb-4">Discover London's best restaurants and wine bars together.</p>
-                    <div className="text-sm text-secondary-600 font-medium mb-4">42 food lovers</div>
-                    <div className="space-y-2 text-sm text-gray-500">
-                      <p>• Borough Market tastings</p>
-                      <p>• Covent Garden dining</p>
-                      <p>• Wine bar discoveries</p>
-                    </div>
-                    <button className="mt-6 w-full bg-secondary-50 text-secondary-600 py-2 rounded-lg hover:bg-secondary-100 transition-colors font-medium">
-                      Join Group
-                    </button>
-                  </div>
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3, duration: 0.6 }}
-                  className="group"
-                >
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-8 text-center hover:scale-105 transition-all duration-300 border border-white/50 h-full">
-                    <div className="w-16 h-16 bg-primary-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-2xl">🎭</span>
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3">Arts & Culture</h3>
-                    <p className="text-gray-600 mb-4">West End shows, galleries, and cultural events across London.</p>
-                    <div className="text-sm text-primary-600 font-medium mb-4">28 culture enthusiasts</div>
-                    <div className="space-y-2 text-sm text-gray-500">
-                      <p>• West End theatre nights</p>
-                      <p>• Gallery openings</p>
-                      <p>• Museum visits</p>
-                    </div>
-                    <button className="mt-6 w-full bg-primary-50 text-primary-600 py-2 rounded-lg hover:bg-primary-100 transition-colors font-medium">
-                      Join Group
-                    </button>
-                  </div>
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4, duration: 0.6 }}
-                  className="group"
-                >
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-8 text-center hover:scale-105 transition-all duration-300 border border-white/50 h-full">
-                    <div className="w-16 h-16 bg-secondary-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-2xl">💪</span>
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3">Fitness & Wellness</h3>
-                    <p className="text-gray-600 mb-4">Yoga, pilates, and fitness classes with supportive women.</p>
-                    <div className="text-sm text-secondary-600 font-medium mb-4">51 fitness fans</div>
-                    <div className="space-y-2 text-sm text-gray-500">
-                      <p>• Hyde Park yoga sessions</p>
-                      <p>• Reformer pilates classes</p>
-                      <p>• Running groups</p>
-                    </div>
-                    <button className="mt-6 w-full bg-secondary-50 text-secondary-600 py-2 rounded-lg hover:bg-secondary-100 transition-colors font-medium">
-                      Join Group
-                    </button>
-                  </div>
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5, duration: 0.6 }}
-                  className="group"
-                >
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-8 text-center hover:scale-105 transition-all duration-300 border border-white/50 h-full">
-                    <div className="w-16 h-16 bg-primary-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-2xl">✈️</span>
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3">UK Adventures</h3>
-                    <p className="text-gray-600 mb-4">Weekend getaways and day trips across beautiful Britain.</p>
-                    <div className="text-sm text-primary-600 font-medium mb-4">24 adventurers</div>
-                    <div className="space-y-2 text-sm text-gray-500">
-                      <p>• Cotswolds weekends</p>
-                      <p>• Brighton day trips</p>
-                      <p>• Edinburgh escapes</p>
-                    </div>
-                    <button className="mt-6 w-full bg-primary-50 text-primary-600 py-2 rounded-lg hover:bg-primary-100 transition-colors font-medium">
-                      Join Group
-                    </button>
-                  </div>
-                </motion.div>
-                
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.6, duration: 0.6 }}
-                  className="group"
-                >
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-8 text-center hover:scale-105 transition-all duration-300 border border-white/50 h-full">
-                    <div className="w-16 h-16 bg-secondary-400 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-2xl">📚</span>
-                    </div>
-                    <h3 className="text-xl font-semibold mb-3">Book Clubs</h3>
-                    <p className="text-gray-600 mb-4">Literary discussions and cozy meetups in London's best cafes.</p>
-                    <div className="text-sm text-secondary-600 font-medium mb-4">31 book lovers</div>
-                    <div className="space-y-2 text-sm text-gray-500">
-                      <p>• Covent Garden cafes</p>
-                      <p>• Author meet & greets</p>
-                      <p>• Literary pub crawls</p>
-                    </div>
-                    <button className="mt-6 w-full bg-secondary-50 text-secondary-600 py-2 rounded-lg hover:bg-secondary-100 transition-colors font-medium">
-                      Join Group
-                    </button>
-                  </div>
-                </motion.div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Member Spotlight */}
-        <section className="py-16 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="max-w-4xl mx-auto text-center"
-            >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Meet Our <span className="gradient-text">Community Stars</span>
-              </h2>
-              <p className="text-lg text-gray-600 mb-12">
-                Real women making real connections across London
+                {isPortuguese ? (
+                  'Pessoas reais fazendo conexões reais através de Londres - histórias da comunidade portuguesa'
+                ) : (
+                  'Real people making real connections across London - stories from the Portuguese community'
+                )}
               </p>
 
               <div className="grid md:grid-cols-3 gap-8">
@@ -405,24 +520,32 @@ export default function Community() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 * index, duration: 0.6 }}
-                    className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-2xl p-6 text-center border border-white/50"
+                    className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/50 shadow-lg hover:shadow-xl transition-all duration-300"
                   >
-                    <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 ring-4 ring-white shadow-lg">
-                      <img 
-                        src={member.image} 
-                        alt={`${member.name} - LusoTown member`}
-                        className="w-full h-full object-cover"
-                      />
+                    <div className="relative">
+                      <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 ring-4 ring-white shadow-lg">
+                        <img 
+                          src={member.image} 
+                          alt={`${member.name} - LusoTown member`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="absolute -top-2 -right-2 text-2xl">
+                        {member.flag}
+                      </div>
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-1">
+                    <h3 className="font-bold text-gray-900 mb-1 text-lg">
                       {member.name}, {member.age}
                     </h3>
-                    <p className="text-sm text-gray-500 mb-3">{member.location}</p>
-                    <blockquote className="text-gray-700 italic mb-3 min-h-[2.5rem] flex items-center justify-center">
-                      "{member.quote}"
+                    <p className="text-sm text-gray-500 mb-1 font-medium">{member.location}</p>
+                    <p className="text-xs text-primary-600 mb-4 font-medium bg-primary-50 px-2 py-1 rounded-full inline-block">
+                      {isPortuguese ? member.originPt : member.origin}
+                    </p>
+                    <blockquote className="text-gray-700 italic mb-4 min-h-[3rem] flex items-center justify-center text-sm leading-relaxed">
+                      "{isPortuguese ? member.quotePt : member.quote}"
                     </blockquote>
-                    <span className="inline-block bg-white/70 text-primary-600 px-3 py-1 rounded-full text-xs font-medium">
-                      {member.activity}
+                    <span className="inline-block bg-gradient-to-r from-secondary-100 to-accent-100 text-secondary-700 px-4 py-2 rounded-full text-xs font-semibold">
+                      {isPortuguese ? member.activityPt : member.activity}
                     </span>
                   </motion.div>
                 ))}
@@ -431,7 +554,7 @@ export default function Community() {
           </div>
         </section>
 
-        {/* Community Guidelines */}
+        {/* Portuguese Cultural Heritage & Values */}
         <section className="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
           <div className="container-width px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -439,61 +562,117 @@ export default function Community() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="max-w-4xl mx-auto"
+              className="max-w-6xl mx-auto"
             >
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-8 border border-white/50">
                 <div className="text-center mb-8">
-                  <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-                    Our <span className="gradient-text">Community Values</span>
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                    {isPortuguese ? (
+                      <>Nossos <span className="gradient-text">Valores Comunitários</span></>
+                    ) : (
+                      <>Our <span className="gradient-text">Community Values</span></>
+                    )}
                   </h2>
-                  <p className="text-lg text-gray-600">
-                    What makes our community special? These shared values that every member embraces.
+                  <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+                    {isPortuguese ? (
+                      'O que torna a nossa comunidade especial? Estes valores partilhados que cada membro abraça, refletindo o melhor da cultura portuguesa.'
+                    ) : (
+                      'What makes our community special? These shared values that every member embraces, reflecting the best of Portuguese culture.'
+                    )}
                   </p>
                 </div>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <CheckCircleIcon className="h-6 w-6 text-primary-400 flex-shrink-0 mt-0.5" />
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <CheckCircleIcon className="h-6 w-6 text-primary-400 flex-shrink-0 mt-1" />
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Authentic Connections</h3>
-                        <p className="text-gray-600 text-sm">Be genuine, be yourself, and build real friendships</p>
+                        <h3 className="font-bold text-gray-900 mb-2">
+                          {isPortuguese ? 'Saudade e Conexões Autênticas' : 'Saudade & Authentic Connections'}
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          {isPortuguese ? (
+                            'Compreendemos a saudade. Construímos conexões genuínas que curam a nostalgia e criam novos lares.'
+                          ) : (
+                            'We understand saudade. We build genuine connections that heal homesickness and create new homes.'
+                          )}
+                        </p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircleIcon className="h-6 w-6 text-secondary-400 flex-shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-4">
+                      <CheckCircleIcon className="h-6 w-6 text-secondary-400 flex-shrink-0 mt-1" />
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Mutual Support</h3>
-                        <p className="text-gray-600 text-sm">Celebrate successes and provide encouragement during challenges</p>
+                        <h3 className="font-bold text-gray-900 mb-2">
+                          {isPortuguese ? 'Família e Apoio Mútuo' : 'Family & Mutual Support'}
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          {isPortuguese ? (
+                            'Tratamo-nos como família. Celebramos sucessos juntos e apoiamo-nos nos desafios.'
+                          ) : (
+                            'We treat each other like family. We celebrate successes together and support each other through challenges.'
+                          )}
+                        </p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircleIcon className="h-6 w-6 text-primary-400 flex-shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-4">
+                      <CheckCircleIcon className="h-6 w-6 text-accent-400 flex-shrink-0 mt-1" />
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Reliable Participation</h3>
-                        <p className="text-gray-600 text-sm">Show up when you commit - others are counting on you</p>
+                        <h3 className="font-bold text-gray-900 mb-2">
+                          {isPortuguese ? 'Preservação Cultural' : 'Cultural Preservation'}
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          {isPortuguese ? (
+                            'Mantemos vivas as nossas tradições, língua e costumes para as próximas gerações.'
+                          ) : (
+                            'We keep our traditions, language, and customs alive for the next generations.'
+                          )}
+                        </p>
                       </div>
                     </div>
                   </div>
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <CheckCircleIcon className="h-6 w-6 text-secondary-400 flex-shrink-0 mt-0.5" />
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <CheckCircleIcon className="h-6 w-6 text-coral-400 flex-shrink-0 mt-1" />
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Respect & Privacy</h3>
-                        <p className="text-gray-600 text-sm">Honor confidentiality and respect personal boundaries</p>
+                        <h3 className="font-bold text-gray-900 mb-2">
+                          {isPortuguese ? 'Hospitalidade Portuguesa' : 'Portuguese Hospitality'}
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          {isPortuguese ? (
+                            'Abrimos os braços a todos. "Onde há portugueses, há sempre uma mesa para mais um."'
+                          ) : (
+                            'We welcome everyone with open arms. "Where there are Portuguese people, there\'s always room for one more."'
+                          )}
+                        </p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircleIcon className="h-6 w-6 text-primary-400 flex-shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-4">
+                      <CheckCircleIcon className="h-6 w-6 text-primary-400 flex-shrink-0 mt-1" />
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Inclusive Mindset</h3>
-                        <p className="text-gray-600 text-sm">Welcome different perspectives and life experiences</p>
+                        <h3 className="font-bold text-gray-900 mb-2">
+                          {isPortuguese ? 'Diversidade Lusófona' : 'Lusophone Diversity'}
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          {isPortuguese ? (
+                            'Celebramos toda a diversidade do mundo lusófono - de Portugal ao Brasil, de Angola a Cabo Verde.'
+                          ) : (
+                            'We celebrate all the diversity of the Portuguese-speaking world - from Portugal to Brazil, from Angola to Cape Verde.'
+                          )}
+                        </p>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircleIcon className="h-6 w-6 text-secondary-400 flex-shrink-0 mt-0.5" />
+                    <div className="flex items-start gap-4">
+                      <CheckCircleIcon className="h-6 w-6 text-secondary-400 flex-shrink-0 mt-1" />
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">London Love</h3>
-                        <p className="text-gray-600 text-sm">Share your passion for this amazing city we call home</p>
+                        <h3 className="font-bold text-gray-900 mb-2">
+                          {isPortuguese ? 'Amor por Londres' : 'Love for London'}
+                        </h3>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          {isPortuguese ? (
+                            'Partilhamos a paixão por esta cidade incrível que agora chamamos de casa.'
+                          ) : (
+                            'We share our passion for this incredible city we now call home.'
+                          )}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -503,51 +682,182 @@ export default function Community() {
           </div>
         </section>
 
-        {/* Call to Action */}
-        <section className="py-20 bg-white">
+        {/* Portuguese Business Directory Integration */}
+        <section className="py-16 bg-white">
           <div className="container-width px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="max-w-4xl mx-auto text-center"
+              className="max-w-6xl mx-auto text-center"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                Ready to Join Our <span className="gradient-text">Amazing Community?</span>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                {isPortuguese ? (
+                  <>Negócios <span className="gradient-text">Portugueses</span> em Londres</>
+                ) : (
+                  <>Portuguese <span className="gradient-text">Businesses</span> in London</>
+                )}
               </h2>
-              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                Your perfect friendship circle is waiting. Join 300+ verified women who are making London feel like home, one connection at a time.
+              <p className="text-lg text-gray-600 mb-12 max-w-4xl mx-auto">
+                {isPortuguese ? (
+                  'Apoia a nossa comunidade empresarial. Desde padarias familiares que fazem pastéis como a avó fazia, a restaurantes que servem francesinha autêntica, a serviços prestados por pessoas que compreendem a nossa cultura.'
+                ) : (
+                  'Support our business community. From family bakeries making pastéis like grandma used to, to restaurants serving authentic francesinha, to services provided by people who understand our culture.'
+                )}
               </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-                <a 
-                  href="/signup" 
-                  className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+              <div className="grid md:grid-cols-3 gap-8">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1, duration: 0.6 }}
+                  className="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-6 border border-primary-200 hover:shadow-lg transition-all duration-300"
                 >
-                  JOIN NOW
-                  <ArrowRightIcon className="h-5 w-5 ml-2" />
-                </a>
-                <a 
-                  href="/how-it-works" 
-                  className="border border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-colors inline-flex items-center gap-2"
+                  <BuildingStorefrontIcon className="h-12 w-12 text-primary-500 mx-auto mb-4" />
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    {isPortuguese ? 'Restaurantes & Cafés' : 'Restaurants & Cafés'}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-4">
+                    {isPortuguese ? (
+                      'Sabores de casa em Londres. Francesinha, pastéis de nata, bacalhau e muito mais.'
+                    ) : (
+                      'Flavors of home in London. Francesinha, pastéis de nata, bacalhau and much more.'
+                    )}
+                  </p>
+                  <span className="text-primary-600 font-semibold text-sm">25+ {isPortuguese ? 'estabelecimentos' : 'establishments'}</span>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2, duration: 0.6 }}
+                  className="bg-gradient-to-br from-secondary-50 to-white rounded-2xl p-6 border border-secondary-200 hover:shadow-lg transition-all duration-300"
                 >
-                  Learn How It Works
+                  <HomeIcon className="h-12 w-12 text-secondary-500 mx-auto mb-4" />
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    {isPortuguese ? 'Serviços Familiares' : 'Family Services'}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-4">
+                    {isPortuguese ? (
+                      'Cabeleireiros, tradutores, contabilistas que falam português e compreendem as nossas necessidades.'
+                    ) : (
+                      'Hairdressers, translators, accountants who speak Portuguese and understand our needs.'
+                    )}
+                  </p>
+                  <span className="text-secondary-600 font-semibold text-sm">40+ {isPortuguese ? 'serviços' : 'services'}</span>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3, duration: 0.6 }}
+                  className="bg-gradient-to-br from-accent-50 to-white rounded-2xl p-6 border border-accent-200 hover:shadow-lg transition-all duration-300"
+                >
+                  <AcademicCapIcon className="h-12 w-12 text-accent-500 mx-auto mb-4" />
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    {isPortuguese ? 'Educação & Cultura' : 'Education & Culture'}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-4">
+                    {isPortuguese ? (
+                      'Escolas de português, aulas de guitarra, grupos de dança tradicional portuguesa.'
+                    ) : (
+                      'Portuguese schools, guitar lessons, traditional Portuguese dance groups.'
+                    )}
+                  </p>
+                  <span className="text-accent-600 font-semibold text-sm">15+ {isPortuguese ? 'programas' : 'programs'}</span>
+                </motion.div>
+              </div>
+              <div className="mt-8">
+                <a 
+                  href="/directory"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-8 py-4 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl"
+                >
+                  {isPortuguese ? 'Ver Diretório Completo' : 'View Full Directory'}
+                  <ArrowRightIcon className="h-5 w-5" />
                 </a>
               </div>
+            </motion.div>
+          </div>
+        </section>
 
-              <div className="flex justify-center items-center gap-8 text-sm text-gray-500">
-                <div className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-5 w-5 text-green-500" />
-                  Free to join
+        {/* Call to Action */}
+        <section className="py-20 bg-gradient-to-br from-coral-50 via-accent-50 to-primary-50">
+          <div className="container-width px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="max-w-5xl mx-auto text-center"
+            >
+              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-white/50">
+                <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-6">
+                  {isPortuguese ? (
+                    <>Pronto para se Juntar à <span className="gradient-text">Família Portuguesa?</span></>
+                  ) : (
+                    <>Ready to Join the <span className="gradient-text">Portuguese Family?</span></>
+                  )}
+                </h2>
+                <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+                  {isPortuguese ? (
+                    'A tua família portuguesa está à espera. Junta-te a 500+ falantes de português que fizeram de Londres a sua casa, uma conexão de cada vez. Unidos pela língua, unidos pelo coração.'
+                  ) : (
+                    'Your Portuguese family is waiting. Join 500+ Portuguese speakers who have made London their home, one connection at a time. United by language, united by heart.'
+                  )}
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-10">
+                  <a 
+                    href="/signup" 
+                    className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 hover:from-secondary-700 hover:via-primary-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+                  >
+                    {isPortuguese ? 'JUNTAR À FAMÍLIA' : 'JOIN THE FAMILY'}
+                    <ArrowRightIcon className="h-6 w-6 ml-3" />
+                  </a>
+                  <a 
+                    href="/groups" 
+                    className="border-2 border-primary-300 text-primary-700 px-10 py-5 rounded-2xl font-bold hover:bg-primary-50 hover:border-primary-400 transition-all duration-300 inline-flex items-center gap-3 shadow-lg hover:shadow-xl"
+                  >
+                    {isPortuguese ? 'Ver Grupos' : 'View Groups'}
+                  </a>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-5 w-5 text-green-500" />
-                  Verified members only
+
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm">
+                  <div className="flex flex-col items-center gap-2">
+                    <CheckCircleIcon className="h-6 w-6 text-green-500" />
+                    <span className="text-gray-600 font-medium">
+                      {isPortuguese ? 'Grátis para participar' : 'Free to join'}
+                    </span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <CheckCircleIcon className="h-6 w-6 text-green-500" />
+                    <span className="text-gray-600 font-medium">
+                      {isPortuguese ? 'Membros verificados' : 'Verified members'}
+                    </span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <CheckCircleIcon className="h-6 w-6 text-green-500" />
+                    <span className="text-gray-600 font-medium">
+                      {isPortuguese ? 'Eventos autênticos' : 'Authentic events'}
+                    </span>
+                  </div>
+                  <div className="flex flex-col items-center gap-2">
+                    <CheckCircleIcon className="h-6 w-6 text-green-500" />
+                    <span className="text-gray-600 font-medium">
+                      {isPortuguese ? 'Família portuguesa' : 'Portuguese family'}
+                    </span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-5 w-5 text-green-500" />
-                  No pressure, just friendship
+                
+                <div className="mt-8 p-4 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl border border-primary-200">
+                  <p className="text-primary-700 font-semibold italic">
+                    {isPortuguese ? (
+                      '"Unidos pela Língua" - Onde quer que venhas no mundo lusófono, aqui tens casa em Londres.'
+                    ) : (
+                      '"Unidos pela Língua" - Wherever you come from in the Portuguese-speaking world, you have a home here in London.'
+                    )}
+                  </p>
                 </div>
               </div>
             </motion.div>

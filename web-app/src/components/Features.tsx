@@ -107,13 +107,13 @@ export default function Features() {
             <span className="gradient-text">{t('features.subtitle')}</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
-            Connect with Portuguese speakers who love nightlife, dining, fitness, and socializing in London through real-life meetups. Because you shouldn't navigate this city alone.
+            Find your Portuguese family who understands the joy of sharing a meal, the comfort of speaking your language, and the warmth of celebrating together. Meet where Portuguese hearts feel at home - from Stockwell's family bakeries to Vauxhall's welcoming centers.
           </p>
         </motion.div>
 
-        {/* Features Grid - Optimized Multi-Column Layout */}
+        {/* Features Grid - Enhanced Multi-Column Responsive Layout */}
         <div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 opacity-0 translate-y-5 animate-fade-in-up"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-7 lg:gap-8 xl:gap-10 opacity-0 translate-y-5 animate-fade-in-up"
           style={{
             animation: 'fadeInUp 0.6s ease-out 0.2s forwards'
           }}
@@ -126,7 +126,7 @@ export default function Features() {
                 animation: `fadeInUp 0.6s ease-out ${0.3 + index * 0.1}s both`
               }}
             >
-              <div className="card p-6 sm:p-8 h-full hover:scale-105 transition-all duration-300 group-hover:shadow-2xl">
+              <div className="card p-4 sm:p-6 md:p-7 lg:p-8 h-full hover:scale-105 transition-all duration-300 group-hover:shadow-2xl">
                 <div className={`w-14 h-14 ${feature.bgColor} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <feature.icon className={`h-7 w-7 ${feature.color}`} />
                 </div>
@@ -152,7 +152,7 @@ export default function Features() {
           <div className="bg-gradient-to-r from-secondary-50 via-primary-50 to-accent-50 rounded-2xl p-8 border border-secondary-200 shadow-lg relative overflow-hidden">
             {/* Background Member Photos */}
             <div className="absolute inset-0 opacity-5">
-              <div className="grid grid-cols-6 gap-2 h-full">
+              <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-6 gap-1 sm:gap-2 h-full">
                 {Array.from({ length: 24 }).map((_, index) => {
                   const photos = getImagesByCategory('community').slice(0, 6)
                   return (
@@ -172,7 +172,7 @@ export default function Features() {
             <div className="relative z-10">
               <div className="flex items-center justify-center gap-2 mb-6">
                 <HeartIcon className="h-6 w-6 text-action-500" />
-                <h3 className="text-2xl font-semibold text-gray-900">Portuguese Social Network</h3>
+                <h3 className="text-2xl font-semibold text-gray-900">Your Portuguese Family Network</h3>
               </div>
               
               {/* Featured Community Testimonial */}
@@ -188,18 +188,17 @@ export default function Features() {
                   </div>
                   <div className="text-left">
                     <p className="font-semibold text-gray-900">Carlos Silva</p>
-                    <p className="text-sm text-gray-600">Portuguese Professional, Shoreditch</p>
+                    <p className="text-sm text-gray-600">Portuguese Professional, moved from Porto to Stockwell</p>
                   </div>
                 </div>
                 <p className="text-lg text-gray-600 italic mb-4">
-                  "I was tired of going to bars alone. Through LusoTown's real-life meetups, I found my Portuguese crew for nights out, brunches, and gym sessions. London feels like home now."
+                  "I was homesick and felt lost in London. Through LusoTown, I found my Portuguese family - people who understand my story and welcome me like I've always belonged. Now I have tias, primos, and friends everywhere I go."
                 </p>
               </div>
               
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Created by Portuguese speakers who know what it's like to feel isolated in a new city. 
-                Every feature is designed to help you build genuine real-life friendships and enjoy London's social scene with your Portuguese tribe through in-person meetups.
-                After participating in events or group activities, members can leave reviews to help improve future experiences - just like Google My Business!
+                Built by Portuguese hearts who know what it's like to miss home and search for belonging in a new city. 
+                Every feature is designed to help you find your Portuguese family - warm people who greet you with a smile, share their stories, and make you feel like you've come home.
               </p>
             </div>
           </div>

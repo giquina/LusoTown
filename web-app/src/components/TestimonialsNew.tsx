@@ -234,13 +234,13 @@ export default function TestimonialsNew() {
           </p>
         </motion.div>
 
-        {/* Testimonials Grid */}
+        {/* Testimonials Grid - Enhanced Multi-Column Responsive Layout */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-7 lg:gap-8 xl:gap-10"
         >
           {currentTestimonials.map((testimonial, index) => (
             <motion.div
@@ -248,7 +248,7 @@ export default function TestimonialsNew() {
               variants={cardVariants}
               className="group"
             >
-              <div className="card p-6 sm:p-8 h-full hover:scale-105 transition-all duration-300 group-hover:shadow-2xl bg-white/80 backdrop-blur-sm border border-white/50">
+              <div className="card p-4 sm:p-6 md:p-7 lg:p-8 h-full hover:scale-105 transition-all duration-300 group-hover:shadow-2xl bg-white/80 backdrop-blur-sm border border-white/50">
                 {/* Quote Icon */}
                 <div className="mb-6">
                   <ChatBubbleLeftIcon className="h-8 w-8 text-primary-300" />
@@ -310,8 +310,8 @@ export default function TestimonialsNew() {
             </p>
           </div>
           
-          {/* Photo Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 mb-12">
+          {/* Photo Grid - Enhanced Multi-Column Layout */}
+          <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-8 gap-2 xs:gap-3 sm:gap-4 md:gap-5 mb-12">
             {getImagesByCategory('community').map((member, index) => (
               <motion.div
                 key={member.id}
@@ -342,7 +342,7 @@ export default function TestimonialsNew() {
           className="mt-16 text-center"
         >
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-white/50 shadow-lg">
-            <div className="grid sm:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
               <div>
                 <p className="text-4xl font-bold text-primary-500 mb-2">4.9/5</p>
                 <p className="text-gray-600">Average Rating</p>

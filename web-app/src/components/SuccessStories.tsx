@@ -21,55 +21,55 @@ interface SuccessStory {
 const successStories: SuccessStory[] = [
   {
     id: '1',
-    name: 'Sarah',
+    name: 'Sofia',
     age: 34,
-    location: 'Clapham',
+    location: 'Stockwell',
     profileImage: getImageWithFallback('sarah-chen'),
     friendImage: getImageWithFallback('maya-patel'),
-    friendName: 'Maya',
-    story: 'Met Maya at a book club event and instantly clicked over our shared love of psychological thrillers. Six months later, we\'re planning our first girls\' trip to Edinburgh!',
-    connectionType: 'Book Club',
+    friendName: 'Maria',
+    story: 'Met Maria at a Portuguese cultural event in Vauxhall and instantly connected over our shared homesickness for Portugal. Six months later, we\'ve created our own Portuguese book club at a local café!',
+    connectionType: 'Portuguese Cultural Event',
     timeframe: '6 months ago',
-    activities: ['Weekend brunches', 'Book discussions', 'Museum visits']
+    activities: ['Portuguese cafés', 'Book discussions', 'Cultural events']
   },
   {
     id: '2',
-    name: 'Jessica',
+    name: 'Ana',
     age: 31,
-    location: 'Notting Hill',
+    location: 'Elephant & Castle',
     profileImage: getImageWithFallback('jessica-williams'),
     friendImage: getImageWithFallback('emma-johnson'),
-    friendName: 'Emma',
-    story: 'Emma and I bonded over our career ambitions at a networking event. She\'s become my biggest cheerleader and we support each other through all of life\'s challenges.',
-    connectionType: 'Professional Network',
+    friendName: 'Beatriz',
+    story: 'Beatriz and I met at a Portuguese professionals meetup at a Stockwell restaurant. We bonded over our shared experience of building careers in London while staying connected to our Portuguese roots.',
+    connectionType: 'Portuguese Professionals',
     timeframe: '8 months ago',
-    activities: ['Career planning', 'Industry events', 'Coffee dates']
+    activities: ['Portuguese restaurants', 'Networking events', 'Career support']
   },
   {
     id: '3',
-    name: 'Priya',
+    name: 'Carla',
     age: 35,
-    location: 'Canary Wharf',
+    location: 'Vauxhall',
     profileImage: getImageWithFallback('priya-sharma'),
     friendImage: getImageWithFallback('lisa-thompson'),
-    friendName: 'Lisa',
-    story: 'Lisa invited me to join her walking group, and it transformed both my fitness and social life. Our Sunday Thames walks have become the highlight of my week.',
-    connectionType: 'Fitness Group',
+    friendName: 'Lucia',
+    story: 'Lucia invited me to join her Portuguese walking group, and it transformed both my fitness and homesickness. Our Sunday walks through Portuguese neighborhoods have become the highlight of my week.',
+    connectionType: 'Portuguese Walking Group',
     timeframe: '4 months ago',
-    activities: ['Thames walks', 'Yoga classes', 'Healthy cooking']
+    activities: ['Portuguese neighborhoods', 'Cultural walks', 'Community fitness']
   },
   {
     id: '4',
-    name: 'Rachel',
+    name: 'Inês',
     age: 38,
-    location: 'Richmond',
+    location: 'Camden',
     profileImage: getImageWithFallback('ava-davis'),
     friendImage: getImageWithFallback('community-4'),
-    friendName: 'Hannah',
-    story: 'Hannah and I met at an art gallery event and discovered we both love creative pursuits. We now attend every major exhibition together and have started our own painting sessions.',
-    connectionType: 'Arts & Culture',
+    friendName: 'Raquel',
+    story: 'Raquel and I met at a Portuguese art exhibition in South London and discovered we both miss the creative spirit of Portugal. We now attend cultural events together and started our own Portuguese arts group.',
+    connectionType: 'Portuguese Arts & Culture',
     timeframe: '1 year ago',
-    activities: ['Gallery visits', 'Art classes', 'Creative workshops']
+    activities: ['Portuguese exhibitions', 'Cultural events', 'Creative workshops']
   }
 ]
 
@@ -122,17 +122,17 @@ export default function SuccessStories() {
             <span className="gradient-text">Best Friends</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-            These amazing women found their perfect community connections through LusoTown London. Read their inspiring stories of connection, cultural preservation, and genuine friendship in the Portuguese diaspora.
+            Portuguese speakers who found their London community through real meetups at authentic venues. Read inspiring stories of connection, cultural preservation, and genuine friendship in London's Portuguese community.
           </p>
         </motion.div>
 
-        {/* Success Stories Grid */}
+        {/* Success Stories Grid - Enhanced Multi-Column Responsive Layout */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-7 lg:gap-8 xl:gap-10"
         >
           {successStories.map((story) => (
             <motion.div
@@ -140,7 +140,7 @@ export default function SuccessStories() {
               variants={cardVariants}
               className="group"
             >
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/50 h-full">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-7 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/50 h-full">
                 {/* Connection Type Badge */}
                 <div className="inline-flex items-center gap-1 bg-primary-100 text-primary-700 text-sm font-medium px-3 py-1 rounded-full mb-6">
                   <SparklesIcon className="h-3 w-3" />
@@ -224,7 +224,7 @@ export default function SuccessStories() {
             Ready to Write Your Own Success Story?
           </h3>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Join hundreds of women who\'ve found their perfect friendship matches. Your next best friend could be just one event away.
+            Join hundreds of Portuguese speakers who\'ve found their London community. Your next Portuguese friend could be just one authentic venue away.
           </p>
           <a 
             href="/signup" 

@@ -1,3 +1,5 @@
+'use client'
+
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { 
@@ -14,8 +16,10 @@ import {
   HomeIcon,
   BookOpenIcon
 } from '@heroicons/react/24/outline'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function About() {
+  const { t } = useLanguage()
   return (
     <main className="min-h-screen">
       <Header />
@@ -26,7 +30,7 @@ export default function About() {
             <div className="max-w-4xl mx-auto text-center mb-16">
               <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-primary-600 mb-6">
                 <GlobeAltIcon className="w-4 h-4 mr-2" />
-                Unidos pela Língua • United by Language
+                {t('about.hero.badge', 'Unidos pela Língua • United by Language')}
               </div>
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
                 About <span className="gradient-text">LusoTown London</span>

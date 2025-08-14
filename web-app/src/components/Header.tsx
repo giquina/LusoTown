@@ -9,19 +9,18 @@ import { useRouter } from 'next/navigation'
 import Logo from '@/components/Logo'
 import LanguageToggle from '@/components/LanguageToggle'
 import CartButton from '@/components/CartButton'
+import SavedItemsButton from '@/components/SavedItemsButton'
 import { useLanguage } from '@/context/LanguageContext'
 
 const getNavigationLinks = (t: any) => [
   { name: t('nav.events'), href: '/events' },
   { name: t('nav.community'), href: '/community' },
   { name: t('nav.pricing'), href: '/pricing' },
-  { name: t('nav.about'), href: '/about' },
   { name: t('nav.contact'), href: '/contact' },
 ]
 
 const authenticatedNavigationLinks = [
   { name: 'Events', href: '/events' },
-  { name: 'Community Feed', href: '/feed' },
   { name: 'Community', href: '/community' },
   { name: 'Dashboard', href: '/dashboard' },
 ]
@@ -87,13 +86,7 @@ export default function Header() {
           {/* Desktop CTA / User Menu */}
           <div className="hidden md:flex items-center space-x-4">
             <CartButton />
-            <a 
-              href="/saved"
-              className="p-2 text-gray-600 hover:text-primary-500 transition-colors"
-              title="Saved Items"
-            >
-              <HeartIcon className="w-6 h-6" />
-            </a>
+            <SavedItemsButton />
             <LanguageToggle />
             {user ? (
               <div className="relative">
@@ -188,13 +181,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <div className="flex md:hidden items-center space-x-2 relative z-50">
             <CartButton />
-            <a 
-              href="/saved"
-              className="p-2 text-gray-600 hover:text-primary-500 transition-colors"
-              title="Saved Items"
-            >
-              <HeartIcon className="w-6 h-6" />
-            </a>
+            <SavedItemsButton />
             <LanguageToggle />
             <button
               type="button"

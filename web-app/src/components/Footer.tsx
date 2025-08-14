@@ -7,7 +7,7 @@ import Logo from '@/components/Logo'
 const getFooterLinks = (t: any) => ({
   community: [
     { name: 'Events & Culture', href: '/events' },
-    { name: 'Community Groups', href: '/community' },
+    { name: 'Community', href: '/community' },
     { name: 'Business Directory', href: '/directory' },
     { name: 'Community Guidelines', href: '/community-guidelines' },
   ],
@@ -37,9 +37,9 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-900 text-white">
-      {/* Main Footer Content */}
+      {/* Main Footer Content - Enhanced Multi-Column Responsive Layout */}
       <div className="container-width px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 xl:gap-12">
           {/* Brand Column */}
           <div className="md:col-span-2 lg:col-span-1 space-y-6">
             <Logo size="medium" className="text-white" />

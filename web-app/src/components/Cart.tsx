@@ -70,8 +70,13 @@ export default function Cart({ isOpen, onClose }: CartProps) {
   }
 
   const handleSaveForLater = (item: typeof cartItems[0]) => {
+    // Map cart item types to saved item types
+    const mappedType = item.type === 'business_service' ? 'business' as const : 
+                      item.type === 'product' ? 'business' as const : 
+                      item.type as 'event' | 'business' | 'feed' | 'group'
+    
     addToSaved({
-      type: item.type,
+      type: mappedType,
       title: item.title,
       description: item.description,
       imageUrl: item.imageUrl,
@@ -358,7 +363,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                                             <button
                                               onClick={() => updateQuantity(item.id, item.quantity + 1)}
                                               className="p-1 text-gray-400 hover:text-gray-600"
-                                              disabled={item.maxQuantity && item.quantity >= item.maxQuantity}
+                                              disabled={Boolean(item.maxQuantity && item.quantity >= item.maxQuantity)}
                                             >
                                               <PlusIcon className="w-4 h-4" />
                                             </button>

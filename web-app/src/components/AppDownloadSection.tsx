@@ -10,31 +10,34 @@ import {
   UserGroupIcon,
   CalendarIcon
 } from '@heroicons/react/24/outline'
+import { useLanguage } from '@/context/LanguageContext'
 
-const mobileFeatures = [
+const getMobileFeatures = (t: any) => [
   {
     icon: BellIcon,
-    title: "Notificações Instantâneas",
-    description: "Nunca perca convites para eventos ou mensagens do grupo"
+    title: t('app.features.notifications.title', 'Instant Notifications'),
+    description: t('app.features.notifications.description', 'Never miss event invites or group messages')
   },
   {
     icon: MapPinIcon,
-    title: "Eventos Locais",
-    description: "Encontre encontros e atividades portuguesas próximas"
+    title: t('app.features.local-events.title', 'Local Events'),
+    description: t('app.features.local-events.description', 'Find Portuguese meetups and activities nearby')
   },
   {
     icon: ChatBubbleLeftRightIcon,
-    title: "Chat em Tempo Real",
-    description: "Mantenha-se conectado com a comunidade lusa em qualquer lugar"
+    title: t('app.features.real-time-chat.title', 'Real-time Chat'),
+    description: t('app.features.real-time-chat.description', 'Stay connected with the Portuguese community anywhere')
   },
   {
     icon: DevicePhoneMobileIcon,
-    title: "Experiência Mobile",
-    description: "Otimizado para engagement comunitário sem costura"
+    title: t('app.features.mobile-experience.title', 'Mobile Experience'),
+    description: t('app.features.mobile-experience.description', 'Optimized for seamless community engagement')
   }
 ]
 
 export default function AppDownloadSection() {
+  const { t } = useLanguage()
+  const mobileFeatures = getMobileFeatures(t)
   return (
     <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-secondary-50 relative overflow-hidden">
       {/* Background Elements */}
@@ -48,7 +51,7 @@ export default function AppDownloadSection() {
       </div>
 
       <div className="container-width section-padding relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 xl:gap-20 items-center">
           
           {/* Left Column - Content */}
           <motion.div
@@ -61,19 +64,18 @@ export default function AppDownloadSection() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-100 to-secondary-100 rounded-full px-4 py-2 text-primary-600 font-medium">
               <SparklesIcon className="h-4 w-4" />
-              Now Available on Mobile
+              {t('app.badge', 'Now Available on Mobile')}
             </div>
 
             {/* Heading */}
             <div className="space-y-6">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                Leve a Sua{' '}
-                <span className="gradient-text">Comunidade</span>
-                {' '}em Todo Lado
+                {t('app.heading.part1', 'Take Your')}{' '}
+                <span className="gradient-text">{t('app.heading.community', 'Community')}</span>
+                {' '}{t('app.heading.part2', 'Everywhere')}
               </h2>
               <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-                Nunca perca encontros lusos em Londres, chats de grupo ou novas conexões. 
-                Obtenha a aplicação móvel LusoTown e mantenha-se conectado com a comunidade portuguesa onde quer que vá.
+                {t('app.description', 'Never miss Portuguese meetups in London, group chats or new connections. Get the LusoTown mobile app and stay connected with the Portuguese community wherever you go.')}
               </p>
               <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-6 border border-primary-100/50">
                 <div className="flex items-start gap-4">
@@ -81,15 +83,15 @@ export default function AppDownloadSection() {
                     <SparklesIcon className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 text-lg mb-2">Junte-se a 500+ portugueses verificados</h3>
-                    <p className="text-gray-600">A sua comunidade luso-londrina já está a crescer. Descarregue a aplicação e encontre a sua comunidade hoje.</p>
+                    <h3 className="font-bold text-gray-900 text-lg mb-2">{t('app.cta.title', 'Join 500+ verified Portuguese speakers')}</h3>
+                    <p className="text-gray-600">{t('app.cta.description', 'Your Luso-London community is already growing. Download the app and find your community today.')}</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Mobile Features */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* Mobile Features - Enhanced Multi-Column Layout */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-3 sm:gap-4 lg:gap-5">
               {mobileFeatures.map((feature, index) => (
                 <motion.div
                   key={feature.title}
@@ -116,13 +118,13 @@ export default function AppDownloadSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6, duration: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col xs:flex-col sm:flex-row gap-3 sm:gap-4"
             >
               {/* App Store Button - Enhanced */}
               <a 
                 href="https://apps.apple.com/app/lusotown-london" 
                 className="group inline-flex items-center bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-2xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl shadow-lg"
-                aria-label="Descarregue LusoTown na App Store"
+                aria-label={t('app.download.app-store-label', 'Download LusoTown on the App Store')}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -141,7 +143,7 @@ export default function AppDownloadSection() {
               <a 
                 href="https://play.google.com/store/apps/details?id=com.lusotown.london" 
                 className="group inline-flex items-center bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-2xl transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl shadow-lg"
-                aria-label="Obtenha LusoTown no Google Play"
+                aria-label={t('app.download.google-play-label', 'Get LusoTown on Google Play')}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -166,16 +168,16 @@ export default function AppDownloadSection() {
               className="space-y-3"
             >
               <p className="text-gray-500 text-sm">
-                Grátis para descarregar • Disponível no iOS 14+ e Android 8+
+                {t('app.info.free-download', 'Free to download • Available on iOS 14+ and Android 8+')}
               </p>
               <div className="flex items-center gap-4 text-sm text-gray-600">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span>100% Seguro e Verificado</span>
+                  <span>{t('app.info.secure', '100% Safe and Verified')}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
-                  <span>Comunidade Luso-Londrina</span>
+                  <span>{t('app.info.community', 'Luso-London Community')}</span>
                 </div>
               </div>
             </motion.div>
@@ -230,12 +232,12 @@ export default function AppDownloadSection() {
                             <UserGroupIcon className="h-5 w-5 text-primary-600" />
                           </div>
                           <div>
-                            <h3 className="font-semibold text-gray-900 text-sm">Clube de Leitura Luso</h3>
-                            <p className="text-xs text-gray-500">3 mensagens novas</p>
+                            <h3 className="font-semibold text-gray-900 text-sm">{t('app.mockup.reading-club', 'Portuguese Reading Club')}</h3>
+                            <p className="text-xs text-gray-500">{t('app.mockup.new-messages', '3 new messages')}</p>
                           </div>
                         </div>
                         <div className="bg-gray-50 rounded-lg p-3">
-                          <p className="text-xs text-gray-600">&quot;Alguém leu 'Os Maias' do Eça de Queirós?&quot;</p>
+                          <p className="text-xs text-gray-600">&quot;{t('app.mockup.message-preview', 'Anyone read \'Os Maias\' by Eça de Queirós?')}&quot;</p>
                         </div>
                       </div>
 
@@ -246,8 +248,8 @@ export default function AppDownloadSection() {
                             <CalendarIcon className="h-5 w-5 text-secondary-600" />
                           </div>
                           <div>
-                            <h3 className="font-semibold text-gray-900 text-sm">Caminhadas de Fim de Semana</h3>
-                            <p className="text-xs text-gray-500">Amanhã, 10:00</p>
+                            <h3 className="font-semibold text-gray-900 text-sm">{t('app.mockup.weekend-walks', 'Weekend Walks')}</h3>
+                            <p className="text-xs text-gray-500">{t('app.mockup.tomorrow-time', 'Tomorrow, 10:00')}</p>
                           </div>
                         </div>
                         <div className="flex items-center gap-2">
@@ -258,7 +260,7 @@ export default function AppDownloadSection() {
 
                       {/* New Connections Card */}
                       <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
-                        <h3 className="font-semibold text-gray-900 text-sm mb-3">Novos na Sua Área</h3>
+                        <h3 className="font-semibold text-gray-900 text-sm mb-3">{t('app.mockup.new-in-area', 'New in Your Area')}</h3>
                         <div className="flex -space-x-2">
                           {[1, 2, 3, 4].map((i) => (
                             <div

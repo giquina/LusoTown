@@ -2,17 +2,20 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRightIcon, CheckIcon, SparklesIcon } from '@heroicons/react/24/outline'
+import { useLanguage } from '@/context/LanguageContext'
 
-const benefits = [
-  "Junte-se à comunidade luso-londrina",
-  "Acesso a eventos culturais portugueses", 
-  "Encontre empresas e serviços lusos",
-  "Conecte-se com a diáspora portuguesa",
-  "Ambiente seguro e acolhedor",
-  "Gratuito para começar"
+const getBenefits = (t: any) => [
+  t('cta.benefits.join-community', "Join the Luso-London community"),
+  t('cta.benefits.cultural-access', "Access to Portuguese cultural events"), 
+  t('cta.benefits.find-businesses', "Find Portuguese businesses and services"),
+  t('cta.benefits.connect-diaspora', "Connect with the Portuguese diaspora"),
+  t('cta.benefits.safe-environment', "Safe and welcoming environment"),
+  t('cta.benefits.free-start', "Free to get started")
 ]
 
 export default function CTA() {
+  const { t } = useLanguage()
+  const benefits = getBenefits(t)
   return (
     <section className="py-20 bg-gradient-to-br from-primary-600 via-primary-500 to-secondary-500 relative overflow-hidden">
       {/* Background Elements */}
@@ -114,13 +117,13 @@ export default function CTA() {
             </p>
           </motion.div>
 
-          {/* Trust Signals */}
+          {/* Trust Signals - Enhanced Multi-Column Layout */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-white/80"
+            className="mt-12 grid grid-cols-1 xs:grid-cols-3 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 text-white/80"
           >
             <div className="text-center">
               <div className="text-2xl font-bold text-white mb-1">100%</div>

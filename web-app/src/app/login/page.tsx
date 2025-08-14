@@ -3,8 +3,23 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Header from '@/components/Header'
-import { HeartIcon, EyeIcon, EyeSlashIcon, ExclamationCircleIcon } from '@heroicons/react/24/outline'
+import { 
+  HeartIcon, 
+  EyeIcon, 
+  EyeSlashIcon, 
+  ExclamationCircleIcon,
+  CalendarDaysIcon,
+  MapPinIcon,
+  UserGroupIcon,
+  StarIcon,
+  ShieldCheckIcon,
+  HomeIcon,
+  ChatBubbleLeftRightIcon
+} from '@heroicons/react/24/outline'
+import { CheckBadgeIcon } from '@heroicons/react/24/solid'
 import { authService } from '@/lib/auth'
+import { useLanguage } from '@/context/LanguageContext'
+import { motion } from 'framer-motion'
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -16,6 +31,9 @@ export default function Login() {
   const [error, setError] = useState('')
   const [rememberMe, setRememberMe] = useState(false)
   const router = useRouter()
+  const { language, t } = useLanguage()
+  
+  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
 
   useEffect(() => {
     // Redirect if already authenticated
@@ -40,7 +58,7 @@ export default function Login() {
     setError('')
 
     if (!formData.email.trim() || !formData.password.trim()) {
-      setError('Please fill in all fields')
+      setError(isPortuguese ? 'Por favor, preencha todos os campos' : 'Please fill in all fields')
       setIsLoading(false)
       return
     }
@@ -56,166 +74,379 @@ export default function Login() {
           router.push('/dashboard')
         }
       } else {
-        setError(result.error || 'Login failed')
+        setError(result.error || (isPortuguese ? 'Erro no login' : 'Login failed'))
       }
     } catch (error) {
-      setError('An unexpected error occurred. Please try again.')
+      setError(isPortuguese ? 
+        'Ocorreu um erro inesperado. Tente novamente.' : 
+        'An unexpected error occurred. Please try again.')
       console.error('Login error:', error)
     } finally {
       setIsLoading(false)
     }
   }
 
-  const handleDemoLogin = (email: string) => {
-    setFormData({
-      email: email,
-      password: ''
-    })
-  }
+  // Recent community highlights data
+  const recentHighlights = [
+    {
+      type: 'event',
+      title: isPortuguese ? 'Noite de Fado no Camden' : 'Fado Night in Camden',
+      description: isPortuguese ? 'Hoje às 20:00 • Bar do Fado' : 'Today at 8pm • Bar do Fado',
+      attendees: 24,
+      icon: <CalendarDaysIcon className="w-4 h-4" />
+    },
+    {
+      type: 'business',
+      title: isPortuguese ? 'Nova Padaria em Stockwell' : 'New Bakery in Stockwell',
+      description: isPortuguese ? 'Pastéis de nata frescos todos os dias' : 'Fresh pastéis de nata daily',
+      rating: 4.8,
+      icon: <StarIcon className="w-4 h-4" />
+    },
+    {
+      type: 'community',
+      title: isPortuguese ? 'Grupo "Mães Portuguesas"' : '"Portuguese Mums" Group',
+      description: isPortuguese ? '89 novos membros esta semana' : '89 new members this week',
+      growth: '+89',
+      icon: <UserGroupIcon className="w-4 h-4" />
+    }
+  ]
+
+  const loadingMessages = isPortuguese ? [
+    'Bem-vindo de volta à família...',
+    'Conectando com a sua comunidade...',
+    'Preparando o seu lar português...'
+  ] : [
+    'Welcome back to the family...',
+    'Connecting to your community...',
+    'Preparing your Portuguese home...'
+  ]
+
+  const [loadingMessageIndex, setLoadingMessageIndex] = useState(0)
+
+  useEffect(() => {
+    if (isLoading) {
+      const interval = setInterval(() => {
+        setLoadingMessageIndex((prev) => (prev + 1) % loadingMessages.length)
+      }, 1000)
+      return () => clearInterval(interval)
+    }
+  }, [isLoading, loadingMessages.length])
 
   return (
     <main className="min-h-screen">
       <Header />
       <div className="pt-16">
-        <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50 min-h-screen flex items-center">
+        <section className="py-8 bg-gradient-to-br from-primary-50 via-white to-secondary-50 min-h-screen">
           <div className="container-width px-4 sm:px-6 lg:px-8 w-full">
-            <div className="max-w-md mx-auto bg-white rounded-2xl shadow-lg p-8">
-              <div className="text-center mb-8">
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-lg flex items-center justify-center">
-                    <HeartIcon className="h-6 w-6 text-white" />
-                  </div>
-                  <span className="text-2xl font-bold text-gray-900">LusoTown</span>
-                </div>
-                <h1 className="text-3xl font-bold text-gray-900 mb-2">Bem-vindo de volta!</h1>
-                <p className="text-gray-600">Sign in to connect with your Portuguese community</p>
-              </div>
-
-              {/* Quick Access Helper */}
-              <div className="mb-6 p-4 bg-primary-50 border border-primary-200 rounded-lg">
-                <h3 className="text-sm font-medium text-primary-900 mb-2">New to LusoTown?</h3>
-                <p className="text-xs text-primary-700 mb-3">
-                  Create your account to join our vibrant Portuguese community in London
-                </p>
-                <a 
-                  href="/signup"
-                  className="block w-full text-center p-2 bg-primary-400 text-white rounded hover:bg-primary-500 transition-colors text-sm font-medium"
-                >
-                  Join LusoTown →
-                </a>
-              </div>
-
-              {/* Error Display */}
-              {error && (
-                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3">
-                  <ExclamationCircleIcon className="h-5 w-5 text-red-500 flex-shrink-0" />
-                  <p className="text-sm text-red-700">{error}</p>
-                </div>
-              )}
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent"
-                    placeholder="your@email.com"
-                    disabled={isLoading}
-                    required
-                  />
-                </div>
+            
+            {/* Two Column Layout */}
+            <div className="max-w-7xl mx-auto">
+              <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
                 
-                <div>
-                  <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-                    Password
-                  </label>
-                  <div className="relative">
-                    <input
-                      type={showPassword ? "text" : "password"}
-                      id="password"
-                      name="password"
-                      value={formData.password}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent"
-                      placeholder="Enter your password"
-                      disabled={isLoading}
-                      required
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowPassword(!showPassword)}
-                      className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
-                    >
-                      {showPassword ? (
-                        <EyeSlashIcon className="h-5 w-5" />
-                      ) : (
-                        <EyeIcon className="h-5 w-5" />
-                      )}
-                    </button>
-                  </div>
-                </div>
-                
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <input
-                      id="remember-me"
-                      name="remember-me"
-                      type="checkbox"
-                      checked={rememberMe}
-                      onChange={(e) => setRememberMe(e.target.checked)}
-                      className="h-4 w-4 text-primary-400 focus:ring-primary-400 border-gray-300 rounded"
-                      disabled={isLoading}
-                    />
-                    <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-700">
-                      Remember me
-                    </label>
-                  </div>
+                {/* Left Side - Community Welcome & Highlights */}
+                <div className="space-y-6">
                   
-                  <a href="/forgot-password" className="text-sm text-primary-400 hover:text-primary-500">
-                    Forgot password?
-                  </a>
-                </div>
-                
-                <button
-                  type="submit"
-                  disabled={isLoading}
-                  className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
-                >
-                  {isLoading ? (
-                    <>
-                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                      Signing in...
-                    </>
-                  ) : (
-                    'Sign In'
-                  )}
-                </button>
-                
-                <div className="text-center">
-                  <p className="text-gray-600">
-                    Don't have an account?{' '}
-                    <a href="/signup" className="text-primary-400 hover:text-primary-500 font-medium">
-                      Join LusoTown
+                  {/* Welcome Back Message */}
+                  <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-center lg:text-left"
+                  >
+                    <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-400 to-secondary-400 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+                      <HomeIcon className="w-4 h-4" />
+                      <span>{isPortuguese ? 'A sua família portuguesa em Londres' : 'Your Portuguese family in London'}</span>
+                    </div>
+                    
+                    <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                      {isPortuguese ? (
+                        <>Bem-vindo de volta <br />à família!</>
+                      ) : (
+                        <>Welcome back <br />to the family!</>
+                      )}
+                    </h1>
+                    
+                    <p className="text-xl text-gray-600 leading-relaxed">
+                      {isPortuguese ? (
+                        <>A sua comunidade portuguesa estava com saudades. <br />
+                        <span className="font-medium text-primary-600">Mais de 500 corações portugueses</span> aguardam por si.</>
+                      ) : (
+                        <>Your Portuguese community missed you. <br />
+                        <span className="font-medium text-primary-600">Over 500 Portuguese hearts</span> are waiting for you.</>
+                      )}
+                    </p>
+                  </motion.div>
+
+                  {/* Recent Community Highlights */}
+                  <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6"
+                  >
+                    <div className="flex items-center gap-2 mb-4">
+                      <ChatBubbleLeftRightIcon className="w-5 h-5 text-secondary-500" />
+                      <h3 className="font-semibold text-gray-900">
+                        {isPortuguese ? 'Novidades da Comunidade' : 'Community Updates'}
+                      </h3>
+                      <span className="bg-red-100 text-red-600 text-xs px-2 py-1 rounded-full animate-pulse">
+                        {isPortuguese ? 'AGORA' : 'LIVE'}
+                      </span>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      {recentHighlights.map((highlight, index) => (
+                        <div key={index} className="flex items-start gap-3 p-3 bg-gradient-to-r from-gray-50 to-primary-50 rounded-xl">
+                          <div className="text-primary-500 mt-1">
+                            {highlight.icon}
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="font-medium text-gray-900 text-sm mb-1">{highlight.title}</h4>
+                            <p className="text-xs text-gray-600 mb-2">{highlight.description}</p>
+                            <div className="flex items-center gap-3 text-xs">
+                              {highlight.attendees && (
+                                <span className="flex items-center gap-1 text-secondary-600">
+                                  <UserGroupIcon className="w-3 h-3" />
+                                  {highlight.attendees} {isPortuguese ? 'participantes' : 'attendees'}
+                                </span>
+                              )}
+                              {highlight.rating && (
+                                <span className="flex items-center gap-1 text-yellow-600">
+                                  <StarIcon className="w-3 h-3" />
+                                  {highlight.rating}
+                                </span>
+                              )}
+                              {highlight.growth && (
+                                <span className="bg-green-100 text-green-600 px-2 py-1 rounded-full">
+                                  {highlight.growth}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <div className="mt-4 pt-4 border-t border-gray-100">
+                      <p className="text-xs text-gray-500 text-center italic">
+                        {isPortuguese ? 
+                          '"Onde há portugueses, há sempre uma mesa para mais um"' : 
+                          '"Where there are Portuguese people, there\'s always room for one more at the table"'
+                        }
+                      </p>
+                    </div>
+                  </motion.div>
+
+                  {/* Portuguese Support Note */}
+                  <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
+                    className="bg-gradient-to-r from-coral-50 to-accent-50 border border-coral-200 rounded-xl p-4"
+                  >
+                    <div className="flex items-center gap-2 mb-2">
+                      <ShieldCheckIcon className="w-4 h-4 text-coral-500" />
+                      <span className="font-medium text-coral-900 text-sm">
+                        {isPortuguese ? 'Apoio em Português' : 'Portuguese-Speaking Support'}
+                      </span>
+                    </div>
+                    <p className="text-xs text-coral-700">
+                      {isPortuguese ? 
+                        'Precisa de ajuda? A nossa equipa fala português e está aqui para si.' : 
+                        'Need help? Our team speaks Portuguese and is here for you.'
+                      }
+                    </p>
+                    <a 
+                      href="/help" 
+                      className="text-coral-600 hover:text-coral-700 text-xs font-medium mt-2 inline-block"
+                    >
+                      {isPortuguese ? 'Contactar Apoio →' : 'Contact Support →'}
                     </a>
-                  </p>
+                  </motion.div>
                 </div>
-              </form>
-              
-              <div className="mt-8 pt-6 border-t border-gray-200">
-                <p className="text-center text-sm text-gray-500">
-                  By signing in, you agree to our{' '}
-                  <a href="/terms" className="text-primary-400 hover:text-primary-500">Terms of Service</a> and{' '}
-                  <a href="/privacy" className="text-primary-400 hover:text-primary-500">Privacy Policy</a>
-                </p>
+
+                {/* Right Side - Login Form */}
+                <div className="max-w-md mx-auto lg:mx-0">
+                  <motion.div 
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.3 }}
+                    className="bg-white rounded-2xl shadow-xl p-8 border border-gray-200"
+                  >
+                    
+                    {/* Form Header */}
+                    <div className="text-center mb-8">
+                      <div className="flex items-center justify-center gap-3 mb-4">
+                        <div className="w-12 h-12 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-xl flex items-center justify-center shadow-lg">
+                          <HeartIcon className="h-6 w-6 text-white" />
+                        </div>
+                        <span className="text-2xl font-bold text-gray-900">LusoTown</span>
+                      </div>
+                      <p className="text-gray-600">
+                        {isPortuguese ? 'Entre na sua conta' : 'Sign in to your account'}
+                      </p>
+                    </div>
+
+                    {/* New to LusoTown Helper */}
+                    <div className="mb-6 p-4 bg-gradient-to-r from-primary-50 to-secondary-50 border border-primary-200 rounded-xl">
+                      <h3 className="text-sm font-semibold text-primary-900 mb-2">
+                        {isPortuguese ? 'Novo na LusoTown?' : 'New to LusoTown?'}
+                      </h3>
+                      <p className="text-xs text-primary-700 mb-3">
+                        {isPortuguese ? 
+                          'Junte-se à nossa família portuguesa vibrante em Londres e encontre o seu povo.' : 
+                          'Join our vibrant Portuguese family in London and find your people.'
+                        }
+                      </p>
+                      <a 
+                        href="/signup"
+                        className="block w-full text-center p-3 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all text-sm font-semibold shadow-md hover:shadow-lg"
+                      >
+                        {isPortuguese ? 'Juntar à Família →' : 'Join Our Family →'}
+                      </a>
+                    </div>
+
+                    {/* Error Display */}
+                    {error && (
+                      <motion.div 
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3"
+                      >
+                        <ExclamationCircleIcon className="h-5 w-5 text-red-500 flex-shrink-0" />
+                        <p className="text-sm text-red-700">{error}</p>
+                      </motion.div>
+                    )}
+                    
+                    {/* Login Form */}
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                          {isPortuguese ? 'Email' : 'Email Address'}
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
+                          placeholder={isPortuguese ? 'seu@email.com' : 'your@email.com'}
+                          disabled={isLoading}
+                          autoFocus
+                          required
+                        />
+                      </div>
+                      
+                      <div>
+                        <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                          {isPortuguese ? 'Palavra-passe' : 'Password'}
+                        </label>
+                        <div className="relative">
+                          <input
+                            type={showPassword ? "text" : "password"}
+                            id="password"
+                            name="password"
+                            value={formData.password}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-3 pr-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
+                            placeholder={isPortuguese ? 'Introduza a sua palavra-passe' : 'Enter your password'}
+                            disabled={isLoading}
+                            required
+                          />
+                          <button
+                            type="button"
+                            onClick={() => setShowPassword(!showPassword)}
+                            className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
+                          >
+                            {showPassword ? (
+                              <EyeSlashIcon className="h-5 w-5" />
+                            ) : (
+                              <EyeIcon className="h-5 w-5" />
+                            )}
+                          </button>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center">
+                          <input
+                            id="remember-me"
+                            name="remember-me"
+                            type="checkbox"
+                            checked={rememberMe}
+                            onChange={(e) => setRememberMe(e.target.checked)}
+                            className="h-4 w-4 text-primary-400 focus:ring-primary-400 border-gray-300 rounded"
+                            disabled={isLoading}
+                          />
+                          <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-700">
+                            {isPortuguese ? 'Lembrar-me' : 'Remember me'}
+                          </label>
+                        </div>
+                        
+                        <a 
+                          href="/forgot-password" 
+                          className="text-sm text-primary-500 hover:text-primary-600 font-medium"
+                        >
+                          {isPortuguese ? 'Esqueceu a palavra-passe?' : 'Forgot password?'}
+                        </a>
+                      </div>
+                      
+                      <button
+                        type="submit"
+                        disabled={isLoading}
+                        className="btn-primary w-full disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all"
+                      >
+                        {isLoading ? (
+                          <div className="flex items-center">
+                            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            <span>{loadingMessages[loadingMessageIndex]}</span>
+                          </div>
+                        ) : (
+                          isPortuguese ? 'Entrar em Casa' : 'Welcome Home'
+                        )}
+                      </button>
+                    </form>
+
+                    {/* Social Login & Alternative Options */}
+                    <div className="mt-6 pt-6 border-t border-gray-200">
+                      <div className="text-center mb-4">
+                        <p className="text-gray-600 text-sm">
+                          {isPortuguese ? 'Não tem conta?' : "Don't have an account?"}{' '}
+                          <a href="/signup" className="text-primary-500 hover:text-primary-600 font-semibold">
+                            {isPortuguese ? 'Juntar à Família' : 'Join Our Family'}
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                    
+                    {/* Terms & Privacy */}
+                    <div className="mt-6 pt-4 border-t border-gray-100">
+                      <p className="text-center text-xs text-gray-500 leading-relaxed">
+                        {isPortuguese ? 
+                          'Ao entrar, concorda com os nossos' : 
+                          'By signing in, you agree to our'
+                        }{' '}
+                        <a href="/terms" className="text-primary-500 hover:text-primary-600">
+                          {isPortuguese ? 'Termos de Serviço' : 'Terms of Service'}
+                        </a>{' '}
+                        {isPortuguese ? 'e' : 'and'}{' '}
+                        <a href="/privacy" className="text-primary-500 hover:text-primary-600">
+                          {isPortuguese ? 'Política de Privacidade' : 'Privacy Policy'}
+                        </a>
+                      </p>
+                      
+                      <div className="mt-3 flex items-center justify-center gap-2">
+                        <CheckBadgeIcon className="w-4 h-4 text-secondary-500" />
+                        <span className="text-xs text-secondary-600 font-medium">
+                          {isPortuguese ? 'Comunidade Segura & Verificada' : 'Safe & Verified Community'}
+                        </span>
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
               </div>
             </div>
           </div>

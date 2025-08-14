@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { 
   HeartIcon, 
   ChatBubbleLeftRightIcon, 
@@ -11,13 +11,21 @@ import {
   MapPinIcon,
   CalendarDaysIcon,
   UserGroupIcon,
-  LanguageIcon
+  LanguageIcon,
+  FunnelIcon,
+  AdjustmentsHorizontalIcon,
+  CameraIcon,
+  SparklesIcon
 } from '@heroicons/react/24/outline'
 import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import PersonalizedFeed from '@/components/PersonalizedFeed'
 import EventFeed from '@/components/EventFeed'
+import LiveUpdateIndicator from '@/components/LiveUpdateIndicator'
+import FeedFilters, { FeedFilters as FeedFiltersType } from '@/components/FeedFilters'
+import PhotoUpload, { UploadedPhoto } from '@/components/PhotoUpload'
+import EventFeedCard, { EventFeedCardData } from '@/components/EventFeedCard'
 import { useLanguage, Language } from '@/context/LanguageContext'
 
 interface FeedPost {
@@ -141,7 +149,23 @@ export default function CommunityFeed() {
   const [newPost, setNewPost] = useState('')
   const { language, setLanguage } = useLanguage()
   const [showCreatePost, setShowCreatePost] = useState(false)
-  const [feedType, setFeedType] = useState<'personalized' | 'community' | 'events'>('personalized')
+  const [feedType, setFeedType] = useState<'personalized' | 'community' | 'events'>('events')
+  const [showFilters, setShowFilters] = useState(false)
+  const [showPhotoUpload, setShowPhotoUpload] = useState(false)
+  const [uploadedPhotos, setUploadedPhotos] = useState<UploadedPhoto[]>([])
+  
+  // Enhanced filters state
+  const [filters, setFilters] = useState<FeedFiltersType>({
+    eventType: [],
+    location: [],
+    dateRange: 'all',
+    priceRange: 'all',
+    spotsAvailable: false,
+    culturalTags: [],
+    followingOnly: false
+  })
+  
+  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
 
   const handleLike = (postId: string) => {
     setPosts(posts.map(post => 
@@ -156,10 +180,10 @@ export default function CommunityFeed() {
       const post: FeedPost = {
         id: `post-${Date.now()}`,
         userId: 'currentUser',
-        userName: 'You',
+        userName: isPortuguese ? 'Tu' : 'You',
         userAvatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop&crop=face&auto=format',
         content: newPost,
-        createdAt: 'Just now',
+        createdAt: isPortuguese ? 'Agora mesmo' : 'Just now',
         likes: 0,
         comments: 0,
         liked: false,
@@ -176,23 +200,53 @@ export default function CommunityFeed() {
       setPosts([post, ...posts])
       setNewPost('')
       setShowCreatePost(false)
+      
+      // Include uploaded photos if any
+      if (uploadedPhotos.length > 0) {
+        post.imageUrl = uploadedPhotos[0].preview // Use first photo as main image
+        setUploadedPhotos([])
+      }
     }
+  }
+
+  const handlePhotoUpload = (photos: UploadedPhoto[]) => {
+    setUploadedPhotos(photos)
+  }
+
+  const handleFiltersChange = (newFilters: FeedFiltersType) => {
+    setFilters(newFilters)
+    // Apply filters to posts here - for now just update state
+    console.log('Filters updated:', newFilters)
+  }
+
+  const handleLiveUpdate = (update: any) => {
+    // Handle live update clicks - could navigate to specific events/posts
+    console.log('Live update clicked:', update)
   }
 
   return (
     <div className="min-h-screen bg-gray-50">
       <Header />
       
+      {/* Live Update Indicator */}
+      <LiveUpdateIndicator onUpdateClick={handleLiveUpdate} />
+      
       <main className="pt-16">
-        {/* Hero Section */}
+        {/* Enhanced Hero Section */}
         <section className="bg-gradient-to-r from-primary-50 to-secondary-50 py-12">
           <div className="container-width px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                LusoTown Community Feed
-              </h1>
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <SparklesIcon className="w-6 h-6 text-primary-500" />
+                <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
+                  {isPortuguese ? 'Feed da Comunidade LusoTown' : 'LusoTown Community Feed'}
+                </h1>
+              </div>
               <p className="text-lg text-gray-600 mb-8">
-                Share updates, connect with others, and stay in the loop with the latest from our Portuguese community in London
+                {isPortuguese 
+                  ? 'Partilha atualizações, conecta-te com outros e mantém-te a par das últimas novidades da nossa comunidade portuguesa em Londres'
+                  : 'Share updates, connect with others, and stay in the loop with the latest from our Portuguese community in London'
+                }
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
@@ -205,7 +259,7 @@ export default function CommunityFeed() {
                         : 'bg-white text-gray-700 hover:bg-gray-50'
                     }`}
                   >
-                    {(language === 'pt-pt' || language === 'pt-br') ? 'Minha Rede' : 'My Network'}
+                    {isPortuguese ? 'Minha Rede' : 'My Network'}
                   </button>
                   <button
                     onClick={() => setFeedType('events')}
@@ -215,7 +269,7 @@ export default function CommunityFeed() {
                         : 'bg-white text-gray-700 hover:bg-gray-50'
                     }`}
                   >
-                    {(language === 'pt-pt' || language === 'pt-br') ? 'Eventos' : 'Events'}
+                    {isPortuguese ? 'Eventos' : 'Events'}
                   </button>
                   <button
                     onClick={() => setFeedType('community')}
@@ -225,36 +279,73 @@ export default function CommunityFeed() {
                         : 'bg-white text-gray-700 hover:bg-gray-50'
                     }`}
                   >
-                    {(language === 'pt-pt' || language === 'pt-br') ? 'Comunidade' : 'Community'}
+                    {isPortuguese ? 'Comunidade' : 'Community'}
                   </button>
                 </div>
                 
-                <div className="flex items-center gap-2 bg-white rounded-lg px-4 py-2 shadow-sm">
-                  <LanguageIcon className="w-5 h-5 text-gray-600" />
-                  <select
-                    value={language}
-                    onChange={(e) => setLanguage(e.target.value as Language)}
-                    className="bg-transparent text-gray-700 font-medium focus:outline-none"
+                <div className="flex items-center gap-3">
+                  {/* Filters Toggle */}
+                  <button
+                    onClick={() => setShowFilters(!showFilters)}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
+                      showFilters
+                        ? 'bg-secondary-500 text-white shadow-lg'
+                        : 'bg-white text-gray-700 hover:bg-gray-50'
+                    }`}
                   >
-                    <option value="en">English</option>
-                    <option value="pt-pt">Português (Portugal)</option>
-                    <option value="pt-br">Português (Brasil)</option>
-                  </select>
+                    <AdjustmentsHorizontalIcon className="w-4 h-4" />
+                    {isPortuguese ? 'Filtros' : 'Filters'}
+                  </button>
+                  
+                  <div className="flex items-center gap-2 bg-white rounded-lg px-4 py-2 shadow-sm">
+                    <LanguageIcon className="w-5 h-5 text-gray-600" />
+                    <select
+                      value={language}
+                      onChange={(e) => setLanguage(e.target.value as Language)}
+                      className="bg-transparent text-gray-700 font-medium focus:outline-none"
+                    >
+                      <option value="en">English</option>
+                      <option value="pt-pt">Português (Portugal)</option>
+                      <option value="pt-br">Português (Brasil)</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Create Post Modal */}
+        {/* Enhanced Filters Section */}
+        <AnimatePresence>
+          {showFilters && (
+            <section className="py-6">
+              <div className="container-width px-4 sm:px-6 lg:px-8">
+                <FeedFilters
+                  filters={filters}
+                  onFiltersChange={handleFiltersChange}
+                  isOpen={showFilters}
+                  onToggle={() => setShowFilters(!showFilters)}
+                />
+              </div>
+            </section>
+          )}
+        </AnimatePresence>
+
+        {/* Enhanced Create Post Modal */}
         {showCreatePost && (
           <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
+            <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold text-gray-900">Create Post</h3>
+                  <h3 className="text-xl font-bold text-gray-900">
+                    {isPortuguese ? 'Criar Publicação' : 'Create Post'}
+                  </h3>
                   <button 
-                    onClick={() => setShowCreatePost(false)}
+                    onClick={() => {
+                      setShowCreatePost(false)
+                      setShowPhotoUpload(false)
+                      setUploadedPhotos([])
+                    }}
                     className="text-gray-500 hover:text-gray-700"
                   >
                     ✕
@@ -263,37 +354,72 @@ export default function CommunityFeed() {
                 
                 <div className="flex items-start gap-3 mb-4">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-r from-primary-400 to-secondary-400 flex items-center justify-center text-white font-bold">
-                    Y
+                    {isPortuguese ? 'T' : 'Y'}
                   </div>
                   <textarea
                     value={newPost}
                     onChange={(e) => setNewPost(e.target.value)}
-                    placeholder="What's happening in your Portuguese community?"
-                    className="flex-1 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                    placeholder={isPortuguese 
+                      ? 'O que está a acontecer na tua comunidade portuguesa?'
+                      : "What's happening in your Portuguese community?"
+                    }
+                    className="flex-1 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent resize-none"
                     rows={4}
                   />
                 </div>
+
+                {/* Photo Upload Section */}
+                {showPhotoUpload && (
+                  <div className="mb-4">
+                    <PhotoUpload
+                      onPhotosUploaded={handlePhotoUpload}
+                      maxPhotos={4}
+                      className="border-t border-gray-200 pt-4"
+                    />
+                  </div>
+                )}
                 
                 <div className="flex items-center justify-between pt-4 border-t border-gray-200">
                   <div className="flex gap-2">
-                    <button className="p-2 text-gray-500 hover:text-primary-500 hover:bg-primary-50 rounded-lg">
-                      <PhotoIcon className="w-5 h-5" />
+                    <button 
+                      onClick={() => setShowPhotoUpload(!showPhotoUpload)}
+                      className={`p-2 rounded-lg transition-colors ${
+                        showPhotoUpload 
+                          ? 'text-primary-500 bg-primary-50' 
+                          : 'text-gray-500 hover:text-primary-500 hover:bg-primary-50'
+                      }`}
+                      title={isPortuguese ? 'Adicionar fotos' : 'Add photos'}
+                    >
+                      <CameraIcon className="w-5 h-5" />
                     </button>
-                    <button className="p-2 text-gray-500 hover:text-primary-500 hover:bg-primary-50 rounded-lg">
+                    <button 
+                      className="p-2 text-gray-500 hover:text-primary-500 hover:bg-primary-50 rounded-lg"
+                      title={isPortuguese ? 'Adicionar link' : 'Add link'}
+                    >
                       <LinkIcon className="w-5 h-5" />
                     </button>
-                    <button className="p-2 text-gray-500 hover:text-primary-500 hover:bg-primary-50 rounded-lg">
+                    <button 
+                      className="p-2 text-gray-500 hover:text-primary-500 hover:bg-primary-50 rounded-lg"
+                      title={isPortuguese ? 'Conectar evento' : 'Link event'}
+                    >
                       <CalendarDaysIcon className="w-5 h-5" />
                     </button>
                   </div>
                   
-                  <button
-                    onClick={handleCreatePost}
-                    disabled={!newPost.trim()}
-                    className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-4 py-2 rounded-lg font-semibold hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    Post
-                  </button>
+                  <div className="flex items-center gap-3">
+                    {uploadedPhotos.length > 0 && (
+                      <span className="text-sm text-gray-500">
+                        {uploadedPhotos.length} {isPortuguese ? 'foto(s)' : 'photo(s)'}
+                      </span>
+                    )}
+                    <button
+                      onClick={handleCreatePost}
+                      disabled={!newPost.trim()}
+                      className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-2 rounded-lg font-semibold hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isPortuguese ? 'Publicar' : 'Post'}
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -304,6 +430,47 @@ export default function CommunityFeed() {
         <section className="py-12">
           <div className="container-width px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto">
+              {/* Feed Header with Create Post Button */}
+              <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h2 className="text-lg font-semibold text-gray-900 mb-1">
+                      {feedType === 'personalized' 
+                        ? (isPortuguese ? 'Feed Personalizado' : 'Personalized Feed')
+                        : feedType === 'events'
+                        ? (isPortuguese ? 'Eventos em Tempo Real' : 'Live Event Updates')
+                        : (isPortuguese ? 'Comunidade' : 'Community Feed')
+                      }
+                    </h2>
+                    <p className="text-sm text-gray-600">
+                      {feedType === 'events' && (
+                        isPortuguese 
+                          ? 'Atualizações em tempo real de eventos portugueses em Londres'
+                          : 'Live updates from Portuguese events across London'
+                      )}
+                      {feedType === 'personalized' && (
+                        isPortuguese 
+                          ? 'Conteúdo personalizado da tua rede'
+                          : 'Personalized content from your network'
+                      )}
+                      {feedType === 'community' && (
+                        isPortuguese 
+                          ? 'Partilhas da comunidade portuguesa'
+                          : 'Shares from the Portuguese community'
+                      )}
+                    </p>
+                  </div>
+                  
+                  <button
+                    onClick={() => setShowCreatePost(true)}
+                    className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-4 py-2 rounded-lg font-semibold hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 shadow-sm flex items-center gap-2"
+                  >
+                    <PhotoIcon className="w-4 h-4" />
+                    {isPortuguese ? 'Partilhar' : 'Share'}
+                  </button>
+                </div>
+              </div>
+
               {feedType === 'personalized' ? (
                 <PersonalizedFeed />
               ) : feedType === 'events' ? (

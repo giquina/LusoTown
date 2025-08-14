@@ -18,11 +18,16 @@ import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import EventImageWithFallback from '@/components/EventImageWithFallback'
+import SaveFavoriteCartButton from '@/components/SaveFavoriteCartButton'
 import { Event, EventFilters, eventService, EVENT_CATEGORIES } from '@/lib/events'
+import { useCart } from '@/context/CartContext'
+import { useLanguage } from '@/context/LanguageContext'
 
 const EventCard = ({ event }: { event: Event }) => {
-  const [isFavorited, setIsFavorited] = useState(false)
+  const { isSaved } = useCart()
+  const { t } = useLanguage()
   const [showPhotoGallery, setShowPhotoGallery] = useState(false)
+  const isFavorited = isSaved(event.title)
   
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr)
@@ -145,19 +150,27 @@ const EventCard = ({ event }: { event: Event }) => {
 
         {/* Favorite & Share */}
         <div className="absolute top-3 right-3 flex gap-2">
-          <button
-            onClick={(e) => {
-              e.preventDefault()
-              setIsFavorited(!isFavorited)
-            }}
-            className="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors"
-          >
-            {isFavorited ? (
-              <HeartSolidIcon className="w-4 h-4 text-red-500" />
-            ) : (
-              <HeartIcon className="w-4 h-4 text-gray-600" />
-            )}
-          </button>
+          <SaveFavoriteCartButton
+            itemId={event.id}
+            itemType="event"
+            title={event.title}
+            description={event.description}
+            imageUrl={event.images?.[0]}
+            category={event.category}
+            eventDate={event.date}
+            eventTime={event.time}
+            eventLocation={event.location}
+            eventPrice={event.price}
+            spotsLeft={spotsLeft}
+            requiresApproval={event.requiresApproval}
+            membershipRequired={event.membershipRequired}
+            showCart={false}
+            showSave={true}
+            size="small"
+            iconOnly={true}
+            variant="default"
+            className="bg-white/90 backdrop-blur-sm rounded-full"
+          />
           <button className="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors">
             <ShareIcon className="w-4 h-4 text-gray-600" />
           </button>
@@ -342,13 +355,34 @@ const EventCard = ({ event }: { event: Event }) => {
           )}
         </div>
 
-        {/* CTA Button */}
-        <a
-          href={`/events/${event.id}`}
-          className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-3 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center block"
-        >
-          {isFull ? 'Join Waitlist' : 'View Details & RSVP'}
-        </a>
+        {/* CTA Buttons */}
+        <div className="flex gap-2">
+          <SaveFavoriteCartButton
+            itemId={event.id}
+            itemType="event"
+            title={event.title}
+            description={event.description}
+            imageUrl={event.images?.[0]}
+            category={event.category}
+            eventDate={event.date}
+            eventTime={event.time}
+            eventLocation={event.location}
+            eventPrice={event.price}
+            spotsLeft={spotsLeft}
+            requiresApproval={event.requiresApproval}
+            membershipRequired={event.membershipRequired}
+            showSave={false}
+            showCart={true}
+            iconOnly={false}
+            className="flex-1"
+          />
+          <a
+            href={`/events/${event.id}`}
+            className="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-3 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center"
+          >
+            {isFull ? t('event.join-waitlist') : t('event.view-details')}
+          </a>
+        </div>
       </div>
       </motion.div>
       
@@ -538,6 +572,7 @@ const FilterSidebar = ({
 }
 
 export default function EventsPage() {
+  const { t } = useLanguage()
   const [events, setEvents] = useState<Event[]>([])
   const [loading, setLoading] = useState(true)
   const [searchQuery, setSearchQuery] = useState('')
@@ -603,7 +638,7 @@ export default function EventsPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-lg sm:text-xl text-gray-600 mb-8"
               >
-                Join the Portuguese community across the UK for meaningful experiences, new friendships, and unforgettable cultural adventures. Family-friendly events welcoming children, adults, and seniors from our Portuguese-speaking community.
+                {t('events.subtitle', 'Join the Portuguese community across London for meaningful experiences, new friendships, and unforgettable cultural adventures. From Fado nights in Camden to family gatherings in Stockwell - find your community.')}
               </motion.p>
 
               {/* Event Stats */}
@@ -615,15 +650,15 @@ export default function EventsPage() {
               >
                 <div className="text-center">
                   <div className="text-2xl sm:text-3xl font-bold text-primary-600 mb-1">150+</div>
-                  <div className="text-sm text-gray-600">UK Events This Month</div>
+                  <div className="text-sm text-gray-600">{t('events.stats-events', 'Portuguese Events This Month')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl sm:text-3xl font-bold text-secondary-600 mb-1">500+</div>
-                  <div className="text-sm text-gray-600">UK Community Members</div>
+                  <div className="text-sm text-gray-600">{t('events.stats-members', 'Community Members')}</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-purple-600 mb-1">4.9</div>
-                  <div className="text-sm text-gray-600">Average Rating</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-purple-600 mb-1">15+</div>
+                  <div className="text-sm text-gray-600">{t('events.stats-venues', 'Portuguese Venues')}</div>
                 </div>
               </motion.div>
               
@@ -636,7 +671,7 @@ export default function EventsPage() {
               >
                 <input
                   type="text"
-                  placeholder="Search events across the UK by name, location, or interests..."
+                  placeholder={t('events.search-placeholder', 'Search Portuguese events by name, venue, or cultural focus...')}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
@@ -647,30 +682,60 @@ export default function EventsPage() {
                   onClick={handleSearch}
                   className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-2 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 font-medium shadow-lg"
                 >
-                  Search
+                  {t('events.search', 'Search')}
                 </button>
               </motion.div>
 
-              {/* Quick Category Filters */}
+              {/* Portuguese Quick Filters */}
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
-                className="flex flex-wrap justify-center gap-3 mt-8"
+                className="mt-8"
               >
-                {Object.keys(EVENT_CATEGORIES).slice(0, 6).map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => setFilters({ ...filters, category: category === filters.category ? undefined : category })}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                      filters.category === category
-                        ? 'bg-primary-500 text-white shadow-lg transform scale-105'
-                        : 'bg-white/80 text-gray-700 hover:bg-white hover:shadow-md'
-                    }`}
-                  >
-                    {category}
-                  </button>
-                ))}
+                <div className="flex flex-wrap justify-center gap-3 mb-4">
+                  {/* Portuguese Cultural Filters */}
+                  {[
+                    { key: 'fado', label: '🎵 Fado', description: 'Traditional Portuguese music' },
+                    { key: 'family', label: '👨‍👩‍👧‍👦 Família', description: 'Family-friendly events' },
+                    { key: 'food', label: '🍽️ Culinária', description: 'Portuguese food & cooking' },
+                    { key: 'language', label: '🗣️ Português', description: 'Language exchange' },
+                    { key: 'cultural', label: '🏛️ Cultural', description: 'Cultural celebrations' },
+                    { key: 'business', label: '💼 Negócios', description: 'Business networking' }
+                  ].map((filter) => (
+                    <button
+                      key={filter.key}
+                      onClick={() => setFilters({ ...filters, category: filter.key === filters.category ? undefined : filter.key })}
+                      className={`group px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                        filters.category === filter.key
+                          ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg transform scale-105'
+                          : 'bg-white/80 text-gray-700 hover:bg-white hover:shadow-md border border-gray-200'
+                      }`}
+                      title={filter.description}
+                    >
+                      {filter.label}
+                    </button>
+                  ))}
+                </div>
+                
+                {/* Location Quick Filters */}
+                <div className="flex flex-wrap justify-center gap-2 text-xs">
+                  <span className="text-gray-500">{t('events.popular-areas', 'Popular Areas:')} </span>
+                  {[
+                    { area: 'Stockwell', flag: '🇵🇹' },
+                    { area: 'Vauxhall', flag: '🏛️' },
+                    { area: 'Camden', flag: '🎵' },
+                    { area: 'Bermondsey', flag: '🏢' }
+                  ].map((location) => (
+                    <button
+                      key={location.area}
+                      onClick={() => setSearchQuery(location.area)}
+                      className="text-primary-600 hover:text-primary-700 font-medium transition-colors"
+                    >
+                      {location.flag} {location.area}
+                    </button>
+                  ))}
+                </div>
               </motion.div>
             </div>
           </div>

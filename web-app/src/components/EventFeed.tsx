@@ -477,7 +477,7 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
                             alt={`Event photo ${idx + 1}`} 
                             className="w-full h-full object-cover"
                           />
-                          {idx === 3 && post.images.length > 4 && (
+                          {idx === 3 && post.images && post.images.length > 4 && (
                             <div className="absolute inset-0 bg-black/50 flex items-center justify-center text-white font-bold">
                               +{post.images.length - 4}
                             </div>

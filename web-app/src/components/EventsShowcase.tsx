@@ -214,12 +214,12 @@ export default function EventsShowcase() {
           </motion.p>
         </div>
 
-        {/* Stats Bar */}
+        {/* Stats Bar - Enhanced Multi-Column Layout */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
+          className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16"
         >
           {eventStats.map((stat, index) => (
             <div key={index} className="bg-white rounded-xl p-6 shadow-sm text-center">
@@ -232,8 +232,8 @@ export default function EventsShowcase() {
           ))}
         </motion.div>
 
-        {/* Featured Events - Optimized Multi-Column Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 mb-16">
+        {/* Featured Events - Enhanced Multi-Column Responsive Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-7 lg:gap-8 xl:gap-10 mb-12 sm:mb-16">
           {upcomingEvents.slice(0, 3).map((event, index) => (
             <motion.div
               key={event.id}
@@ -308,13 +308,13 @@ export default function EventsShowcase() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-white rounded-2xl p-8 shadow-lg mb-12"
+          className="bg-white rounded-2xl p-4 sm:p-6 md:p-7 lg:p-8 shadow-lg mb-12"
         >
           <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
             Explore Events by Your Interests
           </h3>
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
+          <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
             {[
               { name: "Food Festivals", icon: "🍲", count: "25+ events" },
               { name: "Fado & Music", icon: "🎶", count: "25+ events" },
@@ -369,7 +369,7 @@ export default function EventsShowcase() {
                 href="/signup" 
                 className="inline-flex items-center border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white hover:text-primary-600 transition-colors"
               >
-                Join Community Free
+                JOIN NOW
               </Link>
             </div>
           </div>

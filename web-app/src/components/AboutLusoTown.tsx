@@ -15,9 +15,11 @@ import {
   Heart,
   MapPin
 } from 'lucide-react'
+import { useLanguage } from '@/context/LanguageContext'
 
 export default function AboutLusoTown() {
   const [mounted, setMounted] = useState(false)
+  const { t } = useLanguage()
 
   useEffect(() => {
     setMounted(true)
@@ -27,7 +29,7 @@ export default function AboutLusoTown() {
     {
       icon: Calendar,
       title: 'Discover & Join Events',
-      description: 'Find cultural festivals, food markets, live music, networking meetups, and more.',
+      description: 'Find Portuguese cultural events at authentic London venues - from Fado nights to food festivals at real Portuguese locations.',
       gradient: 'from-action-500 to-action-600',
       lightBg: 'from-action-50 to-action-100/50',
       shadowColor: 'shadow-action-500/20'
@@ -66,8 +68,8 @@ export default function AboutLusoTown() {
     },
     {
       icon: Users,
-      title: 'Connect with People Like You',
-      description: 'Meet new friends through real-life meetups, share experiences, and keep your language and traditions alive in London.',
+      title: 'Connect with Portuguese Speakers',
+      description: 'Meet Portuguese speakers through real-life meetups at authentic London venues, share experiences, and keep your language and traditions alive.',
       gradient: 'from-coral-500 to-action-500',
       lightBg: 'from-coral-50 to-action-100/50',
       shadowColor: 'shadow-coral-500/20'
@@ -104,7 +106,7 @@ export default function AboutLusoTown() {
           <div className={`inline-flex items-center gap-3 bg-gradient-to-r from-secondary-50 via-primary-50 to-accent-50 border border-secondary-200 rounded-2xl px-6 py-3 shadow-lg mb-6 transition-all duration-700 delay-100 ${mounted ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-5'}`}>
             <Globe className="h-5 w-5 text-secondary-600" />
             <span className="text-sm font-bold bg-gradient-to-r from-secondary-600 to-primary-600 bg-clip-text text-transparent">
-              Unidos pela Língua • Portuguese Community
+              {t('about.hero.badge', 'Unidos pela Língua • Portuguese Community')}
             </span>
             <div className="w-2 h-2 bg-secondary-400 rounded-full animate-pulse"></div>
           </div>
@@ -114,8 +116,8 @@ export default function AboutLusoTown() {
           </h2>
           
           <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto font-medium">
-            LusoTown connects Portuguese speakers and friends through real-life meetups in London. Whether you're new to the city, 
-            have family roots in a Portuguese-speaking country, or simply love our culture and language, this is your space to meet people in person, share experiences, and celebrate together.
+            LusoTown is where Portuguese hearts find their London family. Whether you're homesick, raising children who should know their heritage, 
+            or simply miss the warmth of Portuguese conversation, this is your welcome home. Every person here understands your journey and opens their arms to welcome you.
           </p>
         </div>
 
@@ -128,12 +130,12 @@ export default function AboutLusoTown() {
             </div>
           </div>
 
-          {/* Features Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {/* Features Grid - Enhanced Multi-Column Responsive Layout */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-7 lg:gap-8 xl:gap-10">
             {features.map((feature, index) => (
               <div
                 key={feature.title}
-                className={`group relative bg-white/60 backdrop-blur-lg rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 border border-white/30 ${feature.shadowColor} hover:shadow-xl transition-all duration-700 delay-${100 + index * 100} ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                className={`group relative bg-white/60 backdrop-blur-lg rounded-3xl p-4 sm:p-6 md:p-7 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 border border-white/30 ${feature.shadowColor} hover:shadow-xl transition-all duration-700 delay-${100 + index * 100} ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${100 + index * 100}ms` }}
               >
                 {/* Background gradient overlay */}
@@ -178,8 +180,8 @@ export default function AboutLusoTown() {
             </h3>
           </div>
           
-          {/* Countries Grid */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-8">
+          {/* Countries Grid - Enhanced Multi-Column Layout */}
+          <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5 gap-2 xs:gap-3 sm:gap-4 justify-items-center mb-8">
             {countries.map((country, index) => (
               <div
                 key={country.code}
@@ -199,12 +201,12 @@ export default function AboutLusoTown() {
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
               Whether you're from Portugal, Brazil, Angola, Mozambique, or any Portuguese-speaking nation, 
-              LusoTown London welcomes you and anyone who feels part of our vibrant linguistic and cultural community.
+              LusoTown London connects you with authentic venues where Portuguese culture thrives and community happens.
             </p>
             
             <div className="inline-flex items-center gap-3 bg-gradient-to-r from-secondary-500 via-primary-500 to-accent-500 text-white rounded-2xl px-8 py-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
               <MapPin className="h-5 w-5" />
-              <span className="font-bold text-lg">Join 500+ Portuguese speakers meeting in real places across London</span>
+              <span className="font-bold text-lg">Join 500+ Portuguese speakers meeting at authentic venues across London</span>
               <Sparkles className="h-5 w-5" />
             </div>
           </div>

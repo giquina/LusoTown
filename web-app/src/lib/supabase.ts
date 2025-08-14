@@ -46,6 +46,7 @@ export interface Group {
   group_type: 'interest' | 'location' | 'activity'
   category?: string
   location?: string
+  london_borough?: string
   is_private: boolean
   max_members?: number
   current_member_count: number
@@ -53,8 +54,79 @@ export interface Group {
   image_url?: string
   rules?: string
   is_active: boolean
+  portuguese_origin?: 'portugal' | 'brazil' | 'angola' | 'mozambique' | 'cape-verde' | 'guinea-bissau' | 'sao-tome-principe' | 'east-timor' | 'macau' | 'equatorial-guinea' | 'mixed' | 'any'
+  language_preference?: 'english' | 'portuguese' | 'pt-pt' | 'pt-br' | 'both'
+  age_restrictions?: {
+    min_age?: number
+    max_age?: number
+    families_welcome?: boolean
+  }
+  meeting_frequency?: 'weekly' | 'biweekly' | 'monthly' | 'quarterly' | 'irregular' | 'one-time'
+  verification_level?: 'none' | 'basic' | 'verified' | 'premium'
+  safety_features?: {
+    auto_moderation?: boolean
+    manual_approval?: boolean
+    background_check_required?: boolean
+  }
+  cultural_focus?: {
+    preserves_heritage?: boolean
+    family_friendly?: boolean
+    traditional_activities?: boolean
+    language_learning?: boolean
+  }
+  contact_info?: {
+    email?: string
+    phone?: string
+    whatsapp?: string
+    telegram?: string
+  }
+  group_tags?: string[]
+  moderation_status?: 'pending' | 'approved' | 'rejected' | 'flagged' | 'under_review'
+  rejection_reason?: string
+  last_moderated_at?: string
+  moderated_by?: string
   created_at: string
   updated_at: string
+}
+
+export interface GroupCategory {
+  id: string
+  name_en: string
+  name_pt: string
+  description_en?: string
+  description_pt?: string
+  icon?: string
+  color_class?: string
+  is_age_restricted: boolean
+  min_age?: number
+  is_active: boolean
+  display_order: number
+  created_at: string
+}
+
+export interface GroupReport {
+  id: string
+  group_id: string
+  reported_by: string
+  report_type: 'inappropriate_content' | 'spam' | 'harassment' | 'fake_group' | 'safety_concern' | 'age_inappropriate' | 'other'
+  description: string
+  status: 'pending' | 'investigating' | 'resolved' | 'dismissed'
+  reviewed_by?: string
+  reviewed_at?: string
+  resolution_notes?: string
+  created_at: string
+}
+
+export interface GroupJoinRequest {
+  id: string
+  group_id: string
+  user_id: string
+  message?: string
+  status: 'pending' | 'approved' | 'rejected'
+  reviewed_by?: string
+  reviewed_at?: string
+  response_message?: string
+  created_at: string
 }
 
 export interface Event {

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Header from '@/components/Header'
+import { useLanguage } from '@/context/LanguageContext'
 import SocialLogin from '@/components/SocialLogin'
 import { 
   HeartIcon, 
@@ -67,20 +68,25 @@ const testimonials = [
 ]
 
 export default function Signup() {
+  const { t } = useLanguage()
   const [formData, setFormData] = useState({
     email: '',
     firstName: '',
     password: '',
     confirmPassword: '',
     ageConfirmation: false,
-    agreeTerms: false
+    agreeTerms: false,
+    portugueseOrigin: '',
+    londonArea: '',
+    languagePreference: 'en',
+    interests: [] as string[]
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
   const router = useRouter()
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, type, checked } = e.target
     setFormData(prev => ({
       ...prev,
@@ -88,6 +94,15 @@ export default function Signup() {
     }))
     // Clear error when user starts typing
     if (error) setError('')
+  }
+
+  const handleInterestToggle = (interest: string) => {
+    setFormData(prev => ({
+      ...prev,
+      interests: prev.interests.includes(interest)
+        ? prev.interests.filter(i => i !== interest)
+        : [...prev.interests, interest]
+    }))
   }
 
   const validateForm = () => {

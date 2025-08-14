@@ -25,6 +25,7 @@ import EventReviewSystem from '@/components/EventReviewSystem'
 import ReviewAnalytics from '@/components/ReviewAnalytics'
 import { Event, EventReview, eventService } from '@/lib/events'
 import { authService } from '@/lib/auth'
+import { useLanguage } from '@/context/LanguageContext'
 
 
 const RSVPModal = ({
@@ -148,6 +149,7 @@ const RSVPModal = ({
 export default function EventDetailsPage() {
   const params = useParams()
   const router = useRouter()
+  const { t } = useLanguage()
   const eventId = params?.id as string
   
   const [event, setEvent] = useState<Event | null>(null)
@@ -462,9 +464,18 @@ export default function EventDetailsPage() {
                       <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
                         {event.title}
                       </h1>
-                      <p className="text-lg text-gray-600">
+                      <p className="text-lg text-gray-600 mb-3">
                         {event.description}
                       </p>
+                      {/* Portuguese Cultural Context */}
+                      {(event.tags.includes('Portuguese') || event.tags.includes('Fado') || event.tags.includes('Cultural')) && (
+                        <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-50 to-secondary-50 px-4 py-2 rounded-full border border-primary-200 mb-3">
+                          <span className="text-2xl">🇵🇹</span>
+                          <span className="text-sm font-medium text-primary-700">
+                            {t('event.portuguese-cultural-event', 'Authentic Portuguese Cultural Event')}
+                          </span>
+                        </div>
+                      )}
                     </div>
                     <div className="text-right ml-6">
                       <div className="text-3xl font-bold text-primary-600 mb-1">
@@ -506,10 +517,25 @@ export default function EventDetailsPage() {
                       <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
                         <MapPinIcon className="w-5 h-5 text-purple-600" />
                       </div>
-                      <div>
+                      <div className="flex-1">
                         <div className="font-medium text-gray-900">{event.location}</div>
-                        <div className="text-sm text-gray-500">{event.address}</div>
+                        <div className="text-sm text-gray-500 mb-2">{event.address}</div>
+                        {/* Portuguese Venue Context */}
+                        {(event.location.includes('Stockwell') || event.location.includes('Vauxhall') || event.location.includes('Portuguese')) && (
+                          <div className="text-xs text-primary-600 bg-primary-50 px-2 py-1 rounded-full inline-block">
+                            🏛️ {t('event.portuguese-cultural-area', 'Portuguese Cultural Area')}
+                          </div>
+                        )}
+                        {/* Venue Type Indicators */}
+                        {event.location.includes('Church') && (
+                          <div className="text-xs text-purple-600 bg-purple-50 px-2 py-1 rounded-full inline-block ml-2">
+                            ⛪ {t('event.community-space', 'Community Space')}
+                          </div>
+                        )}
                       </div>
+                      <button className="text-primary-600 hover:text-primary-700 text-sm font-medium">
+                        {t('event.view-map', 'View Map')} →
+                      </button>
                     </div>
 
                     <div className="flex items-center gap-3">
@@ -839,23 +865,28 @@ export default function EventDetailsPage() {
 
                   {/* Host Info */}
                   <div className="bg-white rounded-2xl p-6 shadow-lg">
-                    <h3 className="text-lg font-bold text-gray-900 mb-4">Event Host</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-4">{t('event.event-organizer', 'Event Organizer')}</h3>
                     
                     <div className="flex items-center gap-3 mb-4">
                       {event.hostImage ? (
                         <img 
                           src={event.hostImage} 
                           alt={event.hostName}
-                          className="w-12 h-12 rounded-full object-cover"
+                          className="w-12 h-12 rounded-full object-cover ring-2 ring-primary-100"
                         />
                       ) : (
-                        <div className="w-12 h-12 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full flex items-center justify-center text-white font-bold">
+                        <div className="w-12 h-12 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full flex items-center justify-center text-white font-bold ring-2 ring-primary-100">
                           {event.hostName.split(' ').map(n => n[0]).join('')}
                         </div>
                       )}
                       <div>
                         <h4 className="font-semibold text-gray-900">{event.hostName}</h4>
-                        <p className="text-sm text-gray-600">Event Organizer</p>
+                        <div className="flex items-center gap-2">
+                          <p className="text-sm text-gray-600">{t('event.community-organizer', 'Community Organizer')}</p>
+                          <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">
+                            ✓ {t('event.verified', 'Verified')}
+                          </span>
+                        </div>
                       </div>
                     </div>
 
@@ -863,9 +894,37 @@ export default function EventDetailsPage() {
                       <p className="text-sm text-gray-700 mb-4">{event.hostBio}</p>
                     )}
 
-                    <button className="w-full border border-gray-200 text-gray-700 font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors">
-                      View Host Profile
-                    </button>
+                    {/* Contact Information */}
+                    <div className="space-y-3 mb-4">
+                      <h5 className="font-semibold text-gray-900 text-sm">{t('event.contact-organizer', 'Contact Organizer')}</h5>
+                      <div className="space-y-2">
+                        {/* WhatsApp Contact - Common for Portuguese community */}
+                        <button className="w-full flex items-center gap-3 p-3 bg-green-50 border border-green-200 rounded-lg hover:bg-green-100 transition-colors">
+                          <span className="text-green-600">📱</span>
+                          <div className="text-left">
+                            <div className="text-sm font-medium text-green-700">{t('event.whatsapp-contact', 'WhatsApp')}</div>
+                            <div className="text-xs text-green-600">{t('event.quick-response', 'Usually responds within 1 hour')}</div>
+                          </div>
+                        </button>
+                        
+                        <button className="w-full flex items-center gap-3 p-3 bg-gray-50 border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors">
+                          <span className="text-gray-600">✉️</span>
+                          <div className="text-left">
+                            <div className="text-sm font-medium text-gray-700">{t('event.email-contact', 'Email')}</div>
+                            <div className="text-xs text-gray-600">{t('event.detailed-questions', 'For detailed questions')}</div>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <button className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium py-3 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all">
+                        {t('event.view-host-profile', 'View Host Profile')}
+                      </button>
+                      <button className="w-full border border-gray-200 text-gray-700 font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors">
+                        {t('event.message-organizer', 'Message Organizer')}
+                      </button>
+                    </div>
                   </div>
 
                   {/* Event Stats */}

@@ -57,7 +57,7 @@ export default function Hero() {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-action-500 to-action-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
                   <HeartIcon className="h-6 w-6 text-white" />
                 </div>
-<span className="text-xs font-bold text-gray-800 tracking-wide text-center">REAL-LIFE MEETUPS</span>
+<span className="text-xs font-bold text-gray-800 tracking-wide text-center">AUTHENTIC VENUES</span>
               </div>
               <div className="group flex items-center gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-secondary-500 to-secondary-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
@@ -99,8 +99,8 @@ export default function Hero() {
             <div className="relative z-10 bg-white/20 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/30">
               <div className="space-y-6">
                 <div className="text-center">
-<h3 className="text-2xl font-bold text-gray-800 mb-2">Join 500+ Portuguese Speakers</h3>
-                  <p className="text-gray-600">Meeting in real places across London & UK for gyms, galleries, restaurants, tours & more</p>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2">Welcome to Your Portuguese Family</h3>
+                  <p className="text-gray-600">Join 500+ Portuguese hearts already feeling at home in cozy venues across London - from family bakeries in Stockwell to warm community centers in Vauxhall, where everyone greets you like family</p>
                 </div>
 
                 {/* Member avatars */}
@@ -121,11 +121,11 @@ export default function Hero() {
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div className="bg-white/40 rounded-2xl p-4">
                     <div className="text-3xl font-bold text-green-600">75+</div>
-                    <div className="text-sm text-gray-600">Real Businesses</div>
+                    <div className="text-sm text-gray-600">Portuguese Venues</div>
                   </div>
                   <div className="bg-white/40 rounded-2xl p-4">
                     <div className="text-3xl font-bold text-red-600">40+</div>
-                    <div className="text-sm text-gray-600">Real-Life Meetups</div>
+                    <div className="text-sm text-gray-600">Monthly Meetups</div>
                   </div>
                 </div>
 
