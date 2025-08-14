@@ -574,7 +574,7 @@ export default function EventDetailsPage() {
                         <ul className="space-y-1">
                           {event.whatToBring.map((item, index) => (
                             <li key={index} className="flex items-start gap-2 text-gray-700">
-                              <InformationCircleIcon className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
+                              <InformationCircleIcon className="w-5 h-5 text-primary-500 mt-0.5 flex-shrink-0" />
                               {item}
                             </li>
                           ))}
@@ -682,7 +682,7 @@ export default function EventDetailsPage() {
                             {/* Membership Badge */}
                             <div className={`absolute -bottom-1 -right-1 w-6 h-6 rounded-full border-2 border-white flex items-center justify-center text-xs font-bold text-white ${
                               attendee.membershipTier === 'premium' ? 'bg-purple-500' : 
-                              attendee.membershipTier === 'core' ? 'bg-blue-500' : 'bg-green-500'
+                              attendee.membershipTier === 'core' ? 'bg-secondary-500' : 'bg-green-500'
                             }`}>
                               {attendee.membershipTier === 'premium' ? 'P' : 
                                attendee.membershipTier === 'core' ? 'C' : 'F'}
@@ -715,8 +715,8 @@ export default function EventDetailsPage() {
                             )}
                             {event.attendees.filter(a => a.membershipTier === 'core').length > 0 && (
                               <div className="flex items-center gap-1">
-                                <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                                <span className="text-blue-700 font-medium">
+                                <div className="w-3 h-3 bg-secondary-500 rounded-full"></div>
+                                <span className="text-secondary-700 font-medium">
                                   {event.attendees.filter(a => a.membershipTier === 'core').length} Core
                                 </span>
                               </div>

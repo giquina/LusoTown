@@ -92,9 +92,9 @@ export default function Login() {
               </div>
 
               {/* Quick Access Helper */}
-              <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                <h3 className="text-sm font-medium text-blue-900 mb-2">New to LusoTown?</h3>
-                <p className="text-xs text-blue-700 mb-3">
+              <div className="mb-6 p-4 bg-primary-50 border border-primary-200 rounded-lg">
+                <h3 className="text-sm font-medium text-primary-900 mb-2">New to LusoTown?</h3>
+                <p className="text-xs text-primary-700 mb-3">
                   Create your account to join our vibrant Portuguese community in London
                 </p>
                 <a 

@@ -363,7 +363,7 @@ export default function Directory() {
       await connectionService.sendConnectionRequest(
         user.id,
         memberId,
-        'Hi! I\'d love to connect with you through AdyaTribe!'
+        'Hi! I\'d love to connect with you through LusoTown!'
       )
       alert('Connection request sent!')
     } catch (error) {
@@ -543,12 +543,12 @@ export default function Directory() {
                       </span>
                     )}
                     {filters.location?.map(location => (
-                      <span key={location} className="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">
+                      <span key={location} className="inline-flex items-center px-3 py-1 bg-primary-100 text-primary-700 text-sm rounded-full">
                         <MapPin className="w-3 h-3 mr-1" />
                         {location}
                         <button
                           onClick={() => removeLocationFilter(location)}
-                          className="ml-2 hover:bg-blue-200 rounded-full p-0.5"
+                          className="ml-2 hover:bg-primary-200 rounded-full p-0.5"
                         >
                           <X className="w-3 h-3" />
                         </button>

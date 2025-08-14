@@ -94,7 +94,7 @@ const upcomingEvents = [
   },
   {
     id: 3,
-    title: "Lusophone Professional Women Networking - All Ages",
+    title: "Portuguese-Speaking Professional Women Networking - All Ages",
     description: "Career networking for Portuguese-speaking women with no children - child-free evening",
     location: "Canary Wharf, London",
     date: "Thu, 21 Dec", 
@@ -103,7 +103,7 @@ const upcomingEvents = [
     maxAttendees: 20,
     price: 42,
     category: "Professional Networking",
-    image: "/events/lusophone-networking.jpg",
+    image: "/events/portuguese-networking.jpg",
     color: "from-blue-400 to-purple-400",
     icon: <UsersIcon className="w-5 h-5" />,
     ageRestriction: "Women of all ages welcome",

@@ -167,13 +167,13 @@ const OverviewTab: React.FC<{ analytics: AnalyticsData }> = ({ analytics }) => {
           <div className="text-xs text-green-600">out of 5 stars</div>
         </div>
 
-        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg border border-blue-100">
+        <div className="bg-gradient-to-r from-primary-50 to-primary-100 p-4 rounded-lg border border-primary-100">
           <div className="flex items-center gap-2 mb-2">
-            <UserGroupIcon className="w-5 h-5 text-blue-600" />
-            <span className="text-sm font-medium text-blue-800">Total Reviews</span>
+            <UserGroupIcon className="w-5 h-5 text-primary-600" />
+            <span className="text-sm font-medium text-primary-800">Total Reviews</span>
           </div>
-          <div className="text-2xl font-bold text-blue-700">{analytics.totalReviews}</div>
-          <div className="text-xs text-blue-600">community feedback</div>
+          <div className="text-2xl font-bold text-primary-700">{analytics.totalReviews}</div>
+          <div className="text-xs text-primary-600">community feedback</div>
         </div>
 
         <div className="bg-gradient-to-r from-purple-50 to-fuchsia-50 p-4 rounded-lg border border-purple-100">
@@ -248,7 +248,7 @@ const CulturalTab: React.FC<{ analytics: AnalyticsData }> = ({ analytics }) => {
       description: 'Quality of event planning and execution',
       color: 'from-blue-400 to-indigo-400',
       bgColor: 'from-blue-50 to-indigo-50',
-      textColor: 'text-blue-700'
+      textColor: 'text-primary-700'
     },
     {
       label: 'Venue & Location',
@@ -373,9 +373,9 @@ const TrendsTab: React.FC<{ analytics: AnalyticsData }> = ({ analytics }) => {
 
       {/* Insights */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
-          <h5 className="font-semibold text-blue-800 mb-2">Latest Trend</h5>
-          <p className="text-sm text-blue-700">
+        <div className="bg-primary-50 p-4 rounded-lg border border-primary-100">
+          <h5 className="font-semibold text-primary-800 mb-2">Latest Trend</h5>
+          <p className="text-sm text-primary-700">
             {analytics.monthlyTrends.length > 1 ? (
               analytics.monthlyTrends[analytics.monthlyTrends.length - 1].rating > 
               analytics.monthlyTrends[analytics.monthlyTrends.length - 2].rating 
@@ -407,7 +407,7 @@ const TrendsTab: React.FC<{ analytics: AnalyticsData }> = ({ analytics }) => {
 const DemographicsTab: React.FC<{ analytics: AnalyticsData }> = ({ analytics }) => {
   const membershipColors = {
     free: { bg: 'bg-green-100', text: 'text-green-700', border: 'border-green-200' },
-    core: { bg: 'bg-blue-100', text: 'text-blue-700', border: 'border-blue-200' },
+    core: { bg: 'bg-secondary-100', text: 'text-secondary-700', border: 'border-secondary-200' },
     premium: { bg: 'bg-purple-100', text: 'text-purple-700', border: 'border-purple-200' }
   }
 

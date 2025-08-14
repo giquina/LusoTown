@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     'Portuguese community help'
   ],
   openGraph: {
-    title: 'Help Center | AdyaTribe',
-    description: 'Get help with AdyaTribe! Find answers to common questions, contact support, and user guides.',
+    title: 'Help Center | LusoTown',
+    description: 'Get help with LusoTown! Find answers to common questions, contact support, and user guides.',
     type: 'website',
     url: '/help',
   },
@@ -62,7 +62,7 @@ export default function HelpCenter() {
           answer: 'We offer a free membership with basic features. Core membership (£19.99/month) unlocks full community access, unlimited messaging, and event creation. Premium membership (£39.99/month) adds exclusive events and priority support.'
         },
         {
-          question: 'What areas does AdyaTribe cover?',
+          question: 'What areas does LusoTown cover?',
           answer: 'We currently serve women across the UK, with the largest communities in London, Manchester, Birmingham, Edinburgh, and Bristol. We\'re expanding to more cities based on member demand.'
         }
       ]
@@ -82,7 +82,7 @@ export default function HelpCenter() {
         },
         {
           question: 'How do I report concerning behavior?',
-          answer: 'Use the report button on any profile or message, or email safety@adyatribe.com. We investigate all reports within 24 hours and take appropriate action to maintain community safety.'
+          answer: 'Use the report button on any profile or message, or email safety@lusotown.com. We investigate all reports within 24 hours and take appropriate action to maintain community safety.'
         },
         {
           question: 'Can I block or remove someone?',
@@ -142,7 +142,7 @@ export default function HelpCenter() {
     {
       title: 'Email Support',
       description: 'Get personalized help from our support team',
-      contact: 'hello@adyatribe.com',
+      contact: 'hello@lusotown.com',
       icon: EnvelopeIcon,
       color: 'primary',
       response: 'Usually within 4-6 hours',
@@ -151,7 +151,7 @@ export default function HelpCenter() {
     {
       title: 'Safety Concerns',
       description: 'Report safety issues or concerning behavior',
-      contact: 'safety@adyatribe.com',
+      contact: 'safety@lusotown.com',
       icon: ShieldCheckIcon,
       color: 'red',
       response: 'Within 2-4 hours',
@@ -160,7 +160,7 @@ export default function HelpCenter() {
     {
       title: 'Technical Issues',
       description: 'App bugs, login problems, or technical difficulties',
-      contact: 'tech@adyatribe.com',
+      contact: 'tech@lusotown.com',
       icon: CogIcon,
       color: 'blue',
       response: 'Within 6-12 hours',
@@ -207,7 +207,7 @@ export default function HelpCenter() {
                 Help Center
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Find answers to common questions, get support, and make the most of your AdyaTribe experience. 
+                Find answers to common questions, get support, and make the most of your LusoTown experience. 
                 Our community is here to support your journey to meaningful friendships.
               </p>
             </div>
@@ -302,7 +302,7 @@ export default function HelpCenter() {
                 Frequently Asked Questions
               </h2>
               <p className="text-center text-gray-600 mb-12">
-                Find answers to the most common questions about AdyaTribe
+                Find answers to the most common questions about LusoTown
               </p>
 
               <div className="space-y-12">
@@ -350,7 +350,7 @@ export default function HelpCenter() {
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">If You Feel Unsafe</h3>
                     <div className="space-y-3 text-gray-600">
                       <p>• <strong>Immediate danger:</strong> Call 999 (UK emergency services)</p>
-                      <p>• <strong>Platform safety:</strong> Email safety@adyatribe.com</p>
+                      <p>• <strong>Platform safety:</strong> Email safety@lusotown.com</p>
                       <p>• <strong>Block and report:</strong> Use in-app reporting tools</p>
                       <p>• <strong>Document evidence:</strong> Screenshot concerning behavior</p>
                     </div>
@@ -362,7 +362,7 @@ export default function HelpCenter() {
                       <p>• Always meet in public places first</p>
                       <p>• Tell someone where you're going</p>
                       <p>• Trust your instincts - leave if uncomfortable</p>
-                      <p>• Use AdyaTribe's group events for safer first meetings</p>
+                      <p>• Use LusoTown's group events for safer first meetings</p>
                     </div>
                   </div>
                 </div>
@@ -414,7 +414,7 @@ export default function HelpCenter() {
                   <ChatBubbleLeftRightIcon className="w-8 h-8 text-purple-600 mb-4" />
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Success Stories</h3>
                   <p className="text-gray-600 mb-4">
-                    Read inspiring stories from women who've found their tribe through AdyaTribe.
+                    Read inspiring stories from women who've found their tribe through LusoTown.
                   </p>
                   <a href="/success-stories" className="text-purple-600 hover:underline font-medium">
                     Read Stories →
@@ -433,13 +433,13 @@ export default function HelpCenter() {
                 Still Need Help?
               </h2>
               <p className="text-xl mb-8 opacity-90">
-                Our friendly support team is here to help you make the most of your AdyaTribe experience. 
+                Our friendly support team is here to help you make the most of your LusoTown experience. 
                 Don't hesitate to reach out with any questions or concerns.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="mailto:hello@adyatribe.com"
+                  href="mailto:hello@lusotown.com"
                   className="bg-white text-primary-600 hover:bg-gray-50 font-semibold px-8 py-4 rounded-xl transition-colors duration-200 flex items-center justify-center"
                 >
                   <EnvelopeIcon className="w-5 h-5 mr-2" />

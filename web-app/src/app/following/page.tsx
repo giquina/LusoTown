@@ -241,7 +241,7 @@ export default function FollowingPage() {
                             </div>
                           )}
                           {entity.isVerified && (
-                            <CheckBadgeIcon className="absolute -top-1 -right-1 w-5 h-5 text-blue-500" />
+                            <CheckBadgeIcon className="absolute -top-1 -right-1 w-5 h-5 text-primary-500" />
                           )}
                         </div>
                         
@@ -338,7 +338,7 @@ export default function FollowingPage() {
                               </div>
                             )}
                             {entity.isVerified && (
-                              <CheckBadgeIcon className="absolute -top-1 -right-1 w-4 h-4 text-blue-500" />
+                              <CheckBadgeIcon className="absolute -top-1 -right-1 w-4 h-4 text-primary-500" />
                             )}
                           </div>
                           

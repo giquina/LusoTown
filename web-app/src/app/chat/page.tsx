@@ -479,7 +479,7 @@ export default function ChatRoomsPage() {
                 <div className="text-center max-w-2xl mx-auto">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">New to Community Chat?</h2>
                   <p className="text-gray-600 mb-6">
-                    Our chat rooms are safe, welcoming spaces where AdyaTribe members can connect, share experiences, and support each other. Each room has its own community guidelines and active moderators.
+                    Our chat rooms are safe, welcoming spaces where LusoTown members can connect, share experiences, and support each other. Each room has its own community guidelines and active moderators.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div className="text-center">
@@ -487,11 +487,11 @@ export default function ChatRoomsPage() {
                         <CheckCircleIcon className="w-6 h-6 text-green-600" />
                       </div>
                       <h3 className="font-semibold text-gray-900 mb-1">Verified Members</h3>
-                      <p className="text-sm text-gray-600">All participants are verified AdyaTribe members</p>
+                      <p className="text-sm text-gray-600">All participants are verified LusoTown members</p>
                     </div>
                     <div className="text-center">
-                      <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                        <UsersIcon className="w-6 h-6 text-blue-600" />
+                      <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <UsersIcon className="w-6 h-6 text-primary-600" />
                       </div>
                       <h3 className="font-semibold text-gray-900 mb-1">Active Moderation</h3>
                       <p className="text-sm text-gray-600">Dedicated moderators ensure positive conversations</p>

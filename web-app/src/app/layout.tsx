@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   keywords: [
     'portuguese community uk',
     'portuguese london',
-    'lusophone britain',
+    'portuguese speaking britain',
     'portugal diaspora uk',
     'brazilian community uk',
     'angolan community britain',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     'portuguese business directory uk',
     'luso diaspora britain',
     'portuguese speakers uk',
-    'lusophone culture britain',
+    'portuguese culture britain',
     'portuguese community platform uk',
     'portuguese manchester',
     'portuguese birmingham',

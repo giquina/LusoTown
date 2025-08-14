@@ -11,7 +11,7 @@ export default function LanguageToggleDemo() {
     en: {
       welcome: 'Welcome to LusoTown Community Feed',
       description: 'Share updates, connect with others, and stay in the loop with the latest from our Portuguese community in London',
-      postPlaceholder: "What's happening in your Lusophone world?",
+      postPlaceholder: "What's happening in your Portuguese-speaking world?",
       post: 'Post',
       events: 'Events',
       businesses: 'Businesses',
@@ -19,8 +19,8 @@ export default function LanguageToggleDemo() {
     },
     pt: {
       welcome: 'Bem-vindo ao Feed da Comunidade LusoTown',
-      description: 'Compartilhe atualizações, conecte-se com outros e mantenha-se informado sobre as últimas notícias da nossa comunidade lusófona em Londres',
-      postPlaceholder: 'O que está acontecendo no seu mundo lusófono?',
+      description: 'Compartilhe atualizações, conecte-se com outros e mantenha-se informado sobre as últimas notícias da nossa comunidade de língua portuguesa em Londres',
+      postPlaceholder: 'O que está acontecendo no seu mundo de língua portuguesa?',
       post: 'Publicar',
       events: 'Eventos',
       businesses: 'Negócios',

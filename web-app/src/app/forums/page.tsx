@@ -88,7 +88,7 @@ export default function Forums() {
 
   const getRoleBadge = (role: string) => {
     if (role === 'admin') return <span className="px-1.5 py-0.5 bg-purple-100 text-purple-600 text-xs rounded font-medium">Admin</span>
-    if (role === 'moderator') return <span className="px-1.5 py-0.5 bg-blue-100 text-blue-600 text-xs rounded font-medium">Mod</span>
+    if (role === 'moderator') return <span className="px-1.5 py-0.5 bg-primary-100 text-primary-600 text-xs rounded font-medium">Mod</span>
     return null
   }
 
@@ -313,7 +313,7 @@ export default function Forums() {
                               <Lock className="w-4 h-4 text-gray-400" />
                             )}
                             {topic.isAnnouncement && (
-                              <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded font-medium">
+                              <span className="px-2 py-1 bg-primary-100 text-primary-700 text-xs rounded font-medium">
                                 Announcement
                               </span>
                             )}

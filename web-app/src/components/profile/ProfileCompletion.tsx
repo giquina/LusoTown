@@ -209,7 +209,7 @@ export default function ProfileCompletion({ userId, profile, onStepClick }: Prof
                 <div>
                   <h4 className="text-sm font-semibold text-gray-900 mb-3 flex items-center gap-2">
                     Bonus Steps
-                    <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
+                    <span className="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded-full">
                       {optionalSteps.filter(s => s.completed).length}/{optionalSteps.length}
                     </span>
                   </h4>
@@ -222,20 +222,20 @@ export default function ProfileCompletion({ userId, profile, onStepClick }: Prof
                         transition={{ delay: (requiredSteps.length + index) * 0.1 }}
                         className={`flex items-center justify-between p-3 rounded-lg border cursor-pointer transition-colors ${
                           step.completed
-                            ? 'bg-blue-50 border-blue-200 hover:bg-blue-100'
+                            ? 'bg-primary-50 border-primary-200 hover:bg-primary-100'
                             : 'bg-gray-50 border-gray-200 hover:bg-gray-100'
                         }`}
                         onClick={() => onStepClick?.(step.id)}
                       >
                         <div className="flex items-center gap-3">
                           {step.completed ? (
-                            <CheckCircleIcon className="w-5 h-5 text-blue-600" />
+                            <CheckCircleIcon className="w-5 h-5 text-primary-600" />
                           ) : (
                             <div className="w-5 h-5 rounded-full border-2 border-gray-300"></div>
                           )}
                           <div>
                             <div className={`font-medium text-sm ${
-                              step.completed ? 'text-blue-900' : 'text-gray-700'
+                              step.completed ? 'text-primary-900' : 'text-gray-700'
                             }`}>
                               {step.name}
                             </div>
@@ -246,7 +246,7 @@ export default function ProfileCompletion({ userId, profile, onStepClick }: Prof
                             <StarIcon className="w-3 h-3 text-yellow-500" />
                             <span className="text-xs text-gray-600">{step.points}</span>
                           </div>
-                          <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
+                          <span className="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded-full">
                             Bonus
                           </span>
                         </div>

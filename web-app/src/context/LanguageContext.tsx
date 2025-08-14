@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react'
 
-export type Language = 'en' | 'pt'
+export type Language = 'en' | 'pt-pt' | 'pt-br'
 
 interface LanguageContextType {
   language: Language
@@ -28,10 +28,10 @@ const translations = {
     
     // Hero Section
     'hero.badge': "Unidos pela Língua • United by Language",
-    'hero.title': 'Connect. Celebrate. Community.',
-    'hero.subtitle': 'Your home for Portuguese culture in the UK. Find events, make friends, celebrate heritage.',
-    'hero.cta.primary': 'JOIN OUR COMMUNITY',
-    'hero.cta.secondary': 'EXPLORE EVENTS',
+    'hero.title': 'Meet, Explore, and Connect — in Portuguese.',
+    'hero.subtitle': 'From London museums to Brazilian nights, join events where everyone speaks your language.',
+    'hero.cta.primary': 'Browse Events',
+    'hero.cta.secondary': 'Join Now',
     
     // Features
     'features.title': 'Why Choose LusoTown',
@@ -77,7 +77,7 @@ const translations = {
     'language.switch-to-portuguese': 'Português',
     'language.switch-to-english': 'English',
   },
-  pt: {
+  'pt-pt': {
     // Navigation
     'nav.events': 'Eventos',
     'nav.how-it-works': 'Como Funciona',
@@ -91,10 +91,10 @@ const translations = {
     
     // Hero Section
     'hero.badge': 'Unidos pela Língua • United by Language',
-    'hero.title': 'Conectar. Celebrar. Comunidade.',
-    'hero.subtitle': 'A tua casa para a cultura portuguesa no Reino Unido. Encontra eventos, faz amigos, celebra a herança.',
-    'hero.cta.primary': 'JUNTAR À COMUNIDADE',
-    'hero.cta.secondary': 'EXPLORAR EVENTOS',
+    'hero.title': 'Encontrar, Explorar e Conectar — em Português.',
+    'hero.subtitle': 'De museus de Londres a noites brasileiras, junta-te a eventos onde todos falam a tua língua.',
+    'hero.cta.primary': 'Ver Eventos',
+    'hero.cta.secondary': 'Inscrever-se',
     
     // Features
     'features.title': 'Porquê Escolher a LusoTown',
@@ -139,6 +139,69 @@ const translations = {
     // Language Toggle
     'language.switch-to-portuguese': 'Português',
     'language.switch-to-english': 'English',
+  },
+  'pt-br': {
+    // Navigation
+    'nav.events': 'Eventos',
+    'nav.how-it-works': 'Como Funciona',
+    'nav.community': 'Comunidade',
+    'nav.community-guidelines': 'Diretrizes da Comunidade',
+    'nav.pricing': 'Preços',
+    'nav.about': 'Sobre',
+    'nav.contact': 'Contato',
+    'nav.login': 'Entrar',
+    'nav.join-community': 'Entrar na Comunidade',
+    
+    // Hero Section
+    'hero.badge': 'Unidos pela Língua • United by Language',
+    'hero.title': 'Encontrar, Explorar e Conectar — em Português.',
+    'hero.subtitle': 'De museus de Londres a noites brasileiras, participe de eventos onde todos falam sua língua.',
+    'hero.cta.primary': 'Ver Eventos',
+    'hero.cta.secondary': 'Inscrever-se',
+    
+    // Features
+    'features.title': 'Por que Escolher LusoTown',
+    'features.subtitle': 'Seu Centro de Conexões para Comunidades Portuguesas no Reino Unido',
+    'features.events.title': 'Eventos Culturais & Encontros',
+    'features.events.description': 'Desde noites de Fado a festivais culturais, celebrações tradicionais a encontros comunitários portugueses - descubra e participe em eventos por todo o Reino Unido. Eventos abertos a todas as idades, com requisitos de idade específicos indicados por evento.',
+    'features.groups.title': 'Comunidades Portuguesas',
+    'features.groups.description': 'Conecte-se com falantes de português que compartilham seus interesses - desde preservação cultural a atividades sociais. Faça amizades genuínas por todo o Reino Unido com indivíduos de todas as idades.',
+    'features.business.title': 'Rede de Negócios Portugueses',
+    'features.business.description': 'Descubra negócios portugueses, restaurantes e serviços por todo o Reino Unido. Apoie nossa comunidade e encontre locais onde nossa cultura é celebrada.',
+    'features.resources.title': 'Recursos Comunitários',
+    'features.resources.description': 'Acesse programas de intercâmbio linguístico, workshops culturais, apoio comunitário e encontros locais. Conecte-se com sua herança portuguesa onde quer que esteja.',
+    'features.stories.title': 'Histórias da Comunidade',
+    'features.stories.description': 'Histórias reais de falantes de português que encontraram sua comunidade, preservaram sua cultura e construíram conexões significativas através de nossa plataforma global.',
+    'features.local.title': 'Comunidades Locais',
+    'features.local.description': 'Conecte-se com falantes de português em sua cidade ou região. Encontre comunidades locais, centros culturais e grupos portugueses perto de você.',
+    'features.culture.title': 'Herança Cultural',
+    'features.culture.description': 'Celebre e preserve as tradições, música e costumes portugueses. Desde noites de Fado a festivais tradicionais, mantenha nossa cultura viva.',
+    'features.language.title': 'Intercâmbio Linguístico',
+    'features.language.description': 'Pratique português com falantes nativos e ajude outros a aprender inglês. Construa conexões através da aprendizagem de línguas.',
+    'features.heritage.title': 'Conexão da Herança',
+    'features.heritage.description': 'Conecte-se com suas raízes portuguesas e compartilhe histórias com outros que entendem a jornada de preservar a cultura no exterior.',
+    
+    // Testimonials
+    'testimonials.badge': 'Histórias Reais, Conexões Reais',
+    'testimonials.title': 'Conheça Sua Comunidade Portuguesa Global',
+    'testimonials.subtitle': 'Ouça falantes de português que encontraram sua comunidade, preservaram sua herança e construíram conexões duradouras pelo mundo',
+    
+    // Footer
+    'footer.description': 'A plataforma para comunidades de fala portuguesa no Reino Unido. Conecte-se com sua herança portuguesa, encontre comunidades locais, participe em eventos culturais e construa amizades significativas. Aberto a todas as idades. Unidos pela Língua - United by Language.',
+    'footer.newsletter.title': 'Mantenha-se Conectado',
+    'footer.newsletter.description': 'Receba atualizações sobre eventos culturais portugueses, notícias da comunidade e encontros por todo o Reino Unido.',
+    'footer.tagline': 'Conectando corações portugueses pelo Reino Unido',
+    'footer.bottom': 'Unidos pela Língua • Comunidade UK',
+    
+    // About Page
+    'about.hero.badge': 'Unidos pela Língua • United by Language',
+    'about.hero.title': 'Sobre LusoTown',
+    'about.mission.title': 'Nossa Missão: Preservar a Cultura, Conectar Corações',
+    'about.mission.subtitle': 'Our Mission: Preserve Culture, Connect Hearts',
+    
+    // Language Toggle
+    'language.switch-to-portuguese': 'Português',
+    'language.switch-to-english': 'English',
   }
 }
 
@@ -152,7 +215,7 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   // Load saved language preference or detect from browser
   useEffect(() => {
     const savedLanguage = localStorage.getItem('lusotown-language') as Language
-    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'pt')) {
+    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'pt-pt' || savedLanguage === 'pt-br')) {
       setLanguage(savedLanguage)
     } else {
       // Default to English for UK-based Portuguese community platform

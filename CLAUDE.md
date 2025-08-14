@@ -202,6 +202,16 @@ The web app uses a Portuguese-inspired design system with semantic color naming:
 - **Premium (Roxo Fado):** `bg-premium-500` (#7c3aed) - Rich purple
 - **Coral (Coral Tropical):** `bg-coral-500` (#f97316) - Vibrant coral
 
+**Color Usage Guidelines (Updated 2025-08-14):**
+- **NEVER use generic `blue` colors** - Always use brand colors from the palette above
+- **Information/Navigation:** Use `primary` colors (Azul Atlântico)
+- **Success/Positive actions:** Use `secondary` colors (Verde Esperança)
+- **Warning/Attention:** Use `accent` colors (Dourado Sol)
+- **Error/Critical:** Use `action` colors (Vermelho Paixão)
+- **Premium features:** Use `premium` colors (Roxo Fado)
+- **Warm accents:** Use `coral` colors (Coral Tropical)
+- **Global CSS Override:** `globals.css` contains overrides for all `bg-blue-*`, `text-blue-*`, and `border-blue-*` classes
+
 **Typography:**
 - **Font Family:** Inter (body), Poppins (display)
 - **Display Sizes:** display-large, display, display-small
@@ -347,6 +357,75 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 
 **Current Status:** Ready for immediate deployment and further development
 **Next Priority:** Feature enhancements and remaining page translations
+
+## Recommended Specialized Sub-Agents
+
+Based on analysis of the LusoTown platform structure and Portuguese community needs, these specialized sub-agents would provide significant value:
+
+### Phase 1 - Immediate Implementation
+1. **LusoContentAgent** - Portuguese language and cultural content management
+   - Translate platform content maintaining cultural nuances
+   - Handle Portuguese regional variations (Portugal, Brazil, Angola, etc.)
+   - Ensure cultural authenticity in all content
+
+2. **LusoSafetyAgent** - Portuguese community-specific content moderation
+   - Moderate forums and discussions in Portuguese and English
+   - Handle cultural sensitivity in community interactions
+   - Implement community guidelines appropriate for Portuguese culture
+
+3. **LusoEventsAgent** - Portuguese cultural events curator
+   - Curate authentic Portuguese cultural events (Fado nights, festivals)
+   - Research London-based Portuguese venues and event spaces
+   - Create culturally significant event descriptions
+
+### Phase 2 - Growth & Expansion
+4. **LusoGrowthAgent** - Portuguese community outreach and SEO
+   - Optimize for Portuguese keywords and London-based searches
+   - Manage social media outreach to Portuguese communities
+   - Handle multilingual SEO strategies
+
+5. **LusoBusinessAgent** - Portuguese business directory specialist
+   - Research and verify Portuguese-owned businesses in London
+   - Create detailed business profiles with cultural relevance
+   - Manage business networking and partnerships
+
+6. **LusoHeritageAgent** - Portuguese heritage preservation specialist
+   - Create compelling Portuguese heritage and success stories
+   - Develop cultural education content
+   - Handle diaspora-specific content creation
+
+### Phase 3 - Optimization & Partnerships
+7. **LusoMembershipAgent** - Community membership optimization
+   - Optimize membership features for Portuguese community needs
+   - Handle Portuguese-specific payment preferences and benefits
+
+8. **LusoPartnershipAgent** - Portuguese organization partnerships
+   - Establish partnerships with Portuguese cultural centers
+   - Coordinate with consulates and official organizations
+   - Manage relationships with Portuguese institutions
+
+## Project Sub-Agents (Available in `.claude/agents/`)
+
+The LusoTown project includes comprehensive specialized sub-agents for optimal development and community management:
+
+### Portuguese Community Specialists
+- **luso-content-agent** - Portuguese translation and cultural content management
+- **luso-safety-agent** - Community moderation with Portuguese cultural sensitivity
+- **luso-events-agent** - Portuguese cultural events curation and management
+- **luso-growth-agent** - Portuguese community SEO and outreach optimization
+- **luso-business-agent** - Portuguese business directory and networking specialist
+- **luso-heritage-agent** - Portuguese heritage preservation and storytelling
+- **luso-membership-agent** - Community membership optimization and revenue
+- **luso-partnership-agent** - Portuguese institutional partnerships and relationships
+
+### Development and Operations Specialists
+- **doc-writer** - Technical and project documentation specialist
+- **bug-finder** - Quality assurance and bug detection specialist
+- **refactor-helper** - Code optimization and architecture improvement
+- **feature-builder** - New feature development for Portuguese community needs
+- **deploy-manager** - Production deployment and DevOps management
+
+These sub-agents can be invoked using Claude Code's subagent system and will automatically assist with relevant tasks throughout the development process.
 
 ## Platform Mission
 

@@ -198,7 +198,7 @@ export default function ProfileEditForm({
             </div>
           )}
           <p className="mt-1 text-xs text-gray-500">
-            You must be at least 30 years old to join AdyaTribe
+            You must be at least 30 years old to join LusoTown
           </p>
         </div>
 
@@ -414,19 +414,19 @@ export default function ProfileEditForm({
         ))}
 
         {formData.interests.length > 0 && (
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <h4 className="font-medium text-blue-900 mb-2">Selected Interests</h4>
+          <div className="bg-primary-50 border border-primary-200 rounded-lg p-4">
+            <h4 className="font-medium text-primary-900 mb-2">Selected Interests</h4>
             <div className="flex flex-wrap gap-2">
               {formData.interests.map((interest) => (
                 <span
                   key={interest}
-                  className="inline-flex items-center gap-1 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm"
+                  className="inline-flex items-center gap-1 px-3 py-1 bg-primary-100 text-primary-800 rounded-full text-sm"
                 >
                   {interest}
                   <button
                     type="button"
                     onClick={() => handleInterestToggle(interest)}
-                    className="hover:bg-blue-200 rounded-full p-0.5 transition-colors"
+                    className="hover:bg-primary-200 rounded-full p-0.5 transition-colors"
                   >
                     <XMarkIcon className="w-3 h-3" />
                   </button>

@@ -136,7 +136,7 @@ export const mockForumCategories: ForumCategory[] = [
     name: 'Event Planning',
     description: 'Organize events, suggest activities, and coordinate meetups',
     icon: '📅',
-    color: 'bg-blue-100 text-blue-700',
+    color: 'bg-secondary-100 text-secondary-700',
     membershipRequired: 'core',
     topics: 38,
     posts: 203,
@@ -211,7 +211,7 @@ export const mockForumTopics: ForumTopic[] = [
     id: 'topic-1',
     categoryId: 'cat-new-members',
     title: 'Hello from Kensington! New member introduction 👋',
-    description: 'Just joined AdyaTribe and so excited to meet like-minded women in London! I\'m Emma, 34, marketing professional who loves wine tasting and book clubs. Looking forward to making genuine connections!',
+    description: 'Just joined LusoTown and so excited to meet like-minded women in London! I\'m Emma, 34, marketing professional who loves wine tasting and book clubs. Looking forward to making genuine connections!',
     author: {
       id: 'user-001',
       name: 'Rachel Green',
@@ -375,7 +375,7 @@ export const mockForumPosts: { [topicId: string]: ForumPost[] } = {
         totalPosts: 142,
         reputation: 1250
       },
-      content: 'Welcome to AdyaTribe, Emma! 🎉 It\'s wonderful to have you in our community. I\'m Sarah, and I actually run the monthly book club - sounds like you\'d be a perfect fit! We\'re currently discussing "The Seven Husbands of Evelyn Hugo" and meeting next week in Kensington.\n\nI\'m also based in the area and love discovering new wine bars. Have you tried Wine & Cheese Co in Covent Garden? It\'s become one of my favorites for group tastings.\n\nLooking forward to seeing you at some events soon!',
+      content: 'Welcome to LusoTown, Emma! 🎉 It\'s wonderful to have you in our community. I\'m Sarah, and I actually run the monthly book club - sounds like you\'d be a perfect fit! We\'re currently discussing "The Seven Husbands of Evelyn Hugo" and meeting next week in Kensington.\n\nI\'m also based in the area and love discovering new wine bars. Have you tried Wine & Cheese Co in Covent Garden? It\'s become one of my favorites for group tastings.\n\nLooking forward to seeing you at some events soon!',
       createdAt: '2024-01-26T10:45:00Z',
       upvotes: 8,
       downvotes: 0,

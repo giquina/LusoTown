@@ -419,7 +419,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
                       )}
                     </div>
                     {post.authorVerified && (
-                      <CheckBadgeIcon className="absolute -bottom-1 -right-1 w-4 h-4 text-blue-500 bg-white rounded-full" />
+                      <CheckBadgeIcon className="absolute -bottom-1 -right-1 w-4 h-4 text-primary-500 bg-white rounded-full" />
                     )}
                   </div>
                   <div>
@@ -555,7 +555,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
                 
                 <div className="flex gap-1">
                   <button className="p-1 text-gray-400 hover:text-red-500">❤️</button>
-                  <button className="p-1 text-gray-400 hover:text-blue-500">👍</button>
+                  <button className="p-1 text-gray-400 hover:text-primary-500">👍</button>
                   <button className="p-1 text-gray-400 hover:text-yellow-500">😂</button>
                   <button className="p-1 text-gray-400 hover:text-purple-500">😮</button>
                 </div>

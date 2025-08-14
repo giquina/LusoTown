@@ -203,10 +203,10 @@ export default function ForgotPassword() {
         <section className="py-16 bg-white">
           <div className="container-width px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto">
-              <div className="bg-blue-50 border border-blue-200 rounded-2xl p-8">
-                <h2 className="text-xl font-semibold text-blue-800 mb-4">Need Help?</h2>
+              <div className="bg-primary-50 border border-primary-200 rounded-2xl p-8">
+                <h2 className="text-xl font-semibold text-primary-800 mb-4">Need Help?</h2>
                 
-                <div className="space-y-4 text-blue-700">
+                <div className="space-y-4 text-primary-700">
                   <div>
                     <h3 className="font-semibold mb-2">Common Issues:</h3>
                     <ul className="space-y-1 text-sm">
@@ -221,8 +221,8 @@ export default function ForgotPassword() {
                     <h3 className="font-semibold mb-2">Still Having Trouble?</h3>
                     <p className="text-sm">
                       Contact our support team at{' '}
-                      <a href="mailto:hello@adyatribe.com" className="text-blue-600 hover:underline font-medium">
-                        hello@adyatribe.com
+                      <a href="mailto:hello@lusotown.com" className="text-primary-600 hover:underline font-medium">
+                        hello@lusotown.com
                       </a>{' '}
                       and we'll help you regain access to your account.
                     </p>

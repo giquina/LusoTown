@@ -108,7 +108,7 @@ export default function MemberProfile() {
       const result = await connectionService.sendConnectionRequest(
         user.id,
         member.id,
-        `Hi ${member.name}! I'd love to connect with you through AdyaTribe.`
+        `Hi ${member.name}! I'd love to connect with you through LusoTown.`
       )
       
       if (result.success) {
@@ -332,7 +332,7 @@ export default function MemberProfile() {
                 </div>
                 {member.verification.backgroundChecked && (
                   <div className="flex items-center space-x-1">
-                    <Shield className="w-4 h-4 text-blue-500" />
+                    <Shield className="w-4 h-4 text-primary-500" />
                     <span className="text-sm text-gray-600">Background Check</span>
                   </div>
                 )}

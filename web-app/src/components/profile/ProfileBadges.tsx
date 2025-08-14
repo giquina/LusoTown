@@ -16,7 +16,7 @@ export default function ProfileBadges({ badges, maxVisible = 8, showAll = false 
   const getBadgeStyle = (color: string) => {
     const styles = {
       purple: 'bg-purple-100 text-purple-700 border-purple-200',
-      blue: 'bg-blue-100 text-blue-700 border-blue-200',
+      blue: 'bg-primary-100 text-primary-700 border-primary-200',
       green: 'bg-green-100 text-green-700 border-green-200',
       gold: 'bg-yellow-100 text-yellow-700 border-yellow-200',
       pink: 'bg-pink-100 text-pink-700 border-pink-200',
@@ -86,7 +86,7 @@ export default function ProfileBadges({ badges, maxVisible = 8, showAll = false 
             <span>Community Engagement</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-blue-600">🤝</span>
+            <span className="text-primary-600">🤝</span>
             <span>Connection Building</span>
           </div>
           <div className="flex items-center gap-2">

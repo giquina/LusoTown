@@ -128,7 +128,7 @@ export default function ProfileHeader({
                 <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 flex items-center gap-2">
                   {profile.name}
                   {profile.verification.photoVerified && (
-                    <CheckBadgeIcon className="w-6 h-6 text-blue-500 flex-shrink-0" />
+                    <CheckBadgeIcon className="w-6 h-6 text-primary-500 flex-shrink-0" />
                   )}
                 </h1>
                 

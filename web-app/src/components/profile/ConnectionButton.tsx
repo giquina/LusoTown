@@ -181,7 +181,7 @@ export default function ConnectionButton({ profileId, currentUserId, className =
         return {
           text: 'Respond',
           icon: <UserPlusIcon className="w-4 h-4" />,
-          className: 'bg-blue-500 text-white hover:bg-blue-600',
+          className: 'bg-primary-500 text-white hover:bg-primary-600',
           disabled: false
         }
       

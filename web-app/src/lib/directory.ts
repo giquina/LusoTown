@@ -209,7 +209,7 @@ export const mockDirectoryProfiles: UserProfile[] = [
     eventsAttended: 2,
     connectionsCount: 7,
     badges: [
-      { id: 'badge-8', name: 'New Member', description: 'Welcome to AdyaTribe!', icon: '👋', color: 'green', earnedAt: '2024-01-24T16:00:00Z' }
+      { id: 'badge-8', name: 'New Member', description: 'Welcome to LusoTown!', icon: '👋', color: 'green', earnedAt: '2024-01-24T16:00:00Z' }
     ],
     photos: [
       { id: 'photo-8', url: 'https://images.unsplash.com/photo-1506629905607-683b607dfc6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80', caption: 'First London weekend market!', isProfilePicture: false, uploadedAt: '2024-01-25T10:00:00Z', likes: 5, comments: [] }

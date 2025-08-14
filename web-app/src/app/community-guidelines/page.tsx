@@ -139,7 +139,7 @@ export default function CommunityGuidelines() {
                         <span>Keep our beautiful language alive and thriving in London</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span className="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                         <span>Support Portuguese businesses and cultural initiatives with pride</span>
                       </li>
                     </ul>

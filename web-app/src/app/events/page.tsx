@@ -289,7 +289,7 @@ const EventCard = ({ event }: { event: Event }) => {
                     )}
                     <div className={`absolute -bottom-1 -right-1 w-3 h-3 rounded-full border border-white text-xs flex items-center justify-center ${
                       attendee.membershipTier === 'premium' ? 'bg-purple-500' : 
-                      attendee.membershipTier === 'core' ? 'bg-blue-500' : 'bg-green-500'
+                      attendee.membershipTier === 'core' ? 'bg-secondary-500' : 'bg-green-500'
                     }`}>
                       <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
                     </div>
@@ -311,7 +311,7 @@ const EventCard = ({ event }: { event: Event }) => {
               )}
               {event.attendees.filter(a => a.membershipTier === 'core').length > 0 && (
                 <span className="inline-flex items-center gap-1 ml-3">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  <div className="w-2 h-2 bg-secondary-500 rounded-full"></div>
                   {event.attendees.filter(a => a.membershipTier === 'core').length} Core
                 </span>
               )}

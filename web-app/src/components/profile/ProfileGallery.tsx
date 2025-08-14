@@ -257,9 +257,9 @@ export default function ProfileGallery({
 
       {/* Photo Upload Tips (Owner Only) */}
       {isOwnProfile && photos.length === 0 && (
-        <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-          <h4 className="text-sm font-semibold text-blue-900 mb-2">Photo Tips</h4>
-          <ul className="text-sm text-blue-800 space-y-1">
+        <div className="mt-6 p-4 bg-primary-50 border border-primary-200 rounded-lg">
+          <h4 className="text-sm font-semibold text-primary-900 mb-2">Photo Tips</h4>
+          <ul className="text-sm text-primary-800 space-y-1">
             <li>• Add at least 3-5 photos to get more profile views</li>
             <li>• Include a clear profile picture showing your face</li>
             <li>• Share photos from events, hobbies, or activities you enjoy</li>

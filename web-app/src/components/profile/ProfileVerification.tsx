@@ -264,13 +264,13 @@ export default function ProfileVerification({ profile, onUpdate }: ProfileVerifi
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
-        className="bg-blue-50 border border-blue-200 rounded-xl p-6"
+        className="bg-primary-50 border border-primary-200 rounded-xl p-6"
       >
-        <h3 className="text-lg font-semibold text-blue-900 mb-4 flex items-center gap-2">
+        <h3 className="text-lg font-semibold text-primary-900 mb-4 flex items-center gap-2">
           <ShieldCheckIcon className="w-5 h-5" />
           Why Verify Your Account?
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-blue-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-primary-800">
           <div>
             <h4 className="font-medium mb-3">🔒 Enhanced Security</h4>
             <ul className="space-y-1">

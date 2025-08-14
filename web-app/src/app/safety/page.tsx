@@ -88,7 +88,7 @@ export default function SafetyCenter() {
         'Don\'t share financial information or send money',
         'Be cautious of people who avoid video calls or group meetups',
         'Report suspicious behavior immediately',
-        'Use AdyaTribe\'s messaging system initially'
+        'Use LusoTown\'s messaging system initially'
       ]
     }
   ]
@@ -142,7 +142,7 @@ export default function SafetyCenter() {
                 Safety Center
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                AdyaTribe is built with women's safety at its core. Learn about our comprehensive safety features, 
+                LusoTown is built with women's safety at its core. Learn about our comprehensive safety features, 
                 get tips for meeting safely, and access resources to help you navigate friendships with confidence.
               </p>
             </div>
@@ -177,7 +177,7 @@ export default function SafetyCenter() {
                         <div className="space-y-1 text-red-600">
                           <div className="flex items-center">
                             <EnvelopeIcon className="w-4 h-4 mr-2" />
-                            <span><strong>safety@adyatribe.com</strong></span>
+                            <span><strong>safety@lusotown.com</strong></span>
                           </div>
                           <div className="text-sm">Response within 2-4 hours, monitored 24/7</div>
                         </div>
@@ -227,7 +227,7 @@ export default function SafetyCenter() {
                   Meeting Safely: Your Complete Guide
                 </h2>
                 <p className="text-xl text-gray-600">
-                  Essential safety tips for meeting new friends through AdyaTribe
+                  Essential safety tips for meeting new friends through LusoTown
                 </p>
               </div>
 
@@ -365,7 +365,7 @@ export default function SafetyCenter() {
                       <div className="space-y-1">
                         <div className="flex items-center text-secondary-700">
                           <EnvelopeIcon className="w-4 h-4 mr-2" />
-                          <span>safety@adyatribe.com</span>
+                          <span>safety@lusotown.com</span>
                         </div>
                         <div className="text-secondary-600 text-sm">
                           Response: Within 2-4 hours • Monitored 24/7
@@ -387,7 +387,7 @@ export default function SafetyCenter() {
                 <h3 className="text-xl font-semibold text-gray-900 mb-6">What Happens When You Report</h3>
                 <div className="grid md:grid-cols-4 gap-6">
                   <div className="text-center">
-                    <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <div className="w-12 h-12 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center mx-auto mb-3">
                       <span className="font-bold">1</span>
                     </div>
                     <h4 className="font-semibold text-gray-900 mb-2">Report Received</h4>
@@ -434,9 +434,9 @@ export default function SafetyCenter() {
               </div>
 
               <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-                  <h3 className="text-lg font-semibold text-blue-800 mb-4">Women's Safety Organizations</h3>
-                  <div className="space-y-3 text-blue-700">
+                <div className="bg-primary-50 border border-primary-200 rounded-xl p-6">
+                  <h3 className="text-lg font-semibold text-primary-800 mb-4">Women's Safety Organizations</h3>
+                  <div className="space-y-3 text-primary-700">
                     <div>
                       <h4 className="font-semibold">Women's Aid</h4>
                       <p className="text-sm">24-hour helpline: 0808 2000 247</p>
@@ -512,7 +512,7 @@ export default function SafetyCenter() {
               </h2>
               <p className="text-xl mb-8 opacity-90">
                 Your safety and wellbeing are not negotiable. We're constantly improving our safety features, 
-                listening to community feedback, and working with safety experts to ensure AdyaTribe remains 
+                listening to community feedback, and working with safety experts to ensure LusoTown remains 
                 a secure space for women to build meaningful friendships.
               </p>
               

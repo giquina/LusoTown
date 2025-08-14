@@ -15,7 +15,7 @@ const nextSteps = [
   {
     step: 1,
     icon: DevicePhoneMobileIcon,
-    title: "Download AdyaTribe App",
+    title: "Download LusoTown App",
     description: "Get our mobile app from the App Store or Google Play",
     timeframe: "Within 24 hours"
   },
@@ -156,7 +156,7 @@ export default function SignupSuccess() {
                   href="/how-it-works"
                   className="btn-primary text-base px-8 py-3"
                 >
-                  Learn More About AdyaTribe
+                  Learn More About LusoTown
                 </a>
               </motion.div>
             </div>

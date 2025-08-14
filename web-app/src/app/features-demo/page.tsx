@@ -115,7 +115,7 @@ export default function FeaturesDemo() {
                             <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                               <span className="text-primary-600 text-xs">✓</span>
                             </div>
-                            <p className="text-gray-700">Built for the Lusophone community</p>
+                            <p className="text-gray-700">Built for the Portuguese-speaking community</p>
                           </div>
                         </div>
                       </div>
@@ -207,7 +207,7 @@ export default function FeaturesDemo() {
               </div>
               
               <p className="text-sm opacity-75 mt-6">
-                No commitment required • Completely free • Open to all Lusophone community members and friends
+                No commitment required • Completely free • Open to all Portuguese-speaking community members and friends
               </p>
             </div>
           </div>

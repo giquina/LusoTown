@@ -56,7 +56,7 @@ export default function TermsOfService() {
                 Terms of Service
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Welcome to AdyaTribe! These terms govern your use of our platform and establish the foundation for our safe, supportive community of 30+ single and childfree women.
+                Welcome to LusoTown! These terms govern your use of our platform and establish the foundation for our safe, supportive community of 30+ single and childfree women.
               </p>
             </div>
           </div>
@@ -69,11 +69,11 @@ export default function TermsOfService() {
               <div className="bg-gradient-to-br from-secondary-50 to-white rounded-2xl p-8 mb-12">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                   <HandRaisedIcon className="w-6 h-6 text-secondary-600 mr-3" />
-                  Your Agreement with AdyaTribe
+                  Your Agreement with LusoTown
                 </h2>
                 <div className="space-y-4 text-gray-600">
                   <p>
-                    By using AdyaTribe, you're agreeing to these terms and joining our community committed to:
+                    By using LusoTown, you're agreeing to these terms and joining our community committed to:
                   </p>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="bg-white rounded-lg p-4 border border-secondary-200">
@@ -126,7 +126,7 @@ export default function TermsOfService() {
                   
                   <div className="bg-primary-50 rounded-xl p-6">
                     <h3 className="text-lg font-semibold text-primary-700 mb-3">Membership Requirements</h3>
-                    <p className="text-gray-600 mb-3">To join AdyaTribe, you must:</p>
+                    <p className="text-gray-600 mb-3">To join LusoTown, you must:</p>
                     <ul className="text-gray-600 space-y-2">
                       <li className="flex items-start">
                         <div className="w-2 h-2 bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
@@ -218,10 +218,10 @@ export default function TermsOfService() {
                     </div>
                   </div>
 
-                  <div className="bg-blue-50 rounded-xl p-6">
-                    <h3 className="text-lg font-semibold text-blue-800 mb-3">Content Standards</h3>
-                    <p className="text-blue-700 mb-3">All content you share on AdyaTribe must:</p>
-                    <ul className="text-blue-600 space-y-2">
+                  <div className="bg-primary-50 rounded-xl p-6">
+                    <h3 className="text-lg font-semibold text-primary-800 mb-3">Content Standards</h3>
+                    <p className="text-primary-700 mb-3">All content you share on LusoTown must:</p>
+                    <ul className="text-primary-600 space-y-2">
                       <li>• Be appropriate for a professional women's community</li>
                       <li>• Respect intellectual property rights</li>
                       <li>• Comply with UK laws and regulations</li>
@@ -278,7 +278,7 @@ export default function TermsOfService() {
                     <div className="space-y-3 text-gray-600">
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <p><strong>No commercial use:</strong> AdyaTribe is for personal networking and friendship only</p>
+                        <p><strong>No commercial use:</strong> LusoTown is for personal networking and friendship only</p>
                       </div>
                       <div className="flex items-start">
                         <div className="w-2 h-2 bg-secondary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
@@ -341,7 +341,7 @@ export default function TermsOfService() {
                   <div className="bg-orange-50 border border-orange-200 rounded-xl p-6">
                     <h3 className="text-lg font-semibold text-orange-800 mb-3">Our Safety Commitment</h3>
                     <p className="text-orange-700 mb-3">
-                      AdyaTribe is committed to maintaining a safe environment. We employ:
+                      LusoTown is committed to maintaining a safe environment. We employ:
                     </p>
                     <ul className="text-orange-600 space-y-2">
                       <li>• Mandatory identity verification for all members</li>
@@ -402,9 +402,9 @@ export default function TermsOfService() {
                     which details how we collect, use, and protect your personal information.
                   </p>
                   
-                  <div className="bg-blue-50 rounded-xl p-6">
-                    <h3 className="text-lg font-semibold text-blue-800 mb-3">Key Privacy Principles</h3>
-                    <ul className="text-blue-700 space-y-2">
+                  <div className="bg-primary-50 rounded-xl p-6">
+                    <h3 className="text-lg font-semibold text-primary-800 mb-3">Key Privacy Principles</h3>
+                    <ul className="text-primary-700 space-y-2">
                       <li>• We never sell your personal data to third parties</li>
                       <li>• You control your profile visibility and contact preferences</li>
                       <li>• All data is stored securely within the UK/EU</li>
@@ -420,9 +420,9 @@ export default function TermsOfService() {
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">7. Intellectual Property</h2>
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">AdyaTribe's Property</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-3">LusoTown's Property</h3>
                     <p className="text-gray-600 mb-3">
-                      The AdyaTribe platform, including its design, features, algorithms, and content, is protected by 
+                      The LusoTown platform, including its design, features, algorithms, and content, is protected by 
                       copyright, trademark, and other intellectual property laws. You may not:
                     </p>
                     <ul className="text-gray-600 space-y-2 ml-4">
@@ -435,7 +435,7 @@ export default function TermsOfService() {
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-3">Your Content</h3>
                     <p className="text-gray-600 mb-3">
-                      You retain ownership of content you share on AdyaTribe, but grant us a license to:
+                      You retain ownership of content you share on LusoTown, but grant us a license to:
                     </p>
                     <ul className="text-gray-600 space-y-2 ml-4">
                       <li>• Display your content within the platform</li>
@@ -460,7 +460,7 @@ export default function TermsOfService() {
                   <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-6">
                     <h3 className="text-lg font-semibold text-yellow-800 mb-3">Platform Availability</h3>
                     <p className="text-yellow-700">
-                      While we strive for 99.9% uptime, we cannot guarantee uninterrupted service. AdyaTribe 
+                      While we strive for 99.9% uptime, we cannot guarantee uninterrupted service. LusoTown 
                       is provided "as is" and we are not liable for temporary service interruptions, scheduled 
                       maintenance, or technical difficulties.
                     </p>
@@ -469,7 +469,7 @@ export default function TermsOfService() {
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-4">Member Interactions</h3>
                     <p className="text-gray-600 mb-3">
-                      AdyaTribe facilitates connections between members but is not responsible for:
+                      LusoTown facilitates connections between members but is not responsible for:
                     </p>
                     <ul className="text-gray-600 space-y-2 ml-4">
                       <li>• The accuracy of information provided by other members</li>
@@ -482,7 +482,7 @@ export default function TermsOfService() {
                   <div className="bg-red-50 border border-red-200 rounded-xl p-6">
                     <h3 className="text-lg font-semibold text-red-800 mb-3">Liability Limitations</h3>
                     <p className="text-red-700 text-sm">
-                      To the fullest extent permitted by UK law, AdyaTribe's liability is limited to the amount 
+                      To the fullest extent permitted by UK law, LusoTown's liability is limited to the amount 
                       paid for your subscription in the 12 months prior to any claim. We are not liable for 
                       indirect, incidental, or consequential damages arising from platform use.
                     </p>
@@ -504,7 +504,7 @@ export default function TermsOfService() {
                     </ul>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Termination by AdyaTribe</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Termination by LusoTown</h3>
                     <ul className="text-gray-600 space-y-2">
                       <li>• For violation of these terms</li>
                       <li>• For safety or legal concerns</li>
@@ -541,10 +541,10 @@ export default function TermsOfService() {
                   </p>
                   
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-blue-50 rounded-lg p-4">
-                      <h3 className="font-semibold text-blue-800 mb-2">First Step: Direct Resolution</h3>
-                      <p className="text-blue-700 text-sm">
-                        Contact our support team at hello@adyatribe.com to resolve issues directly
+                    <div className="bg-primary-50 rounded-lg p-4">
+                      <h3 className="font-semibold text-primary-800 mb-2">First Step: Direct Resolution</h3>
+                      <p className="text-primary-700 text-sm">
+                        Contact our support team at hello@lusotown.com to resolve issues directly
                       </p>
                     </div>
                     <div className="bg-green-50 rounded-lg p-4">
@@ -564,14 +564,14 @@ export default function TermsOfService() {
                   <div>
                     <h3 className="text-lg font-semibold mb-3">Questions About These Terms?</h3>
                     <div className="space-y-2">
-                      <p>Email: legal@adyatribe.com</p>
+                      <p>Email: legal@lusotown.com</p>
                       <p>Response Time: Within 48 hours</p>
                     </div>
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-3">General Support</h3>
                     <div className="space-y-2">
-                      <p>Email: hello@adyatribe.com</p>
+                      <p>Email: hello@lusotown.com</p>
                       <p>Hours: Monday-Friday, 9am-6pm GMT</p>
                     </div>
                   </div>
@@ -582,7 +582,7 @@ export default function TermsOfService() {
                     <strong>Last Updated:</strong> January 2025 • <strong>Version:</strong> 1.2
                   </p>
                   <p className="text-sm opacity-90 mt-2">
-                    Thank you for being part of the AdyaTribe community. Together, we're building something special.
+                    Thank you for being part of the LusoTown community. Together, we're building something special.
                   </p>
                 </div>
               </div>

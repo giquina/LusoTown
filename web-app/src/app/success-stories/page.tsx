@@ -42,10 +42,10 @@ interface ImpactStat {
 }
 
 export const metadata: Metadata = {
-  title: 'Success Stories - Real Women, Real Connections | AdyaTribe',
-  description: 'Discover how AdyaTribe has helped thousands of women 30+ across the UK build lasting friendships, launch businesses, and create meaningful support networks. Read authentic success stories from London, Manchester, Edinburgh and beyond.',
+  title: 'Success Stories - Real Women, Real Connections | LusoTown',
+  description: 'Discover how LusoTown has helped thousands of women 30+ across the UK build lasting friendships, launch businesses, and create meaningful support networks. Read authentic success stories from London, Manchester, Edinburgh and beyond.',
   keywords: [
-    'AdyaTribe success stories',
+    'LusoTown success stories',
     'women friendship UK',
     'female networking success',
     '30+ women connections',
@@ -57,8 +57,8 @@ export const metadata: Metadata = {
     'women business partnerships'
   ],
   openGraph: {
-    title: 'Success Stories - Real Women, Real Connections | AdyaTribe',
-    description: 'Discover how AdyaTribe has helped thousands of women 30+ across the UK build lasting friendships, launch businesses, and create meaningful support networks.',
+    title: 'Success Stories - Real Women, Real Connections | LusoTown',
+    description: 'Discover how LusoTown has helped thousands of women 30+ across the UK build lasting friendships, launch businesses, and create meaningful support networks.',
     type: 'website',
     url: 'https://adyatribe.com/success-stories',
     images: [
@@ -66,14 +66,14 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'AdyaTribe Success Stories - Women Building Connections',
+        alt: 'LusoTown Success Stories - Women Building Connections',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Success Stories - Real Women, Real Connections | AdyaTribe',
-    description: 'Discover how AdyaTribe has helped thousands of women 30+ across the UK build lasting friendships and support networks.',
+    title: 'Success Stories - Real Women, Real Connections | LusoTown',
+    description: 'Discover how LusoTown has helped thousands of women 30+ across the UK build lasting friendships and support networks.',
     images: ['/og-image.jpg'],
   },
 }
@@ -87,17 +87,17 @@ export default function SuccessStories() {
       memberSince: "March 2024",
       title: "From Strangers to Best Friends",
       excerpt: "We met at a hiking group and now we're inseparable - traveling together, supporting each other through career changes, and building the sisterhood we always wanted.",
-      story: `I joined AdyaTribe after moving to London for work at 32. As a single, childfree woman in finance, I felt like an outsider in most social circles. Everyone seemed to be coupled up or focused on family life.
+      story: `I joined LusoTown after moving to London for work at 32. As a single, childfree woman in finance, I felt like an outsider in most social circles. Everyone seemed to be coupled up or focused on family life.
 
       Sarah and I met at one of the hiking groups in Hampstead Heath. We were both nervous newcomers, but something clicked immediately. We started chatting about our careers, travel dreams, and the challenges of being independent women in London.
 
       What started as weekend hikes turned into regular coffee dates, then weekend trips to the Cotswolds. When I was made redundant last year, Sarah was my biggest supporter, helping me network and even letting me stay in her spare room while I job-hunted.
 
-      Now, 10 months later, we're planning a month-long trip to Southeast Asia together. AdyaTribe didn't just help me find a friend - it helped me find my person, my chosen family. The community showed me that there are incredible women out there who get it, who celebrate your choices, and who'll be there through thick and thin.`,
+      Now, 10 months later, we're planning a month-long trip to Southeast Asia together. LusoTown didn't just help me find a friend - it helped me find my person, my chosen family. The community showed me that there are incredible women out there who get it, who celebrate your choices, and who'll be there through thick and thin.`,
       image: "members/emma-sarah.jpg",
       tags: ["Career Support", "Travel Buddies", "Best Friends"],
       joinDate: "2024-03",
-      testimonial: "AdyaTribe showed me that chosen family is just as powerful as blood family. Sarah and I are living proof that meaningful friendships can happen at any age."
+      testimonial: "LusoTown showed me that chosen family is just as powerful as blood family. Sarah and I are living proof that meaningful friendships can happen at any age."
     },
     {
       id: 2,
@@ -105,20 +105,20 @@ export default function SuccessStories() {
       location: "Manchester",
       memberSince: "January 2024",
       title: "Building My Support Network",
-      excerpt: "After my divorce at 35, I felt completely lost. AdyaTribe helped me rebuild my confidence and create a support network of amazing women who truly understand my journey.",
+      excerpt: "After my divorce at 35, I felt completely lost. LusoTown helped me rebuild my confidence and create a support network of amazing women who truly understand my journey.",
       story: `My divorce was finalized on New Year's Eve 2023. At 35, I suddenly found myself starting over completely - new flat, new routine, and most challengingly, a new identity as a single woman again.
 
       Most of my married friends meant well, but they couldn't relate to my experience. I needed women who understood what it felt like to be redefining yourself in your 30s, who didn't see being single as something to 'fix.'
 
-      Through AdyaTribe, I found not just one friend, but an entire network. The book club introduced me to literature that helped me process my emotions. The professional networking group helped me rebuild my confidence at work. The weekend activities group showed me I could have fun and adventures on my own terms.
+      Through LusoTown, I found not just one friend, but an entire network. The book club introduced me to literature that helped me process my emotions. The professional networking group helped me rebuild my confidence at work. The weekend activities group showed me I could have fun and adventures on my own terms.
 
       One particular moment stands out: I was having a terrible day after a difficult mediation session. I posted in our Manchester group, and within an hour, three women had reached out. By evening, I had a bouquet of flowers, a bottle of wine, and two friends sitting in my living room just listening.
 
-      I'm now a group organizer myself, hosting monthly brunches for newly single women. I want to pay forward what AdyaTribe gave me - the reminder that you're not alone, that there's a whole community of strong, independent women ready to support each other.`,
+      I'm now a group organizer myself, hosting monthly brunches for newly single women. I want to pay forward what LusoTown gave me - the reminder that you're not alone, that there's a whole community of strong, independent women ready to support each other.`,
       image: "members/priya.jpg",
       tags: ["Divorce Support", "Community Leader", "Personal Growth"],
       joinDate: "2024-01",
-      testimonial: "AdyaTribe taught me that starting over isn't just about rebuilding - it's about building something even better than before."
+      testimonial: "LusoTown taught me that starting over isn't just about rebuilding - it's about building something even better than before."
     },
     {
       id: 3,
@@ -127,7 +127,7 @@ export default function SuccessStories() {
       memberSince: "February 2024",
       title: "Entrepreneurial Partnership",
       excerpt: "We connected over our shared passion for sustainable fashion and ended up launching a business together. Our friendship became the foundation of our startup success.",
-      story: `I'd been struggling with the idea of starting my sustainable fashion consultancy for months, but as a solo entrepreneur, it felt overwhelming. When I joined AdyaTribe's Edinburgh professional network, I was just looking for moral support and maybe some networking opportunities.
+      story: `I'd been struggling with the idea of starting my sustainable fashion consultancy for months, but as a solo entrepreneur, it felt overwhelming. When I joined LusoTown's Edinburgh professional network, I was just looking for moral support and maybe some networking opportunities.
 
       That's where I met Lisa, who had just left her corporate marketing job to pursue ethical business ventures. We grabbed coffee after a networking event and talked for four hours about our shared vision for sustainable commerce.
 
@@ -135,13 +135,13 @@ export default function SuccessStories() {
 
       Our business, Conscious Closet Consulting, launched six months ago and we're already profitable. But more than that, I gained a business partner I trust completely and a friend who shares my values and ambitions.
 
-      The other AdyaTribe members have been incredible supporters too - they were our first clients, our honest critics, and our biggest cheerleaders. We've built not just a business, but a community around conscious consumption.
+      The other LusoTown members have been incredible supporters too - they were our first clients, our honest critics, and our biggest cheerleaders. We've built not just a business, but a community around conscious consumption.
 
-      People ask if mixing friendship and business is risky, but when you find someone through AdyaTribe's verification process who shares your values and work ethic, it actually makes the partnership stronger.`,
+      People ask if mixing friendship and business is risky, but when you find someone through LusoTown's verification process who shares your values and work ethic, it actually makes the partnership stronger.`,
       image: "members/jessica-lisa.jpg",
       tags: ["Business Partners", "Entrepreneurship", "Sustainability"],
       joinDate: "2024-02",
-      testimonial: "AdyaTribe connected me with not just a business partner, but a woman who shares my vision for changing the world through ethical business."
+      testimonial: "LusoTown connected me with not just a business partner, but a woman who shares my vision for changing the world through ethical business."
     }
   ]
 
@@ -167,7 +167,7 @@ export default function SuccessStories() {
     {
       name: "Rachel",
       location: "London",
-      story: "Started a pottery class with women from AdyaTribe - now we have our own studio space and sell our work!",
+      story: "Started a pottery class with women from LusoTown - now we have our own studio space and sell our work!",
       category: "Creative Community"
     },
     {
@@ -197,7 +197,7 @@ export default function SuccessStories() {
     {
       name: "Amelia",
       location: "Oxford",
-      story: "Started a sustainable living workshop with AdyaTribe friends - we're making real environmental impact together.",
+      story: "Started a sustainable living workshop with LusoTown friends - we're making real environmental impact together.",
       category: "Sustainability"
     }
   ]
@@ -225,7 +225,7 @@ export default function SuccessStories() {
                 Success Stories
               </h1>
               <p className="text-lg sm:text-xl text-gray-600 leading-relaxed text-balance">
-                Discover how AdyaTribe has helped thousands of incredible women across the UK build meaningful friendships, 
+                Discover how LusoTown has helped thousands of incredible women across the UK build meaningful friendships, 
                 launch businesses, and create the support networks they always dreamed of.
               </p>
             </div>
@@ -263,7 +263,7 @@ export default function SuccessStories() {
                 Featured Success Stories
               </h2>
               <p className="text-center text-gray-600 mb-16">
-                In-depth stories from women whose lives have been transformed by the AdyaTribe community
+                In-depth stories from women whose lives have been transformed by the LusoTown community
               </p>
 
               <div className="space-y-16 lg:space-y-20">
@@ -439,7 +439,7 @@ export default function SuccessStories() {
                 Ready to Write Your Own Success Story?
               </h2>
               <p className="text-lg sm:text-xl mb-8 opacity-90 text-balance">
-                Join thousands of incredible women who've found their tribe through AdyaTribe. 
+                Join thousands of incredible women who've found their tribe through LusoTown. 
                 Your next best friend, business partner, or support network is waiting for you.
               </p>
               
@@ -449,7 +449,7 @@ export default function SuccessStories() {
                   className="bg-white text-primary-600 hover:bg-gray-50 font-semibold px-8 py-4 rounded-xl transition-colors duration-200 flex items-center justify-center"
                 >
                   <UserGroupIcon className="w-5 h-5 mr-2" />
-                  Join AdyaTribe
+                  Join LusoTown
                 </a>
                 <a
                   href="/how-it-works"

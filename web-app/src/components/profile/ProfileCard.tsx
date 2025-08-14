@@ -86,7 +86,7 @@ export default function ProfileCard({ profile, currentUserId, onClick }: Profile
 
         {/* Verification Badge */}
         {profile.verification.photoVerified && (
-          <div className="absolute top-3 left-3 bg-blue-500 text-white p-1 rounded-full">
+          <div className="absolute top-3 left-3 bg-primary-500 text-white p-1 rounded-full">
             <CheckBadgeIcon className="w-4 h-4" />
           </div>
         )}
@@ -108,7 +108,7 @@ export default function ProfileCard({ profile, currentUserId, onClick }: Profile
             <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
               {profile.name}
               {profile.verification.photoVerified && (
-                <CheckBadgeIcon className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                <CheckBadgeIcon className="w-4 h-4 text-primary-500 flex-shrink-0" />
               )}
             </h3>
             

@@ -101,7 +101,7 @@ export default function Contact() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-gray-900">Email Support</h3>
-                          <p className="text-gray-600">hello@adyatribe.com</p>
+                          <p className="text-gray-600">hello@lusotown.com</p>
                           <p className="text-sm text-gray-500">We typically respond within 24 hours</p>
                         </div>
                       </div>
@@ -136,10 +136,10 @@ export default function Contact() {
                       For urgent safety concerns or technical issues affecting your account, please reach out immediately.
                     </p>
                     <a
-                      href="mailto:urgent@adyatribe.com"
+                      href="mailto:urgent@lusotown.com"
                       className="bg-white text-primary-600 px-6 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200 inline-block"
                     >
-                      urgent@adyatribe.com
+                      urgent@lusotown.com
                     </a>
                   </div>
                 </div>

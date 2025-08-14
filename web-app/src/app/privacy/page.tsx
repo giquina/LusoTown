@@ -56,7 +56,7 @@ export default function PrivacyPolicy() {
                 Privacy Policy
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Your privacy is fundamental to everything we do at AdyaTribe. This policy explains how we collect, use, and protect your personal data in accordance with UK GDPR and Data Protection Act 2018.
+                Your privacy is fundamental to everything we do at LusoTown. This policy explains how we collect, use, and protect your personal data in accordance with UK GDPR and Data Protection Act 2018.
               </p>
             </div>
           </div>
@@ -119,14 +119,14 @@ export default function PrivacyPolicy() {
                 </h2>
                 <div className="prose text-gray-600 space-y-4">
                   <p>
-                    AdyaTribe is operated by AdyaTribe Ltd, a company registered in England and Wales. 
+                    LusoTown is operated by LusoTown Ltd, a company registered in England and Wales. 
                     We are committed to protecting and respecting your privacy in accordance with the 
                     UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
                   </p>
                   <div className="bg-gray-50 rounded-lg p-4">
                     <p className="font-semibold text-gray-900 mb-2">Data Controller Details:</p>
-                    <p>AdyaTribe Ltd<br />
-                    Email: privacy@adyatribe.com<br />
+                    <p>LusoTown Ltd<br />
+                    Email: privacy@lusotown.com<br />
                     Address: London, United Kingdom<br />
                     ICO Registration: [Pending Registration]</p>
                   </div>
@@ -252,7 +252,7 @@ export default function PrivacyPolicy() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="w-4 h-4 bg-blue-400 rounded-full mt-1 mr-4 flex-shrink-0"></div>
+                    <div className="w-4 h-4 bg-primary-400 rounded-full mt-1 mr-4 flex-shrink-0"></div>
                     <div>
                       <h3 className="font-semibold text-gray-900">Legitimate Interest</h3>
                       <p className="text-gray-600">Ensuring platform safety, preventing fraud, and improving user experience</p>
@@ -285,7 +285,7 @@ export default function PrivacyPolicy() {
                   <div className="bg-red-50 border border-red-200 rounded-xl p-6">
                     <h3 className="text-lg font-semibold text-red-800 mb-3">We Never Sell Your Data</h3>
                     <p className="text-red-700">
-                      AdyaTribe will never sell, rent, or trade your personal information to third parties for marketing purposes.
+                      LusoTown will never sell, rent, or trade your personal information to third parties for marketing purposes.
                     </p>
                   </div>
 
@@ -370,7 +370,7 @@ export default function PrivacyPolicy() {
                   </p>
                   <div className="flex items-center space-x-4">
                     <EnvelopeIcon className="w-5 h-5 text-primary-600" />
-                    <span className="text-primary-600 font-medium">privacy@adyatribe.com</span>
+                    <span className="text-primary-600 font-medium">privacy@lusotown.com</span>
                   </div>
                   <p className="text-sm text-gray-500 mt-3">
                     We will respond to all requests within 30 days and may require verification of your identity.
@@ -438,7 +438,7 @@ export default function PrivacyPolicy() {
                     <div className="space-y-2">
                       <div className="flex items-center">
                         <EnvelopeIcon className="w-5 h-5 mr-3" />
-                        <span>privacy@adyatribe.com</span>
+                        <span>privacy@lusotown.com</span>
                       </div>
                       <p className="text-sm opacity-90">
                         For all privacy-related inquiries, data requests, and concerns
@@ -450,7 +450,7 @@ export default function PrivacyPolicy() {
                     <div className="space-y-2">
                       <div className="flex items-center">
                         <EnvelopeIcon className="w-5 h-5 mr-3" />
-                        <span>hello@adyatribe.com</span>
+                        <span>hello@lusotown.com</span>
                       </div>
                       <p className="text-sm opacity-90">
                         For general questions about our platform and services

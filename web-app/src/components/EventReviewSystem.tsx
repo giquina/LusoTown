@@ -217,15 +217,15 @@ export const EventReviewSystem: React.FC<EventReviewSystemProps> = ({
           <div className="text-xs text-green-600">Satisfaction Rate</div>
         </div>
         
-        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg border border-blue-100">
+        <div className="bg-gradient-to-r from-primary-50 to-primary-100 p-4 rounded-lg border border-primary-100">
           <div className="flex items-center gap-2 mb-1">
-            <UserGroupIcon className="w-5 h-5 text-blue-600" />
-            <span className="text-sm font-medium text-blue-800">Cultural Connection</span>
+            <UserGroupIcon className="w-5 h-5 text-primary-600" />
+            <span className="text-sm font-medium text-primary-800">Cultural Connection</span>
           </div>
-          <div className="text-2xl font-bold text-blue-700">
+          <div className="text-2xl font-bold text-primary-700">
             {event.reviews?.filter(r => r.rating >= 4).length || 0}
           </div>
-          <div className="text-xs text-blue-600">Highly Rated Reviews</div>
+          <div className="text-xs text-primary-600">Highly Rated Reviews</div>
         </div>
         
         <div className="bg-gradient-to-r from-purple-50 to-fuchsia-50 p-4 rounded-lg border border-purple-100">
@@ -504,7 +504,7 @@ const ReviewCard: React.FC<{ review: EventReview }> = ({ review }) => {
             </div>
             <span className={`text-xs font-medium px-2 py-1 rounded-full ${
               review.membershipTier === 'premium' ? 'bg-purple-100 text-purple-700' :
-              review.membershipTier === 'core' ? 'bg-blue-100 text-blue-700' :
+              review.membershipTier === 'core' ? 'bg-secondary-100 text-secondary-700' :
               'bg-green-100 text-green-700'
             }`}>
               {review.membershipTier}

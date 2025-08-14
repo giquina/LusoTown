@@ -89,7 +89,7 @@ const DUMMY_USERS: UserData[] = [
   {
     id: '1',
     name: 'Sarah Johnson',
-    email: 'user@adyatribe.com',
+    email: 'user@lusotown.com',
     role: 'user',
     membershipTier: 'core',
     joinedDate: '2024-01-15',
@@ -100,7 +100,7 @@ const DUMMY_USERS: UserData[] = [
   {
     id: '2',
     name: 'Emma Williams',
-    email: 'admin@adyatribe.com',
+    email: 'admin@lusotown.com',
     role: 'admin',
     membershipTier: 'premium',
     joinedDate: '2023-06-01',
@@ -111,7 +111,7 @@ const DUMMY_USERS: UserData[] = [
   {
     id: '3',
     name: 'Jessica Brown',
-    email: 'free@adyatribe.com',
+    email: 'free@lusotown.com',
     role: 'user',
     membershipTier: 'free',
     joinedDate: '2024-03-01',
@@ -372,7 +372,7 @@ export default function AdminDashboard() {
                       <div>
                         <p className="text-gray-600 text-sm">Total Events</p>
                         <p className="text-2xl font-bold text-gray-900">{ADMIN_STATS.totalEvents}</p>
-                        <p className="text-blue-600 text-sm">{ADMIN_STATS.upcomingEvents} upcoming</p>
+                        <p className="text-primary-600 text-sm">{ADMIN_STATS.upcomingEvents} upcoming</p>
                       </div>
                       <Calendar className="w-8 h-8 text-purple-500" />
                     </div>
@@ -506,7 +506,7 @@ export default function AdminDashboard() {
                             <td className="py-4 px-4 text-gray-600">{user.lastActive}</td>
                             <td className="py-4 px-4">
                               <div className="flex items-center space-x-2">
-                                <button className="p-1 text-gray-400 hover:text-blue-600 transition-colors">
+                                <button className="p-1 text-gray-400 hover:text-primary-600 transition-colors">
                                   <Eye className="w-4 h-4" />
                                 </button>
                                 <button className="p-1 text-gray-400 hover:text-orange-600 transition-colors">
@@ -545,7 +545,7 @@ export default function AdminDashboard() {
                         <div className="flex justify-between items-start mb-3">
                           <h3 className="font-semibold text-gray-900 text-sm">{event.title}</h3>
                           <div className="flex space-x-1">
-                            <button className="p-1 text-gray-400 hover:text-blue-600 transition-colors">
+                            <button className="p-1 text-gray-400 hover:text-primary-600 transition-colors">
                               <Eye className="w-3 h-3" />
                             </button>
                             <button className="p-1 text-gray-400 hover:text-orange-600 transition-colors">

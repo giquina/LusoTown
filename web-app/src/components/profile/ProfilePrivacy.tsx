@@ -40,7 +40,7 @@ export default function ProfilePrivacy({ privacy, onChange }: ProfilePrivacyProp
     members_only: {
       icon: <UserGroupIcon className="w-4 h-4" />,
       label: 'Members Only',
-      description: 'Visible only to AdyaTribe members'
+      description: 'Visible only to LusoTown members'
     },
     connections_only: {
       icon: <LockClosedIcon className="w-4 h-4" />,
@@ -70,7 +70,7 @@ export default function ProfilePrivacy({ privacy, onChange }: ProfilePrivacyProp
       <div>
         <h2 className="text-2xl font-bold text-gray-900 mb-2">Privacy Settings</h2>
         <p className="text-gray-600">
-          Control who can see your information and contact you on AdyaTribe.
+          Control who can see your information and contact you on LusoTown.
         </p>
       </div>
 
@@ -220,32 +220,32 @@ export default function ProfilePrivacy({ privacy, onChange }: ProfilePrivacyProp
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
-        className="bg-blue-50 border border-blue-200 rounded-xl p-6"
+        className="bg-primary-50 border border-primary-200 rounded-xl p-6"
       >
-        <h3 className="text-lg font-semibold text-blue-900 mb-4">Current Privacy Level</h3>
+        <h3 className="text-lg font-semibold text-primary-900 mb-4">Current Privacy Level</h3>
         <div className="space-y-3 text-sm">
           <div className="flex items-center justify-between">
-            <span className="text-blue-800">Profile Visibility:</span>
-            <div className="flex items-center gap-2 text-blue-900 font-medium">
+            <span className="text-primary-800">Profile Visibility:</span>
+            <div className="flex items-center gap-2 text-primary-900 font-medium">
               {privacyLevels[privacy.profileVisibility].icon}
               {privacyLevels[privacy.profileVisibility].label}
             </div>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-blue-800">Age Visibility:</span>
-            <span className="text-blue-900 font-medium">
+            <span className="text-primary-800">Age Visibility:</span>
+            <span className="text-primary-900 font-medium">
               {privacy.showAge ? 'Visible' : 'Hidden'}
             </span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-blue-800">Location Visibility:</span>
-            <span className="text-blue-900 font-medium">
+            <span className="text-primary-800">Location Visibility:</span>
+            <span className="text-primary-900 font-medium">
               {privacy.showLocation ? 'Visible' : 'Hidden'}
             </span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-blue-800">Who Can Message:</span>
-            <span className="text-blue-900 font-medium">
+            <span className="text-primary-800">Who Can Message:</span>
+            <span className="text-primary-900 font-medium">
               {messageSettings[privacy.allowMessages].label}
             </span>
           </div>

@@ -426,7 +426,7 @@ export default function CommunityFeed() {
                           <button className="p-1 text-gray-400 hover:text-red-500">
                             ❤️
                           </button>
-                          <button className="p-1 text-gray-400 hover:text-blue-500">
+                          <button className="p-1 text-gray-400 hover:text-primary-500">
                             👍
                           </button>
                           <button className="p-1 text-gray-400 hover:text-yellow-500">

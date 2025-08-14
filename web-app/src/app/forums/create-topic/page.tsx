@@ -174,7 +174,7 @@ export default function CreateTopic() {
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Create New Topic</h1>
           <p className="text-gray-600">
-            Start a meaningful conversation with the AdyaTribe community
+            Start a meaningful conversation with the LusoTown community
           </p>
         </div>
 
@@ -359,12 +359,12 @@ export default function CreateTopic() {
             </div>
 
             {/* Guidelines */}
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+            <div className="bg-primary-50 border border-primary-200 rounded-lg p-4">
               <div className="flex items-start space-x-3">
-                <MessageSquare className="w-5 h-5 text-blue-600 mt-0.5" />
+                <MessageSquare className="w-5 h-5 text-primary-600 mt-0.5" />
                 <div>
-                  <h4 className="font-medium text-blue-900 mb-2">Community Guidelines</h4>
-                  <ul className="text-sm text-blue-800 space-y-1">
+                  <h4 className="font-medium text-primary-900 mb-2">Community Guidelines</h4>
+                  <ul className="text-sm text-primary-800 space-y-1">
                     <li>• Be respectful and kind to all community members</li>
                     <li>• Keep discussions relevant to the chosen category</li>
                     <li>• Use clear, descriptive titles and detailed descriptions</li>

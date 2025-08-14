@@ -57,7 +57,7 @@ export default function Hero() {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-action-500 to-action-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
                   <HeartIcon className="h-6 w-6 text-white" />
                 </div>
-                <span className="text-xs font-bold text-gray-800 tracking-wide text-center">CULTURAL EVENTS</span>
+<span className="text-xs font-bold text-gray-800 tracking-wide text-center">REAL EVENTS</span>
               </div>
               <div className="group flex items-center gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-secondary-500 to-secondary-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
@@ -76,7 +76,7 @@ export default function Hero() {
             {/* CTA Buttons */}
             <div className={`flex flex-col sm:flex-row gap-4 sm:gap-6 transition-all duration-1000 delay-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
               <a
-                href="/signup"
+                href="/events"
                 className="group relative text-lg font-bold px-8 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden w-full sm:w-auto text-center"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-secondary-700 via-action-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -86,7 +86,7 @@ export default function Hero() {
                 </span>
               </a>
               <a
-                href="/events"
+                href="/signup"
                 className="text-lg font-bold px-8 py-4 bg-white/70 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:text-secondary-700 hover:-translate-y-1 w-full sm:w-auto text-center"
               >
                 {t('hero.cta.secondary')}
@@ -99,8 +99,8 @@ export default function Hero() {
             <div className="relative z-10 bg-white/20 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/30">
               <div className="space-y-6">
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">Join 500+ Portuguese Speakers</h3>
-                  <p className="text-gray-600">Celebrating heritage across the UK</p>
+<h3 className="text-2xl font-bold text-gray-800 mb-2">Join 500+ Portuguese Speakers</h3>
+                  <p className="text-gray-600">Meeting in real places across London & UK</p>
                 </div>
 
                 {/* Member avatars */}
@@ -121,11 +121,11 @@ export default function Hero() {
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div className="bg-white/40 rounded-2xl p-4">
                     <div className="text-3xl font-bold text-green-600">75+</div>
-                    <div className="text-sm text-gray-600">Portuguese Businesses</div>
+                    <div className="text-sm text-gray-600">Real Businesses</div>
                   </div>
                   <div className="bg-white/40 rounded-2xl p-4">
                     <div className="text-3xl font-bold text-red-600">40+</div>
-                    <div className="text-sm text-gray-600">Monthly Events</div>
+                    <div className="text-sm text-gray-600">Real Meetups</div>
                   </div>
                 </div>
 

@@ -171,7 +171,7 @@ export default function Footer() {
                   href="https://www.facebook.com/LusoTownUK"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-500 transition-colors duration-200"
+                  className="text-gray-400 hover:text-primary-500 transition-colors duration-200"
                   aria-label="Follow us on Facebook"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -195,7 +195,7 @@ export default function Footer() {
                   href="https://twitter.com/LusoTownUK"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                  className="text-gray-400 hover:text-primary-400 transition-colors duration-200"
                   aria-label="Follow us on Twitter"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -207,7 +207,7 @@ export default function Footer() {
                   href="https://www.linkedin.com/company/lusotown-uk"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-600 transition-colors duration-200"
+                  className="text-gray-400 hover:text-primary-600 transition-colors duration-200"
                   aria-label="Follow us on LinkedIn"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

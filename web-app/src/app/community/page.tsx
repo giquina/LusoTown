@@ -410,7 +410,7 @@ export default function Community() {
                     <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 ring-4 ring-white shadow-lg">
                       <img 
                         src={member.image} 
-                        alt={`${member.name} - AdyaTribe member`}
+                        alt={`${member.name} - LusoTown member`}
                         className="w-full h-full object-cover"
                       />
                     </div>

@@ -76,7 +76,7 @@ const testimonials = {
       age: "26",
       location: "Berlin, Germany",
       imageId: "fernanda-santos",
-      quote: "Found amazing Portuguese language exchange events and dance workshops through LusoTown. As a Brazilian in Berlin, the platform helped me discover our thriving Lusophone community here.",
+      quote: "Found amazing Portuguese language exchange events and dance workshops through LusoTown. As a Brazilian in Berlin, the platform helped me discover our thriving Portuguese-speaking community here.",
       rating: 5,
       relationship: "Language & Dance Event Attendee"
     },
@@ -159,7 +159,7 @@ const testimonials = {
       age: "26",
       location: "Berlim, Alemanha",
       imageId: "fernanda-santos",
-      quote: "Encontrei eventos incríveis de intercâmbio de língua portuguesa e workshops de dança através da LusoTown. Como brasileira em Berlim, a plataforma ajudou-me a descobrir a nossa próspera comunidade lusófona aqui.",
+      quote: "Encontrei eventos incríveis de intercâmbio de língua portuguesa e workshops de dança através da LusoTown. Como brasileira em Berlim, a plataforma ajudou-me a descobrir a nossa próspera comunidade de língua portuguesa aqui.",
       rating: 5,
       relationship: "Participante de Eventos de Língua & Dança"
     },

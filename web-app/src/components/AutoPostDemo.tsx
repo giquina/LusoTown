@@ -106,9 +106,9 @@ export default function AutoPostDemo() {
         </div>
       )}
       
-      <div className="bg-blue-50 rounded-lg p-4 border border-blue-100">
-        <h4 className="font-semibold text-blue-900 mb-2">How It Works:</h4>
-        <ul className="text-sm text-blue-800 space-y-1">
+      <div className="bg-primary-50 rounded-lg p-4 border border-primary-100">
+        <h4 className="font-semibold text-primary-900 mb-2">How It Works:</h4>
+        <ul className="text-sm text-primary-800 space-y-1">
           <li>• Click "RSVP Now" to confirm attendance</li>
           <li>• Automatically creates a post in LusoFeed</li>
           <li>• Your friends can see you're attending</li>

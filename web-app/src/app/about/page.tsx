@@ -142,7 +142,7 @@ export default function About() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-8 h-8 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       👥
                     </div>
                     <div>
@@ -345,7 +345,7 @@ export default function About() {
                   </div>
                   
                   {/* Cape Verde */}
-                  <div className="border-2 border-blue-100 rounded-xl p-6 hover:shadow-lg transition-all hover:border-blue-200 bg-gradient-to-br from-white to-blue-50/30">
+                  <div className="border-2 border-primary-100 rounded-xl p-6 hover:shadow-lg transition-all hover:border-primary-200 bg-gradient-to-br from-white to-primary-50/30">
                     <div className="flex items-center gap-3 mb-4">
                       <span className="text-4xl">🇨🇻</span>
                       <div>
@@ -607,16 +607,16 @@ export default function About() {
               </div>
 
               {/* Event Guidelines Notice */}
-              <div className="bg-blue-50 border-l-4 border-blue-500 rounded-r-xl p-6">
-                <h4 className="text-lg font-semibold text-blue-900 mb-3">Our Event Philosophy</h4>
-                <p className="text-blue-800">
+              <div className="bg-primary-50 border-l-4 border-primary-500 rounded-r-xl p-6">
+                <h4 className="text-lg font-semibold text-primary-900 mb-3">Our Event Philosophy</h4>
+                <p className="text-primary-800">
                   We maintain thoughtful guidelines for our events to ensure everyone feels comfortable and welcome. 
                   Our events focus on cultural celebration, language preservation, and community building—not religious 
                   themes, as we believe faith is beautifully personal. We're here to enjoy life together, learn from 
                   each other, and celebrate the rich tapestry of Portuguese-speaking cultures.
                 </p>
                 <div className="mt-4">
-                  <a href="/community-guidelines" className="text-blue-600 hover:text-blue-800 font-medium underline">
+                  <a href="/community-guidelines" className="text-primary-600 hover:text-primary-800 font-medium underline">
                     Read our full Community Guidelines →
                   </a>
                 </div>

@@ -27,7 +27,7 @@ function mapProfileToUser(profile: Profile, supabaseUser: SupabaseUser): User {
     id: profile.id,
     email: profile.email,
     name: profile.first_name + (profile.last_name ? ` ${profile.last_name}` : ''),
-    role: profile.email.includes('admin@adyatribe.com') ? 'admin' : 'user', // Simple admin check
+    role: profile.email.includes('admin@lusotown.com') ? 'admin' : 'user', // Simple admin check
     membershipTier: profile.membership_tier,
     profileImage: profile.profile_picture_url || getImageWithFallback('default-user'),
     joinedDate: new Date(profile.created_at).toISOString().split('T')[0],

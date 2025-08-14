@@ -643,13 +643,13 @@ export default function CreateEventPage() {
                       </label>
                       <div className="space-y-2 mb-4">
                         {formData.whatToBring.map((item, index) => (
-                          <div key={index} className="flex items-center gap-2 bg-blue-50 px-3 py-2 rounded-lg">
-                            <InformationCircleIcon className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                          <div key={index} className="flex items-center gap-2 bg-primary-50 px-3 py-2 rounded-lg">
+                            <InformationCircleIcon className="w-5 h-5 text-primary-600 flex-shrink-0" />
                             <span className="flex-1 text-sm">{item}</span>
                             <button
                               type="button"
                               onClick={() => removeBring(index)}
-                              className="text-blue-600 hover:text-blue-800"
+                              className="text-primary-600 hover:text-primary-800"
                             >
                               <XMarkIcon className="w-4 h-4" />
                             </button>
@@ -668,7 +668,7 @@ export default function CreateEventPage() {
                         <button
                           type="button"
                           onClick={addBring}
-                          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+                          className="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors"
                         >
                           <PlusIcon className="w-5 h-5" />
                         </button>
