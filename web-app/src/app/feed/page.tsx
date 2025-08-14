@@ -17,7 +17,7 @@ import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import PersonalizedFeed from '@/components/PersonalizedFeed'
-import { useLanguage } from '@/context/LanguageContext'
+import { useLanguage, Language } from '@/context/LanguageContext'
 
 interface FeedPost {
   id: string
@@ -204,7 +204,7 @@ export default function CommunityFeed() {
                         : 'bg-white text-gray-700 hover:bg-gray-50'
                     }`}
                   >
-                    {language === 'pt' ? 'Minha Rede' : 'My Network'}
+                    {(language === 'pt-pt' || language === 'pt-br') ? 'Minha Rede' : 'My Network'}
                   </button>
                   <button
                     onClick={() => setFeedType('community')}
@@ -214,7 +214,7 @@ export default function CommunityFeed() {
                         : 'bg-white text-gray-700 hover:bg-gray-50'
                     }`}
                   >
-                    {language === 'pt' ? 'Comunidade' : 'Community'}
+                    {(language === 'pt-pt' || language === 'pt-br') ? 'Comunidade' : 'Community'}
                   </button>
                 </div>
                 
@@ -222,11 +222,12 @@ export default function CommunityFeed() {
                   <LanguageIcon className="w-5 h-5 text-gray-600" />
                   <select
                     value={language}
-                    onChange={(e) => setLanguage(e.target.value as 'en' | 'pt')}
+                    onChange={(e) => setLanguage(e.target.value as Language)}
                     className="bg-transparent text-gray-700 font-medium focus:outline-none"
                   >
                     <option value="en">English</option>
-                    <option value="pt">Português</option>
+                    <option value="pt-pt">Português (Portugal)</option>
+                    <option value="pt-br">Português (Brasil)</option>
                   </select>
                 </div>
               </div>
