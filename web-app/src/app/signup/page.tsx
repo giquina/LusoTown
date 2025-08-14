@@ -87,7 +87,8 @@ export default function Signup() {
   const router = useRouter()
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value, type, checked } = e.target
+    const { name, value, type } = e.target
+    const checked = (e.target as HTMLInputElement).checked
     setFormData(prev => ({
       ...prev,
       [name]: type === 'checkbox' ? checked : value
@@ -203,11 +204,11 @@ export default function Signup() {
                 </div>
                 
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-                  Your Home for <span className="gradient-text">Portuguese Culture</span>
+                  {t('signup.title', 'Your Home for')} <span className="gradient-text">{t('signup.title-accent', 'Portuguese Culture')}</span>
                 </h1>
                 
                 <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-                  A vibrant community of Portuguese speakers across London celebrating culture, language, and heritage together.
+                  {t('signup.subtitle', 'A vibrant community of Portuguese speakers across London celebrating culture, language, and heritage together. From family bakeries in Stockwell to cultural centers in Vauxhall - find your people.')}
                 </p>
                 
                 <div className="space-y-4 sm:space-y-6 mb-8">
@@ -367,7 +368,7 @@ export default function Signup() {
 
                     <div>
                       <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2">
-                        Confirm Password
+                        {t('signup.confirm-password', 'Confirm Password')}
                       </label>
                       <input
                         type="password"
@@ -378,9 +379,131 @@ export default function Signup() {
                         disabled={isSubmitting}
                         required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50"
-                        placeholder="Confirm your password"
+                        placeholder={t('signup.confirm-password-placeholder', 'Confirm your password')}
                         minLength={6}
                       />
+                    </div>
+
+                    {/* Portuguese Community Onboarding */}
+                    <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-6 rounded-xl border border-primary-100">
+                      <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                        🇵🇹 {t('signup.portuguese-community', 'Join the Portuguese Community')}
+                      </h3>
+                      
+                      <div className="grid sm:grid-cols-2 gap-4 mb-4">
+                        <div>
+                          <label htmlFor="portugueseOrigin" className="block text-sm font-medium text-gray-700 mb-2">
+                            {t('signup.portuguese-origin', 'Portuguese Origin')}
+                          </label>
+                          <select
+                            id="portugueseOrigin"
+                            name="portugueseOrigin"
+                            value={formData.portugueseOrigin}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
+                          >
+                            <option value="">{t('signup.select-origin', 'Select your origin (optional)')}</option>
+                            <option value="portugal">🇵🇹 Portugal</option>
+                            <option value="brazil">🇧🇷 Brasil</option>
+                            <option value="angola">🇦🇴 Angola</option>
+                            <option value="mozambique">🇲🇿 Moçambique</option>
+                            <option value="cape-verde">🇨🇻 Cabo Verde</option>
+                            <option value="guinea-bissau">🇬🇼 Guiné-Bissau</option>
+                            <option value="sao-tome">🇸🇹 São Tomé e Príncipe</option>
+                            <option value="east-timor">🇹🇱 Timor-Leste</option>
+                            <option value="macau">🇲🇴 Macau</option>
+                            <option value="uk-born">🇬🇧 UK-born with Portuguese heritage</option>
+                            <option value="other">🌍 Other Portuguese-speaking background</option>
+                          </select>
+                        </div>
+                        
+                        <div>
+                          <label htmlFor="londonArea" className="block text-sm font-medium text-gray-700 mb-2">
+                            {t('signup.london-area', 'London Area')}
+                          </label>
+                          <select
+                            id="londonArea"
+                            name="londonArea"
+                            value={formData.londonArea}
+                            onChange={handleInputChange}
+                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
+                          >
+                            <option value="">{t('signup.select-area', 'Select your area (optional)')}</option>
+                            <optgroup label={t('signup.south-london', 'South London (Portuguese Areas)')}>
+                              <option value="stockwell">🇵🇹 Stockwell</option>
+                              <option value="vauxhall">🏛️ Vauxhall</option>
+                              <option value="elephant-castle">🐘 Elephant & Castle</option>
+                              <option value="bermondsey">🏢 Bermondsey</option>
+                              <option value="lambeth">🌉 Lambeth</option>
+                            </optgroup>
+                            <optgroup label={t('signup.central-north', 'Central & North London')}>
+                              <option value="camden">🎵 Camden</option>
+                              <option value="kensington">🎨 South Kensington</option>
+                              <option value="westminster">🏛️ Westminster</option>
+                              <option value="islington">📚 Islington</option>
+                            </optgroup>
+                            <optgroup label={t('signup.other-areas', 'Other Areas')}>
+                              <option value="east">📱 East London</option>
+                              <option value="west">🌳 West London</option>
+                              <option value="outside-london">🚂 Outside London</option>
+                            </optgroup>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div className="mb-4">
+                        <label htmlFor="languagePreference" className="block text-sm font-medium text-gray-700 mb-2">
+                          {t('signup.language-preference', 'Preferred Language for Events')}
+                        </label>
+                        <select
+                          id="languagePreference"
+                          name="languagePreference"
+                          value={formData.languagePreference}
+                          onChange={handleInputChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
+                        >
+                          <option value="en">🇬🇧 English (I prefer events in English)</option>
+                          <option value="pt">🇵🇹 Português (I prefer events in Portuguese)</option>
+                          <option value="both">🌍 Both (I'm comfortable with both languages)</option>
+                        </select>
+                      </div>
+
+                      {/* Interests */}
+                      <div>
+                        <label className="block text-sm font-medium text-gray-700 mb-3">
+                          {t('signup.interests', 'What interests you? (Select all that apply)')}
+                        </label>
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                          {[
+                            { key: 'fado', label: '🎵 Fado', description: 'Traditional Portuguese music' },
+                            { key: 'food', label: '🍽️ Portuguese Cuisine', description: 'Cooking and food events' },
+                            { key: 'family', label: '👨‍👩‍👧‍👦 Family Events', description: 'Family-friendly activities' },
+                            { key: 'language', label: '🗣️ Language Exchange', description: 'Practice Portuguese/English' },
+                            { key: 'business', label: '💼 Business Networking', description: 'Professional connections' },
+                            { key: 'culture', label: '🏛️ Cultural Events', description: 'Festivals and celebrations' },
+                            { key: 'sports', label: '⚽ Sports', description: 'Football and other sports' },
+                            { key: 'arts', label: '🎨 Arts & Crafts', description: 'Creative activities' },
+                            { key: 'dance', label: '💃 Dancing', description: 'Traditional and modern dance' },
+                            { key: 'youth', label: '🎓 Young Professionals', description: '20s-30s networking' },
+                            { key: 'seniors', label: '👴 Seniors', description: '50+ community activities' },
+                            { key: 'education', label: '📚 Education', description: 'Learning and workshops' }
+                          ].map((interest) => (
+                            <button
+                              key={interest.key}
+                              type="button"
+                              onClick={() => handleInterestToggle(interest.key)}
+                              className={`text-left p-2 rounded-lg text-xs transition-all ${
+                                formData.interests.includes(interest.key)
+                                  ? 'bg-primary-500 text-white shadow-md transform scale-105'
+                                  : 'bg-white/60 text-gray-700 hover:bg-white border border-gray-200 hover:shadow-sm'
+                              }`}
+                              title={interest.description}
+                            >
+                              {interest.label}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                     
                     <div>
@@ -405,26 +528,46 @@ export default function Signup() {
                     </div>
                     
                     {/* What to expect section */}
-                    <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-4 rounded-xl border border-white/80">
-                      <h3 className="font-semibold text-gray-900 mb-3 text-sm">What happens next?</h3>
+                    <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-4 rounded-xl border border-primary-200">
+                      <h3 className="font-semibold text-gray-900 mb-3 text-sm flex items-center gap-2">
+                        🎉 {t('signup.what-happens-next', 'What happens next?')}
+                      </h3>
                       <div className="space-y-2 text-xs text-gray-600">
                         <div className="flex items-center gap-2">
-                          <div className="w-4 h-4 bg-primary-400 rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-4 h-4 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0">
                             <span className="text-white text-xs font-bold">1</span>
                           </div>
-                          <span>Download our mobile app for verification</span>
+                          <span>{t('signup.step-1', 'Email verification (instant) to confirm your account')}</span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <div className="w-4 h-4 bg-primary-400 rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-4 h-4 bg-secondary-500 rounded-full flex items-center justify-center flex-shrink-0">
                             <span className="text-white text-xs font-bold">2</span>
                           </div>
-                          <span>Complete selfie verification for safety</span>
+                          <span>{t('signup.step-2', 'Find Portuguese events and groups near you in London')}</span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <div className="w-4 h-4 bg-primary-400 rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-4 h-4 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
                             <span className="text-white text-xs font-bold">3</span>
                           </div>
-                          <span>Connect with Portuguese community in London</span>
+                          <span>{t('signup.step-3', 'Connect with 500+ Portuguese speakers at real venues')}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span className="text-white text-xs font-bold">4</span>
+                          </div>
+                          <span>{t('signup.step-4', 'Optional: Download mobile app for event updates')}</span>
+                        </div>
+                      </div>
+                      
+                      {/* Popular first events */}
+                      <div className="mt-4 pt-3 border-t border-primary-200">
+                        <p className="text-xs text-gray-600 mb-2 font-medium">
+                          🔥 {t('signup.popular-first-events', 'Popular first events for new members:')}
+                        </p>
+                        <div className="flex flex-wrap gap-1">
+                          <span className="text-xs bg-white/60 text-gray-700 px-2 py-1 rounded-full">☕ Coffee Meetup (Stockwell)</span>
+                          <span className="text-xs bg-white/60 text-gray-700 px-2 py-1 rounded-full">🎵 Fado Night (Camden)</span>
+                          <span className="text-xs bg-white/60 text-gray-700 px-2 py-1 rounded-full">👨‍👩‍👧‍👦 Family Sunday (Vauxhall)</span>
                         </div>
                       </div>
                     </div>
