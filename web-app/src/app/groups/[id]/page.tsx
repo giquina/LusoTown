@@ -437,7 +437,7 @@ export default function GroupDetailPage({ params }: PageProps) {
                       </span>
                     )}
                     {group.cultural_focus.language_learning && (
-                      <span className="inline-flex items-center px-3 py-2 rounded-full text-sm bg-blue-100 text-blue-800">
+                      <span className="inline-flex items-center px-3 py-2 rounded-full text-sm bg-secondary-100 text-secondary-800">
                         📚 Portuguese language learning
                       </span>
                     )}

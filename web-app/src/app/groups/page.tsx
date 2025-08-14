@@ -254,7 +254,7 @@ export default function GroupsPage() {
                 </span>
               )}
               {group.cultural_focus.language_learning && (
-                <span className="inline-flex items-center px-2 py-1 rounded text-xs bg-blue-100 text-blue-800">
+                <span className="inline-flex items-center px-2 py-1 rounded text-xs bg-secondary-100 text-secondary-800">
                   📚 Language
                 </span>
               )}
