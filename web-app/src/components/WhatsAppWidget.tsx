@@ -411,11 +411,9 @@ const WhatsAppWidget: React.FC = () => {
 
       {/* Initial Welcome Tooltip */}
       {!hasInteracted && !isOpen && (
-        <div className="absolute bottom-16 right-0 bg-white p-3 rounded-lg shadow-lg border border-gray-200 max-w-[240px] animate-fade-in">
-          <div className="text-sm">
-            <div className="mt-2 text-xs text-red-600 font-medium">
-              {isPortuguese ? 'Clica para começar →' : 'Click to start →'}
-            </div>
+        <div className="absolute bottom-16 right-0 bg-white px-4 py-3 rounded-lg shadow-lg border border-gray-200 animate-fade-in whitespace-nowrap">
+          <div className="text-xs text-red-600 font-medium">
+            {isPortuguese ? 'Clica para começar →' : 'Click to start →'}
           </div>
           {/* Arrow pointing to button */}
           <div className="absolute -bottom-2 right-6 w-0 h-0 border-l-6 border-l-transparent border-r-6 border-r-transparent border-t-6 border-t-white"></div>

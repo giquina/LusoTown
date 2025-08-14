@@ -51,6 +51,9 @@ export class AuthService {
   }
 
   private initializeAuthListener() {
+    // Check for existing demo session on initialization
+    this.loadDemoSessionIfExists()
+
     // Listen for auth state changes from Supabase
     supabase.auth.onAuthStateChange(async (event, session) => {
       if (event === 'SIGNED_IN' && session?.user) {
@@ -75,6 +78,84 @@ export class AuthService {
       }
     } catch (error) {
       console.error('Error loading current session:', error)
+    }
+  }
+
+  // Demo authentication methods
+  private isDemoLogin(email: string, password: string): boolean {
+    return email.trim().toLowerCase() === 'demo@lusotown.com' && 
+           password === 'LusoTown2025!'
+  }
+
+  private createDemoUser(): User {
+    return {
+      id: 'demo-user-id',
+      email: 'demo@lusotown.com',
+      name: 'Maria Silva',
+      role: 'user',
+      membershipTier: 'premium',
+      profileImage: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80',
+      joinedDate: '2024-01-15',
+      interests: ['Cultural Events', 'Portuguese Food', 'Language Exchange', 'Fado Music', 'Portuguese Literature'],
+      favoriteEvents: ['event-1', 'event-3', 'event-5'],
+      location: 'Camden, London'
+    }
+  }
+
+  private async handleDemoLogin(): Promise<{ success: boolean; user?: User; error?: string }> {
+    try {
+      // Simulate loading delay for realistic experience
+      await new Promise(resolve => setTimeout(resolve, 1500))
+      
+      const demoUser = this.createDemoUser()
+      
+      // Store demo session in localStorage for persistence
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('lusotown_demo_session', JSON.stringify({
+          user: demoUser,
+          timestamp: Date.now()
+        }))
+      }
+      
+      this.currentUser = demoUser
+      this.notifyAuthStateChange(demoUser)
+      
+      return { success: true, user: demoUser }
+    } catch (error) {
+      console.error('Demo login error:', error)
+      return { success: false, error: 'Demo login failed' }
+    }
+  }
+
+  private loadDemoSessionIfExists(): void {
+    try {
+      if (typeof window !== 'undefined') {
+        const storedSession = localStorage.getItem('lusotown_demo_session')
+        if (storedSession) {
+          const sessionData = JSON.parse(storedSession)
+          
+          // Check if session is still valid (24 hours)
+          const twentyFourHours = 24 * 60 * 60 * 1000
+          if (Date.now() - sessionData.timestamp < twentyFourHours) {
+            this.currentUser = sessionData.user
+            this.notifyAuthStateChange(sessionData.user)
+          } else {
+            // Clear expired session
+            localStorage.removeItem('lusotown_demo_session')
+          }
+        }
+      }
+    } catch (error) {
+      console.error('Error loading demo session:', error)
+      if (typeof window !== 'undefined') {
+        localStorage.removeItem('lusotown_demo_session')
+      }
+    }
+  }
+
+  private clearDemoSession(): void {
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('lusotown_demo_session')
     }
   }
 
@@ -119,6 +200,12 @@ export class AuthService {
 
   async login(email: string, password: string): Promise<{ success: boolean; user?: User; error?: string }> {
     try {
+      // Check if this is demo login
+      if (this.isDemoLogin(email, password)) {
+        return await this.handleDemoLogin()
+      }
+
+      // Regular Supabase authentication
       const { data, error } = await supabase.auth.signInWithPassword({
         email: email.trim(),
         password: password
@@ -183,6 +270,15 @@ export class AuthService {
 
   async logout(): Promise<void> {
     try {
+      // Handle demo session logout
+      if (this.currentUser?.id === 'demo-user-id') {
+        this.clearDemoSession()
+        this.currentUser = null
+        this.notifyAuthStateChange(null)
+        return
+      }
+
+      // Regular Supabase logout
       const { error } = await supabase.auth.signOut()
       if (error) throw error
       
@@ -200,6 +296,10 @@ export class AuthService {
 
   isAuthenticated(): boolean {
     return this.currentUser !== null
+  }
+
+  isDemoUser(): boolean {
+    return this.currentUser?.id === 'demo-user-id'
   }
 
   isAdmin(): boolean {
@@ -290,6 +390,7 @@ export const authService = AuthService.getInstance()
 // Convenience exports for common auth operations
 export const getCurrentUser = () => authService.getCurrentUser()
 export const isAuthenticated = () => authService.isAuthenticated()
+export const isDemoUser = () => authService.isDemoUser()
 export const isAdmin = () => authService.isAdmin()
 export const logout = () => authService.logout()
 

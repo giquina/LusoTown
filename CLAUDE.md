@@ -30,12 +30,29 @@ npm run dev  # Test Event Feed interactivity
 # Test favorites and cart functionality across different pages
 ```
 
+### Demo Login System
+```bash
+# Testing login and dashboard features
+cd web-app
+npm run dev  # Start development server
+# Navigate to http://localhost:3000/login
+# Use demo credentials or click "Auto-Fill Credentials" button
+```
+
+**Demo Credentials:**
+- **Email:** demo@lusotown.com
+- **Password:** LusoTown2025!
+- **User Profile:** Maria Silva (Premium Member from Camden, London)
+- **Session Duration:** 24 hours with automatic persistence
+
 No automated testing framework is currently configured. Manual testing should focus on:
 - Event Feed interactions (like, share, save)
 - Cart functionality (add/remove items, quantity management)
 - Saved items management and filtering
 - Bilingual functionality across all new features
 - Responsive design on mobile devices
+- **Login & Authentication:** Demo login flow and dashboard access
+- **User Session Management:** Demo session persistence and logout
 
 ### Type Checking (Web App)
 ```bash
@@ -151,6 +168,16 @@ git pull origin main  # Always pull latest changes
 cd web-app           # Focus on web app development
 npm install          # Ensure dependencies are current
 npm run dev          # Start development server
+```
+
+### Testing Authentication & Dashboard
+```bash
+cd web-app
+npm run dev          # Start development server
+# Navigate to http://localhost:3000/login
+# Use demo credentials: demo@lusotown.com / LusoTown2025!
+# Click "Auto-Fill Credentials" for instant access
+# Test dashboard features at http://localhost:3000/dashboard
 ```
 
 ### Development Guidelines
@@ -295,11 +322,62 @@ NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 ```
 
+## Authentication System (Production Ready)
+
+### Demo Login System
+The platform includes a comprehensive demo authentication system for easy testing and demonstration:
+
+**Demo Credentials:**
+- **Email:** demo@lusotown.com
+- **Password:** LusoTown2025!
+
+**Demo User Profile (Maria Silva):**
+```typescript
+{
+  id: 'demo-user-id',
+  email: 'demo@lusotown.com',
+  name: 'Maria Silva',
+  role: 'user',
+  membershipTier: 'premium',
+  profileImage: 'https://images.unsplash.com/photo-1494790108755-2616b612b786...',
+  joinedDate: '2024-01-15',
+  interests: ['Cultural Events', 'Portuguese Food', 'Language Exchange', 'Fado Music', 'Portuguese Literature'],
+  favoriteEvents: ['event-1', 'event-3', 'event-5'],
+  location: 'Camden, London'
+}
+```
+
+**Demo System Features:**
+- **Auto-Fill Credentials:** One-click button to populate login form
+- **Session Persistence:** 24-hour demo sessions stored in localStorage
+- **Bilingual Experience:** Complete English/Portuguese login interface
+- **Portuguese Community Branding:** Cultural authenticity throughout login flow
+- **Realistic Loading States:** Simulated authentication delays for UX testing
+- **Seamless Integration:** Works alongside real Supabase authentication
+
+**Testing the Authentication System:**
+```bash
+cd web-app
+npm run dev
+# Navigate to http://localhost:3000/login
+# Click "Auto-Fill Credentials" or manually enter demo credentials
+# Access dashboard at http://localhost:3000/dashboard
+```
+
+### Production Authentication
+- **Supabase Auth:** Complete user registration and login system
+- **Profile Management:** Automatic profile creation with database triggers
+- **Role-Based Access:** User and admin role support
+- **Password Reset:** Full password recovery system
+- **Session Management:** Secure session handling with automatic refresh
+
 ## Key Files to Understand
 
 ### Web App Critical Files
 - `web-app/src/app/layout.tsx`: Root layout with metadata, providers, and SEO
 - `web-app/src/app/page.tsx`: Main landing page with Hero and Features
+- `web-app/src/app/login/page.tsx`: Enhanced login page with demo authentication system
+- `web-app/src/app/dashboard/page.tsx`: User dashboard accessible via demo login
 - `web-app/src/app/feed/page.tsx`: Event feed page with interactive features
 - `web-app/src/app/saved/page.tsx`: Saved items and cart management page
 - `web-app/src/components/Header.tsx`: Navigation with language toggle
@@ -315,6 +393,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 - `web-app/src/context/LanguageContext.tsx`: Global language state management
 - `web-app/src/context/CartContext.tsx`: Cart and saved items state management
 - `web-app/src/lib/supabase.ts`: Database client and TypeScript interfaces
+- `web-app/src/lib/auth.ts`: Authentication service with demo login system
 - `web-app/next.config.js`: Static export configuration
 - `web-app/tailwind.config.js`: Design system configuration
 
@@ -364,6 +443,9 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 - **Styling Issues:** Verify Tailwind configuration and component classes
 - **Context Issues:** Check provider wrapping in layout.tsx
 - **Static Export:** Avoid server-side features, use static generation
+- **Authentication Issues:** Check demo session in localStorage, verify authService singleton
+- **Login Problems:** Ensure demo credentials are exactly: demo@lusotown.com / LusoTown2025!
+- **Dashboard Access:** Verify authentication state before accessing protected routes
 
 ## Development Notes
 
@@ -388,6 +470,12 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 - Follow existing component structure and naming
 - Implement responsive design with Tailwind breakpoints
 - Include proper accessibility attributes
+
+### Authentication Integration
+- Use `authService.getCurrentUser()` to check authentication state
+- Implement protected routes with authentication guards
+- Demo user accessible via `authService.isDemoUser()`
+- Auth state changes handled through `authService.onAuthStateChange()`
 
 ## Current Development Status
 
@@ -416,10 +504,20 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 - ✅ **Navigation Optimization:** Streamlined navigation focusing on core community features
 - ✅ **Language Consistency:** English-first with proper Portuguese toggle throughout
 - ✅ **Portuguese Community Branding:** Consistent cultural authenticity across all pages
+- ✅ **Enhanced Login System:** Beautiful login page with demo authentication
+- ✅ **Demo Authentication:** Complete demo system (demo@lusotown.com / LusoTown2025!)
 - ✅ **Production Deployment Ready:** All components and pages fully functional and tested
 
 **Current Status:** 100% Production-ready with complete Portuguese community platform
 **Achievement:** All core features implemented and deployment-ready
+
+**Dashboard Access:**
+- Navigate to http://localhost:3000/login to access authentication
+- **Demo Login:** Use demo@lusotown.com with password LusoTown2025!
+- **Auto-Fill Feature:** Click "Auto-Fill Credentials" button for instant demo access
+- After login, dashboard available at http://localhost:3000/dashboard
+- **Demo User:** Maria Silva - Premium member with full Portuguese community features
+- Platform uses Supabase authentication with complete user management + demo system
 
 **Major Implementation Documentation:**
 - `EVENT_FEED_IMPLEMENTATION.md`: Complete technical documentation for Event Feed system

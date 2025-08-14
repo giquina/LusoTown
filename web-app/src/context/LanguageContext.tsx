@@ -358,7 +358,7 @@ const translations = {
     'nav.about': 'Sobre',
     'nav.contact': 'Contacto',
     'nav.login': 'Entrar',
-    'nav.join-community': 'Juntar à Comunidade',
+    'nav.join-membership': 'Juntar à Comunidade',
     
     // Hero Section
     'hero.badge': 'Unidos pela Língua • United by Language',
@@ -495,10 +495,10 @@ const translations = {
     // Login & Authentication
     'login.title': 'Bem-vindo de volta à família!',
     'login.subtitle': 'Entre na sua conta para conectar com a comunidade portuguesa',
-    'login.community-badge': 'A sua família portuguesa em Londres',
-    'login.community-missed-you': 'A sua comunidade portuguesa estava com saudades.',
+    'login.membership-badge': 'A sua família portuguesa em Londres',
+    'login.membership-missed-you': 'A sua comunidade portuguesa estava com saudades.',
     'login.hearts-waiting': 'Mais de 500 corações portugueses aguardam por si.',
-    'login.community-updates': 'Novidades da Comunidade',
+    'login.membership-updates': 'Novidades da Comunidade',
     'login.live': 'AGORA',
     'login.portuguese-support': 'Apoio em Português',
     'login.support-description': 'Precisa de ajuda? A nossa equipa fala português e está aqui para si.',
@@ -523,7 +523,7 @@ const translations = {
     'login.terms': 'Termos de Serviço',
     'login.and': 'e',
     'login.privacy': 'Política de Privacidade',
-    'login.safe-community': 'Comunidade Segura & Verificada',
+    'login.safe-membership': 'Comunidade Segura & Verificada',
     'login.fill-fields-error': 'Por favor, preencha todos os campos',
     'login.login-failed': 'Erro no login',
     'login.unexpected-error': 'Ocorreu um erro inesperado. Tente novamente.',
@@ -692,7 +692,7 @@ const translations = {
     'nav.about': 'Sobre',
     'nav.contact': 'Contato',
     'nav.login': 'Entrar',
-    'nav.join-community': 'Juntar à Família',
+    'nav.join-membership': 'Juntar à Família',
     
     // Hero Section
     'hero.badge': 'Unidos pela Língua • United by Language',
@@ -829,10 +829,10 @@ const translations = {
     // Login & Authentication
     'login.title': 'Bem-vindo de volta à família!',
     'login.subtitle': 'Entre na sua conta para conectar com a comunidade portuguesa',
-    'login.community-badge': 'Sua família portuguesa em Londres',
-    'login.community-missed-you': 'Sua comunidade portuguesa estava com saudades.',
+    'login.membership-badge': 'Sua família portuguesa em Londres',
+    'login.membership-missed-you': 'Sua comunidade portuguesa estava com saudades.',
     'login.hearts-waiting': 'Mais de 500 corações portugueses aguardam por você.',
-    'login.community-updates': 'Novidades da Comunidade',
+    'login.membership-updates': 'Novidades da Comunidade',
     'login.live': 'AGORA',
     'login.portuguese-support': 'Suporte em Português',
     'login.support-description': 'Precisa de ajuda? Nossa equipe fala português e está aqui para você.',
@@ -857,7 +857,7 @@ const translations = {
     'login.terms': 'Termos de Serviço',
     'login.and': 'e',
     'login.privacy': 'Política de Privacidade',
-    'login.safe-community': 'Comunidade Segura & Verificada',
+    'login.safe-membership': 'Comunidade Segura & Verificada',
     'login.fill-fields-error': 'Por favor, preencha todos os campos',
     'login.login-failed': 'Erro no login',
     'login.unexpected-error': 'Ocorreu um erro inesperado. Tente novamente.',
@@ -1046,7 +1046,7 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
 
   // Translation function
   const t = (key: string, fallback?: string): string => {
-    const translation = translations[language][key as keyof typeof translations['en']]
+    const translation = (translations[language] as any)[key]
     return translation || fallback || key
   }
 

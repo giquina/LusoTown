@@ -104,7 +104,7 @@ const upcomingEvents = [
     price: 42,
     category: "Professional Networking",
     image: "/events/portuguese-networking.jpg",
-    color: "from-blue-400 to-purple-400",
+    color: "from-primary-400 to-premium-400",
     icon: <UsersIcon className="w-5 h-5" />,
     ageRestriction: "Women of all ages welcome",
     tags: ["women-only", "all-ages", "professional", "networking", "career"]
@@ -121,7 +121,7 @@ const upcomingEvents = [
     price: 28,
     category: "Cultural & Food",
     image: "/events/cape-verde-night.jpg",
-    color: "from-teal-400 to-blue-400",
+    color: "from-secondary-400 to-primary-400",
     icon: <MusicalNoteIcon className="w-5 h-5" />,
     ageRestriction: "All Ages Welcome",
     tags: ["Cape Verde", "morna", "cachupa", "music", "culture"]

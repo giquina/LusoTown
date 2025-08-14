@@ -303,7 +303,7 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
       case 'event_created':
         return <CalendarDaysIcon className="w-4 h-4 text-green-500" />
       case 'event_update':
-        return <ClockIcon className="w-4 h-4 text-blue-500" />
+        return <ClockIcon className="w-4 h-4 text-primary-500" />
       case 'event_photo':
         return <PhotoIcon className="w-4 h-4 text-purple-500" />
       case 'event_review':
