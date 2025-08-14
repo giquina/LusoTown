@@ -37,13 +37,13 @@ export default function CTA() {
           >
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-white font-medium mb-6 border border-white/30">
               <SparklesIcon className="h-4 w-4" />
-              Limited Time - Join Today
+              {t('cta.badge', 'Limited Time - Join Today')}
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              A Sua Comunidade Está Aqui
+              {t('cta.title', 'Your Community is Here')}
             </h2>
             <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto">
-              Não passe mais fins-de-semana sozinho. Junte-se ao LusoTown London hoje e descubra a comunidade portuguesa que procurava.
+              {t('cta.subtitle', 'No more lonely weekends. Join LusoTown London today and discover the Portuguese community you\'ve been looking for.')}
             </p>
           </motion.div>
 
@@ -79,12 +79,12 @@ export default function CTA() {
             className="space-y-6"
           >
             <a href="/signup" className="bg-white text-primary-600 hover:bg-gray-50 font-bold text-lg sm:text-xl px-10 sm:px-16 py-5 sm:py-6 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 group inline-flex items-center">
-              JOIN NOW
+              {t('cta.button', 'JOIN NOW')}
               <ArrowRightIcon className="h-6 w-6 ml-3 group-hover:translate-x-1 transition-transform duration-200" />
             </a>
             
             <p className="text-white/80 text-sm">
-              Sem compromisso • Comece a conectar-se imediatamente • Cancele quando quiser
+              {t('cta.guarantee', 'No commitment • Start connecting immediately • Cancel anytime')}
             </p>
           </motion.div>
 
@@ -110,10 +110,10 @@ export default function CTA() {
               </div>
             </div>
             <p className="text-white font-semibold text-lg mb-2">
-              23 portugueses juntaram-se nas últimas 24 horas
+              23 {t('cta.social-proof', 'Portuguese speakers joined in the last 24 hours')}
             </p>
             <p className="text-white/80">
-              Junte-se agora e conecte-se com a comunidade luso-londrina em 48 horas
+              {t('cta.connect-time', 'Join now and connect with the Luso-London community within 48 hours')}
             </p>
           </motion.div>
 
@@ -127,15 +127,15 @@ export default function CTA() {
           >
             <div className="text-center">
               <div className="text-2xl font-bold text-white mb-1">100%</div>
-              <div className="text-sm">Perfis Verificados</div>
+              <div className="text-sm">{t('cta.trust.verified-profiles', 'Verified Profiles')}</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-white mb-1">24/7</div>
-              <div className="text-sm">Apoio Comunitário</div>
+              <div className="text-sm">{t('cta.trust.community-support', 'Community Support')}</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-white mb-1">30-Dias</div>
-              <div className="text-sm">Garantia Satisfação</div>
+              <div className="text-2xl font-bold text-white mb-1">30-Days</div>
+              <div className="text-sm">{t('cta.trust.satisfaction-guarantee', 'Satisfaction Guarantee')}</div>
             </div>
           </motion.div>
         </div>

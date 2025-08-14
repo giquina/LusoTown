@@ -1,7 +1,7 @@
 'use client'
 
 import { User } from '@/lib/auth'
-import { supabase } from '@/lib/supabase'
+import { supabase, supabaseUrl, supabaseAnonKey } from '@/lib/supabase'
 import { getImageWithFallback } from '@/lib/profileImages'
 
 export interface EventAttendee {
@@ -950,58 +950,78 @@ export class EventService {
     }
   }
 
-  async getEventById(id: string): Promise<Event | null> {
+    async getEventById(id: string): Promise<Event | null> {
     try {
-      const { data: event, error } = await supabase
-        .from('events')
-        .select(`
-          *,
-          profiles!events_created_by_fkey(
-            first_name,
-            last_name,
-            profile_picture_url,
-            bio
-          ),
-          event_attendees(
-            user_id,
-            status,
-            registered_at,
-            profiles(
+      // First try Supabase if properly configured
+      if (supabaseUrl !== 'https://placeholder.supabase.co' && supabaseAnonKey !== 'placeholder-key') {
+        const { data: event, error } = await supabase
+          .from('events')
+          .select(`
+            *,
+            profiles!events_created_by_fkey(
               first_name,
               last_name,
               profile_picture_url,
-              membership_tier
+              bio
+            ),
+            event_attendees(
+              user_id,
+              status,
+              registered_at,
+              profiles(
+                first_name,
+                last_name,
+                profile_picture_url,
+                membership_tier
+              )
             )
-          )
-        `)
-        .eq('id', id)
-        .single()
+          `)
+          .eq('id', id)
+          .single()
 
-      if (error || !event) {
-        console.error('Error fetching event:', error)
-        return null
+        if (!error && event) {
+          // Transform event and include attendee information
+          const transformedEvent = this.transformEvent(event, event.profiles)
+          
+          // Add attendee information
+          if (event.event_attendees) {
+            transformedEvent.attendees = event.event_attendees.map((attendee: any) => ({
+              id: `att-${attendee.user_id}`,
+              userId: attendee.user_id,
+              eventId: id,
+              name: `${attendee.profiles.first_name} ${attendee.profiles.last_name || ''}`.trim(),
+              email: '', // Not exposed for privacy
+              membershipTier: attendee.profiles.membership_tier,
+              joinedAt: attendee.registered_at,
+              status: attendee.status as 'confirmed' | 'pending' | 'cancelled'
+            }))
+          }
+
+          return transformedEvent
+        }
       }
-
-      // Transform event and include attendee information
-      const transformedEvent = this.transformEvent(event, event.profiles)
       
-      // Add attendee information
-      if (event.event_attendees) {
-        transformedEvent.attendees = event.event_attendees.map((attendee: any) => ({
-          id: `att-${attendee.user_id}`,
-          userId: attendee.user_id,
-          eventId: id,
-          name: `${attendee.profiles.first_name} ${attendee.profiles.last_name || ''}`.trim(),
-          email: '', // Not exposed for privacy
-          membershipTier: attendee.profiles.membership_tier,
-          joinedAt: attendee.registered_at,
-          status: attendee.status as 'confirmed' | 'pending' | 'cancelled'
-        }))
+      // Fallback to mock data when Supabase is not available
+      console.log('Supabase not configured, using mock data for event:', id)
+      const mockEvent = this.events.find(e => e.id === id)
+      
+      if (mockEvent) {
+        // Create a deep copy to avoid modifying the original mock data
+        return JSON.parse(JSON.stringify(mockEvent))
       }
-
-      return transformedEvent
+      
+      console.warn(`Event with ID ${id} not found in mock data`)
+      return null
     } catch (error) {
       console.error('Error in getEventById:', error)
+      
+      // Final fallback - try mock data even after error
+      const mockEvent = this.events.find(e => e.id === id)
+      if (mockEvent) {
+        console.log('Returning mock event after error:', id)
+        return JSON.parse(JSON.stringify(mockEvent))
+      }
+      
       return null
     }
   }

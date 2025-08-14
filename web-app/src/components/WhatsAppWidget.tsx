@@ -416,15 +416,9 @@ const WhatsAppWidget: React.FC = () => {
             <div className="flex items-center space-x-2 mb-2">
               <Heart className="w-4 h-4 text-green-600" />
               <strong className="text-green-600">
-                {isPortuguese ? 'Bem-vindo à LusoTown!' : 'Welcome to LusoTown!'}
+                {isPortuguese ? 'Clica para começar' : 'Click to start'}
               </strong>
             </div>
-            <p className="text-gray-600 leading-relaxed text-sm">
-              {isPortuguese 
-                ? 'Conecta lusófonos! Eventos portugueses 🌍'
-                : 'Connect Portuguese speakers! Find events 🌍'
-              }
-            </p>
             <div className="mt-2 text-xs text-red-600 font-medium">
               {isPortuguese ? 'Clica para começar →' : 'Click to start →'}
             </div>
