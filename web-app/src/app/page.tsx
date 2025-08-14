@@ -21,7 +21,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'LusoTown London',
-  description: 'A digital home for Portuguese-speaking communities in London',
+  description: 'Real-life meetups for Portuguese speakers across London & UK',
   url: 'https://lusotown.london',
   logo: 'https://lusotown.london/logo.png',
   sameAs: [
@@ -80,10 +80,10 @@ export default function Home() {
                   <div className="w-2 h-2 bg-secondary-400 rounded-full animate-pulse"></div>
                 </div>
                 
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">Explore LusoTown Features</h2>
-                <p className="text-lg sm:text-xl text-gray-700 mb-12 font-medium">Discover everything our Portuguese community has to offer</p>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">Join Real-Life Portuguese Meetups</h2>
+                <p className="text-lg sm:text-xl text-gray-700 mb-12 font-medium">Connect with Portuguese speakers at real locations across London & UK</p>
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                   <a 
                     href="/feed" 
                     className="group bg-white/70 backdrop-blur-lg border border-white/30 rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1 hover:scale-105"
@@ -91,8 +91,8 @@ export default function Home() {
                     <div className="w-16 h-16 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-3 transition-transform duration-300 shadow-lg">
                       <ChatBubbleLeftRightIcon className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-secondary-600 transition-colors duration-300">Community Feed</h3>
-                    <p className="text-gray-600 leading-relaxed">Share updates, connect with others, and stay in the loop with the latest from our Portuguese community.</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-secondary-600 transition-colors duration-300">Event Feed</h3>
+                    <p className="text-gray-600 leading-relaxed">Discover live events from gyms to galleries, restaurants to tours. Real places where Portuguese speakers meet up.</p>
                   </a>
                   
                   <a 
@@ -102,8 +102,8 @@ export default function Home() {
                     <div className="w-16 h-16 bg-gradient-to-br from-action-500 to-action-600 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-3 transition-transform duration-300 shadow-lg">
                       <HeartIcon className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-action-600 transition-colors duration-300">My Favourites</h3>
-                    <p className="text-gray-600 leading-relaxed">Keep track of the events, businesses, and posts you love so you never miss out.</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-action-600 transition-colors duration-300">Save & Favourite</h3>
+                    <p className="text-gray-600 leading-relaxed">Save events and locations you love. Never miss a real-life meetup that interests you.</p>
                   </a>
                   
                   <a 
@@ -113,8 +113,8 @@ export default function Home() {
                     <div className="w-16 h-16 bg-gradient-to-br from-accent-500 to-coral-500 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-3 transition-transform duration-300 shadow-lg">
                       <CalendarDaysIcon className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-accent-600 transition-colors duration-300">Events</h3>
-                    <p className="text-gray-600 leading-relaxed">Find cultural festivals, food markets, live music, networking meetups, and more.</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-accent-600 transition-colors duration-300">Create & Join Events</h3>
+                    <p className="text-gray-600 leading-relaxed">Create your own meetups or join existing ones. Real activities at real places with Portuguese speakers.</p>
                   </a>
                 </div>
               </div>

@@ -104,7 +104,9 @@ export default function FeedDemo() {
   const [searchQuery, setSearchQuery] = useState('')
   const [activeFilters, setActiveFilters] = useState(0)
 
-  const t = translations[language]
+  // Helper function to check if language is Portuguese
+  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const t = translations[isPortuguese ? 'pt' : 'en']
 
   const handleCreatePost = () => {
     if (newPost.trim()) {

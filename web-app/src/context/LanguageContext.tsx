@@ -28,8 +28,8 @@ const translations = {
     
     // Hero Section
     'hero.badge': "Unidos pela Língua • United by Language",
-    'hero.title': 'Meet, Explore, and Connect — in Portuguese.',
-    'hero.subtitle': 'From London museums to Brazilian nights, join events where everyone speaks your language.',
+    'hero.title': 'Real-Life Meetups for Portuguese Speakers in the UK.',
+    'hero.subtitle': 'Join 500+ Portuguese speakers meeting in real places across London & UK. From gyms and galleries to restaurants and tours, meet people who share your language and culture.',
     'hero.cta.primary': 'Browse Events',
     'hero.cta.secondary': 'Join Now',
     
@@ -37,21 +37,21 @@ const translations = {
     'features.title': 'Why Choose LusoTown',
     'features.subtitle': 'Your Connection Hub for Portuguese Communities Across the UK',
     'features.events.title': 'Cultural Events & Gatherings',
-    'features.events.description': 'From Fado nights to cultural festivals, traditional celebrations to Portuguese community gatherings - discover and join events across the UK. Events welcoming all ages and generations.',
+    'features.events.description': 'From Fado nights to cultural festivals, traditional celebrations to Portuguese community gatherings - discover and join real-life events across the UK. Meet people in person at venues, restaurants, and cultural locations.',
     'features.groups.title': 'Portuguese Communities',
-    'features.groups.description': 'Connect with Portuguese speakers who share your interests - from cultural preservation to social activities. Make genuine friendships across the UK with individuals of all ages.',
+    'features.groups.description': 'Connect with Portuguese speakers who share your interests - from cultural preservation to social activities. Make genuine real-life friendships across the UK through in-person meetups and gatherings.',
     'features.business.title': 'Portuguese Business Network',
     'features.business.description': 'Discover Portuguese-owned businesses, restaurants, and services across the UK. Support our community and find places where our culture is celebrated.',
     'features.resources.title': 'Community Resources',
-    'features.resources.description': 'Access language exchange programs, cultural workshops, community support, and local meetups. Connect with your Portuguese heritage wherever you are.',
+    'features.resources.description': 'Access language exchange programs, cultural workshops, community support, and local in-person meetups. Connect with your Portuguese heritage through real-life events and gatherings.',
     'features.stories.title': 'Community Stories',
-    'features.stories.description': 'Real stories from Portuguese speakers who found their community, preserved their culture, and built meaningful connections through our global platform.',
+    'features.stories.description': 'Real stories from Portuguese speakers who found their community, preserved their culture, and built meaningful real-life connections through in-person meetups and events.',
     'features.local.title': 'Local Communities',
-    'features.local.description': 'Connect with Portuguese speakers in your city or region. Find local communities, cultural centers, and Portuguese-speaking groups near you.',
+    'features.local.description': 'Connect with Portuguese speakers in your city or region. Find local communities, cultural centers, and Portuguese-speaking groups for real-life meetups near you.',
     'features.culture.title': 'Cultural Heritage',
     'features.culture.description': 'Celebrate and preserve Portuguese traditions, music, and customs. From Fado nights to traditional festivals, keep our culture alive.',
     'features.language.title': 'Language Exchange',
-    'features.language.description': 'Practice Portuguese with native speakers and help others learn English. Build connections through language learning.',
+    'features.language.description': 'Practice Portuguese with native speakers and help others learn English. Build real-life connections through in-person language exchange meetups.',
     'features.heritage.title': 'Heritage Connection',
     'features.heritage.description': 'Connect with your Portuguese roots and share stories with others who understand the journey of preserving culture abroad.',
     
@@ -61,7 +61,7 @@ const translations = {
     'testimonials.subtitle': 'Hear from Portuguese speakers who found their community, preserved their heritage, and built lasting connections worldwide',
     
     // Footer
-    'footer.description': 'The platform for Portuguese-speaking communities across the UK. Connect with your Portuguese heritage, find local communities, attend cultural events, and build meaningful friendships. Open to all ages. Unidos pela Língua - United by Language.',
+    'footer.description': 'The platform for Portuguese-speaking communities across the UK. Connect with your Portuguese heritage, find local communities, attend real-life cultural events, and build meaningful friendships through in-person meetups. Open to all ages. Unidos pela Língua - United by Language.',
     'footer.newsletter.title': 'Stay Connected',
     'footer.newsletter.description': 'Get updates on Portuguese cultural events, community news, and gatherings happening across the UK.',
     'footer.tagline': 'Connecting Portuguese hearts across the UK',
@@ -91,8 +91,8 @@ const translations = {
     
     // Hero Section
     'hero.badge': 'Unidos pela Língua • United by Language',
-    'hero.title': 'Encontrar, Explorar e Conectar — em Português.',
-    'hero.subtitle': 'De museus de Londres a noites brasileiras, junta-te a eventos onde todos falam a tua língua.',
+    'hero.title': 'Encontros Reais para Falantes de Português no Reino Unido.',
+    'hero.subtitle': 'Junta-te a mais de 500 falantes de português que se encontram em locais reais por Londres e Reino Unido. De ginásios e galerias a restaurantes e tours, conhece pessoas que partilham a tua língua e cultura.',
     'hero.cta.primary': 'Ver Eventos',
     'hero.cta.secondary': 'Inscrever-se',
     
@@ -154,8 +154,8 @@ const translations = {
     
     // Hero Section
     'hero.badge': 'Unidos pela Língua • United by Language',
-    'hero.title': 'Encontrar, Explorar e Conectar — em Português.',
-    'hero.subtitle': 'De museus de Londres a noites brasileiras, participe de eventos onde todos falam sua língua.',
+    'hero.title': 'Encontros Reais para Falantes de Português no Reino Unido.',
+    'hero.subtitle': 'Participe de mais de 500 falantes de português que se encontram em locais reais por Londres e Reino Unido. De academias e galerias a restaurantes e tours, conheça pessoas que compartilham sua língua e cultura.',
     'hero.cta.primary': 'Ver Eventos',
     'hero.cta.secondary': 'Inscrever-se',
     

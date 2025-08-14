@@ -35,6 +35,9 @@ export default function FollowingPage() {
 
   const stats = getFollowingStats()
   const suggestions = getFollowingSuggestions()
+  
+  // Helper function to check if language is Portuguese
+  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
 
   const getTabData = () => {
     switch (activeTab) {
@@ -72,7 +75,13 @@ export default function FollowingPage() {
         community: 'Community',
         event_organizer: 'Event Organizer'
       },
-      pt: {
+      'pt-pt': {
+        person: 'Pessoa',
+        group: 'Grupo',
+        community: 'Comunidade',
+        event_organizer: 'Organizador'
+      },
+      'pt-br': {
         person: 'Pessoa',
         group: 'Grupo',
         community: 'Comunidade',
@@ -94,10 +103,10 @@ export default function FollowingPage() {
           <div className="container-width px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-                {language === 'pt' ? 'A Minha' : 'My'} <span className="gradient-text">{language === 'pt' ? 'Rede' : 'Network'}</span>
+{isPortuguese ? 'A Minha' : 'My'} <span className="gradient-text">{isPortuguese ? 'Rede' : 'Network'}</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                {language === 'pt' 
+{isPortuguese 
                   ? 'Todas as pessoas, grupos e comunidades portuguesas que segues. Mantém-te conectado com a tua rede cultural.'
                   : 'All the Portuguese people, groups, and communities you follow. Stay connected with your cultural network.'
                 }
@@ -109,28 +118,28 @@ export default function FollowingPage() {
                   <div className="text-2xl font-bold text-primary-600 mb-1">{stats.people}</div>
                   <div className="text-sm text-gray-600 flex items-center gap-1">
                     <UserIcon className="w-4 h-4" />
-                    {language === 'pt' ? 'Pessoas' : 'People'}
+{isPortuguese ? 'Pessoas' : 'People'}
                   </div>
                 </div>
                 <div className="bg-white rounded-lg p-4 shadow-sm">
                   <div className="text-2xl font-bold text-secondary-600 mb-1">{stats.groups}</div>
                   <div className="text-sm text-gray-600 flex items-center gap-1">
                     <UserGroupIcon className="w-4 h-4" />
-                    {language === 'pt' ? 'Grupos' : 'Groups'}
+{isPortuguese ? 'Grupos' : 'Groups'}
                   </div>
                 </div>
                 <div className="bg-white rounded-lg p-4 shadow-sm">
                   <div className="text-2xl font-bold text-primary-600 mb-1">{stats.communities}</div>
                   <div className="text-sm text-gray-600 flex items-center gap-1">
                     <UsersIcon className="w-4 h-4" />
-                    {language === 'pt' ? 'Comunidades' : 'Communities'}
+{isPortuguese ? 'Comunidades' : 'Communities'}
                   </div>
                 </div>
                 <div className="bg-white rounded-lg p-4 shadow-sm">
                   <div className="text-2xl font-bold text-secondary-600 mb-1">{stats.eventOrganizers}</div>
                   <div className="text-sm text-gray-600 flex items-center gap-1">
                     <CalendarDaysIcon className="w-4 h-4" />
-                    {language === 'pt' ? 'Organizadores' : 'Organizers'}
+{isPortuguese ? 'Organizadores' : 'Organizers'}
                   </div>
                 </div>
               </div>
@@ -145,7 +154,7 @@ export default function FollowingPage() {
                       : 'bg-white text-gray-700 hover:bg-gray-50'
                   }`}
                 >
-                  {language === 'pt' ? 'Todos' : 'All'} ({following.length})
+{isPortuguese ? 'Todos' : 'All'} ({following.length})
                 </button>
                 <button
                   onClick={() => setActiveTab('people')}
@@ -156,7 +165,7 @@ export default function FollowingPage() {
                   }`}
                 >
                   <UserIcon className="w-4 h-4" />
-                  {language === 'pt' ? 'Pessoas' : 'People'} ({stats.people})
+{isPortuguese ? 'Pessoas' : 'People'} ({stats.people})
                 </button>
                 <button
                   onClick={() => setActiveTab('groups')}
@@ -167,7 +176,7 @@ export default function FollowingPage() {
                   }`}
                 >
                   <UserGroupIcon className="w-4 h-4" />
-                  {language === 'pt' ? 'Grupos' : 'Groups'} ({stats.groups})
+{isPortuguese ? 'Grupos' : 'Groups'} ({stats.groups})
                 </button>
                 <button
                   onClick={() => setActiveTab('communities')}
@@ -178,7 +187,7 @@ export default function FollowingPage() {
                   }`}
                 >
                   <UsersIcon className="w-4 h-4" />
-                  {language === 'pt' ? 'Comunidades' : 'Communities'} ({stats.communities})
+{isPortuguese ? 'Comunidades' : 'Communities'} ({stats.communities})
                 </button>
                 <button
                   onClick={() => setActiveTab('organizers')}
@@ -189,7 +198,7 @@ export default function FollowingPage() {
                   }`}
                 >
                   <CalendarDaysIcon className="w-4 h-4" />
-                  {language === 'pt' ? 'Organizadores' : 'Organizers'} ({stats.eventOrganizers})
+{isPortuguese ? 'Organizadores' : 'Organizers'} ({stats.eventOrganizers})
                 </button>
               </div>
 
@@ -201,8 +210,8 @@ export default function FollowingPage() {
                 >
                   <StarIcon className="w-5 h-5" />
                   {showSuggestions 
-                    ? (language === 'pt' ? 'Ocultar Sugestões' : 'Hide Suggestions')
-                    : (language === 'pt' ? 'Ver Sugestões' : 'View Suggestions')
+? (isPortuguese ? 'Ocultar Sugestões' : 'Hide Suggestions')
+                    : (isPortuguese ? 'Ver Sugestões' : 'View Suggestions')
                   }
                 </button>
               )}
@@ -217,7 +226,7 @@ export default function FollowingPage() {
               <div className="max-w-6xl mx-auto">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
                   <StarIcon className="w-6 h-6 text-yellow-500" />
-                  {language === 'pt' ? 'Sugestões para Ti' : 'Suggested for You'}
+{isPortuguese ? 'Sugestões para Ti' : 'Suggested for You'}
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {suggestions.slice(0, 6).map((entity) => (
@@ -298,10 +307,10 @@ export default function FollowingPage() {
                 <div className="text-center py-16">
                   <UserGroupIcon className="w-16 h-16 text-gray-300 mx-auto mb-6" />
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    {language === 'pt' ? 'Ainda não segues ninguém' : 'Not following anyone yet'}
+{isPortuguese ? 'Ainda não segues ninguém' : 'Not following anyone yet'}
                   </h3>
                   <p className="text-gray-600 mb-6">
-                    {language === 'pt' 
+{isPortuguese 
                       ? 'Começa a seguir pessoas, grupos e comunidades portuguesas para te manteres conectado com a tua cultura.'
                       : 'Start following Portuguese people, groups, and communities to stay connected with your culture.'
                     }
@@ -311,7 +320,7 @@ export default function FollowingPage() {
                     className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-3 rounded-lg font-semibold hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 flex items-center gap-2 mx-auto"
                   >
                     <StarIcon className="w-5 h-5" />
-                    {language === 'pt' ? 'Ver Sugestões' : 'View Suggestions'}
+{isPortuguese ? 'Ver Sugestões' : 'View Suggestions'}
                   </button>
                 </div>
               ) : (
@@ -362,8 +371,8 @@ export default function FollowingPage() {
                           }`}
                           title={
                             notificationsEnabled 
-                              ? (language === 'pt' ? 'Desativar notificações' : 'Turn off notifications')
-                              : (language === 'pt' ? 'Ativar notificações' : 'Turn on notifications')
+? (isPortuguese ? 'Desativar notificações' : 'Turn off notifications')
+                              : (isPortuguese ? 'Ativar notificações' : 'Turn on notifications')
                           }
                         >
                           {notificationsEnabled ? (
@@ -410,7 +419,7 @@ export default function FollowingPage() {
                         </div>
                         <div className="flex items-center gap-1">
                           <ClockIcon className="w-3 h-3" />
-                          {language === 'pt' ? 'Seguindo desde' : 'Following since'} {new Date(followedAt).toLocaleDateString()}
+{isPortuguese ? 'Seguindo desde' : 'Following since'} {new Date(followedAt).toLocaleDateString()}
                         </div>
                       </div>
                       

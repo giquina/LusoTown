@@ -23,6 +23,9 @@ const WhatsAppWidget: React.FC = () => {
   const [hasInteracted, setHasInteracted] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const { language } = useLanguage()
+  
+  // Helper function to check if language is Portuguese
+  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
 
   // Conversation flow for global Portuguese community platform
   const conversationFlow = {
@@ -159,7 +162,7 @@ const WhatsAppWidget: React.FC = () => {
       setTimeout(() => {
         const finalMessage: Message = {
           id: Date.now() + 1,
-          text: language === 'pt' 
+          text: isPortuguese 
             ? "Fantástico! 🚀 Bem-vindo à LusoTown global!\n\nA levar-te para a página de registo..." 
             : "Fantastic! 🚀 Welcome to global LusoTown!\n\nTaking you to the signup page...",
           isBot: true,
@@ -181,7 +184,7 @@ const WhatsAppWidget: React.FC = () => {
       setTimeout(() => {
         const joinMessage: Message = {
           id: Date.now() + 1,
-          text: language === 'pt' 
+          text: isPortuguese 
             ? "Excelente escolha! 🎉 Vamos conectar-te com lusófonos em todo o mundo!\n\nA levar-te para te juntares à comunidade..." 
             : "Excellent choice! 🎉 Let's connect you with Portuguese speakers worldwide!\n\nTaking you to join the community...",
           isBot: true,
@@ -203,7 +206,7 @@ const WhatsAppWidget: React.FC = () => {
       setTimeout(() => {
         const laterMessage: Message = {
           id: Date.now() + 1,
-          text: language === 'pt'
+          text: isPortuguese
             ? "Sem problema! 😊 Estarei aqui sempre que estiveres pronto para explorar a nossa comunidade portuguesa global. Sente-te à vontade para navegar no site!"
             : "No worries at all! 😊 I'll be here whenever you're ready to explore our amazing global Portuguese community. Feel free to browse our website!",
           isBot: true,
@@ -249,12 +252,12 @@ const WhatsAppWidget: React.FC = () => {
         // End of conversation - encourage action
         const finalMessage: Message = {
           id: Date.now() + 1,
-          text: language === 'pt'
+          text: isPortuguese
             ? "Obrigado por falares comigo! 💕 A LusoTown está aqui para conectar lusófonos em todo o mundo. Pronto para começar?"
             : "Thanks for chatting with me! 💕 LusoTown is here to connect Portuguese speakers worldwide. Ready to start?",
           isBot: true,
           timestamp: new Date(),
-          options: language === 'pt' 
+          options: isPortuguese 
             ? ["Sim, vamos começar!", "Vou pensar nisso"]
             : ["Yes, let's start!", "I'll think about it"],
           icon: <Users className="w-4 h-4 text-red-600" />
@@ -370,7 +373,7 @@ const WhatsAppWidget: React.FC = () => {
           <div className="p-3 border-t border-gray-200 bg-white rounded-b-xl">
             <div className="flex items-center justify-center space-x-2 text-gray-500 text-xs">
               <MessageCircle className="w-4 h-4" />
-              <span>{language === 'pt' ? 'Clica nas opções acima para continuar!' : 'Click the options above to continue chatting!'}</span>
+              <span>{isPortuguese ? 'Clica nas opções acima para continuar!' : 'Click the options above to continue chatting!'}</span>
             </div>
           </div>
         </div>
@@ -413,17 +416,17 @@ const WhatsAppWidget: React.FC = () => {
             <div className="flex items-center space-x-2 mb-2">
               <Heart className="w-4 h-4 text-green-600" />
               <strong className="text-green-600">
-                {language === 'pt' ? 'Bem-vindo à LusoTown!' : 'Welcome to LusoTown!'}
+                {isPortuguese ? 'Bem-vindo à LusoTown!' : 'Welcome to LusoTown!'}
               </strong>
             </div>
             <p className="text-gray-600 leading-relaxed text-sm">
-              {language === 'pt' 
+              {isPortuguese 
                 ? 'Conecta lusófonos! Eventos portugueses 🌍'
                 : 'Connect Portuguese speakers! Find events 🌍'
               }
             </p>
             <div className="mt-2 text-xs text-red-600 font-medium">
-              {language === 'pt' ? 'Clica para começar →' : 'Click to start →'}
+              {isPortuguese ? 'Clica para começar →' : 'Click to start →'}
             </div>
           </div>
           {/* Arrow pointing to button */}

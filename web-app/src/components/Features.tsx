@@ -107,13 +107,13 @@ export default function Features() {
             <span className="gradient-text">{t('features.subtitle')}</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
-            Connect with Portuguese speakers who love nightlife, dining, fitness, and socializing in London. Because you shouldn't navigate this city alone.
+            Connect with Portuguese speakers who love nightlife, dining, fitness, and socializing in London through real-life meetups. Because you shouldn't navigate this city alone.
           </p>
         </motion.div>
 
-        {/* Features Grid - Optimized with CSS animations */}
+        {/* Features Grid - Optimized Multi-Column Layout */}
         <div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 opacity-0 translate-y-5 animate-fade-in-up"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 opacity-0 translate-y-5 animate-fade-in-up"
           style={{
             animation: 'fadeInUp 0.6s ease-out 0.2s forwards'
           }}
@@ -192,13 +192,13 @@ export default function Features() {
                   </div>
                 </div>
                 <p className="text-lg text-gray-600 italic mb-4">
-                  "I was tired of going to bars alone. Through LusoTown, I found my Portuguese crew for nights out, brunches, and gym sessions. London feels like home now."
+                  "I was tired of going to bars alone. Through LusoTown's real-life meetups, I found my Portuguese crew for nights out, brunches, and gym sessions. London feels like home now."
                 </p>
               </div>
               
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 Created by Portuguese speakers who know what it's like to feel isolated in a new city. 
-                Every feature is designed to help you build genuine friendships and enjoy London's social scene with your Portuguese tribe.
+                Every feature is designed to help you build genuine real-life friendships and enjoy London's social scene with your Portuguese tribe through in-person meetups.
                 After participating in events or group activities, members can leave reviews to help improve future experiences - just like Google My Business!
               </p>
             </div>

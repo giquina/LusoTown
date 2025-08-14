@@ -42,6 +42,9 @@ export default function FollowButton({
   const isCurrentlyFollowing = isFollowing(entity.id)
   const followingEntry = following.find(f => f.entity.id === entity.id)
   const notificationsEnabled = followingEntry?.notificationsEnabled ?? false
+  
+  // Helper function to check if language is Portuguese
+  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
 
   const handleFollow = () => {
     toggleFollow(entity)
@@ -58,22 +61,22 @@ export default function FollowButton({
     
     if (isCurrentlyFollowing) {
       if (isHovered) {
-        return language === 'pt' ? 'Deixar de seguir' : 'Unfollow'
+return isPortuguese ? 'Deixar de seguir' : 'Unfollow'
       }
-      return language === 'pt' ? 'A seguir' : 'Following'
+return isPortuguese ? 'A seguir' : 'Following'
     }
     
     switch (entity.type) {
       case 'person':
-        return language === 'pt' ? 'Seguir' : 'Follow'
+return isPortuguese ? 'Seguir' : 'Follow'
       case 'group':
-        return language === 'pt' ? 'Juntar-se' : 'Join'
+return isPortuguese ? 'Juntar-se' : 'Join'
       case 'community':
-        return language === 'pt' ? 'Juntar-se' : 'Join'
+return isPortuguese ? 'Juntar-se' : 'Join'
       case 'event_organizer':
-        return language === 'pt' ? 'Seguir' : 'Follow'
+return isPortuguese ? 'Seguir' : 'Follow'
       default:
-        return language === 'pt' ? 'Seguir' : 'Follow'
+return isPortuguese ? 'Seguir' : 'Follow'
     }
   }
 
@@ -140,8 +143,8 @@ export default function FollowButton({
           className="p-2 rounded-full text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-colors"
           title={
             notificationsEnabled 
-              ? (language === 'pt' ? 'Desativar notificações' : 'Turn off notifications')
-              : (language === 'pt' ? 'Ativar notificações' : 'Turn on notifications')
+? (isPortuguese ? 'Desativar notificações' : 'Turn off notifications')
+              : (isPortuguese ? 'Ativar notificações' : 'Turn on notifications')
           }
         >
           {notificationsEnabled ? (

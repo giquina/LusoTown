@@ -232,8 +232,8 @@ export default function EventsShowcase() {
           ))}
         </motion.div>
 
-        {/* Featured Events */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {/* Featured Events - Optimized Multi-Column Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 mb-16">
           {upcomingEvents.slice(0, 3).map((event, index) => (
             <motion.div
               key={event.id}
@@ -314,7 +314,7 @@ export default function EventsShowcase() {
             Explore Events by Your Interests
           </h3>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
             {[
               { name: "Food Festivals", icon: "🍲", count: "25+ events" },
               { name: "Fado & Music", icon: "🎶", count: "25+ events" },

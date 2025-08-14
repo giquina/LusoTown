@@ -16,8 +16,8 @@ npm run dev         # Start development server (http://localhost:3000)
 npm run build       # Build for production
 npm run start       # Start production server
 npm run lint        # Run ESLint
-npm run export      # Build and export static site
-npm run deploy      # Deploy to Vercel
+npm run export      # Build and export static site (next build && next export)
+npm run deploy      # Deploy to Vercel (npm run build && vercel --prod)
 ```
 
 ### Testing
@@ -27,6 +27,7 @@ No testing framework is currently configured. When implementing tests, update th
 ```bash
 cd web-app
 npx tsc --noEmit  # Type check without emitting files
+npm run build     # Also performs type checking during build
 ```
 
 ### Mobile App (Future Development)
@@ -324,9 +325,10 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 - Example: `import { supabase } from '@/lib/supabase'`
 
 ### Static Export Configuration
-- App is configured for static export in `next.config.js`
+- App is configured for static export in `next.config.js` with `trailingSlash: true` and `images.unoptimized: true`
 - Avoid server-side features like API routes with dynamic functionality
 - Use client-side data fetching with Supabase
+- Images are unoptimized for static export compatibility
 
 ### Bilingual Support Architecture
 - Language state managed through React Context

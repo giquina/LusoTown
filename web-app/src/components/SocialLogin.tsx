@@ -25,8 +25,10 @@ export default function SocialLogin({ mode }: SocialLoginProps) {
   }
 
   return (
-    <div className="space-y-4">
-      <div className="space-y-3">
+    <div className="space-y-6">
+      {/* Multi-column social login layout */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {/* Row 1: Google + Facebook */}
         <SocialLoginButton
           platform="google"
           onClick={() => handleSocialLogin('Google')}
@@ -39,6 +41,7 @@ export default function SocialLogin({ mode }: SocialLoginProps) {
           isLoading={loadingPlatform === 'Facebook'}
         />
         
+        {/* Row 2: Instagram + LinkedIn */}
         <SocialLoginButton
           platform="instagram"
           onClick={() => handleSocialLogin('Instagram')}
@@ -52,12 +55,13 @@ export default function SocialLogin({ mode }: SocialLoginProps) {
         />
       </div>
       
+      {/* Email option - centered and smaller as secondary option */}
       <div className="relative">
         <div className="absolute inset-0 flex items-center">
           <div className="w-full border-t border-gray-300" />
         </div>
         <div className="relative flex justify-center text-sm">
-          <span className="px-4 bg-white text-gray-500">
+          <span className="px-4 bg-white text-gray-500 font-medium">
             or continue with email
           </span>
         </div>

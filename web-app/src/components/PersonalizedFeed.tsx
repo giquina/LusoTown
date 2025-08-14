@@ -175,6 +175,9 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
   const [filter, setFilter] = useState<'all' | 'following' | 'suggested'>('all')
   const [newPost, setNewPost] = useState('')
   const [showCreatePost, setShowCreatePost] = useState(false)
+  
+  // Helper function to check if language is Portuguese
+  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
 
   // Generate personalized posts based on following
   const followedEntities = following.map(f => f.entity)
@@ -222,11 +225,11 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
       const post: FeedPost = {
         id: `post-${Date.now()}`,
         authorId: 'currentUser',
-        authorName: language === 'pt' ? 'Tu' : 'You',
+authorName: isPortuguese ? 'Tu' : 'You',
         authorAvatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop&crop=face&auto=format',
         authorType: 'person',
         content: newPost,
-        createdAt: language === 'pt' ? 'Agora mesmo' : 'Just now',
+createdAt: isPortuguese ? 'Agora mesmo' : 'Just now',
         likes: 0,
         comments: 0,
         liked: false,
@@ -259,10 +262,10 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
       <div className="text-center py-16">
         <StarIcon className="w-16 h-16 text-gray-300 mx-auto mb-6" />
         <h3 className="text-2xl font-bold text-gray-900 mb-2">
-          {language === 'pt' ? 'Feed Personalizado' : 'Personalized Feed'}
+{isPortuguese ? 'Feed Personalizado' : 'Personalized Feed'}
         </h3>
         <p className="text-gray-600 mb-6">
-          {language === 'pt' 
+          {isPortuguese 
             ? 'Segue pessoas, grupos e comunidades para ver as suas atualizações aqui.'
             : 'Follow people, groups, and communities to see their updates here.'
           }
@@ -272,7 +275,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
           className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-3 rounded-lg font-semibold hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 inline-flex items-center gap-2"
         >
           <StarIcon className="w-5 h-5" />
-          {language === 'pt' ? 'Descobrir Pessoas' : 'Discover People'}
+          {isPortuguese ? 'Descobrir Pessoas' : 'Discover People'}
         </a>
       </div>
     )
@@ -286,10 +289,10 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-2 flex items-center gap-2">
               <BellIcon className="w-6 h-6 text-primary-500" />
-              {language === 'pt' ? 'Feed da Tua Rede' : 'Your Network Feed'}
+              {isPortuguese ? 'Feed da Tua Rede' : 'Your Network Feed'}
             </h2>
             <p className="text-gray-600">
-              {language === 'pt' 
+              {isPortuguese 
                 ? `Atualizações de ${following.length} pessoas e grupos que segues`
                 : `Updates from ${following.length} people and groups you follow`
               }
@@ -300,7 +303,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
             onClick={() => setShowCreatePost(true)}
             className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-4 py-2 rounded-lg font-semibold hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 shadow-sm"
           >
-            {language === 'pt' ? 'Partilhar' : 'Share'}
+            {isPortuguese ? 'Partilhar' : 'Share'}
           </button>
         </div>
 
@@ -315,7 +318,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
             }`}
           >
             <FilterIcon className="w-4 h-4" />
-            {language === 'pt' ? 'Todos' : 'All'} ({posts.length})
+            {isPortuguese ? 'Todos' : 'All'} ({posts.length})
           </button>
           <button
             onClick={() => setFilter('following')}
@@ -326,7 +329,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
             }`}
           >
             <HeartSolidIcon className="w-4 h-4" />
-            {language === 'pt' ? 'A Seguir' : 'Following'} ({posts.filter(p => p.isFromFollowing).length})
+            {isPortuguese ? 'A Seguir' : 'Following'} ({posts.filter(p => p.isFromFollowing).length})
           </button>
         </div>
       </div>
@@ -338,7 +341,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
             <div className="p-6">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-bold text-gray-900">
-                  {language === 'pt' ? 'Criar Publicação' : 'Create Post'}
+                  {isPortuguese ? 'Criar Publicação' : 'Create Post'}
                 </h3>
                 <button 
                   onClick={() => setShowCreatePost(false)}
@@ -350,12 +353,12 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
               
               <div className="flex items-start gap-3 mb-4">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-r from-primary-400 to-secondary-400 flex items-center justify-center text-white font-bold">
-                  {language === 'pt' ? 'T' : 'Y'}
+                  {isPortuguese ? 'T' : 'Y'}
                 </div>
                 <textarea
                   value={newPost}
                   onChange={(e) => setNewPost(e.target.value)}
-                  placeholder={language === 'pt' 
+                  placeholder={isPortuguese 
                     ? 'O que está a acontecer na tua comunidade portuguesa?'
                     : "What's happening in your Portuguese community?"
                   }
@@ -382,7 +385,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
                   disabled={!newPost.trim()}
                   className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-4 py-2 rounded-lg font-semibold hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {language === 'pt' ? 'Publicar' : 'Post'}
+                  {isPortuguese ? 'Publicar' : 'Post'}
                 </button>
               </div>
             </div>
@@ -428,7 +431,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
                       {getAuthorTypeIcon(post.authorType)}
                       {post.isFromFollowing && (
                         <span className="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded-full">
-                          {language === 'pt' ? 'A seguir' : 'Following'}
+                          {isPortuguese ? 'A seguir' : 'Following'}
                         </span>
                       )}
                     </div>
@@ -476,7 +479,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
                     <p>{post.linkedEvent.location}</p>
                   </div>
                   <button className="mt-2 text-primary-600 text-sm font-medium hover:underline">
-                    {language === 'pt' ? 'Ver Detalhes do Evento' : 'View Event Details'}
+                    {isPortuguese ? 'Ver Detalhes do Evento' : 'View Event Details'}
                   </button>
                 </div>
               )}
@@ -490,7 +493,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
                   </div>
                   <p className="text-sm text-gray-600">{post.linkedBusiness.category}</p>
                   <button className="mt-2 text-secondary-600 text-sm font-medium hover:underline">
-                    {language === 'pt' ? 'Ver Negócio' : 'View Business'}
+                    {isPortuguese ? 'Ver Negócio' : 'View Business'}
                   </button>
                 </div>
               )}
@@ -548,7 +551,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
                   <button className="flex items-center gap-2 text-gray-600 hover:text-primary-500 transition-colors">
                     <ArrowPathIcon className="w-5 h-5" />
                     <span className="text-sm font-medium">
-                      {language === 'pt' ? 'Partilhar' : 'Share'}
+                      {isPortuguese ? 'Partilhar' : 'Share'}
                     </span>
                   </button>
                 </div>

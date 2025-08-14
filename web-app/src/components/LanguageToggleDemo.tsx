@@ -28,7 +28,9 @@ export default function LanguageToggleDemo() {
     }
   }
 
-  const t = translations[language]
+  // Helper function to check if language is Portuguese
+  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const t = translations[isPortuguese ? 'pt' : 'en']
 
   return (
     <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">

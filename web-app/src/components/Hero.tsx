@@ -57,19 +57,19 @@ export default function Hero() {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-action-500 to-action-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
                   <HeartIcon className="h-6 w-6 text-white" />
                 </div>
-<span className="text-xs font-bold text-gray-800 tracking-wide text-center">REAL EVENTS</span>
+<span className="text-xs font-bold text-gray-800 tracking-wide text-center">REAL-LIFE MEETUPS</span>
               </div>
               <div className="group flex items-center gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-secondary-500 to-secondary-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
                   <UsersIcon className="h-6 w-6 text-white" />
                 </div>
-                <span className="text-xs font-bold text-gray-800 tracking-wide text-center">500+ UK COMMUNITY MEMBERS</span>
+                <span className="text-xs font-bold text-gray-800 tracking-wide text-center">500+ PORTUGUESE SPEAKERS</span>
               </div>
               <div className="group flex items-center gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-500 to-coral-500 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
                   <SparklesIcon className="h-6 w-6 text-white" />
                 </div>
-                <span className="text-xs font-bold text-gray-800 tracking-wide text-center">PORTUGUESE BUSINESSES</span>
+                <span className="text-xs font-bold text-gray-800 tracking-wide text-center">REAL LOCATIONS</span>
               </div>
             </div>
 
@@ -100,7 +100,7 @@ export default function Hero() {
               <div className="space-y-6">
                 <div className="text-center">
 <h3 className="text-2xl font-bold text-gray-800 mb-2">Join 500+ Portuguese Speakers</h3>
-                  <p className="text-gray-600">Meeting in real places across London & UK</p>
+                  <p className="text-gray-600">Meeting in real places across London & UK for gyms, galleries, restaurants, tours & more</p>
                 </div>
 
                 {/* Member avatars */}
@@ -125,7 +125,7 @@ export default function Hero() {
                   </div>
                   <div className="bg-white/40 rounded-2xl p-4">
                     <div className="text-3xl font-bold text-red-600">40+</div>
-                    <div className="text-sm text-gray-600">Real Meetups</div>
+                    <div className="text-sm text-gray-600">Real-Life Meetups</div>
                   </div>
                 </div>
 

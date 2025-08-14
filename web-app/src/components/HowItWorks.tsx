@@ -27,7 +27,7 @@ export default function HowItWorks() {
       number: 1,
       title: 'Join the Community',
       subtitle: 'Junte-se à Comunidade',
-      description: 'Sign up for free and create your profile to connect with Portuguese speakers across London.',
+      description: 'Sign up for free and create your profile to meet Portuguese speakers at real locations across London & UK.',
       icon: UserPlus,
       color: 'from-primary-500 to-primary-600',
       bgColor: 'from-primary-50 to-primary-100',
@@ -35,9 +35,9 @@ export default function HowItWorks() {
     },
     {
       number: 2,
-      title: 'Discover Events & Businesses',
-      subtitle: 'Descubra Eventos e Negócios',
-      description: 'From food festivals to language meetups, find Portuguese cultural events and businesses near you.',
+      title: 'Browse Real-Life Meetups',
+      subtitle: 'Explorar Encontros Reais',
+      description: 'Discover meetups at gyms, galleries, restaurants, and tours. Real places where Portuguese speakers gather.',
       icon: Calendar,
       color: 'from-secondary-500 to-secondary-600',
       bgColor: 'from-secondary-50 to-secondary-100',
@@ -45,9 +45,9 @@ export default function HowItWorks() {
     },
     {
       number: 3,
-      title: 'Share on LusoFeed',
-      subtitle: 'Partilhe no LusoFeed',
-      description: 'Post updates, photos, and tips. Connect with fellow Portuguese speakers and share experiences.',
+      title: 'Join or Create Events',
+      subtitle: 'Participar ou Criar Eventos',
+      description: 'RSVP to existing meetups or create your own. Meet Portuguese speakers for activities you enjoy.',
       icon: MessageCircle,
       color: 'from-accent-500 to-accent-600',
       bgColor: 'from-accent-50 to-accent-100',
@@ -56,8 +56,8 @@ export default function HowItWorks() {
     {
       number: 4,
       title: 'Save Your Favorites',
-      subtitle: 'Guarde os Seus Favoritos',
-      description: 'Keep track of the events, posts, and places you love. Never miss out on what matters to you.',
+      subtitle: 'Guardar os Seus Favoritos',
+      description: 'Save events and locations you love. Never miss a real-life meetup that interests you.',
       icon: Heart,
       color: 'from-action-500 to-action-600',
       bgColor: 'from-action-50 to-action-100',
@@ -95,12 +95,12 @@ export default function HowItWorks() {
           </h2>
           
           <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed max-w-3xl mx-auto font-medium">
-            Join London's most vibrant Portuguese-speaking community in just four simple steps.
+            Meet Portuguese speakers at real places across London & UK in four simple steps.
           </p>
         </div>
 
-        {/* Steps Grid - Matching Hero Section Style */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-16">
+        {/* Steps Grid - Optimized Multi-Column Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-16">
           {steps.map((step, index) => (
             <div
               key={step.title}
@@ -181,7 +181,7 @@ export default function HowItWorks() {
             </div>
             <div className="text-center">
               <div className="text-xl font-bold text-gray-800">40+</div>
-              <div className="text-xs font-bold text-gray-600 tracking-wide">MONTHLY EVENTS</div>
+              <div className="text-xs font-bold text-gray-600 tracking-wide">REAL-LIFE MEETUPS</div>
             </div>
           </div>
           

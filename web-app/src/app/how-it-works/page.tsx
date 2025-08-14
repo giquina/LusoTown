@@ -15,50 +15,51 @@ import {
 export default function HowItWorks() {
   const features = [
     {
-      icon: ChatBubbleLeftRightIcon,
-      title: 'LusoFeed - Your Community Hub',
-      description: 'Share updates, photos, and links with the LusoTown community. Tag events or businesses to help others discover them.',
+      icon: CalendarDaysIcon,
+      title: 'Real-Life Event Feed',
+      description: 'Browse live events happening at real places across London & UK. From gyms to galleries, restaurants to tours.',
       details: [
-        'Post text updates, photos, or links',
-        'Tag events or businesses you\'re attending or recommending',
-        'React with emojis (❤️, 👍, 😂, 😮, 😢, 🤩)',
-        'Use hashtags to categorize your posts',
-        'Toggle between English and Portuguese views'
+        'See events happening at gyms, galleries, restaurants, tours & more',
+        'All events are for Portuguese speakers to meet in person',
+        'Filter by location, date, and activity type',
+        'View event details including exact address and meetup time',
+        'See who else is attending each real-life meetup'
       ]
     },
     {
       icon: HeartIcon,
-      title: 'Save Your Favourites',
-      description: 'Bookmark events, businesses, and feed posts you love to easily find them later.',
+      title: 'Save & Favourite Events',
+      description: 'Save events and locations you love so you never miss a real-life meetup that interests you.',
       details: [
-        'Click the heart icon to save any event, business, or feed post',
-        'Access all your saved items from your profile',
-        'Quickly navigate back to saved content',
-        'Never miss out on your favorite events or businesses'
+        'Click the heart icon to save any real-life event',
+        'Create your personal list of favorite events and locations',
+        'Get notified about similar events at your saved locations',
+        'Access your favorites anytime from your profile',
+        'Never miss a meetup at places you love'
       ]
     },
     {
       icon: UserGroupIcon,
-      title: 'Join & Participate',
-      description: 'Sign up for free and start connecting with the Portuguese community in London.',
+      title: 'Create & Join Meetups',
+      description: 'Create your own real-life meetups or join existing ones. Meet Portuguese speakers for activities you enjoy.',
       details: [
-        'Create your free profile',
-        'Browse events, businesses, and community members',
-        'RSVP to events to automatically post to LusoFeed',
-        'Share businesses you love with the community',
-        'Connect with people who share your interests'
+        'Create meetups at your favorite gyms, cafes, or cultural venues',
+        'Set real addresses and specific meeting points',
+        'RSVP to events you want to attend in person',
+        'Meet Portuguese speakers who share your interests',
+        'Build real friendships through in-person activities'
       ]
     },
     {
-      icon: CalendarDaysIcon,
-      title: 'Events & Community',
-      description: 'Discover and participate in events that celebrate Portuguese culture and language.',
+      icon: ChatBubbleLeftRightIcon,
+      title: 'Connect at Real Events',
+      description: 'Share experiences from real-life meetups and discover new Portuguese speakers in your area.',
       details: [
-        'Find cultural festivals, food markets, and meetups',
-        'Join language exchange sessions',
-        'Attend networking events for professionals',
-        'Participate in family-friendly activities',
-        'Support Portuguese businesses in London'
+        'Share photos and stories from events you attended',
+        'Tag the real locations where you met other Portuguese speakers',
+        'Recommend venues and activities to the community',
+        'Connect with people you met at real-life events',
+        'Plan future meetups with your new Portuguese-speaking friends'
       ]
     }
   ]
@@ -77,21 +78,21 @@ export default function HowItWorks() {
               className="max-w-4xl mx-auto text-center"
             >
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-                How LusoTown <span className="gradient-text">Works</span>
+                How Real-Life <span className="gradient-text">Meetups</span> Work
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Everything you need to know about connecting with the Portuguese community in London
+                Join 500+ Portuguese speakers meeting in real places across London & UK
               </p>
               
               <div className="bg-white rounded-2xl p-6 shadow-lg max-w-2xl mx-auto">
                 <div className="flex items-center justify-center gap-4 mb-4">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                   <p className="text-gray-600 font-medium">
-                    Completely free to join and participate
+                    Real places, real people, real connections
                   </p>
                 </div>
                 <p className="text-gray-500 text-sm">
-                  Built for people from Portugal, Brazil, Angola, Mozambique, Cape Verde, Guinea-Bissau, São Tomé and Príncipe, East Timor, Macau, and Equatorial Guinea — and for anyone who feels part of our Portuguese-speaking world.
+                  From gyms and galleries to restaurants and tours, meet Portuguese speakers at actual locations across London & UK. All events are designed for in-person connections.
                 </p>
               </div>
             </motion.div>
@@ -151,64 +152,64 @@ export default function HowItWorks() {
             >
               <div className="text-center mb-12">
                 <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                  LusoFeed in Detail
+                  Real-Life Meetups in Detail
                 </h2>
                 <p className="text-lg text-gray-600">
-                  Your social hub for connecting with the Portuguese community
+                  How Portuguese speakers connect at real places across London & UK
                 </p>
               </div>
               
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="bg-white rounded-2xl p-6 shadow-lg">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Auto-Posting Features</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Event Discovery</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                         <span className="text-primary-600 text-xs">1</span>
                       </div>
-                      <span className="text-gray-700">When you RSVP to an event, it automatically creates a post in LusoFeed</span>
+                      <span className="text-gray-700">Browse events at real locations: gyms, galleries, restaurants, cultural venues</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                         <span className="text-primary-600 text-xs">2</span>
                       </div>
-                      <span className="text-gray-700">When you add a business to your favorites, it can create a post</span>
+                      <span className="text-gray-700">See exact addresses, meeting times, and who's attending each event</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                         <span className="text-primary-600 text-xs">3</span>
                       </div>
-                      <span className="text-gray-700">Share your own updates, photos, and links anytime</span>
+                      <span className="text-gray-700">Filter by location, date, activity type to find meetups near you</span>
                     </li>
                   </ul>
                 </div>
                 
                 <div className="bg-white rounded-2xl p-6 shadow-lg">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Interaction Features</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Join Real Meetups</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        ❤️
+                        ✓
                       </div>
-                      <span className="text-gray-700">Like posts with the heart button</span>
+                      <span className="text-gray-700">RSVP to confirm your attendance at real-life events</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        👍
+                        📍
                       </div>
-                      <span className="text-gray-700">React with various emojis</span>
+                      <span className="text-gray-700">Get exact location details and directions to venues</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        #
+                        👥
                       </div>
-                      <span className="text-gray-700">Follow hashtags to see related content</span>
+                      <span className="text-gray-700">See other Portuguese speakers who'll be at the same event</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="w-6 h-6 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        🌐
+                        +
                       </div>
-                      <span className="text-gray-700">Toggle between English and Portuguese views</span>
+                      <span className="text-gray-700">Create your own meetups at places you love</span>
                     </li>
                   </ul>
                 </div>
@@ -229,10 +230,10 @@ export default function HowItWorks() {
             >
               <div className="text-center mb-12">
                 <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                  Your Favourites System
+                  Your Favorites System
                 </h2>
                 <p className="text-lg text-gray-600">
-                  Keep track of everything you love in the LusoTown community
+                  Save events and locations for real-life Portuguese meetups
                 </p>
               </div>
               
@@ -242,35 +243,35 @@ export default function HowItWorks() {
                     <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
                       <HeartIcon className="w-8 h-8 text-gray-400" />
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Save Anything</h3>
-                    <p className="text-gray-600 text-sm">Click the heart icon on any event, business, or feed post</p>
+                    <h3 className="font-semibold text-gray-900 mb-2">Save Real Events</h3>
+                    <p className="text-gray-600 text-sm">Click the heart icon on any real-life meetup or venue</p>
                   </div>
                   
                   <div className="text-center">
                     <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
                       <HeartIcon className="w-8 h-8 text-red-500 fill-current" />
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">See All Saved</h3>
-                    <p className="text-gray-600 text-sm">Access your "My Favourites" page from your profile</p>
+                    <h3 className="font-semibold text-gray-900 mb-2">Access Saved Events</h3>
+                    <p className="text-gray-600 text-sm">View all your saved real-life events from your favorites page</p>
                   </div>
                   
                   <div className="text-center">
                     <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
                       <ArrowRightIcon className="w-8 h-8 text-primary-600" />
                     </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Quick Access</h3>
-                    <p className="text-gray-600 text-sm">Click any saved item to go directly to it</p>
+                    <h3 className="font-semibold text-gray-900 mb-2">Never Miss Meetups</h3>
+                    <p className="text-gray-600 text-sm">Get notified about similar events at your favorite locations</p>
                   </div>
                 </div>
                 
                 <div className="bg-white rounded-xl p-6 border border-gray-200">
                   <h3 className="font-semibold text-gray-900 mb-3">How It Works:</h3>
                   <ol className="list-decimal pl-5 space-y-2 text-gray-700">
-                    <li>When you see something you like, click the heart icon ❤️</li>
-                    <li>The heart will fill with red to show it's saved</li>
-                    <li>Go to your profile and click "My Favourites" to see all saved items</li>
-                    <li>Click any item in your favourites to go directly to it</li>
-                    <li>To unsave, just click the filled heart icon again</li>
+                    <li>When you see a real-life event you like, click the heart icon ❤️</li>
+                    <li>The heart will fill with red to show the event is saved</li>
+                    <li>Go to your profile and click "My Favourites" to see all saved events</li>
+                    <li>Click any saved event to see details and RSVP for the meetup</li>
+                    <li>Get notified about similar events at locations you've favorited</li>
                   </ol>
                 </div>
               </div>
@@ -289,30 +290,30 @@ export default function HowItWorks() {
               className="text-center max-w-3xl mx-auto"
             >
               <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-                Ready to Join the LusoTown Community?
+                Ready to Join Real-Life Portuguese Meetups?
               </h2>
               <p className="text-xl opacity-90 leading-relaxed mb-8">
-                Connect with Portuguese speakers and friends in London. Share your experiences, discover events, and build lasting friendships.
+                Meet Portuguese speakers at real places across London & UK. Join gyms, galleries, restaurants, tours and more.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
-                  href="/signup" 
+                  href="/events" 
                   className="bg-white text-primary-600 hover:bg-gray-100 font-semibold px-8 py-4 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
                 >
-                  Join for Free
+                  Browse Real Meetups
                   <ArrowRightIcon className="w-5 h-5" />
                 </a>
                 <a 
-                  href="/events" 
+                  href="/signup" 
                   className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-200"
                 >
-                  Explore Events
+                  Join Community
                 </a>
               </div>
               
               <p className="text-sm opacity-75 mt-6">
-                No commitment required • Completely free • Open to all Portuguese community members and friends
+                Real places, real people, real connections • Completely free • Portuguese speakers across London & UK
               </p>
             </motion.div>
           </div>

@@ -8,6 +8,7 @@ import { Crown, LogOut } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import Logo from '@/components/Logo'
 import LanguageToggle from '@/components/LanguageToggle'
+import CartButton from '@/components/CartButton'
 import { useLanguage } from '@/context/LanguageContext'
 
 const getNavigationLinks = (t: any) => [
@@ -85,6 +86,14 @@ export default function Header() {
 
           {/* Desktop CTA / User Menu */}
           <div className="hidden md:flex items-center space-x-4">
+            <CartButton />
+            <a 
+              href="/saved"
+              className="p-2 text-gray-600 hover:text-primary-500 transition-colors"
+              title="Saved Items"
+            >
+              <HeartIcon className="w-6 h-6" />
+            </a>
             <LanguageToggle />
             {user ? (
               <div className="relative">
@@ -178,6 +187,14 @@ export default function Header() {
 
           {/* Mobile menu button */}
           <div className="flex md:hidden items-center space-x-2 relative z-50">
+            <CartButton />
+            <a 
+              href="/saved"
+              className="p-2 text-gray-600 hover:text-primary-500 transition-colors"
+              title="Saved Items"
+            >
+              <HeartIcon className="w-6 h-6" />
+            </a>
             <LanguageToggle />
             <button
               type="button"

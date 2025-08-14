@@ -17,6 +17,7 @@ import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import PersonalizedFeed from '@/components/PersonalizedFeed'
+import EventFeed from '@/components/EventFeed'
 import { useLanguage, Language } from '@/context/LanguageContext'
 
 interface FeedPost {
@@ -140,7 +141,7 @@ export default function CommunityFeed() {
   const [newPost, setNewPost] = useState('')
   const { language, setLanguage } = useLanguage()
   const [showCreatePost, setShowCreatePost] = useState(false)
-  const [feedType, setFeedType] = useState<'personalized' | 'community'>('personalized')
+  const [feedType, setFeedType] = useState<'personalized' | 'community' | 'events'>('personalized')
 
   const handleLike = (postId: string) => {
     setPosts(posts.map(post => 
@@ -205,6 +206,16 @@ export default function CommunityFeed() {
                     }`}
                   >
                     {(language === 'pt-pt' || language === 'pt-br') ? 'Minha Rede' : 'My Network'}
+                  </button>
+                  <button
+                    onClick={() => setFeedType('events')}
+                    className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                      feedType === 'events'
+                        ? 'bg-primary-500 text-white shadow-lg'
+                        : 'bg-white text-gray-700 hover:bg-gray-50'
+                    }`}
+                  >
+                    {(language === 'pt-pt' || language === 'pt-br') ? 'Eventos' : 'Events'}
                   </button>
                   <button
                     onClick={() => setFeedType('community')}
@@ -295,6 +306,8 @@ export default function CommunityFeed() {
             <div className="max-w-2xl mx-auto">
               {feedType === 'personalized' ? (
                 <PersonalizedFeed />
+              ) : feedType === 'events' ? (
+                <EventFeed />
               ) : (
                 <div className="space-y-6">
                   {posts.map((post) => (

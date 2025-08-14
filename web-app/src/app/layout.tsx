@@ -8,6 +8,7 @@ import UserTypeSelection from '@/components/UserTypeSelection'
 import { LanguageProvider } from '@/context/LanguageContext'
 import { FavoritesProvider } from '@/context/FavoritesContext'
 import { FollowingProvider } from '@/context/FollowingContext'
+import { CartProvider } from '@/context/CartContext'
 import FavoriteNotification from '@/components/FavoriteNotification'
 
 const inter = Inter({ 
@@ -25,25 +26,25 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://lusotown.vercel.app'),
-  title: 'LusoTown - UK Portuguese Community Platform',
-  description: 'The premier platform for Portuguese-speaking communities across the UK. Connect with culture, find events, discover businesses, and build friendships from London to Scotland.',
+  title: 'LusoTown - Real-Life Portuguese Meetups in London & UK',
+  description: 'Join 500+ Portuguese speakers meeting in real places across London & UK. From gyms and galleries to restaurants and tours, meet people who share your language and culture.',
   keywords: [
-    'portuguese community uk',
-    'portuguese london',
-    'portuguese speaking britain',
-    'portugal diaspora uk',
-    'brazilian community uk',
-    'angolan community britain',
-    'portuguese culture uk',
-    'portuguese events london',
-    'portuguese business directory uk',
-    'luso diaspora britain',
-    'portuguese speakers uk',
-    'portuguese culture britain',
-    'portuguese community platform uk',
-    'portuguese manchester',
-    'portuguese birmingham',
-    'portuguese scotland'
+    'portuguese meetups london',
+    'portuguese speakers uk meetups',
+    'real life portuguese events london',
+    'portuguese community london meetups',
+    'brazilian meetups london',
+    'angolan meetups uk',
+    'portuguese gym meetups london',
+    'portuguese cultural events london',
+    'portuguese restaurant meetups',
+    'luso meetups uk',
+    'portuguese speakers real events',
+    'portuguese galleries tours london',
+    'portuguese community real places',
+    'portuguese manchester meetups',
+    'portuguese birmingham events',
+    'portuguese scotland gatherings'
   ],
   authors: [{ name: 'LusoTown' }],
   creator: 'LusoTown',
@@ -52,22 +53,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_GB',
     url: 'https://lusotown.vercel.app',
-    title: 'LusoTown - UK Portuguese Community Platform',
-    description: 'The premier platform for Portuguese-speaking communities across the UK. Connect with culture, find events, discover businesses, and build friendships from London to Scotland.',
+    title: 'LusoTown - Real-Life Portuguese Meetups in London & UK',
+    description: 'Join 500+ Portuguese speakers meeting in real places across London & UK. From gyms and galleries to restaurants and tours, meet people who share your language and culture.',
     siteName: 'LusoTown',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'LusoTown - UK Portuguese Community Platform',
+        alt: 'LusoTown - Real-Life Portuguese Meetups in London & UK',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'LusoTown - UK Portuguese Community Platform',
-    description: 'The premier platform for Portuguese-speaking communities across the UK. Connect with culture, find events, discover businesses, and build friendships.',
+    title: 'LusoTown - Real-Life Portuguese Meetups in London & UK',
+    description: 'Join 500+ Portuguese speakers meeting in real places across London & UK. From gyms and galleries to restaurants and tours.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -106,11 +107,13 @@ export default function RootLayout({
         <LanguageProvider>
           <FavoritesProvider>
             <FollowingProvider>
-              <UserTypeSelection />
-              {children}
-              <WhatsAppWidget />
-              <LiveFeedNotifications />
-              <FavoriteNotification />
+              <CartProvider>
+                <UserTypeSelection />
+                {children}
+                <WhatsAppWidget />
+                <LiveFeedNotifications />
+                <FavoriteNotification />
+              </CartProvider>
             </FollowingProvider>
           </FavoritesProvider>
         </LanguageProvider>

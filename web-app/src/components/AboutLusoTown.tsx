@@ -67,7 +67,7 @@ export default function AboutLusoTown() {
     {
       icon: Users,
       title: 'Connect with People Like You',
-      description: 'Meet new friends, share experiences, and keep your language and traditions alive in London.',
+      description: 'Meet new friends through real-life meetups, share experiences, and keep your language and traditions alive in London.',
       gradient: 'from-coral-500 to-action-500',
       lightBg: 'from-coral-50 to-action-100/50',
       shadowColor: 'shadow-coral-500/20'
@@ -114,8 +114,8 @@ export default function AboutLusoTown() {
           </h2>
           
           <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto font-medium">
-            LusoTown is your online community for Portuguese speakers and friends in London. Whether you're new to the city, 
-            have family roots in a Portuguese-speaking country, or simply love our culture and language, this is your space to connect, share, and celebrate.
+            LusoTown connects Portuguese speakers and friends through real-life meetups in London. Whether you're new to the city, 
+            have family roots in a Portuguese-speaking country, or simply love our culture and language, this is your space to meet people in person, share experiences, and celebrate together.
           </p>
         </div>
 
@@ -204,7 +204,7 @@ export default function AboutLusoTown() {
             
             <div className="inline-flex items-center gap-3 bg-gradient-to-r from-secondary-500 via-primary-500 to-accent-500 text-white rounded-2xl px-8 py-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
               <MapPin className="h-5 w-5" />
-              <span className="font-bold text-lg">Join 500+ Portuguese speakers who have made London feel like home</span>
+              <span className="font-bold text-lg">Join 500+ Portuguese speakers meeting in real places across London</span>
               <Sparkles className="h-5 w-5" />
             </div>
           </div>
@@ -214,7 +214,7 @@ export default function AboutLusoTown() {
         <div className={`text-center mt-12 transition-all duration-1000 delay-900 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           <div className="inline-flex items-center gap-3 text-accent-600 hover:text-accent-700 transition-colors duration-300">
             <Sparkles className="h-6 w-6 animate-pulse" />
-            <span className="text-lg font-bold">Ready to connect with your Portuguese community in London?</span>
+            <span className="text-lg font-bold">Ready to meet your Portuguese community in real life across London?</span>
             <ArrowRight className="h-6 w-6 transform group-hover:translate-x-1 transition-transform duration-200" />
           </div>
         </div>

@@ -32,7 +32,7 @@ export default function About() {
                 About <span className="gradient-text">LusoTown London</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                LusoTown is your online community for Portuguese speakers and friends in London. Whether you're new to the city, have roots in a Portuguese-speaking country, or simply love our culture and language, this is your space to connect, share, and celebrate.
+                LusoTown connects Portuguese speakers and friends through real-life meetups in London. Whether you're new to the city, have roots in a Portuguese-speaking country, or simply love our culture and language, this is your space to meet people in person, share, and celebrate.
               </p>
             </div>
           </div>
