@@ -21,8 +21,8 @@ export default function CommunityGuidelines() {
     },
     {
       icon: HeartIcon,
-      title: "Família (Family)",
-      description: "Support each other like extended family. Help fellow Portuguese speakers navigate life in London and maintain strong community bonds across generations."
+      title: "Rede (Network)",
+      description: "Support each other through professional and personal connections. Help fellow Portuguese speakers navigate life in London and build strong community networks."
     },
     {
       icon: UserGroupIcon,
@@ -80,8 +80,8 @@ export default function CommunityGuidelines() {
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Nossa Comunidade (Our Community)</h2>
                 <div className="prose prose-lg text-gray-700 space-y-4">
                   <p>
-                    LusoTown London is committed to maintaining a respectful, inclusive environment for all Portuguese speakers and their families. 
-                    Our community guidelines ensure everyone feels welcome, valued, and supported while preserving our cultural heritage in London.
+                    LusoTown London is committed to maintaining a respectful, inclusive environment for all Portuguese speakers and working professionals. 
+                    Our community guidelines ensure everyone feels welcome, valued, and supported while advancing careers and preserving cultural heritage in London.
                   </p>
                   
                   <div className="bg-white border-l-4 border-primary-500 p-4 rounded-r-lg my-6">
@@ -111,7 +111,7 @@ export default function CommunityGuidelines() {
                       </li>
                       <li className="flex items-start">
                         <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>Use language that welcomes families, children, and people of all ages</span>
+                        <span>Use language that welcomes professionals, students, and adults from all backgrounds</span>
                       </li>
                       <li className="flex items-start">
                         <span className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
@@ -148,7 +148,7 @@ export default function CommunityGuidelines() {
                   <div className="bg-white/60 backdrop-blur-sm rounded-xl p-6 mt-6">
                     <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
                       <UserGroupIcon className="w-5 h-5 mr-2 text-indigo-500" />
-                      Family & Community Love
+                      Professional & Community Support
                     </h3>
                     <ul className="list-none space-y-3">
                       <li className="flex items-start">
@@ -161,11 +161,11 @@ export default function CommunityGuidelines() {
                       </li>
                       <li className="flex items-start">
                         <span className="w-2 h-2 bg-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>Help families thrive in British society while honoring Portuguese identity</span>
+                        <span>Help professionals thrive in British society while honoring Portuguese identity</span>
                       </li>
                       <li className="flex items-start">
                         <span className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>Create joyful spaces where children and teens connect with their beautiful heritage</span>
+                        <span>Create meaningful spaces where young adults and professionals connect with their heritage</span>
                       </li>
                     </ul>
                   </div>

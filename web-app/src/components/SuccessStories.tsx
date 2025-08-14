@@ -21,55 +21,81 @@ interface SuccessStory {
 const successStories: SuccessStory[] = [
   {
     id: '1',
-    name: 'Sofia',
+    name: 'Sofia Silva',
     age: 34,
-    location: 'Stockwell',
+    location: 'Stockwell, London',
     profileImage: getImageWithFallback('sarah-chen'),
     friendImage: getImageWithFallback('maya-patel'),
-    friendName: 'Maria',
-    story: 'Met Maria at a Portuguese cultural event in Vauxhall and instantly connected over our shared homesickness for Portugal. Six months later, we\'ve created our own Portuguese book club at a local café!',
-    connectionType: 'Portuguese Cultural Event',
-    timeframe: '6 months ago',
-    activities: ['Portuguese cafés', 'Book discussions', 'Cultural events']
+    friendName: 'Maria Santos',
+    story: 'After moving from Porto, I felt lost in London until I met Maria at a Fado night in Little Portugal. We discovered we both worked in fintech and started a Portuguese Women in Tech group that now helps 50+ Lusophone professionals thrive in London\'s startup scene.',
+    connectionType: 'Portuguese Tech Heritage',
+    timeframe: '1 year ago',
+    activities: ['Fintech networking', 'Portuguese startups', 'Mentorship programs', 'Cultural preservation']
   },
   {
     id: '2',
-    name: 'Ana',
+    name: 'Ana Ferreira',
     age: 31,
-    location: 'Elephant & Castle',
+    location: 'South London',
     profileImage: getImageWithFallback('jessica-williams'),
     friendImage: getImageWithFallback('emma-johnson'),
-    friendName: 'Beatriz',
-    story: 'Beatriz and I met at a Portuguese professionals meetup at a Stockwell restaurant. We bonded over our shared experience of building careers in London while staying connected to our Portuguese roots.',
-    connectionType: 'Portuguese Professionals',
+    friendName: 'Beatriz Rodrigues',
+    story: 'From Luanda to London - Beatriz and I connected over our shared experience as Angolan-Portuguese professionals. Together we launched "Heritage & Hustle," a business network supporting Portuguese-speaking entrepreneurs across all CPLP nations, now with 200+ members and £2M in collective funding raised.',
+    connectionType: 'CPLP Business Network',
     timeframe: '8 months ago',
-    activities: ['Portuguese restaurants', 'Networking events', 'Career support']
+    activities: ['Startup funding', 'Cultural entrepreneurship', 'Heritage preservation', 'Cross-border partnerships']
   },
   {
     id: '3',
-    name: 'Carla',
-    age: 35,
-    location: 'Vauxhall',
+    name: 'Carla Mendes',
+    age: 29,
+    location: 'Camden, London',
     profileImage: getImageWithFallback('priya-sharma'),
     friendImage: getImageWithFallback('lisa-thompson'),
-    friendName: 'Lucia',
-    story: 'Lucia invited me to join her Portuguese walking group, and it transformed both my fitness and homesickness. Our Sunday walks through Portuguese neighborhoods have become the highlight of my week.',
-    connectionType: 'Portuguese Walking Group',
-    timeframe: '4 months ago',
-    activities: ['Portuguese neighborhoods', 'Cultural walks', 'Community fitness']
+    friendName: 'Lucia Tavares',
+    story: 'Coming from São Paulo, I was struggling with imposter syndrome in London\'s creative industry. Lucia, a Mozambican-Portuguese designer, became my accountability partner through LusoTown. We\'ve now co-founded a award-winning creative agency celebrating Lusophone storytelling and won the London Cultural Diversity Award 2024.',
+    connectionType: 'Creative Heritage Collective',
+    timeframe: '10 months ago',
+    activities: ['Creative agency', 'Cultural storytelling', 'Award recognition', 'Community impact']
   },
   {
     id: '4',
-    name: 'Inês',
-    age: 38,
-    location: 'Camden',
+    name: 'Inês Costa',
+    age: 32,
+    location: 'East London',
     profileImage: getImageWithFallback('ava-davis'),
     friendImage: getImageWithFallback('community-4'),
-    friendName: 'Raquel',
-    story: 'Raquel and I met at a Portuguese art exhibition in South London and discovered we both miss the creative spirit of Portugal. We now attend cultural events together and started our own Portuguese arts group.',
-    connectionType: 'Portuguese Arts & Culture',
-    timeframe: '1 year ago',
-    activities: ['Portuguese exhibitions', 'Cultural events', 'Creative workshops']
+    friendName: 'Raquel Pereira',
+    story: 'As a researcher from Coimbra studying at Imperial College, I met Raquel, a Cape Verdean doctor, through our Portuguese Academic Network. We collaborated on groundbreaking research combining Portuguese traditional medicine with modern healthcare, now published in Nature and featured by the Portuguese Embassy as a model of diaspora excellence.',
+    connectionType: 'Academic Excellence Network',
+    timeframe: '1.5 years ago',
+    activities: ['Academic research', 'Medical innovation', 'Embassy recognition', 'International publication']
+  },
+  {
+    id: '5',
+    name: 'Miguel Oliveira',
+    age: 35,
+    location: 'West London',
+    profileImage: getImageWithFallback('community-5'),
+    friendImage: getImageWithFallback('community-6'),
+    friendName: 'João Ribeiro',
+    story: 'From Madeira to London\'s finance district - João and I transformed our weekend Portuguese football matches into "Goal & Growth," a sports-based mentorship program. We\'ve helped 100+ young Portuguese-speaking men develop leadership skills through sport, with 85% achieving career promotions and many becoming community leaders themselves.',
+    connectionType: 'Sports Leadership Program',
+    timeframe: '2 years ago',
+    activities: ['Sports mentorship', 'Leadership development', 'Career advancement', 'Community building']
+  },
+  {
+    id: '6',
+    name: 'Teresa Almeida',
+    age: 40,
+    location: 'North London',
+    profileImage: getImageWithFallback('community-7'),
+    friendImage: getImageWithFallback('community-8'),
+    friendName: 'Helena Sousa',
+    story: 'As working mothers from Braga and Viseu, Helena and I started "Mães em Londres" (Mothers in London) to support Portuguese-speaking families. Our community has grown to 300+ families, offering everything from childcare co-ops to university prep workshops. We\'ve been featured in Portuguese media and received funding from London Borough of Camden for our cultural integration programs.',
+    connectionType: 'Family Heritage Network',
+    timeframe: '3 years ago',
+    activities: ['Family support', 'Cultural integration', 'Government recognition', 'Media features']
   }
 ]
 
@@ -113,16 +139,16 @@ export default function SuccessStories() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 text-primary-600 font-medium mb-6 border border-white/30">
-            <HeartIcon className="h-4 w-4 text-pink-400" />
-            Real Friendship Success Stories
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-secondary-50/80 via-accent-50/80 to-coral-50/80 backdrop-blur-sm rounded-full px-6 py-3 text-secondary-600 font-bold mb-6 border border-secondary-200/40 shadow-lg">
+            <SparklesIcon className="h-5 w-5 text-accent-600" />
+            Portuguese Heritage Success Stories
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            From Strangers to{' '}
-            <span className="gradient-text">Best Friends</span>
+            From Social Calendar to{' '}
+            <span className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent">Life-Changing Impact</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-            Portuguese speakers who found their London community through real meetups at authentic venues. Read inspiring stories of connection, cultural preservation, and genuine friendship in London's Portuguese community.
+            Portuguese speakers who transformed their London experience through LusoTown connections. Discover inspiring achievements in business, academia, creative arts, and community leadership - showcasing the power of Portuguese diaspora excellence.
           </p>
         </motion.div>
 
@@ -132,7 +158,7 @@ export default function SuccessStories() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-7 lg:gap-8 xl:gap-10"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8"
         >
           {successStories.map((story) => (
             <motion.div
@@ -220,11 +246,11 @@ export default function SuccessStories() {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="text-center mt-16"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Ready to Write Your Own Success Story?
+          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+            Ready to Build Your Own Portuguese Legacy in London?
           </h3>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Join hundreds of Portuguese speakers who\'ve found their London community. Your next Portuguese friend could be just one authentic venue away.
+          <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+            Join 500+ Portuguese speakers from Portugal, Brazil, Angola, Mozambique, Cape Verde & beyond who are achieving extraordinary things together. Your social calendar could be the foundation of your next big breakthrough.
           </p>
           <a 
             href="/signup" 

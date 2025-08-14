@@ -92,7 +92,7 @@ export default function FeedFilters({
     { key: 'football', label: isPortuguese ? 'Futebol' : 'Football' },
     { key: 'traditional', label: isPortuguese ? 'Tradicional' : 'Traditional' },
     { key: 'modern', label: isPortuguese ? 'Moderno' : 'Modern' },
-    { key: 'family_friendly', label: isPortuguese ? 'Familiar' : 'Family Friendly' }
+    { key: 'professional_networking', label: isPortuguese ? 'Profissional' : 'Professional' }
   ]
 
   const dateRanges = [

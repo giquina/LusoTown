@@ -116,8 +116,8 @@ export default function AboutLusoTown() {
           </h2>
           
           <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto font-medium">
-            LusoTown is where Portuguese hearts find their London family. Whether you're homesick, raising children who should know their heritage, 
-            or simply miss the warmth of Portuguese conversation, this is your welcome home. Every person here understands your journey and opens their arms to welcome you.
+            LusoTown is where Portuguese hearts find their London network. Whether you're homesick, building your career while honoring your heritage, 
+            or simply miss the warmth of Portuguese conversation, this is your professional home. Every person here understands your journey and opens their networks to support you.
           </p>
         </div>
 
@@ -172,7 +172,7 @@ export default function AboutLusoTown() {
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-3 bg-white/70 border border-gray-200 rounded-2xl px-6 py-3 shadow-lg mb-6">
               <Shield className="h-5 w-5 text-secondary-500" />
-              <span className="text-sm font-bold text-gray-700">All Ages Welcome • Free Community</span>
+              <span className="text-sm font-bold text-gray-700">Professional Network • Adult Community</span>
             </div>
             
             <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -216,7 +216,7 @@ export default function AboutLusoTown() {
         <div className={`text-center mt-12 transition-all duration-1000 delay-900 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           <div className="inline-flex items-center gap-3 text-accent-600 hover:text-accent-700 transition-colors duration-300">
             <Sparkles className="h-6 w-6 animate-pulse" />
-            <span className="text-lg font-bold">Ready to meet your Portuguese community in real life across London?</span>
+            <span className="text-lg font-bold">Ready to book experiences with Portuguese speakers across London?</span>
             <ArrowRight className="h-6 w-6 transform group-hover:translate-x-1 transition-transform duration-200" />
           </div>
         </div>

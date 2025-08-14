@@ -107,7 +107,7 @@ export default function Features() {
             <span className="gradient-text">{t('features.subtitle')}</span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">
-            Find your Portuguese family who understands the joy of sharing a meal, the comfort of speaking your language, and the warmth of celebrating together. Meet where Portuguese hearts feel at home - from Stockwell's family bakeries to Vauxhall's welcoming centers.
+            Fill your social calendar with lusophone speakers from Portugal, Brazil, Angola, Mozambique, Cape Verde, and beyond who share the joy of meals together, the comfort of our shared language, and the richness of diverse Portuguese-speaking cultures. Book experiences at places where Portuguese hearts from all corners of the world gather - from Stockwell's authentic bakeries to Vauxhall's multicultural centers.
           </p>
         </motion.div>
 
@@ -172,7 +172,7 @@ export default function Features() {
             <div className="relative z-10">
               <div className="flex items-center justify-center gap-2 mb-6">
                 <HeartIcon className="h-6 w-6 text-action-500" />
-                <h3 className="text-2xl font-semibold text-gray-900">Your Portuguese Family Network</h3>
+                <h3 className="text-2xl font-semibold text-gray-900">Your Portuguese Professional Network</h3>
               </div>
               
               {/* Featured Community Testimonial */}
@@ -192,13 +192,13 @@ export default function Features() {
                   </div>
                 </div>
                 <p className="text-lg text-gray-600 italic mb-4">
-                  "I was homesick and felt lost in London. Through LusoTown, I found my Portuguese family - people who understand my story and welcome me like I've always belonged. Now I have tias, primos, and friends everywhere I go."
+                  "I was homesick and felt lost in London. Through LusoTown, I found my Portuguese network - professionals who understand my story and welcome me into their circles. Now I have colleagues, mentors, and friends everywhere I go."
                 </p>
               </div>
               
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Built by Portuguese hearts who know what it's like to miss home and search for belonging in a new city. 
-                Every feature is designed to help you find your Portuguese family - warm people who greet you with a smile, share their stories, and make you feel like you've come home.
+                Built by lusophone professionals from Portugal 🇵🇹, Brazil 🇧🇷, Angola 🇦🇴, Mozambique 🇲🇿, Cape Verde 🇨🇻, and beyond who know what it's like to thrive in London while honoring diverse Portuguese-speaking heritages. 
+                Every feature celebrates our shared language while respecting unique cultural traditions from across the Portuguese-speaking world.
               </p>
             </div>
           </div>

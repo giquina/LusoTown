@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext, useContext, useState, ReactNode, useEffect } from 'react'
+import { createContext, useContext, useState, ReactNode, useEffect, useCallback, useMemo } from 'react'
 import { toast } from 'react-hot-toast'
 
 export interface CartItem {
@@ -104,7 +104,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [savedItems, setSavedItems] = useState<SavedItem[]>([])
   const [pendingReservations, setPendingReservations] = useState<ReservationRequest[]>([])
 
-  // Load from localStorage on mount
+  // Load from localStorage on mount with error handling
   useEffect(() => {
     try {
       const savedCart = localStorage.getItem('lusotown-cart')
@@ -112,34 +112,62 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const savedReservations = localStorage.getItem('lusotown-reservations')
       
       if (savedCart) {
-        setCartItems(JSON.parse(savedCart))
+        const parsedCart = JSON.parse(savedCart)
+        // Validate cart items structure
+        if (Array.isArray(parsedCart)) {
+          setCartItems(parsedCart)
+        }
       }
       if (savedFavorites) {
-        setSavedItems(JSON.parse(savedFavorites))
+        const parsedFavorites = JSON.parse(savedFavorites)
+        // Validate saved items structure
+        if (Array.isArray(parsedFavorites)) {
+          setSavedItems(parsedFavorites)
+        }
       }
       if (savedReservations) {
-        setPendingReservations(JSON.parse(savedReservations))
+        const parsedReservations = JSON.parse(savedReservations)
+        // Validate reservations structure
+        if (Array.isArray(parsedReservations)) {
+          setPendingReservations(parsedReservations)
+        }
       }
     } catch (error) {
       console.error('Error loading cart/saved data:', error)
+      // Clear corrupted data
+      localStorage.removeItem('lusotown-cart')
+      localStorage.removeItem('lusotown-saved')
+      localStorage.removeItem('lusotown-reservations')
     }
   }, [])
 
-  // Save to localStorage when data changes
+  // Save to localStorage when data changes with error handling
   useEffect(() => {
-    localStorage.setItem('lusotown-cart', JSON.stringify(cartItems))
+    try {
+      localStorage.setItem('lusotown-cart', JSON.stringify(cartItems))
+    } catch (error) {
+      console.error('Error saving cart to localStorage:', error)
+    }
   }, [cartItems])
 
   useEffect(() => {
-    localStorage.setItem('lusotown-saved', JSON.stringify(savedItems))
+    try {
+      localStorage.setItem('lusotown-saved', JSON.stringify(savedItems))
+    } catch (error) {
+      console.error('Error saving favorites to localStorage:', error)
+    }
   }, [savedItems])
 
   useEffect(() => {
-    localStorage.setItem('lusotown-reservations', JSON.stringify(pendingReservations))
+    try {
+      localStorage.setItem('lusotown-reservations', JSON.stringify(pendingReservations))
+    } catch (error) {
+      console.error('Error saving reservations to localStorage:', error)
+    }
   }, [pendingReservations])
 
-  // Cart functions
-  const addToCart = (item: Omit<CartItem, 'id' | 'quantity' | 'addedAt'> & { quantity?: number }) => {
+  // Cart functions - memoized to prevent unnecessary re-renders
+  const addToCart = useCallback((item: Omit<CartItem, 'id' | 'quantity' | 'addedAt'> & { quantity?: number }) => {
     const newItem: CartItem = {
       ...item,
       id: `cart-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
@@ -177,14 +205,14 @@ export function CartProvider({ children }: { children: ReactNode }) {
       icon: '🛒',
       duration: 2000
     })
-  }
+  }, [cartItems])
 
-  const removeFromCart = (id: string) => {
+  const removeFromCart = useCallback((id: string) => {
     setCartItems(prev => prev.filter(item => item.id !== id))
     toast.success('Removido do carrinho')
-  }
+  }, [])
 
-  const updateQuantity = (id: string, quantity: number) => {
+  const updateQuantity = useCallback((id: string, quantity: number) => {
     if (quantity <= 0) {
       removeFromCart(id)
       return
@@ -208,15 +236,15 @@ export function CartProvider({ children }: { children: ReactNode }) {
       }
       return item
     }))
-  }
+  }, [removeFromCart])
 
-  const clearCart = () => {
+  const clearCart = useCallback(() => {
     setCartItems([])
     toast.success('Carrinho limpo')
-  }
+  }, [])
 
   // Saved items functions
-  const addToSaved = (item: Omit<SavedItem, 'id' | 'savedAt'>) => {
+  const addToSaved = useCallback((item: Omit<SavedItem, 'id' | 'savedAt'>) => {
     // Check if already saved
     if (savedItems.some(saved => saved.type === item.type && saved.title === item.title)) {
       toast.error('Item já guardado nos favoritos')
@@ -234,28 +262,28 @@ export function CartProvider({ children }: { children: ReactNode }) {
       icon: '❤️',
       duration: 2000
     })
-  }
+  }, [savedItems])
 
-  const removeFromSaved = (id: string) => {
+  const removeFromSaved = useCallback((id: string) => {
     setSavedItems(prev => prev.filter(item => item.id !== id))
     toast.success('Removido dos favoritos')
-  }
+  }, [])
 
-  const isSaved = (title: string) => {
+  const isSaved = useCallback((title: string) => {
     return savedItems.some(item => item.title === title)
-  }
+  }, [savedItems])
 
-  const toggleSaved = (item: Omit<SavedItem, 'id' | 'savedAt'>) => {
+  const toggleSaved = useCallback((item: Omit<SavedItem, 'id' | 'savedAt'>) => {
     const existing = savedItems.find(saved => saved.title === item.title)
     if (existing) {
       removeFromSaved(existing.id)
     } else {
       addToSaved(item)
     }
-  }
+  }, [savedItems, removeFromSaved, addToSaved])
 
   // Reservation functions
-  const createReservation = async (request: ReservationRequest): Promise<{ success: boolean; message: string }> => {
+  const createReservation = useCallback(async (request: ReservationRequest): Promise<{ success: boolean; message: string }> => {
     try {
       // Check if item is in cart
       const cartItem = cartItems.find(item => 
@@ -293,47 +321,77 @@ export function CartProvider({ children }: { children: ReactNode }) {
       console.error('Error creating reservation:', error)
       return { success: false, message: 'Erro ao criar reserva' }
     }
-  }
+  }, [cartItems, pendingReservations, removeFromCart])
 
   // Utility functions
-  const isInCart = (title: string) => {
+  const isInCart = useCallback((title: string) => {
     return cartItems.some(item => item.title === title)
-  }
+  }, [cartItems])
 
-  const getCartItem = (id: string) => {
+  const getCartItem = useCallback((id: string) => {
     return cartItems.find(item => item.id === id)
-  }
+  }, [cartItems])
 
-  const getSavedItem = (id: string) => {
+  const getSavedItem = useCallback((id: string) => {
     return savedItems.find(item => item.id === id)
-  }
+  }, [savedItems])
 
-  // Computed values
-  const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0)
-  const cartTotal = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0)
-  const savedCount = savedItems.length
+  // Computed values - memoized for performance
+  const cartCount = useMemo(() => 
+    cartItems.reduce((total, item) => total + item.quantity, 0), 
+    [cartItems]
+  )
+  
+  const cartTotal = useMemo(() => 
+    cartItems.reduce((total, item) => total + (item.price * item.quantity), 0), 
+    [cartItems]
+  )
+  
+  const savedCount = useMemo(() => savedItems.length, [savedItems])
+
+  // Memoize context value to prevent unnecessary re-renders
+  const contextValue = useMemo(() => ({
+    cartItems,
+    cartCount,
+    cartTotal,
+    addToCart,
+    removeFromCart,
+    updateQuantity,
+    clearCart,
+    savedItems,
+    savedCount,
+    addToSaved,
+    removeFromSaved,
+    isSaved,
+    toggleSaved,
+    pendingReservations,
+    createReservation,
+    isInCart,
+    getCartItem,
+    getSavedItem
+  }), [
+    cartItems,
+    cartCount,
+    cartTotal,
+    addToCart,
+    removeFromCart,
+    updateQuantity,
+    clearCart,
+    savedItems,
+    savedCount,
+    addToSaved,
+    removeFromSaved,
+    isSaved,
+    toggleSaved,
+    pendingReservations,
+    createReservation,
+    isInCart,
+    getCartItem,
+    getSavedItem
+  ])
 
   return (
-    <CartContext.Provider value={{
-      cartItems,
-      cartCount,
-      cartTotal,
-      addToCart,
-      removeFromCart,
-      updateQuantity,
-      clearCart,
-      savedItems,
-      savedCount,
-      addToSaved,
-      removeFromSaved,
-      isSaved,
-      toggleSaved,
-      pendingReservations,
-      createReservation,
-      isInCart,
-      getCartItem,
-      getSavedItem
-    }}>
+    <CartContext.Provider value={contextValue}>
       {children}
     </CartContext.Provider>
   )

@@ -97,13 +97,13 @@ export default function Login() {
   }
 
   const loadingMessages = isPortuguese ? [
-    'Bem-vindo de volta à família...',
-    'Conectando com a sua comunidade...',
-    'Preparando o seu lar português...'
+    'Bem-vindo de volta à comunidade...',
+    'Conectando ao seu calendário social...',
+    'Preparando o seu espaço português...'
   ] : [
-    'Welcome back to the family...',
-    'Connecting to your community...',
-    'Preparing your Portuguese home...'
+    'Welcome back to your community...',
+    'Connecting to your social calendar...',
+    'Preparing your Portuguese network...'
   ]
 
   const [loadingMessageIndex, setLoadingMessageIndex] = useState(0)
@@ -177,15 +177,15 @@ export default function Login() {
                       </h3>
                       <p className="text-xs text-primary-700 mb-3">
                         {isPortuguese ? 
-                          'Junte-se à nossa família portuguesa vibrante em Londres e encontre o seu povo.' : 
-                          'Join our vibrant Portuguese family in London and find your people.'
+                          'Preencha o seu calendário social com falantes de português em Londres.' : 
+                          'Fill your social calendar with Portuguese speakers in London.'
                         }
                       </p>
                       <a 
                         href="/signup"
                         className="block w-full text-center p-3 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all text-sm font-semibold shadow-md hover:shadow-lg"
                       >
-                        {isPortuguese ? 'Juntar à Família →' : 'Join Our Family →'}
+                        {isPortuguese ? 'Juntar à Rede →' : 'Join Our Network →'}
                       </a>
                     </div>
 

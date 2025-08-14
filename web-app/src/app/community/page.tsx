@@ -68,8 +68,8 @@ const memberSpotlight = [
     origin: 'Porto, Portugal',
     originPt: 'Porto, Portugal',
     image: getImageWithFallback('sarah-chen'),
-    quote: 'Found my Portuguese family here! From Sunday lunches to Fado nights, I feel at home again.',
-    quotePt: 'Encontrei a minha família portuguesa aqui! Dos almoços de domingo às noites de Fado, sinto-me em casa novamente.',
+    quote: 'Found my Portuguese network here! From Sunday lunches to Fado nights, I feel at home again.',
+    quotePt: 'Encontrei a minha rede portuguesa aqui! Dos almoços de domingo às noites de Fado, sinto-me em casa novamente.',
     activity: 'Organized 5 cultural events',
     activityPt: 'Organizou 5 eventos culturais',
     flag: '🇵🇹'
@@ -94,10 +94,10 @@ const memberSpotlight = [
     origin: 'Luanda, Angola',
     originPt: 'Luanda, Angola',
     image: getImageWithFallback('maya-patel'),
-    quote: 'Teaching my children Portuguese culture while building community here.',
-    quotePt: 'Ensinando a cultura portuguesa aos meus filhos enquanto construo comunidade aqui.',
-    activity: 'Family cultural coordinator',
-    activityPt: 'Coordenadora cultural familiar',
+    quote: 'Preserving Portuguese heritage while building professional networks here.',
+    quotePt: 'Preservando a herança portuguesa enquanto construo redes profissionais aqui.',
+    activity: 'Cultural coordinator',
+    activityPt: 'Coordenadora cultural',
     flag: '🇦🇴'
   }
 ]
@@ -106,10 +106,10 @@ const memberSpotlight = [
 const communityAreas = [
   {
     name: 'Stockwell',
-    description: 'Heart of Portuguese London with traditional bakeries and family businesses',
-    descriptionPt: 'Coração de Londres Portuguesa com padarias tradicionais e negócios familiares',
-    highlights: ['Portuguese bakeries', 'Family restaurants', 'Cultural center'],
-    highlightsPt: ['Padarias portuguesas', 'Restaurantes familiares', 'Centro cultural'],
+    description: 'Heart of Portuguese London with traditional bakeries and Portuguese businesses',
+    descriptionPt: 'Coração de Londres Portuguesa com padarias tradicionais e negócios portugueses',
+    highlights: ['Portuguese bakeries', 'Portuguese restaurants', 'Cultural center'],
+    highlightsPt: ['Padarias portuguesas', 'Restaurantes portugueses', 'Centro cultural'],
     members: '150+',
     icon: '🥖'
   },
@@ -133,7 +133,7 @@ const communityAreas = [
   },
   {
     name: 'Elephant & Castle',
-    description: 'Diverse Lusophone community from Africa and Brazil',
+    description: 'Diverse Portuguese-speaking community from Africa and Brazil',
     descriptionPt: 'Comunidade lusófona diversa de África e Brasil',
     highlights: ['Brazilian community', 'African heritage', 'Cultural diversity'],
     highlightsPt: ['Comunidade brasileira', 'Herança africana', 'Diversidade cultural'],
@@ -167,8 +167,8 @@ const originCommunities = [
     countryPt: 'Angola',
     flag: '🇦🇴',
     members: '85+',
-    description: 'Rich Angolan heritage with music, dance, and family traditions',
-    descriptionPt: 'Rica herança angolana com música, dança e tradições familiares',
+    description: 'Rich Angolan heritage with music, dance, and cultural traditions',
+    descriptionPt: 'Rica herança angolana com música, dança e tradições culturais',
     activities: ['Semba dance', 'Cultural workshops', 'Heritage education']
   },
   {
@@ -225,9 +225,9 @@ export default function Community() {
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-4xl mx-auto">
                   {isPortuguese ? (
-                    'Descobre a vibrante comunidade de falantes de português em Londres. Desde padarias familiares em Stockwell a centros culturais em Vauxhall, desde festivais brasileiros a noites de Fado - aqui é onde 500+ corações portugueses se encontram e se sentem em casa.'
+                    'Descobre a vibrante comunidade de falantes de português em Londres. Desde padarias autênticas em Stockwell a centros culturais em Vauxhall, desde festivais brasileiros a noites de Fado - aqui é onde 500+ profissionais portugueses se encontram e prosperam.'
                   ) : (
-                    'Discover the vibrant Portuguese-speaking community in London. From family bakeries in Stockwell to cultural centers in Vauxhall, from Brazilian festivals to Fado nights - this is where 500+ Portuguese hearts gather and feel at home.'
+                    'Discover the vibrant Portuguese-speaking community in London. From authentic bakeries in Stockwell to cultural centers in Vauxhall, from Brazilian festivals to Fado nights - this is where 500+ Portuguese professionals gather and thrive.'
                   )}
                 </p>
               </motion.div>
@@ -376,9 +376,9 @@ export default function Community() {
               </h2>
               <p className="text-lg text-gray-600 mb-12 max-w-4xl mx-auto">
                 {isPortuguese ? (
-                  'Descobre onde a comunidade portuguesa se reúne em Londres. Cada bairro tem a sua própria personalidade, desde padarias familiares a centros culturais vibrantes.'
+                  'Descobre onde a comunidade portuguesa se reúne em Londres. Cada bairro tem a sua própria personalidade, desde padarias autênticas a centros culturais vibrantes.'
                 ) : (
-                  'Discover where the Portuguese community gathers in London. Each area has its own personality, from family bakeries to vibrant cultural centers.'
+                  'Discover where the Portuguese community gathers in London. Each area has its own personality, from authentic bakeries to vibrant cultural centers.'
                 )}
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -602,13 +602,13 @@ export default function Community() {
                       <CheckCircleIcon className="h-6 w-6 text-secondary-400 flex-shrink-0 mt-1" />
                       <div>
                         <h3 className="font-bold text-gray-900 mb-2">
-                          {isPortuguese ? 'Família e Apoio Mútuo' : 'Family & Mutual Support'}
+                          {isPortuguese ? 'Rede e Apoio Mútuo' : 'Network & Mutual Support'}
                         </h3>
                         <p className="text-gray-600 text-sm leading-relaxed">
                           {isPortuguese ? (
-                            'Tratamo-nos como família. Celebramos sucessos juntos e apoiamo-nos nos desafios.'
+                            'Tratamo-nos como uma rede profissional. Celebramos sucessos juntos e apoiamo-nos nos desafios.'
                           ) : (
-                            'We treat each other like family. We celebrate successes together and support each other through challenges.'
+                            'We treat each other as a professional network. We celebrate successes together and support each other through challenges.'
                           )}
                         </p>
                       </div>
@@ -649,7 +649,7 @@ export default function Community() {
                       <CheckCircleIcon className="h-6 w-6 text-primary-400 flex-shrink-0 mt-1" />
                       <div>
                         <h3 className="font-bold text-gray-900 mb-2">
-                          {isPortuguese ? 'Diversidade Lusófona' : 'Lusophone Diversity'}
+                          {isPortuguese ? 'Diversidade Lusófona' : 'Portuguese-Speaking Diversity'}
                         </h3>
                         <p className="text-gray-600 text-sm leading-relaxed">
                           {isPortuguese ? (
@@ -701,9 +701,9 @@ export default function Community() {
               </h2>
               <p className="text-lg text-gray-600 mb-12 max-w-4xl mx-auto">
                 {isPortuguese ? (
-                  'Apoia a nossa comunidade empresarial. Desde padarias familiares que fazem pastéis como a avó fazia, a restaurantes que servem francesinha autêntica, a serviços prestados por pessoas que compreendem a nossa cultura.'
+                  'Apoia a nossa comunidade empresarial. Desde padarias autênticas que fazem pastéis tradicionais, a restaurantes que servem francesinha autêntica, a serviços prestados por pessoas que compreendem a nossa cultura.'
                 ) : (
-                  'Support our business community. From family bakeries making pastéis like grandma used to, to restaurants serving authentic francesinha, to services provided by people who understand our culture.'
+                  'Support our business community. From authentic bakeries making traditional pastéis, to restaurants serving authentic francesinha, to services provided by people who understand our culture.'
                 )}
               </p>
               <div className="grid md:grid-cols-3 gap-8">
@@ -736,7 +736,7 @@ export default function Community() {
                 >
                   <HomeIcon className="h-12 w-12 text-secondary-500 mx-auto mb-4" />
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    {isPortuguese ? 'Serviços Familiares' : 'Family Services'}
+                    {isPortuguese ? 'Serviços Comunitários' : 'Community Services'}
                   </h3>
                   <p className="text-gray-600 text-sm mb-4">
                     {isPortuguese ? (
@@ -794,16 +794,16 @@ export default function Community() {
               <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-white/50">
                 <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-6">
                   {isPortuguese ? (
-                    <>Pronto para se Juntar à <span className="gradient-text">Família Portuguesa?</span></>
+                    <>Pronto para se Juntar à <span className="gradient-text">Rede Portuguesa?</span></>
                   ) : (
-                    <>Ready to Join the <span className="gradient-text">Portuguese Family?</span></>
+                    <>Ready to Join the <span className="gradient-text">Portuguese Network?</span></>
                   )}
                 </h2>
                 <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
                   {isPortuguese ? (
-                    'A tua família portuguesa está à espera. Junta-te a 500+ falantes de português que fizeram de Londres a sua casa, uma conexão de cada vez. Unidos pela língua, unidos pelo coração.'
+                    'A tua rede portuguesa está à espera. Junta-te a 500+ falantes de português que fizeram de Londres a sua casa, uma conexão profissional de cada vez. Unidos pela língua, unidos pela ambição.'
                   ) : (
-                    'Your Portuguese family is waiting. Join 500+ Portuguese speakers who have made London their home, one connection at a time. United by language, united by heart.'
+                    'Your Portuguese network is waiting. Join 500+ Portuguese speakers who have made London their home, one professional connection at a time. United by language, united by ambition.'
                   )}
                 </p>
                 
@@ -812,7 +812,7 @@ export default function Community() {
                     href="/signup" 
                     className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 hover:from-secondary-700 hover:via-primary-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
                   >
-                    {isPortuguese ? 'JUNTAR À FAMÍLIA' : 'JOIN THE FAMILY'}
+                    {isPortuguese ? 'JUNTAR À REDE' : 'JOIN THE NETWORK'}
                     <ArrowRightIcon className="h-6 w-6 ml-3" />
                   </a>
                   <a 
@@ -845,7 +845,7 @@ export default function Community() {
                   <div className="flex flex-col items-center gap-2">
                     <CheckCircleIcon className="h-6 w-6 text-green-500" />
                     <span className="text-gray-600 font-medium">
-                      {isPortuguese ? 'Família portuguesa' : 'Portuguese family'}
+                      {isPortuguese ? 'Rede portuguesa' : 'Portuguese network'}
                     </span>
                   </div>
                 </div>

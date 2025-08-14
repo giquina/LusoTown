@@ -1,5 +1,8 @@
+'use client'
+
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { useLanguage } from '@/context/LanguageContext'
 import { 
   ShieldCheckIcon, 
   ExclamationTriangleIcon, 
@@ -14,66 +17,96 @@ import {
   HandRaisedIcon,
   HeartIcon,
   ClockIcon,
-  ChatBubbleLeftRightIcon
+  ChatBubbleLeftRightIcon,
+  GlobeAltIcon,
+  LanguageIcon,
+  HomeIcon
 } from '@heroicons/react/24/outline'
 
 export default function SafetyCenter() {
+  const { language, t } = useLanguage()
+  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+
   const safetyFeatures = [
     {
-      title: 'Identity Verification',
-      description: 'Every member completes selfie verification to ensure authenticity',
+      title: isPortuguese ? 'Verificação de Identidade Portuguesa' : 'Portuguese Identity Verification',
+      description: isPortuguese ? 
+        'Todos os membros completam verificação de identidade portuguesa/lusófona para assegurar autenticidade cultural' :
+        'Every member completes Portuguese/Lusophone identity verification to ensure cultural authenticity',
       icon: ShieldCheckIcon,
-      color: 'primary'
-    },
-    {
-      title: 'Community Verification',
-      description: 'Profile verification ensures genuine connections across all age groups',
-      icon: CheckCircleIcon,
       color: 'secondary'
     },
     {
-      title: 'Profile Moderation',
-      description: 'Human review of all profiles and photos before approval',
+      title: isPortuguese ? 'Verificação Comunitária Portuguesa' : 'Portuguese Community Verification',
+      description: isPortuguese ? 
+        'Verificação de perfil assegura conexões genuínas com falantes de português em Londres' :
+        'Profile verification ensures genuine connections with Portuguese speakers in London',
+      icon: CheckCircleIcon,
+      color: 'accent'
+    },
+    {
+      title: isPortuguese ? 'Moderação Bilingue' : 'Bilingual Moderation',
+      description: isPortuguese ? 
+        'Revisão humana de todos os perfis e fotos por moderadores fluentes em português' :
+        'Human review of all profiles and photos by Portuguese-fluent moderators',
       icon: EyeIcon,
-      color: 'purple'
+      color: 'action'
     },
     {
-      title: 'Secure Messaging',
-      description: 'Encrypted communication with reporting and blocking features',
+      title: isPortuguese ? 'Mensagens Seguras em Português' : 'Secure Portuguese Messaging',
+      description: isPortuguese ? 
+        'Comunicação encriptada com recursos de denúncia e bloqueio em português' :
+        'Encrypted communication with Portuguese reporting and blocking features',
       icon: LockClosedIcon,
-      color: 'green'
+      color: 'primary'
     },
     {
-      title: '24/7 Monitoring',
-      description: 'Automated content filtering plus human moderation team',
+      title: isPortuguese ? 'Monitoramento 24/7 Bilingue' : '24/7 Bilingual Monitoring',
+      description: isPortuguese ? 
+        'Filtragem automática de conteúdo mais equipa de moderação que fala português' :
+        'Automated content filtering plus Portuguese-speaking moderation team',
       icon: ClockIcon,
-      color: 'blue'
+      color: 'coral'
     },
     {
-      title: 'Safe Reporting',
-      description: 'Anonymous reporting system with quick response times',
+      title: isPortuguese ? 'Denúncia Segura e Anônima' : 'Safe Anonymous Reporting',
+      description: isPortuguese ? 
+        'Sistema de denúncia anônima com tempos de resposta rápidos em português' :
+        'Anonymous reporting system with quick Portuguese response times',
       icon: ExclamationTriangleIcon,
-      color: 'red'
+      color: 'premium'
     }
   ]
 
   const meetingSafelyTips = [
     {
-      category: 'Before Meeting',
+      category: isPortuguese ? 'Antes do Encontro' : 'Before Meeting',
       icon: CheckCircleIcon,
-      tips: [
-        'Always meet in public places for first meetings',
-        'Tell a trusted friend where you\'re going and when you\'ll check in',
-        'Video chat or phone call before meeting in person',
+      tips: isPortuguese ? [
+        'Encontre-se sempre em locais públicos portugueses para primeiros encontros (cafés, restaurantes da comunidade)',
+        'Conte a um amigo português de confiança onde vai e quando fará contacto',
+        'Faça videochamada ou ligação em português antes de se encontrar pessoalmente',
+        'Confie nos seus instintos - se algo não parece certo, adie o encontro',
+        'Partilhe a localização e hora do encontro com alguém da sua confiança'
+      ] : [
+        'Always meet in Portuguese public places for first meetings (community cafés, restaurants)',
+        'Tell a trusted Portuguese friend where you\'re going and when you\'ll check in',
+        'Video chat or phone call in Portuguese before meeting in person',
         'Trust your instincts - if something feels off, postpone',
         'Share the meeting location and time with someone you trust'
       ]
     },
     {
-      category: 'During the Meeting',
+      category: isPortuguese ? 'Durante o Encontro' : 'During the Meeting',
       icon: EyeIcon,
-      tips: [
-        'Stay in public, well-lit areas with other people around',
+      tips: isPortuguese ? [
+        'Permaneça em áreas públicas, bem iluminadas, com outras pessoas à volta (especialmente locais portugueses)',
+        'Mantenha o seu telemóvel carregado e acessível',
+        'Não partilhe informações pessoais como a sua morada',
+        'Tenha o seu próprio transporte - não dependa de outros',
+        'Confie no seu instinto - saia se se sentir desconfortável'
+      ] : [
+        'Stay in public, well-lit Portuguese areas with other people around',
         'Keep your phone charged and accessible',
         'Don\'t share personal information like your home address',
         'Have your own transportation - don\'t rely on others',
@@ -81,13 +114,19 @@ export default function SafetyCenter() {
       ]
     },
     {
-      category: 'Online Safety',
+      category: isPortuguese ? 'Segurança Online' : 'Online Safety',
       icon: LockClosedIcon,
-      tips: [
+      tips: isPortuguese ? [
+        'Mantenha os seus detalhes pessoais privados até construir confiança',
+        'Não partilhe informações financeiras nem envie dinheiro',
+        'Tenha cuidado com pessoas que evitam videochamadas ou encontros em grupo',
+        'Denuncie comportamentos suspeitos imediatamente em português',
+        'Use o sistema de mensagens do LusoTown inicialmente'
+      ] : [
         'Keep personal details private until you build trust',
         'Don\'t share financial information or send money',
-        'Be cautious of people who avoid video calls or group meetups',
-        'Report suspicious behavior immediately',
+        'Be cautious of people who avoid video calls or Portuguese group meetups',
+        'Report suspicious behavior immediately in Portuguese',
         'Use LusoTown\'s messaging system initially'
       ]
     }
@@ -95,32 +134,50 @@ export default function SafetyCenter() {
 
   const warningSignsData = [
     {
-      category: 'Profile Red Flags',
-      signs: [
-        'Refuses to video chat or meet in group settings',
+      category: isPortuguese ? 'Bandeiras Vermelhas no Perfil' : 'Profile Red Flags',
+      signs: isPortuguese ? [
+        'Recusa videochamadas ou encontros em grupos portugueses',
+        'Fotos de perfil parecem demasiado profissionais ou de modelo',
+        'Informações inconsistentes ou detalhes vagos sobre origem portuguesa',
+        'Pressiona para contacto pessoal imediato',
+        'Perfil criado recentemente com informações mínimas'
+      ] : [
+        'Refuses to video chat or meet in Portuguese group settings',
         'Profile photos look too professional or model-like',
-        'Inconsistent information or vague details',
+        'Inconsistent information or vague details about Portuguese background',
         'Pushes for immediate personal contact information',
         'Profile recently created with minimal information'
       ]
     },
     {
-      category: 'Communication Concerns',
-      signs: [
+      category: isPortuguese ? 'Preocupações na Comunicação' : 'Communication Concerns',
+      signs: isPortuguese ? [
+        'Pede dinheiro, prendas, ou assistência financeira',
+        'Pressiona para encontros sozinhos ou em locais privados',
+        'Fica zangado ou manipulador quando define limites',
+        'Faz perguntas pessoais demais muito rapidamente',
+        'A linguagem não coincide com a origem portuguesa declarada'
+      ] : [
         'Asks for money, gifts, or financial assistance',
         'Pressures you to meet alone or in private locations',
         'Becomes angry or manipulative when you set boundaries',
         'Asks overly personal questions too quickly',
-        'Language doesn\'t match their stated background'
+        'Language doesn\'t match their stated Portuguese background'
       ]
     },
     {
-      category: 'Behavioral Warnings',
-      signs: [
+      category: isPortuguese ? 'Avisos Comportamentais' : 'Behavioral Warnings',
+      signs: isPortuguese ? [
+        'Desrespeita os seus limites ou nível de conforto',
+        'Faz com que se sinta pressionada ou desconfortável',
+        'Mostra sinais de comportamento controlador',
+        'Fala negativamente sobre outras mulheres portuguesas ou grupos',
+        'Exibe atitudes ou linguagem discriminatórias'
+      ] : [
         'Disrespects your boundaries or comfort level',
         'Makes you feel pressured or uncomfortable',
         'Shows signs of controlling behavior',
-        'Speaks negatively about other women or groups',
+        'Speaks negatively about other Portuguese women or groups',
         'Exhibits discriminatory attitudes or language'
       ]
     }
@@ -131,55 +188,157 @@ export default function SafetyCenter() {
       <Header />
       <div className="pt-16">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+        <section className="py-20 bg-gradient-to-br from-secondary-50 via-white to-accent-50 relative overflow-hidden">
+          {/* Portuguese-inspired background decorative elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-secondary-200/40 via-accent-100/30 to-coral-100/30 rounded-full opacity-60 animate-pulse" />
+            <div className="absolute bottom-20 left-20 w-24 h-24 bg-gradient-to-tr from-action-200/40 via-secondary-100/30 to-accent-100/30 rounded-full opacity-50 animate-bounce" style={{ animationDuration: '8s' }} />
+          </div>
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-primary-600 mb-6">
-                <ShieldCheckIcon className="w-4 h-4 mr-2" />
-                Your Safety Is Our Priority
+              <div className="inline-flex items-center gap-3 bg-gradient-to-r from-secondary-50/80 via-accent-50/60 to-coral-50/60 border border-secondary-200/40 rounded-3xl px-8 py-4 shadow-xl mb-8 backdrop-blur-sm">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-gradient-to-r from-green-500 to-red-500 animate-pulse shadow-sm"></div>
+                  <ShieldCheckIcon className="w-5 h-5 text-secondary-600" />
+                  <span className="text-sm font-bold bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent">
+                    {isPortuguese ? 'A Sua Segurança é a Nossa Prioridade' : 'Your Safety Is Our Priority'}
+                  </span>
+                </div>
+                <div className="w-2 h-2 bg-secondary-400 rounded-full animate-pulse"></div>
               </div>
-              <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-                Safety Center
+              
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-8 leading-tight">
+                {isPortuguese ? (
+                  <>
+                    Centro de Segurança<br />
+                    <span className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent">
+                      Comunidade Portuguesa
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    Portuguese Community<br />
+                    <span className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent">
+                      Safety Center
+                    </span>
+                  </>
+                )}
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed">
-                LusoTown is built with women's safety at its core. Learn about our comprehensive safety features, 
-                get tips for meeting safely, and access resources to help you navigate friendships with confidence.
+              
+              <p className="text-xl sm:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto mb-8">
+                {isPortuguese ? 
+                  'O LusoTown foi construído com a segurança da comunidade portuguesa no centro. Aprenda sobre as nossas funcionalidades de segurança abrangentes, obtenha dicas para encontros seguros, e aceda a recursos para navegar amizades com confiança em Londres.' :
+                  'LusoTown is built with Portuguese community safety at its core. Learn about our comprehensive safety features, get tips for safe meetups, and access resources to help you navigate friendships with confidence in London.'
+                }
               </p>
+              
+              {/* Portuguese Community Trust Elements */}
+              <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-600 mb-8">
+                <div className="flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 border border-secondary-200/40">
+                  <HomeIcon className="w-4 h-4 mr-2 text-secondary-500" />
+                  {isPortuguese ? 'Locais Portugueses Seguros' : 'Safe Portuguese Venues'}
+                </div>
+                <div className="flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 border border-secondary-200/40">
+                  <LanguageIcon className="w-4 h-4 mr-2 text-accent-500" />
+                  {isPortuguese ? 'Suporte Bilingue 24/7' : '24/7 Bilingual Support'}
+                </div>
+                <div className="flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 border border-secondary-200/40">
+                  <UserGroupIcon className="w-4 h-4 mr-2 text-coral-500" />
+                  {isPortuguese ? 'Comunidade Verificada' : 'Verified Community'}
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Emergency Contact Section */}
-        <section className="py-12 bg-red-50 border-b-4 border-red-200">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
-              <div className="bg-red-100 border border-red-300 rounded-xl p-6">
+        <section className="py-16 bg-gradient-to-r from-red-50 to-red-100 border-b-4 border-red-300 relative overflow-hidden">
+          <div className="absolute inset-0 bg-red-200/20"></div>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="max-w-5xl mx-auto">
+              <div className="bg-white/90 backdrop-blur-lg border border-red-300/60 rounded-3xl p-8 shadow-2xl">
                 <div className="flex items-start">
-                  <ExclamationTriangleIcon className="w-8 h-8 text-red-600 mr-4 flex-shrink-0" />
+                  <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mr-6 flex-shrink-0">
+                    <ExclamationTriangleIcon className="w-8 h-8 text-red-600" />
+                  </div>
                   <div className="flex-1">
-                    <h2 className="text-xl font-bold text-red-800 mb-4">Emergency & Immediate Safety</h2>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <h3 className="font-semibold text-red-700 mb-2">Emergency Services</h3>
-                        <div className="space-y-1 text-red-600">
-                          <div className="flex items-center">
-                            <PhoneIcon className="w-4 h-4 mr-2" />
-                            <span><strong>999</strong> - Police, Fire, Ambulance</span>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-red-800 mb-6">
+                      {isPortuguese ? 'Emergência e Segurança Imediata' : 'Emergency & Immediate Safety'}
+                    </h2>
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div className="bg-red-50/50 rounded-2xl p-6">
+                        <h3 className="font-bold text-red-700 mb-4 text-lg flex items-center">
+                          <PhoneIcon className="w-5 h-5 mr-2" />
+                          {isPortuguese ? 'Serviços de Emergência UK' : 'UK Emergency Services'}
+                        </h3>
+                        <div className="space-y-3 text-red-600">
+                          <div className="flex items-center bg-white/80 rounded-lg p-3">
+                            <PhoneIcon className="w-5 h-5 mr-3 text-red-500" />
+                            <div>
+                              <div className="font-bold text-lg">999</div>
+                              <div className="text-sm">
+                                {isPortuguese ? 'Polícia, Bombeiros, Ambulância' : 'Police, Fire, Ambulance'}
+                              </div>
+                            </div>
                           </div>
-                          <div className="flex items-center">
-                            <PhoneIcon className="w-4 h-4 mr-2" />
-                            <span><strong>101</strong> - Non-emergency police</span>
+                          <div className="flex items-center bg-white/80 rounded-lg p-3">
+                            <PhoneIcon className="w-5 h-5 mr-3 text-red-500" />
+                            <div>
+                              <div className="font-bold text-lg">101</div>
+                              <div className="text-sm">
+                                {isPortuguese ? 'Polícia não-emergência' : 'Non-emergency police'}
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
-                      <div>
-                        <h3 className="font-semibold text-red-700 mb-2">Platform Safety</h3>
-                        <div className="space-y-1 text-red-600">
-                          <div className="flex items-center">
-                            <EnvelopeIcon className="w-4 h-4 mr-2" />
-                            <span><strong>safety@lusotown.com</strong></span>
+                      <div className="bg-red-50/50 rounded-2xl p-6">
+                        <h3 className="font-bold text-red-700 mb-4 text-lg flex items-center">
+                          <EnvelopeIcon className="w-5 h-5 mr-2" />
+                          {isPortuguese ? 'Segurança da Plataforma' : 'Platform Safety'}
+                        </h3>
+                        <div className="space-y-3 text-red-600">
+                          <div className="bg-white/80 rounded-lg p-4">
+                            <div className="flex items-center mb-2">
+                              <EnvelopeIcon className="w-5 h-5 mr-2 text-red-500" />
+                              <span className="font-bold">seguranca@lusotown.com</span>
+                            </div>
+                            <div className="text-sm text-red-700">
+                              {isPortuguese ? 
+                                'Resposta em 2-4 horas • Monitorizado 24/7 • Suporte em Português' :
+                                'Response within 2-4 hours • Monitored 24/7 • Portuguese Support'
+                              }
+                            </div>
                           </div>
-                          <div className="text-sm">Response within 2-4 hours, monitored 24/7</div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Portuguese Community Emergency Resources */}
+                    <div className="mt-8 bg-gradient-to-r from-secondary-50/60 via-accent-50/40 to-coral-50/40 rounded-2xl p-6">
+                      <h3 className="font-bold text-gray-800 mb-4 text-lg flex items-center">
+                        <GlobeAltIcon className="w-5 h-5 mr-2 text-secondary-600" />
+                        {isPortuguese ? 'Recursos Consulares Portugueses' : 'Portuguese Consular Resources'}
+                      </h3>
+                      <div className="grid md:grid-cols-2 gap-4 text-sm">
+                        <div className="bg-white/70 rounded-lg p-3">
+                          <div className="font-semibold text-gray-800">
+                            {isPortuguese ? 'Consulado Geral de Portugal' : 'Portuguese Consulate General'}
+                          </div>
+                          <div className="text-gray-600">London: +44 20 7235 5331</div>
+                          <div className="text-gray-600 text-xs">
+                            {isPortuguese ? 'Assistência consular para cidadãos portugueses' : 'Consular assistance for Portuguese citizens'}
+                          </div>
+                        </div>
+                        <div className="bg-white/70 rounded-lg p-3">
+                          <div className="font-semibold text-gray-800">
+                            {isPortuguese ? 'Consulado do Brasil' : 'Brazilian Consulate'}
+                          </div>
+                          <div className="text-gray-600">London: +44 20 7499 0877</div>
+                          <div className="text-gray-600 text-xs">
+                            {isPortuguese ? 'Assistência para cidadãos brasileiros' : 'Assistance for Brazilian citizens'}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -191,26 +350,52 @@ export default function SafetyCenter() {
         </section>
 
         {/* Safety Features */}
-        <section className="py-20 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
-            <div className="max-w-6xl mx-auto">
+        <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-secondary-50 relative overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute top-20 left-20 w-24 h-24 bg-secondary-200/30 rounded-full opacity-40 animate-pulse" />
+            <div className="absolute bottom-20 right-20 w-32 h-32 bg-accent-200/20 rounded-full opacity-30 animate-bounce" style={{ animationDuration: '6s' }} />
+          </div>
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="max-w-7xl mx-auto">
               <div className="text-center mb-16">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                  Built-In Safety Features
+                <div className="inline-flex items-center gap-3 bg-gradient-to-r from-secondary-50/80 via-accent-50/60 to-coral-50/60 border border-secondary-200/40 rounded-3xl px-8 py-4 shadow-lg mb-8 backdrop-blur-sm">
+                  <ShieldCheckIcon className="w-6 h-6 text-secondary-600" />
+                  <span className="text-sm font-bold text-secondary-700">
+                    {isPortuguese ? 'Segurança Integrada' : 'Built-In Safety'}
+                  </span>
+                </div>
+                
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                  {isPortuguese ? 
+                    'Funcionalidades de Segurança da Comunidade Portuguesa' :
+                    'Portuguese Community Safety Features'
+                  }
                 </h2>
-                <p className="text-xl text-gray-600">
-                  Multiple layers of protection to ensure authentic connections and safe interactions
+                <p className="text-xl sm:text-2xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
+                  {isPortuguese ? 
+                    'Múltiplas camadas de proteção para garantir conexões autênticas portuguesas e interações seguras em Londres' :
+                    'Multiple layers of protection to ensure authentic Portuguese connections and safe interactions in London'
+                  }
                 </p>
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {safetyFeatures.map((feature, index) => (
-                  <div key={index} className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
-                    <div className={`w-12 h-12 bg-${feature.color}-100 text-${feature.color}-600 rounded-xl flex items-center justify-center mb-4`}>
-                      <feature.icon className="w-6 h-6" />
+                  <div key={index} className="group bg-white/80 backdrop-blur-sm border border-white/60 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-secondary-50/40 via-transparent to-accent-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+                    
+                    <div className="relative z-10">
+                      <div className={`w-16 h-16 bg-gradient-to-br from-${feature.color}-500 to-${feature.color}-600 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform duration-500 shadow-xl`}>
+                        <feature.icon className="w-8 h-8 text-white" />
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-secondary-700 transition-colors duration-300">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        {feature.description}
+                      </p>
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
-                    <p className="text-gray-600">{feature.description}</p>
                   </div>
                 ))}
               </div>

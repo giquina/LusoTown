@@ -76,7 +76,7 @@ const mockPosts = [
 const translations = {
   en: {
     title: 'LusoTown Community Feed',
-    subtitle: 'Share updates, connect with others, and stay in the loop with the latest from our Portuguese community in London',
+    subtitle: 'Share updates, connect with others, and stay in the loop with the latest from Portuguese speakers in London',
     createPost: 'Create Post',
     placeholder: 'What\'s happening in your Portuguese-speaking world?',
     postPlaceholder: 'Share an update...',

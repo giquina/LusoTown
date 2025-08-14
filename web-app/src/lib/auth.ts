@@ -3,6 +3,7 @@
 import { supabase, type Profile } from '@/lib/supabase'
 import { getImageWithFallback } from '@/lib/profileImages'
 import { User as SupabaseUser } from '@supabase/supabase-js'
+import { safeAsync, safeLocalStorage, LusoTownError, ErrorType } from '@/lib/errorHandling'
 
 // User interface for the application
 export interface User {
@@ -111,10 +112,10 @@ export class AuthService {
       
       // Store demo session in localStorage for persistence
       if (typeof window !== 'undefined') {
-        localStorage.setItem('lusotown_demo_session', JSON.stringify({
+        safeLocalStorage.setJSON('lusotown_demo_session', {
           user: demoUser,
           timestamp: Date.now()
-        }))
+        })
       }
       
       this.currentUser = demoUser
@@ -128,34 +129,25 @@ export class AuthService {
   }
 
   private loadDemoSessionIfExists(): void {
-    try {
-      if (typeof window !== 'undefined') {
-        const storedSession = localStorage.getItem('lusotown_demo_session')
-        if (storedSession) {
-          const sessionData = JSON.parse(storedSession)
-          
-          // Check if session is still valid (24 hours)
-          const twentyFourHours = 24 * 60 * 60 * 1000
-          if (Date.now() - sessionData.timestamp < twentyFourHours) {
-            this.currentUser = sessionData.user
-            this.notifyAuthStateChange(sessionData.user)
-          } else {
-            // Clear expired session
-            localStorage.removeItem('lusotown_demo_session')
-          }
-        }
-      }
-    } catch (error) {
-      console.error('Error loading demo session:', error)
-      if (typeof window !== 'undefined') {
-        localStorage.removeItem('lusotown_demo_session')
+    if (typeof window === 'undefined') return
+
+    const sessionData = safeLocalStorage.getJSON<{user: User, timestamp: number}>('lusotown_demo_session')
+    if (sessionData) {
+      // Check if session is still valid (24 hours)
+      const twentyFourHours = 24 * 60 * 60 * 1000
+      if (Date.now() - sessionData.timestamp < twentyFourHours) {
+        this.currentUser = sessionData.user
+        this.notifyAuthStateChange(sessionData.user)
+      } else {
+        // Clear expired session
+        safeLocalStorage.removeItem('lusotown_demo_session')
       }
     }
   }
 
   private clearDemoSession(): void {
     if (typeof window !== 'undefined') {
-      localStorage.removeItem('lusotown_demo_session')
+      safeLocalStorage.removeItem('lusotown_demo_session')
     }
   }
 

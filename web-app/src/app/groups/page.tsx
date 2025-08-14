@@ -243,9 +243,9 @@ export default function GroupsPage() {
                   🇵🇹 Heritage
                 </span>
               )}
-              {group.cultural_focus.family_friendly && (
-                <span className="inline-flex items-center px-2 py-1 rounded text-xs bg-green-100 text-green-800">
-                  👨‍👩‍👧‍👦 Family
+              {group.cultural_focus.professional_networking && (
+                <span className="inline-flex items-center px-2 py-1 rounded text-xs bg-blue-100 text-blue-800">
+                  💼 Professional
                 </span>
               )}
               {group.cultural_focus.traditional_activities && (

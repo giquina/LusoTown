@@ -133,9 +133,9 @@ export default function GroupsShowcase() {
                 🇵🇹 Heritage
               </span>
             )}
-            {group.cultural_focus.family_friendly && (
-              <span className="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded">
-                👨‍👩‍👧‍👦 Family
+            {group.cultural_focus.professional_networking && (
+              <span className="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded">
+                💼 Professional
               </span>
             )}
           </div>

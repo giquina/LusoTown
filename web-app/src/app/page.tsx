@@ -9,6 +9,7 @@ import HowItWorks from '@/components/HowItWorks'
 import AboutLusoTown from '@/components/AboutLusoTown'
 import EventsShowcase from '@/components/EventsShowcase'
 import GroupsShowcase from '@/components/GroupsShowcase'
+import GroupEventsSection from '@/components/GroupEventsSection'
 import SuccessStories from '@/components/SuccessStories'
 import AppDownloadSection from '@/components/AppDownloadSection'
 import TestimonialsNew from '@/components/TestimonialsNew'
@@ -24,7 +25,7 @@ import {
   BookmarkIcon
 } from '@heroicons/react/24/outline'
 
-// Page-specific structured data for Portuguese community
+// Page-specific structured data for Portuguese social calendar
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -228,13 +229,13 @@ export default function Home() {
                 <div className="text-center">
                   <div className="bg-gradient-to-r from-white/80 via-secondary-50/60 to-accent-50/60 backdrop-blur-lg border border-white/40 rounded-3xl p-12 shadow-2xl max-w-5xl mx-auto">
                     <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                      Ready to Connect with Your 
+                      Ready to Fill Your 
                       <span className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent block sm:inline">
-                        Portuguese Community?
+                        Social Calendar?
                       </span>
                     </h3>
                     <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-                      Join hundreds of Portuguese speakers already meeting at authentic venues from Stockwell's Portuguese quarter to South Kensington's cultural centers.
+                      Join 500+ Portuguese speakers from all Portuguese-speaking nations booking experiences together - from museum tours to concert nights, football matches to weekend getaways across London.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                       <a
@@ -243,7 +244,7 @@ export default function Home() {
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-secondary-700 via-action-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         <span className="relative z-10 flex items-center justify-center gap-3">
-                          Discover Your Community
+                          Start Your Social Calendar
                           <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-200" />
                         </span>
                       </a>
@@ -251,7 +252,7 @@ export default function Home() {
                         href="/events"
                         className="text-lg font-bold px-10 py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 hover:bg-white/90"
                       >
-                        Browse Events First
+                        Explore Experiences
                       </a>
                     </div>
                   </div>
@@ -261,6 +262,7 @@ export default function Home() {
           </section>
           <Features />
           <EventsShowcase />
+          <GroupEventsSection variant="homepage" maxEvents={6} />
           <GroupsShowcase />
           <SuccessStories />
           <AppDownloadSection />

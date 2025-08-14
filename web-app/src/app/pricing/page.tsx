@@ -962,7 +962,7 @@ export default function Pricing() {
                   questionPt: "Como funciona a verificação da comunidade portuguesa?",
                   questionEn: "How does the Portuguese community verification work?",
                   answerPt: "A nossa verificação multi-etapas garante conexões autênticas com a comunidade portuguesa: (1) Verificação de identidade portuguesa/lusófona, (2) Revisão do perfil cultural para garantir autenticidade, (3) Moderação da comunidade para manter um ambiente acolhedor. Este processo demora 24-48 horas e assegura que encontra pessoas genuinamente conectadas à cultura portuguesa.",
-                  answerEn: "Our multi-step verification ensures authentic connections with the Portuguese community: (1) Portuguese/Lusophone identity verification, (2) Cultural profile review to ensure authenticity, (3) Community moderation to maintain a welcoming environment. This process takes 24-48 hours and ensures you meet people genuinely connected to Portuguese culture."
+                  answerEn: "Our multi-step verification ensures authentic connections with the Portuguese community: (1) Portuguese/Portuguese-speaking identity verification, (2) Cultural profile review to ensure authenticity, (3) Community moderation to maintain a welcoming environment. This process takes 24-48 hours and ensures you meet people genuinely connected to Portuguese culture."
                 },
                 {
                   questionPt: "O que torna LusoTown diferente de outras plataformas?",

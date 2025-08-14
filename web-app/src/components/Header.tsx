@@ -13,14 +13,13 @@ import SavedItemsButton from '@/components/SavedItemsButton'
 import { useLanguage } from '@/context/LanguageContext'
 
 const getNavigationLinks = (t: any) => [
-  { name: t('nav.events'), href: '/events' },
+  { name: t('nav.events-tours', 'Events & Tours'), href: '/events' },
   { name: t('nav.community'), href: '/community' },
   { name: t('nav.pricing'), href: '/pricing' },
-  { name: t('nav.contact'), href: '/contact' },
 ]
 
 const authenticatedNavigationLinks = [
-  { name: 'Events', href: '/events' },
+  { name: 'Events & Tours', href: '/events' },
   { name: 'Network', href: '/community' },
   { name: 'Dashboard', href: '/dashboard' },
 ]
@@ -65,8 +64,13 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="flex items-center">
+            <a href="/" className="flex items-center space-x-3">
               <Logo size="medium" animated />
+              <div className="hidden sm:flex items-center">
+                <span className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">
+                  OFFICIAL
+                </span>
+              </div>
             </a>
           </div>
 
@@ -167,9 +171,10 @@ export default function Header() {
               <>
                 <a
                   href="/login"
-                  className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  className="text-gray-600 hover:text-primary-600 p-2 rounded-md transition-colors duration-200"
+                  title="Login"
                 >
-                  {t('nav.login')}
+                  <UserIcon className="w-5 h-5" />
                 </a>
                 <a href="/signup" className="bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 text-white font-bold py-2.5 px-6 rounded-lg shadow-lg hover:from-green-700 hover:via-red-700 hover:to-yellow-700 hover:shadow-xl transform hover:scale-105 transition-all duration-200">
                   {t('nav.join-membership', 'BECOME A MEMBER')}
@@ -305,10 +310,11 @@ export default function Header() {
                     <>
                       <a
                         href="/login"
-                        className="text-gray-600 hover:text-primary-600 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                        className="flex items-center space-x-2 text-gray-600 hover:text-primary-600 hover:bg-gray-50 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
                         onClick={() => setMobileMenuOpen(false)}
                       >
-                        Log In
+                        <UserIcon className="w-5 h-5" />
+                        <span>Log In</span>
                       </a>
                       <div className="mt-3 px-3">
                         <a 

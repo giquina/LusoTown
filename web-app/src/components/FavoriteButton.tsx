@@ -12,7 +12,8 @@ interface FavoriteButtonProps {
   itemTitle: string
   itemDescription?: string
   itemImageUrl?: string
-  size?: 'sm' | 'md' | 'lg'
+  size?: 'xs' | 'sm' | 'md' | 'lg'
+  variant?: 'default' | 'overlay'
   className?: string
 }
 
@@ -23,6 +24,7 @@ export default function FavoriteButton({
   itemDescription,
   itemImageUrl,
   size = 'md',
+  variant = 'default',
   className = ''
 }: FavoriteButtonProps) {
   const { isFavorite, toggleFavorite } = useFavorites()
@@ -52,15 +54,26 @@ export default function FavoriteButton({
   }
 
   const sizeClasses = {
+    xs: 'w-4 h-4',
     sm: 'w-6 h-6',
     md: 'w-8 h-8',
     lg: 'w-10 h-10'
   }
 
+  const getButtonClasses = () => {
+    const baseClasses = 'flex items-center justify-center rounded-full transition-colors'
+    
+    if (variant === 'overlay') {
+      return `${baseClasses} w-8 h-8 bg-white/90 backdrop-blur-sm hover:bg-white shadow-sm ${className}`
+    }
+    
+    return `${baseClasses} ${className}`
+  }
+
   return (
     <button
       onClick={handleClick}
-      className={`flex items-center justify-center rounded-full transition-colors ${className}`}
+      className={getButtonClasses()}
       aria-label={isLiked ? "Remove from favorites" : "Add to favorites"}
     >
       {isLiked ? (
@@ -69,7 +82,7 @@ export default function FavoriteButton({
         />
       ) : (
         <HeartOutlineIcon 
-          className={`${sizeClasses[size]} text-gray-400 hover:text-red-500 transition-colors`} 
+          className={`${sizeClasses[size]} ${variant === 'overlay' ? 'text-gray-600' : 'text-gray-400'} hover:text-red-500 transition-colors`} 
         />
       )}
     </button>

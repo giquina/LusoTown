@@ -244,8 +244,8 @@ export default function HelpCenter() {
               </h2>
               
               <div className="grid md:grid-cols-3 gap-8 mb-12">
-                {supportChannels.map((channel, index) => (
-                  <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                {supportChannels.map((channel) => (
+                  <div key={channel.contact} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
                     <div className={`w-12 h-12 bg-${channel.color}-100 text-${channel.color}-600 rounded-xl flex items-center justify-center mb-4`}>
                       <channel.icon className="w-6 h-6" />
                     </div>
@@ -279,8 +279,8 @@ export default function HelpCenter() {
                   Pro Tips for Success
                 </h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {quickTips.map((tip, index) => (
-                    <div key={index} className="bg-white rounded-lg p-4">
+                  {quickTips.map((tip) => (
+                    <div key={tip.title} className="bg-white rounded-lg p-4">
                       <div className="w-10 h-10 bg-primary-100 text-primary-600 rounded-lg flex items-center justify-center mb-3">
                         <tip.icon className="w-5 h-5" />
                       </div>
@@ -306,8 +306,8 @@ export default function HelpCenter() {
               </p>
 
               <div className="space-y-12">
-                {faqCategories.map((category, categoryIndex) => (
-                  <div key={categoryIndex} className="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+                {faqCategories.map((category) => (
+                  <div key={category.title} className="bg-white rounded-2xl border border-gray-200 overflow-hidden">
                     <div className={`bg-${category.color}-50 px-6 py-4 border-b border-${category.color}-100`}>
                       <h3 className={`text-xl font-bold text-${category.color}-700 flex items-center`}>
                         <category.icon className="w-6 h-6 mr-3" />
@@ -316,8 +316,8 @@ export default function HelpCenter() {
                     </div>
                     
                     <div className="divide-y divide-gray-100">
-                      {category.faqs.map((faq, faqIndex) => (
-                        <div key={faqIndex} className="px-6 py-6">
+                      {category.faqs.map((faq) => (
+                        <div key={faq.question} className="px-6 py-6">
                           <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-start">
                             <QuestionMarkCircleIcon className={`w-5 h-5 text-${category.color}-500 mr-2 mt-0.5 flex-shrink-0`} />
                             {faq.question}

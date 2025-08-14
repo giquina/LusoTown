@@ -1,6 +1,6 @@
 'use client'
 
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react'
+import React, { createContext, useContext, useState, useEffect, ReactNode, useMemo, useCallback } from 'react'
 
 export type Language = 'en' | 'pt-pt' | 'pt-br'
 
@@ -17,6 +17,9 @@ const translations = {
   en: {
     // Navigation
     'nav.events': 'Events',
+    'nav.events-tours': 'Events & Tours',
+    'nav.group-events': 'Group Events',
+    'nav.home': 'Home',
     'nav.how-it-works': 'How It Works',
     'nav.community': 'Network',
     'nav.community-guidelines': 'Membership Guidelines',
@@ -24,21 +27,21 @@ const translations = {
     'nav.about': 'About',
     'nav.contact': 'Contact',
     'nav.login': 'Login',
-    'nav.join-membership': 'Become a Member',
+    'nav.join-membership': 'Book Experiences',
     
     // Hero Section
     'hero.badge': "Unidos pela Língua • United by Language",
-    'hero.title': 'Find Your Portuguese Family in London.',
-    'hero.subtitle': 'Connect with 500+ Portuguese speakers at authentic London venues. Find your people today.',
-    'hero.cta.primary': 'Find My People',
-    'hero.cta.secondary': 'Join Our Family',
+    'hero.title': 'Your Portuguese Social Calendar in London',
+    'hero.subtitle': 'Live life together with Portuguese speakers from Portugal, Brazil, Angola, Mozambique, Cape Verde, and beyond who are currently living in or visiting London and the UK. Book experiences, join activities, and turn every weekend into an adventure with your Portuguese-speaking community.',
+    'hero.cta.primary': 'Explore Social Calendar',
+    'hero.cta.secondary': 'Book Your First Experience',
     
     // How It Works Section
-    'how-it-works.title': 'Come Home to Your Portuguese Family',
-    'how-it-works.subtitle': 'Discover how easy it is to find your people and feel at home again in four heartwarming steps',
+    'how-it-works.title': 'Connect with Your Portuguese Community',
+    'how-it-works.subtitle': 'Discover how easy it is to fill your social calendar and live life together in four simple steps',
     'how-it-works.quote': '"A saudade só se cura com encontros reais" - Homesickness can only be cured with real meetings at real places',
-    'how-it-works.step1.title': 'Become Part of Our Family',
-    'how-it-works.step1.subtitle': 'Seja Bem-Vindo à Nossa Família',
+    'how-it-works.step1.title': 'Join Your Portuguese Network',
+    'how-it-works.step1.subtitle': 'Seja Bem-Vindo à Nossa Comunidade',
     'how-it-works.step2.title': 'Discover Real London Venues', 
     'how-it-works.step2.subtitle': 'Descubra Locais Reais de Londres',
     'how-it-works.step3.title': 'Meet at Authentic Places',
@@ -48,24 +51,24 @@ const translations = {
     
     // Quick Start Section
     'quick-start.title': 'Meet Portuguese Speakers at Real London Venues',
-    'quick-start.subtitle': 'Connect at authentic Portuguese venues from Stockwell to Vauxhall - find your people at real London locations.',
+    'quick-start.subtitle': 'Book experiences at authentic Portuguese venues from Stockwell to Vauxhall - live life together at real London locations.',
     'quick-start.quote': '"Onde há portugueses, há sempre uma mesa para mais um" - Where there are Portuguese people in London, there\'s always room for one more at the table',
     
     // What You Can Do Section
-    'what-you-can-do.badge': 'O Que Podes Fazer • What You Can Do',
-    'what-you-can-do.title': 'Meet Portuguese Speakers at Authentic London Venues',
-    'what-you-can-do.subtitle': 'From Stockwell\'s Portuguese bakeries to Vauxhall\'s cultural centers, from Elephant & Castle\'s community spaces to authentic Fado restaurants - connect where Portuguese culture lives',
-    'what-you-can-do.testimonial': '"I\'ve found my Portuguese family here - from Sunday lunches in Stockwell to Fado nights at authentic venues"',
+    'what-you-can-do.badge': 'Your Social Calendar • O Seu Calendário Social',
+    'what-you-can-do.title': 'Live Life Together with Your Portuguese Community',
+    'what-you-can-do.subtitle': 'From museum visits to football matches, concert nights to weekend getaways - book experiences and activities designed for Portuguese speakers from all corners of the Portuguese-speaking world.',
+    'what-you-can-do.testimonial': '"My social life transformed - I went from lonely weekends to booking adventures with fellow Portuguese speakers every week!"',
     
-    'what-you-can-do.events.title': 'Find & Join Events',
-    'what-you-can-do.events.description': 'Discover Portuguese cultural events across London - from traditional Fado nights at authentic venues like Bar do Fado to Portuguese film screenings at cultural centers. Connect with your heritage through real experiences.',
-    'what-you-can-do.events.cta': 'Browse Events',
-    'what-you-can-do.events.locations': 'Stockwell • South Kensington • Vauxhall',
+    'what-you-can-do.events.title': 'Book Experiences & Activities',
+    'what-you-can-do.events.description': 'Your social calendar awaits! Book museum tours with Portuguese guides, football matches at Wembley, concert nights at the Royal Albert Hall, weekend trips to Brighton, and authentic Fado evenings. Every experience designed for Portuguese speakers.',
+    'what-you-can-do.events.cta': 'Browse & Book',
+    'what-you-can-do.events.locations': 'Museums • Concerts • Sports • Weekend Trips',
     
     'what-you-can-do.groups.title': 'Create Your Own Groups',
     'what-you-can-do.groups.description': 'Start age-based groups (20s-30s professionals), origin-based communities (Portugal, Brazil, Angola), or interest-based circles (cooking, football, language exchange). Build lasting friendships.',
     'what-you-can-do.groups.cta': 'Start a Group',
-    'what-you-can-do.groups.examples': 'Mums & Tots • Young Professionals • 50+ Social',
+    'what-you-can-do.groups.examples': 'Young Professionals • Networking • 50+ Social',
     
     'what-you-can-do.feed.title': 'Stay Updated on LusoFeed',
     'what-you-can-do.feed.description': 'Follow member updates, event news, and cultural highlights. Share photos from Portuguese festivals and stay connected.',
@@ -79,25 +82,25 @@ const translations = {
     
     // Features
     'features.title': 'Why Portuguese Hearts Choose LusoTown',
-    'features.subtitle': 'Your Warm Welcome Home for Portuguese Families Across London & UK',
-    'features.events.title': 'Celebrate Together Like Family',
+    'features.subtitle': 'Your Professional & Social Hub for Portuguese Adults Across London & UK',
+    'features.events.title': 'Network and Celebrate Together',
     'features.events.description': 'Join intimate Fado nights and Portuguese festivals across London. Meet like-minded members who share your heritage and interests.',
     'features.groups.title': 'Find Your People',
-    'features.groups.description': 'Whether you\'re a young professional missing mãe\'s cooking or a parent wanting your children to know their heritage, find your tribe. We\'re all different ages, from different places, but we understand each other\'s journey home.',
-    'features.business.title': 'Support Our Family Businesses',
-    'features.business.description': 'Find the bakery that makes pastéis like your avó\'s, the restaurant owner who greets you with a warm smile, the services run by people who understand your story. When we support each other, we all feel more at home.',
+    'features.groups.description': 'Whether you\'re a young professional wanting to book weekend activities or an established professional seeking cultural networking, create your social circle. We\'re all from different backgrounds and places, but we connect and thrive together.',
+    'features.business.title': 'Support Our Portuguese Businesses',
+    'features.business.description': 'Book experiences at the bakery that makes pastéis like your avó\'s, the restaurant that hosts monthly Portuguese dinners, the services run by people who share your culture. When we do things together, we all live better.',
     'features.resources.title': 'London Community Resources',
-    'features.resources.description': 'Access language exchange programs at Portuguese cultural centers, cultural workshops in authentic venues, and community support networks across London\'s Portuguese neighborhoods.',
+    'features.resources.description': 'Book language exchange sessions at Portuguese cultural centers, cultural workshops in authentic venues, and join activities across London\'s Portuguese neighborhoods.',
     'features.stories.title': 'Real London Success Stories',
-    'features.stories.description': 'Real stories from Portuguese speakers who found their London community, preserved their heritage, and built meaningful connections at authentic venues from Stockwell to Camden.',
+    'features.stories.description': 'Real stories from Portuguese speakers who filled their social calendars, preserved their heritage through activities, and built meaningful connections at authentic venues from Stockwell to Camden.',
     'features.local.title': 'Borough Communities',
-    'features.local.description': 'Connect with Portuguese speakers in your London borough. Find local communities in Lambeth, Southwark, Camden - discover Portuguese cultural centers and gathering places near you.',
+    'features.local.description': 'Book activities with Portuguese speakers in your London borough. Join experiences in Lambeth, Southwark, Camden - discover Portuguese cultural centers and activity spaces near you.',
     'features.culture.title': 'Portuguese Cultural Heritage',
     'features.culture.description': 'Celebrate Portuguese traditions at authentic London venues. From Fado nights at traditional restaurants to festas at Portuguese churches - keep our culture alive in real places.',
     'features.language.title': 'In-Person Language Exchange',
-    'features.language.description': 'Practice Portuguese with native speakers at coffee shops, cultural centers, and community spaces across London. Build real connections through face-to-face language exchange.',
+    'features.language.description': 'Book Portuguese language sessions with native speakers at coffee shops, cultural centers, and activity spaces across London. Build real connections through active language exchange experiences.',
     'features.heritage.title': 'Heritage Preservation',
-    'features.heritage.description': 'Connect with Portuguese roots through real community spaces - Portuguese churches, cultural associations, and family-run businesses that preserve our traditions in London.',
+    'features.heritage.description': 'Experience Portuguese heritage through real cultural activities - book sessions at Portuguese churches, cultural associations, and family-run businesses that celebrate our traditions in London.',
     
     // Testimonials
     'testimonials.badge': 'Real Stories, Real London Venues',
@@ -105,10 +108,10 @@ const translations = {
     'testimonials.subtitle': 'Hear from Portuguese speakers who found their London network and built lasting friendships at authentic venues',
     
     // Footer
-    'footer.description': 'Connect Portuguese speakers across London & UK. Where families reconnect with heritage and build lasting friendships. Unidos pela Língua - United by Language.',
+    'footer.description': 'Book experiences with Portuguese speakers across London & UK. Where professionals and adults connect through heritage and create lasting memories. Unidos pela Língua - United by Language.',
     'footer.newsletter.title': 'Stay Connected',
-    'footer.newsletter.description': 'Get updates on Portuguese cultural events, community gatherings, and real meetups happening at authentic venues across London.',
-    'footer.tagline': 'Connecting Portuguese hearts at real London venues',
+    'footer.newsletter.description': 'Get updates on Portuguese cultural events, social activities, and experiences happening at authentic venues across London.',
+    'footer.tagline': 'Book experiences with Portuguese hearts at real London venues',
     'footer.bottom': 'Unidos pela Língua • London Community',
     
     // About Page
@@ -159,8 +162,8 @@ const translations = {
     'language.switch-to-english': 'English',
     
     // Login & Authentication
-    'login.title': 'Welcome Back to the Family!',
-    'login.subtitle': 'Sign in to connect with your Portuguese network',
+    'login.title': 'Welcome Back to Your Network!',
+    'login.subtitle': 'Sign in to your Portuguese social calendar',
     'login.membership-badge': 'Your Portuguese network in London',
     'login.membership-missed-you': 'Your Portuguese network missed you.',
     'login.hearts-waiting': 'Over 500 Portuguese hearts are waiting for you.',
@@ -170,8 +173,8 @@ const translations = {
     'login.support-description': 'Need help? Our team speaks Portuguese and is here for you.',
     'login.contact-support': 'Contact Support →',
     'login.new-to-lusotown': 'New to LusoTown?',
-    'login.join-family-description': 'Join our vibrant Portuguese family in London and find your people.',
-    'login.join-family-button': 'Join Our Family →',
+    'login.join-family-description': 'Fill your social calendar with Portuguese speakers in London and connect professionally and socially.',
+    'login.join-family-button': 'Join Our Network →',
     'login.sign-in-account': 'Sign in to your account',
     'login.email': 'Email Address',
     'login.email-placeholder': 'your@email.com',
@@ -180,11 +183,11 @@ const translations = {
     'login.remember-me': 'Remember me',
     'login.forgot-password': 'Forgot password?',
     'login.welcome-home': 'Welcome Home',
-    'login.signing-in': 'Welcome back to the family...',
+    'login.signing-in': 'Welcome back to your community...',
     'login.connecting': 'Connecting to your network...',
     'login.preparing': 'Preparing your Portuguese home...',
     'login.no-account': "Don't have an account?",
-    'login.join-family-link': 'Join Our Family',
+    'login.join-family-link': 'Join Our Network',
     'login.terms-privacy': 'By signing in, you agree to our',
     'login.terms': 'Terms of Service',
     'login.and': 'and',
@@ -205,9 +208,12 @@ const translations = {
     'login.participants': 'participants',
     'login.table-quote': '"Where there are Portuguese people, there\'s always room for one more at the table"',
     
+    // Signup
+    'signup.subtitle': 'Fill your social calendar with Portuguese speakers across London. Book experiences, join activities, and connect professionally - from authentic bakeries in Stockwell to cultural centers in Vauxhall.',
+    
     // Groups
     'groups.title': 'Portuguese Member Groups',
-    'groups.subtitle': 'Find your group and connect with Portuguese speakers',
+    'groups.subtitle': 'Book activities and experiences with Portuguese speakers',
     'groups.create': 'Create Group',
     'groups.join': 'Join Group',
     'groups.joined': 'Joined',
@@ -247,7 +253,7 @@ const translations = {
     'age.25-35': '25-35 years old', 
     'age.35-50': '35-50 years old',
     'age.50+': '50+ years old',
-    'age.families': 'Families with children',
+    'age.young-professionals': 'Young professionals (22-35)',
     'age.all-ages': 'All ages welcome',
     
     // Portuguese Origins
@@ -298,8 +304,8 @@ const translations = {
     'community.values.subtitle': 'What makes our network special? These shared values every member embraces, reflecting Portuguese culture.',
     'community.business.title': 'Portuguese Businesses in London',
     'community.business.subtitle': 'Support our business members. From family bakeries to authentic restaurants - services by people who understand our culture.',
-    'community.cta.title': 'Ready to Join the Portuguese Family?',
-    'community.cta.subtitle': 'Your Portuguese family is waiting. Join 500+ Portuguese speakers who have made London their home, one connection at a time. United by language, united by heart.',
+    'community.cta.title': 'Ready to Join the Portuguese Network?',
+    'community.cta.subtitle': 'Your Portuguese network is waiting. Join 500+ Portuguese speakers who have made London their home, one professional connection at a time. United by language, united by ambition.',
     'community.cta.tagline': '"Unidos pela Língua" - Wherever you come from in the Portuguese-speaking world, you have a home here in London.',
     
     // App Download Section
@@ -309,7 +315,7 @@ const translations = {
     'app.heading.part2': 'Everywhere',
     'app.description': 'Never miss Portuguese meetups in London or new connections. Get the LusoTown mobile app and stay connected with your network wherever you go.',
     'app.cta.title': 'Join 500+ verified Portuguese speakers',
-    'app.cta.description': 'Your Luso-London network is already growing. Download the app and find your network today.',
+    'app.cta.description': 'Your Luso-London social calendar is filling up. Download the app and book experiences today.',
     'app.features.notifications.title': 'Instant Notifications',
     'app.features.notifications.description': 'Never miss event invites or group messages',
     'app.features.local-events.title': 'Local Events',
@@ -332,25 +338,165 @@ const translations = {
     
     // CTA Section
     'cta.badge': 'Limited Time - Join Today',
-    'cta.title': 'Your Network is Here',
-    'cta.subtitle': 'Join LusoTown London today and discover your Portuguese network.',
-    'cta.button': 'JOIN NOW',
+    'cta.title': 'Your Social Calendar Awaits',
+    'cta.subtitle': 'Join LusoTown London today and fill your social calendar with Portuguese experiences.',
+    'cta.button': 'EXPLORE CALENDAR',
     'cta.guarantee': 'No commitment • Start connecting immediately • Cancel anytime',
     'cta.social-proof': 'Portuguese speakers joined in the last 24 hours',
-    'cta.connect-time': 'Join now and connect with the Luso-London network within 48 hours',
+    'cta.connect-time': 'Join now and book your first experience within 48 hours',
     'cta.trust.verified-profiles': 'Verified Profiles',
-    'cta.trust.member-support': 'Member Support',
+    'cta.trust.experience-support': 'Experience Support',
     'cta.trust.satisfaction-guarantee': 'Satisfaction Guarantee',
-    'cta.benefits.join-network': 'Join the Luso-London network',
+    'cta.benefits.book-experiences': 'Book experiences with Portuguese speakers',
     'cta.benefits.cultural-access': 'Access to Portuguese cultural events',
     'cta.benefits.find-businesses': 'Find Portuguese businesses and services',
-    'cta.benefits.connect-diaspora': 'Connect with the Portuguese diaspora',
+    'cta.benefits.active-social-life': 'Fill your social calendar',
     'cta.benefits.safe-environment': 'Safe and welcoming environment',
     'cta.benefits.free-start': 'Free to get started',
+    
+    // Events Page
+    'events.hero.title': 'Your Portuguese Social Calendar',
+    'events.hero.subtitle': 'Book experiences and live life together with Portuguese speakers from Portugal, Brazil, Angola, Mozambique, Cape Verde, and beyond. From museum tours to concert nights, football matches to weekend getaways - your social calendar awaits!',
+    'events.search-placeholder': 'Search experiences: museums, concerts, football, weekend trips...',
+    'events.popular-types': 'Popular Experiences',
+    'events.stats-events': 'Monthly Experiences',
+    'events.stats-members': 'Portuguese Speakers',
+    'events.stats-venues': 'Portuguese-Speaking Countries',
+    
+    // Events & Tours Page
+    'events-tours.hero.title': 'Upcoming Group Events & Tours',
+    'events-tours.hero.subtitle': 'Book exclusive group experiences with Portuguese speakers in London. From specialized groups for Women 30+ and 40+ to family-friendly activities - find your community and live London together.',
+    'events-tours.search-placeholder': 'Search experiences: women 30+, families, cultural, networking...',
+    'events-tours.filter-by-category': 'Filter by Category',
+    'events-tours.all-categories': 'All Categories',
+    'events-tours.see-all-experiences': 'See all available experiences',
+    'events-tours.experience-statistics': 'Experience Statistics',
+    'events-tours.total': 'Total',
+    'events-tours.categories': 'Categories',
+    'events-tours.popular-categories': 'Popular Categories',
+    'events-tours.clear-filters': 'Clear Filters',
+    'events-tours.featured-experiences': 'Featured Experiences',
+    'events-tours.live-london-community': 'Live London with Your Portuguese Community',
+    'events-tours.exclusive-experiences-description': 'From exclusive experiences for Portuguese women to family tours and professional networking - book your spot in specialized groups that celebrate our heritage.',
+    'events-tours.experience-highlights': 'Experience Highlights',
+    'events-tours.highlight': 'Highlight',
+    'events-tours.reserve-spot': 'Reserve Your Spot',
+    'events-tours.view-all-experiences': 'View All Experiences',
+    'events-tours.over-15-experiences': 'Over 15 Experiences Available',
+    'events-tours.specialized-groups-description': 'From specialized groups for Portuguese women to family tours and professional networking - find the perfect experience to connect with your community.',
+    'events-tours.women-30-40': 'Women 30+ & 40+',
+    'events-tours.exclusive-networking': 'Exclusive networking',
+    'events-tours.family-experiences': 'Family Experiences',
+    'events-tours.all-ages-welcome': 'All ages welcome',
+    'events-tours.cultural-heritage': 'Cultural Heritage',
+    'events-tours.portuguese-traditions': 'Portuguese traditions',
+    'events-tours.no-experiences-found': 'No experiences found',
+    'events-tours.adjust-search-criteria': 'Try adjusting your search criteria or clear your filters.',
+    'events-tours.clear-all-filters': 'Clear All Filters',
+    'events-tours.sort-by-date': 'Sort by Date',
+    'events-tours.sort-by-popularity': 'Sort by Popularity',
+    'events-tours.sort-by-price': 'Sort by Price',
+    'events-tours.filters': 'Filters',
+    'events-tours.experience-found': 'experience found',
+    'events-tours.experiences-found': 'experiences found',
+    'events-tours.loading': 'Loading...',
+
+    // Feed and Interactive Elements
+    'feed.filters.advanced': 'Advanced Filters',
+    'feed.filters.event-type': 'Event Type',
+    'feed.filters.location': 'Location',
+    'feed.filters.date': 'Date',
+    'feed.filters.price': 'Price',
+    'feed.filters.culture-origin': 'Culture & Origin',
+    'feed.filters.additional-options': 'Additional Options',
+    'feed.filters.spots-available': 'Only events with spots available',
+    'feed.filters.following-only': 'Only from people I follow',
+    'feed.filters.clear-all': 'Clear all',
+    'feed.filters.all-dates': 'All dates',
+    'feed.filters.today': 'Today',
+    'feed.filters.this-week': 'This week',
+    'feed.filters.this-month': 'This month',
+    'feed.filters.upcoming': 'Upcoming',
+    'feed.filters.all-prices': 'All prices',
+    'feed.filters.free': 'Free',
+    'feed.filters.under-25': 'Under £25',
+    'feed.filters.under-50': 'Under £50',
+    'feed.filters.premium': '£50+',
+    'feed.filters.music-fado': 'Music & Fado',
+    'feed.filters.food-dining': 'Food & Dining',
+    'feed.filters.sports': 'Sports',
+    'feed.filters.business': 'Business',
+    'feed.filters.language-exchange': 'Language Exchange',
+    'feed.filters.cultural-events': 'Cultural Events',
+    'feed.filters.social-party': 'Social & Party',
+    'feed.filters.family': 'Family',
+    'feed.filters.football': 'Football',
+    'feed.filters.traditional': 'Traditional',
+    'feed.filters.modern': 'Modern',
+    'feed.filters.professional': 'Professional',
+
+    // Cultural Diversity Enhancement
+    'culture.lusophone-world': 'Lusophone World',
+    'culture.portuguese-heritage': 'Portuguese Heritage',
+    'culture.african-lusophone': 'African Portuguese-speaking',
+    'culture.brazilian-community': 'Brazilian Community',
+    'culture.cape-verdean': 'Cape Verdean',
+    'culture.angolan-community': 'Angolan Community',
+    'culture.mozambican-heritage': 'Mozambican Heritage',
+    'culture.sao-tome-principe': 'São Tomé and Príncipe',
+    'culture.guinea-bissau': 'Guinea-Bissau',
+    'culture.east-timor': 'East Timor (Timor-Leste)',
+    'culture.macau-heritage': 'Macau Heritage',
+    'culture.equatorial-guinea': 'Equatorial Guinea',
+    'culture.goan-portuguese': 'Goan Portuguese Heritage',
+    'culture.diaspora-stories': 'Diaspora Stories',
+    'culture.mixed-heritage': 'Mixed Portuguese Heritage',
+
+    // Authentic Events and Activities
+    'events.fado-night': 'Fado Night',
+    'events.portuguese-dinner': 'Portuguese Dinner',
+    'events.carnival-celebration': 'Carnival Celebration',
+    'events.festa-junina': 'Festa Junina',
+    'events.santos-populares': 'Santos Populares',
+    'events.independence-day': 'Independence Day Celebration',
+    'events.cultural-workshop': 'Cultural Workshop',
+    'events.language-cafe': 'Language Café',
+    'events.business-networking': 'Business Networking',
+    'events.family-picnic': 'Family Picnic',
+    'events.football-match': 'Football Match Viewing',
+    'events.cooking-class': 'Portuguese Cooking Class',
+    'events.wine-tasting': 'Portuguese Wine Tasting',
+    'events.literature-club': 'Portuguese Literature Club',
+    'events.dance-workshop': 'Traditional Dance Workshop',
+    'events.heritage-tour': 'Portuguese Heritage Tour',
+    'events.museum-visit': 'Museum Visit with Portuguese Guide',
+    'events.weekend-trip': 'Weekend Trip',
+    'events.beach-day': 'Beach Day Trip',
+    'events.cultural-festival': 'Cultural Festival',
+
+    // Success Stories and Testimonials
+    'stories.member-success': 'Member Success Story',
+    'stories.community-impact': 'Community Impact',
+    'stories.cultural-preservation': 'Cultural Preservation',
+    'stories.professional-networking': 'Professional Success',
+    'stories.family-connections': 'Family Connections',
+    'stories.language-learning': 'Language Learning Journey',
+    'stories.business-support': 'Business Community Support',
+    'stories.heritage-discovery': 'Heritage Discovery',
+
+    // SEO and Meta Content
+    'seo.title-suffix': '| LusoTown London',
+    'seo.description.default': 'Your Portuguese social calendar in London. Connect with Portuguese speakers from Portugal, Brazil, Angola, Mozambique, Cape Verde and beyond. Book experiences, join activities, live life together.',
+    'seo.keywords': 'Portuguese community London, Brazilian community UK, Angolan community London, Mozambican community UK, Cape Verdean London, Portuguese events, Lusophone community, Portuguese social calendar, Portuguese networking London',
+    'seo.og.site-name': 'LusoTown London',
+    'seo.og.locale': 'en_GB',
   },
   'pt-pt': {
     // Navigation
     'nav.events': 'Eventos',
+    'nav.events-tours': 'Experiências & Tours',
+    'nav.group-events': 'Eventos de Grupo',
+    'nav.home': 'Início',
     'nav.how-it-works': 'Como Funciona',
     'nav.community': 'Rede',
     'nav.community-guidelines': 'Diretrizes da Comunidade',
@@ -358,14 +504,14 @@ const translations = {
     'nav.about': 'Sobre',
     'nav.contact': 'Contacto',
     'nav.login': 'Entrar',
-    'nav.join-membership': 'Juntar à Comunidade',
+    'nav.join-membership': 'Reservar Experiências',
     
     // Hero Section
     'hero.badge': 'Unidos pela Língua • United by Language',
-    'hero.title': 'Pessoas Reais, Locais Reais, Conexões Portuguesas Reais.',
-    'hero.subtitle': 'Junta-te a mais de 500 falantes de português que se encontram em locais autênticos por Londres - desde as padarias portuguesas de Stockwell aos centros culturais de Vauxhall. Vive a comunidade genuína em sítios que parecem casa.',
-    'hero.cta.primary': 'Encontrar Convívios Reais',
-    'hero.cta.secondary': 'Juntar à Comunidade',
+    'hero.title': 'O Seu Calendário Social Português em Londres',
+    'hero.subtitle': 'Viva a vida em conjunto com falantes de português de Portugal, Brasil, Angola, Moçambique, Cabo Verde e além que vivem atualmente ou visitam Londres e o Reino Unido. Reserve experiências, participe em atividades, e transforme cada fim de semana numa aventura com a sua comunidade lusófona.',
+    'hero.cta.primary': 'Explorar Calendário Social',
+    'hero.cta.secondary': 'Reservar Primeira Experiência',
     
     // How It Works Section
     'how-it-works.title': 'Encontra a Tua Comunidade Portuguesa em Londres',
@@ -386,15 +532,15 @@ const translations = {
     'quick-start.quote': '"Onde há portugueses, há sempre uma mesa para mais um" - Onde há portugueses, há sempre lugar para mais um',
     
     // What You Can Do Section
-    'what-you-can-do.badge': 'O Que Podes Fazer • What You Can Do',
-    'what-you-can-do.title': 'Encontra a Tua Rede Portuguesa em Londres',
-    'what-you-can-do.subtitle': 'Conecta-te com a autêntica cultura portuguesa em bairros portugueses vibrantes de Londres',
-    'what-you-can-do.testimonial': '"Encontrei o meu povo aqui - desde almoços de domingo em Stockwell a noites de Fado em South Kensington"',
+    'what-you-can-do.badge': 'O Seu Calendário Social • Your Social Calendar',
+    'what-you-can-do.title': 'Viva a Vida em Conjunto com a Sua Comunidade Portuguesa',
+    'what-you-can-do.subtitle': 'Desde visitas a museus a jogos de futebol, noites de concertos a escapadas de fim de semana - reserve experiências e atividades pensadas para falantes de português de todos os cantos do mundo lusófono.',
+    'what-you-can-do.testimonial': '"A minha vida social transformou-se - passei de fins de semana solitários a reservar aventuras com outros falantes de português todas as semanas!"',
     
-    'what-you-can-do.events.title': 'Encontra e Participa em Eventos',
-    'what-you-can-do.events.description': 'Descobre eventos culturais portugueses por Londres - desde noites tradicionais de Fado em locais autênticos como o Bar do Fado a sessões de cinema português em centros culturais. Conecta-te com a tua herança através de experiências reais.',
-    'what-you-can-do.events.cta': 'Ver Eventos',
-    'what-you-can-do.events.locations': 'Stockwell • South Kensington • Vauxhall',
+    'what-you-can-do.events.title': 'Reserve Experiências & Atividades',
+    'what-you-can-do.events.description': 'O seu calendário social espera por si! Reserve tours de museus com guias portugueses, jogos de futebol em Wembley, noites de concertos no Royal Albert Hall, escapadas de fim de semana a Brighton, e soirées autênticas de Fado. Cada experiência pensada para falantes de português.',
+    'what-you-can-do.events.cta': 'Explorar & Reservar',
+    'what-you-can-do.events.locations': 'Museus • Concertos • Desporto • Escapadas',
     
     'what-you-can-do.groups.title': 'Cria os Teus Próprios Grupos',
     'what-you-can-do.groups.description': 'Inicia grupos por idades (profissionais dos 20-30), comunidades por origem (Portugal, Brasil, Angola), ou círculos por interesses (culinária, futebol, intercâmbio linguístico). Constrói amizades duradouras.',
@@ -493,7 +639,7 @@ const translations = {
     'language.switch-to-english': 'English',
     
     // Login & Authentication
-    'login.title': 'Bem-vindo de volta à família!',
+    'login.title': 'Bem-vindo de volta à comunidade!',
     'login.subtitle': 'Entre na sua conta para conectar com a comunidade portuguesa',
     'login.membership-badge': 'A sua família portuguesa em Londres',
     'login.membership-missed-you': 'A sua comunidade portuguesa estava com saudades.',
@@ -505,7 +651,7 @@ const translations = {
     'login.contact-support': 'Contactar Apoio →',
     'login.new-to-lusotown': 'Novo na LusoTown?',
     'login.join-family-description': 'Junte-se à nossa família portuguesa vibrante em Londres e encontre o seu povo.',
-    'login.join-family-button': 'Juntar à Família →',
+    'login.join-family-button': 'Juntar à Rede →',
     'login.sign-in-account': 'Entre na sua conta',
     'login.email': 'Email',
     'login.email-placeholder': 'seu@email.com',
@@ -514,11 +660,11 @@ const translations = {
     'login.remember-me': 'Lembrar-me',
     'login.forgot-password': 'Esqueceu a palavra-passe?',
     'login.welcome-home': 'Entrar em Casa',
-    'login.signing-in': 'Bem-vindo de volta à família...',
+    'login.signing-in': 'Bem-vindo de volta à comunidade...',
     'login.connecting': 'Conectando com a sua comunidade...',
     'login.preparing': 'Preparando o seu lar português...',
     'login.no-account': 'Não tem conta?',
-    'login.join-family-link': 'Juntar à Família',
+    'login.join-family-link': 'Juntar à Rede',
     'login.terms-privacy': 'Ao entrar, concorda com os nossos',
     'login.terms': 'Termos de Serviço',
     'login.and': 'e',
@@ -538,6 +684,9 @@ const translations = {
     'login.attendees': 'participantes',
     'login.participants': 'participantes',
     'login.table-quote': '"Onde há portugueses, há sempre uma mesa para mais um"',
+    
+    // Signup
+    'signup.subtitle': 'Preencha o seu calendário social com falantes de português por Londres. Reserve experiências, participe em atividades, e viva a vida em conjunto - desde padarias familiares em Stockwell a centros culturais em Vauxhall.',
     
     // Groups
     'groups.title': 'Grupos da Comunidade Portuguesa',
@@ -581,7 +730,7 @@ const translations = {
     'age.25-35': '25-35 anos', 
     'age.35-50': '35-50 anos',
     'age.50+': '50+ anos',
-    'age.families': 'Famílias com crianças',
+    'age.young-professionals': 'Jovens profissionais (22-35)',
     'age.all-ages': 'Todas as idades bem-vindas',
     
     // Portuguese Origins
@@ -632,7 +781,7 @@ const translations = {
     'community.values.subtitle': 'O que torna a nossa comunidade especial? Estes valores partilhados que cada membro abraça, refletindo o melhor da cultura portuguesa.',
     'community.business.title': 'Negócios Portugueses em Londres',
     'community.business.subtitle': 'Apoia a nossa comunidade empresarial. Desde padarias familiares que fazem pastéis como a avó fazia, a restaurantes que servem francesinha autêntica, a serviços prestados por pessoas que compreendem a nossa cultura.',
-    'community.cta.title': 'Pronto para se Juntar à Família Portuguesa?',
+    'community.cta.title': 'Pronto para se Juntar à Rede Portuguesa?',
     'community.cta.subtitle': 'A tua família portuguesa está à espera. Junta-te a 500+ falantes de português que fizeram de Londres a sua casa, uma conexão de cada vez. Unidos pela língua, unidos pelo coração.',
     'community.cta.tagline': '"Unidos pela Língua" - Onde quer que venhas no mundo lusófono, aqui tens casa em Londres.',
     
@@ -673,18 +822,156 @@ const translations = {
     'cta.social-proof': 'portugueses juntaram-se nas últimas 24 horas',
     'cta.connect-time': 'Junte-se agora e conecte-se com a comunidade luso-londrina em 48 horas',
     'cta.trust.verified-profiles': 'Perfis Verificados',
-    'cta.trust.community-support': 'Apoio Comunitário',
+    'cta.trust.experience-support': 'Apoio a Experiências',
     'cta.trust.satisfaction-guarantee': 'Garantia Satisfação',
-    'cta.benefits.join-community': 'Junte-se à comunidade luso-londrina',
+    'cta.benefits.book-experiences': 'Reserve experiências com falantes de português',
     'cta.benefits.cultural-access': 'Acesso a eventos culturais portugueses',
     'cta.benefits.find-businesses': 'Encontre empresas e serviços lusos',
-    'cta.benefits.connect-diaspora': 'Conecte-se com a diáspora portuguesa',
+    'cta.benefits.active-social-life': 'Preencha seu calendário social',
     'cta.benefits.safe-environment': 'Ambiente seguro e acolhedor',
     'cta.benefits.free-start': 'Gratuito para começar',
+    
+    // Events Page
+    'events.hero.title': 'O Seu Calendário Social Português',
+    'events.hero.subtitle': 'Reserve experiências e viva a vida em conjunto com falantes de português de Portugal, Brasil, Angola, Moçambique, Cabo Verde e além. Desde tours de museus a noites de concertos, jogos de futebol a escapadas de fim de semana - o seu calendário social espera por si!',
+    'events.search-placeholder': 'Pesquisar experiências: museus, concertos, futebol, escapadas...',
+    'events.popular-types': 'Experiências Populares',
+    'events.stats-events': 'Experiências Mensais',
+    'events.stats-members': 'Falantes de Português',
+    'events.stats-venues': 'Países Lusófonos',
+    
+    // Events & Tours Page
+    'events-tours.hero.title': 'Experiências Grupais & Tours',
+    'events-tours.hero.subtitle': 'Reserve experiências exclusivas com falantes de português em Londres. Desde grupos especializados para mulheres 30+ e 40+ até experiências familiares - encontre sua comunidade e viva Londres juntos.',
+    'events-tours.search-placeholder': 'Pesquisar experiências: mulheres 30+, famílias, cultural...',
+    'events-tours.filter-by-category': 'Filtrar por Categoria',
+    'events-tours.all-categories': 'Todas as Categorias',
+    'events-tours.see-all-experiences': 'Ver todas as experiências disponíveis',
+    'events-tours.experience-statistics': 'Estatísticas de Experiências',
+    'events-tours.total': 'Total',
+    'events-tours.categories': 'Categorias',
+    'events-tours.popular-categories': 'Categorias Populares',
+    'events-tours.clear-filters': 'Limpar Filtros',
+    'events-tours.featured-experiences': 'Experiências em Destaque',
+    'events-tours.live-london-community': 'Viva Londres com Sua Comunidade Portuguesa',
+    'events-tours.exclusive-experiences-description': 'Desde experiências exclusivas para mulheres portuguesas até tours familiares e networking profissional - reserve sua vaga em grupos especializados que celebram nossa herança.',
+    'events-tours.experience-highlights': 'Destaques da Experiência',
+    'events-tours.highlight': 'Destaque',
+    'events-tours.reserve-spot': 'Reservar Vaga',
+    'events-tours.view-all-experiences': 'Ver Todas as Experiências',
+    'events-tours.over-15-experiences': 'Mais de 15 Experiências Disponíveis',
+    'events-tours.specialized-groups-description': 'Desde grupos especializados para mulheres portuguesas até tours familiares e networking profissional - encontre a experiência perfeita para conectar com sua comunidade.',
+    'events-tours.women-30-40': 'Mulheres 30+ & 40+',
+    'events-tours.exclusive-networking': 'Networking exclusivo',
+    'events-tours.family-experiences': 'Experiências Familiares',
+    'events-tours.all-ages-welcome': 'Todas as idades bem-vindas',
+    'events-tours.cultural-heritage': 'Herança Cultural',
+    'events-tours.portuguese-traditions': 'Tradições portuguesas',
+    'events-tours.no-experiences-found': 'Nenhuma experiência encontrada',
+    'events-tours.adjust-search-criteria': 'Tente ajustar seus critérios de pesquisa ou limpar os filtros.',
+    'events-tours.clear-all-filters': 'Limpar Todos os Filtros',
+    'events-tours.sort-by-date': 'Ordenar por Data',
+    'events-tours.sort-by-popularity': 'Ordenar por Popularidade',
+    'events-tours.sort-by-price': 'Ordenar por Preço',
+    'events-tours.filters': 'Filtros',
+    'events-tours.experience-found': 'experiência encontrada',
+    'events-tours.experiences-found': 'experiências encontradas',
+    'events-tours.loading': 'Carregando...',
+
+    // Feed e Elementos Interactivos
+    'feed.filters.advanced': 'Filtros Avançados',
+    'feed.filters.event-type': 'Tipo de Evento',
+    'feed.filters.location': 'Localização',
+    'feed.filters.date': 'Data',
+    'feed.filters.price': 'Preço',
+    'feed.filters.culture-origin': 'Cultura & Origem',
+    'feed.filters.additional-options': 'Opções Adicionais',
+    'feed.filters.spots-available': 'Apenas eventos com vagas disponíveis',
+    'feed.filters.following-only': 'Apenas de pessoas que sigo',
+    'feed.filters.clear-all': 'Limpar tudo',
+    'feed.filters.all-dates': 'Todas as datas',
+    'feed.filters.today': 'Hoje',
+    'feed.filters.this-week': 'Esta semana',
+    'feed.filters.this-month': 'Este mês',
+    'feed.filters.upcoming': 'Próximos',
+    'feed.filters.all-prices': 'Todos os preços',
+    'feed.filters.free': 'Grátis',
+    'feed.filters.under-25': 'Até £25',
+    'feed.filters.under-50': 'Até £50',
+    'feed.filters.premium': '£50+',
+    'feed.filters.music-fado': 'Música & Fado',
+    'feed.filters.food-dining': 'Culinária',
+    'feed.filters.sports': 'Desporto',
+    'feed.filters.business': 'Negócios',
+    'feed.filters.language-exchange': 'Intercâmbio Linguístico',
+    'feed.filters.cultural-events': 'Eventos Culturais',
+    'feed.filters.social-party': 'Social & Festa',
+    'feed.filters.family': 'Família',
+    'feed.filters.football': 'Futebol',
+    'feed.filters.traditional': 'Tradicional',
+    'feed.filters.modern': 'Moderno',
+    'feed.filters.professional': 'Profissional',
+
+    // Diversidade Cultural Melhorada
+    'culture.lusophone-world': 'Mundo Lusófono',
+    'culture.portuguese-heritage': 'Herança Portuguesa',
+    'culture.african-lusophone': 'Países Africanos de Língua Portuguesa',
+    'culture.brazilian-community': 'Comunidade Brasileira',
+    'culture.cape-verdean': 'Cabo-verdiano',
+    'culture.angolan-community': 'Comunidade Angolana',
+    'culture.mozambican-heritage': 'Herança Moçambicana',
+    'culture.sao-tome-principe': 'São Tomé e Príncipe',
+    'culture.guinea-bissau': 'Guiné-Bissau',
+    'culture.east-timor': 'Timor-Leste',
+    'culture.macau-heritage': 'Herança de Macau',
+    'culture.equatorial-guinea': 'Guiné Equatorial',
+    'culture.goan-portuguese': 'Herança Portuguesa de Goa',
+    'culture.diaspora-stories': 'Histórias da Diáspora',
+    'culture.mixed-heritage': 'Herança Portuguesa Mista',
+
+    // Eventos e Atividades Autênticos
+    'events.fado-night': 'Noite de Fado',
+    'events.portuguese-dinner': 'Jantar Português',
+    'events.carnival-celebration': 'Celebração de Carnaval',
+    'events.festa-junina': 'Festa Junina',
+    'events.santos-populares': 'Santos Populares',
+    'events.independence-day': 'Celebração do Dia da Independência',
+    'events.cultural-workshop': 'Oficina Cultural',
+    'events.language-cafe': 'Café de Línguas',
+    'events.business-networking': 'Networking Empresarial',
+    'events.family-picnic': 'Piquenique Familiar',
+    'events.football-match': 'Visualização de Jogo de Futebol',
+    'events.cooking-class': 'Aula de Culinária Portuguesa',
+    'events.wine-tasting': 'Prova de Vinhos Portugueses',
+    'events.literature-club': 'Clube de Literatura Portuguesa',
+    'events.dance-workshop': 'Oficina de Dança Tradicional',
+    'events.heritage-tour': 'Tour da Herança Portuguesa',
+    'events.museum-visit': 'Visita ao Museu com Guia Português',
+    'events.weekend-trip': 'Viagem de Fim de Semana',
+    'events.beach-day': 'Dia de Praia',
+    'events.cultural-festival': 'Festival Cultural',
+
+    // Histórias de Sucesso e Depoimentos
+    'stories.member-success': 'História de Sucesso do Membro',
+    'stories.community-impact': 'Impacto na Comunidade',
+    'stories.cultural-preservation': 'Preservação Cultural',
+    'stories.professional-networking': 'Sucesso Profissional',
+    'stories.family-connections': 'Conexões Familiares',
+    'stories.language-learning': 'Jornada de Aprendizagem de Línguas',
+    'stories.business-support': 'Apoio à Comunidade Empresarial',
+    'stories.heritage-discovery': 'Descoberta da Herança',
+
+    // SEO e Conteúdo Meta
+    'seo.title-suffix': '| LusoTown Londres',
+    'seo.description.default': 'O seu calendário social português em Londres. Conecte-se com falantes de português de Portugal, Brasil, Angola, Moçambique, Cabo Verde e além. Reserve experiências, participe em atividades, viva a vida em conjunto.',
+    'seo.keywords': 'comunidade portuguesa Londres, comunidade brasileira Reino Unido, comunidade angolana Londres, comunidade moçambicana Reino Unido, cabo-verdianos Londres, eventos portugueses, comunidade lusófona, calendário social português, networking português Londres',
+    'seo.og.site-name': 'LusoTown Londres',
+    'seo.og.locale': 'pt_PT',
   },
   'pt-br': {
     // Navigation
     'nav.events': 'Eventos',
+    'nav.events-tours': 'Experiências & Tours',
     'nav.how-it-works': 'Como Funciona',
     'nav.community': 'Rede',
     'nav.community-guidelines': 'Diretrizes da Comunidade',
@@ -692,14 +979,14 @@ const translations = {
     'nav.about': 'Sobre',
     'nav.contact': 'Contato',
     'nav.login': 'Entrar',
-    'nav.join-membership': 'Juntar à Família',
+    'nav.join-membership': 'Reservar Experiências',
     
     // Hero Section
     'hero.badge': 'Unidos pela Língua • United by Language',
-    'hero.title': 'Encontra a Tua Família Portuguesa em Londres.',
-    'hero.subtitle': 'Bem-vindo a casa! Junta-te a mais de 500 corações portugueses que encontraram a sua gente em padarias acolhedoras de Stockwell, centros culturais calorosos de Vauxhall, e onde quer que as famílias portuguesas se reúnam. Vem como és, sai sentindo que pertences.',
-    'hero.cta.primary': 'Encontrar a Minha Gente',
-    'hero.cta.secondary': 'Juntar à Família',
+    'hero.title': 'Sua Agenda Social Portuguesa em Londres',
+    'hero.subtitle': 'Viva a vida junto com falantes de português do Portugal, Brasil, Angola, Moçambique, Cabo Verde e além que vivem atualmente ou visitam Londres e o Reino Unido. Reserve experiências, participe de atividades, e transforme todo fim de semana numa aventura com sua comunidade lusófona.',
+    'hero.cta.primary': 'Explorar Agenda Social',
+    'hero.cta.secondary': 'Reservar Primeira Experiência',
     
     // How It Works Section
     'how-it-works.title': 'Encontre Sua Comunidade Portuguesa',
@@ -720,20 +1007,20 @@ const translations = {
     'quick-start.quote': '"Onde há portugueses, há sempre uma mesa para mais um" - Onde há portugueses, há sempre lugar para mais um',
     
     // What You Can Do Section
-    'what-you-can-do.badge': 'O Que Você Pode Fazer • What You Can Do',
-    'what-you-can-do.title': 'Encontre Sua Comunidade Portuguesa em Londres',
-    'what-you-can-do.subtitle': 'Conecte-se com a autêntica cultura portuguesa através de experiências reais nos bairros portugueses vibrantes de Londres',
-    'what-you-can-do.testimonial': '"Encontrei minha galera aqui - desde almoços de domingo em Stockwell a noites de Fado em South Kensington"',
+    'what-you-can-do.badge': 'Sua Agenda Social • Your Social Calendar',
+    'what-you-can-do.title': 'Viva a Vida Junto com sua Comunidade Portuguesa',
+    'what-you-can-do.subtitle': 'Desde visitas a museus a jogos de futebol, noites de shows a viagens de fim de semana - reserve experiências e atividades pensadas para falantes de português de todos os cantos do mundo lusófono.',
+    'what-you-can-do.testimonial': '"Minha vida social se transformou - passei de fins de semana solitários a reservar aventuras com outros falantes de português toda semana!"',
     
-    'what-you-can-do.events.title': 'Encontre e Participe de Eventos',
-    'what-you-can-do.events.description': 'Descubra eventos culturais portugueses por Londres - desde noites tradicionais de Fado em locais autênticos como o Bar do Fado a sessões de cinema português em centros culturais. Conecte-se com sua herança através de experiências reais.',
-    'what-you-can-do.events.cta': 'Ver Eventos',
-    'what-you-can-do.events.locations': 'Stockwell • South Kensington • Vauxhall',
+    'what-you-can-do.events.title': 'Reserve Experiências & Atividades',
+    'what-you-can-do.events.description': 'Sua agenda social te espera! Reserve tours em museus com guias portugueses, jogos de futebol em Wembley, noites de shows no Royal Albert Hall, viagens de fim de semana para Brighton, e noites autênticas de Fado. Cada experiência pensada para falantes de português.',
+    'what-you-can-do.events.cta': 'Explorar & Reservar',
+    'what-you-can-do.events.locations': 'Museus • Shows • Esportes • Viagens',
     
     'what-you-can-do.groups.title': 'Crie Seus Próprios Grupos',
     'what-you-can-do.groups.description': 'Inicie grupos por idades (profissionais dos 20-30), comunidades por origem (Portugal, Brasil, Angola), ou círculos por interesses (culinária, futebol, intercâmbio linguístico). Construa amizades duradouras.',
     'what-you-can-do.groups.cta': 'Criar Grupo',
-    'what-you-can-do.groups.examples': 'Mamães e Bebês • Jovens Profissionais • Social 50+',
+    'what-you-can-do.groups.examples': 'Jovens Profissionais • Networking • Social 50+',
     
     'what-you-can-do.feed.title': 'Mantenha-se Atualizado no LusoFeed',
     'what-you-can-do.feed.description': 'Acompanhe notícias da comunidade, atualizações de eventos e destaques culturais. Compartilhe fotos de festivais portugueses, recomende restaurantes autênticos e mantenha-se conectado com sua comunidade portuguesa.',
@@ -827,7 +1114,7 @@ const translations = {
     'language.switch-to-english': 'English',
     
     // Login & Authentication
-    'login.title': 'Bem-vindo de volta à família!',
+    'login.title': 'Bem-vindo de volta à comunidade!',
     'login.subtitle': 'Entre na sua conta para conectar com a comunidade portuguesa',
     'login.membership-badge': 'Sua família portuguesa em Londres',
     'login.membership-missed-you': 'Sua comunidade portuguesa estava com saudades.',
@@ -848,7 +1135,7 @@ const translations = {
     'login.remember-me': 'Lembrar de mim',
     'login.forgot-password': 'Esqueceu a senha?',
     'login.welcome-home': 'Bem-vindo a Casa',
-    'login.signing-in': 'Bem-vindo de volta à família...',
+    'login.signing-in': 'Bem-vindo de volta à comunidade...',
     'login.connecting': 'Conectando com sua comunidade...',
     'login.preparing': 'Preparando seu lar português...',
     'login.no-account': 'Não tem conta?',
@@ -867,11 +1154,14 @@ const translations = {
     'login.fado-tonight': 'Hoje às 20:00 • Bar do Fado',
     'login.new-bakery': 'Nova Padaria em Stockwell',
     'login.fresh-pasteis': 'Pastéis de nata frescos todos os dias',
-    'login.portuguese-mums': 'Grupo "Mamães Portuguesas"',
+    'login.professional-network': 'Rede Profissional Portuguesa',
     'login.new-members': '89 novos membros esta semana',
     'login.attendees': 'participantes',
     'login.participants': 'participantes',
     'login.table-quote': '"Onde há portugueses, há sempre uma mesa para mais um"',
+    
+    // Signup
+    'signup.subtitle': 'Preencha o seu calendário social com falantes de português por Londres. Reserve experiências, participe em atividades, e viva a vida em conjunto - desde padarias familiares em Stockwell a centros culturais em Vauxhall.',
     
     // Groups
     'groups.title': 'Grupos da Comunidade Portuguesa',
@@ -915,7 +1205,7 @@ const translations = {
     'age.25-35': '25-35 anos', 
     'age.35-50': '35-50 anos',
     'age.50+': '50+ anos',
-    'age.families': 'Famílias com crianças',
+    'age.young-professionals': 'Jovens profissionais (22-35)',
     'age.all-ages': 'Todas as idades bem-vindas',
     
     // Portuguese Origins
@@ -966,8 +1256,8 @@ const translations = {
     'community.values.subtitle': 'O que torna nossa comunidade especial? Esses valores compartilhados que cada membro abraça, refletindo o melhor da cultura portuguesa.',
     'community.business.title': 'Negócios Portugueses em Londres',
     'community.business.subtitle': 'Apoie nossa comunidade empresarial. Desde padarias familiares que fazem pastéis como a vovó fazia, a restaurantes que servem francesinha autêntica, a serviços prestados por pessoas que compreendem nossa cultura.',
-    'community.cta.title': 'Pronto para se Juntar à Família Portuguesa?',
-    'community.cta.subtitle': 'Sua família portuguesa está esperando. Junte-se a 500+ falantes de português que fizeram de Londres sua casa, uma conexão de cada vez. Unidos pela língua, unidos pelo coração.',
+    'community.cta.title': 'Pronto para se Juntar à Rede Portuguesa?',
+    'community.cta.subtitle': 'Sua rede portuguesa está esperando. Junte-se a 500+ falantes de português que fizeram de Londres sua casa, uma conexão profissional de cada vez. Unidos pela língua, unidos pela ambição.',
     'community.cta.tagline': '"Unidos pela Língua" - Onde quer que você venha no mundo lusófono, você tem uma casa aqui em Londres.',
     
     // App Download Section
@@ -1007,14 +1297,151 @@ const translations = {
     'cta.social-proof': 'portugueses entraram nas últimas 24 horas',
     'cta.connect-time': 'Entre agora e se conecte com a comunidade luso-londrina em 48 horas',
     'cta.trust.verified-profiles': 'Perfis Verificados',
-    'cta.trust.community-support': 'Suporte Comunitário',
+    'cta.trust.experience-support': 'Suporte a Experiências',
     'cta.trust.satisfaction-guarantee': 'Garantia de Satisfação',
-    'cta.benefits.join-community': 'Junte-se à comunidade luso-londrina',
+    'cta.benefits.book-experiences': 'Reserve experiências com falantes de português',
     'cta.benefits.cultural-access': 'Acesso a eventos culturais portugueses',
     'cta.benefits.find-businesses': 'Encontre empresas e serviços lusos',
-    'cta.benefits.connect-diaspora': 'Conecte-se com a diáspora portuguesa',
+    'cta.benefits.active-social-life': 'Preencha seu calendário social',
     'cta.benefits.safe-environment': 'Ambiente seguro e acolhedor',
     'cta.benefits.free-start': 'Grátis para começar',
+    
+    // Events Page
+    'events.hero.title': 'Sua Agenda Social Portuguesa',
+    'events.hero.subtitle': 'Reserve experiências e viva a vida junto com falantes de português do Portugal, Brasil, Angola, Moçambique, Cabo Verde e além. Desde tours em museus a noites de shows, jogos de futebol a viagens de fim de semana - sua agenda social te espera!',
+    'events.search-placeholder': 'Pesquisar experiências: museus, shows, futebol, viagens...',
+    'events.popular-types': 'Experiências Populares',
+    'events.stats-events': 'Experiências Mensais',
+    'events.stats-members': 'Falantes de Português',
+    'events.stats-venues': 'Países Lusófonos',
+    
+    // Events & Tours Page
+    'events-tours.hero.title': 'Experiências Grupais & Tours',
+    'events-tours.hero.subtitle': 'Reserve experiências exclusivas com falantes de português em Londres. Desde grupos especializados para mulheres 30+ e 40+ até experiências familiares - encontre sua comunidade e viva Londres junto.',
+    'events-tours.search-placeholder': 'Pesquisar experiências: mulheres 30+, famílias, cultural...',
+    'events-tours.filter-by-category': 'Filtrar por Categoria',
+    'events-tours.all-categories': 'Todas as Categorias',
+    'events-tours.see-all-experiences': 'Ver todas as experiências disponíveis',
+    'events-tours.experience-statistics': 'Estatísticas de Experiências',
+    'events-tours.total': 'Total',
+    'events-tours.categories': 'Categorias',
+    'events-tours.popular-categories': 'Categorias Populares',
+    'events-tours.clear-filters': 'Limpar Filtros',
+    'events-tours.featured-experiences': 'Experiências em Destaque',
+    'events-tours.live-london-community': 'Viva Londres com Sua Comunidade Portuguesa',
+    'events-tours.exclusive-experiences-description': 'Desde experiências exclusivas para mulheres portuguesas até tours familiares e networking profissional - reserve sua vaga em grupos especializados que celebram nossa herança.',
+    'events-tours.experience-highlights': 'Destaques da Experiência',
+    'events-tours.highlight': 'Destaque',
+    'events-tours.reserve-spot': 'Reservar Vaga',
+    'events-tours.view-all-experiences': 'Ver Todas as Experiências',
+    'events-tours.over-15-experiences': 'Mais de 15 Experiências Disponíveis',
+    'events-tours.specialized-groups-description': 'Desde grupos especializados para mulheres portuguesas até tours familiares e networking profissional - encontre a experiência perfeita para conectar com sua comunidade.',
+    'events-tours.women-30-40': 'Mulheres 30+ & 40+',
+    'events-tours.exclusive-networking': 'Networking exclusivo',
+    'events-tours.family-experiences': 'Experiências Familiares',
+    'events-tours.all-ages-welcome': 'Todas as idades bem-vindas',
+    'events-tours.cultural-heritage': 'Herança Cultural',
+    'events-tours.portuguese-traditions': 'Tradições portuguesas',
+    'events-tours.no-experiences-found': 'Nenhuma experiência encontrada',
+    'events-tours.adjust-search-criteria': 'Tente ajustar seus critérios de pesquisa ou limpar os filtros.',
+    'events-tours.clear-all-filters': 'Limpar Todos os Filtros',
+    'events-tours.sort-by-date': 'Ordenar por Data',
+    'events-tours.sort-by-popularity': 'Ordenar por Popularidade',
+    'events-tours.sort-by-price': 'Ordenar por Preço',
+    'events-tours.filters': 'Filtros',
+    'events-tours.experience-found': 'experiência encontrada',
+    'events-tours.experiences-found': 'experiências encontradas',
+    'events-tours.loading': 'Carregando...',
+
+    // Feed e Elementos Interativos
+    'feed.filters.advanced': 'Filtros Avançados',
+    'feed.filters.event-type': 'Tipo de Evento',
+    'feed.filters.location': 'Localização',
+    'feed.filters.date': 'Data',
+    'feed.filters.price': 'Preço',
+    'feed.filters.culture-origin': 'Cultura & Origem',
+    'feed.filters.additional-options': 'Opções Adicionais',
+    'feed.filters.spots-available': 'Apenas eventos com vagas disponíveis',
+    'feed.filters.following-only': 'Apenas de pessoas que sigo',
+    'feed.filters.clear-all': 'Limpar tudo',
+    'feed.filters.all-dates': 'Todas as datas',
+    'feed.filters.today': 'Hoje',
+    'feed.filters.this-week': 'Esta semana',
+    'feed.filters.this-month': 'Este mês',
+    'feed.filters.upcoming': 'Próximos',
+    'feed.filters.all-prices': 'Todos os preços',
+    'feed.filters.free': 'Grátis',
+    'feed.filters.under-25': 'Até £25',
+    'feed.filters.under-50': 'Até £50',
+    'feed.filters.premium': '£50+',
+    'feed.filters.music-fado': 'Música & Fado',
+    'feed.filters.food-dining': 'Culinária',
+    'feed.filters.sports': 'Esportes',
+    'feed.filters.business': 'Negócios',
+    'feed.filters.language-exchange': 'Intercâmbio Linguístico',
+    'feed.filters.cultural-events': 'Eventos Culturais',
+    'feed.filters.social-party': 'Social & Festa',
+    'feed.filters.family': 'Família',
+    'feed.filters.football': 'Futebol',
+    'feed.filters.traditional': 'Tradicional',
+    'feed.filters.modern': 'Moderno',
+    'feed.filters.professional': 'Profissional',
+
+    // Diversidade Cultural Aprimorada
+    'culture.lusophone-world': 'Mundo Lusófono',
+    'culture.portuguese-heritage': 'Herança Portuguesa',
+    'culture.african-lusophone': 'Países Africanos de Língua Portuguesa',
+    'culture.brazilian-community': 'Comunidade Brasileira',
+    'culture.cape-verdean': 'Cabo-verdiano',
+    'culture.angolan-community': 'Comunidade Angolana',
+    'culture.mozambican-heritage': 'Herança Moçambicana',
+    'culture.sao-tome-principe': 'São Tomé e Príncipe',
+    'culture.guinea-bissau': 'Guiné-Bissau',
+    'culture.east-timor': 'Timor-Leste',
+    'culture.macau-heritage': 'Herança de Macau',
+    'culture.equatorial-guinea': 'Guiné Equatorial',
+    'culture.goan-portuguese': 'Herança Portuguesa de Goa',
+    'culture.diaspora-stories': 'Histórias da Diáspora',
+    'culture.mixed-heritage': 'Herança Portuguesa Mista',
+
+    // Eventos e Atividades Autênticos
+    'events.fado-night': 'Noite de Fado',
+    'events.portuguese-dinner': 'Jantar Português',
+    'events.carnival-celebration': 'Celebração de Carnaval',
+    'events.festa-junina': 'Festa Junina',
+    'events.santos-populares': 'Santos Populares',
+    'events.independence-day': 'Celebração do Dia da Independência',
+    'events.cultural-workshop': 'Workshop Cultural',
+    'events.language-cafe': 'Café de Línguas',
+    'events.business-networking': 'Networking Empresarial',
+    'events.family-picnic': 'Piquenique Familiar',
+    'events.football-match': 'Exibição de Jogo de Futebol',
+    'events.cooking-class': 'Aula de Culinária Portuguesa',
+    'events.wine-tasting': 'Degustação de Vinhos Portugueses',
+    'events.literature-club': 'Clube de Literatura Portuguesa',
+    'events.dance-workshop': 'Workshop de Dança Tradicional',
+    'events.heritage-tour': 'Tour da Herança Portuguesa',
+    'events.museum-visit': 'Visita ao Museu com Guia Português',
+    'events.weekend-trip': 'Viagem de Fim de Semana',
+    'events.beach-day': 'Dia de Praia',
+    'events.cultural-festival': 'Festival Cultural',
+
+    // Histórias de Sucesso e Depoimentos
+    'stories.member-success': 'História de Sucesso do Membro',
+    'stories.community-impact': 'Impacto na Comunidade',
+    'stories.cultural-preservation': 'Preservação Cultural',
+    'stories.professional-networking': 'Sucesso Profissional',
+    'stories.family-connections': 'Conexões Familiares',
+    'stories.language-learning': 'Jornada de Aprendizagem de Línguas',
+    'stories.business-support': 'Apoio à Comunidade Empresarial',
+    'stories.heritage-discovery': 'Descoberta da Herança',
+
+    // SEO e Conteúdo Meta
+    'seo.title-suffix': '| LusoTown Londres',
+    'seo.description.default': 'Sua agenda social portuguesa em Londres. Conecte-se com falantes de português do Portugal, Brasil, Angola, Moçambique, Cabo Verde e além. Reserve experiências, participe de atividades, viva a vida junto.',
+    'seo.keywords': 'comunidade portuguesa Londres, comunidade brasileira Reino Unido, comunidade angolana Londres, comunidade moçambicana Reino Unido, cabo-verdianos Londres, eventos portugueses, comunidade lusófona, agenda social portuguesa, networking português Londres',
+    'seo.og.site-name': 'LusoTown Londres',
+    'seo.og.locale': 'pt_BR',
   }
 }
 
@@ -1038,24 +1465,36 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
     }
   }, [])
 
-  // Save language preference
-  const handleSetLanguage = (lang: Language) => {
+  // Save language preference - memoized to prevent unnecessary re-renders
+  const handleSetLanguage = useCallback((lang: Language) => {
     setLanguage(lang)
-    localStorage.setItem('lusotown-language', lang)
-  }
+    try {
+      localStorage.setItem('lusotown-language', lang)
+    } catch (error) {
+      console.error('Error saving language preference:', error)
+    }
+  }, [])
 
-  // Translation function
-  const t = (key: string, fallback?: string): string => {
-    const translation = (translations[language] as any)[key]
-    return translation || fallback || key
-  }
+  // Translation function - memoized to prevent unnecessary re-renders
+  const t = useCallback((key: string, fallback?: string): string => {
+    try {
+      const translation = (translations[language] as any)[key]
+      return translation || fallback || key
+    } catch (error) {
+      console.error('Error translating key:', key, error)
+      return fallback || key
+    }
+  }, [language])
+
+  // Memoize context value to prevent unnecessary re-renders
+  const contextValue = useMemo(() => ({ 
+    language, 
+    setLanguage: handleSetLanguage, 
+    t 
+  }), [language, handleSetLanguage, t])
 
   return (
-    <LanguageContext.Provider value={{ 
-      language, 
-      setLanguage: handleSetLanguage, 
-      t 
-    }}>
+    <LanguageContext.Provider value={contextValue}>
       {children}
     </LanguageContext.Provider>
   )

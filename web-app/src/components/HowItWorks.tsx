@@ -102,18 +102,18 @@ export default function HowItWorks() {
           </div>
 
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-tight tracking-tight mb-8">
-            Find Your Portuguese 
+            Fill Your Social 
             <span className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent block sm:inline">
-              Community
+              Calendar
             </span>
           </h2>
           
           <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 leading-relaxed max-w-4xl mx-auto font-medium mb-6">
-            Connect with Portuguese speakers at authentic venues across the UK in four meaningful steps
+            Book experiences and live life together with Portuguese speakers across London in four simple steps
           </p>
           
           <p className="text-lg text-gray-600 italic max-w-3xl mx-auto leading-relaxed">
-            "A saudade só se cura com encontros reais" - Homesickness can only be cured with real meetings
+            "A vida é melhor quando vivida em comunidade" - Life is better when lived together
           </p>
 
           {/* Cultural Icons Preview */}
@@ -192,10 +192,10 @@ export default function HowItWorks() {
 
                   {/* Interactive CTA Link */}
                   <a 
-                    href="/signup"
+                    href="/events"
                     className={`flex items-center gap-2 text-${step.accentColor} font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 hover:gap-3 cursor-pointer text-base`}
                   >
-                    <span>Join Our Community</span>
+                    <span>Book Your Experience</span>
                     <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </a>
                 </div>
@@ -256,23 +256,23 @@ export default function HowItWorks() {
         <div className={`text-center transition-all duration-1000 delay-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           <div className="bg-gradient-to-r from-white/70 via-secondary-50/50 to-accent-50/50 backdrop-blur-lg border border-white/40 rounded-3xl p-12 shadow-2xl max-w-5xl mx-auto">
             <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
-              Ready to Feel 
+              Ready to 
               <span className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent">
-                At Home Again?
+                Live Life Together?
               </span>
             </h3>
             <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Join Portuguese speakers who understand the feeling of finding your community in a new country. 
-              <strong className="text-gray-800">Real people, real places, real connections.</strong>
+              Book experiences with Portuguese speakers from <strong className="text-secondary-600">Portugal 🇵🇹 Brazil 🇧🇷 Angola 🇦🇴 Mozambique 🇲🇿 Cape Verde 🇨🇻</strong> and beyond. 
+              <strong className="text-gray-800">Real experiences, real venues, active social life.</strong>
             </p>
             
             {/* Portuguese cultural quote */}
             <div className="bg-white/50 rounded-2xl p-6 mb-10 max-w-2xl mx-auto border border-secondary-100">
               <p className="text-gray-700 italic text-lg mb-2">
-                "Quem tem amigos, nunca está sozinho"
+                "Viver é conviver - há sempre algo para fazer juntos"
               </p>
               <p className="text-gray-600 text-sm">
-                "Those who have friends are never alone" - Portuguese Proverb
+                "To live is to live together - there's always something to do together"
               </p>
             </div>
             
@@ -283,7 +283,7 @@ export default function HowItWorks() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-secondary-700 via-action-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10 flex items-center justify-center gap-3">
-                  Find Your Community
+                  Explore Social Calendar
                   <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-200" />
                 </span>
               </a>
@@ -291,7 +291,7 @@ export default function HowItWorks() {
                 href="/events"
                 className="text-xl font-bold px-12 py-5 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 w-full sm:w-auto text-center"
               >
-                Explore Events First
+                Book Your First Experience
               </a>
             </div>
           </div>

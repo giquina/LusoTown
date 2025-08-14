@@ -38,6 +38,9 @@ export default function Hero() {
                   {t('hero.badge')}
                 </span>
               </div>
+              <div className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">
+                OFFICIAL
+              </div>
               <div className="w-2 h-2 bg-secondary-400 rounded-full animate-pulse"></div>
             </div>
 
@@ -57,19 +60,19 @@ export default function Hero() {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-action-500 to-action-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
                   <HeartIcon className="h-6 w-6 text-white" />
                 </div>
-<span className="text-xs font-bold text-gray-800 tracking-wide text-center">AUTHENTIC VENUES</span>
+<span className="text-xs font-bold text-gray-800 tracking-wide text-center">BOOK & EXPERIENCE</span>
               </div>
               <div className="group flex items-center gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-secondary-500 to-secondary-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
                   <UsersIcon className="h-6 w-6 text-white" />
                 </div>
-                <span className="text-xs font-bold text-gray-800 tracking-wide text-center">500+ PORTUGUESE SPEAKERS</span>
+                <span className="text-xs font-bold text-gray-800 tracking-wide text-center">PORTUGUESE-SPEAKING</span>
               </div>
               <div className="group flex items-center gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent-500 to-coral-500 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
                   <SparklesIcon className="h-6 w-6 text-white" />
                 </div>
-                <span className="text-xs font-bold text-gray-800 tracking-wide text-center">REAL LOCATIONS</span>
+                <span className="text-xs font-bold text-gray-800 tracking-wide text-center">LIVE LIFE TOGETHER</span>
               </div>
             </div>
 
@@ -99,8 +102,8 @@ export default function Hero() {
             <div className="relative z-10 bg-white/20 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/30">
               <div className="space-y-6">
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">Welcome to Your Portuguese Family</h3>
-                  <p className="text-gray-600">Join 500+ Portuguese hearts already feeling at home in cozy venues across London - from family bakeries in Stockwell to warm community centers in Vauxhall, where everyone greets you like family</p>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2">Your Social Calendar Awaits</h3>
+                  <p className="text-gray-600">Join 500+ Portuguese speakers from Portugal, Brazil, Angola, Mozambique, Cape Verde & beyond - booking museum tours, concert nights, football matches, and weekend adventures together across London</p>
                 </div>
 
                 {/* Member avatars */}
@@ -120,12 +123,12 @@ export default function Hero() {
                 {/* Stats */}
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div className="bg-white/40 rounded-2xl p-4">
-                    <div className="text-3xl font-bold text-green-600">75+</div>
-                    <div className="text-sm text-gray-600">Portuguese Venues</div>
+                    <div className="text-3xl font-bold text-green-600">150+</div>
+                    <div className="text-sm text-gray-600">Monthly Experiences</div>
                   </div>
                   <div className="bg-white/40 rounded-2xl p-4">
-                    <div className="text-3xl font-bold text-red-600">40+</div>
-                    <div className="text-sm text-gray-600">Monthly Meetups</div>
+                    <div className="text-3xl font-bold text-red-600">10+</div>
+                    <div className="text-sm text-gray-600">Countries Represented</div>
                   </div>
                 </div>
 

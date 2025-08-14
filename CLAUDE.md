@@ -4,7 +4,38 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-LusoTown London is a vibrant community platform for Portuguese speakers and their families living in London. The project consists of a Next.js web application focused on connecting Portuguese-speaking communities, preserving language, and celebrating culture in London.
+LusoTown London is the ultimate social calendar and booking hub for Portuguese speakers in London and across the UK. The platform focuses on helping Portuguese speakers live life together through shared experiences rather than just "finding community." 
+
+**Core Mission:** Connect Portuguese-speaking adults (18+) instantly with people to do activities with - from museum visits and football games to concerts, club nights, and weekend trips across London.
+
+**Key Positioning:** "Your Portuguese Adult Social Calendar in London" - emphasizing booking experiences and professional networking for adults only (18+), removing family/children focus for streamlined adult community platform.
+
+### Core Activity Categories
+
+LusoTown focuses on specific London-based activities that Portuguese speakers can book and enjoy together:
+
+**Cultural:** Museum visits (British Museum, Tate Modern), art gallery tours, historical walks, theatre shows, film screenings, Portuguese food & wine tastings
+**Social:** Coffee meetups, Portuguese restaurant dinners, Hyde Park picnics, brunch clubs, Thames sunset meetups, pub nights
+**Sports & Fitness:** Football games, gym buddies, yoga classes, tennis matches, cycling groups, park runs
+**Nightlife:** Clubbing nights, live music gigs, karaoke bars, Portuguese DJ events, salsa/bachata nights  
+**Day Trips:** Seaside trips (Brighton), countryside hikes, Portuguese heritage tours, weekend getaways
+**Special Interests:** Book clubs, photography walks, language exchange, cooking classes, wine tastings
+**Professional:** Business networking, career meetups, entrepreneur gatherings, professional development workshops
+**Adult Entertainment:** Wine bars, cocktail nights, adult learning workshops, mature social events
+
+### Target Messaging Strategy
+
+**Replace "finding community" language with:**
+- "Live life together"
+- "Social calendar" 
+- "Book experiences"
+- "Connect and do things"
+- "Your people to explore London with"
+
+**Hero Section Template:**
+"Unidos pela Língua • United by Language  
+Your Portuguese Adult Social Calendar in London.  
+From museums and football to concerts, club nights, and weekend trips — connect, book, and live London with Portuguese adults who love the city like you do. (18+ Community)"
 
 ## Development Commands
 
@@ -212,13 +243,22 @@ npm run dev          # Start development server
 
 ### Current Development Priority
 
-**Phase: Deployment & Launch:**
-1. **Production Deployment:** Platform ready for immediate launch
-2. **Community Onboarding:** All Portuguese community features complete
-3. **Event Management:** Full event creation, booking, and management system
-4. **Social Features:** Complete event feed, cart, and interaction system
-5. **Bilingual Platform:** Full English/Portuguese language support
-6. **User Experience:** All pages and features optimized for Portuguese community
+**Phase: Messaging & Positioning Implementation (COMPLETED ✅):**
+The platform has successfully transitioned from "finding community" to "social calendar and booking hub" positioning. All strategic messaging updates detailed in `tudo.md` have been implemented.
+
+**Current Focus Areas:**
+1. **Production Optimization:** Platform ready for immediate launch with complete social calendar positioning
+2. **Activity-Specific Features:** London-based Portuguese activities fully integrated (cultural, social, sports, nightlife, day trips, professional)
+3. **Social Calendar Functionality:** Booking system and calendar features operational
+4. **London Integration:** Location-specific features for Portuguese community established
+5. **Authentic Positioning:** "Your Portuguese Social Calendar in London" messaging consistent throughout
+
+**Strategic Messaging Completed:**
+- ✅ Hero sections updated with "Unidos pela Língua • United by Language" and social calendar messaging
+- ✅ Activity categories integrated (cultural, social, sports, nightlife, day trips, special interests, professional)  
+- ✅ London-specific venues and locations emphasized throughout
+- ✅ Booking functionality and social connections highlighted
+- ✅ Portuguese community authenticity maintained while emphasizing active lifestyle
 
 ## Technology Stack
 
@@ -281,11 +321,30 @@ The web app uses a Portuguese-inspired design system with semantic color naming:
 - **Keyframes:** fadeInUp, fadeIn, scaleIn, slideInRight
 - **Classes:** animate-fade-in-up, animate-fade-in, animate-scale-in
 
-### Target Communities
+### Target Communities (Adults 18+)
 - **Portugal** 🇵🇹 **Brazil** 🇧🇷 **Angola** 🇦🇴 **Mozambique** 🇲🇿
 - **Cape Verde** 🇨🇻 **Guinea-Bissau** 🇬🇼 **São Tomé and Príncipe** 🇸🇹
 - **East Timor** 🇹🇱 **Macau** 🇲🇴 **Equatorial Guinea** 🇬🇶
-- Their diaspora communities in London
+- Adult diaspora communities in London (professionals, students, young adults, mature adults)
+
+### Key User Journey Goals
+
+**Primary Goal:** Every adult visitor (18+) should immediately understand that LusoTown is where Portuguese speakers in London come to fill their social calendar with amazing adult activities alongside people who speak their language.
+
+**Success Indicator:** When someone visits the site, they should be able to envision themselves booking their next museum visit, football game, dinner, nightlife experience, or weekend trip with Portuguese adults within the next 7 days.
+
+**Target User Mindset:** *"If I join, my adult social life in London will be full, fun, and connected — and all in Portuguese with people my age."*
+
+### Core User Benefits to Highlight
+
+Every page must emphasize these reasons adults (18+) join:
+- **Make adult friends** who share your language and culture
+- **Discover London** in a more personal, welcoming way through adult activities
+- **Stay connected** to Portuguese traditions while living in the UK as an adult
+- **Try new adult experiences** you wouldn't do alone (nightlife, networking, cultural events)
+- **Get active** socially, culturally, and physically with other adults
+- **Network** with Portuguese professionals and creatives in adult settings
+- **Feel at home** in a big city by finding "your adult people"
 
 ## Supabase Integration (Production Ready)
 
@@ -569,43 +628,115 @@ Based on analysis of the LusoTown platform structure and Portuguese community ne
    - Coordinate with consulates and official organizations
    - Manage relationships with Portuguese institutions
 
-## Project Sub-Agents (Available in `.claude/agents/`)
+## Project Sub-Agents System (Production Ready ✅)
 
-The LusoTown project includes comprehensive specialized sub-agents for optimal development and community management:
+The LusoTown project includes a **comprehensive agent ecosystem** with 16 specialized agents, intelligent task matching, and automated coordination for optimal Portuguese community development.
 
-### Portuguese Community Specialists
-- **luso-content-agent** - Portuguese translation and cultural content management
+### 🤖 Agent System Features
+
+**✅ Intelligent Agent Discovery:** Automated task-to-agent matching based on specialties and context
+**✅ Agent Registry:** Centralized configuration with `.claude/agents.json` and individual agent profiles
+**✅ CLI Discovery Tool:** `node .claude/invoke-agent.js` for finding the right agent for any task
+**✅ Multi-Agent Coordination:** Project manager agent coordinates complex tasks across multiple specialists
+**✅ Portuguese Community Focus:** 8 specialized agents for authentic Portuguese community development
+
+### 🇵🇹 Portuguese Community Specialists (8 agents)
+- **luso-content-agent** - Portuguese translation and cultural content (European/Brazilian variants)
+- **luso-events-agent** - Portuguese cultural events curation (Fado nights, Santos Populares, festivals)
 - **luso-safety-agent** - Community moderation with Portuguese cultural sensitivity
-- **luso-events-agent** - Portuguese cultural events curation and management
-- **luso-growth-agent** - Portuguese community SEO and outreach optimization
 - **luso-business-agent** - Portuguese business directory and networking specialist
+- **luso-growth-agent** - Portuguese community SEO and outreach optimization
 - **luso-heritage-agent** - Portuguese heritage preservation and storytelling
 - **luso-membership-agent** - Community membership optimization and revenue
-- **luso-partnership-agent** - Portuguese institutional partnerships and relationships
+- **luso-partnership-agent** - Portuguese institutional partnerships (Embassy, consulates, cultural centers)
 
-### Development and Operations Specialists
-- **doc-writer** - Technical and project documentation specialist
-- **bug-finder** - Quality assurance and bug detection specialist
-- **refactor-helper** - Code optimization and architecture improvement
-- **feature-builder** - New feature development for Portuguese community needs
+### 💻 Development Specialists (5 agents)
+- **bug-finder** - Quality assurance and testing specialist with Portuguese community context
 - **deploy-manager** - Production deployment and DevOps management
+- **doc-writer** - Technical and project documentation specialist
+- **feature-builder** - New feature development for Portuguese community needs
+- **refactor-helper** - Code optimization and architecture improvement
 
-These sub-agents can be invoked using Claude Code's subagent system and will automatically assist with relevant tasks throughout the development process.
+### 🎨 Design & Management (3 agents)
+- **project-manager-agent** - Technical project coordination and Portuguese community requirements
+- **ui-specialist** - User interface design with Portuguese cultural elements
+- **ux-specialist** - User experience optimization for Portuguese diaspora
+
+### 🚀 How to Use Agents
+
+**Method 1: Natural Language (Recommended)**
+```
+"Help me translate the events page to Portuguese with cultural authenticity"
+→ System recommends: luso-content-agent
+
+"Create a Fado music event for the Portuguese community"
+→ System recommends: luso-events-agent
+
+"Test the cart functionality for bugs"
+→ System recommends: bug-finder
+```
+
+**Method 2: Agent Discovery Tool**
+```bash
+# Find the right agent for your task
+node .claude/invoke-agent.js "translate content to portuguese"
+
+# List all available agents
+node .claude/invoke-agent.js --list
+
+# Get details about a specific agent
+node .claude/invoke-agent.js --agent luso-content-agent
+```
+
+**Method 3: Multi-Agent Coordination**
+```
+"I need to create a comprehensive Portuguese festival feature. 
+Please coordinate the events, content, safety, and development agents."
+→ System uses: project-manager-agent + multiple specialists
+```
+
+### 📚 Agent Documentation
+
+- **Complete Agent Guide:** `.claude/AGENTS_GUIDE.md` - Comprehensive usage instructions
+- **Agent Registry:** `.claude/agents.json` - Central configuration with specialties and use cases
+- **Individual Profiles:** `.claude/agents/[agent-name].md` - Detailed agent specifications
+- **Discovery Tool:** `.claude/invoke-agent.js` - Intelligent agent matching and recommendations
+
+### 💡 Agent System Benefits
+
+**🎯 Task Optimization:** Automatic matching of tasks to specialized agents based on Portuguese community context
+**🇵🇹 Cultural Authenticity:** Specialized agents ensure Portuguese cultural accuracy and sensitivity
+**⚡ Development Speed:** Faster development through specialized expertise and coordination
+**🔄 Quality Assurance:** Consistent quality gates and validation across all agent work
+**📈 Scalability:** Easy addition of new agents for emerging Portuguese community needs
+
+The agent system is **production-ready** and actively enhances all LusoTown development tasks with Portuguese community expertise.
 
 ## Platform Mission
 
-**LusoTown London helps Portuguese speakers:**
-- Find and attend Portuguese cultural events in London through real-life meetups
-- Connect with community members who understand their heritage in person
-- Share stories, memories, and experiences of living in London
-- Discover Portuguese-speaking businesses and services
-- Build meaningful friendships and professional networks through offline connections
-- Celebrate cultural roots and preserve Portuguese traditions
-- Save and manage favorite events, businesses, and community content
-- Engage with community through interactive event feeds and social features
-- Book events and services through integrated cart and payment system
+**LusoTown London: Your Portuguese Adult Social Calendar in London (18+)**
 
-**Core Values:** *Unidos pela Língua* (United by Language)
+**We help Portuguese-speaking adults live life together through:**
+- **Booking London adult experiences** with Portuguese-speaking friends (museums, football, concerts, club nights, weekend trips)
+- **Adult social calendar integration** - never miss out on age-appropriate activities you want to do
+- **Instant adult connections** - find Portuguese-speaking adults to explore London with today, not just "someday"
+- **Adult cultural activities** - from Tate Modern tours to Portuguese wine tastings to Fado nights
+- **Active adult social life** - gym buddies, park runs, cycling groups, tennis matches with adults
+- **London adult discovery** - explore the city with Portuguese-speaking adults who share your language and culture
+- **Real adult booking functionality** - reserve spots, coordinate adult groups, manage social calendar
+- **Portuguese adult community context** - stay connected to heritage while embracing London adult living
+
+**Key Adult Activities We Connect:**
+- **Cultural:** Adult museum visits, gallery tours, theatre shows, Portuguese heritage sites
+- **Social:** Adult coffee meetups, restaurant dinners, Thames walks, brunch clubs, pub nights
+- **Sports:** Adult football viewing/playing, yoga classes, park runs, gym partnerships
+- **Nightlife:** Portuguese DJ events, live music, adult karaoke, salsa nights, clubbing (18+)
+- **Day Trips:** Adult Brighton trips, countryside hikes, weekend getaways with Portuguese friends
+- **Professional:** Business networking, career meetups, adult learning workshops, entrepreneur events
+
+**Demo Access:** Experience the complete adult social calendar instantly with demo login (demo@lusotown.com / LusoTown2025!)
+
+**Core Values:** *Unidos pela Língua* (United by Language) - **Living London Adult Life Together (18+)**
 
 ## Development Server
 

@@ -409,7 +409,7 @@ export default function GroupDetailPage({ params }: PageProps) {
                         {group.age_restrictions.min_age && `${group.age_restrictions.min_age}+`}
                         {group.age_restrictions.min_age && group.age_restrictions.max_age && ' - '}
                         {group.age_restrictions.max_age && `${group.age_restrictions.max_age}`}
-                        {group.age_restrictions.families_welcome && ' (Families welcome)'}
+                        {group.age_restrictions.professionals_welcome && ' (Professionals welcome)'}
                       </div>
                     </div>
                   </div>
@@ -426,7 +426,7 @@ export default function GroupDetailPage({ params }: PageProps) {
                         🇵🇹 Preserves Portuguese heritage
                       </span>
                     )}
-                    {group.cultural_focus.family_friendly && (
+                    {group.cultural_focus.professional_networking && (
                       <span className="inline-flex items-center px-3 py-2 rounded-full text-sm bg-green-100 text-green-800">
                         👨‍👩‍👧‍👦 Family-friendly activities
                       </span>

@@ -1,0 +1,469 @@
+{
+  "version": "1.0.0",
+  "agents": {
+    "luso-content-agent": {
+      "name": "Portuguese Content Specialist",
+      "description": "Portuguese language and cultural content specialist. Use for translations, cultural content creation, and ensuring authenticity across Portuguese-speaking communities.",
+      "file": "luso-content-agent.md",
+      "tools": ["Read", "Write", "Edit", "MultiEdit", "Grep", "Glob"],
+      "specialties": [
+        "Portuguese translation (European and Brazilian)",
+        "Cultural content creation",
+        "SEO optimization in Portuguese",
+        "Regional cultural adaptation",
+        "Community storytelling"
+      ],
+      "use_cases": [
+        "Translate platform content to Portuguese",
+        "Create culturally authentic event descriptions",
+        "Review Portuguese content for accuracy",
+        "Optimize Portuguese keywords for UK market",
+        "Develop community stories and testimonials"
+      ],
+      "invoke_patterns": [
+        "translate",
+        "portuguese",
+        "cultural content",
+        "lusophone",
+        "brazil",
+        "portugal",
+        "angola",
+        "mozambique"
+      ]
+    },
+    "luso-events-agent": {
+      "name": "Portuguese Events Curator",
+      "description": "Portuguese cultural events curator and specialist. Use PROACTIVELY for creating, managing, and optimizing Portuguese community events in London.",
+      "file": "luso-events-agent.md",
+      "tools": ["Read", "Write", "Edit", "Grep", "Glob", "WebSearch", "WebFetch"],
+      "specialties": [
+        "Portuguese festival planning",
+        "Fado nights and music events",
+        "Cultural workshops and classes",
+        "Community gatherings",
+        "Traditional celebration coordination"
+      ],
+      "use_cases": [
+        "Create authentic Portuguese cultural events",
+        "Research London Portuguese venues",
+        "Plan Santos Populares celebrations",
+        "Organize Fado nights and music events",
+        "Coordinate Portuguese food festivals"
+      ],
+      "invoke_patterns": [
+        "event",
+        "fado",
+        "festival",
+        "portuguese culture",
+        "santos populares",
+        "tradition",
+        "celebration"
+      ]
+    },
+    "luso-safety-agent": {
+      "name": "Community Safety Specialist",
+      "description": "Portuguese community safety and moderation specialist. Use PROACTIVELY for content moderation, community guidelines enforcement, and cultural sensitivity issues.",
+      "file": "luso-safety-agent.md",
+      "tools": ["Read", "Edit", "Grep", "Bash", "Glob"],
+      "specialties": [
+        "Bilingual content moderation",
+        "Community guidelines enforcement",
+        "Cultural sensitivity review",
+        "Conflict resolution",
+        "User verification processes"
+      ],
+      "use_cases": [
+        "Review reported content",
+        "Moderate Portuguese discussions",
+        "Resolve community disputes",
+        "Enforce family-friendly standards",
+        "Verify community members"
+      ],
+      "invoke_patterns": [
+        "moderation",
+        "safety",
+        "guidelines",
+        "report",
+        "harassment",
+        "community standards"
+      ]
+    },
+    "luso-business-agent": {
+      "name": "Business Directory Specialist",
+      "description": "Portuguese business directory and networking specialist. Use PROACTIVELY for business verification, profiles, partnerships, and economic ecosystem development.",
+      "file": "luso-business-agent.md",
+      "tools": ["Read", "Write", "Edit", "WebSearch", "WebFetch", "Grep", "Glob"],
+      "specialties": [
+        "Portuguese business verification",
+        "Business profile creation",
+        "Networking facilitation",
+        "Economic ecosystem development",
+        "Partnership coordination"
+      ],
+      "use_cases": [
+        "Verify Portuguese-owned businesses",
+        "Create detailed business profiles",
+        "Research business partnerships",
+        "Organize networking events",
+        "Connect businesses with community"
+      ],
+      "invoke_patterns": [
+        "business",
+        "directory",
+        "networking",
+        "entrepreneur",
+        "portuguese business",
+        "commerce"
+      ]
+    },
+    "luso-growth-agent": {
+      "name": "Community Growth Specialist",
+      "description": "Portuguese community outreach and SEO specialist. Use for optimizing growth, search visibility, and community engagement strategies.",
+      "file": "luso-growth-agent.md",
+      "tools": ["Read", "Write", "Edit", "WebSearch", "WebFetch", "Grep", "Glob"],
+      "specialties": [
+        "Portuguese SEO optimization",
+        "Community outreach strategies",
+        "Social media growth",
+        "Multilingual marketing",
+        "Engagement analytics"
+      ],
+      "use_cases": [
+        "Optimize Portuguese keywords",
+        "Develop outreach strategies",
+        "Analyze community engagement",
+        "Create growth campaigns",
+        "Improve search visibility"
+      ],
+      "invoke_patterns": [
+        "growth",
+        "seo",
+        "marketing",
+        "outreach",
+        "engagement",
+        "portuguese keywords"
+      ]
+    },
+    "luso-heritage-agent": {
+      "name": "Heritage Preservation Specialist",
+      "description": "Portuguese heritage preservation and storytelling specialist. Use for creating compelling heritage content and preserving cultural traditions.",
+      "file": "luso-heritage-agent.md",
+      "tools": ["Read", "Write", "Edit", "WebSearch", "WebFetch", "Grep", "Glob"],
+      "specialties": [
+        "Heritage story collection",
+        "Cultural preservation",
+        "Diaspora experience documentation",
+        "Intergenerational connection",
+        "Traditional knowledge preservation"
+      ],
+      "use_cases": [
+        "Document community success stories",
+        "Preserve cultural traditions",
+        "Create heritage content",
+        "Connect generations",
+        "Share diaspora experiences"
+      ],
+      "invoke_patterns": [
+        "heritage",
+        "tradition",
+        "story",
+        "diaspora",
+        "culture preservation",
+        "family history"
+      ]
+    },
+    "luso-membership-agent": {
+      "name": "Membership Optimization Specialist",
+      "description": "Community membership optimization and revenue specialist. Use for improving conversion rates, member retention, and subscription management.",
+      "file": "luso-membership-agent.md",
+      "tools": ["Read", "Write", "Edit", "Grep", "Glob"],
+      "specialties": [
+        "Membership conversion optimization",
+        "Retention strategy development",
+        "Pricing analysis",
+        "Community value proposition",
+        "Member lifecycle management"
+      ],
+      "use_cases": [
+        "Optimize membership sign-up flow",
+        "Reduce membership churn",
+        "Analyze pricing strategies",
+        "Improve member benefits",
+        "Create retention campaigns"
+      ],
+      "invoke_patterns": [
+        "membership",
+        "subscription",
+        "retention",
+        "conversion",
+        "pricing",
+        "premium features"
+      ]
+    },
+    "luso-partnership-agent": {
+      "name": "Partnership Development Specialist",
+      "description": "Portuguese institutional partnerships and relationship specialist. Use for establishing connections with Portuguese organizations and institutions.",
+      "file": "luso-partnership-agent.md",
+      "tools": ["Read", "Write", "Edit", "WebSearch", "WebFetch", "Grep", "Glob"],
+      "specialties": [
+        "Institutional partnership development",
+        "Embassy and consulate relations",
+        "Cultural organization networking",
+        "Educational institution partnerships",
+        "Community organization coordination"
+      ],
+      "use_cases": [
+        "Establish embassy partnerships",
+        "Connect with Portuguese schools",
+        "Partner with cultural centers",
+        "Coordinate with community organizations",
+        "Develop institutional relationships"
+      ],
+      "invoke_patterns": [
+        "partnership",
+        "embassy",
+        "consulate",
+        "institution",
+        "organization",
+        "cultural center"
+      ]
+    },
+    "bug-finder": {
+      "name": "Quality Assurance Specialist",
+      "description": "Bug detection and quality assurance specialist for LusoTown. Use PROACTIVELY to identify issues, test functionality, and ensure platform reliability.",
+      "file": "bug-finder.md",
+      "tools": ["Read", "Bash", "Grep", "Glob", "mcp__ide__getDiagnostics"],
+      "specialties": [
+        "Bug detection and reporting",
+        "Quality assurance testing",
+        "Platform reliability testing",
+        "Performance issue identification",
+        "Security vulnerability scanning"
+      ],
+      "use_cases": [
+        "Test platform functionality",
+        "Identify and report bugs",
+        "Perform security audits",
+        "Check performance issues",
+        "Validate user workflows"
+      ],
+      "invoke_patterns": [
+        "bug",
+        "test",
+        "quality",
+        "error",
+        "issue",
+        "performance",
+        "security"
+      ]
+    },
+    "deploy-manager": {
+      "name": "Deployment Specialist",
+      "description": "Production deployment and DevOps management specialist. Use for deployment planning, execution, and optimization strategies.",
+      "file": "deploy-manager.md",
+      "tools": ["Read", "Bash", "Edit", "Grep", "Glob"],
+      "specialties": [
+        "Production deployment management",
+        "DevOps workflow optimization",
+        "Performance monitoring",
+        "Scaling strategies",
+        "Release management"
+      ],
+      "use_cases": [
+        "Plan production deployments",
+        "Optimize deployment workflows",
+        "Monitor performance",
+        "Manage release cycles",
+        "Implement scaling strategies"
+      ],
+      "invoke_patterns": [
+        "deploy",
+        "deployment",
+        "production",
+        "devops",
+        "release",
+        "scaling"
+      ]
+    },
+    "doc-writer": {
+      "name": "Documentation Specialist",
+      "description": "Documentation specialist for LusoTown project. Use PROACTIVELY for creating, updating, and maintaining all project documentation.",
+      "file": "doc-writer.md",
+      "tools": ["Read", "Write", "Edit", "MultiEdit", "Grep", "Glob"],
+      "specialties": [
+        "Technical documentation creation",
+        "API documentation",
+        "User guide development",
+        "README file maintenance",
+        "Project documentation organization"
+      ],
+      "use_cases": [
+        "Create technical documentation",
+        "Update README files",
+        "Document new features",
+        "Maintain API documentation",
+        "Organize project documentation"
+      ],
+      "invoke_patterns": [
+        "documentation",
+        "readme",
+        "docs",
+        "guide",
+        "manual",
+        "api docs"
+      ]
+    },
+    "feature-builder": {
+      "name": "Feature Development Specialist",
+      "description": "New feature development specialist for Portuguese community needs. Use for implementing complex features and functionality.",
+      "file": "feature-builder.md",
+      "tools": ["Read", "Write", "Edit", "MultiEdit", "Bash", "Grep", "Glob"],
+      "specialties": [
+        "Feature implementation",
+        "Component development",
+        "System integration",
+        "Portuguese community features",
+        "Technical architecture"
+      ],
+      "use_cases": [
+        "Implement new features",
+        "Build Portuguese community components",
+        "Integrate system functionality",
+        "Develop user interfaces",
+        "Create technical solutions"
+      ],
+      "invoke_patterns": [
+        "feature",
+        "implement",
+        "build",
+        "component",
+        "functionality",
+        "development"
+      ]
+    },
+    "refactor-helper": {
+      "name": "Code Optimization Specialist",
+      "description": "Code optimization and architecture improvement specialist. Use for refactoring, performance improvements, and code quality enhancement.",
+      "file": "refactor-helper.md",
+      "tools": ["Read", "Edit", "MultiEdit", "Grep", "Glob", "Bash"],
+      "specialties": [
+        "Code refactoring",
+        "Performance optimization",
+        "Architecture improvement",
+        "Code quality enhancement",
+        "Technical debt reduction"
+      ],
+      "use_cases": [
+        "Refactor existing code",
+        "Optimize performance",
+        "Improve code architecture",
+        "Reduce technical debt",
+        "Enhance code quality"
+      ],
+      "invoke_patterns": [
+        "refactor",
+        "optimize",
+        "improve",
+        "architecture",
+        "performance",
+        "code quality"
+      ]
+    },
+    "project-manager-agent": {
+      "name": "Project Manager",
+      "description": "Technical project manager and Portuguese community coordinator. Use for project coordination, planning, and strategic oversight.",
+      "file": "project-manager-agent.md",
+      "tools": ["Read", "Write", "Edit", "Bash", "Grep", "Glob"],
+      "specialties": [
+        "Project management",
+        "Feature planning",
+        "Agent coordination",
+        "Portuguese community requirements",
+        "Strategic planning"
+      ],
+      "use_cases": [
+        "Coordinate development projects",
+        "Plan feature implementations",
+        "Manage agent coordination",
+        "Oversee project timelines",
+        "Define strategic roadmaps"
+      ],
+      "invoke_patterns": [
+        "project",
+        "planning",
+        "coordination",
+        "management",
+        "strategy",
+        "roadmap"
+      ]
+    },
+    "ui-specialist": {
+      "name": "UI Design Specialist",
+      "description": "User interface design specialist for Portuguese community platform. Use for visual design, component styling, and user interface optimization.",
+      "file": "ui-specialist.md",
+      "tools": ["Read", "Edit", "MultiEdit", "Grep", "Glob"],
+      "specialties": [
+        "Visual design",
+        "Component styling",
+        "Portuguese design system",
+        "User interface optimization",
+        "Accessibility compliance"
+      ],
+      "use_cases": [
+        "Design user interfaces",
+        "Style components",
+        "Implement design systems",
+        "Optimize visual design",
+        "Ensure accessibility"
+      ],
+      "invoke_patterns": [
+        "ui",
+        "design",
+        "visual",
+        "styling",
+        "interface",
+        "accessibility"
+      ]
+    },
+    "ux-specialist": {
+      "name": "UX Design Specialist",
+      "description": "User experience design specialist for Portuguese community interactions. Use for user journey optimization, usability testing, and experience design.",
+      "file": "ux-specialist.md",
+      "tools": ["Read", "Edit", "Grep", "Glob"],
+      "specialties": [
+        "User experience design",
+        "User journey optimization",
+        "Usability testing",
+        "Portuguese community UX",
+        "User research"
+      ],
+      "use_cases": [
+        "Optimize user journeys",
+        "Design user experiences",
+        "Conduct usability testing",
+        "Research user needs",
+        "Improve user interactions"
+      ],
+      "invoke_patterns": [
+        "ux",
+        "user experience",
+        "usability",
+        "journey",
+        "interaction",
+        "user research"
+      ]
+    }
+  },
+  "usage_instructions": {
+    "automatic_agent_suggestion": "The system will automatically suggest relevant agents based on task keywords and context.",
+    "manual_invocation": "You can request specific agents by mentioning their specialties or use cases in your prompts.",
+    "agent_coordination": "The project-manager-agent can coordinate multiple agents for complex tasks involving multiple specialties.",
+    "task_matching": "Agents are automatically matched to tasks based on their invoke_patterns and specialties."
+  },
+  "integration": {
+    "claude_code_integration": "This registry integrates with Claude Code's subagent system for automatic agent recommendations and invocation.",
+    "context_awareness": "Agents receive full project context and can access all relevant tools and documentation.",
+    "coordination_protocols": "Agents can work together through the project manager for complex multi-step tasks.",
+    "quality_assurance": "All agent work is subject to the same quality gates and validation processes as manual development."
+  }
+}

@@ -38,7 +38,7 @@ const benefits = [
   },
   {
     icon: LockClosedIcon,
-    text: "Safe, inclusive Portuguese community",
+    text: "Safe, inclusive Portuguese experiences",
     subtext: "Welcoming space for all ages and backgrounds"
   }
 ]
@@ -55,7 +55,7 @@ const testimonials = [
     name: "Sarah C.",
     age: "34",
     location: "Clapham",
-    quote: "Found my Portuguese community through LusoTown. Feels like family away from home.",
+    quote: "Filled my social calendar with Portuguese experiences through LusoTown. Never have boring weekends!",
     avatar: getImageWithFallback('sarah-chen')
   },
   {
@@ -208,7 +208,7 @@ export default function Signup() {
                 </h1>
                 
                 <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-                  {t('signup.subtitle', 'A vibrant community of Portuguese speakers across London celebrating culture, language, and heritage together. From family bakeries in Stockwell to cultural centers in Vauxhall - find your people.')}
+                  {t('signup.subtitle', 'A vibrant community of Portuguese speakers across London celebrating culture, language, and heritage together. From authentic bakeries in Stockwell to cultural centers in Vauxhall - find your people.')}
                 </p>
                 
                 <div className="space-y-4 sm:space-y-6 mb-8">
@@ -477,7 +477,7 @@ export default function Signup() {
                           {[
                             { key: 'fado', label: '🎵 Fado', description: 'Traditional Portuguese music' },
                             { key: 'food', label: '🍽️ Portuguese Cuisine', description: 'Cooking and food events' },
-                            { key: 'family', label: '👨‍👩‍👧‍👦 Family Events', description: 'Family-friendly activities' },
+                            { key: 'professional', label: '💼 Professional Networking', description: 'Career and business connections' },
                             { key: 'language', label: '🗣️ Language Exchange', description: 'Practice Portuguese/English' },
                             { key: 'business', label: '💼 Business Networking', description: 'Professional connections' },
                             { key: 'culture', label: '🏛️ Cultural Events', description: 'Festivals and celebrations' },
@@ -567,7 +567,7 @@ export default function Signup() {
                         <div className="flex flex-wrap gap-1">
                           <span className="text-xs bg-white/60 text-gray-700 px-2 py-1 rounded-full">☕ Coffee Meetup (Stockwell)</span>
                           <span className="text-xs bg-white/60 text-gray-700 px-2 py-1 rounded-full">🎵 Fado Night (Camden)</span>
-                          <span className="text-xs bg-white/60 text-gray-700 px-2 py-1 rounded-full">👨‍👩‍👧‍👦 Family Sunday (Vauxhall)</span>
+                          <span className="text-xs bg-white/60 text-gray-700 px-2 py-1 rounded-full">🍽️ Sunday Brunch (Vauxhall)</span>
                         </div>
                       </div>
                     </div>

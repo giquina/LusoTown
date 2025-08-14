@@ -1,23 +1,23 @@
-# 🇵🇹 LusoTown - Your Portuguese Home in the UK 🇵🇹🇧🇷🇦🇴🇲🇿🇨🇻🇬🇼🇸🇹🇹🇱🇲🇴🇬🇶
+# 🇵🇹 LusoTown - Your Portuguese Adult Social Calendar in London (18+) 🇵🇹🇧🇷🇦🇴🇲🇿🇨🇻🇬🇼🇸🇹🇹🇱🇲🇴🇬🇶
 
 **✅ 100% COMPLETE - PRODUCTION READY - DEPLOY NOW** 
 
-LusoTown is a complete bilingual community platform for Portuguese speakers and their families across the UK. From London to Scotland, we connect lusophone communities, preserve our culture, and celebrate our heritage together.
+LusoTown is a complete bilingual adult community platform for Portuguese speakers (18+) across London and the UK. We connect lusophone adults, facilitate professional networking, and celebrate our heritage through mature social experiences.
 
 **🌐 Local Demo**: Running at http://localhost:3000  
 **🚀 Deploy Ready**: 2-minute Vercel deployment via GitHub  
 **🌍 Bilingual**: Complete English/Portuguese interface with WelcomeModal  
-**👨‍👩‍👧‍👦 Family-Friendly**: Age-appropriate welcome system for all generations  
-**📱 Production-Grade**: Professional platform ready for thousands of users  
+**🔞 Adults-Only**: 18+ community focused on mature social experiences and professional networking  
+**📱 Production-Grade**: Professional platform ready for thousands of adult users  
 **📊 Quality Score**: 100% production ready - all features complete
 
 ## 🌟 NEW: Latest Features (August 2025)
 
-### 🎉 **Complete Bilingual System**
+### 🎉 **Complete Bilingual Adult System**
 - ✅ **Instant Language Toggle**: Switch between English/Portuguese anywhere
-- ✅ **Welcome Modal**: Age-appropriate greeting in both languages
-- ✅ **Cultural Messaging**: UK Portuguese community focus throughout
-- ✅ **Family-Friendly**: Designed for all ages and generations
+- ✅ **Welcome Modal**: Adult-focused greeting in both languages (18+)
+- ✅ **Cultural Messaging**: UK Portuguese adult community focus throughout
+- ✅ **Adults-Only**: Designed specifically for mature Portuguese speakers (18+)
 
 ### 🚀 **Production-Ready Platform**
 - ✅ **38+ Static Pages**: All pages complete with full functionality
@@ -25,33 +25,33 @@ LusoTown is a complete bilingual community platform for Portuguese speakers and 
 - ✅ **SEO Optimized**: Sitemap, meta tags, social sharing
 - ✅ **Mobile Responsive**: Works perfectly on all devices
 
-### 📱 **Advanced Community Features**
-- **Event Detail Pages**: Complete event information, RSVP, reviews, photo galleries
-- **Interactive Event Feed**: Real-time updates, save/cart functionality, social sharing
-- **Enhanced Events System**: Discovery, booking, management, and community reviews
-- **Portuguese Business Directory**: Comprehensive business listings and networking
-- **Social Cart System**: Save events, manage favorites, shopping cart functionality
-- **Complete Profile System**: Advanced user profiles with Portuguese community features
+### 📱 **Advanced Adult Community Features**
+- **Event Detail Pages**: Complete adult event information, RSVP, reviews, photo galleries
+- **Interactive Event Feed**: Real-time updates for adult activities, save/cart functionality, social sharing
+- **Enhanced Events System**: Adult event discovery, booking, management, and community reviews
+- **Portuguese Business Directory**: Comprehensive business listings and professional networking
+- **Social Cart System**: Save adult events, manage favorites, shopping cart functionality
+- **Complete Profile System**: Advanced adult user profiles with Portuguese community features
 
-## 🎯 What You Can Do
+## 🎯 What Adults (18+) Can Do
 
-### 🎉 Discover & Join Events
-Find cultural festivals, food markets, live music, networking meetups, and more.
+### 🎉 Discover & Join Adult Events
+Find cultural festivals, food markets, live music, professional networking meetups, nightlife, and more.
 
 ### 📱 Stay Updated on LusoFeed
-See the latest events, posts, and community updates in real time.
+See the latest adult events, posts, and community updates in real time.
 
-### 📝 Post & Share with the Community
-Add your own updates, photos, and tips, and tag events or businesses.
+### 📝 Post & Share with the Adult Community
+Add your own updates, photos, and tips, and tag adult events or businesses.
 
 ### ❤️ Save Your Favourites
-Bookmark events, businesses, and posts you love so you never miss out.
+Bookmark adult events, businesses, and posts you love so you never miss out.
 
 ### 🏪 Support Portuguese Businesses
-Explore our directory and discover places run by or for Portuguese speakers.
+Explore our directory and discover professional places run by or for Portuguese speakers.
 
-### 👥 Connect with People Like You
-Meet new friends, share experiences, and keep your language and traditions alive in London.
+### 👥 Connect with Adults Like You
+Meet new adult friends, share mature experiences, and keep your language and traditions alive in London.
 
 ## 🌎 For All Portuguese-Speaking Nations
 

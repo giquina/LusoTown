@@ -5,10 +5,10 @@ import { ArrowRightIcon, CheckIcon, SparklesIcon } from '@heroicons/react/24/out
 import { useLanguage } from '@/context/LanguageContext'
 
 const getBenefits = (t: any) => [
-  t('cta.benefits.join-community', "Join the Luso-London community"),
+  t('cta.benefits.book-experiences', "Book experiences with Portuguese speakers"),
   t('cta.benefits.cultural-access', "Access to Portuguese cultural events"), 
   t('cta.benefits.find-businesses', "Find Portuguese businesses and services"),
-  t('cta.benefits.connect-diaspora', "Connect with the Portuguese diaspora"),
+  t('cta.benefits.active-social-life', "Fill your social calendar"),
   t('cta.benefits.safe-environment', "Safe and welcoming environment"),
   t('cta.benefits.free-start', "Free to get started")
 ]
@@ -78,9 +78,9 @@ export default function CTA() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="space-y-6"
           >
-            <a href="/signup" className="bg-white text-primary-600 hover:bg-gray-50 font-bold text-lg sm:text-xl px-10 sm:px-16 py-5 sm:py-6 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 group inline-flex items-center">
+            <a href="/signup" className="bg-white text-primary-600 hover:bg-gray-50 font-bold text-base sm:text-lg md:text-xl px-6 sm:px-10 md:px-16 py-4 sm:py-5 md:py-6 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 group inline-flex items-center justify-center w-full sm:w-auto max-w-sm mx-auto">
               {t('cta.button', 'JOIN NOW')}
-              <ArrowRightIcon className="h-6 w-6 ml-3 group-hover:translate-x-1 transition-transform duration-200" />
+              <ArrowRightIcon className="h-5 w-5 sm:h-6 sm:w-6 ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform duration-200" />
             </a>
             
             <p className="text-white/80 text-sm">

@@ -59,7 +59,7 @@ export interface Group {
   age_restrictions?: {
     min_age?: number
     max_age?: number
-    families_welcome?: boolean
+    professionals_welcome?: boolean
   }
   meeting_frequency?: 'weekly' | 'biweekly' | 'monthly' | 'quarterly' | 'irregular' | 'one-time'
   verification_level?: 'none' | 'basic' | 'verified' | 'premium'
@@ -70,7 +70,7 @@ export interface Group {
   }
   cultural_focus?: {
     preserves_heritage?: boolean
-    family_friendly?: boolean
+    professional_networking?: boolean
     traditional_activities?: boolean
     language_learning?: boolean
   }

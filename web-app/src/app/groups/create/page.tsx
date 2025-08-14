@@ -53,7 +53,7 @@ interface GroupFormData {
   }
   cultural_focus: {
     preserves_heritage: boolean
-    family_friendly: boolean
+    professional_networking: boolean
     traditional_activities: boolean
     language_learning: boolean
   }
@@ -92,7 +92,7 @@ export default function CreateGroupPage() {
     },
     cultural_focus: {
       preserves_heritage: false,
-      family_friendly: true,
+      professional_networking: false,
       traditional_activities: false,
       language_learning: false
     },
@@ -502,7 +502,7 @@ export default function CreateGroupPage() {
               <div className="space-y-2">
                 {[
                   { key: 'preserves_heritage', label: 'Preserves Portuguese heritage & traditions' },
-                  { key: 'family_friendly', label: 'Family-friendly activities' },
+                  { key: 'professional_networking', label: 'Professional networking activities' },
                   { key: 'traditional_activities', label: 'Traditional Portuguese activities (Fado, folklore, etc.)' },
                   { key: 'language_learning', label: 'Portuguese language learning & practice' }
                 ].map((option) => (
