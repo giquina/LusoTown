@@ -172,7 +172,7 @@ export default function Header() {
                   {t('nav.login')}
                 </a>
                 <a href="/signup" className="bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 text-white font-bold py-2.5 px-6 rounded-lg shadow-lg hover:from-green-700 hover:via-red-700 hover:to-yellow-700 hover:shadow-xl transform hover:scale-105 transition-all duration-200">
-                  BECOME MEMBER
+                  {t('nav.join-membership', 'BECOME A MEMBER')}
                 </a>
               </>
             )}
