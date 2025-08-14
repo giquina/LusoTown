@@ -14,14 +14,14 @@ import { useLanguage } from '@/context/LanguageContext'
 
 const getNavigationLinks = (t: any) => [
   { name: t('nav.events'), href: '/events' },
-  { name: t('nav.community'), href: '/community' },
+  { name: t('nav.members'), href: '/members' },
   { name: t('nav.pricing'), href: '/pricing' },
   { name: t('nav.contact'), href: '/contact' },
 ]
 
 const authenticatedNavigationLinks = [
   { name: 'Events', href: '/events' },
-  { name: 'Community', href: '/community' },
+  { name: 'Members', href: '/members' },
   { name: 'Dashboard', href: '/dashboard' },
 ]
 
@@ -172,7 +172,7 @@ export default function Header() {
                   {t('nav.login')}
                 </a>
                 <a href="/signup" className="bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 text-white font-bold py-2.5 px-6 rounded-lg shadow-lg hover:from-green-700 hover:via-red-700 hover:to-yellow-700 hover:shadow-xl transform hover:scale-105 transition-all duration-200">
-                  JOIN NOW
+                  BECOME MEMBER
                 </a>
               </>
             )}
@@ -316,7 +316,7 @@ export default function Header() {
                           className="bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:from-green-700 hover:via-red-700 hover:to-yellow-700 hover:shadow-xl transform hover:scale-105 transition-all duration-200 w-full text-center block"
                           onClick={() => setMobileMenuOpen(false)}
                         >
-                          JOIN NOW
+                          BECOME MEMBER
                         </a>
                       </div>
                     </>
