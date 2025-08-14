@@ -610,8 +610,8 @@ export default function BusinessDirectory() {
           </h3>
           <p className="text-lg mb-6 opacity-90">
             {isPortuguese 
-              ? 'Junte-se ao maior diretório de negócios portugueses em Londres. Conecte-se com a comunidade lusófona.'
-              : 'Join London\'s premier Portuguese business directory. Connect with the Portuguese-speaking community.'}
+              ? 'Junte-se ao maior diretório de negócios portugueses no Reino Unido. Conecte-se com a comunidade lusófona.'
+              : 'Join the UK\'s premier Portuguese business directory. Connect with the Portuguese-speaking community.'}
           </p>
           <button className="bg-white text-primary-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">
             {isPortuguese ? 'Adicionar Meu Negócio' : 'Add My Business'}

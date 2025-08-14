@@ -103,7 +103,7 @@ export default function Hero() {
               <div className="space-y-6">
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-gray-800 mb-2">Your Social Calendar Awaits</h3>
-                  <p className="text-gray-600">Join 500+ Portuguese speakers from Portugal, Brazil, Angola, Mozambique, Cape Verde & beyond - booking museum tours, concert nights, football matches, and weekend adventures together across London</p>
+                  <p className="text-gray-600">Join 500+ Portuguese speakers from Portugal, Brazil, Angola, Mozambique, Cape Verde & beyond - booking museum tours, concert nights, football matches, and weekend adventures together across the UK</p>
                 </div>
 
                 {/* Member avatars */}

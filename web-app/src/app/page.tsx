@@ -30,7 +30,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'LusoTown London',
-  description: 'Real-life meetups for Portuguese speakers across London & UK',
+  description: 'Real-life meetups for Portuguese speakers across the UK',
   url: 'https://lusotown.london',
   logo: 'https://lusotown.london/logo.png',
   sameAs: [
@@ -39,16 +39,16 @@ const jsonLd = {
     'https://twitter.com/lusotownlondon'
   ],
   areaServed: {
-    '@type': 'City',
-    name: 'London',
+    '@type': 'Country',
+    name: 'United Kingdom',
     addressCountry: 'GB'
   },
   audience: {
     '@type': 'Audience',
     audienceType: 'Portuguese-speaking community',
     geographicArea: {
-      '@type': 'City',
-      name: 'London'
+      '@type': 'Country',
+      name: 'United Kingdom'
     }
   }
 }

@@ -93,7 +93,7 @@ export default function Contact() {
                   transition={{ duration: 0.8, delay: 0.4 }}
                   className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto"
                 >
-                  {t('contact.subtitle', 'Your Portuguese community in London is here to support you. Whether you need help finding events, connecting with other Portuguese speakers, or have questions about our community - we\'re here with a warm welcome.')}
+                  {t('contact.subtitle', 'Your Portuguese community across the UK is here to support you. Whether you need help finding events, connecting with other Portuguese speakers, or have questions about our community - we\'re here with a warm welcome.')}
                 </motion.p>
                 
                 <motion.div 
@@ -245,7 +245,7 @@ export default function Contact() {
                           required
                           rows={6}
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
-                          placeholder={t('contact.message-placeholder', 'Tell us how we can help you connect with the Portuguese community in London...')}
+                          placeholder={t('contact.message-placeholder', 'Tell us how we can help you connect with the Portuguese community across the UK...')}
                         ></textarea>
                       </div>
                       

@@ -65,9 +65,9 @@ export default function About() {
                   </h2>
                   <div className="prose text-gray-600 space-y-4">
                     <p>
-                      <strong>As Portuguese speakers living in London,</strong> we understand the deep connection 
+                      <strong>As Portuguese speakers across the UK,</strong> we understand the deep connection 
                       to our heritage and the importance of preserving our beautiful language. Whether you're 
-                      from Portugal, Brazil, Angola, or any Portuguese-speaking nation, London is now home.
+                      from Portugal, Brazil, Angola, or any Portuguese-speaking nation, the UK is now home.
                     </p>
                     <p>
                       <strong>We've experienced the challenge of finding</strong> Portuguese-speaking services, or simply wanting to connect with people who understand 

@@ -38,7 +38,7 @@ export default function HowItWorks() {
       color: 'from-secondary-500 to-secondary-600',
       bgColor: 'from-secondary-50 to-secondary-100',
       accentColor: 'secondary-500',
-      examples: 'People from Portugal, Brazil, Angola, Mozambique living in London'
+      examples: 'People from Portugal, Brazil, Angola, Mozambique across the UK'
     },
     {
       number: 2,

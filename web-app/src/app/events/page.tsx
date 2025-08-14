@@ -351,11 +351,11 @@ export default function EventsPage() {
               >
                 {activeTab === 'events'
                   ? (isPortuguese 
-                      ? 'Reserve experiências e viva a vida junto com falantes de português do Portugal, Brasil, Angola, Moçambique, Cabo Verde e além. Do tours de museus a noites de concertos, jogos de futebol a escapadas de fim de semana - seu calendário social espera!'
-                      : 'Book experiences and live life together with Portuguese speakers from Portugal, Brazil, Angola, Mozambique, Cape Verde, and beyond. From museum tours to concert nights, football matches to weekend getaways - your social calendar awaits!')
+                      ? 'Para falantes de português em todo o Reino Unido, com foco principal em Londres - reserve experiências e viva a vida junto com outros falantes de português. De museus londrinos a noites de concertos, jogos de futebol a escapadas de fim de semana - seu calendário social espera!'
+                      : 'For Portuguese speakers across the UK, with main focus on London - book experiences and live life together with fellow Portuguese speakers. From London museums to concert nights, football matches to weekend getaways - your social calendar awaits!')
                   : (isPortuguese 
-                      ? 'Reserve experiências exclusivas com falantes de português em Londres. Desde grupos especializados para mulheres 30+ e 40+ até experiências familiares - encontre sua comunidade e viva Londres juntos.'
-                      : 'Book exclusive group experiences with Portuguese speakers in London. From specialized groups for Women 30+ and 40+ to family-friendly activities - find your community and live London together.')
+                      ? 'Reserve experiências exclusivas com falantes de português em todo o Reino Unido. Desde grupos especializados para mulheres 30+ e 40+ até experiências familiares - encontre sua comunidade e explore o Reino Unido juntos.'
+                      : 'Book exclusive group experiences with Portuguese speakers across the UK. From specialized groups for Women 30+ and 40+ to family-friendly activities - find your community and explore the UK together.')
                 }
               </motion.p>
 
@@ -443,11 +443,11 @@ export default function EventsPage() {
                   type="text"
                   placeholder={activeTab === 'events'
                     ? (isPortuguese 
-                        ? 'Pesquisar experiências: museus, concertos, futebol, viagens de fim de semana...'
-                        : 'Search experiences: museums, concerts, football, weekend trips...')
+                        ? 'Buscar eventos e experiências...'
+                        : 'Search events & experiences...')
                     : (isPortuguese 
-                        ? 'Pesquisar experiências: mulheres 30+, famílias, cultural...'
-                        : 'Search experiences: women 30+, families, cultural, networking...')
+                        ? 'Buscar tours e experiências...'
+                        : 'Search tours & experiences...')
                   }
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}

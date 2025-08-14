@@ -99,14 +99,14 @@ export default function SEOHead({
             "logo": "https://lusotown.com/logo.png",
             "foundingDate": "2024",
             "areaServed": {
-              "@type": "City",
-              "name": "London",
+              "@type": "Country",
+              "name": "United Kingdom",
               "addressCountry": "GB"
             },
             "audience": {
               "@type": "Audience",
-              "audienceType": "Portuguese speakers living in London",
-              "geographicArea": "London, UK"
+              "audienceType": "Portuguese speakers across the UK",
+              "geographicArea": "United Kingdom, with main focus on London"
             },
             "memberOf": {
               "@type": "Organization",
