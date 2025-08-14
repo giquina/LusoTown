@@ -29,7 +29,7 @@ export default function LanguageToggleDemo() {
   }
 
   // Helper function to check if language is Portuguese
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
   const t = translations[isPortuguese ? 'pt' : 'en']
 
   return (

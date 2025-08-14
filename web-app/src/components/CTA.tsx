@@ -1,5 +1,10 @@
 'use client'
 
+// LusoTown Design System:
+// - Background: Portuguese gradient (from-secondary-600 via-action-600 to-accent-600)
+// - Button text: secondary-700 (green) for contrast against white background
+// - Never use primary (blue) colors for CTA sections
+
 import { motion } from 'framer-motion'
 import { ArrowRightIcon, CheckIcon, SparklesIcon } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
@@ -17,7 +22,7 @@ export default function CTA() {
   const { t } = useLanguage()
   const benefits = getBenefits(t)
   return (
-    <section className="py-20 bg-gradient-to-br from-primary-600 via-primary-500 to-secondary-500 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-secondary-600 via-action-600 to-accent-600 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 right-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
@@ -78,7 +83,7 @@ export default function CTA() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="space-y-6"
           >
-            <a href="/signup" className="bg-white text-primary-600 hover:bg-gray-50 font-bold text-base sm:text-lg md:text-xl px-6 sm:px-10 md:px-16 py-4 sm:py-5 md:py-6 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 group inline-flex items-center justify-center w-full sm:w-auto max-w-sm mx-auto">
+            <a href="/signup" className="bg-white text-secondary-700 hover:bg-gray-50 font-bold text-base sm:text-lg md:text-xl px-6 sm:px-10 md:px-16 py-4 sm:py-5 md:py-6 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 group inline-flex items-center justify-center w-full sm:w-auto max-w-sm mx-auto">
               {t('cta.button', 'JOIN NOW')}
               <ArrowRightIcon className="h-5 w-5 sm:h-6 sm:w-6 ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform duration-200" />
             </a>

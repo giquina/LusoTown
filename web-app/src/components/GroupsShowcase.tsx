@@ -89,7 +89,7 @@ export default function GroupsShowcase() {
         {group.category_info && (
           <div className="absolute top-3 left-3">
             <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium text-white ${group.category_info.color_class || 'bg-primary-600'}`}>
-              {language === 'pt-pt' || language === 'pt-br' ? group.category_info.name_pt : group.category_info.name_en}
+              {language === 'pt' ? group.category_info.name_pt : group.category_info.name_en}
             </span>
           </div>
         )}

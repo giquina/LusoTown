@@ -178,7 +178,7 @@ export default function GroupEventsSection({
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
   const [mounted, setMounted] = useState(false)
   
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
 
   const categories = [
     { id: 'all', label: isPortuguese ? 'Todos' : 'All Events', count: sampleGroupEvents.length },

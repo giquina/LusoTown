@@ -24,7 +24,7 @@ export default function AuthenticEvents() {
       date: '2024-08-20',
       time: '19:30',
       category: 'Cultural',
-      color: 'bg-gradient-to-r from-blue-500 to-green-500',
+      color: 'bg-gradient-to-r from-primary-500 to-secondary-500',
       attendees: 45,
       maxAttendees: 60
     },
@@ -66,7 +66,7 @@ export default function AuthenticEvents() {
       date: '2024-09-15',
       time: '20:00',
       category: 'Music',
-      color: 'bg-gradient-to-r from-blue-500 to-yellow-500',
+      color: 'bg-gradient-to-r from-primary-500 to-accent-500',
       attendees: 28,
       maxAttendees: 40
     },
@@ -94,7 +94,7 @@ export default function AuthenticEvents() {
       date: '2024-06-13',
       time: '19:00',
       category: 'Religious/Cultural',
-      color: 'bg-gradient-to-r from-blue-500 to-green-500',
+      color: 'bg-gradient-to-r from-primary-500 to-secondary-500',
       attendees: 67,
       maxAttendees: 80
     }

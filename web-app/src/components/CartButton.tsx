@@ -12,7 +12,7 @@ export default function CartButton() {
   const { language } = useLanguage()
   const [isCartOpen, setIsCartOpen] = useState(false)
   
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
 
   return (
     <>

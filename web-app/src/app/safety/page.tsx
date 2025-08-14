@@ -25,7 +25,7 @@ import {
 
 export default function SafetyCenter() {
   const { language, t } = useLanguage()
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
 
   const safetyFeatures = [
     {

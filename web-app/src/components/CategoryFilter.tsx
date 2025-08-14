@@ -19,7 +19,7 @@ export default function CategoryFilter({
   className = '' 
 }: CategoryFilterProps) {
   const { language, t } = useLanguage()
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
 
   const getCategoryDisplayName = (category: string) => {
     const translations = {

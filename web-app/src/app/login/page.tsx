@@ -33,7 +33,7 @@ export default function Login() {
   const router = useRouter()
   const { language, t } = useLanguage()
   
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
 
   useEffect(() => {
     // Redirect if already authenticated

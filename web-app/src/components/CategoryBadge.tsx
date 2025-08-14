@@ -14,6 +14,7 @@ interface CategoryBadgeProps {
   isSelected?: boolean
   count?: number
   className?: string
+  children?: React.ReactNode
 }
 
 export default function CategoryBadge({ 
@@ -24,10 +25,11 @@ export default function CategoryBadge({
   onClick,
   isSelected = false,
   count,
-  className = ''
+  className = '',
+  children
 }: CategoryBadgeProps) {
   const { language } = useLanguage()
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
 
   const getCategoryConfig = (cat: CategoryType) => {
     const configs = {
@@ -162,7 +164,7 @@ export default function CategoryBadge({
           {config.icon}
         </span>
       )}
-      <span className="font-medium">{config.label}</span>
+      <span className="font-medium">{children || config.label}</span>
       {count !== undefined && (
         <span className={`
           ${variant === 'minimal' ? 'opacity-60' : 'opacity-80'}
@@ -221,7 +223,7 @@ export function CategoryFilter({
   className = ''
 }: CategoryFilterProps) {
   const { language } = useLanguage()
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
 
   return (
     <div className={`flex flex-wrap gap-2 ${className}`}>

@@ -51,10 +51,10 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
   const getPlatformColor = (platform: SocialPlatform) => {
     const colors = {
       whatsapp: 'bg-green-500',
-      facebook: 'bg-blue-600',
-      telegram: 'bg-blue-400',
+      facebook: 'bg-primary-600',
+      telegram: 'bg-primary-400',
       discord: 'bg-indigo-600',
-      linkedin: 'bg-blue-700',
+      linkedin: 'bg-primary-700',
       instagram: 'bg-pink-500',
       signal: 'bg-gray-700',
       meetup: 'bg-red-500',
@@ -298,7 +298,7 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
           <div className="flex items-center gap-2 mb-1">
             {network.joinMethod === 'open' && <CheckBadgeIcon className="w-4 h-4 text-green-500" />}
             {network.joinMethod === 'invite_only' && <ExclamationTriangleIcon className="w-4 h-4 text-yellow-500" />}
-            {network.joinMethod === 'admin_approval' && <ShieldCheckIcon className="w-4 h-4 text-blue-500" />}
+            {network.joinMethod === 'admin_approval' && <ShieldCheckIcon className="w-4 h-4 text-primary-500" />}
             {network.joinMethod === 'partner_referral' && <StarIcon className="w-4 h-4 text-purple-500" />}
             <span className="text-sm font-medium text-gray-900">
               {network.joinMethod === 'open' && (language === 'pt' ? 'Acesso Aberto' : 'Open Access')}

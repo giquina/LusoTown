@@ -32,7 +32,7 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
   const { language, t } = useLanguage()
   const [addingToCart, setAddingToCart] = useState(false)
   
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
   const inCart = isInCart(event.title)
   const savedItem = isSaved(event.title)
 
@@ -64,14 +64,14 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
 
   const getCategoryColor = (category: string) => {
     const colors = {
-      'Women 30+': 'bg-pink-500',
-      'Women 40+': 'bg-purple-500',
-      'Family-Friendly': 'bg-green-500',
-      'Mixed Groups': 'bg-blue-500',
-      'Cultural Heritage': 'bg-orange-500',
-      'Professional Networking': 'bg-gray-500'
+      'Women 30+': 'bg-coral-500',
+      'Women 40+': 'bg-premium-500',
+      'Family-Friendly': 'bg-secondary-500',
+      'Mixed Groups': 'bg-primary-500',
+      'Cultural Heritage': 'bg-accent-500',
+      'Professional Networking': 'bg-action-500'
     }
-    return colors[category as keyof typeof colors] || 'bg-gray-500'
+    return colors[category as keyof typeof colors] || 'bg-primary-500'
   }
 
   const getCategoryIcon = (category: string) => {
@@ -105,7 +105,7 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
     
     try {
       addToCart({
-        type: 'event-tour',
+        type: 'event',
         title: event.title,
         description: event.description,
         price: event.price,
@@ -142,7 +142,7 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
 
   const handleSaveForLater = () => {
     addToSaved({
-      type: 'event-tour',
+      type: 'event',
       title: event.title,
       description: event.description,
       imageUrl: event.imageUrl,
@@ -199,7 +199,7 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
                 </span>
               )}
               {event.groupExperience && (
-                <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1">
+                <span className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1">
                   <UserGroupIcon className="w-3 h-3" />
                   {isPortuguese ? 'GRUPO' : 'GROUP'}
                 </span>
@@ -210,7 +210,7 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
             <div className="flex gap-2">
               <FavoriteButton
                 itemId={event.id}
-                itemType="event-tour"
+                itemType="event"
                 itemTitle={event.title}
                 itemDescription={event.description}
                 itemImageUrl={event.imageUrl}

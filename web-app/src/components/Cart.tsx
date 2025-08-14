@@ -42,7 +42,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
   const [processingCheckout, setProcessingCheckout] = useState(false)
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set())
   
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
 
   const formatPrice = (price: number, currency: string = 'GBP') => {
     const symbol = currency === 'GBP' ? '£' : currency === 'EUR' ? '€' : '$'

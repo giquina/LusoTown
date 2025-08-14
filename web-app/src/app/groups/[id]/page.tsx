@@ -274,7 +274,7 @@ export default function GroupDetailPage({ params }: PageProps) {
               {group.category_info && (
                 <div className="absolute bottom-6 left-6">
                   <span className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium text-white ${group.category_info.color_class || 'bg-primary-600'}`}>
-                    {language === 'pt-pt' || language === 'pt-br' ? group.category_info.name_pt : group.category_info.name_en}
+                    {language === 'pt' ? group.category_info.name_pt : group.category_info.name_en}
                   </span>
                 </div>
               )}

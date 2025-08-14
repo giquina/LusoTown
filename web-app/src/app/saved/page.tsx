@@ -29,7 +29,7 @@ export default function SavedItemsPage() {
   const [activeTab, setActiveTab] = useState<'all' | 'event' | 'business' | 'feed' | 'group'>('all')
   const [sortBy, setSortBy] = useState<'recent' | 'alphabetical' | 'date'>('recent')
   
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
 
   const filteredItems = activeTab === 'all' 
     ? savedItems 

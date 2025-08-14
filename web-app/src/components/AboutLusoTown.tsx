@@ -90,7 +90,7 @@ export default function AboutLusoTown() {
   ]
 
   return (
-    <section className="relative py-20 bg-gradient-to-br from-white via-gray-50 to-blue-50 overflow-hidden">
+    <section className="relative py-20 bg-gradient-to-br from-white via-gray-50 to-secondary-50 overflow-hidden">
       {/* Background decorative elements - matching hero section */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-secondary-200 via-primary-100 to-accent-100 rounded-full opacity-30 animate-pulse" />

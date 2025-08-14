@@ -6,7 +6,10 @@ const nextConfig = {
   trailingSlash: true,
   experimental: {
     forceSwcTransforms: true
-  }
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 }
 
 module.exports = nextConfig

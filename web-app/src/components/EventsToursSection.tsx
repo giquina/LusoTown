@@ -11,17 +11,17 @@ import {
 } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
 import { useCart } from '@/context/CartContext'
-import { eventsToursService, EventTour } from '@/lib/events-tours'
+import { EventsToursService, EventTour } from '@/lib/events-tours'
 import { useState, useEffect } from 'react'
 
 export default function EventsToursSection() {
   const { language, t } = useLanguage()
   const { addToSaved } = useCart()
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
   const [featuredEvents, setFeaturedEvents] = useState<EventTour[]>([])
 
   useEffect(() => {
-    const events = eventsToursService.getFeaturedEventsTours(3)
+    const events = EventsToursService.getFeaturedEventsTours(3)
     setFeaturedEvents(events)
   }, [])
 
@@ -61,19 +61,19 @@ export default function EventsToursSection() {
 
   const getCategoryColor = (category: string) => {
     const colors = {
-      'Women 30+': 'bg-pink-500',
-      'Women 40+': 'bg-purple-500',
-      'Family-Friendly': 'bg-green-500',
-      'Mixed Groups': 'bg-blue-500',
-      'Cultural Heritage': 'bg-orange-500',
-      'Professional Networking': 'bg-gray-500'
+      'Women 30+': 'bg-coral-500',
+      'Women 40+': 'bg-premium-500',
+      'Family-Friendly': 'bg-secondary-500',
+      'Mixed Groups': 'bg-primary-500',
+      'Cultural Heritage': 'bg-accent-500',
+      'Professional Networking': 'bg-action-500'
     }
-    return colors[category as keyof typeof colors] || 'bg-gray-500'
+    return colors[category as keyof typeof colors] || 'bg-primary-500'
   }
 
   const handleSaveEvent = (event: EventTour) => {
     addToSaved({
-      type: 'event-tour',
+      type: 'event',
       title: event.title,
       description: event.description,
       imageUrl: event.imageUrl,

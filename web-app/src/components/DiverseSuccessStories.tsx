@@ -27,7 +27,7 @@ export default function DiverseSuccessStories() {
       achievement: 'Founded "Portuguese Women in Tech London" group with 150+ members',
       category: 'Professional Success',
       icon: BuildingOfficeIcon,
-      color: 'from-blue-500 to-green-500',
+      color: 'from-primary-500 to-secondary-500',
       memberSince: '2022',
       eventsAttended: 45
     },
@@ -75,7 +75,7 @@ export default function DiverseSuccessStories() {
       achievement: 'Organizes annual "Sounds of Cape Verde Festival" attended by 500+ people',
       category: 'Cultural Preservation',
       icon: UserGroupIcon,
-      color: 'from-blue-500 to-yellow-500',
+      color: 'from-primary-500 to-accent-500',
       memberSince: '2020',
       eventsAttended: 67
     },
@@ -107,7 +107,7 @@ export default function DiverseSuccessStories() {
       achievement: 'Curated "Luso-London Stories" exhibition at Museum of London',
       category: 'Heritage Preservation',
       icon: GlobeAltIcon,
-      color: 'from-purple-500 to-blue-500',
+      color: 'from-premium-500 to-primary-500',
       memberSince: '2020',
       eventsAttended: 54
     }

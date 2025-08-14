@@ -25,7 +25,7 @@ const WhatsAppWidget: React.FC = () => {
   const { language } = useLanguage()
   
   // Helper function to check if language is Portuguese
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
 
   // Conversation flow for global Portuguese community platform
   const conversationFlow = {

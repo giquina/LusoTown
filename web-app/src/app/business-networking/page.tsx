@@ -20,7 +20,7 @@ import {
   UsersIcon,
   SparklesIcon,
   TrophyIcon,
-  HandshakeIcon,
+  
   LightBulbIcon,
   XMarkIcon,
   CheckBadgeIcon,
@@ -95,7 +95,7 @@ const NetworkingEventCard: React.FC<NetworkingEventCardProps> = ({ event, featur
           />
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center">
-            <HandshakeIcon className="w-16 h-16 text-primary-400" />
+            <UsersIcon className="w-16 h-16 text-primary-400" />
           </div>
         )}
         
@@ -243,7 +243,7 @@ const NetworkingEventCard: React.FC<NetworkingEventCardProps> = ({ event, featur
         {event.partnerOrganizations.length > 0 && (
           <div className="mb-4">
             <h4 className="font-medium text-gray-900 mb-2 flex items-center gap-2">
-              <HandshakeIcon className="w-4 h-4" />
+              <UsersIcon className="w-4 h-4" />
               {language === 'pt' ? 'Parceiros' : 'Partners'}
             </h4>
             <div className="flex flex-wrap gap-1">
@@ -639,7 +639,7 @@ export default function BusinessNetworking() {
         {/* Main Events Grid */}
         {events.length === 0 ? (
           <div className="text-center py-12">
-            <HandshakeIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+            <UsersIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
             <h3 className="text-lg font-medium text-gray-900 mb-2">
               {language === 'pt' ? 'Nenhum evento encontrado' : 'No events found'}
             </h3>
@@ -665,7 +665,7 @@ export default function BusinessNetworking() {
 
         {/* Call to Action */}
         <div className="mt-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl p-8 text-center text-white">
-          <HandshakeIcon className="w-16 h-16 mx-auto mb-4 opacity-80" />
+          <UsersIcon className="w-16 h-16 mx-auto mb-4 opacity-80" />
           <h3 className="text-2xl font-bold mb-4">
             {language === 'pt' ? 'Organize Seu Evento de Networking' : 'Organize Your Networking Event'}
           </h3>

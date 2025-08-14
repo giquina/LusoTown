@@ -298,7 +298,7 @@ export default function CreateGroupPage() {
                 <option value="">Select a category</option>
                 {categories.map((category) => (
                   <option key={category.id} value={category.id}>
-                    {language === 'pt-pt' || language === 'pt-br' ? category.name_pt : category.name_en}
+                    {language === 'pt' ? category.name_pt : category.name_en}
                     {category.is_age_restricted && category.min_age && ` (${category.min_age}+ only)`}
                   </option>
                 ))}

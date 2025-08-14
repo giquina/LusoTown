@@ -10,6 +10,7 @@ import Logo from '@/components/Logo'
 import LanguageToggle from '@/components/LanguageToggle'
 import CartButton from '@/components/CartButton'
 import SavedItemsButton from '@/components/SavedItemsButton'
+import SearchBar from '@/components/SearchBar'
 import { useLanguage } from '@/context/LanguageContext'
 
 const getNavigationLinks = (t: any) => [
@@ -20,7 +21,7 @@ const getNavigationLinks = (t: any) => [
 
 const authenticatedNavigationLinks = [
   { name: 'Events & Tours', href: '/events' },
-  { name: 'Network', href: '/community' },
+  { name: 'Community', href: '/community' },
   { name: 'Dashboard', href: '/dashboard' },
 ]
 
@@ -89,6 +90,7 @@ export default function Header() {
 
           {/* Desktop CTA / User Menu */}
           <div className="hidden md:flex items-center space-x-4">
+            <SearchBar variant="header" />
             <CartButton />
             <SavedItemsButton />
             <LanguageToggle />

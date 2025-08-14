@@ -177,7 +177,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
   const [showCreatePost, setShowCreatePost] = useState(false)
   
   // Helper function to check if language is Portuguese
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
 
   // Generate personalized posts based on following
   const followedEntities = following.map(f => f.entity)

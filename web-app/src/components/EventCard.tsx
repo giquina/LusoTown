@@ -4,6 +4,7 @@ import { useState } from 'react'
 import FavoriteButton from '@/components/FavoriteButton'
 import { useCart } from '@/context/CartContext'
 import { useLanguage } from '@/context/LanguageContext'
+import { formatEventDate } from '@/lib/dateUtils'
 import { toast } from 'react-hot-toast'
 import { 
   CalendarDaysIcon, 
@@ -65,17 +66,13 @@ export default function EventCard({
   const { language } = useLanguage()
   const [addingToCart, setAddingToCart] = useState(false)
   
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
   const inCart = isInCart(title)
   const savedItem = isSaved(title)
 
   const formatDate = (dateString: string) => {
-    const options: Intl.DateTimeFormatOptions = { 
-      weekday: 'short', 
-      month: 'short', 
-      day: 'numeric' 
-    }
-    return new Date(dateString).toLocaleDateString(isPortuguese ? 'pt-PT' : 'en-GB', options)
+    // Use consistent date formatting to prevent hydration issues
+    return formatEventDate(dateString, isPortuguese)
   }
 
   const formatTime = (timeString: string) => {

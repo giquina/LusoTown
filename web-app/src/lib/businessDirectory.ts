@@ -755,11 +755,11 @@ export class PortugueseBusinessService {
 
   async submitBusinessForVerification(businessData: Partial<PortugueseBusiness>): Promise<{ success: boolean; businessId?: string; message: string }> {
     // In a real app, this would save to database and trigger verification process
-    const newBusiness: PortugueseBusiness = {
+    const defaults = {
       id: `business-${Date.now()}`,
-      verificationStatus: 'pending',
+      verificationStatus: 'pending' as const,
       verificationDetails: {
-        documentsSubmitted: businessData.verificationDetails?.documentsSubmitted || [],
+        documentsSubmitted: [],
         businessLicense: false,
         portugueseConnection: false,
         communityReferences: [],
@@ -774,8 +774,16 @@ export class PortugueseBusinessService {
       rating: 0,
       reviewCount: 0,
       photos: [],
-      keywords: [],
-      ...businessData as PortugueseBusiness
+      keywords: []
+    }
+
+    const newBusiness: PortugueseBusiness = {
+      ...defaults,
+      ...businessData as PortugueseBusiness,
+      verificationDetails: {
+        ...defaults.verificationDetails,
+        ...businessData.verificationDetails
+      }
     }
 
     this.businesses.push(newBusiness)

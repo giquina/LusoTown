@@ -52,7 +52,7 @@ export default function FeedFilters({
   const { language } = useLanguage()
   const [localFilters, setLocalFilters] = useState<FeedFilters>(filters)
   
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
 
   // Event types available
   const eventTypes = [

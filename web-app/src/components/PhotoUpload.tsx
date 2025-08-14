@@ -42,7 +42,7 @@ export default function PhotoUpload({
   const [uploadError, setUploadError] = useState<string | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
   
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
 
   const handleFileSelect = useCallback((files: FileList) => {
     const newPhotos: UploadedPhoto[] = []

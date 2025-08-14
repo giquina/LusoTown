@@ -37,7 +37,7 @@ export default function FollowingPage() {
   const suggestions = getFollowingSuggestions()
   
   // Helper function to check if language is Portuguese
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
 
   const getTabData = () => {
     switch (activeTab) {
@@ -75,13 +75,7 @@ export default function FollowingPage() {
         community: 'Community',
         event_organizer: 'Event Organizer'
       },
-      'pt-pt': {
-        person: 'Pessoa',
-        group: 'Grupo',
-        community: 'Comunidade',
-        event_organizer: 'Organizador'
-      },
-      'pt-br': {
+      pt: {
         person: 'Pessoa',
         group: 'Grupo',
         community: 'Comunidade',

@@ -165,7 +165,7 @@ export default function CommunityFeed() {
     followingOnly: false
   })
   
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
 
   const handleLike = (postId: string) => {
     setPosts(posts.map(post => 

@@ -262,7 +262,7 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
   const [loading, setLoading] = useState(true)
   const [filter, setFilter] = useState<'all' | 'going' | 'interested' | 'nearby'>('all')
   
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
 
   useEffect(() => {
     // Simulate API call

@@ -125,7 +125,7 @@ export default function PortugueseSEO({
         <meta property="og:url" content={canonicalUrl || 'https://lusotown.vercel.app'} />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="LusoTown London" />
-        <meta property="og:locale" content={language === 'pt-pt' ? 'pt_PT' : language === 'pt-br' ? 'pt_BR' : 'en_GB'} />
+        <meta property="og:locale" content={language === 'pt' ? 'pt_PT' : 'en_GB'} />
         <meta property="og:locale:alternate" content="en_GB" />
         <meta property="og:locale:alternate" content="pt_PT" />
         <meta property="og:locale:alternate" content="pt_BR" />

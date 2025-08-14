@@ -29,7 +29,7 @@ interface BusinessCardProps {
 
 const BusinessCard: React.FC<BusinessCardProps> = ({ business, featured = false }) => {
   const { language } = useLanguage()
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
   const [isFavorited, setIsFavorited] = useState(false)
 
   const formatHours = (hours: string) => {
@@ -51,7 +51,13 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ business, featured = false 
       education: { en: 'Education', pt: 'Educação' },
       beauty: { en: 'Beauty & Wellness', pt: 'Beleza e Bem-estar' },
       retail: { en: 'Retail', pt: 'Comércio' },
-      consulting: { en: 'Consulting', pt: 'Consultoria' }
+      real_estate: { en: 'Real Estate', pt: 'Imobiliário' },
+      financial: { en: 'Financial Services', pt: 'Serviços Financeiros' },
+      consulting: { en: 'Consulting', pt: 'Consultoria' },
+      automotive: { en: 'Automotive', pt: 'Automóvel' },
+      home_services: { en: 'Home Services', pt: 'Serviços Domésticos' },
+      entertainment: { en: 'Entertainment', pt: 'Entretenimento' },
+      technology: { en: 'Technology', pt: 'Tecnologia' },
     }
     return categories[category]?.[language] || category
   }
@@ -277,7 +283,7 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ business, featured = false 
 
 export default function BusinessDirectory() {
   const { language } = useLanguage()
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
   const [businesses, setBusinesses] = useState<PortugueseBusiness[]>([])
   const [featuredBusinesses, setFeaturedBusinesses] = useState<PortugueseBusiness[]>([])
   const [loading, setLoading] = useState(true)

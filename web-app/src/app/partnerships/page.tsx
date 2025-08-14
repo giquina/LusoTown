@@ -40,6 +40,8 @@ const PartnershipCard: React.FC<PartnershipCardProps> = ({ partnership }) => {
       religious_organization: <HeartIcon className="w-5 h-5" />,
       community_association: <UsersIcon className="w-5 h-5" />,
       charity: <HeartIcon className="w-5 h-5" />,
+      media_organization: <GlobeAltIcon className="w-5 h-5" />,
+      sports_club: <TrophyIcon className="w-5 h-5" />,
       business_association: <BuildingOffice2Icon className="w-5 h-5" />
     }
     return icons[type] || <BuildingOffice2Icon className="w-5 h-5" />
@@ -55,6 +57,8 @@ const PartnershipCard: React.FC<PartnershipCardProps> = ({ partnership }) => {
       religious_organization: { en: 'Religious Organization', pt: 'Organização Religiosa' },
       community_association: { en: 'Community Association', pt: 'Associação Comunitária' },
       charity: { en: 'Charity', pt: 'Caridade' },
+      media_organization: { en: 'Media Organization', pt: 'Organização de Mídia' },
+      sports_club: { en: 'Sports Club', pt: 'Clube Desportivo' },
       business_association: { en: 'Business Association', pt: 'Associação Empresarial' }
     }
     return labels[type]?.[language] || type

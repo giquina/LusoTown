@@ -105,7 +105,7 @@ export default function FeedDemo() {
   const [activeFilters, setActiveFilters] = useState(0)
 
   // Helper function to check if language is Portuguese
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
   const t = translations[isPortuguese ? 'pt' : 'en']
 
   const handleCreatePost = () => {

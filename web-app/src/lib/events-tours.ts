@@ -326,32 +326,32 @@ export const EVENT_TOUR_CATEGORIES = {
   'Women 30+': {
     description: 'Exclusive experiences for Portuguese women in their 30s',
     icon: '👩‍💼',
-    color: 'bg-pink-500'
+    color: 'bg-coral-500'
   },
   'Women 40+': {
     description: 'Professional networking and cultural experiences for established Portuguese women',
     icon: '👩‍💼',
-    color: 'bg-purple-500'
+    color: 'bg-premium-500'
   },
   'Family-Friendly': {
     description: 'Cultural experiences perfect for Portuguese families with children',
     icon: '👨‍👩‍👧‍👦',
-    color: 'bg-green-500'
+    color: 'bg-secondary-500'
   },
   'Mixed Groups': {
     description: 'Open experiences for all Portuguese community members',
     icon: '🤝',
-    color: 'bg-blue-500'
+    color: 'bg-primary-500'
   },
   'Cultural Heritage': {
     description: 'Traditional Portuguese cultural celebrations and preservation',
     icon: '🏛️',
-    color: 'bg-orange-500'
+    color: 'bg-accent-500'
   },
   'Professional Networking': {
     description: 'Business and career development for Portuguese professionals',
     icon: '💼',
-    color: 'bg-gray-500'
+    color: 'bg-action-500'
   }
 }
 

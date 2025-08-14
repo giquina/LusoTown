@@ -44,7 +44,7 @@ export default function FollowButton({
   const notificationsEnabled = followingEntry?.notificationsEnabled ?? false
   
   // Helper function to check if language is Portuguese
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
 
   const handleFollow = () => {
     toggleFollow(entity)

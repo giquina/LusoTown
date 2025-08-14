@@ -210,7 +210,7 @@ const pricingTiers: PricingTier[] = [
     highlighted: false,
     buttonText: 'Tornar-se Embaixador',
     buttonTextEn: 'Become Ambassador',
-    buttonStyle: 'btn-primary bg-gradient-to-r from-purple-500 to-pink-500 border-transparent hover:from-purple-600 hover:to-pink-600'
+    buttonStyle: 'btn-primary bg-gradient-to-r from-premium-500 to-premium-600 border-transparent hover:from-premium-600 hover:to-premium-700'
   }
 ]
 
@@ -363,7 +363,7 @@ const paymentOptions = [
 export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(false)
   const { language, t } = useLanguage()
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
 
   const getDiscountedPrice = (price: number) => {
     return isAnnual ? Math.round(price * 10) : price // 10 months for price of 12
@@ -496,7 +496,7 @@ export default function Pricing() {
                       <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center ${
                         index === 0 ? 'bg-gray-100 text-gray-600' :
                         index === 1 ? 'bg-gradient-to-r from-primary-100 to-secondary-100 text-primary-600' :
-                        'bg-gradient-to-r from-purple-100 to-pink-100 text-purple-600'
+                        'bg-gradient-to-r from-premium-100 to-premium-200 text-premium-600'
                       }`}>
                         {tier.highlighted ? tier.solidIcon : tier.icon}
                       </div>
@@ -542,7 +542,7 @@ export default function Pricing() {
                           ? 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                           : index === 1
                           ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white hover:from-primary-600 hover:to-secondary-600 shadow-lg hover:shadow-xl'
-                          : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 shadow-lg hover:shadow-xl'
+                          : 'bg-gradient-to-r from-premium-500 to-premium-600 text-white hover:from-premium-600 hover:to-premium-700 shadow-lg hover:shadow-xl'
                       }`}>
                         <span className="flex items-center justify-center">
                           {currentTier.buttonText}

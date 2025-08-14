@@ -37,7 +37,7 @@ export default function LiveUpdateIndicator({
   const [showIndicator, setShowIndicator] = useState(false)
   const [connectionStatus, setConnectionStatus] = useState<'connected' | 'reconnecting' | 'offline'>('connected')
   
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
 
   // Mock live updates for demonstration
   const mockUpdates: Omit<LiveUpdate, 'id' | 'timestamp'>[] = [

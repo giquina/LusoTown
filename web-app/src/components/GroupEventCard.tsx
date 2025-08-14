@@ -63,7 +63,7 @@ export default function GroupEventCard({
   const { isFavorite } = useFavorites()
   const [liked, setLiked] = useState(false)
   
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
 
   const handleLike = () => {
     setLiked(!liked)

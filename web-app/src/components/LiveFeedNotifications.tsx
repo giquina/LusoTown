@@ -57,7 +57,7 @@ const LiveFeedNotifications = () => {
       location: 'Shoreditch',
       action: 'joined a Portuguese pub crawl',
       icon: <CalendarIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-blue-400 to-indigo-500'
+      gradient: 'from-primary-400 to-secondary-500'
     },
     {
       type: 'review',
@@ -81,7 +81,7 @@ const LiveFeedNotifications = () => {
       location: 'Clapham',
       action: 'attending "Women-only Portuguese Brunch"',
       icon: <CalendarIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-blue-400 to-indigo-500'
+      gradient: 'from-primary-400 to-secondary-500'
     },
     {
       type: 'friendship',
@@ -113,7 +113,7 @@ const LiveFeedNotifications = () => {
       location: 'Hampstead',
       action: 'signed up for "Late Night Portuguese Dancing"',
       icon: <CalendarIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-blue-400 to-indigo-500'
+      gradient: 'from-primary-400 to-secondary-500'
     },
     {
       type: 'chat_join',
@@ -137,7 +137,7 @@ const LiveFeedNotifications = () => {
       location: 'Marylebone',
       action: 'attending "Portuguese Food & Drinks Night"',
       icon: <CalendarIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-blue-400 to-indigo-500'
+      gradient: 'from-primary-400 to-secondary-500'
     },
     {
       type: 'signup',
@@ -169,7 +169,7 @@ const LiveFeedNotifications = () => {
       location: 'Clapham',
       action: 'signed up for "Portuguese Comedy Night"',
       icon: <CalendarIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-blue-400 to-indigo-500'
+      gradient: 'from-primary-400 to-secondary-500'
     },
     {
       type: 'friendship',
@@ -193,7 +193,7 @@ const LiveFeedNotifications = () => {
       location: 'Brixton',
       action: 'attending "Brazilian Samba Night"',
       icon: <CalendarIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-blue-400 to-indigo-500'
+      gradient: 'from-primary-400 to-secondary-500'
     },
     {
       type: 'chat_join',

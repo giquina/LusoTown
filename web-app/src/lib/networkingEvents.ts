@@ -188,11 +188,10 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     // Timestamps
     createdAt: '2024-01-15T10:00:00Z',
     updatedAt: '2024-01-25T14:30:00Z',
-    lastActive: '2024-01-26T09:15:00Z',
     
     // Additional Event Fields
     isRecurring: true,
-    recurringPattern: 'monthly',
+    recurringPattern: { frequency: 'monthly', interval: 1 },
     ageRestriction: '18+',
     accessibility: ['wheelchair_accessible', 'hearing_loop'],
     cancellationPolicy: 'Full refund up to 24 hours before event',
@@ -232,7 +231,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         type: 'chamber_commerce',
         website: 'https://uk-portugal.com',
         representative: 'Maria Santos',
-        partnershipLevel: 'platinum'
+        partnershipLevel: 'gold'
       }
     ],
     
@@ -359,7 +358,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         type: 'chamber_commerce',
         website: 'https://brazilianchamber.org.uk',
         representative: 'Roberto Silva',
-        partnershipLevel: 'platinum'
+        partnershipLevel: 'gold'
       },
       {
         id: 'partner-004',
@@ -471,7 +470,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     lastActive: '2024-01-26T08:45:00Z',
     
     isRecurring: true,
-    recurringPattern: 'monthly',
+    recurringPattern: { frequency: 'monthly', interval: 1 },
     ageRestriction: '21+',
     accessibility: ['wheelchair_accessible'],
     cancellationPolicy: 'Full refund up to 48 hours before event',

@@ -24,7 +24,7 @@ export default function DemoPage() {
   const [isCartOpen, setIsCartOpen] = useState(false)
   const [activeDemo, setActiveDemo] = useState<'feed' | 'cart'>('feed')
   
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
 
   // Sample event data for demonstration
   const sampleEvents = [
@@ -211,7 +211,7 @@ export default function DemoPage() {
                           {isPortuguese ? 'Atualizações em tempo real' : 'Real-time updates'}
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                          <span className="w-2 h-2 bg-primary-500 rounded-full"></span>
                           {isPortuguese ? 'Fotos e comentários' : 'Photos and comments'}
                         </div>
                         <div className="flex items-center gap-2">

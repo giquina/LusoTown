@@ -24,7 +24,7 @@ import ImprovedEventCard from '@/components/ImprovedEventCard'
 import EventToursCard from '@/components/EventToursCard'
 import CategoryFilter from '@/components/CategoryFilter'
 import { Event, EventFilters, eventService, EVENT_CATEGORIES } from '@/lib/events'
-import { EventTour, EventToursFilters, eventsToursService, EVENT_TOUR_CATEGORIES } from '@/lib/events-tours'
+import { EventTour, EventToursFilters, EventsToursService, EVENT_TOUR_CATEGORIES } from '@/lib/events-tours'
 import { useCart } from '@/context/CartContext'
 import { useLanguage } from '@/context/LanguageContext'
 
@@ -42,7 +42,7 @@ const FilterSidebar = ({
   onFilterChange: (filters: EventFilters) => void 
 }) => {
   const { language } = useLanguage()
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
   
   return (
     <AnimatePresence>
@@ -214,7 +214,7 @@ const FilterSidebar = ({
 
 export default function EventsPage() {
   const { language, t } = useLanguage()
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
   const [activeTab, setActiveTab] = useState<'events' | 'tours'>('events')
 
   // Check URL parameters on component mount
@@ -257,7 +257,7 @@ export default function EventsPage() {
           searchFilters.searchQuery = searchQuery
         }
         
-        let tourData = eventsToursService.getEventsTours(searchFilters)
+        let tourData = EventsToursService.getEventsTours(searchFilters)
         
         // Apply sorting for tours
         if (sortBy === 'popularity') {
@@ -301,7 +301,7 @@ export default function EventsPage() {
   // Calculate category counts
   const eventCounts = activeTab === 'tours' 
     ? Object.keys(EVENT_TOUR_CATEGORIES).reduce((acc, category) => {
-        acc[category] = eventsToursService.getEventToursByCategory(category).length
+        acc[category] = EventsToursService.getEventToursByCategory(category).length
         return acc
       }, {} as Record<string, number>)
     : {}

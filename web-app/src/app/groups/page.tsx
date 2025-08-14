@@ -164,7 +164,7 @@ export default function GroupsPage() {
           {group.category_info && (
             <div className="absolute bottom-4 left-4">
               <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium text-white ${group.category_info.color_class || 'bg-primary-600'}`}>
-                {language === 'pt-pt' || language === 'pt-br' ? group.category_info.name_pt : group.category_info.name_en}
+                {language === 'pt' ? group.category_info.name_pt : group.category_info.name_en}
               </span>
             </div>
           )}
@@ -359,7 +359,7 @@ export default function GroupsPage() {
               <option value="">All Categories</option>
               {categories.map((category) => (
                 <option key={category.id} value={category.id}>
-                  {language === 'pt-pt' || language === 'pt-br' ? category.name_pt : category.name_en}
+                  {language === 'pt' ? category.name_pt : category.name_en}
                 </option>
               ))}
             </select>

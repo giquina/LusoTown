@@ -80,7 +80,7 @@ export default function EventFeedCard({
   const [showPhotoUpload, setShowPhotoUpload] = useState(false)
   const [uploadedPhotos, setUploadedPhotos] = useState<UploadedPhoto[]>([])
   
-  const isPortuguese = language === 'pt-pt' || language === 'pt-br'
+  const isPortuguese = language === 'pt'
 
   const handleLike = () => {
     onLike?.(post.id)
