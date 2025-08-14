@@ -413,12 +413,6 @@ const WhatsAppWidget: React.FC = () => {
       {!hasInteracted && !isOpen && (
         <div className="absolute bottom-16 right-0 bg-white p-3 rounded-lg shadow-lg border border-gray-200 max-w-[240px] animate-fade-in">
           <div className="text-sm">
-            <div className="flex items-center space-x-2 mb-2">
-              <Heart className="w-4 h-4 text-green-600" />
-              <strong className="text-green-600">
-                {isPortuguese ? 'Clica para começar' : 'Click to start'}
-              </strong>
-            </div>
             <div className="mt-2 text-xs text-red-600 font-medium">
               {isPortuguese ? 'Clica para começar →' : 'Click to start →'}
             </div>

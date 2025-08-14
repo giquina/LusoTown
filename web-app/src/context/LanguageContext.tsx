@@ -352,7 +352,7 @@ const translations = {
     // Navigation
     'nav.events': 'Eventos',
     'nav.how-it-works': 'Como Funciona',
-    'nav.community': 'Comunidade',
+    'nav.community': 'Membros',
     'nav.community-guidelines': 'Diretrizes da Comunidade',
     'nav.pricing': 'Preços',
     'nav.about': 'Sobre',
