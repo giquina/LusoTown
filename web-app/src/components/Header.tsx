@@ -14,14 +14,14 @@ import { useLanguage } from '@/context/LanguageContext'
 
 const getNavigationLinks = (t: any) => [
   { name: t('nav.events'), href: '/events' },
-  { name: t('nav.members'), href: '/members' },
+  { name: t('nav.community'), href: '/community' },
   { name: t('nav.pricing'), href: '/pricing' },
   { name: t('nav.contact'), href: '/contact' },
 ]
 
 const authenticatedNavigationLinks = [
   { name: 'Events', href: '/events' },
-  { name: 'Members', href: '/members' },
+  { name: 'Network', href: '/community' },
   { name: 'Dashboard', href: '/dashboard' },
 ]
 

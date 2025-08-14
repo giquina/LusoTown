@@ -18,7 +18,7 @@ const translations = {
     // Navigation
     'nav.events': 'Events',
     'nav.how-it-works': 'How It Works',
-    'nav.community': 'Members',
+    'nav.community': 'Network',
     'nav.community-guidelines': 'Membership Guidelines',
     'nav.pricing': 'Pricing',
     'nav.about': 'About',
@@ -352,7 +352,7 @@ const translations = {
     // Navigation
     'nav.events': 'Eventos',
     'nav.how-it-works': 'Como Funciona',
-    'nav.community': 'Membros',
+    'nav.community': 'Rede',
     'nav.community-guidelines': 'Diretrizes da Comunidade',
     'nav.pricing': 'Preços',
     'nav.about': 'Sobre',
@@ -686,7 +686,7 @@ const translations = {
     // Navigation
     'nav.events': 'Eventos',
     'nav.how-it-works': 'Como Funciona',
-    'nav.community': 'Membros',
+    'nav.community': 'Rede',
     'nav.community-guidelines': 'Diretrizes da Comunidade',
     'nav.pricing': 'Preços',
     'nav.about': 'Sobre',
