@@ -5,7 +5,7 @@ import { toast } from 'react-hot-toast'
 
 export interface CartItem {
   id: string
-  type: 'event' | 'business_service' | 'product'
+  type: 'event' | 'business_service' | 'product' | 'chauffeur_service'
   title: string
   description?: string
   price: number
@@ -27,6 +27,18 @@ export interface CartItem {
   businessName?: string
   businessCategory?: string
   serviceType?: string
+  
+  // Chauffeur service fields
+  chauffeurServiceId?: string
+  vehicleId?: string
+  driverId?: string
+  pickupDateTime?: string
+  pickupLocation?: string
+  dropoffLocation?: string
+  hours?: number
+  bookingType?: 'hourly' | 'day_rate' | 'block_booking' | 'airport_transfer'
+  passengerCount?: number
+  pricingBreakdown?: any
   
   // Additional metadata
   addedAt: string

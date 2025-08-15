@@ -104,7 +104,9 @@ export default function FeedPost({
               <Image 
                 src={authorAvatar} 
                 alt={authorName}
-                fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover"
+                width={40}
+                height={40}
+                className="object-cover"
               />
             </div>
             <div>
@@ -156,6 +158,8 @@ export default function FeedPost({
             <Image 
               src={imageUrl} 
               alt="Post image" 
+              width={600}
+              height={400}
               className="w-full h-auto object-cover"
             />
           </div>

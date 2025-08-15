@@ -193,9 +193,11 @@ export default function MemberProfile() {
               <div className="w-24 h-24 bg-white rounded-full p-1">
                 <div className="w-full h-full bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-full flex items-center justify-center text-white text-2xl font-bold">
                   {member.profileImage ? (
-                    <Image 
-                      src={member.profileImage} 
+                    <Image
+                      src={member.profileImage}
                       alt={member.name}
+                      width={96}
+                      height={96}
                       className="w-full h-full rounded-full object-cover"
                     />
                   ) : (
@@ -356,13 +358,15 @@ export default function MemberProfile() {
                         title={mutual.name}
                       >
                         {mutual.profileImage ? (
-                          <Image 
-                            src={mutual.profileImage} 
+                          <Image
+                            src={mutual.profileImage}
                             alt={mutual.name}
+                            width={32}
+                            height={32}
                             className="w-full h-full rounded-full object-cover"
                           />
                         ) : (
-                          mutual.name.split(' ').map((n: string) => n[0]).join('')
+                          mutual.name.split(" ").map((n: string) => n[0]).join("")
                         )}
                       </div>
                     ))}
@@ -474,9 +478,11 @@ export default function MemberProfile() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {member.photos.map(photo => (
                       <div key={photo.id} className="group relative">
-                        <Image 
+                        <Image
                           src={photo.url}
-                          alt={photo.caption}
+                          alt={photo.caption || "Member photo"}
+                          width={400}
+                          height={300}
                           className="w-full h-48 object-cover rounded-lg group-hover:opacity-90 transition-opacity"
                         />
                         {photo.caption && (

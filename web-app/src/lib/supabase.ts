@@ -498,3 +498,185 @@ export const compressImage = async (file: File, maxWidth: number = 1000, quality
     img.src = URL.createObjectURL(file)
   })
 }
+
+// Chauffeur Service Types
+export interface ChauffeurService {
+  id: string
+  service_name: string
+  service_type: 'executive' | 'tourism' | 'airport' | 'events' | 'business' | 'personal'
+  description?: string
+  base_hourly_rate: number
+  minimum_hours: number
+  day_rate?: number
+  minimum_day_hours: number
+  call_out_fee: number
+  peak_time_multiplier: number
+  currency: string
+  is_active: boolean
+  created_at: string
+  updated_at: string
+}
+
+export interface ChauffeurVehicle {
+  id: string
+  make: string
+  model: string
+  year: number
+  category: 'executive' | 'luxury' | 'premium' | 'standard'
+  max_passengers: number
+  features: string[]
+  image_url?: string
+  hourly_rate_premium: number
+  is_active: boolean
+  created_at: string
+}
+
+export interface ChauffeurDriver {
+  id: string
+  first_name: string
+  last_name: string
+  license_number: string
+  languages_spoken: string[]
+  years_experience: number
+  specializations: string[]
+  background_check_date: string
+  profile_picture_url?: string
+  hourly_rate_premium: number
+  is_active: boolean
+  created_at: string
+}
+
+export interface ChauffeurPricingTier {
+  id: string
+  tier_name: string
+  block_hours_min: number
+  block_hours_max?: number
+  discount_percentage: number
+  description?: string
+  is_active: boolean
+  created_at: string
+}
+
+export interface ChauffeurPeakTime {
+  id: string
+  name: string
+  start_time: string
+  end_time: string
+  days_of_week: number[]
+  multiplier: number
+  description?: string
+  is_active: boolean
+  created_at: string
+}
+
+export interface ChauffeurBooking {
+  id: string
+  booking_reference: string
+  customer_id: string
+  service_id: string
+  vehicle_id?: string
+  driver_id?: string
+  booking_type: 'hourly' | 'day_rate' | 'block_booking' | 'airport_transfer'
+  pickup_datetime: string
+  pickup_location: string
+  pickup_postcode?: string
+  dropoff_location?: string
+  dropoff_postcode?: string
+  
+  // Pricing details
+  base_hours: number
+  actual_hours?: number
+  hourly_rate: number
+  day_rate_applied?: number
+  call_out_fee: number
+  peak_time_charges: number
+  block_discount_percentage: number
+  vehicle_premium: number
+  driver_premium: number
+  subtotal: number
+  member_discount_percentage: number
+  member_discount_amount: number
+  total_amount: number
+  currency: string
+  
+  // Customer details
+  customer_notes?: string
+  special_requirements?: string
+  passenger_count: number
+  customer_phone?: string
+  customer_email?: string
+  
+  // Status
+  status: 'pending' | 'confirmed' | 'assigned' | 'in_progress' | 'completed' | 'cancelled' | 'no_show'
+  payment_status: 'pending' | 'paid' | 'partial' | 'refunded' | 'failed'
+  payment_method?: string
+  stripe_payment_intent_id?: string
+  
+  created_at: string
+  updated_at: string
+  confirmed_at?: string
+  completed_at?: string
+}
+
+export interface ChauffeurBookingExtra {
+  id: string
+  booking_id: string
+  extra_type: string
+  description: string
+  quantity: number
+  unit_price: number
+  total_price: number
+  created_at: string
+}
+
+export interface ChauffeurAvailability {
+  id: string
+  driver_id?: string
+  vehicle_id?: string
+  start_datetime: string
+  end_datetime: string
+  availability_type: 'available' | 'busy' | 'maintenance' | 'unavailable'
+  notes?: string
+  created_at: string
+}
+
+// Pricing calculation interfaces
+export interface PricingCalculationRequest {
+  service_id: string
+  vehicle_id?: string
+  driver_id?: string
+  pickup_datetime: string
+  hours: number
+  booking_type: 'hourly' | 'day_rate' | 'block_booking' | 'airport_transfer'
+  membership_tier?: 'free' | 'core' | 'premium'
+  passenger_count?: number
+  extras?: { type: string; quantity: number }[]
+}
+
+export interface PricingCalculationResult {
+  base_rate: number
+  hours: number
+  subtotal: number
+  call_out_fee: number
+  peak_time_charges: number
+  block_discount: {
+    applicable: boolean
+    percentage: number
+    amount: number
+  }
+  vehicle_premium: number
+  driver_premium: number
+  member_discount: {
+    applicable: boolean
+    percentage: number
+    amount: number
+  }
+  extras_total: number
+  total_amount: number
+  currency: string
+  breakdown: {
+    description: string
+    amount: number
+    type: 'charge' | 'discount'
+  }[]
+}

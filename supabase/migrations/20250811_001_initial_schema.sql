@@ -210,6 +210,236 @@ create trigger on_auth_user_created
     after insert on auth.users
     for each row execute procedure public.handle_new_user();
 
+-- Security Chauffeur Services Tables
+create table public.chauffeur_services (
+    id uuid default uuid_generate_v4() primary key,
+    service_name varchar(255) not null,
+    service_type varchar(50) not null check (service_type in ('executive', 'tourism', 'airport', 'events', 'business', 'personal')),
+    description text,
+    base_hourly_rate decimal(10,2) not null,
+    minimum_hours integer default 2,
+    day_rate decimal(10,2),
+    minimum_day_hours integer default 8,
+    call_out_fee decimal(10,2) default 0,
+    peak_time_multiplier decimal(3,2) default 1.0,
+    currency varchar(3) default 'GBP',
+    is_active boolean default true,
+    created_at timestamp with time zone default timezone('utc'::text, now()) not null,
+    updated_at timestamp with time zone default timezone('utc'::text, now()) not null
+);
+
+create table public.chauffeur_vehicles (
+    id uuid default uuid_generate_v4() primary key,
+    make varchar(100) not null,
+    model varchar(100) not null,
+    year integer not null,
+    category varchar(50) not null check (category in ('executive', 'luxury', 'premium', 'standard')),
+    max_passengers integer not null,
+    features text[], -- Array of features like 'wifi', 'refreshments', 'privacy_glass'
+    image_url varchar(500),
+    hourly_rate_premium decimal(10,2) default 0,
+    is_active boolean default true,
+    created_at timestamp with time zone default timezone('utc'::text, now()) not null
+);
+
+create table public.chauffeur_drivers (
+    id uuid default uuid_generate_v4() primary key,
+    first_name varchar(100) not null,
+    last_name varchar(100) not null,
+    license_number varchar(100) unique not null,
+    languages_spoken varchar(255)[], -- Array like ['portuguese', 'english', 'spanish']
+    years_experience integer not null,
+    specializations varchar(100)[], -- Array like ['tourism', 'executive', 'events']
+    background_check_date date not null,
+    profile_picture_url varchar(500),
+    hourly_rate_premium decimal(10,2) default 0,
+    is_active boolean default true,
+    created_at timestamp with time zone default timezone('utc'::text, now') not null
+);
+
+create table public.chauffeur_pricing_tiers (
+    id uuid default uuid_generate_v4() primary key,
+    tier_name varchar(100) not null,
+    block_hours_min integer not null, -- Minimum hours for this tier
+    block_hours_max integer, -- Maximum hours (null = unlimited)
+    discount_percentage decimal(5,2) not null, -- Discount off base rate
+    description text,
+    is_active boolean default true,
+    created_at timestamp with time zone default timezone('utc'::text, now()) not null
+);
+
+create table public.chauffeur_peak_times (
+    id uuid default uuid_generate_v4() primary key,
+    name varchar(100) not null,
+    start_time time not null,
+    end_time time not null,
+    days_of_week integer[] not null, -- 0=Sunday, 1=Monday, etc.
+    multiplier decimal(3,2) not null,
+    description text,
+    is_active boolean default true,
+    created_at timestamp with time zone default timezone('utc'::text, now') not null
+);
+
+create table public.chauffeur_bookings (
+    id uuid default uuid_generate_v4() primary key,
+    booking_reference varchar(50) unique not null,
+    customer_id uuid references public.profiles(id) not null,
+    service_id uuid references public.chauffeur_services(id) not null,
+    vehicle_id uuid references public.chauffeur_vehicles(id),
+    driver_id uuid references public.chauffeur_drivers(id),
+    
+    -- Booking details
+    booking_type varchar(50) not null check (booking_type in ('hourly', 'day_rate', 'block_booking', 'airport_transfer')),
+    pickup_datetime timestamp with time zone not null,
+    pickup_location varchar(500) not null,
+    pickup_postcode varchar(20),
+    dropoff_location varchar(500),
+    dropoff_postcode varchar(20),
+    
+    -- Pricing details
+    base_hours integer not null,
+    actual_hours decimal(4,2),
+    hourly_rate decimal(10,2) not null,
+    day_rate_applied decimal(10,2),
+    call_out_fee decimal(10,2) default 0,
+    peak_time_charges decimal(10,2) default 0,
+    block_discount_percentage decimal(5,2) default 0,
+    vehicle_premium decimal(10,2) default 0,
+    driver_premium decimal(10,2) default 0,
+    subtotal decimal(10,2) not null,
+    member_discount_percentage decimal(5,2) default 0,
+    member_discount_amount decimal(10,2) default 0,
+    total_amount decimal(10,2) not null,
+    currency varchar(3) default 'GBP',
+    
+    -- Customer details
+    customer_notes text,
+    special_requirements text,
+    passenger_count integer default 1,
+    customer_phone varchar(50),
+    customer_email varchar(255),
+    
+    -- Status tracking
+    status varchar(50) default 'pending' check (status in ('pending', 'confirmed', 'assigned', 'in_progress', 'completed', 'cancelled', 'no_show')),
+    payment_status varchar(50) default 'pending' check (payment_status in ('pending', 'paid', 'partial', 'refunded', 'failed')),
+    payment_method varchar(50),
+    stripe_payment_intent_id varchar(255),
+    
+    -- Timestamps
+    created_at timestamp with time zone default timezone('utc'::text, now()) not null,
+    updated_at timestamp with time zone default timezone('utc'::text, now()) not null,
+    confirmed_at timestamp with time zone,
+    completed_at timestamp with time zone
+);
+
+create table public.chauffeur_booking_extras (
+    id uuid default uuid_generate_v4() primary key,
+    booking_id uuid references public.chauffeur_bookings(id) on delete cascade not null,
+    extra_type varchar(100) not null,
+    description varchar(255) not null,
+    quantity integer default 1,
+    unit_price decimal(10,2) not null,
+    total_price decimal(10,2) not null,
+    created_at timestamp with time zone default timezone('utc'::text, now()) not null
+);
+
+create table public.chauffeur_availability (
+    id uuid default uuid_generate_v4() primary key,
+    driver_id uuid references public.chauffeur_drivers(id) on delete cascade,
+    vehicle_id uuid references public.chauffeur_vehicles(id) on delete cascade,
+    start_datetime timestamp with time zone not null,
+    end_datetime timestamp with time zone not null,
+    availability_type varchar(50) not null check (availability_type in ('available', 'busy', 'maintenance', 'unavailable')),
+    notes text,
+    created_at timestamp with time zone default timezone('utc'::text, now()) not null
+);
+
+-- Add storage bucket for chauffeur service images
+insert into storage.buckets (id, name, public) values 
+    ('chauffeur-images', 'chauffeur-images', true);
+
+-- Storage policies for chauffeur images
+create policy "Chauffeur images are publicly viewable"
+on storage.objects for select
+using (bucket_id = 'chauffeur-images');
+
+create policy "Authenticated users can upload chauffeur images"
+on storage.objects for insert
+with check (bucket_id = 'chauffeur-images' and auth.role() = 'authenticated');
+
+-- Row Level Security for chauffeur tables
+alter table public.chauffeur_services enable row level security;
+alter table public.chauffeur_vehicles enable row level security;
+alter table public.chauffeur_drivers enable row level security;
+alter table public.chauffeur_pricing_tiers enable row level security;
+alter table public.chauffeur_peak_times enable row level security;
+alter table public.chauffeur_bookings enable row level security;
+alter table public.chauffeur_booking_extras enable row level security;
+alter table public.chauffeur_availability enable row level security;
+
+-- Policies for chauffeur services (public read)
+create policy "Chauffeur services are publicly viewable" on public.chauffeur_services
+    for select using (is_active = true);
+
+create policy "Chauffeur vehicles are publicly viewable" on public.chauffeur_vehicles
+    for select using (is_active = true);
+
+create policy "Chauffeur drivers are publicly viewable" on public.chauffeur_drivers
+    for select using (is_active = true);
+
+create policy "Pricing tiers are publicly viewable" on public.chauffeur_pricing_tiers
+    for select using (is_active = true);
+
+create policy "Peak times are publicly viewable" on public.chauffeur_peak_times
+    for select using (is_active = true);
+
+-- Booking policies
+create policy "Users can create their own bookings" on public.chauffeur_bookings
+    for insert with check (auth.uid() = customer_id);
+
+create policy "Users can view their own bookings" on public.chauffeur_bookings
+    for select using (auth.uid() = customer_id);
+
+create policy "Users can update their pending bookings" on public.chauffeur_bookings
+    for update using (auth.uid() = customer_id and status = 'pending');
+
+-- Booking extras policies
+create policy "Booking extras viewable by booking owner" on public.chauffeur_booking_extras
+    for select using (
+        booking_id in (
+            select id from public.chauffeur_bookings 
+            where customer_id = auth.uid()
+        )
+    );
+
+-- Availability policies (read-only for customers)
+create policy "Availability is publicly viewable" on public.chauffeur_availability
+    for select using (availability_type = 'available');
+
+-- Triggers for updated_at
+create trigger handle_chauffeur_services_updated_at before update on public.chauffeur_services
+    for each row execute procedure handle_updated_at();
+
+create trigger handle_chauffeur_vehicles_updated_at before update on public.chauffeur_vehicles
+    for each row execute procedure handle_updated_at();
+
+create trigger handle_chauffeur_bookings_updated_at before update on public.chauffeur_bookings
+    for each row execute procedure handle_updated_at();
+
+-- Function to generate booking reference
+create or replace function generate_booking_reference()
+returns trigger as $$
+begin
+    new.booking_reference = 'CH' || to_char(now(), 'YYMMDD') || '-' || upper(substring(md5(random()::text) from 1 for 6));
+    return new;
+end;
+$$ language plpgsql;
+
+-- Trigger to auto-generate booking reference
+create trigger generate_booking_reference_trigger
+    before insert on public.chauffeur_bookings
+    for each row execute procedure generate_booking_reference();
+
 -- Comments for documentation
 comment on table public.profiles is 'User profile information and verification status';
 comment on table public.interests is 'Predefined interests for user selection and matching';
@@ -218,3 +448,7 @@ comment on table public.groups is 'Interest-based and location-based community g
 comment on table public.group_members is 'Group membership and roles';
 comment on table public.events is 'Community events and activities';
 comment on table public.event_attendees is 'Event registration and attendance tracking';
+comment on table public.chauffeur_services is 'Security chauffeur service types and pricing';
+comment on table public.chauffeur_vehicles is 'Available vehicles for chauffeur services';
+comment on table public.chauffeur_drivers is 'Licensed chauffeur drivers and their profiles';
+comment on table public.chauffeur_bookings is 'Customer bookings for chauffeur services with complex pricing';

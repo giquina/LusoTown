@@ -126,7 +126,9 @@ export default function GroupEventCard({
             <Image 
               src={event.image} 
               alt={event.title}
-              fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover"
+              width={80}
+              height={80}
+              className="object-cover"
             />
             {event.isPopular && (
               <div className="absolute top-1 right-1 w-4 h-4 bg-accent-500 rounded-full flex items-center justify-center">
@@ -193,7 +195,9 @@ export default function GroupEventCard({
           <Image 
             src={event.image} 
             alt={event.title}
-            fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover"
+            width={600}
+            height={400}
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           
@@ -270,7 +274,9 @@ export default function GroupEventCard({
                   <Image 
                     src={event.hostImage} 
                     alt={event.hostName}
-                    fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover"
+                    width={32}
+                    height={32}
+                    className="object-cover"
                   />
                 ) : (
                   <div className="w-full h-full bg-gradient-to-r from-primary-400 to-secondary-400 flex items-center justify-center text-white font-bold text-xs">
@@ -322,6 +328,8 @@ export default function GroupEventCard({
         <Image 
           src={event.image} 
           alt={event.title}
+          width={400}
+          height={300}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -415,7 +423,9 @@ export default function GroupEventCard({
                 <Image 
                   src={event.hostImage} 
                   alt={event.hostName}
-                  fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover"
+                  width={40}
+                  height={40}
+                  className="object-cover"
                 />
               ) : (
                 <div className="w-full h-full bg-gradient-to-r from-primary-400 to-secondary-400 flex items-center justify-center text-white font-bold text-sm">

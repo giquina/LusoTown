@@ -30,6 +30,13 @@ This document provides a comprehensive index of all LusoTown platform documentat
 - **[web-app/DESIGN_SYSTEM.md](./web-app/DESIGN_SYSTEM.md)** - Portuguese-inspired design system
 - **[web-app/FEATURES_README.md](./web-app/FEATURES_README.md)** - Feature specifications and implementation
 
+### 🚗 Security Chauffeur Services Documentation
+- **[CHAUFFEUR_SERVICE_OPERATIONS_MANUAL.md](./CHAUFFEUR_SERVICE_OPERATIONS_MANUAL.md)** - Complete operations manual for premium Portuguese chauffeur services
+- **[CHAUFFEUR_CUSTOMER_GUIDE.md](./CHAUFFEUR_CUSTOMER_GUIDE.md)** - Customer-facing guide with service tiers, pricing, and booking information
+- **[CHAUFFEUR_TECHNICAL_DOCUMENTATION.md](./CHAUFFEUR_TECHNICAL_DOCUMENTATION.md)** - Technical architecture, API documentation, and system integration
+- **[CHAUFFEUR_PRICING_GUIDE.md](./CHAUFFEUR_PRICING_GUIDE.md)** - Comprehensive pricing structure, discounts, and calculation examples
+- **[CHAUFFEUR_CULTURAL_EXPERIENCE_CATALOG.md](./CHAUFFEUR_CULTURAL_EXPERIENCE_CATALOG.md)** - Portuguese cultural experiences and heritage tours
+
 ### 📈 Recent Updates (August 15, 2025)
 - **Performance Optimization:** Critical TypeScript compilation errors fixed, development server stability improved
 - **Brand Consistency:** 100% Portuguese brand compliance achieved, all generic blue colors replaced
@@ -39,6 +46,7 @@ This document provides a comprehensive index of all LusoTown platform documentat
 - **Administrative Structure:** 10 key management roles defined with comprehensive job specifications
 - **Career Page Strategic Update:** Salary information removed per business decision, focus on cultural competency
 - **Security Enhancements:** Comprehensive security audit completed with error boundaries implemented
+- **Chauffeur Services Documentation:** Complete documentation suite for premium Portuguese chauffeur services including operations, pricing, technical integration, and cultural experiences
 
 ## 📁 Documentation Structure
 
@@ -50,6 +58,11 @@ LusoTown/
 ├── EVENT_FEED_IMPLEMENTATION.md                 # Event feed technical docs
 ├── SAVE_CART_IMPLEMENTATION_SUMMARY.md          # Cart system technical docs
 ├── SUPABASE_COMPREHENSIVE_PLAN.md               # Backend/database docs
+├── CHAUFFEUR_SERVICE_OPERATIONS_MANUAL.md       # Chauffeur service operations
+├── CHAUFFEUR_CUSTOMER_GUIDE.md                  # Customer service guide
+├── CHAUFFEUR_TECHNICAL_DOCUMENTATION.md         # Technical integration docs
+├── CHAUFFEUR_PRICING_GUIDE.md                   # Pricing and discount structure
+├── CHAUFFEUR_CULTURAL_EXPERIENCE_CATALOG.md     # Cultural heritage experiences
 ├── .claude/
 │   ├── AGENTS_DOCUMENTATION.md                 # Agent system overview
 │   ├── HOOKS_AND_WORKFLOWS.md                  # Automated workflows

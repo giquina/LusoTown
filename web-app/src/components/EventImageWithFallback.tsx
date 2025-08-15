@@ -28,13 +28,40 @@ export default function EventImageWithFallback({
   const [imageError, setImageError] = useState(false)
   
   if (imageError) {
+    if (fill) {
+      return (
+        <Image
+          src={getEventPlaceholder(category)}
+          alt={`${alt} (placeholder)`}
+          fill
+          className={className}
+          unoptimized // For SVG data URLs
+        />
+      )
+    }
+    
     return (
       <Image
         src={getEventPlaceholder(category)}
         alt={`${alt} (placeholder)`}
         className={className}
-        width={width}
-        height={height}
+        width={width || 400}
+        height={height || 300}
+        unoptimized // For SVG data URLs
+      />
+    )
+  }
+  
+  if (fill) {
+    return (
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className={className}
+        onError={() => setImageError(true)}
+        priority={priority}
+        unoptimized // For static export compatibility
       />
     )
   }
@@ -43,10 +70,9 @@ export default function EventImageWithFallback({
     <Image
       src={src}
       alt={alt}
-      fill
-      
-      width={!fill ? width : undefined}
-      height={!fill ? height : undefined}
+      width={width || 400}
+      height={height || 300}
+      className={className}
       onError={() => setImageError(true)}
       priority={priority}
       unoptimized // For static export compatibility

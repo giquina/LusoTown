@@ -16,6 +16,7 @@ import { useLanguage } from '@/context/LanguageContext'
 const getNavigationLinks = (t: any) => [
   { name: t('nav.events', 'Events'), href: '/events' },
   { name: t('nav.tours', 'Tours'), href: '/groups' },
+  { name: t('nav.chauffeur', 'Chauffeur'), href: '/chauffeur' },
   { name: t('nav.heritage', 'Heritage'), href: '/heritage' },
   { name: t('nav.instituto', 'Instituto Camões'), href: '/instituto-camoes' },
   { name: t('nav.partnerships', 'Partnerships'), href: '/partnerships' },
@@ -24,6 +25,7 @@ const getNavigationLinks = (t: any) => [
 const authenticatedNavigationLinks = [
   { name: 'Events', href: '/events' },
   { name: 'Tours', href: '/groups' },
+  { name: 'Chauffeur', href: '/chauffeur' },
   { name: 'Networks', href: '/community' },
   { name: 'Dashboard', href: '/dashboard' },
 ]

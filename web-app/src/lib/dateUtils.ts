@@ -9,7 +9,18 @@ export interface DateFormatOptions {
   minute?: 'numeric'
 }
 
-// Custom date formatter that ensures consistent output between server and client
+// Predefined mappings to ensure consistent output between server and client
+const WEEKDAYS_EN_SHORT = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+const WEEKDAYS_EN_LONG = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+const WEEKDAYS_PT_SHORT = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb']
+const WEEKDAYS_PT_LONG = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado']
+
+const MONTHS_EN_SHORT = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+const MONTHS_EN_LONG = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+const MONTHS_PT_SHORT = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
+const MONTHS_PT_LONG = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+
+// Manual date formatter that ensures identical output between server and client
 export function formatDateConsistent(
   date: Date | string, 
   locale: string = 'en-GB', 
@@ -30,14 +41,50 @@ export function formatDateConsistent(
   
   const finalOptions = { ...defaults, ...options }
   
-  try {
-    // Use a consistent approach that works the same on server and client
-    const formatter = new Intl.DateTimeFormat(locale, finalOptions)
-    return formatter.format(dateObj)
-  } catch (error) {
-    // Fallback for any formatting issues
-    return dateObj.toISOString().split('T')[0]
+  const isPortuguese = locale.startsWith('pt')
+  const parts: string[] = []
+  
+  // Add weekday if requested
+  if (finalOptions.weekday) {
+    const dayOfWeek = dateObj.getDay()
+    if (finalOptions.weekday === 'short') {
+      parts.push(isPortuguese ? WEEKDAYS_PT_SHORT[dayOfWeek] : WEEKDAYS_EN_SHORT[dayOfWeek])
+    } else {
+      parts.push(isPortuguese ? WEEKDAYS_PT_LONG[dayOfWeek] : WEEKDAYS_EN_LONG[dayOfWeek])
+    }
   }
+  
+  // Add day if requested
+  if (finalOptions.day === 'numeric') {
+    parts.push(dateObj.getDate().toString())
+  }
+  
+  // Add month if requested
+  if (finalOptions.month) {
+    const monthIndex = dateObj.getMonth()
+    if (finalOptions.month === 'short') {
+      parts.push(isPortuguese ? MONTHS_PT_SHORT[monthIndex] : MONTHS_EN_SHORT[monthIndex])
+    } else if (finalOptions.month === 'long') {
+      parts.push(isPortuguese ? MONTHS_PT_LONG[monthIndex] : MONTHS_EN_LONG[monthIndex])
+    } else {
+      parts.push((monthIndex + 1).toString())
+    }
+  }
+  
+  // Add year if requested
+  if (finalOptions.year === 'numeric') {
+    parts.push(dateObj.getFullYear().toString())
+  }
+  
+  // Add time if requested
+  if (finalOptions.hour === 'numeric' && finalOptions.minute === 'numeric') {
+    const hours = dateObj.getHours().toString().padStart(2, '0')
+    const minutes = dateObj.getMinutes().toString().padStart(2, '0')
+    parts.push(`${hours}:${minutes}`)
+  }
+  
+  // Join parts with spaces for consistent formatting
+  return parts.join(' ')
 }
 
 // Portuguese-aware date formatting

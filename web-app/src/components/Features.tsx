@@ -161,6 +161,8 @@ export default function Features() {
                       <Image 
                         src={photos[index % photos.length]?.path || '/profiles/default-avatar.svg'}
                         alt={photos[index % photos.length]?.alt || 'LusoTown London member'}
+                        width={80}
+                        height={80}
                         className="w-full h-full object-cover"
                         loading="lazy"
                       />
@@ -183,6 +185,8 @@ export default function Features() {
                     <Image 
                       src={getImagesByCategory('community')[0]?.path || '/profiles/default-avatar.svg'}
                       alt="LusoTown London member"
+                      width={64}
+                      height={64}
                       className="w-full h-full object-cover"
                       loading="lazy"
                     />
