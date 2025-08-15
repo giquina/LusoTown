@@ -273,9 +273,9 @@ const OptimizedChauffeurServiceCard = memo<OptimizedChauffeurServiceCardProps>((
 
       {/* Features Section */}
       <div className="px-6 py-6">
-        <ul className="space-y-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {displayFeatures.map((feature, featureIndex) => (
-            <motion.li 
+            <motion.div 
               key={featureIndex}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -283,9 +283,9 @@ const OptimizedChauffeurServiceCard = memo<OptimizedChauffeurServiceCardProps>((
               viewport={{ once: true }}
               className="flex items-start group-hover:text-gray-900 transition-colors"
             >
-              <CheckCircleIcon className={`w-5 h-5 ${colorClasses.text} mt-0.5 mr-3 flex-shrink-0`} />
-              <span className="text-gray-700 text-sm leading-relaxed">{feature}</span>
-            </motion.li>
+              <CheckCircleIcon className={`w-4 h-4 ${colorClasses.text} mt-0.5 mr-2 flex-shrink-0`} />
+              <span className="text-gray-700 text-xs sm:text-sm leading-relaxed">{feature}</span>
+            </motion.div>
           ))}
         </div>
         
