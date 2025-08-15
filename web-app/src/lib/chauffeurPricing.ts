@@ -27,7 +27,7 @@ interface DiscountTier {
 }
 
 interface MembershipDiscount {
-  membershipLevel: 'free' | 'family' | 'ambassador'
+  membershipLevel: 'free' | 'business' | 'ambassador'
   discountPercentage: number
   maxDiscount?: number
 }
@@ -44,7 +44,7 @@ interface BookingDetails {
   serviceType: 'tier' | 'package'
   date: string
   duration: number // in hours
-  membershipLevel?: 'free' | 'family' | 'ambassador'
+  membershipLevel?: 'free' | 'business' | 'ambassador'
   eventType?: string
   isMultiDay?: boolean
   numberOfDays?: number
@@ -104,7 +104,7 @@ class ChauffeurPricingEngine {
         { minHours: 8, discountPercentage: 10, description: '10% discount for 8+ hours' }
       ],
       membershipDiscounts: [
-        { membershipLevel: 'family', discountPercentage: 10 },
+        { membershipLevel: 'business', discountPercentage: 10 },
         { membershipLevel: 'ambassador', discountPercentage: 15 }
       ]
     },
@@ -120,7 +120,7 @@ class ChauffeurPricingEngine {
         { minHours: 12, discountPercentage: 18, description: '18% discount for 12+ hours' }
       ],
       membershipDiscounts: [
-        { membershipLevel: 'family', discountPercentage: 12 },
+        { membershipLevel: 'business', discountPercentage: 12 },
         { membershipLevel: 'ambassador', discountPercentage: 20 }
       ]
     },
@@ -135,7 +135,7 @@ class ChauffeurPricingEngine {
         { minHours: 12, discountPercentage: 15, description: '15% discount for 12+ hours' }
       ],
       membershipDiscounts: [
-        { membershipLevel: 'family', discountPercentage: 15 },
+        { membershipLevel: 'business', discountPercentage: 15 },
         { membershipLevel: 'ambassador', discountPercentage: 25 }
       ]
     },
@@ -150,7 +150,7 @@ class ChauffeurPricingEngine {
         { minHours: 16, discountPercentage: 20, description: '20% discount for 16+ hours' }
       ],
       membershipDiscounts: [
-        { membershipLevel: 'family', discountPercentage: 18 },
+        { membershipLevel: 'business', discountPercentage: 18 },
         { membershipLevel: 'ambassador', discountPercentage: 30, maxDiscount: 200 }
       ]
     }
@@ -466,12 +466,12 @@ class ChauffeurPricingEngine {
 
   private calculateMembershipDiscount(
     subtotal: number,
-    membershipLevel?: 'free' | 'family' | 'ambassador'
+    membershipLevel?: 'free' | 'business' | 'ambassador'
   ): DiscountApplication | null {
     if (!membershipLevel || membershipLevel === 'free') return null
 
     const discountPercentages = {
-      family: 10,
+      business: 10,
       ambassador: 15
     }
 

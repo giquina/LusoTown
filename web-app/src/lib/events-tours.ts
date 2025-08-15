@@ -9,7 +9,7 @@ export interface EventTour {
   endTime?: string
   location: string
   address: string
-  category: 'Women 30+' | 'Women 40+' | 'Family-Friendly' | 'Mixed Groups' | 'Cultural Heritage' | 'Professional Networking'
+  category: 'Women 30+' | 'Women 40+' | 'Business & Professional' | 'Mixed Groups' | 'Cultural Heritage' | 'Professional Networking' | 'Technology & AI' | 'Finance & Investment'
   price: number
   currency: string
   maxAttendees: number
@@ -59,7 +59,7 @@ export const eventsTours: EventTour[] = [
     location: 'Casa do Bacalhau',
     address: '47 South Lambeth Road, Stockwell, London SW8 1RH',
     category: 'Women 30+',
-    price: 35,
+    price: 85,
     currency: 'GBP',
     maxAttendees: 20,
     currentAttendees: 12,
@@ -96,33 +96,33 @@ export const eventsTours: EventTour[] = [
   },
   {
     id: 'et-002',
-    title: 'British Museum Portuguese Heritage Tour',
-    description: 'Discover Portugal\'s maritime history and global influence through guided tour by Portuguese art historian. Perfect for families wanting to share Portuguese heritage with children in an educational London setting.',
+    title: 'AI Business Innovation Workshop: Portuguese Professionals',
+    description: 'Learn to leverage ChatGPT, Claude, and AI tools for business growth. Practical workshop for Portuguese professionals looking to integrate AI into their work and entrepreneurial ventures.',
     date: '2025-08-22',
     time: '14:00',
     endTime: '16:30',
-    location: 'British Museum',
-    address: 'Great Russell Street, Bloomsbury, London WC1B 3DG',
-    category: 'Family-Friendly',
-    price: 15,
+    location: 'Level39 - Canary Wharf',
+    address: 'One Canada Square, Level 39, London E14 5AB',
+    category: 'Technology & AI',
+    price: 125,
     currency: 'GBP',
     maxAttendees: 30,
     currentAttendees: 18,
-    hostName: 'Dr. João Pereira',
+    hostName: 'Ricardo Silva',
     hostImage: '/profiles/community/member-5.jpg',
     imageUrl: '/events/art-tour.jpg',
     featured: true,
     groupExperience: true,
     requiresApproval: false,
-    membershipRequired: 'free',
-    ageRestriction: 'All ages welcome',
+    membershipRequired: 'core',
+    ageRestriction: '18+ professionals only',
     portugueseOrigin: ['All Lusophone'],
-    tags: ['Family-Friendly', 'Educational', 'Cultural Heritage', 'Museum', 'Portuguese History'],
+    tags: ['AI', 'Business Innovation', 'Technology', 'Professional Development', 'Entrepreneurship'],
     highlights: [
       'Portuguese artifacts and maritime history',
       'Age of Discovery exhibitions explained in Portuguese context',
-      'Family activities for children to learn Portuguese history',
-      'Meet other Portuguese families in London'
+      'Practical implementation strategies for immediate use',
+      'Network with Portuguese tech professionals and entrepreneurs'
     ],
     whatToExpect: [
       'Portuguese-guided museum tour',
@@ -149,7 +149,7 @@ export const eventsTours: EventTour[] = [
     location: 'Taberna Real',
     address: '56 Little Turnstile, Holborn, London WC1V 7DD',
     category: 'Women 40+',
-    price: 55,
+    price: 165,
     currency: 'GBP',
     maxAttendees: 16,
     currentAttendees: 9,
@@ -194,7 +194,7 @@ export const eventsTours: EventTour[] = [
     location: 'Tate Modern',
     address: 'Bankside, London SE1 9TG',
     category: 'Mixed Groups',
-    price: 20,
+    price: 75,
     currency: 'GBP',
     maxAttendees: 24,
     currentAttendees: 15,
@@ -239,7 +239,7 @@ export const eventsTours: EventTour[] = [
     location: 'Portuguese Cultural Centre',
     address: '180 South Lambeth Road, Stockwell, London SW8 1UQ',
     category: 'Cultural Heritage',
-    price: 25,
+    price: 95,
     currency: 'GBP',
     maxAttendees: 50,
     currentAttendees: 32,
@@ -249,8 +249,8 @@ export const eventsTours: EventTour[] = [
     featured: true,
     groupExperience: true,
     requiresApproval: false,
-    membershipRequired: 'free',
-    ageRestriction: 'All ages welcome',
+    membershipRequired: 'core',
+    ageRestriction: '18+ professionals only',
     portugueseOrigin: ['Portugal'],
     tags: ['Fado', 'Cultural Heritage', 'Music', 'Traditional', 'Community'],
     highlights: [
@@ -283,8 +283,8 @@ export const eventsTours: EventTour[] = [
     endTime: '18:00',
     location: 'Canterbury',
     address: 'Meeting Point: Victoria Coach Station, London',
-    category: 'Family-Friendly',
-    price: 45,
+    category: 'Technology & AI',
+    price: 145,
     currency: 'GBP',
     maxAttendees: 35,
     currentAttendees: 22,
@@ -295,7 +295,7 @@ export const eventsTours: EventTour[] = [
     groupExperience: true,
     requiresApproval: false,
     membershipRequired: 'core',
-    ageRestriction: 'All ages welcome',
+    ageRestriction: '18+ professionals only',
     portugueseOrigin: ['All Lusophone'],
     tags: ['Day Trip', 'Heritage', 'Family-Friendly', 'History', 'Canterbury'],
     highlights: [
@@ -333,9 +333,9 @@ export const EVENT_TOUR_CATEGORIES = {
     icon: '👩‍💼',
     color: 'bg-premium-500'
   },
-  'Family-Friendly': {
-    description: 'Cultural experiences perfect for Portuguese families with children',
-    icon: '👨‍👩‍👧‍👦',
+  'Business & Professional': {
+    description: 'Professional business experiences for Portuguese entrepreneurs and executives',
+    icon: '💼',
     color: 'bg-secondary-500'
   },
   'Mixed Groups': {
@@ -352,6 +352,16 @@ export const EVENT_TOUR_CATEGORIES = {
     description: 'Business and career development for Portuguese professionals',
     icon: '💼',
     color: 'bg-action-500'
+  },
+  'Technology & AI': {
+    description: 'AI, coding, and technology workshops for Portuguese professionals',
+    icon: '💻',
+    color: 'bg-blue-500'
+  },
+  'Finance & Investment': {
+    description: 'Investment, property, and financial education for Portuguese professionals',
+    icon: '💰',
+    color: 'bg-green-500'
   }
 }
 

@@ -14,7 +14,7 @@ const testimonials = {
       age: "28",
       location: "Camden, London",
       imageId: "carlos-silva",
-      quote: "Organized my first Portuguese business networking at British Museum through LusoTown - 150 almas portuguesas appeared! Started with saudade for Portuguese business culture, now I host monthly 'Negócios & Pastéis' meetups at Casa do Bacalhau, connecting entrepreneurs over bifanas and vinho verde. From feeling isolated to building nossa business family in London!",
+      quote: "Organized my first Portuguese business networking at British Museum through LusoTown - 150 almas portuguesas appeared! Started with saudade for Portuguese business culture, now I host monthly 'Negócios & Pastéis' meetups at Casa do Bacalhau, connecting entrepreneurs over bifanas and vinho verde. From feeling isolated to building nossa business network in London!",
       rating: 5,
       relationship: "Portuguese Business Community Builder"
     },
@@ -23,7 +23,7 @@ const testimonials = {
       age: "34", 
       location: "Stockwell, London",
       imageId: "ana-ferreira",
-      quote: "Minha alma brasileira was homesick until LusoTown helped me organize Festa Junina at Vauxhall Park - 300+ Portuguese families dancing quadrilha under London sky! From missing São João in Salvador to recreating Brazilian joy with Portuguese hearts. Now nossa festa is annual tradition, mixing canjica with pastéis de nata, proving que nossa alegria conquers any London grey day!",
+      quote: "Minha alma brasileira was homesick until LusoTown helped me organize Festa Junina at Vauxhall Park - 300+ Portuguese professionals celebrating quadrilha under London sky! From missing São João in Salvador to recreating Brazilian joy with Portuguese hearts. Now nossa festa is annual tradition, mixing canjica with pastéis de nata, proving que nossa alegria conquers any London grey day!",
       rating: 5,
       relationship: "Brazilian Joy & Portuguese Heart Organizer"
     },
@@ -68,7 +68,7 @@ const testimonials = {
       age: "30",
       location: "Greenwich, London",
       imageId: "ricardo-oliveira",
-      quote: "I organize Portuguese football viewing parties at local pubs and barbecues in Greenwich Park. Started with 8 friends, now we're 200+ strong! LusoTown connected me with Portuguese families across London.",
+      quote: "I organize Portuguese football viewing parties at local pubs and barbecues in Greenwich Park. Started with 8 friends, now we're 200+ strong! LusoTown connected me with Portuguese professionals across London.",
       rating: 5,
       relationship: "Sports & Social Event Organizer"
     },
@@ -97,7 +97,7 @@ const testimonials = {
       age: "28",
       location: "Camden, Londres",
       imageId: "carlos-silva",
-      quote: "Organizei o primeiro networking português no British Museum pela LusoTown - apareceram 150 almas portuguesas! Comecei com saudade da cultura empresarial portuguesa, agora organizo 'Negócios & Pastéis' mensais na Casa do Bacalhau, conectando empreendedores com bifanas e vinho verde. De isolado a construir nossa família empresarial em Londres!",
+      quote: "Organizei o primeiro networking português no British Museum pela LusoTown - apareceram 150 almas portuguesas! Comecei com saudade da cultura empresarial portuguesa, agora organizo 'Negócios & Pastéis' mensais na Casa do Bacalhau, conectando empreendedores com bifanas e vinho verde. De isolado a construir nossa rede empresarial em Londres!",
       rating: 5,
       relationship: "Construtor da Comunidade Empresarial Portuguesa"
     },
@@ -106,7 +106,7 @@ const testimonials = {
       age: "34", 
       location: "Stockwell, Londres",
       imageId: "ana-ferreira",
-      quote: "Como coordenadora cultural, a LusoTown ajudou-me a organizar celebrações de Festa Junina no Vauxhall Park que juntaram 300+ famílias portuguesas. A plataforma tornou a promoção e construção de comunidade sem esforço.",
+      quote: "Como coordenadora cultural, a LusoTown ajudou-me a organizar celebrações de Festa Junina no Vauxhall Park que juntaram 300+ profissionais portugueses. A plataforma tornou a promoção e construção de comunidade sem esforço.",
       rating: 5,
       relationship: "Organizadora de Eventos Culturais"
     },
@@ -151,7 +151,7 @@ const testimonials = {
       age: "30",
       location: "Greenwich, Londres",
       imageId: "ricardo-oliveira",
-      quote: "Organizo festas para ver futebol português em pubs locais e churrascos no Greenwich Park. Começámos com 8 amigos, agora somos 200+ fortes! A LusoTown conectou-me com famílias portuguesas por toda Londres.",
+      quote: "Organizo festas para ver futebol português em pubs locais e churrascos no Greenwich Park. Começámos com 8 amigos, agora somos 200+ fortes! A LusoTown conectou-me com profissionais portugueses por toda Londres.",
       rating: 5,
       relationship: "Organizador de Eventos Desportivos & Sociais"
     },

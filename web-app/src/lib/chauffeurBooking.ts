@@ -26,7 +26,7 @@ export interface BookingFormData {
   specialRequirements: string[]
   isMultiDay: boolean
   numberOfDays: number
-  membershipLevel?: 'free' | 'family' | 'ambassador'
+  membershipLevel?: 'free' | 'business' | 'ambassador'
   
   // Pricing
   pricingBreakdown?: PricingBreakdown
