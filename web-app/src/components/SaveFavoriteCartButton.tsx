@@ -186,13 +186,25 @@ export default function SaveFavoriteCartButton({
   }
 
   const getSizeClasses = () => {
-    switch (size) {
-      case 'small':
-        return 'w-8 h-8 text-sm'
-      case 'large':
-        return 'w-12 h-12 text-lg'
-      default:
-        return 'w-10 h-10 text-base'
+    if (iconOnly) {
+      switch (size) {
+        case 'small':
+          return 'w-8 h-8 text-sm'
+        case 'large':
+          return 'w-12 h-12 text-lg'
+        default:
+          return 'w-10 h-10 text-base'
+      }
+    } else {
+      // For buttons with text, use flexible sizing
+      switch (size) {
+        case 'small':
+          return 'min-h-8 px-3 py-2 text-sm'
+        case 'large':
+          return 'min-h-12 px-6 py-3 text-lg'
+        default:
+          return 'min-h-10 px-4 py-2.5 text-base'
+      }
     }
   }
 
@@ -228,12 +240,12 @@ export default function SaveFavoriteCartButton({
     <div className={`flex items-center ${getLayoutClasses()} ${className}`}>
       {/* Save/Favorite Button */}
       {showSave && (
-        <div className="relative">
+        <div className="relative flex-1">
           <button
             onClick={handleSave}
             onMouseEnter={() => setShowTooltip(itemSaved ? t('favorites.remove') : t('favorites.save'))}
             onMouseLeave={() => setShowTooltip(null)}
-            className={`${getSizeClasses()} ${getVariantClasses(itemSaved)} group`}
+            className={`${getSizeClasses()} ${getVariantClasses(itemSaved)} group w-full`}
             title={itemSaved ? t('favorites.remove') : t('favorites.save')}
           >
             <AnimatePresence mode="wait">
@@ -263,9 +275,9 @@ export default function SaveFavoriteCartButton({
               )}
             </AnimatePresence>
             
-            {!iconOnly && !itemSaved && (
-              <span className="ml-2 font-medium text-sm">
-                {t('favorites.save')}
+            {!iconOnly && (
+              <span className="ml-2 font-medium text-sm whitespace-nowrap">
+                {itemSaved ? t('favorites.saved') : t('favorites.save')}
               </span>
             )}
           </button>
@@ -281,13 +293,13 @@ export default function SaveFavoriteCartButton({
 
       {/* Add to Cart Button */}
       {showCart && canAddToCart && (
-        <div className="relative">
+        <div className="relative flex-1">
           <button
             onClick={handleAddToCart}
             onMouseEnter={() => setShowTooltip(itemInCart ? t('cart.in-cart', 'In Cart') : t('cart.add-to-cart'))}
             onMouseLeave={() => setShowTooltip(null)}
             disabled={itemInCart || (spotsLeft !== undefined && spotsLeft <= 0)}
-            className={`${getSizeClasses()} ${getVariantClasses(itemInCart)} group disabled:opacity-50 disabled:cursor-not-allowed`}
+            className={`${getSizeClasses()} ${getVariantClasses(itemInCart)} group disabled:opacity-50 disabled:cursor-not-allowed w-full`}
             title={itemInCart ? t('cart.in-cart', 'In Cart') : t('cart.add-to-cart')}
           >
             <AnimatePresence mode="wait">
@@ -318,10 +330,10 @@ export default function SaveFavoriteCartButton({
             </AnimatePresence>
             
             {!iconOnly && (
-              <span className="ml-2 font-medium text-sm">
+              <span className="ml-2 font-medium text-sm whitespace-nowrap">
                 {itemInCart ? t('cart.added') : 
                  spotsLeft !== undefined && spotsLeft <= 0 ? t('event.full') :
-                 eventPrice === 0 ? t('event.free') : `£${eventPrice}`}
+                 t('cart.add-to-cart')}
               </span>
             )}
             

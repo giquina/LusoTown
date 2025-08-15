@@ -31,31 +31,31 @@ const WhatsAppWidget: React.FC = () => {
   const conversationFlow = {
     en: [
       {
-        message: "Olá! 👋 Welcome to LusoTown - the global platform connecting Portuguese speakers worldwide! I'm here to help you either organize events for our community or find amazing Portuguese events to attend.",
+        message: "Olá! 👋 Welcome to LusoTown - the London platform connecting Portuguese speakers across the city! I'm here to help you either organize events for our community or find amazing Portuguese events to attend.",
         options: ["I want to organize events", "I want to find events to attend", "Tell me about LusoTown", "Just browsing"],
         icon: <Heart className="w-4 h-4 text-green-600" />
       },
       // Organizer path
       {
-        message: "Fantástico! 🎯 You want to organize events for Portuguese speakers! LusoTown helps you:\n\n📅 Create and promote Portuguese cultural events\n🌍 Reach Portuguese speakers globally (starting with London)\n💰 Monetize your events with our pricing tools\n📈 Track attendance and grow your community\n🎉 Access promotional tools and templates\n\nReady to become a community leader?",
-        options: ["Yes, I want to organize!", "What about pricing my events?", "How do I reach people globally?", "Tell me about promotional tools"],
+        message: "Fantástico! 🎯 You want to organize events for Portuguese speakers! LusoTown helps you:\n\n📅 Create and promote Portuguese cultural events\n🌆 Reach Portuguese speakers across London\n💰 Monetize your events with our pricing tools\n📈 Track attendance and grow your community\n🎉 Access promotional tools and templates\n\nReady to become a community leader?",
+        options: ["Yes, I want to organize!", "What about pricing my events?", "How do I reach people in London?", "Tell me about promotional tools"],
         icon: <Calendar className="w-4 h-4 text-green-600" />
       },
       // Member path  
       {
-        message: "Perfeito! 🎉 You want to find Portuguese events to attend! LusoTown connects you with:\n\n🎭 Portuguese cultural events worldwide\n🍷 Wine tastings, fado nights, festivals\n👥 Portuguese speakers in your area and globally\n🏆 Quality verified events and organizers\n💬 Chat with other Portuguese speakers\n\n*Currently featuring London events, expanding globally soon!*",
+        message: "Perfeito! 🎉 You want to find Portuguese events to attend! LusoTown connects you with:\n\n🎭 Portuguese cultural events across London\n🍷 Wine tastings, fado nights, festivals\n👥 Portuguese speakers across London boroughs\n🏆 Quality verified events and organizers\n💬 Chat with other Portuguese speakers\n\n*Your Portuguese social calendar in London!*",
         options: ["Show me London events!", "I'm in another city", "How do I connect with people?", "What types of events?"],
         icon: <Users className="w-4 h-4 text-red-600" />
       },
       // Platform info
       {
-        message: "Excelente! 🌍 LusoTown is the global home for Portuguese speakers:\n\n🎪 **For Event Organizers:** Tools to create, promote, and monetize Portuguese events\n🎭 **For Community Members:** Discover events and connect with Portuguese speakers\n🌐 **Global Reach:** Currently in London, expanding worldwide\n🌍 All Portuguese-speaking countries welcome!\n\nUniting our global Portuguese family!",
+        message: "Excelente! 🌆 LusoTown is the London home for Portuguese speakers:\n\n🎪 **For Event Organizers:** Tools to create, promote, and monetize Portuguese events\n🎭 **For Community Members:** Discover events and connect with Portuguese speakers\n🌆 **London Focus:** Connecting Portuguese speakers across all London boroughs\n🌍 All Portuguese-speaking countries welcome!\n\nUniting our London Portuguese family!",
         options: ["I want to organize events", "I want to attend events", "Tell me about global expansion", "How do I join?"],
         icon: <Calendar className="w-4 h-4 text-yellow-600" />
       },
       // Event organizer details
       {
-        message: "Amazing! 🚀 As an event organizer on LusoTown you get:\n\n💡 **Event Creation Tools:** Easy setup for Portuguese cultural events\n💰 **Flexible Pricing:** Free, paid, or donation-based events\n📊 **Analytics:** Track registrations and engagement\n🌍 **Global Reach:** Access to Portuguese speakers worldwide\n📢 **Marketing Support:** Social media templates and promotion\n🎯 **Targeted Audience:** Verified Portuguese speakers only\n\nStart organizing today!",
+        message: "Amazing! 🚀 As an event organizer on LusoTown you get:\n\n💡 **Event Creation Tools:** Easy setup for Portuguese cultural events\n💰 **Flexible Pricing:** Free, paid, or donation-based events\n📊 **Analytics:** Track registrations and engagement\n🌆 **London Reach:** Access to Portuguese speakers across London\n📢 **Marketing Support:** Social media templates and promotion\n🎯 **Targeted Audience:** Verified Portuguese speakers only\n\nStart organizing today!",
         options: ["Sign me up as organizer!", "What about event fees?", "How do I promote globally?", "Show me organizer tools"],
         icon: <ArrowRight className="w-4 h-4 text-green-600" />
       },

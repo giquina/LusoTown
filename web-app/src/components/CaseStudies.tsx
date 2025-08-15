@@ -1,0 +1,524 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { 
+  HeartIcon, 
+  MapPinIcon, 
+  CalendarDaysIcon, 
+  UserGroupIcon, 
+  HomeIcon,
+  BuildingOfficeIcon,
+  SparklesIcon,
+  AcademicCapIcon,
+  PaintBrushIcon,
+  ArrowRightIcon
+} from '@heroicons/react/24/outline'
+import { getImageWithFallback } from '@/lib/profileImages'
+
+interface CaseStudy {
+  id: string
+  title: string
+  participants: {
+    person1: {
+      name: string
+      age: number
+      background: string
+      country: string
+      image: string
+    }
+    person2: {
+      name: string
+      age: number
+      background: string
+      country: string
+      image: string
+    }
+  }
+  event: {
+    type: string
+    venue: string
+    location: string
+    date: string
+  }
+  timeline: {
+    initial: string
+    meeting: string
+    friendship: string
+    outcome: string
+  }
+  transformation: {
+    before: string
+    after: string
+    impact: string[]
+  }
+  quotes: {
+    person1: string
+    person2: string
+    joint: string
+  }
+  currentStatus: string
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
+}
+
+const caseStudies: CaseStudy[] = [
+  {
+    id: '1',
+    title: 'From Strangers to Flatmates: A Museum Meeting That Changed Two Lives',
+    participants: {
+      person1: {
+        name: 'Ana Beatriz Silva',
+        age: 24,
+        background: 'Psychology student from São Paulo',
+        country: 'Brazil 🇧🇷',
+        image: getImageWithFallback('sarah-chen')
+      },
+      person2: {
+        name: 'Mariana Costa',
+        age: 26,
+        background: 'Marketing graduate from Porto',
+        country: 'Portugal 🇵🇹',
+        image: getImageWithFallback('maya-patel')
+      }
+    },
+    event: {
+      type: 'Portuguese Cultural Heritage Tour',
+      venue: 'National Gallery',
+      location: 'Trafalgar Square, London',
+      date: 'March 15, 2024'
+    },
+    timeline: {
+      initial: 'March 2024 - First meeting at National Gallery Portuguese art exhibition',
+      meeting: 'March 2024 - Discovered shared love for Portuguese contemporary art and London life challenges',
+      friendship: 'April-June 2024 - Weekly coffee meetings, museum visits, and cultural events',
+      outcome: 'July 2024 - Moved in together to a shared flat in Stockwell'
+    },
+    transformation: {
+      before: 'Both felt isolated in London - Ana struggling with student life, Mariana overwhelmed in corporate world',
+      after: 'Built an unbreakable friendship while creating their perfect Portuguese-speaking household',
+      impact: [
+        'Ana improved her English confidence with Mariana\'s support',
+        'Mariana found emotional support during career transition',
+        'Saved £600/month each on London rent by sharing',
+        'Created Portuguese language environment at home',
+        'Became community leaders organizing events for newcomers'
+      ]
+    },
+    quotes: {
+      person1: '"Mariana became my London sister. When I was homesick, she\'d cook Portuguese comfort food. When I doubted my English, she practiced presentations with me."',
+      person2: '"Ana brought such joy and perspective. Through her eyes, I rediscovered why I loved London. We balanced each other perfectly - my experience, her optimism."',
+      joint: '"Living together has been the best decision. We share costs, culture, and create a piece of Portugal in London. Our flat is now the gathering place for the whole Portuguese community."'
+    },
+    currentStatus: 'Still living together in their Stockwell flat, planning to buy a property together in 2025. They host monthly Portuguese dinner parties and have helped 15+ newcomers settle in London.',
+    icon: HomeIcon
+  },
+  {
+    id: '2',
+    title: 'From Business Cards to Business Partners: A Professional Network That Sparked Success',
+    participants: {
+      person1: {
+        name: 'Carlos Mendoza',
+        age: 32,
+        background: 'Tech entrepreneur from Luanda',
+        country: 'Angola 🇦🇴',
+        image: getImageWithFallback('community-5')
+      },
+      person2: {
+        name: 'Sofia Fernandes',
+        age: 29,
+        background: 'Digital strategist from Lisbon',
+        country: 'Portugal 🇵🇹',
+        image: getImageWithFallback('jessica-williams')
+      }
+    },
+    event: {
+      type: 'Portuguese Professionals Networking Night',
+      venue: 'The Shard - Level 31',
+      location: 'London Bridge, London',
+      date: 'January 20, 2024'
+    },
+    timeline: {
+      initial: 'January 2024 - Met at Portuguese professionals\' networking event at The Shard',
+      meeting: 'January 2024 - Bonded over shared vision for sustainable tech solutions',
+      friendship: 'February-May 2024 - Collaborated on freelance projects, discovered perfect skill complement',
+      outcome: 'June 2024 - Launched "Verde Digital" - sustainable technology consultancy'
+    },
+    transformation: {
+      before: 'Carlos had tech expertise but struggled with London market entry; Sofia had marketing skills but wanted to move from corporate to entrepreneurship',
+      after: 'Combined their strengths to build a thriving consultancy serving 25+ clients across Europe',
+      impact: [
+        'Generated £150,000 revenue in first 6 months',
+        'Carlos gained UK business credibility and network',
+        'Sofia achieved entrepreneurial independence',
+        'Hired 3 additional Portuguese-speaking consultants',
+        'Featured in Portuguese Embassy\'s "Diaspora Success Stories"',
+        'Speaking at European sustainability conferences'
+      ]
+    },
+    quotes: {
+      person1: '"Sofia understood both Portuguese work culture and London business dynamics. She helped me navigate UK partnerships I never could have secured alone."',
+      person2: '"Carlos brought technical innovation I\'d never seen in traditional marketing. Together we created something neither could achieve individually."',
+      joint: '"Our partnership works because we share values but bring different perspectives. We\'re proving Portuguese speakers can lead innovation in London\'s tech scene."'
+    },
+    currentStatus: 'Verde Digital has secured £500K investment for expansion across Europe. They\'re mentoring 10 Portuguese-speaking entrepreneurs and planning to open an office in Lisbon by 2025.',
+    icon: BuildingOfficeIcon
+  },
+  {
+    id: '3',
+    title: 'From Book Club to Cultural Legacy: Literature That Launched a Movement',
+    participants: {
+      person1: {
+        name: 'Isabel Santos',
+        age: 38,
+        background: 'Literature professor from Coimbra',
+        country: 'Portugal 🇵🇹',
+        image: getImageWithFallback('ava-davis')
+      },
+      person2: {
+        name: 'Fernanda Lima',
+        age: 42,
+        background: 'Cultural curator from Recife',
+        country: 'Brazil 🇧🇷',
+        image: getImageWithFallback('priya-sharma')
+      }
+    },
+    event: {
+      type: 'Portuguese Literature & Coffee Evening',
+      venue: 'British Library',
+      location: 'Kings Cross, London',
+      date: 'September 8, 2023'
+    },
+    timeline: {
+      initial: 'September 2023 - Met at Portuguese literature discussion evening at British Library',
+      meeting: 'September 2023 - Discovered shared passion for preserving Portuguese literary heritage',
+      friendship: 'October 2023-March 2024 - Weekly literature meetings evolved into cultural preservation project',
+      outcome: 'April 2024 - Launched "Palavras de Londres" (Words of London) cultural initiative'
+    },
+    transformation: {
+      before: 'Isabel felt disconnected from Portuguese academic community; Fernanda struggled to find platform for Brazilian cultural expression in London',
+      after: 'Created London\'s premier Portuguese cultural organization connecting 200+ families with their heritage',
+      impact: [
+        'Established monthly Portuguese authors\' readings at Southbank Centre',
+        'Created Portuguese language library at Camden Community Centre',
+        'Organized first-ever London Portuguese Literature Festival (500+ attendees)',
+        'Partnered with Portuguese Embassy for cultural programming',
+        'Awarded £25,000 Arts Council grant for community cultural projects',
+        'Featured in BBC London for cultural diversity initiatives'
+      ]
+    },
+    quotes: {
+      person1: '"Fernanda showed me how Portuguese culture could thrive in London, not just survive. Together we\'re ensuring our children grow up proud of our literary heritage."',
+      person2: '"Isabel brought the academic rigor I needed to legitimize our cultural work. We\'re not just preserving culture - we\'re evolving it for a new generation."',
+      joint: '"Through literature, we\'ve built bridges between Portugal, Brazil, and all Portuguese speakers in London. We\'re creating a cultural legacy our grandchildren will be proud of."'
+    },
+    currentStatus: 'Palavras de Londres now runs 12 programs annually, has published an anthology of London Portuguese writers, and is establishing partnerships with universities in Portugal and Brazil. They\'re planning a documentary about Portuguese literary heritage in the UK.',
+    icon: AcademicCapIcon
+  }
+]
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3
+    }
+  }
+}
+
+const caseStudyVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut"
+    }
+  }
+}
+
+export default function CaseStudies() {
+  return (
+    <section className="py-24 bg-gradient-to-br from-white via-secondary-50/30 to-accent-50/20 relative overflow-hidden">
+      {/* Portuguese-inspired background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 right-20 w-32 h-32 bg-gradient-to-br from-secondary-200/30 via-accent-100/20 to-coral-100/20 rounded-full opacity-60 animate-pulse" />
+        <div className="absolute bottom-10 left-20 w-28 h-28 bg-gradient-to-tr from-action-200/30 via-secondary-100/20 to-accent-100/20 rounded-full opacity-50 animate-bounce" style={{ animationDuration: '6s' }} />
+        <div className="absolute top-1/3 left-1/4 w-6 h-6 bg-secondary-300/40 rounded-full opacity-30" />
+        <div className="absolute top-2/3 right-1/4 w-4 h-4 bg-accent-300/40 rounded-full opacity-25" />
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
+          >
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-secondary-50/80 via-accent-50/80 to-coral-50/80 backdrop-blur-sm rounded-full px-8 py-4 text-secondary-600 font-bold mb-8 border border-secondary-200/40 shadow-xl">
+              <SparklesIcon className="h-5 w-5 text-accent-600" />
+              Real Portuguese Community Case Studies
+            </div>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-8 leading-tight">
+              Three London Stories That{' '}
+              <span className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent">
+                Changed Everything
+              </span>
+            </h2>
+            <p className="text-xl sm:text-2xl text-gray-700 max-w-5xl mx-auto leading-relaxed font-medium">
+              From strangers at a museum to business partners at The Shard to cultural leaders at the British Library. 
+              These are the real transformation stories that happen when Portuguese speakers connect in London.
+            </p>
+          </motion.div>
+
+          {/* Case Studies */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="space-y-16 lg:space-y-24"
+          >
+            {caseStudies.map((study, index) => (
+              <motion.div
+                key={study.id}
+                variants={caseStudyVariants}
+                className="group"
+              >
+                <div className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-start ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+                  {/* Case Study Details */}
+                  <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                    <div className="bg-white/90 backdrop-blur-lg rounded-3xl p-8 lg:p-10 shadow-2xl hover:shadow-3xl transition-all duration-500 border border-white/60">
+                      {/* Header */}
+                      <div className="flex items-center gap-4 mb-8">
+                        <div className="w-16 h-16 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-2xl flex items-center justify-center shadow-xl">
+                          <study.icon className="w-8 h-8 text-white" />
+                        </div>
+                        <div>
+                          <div className="text-sm font-bold text-secondary-600 mb-1">Case Study {index + 1}</div>
+                          <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
+                            {study.title}
+                          </h3>
+                        </div>
+                      </div>
+
+                      {/* Event Details */}
+                      <div className="bg-gradient-to-r from-secondary-50/60 to-accent-50/60 rounded-2xl p-6 mb-8">
+                        <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                          <MapPinIcon className="w-5 h-5 text-secondary-600" />
+                          How They Met
+                        </h4>
+                        <div className="grid sm:grid-cols-2 gap-4 text-sm">
+                          <div>
+                            <div className="font-semibold text-gray-700">Event</div>
+                            <div className="text-gray-600">{study.event.type}</div>
+                          </div>
+                          <div>
+                            <div className="font-semibold text-gray-700">Venue</div>
+                            <div className="text-gray-600">{study.event.venue}</div>
+                          </div>
+                          <div>
+                            <div className="font-semibold text-gray-700">Location</div>
+                            <div className="text-gray-600">{study.event.location}</div>
+                          </div>
+                          <div>
+                            <div className="font-semibold text-gray-700">Date</div>
+                            <div className="text-gray-600">{study.event.date}</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Timeline */}
+                      <div className="mb-8">
+                        <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                          <CalendarDaysIcon className="w-5 h-5 text-accent-600" />
+                          Their Journey
+                        </h4>
+                        <div className="space-y-3">
+                          {Object.values(study.timeline).map((phase, phaseIndex) => (
+                            <div key={phaseIndex} className="flex items-start gap-3">
+                              <div className="w-2 h-2 bg-gradient-to-r from-secondary-500 to-accent-500 rounded-full mt-2 flex-shrink-0" />
+                              <p className="text-gray-600 text-sm leading-relaxed">{phase}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Transformation Impact */}
+                      <div className="mb-8">
+                        <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                          <SparklesIcon className="w-5 h-5 text-coral-500" />
+                          Life Transformation
+                        </h4>
+                        <div className="grid gap-4">
+                          <div>
+                            <div className="font-semibold text-gray-700 text-sm mb-1">Before</div>
+                            <p className="text-gray-600 text-sm">{study.transformation.before}</p>
+                          </div>
+                          <div>
+                            <div className="font-semibold text-gray-700 text-sm mb-1">After</div>
+                            <p className="text-gray-600 text-sm">{study.transformation.after}</p>
+                          </div>
+                          <div>
+                            <div className="font-semibold text-gray-700 text-sm mb-2">Key Achievements</div>
+                            <ul className="space-y-2">
+                              {study.transformation.impact.map((impact, impactIndex) => (
+                                <li key={impactIndex} className="flex items-start gap-2 text-sm text-gray-600">
+                                  <div className="w-1.5 h-1.5 bg-secondary-500 rounded-full mt-2 flex-shrink-0" />
+                                  {impact}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Current Status */}
+                      <div className="bg-gradient-to-r from-green-50 to-secondary-50 rounded-2xl p-6">
+                        <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+                          <HeartIcon className="w-5 h-5 text-green-600" />
+                          Where They Are Now
+                        </h4>
+                        <p className="text-gray-600 text-sm leading-relaxed">{study.currentStatus}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Participants & Quotes */}
+                  <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                    <div className="space-y-8">
+                      {/* Participants */}
+                      <div className="bg-white/90 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/60">
+                        <h4 className="font-bold text-gray-900 mb-6 flex items-center gap-2">
+                          <UserGroupIcon className="w-5 h-5 text-primary-600" />
+                          Meet the Portuguese Speakers
+                        </h4>
+                        
+                        <div className="space-y-6">
+                          {/* Person 1 */}
+                          <div className="flex items-start gap-4">
+                            <Image
+                              src={study.participants.person1.image}
+              width={80} height={80}
+                              alt={study.participants.person1.name}
+                              className="w-16 h-16 rounded-full object-cover border-4 border-white shadow-lg"
+                              loading="lazy"
+                            />
+                            <div className="flex-1">
+                              <h5 className="font-bold text-gray-900">{study.participants.person1.name}</h5>
+                              <p className="text-gray-600 text-sm">{study.participants.person1.age} years old</p>
+                              <p className="text-gray-600 text-sm">{study.participants.person1.background}</p>
+                              <div className="text-sm font-medium text-secondary-600 mt-1">
+                                {study.participants.person1.country}
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Person 2 */}
+                          <div className="flex items-start gap-4">
+                            <Image
+                              src={study.participants.person2.image}
+              width={80} height={80}
+                              alt={study.participants.person2.name}
+                              className="w-16 h-16 rounded-full object-cover border-4 border-white shadow-lg"
+                              loading="lazy"
+                            />
+                            <div className="flex-1">
+                              <h5 className="font-bold text-gray-900">{study.participants.person2.name}</h5>
+                              <p className="text-gray-600 text-sm">{study.participants.person2.age} years old</p>
+                              <p className="text-gray-600 text-sm">{study.participants.person2.background}</p>
+                              <div className="text-sm font-medium text-secondary-600 mt-1">
+                                {study.participants.person2.country}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Quotes */}
+                      <div className="space-y-4">
+                        {/* Individual Quotes */}
+                        <div className="bg-gradient-to-r from-secondary-50/80 to-accent-50/80 rounded-2xl p-6 border border-secondary-200/40">
+                          <blockquote className="text-gray-700 italic text-sm leading-relaxed mb-3">
+                            {study.quotes.person1}
+                          </blockquote>
+                          <cite className="text-secondary-600 font-semibold text-sm">
+                            — {study.participants.person1.name}
+                          </cite>
+                        </div>
+
+                        <div className="bg-gradient-to-r from-accent-50/80 to-coral-50/80 rounded-2xl p-6 border border-accent-200/40">
+                          <blockquote className="text-gray-700 italic text-sm leading-relaxed mb-3">
+                            {study.quotes.person2}
+                          </blockquote>
+                          <cite className="text-accent-600 font-semibold text-sm">
+                            — {study.participants.person2.name}
+                          </cite>
+                        </div>
+
+                        {/* Joint Quote */}
+                        <div className="bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl p-6 text-white">
+                          <blockquote className="italic text-sm leading-relaxed mb-3">
+                            {study.quotes.joint}
+                          </blockquote>
+                          <cite className="font-semibold text-sm opacity-90">
+                            — {study.participants.person1.name} & {study.participants.person2.name}
+                          </cite>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Call to Action */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="text-center mt-20"
+          >
+            <div className="bg-gradient-to-r from-white/80 via-secondary-50/60 to-accent-50/60 backdrop-blur-lg border border-white/40 rounded-3xl p-12 shadow-2xl max-w-5xl mx-auto">
+              <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                Your Portuguese Story Starts With 
+                <span className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent block sm:inline">
+                  One Event
+                </span>
+              </h3>
+              <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Whether you're looking for housing, business partners, or cultural connections, these transformations began 
+                with a single LusoTown event. Your life-changing friendship could be just one museum visit, networking event, 
+                or book club away.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/events"
+                  className="group relative text-lg font-bold px-10 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-secondary-700 via-action-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <span className="relative z-10 flex items-center justify-center gap-3">
+                    Find Your Next Event
+                    <ArrowRightIcon className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-200" />
+                  </span>
+                </a>
+                <a
+                  href="/signup"
+                  className="text-lg font-bold px-10 py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 hover:bg-white/90"
+                >
+                  Join the Community
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}

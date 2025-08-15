@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { 
   MapPinIcon, 
@@ -89,8 +90,9 @@ export default function ProfileHeader({
             <div className="relative">
               <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl border-4 border-white shadow-lg bg-gray-200 overflow-hidden">
                 {profile.profileImage ? (
-                  <img
+                  <Image
                     src={profile.profileImage}
+              width={96} height={96}
                     alt={profile.name}
                     className={`w-full h-full object-cover transition-opacity duration-300 ${
                       imageLoaded ? 'opacity-100' : 'opacity-0'

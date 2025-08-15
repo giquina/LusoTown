@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { 
   CalendarDaysIcon, 
   UserGroupIcon, 
@@ -157,7 +158,7 @@ export default function Features() {
                   const photos = getImagesByCategory('community').slice(0, 6)
                   return (
                     <div key={index} className="aspect-square rounded-xl overflow-hidden">
-                      <img 
+                      <Image 
                         src={photos[index % photos.length]?.path || '/profiles/default-avatar.svg'}
                         alt={photos[index % photos.length]?.alt || 'LusoTown London member'}
                         className="w-full h-full object-cover"
@@ -179,7 +180,7 @@ export default function Features() {
               <div className="max-w-3xl mx-auto mb-6">
                 <div className="flex items-center justify-center gap-4 mb-4">
                   <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg ring-2 ring-secondary-200">
-                    <img 
+                    <Image 
                       src={getImagesByCategory('community')[0]?.path || '/profiles/default-avatar.svg'}
                       alt="LusoTown London member"
                       className="w-full h-full object-cover"

@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -65,10 +66,10 @@ const ChatRoomCard = ({
       {/* Header */}
       <div className="relative h-32 bg-gradient-to-r from-primary-200 to-secondary-200">
         {room.coverImage ? (
-          <img 
+          <Image 
             src={room.coverImage} 
             alt={room.name}
-            className="w-full h-full object-cover"
+            fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-4xl">
@@ -99,7 +100,7 @@ const ChatRoomCard = ({
         <div className="absolute -bottom-6 left-6">
           <div className="w-12 h-12 bg-white rounded-xl shadow-lg flex items-center justify-center border-4 border-white">
             {room.avatar ? (
-              <img src={room.avatar} alt={room.name} className="w-8 h-8 rounded-lg object-cover" />
+              <Image src={room.avatar} alt={room.name} width={8 * 4} height={8 * 4} className="object-cover" />
             ) : (
               <ChatBubbleLeftRightIcon className="w-6 h-6 text-gray-600" />
             )}

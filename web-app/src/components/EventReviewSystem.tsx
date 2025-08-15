@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   StarIcon,
@@ -478,10 +479,10 @@ const ReviewCard: React.FC<{ review: EventReview }> = ({ review }) => {
       <div className="flex items-start gap-4">
         <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-white shadow-lg">
           {review.profileImage ? (
-            <img 
+            <Image 
               src={review.profileImage}
               alt={`${review.reviewerName} profile`}
-              className="w-full h-full object-cover"
+              fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover"
               loading="lazy"
             />
           ) : (

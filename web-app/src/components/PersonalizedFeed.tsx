@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useMemo } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { 
   HeartIcon, 
@@ -410,10 +411,10 @@ createdAt: isPortuguese ? 'Agora mesmo' : 'Just now',
                   <div className="relative">
                     <div className="w-12 h-12 rounded-full overflow-hidden">
                       {post.authorAvatar ? (
-                        <img 
+                        <Image 
                           src={post.authorAvatar} 
                           alt={post.authorName}
-                          className="w-full h-full object-cover"
+                          fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover"
                         />
                       ) : (
                         <div className="w-full h-full bg-gradient-to-r from-primary-400 to-secondary-400 flex items-center justify-center text-white font-bold">
@@ -459,7 +460,7 @@ createdAt: isPortuguese ? 'Agora mesmo' : 'Just now',
               {/* Post Image */}
               {post.imageUrl && (
                 <div className="mb-4 rounded-lg overflow-hidden">
-                  <img 
+                  <Image 
                     src={post.imageUrl} 
                     alt="Post image" 
                     className="w-full h-auto object-cover"

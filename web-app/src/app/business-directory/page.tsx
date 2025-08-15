@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 import React, { useState, useEffect } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
@@ -92,7 +93,7 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ business, featured = false 
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
         {business.photos.length > 0 ? (
-          <img 
+          <Image 
             src={business.photos[0]} 
             alt={business.name}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

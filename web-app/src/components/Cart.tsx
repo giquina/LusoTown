@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, Fragment } from 'react'
+import Image from 'next/image'
 import { Dialog, Transition } from '@headlessui/react'
 import { motion } from 'framer-motion'
 import {
@@ -20,6 +21,7 @@ import {
 import { ShoppingCartIcon as CartSolidIcon } from '@heroicons/react/24/solid'
 import { useCart } from '@/context/CartContext'
 import { useLanguage } from '@/context/LanguageContext'
+import { formatEventDate } from '@/lib/dateUtils'
 import { toast } from 'react-hot-toast'
 
 interface CartProps {
@@ -51,12 +53,8 @@ export default function Cart({ isOpen, onClose }: CartProps) {
 
   const formatDate = (dateString?: string) => {
     if (!dateString) return ''
-    const date = new Date(dateString)
-    return date.toLocaleDateString(isPortuguese ? 'pt-PT' : 'en-GB', { 
-      weekday: 'short', 
-      month: 'short', 
-      day: 'numeric' 
-    })
+    // Use consistent date formatting to prevent hydration issues
+    return formatEventDate(dateString, isPortuguese)
   }
 
   const toggleItemExpansion = (itemId: string) => {
@@ -284,8 +282,9 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                                   >
                                     <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-lg border border-gray-200">
                                       {item.imageUrl ? (
-                                        <img
+                                        <Image
                                           src={item.imageUrl}
+              width={96} height={96}
                                           alt={item.title}
                                           className="h-full w-full object-cover object-center"
                                         />

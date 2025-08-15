@@ -22,6 +22,7 @@ const getFooterLinks = (t: any) => ({
     { name: 'Pricing', href: '/pricing' },
     { name: 'Success Stories', href: '/success-stories' },
     { name: 'Community Chat', href: '/forums' },
+    { name: 'Case Studies', href: '/case-studies' },
   ],
   legal: [
     { name: 'Community Guidelines', href: '/community-guidelines' },

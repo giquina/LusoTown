@@ -29,7 +29,7 @@ export default function EventImageWithFallback({
   
   if (imageError) {
     return (
-      <img
+      <Image
         src={getEventPlaceholder(category)}
         alt={`${alt} (placeholder)`}
         className={className}
@@ -43,8 +43,8 @@ export default function EventImageWithFallback({
     <Image
       src={src}
       alt={alt}
-      className={className}
-      fill={fill}
+      fill
+      
       width={!fill ? width : undefined}
       height={!fill ? height : undefined}
       onError={() => setImageError(true)}

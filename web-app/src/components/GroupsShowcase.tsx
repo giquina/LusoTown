@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { 
@@ -74,10 +75,10 @@ export default function GroupsShowcase() {
       {/* Group Image */}
       <div className="h-40 bg-gradient-to-r from-primary-500 to-secondary-500 relative">
         {group.image_url ? (
-          <img
+          <Image
             src={group.image_url}
             alt={group.name}
-            className="w-full h-full object-cover"
+            fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">

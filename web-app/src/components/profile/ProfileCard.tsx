@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { 
   MapPinIcon, 
@@ -58,8 +59,9 @@ export default function ProfileCard({ profile, currentUserId, onClick }: Profile
       {/* Profile Image Section */}
       <div className="relative h-48 bg-gray-200 overflow-hidden" onClick={onClick}>
         {profile.profileImage ? (
-          <img
+          <Image
             src={profile.profileImage}
+            fill sizes="(max-width: 768px) 100vw, 400px"
             alt={profile.name}
             className={`w-full h-full object-cover transition-all duration-300 hover:scale-105 ${
               imageLoaded ? 'opacity-100' : 'opacity-0'

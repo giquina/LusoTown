@@ -14,14 +14,17 @@ import SearchBar from '@/components/SearchBar'
 import { useLanguage } from '@/context/LanguageContext'
 
 const getNavigationLinks = (t: any) => [
-  { name: t('nav.events-tours', 'Events & Tours'), href: '/events' },
-  { name: t('nav.community'), href: '/community' },
-  { name: t('nav.pricing'), href: '/pricing' },
+  { name: t('nav.events', 'Events'), href: '/events' },
+  { name: t('nav.tours', 'Tours'), href: '/groups' },
+  { name: t('nav.heritage', 'Heritage'), href: '/heritage' },
+  { name: t('nav.instituto', 'Instituto Camões'), href: '/instituto-camoes' },
+  { name: t('nav.partnerships', 'Partnerships'), href: '/partnerships' },
 ]
 
 const authenticatedNavigationLinks = [
-  { name: 'Events & Tours', href: '/events' },
-  { name: 'Community', href: '/community' },
+  { name: 'Events', href: '/events' },
+  { name: 'Tours', href: '/groups' },
+  { name: 'Networks', href: '/community' },
   { name: 'Dashboard', href: '/dashboard' },
 ]
 
@@ -67,10 +70,13 @@ export default function Header() {
           <div className="flex items-center">
             <a href="/" className="flex items-center space-x-3">
               <Logo size="medium" animated />
-              <div className="hidden sm:flex items-center">
-                <span className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">
-                  OFFICIAL
-                </span>
+              <div className="hidden sm:flex items-center space-x-2">
+                <div className="w-6 h-6 rounded-full overflow-hidden border border-gray-200 shadow-sm flex items-center justify-center bg-white">
+                  <span className="text-sm">🇬🇧</span>
+                </div>
+                <div className="w-6 h-6 rounded-full overflow-hidden border border-gray-200 shadow-sm flex items-center justify-center bg-white">
+                  <span className="text-sm">🇵🇹</span>
+                </div>
               </div>
             </a>
           </div>

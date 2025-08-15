@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 import React, { useState, useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
@@ -192,7 +193,7 @@ export default function MemberProfile() {
               <div className="w-24 h-24 bg-white rounded-full p-1">
                 <div className="w-full h-full bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-full flex items-center justify-center text-white text-2xl font-bold">
                   {member.profileImage ? (
-                    <img 
+                    <Image 
                       src={member.profileImage} 
                       alt={member.name}
                       className="w-full h-full rounded-full object-cover"
@@ -355,7 +356,7 @@ export default function MemberProfile() {
                         title={mutual.name}
                       >
                         {mutual.profileImage ? (
-                          <img 
+                          <Image 
                             src={mutual.profileImage} 
                             alt={mutual.name}
                             className="w-full h-full rounded-full object-cover"
@@ -473,7 +474,7 @@ export default function MemberProfile() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {member.photos.map(photo => (
                       <div key={photo.id} className="group relative">
-                        <img
+                        <Image 
                           src={photo.url}
                           alt={photo.caption}
                           className="w-full h-48 object-cover rounded-lg group-hover:opacity-90 transition-opacity"

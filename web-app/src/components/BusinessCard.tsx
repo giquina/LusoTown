@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import FavoriteButton from '@/components/FavoriteButton'
 import { 
   MapPinIcon, 
@@ -44,7 +45,7 @@ export default function BusinessCard({
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
         {imageUrl ? (
-          <img 
+          <Image 
             src={imageUrl} 
             alt={name}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

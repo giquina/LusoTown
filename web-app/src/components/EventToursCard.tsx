@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { 
   CalendarDaysIcon, 
@@ -19,6 +20,7 @@ import { Crown } from 'lucide-react'
 import FavoriteButton from '@/components/FavoriteButton'
 import { useCart } from '@/context/CartContext'
 import { useLanguage } from '@/context/LanguageContext'
+import { formatEventDate } from '@/lib/dateUtils'
 import { toast } from 'react-hot-toast'
 import { EventTour } from '@/lib/events-tours'
 
@@ -37,12 +39,8 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
   const savedItem = isSaved(event.title)
 
   const formatDate = (dateString: string) => {
-    const options: Intl.DateTimeFormatOptions = { 
-      weekday: 'short', 
-      month: 'short', 
-      day: 'numeric' 
-    }
-    return new Date(dateString).toLocaleDateString(isPortuguese ? 'pt-PT' : 'en-GB', options)
+    // Use consistent date formatting to prevent hydration issues
+    return formatEventDate(dateString, isPortuguese)
   }
 
   const formatTime = (timeString: string) => {
@@ -176,7 +174,7 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
         {event.imageUrl ? (
-          <img 
+          <Image 
             src={event.imageUrl} 
             alt={event.title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

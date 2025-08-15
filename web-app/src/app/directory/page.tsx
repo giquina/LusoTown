@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 import React, { useState, useEffect } from 'react'
 import { authService, User } from '@/lib/auth'
@@ -83,7 +84,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
             <div className="w-16 h-16 bg-white rounded-full p-1">
               <div className="w-full h-full bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-full flex items-center justify-center text-white text-lg font-bold">
                 {member.profileImage ? (
-                  <img 
+                  <Image 
                     src={member.profileImage} 
                     alt={member.name}
                     className="w-full h-full rounded-full object-cover"

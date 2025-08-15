@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
@@ -257,7 +258,7 @@ export default function Signup() {
                       transition={{ delay: 0.8 + index * 0.2 }}
                       className="flex items-center gap-3 p-3 bg-white/60 backdrop-blur-sm rounded-lg border border-white/80"
                     >
-                      <img 
+                      <Image 
                         src={testimonial.avatar} 
                         alt={testimonial.name}
                         className="w-10 h-10 rounded-full object-cover ring-2 ring-white shadow-sm"
@@ -633,7 +634,7 @@ export default function Signup() {
                       key={index}
                       className="flex items-center gap-3 p-3 bg-white/60 backdrop-blur-sm rounded-lg border border-white/80"
                     >
-                      <img 
+                      <Image 
                         src={testimonial.avatar} 
                         alt={testimonial.name}
                         className="w-10 h-10 rounded-full object-cover ring-2 ring-white shadow-sm flex-shrink-0"

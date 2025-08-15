@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -26,7 +27,8 @@ import LiveUpdateIndicator from '@/components/LiveUpdateIndicator'
 import FeedFilters, { FeedFilters as FeedFiltersType } from '@/components/FeedFilters'
 import PhotoUpload, { UploadedPhoto } from '@/components/PhotoUpload'
 import EventFeedCard, { EventFeedCardData } from '@/components/EventFeedCard'
-import { useLanguage, Language } from '@/context/LanguageContext'
+import { useLanguage } from '@/context/LanguageContext'
+import { Language } from '@/i18n'
 
 interface FeedPost {
   id: string
@@ -489,10 +491,12 @@ export default function CommunityFeed() {
                       <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 rounded-full overflow-hidden">
-                            <img 
-                              src={post.userAvatar} 
+                            <Image
+                              src={post.userAvatar}
                               alt={post.userName}
-                              className="w-full h-full object-cover"
+                              width={40}
+                              height={40}
+                              className="object-cover"
                             />
                           </div>
                           <div>
@@ -522,9 +526,11 @@ export default function CommunityFeed() {
                       {/* Post Image */}
                       {post.imageUrl && (
                         <div className="mb-4 rounded-lg overflow-hidden">
-                          <img 
-                            src={post.imageUrl} 
-                            alt="Post image" 
+                          <Image
+                            src={post.imageUrl}
+                            alt="Post image"
+                            width={600}
+                            height={400}
                             className="w-full h-auto object-cover"
                           />
                         </div>

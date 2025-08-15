@@ -42,19 +42,19 @@ interface ImpactStat {
 }
 
 export const metadata: Metadata = {
-  title: 'Success Stories - Real Women, Real Connections | LusoTown',
-  description: 'Discover how LusoTown has helped thousands of women 30+ across the UK build lasting friendships, launch businesses, and create meaningful support networks. Read authentic success stories from London, Manchester, Edinburgh and beyond.',
+  title: 'Success Stories - Portuguese Community Connections | LusoTown London',
+  description: 'Real success stories from Portuguese speakers who found their community in London. From Portugal to Brazil, Angola to Mozambique - discover how LusoTown connects Portuguese hearts across the UK.',
   keywords: [
-    'LusoTown success stories',
-    'women friendship UK',
-    'female networking success',
-    '30+ women connections',
-    'UK women community testimonials',
-    'single women support network',
-    'childfree women friendships',
-    'London women networking',
-    'female entrepreneurs UK',
-    'women business partnerships'
+    'Portuguese community London success stories',
+    'Brazilian community UK testimonials',
+    'Angolan community London connections',
+    'Mozambican community UK experiences',
+    'Cape Verdean London networking',
+    'Portuguese business partnerships UK',
+    'Lusophone community success',
+    'Portuguese cultural preservation London',
+    'Portuguese friendship networks UK',
+    'Portuguese heritage community'
   ],
   openGraph: {
     title: 'Success Stories - Real Women, Real Connections | LusoTown',
@@ -82,131 +82,135 @@ export default function SuccessStories() {
   const featuredStories: FeaturedStory[] = [
     {
       id: 1,
-      name: "Emma & Sarah",
-      location: "London",
+      name: "Maria & Sofia",
+      location: "Stockwell, London",
       memberSince: "March 2024",
-      title: "From Strangers to Best Friends",
-      excerpt: "We met at a hiking group and now we're inseparable - traveling together, supporting each other through career changes, and building the sisterhood we always wanted.",
-      story: `I joined LusoTown after moving to London for work at 32. As a single, childfree woman in finance, I felt like an outsider in most social circles. Everyone seemed to be coupled up or focused on family life.
+      title: "From Saudade to Irmandade: Portuguese Sisters Born in London",
+      excerpt: "Two Portuguese souls meeting over shared saudade, now building Portuguese family traditions in London. From strangers to sisters through fado, food, and our ancestors' wisdom.",
+      story: `Vim do Porto for my banking career carrying minha mãe's prayers and minha avó's strength, but London's success tasted empty without Portuguese warmth. The saudade cut deeper than homesickness - it was cultural soul-longing that no amount of professional achievement could heal.
 
-      Sarah and I met at one of the hiking groups in Hampstead Heath. We were both nervous newcomers, but something clicked immediately. We started chatting about our careers, travel dreams, and the challenges of being independent women in London.
+      Sofia and I met at a magical fado night at Portuguese Cultural Centre in Camden. She'd come from São Paulo with similar dreams and identical heartache. As 'Lágrima' played, we both cried - not from sadness, but from recognition. Finally, alguém who understood that success without cultura feels hollow.
 
-      What started as weekend hikes turned into regular coffee dates, then weekend trips to the Cotswolds. When I was made redundant last year, Sarah was my biggest supporter, helping me network and even letting me stay in her spare room while I job-hunted.
+      What started as Portuguese coffee dates at a café in Stockwell turned into weekly Sunday lunches cooking traditional recipes together. When my mother couldn't visit for my birthday, Sofia organized a surprise Portuguese festa with pastéis de nata, vinho verde, and even hired a fadista.
 
-      Now, 10 months later, we're planning a month-long trip to Southeast Asia together. LusoTown didn't just help me find a friend - it helped me find my person, my chosen family. The community showed me that there are incredible women out there who get it, who celebrate your choices, and who'll be there through thick and thin.`,
-      image: "members/emma-sarah.jpg",
-      tags: ["Career Support", "Travel Buddies", "Best Friends"],
+      Now we're planning to bring our families together - Sofia's parents are visiting from Brazil, and my mother from Portugal. LusoTown didn't just help us find friendship; it helped us create the Portuguese family support system we missed. We speak Portuguese together, preserve our traditions, and help other Portuguese newcomers feel at home.
+
+      Through our friendship, we've also connected with other Portuguese professionals and even started a monthly Portuguese book club reading authors from Portugal, Brazil, Angola, and Mozambique.`,
+      image: "members/maria-sofia.jpg",
+      tags: ["Portuguese Heritage", "Cultural Preservation", "Saudade Support"],
       joinDate: "2024-03",
-      testimonial: "LusoTown showed me that chosen family is just as powerful as blood family. Sarah and I are living proof that meaningful friendships can happen at any age."
+      testimonial: "LusoTown gave us more than friendship - it gave us irmandade portuguesa that transforms London saudade into amor de família. Unidos pela língua, strengthened by saudade shared."
     },
     {
       id: 2,
-      name: "Priya",
-      location: "Manchester",
+      name: "João Pedro",
+      location: "Vauxhall, London",
       memberSince: "January 2024",
-      title: "Building My Support Network",
-      excerpt: "After my divorce at 35, I felt completely lost. LusoTown helped me rebuild my confidence and create a support network of amazing women who truly understand my journey.",
-      story: `My divorce was finalized on New Year's Eve 2023. At 35, I suddenly found myself starting over completely - new flat, new routine, and most challengingly, a new identity as a single woman again.
+      title: "Building My London Portuguese Network",
+      excerpt: "After years in tech feeling isolated, LusoTown helped me find Portuguese professionals who understand both my career ambitions and cultural background.",
+      story: `Working in London's tech scene for three years, I was successful professionally but culturally isolated. Most networking events felt superficial, and I missed the depth of Portuguese relationships and conversation.
 
-      Most of my married friends meant well, but they couldn't relate to my experience. I needed women who understood what it felt like to be redefining yourself in your 30s, who didn't see being single as something to 'fix.'
+      LusoTown's Portuguese professional network changed everything. I connected with other Portuguese speakers in tech, finance, and creative industries who understood the balance between career ambition and maintaining cultural identity.
 
-      Through LusoTown, I found not just one friend, but an entire network. The book club introduced me to literature that helped me process my emotions. The professional networking group helped me rebuild my confidence at work. The weekend activities group showed me I could have fun and adventures on my own terms.
+      Through the network, I met Carlos, a Brazilian designer, and Ana, a software engineer from Lisbon. We started a monthly meetup for Portuguese-speaking tech professionals that now attracts 40+ people regularly. We discuss everything from career growth to preserving Portuguese work culture values in London's corporate environment.
 
-      One particular moment stands out: I was having a terrible day after a difficult mediation session. I posted in our Manchester group, and within an hour, three women had reached out. By evening, I had a bouquet of flowers, a bottle of wine, and two friends sitting in my living room just listening.
+      The community also supported my side project - a language learning app for Portuguese children born in the UK. Three community members became beta testers, two invested in the startup, and one became my business partner.
 
-      I'm now a group organizer myself, hosting monthly brunches for newly single women. I want to pay forward what LusoTown gave me - the reminder that you're not alone, that there's a whole community of strong, independent women ready to support each other.`,
-      image: "members/priya.jpg",
-      tags: ["Divorce Support", "Community Leader", "Personal Growth"],
+      Last month, we organized London's first Portuguese Tech Summit, attended by 150+ professionals from across the UK. It was covered by Portuguese media and even attracted attention from companies wanting to hire Portuguese talent.
+
+      LusoTown showed me that professional networking doesn't have to mean losing cultural identity - it can mean strengthening both your career and your community simultaneously.`,
+      image: "members/joao-pedro.jpg",
+      tags: ["Professional Network", "Tech Community", "Cultural Identity"],
       joinDate: "2024-01",
-      testimonial: "LusoTown taught me that starting over isn't just about rebuilding - it's about building something even better than before."
+      testimonial: "Finding Portuguese professionals who share my values and ambitions has been transformative - both for my career and my sense of belonging in London."
     },
     {
       id: 3,
-      name: "Jessica & Lisa",
-      location: "Edinburgh",
+      name: "Ana Lúcia & Family",
+      location: "Elephant & Castle, London",
       memberSince: "February 2024",
-      title: "Entrepreneurial Partnership",
-      excerpt: "We connected over our shared passion for sustainable fashion and ended up launching a business together. Our friendship became the foundation of our startup success.",
-      story: `I'd been struggling with the idea of starting my sustainable fashion consultancy for months, but as a solo entrepreneur, it felt overwhelming. When I joined LusoTown's Edinburgh professional network, I was just looking for moral support and maybe some networking opportunities.
+      title: "Portuguese Family Community for Our Children",
+      excerpt: "We found other Portuguese families who understand the importance of raising bilingual children with cultural pride. Our kids now have Portuguese friends and we have our village.",
+      story: `Moving to London with two young children, my biggest worry was that they would lose their Portuguese language and cultural connection. Local schools and activities were great, but we needed our children to maintain their Portuguese identity.
 
-      That's where I met Lisa, who had just left her corporate marketing job to pursue ethical business ventures. We grabbed coffee after a networking event and talked for four hours about our shared vision for sustainable commerce.
+      Through LusoTown, we discovered other Portuguese and Brazilian families facing the same challenge. We formed a support network that meets weekly for Portuguese playgroups where children speak only Portuguese and learn about our traditions.
 
-      What started as mutual support evolved into something bigger. Lisa's marketing expertise complemented my fashion industry knowledge perfectly. We started collaborating on small projects, then bigger ones, and eventually decided to officially partner up.
+      We organize Portuguese children's festivals, celebrate Santos Populares together, and even started a Portuguese Saturday school in partnership with the Portuguese Church in South London. Our children now have best friends who speak Portuguese and understand their bicultural experience.
 
-      Our business, Conscious Closet Consulting, launched six months ago and we're already profitable. But more than that, I gained a business partner I trust completely and a friend who shares my values and ambitions.
+      My daughter, who was becoming shy about speaking Portuguese, now proudly teaches her British school friends Portuguese words and explains Portuguese holidays to her class. She sees her bilingual identity as a superpower rather than something different.
 
-      The other LusoTown members have been incredible supporters too - they were our first clients, our honest critics, and our biggest cheerleaders. We've built not just a business, but a community around conscious consumption.
+      We've also created a practical support network - from sharing Portuguese children's books to coordinating visits to Portugal so kids can travel together. When my mother visits from Braga, she now has multiple Portuguese families to visit and our children have Portuguese grandmothers and aunts.
 
-      People ask if mixing friendship and business is risky, but when you find someone through LusoTown's verification process who shares your values and work ethic, it actually makes the partnership stronger.`,
-      image: "members/jessica-lisa.jpg",
-      tags: ["Business Partners", "Entrepreneurship", "Sustainability"],
+      LusoTown helped us realize we weren't alone in wanting to raise confident, bilingual Portuguese children in London. We've built the Portuguese village our children needed to thrive.`,
+      image: "members/ana-lucia-family.jpg",
+      tags: ["Family Community", "Bilingual Children", "Cultural Transmission"],
       joinDate: "2024-02",
-      testimonial: "LusoTown connected me with not just a business partner, but a woman who shares my vision for changing the world through ethical business."
+      testimonial: "Our children are growing up proud to be Portuguese in London because LusoTown helped us find families who share our values and cultural commitment."
     }
   ]
 
   const quickStories: QuickStory[] = [
     {
-      name: "Charlotte",
-      location: "Brighton",
-      story: "Found my marathon training partner and we've run three races together since joining!",
-      category: "Fitness Buddy"
+      name: "Carlos",
+      location: "Camden, London",
+      story: "From watching Portugal matches alone with saudade, to leading 50-strong Portuguese football família at The Portuguese Tavern! Every goal celebration feels like home - 'GOOOOLO!' echoing with nossa paixão!",
+      category: "Portuguese Football Família"
     },
     {
-      name: "Maya",
+      name: "Isabella",
+      location: "Manchester",
+      story: "Struggling with imposter syndrome until I met Portuguese professionals who saw my Brazilian warmth as strength, not weakness. Now thriving with mentors who speak both business and coração!",
+      category: "Brazilian Professional Power"
+    },
+    {
+      name: "Miguel",
       location: "Birmingham",
-      story: "The professional networking group helped me land my dream job - and gain 5 new mentors.",
-      category: "Career Growth"
+      story: "Found Portuguese book club where we debate Saramago over vinho verde, cry over Eça de Queirós with pastéis de nata, and discover contemporary voices. Literatura feeds nossa alma!",
+      category: "Portuguese Literature & Soul"
     },
     {
-      name: "Sophie",
+      name: "Fernanda",
+      location: "Bermondsey, London",
+      story: "Teaching minha avó's receitas to Portuguese families in London! From caldo verde to bacalhau, preserving our mothers' wisdom one meal at a time. Cooking together, keeping cultura alive!",
+      category: "Avó's Recipes & Heritage"
+    },
+    {
+      name: "Ricardo",
+      location: "Edinburgh",
+      story: "After feeling culturally isolated, I found Portuguese speakers who celebrate our heritage and support each other's success.",
+      category: "Cultural Pride"
+    },
+    {
+      name: "Catarina",
       location: "Bristol",
-      story: "My book club friends have become my closest confidantes. We meet weekly and support each other through everything.",
-      category: "Book Club"
+      story: "Our monthly Portuguese mums meetup is a lifeline - sharing parenting in Portuguese while kids play together.",
+      category: "Portuguese Mothers"
     },
     {
-      name: "Rachel",
-      location: "London",
-      story: "Started a pottery class with women from LusoTown - now we have our own studio space and sell our work!",
-      category: "Creative Community"
+      name: "André",
+      location: "Leeds",
+      story: "The business network helped me launch my consultancy with Portuguese clients - community became customers and mentors.",
+      category: "Entrepreneurship"
     },
     {
-      name: "Anna",
-      location: "Glasgow",
-      story: "After years of feeling isolated, I now have a group of women who truly understand and celebrate my childfree choice.",
-      category: "Lifestyle Support"
-    },
-    {
-      name: "Kate",
+      name: "Mariana",
       location: "Liverpool",
-      story: "We started a monthly dinner club that's become the highlight of my month. Real conversations, real connections.",
-      category: "Dinner Club"
+      story: "Planning group trips back to Portugal with London Portuguese friends - maintaining roots while building UK life!",
+      category: "Heritage Travel"
     },
     {
-      name: "Zara",
-      location: "Cardiff",
-      story: "After my corporate burnout, the wellness group helped me transition to freelance life with amazing support and referrals.",
-      category: "Career Transition"
-    },
-    {
-      name: "Olivia",
-      location: "Newcastle",
-      story: "The travel group has become my adventure family - we've explored Scotland, Ireland, and planning our Iceland trip!",
-      category: "Travel Adventures"
-    },
-    {
-      name: "Amelia",
+      name: "Paulo",
       location: "Oxford",
-      story: "Started a sustainable living workshop with LusoTown friends - we're making real environmental impact together.",
-      category: "Sustainability"
+      story: "Organizing Portuguese film nights screening movies from Portugal, Brazil, and Lusophone Africa - cultural preservation through cinema.",
+      category: "Cultural Events"
     }
   ]
 
   const impactStats: ImpactStat[] = [
-    { label: "Lasting Friendships Formed", value: "520+", icon: HeartIcon },
-    { label: "Support Networks Created", value: "95+", icon: UserGroupIcon },
-    { label: "Business Partnerships", value: "48+", icon: TrophyIcon },
-    { label: "Women Supported", value: "1,200+", icon: SparklesIcon }
+    { label: "Portuguese Friendships Formed", value: "500+", icon: HeartIcon },
+    { label: "Cultural Communities Created", value: "85+", icon: UserGroupIcon },
+    { label: "Portuguese Business Partnerships", value: "42+", icon: TrophyIcon },
+    { label: "Portuguese Speakers Connected", value: "1,200+", icon: SparklesIcon }
   ]
 
   return (
@@ -222,11 +226,10 @@ export default function SuccessStories() {
                 Real Stories • Real Friendships
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 text-balance">
-                Success Stories
+                From Saudade to Success: Portuguese Hearts United in London
               </h1>
               <p className="text-lg sm:text-xl text-gray-600 leading-relaxed text-balance">
-                Discover how LusoTown has helped thousands of incredible women across the UK build meaningful friendships, 
-                launch businesses, and create the support networks they always dreamed of.
+                Real Portuguese souls who transformed London loneliness into thriving community connections. From pastéis de nata meetups in Stockwell to fado nights in Camden - discover how nossa gente builds lasting bonds while preserving Portuguese heart in the city's rhythm.
               </p>
             </div>
           </div>

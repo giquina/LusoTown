@@ -27,6 +27,7 @@ import { Event, EventFilters, eventService, EVENT_CATEGORIES } from '@/lib/event
 import { EventTour, EventToursFilters, EventsToursService, EVENT_TOUR_CATEGORIES } from '@/lib/events-tours'
 import { useCart } from '@/context/CartContext'
 import { useLanguage } from '@/context/LanguageContext'
+import { getCurrentUser } from '@/lib/auth'
 
 // EventCard component is no longer needed - using ImprovedEventCard instead
 
@@ -216,6 +217,9 @@ export default function EventsPage() {
   const { language, t } = useLanguage()
   const isPortuguese = language === 'pt'
   const [activeTab, setActiveTab] = useState<'events' | 'tours'>('events')
+  
+  // Preview system state
+  const [user, setUser] = useState(getCurrentUser())
 
   // Check URL parameters on component mount
   useEffect(() => {
@@ -239,6 +243,17 @@ export default function EventsPage() {
   useEffect(() => {
     loadContent()
   }, [activeTab, eventFilters, tourFilters, sortBy])
+
+  // Preview system effects
+  useEffect(() => {
+    setUser(getCurrentUser())
+  }, [])
+
+  // Preview system handlers
+  const handleUpgradeClick = () => {
+    // Navigate to membership/signup page
+    window.location.href = '/join'
+  }
 
   const loadContent = async () => {
     setLoading(true)
@@ -645,9 +660,14 @@ export default function EventsPage() {
                       </h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                      {featuredItems.slice(0, 3).map((item) => (
+                      {featuredItems.slice(0, 3).map((item, index) => (
                         activeTab === 'events' ? (
-                          <ImprovedEventCard key={item.id} event={item as Event} />
+                          <ImprovedEventCard 
+                            key={item.id} 
+                            event={item as Event}
+                            showPreviewOverlay={index > 0} // Show preview overlay for 2nd and 3rd featured events
+                            onUpgrade={handleUpgradeClick}
+                          />
                         ) : (
                           <EventToursCard key={item.id} event={item as EventTour} />
                         )
@@ -707,9 +727,14 @@ export default function EventsPage() {
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6"
                   >
                     <AnimatePresence>
-                      {currentData.map((item) => (
+                      {currentData.map((item, index) => (
                         activeTab === 'events' ? (
-                          <ImprovedEventCard key={item.id} event={item as Event} />
+                          <ImprovedEventCard 
+                            key={item.id} 
+                            event={item as Event}
+                            showPreviewOverlay={index % 4 === 2 || index % 4 === 3} // Show preview on every 3rd and 4th event
+                            onUpgrade={handleUpgradeClick}
+                          />
                         ) : (
                           <EventToursCard key={item.id} event={item as EventTour} />
                         )

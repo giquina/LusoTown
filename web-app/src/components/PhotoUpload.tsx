@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useCallback } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   PhotoIcon, 
@@ -272,10 +273,10 @@ export default function PhotoUpload({
                 exit={{ opacity: 0, scale: 0.8 }}
                 className="relative group aspect-square rounded-lg overflow-hidden bg-gray-100"
               >
-                <img
+                <Image
                   src={photo.preview}
                   alt="Upload preview"
-                  className="w-full h-full object-cover"
+                  fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover"
                 />
                 
                 {/* Upload Progress */}

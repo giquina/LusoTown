@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   PlusIcon, 
@@ -232,10 +233,12 @@ export default function ProfilePhotoManager({ profile, onUpdate }: ProfilePhotoM
           </h3>
           <div className="flex items-center gap-6">
             <div className="w-24 h-24 rounded-xl overflow-hidden border-2 border-white shadow-lg">
-              <img
+              <Image
                 src={profile.profile_picture_url}
+                width={96}
+                height={96}
                 alt="Profile"
-                className="w-full h-full object-cover"
+                className="object-cover"
               />
             </div>
             <div>
@@ -322,10 +325,12 @@ export default function ProfilePhotoManager({ profile, onUpdate }: ProfilePhotoM
               className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg"
             >
               <div className="w-12 h-12 rounded-lg overflow-hidden bg-gray-200">
-                <img
+                <Image
                   src={upload.preview}
+                  width={48}
+                  height={48}
                   alt="Upload preview"
-                  className="w-full h-full object-cover"
+                  className="object-cover"
                 />
               </div>
               

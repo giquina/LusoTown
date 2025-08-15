@@ -212,8 +212,8 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     name: 'Instituto Camões Centre London',
     namePortuguese: 'Centro do Instituto Camões Londres',
     type: 'cultural_center',
-    description: 'Official Portuguese language and culture center, promoting Portuguese language learning and cultural exchange in the UK.',
-    descriptionPortuguese: 'Centro oficial da língua e cultura portuguesa, promovendo o ensino da língua portuguesa e intercâmbio cultural no Reino Unido.',
+    description: 'Official Portuguese government cultural institution and LusoTown\'s founding strategic partner. Instituto Camões has officially recognized LusoTown as the preferred digital platform for Portuguese cultural promotion and community engagement in the United Kingdom.',
+    descriptionPortuguese: 'Instituição cultural oficial do governo português e parceiro estratégico fundador da LusoTown. O Instituto Camões reconheceu oficialmente a LusoTown como a plataforma digital preferida para promoção cultural portuguesa e envolvimento comunitário no Reino Unido.',
     
     website: 'https://www.instituto-camoes.pt/uk',
     email: 'londres@instituto-camoes.pt',
@@ -221,37 +221,51 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     address: 'King\'s College London, Virginia Woolf Building',
     postcode: 'WC2R 2LS',
     
-    partnershipLevel: 'strategic_partner',
-    partnershipStartDate: '2024-01-15',
+    partnershipLevel: 'founding_partner',
+    partnershipStartDate: '2024-01-01',
     servicesOffered: [
-      'Portuguese language courses',
-      'Cultural workshops',
-      'Teacher training',
-      'Cultural events',
-      'Library services',
-      'Educational resources'
+      'Official Portuguese language certification',
+      'Cultural heritage preservation programs',
+      'Teacher training and professional development',
+      'Academic conferences and symposiums',
+      'Digital library and educational resources',
+      'Portuguese citizenship preparation',
+      'Business Portuguese certification',
+      'Cultural immersion workshops',
+      'Literary and artistic events',
+      'Community outreach programs'
     ],
     eventsHosted: [
-      'Portuguese language courses',
-      'Literature readings',
-      'Film festivals',
-      'Academic conferences'
+      'Luís de Camões International Symposium',
+      'Portuguese Heritage Month celebrations',
+      'Fado cultural masterclasses',
+      'Contemporary Portuguese cinema festivals',
+      'Academic conferences on Lusophone studies',
+      'Traditional Portuguese craft workshops',
+      'Portuguese language teacher training seminars',
+      'Cultural heritage preservation workshops'
     ],
     memberBenefits: [
-      'Discounted language courses',
-      'Free cultural events',
-      'Library access',
-      'Priority course enrollment'
+      '25% discount on all language courses (save up to £105)',
+      'Priority access to cultural events and conferences',
+      'Free access to digital library (£200/year value)',
+      'Exclusive Portuguese heritage workshops',
+      'Official Instituto Camões certification',
+      'Professional networking with educators',
+      'Cultural immersion trip opportunities',
+      'Portuguese citizenship preparation support'
     ],
     
     communitySize: 5000,
     yearsActive: 30,
     languagesSupported: ['Portuguese', 'English'],
-    regionsServed: ['London', 'Southeast England'],
+    regionsServed: ['United Kingdom', 'Ireland', 'Channel Islands'],
     
     socialMedia: {
       facebook: 'https://facebook.com/InstitutoCamoesLondres',
-      instagram: 'https://instagram.com/camoes_london'
+      instagram: 'https://instagram.com/camoes_london',
+      twitter: 'https://twitter.com/CamoesLondon',
+      youtube: 'https://youtube.com/InstitutoCamoesUK'
     },
     
     officialStatus: true,
@@ -260,50 +274,107 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     
     programs: [
       {
-        id: 'prog-language',
-        name: 'Portuguese Language Courses',
-        namePortuguese: 'Cursos de Língua Portuguesa',
-        description: 'Beginner to advanced Portuguese language classes for adults and children',
-        targetAudience: ['Adults', 'Children', 'Professionals'],
-        frequency: 'Weekly',
-        cost: '£200-400 per term',
+        id: 'prog-language-complete',
+        name: 'Portuguese for Adults - Complete CEFR Course',
+        namePortuguese: 'Português para Adultos - Curso Completo QECR',
+        description: 'Comprehensive Portuguese language course aligned with Common European Framework of Reference, from A1 to C2 levels. Official Instituto Camões certification upon completion.',
+        targetAudience: ['Adults 18+', 'Professionals', 'Heritage speakers', 'University students'],
+        frequency: 'Weekly (3 hours) - 30 weeks per level',
+        cost: '£420 per level (LusoTown members: £315)',
         registrationRequired: true,
         maxParticipants: 15
       },
       {
-        id: 'prog-heritage',
-        name: 'Portuguese Heritage Classes',
-        namePortuguese: 'Aulas de Património Português',
-        description: 'Weekend classes for Portuguese heritage children',
-        targetAudience: ['Portuguese heritage children'],
-        frequency: 'Weekly (Saturdays)',
-        cost: '£150 per term',
+        id: 'prog-business-portuguese',
+        name: 'Business Portuguese Professional Certificate',
+        namePortuguese: 'Certificado Profissional de Português Empresarial',
+        description: 'Specialized Portuguese for business professionals working with Portuguese-speaking markets. Covers formal communication, industry vocabulary, and cultural business practices.',
+        targetAudience: ['Business professionals', 'Entrepreneurs', 'Finance workers', 'International trade specialists'],
+        frequency: 'Weekly (2 hours) - 20 weeks',
+        cost: '£380 per course (LusoTown members: £285)',
+        registrationRequired: true,
+        maxParticipants: 12
+      },
+      {
+        id: 'prog-heritage-weekend',
+        name: 'Portuguese Heritage Weekend School',
+        namePortuguese: 'Escola de Fim de Semana de Património Português',
+        description: 'Comprehensive weekend program for children of Portuguese heritage, covering language, culture, history, and traditions. Preparation for Portuguese citizenship.',
+        targetAudience: ['Children 5-16', 'Portuguese heritage families', 'Citizenship preparation'],
+        frequency: 'Saturday mornings (3 hours) - Academic year',
+        cost: '£180 per term (LusoTown members: £135)',
         registrationRequired: true,
         maxParticipants: 20
+      },
+      {
+        id: 'prog-teacher-training',
+        name: 'Portuguese Teacher Training & Official Certification',
+        namePortuguese: 'Formação e Certificação Oficial de Professores de Português',
+        description: 'Professional development program for Portuguese language teachers with official Instituto Camões certification. Modern methodologies and cultural competency.',
+        targetAudience: ['Language teachers', 'Education professionals', 'Advanced Portuguese speakers'],
+        frequency: 'Intensive weekends - 12 weeks',
+        cost: '£650 per certification (LusoTown members: £487)',
+        registrationRequired: true,
+        maxParticipants: 10
+      },
+      {
+        id: 'prog-citizenship-prep',
+        name: 'Portuguese Citizenship Language Test Preparation',
+        namePortuguese: 'Preparação para Teste de Língua para Cidadania Portuguesa',
+        description: 'Intensive preparation for Portuguese language proficiency test required for citizenship. Includes legal guidance and document preparation.',
+        targetAudience: ['Citizenship applicants', 'Heritage speakers', 'Long-term UK residents'],
+        frequency: 'Twice weekly (2 hours) - 8 weeks',
+        cost: '£320 per course (LusoTown members: £240)',
+        registrationRequired: true,
+        maxParticipants: 15
       }
     ],
     
     upcomingEvents: [
       {
-        id: 'event-film-festival',
-        title: 'Portuguese Film Festival',
-        titlePortuguese: 'Festival de Cinema Português',
-        date: '2024-03-15',
+        id: 'event-camoes-symposium',
+        title: 'Luís de Camões International Symposium 2024',
+        titlePortuguese: 'Simpósio Internacional Luís de Camões 2024',
+        date: '2024-06-10',
+        time: '14:00',
+        location: 'King\'s College London - Virginia Woolf Building',
+        description: 'Annual academic symposium celebrating Portugal\'s national poet with international scholars and cultural experts',
+        capacity: 120,
+        price: 0,
+        partnerId: 'partner-camoes'
+      },
+      {
+        id: 'event-fado-masterclass',
+        title: 'Fado: The Soul of Portugal - Cultural Masterclass',
+        titlePortuguese: 'Fado: A Alma de Portugal - Masterclass Cultural',
+        date: '2024-07-15',
         time: '19:00',
-        location: 'King\'s College London',
-        description: 'Screening of contemporary Portuguese cinema with director Q&A',
+        location: 'Instituto Camões Centre',
+        description: 'Immersive exploration of Fado history, technique, and UNESCO-recognized cultural significance',
+        capacity: 40,
+        price: 25,
+        partnerId: 'partner-camoes'
+      },
+      {
+        id: 'event-portuguese-cinema',
+        title: 'Contemporary Portuguese Cinema Festival',
+        titlePortuguese: 'Festival de Cinema Português Contemporâneo',
+        date: '2024-09-20',
+        time: '18:00',
+        location: 'King\'s College London - Cinema Complex',
+        description: 'Three-day festival showcasing contemporary Portuguese filmmaking with director Q&As',
         capacity: 80,
-        price: 8,
+        price: 12,
         partnerId: 'partner-camoes'
       }
     ],
     
     contactPerson: {
       name: 'Dr. Maria João Silva',
-      title: 'Center Director',
+      title: 'Centre Director & LusoTown Partnership Coordinator',
       email: 'director.londres@instituto-camoes.pt',
       phone: '+44 20 7589 8755',
-      bio: 'Director of Instituto Camões London, specialist in Portuguese language education and cultural programming.'
+      bio: 'Director of Instituto Camões London and official coordinator of the LusoTown strategic partnership. Specialist in Portuguese language education, cultural programming, and digital community engagement with 15 years of experience in UK Portuguese cultural promotion.'
     }
   },
   

@@ -11,6 +11,7 @@ import EventsShowcase from '@/components/EventsShowcase'
 import GroupsShowcase from '@/components/GroupsShowcase'
 import GroupEventsSection from '@/components/GroupEventsSection'
 import SuccessStories from '@/components/SuccessStories'
+import CaseStudies from '@/components/CaseStudies'
 import AppDownloadSection from '@/components/AppDownloadSection'
 import TestimonialsNew from '@/components/TestimonialsNew'
 import CTA from '@/components/CTA'
@@ -261,10 +262,142 @@ export default function Home() {
             </div>
           </section>
           <Features />
+          
+          {/* Instituto Camões Partnership Section */}
+          <section className="py-24 bg-gradient-to-br from-primary-50/60 via-secondary-50/30 to-accent-50/20 relative overflow-hidden border-t border-gray-100">
+            <div className="absolute inset-0">
+              <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-primary-200/40 via-secondary-100/30 to-accent-100/30 rounded-full opacity-60 animate-pulse" />
+              <div className="absolute bottom-20 left-20 w-24 h-24 bg-gradient-to-tr from-secondary-200/40 via-accent-100/30 to-primary-100/30 rounded-full opacity-50 animate-bounce" style={{ animationDuration: '8s' }} />
+            </div>
+
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+              <div className="max-w-7xl mx-auto">
+                <div className="text-center mb-16">
+                  <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary-100 via-secondary-50 to-accent-100 border border-primary-200 rounded-full px-8 py-3 shadow-lg mb-8">
+                    <div className="w-3 h-3 rounded-full bg-gradient-to-r from-green-500 to-red-500 animate-pulse shadow-sm"></div>
+                    <span className="text-sm font-bold text-primary-700">
+                      {t('instituto.badge', 'Official Portuguese Government Partnership')}
+                    </span>
+                    <div className="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></div>
+                  </div>
+                  
+                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-8 leading-tight">
+                    {t('instituto.title', 'Recognized by Instituto Camões')}
+                  </h2>
+                  <p className="text-xl sm:text-2xl text-gray-700 mb-8 font-medium max-w-5xl mx-auto leading-relaxed">
+                    {t('instituto.description', 'LusoTown is officially recognized by Instituto Camões as the preferred digital platform for Portuguese cultural promotion and community engagement in the United Kingdom.')}
+                  </p>
+                </div>
+                
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                  <div className="bg-white/90 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/60">
+                    <div className="text-center mb-6">
+                      <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-xl">
+                        <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                      </div>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-2">Instituto Camões</h3>
+                      <p className="text-gray-600 mb-4">
+                        {t('instituto.subtitle', 'Official institute for Portuguese language and culture')}
+                      </p>
+                    </div>
+                    
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+                        <span className="text-gray-700 text-sm">
+                          {t('instituto.feature1', 'Founding strategic partnership')}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="w-2 h-2 bg-secondary-500 rounded-full"></div>
+                        <span className="text-gray-700 text-sm">
+                          {t('instituto.feature2', 'Certified educational programs')}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
+                        <span className="text-gray-700 text-sm">
+                          {t('instituto.feature3', 'Official cultural resources')}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="w-2 h-2 bg-premium-500 rounded-full"></div>
+                        <span className="text-gray-700 text-sm">
+                          {t('instituto.feature4', 'Portuguese government recognition')}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-6">
+                    <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-white/60">
+                      <h4 className="font-bold text-gray-900 mb-2">
+                        {t('instituto.benefit1.title', 'Exclusive Member Benefits')}
+                      </h4>
+                      <p className="text-gray-700 text-sm mb-3">
+                        {t('instituto.benefit1.description', '25% discount on official Portuguese language courses')}
+                      </p>
+                      <span className="inline-block bg-primary-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                        {t('instituto.benefit1.savings', 'Save up to £105')}
+                      </span>
+                    </div>
+                    
+                    <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-white/60">
+                      <h4 className="font-bold text-gray-900 mb-2">
+                        {t('instituto.benefit2.title', 'Priority Access')}
+                      </h4>
+                      <p className="text-gray-700 text-sm mb-3">
+                        {t('instituto.benefit2.description', 'Official cultural events and academic conferences')}
+                      </p>
+                      <span className="inline-block bg-secondary-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                        {t('instituto.benefit2.access', 'Exclusive access')}
+                      </span>
+                    </div>
+                    
+                    <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-white/60">
+                      <h4 className="font-bold text-gray-900 mb-2">
+                        {t('instituto.benefit3.title', 'Digital Library')}
+                      </h4>
+                      <p className="text-gray-700 text-sm mb-3">
+                        {t('instituto.benefit3.description', 'Complete access to Portuguese educational resources')}
+                      </p>
+                      <span className="inline-block bg-accent-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                        {t('instituto.benefit3.value', '£200/year value')}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="text-center mt-12">
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a
+                      href="/instituto-camoes"
+                      className="group relative text-lg font-bold px-10 py-4 bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary-700 via-secondary-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <span className="relative z-10 flex items-center justify-center gap-3">
+                        {t('instituto.cta.primary', 'Explore Official Programs')}
+                      </span>
+                    </a>
+                    <a
+                      href="/heritage"
+                      className="text-lg font-bold px-10 py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-primary-300 hover:-translate-y-1 hover:bg-white/90"
+                    >
+                      {t('instituto.cta.secondary', 'Cultural Heritage')}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <EventsShowcase />
           <GroupEventsSection variant="homepage" maxEvents={6} />
           <GroupsShowcase />
           <SuccessStories />
+          <CaseStudies />
           <AppDownloadSection />
           <TestimonialsNew />
           <CTA />

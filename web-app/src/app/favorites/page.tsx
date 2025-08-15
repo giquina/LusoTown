@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 import { useState, useEffect } from 'react'
 import Header from '@/components/Header'
@@ -201,7 +202,7 @@ export default function FavoritesPage() {
                       {/* Image */}
                       <div className="relative h-48 overflow-hidden">
                         {favorite.imageUrl ? (
-                          <img 
+                          <Image 
                             src={favorite.imageUrl} 
                             alt={favorite.title}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -296,10 +297,10 @@ export default function FavoritesPage() {
                         {favorite.type === 'feed' && (
                           <div className="space-y-3 mb-4">
                             <div className="flex items-center gap-3">
-                              <img 
+                              <Image 
                                 src={favorite.authorAvatar} 
                                 alt={favorite.author}
-                                className="w-8 h-8 rounded-full object-cover"
+                                width={8 * 4} height={8 * 4} className="object-cover"
                               />
                               <div>
                                 <div className="font-medium text-gray-900 text-sm">{favorite.author}</div>

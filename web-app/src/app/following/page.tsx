@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
@@ -233,10 +234,10 @@ export default function FollowingPage() {
                       <div className="flex items-start gap-4">
                         <div className="relative">
                           {entity.imageUrl ? (
-                            <img 
+                            <Image 
                               src={entity.imageUrl}
                               alt={entity.name}
-                              className="w-16 h-16 rounded-full object-cover"
+                              width={16 * 4} height={16 * 4} className="object-cover"
                             />
                           ) : (
                             <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary-400 to-secondary-400 flex items-center justify-center text-white font-bold text-lg">
@@ -330,10 +331,10 @@ export default function FollowingPage() {
                         <div className="flex items-center gap-3">
                           <div className="relative">
                             {entity.imageUrl ? (
-                              <img 
+                              <Image 
                                 src={entity.imageUrl}
                                 alt={entity.name}
-                                className="w-12 h-12 rounded-full object-cover"
+                                width={12 * 4} height={12 * 4} className="object-cover"
                               />
                             ) : (
                               <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary-400 to-secondary-400 flex items-center justify-center text-white font-bold">

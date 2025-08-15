@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useParams, useRouter } from 'next/navigation'
@@ -114,10 +115,10 @@ const MessageBubble = ({
       {!isOwnMessage && (
         <div className="flex-shrink-0">
           {message.userAvatar ? (
-            <img
+            <Image 
               src={message.userAvatar}
               alt={message.userName}
-              className="w-8 h-8 rounded-full object-cover"
+              width={8 * 4} height={8 * 4} className="object-cover"
             />
           ) : (
             <div className="w-8 h-8 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full flex items-center justify-center text-white text-sm font-bold">
@@ -258,10 +259,10 @@ const MessageBubble = ({
       {isOwnMessage && (
         <div className="flex-shrink-0">
           {message.userAvatar ? (
-            <img
+            <Image 
               src={message.userAvatar}
               alt={message.userName}
-              className="w-8 h-8 rounded-full object-cover"
+              width={8 * 4} height={8 * 4} className="object-cover"
             />
           ) : (
             <div className="w-8 h-8 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full flex items-center justify-center text-white text-sm font-bold">
@@ -669,7 +670,7 @@ export default function ChatRoomPage() {
             
             <div className="flex items-center gap-3">
               {room.avatar ? (
-                <img src={room.avatar} alt={room.name} className="w-10 h-10 rounded-lg object-cover" />
+                <Image src={room.avatar} alt={room.name} width={10 * 4} height={10 * 4} className="object-cover" />
               ) : (
                 <div className="w-10 h-10 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-lg flex items-center justify-center text-white font-bold">
                   {room.name[0]}

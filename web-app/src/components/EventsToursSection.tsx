@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { 
   ArrowRightIcon, 
   SparklesIcon,
@@ -10,6 +11,7 @@ import {
   HeartIcon
 } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
+import { formatEventDate } from '@/lib/dateUtils'
 import { useCart } from '@/context/CartContext'
 import { EventsToursService, EventTour } from '@/lib/events-tours'
 import { useState, useEffect } from 'react'
@@ -26,12 +28,8 @@ export default function EventsToursSection() {
   }, [])
 
   const formatDate = (dateString: string) => {
-    const options: Intl.DateTimeFormatOptions = { 
-      weekday: 'short', 
-      month: 'short', 
-      day: 'numeric' 
-    }
-    return new Date(dateString).toLocaleDateString(isPortuguese ? 'pt-PT' : 'en-GB', options)
+    // Use consistent date formatting to prevent hydration issues
+    return formatEventDate(dateString, isPortuguese)
   }
 
   const formatTime = (timeString: string) => {
@@ -162,7 +160,7 @@ export default function EventsToursSection() {
                 {/* Event Image */}
                 <div className="relative h-48 overflow-hidden">
                   {event.imageUrl ? (
-                    <img 
+                    <Image 
                       src={event.imageUrl} 
                       alt={event.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

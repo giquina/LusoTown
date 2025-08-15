@@ -2,11 +2,13 @@
 
 import React, { Component, ErrorInfo, ReactNode } from 'react'
 import { ExclamationTriangleIcon, HomeIcon, ArrowPathIcon } from '@heroicons/react/24/outline'
+import { useLanguage } from '@/context/LanguageContext'
 
 interface Props {
   children: ReactNode
   fallback?: ReactNode
   onError?: (error: Error, errorInfo: ErrorInfo) => void
+  t?: (key: string, fallback?: string) => string
 }
 
 interface State {
@@ -61,6 +63,8 @@ class ErrorBoundary extends Component<Props, State> {
         return this.props.fallback
       }
 
+      const t = this.props.t || ((key: string, fallback?: string) => fallback || key)
+
       // Default fallback UI
       return (
         <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -69,16 +73,16 @@ class ErrorBoundary extends Component<Props, State> {
               <div className="text-center">
                 <ExclamationTriangleIcon className="mx-auto h-16 w-16 text-action-500 mb-4" />
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                  Algo correu mal
+                  {t('error.boundary.title', 'Something went wrong')}
                 </h2>
                 <p className="text-gray-600 mb-6">
-                  Ocorreu um erro inesperado. Por favor, tenta novamente ou contacta o apoio se o problema persistir.
+                  {t('error.boundary.description', 'An unexpected error occurred. Please try again or contact support if the problem persists.')}
                 </p>
                 
                 {process.env.NODE_ENV === 'development' && this.state.error && (
                   <details className="text-left mb-6 p-4 bg-red-50 rounded-lg">
                     <summary className="cursor-pointer text-red-800 font-medium mb-2">
-                      Detalhes do erro (modo desenvolvimento)
+                      {t('error.boundary.details-title', 'Error details (development mode)')}
                     </summary>
                     <pre className="text-xs text-red-700 overflow-auto max-h-32">
                       {this.state.error.toString()}
@@ -93,7 +97,7 @@ class ErrorBoundary extends Component<Props, State> {
                     className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors"
                   >
                     <ArrowPathIcon className="w-4 h-4 mr-2" />
-                    Tentar novamente
+                    {t('error.boundary.retry', 'Try again')}
                   </button>
                   
                   <button
@@ -101,14 +105,14 @@ class ErrorBoundary extends Component<Props, State> {
                     className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors"
                   >
                     <HomeIcon className="w-4 h-4 mr-2" />
-                    Voltar ao início
+                    {t('error.boundary.home', 'Go back home')}
                   </button>
                   
                   <a
                     href="mailto:support@lusotown.com?subject=Error Report&body=An error occurred on the LusoTown platform"
                     className="w-full flex justify-center py-2 px-4 text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors"
                   >
-                    Contactar apoio técnico
+                    {t('error.boundary.contact-support', 'Contact technical support')}
                   </a>
                 </div>
               </div>
@@ -138,17 +142,9 @@ export function withErrorBoundary<P extends object>(
   return WrappedComponent
 }
 
-// Specialized Error Boundary for different sections
+// Specialized Error Boundary for different sections (legacy - use PageErrorBoundaryWithTranslations)
 export function PageErrorBoundary({ children }: { children: ReactNode }) {
-  return (
-    <ErrorBoundary
-      onError={(error, errorInfo) => {
-        console.error('Page Error:', error, errorInfo)
-      }}
-    >
-      {children}
-    </ErrorBoundary>
-  )
+  return <PageErrorBoundaryWithTranslations>{children}</PageErrorBoundaryWithTranslations>
 }
 
 export function ComponentErrorBoundary({ 
@@ -159,22 +155,84 @@ export function ComponentErrorBoundary({
   componentName?: string 
 }) {
   return (
-    <ErrorBoundary
+    <ErrorBoundaryWithTranslations
       fallback={
-        <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-          <p className="text-red-800 text-sm">
-            Erro ao carregar {componentName || 'componente'}. 
-            <button 
-              onClick={() => window.location.reload()} 
-              className="ml-2 text-red-600 hover:text-red-700 underline"
-            >
-              Recarregar página
-            </button>
-          </p>
-        </div>
+        <ComponentErrorFallback componentName={componentName} />
       }
       onError={(error, errorInfo) => {
         console.error(`${componentName || 'Component'} Error:`, error, errorInfo)
+      }}
+    >
+      {children}
+    </ErrorBoundaryWithTranslations>
+  )
+}
+
+// Safe hook that handles missing context during SSG
+function useSafeLanguage() {
+  try {
+    return useLanguage()
+  } catch (error) {
+    // Fallback for when LanguageProvider is not available (SSG)
+    return {
+      t: (key: string, fallback?: string) => fallback || key,
+      language: 'en' as const,
+      setLanguage: () => {},
+      isLoading: false
+    }
+  }
+}
+
+// Component error fallback with translations
+function ComponentErrorFallback({ componentName }: { componentName?: string }) {
+  const { t } = useSafeLanguage()
+  
+  return (
+    <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+      <p className="text-red-800 text-sm">
+        {t('error.component.loading-error', 'Error loading')} {componentName || 'component'}. 
+        <button 
+          onClick={() => window.location.reload()} 
+          className="ml-2 text-red-600 hover:text-red-700 underline"
+        >
+          {t('error.component.reload', 'Reload page')}
+        </button>
+      </p>
+    </div>
+  )
+}
+
+// Functional wrapper components that provide translations
+export function ErrorBoundaryWithTranslations({ 
+  children, 
+  fallback, 
+  onError 
+}: { 
+  children: ReactNode
+  fallback?: ReactNode
+  onError?: (error: Error, errorInfo: ErrorInfo) => void
+}) {
+  const { t } = useSafeLanguage()
+  
+  return (
+    <ErrorBoundary 
+      fallback={fallback} 
+      onError={onError}
+      t={t}
+    >
+      {children}
+    </ErrorBoundary>
+  )
+}
+
+export function PageErrorBoundaryWithTranslations({ children }: { children: ReactNode }) {
+  const { t } = useSafeLanguage()
+  
+  return (
+    <ErrorBoundary
+      t={t}
+      onError={(error, errorInfo) => {
+        console.error('Page Error:', error, errorInfo)
       }}
     >
       {children}
@@ -182,4 +240,4 @@ export function ComponentErrorBoundary({
   )
 }
 
-export default ErrorBoundary
+export default ErrorBoundaryWithTranslations

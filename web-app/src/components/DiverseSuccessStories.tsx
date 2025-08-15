@@ -23,8 +23,8 @@ export default function DiverseSuccessStories() {
       city: 'Originally from Porto',
       location: 'Now in Camden, London',
       profession: 'Software Engineer at FinTech Startup',
-      story: 'Moved to London 3 years ago feeling isolated. Through LusoTown, I found not just Portuguese friends, but a professional network that helped me land my dream job. Now I mentor other Portuguese women in tech.',
-      achievement: 'Founded "Portuguese Women in Tech London" group with 150+ members',
+      story: 'Left Porto with coding dreams but London\'s tech scene felt cold and competitive. The saudade for Portuguese warmth was crushing my confidence until LusoTown connected me with Mulheres Portuguesas em Tech. Over bifanas and galão at The Portuguese Café in Vauxhall, I found sisters who understood both algorithms and nossa alma. Now I mentor 150+ Portuguese women in tech, proving that success tastes better when shared with quem nos entende.',
+      achievement: 'Founded "Mulheres Portuguesas em Tech Londres" - 150+ tech sisters strong',
       category: 'Professional Success',
       icon: BuildingOfficeIcon,
       color: 'from-primary-500 to-secondary-500',
@@ -37,10 +37,10 @@ export default function DiverseSuccessStories() {
       country: 'Brazil',
       flag: '🇧🇷',
       city: 'Originally from São Paulo',
-      location: 'Now in Elephant & Castle',
+      location: 'Now in Elephant & Castle, London',
       profession: 'Restaurant Owner',
-      story: 'Started with a small Brazilian food stall. The Portuguese-speaking community rallied around me - customers became family. Now I employ 12 people and host weekly community dinners.',
-      achievement: 'Opened "Sabores do Brasil" - top-rated Brazilian restaurant in South London',
+      story: 'Chegei de São Paulo with minha avó\'s receitas and dreams bigger than my pocket. Started with tiny Brazilian stall at Borough Market, missing the warmth of família paulistana. LusoTown brought Portuguese souls to taste minha coxinha and feijoada - customers became família, stories became seasoning. Now "Sabores do Brasil" employs 12 pessoas, hosts weekly "Domingo Brasileiro" where saudade melts into samba and every meal feels like home. Minha avó would be proud!',
+      achievement: 'Built "Sabores do Brasil" - where London tastes São Paulo\'s soul',
       category: 'Business Success',
       icon: HeartIcon,
       color: 'from-yellow-500 to-green-500',
@@ -72,7 +72,7 @@ export default function DiverseSuccessStories() {
       location: 'Now in Brixton',
       profession: 'Community Healthcare Worker & Cultural Organizer',
       story: 'Coming from Cape Verde, I wanted to preserve our music and traditions for my children. LusoTown helped me organize Cape Verdean cultural events that now attract people from across London.',
-      achievement: 'Organizes annual "Sounds of Cape Verde Festival" attended by 500+ people',
+      achievement: 'Organizes annual "Sounds of Cape Verde Festival" in London attended by 500+ people',
       category: 'Cultural Preservation',
       icon: UserGroupIcon,
       color: 'from-primary-500 to-accent-500',
@@ -87,8 +87,8 @@ export default function DiverseSuccessStories() {
       city: 'Originally from Maputo',
       location: 'Now in Vauxhall',
       profession: 'Social Worker & Community Advocate',
-      story: 'As a single mother, building a support network was crucial. The Portuguese community became my extended family - helping with childcare, job applications, and emotional support. Now I help other families.',
-      achievement: 'Started "Mozambican Mothers Support Network" helping 40+ families',
+      story: 'As a single mother in London, building a support network was crucial. The Portuguese community became my extended family - helping with childcare, job applications, and emotional support. Now I help other families.',
+      achievement: 'Started "Mozambican Mothers Support Network" helping 40+ families in London',
       category: 'Community Support',
       icon: HeartIcon,
       color: 'from-green-500 to-red-500',
@@ -103,7 +103,7 @@ export default function DiverseSuccessStories() {
       city: 'British-Portuguese (Goan heritage)',
       location: 'Grew up in London',
       profession: 'Cultural Heritage Consultant',
-      story: 'Growing up mixed-heritage, I struggled to connect with my Portuguese roots. This community helped me embrace my multicultural identity and now I help preserve Portuguese heritage stories in UK museums.',
+      story: 'Growing up mixed-heritage in London, I struggled to connect with my Portuguese roots. This community helped me embrace my multicultural identity and now I help preserve Portuguese heritage stories in London museums.',
       achievement: 'Curated "Luso-London Stories" exhibition at Museum of London',
       category: 'Heritage Preservation',
       icon: GlobeAltIcon,
@@ -227,19 +227,19 @@ export default function DiverseSuccessStories() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary-600 mb-2">500+</div>
-                <div className="text-sm text-gray-600">Portuguese speakers connected</div>
+                <div className="text-sm text-gray-600">Portuguese speakers connected in London</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-secondary-600 mb-2">50+</div>
-                <div className="text-sm text-gray-600">Businesses supported</div>
+                <div className="text-sm text-gray-600">London businesses supported</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-accent-600 mb-2">200+</div>
-                <div className="text-sm text-gray-600">Cultural events organized</div>
+                <div className="text-sm text-gray-600">Cultural events organized in London</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-coral-600 mb-2">10</div>
-                <div className="text-sm text-gray-600">Countries represented</div>
+                <div className="text-3xl font-bold text-coral-600 mb-2">32+</div>
+                <div className="text-sm text-gray-600">London boroughs represented</div>
               </div>
             </div>
 

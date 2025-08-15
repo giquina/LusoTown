@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { StarIcon } from '@heroicons/react/24/solid'
 import { ChatBubbleLeftIcon } from '@heroicons/react/24/outline'
 import { getImagesByCategory, getImageWithFallback, getAltTextWithFallback } from '@/lib/profileImages'
@@ -11,81 +12,81 @@ const testimonials = {
     {
       name: "Carlos Silva",
       age: "28",
-      location: "São Paulo, Brazil",
+      location: "Camden, London",
       imageId: "carlos-silva",
-      quote: "I organized my first Portuguese business networking event through LusoTown and 150 people showed up! Now I host monthly meetups connecting Brazilian entrepreneurs across the city.",
+      quote: "Organized my first Portuguese business networking at British Museum through LusoTown - 150 almas portuguesas appeared! Started with saudade for Portuguese business culture, now I host monthly 'Negócios & Pastéis' meetups at Casa do Bacalhau, connecting entrepreneurs over bifanas and vinho verde. From feeling isolated to building nossa business family in London!",
       rating: 5,
-      relationship: "Business Event Organizer"
+      relationship: "Portuguese Business Community Builder"
     },
     {
       name: "Ana Ferreira",
       age: "34", 
-      location: "Toronto, Canada",
+      location: "Stockwell, London",
       imageId: "ana-ferreira",
-      quote: "As a cultural coordinator, LusoTown helped me organize Festa Junina celebrations that brought together 300+ Portuguese families. The platform made promotion and community building effortless.",
+      quote: "Minha alma brasileira was homesick until LusoTown helped me organize Festa Junina at Vauxhall Park - 300+ Portuguese families dancing quadrilha under London sky! From missing São João in Salvador to recreating Brazilian joy with Portuguese hearts. Now nossa festa is annual tradition, mixing canjica with pastéis de nata, proving que nossa alegria conquers any London grey day!",
       rating: 5,
-      relationship: "Cultural Event Organizer"
+      relationship: "Brazilian Joy & Portuguese Heart Organizer"
     },
     {
       name: "Miguel Santos",
       age: "32",
-      location: "Lisbon, Portugal", 
+      location: "Elephant & Castle, London", 
       imageId: "miguel-santos",
-      quote: "I found an incredible fado evening in London through LusoTown while traveling for work. Connected with Portuguese expats who became lifelong friends. The global reach is amazing!",
+      quote: "Through LusoTown found magical fado evening at Southbank Centre that cured my London saudade. Listening to 'Lágrima' under Thames stars, surrounded by Portuguese souls sharing the same ache for home... tears of recognition, not sadness. Now we meet monthly at Taberna Real do Fado in Bermondsey, our voices joining ancient melodies. Fado taught me: saudade shared becomes love multiplied.",
       rating: 5,
-      relationship: "Global Portuguese Network Member"
+      relationship: "Fado Soul & Saudade Healer"
     },
     {
       name: "Joana Silva",
       age: "29",
-      location: "Paris, France",
+      location: "Canary Wharf, London",
       imageId: "joana-silva",
-      quote: "Started organizing Portuguese food festivals in Paris using LusoTown. From 20 people to 500+ attendees in just 6 months. The community support has been incredible!",
+      quote: "Started 'Sabores da Nossa Terra' at Borough Market through LusoTown with just 20 almas and minha avó's receitas. Six months later, 500+ people queue for our pastéis de nata, bifanas, and caldeirada! Watching British faces light up tasting nossa cultura, while Portuguese hearts feel proud... this is how we keep heritage alive. From corporate banker to keeper of Portuguese flavors!",
       rating: 5,
-      relationship: "Food Festival Organizer"
+      relationship: "Guardian of Portuguese Flavors"
     },
     {
       name: "Pedro Costa",
       age: "41",
-      location: "New York, USA",
+      location: "Hampstead, London",
       imageId: "pedro-costa",
-      quote: "Through LusoTown, I discovered Portuguese tech meetups happening worldwide. Attended events in 5 different cities during business trips - always found my Portuguese tech community!",
+      quote: "Lost in London's tech scene until LusoTown showed me 'Programadores Portugueses.' From Shoreditch startup pitches over galão to City networking with bifanas and Super Bock - finally found tech minds who understand both coding brilliance and Portuguese soul. We solve algorithms while sharing saudade, debug code while preserving cultura. Technology with coração português!",
       rating: 5,
-      relationship: "Tech Professional & Global Attendee"
+      relationship: "Tech Mind & Portuguese Heart"
     },
     {
       name: "Teresa Rodrigues",
       age: "37",
-      location: "Cape Town, South Africa",
+      location: "Brixton, London",
       imageId: "teresa-rodrigues",
-      quote: "From organizing small Cape Verdean music nights to hosting 400-person Portuguese cultural festivals - LusoTown gave me the tools and community to grow beyond my dreams.",
+      quote: "From playing morna alone in my Brixton flat, missing Cabo Verde's musical soul, to organizing 'Noites de Cabo Verde' for 10 homesick friends. LusoTown connected me with Portuguese music lovers hungry for African rhythms. Now 'Festival da Música Lusófona' at Alexandra Palace draws 400+ souls dancing to morna, fado, kizomba, and samba. Music heals saudade, community amplifies joy!",
       rating: 5,
-      relationship: "Music & Cultural Event Organizer"
+      relationship: "Cape Verdean Music & Portuguese Soul Keeper"
     },
     {
       name: "Ricardo Oliveira",
       age: "30",
-      location: "Sydney, Australia",
+      location: "Greenwich, London",
       imageId: "ricardo-oliveira",
-      quote: "I organize Portuguese football viewing parties and beach barbecues in Sydney. Started with 8 friends, now we're 200+ strong! LusoTown connected me with Portuguese families across Australia.",
+      quote: "I organize Portuguese football viewing parties at local pubs and barbecues in Greenwich Park. Started with 8 friends, now we're 200+ strong! LusoTown connected me with Portuguese families across London.",
       rating: 5,
       relationship: "Sports & Social Event Organizer"
     },
     {
       name: "Fernanda Santos",
       age: "26",
-      location: "Berlin, Germany",
+      location: "King's Cross, London",
       imageId: "fernanda-santos",
-      quote: "Found amazing Portuguese language exchange events and dance workshops through LusoTown. As a Brazilian in Berlin, the platform helped me discover our thriving Portuguese-speaking community here.",
+      quote: "Found amazing Portuguese language exchange events and dance workshops through LusoTown. As a Brazilian in London, the platform helped me discover our thriving Portuguese-speaking community here.",
       rating: 5,
       relationship: "Language & Dance Event Attendee"
     },
     {
       name: "António Pereira",
       age: "45",
-      location: "Dubai, UAE",
+      location: "City of London",
       imageId: "antonio-pereira",
-      quote: "Organized the first Portuguese business expo in Dubai using LusoTown's event tools. Connected 80+ Portuguese entrepreneurs and attracted 300 attendees from across the Middle East.",
+      quote: "Organized the first Portuguese business expo at ExCeL London using LusoTown's event tools. Connected 80+ Portuguese entrepreneurs and attracted 300 attendees from across the UK.",
       rating: 5,
       relationship: "Business Expo Organizer"
     }
@@ -94,81 +95,81 @@ const testimonials = {
     {
       name: "Carlos Silva",
       age: "28",
-      location: "São Paulo, Brasil",
+      location: "Camden, Londres",
       imageId: "carlos-silva",
-      quote: "Organizei o meu primeiro evento de networking português através da LusoTown e apareceram 150 pessoas! Agora organizo encontros mensais conectando empreendedores brasileiros pela cidade.",
+      quote: "Organizei o primeiro networking português no British Museum pela LusoTown - apareceram 150 almas portuguesas! Comecei com saudade da cultura empresarial portuguesa, agora organizo 'Negócios & Pastéis' mensais na Casa do Bacalhau, conectando empreendedores com bifanas e vinho verde. De isolado a construir nossa família empresarial em Londres!",
       rating: 5,
-      relationship: "Organizador de Eventos de Negócios"
+      relationship: "Construtor da Comunidade Empresarial Portuguesa"
     },
     {
       name: "Ana Ferreira",
       age: "34", 
-      location: "Toronto, Canadá",
+      location: "Stockwell, Londres",
       imageId: "ana-ferreira",
-      quote: "Como coordenadora cultural, a LusoTown ajudou-me a organizar celebrações de Festa Junina que juntaram 300+ famílias portuguesas. A plataforma tornou a promoção e construção de comunidade sem esforço.",
+      quote: "Como coordenadora cultural, a LusoTown ajudou-me a organizar celebrações de Festa Junina no Vauxhall Park que juntaram 300+ famílias portuguesas. A plataforma tornou a promoção e construção de comunidade sem esforço.",
       rating: 5,
       relationship: "Organizadora de Eventos Culturais"
     },
     {
       name: "Miguel Santos",
       age: "32",
-      location: "Lisboa, Portugal", 
+      location: "Elephant & Castle, Londres", 
       imageId: "miguel-santos",
-      quote: "Encontrei uma noite de fado incrível em Londres através da LusoTown enquanto viajava a trabalho. Conectei-me com expatriados portugueses que se tornaram amigos para a vida. O alcance global é incrível!",
+      quote: "Encontrei uma noite de fado incrível no Southbank Centre através da LusoTown. Conectei-me com falantes de português de toda Londres que se tornaram amigos para a vida. A comunidade londrina é incrível!",
       rating: 5,
-      relationship: "Membro da Rede Global Portuguesa"
+      relationship: "Membro da Comunidade Portuguesa de Londres"
     },
     {
       name: "Joana Silva",
       age: "29",
-      location: "Paris, França",
+      location: "Canary Wharf, Londres",
       imageId: "joana-silva",
-      quote: "Comecei a organizar festivais de comida portuguesa em Paris usando a LusoTown. De 20 pessoas para 500+ participantes em apenas 6 meses. O apoio da comunidade tem sido incrível!",
+      quote: "Comecei a organizar festivais de comida portuguesa no Borough Market usando a LusoTown. De 20 pessoas para 500+ participantes em apenas 6 meses. O apoio da comunidade portuguesa de Londres tem sido incrível!",
       rating: 5,
       relationship: "Organizadora de Festivais Gastronómicos"
     },
     {
       name: "Pedro Costa",
       age: "41",
-      location: "Nova Iorque, EUA",
+      location: "Hampstead, Londres",
       imageId: "pedro-costa",
-      quote: "Através da LusoTown, descobri encontros de tecnologia portugueses acontecendo pelo mundo. Participei em eventos em 5 cidades diferentes durante viagens de negócios - sempre encontrei a minha comunidade tech portuguesa!",
+      quote: "Através da LusoTown, descobri encontros de tecnologia portugueses acontecendo por Londres. De eventos em Shoreditch a networking na City - sempre encontro a minha comunidade tech portuguesa!",
       rating: 5,
-      relationship: "Profissional de Tecnologia & Participante Global"
+      relationship: "Profissional de Tecnologia & Participante em Eventos"
     },
     {
       name: "Teresa Rodrigues",
       age: "37",
-      location: "Cidade do Cabo, África do Sul",
+      location: "Brixton, Londres",
       imageId: "teresa-rodrigues",
-      quote: "De organizar pequenas noites de música cabo-verdiana a organizar festivais culturais portugueses de 400 pessoas - a LusoTown deu-me as ferramentas e comunidade para crescer além dos meus sonhos.",
+      quote: "De organizar pequenas noites de música cabo-verdiana a organizar festivais culturais portugueses de 400 pessoas no Alexandra Palace - a LusoTown deu-me as ferramentas e comunidade para crescer além dos meus sonhos.",
       rating: 5,
       relationship: "Organizadora de Eventos Musicais & Culturais"
     },
     {
       name: "Ricardo Oliveira",
       age: "30",
-      location: "Sydney, Austrália",
+      location: "Greenwich, Londres",
       imageId: "ricardo-oliveira",
-      quote: "Organizo festas para ver futebol português e churrascos na praia em Sydney. Começámos com 8 amigos, agora somos 200+ fortes! A LusoTown conectou-me com famílias portuguesas por toda a Austrália.",
+      quote: "Organizo festas para ver futebol português em pubs locais e churrascos no Greenwich Park. Começámos com 8 amigos, agora somos 200+ fortes! A LusoTown conectou-me com famílias portuguesas por toda Londres.",
       rating: 5,
       relationship: "Organizador de Eventos Desportivos & Sociais"
     },
     {
       name: "Fernanda Santos",
       age: "26",
-      location: "Berlim, Alemanha",
+      location: "King's Cross, Londres",
       imageId: "fernanda-santos",
-      quote: "Encontrei eventos incríveis de intercâmbio de língua portuguesa e workshops de dança através da LusoTown. Como brasileira em Berlim, a plataforma ajudou-me a descobrir a nossa próspera comunidade de língua portuguesa aqui.",
+      quote: "Encontrei eventos incríveis de intercâmbio de língua portuguesa e workshops de dança através da LusoTown. Como brasileira em Londres, a plataforma ajudou-me a descobrir a nossa próspera comunidade de língua portuguesa aqui.",
       rating: 5,
       relationship: "Participante de Eventos de Língua & Dança"
     },
     {
       name: "António Pereira",
       age: "45",
-      location: "Dubai, Emirados Árabes Unidos",
+      location: "City de Londres",
       imageId: "antonio-pereira",
-      quote: "Organizei a primeira expo de negócios portuguesa no Dubai usando as ferramentas de eventos da LusoTown. Conectei 80+ empreendedores portugueses e atraí 300 participantes de todo o Médio Oriente.",
+      quote: "Organizei a primeira expo de negócios portuguesa no ExCeL London usando as ferramentas de eventos da LusoTown. Conectei 80+ empreendedores portugueses e atraí 300 participantes de todo o Reino Unido.",
       rating: 5,
       relationship: "Organizador de Expo de Negócios"
     }
@@ -269,7 +270,9 @@ export default function TestimonialsNew() {
                 {/* Author Info */}
                 <div className="flex items-center gap-4">
                   <div className="w-14 h-14 rounded-full overflow-hidden shadow-lg ring-2 ring-white">
-                    <img 
+                    <Image 
+                      width={56}
+                      height={56}
                       src={getImageWithFallback(testimonial.imageId)} 
                       alt={getAltTextWithFallback(testimonial.imageId)}
                       className="w-full h-full object-cover"
@@ -303,10 +306,10 @@ export default function TestimonialsNew() {
         >
           <div className="text-center mb-12">
             <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-              Meet Your <span className="gradient-text">Global Portuguese Community</span>
+              Meet Your <span className="gradient-text">London Portuguese Community</span>
             </h3>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Join thousands of Portuguese speakers worldwide who are organizing events, building communities, and connecting across continents.
+              Join thousands of Portuguese speakers across London who are organizing events, building communities, and connecting throughout the city.
             </p>
           </div>
           
@@ -322,7 +325,9 @@ export default function TestimonialsNew() {
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="aspect-square rounded-2xl overflow-hidden shadow-lg ring-2 ring-white hover:ring-primary-200 transition-all duration-300"
               >
-                <img 
+                <Image 
+                  width={400}
+                  height={400}
                   src={member.path}
                   alt={member.alt}
                   className="w-full h-full object-cover"
@@ -348,12 +353,12 @@ export default function TestimonialsNew() {
                 <p className="text-gray-600">Average Rating</p>
               </div>
               <div>
-                <p className="text-4xl font-bold text-secondary-500 mb-2">15K+</p>
-                <p className="text-gray-600">Global Members</p>
+                <p className="text-4xl font-bold text-secondary-500 mb-2">8K+</p>
+                <p className="text-gray-600">London Members</p>
               </div>
               <div>
-                <p className="text-4xl font-bold text-accent-500 mb-2">50+</p>
-                <p className="text-gray-600">Countries Represented</p>
+                <p className="text-4xl font-bold text-accent-500 mb-2">32+</p>
+                <p className="text-gray-600">London Boroughs</p>
               </div>
             </div>
           </div>
@@ -368,13 +373,13 @@ export default function TestimonialsNew() {
           className="text-center mt-12"
         >
           <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-            Ready to Connect with Portuguese Speakers Worldwide?
+            Ready to Connect with Portuguese Speakers in London?
           </h3>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Join thousands of Portuguese speakers across 50+ countries who are organizing events, building communities, and creating lasting connections worldwide.
+            Join thousands of Portuguese speakers across London who are organizing events, building communities, and creating lasting connections throughout the city.
           </p>
           <a href="/signup" className="btn-primary text-lg px-10 py-4 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 inline-block">
-            Join the Global Community
+            Join the London Community
           </a>
         </motion.div>
       </div>

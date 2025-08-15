@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { 
   CalendarDaysIcon,
@@ -17,6 +18,7 @@ import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid'
 import { useLanguage } from '@/context/LanguageContext'
 import { useFavorites } from '@/context/FavoritesContext'
 import FavoriteButton from '@/components/FavoriteButton'
+import { formatEventDate } from '@/lib/dateUtils'
 
 export interface GroupEventData {
   id: string
@@ -101,14 +103,9 @@ export default function GroupEventCard({
   }
 
   const formatDate = (dateString: string) => {
-    const date = new Date(dateString)
-    return date.toLocaleDateString(isPortuguese ? 'pt-PT' : 'en-GB', { 
-      weekday: 'short', 
-      month: 'short', 
-      day: 'numeric' 
-    })
+    // Use consistent date formatting to prevent hydration issues
+    return formatEventDate(dateString, isPortuguese)
   }
-
   const formatPrice = (price: number, currency: string) => {
     if (price === 0) {
       return isPortuguese ? 'GRÁTIS' : 'FREE'
@@ -126,10 +123,10 @@ export default function GroupEventCard({
         <div className="flex gap-4 p-4">
           {/* Event Image */}
           <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 relative">
-            <img 
+            <Image 
               src={event.image} 
               alt={event.title}
-              className="w-full h-full object-cover"
+              fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover"
             />
             {event.isPopular && (
               <div className="absolute top-1 right-1 w-4 h-4 bg-accent-500 rounded-full flex items-center justify-center">
@@ -193,10 +190,10 @@ export default function GroupEventCard({
 
         {/* Event Image */}
         <div className="relative h-48 overflow-hidden">
-          <img 
+          <Image 
             src={event.image} 
             alt={event.title}
-            className="w-full h-full object-cover"
+            fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
           
@@ -270,10 +267,10 @@ export default function GroupEventCard({
             <div className="relative">
               <div className="w-8 h-8 rounded-full overflow-hidden">
                 {event.hostImage ? (
-                  <img 
+                  <Image 
                     src={event.hostImage} 
                     alt={event.hostName}
-                    className="w-full h-full object-cover"
+                    fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover"
                   />
                 ) : (
                   <div className="w-full h-full bg-gradient-to-r from-primary-400 to-secondary-400 flex items-center justify-center text-white font-bold text-xs">
@@ -322,7 +319,7 @@ export default function GroupEventCard({
     >
       {/* Event Image */}
       <div className="relative h-48 overflow-hidden">
-        <img 
+        <Image 
           src={event.image} 
           alt={event.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -415,10 +412,10 @@ export default function GroupEventCard({
           <div className="relative">
             <div className="w-10 h-10 rounded-full overflow-hidden">
               {event.hostImage ? (
-                <img 
+                <Image 
                   src={event.hostImage} 
                   alt={event.hostName}
-                  className="w-full h-full object-cover"
+                  fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover"
                 />
               ) : (
                 <div className="w-full h-full bg-gradient-to-r from-primary-400 to-secondary-400 flex items-center justify-center text-white font-bold text-sm">

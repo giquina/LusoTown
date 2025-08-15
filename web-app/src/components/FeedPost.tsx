@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import FavoriteButton from '@/components/FavoriteButton'
 import ReactionButton from '@/components/ReactionButton'
 import Hashtag from '@/components/Hashtag'
@@ -100,10 +101,10 @@ export default function FeedPost({
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full overflow-hidden">
-              <img 
+              <Image 
                 src={authorAvatar} 
                 alt={authorName}
-                className="w-full h-full object-cover"
+                fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover"
               />
             </div>
             <div>
@@ -152,7 +153,7 @@ export default function FeedPost({
         {/* Post Image */}
         {imageUrl && (
           <div className="mb-4 rounded-lg overflow-hidden">
-            <img 
+            <Image 
               src={imageUrl} 
               alt="Post image" 
               className="w-full h-auto object-cover"

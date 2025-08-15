@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { 
   HeartIcon as HeartOutlineIcon,
@@ -18,6 +19,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { HeartIcon as HeartSolidIcon, CheckBadgeIcon } from '@heroicons/react/24/solid'
 import { useLanguage } from '@/context/LanguageContext'
+import { formatEventDate } from '@/lib/dateUtils'
 import { useFavorites } from '@/context/FavoritesContext'
 import FavoriteButton from '@/components/FavoriteButton'
 import PhotoUpload, { UploadedPhoto } from '@/components/PhotoUpload'
@@ -130,14 +132,9 @@ export default function EventFeedCard({
   }
 
   const formatDate = (dateString: string) => {
-    const date = new Date(dateString)
-    return date.toLocaleDateString(isPortuguese ? 'pt-PT' : 'en-GB', { 
-      weekday: 'short', 
-      month: 'short', 
-      day: 'numeric' 
-    })
+    // Use consistent date formatting to prevent hydration issues
+    return formatEventDate(dateString, isPortuguese)
   }
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -153,10 +150,12 @@ export default function EventFeedCard({
             <div className="relative">
               <div className="w-12 h-12 rounded-full overflow-hidden">
                 {post.hostImage ? (
-                  <img 
+                  <Image 
                     src={post.hostImage} 
                     alt={post.hostName}
-                    className="w-full h-full object-cover"
+                    width={48}
+                    height={48}
+                    fill sizes="200px" className="object-cover"
                   />
                 ) : (
                   <div className="w-full h-full bg-gradient-to-r from-primary-400 to-secondary-400 flex items-center justify-center text-white font-bold">
@@ -204,20 +203,22 @@ export default function EventFeedCard({
           <div className="mb-4">
             {post.images.length === 1 ? (
               <div className="rounded-lg overflow-hidden">
-                <img 
+                <Image 
                   src={post.images[0]} 
                   alt="Event photo" 
-                  className="w-full h-auto object-cover max-h-96"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 800px"
+                  className="object-cover max-h-96"
                 />
               </div>
             ) : post.images.length === 2 ? (
               <div className="grid grid-cols-2 gap-2 rounded-lg overflow-hidden">
                 {post.images.map((image, idx) => (
                   <div key={idx} className="aspect-square overflow-hidden">
-                    <img 
+                    <Image 
                       src={image} 
                       alt={`Event photo ${idx + 1}`} 
-                      className="w-full h-full object-cover"
+                      fill sizes="200px" className="object-cover"
                     />
                   </div>
                 ))}
@@ -226,10 +227,10 @@ export default function EventFeedCard({
               <div className="grid grid-cols-2 gap-2 rounded-lg overflow-hidden">
                 {post.images.slice(0, 4).map((image, idx) => (
                   <div key={idx} className="relative aspect-square overflow-hidden">
-                    <img 
+                    <Image 
                       src={image} 
                       alt={`Event photo ${idx + 1}`} 
-                      className="w-full h-full object-cover"
+                      fill sizes="200px" className="object-cover"
                     />
                     {idx === 3 && post.images!.length > 4 && (
                       <div className="absolute inset-0 bg-black/60 flex items-center justify-center text-white font-bold text-lg">
@@ -260,10 +261,10 @@ export default function EventFeedCard({
             <div className="grid grid-cols-3 gap-2">
               {uploadedPhotos.slice(0, 3).map((photo) => (
                 <div key={photo.id} className="aspect-square rounded-lg overflow-hidden">
-                  <img 
+                  <Image 
                     src={photo.preview} 
                     alt="Uploaded photo" 
-                    className="w-full h-full object-cover"
+                    fill sizes="200px" className="object-cover"
                   />
                 </div>
               ))}
@@ -276,10 +277,10 @@ export default function EventFeedCard({
           <div className="flex items-start gap-3">
             {post.eventImage && (
               <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
-                <img 
+                <Image 
                   src={post.eventImage} 
                   alt={post.eventTitle}
-                  className="w-full h-full object-cover"
+                  fill sizes="200px" className="object-cover"
                 />
               </div>
             )}

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import FavoriteButton from '@/components/FavoriteButton'
 import { useCart } from '@/context/CartContext'
 import { useLanguage } from '@/context/LanguageContext'
@@ -158,10 +159,13 @@ export default function EventCard({
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
         {imageUrl ? (
-          <img 
+          <Image 
             src={imageUrl} 
             alt={title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            priority={featured}
           />
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center">

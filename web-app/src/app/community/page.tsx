@@ -1,7 +1,9 @@
 'use client'
+import Image from 'next/image'
 
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import CaseStudiesPromo from '@/components/CaseStudiesPromo'
 import { motion } from 'framer-motion'
 import { StarIcon, CalendarDaysIcon, MapPinIcon, UsersIcon, HeartIcon, ChatBubbleLeftIcon, ArrowRightIcon, HomeIcon, AcademicCapIcon, BuildingStorefrontIcon, MusicalNoteIcon } from '@heroicons/react/24/outline'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
@@ -524,10 +526,10 @@ export default function Community() {
                   >
                     <div className="relative">
                       <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 ring-4 ring-white shadow-lg">
-                        <img 
+                        <Image 
                           src={member.image} 
                           alt={`${member.name} - LusoTown member`}
-                          className="w-full h-full object-cover"
+                          fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover"
                         />
                       </div>
                       <div className="absolute -top-2 -right-2 text-2xl">
@@ -861,6 +863,13 @@ export default function Community() {
                 </div>
               </div>
             </motion.div>
+          </div>
+        </section>
+
+        {/* Case Studies Section */}
+        <section className="py-16 bg-white">
+          <div className="container-width px-4 sm:px-6 lg:px-8">
+            <CaseStudiesPromo variant="banner" className="max-w-4xl mx-auto" />
           </div>
         </section>
       </div>

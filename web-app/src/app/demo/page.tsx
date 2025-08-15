@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import EventCard from '@/components/EventCard'
+import ImprovedEventCard from '@/components/ImprovedEventCard'
 import EventFeed from '@/components/EventFeed'
 import Cart from '@/components/Cart'
 import { useLanguage } from '@/context/LanguageContext'
@@ -22,7 +23,7 @@ export default function DemoPage() {
   const { language } = useLanguage()
   const { cartCount, savedCount } = useCart()
   const [isCartOpen, setIsCartOpen] = useState(false)
-  const [activeDemo, setActiveDemo] = useState<'feed' | 'cart'>('feed')
+  const [activeDemo, setActiveDemo] = useState<'feed' | 'cart' | 'preview'>('feed')
   
   const isPortuguese = language === 'pt'
 
@@ -90,6 +91,85 @@ export default function DemoPage() {
       averageRating: 4.9,
       totalReviews: 8,
       requiresApproval: true
+    }
+  ]
+
+  // Premium events for preview demo
+  const premiumEvents = [
+    {
+      id: 'premium-event-1',
+      title: 'Exclusive Fado Night with Maria do Rosário',
+      description: 'An intimate evening with renowned fadista Maria do Rosário, featuring traditional Portuguese Fado music in an exclusive venue for LusoTown Family members only.',
+      date: '2025-08-25',
+      time: '19:30',
+      endTime: '23:00',
+      location: 'Ronnie Scott\'s Jazz Club',
+      address: '47 Frith St, Soho, London W1D 4HT',
+      maxAttendees: 40,
+      currentAttendees: 8,
+      category: 'Cultural',
+      price: 65,
+      currency: 'GBP',
+      images: ['https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&auto=format'],
+      hostName: 'Miguel Santos',
+      hostImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face&auto=format',
+      featured: true,
+      averageRating: 4.9,
+      totalReviews: 15,
+      membershipRequired: 'premium' as const,
+      requiresApproval: false,
+      tags: ['Fado', 'Music', 'Traditional', 'Portuguese Culture', 'Exclusive'],
+      verifiedEvent: true
+    },
+    {
+      id: 'premium-event-2',
+      title: 'Portuguese Wine Tasting: Douro Valley Collection',
+      description: 'Guided tasting of premium Douro wines with Portuguese sommelier João Santos. Learn about Portuguese winemaking traditions while enjoying artisanal cheeses.',
+      date: '2025-08-27',
+      time: '18:00',
+      endTime: '21:00',
+      location: 'Berry Bros. & Rudd',
+      address: '3 St James\'s St, St. James\'s, London SW1A 1EG',
+      maxAttendees: 25,
+      currentAttendees: 3,
+      category: 'Food & Drink',
+      price: 75,
+      currency: 'GBP',
+      images: ['https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=600&h=400&fit=crop&auto=format'],
+      hostName: 'João Santos',
+      hostImage: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face&auto=format',
+      featured: true,
+      averageRating: 5.0,
+      totalReviews: 12,
+      membershipRequired: 'premium' as const,
+      requiresApproval: true,
+      tags: ['Wine', 'Tasting', 'Douro', 'Portuguese Wines', 'Premium'],
+      verifiedEvent: true
+    },
+    {
+      id: 'community-event-1',
+      title: 'Portuguese Business Networking Breakfast',
+      description: 'Connect with Portuguese entrepreneurs and professionals over a traditional Portuguese breakfast. Share experiences and build meaningful business connections.',
+      date: '2025-08-23',
+      time: '08:00',
+      endTime: '10:30',
+      location: 'The Shard - Level 31',
+      address: '31 Thomas St, London SE1 9RY',
+      maxAttendees: 50,
+      currentAttendees: 15,
+      category: 'Business',
+      price: 35,
+      currency: 'GBP',
+      images: ['https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=400&fit=crop&auto=format'],
+      hostName: 'Carlos Rodrigues',
+      hostImage: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face&auto=format',
+      featured: false,
+      averageRating: 4.7,
+      totalReviews: 23,
+      membershipRequired: 'core' as const,
+      requiresApproval: false,
+      tags: ['Business', 'Networking', 'Breakfast', 'Entrepreneurs', 'Community'],
+      verifiedEvent: true
     }
   ]
 
@@ -176,6 +256,16 @@ export default function DemoPage() {
                 >
                   {isPortuguese ? '🛒 Sistema de Carrinho' : '🛒 Cart System'}
                 </button>
+                <button
+                  onClick={() => setActiveDemo('preview')}
+                  className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
+                    activeDemo === 'preview'
+                      ? 'bg-primary-500 text-white shadow-lg'
+                      : 'bg-white text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  {isPortuguese ? '👑 Sistema de Prévia' : '👑 Preview System'}
+                </button>
               </div>
             </div>
           </div>
@@ -226,7 +316,7 @@ export default function DemoPage() {
                     </div>
                   </div>
                 </div>
-              ) : (
+              ) : activeDemo === 'cart' ? (
                 <div>
                   <div className="text-center mb-8">
                     <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -335,6 +425,135 @@ export default function DemoPage() {
                           : 'Try adding some events to your cart using the buttons above!'
                         }
                       </p>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div>
+                  <div className="text-center mb-8">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                      {isPortuguese ? 'Sistema de Prévia de Valor da Comunidade Portuguesa' : 'Portuguese Community Value Preview System'}
+                    </h2>
+                    <p className="text-lg text-gray-600">
+                      {isPortuguese 
+                        ? 'Mostra aos utilizadores gratuitos o valor da adesão premium através de pré-visualizações de conteúdo exclusivo'
+                        : 'Shows free users the value of premium membership through exclusive content previews'
+                      }
+                    </p>
+                  </div>
+
+                  {/* Preview Demo Info */}
+                  <div className="bg-gradient-to-r from-primary-50 to-secondary-50 border border-primary-200 rounded-xl p-6 mb-8">
+                    <div className="text-center mb-4">
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">
+                        {isPortuguese ? 'Demonstração: Como utilizador gratuito' : 'Demo: As a free user'}
+                      </h3>
+                      <p className="text-gray-600">
+                        {isPortuguese 
+                          ? 'Os eventos abaixo mostram como os utilizadores gratuitos vêem eventos premium com sobreposições de prévia'
+                          : 'The events below show how free users see premium events with preview overlays'
+                        }
+                      </p>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 bg-premium-500 rounded-full"></span>
+                        {isPortuguese ? 'Eventos premium com prévia' : 'Premium events with preview'}
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 bg-secondary-500 rounded-full"></span>
+                        {isPortuguese ? 'Botões de upgrade para adesão' : 'Upgrade to membership buttons'}
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-2 h-2 bg-accent-500 rounded-full"></span>
+                        {isPortuguese ? 'Benefícios de membro destacados' : 'Member benefits highlighted'}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Premium Events with Preview Overlays */}
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                    {premiumEvents.map((event, index) => (
+                      <ImprovedEventCard 
+                        key={event.id} 
+                        event={event}
+                        showPreviewOverlay={true} // Always show preview overlay for this demo
+                        onUpgrade={() => alert(isPortuguese ? 'Redirecionamento para página de adesão!' : 'Redirect to membership page!')}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Benefits Explanation */}
+                  <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                      {isPortuguese ? 'Como o Sistema de Prévia Funciona' : 'How the Preview System Works'}
+                    </h3>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div>
+                        <h4 className="font-bold text-lg text-gray-900 mb-4">
+                          {isPortuguese ? 'Para Utilizadores Gratuitos:' : 'For Free Users:'}
+                        </h4>
+                        <ul className="space-y-3 text-gray-600">
+                          <li className="flex items-start gap-3">
+                            <span className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></span>
+                            <span>{isPortuguese ? 'Vêem pré-visualizações de eventos premium' : 'See previews of premium events'}</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <span className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></span>
+                            <span>{isPortuguese ? 'Sobreposições com benefícios de adesão' : 'Overlays showing membership benefits'}</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <span className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></span>
+                            <span>{isPortuguese ? 'Botões claros para fazer upgrade' : 'Clear upgrade call-to-action buttons'}</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <span className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></span>
+                            <span>{isPortuguese ? 'Informações sobre preços e disponibilidade' : 'Pricing and availability information'}</span>
+                          </li>
+                        </ul>
+                      </div>
+                      
+                      <div>
+                        <h4 className="font-bold text-lg text-gray-900 mb-4">
+                          {isPortuguese ? 'Benefícios Esperados:' : 'Expected Benefits:'}
+                        </h4>
+                        <ul className="space-y-3 text-gray-600">
+                          <li className="flex items-start gap-3">
+                            <span className="w-2 h-2 bg-secondary-500 rounded-full mt-2 flex-shrink-0"></span>
+                            <span>{isPortuguese ? 'Aumento de 15-25% nas conversões' : '15-25% increase in conversions'}</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <span className="w-2 h-2 bg-secondary-500 rounded-full mt-2 flex-shrink-0"></span>
+                            <span>{isPortuguese ? 'Maior compreensão do valor da adesão' : 'Better understanding of membership value'}</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <span className="w-2 h-2 bg-secondary-500 rounded-full mt-2 flex-shrink-0"></span>
+                            <span>{isPortuguese ? 'Redução da taxa de abandono' : 'Reduced abandonment rate'}</span>
+                          </li>
+                          <li className="flex items-start gap-3">
+                            <span className="w-2 h-2 bg-secondary-500 rounded-full mt-2 flex-shrink-0"></span>
+                            <span>{isPortuguese ? 'Experiência mais envolvente' : 'More engaging user experience'}</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    {/* CTA Section */}
+                    <div className="mt-8 pt-8 border-t border-gray-200 text-center">
+                      <p className="text-gray-600 mb-4">
+                        {isPortuguese 
+                          ? 'Clique nos eventos acima para ver como funciona o sistema de prévia!'
+                          : 'Click on the events above to see how the preview system works!'
+                        }
+                      </p>
+                      <button
+                        onClick={() => window.location.href = '/events'}
+                        className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold px-8 py-3 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
+                      >
+                        {isPortuguese ? 'Ver Sistema Completo nos Eventos' : 'See Full System in Events'}
+                      </button>
                     </div>
                   </div>
                 </div>

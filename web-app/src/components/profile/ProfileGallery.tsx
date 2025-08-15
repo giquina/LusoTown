@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   PlusIcon, 
@@ -95,8 +96,9 @@ export default function ProfileGallery({
         onClick={() => onPhotoClick?.(photo, index)}
       >
         {/* Photo */}
-        <img
+        <Image
           src={photo.url}
+          fill sizes="(max-width: 768px) 100vw, 400px"
           alt={photo.caption || `Photo ${index + 1}`}
           className={`w-full h-full object-cover transition-all duration-300 group-hover:scale-105 ${
             imageLoaded ? 'opacity-100' : 'opacity-0'

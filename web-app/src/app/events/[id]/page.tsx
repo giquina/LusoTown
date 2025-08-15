@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 import { useState, useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
@@ -360,10 +361,10 @@ export default function EventDetailsPage() {
           <div className="relative h-96 bg-gradient-to-r from-primary-200 to-secondary-200">
             {event.images.length > 0 ? (
               <>
-                <img 
+                <Image 
                   src={event.images[currentImageIndex] || event.images[0]} 
                   alt={event.title}
-                  className="w-full h-full object-cover"
+                  fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover"
                 />
                 
                 {event.images.length > 1 && (
@@ -635,7 +636,7 @@ export default function EventDetailsPage() {
                             window.open(photo.url, '_blank')
                           }}
                         >
-                          <img 
+                          <Image 
                             src={photo.url}
                             alt={photo.caption || 'Event photo'}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -694,7 +695,7 @@ export default function EventDetailsPage() {
                         >
                           <div className="relative inline-block mb-2">
                             {attendee.profileImage ? (
-                              <img
+                              <Image 
                                 src={attendee.profileImage}
                                 alt={attendee.name}
                                 className="w-16 h-16 rounded-full object-cover border-3 border-white shadow-lg group-hover:shadow-xl transition-shadow"
@@ -869,7 +870,7 @@ export default function EventDetailsPage() {
                     
                     <div className="flex items-center gap-3 mb-4">
                       {event.hostImage ? (
-                        <img 
+                        <Image 
                           src={event.hostImage} 
                           alt={event.hostName}
                           className="w-12 h-12 rounded-full object-cover ring-2 ring-primary-100"

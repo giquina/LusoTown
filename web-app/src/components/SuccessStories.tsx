@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { HeartIcon, SparklesIcon } from '@heroicons/react/24/outline'
 import { getImageWithFallback } from '@/lib/profileImages'
 
@@ -27,10 +28,10 @@ const successStories: SuccessStory[] = [
     profileImage: getImageWithFallback('sarah-chen'),
     friendImage: getImageWithFallback('maya-patel'),
     friendName: 'Maria Santos',
-    story: 'After moving from Porto, I felt lost in London until I met Maria at a Fado night in Little Portugal. We discovered we both worked in fintech and started a Portuguese Women in Tech group that now helps 50+ Lusophone professionals thrive in London\'s startup scene.',
-    connectionType: 'Portuguese Tech Heritage',
+    story: 'After moving from Porto, the saudade was overwhelming. I missed minha avó\'s pastéis de nata and Portuguese conversation. Then I found Maria at Casa do Bacalhau in Stockwell through LusoTown. Over francesinha and vinho verde, we discovered we both worked in fintech and felt the same cultural isolation. Together we started "Mulheres Portuguesas em Tech Londres" - now 80+ strong, meeting monthly at The Portuguese Café in Vauxhall for networking over bifanas and dreams of changing London\'s startup scene while preserving nossa cultura.',
+    connectionType: 'Saudade Tech Sisters',
     timeframe: '1 year ago',
-    activities: ['Fintech networking', 'Portuguese startups', 'Mentorship programs', 'Cultural preservation']
+    activities: ['Portuguese fintech meetups', 'Bifana networking brunches', 'Cultural tech innovation', 'Saudade support circle']
   },
   {
     id: '2',
@@ -40,10 +41,10 @@ const successStories: SuccessStory[] = [
     profileImage: getImageWithFallback('jessica-williams'),
     friendImage: getImageWithFallback('emma-johnson'),
     friendName: 'Beatriz Rodrigues',
-    story: 'From Luanda to London - Beatriz and I connected over our shared experience as Angolan-Portuguese professionals. Together we launched "Heritage & Hustle," a business network supporting Portuguese-speaking entrepreneurs across all CPLP nations, now with 200+ members and £2M in collective funding raised.',
-    connectionType: 'CPLP Business Network',
+    story: 'From Luanda to London, carrying semba rhythms in my heart and entrepreneurial fire in my soul. Beatriz and I met at Portuguese Cultural Centre in South Lambeth, both feeling the weight of representing nossa África Portuguesa in London\'s business world. Over canja de galinha and stories of our grandmothers\' strength, we birthed "Herança & Hustle" - celebrating Angolan-Portuguese business heritage. Now 200+ CPLP entrepreneurs strong, we meet monthly at Elephant & Castle\'s Portuguese Heart restaurant, raising £2M while keeping our ancestors\' entrepreneurial spirit alive.',
+    connectionType: 'África Portuguesa Power',
     timeframe: '8 months ago',
-    activities: ['Startup funding', 'Cultural entrepreneurship', 'Heritage preservation', 'Cross-border partnerships']
+    activities: ['CPLP startup funding', 'Semba networking nights', 'Ancestral business wisdom', 'African-Portuguese heritage ventures']
   },
   {
     id: '3',
@@ -53,10 +54,10 @@ const successStories: SuccessStory[] = [
     profileImage: getImageWithFallback('priya-sharma'),
     friendImage: getImageWithFallback('lisa-thompson'),
     friendName: 'Lucia Tavares',
-    story: 'Coming from São Paulo, I was struggling with imposter syndrome in London\'s creative industry. Lucia, a Mozambican-Portuguese designer, became my accountability partner through LusoTown. We\'ve now co-founded a award-winning creative agency celebrating Lusophone storytelling and won the London Cultural Diversity Award 2024.',
-    connectionType: 'Creative Heritage Collective',
+    story: 'Vim de São Paulo with bossa nova dreams and saudade for creative community. London\'s creative scene felt cold until I met Lucia at a fado night in Little Portugal, Camden. She, uma moçambicana with marrabenta soul, understood my imposter syndrome - we were both fighting to bring Lusophone warmth to London\'s creative coldness. Over pastéis de nata at Gail\'s in Camden Market, we dreamed up "Coração Criativo" - our award-winning agency celebrating African-Brazilian-Portuguese storytelling. Now we work from Casa do Fado café, mixing capulana patterns with Brazilian colors, winning London Cultural Diversity Award 2024 while keeping nossa alma criativa alive.',
+    connectionType: 'Coração Criativo Collective',
     timeframe: '10 months ago',
-    activities: ['Creative agency', 'Cultural storytelling', 'Award recognition', 'Community impact']
+    activities: ['Lusophone creative agency', 'Fado & bossa inspiration sessions', 'Marrabenta design workshops', 'Saudade storytelling']
   },
   {
     id: '4',
@@ -66,10 +67,10 @@ const successStories: SuccessStory[] = [
     profileImage: getImageWithFallback('ava-davis'),
     friendImage: getImageWithFallback('community-4'),
     friendName: 'Raquel Pereira',
-    story: 'As a researcher from Coimbra studying at Imperial College, I met Raquel, a Cape Verdean doctor, through our Portuguese Academic Network. We collaborated on groundbreaking research combining Portuguese traditional medicine with modern healthcare, now published in Nature and featured by the Portuguese Embassy as a model of diaspora excellence.',
-    connectionType: 'Academic Excellence Network',
+    story: 'From Coimbra\'s ancient stones to Imperial College\'s laboratories, carrying minha avó\'s herbal wisdom in my scientist\'s heart. The loneliness of academia hit hard until I met Raquel, uma cabo-verdiana médica, at Portuguese Sunday mass in Bermondsey. Over caldeirada verde and stories of our islands\' healing traditions, we discovered our shared mission - proving que nossa medicina ancestral belongs in modern healthcare. Our research combining Cape Verdean plant medicine with Portuguese traditional healing is now published in Nature, celebrated by Portuguese Embassy as "Orgulho da Diáspora," and studied worldwide. We meet monthly at Tasca do Chico near Brick Lane, where grogue and ginjinha fuel our revolutionary academic dreams.',
+    connectionType: 'Medicina da Alma Network',
     timeframe: '1.5 years ago',
-    activities: ['Academic research', 'Medical innovation', 'Embassy recognition', 'International publication']
+    activities: ['Ancestral medicine research', 'Grogue & ginjinha study sessions', 'Embassy diaspora celebrations', 'Island healing wisdom']
   },
   {
     id: '5',
@@ -79,10 +80,10 @@ const successStories: SuccessStory[] = [
     profileImage: getImageWithFallback('community-5'),
     friendImage: getImageWithFallback('community-6'),
     friendName: 'João Ribeiro',
-    story: 'From Madeira to London\'s finance district - João and I transformed our weekend Portuguese football matches into "Goal & Growth," a sports-based mentorship program. We\'ve helped 100+ young Portuguese-speaking men develop leadership skills through sport, with 85% achieving career promotions and many becoming community leaders themselves.',
-    connectionType: 'Sports Leadership Program',
+    story: 'From Madeira\'s volcanic fields where I learned futebol from meu pai, to London\'s finance towers where I found success but lost minha alma portuguesa. Weekend matches at Regent\'s Park felt empty until I met João through LusoTown - um verdadeiro craque from Funchal sharing the same saudade for home. Our Sunday football evolved into "Golo & Crescimento" - mentoring young Portuguese men while teaching them que nossa força comes from both feet and coração. We meet every Saturday at The Portuguese Tavern in Notting Hill for planning over Super Bock, then train on Hampstead Heath fields. 100+ rapazes later, 85% promoted in their careers, all carrying Portuguese pride. Como dizemos: "Futebol cura saudade, brotherhood builds future."',
+    connectionType: 'Golo & Coração Brotherhood',
     timeframe: '2 years ago',
-    activities: ['Sports mentorship', 'Leadership development', 'Career advancement', 'Community building']
+    activities: ['Portuguese football mentorship', 'Super Bock strategy sessions', 'Hampstead Heath training', 'Saudade healing through sport']
   },
   {
     id: '6',
@@ -92,10 +93,10 @@ const successStories: SuccessStory[] = [
     profileImage: getImageWithFallback('community-7'),
     friendImage: getImageWithFallback('community-8'),
     friendName: 'Helena Sousa',
-    story: 'As working mothers from Braga and Viseu, Helena and I started "Mães em Londres" (Mothers in London) to support Portuguese-speaking families. Our community has grown to 300+ families, offering everything from childcare co-ops to university prep workshops. We\'ve been featured in Portuguese media and received funding from London Borough of Camden for our cultural integration programs.',
-    connectionType: 'Family Heritage Network',
+    story: 'From Braga with heart full of mothers\' wisdom and pockets full of dreams for meus filhos in London. The playground isolation was crushing - British mums were lovely but didn\'t understand the weight of raising Portuguese souls in English soil. Then Helena, uma mãe guerreira from Viseu, sat beside me at Primrose Hill playground, both watching our children speak English while we whispered Portuguese prayers. Over coffee at Portuguese Deli in Camden Town, sharing stories of our mothers\' strength and fears about losing nossa língua, we birthed "Mães Portuguesas de Londres." Now 300+ families strong, meeting at St. Pancras Portuguese Community Centre every Sunday after mass, teaching children fado songs between English homework, preserving receitas da avó while navigating British schools. RTP featured our work, and Camden Council funds our "Portuguese Roots, London Wings" program.',
+    connectionType: 'Mães Guerreiras Network',
     timeframe: '3 years ago',
-    activities: ['Family support', 'Cultural integration', 'Government recognition', 'Media features']
+    activities: ['Portuguese family preservation', 'Fado children\'s workshops', 'Avó recipe exchanges', 'Bilingual parenting support']
   }
 ]
 
@@ -144,11 +145,11 @@ export default function SuccessStories() {
             Portuguese Heritage Success Stories
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            From Social Calendar to{' '}
-            <span className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent">Life-Changing Impact</span>
+            From Saudade to{' '}
+            <span className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent">Alma Portuguesa Realizada</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-            Portuguese speakers who transformed their London experience through LusoTown connections. Discover inspiring achievements in business, academia, creative arts, and community leadership - showcasing the power of Portuguese diaspora excellence.
+            Real Portuguese souls who transformed their London saudade into thriving community connections. From pastéis de nata meetups in Stockwell to fado nights in Camden - discover how nossa gente builds lasting bonds while preserving Portuguese heart in the city\'s rhythm.
           </p>
         </motion.div>
 
@@ -180,8 +181,9 @@ export default function SuccessStories() {
                       whileHover={{ scale: 1.05, zIndex: 10 }}
                       className="relative"
                     >
-                      <img
+                      <Image
                         src={story.profileImage}
+              width={80} height={80}
                         alt={`${story.name} profile`}
                         className="w-20 h-20 rounded-full object-cover border-4 border-white shadow-lg"
                         loading="lazy"
@@ -194,8 +196,9 @@ export default function SuccessStories() {
                       whileHover={{ scale: 1.05, zIndex: 10 }}
                       className="relative"
                     >
-                      <img
+                      <Image
                         src={story.friendImage}
+              width={80} height={80}
                         alt={`${story.friendName} profile`}
                         className="w-20 h-20 rounded-full object-cover border-4 border-white shadow-lg"
                         loading="lazy"
@@ -247,17 +250,25 @@ export default function SuccessStories() {
           className="text-center mt-16"
         >
           <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-            Ready to Build Your Own Portuguese Legacy in London?
+            Ready to Transform Your London Saudade Into Portuguese Success?
           </h3>
           <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Join 500+ Portuguese speakers from Portugal, Brazil, Angola, Mozambique, Cape Verde & beyond who are achieving extraordinary things together. Your social calendar could be the foundation of your next big breakthrough.
+            Join 500+ almas portuguesas from Portugal, Brazil, Angola, Mozambique, Cape Verde & beyond who found their London family through real connections. From Borough Market food adventures to Vauxhall fado nights - your Portuguese community awaits at authentic London venues where nossa cultura thrives.
           </p>
-          <a 
-            href="/signup" 
-            className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
-          >
-            JOIN NOW
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="/signup" 
+              className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+            >
+              JOIN NOW
+            </a>
+            <a 
+              href="/case-studies" 
+              className="inline-flex items-center justify-center bg-white text-secondary-600 hover:bg-gray-50 border-2 border-secondary-200 hover:border-secondary-300 font-bold text-lg px-10 py-4 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1"
+            >
+              Read Detailed Case Studies
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

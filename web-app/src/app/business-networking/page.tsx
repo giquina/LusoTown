@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 import React, { useState, useEffect } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
@@ -88,7 +89,7 @@ const NetworkingEventCard: React.FC<NetworkingEventCardProps> = ({ event, featur
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
         {event.images.length > 0 ? (
-          <img 
+          <Image 
             src={event.images[0]} 
             alt={event.title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -212,10 +213,10 @@ const NetworkingEventCard: React.FC<NetworkingEventCardProps> = ({ event, featur
               {event.speakerLineup.slice(0, 2).map(speaker => (
                 <div key={speaker.id} className="flex items-center gap-3">
                   {speaker.imageUrl ? (
-                    <img 
+                    <Image 
                       src={speaker.imageUrl} 
                       alt={speaker.name}
-                      className="w-8 h-8 rounded-full object-cover"
+                      width={8 * 4} height={8 * 4} className="object-cover"
                     />
                   ) : (
                     <div className="w-8 h-8 bg-primary-100 rounded-full flex items-center justify-center">

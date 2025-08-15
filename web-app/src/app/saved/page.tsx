@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -256,10 +257,10 @@ export default function SavedItemsPage() {
                           {/* Image */}
                           <div className="relative h-48 overflow-hidden">
                             {item.imageUrl ? (
-                              <img 
+                              <Image 
                                 src={item.imageUrl} 
                                 alt={item.title}
-                                className="w-full h-full object-cover"
+                                fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover"
                               />
                             ) : (
                               <div className="w-full h-full bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center">
