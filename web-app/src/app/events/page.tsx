@@ -803,6 +803,30 @@ export default function EventsPage() {
             )}
           </AnimatePresence>
         )}
+
+        {/* My Network CTA Section */}
+        <section className="py-16 bg-gradient-to-r from-primary-50 to-secondary-50">
+          <div className="container-width px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-2xl mx-auto">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                {isPortuguese ? 'Conecte-se com a Sua Rede' : 'Connect with Your Network'}
+              </h2>
+              <p className="text-gray-600 mb-6">
+                {isPortuguese 
+                  ? 'Veja quais dos seus contactos também estão a participar em eventos e construa a sua rede de falantes de português.'
+                  : 'See which of your connections are also attending events and build your Portuguese-speaking network.'
+                }
+              </p>
+              <a
+                href="/my-network"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold px-8 py-3 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 shadow-lg hover:shadow-xl"
+              >
+                <UserGroupIcon className="w-5 h-5" />
+                {isPortuguese ? 'Ver A Minha Rede' : 'View My Network'}
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />
