@@ -14,18 +14,18 @@ const testimonials = {
       age: "28",
       location: "Camden, London",
       imageId: "carlos-silva",
-      quote: "Organized my first Portuguese business networking at British Museum through LusoTown - 150 almas portuguesas appeared! Started with saudade for Portuguese business culture, now I host monthly 'Negócios & Pastéis' meetups at Casa do Bacalhau, connecting entrepreneurs over bifanas and vinho verde. From feeling isolated to building nossa business network in London!",
+      quote: "Started attending Portuguese movie nights at Rich Mix Cinema through LusoTown, just wanting to hear nossa língua on screen. Met other young Portuguese who missed our cultural conversations. Now we organize monthly 'Cinema & Conversa' events mixing Portuguese films with networking over bifanas. From lonely evenings to building meaningful friendships and business connections!",
       rating: 5,
-      relationship: "Portuguese Business Community Builder"
+      relationship: "Cultural Events & Networking Organizer"
     },
     {
       name: "Ana Ferreira",
       age: "34", 
       location: "Stockwell, London",
       imageId: "ana-ferreira",
-      quote: "Minha alma brasileira was homesick until LusoTown helped me organize Festa Junina at Vauxhall Park - 300+ Portuguese professionals celebrating quadrilha under London sky! From missing São João in Salvador to recreating Brazilian joy with Portuguese hearts. Now nossa festa is annual tradition, mixing canjica with pastéis de nata, proving que nossa alegria conquers any London grey day!",
+      quote: "Minha alma brasileira was homesick until LusoTown helped me find Brazilian dance workshops at Southbank Centre. Learning samba steps with Portuguese hearts who understand nossa alegria! From missing Brazil's warmth to creating our own tropical London community. Now we dance together every week, sharing stories between the steps. Dance heals saudade, community amplifies joy!",
       rating: 5,
-      relationship: "Brazilian Joy & Portuguese Heart Organizer"
+      relationship: "Brazilian Dance & Social Community Leader"
     },
     {
       name: "Miguel Santos",
@@ -34,61 +34,61 @@ const testimonials = {
       imageId: "miguel-santos",
       quote: "Through LusoTown found magical fado evening at Southbank Centre that cured my London saudade. Listening to 'Lágrima' under Thames stars, surrounded by Portuguese souls sharing the same ache for home... tears of recognition, not sadness. Now we meet monthly at Taberna Real do Fado in Bermondsey, our voices joining ancient melodies. Fado taught me: saudade shared becomes love multiplied.",
       rating: 5,
-      relationship: "Fado Soul & Saudade Healer"
+      relationship: "Fado Soul & Cultural Heritage Keeper"
     },
     {
       name: "Joana Silva",
       age: "29",
       location: "Canary Wharf, London",
       imageId: "joana-silva",
-      quote: "Started 'Sabores da Nossa Terra' at Borough Market through LusoTown with just 20 almas and minha avó's receitas. Six months later, 500+ people queue for our pastéis de nata, bifanas, and caldeirada! Watching British faces light up tasting nossa cultura, while Portuguese hearts feel proud... this is how we keep heritage alive. From corporate banker to keeper of Portuguese flavors!",
+      quote: "Started attending Portuguese cooking workshops through LusoTown to learn minha avó's lost receitas. Discovered other Portuguese hearts hungry for authentic flavors and cultural connections. Now we organize 'Sabores & Stories' dinners at local community centers, sharing traditional dishes while building professional networks. Food connects, friendship follows, business grows naturally!",
       rating: 5,
-      relationship: "Guardian of Portuguese Flavors"
+      relationship: "Culinary Culture & Professional Networking"
     },
     {
       name: "Pedro Costa",
       age: "41",
       location: "Hampstead, London",
       imageId: "pedro-costa",
-      quote: "Lost in London's tech scene until LusoTown showed me 'Programadores Portugueses.' From Shoreditch startup pitches over galão to City networking with bifanas and Super Bock - finally found tech minds who understand both coding brilliance and Portuguese soul. We solve algorithms while sharing saudade, debug code while preserving cultura. Technology with coração português!",
+      quote: "Found Portuguese book club through LusoTown discussing literatura lusófona at Hampstead libraries. From Pessoa's poetry to modern Portuguese novels, sharing thoughts with almas who understand literary saudade. Our discussions became AI workshops when we realized many were tech professionals. Now 'Books & Code' meetups blend Portuguese culture with professional growth!",
       rating: 5,
-      relationship: "Tech Mind & Portuguese Heart"
+      relationship: "Literature & Tech Community Builder"
     },
     {
       name: "Teresa Rodrigues",
       age: "37",
       location: "Brixton, London",
       imageId: "teresa-rodrigues",
-      quote: "From playing morna alone in my Brixton flat, missing Cabo Verde's musical soul, to organizing 'Noites de Cabo Verde' for 10 homesick friends. LusoTown connected me with Portuguese music lovers hungry for African rhythms. Now 'Festival da Música Lusófona' at Alexandra Palace draws 400+ souls dancing to morna, fado, kizomba, and samba. Music heals saudade, community amplifies joy!",
+      quote: "From playing morna alone in my Brixton flat, missing Cabo Verde's musical soul, to discovering Portuguese music appreciation evenings through LusoTown. Started with 6 homesick souls, now 'Música Lusófona' at local venues draws 100+ people sharing our diverse musical heritage. Music heals, community amplifies, friendships flourish across all Portuguese-speaking cultures!",
       rating: 5,
-      relationship: "Cape Verdean Music & Portuguese Soul Keeper"
+      relationship: "Music Appreciation & Cultural Unity"
     },
     {
       name: "Ricardo Oliveira",
       age: "30",
       location: "Greenwich, London",
       imageId: "ricardo-oliveira",
-      quote: "I organize Portuguese football viewing parties at local pubs and barbecues in Greenwich Park. Started with 8 friends, now we're 200+ strong! LusoTown connected me with Portuguese professionals across London.",
+      quote: "Joined Portuguese football viewing parties through LusoTown just to watch Portugal games with people who understand our passion. Started with 8 friends at local pubs, now we organize weekend barbecues in Greenwich Park for 200+ Portuguese families. From match nights to community picnics - LusoTown showed me how sport builds lasting friendships!",
       rating: 5,
-      relationship: "Sports & Social Event Organizer"
+      relationship: "Sports & Social Community Organizer"
     },
     {
       name: "Fernanda Santos",
       age: "26",
       location: "King's Cross, London",
       imageId: "fernanda-santos",
-      quote: "Found amazing Portuguese language exchange events and dance workshops through LusoTown. As a Brazilian in London, the platform helped me discover our thriving Portuguese-speaking community here.",
+      quote: "Discovered Portuguese language exchange sessions through LusoTown, perfect for maintaining meu português while improving English. Met Brazilian, Portuguese, and African Portuguese speakers creating beautiful linguistic harmony. From language practice to salsa workshops to professional networking - LusoTown became my gateway to London's diverse Portuguese-speaking community!",
       rating: 5,
-      relationship: "Language & Dance Event Attendee"
+      relationship: "Language Exchange & Cultural Bridge"
     },
     {
       name: "António Pereira",
       age: "45",
       location: "City of London",
       imageId: "antonio-pereira",
-      quote: "Organized the first Portuguese business expo at ExCeL London using LusoTown's event tools. Connected 80+ Portuguese entrepreneurs and attracted 300 attendees from across the UK.",
+      quote: "Started attending Portuguese heritage walks through London's historic areas via LusoTown. Learning about Portuguese contributions to British culture while meeting fellow history enthusiasts. These cultural connections naturally evolved into business networking. Now 'Heritage & Commerce' tours blend cultural education with professional opportunities. History connects hearts, business follows naturally!",
       rating: 5,
-      relationship: "Business Expo Organizer"
+      relationship: "Heritage Tours & Business Development"
     }
   ],
   pt: [
@@ -97,81 +97,81 @@ const testimonials = {
       age: "28",
       location: "Camden, Londres",
       imageId: "carlos-silva",
-      quote: "Organizei o primeiro networking português no British Museum pela LusoTown - apareceram 150 almas portuguesas! Comecei com saudade da cultura empresarial portuguesa, agora organizo 'Negócios & Pastéis' mensais na Casa do Bacalhau, conectando empreendedores com bifanas e vinho verde. De isolado a construir nossa rede empresarial em Londres!",
+      quote: "Comecei a ir a noites de cinema português no Rich Mix Cinema através da LusoTown, só queria ouvir nossa língua no ecrã. Conheci outros jovens portugueses que sentiam falta das nossas conversas culturais. Agora organizamos 'Cinema & Conversa' mensais misturando filmes portugueses com networking. De noites solitárias a construir amizades e conexões profissionais!",
       rating: 5,
-      relationship: "Construtor da Comunidade Empresarial Portuguesa"
+      relationship: "Organizador de Eventos Culturais & Networking"
     },
     {
       name: "Ana Ferreira",
       age: "34", 
       location: "Stockwell, Londres",
       imageId: "ana-ferreira",
-      quote: "Como coordenadora cultural, a LusoTown ajudou-me a organizar celebrações de Festa Junina no Vauxhall Park que juntaram 300+ profissionais portugueses. A plataforma tornou a promoção e construção de comunidade sem esforço.",
+      quote: "Minha alma brasileira tinha saudades até a LusoTown me ajudar a encontrar workshops de dança brasileira no Southbank Centre. Aprendendo passos de samba com corações portugueses que entendem nossa alegria! De sentir falta do calor brasileiro a criar nossa própria comunidade tropical londrina. Agora dançamos juntos todas as semanas!",
       rating: 5,
-      relationship: "Organizadora de Eventos Culturais"
+      relationship: "Líder de Dança & Comunidade Social Brasileira"
     },
     {
       name: "Miguel Santos",
       age: "32",
       location: "Elephant & Castle, Londres", 
       imageId: "miguel-santos",
-      quote: "Encontrei uma noite de fado incrível no Southbank Centre através da LusoTown. Conectei-me com falantes de português de toda Londres que se tornaram amigos para a vida. A comunidade londrina é incrível!",
+      quote: "Através da LusoTown encontrei uma noite de fado mágica no Southbank Centre que curou minha saudade londrina. Ouvindo 'Lágrima' sob as estrelas do Tamisa, rodeado de almas portuguesas partilhando a mesma dor de casa... lágrimas de reconhecimento, não tristeza. Agora encontramo-nos mensalmente, vozes unindo melodias antigas.",
       rating: 5,
-      relationship: "Membro da Comunidade Portuguesa de Londres"
+      relationship: "Alma do Fado & Guardião da Herança Cultural"
     },
     {
       name: "Joana Silva",
       age: "29",
       location: "Canary Wharf, Londres",
       imageId: "joana-silva",
-      quote: "Comecei a organizar festivais de comida portuguesa no Borough Market usando a LusoTown. De 20 pessoas para 500+ participantes em apenas 6 meses. O apoio da comunidade portuguesa de Londres tem sido incrível!",
+      quote: "Comecei a frequentar workshops de culinária portuguesa através da LusoTown para aprender as receitas perdidas da minha avó. Descobri outros corações portugueses famintos por sabores autênticos. Agora organizamos jantares 'Sabores & Histórias' partilhando pratos tradicionais enquanto construímos redes profissionais. Comida conecta, amizade segue!",
       rating: 5,
-      relationship: "Organizadora de Festivais Gastronómicos"
+      relationship: "Cultura Culinária & Networking Profissional"
     },
     {
       name: "Pedro Costa",
       age: "41",
       location: "Hampstead, Londres",
       imageId: "pedro-costa",
-      quote: "Através da LusoTown, descobri encontros de tecnologia portugueses acontecendo por Londres. De eventos em Shoreditch a networking na City - sempre encontro a minha comunidade tech portuguesa!",
+      quote: "Encontrei clube de livros português através da LusoTown discutindo literatura lusófona nas bibliotecas de Hampstead. Da poesia de Pessoa aos romances portugueses modernos, partilhando pensamentos com almas que entendem saudade literária. Discussões tornaram-se workshops de IA quando percebemos que muitos eram profissionais tech!",
       rating: 5,
-      relationship: "Profissional de Tecnologia & Participante em Eventos"
+      relationship: "Literatura & Construtor de Comunidade Tech"
     },
     {
       name: "Teresa Rodrigues",
       age: "37",
       location: "Brixton, Londres",
       imageId: "teresa-rodrigues",
-      quote: "De organizar pequenas noites de música cabo-verdiana a organizar festivais culturais portugueses de 400 pessoas no Alexandra Palace - a LusoTown deu-me as ferramentas e comunidade para crescer além dos meus sonhos.",
+      quote: "De tocar morna sozinha no meu apartamento em Brixton, sentindo falta da alma musical de Cabo Verde, a descobrir noites de apreciação musical portuguesa através da LusoTown. Começou com 6 almas saudosas, agora 'Música Lusófona' atrai 100+ pessoas partilhando nossa herança musical diversa. Música cura, comunidade amplifica!",
       rating: 5,
-      relationship: "Organizadora de Eventos Musicais & Culturais"
+      relationship: "Apreciação Musical & Unidade Cultural"
     },
     {
       name: "Ricardo Oliveira",
       age: "30",
       location: "Greenwich, Londres",
       imageId: "ricardo-oliveira",
-      quote: "Organizo festas para ver futebol português em pubs locais e churrascos no Greenwich Park. Começámos com 8 amigos, agora somos 200+ fortes! A LusoTown conectou-me com profissionais portugueses por toda Londres.",
+      quote: "Juntei-me a festas para ver futebol português através da LusoTown só para ver jogos de Portugal com pessoas que entendem nossa paixão. Começámos com 8 amigos em pubs locais, agora organizamos churrascos de fim de semana no Greenwich Park para 200+ famílias portuguesas. Do futebol aos piqueniques comunitários!",
       rating: 5,
-      relationship: "Organizador de Eventos Desportivos & Sociais"
+      relationship: "Organizador de Comunidade Desportiva & Social"
     },
     {
       name: "Fernanda Santos",
       age: "26",
       location: "King's Cross, Londres",
       imageId: "fernanda-santos",
-      quote: "Encontrei eventos incríveis de intercâmbio de língua portuguesa e workshops de dança através da LusoTown. Como brasileira em Londres, a plataforma ajudou-me a descobrir a nossa próspera comunidade de língua portuguesa aqui.",
+      quote: "Descobri sessões de intercâmbio de língua portuguesa através da LusoTown, perfeitas para manter meu português enquanto melhoro o inglês. Conheci falantes brasileiros, portugueses e africanos criando harmonia linguística linda. Do intercâmbio a workshops de salsa a networking profissional - LusoTown tornou-se minha porta para a diversa comunidade lusófona!",
       rating: 5,
-      relationship: "Participante de Eventos de Língua & Dança"
+      relationship: "Intercâmbio Linguístico & Ponte Cultural"
     },
     {
       name: "António Pereira",
       age: "45",
       location: "City de Londres",
       imageId: "antonio-pereira",
-      quote: "Organizei a primeira expo de negócios portuguesa no ExCeL London usando as ferramentas de eventos da LusoTown. Conectei 80+ empreendedores portugueses e atraí 300 participantes de todo o Reino Unido.",
+      quote: "Comecei a participar em caminhadas pela herança portuguesa através das áreas históricas de Londres via LusoTown. Aprendendo sobre contribuições portuguesas à cultura britânica enquanto conhecia entusiastas da história. Essas conexões culturais evoluíram naturalmente para networking empresarial. História conecta corações, negócios seguem naturalmente!",
       rating: 5,
-      relationship: "Organizador de Expo de Negócios"
+      relationship: "Tours de Herança & Desenvolvimento Empresarial"
     }
   ]
 }

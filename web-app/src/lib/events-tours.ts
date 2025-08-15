@@ -9,7 +9,7 @@ export interface EventTour {
   endTime?: string
   location: string
   address: string
-  category: 'Women 30+' | 'Women 40+' | 'Business & Professional' | 'Mixed Groups' | 'Cultural Heritage' | 'Professional Networking' | 'Technology & AI' | 'Finance & Investment'
+  category: 'Women 30+' | 'Women 40+' | 'Business & Professional' | 'Mixed Groups' | 'Cultural Heritage' | 'Professional Networking' | 'Technology & AI' | 'Finance & Investment' | 'Music & Nightlife' | 'Cultural Tours' | 'Social Experiences' | 'Arts & Entertainment'
   price: number
   currency: string
   maxAttendees: number
@@ -97,7 +97,7 @@ export const eventsTours: EventTour[] = [
   {
     id: 'et-002',
     title: 'AI Business Innovation Workshop: Portuguese Professionals',
-    description: 'Learn to leverage ChatGPT, Claude, and AI tools for business growth. Practical workshop for Portuguese professionals looking to integrate AI into their work and entrepreneurial ventures.',
+    description: 'Learn to leverage ChatGPT, Claude, and AI tools for business growth. Open to all community members interested in technology, from complete beginners to business professionals.',
     date: '2025-08-22',
     time: '14:00',
     endTime: '16:30',
@@ -115,23 +115,23 @@ export const eventsTours: EventTour[] = [
     groupExperience: true,
     requiresApproval: false,
     membershipRequired: 'core',
-    ageRestriction: '18+ professionals only',
+    ageRestriction: '18+ all backgrounds welcome',
     portugueseOrigin: ['All Lusophone'],
-    tags: ['AI', 'Business Innovation', 'Technology', 'Professional Development', 'Entrepreneurship'],
+    tags: ['AI', 'Technology', 'Professional Development', 'Career Growth', 'Beginner Friendly'],
     highlights: [
-      'Portuguese artifacts and maritime history',
-      'Age of Discovery exhibitions explained in Portuguese context',
+      'Hands-on AI tools training with practical examples',
+      'Learn ChatGPT and Claude for personal and professional use',
       'Practical implementation strategies for immediate use',
-      'Network with Portuguese tech professionals and entrepreneurs'
+      'Network with Portuguese tech enthusiasts and professionals'
     ],
     whatToExpect: [
-      'Portuguese-guided museum tour',
-      'Interactive activities for children',
-      'Portuguese historical context for British Museum collections',
-      'Family networking and connection opportunities'
+      'Interactive AI workshop with practical exercises',
+      'Beginner-friendly approach to advanced technology',
+      'Real-world examples of AI applications',
+      'Networking break with fellow Portuguese tech enthusiasts'
     ],
-    whatToHear: 'Stories of Portuguese explorers, traders, and cultural exchange',
-    whatToLearn: 'How Portuguese heritage is represented in British Museum collections',
+    whatToHear: 'Success stories of Portuguese professionals using AI in their careers',
+    whatToLearn: 'How to use AI tools effectively for personal productivity and career advancement',
     groupSize: 'Medium (25-30 people)',
     difficulty: 'Easy',
     averageRating: 4.7,
@@ -250,9 +250,9 @@ export const eventsTours: EventTour[] = [
     groupExperience: true,
     requiresApproval: false,
     membershipRequired: 'core',
-    ageRestriction: '18+ professionals only',
+    ageRestriction: '18+ all backgrounds welcome',
     portugueseOrigin: ['Portugal'],
-    tags: ['Fado', 'Cultural Heritage', 'Music', 'Traditional', 'Community'],
+    tags: ['Fado', 'Cultural Heritage', 'Music', 'Traditional', 'Community', 'Evening Entertainment'],
     highlights: [
       'Live Fado performance by London-based Portuguese artists',
       'Traditional Portuguese wine and appetizers',
@@ -283,7 +283,7 @@ export const eventsTours: EventTour[] = [
     endTime: '18:00',
     location: 'Canterbury',
     address: 'Meeting Point: Victoria Coach Station, London',
-    category: 'Technology & AI',
+    category: 'Cultural Tours',
     price: 145,
     currency: 'GBP',
     maxAttendees: 35,
@@ -295,7 +295,7 @@ export const eventsTours: EventTour[] = [
     groupExperience: true,
     requiresApproval: false,
     membershipRequired: 'core',
-    ageRestriction: '18+ professionals only',
+    ageRestriction: 'All ages welcome (family-friendly)',
     portugueseOrigin: ['All Lusophone'],
     tags: ['Day Trip', 'Heritage', 'Family-Friendly', 'History', 'Canterbury'],
     highlights: [
@@ -318,50 +318,253 @@ export const eventsTours: EventTour[] = [
     totalReviews: 16,
     createdAt: '2025-08-06T13:00:00Z',
     updatedAt: '2025-08-14T17:00:00Z'
+  },
+  {
+    id: 'et-007',
+    title: 'Portuguese Friday Night Social: Music & Drinks',
+    description: 'Weekly Friday night social gathering with Portuguese music, drinks, and dancing. Perfect for making new friends and unwinding after the week. All ages and backgrounds welcome!',
+    date: '2025-08-23',
+    time: '19:30',
+    endTime: '23:30',
+    location: 'Bounce Bar - Old Street',
+    address: '241 Old St, London EC1V 9EY',
+    category: 'Music & Nightlife',
+    price: 25,
+    currency: 'GBP',
+    maxAttendees: 60,
+    currentAttendees: 38,
+    hostName: 'Sofia Costa',
+    hostImage: '/profiles/community/member-9.jpg',
+    imageUrl: '/events/nightlife.jpg',
+    featured: false,
+    groupExperience: true,
+    requiresApproval: false,
+    membershipRequired: 'free',
+    ageRestriction: '18+ social gathering',
+    portugueseOrigin: ['All Lusophone'],
+    tags: ['Nightlife', 'Music', 'Social', 'Dancing', 'Friday Night', 'Casual'],
+    highlights: [
+      'DJ playing Portuguese hits and international music',
+      'Affordable drinks and Portuguese petiscos',
+      'Friendly crowd with mix of Portuguese speakers',
+      'Perfect for meeting new people in relaxed atmosphere'
+    ],
+    whatToExpect: [
+      'Vibrant Portuguese social atmosphere',
+      'Mix of Portuguese and international music',
+      'Casual networking and new friendships',
+      'Dancing and socializing until late'
+    ],
+    whatToHear: 'Portuguese pop, fado remixes, Brazilian funk, and international hits',
+    whatToLearn: 'How to connect with Portuguese community through music and socializing',
+    groupSize: 'Large (50-60 people)',
+    difficulty: 'Easy',
+    averageRating: 4.4,
+    totalReviews: 42,
+    createdAt: '2025-08-11T18:00:00Z',
+    updatedAt: '2025-08-15T10:00:00Z'
+  },
+  {
+    id: 'et-008',
+    title: 'Lisbon Street Art & Culture Walking Tour',
+    description: 'Explore London through Portuguese eyes! Discover Portuguese-inspired street art, visit Portuguese businesses, and learn about Portuguese influence in different London neighborhoods.',
+    date: '2025-08-26',
+    time: '14:00',
+    endTime: '17:00',
+    location: 'Stockwell & South London',
+    address: 'Meeting Point: Stockwell Tube Station',
+    category: 'Cultural Tours',
+    price: 35,
+    currency: 'GBP',
+    maxAttendees: 25,
+    currentAttendees: 16,
+    hostName: 'Bruno Santos',
+    hostImage: '/profiles/community/member-10.jpg',
+    imageUrl: '/events/walking-tour.jpg',
+    featured: false,
+    groupExperience: true,
+    requiresApproval: false,
+    membershipRequired: 'free',
+    ageRestriction: 'All ages welcome',
+    portugueseOrigin: ['All Lusophone'],
+    tags: ['Walking Tour', 'Street Art', 'Culture', 'Stockwell', 'Portuguese Businesses', 'Heritage'],
+    highlights: [
+      'Discover hidden Portuguese gems in South London',
+      'Visit authentic Portuguese cafes and restaurants',
+      'Learn about Portuguese street art and murals',
+      'Meet local Portuguese business owners'
+    ],
+    whatToExpect: [
+      '3-hour guided walking tour through Portuguese areas',
+      'Coffee break at traditional Portuguese cafe',
+      'Stories about Portuguese immigration to London',
+      'Photo opportunities at cultural landmarks'
+    ],
+    whatToHear: 'Stories of Portuguese families who built businesses in London',
+    whatToLearn: 'Hidden Portuguese cultural spots and community history in London',
+    groupSize: 'Medium (20-25 people)',
+    difficulty: 'Easy',
+    averageRating: 4.6,
+    totalReviews: 18,
+    createdAt: '2025-08-09T12:00:00Z',
+    updatedAt: '2025-08-15T09:30:00Z'
+  },
+  {
+    id: 'et-009',
+    title: 'Portuguese Cooking Workshop: Traditional & Modern',
+    description: 'Learn to cook authentic Portuguese dishes with a modern twist. Perfect for food lovers wanting to connect with Portuguese culture through cooking. All skill levels welcome!',
+    date: '2025-09-01',
+    time: '11:00',
+    endTime: '15:00',
+    location: 'Cookery School Little Portland Street',
+    address: '19 Little Portland St, London W1W 8PS',
+    category: 'Arts & Entertainment',
+    price: 95,
+    currency: 'GBP',
+    maxAttendees: 16,
+    currentAttendees: 10,
+    hostName: 'Chef Marta Ferreira',
+    hostImage: '/profiles/community/member-11.jpg',
+    imageUrl: '/events/cooking.jpg',
+    featured: true,
+    groupExperience: true,
+    requiresApproval: false,
+    membershipRequired: 'core',
+    ageRestriction: 'All ages welcome (family-friendly)',
+    portugueseOrigin: ['All Lusophone'],
+    tags: ['Cooking', 'Food', 'Traditional', 'Modern', 'Cultural', 'Hands-on'],
+    highlights: [
+      'Learn 4 traditional Portuguese recipes with modern presentation',
+      'All ingredients and equipment provided',
+      'Take home recipe book and Portuguese spice kit',
+      'Enjoy lunch together featuring dishes you cooked'
+    ],
+    whatToExpect: [
+      'Hands-on cooking workshop with professional chef',
+      'Learn traditional techniques and modern adaptations',
+      'Cultural stories behind each dish and ingredient',
+      'Group lunch and recipe sharing'
+    ],
+    whatToHear: 'Stories about Portuguese culinary traditions and family recipes',
+    whatToLearn: 'How to cook authentic Portuguese dishes and adapt them for modern life',
+    groupSize: 'Small (12-16 people)',
+    difficulty: 'Easy',
+    averageRating: 4.8,
+    totalReviews: 15,
+    createdAt: '2025-08-08T15:00:00Z',
+    updatedAt: '2025-08-15T11:15:00Z'
+  },
+  {
+    id: 'et-010',
+    title: 'Portuguese Book Club & Literary Café',
+    description: 'Monthly book club discussing Portuguese literature in English. Enjoy Portuguese coffee and pastries while exploring works by Portuguese and Lusophone authors. Reading level flexible.',
+    date: '2025-09-05',
+    time: '18:30',
+    endTime: '20:30',
+    location: 'Café Nata - Borough Market',
+    address: '11 Southwark St, London SE1 1RQ',
+    category: 'Social Experiences',
+    price: 20,
+    currency: 'GBP',
+    maxAttendees: 20,
+    currentAttendees: 12,
+    hostName: 'Dr. Isabel Ribeiro',
+    hostImage: '/profiles/community/member-12.jpg',
+    imageUrl: '/events/book-club.jpg',
+    featured: false,
+    groupExperience: true,
+    requiresApproval: false,
+    membershipRequired: 'free',
+    ageRestriction: '18+ literature enthusiasts',
+    portugueseOrigin: ['All Lusophone'],
+    tags: ['Books', 'Literature', 'Portuguese Authors', 'Coffee', 'Discussion', 'Cultural'],
+    highlights: [
+      'Discover Portuguese and Lusophone literature',
+      'Authentic Portuguese coffee and pastéis de nata',
+      'Engaging discussions about culture and storytelling',
+      'Relaxed bookstore café atmosphere'
+    ],
+    whatToExpect: [
+      'Literary discussion in comfortable café setting',
+      'Introduction to Portuguese authors and themes',
+      'Coffee and Portuguese pastries included',
+      'Book recommendations and cultural insights'
+    ],
+    whatToHear: 'Insights into Portuguese storytelling traditions and contemporary literature',
+    whatToLearn: 'Portuguese literary culture and how to appreciate Lusophone authors',
+    groupSize: 'Small (15-20 people)',
+    difficulty: 'Easy',
+    averageRating: 4.5,
+    totalReviews: 8,
+    createdAt: '2025-08-07T16:30:00Z',
+    updatedAt: '2025-08-15T12:00:00Z'
   }
 ]
 
 // Event Tour Categories with descriptions
 export const EVENT_TOUR_CATEGORIES = {
-  'Women 30+': {
-    description: 'Exclusive experiences for Portuguese women in their 30s',
-    icon: '👩‍💼',
+  // Social & Cultural Categories
+  'Music & Nightlife': {
+    description: 'Portuguese music events, club nights, and evening entertainment',
+    icon: '🎵',
     color: 'bg-coral-500'
   },
-  'Women 40+': {
-    description: 'Professional networking and cultural experiences for established Portuguese women',
-    icon: '👩‍💼',
-    color: 'bg-premium-500'
-  },
-  'Business & Professional': {
-    description: 'Professional business experiences for Portuguese entrepreneurs and executives',
-    icon: '💼',
-    color: 'bg-secondary-500'
-  },
-  'Mixed Groups': {
-    description: 'Open experiences for all Portuguese community members',
-    icon: '🤝',
-    color: 'bg-primary-500'
-  },
-  'Cultural Heritage': {
-    description: 'Traditional Portuguese cultural celebrations and preservation',
+  'Cultural Tours': {
+    description: 'Heritage tours, museum visits, and cultural exploration experiences',
     icon: '🏛️',
     color: 'bg-accent-500'
   },
-  'Professional Networking': {
-    description: 'Business and career development for Portuguese professionals',
+  'Social Experiences': {
+    description: 'Social gatherings, meetups, and community bonding activities',
+    icon: '🤝',
+    color: 'bg-primary-500'
+  },
+  'Arts & Entertainment': {
+    description: 'Creative workshops, art events, and cultural entertainment',
+    icon: '🎨',
+    color: 'bg-premium-500'
+  },
+  'Cultural Heritage': {
+    description: 'Traditional Portuguese cultural celebrations and preservation',
+    icon: '🇵🇹',
+    color: 'bg-accent-600'
+  },
+  'Mixed Groups': {
+    description: 'Open experiences welcoming all Portuguese community members',
+    icon: '👥',
+    color: 'bg-primary-600'
+  },
+  // Demographics Categories
+  'Women 30+': {
+    description: 'Curated experiences for Portuguese women in their 30s',
+    icon: '👩‍💼',
+    color: 'bg-coral-600'
+  },
+  'Women 40+': {
+    description: 'Networking and cultural experiences for established Portuguese women',
+    icon: '👩‍💼',
+    color: 'bg-premium-600'
+  },
+  // Business & Professional Categories
+  'Business & Professional': {
+    description: 'Professional development and business growth experiences',
     icon: '💼',
+    color: 'bg-secondary-500'
+  },
+  'Professional Networking': {
+    description: 'Career development and business networking opportunities',
+    icon: '🤝',
     color: 'bg-action-500'
   },
   'Technology & AI': {
-    description: 'AI, coding, and technology workshops for Portuguese professionals',
+    description: 'Technology workshops and AI learning for all skill levels',
     icon: '💻',
-    color: 'bg-blue-500'
+    color: 'bg-secondary-600'
   },
   'Finance & Investment': {
-    description: 'Investment, property, and financial education for Portuguese professionals',
+    description: 'Financial education and investment guidance for community members',
     icon: '💰',
-    color: 'bg-green-500'
+    color: 'bg-secondary-700'
   }
 }
 

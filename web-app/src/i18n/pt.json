@@ -40,10 +40,10 @@
   "instituto.cta.secondary": "Património Cultural",
   
   "hero.badge": "Unidos pela Língua • United by Language",
-  "hero.title": "A Sua Rede Empresarial Portuguesa em Londres",
-  "hero.subtitle": "A sua comunidade empresarial portuguesa em Londres espera por si. Transforme a saudade em oportunidades através de experiências profissionais e conexões que impulsionam o seu negócio.",
-  "hero.cta.primary": "Descobrir Eventos Empresariais",
-  "hero.cta.secondary": "Juntar-se à Rede Profissional",
+  "hero.title": "A Sua Comunidade Portuguesa em Londres",
+  "hero.subtitle": "Conecte-se com falantes de português através de experiências sociais e oportunidades profissionais. De eventos culturais e tours guiados a workshops de IA e networking empresarial - a sua comunidade espera por si.",
+  "hero.cta.primary": "Explorar Eventos",
+  "hero.cta.secondary": "Juntar-se à Comunidade",
   
   "how-it-works.title": "Encontre a Sua Rede Profissional Lusófona em Londres",
   "how-it-works.subtitle": "Conecte-se com a comunidade portuguesa em locais emblemáticos de Londres - de Stockwell a Vauxhall, de Camden a Elephant & Castle. Quatro passos simples para se sentir em casa.",
@@ -87,11 +87,11 @@
   "what-you-can-do.favorites.types": "Eventos • Negócios • Locais Culturais",
   
   "features.title": "Porquê Escolher a LusoTown",
-  "features.subtitle": "O Teu Centro de Conexões para Comunidades Portuguesas no Reino Unido",
+  "features.subtitle": "O Seu Centro Social & Profissional para Falantes de Português no Reino Unido",
   "features.events.title": "Eventos Culturais & Encontros",
-  "features.events.description": "Desde noites de Fado a festivais culturais, celebrações tradicionais a encontros comunitários portugueses - descobre e participa em eventos por todo o Reino Unido. Eventos abertos a todas as idades, com requisitos de idade específicos indicados por evento.",
+  "features.events.description": "De noites íntimas de Fado a eventos de networking empresarial, participe em experiências que combinam com os seus interesses. Conheça falantes de português que partilham a sua herança e ambições.",
   "features.groups.title": "Comunidades Portuguesas",
-  "features.groups.description": "Conecta-te com falantes de português que partilham os teus interesses - desde preservação cultural a atividades sociais. Faz amizades genuínas por todo o Reino Unido com indivíduos de todas as idades.",
+  "features.groups.description": "Quer esteja interessado em atividades culturais, aventuras de fim de semana, ou desenvolvimento profissional, encontre a sua comunidade. Somos todos de diferentes origens e interesses, mas conectamo-nos e prosperamos juntos.",
   "features.business.title": "Rede de Negócios Portugueses",
   "features.business.description": "Descobre negócios portugueses, restaurantes e serviços por todo o Reino Unido. Apoia a nossa comunidade e encontra locais onde a nossa cultura é celebrada.",
   "features.resources.title": "Recursos Comunitários",
@@ -107,11 +107,11 @@
   "features.heritage.title": "Conexão da Herança",
   "features.heritage.description": "Conecta-te com as tuas raízes portuguesas e partilha histórias com outros que entendem a jornada de preservar a cultura no estrangeiro.",
   
-  "testimonials.badge": "Saudade Transformada em Alegria • Corações Unidos",
-  "testimonials.title": "Histórias Reais da Nossa Família Lusófona",
-  "testimonials.subtitle": "Descubra como lusos transformaram Londres no seu segundo lar. De pastéis de nata em Stockwell a serões de fado em Camden - histórias de quem encontrou a sua família lusófona.",
+  "testimonials.badge": "Corações Unidos, Histórias Partilhadas",
+  "testimonials.title": "Da Saudade à Comunidade - Vidas Reais em Londres",
+  "testimonials.subtitle": "Descubra como lusos encontraram a sua família londrina através de experiências culturais, conexões sociais e networking natural. De noites de cinema em Camden a workshops de dança em Stockwell - histórias autênticas de comunidade, amizade e herança partilhada.",
   
-  "footer.description": "A sua casa portuguesa no Reino Unido. Onde a saudade se transforma em alegria e corações lusos se encontram. Unidos pela língua, unidos pelo coração lusófono.",
+  "footer.description": "Conecte-se com falantes de português através de experiências sociais e profissionais por todo o Reino Unido. Onde membros da comunidade descobrem, aprendem, e prosperam juntos. Unidos pela Língua, conectados pela comunidade."
   "footer.newsletter.title": "Fique Ligado à Família",
   "footer.newsletter.description": "Receba na sua caixa de correio as melhores histórias da nossa comunidade, eventos imperdíveis e momentos que aquecem o coração português.",
   "footer.tagline": "Onde a saudade se transforma em alegria",
@@ -172,8 +172,8 @@
   "login.support-description": "Precisa de ajuda? A nossa equipa fala português e está aqui para si.",
   "login.contact-support": "Contactar Apoio →",
   "login.new-to-lusotown": "Novo na LusoTown?",
-  "login.join-family-description": "Junte-se à nossa rede empresarial portuguesa vibrante em Londres e expanda os seus negócios.",
-  "login.join-family-button": "Juntar à Rede Empresarial →",
+  "login.join-family-description": "Conecte-se com falantes de português através de experiências sociais e oportunidades profissionais em Londres.",
+  "login.join-family-button": "Juntar à Comunidade →",
   "login.sign-in-account": "Entre na sua conta",
   "login.email": "Email",
   "login.email-placeholder": "seu@email.com",
@@ -186,7 +186,7 @@
   "login.connecting": "Conectando com a sua comunidade...",
   "login.preparing": "Preparando o seu lar português...",
   "login.no-account": "Não tem conta?",
-  "login.join-family-link": "Juntar à Rede Empresarial",
+  "login.join-family-link": "Juntar à Comunidade",
   "login.terms-privacy": "Ao entrar, concorda com os nossos",
   "login.terms": "Termos de Serviço",
   "login.and": "e",
@@ -206,7 +206,7 @@
   "login.participants": "participantes",
   "login.table-quote": "\"Onde há portugueses, há sempre uma mesa para mais um\"",
   
-  "signup.subtitle": "Preencha o seu calendário social com falantes de português por Londres. Reserve experiências, participe em atividades, e viva a vida em conjunto - desde padarias familiares em Stockwell a centros culturais em Vauxhall.",
+  "signup.subtitle": "Conecte-se com falantes de português através de experiências sociais e oportunidades profissionais por Londres. De eventos culturais e tours guiados a workshops empresariais e networking - descubra a sua comunidade.",
   
   "groups.title": "Grupos da Comunidade Portuguesa",
   "groups.subtitle": "Encontra a tua comunidade e conecta-te com falantes de português",
@@ -322,7 +322,7 @@
   "community.business.title": "Negócios Portugueses em Londres",
   "community.business.subtitle": "Apoia a nossa comunidade empresarial. Desde padarias familiares que fazem pastéis como a avó fazia, a restaurantes que servem francesinha autêntica, a serviços prestados por pessoas que compreendem a nossa cultura.",
   "community.cta.title": "Pronto para se Juntar à Rede Portuguesa?",
-  "community.cta.subtitle": "A tua família portuguesa está à espera. Junta-te a 500+ falantes de português que fizeram de Londres a sua casa, uma conexão de cada vez. Unidos pela língua, unidos pelo coração.",
+  "community.cta.subtitle": "A sua comunidade portuguesa está à espera. Junte-se a 500+ falantes de português que fizeram de Londres a sua casa, através de experiências sociais e oportunidades profissionais. Unidos pela língua, conectados pela comunidade."
   "community.cta.tagline": "\"Unidos pela Língua\" - Onde quer que venhas no mundo lusófono, aqui tens casa em Londres.",
   
   "app.badge": "Agora Disponível no Móvel",

@@ -40,10 +40,10 @@
   "instituto.cta.secondary": "Cultural Heritage",
   
   "hero.badge": "Unidos pela Língua • United by Language",
-  "hero.title": "Your Portuguese Professional Network in London",
-  "hero.subtitle": "Your Portuguese business community in London awaits. Join professional networking events, business workshops, and connect with Portuguese entrepreneurs from all corners of the lusophone world.",
-  "hero.cta.primary": "Explore Business Events",
-  "hero.cta.secondary": "Join Professional Network",
+  "hero.title": "Your Portuguese Community in London",
+  "hero.subtitle": "Connect with Portuguese speakers through social experiences and professional opportunities. From cultural events and guided tours to AI workshops and business networking - your community awaits.",
+  "hero.cta.primary": "Explore Events",
+  "hero.cta.secondary": "Join Community",
   
   "how-it-works.title": "Connect with Your Portuguese Community",
   "how-it-works.subtitle": "Discover how easy it is to fill your social calendar and live life together in four simple steps",
@@ -87,11 +87,11 @@
   "what-you-can-do.favorites.types": "Events • Businesses • Cultural Sites",
   
   "features.title": "Why Portuguese Hearts Choose LusoTown",
-  "features.subtitle": "Your Professional & Social Hub for Portuguese Adults Across London & UK",
+  "features.subtitle": "Your Social & Professional Hub for Portuguese Speakers Across London & UK",
   "features.events.title": "Network and Celebrate Together",
-  "features.events.description": "Join intimate Fado nights and Portuguese festivals across London. Meet like-minded members who share your heritage and interests.",
+  "features.events.description": "From intimate Fado nights to business networking events, join experiences that match your interests. Meet Portuguese speakers who share your heritage and ambitions.",
   "features.groups.title": "Find Your People",
-  "features.groups.description": "Whether you're a young professional wanting to book weekend activities or an established professional seeking cultural networking, create your social circle. We're all from different backgrounds and places, but we connect and thrive together.",
+  "features.groups.description": "Whether you're interested in cultural activities, weekend adventures, or professional development, find your community. We're all from different backgrounds and interests, but we connect and thrive together.",
   "features.business.title": "Support Our Portuguese Businesses",
   "features.business.description": "Book experiences at the bakery that makes pastéis like your avó's, the restaurant that hosts monthly Portuguese dinners, the services run by people who share your culture. When we do things together, we all live better.",
   "features.resources.title": "London Community Resources",
@@ -107,11 +107,11 @@
   "features.heritage.title": "Heritage Preservation",
   "features.heritage.description": "Experience Portuguese heritage through real cultural activities - book sessions at Portuguese churches, cultural associations, and family-run businesses that celebrate our traditions in London.",
   
-  "testimonials.badge": "Saudade Transformed, Portuguese Hearts United",
-  "testimonials.title": "From Saudade to Community - Real Portuguese Success",
-  "testimonials.subtitle": "Hear from Portuguese souls who transformed London loneliness into thriving connections. From pastéis de nata meetups in Stockwell to fado nights in Camden - discover authentic Portuguese stories at real London venues where nossa cultura thrives.",
+  "testimonials.badge": "Portuguese Hearts United, Stories Shared",
+  "testimonials.title": "From Saudade to Community - Real London Lives",
+  "testimonials.subtitle": "Discover how Portuguese speakers found their London family through cultural experiences, social connections, and natural networking. From cinema nights in Camden to dance workshops in Stockwell - authentic stories of community, friendship, and shared heritage.",
   
-  "footer.description": "Book experiences with Portuguese speakers across London & UK. Where professionals and adults connect through heritage and create lasting memories. Unidos pela Língua - United by Language.",
+  "footer.description": "Connect with Portuguese speakers through social and professional experiences across London & UK. Where community members discover, learn, and thrive together. Unidos pela Língua - United by Language."
   "footer.newsletter.title": "Stay Connected",
   "footer.newsletter.description": "Get updates on Portuguese cultural events, social activities, and experiences happening at authentic venues across London.",
   "footer.tagline": "Book experiences with Portuguese hearts at real London venues",
@@ -172,8 +172,8 @@
   "login.support-description": "Need help? Our team speaks Portuguese and is here for you.",
   "login.contact-support": "Contact Support →",
   "login.new-to-lusotown": "New to LusoTown?",
-  "login.join-family-description": "Build your professional network with Portuguese speakers in London and grow your business connections.",
-  "login.join-family-button": "Join Business Network →",
+  "login.join-family-description": "Connect with Portuguese speakers through social experiences and professional opportunities in London.",
+  "login.join-family-button": "Join Community →",
   "login.sign-in-account": "Sign in to your account",
   "login.email": "Email Address",
   "login.email-placeholder": "your@email.com",
@@ -186,7 +186,7 @@
   "login.connecting": "Connecting to your network...",
   "login.preparing": "Preparing your Portuguese home...",
   "login.no-account": "Don't have an account?",
-  "login.join-family-link": "Join Business Network",
+  "login.join-family-link": "Join Community",
   "login.terms-privacy": "By signing in, you agree to our",
   "login.terms": "Terms of Service",
   "login.and": "and",
@@ -206,7 +206,7 @@
   "login.participants": "participants",
   "login.table-quote": "\"Where there are Portuguese people, there's always room for one more at the table\"",
   
-  "signup.subtitle": "Fill your social calendar with Portuguese speakers across London. Book experiences, join activities, and connect professionally - from authentic bakeries in Stockwell to cultural centers in Vauxhall.",
+  "signup.subtitle": "Connect with Portuguese speakers through social experiences and professional opportunities across London. From cultural events and guided tours to business workshops and networking - discover your community.",
   
   "groups.title": "Portuguese Member Groups",
   "groups.subtitle": "Book activities and experiences with Portuguese speakers",
@@ -322,7 +322,7 @@
   "community.business.title": "Portuguese Businesses in London",
   "community.business.subtitle": "Support our business members. From family bakeries to authentic restaurants - services by people who understand our culture.",
   "community.cta.title": "Ready to Join the Portuguese Network?",
-  "community.cta.subtitle": "Your Portuguese network is waiting. Join 500+ Portuguese speakers who have made London their home, one professional connection at a time. United by language, united by ambition.",
+  "community.cta.subtitle": "Your Portuguese community is waiting. Join 500+ Portuguese speakers who have made London their home, through social experiences and professional opportunities. United by language, connected by community."
   "community.cta.tagline": "\"Unidos pela Língua\" - Wherever you come from in the Portuguese-speaking world, you have a home here in London.",
   
   "app.badge": "Now Available on Mobile",
