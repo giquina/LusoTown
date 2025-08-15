@@ -27,7 +27,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://lusotown.vercel.app'),
-  title: 'LusoTown London - Your Portuguese Social Calendar | Portuguese Community UK',
+  title: 'LusoTown - Your Portuguese Social Calendar',
   description: 'Your Portuguese social calendar in London. Book experiences with Portuguese friends - from museums and football to concerts, club nights, and weekend trips. Unidos pela Língua.',
   keywords: [
     // Primary Portuguese SEO Keywords

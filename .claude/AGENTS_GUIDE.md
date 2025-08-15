@@ -4,9 +4,9 @@ The LusoTown project includes a comprehensive system of specialized AI agents de
 
 ## 🤖 Agent Overview
 
-Our agent system consists of **16 specialized agents** organized into three categories:
+Our agent system consists of **24 specialized agents** organized into three categories:
 
-### Portuguese Community Specialists (8 agents)
+### Portuguese Community Specialists (16 agents)
 - **luso-content-agent** - Portuguese translation and cultural content
 - **luso-events-agent** - Portuguese cultural events curation
 - **luso-safety-agent** - Community moderation and safety
@@ -15,6 +15,14 @@ Our agent system consists of **16 specialized agents** organized into three cate
 - **luso-heritage-agent** - Heritage preservation and storytelling
 - **luso-membership-agent** - Membership optimization
 - **luso-partnership-agent** - Institutional partnerships
+- **luso-verification-agent** - Portuguese community authentication
+- **luso-messaging-agent** - Portuguese communication systems
+- **luso-location-agent** - London Portuguese geographic services
+- **luso-analytics-agent** - Portuguese community data intelligence
+- **luso-legal-agent** - Portuguese community legal compliance
+- **luso-wellness-agent** - Portuguese community health and wellness
+- **luso-education-agent** - Portuguese education and language preservation
+- **luso-commerce-agent** - Portuguese e-commerce and marketplace
 
 ### Development Specialists (5 agents)
 - **bug-finder** - Quality assurance and testing
@@ -84,6 +92,14 @@ Request a specific agent by name or specialty:
 | **Cultural Stories** | luso-heritage-agent | "Document community success stories" |
 | **Membership** | luso-membership-agent | "Improve sign-up conversion rates" |
 | **Partnerships** | luso-partnership-agent | "Connect with Portuguese Embassy" |
+| **Authentication** | luso-verification-agent | "Design community verification system" |
+| **Messaging** | luso-messaging-agent | "Build Portuguese community chat features" |
+| **Location Services** | luso-location-agent | "Map Portuguese community venues" |
+| **Analytics** | luso-analytics-agent | "Analyze Portuguese community engagement" |
+| **Legal Compliance** | luso-legal-agent | "Ensure GDPR compliance for Portuguese users" |
+| **Health & Wellness** | luso-wellness-agent | "Create Portuguese wellness programs" |
+| **Education** | luso-education-agent | "Develop Portuguese language classes" |
+| **Commerce** | luso-commerce-agent | "Build Portuguese marketplace features" |
 
 ### 💻 Development Tasks
 
@@ -209,4 +225,4 @@ Intelligent matching system that recommends appropriate agents based on task des
 
 **Remember**: The agent system is designed to enhance, not replace, human judgment. Always review agent output for cultural authenticity and quality, especially for Portuguese community content.
 
-*Last Updated: August 14, 2025*
+*Last Updated: August 15, 2025*

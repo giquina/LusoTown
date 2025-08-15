@@ -22,15 +22,22 @@ This document provides a comprehensive index of all LusoTown platform documentat
 - **[SECURITY_PERFORMANCE_FIXES_REPORT.md](./SECURITY_PERFORMANCE_FIXES_REPORT.md)** - Security and performance optimization report
 - **[PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md)** - Complete project structure and architecture guide
 
+### 👥 Administrative & Human Resources
+- **[LUSOTOWN_ADMINISTRATIVE_ROLES.md](./LUSOTOWN_ADMINISTRATIVE_ROLES.md)** - Complete job role specifications for 10 management positions
+- **[web-app/src/app/careers/page.tsx](./web-app/src/app/careers/page.tsx)** - Career page implementation (salary information removed per business decision)
+
 ### 🎨 Design and Features
 - **[web-app/DESIGN_SYSTEM.md](./web-app/DESIGN_SYSTEM.md)** - Portuguese-inspired design system
 - **[web-app/FEATURES_README.md](./web-app/FEATURES_README.md)** - Feature specifications and implementation
 
-### 📈 Recent Updates (August 14, 2025)
+### 📈 Recent Updates (August 15, 2025)
 - **Performance Optimization:** Critical TypeScript compilation errors fixed, development server stability improved
 - **Brand Consistency:** 100% Portuguese brand compliance achieved, all generic blue colors replaced
 - **CTA Standardization:** Platform-wide "Join Now" messaging implemented (bilingual)
 - **Agent System Deployment:** All 16 specialized agents operational and documented
+- **Agent Research Expansion:** 10 additional specialized agents proposed and researched for future implementation
+- **Administrative Structure:** 10 key management roles defined with comprehensive job specifications
+- **Career Page Strategic Update:** Salary information removed per business decision, focus on cultural competency
 - **Security Enhancements:** Comprehensive security audit completed with error boundaries implemented
 
 ## 📁 Documentation Structure
@@ -95,7 +102,7 @@ Connect Portuguese-speaking adults instantly with people to do activities with -
 
 The LusoTown platform features a comprehensive agent system with specialized AI assistants for Portuguese community management:
 
-### Portuguese Community Specialists
+### Portuguese Community Specialists (Deployed)
 - **luso-content-agent**: Portuguese language and cultural content management
 - **luso-safety-agent**: Adult community moderation and safety (18+ focus)
 - **luso-events-agent**: Portuguese cultural events curation and adult social activities
@@ -105,7 +112,7 @@ The LusoTown platform features a comprehensive agent system with specialized AI 
 - **luso-membership-agent**: Adult community membership optimization
 - **luso-partnership-agent**: Portuguese institutional partnerships
 
-### Development and Operations Specialists
+### Development and Operations Specialists (Deployed)
 - **doc-writer**: Technical and project documentation
 - **bug-finder**: Quality assurance and bug detection
 - **refactor-helper**: Code optimization and architecture improvement
@@ -113,6 +120,20 @@ The LusoTown platform features a comprehensive agent system with specialized AI 
 - **deploy-manager**: Production deployment and DevOps management
 - **ui-specialist**: User interface design and optimization
 - **ux-specialist**: User experience design and optimization
+
+### Proposed Agents (Research Complete - Pending Approval)
+- **luso-payment-agent**: Portuguese payment preferences and processing optimization
+- **luso-location-agent**: London Portuguese neighborhoods and venue specialist
+- **luso-messaging-agent**: Portuguese communication styles and cultural messaging
+- **luso-analytics-agent**: Portuguese community behavior and engagement analytics
+- **luso-mobile-agent**: Mobile app features optimized for Portuguese community
+- **luso-seo-agent**: Portuguese keyword research and search optimization
+- **luso-integration-agent**: Portuguese business system and API integrations
+- **luso-compliance-agent**: UK/Portuguese legal compliance and regulatory specialist
+- **luso-feedback-agent**: Portuguese community feedback collection and analysis
+- **luso-onboarding-agent**: Portuguese cultural onboarding experience optimization
+
+**Agent Research Status:** All 10 proposed agents have completed research phase with detailed specifications for Portuguese community enhancement. Pending strategic approval for implementation.
 
 ## 🛠️ Technical Architecture
 

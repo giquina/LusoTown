@@ -452,6 +452,230 @@
         "interaction",
         "user research"
       ]
+    },
+    "luso-verification-agent": {
+      "name": "Portuguese Community Authentication Specialist",
+      "description": "Portuguese community verification and authentication specialist. Use for user verification, identity authentication, and ensuring authentic Portuguese community membership.",
+      "file": "luso-verification-agent.md",
+      "tools": ["Read", "Write", "Edit", "Grep", "Glob", "mcp__supabase__execute_sql"],
+      "specialties": [
+        "Portuguese community member authentication",
+        "Identity verification processes",
+        "Cultural identity validation",
+        "Community-based verification networks",
+        "Privacy-preserving verification methods"
+      ],
+      "use_cases": [
+        "Design authentication flows for Portuguese community",
+        "Implement secure verification processes",
+        "Create community-based verification systems",
+        "Enhance security with cultural context",
+        "Ensure privacy compliance for Portuguese community"
+      ],
+      "invoke_patterns": [
+        "verification",
+        "authentication",
+        "identity",
+        "community verification",
+        "user validation",
+        "trust system"
+      ]
+    },
+    "luso-messaging-agent": {
+      "name": "Portuguese Communication Specialist",
+      "description": "Portuguese messaging and communication specialist. Use for developing messaging systems, communication features, and facilitating authentic Portuguese community connections.",
+      "file": "luso-messaging-agent.md",
+      "tools": ["Read", "Write", "Edit", "Grep", "Glob"],
+      "specialties": [
+        "Portuguese-friendly messaging interfaces",
+        "Bilingual communication support",
+        "Cultural communication patterns",
+        "Community coordination messaging",
+        "Safety and moderation in communication"
+      ],
+      "use_cases": [
+        "Build Portuguese community messaging features",
+        "Optimize community interaction systems",
+        "Create culturally appropriate messaging flows",
+        "Implement communication safety measures",
+        "Develop event and group communication tools"
+      ],
+      "invoke_patterns": [
+        "messaging",
+        "communication",
+        "chat",
+        "community interaction",
+        "group messaging",
+        "conversation"
+      ]
+    },
+    "luso-location-agent": {
+      "name": "London Portuguese Geographic Specialist",
+      "description": "London Portuguese geography and location specialist. Use for location services, Portuguese community geography, and optimizing location-based features for Portuguese diaspora.",
+      "file": "luso-location-agent.md",
+      "tools": ["Read", "Write", "Edit", "Grep", "Glob"],
+      "specialties": [
+        "Portuguese community location mapping",
+        "London transport integration",
+        "Portuguese venue discovery",
+        "Geographic community insights",
+        "Location-based event optimization"
+      ],
+      "use_cases": [
+        "Build Portuguese community location features",
+        "Map Portuguese community hubs",
+        "Optimize venue recommendations",
+        "Integrate transportation services",
+        "Create geographic community insights"
+      ],
+      "invoke_patterns": [
+        "location",
+        "geography",
+        "london",
+        "venue",
+        "transport",
+        "mapping"
+      ]
+    },
+    "luso-analytics-agent": {
+      "name": "Portuguese Community Data Intelligence Specialist",
+      "description": "Portuguese community analytics and data intelligence specialist. Use for community analytics, data insights, and performance optimization for Portuguese diaspora behavior patterns.",
+      "file": "luso-analytics-agent.md",
+      "tools": ["Read", "Write", "Edit", "Grep", "Glob"],
+      "specialties": [
+        "Portuguese community behavior analysis",
+        "Cultural data intelligence",
+        "Platform optimization analytics",
+        "Community growth analytics",
+        "Cultural engagement metrics"
+      ],
+      "use_cases": [
+        "Analyze Portuguese community engagement",
+        "Optimize platform metrics for Portuguese users",
+        "Provide cultural community insights",
+        "Measure Portuguese community growth",
+        "Evaluate feature performance with cultural context"
+      ],
+      "invoke_patterns": [
+        "analytics",
+        "data",
+        "metrics",
+        "insights",
+        "performance",
+        "community analysis"
+      ]
+    },
+    "luso-legal-agent": {
+      "name": "Portuguese Community Legal Compliance Specialist",
+      "description": "Portuguese community legal compliance specialist. Use for legal compliance, regulatory requirements, and ensuring platform operations meet legal standards for Portuguese diaspora.",
+      "file": "luso-legal-agent.md",
+      "tools": ["Read", "Write", "Edit", "Grep", "Glob"],
+      "specialties": [
+        "UK legal compliance for Portuguese community",
+        "Portuguese diaspora legal considerations",
+        "Platform legal framework development",
+        "Cultural community legal issues",
+        "Cross-border legal compliance"
+      ],
+      "use_cases": [
+        "Assess platform legal compliance",
+        "Create legal frameworks for Portuguese features",
+        "Identify legal risks and requirements",
+        "Develop legal documents and guidelines",
+        "Ensure ongoing legal compliance"
+      ],
+      "invoke_patterns": [
+        "legal",
+        "compliance",
+        "regulation",
+        "policy",
+        "gdpr",
+        "legal framework"
+      ]
+    },
+    "luso-wellness-agent": {
+      "name": "Portuguese Community Health and Wellness Specialist",
+      "description": "Portuguese community health and wellness specialist. Use for holistic wellness, mental health support, and health initiatives for Portuguese diaspora community.",
+      "file": "luso-wellness-agent.md",
+      "tools": ["Read", "Write", "Edit", "Grep", "Glob"],
+      "specialties": [
+        "Portuguese cultural wellness practices",
+        "Community mental health support",
+        "Physical health and fitness initiatives",
+        "Healthcare navigation for Portuguese speakers",
+        "Traditional Portuguese wellness integration"
+      ],
+      "use_cases": [
+        "Create Portuguese community health initiatives",
+        "Develop mental health resources",
+        "Help community access UK healthcare",
+        "Plan health and wellness events",
+        "Create Portuguese health information"
+      ],
+      "invoke_patterns": [
+        "wellness",
+        "health",
+        "mental health",
+        "fitness",
+        "healthcare",
+        "traditional medicine"
+      ]
+    },
+    "luso-education-agent": {
+      "name": "Portuguese Education and Language Specialist",
+      "description": "Portuguese education and language specialist. Use for educational resources, Portuguese language preservation, and learning opportunities for Portuguese diaspora.",
+      "file": "luso-education-agent.md",
+      "tools": ["Read", "Write", "Edit", "Grep", "Glob"],
+      "specialties": [
+        "Portuguese language education",
+        "Cultural education programs",
+        "Educational resource development",
+        "Heritage language preservation",
+        "Community teacher training"
+      ],
+      "use_cases": [
+        "Create Portuguese language education programs",
+        "Develop learning resources and content",
+        "Support Portuguese educators",
+        "Implement language preservation strategies",
+        "Design cultural learning experiences"
+      ],
+      "invoke_patterns": [
+        "education",
+        "language",
+        "learning",
+        "portuguese classes",
+        "heritage language",
+        "curriculum"
+      ]
+    },
+    "luso-commerce-agent": {
+      "name": "Portuguese E-commerce and Marketplace Specialist",
+      "description": "Portuguese e-commerce and marketplace specialist. Use for Portuguese community commerce, marketplace development, and economic opportunities within Portuguese diaspora.",
+      "file": "luso-commerce-agent.md",
+      "tools": ["Read", "Write", "Edit", "Grep", "Glob"],
+      "specialties": [
+        "Portuguese community commerce development",
+        "E-commerce platform optimization",
+        "Community economic empowerment",
+        "Cultural commerce authentication",
+        "Portuguese business marketplace"
+      ],
+      "use_cases": [
+        "Build Portuguese community e-commerce features",
+        "Support Portuguese business owners online",
+        "Develop authentic Portuguese product categories",
+        "Optimize Portuguese marketplace performance",
+        "Connect Portuguese businesses with community"
+      ],
+      "invoke_patterns": [
+        "commerce",
+        "marketplace",
+        "e-commerce",
+        "shopping",
+        "portuguese products",
+        "business"
+      ]
     }
   },
   "usage_instructions": {

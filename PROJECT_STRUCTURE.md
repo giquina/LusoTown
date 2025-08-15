@@ -15,6 +15,7 @@ LusoTown/
 ├── 📄 EVENT_FEED_IMPLEMENTATION.md             # Event feed technical documentation
 ├── 📄 SAVE_CART_IMPLEMENTATION_SUMMARY.md      # Save/Cart functionality guide
 ├── 📄 SUPABASE_COMPREHENSIVE_PLAN.md           # Database and backend documentation
+├── 📄 LUSOTOWN_ADMINISTRATIVE_ROLES.md         # Complete job role specifications (10 positions)
 ├── 📄 LICENSE                                  # MIT License
 ├── 📄 vercel.json                              # Vercel deployment configuration
 ├── 📄 package.json                             # Root package configuration
@@ -378,6 +379,36 @@ mobile-app/                                     # React Native + Expo (Future De
 - **Technical Specialists**: Development, deployment, quality assurance
 - **Automated Workflows**: Intelligent task routing and execution
 
+## 🏢 Strategic Business Decisions & Administrative Structure
+
+### Administrative Roles Research (Completed August 15, 2025)
+The platform has completed comprehensive research for 10 key administrative and management positions:
+
+1. **Portuguese Community Social Media Manager** - Bilingual social media strategy and community engagement
+2. **API Integration & Platform Technical Specialist** - Technical integrations and system management  
+3. **Portuguese Business Development & Partnerships Manager** - Business relationships and strategic partnerships
+4. **Community Platform Administrator & User Experience Manager** - Day-to-day operations and user management
+5. **Portuguese Community Data Analytics & Growth Specialist** - Data-driven growth and community insights
+6. **Multilingual Customer Support Manager (Portuguese Focus)** - Customer service and community support
+7. **Portuguese Community Growth & Acquisition Marketing Manager** - Marketing and member acquisition
+8. **Event Operations & Portuguese Cultural Programming Manager** - Event coordination and cultural programming
+9. **Content Strategy & Portuguese Heritage Manager** - Content creation and cultural preservation
+10. **Business Intelligence & Portuguese Market Research Analyst** - Market research and business intelligence
+
+### Career Page Strategy Updates
+- **Salary Information Removed**: Business decision to discuss compensation during interview process only
+- **Cultural Competency Focus**: Emphasis on Portuguese language skills and cultural understanding
+- **Bilingual Presentation**: All job descriptions available in English and Portuguese
+- **Community-Centric Roles**: All positions designed to serve Portuguese diaspora community needs
+
+### Agent System Expansion Research
+**10 Additional Agents Proposed** (Research Complete - Pending Strategic Approval):
+- luso-payment-agent, luso-location-agent, luso-messaging-agent
+- luso-analytics-agent, luso-mobile-agent, luso-seo-agent  
+- luso-integration-agent, luso-compliance-agent, luso-feedback-agent, luso-onboarding-agent
+
+Each proposed agent addresses specific Portuguese community needs and would enhance platform capabilities for cultural authenticity and user experience.
+
 ## 🚀 Development Workflow
 
 ### Getting Started
@@ -416,10 +447,12 @@ npm run deploy       # Deploy to Vercel
 
 ## 📊 Production Status
 
-### Current Status: 100% Complete ✅ (Updated August 14, 2025)
+### Current Status: 100% Complete ✅ (Updated August 15, 2025)
 - **Web Application**: Production-ready with all features implemented + recent performance fixes
 - **Portuguese Community Features**: Complete adult-focused social platform
-- **Agent System**: Comprehensive automation and specialist support (16 agents deployed)
+- **Agent System**: Comprehensive automation and specialist support (16 agents deployed + 10 proposed agents researched)
+- **Administrative Structure**: 10 management roles defined with strategic business decisions
+- **Career Management**: Salary information removed per business decision, focus on cultural competency
 - **Documentation**: Complete technical and user documentation
 - **Deployment**: One-click Vercel deployment ready
 - **Performance Optimization**: Build issues resolved, server stability improved
@@ -428,7 +461,9 @@ npm run deploy       # Deploy to Vercel
 ### Key Metrics
 - **38+ Static Pages**: All functional with Portuguese community focus
 - **54+ React Components**: Advanced community and interaction features
-- **16+ Specialized Agents**: Portuguese community and development specialists
+- **16+ Specialized Agents**: Portuguese community and development specialists (deployed)
+- **10+ Proposed Agents**: Additional specialists researched and pending approval
+- **10 Administrative Roles**: Management positions defined with comprehensive job specifications
 - **Complete Bilingual Interface**: English/Portuguese throughout platform
 - **Adult-Focused Design**: 18+ community with appropriate features and content
 

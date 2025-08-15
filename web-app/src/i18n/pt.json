@@ -504,5 +504,17 @@
   "error.boundary.home": "Voltar ao início",
   "error.boundary.contact-support": "Contactar apoio técnico",
   "error.component.loading-error": "Erro ao carregar",
-  "error.component.reload": "Recarregar página"
+  "error.component.reload": "Recarregar página",
+
+  "onboarding.first-steps": "Primeiros Passos",
+  "onboarding.setup": "Vamos configurar a sua experiência LusoTown",
+  "onboarding.progress": "Progresso",
+  "onboarding.previous": "Anterior",
+  "onboarding.next": "Próximo",
+  "onboarding.complete": "Concluir",
+  "onboarding.completed": "Completo!",
+  "onboarding.welcome-complete": "Bem-vindo à LusoTown!",
+  "onboarding.all-set": "Está tudo pronto! Vamos explorar a sua comunidade portuguesa.",
+  "onboarding.skip": "Saltar por agora",
+  "onboarding.later": "Farei isto mais tarde"
 }

@@ -504,5 +504,17 @@
   "error.boundary.home": "Go back home",
   "error.boundary.contact-support": "Contact technical support",
   "error.component.loading-error": "Error loading component",
-  "error.component.reload": "Reload page"
+  "error.component.reload": "Reload page",
+
+  "onboarding.first-steps": "First Steps",
+  "onboarding.setup": "Let's set up your LusoTown experience",
+  "onboarding.progress": "Progress",
+  "onboarding.previous": "Previous",
+  "onboarding.next": "Next",
+  "onboarding.complete": "Complete",
+  "onboarding.completed": "Completed!",
+  "onboarding.welcome-complete": "Welcome to LusoTown!",
+  "onboarding.all-set": "You're all set! Let's explore your Portuguese community.",
+  "onboarding.skip": "Skip for now",
+  "onboarding.later": "I'll do this later"
 }
