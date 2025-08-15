@@ -23,10 +23,12 @@ import SaveFavoriteCartButton from '@/components/SaveFavoriteCartButton'
 import ImprovedEventCard from '@/components/ImprovedEventCard'
 import EventToursCard from '@/components/EventToursCard'
 import CategoryFilter from '@/components/CategoryFilter'
+import NetworkPreview from '@/components/NetworkPreview'
 import { Event, EventFilters, eventService, EVENT_CATEGORIES } from '@/lib/events'
 import { EventTour, EventToursFilters, EventsToursService, EVENT_TOUR_CATEGORIES } from '@/lib/events-tours'
 import { useCart } from '@/context/CartContext'
 import { useLanguage } from '@/context/LanguageContext'
+import { useNetworking } from '@/context/NetworkingContext'
 import { getCurrentUser } from '@/lib/auth'
 
 // EventCard component is no longer needed - using ImprovedEventCard instead
@@ -217,6 +219,7 @@ export default function EventsPage() {
   const { language, t } = useLanguage()
   const isPortuguese = language === 'pt'
   const [activeTab, setActiveTab] = useState<'events' | 'tours'>('events')
+  const { getConnectionsByEvent } = useNetworking()
   
   // Preview system state
   const [user, setUser] = useState(getCurrentUser())
@@ -659,7 +662,7 @@ export default function EventsPage() {
                         }
                       </h2>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                       {featuredItems.slice(0, 3).map((item, index) => (
                         activeTab === 'events' ? (
                           <ImprovedEventCard 
@@ -678,7 +681,7 @@ export default function EventsPage() {
 
                 {/* Main Content Grid */}
                 {loading ? (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                     {[1, 2, 3, 4, 5, 6].map((i) => (
                       <div key={i} className="bg-white rounded-2xl shadow-lg overflow-hidden animate-pulse">
                         <div className="h-48 bg-gray-200"></div>
@@ -724,7 +727,7 @@ export default function EventsPage() {
                 ) : (
                   <motion.div
                     layout
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
                   >
                     <AnimatePresence>
                       {currentData.map((item, index) => (

@@ -276,7 +276,7 @@ export default function SaveFavoriteCartButton({
             </AnimatePresence>
             
             {!iconOnly && (
-              <span className="ml-2 font-medium text-sm whitespace-nowrap">
+              <span className="ml-2 font-medium text-sm">
                 {itemSaved ? t('favorites.saved') : t('favorites.save')}
               </span>
             )}
@@ -330,7 +330,7 @@ export default function SaveFavoriteCartButton({
             </AnimatePresence>
             
             {!iconOnly && (
-              <span className="ml-2 font-medium text-sm whitespace-nowrap">
+              <span className="ml-2 font-medium text-sm">
                 {itemInCart ? t('cart.added') : 
                  spotsLeft !== undefined && spotsLeft <= 0 ? t('event.full') :
                  t('cart.add-to-cart')}

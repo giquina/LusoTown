@@ -167,7 +167,7 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group ${
+      className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group h-full flex flex-col ${
         event.featured ? 'ring-2 ring-yellow-300' : ''
       } ${className}`}
     >
@@ -177,6 +177,8 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
           <Image 
             src={event.imageUrl} 
             alt={event.title}
+            width={400}
+            height={300}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
         ) : (
@@ -249,7 +251,7 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
       </div>
       
       {/* Content */}
-      <div className="p-6">
+      <div className="p-6 flex-grow flex flex-col">
         {/* Header - Title & Price */}
         <div className="flex items-start justify-between mb-3">
           <h3 className="font-bold text-lg text-gray-900 group-hover:text-primary-600 transition-colors line-clamp-2 flex-1">
@@ -378,7 +380,7 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
         </div>
         
         {/* Action Buttons */}
-        <div className="space-y-3">
+        <div className="space-y-3 mt-auto">
           {/* Primary Actions */}
           <div className="grid grid-cols-2 gap-3">
             <a 

@@ -16,9 +16,11 @@ import {
 } from '@heroicons/react/24/outline'
 import EventImageWithFallback from '@/components/EventImageWithFallback'
 import SaveFavoriteCartButton from '@/components/SaveFavoriteCartButton'
+import NetworkPreview from '@/components/NetworkPreview'
 import { Event } from '@/lib/events'
 import { useCart } from '@/context/CartContext'
 import { useLanguage } from '@/context/LanguageContext'
+import { useNetworking } from '@/context/NetworkingContext'
 import { formatEventDate } from '@/lib/dateUtils'
 import { getCurrentUser } from '@/lib/auth'
 
@@ -32,8 +34,12 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
   const { isSaved } = useCart()
   const { t, language } = useLanguage()
   const isPortuguese = language === 'pt'
+  const { getConnectionsByEvent } = useNetworking()
   const [showPhotoGallery, setShowPhotoGallery] = useState(false)
   const [user, setUser] = useState(getCurrentUser())
+  
+  // Get connections for this event
+  const eventConnections = getConnectionsByEvent(event.id)
   
   const formatDate = (dateStr: string) => {
     // Use consistent date formatting to prevent hydration issues
@@ -124,7 +130,7 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
-        className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group max-w-sm mx-auto"
+        className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group h-full flex flex-col"
       >
         {/* Event Image Header */}
         <div className="relative h-52 overflow-hidden">
@@ -222,7 +228,7 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
         </div>
 
         {/* Content Section */}
-        <div className="p-6 space-y-4">
+        <div className="p-6 space-y-4 flex-grow flex flex-col">
           {/* Header: Title & Price */}
           <div className="flex items-start justify-between gap-4">
             <div className="flex-1 min-w-0">
@@ -288,6 +294,8 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
                 <Image 
                   src={event.hostImage} 
                   alt={event.hostName}
+                  width={36}
+                  height={36}
                   className="w-9 h-9 rounded-full object-cover ring-2 ring-primary-100 shadow-sm"
                 />
               ) : (
@@ -314,6 +322,19 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
               )}
             </div>
           </div>
+
+          {/* Network Connections Section */}
+          {eventConnections.length > 0 && (
+            <>
+              <div className="border-t border-gray-100"></div>
+              <NetworkPreview
+                eventId={event.id}
+                connections={eventConnections}
+                maxPreview={3}
+                showAddButton={false}
+              />
+            </>
+          )}
 
           {/* Attendees Section */}
           {event.attendees && event.attendees.length > 0 && (
@@ -399,8 +420,8 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
           </div>
 
           {/* Action Buttons */}
-          <div className="border-t border-gray-100 pt-4">
-            <div className="flex gap-3">
+          <div className="border-t border-gray-100 pt-4 mt-auto">
+            <div className="flex flex-col gap-3">
               <SaveFavoriteCartButton
                 itemId={event.id}
                 itemType="event"
@@ -420,11 +441,11 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
                 iconOnly={false}
                 size="medium"
                 variant="outline"
-                className="flex-1 min-w-0"
+                className="w-full"
               />
               <a
                 href={`/events/${event.id}`}
-                className="flex-1 min-w-0 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-3 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 hover:shadow-lg transition-all duration-200 text-center shadow-md whitespace-nowrap overflow-hidden text-ellipsis"
+                className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-3 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 hover:shadow-lg transition-all duration-200 text-center shadow-md"
               >
                 {isFull ? t('event.join-waitlist') : t('event.view-details')}
               </a>

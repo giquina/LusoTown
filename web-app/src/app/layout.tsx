@@ -9,6 +9,7 @@ import { LanguageProvider } from '@/context/LanguageContext'
 import { FavoritesProvider } from '@/context/FavoritesContext'
 import { FollowingProvider } from '@/context/FollowingContext'
 import { CartProvider } from '@/context/CartContext'
+import { NetworkingProvider } from '@/context/NetworkingContext'
 import FavoriteNotification from '@/components/FavoriteNotification'
 import ErrorBoundary, { ComponentErrorBoundary } from '@/components/ErrorBoundary'
 
@@ -162,7 +163,8 @@ export default function RootLayout({
           <LanguageProvider>
             <FavoritesProvider>
               <FollowingProvider>
-                <CartProvider>
+                <NetworkingProvider>
+                  <CartProvider>
                   <ComponentErrorBoundary componentName="User Type Selection">
                     <UserTypeSelection />
                   </ComponentErrorBoundary>
@@ -182,7 +184,8 @@ export default function RootLayout({
                   <ComponentErrorBoundary componentName="Favorite Notification">
                     <FavoriteNotification />
                   </ComponentErrorBoundary>
-                </CartProvider>
+                  </CartProvider>
+                </NetworkingProvider>
               </FollowingProvider>
             </FavoritesProvider>
           </LanguageProvider>

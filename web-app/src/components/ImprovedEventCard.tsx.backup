@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   CalendarIcon,
@@ -9,26 +10,34 @@ import {
   StarIcon,
   ShareIcon,
   ClockIcon,
-  PhotoIcon
+  PhotoIcon,
+  ArrowRightIcon,
+  SparklesIcon
 } from '@heroicons/react/24/outline'
 import EventImageWithFallback from '@/components/EventImageWithFallback'
 import SaveFavoriteCartButton from '@/components/SaveFavoriteCartButton'
 import { Event } from '@/lib/events'
 import { useCart } from '@/context/CartContext'
 import { useLanguage } from '@/context/LanguageContext'
+import { formatEventDate } from '@/lib/dateUtils'
+import { getCurrentUser } from '@/lib/auth'
 
-const ImprovedEventCard = ({ event }: { event: Event }) => {
+interface ImprovedEventCardProps {
+  event: Event
+  showPreviewOverlay?: boolean
+  onUpgrade?: () => void
+}
+
+const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: ImprovedEventCardProps) => {
   const { isSaved } = useCart()
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+  const isPortuguese = language === 'pt'
   const [showPhotoGallery, setShowPhotoGallery] = useState(false)
+  const [user, setUser] = useState(getCurrentUser())
   
   const formatDate = (dateStr: string) => {
-    const date = new Date(dateStr)
-    return date.toLocaleDateString('en-GB', { 
-      weekday: 'short', 
-      month: 'short', 
-      day: 'numeric' 
-    })
+    // Use consistent date formatting to prevent hydration issues
+    return formatEventDate(dateStr, isPortuguese)
   }
 
   const formatTime = (timeStr: string) => {
@@ -42,6 +51,20 @@ const ImprovedEventCard = ({ event }: { event: Event }) => {
   const spotsLeft = event.maxAttendees - event.currentAttendees
   const isAlmostFull = spotsLeft <= 3 && spotsLeft > 0
   const isFull = spotsLeft <= 0
+
+  useEffect(() => {
+    setUser(getCurrentUser())
+  }, [])
+
+  // Check if this should show preview overlay for free users
+  const shouldShowPreview = showPreviewOverlay && 
+    user?.membershipTier === 'free' && 
+    event.membershipRequired !== 'free'
+
+  const membershipTierNames = {
+    core: isPortuguese ? 'Comunidade' : 'Community',
+    premium: isPortuguese ? 'Família' : 'Family'
+  }
 
   // Photo gallery modal component
   const PhotoGalleryModal = () => (
@@ -77,7 +100,7 @@ const ImprovedEventCard = ({ event }: { event: Event }) => {
                     src={photo.url}
                     alt={photo.caption || 'Event photo'}
                     category={event.category}
-                    className="w-full h-full object-cover"
+            className="object-cover"
                     width={300}
                     height={300}
                   />
@@ -95,6 +118,7 @@ const ImprovedEventCard = ({ event }: { event: Event }) => {
 
   return (
     <>
+      <div className="relative">
       <motion.div
         layout
         initial={{ opacity: 0, y: 20 }}
@@ -261,7 +285,7 @@ const ImprovedEventCard = ({ event }: { event: Event }) => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               {event.hostImage ? (
-                <img 
+                <Image 
                   src={event.hostImage} 
                   alt={event.hostName}
                   className="w-9 h-9 rounded-full object-cover ring-2 ring-primary-100 shadow-sm"
@@ -302,10 +326,11 @@ const ImprovedEventCard = ({ event }: { event: Event }) => {
                     {event.attendees.slice(0, 5).map((attendee, index) => (
                       <div key={attendee.id} className="relative">
                         {attendee.profileImage ? (
-                          <img
+                          <Image
                             src={attendee.profileImage}
                             alt={attendee.name}
-                            className="w-8 h-8 rounded-full border-2 border-white object-cover shadow-sm hover:scale-110 transition-transform"
+                            width={32} height={32}
+                            className="rounded-full border-2 border-white object-cover shadow-sm hover:scale-110 transition-transform"
                             title={attendee.name}
                           />
                         ) : (
@@ -407,6 +432,110 @@ const ImprovedEventCard = ({ event }: { event: Event }) => {
           </div>
         </div>
       </motion.div>
+
+      {/* Preview Overlay for Premium Content */}
+      {shouldShowPreview && (
+        <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-white/70 to-transparent backdrop-blur-sm rounded-2xl">
+          <div className="absolute inset-0 flex flex-col justify-end p-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="bg-gradient-to-r from-primary-50 to-secondary-50 border border-primary-200 rounded-xl p-4 shadow-lg"
+            >
+              {/* Header with membership tier icon */}
+              <div className="flex items-center gap-3 mb-3">
+                <div className={`p-2 rounded-lg ${
+                  event.membershipRequired === 'premium' 
+                    ? 'bg-gradient-to-r from-premium-500 to-premium-600' 
+                    : 'bg-gradient-to-r from-secondary-500 to-secondary-600'
+                } text-white`}>
+                  <SparklesIcon className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 text-sm">
+                    {isPortuguese ? 'Evento Exclusivo para Membros' : 'Exclusive Member Event'}
+                  </h3>
+                  <p className="text-xs text-gray-600">
+                    {isPortuguese ? 'Disponível apenas para membros' : 'Available to members only'}
+                  </p>
+                </div>
+              </div>
+
+              {/* Content preview stats */}
+              <div className="flex items-center justify-between mb-4 text-xs text-gray-600">
+                <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-1">
+                    <UserGroupIcon className="w-4 h-4" />
+                    <span>{spotsLeft}/{event.maxAttendees} available</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <MapPinIcon className="w-4 h-4" />
+                    <span>{event.location}</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-1 text-primary-600">
+                  <StarIcon className="w-4 h-4" />
+                  <span className="font-medium">Members Only</span>
+                </div>
+              </div>
+
+              {/* Event description preview */}
+              <p className="text-sm text-gray-700 mb-4 line-clamp-2">
+                {event.description}
+              </p>
+
+              {/* Action button */}
+              <button
+                onClick={onUpgrade}
+                className={`w-full flex items-center justify-center gap-2 font-semibold py-3 px-4 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg ${
+                  event.membershipRequired === 'premium'
+                    ? 'bg-gradient-to-r from-premium-500 to-premium-600 hover:from-premium-600 hover:to-premium-700 text-white'
+                    : 'bg-gradient-to-r from-secondary-500 to-secondary-600 hover:from-secondary-600 hover:to-secondary-700 text-white'
+                }`}
+              >
+                <span className="text-sm">
+                  {isPortuguese 
+                    ? `Tornar-se Membro ${membershipTierNames[event.membershipRequired as 'core' | 'premium']}`
+                    : `Become ${membershipTierNames[event.membershipRequired as 'core' | 'premium']} Member`
+                  }
+                </span>
+                <ArrowRightIcon className="w-4 h-4" />
+              </button>
+
+              {/* Benefits preview */}
+              <div className="mt-3 pt-3 border-t border-gray-200">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="text-gray-500">
+                    {isPortuguese ? 'Benefícios inclusos:' : 'Benefits included:'}
+                  </span>
+                  <div className="flex items-center gap-2">
+                    {event.membershipRequired === 'premium' ? (
+                      <>
+                        <span className="bg-premium-100 text-premium-800 px-2 py-1 rounded-full font-medium">
+                          {isPortuguese ? 'Eventos VIP' : 'VIP Events'}
+                        </span>
+                        <span className="bg-accent-100 text-accent-800 px-2 py-1 rounded-full font-medium">
+                          {isPortuguese ? 'Descontos' : 'Discounts'}
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="bg-secondary-100 text-secondary-800 px-2 py-1 rounded-full font-medium">
+                          {isPortuguese ? 'Eventos Especiais' : 'Special Events'}
+                        </span>
+                        <span className="bg-primary-100 text-primary-800 px-2 py-1 rounded-full font-medium">
+                          {isPortuguese ? 'Networking' : 'Networking'}
+                        </span>
+                      </>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      )}
+      </div>
       
       {/* Photo Gallery Modal */}
       <PhotoGalleryModal />

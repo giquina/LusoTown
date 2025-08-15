@@ -15,18 +15,18 @@ import { useLanguage } from '@/context/LanguageContext'
 
 const getNavigationLinks = (t: any) => [
   { name: t('nav.events', 'Events'), href: '/events' },
-  { name: t('nav.tours', 'Tours'), href: '/groups' },
-  { name: t('nav.chauffeur', 'Chauffeur'), href: '/chauffeur' },
-  { name: t('nav.heritage', 'Heritage'), href: '/heritage' },
-  { name: t('nav.instituto', 'Instituto Camões'), href: '/instituto-camoes' },
-  { name: t('nav.partnerships', 'Partnerships'), href: '/partnerships' },
+  { name: t('nav.chauffeur', 'Chauffeur & Tours'), href: '/chauffeur' },
+  { name: t('nav.pricing', 'Pricing'), href: '/pricing' },
+  { name: t('nav.case-studies', 'Case Studies'), href: '/case-studies' },
 ]
 
-const authenticatedNavigationLinks = [
-  { name: 'Events', href: '/events' },
-  { name: 'Tours', href: '/groups' },
-  { name: 'Chauffeur', href: '/chauffeur' },
-  { name: 'Networks', href: '/community' },
+const getAuthenticatedNavigationLinks = (t: any) => [
+  { name: t('nav.events', 'Events'), href: '/events' },
+  { name: t('nav.chauffeur', 'Chauffeur & Tours'), href: '/chauffeur' },
+  { name: t('nav.my-network', 'My Network'), href: '/my-network' },
+  { name: t('nav.pricing', 'Pricing'), href: '/pricing' },
+  { name: t('nav.case-studies', 'Case Studies'), href: '/case-studies' },
+  { name: t('nav.networks', 'Networks'), href: '/community' },
   { name: 'Dashboard', href: '/dashboard' },
 ]
 
@@ -62,7 +62,7 @@ export default function Header() {
     return badges[tier as keyof typeof badges] || badges.free
   }
 
-  const navigationLinks = user ? authenticatedNavigationLinks : getNavigationLinks(t)
+  const navigationLinks = user ? getAuthenticatedNavigationLinks(t) : getNavigationLinks(t)
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 min-h-[64px]">

@@ -32,238 +32,238 @@ interface TourRoute {
 
 const tourRoutes: TourRoute[] = [
   {
-    id: 'portuguese-historical-route',
-    name: 'Portuguese Maritime Heritage Route',
-    namePortuguese: 'Rota do Património Marítimo Português',
-    description: 'Journey through London\'s Portuguese maritime history from Greenwich to the City',
-    descriptionPortuguese: 'Jornada através da história marítima portuguesa de Londres desde Greenwich até à City',
+    id: 'london-historical-route',
+    name: 'London Historical Route with Portuguese Guide',
+    namePortuguese: 'Rota Histórica de Londres com Guia Português',
+    description: 'Journey through London\'s historic landmarks from Greenwich to Westminster with Portuguese-speaking guide',
+    descriptionPortuguese: 'Jornada através dos marcos históricos de Londres de Greenwich a Westminster com guia falante de português',
     duration: '4 hours',
     price: 280,
     category: 'historical',
     highlights: [
-      'Portuguese Embassy cultural briefing',
-      'Maritime museum Portuguese collections',
-      'Historic Portuguese quarter locations',
-      'Portuguese business heritage sites'
+      'Tower of London and Crown Jewels tour',
+      'National Maritime Museum Greenwich',
+      'Westminster Abbey and Big Ben',
+      'City of London historic financial district'
     ],
     highlightsPortuguese: [
-      'Briefing cultural da Embaixada Portuguesa',
-      'Coleções portuguesas do museu marítimo',
-      'Localizações históricas do bairro português',
-      'Locais do património empresarial português'
+      'Tour da Torre de Londres e Jóias da Coroa',
+      'Museu Marítimo Nacional Greenwich',
+      'Westminster Abbey e Big Ben',
+      'Distrito financeiro histórico da City de Londres'
     ],
     stops: [
       {
-        name: 'Portuguese Embassy & Cultural Center',
-        namePortuguese: 'Embaixada Portuguesa e Centro Cultural',
-        description: 'Cultural briefing and historical context with embassy officials',
-        descriptionPortuguese: 'Briefing cultural e contexto histórico com funcionários da embaixada',
+        name: 'Westminster Abbey & Big Ben',
+        namePortuguese: 'Westminster Abbey e Big Ben',
+        description: 'Historic royal church and iconic clock tower with Portuguese commentary',
+        descriptionPortuguese: 'Igreja real histórica e torre de relógio icônica com comentário português',
         duration: '45 minutes',
-        location: 'Belgravia',
+        location: 'Westminster',
         type: 'heritage'
       },
       {
-        name: 'National Maritime Museum - Portuguese Collections',
-        namePortuguese: 'Museu Marítimo Nacional - Coleções Portuguesas',
-        description: 'Exclusive access to Portuguese maritime artifacts and discovery exhibitions',
-        descriptionPortuguese: 'Acesso exclusivo a artefatos marítimos portugueses e exposições de descobrimentos',
+        name: 'National Maritime Museum - British Naval History',
+        namePortuguese: 'Museu Marítimo Nacional - História Naval Britânica',
+        description: 'British maritime history and naval artifacts with Portuguese-speaking guide',
+        descriptionPortuguese: 'História marítima britânica e artefatos navais com guia falante de português',
         duration: '90 minutes',
         location: 'Greenwich',
         type: 'heritage'
       },
       {
-        name: 'Tower of London - Portuguese Connections',
-        namePortuguese: 'Torre de Londres - Conexões Portuguesas',
-        description: 'Portuguese royal connections and maritime trading history',
-        descriptionPortuguese: 'Conexões reais portuguesas e história do comércio marítimo',
+        name: 'Tower of London - Crown Jewels',
+        namePortuguese: 'Torre de Londres - Jóias da Coroa',
+        description: 'Historic fortress, Crown Jewels, and Beefeater tales with Portuguese guide',
+        descriptionPortuguese: 'Fortaleza histórica, Jóias da Coroa e histórias dos Beefeaters com guia português',
         duration: '75 minutes',
         location: 'Tower Hill',
         type: 'heritage'
       },
       {
-        name: 'City of London - Portuguese Trading Legacy',
-        namePortuguese: 'City de Londres - Legado Comercial Português',
-        description: 'Historical Portuguese trading houses and modern business presence',
-        descriptionPortuguese: 'Casas comerciais históricas portuguesas e presença empresarial moderna',
+        name: 'City of London - Financial District',
+        namePortuguese: 'City de Londres - Distrito Financeiro',
+        description: 'Historic financial district, Bank of England, and modern skyscrapers',
+        descriptionPortuguese: 'Distrito financeiro histórico, Banco de Inglaterra e arranha-céus modernos',
         duration: '30 minutes',
         location: 'City of London',
         type: 'business'
       }
     ],
     includes: [
-      'Portuguese cultural expert guide',
-      'Embassy briefing session',
+      'Portuguese-speaking London expert guide',
+      'Westminster Abbey guided tour',
       'Museum entrance fees',
-      'Cultural documentation package',
-      'Portuguese coffee stop'
+      'London historical documentation',
+      'Traditional British afternoon tea'
     ],
     includesPortuguese: [
-      'Guia especialista em cultura portuguesa',
-      'Sessão de briefing da embaixada',
+      'Guia especialista de Londres falante de português',
+      'Tour guiado da Westminster Abbey',
       'Taxas de entrada em museus',
-      'Pacote de documentação cultural',
-      'Pausa para café português'
+      'Documentação histórica de Londres',
+      'Chá da tarde britânico tradicional'
     ]
   },
   {
-    id: 'authentic-community-route',
-    name: 'Authentic Portuguese London Community Tour',
-    namePortuguese: 'Tour Autêntico da Comunidade Portuguesa de Londres',
-    description: 'Deep dive into London\'s Portuguese community heartlands',
-    descriptionPortuguese: 'Mergulho profundo nos centros da comunidade portuguesa de Londres',
+    id: 'authentic-london-route',
+    name: 'Authentic London Experience Tour',
+    namePortuguese: 'Tour de Experiência Autêntica de Londres',
+    description: 'Deep dive into London\'s authentic local neighborhoods and cultural districts',
+    descriptionPortuguese: 'Mergulho profundo nos bairros locais autênticos e distritos culturais de Londres',
     duration: '6 hours',
     price: 320,
     category: 'authentic',
     highlights: [
-      'Stockwell & Vauxhall Portuguese districts',
-      'Traditional bakeries and restaurants',
-      'Portuguese cultural centers',
-      'Community gathering places',
-      'Local Portuguese businesses'
+      'Camden Market & Covent Garden districts',
+      'Traditional British pubs and tea houses',
+      'London cultural venues and theaters',
+      'Local markets and gathering places',
+      'Authentic London businesses and craftsmen'
     ],
     highlightsPortuguese: [
-      'Distritos portugueses de Stockwell e Vauxhall',
-      'Padarias e restaurantes tradicionais',
-      'Centros culturais portugueses',
-      'Locais de encontro comunitário',
-      'Negócios locais portugueses'
+      'Distritos do Camden Market e Covent Garden',
+      'Pubs britânicos tradicionais e casas de chá',
+      'Locais culturais e teatros de Londres',
+      'Mercados locais e locais de encontro',
+      'Negócios e artesãos autênticos de Londres'
     ],
     stops: [
       {
-        name: 'Portuguese Cultural Center Stockwell',
-        namePortuguese: 'Centro Cultural Português Stockwell',
-        description: 'Heart of Portuguese community activities and cultural preservation',
-        descriptionPortuguese: 'Coração das atividades da comunidade portuguesa e preservação cultural',
+        name: 'Camden Market Cultural District',
+        namePortuguese: 'Distrito Cultural Camden Market',
+        description: 'Heart of London\'s alternative culture and vibrant market scene',
+        descriptionPortuguese: 'Coração da cultura alternativa de Londres e cena vibrante do mercado',
         duration: '60 minutes',
-        location: 'Stockwell',
+        location: 'Camden',
         type: 'cultural'
       },
       {
-        name: 'Traditional Portuguese Bakery Experience',
-        namePortuguese: 'Experiência de Padaria Portuguesa Tradicional',
-        description: 'Authentic pastéis de nata tasting and traditional baking methods',
-        descriptionPortuguese: 'Prova autêntica de pastéis de nata e métodos tradicionais de padaria',
+        name: 'Traditional British Pub Experience',
+        namePortuguese: 'Experiência de Pub Britânico Tradicional',
+        description: 'Authentic British pub culture with fish and chips and local ales',
+        descriptionPortuguese: 'Cultura autêntica de pub britânico com fish and chips e cervejas locais',
         duration: '45 minutes',
-        location: 'Vauxhall',
+        location: 'Covent Garden',
         type: 'culinary'
       },
       {
-        name: 'Portuguese Social Club & Community Hub',
-        namePortuguese: 'Clube Social Português e Centro Comunitário',
-        description: 'Meet local Portuguese community leaders and learn about community initiatives',
-        descriptionPortuguese: 'Conheça líderes da comunidade portuguesa local e aprenda sobre iniciativas comunitárias',
+        name: 'West End Theatre District',
+        namePortuguese: 'Distrito de Teatros West End',
+        description: 'Explore London\'s famous theatre district and learn about British theatrical heritage',
+        descriptionPortuguese: 'Explore o famoso distrito teatral de Londres e aprenda sobre o patrimônio teatral britânico',
         duration: '75 minutes',
-        location: 'Elephant & Castle',
+        location: 'West End',
         type: 'community'
       },
       {
-        name: 'Portuguese Restaurant - Traditional Lunch',
-        namePortuguese: 'Restaurante Português - Almoço Tradicional',
-        description: 'Authentic Portuguese cuisine with family recipes and live Fado music',
-        descriptionPortuguese: 'Cozinha portuguesa autêntica com receitas familiares e música de Fado ao vivo',
+        name: 'Traditional British Restaurant - Sunday Roast',
+        namePortuguese: 'Restaurante Britânico Tradicional - Sunday Roast',
+        description: 'Traditional British Sunday roast with Yorkshire pudding and local atmosphere',
+        descriptionPortuguese: 'Sunday roast britânico tradicional com Yorkshire pudding e atmosfera local',
         duration: '90 minutes',
-        location: 'Stockwell',
+        location: 'Fitzrovia',
         type: 'culinary'
       },
       {
-        name: 'Portuguese Business District Walk',
-        namePortuguese: 'Caminhada pelo Distrito Empresarial Português',
-        description: 'Explore Portuguese-owned businesses and entrepreneurship stories',
-        descriptionPortuguese: 'Explore negócios de proprietários portugueses e histórias de empreendedorismo',
+        name: 'London Business District Walk',
+        namePortuguese: 'Caminhada pelo Distrito Empresarial de Londres',
+        description: 'Explore traditional London businesses and entrepreneurship stories',
+        descriptionPortuguese: 'Explore negócios tradicionais de Londres e histórias de empreendedorismo',
         duration: '45 minutes',
-        location: 'South London',
+        location: 'Shoreditch',
         type: 'business'
       }
     ],
     includes: [
-      'Full Portuguese lunch with wine',
-      'Traditional pastries tasting',
-      'Community center access',
-      'Business networking opportunities',
-      'Cultural activity participation'
+      'Full British Sunday roast with beer',
+      'Traditional British pub experience',
+      'Theatre district guided tour',
+      'Local business networking opportunities',
+      'Cultural venue access and activities'
     ],
     includesPortuguese: [
-      'Almoço português completo com vinho',
-      'Prova de doces tradicionais',
-      'Acesso ao centro comunitário',
-      'Oportunidades de networking empresarial',
-      'Participação em atividade cultural'
+      'Sunday roast britânico completo com cerveja',
+      'Experiência de pub britânico tradicional',
+      'Tour guiado do distrito teatral',
+      'Oportunidades de networking empresarial local',
+      'Acesso a locais culturais e atividades'
     ]
   },
   {
-    id: 'culinary-heritage-route',
-    name: 'Portuguese Culinary Heritage Discovery',
-    namePortuguese: 'Descoberta do Património Culinário Português',
-    description: 'Culinary journey through authentic Portuguese flavors and traditions',
-    descriptionPortuguese: 'Jornada culinária através de sabores e tradições portuguesas autênticas',
+    id: 'london-culinary-route',
+    name: 'London Culinary Heritage Discovery',
+    namePortuguese: 'Descoberta do Património Culinário de Londres',
+    description: 'Culinary journey through authentic British flavors and London food traditions',
+    descriptionPortuguese: 'Jornada culinária através de sabores britânicos autênticos e tradições gastronómicas de Londres',
     duration: '6 hours',
     price: 380,
     category: 'culinary',
     highlights: [
-      'Traditional Portuguese cooking demonstration',
-      'Wine tasting with Portuguese sommelier',
-      'Market visits for authentic ingredients',
-      'Family-run restaurant experiences',
-      'Portuguese coffee culture immersion'
+      'Traditional British cooking demonstration',
+      'British wine and whisky tasting with sommelier',
+      'Borough Market visits for British ingredients',
+      'Historic family-run British restaurant experiences',
+      'British tea culture immersion'
     ],
     highlightsPortuguese: [
-      'Demonstração de culinária portuguesa tradicional',
-      'Prova de vinhos com sommelier português',
-      'Visitas ao mercado para ingredientes autênticos',
-      'Experiências em restaurantes familiares',
-      'Imersão na cultura do café português'
+      'Demonstração de culinária britânica tradicional',
+      'Prova de vinhos britânicos e whisky com sommelier',
+      'Visitas ao Borough Market para ingredientes britânicos',
+      'Experiências em restaurantes britânicos familiares históricos',
+      'Imersão na cultura do chá britânico'
     ],
     stops: [
       {
-        name: 'Portuguese Market & Delicatessen',
-        namePortuguese: 'Mercado e Delicatessen Português',
-        description: 'Authentic ingredient sourcing and Portuguese product education',
-        descriptionPortuguese: 'Obtenção de ingredientes autênticos e educação sobre produtos portugueses',
+        name: 'Borough Market & British Delicatessen',
+        namePortuguese: 'Borough Market e Delicatessen Britânico',
+        description: 'Authentic British ingredient sourcing and local product education',
+        descriptionPortuguese: 'Obtenção de ingredientes britânicos autênticos e educação sobre produtos locais',
         duration: '60 minutes',
         location: 'Borough Market',
         type: 'culinary'
       },
       {
-        name: 'Traditional Cooking Demonstration',
-        namePortuguese: 'Demonstração de Cozinha Tradicional',
-        description: 'Learn traditional Portuguese recipes from expert chefs',
-        descriptionPortuguese: 'Aprenda receitas portuguesas tradicionais com chefs especialistas',
+        name: 'Traditional British Cooking Demonstration',
+        namePortuguese: 'Demonstração de Cozinha Britânica Tradicional',
+        description: 'Learn traditional British recipes from expert London chefs',
+        descriptionPortuguese: 'Aprenda receitas britânicas tradicionais com chefs especialistas de Londres',
         duration: '90 minutes',
-        location: 'Portuguese Cultural Center',
+        location: 'Culinary School London',
         type: 'culinary'
       },
       {
-        name: 'Portuguese Wine & Port Tasting',
-        namePortuguese: 'Prova de Vinhos Portugueses e Porto',
-        description: 'Guided tasting of Portuguese wines with cultural context',
-        descriptionPortuguese: 'Prova guiada de vinhos portugueses com contexto cultural',
+        name: 'British Wine & Whisky Tasting',
+        namePortuguese: 'Prova de Vinhos Britânicos e Whisky',
+        description: 'Guided tasting of British wines and whiskies with historical context',
+        descriptionPortuguese: 'Prova guiada de vinhos britânicos e whiskies com contexto histórico',
         duration: '75 minutes',
-        location: 'Speciality Wine Shop',
+        location: 'Historic Wine Bar',
         type: 'culinary'
       },
       {
-        name: 'Traditional Portuguese Dinner Experience',
-        namePortuguese: 'Experiência de Jantar Português Tradicional',
-        description: 'Multi-course traditional meal with live Fado performance',
-        descriptionPortuguese: 'Refeição tradicional de múltiplos pratos com performance de Fado ao vivo',
+        name: 'Traditional British Dinner Experience',
+        namePortuguese: 'Experiência de Jantar Britânico Tradicional',
+        description: 'Multi-course traditional British meal with live folk music performance',
+        descriptionPortuguese: 'Refeição britânica tradicional de múltiplos pratos com performance de música folk ao vivo',
         duration: '120 minutes',
-        location: 'Family Restaurant',
+        location: 'Historic British Restaurant',
         type: 'culinary'
       }
     ],
     includes: [
-      'Traditional Portuguese cooking class',
-      'Wine and port tastings',
-      'Traditional dinner with Fado',
-      'Recipe book in Portuguese/English',
-      'Portuguese specialty products to take home'
+      'Traditional British cooking class',
+      'Wine and whisky tastings',
+      'Traditional dinner with folk music',
+      'British recipe book in Portuguese/English',
+      'British specialty products to take home'
     ],
     includesPortuguese: [
-      'Aula de cozinha portuguesa tradicional',
-      'Provas de vinho e porto',
-      'Jantar tradicional com Fado',
-      'Livro de receitas em português/inglês',
-      'Produtos especializados portugueses para levar'
+      'Aula de cozinha britânica tradicional',
+      'Provas de vinho e whisky',
+      'Jantar tradicional com música folk',
+      'Livro de receitas britânicas em português/inglês',
+      'Produtos especializados britânicos para levar'
     ]
   }
 ]
@@ -334,17 +334,17 @@ export default function PortugueseCulturalTourRoutes({ isPortuguese, onBookTour 
           >
             <span className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-secondary-100 via-premium-50 to-accent-100 border border-secondary-200">
               <MapPinIcon className="w-4 h-4 mr-2" />
-              {isPortuguese ? 'Rotas Culturais Detalhadas' : 'Detailed Cultural Routes'}
+              {isPortuguese ? 'Rotas Turísticas Detalhadas de Londres' : 'Detailed London Tourism Routes'}
             </span>
           </motion.div>
           
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-            {isPortuguese ? 'Rotas de Turismo Cultural Português' : 'Portuguese Cultural Tourism Routes'}
+            {isPortuguese ? 'Rotas Turísticas de Londres com Guias Portugueses' : 'London Tourism Routes with Portuguese Guides'}
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             {isPortuguese 
-              ? 'Rotas cuidadosamente desenhadas que combinam locais históricos, experiências autênticas e narrativas culturais profundas com transporte de segurança profissional'
-              : 'Carefully designed routes combining historical sites, authentic experiences, and deep cultural narratives with professional security transport'
+              ? 'Rotas cuidadosamente desenhadas que combinam as principais atrações de Londres, experiências personalizadas e guias especializados falantes de português com transporte seguro'
+              : 'Carefully designed routes combining London\'s top attractions, personalized experiences, and specialist Portuguese-speaking guides with secure transport'
             }
           </p>
         </div>
@@ -364,15 +364,15 @@ export default function PortugueseCulturalTourRoutes({ isPortuguese, onBookTour 
                 className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden"
               >
                 {/* Route Header */}
-                <div className={`bg-gradient-to-r from-${colorClass}-50 to-${colorClass}-100/50 p-8`}>
+                <div className={`bg-gradient-to-r ${colorClass === 'secondary' ? 'from-secondary-50 to-secondary-100/50' : colorClass === 'premium' ? 'from-premium-50 to-premium-100/50' : colorClass === 'accent' ? 'from-accent-50 to-accent-100/50' : 'from-primary-50 to-primary-100/50'} p-8`}>
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className={`w-12 h-12 bg-${colorClass}-500 rounded-xl flex items-center justify-center`}>
+                        <div className={`w-12 h-12 ${colorClass === 'secondary' ? 'bg-secondary-500' : colorClass === 'premium' ? 'bg-premium-500' : colorClass === 'accent' ? 'bg-accent-500' : 'bg-primary-500'} rounded-xl flex items-center justify-center`}>
                           <CategoryIcon className="w-6 h-6 text-white" />
                         </div>
                         <div>
-                          <span className={`text-xs font-medium text-${colorClass}-600 uppercase tracking-wide`}>
+                          <span className={`text-xs font-medium ${colorClass === 'secondary' ? 'text-secondary-600' : colorClass === 'premium' ? 'text-premium-600' : colorClass === 'accent' ? 'text-accent-600' : 'text-primary-600'} uppercase tracking-wide`}>
                             {route.category}
                           </span>
                           <h3 className="text-2xl font-bold text-gray-900">
@@ -397,7 +397,7 @@ export default function PortugueseCulturalTourRoutes({ isPortuguese, onBookTour 
                     <div className="text-center lg:text-right">
                       <button
                         onClick={() => onBookTour(route.id)}
-                        className={`bg-${colorClass}-600 hover:bg-${colorClass}-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg`}
+                        className={`${colorClass === 'secondary' ? 'bg-secondary-600 hover:bg-secondary-700' : colorClass === 'premium' ? 'bg-premium-600 hover:bg-premium-700' : colorClass === 'accent' ? 'bg-accent-600 hover:bg-accent-700' : 'bg-primary-600 hover:bg-primary-700'} text-white px-8 py-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg`}
                       >
                         {isPortuguese ? 'Reservar Esta Rota' : 'Book This Route'}
                       </button>
@@ -415,7 +415,7 @@ export default function PortugueseCulturalTourRoutes({ isPortuguese, onBookTour 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {(isPortuguese ? route.highlightsPortuguese : route.highlights).map((highlight, idx) => (
                         <div key={idx} className="flex items-start gap-2">
-                          <CheckCircleIcon className={`w-5 h-5 text-${colorClass}-500 mt-0.5 flex-shrink-0`} />
+                          <CheckCircleIcon className={`w-5 h-5 ${colorClass === 'secondary' ? 'text-secondary-500' : colorClass === 'premium' ? 'text-premium-500' : colorClass === 'accent' ? 'text-accent-500' : 'text-primary-500'} mt-0.5 flex-shrink-0`} />
                           <span className="text-gray-700">{highlight}</span>
                         </div>
                       ))}
@@ -433,8 +433,8 @@ export default function PortugueseCulturalTourRoutes({ isPortuguese, onBookTour 
                         return (
                           <div key={stopIndex} className="flex gap-4 p-4 bg-gray-50 rounded-xl">
                             <div className="flex-shrink-0">
-                              <div className={`w-10 h-10 bg-${colorClass}-100 rounded-lg flex items-center justify-center`}>
-                                <TypeIcon className={`w-5 h-5 text-${colorClass}-600`} />
+                              <div className={`w-10 h-10 ${colorClass === 'secondary' ? 'bg-secondary-100' : colorClass === 'premium' ? 'bg-premium-100' : colorClass === 'accent' ? 'bg-accent-100' : 'bg-primary-100'} rounded-lg flex items-center justify-center`}>
+                                <TypeIcon className={`w-5 h-5 ${colorClass === 'secondary' ? 'text-secondary-600' : colorClass === 'premium' ? 'text-premium-600' : colorClass === 'accent' ? 'text-accent-600' : 'text-primary-600'}`} />
                               </div>
                             </div>
                             <div className="flex-1">

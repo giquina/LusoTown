@@ -12,8 +12,8 @@ const testimonials = [
     location: 'Kensington',
     locationPortuguese: 'Kensington',
     rating: 5,
-    text: 'Exceptional service! The chauffeur was professional, punctual, and made me feel completely safe during my late-night event. The Portuguese cultural knowledge was a wonderful touch.',
-    textPortuguese: 'Serviço excecional! O chauffeur foi profissional, pontual e fez-me sentir completamente segura durante o meu evento noturno. O conhecimento cultural português foi um toque maravilhoso.',
+    text: 'Exceptional service! The chauffeur was professional, punctual, and made me feel completely safe during my late-night event. Having a Portuguese-speaking driver made all the difference.',
+    textPortuguese: 'Serviço excecional! O chauffeur foi profissional, pontual e fez-me sentir completamente segura durante o meu evento noturno. Ter um motorista que fala português fez toda a diferença.',
     service: 'Premium Security',
     servicePortuguese: 'Segurança Premium',
     avatar: '👩🏻‍💼'
@@ -24,10 +24,10 @@ const testimonials = [
     location: 'Chelsea',
     locationPortuguese: 'Chelsea',
     rating: 5,
-    text: 'Outstanding experience with the VIP Cultural tour. The driver not only provided excellent security but also shared fascinating insights about Portuguese history in London.',
-    textPortuguese: 'Experiência extraordinária com o tour Cultural VIP. O motorista não só forneceu excelente segurança como também partilhou insights fascinantes sobre a história portuguesa em Londres.',
-    service: 'VIP Cultural Experience',
-    servicePortuguese: 'Experiência Cultural VIP',
+    text: 'Outstanding experience with the VIP London tour. The driver not only provided excellent security but also shared fascinating insights about London history in perfect Portuguese.',
+    textPortuguese: 'Experiência extraordinária com o tour VIP de Londres. O motorista não só forneceu excelente segurança como também partilhou insights fascinantes sobre a história de Londres em português perfeito.',
+    service: 'VIP London Experience',
+    servicePortuguese: 'Experiência VIP de Londres',
     avatar: '👨🏻‍💼'
   },
   {
@@ -48,8 +48,8 @@ const testimonials = [
     location: 'Notting Hill',
     locationPortuguese: 'Notting Hill',
     rating: 5,
-    text: 'The Harry Potter Studio Tour package was magical! Great security, comfortable ride, and the guide knew so much about both British and Portuguese cinema culture.',
-    textPortuguese: 'O pacote do Tour dos Estúdios Harry Potter foi mágico! Ótima segurança, viagem confortável e o guia sabia muito sobre cultura cinematográfica britânica e portuguesa.',
+    text: 'The Harry Potter Studio Tour package was magical! Great security, comfortable ride, and having a Portuguese-speaking guide made the experience perfect for our family.',
+    textPortuguese: 'O pacote do Tour dos Estúdios Harry Potter foi mágico! Ótima segurança, viagem confortável e ter um guia que fala português tornou a experiência perfeita para nossa família.',
     service: 'Harry Potter Studio Tour',
     servicePortuguese: 'Tour dos Estúdios Harry Potter',
     avatar: '👨🏻‍🦱'
@@ -77,6 +77,42 @@ const testimonials = [
     service: 'Airport VIP Transfer',
     servicePortuguese: 'Transferência VIP Aeroporto',
     avatar: '👨🏽‍💼'
+  },
+  {
+    id: 7,
+    name: 'Sofia Pereira',
+    location: 'Southwark',
+    locationPortuguese: 'Southwark',
+    rating: 5,
+    text: 'Amazing service! The driver spoke perfect Portuguese and shared wonderful stories about London history. It felt like having a friend show me around the city rather than just a chauffeur.',
+    textPortuguese: 'Serviço fantástico! O motorista falava português perfeito e partilhou histórias maravilhosas sobre a história de Londres. Foi como ter um amigo a mostrar-me a cidade em vez de apenas um chauffeur.',
+    service: 'VIP London Experience',
+    servicePortuguese: 'Experiência VIP de Londres',
+    avatar: '👩🏻‍🦳'
+  },
+  {
+    id: 8,
+    name: 'Ricardo Oliveira',
+    location: 'Greenwich',
+    locationPortuguese: 'Greenwich',
+    rating: 5,
+    text: 'Excellent Portuguese communication throughout the journey. The chauffeur understood our cultural preferences and recommended authentic British experiences that we truly enjoyed.',
+    textPortuguese: 'Excelente comunicação em português durante toda a viagem. O chauffeur compreendeu as nossas preferências culturais e recomendou experiências britânicas autênticas que realmente apreciámos.',
+    service: 'Premium Security',
+    servicePortuguese: 'Segurança Premium',
+    avatar: '👨🏻‍💻'
+  },
+  {
+    id: 9,
+    name: 'Cristina Martins',
+    location: 'Camden',
+    locationPortuguese: 'Camden',
+    rating: 5,
+    text: 'The Portuguese-speaking service made our London tour absolutely perfect. We could ask questions, share jokes, and truly connect with our guide. Highly recommend for Portuguese families!',
+    textPortuguese: 'O serviço falante de português tornou o nosso tour de Londres absolutamente perfeito. Pudemos fazer perguntas, partilhar piadas e realmente conectar com o nosso guia. Altamente recomendado para famílias portuguesas!',
+    service: 'Family London Tour',
+    servicePortuguese: 'Tour Familiar de Londres',
+    avatar: '👩🏽‍👧‍👦'
   }
 ]
 

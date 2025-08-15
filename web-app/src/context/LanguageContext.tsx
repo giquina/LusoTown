@@ -21,19 +21,15 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   const [translations, setTranslations] = useState<Record<string, string>>({})
   const [isLoading, setIsLoading] = useState(true)
 
-  // Load saved language preference or detect from browser
+  // Load saved language preference with English as default
   useEffect(() => {
     const savedLanguage = localStorage.getItem('lusotown-language')
     
     if (savedLanguage && isValidLanguage(savedLanguage)) {
       setLanguage(savedLanguage)
-    } else {
-      // Detect browser language preference
-      const browserLang = navigator.language.split('-')[0]
-      if (isValidLanguage(browserLang)) {
-        setLanguage(browserLang)
-      }
     }
+    // Always default to English unless user explicitly saved a preference
+    // This ensures English is the true default language
   }, [])
 
   // Load translations when language changes

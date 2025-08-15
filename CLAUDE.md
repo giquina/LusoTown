@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 LusoTown is a bilingual (English/Portuguese) adult community platform (18+) for Portuguese speakers in London and the UK. It serves as a social calendar and booking hub, connecting Portuguese-speaking adults for cultural activities, professional networking, and social experiences.
 
 **Tech Stack:** Next.js 14 (TypeScript), Tailwind CSS, Supabase, Vercel
-**Status:** Production-ready with 38+ pages, 54+ components, complete bilingual system
+**Status:** Production-ready with 39+ pages, 67+ components, complete bilingual system and networking features
 
 ## Development Commands
 
@@ -40,9 +40,9 @@ npx tsc --noEmit    # Type check without emitting files
 LusoTown/
 ├── web-app/            # Next.js 14 application
 │   ├── src/
-│   │   ├── app/        # App router pages (38+)
-│   │   ├── components/ # React components (54+)
-│   │   ├── context/    # Global state (Language, Cart, Favorites, Following)
+│   │   ├── app/        # App router pages (39+)
+│   │   ├── components/ # React components (67+)
+│   │   ├── context/    # Global state (Language, Cart, Favorites, Following, Networking)
 │   │   └── lib/        # Services and utilities
 │   └── public/         # Static assets
 ├── supabase/          
@@ -54,12 +54,12 @@ LusoTown/
 
 **Routing & Pages:**
 - Next.js 14 App Router with file-based routing
-- 38+ static pages with trailing slashes enabled
+- 39+ static pages with trailing slashes enabled (including /my-network)
 - Static export configuration (no server-side features)
 
 **State Management:**
-- React Context for global state (Language, Cart, Favorites, Following)
-- localStorage for persistence (cart, favorites, demo auth)
+- React Context for global state (Language, Cart, Favorites, Following, Networking)
+- localStorage for persistence (cart, favorites, demo auth, networking data)
 - No Redux or external state libraries needed
 
 **Styling System:**
@@ -90,7 +90,7 @@ LusoTown/
 
 **State Management Architecture:**
 - Global state via React Context providers (not Redux)
-- Four main contexts: Language, Cart, Favorites, Following
+- Five main contexts: Language, Cart, Favorites, Following, Networking
 - Providers must be wrapped in correct order in `layout.tsx`
 - Use localStorage for state persistence
 
@@ -111,6 +111,103 @@ LusoTown/
 **CartContext:** Shopping cart and saved items management
 **FavoritesContext:** User favorites tracking
 **FollowingContext:** User connections and following state
+**NetworkingContext:** Event-based connections, network stats, achievements, and notifications
+
+## LusoTown Connections Networking System
+
+The platform features a comprehensive event-based networking system that automatically connects Portuguese community members who attend the same events.
+
+### Networking Features
+
+**Event-Based Connection System:**
+- Automatic connections when users attend the same events
+- Connection strength scoring based on shared events and interactions
+- Privacy-first approach (connections are private to each user)
+- Portuguese cultural conversation starters for meaningful interactions
+
+**My Network Page (/my-network):**
+- Complete networking dashboard with stats and achievements
+- Connection search and sorting (recent, most events, alphabetical)
+- Network milestones and achievement tracking
+- Bilingual interface with Portuguese cultural context
+
+**Network Integration in Events:**
+- Event cards show existing connections attending
+- Post-event check-in system for connection tracking
+- Network preview components showing shared connections
+- Attendance-based connection strength calculation
+
+### Networking Components
+
+**Core Networking Components:**
+- `NetworkingContext.tsx`: Global networking state and connection management
+- `NetworkHeader.tsx`: Network statistics dashboard
+- `ConnectionCard.tsx`: Individual connection profile display
+- `ConnectionsGrid.tsx`: Grid layout for connection management
+- `NetworkPreview.tsx`: Mini connection preview for events
+- `NetworkBadges.tsx`: Achievement and milestone badges
+- `ConversationStarters.tsx`: Portuguese cultural conversation prompts
+
+**Event Integration Components:**
+- `ImprovedEventCard.tsx`: Enhanced event cards with network integration
+- `PostEventCheckin.tsx`: Post-event connection tracking
+- `NetworkMilestoneAlert.tsx`: Achievement notifications
+- `HowConnectionsWork.tsx`: Educational component for homepage
+
+**Utility Components:**
+- `SortingControls.tsx`: Connection sorting interface
+- `ConnectionNotificationBanner.tsx`: Network notification system
+
+### Networking Data Structure
+
+**Connection Interface:**
+```typescript
+interface Connection {
+  id: string
+  userId: string
+  connectedUserId: string
+  connectedUser: UserProfile
+  connectionSource: 'event_based' | 'mutual_friends' | 'manual'
+  sharedEventsCount: number
+  firstMetEventId?: string
+  firstMetEvent?: EventDetails
+  connectionStrength: number
+  lastInteractionAt: string
+  isActive: boolean
+  privacyLevel: 'public' | 'normal' | 'private'
+  createdAt: string
+}
+```
+
+**Network Stats & Achievements:**
+- Total connections tracking
+- Events attended counter
+- Monthly connection growth
+- Achievement system (Connector, Regular Attendee, Culture Preserver, etc.)
+- Connection strength algorithms
+
+**Portuguese Cultural Context:**
+- Portuguese conversation starters organized by category
+- Cultural, professional, and personal conversation prompts
+- Bilingual conversation suggestions (PT/EN)
+- Heritage and tradition-focused networking topics
+
+### Implementation Details
+
+**Data Persistence:**
+- localStorage for connection data (`lusotown-connections`)
+- Network stats persistence (`lusotown-network-stats`)
+- Notification management (`lusotown-network-notifications`)
+
+**Event Integration:**
+- Automatic connection creation on shared event attendance
+- Connection strength updates based on event frequency
+- Network preview in event cards showing mutual connections
+
+**Bilingual Support:**
+- Complete Portuguese/English interface
+- Cultural conversation starters in both languages
+- Portuguese achievement names and descriptions
 
 ## Database Schema (Supabase)
 
@@ -122,6 +219,13 @@ LusoTown/
 - group_members: Group membership tracking
 - event_attendees: Event attendance tracking
 - messages: Direct messaging system
+
+**Networking Tables:**
+- connections: User-to-user connections with event-based tracking
+- network_stats: User networking statistics and achievements
+- connection_notifications: Network milestone and activity notifications
+- conversation_starters: Portuguese cultural conversation prompts
+- network_achievements: Achievement definitions and user progress
 
 **Storage Buckets:**
 - profile-pictures
@@ -203,6 +307,7 @@ Documentation: `.claude/AGENTS_GUIDE.md`
 - `src/context/CartContext.tsx`: Cart management
 - `src/context/FavoritesContext.tsx`: Favorites
 - `src/context/FollowingContext.tsx`: Connections
+- `src/context/NetworkingContext.tsx`: Event-based networking and achievements
 
 **Auth & Data:**
 - `src/lib/auth.ts`: Demo auth system
@@ -210,10 +315,20 @@ Documentation: `.claude/AGENTS_GUIDE.md`
 - `supabase/migrations/`: Database schema
 
 **Key Components:**
-- `src/components/Header.tsx`: Navigation
+- `src/components/Header.tsx`: Navigation (includes My Network link)
 - `src/components/EventFeed.tsx`: Event feed
 - `src/components/Cart.tsx`: Shopping cart
 - `src/components/WelcomeModal.tsx`: Bilingual welcome
+
+**Networking Components:**
+- `src/components/NetworkingContext.tsx`: Core networking state management
+- `src/components/NetworkHeader.tsx`: Network statistics dashboard
+- `src/components/ConnectionCard.tsx`: Individual connection display
+- `src/components/ConnectionsGrid.tsx`: Grid layout for connections
+- `src/components/NetworkPreview.tsx`: Event-based connection preview
+- `src/components/PostEventCheckin.tsx`: Post-event networking flow
+- `src/components/HowConnectionsWork.tsx`: Homepage networking explanation
+- `src/components/ImprovedEventCard.tsx`: Event cards with network integration
 
 ## Environment Variables
 
@@ -254,6 +369,8 @@ The LusoTown platform has identified 10 key administrative and management positi
 2. Test changes at http://localhost:3000
 3. Always test both English and Portuguese language modes
 4. Verify responsive design on mobile/desktop
+5. Test networking features at /my-network page
+6. Verify event-based connection functionality
 
 **Quality Checks:**
 - Run `npm run lint` before committing
@@ -265,7 +382,9 @@ The LusoTown platform has identified 10 key administrative and management positi
 - If build fails, check TypeScript errors with `npx tsc --noEmit`
 - Language switching issues: check LanguageContext and localStorage
 - Styling issues: verify brand colors are used (not generic Tailwind colors)
-- State persistence: check browser localStorage for cart/favorites
+- State persistence: check browser localStorage for cart/favorites/networking data
+- Networking issues: check localStorage keys (`lusotown-connections`, `lusotown-network-stats`)
+- Context provider order: ensure NetworkingProvider is correctly wrapped in layout.tsx
 
 ## Deployment
 
