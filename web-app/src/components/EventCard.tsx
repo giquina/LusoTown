@@ -260,7 +260,7 @@ export default function EventCard({
           </div>
           
           <div className="flex items-center gap-3 text-sm text-gray-600">
-            <UserGroupIcon className="w-5 h-5 text-purple-500 flex-shrink-0" />
+            <UserGroupIcon className="w-5 h-5 text-premium-500 flex-shrink-0" />
             <div className="flex-1">
               <div className="font-medium text-gray-900">
                 {currentAttendees}/{maxAttendees} {isPortuguese ? 'Participantes' : 'Attending'}

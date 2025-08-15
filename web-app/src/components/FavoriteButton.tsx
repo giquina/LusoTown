@@ -78,11 +78,11 @@ export default function FavoriteButton({
     >
       {isLiked ? (
         <HeartSolidIcon 
-          className={`${sizeClasses[size]} text-red-500 hover:text-red-600 transition-colors`} 
+          className={`${sizeClasses[size]} text-action-500 hover:text-action-600 transition-colors`} 
         />
       ) : (
         <HeartOutlineIcon 
-          className={`${sizeClasses[size]} ${variant === 'overlay' ? 'text-gray-600' : 'text-gray-400'} hover:text-red-500 transition-colors`} 
+          className={`${sizeClasses[size]} ${variant === 'overlay' ? 'text-gray-600' : 'text-gray-400'} hover:text-action-500 transition-colors`} 
         />
       )}
     </button>

@@ -57,7 +57,7 @@ export default function SavedItemsButton({
         className="relative"
       >
         {savedCount > 0 ? (
-          <HeartSolidIcon className={`${getIconSize()} text-red-500`} />
+          <HeartSolidIcon className={`${getIconSize()} text-action-500`} />
         ) : (
           <HeartIcon className={getIconSize()} />
         )}
@@ -67,7 +67,7 @@ export default function SavedItemsButton({
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
-            className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full min-w-[18px] h-[18px] flex items-center justify-center font-bold"
+            className="absolute -top-1 -right-1 bg-action-500 text-white text-xs rounded-full min-w-[18px] h-[18px] flex items-center justify-center font-bold"
           >
             {savedCount > 99 ? '99+' : savedCount}
           </motion.div>

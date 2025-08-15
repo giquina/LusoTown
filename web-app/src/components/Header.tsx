@@ -56,8 +56,8 @@ export default function Header() {
   const getMembershipBadge = (tier: string) => {
     const badges = {
       free: { icon: <UserCircleIcon className="w-4 h-4" />, color: 'text-gray-600', label: 'Free' },
-      core: { icon: <HeartIcon className="w-4 h-4" />, color: 'text-[#FF6B6B]', label: 'Core' },
-      premium: { icon: <Crown className="w-4 h-4" />, color: 'text-purple-600', label: 'Premium' }
+      core: { icon: <HeartIcon className="w-4 h-4" />, color: 'text-coral-600', label: 'Core' },
+      premium: { icon: <Crown className="w-4 h-4" />, color: 'text-premium-600', label: 'Premium' }
     }
     return badges[tier as keyof typeof badges] || badges.free
   }
@@ -108,7 +108,7 @@ export default function Header() {
                   onClick={() => setShowUserMenu(!showUserMenu)}
                   className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100 transition-colors"
                 >
-                  <div className="w-8 h-8 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-full flex items-center justify-center text-white text-sm font-bold">
+                  <div className="w-8 h-8 bg-gradient-to-r from-action-500 to-secondary-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                     {user.name.split(' ').map((n: string) => n[0]).join('')}
                   </div>
                   <div className="text-left">
@@ -158,7 +158,7 @@ export default function Header() {
                       {user.role === 'admin' && (
                         <a
                           href="/admin"
-                          className="flex items-center space-x-2 px-4 py-2 text-sm text-purple-700 hover:bg-purple-50"
+                          className="flex items-center space-x-2 px-4 py-2 text-sm text-premium-700 hover:bg-premium-50"
                           onClick={() => setShowUserMenu(false)}
                         >
                           <ShieldCheckIcon className="w-4 h-4" />
@@ -168,7 +168,7 @@ export default function Header() {
                       <div className="border-t border-gray-100 my-1"></div>
                       <button
                         onClick={handleLogout}
-                        className="flex items-center space-x-2 w-full px-4 py-2 text-sm text-red-700 hover:bg-red-50 text-left"
+                        className="flex items-center space-x-2 w-full px-4 py-2 text-sm text-action-700 hover:bg-action-50 text-left"
                       >
                         <LogOut className="w-4 h-4" />
                         <span>Sign Out</span>
@@ -186,7 +186,7 @@ export default function Header() {
                 >
                   <UserIcon className="w-5 h-5" />
                 </a>
-                <a href="/signup" className="bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 text-white font-bold py-2.5 px-6 rounded-lg shadow-lg hover:from-green-700 hover:via-red-700 hover:to-yellow-700 hover:shadow-xl transform hover:scale-105 transition-all duration-200">
+                <a href="/signup" className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-2.5 px-6 rounded-lg shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transform hover:scale-105 transition-all duration-200">
                   {t('nav.join-membership', 'BECOME A MEMBER')}
                 </a>
               </>
@@ -254,7 +254,7 @@ export default function Header() {
                   {user ? (
                     <>
                       <div className="flex items-center px-3 pb-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">
+                        <div className="w-10 h-10 bg-gradient-to-r from-action-500 to-secondary-500 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">
                           {user.name.split(' ').map((n: string) => n[0]).join('')}
                         </div>
                         <div>
@@ -297,7 +297,7 @@ export default function Header() {
                       {user.role === 'admin' && (
                         <a
                           href="/admin"
-                          className="flex items-center space-x-2 text-purple-600 hover:text-purple-700 hover:bg-purple-50 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                          className="flex items-center space-x-2 text-premium-600 hover:text-premium-700 hover:bg-premium-50 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           <ShieldCheckIcon className="w-5 h-5" />
@@ -310,7 +310,7 @@ export default function Header() {
                           handleLogout()
                           setMobileMenuOpen(false)
                         }}
-                        className="flex items-center space-x-2 text-red-600 hover:text-red-700 hover:bg-red-50 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 w-full text-left"
+                        className="flex items-center space-x-2 text-action-600 hover:text-action-700 hover:bg-action-50 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 w-full text-left"
                       >
                         <LogOut className="w-5 h-5" />
                         <span>Sign Out</span>
@@ -329,7 +329,7 @@ export default function Header() {
                       <div className="mt-3 px-3">
                         <a 
                           href="/signup"
-                          className="bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:from-green-700 hover:via-red-700 hover:to-yellow-700 hover:shadow-xl transform hover:scale-105 transition-all duration-200 w-full text-center block"
+                          className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transform hover:scale-105 transition-all duration-200 w-full text-center block"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           BECOME MEMBER

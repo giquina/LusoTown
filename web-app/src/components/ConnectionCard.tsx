@@ -215,7 +215,7 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
             onClick={() => setIsLiked(!isLiked)}
             className={`p-2.5 rounded-lg transition-all duration-200 ${
               isLiked 
-                ? 'bg-red-50 text-red-500 hover:bg-red-100' 
+                ? 'bg-action-50 text-action-500 hover:bg-action-100' 
                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
             }`}
           >

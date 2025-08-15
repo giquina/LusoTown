@@ -53,11 +53,11 @@ export default function Footer() {
             
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-300">
-                <MapPinIcon className="h-5 w-5 text-red-400" />
+                <MapPinIcon className="h-5 w-5 text-action-400" />
                 <span>UK Portuguese Community Platform</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
-                <EnvelopeIcon className="h-5 w-5 text-green-400" />
+                <EnvelopeIcon className="h-5 w-5 text-secondary-400" />
                 <span>connect@lusotown.co.uk</span>
               </div>
             </div>
@@ -186,7 +186,7 @@ export default function Footer() {
                   href="https://www.instagram.com/lusotownuk"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-pink-500 transition-colors duration-200"
+                  className="text-gray-400 hover:text-secondary-500 transition-colors duration-200"
                   aria-label="Follow us on Instagram"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -198,7 +198,7 @@ export default function Footer() {
                   href="https://twitter.com/LusoTownUK"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-primary-400 transition-colors duration-200"
+                  className="text-gray-400 hover:text-primary-500 transition-colors duration-200"
                   aria-label="Follow us on Twitter"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -210,7 +210,7 @@ export default function Footer() {
                   href="https://www.linkedin.com/company/lusotown-uk"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-primary-600 transition-colors duration-200"
+                  className="text-gray-400 hover:text-primary-500 transition-colors duration-200"
                   aria-label="Follow us on LinkedIn"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -222,7 +222,7 @@ export default function Footer() {
                   href="https://www.youtube.com/@LusoTownUK"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-red-500 transition-colors duration-200"
+                  className="text-gray-400 hover:text-action-500 transition-colors duration-200"
                   aria-label="Subscribe to our YouTube channel"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -234,7 +234,7 @@ export default function Footer() {
                   href="https://wa.me/447123456789"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-green-500 transition-colors duration-200"
+                  className="text-gray-400 hover:text-secondary-500 transition-colors duration-200"
                   aria-label="Contact us on WhatsApp"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -244,7 +244,7 @@ export default function Footer() {
               </div>
               
               <div className="flex items-center gap-2 text-sm text-gray-400">
-                <HeartIcon className="h-4 w-4 text-red-400" />
+                <HeartIcon className="h-4 w-4 text-action-400" />
                 <span>{t('footer.bottom')}</span>
               </div>
             </div>
