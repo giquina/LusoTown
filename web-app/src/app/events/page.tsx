@@ -337,7 +337,7 @@ export default function EventsPage() {
             <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary-200 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
           </div>
           
-          <div className="container-width px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-4xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -382,29 +382,32 @@ export default function EventsPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="flex justify-center mb-8"
+                className="flex justify-center mb-8 px-4"
               >
-                <div className="bg-white/80 backdrop-blur-sm p-2 rounded-2xl shadow-lg border border-gray-200">
-                  <button
-                    onClick={() => setActiveTab('events')}
-                    className={`px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200 ${
-                      activeTab === 'events'
-                        ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-md'
-                        : 'text-gray-600 hover:text-gray-900 hover:bg-white/50'
-                    }`}
-                  >
-                    {isPortuguese ? 'Eventos' : 'Events'}
-                  </button>
-                  <button
-                    onClick={() => setActiveTab('tours')}
-                    className={`px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-200 ${
-                      activeTab === 'tours'
-                        ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-md'
-                        : 'text-gray-600 hover:text-gray-900 hover:bg-white/50'
-                    }`}
-                  >
-                    {isPortuguese ? 'Tours & Experiências' : 'Tours & Experiences'}
-                  </button>
+                <div className="bg-white/80 backdrop-blur-sm p-1.5 sm:p-2 rounded-2xl shadow-lg border border-gray-200 w-full max-w-md">
+                  <div className="grid grid-cols-2 gap-1">
+                    <button
+                      onClick={() => setActiveTab('events')}
+                      className={`px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-200 touch-manipulation ${
+                        activeTab === 'events'
+                          ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-md'
+                          : 'text-gray-600 hover:text-gray-900 hover:bg-white/50'
+                      }`}
+                    >
+                      {isPortuguese ? 'Eventos' : 'Events'}
+                    </button>
+                    <button
+                      onClick={() => setActiveTab('tours')}
+                      className={`px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-200 touch-manipulation ${
+                        activeTab === 'tours'
+                          ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-md'
+                          : 'text-gray-600 hover:text-gray-900 hover:bg-white/50'
+                      }`}
+                    >
+                      <span className="hidden sm:inline">{isPortuguese ? 'Tours & Experiências' : 'Tours & Experiences'}</span>
+                      <span className="sm:hidden">{isPortuguese ? 'Tours' : 'Tours'}</span>
+                    </button>
+                  </div>
                 </div>
               </motion.div>
 
@@ -455,29 +458,30 @@ export default function EventsPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="relative max-w-2xl mx-auto"
+                className="relative max-w-2xl mx-auto px-4"
               >
                 <input
                   type="text"
                   placeholder={activeTab === 'events'
                     ? (isPortuguese 
-                        ? 'Buscar eventos e experiências...'
-                        : 'Search events & experiences...')
+                        ? 'Buscar eventos...'
+                        : 'Search events...')
                     : (isPortuguese 
-                        ? 'Buscar tours e experiências...'
-                        : 'Search tours & experiences...')
+                        ? 'Buscar tours...'
+                        : 'Search tours...')
                   }
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-                  className="w-full pl-12 pr-32 py-4 text-lg rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent shadow-lg bg-white/80 backdrop-blur-sm"
+                  className="w-full pl-10 sm:pl-12 pr-20 sm:pr-32 py-3 sm:py-4 text-base sm:text-lg rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent shadow-lg bg-white/80 backdrop-blur-sm"
                 />
-                <MagnifyingGlassIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" />
+                <MagnifyingGlassIcon className="absolute left-6 sm:left-8 top-1/2 transform -translate-y-1/2 w-5 h-5 sm:w-6 sm:h-6 text-gray-400" />
                 <button
                   onClick={handleSearch}
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-4 py-2.5 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 font-medium shadow-lg text-sm"
+                  className="absolute right-6 sm:right-8 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 font-medium shadow-lg text-xs sm:text-sm touch-manipulation"
                 >
-                  {isPortuguese ? 'Buscar' : 'Search'}
+                  <span className="hidden sm:inline">{isPortuguese ? 'Buscar' : 'Search'}</span>
+                  <span className="sm:hidden">🔍</span>
                 </button>
               </motion.div>
 
@@ -486,9 +490,9 @@ export default function EventsPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="mt-8"
+                className="mt-8 px-4"
               >
-                <div className="flex flex-wrap justify-center gap-3 mb-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 mb-4 max-w-4xl mx-auto">
                   {activeTab === 'events' ? (
                     /* Event Quick Filters */
                     [
@@ -502,7 +506,7 @@ export default function EventsPage() {
                       <button
                         key={filter.key}
                         onClick={() => setEventFilters({ ...eventFilters, category: filter.key === eventFilters.category ? undefined : filter.key })}
-                        className={`group px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                        className={`group px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 touch-manipulation ${
                           eventFilters.category === filter.key
                             ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg transform scale-105'
                             : 'bg-white/80 text-gray-700 hover:bg-white hover:shadow-md border border-gray-200'
@@ -518,16 +522,16 @@ export default function EventsPage() {
                       <button
                         key={category}
                         onClick={() => handleTourCategoryChange(category === tourFilters.category ? undefined : category)}
-                        className={`group px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-2 ${
+                        className={`group px-2 sm:px-3 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 flex items-center gap-1 touch-manipulation justify-center text-center ${
                           tourFilters.category === category
                             ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg transform scale-105'
                             : 'bg-white/80 text-gray-700 hover:bg-white hover:shadow-md border border-gray-200'
                         }`}
                       >
-                        <span className="text-base">{info.icon}</span>
-                        {category}
+                        <span className="text-sm sm:text-base">{info.icon}</span>
+                        <span className="truncate">{category}</span>
                         {eventCounts[category] > 0 && (
-                          <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${
+                          <span className={`px-1.5 sm:px-2 py-0.5 rounded-full text-xs font-bold ${
                             tourFilters.category === category
                               ? 'bg-white/20 text-white'
                               : 'bg-gray-200 text-gray-700'
@@ -541,40 +545,41 @@ export default function EventsPage() {
                 </div>
                 
                 {/* Popular Types */}
-                <div className="flex flex-wrap justify-center gap-2 text-xs">
-                  <span className="text-gray-500">
+                <div className="text-center">
+                  <p className="text-gray-500 text-xs mb-3">
                     {isPortuguese 
                       ? 'Experiências Populares:' 
                       : 'Popular Experiences:'}
-                    {' '}
-                  </span>
-                  {activeTab === 'events' ? [
-                    { type: 'Museum Tours', flag: '🏛️' },
-                    { type: 'Concert Nights', flag: '🎵' },
-                    { type: 'Football Matches', flag: '⚽' },
-                    { type: 'Weekend Trips', flag: '🚌' }
-                  ].map((experience) => (
-                    <button
-                      key={experience.type}
-                      onClick={() => setSearchQuery(experience.type)}
-                      className="text-primary-600 hover:text-primary-700 font-medium transition-colors"
-                    >
-                      {experience.flag} {experience.type}
-                    </button>
-                  )) : [
-                    { type: 'Women 30+', flag: '👩‍💼' },
-                    { type: 'Family-Friendly', flag: '👨‍👩‍👧‍👦' },
-                    { type: 'Cultural Heritage', flag: '🏛️' },
-                    { type: 'Professional Networking', flag: '💼' }
-                  ].map((experience) => (
-                    <button
-                      key={experience.type}
-                      onClick={() => setSearchQuery(experience.type)}
-                      className="text-primary-600 hover:text-primary-700 font-medium transition-colors"
-                    >
-                      {experience.flag} {experience.type}
-                    </button>
-                  ))}
+                  </p>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 max-w-2xl mx-auto">
+                    {activeTab === 'events' ? [
+                      { type: 'Museum Tours', flag: '🏛️' },
+                      { type: 'Concert Nights', flag: '🎵' },
+                      { type: 'Football Matches', flag: '⚽' },
+                      { type: 'Weekend Trips', flag: '🚌' }
+                    ].map((experience) => (
+                      <button
+                        key={experience.type}
+                        onClick={() => setSearchQuery(experience.type)}
+                        className="text-primary-600 hover:text-primary-700 font-medium transition-colors bg-primary-50 hover:bg-primary-100 rounded-lg px-2 py-1 text-xs"
+                      >
+                        {experience.flag} {experience.type}
+                      </button>
+                    )) : [
+                      { type: 'Women 30+', flag: '👩‍💼' },
+                      { type: 'Family-Friendly', flag: '👨‍👩‍👧‍👦' },
+                      { type: 'Cultural Heritage', flag: '🏛️' },
+                      { type: 'Professional Networking', flag: '💼' }
+                    ].map((experience) => (
+                      <button
+                        key={experience.type}
+                        onClick={() => setSearchQuery(experience.type)}
+                        className="text-primary-600 hover:text-primary-700 font-medium transition-colors bg-primary-50 hover:bg-primary-100 rounded-lg px-2 py-1 text-xs"
+                      >
+                        {experience.flag} {experience.type}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             </div>
@@ -583,7 +588,7 @@ export default function EventsPage() {
 
         {/* Main Content */}
         <section className="py-12">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex gap-8">
               {/* Sidebar Filters - Desktop */}
               <div className="hidden lg:block w-80 flex-shrink-0">
@@ -662,7 +667,7 @@ export default function EventsPage() {
                         }
                       </h2>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                       {featuredItems.slice(0, 3).map((item, index) => (
                         activeTab === 'events' ? (
                           <ImprovedEventCard 
@@ -681,11 +686,11 @@ export default function EventsPage() {
 
                 {/* Main Content Grid */}
                 {loading ? (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                     {[1, 2, 3, 4, 5, 6].map((i) => (
                       <div key={i} className="bg-white rounded-2xl shadow-lg overflow-hidden animate-pulse">
                         <div className="h-48 bg-gray-200"></div>
-                        <div className="p-6">
+                        <div className="p-4 sm:p-6">
                           <div className="h-4 bg-gray-200 rounded mb-2"></div>
                           <div className="h-4 bg-gray-200 rounded mb-4 w-2/3"></div>
                           <div className="h-3 bg-gray-200 rounded mb-2"></div>
@@ -727,7 +732,7 @@ export default function EventsPage() {
                 ) : (
                   <motion.div
                     layout
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
                   >
                     <AnimatePresence>
                       {currentData.map((item, index) => (
@@ -806,7 +811,7 @@ export default function EventsPage() {
 
         {/* My Network CTA Section */}
         <section className="py-16 bg-gradient-to-r from-primary-50 to-secondary-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 {isPortuguese ? 'Conecte-se com a Sua Rede' : 'Connect with Your Network'}

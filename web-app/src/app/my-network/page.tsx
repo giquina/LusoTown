@@ -18,7 +18,7 @@ import {
 import { CrownIcon } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { useNetworking } from '@/context/NetworkingContext'
+import { useNetworking, ConnectionFilters as ConnectionFiltersType } from '@/context/NetworkingContext'
 import { useLanguage } from '@/context/LanguageContext'
 
 // Import components we'll create
@@ -28,6 +28,8 @@ import SortingControls from '@/components/SortingControls'
 import ConversationStarters from '@/components/ConversationStarters'
 import NetworkBadges from '@/components/NetworkBadges'
 import ConnectionNotificationBanner from '@/components/ConnectionNotificationBanner'
+import ConnectionFiltersComponent from '@/components/ConnectionFilters'
+import NetworkAnalytics from '@/components/NetworkAnalytics'
 
 export default function MyNetworkPage() {
   const { t, language } = useLanguage()
@@ -39,20 +41,45 @@ export default function MyNetworkPage() {
     loading,
     getConnections,
     searchConnections,
+    filterConnections,
     getUnreadNotificationsCount
   } = useNetworking()
 
   const [searchQuery, setSearchQuery] = useState('')
-  const [sortBy, setSortBy] = useState<'recent' | 'most_events' | 'alphabetical'>('recent')
+  const [sortBy, setSortBy] = useState<'recent' | 'most_events' | 'alphabetical' | 'strongest'>('recent')
   const [showFilters, setShowFilters] = useState(false)
   const [filteredConnections, setFilteredConnections] = useState(connections)
+  const [activeFilters, setActiveFilters] = useState<ConnectionFiltersType>({})
 
-  // Update filtered connections when search or sort changes
+  // Update filtered connections when search, sort, or filters change
   useEffect(() => {
-    let filtered = searchQuery ? searchConnections(searchQuery) : connections
-    filtered = getConnections(sortBy)
+    let filtered = connections
+    
+    // Apply text search
+    if (searchQuery) {
+      filtered = searchConnections(searchQuery)
+    }
+    
+    // Apply advanced filters
+    if (Object.keys(activeFilters).length > 0) {
+      filtered = filterConnections(activeFilters)
+    }
+    
+    // Apply sorting
+    if (filtered.length > 0) {
+      filtered = getConnections(sortBy)
+    }
+    
     setFilteredConnections(filtered)
-  }, [searchQuery, sortBy, connections, searchConnections, getConnections])
+  }, [searchQuery, sortBy, activeFilters, connections, searchConnections, filterConnections, getConnections])
+
+  const handleFiltersChange = (filters: ConnectionFiltersType) => {
+    setActiveFilters(filters)
+  }
+
+  const handleClearFilters = () => {
+    setActiveFilters({})
+  }
 
   if (loading) {
     return (
@@ -132,25 +159,50 @@ export default function MyNetworkPage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             {/* Search and Controls */}
             <div className="bg-white rounded-2xl shadow-lg p-6 mb-8">
-              <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
-                {/* Search Bar */}
-                <div className="relative flex-1 max-w-md">
-                  <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    type="text"
-                    placeholder={isPortuguese ? 'Procurar nas suas conexões...' : 'Search your connections...'}
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
-                  />
+              <div className="flex flex-col gap-4">
+                {/* Top Row: Search and Controls */}
+                <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
+                  {/* Search Bar */}
+                  <div className="relative flex-1 max-w-md">
+                    <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <input
+                      type="text"
+                      placeholder={isPortuguese ? 'Procurar conexões...' : 'Search connections...'}
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                    />
+                  </div>
+
+                  {/* Controls Row */}
+                  <div className="flex items-center gap-4">
+                    <ConnectionFiltersComponent 
+                      onFiltersChange={handleFiltersChange}
+                      activeFilters={activeFilters}
+                      onClearFilters={handleClearFilters}
+                    />
+                    <SortingControls sortBy={sortBy} onSortChange={setSortBy} />
+                  </div>
                 </div>
-
-                {/* Sorting Controls */}
-                <SortingControls sortBy={sortBy} onSortChange={setSortBy} />
-
+                
                 {/* Results Count */}
-                <div className="text-gray-600 text-sm">
-                  {filteredConnections.length} {isPortuguese ? 'conexões' : 'connections'}
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-gray-600">
+                    {filteredConnections.length} {isPortuguese ? 'conexões' : 'connections'}
+                    {Object.keys(activeFilters).length > 0 && (
+                      <span className="ml-2 text-primary-600">
+                        ({isPortuguese ? 'filtrado' : 'filtered'})
+                      </span>
+                    )}
+                  </span>
+                  {Object.keys(activeFilters).length > 0 && (
+                    <button
+                      onClick={handleClearFilters}
+                      className="text-primary-600 hover:text-primary-700 font-medium"
+                    >
+                      {isPortuguese ? 'Limpar filtros' : 'Clear filters'}
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
@@ -158,6 +210,9 @@ export default function MyNetworkPage() {
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
               {/* Sidebar */}
               <div className="lg:col-span-1 space-y-6">
+                {/* Network Analytics */}
+                <NetworkAnalytics />
+                
                 {/* Network Badges */}
                 <NetworkBadges achievements={stats.achievements} />
                 

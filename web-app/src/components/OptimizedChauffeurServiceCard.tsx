@@ -287,7 +287,7 @@ const OptimizedChauffeurServiceCard = memo<OptimizedChauffeurServiceCardProps>((
               <span className="text-gray-700 text-sm leading-relaxed">{feature}</span>
             </motion.li>
           ))}
-        </ul>
+        </div>
         
         {tier.features.length > 6 && (
           <div className="mt-3 text-center">

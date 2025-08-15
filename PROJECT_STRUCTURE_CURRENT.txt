@@ -1,0 +1,265 @@
+web-app/src
+├── app
+│   ├── about
+│   │   └── page.tsx
+│   ├── admin
+│   │   └── page.tsx
+│   ├── api
+│   │   ├── favorites
+│   │   │   └── route.ts
+│   │   └── feed
+│   │       └── route.ts
+│   ├── business-directory
+│   │   └── page.tsx
+│   ├── business-networking
+│   │   └── page.tsx
+│   ├── careers
+│   │   └── page.tsx
+│   ├── case-studies
+│   │   └── page.tsx
+│   ├── chat
+│   │   ├── [id]
+│   │   │   └── page.tsx
+│   │   └── page.tsx
+│   ├── chauffeur
+│   │   └── page.tsx
+│   ├── community
+│   │   └── page.tsx
+│   ├── community-guidelines
+│   │   └── page.tsx
+│   ├── contact
+│   │   └── page.tsx
+│   ├── dashboard
+│   │   └── page.tsx
+│   ├── demo
+│   │   └── page.tsx
+│   ├── directory
+│   │   ├── member
+│   │   │   └── [id]
+│   │   │       └── page.tsx
+│   │   └── page.tsx
+│   ├── events
+│   │   ├── create
+│   │   │   └── page.tsx
+│   │   ├── groups
+│   │   │   └── page.tsx
+│   │   ├── [id]
+│   │   │   └── page.tsx
+│   │   └── page.tsx
+│   ├── favorites
+│   │   └── page.tsx
+│   ├── features-demo
+│   │   └── page.tsx
+│   ├── feed
+│   │   └── page.tsx
+│   ├── following
+│   │   └── page.tsx
+│   ├── forgot-password
+│   │   └── page.tsx
+│   ├── forums
+│   │   ├── create-topic
+│   │   │   └── page.tsx
+│   │   ├── page.tsx
+│   │   └── topic
+│   │       └── [id]
+│   │           └── page.tsx
+│   ├── globals.css
+│   ├── groups
+│   │   ├── create
+│   │   │   └── page.tsx
+│   │   ├── [id]
+│   │   │   └── page.tsx
+│   │   └── page.tsx
+│   ├── help
+│   │   └── page.tsx
+│   ├── how-it-works
+│   │   └── page.tsx
+│   ├── instituto-camoes
+│   │   └── page.tsx
+│   ├── layout.tsx
+│   ├── login
+│   │   └── page.tsx
+│   ├── my-network
+│   │   └── page.tsx
+│   ├── page.tsx
+│   ├── partnerships
+│   │   └── page.tsx
+│   ├── pricing
+│   │   └── page.tsx
+│   ├── primeiros-passos
+│   │   └── page.tsx
+│   ├── privacy
+│   │   └── page.tsx
+│   ├── profile
+│   │   ├── edit
+│   │   │   └── page.tsx
+│   │   └── [id]
+│   │       └── page.tsx
+│   ├── profiles
+│   │   └── page.tsx
+│   ├── safety
+│   │   └── page.tsx
+│   ├── saved
+│   │   └── page.tsx
+│   ├── search
+│   │   └── page.tsx
+│   ├── services
+│   │   └── chauffeur
+│   ├── signup
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   └── success
+│   │       ├── layout.tsx
+│   │       └── page.tsx
+│   ├── social-networks
+│   │   └── page.tsx
+│   ├── success-stories
+│   │   └── page.tsx
+│   └── terms
+│       └── page.tsx
+├── components
+│   ├── AboutLusoTown.tsx
+│   ├── AppDownloadSection.tsx
+│   ├── AuthenticEvents.tsx
+│   ├── AutoPostDemo.tsx
+│   ├── BusinessCard.tsx
+│   ├── CartButton.tsx
+│   ├── Cart.tsx
+│   ├── CaseStudiesPromo.tsx
+│   ├── CaseStudies.tsx
+│   ├── CategoryBadge.tsx
+│   ├── CategoryFilter.tsx
+│   ├── ChauffeurBookingForm.tsx
+│   ├── ChauffeurServiceCard.tsx
+│   ├── ChauffeurTestimonials.tsx
+│   ├── CloudinaryImage.tsx
+│   ├── ConnectionCard.tsx
+│   ├── ConnectionFilters.tsx
+│   ├── ConnectionNotificationBanner.tsx
+│   ├── ConnectionsGrid.tsx
+│   ├── ConversationStarters.tsx
+│   ├── CTA.tsx
+│   ├── CulturalHeritageTimeline.tsx
+│   ├── CustomToursSection.tsx
+│   ├── DESIGN_SYSTEM_GUIDE.md
+│   ├── DiverseSuccessStories.tsx
+│   ├── ErrorBoundary.tsx
+│   ├── EventCard.tsx
+│   ├── EventCard.tsx.backup
+│   ├── EventFeedCard.tsx
+│   ├── EventFeedCard.tsx.backup
+│   ├── EventFeed.tsx
+│   ├── EventImageWithFallback.tsx
+│   ├── EventReviewSystem.tsx
+│   ├── EventsShowcase.tsx
+│   ├── EventsToursSection.tsx
+│   ├── EventToursCard.tsx
+│   ├── FavoriteButton.tsx
+│   ├── FavoriteNotification.tsx
+│   ├── FavoritesDemo.tsx
+│   ├── Features.tsx
+│   ├── FeedDemo.tsx
+│   ├── FeedFilters.tsx
+│   ├── FeedPost.tsx
+│   ├── FeedSearch.tsx
+│   ├── FollowButton.tsx
+│   ├── Footer.tsx
+│   ├── GroupEventCard.tsx
+│   ├── GroupEventsPageClient.tsx
+│   ├── GroupEventsSection.tsx
+│   ├── GroupReportModal.tsx
+│   ├── GroupsShowcase.tsx
+│   ├── Hashtag.tsx
+│   ├── Header.tsx
+│   ├── Hero.tsx
+│   ├── HowConnectionsWork.tsx
+│   ├── HowItWorks.tsx
+│   ├── ImprovedEventCard.tsx
+│   ├── ImprovedEventCard.tsx.backup
+│   ├── LanguageToggleDemo.tsx
+│   ├── LanguageToggle.tsx
+│   ├── LiveFeedNotifications.tsx
+│   ├── LiveUpdateIndicator.tsx
+│   ├── Logo.tsx
+│   ├── LondonTourRoutes.tsx
+│   ├── NetworkAnalytics.tsx
+│   ├── NetworkBadges.tsx
+│   ├── NetworkHeader.tsx
+│   ├── NetworkMilestoneAlert.tsx
+│   ├── NetworkPreview.tsx
+│   ├── OfficialPartnershipBadge.tsx
+│   ├── OfficialRecognitionFramework.tsx
+│   ├── OptimizedChauffeurPage.tsx
+│   ├── OptimizedChauffeurServiceCard.tsx
+│   ├── PersonalizedFeed.tsx
+│   ├── PhotoUpload.tsx
+│   ├── PortugueseCulturalTourRoutes.tsx
+│   ├── PortugueseSEO.tsx
+│   ├── PostEventCheckin.tsx
+│   ├── PrimeirosPassos.tsx
+│   ├── profile
+│   │   ├── ConnectionButton.tsx
+│   │   ├── ProfileBadges.tsx
+│   │   ├── ProfileCard.tsx
+│   │   ├── ProfileCompletion.tsx
+│   │   ├── ProfileEditForm.tsx
+│   │   ├── ProfileGallery.tsx
+│   │   ├── ProfileHeader.tsx
+│   │   ├── ProfilePhotoManager.tsx
+│   │   ├── ProfilePrivacy.tsx
+│   │   └── ProfileVerification.tsx
+│   ├── ReactionButton.tsx
+│   ├── ReviewAnalytics.tsx
+│   ├── SavedItemsButton.tsx
+│   ├── SaveFavoriteCartButton.tsx
+│   ├── SearchBar.tsx
+│   ├── SEOHead.tsx
+│   ├── SocialLoginButton.tsx
+│   ├── SocialLogin.tsx
+│   ├── SortingControls.tsx
+│   ├── SuccessStories.tsx
+│   ├── TestimonialsNew.tsx
+│   ├── TestimonialsNew.tsx.backup
+│   ├── UserTypeSelection.tsx
+│   ├── WelcomeModal.tsx
+│   └── WhatsAppWidget.tsx
+├── context
+│   ├── CartContext.tsx
+│   ├── FavoritesContext.tsx
+│   ├── FollowingContext.tsx
+│   ├── LanguageContext.tsx
+│   └── NetworkingContext.tsx
+├── i18n
+│   ├── en.json
+│   ├── index.ts
+│   └── pt.json
+└── lib
+    ├── auth.ts
+    ├── businessDirectory.ts
+    ├── chauffeurBooking.ts
+    ├── chauffeurCache.ts
+    ├── chauffeurPricing.ts
+    ├── chauffeurServices.ts
+    ├── cloudinary.ts
+    ├── connections.ts
+    ├── dateUtils.ts
+    ├── design.ts
+    ├── directory.ts
+    ├── errorHandling.tsx
+    ├── events-tours.ts
+    ├── events.ts
+    ├── feed.ts
+    ├── forums.ts
+    ├── london-events-additional.ts
+    ├── messaging.ts
+    ├── networkingEvents.ts
+    ├── partnerships.ts
+    ├── placeholders.ts
+    ├── profileImages.ts
+    ├── profile.ts
+    ├── search.ts
+    ├── seo.ts
+    ├── socialNetworks.ts
+    └── supabase.ts
+
+66 directories, 197 files

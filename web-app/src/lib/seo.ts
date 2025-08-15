@@ -25,6 +25,9 @@ export const PRIMARY_PORTUGUESE_KEYWORDS = [
   'angolanos em londres',
   'moçambicanos em londres',
   'cabo-verdianos londres',
+  'comunidade lusófona reino unido',
+  'familia portuguesa londres',
+  'casa portuguesa londres',
   
   // Activity focused (replacing "finding community")
   'atividades para portugueses londres',
@@ -34,6 +37,9 @@ export const PRIMARY_PORTUGUESE_KEYWORDS = [
   'grupos portugueses londres',
   'sair com portugueses londres',
   'cultura portuguesa londres',
+  'encontros lusófonos londres',
+  'agenda social portuguesa',
+  'fim de semana português londres',
   
   // Business focused
   'negócios portugueses londres',
@@ -61,6 +67,8 @@ export const LONG_TAIL_KEYWORDS = [
   'próximos eventos portugueses londres',
   'fim de semana português londres',
   'atividades culturais portuguesas',
+  'programação lusófona londres',
+  'eventos fim de semana português',
   
   // Activity-specific
   'restaurantes portugueses londres',
@@ -71,6 +79,12 @@ export const LONG_TAIL_KEYWORDS = [
   'música portuguesa londres',
   'cinema português londres',
   'teatro português londres',
+  'santos populares londres',
+  'pastéis de nata londres',
+  'francesinha em londres',
+  'bifana londres',
+  'matança do porco tradições',
+  'festa das vindimas',
   
   // Social connections (not "finding community")
   'conhecer pessoas portuguesas londres',
@@ -256,23 +270,53 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
   },
   
   community: {
-    title: 'Portuguese Community London - Connect with Lusophone Friends & Activities',
-    titlePortuguese: 'Comunidade Portuguesa Londres - Conecte-se com Amigos e Atividades Lusófonas',
-    description: 'Join London\'s vibrant Portuguese community. Make friends, join activities, and stay connected to Portuguese culture while living in the UK.',
-    descriptionPortuguese: 'Junte-se à vibrante comunidade portuguesa de Londres. Faça amigos, participe em atividades e mantenha-se conectado à cultura portuguesa enquanto vive no Reino Unido.',
+    title: 'Portuguese Community London - Your Lusophone Family in the UK',
+    titlePortuguese: 'Comunidade Portuguesa Londres - A Sua Família Lusófona no Reino Unido',
+    description: 'Join London\'s vibrant Portuguese community where saudade transforms into joy. Make lifelong friends, celebrate our heritage, and stay connected to Portuguese culture while living in the UK.',
+    descriptionPortuguese: 'Junte-se à vibrante comunidade portuguesa de Londres onde a saudade se transforma em alegria. Faça amizades para a vida, celebre a nossa herança, e mantenha-se conectado à cultura portuguesa enquanto vive no Reino Unido.',
     keywords: [
       'portuguese community london',
       'comunidade portuguesa londres',
+      'familia portuguesa londres',
+      'casa portuguesa londres',
       'portuguese friends london',
       'amigos portugueses londres',
-      'portuguese groups london',
-      'grupos portugueses londres',
       'portuguese culture london',
       'cultura portuguesa londres',
       'brazilian community london',
       'comunidade brasileira londres',
+      'angolan community london',
+      'comunidade angolana londres',
+      'mozambican community london',
+      'cabo-verdianos londres',
       'lusophone community uk',
-      'comunidade lusófona reino unido'
+      'comunidade lusófona reino unido',
+      'saudade portugal london',
+      'heritage preservation portuguese',
+      'preservação cultural portuguesa'
+    ]
+  },
+  
+  heritage: {
+    title: 'Portuguese Heritage & Cultural Preservation London - Instituto Camões Partnership',
+    titlePortuguese: 'Património Português e Preservação Cultural Londres - Parceria Instituto Camões',
+    description: 'Preserve and celebrate Portuguese heritage in London through our official Instituto Camões partnership. Cultural workshops, language classes, and heritage preservation programs.',
+    descriptionPortuguese: 'Preserve e celebre o património português em Londres através da nossa parceria oficial com o Instituto Camões. Oficinas culturais, aulas de língua e programas de preservação cultural.',
+    keywords: [
+      'portuguese heritage london',
+      'património português londres',
+      'instituto camões london',
+      'instituto camões londres',
+      'portuguese cultural preservation',
+      'preservação cultural portuguesa',
+      'portuguese traditions london',
+      'tradições portuguesas londres',
+      'lusophone heritage uk',
+      'património lusófono reino unido',
+      'fado traditions london',
+      'tradições fado londres',
+      'portuguese folklore london',
+      'folclore português londres'
     ]
   }
 }

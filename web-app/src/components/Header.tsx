@@ -65,26 +65,27 @@ export default function Header() {
   const navigationLinks = user ? getAuthenticatedNavigationLinks(t) : getNavigationLinks(t)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 min-h-[64px]">
-      <nav className="container-width px-4 sm:px-6 lg:px-8" aria-label="Top">
-        <div className="flex items-center justify-between h-16">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 min-h-[68px]">
+      <nav className="container-width px-3 sm:px-6 lg:px-8" aria-label="Top">
+        <div className="flex items-center justify-between h-16 gap-2 sm:gap-4">
           {/* Logo */}
-          <div className="flex items-center">
-            <a href="/" className="flex items-center space-x-3">
-              <Logo size="medium" animated />
-              <div className="hidden sm:flex items-center space-x-2">
-                <div className="w-6 h-6 rounded-full overflow-hidden border border-gray-200 shadow-sm flex items-center justify-center bg-white">
-                  <span className="text-sm">🇬🇧</span>
+          <div className="flex items-center flex-shrink-0">
+            <a href="/" className="flex items-center space-x-2 sm:space-x-3">
+              <Logo size="small" animated className="sm:hidden" />
+              <Logo size="medium" animated className="hidden sm:block" />
+              <div className="hidden md:flex items-center space-x-2">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full overflow-hidden border border-gray-200 shadow-sm flex items-center justify-center bg-white">
+                  <span className="text-xs sm:text-sm">🇬🇧</span>
                 </div>
-                <div className="w-6 h-6 rounded-full overflow-hidden border border-gray-200 shadow-sm flex items-center justify-center bg-white">
-                  <span className="text-sm">🇵🇹</span>
+                <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full overflow-hidden border border-gray-200 shadow-sm flex items-center justify-center bg-white">
+                  <span className="text-xs sm:text-sm">🇵🇹</span>
                 </div>
               </div>
             </a>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6 ml-8">
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 ml-4 xl:ml-8">
             {navigationLinks.map((link) => (
               <a
                 key={link.name}
@@ -97,7 +98,7 @@ export default function Header() {
           </div>
 
           {/* Desktop CTA / User Menu */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-2 lg:space-x-3 xl:space-x-4 flex-shrink-0">
             <SearchBar variant="header" />
             <CartButton />
             <SavedItemsButton />
@@ -111,11 +112,11 @@ export default function Header() {
                   <div className="w-8 h-8 bg-gradient-to-r from-action-500 to-secondary-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                     {user.name.split(' ').map((n: string) => n[0]).join('')}
                   </div>
-                  <div className="text-left">
-                    <div className="text-sm font-medium text-gray-900">{user.name.split(' ')[0]}</div>
+                  <div className="text-left min-w-0">
+                    <div className="text-sm font-medium text-gray-900 truncate">{user.name.split(' ')[0]}</div>
                     <div className="flex items-center space-x-1">
                       {getMembershipBadge(user.membershipTier).icon}
-                      <span className={`text-xs ${getMembershipBadge(user.membershipTier).color}`}>
+                      <span className={`text-xs ${getMembershipBadge(user.membershipTier).color} whitespace-nowrap`}>
                         {getMembershipBadge(user.membershipTier).label}
                       </span>
                     </div>
@@ -186,30 +187,33 @@ export default function Header() {
                 >
                   <UserIcon className="w-5 h-5" />
                 </a>
-                <a href="/signup" className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-2.5 px-6 rounded-lg shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transform hover:scale-105 transition-all duration-200">
-                  {t('nav.join-membership', 'BECOME A MEMBER')}
+                <a href="/signup" className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-2.5 px-6 rounded-lg shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transform hover:scale-105 transition-all duration-200 whitespace-nowrap">
+                  <span className="hidden sm:inline">{t('nav.join-membership', 'BECOME A MEMBER')}</span>
+                  <span className="sm:hidden">JOIN</span>
                 </a>
               </>
             )}
           </div>
 
           {/* Mobile menu button */}
-          <div className="flex md:hidden items-center space-x-2 relative z-50">
-            <CartButton />
-            <SavedItemsButton />
+          <div className="flex md:hidden items-center space-x-1 sm:space-x-2 relative z-50 flex-shrink-0">
+            <div className="flex items-center space-x-1">
+              <CartButton />
+              <SavedItemsButton />
+            </div>
             <LanguageToggle />
             <button
               type="button"
-              className="inline-flex items-center justify-center p-3 rounded-md text-gray-900 hover:text-primary-600 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 transition-colors duration-200 min-h-[48px] min-w-[48px] bg-white border border-gray-300 shadow-md active:bg-gray-50"
+              className="inline-flex items-center justify-center p-2.5 sm:p-3 rounded-lg text-primary-700 hover:text-primary-800 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1 transition-all duration-200 min-h-[44px] min-w-[44px] sm:min-h-[48px] sm:min-w-[48px] bg-white border-2 border-primary-200 shadow-lg active:bg-primary-50 active:scale-95"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-expanded={mobileMenuOpen}
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
             >
               <span className="sr-only">{mobileMenuOpen ? 'Close menu' : 'Open main menu'}</span>
               {mobileMenuOpen ? (
-                <XMarkIcon className="block h-6 w-6 text-gray-900 stroke-2" aria-hidden="true" />
+                <XMarkIcon className="block h-5 w-5 sm:h-6 sm:w-6 text-primary-700 stroke-2" aria-hidden="true" />
               ) : (
-                <Bars3Icon className="block h-6 w-6 text-gray-900 stroke-2" aria-hidden="true" />
+                <Bars3Icon className="block h-5 w-5 sm:h-6 sm:w-6 text-primary-700 stroke-2" aria-hidden="true" />
               )}
             </button>
           </div>
@@ -225,31 +229,31 @@ export default function Header() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 md:hidden"
+                className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 md:hidden"
                 onClick={() => setMobileMenuOpen(false)}
               />
               
               {/* Mobile menu content */}
               <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.2, ease: 'easeInOut' }}
-                className="md:hidden overflow-hidden relative z-50 bg-white border-t border-gray-200 shadow-xl"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                className="md:hidden relative z-50 bg-white border-t border-primary-200 shadow-2xl rounded-b-lg mx-2 mb-2"
               >
-                <div className="px-4 pt-4 pb-3 space-y-1">
+                <div className="px-4 pt-6 pb-4 space-y-2">
                 {navigationLinks.map((link) => (
                   <a
                     key={link.name}
                     href={link.href}
-                    className="text-gray-600 hover:text-primary-600 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                    className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.name}
                   </a>
                 ))}
                 
-                <div className="border-t border-gray-200 pt-4 pb-3">
+                <div className="border-t border-primary-100 pt-4 pb-3">
                   
                   {user ? (
                     <>
@@ -257,11 +261,11 @@ export default function Header() {
                         <div className="w-10 h-10 bg-gradient-to-r from-action-500 to-secondary-500 rounded-full flex items-center justify-center text-white text-sm font-bold mr-3">
                           {user.name.split(' ').map((n: string) => n[0]).join('')}
                         </div>
-                        <div>
-                          <div className="text-base font-medium text-gray-800">{user.name}</div>
+                        <div className="min-w-0 flex-1">
+                          <div className="text-base font-medium text-gray-800 truncate">{user.name}</div>
                           <div className="flex items-center space-x-1">
                             {getMembershipBadge(user.membershipTier).icon}
-                            <span className={`text-sm ${getMembershipBadge(user.membershipTier).color}`}>
+                            <span className={`text-sm ${getMembershipBadge(user.membershipTier).color} whitespace-nowrap`}>
                               {getMembershipBadge(user.membershipTier).label} Member
                             </span>
                           </div>
@@ -270,7 +274,7 @@ export default function Header() {
                       
                       <a
                         href={`/profile/${user.id}`}
-                        className="flex items-center space-x-2 text-gray-600 hover:text-primary-600 hover:bg-gray-50 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                        className="flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         <UserIcon className="w-5 h-5" />
@@ -278,7 +282,7 @@ export default function Header() {
                       </a>
                       <a
                         href="/favorites"
-                        className="flex items-center space-x-2 text-gray-600 hover:text-primary-600 hover:bg-gray-50 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                        className="flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         <HeartIcon className="w-5 h-5" />
@@ -287,7 +291,7 @@ export default function Header() {
                       
                       <a
                         href="/dashboard"
-                        className="flex items-center space-x-2 text-gray-600 hover:text-primary-600 hover:bg-gray-50 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                        className="flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         <UserCircleIcon className="w-5 h-5" />
@@ -297,7 +301,7 @@ export default function Header() {
                       {user.role === 'admin' && (
                         <a
                           href="/admin"
-                          className="flex items-center space-x-2 text-premium-600 hover:text-premium-700 hover:bg-premium-50 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                          className="flex items-center space-x-3 text-premium-600 hover:text-premium-700 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           <ShieldCheckIcon className="w-5 h-5" />
@@ -310,7 +314,7 @@ export default function Header() {
                           handleLogout()
                           setMobileMenuOpen(false)
                         }}
-                        className="flex items-center space-x-2 text-action-600 hover:text-action-700 hover:bg-action-50 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 w-full text-left"
+                        className="flex items-center space-x-3 text-action-600 hover:text-action-700 hover:bg-action-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 w-full text-left border border-transparent hover:border-action-200"
                       >
                         <LogOut className="w-5 h-5" />
                         <span>Sign Out</span>
@@ -320,19 +324,19 @@ export default function Header() {
                     <>
                       <a
                         href="/login"
-                        className="flex items-center space-x-2 text-gray-600 hover:text-primary-600 hover:bg-gray-50 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                        className="flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         <UserIcon className="w-5 h-5" />
                         <span>Log In</span>
                       </a>
-                      <div className="mt-3 px-3">
+                      <div className="mt-4 px-0">
                         <a 
                           href="/signup"
-                          className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transform hover:scale-105 transition-all duration-200 w-full text-center block"
+                          className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transform hover:scale-[1.02] active:scale-95 transition-all duration-200 w-full text-center block"
                           onClick={() => setMobileMenuOpen(false)}
                         >
-                          BECOME MEMBER
+                          <span className="text-base">BECOME A MEMBER</span>
                         </a>
                       </div>
                     </>

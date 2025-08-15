@@ -38,6 +38,7 @@ interface PostComponentProps {
   onVote: (postId: string, vote: 'up' | 'down') => void
 }
 
+
 const PostComponent: React.FC<PostComponentProps> = ({
   post,
   topic,

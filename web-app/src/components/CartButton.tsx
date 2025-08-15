@@ -18,13 +18,13 @@ export default function CartButton() {
     <>
       <button
         onClick={() => setIsCartOpen(true)}
-        className="relative p-2 text-gray-600 hover:text-primary-500 transition-colors group"
+        className="relative p-1.5 sm:p-2 text-gray-600 hover:text-primary-500 transition-colors group min-h-[40px] min-w-[40px] flex items-center justify-center"
         title={isPortuguese ? 'Carrinho de Compras' : 'Shopping Cart'}
       >
         {cartCount > 0 ? (
-          <CartSolidIcon className="w-6 h-6 text-primary-500" />
+          <CartSolidIcon className="w-5 h-5 sm:w-6 sm:h-6 text-primary-500" />
         ) : (
-          <ShoppingCartIcon className="w-6 h-6" />
+          <ShoppingCartIcon className="w-5 h-5 sm:w-6 sm:h-6" />
         )}
         
         {cartCount > 0 && (

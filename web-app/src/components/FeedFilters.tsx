@@ -218,13 +218,13 @@ export default function FeedFilters({
               <button
                 key={type.key}
                 onClick={() => toggleArrayFilter('eventType', type.key)}
-                className={`px-3 py-1.5 text-sm rounded-full border transition-colors ${
+                className={`px-3 py-1.5 text-sm rounded-full border transition-colors whitespace-nowrap ${
                   localFilters.eventType.includes(type.key)
                     ? 'bg-primary-100 text-primary-700 border-primary-300'
                     : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
                 }`}
               >
-                {type.label}
+                <span className="break-keep">{type.label}</span>
               </button>
             ))}
           </div>
@@ -243,13 +243,13 @@ export default function FeedFilters({
               <button
                 key={location.key}
                 onClick={() => toggleArrayFilter('location', location.key)}
-                className={`px-3 py-1.5 text-sm rounded-full border transition-colors ${
+                className={`px-3 py-1.5 text-sm rounded-full border transition-colors whitespace-nowrap ${
                   localFilters.location.includes(location.key)
                     ? 'bg-secondary-100 text-secondary-700 border-secondary-300'
                     : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
                 }`}
               >
-                {location.label}
+                <span className="break-keep">{location.label}</span>
               </button>
             ))}
           </div>
@@ -319,13 +319,13 @@ export default function FeedFilters({
             <button
               key={tag.key}
               onClick={() => toggleArrayFilter('culturalTags', tag.key)}
-              className={`px-3 py-1.5 text-sm rounded-full border transition-colors ${
+              className={`px-3 py-1.5 text-sm rounded-full border transition-colors whitespace-nowrap ${
                 localFilters.culturalTags.includes(tag.key)
                   ? 'bg-coral-100 text-coral-700 border-coral-300'
                   : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
               }`}
             >
-              {tag.label}
+              <span className="break-keep">{tag.label}</span>
             </button>
           ))}
         </div>

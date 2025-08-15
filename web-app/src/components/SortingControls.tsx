@@ -4,8 +4,8 @@ import { ChevronDownIcon } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
 
 interface SortingControlsProps {
-  sortBy: 'recent' | 'most_events' | 'alphabetical'
-  onSortChange: (sortBy: 'recent' | 'most_events' | 'alphabetical') => void
+  sortBy: 'recent' | 'most_events' | 'alphabetical' | 'strongest'
+  onSortChange: (sortBy: 'recent' | 'most_events' | 'alphabetical' | 'strongest') => void
 }
 
 export default function SortingControls({ sortBy, onSortChange }: SortingControlsProps) {
@@ -22,6 +22,11 @@ export default function SortingControls({ sortBy, onSortChange }: SortingControl
       value: 'most_events' as const,
       label: isPortuguese ? 'Mais Eventos' : 'Most Events',
       description: isPortuguese ? 'Eventos em comum' : 'Shared events'
+    },
+    {
+      value: 'strongest' as const,
+      label: isPortuguese ? 'Conexão Mais Forte' : 'Strongest Connection',
+      description: isPortuguese ? 'Força da conexão' : 'Connection strength'
     },
     {
       value: 'alphabetical' as const,

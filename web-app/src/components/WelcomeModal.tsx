@@ -35,19 +35,19 @@ export default function WelcomeModal() {
   const content = {
     en: {
       title: 'Welcome to LusoTown London!',
-      subtitle: 'A community platform for all Portuguese speakers and their families',
-      description: 'Connect with the Portuguese-speaking community in London. Join cultural events, share stories, discover local businesses, and celebrate our heritage together. Welcome to families, children, adults, and seniors!',
-      confirm: 'Join Our Community',
-      skip: 'Skip for now',
-      welcome: 'Open to all ages and families'
+      subtitle: 'Your Portuguese community hub in London - Events, Business, Culture & More',
+      description: 'Join London\'s most vibrant Portuguese community! Discover 200+ cultural events, connect through our networking system, explore premium chauffeur services, and find Portuguese businesses. From tech workshops to traditional festivals, from professional networking to family celebrations - everything Portuguese in London is here. 18+ community with 90+ features and growing!',
+      confirm: 'Explore LusoTown',
+      skip: 'Maybe later',
+      welcome: 'The heart of Portuguese London since 2024'
     },
     pt: {
-      title: 'Bem-vindos ao LusoTown London!',
-      subtitle: 'Uma plataforma comunitária para todos os lusófonos e suas famílias',
-      description: 'Conecte-se com a comunidade lusófona em Londres. Participe em eventos culturais, partilhe histórias, descubra negócios locais, e celebrem a nossa herança juntos. Bem-vindas famílias, crianças, adultos e idosos!',
-      confirm: 'Juntar-se à Nossa Comunidade',
-      skip: 'Pular por agora',
-      welcome: 'Aberto a todas as idades e famílias'
+      title: 'Bem-vindos ao LusoTown Londres!',
+      subtitle: 'O seu centro da comunidade portuguesa em Londres - Eventos, Negócios, Cultura e Mais',
+      description: 'Junte-se à comunidade portuguesa mais vibrante de Londres! Descubra mais de 200 eventos culturais, conecte-se através do nosso sistema de networking, explore serviços premium de chauffeur, e encontre negócios portugueses. De workshops de tecnologia a festivais tradicionais, de networking profissional a celebrações familiares - tudo o que é português em Londres está aqui. Comunidade 18+ com mais de 90 funcionalidades e a crescer!',
+      confirm: 'Explorar LusoTown',
+      skip: 'Talvez mais tarde',
+      welcome: 'O coração do Londres português desde 2024'
     }
   }
 

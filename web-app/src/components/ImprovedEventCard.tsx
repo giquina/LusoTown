@@ -228,19 +228,19 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
         </div>
 
         {/* Content Section */}
-        <div className="p-6 space-y-4 flex-grow flex flex-col">
+        <div className="p-4 sm:p-6 space-y-4 flex-grow flex flex-col">
           {/* Header: Title & Price */}
-          <div className="flex items-start justify-between gap-4">
-            <div className="flex-1 min-w-0">
-              <h3 className="font-bold text-xl text-gray-900 mb-2 line-clamp-2 group-hover:text-primary-600 transition-colors leading-tight">
+          <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4">
+            <div className="flex-1 min-w-0 order-2 sm:order-1">
+              <h3 className="font-bold text-lg sm:text-xl text-gray-900 mb-2 line-clamp-2 group-hover:text-primary-600 transition-colors leading-tight break-words">
                 {event.title}
               </h3>
-              <p className="text-gray-600 text-sm line-clamp-2 leading-relaxed">
+              <p className="text-gray-600 text-sm line-clamp-3 leading-relaxed break-words">
                 {event.description}
               </p>
             </div>
-            <div className="text-right flex-shrink-0">
-              <div className="text-2xl font-bold text-primary-600 mb-1">
+            <div className="text-left sm:text-right flex-shrink-0 order-1 sm:order-2">
+              <div className="text-xl sm:text-2xl font-bold text-primary-600 mb-1">
                 {event.price === 0 ? 'FREE' : `£${event.price}`}
               </div>
               {event.membershipRequired !== 'free' && (
@@ -256,14 +256,14 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
           {/* Event Details Section */}
           <div className="space-y-3">
             {/* Date & Time Row */}
-            <div className="flex items-center gap-4 text-sm text-gray-600">
-              <div className="flex items-center gap-2 flex-1">
-                <CalendarIcon className="w-4 h-4 text-primary-500" />
-                <span className="font-medium">{formatDate(event.date)}</span>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm text-gray-600">
+              <div className="flex items-center gap-2 flex-1 min-w-0">
+                <CalendarIcon className="w-4 h-4 text-primary-500 flex-shrink-0" />
+                <span className="font-medium truncate">{formatDate(event.date)}</span>
               </div>
-              <div className="flex items-center gap-2 flex-1">
-                <ClockIcon className="w-4 h-4 text-primary-500" />
-                <span className="font-medium">
+              <div className="flex items-center gap-2 flex-1 min-w-0">
+                <ClockIcon className="w-4 h-4 text-primary-500 flex-shrink-0" />
+                <span className="font-medium truncate">
                   {formatTime(event.time)}{event.endTime && ` - ${formatTime(event.endTime)}`}
                 </span>
               </div>
@@ -272,7 +272,7 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
             {/* Location Row */}
             <div className="flex items-start gap-2 text-sm text-gray-600">
               <MapPinIcon className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
-              <span className="font-medium">{event.location}, {event.address.split(',')[1]}</span>
+              <span className="font-medium break-words">{event.location}, {event.address.split(',')[1]}</span>
             </div>
 
             {/* Age Restriction */}
@@ -404,17 +404,17 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
           {/* Tags Section */}
           <div className="border-t border-gray-100"></div>
           <div className="flex flex-wrap gap-2">
-            {event.tags.slice(0, 4).map((tag) => (
+            {event.tags.slice(0, 3).map((tag) => (
               <span 
                 key={tag}
-                className="bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs px-3 py-1.5 rounded-full font-medium transition-colors"
+                className="bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs px-2 sm:px-3 py-1 sm:py-1.5 rounded-full font-medium transition-colors break-words"
               >
                 {tag}
               </span>
             ))}
-            {event.tags.length > 4 && (
+            {event.tags.length > 3 && (
               <span className="text-xs text-gray-400 px-2 py-1.5">
-                +{event.tags.length - 4} more
+                +{event.tags.length - 3} more
               </span>
             )}
           </div>

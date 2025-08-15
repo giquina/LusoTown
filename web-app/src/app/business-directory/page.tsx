@@ -414,7 +414,7 @@ export default function BusinessDirectory() {
                 <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
                   type="text"
-                  placeholder={isPortuguese ? 'Buscar negócios, categorias ou localização...' : 'Search businesses, categories, or location...'}
+                  placeholder={isPortuguese ? 'Buscar negócios...' : 'Search businesses...'}
                   value={filters.search || ''}
                   onChange={(e) => handleFilterChange('search', e.target.value)}
                   className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"

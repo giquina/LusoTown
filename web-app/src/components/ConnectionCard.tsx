@@ -106,7 +106,7 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
             {/* Name and Location */}
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-1">
-                <h3 className="text-lg font-semibold text-gray-900 truncate">
+                <h3 className="text-lg font-semibold text-gray-900 break-words line-clamp-1 leading-tight">
                   {connectedUser.firstName} {connectedUser.lastName || ''}
                 </h3>
                 <div className={`flex items-center gap-1 ${badge.color}`} title={`${badge.label} Member`}>
@@ -118,9 +118,9 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
                 </div>
               </div>
               {connectedUser.location && (
-                <div className="flex items-center text-gray-500 text-sm">
-                  <MapPinIcon className="w-4 h-4 mr-1" />
-                  <span className="truncate">{connectedUser.location}</span>
+                <div className="flex items-center text-gray-500 text-sm min-w-0">
+                  <MapPinIcon className="w-4 h-4 mr-1 flex-shrink-0" />
+                  <span className="truncate max-w-full">{connectedUser.location}</span>
                 </div>
               )}
             </div>
@@ -178,7 +178,7 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
                 {formatEventDate(firstMetEvent.date)}
               </span>
             </div>
-            <h4 className="text-sm font-medium text-gray-900 truncate">
+            <h4 className="text-sm font-medium text-gray-900 break-words line-clamp-2 leading-tight">
               {firstMetEvent.title}
             </h4>
           </div>
@@ -187,16 +187,16 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
 
       {/* Stats Row */}
       <div className="px-6 pb-4">
-        <div className="flex items-center justify-between text-sm">
-          <div className="flex items-center gap-4">
-            <div className="flex items-center gap-1 text-gray-600">
+        <div className="flex items-center justify-between text-sm min-w-0">
+          <div className="flex items-center gap-4 min-w-0 flex-1">
+            <div className="flex items-center gap-1 text-gray-600 flex-shrink-0">
               <CalendarIcon className="w-4 h-4" />
               <span>{sharedEventsCount}</span>
               <span className="text-xs">
                 {isPortuguese ? 'eventos' : 'events'}
               </span>
             </div>
-            <div className="text-gray-500 text-xs">
+            <div className="text-gray-500 text-xs truncate">
               {isPortuguese ? 'Última interação' : 'Last seen'} {getTimeAgo(lastInteractionAt)}
             </div>
           </div>
@@ -206,9 +206,9 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
       {/* Action Buttons */}
       <div className="px-6 pb-6">
         <div className="flex gap-3">
-          <button className="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white py-2.5 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-sm font-medium shadow-md">
-            <ChatBubbleLeftRightIcon className="w-4 h-4 inline mr-2" />
-            {isPortuguese ? 'Mensagem' : 'Message'}
+          <button className="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white py-2.5 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-sm font-medium shadow-md min-w-0">
+            <ChatBubbleLeftRightIcon className="w-4 h-4 inline mr-2 flex-shrink-0" />
+            <span className="truncate">{isPortuguese ? 'Mensagem' : 'Message'}</span>
           </button>
           
           <button

@@ -71,7 +71,7 @@ export default function FeedSearch({
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Search posts, events, businesses, hashtags..."
+              placeholder="Search posts..."
               className="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent"
             />
             {query && (

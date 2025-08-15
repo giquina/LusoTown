@@ -124,10 +124,10 @@ export default function CategoryFilter({
                 <div>
                   <div className={`font-semibold ${
                     selectedCategory === category ? 'text-primary-700' : 'text-gray-900'
-                  }`}>
+                  } break-words leading-tight`}>
                     {getCategoryDisplayName(category)}
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-gray-600 break-words leading-relaxed">
                     {getCategoryDescription(category)}
                   </div>
                 </div>
@@ -177,24 +177,24 @@ export default function CategoryFilter({
           <h4 className="text-sm font-semibold text-gray-900">
             {isPortuguese ? 'Categorias Populares' : 'Popular Categories'}
           </h4>
-          <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {Object.entries(eventCounts)
               .filter(([_, count]) => count > 0)
               .sort(([_, a], [__, b]) => b - a)
-              .slice(0, 3)
+              .slice(0, 6)
               .map(([category, count]) => (
                 <button
                   key={category}
                   onClick={() => onCategoryChange(category)}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-full text-xs font-medium transition-colors ${
+                  className={`flex items-center gap-1.5 px-2 py-2 rounded-lg text-xs font-medium transition-colors min-w-0 ${
                     selectedCategory === category
                       ? 'bg-primary-500 text-white'
                       : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                   }`}
                 >
-                  <span>{EVENT_TOUR_CATEGORIES[category as keyof typeof EVENT_TOUR_CATEGORIES]?.icon}</span>
-                  <span>{getCategoryDisplayName(category)}</span>
-                  <span className={`px-1.5 py-0.5 rounded-full text-xs ${
+                  <span className="flex-shrink-0">{EVENT_TOUR_CATEGORIES[category as keyof typeof EVENT_TOUR_CATEGORIES]?.icon}</span>
+                  <span className="truncate">{getCategoryDisplayName(category)}</span>
+                  <span className={`px-1 py-0.5 rounded-full text-xs flex-shrink-0 ${
                     selectedCategory === category
                       ? 'bg-white/20'
                       : 'bg-white'

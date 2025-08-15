@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 LusoTown is a bilingual (English/Portuguese) adult community platform (18+) for Portuguese speakers in London and the UK. It serves as a social calendar and booking hub, connecting Portuguese-speaking adults for cultural activities, professional networking, and social experiences.
 
 **Tech Stack:** Next.js 14 (TypeScript), Tailwind CSS, Supabase, Vercel
-**Status:** Production-ready with 39+ pages, 67+ components, complete bilingual system and networking features
+**Status:** Production-ready with 52+ pages, 99+ components, complete bilingual system, networking features, enhanced chauffeur services, and 10+ tech/business events
 
 ## Development Commands
 
@@ -25,6 +25,14 @@ npm run deploy      # Deploy to Vercel
 npx tsc --noEmit    # Type check without emitting files
 ```
 
+**Automation Scripts:** Project includes automation scripts for documentation maintenance.
+
+```bash
+# From project root
+./scripts/update-claude-md.sh      # Update CLAUDE.md with current stats
+./scripts/post-deployment-update.sh  # Complete post-deployment verification
+```
+
 **Testing:** No test framework configured. Use manual testing via local development server.
 
 **Demo Login:**
@@ -40,8 +48,8 @@ npx tsc --noEmit    # Type check without emitting files
 LusoTown/
 ├── web-app/            # Next.js 14 application
 │   ├── src/
-│   │   ├── app/        # App router pages (39+)
-│   │   ├── components/ # React components (67+)
+│   │   ├── app/        # App router pages (47+)
+│   │   ├── components/ # React components (90+)
 │   │   ├── context/    # Global state (Language, Cart, Favorites, Following, Networking)
 │   │   └── lib/        # Services and utilities
 │   └── public/         # Static assets
@@ -54,7 +62,7 @@ LusoTown/
 
 **Routing & Pages:**
 - Next.js 14 App Router with file-based routing
-- 39+ static pages with trailing slashes enabled (including /my-network)
+- 47+ static pages with trailing slashes enabled (including /my-network, /chauffeur)
 - Static export configuration (no server-side features)
 
 **State Management:**
@@ -112,6 +120,70 @@ LusoTown/
 **FavoritesContext:** User favorites tracking
 **FollowingContext:** User connections and following state
 **NetworkingContext:** Event-based connections, network stats, achievements, and notifications
+
+## LusoTown Security Chauffeur Services
+
+The platform features a comprehensive luxury chauffeur and security transportation service designed specifically for the Portuguese community in London.
+
+### Chauffeur Services Features
+
+**Premium Transportation Solutions:**
+- Professional chauffeur services with Portuguese-speaking drivers
+- Security-focused transportation for executives and VIPs
+- Cultural tour routes highlighting Portuguese heritage in London
+- Airport transfers with Portuguese community focus
+- Luxury vehicle fleet including Bentley, Mercedes S-Class, Rolls-Royce
+
+**Portuguese Cultural Integration:**
+- Bilingual chauffeur service (Portuguese/English)
+- Cultural tour routes through Portuguese neighborhoods
+- Knowledge of Portuguese businesses and community locations
+- Portuguese cultural event transportation
+- Heritage site tours and cultural immersion experiences
+
+**Service Infrastructure:**
+- Advanced booking system with real-time availability
+- Dynamic pricing based on service type and duration
+- Customer testimonials and review system
+- Service area coverage across Greater London
+- Emergency and last-minute booking capabilities
+
+### Chauffeur Components
+
+**Core Service Components:**
+- `OptimizedChauffeurPage.tsx`: Main chauffeur services landing page
+- `ChauffeurBookingForm.tsx`: Advanced booking system with real-time validation
+- `ChauffeurServiceCard.tsx`: Individual service display with pricing
+- `ChauffeurTestimonials.tsx`: Customer review and testimonial system
+- `LondonTourRoutes.tsx`: Portuguese cultural tour route descriptions
+- `CustomToursSection.tsx`: Bespoke tour planning interface
+- `PortugueseCulturalTourRoutes.tsx`: Heritage-focused tour options
+
+**Service Infrastructure:**
+- `chauffeurServices.ts`: Core service definitions and availability
+- `chauffeurPricing.ts`: Dynamic pricing engine and calculations
+- `chauffeurBooking.ts`: Booking management and validation system
+- `chauffeurCache.ts`: Performance optimization and caching
+
+### Service Categories
+
+**Executive Services:**
+- Business meeting transfers
+- Airport VIP services
+- Corporate event transportation
+- Portuguese business networking events
+
+**Cultural Tours:**
+- Portuguese heritage sites in London
+- Food tour experiences (Portuguese restaurants and markets)
+- Cultural event attendance with transportation
+- Community celebration transportation
+
+**Personal Services:**
+- Special occasion transportation
+- Family gathering coordination
+- Shopping tours to Portuguese stores
+- Medical appointment assistance for elderly Portuguese speakers
 
 ## LusoTown Connections Networking System
 
@@ -234,15 +306,31 @@ interface Connection {
 
 ## Portuguese Brand Colors
 
-Use semantic color names from Tailwind config:
-- **primary** (Azul Atlântico): Deep ocean blue for navigation/info
-- **secondary** (Verde Esperança): Emerald for success/positive
-- **accent** (Dourado Sol): Amber for warnings/attention
-- **action** (Vermelho Paixão): Red for CTAs/critical
-- **premium** (Roxo Fado): Purple for premium features
-- **coral** (Coral Tropical): Coral for warm accents
+LusoTown uses a comprehensive Portuguese-inspired color system with semantic naming. All colors include full shade ranges (50-900) for consistency.
 
-Never use generic `blue-*` classes - use brand colors instead.
+**Primary Brand Colors:**
+- **primary** (Azul Atlântico): Deep ocean blue for navigation, information, and primary actions
+- **secondary** (Verde Esperança): Emerald green for success states and positive actions
+- **accent** (Dourado Sol): Warm amber for warnings, highlights, and attention-grabbing elements
+- **action** (Vermelho Paixão): Bold red for critical CTAs and important actions
+- **premium** (Roxo Fado): Rich purple for premium features and special content
+- **coral** (Coral Tropical): Vibrant coral for warm accents and secondary CTAs
+
+**Supporting Colors:**
+- **neutral**: Updated neutral palette for text and backgrounds
+- **text**: Semantic text color definitions (text, textSecondary, textLight)
+
+**Component Usage Guidelines:**
+- Never use generic Tailwind colors (blue-500, red-600, etc.)
+- Always use semantic brand colors (primary-500, action-600, etc.)
+- Use appropriate shade levels (50 for light backgrounds, 900 for dark text)
+- Brand compliance is enforced across all 90+ components
+
+**Color System Features:**
+- Complete Portuguese cultural naming (Unidos pela Língua - United by Language)
+- Accessibility-compliant contrast ratios
+- Consistent usage across all UI components
+- Mobile app color system alignment
 
 ## Agent System
 
@@ -294,6 +382,19 @@ node .claude/invoke-agent.js --list
 Agent configuration: `.claude/agents.json`
 Documentation: `.claude/AGENTS_GUIDE.md`
 
+## Additional Documentation
+
+**Comprehensive System Documentation:**
+- `PORTUGUESE_BRAND_COLORS.md`: Complete Portuguese color system guide
+- `NETWORKING_ARCHITECTURE.md`: LusoTown Connections system architecture
+- `AUTOMATION_SCRIPTS.md`: Documentation and deployment automation
+- `LUSOTOWN_ADMINISTRATIVE_ROLES.md`: Management roles and responsibilities
+
+**Development Resources:**
+- `PROJECT_STRUCTURE_CURRENT.txt`: Auto-generated project structure (via scripts)
+- `COMPONENTS_LIST.txt`: Auto-generated component inventory (via scripts)
+- `PAGES_LIST.txt`: Auto-generated page listing (via scripts)
+
 ## Key Files to Reference
 
 **Core Architecture:**
@@ -329,6 +430,21 @@ Documentation: `.claude/AGENTS_GUIDE.md`
 - `src/components/PostEventCheckin.tsx`: Post-event networking flow
 - `src/components/HowConnectionsWork.tsx`: Homepage networking explanation
 - `src/components/ImprovedEventCard.tsx`: Event cards with network integration
+
+**Chauffeur Service Components:**
+- `src/components/OptimizedChauffeurPage.tsx`: Complete chauffeur services page
+- `src/components/ChauffeurBookingForm.tsx`: Booking system with validation
+- `src/components/ChauffeurServiceCard.tsx`: Service display and pricing
+- `src/components/ChauffeurTestimonials.tsx`: Customer testimonials
+- `src/components/LondonTourRoutes.tsx`: Cultural tour descriptions
+- `src/components/CustomToursSection.tsx`: Bespoke tour planning
+- `src/components/PortugueseCulturalTourRoutes.tsx`: Heritage tours
+
+**Chauffeur Service Infrastructure:**
+- `src/lib/chauffeurServices.ts`: Service definitions and availability
+- `src/lib/chauffeurPricing.ts`: Dynamic pricing calculations
+- `src/lib/chauffeurBooking.ts`: Booking management system
+- `src/lib/chauffeurCache.ts`: Performance optimization
 
 ## Environment Variables
 
@@ -370,7 +486,12 @@ The LusoTown platform has identified 10 key administrative and management positi
 3. Always test both English and Portuguese language modes
 4. Verify responsive design on mobile/desktop
 5. Test networking features at /my-network page
-6. Verify event-based connection functionality
+6. Test chauffeur services at /chauffeur page
+7. Verify event-based connection functionality
+
+**Automation Scripts (Project Root):**
+- `./scripts/update-claude-md.sh`: Update documentation with current stats
+- `./scripts/post-deployment-update.sh`: Complete post-deployment verification and testing
 
 **Quality Checks:**
 - Run `npm run lint` before committing

@@ -47,18 +47,18 @@ export default function Footer() {
           <div className="md:col-span-2 lg:col-span-1 space-y-6">
             <Logo size="medium" className="text-white" />
             
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-gray-300 leading-relaxed break-words">
               {t('footer.description')}
             </p>
             
             <div className="space-y-3">
-              <div className="flex items-center gap-3 text-gray-300">
-                <MapPinIcon className="h-5 w-5 text-action-400" />
-                <span>UK Portuguese Community Platform</span>
+              <div className="flex items-center gap-3 text-gray-300 min-w-0">
+                <MapPinIcon className="h-5 w-5 text-action-400 flex-shrink-0" />
+                <span className="break-words">UK Portuguese Community Platform</span>
               </div>
-              <div className="flex items-center gap-3 text-gray-300">
-                <EnvelopeIcon className="h-5 w-5 text-secondary-400" />
-                <span>connect@lusotown.co.uk</span>
+              <div className="flex items-center gap-3 text-gray-300 min-w-0">
+                <EnvelopeIcon className="h-5 w-5 text-secondary-400 flex-shrink-0" />
+                <span className="break-all">connect@lusotown.co.uk</span>
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@ export default function Footer() {
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base"
+                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base break-words leading-relaxed"
                     >
                       {link.name}
                     </a>
@@ -90,7 +90,7 @@ export default function Footer() {
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base"
+                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base break-words leading-relaxed"
                     >
                       {link.name}
                     </a>
@@ -107,7 +107,7 @@ export default function Footer() {
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base"
+                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base break-words leading-relaxed"
                     >
                       {link.name}
                     </a>
@@ -124,7 +124,7 @@ export default function Footer() {
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base"
+                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base break-words leading-relaxed"
                     >
                       {link.name}
                     </a>
@@ -146,7 +146,7 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent min-w-0"
               />
               <button
                 type="submit"
@@ -163,7 +163,7 @@ export default function Footer() {
       <div className="border-t border-gray-800">
         <div className="container-width px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-400 text-sm break-words leading-relaxed">
               © {new Date().getFullYear()} LusoTown UK. All rights reserved. {t('footer.tagline')}
             </p>
             

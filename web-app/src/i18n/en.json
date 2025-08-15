@@ -41,7 +41,7 @@
   
   "hero.badge": "Unidos pela Língua • United by Language",
   "hero.title": "Your Portuguese Social Calendar in London",
-  "hero.subtitle": "Connect with Portuguese speakers across London and the UK. Book experiences, join activities, and build lasting friendships with your Portuguese-speaking community.",
+  "hero.subtitle": "Your Portuguese community in London awaits. Book experiences, join cultural events, and connect with Portuguese hearts from all corners of the lusophone world.",
   "hero.cta.primary": "Explore Social Calendar",
   "hero.cta.secondary": "Book Your First Experience",
   
@@ -243,7 +243,7 @@
   "group.create.success": "Group created successfully!",
   "group.create.error": "Error creating group",
   
-  "search.placeholder": "Search events, groups, businesses...",
+  "search.placeholder": "Search events, groups...",
   "search.placeholder.short": "Search...",
   "search.button": "Search",
   "search.suggestions": "Suggestions",
@@ -371,7 +371,7 @@
   
   "events.hero.title": "Your Portuguese Social Calendar",
   "events.hero.subtitle": "Book experiences and live life together with Portuguese speakers across London and the UK. From museum tours to concert nights, football matches to weekend getaways - your social calendar awaits!",
-  "events.search-placeholder": "Search experiences: museums, concerts, football, weekend trips...",
+  "events.search-placeholder": "Search events & experiences...",
   "events.popular-types": "Popular Experiences",
   "events.stats-events": "Monthly Experiences",
   "events.stats-members": "Portuguese Speakers",
@@ -379,7 +379,7 @@
   
   "events-tours.hero.title": "Upcoming Group Events & Tours",
   "events-tours.hero.subtitle": "Book exclusive group experiences with Portuguese speakers in London. From specialized groups for Women 30+ and 40+ to family-friendly activities - find your community and live London together.",
-  "events-tours.search-placeholder": "Search experiences: women 30+, families, cultural, networking...",
+  "events-tours.search-placeholder": "Search tours & experiences...",
   "events-tours.filter-by-category": "Filter by Category",
   "events-tours.all-categories": "All Categories",
   "events-tours.see-all-experiences": "See all available experiences",

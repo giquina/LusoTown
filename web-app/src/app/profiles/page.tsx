@@ -230,7 +230,7 @@ function ProfilesPageContent() {
               <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
                 type="text"
-                placeholder="Search by name, interests, or location..."
+                placeholder="Search profiles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
@@ -308,46 +308,50 @@ function ProfilesPageContent() {
                 {/* Location */}
                 <div>
                   <label className="block text-sm font-medium text-gray-900 mb-3">Location</label>
-                  <div className="max-h-32 overflow-y-auto space-y-2">
-                    {LONDON_AREAS.slice(0, 8).map((area) => (
-                      <label key={area} className="flex items-center">
-                        <input
-                          type="checkbox"
-                          checked={filters.location.includes(area)}
-                          onChange={(e) => {
-                            const newLocations = e.target.checked
-                              ? [...filters.location, area]
-                              : filters.location.filter(l => l !== area)
-                            handleFilterChange('location', newLocations)
-                          }}
-                          className="rounded text-[#FF6B6B] focus:ring-[#FF6B6B]"
-                        />
-                        <span className="ml-2 text-sm text-gray-700">{area}</span>
-                      </label>
-                    ))}
+                  <div className="max-h-32 overflow-y-auto">
+                    <div className="grid grid-cols-2 gap-2">
+                      {LONDON_AREAS.slice(0, 8).map((area) => (
+                        <label key={area} className="flex items-center">
+                          <input
+                            type="checkbox"
+                            checked={filters.location.includes(area)}
+                            onChange={(e) => {
+                              const newLocations = e.target.checked
+                                ? [...filters.location, area]
+                                : filters.location.filter(l => l !== area)
+                              handleFilterChange('location', newLocations)
+                            }}
+                            className="rounded text-[#FF6B6B] focus:ring-[#FF6B6B]"
+                          />
+                          <span className="ml-2 text-sm text-gray-700 truncate">{area}</span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
                 {/* Interests */}
                 <div>
                   <label className="block text-sm font-medium text-gray-900 mb-3">Interests</label>
-                  <div className="max-h-32 overflow-y-auto space-y-2">
-                    {ALL_INTERESTS.slice(0, 8).map((interest) => (
-                      <label key={interest} className="flex items-center">
-                        <input
-                          type="checkbox"
-                          checked={filters.interests.includes(interest)}
-                          onChange={(e) => {
-                            const newInterests = e.target.checked
-                              ? [...filters.interests, interest]
-                              : filters.interests.filter(i => i !== interest)
-                            handleFilterChange('interests', newInterests)
-                          }}
-                          className="rounded text-[#FF6B6B] focus:ring-[#FF6B6B]"
-                        />
-                        <span className="ml-2 text-sm text-gray-700">{interest}</span>
-                      </label>
-                    ))}
+                  <div className="max-h-32 overflow-y-auto">
+                    <div className="grid grid-cols-2 gap-2">
+                      {ALL_INTERESTS.slice(0, 8).map((interest) => (
+                        <label key={interest} className="flex items-center">
+                          <input
+                            type="checkbox"
+                            checked={filters.interests.includes(interest)}
+                            onChange={(e) => {
+                              const newInterests = e.target.checked
+                                ? [...filters.interests, interest]
+                                : filters.interests.filter(i => i !== interest)
+                              handleFilterChange('interests', newInterests)
+                            }}
+                            className="rounded text-[#FF6B6B] focus:ring-[#FF6B6B]"
+                          />
+                          <span className="ml-2 text-sm text-gray-700 truncate">{interest}</span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
                 </div>
 

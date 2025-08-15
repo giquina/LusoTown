@@ -45,10 +45,10 @@ export default function LanguageToggle() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="group flex items-center justify-center bg-white/90 backdrop-blur-sm rounded-xl p-2 shadow-lg border border-secondary-200/40 hover:border-secondary-400 hover:shadow-xl hover:bg-gradient-to-r hover:from-secondary-50 hover:to-accent-50 transition-all duration-300 hover:scale-105 w-12 h-12"
+        className="group flex items-center justify-center bg-white/90 backdrop-blur-sm rounded-lg sm:rounded-xl p-1.5 sm:p-2 shadow-lg border border-secondary-200/40 hover:border-secondary-400 hover:shadow-xl hover:bg-gradient-to-r hover:from-secondary-50 hover:to-accent-50 transition-all duration-300 hover:scale-105 w-10 h-10 sm:w-12 sm:h-12"
         title={`Current: ${currentLang.label}`}
       >
-        <span className="text-xl group-hover:scale-110 transition-transform duration-300">{getCurrentFlag()}</span>
+        <span className="text-lg sm:text-xl group-hover:scale-110 transition-transform duration-300">{getCurrentFlag()}</span>
       </button>
 
       {isOpen && (

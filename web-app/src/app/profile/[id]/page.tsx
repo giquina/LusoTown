@@ -13,6 +13,7 @@ import ProfileGallery from '@/components/profile/ProfileGallery'
 import ProfileCompletion from '@/components/profile/ProfileCompletion'
 import { toast } from 'react-hot-toast'
 
+
 export default function ProfilePage() {
   const params = useParams()
   const router = useRouter()

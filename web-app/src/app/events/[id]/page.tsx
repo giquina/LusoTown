@@ -29,6 +29,7 @@ import { authService } from '@/lib/auth'
 import { useLanguage } from '@/context/LanguageContext'
 
 
+
 const RSVPModal = ({
   isOpen,
   onClose,

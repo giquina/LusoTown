@@ -30,7 +30,7 @@ export default function SavedItemsButton({
       case 'large':
         return 'p-3'
       default:
-        return 'p-2'
+        return 'p-1.5 sm:p-2'
     }
   }
 
@@ -41,14 +41,14 @@ export default function SavedItemsButton({
       case 'large':
         return 'w-7 h-7'
       default:
-        return 'w-6 h-6'
+        return 'w-5 h-5 sm:w-6 sm:h-6'
     }
   }
 
   return (
     <Link 
       href="/saved"
-      className={`relative text-gray-600 hover:text-primary-500 transition-colors group ${getSizeClasses()} ${className}`}
+      className={`relative text-gray-600 hover:text-primary-500 transition-colors group ${getSizeClasses()} ${className} min-h-[40px] min-w-[40px] flex items-center justify-center`}
       title={t('favorites.view-all')}
     >
       <motion.div

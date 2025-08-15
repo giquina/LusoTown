@@ -221,24 +221,24 @@ export default function EventCard({
       </div>
       
       {/* Content */}
-      <div className="p-6">
-        <div className="flex items-start justify-between mb-3">
-          <h3 className="font-bold text-lg text-gray-900 group-hover:text-primary-600 transition-colors line-clamp-2">
+      <div className="p-4 sm:p-6">
+        <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-3 gap-2 sm:gap-3">
+          <h3 className="font-bold text-lg text-gray-900 group-hover:text-primary-600 transition-colors line-clamp-2 flex-1 min-w-0 leading-tight break-words order-2 sm:order-1">
             {title}
           </h3>
-          <div className="ml-2 text-right flex-shrink-0">
-            <div className="text-lg font-bold text-primary-600">
+          <div className="text-left sm:text-right flex-shrink-0 min-w-0 order-1 sm:order-2">
+            <div className="text-lg font-bold text-primary-600 whitespace-nowrap">
               {formatPrice(price, currency)}
             </div>
             {membershipRequired !== 'free' && (
-              <div className="text-xs text-gray-500 capitalize">
+              <div className="text-xs text-gray-500 capitalize whitespace-nowrap">
                 {membershipRequired}+ {isPortuguese ? 'necessário' : 'required'}
               </div>
             )}
           </div>
         </div>
         
-        <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+        <p className="text-gray-600 text-sm mb-4 line-clamp-3 break-words">
           {description}
         </p>
         
@@ -254,9 +254,9 @@ export default function EventCard({
             </div>
           </div>
           
-          <div className="flex items-center gap-3 text-sm text-gray-600">
+          <div className="flex items-center gap-3 text-sm text-gray-600 min-w-0">
             <MapPinIcon className="w-5 h-5 text-secondary-500 flex-shrink-0" />
-            <span className="truncate">{location}</span>
+            <span className="truncate max-w-full">{location}</span>
           </div>
           
           <div className="flex items-center gap-3 text-sm text-gray-600">
@@ -266,8 +266,8 @@ export default function EventCard({
                 {currentAttendees}/{maxAttendees} {isPortuguese ? 'Participantes' : 'Attending'}
               </div>
               {hostName && (
-                <div className="text-xs text-gray-500">
-                  {isPortuguese ? 'Organizado por' : 'Hosted by'} {hostName}
+                <div className="text-xs text-gray-500 truncate">
+                  {isPortuguese ? 'Organizado por' : 'Hosted by'} <span className="font-medium">{hostName}</span>
                 </div>
               )}
             </div>
@@ -319,7 +319,7 @@ export default function EventCard({
               <button 
                 onClick={handleAddToCart}
                 disabled={addingToCart || inCart}
-                className={`font-semibold py-3 px-4 rounded-lg transition-all duration-200 text-center text-sm flex items-center justify-center gap-2 ${
+                className={`font-semibold py-3 px-4 rounded-lg transition-all duration-200 text-center text-sm flex items-center justify-center gap-2 min-w-0 ${
                   inCart 
                     ? 'bg-green-100 text-green-700 border border-green-300'
                     : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
@@ -334,8 +334,8 @@ export default function EventCard({
                   </>
                 ) : (
                   <>
-                    <ShoppingCartIcon className="w-4 h-4" />
-                    {isPortuguese ? 'Adicionar' : 'Add to Cart'}
+                    <ShoppingCartIcon className="w-4 h-4 flex-shrink-0" />
+                    <span className="truncate">{isPortuguese ? 'Adicionar' : 'Add to Cart'}</span>
                   </>
                 )}
               </button>

@@ -32,6 +32,7 @@ import {
   Sparkles
 } from 'lucide-react'
 
+
 export default function MemberProfile() {
   const params = useParams()
   const router = useRouter()

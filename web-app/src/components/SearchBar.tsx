@@ -233,12 +233,12 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 mb-1">
-                            <h4 className="font-semibold text-gray-900 truncate">{suggestion.title}</h4>
-                            <span className="flex-shrink-0 text-xs font-medium text-primary-600 bg-primary-100 px-2 py-1 rounded-full">
+                            <h4 className="font-semibold text-gray-900 break-words line-clamp-1 leading-tight flex-1 min-w-0">{suggestion.title}</h4>
+                            <span className="flex-shrink-0 text-xs font-medium text-primary-600 bg-primary-100 px-2 py-1 rounded-full whitespace-nowrap">
                               {getResultTypeLabel(suggestion.type)}
                             </span>
                           </div>
-                          <p className="text-sm text-gray-600 line-clamp-2">{suggestion.description}</p>
+                          <p className="text-sm text-gray-600 line-clamp-2 leading-relaxed">{suggestion.description}</p>
                           {suggestion.location && (
                             <div className="flex items-center gap-1 mt-1 text-xs text-gray-500">
                               <MapPinIcon className="w-3 h-3" />
@@ -348,10 +348,10 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
                       {getResultIcon(suggestion.type)}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h4 className="font-medium text-gray-900 truncate text-sm">{suggestion.title}</h4>
-                      <p className="text-xs text-gray-600 line-clamp-1">{suggestion.description}</p>
+                      <h4 className="font-medium text-gray-900 break-words line-clamp-1 text-sm leading-tight">{suggestion.title}</h4>
+                      <p className="text-xs text-gray-600 line-clamp-1 leading-relaxed">{suggestion.description}</p>
                     </div>
-                    <span className="flex-shrink-0 text-xs text-primary-600 bg-primary-50 px-2 py-1 rounded">
+                    <span className="flex-shrink-0 text-xs text-primary-600 bg-primary-50 px-2 py-1 rounded whitespace-nowrap">
                       {getResultTypeLabel(suggestion.type)}
                     </span>
                   </div>
@@ -407,12 +407,12 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1">
-                      <h4 className="font-semibold text-gray-900 truncate">{suggestion.title}</h4>
-                      <span className="flex-shrink-0 text-xs font-medium text-primary-600 bg-primary-100 px-2 py-1 rounded-full">
+                      <h4 className="font-semibold text-gray-900 break-words line-clamp-1 leading-tight flex-1 min-w-0">{suggestion.title}</h4>
+                      <span className="flex-shrink-0 text-xs font-medium text-primary-600 bg-primary-100 px-2 py-1 rounded-full whitespace-nowrap">
                         {getResultTypeLabel(suggestion.type)}
                       </span>
                     </div>
-                    <p className="text-sm text-gray-600 line-clamp-2">{suggestion.description}</p>
+                    <p className="text-sm text-gray-600 line-clamp-2 leading-relaxed">{suggestion.description}</p>
                   </div>
                 </div>
               </button>

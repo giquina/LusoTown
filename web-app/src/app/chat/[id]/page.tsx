@@ -1,6 +1,6 @@
 'use client'
-import Image from 'next/image'
 
+import Image from 'next/image'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -25,6 +25,7 @@ import {
   messagingService 
 } from '@/lib/messaging'
 import { authService } from '@/lib/auth'
+
 
 // Emoji picker data
 const QUICK_EMOJIS = ['❤️', '👍', '😊', '😮', '😢', '😡', '🔥', '👏']

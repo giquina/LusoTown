@@ -221,7 +221,7 @@ export default function HelpCenter() {
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Search for help articles, features, or common questions..."
+                  placeholder="Search help..."
                   className="w-full px-6 py-4 text-lg border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-400 focus:border-transparent"
                 />
                 <button className="absolute right-3 top-1/2 transform -translate-y-1/2 btn-primary px-6 py-2">

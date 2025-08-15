@@ -16,7 +16,7 @@ const testimonials = [
     textPortuguese: 'Serviço excecional! O chauffeur foi profissional, pontual e fez-me sentir completamente segura durante o meu evento noturno. Ter um motorista que fala português fez toda a diferença.',
     service: 'Premium Security',
     servicePortuguese: 'Segurança Premium',
-    avatar: '👩🏻‍💼'
+    avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b632?w=150&h=150&fit=crop&crop=face'
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const testimonials = [
     textPortuguese: 'Experiência extraordinária com o tour VIP de Londres. O motorista não só forneceu excelente segurança como também partilhou insights fascinantes sobre a história de Londres em português perfeito.',
     service: 'VIP London Experience',
     servicePortuguese: 'Experiência VIP de Londres',
-    avatar: '👨🏻‍💼'
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face'
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ const testimonials = [
     textPortuguese: 'Perfeito para reuniões de negócios. O serviço de Proteção Elite deu-me confiança durante negociações importantes. Discreto, profissional e culturalmente consciente.',
     service: 'Elite Protection',
     servicePortuguese: 'Proteção Elite',
-    avatar: '👩🏽‍💼'
+    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face'
   },
   {
     id: 4,
@@ -52,7 +52,7 @@ const testimonials = [
     textPortuguese: 'O pacote do Tour dos Estúdios Harry Potter foi mágico! Ótima segurança, viagem confortável e ter um guia que fala português tornou a experiência perfeita para nossa família.',
     service: 'Harry Potter Studio Tour',
     servicePortuguese: 'Tour dos Estúdios Harry Potter',
-    avatar: '👨🏻‍🦱'
+    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face'
   },
   {
     id: 5,
@@ -64,7 +64,7 @@ const testimonials = [
     textPortuguese: 'Experiência de compras incrível! O chauffeur esperou pacientemente enquanto fazia compras em Harrods e Bond Street. Segurança profissional fez-me sentir segura com as minhas compras.',
     service: 'Shopping Experience',
     servicePortuguese: 'Experiência de Compras',
-    avatar: '👩🏻‍🦰'
+    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face'
   },
   {
     id: 6,
@@ -76,7 +76,7 @@ const testimonials = [
     textPortuguese: 'Serviço de classe executiva para transferências do aeroporto. Sempre pontual, veículos impecáveis e o serviço falante de português tornou as viagens internacionais muito mais confortáveis.',
     service: 'Airport VIP Transfer',
     servicePortuguese: 'Transferência VIP Aeroporto',
-    avatar: '👨🏽‍💼'
+    avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face'
   },
   {
     id: 7,
@@ -88,7 +88,7 @@ const testimonials = [
     textPortuguese: 'Serviço fantástico! O motorista falava português perfeito e partilhou histórias maravilhosas sobre a história de Londres. Foi como ter um amigo a mostrar-me a cidade em vez de apenas um chauffeur.',
     service: 'VIP London Experience',
     servicePortuguese: 'Experiência VIP de Londres',
-    avatar: '👩🏻‍🦳'
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face'
   },
   {
     id: 8,
@@ -100,7 +100,7 @@ const testimonials = [
     textPortuguese: 'Excelente comunicação em português durante toda a viagem. O chauffeur compreendeu as nossas preferências culturais e recomendou experiências britânicas autênticas que realmente apreciámos.',
     service: 'Premium Security',
     servicePortuguese: 'Segurança Premium',
-    avatar: '👨🏻‍💻'
+    avatar: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face'
   },
   {
     id: 9,
@@ -112,7 +112,7 @@ const testimonials = [
     textPortuguese: 'O serviço falante de português tornou o nosso tour de Londres absolutamente perfeito. Pudemos fazer perguntas, partilhar piadas e realmente conectar com o nosso guia. Altamente recomendado para famílias portuguesas!',
     service: 'Family London Tour',
     servicePortuguese: 'Tour Familiar de Londres',
-    avatar: '👩🏽‍👧‍👦'
+    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face'
   }
 ]
 
@@ -186,7 +186,14 @@ export default function ChauffeurTestimonials() {
 
               {/* Author */}
               <div className="text-center">
-                <div className="text-2xl mb-2">{testimonial.avatar}</div>
+                <div className="w-16 h-16 mx-auto mb-3">
+                  <img 
+                    src={testimonial.avatar} 
+                    alt={testimonial.name}
+                    className="w-full h-full rounded-full object-cover shadow-lg"
+                    loading="lazy"
+                  />
+                </div>
                 <div className="font-semibold text-gray-900">{testimonial.name}</div>
                 <div className="text-sm text-gray-500">
                   {isPortuguese ? testimonial.locationPortuguese : testimonial.location}
@@ -236,7 +243,14 @@ export default function ChauffeurTestimonials() {
 
                 {/* Author */}
                 <div className="text-center">
-                  <div className="text-2xl mb-2">{testimonial.avatar}</div>
+                  <div className="w-16 h-16 mx-auto mb-3">
+                    <img 
+                      src={testimonial.avatar} 
+                      alt={testimonial.name}
+                      className="w-full h-full rounded-full object-cover shadow-lg"
+                      loading="lazy"
+                    />
+                  </div>
                   <div className="font-semibold text-gray-900">{testimonial.name}</div>
                   <div className="text-sm text-gray-500">
                     {isPortuguese ? testimonial.locationPortuguese : testimonial.location}

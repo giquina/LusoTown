@@ -40,24 +40,24 @@ const OptimizedChauffeurPage: React.FC<OptimizedChauffeurPageProps> = ({
       description: 'Professional chauffeur service with luxury vehicle',
       descriptionPortuguese: 'Serviço profissional de chauffeur com veículo de luxo',
       features: [
-        'Professional chauffeur',
-        'Luxury vehicle',
-        'Meet & greet service',
-        'Basic security awareness',
-        'Portuguese-speaking driver',
-        'Airport pickup available',
-        'City navigation expertise',
-        'Professional appearance'
+        'Professional private hire licensed chauffeur with CPO security training',
+        'Luxury vehicle fleet (Mercedes S-Class, BMW 7 Series)',
+        'Comprehensive meet & greet service',
+        'Enhanced security awareness and threat assessment',
+        'Native Portuguese-speaking drivers from Portugal/Brazil',
+        'Airport VIP pickup with flight monitoring',
+        'Expert London navigation and Portuguese community knowledge',
+        'Impeccable professional appearance and conduct'
       ],
       featuresPortuguese: [
-        'Chauffeur profissional',
-        'Veículo de luxo',
-        'Serviço de encontro e receção',
-        'Consciência básica de segurança',
-        'Motorista falante de português',
-        'Recolha no aeroporto disponível',
-        'Expertise em navegação da cidade',
-        'Aparência profissional'
+        'Chauffeur profissional licenciado com treino de segurança CPO',
+        'Frota de veículos de luxo (Mercedes Classe S, BMW Série 7)',
+        'Serviço abrangente de encontro e receção',
+        'Consciência de segurança melhorada e avaliação de ameaças',
+        'Motoristas nativos falantes de português de Portugal/Brasil',
+        'Recolha VIP no aeroporto com monitorização de voos',
+        'Navegação especializada de Londres e conhecimento da comunidade portuguesa',
+        'Aparência e conduta profissional impecáveis'
       ],
       popular: false,
       color: 'primary',
@@ -72,24 +72,24 @@ const OptimizedChauffeurPage: React.FC<OptimizedChauffeurPageProps> = ({
       description: 'Enhanced security with trained protection officer',
       descriptionPortuguese: 'Segurança melhorada com oficial de proteção treinado',
       features: [
-        'All Essential features',
-        'Trained security officer',
-        'Threat assessment',
-        'Discreet protection',
-        'Emergency protocols',
-        'Security briefing',
-        'Route planning & security',
-        'Communication equipment'
+        'All Essential features plus advanced security',
+        'CPO (Close Protection Officer) certified security personnel',
+        'Professional threat assessment and risk management',
+        'Discreet executive protection services',
+        'Comprehensive emergency response protocols',
+        'Pre-journey security briefing and route planning',
+        'Advanced route security analysis and real-time monitoring',
+        'Professional communication equipment and emergency contacts'
       ],
       featuresPortuguese: [
-        'Todas as características Essenciais',
-        'Oficial de segurança treinado',
-        'Avaliação de ameaças',
-        'Proteção discreta',
-        'Protocolos de emergência',
-        'Briefing de segurança',
-        'Planeamento de rotas e segurança',
-        'Equipamento de comunicação'
+        'Todas as características Essenciais mais segurança avançada',
+        'Pessoal de segurança certificado CPO (Oficial de Proteção Próxima)',
+        'Avaliação profissional de ameaças e gestão de riscos',
+        'Serviços de proteção executiva discreta',
+        'Protocolos abrangentes de resposta de emergência',
+        'Briefing de segurança pré-viagem e planeamento de rotas',
+        'Análise avançada de segurança de rotas e monitorização em tempo real',
+        'Equipamento de comunicação profissional e contactos de emergência'
       ],
       popular: true,
       color: 'secondary',
@@ -251,10 +251,10 @@ const OptimizedChauffeurPage: React.FC<OptimizedChauffeurPageProps> = ({
   const features = useMemo(() => [
     {
       icon: ShieldCheckIcon,
-      title: 'Licensed & Insured',
-      titlePortuguese: 'Licenciado e Segurado',
-      description: 'All drivers are fully licensed with comprehensive insurance coverage',
-      descriptionPortuguese: 'Todos os motoristas são totalmente licenciados com cobertura de seguro abrangente'
+      title: 'Private Hire & CPO Licensed',
+      titlePortuguese: 'Licenciado Private Hire & CPO',
+      description: 'All drivers hold Private Hire licenses and Close Protection Officer (CPO) certifications with comprehensive insurance',
+      descriptionPortuguese: 'Todos os motoristas possuem licenças Private Hire e certificações de Oficial de Proteção Próxima (CPO) com seguro abrangente'
     },
     {
       icon: Crown,
@@ -477,7 +477,7 @@ const OptimizedChauffeurPage: React.FC<OptimizedChauffeurPageProps> = ({
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
@@ -485,15 +485,15 @@ const OptimizedChauffeurPage: React.FC<OptimizedChauffeurPageProps> = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center group hover:bg-premium-50 p-6 rounded-xl transition-colors duration-300"
+                className="text-center group hover:bg-premium-50 p-4 sm:p-6 rounded-xl transition-colors duration-300"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-premium-100 rounded-full mb-4 group-hover:bg-premium-200 transition-colors">
-                  <feature.icon className="w-8 h-8 text-premium-600" />
+                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-premium-100 rounded-full mb-3 sm:mb-4 group-hover:bg-premium-200 transition-colors">
+                  <feature.icon className="w-6 h-6 sm:w-8 sm:h-8 text-premium-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
                   {isPortuguese ? feature.titlePortuguese : feature.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-sm sm:text-base text-gray-600">
                   {isPortuguese ? feature.descriptionPortuguese : feature.description}
                 </p>
               </motion.div>

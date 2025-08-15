@@ -37,6 +37,7 @@ interface PageProps {
   params: { id: string }
 }
 
+
 export default function GroupDetailPage({ params }: PageProps) {
   const router = useRouter()
   const { t, language } = useLanguage()
