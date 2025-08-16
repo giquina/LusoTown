@@ -22,6 +22,7 @@ export default function WelcomeModal() {
     const welcomed = localStorage.getItem('lusotown-welcomed')
     if (!welcomed) {
       setShowModal(true)
+      setCurrentStep('welcome') // Ensure we start at welcome step
     } else {
       setIsWelcomed(true)
     }
@@ -32,6 +33,22 @@ export default function WelcomeModal() {
     setIsWelcomed(true)
     setShowModal(false)
   }
+
+  // For testing - add to window object
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      (window as any).resetWelcomeModal = () => {
+        localStorage.removeItem('lusotown-welcomed')
+        localStorage.removeItem('lusotown-language-preference')
+        localStorage.removeItem('lusotown-user-role')
+        setIsWelcomed(false)
+        setShowModal(true)
+        setCurrentStep('welcome')
+        setSelectedLanguage(null)
+        setSelectedRole(null)
+      }
+    }
+  }, [])
 
   const handleComplete = () => {
     // Apply selected language

@@ -77,14 +77,14 @@ export default function TransportServiceCard({
       viewport={{ once: true }}
       className={`relative bg-white/90 backdrop-blur-lg rounded-3xl shadow-2xl border-2 ${
         tier.popular ? 'border-premium-300 shadow-3xl scale-105' : colors.border
-      } overflow-hidden hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 group h-[700px] flex flex-col`}
+      } overflow-hidden hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 group h-[750px] sm:h-[800px] flex flex-col`}
     >
       {/* Popular Badge */}
       {tier.popular && (
-        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
-          <div className="bg-gradient-to-r from-premium-600 to-premium-700 text-white px-6 py-3 rounded-full text-sm font-bold shadow-xl whitespace-nowrap border-2 border-white">
-            <div className="flex items-center justify-center space-x-2">
-              <StarIcon className="w-4 h-4 flex-shrink-0" />
+        <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20">
+          <div className="bg-gradient-to-r from-premium-600 to-premium-700 text-white px-4 py-2 rounded-full text-xs sm:text-sm font-bold shadow-xl whitespace-nowrap border-2 border-white">
+            <div className="flex items-center justify-center space-x-1.5">
+              <StarIcon className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
               <span>{isPortuguese ? 'Mais Popular' : 'Most Popular'}</span>
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function TransportServiceCard({
       )}
 
       {/* Header */}
-      <div className={`bg-gradient-to-br ${colors.bg} px-6 py-8 text-center ${tier.popular ? 'pt-14' : ''}`}>
+      <div className={`bg-gradient-to-br ${colors.bg} px-6 py-8 text-center ${tier.popular ? 'pt-16' : ''}`}>
         <h3 className="text-2xl font-black text-gray-900 mb-2">
           {isPortuguese ? tier.namePortuguese : tier.name}
         </h3>
@@ -119,19 +119,19 @@ export default function TransportServiceCard({
       </div>
 
       {/* Features */}
-      <div className="px-6 py-8 flex-1">
-        <ul className="space-y-4">
+      <div className="px-6 py-6 flex-1 overflow-y-auto">
+        <ul className="space-y-3">
           {(isPortuguese ? tier.featuresPortuguese : tier.features).map((feature, featureIndex) => (
             <li key={featureIndex} className="flex items-start">
-              <CheckCircleIcon className={`w-5 h-5 ${colors.text} mt-0.5 mr-3 flex-shrink-0`} />
-              <span className="text-gray-700">{feature}</span>
+              <CheckCircleIcon className={`w-4 h-4 ${colors.text} mt-1 mr-3 flex-shrink-0`} />
+              <span className="text-sm text-gray-700 leading-relaxed">{feature}</span>
             </li>
           ))}
         </ul>
       </div>
 
       {/* Footer */}
-      <div className="mt-auto px-6 pb-8">
+      <div className="mt-auto px-6 py-6">
         <button
           onClick={onBookNow}
           className={`w-full ${colors.button} text-white py-4 px-6 rounded-2xl font-bold transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1`}

@@ -187,9 +187,14 @@ export default function Header() {
           </div>
 
           {/* Mobile menu button - Fixed spacing for better touch targets */}
-          <div className="flex md:hidden items-center gap-1 relative z-50 flex-shrink-0 mr-1">
-            <CartButton />
-            <SavedItemsButton />
+          <div className="flex md:hidden items-center gap-1 relative z-50 flex-shrink-0">
+            {/* Only show cart and favorites when user is signed in */}
+            {user && (
+              <>
+                <CartButton />
+                <SavedItemsButton />
+              </>
+            )}
             <LanguageToggle />
             <button
               type="button"

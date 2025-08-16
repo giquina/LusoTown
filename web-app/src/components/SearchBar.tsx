@@ -179,11 +179,6 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
           <div className="relative bg-white/90 backdrop-blur-lg border-2 border-primary-200/60 rounded-2xl sm:rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:border-primary-300/80 group">
             {/* Mobile-optimized layout */}
             <div className="flex items-center p-3 sm:p-4 lg:p-6">
-              <div className="flex-shrink-0 mr-2 sm:mr-3 lg:mr-4">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-lg sm:rounded-xl lg:rounded-2xl bg-gradient-to-br from-secondary-500 to-accent-500 flex items-center justify-center group-hover:rotate-6 transition-transform duration-300">
-                  <MagnifyingGlassIcon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
-                </div>
-              </div>
               <div className="flex-1 relative min-w-0 mr-2 sm:mr-3">
                 <input
                   ref={inputRef}
