@@ -1064,7 +1064,7 @@ export default function ChauffeurPage() {
                       </div>
                       <div className="text-right ml-4">
                         <div className="text-2xl font-bold text-secondary-600">
-                          £{pkg.price}
+                          {isPortuguese ? 'a partir de' : 'from'} £{pkg.price}
                         </div>
                         <div className="text-sm text-gray-500">{pkg.duration}</div>
                       </div>
@@ -1121,7 +1121,7 @@ export default function ChauffeurPage() {
                   <div className="p-6">
                     <div className="text-center mb-4">
                       <div className="text-2xl font-bold text-premium-600 mb-1">
-                        {typeof pkg.price === 'number' ? `£${pkg.price}` : pkg.price}
+                        {typeof pkg.price === 'number' ? `${isPortuguese ? 'a partir de' : 'from'} £${pkg.price}` : pkg.price}
                       </div>
                       <div className="text-sm text-gray-500 mb-3">{pkg.duration}</div>
                       <h3 className="text-lg font-semibold text-gray-900 mb-2">
@@ -1167,7 +1167,7 @@ export default function ChauffeurPage() {
                       </h3>
                       <div className="text-right">
                         <div className="text-2xl font-bold text-premium-600">
-                          {typeof pkg.price === 'number' ? `£${pkg.price}` : pkg.price}
+                          {typeof pkg.price === 'number' ? `${isPortuguese ? 'a partir de' : 'from'} £${pkg.price}` : pkg.price}
                         </div>
                         <div className="text-sm text-gray-500">{pkg.duration}</div>
                       </div>

@@ -243,8 +243,9 @@ const OptimizedChauffeurServiceCard = memo<OptimizedChauffeurServiceCardProps>((
               </div>
             ) : (
               <div className="flex items-baseline justify-center">
+                <span className="text-sm text-gray-600 mr-1">{isPortuguese ? 'a partir de' : 'from'}</span>
                 <span className="text-4xl font-bold text-gray-900">£{tier.price}</span>
-                <span className="text-gray-500 ml-2">/hour</span>
+                <span className="text-gray-500 ml-2">{isPortuguese ? '/hora' : '/hour'}</span>
               </div>
             )}
           </div>

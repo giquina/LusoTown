@@ -373,7 +373,7 @@ export default function LondonTourRoutes({ isPortuguese, onBookTour }: LondonTou
                           <CategoryIcon className="w-4 h-4 mr-2" />
                           {route.category.toUpperCase()}
                         </span>
-                        <span className="text-white font-bold text-lg">£{route.price}</span>
+                        <span className="text-white font-bold text-lg">{isPortuguese ? 'a partir de' : 'from'} £{route.price}</span>
                       </div>
                     </div>
                   </div>

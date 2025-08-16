@@ -389,7 +389,7 @@ export default function PortugueseCulturalTourRoutes({ isPortuguese, onBookTour 
                           <span>{route.duration}</span>
                         </div>
                         <div className="flex items-center gap-1">
-                          <span className="font-semibold text-lg text-gray-900">£{route.price}</span>
+                          <span className="font-semibold text-lg text-gray-900">{isPortuguese ? 'a partir de' : 'from'} £{route.price}</span>
                         </div>
                       </div>
                     </div>
