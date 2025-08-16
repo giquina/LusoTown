@@ -44,7 +44,7 @@ npx tsc --noEmit    # Type check without emitting files
 ./scripts/post-deployment-update.sh  # Complete post-deployment verification
 ```
 
-**Testing:** No test framework configured. Use manual testing via local development server.
+**Testing:** No test framework configured. Use manual testing via local development server at http://localhost:3000.
 
 **TypeScript Configuration:**
 ```bash
@@ -563,7 +563,7 @@ The LusoTown platform has identified 10 key administrative and management positi
 **Before Making Changes:**
 1. Run `cd web-app && npm run dev` to start development server
 2. Test changes at http://localhost:3000
-3. Always test both English and Portuguese language modes
+3. Always test both English and Portuguese language modes using the language toggle
 4. Verify responsive design shows 2 cards per line on mobile (375px width)
 5. Test networking features at /my-network page
 6. Test chauffeur services at /chauffeur page (including family-friendly content)
@@ -571,6 +571,11 @@ The LusoTown platform has identified 10 key administrative and management positi
 8. Test dual-audience content (social users and business professionals)
 9. Verify professional, inclusive, and welcoming tone across all content
 10. Ensure event creator monetization features work correctly
+
+**Demo Account for Testing:**
+- Email: demo@lusotown.com
+- Password: LusoTown2025!
+- Use the auto-fill button on login page for quick access
 
 **Common Development Tasks:**
 - **Fix TypeScript errors**: `npx tsc --noEmit` (errors are ignored in builds but should be addressed)
@@ -595,12 +600,14 @@ The LusoTown platform has identified 10 key administrative and management positi
 **Common Debugging:**
 - If build fails, check TypeScript errors with `npx tsc --noEmit`
 - Language switching issues: check LanguageContext and localStorage
-- Styling issues: verify brand colors are used (not generic Tailwind colors)
+- Styling issues: verify brand colors are used (not generic Tailwind colors like blue-500)
 - Mobile layout issues: ensure all grids use `grid-cols-2 lg:grid-cols-3/4` pattern
 - Card alignment issues: verify fixed heights with responsive breakpoints
 - State persistence: check browser localStorage for cart/favorites/networking data
 - Networking issues: check localStorage keys (`lusotown-connections`, `lusotown-network-stats`)
 - Context provider order: ensure NetworkingProvider is correctly wrapped in layout.tsx
+- Image loading issues: check Cloudinary configuration and fallback images
+- Route navigation: verify file-based routing structure in `/app` directory
 
 ## Deployment
 
