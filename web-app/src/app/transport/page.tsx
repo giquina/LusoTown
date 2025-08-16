@@ -54,7 +54,6 @@ const serviceTiers = [
       'Expertise do distrito empresarial de Londres',
       'Conhecimento de segurança de locais de Londres'
     ],
-    popular: true,
     color: 'secondary',
     targetAudience: 'business_tourists'
   },
@@ -522,28 +521,9 @@ export default function TransportPage() {
   const isPortuguese = language === 'pt'
 
   const handleBookService = (serviceId: string) => {
+    // Always start with the SIA questionnaire as the first step
     setSelectedService(serviceId)
-    
-    // Check if this is a close protection service that requires SIA compliance
-    const service = serviceTiers.find(tier => tier.id === serviceId) || 
-                   experiencePackages.find(pkg => pkg.id === serviceId)
-    
-    const isCloseProtectionService = service && (
-      service.id === 'premium' || 
-      service.id === 'vip' || 
-      service.id === 'elite' ||
-      (service as any).features?.some((feature: string) => 
-        feature.toLowerCase().includes('security') || 
-        feature.toLowerCase().includes('protection') ||
-        feature.toLowerCase().includes('sia')
-      )
-    )
-    
-    if (isCloseProtectionService) {
-      setShowSIABookingFlow(true)
-    } else {
-      setShowBookingForm(true)
-    }
+    setShowSIABookingFlow(true)
   }
 
   return (
@@ -652,7 +632,7 @@ export default function TransportPage() {
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
               <button
-                onClick={() => setShowBookingForm(true)}
+                onClick={() => setShowSIABookingFlow(true)}
                 className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1"
               >
                 {isPortuguese ? 'Reservar Agora' : 'Book Now'}
@@ -1392,7 +1372,7 @@ export default function TransportPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
-                  onClick={() => setShowBookingForm(true)}
+                  onClick={() => setShowSIABookingFlow(true)}
                   className="bg-gradient-to-r from-accent-600 to-secondary-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-accent-700 hover:to-secondary-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
                   {isPortuguese ? 'Reservar com Antecedência' : 'Book in Advance'}
@@ -1677,7 +1657,7 @@ export default function TransportPage() {
                 {isPortuguese ? 'Ligar Agora' : 'Call Now'}
               </a>
               <button
-                onClick={() => setShowBookingForm(true)}
+                onClick={() => setShowSIABookingFlow(true)}
                 className="border-2 border-white text-white px-8 py-4 rounded-2xl font-bold hover:bg-white hover:text-secondary-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 {isPortuguese ? 'Reserva Online' : 'Book Online'}

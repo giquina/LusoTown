@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   MagnifyingGlassIcon, 
@@ -31,6 +31,7 @@ import { useCart } from '@/context/CartContext'
 import { useLanguage } from '@/context/LanguageContext'
 import { useNetworking } from '@/context/NetworkingContext'
 import { getCurrentUser } from '@/lib/auth'
+import { ButtonStyles, PortugueseGradients, Spacing, Typography, cn } from '@/lib/design'
 
 // EventCard component is no longer needed - using ImprovedEventCard instead
 
@@ -64,7 +65,7 @@ const FilterSidebar = ({
             initial={{ x: -300 }}
             animate={{ x: 0 }}
             exit={{ x: -300 }}
-            className="fixed left-0 top-0 bottom-0 w-80 bg-white shadow-xl z-50 lg:relative lg:shadow-none lg:bg-transparent"
+            className="fixed left-0 top-0 bottom-0 w-[85vw] max-w-sm bg-white shadow-xl z-50 lg:relative lg:shadow-none lg:bg-transparent lg:w-80"
           >
             <div className="p-6 h-full overflow-y-auto">
               <div className="flex items-center justify-between mb-6 lg:hidden">
@@ -244,22 +245,7 @@ export default function EventsPage() {
   const [showFilters, setShowFilters] = useState(false)
   const [sortBy, setSortBy] = useState<'date' | 'popularity' | 'rating'>('date')
 
-  useEffect(() => {
-    loadContent()
-  }, [activeTab, eventFilters, tourFilters, sortBy])
-
-  // Preview system effects
-  useEffect(() => {
-    setUser(getCurrentUser())
-  }, [])
-
-  // Preview system handlers
-  const handleUpgradeClick = () => {
-    // Navigate to membership/signup page
-    window.location.href = '/join'
-  }
-
-  const loadContent = async () => {
+  const loadContent = useCallback(async () => {
     setLoading(true)
     try {
       if (activeTab === 'events') {
@@ -326,7 +312,24 @@ export default function EventsPage() {
       console.error('Error loading content:', error)
     }
     setLoading(false)
+  }, [activeTab, eventFilters, tourFilters, sortBy, searchQuery])
+
+  useEffect(() => {
+    loadContent()
+  }, [loadContent])
+
+  // Preview system effects
+  useEffect(() => {
+    setUser(getCurrentUser())
+  }, [])
+
+  // Preview system handlers
+  const handleUpgradeClick = () => {
+    // Navigate to membership/signup page
+    window.location.href = '/join'
   }
+
+  
 
   const handleSearch = () => {
     loadContent()
@@ -364,14 +367,14 @@ export default function EventsPage() {
       
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-r from-primary-50 to-secondary-50 py-16 overflow-hidden">
+        <section className={cn(PortugueseGradients.oceanLight, 'relative py-16 overflow-hidden')}>
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
             <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary-200 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
           </div>
           
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className={cn(Spacing.container, 'relative z-10')}>
             <div className="text-center max-w-4xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -388,7 +391,7 @@ export default function EventsPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
+                className={cn(Typography.display, 'text-gray-900 mb-6')}
               >
                 {activeTab === 'events' ? (
                   <>
@@ -418,7 +421,7 @@ export default function EventsPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-lg sm:text-xl text-gray-600 mb-8"
+                className={cn(Typography.bodyLarge, 'text-gray-600 mb-8')}
               >
                 {activeTab === 'events' ? (
                   <>
@@ -552,7 +555,7 @@ export default function EventsPage() {
                 <MagnifyingGlassIcon className="absolute left-6 sm:left-8 top-1/2 transform -translate-y-1/2 w-5 h-5 sm:w-6 sm:h-6 text-gray-400" />
                 <button
                   onClick={handleSearch}
-                  className="absolute right-6 sm:right-8 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 font-medium shadow-lg text-xs sm:text-sm touch-manipulation"
+                  className={cn(ButtonStyles.smallButton, 'absolute right-6 sm:right-8 top-1/2 -translate-y-1/2 px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm')}
                 >
                   <span className="hidden sm:inline">{isPortuguese ? 'Buscar' : 'Search'}</span>
                   <span className="sm:hidden">🔍</span>
@@ -853,7 +856,7 @@ export default function EventsPage() {
                   initial={{ x: -300 }}
                   animate={{ x: 0 }}
                   exit={{ x: -300 }}
-                  className="fixed left-0 top-0 bottom-0 w-80 bg-white shadow-xl z-50 lg:hidden"
+                  className="fixed left-0 top-0 bottom-0 w-[85vw] max-w-sm bg-white shadow-xl z-50 lg:hidden"
                 >
                   <div className="p-6 h-full overflow-y-auto">
                     <div className="flex items-center justify-between mb-6">
