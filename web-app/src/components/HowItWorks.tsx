@@ -452,7 +452,7 @@ export default function HowItWorks() {
               </span>
             </h3>
             <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Book experiences with 750+ Portuguese speakers from <strong className="text-secondary-600">Portugal 🇵🇹 Brazil 🇧🇷 Angola 🇦🇴 Mozambique 🇲🇿 Cape Verde 🇨🇻</strong> and beyond. 
+              Book experiences with <strong className="text-secondary-600">750+ Portuguese speakers</strong> in London. 
               <strong className="text-gray-800">Real experiences, real venues, active social life.</strong>
             </p>
             
