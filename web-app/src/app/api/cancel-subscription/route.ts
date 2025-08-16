@@ -2,9 +2,14 @@ import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import { supabase } from '@/lib/supabase'
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2024-06-20',
-})
+let stripeClient: Stripe | null = null
+function getStripe() {
+  if (!stripeClient) {
+    const key = process.env.STRIPE_SECRET_KEY || 'sk_test_51Demo123456789012345678901234567890Demo'
+    stripeClient = new Stripe(key, { apiVersion: '2024-06-20' })
+  }
+  return stripeClient
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,8 +22,9 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Cancel the subscription in Stripe
-    const cancelledSubscription = await stripe.subscriptions.cancel(subscriptionId)
+  // Cancel the subscription in Stripe
+  const stripe = getStripe()
+  const cancelledSubscription = await stripe.subscriptions.cancel(subscriptionId)
 
     // Update subscription status in database
     await supabase

@@ -2,20 +2,29 @@ import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import { supabase } from '@/lib/supabase'
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2024-06-20',
-})
-
-const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!
+let stripeClient: Stripe | null = null
+function getStripe() {
+  if (!stripeClient) {
+    const key = process.env.STRIPE_SECRET_KEY || 'sk_test_51Demo123456789012345678901234567890Demo'
+    stripeClient = new Stripe(key, { apiVersion: '2024-06-20' })
+  }
+  return stripeClient
+}
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.text()
     const signature = request.headers.get('stripe-signature')!
+    const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET
+    if (!webhookSecret) {
+      console.error('Missing STRIPE_WEBHOOK_SECRET environment variable')
+      return NextResponse.json({ error: 'Server misconfigured' }, { status: 500 })
+    }
 
     let event: Stripe.Event
 
     try {
+      const stripe = getStripe()
       event = stripe.webhooks.constructEvent(body, signature, webhookSecret)
     } catch (err) {
       console.error('Webhook signature verification failed:', err)
@@ -159,6 +168,7 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
 async function handlePaymentSucceeded(invoice: Stripe.Invoice) {
   if (!(invoice as any).subscription) return
 
+  const stripe = getStripe()
   const subscription = await stripe.subscriptions.retrieve((invoice as any).subscription as string)
   const userId = subscription.metadata?.lusotown_user_id
   if (!userId) return
@@ -196,6 +206,7 @@ async function handlePaymentSucceeded(invoice: Stripe.Invoice) {
 async function handlePaymentFailed(invoice: Stripe.Invoice) {
   if (!(invoice as any).subscription) return
 
+  const stripe = getStripe()
   const subscription = await stripe.subscriptions.retrieve((invoice as any).subscription as string)
   const userId = subscription.metadata?.lusotown_user_id
   if (!userId) return
