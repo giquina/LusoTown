@@ -12,13 +12,13 @@ export default function Logo({ size = 'medium', className = '', animated = false
   const sizes = {
     small: 'h-6 sm:h-8',
     medium: 'h-8 sm:h-10',
-    large: 'h-10 sm:h-12'
+    large: 'h-12 sm:h-14 lg:h-16'
   }
 
   const textSizes = {
     small: 'text-lg sm:text-xl',
     medium: 'text-xl sm:text-2xl',
-    large: 'text-2xl sm:text-3xl'
+    large: 'text-2xl sm:text-3xl lg:text-4xl'
   }
 
   const LogoComponent = (
@@ -29,11 +29,11 @@ export default function Logo({ size = 'medium', className = '', animated = false
         <div className="absolute inset-0 bg-gradient-to-r from-secondary-500/20 via-action-500/20 to-accent-500/20 animate-pulse"></div>
         
         <div className="text-white font-black flex flex-col items-center leading-none relative z-10">
-          <span className={size === 'small' ? 'text-sm sm:text-base' : size === 'medium' ? 'text-base sm:text-lg' : 'text-lg sm:text-xl'}>
+          <span className={size === 'small' ? 'text-sm sm:text-base' : size === 'medium' ? 'text-base sm:text-lg' : 'text-lg sm:text-xl lg:text-2xl'}>
             🏛️
           </span>
           {size !== 'small' && (
-            <div className="w-4 sm:w-5 h-0.5 bg-white/80 mt-1 rounded-full shadow-sm" />
+            <div className={`${size === 'large' ? 'w-5 sm:w-6 lg:w-7' : 'w-4 sm:w-5'} h-0.5 bg-white/80 mt-1 rounded-full shadow-sm`} />
           )}
         </div>
       </div>

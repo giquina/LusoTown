@@ -137,12 +137,12 @@ export default function HowItWorks() {
           </div>
         </div>
 
-        {/* Redesigned Dynamic Cards with Portuguese Cultural Elements - Fixed mobile truncation */}
+        {/* Redesigned Dynamic Cards with Portuguese Cultural Elements - Fixed card alignment */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-20">
           
           {/* Book Portuguese Events */}
           <div className="group relative transition-all duration-500 hover:scale-105">
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-secondary-50 via-white to-secondary-100 border-2 border-secondary-200 shadow-xl group-hover:shadow-2xl transition-all duration-500 min-h-[320px] sm:min-h-[360px] lg:min-h-[380px]">
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-secondary-50 via-white to-secondary-100 border-2 border-secondary-200 shadow-xl group-hover:shadow-2xl transition-all duration-500 h-[420px]">
               {/* Background Pattern */}
               <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
                 <div className="absolute top-4 right-4 text-6xl opacity-30">🏛️</div>
@@ -179,7 +179,7 @@ export default function HowItWorks() {
                   </div>
                   
                   <p className="text-sm text-gray-600 leading-relaxed break-words">
-                    Book authentic Portuguese experiences with <strong>500+ Portuguese speakers</strong> across London.
+                    Book authentic Portuguese experiences with <strong>750+ Portuguese speakers</strong> across London.
                   </p>
                 </div>
 
@@ -195,7 +195,7 @@ export default function HowItWorks() {
 
           {/* Create Portuguese Groups */}
           <div className="group relative transition-all duration-500 hover:scale-105">
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-accent-50 via-white to-coral-100 border-2 border-accent-200 shadow-xl group-hover:shadow-2xl transition-all duration-500 min-h-[320px] sm:min-h-[360px] lg:min-h-[380px]">
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-accent-50 via-white to-coral-100 border-2 border-accent-200 shadow-xl group-hover:shadow-2xl transition-all duration-500 h-[420px]">
               {/* Background Pattern */}
               <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
                 <div className="absolute top-4 right-4 text-6xl opacity-30">👥</div>
@@ -246,7 +246,7 @@ export default function HowItWorks() {
 
           {/* LusoFeed - Community Updates */}
           <div className="group relative transition-all duration-500 hover:scale-105">
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-action-50 via-white to-action-100 border-2 border-action-200 shadow-xl group-hover:shadow-2xl transition-all duration-500 min-h-[320px] sm:min-h-[360px] lg:min-h-[380px]">
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-action-50 via-white to-action-100 border-2 border-action-200 shadow-xl group-hover:shadow-2xl transition-all duration-500 h-[420px]">
               {/* Background Pattern */}
               <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
                 <div className="absolute top-4 right-4 text-6xl opacity-30">📱</div>
@@ -300,7 +300,7 @@ export default function HowItWorks() {
 
           {/* Save Portuguese Favourites */}
           <div className="group relative transition-all duration-500 hover:scale-105">
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-premium-50 via-white to-premium-100 border-2 border-premium-200 shadow-xl group-hover:shadow-2xl transition-all duration-500 min-h-[320px] sm:min-h-[360px] lg:min-h-[380px]">
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-premium-50 via-white to-premium-100 border-2 border-premium-200 shadow-xl group-hover:shadow-2xl transition-all duration-500 h-[420px]">
               {/* Background Pattern */}
               <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
                 <div className="absolute top-4 right-4 text-6xl opacity-30">🥐</div>
@@ -356,7 +356,7 @@ export default function HowItWorks() {
 
           {/* Share Your Portuguese Expertise */}
           <div className="group relative transition-all duration-500 hover:scale-105 col-span-2 lg:col-span-1">
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-coral-50 via-white to-coral-100 border-2 border-coral-200 shadow-xl group-hover:shadow-2xl transition-all duration-500 min-h-[320px] sm:min-h-[360px] lg:min-h-[380px]">
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-coral-50 via-white to-coral-100 border-2 border-coral-200 shadow-xl group-hover:shadow-2xl transition-all duration-500 h-[420px]">
               {/* Background Pattern */}
               <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
                 <div className="absolute top-4 right-4 text-6xl opacity-30">🎯</div>
@@ -387,7 +387,7 @@ export default function HowItWorks() {
                   </div>
                   
                   <p className="text-sm text-gray-600 leading-relaxed break-words">
-                    Showcase your skills to the Portuguese community and <strong>grow your business</strong> with our annual membership model.
+                    Showcase your skills to the Portuguese community and <strong>grow your business</strong> with our £25/year membership model.
                   </p>
                 </div>
 
@@ -409,7 +409,7 @@ export default function HowItWorks() {
             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary-500 to-secondary-600 flex items-center justify-center group-hover:rotate-6 transition-transform duration-300 shadow-lg mx-auto mb-6">
               <Users className="h-8 w-8 text-white" />
             </div>
-            <div className="text-3xl font-black text-gray-800 mb-2">500+</div>
+            <div className="text-3xl font-black text-gray-800 mb-2">750+</div>
             <div className="text-sm font-bold text-gray-600 tracking-wide mb-2">PORTUGUESE SPEAKERS</div>
             <div className="text-xs text-gray-500 italic">From Portugal, Brazil, Angola & more in London</div>
           </div>
@@ -452,7 +452,7 @@ export default function HowItWorks() {
               </span>
             </h3>
             <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Book experiences with Portuguese speakers from <strong className="text-secondary-600">Portugal 🇵🇹 Brazil 🇧🇷 Angola 🇦🇴 Mozambique 🇲🇿 Cape Verde 🇨🇻</strong> and beyond. 
+              Book experiences with 750+ Portuguese speakers from <strong className="text-secondary-600">Portugal 🇵🇹 Brazil 🇧🇷 Angola 🇦🇴 Mozambique 🇲🇿 Cape Verde 🇨🇻</strong> and beyond. 
               <strong className="text-gray-800">Real experiences, real venues, active social life.</strong>
             </p>
             

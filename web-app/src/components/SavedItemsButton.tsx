@@ -1,11 +1,13 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { HeartIcon } from '@heroicons/react/24/outline'
 import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid'
 import { useCart } from '@/context/CartContext'
 import { useLanguage } from '@/context/LanguageContext'
+import { isAuthenticated, useAuthState } from '@/lib/auth'
 
 interface SavedItemsButtonProps {
   showCount?: boolean
@@ -22,6 +24,23 @@ export default function SavedItemsButton({
 }: SavedItemsButtonProps) {
   const { savedCount } = useCart()
   const { t } = useLanguage()
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  useEffect(() => {
+    setIsLoggedIn(isAuthenticated())
+  }, [])
+
+  useEffect(() => {
+    const unsubscribe = useAuthState((user) => {
+      setIsLoggedIn(!!user)
+    })
+    return unsubscribe
+  }, [])
+
+  // Don't render if user is not authenticated
+  if (!isLoggedIn) {
+    return null
+  }
 
   const getSizeClasses = () => {
     switch (size) {

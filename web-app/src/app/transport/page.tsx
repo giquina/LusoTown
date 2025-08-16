@@ -590,13 +590,13 @@ export default function TransportPage() {
               <span className="hidden sm:block">
                 {isPortuguese ? (
                   <>
-                    Precisa de um <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">Motorista</span><br />
-                    Português em Londres?
+                    <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">Londres VIP</span> com Motorista<br />
+                    e Guia Português Exclusivo
                   </>
                 ) : (
                   <>
-                    Need a <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">Portuguese Driver</span><br />
-                    in London?
+                    <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">VIP London</span> with Your Private<br />
+                    Portuguese Driver & Guide
                   </>
                 )}
               </span>
@@ -604,13 +604,13 @@ export default function TransportPage() {
               <span className="sm:hidden">
                 {isPortuguese ? (
                   <>
-                    <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">Motorista</span><br />
-                    Português?
+                    <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">Londres VIP</span><br />
+                    Motorista Português
                   </>
                 ) : (
                   <>
-                    Portuguese<br />
-                    <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">Driver?</span>
+                    <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">VIP London</span><br />
+                    Portuguese Driver
                   </>
                 )}
               </span>
@@ -625,13 +625,13 @@ export default function TransportPage() {
               {/* Desktop full subtitle */}
               <span className="hidden sm:block">
                 {isPortuguese 
-                  ? 'Tenha seu próprio motorista particular que fala português fluentemente. Explore Londres com segurança, conforto e comunicação no seu idioma nativo!'
-                  : 'Get your own personal driver who speaks fluent Portuguese. Explore London safely, comfortably, and in your native language!'
+                  ? 'Descubra Londres como jamais imaginou: com o seu próprio motorista e guia pessoal falando português fluente. Acesso VIP a palácios, castelos e experiências exclusivas que outros turistas nunca terão. Segurança profissional, conforto premium e comunicação no seu idioma.'
+                  : 'Experience London like never before: with your own personal Portuguese-speaking driver and guide. VIP access to palaces, castles, and exclusive experiences other tourists will never have. Professional security, premium comfort, and communication in your language.'
                 }
               </span>
               {/* Mobile short subtitle */}
               <span className="sm:hidden">
-                {isPortuguese ? 'Motoristas e guias portugueses em Londres!' : 'Portuguese drivers & guides in London!'}
+                {isPortuguese ? 'Acesso VIP a Londres com motorista e guia português pessoal. Experiências exclusivas que outros turistas jamais terão!' : 'VIP London access with personal Portuguese driver & guide. Exclusive experiences other tourists will never get!'}
               </span>
             </motion.p>
             

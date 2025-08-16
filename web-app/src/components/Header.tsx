@@ -197,13 +197,13 @@ export default function Header() {
           </div>
 
           {/* Mobile menu button - Fixed spacing for better touch targets */}
-          <div className="flex md:hidden items-center gap-2 relative z-50 flex-shrink-0 mr-1">
+          <div className="flex md:hidden items-center gap-1 relative z-50 flex-shrink-0 mr-1">
             <CartButton />
             <SavedItemsButton />
             <LanguageToggle />
             <button
               type="button"
-              className="inline-flex items-center justify-center p-3 rounded-lg text-primary-700 hover:text-primary-800 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200 h-12 w-12 bg-white border-2 border-primary-200 shadow-lg active:bg-primary-50 active:scale-95 ml-2"
+              className="inline-flex items-center justify-center p-3 rounded-lg text-primary-700 hover:text-primary-800 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200 h-12 w-12 bg-white border-2 border-primary-200 shadow-lg active:bg-primary-50 active:scale-95"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-expanded={mobileMenuOpen}
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}

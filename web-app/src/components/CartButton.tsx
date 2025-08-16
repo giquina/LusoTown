@@ -1,18 +1,36 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ShoppingCartIcon } from '@heroicons/react/24/outline'
 import { ShoppingCartIcon as CartSolidIcon } from '@heroicons/react/24/solid'
 import { useCart } from '@/context/CartContext'
 import { useLanguage } from '@/context/LanguageContext'
+import { isAuthenticated, useAuthState } from '@/lib/auth'
 import Cart from '@/components/Cart'
 
 export default function CartButton() {
   const { cartCount, cartItems } = useCart()
   const { language } = useLanguage()
   const [isCartOpen, setIsCartOpen] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   
   const isPortuguese = language === 'pt'
+
+  useEffect(() => {
+    setIsLoggedIn(isAuthenticated())
+  }, [])
+
+  useEffect(() => {
+    const unsubscribe = useAuthState((user) => {
+      setIsLoggedIn(!!user)
+    })
+    return unsubscribe
+  }, [])
+
+  // Don't render if user is not authenticated
+  if (!isLoggedIn) {
+    return null
+  }
 
   return (
     <>
