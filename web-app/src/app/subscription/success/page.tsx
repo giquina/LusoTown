@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 import { motion } from 'framer-motion'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Header from '@/components/Header'
@@ -15,7 +15,7 @@ import {
   ShieldCheckIcon
 } from '@heroicons/react/24/outline'
 
-export default function SubscriptionSuccessPage() {
+function SuccessPageContent() {
   const { language, t } = useLanguage()
   const router = useRouter()
   const searchParams = useSearchParams()
@@ -209,5 +209,28 @@ export default function SubscriptionSuccessPage() {
         </section>
       </div>
     </main>
+  )
+}
+
+export default function SubscriptionSuccessPage() {
+  return (
+    <Suspense 
+      fallback={
+        <main className="min-h-screen">
+          <Header />
+          <div className="pt-16">
+            <section className="py-12 bg-gradient-to-br from-green-50 via-white to-primary-50 min-h-screen flex items-center justify-center">
+              <div className="text-center">
+                <div className="w-12 h-12 border-4 border-green-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+                <h1 className="text-2xl font-bold text-gray-900 mb-2">Loading...</h1>
+                <p className="text-gray-600">Please wait a moment</p>
+              </div>
+            </section>
+          </div>
+        </main>
+      }
+    >
+      <SuccessPageContent />
+    </Suspense>
   )
 }
