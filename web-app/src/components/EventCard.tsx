@@ -155,7 +155,7 @@ export default function EventCard({
   }
 
   return (
-    <div className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group h-full flex flex-col ${featured ? "ring-2 ring-yellow-300" : ""}`}>
+    <div className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group h-[600px] flex flex-col ${featured ? "ring-2 ring-yellow-300" : ""}`}>
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
         {imageUrl ? (
@@ -225,7 +225,7 @@ export default function EventCard({
       </div>
       
       {/* Content */}
-      <div className="p-4 sm:p-6 flex-grow flex flex-col">
+      <div className="relative p-4 sm:p-6 flex-grow flex flex-col pb-32">
         <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-3 gap-2 sm:gap-3">
           <h3 className="font-bold text-lg text-gray-900 group-hover:text-primary-600 transition-colors line-clamp-2 flex-1 min-w-0 leading-tight break-words order-2 sm:order-1">
             {title}
@@ -248,13 +248,16 @@ export default function EventCard({
         
         {/* Event Details */}
         <div className="space-y-3 mb-4">
-          <div className="flex items-center gap-3 text-sm text-gray-600">
-            <CalendarDaysIcon className="w-5 h-5 text-primary-500 flex-shrink-0" />
-            <div>
-              <div className="font-medium text-gray-900">{formatDate(date)}</div>
-              <div className="text-xs text-gray-500">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <CalendarDaysIcon className="w-4 h-4 text-primary-500 flex-shrink-0" />
+              <span className="font-medium text-gray-900 truncate">{formatDate(date)}</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <ClockIcon className="w-4 h-4 text-primary-500 flex-shrink-0" />
+              <span className="font-medium text-gray-600 truncate">
                 {formatTime(time)}{endTime && ` - ${formatTime(endTime)}`}
-              </div>
+              </span>
             </div>
           </div>
           
@@ -304,8 +307,8 @@ export default function EventCard({
           )}
         </div>
         
-        {/* Action Buttons */}
-        <div className="space-y-3 mt-auto">
+        {/* Action Buttons - Fixed at bottom */}
+        <div className="absolute bottom-4 left-4 right-4 space-y-3">
           {/* Primary Actions */}
           <div className="grid grid-cols-2 gap-3">
             <a 

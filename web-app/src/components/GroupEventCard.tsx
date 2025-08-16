@@ -118,7 +118,7 @@ export default function GroupEventCard({
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className={`bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 h-full flex flex-col ${className}`}
+        className={`bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 h-[600px] flex flex-col ${className}`}
       >
         <div className="flex gap-4 p-4">
           {/* Event Image */}
@@ -181,7 +181,7 @@ export default function GroupEventCard({
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 h-full flex flex-col ${className}`}
+        className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 h-[600px] flex flex-col ${className}`}
       >
         {/* Featured Badge */}
         <div className="absolute top-4 left-4 z-10">
@@ -323,7 +323,7 @@ export default function GroupEventCard({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300 group h-full flex flex-col ${className}`}
+      className={`bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300 group h-[600px] flex flex-col ${className}`}
     >
       {/* Event Image */}
       <div className="relative h-48 overflow-hidden">

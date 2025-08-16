@@ -130,7 +130,7 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
-        className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group h-full flex flex-col"
+        className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group h-[600px] flex flex-col"
       >
         {/* Event Image Header */}
         <div className="relative h-48 overflow-hidden">
@@ -228,7 +228,7 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
         </div>
 
         {/* Content Section */}
-        <div className="p-4 sm:p-6 space-y-4 flex-grow flex flex-col">
+        <div className="relative p-4 sm:p-6 space-y-4 flex-grow flex flex-col pb-32">
           {/* Header: Title & Price */}
           <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4">
             <div className="flex-1 min-w-0 order-2 sm:order-1">
@@ -256,14 +256,14 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
           {/* Event Details Section */}
           <div className="space-y-3">
             {/* Date & Time Row */}
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm text-gray-600">
-              <div className="flex items-center gap-2 flex-1 min-w-0">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm text-gray-600">
                 <CalendarIcon className="w-4 h-4 text-primary-500 flex-shrink-0" />
-                <span className="font-medium truncate">{formatDate(event.date)}</span>
+                <span className="font-medium text-gray-900 truncate">{formatDate(event.date)}</span>
               </div>
-              <div className="flex items-center gap-2 flex-1 min-w-0">
+              <div className="flex items-center gap-2 text-sm text-gray-600">
                 <ClockIcon className="w-4 h-4 text-primary-500 flex-shrink-0" />
-                <span className="font-medium truncate">
+                <span className="font-medium text-gray-600 truncate">
                   {formatTime(event.time)}{event.endTime && ` - ${formatTime(event.endTime)}`}
                 </span>
               </div>
@@ -419,9 +419,15 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
             )}
           </div>
 
-          {/* Action Buttons */}
-          <div className="border-t border-gray-100 pt-4 mt-auto">
-            <div className="flex flex-col gap-3">
+          {/* Action Buttons - Fixed at bottom */}
+          <div className="absolute bottom-4 left-4 right-4 space-y-3">
+            <div className="grid grid-cols-2 gap-3">
+              <a
+                href={`/events/${event.id}`}
+                className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-3 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-sm"
+              >
+                {isFull ? (isPortuguese ? 'Lista de Espera' : 'Join Waitlist') : (isPortuguese ? 'Ver Detalhes' : 'View Details')}
+              </a>
               <SaveFavoriteCartButton
                 itemId={event.id}
                 itemType="event"
@@ -441,14 +447,8 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
                 iconOnly={false}
                 size="medium"
                 variant="outline"
-                className="w-full"
+                className="text-sm py-3 px-4"
               />
-              <a
-                href={`/events/${event.id}`}
-                className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-3 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 hover:shadow-lg transition-all duration-200 text-center shadow-md"
-              >
-                {isFull ? t('event.join-waitlist') : t('event.view-details')}
-              </a>
             </div>
           </div>
         </div>

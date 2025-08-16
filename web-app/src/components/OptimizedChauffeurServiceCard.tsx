@@ -158,7 +158,7 @@ const OptimizedChauffeurServiceCard = memo<OptimizedChauffeurServiceCardProps>((
         stiffness: 100
       }}
       viewport={{ once: true }}
-      className={`relative bg-white rounded-2xl shadow-lg border-2 overflow-hidden ${
+      className={`relative bg-white rounded-2xl shadow-lg border-2 overflow-hidden h-[600px] flex flex-col ${
         tier.popular 
           ? 'border-premium-300 shadow-2xl ring-2 ring-premium-100' 
           : `${colorClasses.border} hover:shadow-2xl`
@@ -273,7 +273,7 @@ const OptimizedChauffeurServiceCard = memo<OptimizedChauffeurServiceCardProps>((
       </div>
 
       {/* Features Section */}
-      <div className="px-6 py-6">
+      <div className="px-6 py-6 flex-grow">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {displayFeatures.map((feature, featureIndex) => (
             <motion.div 
@@ -299,8 +299,8 @@ const OptimizedChauffeurServiceCard = memo<OptimizedChauffeurServiceCardProps>((
         )}
       </div>
 
-      {/* Action Section */}
-      <div className="px-6 pb-6">
+      {/* Action Section - Fixed at bottom */}
+      <div className="absolute bottom-4 left-4 right-4">
         <motion.button
           variants={buttonVariants}
           whileHover="hover"
