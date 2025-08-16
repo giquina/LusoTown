@@ -301,8 +301,8 @@ export const howItWorksContent = {
     },
     steps: [
       {
-        title: "Become Part of Our Family",
-        subtitle: "Seja Bem-Vindo à Nossa Família",
+        title: "Join Our Community",
+        subtitle: "Seja Bem-Vindo à Nossa Comunidade",
         description: "Create your free profile and step into a warm community where everyone understands the feeling of missing home. You'll be welcomed by Portuguese hearts who know your story and want to share theirs.",
         examples: "People from Portugal, Brazil, Angola, Mozambique living in London"
       },

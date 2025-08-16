@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 
 interface LogoProps {
-  size?: 'small' | 'medium' | 'large'
+  size?: 'small' | 'medium' | 'large' | 'compact'
   className?: string
   animated?: boolean
 }
@@ -12,13 +12,48 @@ export default function Logo({ size = 'medium', className = '', animated = false
   const sizes = {
     small: 'h-6 sm:h-8',
     medium: 'h-8 sm:h-10',
-    large: 'h-12 sm:h-14 lg:h-16'
+    large: 'h-12 sm:h-14 lg:h-16',
+    compact: 'h-8'
   }
 
   const textSizes = {
     small: 'text-lg sm:text-xl',
     medium: 'text-xl sm:text-2xl',
-    large: 'text-2xl sm:text-3xl lg:text-4xl'
+    large: 'text-2xl sm:text-3xl lg:text-4xl',
+    compact: 'text-lg font-bold'
+  }
+
+  // Compact header variant
+  if (size === 'compact') {
+    const CompactLogo = (
+      <div className={`flex items-center space-x-2 ${className}`}>
+        {/* Smaller icon for header */}
+        <div className="h-8 w-8 flex items-center justify-center rounded-lg bg-gradient-to-br from-secondary-600 via-action-600 to-premium-600 shadow-md border border-white/20 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-secondary-500/20 via-action-500/20 to-accent-500/20"></div>
+          <span className="text-white font-black text-sm relative z-10">🏛️</span>
+        </div>
+        
+        {/* Compact brand name with flags inline */}
+        <div className="flex items-center space-x-1">
+          <h1 className="text-lg font-black bg-gradient-to-r from-secondary-600 via-action-600 to-premium-600 bg-clip-text text-transparent leading-none tracking-tight">
+            LusoTown
+          </h1>
+          <div className="flex items-center space-x-0.5 ml-1">
+            <span className="text-xs">🇵🇹</span>
+            <span className="text-xs">🇬🇧</span>
+          </div>
+        </div>
+      </div>
+    )
+    
+    return animated ? (
+      <motion.div
+        whileHover={{ scale: 1.02 }}
+        transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+      >
+        {CompactLogo}
+      </motion.div>
+    ) : CompactLogo
   }
 
   const LogoComponent = (

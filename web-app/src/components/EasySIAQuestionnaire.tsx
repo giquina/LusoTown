@@ -213,10 +213,10 @@ export default function EasySIAQuestionnaire({
   const stepTitles = [
     isPortuguese ? 'Tipo de Serviço' : 'Service Type',
     isPortuguese ? 'Data & Local' : 'Date & Location', 
-    isPortuguese ? 'Avaliação de Risco' : 'Risk Assessment',
-    isPortuguese ? 'Nível de Proteção' : 'Protection Level',
-    isPortuguese ? 'Requisitos Especiais' : 'Special Requirements',
-    isPortuguese ? 'Contacto de Emergência' : 'Emergency Contact'
+    isPortuguese ? 'Requisitos de Segurança' : 'Safety Requirements',
+    isPortuguese ? 'Nível de Serviço' : 'Service Level',
+    isPortuguese ? 'Preferências Adicionais' : 'Additional Preferences',
+    isPortuguese ? 'Detalhes de Contacto' : 'Contact Details'
   ]
   
   const [formData, setFormData] = useState<EasySIAData>({

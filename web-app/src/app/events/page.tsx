@@ -505,7 +505,7 @@ export default function EventsPage() {
                 </div>
                 <div className="text-center">
                   <div className="text-2xl sm:text-3xl font-bold text-secondary-600 mb-1">
-                    {activeTab === 'events' ? '500+' : Object.keys(EVENT_TOUR_CATEGORIES).length}
+                    {activeTab === 'events' ? '750+' : Object.keys(EVENT_TOUR_CATEGORIES).length}
                   </div>
                   <div className="text-sm text-gray-600">
                     {activeTab === 'events'
@@ -741,7 +741,7 @@ export default function EventsPage() {
                         }
                       </h2>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                       {featuredItems.slice(0, 3).map((item, index) => (
                         activeTab === 'events' ? (
                           <ImprovedEventCard 
@@ -760,7 +760,7 @@ export default function EventsPage() {
 
                 {/* Main Content Grid */}
                 {loading ? (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                     {[1, 2, 3, 4, 5, 6].map((i) => (
                       <div key={i} className="bg-white rounded-2xl shadow-lg overflow-hidden animate-pulse">
                         <div className="h-48 bg-gray-200"></div>
@@ -806,7 +806,7 @@ export default function EventsPage() {
                 ) : (
                   <motion.div
                     layout
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
                   >
                     <AnimatePresence>
                       {currentData.map((item, index) => (
@@ -886,22 +886,66 @@ export default function EventsPage() {
         {/* Host Your Event CTA Section */}
         <section className="py-24 bg-gradient-to-r from-premium-50 to-coral-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-2xl mx-auto">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                {isPortuguese ? 'Organize o Seu Próprio Evento' : 'Host Your Own Event'}
+            <div className="text-center max-w-4xl mx-auto">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                {isPortuguese ? 'Crie, Organize e Partilhe' : 'Create, Host & Share'}
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
                 {isPortuguese 
-                  ? 'É um profissional português? Partilhe a sua experiência organizando workshops, eventos culturais, ou promovendo o seu negócio para a nossa crescente comunidade.'
-                  : 'Are you a Portuguese professional? Share your expertise by hosting workshops, cultural events, or promoting your business to our growing community.'
+                  ? 'Partilhe a sua experiência com a comunidade portuguesa. Organize eventos, crie grupos ou ofereça experiências únicas em Londres.'
+                  : 'Share your expertise with the Portuguese community. Host events, create groups, or offer unique experiences in London.'
                 }
               </p>
+              
+              {/* Three CTA Options */}
+              <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 mb-8">
+                <a
+                  href="/events/create"
+                  className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+                >
+                  <CalendarIcon className="w-8 h-8 text-premium-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-bold text-gray-900 mb-2">
+                    {isPortuguese ? 'Criar Evento' : 'Create Event'}
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    {isPortuguese ? 'Workshops, encontros culturais' : 'Workshops, cultural meetups'}
+                  </p>
+                </a>
+                
+                <a
+                  href="/groups/create"
+                  className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+                >
+                  <UserGroupIcon className="w-8 h-8 text-coral-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-bold text-gray-900 mb-2">
+                    {isPortuguese ? 'Criar Grupo' : 'Create Group'}
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    {isPortuguese ? 'Comunidades especializadas' : 'Specialized communities'}
+                  </p>
+                </a>
+                
+                <a
+                  href="/host"
+                  className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+                >
+                  <SparklesIcon className="w-8 h-8 text-accent-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
+                  <h3 className="font-bold text-gray-900 mb-2">
+                    {isPortuguese ? 'Criar Experiência' : 'Create Experience'}
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    {isPortuguese ? 'Tours, atividades únicas' : 'Tours, unique activities'}
+                  </p>
+                </a>
+              </div>
+              
+              {/* Main CTA */}
               <a
                 href="/host"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-premium-500 to-coral-500 text-white font-semibold px-8 py-3 rounded-xl hover:from-premium-600 hover:to-coral-600 transition-all duration-200 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-premium-600 via-coral-600 to-accent-600 text-white font-bold px-8 py-4 rounded-2xl hover:from-premium-700 hover:via-coral-700 hover:to-accent-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg"
               >
-                <AcademicCapIcon className="w-5 h-5" />
-                {isPortuguese ? 'Torna-te Anfitrião' : 'Become a Host'}
+                <AcademicCapIcon className="w-6 h-6" />
+                {isPortuguese ? 'Começar a Organizar' : 'Start Hosting'}
               </a>
             </div>
           </div>

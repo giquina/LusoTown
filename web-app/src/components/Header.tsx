@@ -68,20 +68,10 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 min-h-[80px] lg:min-h-[88px]">
       <nav className="container-width" aria-label="Top">
         <div className="flex items-center justify-between py-3 sm:py-4 lg:py-5 gap-2 sm:gap-4">
-          {/* Logo */}
+          {/* Logo - Compact design for header */}
           <div className="flex items-center flex-shrink-0">
-            <a href="/" className="flex items-center gap-2 sm:gap-3 overflow-visible">
-              <Logo size="small" animated className="sm:hidden" />
-              <Logo size="medium" animated className="hidden sm:block lg:hidden" />
-              <Logo size="large" animated className="hidden lg:block" />
-              <div className="hidden lg:flex items-center gap-2 ml-3">
-                <div className="w-5 h-5 rounded-full overflow-hidden border border-gray-200 shadow-sm flex items-center justify-center bg-white">
-                  <span className="text-xs">🇬🇧</span>
-                </div>
-                <div className="w-5 h-5 rounded-full overflow-hidden border border-gray-200 shadow-sm flex items-center justify-center bg-white">
-                  <span className="text-xs">🇵🇹</span>
-                </div>
-              </div>
+            <a href="/" className="flex items-center">
+              <Logo size="compact" animated />
             </a>
           </div>
 

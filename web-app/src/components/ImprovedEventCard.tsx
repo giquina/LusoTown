@@ -130,10 +130,10 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
-        className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group min-h-[580px] flex flex-col"
+        className="h-[500px] sm:h-[550px] lg:h-[600px] flex flex-col bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
       >
         {/* Event Image Header */}
-        <div className="relative h-48 overflow-hidden">
+        <div className="relative h-48 sm:h-52 bg-cover bg-center rounded-t-xl overflow-hidden">
           <EventImageWithFallback
             src={event.images?.[0] || ''}
             alt={event.title}
@@ -227,204 +227,72 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
           </div>
         </div>
 
-        {/* Content Section */}
-        <div className="relative p-4 sm:p-6 space-y-4 flex-grow flex flex-col pb-28 sm:pb-24">
-          {/* Header: Title & Price */}
-          <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4">
-            <div className="flex-1 min-w-0 order-2 sm:order-1">
-              <h3 className="font-bold text-base sm:text-lg text-gray-900 mb-2 group-hover:text-primary-600 transition-colors leading-tight break-words line-clamp-2">
-                {event.title}
-              </h3>
-              <p className="text-gray-600 text-sm line-clamp-2 leading-relaxed break-words">
-                {event.description}
-              </p>
-            </div>
-            <div className="text-left sm:text-right flex-shrink-0 order-1 sm:order-2">
-              <div className="text-lg sm:text-xl font-bold text-primary-600 mb-1">
-                {event.price === 0 ? 'FREE' : `£${event.price}`}
-              </div>
-              {event.membershipRequired !== 'free' && (
-                <div className="text-xs text-gray-500 capitalize font-medium">
-                  {isPortuguese ? 'Membro' : 'Member'}
-                </div>
-              )}
-            </div>
+        {/* Content Section - flexible */}
+        <div className="flex-1 p-4 sm:p-6 flex flex-col">
+          {/* Title - ensure full visibility */}
+          <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-primary-600 transition-colors">
+            {event.title}
+          </h3>
+          
+          {/* Subtitle - ensure full visibility */}
+          <p className="text-gray-600 mb-4 line-clamp-3 flex-1">
+            {event.description}
+          </p>
+          
+          {/* Event details - one line format */}
+          <div className="flex items-center justify-between mb-4 text-sm">
+            <span className="text-gray-500 truncate mr-2">{event.hostName}</span>
+            <span className="text-primary-600 font-medium flex-shrink-0">{spotsLeft} spots available</span>
           </div>
 
-          <div className="border-t border-gray-100"></div>
-
-          {/* Event Details Section */}
-          <div className="space-y-3">
-            {/* Date & Time Row */}
-            <div className="space-y-2">
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <CalendarIcon className="w-4 h-4 text-primary-500 flex-shrink-0" />
-                <span className="font-medium text-gray-900 truncate">{formatDate(event.date)}</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <ClockIcon className="w-4 h-4 text-primary-500 flex-shrink-0" />
-                <span className="font-medium text-gray-600 truncate">
-                  {formatTime(event.time)}{event.endTime && ` - ${formatTime(event.endTime)}`}
-                </span>
-              </div>
+          {/* Date, Time & Location */}
+          <div className="space-y-2 mb-4">
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <CalendarIcon className="w-4 h-4 text-primary-500 flex-shrink-0" />
+              <span className="font-medium text-gray-900 truncate">{formatDate(event.date)}</span>
             </div>
-
-            {/* Location Row */}
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <ClockIcon className="w-4 h-4 text-primary-500 flex-shrink-0" />
+              <span className="font-medium text-gray-600 truncate">
+                {formatTime(event.time)}{event.endTime && ` - ${formatTime(event.endTime)}`}
+              </span>
+            </div>
             <div className="flex items-start gap-2 text-sm text-gray-600">
               <MapPinIcon className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
               <span className="font-medium break-words line-clamp-1">{event.location}</span>
             </div>
+          </div>
 
-            {/* Age Restriction */}
-            {event.ageRestriction && (
-              <div className="flex items-center gap-2">
-                <span className="text-xs bg-coral-100 text-coral-800 px-2 py-1 rounded-full font-medium">
-                  {event.ageRestriction}
-                </span>
+          {/* Price */}
+          <div className="mb-4 text-right">
+            <div className="text-lg sm:text-xl font-bold text-primary-600">
+              {event.price === 0 ? 'FREE' : `£${event.price}`}
+            </div>
+            {event.membershipRequired !== 'free' && (
+              <div className="text-xs text-gray-500 capitalize font-medium">
+                {isPortuguese ? 'Membro' : 'Member'}
               </div>
             )}
           </div>
 
-          <div className="border-t border-gray-100"></div>
-
-          {/* Host & Stats Section */}
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              {event.hostImage ? (
-                <Image 
-                  src={event.hostImage} 
-                  alt={event.hostName}
-                  width={36}
-                  height={36}
-                  className="w-9 h-9 rounded-full object-cover ring-2 ring-primary-100 shadow-sm"
-                />
-              ) : (
-                <div className="w-9 h-9 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full flex items-center justify-center text-white text-sm font-bold ring-2 ring-primary-100 shadow-sm">
-                  {event.hostName.split(' ').map(n => n[0]).join('')}
-                </div>
-              )}
-              <div>
-                <div className="text-sm text-gray-900 font-medium">{event.hostName}</div>
-                <div className="text-xs text-gray-500">Event Host</div>
-              </div>
-            </div>
-            
-            <div className="flex items-center gap-4 text-sm text-gray-500">
-              <div className="flex items-center gap-1.5">
-                <UserGroupIcon className="w-4 h-4" />
-                <span className="font-medium">{event.currentAttendees}</span>
-              </div>
-              {event.averageRating > 0 && (
-                <div className="flex items-center gap-1.5">
-                  <StarIcon className="w-4 h-4 fill-accent-400 text-accent-400" />
-                  <span className="font-medium">{event.averageRating}</span>
-                </div>
-              )}
-            </div>
-          </div>
-
           {/* Network Connections Section */}
           {eventConnections.length > 0 && (
-            <>
-              <div className="border-t border-gray-100"></div>
+            <div className="mb-4">
               <NetworkPreview
                 eventId={event.id}
                 connections={eventConnections}
                 maxPreview={3}
                 showAddButton={false}
               />
-            </>
+            </div>
           )}
-
-          {/* Attendees Section */}
-          {event.attendees && event.attendees.length > 0 && (
-            <>
-              <div className="border-t border-gray-100"></div>
-              <div className="space-y-2">
-                <div className="flex items-center gap-3">
-                  <span className="text-sm font-medium text-gray-700">Going:</span>
-                  <div className="flex -space-x-2">
-                    {event.attendees.slice(0, 5).map((attendee, index) => (
-                      <div key={attendee.id} className="relative">
-                        {attendee.profileImage ? (
-                          <Image
-                            src={attendee.profileImage}
-                            alt={attendee.name}
-                            width={32} height={32}
-                            className="rounded-full border-2 border-white object-cover shadow-sm hover:scale-110 transition-transform"
-                            title={attendee.name}
-                          />
-                        ) : (
-                          <div 
-                            className="w-8 h-8 rounded-full border-2 border-white bg-gradient-to-r from-primary-300 to-secondary-300 flex items-center justify-center text-white text-xs font-bold shadow-sm hover:scale-110 transition-transform"
-                            title={attendee.name}
-                          >
-                            {attendee.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
-                          </div>
-                        )}
-                        <div className={`absolute -bottom-1 -right-1 w-3 h-3 rounded-full border border-white ${
-                          attendee.membershipTier === 'premium' ? 'bg-premium-500' : 
-                          attendee.membershipTier === 'core' ? 'bg-secondary-500' : 'bg-secondary-400'
-                        }`}>
-                          <div className="w-1.5 h-1.5 bg-white rounded-full absolute inset-0 m-auto"></div>
-                        </div>
-                      </div>
-                    ))}
-                    {event.attendees.length > 5 && (
-                      <div className="w-8 h-8 rounded-full border-2 border-white bg-gray-100 flex items-center justify-center text-gray-600 text-xs font-bold shadow-sm">
-                        +{event.attendees.length - 5}
-                      </div>
-                    )}
-                  </div>
-                </div>
-                <div className="text-xs text-gray-500 flex gap-3">
-                  {event.attendees.filter(a => a.membershipTier === 'premium').length > 0 && (
-                    <span className="inline-flex items-center gap-1.5">
-                      <div className="w-2 h-2 bg-premium-500 rounded-full"></div>
-                      {event.attendees.filter(a => a.membershipTier === 'premium').length} Premium
-                    </span>
-                  )}
-                  {event.attendees.filter(a => a.membershipTier === 'core').length > 0 && (
-                    <span className="inline-flex items-center gap-1.5">
-                      <div className="w-2 h-2 bg-secondary-500 rounded-full"></div>
-                      {event.attendees.filter(a => a.membershipTier === 'core').length} Core
-                    </span>
-                  )}
-                  {event.attendees.filter(a => a.membershipTier === 'free').length > 0 && (
-                    <span className="inline-flex items-center gap-1.5">
-                      <div className="w-2 h-2 bg-secondary-400 rounded-full"></div>
-                      {event.attendees.filter(a => a.membershipTier === 'free').length} Free
-                    </span>
-                  )}
-                </div>
-              </div>
-            </>
-          )}
-
-          {/* Tags Section */}
-          <div className="border-t border-gray-100"></div>
-          <div className="flex flex-wrap gap-2">
-            {event.tags.slice(0, 3).map((tag) => (
-              <span 
-                key={tag}
-                className="bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs px-2 sm:px-3 py-1 sm:py-1.5 rounded-full font-medium transition-colors break-words"
-              >
-                {tag}
-              </span>
-            ))}
-            {event.tags.length > 3 && (
-              <span className="text-xs text-gray-400 px-2 py-1.5">
-                +{event.tags.length - 3} more
-              </span>
-            )}
-          </div>
-
-          {/* Action Buttons - Fixed at bottom with better mobile spacing */}
-          <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 space-y-2 sm:space-y-3">
-            <div className="grid grid-cols-2 gap-2 sm:gap-3">
+          
+          {/* CTA button - always at bottom */}
+          <div className="mt-auto">
+            <div className="grid grid-cols-2 gap-2">
               <a
                 href={`/events/${event.id}`}
-                className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-xs sm:text-sm"
+                className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-2 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-sm"
               >
                 {isFull ? (isPortuguese ? 'Lista' : 'Waitlist') : (isPortuguese ? 'Ver Detalhes' : 'View Details')}
               </a>
@@ -447,7 +315,7 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
                 iconOnly={false}
                 size="medium"
                 variant="outline"
-                className="text-xs sm:text-sm py-2.5 sm:py-3 px-3 sm:px-4"
+                className="text-sm py-2 px-4"
               />
             </div>
           </div>

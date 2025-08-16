@@ -84,13 +84,13 @@ const neighborhoodGroups = [
     highlights: [
       'Modern community spaces',
       'Portuguese business network',
-      'Family-friendly events',
+      'Community networking events',
       'Easy central London access'
     ],
     highlightsPt: [
       'Espaços comunitários modernos',
       'Rede empresarial portuguesa',
-      'Eventos familiares',
+      'Eventos de networking comunitário',
       'Fácil acesso ao centro de Londres'
     ],
     recentEvents: [
@@ -131,8 +131,8 @@ const neighborhoodGroups = [
     ],
     recentEvents: [
       { name: 'Community Setup Meeting', namePt: 'Reunião Estabelecimento Comunitário', attendees: 18 },
-      { name: 'Children\'s Portuguese Class', namePt: 'Aula Português Infantil', attendees: 25 },
-      { name: 'Family Support Group', namePt: 'Grupo Apoio Familiar', attendees: 32 }
+      { name: 'Portuguese Language Exchange', namePt: 'Intercâmbio de Língua Portuguesa', attendees: 25 },
+      { name: 'Professional Support Group', namePt: 'Grupo Apoio Profissional', attendees: 32 }
     ],
     icon: '🏘️',
     status: 'emerging',
@@ -284,14 +284,14 @@ const communityResources = [
     ]
   },
   {
-    category: 'Family Support',
-    categoryPt: 'Apoio Familiar',
+    category: 'Community Support',
+    categoryPt: 'Apoio Comunitário',
     icon: HomeIcon,
     items: [
-      { name: 'Portuguese childcare networks', namePt: 'Redes cuidado infantil português', count: 8 },
-      { name: 'Family support groups', namePt: 'Grupos apoio familiar', count: 15 },
-      { name: 'Portuguese mothers groups', namePt: 'Grupos mães portuguesas', count: 12 },
-      { name: 'Youth Portuguese activities', namePt: 'Atividades juventude portuguesa', count: 20 }
+      { name: 'Portuguese professional networks', namePt: 'Redes profissionais portuguesas', count: 8 },
+      { name: 'Community support groups', namePt: 'Grupos apoio comunitário', count: 15 },
+      { name: 'Portuguese women groups', namePt: 'Grupos mulheres portuguesas', count: 12 },
+      { name: 'Young professional activities', namePt: 'Atividades jovens profissionais', count: 20 }
     ]
   }
 ]

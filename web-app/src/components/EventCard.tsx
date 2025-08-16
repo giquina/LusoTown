@@ -164,9 +164,9 @@ export default function EventCard({
   }
 
   return (
-    <div className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group min-h-[480px] sm:min-h-[520px] flex flex-col ${featured ? "ring-2 ring-yellow-300" : ""}`}>
+    <div className={`h-[500px] sm:h-[550px] lg:h-[600px] flex flex-col bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group ${featured ? "ring-2 ring-yellow-300" : ""}`}>
       {/* Image */}
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-48 sm:h-52 bg-cover bg-center rounded-t-xl overflow-hidden">
         {imageUrl ? (
           <Image 
             src={imageUrl} 
@@ -233,71 +233,50 @@ export default function EventCard({
         </div>
       </div>
       
-      {/* Content */}
-      <div className="relative p-4 sm:p-6 flex-grow flex flex-col pb-32 sm:pb-28">
-        <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-3 gap-2 sm:gap-3">
-          <h3 className="font-bold text-base sm:text-lg text-gray-900 group-hover:text-primary-600 transition-colors line-clamp-2 flex-1 min-w-0 leading-tight break-words order-2 sm:order-1">
-            {title}
-          </h3>
-          <div className="text-left sm:text-right flex-shrink-0 min-w-0 order-1 sm:order-2">
-            <div className="text-base sm:text-lg font-bold text-primary-600 whitespace-nowrap">
-              {formatPrice(price, currency)}
-            </div>
-            {membershipRequired !== 'free' && (
-              <div className="text-xs text-gray-500 capitalize whitespace-nowrap">
-                {isPortuguese ? 'Membro' : 'Member'}
-              </div>
-            )}
-          </div>
-        </div>
+      {/* Content Section - flexible */}
+      <div className="flex-1 p-4 sm:p-6 flex flex-col">
+        {/* Title - ensure full visibility */}
+        <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-primary-600 transition-colors">
+          {title}
+        </h3>
         
-        <p className="text-gray-600 text-sm mb-4 line-clamp-2 break-words leading-relaxed">
+        {/* Subtitle - ensure full visibility */}
+        <p className="text-gray-600 mb-4 line-clamp-3 flex-1">
           {description}
         </p>
         
-        {/* Event Details */}
-        <div className="space-y-3 mb-4">
-          <div className="space-y-2">
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <CalendarDaysIcon className="w-4 h-4 text-primary-500 flex-shrink-0" />
-              <span className="font-medium text-gray-900 truncate">{formatDate(date)}</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-gray-600">
-              <ClockIcon className="w-4 h-4 text-primary-500 flex-shrink-0" />
-              <span className="font-medium text-gray-600 truncate">
-                {formatTime(time)}{endTime && ` - ${formatTime(endTime)}`}
-              </span>
-            </div>
+        {/* Event details - one line format */}
+        <div className="flex items-center justify-between mb-4 text-sm">
+          <span className="text-gray-500 truncate mr-2">{hostName || 'Event Host'}</span>
+          <span className="text-primary-600 font-medium flex-shrink-0">{spotsLeft} spots available</span>
+        </div>
+        
+        {/* Date, Time & Location */}
+        <div className="space-y-2 mb-4">
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            <CalendarDaysIcon className="w-4 h-4 text-primary-500 flex-shrink-0" />
+            <span className="font-medium text-gray-900 truncate">{formatDate(date)}</span>
           </div>
-          
-          <div className="flex items-center gap-3 text-sm text-gray-600 min-w-0">
-            <MapPinIcon className="w-5 h-5 text-secondary-500 flex-shrink-0" />
-            <span className="truncate max-w-full line-clamp-1">{location}</span>
+          <div className="flex items-center gap-2 text-sm text-gray-600">
+            <ClockIcon className="w-4 h-4 text-primary-500 flex-shrink-0" />
+            <span className="font-medium text-gray-600 truncate">
+              {formatTime(time)}{endTime && ` - ${formatTime(endTime)}`}
+            </span>
           </div>
-          
-          <div className="flex items-center gap-3 text-sm text-gray-600">
-            <UserGroupIcon className="w-5 h-5 text-premium-500 flex-shrink-0" />
-            <div className="flex-1">
-              <div className="font-medium text-gray-900">
-                {currentAttendees}/{maxAttendees} {isPortuguese ? 'Participantes' : 'Attending'}
-              </div>
-              {hostName && (
-                <div className="text-xs text-gray-500 truncate">
-                  {isPortuguese ? 'Organizado por' : 'Hosted by'} <span className="font-medium">{hostName}</span>
-                </div>
-              )}
-            </div>
+          <div className="flex items-start gap-2 text-sm text-gray-600">
+            <MapPinIcon className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
+            <span className="font-medium break-words line-clamp-1">{location}</span>
           </div>
+        </div>
 
-          {/* Rating */}
-          {averageRating > 0 && (
-            <div className="flex items-center gap-3 text-sm text-gray-600">
-              <StarIcon className="w-5 h-5 text-yellow-500 flex-shrink-0" />
-              <div>
-                <div className="font-medium text-gray-900">
-                  {averageRating.toFixed(1)} ⭐ ({totalReviews} {isPortuguese ? 'avaliações' : 'reviews'})
-                </div>
-              </div>
+        {/* Price */}
+        <div className="mb-4 text-right">
+          <div className="text-lg sm:text-xl font-bold text-primary-600">
+            {formatPrice(price, currency)}
+          </div>
+          {membershipRequired !== 'free' && (
+            <div className="text-xs text-gray-500 capitalize font-medium">
+              {isPortuguese ? 'Membro' : 'Member'}
             </div>
           )}
         </div>
@@ -316,30 +295,29 @@ export default function EventCard({
           )}
         </div>
         
-        {/* Action Buttons - Fixed at bottom with mobile-optimized layout */}
-        <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 space-y-2 sm:space-y-3">
-          {/* Primary Actions - Stack vertically on mobile, grid on desktop */}
-          <div className="grid grid-cols-2 gap-2 sm:gap-3">
+        {/* CTA button - always at bottom */}
+        <div className="mt-auto">
+          <div className="grid grid-cols-2 gap-2">
             <button
               onClick={() => requireAuthForDetails(
                 () => window.location.href = `/events/${id}`,
                 id,
                 `/events/${id}`
               )}
-              className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-xs sm:text-sm flex items-center justify-center"
+              className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-2 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-sm"
             >
               {isPortuguese ? 'Ver Detalhes' : 'View Details'}
             </button>
             
             {isFull ? (
-              <button className="border border-red-300 text-red-600 bg-red-50 font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:bg-red-100 transition-colors text-center text-xs sm:text-sm flex items-center justify-center">
+              <button className="border border-red-300 text-red-600 bg-red-50 font-semibold py-2 px-4 rounded-lg hover:bg-red-100 transition-colors text-center text-sm">
                 {isPortuguese ? 'Lista' : 'Waitlist'}
               </button>
             ) : (
               <button 
                 onClick={handleAddToCart}
                 disabled={addingToCart || inCart}
-                className={`font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg transition-all duration-200 text-center text-xs sm:text-sm flex items-center justify-center gap-1 sm:gap-2 min-w-0 ${
+                className={`font-semibold py-2 px-4 rounded-lg transition-all duration-200 text-center text-sm flex items-center justify-center gap-1 ${
                   inCart 
                     ? 'bg-green-100 text-green-700 border border-green-300'
                     : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
@@ -363,26 +341,6 @@ export default function EventCard({
               </button>
             )}
           </div>
-          
-          {/* Secondary Action */}
-          <button
-            onClick={handleSaveForLater}
-            className="w-full text-gray-600 hover:text-primary-600 text-xs sm:text-sm font-medium transition-colors flex items-center justify-center gap-2 py-1"
-          >
-            <HeartIcon className="w-4 h-4" />
-            <span className="hidden sm:inline">
-              {savedItem 
-                ? (isPortuguese ? 'Guardado nos Favoritos' : 'Saved to Favorites')
-                : (isPortuguese ? 'Guardar para Mais Tarde' : 'Save for Later')
-              }
-            </span>
-            <span className="sm:hidden">
-              {savedItem 
-                ? (isPortuguese ? 'Favoritos' : 'Saved')
-                : (isPortuguese ? 'Guardar' : 'Save')
-              }
-            </span>
-          </button>
         </div>
       </div>
     </div>

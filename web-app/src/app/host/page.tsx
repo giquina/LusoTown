@@ -83,8 +83,8 @@ export default function HostPage() {
   const benefits = [
     {
       icon: UserGroupIcon,
-      title: isPortuguese ? 'Alcance 500+ Portugueses' : 'Reach 500+ Portuguese Speakers',
-      description: isPortuguese ? 'Conecte com profissionais, famílias e jovens adultos portugueses' : 'Connect with Portuguese professionals, families, and young adults'
+      title: isPortuguese ? 'Alcance 750+ Portugueses' : 'Reach 750+ Portuguese Speakers',
+      description: isPortuguese ? 'Conecte com profissionais e membros da comunidade portuguesa' : 'Connect with Portuguese professionals and community members'
     },
     {
       icon: CurrencyPoundIcon,

@@ -115,17 +115,17 @@ export default function CaseStudiesPage() {
       
       <main className="min-h-screen">
         <Header />
-        <div className="pt-16">
+        <div className="pt-24 sm:pt-28 lg:pt-32">
           {/* Hero Section */}
-          <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
+          <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-primary-50 to-secondary-50">
             <div className="container-width">
               <div className="max-w-4xl mx-auto text-center">
                 <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-6 py-3 text-sm font-medium text-primary-600 mb-6">
                   <SparklesIcon className="w-5 h-5 mr-2" />
-                  Portuguese Community Case Studies
+                  Portuguese Communities in London Case Studies
                 </div>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 text-balance">
-                  Real Stories, Real Transformations
+                  Portuguese Communities in London Case Studies
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-600 leading-relaxed text-balance">
                   Detailed case studies showing how Portuguese speakers from Brazil, Portugal, Angola, and beyond 
@@ -149,7 +149,7 @@ export default function CaseStudiesPage() {
                     <div className="w-16 h-16 bg-gradient-to-br from-secondary-100 to-accent-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
                       <HeartIcon className="w-8 h-8 text-secondary-600" />
                     </div>
-                    <div className="text-3xl font-bold text-gray-900 mb-2">500+</div>
+                    <div className="text-3xl font-bold text-gray-900 mb-2">750+</div>
                     <div className="text-sm text-gray-600">Portuguese Speakers Connected</div>
                   </div>
                   

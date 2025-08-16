@@ -190,10 +190,10 @@ export default function HostWithUsSection() {
                 <UserGroupIcon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
               <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-xs sm:text-sm leading-tight">
-                Reach 500+ Portuguese
+                Reach 750+ Portuguese
               </h4>
               <p className="text-xs text-gray-600 leading-relaxed flex-1 break-words">
-                Connect with Portuguese professionals and families.
+                Connect with Portuguese professionals and community members.
               </p>
             </div>
             

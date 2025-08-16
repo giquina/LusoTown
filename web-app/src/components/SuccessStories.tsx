@@ -253,7 +253,7 @@ export default function SuccessStories() {
             Ready to Transform Your London Saudade Into Portuguese Success?
           </h3>
           <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Join 500+ almas portuguesas from Portugal, Brazil, Angola, Mozambique, Cape Verde & beyond who found their London family through real connections. From Borough Market food adventures to Vauxhall fado nights - your Portuguese community awaits at authentic London venues where nossa cultura thrives.
+            Join 750+ almas portuguesas from Portugal, Brazil, Angola, Mozambique, Cape Verde & beyond who found their London community through real connections. From Borough Market food adventures to Vauxhall fado nights - your Portuguese community awaits at authentic London venues where nossa cultura thrives.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 

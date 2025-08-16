@@ -509,12 +509,12 @@ export default function About() {
               
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
                 <div className="bg-white rounded-xl p-6 shadow-sm">
-                  <div className="text-3xl font-bold text-primary-600 mb-2">500+</div>
-                  <div className="text-sm text-gray-600">Portuguese Families</div>
+                  <div className="text-3xl font-bold text-primary-600 mb-2">750+</div>
+                  <div className="text-sm text-gray-600">Portuguese Community Members</div>
                   <div className="text-xs text-gray-500 mt-1">Connected in London</div>
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-sm">
-                  <div className="text-3xl font-bold text-secondary-600 mb-2">8</div>
+                  <div className="text-3xl font-bold text-secondary-600 mb-2">15+</div>
                   <div className="text-sm text-gray-600">Countries Represented</div>
                   <div className="text-xs text-gray-500 mt-1">Portuguese-speaking nations</div>
                 </div>

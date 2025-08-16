@@ -206,7 +206,7 @@ export default function AboutLusoTown() {
             
             <div className="inline-flex items-center gap-3 bg-gradient-to-r from-secondary-500 via-primary-500 to-accent-500 text-white rounded-2xl px-8 py-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
               <MapPin className="h-5 w-5" />
-              <span className="font-bold text-lg">Join 500+ Portuguese speakers meeting at authentic venues across London</span>
+              <span className="font-bold text-lg">Join 750+ Portuguese speakers meeting at authentic venues across London</span>
               <Sparkles className="h-5 w-5" />
             </div>
           </div>

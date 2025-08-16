@@ -226,7 +226,7 @@ export default function DiverseSuccessStories() {
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary-600 mb-2">500+</div>
+                <div className="text-3xl font-bold text-primary-600 mb-2">750+</div>
                 <div className="text-sm text-gray-600">Portuguese speakers connected in London</div>
               </div>
               <div className="text-center">

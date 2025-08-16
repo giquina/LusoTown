@@ -270,7 +270,7 @@ export default function Home() {
                       </span>
                     </h3>
                     <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-                      Join 500+ Portuguese speakers booking experiences together across London - from tours to concerts, matches to getaways.
+                      Join 750+ Portuguese speakers booking experiences together across London - from tours to concerts, matches to getaways.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                       <a

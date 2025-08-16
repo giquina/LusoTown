@@ -2,14 +2,9 @@ import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import { supabase } from '@/lib/supabase'
 
-let stripeClient: Stripe | null = null
-function getStripe() {
-  if (!stripeClient) {
-    const key = process.env.STRIPE_SECRET_KEY || 'sk_test_51Demo123456789012345678901234567890Demo'
-    stripeClient = new Stripe(key, { apiVersion: '2024-06-20' })
-  }
-  return stripeClient
-}
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+  apiVersion: '2024-06-20',
+})
 
 export async function POST(request: NextRequest) {
   try {
@@ -22,8 +17,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-  // Check if user already has a Stripe customer
-  const stripe = getStripe()
+    // Check if user already has a Stripe customer
     let customerId: string
 
     const { data: existingProfile } = await supabase
@@ -35,8 +29,8 @@ export async function POST(request: NextRequest) {
     if (existingProfile?.stripe_customer_id) {
       customerId = existingProfile.stripe_customer_id
     } else {
-  // Create new Stripe customer
-  const customer = await stripe.customers.create({
+      // Create new Stripe customer
+      const customer = await stripe.customers.create({
         email: userEmail,
         name: userName,
         metadata: {
@@ -53,7 +47,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Create Stripe Checkout Session
-  const session = await stripe.checkout.sessions.create({
+    const session = await stripe.checkout.sessions.create({
       customer: customerId,
       payment_method_types: ['card'],
       mode: 'subscription',

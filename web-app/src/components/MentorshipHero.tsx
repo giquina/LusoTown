@@ -157,7 +157,7 @@ export default function MentorshipHero() {
                   <div className="text-gray-700 font-medium">{t('mentorship.hero.stats.mentors', 'Active Mentors')}</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-black text-accent-600 mb-2">500+</div>
+                  <div className="text-3xl font-black text-accent-600 mb-2">750+</div>
                   <div className="text-gray-700 font-medium">{t('mentorship.hero.stats.connections', 'Successful Matches')}</div>
                 </div>
                 <div className="text-center">

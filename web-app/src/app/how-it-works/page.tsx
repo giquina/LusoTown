@@ -81,7 +81,7 @@ export default function HowItWorks() {
                 How Real-Life <span className="gradient-text">Meetups</span> Work
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Join 500+ Portuguese speakers meeting in real places across London & UK
+                Join 750+ Portuguese speakers meeting in real places across London & UK
               </p>
               
               <div className="bg-white rounded-2xl p-6 shadow-lg max-w-2xl mx-auto">

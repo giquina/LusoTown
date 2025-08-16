@@ -78,7 +78,7 @@ const sampleListings: HousingListing[] = [
     contactInfo: '+44 7700 000003',
     postedBy: 'António Costa',
     postedDate: '2025-01-10',
-    features: ['Family-friendly', 'Near Portuguese school', 'Balcony', 'Parking space', 'Portuguese neighbors'],
+    features: ['Well-connected area', 'Near Portuguese community center', 'Balcony', 'Parking space', 'Portuguese neighbors'],
     available: true
   }
 ]
@@ -166,7 +166,7 @@ export default function HousingAssistancePage() {
             >
               <div className="grid grid-cols-2 gap-6 text-center">
                 <div>
-                  <div className="text-2xl font-bold text-primary-600">268,000</div>
+                  <div className="text-2xl font-bold text-primary-600">750+</div>
                   <div className="text-sm text-gray-600">
                     {isPortuguese ? 'Falantes de Português em Londres' : 'Portuguese Speakers in London'}
                   </div>

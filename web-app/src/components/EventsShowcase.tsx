@@ -163,8 +163,8 @@ const upcomingEvents = [
 ]
 
 const eventStats = [
-  { number: "40+", label: "Monthly Portuguese Events", icon: <CalendarDaysIcon className="w-5 h-5" /> },
-  { number: "500+", label: "Portuguese Speakers", icon: <UsersIcon className="w-5 h-5" /> },
+  { number: "150+", label: "Monthly Experiences", icon: <CalendarDaysIcon className="w-5 h-5" /> },
+  { number: "750+", label: "Portuguese Speakers", icon: <UsersIcon className="w-5 h-5" /> },
   { number: "96%", label: "Cultural Satisfaction", icon: <HeartIcon className="w-5 h-5" /> },
   { number: "15+", label: "UK Cities", icon: <MapPinIcon className="w-5 h-5" /> }
 ]

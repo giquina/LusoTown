@@ -34,7 +34,7 @@ export default function HowItWorks() {
       number: 1,
       title: 'Join Portuguese Community',
       subtitle: 'Junta-te à Comunidade Portuguesa',
-      description: 'Connect with 500+ Portuguese speakers across London. From professionals to families - find your community.',
+      description: 'Connect with 750+ Portuguese speakers across London. From professionals to community members - find your network.',
       icon: UserPlus,
       color: 'from-secondary-500 to-secondary-600',
       bgColor: 'from-secondary-50 to-secondary-100',

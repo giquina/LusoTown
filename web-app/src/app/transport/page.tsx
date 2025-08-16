@@ -22,7 +22,7 @@ const serviceTiers = [
     namePortuguese: 'Segurança Premium',
     price: 75,
     originalPrice: 85,
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/premium-security-service_dlqxkx.jpg',
     imageAlt: 'Professional security service with professional vehicle at London landmark',
     imageAltPortuguese: 'Serviço de segurança profissional com veículo profissional em marco de Londres',
     membershipDiscounts: {
@@ -63,7 +63,7 @@ const serviceTiers = [
     namePortuguese: 'Experiência VIP de Londres',
     price: 95,
     originalPrice: 110,
-    image: 'https://images.unsplash.com/photo-1520637836862-4d197d17c93a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535201/vip-london-bridge_hml2nr.jpg',
     imageAlt: 'VIP London experience with Tower Bridge and professional service',
     imageAltPortuguese: 'Experiência VIP de Londres com Tower Bridge e serviço profissional',
     membershipDiscounts: {
@@ -106,7 +106,7 @@ const serviceTiers = [
     namePortuguese: 'Proteção Elite',
     price: 140,
     originalPrice: 160,
-    image: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535202/elite-protection-service_dqmxvr.jpg',
     imageAlt: 'Elite protection service with professional vehicle in London',
     imageAltPortuguese: 'Serviço de proteção elite com veículo profissional em Londres',
     membershipDiscounts: {
@@ -157,7 +157,7 @@ const londonTourismExperiences = [
     price: 320,
     originalPrice: 350,
     duration: '4 hours',
-    image: 'https://images.unsplash.com/photo-1533929736458-ca588d08c8be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535203/big-ben-westminster_zlkd5m.jpg',
     imageAlt: 'Big Ben and Westminster Bridge - Classic London landmarks',
     imageAltPortuguese: 'Big Ben e Westminster Bridge - Marcos clássicos de Londres',
     membershipDiscounts: {
@@ -194,7 +194,7 @@ const londonTourismExperiences = [
     price: 380,
     originalPrice: 420,
     duration: '6 hours',
-    image: 'https://images.unsplash.com/photo-1529655683826-3c8974dac6d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535204/buckingham-palace_xnr8wp.jpg',
     imageAlt: 'Buckingham Palace with royal guards - Royal London experience',
     imageAltPortuguese: 'Palácio de Buckingham com guardas reais - Experiência real de Londres',
     membershipDiscounts: {
@@ -231,7 +231,7 @@ const londonTourismExperiences = [
     price: 450,
     originalPrice: 495,
     duration: '6 hours',
-    image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535205/the-shard-london_kqe9xr.jpg',
     imageAlt: 'The Shard and modern London skyline with Thames river',
     imageAltPortuguese: 'The Shard e skyline moderno de Londres com rio Tâmisa',
     membershipDiscounts: {
@@ -268,7 +268,7 @@ const londonTourismExperiences = [
     price: 520,
     originalPrice: 580,
     duration: '8 hours',
-    image: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535206/covent-garden_dxh3qm.jpg',
     imageAlt: 'Covent Garden market and shopping area in London',
     imageAltPortuguese: 'Mercado de Covent Garden e área de compras em Londres',
     membershipDiscounts: {
@@ -329,6 +329,9 @@ const multiDayPackages = [
     price: 580,
     originalPrice: 650,
     duration: '8 hours',
+    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535207/tower-bridge-sunset_kml8pr.jpg',
+    imageAlt: 'Tower Bridge at sunset - Complete London exploration',
+    imageAltPortuguese: 'Tower Bridge ao pôr do sol - Exploração completa de Londres',
     membershipDiscounts: {
       visitor: 0,
       family: 12, // £510.40
@@ -364,11 +367,14 @@ const multiDayPackages = [
   },
   {
     id: 'family-london-adventure',
-    name: 'Family-Friendly London Adventure',
-    namePortuguese: 'Aventura de Londres para Famílias',
+    name: 'Complete London Adventure',
+    namePortuguese: 'Aventura Completa de Londres',
     price: 420,
     originalPrice: 470,
     duration: '5 hours',
+    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535209/london-attractions-collage_dxh4mn.jpg',
+    imageAlt: 'London family attractions - Adventure and cultural activities',
+    imageAltPortuguese: 'Atrações familiares de Londres - Aventura e atividades culturais',
     membershipDiscounts: {
       visitor: 0,
       family: 20, // £336
@@ -376,11 +382,11 @@ const multiDayPackages = [
     },
     minimumGuests: 2,
     maximumGuests: 10,
-    description: 'London experience designed for families with children, including interactive attractions, child-friendly venues, and educational activities',
-    descriptionPortuguese: 'Experiência de Londres desenhada para famílias com crianças, incluindo atrações interativas, locais adequados para crianças e atividades educacionais',
-    category: 'family',
-    priceIncludes: ['Family-Specialized Driver', 'Child-Friendly London Guide', 'Family Meal', 'Interactive Activities', 'Educational Materials'],
-    targetAudience: 'families_with_children'
+    description: 'Comprehensive London experience including interactive attractions, cultural venues, and educational activities for Portuguese speakers',
+    descriptionPortuguese: 'Experiência abrangente de Londres incluindo atrações interativas, locais culturais e atividades educacionais para lusófonos',
+    category: 'cultural',
+    priceIncludes: ['Specialized Driver', 'Portuguese-Speaking London Guide', 'Traditional Meal', 'Interactive Activities', 'Educational Materials'],
+    targetAudience: 'adults_and_professionals'
   }
 ]
 
@@ -545,7 +551,7 @@ export default function TransportPage() {
       
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-secondary-50 via-white to-accent-50 pt-20">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535205/the-shard-london_kqe9xr.jpg')] bg-cover bg-center opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-secondary-900/10 via-transparent to-accent-900/10"></div>
         <div className="relative container-width py-16 lg:py-24">
           <div className="text-center max-w-4xl mx-auto">
@@ -977,7 +983,7 @@ export default function TransportPage() {
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 {isPortuguese ? 'Especialistas em Turismo de Londres' : 'London Tourism Specialists'}
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-6 flex-1">
                 {isPortuguese 
                   ? 'Guias profissionais com conhecimento profundo da história de Londres, atrações principais e experiências premium, oferecendo tours em português fluente.'
                   : 'Professional guides with deep knowledge of London\'s history, top attractions, and premium experiences, offering tours in fluent Portuguese.'
@@ -1104,56 +1110,56 @@ export default function TransportPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {[
               {
-                src: 'https://images.unsplash.com/photo-1533929736458-ca588d08c8be?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+                src: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535203/big-ben-westminster_zlkd5m.jpg',
                 alt: 'Big Ben and Westminster',
                 altPt: 'Big Ben e Westminster',
                 title: 'Westminster & Big Ben',
                 titlePt: 'Westminster e Big Ben'
               },
               {
-                src: 'https://images.unsplash.com/photo-1529655683826-3c8974dac6d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+                src: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535204/buckingham-palace_xnr8wp.jpg',
                 alt: 'Buckingham Palace',
                 altPt: 'Palácio de Buckingham',
                 title: 'Buckingham Palace',
                 titlePt: 'Palácio de Buckingham'
               },
               {
-                src: 'https://images.unsplash.com/photo-1520637836862-4d197d17c93a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+                src: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535201/vip-london-bridge_hml2nr.jpg',
                 alt: 'Tower Bridge',
                 altPt: 'Tower Bridge',
                 title: 'Tower Bridge',
                 titlePt: 'Tower Bridge'
               },
               {
-                src: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+                src: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535205/the-shard-london_kqe9xr.jpg',
                 alt: 'The Shard',
                 altPt: 'The Shard',
                 title: 'The Shard',
                 titlePt: 'The Shard'
               },
               {
-                src: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+                src: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535206/covent-garden_dxh3qm.jpg',
                 alt: 'Covent Garden',
                 altPt: 'Covent Garden',
                 title: 'Covent Garden',
                 titlePt: 'Covent Garden'
               },
               {
-                src: 'https://images.unsplash.com/photo-1529655683826-3c8974dac6d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+                src: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535204/buckingham-palace_xnr8wp.jpg',
                 alt: 'London Eye',
                 altPt: 'London Eye',
                 title: 'London Eye',
                 titlePt: 'London Eye'
               },
               {
-                src: 'https://images.unsplash.com/photo-1464207687429-7505649dae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+                src: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535207/tower-of-london_kmlr5p.jpg',
                 alt: 'Tower of London',
                 altPt: 'Torre de Londres',
                 title: 'Tower of London',
                 titlePt: 'Torre de Londres'
               },
               {
-                src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+                src: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535208/st-pauls-cathedral_r9nxhw.jpg',
                 alt: 'St Paul\'s Cathedral',
                 altPt: 'Catedral de St. Paul',
                 title: 'St Paul\'s Cathedral',
@@ -1557,9 +1563,9 @@ export default function TransportPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 flex flex-col h-full"
                 >
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-1">
                     <div className="text-center mb-4">
                       <div className="text-2xl font-bold text-premium-600 mb-1">
                         {typeof pkg.price === 'number' ? `${isPortuguese ? 'a partir de' : 'from'} £${pkg.price}` : pkg.price}
@@ -1570,13 +1576,13 @@ export default function TransportPage() {
                       </h3>
                     </div>
                     
-                    <p className="text-gray-600 text-sm mb-6 leading-relaxed">
+                    <p className="text-gray-600 text-sm mb-6 leading-relaxed flex-1">
                       {isPortuguese ? pkg.descriptionPortuguese : pkg.description}
                     </p>
                     
                     <button
                       onClick={() => handleBookService(pkg.id)}
-                      className="w-full bg-premium-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-premium-700 transition-colors text-sm"
+                      className="w-full bg-premium-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-premium-700 transition-colors text-sm mt-auto"
                     >
                       {isPortuguese ? 'Reservar' : 'Book Package'}
                     </button>
@@ -1599,9 +1605,9 @@ export default function TransportPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow"
+                  className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow flex flex-col h-full"
                 >
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-1">
                     <div className="flex justify-between items-start mb-4">
                       <h3 className="text-xl font-semibold text-gray-900">
                         {isPortuguese ? pkg.namePortuguese : pkg.name}
@@ -1620,7 +1626,7 @@ export default function TransportPage() {
                     
                     <button
                       onClick={() => handleBookService(pkg.id)}
-                      className="w-full bg-primary-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors"
+                      className="w-full bg-primary-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors mt-auto"
                     >
                       {isPortuguese ? 'Reservar Serviço' : 'Book Service'}
                     </button>

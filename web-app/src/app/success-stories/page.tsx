@@ -207,7 +207,7 @@ export default function SuccessStories() {
   ]
 
   const impactStats: ImpactStat[] = [
-    { label: "Portuguese Friendships Formed", value: "500+", icon: HeartIcon },
+    { label: "Portuguese Friendships Formed", value: "750+", icon: HeartIcon },
     { label: "Cultural Communities Created", value: "85+", icon: UserGroupIcon },
     { label: "Portuguese Business Partnerships", value: "42+", icon: TrophyIcon },
     { label: "Portuguese Speakers Connected", value: "1,200+", icon: SparklesIcon }
