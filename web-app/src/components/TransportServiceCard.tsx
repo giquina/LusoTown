@@ -77,14 +77,14 @@ export default function TransportServiceCard({
       viewport={{ once: true }}
       className={`relative bg-white/90 backdrop-blur-lg rounded-3xl shadow-2xl border-2 ${
         tier.popular ? 'border-premium-300 shadow-3xl scale-105' : colors.border
-      } overflow-hidden hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 group`}
+      } overflow-hidden hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 group h-[700px] flex flex-col`}
     >
       {/* Popular Badge */}
       {tier.popular && (
-        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20">
-          <div className="bg-gradient-to-r from-premium-600 to-premium-700 text-white px-4 py-2 rounded-full text-xs sm:text-sm font-bold shadow-xl whitespace-nowrap">
-            <div className="flex items-center space-x-1">
-              <StarIcon className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
+          <div className="bg-gradient-to-r from-premium-600 to-premium-700 text-white px-6 py-3 rounded-full text-sm font-bold shadow-xl whitespace-nowrap border-2 border-white">
+            <div className="flex items-center justify-center space-x-2">
+              <StarIcon className="w-4 h-4 flex-shrink-0" />
               <span>{isPortuguese ? 'Mais Popular' : 'Most Popular'}</span>
             </div>
           </div>
@@ -119,7 +119,7 @@ export default function TransportServiceCard({
       </div>
 
       {/* Features */}
-      <div className="px-6 py-8">
+      <div className="px-6 py-8 flex-1">
         <ul className="space-y-4">
           {(isPortuguese ? tier.featuresPortuguese : tier.features).map((feature, featureIndex) => (
             <li key={featureIndex} className="flex items-start">
@@ -131,12 +131,12 @@ export default function TransportServiceCard({
       </div>
 
       {/* Footer */}
-      <div className="px-6 pb-8">
+      <div className="mt-auto px-6 pb-8">
         <button
           onClick={onBookNow}
           className={`w-full ${colors.button} text-white py-4 px-6 rounded-2xl font-bold transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1`}
         >
-          {isPortuguese ? 'Reservar Agora' : 'Book Now'}
+          {isPortuguese ? 'Reservar' : 'Book Now'}
         </button>
         
         {/* Security Level Indicator */}

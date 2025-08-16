@@ -15,6 +15,9 @@
 /features-demo
 /community-guidelines
 /feed
+/subscription/cancelled
+/subscription
+/subscription/success
 /profile/[id]
 /profile/edit
 
@@ -41,14 +44,18 @@
 /success-stories
 /demo
 /social-networks
+/auth-popup-demo
 /dashboard
 /chauffeur
 /host
+/housing-assistance
 /login
+/mentorship
 /careers
 /forums/create-topic
 /forums
 /forums/topic/[id]
 /business-directory
+/neighborhood-groups
 /help
 /transport

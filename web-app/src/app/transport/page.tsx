@@ -31,11 +31,12 @@ const serviceTiers = [
       ambassador: 10
     },
     minimumHours: 3,
-    description: 'Enhanced security with SIA-licensed protection officer for London-based operations',
-    descriptionPortuguese: 'Segurança melhorada com oficial de proteção licenciado SIA para operações baseadas em Londres',
+    description: 'Enhanced security with licensed protection officer for London-based operations',
+    descriptionPortuguese: 'Segurança melhorada com oficial de proteção licenciado para operações baseadas em Londres',
+    popular: true,
     features: [
       'Portuguese-speaking driver and security officer',
-      'SIA-licensed trained security officer',
+      'Licensed trained security officer',
       'Pre-trip threat assessment for London areas',
       'Discreet close protection throughout London',
       'Emergency response protocols',
@@ -45,7 +46,7 @@ const serviceTiers = [
     ],
     featuresPortuguese: [
       'Motorista e oficial de segurança falantes de português',
-      'Oficial de segurança treinado licenciado SIA',
+      'Oficial de segurança treinado licenciado',
       'Avaliação de ameaças pré-viagem para áreas de Londres',
       'Proteção próxima discreta por toda Londres',
       'Protocolos de resposta de emergência',
@@ -920,7 +921,7 @@ export default function TransportPage() {
                 onClick={() => setShowSIABookingFlow(true)}
                 className="bg-gradient-to-r from-accent-500 to-coral-500 text-white px-8 py-4 rounded-xl font-bold hover:from-accent-600 hover:to-coral-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
               >
-                {isPortuguese ? 'Iniciar Questionário SIA' : 'Start SIA Questionnaire'}
+                {isPortuguese ? 'Verificar Serviços' : 'Check Services'}
               </button>
             </motion.div>
           </div>

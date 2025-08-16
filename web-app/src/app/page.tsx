@@ -101,13 +101,13 @@ export default function Home() {
                     <div className="w-2 h-2 bg-secondary-400 rounded-full animate-pulse"></div>
                   </div>
                   
-                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-8 leading-tight">
+                  <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-8 leading-tight">
                     {t('what-you-can-do.title')}
                   </h2>
-                  <p className="text-xl sm:text-2xl text-gray-700 mb-6 font-medium max-w-5xl mx-auto leading-relaxed">
+                  <p className="text-xl sm:text-2xl lg:text-3xl text-gray-700 mb-6 font-medium max-w-6xl mx-auto leading-relaxed">
                     {t('what-you-can-do.subtitle')}
                   </p>
-                  <blockquote className="text-lg text-gray-600 italic max-w-4xl mx-auto font-medium">
+                  <blockquote className="text-lg sm:text-xl lg:text-2xl text-gray-600 italic max-w-5xl mx-auto font-medium">
                     {t('what-you-can-do.testimonial')}
                   </blockquote>
                 </div>
@@ -123,18 +123,18 @@ export default function Home() {
                         <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
                           <ChatBubbleLeftRightIcon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
                         </div>
-                        <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3 lg:mb-4 group-hover:text-secondary-600 transition-colors duration-300">
+                        <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 group-hover:text-secondary-600 transition-colors duration-300">
                           {t('what-you-can-do.events.title')}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-sm break-words">
+                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-base lg:text-lg break-words">
                           {t('what-you-can-do.events.description')}
                         </p>
-                        <div className="text-xs text-gray-500 mb-3 lg:mb-4 font-medium break-words">
+                        <div className="text-sm lg:text-base text-gray-500 mb-3 lg:mb-4 font-medium break-words">
                           {t('what-you-can-do.events.locations')}
                         </div>
                         <a 
                           href="/events" 
-                          className="inline-flex items-center gap-2 text-secondary-600 font-semibold hover:text-secondary-700 transition-colors group-hover:gap-3 duration-300 text-sm"
+                          className="inline-flex items-center gap-2 text-secondary-600 font-semibold hover:text-secondary-700 transition-colors group-hover:gap-3 duration-300 text-base lg:text-lg"
                         >
                           {t('what-you-can-do.events.cta')}
                           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -152,18 +152,18 @@ export default function Home() {
                         <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-accent-500 to-coral-500 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
                           <UserGroupIcon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
                         </div>
-                        <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3 lg:mb-4 group-hover:text-accent-600 transition-colors duration-300">
+                        <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 group-hover:text-accent-600 transition-colors duration-300">
                           {t('what-you-can-do.groups.title')}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-sm break-words">
+                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-base lg:text-lg break-words">
                           {t('what-you-can-do.groups.description')}
                         </p>
-                        <div className="text-xs text-gray-500 mb-3 lg:mb-4 font-medium break-words">
+                        <div className="text-sm lg:text-base text-gray-500 mb-3 lg:mb-4 font-medium break-words">
                           {t('what-you-can-do.groups.examples')}
                         </div>
                         <a 
                           href="/groups/create" 
-                          className="inline-flex items-center gap-2 text-accent-600 font-semibold hover:text-accent-700 transition-colors group-hover:gap-3 duration-300 text-sm"
+                          className="inline-flex items-center gap-2 text-accent-600 font-semibold hover:text-accent-700 transition-colors group-hover:gap-3 duration-300 text-base lg:text-lg"
                         >
                           {t('what-you-can-do.groups.cta')}
                           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -181,18 +181,18 @@ export default function Home() {
                         <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-coral-500 to-action-500 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
                           <RssIcon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
                         </div>
-                        <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3 lg:mb-4 group-hover:text-coral-500 transition-colors duration-300">
+                        <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 group-hover:text-coral-500 transition-colors duration-300">
                           {t('what-you-can-do.feed.title')}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-sm break-words">
+                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-base lg:text-lg break-words">
                           {t('what-you-can-do.feed.description')}
                         </p>
-                        <div className="text-xs text-gray-500 mb-3 lg:mb-4 font-medium break-words">
+                        <div className="text-sm lg:text-base text-gray-500 mb-3 lg:mb-4 font-medium break-words">
                           {t('what-you-can-do.feed.features')}
                         </div>
                         <a 
                           href="/feed" 
-                          className="inline-flex items-center gap-2 text-coral-500 font-semibold hover:text-coral-600 transition-colors group-hover:gap-3 duration-300 text-sm"
+                          className="inline-flex items-center gap-2 text-coral-500 font-semibold hover:text-coral-600 transition-colors group-hover:gap-3 duration-300 text-base lg:text-lg"
                         >
                           {t('what-you-can-do.feed.cta')}
                           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -210,18 +210,18 @@ export default function Home() {
                         <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-action-500 to-premium-500 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
                           <BookmarkIcon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
                         </div>
-                        <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3 lg:mb-4 group-hover:text-action-600 transition-colors duration-300">
+                        <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 group-hover:text-action-600 transition-colors duration-300">
                           {t('what-you-can-do.favorites.title')}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-sm break-words">
+                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-base lg:text-lg break-words">
                           {t('what-you-can-do.favorites.description')}
                         </p>
-                        <div className="text-xs text-gray-500 mb-3 lg:mb-4 font-medium break-words">
+                        <div className="text-sm lg:text-base text-gray-500 mb-3 lg:mb-4 font-medium break-words">
                           {t('what-you-can-do.favorites.types')}
                         </div>
                         <a 
                           href="/saved" 
-                          className="inline-flex items-center gap-2 text-action-600 font-semibold hover:text-action-700 transition-colors group-hover:gap-3 duration-300 text-sm"
+                          className="inline-flex items-center gap-2 text-action-600 font-semibold hover:text-action-700 transition-colors group-hover:gap-3 duration-300 text-base lg:text-lg"
                         >
                           {t('what-you-can-do.favorites.cta')}
                           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -239,18 +239,18 @@ export default function Home() {
                         <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-premium-500 to-coral-500 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
                           <AcademicCapIcon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
                         </div>
-                        <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3 lg:mb-4 group-hover:text-premium-600 transition-colors duration-300">
+                        <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 group-hover:text-premium-600 transition-colors duration-300">
                           {t('what-you-can-do.host.title')}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-sm break-words">
+                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-base lg:text-lg break-words">
                           {t('what-you-can-do.host.description')}
                         </p>
-                        <div className="text-xs text-gray-500 mb-3 lg:mb-4 font-medium break-words">
+                        <div className="text-sm lg:text-base text-gray-500 mb-3 lg:mb-4 font-medium break-words">
                           {t('what-you-can-do.host.examples')}
                         </div>
                         <a 
                           href="/host" 
-                          className="inline-flex items-center gap-2 text-premium-600 font-semibold hover:text-premium-700 transition-colors group-hover:gap-3 duration-300 text-sm"
+                          className="inline-flex items-center gap-2 text-premium-600 font-semibold hover:text-premium-700 transition-colors group-hover:gap-3 duration-300 text-base lg:text-lg"
                         >
                           {t('what-you-can-do.host.cta')}
                           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

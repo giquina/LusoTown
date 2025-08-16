@@ -5,10 +5,19 @@ web-app/src
 │   ├── admin
 │   │   └── page.tsx
 │   ├── api
+│   │   ├── cancel-subscription
+│   │   │   └── route.ts
+│   │   ├── create-subscription
+│   │   │   └── route.ts
 │   │   ├── favorites
 │   │   │   └── route.ts
-│   │   └── feed
-│   │       └── route.ts
+│   │   ├── feed
+│   │   │   └── route.ts
+│   │   └── webhook
+│   │       └── stripe
+│   │           └── route.ts
+│   ├── auth-popup-demo
+│   │   └── page.tsx
 │   ├── business-directory
 │   │   └── page.tsx
 │   ├── business-networking
@@ -74,6 +83,8 @@ web-app/src
 │   │   └── page.tsx
 │   ├── host
 │   │   └── page.tsx
+│   ├── housing-assistance
+│   │   └── page.tsx
 │   ├── how-it-works
 │   │   └── page.tsx
 │   ├── instituto-camoes
@@ -81,7 +92,11 @@ web-app/src
 │   ├── layout.tsx
 │   ├── login
 │   │   └── page.tsx
+│   ├── mentorship
+│   │   └── page.tsx
 │   ├── my-network
+│   │   └── page.tsx
+│   ├── neighborhood-groups
 │   │   └── page.tsx
 │   ├── page.tsx
 │   ├── partnerships
@@ -115,6 +130,12 @@ web-app/src
 │   │       └── page.tsx
 │   ├── social-networks
 │   │   └── page.tsx
+│   ├── subscription
+│   │   ├── cancelled
+│   │   │   └── page.tsx
+│   │   ├── page.tsx
+│   │   └── success
+│   │       └── page.tsx
 │   ├── success-stories
 │   │   └── page.tsx
 │   ├── terms
@@ -125,6 +146,11 @@ web-app/src
 │   ├── AboutLusoTown.tsx
 │   ├── AppDownloadSection.tsx
 │   ├── AuthenticEvents.tsx
+│   ├── AuthIntentHandler.tsx
+│   ├── AuthPopupDemo.tsx
+│   ├── AuthPopupProvider.tsx
+│   ├── AUTH_POPUP_SYSTEM.md
+│   ├── AuthPopup.tsx
 │   ├── AutoPostDemo.tsx
 │   ├── BusinessCard.tsx
 │   ├── CartButton.tsx
@@ -133,10 +159,8 @@ web-app/src
 │   ├── CaseStudies.tsx
 │   ├── CategoryBadge.tsx
 │   ├── CategoryFilter.tsx
-│   ├── ChauffeurBookingForm.tsx
-│   ├── ChauffeurServiceCard.tsx
-│   ├── ChauffeurTestimonials.tsx
 │   ├── CloudinaryImage.tsx
+│   ├── ComplianceStepIndicator.tsx
 │   ├── ConnectionCard.tsx
 │   ├── ConnectionFilters.tsx
 │   ├── ConnectionNotificationBanner.tsx
@@ -147,6 +171,7 @@ web-app/src
 │   ├── CustomToursSection.tsx
 │   ├── DESIGN_SYSTEM_GUIDE.md
 │   ├── DiverseSuccessStories.tsx
+│   ├── EasySIAQuestionnaire.tsx
 │   ├── ErrorBoundary.tsx
 │   ├── EventCard.tsx
 │   ├── EventCard.tsx.backup
@@ -175,6 +200,7 @@ web-app/src
 │   ├── GroupsShowcase.tsx
 │   ├── Hashtag.tsx
 │   ├── Header.tsx
+│   ├── Header.tsx.backup
 │   ├── Hero.tsx
 │   ├── HostWithUsSection.tsx
 │   ├── HowConnectionsWork.tsx
@@ -187,6 +213,8 @@ web-app/src
 │   ├── LiveUpdateIndicator.tsx
 │   ├── Logo.tsx
 │   ├── LondonTourRoutes.tsx
+│   ├── MentorshipHero.tsx
+│   ├── MentorshipProgramsSection.tsx
 │   ├── NetworkAnalytics.tsx
 │   ├── NetworkBadges.tsx
 │   ├── NetworkHeader.tsx
@@ -194,8 +222,6 @@ web-app/src
 │   ├── NetworkPreview.tsx
 │   ├── OfficialPartnershipBadge.tsx
 │   ├── OfficialRecognitionFramework.tsx
-│   ├── OptimizedChauffeurPage.tsx
-│   ├── OptimizedChauffeurServiceCard.tsx
 │   ├── OptimizedTransportPage.tsx
 │   ├── OptimizedTransportServiceCard.tsx
 │   ├── PersonalizedFeed.tsx
@@ -215,18 +241,28 @@ web-app/src
 │   │   ├── ProfilePhotoManager.tsx
 │   │   ├── ProfilePrivacy.tsx
 │   │   └── ProfileVerification.tsx
+│   ├── ProgressTracker.tsx
+│   ├── QuestionExplainer.tsx
 │   ├── ReactionButton.tsx
 │   ├── ReviewAnalytics.tsx
+│   ├── RiskAssessmentForm.tsx
 │   ├── SavedItemsButton.tsx
 │   ├── SaveFavoriteCartButton.tsx
 │   ├── SearchBar.tsx
 │   ├── SEOHead.tsx
+│   ├── SIAAdminDashboard.tsx
+│   ├── SIABadge.tsx
+│   ├── SIABookingConfirmation.tsx
+│   ├── SIAComplianceQuestionnaire.tsx
 │   ├── SocialLoginButton.tsx
 │   ├── SocialLogin.tsx
 │   ├── SortingControls.tsx
+│   ├── StepIndicator.tsx
+│   ├── SubscriptionGate.tsx
 │   ├── SuccessStories.tsx
 │   ├── TestimonialsNew.tsx
 │   ├── TestimonialsNew.tsx.backup
+│   ├── TransportBookingFlow.tsx
 │   ├── TransportBookingForm.tsx
 │   ├── TransportServiceCard.tsx
 │   ├── TransportTestimonials.tsx
@@ -238,7 +274,11 @@ web-app/src
 │   ├── FavoritesContext.tsx
 │   ├── FollowingContext.tsx
 │   ├── LanguageContext.tsx
-│   └── NetworkingContext.tsx
+│   ├── NetworkingContext.tsx
+│   └── SubscriptionContext.tsx
+├── hooks
+│   ├── useAuthIntentRestore.ts
+│   └── useAuthRequired.ts
 ├── i18n
 │   ├── en.json
 │   ├── index.ts
@@ -247,10 +287,6 @@ web-app/src
     ├── auth.ts
     ├── businessDirectory.ts
     ├── business-events-london.ts
-    ├── chauffeurBooking.ts
-    ├── chauffeurCache.ts
-    ├── chauffeurPricing.ts
-    ├── chauffeurServices.ts
     ├── cloudinary.ts
     ├── connections.ts
     ├── dateUtils.ts
@@ -272,9 +308,10 @@ web-app/src
     ├── seo.ts
     ├── socialNetworks.ts
     ├── supabase.ts
+    ├── testimonialMixer.ts
     ├── transportBooking.ts
     ├── transportCache.ts
     ├── transportPricing.ts
     └── transportServices.ts
 
-68 directories, 210 files
+80 directories, 235 files

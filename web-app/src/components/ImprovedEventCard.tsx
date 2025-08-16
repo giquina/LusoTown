@@ -289,12 +289,12 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
           
           {/* CTA button - always at bottom */}
           <div className="mt-auto">
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 gap-3">
               <a
                 href={`/events/${event.id}`}
-                className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-2 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-sm"
+                className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-3 px-3 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-xs leading-tight"
               >
-                {isFull ? (isPortuguese ? 'Lista' : 'Waitlist') : (isPortuguese ? 'Ver Detalhes' : 'View Details')}
+                {isFull ? (isPortuguese ? 'Lista' : 'Waitlist') : (isPortuguese ? 'Ver Mais' : 'View More')}
               </a>
               <SaveFavoriteCartButton
                 itemId={event.id}
