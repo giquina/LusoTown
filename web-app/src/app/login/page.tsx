@@ -122,7 +122,7 @@ export default function Login() {
       <Header />
       <div className="pt-16">
         <section className="py-8 bg-gradient-to-br from-primary-50 via-white to-secondary-50 min-h-screen">
-          <div className="container-width px-4 sm:px-6 lg:px-8 w-full">
+          <div className="container-width w-full">
             
             {/* Centered Login Layout */}
             <div className="max-w-md mx-auto">

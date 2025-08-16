@@ -118,7 +118,7 @@ export default function CaseStudiesPage() {
         <div className="pt-16">
           {/* Hero Section */}
           <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
-            <div className="container-width px-4 sm:px-6 lg:px-8">
+            <div className="container-width">
               <div className="max-w-4xl mx-auto text-center">
                 <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-6 py-3 text-sm font-medium text-primary-600 mb-6">
                   <SparklesIcon className="w-5 h-5 mr-2" />
@@ -138,7 +138,7 @@ export default function CaseStudiesPage() {
 
           {/* Portuguese Community Impact Stats */}
           <section className="py-16 bg-white">
-            <div className="container-width px-4 sm:px-6 lg:px-8">
+            <div className="container-width">
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-2xl font-bold text-center text-gray-900 mb-12">
                   Portuguese Community Impact in London
@@ -186,7 +186,7 @@ export default function CaseStudiesPage() {
 
           {/* Why These Stories Matter */}
           <section className="py-20 bg-gradient-to-br from-secondary-50 to-accent-50">
-            <div className="container-width px-4 sm:px-6 lg:px-8">
+            <div className="container-width">
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
                   Why These Stories Matter
@@ -235,7 +235,7 @@ export default function CaseStudiesPage() {
 
           {/* How to Write Your Own Story */}
           <section className="py-20 bg-white">
-            <div className="container-width px-4 sm:px-6 lg:px-8">
+            <div className="container-width">
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl font-bold text-gray-900 mb-8">
                   How to Write Your Own Portuguese Story in London
@@ -311,7 +311,7 @@ export default function CaseStudiesPage() {
 
           {/* Newsletter Signup */}
           <section className="py-16 bg-gray-50">
-            <div className="container-width px-4 sm:px-6 lg:px-8">
+            <div className="container-width">
               <div className="max-w-2xl mx-auto text-center">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
                   Get More Portuguese Community Stories

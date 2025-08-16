@@ -64,7 +64,7 @@ export default function Contact() {
       <Header />
       <div className="pt-16">
         <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
                 <motion.div 

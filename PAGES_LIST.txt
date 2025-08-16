@@ -43,6 +43,7 @@
 /social-networks
 /dashboard
 /chauffeur
+/host
 /login
 /careers
 /forums/create-topic
@@ -50,3 +51,4 @@
 /forums/topic/[id]
 /business-directory
 /help
+/transport

@@ -197,7 +197,7 @@ export default function HelpCenter() {
       <div className="pt-16">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-primary-600 mb-6">
                 <QuestionMarkCircleIcon className="w-4 h-4 mr-2" />
@@ -216,7 +216,7 @@ export default function HelpCenter() {
 
         {/* Search Section */}
         <section className="py-12 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-2xl mx-auto">
               <div className="relative">
                 <input
@@ -237,7 +237,7 @@ export default function HelpCenter() {
 
         {/* Quick Support Options */}
         <section className="py-16 bg-gray-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
                 Get Help Fast
@@ -296,7 +296,7 @@ export default function HelpCenter() {
 
         {/* FAQ Sections */}
         <section className="py-20 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
                 Frequently Asked Questions
@@ -337,7 +337,7 @@ export default function HelpCenter() {
 
         {/* Emergency and Safety Information */}
         <section className="py-16 bg-red-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto">
               <div className="bg-white border border-red-200 rounded-2xl p-8">
                 <h2 className="text-2xl font-bold text-red-800 mb-6 flex items-center">
@@ -381,7 +381,7 @@ export default function HelpCenter() {
 
         {/* Additional Resources */}
         <section className="py-16 bg-gray-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
                 Additional Resources
@@ -427,7 +427,7 @@ export default function HelpCenter() {
 
         {/* Contact CTA */}
         <section className="py-16 bg-gradient-to-r from-primary-500 to-secondary-500 text-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl font-bold mb-6">
                 Still Need Help?

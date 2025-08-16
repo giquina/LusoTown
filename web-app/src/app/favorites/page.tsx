@@ -115,7 +115,7 @@ export default function FavoritesPage() {
       <div className="pt-16">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
                 My <span className="gradient-text">Favorites</span>
@@ -175,7 +175,7 @@ export default function FavoritesPage() {
 
         {/* Favorites List */}
         <section className="py-12 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-6xl mx-auto">
               {filteredFavorites.length === 0 ? (
                 <div className="text-center py-16">

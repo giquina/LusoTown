@@ -42,7 +42,7 @@ export default function FeaturesDemo() {
       <div className="pt-16">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
                 LusoTown <span className="gradient-text">Features</span> Demo
@@ -71,7 +71,7 @@ export default function FeaturesDemo() {
 
         {/* Features Showcase */}
         <section className="py-20 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
@@ -133,7 +133,7 @@ export default function FeaturesDemo() {
 
         {/* Benefits Section */}
         <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                 Why <span className="gradient-text">LusoTown</span> Features Matter
@@ -179,7 +179,7 @@ export default function FeaturesDemo() {
 
         {/* Call to Action */}
         <section className="py-20 bg-gradient-to-br from-primary-500 to-secondary-500 text-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl sm:text-4xl font-bold mb-6">
                 Ready to Join the <span className="bg-white text-transparent bg-clip-text">LusoTown</span> Community?

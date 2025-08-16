@@ -455,7 +455,7 @@ export default function EventDetailsPage() {
 
         {/* Event Details */}
         <section className="py-12">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="grid lg:grid-cols-3 gap-12">
               {/* Main Content */}
               <div className="lg:col-span-2 space-y-8">

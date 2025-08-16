@@ -236,7 +236,7 @@ export default function CommunityFeed() {
       <main className="pt-16">
         {/* Enhanced Hero Section */}
         <section className="bg-gradient-to-r from-primary-50 to-secondary-50 py-12">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto text-center">
               <div className="flex items-center justify-center gap-2 mb-4">
                 <SparklesIcon className="w-6 h-6 text-primary-500" />
@@ -321,7 +321,7 @@ export default function CommunityFeed() {
         <AnimatePresence>
           {showFilters && (
             <section className="py-6">
-              <div className="container-width px-4 sm:px-6 lg:px-8">
+              <div className="container-width">
                 <FeedFilters
                   filters={filters}
                   onFiltersChange={handleFiltersChange}
@@ -430,7 +430,7 @@ export default function CommunityFeed() {
 
         {/* Feed Content */}
         <section className="py-12">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-2xl mx-auto">
               {/* Feed Header with Create Post Button */}
               <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">

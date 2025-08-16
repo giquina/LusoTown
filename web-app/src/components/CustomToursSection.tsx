@@ -87,7 +87,7 @@ export default function CustomToursSection({ onBookTour, showHeader = true }: Cu
 
   return (
     <section className="py-16 bg-gradient-to-br from-white via-secondary-50/20 to-premium-50/20">
-      <div className="container-width px-4 sm:px-6 lg:px-8">
+      <div className="container-width">
         {showHeader && (
           <div className="text-center mb-16">
             <motion.div
@@ -115,8 +115,8 @@ export default function CustomToursSection({ onBookTour, showHeader = true }: Cu
           </div>
         )}
 
-        {/* Features Grid - 2x2 Mobile Layout */}
-        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6 mb-16">
+        {/* Features Grid - Mobile Optimized Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-16">
           {customTourFeatures.map((feature, index) => (
             <motion.div
               key={index}
@@ -144,7 +144,7 @@ export default function CustomToursSection({ onBookTour, showHeader = true }: Cu
           <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
             {isPortuguese ? 'Destinos Populares' : 'Popular Destinations'}
           </h3>
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
             {popularDestinations.map((destination, index) => (
               <motion.div
                 key={index}

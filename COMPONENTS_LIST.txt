@@ -50,6 +50,7 @@ GroupsShowcase
 Hashtag
 Header
 Hero
+HostWithUsSection
 HowConnectionsWork
 HowItWorks
 ImprovedEventCard
@@ -68,6 +69,8 @@ OfficialPartnershipBadge
 OfficialRecognitionFramework
 OptimizedChauffeurPage
 OptimizedChauffeurServiceCard
+OptimizedTransportPage
+OptimizedTransportServiceCard
 PersonalizedFeed
 PhotoUpload
 PortugueseCulturalTourRoutes
@@ -94,6 +97,9 @@ SocialLoginButton
 SortingControls
 SuccessStories
 TestimonialsNew
+TransportBookingForm
+TransportServiceCard
+TransportTestimonials
 UserTypeSelection
 WelcomeModal
 WhatsAppWidget

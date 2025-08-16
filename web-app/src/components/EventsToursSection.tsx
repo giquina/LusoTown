@@ -98,7 +98,7 @@ export default function EventsToursSection() {
 
   return (
     <section className="py-20 bg-white">
-      <div className="container-width px-4 sm:px-6 lg:px-8">
+      <div className="container-width">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
@@ -294,7 +294,7 @@ export default function EventsToursSection() {
             </p>
             
             {/* Category Quick Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
               <div className="text-center">
                 <div className="text-2xl mb-2">👩‍💼</div>
                 <div className="text-sm font-semibold text-gray-900">

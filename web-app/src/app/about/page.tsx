@@ -26,7 +26,7 @@ export default function About() {
       <div className="pt-16">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto text-center mb-16">
               <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-primary-600 mb-6">
                 <GlobeAltIcon className="w-4 h-4 mr-2" />
@@ -58,7 +58,7 @@ export default function About() {
 
         {/* Founder Story Section */}
         <section className="py-20 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto">
               <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
                 <div>
@@ -182,7 +182,7 @@ export default function About() {
 
         {/* The "Aha" Moment Section */}
         <section className="py-20 bg-gray-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
                 The Heart of Our Portuguese Community
@@ -226,7 +226,7 @@ export default function About() {
 
         {/* Our Mission & Impact */}
         <section className="py-20 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -497,7 +497,7 @@ export default function About() {
 
         {/* Community Impact Stats */}
         <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 Growing London's Portuguese Community
@@ -552,7 +552,7 @@ export default function About() {
 
         {/* Our Values & Inclusive Community */}
         <section className="py-20 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
                 Os Nossos Valores • Our Core Values
@@ -645,7 +645,7 @@ export default function About() {
 
         {/* Future Vision */}
         <section className="py-20 bg-gradient-to-r from-primary-500 to-secondary-500 text-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-bold mb-6">
                 Nossa Visão • Our Vision for the Future
@@ -694,7 +694,7 @@ export default function About() {
 
         {/* Join CTA Section */}
         <section className="py-20 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
                 Ready to Join Nossa Comunidade?

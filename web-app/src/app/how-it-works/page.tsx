@@ -70,7 +70,7 @@ export default function HowItWorks() {
       <div className="pt-16">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -101,7 +101,7 @@ export default function HowItWorks() {
 
         {/* Features Explanation */}
         <section className="py-20 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto">
               <div className="space-y-16">
                 {features.map((feature, index) => (
@@ -142,7 +142,7 @@ export default function HowItWorks() {
 
         {/* LusoFeed Deep Dive */}
         <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -220,7 +220,7 @@ export default function HowItWorks() {
 
         {/* Favourites Deep Dive */}
         <section className="py-20 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -281,7 +281,7 @@ export default function HowItWorks() {
 
         {/* Final CTA */}
         <section className="py-20 bg-gradient-to-br from-primary-500 to-secondary-500 text-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

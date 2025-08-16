@@ -52,7 +52,7 @@ export default function HostWithUsSection() {
           </div>
           
           {/* Professional Types Grid - 2x2 Mobile Layout */}
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-8 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-8 mb-20">
             {/* Professional Services & Workshops */}
             <div className="group relative h-full">
               <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-8 min-h-[300px] sm:min-h-[340px] lg:min-h-[380px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
@@ -184,7 +184,7 @@ export default function HostWithUsSection() {
           </div>
 
           {/* Benefits Grid - 2x2 Mobile Layout */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-20">
             <div className="text-center p-3 sm:p-4 lg:p-6 bg-white/60 backdrop-blur-sm rounded-xl lg:rounded-2xl border border-white/40 shadow-lg min-h-[160px] sm:min-h-[180px] lg:min-h-[200px] flex flex-col">
               <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg lg:rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 lg:mb-4 flex-shrink-0">
                 <UserGroupIcon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />

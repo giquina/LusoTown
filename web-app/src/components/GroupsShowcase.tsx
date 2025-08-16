@@ -159,7 +159,7 @@ export default function GroupsShowcase() {
 
   return (
     <section className="py-16 bg-gray-50">
-      <div className="container-width px-4 sm:px-6 lg:px-8">
+      <div className="container-width">
         <div className="text-center mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -66,7 +66,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 min-h-[72px]">
-      <nav className="container-width px-4 sm:px-6 lg:px-8" aria-label="Top">
+      <nav className="container-width" aria-label="Top">
         <div className="flex items-center justify-between h-18 sm:h-20 gap-2 sm:gap-4">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">

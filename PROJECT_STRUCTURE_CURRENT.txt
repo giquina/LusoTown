@@ -72,6 +72,8 @@ web-app/src
 │   │   └── page.tsx
 │   ├── help
 │   │   └── page.tsx
+│   ├── host
+│   │   └── page.tsx
 │   ├── how-it-works
 │   │   └── page.tsx
 │   ├── instituto-camoes
@@ -115,7 +117,9 @@ web-app/src
 │   │   └── page.tsx
 │   ├── success-stories
 │   │   └── page.tsx
-│   └── terms
+│   ├── terms
+│   │   └── page.tsx
+│   └── transport
 │       └── page.tsx
 ├── components
 │   ├── AboutLusoTown.tsx
@@ -172,6 +176,7 @@ web-app/src
 │   ├── Hashtag.tsx
 │   ├── Header.tsx
 │   ├── Hero.tsx
+│   ├── HostWithUsSection.tsx
 │   ├── HowConnectionsWork.tsx
 │   ├── HowItWorks.tsx
 │   ├── ImprovedEventCard.tsx
@@ -191,6 +196,8 @@ web-app/src
 │   ├── OfficialRecognitionFramework.tsx
 │   ├── OptimizedChauffeurPage.tsx
 │   ├── OptimizedChauffeurServiceCard.tsx
+│   ├── OptimizedTransportPage.tsx
+│   ├── OptimizedTransportServiceCard.tsx
 │   ├── PersonalizedFeed.tsx
 │   ├── PhotoUpload.tsx
 │   ├── PortugueseCulturalTourRoutes.tsx
@@ -220,6 +227,9 @@ web-app/src
 │   ├── SuccessStories.tsx
 │   ├── TestimonialsNew.tsx
 │   ├── TestimonialsNew.tsx.backup
+│   ├── TransportBookingForm.tsx
+│   ├── TransportServiceCard.tsx
+│   ├── TransportTestimonials.tsx
 │   ├── UserTypeSelection.tsx
 │   ├── WelcomeModal.tsx
 │   └── WhatsAppWidget.tsx
@@ -236,6 +246,7 @@ web-app/src
 └── lib
     ├── auth.ts
     ├── businessDirectory.ts
+    ├── business-events-london.ts
     ├── chauffeurBooking.ts
     ├── chauffeurCache.ts
     ├── chauffeurPricing.ts
@@ -260,6 +271,10 @@ web-app/src
     ├── search.ts
     ├── seo.ts
     ├── socialNetworks.ts
-    └── supabase.ts
+    ├── supabase.ts
+    ├── transportBooking.ts
+    ├── transportCache.ts
+    ├── transportPricing.ts
+    └── transportServices.ts
 
-66 directories, 197 files
+68 directories, 210 files

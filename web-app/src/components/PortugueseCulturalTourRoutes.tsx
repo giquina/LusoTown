@@ -323,7 +323,7 @@ export default function PortugueseCulturalTourRoutes({ isPortuguese, onBookTour 
 
   return (
     <section className="py-16 bg-gradient-to-br from-white via-secondary-50/20 to-premium-50/20">
-      <div className="container-width px-4 sm:px-6 lg:px-8">
+      <div className="container-width">
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

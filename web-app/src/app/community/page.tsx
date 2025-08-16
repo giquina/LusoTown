@@ -201,7 +201,7 @@ export default function Community() {
             <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-accent-200 rounded-full opacity-15 animate-pulse animation-delay-800"></div>
           </div>
 
-          <div className="container-width px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="container-width relative z-10">
             <div className="max-w-5xl mx-auto text-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -282,7 +282,7 @@ export default function Community() {
 
         {/* Live Activity Feed */}
         <section className="py-16 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -383,7 +383,7 @@ export default function Community() {
 
         {/* Portuguese Community Areas */}
         <section className="py-16 bg-gradient-to-br from-secondary-50 to-primary-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -447,7 +447,7 @@ export default function Community() {
 
         {/* Portuguese Origins Communities */}
         <section className="py-16 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -513,7 +513,7 @@ export default function Community() {
 
         {/* Member Spotlight */}
         <section className="py-16 bg-gradient-to-br from-accent-50 to-coral-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -580,7 +580,7 @@ export default function Community() {
 
         {/* Portuguese Cultural Heritage & Values */}
         <section className="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -708,7 +708,7 @@ export default function Community() {
 
         {/* Portuguese Business Directory Integration */}
         <section className="py-16 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -807,7 +807,7 @@ export default function Community() {
 
         {/* Call to Action */}
         <section className="py-20 bg-gradient-to-br from-coral-50 via-accent-50 to-primary-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -890,7 +890,7 @@ export default function Community() {
 
         {/* Case Studies Section */}
         <section className="py-16 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <CaseStudiesPromo variant="banner" className="max-w-4xl mx-auto" />
           </div>
         </section>

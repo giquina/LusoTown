@@ -53,7 +53,7 @@ export default function ForgotPassword() {
         <Header />
         <div className="pt-16">
           <section className="py-20 bg-gradient-to-br from-green-50 to-secondary-50">
-            <div className="container-width px-4 sm:px-6 lg:px-8">
+            <div className="container-width">
               <div className="max-w-md mx-auto">
                 <div className="bg-white rounded-2xl shadow-lg p-8 text-center">
                   <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -109,7 +109,7 @@ export default function ForgotPassword() {
       <div className="pt-16">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-md mx-auto">
               <div className="bg-white rounded-2xl shadow-lg p-8">
                 {/* Header */}
@@ -201,7 +201,7 @@ export default function ForgotPassword() {
 
         {/* Help Section */}
         <section className="py-16 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-2xl mx-auto">
               <div className="bg-primary-50 border border-primary-200 rounded-2xl p-8">
                 <h2 className="text-xl font-semibold text-primary-800 mb-4">Need Help?</h2>
@@ -235,7 +235,7 @@ export default function ForgotPassword() {
 
         {/* Security Notice */}
         <section className="py-12 bg-gray-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-2xl mx-auto">
               <div className="bg-gray-100 rounded-xl p-6 text-center">
                 <LockClosedIcon className="w-8 h-8 text-gray-600 mx-auto mb-3" />

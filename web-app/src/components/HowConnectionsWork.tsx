@@ -84,7 +84,7 @@ export default function HowConnectionsWork() {
         <div className="absolute bottom-1/4 left-20 w-12 h-12 bg-coral-300 rounded-full"></div>
       </div>
 
-      <div className="container-width px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container-width relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

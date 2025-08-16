@@ -117,7 +117,7 @@ export default function SavedItemsPage() {
       <main className="pt-16">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-primary-50 to-secondary-50 py-16">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto text-center">
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }}
@@ -162,7 +162,7 @@ export default function SavedItemsPage() {
 
         {/* Content */}
         <section className="py-12">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-6xl mx-auto">
               
               {savedItems.length === 0 ? (

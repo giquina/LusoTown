@@ -46,7 +46,7 @@ export default function CommunityGuidelines() {
       <Header />
       <div className="pt-16">
         <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Community Guidelines
@@ -59,7 +59,7 @@ export default function CommunityGuidelines() {
         </section>
 
         <section className="py-20">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-2 gap-8 mb-16">
                 {guidelines.map((guideline, index) => {

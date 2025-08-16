@@ -219,7 +219,7 @@ export default function SuccessStories() {
       <div className="pt-16">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-primary-600 mb-6">
                 <HeartIcon className="w-4 h-4 mr-2" />
@@ -237,7 +237,7 @@ export default function SuccessStories() {
 
         {/* Impact Stats */}
         <section className="py-16 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-2xl font-bold text-center text-gray-900 mb-12">
                 The Impact We're Making Together
@@ -260,7 +260,7 @@ export default function SuccessStories() {
 
         {/* Featured Stories */}
         <section className="py-20 bg-gray-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
                 Featured Success Stories
@@ -343,7 +343,7 @@ export default function SuccessStories() {
 
         {/* Quick Success Stories */}
         <section className="py-20 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -387,7 +387,7 @@ export default function SuccessStories() {
 
         {/* Community Highlights */}
         <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
                 What Makes Our Community Special
@@ -436,7 +436,7 @@ export default function SuccessStories() {
 
         {/* Join the Community CTA */}
         <section className="py-20 bg-gradient-to-r from-primary-500 to-secondary-500 text-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 text-balance">
                 Ready to Write Your Own Success Story?
@@ -483,7 +483,7 @@ export default function SuccessStories() {
 
         {/* Newsletter Signup */}
         <section className="py-16 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-2xl mx-auto text-center">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 Get Inspired by More Success Stories

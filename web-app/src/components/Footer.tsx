@@ -42,7 +42,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
       {/* Main Footer Content - Enhanced Multi-Column Responsive Layout */}
-      <div className="container-width px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div className="container-width py-12 sm:py-16">
         <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 xl:gap-12">
           {/* Brand Column */}
           <div className="md:col-span-2 lg:col-span-1 space-y-6">
@@ -162,7 +162,7 @@ export default function Footer() {
 
       {/* Bottom Footer */}
       <div className="border-t border-gray-800">
-        <div className="container-width px-4 sm:px-6 lg:px-8 py-6">
+        <div className="container-width py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm break-words leading-relaxed">
               © {new Date().getFullYear()} LusoTown UK. All rights reserved. {t('footer.tagline')}

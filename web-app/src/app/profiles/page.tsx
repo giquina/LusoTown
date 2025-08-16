@@ -174,7 +174,7 @@ function ProfilesPageContent() {
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 pt-20">
-        <div className="container-width px-4 sm:px-6 lg:px-8 py-8">
+        <div className="container-width py-8">
           <div className="flex items-center justify-center py-12">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#FF6B6B]"></div>
           </div>
@@ -185,7 +185,7 @@ function ProfilesPageContent() {
 
   return (
     <div className="min-h-screen bg-gray-50 pt-20">
-      <div className="container-width px-4 sm:px-6 lg:px-8 py-8">
+      <div className="container-width py-8">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Discover Members</h1>

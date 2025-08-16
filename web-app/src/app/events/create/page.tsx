@@ -178,7 +178,7 @@ export default function CreateEventPage() {
             <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-secondary-200 rounded-full mix-blend-multiply filter blur-2xl animate-pulse"></div>
           </div>
           
-          <div className="container-width px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="container-width relative z-10">
             <div className="text-center max-w-3xl mx-auto">
               <motion.h1 
                 initial={{ opacity: 0, y: 30 }}
@@ -224,7 +224,7 @@ export default function CreateEventPage() {
 
         {/* Progress Steps */}
         <section className="bg-white border-b border-gray-200">
-          <div className="container-width px-4 sm:px-6 lg:px-8 py-6">
+          <div className="container-width py-6">
             <div className="flex items-center justify-between max-w-4xl mx-auto">
               {steps.map((step) => (
                 <div key={step.number} className="flex items-center">
@@ -256,7 +256,7 @@ export default function CreateEventPage() {
 
         {/* Form Content */}
         <section className="py-12">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-2xl mx-auto">
               <motion.div
                 key={currentStep}

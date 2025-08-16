@@ -188,7 +188,7 @@ export default function Signup() {
       <Header />
       <div className="pt-16">
         <section className="py-12 sm:py-20 bg-gradient-to-br from-primary-50 to-secondary-50 min-h-screen flex items-center">
-          <div className="container-width px-4 sm:px-6 lg:px-8 w-full">
+          <div className="container-width w-full">
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Left side - Benefits */}
               <motion.div 

@@ -259,7 +259,7 @@ export default function Pricing() {
       <div className="pt-16">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="text-center mb-16">
               <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-primary-600 mb-6">
                 <HeartIconSolid className="w-4 h-4 mr-2" />
@@ -378,7 +378,7 @@ export default function Pricing() {
 
         {/* Annual Membership Explanation Section */}
         <section className="py-20 bg-gradient-to-r from-primary-50 to-secondary-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -434,7 +434,7 @@ export default function Pricing() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center mb-12">
                 <div className="bg-white rounded-2xl p-6 shadow-lg">
                   <div className="text-3xl font-bold text-primary-600 mb-2">750+</div>
                   <div className="text-sm text-gray-600">
@@ -531,7 +531,7 @@ export default function Pricing() {
 
         {/* Testimonials Section */}
         <section className="py-20 bg-gray-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {isPortuguese ? 'Histórias da Nossa Comunidade' : 'Stories from Our Community'}
@@ -588,7 +588,7 @@ export default function Pricing() {
 
         {/* Payment Options Section */}
         <section className="py-20 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {isPortuguese ? 'Opções de Pagamento Flexíveis' : 'Flexible Payment Options'}
@@ -632,7 +632,7 @@ export default function Pricing() {
                         {isPortuguese ? 'Grupo de Amigos (até 4 membros)' : 'Friend Group (up to 4 members)'}
                       </div>
                       <div className="text-xs text-green-600 font-medium">
-                        {isPortuguese ? 'Poupa £28/mês' : 'Save £28/month'}
+                        {isPortuguese ? 'Poupa £25/ano' : 'Save £25/year'}
                       </div>
                     </div>
                     <div className="bg-white rounded-xl p-6">
@@ -658,7 +658,7 @@ export default function Pricing() {
 
         {/* Feature Comparison Table */}
         <section className="py-20 bg-gray-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {isPortuguese ? 'Compare os Benefícios da Comunidade' : 'Compare Community Benefits'}
@@ -791,7 +791,7 @@ export default function Pricing() {
 
         {/* Why Choose LusoTown Section */}
         <section className="py-20 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {isPortuguese ? 'Porque Escolher a LusoTown?' : 'Why Choose LusoTown?'}
@@ -855,7 +855,7 @@ export default function Pricing() {
 
         {/* Money-Back Guarantee Section */}
         <section className="py-16 bg-green-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="text-center max-w-4xl mx-auto">
               <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <ShieldCheckIconSolid className="w-8 h-8" />
@@ -894,7 +894,7 @@ export default function Pricing() {
 
         {/* Portuguese Community FAQ Section */}
         <section className="py-20 bg-gray-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {isPortuguese ? 'Perguntas? Temos Respostas' : 'Questions? We Have Answers'}
@@ -987,7 +987,7 @@ export default function Pricing() {
           <div className="absolute inset-0 bg-black/10"></div>
           <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
           
-          <div className="container-width px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="container-width text-center relative z-10">
             <div className="max-w-4xl mx-auto">
               <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium mb-6">
                 <HeartIconSolid className="w-4 h-4 mr-2" />

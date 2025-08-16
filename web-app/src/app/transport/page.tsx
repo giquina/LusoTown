@@ -22,8 +22,8 @@ const serviceTiers = [
     price: 55, // Optimized from £45 based on market analysis
     originalPrice: 65, // Show value proposition
     image: 'https://images.unsplash.com/photo-1549317336-206569e8475c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Luxury private transport vehicle in London',
-    imageAltPortuguese: 'Veículo de transporte privado de luxo em Londres',
+    imageAlt: 'Professional private transport vehicle in London',
+    imageAltPortuguese: 'Veículo de transporte privado profissional em Londres',
     membershipDiscounts: {
       visitor: 0, // No discount for non-members
       family: 5, // 5% discount for Family members (£52.25)
@@ -34,7 +34,7 @@ const serviceTiers = [
     descriptionPortuguese: 'Serviço de transporte privado profissional falante de português para turismo em Londres',
     features: [
       'Professional Portuguese-speaking driver',
-      'Premium luxury vehicle',
+      'Professional vehicle',
       'Meet & greet service with cultural sensitivity',
       'Basic security awareness training',
       'London tourism and attraction expertise',
@@ -43,7 +43,7 @@ const serviceTiers = [
     ],
     featuresPortuguese: [
       'Motorista profissional falante de português',
-      'Veículo de luxo premium',
+      'Veículo profissional',
       'Serviço de encontro e receção com sensibilidade cultural',
       'Treino básico de consciência de segurança',
       'Expertise em turismo e atrações de Londres',
@@ -61,8 +61,8 @@ const serviceTiers = [
     price: 75, // Optimized from £65 based on security premium analysis
     originalPrice: 85,
     image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Professional security service with luxury vehicle at London landmark',
-    imageAltPortuguese: 'Serviço de segurança profissional com veículo de luxo em marco de Londres',
+    imageAlt: 'Professional security service with professional vehicle at London landmark',
+    imageAltPortuguese: 'Serviço de segurança profissional com veículo profissional em marco de Londres',
     membershipDiscounts: {
       visitor: 0,
       family: 5, // £71.25
@@ -102,8 +102,8 @@ const serviceTiers = [
     price: 95, // Optimized from £85 to reflect cultural value-add
     originalPrice: 110,
     image: 'https://images.unsplash.com/photo-1520637836862-4d197d17c93a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'VIP London experience with Tower Bridge and luxury service',
-    imageAltPortuguese: 'Experiência VIP de Londres com Tower Bridge e serviço de luxo',
+    imageAlt: 'VIP London experience with Tower Bridge and professional service',
+    imageAltPortuguese: 'Experiência VIP de Londres com Tower Bridge e serviço profissional',
     membershipDiscounts: {
       visitor: 0,
       family: 5, // £90.25
@@ -121,7 +121,7 @@ const serviceTiers = [
       'Photo opportunities at every destination',
       'Curated dining recommendations with reservations',
       'London business network introductions',
-      'Ultra-premium luxury vehicle'
+      'High-quality professional vehicle'
     ],
     featuresPortuguese: [
       'Todas as características de Segurança Premium',
@@ -132,7 +132,7 @@ const serviceTiers = [
       'Oportunidades de fotografia em cada destino',
       'Recomendações gastronómicas selecionadas com reservas',
       'Introduções à rede empresarial de Londres',
-      'Veículo de luxo ultra-premium'
+      'Veículo profissional de alta qualidade'
     ],
     popular: false,
     color: 'premium',
@@ -145,8 +145,8 @@ const serviceTiers = [
     price: 140, // Increased from £120 to reflect high-end security market
     originalPrice: 160,
     image: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Elite protection service with armored luxury vehicle in London',
-    imageAltPortuguese: 'Serviço de proteção elite com veículo de luxo blindado em Londres',
+    imageAlt: 'Elite protection service with professional armored vehicle in London',
+    imageAltPortuguese: 'Serviço de proteção elite com veículo profissional blindado em Londres',
     membershipDiscounts: {
       visitor: 0,
       family: 5, // £133
@@ -154,8 +154,8 @@ const serviceTiers = [
     },
     minimumHours: 4,
     callOutPremium: 50, // £50 premium for immediate availability
-    description: 'Maximum security with close protection team and luxury transport for high-profile individuals',
-    descriptionPortuguese: 'Segurança máxima com equipa de proteção próxima e transporte de luxo para indivíduos de alto perfil',
+    description: 'Maximum security with close protection team and professional transport for high-profile individuals',
+    descriptionPortuguese: 'Segurança máxima com equipa de proteção próxima e transporte profissional para indivíduos de alto perfil',
     features: [
       'All VIP Cultural features',
       'Multi-person close protection team',
@@ -164,7 +164,7 @@ const serviceTiers = [
       'Armored vehicle option available',
       'Medical support and first aid qualified personnel',
       'Emergency evacuation protocols',
-      'Luxury or armored vehicle options available',
+      'Professional or armored vehicle options available',
       'Real-time security coordination',
       'London diplomatic protocol knowledge'
     ],
@@ -176,7 +176,7 @@ const serviceTiers = [
       'Opção de veículo blindado disponível',
       'Apoio médico e pessoal qualificado em primeiros socorros',
       'Protocolos de evacuação de emergência',
-      'Opções de veículos de luxo ou blindados disponíveis',
+      'Opções de veículos profissionais ou blindados disponíveis',
       'Coordenação de segurança em tempo real',
       'Conhecimento de protocolo diplomático de Londres'
     ],
@@ -205,8 +205,8 @@ const londonTourismExperiences = [
     },
     minimumGuests: 1,
     maximumGuests: 4,
-    description: 'Discover London\'s iconic landmarks with professional Portuguese-speaking guide and luxury private transport service',
-    descriptionPortuguese: 'Descubra os marcos icónicos de Londres com guia profissional falante de português e serviço de transporte privado de luxo',
+    description: 'Discover London\'s iconic landmarks with professional Portuguese-speaking guide and comfortable private transport service',
+    descriptionPortuguese: 'Descubra os marcos icónicos de Londres com guia profissional falante de português e serviço de transporte privado confortável',
     category: 'classic',
     priceIncludes: ['VIP Security Driver', 'Professional Portuguese-Speaking Guide', 'Venue Access Fees', 'London Guide Book'],
     highlights: [
@@ -354,8 +354,8 @@ const multiDayPackages = [
     },
     minimumGuests: 1,
     maximumGuests: 6,
-    description: 'Essential London landmarks and attractions with Portuguese-speaking guide and luxury transport',
-    descriptionPortuguese: 'Marcos e atrações essenciais de Londres com guia falante de português e transporte de luxo',
+    description: 'Essential London landmarks and attractions with Portuguese-speaking guide and comfortable transport',
+    descriptionPortuguese: 'Marcos e atrações essenciais de Londres com guia falante de português e transporte confortável',
     category: 'highlights',
     priceIncludes: ['Premium Security Driver', 'London Tourist Guide', 'Light Meal', 'Attraction Entry'],
     targetAudience: 'time_limited_tourists'
@@ -478,8 +478,8 @@ const standardPackages = [
     },
     minimumGuests: 1,
     maximumGuests: 6,
-    description: 'Visit Harry Potter film locations, Platform 9¾, and Warner Bros Studio with expert guide and luxury transport',
-    descriptionPortuguese: 'Visite locais de filmagem de Harry Potter, Plataforma 9¾ e Warner Bros Studio com guia especialista e transporte de luxo',
+    description: 'Visit Harry Potter film locations, Platform 9¾, and Warner Bros Studio with expert guide and comfortable transport',
+    descriptionPortuguese: 'Visite locais de filmagem de Harry Potter, Plataforma 9¾ e Warner Bros Studio com guia especialista e transporte confortável',
     category: 'themed',
     priceIncludes: ['Premium Security Driver', 'Harry Potter Specialist Guide', 'Studio Tour Tickets', 'Themed Photo Opportunities'],
     targetAudience: 'harry_potter_enthusiasts'
@@ -564,7 +564,7 @@ export default function TransportPage() {
       <section className="relative overflow-hidden bg-gradient-to-br from-secondary-50 via-white to-accent-50 pt-20">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-secondary-900/10 via-transparent to-accent-900/10"></div>
-        <div className="relative container-width px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div className="relative container-width py-16 lg:py-24">
           <div className="text-center max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -590,13 +590,13 @@ export default function TransportPage() {
               <span className="hidden sm:block">
                 {isPortuguese ? (
                   <>
-                    Turismo de <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">Londres</span><br />
-                    com Transporte Privado Português
+                    Precisa de um <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">Motorista</span><br />
+                    Português em Londres?
                   </>
                 ) : (
                   <>
-                    London <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">Tourism</span><br />
-                    with Portuguese Private Transport
+                    Need a <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">Portuguese Driver</span><br />
+                    in London?
                   </>
                 )}
               </span>
@@ -604,13 +604,13 @@ export default function TransportPage() {
               <span className="sm:hidden">
                 {isPortuguese ? (
                   <>
-                    <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">Transporte</span><br />
-                    Português
+                    <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">Motorista</span><br />
+                    Português?
                   </>
                 ) : (
                   <>
                     Portuguese<br />
-                    <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">Transport</span>
+                    <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">Driver?</span>
                   </>
                 )}
               </span>
@@ -625,8 +625,8 @@ export default function TransportPage() {
               {/* Desktop full subtitle */}
               <span className="hidden sm:block">
                 {isPortuguese 
-                  ? 'Experiências turísticas premium em Londres com motoristas e guias que falam português fluentemente. Descubra os principais pontos turísticos de Londres com comunicação profissional em português e transporte de segurança.'
-                  : 'Premium London tourism experiences with fluent Portuguese-speaking drivers and guides. Discover London\'s top attractions with professional Portuguese communication and secure transport.'
+                  ? 'Tenha seu próprio motorista particular que fala português fluentemente. Explore Londres com segurança, conforto e comunicação no seu idioma nativo!'
+                  : 'Get your own personal driver who speaks fluent Portuguese. Explore London safely, comfortably, and in your native language!'
                 }
               </span>
               {/* Mobile short subtitle */}
@@ -689,7 +689,7 @@ export default function TransportPage() {
           <div className="absolute bottom-1/3 left-2/3 w-3 h-3 bg-coral-300/50 rounded-full opacity-35" />
         </div>
 
-        <div className="container-width px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="container-width relative z-10">
           <div className="text-center mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -707,18 +707,18 @@ export default function TransportPage() {
             </motion.div>
             
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
-              {isPortuguese ? 'Turismo Premium em Londres com Assistência em Português' : 'Premium London Tourism with Portuguese Language Support'}
+              {isPortuguese ? 'Quer Explorar Londres com Total Segurança?' : 'Want to Explore London with Complete Safety?'}
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               {isPortuguese 
-                ? 'Nossos guias especializados em turismo de Londres oferecem experiências personalizadas das principais atrações com comunicação fluente em português e transporte seguro de luxo.'
-                : 'Our London tourism specialists provide personalized experiences of top attractions with fluent Portuguese communication and luxury secure transport.'
+                ? 'Nossos motoristas especializados oferecem proteção pessoal discreta e comunicação fluente em português. Visite Londres com confiança e tranquilidade!'
+                : 'Our specialized drivers provide discreet personal protection and fluent Portuguese communication. Visit London with confidence and peace of mind!'
               }
             </p>
           </div>
 
           {/* Cultural Expertise Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-8 mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -833,7 +833,7 @@ export default function TransportPage() {
 
       {/* London Attractions Gallery */}
       <section className="py-16 bg-white">
-        <div className="container-width px-4 sm:px-6 lg:px-8">
+        <div className="container-width">
           <div className="text-center mb-12">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -858,7 +858,7 @@ export default function TransportPage() {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {[
               {
                 src: 'https://images.unsplash.com/photo-1533929736458-ca588d08c8be?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
@@ -944,10 +944,10 @@ export default function TransportPage() {
 
       {/* Features Section */}
       <section className="py-24 bg-gradient-to-br from-white via-secondary-50/30 to-accent-50/30">
-        <div className="container-width px-4 sm:px-6 lg:px-8">
+        <div className="container-width">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-gray-900 mb-4">
-              {isPortuguese ? 'Por Que Escolher-nos' : 'Why Choose Us'}
+              {isPortuguese ? 'Por Que Somos Sua Melhor Escolha?' : 'Why Are We Your Best Choice?'}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               {isPortuguese 
@@ -957,7 +957,7 @@ export default function TransportPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
@@ -982,13 +982,189 @@ export default function TransportPage() {
         </div>
       </section>
 
+      {/* Advanced Booking & Planning Section */}
+      <section className="py-16 bg-gradient-to-br from-accent-50 via-white to-secondary-50">
+        <div className="container-width">
+          <div className="text-center mb-12">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-3xl font-bold text-gray-900 mb-4"
+            >
+              {isPortuguese ? 'Reserve com Antecedência' : 'Book in Advance'}
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+            >
+              {isPortuguese 
+                ? 'Planeie a sua experiência de Londres antes mesmo de chegar. Reserve com antecedência e tenha o seu motorista falante de português pronto para o receber no aeroporto.'
+                : 'Plan your London experience before you even arrive. Book in advance and have your Portuguese-speaking driver ready to meet you at the airport.'
+              }
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl p-6 shadow-lg border border-accent-200 hover:shadow-xl transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-accent-600" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM5 19V8h14v11H5z"/>
+                  <path d="M7 10h5v5H7z"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                {isPortuguese ? 'Reservas Antecipadas' : 'Advance Bookings'}
+              </h3>
+              <p className="text-gray-600 mb-4">
+                {isPortuguese 
+                  ? 'Reserve seus serviços de transporte e tours com semanas de antecedência. Garantimos disponibilidade e preços preferenciais.'
+                  : 'Book your transport services and tours weeks in advance. We guarantee availability and preferential pricing.'
+                }
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-center gap-2">
+                  <CheckCircleIcon className="w-4 h-4 text-accent-500" />
+                  <span>{isPortuguese ? 'Disponibilidade garantida' : 'Guaranteed availability'}</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircleIcon className="w-4 h-4 text-accent-500" />
+                  <span>{isPortuguese ? 'Preços preferenciais' : 'Preferential pricing'}</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircleIcon className="w-4 h-4 text-accent-500" />
+                  <span>{isPortuguese ? 'Planejamento personalizado' : 'Personalized planning'}</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-200 hover:shadow-xl transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-secondary-600" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                {isPortuguese ? 'Recolha no Aeroporto' : 'Airport Pickup'}
+              </h3>
+              <p className="text-gray-600 mb-4">
+                {isPortuguese 
+                  ? 'O seu motorista falante de português estará à sua espera no aeroporto com um sinal personalizado. Comece a sua experiência em Londres imediatamente.'
+                  : 'Your Portuguese-speaking driver will be waiting at the airport with a personalized sign. Start your London experience immediately.'
+                }
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-center gap-2">
+                  <CheckCircleIcon className="w-4 h-4 text-secondary-500" />
+                  <span>{isPortuguese ? 'Monitoramento de voos' : 'Flight monitoring'}</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircleIcon className="w-4 h-4 text-secondary-500" />
+                  <span>{isPortuguese ? 'Sinal personalizado' : 'Personalized sign'}</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircleIcon className="w-4 h-4 text-secondary-500" />
+                  <span>{isPortuguese ? 'Assistência com bagagem' : 'Luggage assistance'}</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl p-6 shadow-lg border border-primary-200 hover:shadow-xl transition-all duration-300"
+            >
+              <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                {isPortuguese ? 'Planejamento Completo' : 'Complete Planning'}
+              </h3>
+              <p className="text-gray-600 mb-4">
+                {isPortuguese 
+                  ? 'Planeamos todo o seu itinerário de Londres antes da sua chegada. Inclui tours, refeições, e experiências culturais portuguesas.'
+                  : 'We plan your entire London itinerary before your arrival. Includes tours, dining, and Portuguese cultural experiences.'
+                }
+              </p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li className="flex items-center gap-2">
+                  <CheckCircleIcon className="w-4 h-4 text-primary-500" />
+                  <span>{isPortuguese ? 'Itinerário personalizado' : 'Customized itinerary'}</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircleIcon className="w-4 h-4 text-primary-500" />
+                  <span>{isPortuguese ? 'Reservas de restaurantes' : 'Restaurant reservations'}</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircleIcon className="w-4 h-4 text-primary-500" />
+                  <span>{isPortuguese ? 'Experiências culturais' : 'Cultural experiences'}</span>
+                </li>
+              </ul>
+            </motion.div>
+          </div>
+
+          <div className="text-center mt-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-r from-accent-50 to-secondary-50 rounded-2xl p-8 border border-accent-200"
+            >
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                {isPortuguese ? 'Pronto para Sua Aventura VIP em Londres?' : 'Ready for Your VIP London Adventure?'}
+              </h3>
+              <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+                {isPortuguese 
+                  ? 'Seu motorista pessoal estará no aeroporto com o seu nome. Sem stress, sem confusão, só conforto e experiências inesquecíveis!'
+                  : 'Your personal driver will be at the airport with your name. No stress, no confusion, just comfort and unforgettable experiences!'
+                }
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                  onClick={() => setShowBookingForm(true)}
+                  className="bg-gradient-to-r from-accent-600 to-secondary-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-accent-700 hover:to-secondary-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                >
+                  {isPortuguese ? 'Reservar com Antecedência' : 'Book in Advance'}
+                </button>
+                <a
+                  href="tel:+447777777777"
+                  className="border-2 border-accent-600 text-accent-600 px-8 py-3 rounded-xl font-semibold hover:bg-accent-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                >
+                  {isPortuguese ? 'Falar com Especialista' : 'Speak to Specialist'}
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       {/* Service Tiers Section */}
       <section id="services" className="py-24 bg-gradient-to-br from-gray-50 via-secondary-50/30 to-accent-50/30">
-        <div className="container-width px-4 sm:px-6 lg:px-8">
+        <div className="container-width">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-gray-900 mb-4">
-              {isPortuguese ? 'Níveis de Serviço' : 'Service Tiers'}
+              {isPortuguese ? 'Qual Nível de Proteção Precisa?' : 'What Level of Protection Do You Need?'}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               {isPortuguese 
@@ -998,7 +1174,7 @@ export default function TransportPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-8">
             {serviceTiers.map((tier, index) => (
               <TransportServiceCard
                 key={tier.id}
@@ -1014,7 +1190,7 @@ export default function TransportPage() {
 
       {/* London Tourism Experiences with Portuguese Service Section */}
       <section className="py-24 bg-gradient-to-br from-white via-secondary-50/30 to-accent-50/30">
-        <div className="container-width px-4 sm:px-6 lg:px-8">
+        <div className="container-width">
           <div className="text-center mb-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -1032,12 +1208,12 @@ export default function TransportPage() {
             </motion.div>
             
             <h2 className="text-4xl font-black text-gray-900 mb-4">
-              {isPortuguese ? 'Turismo de Londres com Serviço Português' : 'London Tourism with Portuguese Service'}
+              {isPortuguese ? 'Quer Conhecer Londres Como um VIP?' : 'Want to Experience London Like a VIP?'}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               {isPortuguese 
-                ? 'Experiências premium de turismo em Londres com guias especializados falantes de português, acesso VIP e narrativas históricas detalhadas'
-                : 'Premium London tourism experiences with specialist Portuguese-speaking guides, VIP access, and detailed historical narratives'
+                ? 'Acesso exclusivo às melhores atrações de Londres com seu guia pessoal falante de português. Pule filas, entre pelos fundos e tenha experiências que outros turistas nunca terão!'
+                : 'Exclusive access to London\'s top attractions with your personal Portuguese-speaking guide. Skip lines, enter through the back, and have experiences other tourists will never get!'
               }
             </p>
           </div>
@@ -1047,7 +1223,7 @@ export default function TransportPage() {
             <h3 className="text-3xl font-black text-gray-900 mb-8 text-center">
               {isPortuguese ? 'Experiências Turísticas de Londres' : 'London Tourism Experiences'}
             </h3>
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-8">
               {londonTourismExperiences.map((pkg, index) => (
                 <motion.div
                   key={pkg.id}
@@ -1055,7 +1231,7 @@ export default function TransportPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-white to-secondary-50/30 rounded-lg sm:rounded-xl shadow-lg border border-secondary-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 h-[400px] sm:h-[450px] lg:h-[500px] flex flex-col"
+                  className="bg-gradient-to-br from-white to-secondary-50/30 rounded-lg sm:rounded-xl shadow-lg border border-secondary-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 flex flex-col min-h-[400px]"
                 >
                   {/* Experience Image */}
                   {pkg.image && (
@@ -1092,7 +1268,7 @@ export default function TransportPage() {
                       </div>
                     </div>
                     
-                    <p className="text-gray-600 mb-3 sm:mb-4 leading-relaxed text-xs sm:text-sm lg:text-base line-clamp-2 flex-1">
+                    <p className="text-gray-600 mb-3 sm:mb-4 leading-relaxed text-xs sm:text-sm lg:text-base flex-1">
                       {isPortuguese ? pkg.descriptionPortuguese : pkg.description}
                     </p>
 
@@ -1106,7 +1282,7 @@ export default function TransportPage() {
                           {(isPortuguese ? pkg.highlightsPortuguese : pkg.highlights).slice(0, 2).map((highlight, idx) => (
                             <li key={idx} className="flex items-start text-xs sm:text-sm text-gray-600">
                               <CheckCircleIcon className="w-3 h-3 sm:w-4 sm:h-4 text-secondary-500 mt-0.5 mr-1 sm:mr-2 flex-shrink-0" />
-                              <span className="line-clamp-1">{highlight}</span>
+                              <span>{highlight}</span>
                             </li>
                           ))}
                         </ul>
@@ -1130,7 +1306,7 @@ export default function TransportPage() {
             <h3 className="text-3xl font-black text-gray-900 mb-8 text-center">
               {isPortuguese ? 'Pacotes de Múltiplos Dias em Londres' : 'Multi-Day London Packages'}
             </h3>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
               {multiDayPackages.map((pkg, index) => (
                 <motion.div
                   key={pkg.id}
@@ -1172,7 +1348,7 @@ export default function TransportPage() {
             <h3 className="text-3xl font-black text-gray-900 mb-8 text-center">
               {isPortuguese ? 'Serviços Padrão' : 'Standard Services'}
             </h3>
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-8">
               {standardPackages.map((pkg, index) => (
                 <motion.div
                   key={pkg.id}
@@ -1230,7 +1406,7 @@ export default function TransportPage() {
           <div className="absolute bottom-10 left-10 w-16 h-16 bg-gradient-to-tr from-action-400/20 via-secondary-300/20 to-accent-300/20 rounded-full opacity-50 animate-bounce" style={{ animationDuration: '6s' }} />
         </div>
         
-        <div className="container-width px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="container-width relative z-10">
           <div className="text-center">
             <h2 className="text-4xl font-black mb-4">
               {isPortuguese ? 'Precisa de Assistência Imediata?' : 'Need Immediate Assistance?'}

@@ -288,7 +288,7 @@ export default function GroupsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 pt-16">
-      <div className="container-width px-4 sm:px-6 lg:px-8 py-12">
+      <div className="container-width py-12">
         {/* Header */}
         <div className="text-center mb-12">
           <motion.div

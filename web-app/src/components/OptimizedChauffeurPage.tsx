@@ -362,7 +362,7 @@ const OptimizedChauffeurPage: React.FC<OptimizedChauffeurPageProps> = ({
         className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20"
       >
         <div className="absolute inset-0 bg-[url('/api/placeholder/1920/1080')] bg-cover bg-center opacity-5"></div>
-        <div className="relative container-width px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div className="relative container-width py-16 lg:py-24">
           <div className="text-center max-w-4xl mx-auto">
             <motion.div
               variants={itemVariants}
@@ -464,7 +464,7 @@ const OptimizedChauffeurPage: React.FC<OptimizedChauffeurPageProps> = ({
 
       {/* Enhanced Features Section */}
       <section className="py-16 bg-white">
-        <div className="container-width px-4 sm:px-6 lg:px-8">
+        <div className="container-width">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               {isPortuguese ? 'Por Que Escolher-nos' : 'Why Choose Us'}
@@ -504,7 +504,7 @@ const OptimizedChauffeurPage: React.FC<OptimizedChauffeurPageProps> = ({
 
       {/* Optimized Service Tiers Section */}
       <section id="services" className="py-16 bg-gray-50">
-        <div className="container-width px-4 sm:px-6 lg:px-8">
+        <div className="container-width">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               {isPortuguese ? 'Níveis de Serviço' : 'Service Tiers'}
@@ -538,7 +538,7 @@ const OptimizedChauffeurPage: React.FC<OptimizedChauffeurPageProps> = ({
       {/* Testimonials Section */}
       <Suspense fallback={
         <div className="py-16 bg-gradient-to-br from-gray-50 to-premium-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="text-center">
               <div className="animate-pulse">
                 <div className="h-8 bg-gray-300 rounded w-64 mx-auto mb-4"></div>
@@ -553,7 +553,7 @@ const OptimizedChauffeurPage: React.FC<OptimizedChauffeurPageProps> = ({
 
       {/* Contact Section */}
       <section className="py-16 bg-premium-900 text-white">
-        <div className="container-width px-4 sm:px-6 lg:px-8">
+        <div className="container-width">
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">
               {isPortuguese ? 'Precisa de Assistência Imediata?' : 'Need Immediate Assistance?'}

@@ -361,7 +361,7 @@ export default function ChatRoomsPage() {
       <main className="pt-16">
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-primary-50 to-secondary-50 py-16">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="text-center max-w-3xl mx-auto">
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
                 Community{' '}
@@ -396,7 +396,7 @@ export default function ChatRoomsPage() {
 
         {/* Main Content */}
         <section className="py-12">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             {/* Filters */}
             <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between mb-8">
               <div className="flex items-center gap-4">

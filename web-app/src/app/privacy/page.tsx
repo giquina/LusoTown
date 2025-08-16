@@ -46,7 +46,7 @@ export default function PrivacyPolicy() {
       <div className="pt-16">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-primary-600 mb-6">
                 <ShieldCheckIcon className="w-4 h-4 mr-2" />
@@ -64,7 +64,7 @@ export default function PrivacyPolicy() {
 
         {/* Quick Summary */}
         <section className="py-16 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto">
               <div className="bg-gradient-to-br from-secondary-50 to-white rounded-2xl p-8 mb-12">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
@@ -108,7 +108,7 @@ export default function PrivacyPolicy() {
 
         {/* Main Content */}
         <section className="py-16 bg-gray-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto space-y-12">
 
               {/* Who We Are */}

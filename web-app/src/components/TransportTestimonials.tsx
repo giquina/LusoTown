@@ -122,7 +122,7 @@ export default function TransportTestimonials() {
 
   return (
     <section className="py-16 bg-gradient-to-br from-gray-50 to-premium-50">
-      <div className="container-width px-4 sm:px-6 lg:px-8">
+      <div className="container-width">
         <div className="text-center mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}

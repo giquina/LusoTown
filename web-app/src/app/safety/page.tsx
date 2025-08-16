@@ -405,7 +405,7 @@ export default function SafetyCenter() {
 
         {/* Meeting Safely Guide */}
         <section className="py-20 bg-gray-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -441,7 +441,7 @@ export default function SafetyCenter() {
 
         {/* Warning Signs */}
         <section className="py-20 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -497,7 +497,7 @@ export default function SafetyCenter() {
 
         {/* Reporting System */}
         <section className="py-20 bg-primary-50">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -607,7 +607,7 @@ export default function SafetyCenter() {
 
         {/* Support Resources */}
         <section className="py-20 bg-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -689,7 +689,7 @@ export default function SafetyCenter() {
 
         {/* Community Commitment */}
         <section className="py-16 bg-gradient-to-r from-primary-500 to-secondary-500 text-white">
-          <div className="container-width px-4 sm:px-6 lg:px-8">
+          <div className="container-width">
             <div className="max-w-4xl mx-auto text-center">
               <HeartIcon className="w-12 h-12 mx-auto mb-6 opacity-90" />
               <h2 className="text-3xl font-bold mb-6">
