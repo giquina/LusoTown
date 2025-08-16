@@ -5,7 +5,7 @@ import { useLanguage } from '@/context/LanguageContext'
 import { 
   AcademicCapIcon, 
   ChatBubbleLeftRightIcon, 
-  HandshakeIcon,
+  UserGroupIcon,
   ArrowRightIcon,
   HeartIcon
 } from '@heroicons/react/24/outline'
@@ -108,7 +108,7 @@ export default function MentorshipHero() {
               {/* Skill Sharing */}
               <div className="bg-white/80 backdrop-blur-lg border border-white/60 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
                 <div className="w-12 h-12 bg-gradient-to-br from-action-500 to-premium-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
-                  <HandshakeIcon className="w-6 h-6 text-white" />
+                  <UserGroupIcon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
                   {t('mentorship.hero.pillar3.title', 'Cultural Skills')}

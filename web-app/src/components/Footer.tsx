@@ -171,6 +171,34 @@ export default function Footer() {
             </p>
             
             <div className="flex items-center gap-6">
+              {/* Payment Methods */}
+              <div className="flex items-center gap-3">
+                <span className="text-xs text-gray-500 hidden sm:block">We Accept:</span>
+                {/* Visa */}
+                <div className="w-8 h-5 bg-blue-600 rounded-sm flex items-center justify-center">
+                  <span className="text-white text-xs font-bold">VISA</span>
+                </div>
+                {/* Mastercard */}
+                <div className="w-8 h-5 bg-red-600 rounded-sm flex items-center justify-center">
+                  <span className="text-white text-xs font-bold">MC</span>
+                </div>
+                {/* Apple Pay */}
+                <div className="w-8 h-5 bg-black rounded-sm flex items-center justify-center">
+                  <svg className="w-4 h-3 text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M7.078 23.55c-.473-.316-.893-.703-1.244-1.15-.383-.463-.738-.95-1.064-1.454-.766-1.12-1.365-2.345-1.78-3.636-.5-1.502-.743-2.94-.743-4.347 0-1.57.34-2.94 1.002-4.09.49-.9 1.22-1.653 2.1-2.182.85-.5 1.695-.743 2.56-.743.615 0 1.295.108 2.030.324.48.142.922.279 1.327.408.336.108.542.142.618.108.073-.034.229-.108.468-.216.473-.216 1.044-.324 1.717-.324.915 0 1.717.216 2.402.65.315.2.607.45.877.75-.22.108-.42.243-.6.405-.473.42-.723 1.002-.723 1.744 0 .65.216 1.22.65 1.717.28.324.607.594.975.81-.108.324-.243.65-.405.975-.54 1.044-1.22 2.030-2.030 2.943-.65.743-1.22 1.22-1.717 1.435-.4.173-.743.216-1.044.216-.4 0-.81-.108-1.244-.324-.434-.216-.81-.324-1.127-.324-.324 0-.7.108-1.127.324-.434.216-.827.324-1.186.324-.216 0-.473-.043-.77-.13z"/>
+                    <path d="M15.588 0c.108.757-.108 1.515-.65 2.272-.434.65-1.044 1.186-1.717 1.435-.108-.757.108-1.515.65-2.272.434-.65 1.044-1.186 1.717-1.435z"/>
+                  </svg>
+                </div>
+                {/* Google Pay */}
+                <div className="w-8 h-5 bg-gray-100 rounded-sm flex items-center justify-center">
+                  <span className="text-xs font-bold text-gray-700">G</span>
+                </div>
+                {/* PayPal */}
+                <div className="w-8 h-5 bg-blue-700 rounded-sm flex items-center justify-center">
+                  <span className="text-white text-xs font-bold">PP</span>
+                </div>
+              </div>
+              
               {/* Social Media Links */}
               <div className="flex items-center gap-4">
                 <a
