@@ -164,8 +164,8 @@ export default function Cart({ isOpen, onClose }: CartProps) {
       // Check membership requirements
       if (item.membershipRequired && item.membershipRequired !== 'free') {
         warnings.push(isPortuguese 
-          ? `Requer membership ${item.membershipRequired}`
-          : `Requires ${item.membershipRequired} membership`)
+          ? `Requer associação`
+          : `Membership required`)
       }
       
       // Check if requires approval

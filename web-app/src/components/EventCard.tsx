@@ -236,7 +236,7 @@ export default function EventCard({
             </div>
             {membershipRequired !== 'free' && (
               <div className="text-xs text-gray-500 capitalize whitespace-nowrap">
-                {membershipRequired}+ {isPortuguese ? 'necessário' : 'required'}
+                {isPortuguese ? 'Membro necessário' : 'Membership needed'}
               </div>
             )}
           </div>

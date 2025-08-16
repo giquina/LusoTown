@@ -245,7 +245,7 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
               </div>
               {event.membershipRequired !== 'free' && (
                 <div className="text-xs text-gray-500 capitalize font-medium">
-                  {event.membershipRequired}+ required
+                  {isPortuguese ? 'Membro necessário' : 'Membership needed'}
                 </div>
               )}
             </div>
