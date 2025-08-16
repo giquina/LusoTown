@@ -252,19 +252,6 @@ export default function Pricing() {
   const { language, t } = useLanguage()
   const isPortuguese = language === 'pt'
 
-  const getDiscountedPrice = (price: number) => {
-    return isAnnual ? Math.round(price * 10) : price // 10 months for price of 12
-  }
-
-  const getCurrentTier = (tier: PricingTier) => ({
-    name: isPortuguese ? tier.name : tier.nameEn,
-    description: isPortuguese ? tier.description : tier.descriptionEn,
-    culturalContext: isPortuguese ? tier.culturalContext : tier.culturalContextEn,
-    features: isPortuguese ? tier.features : tier.featuresEn,
-    limitations: isPortuguese ? tier.limitations : tier.limitationsEn,
-    buttonText: isPortuguese ? tier.buttonText : tier.buttonTextEn,
-    badge: tier.badge ? (isPortuguese ? tier.badge : tier.badgeEn) : undefined
-  })
 
   return (
     <main className="min-h-screen bg-white">

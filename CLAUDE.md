@@ -119,6 +119,14 @@ LusoTown/
 - Translation files located in `src/i18n/`
 - Never hardcode English-only text in components
 
+**Mobile-First UI Patterns:**
+- All card sections must display 2 items per line on mobile (`grid-cols-2 lg:grid-cols-3/4`)
+- Consistent responsive gap spacing: `gap-3 sm:gap-4 lg:gap-6/8`
+- Fixed card heights with responsive breakpoints for uniform alignment
+- CTA buttons limited to 2 words maximum for mobile readability
+- Pricing displays must include "From" prefix for transparency ("From £XX")
+- Minimize mobile scrolling through optimized content density
+
 **State Management Architecture:**
 - Global state via React Context providers (not Redux)
 - Five main contexts: Language, Cart, Favorites, Following, Networking
@@ -541,7 +549,7 @@ The LusoTown platform has identified 10 key administrative and management positi
 1. Run `cd web-app && npm run dev` to start development server
 2. Test changes at http://localhost:3000
 3. Always test both English and Portuguese language modes
-4. Verify responsive design on mobile/desktop
+4. Verify responsive design shows 2 cards per line on mobile (375px width)
 5. Test networking features at /my-network page
 6. Test chauffeur services at /chauffeur page (including family-friendly content)
 7. Verify event-based connection functionality
@@ -557,12 +565,18 @@ The LusoTown platform has identified 10 key administrative and management positi
 - Run `npm run lint` before committing
 - Run `npx tsc --noEmit` to check TypeScript errors
 - Test demo login functionality works correctly
+- Verify mobile layout shows 2 cards per line in all sections
+- Test responsive design on mobile (375px), tablet (768px), and desktop (1024px+)
+- Validate all CTAs are 2 words maximum
+- Confirm pricing displays include "From" prefix where applicable
 - Note: Static export currently disabled (check next.config.js for dynamic routes)
 
 **Common Debugging:**
 - If build fails, check TypeScript errors with `npx tsc --noEmit`
 - Language switching issues: check LanguageContext and localStorage
 - Styling issues: verify brand colors are used (not generic Tailwind colors)
+- Mobile layout issues: ensure all grids use `grid-cols-2 lg:grid-cols-3/4` pattern
+- Card alignment issues: verify fixed heights with responsive breakpoints
 - State persistence: check browser localStorage for cart/favorites/networking data
 - Networking issues: check localStorage keys (`lusotown-connections`, `lusotown-network-stats`)
 - Context provider order: ensure NetworkingProvider is correctly wrapped in layout.tsx
