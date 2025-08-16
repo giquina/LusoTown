@@ -88,7 +88,7 @@ interface PricingRecommendation {
   alternativeServiceId?: string
 }
 
-class ChauffeurPricingEngine {
+class TransportPricingEngine {
   private cache = new Map<string, { result: PricingBreakdown; timestamp: number }>()
   private readonly CACHE_DURATION = 5 * 60 * 1000 // 5 minutes
 
@@ -625,7 +625,7 @@ class ChauffeurPricingEngine {
 }
 
 // Singleton instance
-export const pricingEngine = new ChauffeurPricingEngine()
+export const pricingEngine = new TransportPricingEngine()
 
 // Export types for use in components
 export type {

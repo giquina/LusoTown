@@ -18,6 +18,8 @@ import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid'
 import { useLanguage } from '@/context/LanguageContext'
 import { supabase, Group, GroupCategory } from '@/lib/supabase'
 import toast from 'react-hot-toast'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 interface GroupWithCategory extends Group {
   category_info?: GroupCategory
@@ -287,8 +289,9 @@ export default function GroupsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-16">
-      <div className="container-width py-12">
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      <div className="pt-16 container-width py-12">
         {/* Header */}
         <div className="text-center mb-12">
           <motion.div
@@ -447,6 +450,7 @@ export default function GroupsPage() {
           </motion.div>
         )}
       </div>
+      <Footer />
     </div>
   )
 }

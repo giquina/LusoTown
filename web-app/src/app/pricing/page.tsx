@@ -39,6 +39,7 @@ import {
 } from '@heroicons/react/24/solid'
 import { Crown } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
+import Footer from '@/components/Footer'
 
 interface PricingTier {
   name: string
@@ -1177,6 +1178,7 @@ export default function Pricing() {
           </div>
         </section>
       </div>
+      <Footer />
     </main>
   )
 }

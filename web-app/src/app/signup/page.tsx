@@ -5,7 +5,9 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Header from '@/components/Header'
+import SubscriptionGate from '@/components/SubscriptionGate'
 import { useLanguage } from '@/context/LanguageContext'
+import { useSubscription } from '@/context/SubscriptionContext'
 import SocialLogin from '@/components/SocialLogin'
 import { 
   HeartIcon, 
@@ -20,6 +22,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { getImageWithFallback } from '@/lib/profileImages'
 import { authService } from '@/lib/auth'
+import Footer from '@/components/Footer'
 
 const benefits = [
   {
@@ -69,7 +72,8 @@ const testimonials = [
 ]
 
 export default function Signup() {
-  const { t } = useLanguage()
+  const { language, t } = useLanguage()
+  const { subscriptionRequired } = useSubscription()
   const [formData, setFormData] = useState({
     email: '',
     firstName: '',
@@ -183,10 +187,20 @@ export default function Signup() {
     }
   }
 
+  const isPortuguese = language === 'pt'
+
   return (
-    <main className="min-h-screen">
-      <Header />
-      <div className="pt-16">
+    <SubscriptionGate 
+      mode="signup"
+      title={isPortuguese ? 'Junte-se à Comunidade LusoTown' : 'Join the LusoTown Community'}
+      description={isPortuguese 
+        ? 'A subscrição anual de £25 dá-lhe acesso completo à rede social portuguesa de Londres.'
+        : 'The £25 annual subscription gives you full access to London\'s Portuguese social network.'
+      }
+    >
+      <main className="min-h-screen">
+        <Header />
+        <div className="pt-16">
         <section className="py-12 sm:py-20 bg-gradient-to-br from-primary-50 to-secondary-50 min-h-screen flex items-center">
           <div className="container-width w-full">
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -652,8 +666,10 @@ export default function Signup() {
             </div>
           </div>
         </section>
-      </div>
-    </main>
+        </div>
+        <Footer />
+      </main>
+    </SubscriptionGate>
   )
 }
 

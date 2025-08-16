@@ -174,16 +174,17 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
   // Homepage variant - prominent search bar
   if (variant === 'homepage') {
     return (
-      <div className={`relative max-w-4xl mx-auto ${className}`} ref={searchRef}>
+      <div className={`relative max-w-4xl mx-auto px-2 sm:px-0 overflow-hidden ${className}`} ref={searchRef}>
         <div className="relative">
-          <div className="relative bg-white/90 backdrop-blur-lg border-2 border-primary-200/60 rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:border-primary-300/80 group">
-            <div className="flex items-center p-6">
-              <div className="flex-shrink-0 mr-4">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center group-hover:rotate-6 transition-transform duration-300">
-                  <MagnifyingGlassIcon className="w-6 h-6 text-white" />
+          <div className="relative bg-white/90 backdrop-blur-lg border-2 border-primary-200/60 rounded-2xl sm:rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:border-primary-300/80 group">
+            {/* Mobile-optimized layout */}
+            <div className="flex items-center p-3 sm:p-4 lg:p-6">
+              <div className="flex-shrink-0 mr-2 sm:mr-3 lg:mr-4">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-lg sm:rounded-xl lg:rounded-2xl bg-gradient-to-br from-secondary-500 to-accent-500 flex items-center justify-center group-hover:rotate-6 transition-transform duration-300">
+                  <MagnifyingGlassIcon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
                 </div>
               </div>
-              <div className="flex-1 relative">
+              <div className="flex-1 relative min-w-0 mr-2 sm:mr-3">
                 <input
                   ref={inputRef}
                   type="text"
@@ -191,58 +192,66 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
                   onChange={(e) => setQuery(e.target.value)}
                   onKeyDown={handleKeyDown}
                   onFocus={handleFocus}
-                  placeholder={t('search.placeholder')}
-                  className="w-full text-xl font-medium text-gray-800 placeholder-gray-500 bg-transparent focus:outline-none"
+                  placeholder={t('search.placeholder.short')}
+                  className="w-full text-base sm:text-lg lg:text-xl font-medium text-gray-800 placeholder-gray-500 bg-transparent focus:outline-none pr-8 sm:pr-10 lg:pr-12"
                 />
                 {query && (
                   <button
                     onClick={clearSearch}
-                    className="absolute right-0 top-1/2 transform -translate-y-1/2 p-3 hover:bg-gray-100 rounded-full transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+                    className="absolute right-0 top-1/2 transform -translate-y-1/2 p-1.5 sm:p-2 hover:bg-gray-100 rounded-full transition-colors min-h-[36px] min-w-[36px] sm:min-h-[44px] sm:min-w-[44px] flex items-center justify-center"
                   >
-                    <XMarkIcon className="w-5 h-5 text-gray-400" />
+                    <XMarkIcon className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
                   </button>
                 )}
               </div>
               <button
                 onClick={() => handleSearch()}
-                className="flex-shrink-0 ml-4 px-8 py-3 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-bold rounded-2xl transition-all duration-300 hover:scale-105 shadow-lg min-h-[44px]"
+                className="flex-shrink-0 px-3 py-2.5 sm:p-3 lg:px-6 lg:py-3 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-semibold rounded-lg sm:rounded-xl lg:rounded-2xl transition-all duration-300 hover:scale-105 shadow-lg min-h-[40px] min-w-[40px] sm:min-h-[44px] sm:min-w-[44px] lg:min-w-auto"
+                aria-label={t('search.button')}
               >
-{t('search.button')}
+                {/* Mobile (up to 640px): Show only icon */}
+                <span className="sm:hidden">
+                  <MagnifyingGlassIcon className="w-4 h-4" />
+                </span>
+                {/* Desktop (640px+): Show text */}
+                <span className="hidden sm:inline whitespace-nowrap text-sm lg:text-base">
+                  {t('search.button')}
+                </span>
               </button>
             </div>
           </div>
 
           {/* Search Suggestions Dropdown */}
           {showSuggestions && suggestions.length > 0 && (
-            <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-200/60 backdrop-blur-lg z-50 overflow-hidden">
-              <div className="p-4">
+            <div className="absolute top-full left-2 right-2 sm:left-0 sm:right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-200/60 backdrop-blur-lg z-50 overflow-hidden">
+              <div className="p-3 sm:p-4">
                 <div className="text-sm font-semibold text-gray-500 mb-3 flex items-center gap-2">
                   <MagnifyingGlassIcon className="w-4 h-4" />
-{t('search.suggestions')}
+                  {t('search.suggestions')}
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-1 sm:space-y-2">
                   {suggestions.map((suggestion, index) => (
                     <button
                       key={`${suggestion.type}-${suggestion.id}-${index}`}
                       onClick={() => handleSuggestionClick(suggestion)}
-                      className="w-full text-left p-3 rounded-xl hover:bg-primary-50 transition-colors group min-h-[44px]"
+                      className="w-full text-left p-2 sm:p-3 rounded-xl hover:bg-primary-50 transition-colors group min-h-[44px]"
                     >
-                      <div className="flex items-start gap-3">
-                        <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-primary-100 group-hover:bg-primary-200 transition-colors flex items-center justify-center text-primary-600">
+                      <div className="flex items-start gap-2 sm:gap-3">
+                        <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-primary-100 group-hover:bg-primary-200 transition-colors flex items-center justify-center text-primary-600">
                           {getResultIcon(suggestion.type)}
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 mb-1">
-                            <h4 className="font-semibold text-gray-900 break-words line-clamp-1 leading-tight flex-1 min-w-0">{suggestion.title}</h4>
+                            <h4 className="font-semibold text-gray-900 break-words line-clamp-1 leading-tight flex-1 min-w-0 text-sm sm:text-base">{suggestion.title}</h4>
                             <span className="flex-shrink-0 text-xs font-medium text-primary-600 bg-primary-100 px-2 py-1 rounded-full whitespace-nowrap">
                               {getResultTypeLabel(suggestion.type)}
                             </span>
                           </div>
-                          <p className="text-sm text-gray-600 line-clamp-2 leading-relaxed">{suggestion.description}</p>
+                          <p className="text-xs sm:text-sm text-gray-600 line-clamp-2 leading-relaxed">{suggestion.description}</p>
                           {suggestion.location && (
                             <div className="flex items-center gap-1 mt-1 text-xs text-gray-500">
                               <MapPinIcon className="w-3 h-3" />
-                              {suggestion.location}
+                              <span className="truncate">{suggestion.location}</span>
                             </div>
                           )}
                           {suggestion.date && (
@@ -264,7 +273,7 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
                   className="w-full text-sm text-primary-600 font-medium hover:text-primary-700 flex items-center justify-center gap-2 min-h-[44px]"
                 >
                   <MagnifyingGlassIcon className="w-4 h-4" />
-                  {t('search.see-all-results').replace('{query}', query)}
+                  <span className="truncate">{t('search.see-all-results').replace('{query}', query)}</span>
                 </button>
               </div>
             </div>
@@ -272,10 +281,10 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
 
           {/* Loading indicator */}
           {isLoading && (
-            <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-lg border border-gray-200/60 p-4 z-50">
-              <div className="flex items-center justify-center gap-3 text-gray-500">
-                <div className="w-5 h-5 border-2 border-primary-200 border-t-primary-600 rounded-full animate-spin"></div>
-{t('search.searching')}
+            <div className="absolute top-full left-2 right-2 sm:left-0 sm:right-0 mt-2 bg-white rounded-2xl shadow-lg border border-gray-200/60 p-3 sm:p-4 z-50">
+              <div className="flex items-center justify-center gap-2 sm:gap-3 text-gray-500">
+                <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-primary-200 border-t-primary-600 rounded-full animate-spin"></div>
+                <span className="text-sm sm:text-base">{t('search.searching')}</span>
               </div>
             </div>
           )}

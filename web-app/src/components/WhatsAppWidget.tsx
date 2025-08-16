@@ -44,7 +44,7 @@ const WhatsAppWidget: React.FC = () => {
       // Social events path  
       {
         message: "Perfeito! 🎉 You want to find social events! LusoTown connects you with:\n\n🎭 Portuguese cultural experiences & festivals\n🍷 Wine tastings, fado nights, food tours\n🌆 London tours with Portuguese guides\n🎵 Music events, club nights & social gatherings\n👥 Connect with Portuguese speakers through events\n\n*Your Portuguese social calendar awaits!*",
-        options: ["Show me cultural events!", "Find music & nightlife", "Book a chauffeur tour", "How do I connect?"],
+        options: ["Show me cultural events!", "Find music & nightlife", "Book a transport tour", "How do I connect?"],
         icon: <Users className="w-4 h-4 text-red-600" />
       },
       // Business networking path
@@ -67,8 +67,8 @@ const WhatsAppWidget: React.FC = () => {
       },
       // Community member details  
       {
-        message: "Incrível! 🎭 As a community member you can:\n\n🎪 **Social Experiences:** Festivals, tours, cultural nights & entertainment\n💼 **Business Growth:** Workshops, networking & professional development\n🚗 **Luxury Services:** Portuguese chauffeur & cultural tours\n👥 **Networking System:** Connect through shared event attendance\n💫 **Annual Membership:** £25/year for premium features\n🎯 **Bilingual Experience:** Complete Portuguese/English platform\n\nJoin our thriving Portuguese community!",
-        options: ["Join the community!", "Annual membership benefits", "Chauffeur services info", "Networking features"],
+        message: "Incrível! 🎭 As a community member you can:\n\n🎪 **Social Experiences:** Festivals, tours, cultural nights & entertainment\n💼 **Business Growth:** Workshops, networking & professional development\n🚗 **Luxury Services:** Portuguese transport & cultural tours\n👥 **Networking System:** Connect through shared event attendance\n💫 **Annual Membership:** £25/year for premium features\n🎯 **Bilingual Experience:** Complete Portuguese/English platform\n\nJoin our thriving Portuguese community!",
+        options: ["Join the community!", "Annual membership benefits", "Transport services info", "Networking features"],
         icon: <Shield className="w-4 h-4 text-secondary-600" />
       }
     ],
@@ -87,7 +87,7 @@ const WhatsAppWidget: React.FC = () => {
       // Social events path
       {
         message: "Perfeito! 🎉 Queres encontrar eventos sociais! A LusoTown conecta-te com:\n\n🎭 Experiências culturais portuguesas e festivais\n🍷 Provas de vinho, noites de fado, tours gastronómicos\n🌆 Tours por Londres com guias portugueses\n🎵 Eventos musicais, noites de club e encontros sociais\n👥 Conecta-te com lusófonos através de eventos\n\n*O teu calendário social português espera por ti!*",
-        options: ["Mostra-me eventos culturais!", "Música e vida noturna", "Reservar tour de chauffeur", "Como me conecto?"],
+        options: ["Mostra-me eventos culturais!", "Música e vida noturna", "Reservar tour de transporte", "Como me conecto?"],
         icon: <Users className="w-4 h-4 text-red-600" />
       },
       // Business networking path
@@ -110,8 +110,8 @@ const WhatsAppWidget: React.FC = () => {
       },
       // Community member details
       {
-        message: "Incrível! 🎭 Como membro da comunidade podes:\n\n🎪 **Experiências Sociais:** Festivais, tours, noites culturais e entretenimento\n💼 **Crescimento Empresarial:** Workshops, networking e desenvolvimento profissional\n🚗 **Serviços de Luxo:** Chauffeur português e tours culturais\n👥 **Sistema de Networking:** Conecta através de participação partilhada em eventos\n💫 **Membership Anual:** £25/ano para funcionalidades premium\n🎯 **Experiência Bilingue:** Plataforma completa Português/Inglês\n\nJunta-te à nossa próspera comunidade portuguesa!",
-        options: ["Juntar-me à comunidade!", "Benefícios do membership anual", "Informações sobre serviços de chauffeur", "Funcionalidades de networking"],
+        message: "Incrível! 🎭 Como membro da comunidade podes:\n\n🎪 **Experiências Sociais:** Festivais, tours, noites culturais e entretenimento\n💼 **Crescimento Empresarial:** Workshops, networking e desenvolvimento profissional\n🚗 **Serviços de Luxo:** Transporte português e tours culturais\n👥 **Sistema de Networking:** Conecta através de participação partilhada em eventos\n💫 **Membership Anual:** £25/ano para funcionalidades premium\n🎯 **Experiência Bilingue:** Plataforma completa Português/Inglês\n\nJunta-te à nossa próspera comunidade portuguesa!",
+        options: ["Juntar-me à comunidade!", "Benefícios do membership anual", "Informações sobre serviços de transporte", "Funcionalidades de networking"],
         icon: <Shield className="w-4 h-4 text-secondary-600" />
       }
     ]

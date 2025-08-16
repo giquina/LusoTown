@@ -24,6 +24,8 @@ import {
   AcademicCapIcon,
   ComputerDesktopIcon
 } from '@heroicons/react/24/outline'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 interface JobRole {
   id: string
@@ -882,6 +884,7 @@ export default function CareersPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-secondary-50/30">
+      <Header />
       {/* Hero Section */}
       <div className="relative overflow-hidden bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white">
         <div className="absolute inset-0 bg-black/20"></div>
@@ -1102,6 +1105,7 @@ export default function CareersPage() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

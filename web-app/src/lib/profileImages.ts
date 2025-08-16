@@ -192,6 +192,80 @@ export const profileImages: Record<string, ProfileImage> = {
     path: '/profiles/forums/forum-user-5.jpg',
     alt: 'Forum member avatar',
     category: 'forum'
+  },
+
+  // Portuguese Community Testimonials (authentic Portuguese speakers)
+  'carlos-silva': {
+    id: 'carlos-silva',
+    path: '/profiles/testimonials/portuguese/carlos-silva.jpg',
+    alt: 'Carlos Silva - Portuguese community organizer from Camden, London',
+    category: 'testimonial'
+  },
+  'ana-ferreira': {
+    id: 'ana-ferreira',
+    path: '/profiles/testimonials/portuguese/ana-ferreira.jpg',
+    alt: 'Ana Ferreira - Brazilian dance community leader from Stockwell, London',
+    category: 'testimonial'
+  },
+  'miguel-santos': {
+    id: 'miguel-santos',
+    path: '/profiles/testimonials/portuguese/miguel-santos.jpg',
+    alt: 'Miguel Santos - Fado soul and cultural heritage keeper from Elephant & Castle, London',
+    category: 'testimonial'
+  },
+  'joana-silva': {
+    id: 'joana-silva',
+    path: '/profiles/testimonials/portuguese/joana-silva.jpg',
+    alt: 'Joana Silva - Culinary culture and professional networking from Canary Wharf, London',
+    category: 'testimonial'
+  },
+  'pedro-costa': {
+    id: 'pedro-costa',
+    path: '/profiles/testimonials/portuguese/pedro-costa.jpg',
+    alt: 'Pedro Costa - Literature and tech community builder from Hampstead, London',
+    category: 'testimonial'
+  },
+  'teresa-rodrigues': {
+    id: 'teresa-rodrigues',
+    path: '/profiles/testimonials/portuguese/teresa-rodrigues.jpg',
+    alt: 'Teresa Rodrigues - Music appreciation and cultural unity from Brixton, London',
+    category: 'testimonial'
+  },
+  'ricardo-oliveira': {
+    id: 'ricardo-oliveira',
+    path: '/profiles/testimonials/portuguese/ricardo-oliveira.jpg',
+    alt: 'Ricardo Oliveira - Sports and social community organizer from Greenwich, London',
+    category: 'testimonial'
+  },
+  'fernanda-santos': {
+    id: 'fernanda-santos',
+    path: '/profiles/testimonials/portuguese/fernanda-santos.jpg',
+    alt: 'Fernanda Santos - Language exchange and cultural bridge from King\'s Cross, London',
+    category: 'testimonial'
+  },
+  'antonio-pereira': {
+    id: 'antonio-pereira',
+    path: '/profiles/testimonials/portuguese/antonio-pereira.jpg',
+    alt: 'António Pereira - Heritage tours and business development from City of London',
+    category: 'testimonial'
+  },
+  'fernanda-oliveira': {
+    id: 'fernanda-oliveira',
+    path: '/profiles/testimonials/portuguese/fernanda-oliveira.jpg',
+    alt: 'Fernanda Oliveira - Cultural events organizer from Stockwell, London',
+    category: 'testimonial'
+  },
+  'marco-santos': {
+    id: 'marco-santos',
+    path: '/profiles/testimonials/portuguese/marco-santos.jpg',
+    alt: 'Marco Santos - Brazilian musician and community organizer from Bermondsey, London',
+    category: 'testimonial'
+  },
+  'catarina-lopes': {
+    id: 'catarina-lopes',
+    path: '/profiles/testimonials/portuguese/catarina-lopes.jpg',
+    alt: 'Catarina Lopes - Portuguese educator and Luso-British mother from Nine Elms, London',
+    category: 'testimonial'
   }
 }
 

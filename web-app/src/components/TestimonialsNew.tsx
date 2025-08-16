@@ -6,175 +6,156 @@ import { StarIcon } from '@heroicons/react/24/solid'
 import { ChatBubbleLeftIcon } from '@heroicons/react/24/outline'
 import { getImagesByCategory, getImageWithFallback, getAltTextWithFallback } from '@/lib/profileImages'
 import { useLanguage } from '@/context/LanguageContext'
+import { createMixedTestimonials, getTestimonialText, authenticPortugueseTestimonials } from '@/lib/testimonialMixer'
 
-const testimonials = {
-  en: [
-    {
-      name: "Carlos Silva",
-      age: "28",
-      location: "Camden, London",
-      imageId: "carlos-silva",
-      quote: "Started attending Portuguese movie nights at Rich Mix Cinema through LusoTown, just wanting to hear nossa língua on screen. Met other young Portuguese who missed our cultural conversations. Now we organize monthly 'Cinema & Conversa' events mixing Portuguese films with networking over bifanas. From lonely evenings to building meaningful friendships and business connections!",
-      rating: 5,
-      relationship: "Cultural Events & Networking Organizer"
-    },
-    {
-      name: "Ana Ferreira",
-      age: "34", 
-      location: "Stockwell, London",
-      imageId: "ana-ferreira",
-      quote: "Minha alma brasileira was homesick until LusoTown helped me find Brazilian dance workshops at Southbank Centre. Learning samba steps with Portuguese hearts who understand nossa alegria! From missing Brazil's warmth to creating our own tropical London community. Now we dance together every week, sharing stories between the steps. Dance heals saudade, community amplifies joy!",
-      rating: 5,
-      relationship: "Brazilian Dance & Social Community Leader"
-    },
-    {
-      name: "Miguel Santos",
-      age: "32",
-      location: "Elephant & Castle, London", 
-      imageId: "miguel-santos",
-      quote: "Through LusoTown found magical fado evening at Southbank Centre that cured my London saudade. Listening to 'Lágrima' under Thames stars, surrounded by Portuguese souls sharing the same ache for home... tears of recognition, not sadness. Now we meet monthly at Taberna Real do Fado in Bermondsey, our voices joining ancient melodies. Fado taught me: saudade shared becomes love multiplied.",
-      rating: 5,
-      relationship: "Fado Soul & Cultural Heritage Keeper"
-    },
-    {
-      name: "Joana Silva",
-      age: "29",
-      location: "Canary Wharf, London",
-      imageId: "joana-silva",
-      quote: "Started attending Portuguese cooking workshops through LusoTown to learn minha avó's lost receitas. Discovered other Portuguese hearts hungry for authentic flavors and cultural connections. Now we organize 'Sabores & Stories' dinners at local community centers, sharing traditional dishes while building professional networks. Food connects, friendship follows, business grows naturally!",
-      rating: 5,
-      relationship: "Culinary Culture & Professional Networking"
-    },
-    {
-      name: "Pedro Costa",
-      age: "41",
-      location: "Hampstead, London",
-      imageId: "pedro-costa",
-      quote: "Found Portuguese book club through LusoTown discussing literatura lusófona at Hampstead libraries. From Pessoa's poetry to modern Portuguese novels, sharing thoughts with almas who understand literary saudade. Our discussions became AI workshops when we realized many were tech professionals. Now 'Books & Code' meetups blend Portuguese culture with professional growth!",
-      rating: 5,
-      relationship: "Literature & Tech Community Builder"
-    },
-    {
-      name: "Teresa Rodrigues",
-      age: "37",
-      location: "Brixton, London",
-      imageId: "teresa-rodrigues",
-      quote: "From playing morna alone in my Brixton flat, missing Cabo Verde's musical soul, to discovering Portuguese music appreciation evenings through LusoTown. Started with 6 homesick souls, now 'Música Lusófona' at local venues draws 100+ people sharing our diverse musical heritage. Music heals, community amplifies, friendships flourish across all Portuguese-speaking cultures!",
-      rating: 5,
-      relationship: "Music Appreciation & Cultural Unity"
-    },
-    {
-      name: "Ricardo Oliveira",
-      age: "30",
-      location: "Greenwich, London",
-      imageId: "ricardo-oliveira",
-      quote: "Joined Portuguese football viewing parties through LusoTown just to watch Portugal games with people who understand our passion. Started with 8 friends at local pubs, now we organize weekend barbecues in Greenwich Park for 200+ Portuguese families. From match nights to community picnics - LusoTown showed me how sport builds lasting friendships!",
-      rating: 5,
-      relationship: "Sports & Social Community Organizer"
-    },
-    {
-      name: "Fernanda Santos",
-      age: "26",
-      location: "King's Cross, London",
-      imageId: "fernanda-santos",
-      quote: "Discovered Portuguese language exchange sessions through LusoTown, perfect for maintaining meu português while improving English. Met Brazilian, Portuguese, and African Portuguese speakers creating beautiful linguistic harmony. From language practice to salsa workshops to professional networking - LusoTown became my gateway to London's diverse Portuguese-speaking community!",
-      rating: 5,
-      relationship: "Language Exchange & Cultural Bridge"
-    },
-    {
-      name: "António Pereira",
-      age: "45",
-      location: "City of London",
-      imageId: "antonio-pereira",
-      quote: "Started attending Portuguese heritage walks through London's historic areas via LusoTown. Learning about Portuguese contributions to British culture while meeting fellow history enthusiasts. These cultural connections naturally evolved into business networking. Now 'Heritage & Commerce' tours blend cultural education with professional opportunities. History connects hearts, business follows naturally!",
-      rating: 5,
-      relationship: "Heritage Tours & Business Development"
-    }
-  ],
-  pt: [
-    {
-      name: "Carlos Silva",
-      age: "28",
-      location: "Camden, Londres",
-      imageId: "carlos-silva",
-      quote: "Comecei a ir a noites de cinema português no Rich Mix Cinema através da LusoTown, só queria ouvir nossa língua no ecrã. Conheci outros jovens portugueses que sentiam falta das nossas conversas culturais. Agora organizamos 'Cinema & Conversa' mensais misturando filmes portugueses com networking. De noites solitárias a construir amizades e conexões profissionais!",
-      rating: 5,
-      relationship: "Organizador de Eventos Culturais & Networking"
-    },
-    {
-      name: "Ana Ferreira",
-      age: "34", 
-      location: "Stockwell, Londres",
-      imageId: "ana-ferreira",
-      quote: "Minha alma brasileira tinha saudades até a LusoTown me ajudar a encontrar workshops de dança brasileira no Southbank Centre. Aprendendo passos de samba com corações portugueses que entendem nossa alegria! De sentir falta do calor brasileiro a criar nossa própria comunidade tropical londrina. Agora dançamos juntos todas as semanas!",
-      rating: 5,
-      relationship: "Líder de Dança & Comunidade Social Brasileira"
-    },
-    {
-      name: "Miguel Santos",
-      age: "32",
-      location: "Elephant & Castle, Londres", 
-      imageId: "miguel-santos",
-      quote: "Através da LusoTown encontrei uma noite de fado mágica no Southbank Centre que curou minha saudade londrina. Ouvindo 'Lágrima' sob as estrelas do Tamisa, rodeado de almas portuguesas partilhando a mesma dor de casa... lágrimas de reconhecimento, não tristeza. Agora encontramo-nos mensalmente, vozes unindo melodias antigas.",
-      rating: 5,
-      relationship: "Alma do Fado & Guardião da Herança Cultural"
-    },
-    {
-      name: "Joana Silva",
-      age: "29",
-      location: "Canary Wharf, Londres",
-      imageId: "joana-silva",
-      quote: "Comecei a frequentar workshops de culinária portuguesa através da LusoTown para aprender as receitas perdidas da minha avó. Descobri outros corações portugueses famintos por sabores autênticos. Agora organizamos jantares 'Sabores & Histórias' partilhando pratos tradicionais enquanto construímos redes profissionais. Comida conecta, amizade segue!",
-      rating: 5,
-      relationship: "Cultura Culinária & Networking Profissional"
-    },
-    {
-      name: "Pedro Costa",
-      age: "41",
-      location: "Hampstead, Londres",
-      imageId: "pedro-costa",
-      quote: "Encontrei clube de livros português através da LusoTown discutindo literatura lusófona nas bibliotecas de Hampstead. Da poesia de Pessoa aos romances portugueses modernos, partilhando pensamentos com almas que entendem saudade literária. Discussões tornaram-se workshops de IA quando percebemos que muitos eram profissionais tech!",
-      rating: 5,
-      relationship: "Literatura & Construtor de Comunidade Tech"
-    },
-    {
-      name: "Teresa Rodrigues",
-      age: "37",
-      location: "Brixton, Londres",
-      imageId: "teresa-rodrigues",
-      quote: "De tocar morna sozinha no meu apartamento em Brixton, sentindo falta da alma musical de Cabo Verde, a descobrir noites de apreciação musical portuguesa através da LusoTown. Começou com 6 almas saudosas, agora 'Música Lusófona' atrai 100+ pessoas partilhando nossa herança musical diversa. Música cura, comunidade amplifica!",
-      rating: 5,
-      relationship: "Apreciação Musical & Unidade Cultural"
-    },
-    {
-      name: "Ricardo Oliveira",
-      age: "30",
-      location: "Greenwich, Londres",
-      imageId: "ricardo-oliveira",
-      quote: "Juntei-me a festas para ver futebol português através da LusoTown só para ver jogos de Portugal com pessoas que entendem nossa paixão. Começámos com 8 amigos em pubs locais, agora organizamos churrascos de fim de semana no Greenwich Park para 200+ famílias portuguesas. Do futebol aos piqueniques comunitários!",
-      rating: 5,
-      relationship: "Organizador de Comunidade Desportiva & Social"
-    },
-    {
-      name: "Fernanda Santos",
-      age: "26",
-      location: "King's Cross, Londres",
-      imageId: "fernanda-santos",
-      quote: "Descobri sessões de intercâmbio de língua portuguesa através da LusoTown, perfeitas para manter meu português enquanto melhoro o inglês. Conheci falantes brasileiros, portugueses e africanos criando harmonia linguística linda. Do intercâmbio a workshops de salsa a networking profissional - LusoTown tornou-se minha porta para a diversa comunidade lusófona!",
-      rating: 5,
-      relationship: "Intercâmbio Linguístico & Ponte Cultural"
-    },
-    {
-      name: "António Pereira",
-      age: "45",
-      location: "City de Londres",
-      imageId: "antonio-pereira",
-      quote: "Comecei a participar em caminhadas pela herança portuguesa através das áreas históricas de Londres via LusoTown. Aprendendo sobre contribuições portuguesas à cultura britânica enquanto conhecia entusiastas da história. Essas conexões culturais evoluíram naturalmente para networking empresarial. História conecta corações, negócios seguem naturalmente!",
-      rating: 5,
-      relationship: "Tours de Herança & Desenvolvimento Empresarial"
-    }
-  ]
-}
+// Combined testimonials with language indicators for mixed display
+const allTestimonials = [
+  // Authentic Portuguese testimonials (always displayed in Portuguese)
+  ...authenticPortugueseTestimonials.community.map(t => ({
+    ...t,
+    id: `auth-pt-${t.name.toLowerCase().replace(/\s+/g, '-')}`,
+    language: 'pt' as const,
+    isAuthentic: true
+  })),
+  
+  // English testimonials with Portuguese translations
+  {
+    id: "carlos-silva",
+    name: "Carlos Silva",
+    age: "28",
+    location: "Camden, London",
+    locationPortuguese: "Camden, Londres",
+    imageId: "carlos-silva",
+    quote: "Started attending Portuguese movie nights at Rich Mix Cinema through LusoTown, just wanting to hear nossa língua on screen. Met other young Portuguese who missed our cultural conversations. Now we organize monthly 'Cinema & Conversa' events mixing Portuguese films with networking over bifanas. From lonely evenings to building meaningful friendships and business connections!",
+    text: "Started attending Portuguese movie nights at Rich Mix Cinema through LusoTown, just wanting to hear nossa língua on screen. Met other young Portuguese who missed our cultural conversations. Now we organize monthly 'Cinema & Conversa' events mixing Portuguese films with networking over bifanas. From lonely evenings to building meaningful friendships and business connections!",
+    textPortuguese: "Comecei a ir a noites de cinema português no Rich Mix Cinema através da LusoTown, só queria ouvir nossa língua no ecrã. Conheci outros jovens portugueses que sentiam falta das nossas conversas culturais. Agora organizamos 'Cinema & Conversa' mensais misturando filmes portugueses com networking. De noites solitárias a construir amizades e conexões profissionais!",
+    rating: 5,
+    relationship: "Cultural Events & Networking Organizer",
+    relationshipPortuguese: "Organizador de Eventos Culturais & Networking",
+    language: 'en' as const
+  },
+  {
+    id: "ana-ferreira",
+    name: "Ana Ferreira",
+    age: "34", 
+    location: "Stockwell, London",
+    locationPortuguese: "Stockwell, Londres",
+    imageId: "ana-ferreira",
+    quote: "Minha alma brasileira was homesick until LusoTown helped me find Brazilian dance workshops at Southbank Centre. Learning samba steps with Portuguese hearts who understand nossa alegria! From missing Brazil's warmth to creating our own tropical London community. Now we dance together every week, sharing stories between the steps. Dance heals saudade, community amplifies joy!",
+    text: "Minha alma brasileira was homesick until LusoTown helped me find Brazilian dance workshops at Southbank Centre. Learning samba steps with Portuguese hearts who understand nossa alegria! From missing Brazil's warmth to creating our own tropical London community. Now we dance together every week, sharing stories between the steps. Dance heals saudade, community amplifies joy!",
+    textPortuguese: "Minha alma brasileira tinha saudades até a LusoTown me ajudar a encontrar workshops de dança brasileira no Southbank Centre. Aprendendo passos de samba com corações portugueses que entendem nossa alegria! De sentir falta do calor brasileiro a criar nossa própria comunidade tropical londrina. Agora dançamos juntos todas as semanas!",
+    rating: 5,
+    relationship: "Brazilian Dance & Social Community Leader",
+    relationshipPortuguese: "Líder de Dança & Comunidade Social Brasileira",
+    language: 'en' as const
+  },
+  {
+    id: "miguel-santos",
+    name: "Miguel Santos",
+    age: "32",
+    location: "Elephant & Castle, London",
+    locationPortuguese: "Elephant & Castle, Londres",
+    imageId: "miguel-santos",
+    quote: "Through LusoTown found magical fado evening at Southbank Centre that cured my London saudade. Listening to 'Lágrima' under Thames stars, surrounded by Portuguese souls sharing the same ache for home... tears of recognition, not sadness. Now we meet monthly at Taberna Real do Fado in Bermondsey, our voices joining ancient melodies. Fado taught me: saudade shared becomes love multiplied.",
+    text: "Through LusoTown found magical fado evening at Southbank Centre that cured my London saudade. Listening to 'Lágrima' under Thames stars, surrounded by Portuguese souls sharing the same ache for home... tears of recognition, not sadness. Now we meet monthly at Taberna Real do Fado in Bermondsey, our voices joining ancient melodies. Fado taught me: saudade shared becomes love multiplied.",
+    textPortuguese: "Através da LusoTown encontrei uma noite de fado mágica no Southbank Centre que curou minha saudade londrina. Ouvindo 'Lágrima' sob as estrelas do Tamisa, rodeado de almas portuguesas partilhando a mesma dor de casa... lágrimas de reconhecimento, não tristeza. Agora encontramo-nos mensalmente, vozes unindo melodias antigas.",
+    rating: 5,
+    relationship: "Fado Soul & Cultural Heritage Keeper",
+    relationshipPortuguese: "Alma do Fado & Guardião da Herança Cultural",
+    language: 'en' as const
+  },
+  {
+    id: "joana-silva",
+    name: "Joana Silva",
+    age: "29",
+    location: "Canary Wharf, London",
+    locationPortuguese: "Canary Wharf, Londres",
+    imageId: "joana-silva",
+    quote: "Started attending Portuguese cooking workshops through LusoTown to learn minha avó's lost receitas. Discovered other Portuguese hearts hungry for authentic flavors and cultural connections. Now we organize 'Sabores & Stories' dinners at local community centers, sharing traditional dishes while building professional networks. Food connects, friendship follows, business grows naturally!",
+    text: "Started attending Portuguese cooking workshops through LusoTown to learn minha avó's lost receitas. Discovered other Portuguese hearts hungry for authentic flavors and cultural connections. Now we organize 'Sabores & Stories' dinners at local community centers, sharing traditional dishes while building professional networks. Food connects, friendship follows, business grows naturally!",
+    textPortuguese: "Comecei a frequentar workshops de culinária portuguesa através da LusoTown para aprender as receitas perdidas da minha avó. Descobri outros corações portugueses famintos por sabores autênticos. Agora organizamos jantares 'Sabores & Histórias' partilhando pratos tradicionais enquanto construímos redes profissionais. Comida conecta, amizade segue!",
+    rating: 5,
+    relationship: "Culinary Culture & Professional Networking",
+    relationshipPortuguese: "Cultura Culinária & Networking Profissional",
+    language: 'en' as const
+  },
+  // Additional English testimonials with full bilingual support
+  {
+    id: "pedro-costa",
+    name: "Pedro Costa",
+    age: "41",
+    location: "Hampstead, London",
+    locationPortuguese: "Hampstead, Londres",
+    imageId: "pedro-costa",
+    quote: "Found Portuguese book club through LusoTown discussing literatura lusófona at Hampstead libraries. From Pessoa's poetry to modern Portuguese novels, sharing thoughts with almas who understand literary saudade. Our discussions became AI workshops when we realized many were tech professionals. Now 'Books & Code' meetups blend Portuguese culture with professional growth!",
+    text: "Found Portuguese book club through LusoTown discussing literatura lusófona at Hampstead libraries. From Pessoa's poetry to modern Portuguese novels, sharing thoughts with almas who understand literary saudade. Our discussions became AI workshops when we realized many were tech professionals. Now 'Books & Code' meetups blend Portuguese culture with professional growth!",
+    textPortuguese: "Encontrei clube de livros português através da LusoTown discutindo literatura lusófona nas bibliotecas de Hampstead. Da poesia de Pessoa aos romances portugueses modernos, partilhando pensamentos com almas que entendem saudade literária. Discussões tornaram-se workshops de IA quando percebemos que muitos eram profissionais tech!",
+    rating: 5,
+    relationship: "Literature & Tech Community Builder",
+    relationshipPortuguese: "Literatura & Construtor de Comunidade Tech",
+    language: 'en' as const
+  },
+  {
+    id: "teresa-rodrigues",
+    name: "Teresa Rodrigues",
+    age: "37",
+    location: "Brixton, London",
+    locationPortuguese: "Brixton, Londres",
+    imageId: "teresa-rodrigues",
+    quote: "From playing morna alone in my Brixton flat, missing Cabo Verde's musical soul, to discovering Portuguese music appreciation evenings through LusoTown. Started with 6 homesick souls, now 'Música Lusófona' at local venues draws 100+ people sharing our diverse musical heritage. Music heals, community amplifies, friendships flourish across all Portuguese-speaking cultures!",
+    text: "From playing morna alone in my Brixton flat, missing Cabo Verde's musical soul, to discovering Portuguese music appreciation evenings through LusoTown. Started with 6 homesick souls, now 'Música Lusófona' at local venues draws 100+ people sharing our diverse musical heritage. Music heals, community amplifies, friendships flourish across all Portuguese-speaking cultures!",
+    textPortuguese: "De tocar morna sozinha no meu apartamento em Brixton, sentindo falta da alma musical de Cabo Verde, a descobrir noites de apreciação musical portuguesa através da LusoTown. Começou com 6 almas saudosas, agora 'Música Lusófona' atrai 100+ pessoas partilhando nossa herança musical diversa. Música cura, comunidade amplifica!",
+    rating: 5,
+    relationship: "Music Appreciation & Cultural Unity",
+    relationshipPortuguese: "Apreciação Musical & Unidade Cultural",
+    language: 'en' as const
+  },
+  {
+    id: "ricardo-oliveira",
+    name: "Ricardo Oliveira",
+    age: "30",
+    location: "Greenwich, London",
+    locationPortuguese: "Greenwich, Londres",
+    imageId: "ricardo-oliveira",
+    quote: "Joined Portuguese football viewing parties through LusoTown just to watch Portugal games with people who understand our passion. Started with 8 friends at local pubs, now we organize weekend barbecues in Greenwich Park for 200+ Portuguese families. From match nights to community picnics - LusoTown showed me how sport builds lasting friendships!",
+    text: "Joined Portuguese football viewing parties through LusoTown just to watch Portugal games with people who understand our passion. Started with 8 friends at local pubs, now we organize weekend barbecues in Greenwich Park for 200+ Portuguese families. From match nights to community picnics - LusoTown showed me how sport builds lasting friendships!",
+    textPortuguese: "Juntei-me a festas para ver futebol português através da LusoTown só para ver jogos de Portugal com pessoas que entendem nossa paixão. Começámos com 8 amigos em pubs locais, agora organizamos churrascos de fim de semana no Greenwich Park para 200+ famílias portuguesas. Do futebol aos piqueniques comunitários!",
+    rating: 5,
+    relationship: "Sports & Social Community Organizer",
+    relationshipPortuguese: "Organizador de Comunidade Desportiva & Social",
+    language: 'en' as const
+  },
+  {
+    id: "fernanda-santos",
+    name: "Fernanda Santos",
+    age: "26",
+    location: "King's Cross, London",
+    locationPortuguese: "King's Cross, Londres",
+    imageId: "fernanda-santos",
+    quote: "Discovered Portuguese language exchange sessions through LusoTown, perfect for maintaining meu português while improving English. Met Brazilian, Portuguese, and African Portuguese speakers creating beautiful linguistic harmony. From language practice to salsa workshops to professional networking - LusoTown became my gateway to London's diverse Portuguese-speaking community!",
+    text: "Discovered Portuguese language exchange sessions through LusoTown, perfect for maintaining meu português while improving English. Met Brazilian, Portuguese, and African Portuguese speakers creating beautiful linguistic harmony. From language practice to salsa workshops to professional networking - LusoTown became my gateway to London's diverse Portuguese-speaking community!",
+    textPortuguese: "Descobri sessões de intercâmbio de língua portuguesa através da LusoTown, perfeitas para manter meu português enquanto melhoro o inglês. Conheci falantes brasileiros, portugueses e africanos criando harmonia linguística linda. Do intercâmbio a workshops de salsa a networking profissional - LusoTown tornou-se minha porta para a diversa comunidade lusófona!",
+    rating: 5,
+    relationship: "Language Exchange & Cultural Bridge",
+    relationshipPortuguese: "Intercâmbio Linguístico & Ponte Cultural",
+    language: 'en' as const
+  },
+  {
+    id: "antonio-pereira",
+    name: "António Pereira",
+    age: "45",
+    location: "City of London",
+    locationPortuguese: "City de Londres",
+    imageId: "antonio-pereira",
+    quote: "Started attending Portuguese heritage walks through London's historic areas via LusoTown. Learning about Portuguese contributions to British culture while meeting fellow history enthusiasts. These cultural connections naturally evolved into business networking. Now 'Heritage & Commerce' tours blend cultural education with professional opportunities. History connects hearts, business follows naturally!",
+    text: "Started attending Portuguese heritage walks through London's historic areas via LusoTown. Learning about Portuguese contributions to British culture while meeting fellow history enthusiasts. These cultural connections naturally evolved into business networking. Now 'Heritage & Commerce' tours blend cultural education with professional opportunities. History connects hearts, business follows naturally!",
+    textPortuguese: "Comecei a participar em caminhadas pela herança portuguesa através das áreas históricas de Londres via LusoTown. Aprendendo sobre contribuições portuguesas à cultura britânica enquanto conhecia entusiastas da história. Essas conexões culturais evoluíram naturalmente para networking empresarial. História conecta corações, negócios seguem naturalmente!",
+    rating: 5,
+    relationship: "Heritage Tours & Business Development",
+    relationshipPortuguese: "Tours de Herança & Desenvolvimento Empresarial",
+    language: 'en' as const
+  }
+]
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -200,7 +181,9 @@ const cardVariants = {
 
 export default function TestimonialsNew() {
   const { t, language } = useLanguage()
-  const currentTestimonials = testimonials[language as keyof typeof testimonials] || testimonials.en
+  
+  // Create mixed testimonials ensuring 30% Portuguese reviews
+  const mixedTestimonials = createMixedTestimonials(allTestimonials, { portuguesePercentage: 30 })
 
   return (
     <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-secondary-50 relative overflow-hidden">
@@ -243,57 +226,70 @@ export default function TestimonialsNew() {
           viewport={{ once: true }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-7 lg:gap-8 xl:gap-10"
         >
-          {currentTestimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.name}
-              variants={cardVariants}
-              className="group"
-            >
-              <div className="card p-4 sm:p-6 md:p-7 lg:p-8 h-full hover:scale-105 transition-all duration-300 group-hover:shadow-2xl bg-white/80 backdrop-blur-sm border border-white/50">
-                {/* Quote Icon */}
-                <div className="mb-6">
-                  <ChatBubbleLeftIcon className="h-8 w-8 text-primary-300" />
-                </div>
-
-                {/* Rating */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <StarIcon key={i} className="h-5 w-5 text-yellow-400" />
-                  ))}
-                </div>
-
-                {/* Testimonial Text */}
-                <blockquote className="text-gray-700 leading-relaxed mb-6 text-sm sm:text-base">
-                  "{testimonial.quote}"
-                </blockquote>
-
-                {/* Author Info */}
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-full overflow-hidden shadow-lg ring-2 ring-white">
-                    <Image 
-                      width={56}
-                      height={56}
-                      src={getImageWithFallback(testimonial.imageId)} 
-                      alt={getAltTextWithFallback(testimonial.imageId)}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
+          {mixedTestimonials.map((testimonial, index) => {
+            const displayContent = getTestimonialText(testimonial, language)
+            
+            return (
+              <motion.div
+                key={testimonial.id || testimonial.name}
+                variants={cardVariants}
+                className="group"
+              >
+                <div className="card p-4 sm:p-6 md:p-7 lg:p-8 h-full hover:scale-105 transition-all duration-300 group-hover:shadow-2xl bg-white/80 backdrop-blur-sm border border-white/50">
+                  {/* Quote Icon */}
+                  <div className="mb-6">
+                    <ChatBubbleLeftIcon className="h-8 w-8 text-primary-300" />
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">
-                      {testimonial.name}, {testimonial.age}
-                    </h4>
-                    <p className="text-sm text-gray-500 mb-1">
-                      {testimonial.location}
-                    </p>
-                    <p className="text-xs text-primary-600 font-medium">
-                      {testimonial.relationship}
-                    </p>
+                  
+                  {/* Language indicator for Portuguese reviews */}
+                  {testimonial.language === 'pt' && (
+                    <div className="mb-4">
+                      <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-secondary-100 text-secondary-800">
+                        🇵🇹 Português
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Rating */}
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <StarIcon key={i} className="h-5 w-5 text-yellow-400" />
+                    ))}
+                  </div>
+
+                  {/* Testimonial Text */}
+                  <blockquote className="text-gray-700 leading-relaxed mb-6 text-sm sm:text-base">
+                    "{displayContent.text}"
+                  </blockquote>
+
+                  {/* Author Info */}
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-full overflow-hidden shadow-lg ring-2 ring-white">
+                      <Image 
+                        width={56}
+                        height={56}
+                        src={getImageWithFallback(testimonial.imageId)} 
+                        alt={getAltTextWithFallback(testimonial.imageId)}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">
+                        {testimonial.name}{testimonial.age && `, ${testimonial.age}`}
+                      </h4>
+                      <p className="text-sm text-gray-500 mb-1">
+                        {displayContent.location}
+                      </p>
+                      <p className="text-xs text-primary-600 font-medium">
+                        {displayContent.relationship}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            )
+          })}
         </motion.div>
 
         {/* Community Showcase */}

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Header from '@/components/Header'
+import SubscriptionGate from '@/components/SubscriptionGate'
 import { 
   HeartIcon, 
   EyeIcon, 
@@ -19,7 +20,9 @@ import {
 import { CheckBadgeIcon } from '@heroicons/react/24/solid'
 import { authService } from '@/lib/auth'
 import { useLanguage } from '@/context/LanguageContext'
+import { useSubscription } from '@/context/SubscriptionContext'
 import { motion } from 'framer-motion'
+import Footer from '@/components/Footer'
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -32,6 +35,7 @@ export default function Login() {
   const [rememberMe, setRememberMe] = useState(false)
   const router = useRouter()
   const { language, t } = useLanguage()
+  const { subscriptionRequired } = useSubscription()
   
   const isPortuguese = language === 'pt'
 
@@ -118,11 +122,19 @@ export default function Login() {
   }, [isLoading, loadingMessages.length])
 
   return (
-    <main className="min-h-screen">
-      <Header />
-      <div className="pt-16">
-        <section className="py-8 bg-gradient-to-br from-primary-50 via-white to-secondary-50 min-h-screen">
-          <div className="container-width w-full">
+    <SubscriptionGate 
+      mode="login"
+      title={isPortuguese ? 'Subscrição Necessária para Entrar' : 'Subscription Required to Login'}
+      description={isPortuguese 
+        ? 'Para aceder à sua conta LusoTown e conectar-se com a comunidade portuguesa, precisa de uma subscrição ativa.'
+        : 'To access your LusoTown account and connect with the Portuguese community, you need an active subscription.'
+      }
+    >
+      <main className="min-h-screen">
+        <Header />
+        <div className="pt-16">
+          <section className="py-8 bg-gradient-to-br from-primary-50 via-white to-secondary-50 min-h-screen">
+            <div className="container-width w-full">
             
             {/* Centered Login Layout */}
             <div className="max-w-md mx-auto">
@@ -332,8 +344,10 @@ export default function Login() {
                   </motion.div>
             </div>
           </div>
-        </section>
-      </div>
-    </main>
+          </section>
+        </div>
+        <Footer />
+      </main>
+    </SubscriptionGate>
   )
 }

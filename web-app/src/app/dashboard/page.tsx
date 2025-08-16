@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { authService, User } from '@/lib/auth'
 import { useRouter } from 'next/navigation'
 import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 import EventImageWithFallback from '@/components/EventImageWithFallback'
 import { 
   Heart, 
@@ -575,6 +576,7 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

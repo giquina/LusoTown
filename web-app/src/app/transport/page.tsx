@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ShieldCheckIcon, StarIcon, ClockIcon, PhoneIcon, MapPinIcon, CurrencyPoundIcon } from '@heroicons/react/24/outline'
+import { ShieldCheckIcon, StarIcon, ClockIcon, PhoneIcon, MapPinIcon, CurrencyPoundIcon, ArrowRightIcon } from '@heroicons/react/24/outline'
 import { CheckCircleIcon, Crown } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import TransportBookingForm from '@/components/TransportBookingForm'
+import TransportBookingFlow from '@/components/TransportBookingFlow'
 import TransportServiceCard from '@/components/TransportServiceCard'
 import TransportTestimonials from '@/components/TransportTestimonials'
 import LondonTourRoutes from '@/components/LondonTourRoutes'
@@ -508,13 +509,34 @@ const features = [
 export default function TransportPage() {
   const { t, language } = useLanguage()
   const [showBookingForm, setShowBookingForm] = useState(false)
+  const [showSIABookingFlow, setShowSIABookingFlow] = useState(false)
   const [selectedService, setSelectedService] = useState<string | null>(null)
 
   const isPortuguese = language === 'pt'
 
   const handleBookService = (serviceId: string) => {
     setSelectedService(serviceId)
-    setShowBookingForm(true)
+    
+    // Check if this is a close protection service that requires SIA compliance
+    const service = serviceTiers.find(tier => tier.id === serviceId) || 
+                   experiencePackages.find(pkg => pkg.id === serviceId)
+    
+    const isCloseProtectionService = service && (
+      service.id === 'premium' || 
+      service.id === 'vip' || 
+      service.id === 'elite' ||
+      (service as any).features?.some((feature: string) => 
+        feature.toLowerCase().includes('security') || 
+        feature.toLowerCase().includes('protection') ||
+        feature.toLowerCase().includes('sia')
+      )
+    )
+    
+    if (isCloseProtectionService) {
+      setShowSIABookingFlow(true)
+    } else {
+      setShowBookingForm(true)
+    }
   }
 
   return (
@@ -634,6 +656,266 @@ export default function TransportPage() {
               >
                 {isPortuguese ? 'Ver Serviços' : 'View Services'}
               </a>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* How SIA Close Protection Works Section */}
+      <section className="py-24 bg-white border-t border-gray-100">
+        <div className="container-width">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="mb-6"
+            >
+              <span className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-secondary-100 via-premium-50 to-accent-100 border border-secondary-200 shadow-lg">
+                <ShieldCheckIcon className="w-4 h-4 mr-2 text-secondary-600" />
+                <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent font-bold">
+                  {isPortuguese ? 'Como Funciona' : 'How It Works'}
+                </span>
+              </span>
+            </motion.div>
+            
+            <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
+              {isPortuguese ? 'Processo Profissional de Proteção SIA' : 'Professional SIA Protection Process'}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              {isPortuguese 
+                ? 'Nosso sistema garante total conformidade com regulamentações SIA do Reino Unido e os mais altos padrões de segurança'
+                : 'Our system ensures full compliance with UK SIA regulations and the highest security standards'
+              }
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-6">
+            {/* Step 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="relative text-center"
+            >
+              <div className="bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-2xl p-6 mb-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="w-16 h-16 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <span className="text-2xl font-bold text-white">1</span>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  {isPortuguese ? 'Escolha o Serviço' : 'Choose Your Service'}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {isPortuguese 
+                    ? 'Selecione o nível de proteção adequado às suas necessidades'
+                    : 'Select the protection level suitable for your needs'
+                  }
+                </p>
+              </div>
+              {/* Arrow */}
+              <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                <ArrowRightIcon className="w-6 h-6 text-secondary-400" />
+              </div>
+            </motion.div>
+
+            {/* Step 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="relative text-center"
+            >
+              <div className="bg-gradient-to-br from-accent-100 to-accent-200 rounded-2xl p-6 mb-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="w-16 h-16 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <span className="text-2xl font-bold text-white">2</span>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  {isPortuguese ? 'Questionário SIA' : 'SIA Questionnaire'}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {isPortuguese 
+                    ? 'Complete avaliação obrigatória de segurança e conformidade'
+                    : 'Complete mandatory safety & compliance assessment'
+                  }
+                </p>
+              </div>
+              <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                <ArrowRightIcon className="w-6 h-6 text-accent-400" />
+              </div>
+            </motion.div>
+
+            {/* Step 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="relative text-center"
+            >
+              <div className="bg-gradient-to-br from-premium-100 to-premium-200 rounded-2xl p-6 mb-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="w-16 h-16 bg-gradient-to-br from-premium-500 to-premium-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <span className="text-2xl font-bold text-white">3</span>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  {isPortuguese ? 'Detalhes & Reserva' : 'Details & Booking'}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {isPortuguese 
+                    ? 'Forneça detalhes pessoais e confirme reserva segura'
+                    : 'Provide personal details and secure booking'
+                  }
+                </p>
+              </div>
+              <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                <ArrowRightIcon className="w-6 h-6 text-premium-400" />
+              </div>
+            </motion.div>
+
+            {/* Step 4 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="relative text-center"
+            >
+              <div className="bg-gradient-to-br from-action-100 to-action-200 rounded-2xl p-6 mb-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="w-16 h-16 bg-gradient-to-br from-action-500 to-action-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <span className="text-2xl font-bold text-white">4</span>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  {isPortuguese ? 'Revisão SIA' : 'SIA Review'}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {isPortuguese 
+                    ? 'Oficial licenciado revisa e confirma sua reserva'
+                    : 'Licensed officer reviews and confirms booking'
+                  }
+                </p>
+              </div>
+              <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+                <ArrowRightIcon className="w-6 h-6 text-action-400" />
+              </div>
+            </motion.div>
+
+            {/* Step 5 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="bg-gradient-to-br from-green-100 to-green-200 rounded-2xl p-6 mb-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <span className="text-2xl font-bold text-white">5</span>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  {isPortuguese ? 'Serviço Profissional' : 'Professional Service'}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {isPortuguese 
+                    ? 'Desfrute de proteção profissional e discreta'
+                    : 'Enjoy professional & discreet protection'
+                  }
+                </p>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Key Benefits */}
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-secondary-50 to-accent-50 rounded-xl p-6 border border-secondary-200"
+            >
+              <div className="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center mb-4">
+                <ShieldCheckIcon className="w-6 h-6 text-secondary-600" />
+              </div>
+              <h4 className="text-lg font-bold text-gray-900 mb-2">
+                {isPortuguese ? 'Totalmente Conforme' : 'Fully Compliant'}
+              </h4>
+              <p className="text-gray-600">
+                {isPortuguese 
+                  ? 'Todos os oficiais são licenciados SIA e seguem protocolos rigorosos do Reino Unido'
+                  : 'All officers are SIA licensed and follow strict UK protocols'
+                }
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-accent-50 to-premium-50 rounded-xl p-6 border border-accent-200"
+            >
+              <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4">
+                <ClockIcon className="w-6 h-6 text-accent-600" />
+              </div>
+              <h4 className="text-lg font-bold text-gray-900 mb-2">
+                {isPortuguese ? 'Revisão Rápida' : 'Fast Review'}
+              </h4>
+              <p className="text-gray-600">
+                {isPortuguese 
+                  ? 'Confirmação em 2-4 horas com designação imediata de oficial'
+                  : 'Confirmation within 2-4 hours with immediate officer assignment'
+                }
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-premium-50 to-action-50 rounded-xl p-6 border border-premium-200"
+            >
+              <div className="w-12 h-12 bg-premium-100 rounded-lg flex items-center justify-center mb-4">
+                <Crown className="w-6 h-6 text-premium-600" />
+              </div>
+              <h4 className="text-lg font-bold text-gray-900 mb-2">
+                {isPortuguese ? 'Serviço Premium' : 'Premium Service'}
+              </h4>
+              <p className="text-gray-600">
+                {isPortuguese 
+                  ? 'Comunicação em português e conhecimento cultural especializado'
+                  : 'Portuguese communication and specialized cultural knowledge'
+                }
+              </p>
+            </motion.div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="mt-16 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-r from-secondary-900 via-premium-900 to-action-900 rounded-2xl p-8 text-white"
+            >
+              <h3 className="text-2xl font-bold mb-4">
+                {isPortuguese ? 'Pronto para Começar?' : 'Ready to Get Started?'}
+              </h3>
+              <p className="text-secondary-200 mb-6 max-w-2xl mx-auto">
+                {isPortuguese 
+                  ? 'Inicie o processo de reserva agora e tenha proteção profissional em Londres em poucas horas'
+                  : 'Start the booking process now and have professional protection in London within hours'
+                }
+              </p>
+              <button
+                onClick={() => setShowSIABookingFlow(true)}
+                className="bg-gradient-to-r from-accent-500 to-coral-500 text-white px-8 py-4 rounded-xl font-bold hover:from-accent-600 hover:to-coral-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
+                {isPortuguese ? 'Iniciar Questionário SIA' : 'Start SIA Questionnaire'}
+              </button>
             </motion.div>
           </div>
         </div>
@@ -1404,7 +1686,7 @@ export default function TransportPage() {
         showHeader={true}
       />
 
-      {/* Booking Form Modal */}
+      {/* Standard Booking Form Modal */}
       {showBookingForm && (
         <TransportBookingForm
           isOpen={showBookingForm}
@@ -1413,6 +1695,21 @@ export default function TransportPage() {
             setSelectedService(null)
           }}
           selectedService={selectedService}
+          serviceTiers={serviceTiers}
+          experiencePackages={experiencePackages}
+        />
+      )}
+
+      {/* SIA Compliance Booking Flow */}
+      {showSIABookingFlow && (
+        <TransportBookingFlow
+          isOpen={showSIABookingFlow}
+          onClose={() => {
+            setShowSIABookingFlow(false)
+            setSelectedService(null)
+          }}
+          selectedService={serviceTiers.find(tier => tier.id === selectedService) || 
+                          experiencePackages.find(pkg => pkg.id === selectedService)}
           serviceTiers={serviceTiers}
           experiencePackages={experiencePackages}
         />

@@ -65,12 +65,12 @@ export default function Header() {
   const navigationLinks = user ? getAuthenticatedNavigationLinks(t) : getNavigationLinks(t)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 min-h-[72px]">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 min-h-[80px] lg:min-h-[88px]">
       <nav className="container-width" aria-label="Top">
-        <div className="flex items-center justify-between h-18 sm:h-20 gap-2 sm:gap-4">
+        <div className="flex items-center justify-between py-3 sm:py-4 lg:py-5 gap-2 sm:gap-4">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
-            <a href="/" className="flex items-center gap-2 sm:gap-3">
+            <a href="/" className="flex items-center gap-2 sm:gap-3 overflow-visible">
               <Logo size="small" animated className="sm:hidden" />
               <Logo size="medium" animated className="hidden sm:block lg:hidden" />
               <Logo size="large" animated className="hidden lg:block" />

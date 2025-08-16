@@ -18,7 +18,7 @@ The platform also caters to **event creators, organisers, and hosts** — both s
 - Use the platform's tools to narrate, guide, or host experiences
 
 **Tech Stack:** Next.js 14 (TypeScript), Tailwind CSS, Supabase, Vercel
-**Status:** Production-ready with 54+ pages, 105+ components, complete bilingual system, networking features, enhanced chauffeur services, annual membership pricing model (£25/year), mobile-optimized 2-column layouts, and 10+ tech/business events
+**Status:** Production-ready with 61+ pages, 117+ components, complete bilingual system, networking features, SIA-compliant transport services, annual membership pricing model (£25/year), mobile-optimized 2x2 grids, London & UK focus for Portuguese speakers, and comprehensive subscription enforcement
 
 ## Development Commands
 
@@ -65,8 +65,8 @@ Note: `ignoreBuildErrors: true` is set in next.config.js for production builds.
 LusoTown/
 ├── web-app/            # Next.js 14 application
 │   ├── src/
-│   │   ├── app/        # App router pages (47+)
-│   │   ├── components/ # React components (90+)
+│   │   ├── app/        # App router pages (61+)
+│   │   ├── components/ # React components (117+)
 │   │   ├── context/    # Global state (Language, Cart, Favorites, Following, Networking)
 │   │   └── lib/        # Services and utilities
 │   └── public/         # Static assets
@@ -79,8 +79,9 @@ LusoTown/
 
 **Routing & Pages:**
 - Next.js 14 App Router with file-based routing
-- 47+ static pages with trailing slashes enabled (including /my-network, /chauffeur)
+- 61+ static pages with trailing slashes enabled (including /my-network, /transport, /housing-assistance, /mentorship, /neighborhood-groups)
 - Static export configuration (no server-side features)
+- Clear London & UK geographic focus for Portuguese community
 
 **State Management:**
 - React Context for global state (Language, Cart, Favorites, Following, Networking)
@@ -132,14 +133,15 @@ LusoTown/
 - Images are optimized with WebP/AVIF support from Unsplash domains
 
 **Mobile-First UI Patterns:**
-- All card sections must display 2 items per line on mobile (`grid-cols-2 lg:grid-cols-3/4`)
-- **2-Column Responsive Layouts**: Updated grid systems to use `md:grid-cols-2` instead of `lg:grid-cols-2` for better medium screen experience
-- **Uniform Card Heights**: Service tiers and tour routes now use fixed heights (`h-[580px] sm:h-[650px]`) for visual consistency
+- **Professional 2x2 Grid Layouts**: All card sections use professional 2x2 grid layouts on mobile (`grid-cols-2 md:grid-cols-2 lg:grid-cols-3/4`)
+- **Mobile Search Optimization**: Enhanced search bar with mobile-first design and Portuguese community imagery
+- **Uniform Card Heights**: Service tiers and tour routes use fixed heights (`h-[580px] sm:h-[650px]`) for visual consistency
+- **Location-Aware Titles**: All mobile titles include "London & UK" context for geographic clarity
 - Consistent responsive gap spacing: `gap-3 sm:gap-4 lg:gap-6/8`
 - CTA buttons limited to 2 words maximum for mobile readability
 - Pricing displays must include "From" prefix for transparency ("From £XX")
 - **Enhanced Mobile Menu**: Larger hamburger icon (12x12px) with improved touch targets and visibility
-- Minimize mobile scrolling through optimized content density
+- **Portuguese Community Images**: Authentic Portuguese community imagery throughout mobile interface
 
 **State Management Architecture:**
 - Global state via React Context providers (not Redux)
@@ -175,10 +177,12 @@ LusoTown/
 
 **Content Tone Requirements:**
 - Professional, inclusive, and welcoming tone across all content
-- No explicit age restriction mentions in general content
-- Family/children mentions only on specific relevant pages (Chauffeur Services, "Create Your Own Event/Trip" sections)
+- **Geographic Clarity**: All content emphasizes London & UK location for Portuguese speakers
+- No confusion with Portugal-based services - clearly UK-focused platform
+- Family/children mentions only on specific relevant pages (Transport Services, "Create Your Own Event/Trip" sections)
 - Clear messaging that platform offers both social experiences AND business networking
 - Support thriving ecosystem for both attendees AND organizers
+- **Mandatory Subscription Messaging**: Transport services require active £25/year membership
 
 **Event Content Strategy:**
 - Social events: music events, club nights, cultural activities, guided tours, social experiences
@@ -200,70 +204,123 @@ LusoTown/
 **FollowingContext:** User connections and following state
 **NetworkingContext:** Event-based connections, network stats, achievements, and notifications
 
-## LusoTown Security Chauffeur Services
+## Subscription Enforcement System
 
-The platform features a comprehensive luxury chauffeur and security transportation service designed specifically for the Portuguese community in London.
+LusoTown implements a mandatory £25/year subscription model for accessing premium services, particularly transport booking and community support features.
 
-### Chauffeur Services Features
+### Subscription Features
+- **Annual Membership**: £25/year for full platform access
+- **Transport Booking Gate**: Transport services require active subscription
+- **Community Features**: Housing assistance and neighborhood groups behind subscription wall
+- **Professional Services**: Enhanced networking and mentorship features for subscribers
+
+### Subscription Components
+- `SubscriptionGate.tsx`: Membership validation and enforcement
+- `WhatsAppWidget.tsx`: Subscriber-only Portuguese community support
+- Subscription-aware transport booking flow
+- Premium feature unlocking system
+
+### Implementation Details
+- **localStorage Persistence**: Subscription status stored locally for demo purposes
+- **Feature Gating**: Premium features check subscription status before access
+- **Graceful Degradation**: Non-subscribers see subscription prompts instead of features
+- **London & UK Focus**: All subscription messaging emphasizes UK-based Portuguese community
+
+## LusoTown Transport Services (London & UK)
+
+The platform features a comprehensive luxury transport and SIA-compliant close protection service designed specifically for the Portuguese community in London and the UK. All transport services require an active £25/year LusoTown subscription.
+
+### Transport Services Features
 
 **Premium Transportation Solutions:**
-- Professional chauffeur services with Portuguese-speaking drivers
-- Security-focused transportation for executives and VIPs
-- Cultural tour routes highlighting Portuguese heritage in London
+- Professional transport services with Portuguese-speaking drivers
+- **SIA-Compliant Close Protection**: Licensed security professionals with SIA certification
+- Cultural tour routes highlighting Portuguese heritage in London & UK
 - Airport transfers with Portuguese community focus
 - Luxury vehicle fleet including Bentley, Mercedes S-Class, Rolls-Royce
 
 **Portuguese Cultural Integration:**
-- Bilingual chauffeur service (Portuguese/English)
-- Cultural tour routes through Portuguese neighborhoods
-- Knowledge of Portuguese businesses and community locations
-- Portuguese cultural event transportation
+- Bilingual transport service (Portuguese/English)
+- Cultural tour routes through Portuguese neighborhoods in London & UK
+- Knowledge of Portuguese businesses and community locations across UK
+- Portuguese cultural event transportation throughout UK
 - Heritage site tours and cultural immersion experiences
 
 **Service Infrastructure:**
-- Advanced booking system with real-time availability
-- Dynamic pricing based on service type and duration
+- **Easy SIA Compliance Questionnaire**: Multiple-choice questionnaire with progress tracking
+- **Subscription-Gated Booking**: Requires active £25/year LusoTown membership
+- Risk assessment and compliance features
 - Customer testimonials and review system
-- Service area coverage across Greater London
+- Service area coverage across Greater London & UK
 - Emergency and last-minute booking capabilities
 
-### Chauffeur Components
+### Transport Components
 
 **Core Service Components:**
-- `OptimizedChauffeurPage.tsx`: Main chauffeur services landing page with 2-column responsive layout
-- `ChauffeurBookingForm.tsx`: Advanced booking system with real-time validation
-- `ChauffeurServiceCard.tsx`: Individual service display with uniform fixed heights and pricing
-- `ChauffeurTestimonials.tsx`: Customer review and testimonial system
-- `LondonTourRoutes.tsx`: Portuguese cultural tour route descriptions with compact 2-column layout
+- `OptimizedTransportPage.tsx`: Main transport services landing page with professional 2x2 mobile grid
+- `TransportBookingForm.tsx`: Advanced subscription-gated booking system with validation
+- `OptimizedTransportServiceCard.tsx`: Service display with uniform heights and London & UK pricing
+- `TransportTestimonials.tsx`: Authentic Portuguese community testimonials
+- `LondonTourRoutes.tsx`: Portuguese cultural tour routes across London & UK
 - `CustomToursSection.tsx`: Bespoke tour planning interface
 - `PortugueseCulturalTourRoutes.tsx`: Heritage-focused tour options
 
+**SIA Compliance Components:**
+- `SIAComplianceQuestionnaire.tsx`: Professional compliance questionnaire system
+- `EasySIAQuestionnaire.tsx`: Simplified multiple-choice compliance form
+- `SIABookingConfirmation.tsx`: Booking confirmation with compliance verification
+- `SIAAdminDashboard.tsx`: Administrative compliance management
+- `RiskAssessmentForm.tsx`: Professional risk assessment interface
+- `ComplianceStepIndicator.tsx`: Progress tracking for compliance process
+
 **Service Infrastructure:**
-- `chauffeurServices.ts`: Core service definitions and availability
-- `chauffeurPricing.ts`: Dynamic pricing engine and calculations
-- `chauffeurBooking.ts`: Booking management and validation system
-- `chauffeurCache.ts`: Performance optimization and caching
+- `transportServices.ts`: Core service definitions and availability
+- `transportPricing.ts`: Dynamic pricing engine with London & UK rates
+- `transportBooking.ts`: Subscription-enforced booking management
+- `transportCache.ts`: Performance optimization and caching
 
 ### Service Categories
 
 **Executive Services:**
-- Business meeting transfers
-- Airport VIP services
-- Corporate event transportation
+- Business meeting transfers across London & UK
+- Airport VIP services with SIA-compliant security
+- Corporate event transportation throughout UK
 - Portuguese business networking events
 
 **Cultural Tours:**
-- Portuguese heritage sites in London
+- Portuguese heritage sites across London & UK
 - Food tour experiences (Portuguese restaurants and markets)
 - Cultural event attendance with transportation
 - Community celebration transportation
 
 **Personal Services:**
-- Special occasion transportation
+- Special occasion transportation with close protection
 - Family gathering coordination (including family-friendly events and occasions)
-- Shopping tours to Portuguese stores
+- Shopping tours to Portuguese stores across UK
 - Medical appointment assistance for elderly Portuguese speakers
-- Family tour packages for Portuguese cultural sites in London
+- Family tour packages for Portuguese cultural sites in London & UK
+
+## LusoTown Community Features (London & UK)
+
+The platform features comprehensive community support services designed specifically for Portuguese speakers living in London and the UK.
+
+### Housing Assistance Program
+- **Targeted Support**: Housing assistance for Portuguese community in London & UK
+- **Subscription Required**: Access requires active £25/year LusoTown membership
+- **Local Focus**: London housing market expertise with Portuguese language support
+- **Community Networks**: Connect with other Portuguese families and professionals
+
+### Neighborhood Groups
+- **Location-Based Communities**: Portuguese community groups across London boroughs and UK cities
+- **Cultural Integration**: Support for Portuguese families integrating into UK neighborhoods
+- **Local Connections**: Hyperlocal networking for Portuguese speakers
+- **Family-Friendly**: Community groups welcoming families with children
+
+### Mentorship Programs
+- **Professional Development**: Career mentorship for Portuguese professionals in UK
+- **Cultural Bridge**: Experienced Portuguese community members supporting newcomers
+- **Industry-Specific**: Technology, business, healthcare, and creative industry mentorship
+- **Bilingual Support**: Mentorship conducted in Portuguese or English
 
 ## LusoTown Connections Networking System
 
@@ -379,6 +436,18 @@ interface Connection {
 - conversation_starters: Portuguese cultural conversation prompts
 - network_achievements: Achievement definitions and user progress
 
+**Transport & SIA Tables:**
+- transport_bookings: SIA-compliant transport booking records
+- sia_compliance: Compliance questionnaire responses and risk assessments
+- transport_pricing: Dynamic pricing for London & UK service areas
+- compliance_audit: SIA compliance audit trail and documentation
+
+**Community Support Tables:**
+- housing_assistance: Housing support requests for Portuguese community
+- neighborhood_groups: Location-based Portuguese community groups
+- mentorship_programs: Professional mentorship matching and tracking
+- subscription_status: User subscription validation and enforcement
+
 **Storage Buckets:**
 - profile-pictures
 - group-images
@@ -404,7 +473,7 @@ LusoTown uses a comprehensive Portuguese-inspired color system with semantic nam
 - Never use generic Tailwind colors (blue-500, red-600, etc.)
 - Always use semantic brand colors (primary-500, action-600, etc.)
 - Use appropriate shade levels (50 for light backgrounds, 900 for dark text)
-- Brand compliance is enforced across all 90+ components
+- Brand compliance is enforced across all 117+ components
 
 **Color System Features:**
 - Complete Portuguese cultural naming (Unidos pela Língua - United by Language)
@@ -511,20 +580,28 @@ Documentation: `.claude/AGENTS_GUIDE.md`
 - `src/components/HowConnectionsWork.tsx`: Homepage networking explanation
 - `src/components/ImprovedEventCard.tsx`: Event cards with network integration
 
-**Chauffeur Service Components:**
-- `src/components/OptimizedChauffeurPage.tsx`: Complete chauffeur services page
-- `src/components/ChauffeurBookingForm.tsx`: Booking system with validation
-- `src/components/ChauffeurServiceCard.tsx`: Service display and pricing
-- `src/components/ChauffeurTestimonials.tsx`: Customer testimonials
-- `src/components/LondonTourRoutes.tsx`: Cultural tour descriptions
-- `src/components/CustomToursSection.tsx`: Bespoke tour planning
+**Transport Service Components:**
+- `src/components/OptimizedTransportPage.tsx`: Complete transport services page with London & UK focus
+- `src/components/TransportBookingForm.tsx`: Subscription-gated booking system with validation
+- `src/components/OptimizedTransportServiceCard.tsx`: Service display with London & UK pricing
+- `src/components/TransportTestimonials.tsx`: Authentic Portuguese community testimonials
+- `src/components/LondonTourRoutes.tsx`: Cultural tour descriptions across London & UK
+- `src/components/CustomToursSection.tsx`: Bespoke tour planning interface
 - `src/components/PortugueseCulturalTourRoutes.tsx`: Heritage tours
 
-**Chauffeur Service Infrastructure:**
-- `src/lib/chauffeurServices.ts`: Service definitions and availability
-- `src/lib/chauffeurPricing.ts`: Dynamic pricing calculations
-- `src/lib/chauffeurBooking.ts`: Booking management system
-- `src/lib/chauffeurCache.ts`: Performance optimization
+**SIA Compliance & New Feature Components:**
+- `src/components/SIAComplianceQuestionnaire.tsx`: Professional SIA compliance system
+- `src/components/EasySIAQuestionnaire.tsx`: Simplified compliance questionnaire
+- `src/components/MentorshipHero.tsx`: Portuguese mentorship program hero section
+- `src/components/MentorshipProgramsSection.tsx`: Mentorship programs display
+- `src/components/SubscriptionGate.tsx`: Membership enforcement component
+- `src/components/WhatsAppWidget.tsx`: Portuguese community support widget
+
+**Transport Service Infrastructure:**
+- `src/lib/transportServices.ts`: Service definitions and availability
+- `src/lib/transportPricing.ts`: Dynamic pricing calculations with London & UK rates
+- `src/lib/transportBooking.ts`: Subscription-enforced booking management
+- `src/lib/transportCache.ts`: Performance optimization
 
 ## Environment Variables
 
@@ -564,13 +641,17 @@ The LusoTown platform has identified 10 key administrative and management positi
 1. Run `cd web-app && npm run dev` to start development server
 2. Test changes at http://localhost:3000
 3. Always test both English and Portuguese language modes using the language toggle
-4. Verify responsive design shows 2 cards per line on mobile (375px width)
+4. Verify responsive design shows professional 2x2 grids on mobile (375px width)
 5. Test networking features at /my-network page
-6. Test chauffeur services at /chauffeur page (including family-friendly content)
-7. Verify event-based connection functionality
-8. Test dual-audience content (social users and business professionals)
-9. Verify professional, inclusive, and welcoming tone across all content
-10. Ensure event creator monetization features work correctly
+6. Test transport services at /transport page (including SIA compliance and subscription enforcement)
+7. Test new community features: /housing-assistance, /mentorship, /neighborhood-groups
+8. Verify event-based connection functionality
+9. Test dual-audience content (social users and business professionals)
+10. Verify professional, inclusive, and welcoming tone across all content
+11. Ensure event creator monetization features work correctly
+12. Test subscription enforcement for premium features
+13. Verify London & UK geographic messaging is clear throughout
+14. Test Portuguese community imagery displays correctly
 
 **Demo Account for Testing:**
 - Email: demo@lusotown.com
@@ -580,7 +661,9 @@ The LusoTown platform has identified 10 key administrative and management positi
 **Common Development Tasks:**
 - **Fix TypeScript errors**: `npx tsc --noEmit` (errors are ignored in builds but should be addressed)
 - **Debug build issues**: Check webpack configuration in next.config.js
-- **Test responsive layouts**: Ensure `grid-cols-1 md:grid-cols-2` pattern is used for 2-column layouts
+- **Test responsive layouts**: Ensure professional 2x2 grid layouts (`grid-cols-2 md:grid-cols-2`) are used for mobile-first design
+- **Test London & UK messaging**: Verify all titles include geographic context
+- **Test subscription enforcement**: Confirm transport booking requires active membership
 - **Add new Portuguese content**: Always provide both English and Portuguese translations
 
 **Automation Scripts (Project Root):**
@@ -591,17 +674,23 @@ The LusoTown platform has identified 10 key administrative and management positi
 - Run `npm run lint` before committing
 - Run `npx tsc --noEmit` to check TypeScript errors
 - Test demo login functionality works correctly
-- Verify mobile layout shows 2 cards per line in all sections
+- Verify mobile layout shows professional 2x2 grids in all sections
 - Test responsive design on mobile (375px), tablet (768px), and desktop (1024px+)
 - Validate all CTAs are 2 words maximum
 - Confirm pricing displays include "From" prefix where applicable
+- **Test subscription enforcement**: Ensure transport booking requires active membership
+- **Verify geographic messaging**: All titles should include London & UK context
+- **Test SIA compliance flow**: Ensure questionnaire works properly
+- **Validate Portuguese imagery**: Community images display correctly across devices
 - Note: Static export currently disabled (check next.config.js for dynamic routes)
 
 **Common Debugging:**
 - If build fails, check TypeScript errors with `npx tsc --noEmit`
 - Language switching issues: check LanguageContext and localStorage
 - Styling issues: verify brand colors are used (not generic Tailwind colors like blue-500)
-- Mobile layout issues: ensure all grids use `grid-cols-2 lg:grid-cols-3/4` pattern
+- Mobile layout issues: ensure all grids use professional 2x2 pattern (`grid-cols-2 md:grid-cols-2 lg:grid-cols-3/4`)
+- Subscription issues: check membership validation for transport services
+- Geographic messaging: verify London & UK context is clear throughout
 - Card alignment issues: verify fixed heights with responsive breakpoints
 - State persistence: check browser localStorage for cart/favorites/networking data
 - Networking issues: check localStorage keys (`lusotown-connections`, `lusotown-network-stats`)

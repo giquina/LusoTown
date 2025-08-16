@@ -18,6 +18,8 @@ import { UserProfile } from '@/lib/connections'
 import { profileService, LONDON_AREAS, ALL_INTERESTS } from '@/lib/profile'
 import ProfileCard from '@/components/profile/ProfileCard'
 import { toast } from 'react-hot-toast'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 interface ProfileFilters {
   ageRange: { min: number; max: number }
@@ -184,8 +186,9 @@ function ProfilesPageContent() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
-      <div className="container-width py-8">
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      <div className="pt-20 container-width py-8">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Discover Members</h1>
@@ -458,6 +461,7 @@ function ProfilesPageContent() {
           )}
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

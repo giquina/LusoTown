@@ -10,6 +10,8 @@ const getFooterLinks = (t: any) => ({
     { name: 'Community', href: '/community' },
     { name: 'Become a Host', href: '/host' },
     { name: 'Business Directory', href: '/directory' },
+    { name: t('footer.housing-assistance'), href: '/housing-assistance' },
+    { name: t('footer.neighborhood-groups'), href: '/neighborhood-groups' },
     { name: 'Community Guidelines', href: '/community-guidelines' },
   ],
   support: [

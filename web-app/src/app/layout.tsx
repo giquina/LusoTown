@@ -10,6 +10,7 @@ import { FavoritesProvider } from '@/context/FavoritesContext'
 import { FollowingProvider } from '@/context/FollowingContext'
 import { CartProvider } from '@/context/CartContext'
 import { NetworkingProvider } from '@/context/NetworkingContext'
+import { SubscriptionProvider } from '@/context/SubscriptionContext'
 import { AuthPopupProvider } from '@/components/AuthPopupProvider'
 import AuthPopup from '@/components/AuthPopup'
 import AuthIntentHandler from '@/components/AuthIntentHandler'
@@ -167,8 +168,9 @@ export default function RootLayout({
             <FavoritesProvider>
               <FollowingProvider>
                 <NetworkingProvider>
-                  <CartProvider>
-                    <AuthPopupProvider>
+                  <SubscriptionProvider>
+                    <CartProvider>
+                      <AuthPopupProvider>
                   <ComponentErrorBoundary componentName="User Type Selection">
                     <UserTypeSelection />
                   </ComponentErrorBoundary>
@@ -196,8 +198,9 @@ export default function RootLayout({
                   <ComponentErrorBoundary componentName="Auth Intent Handler">
                     <AuthIntentHandler />
                   </ComponentErrorBoundary>
-                    </AuthPopupProvider>
-                  </CartProvider>
+                      </AuthPopupProvider>
+                    </CartProvider>
+                  </SubscriptionProvider>
                 </NetworkingProvider>
               </FollowingProvider>
             </FavoritesProvider>

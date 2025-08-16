@@ -63,28 +63,34 @@ export default function Hero() {
 
             {/* Search Bar */}
             <div className={`transition-all duration-1000 delay-400 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-              <SearchBar variant="homepage" className="max-w-3xl" />
+              <SearchBar variant="homepage" className="max-w-3xl w-full" />
             </div>
 
-            {/* Feature highlights */}
-            <div className={`grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 transition-all duration-1000 delay-600 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-              <div className="group flex items-center gap-2 sm:gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-action-500 to-action-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
-                  <HeartIcon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+            {/* Feature highlights - 2x2 mobile grid */}
+            <div className={`grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 transition-all duration-1000 delay-600 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+              <div className="group flex flex-col items-center gap-2 sm:gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 min-h-[80px] sm:min-h-[90px]">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-xl bg-gradient-to-br from-action-500 to-action-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
+                  <HeartIcon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-white" />
                 </div>
-<span className="text-xs font-bold text-gray-800 tracking-wide text-center">BOOK & EXPERIENCE</span>
+                <span className="text-xs font-bold text-gray-800 tracking-wide text-center leading-tight">BOOK & EXPERIENCE</span>
               </div>
-              <div className="group flex items-center gap-2 sm:gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-secondary-500 to-secondary-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
-                  <UsersIcon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+              <div className="group flex flex-col items-center gap-2 sm:gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 min-h-[80px] sm:min-h-[90px]">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-xl bg-gradient-to-br from-secondary-500 to-secondary-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
+                  <UsersIcon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-white" />
                 </div>
-                <span className="text-xs font-bold text-gray-800 tracking-wide text-center">PORTUGUESE-SPEAKING</span>
+                <span className="text-xs font-bold text-gray-800 tracking-wide text-center leading-tight">PORTUGUESE SPEAKERS</span>
               </div>
-              <div className="group flex items-center gap-2 sm:gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-accent-500 to-coral-500 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
-                  <SparklesIcon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
+              <div className="group flex flex-col items-center gap-2 sm:gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 min-h-[80px] sm:min-h-[90px]">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-xl bg-gradient-to-br from-accent-500 to-coral-500 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
+                  <SparklesIcon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-white" />
                 </div>
-                <span className="text-xs font-bold text-gray-800 tracking-wide text-center">LIVE LIFE TOGETHER</span>
+                <span className="text-xs font-bold text-gray-800 tracking-wide text-center leading-tight">LIVE TOGETHER</span>
+              </div>
+              <div className="group flex flex-col items-center gap-2 sm:gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 min-h-[80px] sm:min-h-[90px]">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-xl bg-gradient-to-br from-premium-500 to-premium-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
+                  <ArrowRightIcon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-white" />
+                </div>
+                <span className="text-xs font-bold text-gray-800 tracking-wide text-center leading-tight">GROW NETWORK</span>
               </div>
             </div>
 

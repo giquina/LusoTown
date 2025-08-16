@@ -499,8 +499,8 @@ export const compressImage = async (file: File, maxWidth: number = 1000, quality
   })
 }
 
-// Chauffeur Service Types
-export interface ChauffeurService {
+// Transport Service Types
+export interface TransportService {
   id: string
   service_name: string
   service_type: 'executive' | 'tourism' | 'airport' | 'events' | 'business' | 'personal'
@@ -517,7 +517,7 @@ export interface ChauffeurService {
   updated_at: string
 }
 
-export interface ChauffeurVehicle {
+export interface TransportVehicle {
   id: string
   make: string
   model: string
@@ -531,7 +531,7 @@ export interface ChauffeurVehicle {
   created_at: string
 }
 
-export interface ChauffeurDriver {
+export interface TransportDriver {
   id: string
   first_name: string
   last_name: string
@@ -546,7 +546,7 @@ export interface ChauffeurDriver {
   created_at: string
 }
 
-export interface ChauffeurPricingTier {
+export interface TransportPricingTier {
   id: string
   tier_name: string
   block_hours_min: number
@@ -557,7 +557,7 @@ export interface ChauffeurPricingTier {
   created_at: string
 }
 
-export interface ChauffeurPeakTime {
+export interface TransportPeakTime {
   id: string
   name: string
   start_time: string
@@ -569,7 +569,7 @@ export interface ChauffeurPeakTime {
   created_at: string
 }
 
-export interface ChauffeurBooking {
+export interface TransportBooking {
   id: string
   booking_reference: string
   customer_id: string
@@ -618,7 +618,7 @@ export interface ChauffeurBooking {
   completed_at?: string
 }
 
-export interface ChauffeurBookingExtra {
+export interface TransportBookingExtra {
   id: string
   booking_id: string
   extra_type: string
@@ -629,7 +629,7 @@ export interface ChauffeurBookingExtra {
   created_at: string
 }
 
-export interface ChauffeurAvailability {
+export interface TransportAvailability {
   id: string
   driver_id?: string
   vehicle_id?: string

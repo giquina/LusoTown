@@ -4,10 +4,21 @@ import { motion } from 'framer-motion'
 import { StarIcon } from '@heroicons/react/24/solid'
 import { ChatBubbleLeftIcon } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
+import { createMixedTestimonials, getTestimonialText, authenticPortugueseTestimonials } from '@/lib/testimonialMixer'
 
-const testimonials = [
+// Combined transport testimonials with language indicators for mixed display
+const allTransportTestimonials = [
+  // Authentic Portuguese testimonials (always displayed in Portuguese)
+  ...authenticPortugueseTestimonials.transport.map(t => ({
+    ...t,
+    id: `auth-pt-transport-${t.name.toLowerCase().replace(/\s+/g, '-')}`,
+    language: 'pt' as const,
+    isAuthentic: true
+  })),
+  
+  // English testimonials with Portuguese translations
   {
-    id: 1,
+    id: 'maria-silva',
     name: 'Maria Silva',
     location: 'Kensington',
     locationPortuguese: 'Kensington',
@@ -16,10 +27,11 @@ const testimonials = [
     textPortuguese: 'Serviço excecional! O motorista foi profissional, pontual e fez-me sentir completamente segura durante o meu evento noturno. Ter um motorista que fala português fez toda a diferença.',
     service: 'Premium Security',
     servicePortuguese: 'Segurança Premium',
-    avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b632?w=150&h=150&fit=crop&crop=face'
+    avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b632?w=150&h=150&fit=crop&crop=face',
+    language: 'en' as const
   },
   {
-    id: 2,
+    id: 'carlos-mendes',
     name: 'Carlos Mendes',
     location: 'Chelsea',
     locationPortuguese: 'Chelsea',
@@ -28,7 +40,8 @@ const testimonials = [
     textPortuguese: 'Experiência extraordinária com o tour VIP de Londres. O motorista não só forneceu excelente segurança como também partilhou insights fascinantes sobre a história de Londres em português perfeito.',
     service: 'VIP London Experience',
     servicePortuguese: 'Experiência VIP de Londres',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face'
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
+    language: 'en' as const
   },
   {
     id: 3,
@@ -119,6 +132,9 @@ const testimonials = [
 export default function TransportTestimonials() {
   const { language } = useLanguage()
   const isPortuguese = language === 'pt'
+  
+  // Create mixed testimonials ensuring 30% Portuguese reviews
+  const mixedTestimonials = createMixedTestimonials(allTransportTestimonials.slice(0, 9), { portuguesePercentage: 30 })
 
   return (
     <section className="py-16 bg-gradient-to-br from-gray-50 to-premium-50">
@@ -149,7 +165,10 @@ export default function TransportTestimonials() {
 
         {/* Desktop Grid */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
+          {mixedTestimonials.map((testimonial, index) => {
+            const displayContent = getTestimonialText(testimonial, language)
+            
+            return (
             <motion.div
               key={testimonial.id}
               initial={{ opacity: 0, y: 20 }}
@@ -172,15 +191,24 @@ export default function TransportTestimonials() {
                 ))}
               </div>
 
+              {/* Language indicator for Portuguese reviews */}
+              {testimonial.language === 'pt' && (
+                <div className="mb-4 flex justify-center">
+                  <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-secondary-100 text-secondary-800">
+                    🇵🇹 Português
+                  </span>
+                </div>
+              )}
+
               {/* Testimonial Text */}
               <blockquote className="text-gray-700 text-center mb-6 leading-relaxed">
-                "{isPortuguese ? testimonial.textPortuguese : testimonial.text}"
+                "{displayContent.text}"
               </blockquote>
 
               {/* Service Badge */}
               <div className="flex justify-center mb-4">
                 <span className="inline-block bg-premium-100 text-premium-800 text-xs font-medium px-3 py-1 rounded-full">
-                  {isPortuguese ? testimonial.servicePortuguese : testimonial.service}
+                  {displayContent.service}
                 </span>
               </div>
 
@@ -196,17 +224,21 @@ export default function TransportTestimonials() {
                 </div>
                 <div className="font-semibold text-gray-900">{testimonial.name}</div>
                 <div className="text-sm text-gray-500">
-                  {isPortuguese ? testimonial.locationPortuguese : testimonial.location}
+                  {displayContent.location}
                 </div>
               </div>
             </motion.div>
-          ))}
+            )
+          })}
         </div>
 
         {/* Mobile Carousel */}
         <div className="lg:hidden">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {testimonials.slice(0, 4).map((testimonial, index) => (
+            {mixedTestimonials.slice(0, 4).map((testimonial, index) => {
+              const displayContent = getTestimonialText(testimonial, language)
+              
+              return (
               <motion.div
                 key={testimonial.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -229,15 +261,24 @@ export default function TransportTestimonials() {
                   ))}
                 </div>
 
+                {/* Language indicator for Portuguese reviews */}
+                {testimonial.language === 'pt' && (
+                  <div className="mb-4 flex justify-center">
+                    <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-secondary-100 text-secondary-800">
+                      🇵🇹 Português
+                    </span>
+                  </div>
+                )}
+
                 {/* Testimonial Text */}
                 <blockquote className="text-gray-700 text-center mb-6 leading-relaxed">
-                  "{isPortuguese ? testimonial.textPortuguese : testimonial.text}"
+                  "{displayContent.text}"
                 </blockquote>
 
                 {/* Service Badge */}
                 <div className="flex justify-center mb-4">
                   <span className="inline-block bg-premium-100 text-premium-800 text-xs font-medium px-3 py-1 rounded-full">
-                    {isPortuguese ? testimonial.servicePortuguese : testimonial.service}
+                    {displayContent.service}
                   </span>
                 </div>
 
@@ -253,11 +294,12 @@ export default function TransportTestimonials() {
                   </div>
                   <div className="font-semibold text-gray-900">{testimonial.name}</div>
                   <div className="text-sm text-gray-500">
-                    {isPortuguese ? testimonial.locationPortuguese : testimonial.location}
+                    {displayContent.location}
                   </div>
                 </div>
               </motion.div>
-            ))}
+              )
+            })}
           </div>
         </div>
 
