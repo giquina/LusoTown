@@ -277,14 +277,47 @@ export default function EventsPage() {
         
         let tourData = EventsToursService.getEventsTours(searchFilters)
         
-        // Apply sorting for tours
-        if (sortBy === 'popularity') {
-          tourData = tourData.sort((a, b) => b.currentAttendees - a.currentAttendees)
-        } else if (sortBy === 'rating') {
-          tourData = tourData.sort((a, b) => (b.averageRating || 0) - (a.averageRating || 0))
-        } else {
-          tourData = tourData.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
-        }
+        // Apply sorting for tours with business events priority
+        tourData = tourData.sort((a, b) => {
+          // Business event categories for tours
+          const businessCategories = [
+            'Technology & AI',
+            'Business & Professional',
+            'Finance & Investment',
+            'Professional Networking'
+          ]
+          
+          const aIsBusiness = businessCategories.includes(a.category)
+          const bIsBusiness = businessCategories.includes(b.category)
+          
+          // Business events first
+          if (aIsBusiness && !bIsBusiness) return -1
+          if (!aIsBusiness && bIsBusiness) return 1
+          
+          // Within business events, maintain priority order
+          if (aIsBusiness && bIsBusiness) {
+            const businessPriority = {
+              'Technology & AI': 1,
+              'Professional Networking': 2,
+              'Business & Professional': 3,
+              'Finance & Investment': 4
+            }
+            const aPriority = businessPriority[a.category as keyof typeof businessPriority] || 999
+            const bPriority = businessPriority[b.category as keyof typeof businessPriority] || 999
+            if (aPriority !== bPriority) {
+              return aPriority - bPriority
+            }
+          }
+          
+          // Then apply selected sorting
+          if (sortBy === 'popularity') {
+            return b.currentAttendees - a.currentAttendees
+          } else if (sortBy === 'rating') {
+            return (b.averageRating || 0) - (a.averageRating || 0)
+          } else {
+            return new Date(a.date).getTime() - new Date(b.date).getTime()
+          }
+        })
         
         setTours(tourData)
       }

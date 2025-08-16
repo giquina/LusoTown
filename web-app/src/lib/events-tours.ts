@@ -630,10 +630,43 @@ export class EventsToursService {
       })
     }
 
-    // Sort by date (upcoming first) and featured status
+    // Sort by business priority first, then featured status, then date
     return filtered.sort((a, b) => {
+      // Business event categories (matching events.ts)
+      const businessCategories = [
+        'Technology & AI',
+        'Business & Professional',
+        'Finance & Investment',
+        'Professional Networking'
+      ]
+      
+      const aIsBusiness = businessCategories.includes(a.category)
+      const bIsBusiness = businessCategories.includes(b.category)
+      
+      // Business events first
+      if (aIsBusiness && !bIsBusiness) return -1
+      if (!aIsBusiness && bIsBusiness) return 1
+      
+      // Within business events, sort by specific order
+      if (aIsBusiness && bIsBusiness) {
+        const businessPriority = {
+          'Technology & AI': 1,
+          'Professional Networking': 2,
+          'Business & Professional': 3,
+          'Finance & Investment': 4
+        }
+        const aPriority = businessPriority[a.category as keyof typeof businessPriority] || 999
+        const bPriority = businessPriority[b.category as keyof typeof businessPriority] || 999
+        if (aPriority !== bPriority) {
+          return aPriority - bPriority
+        }
+      }
+      
+      // Then sort by featured status
       if (a.featured && !b.featured) return -1
       if (!a.featured && b.featured) return 1
+      
+      // Finally sort by date
       return new Date(a.date).getTime() - new Date(b.date).getTime()
     })
   }

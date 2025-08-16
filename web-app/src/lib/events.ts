@@ -306,8 +306,69 @@ export class EventService {
     this.loadDummyData()
   }
 
+  // Helper method to determine business event priority
+  private getBusinessPriority(category: string): number {
+    const businessCategories = {
+      'Technology & AI': 1,
+      'Business & Entrepreneurship': 2,
+      'Finance & Investment': 3,
+      'Digital Marketing': 4,
+      'Executive Networking': 5
+    }
+    return businessCategories[category as keyof typeof businessCategories] || 999
+  }
+
+  // Helper method to check if event is a business event
+  private isBusinessEvent(event: Event): boolean {
+    const businessCategories = [
+      'Technology & AI',
+      'Business & Entrepreneurship', 
+      'Finance & Investment',
+      'Digital Marketing',
+      'Executive Networking'
+    ]
+    return businessCategories.includes(event.category)
+  }
+
   private loadDummyData() {
-    this.events = [
+    // Load business events first, then regular events
+    const businessEvents = businessEventsLondon.map(businessEvent => ({
+      ...businessEvent,
+      longDescription: businessEvent.longDescription || businessEvent.description,
+      photos: [],
+      attendees: [],
+      waitlist: [],
+      reviews: [],
+      averageRating: 4.5,
+      totalReviews: 0,
+      accessibility: businessEvent.accessibility || ['Accessible venue', 'Professional environment'],
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      createdBy: businessEvent.hostId,
+      isRecurring: false,
+      recurringPattern: undefined,
+      views: 0,
+      favorites: 0,
+      shares: 0,
+      communityGuidelines: true,
+      verifiedEvent: true,
+      reportCount: 0,
+      coordinates: businessEvent.coordinates || { lat: 51.5074, lng: -0.1278 },
+      subcategory: businessEvent.subcategory || undefined,
+      hostImage: undefined,
+      minAttendees: businessEvent.minAttendees || 1,
+      currency: businessEvent.currency || 'GBP',
+      whatToBring: businessEvent.whatToBring || [],
+      dresscode: businessEvent.dresscode || 'Smart casual',
+      ageRestriction: businessEvent.ageRestriction || '18+',
+      skillLevel: (businessEvent.skillLevel as 'beginner' | 'intermediate' | 'advanced' | 'all') || 'all',
+      allowWaitlist: businessEvent.allowWaitlist !== false,
+      requiresApproval: businessEvent.requiresApproval || false,
+      refundPolicy: businessEvent.refundPolicy || 'Standard refund policy applies',
+      lastBookingTime: businessEvent.lastBookingTime || '24'
+    } as Event))
+
+    const regularEvents = [
       {
         id: 'event-pt-1',
         title: 'Noite de Fado & Vinho Verde - Authentic Portuguese Night',
@@ -1913,44 +1974,11 @@ export class EventService {
         communityGuidelines: true,
         verifiedEvent: true,
         reportCount: 0
-      },
-      // Add business events from London business events module
-      ...businessEventsLondon.map(businessEvent => ({
-        ...businessEvent,
-        longDescription: businessEvent.longDescription || businessEvent.description,
-        photos: [],
-        attendees: [],
-        waitlist: [],
-        reviews: [],
-        averageRating: 4.5,
-        totalReviews: 0,
-        accessibility: businessEvent.accessibility || ['Accessible venue', 'Professional environment'],
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-        createdBy: businessEvent.hostId,
-        isRecurring: false,
-        recurringPattern: undefined,
-        views: 0,
-        favorites: 0,
-        shares: 0,
-        communityGuidelines: true,
-        verifiedEvent: true,
-        reportCount: 0,
-        coordinates: businessEvent.coordinates || { lat: 51.5074, lng: -0.1278 },
-        subcategory: businessEvent.subcategory || undefined,
-        hostImage: undefined,
-        minAttendees: businessEvent.minAttendees || 1,
-        currency: businessEvent.currency || 'GBP',
-        whatToBring: businessEvent.whatToBring || [],
-        dresscode: businessEvent.dresscode || 'Smart casual',
-        ageRestriction: businessEvent.ageRestriction || '18+',
-        skillLevel: (businessEvent.skillLevel as 'beginner' | 'intermediate' | 'advanced' | 'all') || 'all',
-        allowWaitlist: businessEvent.allowWaitlist !== false,
-        requiresApproval: businessEvent.requiresApproval || false,
-        refundPolicy: businessEvent.refundPolicy || 'Standard refund policy applies',
-        lastBookingTime: businessEvent.lastBookingTime || '24'
-      } as Event))
+      }
     ]
+
+    // Combine business events first, then regular events for professional positioning
+    this.events = [...businessEvents, ...regularEvents]
     
     this.rsvps = [
       { id: 'rsvp-1', eventId: 'event-1', userId: 'user-1', status: 'confirmed', createdAt: '2024-01-15T10:00:00Z' },
@@ -2090,9 +2118,20 @@ export class EventService {
       }
     }
 
-    // Apply sorting
+    // Apply sorting while maintaining business events priority
     if (sort) {
-      filteredEvents.sort((a, b) => {
+      // Separate business and regular events
+      const businessEvents = filteredEvents.filter(e => this.isBusinessEvent(e))
+      const regularEvents = filteredEvents.filter(e => !this.isBusinessEvent(e))
+      
+      // Sort business events by priority first, then by requested field
+      businessEvents.sort((a, b) => {
+        const aPriority = this.getBusinessPriority(a.category)
+        const bPriority = this.getBusinessPriority(b.category)
+        if (aPriority !== bPriority) {
+          return aPriority - bPriority
+        }
+        // Then by requested sort field
         let comparison = 0
         switch (sort.field) {
           case 'date':
@@ -2116,6 +2155,35 @@ export class EventService {
         }
         return sort.direction === 'desc' ? -comparison : comparison
       })
+      
+      // Sort regular events by requested field
+      regularEvents.sort((a, b) => {
+        let comparison = 0
+        switch (sort.field) {
+          case 'date':
+            comparison = new Date(a.date).getTime() - new Date(b.date).getTime()
+            break
+          case 'popularity':
+            comparison = (b.currentAttendees + b.favorites) - (a.currentAttendees + a.favorites)
+            break
+          case 'rating':
+            comparison = b.averageRating - a.averageRating
+            break
+          case 'price':
+            comparison = a.price - b.price
+            break
+          case 'created':
+            comparison = new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+            break
+          case 'alphabetical':
+            comparison = a.title.localeCompare(b.title)
+            break
+        }
+        return sort.direction === 'desc' ? -comparison : comparison
+      })
+      
+      // Combine: business events first, then regular events
+      filteredEvents = [...businessEvents, ...regularEvents]
     }
 
     return filteredEvents

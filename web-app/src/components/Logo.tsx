@@ -10,25 +10,25 @@ interface LogoProps {
 
 export default function Logo({ size = 'medium', className = '', animated = false }: LogoProps) {
   const sizes = {
-    small: 'h-8',
-    medium: 'h-10',
-    large: 'h-12'
+    small: 'h-6 sm:h-8',
+    medium: 'h-8 sm:h-10',
+    large: 'h-10 sm:h-12'
   }
 
   const textSizes = {
-    small: 'text-xl',
-    medium: 'text-2xl',
-    large: 'text-3xl'
+    small: 'text-lg sm:text-xl',
+    medium: 'text-xl sm:text-2xl',
+    large: 'text-2xl sm:text-3xl'
   }
 
   const LogoComponent = (
-    <div className={`flex items-center space-x-3 ${className}`}>
+    <div className={`flex items-center ${size === 'small' ? 'space-x-1 sm:space-x-2' : size === 'medium' ? 'space-x-2 sm:space-x-3' : 'space-x-3'} ${className}`}>
       {/* Logo Icon - Portuguese-inspired design */}
       <div className={`${sizes[size]} aspect-square flex items-center justify-center rounded-xl bg-gradient-to-br from-green-600 via-red-600 to-yellow-600 shadow-lg`}>
         <div className="text-white font-bold text-sm flex flex-col items-center leading-none">
-          <span className={size === 'small' ? 'text-xs' : 'text-sm'}>LT</span>
+          <span className={size === 'small' ? 'text-[10px] sm:text-xs' : 'text-xs sm:text-sm'}>LT</span>
           {size !== 'small' && (
-            <div className="w-4 h-0.5 bg-white/60 mt-0.5 rounded-full" />
+            <div className="w-3 sm:w-4 h-0.5 bg-white/60 mt-0.5 rounded-full" />
           )}
         </div>
       </div>
@@ -39,7 +39,7 @@ export default function Logo({ size = 'medium', className = '', animated = false
           LusoTown
         </h1>
         {size !== 'small' && (
-          <span className={`text-xs font-medium text-gray-500 uppercase tracking-wider ${size === 'large' ? 'text-sm' : ''}`}>
+          <span className={`text-xs font-medium text-gray-500 uppercase tracking-wider ${size === 'large' ? 'sm:text-sm' : ''}`}>
             UK
           </span>
         )}

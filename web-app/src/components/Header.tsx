@@ -66,14 +66,15 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 min-h-[68px]">
-      <nav className="container-width px-3 sm:px-6 lg:px-8" aria-label="Top">
-        <div className="flex items-center justify-between h-16 gap-2 sm:gap-4">
+      <nav className="container-width px-2 sm:px-6 lg:px-8 header-mobile-safe" aria-label="Top">
+        <div className="flex items-center justify-between min-h-[68px] py-2 gap-1 sm:gap-4">
           {/* Logo */}
-          <div className="flex items-center flex-shrink-0">
-            <a href="/" className="flex items-center space-x-2 sm:space-x-3">
+          <div className="flex items-center flex-shrink-0 logo-container-mobile">
+            <a href="/" className="flex items-center space-x-1 sm:space-x-3 min-w-0">
               <Logo size="small" animated className="sm:hidden" />
-              <Logo size="medium" animated className="hidden sm:block" />
-              <div className="hidden md:flex items-center space-x-2">
+              <Logo size="medium" animated className="hidden sm:block lg:hidden" />
+              <Logo size="large" animated className="hidden lg:block" />
+              <div className="hidden xl:flex items-center space-x-2 ml-2">
                 <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full overflow-hidden border border-gray-200 shadow-sm flex items-center justify-center bg-white">
                   <span className="text-xs sm:text-sm">🇬🇧</span>
                 </div>
@@ -196,7 +197,7 @@ export default function Header() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="flex md:hidden items-center space-x-1 sm:space-x-2 relative z-50 flex-shrink-0">
+          <div className="flex md:hidden items-center space-x-1 relative z-50 flex-shrink-0">
             <div className="flex items-center space-x-1">
               <CartButton />
               <SavedItemsButton />
@@ -204,7 +205,7 @@ export default function Header() {
             <LanguageToggle />
             <button
               type="button"
-              className="inline-flex items-center justify-center p-2.5 sm:p-3 rounded-lg text-primary-700 hover:text-primary-800 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1 transition-all duration-200 min-h-[44px] min-w-[44px] sm:min-h-[48px] sm:min-w-[48px] bg-white border-2 border-primary-200 shadow-lg active:bg-primary-50 active:scale-95"
+              className="inline-flex items-center justify-center p-2 sm:p-3 rounded-lg text-primary-700 hover:text-primary-800 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1 transition-all duration-200 min-h-[40px] min-w-[40px] sm:min-h-[48px] sm:min-w-[48px] bg-white border-2 border-primary-200 shadow-lg active:bg-primary-50 active:scale-95"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-expanded={mobileMenuOpen}
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
