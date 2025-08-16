@@ -2,9 +2,12 @@ import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import { supabase } from '@/lib/supabase'
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2024-06-20',
-})
+const getStripe = () => {
+  const key = process.env.STRIPE_SECRET_KEY || 'sk_test_51Demo123456789012345678901234567890Demo'
+  return new Stripe(key, {
+    apiVersion: '2024-06-20',
+  })
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -18,6 +21,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Check if user already has a Stripe customer
+    const stripe = getStripe()
     let customerId: string
 
     const { data: existingProfile } = await supabase
