@@ -33,15 +33,20 @@ export default function Logo({ size = 'medium', className = '', animated = false
           <span className="text-white font-black text-sm relative z-10">🏛️</span>
         </div>
         
-        {/* Compact brand name with flags inline */}
-        <div className="flex items-center space-x-1">
-          <h1 className="text-lg font-black bg-gradient-to-r from-secondary-600 via-action-600 to-premium-600 bg-clip-text text-transparent leading-none tracking-tight">
-            LusoTown
-          </h1>
-          <div className="flex items-center space-x-0.5 ml-1">
-            <span className="text-xs">🇵🇹</span>
-            <span className="text-xs">🇬🇧</span>
+        {/* Compact brand name with London tagline */}
+        <div className="flex flex-col">
+          <div className="flex items-center space-x-1">
+            <h1 className="text-lg font-black bg-gradient-to-r from-secondary-600 via-action-600 to-premium-600 bg-clip-text text-transparent leading-none tracking-tight">
+              LusoTown
+            </h1>
+            <div className="flex items-center space-x-0.5 ml-1">
+              <span className="text-xs">🇵🇹</span>
+              <span className="text-xs">🇬🇧</span>
+            </div>
           </div>
+          <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest leading-none mt-0.5">
+            London
+          </span>
         </div>
       </div>
     )
