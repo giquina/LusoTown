@@ -26,11 +26,11 @@ export default function SavedItemsButton({
   const getSizeClasses = () => {
     switch (size) {
       case 'small':
-        return 'p-1.5'
+        return 'p-2'
       case 'large':
         return 'p-3'
       default:
-        return 'p-1.5 sm:p-2'
+        return 'p-3'
     }
   }
 
@@ -48,7 +48,7 @@ export default function SavedItemsButton({
   return (
     <Link 
       href="/saved"
-      className={`relative text-gray-600 hover:text-primary-500 transition-colors group ${getSizeClasses()} ${className} min-h-[40px] min-w-[40px] flex items-center justify-center`}
+      className={`relative text-gray-600 hover:text-primary-500 transition-colors group ${getSizeClasses()} ${className} min-h-[44px] min-w-[44px] flex items-center justify-center`}
       title={t('favorites.view-all')}
     >
       <motion.div

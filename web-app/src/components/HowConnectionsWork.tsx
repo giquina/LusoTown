@@ -115,7 +115,7 @@ export default function HowConnectionsWork() {
 
         {/* Steps */}
         <div className="mb-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {steps.map((step, index) => (
               <motion.div
                 key={index}
@@ -126,7 +126,7 @@ export default function HowConnectionsWork() {
                 className="relative"
               >
                 {/* Connection Line */}
-                {index < steps.length - 1 && (
+                {index % 2 === 0 && index < steps.length - 1 && (
                   <div className="hidden lg:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-gray-200 to-transparent -translate-x-4 z-0"></div>
                 )}
                 
@@ -208,18 +208,18 @@ export default function HowConnectionsWork() {
           <div className="inline-flex flex-col sm:flex-row gap-4">
             <a
               href="/events"
-              className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold px-8 py-4 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 inline-flex items-center justify-center gap-2"
+              className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold px-8 py-4 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 inline-flex items-center justify-center gap-2 whitespace-nowrap"
             >
               <CalendarDaysIcon className="w-5 h-5" />
-              {isPortuguese ? 'Descobrir Eventos' : 'Discover Events'}
+              {isPortuguese ? 'Ver Eventos' : 'Browse Events'}
             </a>
             
             <a
               href="/my-network"
-              className="bg-white text-gray-700 font-semibold px-8 py-4 rounded-xl border-2 border-gray-200 hover:border-primary-300 hover:text-primary-700 transition-all duration-200 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2"
+              className="bg-white text-gray-700 font-semibold px-8 py-4 rounded-xl border-2 border-gray-200 hover:border-primary-300 hover:text-primary-700 transition-all duration-200 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2 whitespace-nowrap"
             >
               <UserGroupIcon className="w-5 h-5" />
-              {isPortuguese ? 'Ver A Minha Rede' : 'View My Network'}
+              {isPortuguese ? 'Minha Rede' : 'My Network'}
             </a>
           </div>
           

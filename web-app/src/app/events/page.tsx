@@ -13,7 +13,8 @@ import {
   ShareIcon,
   ClockIcon,
   PhotoIcon,
-  SparklesIcon
+  SparklesIcon,
+  AcademicCapIcon
 } from '@heroicons/react/24/outline'
 import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid'
 import Header from '@/components/Header'
@@ -389,10 +390,29 @@ export default function EventsPage() {
                 transition={{ duration: 0.8, delay: 0.1 }}
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
               >
-                {activeTab === 'events' 
-                  ? (isPortuguese ? 'Seu Calendário Social Português' : 'Your Portuguese Social Calendar')
-                  : (isPortuguese ? 'Experiências Grupais & Tours' : 'Group Experiences & Tours')
-                }
+                {activeTab === 'events' ? (
+                  <>
+                    {/* Desktop full title */}
+                    <span className="hidden sm:block">
+                      {isPortuguese ? 'Seu Calendário Social Português' : 'Your Portuguese Social Calendar'}
+                    </span>
+                    {/* Mobile short title */}
+                    <span className="sm:hidden">
+                      {isPortuguese ? 'Eventos Portugueses' : 'Portuguese Events'}
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    {/* Desktop full title */}
+                    <span className="hidden sm:block">
+                      {isPortuguese ? 'Experiências Grupais & Tours' : 'Group Experiences & Tours'}
+                    </span>
+                    {/* Mobile short title */}
+                    <span className="sm:hidden">
+                      {isPortuguese ? 'Tours & Experiências' : 'Tours & Experiences'}
+                    </span>
+                  </>
+                )}
               </motion.h1>
               <motion.p 
                 initial={{ opacity: 0, y: 30 }}
@@ -400,14 +420,35 @@ export default function EventsPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-lg sm:text-xl text-gray-600 mb-8"
               >
-                {activeTab === 'events'
-                  ? (isPortuguese 
-                      ? 'Para profissionais portugueses em Londres e no Reino Unido - participe em workshops de negócios, eventos culturais e experiências sociais. De workshops de IA a networking executivo, do fado aos investimentos imobiliários - seu desenvolvimento profissional e pessoal espera!'
-                      : 'For Portuguese professionals in London and across the UK - join business workshops, cultural events, and social experiences. From AI workshops to executive networking, from fado to property investment - your professional and personal development awaits!')
-                  : (isPortuguese 
-                      ? 'Reserve experiências exclusivas com falantes de português em todo o Reino Unido. Desde grupos especializados para mulheres 30+ e 40+ até experiências familiares - encontre sua comunidade e explore o Reino Unido juntos.'
-                      : 'Book exclusive group experiences with Portuguese speakers across the UK. From specialized groups for Women 30+ and 40+ to family-friendly activities - find your community and explore the UK together.')
-                }
+                {activeTab === 'events' ? (
+                  <>
+                    {/* Desktop full subtitle */}
+                    <span className="hidden sm:block">
+                      {isPortuguese 
+                        ? 'Para profissionais portugueses em Londres e no Reino Unido - participe em workshops de negócios, eventos culturais e experiências sociais. De workshops de IA a networking executivo, do fado aos investimentos imobiliários - seu desenvolvimento profissional e pessoal espera!'
+                        : 'For Portuguese professionals in London and across the UK - join business workshops, cultural events, and social experiences. From AI workshops to executive networking, from fado to property investment - your professional and personal development awaits!'
+                      }
+                    </span>
+                    {/* Mobile short subtitle */}
+                    <span className="sm:hidden">
+                      {isPortuguese ? 'O seu calendário social espera!' : 'Your Portuguese social calendar awaits!'}
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    {/* Desktop full subtitle */}
+                    <span className="hidden sm:block">
+                      {isPortuguese 
+                        ? 'Reserve experiências exclusivas com falantes de português em todo o Reino Unido. Desde grupos especializados para mulheres 30+ e 40+ até experiências familiares - encontre sua comunidade e explore o Reino Unido juntos.'
+                        : 'Book exclusive group experiences with Portuguese speakers across the UK. From specialized groups for Women 30+ and 40+ to family-friendly activities - find your community and explore the UK together.'
+                      }
+                    </span>
+                    {/* Mobile short subtitle */}
+                    <span className="sm:hidden">
+                      {isPortuguese ? 'Experiências exclusivas em grupo!' : 'Exclusive group experiences!'}
+                    </span>
+                  </>
+                )}
               </motion.p>
 
               {/* Tab Navigation */}
@@ -417,11 +458,11 @@ export default function EventsPage() {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="flex justify-center mb-8 px-4"
               >
-                <div className="bg-white/80 backdrop-blur-sm p-1.5 sm:p-2 rounded-2xl shadow-lg border border-gray-200 w-full max-w-md">
-                  <div className="grid grid-cols-2 gap-1">
+                <div className="bg-white/80 backdrop-blur-sm p-2 sm:p-2 rounded-2xl shadow-lg border border-gray-200 w-full max-w-md">
+                  <div className="grid grid-cols-2 gap-2">
                     <button
                       onClick={() => setActiveTab('events')}
-                      className={`px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-200 touch-manipulation ${
+                      className={`px-4 sm:px-6 py-3.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-sm transition-all duration-200 touch-manipulation min-h-[44px] flex items-center justify-center ${
                         activeTab === 'events'
                           ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-md'
                           : 'text-gray-600 hover:text-gray-900 hover:bg-white/50'
@@ -431,7 +472,7 @@ export default function EventsPage() {
                     </button>
                     <button
                       onClick={() => setActiveTab('tours')}
-                      className={`px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-200 touch-manipulation ${
+                      className={`px-4 sm:px-6 py-3.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-sm transition-all duration-200 touch-manipulation min-h-[44px] flex items-center justify-center ${
                         activeTab === 'tours'
                           ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-md'
                           : 'text-gray-600 hover:text-gray-900 hover:bg-white/50'
@@ -841,6 +882,30 @@ export default function EventsPage() {
             )}
           </AnimatePresence>
         )}
+
+        {/* Host Your Event CTA Section */}
+        <section className="py-24 bg-gradient-to-r from-premium-50 to-coral-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-2xl mx-auto">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                {isPortuguese ? 'Organize o Seu Próprio Evento' : 'Host Your Own Event'}
+              </h2>
+              <p className="text-gray-600 mb-6">
+                {isPortuguese 
+                  ? 'É um profissional português? Partilhe a sua experiência organizando workshops, eventos culturais, ou promovendo o seu negócio para a nossa crescente comunidade.'
+                  : 'Are you a Portuguese professional? Share your expertise by hosting workshops, cultural events, or promoting your business to our growing community.'
+                }
+              </p>
+              <a
+                href="/host"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-premium-500 to-coral-500 text-white font-semibold px-8 py-3 rounded-xl hover:from-premium-600 hover:to-coral-600 transition-all duration-200 shadow-lg hover:shadow-xl"
+              >
+                <AcademicCapIcon className="w-5 h-5" />
+                {isPortuguese ? 'Torna-te Anfitrião' : 'Become a Host'}
+              </a>
+            </div>
+          </div>
+        </section>
 
         {/* My Network CTA Section */}
         <section className="py-24 bg-gradient-to-r from-primary-50 to-secondary-50">

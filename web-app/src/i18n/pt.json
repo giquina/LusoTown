@@ -1,7 +1,7 @@
 {
   "nav.events": "Eventos",
   "nav.tours": "Tours",
-  "nav.chauffeur": "Transporte & Tours",
+  "nav.transport": "Transporte & Tours",
   "nav.networks": "Redes",
   "nav.heritage": "Património",
   "nav.instituto": "Instituto Camões",
@@ -41,7 +41,9 @@
   
   "hero.badge": "Unidos pela Língua • United by Language",
   "hero.title": "A Sua Comunidade Portuguesa em Londres",
-  "hero.subtitle": "Conecte-se com falantes de português através de experiências sociais e oportunidades profissionais. De eventos culturais e tours guiados a workshops de IA e networking empresarial - a sua comunidade espera por si.",
+  "hero.title.mobile": "Comunidade Portuguesa",
+  "hero.subtitle": "Conecte-se com falantes de português em Londres. Experiências sociais e oportunidades profissionais esperam por si.",
+  "hero.subtitle.mobile": "Comunidade portuguesa em Londres!",
   "hero.cta.primary": "Explorar Eventos",
   "hero.cta.secondary": "Juntar-se à Comunidade",
   
@@ -86,6 +88,53 @@
   "what-you-can-do.favorites.cta": "Ver Itens Guardados",
   "what-you-can-do.favorites.types": "Eventos • Negócios • Locais Culturais",
   
+  "what-you-can-do.host.title": "Partilha a Tua Especialidade",
+  "what-you-can-do.host.description": "És um profissional português, organizador de eventos, ou especialista cultural? Apresenta os teus workshops, serviços e eventos à nossa comunidade próspera. Desde formação em IA a artesanato tradicional, coaching empresarial a tours culturais - partilha o teu conhecimento e faz crescer o teu negócio.",
+  "what-you-can-do.host.cta": "Torna-te Anfitrião",
+  "what-you-can-do.host.examples": "Workshops • Serviços • Eventos Culturais • Formação Profissional",
+  
+  "host-with-us.badge": "Para Profissionais Portugueses • For Portuguese Professionals",
+  "host-with-us.title": "Partilha a Tua Especialidade Portuguesa com a Nossa Comunidade",
+  "host-with-us.subtitle": "Junta-te a centenas de profissionais portugueses, criadores de eventos e especialistas culturais que apresentam os seus serviços à nossa comunidade crescente. Desde workshops de negócios a experiências culturais, alcança falantes de português em Londres e Reino Unido.",
+  "host-with-us.testimonial": "\"Já organizei 15 workshops de IA através da LusoTown e construí uma base de clientes portugueses próspera. O apoio da comunidade é incrível!\" - Maria Santos, Empresária Tecnológica",
+  
+  "host-with-us.professionals.title": "Serviços Profissionais & Workshops",
+  "host-with-us.professionals.description": "Apresenta a tua especialidade a profissionais portugueses. Organiza workshops de IA, coaching empresarial, formação em marketing digital, seminários de investimento e eventos de networking profissional.",
+  "host-with-us.professionals.cta": "Anuncia os Teus Serviços",
+  "host-with-us.professionals.examples": "Formação IA • Coaching Empresarial • Consultoria Investimento • Networking Profissional",
+  
+  "host-with-us.cultural.title": "Eventos & Experiências Culturais",
+  "host-with-us.cultural.description": "Partilha o património português através de aulas de culinária, noites de Fado, intercâmbio linguístico, workshops de artesanato tradicional e tours culturais. Preserva a nossa cultura enquanto geras receita.",
+  "host-with-us.cultural.cta": "Organiza Eventos Culturais",
+  "host-with-us.cultural.examples": "Aulas Culinária • Noites Fado • Intercâmbio Linguístico • Tours Culturais",
+  
+  "host-with-us.business.title": "Promoção de Negócios Portugueses",
+  "host-with-us.business.description": "Promove o teu negócio, restaurante, loja ou serviço português. Conecta com clientes que partilham a tua herança e valores. Constrói relações duradouras com a comunidade portuguesa.",
+  "host-with-us.business.cta": "Promove o Teu Negócio",
+  "host-with-us.business.examples": "Restaurantes • Lojas • Serviços Profissionais • Serviços Comunitários",
+  
+  "host-with-us.success.title": "Histórias de Sucesso de Anfitriões Portugueses",
+  "host-with-us.success.subtitle": "Profissionais portugueses reais a construir negócios prósperos através da nossa comunidade",
+  "host-with-us.success.story1.quote": "\"A minha padaria portuguesa passou de local para Londres inteira graças à LusoTown. Agora organizo workshops mensais de padaria e a minha base de clientes triplicou!\"",
+  "host-with-us.success.story1.author": "João Silva, Proprietário de Padaria",
+  "host-with-us.success.story2.quote": "\"Ensino workshops de marketing digital português através da LusoTown. Construí uma rede de 200+ empresários portugueses em apenas 6 meses.\"",
+  "host-with-us.success.story2.author": "Ana Costa, Consultora de Marketing",
+  
+  "host-with-us.benefits.title": "Porquê Profissionais Portugueses Escolhem a LusoTown",
+  "host-with-us.benefits.reach.title": "Alcança 500+ Falantes de Português",
+  "host-with-us.benefits.reach.description": "Conecta com profissionais, famílias e jovens adultos portugueses em Londres e Reino Unido",
+  "host-with-us.benefits.revenue.title": "Gera Receita Sustentável",
+  "host-with-us.benefits.revenue.description": "Monetiza a tua especialidade através de workshops, serviços e eventos com processamento de pagamentos integrado",
+  "host-with-us.benefits.community.title": "Constrói a Tua Rede Portuguesa",
+  "host-with-us.benefits.community.description": "Conecta com outros profissionais portugueses e cria relações de negócio duradouras",
+  "host-with-us.benefits.heritage.title": "Preserva o Património Português",
+  "host-with-us.benefits.heritage.description": "Partilha a tua cultura enquanto constros um negócio sustentável em torno das tradições portuguesas",
+  
+  "host-with-us.cta.title": "Pronto para Partilhar a Tua Especialidade Portuguesa?",
+  "host-with-us.cta.description": "Junta-te a profissionais portugueses bem-sucedidos que estão a construir negócios prósperos através da nossa comunidade. Desde workshops a serviços, eventos a experiências culturais - começa a apresentar a tua especialidade hoje.",
+  "host-with-us.cta.primary": "Começar a Organizar Hoje",
+  "host-with-us.cta.secondary": "Saber Mais Sobre Organizar",
+  
   "features.title": "Porquê Escolher a LusoTown",
   "features.subtitle": "O Seu Centro Social & Profissional para Falantes de Português no Reino Unido",
   "features.events.title": "Eventos Culturais & Encontros",
@@ -119,6 +168,7 @@
   
   "about.hero.badge": "Unidos pela Língua • United by Language",
   "about.hero.title": "Sobre a LusoTown",
+  "about.hero.title.mobile": "Sobre Nós",
   "about.mission.title": "Nossa Missão: Preservar a Cultura, Conectar Corações",
   "about.mission.subtitle": "Our Mission: Preserve Culture, Connect Hearts",
   
@@ -205,6 +255,16 @@
   "login.attendees": "participantes",
   "login.participants": "participantes",
   "login.table-quote": "\"Onde há portugueses, há sempre uma mesa para mais um\"",
+
+  "transport.hero.title": "Turismo de Londres com Transporte Privado Português",
+  "transport.hero.title.mobile": "Transporte Português",
+  "transport.hero.subtitle": "Experiências turísticas premium em Londres com motoristas e guias que falam português fluentemente. Descubra os principais pontos turísticos de Londres com comunicação profissional em português e transporte de segurança.",
+  "transport.hero.subtitle.mobile": "Motoristas e guias portugueses em Londres!",
+
+  "pricing.hero.title": "Junte-se à Sua Comunidade Portuguesa",
+  "pricing.hero.title.mobile": "Planos de Preços",
+  "pricing.hero.subtitle": "Escolha a membresía que se adequa ao seu estilo de vida. De eventos culturais a networking profissional - encontre o seu lugar na comunidade portuguesa de Londres.",
+  "pricing.hero.subtitle.mobile": "Encontre a sua comunidade portuguesa!",
   
   "signup.subtitle": "Conecte-se com falantes de português através de experiências sociais e oportunidades profissionais por Londres. De eventos culturais e tours guiados a workshops empresariais e networking - descubra a sua comunidade.",
   
@@ -304,7 +364,9 @@
   "verification.premium": "Apenas membros premium",
   
   "community.hero.title": "A Comunidade Portuguesa de Londres",
+  "community.hero.title.mobile": "Rede Portuguesa",
   "community.hero.subtitle": "Descobre a vibrante comunidade lusófona de Londres. Desde padarias em Stockwell a centros culturais em Vauxhall - onde 500+ corações portugueses se sentem em casa.",
+  "community.hero.subtitle.mobile": "500+ portugueses em Londres!",
   "community.stats.members": "Membros da Comunidade Portuguesa",
   "community.stats.events": "Eventos Culturais por Mês",
   "community.stats.boroughs": "Bairros de Londres",
@@ -370,7 +432,9 @@
   "cta.benefits.free-start": "Gratuito para começar",
   
   "events.hero.title": "O Seu Calendário Social Português",
+  "events.hero.title.mobile": "Eventos Portugueses",
   "events.hero.subtitle": "Viva a vida em conjunto com falantes de português em Londres. Desde tours de museus a noites de concerto, futebol a escapadas - o seu calendário social espera por si!",
+  "events.hero.subtitle.mobile": "O seu calendário social espera!",
   "events.search-placeholder": "Pesquisar eventos e experiências...",
   "events.popular-types": "Experiências Populares",
   "events.stats-events": "Experiências Mensais",

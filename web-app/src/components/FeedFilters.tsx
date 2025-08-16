@@ -188,7 +188,7 @@ export default function FeedFilters({
           {hasActiveFilters() && (
             <button
               onClick={clearAllFilters}
-              className="text-sm text-gray-500 hover:text-gray-700 underline"
+              className="text-sm text-gray-500 hover:text-gray-700 underline p-2 min-h-[44px] flex items-center"
             >
               {isPortuguese ? 'Limpar tudo' : 'Clear all'}
             </button>
@@ -196,7 +196,7 @@ export default function FeedFilters({
           {onToggle && (
             <button
               onClick={onToggle}
-              className="text-gray-400 hover:text-gray-600"
+              className="text-gray-400 hover:text-gray-600 p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
             >
               <XMarkIcon className="w-5 h-5" />
             </button>
@@ -218,7 +218,7 @@ export default function FeedFilters({
               <button
                 key={type.key}
                 onClick={() => toggleArrayFilter('eventType', type.key)}
-                className={`px-3 py-1.5 text-sm rounded-full border transition-colors whitespace-nowrap ${
+                className={`px-3 py-2 text-sm rounded-full border transition-colors whitespace-nowrap min-h-[36px] ${
                   localFilters.eventType.includes(type.key)
                     ? 'bg-primary-100 text-primary-700 border-primary-300'
                     : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
@@ -243,7 +243,7 @@ export default function FeedFilters({
               <button
                 key={location.key}
                 onClick={() => toggleArrayFilter('location', location.key)}
-                className={`px-3 py-1.5 text-sm rounded-full border transition-colors whitespace-nowrap ${
+                className={`px-3 py-2 text-sm rounded-full border transition-colors whitespace-nowrap min-h-[36px] ${
                   localFilters.location.includes(location.key)
                     ? 'bg-secondary-100 text-secondary-700 border-secondary-300'
                     : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
@@ -268,7 +268,7 @@ export default function FeedFilters({
               <button
                 key={range.key}
                 onClick={() => updateFilter('dateRange', range.key as FeedFilters['dateRange'])}
-                className={`px-3 py-1.5 text-sm rounded-full border transition-colors ${
+                className={`px-3 py-2 text-sm rounded-full border transition-colors min-h-[36px] ${
                   localFilters.dateRange === range.key
                     ? 'bg-accent-100 text-accent-700 border-accent-300'
                     : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
@@ -293,7 +293,7 @@ export default function FeedFilters({
               <button
                 key={range.key}
                 onClick={() => updateFilter('priceRange', range.key as FeedFilters['priceRange'])}
-                className={`px-3 py-1.5 text-sm rounded-full border transition-colors ${
+                className={`px-3 py-2 text-sm rounded-full border transition-colors min-h-[36px] ${
                   localFilters.priceRange === range.key
                     ? 'bg-premium-100 text-premium-700 border-premium-300'
                     : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
@@ -319,7 +319,7 @@ export default function FeedFilters({
             <button
               key={tag.key}
               onClick={() => toggleArrayFilter('culturalTags', tag.key)}
-              className={`px-3 py-1.5 text-sm rounded-full border transition-colors whitespace-nowrap ${
+              className={`px-3 py-2 text-sm rounded-full border transition-colors whitespace-nowrap min-h-[36px] ${
                 localFilters.culturalTags.includes(tag.key)
                   ? 'bg-coral-100 text-coral-700 border-coral-300'
                   : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
@@ -338,7 +338,7 @@ export default function FeedFilters({
         </h4>
         
         <div className="space-y-3">
-          <label className="flex items-center gap-3 cursor-pointer">
+          <label className="flex items-center gap-3 cursor-pointer min-h-[44px]">
             <input
               type="checkbox"
               checked={localFilters.spotsAvailable}
@@ -350,7 +350,7 @@ export default function FeedFilters({
             </span>
           </label>
 
-          <label className="flex items-center gap-3 cursor-pointer">
+          <label className="flex items-center gap-3 cursor-pointer min-h-[44px]">
             <input
               type="checkbox"
               checked={localFilters.followingOnly}

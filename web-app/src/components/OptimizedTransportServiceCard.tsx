@@ -4,7 +4,7 @@ import React, { memo, useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { CheckCircleIcon, StarIcon, CurrencyPoundIcon } from '@heroicons/react/24/outline'
 import { Crown, Shield, Car, Users } from 'lucide-react'
-import { pricingEngine, PricingBreakdown } from '@/lib/chauffeurPricing'
+import { pricingEngine, PricingBreakdown } from '@/lib/transportPricing'
 
 interface ServiceTier {
   id: string
@@ -22,7 +22,7 @@ interface ServiceTier {
   maximumHours?: number
 }
 
-interface OptimizedChauffeurServiceCardProps {
+interface OptimizedTransportServiceCardProps {
   tier: ServiceTier
   isPortuguese: boolean
   onBookNow: () => void
@@ -33,7 +33,7 @@ interface OptimizedChauffeurServiceCardProps {
   duration?: number
 }
 
-const OptimizedChauffeurServiceCard = memo<OptimizedChauffeurServiceCardProps>(({ 
+const OptimizedTransportServiceCard = memo<OptimizedTransportServiceCardProps>(({ 
   tier, 
   isPortuguese, 
   onBookNow, 
@@ -158,7 +158,7 @@ const OptimizedChauffeurServiceCard = memo<OptimizedChauffeurServiceCardProps>((
         stiffness: 100
       }}
       viewport={{ once: true }}
-      className={`relative bg-white rounded-2xl shadow-lg border-2 overflow-hidden min-h-[520px] sm:min-h-[600px] flex flex-col ${
+      className={`relative bg-white rounded-2xl shadow-lg border-2 overflow-hidden h-[600px] flex flex-col ${
         tier.popular 
           ? 'border-premium-300 shadow-2xl ring-2 ring-premium-100' 
           : `${colorClasses.border} hover:shadow-2xl`
@@ -182,8 +182,8 @@ const OptimizedChauffeurServiceCard = memo<OptimizedChauffeurServiceCardProps>((
       )}
 
       {/* Header Section */}
-      <div className={`${colorClasses.bg} px-4 sm:px-6 py-6 sm:py-8 text-center relative overflow-hidden ${
-        tier.popular ? 'pt-10 sm:pt-12' : ''
+      <div className={`${colorClasses.bg} px-6 py-8 text-center relative overflow-hidden ${
+        tier.popular ? 'pt-12' : ''
       }`}>
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
@@ -201,11 +201,11 @@ const OptimizedChauffeurServiceCard = memo<OptimizedChauffeurServiceCardProps>((
             {tierIcon}
           </motion.div>
 
-          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 line-clamp-2 break-words">
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">
             {isPortuguese ? tier.namePortuguese : tier.name}
           </h3>
           
-          <p className="text-gray-600 mb-4 leading-relaxed text-sm sm:text-base line-clamp-3 break-words">
+          <p className="text-gray-600 mb-4 leading-relaxed">
             {isPortuguese ? tier.descriptionPortuguese : tier.description}
           </p>
 
@@ -220,7 +220,7 @@ const OptimizedChauffeurServiceCard = memo<OptimizedChauffeurServiceCardProps>((
                       £{discountInfo.originalPrice.toFixed(0)}
                     </span>
                   )}
-                  <span className="text-2xl sm:text-4xl font-bold text-gray-900">
+                  <span className="text-4xl font-bold text-gray-900">
                     £{pricingBreakdown.finalPrice.toFixed(0)}
                   </span>
                 </div>
@@ -244,7 +244,7 @@ const OptimizedChauffeurServiceCard = memo<OptimizedChauffeurServiceCardProps>((
             ) : (
               <div className="flex items-baseline justify-center">
                 <span className="text-sm text-gray-600 mr-1">{isPortuguese ? 'a partir de' : 'from'}</span>
-                <span className="text-2xl sm:text-4xl font-bold text-gray-900">£{tier.price}</span>
+                <span className="text-4xl font-bold text-gray-900">£{tier.price}</span>
                 <span className="text-gray-500 ml-2">{isPortuguese ? '/hora' : '/hour'}</span>
               </div>
             )}
@@ -273,7 +273,7 @@ const OptimizedChauffeurServiceCard = memo<OptimizedChauffeurServiceCardProps>((
       </div>
 
       {/* Features Section */}
-      <div className="px-4 sm:px-6 py-4 sm:py-6 flex-grow">
+      <div className="px-6 py-6 flex-grow">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           {displayFeatures.map((feature, featureIndex) => (
             <motion.div 
@@ -285,7 +285,7 @@ const OptimizedChauffeurServiceCard = memo<OptimizedChauffeurServiceCardProps>((
               className="flex items-start group-hover:text-gray-900 transition-colors"
             >
               <CheckCircleIcon className={`w-4 h-4 ${colorClasses.text} mt-0.5 mr-2 flex-shrink-0`} />
-              <span className="text-gray-700 text-xs sm:text-sm leading-relaxed break-words">{feature}</span>
+              <span className="text-gray-700 text-xs sm:text-sm leading-relaxed">{feature}</span>
             </motion.div>
           ))}
         </div>
@@ -300,13 +300,13 @@ const OptimizedChauffeurServiceCard = memo<OptimizedChauffeurServiceCardProps>((
       </div>
 
       {/* Action Section - Fixed at bottom */}
-      <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
+      <div className="absolute bottom-4 left-4 right-4">
         <motion.button
           variants={buttonVariants}
           whileHover="hover"
           whileTap="tap"
           onClick={onBookNow}
-          className={`w-full py-3 sm:py-4 px-4 sm:px-6 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform-gpu text-xs sm:text-sm min-h-[44px] flex items-center justify-center ${
+          className={`w-full py-4 px-6 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform-gpu ${
             tier.popular
               ? 'bg-gradient-to-r from-premium-600 to-premium-700 hover:from-premium-700 hover:to-premium-800 text-white'
               : `bg-gradient-to-r ${colorClasses.gradient} hover:opacity-90 text-white`
@@ -315,27 +315,22 @@ const OptimizedChauffeurServiceCard = memo<OptimizedChauffeurServiceCardProps>((
           <div className="flex items-center justify-center space-x-2">
             {pricingBreakdown ? (
               <>
-                <CurrencyPoundIcon className="w-4 sm:w-5 h-4 sm:h-5" />
-                <span className="hidden sm:inline">{isPortuguese ? 'Reservar por' : 'Book for'} £{pricingBreakdown.finalPrice.toFixed(0)}</span>
-                <span className="sm:hidden">{isPortuguese ? 'Reservar' : 'Book'} £{pricingBreakdown.finalPrice.toFixed(0)}</span>
+                <CurrencyPoundIcon className="w-5 h-5" />
+                <span>{isPortuguese ? 'Reservar por' : 'Book for'} £{pricingBreakdown.finalPrice.toFixed(0)}</span>
               </>
             ) : (
-              <>
-                <span className="hidden sm:inline">{isPortuguese ? 'Reservar Agora' : 'Book Now'}</span>
-                <span className="sm:hidden">{isPortuguese ? 'Reservar' : 'Book'}</span>
-              </>
+              <span>{isPortuguese ? 'Reservar Agora' : 'Book Now'}</span>
             )}
           </div>
         </motion.button>
         
         {/* Service Level Indicator */}
-        <div className="mt-3 sm:mt-4 flex justify-center">
-          <div className={`inline-flex items-center px-2 sm:px-3 py-1 rounded-full text-xs font-medium ${colorClasses.badge}`}>
+        <div className="mt-4 flex justify-center">
+          <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${colorClasses.badge}`}>
             {tier.id === 'essential' && (
               <>
                 <div className="w-2 h-2 bg-current rounded-full mr-2"></div>
-                <span className="hidden sm:inline">{isPortuguese ? 'Nível Essencial' : 'Essential Level'}</span>
-                <span className="sm:hidden">{isPortuguese ? 'Essencial' : 'Essential'}</span>
+                {isPortuguese ? 'Nível Essencial' : 'Essential Level'}
               </>
             )}
             {tier.id === 'premium' && (
@@ -344,15 +339,13 @@ const OptimizedChauffeurServiceCard = memo<OptimizedChauffeurServiceCardProps>((
                   <div className="w-2 h-2 bg-current rounded-full"></div>
                   <div className="w-2 h-2 bg-current rounded-full"></div>
                 </div>
-                <span className="hidden sm:inline">{isPortuguese ? 'Nível Premium' : 'Premium Level'}</span>
-                <span className="sm:hidden">{isPortuguese ? 'Premium' : 'Premium'}</span>
+                {isPortuguese ? 'Nível Premium' : 'Premium Level'}
               </>
             )}
             {tier.id === 'vip' && (
               <>
                 <Crown className="w-3 h-3 mr-2" />
-                <span className="hidden sm:inline">{isPortuguese ? 'Nível VIP' : 'VIP Level'}</span>
-                <span className="sm:hidden">{isPortuguese ? 'VIP' : 'VIP'}</span>
+                {isPortuguese ? 'Nível VIP' : 'VIP Level'}
               </>
             )}
             {tier.id === 'elite' && (
@@ -362,8 +355,7 @@ const OptimizedChauffeurServiceCard = memo<OptimizedChauffeurServiceCardProps>((
                   <div className="w-2 h-2 bg-current rounded-full"></div>
                   <div className="w-2 h-2 bg-current rounded-full"></div>
                 </div>
-                <span className="hidden sm:inline">{isPortuguese ? 'Nível Elite' : 'Elite Level'}</span>
-                <span className="sm:hidden">{isPortuguese ? 'Elite' : 'Elite'}</span>
+                {isPortuguese ? 'Nível Elite' : 'Elite Level'}
               </>
             )}
           </div>
@@ -389,6 +381,6 @@ const OptimizedChauffeurServiceCard = memo<OptimizedChauffeurServiceCardProps>((
 })
 
 // Add display name for debugging
-OptimizedChauffeurServiceCard.displayName = 'OptimizedChauffeurServiceCard'
+OptimizedTransportServiceCard.displayName = 'OptimizedTransportServiceCard'
 
-export default OptimizedChauffeurServiceCard
+export default OptimizedTransportServiceCard

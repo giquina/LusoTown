@@ -80,8 +80,8 @@ export default function CustomToursSection({ onBookTour, showHeader = true }: Cu
     if (onBookTour) {
       onBookTour('custom-tour')
     } else {
-      // Redirect to chauffeur page
-      window.location.href = '/chauffeur'
+      // Redirect to transport page
+      window.location.href = '/transport'
     }
   }
 

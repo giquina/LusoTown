@@ -215,22 +215,44 @@ export default function Community() {
                   </span>
                 </div>
                 <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 mb-6">
-                  {isPortuguese ? (
-                    <>
-                      A Comunidade <span className="gradient-text">Portuguesa</span><br />de Londres
-                    </>
-                  ) : (
-                    <>
-                      The Portuguese <span className="gradient-text">Community</span><br />in London
-                    </>
-                  )}
+                  {/* Desktop full title */}
+                  <span className="hidden sm:block">
+                    {isPortuguese ? (
+                      <>
+                        A Comunidade <span className="gradient-text">Portuguesa</span><br />de Londres
+                      </>
+                    ) : (
+                      <>
+                        The Portuguese <span className="gradient-text">Community</span><br />in London
+                      </>
+                    )}
+                  </span>
+                  {/* Mobile short title */}
+                  <span className="sm:hidden">
+                    {isPortuguese ? (
+                      <>
+                        <span className="gradient-text">Rede</span><br />Portuguesa
+                      </>
+                    ) : (
+                      <>
+                        Portuguese<br /><span className="gradient-text">Network</span>
+                      </>
+                    )}
+                  </span>
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-4xl mx-auto">
-                  {isPortuguese ? (
-                    'Descobre a vibrante comunidade de falantes de português em Londres. Desde padarias autênticas em Stockwell a centros culturais em Vauxhall, desde festivais brasileiros a noites de Fado - aqui é onde 500+ profissionais portugueses se encontram e prosperam.'
-                  ) : (
-                    'Discover the vibrant Portuguese-speaking community in London. From authentic bakeries in Stockwell to cultural centers in Vauxhall, from Brazilian festivals to Fado nights - this is where 500+ Portuguese professionals gather and thrive.'
-                  )}
+                  {/* Desktop full subtitle */}
+                  <span className="hidden sm:block">
+                    {isPortuguese ? (
+                      'Descobre a vibrante comunidade de falantes de português em Londres. Desde padarias autênticas em Stockwell a centros culturais em Vauxhall, desde festivais brasileiros a noites de Fado - aqui é onde 500+ profissionais portugueses se encontram e prosperam.'
+                    ) : (
+                      'Discover the vibrant Portuguese-speaking community in London. From authentic bakeries in Stockwell to cultural centers in Vauxhall, from Brazilian festivals to Fado nights - this is where 500+ Portuguese professionals gather and thrive.'
+                    )}
+                  </span>
+                  {/* Mobile short subtitle */}
+                  <span className="sm:hidden">
+                    {isPortuguese ? '500+ portugueses em Londres!' : '500+ Portuguese speakers in London!'}
+                  </span>
                 </p>
               </motion.div>
 

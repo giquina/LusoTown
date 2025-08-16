@@ -319,14 +319,14 @@ const WhatsAppWidget: React.FC = () => {
             <div className="flex items-center space-x-2">
               <button
                 onClick={toggleWidget}
-                className="p-1.5 hover:bg-white/20 rounded-full transition-colors"
+                className="p-3 hover:bg-white/20 rounded-full transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
                 aria-label="Minimize"
               >
                 <div className="w-4 h-1 bg-white rounded"></div>
               </button>
               <button
                 onClick={closeWidget}
-                className="p-1.5 hover:bg-white/20 rounded-full transition-colors"
+                className="p-3 hover:bg-white/20 rounded-full transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
                 aria-label="Close"
               >
                 <X className="w-4 h-4" />

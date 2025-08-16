@@ -18,7 +18,7 @@ export default function CartButton() {
     <>
       <button
         onClick={() => setIsCartOpen(true)}
-        className="relative p-1.5 sm:p-2 text-gray-600 hover:text-primary-500 transition-colors group min-h-[40px] min-w-[40px] flex items-center justify-center"
+        className="relative p-3 text-gray-600 hover:text-primary-500 transition-colors group min-h-[44px] min-w-[44px] flex items-center justify-center"
         title={isPortuguese ? 'Carrinho de Compras' : 'Shopping Cart'}
       >
         {cartCount > 0 ? (

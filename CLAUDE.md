@@ -99,6 +99,12 @@ LusoTown/
 - Demo authentication system with hardcoded credentials
 - Environment variables for Supabase configuration
 
+**Animation & UI Libraries:**
+- Framer Motion for smooth animations and transitions
+- React Hot Toast for notification system
+- Headless UI for accessible component primitives
+- Heroicons and Lucide React for comprehensive icon sets
+
 ## Critical Development Patterns
 
 **Bilingual Implementation:**
@@ -114,15 +120,21 @@ LusoTown/
 - Use localStorage for state persistence
 
 **Static Export Configuration:**
-- Project configured for static export (`next export`)
-- No server-side features (SSR, API routes, etc.)
-- Images must be unoptimized (`unoptimized: true`)
+- Static export currently DISABLED due to dynamic routes complexity
+- Can be re-enabled after refactoring dynamic routes to use server components
+- Images configured as unoptimized (`unoptimized: true`)
 - All pages use trailing slashes
 
 **TypeScript Configuration:**
 - `ignoreBuildErrors: true` in Next.js config
 - Use `npx tsc --noEmit` for type checking
+- Path alias configured: `@/*` maps to `./src/*`
 - All components must have proper TypeScript interfaces
+
+**Webpack Optimization:**
+- Custom chunk splitting for development and production
+- Vendor code separated into dedicated chunks
+- Optimized bundle loading with cache groups
 
 ## Content Guidelines and Platform Positioning
 
@@ -539,7 +551,7 @@ The LusoTown platform has identified 10 key administrative and management positi
 - Run `npm run lint` before committing
 - Run `npx tsc --noEmit` to check TypeScript errors
 - Test demo login functionality works correctly
-- Verify static export builds: `npm run export`
+- Note: Static export currently disabled (check next.config.js for dynamic routes)
 
 **Common Debugging:**
 - If build fails, check TypeScript errors with `npx tsc --noEmit`
@@ -552,5 +564,5 @@ The LusoTown platform has identified 10 key administrative and management positi
 ## Deployment
 
 **Vercel:** `npm run deploy`
-**Static Export:** `npm run export`
+**Static Export:** `npm run export` (currently disabled - see Static Export Configuration)
 **Local:** `npm run dev` (http://localhost:3000)

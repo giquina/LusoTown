@@ -98,7 +98,7 @@ export default function ConversationStarters() {
             <div className="flex gap-1">
               <button
                 onClick={() => copyToClipboard(starterText)}
-                className="p-1.5 bg-white/70 hover:bg-white/90 rounded-lg transition-colors relative"
+                className="p-3 bg-white/70 hover:bg-white/90 rounded-lg transition-colors relative min-h-[44px] min-w-[44px] flex items-center justify-center"
                 title={isPortuguese ? 'Copiar' : 'Copy'}
               >
                 <ClipboardDocumentIcon className="w-4 h-4 text-gray-600" />

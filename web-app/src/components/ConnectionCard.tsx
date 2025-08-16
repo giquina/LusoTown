@@ -82,11 +82,11 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
 
   return (
     <motion.div 
-      className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
+      className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 min-h-[380px] sm:min-h-[420px] flex flex-col"
       whileHover={{ scale: 1.02 }}
     >
       {/* Header with profile info */}
-      <div className="p-6 pb-4">
+      <div className="p-4 sm:p-6 pb-3 sm:pb-4 flex-grow flex flex-col">
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center space-x-4 flex-1">
             {/* Profile Picture */}
@@ -106,7 +106,7 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
             {/* Name and Location */}
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-1">
-                <h3 className="text-lg font-semibold text-gray-900 break-words line-clamp-1 leading-tight">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-900 break-words line-clamp-1 leading-tight flex-1 min-w-0">
                   {connectedUser.firstName} {connectedUser.lastName || ''}
                 </h3>
                 <div className={`flex items-center gap-1 ${badge.color}`} title={`${badge.label} Member`}>
@@ -168,7 +168,7 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
 
       {/* First Met Event */}
       {firstMetEvent && (
-        <div className="px-6 pb-4">
+        <div className="px-4 sm:px-6 pb-3 sm:pb-4">
           <div className="bg-gray-50 rounded-xl p-4">
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs font-medium text-gray-500 uppercase tracking-wide">
@@ -186,7 +186,7 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
       )}
 
       {/* Stats Row */}
-      <div className="px-6 pb-4">
+      <div className="px-4 sm:px-6 pb-3 sm:pb-4">
         <div className="flex items-center justify-between text-sm min-w-0">
           <div className="flex items-center gap-4 min-w-0 flex-1">
             <div className="flex items-center gap-1 text-gray-600 flex-shrink-0">
@@ -204,31 +204,34 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
       </div>
 
       {/* Action Buttons */}
-      <div className="px-6 pb-6">
-        <div className="flex gap-3">
-          <button className="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white py-2.5 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-sm font-medium shadow-md min-w-0">
-            <ChatBubbleLeftRightIcon className="w-4 h-4 inline mr-2 flex-shrink-0" />
-            <span className="truncate">{isPortuguese ? 'Mensagem' : 'Message'}</span>
+      <div className="px-4 sm:px-6 pb-4 sm:pb-6 mt-auto">
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+          <button className="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-xs sm:text-sm font-medium shadow-md min-w-0 min-h-[44px] flex items-center justify-center">
+            <ChatBubbleLeftRightIcon className="w-4 h-4 mr-2 flex-shrink-0" />
+            <span className="hidden sm:inline">{isPortuguese ? 'Enviar Mensagem' : 'Send Message'}</span>
+            <span className="sm:hidden">{isPortuguese ? 'Mensagem' : 'Message'}</span>
           </button>
           
-          <button
-            onClick={() => setIsLiked(!isLiked)}
-            className={`p-2.5 rounded-lg transition-all duration-200 ${
-              isLiked 
-                ? 'bg-action-50 text-action-500 hover:bg-action-100' 
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-            }`}
-          >
-            {isLiked ? (
-              <HeartSolidIcon className="w-4 h-4" />
-            ) : (
-              <HeartIcon className="w-4 h-4" />
-            )}
-          </button>
-          
-          <button className="p-2.5 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200 transition-colors">
-            <ShareIcon className="w-4 h-4" />
-          </button>
+          <div className="flex gap-2 sm:gap-3 sm:flex-shrink-0">
+            <button
+              onClick={() => setIsLiked(!isLiked)}
+              className={`p-2.5 sm:p-3 rounded-lg transition-all duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center ${
+                isLiked 
+                  ? 'bg-action-50 text-action-500 hover:bg-action-100' 
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+              }`}
+            >
+              {isLiked ? (
+                <HeartSolidIcon className="w-4 h-4" />
+              ) : (
+                <HeartIcon className="w-4 h-4" />
+              )}
+            </button>
+            
+            <button className="p-2.5 sm:p-3 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
+              <ShareIcon className="w-4 h-4" />
+            </button>
+          </div>
         </div>
       </div>
 

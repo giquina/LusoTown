@@ -94,7 +94,7 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
               <h3 className="text-xl font-bold">Event Photos</h3>
               <button 
                 onClick={() => setShowPhotoGallery(false)}
-                className="text-gray-500 hover:text-gray-700 p-1 rounded-full hover:bg-gray-100"
+                className="text-gray-500 hover:text-gray-700 p-3 rounded-full hover:bg-gray-100 min-h-[44px] min-w-[44px] flex items-center justify-center"
               >
                 ✕
               </button>
@@ -130,7 +130,7 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
-        className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group h-[600px] flex flex-col"
+        className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group min-h-[580px] flex flex-col"
       >
         {/* Event Image Header */}
         <div className="relative h-48 overflow-hidden">
@@ -181,9 +181,9 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
                   size="small"
                   iconOnly={true}
                   variant="default"
-                  className="w-9 h-9 bg-white/90 backdrop-blur-sm rounded-full shadow-lg"
+                  className="min-w-[44px] min-h-[44px] bg-white/90 backdrop-blur-sm rounded-full shadow-lg"
                 />
-                <button className="w-9 h-9 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors shadow-lg">
+                <button className="min-w-[44px] min-h-[44px] bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors shadow-lg">
                   <ShareIcon className="w-4 h-4 text-gray-600" />
                 </button>
               </div>
@@ -217,7 +217,7 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
                     e.preventDefault()
                     setShowPhotoGallery(true)
                   }}
-                  className="bg-black/70 text-white text-xs px-3 py-1.5 rounded-full hover:bg-black/80 transition-colors flex items-center gap-1.5 font-medium shadow-lg"
+                  className="bg-black/70 text-white text-xs px-3 py-2 rounded-full hover:bg-black/80 transition-colors flex items-center gap-1.5 font-medium shadow-lg min-h-[36px]"
                 >
                   <PhotoIcon className="w-3.5 h-3.5" />
                   {event.photos.length} Photos
@@ -228,24 +228,24 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
         </div>
 
         {/* Content Section */}
-        <div className="relative p-4 sm:p-6 space-y-4 flex-grow flex flex-col pb-32">
+        <div className="relative p-4 sm:p-6 space-y-4 flex-grow flex flex-col pb-28 sm:pb-24">
           {/* Header: Title & Price */}
           <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4">
             <div className="flex-1 min-w-0 order-2 sm:order-1">
-              <h3 className="font-bold text-lg sm:text-xl text-gray-900 mb-2 group-hover:text-primary-600 transition-colors leading-tight break-words min-h-[3.5rem] flex items-start">
+              <h3 className="font-bold text-base sm:text-lg text-gray-900 mb-2 group-hover:text-primary-600 transition-colors leading-tight break-words line-clamp-2">
                 {event.title}
               </h3>
-              <p className="text-gray-600 text-sm line-clamp-3 leading-relaxed break-words">
+              <p className="text-gray-600 text-sm line-clamp-2 leading-relaxed break-words">
                 {event.description}
               </p>
             </div>
             <div className="text-left sm:text-right flex-shrink-0 order-1 sm:order-2">
-              <div className="text-xl sm:text-2xl font-bold text-primary-600 mb-1">
+              <div className="text-lg sm:text-xl font-bold text-primary-600 mb-1">
                 {event.price === 0 ? 'FREE' : `£${event.price}`}
               </div>
               {event.membershipRequired !== 'free' && (
                 <div className="text-xs text-gray-500 capitalize font-medium">
-                  {isPortuguese ? 'Membro necessário' : 'Membership needed'}
+                  {isPortuguese ? 'Membro' : 'Member'}
                 </div>
               )}
             </div>
@@ -272,7 +272,7 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
             {/* Location Row */}
             <div className="flex items-start gap-2 text-sm text-gray-600">
               <MapPinIcon className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
-              <span className="font-medium break-words">{event.location}, {event.address.split(',')[1]}</span>
+              <span className="font-medium break-words line-clamp-1">{event.location}</span>
             </div>
 
             {/* Age Restriction */}
@@ -419,14 +419,14 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
             )}
           </div>
 
-          {/* Action Buttons - Fixed at bottom */}
-          <div className="absolute bottom-4 left-4 right-4 space-y-3">
-            <div className="grid grid-cols-2 gap-3">
+          {/* Action Buttons - Fixed at bottom with better mobile spacing */}
+          <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 space-y-2 sm:space-y-3">
+            <div className="grid grid-cols-2 gap-2 sm:gap-3">
               <a
                 href={`/events/${event.id}`}
-                className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-3 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-sm"
+                className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-xs sm:text-sm"
               >
-                {isFull ? (isPortuguese ? 'Lista de Espera' : 'Join Waitlist') : (isPortuguese ? 'Ver Detalhes' : 'View Details')}
+                {isFull ? (isPortuguese ? 'Lista' : 'Waitlist') : (isPortuguese ? 'Ver Detalhes' : 'View Details')}
               </a>
               <SaveFavoriteCartButton
                 itemId={event.id}
@@ -447,7 +447,7 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
                 iconOnly={false}
                 size="medium"
                 variant="outline"
-                className="text-sm py-3 px-4"
+                className="text-xs sm:text-sm py-2.5 sm:py-3 px-3 sm:px-4"
               />
             </div>
           </div>

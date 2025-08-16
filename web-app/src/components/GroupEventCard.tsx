@@ -118,11 +118,11 @@ export default function GroupEventCard({
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className={`bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 h-[600px] flex flex-col ${className}`}
+        className={`bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 min-h-[320px] sm:min-h-[360px] flex flex-col ${className}`}
       >
-        <div className="flex gap-4 p-4">
+        <div className="flex gap-3 sm:gap-4 p-3 sm:p-4">
           {/* Event Image */}
-          <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 relative">
+          <div className="w-16 sm:w-20 h-16 sm:h-20 rounded-lg overflow-hidden flex-shrink-0 relative">
             <Image 
               src={event.image} 
               alt={event.title}
@@ -140,7 +140,7 @@ export default function GroupEventCard({
           {/* Event Info */}
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between mb-2">
-              <h4 className="font-semibold text-gray-900 text-sm line-clamp-1">{event.title}</h4>
+              <h4 className="font-semibold text-gray-900 text-xs sm:text-sm line-clamp-1 break-words">{event.title}</h4>
               <FavoriteButton
                 itemId={event.id}
                 itemType="event"
@@ -181,7 +181,7 @@ export default function GroupEventCard({
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 h-[600px] flex flex-col ${className}`}
+        className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 min-h-[520px] sm:min-h-[600px] flex flex-col ${className}`}
       >
         {/* Featured Badge */}
         <div className="absolute top-4 left-4 z-10">
@@ -213,7 +213,7 @@ export default function GroupEventCard({
                 <HeartOutlineIcon className="w-4 h-4 text-gray-600" />
               )}
             </button>
-            <button className="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors">
+            <button className="min-w-[44px] min-h-[44px] bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors">
               <ShareIcon className="w-4 h-4 text-gray-600" />
             </button>
           </div>
@@ -227,17 +227,17 @@ export default function GroupEventCard({
         </div>
 
         {/* Event Details */}
-        <div className="p-6">
+        <div className="p-4 sm:p-6 flex-grow flex flex-col">
           <div className="flex items-start justify-between mb-3">
-            <h3 className="text-xl font-bold text-gray-900 line-clamp-2 flex-1 mr-4">
+            <h3 className="text-lg sm:text-xl font-bold text-gray-900 line-clamp-2 flex-1 mr-3 sm:mr-4 break-words">
               {event.title}
             </h3>
-            <span className="text-2xl font-bold text-primary-600 flex-shrink-0">
+            <span className="text-lg sm:text-2xl font-bold text-primary-600 flex-shrink-0">
               {formatPrice(event.price, event.currency)}
             </span>
           </div>
 
-          <p className="text-gray-600 mb-4 line-clamp-2 text-sm leading-relaxed">
+          <p className="text-gray-600 mb-4 line-clamp-2 text-sm leading-relaxed break-words">
             {event.description}
           </p>
 
@@ -301,16 +301,24 @@ export default function GroupEventCard({
             <button
               onClick={handleReserve}
               disabled={event.spotsLeft === 0}
-              className={`w-full py-3 px-4 rounded-xl text-sm font-bold transition-all duration-200 ${
+              className={`w-full py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 min-h-[44px] flex items-center justify-center ${
                 event.spotsLeft === 0
                   ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
                   : 'bg-gradient-to-r from-secondary-500 to-action-500 text-white hover:from-secondary-600 hover:to-action-600 hover:shadow-lg transform hover:-translate-y-0.5'
               }`}
             >
-              {event.spotsLeft === 0 
-                ? (isPortuguese ? 'Lotado - Lista de Espera' : 'Full - Join Waitlist')
-                : (isPortuguese ? 'Reservar o Meu Lugar' : 'Reserve Your Spot')
-              }
+              <span className="hidden sm:inline">
+                {event.spotsLeft === 0 
+                  ? (isPortuguese ? 'Lotado - Lista de Espera' : 'Full - Join Waitlist')
+                  : (isPortuguese ? 'Reservar o Meu Lugar' : 'Reserve Your Spot')
+                }
+              </span>
+              <span className="sm:hidden">
+                {event.spotsLeft === 0 
+                  ? (isPortuguese ? 'Lista' : 'Waitlist')
+                  : (isPortuguese ? 'Reservar' : 'Reserve')
+                }
+              </span>
             </button>
           </div>
         </div>
@@ -323,7 +331,7 @@ export default function GroupEventCard({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300 group h-[600px] flex flex-col ${className}`}
+      className={`bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300 group min-h-[520px] sm:min-h-[600px] flex flex-col ${className}`}
     >
       {/* Event Image */}
       <div className="relative h-48 overflow-hidden">
@@ -372,7 +380,7 @@ export default function GroupEventCard({
       </div>
 
       {/* Event Details */}
-      <div className="p-6 flex-grow flex flex-col">
+      <div className="p-4 sm:p-6 flex-grow flex flex-col pb-20 sm:pb-16 relative">
         {/* Category Badge */}
         <div className="mb-3">
           <span className={`text-xs px-3 py-1 rounded-full border ${getCategoryColor(event.category)}`}>
@@ -381,10 +389,10 @@ export default function GroupEventCard({
         </div>
 
         {/* Title and Description */}
-        <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-primary-600 transition-colors">
+        <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-primary-600 transition-colors break-words">
           {event.title}
         </h3>
-        <p className="text-gray-600 text-sm mb-4 line-clamp-2 leading-relaxed">
+        <p className="text-gray-600 text-sm mb-4 line-clamp-2 leading-relaxed break-words">
           {event.description}
         </p>
 
@@ -447,26 +455,36 @@ export default function GroupEventCard({
           </div>
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex gap-3 mt-auto">
-          <button
-            onClick={handleReserve}
-            disabled={event.spotsLeft === 0}
-            className={`flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all duration-200 ${
-              event.spotsLeft === 0
-                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                : 'bg-gradient-to-r from-secondary-500 to-action-500 text-white hover:from-secondary-600 hover:to-action-600 hover:shadow-lg transform hover:-translate-y-0.5'
-            }`}
-          >
-            {event.spotsLeft === 0 
-              ? (isPortuguese ? 'Lista de Espera' : 'Join Waitlist')
-              : (isPortuguese ? 'Reservar Lugar' : 'Reserve Spot')
-            }
-          </button>
-          
-          <button className="px-4 py-3 bg-gray-100 text-gray-600 rounded-xl hover:bg-gray-200 transition-colors">
-            <ShareIcon className="w-4 h-4" />
-          </button>
+        {/* Action Buttons - Fixed at bottom with mobile-optimized layout */}
+        <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 space-y-2">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+            <button
+              onClick={handleReserve}
+              disabled={event.spotsLeft === 0}
+              className={`flex-1 py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 min-h-[44px] flex items-center justify-center ${
+                event.spotsLeft === 0
+                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                  : 'bg-gradient-to-r from-secondary-500 to-action-500 text-white hover:from-secondary-600 hover:to-action-600 hover:shadow-lg transform hover:-translate-y-0.5'
+              }`}
+            >
+              <span className="hidden sm:inline">
+                {event.spotsLeft === 0 
+                  ? (isPortuguese ? 'Lista de Espera' : 'Join Waitlist')
+                  : (isPortuguese ? 'Reservar Lugar' : 'Reserve Spot')
+                }
+              </span>
+              <span className="sm:hidden">
+                {event.spotsLeft === 0 
+                  ? (isPortuguese ? 'Lista' : 'Waitlist')
+                  : (isPortuguese ? 'Reservar' : 'Reserve')
+                }
+              </span>
+            </button>
+            
+            <button className="px-3 sm:px-4 py-2.5 sm:py-3 bg-gray-100 text-gray-600 rounded-xl hover:bg-gray-200 transition-colors min-h-[44px] min-w-[44px] sm:min-w-auto flex items-center justify-center">
+              <ShareIcon className="w-4 h-4" />
+            </button>
+          </div>
         </div>
 
         {/* Urgency Indicator */}

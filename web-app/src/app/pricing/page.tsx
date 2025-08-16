@@ -392,24 +392,48 @@ export default function Pricing() {
                 {isPortuguese ? 'Unidos pela Língua • 750+ membros da comunidade' : 'United by Language • 750+ community members'}
               </div>
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                {isPortuguese ? (
-                  <>
-                    Junta-te à Tua<br />
-                    <span className="gradient-text">Comunidade Portuguesa</span><br />
-                    em Londres
-                  </>
-                ) : (
-                  <>
-                    Join Your Portuguese<br />
-                    <span className="gradient-text">Community</span> in London
-                  </>
-                )}
+                {/* Desktop full title */}
+                <span className="hidden sm:block">
+                  {isPortuguese ? (
+                    <>
+                      Junta-te à Tua<br />
+                      <span className="gradient-text">Comunidade Portuguesa</span><br />
+                      em Londres
+                    </>
+                  ) : (
+                    <>
+                      Join Your Portuguese<br />
+                      <span className="gradient-text">Community</span> in London
+                    </>
+                  )}
+                </span>
+                {/* Mobile short title */}
+                <span className="sm:hidden">
+                  {isPortuguese ? (
+                    <>
+                      <span className="gradient-text">Planos</span><br />
+                      de Preços
+                    </>
+                  ) : (
+                    <>
+                      <span className="gradient-text">Pricing</span><br />
+                      Plans
+                    </>
+                  )}
+                </span>
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                {isPortuguese ? 
-                  'Mais do que uma plataforma - somos a tua comunidade longe de casa. Conecta-te com a autêntica comunidade portuguesa de Londres através de experiências reais, eventos culturais e oportunidades profissionais que te fazem sentir em casa.' :
-                  'More than a platform - we\'re your community away from home. Connect with London\'s authentic Portuguese community through real experiences, cultural events, and business opportunities that make you feel at home.'
-                }
+                {/* Desktop full subtitle */}
+                <span className="hidden sm:block">
+                  {isPortuguese ? 
+                    'Mais do que uma plataforma - somos a tua comunidade longe de casa. Conecta-te com a autêntica comunidade portuguesa de Londres através de experiências reais, eventos culturais e oportunidades profissionais que te fazem sentir em casa.' :
+                    'More than a platform - we\'re your community away from home. Connect with London\'s authentic Portuguese community through real experiences, cultural events, and business opportunities that make you feel at home.'
+                  }
+                </span>
+                {/* Mobile short subtitle */}
+                <span className="sm:hidden">
+                  {isPortuguese ? 'Encontre a sua comunidade portuguesa!' : 'Find your Portuguese community!'}
+                </span>
               </p>
               
               {/* Trust Badges */}

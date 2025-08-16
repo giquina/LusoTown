@@ -42,7 +42,7 @@ export default function SortingControls({ sortBy, onSortChange }: SortingControl
       <select
         value={sortBy}
         onChange={(e) => onSortChange(e.target.value as any)}
-        className="appearance-none bg-white border border-gray-200 rounded-lg px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent cursor-pointer min-w-[200px]"
+        className="appearance-none bg-white border border-gray-200 rounded-lg px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent cursor-pointer min-w-[200px] min-h-[44px]"
       >
         {sortOptions.map((option) => (
           <option key={option.value} value={option.value}>

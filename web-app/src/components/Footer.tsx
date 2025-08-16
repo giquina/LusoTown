@@ -8,6 +8,7 @@ const getFooterLinks = (t: any) => ({
   community: [
     { name: 'Events & Culture', href: '/events' },
     { name: 'Community', href: '/community' },
+    { name: 'Become a Host', href: '/host' },
     { name: 'Business Directory', href: '/directory' },
     { name: 'Community Guidelines', href: '/community-guidelines' },
   ],
@@ -73,7 +74,7 @@ export default function Footer() {
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base break-words leading-relaxed"
+                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base break-words leading-relaxed min-h-[44px] flex items-center"
                     >
                       {link.name}
                     </a>
@@ -90,7 +91,7 @@ export default function Footer() {
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base break-words leading-relaxed"
+                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base break-words leading-relaxed min-h-[44px] flex items-center"
                     >
                       {link.name}
                     </a>
@@ -107,7 +108,7 @@ export default function Footer() {
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base break-words leading-relaxed"
+                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base break-words leading-relaxed min-h-[44px] flex items-center"
                     >
                       {link.name}
                     </a>
@@ -124,7 +125,7 @@ export default function Footer() {
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base break-words leading-relaxed"
+                      className="text-gray-300 hover:text-white transition-colors duration-200 hover:underline text-sm sm:text-base break-words leading-relaxed min-h-[44px] flex items-center"
                     >
                       {link.name}
                     </a>
@@ -146,11 +147,11 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent min-w-0"
+                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent min-w-0 min-h-[44px]"
               />
               <button
                 type="submit"
-                className="btn-primary whitespace-nowrap"
+                className="btn-primary whitespace-nowrap min-h-[44px]"
               >
                 Subscribe
               </button>
@@ -174,7 +175,7 @@ export default function Footer() {
                   href="https://www.facebook.com/LusoTownUK"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-primary-500 transition-colors duration-200"
+                  className="text-gray-400 hover:text-primary-500 transition-colors duration-200 p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
                   aria-label="Follow us on Facebook"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -186,7 +187,7 @@ export default function Footer() {
                   href="https://www.instagram.com/lusotownuk"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-secondary-500 transition-colors duration-200"
+                  className="text-gray-400 hover:text-secondary-500 transition-colors duration-200 p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
                   aria-label="Follow us on Instagram"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -198,7 +199,7 @@ export default function Footer() {
                   href="https://twitter.com/LusoTownUK"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-primary-500 transition-colors duration-200"
+                  className="text-gray-400 hover:text-primary-500 transition-colors duration-200 p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
                   aria-label="Follow us on Twitter"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -210,7 +211,7 @@ export default function Footer() {
                   href="https://www.linkedin.com/company/lusotown-uk"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-primary-500 transition-colors duration-200"
+                  className="text-gray-400 hover:text-primary-500 transition-colors duration-200 p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
                   aria-label="Follow us on LinkedIn"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -222,7 +223,7 @@ export default function Footer() {
                   href="https://www.youtube.com/@LusoTownUK"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-action-500 transition-colors duration-200"
+                  className="text-gray-400 hover:text-action-500 transition-colors duration-200 p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
                   aria-label="Subscribe to our YouTube channel"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -234,7 +235,7 @@ export default function Footer() {
                   href="https://wa.me/447123456789"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-secondary-500 transition-colors duration-200"
+                  className="text-gray-400 hover:text-secondary-500 transition-colors duration-200 p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
                   aria-label="Contact us on WhatsApp"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

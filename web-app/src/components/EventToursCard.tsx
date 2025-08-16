@@ -253,24 +253,24 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
       {/* Content */}
       <div className="p-6 flex-grow flex flex-col">
         {/* Header - Title & Price */}
-        <div className="flex items-start justify-between mb-3">
-          <h3 className="font-bold text-lg text-gray-900 group-hover:text-primary-600 transition-colors line-clamp-2 flex-1">
+        <div className="flex items-start justify-between mb-3 gap-3">
+          <h3 className="font-bold text-base sm:text-lg text-gray-900 group-hover:text-primary-600 transition-colors line-clamp-2 flex-1 leading-tight">
             {event.title}
           </h3>
-          <div className="ml-3 text-right flex-shrink-0">
-            <div className="text-lg font-bold text-primary-600">
+          <div className="text-right flex-shrink-0">
+            <div className="text-base sm:text-lg font-bold text-primary-600">
               {formatPrice(event.price, event.currency)}
             </div>
             {event.membershipRequired !== 'free' && (
               <div className={`text-xs flex items-center justify-end gap-1 mt-1 ${getMembershipBadge(event.membershipRequired).color}`}>
                 {getMembershipBadge(event.membershipRequired).icon}
-                {getMembershipBadge(event.membershipRequired).label}
+                <span className="hidden sm:inline">{getMembershipBadge(event.membershipRequired).label}</span>
               </div>
             )}
           </div>
         </div>
         
-        <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+        <p className="text-gray-600 text-sm mb-4 line-clamp-2 leading-relaxed">
           {event.description}
         </p>
         
@@ -288,8 +288,8 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
           
           <div className="flex items-center gap-3 text-sm text-gray-600">
             <MapPinIcon className="w-5 h-5 text-secondary-500 flex-shrink-0" />
-            <div className="flex-1">
-              <div className="font-medium text-gray-900">{event.location}</div>
+            <div className="flex-1 min-w-0">
+              <div className="font-medium text-gray-900 truncate">{event.location}</div>
               <div className="text-xs text-gray-500 truncate">{event.address}</div>
             </div>
           </div>
@@ -300,8 +300,8 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
               <div className="font-medium text-gray-900">
                 {event.currentAttendees}/{event.maxAttendees} {isPortuguese ? 'Participantes' : 'Attending'}
               </div>
-              <div className="text-xs text-gray-500">
-                {event.groupSize} • {isPortuguese ? 'Organizado por' : 'Hosted by'} {event.hostName}
+              <div className="text-xs text-gray-500 truncate">
+                {event.groupSize} • {isPortuguese ? 'Por' : 'By'} {event.hostName}
               </div>
             </div>
           </div>
@@ -382,23 +382,23 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
         {/* Action Buttons */}
         <div className="space-y-3 mt-auto">
           {/* Primary Actions */}
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-2 sm:gap-3">
             <a 
               href={`/events/${event.id}?type=tour`}
-              className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-3 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-sm"
+              className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-xs sm:text-sm"
             >
               {isPortuguese ? 'Ver Detalhes' : 'View Details'}
             </a>
             
             {isFull ? (
-              <button className="border border-red-300 text-red-600 bg-red-50 font-semibold py-3 px-4 rounded-lg hover:bg-red-100 transition-colors text-center text-sm">
-                {isPortuguese ? 'Lista de Espera' : 'Join Waitlist'}
+              <button className="border border-red-300 text-red-600 bg-red-50 font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:bg-red-100 transition-colors text-center text-xs sm:text-sm">
+                {isPortuguese ? 'Lista' : 'Waitlist'}
               </button>
             ) : (
               <button 
                 onClick={handleAddToCart}
                 disabled={addingToCart || inCart}
-                className={`font-semibold py-3 px-4 rounded-lg transition-all duration-200 text-center text-sm flex items-center justify-center gap-2 ${
+                className={`font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg transition-all duration-200 text-center text-xs sm:text-sm flex items-center justify-center gap-1 sm:gap-2 ${
                   inCart 
                     ? 'bg-green-100 text-green-700 border border-green-300'
                     : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
@@ -409,12 +409,14 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
                 ) : inCart ? (
                   <>
                     <CheckIcon className="w-4 h-4" />
-                    {isPortuguese ? 'No Carrinho' : 'In Cart'}
+                    <span className="hidden sm:inline">{isPortuguese ? 'No Carrinho' : 'In Cart'}</span>
+                    <span className="sm:hidden">{isPortuguese ? 'Carrinho' : 'Cart'}</span>
                   </>
                 ) : (
                   <>
                     <ShoppingCartIcon className="w-4 h-4" />
-                    {isPortuguese ? 'Reservar Vaga' : 'Reserve Spot'}
+                    <span className="hidden sm:inline">{isPortuguese ? 'Reservar Vaga' : 'Reserve Spot'}</span>
+                    <span className="sm:hidden">{isPortuguese ? 'Reservar' : 'Reserve'}</span>
                   </>
                 )}
               </button>
@@ -424,13 +426,21 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
           {/* Secondary Action */}
           <button
             onClick={handleSaveForLater}
-            className="w-full text-gray-600 hover:text-primary-600 text-sm font-medium transition-colors flex items-center justify-center gap-2"
+            className="w-full text-gray-600 hover:text-primary-600 text-xs sm:text-sm font-medium transition-colors flex items-center justify-center gap-2 py-1"
           >
             <HeartIcon className="w-4 h-4" />
-            {savedItem 
-              ? (isPortuguese ? 'Guardado nos Favoritos' : 'Saved to Favorites')
-              : (isPortuguese ? 'Guardar para Mais Tarde' : 'Save for Later')
-            }
+            <span className="hidden sm:inline">
+              {savedItem 
+                ? (isPortuguese ? 'Guardado nos Favoritos' : 'Saved to Favorites')
+                : (isPortuguese ? 'Guardar para Mais Tarde' : 'Save for Later')
+              }
+            </span>
+            <span className="sm:hidden">
+              {savedItem 
+                ? (isPortuguese ? 'Favoritos' : 'Saved')
+                : (isPortuguese ? 'Guardar' : 'Save')
+              }
+            </span>
           </button>
         </div>
       </div>

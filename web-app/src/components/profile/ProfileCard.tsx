@@ -54,7 +54,7 @@ export default function ProfileCard({ profile, currentUserId, onClick }: Profile
     <motion.div
       whileHover={{ y: -4 }}
       transition={{ duration: 0.2 }}
-      className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+      className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer min-h-[480px] sm:min-h-[520px] flex flex-col"
     >
       {/* Profile Image Section */}
       <div className="relative h-48 bg-gray-200 overflow-hidden" onClick={onClick}>
@@ -103,11 +103,11 @@ export default function ProfileCard({ profile, currentUserId, onClick }: Profile
       </div>
 
       {/* Content Section */}
-      <div className="p-4">
+      <div className="p-4 sm:p-5 flex-grow flex flex-col pb-20 sm:pb-16 relative">
         {/* Name and Basic Info */}
         <div className="mb-3" onClick={onClick}>
           <div className="flex items-center justify-between mb-1">
-            <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
+            <h3 className="text-base sm:text-lg font-semibold text-gray-900 flex items-center gap-2 line-clamp-1 break-words flex-1 min-w-0">
               {profile.name}
               {profile.verification.photoVerified && (
                 <CheckBadgeIcon className="w-4 h-4 text-primary-500 flex-shrink-0" />
@@ -115,7 +115,7 @@ export default function ProfileCard({ profile, currentUserId, onClick }: Profile
             </h3>
             
             {/* Membership Badge */}
-            <div className={`inline-flex items-center gap-1 px-2 py-1 rounded-full border text-xs font-medium ${membershipConfig.color} ${membershipConfig.border}`}>
+            <div className={`inline-flex items-center gap-1 px-2 py-1 rounded-full border text-xs font-medium ${membershipConfig.color} ${membershipConfig.border} flex-shrink-0`}>
               {membershipConfig.icon}
               <span>{membershipConfig.label}</span>
             </div>
@@ -139,7 +139,7 @@ export default function ProfileCard({ profile, currentUserId, onClick }: Profile
 
         {/* Bio Preview */}
         <div className="mb-3" onClick={onClick}>
-          <p className="text-sm text-gray-700 line-clamp-2">
+          <p className="text-sm text-gray-700 line-clamp-2 break-words leading-relaxed">
             {profile.bio || 'No bio provided'}
           </p>
         </div>
@@ -194,28 +194,21 @@ export default function ProfileCard({ profile, currentUserId, onClick }: Profile
           </div>
         )}
 
-        {/* Action Button */}
-        <div className="pt-3 border-t border-gray-100">
-          <ConnectionButton
-            profileId={profile.id}
-            currentUserId={currentUserId}
-            className="w-full justify-center"
-          />
+        {/* Action Button - Fixed at bottom with mobile-optimized layout */}
+        <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 pt-3 border-t border-gray-100 bg-white">
+          <div className="flex flex-col gap-2">
+            <ConnectionButton
+              profileId={profile.id}
+              currentUserId={currentUserId}
+              className="w-full justify-center min-h-[44px] text-xs sm:text-sm"
+            />
+            <button className="w-full border border-gray-300 text-gray-700 font-medium py-2.5 px-3 rounded-lg hover:bg-gray-50 transition-all duration-200 text-xs sm:text-sm min-h-[44px] flex items-center justify-center">
+              <span className="hidden sm:inline">View Full Profile</span>
+              <span className="sm:hidden">View Profile</span>
+            </button>
+          </div>
         </div>
 
-        {/* Last Active */}
-        <div className="mt-2 text-xs text-gray-500 text-center">
-          {profile.isOnline ? (
-            <span className="text-green-600 font-medium">Online now</span>
-          ) : (
-            <span>
-              Active {new Date(profile.lastActive).toLocaleDateString('en-GB', {
-                month: 'short',
-                day: 'numeric'
-              })}
-            </span>
-          )}
-        </div>
       </div>
     </motion.div>
   )

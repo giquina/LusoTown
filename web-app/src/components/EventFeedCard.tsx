@@ -139,12 +139,12 @@ export default function EventFeedCard({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300 h-full flex flex-col ${
+      className={`bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300 min-h-[520px] sm:min-h-[580px] flex flex-col ${
         post.priority === 'high' ? 'ring-2 ring-primary-100' : ''
       } ${className}`}
     >
       {/* Post Header */}
-      <div className="p-6 pb-4 flex-grow flex flex-col">
+      <div className="p-4 sm:p-6 pb-4 flex-grow flex flex-col">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
             <div className="relative">
@@ -196,7 +196,7 @@ export default function EventFeedCard({
         </div>
 
         {/* Post Content */}
-        <p className="text-gray-700 mb-4 whitespace-pre-line">{post.content}</p>
+        <p className="text-gray-700 mb-4 whitespace-pre-line text-sm sm:text-base break-words leading-relaxed">{post.content}</p>
 
         {/* Post Images Grid */}
         {post.images && post.images.length > 0 && (
@@ -273,7 +273,7 @@ export default function EventFeedCard({
         )}
 
         {/* Event Card */}
-        <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-4 mb-4 border border-primary-100">
+        <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-3 sm:p-4 mb-4 border border-primary-100">
           <div className="flex items-start gap-3">
             {post.eventImage && (
               <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
@@ -286,9 +286,9 @@ export default function EventFeedCard({
             )}
             
             <div className="flex-1 min-w-0">
-              <h5 className="font-semibold text-gray-900 mb-2 line-clamp-2">{post.eventTitle}</h5>
+              <h5 className="font-semibold text-gray-900 mb-2 line-clamp-2 text-sm sm:text-base break-words">{post.eventTitle}</h5>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-600 mb-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-gray-600 mb-3">
                 <div className="flex items-center gap-1">
                   <CalendarDaysIcon className="w-4 h-4 text-primary-500" />
                   <span>{formatDate(post.eventDate)} • {post.eventTime}</span>
@@ -429,37 +429,38 @@ export default function EventFeedCard({
       </div>
 
       {/* Post Actions */}
-      <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-6">
+      <div className="px-4 sm:px-6 py-3 sm:py-4 bg-gray-50 border-t border-gray-100 mt-auto">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="flex items-center gap-4 sm:gap-6">
             <button 
               onClick={handleLike}
-              className="flex items-center gap-2 text-gray-600 hover:text-red-500 transition-colors"
+              className="flex items-center gap-2 text-gray-600 hover:text-red-500 transition-colors min-h-[44px] px-2"
             >
               {post.liked ? (
                 <HeartSolidIcon className="w-5 h-5 text-red-500" />
               ) : (
                 <HeartOutlineIcon className="w-5 h-5" />
               )}
-              <span className="text-sm font-medium">{post.likes}</span>
+              <span className="text-xs sm:text-sm font-medium">{post.likes}</span>
             </button>
             
-            <button className="flex items-center gap-2 text-gray-600 hover:text-primary-500 transition-colors">
+            <button className="flex items-center gap-2 text-gray-600 hover:text-primary-500 transition-colors min-h-[44px] px-2">
               <ChatBubbleLeftRightIcon className="w-5 h-5" />
-              <span className="text-sm font-medium">{post.comments}</span>
+              <span className="text-xs sm:text-sm font-medium">{post.comments}</span>
             </button>
             
-            <button className="flex items-center gap-2 text-gray-600 hover:text-secondary-500 transition-colors">
+            <button className="flex items-center gap-2 text-gray-600 hover:text-secondary-500 transition-colors min-h-[44px] px-2">
               <ShareIcon className="w-5 h-5" />
-              <span className="text-sm font-medium">{post.shares}</span>
+              <span className="text-xs sm:text-sm font-medium">{post.shares}</span>
             </button>
           </div>
           
           <a
             href={`/events/${post.eventId}`}
-            className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white text-sm px-4 py-2 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 font-medium"
+            className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white text-xs sm:text-sm px-3 sm:px-4 py-2.5 sm:py-2 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 font-medium min-h-[44px] flex items-center justify-center text-center"
           >
-            {isPortuguese ? 'Ver Evento' : 'View Event'}
+            <span className="hidden sm:inline">{isPortuguese ? 'Ver Evento Completo' : 'View Full Event'}</span>
+            <span className="sm:hidden">{isPortuguese ? 'Ver Evento' : 'View Event'}</span>
           </a>
         </div>
       </div>

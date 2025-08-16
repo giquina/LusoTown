@@ -50,7 +50,7 @@ const securityPreferences = [
   { value: 'both', labelEn: 'Both', labelPt: 'Ambos' }
 ]
 
-interface ChauffeurBookingFormProps {
+interface TransportBookingFormProps {
   isOpen: boolean
   onClose: () => void
   selectedService?: any
@@ -59,12 +59,12 @@ interface ChauffeurBookingFormProps {
   experiencePackages?: any[]
 }
 
-export default function ChauffeurBookingForm({ 
+export default function TransportBookingForm({ 
   isOpen, 
   onClose, 
   selectedService, 
   selectedPackage 
-}: ChauffeurBookingFormProps) {
+}: TransportBookingFormProps) {
   const { language, t } = useLanguage()
   const { addToCart } = useCart()
   const isPortuguese = language === 'pt'
@@ -153,8 +153,8 @@ export default function ChauffeurBookingForm({
 
       // Add to cart
       const cartItem = {
-        id: `chauffeur-${Date.now()}`,
-        type: 'chauffeur_service' as const,
+        id: `transport-${Date.now()}`,
+        type: 'transport_service' as const,
         title: isPortuguese 
           ? `${selectedService?.namePortuguese || 'Serviço de Transporte Privado'} - ${formData.eventType}`
           : `${selectedService?.name || 'Private Transport Service'} - ${formData.eventType}`,
@@ -163,9 +163,9 @@ export default function ChauffeurBookingForm({
           : `Private transport service for ${hours} hours`,
         price: totalPrice,
         currency: 'GBP',
-        imageUrl: '/chauffeur-service.jpg',
+        imageUrl: '/transport-service.jpg',
         quantity: 1,
-        chauffeurServiceId: selectedService?.id,
+        transportServiceId: selectedService?.id,
         pickupDateTime: formData.dateTime,
         pickupLocation: formData.pickupLocation,
         dropoffLocation: formData.destinations,
@@ -252,7 +252,7 @@ export default function ChauffeurBookingForm({
               </div>
               <button
                 onClick={onClose}
-                className="p-3 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-100 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+                className="p-2 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-100 transition-colors"
               >
                 <XMarkIcon className="w-6 h-6" />
               </button>
@@ -302,7 +302,7 @@ export default function ChauffeurBookingForm({
                               type="text"
                               value={formData.fullName}
                               onChange={(e) => handleInputChange('fullName', e.target.value)}
-                              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent min-h-[44px] ${
+                              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
                                 errors.fullName ? 'border-red-500' : 'border-gray-300'
                               }`}
                               placeholder={isPortuguese ? 'Seu nome completo' : 'Your full name'}
@@ -321,7 +321,7 @@ export default function ChauffeurBookingForm({
                               type="email"
                               value={formData.email}
                               onChange={(e) => handleInputChange('email', e.target.value)}
-                              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent min-h-[44px] ${
+                              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
                                 errors.email ? 'border-red-500' : 'border-gray-300'
                               }`}
                               placeholder={isPortuguese ? 'seu.email@exemplo.com' : 'your.email@example.com'}
@@ -340,7 +340,7 @@ export default function ChauffeurBookingForm({
                               type="tel"
                               value={formData.phone}
                               onChange={(e) => handleInputChange('phone', e.target.value)}
-                              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent min-h-[44px] ${
+                              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
                                 errors.phone ? 'border-red-500' : 'border-gray-300'
                               }`}
                               placeholder={isPortuguese ? '+44 7XXX XXX XXX' : '+44 7XXX XXX XXX'}
@@ -514,7 +514,7 @@ export default function ChauffeurBookingForm({
                       {currentStep > 1 && (
                         <button
                           onClick={handlePrevious}
-                          className="flex items-center px-4 py-3 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors min-h-[44px]"
+                          className="flex items-center px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
                         >
                           <ArrowLeftIcon className="w-4 h-4 mr-2" />
                           {isPortuguese ? 'Anterior' : 'Previous'}
@@ -524,7 +524,7 @@ export default function ChauffeurBookingForm({
                       {currentStep < 3 ? (
                         <button
                           onClick={handleNext}
-                          className="flex items-center px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors min-h-[44px]"
+                          className="flex items-center px-6 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
                         >
                           {isPortuguese ? 'Próximo' : 'Next'}
                           <ArrowRightIcon className="w-4 h-4 ml-2" />
@@ -533,7 +533,7 @@ export default function ChauffeurBookingForm({
                         <button
                           onClick={handleSubmit}
                           disabled={isSubmitting}
-                          className="flex items-center px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors min-h-[44px]"
+                          className="flex items-center px-6 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                         >
                           {isSubmitting ? (
                             <>

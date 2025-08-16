@@ -15,14 +15,14 @@ import { useLanguage } from '@/context/LanguageContext'
 
 const getNavigationLinks = (t: any) => [
   { name: t('nav.events', 'Events'), href: '/events' },
-  { name: t('nav.chauffeur', 'Transport & Tours'), href: '/chauffeur' },
+  { name: t('nav.transport', 'Transport & Tours'), href: '/transport' },
   { name: t('nav.pricing', 'Pricing'), href: '/pricing' },
   { name: t('nav.case-studies', 'Case Studies'), href: '/case-studies' },
 ]
 
 const getAuthenticatedNavigationLinks = (t: any) => [
   { name: t('nav.events', 'Events'), href: '/events' },
-  { name: t('nav.chauffeur', 'Transport & Tours'), href: '/chauffeur' },
+  { name: t('nav.transport', 'Transport & Tours'), href: '/transport' },
   { name: t('nav.my-network', 'My Network'), href: '/my-network' },
   { name: t('nav.pricing', 'Pricing'), href: '/pricing' },
   { name: t('nav.case-studies', 'Case Studies'), href: '/case-studies' },
@@ -108,7 +108,7 @@ export default function Header() {
               <div className="relative">
                 <button
                   onClick={() => setShowUserMenu(!showUserMenu)}
-                  className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                  className="flex items-center space-x-2 p-3 rounded-lg hover:bg-gray-100 transition-colors min-h-[44px]"
                 >
                   <div className="w-8 h-8 bg-gradient-to-r from-action-500 to-secondary-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                     {user.name.split(' ').map((n: string) => n[0]).join('')}
@@ -135,7 +135,7 @@ export default function Header() {
                     >
                       <a
                         href={`/profile/${user.id}`}
-                        className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        className="flex items-center space-x-2 px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 min-h-[44px]"
                         onClick={() => setShowUserMenu(false)}
                       >
                         <UserIcon className="w-4 h-4" />
@@ -143,7 +143,7 @@ export default function Header() {
                       </a>
                       <a
                         href="/favorites"
-                        className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        className="flex items-center space-x-2 px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 min-h-[44px]"
                         onClick={() => setShowUserMenu(false)}
                       >
                         <HeartIcon className="w-4 h-4" />
@@ -151,7 +151,7 @@ export default function Header() {
                       </a>
                       <a
                         href="/dashboard"
-                        className="flex items-center space-x-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        className="flex items-center space-x-2 px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 min-h-[44px]"
                         onClick={() => setShowUserMenu(false)}
                       >
                         <UserCircleIcon className="w-4 h-4" />
@@ -160,7 +160,7 @@ export default function Header() {
                       {user.role === 'admin' && (
                         <a
                           href="/admin"
-                          className="flex items-center space-x-2 px-4 py-2 text-sm text-premium-700 hover:bg-premium-50"
+                          className="flex items-center space-x-2 px-4 py-3 text-sm text-premium-700 hover:bg-premium-50 min-h-[44px]"
                           onClick={() => setShowUserMenu(false)}
                         >
                           <ShieldCheckIcon className="w-4 h-4" />
@@ -170,7 +170,7 @@ export default function Header() {
                       <div className="border-t border-gray-100 my-1"></div>
                       <button
                         onClick={handleLogout}
-                        className="flex items-center space-x-2 w-full px-4 py-2 text-sm text-action-700 hover:bg-action-50 text-left"
+                        className="flex items-center space-x-2 w-full px-4 py-3 text-sm text-action-700 hover:bg-action-50 text-left min-h-[44px]"
                       >
                         <LogOut className="w-4 h-4" />
                         <span>Sign Out</span>
@@ -183,12 +183,12 @@ export default function Header() {
               <>
                 <a
                   href="/login"
-                  className="text-gray-600 hover:text-primary-600 p-2 rounded-md transition-colors duration-200"
+                  className="text-gray-600 hover:text-primary-600 p-3 rounded-md transition-colors duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center"
                   title="Login"
                 >
                   <UserIcon className="w-5 h-5" />
                 </a>
-                <a href="/signup" className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-2.5 px-6 rounded-lg shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transform hover:scale-105 transition-all duration-200 whitespace-nowrap">
+                <a href="/signup" className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transform hover:scale-105 transition-all duration-200 whitespace-nowrap min-h-[44px] flex items-center">
                   <span className="hidden sm:inline">{t('nav.join-membership', 'BECOME A MEMBER')}</span>
                   <span className="sm:hidden">JOIN</span>
                 </a>
@@ -205,7 +205,7 @@ export default function Header() {
             <LanguageToggle />
             <button
               type="button"
-              className="inline-flex items-center justify-center p-2 sm:p-3 rounded-lg text-primary-700 hover:text-primary-800 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1 transition-all duration-200 min-h-[40px] min-w-[40px] sm:min-h-[48px] sm:min-w-[48px] bg-white border-2 border-primary-200 shadow-lg active:bg-primary-50 active:scale-95"
+              className="inline-flex items-center justify-center p-3 rounded-lg text-primary-700 hover:text-primary-800 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1 transition-all duration-200 min-h-[44px] min-w-[44px] bg-white border-2 border-primary-200 shadow-lg active:bg-primary-50 active:scale-95"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-expanded={mobileMenuOpen}
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
@@ -247,7 +247,7 @@ export default function Header() {
                   <a
                     key={link.name}
                     href={link.href}
-                    className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200"
+                    className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px] flex items-center"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.name}
@@ -275,7 +275,7 @@ export default function Header() {
                       
                       <a
                         href={`/profile/${user.id}`}
-                        className="flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200"
+                        className="flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px]"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         <UserIcon className="w-5 h-5" />
@@ -283,7 +283,7 @@ export default function Header() {
                       </a>
                       <a
                         href="/favorites"
-                        className="flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200"
+                        className="flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px]"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         <HeartIcon className="w-5 h-5" />
@@ -292,7 +292,7 @@ export default function Header() {
                       
                       <a
                         href="/dashboard"
-                        className="flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200"
+                        className="flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px]"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         <UserCircleIcon className="w-5 h-5" />
@@ -302,7 +302,7 @@ export default function Header() {
                       {user.role === 'admin' && (
                         <a
                           href="/admin"
-                          className="flex items-center space-x-3 text-premium-600 hover:text-premium-700 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200"
+                          className="flex items-center space-x-3 text-premium-600 hover:text-premium-700 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px]"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           <ShieldCheckIcon className="w-5 h-5" />
@@ -315,7 +315,7 @@ export default function Header() {
                           handleLogout()
                           setMobileMenuOpen(false)
                         }}
-                        className="flex items-center space-x-3 text-action-600 hover:text-action-700 hover:bg-action-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 w-full text-left border border-transparent hover:border-action-200"
+                        className="flex items-center space-x-3 text-action-600 hover:text-action-700 hover:bg-action-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 w-full text-left border border-transparent hover:border-action-200 min-h-[44px]"
                       >
                         <LogOut className="w-5 h-5" />
                         <span>Sign Out</span>
@@ -325,7 +325,7 @@ export default function Header() {
                     <>
                       <a
                         href="/login"
-                        className="flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200"
+                        className="flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px]"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         <UserIcon className="w-5 h-5" />
@@ -334,7 +334,7 @@ export default function Header() {
                       <div className="mt-4 px-0">
                         <a 
                           href="/signup"
-                          className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transform hover:scale-[1.02] active:scale-95 transition-all duration-200 w-full text-center block"
+                          className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transform hover:scale-[1.02] active:scale-95 transition-all duration-200 w-full text-center block min-h-[44px] flex items-center justify-center"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           <span className="text-base">BECOME A MEMBER</span>

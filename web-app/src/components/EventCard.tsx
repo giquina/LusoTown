@@ -155,7 +155,7 @@ export default function EventCard({
   }
 
   return (
-    <div className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group h-[600px] flex flex-col ${featured ? "ring-2 ring-yellow-300" : ""}`}>
+    <div className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group min-h-[480px] sm:min-h-[520px] flex flex-col ${featured ? "ring-2 ring-yellow-300" : ""}`}>
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
         {imageUrl ? (
@@ -225,24 +225,24 @@ export default function EventCard({
       </div>
       
       {/* Content */}
-      <div className="relative p-4 sm:p-6 flex-grow flex flex-col pb-32">
+      <div className="relative p-4 sm:p-6 flex-grow flex flex-col pb-32 sm:pb-28">
         <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-3 gap-2 sm:gap-3">
-          <h3 className="font-bold text-lg text-gray-900 group-hover:text-primary-600 transition-colors line-clamp-2 flex-1 min-w-0 leading-tight break-words order-2 sm:order-1">
+          <h3 className="font-bold text-base sm:text-lg text-gray-900 group-hover:text-primary-600 transition-colors line-clamp-2 flex-1 min-w-0 leading-tight break-words order-2 sm:order-1">
             {title}
           </h3>
           <div className="text-left sm:text-right flex-shrink-0 min-w-0 order-1 sm:order-2">
-            <div className="text-lg font-bold text-primary-600 whitespace-nowrap">
+            <div className="text-base sm:text-lg font-bold text-primary-600 whitespace-nowrap">
               {formatPrice(price, currency)}
             </div>
             {membershipRequired !== 'free' && (
               <div className="text-xs text-gray-500 capitalize whitespace-nowrap">
-                {isPortuguese ? 'Membro necessário' : 'Membership needed'}
+                {isPortuguese ? 'Membro' : 'Member'}
               </div>
             )}
           </div>
         </div>
         
-        <p className="text-gray-600 text-sm mb-4 line-clamp-3 break-words">
+        <p className="text-gray-600 text-sm mb-4 line-clamp-2 break-words leading-relaxed">
           {description}
         </p>
         
@@ -263,7 +263,7 @@ export default function EventCard({
           
           <div className="flex items-center gap-3 text-sm text-gray-600 min-w-0">
             <MapPinIcon className="w-5 h-5 text-secondary-500 flex-shrink-0" />
-            <span className="truncate max-w-full">{location}</span>
+            <span className="truncate max-w-full line-clamp-1">{location}</span>
           </div>
           
           <div className="flex items-center gap-3 text-sm text-gray-600">
@@ -307,26 +307,26 @@ export default function EventCard({
           )}
         </div>
         
-        {/* Action Buttons - Fixed at bottom */}
-        <div className="absolute bottom-4 left-4 right-4 space-y-3">
-          {/* Primary Actions */}
-          <div className="grid grid-cols-2 gap-3">
+        {/* Action Buttons - Fixed at bottom with mobile-optimized layout */}
+        <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 space-y-2 sm:space-y-3">
+          {/* Primary Actions - Stack vertically on mobile, grid on desktop */}
+          <div className="grid grid-cols-2 gap-2 sm:gap-3">
             <a 
               href={`/events/${id}`}
-              className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-3 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-sm"
+              className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-xs sm:text-sm flex items-center justify-center"
             >
               {isPortuguese ? 'Ver Detalhes' : 'View Details'}
             </a>
             
             {isFull ? (
-              <button className="border border-red-300 text-red-600 bg-red-50 font-semibold py-3 px-4 rounded-lg hover:bg-red-100 transition-colors text-center text-sm">
-                {isPortuguese ? 'Lista de Espera' : 'Join Waitlist'}
+              <button className="border border-red-300 text-red-600 bg-red-50 font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:bg-red-100 transition-colors text-center text-xs sm:text-sm flex items-center justify-center">
+                {isPortuguese ? 'Lista' : 'Waitlist'}
               </button>
             ) : (
               <button 
                 onClick={handleAddToCart}
                 disabled={addingToCart || inCart}
-                className={`font-semibold py-3 px-4 rounded-lg transition-all duration-200 text-center text-sm flex items-center justify-center gap-2 min-w-0 ${
+                className={`font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg transition-all duration-200 text-center text-xs sm:text-sm flex items-center justify-center gap-1 sm:gap-2 min-w-0 ${
                   inCart 
                     ? 'bg-green-100 text-green-700 border border-green-300'
                     : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
@@ -337,12 +337,14 @@ export default function EventCard({
                 ) : inCart ? (
                   <>
                     <CheckIcon className="w-4 h-4" />
-                    {isPortuguese ? 'No Carrinho' : 'In Cart'}
+                    <span className="hidden sm:inline">{isPortuguese ? 'No Carrinho' : 'In Cart'}</span>
+                    <span className="sm:hidden">{isPortuguese ? 'Carrinho' : 'Cart'}</span>
                   </>
                 ) : (
                   <>
                     <ShoppingCartIcon className="w-4 h-4 flex-shrink-0" />
-                    <span className="truncate">{isPortuguese ? 'Adicionar' : 'Add to Cart'}</span>
+                    <span className="hidden sm:inline">{isPortuguese ? 'Adicionar' : 'Add to Cart'}</span>
+                    <span className="sm:hidden">{isPortuguese ? 'Adicionar' : 'Add'}</span>
                   </>
                 )}
               </button>
@@ -352,13 +354,21 @@ export default function EventCard({
           {/* Secondary Action */}
           <button
             onClick={handleSaveForLater}
-            className="w-full text-gray-600 hover:text-primary-600 text-sm font-medium transition-colors flex items-center justify-center gap-2"
+            className="w-full text-gray-600 hover:text-primary-600 text-xs sm:text-sm font-medium transition-colors flex items-center justify-center gap-2 py-1"
           >
             <HeartIcon className="w-4 h-4" />
-            {savedItem 
-              ? (isPortuguese ? 'Guardado nos Favoritos' : 'Saved to Favorites')
-              : (isPortuguese ? 'Guardar para Mais Tarde' : 'Save for Later')
-            }
+            <span className="hidden sm:inline">
+              {savedItem 
+                ? (isPortuguese ? 'Guardado nos Favoritos' : 'Saved to Favorites')
+                : (isPortuguese ? 'Guardar para Mais Tarde' : 'Save for Later')
+              }
+            </span>
+            <span className="sm:hidden">
+              {savedItem 
+                ? (isPortuguese ? 'Favoritos' : 'Saved')
+                : (isPortuguese ? 'Guardar' : 'Save')
+              }
+            </span>
           </button>
         </div>
       </div>

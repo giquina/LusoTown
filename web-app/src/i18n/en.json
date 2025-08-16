@@ -1,7 +1,7 @@
 {
   "nav.events": "Events",
   "nav.tours": "Tours",
-  "nav.chauffeur": "Transport & Tours",
+  "nav.transport": "Transport & Tours",
   "nav.networks": "Networks",
   "nav.heritage": "Heritage",
   "nav.instituto": "Instituto Camões",
@@ -41,7 +41,9 @@
   
   "hero.badge": "Unidos pela Língua • United by Language",
   "hero.title": "Your Portuguese Community in London",
-  "hero.subtitle": "Connect with Portuguese speakers through social experiences and professional opportunities. From cultural events and guided tours to AI workshops and business networking - your community awaits.",
+  "hero.title.mobile": "Your Portuguese Community",
+  "hero.subtitle": "Connect with Portuguese speakers in London. Social experiences and professional opportunities await.",
+  "hero.subtitle.mobile": "Portuguese community in London awaits!",
   "hero.cta.primary": "Explore Events",
   "hero.cta.secondary": "Join Community",
   
@@ -63,28 +65,75 @@
   
   "what-you-can-do.badge": "Your Social Calendar • O Seu Calendário Social",
   "what-you-can-do.title": "Live Life Together with Your Portuguese Community",
-  "what-you-can-do.subtitle": "From museum visits to football matches, concert nights to weekend getaways - book experiences and activities designed for Portuguese speakers from all corners of the Portuguese-speaking world.",
-  "what-you-can-do.testimonial": "\"My social life transformed - I went from lonely weekends to booking adventures with fellow Portuguese speakers every week!\"",
+  "what-you-can-do.subtitle": "Book experiences designed for Portuguese speakers - from museum tours to concerts, football matches to weekend trips.",
+  "what-you-can-do.testimonial": "\"My social life transformed - from lonely weekends to weekly Portuguese adventures!\"",
   
   "what-you-can-do.events.title": "Book Experiences & Activities",
-  "what-you-can-do.events.description": "Your social calendar awaits! Book museum tours with Portuguese guides, football matches at Wembley, concert nights at the Royal Albert Hall, weekend trips to Brighton, and authentic Fado evenings. Every experience designed for Portuguese speakers.",
-  "what-you-can-do.events.cta": "Browse & Book",
+  "what-you-can-do.events.description": "Book museum tours, football matches, concerts, weekend trips, and Fado evenings - all designed for Portuguese speakers.",
+  "what-you-can-do.events.cta": "Book Now",
   "what-you-can-do.events.locations": "Museums • Concerts • Sports • Weekend Trips",
   
   "what-you-can-do.groups.title": "Create Your Own Groups",
-  "what-you-can-do.groups.description": "Start age-based groups (20s-30s professionals), origin-based communities, or interest-based circles (cooking, football, language exchange). Build lasting friendships.",
-  "what-you-can-do.groups.cta": "Start a Group",
+  "what-you-can-do.groups.description": "Start age-based groups, origin communities, or interest circles. Build lasting Portuguese friendships.",
+  "what-you-can-do.groups.cta": "Start Group",
   "what-you-can-do.groups.examples": "Young Professionals • Networking • 50+ Social",
   
   "what-you-can-do.feed.title": "Stay Updated on LusoFeed",
-  "what-you-can-do.feed.description": "Follow member updates, event news, and cultural highlights. Share photos from Portuguese festivals and stay connected.",
+  "what-you-can-do.feed.description": "Follow updates, event news, and cultural highlights. Share festival photos and stay connected.",
   "what-you-can-do.feed.cta": "View Feed",
   "what-you-can-do.feed.features": "Live Updates • Photo Sharing • Community News",
   
   "what-you-can-do.favorites.title": "Save Your Favourites",
-  "what-you-can-do.favorites.description": "Never miss that perfect Portuguese bakery, the monthly cultural gathering, or your favorite community event. Build your personal collection of Portuguese experiences in London.",
-  "what-you-can-do.favorites.cta": "View Saved Items",
+  "what-you-can-do.favorites.description": "Save Portuguese bakeries, cultural gatherings, and community events. Build your personal collection.",
+  "what-you-can-do.favorites.cta": "View Saved",
   "what-you-can-do.favorites.types": "Events • Businesses • Cultural Sites",
+  
+  "what-you-can-do.host.title": "Share Your Expertise",
+  "what-you-can-do.host.description": "Portuguese professional? Showcase workshops, services, and events to our community. Share knowledge and grow your business.",
+  "what-you-can-do.host.cta": "Become Host",
+  "what-you-can-do.host.examples": "Workshops • Services • Cultural Events • Professional Training",
+  
+  "host-with-us.badge": "For Portuguese Professionals • Para Profissionais Portugueses",
+  "host-with-us.title": "Share Your Portuguese Expertise with Our Community",
+  "host-with-us.subtitle": "Join hundreds of Portuguese professionals, event creators, and cultural experts who showcase their services to our growing community. From business workshops to cultural experiences, reach Portuguese speakers across London and the UK.",
+  "host-with-us.testimonial": "\"I've hosted 15 AI workshops through LusoTown and built a thriving Portuguese client base. The community support is incredible!\" - Maria Santos, Tech Entrepreneur",
+  
+  "host-with-us.professionals.title": "Professional Services & Workshops",
+  "host-with-us.professionals.description": "Showcase your expertise to Portuguese professionals. Host AI workshops, business coaching, digital marketing training, investment seminars, and professional networking events.",
+  "host-with-us.professionals.cta": "List Your Services",
+  "host-with-us.professionals.examples": "AI Training • Business Coaching • Investment Advice • Professional Networking",
+  
+  "host-with-us.cultural.title": "Cultural Events & Experiences",
+  "host-with-us.cultural.description": "Share Portuguese heritage through cooking classes, Fado nights, language exchanges, traditional crafts workshops, and cultural tours. Preserve our culture while earning revenue.",
+  "host-with-us.cultural.cta": "Host Cultural Events",
+  "host-with-us.cultural.examples": "Cooking Classes • Fado Nights • Language Exchange • Cultural Tours",
+  
+  "host-with-us.business.title": "Portuguese Business Promotion",
+  "host-with-us.business.description": "Promote your Portuguese business, restaurant, shop, or service. Connect with customers who share your heritage and values. Build lasting relationships with the Portuguese community.",
+  "host-with-us.business.cta": "Promote Your Business",
+  "host-with-us.business.examples": "Restaurants • Shops • Professional Services • Community Services",
+  
+  "host-with-us.success.title": "Success Stories from Portuguese Hosts",
+  "host-with-us.success.subtitle": "Real Portuguese professionals building thriving businesses through our community",
+  "host-with-us.success.story1.quote": "\"My Portuguese bakery went from local to London-wide thanks to LusoTown. I now host monthly baking workshops and my customer base tripled!\"",
+  "host-with-us.success.story1.author": "João Silva, Bakery Owner",
+  "host-with-us.success.story2.quote": "\"I teach Portuguese digital marketing workshops through LusoTown. Built a network of 200+ Portuguese entrepreneurs in just 6 months.\"",
+  "host-with-us.success.story2.author": "Ana Costa, Marketing Consultant",
+  
+  "host-with-us.benefits.title": "Why Portuguese Professionals Choose LusoTown",
+  "host-with-us.benefits.reach.title": "Reach 500+ Portuguese Speakers",
+  "host-with-us.benefits.reach.description": "Connect with Portuguese professionals, families, and young adults across London and UK",
+  "host-with-us.benefits.revenue.title": "Generate Sustainable Revenue",
+  "host-with-us.benefits.revenue.description": "Monetize your expertise through workshops, services, and events with built-in payment processing",
+  "host-with-us.benefits.community.title": "Build Your Portuguese Network",
+  "host-with-us.benefits.community.description": "Connect with fellow Portuguese professionals and create lasting business relationships",
+  "host-with-us.benefits.heritage.title": "Preserve Portuguese Heritage",
+  "host-with-us.benefits.heritage.description": "Share your culture while building a sustainable business around Portuguese traditions",
+  
+  "host-with-us.cta.title": "Ready to Share Your Portuguese Expertise?",
+  "host-with-us.cta.description": "Join successful Portuguese professionals who are building thriving businesses through our community. From workshops to services, events to cultural experiences - start showcasing your expertise today.",
+  "host-with-us.cta.primary": "Start Hosting Today",
+  "host-with-us.cta.secondary": "Learn More About Hosting",
   
   "features.title": "Why Portuguese Hearts Choose LusoTown",
   "features.subtitle": "Your Social & Professional Hub for Portuguese Speakers Across London & UK",
@@ -119,6 +168,7 @@
   
   "about.hero.badge": "Unidos pela Língua • United by Language",
   "about.hero.title": "About LusoTown",
+  "about.hero.title.mobile": "About Us",
   "about.mission.title": "Nossa Missão: Preservar a Cultura, Conectar Corações",
   "about.mission.subtitle": "Our Mission: Preserve Culture, Connect Hearts",
   
@@ -205,6 +255,16 @@
   "login.attendees": "attendees",
   "login.participants": "participants",
   "login.table-quote": "\"Where there are Portuguese people, there's always room for one more at the table\"",
+
+  "transport.hero.title": "London Tourism with Portuguese Private Transport",
+  "transport.hero.title.mobile": "Portuguese Transport",
+  "transport.hero.subtitle": "Premium London tourism experiences with fluent Portuguese-speaking drivers and guides. Discover London's top attractions with professional Portuguese communication and secure transport.",
+  "transport.hero.subtitle.mobile": "Portuguese drivers & guides in London!",
+
+  "pricing.hero.title": "Join Your Portuguese Community",
+  "pricing.hero.title.mobile": "Pricing Plans",
+  "pricing.hero.subtitle": "Choose the membership that fits your lifestyle. From cultural events to professional networking - find your place in London's Portuguese community.",
+  "pricing.hero.subtitle.mobile": "Find your Portuguese community!",
   
   "signup.subtitle": "Connect with Portuguese speakers through social experiences and professional opportunities across London. From cultural events and guided tours to business workshops and networking - discover your community.",
   
@@ -304,7 +364,9 @@
   "verification.premium": "Premium members only",
   
   "community.hero.title": "The Portuguese Network in London",
+  "community.hero.title.mobile": "Portuguese Network",
   "community.hero.subtitle": "Discover the vibrant Portuguese-speaking network in London. Connect with 500+ Portuguese speakers across authentic venues from Stockwell to Vauxhall.",
+  "community.hero.subtitle.mobile": "500+ Portuguese speakers in London!",
   "community.stats.members": "Portuguese Network Members",
   "community.stats.events": "Cultural Events Monthly",
   "community.stats.boroughs": "London Boroughs",
@@ -370,7 +432,9 @@
   "cta.benefits.free-start": "Free to get started",
   
   "events.hero.title": "Your Portuguese Social Calendar",
+  "events.hero.title.mobile": "Portuguese Events",
   "events.hero.subtitle": "Book experiences and live life together with Portuguese speakers across London and the UK. From museum tours to concert nights, football matches to weekend getaways - your social calendar awaits!",
+  "events.hero.subtitle.mobile": "Your Portuguese social calendar awaits!",
   "events.search-placeholder": "Search events & experiences...",
   "events.popular-types": "Popular Experiences",
   "events.stats-events": "Monthly Experiences",

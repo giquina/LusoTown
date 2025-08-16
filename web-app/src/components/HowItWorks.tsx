@@ -31,47 +31,47 @@ export default function HowItWorks() {
   const steps = [
     {
       number: 1,
-      title: 'Become Part of Our Family',
-      subtitle: 'Seja Bem-Vindo à Nossa Família',
-      description: 'Create your free profile and step into a warm community where everyone understands the feeling of missing home. You\'ll be welcomed by Portuguese hearts who know your story and want to share theirs.',
+      title: 'Join Portuguese Community',
+      subtitle: 'Junta-te à Comunidade Portuguesa',
+      description: 'Connect with 500+ Portuguese speakers across London. From professionals to families - find your community.',
       icon: UserPlus,
       color: 'from-secondary-500 to-secondary-600',
       bgColor: 'from-secondary-50 to-secondary-100',
       accentColor: 'secondary-500',
-      examples: 'People from Portugal, Brazil, Angola, Mozambique across the UK'
+      examples: 'Portugal, Brazil, Angola, Mozambique, Cape Verde communities in London'
     },
     {
       number: 2,
-      title: 'Discover Real London Venues',
-      subtitle: 'Descubra Locais Reais de Londres',
-      description: 'Find authentic Portuguese gatherings at real London venues: intimate Fado sessions at traditional restaurants in Stockwell, football watch parties at Portuguese bars, cultural events at Vauxhall community centers.',
+      title: 'Book Portuguese Events',
+      subtitle: 'Reserve Eventos Portugueses',
+      description: 'Browse and book events for Portuguese speakers: AI workshops, Fado nights, cooking classes, networking, and tours.',
       icon: Calendar,
       color: 'from-accent-500 to-coral-500',
       bgColor: 'from-accent-50 to-coral-100',
       accentColor: 'accent-500',
-      examples: 'Stockwell restaurants, Vauxhall centers, Portuguese churches, cafés'
+      examples: 'AI workshops, Fado nights, cooking classes, networking events, cultural tours'
     },
     {
       number: 3,
-      title: 'Meet at Authentic Places',
-      subtitle: t('how-it-works.step3.subtitle', 'Meet at Authentic Places'),
-      description: 'Join events that bring Portuguese culture to life at real venues. Share stories over pastéis de nata at Portuguese bakeries, practice language at community centers, create friendships at places that feel like home.',
+      title: 'Professional Growth & Culture',
+      subtitle: 'Crescimento Profissional e Cultura',
+      description: 'Attend business workshops, cultural experiences, and networking events. Learn from Portuguese entrepreneurs and expand your network.',
       icon: Coffee,
       color: 'from-action-500 to-action-600',
       bgColor: 'from-action-50 to-action-100',
       accentColor: 'action-500',
-      examples: 'Portuguese bakeries, language cafés, community centers, cultural walks'
+      examples: 'Business coaching, digital marketing, investment seminars, heritage tours'
     },
     {
       number: 4,
-      title: 'Build Your London Network',
-      subtitle: 'Construa a Sua Rede de Londres',
-      description: 'Create lasting connections with Portuguese speakers across London. Save your favorite Portuguese venues, follow community members, and never miss the cultural events that matter to your Portuguese heart.',
+      title: 'Host Your Own Events',
+      subtitle: 'Organize os Seus Próprios Eventos',
+      description: 'Share your expertise by hosting events for the Portuguese community. Monetize your skills while preserving heritage.',
       icon: Heart,
       color: 'from-premium-500 to-premium-600',
       bgColor: 'from-premium-50 to-premium-100',
       accentColor: 'premium-500',
-      examples: 'Save Portuguese restaurants, follow friends, bookmark venues, get reminders'
+      examples: 'Host workshops, cultural events, promote business, share expertise'
     }
   ]
 
@@ -137,7 +137,7 @@ export default function HowItWorks() {
           </div>
         </div>
 
-        {/* Enhanced Steps Grid with Portuguese Cultural Context */}
+        {/* Enhanced Steps Grid with Portuguese Cultural Context - 2x2 Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-20">
           {steps.map((step, index) => (
             <div
@@ -193,14 +193,14 @@ export default function HowItWorks() {
                   {/* Interactive CTA Link */}
                   <a 
                     href="/events"
-                    className={`flex items-center gap-2 text-${step.accentColor} font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 hover:gap-3 cursor-pointer text-base`}
+                    className={`flex items-center gap-2 text-${step.accentColor} font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 hover:gap-3 cursor-pointer text-base whitespace-nowrap`}
                   >
-                    <span>Book Your Experience</span>
+                    <span>Book Now</span>
                     <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
                   </a>
                 </div>
 
-                {/* Connection line for larger screens */}
+                {/* Connection line for larger screens - only between first and second on each row */}
                 {index % 2 === 0 && index < steps.length - 1 && (
                   <div className="hidden lg:block absolute -right-6 top-1/2 transform -translate-y-1/2 z-20">
                     <div className={`w-10 h-10 bg-white rounded-full shadow-xl border-2 border-gray-200 flex items-center justify-center transition-all duration-300 ${activeStep === index ? 'scale-110 border-' + step.accentColor : ''}`}>
@@ -258,7 +258,7 @@ export default function HowItWorks() {
             <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">
               Ready to 
               <span className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent">
-                Live Life Together?
+                Join Our Community?
               </span>
             </h3>
             <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -276,22 +276,22 @@ export default function HowItWorks() {
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/signup"
-                className="group relative text-xl font-bold px-12 py-5 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden w-full sm:w-auto text-center"
+                href="/events"
+                className="group relative text-lg font-bold px-8 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-xl shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-secondary-700 via-action-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative z-10 flex items-center justify-center gap-3">
-                  Explore Social Calendar
-                  <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-200" />
+                <span className="relative z-10 flex items-center justify-center gap-2 whitespace-nowrap">
+                  Browse Events
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
                 </span>
               </a>
               <a
-                href="/events"
-                className="text-xl font-bold px-12 py-5 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 w-full sm:w-auto text-center"
+                href="/signup"
+                className="text-lg font-bold px-8 py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 whitespace-nowrap"
               >
-                Book Your First Experience
+                Join Now
               </a>
             </div>
           </div>

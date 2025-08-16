@@ -64,10 +64,10 @@ export default function FavoriteButton({
     const baseClasses = 'flex items-center justify-center rounded-full transition-colors'
     
     if (variant === 'overlay') {
-      return `${baseClasses} w-8 h-8 bg-white/90 backdrop-blur-sm hover:bg-white shadow-sm ${className}`
+      return `${baseClasses} min-w-[44px] min-h-[44px] bg-white/90 backdrop-blur-sm hover:bg-white shadow-sm ${className}`
     }
     
-    return `${baseClasses} ${className}`
+    return `${baseClasses} min-w-[44px] min-h-[44px] ${className}`
   }
 
   return (

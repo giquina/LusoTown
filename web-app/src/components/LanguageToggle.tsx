@@ -45,7 +45,7 @@ export default function LanguageToggle() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="group flex items-center justify-center bg-white/90 backdrop-blur-sm rounded-lg sm:rounded-xl p-1.5 sm:p-2 shadow-lg border border-secondary-200/40 hover:border-secondary-400 hover:shadow-xl hover:bg-gradient-to-r hover:from-secondary-50 hover:to-accent-50 transition-all duration-300 hover:scale-105 w-10 h-10 sm:w-12 sm:h-12"
+        className="group flex items-center justify-center bg-white/90 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 shadow-lg border border-secondary-200/40 hover:border-secondary-400 hover:shadow-xl hover:bg-gradient-to-r hover:from-secondary-50 hover:to-accent-50 transition-all duration-300 hover:scale-105 min-w-[44px] min-h-[44px]"
         title={`Current: ${currentLang.label}`}
       >
         <span className="text-lg sm:text-xl group-hover:scale-110 transition-transform duration-300">{getCurrentFlag()}</span>
@@ -71,7 +71,7 @@ export default function LanguageToggle() {
                 setLanguage(lang.value as any)
                 setIsOpen(false)
               }}
-              className={`group w-full flex items-center gap-4 px-5 py-3 text-sm hover:bg-gradient-to-r hover:from-secondary-50/60 hover:to-accent-50/40 transition-all duration-300 ${
+              className={`group w-full flex items-center gap-4 px-5 py-3 text-sm hover:bg-gradient-to-r hover:from-secondary-50/60 hover:to-accent-50/40 transition-all duration-300 min-h-[44px] ${
                 language === lang.value 
                   ? 'bg-gradient-to-r from-secondary-100/80 to-accent-100/60 text-secondary-800 shadow-sm' 
                   : 'text-gray-700 hover:text-secondary-700'

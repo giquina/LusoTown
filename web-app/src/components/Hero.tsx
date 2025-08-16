@@ -48,10 +48,16 @@ export default function Hero() {
             {/* Main Headlines */}
             <div className={`space-y-4 transition-all duration-1000 delay-300 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-tight tracking-tight">
-                {t('hero.title')}
+                {/* Desktop full title */}
+                <span className="hidden sm:block">{t('hero.title')}</span>
+                {/* Mobile short title */}
+                <span className="sm:hidden">{t('hero.title.mobile')}</span>
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 leading-relaxed max-w-2xl font-medium">
-                {t('hero.subtitle')}
+                {/* Desktop full subtitle */}
+                <span className="hidden sm:block">{t('hero.subtitle')}</span>
+                {/* Mobile short subtitle */}
+                <span className="sm:hidden">{t('hero.subtitle.mobile')}</span>
               </p>
             </div>
 

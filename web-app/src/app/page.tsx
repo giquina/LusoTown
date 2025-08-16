@@ -16,6 +16,7 @@ import CaseStudies from '@/components/CaseStudies'
 import AppDownloadSection from '@/components/AppDownloadSection'
 import TestimonialsNew from '@/components/TestimonialsNew'
 import CustomToursSection from '@/components/CustomToursSection'
+import HostWithUsSection from '@/components/HostWithUsSection'
 import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
 import { 
@@ -25,7 +26,8 @@ import {
   ArrowRightIcon as ArrowRight,
   UserGroupIcon,
   RssIcon,
-  BookmarkIcon
+  BookmarkIcon,
+  AcademicCapIcon
 } from '@heroicons/react/24/outline'
 
 // Page-specific structured data for Portuguese social calendar
@@ -110,24 +112,24 @@ export default function Home() {
                   </blockquote>
                 </div>
                 
-                {/* 4-Column Grid Layout */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+                {/* 2-Column Grid Layout for better readability */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-20">
                   {/* Find & Join Events */}
                   <div className="group relative h-full">
-                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
                       <div className="absolute inset-0 bg-gradient-to-br from-secondary-50/60 via-transparent to-accent-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
                       
                       <div className="relative z-10 flex flex-col h-full">
-                        <div className="w-16 h-16 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
-                          <ChatBubbleLeftRightIcon className="w-8 h-8 text-white" />
+                        <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
+                          <ChatBubbleLeftRightIcon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
                         </div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-secondary-600 transition-colors duration-300">
+                        <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3 lg:mb-4 group-hover:text-secondary-600 transition-colors duration-300">
                           {t('what-you-can-do.events.title')}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed mb-6 flex-grow text-sm">
+                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-sm">
                           {t('what-you-can-do.events.description')}
                         </p>
-                        <div className="text-xs text-gray-500 mb-4 font-medium">
+                        <div className="text-xs text-gray-500 mb-3 lg:mb-4 font-medium">
                           {t('what-you-can-do.events.locations')}
                         </div>
                         <a 
@@ -143,20 +145,20 @@ export default function Home() {
 
                   {/* Create Your Own Groups */}
                   <div className="group relative h-full">
-                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
                       <div className="absolute inset-0 bg-gradient-to-br from-accent-50/60 via-transparent to-coral-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
                       
                       <div className="relative z-10 flex flex-col h-full">
-                        <div className="w-16 h-16 bg-gradient-to-br from-accent-500 to-coral-500 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
-                          <UserGroupIcon className="w-8 h-8 text-white" />
+                        <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-accent-500 to-coral-500 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
+                          <UserGroupIcon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
                         </div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-accent-600 transition-colors duration-300">
+                        <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3 lg:mb-4 group-hover:text-accent-600 transition-colors duration-300">
                           {t('what-you-can-do.groups.title')}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed mb-6 flex-grow text-sm">
+                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-sm">
                           {t('what-you-can-do.groups.description')}
                         </p>
-                        <div className="text-xs text-gray-500 mb-4 font-medium">
+                        <div className="text-xs text-gray-500 mb-3 lg:mb-4 font-medium">
                           {t('what-you-can-do.groups.examples')}
                         </div>
                         <a 
@@ -172,20 +174,20 @@ export default function Home() {
 
                   {/* Stay Updated on LusoFeed */}
                   <div className="group relative h-full">
-                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
                       <div className="absolute inset-0 bg-gradient-to-br from-coral-50/60 via-transparent to-secondary-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
                       
                       <div className="relative z-10 flex flex-col h-full">
-                        <div className="w-16 h-16 bg-gradient-to-br from-coral-500 to-action-500 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
-                          <RssIcon className="w-8 h-8 text-white" />
+                        <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-coral-500 to-action-500 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
+                          <RssIcon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
                         </div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-coral-500 transition-colors duration-300">
+                        <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3 lg:mb-4 group-hover:text-coral-500 transition-colors duration-300">
                           {t('what-you-can-do.feed.title')}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed mb-6 flex-grow text-sm">
+                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-sm">
                           {t('what-you-can-do.feed.description')}
                         </p>
-                        <div className="text-xs text-gray-500 mb-4 font-medium">
+                        <div className="text-xs text-gray-500 mb-3 lg:mb-4 font-medium">
                           {t('what-you-can-do.feed.features')}
                         </div>
                         <a 
@@ -201,20 +203,20 @@ export default function Home() {
 
                   {/* Save Your Favourites */}
                   <div className="group relative h-full">
-                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
                       <div className="absolute inset-0 bg-gradient-to-br from-action-50/60 via-transparent to-premium-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
                       
                       <div className="relative z-10 flex flex-col h-full">
-                        <div className="w-16 h-16 bg-gradient-to-br from-action-500 to-premium-500 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
-                          <BookmarkIcon className="w-8 h-8 text-white" />
+                        <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-action-500 to-premium-500 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
+                          <BookmarkIcon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
                         </div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-action-600 transition-colors duration-300">
+                        <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3 lg:mb-4 group-hover:text-action-600 transition-colors duration-300">
                           {t('what-you-can-do.favorites.title')}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed mb-6 flex-grow text-sm">
+                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-sm">
                           {t('what-you-can-do.favorites.description')}
                         </p>
-                        <div className="text-xs text-gray-500 mb-4 font-medium">
+                        <div className="text-xs text-gray-500 mb-3 lg:mb-4 font-medium">
                           {t('what-you-can-do.favorites.types')}
                         </div>
                         <a 
@@ -222,6 +224,35 @@ export default function Home() {
                           className="inline-flex items-center gap-2 text-action-600 font-semibold hover:text-action-700 transition-colors group-hover:gap-3 duration-300 text-sm"
                         >
                           {t('what-you-can-do.favorites.cta')}
+                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Share Your Expertise - NEW */}
+                  <div className="group relative h-full">
+                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+                      <div className="absolute inset-0 bg-gradient-to-br from-premium-50/60 via-transparent to-coral-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+                      
+                      <div className="relative z-10 flex flex-col h-full">
+                        <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-premium-500 to-coral-500 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
+                          <AcademicCapIcon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
+                        </div>
+                        <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3 lg:mb-4 group-hover:text-premium-600 transition-colors duration-300">
+                          {t('what-you-can-do.host.title')}
+                        </h3>
+                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-sm">
+                          {t('what-you-can-do.host.description')}
+                        </p>
+                        <div className="text-xs text-gray-500 mb-3 lg:mb-4 font-medium">
+                          {t('what-you-can-do.host.examples')}
+                        </div>
+                        <a 
+                          href="/host" 
+                          className="inline-flex items-center gap-2 text-premium-600 font-semibold hover:text-premium-700 transition-colors group-hover:gap-3 duration-300 text-sm"
+                        >
+                          {t('what-you-can-do.host.cta')}
                           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                         </a>
                       </div>
@@ -239,7 +270,7 @@ export default function Home() {
                       </span>
                     </h3>
                     <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-                      Join 500+ Portuguese speakers from all Portuguese-speaking nations booking experiences together - from museum tours to concert nights, football matches to weekend getaways across London.
+                      Join 500+ Portuguese speakers booking experiences together across London - from tours to concerts, matches to getaways.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                       <a
@@ -247,16 +278,16 @@ export default function Home() {
                         className="group relative text-lg font-bold px-10 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden"
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-secondary-700 via-action-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <span className="relative z-10 flex items-center justify-center gap-3">
-                          Start Your Social Calendar
+                        <span className="relative z-10 flex items-center justify-center gap-3 whitespace-nowrap">
+                          Join Now
                           <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-200" />
                         </span>
                       </a>
                       <a
                         href="/events"
-                        className="text-lg font-bold px-10 py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 hover:bg-white/90"
+                        className="text-lg font-bold px-10 py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 hover:bg-white/90 whitespace-nowrap"
                       >
-                        Explore Experiences
+                        Browse Events
                       </a>
                     </div>
                   </div>
@@ -271,6 +302,7 @@ export default function Home() {
           <GroupsShowcase />
           <SuccessStories />
           <CustomToursSection showHeader={true} />
+          <HostWithUsSection />
           <CaseStudies />
           <AppDownloadSection />
           <TestimonialsNew />

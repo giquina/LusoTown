@@ -20,19 +20,19 @@ interface ServiceTier {
   imageAltPortuguese?: string
 }
 
-interface ChauffeurServiceCardProps {
+interface TransportServiceCardProps {
   tier: ServiceTier
   isPortuguese: boolean
   onBookNow: () => void
   index: number
 }
 
-export default function ChauffeurServiceCard({ 
+export default function TransportServiceCard({ 
   tier, 
   isPortuguese, 
   onBookNow, 
   index 
-}: ChauffeurServiceCardProps) {
+}: TransportServiceCardProps) {
   const getColorClasses = (color: string) => {
     const colorMap = {
       primary: {
@@ -77,7 +77,7 @@ export default function ChauffeurServiceCard({
       viewport={{ once: true }}
       className={`relative bg-white/90 backdrop-blur-lg rounded-3xl shadow-2xl border-2 ${
         tier.popular ? 'border-premium-300 shadow-3xl scale-105' : colors.border
-      } overflow-hidden hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 group min-h-[480px] sm:min-h-[520px] flex flex-col`}
+      } overflow-hidden hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 group`}
     >
       {/* Popular Badge */}
       {tier.popular && (
@@ -104,11 +104,11 @@ export default function ChauffeurServiceCard({
       )}
 
       {/* Header */}
-      <div className={`bg-gradient-to-br ${colors.bg} px-4 sm:px-6 py-6 sm:py-8 text-center ${tier.popular ? 'pt-10 sm:pt-12' : ''}`}>
-        <h3 className="text-xl sm:text-2xl font-black text-gray-900 mb-2 line-clamp-2 break-words">
+      <div className={`bg-gradient-to-br ${colors.bg} px-6 py-8 text-center ${tier.popular ? 'pt-12' : ''}`}>
+        <h3 className="text-2xl font-black text-gray-900 mb-2">
           {isPortuguese ? tier.namePortuguese : tier.name}
         </h3>
-        <p className="text-gray-600 mb-4 text-sm sm:text-base line-clamp-3 break-words leading-relaxed">
+        <p className="text-gray-600 mb-4">
           {isPortuguese ? tier.descriptionPortuguese : tier.description}
         </p>
         <div className="flex items-baseline justify-center">
@@ -118,35 +118,33 @@ export default function ChauffeurServiceCard({
       </div>
 
       {/* Features */}
-      <div className="px-4 sm:px-6 py-6 sm:py-8 flex-grow">
+      <div className="px-6 py-8">
         <ul className="space-y-4">
           {(isPortuguese ? tier.featuresPortuguese : tier.features).map((feature, featureIndex) => (
             <li key={featureIndex} className="flex items-start">
               <CheckCircleIcon className={`w-5 h-5 ${colors.text} mt-0.5 mr-3 flex-shrink-0`} />
-              <span className="text-gray-700 text-sm sm:text-base break-words leading-relaxed">{feature}</span>
+              <span className="text-gray-700">{feature}</span>
             </li>
           ))}
         </ul>
       </div>
 
       {/* Footer */}
-      <div className="px-4 sm:px-6 pb-6 sm:pb-8 mt-auto">
+      <div className="px-6 pb-8">
         <button
           onClick={onBookNow}
-          className={`w-full ${colors.button} text-white py-3 sm:py-4 px-4 sm:px-6 rounded-2xl font-bold transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1 text-sm sm:text-base min-h-[44px] flex items-center justify-center`}
+          className={`w-full ${colors.button} text-white py-4 px-6 rounded-2xl font-bold transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1`}
         >
-          <span className="hidden sm:inline">{isPortuguese ? 'Reservar Agora' : 'Book Now'}</span>
-          <span className="sm:hidden">{isPortuguese ? 'Reservar' : 'Book'}</span>
+          {isPortuguese ? 'Reservar Agora' : 'Book Now'}
         </button>
         
         {/* Security Level Indicator */}
-        <div className="mt-3 sm:mt-4 flex justify-center">
-          <div className={`inline-flex items-center px-2 sm:px-3 py-1 rounded-full text-xs font-bold ${colors.badge} shadow-md`}>
+        <div className="mt-4 flex justify-center">
+          <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold ${colors.badge} shadow-md`}>
             {tier.id === 'essential' && (
               <>
                 <div className="w-2 h-2 bg-current rounded-full mr-2"></div>
-                <span className="hidden sm:inline">{isPortuguese ? 'Nível Básico' : 'Basic Level'}</span>
-                <span className="sm:hidden">{isPortuguese ? 'Básico' : 'Basic'}</span>
+                {isPortuguese ? 'Nível Básico' : 'Basic Level'}
               </>
             )}
             {tier.id === 'premium' && (
@@ -155,15 +153,13 @@ export default function ChauffeurServiceCard({
                   <div className="w-2 h-2 bg-current rounded-full"></div>
                   <div className="w-2 h-2 bg-current rounded-full"></div>
                 </div>
-                <span className="hidden sm:inline">{isPortuguese ? 'Nível Médio' : 'Medium Level'}</span>
-                <span className="sm:hidden">{isPortuguese ? 'Médio' : 'Medium'}</span>
+                {isPortuguese ? 'Nível Médio' : 'Medium Level'}
               </>
             )}
             {tier.id === 'vip' && (
               <>
                 <Crown className="w-3 h-3 mr-2" />
-                <span className="hidden sm:inline">{isPortuguese ? 'Nível VIP' : 'VIP Level'}</span>
-                <span className="sm:hidden">{isPortuguese ? 'VIP' : 'VIP'}</span>
+                {isPortuguese ? 'Nível VIP' : 'VIP Level'}
               </>
             )}
             {tier.id === 'elite' && (
@@ -173,8 +169,7 @@ export default function ChauffeurServiceCard({
                   <div className="w-2 h-2 bg-current rounded-full"></div>
                   <div className="w-2 h-2 bg-current rounded-full"></div>
                 </div>
-                <span className="hidden sm:inline">{isPortuguese ? 'Nível Elite' : 'Elite Level'}</span>
-                <span className="sm:hidden">{isPortuguese ? 'Elite' : 'Elite'}</span>
+                {isPortuguese ? 'Nível Elite' : 'Elite Level'}
               </>
             )}
           </div>

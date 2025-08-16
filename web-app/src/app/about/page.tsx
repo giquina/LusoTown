@@ -33,10 +33,24 @@ export default function About() {
                 {t('about.hero.badge', 'Unidos pela Língua • United by Language')}
               </div>
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-                About <span className="gradient-text">LusoTown London</span>
+                {/* Desktop full title */}
+                <span className="hidden sm:block">
+                  About <span className="gradient-text">LusoTown London</span>
+                </span>
+                {/* Mobile short title */}
+                <span className="sm:hidden">
+                  About <span className="gradient-text">Us</span>
+                </span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                LusoTown connects Portuguese speakers and friends through real-life meetups in London. Whether you're new to the city, have roots in a Portuguese-speaking country, or simply love our culture and language, this is your space to meet people in person, share, and celebrate.
+                {/* Desktop full subtitle */}
+                <span className="hidden sm:block">
+                  LusoTown connects Portuguese speakers and friends through real-life meetups in London. Whether you're new to the city, have roots in a Portuguese-speaking country, or simply love our culture and language, this is your space to meet people in person, share, and celebrate.
+                </span>
+                {/* Mobile short subtitle */}
+                <span className="sm:hidden">
+                  Connecting Portuguese speakers in London through real-life meetups!
+                </span>
               </p>
             </div>
           </div>
