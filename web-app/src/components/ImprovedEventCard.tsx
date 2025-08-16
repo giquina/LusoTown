@@ -99,7 +99,7 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
                 ✕
               </button>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {event.photos?.map((photo) => (
                 <div key={photo.id} className="aspect-square rounded-lg overflow-hidden">
                   <EventImageWithFallback
@@ -133,7 +133,7 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
         className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group h-full flex flex-col"
       >
         {/* Event Image Header */}
-        <div className="relative h-52 overflow-hidden">
+        <div className="relative h-48 overflow-hidden">
           <EventImageWithFallback
             src={event.images?.[0] || ''}
             alt={event.title}

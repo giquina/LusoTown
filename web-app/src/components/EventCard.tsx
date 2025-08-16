@@ -155,7 +155,7 @@ export default function EventCard({
   }
 
   return (
-    <div className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group ${featured ? 'ring-2 ring-yellow-300' : ''}`}>
+    <div className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group h-full flex flex-col ${featured ? "ring-2 ring-yellow-300" : ""}`}>
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
         {imageUrl ? (
@@ -195,33 +195,37 @@ export default function EventCard({
           />
         </div>
         
-        {/* Category Badge */}
-        <div className="absolute bottom-3 left-3">
-          <span className="bg-white/90 backdrop-blur-sm text-gray-700 text-xs font-medium px-3 py-1 rounded-full">
-            {category}
-          </span>
-        </div>
-        
-        {/* Availability Status */}
-        <div className="absolute bottom-3 right-3">
-          {isFull ? (
-            <span className="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-              {isPortuguese ? 'LOTADO' : 'FULL'}
+
+        {/* Bottom Overlays Container - Fixed positioning to prevent overlap */}
+        <div className="absolute inset-x-0 bottom-0 p-3">
+          <div className="flex items-end justify-between gap-2">
+            {/* Category Badge */}
+            <span className="bg-white/90 backdrop-blur-sm text-gray-700 text-xs font-medium px-3 py-1 rounded-full shadow-sm">
+              {category}
             </span>
-          ) : isAlmostFull ? (
-            <span className="bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-              {isPortuguese ? `${spotsLeft} VAGA${spotsLeft === 1 ? '' : 'S'}` : `${spotsLeft} SPOT${spotsLeft === 1 ? '' : 'S'} LEFT`}
-            </span>
-          ) : (
-            <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-              {isPortuguese ? `${spotsLeft} VAGAS` : `${spotsLeft} SPOTS`}
-            </span>
-          )}
+            
+            {/* Availability Status */}
+            <div className="flex-shrink-0">
+              {isFull ? (
+                <span className="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                  {isPortuguese ? 'LOTADO' : 'FULL'}
+                </span>
+              ) : isAlmostFull ? (
+                <span className="bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                  {spotsLeft} {isPortuguese ? 'vagas' : 'spots'} left
+                </span>
+              ) : (
+                <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                  {spotsLeft} {isPortuguese ? 'vagas' : 'spots'}
+                </span>
+              )}
+            </div>
+          </div>
         </div>
       </div>
       
       {/* Content */}
-      <div className="p-4 sm:p-6">
+      <div className="p-4 sm:p-6 flex-grow flex flex-col">
         <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-3 gap-2 sm:gap-3">
           <h3 className="font-bold text-lg text-gray-900 group-hover:text-primary-600 transition-colors line-clamp-2 flex-1 min-w-0 leading-tight break-words order-2 sm:order-1">
             {title}
@@ -301,7 +305,7 @@ export default function EventCard({
         </div>
         
         {/* Action Buttons */}
-        <div className="space-y-3">
+        <div className="space-y-3 mt-auto">
           {/* Primary Actions */}
           <div className="grid grid-cols-2 gap-3">
             <a 

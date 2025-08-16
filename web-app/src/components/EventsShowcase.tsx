@@ -171,7 +171,7 @@ const eventStats = [
 
 export default function EventsShowcase() {
   return (
-    <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-secondary-50 relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-br from-white via-gray-50 to-secondary-50 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-10 right-10 w-32 h-32 bg-gradient-to-br from-accent-200 via-coral-100 to-secondary-100 rounded-full opacity-30 animate-pulse"></div>
@@ -181,7 +181,7 @@ export default function EventsShowcase() {
         <div className="absolute bottom-1/3 left-2/3 w-3 h-3 bg-action-400 rounded-full opacity-50"></div>
       </div>
       
-      <div className="container-width px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <motion.div
@@ -233,7 +233,7 @@ export default function EventsShowcase() {
         </motion.div>
 
         {/* Featured Events - Enhanced Multi-Column Responsive Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-7 lg:gap-8 xl:gap-10 mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 lg:gap-8 mb-12 sm:mb-16">
           {upcomingEvents.slice(0, 3).map((event, index) => (
             <motion.div
               key={event.id}
@@ -241,13 +241,13 @@ export default function EventsShowcase() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -5, scale: 1.02 }}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden group"
+              className="bg-white rounded-2xl shadow-lg overflow-hidden group h-full flex flex-col"
             >
               {/* Event Image */}
               <EventImage event={event} />
 
               {/* Event Content */}
-              <div className="p-6">
+              <div className="p-6 flex-grow flex flex-col">
                 <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
                   {event.title}
                 </h3>
@@ -292,12 +292,14 @@ export default function EventsShowcase() {
                 </div>
 
                 {/* RSVP Button */}
-                <a 
-                  href={`/events/${event.id}`}
-                  className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium py-3 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 group-hover:scale-105 block text-center"
-                >
-                  Reserve My Spot
-                </a>
+                <div className="mt-auto">
+                  <a 
+                    href={`/events/${event.id}`}
+                    className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium py-3 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 group-hover:scale-105 block text-center"
+                  >
+                    Reserve My Spot
+                  </a>
+                </div>
               </div>
             </motion.div>
           ))}

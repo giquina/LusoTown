@@ -139,12 +139,12 @@ export default function EventFeedCard({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300 ${
+      className={`bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300 h-full flex flex-col ${
         post.priority === 'high' ? 'ring-2 ring-primary-100' : ''
       } ${className}`}
     >
       {/* Post Header */}
-      <div className="p-6 pb-4">
+      <div className="p-6 pb-4 flex-grow flex flex-col">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
             <div className="relative">

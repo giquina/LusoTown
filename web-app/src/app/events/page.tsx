@@ -700,7 +700,7 @@ export default function EventsPage() {
                         }
                       </h2>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                       {featuredItems.slice(0, 3).map((item, index) => (
                         activeTab === 'events' ? (
                           <ImprovedEventCard 
@@ -719,7 +719,7 @@ export default function EventsPage() {
 
                 {/* Main Content Grid */}
                 {loading ? (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                     {[1, 2, 3, 4, 5, 6].map((i) => (
                       <div key={i} className="bg-white rounded-2xl shadow-lg overflow-hidden animate-pulse">
                         <div className="h-48 bg-gray-200"></div>
@@ -765,7 +765,7 @@ export default function EventsPage() {
                 ) : (
                   <motion.div
                     layout
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
                   >
                     <AnimatePresence>
                       {currentData.map((item, index) => (
@@ -843,7 +843,7 @@ export default function EventsPage() {
         )}
 
         {/* My Network CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-primary-50 to-secondary-50">
+        <section className="py-24 bg-gradient-to-r from-primary-50 to-secondary-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-2xl mx-auto">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">

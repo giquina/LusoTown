@@ -118,7 +118,7 @@ export default function GroupEventCard({
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className={`bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 ${className}`}
+        className={`bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 h-full flex flex-col ${className}`}
       >
         <div className="flex gap-4 p-4">
           {/* Event Image */}
@@ -181,7 +181,7 @@ export default function GroupEventCard({
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 ${className}`}
+        className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 h-full flex flex-col ${className}`}
       >
         {/* Featured Badge */}
         <div className="absolute top-4 left-4 z-10">
@@ -297,20 +297,22 @@ export default function GroupEventCard({
           </div>
 
           {/* Reserve Button */}
-          <button
-            onClick={handleReserve}
-            disabled={event.spotsLeft === 0}
-            className={`w-full py-3 px-4 rounded-xl text-sm font-bold transition-all duration-200 ${
-              event.spotsLeft === 0
-                ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                : 'bg-gradient-to-r from-secondary-500 to-action-500 text-white hover:from-secondary-600 hover:to-action-600 hover:shadow-lg transform hover:-translate-y-0.5'
-            }`}
-          >
-            {event.spotsLeft === 0 
-              ? (isPortuguese ? 'Lotado - Lista de Espera' : 'Full - Join Waitlist')
-              : (isPortuguese ? 'Reservar o Meu Lugar' : 'Reserve Your Spot')
-            }
-          </button>
+          <div className="mt-auto">
+            <button
+              onClick={handleReserve}
+              disabled={event.spotsLeft === 0}
+              className={`w-full py-3 px-4 rounded-xl text-sm font-bold transition-all duration-200 ${
+                event.spotsLeft === 0
+                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                  : 'bg-gradient-to-r from-secondary-500 to-action-500 text-white hover:from-secondary-600 hover:to-action-600 hover:shadow-lg transform hover:-translate-y-0.5'
+              }`}
+            >
+              {event.spotsLeft === 0 
+                ? (isPortuguese ? 'Lotado - Lista de Espera' : 'Full - Join Waitlist')
+                : (isPortuguese ? 'Reservar o Meu Lugar' : 'Reserve Your Spot')
+              }
+            </button>
+          </div>
         </div>
       </motion.div>
     )
@@ -321,7 +323,7 @@ export default function GroupEventCard({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300 group ${className}`}
+      className={`bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300 group h-full flex flex-col ${className}`}
     >
       {/* Event Image */}
       <div className="relative h-48 overflow-hidden">
@@ -370,7 +372,7 @@ export default function GroupEventCard({
       </div>
 
       {/* Event Details */}
-      <div className="p-6">
+      <div className="p-6 flex-grow flex flex-col">
         {/* Category Badge */}
         <div className="mb-3">
           <span className={`text-xs px-3 py-1 rounded-full border ${getCategoryColor(event.category)}`}>
@@ -446,7 +448,7 @@ export default function GroupEventCard({
         </div>
 
         {/* Action Buttons */}
-        <div className="flex gap-3">
+        <div className="flex gap-3 mt-auto">
           <button
             onClick={handleReserve}
             disabled={event.spotsLeft === 0}

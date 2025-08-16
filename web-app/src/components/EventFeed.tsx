@@ -397,7 +397,7 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className={`bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow ${
+            className={`bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow h-full flex flex-col ${
               post.priority === 'high' ? 'ring-2 ring-primary-100' : ''
             }`}
           >
