@@ -111,7 +111,7 @@
   "testimonials.title": "Da Saudade à Comunidade - Vidas Reais em Londres",
   "testimonials.subtitle": "Descubra como lusos encontraram a sua família londrina através de experiências culturais, conexões sociais e networking natural. De noites de cinema em Camden a workshops de dança em Stockwell - histórias autênticas de comunidade, amizade e herança partilhada.",
   
-  "footer.description": "Conecte-se com falantes de português através de experiências sociais e profissionais por todo o Reino Unido. Onde membros da comunidade descobrem, aprendem, e prosperam juntos. Unidos pela Língua, conectados pela comunidade."
+  "footer.description": "Conecte-se com falantes de português através de experiências sociais e profissionais por todo o Reino Unido. Onde membros da comunidade descobrem, aprendem, e prosperam juntos. Unidos pela Língua, conectados pela comunidade.",
   "footer.newsletter.title": "Fique Ligado à Família",
   "footer.newsletter.description": "Receba na sua caixa de correio as melhores histórias da nossa comunidade, eventos imperdíveis e momentos que aquecem o coração português.",
   "footer.tagline": "Onde a saudade se transforma em alegria",
@@ -322,12 +322,12 @@
   "community.business.title": "Negócios Portugueses em Londres",
   "community.business.subtitle": "Apoia a nossa comunidade empresarial. Desde padarias familiares que fazem pastéis como a avó fazia, a restaurantes que servem francesinha autêntica, a serviços prestados por pessoas que compreendem a nossa cultura.",
   "community.cta.title": "Pronto para se Juntar à Rede Portuguesa?",
-  "community.cta.subtitle": "A sua comunidade portuguesa está à espera. Junte-se a 500+ falantes de português que fizeram de Londres a sua casa, através de experiências sociais e oportunidades profissionais. Unidos pela língua, conectados pela comunidade."
+  "community.cta.subtitle": "A sua comunidade portuguesa está à espera. Junte-se a 500+ falantes de português que fizeram de Londres a sua casa, através de experiências sociais e oportunidades profissionais. Unidos pela língua, conectados pela comunidade.",
   "community.cta.tagline": "\"Unidos pela Língua\" - Onde quer que venhas no mundo lusófono, aqui tens casa em Londres.",
   
   "app.badge": "Agora Disponível no Móvel",
   "app.heading.part1": "Leve a Sua",
-  "app.heading.community": "Comunidade",
+  "app.heading.membership": "Comunidade",
   "app.heading.part2": "em Todo Lado",
   "app.description": "Nunca perca encontros lusos em Londres, chats de grupo ou novas conexões. Obtenha a aplicação móvel LusoTown e mantenha-se conectado com a comunidade portuguesa onde quer que vá.",
   "app.cta.title": "Junte-se a 500+ portugueses verificados",
@@ -344,7 +344,7 @@
   "app.download.google-play-label": "Obtenha LusoTown no Google Play",
   "app.info.free-download": "Grátis para descarregar • Disponível no iOS 14+ e Android 8+",
   "app.info.secure": "100% Seguro e Verificado",
-  "app.info.community": "Comunidade Luso-Londrina",
+  "app.info.membership": "Comunidade Luso-Londrina",
   "app.mockup.reading-club": "Clube de Leitura Luso",
   "app.mockup.new-messages": "3 mensagens novas",
   "app.mockup.message-preview": "Alguém leu 'Os Maias' do Eça de Queirós?",
@@ -441,7 +441,6 @@
   "feed.filters.language-exchange": "Intercâmbio Linguístico",
   "feed.filters.cultural-events": "Eventos Culturais",
   "feed.filters.social-party": "Social & Festa",
-  "feed.filters.business": "Negócios",
   "feed.filters.football": "Futebol",
   "feed.filters.traditional": "Tradicional",
   "feed.filters.modern": "Moderno",
@@ -472,7 +471,6 @@
   "events.cultural-workshop": "Oficina de Artesanato Português",
   "events.language-cafe": "Café de Línguas Lusófonas",
   "events.business-networking": "Networking Empresarial Lusófono",
-  "events.business-networking": "Networking Empresarial Português",
   "events.football-match": "Assistir Portugal em Família",
   "events.cooking-class": "Aula de Culinária da Avó",
   "events.wine-tasting": "Prova de Vinhos do Douro e Alentejo",

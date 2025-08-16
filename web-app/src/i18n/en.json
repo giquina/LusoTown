@@ -111,7 +111,7 @@
   "testimonials.title": "From Saudade to Community - Real London Lives",
   "testimonials.subtitle": "Discover how Portuguese speakers found their London family through cultural experiences, social connections, and natural networking. From cinema nights in Camden to dance workshops in Stockwell - authentic stories of community, friendship, and shared heritage.",
   
-  "footer.description": "Connect with Portuguese speakers through social and professional experiences across London & UK. Where community members discover, learn, and thrive together. Unidos pela Língua - United by Language."
+  "footer.description": "Connect with Portuguese speakers through social and professional experiences across London & UK. Where community members discover, learn, and thrive together. Unidos pela Língua - United by Language.",
   "footer.newsletter.title": "Stay Connected",
   "footer.newsletter.description": "Get updates on Portuguese cultural events, social activities, and experiences happening at authentic venues across London.",
   "footer.tagline": "Book experiences with Portuguese hearts at real London venues",
@@ -322,7 +322,7 @@
   "community.business.title": "Portuguese Businesses in London",
   "community.business.subtitle": "Support our business members. From family bakeries to authentic restaurants - services by people who understand our culture.",
   "community.cta.title": "Ready to Join the Portuguese Network?",
-  "community.cta.subtitle": "Your Portuguese community is waiting. Join 500+ Portuguese speakers who have made London their home, through social experiences and professional opportunities. United by language, connected by community."
+  "community.cta.subtitle": "Your Portuguese community is waiting. Join 500+ Portuguese speakers who have made London their home, through social experiences and professional opportunities. United by language, connected by community.",
   "community.cta.tagline": "\"Unidos pela Língua\" - Wherever you come from in the Portuguese-speaking world, you have a home here in London.",
   
   "app.badge": "Now Available on Mobile",
@@ -441,7 +441,6 @@
   "feed.filters.language-exchange": "Language Exchange",
   "feed.filters.cultural-events": "Cultural Events",
   "feed.filters.social-party": "Social & Party",
-  "feed.filters.business": "Business",
   "feed.filters.football": "Football",
   "feed.filters.traditional": "Traditional",
   "feed.filters.modern": "Modern",
@@ -471,7 +470,6 @@
   "events.independence-day": "Independence Day Celebration",
   "events.cultural-workshop": "Cultural Workshop",
   "events.language-cafe": "Language Café",
-  "events.business-networking": "Business Networking",
   "events.business-networking": "Business Networking",
   "events.football-match": "Football Match Viewing",
   "events.cooking-class": "Portuguese Cooking Class",
