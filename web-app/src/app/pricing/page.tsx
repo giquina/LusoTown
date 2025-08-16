@@ -69,8 +69,8 @@ const pricingTiers: PricingTier[] = [
     price: 0,
     description: 'Descobre a comunidade portuguesa de Londres gratuitamente',
     descriptionEn: 'Discover London\'s Portuguese community for free',
-    culturalContext: 'Como um visitante numa casa portuguesa - bem-vindo para conhecer a família',
-    culturalContextEn: 'Like a visitor in a Portuguese home - welcome to meet the family',
+    culturalContext: 'Como um visitante numa casa portuguesa - bem-vindo para conhecer a comunidade',
+    culturalContextEn: 'Like a visitor in a Portuguese home - welcome to meet the community',
     icon: <UserIcon className="w-6 h-6" />,
     solidIcon: <UserIcon className="w-6 h-6" />,
     features: [
@@ -111,20 +111,20 @@ const pricingTiers: PricingTier[] = [
     buttonStyle: 'btn-secondary'
   },
   {
-    name: 'Família',
-    nameEn: 'Family',
+    name: 'Comunidade',
+    nameEn: 'Community',
     price: 12,
     originalPrice: 15,
-    description: 'Para quem quer fazer parte da família portuguesa de Londres',
-    descriptionEn: 'For those who want to be part of London\'s Portuguese family',
-    culturalContext: 'Como ser aceite na família - tens lugar à mesa e voz nas decisões',
-    culturalContextEn: 'Like being accepted into the family - you have a seat at the table and voice in decisions',
+    description: 'Para quem quer fazer parte da comunidade portuguesa de Londres',
+    descriptionEn: 'For those who want to be part of London\'s Portuguese community',
+    culturalContext: 'Como ser aceite na comunidade - tens lugar à mesa e voz nas decisões',
+    culturalContextEn: 'Like being accepted into the community - you have a seat at the table and voice in decisions',
     icon: <HeartIcon className="w-6 h-6" />,
     solidIcon: <HeartIconSolid className="w-6 h-6" />,
     features: [
       'Tudo do Visitante, mais:',
       'RSVPs ilimitados para todos os eventos',
-      'Acesso a eventos exclusivos familiares',
+      'Acesso a eventos exclusivos da comunidade',
       'Diretório completo de negócios portugueses',
       'Grupos privados da comunidade portuguesa',
       'Programas de intercâmbio linguístico',
@@ -137,7 +137,7 @@ const pricingTiers: PricingTier[] = [
     featuresEn: [
       'Everything in Visitor, plus:',
       'Unlimited RSVPs to all events',
-      'Access to exclusive family events',
+      'Access to exclusive community events',
       'Full Portuguese business directory',
       'Private Portuguese community groups',
       'Language exchange programs',
@@ -156,8 +156,8 @@ const pricingTiers: PricingTier[] = [
       'No advanced management tools'
     ],
     highlighted: true,
-    buttonText: 'Juntar à Família',
-    buttonTextEn: 'Join the Family',
+    buttonText: 'Juntar à Comunidade',
+    buttonTextEn: 'Join the Community',
     buttonStyle: 'btn-primary',
     badge: 'Mais Popular',
     badgeEn: 'Most Popular'
@@ -174,7 +174,7 @@ const pricingTiers: PricingTier[] = [
     icon: <Crown className="w-6 h-6" />,
     solidIcon: <Crown className="w-6 h-6" />,
     features: [
-      'Tudo da Família, mais:',
+      'Tudo da Comunidade, mais:',
       'Criar e hospedar eventos comunitários',
       'Acesso VIP a noites de fado exclusivas',
       'Eventos culturais com custos cobertos',
@@ -187,7 +187,7 @@ const pricingTiers: PricingTier[] = [
       'Influência nas decisões da comunidade'
     ],
     featuresEn: [
-      'Everything in Family, plus:',
+      'Everything in Community, plus:',
       'Create and host community events',
       'VIP access to exclusive fado nights',
       'Cultural events with venue costs covered',
@@ -219,15 +219,15 @@ const features = [
     icon: <HomeIcon className="w-5 h-5" />,
     title: 'Authentic Portuguese Venues',
     titlePt: 'Locais Portugueses Autênticos',
-    description: 'Connect at real Portuguese venues - from Stockwell\'s beloved bakeries to Vauxhall\'s cultural centers, where Portuguese families truly gather',
-    descriptionPt: 'Conecta-te em locais portugueses reais - desde as padarias queridas de Stockwell aos centros culturais de Vauxhall, onde as famílias portuguesas se reúnem verdadeiramente'
+    description: 'Connect at real Portuguese venues - from Stockwell\'s beloved bakeries to Vauxhall\'s cultural centers, where the Portuguese community truly gathers',
+    descriptionPt: 'Conecta-te em locais portugueses reais - desde as padarias queridas de Stockwell aos centros culturais de Vauxhall, onde a comunidade portuguesa se reúne verdadeiramente'
   },
   {
     icon: <HeartIcon className="w-5 h-5" />,
     title: 'Cultural Preservation',
     titlePt: 'Preservação Cultural',
-    description: 'Pass Portuguese traditions to your children through fado nights, Santo António festivals, and family-style community dinners',
-    descriptionPt: 'Transmite tradições portuguesas aos teus filhos através de noites de fado, festivais de Santo António, e jantares comunitários em família'
+    description: 'Experience and preserve Portuguese traditions through fado nights, Santo António festivals, and community dinners that bring everyone together',
+    descriptionPt: 'Vive e preserva tradições portuguesas através de noites de fado, festivais de Santo António, e jantares comunitários que unem todos'
   },
   {
     icon: <MusicalNoteIcon className="w-5 h-5" />,
@@ -247,15 +247,15 @@ const features = [
     icon: <AcademicCapIcon className="w-5 h-5" />,
     title: 'Heritage Language Learning',
     titlePt: 'Aprendizagem da Língua Materna',
-    description: 'Help your children maintain Portuguese through language exchange programs, cultural workshops, and community storytelling',
-    descriptionPt: 'Ajuda os teus filhos a manter o português através de programas de intercâmbio linguístico, workshops culturais, e narrativas comunitárias'
+    description: 'Maintain and improve your Portuguese through language exchange programs, cultural workshops, and community storytelling',
+    descriptionPt: 'Mantém e melhora o teu português através de programas de intercâmbio linguístico, workshops culturais, e narrativas comunitárias'
   },
   {
     icon: <ShieldCheckIcon className="w-5 h-5" />,
     title: 'Verified Portuguese Community',
     titlePt: 'Comunidade Portuguesa Verificada',
-    description: 'Safe, authenticated space for Portuguese speakers and their families - verified profiles ensure genuine connections',
-    descriptionPt: 'Espaço seguro e autenticado para falantes de português e suas famílias - perfis verificados garantem conexões genuínas'
+    description: 'Safe, authenticated space for Portuguese speakers - verified profiles ensure genuine connections for individuals and professionals',
+    descriptionPt: 'Espaço seguro e autenticado para falantes de português - perfis verificados garantem conexões genuínas para indivíduos e profissionais'
   }
 ]
 
@@ -264,11 +264,11 @@ const testimonials = [
     name: 'Maria Santos',
     age: 34,
     location: 'Stockwell, Londres',
-    membership: 'Família',
-    quote: 'O LusoTown mudou a nossa vida em Londres. Os meus filhos agora têm amigos portugueses e falam português fluentemente. Encontrámos a nossa segunda família aqui.',
-    quoteEn: 'LusoTown changed our life in London. My children now have Portuguese friends and speak Portuguese fluently. We found our second family here.',
+    membership: 'Comunidade',
+    quote: 'O LusoTown mudou a minha vida em Londres. Agora tenho amigos portugueses e participo em eventos culturais regularmente. Encontrei a minha comunidade aqui.',
+    quoteEn: 'LusoTown changed my life in London. Now I have Portuguese friends and participate in cultural events regularly. I found my community here.',
     rating: 5,
-    cultural: 'Mãe de dois filhos, originária do Porto'
+    cultural: 'Profissional de marketing, originária do Porto'
   },
   {
     name: 'João Rodrigues',
@@ -284,9 +284,9 @@ const testimonials = [
     name: 'Ana Ferreira',
     age: 29,
     location: 'Camden, Londres',
-    membership: 'Família',
-    quote: 'Estava com saudades de casa até encontrar o LusoTown. Agora tenho um grupo de amigas que entende a minha jornada. Sinto-me em casa em Londres.',
-    quoteEn: 'I was homesick until I found LusoTown. Now I have a group of friends who understand my journey. I feel at home in London.',
+    membership: 'Comunidade',
+    quote: 'Estava com saudades de casa até encontrar o LusoTown. Agora tenho uma rede de amigos que entende a minha jornada profissional e cultural. Sinto-me em casa em Londres.',
+    quoteEn: 'I was homesick until I found LusoTown. Now I have a network of friends who understand my professional and cultural journey. I feel at home in London.',
     rating: 5,
     cultural: 'Jovem profissional, do Algarve'
   },
@@ -295,8 +295,8 @@ const testimonials = [
     age: 55,
     location: 'South Kensington, Londres',
     membership: 'Embaixador',
-    quote: 'Há 20 anos em Londres, nunca me senti tão conectado com a comunidade portuguesa. O LusoTown trouxe-nos todos juntos.',
-    quoteEn: 'After 20 years in London, I\'ve never felt so connected to the Portuguese community. LusoTown brought us all together.',
+    quote: 'Há 20 anos em Londres, nunca me senti tão conectado com a comunidade portuguesa. O LusoTown conectou-me com outros profissionais e amantes da cultura.',
+    quoteEn: 'After 20 years in London, I\'ve never felt so connected to the Portuguese community. LusoTown connected me with other professionals and culture enthusiasts.',
     rating: 5,
     cultural: 'Consultor sénior, de Coimbra'
   }
@@ -338,10 +338,10 @@ const paymentOptions = [
     icon: <CurrencyPoundIcon className="w-5 h-5" />
   },
   {
-    title: 'Desconto Familiar',
-    titleEn: 'Family Discount',
-    description: 'Planos familiares para casais e famílias com crianças',
-    descriptionEn: 'Family plans for couples and families with children',
+    title: 'Desconto para Grupos',
+    titleEn: 'Group Discount',
+    description: 'Descontos especiais para grupos e amigos',
+    descriptionEn: 'Special discounts for groups and friends',
     icon: <HeartIcon className="w-5 h-5" />
   },
   {
@@ -389,26 +389,26 @@ export default function Pricing() {
             <div className="text-center mb-16">
               <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-primary-600 mb-6">
                 <HeartIconSolid className="w-4 h-4 mr-2" />
-                {isPortuguese ? 'Unidos pela Língua • 750+ membros da família' : 'United by Language • 750+ family members'}
+                {isPortuguese ? 'Unidos pela Língua • 750+ membros da comunidade' : 'United by Language • 750+ community members'}
               </div>
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
                 {isPortuguese ? (
                   <>
                     Junta-te à Tua<br />
-                    <span className="gradient-text">Família Portuguesa</span><br />
+                    <span className="gradient-text">Comunidade Portuguesa</span><br />
                     em Londres
                   </>
                 ) : (
                   <>
                     Join Your Portuguese<br />
-                    <span className="gradient-text">Family</span> in London
+                    <span className="gradient-text">Community</span> in London
                   </>
                 )}
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                 {isPortuguese ? 
-                  'Mais do que uma plataforma - somos o teu lar longe de casa. Conecta-te com a autêntica comunidade portuguesa de Londres através de experiências reais, eventos culturais e negócios familiares que te fazem sentir em casa.' :
-                  'More than a platform - we\'re your home away from home. Connect with London\'s authentic Portuguese community through real experiences, cultural events, and family businesses that make you feel at home.'
+                  'Mais do que uma plataforma - somos a tua comunidade longe de casa. Conecta-te com a autêntica comunidade portuguesa de Londres através de experiências reais, eventos culturais e oportunidades profissionais que te fazem sentir em casa.' :
+                  'More than a platform - we\'re your community away from home. Connect with London\'s authentic Portuguese community through real experiences, cultural events, and business opportunities that make you feel at home.'
                 }
               </p>
               
@@ -590,8 +590,8 @@ export default function Pricing() {
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 {isPortuguese ? 
-                  'Mais do que estatísticas - somos uma família portuguesa crescente em Londres' :
-                  'More than statistics - we\'re a growing Portuguese family in London'
+                  'Mais do que estatísticas - somos uma comunidade portuguesa crescente em Londres' :
+                  'More than statistics - we\'re a growing Portuguese community in London'
                 }
               </p>
             </div>
@@ -614,12 +614,12 @@ export default function Pricing() {
           <div className="container-width px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                {isPortuguese ? 'Histórias da Nossa Família' : 'Stories from Our Family'}
+                {isPortuguese ? 'Histórias da Nossa Comunidade' : 'Stories from Our Community'}
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese ?
-                  'Ouça como outros portugueses encontraram o seu lugar em Londres através da nossa comunidade' :
-                  'Hear how other Portuguese found their place in London through our community'
+                  'Ouça como outros portugueses, profissionais e indivíduos encontraram o seu lugar em Londres através da nossa comunidade' :
+                  'Hear how other Portuguese individuals and professionals found their place in London through our community'
                 }
               </p>
             </div>
@@ -675,8 +675,8 @@ export default function Pricing() {
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese ? 
-                  'Criamos opções de pagamento que funcionam para famílias portuguesas, com descontos especiais e flexibilidade total' :
-                  'We\'ve created payment options that work for Portuguese families, with special discounts and full flexibility'
+                  'Criamos opções de pagamento que funcionam para todos os membros da comunidade portuguesa, com descontos especiais e flexibilidade total' :
+                  'We\'ve created payment options that work for all Portuguese community members, with special discounts and full flexibility'
                 }
               </p>
             </div>
@@ -697,19 +697,19 @@ export default function Pricing() {
               ))}
             </div>
 
-            {/* Family Pricing Special */}
+            {/* Group Pricing Special */}
             <div className="mt-16 max-w-4xl mx-auto">
               <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8">
                 <div className="text-center">
                   <HeartIconSolid className="w-12 h-12 text-primary-600 mx-auto mb-4" />
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    {isPortuguese ? 'Planos Familiares Especiais' : 'Special Family Plans'}
+                    {isPortuguese ? 'Planos Especiais para Grupos' : 'Special Group Plans'}
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="bg-white rounded-xl p-6">
                       <div className="text-3xl font-bold text-primary-600 mb-2">£20</div>
                       <div className="text-sm text-gray-600 mb-2">
-                        {isPortuguese ? 'Família (até 4 membros)' : 'Family (up to 4 members)'}
+                        {isPortuguese ? 'Grupo de Amigos (até 4 membros)' : 'Friend Group (up to 4 members)'}
                       </div>
                       <div className="text-xs text-green-600 font-medium">
                         {isPortuguese ? 'Poupa £28/mês' : 'Save £28/month'}
@@ -762,7 +762,7 @@ export default function Pricing() {
                       {isPortuguese ? 'Visitante' : 'Visitor'}
                     </th>
                     <th className="px-6 py-4 text-center text-sm font-semibold text-primary-600 bg-primary-50">
-                      {isPortuguese ? 'Família' : 'Family'}
+                      {isPortuguese ? 'Comunidade' : 'Community'}
                     </th>
                     <th className="px-6 py-4 text-center text-sm font-semibold text-purple-600">
                       {isPortuguese ? 'Embaixador' : 'Ambassador'}
@@ -914,8 +914,8 @@ export default function Pricing() {
               </h2>
               <p className="text-xl text-gray-600 mb-8">
                 {isPortuguese ?
-                  'Estamos tão confiantes de que vai adorar fazer parte da nossa família portuguesa que oferecemos uma garantia completa de 30 dias. Se não se sentir completamente em casa, devolvemos todo o dinheiro - sem perguntas.' :
-                  'We\'re so confident you\'ll love being part of our Portuguese family that we offer a complete 30-day guarantee. If you don\'t feel completely at home, we\'ll refund everything - no questions asked.'
+                  'Estamos tão confiantes de que vai adorar fazer parte da nossa comunidade portuguesa que oferecemos uma garantia completa de 30 dias. Se não se sentir completamente em casa, devolvemos todo o dinheiro - sem perguntas.' :
+                  'We\'re so confident you\'ll love being part of our Portuguese community that we offer a complete 30-day guarantee. If you don\'t feel completely at home, we\'ll refund everything - no questions asked.'
                 }
               </p>
               <div className="bg-white rounded-lg p-6 inline-block">
@@ -950,8 +950,8 @@ export default function Pricing() {
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese ?
-                  'Tudo o que precisa de saber sobre se juntar à família portuguesa de Londres' :
-                  'Everything you need to know about joining London\'s Portuguese family'
+                  'Tudo o que precisa de saber sobre se juntar à comunidade portuguesa de Londres' :
+                  'Everything you need to know about joining London\'s Portuguese community'
                 }
               </p>
             </div>
@@ -973,26 +973,26 @@ export default function Pricing() {
                 {
                   questionPt: "Posso alterar ou cancelar a minha adesão?",
                   questionEn: "Can I change or cancel my membership?",
-                  answerPt: "Absolutamente! Entendemos que as famílias portuguesas têm necessidades que mudam. Pode fazer upgrade, downgrade, ou cancelar a qualquer momento. Upgrades têm efeito imediato, cancelamentos mantêm-se ativos até ao fim do ciclo atual. Oferecemos também pausas temporárias para dificuldades financeiras.",
-                  answerEn: "Absolutely! We understand that Portuguese families have changing needs. You can upgrade, downgrade, or cancel anytime. Upgrades take effect immediately, cancellations remain active until the current cycle ends. We also offer temporary pauses for financial difficulties."
+                  answerPt: "Absolutamente! Entendemos que os membros da comunidade portuguesa têm necessidades que mudam. Pode fazer upgrade, downgrade, ou cancelar a qualquer momento. Upgrades têm efeito imediato, cancelamentos mantêm-se ativos até ao fim do ciclo atual. Oferecemos também pausas temporárias para dificuldades financeiras.",
+                  answerEn: "Absolutely! We understand that Portuguese community members have changing needs. You can upgrade, downgrade, or cancel anytime. Upgrades take effect immediately, cancellations remain active until the current cycle ends. We also offer temporary pauses for financial difficulties."
                 },
                 {
                   questionPt: "Que tipos de eventos culturais organizam?",
                   questionEn: "What types of cultural events do you organize?",
-                  answerPt: "Os nossos eventos celebram a verdadeira cultura portuguesa: noites de fado íntimas em restaurantes autênticos, festivais de Santo António, jantares familiares portugueses, workshops de culinária tradicional, eventos de networking empresarial português, e celebrações culturais para crianças aprenderem as suas raízes.",
-                  answerEn: "Our events celebrate true Portuguese culture: intimate fado nights at authentic restaurants, Santo António festivals, Portuguese family dinners, traditional cooking workshops, Portuguese business networking events, and cultural celebrations for children to learn their roots."
+                  answerPt: "Os nossos eventos celebram a verdadeira cultura portuguesa: noites de fado íntimas em restaurantes autênticos, festivais de Santo António, jantares comunitários portugueses, workshops de culinária tradicional, eventos de networking empresarial português, e celebrações culturais para todos conectarem com as suas raízes.",
+                  answerEn: "Our events celebrate true Portuguese culture: intimate fado nights at authentic restaurants, Santo António festivals, Portuguese community dinners, traditional cooking workshops, Portuguese business networking events, and cultural celebrations for everyone to connect with their roots."
                 },
                 {
-                  questionPt: "A minha informação e a da minha família estão seguras?",
-                  questionEn: "Is my family's information safe?",
-                  answerPt: "Sim. Somos compatíveis com GDPR e levamos a segurança da família portuguesa a sério. Os seus dados são encriptados, nunca vendidos, e você controla totalmente a sua privacidade. O nosso processo de verificação garante membros autênticos enquanto protege o anonimato da sua família.",
-                  answerEn: "Yes. We're GDPR compliant and take Portuguese family security seriously. Your data is encrypted, never sold, and you have complete control over your privacy. Our verification process ensures authentic members while protecting your family's anonymity."
+                  questionPt: "A minha informação pessoal está segura?",
+                  questionEn: "Is my personal information safe?",
+                  answerPt: "Sim. Somos compatíveis com GDPR e levamos a segurança da comunidade portuguesa a sério. Os seus dados são encriptados, nunca vendidos, e você controla totalmente a sua privacidade. O nosso processo de verificação garante membros autênticos enquanto protege a sua privacidade pessoal.",
+                  answerEn: "Yes. We're GDPR compliant and take Portuguese community security seriously. Your data is encrypted, never sold, and you have complete control over your privacy. Our verification process ensures authentic members while protecting your personal privacy."
                 },
                 {
                   questionPt: "E se não encontrar imediatamente a minha 'tribo' portuguesa?",
                   questionEn: "What if I don't immediately find my Portuguese 'tribe'?",
-                  answerPt: "Construir conexões significativas leva tempo, especialmente quando se trata de encontrar pessoas que entendem as tuas saudades de casa! Oferecemos uma garantia de 30 dias - se não te sentires em família, devolvemos tudo. A nossa equipa pode ajudar-te a encontrar o teu grupo ideal.",
-                  answerEn: "Building meaningful connections takes time, especially when finding people who understand your homesickness! We offer a 30-day guarantee - if you don't feel like family, we refund everything. Our team can help you find your ideal group."
+                  answerPt: "Construir conexões significativas leva tempo, especialmente quando se trata de encontrar pessoas que entendem as tuas saudades de casa! Oferecemos uma garantia de 30 dias - se não te sentires parte da comunidade, devolvemos tudo. A nossa equipa pode ajudar-te a encontrar o teu grupo ideal.",
+                  answerEn: "Building meaningful connections takes time, especially when finding people who understand your homesickness! We offer a 30-day guarantee - if you don't feel part of the community, we refund everything. Our team can help you find your ideal group."
                 },
                 {
                   questionPt: "Têm membros portugueses na minha área de Londres?",
@@ -1003,8 +1003,8 @@ export default function Pricing() {
                 {
                   questionPt: "Como sei se esta é a minha comunidade portuguesa?",
                   questionEn: "How do I know if this is my Portuguese community?",
-                  answerPt: "Comece grátis como Visitante para sentir a nossa cultura. Se tens raízes portuguesas, sentes saudades da família, queres que os teus filhos aprendam português, ou simplesmente procuras pessoas que entendem a tua jornada em Londres - provavelmente encontraste a tua casa.",
-                  answerEn: "Start free as a Visitor to feel our culture. If you have Portuguese roots, miss family, want your children to learn Portuguese, or simply seek people who understand your London journey - you've probably found your home."
+                  answerPt: "Comece grátis como Visitante para sentir a nossa cultura. Se tens raízes portuguesas, sentes saudades da cultura, queres melhorar o teu português, procuras oportunidades profissionais ou simplesmente procuras pessoas que entendem a tua jornada em Londres - provavelmente encontraste a tua comunidade.",
+                  answerEn: "Start free as a Visitor to feel our culture. If you have Portuguese roots, miss the culture, want to improve your Portuguese, seek professional opportunities or simply seek people who understand your London journey - you've probably found your community."
                 }
               ].map((faq, index) => (
                 <div key={index} className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow">
@@ -1041,21 +1041,21 @@ export default function Pricing() {
               <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium mb-6">
                 <HeartIconSolid className="w-4 h-4 mr-2" />
                 {isPortuguese ? 
-                  'Unidos pela Língua • Junta-te a 750+ famílias portuguesas' :
-                  'United by Language • Join 750+ Portuguese families'
+                  'Unidos pela Língua • Junta-te a 750+ membros da comunidade portuguesa' :
+                  'United by Language • Join 750+ Portuguese community members'
                 }
               </div>
               
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
                 {isPortuguese ? 
-                  'A Tua Família Portuguesa Está À Espera' :
-                  'Your Portuguese Family is Waiting'
+                  'A Tua Comunidade Portuguesa Está À Espera' :
+                  'Your Portuguese Community is Waiting'
                 }
               </h2>
               <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
                 {isPortuguese ?
-                  'Não passes mais um fim de semana a perguntar onde está a tua gente. Junta-te ao LusoTown e descobre a família portuguesa que tens procurado em Londres.' :
-                  'Don\'t spend another weekend wondering where your people are. Join LusoTown and discover the Portuguese family you\'ve been looking for in London.'
+                  'Não passes mais um fim de semana a perguntar onde está a tua gente. Junta-te ao LusoTown e descobre a comunidade portuguesa que tens procurado em Londres - seja para conexões sociais ou oportunidades profissionais.' :
+                  'Don\'t spend another weekend wondering where your people are. Join LusoTown and discover the Portuguese community you\'ve been looking for in London - whether for social connections or professional opportunities.'
                 }
               </p>
 
@@ -1098,11 +1098,11 @@ export default function Pricing() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <a href="/signup" className="inline-flex items-center gap-2 bg-white text-primary-600 hover:bg-gray-100 text-lg font-semibold px-8 py-4 rounded-xl group transform hover:scale-105 transition-all duration-200 shadow-lg">
-                  {isPortuguese ? 'Começar Grátis como Visitante' : 'Start Free as Visitor'}
+                  {isPortuguese ? 'Começar Grátis' : 'Start Free'}
                   <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a href="/login" className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-primary-600 text-lg font-semibold px-8 py-4 rounded-xl transform hover:scale-105 transition-all duration-200">
-                  {isPortuguese ? 'Já é da Família? Entrar' : 'Already Family? Sign In'}
+                  {isPortuguese ? 'Já é Membro? Entrar' : 'Already a Member? Sign In'}
                 </a>
               </div>
 

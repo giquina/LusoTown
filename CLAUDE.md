@@ -4,7 +4,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-LusoTown is a bilingual (English/Portuguese) adult community platform (18+) for Portuguese speakers in London and the UK. It serves as a social calendar and booking hub, connecting Portuguese-speaking adults for cultural activities, professional networking, and social experiences.
+LusoTown is a bilingual (English/Portuguese) social network serving two main audiences in London and the UK:
+
+1. **Social Users** – Individuals looking to explore London and the UK through music events, club nights, cultural activities, guided tours, and other social experiences.
+
+2. **Business Professionals** – Entrepreneurs, freelancers, and industry experts who want to attend professional events such as AI workshops, website creation masterclasses, and digital marketing training sessions — with a focus on the Portuguese business community in the UK, while remaining open to everyone.
+
+The platform also caters to **event creators, organisers, and hosts** — both social and business — who can:
+- Sign up and publish events
+- Promote their brand or services  
+- Monetise their events through ticket sales, sponsorships, or partnerships
+- Build long-term relationships with attendees
+- Use the platform's tools to narrate, guide, or host experiences
 
 **Tech Stack:** Next.js 14 (TypeScript), Tailwind CSS, Supabase, Vercel
 **Status:** Production-ready with 52+ pages, 99+ components, complete bilingual system, networking features, enhanced chauffeur services, and 10+ tech/business events
@@ -113,6 +124,33 @@ LusoTown/
 - Use `npx tsc --noEmit` for type checking
 - All components must have proper TypeScript interfaces
 
+## Content Guidelines and Platform Positioning
+
+**Dual-Audience Approach:**
+- Platform serves both social users and business professionals
+- Content should be professional, inclusive, and welcoming
+- Support both social experiences AND business networking opportunities
+- Highlight revenue opportunities for event organizers and hosts
+
+**Content Tone Requirements:**
+- Professional, inclusive, and welcoming tone across all content
+- No explicit age restriction mentions in general content
+- Family/children mentions only on specific relevant pages (Chauffeur Services, "Create Your Own Event/Trip" sections)
+- Clear messaging that platform offers both social experiences AND business networking
+- Support thriving ecosystem for both attendees AND organizers
+
+**Event Content Strategy:**
+- Social events: music events, club nights, cultural activities, guided tours, social experiences
+- Business events: AI workshops, website creation masterclasses, digital marketing training, professional networking
+- Portuguese community focus while remaining open and inclusive to everyone
+- Emphasize monetization opportunities for event creators (ticket sales, sponsorships, partnerships)
+
+**Audience-Specific Development:**
+- Social features: event discovery, cultural activities, entertainment, tours
+- Business features: professional networking, skill development, entrepreneurship, industry workshops
+- Creator tools: event publishing, brand promotion, revenue generation, attendee relationship building
+- Bilingual support for all audience segments
+
 ## Core Context Providers
 
 **LanguageContext:** Global language state (EN/PT) with localStorage persistence
@@ -181,9 +219,10 @@ The platform features a comprehensive luxury chauffeur and security transportati
 
 **Personal Services:**
 - Special occasion transportation
-- Family gathering coordination
+- Family gathering coordination (including family-friendly events and occasions)
 - Shopping tours to Portuguese stores
 - Medical appointment assistance for elderly Portuguese speakers
+- Family tour packages for Portuguese cultural sites in London
 
 ## LusoTown Connections Networking System
 
@@ -486,8 +525,11 @@ The LusoTown platform has identified 10 key administrative and management positi
 3. Always test both English and Portuguese language modes
 4. Verify responsive design on mobile/desktop
 5. Test networking features at /my-network page
-6. Test chauffeur services at /chauffeur page
+6. Test chauffeur services at /chauffeur page (including family-friendly content)
 7. Verify event-based connection functionality
+8. Test dual-audience content (social users and business professionals)
+9. Verify professional, inclusive, and welcoming tone across all content
+10. Ensure event creator monetization features work correctly
 
 **Automation Scripts (Project Root):**
 - `./scripts/update-claude-md.sh`: Update documentation with current stats

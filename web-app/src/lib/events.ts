@@ -3,6 +3,7 @@
 import { User } from '@/lib/auth'
 import { supabase, supabaseUrl, supabaseAnonKey } from '@/lib/supabase'
 import { getImageWithFallback } from '@/lib/profileImages'
+import { businessEventsLondon } from '@/lib/business-events-london'
 
 export interface EventAttendee {
   id: string
@@ -221,6 +222,26 @@ export const EVENT_CATEGORIES = {
   'Seasonal & Special': {
     icon: 'Star',
     subcategories: ['Holiday Events', 'Seasonal Activities', 'Celebrations', 'Themed Parties']
+  },
+  'Technology & AI': {
+    icon: 'Monitor',
+    subcategories: ['AI Workshops', 'Coding Classes', 'Tech Networking', 'Digital Skills']
+  },
+  'Business & Entrepreneurship': {
+    icon: 'TrendingUp',
+    subcategories: ['Business Strategy', 'Entrepreneurship', 'Startup Events', 'Investment']
+  },
+  'Finance & Investment': {
+    icon: 'DollarSign',
+    subcategories: ['Property Investment', 'Financial Planning', 'Investment Strategy', 'Wealth Building']
+  },
+  'Digital Marketing': {
+    icon: 'Smartphone',
+    subcategories: ['E-commerce', 'Social Media', 'Online Marketing', 'Content Creation']
+  },
+  'Executive Networking': {
+    icon: 'Users',
+    subcategories: ['C-Suite Events', 'Leadership', 'Executive Dining', 'Strategic Partnerships']
   }
 } as const
 
@@ -1892,7 +1913,43 @@ export class EventService {
         communityGuidelines: true,
         verifiedEvent: true,
         reportCount: 0
-      }
+      },
+      // Add business events from London business events module
+      ...businessEventsLondon.map(businessEvent => ({
+        ...businessEvent,
+        longDescription: businessEvent.longDescription || businessEvent.description,
+        photos: [],
+        attendees: [],
+        waitlist: [],
+        reviews: [],
+        averageRating: 4.5,
+        totalReviews: 0,
+        accessibility: businessEvent.accessibility || ['Accessible venue', 'Professional environment'],
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+        createdBy: businessEvent.hostId,
+        isRecurring: false,
+        recurringPattern: undefined,
+        views: 0,
+        favorites: 0,
+        shares: 0,
+        communityGuidelines: true,
+        verifiedEvent: true,
+        reportCount: 0,
+        coordinates: businessEvent.coordinates || { lat: 51.5074, lng: -0.1278 },
+        subcategory: businessEvent.subcategory || undefined,
+        hostImage: undefined,
+        minAttendees: businessEvent.minAttendees || 1,
+        currency: businessEvent.currency || 'GBP',
+        whatToBring: businessEvent.whatToBring || [],
+        dresscode: businessEvent.dresscode || 'Smart casual',
+        ageRestriction: businessEvent.ageRestriction || '18+',
+        skillLevel: (businessEvent.skillLevel as 'beginner' | 'intermediate' | 'advanced' | 'all') || 'all',
+        allowWaitlist: businessEvent.allowWaitlist !== false,
+        requiresApproval: businessEvent.requiresApproval || false,
+        refundPolicy: businessEvent.refundPolicy || 'Standard refund policy applies',
+        lastBookingTime: businessEvent.lastBookingTime || '24'
+      } as Event))
     ]
     
     this.rsvps = [

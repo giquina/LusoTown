@@ -369,8 +369,8 @@ export default function EventsPage() {
               >
                 {activeTab === 'events'
                   ? (isPortuguese 
-                      ? 'Para falantes de português em todo o Reino Unido, com foco principal em Londres - reserve experiências e viva a vida junto com outros falantes de português. De museus londrinos a noites de concertos, jogos de futebol a escapadas de fim de semana - seu calendário social espera!'
-                      : 'For Portuguese speakers across the UK, with main focus on London - book experiences and live life together with fellow Portuguese speakers. From London museums to concert nights, football matches to weekend getaways - your social calendar awaits!')
+                      ? 'Para profissionais portugueses em Londres e no Reino Unido - participe em workshops de negócios, eventos culturais e experiências sociais. De workshops de IA a networking executivo, do fado aos investimentos imobiliários - seu desenvolvimento profissional e pessoal espera!'
+                      : 'For Portuguese professionals in London and across the UK - join business workshops, cultural events, and social experiences. From AI workshops to executive networking, from fado to property investment - your professional and personal development awaits!')
                   : (isPortuguese 
                       ? 'Reserve experiências exclusivas com falantes de português em todo o Reino Unido. Desde grupos especializados para mulheres 30+ e 40+ até experiências familiares - encontre sua comunidade e explore o Reino Unido juntos.'
                       : 'Book exclusive group experiences with Portuguese speakers across the UK. From specialized groups for Women 30+ and 40+ to family-friendly activities - find your community and explore the UK together.')
@@ -496,10 +496,10 @@ export default function EventsPage() {
                   {activeTab === 'events' ? (
                     /* Event Quick Filters */
                     [
-                      { key: 'museums', label: '🏛️ Museums', description: 'Museum tours with Portuguese guides' },
-                      { key: 'concerts', label: '🎵 Concerts', description: 'Music & concert nights' },
-                      { key: 'sports', label: '⚽ Sports', description: 'Football matches & sports events' },
-                      { key: 'trips', label: '🚌 Weekend Trips', description: 'Day trips & getaways' },
+                      { key: 'Technology & AI', label: '🤖 AI/Tech', description: 'AI workshops and technology training' },
+                      { key: 'Business & Entrepreneurship', label: '🚀 Business', description: 'Entrepreneurship and business scaling' },
+                      { key: 'Finance & Investment', label: '💰 Investment', description: 'Property and financial investment' },
+                      { key: 'Digital Marketing', label: '📱 Marketing', description: 'E-commerce and digital marketing' },
                       { key: 'cultural', label: '🎭 Cultural', description: 'Cultural experiences & shows' },
                       { key: 'social', label: '🥂 Social', description: 'Social gatherings & networking' }
                     ].map((filter) => (

@@ -232,7 +232,7 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
           {/* Header: Title & Price */}
           <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4">
             <div className="flex-1 min-w-0 order-2 sm:order-1">
-              <h3 className="font-bold text-lg sm:text-xl text-gray-900 mb-2 line-clamp-2 group-hover:text-primary-600 transition-colors leading-tight break-words">
+              <h3 className="font-bold text-lg sm:text-xl text-gray-900 mb-2 group-hover:text-primary-600 transition-colors leading-tight break-words min-h-[3.5rem] flex items-start">
                 {event.title}
               </h3>
               <p className="text-gray-600 text-sm line-clamp-3 leading-relaxed break-words">
