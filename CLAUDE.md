@@ -46,6 +46,12 @@ npx tsc --noEmit    # Type check without emitting files
 
 **Testing:** No test framework configured. Use manual testing via local development server.
 
+**TypeScript Configuration:**
+```bash
+npx tsc --noEmit    # Check TypeScript errors without building
+```
+Note: `ignoreBuildErrors: true` is set in next.config.js for production builds.
+
 **Demo Login:**
 - URL: http://localhost:3000/login
 - Email: demo@lusotown.com
@@ -119,6 +125,12 @@ LusoTown/
 - Translation files located in `src/i18n/`
 - Never hardcode English-only text in components
 
+**Code Quality & Performance:**
+- TypeScript errors are ignored during builds (`ignoreBuildErrors: true`) but should be checked with `npx tsc --noEmit`
+- ESLint runs during builds but warnings don't block deployment
+- Custom webpack configuration optimizes chunk splitting for development and production
+- Images are optimized with WebP/AVIF support from Unsplash domains
+
 **Mobile-First UI Patterns:**
 - All card sections must display 2 items per line on mobile (`grid-cols-2 lg:grid-cols-3/4`)
 - **2-Column Responsive Layouts**: Updated grid systems to use `md:grid-cols-2` instead of `lg:grid-cols-2` for better medium screen experience
@@ -136,10 +148,11 @@ LusoTown/
 - Use localStorage for state persistence
 
 **Static Export Configuration:**
-- Static export currently DISABLED due to dynamic routes complexity
+- Static export currently DISABLED due to dynamic routes complexity (see next.config.js line 15-16)
 - Can be re-enabled after refactoring dynamic routes to use server components
 - Images optimized with WebP/AVIF support (`unoptimized: false`)
-- All pages use trailing slashes
+- All pages use trailing slashes (`trailingSlash: true`)
+- Supports Unsplash image domains for content
 
 **TypeScript Configuration:**
 - `ignoreBuildErrors: true` in Next.js config
@@ -558,6 +571,12 @@ The LusoTown platform has identified 10 key administrative and management positi
 8. Test dual-audience content (social users and business professionals)
 9. Verify professional, inclusive, and welcoming tone across all content
 10. Ensure event creator monetization features work correctly
+
+**Common Development Tasks:**
+- **Fix TypeScript errors**: `npx tsc --noEmit` (errors are ignored in builds but should be addressed)
+- **Debug build issues**: Check webpack configuration in next.config.js
+- **Test responsive layouts**: Ensure `grid-cols-1 md:grid-cols-2` pattern is used for 2-column layouts
+- **Add new Portuguese content**: Always provide both English and Portuguese translations
 
 **Automation Scripts (Project Root):**
 - `./scripts/update-claude-md.sh`: Update documentation with current stats
