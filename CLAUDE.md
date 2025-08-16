@@ -18,7 +18,7 @@ The platform also caters to **event creators, organisers, and hosts** — both s
 - Use the platform's tools to narrate, guide, or host experiences
 
 **Tech Stack:** Next.js 14 (TypeScript), Tailwind CSS, Supabase, Vercel
-**Status:** Production-ready with 61+ pages, 117+ components, complete bilingual system, networking features, SIA-compliant transport services, annual membership pricing model (£25/year), mobile-optimized 2x2 grids, London & UK focus for Portuguese speakers, and comprehensive subscription enforcement
+**Status:** Production-ready with 61+ pages, 118+ components, complete bilingual system, networking features, enhanced welcome onboarding, security transport services, annual membership pricing model (£25/year), mobile-optimized 2-column layouts, compact logo branding, and multi-step user preferences collection
 
 ## Development Commands
 
@@ -568,7 +568,7 @@ Documentation: `.claude/AGENTS_GUIDE.md`
 - `src/components/Header.tsx`: Navigation (includes My Network link)
 - `src/components/EventFeed.tsx`: Event feed
 - `src/components/Cart.tsx`: Shopping cart
-- `src/components/WelcomeModal.tsx`: Bilingual welcome
+- `src/components/WelcomeModal.tsx`: Multi-step welcome with language selection (EN UK/US, PT Portugal/Brazil) and role selection (Organizer vs Member)
 
 **Networking Components:**
 - `src/components/NetworkingContext.tsx`: Core networking state management
@@ -634,6 +634,29 @@ The LusoTown platform has identified 10 key administrative and management positi
 - **Bilingual Presentation**: Complete English/Portuguese job descriptions for accessibility
 
 **Documentation Reference:** `/workspaces/LusoTown/LUSOTOWN_ADMINISTRATIVE_ROLES.md` contains complete role specifications including original salary research.
+
+## Recent Updates (August 2025)
+
+### Enhanced User Onboarding & Branding
+- **Multi-Step Welcome Modal**: Completely rebuilt welcome experience with 3-step process:
+  1. Community welcome and introduction
+  2. Language selection (English UK, English US, Portuguese Portugal, Portuguese Brazil)
+  3. Role selection (Event Organizer/Promoter vs Free Community Member)
+  - Progress indicator and step navigation
+  - User preferences stored in localStorage
+  - Enhanced community introduction messaging
+
+- **Compact Logo Enhancement**: Added "London" tagline to compact logo variant for consistent branding across all logo sizes
+
+### Platform Optimization
+- **Event Cards Layout**: Fixed event card layouts with consistent heights, proper title/subtitle visibility, and aligned CTAs at bottom
+- **Professional Grid Systems**: Updated to 2-column responsive layouts using `md:grid-cols-2` for better medium screen experience
+- **Mobile-First Design**: Optimized for professional appearance with uniform card heights and responsive gap spacing
+
+### Technical Improvements
+- **Stripe API Initialization**: Fixed deployment issues with proper API initialization and fallback demo keys
+- **Translation System**: Resolved JSON syntax errors and enhanced bilingual content
+- **Git Workflow**: All red files resolved, clean repository state maintained
 
 ## Development Workflow
 
