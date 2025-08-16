@@ -112,11 +112,11 @@ export default function Home() {
                   </blockquote>
                 </div>
                 
-                {/* 2-Column Grid Layout for better readability */}
+                {/* 2-Column Grid Layout for better readability - Fixed for mobile text truncation */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-20">
                   {/* Find & Join Events */}
-                  <div className="group relative h-full">
-                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+                  <div className="group relative">
+                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
                       <div className="absolute inset-0 bg-gradient-to-br from-secondary-50/60 via-transparent to-accent-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
                       
                       <div className="relative z-10 flex flex-col h-full">
@@ -126,10 +126,10 @@ export default function Home() {
                         <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3 lg:mb-4 group-hover:text-secondary-600 transition-colors duration-300">
                           {t('what-you-can-do.events.title')}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-sm">
+                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-sm break-words">
                           {t('what-you-can-do.events.description')}
                         </p>
-                        <div className="text-xs text-gray-500 mb-3 lg:mb-4 font-medium">
+                        <div className="text-xs text-gray-500 mb-3 lg:mb-4 font-medium break-words">
                           {t('what-you-can-do.events.locations')}
                         </div>
                         <a 
@@ -144,8 +144,8 @@ export default function Home() {
                   </div>
 
                   {/* Create Your Own Groups */}
-                  <div className="group relative h-full">
-                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+                  <div className="group relative">
+                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
                       <div className="absolute inset-0 bg-gradient-to-br from-accent-50/60 via-transparent to-coral-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
                       
                       <div className="relative z-10 flex flex-col h-full">
@@ -155,10 +155,10 @@ export default function Home() {
                         <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3 lg:mb-4 group-hover:text-accent-600 transition-colors duration-300">
                           {t('what-you-can-do.groups.title')}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-sm">
+                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-sm break-words">
                           {t('what-you-can-do.groups.description')}
                         </p>
-                        <div className="text-xs text-gray-500 mb-3 lg:mb-4 font-medium">
+                        <div className="text-xs text-gray-500 mb-3 lg:mb-4 font-medium break-words">
                           {t('what-you-can-do.groups.examples')}
                         </div>
                         <a 
@@ -173,8 +173,8 @@ export default function Home() {
                   </div>
 
                   {/* Stay Updated on LusoFeed */}
-                  <div className="group relative h-full">
-                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+                  <div className="group relative">
+                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
                       <div className="absolute inset-0 bg-gradient-to-br from-coral-50/60 via-transparent to-secondary-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
                       
                       <div className="relative z-10 flex flex-col h-full">
@@ -184,10 +184,10 @@ export default function Home() {
                         <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3 lg:mb-4 group-hover:text-coral-500 transition-colors duration-300">
                           {t('what-you-can-do.feed.title')}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-sm">
+                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-sm break-words">
                           {t('what-you-can-do.feed.description')}
                         </p>
-                        <div className="text-xs text-gray-500 mb-3 lg:mb-4 font-medium">
+                        <div className="text-xs text-gray-500 mb-3 lg:mb-4 font-medium break-words">
                           {t('what-you-can-do.feed.features')}
                         </div>
                         <a 
@@ -202,8 +202,8 @@ export default function Home() {
                   </div>
 
                   {/* Save Your Favourites */}
-                  <div className="group relative h-full">
-                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+                  <div className="group relative">
+                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
                       <div className="absolute inset-0 bg-gradient-to-br from-action-50/60 via-transparent to-premium-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
                       
                       <div className="relative z-10 flex flex-col h-full">
@@ -213,10 +213,10 @@ export default function Home() {
                         <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3 lg:mb-4 group-hover:text-action-600 transition-colors duration-300">
                           {t('what-you-can-do.favorites.title')}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-sm">
+                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-sm break-words">
                           {t('what-you-can-do.favorites.description')}
                         </p>
-                        <div className="text-xs text-gray-500 mb-3 lg:mb-4 font-medium">
+                        <div className="text-xs text-gray-500 mb-3 lg:mb-4 font-medium break-words">
                           {t('what-you-can-do.favorites.types')}
                         </div>
                         <a 
@@ -231,8 +231,8 @@ export default function Home() {
                   </div>
 
                   {/* Share Your Expertise - NEW */}
-                  <div className="group relative h-full">
-                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+                  <div className="group relative">
+                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
                       <div className="absolute inset-0 bg-gradient-to-br from-premium-50/60 via-transparent to-coral-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
                       
                       <div className="relative z-10 flex flex-col h-full">
@@ -242,10 +242,10 @@ export default function Home() {
                         <h3 className="text-lg lg:text-xl font-bold text-gray-900 mb-3 lg:mb-4 group-hover:text-premium-600 transition-colors duration-300">
                           {t('what-you-can-do.host.title')}
                         </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-sm">
+                        <p className="text-gray-600 leading-relaxed mb-4 lg:mb-6 flex-grow text-sm break-words">
                           {t('what-you-can-do.host.description')}
                         </p>
-                        <div className="text-xs text-gray-500 mb-3 lg:mb-4 font-medium">
+                        <div className="text-xs text-gray-500 mb-3 lg:mb-4 font-medium break-words">
                           {t('what-you-can-do.host.examples')}
                         </div>
                         <a 
