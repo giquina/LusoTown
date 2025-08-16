@@ -18,7 +18,7 @@ The platform also caters to **event creators, organisers, and hosts** — both s
 - Use the platform's tools to narrate, guide, or host experiences
 
 **Tech Stack:** Next.js 14 (TypeScript), Tailwind CSS, Supabase, Vercel
-**Status:** Production-ready with 52+ pages, 99+ components, complete bilingual system, networking features, enhanced chauffeur services, and 10+ tech/business events
+**Status:** Production-ready with 52+ pages, 99+ components, complete bilingual system, networking features, enhanced chauffeur services, annual membership pricing model (£25/year), and 10+ tech/business events
 
 ## Development Commands
 
@@ -86,12 +86,18 @@ LusoTown/
 - Semantic color naming (primary, secondary, accent, action, premium, coral)
 - Custom animations (fadeInUp, fadeIn, scaleIn, slideInRight)
 - Responsive breakpoints: xs, sm, md, lg, xl, 2xl
+- Mobile-first design with consistent 2-per-line card layouts (`grid-cols-2 lg:grid-cols-3/4`)
+- Uniform card heights and responsive gap spacing for optimal mobile experience
 
 **Component Patterns:**
 - TypeScript interfaces for all props
 - Client components with 'use client' directive
 - Bilingual content support via useLanguage hook
 - Consistent naming: PascalCase for components
+- Mobile-optimized layouts with 2-per-line card grids
+- Fixed card heights with `h-[400px] sm:h-[450px] lg:h-[500px]` pattern
+- Concise CTA buttons (2 words max: "Book Now", "View More", "Learn More")
+- "From £XX" pricing format for transparency
 
 **Data & Backend:**
 - Supabase for database, auth, storage
@@ -122,7 +128,7 @@ LusoTown/
 **Static Export Configuration:**
 - Static export currently DISABLED due to dynamic routes complexity
 - Can be re-enabled after refactoring dynamic routes to use server components
-- Images configured as unoptimized (`unoptimized: true`)
+- Images optimized with WebP/AVIF support (`unoptimized: false`)
 - All pages use trailing slashes
 
 **TypeScript Configuration:**
