@@ -152,41 +152,45 @@ const testimonials = [
     name: 'Maria Santos',
     age: 34,
     location: 'Stockwell, Londres',
-    membership: 'Comunidade',
-    quote: 'O LusoTown mudou a minha vida em Londres. Agora tenho amigos portugueses e participo em eventos culturais regularmente. Encontrei a minha comunidade aqui.',
-    quoteEn: 'LusoTown changed my life in London. Now I have Portuguese friends and participate in cultural events regularly. I found my community here.',
+    membership: 'Membro Anual',
+    quote: 'Por £25, encontrei uma família portuguesa em Londres. Já participei em 15 eventos este ano - noites de fado, workshops de pastéis de nata, networking. O valor é incrível.',
+    quoteEn: 'For £25, I found a Portuguese family in London. I\'ve attended 15 events this year - fado nights, pastéis de nata workshops, networking. The value is incredible.',
     rating: 5,
-    cultural: 'Profissional de marketing, originária do Porto'
+    cultural: 'Profissional de marketing, originária do Porto',
+    roi: '£280+ valor por £25 investidos'
   },
   {
     name: 'João Rodrigues',
     age: 42,
     location: 'Vauxhall, Londres',
-    membership: 'Embaixador',
-    quote: 'Como empresário português, o LusoTown conectou-me com clientes e fornecedores da nossa comunidade. Crescemos juntos, apoiando-nos mutuamente.',
-    quoteEn: 'As a Portuguese entrepreneur, LusoTown connected me with clients and suppliers from our community. We grow together, supporting each other.',
+    membership: 'Membro Anual',
+    quote: 'Como empresário português, consegui 3 novos clientes através da rede LusoTown. A adesão pagou-se milhares de vezes. Comunidade é investimento, não custo.',
+    quoteEn: 'As a Portuguese entrepreneur, I gained 3 new clients through the LusoTown network. The membership paid for itself thousands of times over. Community is investment, not cost.',
     rating: 5,
-    cultural: 'Proprietário de restaurante, de Lisboa'
+    cultural: 'Proprietário de restaurante, de Lisboa',
+    roi: '£15,000+ em novos negócios'
   },
   {
     name: 'Ana Ferreira',
     age: 29,
     location: 'Camden, Londres',
-    membership: 'Comunidade',
-    quote: 'Estava com saudades de casa até encontrar o LusoTown. Agora tenho uma rede de amigos que entende a minha jornada profissional e cultural. Sinto-me em casa em Londres.',
-    quoteEn: 'I was homesick until I found LusoTown. Now I have a network of friends who understand my professional and cultural journey. I feel at home in London.',
+    membership: 'Membro Anual',
+    quote: 'Combati a solidão por £2 por mês. Encontrei amigos portugueses genuínos, um grupo de caminhadas, e até um mentor de carreira. Melhor investimento da minha vida.',
+    quoteEn: 'I beat loneliness for £2 per month. Found genuine Portuguese friends, a hiking group, and even a career mentor. Best investment of my life.',
     rating: 5,
-    cultural: 'Jovem profissional, do Algarve'
+    cultural: 'Jovem profissional, do Algarve',
+    roi: 'Bem-estar mental: inestimável'
   },
   {
     name: 'Carlos Silva',
     age: 55,
     location: 'South Kensington, Londres',
-    membership: 'Embaixador',
-    quote: 'Há 20 anos em Londres, nunca me senti tão conectado com a comunidade portuguesa. O LusoTown conectou-me com outros profissionais e amantes da cultura.',
-    quoteEn: 'After 20 years in London, I\'ve never felt so connected to the Portuguese community. LusoTown connected me with other professionals and culture enthusiasts.',
+    membership: 'Membro Anual',
+    quote: 'Há 20 anos em Londres, o LusoTown finalmente me conectou à comunidade portuguesa. £25 por acesso a eventos premium que custam centenas? Sem dúvida o melhor valor.',
+    quoteEn: 'After 20 years in London, LusoTown finally connected me to the Portuguese community. £25 for access to premium events that cost hundreds? Absolutely the best value.',
     rating: 5,
-    cultural: 'Consultor sénior, de Coimbra'
+    cultural: 'Consultor sénior, de Coimbra',
+    roi: '£400+ valor em eventos e networking'
   }
 ]
 
@@ -546,11 +550,16 @@ export default function Pricing() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {testimonials.map((testimonial, index) => (
-                <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  <div className="flex items-center mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <StarIconSolid key={i} className="w-5 h-5 text-yellow-400" />
-                    ))}
+                <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-primary-500">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <StarIconSolid key={i} className="w-5 h-5 text-yellow-400" />
+                      ))}
+                    </div>
+                    <div className="text-xs bg-gradient-to-r from-green-100 to-primary-100 text-green-700 px-3 py-1 rounded-full font-medium">
+                      {testimonial.roi}
+                    </div>
                   </div>
                   <blockquote className="text-gray-700 mb-6 italic text-lg leading-relaxed">
                     "{isPortuguese ? testimonial.quote : testimonial.quoteEn}"
@@ -629,25 +638,34 @@ export default function Pricing() {
                     <div className="bg-white rounded-xl p-6">
                       <div className="text-3xl font-bold text-primary-600 mb-2">£20</div>
                       <div className="text-sm text-gray-600 mb-2">
-                        {isPortuguese ? 'Grupo de Amigos (até 4 membros)' : 'Friend Group (up to 4 members)'}
+                        {isPortuguese ? 'Grupo de 4 pessoas/ano' : 'Group of 4 people/year'}
                       </div>
                       <div className="text-xs text-green-600 font-medium">
-                        {isPortuguese ? 'Poupa £25/ano' : 'Save £25/year'}
+                        {isPortuguese ? 'Poupa £5 por pessoa!' : 'Save £5 per person!'}
+                      </div>
+                      <div className="text-xs text-gray-500 mt-1">
+                        {isPortuguese ? '(£25 individual vs £20 grupo)' : '(£25 individual vs £20 group)'}
                       </div>
                     </div>
                     <div className="bg-white rounded-xl p-6">
-                      <div className="text-3xl font-bold text-secondary-600 mb-2">£6</div>
+                      <div className="text-3xl font-bold text-secondary-600 mb-2">£12.50</div>
                       <div className="text-sm text-gray-600 mb-2">
                         {isPortuguese ? 'Estudantes Portugueses' : 'Portuguese Students'}
                       </div>
                       <div className="text-xs text-green-600 font-medium">50% {isPortuguese ? 'desconto' : 'discount'}</div>
+                      <div className="text-xs text-gray-500 mt-1">
+                        {isPortuguese ? '(Com comprovativo estudante)' : '(With student proof)'}
+                      </div>
                     </div>
                     <div className="bg-white rounded-xl p-6">
-                      <div className="text-3xl font-bold text-purple-600 mb-2">£8</div>
+                      <div className="text-3xl font-bold text-purple-600 mb-2">£17.50</div>
                       <div className="text-sm text-gray-600 mb-2">
                         {isPortuguese ? 'Sénior (60+)' : 'Senior (60+)'}
                       </div>
                       <div className="text-xs text-green-600 font-medium">30% {isPortuguese ? 'desconto' : 'discount'}</div>
+                      <div className="text-xs text-gray-500 mt-1">
+                        {isPortuguese ? '(Com comprovativo idade)' : '(With age verification)'}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -661,161 +679,240 @@ export default function Pricing() {
           <div className="container-width">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                {isPortuguese ? 'Compare os Benefícios da Comunidade' : 'Compare Community Benefits'}
+                {isPortuguese ? 'O Que Está Incluído na Sua Adesão' : 'What\'s Included in Your Membership'}
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese ?
-                  'Vê exactamente como cada nível de adesão te ajuda a conectar com a comunidade portuguesa' :
-                  'See exactly how each membership level helps you connect with the Portuguese community'
+                  'Com a adesão anual de £25, desbloqueia o acesso completo à comunidade portuguesa de Londres' :
+                  'With your £25 annual membership, unlock full access to London\'s Portuguese community'
                 }
               </p>
             </div>
 
-            <div className="overflow-x-auto">
-              <table className="w-full bg-white rounded-xl shadow-lg overflow-hidden">
-                <thead className="bg-gray-50">
-                  <tr>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
-                      {isPortuguese ? 'Benefícios da Comunidade' : 'Community Benefits'}
-                    </th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-gray-900">
-                      {isPortuguese ? 'Visitante' : 'Visitor'}
-                    </th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-primary-600 bg-primary-50">
-                      {isPortuguese ? 'Comunidade' : 'Community'}
-                    </th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold text-purple-600">
-                      {isPortuguese ? 'Embaixador' : 'Ambassador'}
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-200">
-                  {[
-                    { 
-                      feature: isPortuguese ? 'Eventos Portugueses por Mês' : 'Portuguese Events per Month', 
-                      free: '2 RSVPs', 
-                      core: isPortuguese ? 'Ilimitado' : 'Unlimited', 
-                      premium: isPortuguese ? 'Ilimitado + VIP' : 'Unlimited + VIP' 
-                    },
-                    { 
-                      feature: isPortuguese ? 'Noites de Fado Exclusivas' : 'Exclusive Fado Nights', 
-                      free: false, 
-                      core: true, 
-                      premium: isPortuguese ? 'VIP + Frente' : 'VIP + Front Row' 
-                    },
-                    { 
-                      feature: isPortuguese ? 'Diretório de Negócios Portugueses' : 'Portuguese Business Directory', 
-                      free: isPortuguese ? 'Básico' : 'Basic', 
-                      core: isPortuguese ? 'Completo' : 'Full Access', 
-                      premium: isPortuguese ? 'Destaque Premium' : 'Premium Listing' 
-                    },
-                    { 
-                      feature: isPortuguese ? 'Grupos Privados da Comunidade' : 'Private Community Groups', 
-                      free: isPortuguese ? 'Apenas públicos' : 'Public only', 
-                      core: isPortuguese ? 'Todos os grupos' : 'All groups', 
-                      premium: isPortuguese ? 'Criar grupos' : 'Create groups' 
-                    },
-                    { 
-                      feature: isPortuguese ? 'Intercâmbio Linguístico' : 'Language Exchange', 
-                      free: false, 
-                      core: true, 
-                      premium: isPortuguese ? 'Tutor pessoal' : 'Personal tutor' 
-                    },
-                    { 
-                      feature: isPortuguese ? 'Kit Cultural Mensal' : 'Monthly Cultural Package', 
-                      free: false, 
-                      core: false, 
-                      premium: true 
-                    },
-                    { 
-                      feature: isPortuguese ? 'Apoio em Português' : 'Portuguese Support', 
-                      free: isPortuguese ? 'Email apenas' : 'Email only', 
-                      core: isPortuguese ? 'Prioritário' : 'Priority', 
-                      premium: isPortuguese ? 'Concierge pessoal' : 'Personal concierge' 
-                    },
-                    { 
-                      feature: isPortuguese ? 'Criação de Eventos' : 'Event Creation', 
-                      free: false, 
-                      core: false, 
-                      premium: true 
-                    },
-                    { 
-                      feature: isPortuguese ? 'Mentoria para Novatos' : 'Newcomer Mentorship', 
-                      free: false, 
-                      core: isPortuguese ? 'Receber apoio' : 'Receive support', 
-                      premium: isPortuguese ? 'Dar e receber' : 'Give & receive' 
-                    }
-                  ].map((row, index) => (
-                    <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                      <td className="px-6 py-4 text-sm text-gray-900 font-medium">{row.feature}</td>
-                      <td className="px-6 py-4 text-center">
-                        {typeof row.free === 'boolean' ? (
-                          row.free ? (
-                            <CheckIconSolid className="w-5 h-5 text-green-500 mx-auto" />
-                          ) : (
-                            <XMarkIcon className="w-5 h-5 text-gray-400 mx-auto" />
-                          )
-                        ) : (
-                          <span className="text-sm text-gray-600">{row.free}</span>
-                        )}
-                      </td>
-                      <td className="px-6 py-4 text-center bg-primary-50">
-                        {typeof row.core === 'boolean' ? (
-                          row.core ? (
-                            <CheckIconSolid className="w-5 h-5 text-green-500 mx-auto" />
-                          ) : (
-                            <XMarkIcon className="w-5 h-5 text-gray-400 mx-auto" />
-                          )
-                        ) : (
-                          <span className="text-sm text-primary-700 font-medium">{row.core}</span>
-                        )}
-                      </td>
-                      <td className="px-6 py-4 text-center">
-                        {typeof row.premium === 'boolean' ? (
-                          row.premium ? (
-                            <CheckIconSolid className="w-5 h-5 text-green-500 mx-auto" />
-                          ) : (
-                            <XMarkIcon className="w-5 h-5 text-gray-400 mx-auto" />
-                          )
-                        ) : (
-                          <span className="text-sm text-green-700 font-medium">{row.premium}</span>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-8 py-6">
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold mb-2">
+                      {isPortuguese ? 'Adesão Anual LusoTown' : 'LusoTown Annual Membership'}
+                    </h3>
+                    <div className="text-4xl font-bold">£25 / {isPortuguese ? 'ano' : 'year'}</div>
+                    <p className="text-lg opacity-90 mt-2">
+                      {isPortuguese ? 'Acesso completo à comunidade portuguesa' : 'Full access to Portuguese community'}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {[
+                      {
+                        category: isPortuguese ? 'Eventos & Experiências' : 'Events & Experiences',
+                        features: isPortuguese ? [
+                          'Participação ilimitada em eventos portugueses',
+                          'Noites de fado exclusivas em locais autênticos',
+                          'Festivais Santo António e celebrações culturais',
+                          'Workshops culinários tradicionais portugueses',
+                          'Tours culturais por Londres com guias portugueses'
+                        ] : [
+                          'Unlimited participation in Portuguese events',
+                          'Exclusive fado nights at authentic venues',
+                          'Santo António festivals and cultural celebrations',
+                          'Traditional Portuguese cooking workshops',
+                          'Cultural tours of London with Portuguese guides'
+                        ]
+                      },
+                      {
+                        category: isPortuguese ? 'Networking & Negócios' : 'Networking & Business',
+                        features: isPortuguese ? [
+                          'Diretório completo de negócios portugueses',
+                          'Eventos de networking profissional',
+                          'Grupos privados por setor/interesse',
+                          'Mentoria para novos membros da comunidade',
+                          'Oportunidades de parceria empresarial'
+                        ] : [
+                          'Complete Portuguese business directory',
+                          'Professional networking events',
+                          'Private groups by sector/interest',
+                          'Mentorship for new community members',
+                          'Business partnership opportunities'
+                        ]
+                      },
+                      {
+                        category: isPortuguese ? 'Cultura & Tradições' : 'Culture & Traditions',
+                        features: isPortuguese ? [
+                          'Programas de intercâmbio linguístico',
+                          'Preservação das tradições portuguesas',
+                          'Acesso a conteúdo cultural exclusivo',
+                          'Ligação com locais portugueses autênticos',
+                          'Celebrações de feriados portugueses'
+                        ] : [
+                          'Language exchange programs',
+                          'Portuguese tradition preservation',
+                          'Access to exclusive cultural content',
+                          'Connection to authentic Portuguese venues',
+                          'Portuguese holiday celebrations'
+                        ]
+                      },
+                      {
+                        category: isPortuguese ? 'Benefícios Premium' : 'Premium Benefits',
+                        features: isPortuguese ? [
+                          'Preços de custo real (sem markups)',
+                          'Apoio prioritário em português',
+                          'Voz nas decisões da comunidade',
+                          'Garantia de satisfação de 30 dias',
+                          'Benefícios cooperativos futuros'
+                        ] : [
+                          'True cost pricing (no markups)',
+                          'Priority support in Portuguese',
+                          'Voice in community decisions',
+                          '30-day satisfaction guarantee',
+                          'Future cooperative benefits'
+                        ]
+                      }
+                    ].map((section, index) => (
+                      <div key={index} className="space-y-4">
+                        <h4 className="text-lg font-semibold text-gray-900 border-b border-gray-200 pb-2">
+                          {section.category}
+                        </h4>
+                        <div className="space-y-3">
+                          {section.features.map((feature, featureIndex) => (
+                            <div key={featureIndex} className="flex items-start space-x-3">
+                              <CheckIconSolid className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                              <span className="text-gray-700 text-sm leading-relaxed">{feature}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="mt-8 pt-6 border-t border-gray-200">
+                    <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-lg p-6">
+                      <div className="flex items-center justify-center space-x-4 text-center">
+                        <div>
+                          <div className="text-2xl font-bold text-primary-600">750+</div>
+                          <div className="text-xs text-gray-600">{isPortuguese ? 'Membros ativos' : 'Active members'}</div>
+                        </div>
+                        <div className="w-px h-8 bg-gray-300"></div>
+                        <div>
+                          <div className="text-2xl font-bold text-secondary-600">35+</div>
+                          <div className="text-xs text-gray-600">{isPortuguese ? 'Eventos/mês' : 'Events/month'}</div>
+                        </div>
+                        <div className="w-px h-8 bg-gray-300"></div>
+                        <div>
+                          <div className="text-2xl font-bold text-accent-600">4.9★</div>
+                          <div className="text-xs text-gray-600">{isPortuguese ? 'Avaliação média' : 'Average rating'}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Why Choose LusoTown Section */}
+        {/* ROI and Value Proposition Section */}
         <section className="py-20 bg-white">
           <div className="container-width">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                {isPortuguese ? 'Porque Escolher a LusoTown?' : 'Why Choose LusoTown?'}
+                {isPortuguese ? 'O Melhor Investimento na Sua Vida em Londres' : 'The Best Investment in Your London Life'}
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese ?
-                  'Estamos a construir uma forma mais justa de preservar e celebrar a cultura portuguesa em Londres' :
-                  'We\'re building a fairer way to preserve and celebrate Portuguese culture in London'
+                  'Por apenas £25/ano, obtenha acesso a uma comunidade que vale centenas de libras em experiências e ligações' :
+                  'For just £25/year, get access to a community worth hundreds of pounds in experiences and connections'
                 }
               </p>
+            </div>
+
+            {/* ROI Calculation */}
+            <div className="max-w-4xl mx-auto mb-16">
+              <div className="bg-gradient-to-r from-green-50 to-primary-50 rounded-2xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
+                  {isPortuguese ? 'Retorno do Seu Investimento' : 'Your Investment Return'}
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                      {isPortuguese ? 'O que pagaria individualmente:' : 'What you\'d pay individually:'}
+                    </h4>
+                    <div className="space-y-3 text-sm">
+                      <div className="flex justify-between">
+                        <span>{isPortuguese ? '4 noites de fado/ano' : '4 fado nights/year'}</span>
+                        <span className="font-medium">£80</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>{isPortuguese ? '12 eventos de networking' : '12 networking events'}</span>
+                        <span className="font-medium">£120</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>{isPortuguese ? '6 workshops culturais' : '6 cultural workshops'}</span>
+                        <span className="font-medium">£90</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>{isPortuguese ? '2 tours culturais' : '2 cultural tours'}</span>
+                        <span className="font-medium">£50</span>
+                      </div>
+                      <div className="border-t pt-2 flex justify-between text-lg font-bold">
+                        <span>{isPortuguese ? 'Total individual:' : 'Individual total:'}</span>
+                        <span className="text-red-600">£340+</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-4">
+                      {isPortuguese ? 'Com a adesão LusoTown:' : 'With LusoTown membership:'}
+                    </h4>
+                    <div className="space-y-3 text-sm">
+                      <div className="flex justify-between">
+                        <span>{isPortuguese ? 'Eventos ilimitados' : 'Unlimited events'}</span>
+                        <span className="font-medium text-green-600">✓</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>{isPortuguese ? 'Networking profissional' : 'Professional networking'}</span>
+                        <span className="font-medium text-green-600">✓</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>{isPortuguese ? 'Workshops premium' : 'Premium workshops'}</span>
+                        <span className="font-medium text-green-600">✓</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>{isPortuguese ? 'Tours exclusivos' : 'Exclusive tours'}</span>
+                        <span className="font-medium text-green-600">✓</span>
+                      </div>
+                      <div className="border-t pt-2 flex justify-between text-lg font-bold">
+                        <span>{isPortuguese ? 'Custo anual:' : 'Annual cost:'}</span>
+                        <span className="text-green-600">£25</span>
+                      </div>
+                    </div>
+                    <div className="mt-4 p-4 bg-green-100 rounded-lg text-center">
+                      <div className="text-2xl font-bold text-green-700">
+                        {isPortuguese ? 'Poupança: £315+' : 'Savings: £315+'}
+                      </div>
+                      <div className="text-sm text-green-600">
+                        {isPortuguese ? '(Retorno de 1260%)' : '(1260% return)'}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               <div className="text-center p-8 bg-gray-50 rounded-2xl">
                 <div className="w-16 h-16 bg-primary-100 text-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <CheckCircleIcon className="w-8 h-8" />
+                  <CurrencyPoundIcon className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  {isPortuguese ? 'Preços Honestos' : 'Honest Pricing'}
+                  {isPortuguese ? 'Valor Excecional' : 'Exceptional Value'}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
                   {isPortuguese ?
-                    'Sem subscrições predatórias ou taxas surpresa. Adesão anual simples com custos transparentes para preservar a nossa cultura.' :
-                    'No predatory subscriptions or surprise charges. Simple annual membership with transparent costs to preserve our culture.'
+                    'Apenas £2.08 por mês para acesso a centenas de libras em experiências portuguesas autênticas e networking profissional.' :
+                    'Just £2.08 per month for access to hundreds of pounds in authentic Portuguese experiences and professional networking.'
                   }
                 </p>
               </div>
@@ -825,27 +922,27 @@ export default function Pricing() {
                   <UsersIcon className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  {isPortuguese ? 'Propriedade da Comunidade' : 'Community Owned'}
+                  {isPortuguese ? 'Rede Profissional' : 'Professional Network'}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
                   {isPortuguese ?
-                    'Os membros têm voz nas decisões da comunidade. Juntos, moldamos o futuro da cultura portuguesa em Londres.' :
-                    'Members have a voice in community decisions. Together, we shape the future of Portuguese culture in London.'
+                    'Conecte-se com empresários, profissionais e criativos portugueses. Uma única conexão pode valer milhares em oportunidades de negócio.' :
+                    'Connect with Portuguese entrepreneurs, professionals and creatives. One connection could be worth thousands in business opportunities.'
                   }
                 </p>
               </div>
               
               <div className="text-center p-8 bg-gray-50 rounded-2xl">
                 <div className="w-16 h-16 bg-accent-100 text-accent-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <ShieldCheckIcon className="w-8 h-8" />
+                  <HeartIcon className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
-                  {isPortuguese ? 'Sem Markups Escondidos' : 'No Hidden Markups'}
+                  {isPortuguese ? 'Bem-estar Cultural' : 'Cultural Wellbeing'}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
                   {isPortuguese ?
-                    'A sua adesão cobre os nossos custos operacionais. Eventos e serviços são oferecidos ao custo real, sem margens inflacionadas.' :
-                    'Your membership covers our operational costs. Events and services are offered at true cost, without inflated margins.'
+                    'Combata a solidão e saudades de casa. Encontre a sua "família" portuguesa em Londres - valor inestimável para a sua saúde mental.' :
+                    'Combat loneliness and homesickness. Find your Portuguese "family" in London - invaluable for your mental health and wellbeing.'
                   }
                 </p>
               </div>

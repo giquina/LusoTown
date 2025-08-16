@@ -5,6 +5,7 @@ import Image from 'next/image'
 import FavoriteButton from '@/components/FavoriteButton'
 import { useCart } from '@/context/CartContext'
 import { useLanguage } from '@/context/LanguageContext'
+import { useAuthRequired } from '@/hooks/useAuthRequired'
 import { formatEventDate } from '@/lib/dateUtils'
 import { toast } from 'react-hot-toast'
 import { 
@@ -65,6 +66,7 @@ export default function EventCard({
 }: EventCardProps) {
   const { addToCart, isInCart, addToSaved, isSaved } = useCart()
   const { language } = useLanguage()
+  const { requireAuthForCart, requireAuthForDetails } = useAuthRequired()
   const [addingToCart, setAddingToCart] = useState(false)
   
   const isPortuguese = language === 'pt'
@@ -99,38 +101,45 @@ export default function EventCard({
       return
     }
 
-    setAddingToCart(true)
-    
-    try {
-      addToCart({
-        type: 'event',
-        title,
-        description,
-        price,
-        currency,
-        imageUrl,
-        eventDate: date,
-        eventTime: time,
-        eventLocation: location,
-        eventCategory: category,
-        spotsLeft,
-        requiresApproval,
-        membershipRequired,
-        maxQuantity: Math.min(spotsLeft, 4), // Max 4 tickets per person
-        expiresAt: new Date(Date.now() + 30 * 60 * 1000).toISOString(), // 30 min expiry
-        metadata: {
-          hostName,
-          endTime,
-          featured,
-          averageRating,
-          totalReviews
-        }
-      })
-    } catch (error) {
-      toast.error(isPortuguese ? 'Erro ao adicionar ao carrinho' : 'Error adding to cart')
-    } finally {
-      setAddingToCart(false)
+    const cartItemData = {
+      type: 'event',
+      title,
+      description,
+      price,
+      currency,
+      imageUrl,
+      eventDate: date,
+      eventTime: time,
+      eventLocation: location,
+      eventCategory: category,
+      spotsLeft,
+      requiresApproval,
+      membershipRequired,
+      maxQuantity: Math.min(spotsLeft, 4), // Max 4 tickets per person
+      expiresAt: new Date(Date.now() + 30 * 60 * 1000).toISOString(), // 30 min expiry
+      metadata: {
+        hostName,
+        endTime,
+        featured,
+        averageRating,
+        totalReviews
+      }
     }
+
+    const addToCartAction = () => {
+      setAddingToCart(true)
+      
+      try {
+        addToCart(cartItemData)
+      } catch (error) {
+        toast.error(isPortuguese ? 'Erro ao adicionar ao carrinho' : 'Error adding to cart')
+      } finally {
+        setAddingToCart(false)
+      }
+    }
+
+    // Use auth-required hook - will show popup if not authenticated
+    requireAuthForCart(addToCartAction, id, title, cartItemData)
   }
 
   const handleSaveForLater = () => {
@@ -311,12 +320,16 @@ export default function EventCard({
         <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 space-y-2 sm:space-y-3">
           {/* Primary Actions - Stack vertically on mobile, grid on desktop */}
           <div className="grid grid-cols-2 gap-2 sm:gap-3">
-            <a 
-              href={`/events/${id}`}
+            <button
+              onClick={() => requireAuthForDetails(
+                () => window.location.href = `/events/${id}`,
+                id,
+                `/events/${id}`
+              )}
               className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-xs sm:text-sm flex items-center justify-center"
             >
               {isPortuguese ? 'Ver Detalhes' : 'View Details'}
-            </a>
+            </button>
             
             {isFull ? (
               <button className="border border-red-300 text-red-600 bg-red-50 font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:bg-red-100 transition-colors text-center text-xs sm:text-sm flex items-center justify-center">

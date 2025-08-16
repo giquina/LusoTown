@@ -10,6 +10,9 @@ import { FavoritesProvider } from '@/context/FavoritesContext'
 import { FollowingProvider } from '@/context/FollowingContext'
 import { CartProvider } from '@/context/CartContext'
 import { NetworkingProvider } from '@/context/NetworkingContext'
+import { AuthPopupProvider } from '@/components/AuthPopupProvider'
+import AuthPopup from '@/components/AuthPopup'
+import AuthIntentHandler from '@/components/AuthIntentHandler'
 import FavoriteNotification from '@/components/FavoriteNotification'
 import ErrorBoundary, { ComponentErrorBoundary } from '@/components/ErrorBoundary'
 
@@ -165,6 +168,7 @@ export default function RootLayout({
               <FollowingProvider>
                 <NetworkingProvider>
                   <CartProvider>
+                    <AuthPopupProvider>
                   <ComponentErrorBoundary componentName="User Type Selection">
                     <UserTypeSelection />
                   </ComponentErrorBoundary>
@@ -184,6 +188,15 @@ export default function RootLayout({
                   <ComponentErrorBoundary componentName="Favorite Notification">
                     <FavoriteNotification />
                   </ComponentErrorBoundary>
+                  
+                  <ComponentErrorBoundary componentName="Auth Popup">
+                    <AuthPopup />
+                  </ComponentErrorBoundary>
+                  
+                  <ComponentErrorBoundary componentName="Auth Intent Handler">
+                    <AuthIntentHandler />
+                  </ComponentErrorBoundary>
+                    </AuthPopupProvider>
                   </CartProvider>
                 </NetworkingProvider>
               </FollowingProvider>

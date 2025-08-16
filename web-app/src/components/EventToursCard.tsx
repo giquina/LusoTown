@@ -20,6 +20,7 @@ import { Crown } from 'lucide-react'
 import FavoriteButton from '@/components/FavoriteButton'
 import { useCart } from '@/context/CartContext'
 import { useLanguage } from '@/context/LanguageContext'
+import { useAuthRequired } from '@/hooks/useAuthRequired'
 import { formatEventDate } from '@/lib/dateUtils'
 import { toast } from 'react-hot-toast'
 import { EventTour } from '@/lib/events-tours'
@@ -32,6 +33,7 @@ interface EventToursCardProps {
 export default function EventToursCard({ event, className = '' }: EventToursCardProps) {
   const { addToCart, isInCart, addToSaved, isSaved } = useCart()
   const { language, t } = useLanguage()
+  const { requireAuthForCart } = useAuthRequired()
   const [addingToCart, setAddingToCart] = useState(false)
   
   const isPortuguese = language === 'pt'
@@ -99,43 +101,50 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
       return
     }
 
-    setAddingToCart(true)
-    
-    try {
-      addToCart({
-        type: 'event',
-        title: event.title,
-        description: event.description,
-        price: event.price,
-        currency: event.currency,
-        imageUrl: event.imageUrl,
-        eventDate: event.date,
-        eventTime: event.time,
-        eventLocation: event.location,
-        eventCategory: event.category,
-        spotsLeft,
-        requiresApproval: event.requiresApproval,
-        membershipRequired: event.membershipRequired,
-        maxQuantity: Math.min(spotsLeft, 4), // Max 4 tickets per person
-        expiresAt: new Date(Date.now() + 30 * 60 * 1000).toISOString(), // 30 min expiry
-        metadata: {
-          hostName: event.hostName,
-          endTime: event.endTime,
-          featured: event.featured,
-          averageRating: event.averageRating,
-          totalReviews: event.totalReviews,
-          groupExperience: event.groupExperience,
-          ageRestriction: event.ageRestriction,
-          portugueseOrigin: event.portugueseOrigin,
-          highlights: event.highlights,
-          groupSize: event.groupSize
-        }
-      })
-    } catch (error) {
-      toast.error(isPortuguese ? 'Erro ao adicionar ao carrinho' : 'Error adding to cart')
-    } finally {
-      setAddingToCart(false)
+    const cartItemData = {
+      type: 'event',
+      title: event.title,
+      description: event.description,
+      price: event.price,
+      currency: event.currency,
+      imageUrl: event.imageUrl,
+      eventDate: event.date,
+      eventTime: event.time,
+      eventLocation: event.location,
+      eventCategory: event.category,
+      spotsLeft,
+      requiresApproval: event.requiresApproval,
+      membershipRequired: event.membershipRequired,
+      maxQuantity: Math.min(spotsLeft, 4), // Max 4 tickets per person
+      expiresAt: new Date(Date.now() + 30 * 60 * 1000).toISOString(), // 30 min expiry
+      metadata: {
+        hostName: event.hostName,
+        endTime: event.endTime,
+        featured: event.featured,
+        averageRating: event.averageRating,
+        totalReviews: event.totalReviews,
+        groupExperience: event.groupExperience,
+        ageRestriction: event.ageRestriction,
+        portugueseOrigin: event.portugueseOrigin,
+        highlights: event.highlights,
+        groupSize: event.groupSize
+      }
     }
+
+    const addToCartAction = () => {
+      setAddingToCart(true)
+      
+      try {
+        addToCart(cartItemData)
+      } catch (error) {
+        toast.error(isPortuguese ? 'Erro ao adicionar ao carrinho' : 'Error adding to cart')
+      } finally {
+        setAddingToCart(false)
+      }
+    }
+
+    // Use auth-required hook - will show popup if not authenticated
+    requireAuthForCart(addToCartAction, event.id, event.title, cartItemData)
   }
 
   const handleSaveForLater = () => {

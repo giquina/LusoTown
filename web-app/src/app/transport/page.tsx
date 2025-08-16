@@ -13,81 +13,42 @@ import LondonTourRoutes from '@/components/LondonTourRoutes'
 import CustomToursSection from '@/components/CustomToursSection'
 import { useLanguage } from '@/context/LanguageContext'
 
-// Optimized pricing structure based on market research and membership integration
+// Premium security and VIP services - London-focused operations only
 const serviceTiers = [
-  {
-    id: 'essential',
-    name: 'Essential Private Transport',
-    namePortuguese: 'Transporte Privado Essencial',
-    price: 55, // Optimized from £45 based on market analysis
-    originalPrice: 65, // Show value proposition
-    image: 'https://images.unsplash.com/photo-1549317336-206569e8475c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Professional private transport vehicle in London',
-    imageAltPortuguese: 'Veículo de transporte privado profissional em Londres',
-    membershipDiscounts: {
-      visitor: 0, // No discount for non-members
-      family: 5, // 5% discount for Family members (£52.25)
-      ambassador: 10 // 10% discount for Ambassador members (£49.50)
-    },
-    minimumHours: 3,
-    description: 'Professional Portuguese-speaking private transport service for London tourism',
-    descriptionPortuguese: 'Serviço de transporte privado profissional falante de português para turismo em Londres',
-    features: [
-      'Professional Portuguese-speaking driver',
-      'Professional vehicle',
-      'Meet & greet service with cultural sensitivity',
-      'Basic security awareness training',
-      'London tourism and attraction expertise',
-      'Airport monitoring & flight tracking',
-      'Complimentary waiting time (30 minutes)'
-    ],
-    featuresPortuguese: [
-      'Motorista profissional falante de português',
-      'Veículo profissional',
-      'Serviço de encontro e receção com sensibilidade cultural',
-      'Treino básico de consciência de segurança',
-      'Expertise em turismo e atrações de Londres',
-      'Monitorização de aeroporto e rastreamento de voos',
-      'Tempo de espera gratuito (30 minutos)'
-    ],
-    popular: false,
-    color: 'primary',
-    targetAudience: 'tourists'
-  },
   {
     id: 'premium',
     name: 'Premium Security',
     namePortuguese: 'Segurança Premium',
-    price: 75, // Optimized from £65 based on security premium analysis
+    price: 75,
     originalPrice: 85,
     image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     imageAlt: 'Professional security service with professional vehicle at London landmark',
     imageAltPortuguese: 'Serviço de segurança profissional com veículo profissional em marco de Londres',
     membershipDiscounts: {
       visitor: 0,
-      family: 5, // £71.25
-      ambassador: 10 // £67.50
+      family: 5,
+      ambassador: 10
     },
     minimumHours: 3,
-    description: 'Enhanced security with SIA-licensed protection officer for London experiences',
-    descriptionPortuguese: 'Segurança melhorada com oficial de proteção licenciado SIA para experiências em Londres',
+    description: 'Enhanced security with SIA-licensed protection officer for London-based operations',
+    descriptionPortuguese: 'Segurança melhorada com oficial de proteção licenciado SIA para operações baseadas em Londres',
     features: [
-      'All Essential features',
+      'Portuguese-speaking driver and security officer',
       'SIA-licensed trained security officer',
-      'Pre-trip threat assessment',
-      'Discreet close protection',
+      'Pre-trip threat assessment for London areas',
+      'Discreet close protection throughout London',
       'Emergency response protocols',
-      'Security briefing and route planning',
+      'Security briefing and London route planning',
       'London business district expertise',
       'London venue security knowledge'
     ],
     featuresPortuguese: [
-      'Todas as características Essenciais',
+      'Motorista e oficial de segurança falantes de português',
       'Oficial de segurança treinado licenciado SIA',
-      'Avaliação de ameaças pré-viagem',
-      'Proteção próxima discreta',
+      'Avaliação de ameaças pré-viagem para áreas de Londres',
+      'Proteção próxima discreta por toda Londres',
       'Protocolos de resposta de emergência',
-      'Briefing de segurança e planeamento de rotas',
+      'Briefing de segurança e planeamento de rotas de Londres',
       'Expertise do distrito empresarial de Londres',
       'Conhecimento de segurança de locais de Londres'
     ],
@@ -99,40 +60,40 @@ const serviceTiers = [
     id: 'vip',
     name: 'VIP London Experience',
     namePortuguese: 'Experiência VIP de Londres',
-    price: 95, // Optimized from £85 to reflect cultural value-add
+    price: 95,
     originalPrice: 110,
     image: 'https://images.unsplash.com/photo-1520637836862-4d197d17c93a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     imageAlt: 'VIP London experience with Tower Bridge and professional service',
     imageAltPortuguese: 'Experiência VIP de Londres com Tower Bridge e serviço profissional',
     membershipDiscounts: {
       visitor: 0,
-      family: 5, // £90.25
-      ambassador: 15 // £80.75 (higher discount for cultural appreciation)
+      family: 5,
+      ambassador: 15
     },
-    minimumHours: 4, // Minimum 4 hours for cultural experiences
-    description: 'Premium service with Portuguese-speaking London guide, security, and insider access',
-    descriptionPortuguese: 'Serviço premium com guia de Londres falante de português, segurança e acesso privilegiado',
+    minimumHours: 4,
+    description: 'Premium London-based service with Portuguese-speaking guide and security personnel. Attraction tickets purchased separately.',
+    descriptionPortuguese: 'Serviço premium baseado em Londres com guia falante de português e pessoal de segurança. Bilhetes de atrações comprados separadamente.',
     features: [
-      'All Premium Security features',
+      'All Premium Security features for London operations',
       'Certified Portuguese-speaking London guide',
-      'VIP access to London attractions and restaurants',
+      'Professional driver + security personnel in London',
       'London commentary and historical insights',
-      'Professional photography at all tour stops',
-      'Photo opportunities at every destination',
-      'Curated dining recommendations with reservations',
+      'Professional photography service during London tours',
+      'Curated London dining recommendations with reservations',
       'London business network introductions',
-      'High-quality professional vehicle'
+      'High-quality professional vehicle for London travel',
+      'Note: Attraction tickets (London Eye, museums, etc.) purchased separately'
     ],
     featuresPortuguese: [
-      'Todas as características de Segurança Premium',
+      'Todas as características de Segurança Premium para operações em Londres',
       'Guia certificado de Londres falante de português',
-      'Acesso VIP a atrações e restaurantes de Londres',
+      'Motorista profissional + pessoal de segurança em Londres',
       'Comentário de Londres e insights históricos',
-      'Fotografia profissional em todas as paragens do tour',
-      'Oportunidades de fotografia em cada destino',
-      'Recomendações gastronómicas selecionadas com reservas',
+      'Serviço de fotografia profissional durante tours de Londres',
+      'Recomendações gastronómicas selecionadas de Londres com reservas',
       'Introduções à rede empresarial de Londres',
-      'Veículo profissional de alta qualidade'
+      'Veículo profissional de alta qualidade para viagens em Londres',
+      'Nota: Bilhetes de atrações (London Eye, museus, etc.) comprados separadamente'
     ],
     popular: false,
     color: 'premium',
@@ -142,43 +103,43 @@ const serviceTiers = [
     id: 'elite',
     name: 'Elite Protection',
     namePortuguese: 'Proteção Elite',
-    price: 140, // Increased from £120 to reflect high-end security market
+    price: 140,
     originalPrice: 160,
     image: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Elite protection service with professional armored vehicle in London',
-    imageAltPortuguese: 'Serviço de proteção elite com veículo profissional blindado em Londres',
+    imageAlt: 'Elite protection service with professional vehicle in London',
+    imageAltPortuguese: 'Serviço de proteção elite com veículo profissional em Londres',
     membershipDiscounts: {
       visitor: 0,
-      family: 5, // £133
-      ambassador: 10 // £126
+      family: 5,
+      ambassador: 10
     },
     minimumHours: 4,
-    callOutPremium: 50, // £50 premium for immediate availability
-    description: 'Maximum security with close protection team and professional transport for high-profile individuals',
-    descriptionPortuguese: 'Segurança máxima com equipa de proteção próxima e transporte profissional para indivíduos de alto perfil',
+    callOutPremium: 50,
+    description: 'Maximum security with close protection team for high-profile individuals - London operations only',
+    descriptionPortuguese: 'Segurança máxima com equipa de proteção próxima para indivíduos de alto perfil - operações apenas em Londres',
     features: [
-      'All VIP Cultural features',
-      'Multi-person close protection team',
-      'Advanced route planning and reconnaissance',
-      'Counter-surveillance measures',
-      'Armored vehicle option available',
+      'All VIP London Experience features',
+      'Multi-person close protection team for London',
+      'Advanced London route planning and reconnaissance',
+      'Counter-surveillance measures within London',
       'Medical support and first aid qualified personnel',
-      'Emergency evacuation protocols',
-      'Professional or armored vehicle options available',
-      'Real-time security coordination',
-      'London diplomatic protocol knowledge'
+      'Emergency evacuation protocols for London',
+      'Professional security vehicles for London operations',
+      'Real-time security coordination across London',
+      'London diplomatic protocol knowledge',
+      'Portuguese-speaking security team coordination'
     ],
     featuresPortuguese: [
-      'Todas as características VIP Culturais',
-      'Equipa de proteção próxima multi-pessoa',
-      'Planeamento avançado de rotas e reconhecimento',
-      'Medidas de contra-vigilância',
-      'Opção de veículo blindado disponível',
+      'Todas as características da Experiência VIP de Londres',
+      'Equipa de proteção próxima multi-pessoa para Londres',
+      'Planeamento avançado de rotas de Londres e reconhecimento',
+      'Medidas de contra-vigilância dentro de Londres',
       'Apoio médico e pessoal qualificado em primeiros socorros',
-      'Protocolos de evacuação de emergência',
-      'Opções de veículos profissionais ou blindados disponíveis',
-      'Coordenação de segurança em tempo real',
-      'Conhecimento de protocolo diplomático de Londres'
+      'Protocolos de evacuação de emergência para Londres',
+      'Veículos de segurança profissionais para operações em Londres',
+      'Coordenação de segurança em tempo real por toda Londres',
+      'Conhecimento de protocolo diplomático de Londres',
+      'Coordenação de equipa de segurança falante de português'
     ],
     popular: false,
     color: 'action',
@@ -590,13 +551,13 @@ export default function TransportPage() {
               <span className="hidden sm:block">
                 {isPortuguese ? (
                   <>
-                    <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">Londres VIP</span> com Motorista<br />
-                    e Guia Português Exclusivo
+                    Precisa de um motorista<br />
+                    <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">ou segurança português</span> em Londres?
                   </>
                 ) : (
                   <>
-                    <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">VIP London</span> with Your Private<br />
-                    Portuguese Driver & Guide
+                    Need a Portuguese driver<br />
+                    <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">or security</span> in London?
                   </>
                 )}
               </span>
@@ -604,13 +565,13 @@ export default function TransportPage() {
               <span className="sm:hidden">
                 {isPortuguese ? (
                   <>
-                    <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">Londres VIP</span><br />
-                    Motorista Português
+                    Motorista ou<br />
+                    <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">Segurança</span> Português
                   </>
                 ) : (
                   <>
-                    <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">VIP London</span><br />
-                    Portuguese Driver
+                    Portuguese Driver<br />
+                    <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">or Security</span>
                   </>
                 )}
               </span>
@@ -711,8 +672,8 @@ export default function TransportPage() {
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               {isPortuguese 
-                ? 'Nossos motoristas especializados oferecem proteção pessoal discreta e comunicação fluente em português. Visite Londres com confiança e tranquilidade!'
-                : 'Our specialized drivers provide discreet personal protection and fluent Portuguese communication. Visit London with confidence and peace of mind!'
+                ? 'Nossos motoristas e pessoal de segurança especializados oferecem proteção pessoal discreta e comunicação fluente em português. Explore Londres com confiança total!'
+                : 'Our specialized drivers and security personnel provide discreet personal protection and fluent Portuguese communication. Explore London with complete confidence!'
               }
             </p>
           </div>
@@ -808,14 +769,14 @@ export default function TransportPage() {
               </h3>
               <p className="text-gray-600 mb-6">
                 {isPortuguese 
-                  ? 'Proteção profissional especializada em turismo com comunicação fluente em português, oferecendo segurança discreta durante experiências turísticas em Londres.'
-                  : 'Tourism-specialized professional protection with fluent Portuguese communication, providing discreet security during London tourism experiences.'
+                  ? 'Proteção profissional especializada em turismo com comunicação fluente em português, oferecendo segurança discreta durante experiências turísticas em Londres especificamente.'
+                  : 'Tourism-specialized professional protection with fluent Portuguese communication, providing discreet security during London tourism experiences specifically.'
                 }
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li className="flex items-center gap-2">
                   <CheckCircleIcon className="w-4 h-4 text-accent-500" />
-                  <span>{isPortuguese ? 'Proteção discreta para turistas' : 'Discreet tourist protection'}</span>
+                  <span>{isPortuguese ? 'Proteção discreta para turistas em Londres' : 'Discreet tourist protection in London'}</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircleIcon className="w-4 h-4 text-accent-500" />
@@ -823,7 +784,7 @@ export default function TransportPage() {
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircleIcon className="w-4 h-4 text-accent-500" />
-                  <span>{isPortuguese ? 'Protocolos de emergência turística' : 'Tourist emergency protocols'}</span>
+                  <span>{isPortuguese ? 'Protocolos de emergência para Londres' : 'London emergency protocols'}</span>
                 </li>
               </ul>
             </motion.div>
@@ -1164,17 +1125,17 @@ export default function TransportPage() {
         <div className="container-width">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-gray-900 mb-4">
-              {isPortuguese ? 'Qual Nível de Proteção Precisa?' : 'What Level of Protection Do You Need?'}
+              {isPortuguese ? 'Qual Nível de Proteção Precisa em Londres?' : 'What Level of Protection Do You Need in London?'}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               {isPortuguese 
-                ? 'Escolha o nível de proteção e serviço que melhor se adequa às suas necessidades. Membros LusoTown recebem descontos automáticos.'
-                : 'Choose the level of protection and service that best fits your needs. LusoTown members receive automatic discounts.'
+                ? 'Escolha o nível de proteção e serviço que melhor se adequa às suas necessidades para operações em Londres. Membros LusoTown recebem descontos automáticos.'
+                : 'Choose the level of protection and service that best fits your needs for London-based operations. LusoTown members receive automatic discounts.'
               }
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-8">
             {serviceTiers.map((tier, index) => (
               <TransportServiceCard
                 key={tier.id}

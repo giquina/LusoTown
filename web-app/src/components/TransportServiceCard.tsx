@@ -150,16 +150,16 @@ export default function TransportServiceCard({
             )}
             {tier.id === 'premium' && (
               <>
-                <div className="flex space-x-1 mr-2">
-                  <div className="w-2 h-2 bg-current rounded-full"></div>
-                  <div className="w-2 h-2 bg-current rounded-full"></div>
-                </div>
-                {isPortuguese ? 'Nível Médio' : 'Medium Level'}
+                <div className="w-2 h-2 bg-current rounded-full mr-2"></div>
+                {isPortuguese ? 'Nível Premium' : 'Premium Level'}
               </>
             )}
             {tier.id === 'vip' && (
               <>
-                <Crown className="w-3 h-3 mr-2" />
+                <div className="flex space-x-1 mr-2">
+                  <div className="w-2 h-2 bg-current rounded-full"></div>
+                  <div className="w-2 h-2 bg-current rounded-full"></div>
+                </div>
                 {isPortuguese ? 'Nível VIP' : 'VIP Level'}
               </>
             )}

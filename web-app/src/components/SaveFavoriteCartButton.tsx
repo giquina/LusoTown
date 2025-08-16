@@ -11,6 +11,7 @@ import {
 import { HeartIcon as HeartSolidIcon, ShoppingCartIcon as CartSolidIcon } from '@heroicons/react/24/solid'
 import { useCart } from '@/context/CartContext'
 import { useLanguage } from '@/context/LanguageContext'
+import { useAuthRequired } from '@/hooks/useAuthRequired'
 import { toast } from 'react-hot-toast'
 
 interface SaveFavoriteCartButtonProps {
@@ -91,6 +92,7 @@ export default function SaveFavoriteCartButton({
     cartCount 
   } = useCart()
   const { t } = useLanguage()
+  const { requireAuthForCart } = useAuthRequired()
   
   const [isAnimating, setIsAnimating] = useState(false)
   const [showTooltip, setShowTooltip] = useState<string | null>(null)
@@ -155,8 +157,6 @@ export default function SaveFavoriteCartButton({
       return
     }
     
-    setIsAnimating(true)
-    
     const cartItem = {
       type: 'event' as const,
       title,
@@ -177,12 +177,19 @@ export default function SaveFavoriteCartButton({
       }
     }
     
-    addToCart(cartItem)
-    
-    setTimeout(() => {
-      setIsAnimating(false)
-      onAddedToCart?.()
-    }, 500)
+    const addToCartAction = () => {
+      setIsAnimating(true)
+      
+      addToCart(cartItem)
+      
+      setTimeout(() => {
+        setIsAnimating(false)
+        onAddedToCart?.()
+      }, 500)
+    }
+
+    // Use auth-required hook - will show popup if not authenticated
+    requireAuthForCart(addToCartAction, itemId, title, cartItem)
   }
 
   const getSizeClasses = () => {

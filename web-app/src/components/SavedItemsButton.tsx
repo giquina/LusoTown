@@ -8,6 +8,7 @@ import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid'
 import { useCart } from '@/context/CartContext'
 import { useLanguage } from '@/context/LanguageContext'
 import { isAuthenticated, useAuthState } from '@/lib/auth'
+import { useAuthPopup } from '@/components/AuthPopupProvider'
 
 interface SavedItemsButtonProps {
   showCount?: boolean
@@ -23,8 +24,11 @@ export default function SavedItemsButton({
   className = ''
 }: SavedItemsButtonProps) {
   const { savedCount } = useCart()
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const { showPopup } = useAuthPopup()
+
+  const isPortuguese = language === 'pt'
 
   useEffect(() => {
     setIsLoggedIn(isAuthenticated())
@@ -37,9 +41,14 @@ export default function SavedItemsButton({
     return unsubscribe
   }, [])
 
-  // Don't render if user is not authenticated
-  if (!isLoggedIn) {
-    return null
+  const handleFavoritesClick = (e: React.MouseEvent) => {
+    if (!isLoggedIn) {
+      e.preventDefault()
+      showPopup('view-details', {
+        type: 'view-details',
+        redirectPath: '/saved'
+      })
+    }
   }
 
   const getSizeClasses = () => {
@@ -66,9 +75,10 @@ export default function SavedItemsButton({
 
   return (
     <Link 
-      href="/saved"
+      href={isLoggedIn ? "/saved" : "#"}
+      onClick={handleFavoritesClick}
       className={`relative text-gray-600 hover:text-primary-500 transition-colors group ${getSizeClasses()} ${className} min-h-[44px] min-w-[44px] flex items-center justify-center`}
-      title={t('favorites.view-all')}
+      title={isLoggedIn ? t('favorites.view-all') : (isPortuguese ? 'Clique para se registar' : 'Click to sign up')}
     >
       <motion.div
         whileHover={{ scale: 1.05 }}
@@ -94,10 +104,13 @@ export default function SavedItemsButton({
         
         {/* Tooltip */}
         <div className="absolute top-full mt-2 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs px-3 py-2 rounded shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-50">
-          {savedCount > 0 
-            ? `${savedCount} saved ${savedCount === 1 ? 'item' : 'items'}`
-            : t('favorites.view-all')
-          }
+          {isLoggedIn ? (
+            savedCount > 0 
+              ? `${savedCount} saved ${savedCount === 1 ? 'item' : 'items'}`
+              : t('favorites.view-all')
+          ) : (
+            isPortuguese ? 'Clique para se registar' : 'Click to sign up'
+          )}
           <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
         </div>
       </motion.div>
