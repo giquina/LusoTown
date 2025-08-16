@@ -66,7 +66,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 min-h-[72px]">
-      <nav className="container-width px-3 sm:px-6 lg:px-8" aria-label="Top">
+      <nav className="container-width px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div className="flex items-center justify-between h-18 sm:h-20 gap-2 sm:gap-4">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
@@ -196,14 +196,14 @@ export default function Header() {
             )}
           </div>
 
-          {/* Mobile menu button */}
-          <div className="flex md:hidden items-center gap-1 relative z-50 flex-shrink-0">
+          {/* Mobile menu button - Fixed spacing for better touch targets */}
+          <div className="flex md:hidden items-center gap-2 relative z-50 flex-shrink-0 mr-1">
             <CartButton />
             <SavedItemsButton />
             <LanguageToggle />
             <button
               type="button"
-              className="inline-flex items-center justify-center p-3 rounded-lg text-primary-700 hover:text-primary-800 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200 h-12 w-12 bg-white border-2 border-primary-200 shadow-lg active:bg-primary-50 active:scale-95 ml-1"
+              className="inline-flex items-center justify-center p-3 rounded-lg text-primary-700 hover:text-primary-800 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200 h-12 w-12 bg-white border-2 border-primary-200 shadow-lg active:bg-primary-50 active:scale-95 ml-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-expanded={mobileMenuOpen}
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}

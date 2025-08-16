@@ -52,13 +52,13 @@ export default function CTA() {
             </p>
           </motion.div>
 
-          {/* Benefits List */}
+          {/* Benefits List - Fixed mobile text truncation */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12 max-w-3xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12 max-w-3xl mx-auto"
           >
             {benefits.map((benefit, index) => (
               <motion.div
@@ -67,10 +67,10 @@ export default function CTA() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
-                className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20"
+                className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 min-h-[64px]"
               >
-                <CheckIcon className="h-5 w-5 text-white flex-shrink-0" />
-                <span className="text-white font-medium">{benefit}</span>
+                <CheckIcon className="h-5 w-5 text-white flex-shrink-0 mt-0.5" />
+                <span className="text-white font-medium leading-relaxed break-words">{benefit}</span>
               </motion.div>
             ))}
           </motion.div>
@@ -122,13 +122,13 @@ export default function CTA() {
             </p>
           </motion.div>
 
-          {/* Trust Signals - Enhanced Multi-Column Layout */}
+          {/* Trust Signals - Enhanced Multi-Column Layout - Fixed mobile spacing */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.8, duration: 0.8 }}
-            className="mt-12 grid grid-cols-1 xs:grid-cols-3 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 text-white/80"
+            className="mt-12 grid grid-cols-3 gap-4 sm:gap-6 lg:gap-8 text-white/80"
           >
             <div className="text-center">
               <div className="text-2xl font-bold text-white mb-1">100%</div>

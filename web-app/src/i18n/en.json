@@ -40,10 +40,10 @@
   "instituto.cta.secondary": "Cultural Heritage",
   
   "hero.badge": "Unidos pela Língua • United by Language",
-  "hero.title": "Your Portuguese Community in London",
-  "hero.title.mobile": "Your Portuguese Community",
-  "hero.subtitle": "Connect with Portuguese speakers in London. Social experiences and professional opportunities await.",
-  "hero.subtitle.mobile": "Portuguese community in London awaits!",
+  "hero.title": "Your Portuguese Social Calendar",
+  "hero.title.mobile": "Portuguese Social Calendar", 
+  "hero.subtitle": "Connect, explore, and live London together",
+  "hero.subtitle.mobile": "Connect, explore, live together",
   "hero.cta.primary": "Explore Events",
   "hero.cta.secondary": "Join Community",
   
@@ -303,7 +303,7 @@
   "group.create.success": "Group created successfully!",
   "group.create.error": "Error creating group",
   
-  "search.placeholder": "Search events, groups...",
+  "search.placeholder": "Search events...",
   "search.placeholder.short": "Search...",
   "search.button": "Search",
   "search.suggestions": "Suggestions",

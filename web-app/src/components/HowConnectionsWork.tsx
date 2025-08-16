@@ -130,7 +130,7 @@ export default function HowConnectionsWork() {
                   <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-gray-200 to-transparent -translate-x-4 z-0"></div>
                 )}
                 
-                <div className="bg-white rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 relative z-10 group h-[200px] sm:h-[240px] lg:h-[280px] flex flex-col">
+                <div className="bg-white rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 relative z-10 group min-h-[200px] sm:min-h-[240px] lg:min-h-[280px] flex flex-col">
                   <div className={`w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-r ${step.color} rounded-lg lg:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 lg:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg flex-shrink-0`}>
                     <step.icon className="w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" />
                   </div>
@@ -145,7 +145,7 @@ export default function HowConnectionsWork() {
                       </h3>
                     </div>
                     
-                    <p className="text-xs sm:text-sm lg:text-base text-gray-600 leading-relaxed flex-1">
+                    <p className="text-xs sm:text-sm lg:text-base text-gray-600 leading-relaxed flex-1 break-words">
                       {step.description}
                     </p>
                   </div>
@@ -191,7 +191,7 @@ export default function HowConnectionsWork() {
                 <h4 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 mb-2 sm:mb-3 leading-tight">
                   {benefit.title}
                 </h4>
-                <p className="text-xs sm:text-sm lg:text-base text-gray-600 leading-relaxed">
+                <p className="text-xs sm:text-sm lg:text-base text-gray-600 leading-relaxed break-words">
                   {benefit.description}
                 </p>
               </motion.div>

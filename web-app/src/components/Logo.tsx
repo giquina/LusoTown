@@ -22,25 +22,32 @@ export default function Logo({ size = 'medium', className = '', animated = false
   }
 
   const LogoComponent = (
-    <div className={`flex items-center ${size === 'small' ? 'space-x-1 sm:space-x-2' : size === 'medium' ? 'space-x-2 sm:space-x-3' : 'space-x-3'} ${className}`}>
-      {/* Logo Icon - Portuguese-inspired design */}
-      <div className={`${sizes[size]} aspect-square flex items-center justify-center rounded-xl bg-gradient-to-br from-green-600 via-red-600 to-yellow-600 shadow-lg`}>
-        <div className="text-white font-bold text-sm flex flex-col items-center leading-none">
-          <span className={size === 'small' ? 'text-[10px] sm:text-xs' : 'text-xs sm:text-sm'}>LT</span>
+    <div className={`flex items-center ${size === 'small' ? 'space-x-2 sm:space-x-3' : size === 'medium' ? 'space-x-3 sm:space-x-4' : 'space-x-4'} ${className}`}>
+      {/* Logo Icon - Enhanced Portuguese-inspired design */}
+      <div className={`${sizes[size]} aspect-square flex items-center justify-center rounded-2xl bg-gradient-to-br from-secondary-600 via-action-600 to-premium-600 shadow-xl border-2 border-white/20 relative overflow-hidden`}>
+        {/* Portuguese flag colors accent */}
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary-500/20 via-action-500/20 to-accent-500/20 animate-pulse"></div>
+        
+        <div className="text-white font-black flex flex-col items-center leading-none relative z-10">
+          <span className={size === 'small' ? 'text-sm sm:text-base' : size === 'medium' ? 'text-base sm:text-lg' : 'text-lg sm:text-xl'}>
+            🏛️
+          </span>
           {size !== 'small' && (
-            <div className="w-3 sm:w-4 h-0.5 bg-white/60 mt-0.5 rounded-full" />
+            <div className="w-4 sm:w-5 h-0.5 bg-white/80 mt-1 rounded-full shadow-sm" />
           )}
         </div>
       </div>
       
       {/* Brand Name */}
       <div className="flex flex-col">
-        <h1 className={`${textSizes[size]} font-bold bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 bg-clip-text text-transparent leading-none`}>
+        <h1 className={`${textSizes[size]} font-black bg-gradient-to-r from-secondary-600 via-action-600 to-premium-600 bg-clip-text text-transparent leading-none tracking-tight`}>
           LusoTown
         </h1>
         {size !== 'small' && (
-          <span className={`text-xs font-medium text-gray-500 uppercase tracking-wider ${size === 'large' ? 'sm:text-sm' : ''}`}>
-            UK
+          <span className={`text-xs font-bold text-gray-600 uppercase tracking-widest ${size === 'large' ? 'sm:text-sm' : ''} flex items-center gap-1`}>
+            <span className="text-[8px]">🇵🇹</span>
+            London
+            <span className="text-[8px]">🇬🇧</span>
           </span>
         )}
       </div>
@@ -65,15 +72,18 @@ export default function Logo({ size = 'medium', className = '', animated = false
 export function LogoIcon({ size = 32, className = '' }: { size?: number; className?: string }) {
   return (
     <div 
-      className={`flex items-center justify-center rounded-xl bg-gradient-to-br from-green-600 via-red-600 to-yellow-600 shadow-lg ${className}`}
+      className={`flex items-center justify-center rounded-2xl bg-gradient-to-br from-secondary-600 via-action-600 to-premium-600 shadow-xl border-2 border-white/20 relative overflow-hidden ${className}`}
       style={{ width: size, height: size }}
     >
-      <div className="text-white font-bold flex flex-col items-center leading-none">
-        <span style={{ fontSize: Math.max(8, size * 0.3) }}>LT</span>
+      {/* Portuguese flag colors accent */}
+      <div className="absolute inset-0 bg-gradient-to-r from-secondary-500/20 via-action-500/20 to-accent-500/20"></div>
+      
+      <div className="text-white font-black flex flex-col items-center leading-none relative z-10">
+        <span style={{ fontSize: Math.max(12, size * 0.5) }}>🏛️</span>
         {size > 24 && (
           <div 
-            className="bg-white/60 rounded-full mt-0.5" 
-            style={{ width: size * 0.25, height: Math.max(1, size * 0.03) }}
+            className="bg-white/80 rounded-full mt-1 shadow-sm" 
+            style={{ width: size * 0.3, height: Math.max(2, size * 0.05) }}
           />
         )}
       </div>

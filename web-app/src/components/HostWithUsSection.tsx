@@ -55,7 +55,7 @@ export default function HostWithUsSection() {
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-8 mb-20">
             {/* Professional Services & Workshops */}
             <div className="group relative h-full">
-              <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-8 h-[280px] sm:h-[320px] lg:h-[360px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+              <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-8 min-h-[300px] sm:min-h-[340px] lg:min-h-[380px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-br from-premium-50/60 via-transparent to-coral-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl lg:rounded-3xl" />
                 
                 <div className="relative z-10 flex flex-col h-full">
@@ -84,7 +84,7 @@ export default function HostWithUsSection() {
 
             {/* Cultural Events & Experiences */}
             <div className="group relative h-full">
-              <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-8 h-[280px] sm:h-[320px] lg:h-[360px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+              <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-8 min-h-[300px] sm:min-h-[340px] lg:min-h-[380px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-br from-secondary-50/60 via-transparent to-accent-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl lg:rounded-3xl" />
                 
                 <div className="relative z-10 flex flex-col h-full">
@@ -113,7 +113,7 @@ export default function HostWithUsSection() {
 
             {/* Portuguese Business Promotion */}
             <div className="group relative h-full col-span-2 lg:col-span-1">
-              <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-8 h-[280px] sm:h-[320px] lg:h-[360px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+              <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-8 min-h-[300px] sm:min-h-[340px] lg:min-h-[380px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-br from-coral-50/60 via-transparent to-action-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl lg:rounded-3xl" />
                 
                 <div className="relative z-10 flex flex-col h-full">
@@ -185,50 +185,50 @@ export default function HostWithUsSection() {
 
           {/* Benefits Grid - 2x2 Mobile Layout */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-20">
-            <div className="text-center p-3 sm:p-4 lg:p-6 bg-white/60 backdrop-blur-sm rounded-xl lg:rounded-2xl border border-white/40 shadow-lg h-[160px] sm:h-[180px] lg:h-[200px] flex flex-col">
+            <div className="text-center p-3 sm:p-4 lg:p-6 bg-white/60 backdrop-blur-sm rounded-xl lg:rounded-2xl border border-white/40 shadow-lg min-h-[160px] sm:min-h-[180px] lg:min-h-[200px] flex flex-col">
               <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg lg:rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 lg:mb-4 flex-shrink-0">
                 <UserGroupIcon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
               <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-xs sm:text-sm leading-tight">
                 Reach 500+ Portuguese
               </h4>
-              <p className="text-xs text-gray-600 leading-relaxed flex-1">
+              <p className="text-xs text-gray-600 leading-relaxed flex-1 break-words">
                 Connect with Portuguese professionals and families.
               </p>
             </div>
             
-            <div className="text-center p-3 sm:p-4 lg:p-6 bg-white/60 backdrop-blur-sm rounded-xl lg:rounded-2xl border border-white/40 shadow-lg h-[160px] sm:h-[180px] lg:h-[200px] flex flex-col">
+            <div className="text-center p-3 sm:p-4 lg:p-6 bg-white/60 backdrop-blur-sm rounded-xl lg:rounded-2xl border border-white/40 shadow-lg min-h-[160px] sm:min-h-[180px] lg:min-h-[200px] flex flex-col">
               <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-secondary-500 to-accent-500 rounded-lg lg:rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 lg:mb-4 flex-shrink-0">
                 <CurrencyPoundIcon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
               <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-xs sm:text-sm leading-tight">
                 Sustainable Revenue
               </h4>
-              <p className="text-xs text-gray-600 leading-relaxed flex-1">
+              <p className="text-xs text-gray-600 leading-relaxed flex-1 break-words">
                 Monetize expertise with payment processing.
               </p>
             </div>
             
-            <div className="text-center p-3 sm:p-4 lg:p-6 bg-white/60 backdrop-blur-sm rounded-xl lg:rounded-2xl border border-white/40 shadow-lg h-[160px] sm:h-[180px] lg:h-[200px] flex flex-col">
+            <div className="text-center p-3 sm:p-4 lg:p-6 bg-white/60 backdrop-blur-sm rounded-xl lg:rounded-2xl border border-white/40 shadow-lg min-h-[160px] sm:min-h-[180px] lg:min-h-[200px] flex flex-col">
               <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-coral-500 to-action-500 rounded-lg lg:rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 lg:mb-4 flex-shrink-0">
                 <GlobeAltIcon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
               <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-xs sm:text-sm leading-tight">
                 Build Network
               </h4>
-              <p className="text-xs text-gray-600 leading-relaxed flex-1">
+              <p className="text-xs text-gray-600 leading-relaxed flex-1 break-words">
                 Connect with Portuguese professionals.
               </p>
             </div>
             
-            <div className="text-center p-3 sm:p-4 lg:p-6 bg-white/60 backdrop-blur-sm rounded-xl lg:rounded-2xl border border-white/40 shadow-lg h-[160px] sm:h-[180px] lg:h-[200px] flex flex-col">
+            <div className="text-center p-3 sm:p-4 lg:p-6 bg-white/60 backdrop-blur-sm rounded-xl lg:rounded-2xl border border-white/40 shadow-lg min-h-[160px] sm:min-h-[180px] lg:min-h-[200px] flex flex-col">
               <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-premium-500 to-coral-500 rounded-lg lg:rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 lg:mb-4 flex-shrink-0">
                 <HeartIcon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
               <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-xs sm:text-sm leading-tight">
                 Preserve Heritage
               </h4>
-              <p className="text-xs text-gray-600 leading-relaxed flex-1">
+              <p className="text-xs text-gray-600 leading-relaxed flex-1 break-words">
                 Share Portuguese culture while building business.
               </p>
             </div>

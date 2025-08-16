@@ -83,21 +83,21 @@ export default function SocialLoginButton({
       onClick={onClick}
       disabled={isLoading}
       className={`
-        w-full flex items-center justify-center gap-3 px-4 py-3 
+        w-full flex items-center justify-center gap-2 px-3 py-3 
         border rounded-lg font-medium transition-all duration-200
         focus:ring-2 focus:ring-offset-2 focus:ring-primary-400
         disabled:opacity-50 disabled:cursor-not-allowed
         ${config.bgColor} ${config.textColor} ${config.borderColor}
         ${className}
       `}
-      aria-label={`Continue with ${config.name}`}
+      aria-label={`${config.name}`}
     >
       {isLoading ? (
         <div className="animate-spin rounded-full h-5 w-5 border-2 border-current border-t-transparent" />
       ) : (
         config.icon
       )}
-      <span>Continue with {config.name}</span>
+      <span>{config.name}</span>
     </button>
   )
 }

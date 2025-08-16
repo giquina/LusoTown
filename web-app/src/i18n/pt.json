@@ -40,10 +40,10 @@
   "instituto.cta.secondary": "Património Cultural",
   
   "hero.badge": "Unidos pela Língua • United by Language",
-  "hero.title": "A Sua Comunidade Portuguesa em Londres",
-  "hero.title.mobile": "Comunidade Portuguesa",
-  "hero.subtitle": "Conecte-se com falantes de português em Londres. Experiências sociais e oportunidades profissionais esperam por si.",
-  "hero.subtitle.mobile": "Comunidade portuguesa em Londres!",
+  "hero.title": "O Seu Calendário Social Português",
+  "hero.title.mobile": "Calendário Social Português",
+  "hero.subtitle": "Conecte-se, explore, e viva Londres juntos",
+  "hero.subtitle.mobile": "Conecte-se, explore, vivam juntos",
   "hero.cta.primary": "Explorar Eventos",
   "hero.cta.secondary": "Juntar-se à Comunidade",
   
@@ -303,7 +303,7 @@
   "group.create.success": "Grupo criado com sucesso!",
   "group.create.error": "Erro ao criar grupo",
   
-  "search.placeholder": "Pesquisar eventos, grupos...",
+  "search.placeholder": "Pesquisar eventos...",
   "search.placeholder.short": "Pesquisar...",
   "search.button": "Pesquisar",
   "search.suggestions": "Sugestões",

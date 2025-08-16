@@ -158,7 +158,7 @@ const OptimizedChauffeurServiceCard = memo<OptimizedChauffeurServiceCardProps>((
         stiffness: 100
       }}
       viewport={{ once: true }}
-      className={`relative bg-white rounded-2xl shadow-lg border-2 overflow-hidden h-[580px] sm:h-[650px] flex flex-col ${
+      className={`relative bg-white rounded-2xl shadow-lg border-2 overflow-hidden min-h-[580px] sm:min-h-[650px] flex flex-col ${
         tier.popular 
           ? 'border-premium-300 shadow-2xl ring-2 ring-premium-100' 
           : `${colorClasses.border} hover:shadow-2xl`

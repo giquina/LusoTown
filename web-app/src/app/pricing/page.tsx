@@ -361,12 +361,12 @@ export default function Pricing() {
                   </button>
                 </div>
 
-                {/* Features */}
+                {/* Features - Fixed mobile text truncation */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {(isPortuguese ? annualMembership.features : annualMembership.featuresEn).map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-start space-x-3">
+                    <div key={featureIndex} className="flex items-start space-x-3 min-h-[48px]">
                       <CheckIconSolid className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                      <span className="text-gray-700 leading-relaxed">{feature}</span>
+                      <span className="text-gray-700 leading-relaxed break-words">{feature}</span>
                     </div>
                   ))}
                 </div>
