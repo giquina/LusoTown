@@ -18,7 +18,7 @@ The platform also caters to **event creators, organisers, and hosts** — both s
 - Use the platform's tools to narrate, guide, or host experiences
 
 **Tech Stack:** Next.js 14 (TypeScript), Tailwind CSS, Supabase, Vercel
-**Status:** Production-ready with 52+ pages, 99+ components, complete bilingual system, networking features, enhanced chauffeur services, annual membership pricing model (£25/year), and 10+ tech/business events
+**Status:** Production-ready with 54+ pages, 105+ components, complete bilingual system, networking features, enhanced chauffeur services, annual membership pricing model (£25/year), mobile-optimized 2-column layouts, and 10+ tech/business events
 
 ## Development Commands
 
@@ -121,10 +121,12 @@ LusoTown/
 
 **Mobile-First UI Patterns:**
 - All card sections must display 2 items per line on mobile (`grid-cols-2 lg:grid-cols-3/4`)
+- **2-Column Responsive Layouts**: Updated grid systems to use `md:grid-cols-2` instead of `lg:grid-cols-2` for better medium screen experience
+- **Uniform Card Heights**: Service tiers and tour routes now use fixed heights (`h-[580px] sm:h-[650px]`) for visual consistency
 - Consistent responsive gap spacing: `gap-3 sm:gap-4 lg:gap-6/8`
-- Fixed card heights with responsive breakpoints for uniform alignment
 - CTA buttons limited to 2 words maximum for mobile readability
 - Pricing displays must include "From" prefix for transparency ("From £XX")
+- **Enhanced Mobile Menu**: Larger hamburger icon (12x12px) with improved touch targets and visibility
 - Minimize mobile scrolling through optimized content density
 
 **State Management Architecture:**
@@ -215,11 +217,11 @@ The platform features a comprehensive luxury chauffeur and security transportati
 ### Chauffeur Components
 
 **Core Service Components:**
-- `OptimizedChauffeurPage.tsx`: Main chauffeur services landing page
+- `OptimizedChauffeurPage.tsx`: Main chauffeur services landing page with 2-column responsive layout
 - `ChauffeurBookingForm.tsx`: Advanced booking system with real-time validation
-- `ChauffeurServiceCard.tsx`: Individual service display with pricing
+- `ChauffeurServiceCard.tsx`: Individual service display with uniform fixed heights and pricing
 - `ChauffeurTestimonials.tsx`: Customer review and testimonial system
-- `LondonTourRoutes.tsx`: Portuguese cultural tour route descriptions
+- `LondonTourRoutes.tsx`: Portuguese cultural tour route descriptions with compact 2-column layout
 - `CustomToursSection.tsx`: Bespoke tour planning interface
 - `PortugueseCulturalTourRoutes.tsx`: Heritage-focused tour options
 
