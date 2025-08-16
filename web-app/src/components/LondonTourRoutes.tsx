@@ -344,7 +344,7 @@ export default function LondonTourRoutes({ isPortuguese, onBookTour }: LondonTou
           </p>
         </div>
 
-        <div className="space-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
           {tourRoutes.map((route, routeIndex) => {
             const CategoryIcon = getCategoryIcon(route.category)
             const colorClass = getCategoryColor(route.category)
@@ -356,11 +356,11 @@ export default function LondonTourRoutes({ isPortuguese, onBookTour }: LondonTou
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: routeIndex * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden"
+                className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden h-auto flex flex-col"
               >
                 {/* Route Image */}
                 {route.image && (
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-48 lg:h-56 overflow-hidden">
                     <img 
                       src={route.image} 
                       alt={`${route.name} - London tourism route`}
@@ -380,104 +380,112 @@ export default function LondonTourRoutes({ isPortuguese, onBookTour }: LondonTou
                 )}
 
                 {/* Route Header */}
-                <div className={`bg-gradient-to-r from-${colorClass}-50 to-${colorClass}-100/50 p-8`}>
-                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                        {isPortuguese ? route.namePortuguese : route.name}
-                      </h3>
-                      <p className="text-gray-700 text-lg mb-4">
-                        {isPortuguese ? route.descriptionPortuguese : route.description}
-                      </p>
-                      <div className="flex items-center gap-6 text-sm text-gray-600">
-                        <div className="flex items-center gap-1">
-                          <ClockIcon className="w-4 h-4" />
-                          <span>{route.duration}</span>
-                        </div>
+                <div className={`bg-gradient-to-r from-${colorClass}-50 to-${colorClass}-100/50 p-6 flex-grow`}>
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      {isPortuguese ? route.namePortuguese : route.name}
+                    </h3>
+                    <p className="text-gray-700 text-sm mb-3 line-clamp-2">
+                      {isPortuguese ? route.descriptionPortuguese : route.description}
+                    </p>
+                    <div className="flex items-center gap-3 text-sm text-gray-600 mb-4">
+                      <div className="flex items-center gap-1">
+                        <ClockIcon className="w-4 h-4" />
+                        <span>{route.duration}</span>
                       </div>
                     </div>
-                    
-                    <div className="text-center lg:text-right">
-                      <button
-                        onClick={() => onBookTour(route.id)}
-                        className={`bg-${colorClass}-600 hover:bg-${colorClass}-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg`}
-                      >
-                        {isPortuguese ? 'Reservar Esta Rota' : 'Book This Route'}
-                      </button>
-                    </div>
+                  </div>
+                  
+                  <div className="text-center">
+                    <button
+                      onClick={() => onBookTour(route.id)}
+                      className={`bg-${colorClass}-600 hover:bg-${colorClass}-700 text-white px-6 py-2.5 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg text-sm w-full`}
+                    >
+                      {isPortuguese ? 'Reservar Esta Rota' : 'Book This Route'}
+                    </button>
                   </div>
                 </div>
 
-                {/* Route Content */}
-                <div className="p-8">
+                {/* Route Content - Compact for 2-column layout */}
+                <div className="p-6">
                   {/* Highlights */}
-                  <div className="mb-8">
-                    <h4 className="text-lg font-bold text-gray-900 mb-4">
-                      {isPortuguese ? 'Destaques da Experiência' : 'Experience Highlights'}
+                  <div className="mb-6">
+                    <h4 className="text-lg font-bold text-gray-900 mb-3">
+                      {isPortuguese ? 'Destaques' : 'Highlights'}
                     </h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {(isPortuguese ? route.highlightsPortuguese : route.highlights).map((highlight, idx) => (
+                    <div className="space-y-2">
+                      {(isPortuguese ? route.highlightsPortuguese : route.highlights).slice(0, 3).map((highlight, idx) => (
                         <div key={idx} className="flex items-start gap-2">
-                          <CheckCircleIcon className={`w-5 h-5 text-${colorClass}-500 mt-0.5 flex-shrink-0`} />
-                          <span className="text-gray-700">{highlight}</span>
+                          <CheckCircleIcon className={`w-4 h-4 text-${colorClass}-500 mt-0.5 flex-shrink-0`} />
+                          <span className="text-gray-700 text-sm">{highlight}</span>
                         </div>
                       ))}
+                      {(isPortuguese ? route.highlightsPortuguese : route.highlights).length > 3 && (
+                        <div className="text-sm text-gray-500 italic">
+                          +{(isPortuguese ? route.highlightsPortuguese : route.highlights).length - 3} {isPortuguese ? 'mais' : 'more'}
+                        </div>
+                      )}
                     </div>
                   </div>
 
-                  {/* Tour Stops */}
-                  <div className="mb-8">
-                    <h4 className="text-lg font-bold text-gray-900 mb-6">
-                      {isPortuguese ? 'Paragens da Rota' : 'Route Stops'}
+                  {/* Key Stops */}
+                  <div className="mb-6">
+                    <h4 className="text-lg font-bold text-gray-900 mb-3">
+                      {isPortuguese ? 'Principais Paragens' : 'Key Stops'}
                     </h4>
-                    <div className="space-y-4">
-                      {route.stops.map((stop, stopIndex) => {
+                    <div className="space-y-3">
+                      {route.stops.slice(0, 2).map((stop, stopIndex) => {
                         const TypeIcon = getTypeIcon(stop.type)
                         return (
-                          <div key={stopIndex} className="flex gap-4 p-4 bg-gray-50 rounded-xl">
+                          <div key={stopIndex} className="flex gap-3 p-3 bg-gray-50 rounded-lg">
                             <div className="flex-shrink-0">
-                              <div className={`w-10 h-10 bg-${colorClass}-100 rounded-lg flex items-center justify-center`}>
-                                <TypeIcon className={`w-5 h-5 text-${colorClass}-600`} />
+                              <div className={`w-8 h-8 bg-${colorClass}-100 rounded-lg flex items-center justify-center`}>
+                                <TypeIcon className={`w-4 h-4 text-${colorClass}-600`} />
                               </div>
                             </div>
                             <div className="flex-1">
-                              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
-                                <h5 className="font-semibold text-gray-900">
-                                  {isPortuguese ? stop.namePortuguese : stop.name}
-                                </h5>
-                                <div className="flex items-center gap-4 text-sm text-gray-500">
-                                  <span className="flex items-center gap-1">
-                                    <ClockIcon className="w-4 h-4" />
-                                    {stop.duration}
-                                  </span>
-                                  <span className="flex items-center gap-1">
-                                    <MapPinIcon className="w-4 h-4" />
-                                    {stop.location}
-                                  </span>
-                                </div>
+                              <h5 className="font-semibold text-gray-900 text-sm mb-1">
+                                {isPortuguese ? stop.namePortuguese : stop.name}
+                              </h5>
+                              <div className="flex items-center gap-3 text-xs text-gray-500">
+                                <span className="flex items-center gap-1">
+                                  <ClockIcon className="w-3 h-3" />
+                                  {stop.duration}
+                                </span>
+                                <span className="flex items-center gap-1">
+                                  <MapPinIcon className="w-3 h-3" />
+                                  {stop.location}
+                                </span>
                               </div>
-                              <p className="text-gray-600 text-sm">
-                                {isPortuguese ? stop.descriptionPortuguese : stop.description}
-                              </p>
                             </div>
                           </div>
                         )
                       })}
+                      {route.stops.length > 2 && (
+                        <div className="text-sm text-gray-500 italic text-center">
+                          +{route.stops.length - 2} {isPortuguese ? 'mais paragens' : 'more stops'}
+                        </div>
+                      )}
                     </div>
                   </div>
 
-                  {/* What's Included */}
+                  {/* What's Included - Compact */}
                   <div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-4">
-                      {isPortuguese ? 'O Que Está Incluído' : 'What\'s Included'}
+                    <h4 className="text-lg font-bold text-gray-900 mb-3">
+                      {isPortuguese ? 'Incluído' : 'Included'}
                     </h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {(isPortuguese ? route.includesPortuguese : route.includes).map((include, idx) => (
+                    <div className="space-y-2">
+                      {(isPortuguese ? route.includesPortuguese : route.includes).slice(0, 3).map((include, idx) => (
                         <div key={idx} className="flex items-start gap-2">
-                          <CheckCircleIcon className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                          <span className="text-gray-700">{include}</span>
+                          <CheckCircleIcon className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
+                          <span className="text-gray-700 text-sm">{include}</span>
                         </div>
                       ))}
+                      {(isPortuguese ? route.includesPortuguese : route.includes).length > 3 && (
+                        <div className="text-sm text-gray-500 italic">
+                          +{(isPortuguese ? route.includesPortuguese : route.includes).length - 3} {isPortuguese ? 'mais serviços' : 'more services'}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

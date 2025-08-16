@@ -65,9 +65,9 @@ export default function Header() {
   const navigationLinks = user ? getAuthenticatedNavigationLinks(t) : getNavigationLinks(t)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 min-h-[68px]">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 min-h-[72px]">
       <nav className="container-width px-3 sm:px-6 lg:px-8" aria-label="Top">
-        <div className="flex items-center justify-between h-16 sm:h-18 gap-2 sm:gap-4">
+        <div className="flex items-center justify-between h-18 sm:h-20 gap-2 sm:gap-4">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
             <a href="/" className="flex items-center gap-2 sm:gap-3">
@@ -203,16 +203,16 @@ export default function Header() {
             <LanguageToggle />
             <button
               type="button"
-              className="inline-flex items-center justify-center p-2 rounded-lg text-primary-700 hover:text-primary-800 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200 h-10 w-10 bg-white border-2 border-primary-200 shadow-lg active:bg-primary-50 active:scale-95"
+              className="inline-flex items-center justify-center p-3 rounded-lg text-primary-700 hover:text-primary-800 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200 h-12 w-12 bg-white border-2 border-primary-200 shadow-lg active:bg-primary-50 active:scale-95 ml-1"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-expanded={mobileMenuOpen}
               aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
             >
               <span className="sr-only">{mobileMenuOpen ? 'Close menu' : 'Open main menu'}</span>
               {mobileMenuOpen ? (
-                <XMarkIcon className="h-5 w-5 text-primary-700 stroke-2" aria-hidden="true" />
+                <XMarkIcon className="h-6 w-6 text-primary-700 stroke-2" aria-hidden="true" />
               ) : (
-                <Bars3Icon className="h-5 w-5 text-primary-700 stroke-2" aria-hidden="true" />
+                <Bars3Icon className="h-6 w-6 text-primary-700 stroke-2" aria-hidden="true" />
               )}
             </button>
           </div>

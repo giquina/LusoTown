@@ -104,24 +104,24 @@ const OptimizedChauffeurPage: React.FC<OptimizedChauffeurPageProps> = ({
       description: 'Premium service with cultural guide and security',
       descriptionPortuguese: 'Serviço premium com guia cultural e segurança',
       features: [
-        'All Premium features',
-        'Portuguese cultural guide',
-        'VIP venue access',
-        'Cultural commentary',
-        'Photography service',
-        'Dining recommendations',
-        'Historical insights',
-        'Personalized itinerary'
+        'All Premium Security features',
+        'Certified Portuguese-speaking London guide',
+        'VIP access to London attractions and restaurants',
+        'London commentary and historical insights',
+        'Professional photography at all tour stops',
+        'Curated dining recommendations with reservations',
+        'London business network introductions',
+        'Ultra-premium luxury vehicle'
       ],
       featuresPortuguese: [
-        'Todas as características Premium',
-        'Guia cultural português',
-        'Acesso VIP a locais',
-        'Comentário cultural',
-        'Serviço de fotografia',
-        'Recomendações gastronómicas',
-        'Insights históricos',
-        'Itinerário personalizado'
+        'Todas as características Premium Security',
+        'Guia certificado de Londres falante de português',
+        'Acesso VIP a atrações e restaurantes de Londres',
+        'Comentário de Londres e insights históricos',
+        'Fotografia profissional em todas as paragens do tour',
+        'Recomendações gastronómicas curadas com reservas',
+        'Introduções à rede empresarial de Londres',
+        'Veículo de luxo ultra-premium'
       ],
       popular: false,
       color: 'premium',
@@ -136,24 +136,24 @@ const OptimizedChauffeurPage: React.FC<OptimizedChauffeurPageProps> = ({
       description: 'Maximum security with close protection team',
       descriptionPortuguese: 'Segurança máxima com equipa de proteção próxima',
       features: [
-        'All VIP features',
-        'Close protection team',
-        'Advanced route planning',
-        'Counter-surveillance',
-        'Armored vehicle option',
-        'Medical support',
-        'Emergency response team',
-        'Real-time monitoring'
+        'All VIP Cultural features',
+        'Multi-person close protection team',
+        'Advanced route planning and reconnaissance',
+        'Counter-surveillance measures',
+        'Armored vehicle option available',
+        'Medical support and first aid qualified personnel',
+        'Emergency evacuation protocols',
+        'Real-time security coordination'
       ],
       featuresPortuguese: [
-        'Todas as características VIP',
-        'Equipa de proteção próxima',
-        'Planeamento avançado de rotas',
-        'Contra-vigilância',
-        'Opção de veículo blindado',
-        'Apoio médico',
-        'Equipa de resposta de emergência',
-        'Monitorização em tempo real'
+        'Todas as características VIP Cultural',
+        'Equipa de proteção próxima multi-pessoa',
+        'Planeamento avançado de rotas e reconhecimento',
+        'Medidas de contra-vigilância',
+        'Opção de veículo blindado disponível',
+        'Apoio médico e pessoal qualificado em primeiros socorros',
+        'Protocolos de evacuação de emergência',
+        'Coordenação de segurança em tempo real'
       ],
       popular: false,
       color: 'action',
@@ -517,7 +517,7 @@ const OptimizedChauffeurPage: React.FC<OptimizedChauffeurPageProps> = ({
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8">
             {serviceTiers.map((tier, index) => (
               <OptimizedChauffeurServiceCard
                 key={tier.id}

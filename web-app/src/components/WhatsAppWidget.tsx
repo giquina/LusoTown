@@ -27,80 +27,92 @@ const WhatsAppWidget: React.FC = () => {
   // Helper function to check if language is Portuguese
   const isPortuguese = language === 'pt'
 
-  // Conversation flow for global Portuguese community platform
+  // Conversation flow for dual-audience Portuguese community platform
   const conversationFlow = {
     en: [
       {
-        message: "Olá! 👋 Welcome to LusoTown - the London platform connecting Portuguese speakers across the city! I'm here to help you either organize events for our community or find amazing Portuguese events to attend.",
-        options: ["I want to organize events", "I want to find events to attend", "Tell me about LusoTown", "Just browsing"],
+        message: "Olá! 👋 Welcome to LusoTown - the bilingual platform connecting Portuguese speakers in London and UK! Whether you're looking for social experiences or business networking, I'm here to help you find events or become an event creator yourself.",
+        options: ["I want to organize events", "I want to find social events", "I want business networking", "Tell me about LusoTown"],
         icon: <Heart className="w-4 h-4 text-green-600" />
       },
       // Organizer path
       {
-        message: "Fantástico! 🎯 You want to organize events for Portuguese speakers! LusoTown helps you:\n\n📅 Create and promote Portuguese cultural events\n🌆 Reach Portuguese speakers across London\n💰 Monetize your events with our pricing tools\n📈 Track attendance and grow your community\n🎉 Access promotional tools and templates\n\nReady to become a community leader?",
-        options: ["Yes, I want to organize!", "What about pricing my events?", "How do I reach people in London?", "Tell me about promotional tools"],
+        message: "Fantástico! 🎯 You want to organize events for Portuguese speakers! LusoTown helps you:\n\n📅 Create social & business events for our community\n🌆 Reach Portuguese speakers across London and UK\n💰 Monetize through tickets, sponsorships & partnerships\n📈 Track attendance and build long-term relationships\n🎉 Access promotional tools and bilingual templates\n\nReady to become a community leader?",
+        options: ["Yes, I want to organize!", "What about monetization?", "How do I reach the community?", "Tell me about promotional tools"],
         icon: <Calendar className="w-4 h-4 text-green-600" />
       },
-      // Member path  
+      // Social events path  
       {
-        message: "Perfeito! 🎉 You want to find Portuguese events to attend! LusoTown connects you with:\n\n🎭 Portuguese cultural events across London\n🍷 Wine tastings, fado nights, festivals\n👥 Portuguese speakers across London boroughs\n🏆 Quality verified events and organizers\n💬 Chat with other Portuguese speakers\n\n*Your Portuguese social calendar in London!*",
-        options: ["Show me London events!", "I'm in another city", "How do I connect with people?", "What types of events?"],
+        message: "Perfeito! 🎉 You want to find social events! LusoTown connects you with:\n\n🎭 Portuguese cultural experiences & festivals\n🍷 Wine tastings, fado nights, food tours\n🌆 London tours with Portuguese guides\n🎵 Music events, club nights & social gatherings\n👥 Connect with Portuguese speakers through events\n\n*Your Portuguese social calendar awaits!*",
+        options: ["Show me cultural events!", "Find music & nightlife", "Book a chauffeur tour", "How do I connect?"],
         icon: <Users className="w-4 h-4 text-red-600" />
+      },
+      // Business networking path
+      {
+        message: "Excelente! 💼 Ready for business networking! LusoTown offers:\n\n🚀 AI workshops & tech masterclasses\n💻 Website creation & digital marketing training\n🤝 Portuguese business community networking\n📈 Entrepreneurship workshops & mentoring\n🎯 Professional development opportunities\n\n*Build your business network with Portuguese professionals!*",
+        options: ["Show me tech workshops!", "Find networking events", "Business mentoring options", "Professional development"],
+        icon: <Calendar className="w-4 h-4 text-action-600" />
       },
       // Platform info
       {
-        message: "Excelente! 🌆 LusoTown is the London home for Portuguese speakers:\n\n🎪 **For Event Organizers:** Tools to create, promote, and monetize Portuguese events\n🎭 **For Community Members:** Discover events and connect with Portuguese speakers\n🌆 **London Focus:** Connecting Portuguese speakers across all London boroughs\n🌍 All Portuguese-speaking countries welcome!\n\nUniting our London Portuguese family!",
-        options: ["I want to organize events", "I want to attend events", "Tell me about global expansion", "How do I join?"],
-        icon: <Calendar className="w-4 h-4 text-yellow-600" />
+        message: "Excelente! 🌆 LusoTown serves dual audiences in London & UK:\n\n🎪 **Event Creators:** Tools to create, promote & monetize social/business events\n🎭 **Social Users:** Cultural experiences, tours, entertainment & connections\n💼 **Business Professionals:** Networking, workshops, training & mentoring\n🌍 **Bilingual Platform:** Complete English/Portuguese experience\n\n*Professional, inclusive & welcoming to all Portuguese speakers!*",
+        options: ["I want to create events", "Show me social experiences", "Business networking options", "Platform features"],
+        icon: <Calendar className="w-4 h-4 text-premium-600" />
       },
       // Event organizer details
       {
-        message: "Amazing! 🚀 As an event organizer on LusoTown you get:\n\n💡 **Event Creation Tools:** Easy setup for Portuguese cultural events\n💰 **Flexible Pricing:** Free, paid, or donation-based events\n📊 **Analytics:** Track registrations and engagement\n🌆 **London Reach:** Access to Portuguese speakers across London\n📢 **Marketing Support:** Social media templates and promotion\n🎯 **Targeted Audience:** Verified Portuguese speakers only\n\nStart organizing today!",
-        options: ["Sign me up as organizer!", "What about event fees?", "How do I promote globally?", "Show me organizer tools"],
-        icon: <ArrowRight className="w-4 h-4 text-green-600" />
+        message: "Amazing! 🚀 As an event creator on LusoTown you get:\n\n💡 **Dual-Audience Tools:** Create both social & business events\n💰 **Revenue Opportunities:** Tickets, sponsorships & partnerships\n📊 **Advanced Analytics:** Track engagement & build relationships\n🌆 **Community Reach:** Access Portuguese speakers across UK\n📢 **Bilingual Marketing:** Templates in English & Portuguese\n🎯 **Quality Audience:** Verified community members only\n\nStart creating events today!",
+        options: ["Sign me up as creator!", "Revenue opportunities?", "Marketing support details", "Community reach info"],
+        icon: <ArrowRight className="w-4 h-4 text-action-600" />
       },
-      // Event attendee details  
+      // Community member details  
       {
-        message: "Incrível! 🎭 As a community member you can:\n\n🎪 **Discover Events:** Portuguese festivals, cultural nights, networking\n🗺️ **London Events Now:** Currently available in London\n🌍 **Global Expansion:** Coming to your city soon!\n👥 **Connect:** Chat with other Portuguese speakers\n💫 **Verified Community:** Safe, authentic Portuguese speakers\n🎯 **Personalized:** Events matched to your interests\n\nJoin our growing Portuguese family!",
-        options: ["Join the community!", "When will you expand to my city?", "What London events are available?", "How do I connect with people?"],
-        icon: <Shield className="w-4 h-4 text-red-600" />
+        message: "Incrível! 🎭 As a community member you can:\n\n🎪 **Social Experiences:** Festivals, tours, cultural nights & entertainment\n💼 **Business Growth:** Workshops, networking & professional development\n🚗 **Luxury Services:** Portuguese chauffeur & cultural tours\n👥 **Networking System:** Connect through shared event attendance\n💫 **Annual Membership:** £25/year for premium features\n🎯 **Bilingual Experience:** Complete Portuguese/English platform\n\nJoin our thriving Portuguese community!",
+        options: ["Join the community!", "Annual membership benefits", "Chauffeur services info", "Networking features"],
+        icon: <Shield className="w-4 h-4 text-secondary-600" />
       }
     ],
     pt: [
       {
-        message: "Olá! 👋 Bem-vindo à LusoTown - a plataforma global que conecta lusófonos em todo o mundo! Estou aqui para te ajudar a organizar eventos para a nossa comunidade ou encontrar eventos portugueses incríveis para participar.",
-        options: ["Quero organizar eventos", "Quero encontrar eventos para participar", "Conta-me sobre a LusoTown", "Só estou a ver"],
+        message: "Olá! 👋 Bem-vindo à LusoTown - a plataforma bilingue que conecta lusófonos em Londres e Reino Unido! Quer procures experiências sociais ou networking empresarial, estou aqui para te ajudar a encontrar eventos ou tornares-te criador de eventos.",
+        options: ["Quero organizar eventos", "Quero eventos sociais", "Networking empresarial", "Conta-me sobre LusoTown"],
         icon: <Heart className="w-4 h-4 text-green-600" />
       },
       // Organizer path
       {
-        message: "Fantástico! 🎯 Queres organizar eventos para lusófonos! A LusoTown ajuda-te a:\n\n📅 Criar e promover eventos culturais portugueses\n🌍 Alcançar lusófonos globalmente (começando em Londres)\n💰 Monetizar os teus eventos com as nossas ferramentas\n📈 Acompanhar participação e fazer crescer a comunidade\n🎉 Aceder a ferramentas e modelos promocionais\n\nPronto para te tornares um líder comunitário?",
-        options: ["Sim, quero organizar!", "E sobre preços dos eventos?", "Como alcanço pessoas globalmente?", "Fala-me das ferramentas promocionais"],
+        message: "Fantástico! 🎯 Queres organizar eventos para lusófonos! A LusoTown ajuda-te a:\n\n📅 Criar eventos sociais e empresariais para a comunidade\n🌍 Alcançar lusófonos em Londres e Reino Unido\n💰 Monetizar através de bilhetes, patrocínios e parcerias\n📈 Acompanhar participação e construir relacionamentos duradouros\n🎉 Aceder a ferramentas promocionais bilingues\n\nPronto para te tornares um líder comunitário?",
+        options: ["Sim, quero organizar!", "Oportunidades de receita?", "Como alcanço a comunidade?", "Ferramentas promocionais"],
         icon: <Calendar className="w-4 h-4 text-green-600" />
       },
-      // Member path
+      // Social events path
       {
-        message: "Perfeito! 🎉 Queres encontrar eventos portugueses para participar! A LusoTown conecta-te com:\n\n🎭 Eventos culturais portugueses em todo o mundo\n🍷 Provas de vinho, noites de fado, festivais\n👥 Lusófonos na tua área e globalmente\n🏆 Eventos e organizadores verificados e de qualidade\n💬 Conversa com outros lusófonos\n\n*Atualmente com eventos em Londres, expandindo globalmente em breve!*",
-        options: ["Mostra-me eventos em Londres!", "Estou noutra cidade", "Como me conecto com pessoas?", "Que tipos de eventos?"],
+        message: "Perfeito! 🎉 Queres encontrar eventos sociais! A LusoTown conecta-te com:\n\n🎭 Experiências culturais portuguesas e festivais\n🍷 Provas de vinho, noites de fado, tours gastronómicos\n🌆 Tours por Londres com guias portugueses\n🎵 Eventos musicais, noites de club e encontros sociais\n👥 Conecta-te com lusófonos através de eventos\n\n*O teu calendário social português espera por ti!*",
+        options: ["Mostra-me eventos culturais!", "Música e vida noturna", "Reservar tour de chauffeur", "Como me conecto?"],
         icon: <Users className="w-4 h-4 text-red-600" />
+      },
+      // Business networking path
+      {
+        message: "Excelente! 💼 Pronto para networking empresarial! A LusoTown oferece:\n\n🚀 Workshops de IA e masterclasses tecnológicas\n💻 Criação de websites e treino de marketing digital\n🤝 Networking da comunidade empresarial portuguesa\n📈 Workshops de empreendedorismo e mentoria\n🎯 Oportunidades de desenvolvimento profissional\n\n*Constrói a tua rede empresarial com profissionais portugueses!*",
+        options: ["Mostra-me workshops tecnológicos!", "Encontrar eventos de networking", "Opções de mentoria empresarial", "Desenvolvimento profissional"],
+        icon: <Calendar className="w-4 h-4 text-action-600" />
       },
       // Platform info
       {
-        message: "Excelente! 🌍 A LusoTown é o lar global dos lusófonos:\n\n🎪 **Para Organizadores:** Ferramentas para criar, promover e monetizar eventos portugueses\n🎭 **Para Membros da Comunidade:** Descobrir eventos e conectar com lusófonos\n🌐 **Alcance Global:** Atualmente em Londres, expandindo mundialmente\n🌍 Todos os países lusófonos são bem-vindos!\n\nUnindo a nossa família portuguesa global!",
-        options: ["Quero organizar eventos", "Quero participar em eventos", "Fala-me da expansão global", "Como me junto?"],
-        icon: <Calendar className="w-4 h-4 text-yellow-600" />
+        message: "Excelente! 🌆 A LusoTown serve duas audiências em Londres e Reino Unido:\n\n🎪 **Criadores de Eventos:** Ferramentas para criar, promover e monetizar eventos sociais/empresariais\n🎭 **Utilizadores Sociais:** Experiências culturais, tours, entretenimento e conexões\n💼 **Profissionais Empresariais:** Networking, workshops, treino e mentoria\n🌍 **Plataforma Bilingue:** Experiência completa Português/Inglês\n\n*Profissional, inclusiva e acolhedora para todos os lusófonos!*",
+        options: ["Quero criar eventos", "Mostra-me experiências sociais", "Opções de networking empresarial", "Funcionalidades da plataforma"],
+        icon: <Calendar className="w-4 h-4 text-premium-600" />
       },
       // Event organizer details
       {
-        message: "Incrível! 🚀 Como organizador de eventos na LusoTown recebes:\n\n💡 **Ferramentas de Criação:** Configuração fácil para eventos culturais portugueses\n💰 **Preços Flexíveis:** Eventos gratuitos, pagos ou baseados em doações\n📊 **Analytics:** Acompanha inscrições e envolvimento\n🌍 **Alcance Global:** Acesso a lusófonos em todo o mundo\n📢 **Apoio de Marketing:** Modelos e promoção para redes sociais\n🎯 **Audiência Direcionada:** Apenas lusófonos verificados\n\nComeça a organizar hoje!",
-        options: ["Regista-me como organizador!", "E sobre taxas de eventos?", "Como promovo globalmente?", "Mostra-me ferramentas de organizador"],
-        icon: <ArrowRight className="w-4 h-4 text-green-600" />
+        message: "Incrível! 🚀 Como criador de eventos na LusoTown recebes:\n\n💡 **Ferramentas Duais:** Cria eventos sociais e empresariais\n💰 **Oportunidades de Receita:** Bilhetes, patrocínios e parcerias\n📊 **Analytics Avançadas:** Acompanha envolvimento e constrói relacionamentos\n🌆 **Alcance Comunitário:** Acesso a lusófonos em todo Reino Unido\n📢 **Marketing Bilingue:** Modelos em Inglês e Português\n🎯 **Audiência de Qualidade:** Apenas membros verificados da comunidade\n\nComeça a criar eventos hoje!",
+        options: ["Regista-me como criador!", "Oportunidades de receita?", "Detalhes do apoio de marketing", "Informações sobre alcance comunitário"],
+        icon: <ArrowRight className="w-4 h-4 text-action-600" />
       },
-      // Event attendee details
+      // Community member details
       {
-        message: "Incrível! 🎭 Como membro da comunidade podes:\n\n🎪 **Descobrir Eventos:** Festivais portugueses, noites culturais, networking\n🗺️ **Eventos em Londres Agora:** Atualmente disponíveis em Londres\n🌍 **Expansão Global:** Chegando à tua cidade em breve!\n👥 **Conectar:** Conversa com outros lusófonos\n💫 **Comunidade Verificada:** Lusófonos seguros e autênticos\n🎯 **Personalizado:** Eventos adaptados aos teus interesses\n\nJunta-te à nossa família portuguesa em crescimento!",
-        options: ["Juntar-me à comunidade!", "Quando expandem para a minha cidade?", "Que eventos há em Londres?", "Como me conecto com pessoas?"],
-        icon: <Shield className="w-4 h-4 text-red-600" />
+        message: "Incrível! 🎭 Como membro da comunidade podes:\n\n🎪 **Experiências Sociais:** Festivais, tours, noites culturais e entretenimento\n💼 **Crescimento Empresarial:** Workshops, networking e desenvolvimento profissional\n🚗 **Serviços de Luxo:** Chauffeur português e tours culturais\n👥 **Sistema de Networking:** Conecta através de participação partilhada em eventos\n💫 **Membership Anual:** £25/ano para funcionalidades premium\n🎯 **Experiência Bilingue:** Plataforma completa Português/Inglês\n\nJunta-te à nossa próspera comunidade portuguesa!",
+        options: ["Juntar-me à comunidade!", "Benefícios do membership anual", "Informações sobre serviços de chauffeur", "Funcionalidades de networking"],
+        icon: <Shield className="w-4 h-4 text-secondary-600" />
       }
     ]
   }
@@ -156,8 +168,8 @@ const WhatsAppWidget: React.FC = () => {
     setMessages(prev => [...prev, userMessage])
 
     // Handle signup/registration actions
-    if (option.includes("sign me up") || option.includes("signup") || option.includes("organizer") ||
-        option.includes("regista-me") || option.includes("Leva-me ao registo") || option.includes("Regista-me") ||
+    if (option.includes("sign me up") || option.includes("signup") || option.includes("organizer") || option.includes("creator") ||
+        option.includes("regista-me") || option.includes("Leva-me ao registo") || option.includes("Regista-me") || option.includes("criador") ||
         option.includes("let's start") || option.includes("vamos começar")) {
       setTimeout(() => {
         const finalMessage: Message = {
@@ -224,21 +236,23 @@ const WhatsAppWidget: React.FC = () => {
       let nextStepIndex = 1 // Default to first step after intro
 
       // Route based on user selection
-      if (option.includes("organize") || option.includes("organizar")) {
+      if (option.includes("organize") || option.includes("organizar") || option.includes("create events") || option.includes("criar eventos")) {
         nextStepIndex = 1 // Organizer path
-      } else if (option.includes("find events") || option.includes("attend") || option.includes("encontrar eventos") || option.includes("participar")) {
-        nextStepIndex = 2 // Member/attendee path  
-      } else if (option.includes("Tell me about") || option.includes("Conta-me sobre")) {
-        nextStepIndex = 3 // Platform info path
-      } else if (currentStep === 1 || currentStep === 2) {
-        // Continue with organizer or member specific flows
-        nextStepIndex = 4 // Detailed info for organizers
-      } else if (currentStep === 3) {
+      } else if (option.includes("social events") || option.includes("eventos sociais") || option.includes("find social") || option.includes("social experiences") || option.includes("experiências sociais")) {
+        nextStepIndex = 2 // Social events path  
+      } else if (option.includes("business networking") || option.includes("networking empresarial") || option.includes("Business") || option.includes("Empresarial")) {
+        nextStepIndex = 3 // Business networking path
+      } else if (option.includes("Tell me about") || option.includes("Conta-me sobre") || option.includes("Platform features") || option.includes("Funcionalidades")) {
+        nextStepIndex = 4 // Platform info path
+      } else if (currentStep === 1 || currentStep === 2 || currentStep === 3) {
+        // Continue with specific detailed flows
+        nextStepIndex = 5 // Detailed info for organizers/social/business
+      } else if (currentStep === 4) {
         // From platform info, route based on choice
-        if (option.includes("organize") || option.includes("organizar")) {
-          nextStepIndex = 4 // Organizer details
+        if (option.includes("create events") || option.includes("criar eventos")) {
+          nextStepIndex = 5 // Creator details
         } else {
-          nextStepIndex = 5 // Member details
+          nextStepIndex = 6 // Member details
         }
       } else {
         // Default progression
@@ -306,14 +320,17 @@ const WhatsAppWidget: React.FC = () => {
       {isOpen && !isMinimized && (
         <div className="mb-3 bg-white rounded-xl shadow-xl border border-gray-200 w-[calc(100vw-2rem)] sm:w-72 max-w-[calc(100vw-2rem)] max-h-[70vh] sm:max-h-96 flex flex-col animate-scale-in">
           {/* Header */}
-          <div className="flex items-center justify-between p-3 bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 text-white rounded-t-xl">
+          <div className="flex items-center justify-between p-3 bg-gradient-to-r from-primary-600 via-action-600 to-premium-600 text-white rounded-t-xl shadow-md">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm">
-                <span className="text-green-600 font-bold text-xs">LT</span>
+              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-white/20">
+                <span className="text-primary-600 font-bold text-xs">LT</span>
               </div>
               <div>
-                <h3 className="font-semibold text-sm">LusoTown</h3>
-                <p className="text-xs opacity-90">Helper</p>
+                <h3 className="font-semibold text-sm">LusoTown Assistant</h3>
+                <p className="text-xs opacity-90 flex items-center">
+                  <span className="w-2 h-2 bg-secondary-400 rounded-full mr-2 animate-pulse"></span>
+                  Online now
+                </p>
               </div>
             </div>
             <div className="flex items-center space-x-2">
@@ -351,14 +368,17 @@ const WhatsAppWidget: React.FC = () => {
                   )}
                   <p className="text-xs whitespace-pre-line leading-relaxed">{message.text}</p>
                   {message.options && (
-                    <div className="mt-2 space-y-1.5">
+                    <div className="mt-3 space-y-2">
                       {message.options.map((option, index) => (
                         <button
                           key={index}
                           onClick={() => handleOptionClick(option)}
-                          className="block w-full text-left p-2 text-xs bg-gradient-to-r from-green-600 to-red-600 text-white rounded-lg hover:from-green-700 hover:to-red-700 transition-all duration-200 font-medium shadow-sm hover:shadow-md"
+                          className="block w-full text-left p-2.5 text-xs bg-gradient-to-r from-primary-600 to-action-600 text-white rounded-lg hover:from-primary-700 hover:to-action-700 transition-all duration-200 font-medium shadow-md hover:shadow-lg transform hover:scale-[1.02] border border-white/10"
                         >
-                          {option}
+                          <span className="flex items-center justify-between">
+                            {option}
+                            <ArrowRight className="w-3 h-3 opacity-70" />
+                          </span>
                         </button>
                       ))}
                     </div>
@@ -382,13 +402,13 @@ const WhatsAppWidget: React.FC = () => {
       {/* Floating Button */}
       <button
         onClick={toggleWidget}
-        className={`w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-r from-green-600 via-red-600 to-yellow-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group relative overflow-hidden ${
-          isOpen && !isMinimized ? 'scale-90' : 'scale-100 hover:scale-105'
+        className={`w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-primary-600 via-action-600 to-premium-600 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center group relative overflow-hidden border-2 border-white/20 ${
+          isOpen && !isMinimized ? 'scale-90' : 'scale-100 hover:scale-110'
         }`}
-        aria-label="Open chat"
+        aria-label="Open LusoTown chat"
       >
         {/* Animated background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-green-700 to-red-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-700 via-action-700 to-premium-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         
         {isOpen && !isMinimized ? (
           <div className="w-6 h-1 bg-white rounded relative z-10"></div>

@@ -137,152 +137,270 @@ export default function HowItWorks() {
           </div>
         </div>
 
-        {/* Content Sections Grid - 2x3 Layout for Mobile Optimization */}
-        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6 mb-20">
-          {/* Book Experiences Section */}
-          <div className="group relative transition-all duration-1000 delay-100">
-            <div className="bg-white/80 backdrop-blur-lg border border-white/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 relative overflow-hidden h-[240px] sm:h-[280px] lg:h-[320px] flex flex-col">
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary-50 to-secondary-100 opacity-0 group-hover:opacity-60 transition-opacity duration-500 rounded-xl" />
+        {/* Redesigned Dynamic Cards with Portuguese Cultural Elements */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-20">
+          
+          {/* Book Portuguese Events */}
+          <div className="group relative transition-all duration-500 hover:scale-105">
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-secondary-50 via-white to-secondary-100 border-2 border-secondary-200 shadow-xl group-hover:shadow-2xl transition-all duration-500 h-[280px] sm:h-[320px] lg:h-[360px]">
+              {/* Background Pattern */}
+              <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+                <div className="absolute top-4 right-4 text-6xl opacity-30">🏛️</div>
+                <div className="absolute bottom-4 left-4 text-4xl opacity-40">🎭</div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-8xl opacity-10">⚽</div>
+              </div>
               
-              <div className="relative z-10 flex flex-col h-full">
-                <div className="flex items-start justify-between mb-2 sm:mb-3">
-                  <div className="text-xl sm:text-3xl lg:text-5xl font-black text-gray-100 group-hover:text-gray-200 transition-colors duration-300 leading-none">01</div>
-                  <div className="w-7 h-7 sm:w-10 sm:h-10 lg:w-14 lg:h-14 rounded-lg lg:rounded-xl bg-gradient-to-br from-secondary-500 to-secondary-600 flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:rotate-6 transition-all duration-500 flex-shrink-0">
-                    <Calendar className="h-3 w-3 sm:h-5 sm:w-5 lg:h-7 lg:w-7 text-white" />
+              {/* Card Content */}
+              <div className="relative p-4 sm:p-6 h-full flex flex-col">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="text-3xl sm:text-4xl font-black text-secondary-600/20 group-hover:text-secondary-600/30 transition-colors duration-300">01</div>
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-secondary-500 to-secondary-600 flex items-center justify-center shadow-lg group-hover:rotate-12 group-hover:shadow-xl transition-all duration-500">
+                    <Calendar className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                   </div>
                 </div>
 
-                <div className="flex-1 space-y-1 sm:space-y-2">
-                  <h3 className="text-xs sm:text-sm lg:text-lg font-bold text-gray-900 leading-tight">Book Events</h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">Museums • Sports • Fado</p>
-                  <p className="text-xs text-gray-600 leading-relaxed">Book tours, matches, concerts for Portuguese speakers.</p>
+                <div className="flex-1 space-y-3">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight">Book Events</h3>
+                  
+                  {/* Portuguese Cultural Categories */}
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-700">
+                      <div className="w-2 h-2 rounded-full bg-secondary-400"></div>
+                      <span className="font-medium">Museums & Cultural Sites</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-700">
+                      <div className="w-2 h-2 rounded-full bg-action-400"></div>
+                      <span className="font-medium">Sporting Events & Matches</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-700">
+                      <div className="w-2 h-2 rounded-full bg-accent-400"></div>
+                      <span className="font-medium">Fado Nights & Concerts</span>
+                    </div>
+                  </div>
+                  
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Book authentic Portuguese experiences with <strong>500+ Portuguese speakers</strong> across London.
+                  </p>
                 </div>
 
-                <div className="mt-auto pt-2">
-                  <a href="/events" className="inline-flex items-center gap-1 bg-secondary-600 text-white text-xs font-bold px-2 sm:px-3 py-1 sm:py-2 rounded-md hover:bg-secondary-700 transition-all duration-300">
+                <div className="mt-auto pt-4">
+                  <a href="/events" className="group/btn inline-flex items-center gap-2 bg-secondary-600 hover:bg-secondary-700 text-white font-bold px-4 py-3 rounded-xl w-full justify-center transition-all duration-300 shadow-lg hover:shadow-xl">
                     <span>Book Now</span>
-                    <ArrowRight className="h-2 w-2 sm:h-3 sm:w-3" />
+                    <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Create Groups Section */}
-          <div className="group relative transition-all duration-1000 delay-150">
-            <div className="bg-white/80 backdrop-blur-lg border border-white/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 relative overflow-hidden h-[240px] sm:h-[280px] lg:h-[320px] flex flex-col">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent-50 to-coral-100 opacity-0 group-hover:opacity-60 transition-opacity duration-500 rounded-xl" />
+          {/* Create Portuguese Groups */}
+          <div className="group relative transition-all duration-500 hover:scale-105">
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-accent-50 via-white to-coral-100 border-2 border-accent-200 shadow-xl group-hover:shadow-2xl transition-all duration-500 h-[280px] sm:h-[320px] lg:h-[360px]">
+              {/* Background Pattern */}
+              <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+                <div className="absolute top-4 right-4 text-6xl opacity-30">👥</div>
+                <div className="absolute bottom-4 left-4 text-4xl opacity-40">🤝</div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-8xl opacity-10">💼</div>
+              </div>
               
-              <div className="relative z-10 flex flex-col h-full">
-                <div className="flex items-start justify-between mb-2 sm:mb-3">
-                  <div className="text-xl sm:text-3xl lg:text-5xl font-black text-gray-100 group-hover:text-gray-200 transition-colors duration-300 leading-none">02</div>
-                  <div className="w-7 h-7 sm:w-10 sm:h-10 lg:w-14 lg:h-14 rounded-lg lg:rounded-xl bg-gradient-to-br from-accent-500 to-coral-500 flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:rotate-6 transition-all duration-500 flex-shrink-0">
-                    <Users className="h-3 w-3 sm:h-5 sm:w-5 lg:h-7 lg:w-7 text-white" />
+              <div className="relative p-4 sm:p-6 h-full flex flex-col">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="text-3xl sm:text-4xl font-black text-accent-600/20 group-hover:text-accent-600/30 transition-colors duration-300">02</div>
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-accent-500 to-coral-500 flex items-center justify-center shadow-lg group-hover:rotate-12 group-hover:shadow-xl transition-all duration-500">
+                    <Users className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                   </div>
                 </div>
 
-                <div className="flex-1 space-y-1 sm:space-y-2">
-                  <h3 className="text-xs sm:text-sm lg:text-lg font-bold text-gray-900 leading-tight">Create Groups</h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">Professionals • 50+ • Social</p>
-                  <p className="text-xs text-gray-600 leading-relaxed">Start communities and build lasting friendships.</p>
+                <div className="flex-1 space-y-3">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight">Create Groups</h3>
+                  
+                  <div className="grid grid-cols-3 gap-2">
+                    <div className="bg-accent-100 rounded-lg p-2 text-center">
+                      <div className="text-xs font-bold text-accent-700">Professional</div>
+                      <div className="text-xs text-gray-600">Network</div>
+                    </div>
+                    <div className="bg-coral-100 rounded-lg p-2 text-center">
+                      <div className="text-xs font-bold text-coral-700">50+ Club</div>
+                      <div className="text-xs text-gray-600">Wisdom</div>
+                    </div>
+                    <div className="bg-secondary-100 rounded-lg p-2 text-center">
+                      <div className="text-xs font-bold text-secondary-700">Social</div>
+                      <div className="text-xs text-gray-600">Friends</div>
+                    </div>
+                  </div>
+                  
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Start communities and build lasting friendships within the <strong>Portuguese diaspora</strong>.
+                  </p>
                 </div>
 
-                <div className="mt-auto pt-2">
-                  <a href="/groups" className="inline-flex items-center gap-1 bg-accent-600 text-white text-xs font-bold px-2 sm:px-3 py-1 sm:py-2 rounded-md hover:bg-accent-700 transition-all duration-300">
+                <div className="mt-auto pt-4">
+                  <a href="/groups" className="group/btn inline-flex items-center gap-2 bg-accent-600 hover:bg-accent-700 text-white font-bold px-4 py-3 rounded-xl w-full justify-center transition-all duration-300 shadow-lg hover:shadow-xl">
                     <span>Start Group</span>
-                    <ArrowRight className="h-2 w-2 sm:h-3 sm:w-3" />
+                    <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* LusoFeed Section */}
-          <div className="group relative transition-all duration-1000 delay-200">
-            <div className="bg-white/80 backdrop-blur-lg border border-white/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 relative overflow-hidden h-[240px] sm:h-[280px] lg:h-[320px] flex flex-col">
-              <div className="absolute inset-0 bg-gradient-to-br from-action-50 to-action-100 opacity-0 group-hover:opacity-60 transition-opacity duration-500 rounded-xl" />
+          {/* LusoFeed - Community Updates */}
+          <div className="group relative transition-all duration-500 hover:scale-105">
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-action-50 via-white to-action-100 border-2 border-action-200 shadow-xl group-hover:shadow-2xl transition-all duration-500 h-[280px] sm:h-[320px] lg:h-[360px]">
+              {/* Background Pattern */}
+              <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+                <div className="absolute top-4 right-4 text-6xl opacity-30">📱</div>
+                <div className="absolute bottom-4 left-4 text-4xl opacity-40">📸</div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-8xl opacity-10">💬</div>
+              </div>
               
-              <div className="relative z-10 flex flex-col h-full">
-                <div className="flex items-start justify-between mb-2 sm:mb-3">
-                  <div className="text-xl sm:text-3xl lg:text-5xl font-black text-gray-100 group-hover:text-gray-200 transition-colors duration-300 leading-none">03</div>
-                  <div className="w-7 h-7 sm:w-10 sm:h-10 lg:w-14 lg:h-14 rounded-lg lg:rounded-xl bg-gradient-to-br from-action-500 to-action-600 flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:rotate-6 transition-all duration-500 flex-shrink-0">
-                    <MessageCircle className="h-3 w-3 sm:h-5 sm:w-5 lg:h-7 lg:w-7 text-white" />
+              <div className="relative p-4 sm:p-6 h-full flex flex-col">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="text-3xl sm:text-4xl font-black text-action-600/20 group-hover:text-action-600/30 transition-colors duration-300">03</div>
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-action-500 to-action-600 flex items-center justify-center shadow-lg group-hover:rotate-12 group-hover:shadow-xl transition-all duration-500">
+                    <MessageCircle className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                   </div>
                 </div>
 
-                <div className="flex-1 space-y-1 sm:space-y-2">
-                  <h3 className="text-xs sm:text-sm lg:text-lg font-bold text-gray-900 leading-tight">LusoFeed</h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">Updates • Photos • News</p>
-                  <p className="text-xs text-gray-600 leading-relaxed">Follow events and share photos with community.</p>
+                <div className="flex-1 space-y-3">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight">LusoFeed</h3>
+                  
+                  {/* Mock Feed Preview */}
+                  <div className="space-y-2">
+                    <div className="bg-white rounded-lg p-2 border border-action-100">
+                      <div className="flex items-center gap-2 mb-1">
+                        <div className="w-4 h-4 bg-action-400 rounded-full"></div>
+                        <span className="text-xs font-medium">Maria shared photos from Fado night</span>
+                      </div>
+                      <div className="text-xs text-gray-500">2 hours ago • 15 likes</div>
+                    </div>
+                    <div className="bg-white rounded-lg p-2 border border-action-100">
+                      <div className="flex items-center gap-2 mb-1">
+                        <div className="w-4 h-4 bg-secondary-400 rounded-full"></div>
+                        <span className="text-xs font-medium">João posted about AI workshop</span>
+                      </div>
+                      <div className="text-xs text-gray-500">5 hours ago • 8 comments</div>
+                    </div>
+                  </div>
+                  
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Follow events and share photos with the <strong>Portuguese community</strong>.
+                  </p>
                 </div>
 
-                <div className="mt-auto pt-2">
-                  <a href="/feed" className="inline-flex items-center gap-1 bg-action-600 text-white text-xs font-bold px-2 sm:px-3 py-1 sm:py-2 rounded-md hover:bg-action-700 transition-all duration-300">
+                <div className="mt-auto pt-4">
+                  <a href="/feed" className="group/btn inline-flex items-center gap-2 bg-action-600 hover:bg-action-700 text-white font-bold px-4 py-3 rounded-xl w-full justify-center transition-all duration-300 shadow-lg hover:shadow-xl">
                     <span>View Feed</span>
-                    <ArrowRight className="h-2 w-2 sm:h-3 sm:w-3" />
+                    <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Favourites Section */}
-          <div className="group relative transition-all duration-1000 delay-250">
-            <div className="bg-white/80 backdrop-blur-lg border border-white/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 relative overflow-hidden h-[240px] sm:h-[280px] lg:h-[320px] flex flex-col">
-              <div className="absolute inset-0 bg-gradient-to-br from-premium-50 to-premium-100 opacity-0 group-hover:opacity-60 transition-opacity duration-500 rounded-xl" />
+          {/* Save Portuguese Favourites */}
+          <div className="group relative transition-all duration-500 hover:scale-105">
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-premium-50 via-white to-premium-100 border-2 border-premium-200 shadow-xl group-hover:shadow-2xl transition-all duration-500 h-[280px] sm:h-[320px] lg:h-[360px]">
+              {/* Background Pattern */}
+              <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+                <div className="absolute top-4 right-4 text-6xl opacity-30">🥐</div>
+                <div className="absolute bottom-4 left-4 text-4xl opacity-40">❤️</div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-8xl opacity-10">🏪</div>
+              </div>
               
-              <div className="relative z-10 flex flex-col h-full">
-                <div className="flex items-start justify-between mb-2 sm:mb-3">
-                  <div className="text-xl sm:text-3xl lg:text-5xl font-black text-gray-100 group-hover:text-gray-200 transition-colors duration-300 leading-none">04</div>
-                  <div className="w-7 h-7 sm:w-10 sm:h-10 lg:w-14 lg:h-14 rounded-lg lg:rounded-xl bg-gradient-to-br from-premium-500 to-premium-600 flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:rotate-6 transition-all duration-500 flex-shrink-0">
-                    <Heart className="h-3 w-3 sm:h-5 sm:w-5 lg:h-7 lg:w-7 text-white" />
+              <div className="relative p-4 sm:p-6 h-full flex flex-col">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="text-3xl sm:text-4xl font-black text-premium-600/20 group-hover:text-premium-600/30 transition-colors duration-300">04</div>
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-premium-500 to-premium-600 flex items-center justify-center shadow-lg group-hover:rotate-12 group-hover:shadow-xl transition-all duration-500">
+                    <Heart className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                   </div>
                 </div>
 
-                <div className="flex-1 space-y-1 sm:space-y-2">
-                  <h3 className="text-xs sm:text-sm lg:text-lg font-bold text-gray-900 leading-tight">Save Favourites</h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">Events • Businesses • Sites</p>
-                  <p className="text-xs text-gray-600 leading-relaxed">Save bakeries, events and build your collection.</p>
+                <div className="flex-1 space-y-3">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight">Save Favourites</h3>
+                  
+                  {/* Portuguese Business Types */}
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="flex items-center gap-2 bg-premium-50 rounded-lg p-2">
+                      <span className="text-sm">🥖</span>
+                      <span className="text-xs font-medium text-gray-700">Bakeries</span>
+                    </div>
+                    <div className="flex items-center gap-2 bg-premium-50 rounded-lg p-2">
+                      <span className="text-sm">🎭</span>
+                      <span className="text-xs font-medium text-gray-700">Events</span>
+                    </div>
+                    <div className="flex items-center gap-2 bg-premium-50 rounded-lg p-2">
+                      <span className="text-sm">🏛️</span>
+                      <span className="text-xs font-medium text-gray-700">Cultural Sites</span>
+                    </div>
+                    <div className="flex items-center gap-2 bg-premium-50 rounded-lg p-2">
+                      <span className="text-sm">🍷</span>
+                      <span className="text-xs font-medium text-gray-700">Restaurants</span>
+                    </div>
+                  </div>
+                  
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Build your personal collection of <strong>Portuguese businesses</strong> and cultural experiences.
+                  </p>
                 </div>
 
-                <div className="mt-auto pt-2">
-                  <a href="/favorites" className="inline-flex items-center gap-1 bg-premium-600 text-white text-xs font-bold px-2 sm:px-3 py-1 sm:py-2 rounded-md hover:bg-premium-700 transition-all duration-300">
+                <div className="mt-auto pt-4">
+                  <a href="/favorites" className="group/btn inline-flex items-center gap-2 bg-premium-600 hover:bg-premium-700 text-white font-bold px-4 py-3 rounded-xl w-full justify-center transition-all duration-300 shadow-lg hover:shadow-xl">
                     <span>View Saved</span>
-                    <ArrowRight className="h-2 w-2 sm:h-3 sm:w-3" />
+                    <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Share Expertise Section */}
-          <div className="group relative transition-all duration-1000 delay-300 col-span-2">
-            <div className="bg-white/80 backdrop-blur-lg border border-white/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 relative overflow-hidden h-[240px] sm:h-[280px] lg:h-[320px] flex flex-col">
-              <div className="absolute inset-0 bg-gradient-to-br from-coral-50 to-coral-100 opacity-0 group-hover:opacity-60 transition-opacity duration-500 rounded-xl" />
+          {/* Share Your Portuguese Expertise */}
+          <div className="group relative transition-all duration-500 hover:scale-105 col-span-2 lg:col-span-1">
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-coral-50 via-white to-coral-100 border-2 border-coral-200 shadow-xl group-hover:shadow-2xl transition-all duration-500 h-[280px] sm:h-[320px] lg:h-[360px]">
+              {/* Background Pattern */}
+              <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+                <div className="absolute top-4 right-4 text-6xl opacity-30">🎯</div>
+                <div className="absolute bottom-4 left-4 text-4xl opacity-40">💡</div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-8xl opacity-10">🚀</div>
+              </div>
               
-              <div className="relative z-10 flex flex-col h-full">
-                <div className="flex items-start justify-between mb-2 sm:mb-3">
-                  <div className="text-xl sm:text-3xl lg:text-5xl font-black text-gray-100 group-hover:text-gray-200 transition-colors duration-300 leading-none">05</div>
-                  <div className="w-7 h-7 sm:w-10 sm:h-10 lg:w-14 lg:h-14 rounded-lg lg:rounded-xl bg-gradient-to-br from-coral-500 to-coral-600 flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:rotate-6 transition-all duration-500 flex-shrink-0">
-                    <Sparkles className="h-3 w-3 sm:h-5 sm:w-5 lg:h-7 lg:w-7 text-white" />
+              <div className="relative p-4 sm:p-6 h-full flex flex-col">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="text-3xl sm:text-4xl font-black text-coral-600/20 group-hover:text-coral-600/30 transition-colors duration-300">05</div>
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-coral-500 to-coral-600 flex items-center justify-center shadow-lg group-hover:rotate-12 group-hover:shadow-xl transition-all duration-500">
+                    <Sparkles className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
                   </div>
                 </div>
 
-                <div className="flex-1 space-y-1 sm:space-y-2">
-                  <h3 className="text-xs sm:text-sm lg:text-lg font-bold text-gray-900 leading-tight">Share Expertise</h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">Workshops • Services • Events</p>
-                  <p className="text-xs text-gray-600 leading-relaxed">Showcase skills to community and grow business.</p>
+                <div className="flex-1 space-y-3">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight">Share Expertise</h3>
+                  
+                  {/* Revenue Opportunities */}
+                  <div className="bg-coral-50 rounded-lg p-3 border border-coral-100">
+                    <div className="text-xs font-bold text-coral-700 mb-2">💰 Monetize Your Skills</div>
+                    <div className="grid grid-cols-2 gap-2 text-xs">
+                      <div className="text-gray-600">• Host AI workshops</div>
+                      <div className="text-gray-600">• Teach Portuguese</div>
+                      <div className="text-gray-600">• Cooking classes</div>
+                      <div className="text-gray-600">• Business coaching</div>
+                    </div>
+                  </div>
+                  
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    Showcase your skills to the Portuguese community and <strong>grow your business</strong> with our annual membership model.
+                  </p>
                 </div>
 
-                <div className="mt-auto pt-2">
-                  <a href="/host" className="inline-flex items-center gap-1 bg-coral-600 text-white text-xs font-bold px-2 sm:px-3 py-1 sm:py-2 rounded-md hover:bg-coral-700 transition-all duration-300">
+                <div className="mt-auto pt-4">
+                  <a href="/host" className="group/btn inline-flex items-center gap-2 bg-coral-600 hover:bg-coral-700 text-white font-bold px-4 py-3 rounded-xl w-full justify-center transition-all duration-300 shadow-lg hover:shadow-xl">
                     <span>Become Host</span>
-                    <ArrowRight className="h-2 w-2 sm:h-3 sm:w-3" />
+                    <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
                   </a>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
 
         {/* Enhanced Stats Section with Portuguese Cultural Context */}
