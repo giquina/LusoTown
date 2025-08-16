@@ -12,8 +12,8 @@ const testimonials = [
     location: 'Kensington',
     locationPortuguese: 'Kensington',
     rating: 5,
-    text: 'Exceptional service! The chauffeur was professional, punctual, and made me feel completely safe during my late-night event. Having a Portuguese-speaking driver made all the difference.',
-    textPortuguese: 'Serviço excecional! O chauffeur foi profissional, pontual e fez-me sentir completamente segura durante o meu evento noturno. Ter um motorista que fala português fez toda a diferença.',
+    text: 'Exceptional service! The driver was professional, punctual, and made me feel completely safe during my late-night event. Having a Portuguese-speaking driver made all the difference.',
+    textPortuguese: 'Serviço excecional! O motorista foi profissional, pontual e fez-me sentir completamente segura durante o meu evento noturno. Ter um motorista que fala português fez toda a diferença.',
     service: 'Premium Security',
     servicePortuguese: 'Segurança Premium',
     avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b632?w=150&h=150&fit=crop&crop=face'
@@ -60,8 +60,8 @@ const testimonials = [
     location: 'Belgravia',
     locationPortuguese: 'Belgravia',
     rating: 5,
-    text: 'Incredible shopping experience! The chauffeur waited patiently while I shopped at Harrods and Bond Street. Professional security made me feel safe with my purchases.',
-    textPortuguese: 'Experiência de compras incrível! O chauffeur esperou pacientemente enquanto fazia compras em Harrods e Bond Street. Segurança profissional fez-me sentir segura com as minhas compras.',
+    text: 'Incredible shopping experience! The driver waited patiently while I shopped at Harrods and Bond Street. Professional security made me feel safe with my purchases.',
+    textPortuguese: 'Experiência de compras incrível! O motorista esperou pacientemente enquanto fazia compras em Harrods e Bond Street. Segurança profissional fez-me sentir segura com as minhas compras.',
     service: 'Shopping Experience',
     servicePortuguese: 'Experiência de Compras',
     avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face'
@@ -84,8 +84,8 @@ const testimonials = [
     location: 'Southwark',
     locationPortuguese: 'Southwark',
     rating: 5,
-    text: 'Amazing service! The driver spoke perfect Portuguese and shared wonderful stories about London history. It felt like having a friend show me around the city rather than just a chauffeur.',
-    textPortuguese: 'Serviço fantástico! O motorista falava português perfeito e partilhou histórias maravilhosas sobre a história de Londres. Foi como ter um amigo a mostrar-me a cidade em vez de apenas um chauffeur.',
+    text: 'Amazing service! The driver spoke perfect Portuguese and shared wonderful stories about London history. It felt like having a friend show me around the city rather than just a driver.',
+    textPortuguese: 'Serviço fantástico! O motorista falava português perfeito e partilhou histórias maravilhosas sobre a história de Londres. Foi como ter um amigo a mostrar-me a cidade em vez de apenas um motorista.',
     service: 'VIP London Experience',
     servicePortuguese: 'Experiência VIP de Londres',
     avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face'
@@ -96,8 +96,8 @@ const testimonials = [
     location: 'Greenwich',
     locationPortuguese: 'Greenwich',
     rating: 5,
-    text: 'Excellent Portuguese communication throughout the journey. The chauffeur understood our cultural preferences and recommended authentic British experiences that we truly enjoyed.',
-    textPortuguese: 'Excelente comunicação em português durante toda a viagem. O chauffeur compreendeu as nossas preferências culturais e recomendou experiências britânicas autênticas que realmente apreciámos.',
+    text: 'Excellent Portuguese communication throughout the journey. The driver understood our cultural preferences and recommended authentic British experiences that we truly enjoyed.',
+    textPortuguese: 'Excelente comunicação em português durante toda a viagem. O motorista compreendeu as nossas preferências culturais e recomendou experiências britânicas autênticas que realmente apreciámos.',
     service: 'Premium Security',
     servicePortuguese: 'Segurança Premium',
     avatar: 'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face'

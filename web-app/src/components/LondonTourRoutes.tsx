@@ -171,14 +171,14 @@ const tourRoutes: TourRoute[] = [
     ],
     includes: [
       'Royal heritage specialist guide',
-      'Premium chauffeur service',
+      'Premium private transport service',
       'Palace entry tickets',
       'Royal afternoon tea',
       'Souvenir royal guidebook'
     ],
     includesPortuguese: [
       'Guia especialista em herança real',
-      'Serviço de chauffeur premium',
+      'Serviço de transporte privado premium',
       'Bilhetes de entrada nos palácios',
       'Chá da tarde real',
       'Guia real de recordação'

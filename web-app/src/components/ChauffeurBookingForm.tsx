@@ -41,11 +41,11 @@ const eventTypes = [
   { value: 'royal-london', labelEn: 'Royal London Experience', labelPt: 'Experiência Londres Real' },
   { value: 'shopping', labelEn: 'Shopping Experience at Harrods & Bond Street', labelPt: 'Experiência Compras Harrods & Bond Street' },
   { value: 'airport-transfer', labelEn: 'Airport VIP Transfer', labelPt: 'Transferência VIP Aeroporto' },
-  { value: 'bespoke', labelEn: 'Bespoke Chauffeur', labelPt: 'Chauffeur Personalizado' }
+  { value: 'bespoke', labelEn: 'Bespoke Private Transport', labelPt: 'Transporte Privado Personalizado' }
 ]
 
 const securityPreferences = [
-  { value: 'chauffeur-only', labelEn: 'Chauffeur only', labelPt: 'Apenas chauffeur' },
+  { value: 'driver-only', labelEn: 'Driver only', labelPt: 'Apenas motorista' },
   { value: 'close-protection', labelEn: 'Close Protection Officer', labelPt: 'Oficial de Proteção Próxima' },
   { value: 'both', labelEn: 'Both', labelPt: 'Ambos' }
 ]
@@ -78,7 +78,7 @@ export default function ChauffeurBookingForm({
     pickupLocation: '',
     destinations: '',
     eventType: selectedPackage?.value || '',
-    securityPreference: 'chauffeur-only',
+    securityPreference: 'driver-only',
     additionalNotes: '',
     serviceType: selectedService?.id || 'essential',
     packageType: selectedPackage?.value,
@@ -156,11 +156,11 @@ export default function ChauffeurBookingForm({
         id: `chauffeur-${Date.now()}`,
         type: 'chauffeur_service' as const,
         title: isPortuguese 
-          ? `${selectedService?.namePortuguese || 'Serviço Chauffeur'} - ${formData.eventType}`
-          : `${selectedService?.name || 'Chauffeur Service'} - ${formData.eventType}`,
+          ? `${selectedService?.namePortuguese || 'Serviço de Transporte Privado'} - ${formData.eventType}`
+          : `${selectedService?.name || 'Private Transport Service'} - ${formData.eventType}`,
         description: isPortuguese 
-          ? `Serviço de chauffeur para ${hours} horas`
-          : `Chauffeur service for ${hours} hours`,
+          ? `Serviço de transporte privado para ${hours} horas`
+          : `Private transport service for ${hours} hours`,
         price: totalPrice,
         currency: 'GBP',
         imageUrl: '/chauffeur-service.jpg',
@@ -195,7 +195,7 @@ export default function ChauffeurBookingForm({
           pickupLocation: '',
           destinations: '',
           eventType: selectedPackage?.value || '',
-          securityPreference: 'chauffeur-only',
+          securityPreference: 'driver-only',
           additionalNotes: '',
           serviceType: selectedService?.id || 'essential',
           packageType: selectedPackage?.value,
@@ -237,7 +237,7 @@ export default function ChauffeurBookingForm({
             <div className="flex items-center justify-between p-6 border-b border-gray-200">
               <div>
                 <h2 className="text-2xl font-bold text-gray-900">
-                  {isPortuguese ? 'Reservar Serviço Chauffeur' : 'Book Chauffeur Service'}
+                  {isPortuguese ? 'Reservar Serviço de Transporte Privado' : 'Book Private Transport Service'}
                 </h2>
                 <div className="flex items-center mt-2 space-x-2">
                   {[1, 2, 3].map((step) => (

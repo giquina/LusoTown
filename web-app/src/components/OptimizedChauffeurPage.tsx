@@ -34,13 +34,13 @@ const OptimizedChauffeurPage: React.FC<OptimizedChauffeurPageProps> = ({
   const serviceTiers = useMemo(() => [
     {
       id: 'essential',
-      name: 'Essential Chauffeur',
-      namePortuguese: 'Chauffeur Essencial',
+      name: 'Essential Private Transport',
+      namePortuguese: 'Transporte Privado Essencial',
       price: 45,
-      description: 'Professional chauffeur service with luxury vehicle',
-      descriptionPortuguese: 'Serviço profissional de chauffeur com veículo de luxo',
+      description: 'Professional private transport service with luxury vehicle',
+      descriptionPortuguese: 'Serviço profissional de transporte privado com veículo de luxo',
       features: [
-        'Professional private hire licensed chauffeur with CPO security training',
+        'Professional private hire licensed driver with CPO security training',
         'Luxury vehicle fleet (Mercedes S-Class, BMW 7 Series)',
         'Comprehensive meet & greet service',
         'Enhanced security awareness and threat assessment',
@@ -50,7 +50,7 @@ const OptimizedChauffeurPage: React.FC<OptimizedChauffeurPageProps> = ({
         'Impeccable professional appearance and conduct'
       ],
       featuresPortuguese: [
-        'Chauffeur profissional licenciado com treino de segurança CPO',
+        'Motorista profissional licenciado com treino de segurança CPO',
         'Frota de veículos de luxo (Mercedes Classe S, BMW Série 7)',
         'Serviço abrangente de encontro e receção',
         'Consciência de segurança melhorada e avaliação de ameaças',
@@ -238,8 +238,8 @@ const OptimizedChauffeurPage: React.FC<OptimizedChauffeurPageProps> = ({
     },
     {
       id: 'bespoke',
-      name: 'Bespoke Chauffeur',
-      namePortuguese: 'Chauffeur Personalizado',
+      name: 'Bespoke Private Transport',
+      namePortuguese: 'Transporte Privado Personalizado',
       price: 'Custom',
       duration: 'Flexible',
       description: 'Fully customized service tailored to your requirements',
@@ -380,12 +380,12 @@ const OptimizedChauffeurPage: React.FC<OptimizedChauffeurPageProps> = ({
             >
               {isPortuguese ? (
                 <>
-                  Serviço de <span className="text-premium-600">Chauffeur</span><br />
+                  Serviço de <span className="text-premium-600">Transporte Privado</span><br />
                   de Segurança Português
                 </>
               ) : (
                 <>
-                  Portuguese Security <span className="text-premium-600">Chauffeur</span><br />
+                  Portuguese Security <span className="text-premium-600">Private Transport</span><br />
                   Service
                 </>
               )}

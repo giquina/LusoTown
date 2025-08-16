@@ -17,23 +17,23 @@ import { useLanguage } from '@/context/LanguageContext'
 const serviceTiers = [
   {
     id: 'essential',
-    name: 'Essential Chauffeur',
-    namePortuguese: 'Chauffeur Essencial',
+    name: 'Essential Private Transport',
+    namePortuguese: 'Transporte Privado Essencial',
     price: 55, // Optimized from £45 based on market analysis
     originalPrice: 65, // Show value proposition
     image: 'https://images.unsplash.com/photo-1549317336-206569e8475c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    imageAlt: 'Luxury chauffeur vehicle in London',
-    imageAltPortuguese: 'Veículo de chauffeur de luxo em Londres',
+    imageAlt: 'Luxury private transport vehicle in London',
+    imageAltPortuguese: 'Veículo de transporte privado de luxo em Londres',
     membershipDiscounts: {
       visitor: 0, // No discount for non-members
       family: 5, // 5% discount for Family members (£52.25)
       ambassador: 10 // 10% discount for Ambassador members (£49.50)
     },
     minimumHours: 3,
-    description: 'Professional Portuguese-speaking chauffeur service for London tourism',
-    descriptionPortuguese: 'Serviço de chauffeur profissional falante de português para turismo em Londres',
+    description: 'Professional Portuguese-speaking private transport service for London tourism',
+    descriptionPortuguese: 'Serviço de transporte privado profissional falante de português para turismo em Londres',
     features: [
-      'Professional Portuguese-speaking chauffeur',
+      'Professional Portuguese-speaking driver',
       'Premium luxury vehicle',
       'Meet & greet service with cultural sensitivity',
       'Basic security awareness training',
@@ -42,7 +42,7 @@ const serviceTiers = [
       'Complimentary waiting time (30 minutes)'
     ],
     featuresPortuguese: [
-      'Chauffeur profissional falante de português',
+      'Motorista profissional falante de português',
       'Veículo de luxo premium',
       'Serviço de encontro e receção com sensibilidade cultural',
       'Treino básico de consciência de segurança',
@@ -205,10 +205,10 @@ const londonTourismExperiences = [
     },
     minimumGuests: 1,
     maximumGuests: 4,
-    description: 'Discover London\'s iconic landmarks with professional Portuguese-speaking guide and luxury chauffeur service',
-    descriptionPortuguese: 'Descubra os marcos icónicos de Londres com guia profissional falante de português e serviço de chauffeur de luxo',
+    description: 'Discover London\'s iconic landmarks with professional Portuguese-speaking guide and luxury private transport service',
+    descriptionPortuguese: 'Descubra os marcos icónicos de Londres com guia profissional falante de português e serviço de transporte privado de luxo',
     category: 'classic',
-    priceIncludes: ['VIP Security Chauffeur', 'Professional Portuguese-Speaking Guide', 'Venue Access Fees', 'London Guide Book'],
+    priceIncludes: ['VIP Security Driver', 'Professional Portuguese-Speaking Guide', 'Venue Access Fees', 'London Guide Book'],
     highlights: [
       'Big Ben, Westminster Abbey, and Houses of Parliament',
       'Buckingham Palace and Changing of the Guard',
@@ -245,7 +245,7 @@ const londonTourismExperiences = [
     description: 'Explore London\'s royal heritage with visits to palaces, royal parks, and historic venues with Portuguese-speaking expert guide',
     descriptionPortuguese: 'Explore a herança real de Londres com visitas a palácios, parques reais e locais históricos com guia especialista falante de português',
     category: 'royal',
-    priceIncludes: ['Premium Security Chauffeur', 'Royal Heritage Guide', 'Palace Entry Tickets', 'Traditional Afternoon Tea'],
+    priceIncludes: ['Premium Security Driver', 'Royal Heritage Guide', 'Palace Entry Tickets', 'Traditional Afternoon Tea'],
     highlights: [
       'Buckingham Palace State Rooms and Royal Mews',
       'Kensington Palace and Diana Memorial',
@@ -282,7 +282,7 @@ const londonTourismExperiences = [
     description: 'Explore contemporary London with visits to modern attractions, innovative architecture, and cutting-edge cultural venues',
     descriptionPortuguese: 'Explore a Londres contemporânea com visitas a atrações modernas, arquitetura inovadora e locais culturais de vanguarda',
     category: 'modern',
-    priceIncludes: ['Elite Protection Chauffeur', 'Modern London Specialist Guide', 'Attraction Entry Tickets', 'Sky Bar Experience'],
+    priceIncludes: ['Elite Protection Driver', 'Modern London Specialist Guide', 'Attraction Entry Tickets', 'Sky Bar Experience'],
     highlights: [
       'The Shard and panoramic London views',
       'London Eye and South Bank cultural quarter',
@@ -357,7 +357,7 @@ const multiDayPackages = [
     description: 'Essential London landmarks and attractions with Portuguese-speaking guide and luxury transport',
     descriptionPortuguese: 'Marcos e atrações essenciais de Londres com guia falante de português e transporte de luxo',
     category: 'highlights',
-    priceIncludes: ['Premium Security Chauffeur', 'London Tourist Guide', 'Light Meal', 'Attraction Entry'],
+    priceIncludes: ['Premium Security Driver', 'London Tourist Guide', 'Light Meal', 'Attraction Entry'],
     targetAudience: 'time_limited_tourists'
   },
   {
@@ -417,7 +417,7 @@ const multiDayPackages = [
     description: 'London experience designed for families with children, including interactive attractions, child-friendly venues, and educational activities',
     descriptionPortuguese: 'Experiência de Londres desenhada para famílias com crianças, incluindo atrações interativas, locais adequados para crianças e atividades educacionais',
     category: 'family',
-    priceIncludes: ['Family-Specialized Chauffeur', 'Child-Friendly London Guide', 'Family Meal', 'Interactive Activities', 'Educational Materials'],
+    priceIncludes: ['Family-Specialized Driver', 'Child-Friendly London Guide', 'Family Meal', 'Interactive Activities', 'Educational Materials'],
     targetAudience: 'families_with_children'
   }
 ]
@@ -458,10 +458,10 @@ const standardPackages = [
     },
     minimumGuests: 1,
     maximumGuests: 8,
-    description: 'Premium airport transfer with London orientation, tourist information, and first-day guidance with Portuguese-speaking chauffeur',
-    descriptionPortuguese: 'Transferência premium do aeroporto com orientação de Londres, informação turística e orientação do primeiro dia com chauffeur falante de português',
+    description: 'Premium airport transfer with London orientation, tourist information, and first-day guidance with Portuguese-speaking driver',
+    descriptionPortuguese: 'Transferência premium do aeroporto com orientação de Londres, informação turística e orientação do primeiro dia com motorista falante de português',
     category: 'transfer',
-    priceIncludes: ['Premium Security Chauffeur', 'London Orientation Guide', 'Tourist Welcome Pack', 'London Navigation Assistance'],
+    priceIncludes: ['Premium Security Driver', 'London Orientation Guide', 'Tourist Welcome Pack', 'London Navigation Assistance'],
     targetAudience: 'arriving_tourists'
   },
   {
@@ -481,7 +481,7 @@ const standardPackages = [
     description: 'Visit Harry Potter film locations, Platform 9¾, and Warner Bros Studio with expert guide and luxury transport',
     descriptionPortuguese: 'Visite locais de filmagem de Harry Potter, Plataforma 9¾ e Warner Bros Studio com guia especialista e transporte de luxo',
     category: 'themed',
-    priceIncludes: ['Premium Security Chauffeur', 'Harry Potter Specialist Guide', 'Studio Tour Tickets', 'Themed Photo Opportunities'],
+    priceIncludes: ['Premium Security Driver', 'Harry Potter Specialist Guide', 'Studio Tour Tickets', 'Themed Photo Opportunities'],
     targetAudience: 'harry_potter_enthusiasts'
   },
   {
@@ -589,12 +589,12 @@ export default function ChauffeurPage() {
               {isPortuguese ? (
                 <>
                   Turismo de <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">Londres</span><br />
-                  com Chauffeur Português
+                  com Transporte Privado Português
                 </>
               ) : (
                 <>
                   London <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">Tourism</span><br />
-                  with Portuguese Chauffeur
+                  with Portuguese Private Transport
                 </>
               )}
             </motion.h1>
@@ -606,8 +606,8 @@ export default function ChauffeurPage() {
               className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
             >
               {isPortuguese 
-                ? 'Experiências turísticas premium em Londres com chauffeurs e guias que falam português fluentemente. Descubra os principais pontos turísticos de Londres com comunicação profissional em português e transporte de segurança.'
-                : 'Premium London tourism experiences with fluent Portuguese-speaking chauffeurs and guides. Discover London\'s top attractions with professional Portuguese communication and secure transport.'
+                ? 'Experiências turísticas premium em Londres com motoristas e guias que falam português fluentemente. Descubra os principais pontos turísticos de Londres com comunicação profissional em português e transporte de segurança.'
+                : 'Premium London tourism experiences with fluent Portuguese-speaking drivers and guides. Discover London\'s top attractions with professional Portuguese communication and secure transport.'
               }
             </motion.p>
             

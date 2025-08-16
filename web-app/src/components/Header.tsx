@@ -15,14 +15,14 @@ import { useLanguage } from '@/context/LanguageContext'
 
 const getNavigationLinks = (t: any) => [
   { name: t('nav.events', 'Events'), href: '/events' },
-  { name: t('nav.chauffeur', 'Chauffeur & Tours'), href: '/chauffeur' },
+  { name: t('nav.chauffeur', 'Transport & Tours'), href: '/chauffeur' },
   { name: t('nav.pricing', 'Pricing'), href: '/pricing' },
   { name: t('nav.case-studies', 'Case Studies'), href: '/case-studies' },
 ]
 
 const getAuthenticatedNavigationLinks = (t: any) => [
   { name: t('nav.events', 'Events'), href: '/events' },
-  { name: t('nav.chauffeur', 'Chauffeur & Tours'), href: '/chauffeur' },
+  { name: t('nav.chauffeur', 'Transport & Tours'), href: '/chauffeur' },
   { name: t('nav.my-network', 'My Network'), href: '/my-network' },
   { name: t('nav.pricing', 'Pricing'), href: '/pricing' },
   { name: t('nav.case-studies', 'Case Studies'), href: '/case-studies' },
