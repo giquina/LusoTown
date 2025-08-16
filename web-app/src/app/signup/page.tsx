@@ -23,24 +23,24 @@ import { authService } from '@/lib/auth'
 
 const benefits = [
   {
-    icon: ShieldCheckIcon,
-    text: "Join 500+ Portuguese speakers in London",
-    subtext: "Verified community from Portugal, Brazil, Angola & beyond"
+    icon: CheckIcon,
+    text: "Free to join the Portuguese community",
+    subtext: "No membership fees or barriers to participation"
   },
   {
     icon: UserGroupIcon,
-    text: "Cultural connection and heritage",
-    subtext: "Preserve language and traditions together"
+    text: "Connect with 750+ Portuguese speakers",
+    subtext: "From Portugal, Brazil, Angola, Mozambique & beyond"
   },
   {
     icon: SparklesIcon,
-    text: "Authentic Portuguese experiences",
-    subtext: "Events, festivals, and community gatherings"
+    text: "Start free, upgrade when ready",
+    subtext: "Access VIP events and exclusive experiences optionally"
   },
   {
-    icon: LockClosedIcon,
-    text: "Safe, inclusive Portuguese experiences",
-    subtext: "Welcoming space for all ages and backgrounds"
+    icon: ShieldCheckIcon,
+    text: "Premium features available",
+    subtext: "Priority booking, secret societies, exclusive events"
   }
 ]
 
@@ -205,11 +205,11 @@ export default function Signup() {
                 </div>
                 
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-                  {t('signup.title', 'Your Home for')} <span className="gradient-text">{t('signup.title-accent', 'Portuguese Culture')}</span>
+                  <span className="gradient-text">Free</span> to Join the <span className="gradient-text">Portuguese Community</span>
                 </h1>
                 
                 <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-                  {t('signup.subtitle', 'A vibrant community of Portuguese speakers across London celebrating culture, language, and heritage together. From authentic bakeries in Stockwell to cultural centers in Vauxhall - find your people.')}
+                  No barriers to community participation. Start free, explore events, connect with 750+ Portuguese speakers, and upgrade only when you're ready for premium experiences.
                 </p>
                 
                 <div className="space-y-4 sm:space-y-6 mb-8">
@@ -283,12 +283,12 @@ export default function Signup() {
               >
                 <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-2xl p-6 sm:p-8 border border-white/50">
                   <div className="text-center mb-6 sm:mb-8">
-                    <div className="inline-flex items-center gap-2 bg-primary-50 rounded-full px-4 py-2 text-primary-600 font-medium mb-4 text-sm">
-                      <ShieldCheckIcon className="h-4 w-4" />
-                      Invitation-Only Community
+                    <div className="inline-flex items-center gap-2 bg-green-50 rounded-full px-4 py-2 text-green-600 font-medium mb-4 text-sm">
+                      <CheckIcon className="h-4 w-4" />
+                      Free to Join
                     </div>
-                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Request Your Invitation</h2>
-                    <p className="text-gray-600 text-sm sm:text-base">Join our exclusive waitlist • Spots limited to 50 new members monthly</p>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Start Free Today</h2>
+                    <p className="text-gray-600 text-sm sm:text-base">Free community access • No barriers to participation</p>
                   </div>
 
                   {/* Social Login Options */}
@@ -538,25 +538,25 @@ export default function Signup() {
                           <div className="w-4 h-4 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0">
                             <span className="text-white text-xs font-bold">1</span>
                           </div>
-                          <span>{t('signup.step-1', 'Email verification (instant) to confirm your account')}</span>
+                          <span>Instant access to free community features</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <div className="w-4 h-4 bg-secondary-500 rounded-full flex items-center justify-center flex-shrink-0">
                             <span className="text-white text-xs font-bold">2</span>
                           </div>
-                          <span>{t('signup.step-2', 'Find Portuguese events and groups near you in London')}</span>
+                          <span>Browse and join Portuguese events in London</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <div className="w-4 h-4 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
                             <span className="text-white text-xs font-bold">3</span>
                           </div>
-                          <span>{t('signup.step-3', 'Connect with 500+ Portuguese speakers at real venues')}</span>
+                          <span>Connect with 750+ Portuguese speakers for free</span>
                         </div>
                         <div className="flex items-center gap-2">
                           <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
                             <span className="text-white text-xs font-bold">4</span>
                           </div>
-                          <span>{t('signup.step-4', 'Optional: Download mobile app for event updates')}</span>
+                          <span>Upgrade to VIP when ready for premium experiences</span>
                         </div>
                       </div>
                       

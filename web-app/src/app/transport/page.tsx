@@ -718,7 +718,7 @@ export default function TransportPage() {
           </div>
 
           {/* Cultural Expertise Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-8 mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -957,7 +957,7 @@ export default function TransportPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
@@ -998,7 +998,7 @@ export default function TransportPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-8">
             {serviceTiers.map((tier, index) => (
               <TransportServiceCard
                 key={tier.id}
@@ -1047,7 +1047,7 @@ export default function TransportPage() {
             <h3 className="text-3xl font-black text-gray-900 mb-8 text-center">
               {isPortuguese ? 'Experiências Turísticas de Londres' : 'London Tourism Experiences'}
             </h3>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-8">
               {londonTourismExperiences.map((pkg, index) => (
                 <motion.div
                   key={pkg.id}
@@ -1055,19 +1055,19 @@ export default function TransportPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-white to-secondary-50/30 rounded-xl shadow-lg border border-secondary-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="bg-gradient-to-br from-white to-secondary-50/30 rounded-lg sm:rounded-xl shadow-lg border border-secondary-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 h-[400px] sm:h-[450px] lg:h-[500px] flex flex-col"
                 >
                   {/* Experience Image */}
                   {pkg.image && (
-                    <div className="relative h-48 overflow-hidden">
+                    <div className="relative h-32 sm:h-40 lg:h-48 overflow-hidden flex-shrink-0">
                       <img 
                         src={pkg.image} 
                         alt={isPortuguese ? (pkg.imageAltPortuguese || pkg.imageAlt || '') : (pkg.imageAlt || '')}
                         className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold text-white ${
+                      <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 right-2 sm:right-4">
+                        <span className={`inline-block px-2 sm:px-3 py-1 rounded-full text-xs font-bold text-white ${
                           pkg.category === 'classic' ? 'bg-secondary-600/80' : 
                           pkg.category === 'royal' ? 'bg-premium-600/80' : 
                           pkg.category === 'modern' ? 'bg-accent-600/80' : 
@@ -1079,36 +1079,34 @@ export default function TransportPage() {
                     </div>
                   )}
                   
-                  <div className="p-6">
-                    <div className="flex justify-between items-start mb-4">
-                      <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                          {isPortuguese ? pkg.namePortuguese : pkg.name}
-                        </h3>
-                      </div>
-                      <div className="text-right ml-4">
-                        <div className="text-2xl font-bold text-secondary-600">
-                          {isPortuguese ? 'a partir de' : 'from'} £{pkg.price}
+                  <div className="p-3 sm:p-4 lg:p-6 flex flex-col flex-1">
+                    <div className="mb-2 sm:mb-3">
+                      <h3 className="text-sm sm:text-base lg:text-xl font-semibold text-gray-900 mb-1 sm:mb-2 leading-tight">
+                        {isPortuguese ? pkg.namePortuguese : pkg.name}
+                      </h3>
+                      <div className="flex items-center justify-between">
+                        <div className="text-lg sm:text-xl lg:text-2xl font-bold text-secondary-600">
+                          {isPortuguese ? 'de' : 'from'} £{pkg.price}
                         </div>
-                        <div className="text-sm text-gray-500">{pkg.duration}</div>
+                        <div className="text-xs sm:text-sm text-gray-500">{pkg.duration}</div>
                       </div>
                     </div>
                     
-                    <p className="text-gray-600 mb-4 leading-relaxed">
+                    <p className="text-gray-600 mb-3 sm:mb-4 leading-relaxed text-xs sm:text-sm lg:text-base line-clamp-2 flex-1">
                       {isPortuguese ? pkg.descriptionPortuguese : pkg.description}
                     </p>
 
-                    {/* Highlights */}
+                    {/* Highlights - Show fewer on mobile */}
                     {pkg.highlights && (
-                      <div className="mb-6">
-                        <h4 className="text-sm font-semibold text-gray-900 mb-3">
-                          {isPortuguese ? 'Destaques da Experiência:' : 'Experience Highlights:'}
+                      <div className="mb-3 sm:mb-4 lg:mb-6">
+                        <h4 className="text-xs sm:text-sm font-semibold text-gray-900 mb-2 lg:mb-3">
+                          {isPortuguese ? 'Destaques:' : 'Highlights:'}
                         </h4>
-                        <ul className="space-y-2">
-                          {(isPortuguese ? pkg.highlightsPortuguese : pkg.highlights).slice(0, 3).map((highlight, idx) => (
-                            <li key={idx} className="flex items-start text-sm text-gray-600">
-                              <CheckCircleIcon className="w-4 h-4 text-secondary-500 mt-0.5 mr-2 flex-shrink-0" />
-                              {highlight}
+                        <ul className="space-y-1 sm:space-y-2">
+                          {(isPortuguese ? pkg.highlightsPortuguese : pkg.highlights).slice(0, 2).map((highlight, idx) => (
+                            <li key={idx} className="flex items-start text-xs sm:text-sm text-gray-600">
+                              <CheckCircleIcon className="w-3 h-3 sm:w-4 sm:h-4 text-secondary-500 mt-0.5 mr-1 sm:mr-2 flex-shrink-0" />
+                              <span className="line-clamp-1">{highlight}</span>
                             </li>
                           ))}
                         </ul>
@@ -1117,9 +1115,9 @@ export default function TransportPage() {
                     
                     <button
                       onClick={() => handleBookService(pkg.id)}
-                      className="w-full bg-secondary-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-secondary-700 transition-colors transform hover:scale-105 duration-200"
+                      className="w-full bg-secondary-600 text-white py-2 sm:py-3 px-3 sm:px-4 rounded-md sm:rounded-lg font-semibold hover:bg-secondary-700 transition-colors transform hover:scale-105 duration-200 text-xs sm:text-sm lg:text-base mt-auto"
                     >
-                      {isPortuguese ? 'Reservar Experiência de Londres' : 'Book London Experience'}
+                      {isPortuguese ? 'Reservar' : 'Book Now'}
                     </button>
                   </div>
                 </motion.div>
@@ -1132,7 +1130,7 @@ export default function TransportPage() {
             <h3 className="text-3xl font-black text-gray-900 mb-8 text-center">
               {isPortuguese ? 'Pacotes de Múltiplos Dias em Londres' : 'Multi-Day London Packages'}
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
               {multiDayPackages.map((pkg, index) => (
                 <motion.div
                   key={pkg.id}
@@ -1174,7 +1172,7 @@ export default function TransportPage() {
             <h3 className="text-3xl font-black text-gray-900 mb-8 text-center">
               {isPortuguese ? 'Serviços Padrão' : 'Standard Services'}
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-8">
               {standardPackages.map((pkg, index) => (
                 <motion.div
                   key={pkg.id}

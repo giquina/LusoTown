@@ -113,9 +113,9 @@ export default function HowConnectionsWork() {
           </p>
         </motion.div>
 
-        {/* Steps */}
+        {/* Steps - 2x2 Mobile Layout */}
         <div className="mb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-8">
             {steps.map((step, index) => (
               <motion.div
                 key={index}
@@ -125,28 +125,30 @@ export default function HowConnectionsWork() {
                 viewport={{ once: true }}
                 className="relative"
               >
-                {/* Connection Line */}
-                {index % 2 === 0 && index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-gray-200 to-transparent -translate-x-4 z-0"></div>
+                {/* Connection Line - only between adjacent cards on desktop */}
+                {index % 2 === 1 && index < steps.length - 1 && (
+                  <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-gray-200 to-transparent -translate-x-4 z-0"></div>
                 )}
                 
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 relative z-10 group">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${step.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    <step.icon className="w-8 h-8 text-white" />
+                <div className="bg-white rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 relative z-10 group h-[200px] sm:h-[240px] lg:h-[280px] flex flex-col">
+                  <div className={`w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-r ${step.color} rounded-lg lg:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 lg:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg flex-shrink-0`}>
+                    <step.icon className="w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" />
                   </div>
                   
-                  <div className="mb-4">
-                    <div className="text-sm font-bold text-gray-400 mb-2">
-                      {isPortuguese ? 'PASSO' : 'STEP'} {index + 1}
+                  <div className="flex-1 flex flex-col">
+                    <div className="mb-2 sm:mb-3 lg:mb-4">
+                      <div className="text-xs sm:text-sm font-bold text-gray-400 mb-1">
+                        {isPortuguese ? 'PASSO' : 'STEP'} {index + 1}
+                      </div>
+                      <h3 className="text-sm sm:text-base lg:text-xl font-bold text-gray-900 leading-tight">
+                        {step.title}
+                      </h3>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">
-                      {step.title}
-                    </h3>
+                    
+                    <p className="text-xs sm:text-sm lg:text-base text-gray-600 leading-relaxed flex-1">
+                      {step.description}
+                    </p>
                   </div>
-                  
-                  <p className="text-gray-600 leading-relaxed">
-                    {step.description}
-                  </p>
                 </div>
               </motion.div>
             ))}
@@ -173,7 +175,7 @@ export default function HowConnectionsWork() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {benefits.map((benefit, index) => (
               <motion.div
                 key={index}
@@ -183,13 +185,13 @@ export default function HowConnectionsWork() {
                 viewport={{ once: true }}
                 className="text-center group"
               >
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="text-2xl sm:text-3xl lg:text-4xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
                   {benefit.icon}
                 </div>
-                <h4 className="text-lg font-semibold text-gray-900 mb-3">
+                <h4 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 mb-2 sm:mb-3 leading-tight">
                   {benefit.title}
                 </h4>
-                <p className="text-gray-600">
+                <p className="text-xs sm:text-sm lg:text-base text-gray-600 leading-relaxed">
                   {benefit.description}
                 </p>
               </motion.div>
@@ -208,17 +210,17 @@ export default function HowConnectionsWork() {
           <div className="inline-flex flex-col sm:flex-row gap-4">
             <a
               href="/events"
-              className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold px-8 py-4 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 inline-flex items-center justify-center gap-2 whitespace-nowrap"
+              className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm sm:text-base"
             >
-              <CalendarDaysIcon className="w-5 h-5" />
-              {isPortuguese ? 'Ver Eventos' : 'Browse Events'}
+              <CalendarDaysIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+              {isPortuguese ? 'Ver Eventos' : 'View Events'}
             </a>
             
             <a
               href="/my-network"
-              className="bg-white text-gray-700 font-semibold px-8 py-4 rounded-xl border-2 border-gray-200 hover:border-primary-300 hover:text-primary-700 transition-all duration-200 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2 whitespace-nowrap"
+              className="bg-white text-gray-700 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl border-2 border-gray-200 hover:border-primary-300 hover:text-primary-700 transition-all duration-200 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm sm:text-base"
             >
-              <UserGroupIcon className="w-5 h-5" />
+              <UserGroupIcon className="w-4 h-4 sm:w-5 sm:h-5" />
               {isPortuguese ? 'Minha Rede' : 'My Network'}
             </a>
           </div>

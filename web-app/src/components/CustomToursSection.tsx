@@ -115,8 +115,8 @@ export default function CustomToursSection({ onBookTour, showHeader = true }: Cu
           </div>
         )}
 
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        {/* Features Grid - 2x2 Mobile Layout */}
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6 mb-16">
           {customTourFeatures.map((feature, index) => (
             <motion.div
               key={index}
@@ -124,27 +124,27 @@ export default function CustomToursSection({ onBookTour, showHeader = true }: Cu
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="text-center bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-white/60 hover:shadow-xl transition-all duration-300"
+              className="text-center bg-white/80 backdrop-blur-lg rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 shadow-lg border border-white/60 hover:shadow-xl transition-all duration-300 min-h-[200px] sm:min-h-[240px]"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-secondary-100 to-premium-100 rounded-2xl mb-4">
-                <feature.icon className="w-8 h-8 text-secondary-600" />
+              <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-r from-secondary-100 to-premium-100 rounded-xl lg:rounded-2xl mb-3 sm:mb-4">
+                <feature.icon className="w-5 h-5 sm:w-6 sm:w-6 lg:w-8 lg:h-8 text-secondary-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 mb-2 leading-tight">
                 {isPortuguese ? feature.titlePortuguese : feature.title}
               </h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                 {isPortuguese ? feature.descriptionPortuguese : feature.description}
               </p>
             </motion.div>
           ))}
         </div>
 
-        {/* Popular Destinations */}
+        {/* Popular Destinations - 2x2 Mobile Layout */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 sm:mb-8 text-center">
             {isPortuguese ? 'Destinos Populares' : 'Popular Destinations'}
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
             {popularDestinations.map((destination, index) => (
               <motion.div
                 key={index}
@@ -152,24 +152,24 @@ export default function CustomToursSection({ onBookTour, showHeader = true }: Cu
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer"
+                className="bg-white rounded-lg sm:rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer"
                 onClick={handleBooking}
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-32 sm:h-40 lg:h-48 overflow-hidden">
                   <img
                     src={destination.image}
                     alt={isPortuguese ? destination.namePortuguese : destination.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h4 className="text-lg font-semibold mb-1">
+                  <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 text-white">
+                    <h4 className="text-sm sm:text-base lg:text-lg font-semibold mb-1 leading-tight">
                       {isPortuguese ? destination.namePortuguese : destination.name}
                     </h4>
                   </div>
                 </div>
-                <div className="p-4">
-                  <p className="text-gray-600 text-sm">
+                <div className="p-2 sm:p-3 lg:p-4">
+                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                     {isPortuguese ? destination.descriptionPortuguese : destination.description}
                   </p>
                 </div>
@@ -199,13 +199,13 @@ export default function CustomToursSection({ onBookTour, showHeader = true }: Cu
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={handleBooking}
-                className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 hover:from-secondary-700 hover:via-premium-700 hover:to-accent-700 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg"
+                className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 hover:from-secondary-700 hover:via-premium-700 hover:to-accent-700 text-white px-6 sm:px-8 py-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg text-sm sm:text-base"
               >
-                {isPortuguese ? 'Planear o Meu Tour' : 'Plan My Tour'}
+                {isPortuguese ? 'Planear Tour' : 'Plan Tour'}
               </button>
               <a
                 href="tel:+447777777777"
-                className="border-2 border-secondary-600 text-secondary-600 px-8 py-3 rounded-xl font-semibold hover:bg-secondary-50 transition-colors"
+                className="border-2 border-secondary-600 text-secondary-600 px-6 sm:px-8 py-3 rounded-xl font-semibold hover:bg-secondary-50 transition-colors text-sm sm:text-base"
               >
                 {isPortuguese ? 'Ligar Agora' : 'Call Now'}
               </a>

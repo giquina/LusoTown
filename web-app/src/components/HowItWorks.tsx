@@ -137,80 +137,152 @@ export default function HowItWorks() {
           </div>
         </div>
 
-        {/* Enhanced Steps Grid with Portuguese Cultural Context - 2x2 Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-20">
-          {steps.map((step, index) => (
-            <div
-              key={step.title}
-              className={`group relative transition-all duration-1000 delay-${index * 150} ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-              onMouseEnter={() => setActiveStep(index)}
-              onMouseLeave={() => setActiveStep(null)}
-            >
-              {/* Enhanced Card with Portuguese-inspired design */}
-              <div className="bg-white/80 backdrop-blur-lg border border-white/50 rounded-3xl p-10 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:-translate-y-3 relative overflow-hidden min-h-[400px]">
-                {/* Enhanced Background gradient with Portuguese flag inspiration */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${step.bgColor} opacity-0 group-hover:opacity-60 transition-opacity duration-500 rounded-3xl`} />
-                
-                {/* Decorative Portuguese pattern */}
-                <div className="absolute top-4 right-4 w-20 h-20 opacity-5 group-hover:opacity-10 transition-opacity duration-500">
-                  <div className="w-full h-full bg-gradient-to-br from-green-500 to-red-500 rounded-full"></div>
+        {/* Content Sections Grid - 2x3 Layout for Mobile Optimization */}
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6 mb-20">
+          {/* Book Experiences Section */}
+          <div className="group relative transition-all duration-1000 delay-100">
+            <div className="bg-white/80 backdrop-blur-lg border border-white/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 relative overflow-hidden h-[240px] sm:h-[280px] lg:h-[320px] flex flex-col">
+              <div className="absolute inset-0 bg-gradient-to-br from-secondary-50 to-secondary-100 opacity-0 group-hover:opacity-60 transition-opacity duration-500 rounded-xl" />
+              
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="flex items-start justify-between mb-2 sm:mb-3">
+                  <div className="text-xl sm:text-3xl lg:text-5xl font-black text-gray-100 group-hover:text-gray-200 transition-colors duration-300 leading-none">01</div>
+                  <div className="w-7 h-7 sm:w-10 sm:h-10 lg:w-14 lg:h-14 rounded-lg lg:rounded-xl bg-gradient-to-br from-secondary-500 to-secondary-600 flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:rotate-6 transition-all duration-500 flex-shrink-0">
+                    <Calendar className="h-3 w-3 sm:h-5 sm:w-5 lg:h-7 lg:w-7 text-white" />
+                  </div>
                 </div>
-                
-                {/* Content */}
-                <div className="relative z-10 space-y-6">
-                  {/* Step number and icon */}
-                  <div className="flex items-start justify-between mb-8">
-                    <div className="text-8xl font-black text-gray-100 group-hover:text-gray-200 transition-colors duration-300 leading-none">
-                      {step.number.toString().padStart(2, '0')}
-                    </div>
-                    <div className={`w-20 h-20 rounded-3xl bg-gradient-to-br ${step.color} flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:rotate-6 transition-all duration-500`}>
-                      <step.icon className="h-10 w-10 text-white" strokeWidth={2} />
-                    </div>
-                  </div>
 
-                  {/* Titles */}
-                  <div className="space-y-3">
-                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 group-hover:text-gray-800 transition-colors duration-300 leading-tight">
-                      {step.title}
-                    </h3>
-                    <p className="text-base font-medium text-gray-500 italic">
-                      {step.subtitle}
-                    </p>
-                  </div>
+                <div className="flex-1 space-y-1 sm:space-y-2">
+                  <h3 className="text-xs sm:text-sm lg:text-lg font-bold text-gray-900 leading-tight">Book Events</h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">Museums • Sports • Fado</p>
+                  <p className="text-xs text-gray-600 leading-relaxed">Book tours, matches, concerts for Portuguese speakers.</p>
+                </div>
 
-                  {/* Description */}
-                  <p className="text-gray-600 leading-relaxed text-base mb-4">
-                    {step.description}
-                  </p>
-
-                  {/* Examples with cultural context */}
-                  <div className="bg-white/40 rounded-2xl p-4 mb-6">
-                    <p className="text-sm text-gray-600 italic">
-                      <span className="font-semibold text-gray-700">Examples:</span> {step.examples}
-                    </p>
-                  </div>
-
-                  {/* Interactive CTA Link */}
-                  <a 
-                    href="/events"
-                    className={`flex items-center gap-2 text-${step.accentColor} font-semibold opacity-0 group-hover:opacity-100 transition-all duration-300 hover:gap-3 cursor-pointer text-base whitespace-nowrap`}
-                  >
+                <div className="mt-auto pt-2">
+                  <a href="/events" className="inline-flex items-center gap-1 bg-secondary-600 text-white text-xs font-bold px-2 sm:px-3 py-1 sm:py-2 rounded-md hover:bg-secondary-700 transition-all duration-300">
                     <span>Book Now</span>
-                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                    <ArrowRight className="h-2 w-2 sm:h-3 sm:w-3" />
                   </a>
                 </div>
-
-                {/* Connection line for larger screens - only between first and second on each row */}
-                {index % 2 === 0 && index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute -right-6 top-1/2 transform -translate-y-1/2 z-20">
-                    <div className={`w-10 h-10 bg-white rounded-full shadow-xl border-2 border-gray-200 flex items-center justify-center transition-all duration-300 ${activeStep === index ? 'scale-110 border-' + step.accentColor : ''}`}>
-                      <ArrowRight className="w-5 h-5 text-gray-400" />
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Create Groups Section */}
+          <div className="group relative transition-all duration-1000 delay-150">
+            <div className="bg-white/80 backdrop-blur-lg border border-white/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 relative overflow-hidden h-[240px] sm:h-[280px] lg:h-[320px] flex flex-col">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent-50 to-coral-100 opacity-0 group-hover:opacity-60 transition-opacity duration-500 rounded-xl" />
+              
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="flex items-start justify-between mb-2 sm:mb-3">
+                  <div className="text-xl sm:text-3xl lg:text-5xl font-black text-gray-100 group-hover:text-gray-200 transition-colors duration-300 leading-none">02</div>
+                  <div className="w-7 h-7 sm:w-10 sm:h-10 lg:w-14 lg:h-14 rounded-lg lg:rounded-xl bg-gradient-to-br from-accent-500 to-coral-500 flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:rotate-6 transition-all duration-500 flex-shrink-0">
+                    <Users className="h-3 w-3 sm:h-5 sm:w-5 lg:h-7 lg:w-7 text-white" />
+                  </div>
+                </div>
+
+                <div className="flex-1 space-y-1 sm:space-y-2">
+                  <h3 className="text-xs sm:text-sm lg:text-lg font-bold text-gray-900 leading-tight">Create Groups</h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">Professionals • 50+ • Social</p>
+                  <p className="text-xs text-gray-600 leading-relaxed">Start communities and build lasting friendships.</p>
+                </div>
+
+                <div className="mt-auto pt-2">
+                  <a href="/groups" className="inline-flex items-center gap-1 bg-accent-600 text-white text-xs font-bold px-2 sm:px-3 py-1 sm:py-2 rounded-md hover:bg-accent-700 transition-all duration-300">
+                    <span>Start Group</span>
+                    <ArrowRight className="h-2 w-2 sm:h-3 sm:w-3" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* LusoFeed Section */}
+          <div className="group relative transition-all duration-1000 delay-200">
+            <div className="bg-white/80 backdrop-blur-lg border border-white/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 relative overflow-hidden h-[240px] sm:h-[280px] lg:h-[320px] flex flex-col">
+              <div className="absolute inset-0 bg-gradient-to-br from-action-50 to-action-100 opacity-0 group-hover:opacity-60 transition-opacity duration-500 rounded-xl" />
+              
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="flex items-start justify-between mb-2 sm:mb-3">
+                  <div className="text-xl sm:text-3xl lg:text-5xl font-black text-gray-100 group-hover:text-gray-200 transition-colors duration-300 leading-none">03</div>
+                  <div className="w-7 h-7 sm:w-10 sm:h-10 lg:w-14 lg:h-14 rounded-lg lg:rounded-xl bg-gradient-to-br from-action-500 to-action-600 flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:rotate-6 transition-all duration-500 flex-shrink-0">
+                    <MessageCircle className="h-3 w-3 sm:h-5 sm:w-5 lg:h-7 lg:w-7 text-white" />
+                  </div>
+                </div>
+
+                <div className="flex-1 space-y-1 sm:space-y-2">
+                  <h3 className="text-xs sm:text-sm lg:text-lg font-bold text-gray-900 leading-tight">LusoFeed</h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">Updates • Photos • News</p>
+                  <p className="text-xs text-gray-600 leading-relaxed">Follow events and share photos with community.</p>
+                </div>
+
+                <div className="mt-auto pt-2">
+                  <a href="/feed" className="inline-flex items-center gap-1 bg-action-600 text-white text-xs font-bold px-2 sm:px-3 py-1 sm:py-2 rounded-md hover:bg-action-700 transition-all duration-300">
+                    <span>View Feed</span>
+                    <ArrowRight className="h-2 w-2 sm:h-3 sm:w-3" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Favourites Section */}
+          <div className="group relative transition-all duration-1000 delay-250">
+            <div className="bg-white/80 backdrop-blur-lg border border-white/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 relative overflow-hidden h-[240px] sm:h-[280px] lg:h-[320px] flex flex-col">
+              <div className="absolute inset-0 bg-gradient-to-br from-premium-50 to-premium-100 opacity-0 group-hover:opacity-60 transition-opacity duration-500 rounded-xl" />
+              
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="flex items-start justify-between mb-2 sm:mb-3">
+                  <div className="text-xl sm:text-3xl lg:text-5xl font-black text-gray-100 group-hover:text-gray-200 transition-colors duration-300 leading-none">04</div>
+                  <div className="w-7 h-7 sm:w-10 sm:h-10 lg:w-14 lg:h-14 rounded-lg lg:rounded-xl bg-gradient-to-br from-premium-500 to-premium-600 flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:rotate-6 transition-all duration-500 flex-shrink-0">
+                    <Heart className="h-3 w-3 sm:h-5 sm:w-5 lg:h-7 lg:w-7 text-white" />
+                  </div>
+                </div>
+
+                <div className="flex-1 space-y-1 sm:space-y-2">
+                  <h3 className="text-xs sm:text-sm lg:text-lg font-bold text-gray-900 leading-tight">Save Favourites</h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">Events • Businesses • Sites</p>
+                  <p className="text-xs text-gray-600 leading-relaxed">Save bakeries, events and build your collection.</p>
+                </div>
+
+                <div className="mt-auto pt-2">
+                  <a href="/favorites" className="inline-flex items-center gap-1 bg-premium-600 text-white text-xs font-bold px-2 sm:px-3 py-1 sm:py-2 rounded-md hover:bg-premium-700 transition-all duration-300">
+                    <span>View Saved</span>
+                    <ArrowRight className="h-2 w-2 sm:h-3 sm:w-3" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Share Expertise Section */}
+          <div className="group relative transition-all duration-1000 delay-300 col-span-2">
+            <div className="bg-white/80 backdrop-blur-lg border border-white/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 relative overflow-hidden h-[240px] sm:h-[280px] lg:h-[320px] flex flex-col">
+              <div className="absolute inset-0 bg-gradient-to-br from-coral-50 to-coral-100 opacity-0 group-hover:opacity-60 transition-opacity duration-500 rounded-xl" />
+              
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="flex items-start justify-between mb-2 sm:mb-3">
+                  <div className="text-xl sm:text-3xl lg:text-5xl font-black text-gray-100 group-hover:text-gray-200 transition-colors duration-300 leading-none">05</div>
+                  <div className="w-7 h-7 sm:w-10 sm:h-10 lg:w-14 lg:h-14 rounded-lg lg:rounded-xl bg-gradient-to-br from-coral-500 to-coral-600 flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:rotate-6 transition-all duration-500 flex-shrink-0">
+                    <Sparkles className="h-3 w-3 sm:h-5 sm:w-5 lg:h-7 lg:w-7 text-white" />
+                  </div>
+                </div>
+
+                <div className="flex-1 space-y-1 sm:space-y-2">
+                  <h3 className="text-xs sm:text-sm lg:text-lg font-bold text-gray-900 leading-tight">Share Expertise</h3>
+                  <p className="text-xs text-gray-600 leading-relaxed">Workshops • Services • Events</p>
+                  <p className="text-xs text-gray-600 leading-relaxed">Showcase skills to community and grow business.</p>
+                </div>
+
+                <div className="mt-auto pt-2">
+                  <a href="/host" className="inline-flex items-center gap-1 bg-coral-600 text-white text-xs font-bold px-2 sm:px-3 py-1 sm:py-2 rounded-md hover:bg-coral-700 transition-all duration-300">
+                    <span>Become Host</span>
+                    <ArrowRight className="h-2 w-2 sm:h-3 sm:w-3" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Enhanced Stats Section with Portuguese Cultural Context */}

@@ -36,7 +36,7 @@ export default function Hero() {
               <div className="flex items-center gap-2">
                 <SparklesIcon className="h-5 w-5 text-secondary-600" />
                 <span className="text-sm font-bold bg-gradient-to-r from-secondary-600 to-action-600 bg-clip-text text-transparent">
-                  {t('hero.badge')}
+                  ANNUAL MEMBERSHIP - £25/YEAR
                 </span>
               </div>
               <div className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">
@@ -114,8 +114,8 @@ export default function Hero() {
             <div className="relative z-10 bg-white/20 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/30">
               <div className="space-y-6">
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-2">Your Social Calendar Awaits</h3>
-                  <p className="text-gray-600">Join 500+ Portuguese speakers across London and the UK - booking museum tours, concert nights, football matches, and weekend adventures together</p>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2">Annual Membership - Your Cultural Investment</h3>
+                  <p className="text-gray-600">£25/year gets you unlimited access to the Portuguese community. Pay only true cost for events and activities - no markups, no surprises.</p>
                 </div>
 
                 {/* Member avatars */}

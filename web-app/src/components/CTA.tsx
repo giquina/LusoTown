@@ -10,12 +10,12 @@ import { ArrowRightIcon, CheckIcon, SparklesIcon } from '@heroicons/react/24/out
 import { useLanguage } from '@/context/LanguageContext'
 
 const getBenefits = (t: any) => [
-  t('cta.benefits.book-experiences', "Book experiences with Portuguese speakers"),
-  t('cta.benefits.cultural-access', "Access to Portuguese cultural events"), 
-  t('cta.benefits.find-businesses', "Find Portuguese businesses and services"),
-  t('cta.benefits.active-social-life', "Fill your social calendar"),
-  t('cta.benefits.safe-environment', "Safe and welcoming environment"),
-  t('cta.benefits.free-start', "Free to get started")
+  "£25/year - your ticket to the Portuguese community",
+  "Pay only true cost for events and activities", 
+  "No markups or hidden fees ever",
+  "Voice in community decisions",
+  "Unlimited access to all groups and events",
+  "Future cooperative ownership benefits"
 ]
 
 export default function CTA() {
@@ -42,13 +42,13 @@ export default function CTA() {
           >
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-white font-medium mb-6 border border-white/30">
               <SparklesIcon className="h-4 w-4" />
-              {t('cta.badge', 'Limited Time - Join Today')}
+              Annual Membership - £25/Year
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              {t('cta.title', 'Your Community is Here')}
+              Your Cultural Investment
             </h2>
             <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto">
-              {t('cta.subtitle', 'No more lonely weekends. Join LusoTown London today and discover the Portuguese community you\'ve been looking for.')}
+              One annual membership. Unlimited community access. Pay only true cost for events. No markups, no surprises.
             </p>
           </motion.div>
 

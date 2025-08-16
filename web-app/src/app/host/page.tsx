@@ -172,20 +172,20 @@ export default function HostPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
+                className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
               >
-                {isPortuguese ? 'Partilhe a Sua Especialidade Portuguesa' : 'Share Your Portuguese Expertise'}
+                {isPortuguese ? 'Comece com 1 Evento Grátis' : 'Start with 1 Free Event'}
               </motion.h1>
               
               <motion.p 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-lg sm:text-xl text-gray-600 mb-8"
+                className="text-base sm:text-lg text-gray-600 mb-8"
               >
                 {isPortuguese 
-                  ? 'Junta-te a centenas de profissionais portugueses que apresentam os seus serviços à nossa comunidade crescente. Desde workshops de negócios a experiências culturais.'
-                  : 'Join hundreds of Portuguese professionals showcasing their services to our growing community. From business workshops to cultural experiences.'
+                  ? 'Sem barreiras para criar eventos. Comece grátis com 1 evento mensal, depois escolha entre Creator Pro (£24.99) ou modelo de transação (8% + £0.40 por bilhete).'
+                  : 'No barriers to event creation. Start free with 1 monthly event, then choose Creator Pro (£24.99) or transaction model (8% + £0.40 per ticket).'
                 }
               </motion.p>
 
@@ -197,16 +197,16 @@ export default function HostPage() {
               >
                 <a
                   href="#apply"
-                  className="group relative text-lg font-bold px-8 py-4 bg-gradient-to-r from-premium-600 to-coral-600 text-white rounded-2xl shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+                  className="group relative text-sm sm:text-base font-bold px-6 sm:px-8 py-4 bg-gradient-to-r from-premium-600 to-coral-600 text-white rounded-2xl shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
                 >
-                  <span className="flex items-center justify-center gap-3">
-                    {isPortuguese ? 'Começar Agora' : 'Get Started Now'}
-                    <ArrowRightIcon className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
+                  <span className="flex items-center justify-center gap-2 sm:gap-3">
+                    {isPortuguese ? 'Começar Agora' : 'Start Now'}
+                    <ArrowRightIcon className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-200" />
                   </span>
                 </a>
                 <a
                   href="#benefits"
-                  className="text-lg font-bold px-8 py-4 bg-white text-gray-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-premium-300 hover:-translate-y-1"
+                  className="text-sm sm:text-base font-bold px-6 sm:px-8 py-4 bg-white text-gray-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-premium-300 hover:-translate-y-1"
                 >
                   {isPortuguese ? 'Saber Mais' : 'Learn More'}
                 </a>
@@ -230,7 +230,8 @@ export default function HostPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Mobile: 2x2 layout, Desktop: 1x3 layout */}
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-8">
               {categories.map((category) => {
                 const IconComponent = category.icon
                 const isSelected = selectedCategory === category.id
@@ -240,34 +241,34 @@ export default function HostPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className={`relative cursor-pointer p-8 rounded-3xl border-2 transition-all duration-300 ${
+                    className={`relative cursor-pointer p-3 sm:p-4 lg:p-8 rounded-2xl lg:rounded-3xl border-2 transition-all duration-300 min-h-[240px] sm:min-h-[280px] lg:min-h-[320px] ${
                       isSelected
                         ? `border-${category.color}-500 bg-${category.color}-50 shadow-xl scale-105`
                         : 'border-gray-200 bg-white hover:border-gray-300 hover:shadow-lg'
                     }`}
                     onClick={() => setSelectedCategory(category.id as any)}
                   >
-                    <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 rounded-xl lg:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 lg:mb-6 ${
                       isSelected 
                         ? `bg-gradient-to-r from-${category.color}-500 to-${category.color}-600` 
                         : 'bg-gray-100'
                     }`}>
-                      <IconComponent className={`w-8 h-8 ${isSelected ? 'text-white' : 'text-gray-600'}`} />
+                      <IconComponent className={`w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 ${isSelected ? 'text-white' : 'text-gray-600'}`} />
                     </div>
                     
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    <h3 className="text-sm sm:text-base lg:text-xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight">
                       {category.title}
                     </h3>
                     
-                    <p className="text-gray-600 mb-4">
+                    <p className="text-gray-600 mb-3 sm:mb-4 text-xs sm:text-sm lg:text-base leading-relaxed">
                       {category.description}
                     </p>
                     
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1 sm:gap-2">
                       {category.examples.map((example) => (
                         <span 
                           key={example}
-                          className={`text-xs px-3 py-1 rounded-full ${
+                          className={`text-xs px-2 sm:px-3 py-1 rounded-full ${
                             isSelected 
                               ? `bg-${category.color}-100 text-${category.color}-800`
                               : 'bg-gray-100 text-gray-600'
@@ -279,13 +280,149 @@ export default function HostPage() {
                     </div>
                     
                     {isSelected && (
-                      <div className="absolute top-4 right-4">
-                        <CheckIcon className={`w-6 h-6 text-${category.color}-600`} />
+                      <div className="absolute top-2 sm:top-4 right-2 sm:right-4">
+                        <CheckIcon className={`w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-${category.color}-600`} />
                       </div>
                     )}
                   </motion.div>
                 )
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing Section */}
+        <section className="py-20 bg-gradient-to-r from-white to-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                {isPortuguese ? 'Preços Transparentes para Criadores' : 'Transparent Creator Pricing'}
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                {isPortuguese 
+                  ? 'Escolha o modelo que funciona para si - sem custos escondidos'
+                  : 'Choose the model that works for you - no hidden costs'
+                }
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
+              {/* Creator Free */}
+              <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Creator Free</h3>
+                  <div className="text-4xl font-bold text-gray-900 mb-2">
+                    {isPortuguese ? 'Gratuito' : 'Free'}
+                  </div>
+                  <p className="text-gray-600">
+                    {isPortuguese ? '1 evento grátis para começar' : '1 free event to get started'}
+                  </p>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center gap-3">
+                    <CheckIcon className="w-5 h-5 text-green-500" />
+                    <span className="text-gray-700">
+                      {isPortuguese ? '1 evento por mês' : '1 event per month'}
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckIcon className="w-5 h-5 text-green-500" />
+                    <span className="text-gray-700">
+                      {isPortuguese ? 'Ferramentas básicas' : 'Basic tools'}
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckIcon className="w-5 h-5 text-green-500" />
+                    <span className="text-gray-700">
+                      {isPortuguese ? 'Suporte da comunidade' : 'Community support'}
+                    </span>
+                  </li>
+                </ul>
+                <button className="w-full bg-gray-100 text-gray-700 font-semibold py-3 rounded-xl hover:bg-gray-200 transition-colors">
+                  {isPortuguese ? 'Começar Grátis' : 'Start Free'}
+                </button>
+              </div>
+              
+              {/* Creator Pro */}
+              <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-premium-400 relative">
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <span className="bg-premium-500 text-white px-4 py-2 rounded-full text-sm font-medium">
+                    {isPortuguese ? 'Recomendado' : 'Recommended'}
+                  </span>
+                </div>
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Creator Pro</h3>
+                  <div className="text-4xl font-bold text-gray-900 mb-2">£24.99</div>
+                  <p className="text-gray-600">
+                    {isPortuguese ? 'por mês' : 'per month'}
+                  </p>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center gap-3">
+                    <CheckIcon className="w-5 h-5 text-green-500" />
+                    <span className="text-gray-700">
+                      {isPortuguese ? 'Eventos ilimitados' : 'Unlimited events'}
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckIcon className="w-5 h-5 text-green-500" />
+                    <span className="text-gray-700">
+                      {isPortuguese ? 'Ferramentas avançadas' : 'Advanced tools'}
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckIcon className="w-5 h-5 text-green-500" />
+                    <span className="text-gray-700">
+                      {isPortuguese ? 'Promoção premium' : 'Premium promotion'}
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckIcon className="w-5 h-5 text-green-500" />
+                    <span className="text-gray-700">
+                      {isPortuguese ? 'Analytics detalhados' : 'Detailed analytics'}
+                    </span>
+                  </li>
+                </ul>
+                <button className="w-full bg-premium-500 text-white font-semibold py-3 rounded-xl hover:bg-premium-600 transition-colors">
+                  {isPortuguese ? 'Escolher Pro' : 'Choose Pro'}
+                </button>
+              </div>
+              
+              {/* Transaction Model */}
+              <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    {isPortuguese ? 'Por Transação' : 'Per Transaction'}
+                  </h3>
+                  <div className="text-3xl font-bold text-gray-900 mb-2">8% + £0.40</div>
+                  <p className="text-gray-600">
+                    {isPortuguese ? 'por bilhete vendido' : 'per ticket sold'}
+                  </p>
+                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center gap-3">
+                    <CheckIcon className="w-5 h-5 text-green-500" />
+                    <span className="text-gray-700">
+                      {isPortuguese ? 'Sem custos mensais' : 'No monthly fees'}
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckIcon className="w-5 h-5 text-green-500" />
+                    <span className="text-gray-700">
+                      {isPortuguese ? 'Pague só quando vender' : 'Only pay when you sell'}
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckIcon className="w-5 h-5 text-green-500" />
+                    <span className="text-gray-700">
+                      {isPortuguese ? 'Eventos ilimitados' : 'Unlimited events'}
+                    </span>
+                  </li>
+                </ul>
+                <button className="w-full bg-coral-500 text-white font-semibold py-3 rounded-xl hover:bg-coral-600 transition-colors">
+                  {isPortuguese ? 'Escolher Transação' : 'Choose Transaction'}
+                </button>
+              </div>
             </div>
           </div>
         </section>
@@ -299,13 +436,13 @@ export default function HostPage() {
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 {isPortuguese 
-                  ? 'Junte-se a uma plataforma dedicada ao sucesso de profissionais portugueses'
-                  : 'Join a platform dedicated to the success of Portuguese professionals'
+                  ? 'Comece grátis e cresça com flexibilidade'
+                  : 'Start free and grow with flexibility'
                 }
               </p>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-8">
               {benefits.map((benefit, index) => {
                 const IconComponent = benefit.icon
                 return (
@@ -314,15 +451,15 @@ export default function HostPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="text-center p-6 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-lg transition-all duration-300"
+                    className="text-center p-3 sm:p-4 lg:p-6 rounded-xl lg:rounded-2xl bg-gray-50 hover:bg-white hover:shadow-lg transition-all duration-300 min-h-[180px] sm:min-h-[200px]"
                   >
-                    <div className="w-16 h-16 bg-gradient-to-r from-premium-500 to-coral-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <IconComponent className="w-8 h-8 text-white" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-r from-premium-500 to-coral-500 rounded-xl lg:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                      <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" />
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">
+                    <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mb-2 leading-tight">
                       {benefit.title}
                     </h3>
-                    <p className="text-gray-600 text-sm">
+                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                       {benefit.description}
                     </p>
                   </motion.div>
@@ -388,28 +525,28 @@ export default function HostPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-8">
               {steps.map((step, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="text-center relative"
+                  className="text-center relative min-h-[160px] sm:min-h-[180px]"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-r from-premium-500 to-coral-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-r from-premium-500 to-coral-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 text-white font-bold text-sm sm:text-base lg:text-xl">
                     {step.number}
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-900 mb-2 leading-tight">
                     {step.title}
                   </h3>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                     {step.description}
                   </p>
                   
-                  {index < steps.length - 1 && (
-                    <div className="hidden md:block absolute top-8 left-full w-full">
-                      <ArrowRightIcon className="w-6 h-6 text-gray-300 mx-auto" />
+                  {index < steps.length - 1 && index % 2 === 1 && (
+                    <div className="hidden lg:block absolute top-6 lg:top-8 left-full w-full">
+                      <ArrowRightIcon className="w-4 h-4 lg:w-6 lg:h-6 text-gray-300 mx-auto" />
                     </div>
                   )}
                 </motion.div>
@@ -565,9 +702,9 @@ export default function HostPage() {
                 <div className="pt-6">
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-premium-600 to-coral-600 text-white font-bold py-4 px-8 rounded-2xl hover:from-premium-700 hover:to-coral-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    className="w-full bg-gradient-to-r from-premium-600 to-coral-600 text-white font-bold py-4 px-8 rounded-2xl hover:from-premium-700 hover:to-coral-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm sm:text-base"
                   >
-                    {isPortuguese ? 'Enviar Candidatura' : 'Submit Application'}
+                    {isPortuguese ? 'Enviar Candidatura' : 'Submit Now'}
                   </button>
                 </div>
               </form>

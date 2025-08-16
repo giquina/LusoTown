@@ -81,10 +81,10 @@ export default function TransportServiceCard({
     >
       {/* Popular Badge */}
       {tier.popular && (
-        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-          <div className="bg-gradient-to-r from-premium-600 to-premium-700 text-white px-6 py-2 rounded-full text-sm font-bold shadow-xl">
+        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20">
+          <div className="bg-gradient-to-r from-premium-600 to-premium-700 text-white px-4 py-2 rounded-full text-xs sm:text-sm font-bold shadow-xl whitespace-nowrap">
             <div className="flex items-center space-x-1">
-              <StarIcon className="w-4 h-4" />
+              <StarIcon className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
               <span>{isPortuguese ? 'Mais Popular' : 'Most Popular'}</span>
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function TransportServiceCard({
       )}
 
       {/* Header */}
-      <div className={`bg-gradient-to-br ${colors.bg} px-6 py-8 text-center ${tier.popular ? 'pt-12' : ''}`}>
+      <div className={`bg-gradient-to-br ${colors.bg} px-6 py-8 text-center ${tier.popular ? 'pt-14' : ''}`}>
         <h3 className="text-2xl font-black text-gray-900 mb-2">
           {isPortuguese ? tier.namePortuguese : tier.name}
         </h3>
@@ -112,6 +112,7 @@ export default function TransportServiceCard({
           {isPortuguese ? tier.descriptionPortuguese : tier.description}
         </p>
         <div className="flex items-baseline justify-center">
+          <span className="text-gray-500 text-lg font-medium mr-1">From</span>
           <span className="text-4xl font-black bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent">£{tier.price}</span>
           <span className="text-gray-500 ml-1 font-medium">/hour</span>
         </div>

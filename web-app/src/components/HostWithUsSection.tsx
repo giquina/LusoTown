@@ -51,32 +51,32 @@ export default function HostWithUsSection() {
             </blockquote>
           </div>
           
-          {/* 3-Column Grid Layout for Professional Types */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          {/* Professional Types Grid - 2x2 Mobile Layout */}
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-8 mb-20">
             {/* Professional Services & Workshops */}
             <div className="group relative h-full">
-              <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-br from-premium-50/60 via-transparent to-coral-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+              <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-8 h-[280px] sm:h-[320px] lg:h-[360px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+                <div className="absolute inset-0 bg-gradient-to-br from-premium-50/60 via-transparent to-coral-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl lg:rounded-3xl" />
                 
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="w-16 h-16 bg-gradient-to-br from-premium-500 to-premium-600 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
-                    <AcademicCapIcon className="w-8 h-8 text-white" />
+                  <div className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-premium-500 to-premium-600 rounded-lg lg:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 lg:mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl flex-shrink-0">
+                    <AcademicCapIcon className="w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-premium-600 transition-colors duration-300">
-                    {t('host-with-us.professionals.title')}
+                  <h3 className="text-sm sm:text-base lg:text-xl font-bold text-gray-900 mb-2 sm:mb-3 lg:mb-4 group-hover:text-premium-600 transition-colors duration-300 leading-tight">
+                    Professional Services
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6 flex-grow text-sm">
-                    {t('host-with-us.professionals.description')}
+                  <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 lg:mb-6 flex-grow text-xs sm:text-sm lg:text-base">
+                    AI workshops, business coaching, professional networking events.
                   </p>
-                  <div className="text-xs text-gray-500 mb-4 font-medium">
-                    {t('host-with-us.professionals.examples')}
+                  <div className="text-xs text-gray-500 mb-2 sm:mb-3 lg:mb-4 font-medium">
+                    AI Training • Business Coaching
                   </div>
                   <a 
                     href="/host?category=professional" 
-                    className="inline-flex items-center gap-2 text-premium-600 font-semibold hover:text-premium-700 transition-colors group-hover:gap-3 duration-300 text-sm"
+                    className="inline-flex items-center gap-1 sm:gap-2 text-premium-600 font-semibold hover:text-premium-700 transition-colors group-hover:gap-3 duration-300 text-xs sm:text-sm mt-auto"
                   >
-                    {t('host-with-us.professionals.cta')}
-                    <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    List Services
+                    <ArrowRightIcon className="w-3 h-3 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-1" />
                   </a>
                 </div>
               </div>
@@ -84,57 +84,57 @@ export default function HostWithUsSection() {
 
             {/* Cultural Events & Experiences */}
             <div className="group relative h-full">
-              <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary-50/60 via-transparent to-accent-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+              <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-8 h-[280px] sm:h-[320px] lg:h-[360px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+                <div className="absolute inset-0 bg-gradient-to-br from-secondary-50/60 via-transparent to-accent-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl lg:rounded-3xl" />
                 
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="w-16 h-16 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
-                    <SparklesIcon className="w-8 h-8 text-white" />
+                  <div className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-lg lg:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 lg:mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl flex-shrink-0">
+                    <SparklesIcon className="w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-secondary-600 transition-colors duration-300">
-                    {t('host-with-us.cultural.title')}
+                  <h3 className="text-sm sm:text-base lg:text-xl font-bold text-gray-900 mb-2 sm:mb-3 lg:mb-4 group-hover:text-secondary-600 transition-colors duration-300 leading-tight">
+                    Cultural Events
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6 flex-grow text-sm">
-                    {t('host-with-us.cultural.description')}
+                  <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 lg:mb-6 flex-grow text-xs sm:text-sm lg:text-base">
+                    Cooking classes, Fado nights, language exchanges, cultural tours.
                   </p>
-                  <div className="text-xs text-gray-500 mb-4 font-medium">
-                    {t('host-with-us.cultural.examples')}
+                  <div className="text-xs text-gray-500 mb-2 sm:mb-3 lg:mb-4 font-medium">
+                    Cooking • Fado • Tours
                   </div>
                   <a 
                     href="/host?category=cultural" 
-                    className="inline-flex items-center gap-2 text-secondary-600 font-semibold hover:text-secondary-700 transition-colors group-hover:gap-3 duration-300 text-sm"
+                    className="inline-flex items-center gap-1 sm:gap-2 text-secondary-600 font-semibold hover:text-secondary-700 transition-colors group-hover:gap-3 duration-300 text-xs sm:text-sm mt-auto"
                   >
-                    {t('host-with-us.cultural.cta')}
-                    <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    Host Events
+                    <ArrowRightIcon className="w-3 h-3 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-1" />
                   </a>
                 </div>
               </div>
             </div>
 
             {/* Portuguese Business Promotion */}
-            <div className="group relative h-full">
-              <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-8 h-full shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-br from-coral-50/60 via-transparent to-action-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+            <div className="group relative h-full col-span-2 lg:col-span-1">
+              <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-8 h-[280px] sm:h-[320px] lg:h-[360px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+                <div className="absolute inset-0 bg-gradient-to-br from-coral-50/60 via-transparent to-action-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl lg:rounded-3xl" />
                 
                 <div className="relative z-10 flex flex-col h-full">
-                  <div className="w-16 h-16 bg-gradient-to-br from-coral-500 to-action-500 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
-                    <BriefcaseIcon className="w-8 h-8 text-white" />
+                  <div className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-coral-500 to-action-500 rounded-lg lg:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 lg:mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl flex-shrink-0">
+                    <BriefcaseIcon className="w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-coral-600 transition-colors duration-300">
-                    {t('host-with-us.business.title')}
+                  <h3 className="text-sm sm:text-base lg:text-xl font-bold text-gray-900 mb-2 sm:mb-3 lg:mb-4 group-hover:text-coral-600 transition-colors duration-300 leading-tight">
+                    Business Promotion
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6 flex-grow text-sm">
-                    {t('host-with-us.business.description')}
+                  <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 lg:mb-6 flex-grow text-xs sm:text-sm lg:text-base">
+                    Promote restaurants, shops, professional services to Portuguese community.
                   </p>
-                  <div className="text-xs text-gray-500 mb-4 font-medium">
-                    {t('host-with-us.business.examples')}
+                  <div className="text-xs text-gray-500 mb-2 sm:mb-3 lg:mb-4 font-medium">
+                    Restaurants • Shops • Services
                   </div>
                   <a 
                     href="/host?category=business" 
-                    className="inline-flex items-center gap-2 text-coral-600 font-semibold hover:text-coral-700 transition-colors group-hover:gap-3 duration-300 text-sm"
+                    className="inline-flex items-center gap-1 sm:gap-2 text-coral-600 font-semibold hover:text-coral-700 transition-colors group-hover:gap-3 duration-300 text-xs sm:text-sm mt-auto"
                   >
-                    {t('host-with-us.business.cta')}
-                    <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    Promote Business
+                    <ArrowRightIcon className="w-3 h-3 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-1" />
                   </a>
                 </div>
               </div>
@@ -183,53 +183,53 @@ export default function HostWithUsSection() {
             </div>
           </div>
 
-          {/* Benefits Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-            <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/40 shadow-lg">
-              <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <UserGroupIcon className="w-6 h-6 text-white" />
+          {/* Benefits Grid - 2x2 Mobile Layout */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-20">
+            <div className="text-center p-3 sm:p-4 lg:p-6 bg-white/60 backdrop-blur-sm rounded-xl lg:rounded-2xl border border-white/40 shadow-lg h-[160px] sm:h-[180px] lg:h-[200px] flex flex-col">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg lg:rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 lg:mb-4 flex-shrink-0">
+                <UserGroupIcon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
-              <h4 className="font-bold text-gray-900 mb-2 text-sm">
-                {t('host-with-us.benefits.reach.title')}
+              <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-xs sm:text-sm leading-tight">
+                Reach 500+ Portuguese
               </h4>
-              <p className="text-xs text-gray-600 leading-relaxed">
-                {t('host-with-us.benefits.reach.description')}
+              <p className="text-xs text-gray-600 leading-relaxed flex-1">
+                Connect with Portuguese professionals and families.
               </p>
             </div>
             
-            <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/40 shadow-lg">
-              <div className="w-12 h-12 bg-gradient-to-r from-secondary-500 to-accent-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <CurrencyPoundIcon className="w-6 h-6 text-white" />
+            <div className="text-center p-3 sm:p-4 lg:p-6 bg-white/60 backdrop-blur-sm rounded-xl lg:rounded-2xl border border-white/40 shadow-lg h-[160px] sm:h-[180px] lg:h-[200px] flex flex-col">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-secondary-500 to-accent-500 rounded-lg lg:rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 lg:mb-4 flex-shrink-0">
+                <CurrencyPoundIcon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
-              <h4 className="font-bold text-gray-900 mb-2 text-sm">
-                {t('host-with-us.benefits.revenue.title')}
+              <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-xs sm:text-sm leading-tight">
+                Sustainable Revenue
               </h4>
-              <p className="text-xs text-gray-600 leading-relaxed">
-                {t('host-with-us.benefits.revenue.description')}
+              <p className="text-xs text-gray-600 leading-relaxed flex-1">
+                Monetize expertise with payment processing.
               </p>
             </div>
             
-            <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/40 shadow-lg">
-              <div className="w-12 h-12 bg-gradient-to-r from-coral-500 to-action-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <GlobeAltIcon className="w-6 h-6 text-white" />
+            <div className="text-center p-3 sm:p-4 lg:p-6 bg-white/60 backdrop-blur-sm rounded-xl lg:rounded-2xl border border-white/40 shadow-lg h-[160px] sm:h-[180px] lg:h-[200px] flex flex-col">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-coral-500 to-action-500 rounded-lg lg:rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 lg:mb-4 flex-shrink-0">
+                <GlobeAltIcon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
-              <h4 className="font-bold text-gray-900 mb-2 text-sm">
-                {t('host-with-us.benefits.community.title')}
+              <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-xs sm:text-sm leading-tight">
+                Build Network
               </h4>
-              <p className="text-xs text-gray-600 leading-relaxed">
-                {t('host-with-us.benefits.community.description')}
+              <p className="text-xs text-gray-600 leading-relaxed flex-1">
+                Connect with Portuguese professionals.
               </p>
             </div>
             
-            <div className="text-center p-6 bg-white/60 backdrop-blur-sm rounded-2xl border border-white/40 shadow-lg">
-              <div className="w-12 h-12 bg-gradient-to-r from-premium-500 to-coral-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <HeartIcon className="w-6 h-6 text-white" />
+            <div className="text-center p-3 sm:p-4 lg:p-6 bg-white/60 backdrop-blur-sm rounded-xl lg:rounded-2xl border border-white/40 shadow-lg h-[160px] sm:h-[180px] lg:h-[200px] flex flex-col">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-premium-500 to-coral-500 rounded-lg lg:rounded-xl flex items-center justify-center mx-auto mb-2 sm:mb-3 lg:mb-4 flex-shrink-0">
+                <HeartIcon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
               </div>
-              <h4 className="font-bold text-gray-900 mb-2 text-sm">
-                {t('host-with-us.benefits.heritage.title')}
+              <h4 className="font-bold text-gray-900 mb-1 sm:mb-2 text-xs sm:text-sm leading-tight">
+                Preserve Heritage
               </h4>
-              <p className="text-xs text-gray-600 leading-relaxed">
-                {t('host-with-us.benefits.heritage.description')}
+              <p className="text-xs text-gray-600 leading-relaxed flex-1">
+                Share Portuguese culture while building business.
               </p>
             </div>
           </div>
@@ -246,19 +246,19 @@ export default function HostWithUsSection() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/host"
-                  className="group relative text-lg font-bold px-10 py-4 bg-gradient-to-r from-premium-600 via-coral-600 to-secondary-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden"
+                  className="group relative text-sm sm:text-base font-bold px-6 sm:px-8 lg:px-10 py-3 sm:py-4 bg-gradient-to-r from-premium-600 via-coral-600 to-secondary-600 text-white rounded-xl lg:rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-premium-700 via-coral-700 to-secondary-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <span className="relative z-10 flex items-center justify-center gap-3">
-                    {t('host-with-us.cta.primary')}
-                    <ArrowRightIcon className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-200" />
+                  <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
+                    Start Hosting
+                    <ArrowRightIcon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 group-hover:translate-x-1 transition-transform duration-200" />
                   </span>
                 </a>
                 <a
                   href="/host/learn-more"
-                  className="text-lg font-bold px-10 py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-premium-300 hover:-translate-y-1 hover:bg-white/90"
+                  className="text-sm sm:text-base font-bold px-6 sm:px-8 lg:px-10 py-3 sm:py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200/60 rounded-xl lg:rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-premium-300 hover:-translate-y-1 hover:bg-white/90"
                 >
-                  {t('host-with-us.cta.secondary')}
+                  Learn More
                 </a>
               </div>
             </div>
