@@ -20,14 +20,11 @@ const getNavigationLinks = (t: any) => [
     name: t('nav.services', 'Services'), 
     href: '/services',
     submenu: [
-      { name: t('nav.services.tours', 'Tours'), href: '/services#tours' },
-      { name: t('nav.services.executive-transport-sia', 'Executive Transport & SIA'), href: '/transport' },
-      { name: t('nav.services.close-protection', 'Close Protection'), href: '/services/close-protection' },
+      { name: t('nav.services.cultural-tours', 'Cultural Tours'), href: '/services#cultural-tours' },
+      { name: t('nav.services.private-chauffeur', 'Private Chauffeur'), href: '/chauffeur' },
     ]
   },
-  { name: t('nav.live-tv', 'Live TV'), href: '/live' },
   { name: t('nav.students', 'Students'), href: '/students' },
-  { name: t('nav.partnerships', 'Partnerships'), href: '/partnerships' },
   { name: t('nav.pricing', 'Pricing'), href: '/pricing' },
 ]
 
@@ -38,15 +35,12 @@ const getAuthenticatedNavigationLinks = (t: any) => [
     name: t('nav.services', 'Services'), 
     href: '/services',
     submenu: [
-      { name: t('nav.services.tours', 'Tours'), href: '/services#tours' },
-      { name: t('nav.services.executive-transport-sia', 'Executive Transport & SIA'), href: '/transport' },
-      { name: t('nav.services.close-protection', 'Close Protection'), href: '/services/close-protection' },
+      { name: t('nav.services.cultural-tours', 'Cultural Tours'), href: '/services#cultural-tours' },
+      { name: t('nav.services.private-chauffeur', 'Private Chauffeur'), href: '/chauffeur' },
     ]
   },
-  { name: t('nav.live-tv', 'Live TV'), href: '/live' },
   { name: t('nav.students', 'Students'), href: '/students' },
   { name: t('nav.my-network', 'My Network'), href: '/my-network' },
-  { name: t('nav.partnerships', 'Partnerships'), href: '/partnerships' },
   { name: t('nav.pricing', 'Pricing'), href: '/pricing' },
   { name: 'Dashboard', href: '/dashboard' },
 ]

@@ -613,23 +613,23 @@ export default function StudentsPage() {
             <div className="text-center mb-16">
               <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-primary-600 mb-6">
                 <AcademicCapIcon className="w-4 h-4 mr-2" />
-                {language === 'pt' ? 'Estudantes Portugueses • 8 Universidades Parceiras' : 'Portuguese Students • 8 Partner Universities'}
+                {language === 'pt' ? 'Estudantes Portugueses em Londres e Reino Unido • 8 Universidades Parceiras' : 'Portuguese Students in London & UK • 8 Partner Universities'}
               </div>
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
                 {language === 'pt' ? (
                   <>
-                    Comunidade <span className="gradient-text">Universitária</span> Portuguesa
+                    Estudantes Portugueses em <span className="gradient-text">Universidades do Reino Unido</span>
                   </>
                 ) : (
                   <>
-                    Portuguese <span className="gradient-text">University</span> Community
+                    Portuguese Students at <span className="gradient-text">UK Universities</span>
                   </>
                 )}
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                 {language === 'pt' ? 
-                  'Conecte-se com estudantes portugueses em universidades do Reino Unido. Descontos exclusivos, eventos culturais, networking profissional e apoio acadêmico.' :
-                  'Connect with Portuguese students across UK universities. Exclusive discounts, cultural events, professional networking, and academic support.'
+                  'Conecte-se com estudantes portugueses que estudam em universidades de Londres e do Reino Unido. Descontos exclusivos, eventos culturais, networking profissional e apoio acadêmico.' :
+                  'Connect with Portuguese students studying at London and UK universities. Exclusive discounts, cultural events, professional networking, and academic support.'
                 }
               </p>
 
@@ -637,11 +637,11 @@ export default function StudentsPage() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
                 <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4">
                   <div className="text-2xl font-bold text-primary-600">2,150+</div>
-                  <div className="text-sm text-gray-600">{language === 'pt' ? 'Estudantes Portugueses' : 'Portuguese Students'}</div>
+                  <div className="text-sm text-gray-600">{language === 'pt' ? 'Estudantes Portugueses no Reino Unido' : 'Portuguese Students in UK'}</div>
                 </div>
                 <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4">
                   <div className="text-2xl font-bold text-secondary-600">8</div>
-                  <div className="text-sm text-gray-600">{language === 'pt' ? 'Universidades Parceiras' : 'Partner Universities'}</div>
+                  <div className="text-sm text-gray-600">{language === 'pt' ? 'Universidades do Reino Unido' : 'UK Universities'}</div>
                 </div>
                 <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4">
                   <div className="text-2xl font-bold text-accent-600">50%</div>
@@ -681,8 +681,8 @@ export default function StudentsPage() {
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                 {language === 'pt' ?
-                  'Descontos especiais, eventos exclusivos e apoio acadêmico para estudantes portugueses em universidades do Reino Unido' :
-                  'Special discounts, exclusive events, and academic support for Portuguese students at UK universities'
+                  'Descontos especiais, eventos exclusivos e apoio acadêmico para estudantes portugueses que estudam em universidades de Londres e do Reino Unido' :
+                  'Special discounts, exclusive events, and academic support for Portuguese students studying at London and UK universities'
                 }
               </p>
 
@@ -793,12 +793,12 @@ export default function StudentsPage() {
           <div className="container-width">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                {language === 'pt' ? 'Universidades Parceiras' : 'Partner Universities'}
+                {language === 'pt' ? 'Universidades Parceiras no Reino Unido' : 'UK Partner Universities'}
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                 {language === 'pt' ?
-                  'Colaboramos com as principais universidades do Reino Unido para apoiar estudantes portugueses e programas de estudos portugueses' :
-                  'We collaborate with leading UK universities to support Portuguese students and Portuguese studies programs'
+                  'Colaboramos com as principais universidades de Londres e do Reino Unido para apoiar estudantes portugueses e programas de estudos portugueses' :
+                  'We collaborate with leading London and UK universities to support Portuguese students and Portuguese studies programs'
                 }
               </p>
 
@@ -1331,15 +1331,15 @@ export default function StudentsPage() {
               <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium mb-6">
                 <AcademicCapIcon className="w-4 h-4 mr-2" />
                 {language === 'pt' ? 
-                  'Comunidade Estudantil • 2,150+ estudantes portugueses conectados' :
-                  'Student Community • 2,150+ Portuguese students connected'
+                  'Comunidade Estudantil • 2,150+ estudantes portugueses em universidades do Reino Unido' :
+                  'Student Community • 2,150+ Portuguese students at UK universities'
                 }
               </div>
               
               <h2 className="text-3xl md:text-5xl font-bold mb-6">
                 {language === 'pt' ? 
-                  'Junte-se à Maior Comunidade Estudantil Portuguesa do Reino Unido' :
-                  'Join the UK\'s Largest Portuguese Student Community'
+                  'Junte-se à Maior Comunidade de Estudantes Portugueses em Universidades do Reino Unido' :
+                  'Join the UK\'s Largest Community of Portuguese Students at UK Universities'
                 }
               </h2>
               

@@ -237,7 +237,7 @@ export default function ServicesPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative pt-20 pb-16 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+      <section className="relative pt-28 lg:pt-32 pb-16 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <motion.div

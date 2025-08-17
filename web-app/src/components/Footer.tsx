@@ -33,6 +33,7 @@ const getFooterLinks = (t: any) => ({
     { name: 'Success Stories', href: '/success-stories' },
     { name: 'Community Chat', href: '/forums' },
     { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Live TV', href: '/live' },
     { name: 'Partnerships', href: '/partnerships' },
     { name: 'Instituto Camões Partnership', href: '/instituto-camoes' },
   ],
