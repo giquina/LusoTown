@@ -92,7 +92,7 @@ const sampleGroupEvents: GroupEventData[] = [
   {
     id: 'group-event-4',
     title: 'Harry Potter Studio Tour Community Adventure',
-    description: 'Magical day out at the Warner Bros Studio Tour. Perfect for Portuguese speakers in London - you\'ll be guided by Portuguese hosts and travel with fellow Portuguese speakers, making it feel like going with close friends who share your language and culture while exploring behind-the-scenes magic, costumes, and sets.',
+    description: 'Magical day out at the Warner Bros Studio Tour. Perfect for Portuguese speakers in London - you will be guided by Portuguese hosts and travel with fellow Portuguese speakers, making it feel like going with close friends who share your language and culture while exploring behind-the-scenes magic, costumes, and sets.',
     date: '2025-08-24',
     time: '11:00 AM',
     location: 'Warner Bros Studio Tour, WD25 7LR',
@@ -306,7 +306,7 @@ export default function GroupEventsSection({
                 <p className="text-gray-700 max-w-3xl mx-auto">
                   {isPortuguese
                     ? 'Conecte-se com portugueses que partilham os seus interesses, explore Londres de forma autêntica e crie amizades duradouras.'
-                    : 'Connect with Portuguese speakers who share your interests. With Portuguese-speaking guides and hosts, you\'ll explore London authentically while building lasting friendships with people who understand your language and culture.'
+                    : 'Connect with Portuguese speakers who share your interests. With Portuguese-speaking guides and hosts, you will explore London authentically while building lasting friendships with people who understand your language and culture.'
                   }
                 </p>
               </div>
