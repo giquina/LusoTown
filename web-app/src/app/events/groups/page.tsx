@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import GroupEventsPageClient from '@/components/GroupEventsPageClient'
 
@@ -93,7 +92,6 @@ export default function GroupEventsPage() {
       />
       
       <main className="min-h-screen w-full overflow-x-hidden">
-        <Header />
         <div className="pt-16 w-full">
           <GroupEventsPageClient />
           <Footer />

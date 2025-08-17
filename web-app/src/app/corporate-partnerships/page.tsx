@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import CorporatePartnershipProgram from '@/components/CorporatePartnershipProgram'
 import PartnershipValueCalculator from '@/components/PartnershipValueCalculator'
@@ -63,7 +62,6 @@ export default function CorporatePartnerships() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
       
       <div className="pt-20">
         {/* Hero Section */}

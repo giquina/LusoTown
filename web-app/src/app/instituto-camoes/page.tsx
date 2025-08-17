@@ -25,7 +25,6 @@ import {
   GiftIcon,
   ShieldCheckIcon
 } from '@heroicons/react/24/outline'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 interface InstitutoCamoesProgram {
@@ -385,7 +384,6 @@ export default function InstitutoCamoes() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-secondary-50/30 to-accent-50/30">
-      <Header />
       <div className="pt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Hero Section */}
         <div className="text-center mb-12">

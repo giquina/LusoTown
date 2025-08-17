@@ -15,7 +15,6 @@ import {
   CheckCircleIcon
 } from '@heroicons/react/24/outline'
 import { BellIcon as BellSolidIcon } from '@heroicons/react/24/solid'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { ChatRoom, CHAT_CATEGORIES, messagingService } from '@/lib/messaging'
 import { authService } from '@/lib/auth'
@@ -356,7 +355,6 @@ export default function ChatRoomsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
       
       <main className="pt-16">
         {/* Hero Section */}

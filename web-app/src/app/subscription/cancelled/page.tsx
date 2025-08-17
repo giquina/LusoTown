@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/navigation'
-import Header from '@/components/Header'
 import { useLanguage } from '@/context/LanguageContext'
 import { useSubscription } from '@/context/SubscriptionContext'
 import { 
@@ -44,7 +43,6 @@ export default function SubscriptionCancelledPage() {
 
   return (
     <main className="min-h-screen">
-      <Header />
       <div className="pt-16">
         <section className="py-12 bg-gradient-to-br from-red-50 via-white to-gray-50 min-h-screen">
           <div className="container-width w-full">

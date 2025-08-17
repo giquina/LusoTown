@@ -17,7 +17,6 @@ import {
   IdentificationIcon,
 } from '@heroicons/react/24/outline'
 import { Crown, Shield, Car, Users, Award, TrendingUp } from 'lucide-react'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { useLanguage } from '@/context/LanguageContext'
 import ServiceCard from '@/components/ServiceCard'
@@ -234,7 +233,6 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
       
       {/* Hero Section */}
       <section className="relative pt-28 lg:pt-32 pb-16 bg-gradient-to-br from-primary-50 via-white to-secondary-50">

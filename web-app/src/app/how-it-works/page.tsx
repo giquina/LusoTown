@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { 
   ChatBubbleLeftRightIcon,
@@ -66,7 +65,6 @@ export default function HowItWorks() {
 
   return (
     <main className="min-h-screen">
-      <Header />
       <div className="pt-16">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">

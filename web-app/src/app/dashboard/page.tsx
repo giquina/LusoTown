@@ -7,7 +7,6 @@ import { useLanguage } from '@/context/LanguageContext'
 import { usePlatformIntegration } from '@/context/PlatformIntegrationContext'
 import { useNetworking } from '@/context/NetworkingContext'
 import { useSubscription } from '@/context/SubscriptionContext'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import EventImageWithFallback from '@/components/EventImageWithFallback'
 import EcosystemOverview from '@/components/EcosystemOverview'
@@ -228,7 +227,6 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
       
       {/* Dashboard Content */}
       <div className="pt-16 bg-white shadow-sm border-b">

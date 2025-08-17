@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import CaseStudies from '@/components/CaseStudies'
 import CTA from '@/components/CTA'
@@ -114,7 +113,6 @@ export default function CaseStudiesPage() {
       />
       
       <main className="min-h-screen">
-        <Header />
         <div className="pt-24 sm:pt-28 lg:pt-32">
           {/* Hero Section */}
           <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-primary-50 to-secondary-50">

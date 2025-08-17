@@ -19,7 +19,6 @@ import {
   SparklesIcon
 } from '@heroicons/react/24/outline'
 import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import PersonalizedFeed from '@/components/PersonalizedFeed'
 import EventFeed from '@/components/EventFeed'
@@ -228,7 +227,6 @@ export default function CommunityFeed() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
       
       {/* Live Update Indicator */}
       <LiveUpdateIndicator onUpdateClick={handleLiveUpdate} />

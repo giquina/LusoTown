@@ -3,7 +3,6 @@ import Image from 'next/image'
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import FollowButton from '@/components/FollowButton'
 import { useFollowing, FollowableEntity } from '@/context/FollowingContext'
@@ -90,7 +89,6 @@ export default function FollowingPage() {
 
   return (
     <main className="min-h-screen bg-gray-50">
-      <Header />
       
       <div className="pt-16">
         {/* Hero Section */}

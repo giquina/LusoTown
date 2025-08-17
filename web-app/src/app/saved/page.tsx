@@ -3,7 +3,6 @@ import Image from 'next/image'
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { useCart } from '@/context/CartContext'
 import { useLanguage } from '@/context/LanguageContext'
@@ -112,7 +111,6 @@ export default function SavedItemsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
       
       <main className="pt-16">
         {/* Hero Section */}

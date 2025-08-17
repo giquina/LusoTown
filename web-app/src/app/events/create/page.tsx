@@ -13,7 +13,6 @@ import {
   PlusIcon,
   XMarkIcon
 } from '@heroicons/react/24/outline'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Event, EVENT_CATEGORIES, LONDON_AREAS, ACCESSIBILITY_OPTIONS, eventService } from '@/lib/events'
 import { authService } from '@/lib/auth'
@@ -167,7 +166,6 @@ export default function CreateEventPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
       
       <main className="pt-16">
         {/* Enhanced Hero Section */}

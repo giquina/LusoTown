@@ -1,6 +1,5 @@
 'use client'
 
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { useLanguage } from '@/context/LanguageContext'
 
@@ -61,7 +60,6 @@ export default function Contact() {
 
   return (
     <main className="min-h-screen">
-      <Header />
       <div className="pt-16">
         <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
           <div className="container-width">

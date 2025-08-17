@@ -13,7 +13,6 @@ import {
   EnvelopeIcon,
 } from "@heroicons/react/24/outline";
 import { useLanguage } from "@/context/LanguageContext";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 // Housing listing interface
@@ -133,7 +132,6 @@ export default function HousingAssistancePage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50 py-16 sm:py-24">

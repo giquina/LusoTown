@@ -5,7 +5,6 @@ import React, { useState, useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { authService, User } from '@/lib/auth'
 import { forumsService, ForumTopic, ForumPost } from '@/lib/forums'
-import Header from '@/components/Header'
 import { 
   ArrowLeft,
   ArrowUp,
@@ -425,7 +424,6 @@ export default function TopicDetail() {
 
   return (
     <>
-      <Header />
       <div className="min-h-screen bg-gray-50 pt-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Breadcrumb */}

@@ -6,7 +6,6 @@ import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { CheckCircleIcon } from "@heroicons/react/24/outline";
 import { Shield } from "lucide-react";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -282,7 +281,6 @@ function BookingContent() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
 
       <section className="pt-20 pb-12 bg-gradient-to-br from-premium-50 to-premium-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -12,7 +12,6 @@ import {
   ArrowRightIcon,
 } from "@heroicons/react/24/outline";
 import { CheckCircleIcon, Crown } from "lucide-react";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TransportBookingForm from "@/components/TransportBookingForm";
 import TransportBookingFlow from "@/components/TransportBookingFlow";
@@ -656,7 +655,6 @@ export default function TransportPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-secondary-50 via-white to-accent-50 pt-20">

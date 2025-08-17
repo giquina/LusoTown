@@ -20,7 +20,6 @@ import {
   ChartBarIcon
 } from '@heroicons/react/24/outline'
 import { HeartIcon as HeartSolidIcon, StarIcon as StarSolidIcon } from '@heroicons/react/24/solid'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import EventReviewSystem from '@/components/EventReviewSystem'
 import ReviewAnalytics from '@/components/ReviewAnalytics'
@@ -313,7 +312,6 @@ export default function EventDetailsPage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <Header />
         <div className="pt-16 flex items-center justify-center min-h-[60vh]">
           <div className="text-center">
             <div className="w-12 h-12 border-4 border-primary-200 border-t-primary-500 rounded-full animate-spin mx-auto mb-4"></div>
@@ -328,7 +326,6 @@ export default function EventDetailsPage() {
   if (error || !event) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <Header />
         <div className="pt-16 flex items-center justify-center min-h-[60vh]">
           <div className="text-center">
             <div className="text-6xl mb-4">😔</div>
@@ -353,7 +350,6 @@ export default function EventDetailsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
       
       <main className="pt-16">
         {/* Hero Section */}

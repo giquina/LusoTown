@@ -12,7 +12,6 @@ import {
   SparklesIcon,
   TrophyIcon
 } from '@heroicons/react/24/outline'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ProgressiveUserJourney from '@/components/ProgressiveUserJourney'
 import CrossPlatformEngagementTriggers from '@/components/CrossPlatformEngagementTriggers'
@@ -173,7 +172,6 @@ export default function UserJourneyPage() {
 
   return (
     <>
-      <Header />
       <main className="min-h-screen bg-gray-50 pt-16">
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-16">

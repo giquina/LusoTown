@@ -23,7 +23,6 @@ import {
 import { CheckCircleIcon as CheckCircleIconSolid } from '@heroicons/react/24/solid'
 import Image from 'next/image'
 
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { useLanguage } from '@/context/LanguageContext'
 import { getImageWithFallback } from '@/lib/profileImages'
@@ -362,7 +361,6 @@ export default function NeighborhoodGroups() {
 
   return (
     <main className="min-h-screen">
-      <Header />
       <div className="pt-16">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50 relative overflow-hidden">

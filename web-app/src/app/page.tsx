@@ -3,7 +3,6 @@
 import type { Metadata } from 'next'
 import { useLanguage } from '@/context/LanguageContext'
 import ContextTestComponent from '@/components/ContextTestComponent'
-import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import Features from '@/components/Features'
 import HowItWorks from '@/components/HowItWorks'
@@ -78,7 +77,6 @@ export default function Home() {
       />
       
       <main className="min-h-screen w-full overflow-x-hidden">
-        <Header />
         <div className="pt-16 w-full">
           <Hero />
           <HowItWorks />

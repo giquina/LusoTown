@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import NotificationPreferences from '@/components/NotificationPreferences'
 import WhatsAppNotificationWidget from '@/components/notifications/WhatsAppNotificationWidget'
@@ -66,7 +65,6 @@ export default function NotificationPreferencesPage() {
 
   return (
     <div className="min-h-screen bg-neutral-50">
-      <Header />
       
       <main className="pt-20 pb-16">
         {/* Hero Section */}

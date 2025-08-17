@@ -11,7 +11,6 @@ import {
   Cog6ToothIcon,
   PhotoIcon
 } from '@heroicons/react/24/outline'
-import Header from '@/components/Header'
 import { getCurrentUser, getCurrentUserProfile, UserProfile, updateProfile } from '@/lib/supabase'
 import ProfileEditForm from '@/components/profile/ProfileEditForm'
 import ProfilePhotoManager from '@/components/profile/ProfilePhotoManager'
@@ -221,7 +220,6 @@ function ProfileEditPageContent() {
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <Header />
         <div className="pt-16">
           <div className="container-width py-8">
             <div className="flex items-center justify-center py-12">
@@ -236,7 +234,6 @@ function ProfileEditPageContent() {
   if (!currentUser) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <Header />
         <div className="pt-16">
           <div className="container-width py-8">
             <div className="text-center py-12">
@@ -257,7 +254,6 @@ function ProfileEditPageContent() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
       <div className="pt-16">
       <div className="container-width py-8">
         {/* Header */}

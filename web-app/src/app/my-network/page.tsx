@@ -16,7 +16,6 @@ import {
   FireIcon
 } from '@heroicons/react/24/outline'
 import { CrownIcon } from 'lucide-react'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { useNetworking, ConnectionFilters as ConnectionFiltersType } from '@/context/NetworkingContext'
 import { useLanguage } from '@/context/LanguageContext'
@@ -84,7 +83,6 @@ export default function MyNetworkPage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <Header />
         <main className="pt-16">
           <div className="container mx-auto px-4 py-12">
             <div className="animate-pulse">
@@ -108,7 +106,6 @@ export default function MyNetworkPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
       
       <main className="pt-16">
         {/* Hero Section */}

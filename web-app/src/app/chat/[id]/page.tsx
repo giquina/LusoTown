@@ -16,7 +16,6 @@ import {
   ChatBubbleLeftRightIcon,
   XMarkIcon
 } from '@heroicons/react/24/outline'
-import Header from '@/components/Header'
 import { 
   ChatRoom, 
   ChatMessage, 
@@ -616,7 +615,6 @@ export default function ChatRoomPage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <Header />
         <div className="pt-16 flex items-center justify-center min-h-screen">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
@@ -630,7 +628,6 @@ export default function ChatRoomPage() {
   if (error) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <Header />
         <div className="pt-16 flex items-center justify-center min-h-screen">
           <div className="text-center">
             <ExclamationTriangleIcon className="w-16 h-16 text-red-500 mx-auto mb-4" />
@@ -656,7 +653,6 @@ export default function ChatRoomPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      <Header />
       
       {/* Chat header */}
       <div className="pt-16 bg-white border-b border-gray-200 sticky top-16 z-10">

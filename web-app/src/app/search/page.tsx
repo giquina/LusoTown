@@ -15,7 +15,6 @@ import {
   TagIcon
 } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import SearchBar from '@/components/SearchBar'
 import { search, SearchResult, getSearchCategories } from '@/lib/search'
@@ -139,7 +138,6 @@ function SearchContent() {
   
   return (
     <main className="min-h-screen w-full overflow-x-hidden bg-gray-50">
-      <Header />
       
       <div className="pt-16 w-full">
         {/* Search Header */}
@@ -410,7 +408,6 @@ export default function SearchPage() {
   return (
     <Suspense fallback={
       <div className="min-h-screen w-full overflow-x-hidden bg-gray-50">
-        <Header />
         <div className="pt-16 w-full">
           <div className="flex items-center justify-center py-20">
             <div className="text-center">

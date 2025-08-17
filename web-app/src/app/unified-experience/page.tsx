@@ -3,7 +3,6 @@ export const dynamic = "force-dynamic";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import UnifiedExperienceHub from "@/components/UnifiedExperienceHub";
 import ServiceCommunityBridge from "@/components/ServiceCommunityBridge";
@@ -30,7 +29,6 @@ export default function UnifiedExperiencePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
 
       <main className="pt-20">
         {/* Hero Section */}

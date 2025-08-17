@@ -1,6 +1,5 @@
 'use client'
 
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { 
   HeartIcon, 
@@ -22,7 +21,6 @@ export default function About() {
   const { t } = useLanguage()
   return (
     <main className="min-h-screen">
-      <Header />
       <div className="pt-16">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">

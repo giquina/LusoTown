@@ -2,7 +2,6 @@
 
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import Header from '@/components/Header'
 import MembershipTiers from '@/components/MembershipTiers'
 import MembershipPortal from '@/components/MembershipPortal'
 import { useLanguage } from '@/context/LanguageContext'
@@ -38,7 +37,6 @@ export default function PremiumMembershipPage() {
 
   return (
     <main className="min-h-screen">
-      <Header />
       <div className="pt-16">
         <section className="py-12 bg-gradient-to-br from-primary-50 via-white to-secondary-50 min-h-screen">
           <div className="container-width w-full">

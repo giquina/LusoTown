@@ -1,4 +1,3 @@
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { ShieldCheckIcon, HeartIcon, UserGroupIcon, ExclamationTriangleIcon, GlobeAltIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline'
 
@@ -43,7 +42,6 @@ export default function CommunityGuidelines() {
 
   return (
     <main className="min-h-screen bg-white">
-      <Header />
       <div className="pt-16">
         <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
           <div className="container-width">

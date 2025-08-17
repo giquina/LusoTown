@@ -3,7 +3,6 @@
 import { useEffect, useState, Suspense } from 'react'
 import { motion } from 'framer-motion'
 import { useRouter, useSearchParams } from 'next/navigation'
-import Header from '@/components/Header'
 import { useLanguage } from '@/context/LanguageContext'
 import { useSubscription } from '@/context/SubscriptionContext'
 import { 
@@ -68,7 +67,6 @@ function SuccessPageContent() {
 
   return (
     <main className="min-h-screen">
-      <Header />
       <div className="pt-16">
         <section className="py-12 bg-gradient-to-br from-green-50 via-white to-primary-50 min-h-screen">
           <div className="container-width w-full">
@@ -217,7 +215,6 @@ export default function SubscriptionSuccessPage() {
     <Suspense 
       fallback={
         <main className="min-h-screen">
-          <Header />
           <div className="pt-16">
             <section className="py-12 bg-gradient-to-br from-green-50 via-white to-primary-50 min-h-screen flex items-center justify-center">
               <div className="text-center">

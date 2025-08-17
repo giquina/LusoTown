@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { PlayIcon, ClockIcon, UserGroupIcon, EyeIcon, HeartIcon, ShareIcon, BookmarkIcon } from '@heroicons/react/24/outline'
 import { Crown, Calendar, Users, Tv, Video, Zap } from 'lucide-react'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { useLanguage } from '@/context/LanguageContext'
 import { useSubscription } from '@/context/SubscriptionContext'
@@ -123,7 +122,6 @@ export default function LiveStreamingPage() {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <Header />
         <div className="pt-20 lg:pt-24 pb-12">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
@@ -150,7 +148,6 @@ export default function LiveStreamingPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
       
       <div className="pt-20 lg:pt-24 pb-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

@@ -17,6 +17,7 @@ import { AuthPopupProvider } from "@/components/AuthPopupProvider";
 import AuthPopup from "@/components/AuthPopup";
 import AuthIntentHandler from "@/components/AuthIntentHandler";
 import FavoriteNotification from "@/components/FavoriteNotification";
+import Header from "@/components/Header";
 import ErrorBoundary, {
   ComponentErrorBoundary,
 } from "@/components/ErrorBoundary";
@@ -182,6 +183,10 @@ export default function RootLayout({
                           <PlatformIntegrationProvider>
                             <ComponentErrorBoundary componentName="User Type Selection">
                               <UserTypeSelection />
+                            </ComponentErrorBoundary>
+
+                            <ComponentErrorBoundary componentName="Header">
+                              <Header />
                             </ComponentErrorBoundary>
 
                             <ErrorBoundary>{children}</ErrorBoundary>

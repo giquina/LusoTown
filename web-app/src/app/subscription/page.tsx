@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import Header from '@/components/Header'
 import { useLanguage } from '@/context/LanguageContext'
 import { useSubscription } from '@/context/SubscriptionContext'
 import { authService } from '@/lib/auth'
@@ -82,7 +81,6 @@ export default function SubscriptionPage() {
 
   return (
     <main className="min-h-screen">
-      <Header />
       <div className="pt-16">
         <section className="py-12 bg-gradient-to-br from-primary-50 via-white to-secondary-50 min-h-screen">
           <div className="container-width w-full">

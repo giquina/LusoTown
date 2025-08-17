@@ -262,12 +262,12 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
       {/* Content */}
       <div className="p-6 flex-grow flex flex-col">
         {/* Header - Title & Price */}
-        <div className="flex items-start justify-between mb-3 gap-3">
-          <h3 className="font-bold text-base sm:text-lg text-gray-900 group-hover:text-primary-600 transition-colors line-clamp-2 flex-1 leading-tight">
-            {event.title}
+        <div className="flex items-start justify-between mb-4 gap-3">
+          <h3 className="font-bold text-lg sm:text-xl text-gray-900 group-hover:text-primary-600 transition-colors flex-1 leading-tight min-h-[3.5rem] flex items-start">
+            <span className="line-clamp-3">{event.title}</span>
           </h3>
           <div className="text-right flex-shrink-0">
-            <div className="text-base sm:text-lg font-bold text-primary-600">
+            <div className="text-lg sm:text-xl font-bold text-primary-600">
               {formatPrice(event.price, event.currency)}
             </div>
             {event.membershipRequired !== 'free' && (
@@ -279,8 +279,8 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
           </div>
         </div>
         
-        <p className="text-gray-600 text-sm mb-4 line-clamp-2 leading-relaxed">
-          {event.description}
+        <p className="text-gray-600 text-sm sm:text-base mb-6 leading-relaxed min-h-[4rem] flex items-start">
+          <span className="line-clamp-4">{event.description}</span>
         </p>
         
         {/* Event Details */}

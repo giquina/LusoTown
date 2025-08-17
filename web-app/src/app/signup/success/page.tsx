@@ -1,6 +1,5 @@
 'use client'
 
-import Header from '@/components/Header'
 import { motion } from 'framer-motion'
 import { 
   CheckCircleIcon, 
@@ -38,7 +37,6 @@ const nextSteps = [
 export default function SignupSuccess() {
   return (
     <main className="min-h-screen">
-      <Header />
       <div className="pt-16">
         <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50 min-h-screen flex items-center">
           <div className="container-width w-full">

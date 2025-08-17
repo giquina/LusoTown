@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { useLanguage } from '@/context/LanguageContext'
 import { 
@@ -605,7 +604,6 @@ export default function StudentsPage() {
 
   return (
     <main className="min-h-screen bg-white">
-      <Header />
       <div className="pt-16">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">

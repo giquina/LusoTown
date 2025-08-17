@@ -18,7 +18,6 @@ import { UserProfile } from '@/lib/connections'
 import { profileService, LONDON_AREAS, ALL_INTERESTS } from '@/lib/profile'
 import ProfileCard from '@/components/profile/ProfileCard'
 import { toast } from 'react-hot-toast'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 interface ProfileFilters {
@@ -187,7 +186,6 @@ function ProfilesPageContent() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
       <div className="pt-20 container-width py-8">
         {/* Header */}
         <div className="mb-8">

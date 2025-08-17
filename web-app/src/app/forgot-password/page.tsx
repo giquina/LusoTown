@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { authService } from '@/lib/auth'
 import { 
@@ -50,7 +49,6 @@ export default function ForgotPassword() {
   if (isSubmitted) {
     return (
       <main className="min-h-screen">
-        <Header />
         <div className="pt-16">
           <section className="py-20 bg-gradient-to-br from-green-50 to-secondary-50">
             <div className="container-width">
@@ -105,7 +103,6 @@ export default function ForgotPassword() {
 
   return (
     <main className="min-h-screen">
-      <Header />
       <div className="pt-16">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">

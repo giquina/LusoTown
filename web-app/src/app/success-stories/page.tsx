@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { 
   HeartIcon, 
@@ -215,7 +214,6 @@ export default function SuccessStories() {
 
   return (
     <main className="min-h-screen">
-      <Header />
       <div className="pt-16">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">

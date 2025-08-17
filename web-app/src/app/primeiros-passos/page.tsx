@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { useLanguage } from '@/context/LanguageContext'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import PrimeirosPassos from '@/components/PrimeirosPassos'
 import { 
@@ -93,7 +92,6 @@ export default function PrimeirosPassosPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
       
       <main className="pt-20">
         {/* Hero Section */}

@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Header from '@/components/Header'
 import { 
   CheckIcon, 
   XMarkIcon, 
@@ -260,7 +259,6 @@ export default function Pricing() {
 
   return (
     <main className="min-h-screen bg-white">
-      <Header />
       <div className="pt-16">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">

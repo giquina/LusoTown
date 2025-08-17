@@ -2,7 +2,6 @@
 
 import type { Metadata } from 'next'
 import { useLanguage } from '@/context/LanguageContext'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import MentorshipHero from '@/components/MentorshipHero'
 import MentorshipProgramsSection from '@/components/MentorshipProgramsSection'
@@ -57,7 +56,6 @@ export default function MentorshipPage() {
       />
       
       <main className="min-h-screen w-full overflow-x-hidden">
-        <Header />
         <div className="pt-16 w-full">
           <MentorshipHero />
           <MentorshipProgramsSection />

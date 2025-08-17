@@ -17,7 +17,6 @@ import {
   AcademicCapIcon,
 } from '@heroicons/react/24/outline';
 import { Shield, Award, Users, Clock } from 'lucide-react';
-import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/context/LanguageContext';
 import FrameworkPillars from '@/components/FrameworkPillars';
@@ -203,7 +202,6 @@ export default function CloseProtectionPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
       
       {/* Hero Section */}
       <section className="relative pt-20 pb-16 bg-gradient-to-br from-premium-50 via-white to-premium-100">

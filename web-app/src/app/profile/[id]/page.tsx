@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { ArrowLeftIcon, PencilIcon } from '@heroicons/react/24/outline'
-import Header from '@/components/Header'
 import { authService, User } from '@/lib/auth'
 import { UserProfile } from '@/lib/connections'
 import { profileService } from '@/lib/profile'
@@ -149,7 +148,6 @@ export default function ProfilePage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <Header />
         <div className="pt-16">
           <div className="container-width py-8">
             <div className="flex items-center justify-center py-12">
@@ -164,7 +162,6 @@ export default function ProfilePage() {
   if (!profile || !currentUser) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <Header />
         <div className="pt-16">
           <div className="container-width py-8">
             <div className="text-center py-12">
@@ -185,7 +182,6 @@ export default function ProfilePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
       <div className="pt-16">
       <div className="container-width py-8">
         {/* Navigation */}

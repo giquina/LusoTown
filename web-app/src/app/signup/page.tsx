@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import Header from "@/components/Header";
 import SubscriptionGate from "@/components/SubscriptionGate";
 import { useLanguage } from "@/context/LanguageContext";
 import { useSubscription } from "@/context/SubscriptionContext";
@@ -210,7 +209,6 @@ export default function Signup() {
       }
     >
       <main className="min-h-screen">
-        <Header />
         <div className="pt-16">
           <section className="py-12 sm:py-20 bg-gradient-to-br from-primary-50 to-secondary-50 min-h-screen flex items-center">
             <div className="container-width w-full">
