@@ -9,6 +9,9 @@ import {
   UserCircleIcon,
   ShieldCheckIcon,
   UserIcon,
+  ChevronDownIcon,
+  MapPinIcon,
+  EnvelopeIcon,
 } from "@heroicons/react/24/outline";
 import { Crown, LogOut } from "lucide-react";
 // import { authService, User } from '@/lib/auth'
@@ -23,40 +26,55 @@ import { useLanguage } from "@/context/LanguageContext";
 
 const getNavigationLinks = (t: any) => [
   { name: t("nav.events", "Events"), href: "/events" },
-  {
-    name: t("nav.london-tours", "London Tours"),
-    href: "/london-tours",
-    submenu: [
-      { name: t("nav.tours", "Tours"), href: "/london-tours#tours" },
-      {
-        name: t("nav.private-transport", "Private Transport"),
-        href: "/transport",
-      },
-    ],
-  },
+  { name: t("nav.london-tours", "London Tours"), href: "/london-tours" },
   { name: t("nav.students", "Students"), href: "/students" },
   { name: t("nav.pricing", "Pricing"), href: "/pricing" },
 ];
 
 const getAuthenticatedNavigationLinks = (t: any) => [
   { name: t("nav.events", "Events"), href: "/events" },
-  { name: t("nav.matches", "Matches"), href: "/matches" },
-  {
-    name: t("nav.london-tours", "London Tours"),
-    href: "/london-tours",
-    submenu: [
-      { name: t("nav.tours", "Tours"), href: "/london-tours#tours" },
-      {
-        name: t("nav.private-transport", "Private Transport"),
-        href: "/transport",
-      },
-    ],
-  },
+  { name: t("nav.london-tours", "London Tours"), href: "/london-tours" },
   { name: t("nav.students", "Students"), href: "/students" },
-  { name: t("nav.my-network", "My Network"), href: "/my-network" },
   { name: t("nav.pricing", "Pricing"), href: "/pricing" },
-  { name: "Dashboard", href: "/dashboard" },
 ];
+
+// All footer links for the "More" dropdown
+const getMoreDropdownLinks = (t: any) => ({
+  community: [
+    { name: 'Events & Culture', href: '/events' },
+    { name: 'Community', href: '/community' },
+    { name: 'Become a Host', href: '/host' },
+    { name: 'Business Directory', href: '/directory' },
+    { name: t('footer.housing-assistance', 'Housing Assistance'), href: '/housing-assistance' },
+    { name: t('footer.neighborhood-groups', 'Neighborhood Groups'), href: '/neighborhood-groups' },
+    { name: 'Community Guidelines', href: '/community-guidelines' },
+  ],
+  services: [
+    { name: 'Premium Services', href: '/services' },
+    { name: 'Cultural Tours', href: '/services#cultural-tours' },
+    { name: 'Transport & SIA', href: '/transport' },
+    { name: 'Matches', href: '/matches' },
+    { name: 'Live TV', href: '/live' },
+  ],
+  support: [
+    { name: 'How It Works', href: '/how-it-works' },
+    { name: 'Help Center', href: '/help' },
+    { name: 'Contact Us', href: '/contact' },
+    { name: 'Safety & Verification', href: '/safety' },
+  ],
+  company: [
+    { name: 'About LusoTown', href: '/about' },
+    { name: 'Success Stories', href: '/success-stories' },
+    { name: 'Community Chat', href: '/forums' },
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Partnerships', href: '/partnerships' },
+    { name: 'Instituto Camões Partnership', href: '/instituto-camoes' },
+  ],
+  legal: [
+    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Terms of Service', href: '/terms' },
+  ],
+});
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

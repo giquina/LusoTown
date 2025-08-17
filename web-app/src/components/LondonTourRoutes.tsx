@@ -317,7 +317,7 @@ export default function LondonTourRoutes({ isPortuguese, onBookTour }: LondonTou
   }
 
   return (
-    <section className="py-16 bg-gradient-to-br from-white via-secondary-50/20 to-premium-50/20">
+    <section id="tours" className="py-16 bg-gradient-to-br from-white via-secondary-50/20 to-premium-50/20">
       <div className="container-width">
         <div className="text-center mb-16">
           <motion.div

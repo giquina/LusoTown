@@ -287,9 +287,9 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
         <div className="space-y-3 mb-4">
           <div className="flex items-center gap-3 text-sm text-gray-600">
             <CalendarDaysIcon className="w-5 h-5 text-primary-500 flex-shrink-0" />
-            <div>
-              <div className="font-medium text-gray-900">{formatDate(event.date)}</div>
-              <div className="text-xs text-gray-500">
+            <div className="flex-1">
+              <div className="font-semibold text-gray-900 text-sm">{formatDate(event.date)}</div>
+              <div className="text-sm text-gray-600">
                 {formatTime(event.time)}{event.endTime && ` - ${formatTime(event.endTime)}`}
               </div>
             </div>
@@ -298,18 +298,18 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
           <div className="flex items-center gap-3 text-sm text-gray-600">
             <MapPinIcon className="w-5 h-5 text-secondary-500 flex-shrink-0" />
             <div className="flex-1 min-w-0">
-              <div className="font-medium text-gray-900 truncate">{event.location}</div>
-              <div className="text-xs text-gray-500 truncate">{event.address}</div>
+              <div className="font-semibold text-gray-900 text-sm line-clamp-1">{event.location}</div>
+              <div className="text-sm text-gray-600 line-clamp-1">{event.address}</div>
             </div>
           </div>
           
           <div className="flex items-center gap-3 text-sm text-gray-600">
             <UserGroupIcon className="w-5 h-5 text-purple-500 flex-shrink-0" />
             <div className="flex-1">
-              <div className="font-medium text-gray-900">
+              <div className="font-semibold text-gray-900 text-sm">
                 {event.currentAttendees}/{event.maxAttendees} {isPortuguese ? 'Participantes' : 'Attending'}
               </div>
-              <div className="text-xs text-gray-500 truncate">
+              <div className="text-sm text-gray-600 line-clamp-1">
                 {event.groupSize} • {isPortuguese ? 'Por' : 'By'} {event.hostName}
               </div>
             </div>
