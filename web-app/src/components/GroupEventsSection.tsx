@@ -92,13 +92,13 @@ const sampleGroupEvents: GroupEventData[] = [
   {
     id: 'group-event-4',
     title: 'Harry Potter Studio Tour Community Adventure',
-    description: 'Magical community day out at the Warner Bros Studio Tour. Perfect for Portuguese community members, featuring behind-the-scenes magic, costumes, and sets from the beloved films.',
+    description: 'Magical day out at the Warner Bros Studio Tour. Perfect for Portuguese speakers in London - you'll be guided by Portuguese hosts and travel with fellow Portuguese speakers, making it feel like going with close friends who share your language and culture while exploring behind-the-scenes magic, costumes, and sets.',
     date: '2025-08-24',
     time: '11:00 AM',
     location: 'Warner Bros Studio Tour, WD25 7LR',
     price: 55,
     currency: '£',
-    category: 'Community Events',
+    category: 'All Welcome',
     image: 'https://images.unsplash.com/photo-1551269901-5c5e14c25df7?auto=format&fit=crop&w=800&q=80',
     spotsLeft: 15,
     maxAttendees: 25,
@@ -109,7 +109,7 @@ const sampleGroupEvents: GroupEventData[] = [
     reviewCount: 89,
     isPopular: true,
     hasPhotos: true,
-    groupFocus: 'Community Fun',
+    groupFocus: 'Community Connection',
     ageRange: 'All ages welcome',
     languages: ['Portuguese', 'English']
   },
@@ -139,13 +139,13 @@ const sampleGroupEvents: GroupEventData[] = [
   {
     id: 'group-event-6',
     title: 'London Zoo Community Safari Day',
-    description: 'Fun-filled community day at London Zoo with Portuguese-speaking community. Educational talks, animal encounters, and special children\'s activities in a supportive community environment.',
+    description: 'Fun-filled day at London Zoo with Portuguese speakers in London. Educational talks, animal encounters, and activities led by Portuguese guides - experience London's wildlife while connecting with fellow Portuguese speakers who share your language and culture.',
     date: '2025-08-26',
     time: '10:00 AM',
     location: 'London Zoo, NW1 4RY',
     price: 32,
     currency: '£',
-    category: 'Community Events',
+    category: 'All Welcome',
     image: 'https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&w=800&q=80',
     spotsLeft: 8,
     maxAttendees: 20,
@@ -156,7 +156,7 @@ const sampleGroupEvents: GroupEventData[] = [
     reviewCount: 71,
     hasPhotos: true,
     groupFocus: 'Wildlife & Education',
-    ageRange: 'Community members',
+    ageRange: 'All ages welcome',
     languages: ['Portuguese', 'English']
   }
 ]
@@ -184,7 +184,7 @@ export default function GroupEventsSection({
     { id: 'all', label: isPortuguese ? 'Todos' : 'All Events', count: sampleGroupEvents.length },
     { id: 'Women 30+', label: isPortuguese ? 'Mulheres 30+' : 'Women 30+', count: sampleGroupEvents.filter(e => e.category === 'Women 30+').length },
     { id: 'Women 40+', label: isPortuguese ? 'Mulheres 40+' : 'Women 40+', count: sampleGroupEvents.filter(e => e.category === 'Women 40+').length },
-    { id: 'Community Events', label: isPortuguese ? 'Eventos Comunitários' : 'Community Events', count: sampleGroupEvents.filter(e => e.category === 'Community Events').length }
+    { id: 'All Welcome', label: isPortuguese ? 'Todos Bem-vindos' : 'All Welcome', count: sampleGroupEvents.filter(e => e.category === 'All Welcome').length }
   ]
 
   const filteredEvents = selectedCategory === 'all' 
@@ -249,7 +249,7 @@ export default function GroupEventsSection({
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 bg-secondary-400 rounded-full"></div>
-                  <span>{isPortuguese ? '25% Eventos Comunitários' : '25% Community Events'}</span>
+                  <span>{isPortuguese ? '25% Todos Bem-vindos' : '25% All Welcome'}</span>
                 </div>
               </div>
             </div>
@@ -307,7 +307,7 @@ export default function GroupEventsSection({
                 <p className="text-gray-700 max-w-3xl mx-auto">
                   {isPortuguese
                     ? 'Conecte-se com portugueses que partilham os seus interesses, explore Londres de forma autêntica e crie amizades duradouras.'
-                    : 'Connect with Portuguese speakers who share your interests, explore London authentically, and build lasting friendships.'
+                    : 'Connect with Portuguese speakers who share your interests. With Portuguese-speaking guides and hosts, you'll explore London authentically while building lasting friendships with people who understand your language and culture.'
                   }
                 </p>
               </div>
@@ -323,7 +323,7 @@ export default function GroupEventsSection({
                   <p className="text-sm text-gray-600">
                     {isPortuguese 
                       ? 'Conheça pessoas que partilham a sua cultura e língua'
-                      : 'Meet people who share your culture and language'
+                      : 'Connect with Portuguese speakers through shared experiences led by Portuguese hosts and guides'
                     }
                   </p>
                 </div>
@@ -338,7 +338,7 @@ export default function GroupEventsSection({
                   <p className="text-sm text-gray-600">
                     {isPortuguese 
                       ? 'Explore a cidade com locais e experiências únicas'
-                      : 'Explore the city with locals and unique experiences'
+                      : 'Discover London with Portuguese-speaking guides who understand your cultural preferences and language'
                     }
                   </p>
                 </div>
@@ -353,7 +353,7 @@ export default function GroupEventsSection({
                   <p className="text-sm text-gray-600">
                     {isPortuguese 
                       ? 'Organizadores experientes e eventos bem planeados'
-                      : 'Experienced organizers and well-planned events'
+                      : 'Portuguese-speaking event organizers who ensure culturally authentic and language-comfortable experiences'
                     }
                   </p>
                 </div>
