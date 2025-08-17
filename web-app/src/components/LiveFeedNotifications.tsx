@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   UserPlusIcon, 
@@ -13,7 +13,7 @@ import {
 
 interface NotificationItem {
   id: string
-  type: 'signup' | 'review' | 'event_join' | 'chat_join' | 'friendship'
+  type: 'tour_booking' | 'transport_booking' | 'tour_review' | 'group_transport' | 'airport_transfer' | 'signup'
   name: string
   location: string
   action: string
@@ -41,53 +41,53 @@ const LiveFeedNotifications = () => {
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
-  // Mock data for realistic Portuguese community notifications
-  const mockNotifications: Omit<NotificationItem, 'id' | 'timeAgo'>[] = [
+  // Mock data refocused on London Tours & Private Transport
+  const mockNotifications = useMemo<Omit<NotificationItem, 'id' | 'timeAgo'>[]>(() => [
     {
-      type: 'signup',
+      type: 'tour_booking',
       name: 'Ana Sofia',
-      location: 'Camden',
-      action: 'just joined LusoTown London',
+      location: 'Westminster',
+      action: 'booked the Classic London Tour (4h) with a Portuguese guide',
+      icon: <CalendarIcon className="w-4 h-4 text-white" />,
+      gradient: 'from-primary-400 to-secondary-500'
+    },
+    {
+      type: 'transport_booking',
+      name: 'Miguel Santos',
+      location: 'Chelsea',
+      action: 'scheduled a personal driver for a museum day trip',
       icon: <UserPlusIcon className="w-4 h-4 text-white" />,
       gradient: 'from-green-400 to-emerald-500'
     },
     {
-      type: 'event_join',
-      name: 'Miguel Santos',
-      location: 'Shoreditch',
-      action: 'joined a Portuguese pub crawl',
-      icon: <CalendarIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-primary-400 to-secondary-500'
-    },
-    {
-      type: 'review',
+      type: 'tour_review',
       name: 'Beatriz Ferreira',
       location: 'Kensington',
-      action: 'left a 5-star review for "Fado night at Taberna Real"',
+      action: 'left a 5★ review for the Royal Heritage Tour',
       icon: <StarIcon className="w-4 h-4 text-white" />,
       gradient: 'from-yellow-400 to-orange-500'
     },
     {
-      type: 'chat_join',
+      type: 'group_transport',
       name: 'João Pereira',
       location: 'Canary Wharf',
-      action: 'joined "Weekend Football & Beers" group',
+      action: 'joined shared transport to a Fado Night experience',
       icon: <ChatBubbleLeftRightIcon className="w-4 h-4 text-white" />,
       gradient: 'from-purple-400 to-violet-500'
     },
     {
-      type: 'event_join',
+      type: 'airport_transfer',
       name: 'Catarina Silva',
       location: 'Clapham',
-      action: 'attending "Women-only Portuguese Brunch"',
+      action: 'booked a VIP airport transfer with Portuguese driver',
       icon: <CalendarIcon className="w-4 h-4 text-white" />,
       gradient: 'from-primary-400 to-secondary-500'
     },
     {
-      type: 'friendship',
+      type: 'transport_booking',
       name: 'Ricardo Oliveira',
       location: 'Brixton',
-      action: 'made 3 new connections at cocktail night',
+      action: 'reserved a security driver for a business meeting',
       icon: <HeartIcon className="w-4 h-4 text-white" />,
       gradient: 'from-pink-400 to-rose-500'
     },
@@ -95,115 +95,43 @@ const LiveFeedNotifications = () => {
       type: 'signup',
       name: 'Mariana Costa',
       location: 'Greenwich',
-      action: 'just joined LusoTown London',
+      action: 'just joined LusoTown London to plan summer tours',
       icon: <UserPlusIcon className="w-4 h-4 text-white" />,
       gradient: 'from-green-400 to-emerald-500'
     },
     {
-      type: 'review',
+      type: 'tour_review',
       name: 'Pedro Almeida',
       location: 'Notting Hill',
-      action: 'left a 5-star review for "Portuguese Wine Tasting"',
+      action: 'left a 5★ review for the Harry Potter London Experience',
       icon: <StarIcon className="w-4 h-4 text-white" />,
       gradient: 'from-yellow-400 to-orange-500'
     },
     {
-      type: 'event_join',
+      type: 'tour_booking',
       name: 'Inês Rodrigues',
       location: 'Hampstead',
-      action: 'signed up for "Late Night Portuguese Dancing"',
+      action: 'booked the Modern London Architecture Tour',
       icon: <CalendarIcon className="w-4 h-4 text-white" />,
       gradient: 'from-primary-400 to-secondary-500'
     },
     {
-      type: 'chat_join',
+      type: 'group_transport',
       name: 'Gonçalo Martins',
       location: 'Richmond',
-      action: 'joined "Portuguese Business Networking" chat',
+      action: 'arranged shared transport for a museum tour group',
       icon: <ChatBubbleLeftRightIcon className="w-4 h-4 text-white" />,
       gradient: 'from-purple-400 to-violet-500'
     },
     {
-      type: 'friendship',
+      type: 'airport_transfer',
       name: 'Sofia Mendes',
       location: 'Fulham',
-      action: 'connected with 2 people from Porto',
-      icon: <HeartIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-pink-400 to-rose-500'
-    },
-    {
-      type: 'event_join',
-      name: 'Tiago Carvalho',
-      location: 'Marylebone',
-      action: 'attending "Portuguese Food & Drinks Night"',
+      action: 'scheduled return transfer with Portuguese-speaking driver',
       icon: <CalendarIcon className="w-4 h-4 text-white" />,
       gradient: 'from-primary-400 to-secondary-500'
-    },
-    {
-      type: 'signup',
-      name: 'Filipa Gonçalves',
-      location: 'Putney',
-      action: 'just joined LusoTown London',
-      icon: <UserPlusIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-green-400 to-emerald-500'
-    },
-    {
-      type: 'review',
-      name: 'André Ribeiro',
-      location: 'Camden',
-      action: 'left a 5-star review for "Portuguese Rooftop Party"',
-      icon: <StarIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-yellow-400 to-orange-500'
-    },
-    {
-      type: 'chat_join',
-      name: 'Lara Fernandes',
-      location: 'Shoreditch',
-      action: 'joined "Portuguese Singles 25+" group',
-      icon: <ChatBubbleLeftRightIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-purple-400 to-violet-500'
-    },
-    {
-      type: 'event_join',
-      name: 'Bruno Neves',
-      location: 'Clapham',
-      action: 'signed up for "Portuguese Comedy Night"',
-      icon: <CalendarIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-primary-400 to-secondary-500'
-    },
-    {
-      type: 'friendship',
-      name: 'Teresa Lopes',
-      location: 'Kensington',
-      action: 'made 4 new friends at wine bar meetup',
-      icon: <HeartIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-pink-400 to-rose-500'
-    },
-    {
-      type: 'review',
-      name: 'Carlos Sousa',
-      location: 'Canary Wharf',
-      action: 'left a 5-star review for "Portuguese Happy Hour"',
-      icon: <StarIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-yellow-400 to-orange-500'
-    },
-    {
-      type: 'event_join',
-      name: 'Helena Pinto',
-      location: 'Brixton',
-      action: 'attending "Brazilian Samba Night"',
-      icon: <CalendarIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-primary-400 to-secondary-500'
-    },
-    {
-      type: 'chat_join',
-      name: 'Rafael Dias',
-      location: 'Greenwich',
-      action: 'joined "Portuguese Football Fans" chat',
-      icon: <ChatBubbleLeftRightIcon className="w-4 h-4 text-white" />,
-      gradient: 'from-purple-400 to-violet-500'
     }
-  ]
+  ], [])
 
   // Generate time ago strings
   const getRandomTimeAgo = () => {
@@ -225,17 +153,7 @@ const LiveFeedNotifications = () => {
   }
 
   // Show notifications periodically
-  useEffect(() => {
-    // Start after 30 seconds
-    const initialDelay = setTimeout(() => {
-      setIsVisible(true)
-      showNextNotification()
-    }, 30000)
-
-    return () => clearTimeout(initialDelay)
-  }, [])
-
-  const showNextNotification = () => {
+  const showNextNotification = useCallback(() => {
     const randomNotification = mockNotifications[Math.floor(Math.random() * mockNotifications.length)]
     const notification: NotificationItem = {
       ...randomNotification,
@@ -253,7 +171,17 @@ const LiveFeedNotifications = () => {
     // Schedule next notification (between 15-45 seconds)
     const nextDelay = Math.random() * 30000 + 15000
     setTimeout(showNextNotification, nextDelay)
-  }
+  }, [mockNotifications])
+
+  useEffect(() => {
+    // Start after 30 seconds
+    const initialDelay = setTimeout(() => {
+      setIsVisible(true)
+      showNextNotification()
+    }, 30000)
+
+    return () => clearTimeout(initialDelay)
+  }, [showNextNotification])
 
   const handleClose = () => {
     setCurrentNotification(null)
