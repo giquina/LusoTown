@@ -20,7 +20,7 @@ const getNavigationLinks = (t: any) => [
     name: t('nav.services', 'Services'), 
     href: '/services',
     submenu: [
-      { name: t('nav.services.cultural-tours', 'Cultural Tours'), href: '/services#cultural-tours' },
+      { name: t('nav.services.london-tours', 'London Tours'), href: '/services#cultural-tours' },
       { name: t('nav.services.private-transport', 'Private Transport'), href: '/transport' },
     ]
   },
@@ -35,7 +35,7 @@ const getAuthenticatedNavigationLinks = (t: any) => [
     name: t('nav.services', 'Services'), 
     href: '/services',
     submenu: [
-      { name: t('nav.services.cultural-tours', 'Cultural Tours'), href: '/services#cultural-tours' },
+      { name: t('nav.services.london-tours', 'London Tours'), href: '/services#cultural-tours' },
       { name: t('nav.services.private-transport', 'Private Transport'), href: '/transport' },
     ]
   },
