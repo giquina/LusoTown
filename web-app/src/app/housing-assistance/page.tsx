@@ -273,7 +273,7 @@ export default function HousingAssistancePage() {
                         </span>
                         <span className="text-lg font-bold text-gray-900">
                           £{listing.price}
-                          <span className="text-sm text-gray-500 font-normal">/mês</span>
+                          <span className="text-sm text-gray-500 font-normal">/month</span>
                         </span>
                       </div>
                       
