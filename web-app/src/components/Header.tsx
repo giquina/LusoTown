@@ -21,7 +21,7 @@ const getNavigationLinks = (t: any) => [
     href: '/services',
     submenu: [
       { name: t('nav.services.cultural-tours', 'Cultural Tours'), href: '/services#cultural-tours' },
-      { name: t('nav.services.private-chauffeur', 'Private Chauffeur'), href: '/chauffeur' },
+      { name: t('nav.services.executive-transport', 'Executive Transport'), href: '/transport' },
     ]
   },
   { name: t('nav.students', 'Students'), href: '/students' },
@@ -36,7 +36,7 @@ const getAuthenticatedNavigationLinks = (t: any) => [
     href: '/services',
     submenu: [
       { name: t('nav.services.cultural-tours', 'Cultural Tours'), href: '/services#cultural-tours' },
-      { name: t('nav.services.private-chauffeur', 'Private Chauffeur'), href: '/chauffeur' },
+      { name: t('nav.services.executive-transport', 'Executive Transport'), href: '/transport' },
     ]
   },
   { name: t('nav.students', 'Students'), href: '/students' },
