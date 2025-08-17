@@ -29,6 +29,8 @@ const WhatsAppWidget: React.FC = () => {
   const [showWidget, setShowWidget] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
+  const [customMessage, setCustomMessage] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const { language } = useLanguage();
 
@@ -41,12 +43,10 @@ const WhatsAppWidget: React.FC = () => {
       en: [
         {
           message:
-            "Olá! 👋 Welcome to LusoTown. Need help with London Tours or Private Transport? I'm your guide. You can book a personal driver or security driver, explore tours, or ask how to use the site. If you need support at any time, email support@lusotown.com.",
+            "Olá! 👋 Welcome to LusoTown. How can I help you today? Choose an option below or type your message:",
           options: [
-            "Book a personal driver",
-            "Book a security driver",
-            "See all London tours",
-            "How do I use the site?",
+            "Book a driver",
+            "See all events", 
             "Email support",
           ],
           icon: <Heart className="w-4 h-4 text-green-600" />,
@@ -121,12 +121,10 @@ const WhatsAppWidget: React.FC = () => {
       pt: [
         {
           message:
-            "Olá! 👋 Bem-vindo à LusoTown. Precisas de ajuda com Tours em Londres ou Transporte Privado? Sou o teu guia. Podes reservar motorista pessoal ou de segurança, explorar tours, ou aprender a usar o site. Se precisares de apoio, envia email para support@lusotown.com.",
+            "Olá! 👋 Bem-vindo à LusoTown. Como posso ajudar-te hoje? Escolhe uma opção ou escreve a tua mensagem:",
           options: [
-            "Reservar motorista pessoal",
-            "Reservar motorista de segurança",
-            "Ver todos os tours de Londres",
-            "Como usar o site?",
+            "Reservar motorista",
+            "Ver todos os eventos",
             "Email de apoio",
           ],
           icon: <Heart className="w-4 h-4 text-green-600" />,
@@ -247,6 +245,47 @@ const WhatsAppWidget: React.FC = () => {
     setMessages((prev) => [...prev, newMessage]);
   };
 
+  const handleCustomMessage = () => {
+    if (!customMessage.trim()) return;
+    
+    setHasInteracted(true);
+    setIsTyping(true);
+
+    // Add user message
+    const userMessage: Message = {
+      id: Date.now(),
+      text: customMessage,
+      isBot: false,
+      timestamp: new Date(),
+    };
+    setMessages((prev) => [...prev, userMessage]);
+    setCustomMessage("");
+
+    // Send message to WhatsApp (your mobile)
+    const whatsappNumber = "+447508196996"; // Replace with your actual WhatsApp number
+    const encodedMessage = encodeURIComponent(`New message from LusoTown website:\n\n"${customMessage}"\n\n--- Sent via LusoTown Chat Widget ---`);
+    
+    // Simulate bot response
+    setTimeout(() => {
+      const botResponse: Message = {
+        id: Date.now() + 1,
+        text: isPortuguese
+          ? `Obrigado pela tua mensagem! 📱 Vou enviar isto para o WhatsApp do nosso suporte. Também podes contactar-nos diretamente: support@lusotown.com`
+          : `Thank you for your message! 📱 I'll send this to our support WhatsApp. You can also contact us directly: support@lusotown.com`,
+        isBot: true,
+        timestamp: new Date(),
+        icon: <MessageCircle className="w-4 h-4 text-green-600" />,
+      };
+      setMessages((prev) => [...prev, botResponse]);
+      setIsTyping(false);
+      
+      // Open WhatsApp with the message
+      setTimeout(() => {
+        window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+      }, 1000);
+    }, 1500);
+  };
+
   const handleOptionClick = (option: string) => {
     setHasInteracted(true);
 
@@ -259,9 +298,11 @@ const WhatsAppWidget: React.FC = () => {
     };
     setMessages((prev) => [...prev, userMessage]);
 
-    // Fast-path: primary actions for transport/tours/support
+    // Fast-path: primary actions for transport/events/support
     const opt = option.toLowerCase();
     if (
+      opt.includes("book a driver") ||
+      opt.includes("reservar motorista") ||
       opt.includes("book a personal driver") ||
       opt.includes("reservar motorista pessoal") ||
       opt.includes("get a quote for private transport") ||
@@ -304,6 +345,8 @@ const WhatsAppWidget: React.FC = () => {
     }
 
     if (
+      opt.includes("see all events") ||
+      opt.includes("ver todos os eventos") ||
       opt.includes("see all london tours") ||
       opt.includes("ver todos os tours de londres")
     ) {
@@ -311,14 +354,14 @@ const WhatsAppWidget: React.FC = () => {
         const msg: Message = {
           id: Date.now() + 1,
           text: isPortuguese
-            ? "A mostrar Tours de Londres…"
-            : "Showing London Tours…",
+            ? "A mostrar todos os eventos…"
+            : "Showing all events…",
           isBot: true,
           timestamp: new Date(),
           icon: <Calendar className="w-4 h-4 text-action-600" />,
         };
         setMessages((prev) => [...prev, msg]);
-        setTimeout(() => window.open("/london-tours#tours", "_blank"), 1200);
+        setTimeout(() => window.open("/events", "_blank"), 1200);
       }, 800);
       return;
     }
@@ -647,18 +690,61 @@ const WhatsAppWidget: React.FC = () => {
                 </div>
               </div>
             ))}
+            
+            {/* Typing Indicator */}
+            {isTyping && (
+              <div className="flex justify-start">
+                <div className="bg-white text-gray-800 rounded-xl rounded-bl-md shadow-sm border border-gray-200 p-2.5 max-w-[90%]">
+                  <div className="flex items-center space-x-2">
+                    <MessageCircle className="w-4 h-4 text-green-600" />
+                    <span className="text-xs font-medium text-gray-600">LusoTown Helper</span>
+                  </div>
+                  <div className="flex items-center space-x-1 mt-2">
+                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.1s" }}></div>
+                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></div>
+                  </div>
+                </div>
+              </div>
+            )}
+            
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Footer */}
-          <div className="p-3 border-t border-gray-200 bg-white rounded-b-xl">
-            <div className="flex items-center justify-center space-x-2 text-gray-500 text-xs">
-              <MessageCircle className="w-4 h-4" />
-              <span>
-                {isPortuguese
-                  ? "Clica nas opções acima para continuar!"
-                  : "Click the options above to continue chatting!"}
-              </span>
+          {/* Footer with Message Input */}
+          <div className="border-t border-gray-200 bg-white rounded-b-xl">
+            {/* Message Input */}
+            <div className="p-3">
+              <div className="flex items-center space-x-2">
+                <input
+                  type="text"
+                  value={customMessage}
+                  onChange={(e) => setCustomMessage(e.target.value)}
+                  onKeyPress={(e) => e.key === 'Enter' && handleCustomMessage()}
+                  placeholder={isPortuguese ? "Escreve a tua mensagem..." : "Type your message..."}
+                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  disabled={isTyping}
+                />
+                <button
+                  onClick={handleCustomMessage}
+                  disabled={!customMessage.trim() || isTyping}
+                  className="px-4 py-2 bg-gradient-to-r from-primary-600 to-action-600 text-white rounded-lg hover:from-primary-700 hover:to-action-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-sm font-medium min-w-[60px]"
+                >
+                  {isTyping ? "..." : (isPortuguese ? "Enviar" : "Send")}
+                </button>
+              </div>
+            </div>
+            
+            {/* Help Text */}
+            <div className="px-3 pb-3">
+              <div className="flex items-center justify-center space-x-2 text-gray-500 text-xs">
+                <MessageCircle className="w-4 h-4" />
+                <span>
+                  {isPortuguese
+                    ? "Escolhe opções acima ou escreve uma mensagem"
+                    : "Choose options above or type a message"}
+                </span>
+              </div>
             </div>
           </div>
         </div>

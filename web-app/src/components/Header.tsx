@@ -634,9 +634,13 @@ export default function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="md:hidden relative z-50 bg-white border-t border-primary-200 shadow-2xl rounded-b-lg mx-2 mb-2"
+                className="md:hidden fixed top-20 left-2 right-2 z-50 bg-white border border-primary-200 shadow-2xl rounded-lg max-h-[calc(100vh-6rem)] overflow-y-auto scrollbar-thin scrollbar-thumb-primary-300 scrollbar-track-gray-100"
+                style={{ 
+                  scrollBehavior: 'smooth',
+                  WebkitOverflowScrolling: 'touch'
+                }}
               >
-                <div className="px-4 pt-6 pb-4 space-y-2">
+                <div className="px-4 pt-6 pb-8 space-y-2">
                   {navigationLinks.map((link) => (
                     link.dropdown ? (
                       <div key={link.name} className="space-y-1">
@@ -733,7 +737,7 @@ export default function Header() {
                     </div>
                   </div>
 
-                  <div className="border-t border-primary-100 pt-4 pb-3">
+                  <div className="border-t border-primary-100 pt-4 pb-6">
                     {user ? (
                       <>
                         <div className="flex items-center px-3 pb-3">
@@ -819,7 +823,7 @@ export default function Header() {
                           <UserIcon className="w-5 h-5" />
                           <span>Log In</span>
                         </a>
-                        <div className="mt-4 px-0">
+                        <div className="mt-4 px-0 mb-4">
                           <a
                             href="/signup"
                             className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transform hover:scale-[1.02] active:scale-95 transition-all duration-200 w-full text-center block min-h-[44px] flex items-center justify-center"
