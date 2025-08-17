@@ -11,22 +11,47 @@ import LanguageToggle from '@/components/LanguageToggle'
 import CartButton from '@/components/CartButton'
 import SavedItemsButton from '@/components/SavedItemsButton'
 import SearchBar from '@/components/SearchBar'
+import NotificationBell from '@/components/NotificationBell'
 import { useLanguage } from '@/context/LanguageContext'
 
 const getNavigationLinks = (t: any) => [
   { name: t('nav.events', 'Events'), href: '/events' },
-  { name: t('nav.transport', 'Transport & Tours'), href: '/transport' },
+  { 
+    name: t('nav.services', 'Services'), 
+    href: '/services',
+    submenu: [
+      { name: t('nav.services.cultural-tours', 'Cultural Tours'), href: '/services#cultural-tours' },
+      { name: t('nav.services.executive-transport', 'Executive Transport'), href: '/services#executive-transport' },
+      { name: t('nav.services.close-protection', 'Close Protection'), href: '/services#close-protection' },
+      { name: t('nav.services.framework', '7 Ps Framework'), href: '/close-protection-framework' },
+      { name: t('nav.services.transport-sia', 'Transport & SIA'), href: '/transport' },
+    ]
+  },
+  { name: t('nav.live-tv', 'Live TV'), href: '/live' },
+  { name: t('nav.students', 'Students'), href: '/students' },
+  { name: t('nav.partnerships', 'Partnerships'), href: '/partnerships' },
   { name: t('nav.pricing', 'Pricing'), href: '/pricing' },
-  { name: t('nav.case-studies', 'Case Studies'), href: '/case-studies' },
 ]
 
 const getAuthenticatedNavigationLinks = (t: any) => [
   { name: t('nav.events', 'Events'), href: '/events' },
-  { name: t('nav.transport', 'Transport & Tours'), href: '/transport' },
+  { name: t('nav.matches', 'Matches'), href: '/matches' },
+  { 
+    name: t('nav.services', 'Services'), 
+    href: '/services',
+    submenu: [
+      { name: t('nav.services.cultural-tours', 'Cultural Tours'), href: '/services#cultural-tours' },
+      { name: t('nav.services.executive-transport', 'Executive Transport'), href: '/services#executive-transport' },
+      { name: t('nav.services.close-protection', 'Close Protection'), href: '/services#close-protection' },
+      { name: t('nav.services.framework', '7 Ps Framework'), href: '/close-protection-framework' },
+      { name: t('nav.services.transport-sia', 'Transport & SIA'), href: '/transport' },
+    ]
+  },
+  { name: t('nav.live-tv', 'Live TV'), href: '/live' },
+  { name: t('nav.students', 'Students'), href: '/students' },
   { name: t('nav.my-network', 'My Network'), href: '/my-network' },
+  { name: t('nav.partnerships', 'Partnerships'), href: '/partnerships' },
   { name: t('nav.pricing', 'Pricing'), href: '/pricing' },
-  { name: t('nav.case-studies', 'Case Studies'), href: '/case-studies' },
-  { name: t('nav.networks', 'Networks'), href: '/community' },
   { name: 'Dashboard', href: '/dashboard' },
 ]
 
@@ -34,6 +59,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [user, setUser] = useState<any | null>(null)
   const [showUserMenu, setShowUserMenu] = useState(false)
+  const [showServicesDropdown, setShowServicesDropdown] = useState(false)
   const router = useRouter()
   const { t } = useLanguage()
 
@@ -78,13 +104,53 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 ml-4 xl:ml-8">
             {navigationLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-              >
-                {link.name}
-              </a>
+              <div key={link.name} className="relative">
+                {link.submenu ? (
+                  <div
+                    className="relative"
+                    onMouseEnter={() => setShowServicesDropdown(true)}
+                    onMouseLeave={() => setShowServicesDropdown(false)}
+                  >
+                    <a
+                      href={link.href}
+                      className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1"
+                    >
+                      {link.name}
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </a>
+                    
+                    <AnimatePresence>
+                      {showServicesDropdown && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
+                        >
+                          {link.submenu.map((submenuItem) => (
+                            <a
+                              key={submenuItem.name}
+                              href={submenuItem.href}
+                              className="block px-4 py-3 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
+                            >
+                              {submenuItem.name}
+                            </a>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : (
+                  <a
+                    href={link.href}
+                    className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  >
+                    {link.name}
+                  </a>
+                )}
+              </div>
             ))}
           </div>
 
@@ -93,6 +159,7 @@ export default function Header() {
             <SearchBar variant="header" />
             <CartButton />
             <SavedItemsButton />
+            <NotificationBell className="hidden md:block" showDropdown />
             <LanguageToggle />
             {user ? (
               <div className="relative">
@@ -193,6 +260,7 @@ export default function Header() {
               <>
                 <CartButton />
                 <SavedItemsButton />
+                <NotificationBell className="md:hidden" />
               </>
             )}
             <LanguageToggle />
@@ -237,14 +305,39 @@ export default function Header() {
               >
                 <div className="px-4 pt-6 pb-4 space-y-2">
                 {navigationLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px] flex items-center"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {link.name}
-                  </a>
+                  <div key={link.name}>
+                    {link.submenu ? (
+                      <div className="space-y-1">
+                        <a
+                          href={link.href}
+                          className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px] flex items-center"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {link.name}
+                        </a>
+                        <div className="ml-4 space-y-1">
+                          {link.submenu.map((submenuItem) => (
+                            <a
+                              key={submenuItem.name}
+                              href={submenuItem.href}
+                              className="text-gray-600 hover:text-primary-600 hover:bg-primary-50 block px-4 py-2 rounded-lg text-sm transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[40px] flex items-center"
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              {submenuItem.name}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <a
+                        href={link.href}
+                        className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px] flex items-center"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {link.name}
+                      </a>
+                    )}
+                  </div>
                 ))}
                 
                 <div className="border-t border-primary-100 pt-4 pb-3">

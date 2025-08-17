@@ -2,6 +2,7 @@
 
 import type { Metadata } from 'next'
 import { useLanguage } from '@/context/LanguageContext'
+import ContextTestComponent from '@/components/ContextTestComponent'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import Features from '@/components/Features'
@@ -19,6 +20,9 @@ import CustomToursSection from '@/components/CustomToursSection'
 import HostWithUsSection from '@/components/HostWithUsSection'
 import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
+import ProgressiveUserJourney from '@/components/ProgressiveUserJourney'
+import CrossPlatformEngagementTriggers from '@/components/CrossPlatformEngagementTriggers'
+import RetentionGrowthMechanics from '@/components/RetentionGrowthMechanics'
 import { 
   ChatBubbleLeftRightIcon, 
   HeartIcon, 
@@ -60,6 +64,9 @@ const jsonLd = {
 
 export default function Home() {
   const { t } = useLanguage()
+
+  // Mock user activity for homepage
+  const userActivity = ['visited_homepage', 'viewed_events', 'explored_services']
 
   return (
     <>
@@ -306,9 +313,56 @@ export default function Home() {
           <CaseStudies />
           <AppDownloadSection />
           <TestimonialsNew />
+          
+          {/* User Journey Progress Widget */}
+          <section className="py-16 bg-gray-50">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="max-w-4xl mx-auto">
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                    {t('user-journey.title', 'Track Your Portuguese Community Journey')}
+                  </h2>
+                  <p className="text-lg text-gray-600">
+                    {t('user-journey.description', 'See your progress and discover new opportunities to connect with the Portuguese community across London and the UK.')}
+                  </p>
+                </div>
+                
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  {/* Journey Progress Widget */}
+                  <ProgressiveUserJourney 
+                    variant="widget" 
+                    currentPage="/" 
+                  />
+                  
+                  {/* Community Achievements Widget */}
+                  <RetentionGrowthMechanics 
+                    variant="dashboard"
+                    showRecentAchievements={true}
+                  />
+                </div>
+                
+                <div className="text-center mt-8">
+                  <a
+                    href="/user-journey"
+                    className="inline-flex items-center gap-2 bg-primary-500 text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary-600 transition-colors"
+                  >
+                    {t('user-journey.view-full', 'View Full Journey')}
+                    <ArrowRight className="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+          
           <CTA />
           <Footer />
         </div>
+        
+        {/* Cross-Platform Engagement Triggers */}
+        <CrossPlatformEngagementTriggers
+          currentPage="/"
+          userActivity={userActivity}
+        />
       </main>
     </>
   )

@@ -404,7 +404,7 @@ export default function CreateTopic() {
             </div>
           </form>
         </div>
+        </div>
       </div>
-    </div>
   )
 }

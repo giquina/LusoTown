@@ -1,326 +1,421 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
-## Project Overview
-
-LusoTown is a bilingual (English/Portuguese) social network serving two main audiences in London and the UK:
-
-1. **Social Users** – Individuals looking to explore London and the UK through music events, club nights, cultural activities, guided tours, and other social experiences.
-
-2. **Business Professionals** – Entrepreneurs, freelancers, and industry experts who want to attend professional events such as AI workshops, website creation masterclasses, and digital marketing training sessions — with a focus on the Portuguese business community in the UK, while remaining open to everyone.
-
-The platform also caters to **event creators, organisers, and hosts** — both social and business — who can:
-- Sign up and publish events
-- Promote their brand or services  
-- Monetise their events through ticket sales, sponsorships, or partnerships
-- Build long-term relationships with attendees
-- Use the platform's tools to narrate, guide, or host experiences
+LusoTown: Bilingual Portuguese community platform (London & UK) serving social users and business professionals with event discovery, premium matching, transport services, and university partnerships.
 
 **Tech Stack:** Next.js 14 (TypeScript), Tailwind CSS, Supabase, Vercel
-**Status:** Production-ready with 61+ pages, 118+ components, complete bilingual system, networking features, enhanced welcome onboarding, security transport services, annual membership pricing model (£25/year), mobile-optimized 2-column layouts, compact logo branding, and multi-step user preferences collection
+**Status:** Production-ready - 73+ pages, 169+ components, complete bilingual system
 
-## Development Commands
-
-**Working Directory:** Always navigate to `web-app/` before running commands.
+## Essential Commands
 
 ```bash
-cd web-app
-npm install         # Install dependencies
-npm run dev         # Start development server (http://localhost:3000)
-npm run build       # Build for production
-npm run start       # Start production server
-npm run lint        # Run ESLint
-npm run export      # Static export (next build && next export)
-npm run deploy      # Deploy to Vercel
-npx tsc --noEmit    # Type check without emitting files
+cd web-app && npm run dev    # Start dev server (localhost:3000)
+npm run build               # Production build
+npm run lint               # ESLint check
+npx tsc --noEmit          # TypeScript check
 ```
 
-**Automation Scripts:** Project includes automation scripts for documentation maintenance.
+**Demo Login:** demo@lusotown.com / LusoTown2025!
+**TypeScript:** Errors ignored in builds (`ignoreBuildErrors: true`)
 
-```bash
-# From project root
-./scripts/update-claude-md.sh      # Update CLAUDE.md with current stats
-./scripts/post-deployment-update.sh  # Complete post-deployment verification
+## Core Architecture
+
+**Structure:** Next.js 14 App Router, React Context state, Supabase backend
+**Styling:** Tailwind CSS with Portuguese brand colors, mobile-first `grid-cols-2` layouts
+**Key Pages:** /my-network, /transport, /matches, /live, /students, /premium-membership
+**Contexts:** Language, Cart, Favorites, Networking, Subscription, PlatformIntegration
+
+## Critical Patterns
+
+**Bilingual:** All text supports EN/PT via `useLanguage` hook and `src/i18n/` files
+**Mobile:** Professional 2x2 grids (`grid-cols-2`), fixed card heights, "London & UK" context
+**State:** React Context + localStorage, no Redux
+**Colors:** Portuguese brand colors only (primary, secondary, accent, action, premium, coral)
+**CTAs:** Max 2 words, pricing with "From £XX" format
+
+## Content Guidelines
+
+**Tone:** Professional, inclusive, welcoming. London & UK focus for Portuguese community.
+**Audiences:** Social users + business professionals. Event creators can monetize.
+**Subscription:** Transport services require £25/year membership.
+
+## Context Providers
+
+Language, Cart, Favorites, Following, Networking, Subscription, PlatformIntegration
+
+## Key Features
+
+**Subscription Tiers:** Student (£12.50), Professional (£25), Business (£75), VIP (£150)
+**Premium Features:** Transport services, premium matches, live streaming, university partnerships
+**Networking:** Event-based connections, compatibility matching, cultural conversation starters
+
+## Key Components
+
+**Transport:** SIA-compliant luxury transport with Portuguese-speaking drivers
+**Matches:** Premium Portuguese community matching with cultural compatibility 
+**Streaming:** LusoTown TV with cultural content and business workshops
+**Students:** 8 university partnerships serving 2,150+ Portuguese students
+
+## Environment Variables
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 ```
 
-**Testing:** No test framework configured. Use manual testing via local development server at http://localhost:3000.
+## LusoTown Premium Matches System (London & UK)
 
-**TypeScript Configuration:**
-```bash
-npx tsc --noEmit    # Check TypeScript errors without building
+The platform features an advanced Portuguese community matching system that connects members based on compatibility scores, shared interests, and cultural backgrounds within London and the UK.
+
+### Premium Matches Features
+
+**Cultural Compatibility Matching:**
+- Algorithm considers Portuguese heritage (Portugal, Brazil, other Lusophone countries)
+- Language preference matching (Portuguese, English, or bilingual)
+- Cultural interest alignment (fado, traditional cuisine, Portuguese history)
+- Family status compatibility (single, family, open to any)
+- Professional background matching for networking opportunities
+
+**Smart Filtering System:**
+- Advanced age range filtering
+- Professional background categories (Finance, Tech, Creative Arts, Real Estate, Healthcare)
+- Interest-based matching (business networking, cultural exchange, friendship)
+- University and education background for students
+- Membership tier consideration for premium features
+- Location-based matching within London boroughs and UK cities
+
+**Subscription-Based Access:**
+- **Free Tier**: 5 daily matches with basic filtering
+- **Premium Tiers**: Unlimited daily matches with advanced filtering
+- **Student Discount**: 50% off premium features for verified university students
+- Priority profile visibility for premium members
+- VIP event access for matched connections
+
+### Matches Components
+
+**Core Matching Components:**
+- `MatchCard.tsx`: Individual profile display with compatibility scoring
+- `MatchFilters.tsx`: Advanced filtering interface with Portuguese cultural options
+- `MatchingAlgorithm.tsx`: Compatibility calculation engine
+- `PremiumMatchesGate.tsx`: Subscription enforcement for premium features
+- `SafetyCenter.tsx`: Community safety guidelines and reporting
+
+**Conversation System:**
+- `MatchConversations.tsx`: Direct messaging for matched connections
+- Portuguese cultural conversation starters
+- Bilingual messaging support
+- Safety reporting and blocking features
+- Connection strength scoring based on interactions
+
+**Premium Features:**
+- Detailed compatibility insights (cultural, professional, location scores)
+- Advanced filtering by Portuguese cultural background
+- Priority matching with other premium members
+- VIP networking event invitations for matched pairs
+- Professional mentorship matching for career development
+
+### Matches Data Structure
+
+**Match Interface:**
+```typescript
+interface PremiumMatch {
+  id: string
+  userId: string
+  matchedUserId: string
+  matchedUser: UserProfile
+  compatibilityScore: number // 75-95%
+  sharedInterests: string[]
+  culturalCompatibility: number // 80-95%
+  professionalCompatibility: number // 70-95%
+  locationCompatibility: number // 60-90%
+  matchReason: string
+  isLiked: boolean
+  isMatched: boolean
+  expiresAt?: string // 7 days
+}
 ```
-Note: `ignoreBuildErrors: true` is set in next.config.js for production builds.
 
-**Demo Login:**
-- URL: http://localhost:3000/login
-- Email: demo@lusotown.com
-- Password: LusoTown2025!
-- Auto-fill button available for quick access
+**User Profile Matching:**
+- Portuguese heritage verification
+- Professional background categories
+- Cultural interests and activity preferences
+- Language preference settings
+- Relationship goals (friendship, professional, cultural exchange)
+- Student verification for university partnerships
 
-## Architecture Overview
+## LusoTown Live Streaming Platform (LusoTown TV)
 
-### Project Structure
-```
-LusoTown/
-├── web-app/            # Next.js 14 application
-│   ├── src/
-│   │   ├── app/        # App router pages (61+)
-│   │   ├── components/ # React components (117+)
-│   │   ├── context/    # Global state (Language, Cart, Favorites, Following, Networking)
-│   │   └── lib/        # Services and utilities
-│   └── public/         # Static assets
-├── supabase/          
-│   ├── migrations/    # Database schema
-│   └── config.toml    # Supabase config
-└── .claude/           # Agent system configuration
+The platform features a comprehensive streaming service showcasing Portuguese cultural content, business workshops, and community events live from London.
 
-### Key Architecture Patterns
+### Streaming Features
 
-**Routing & Pages:**
-- Next.js 14 App Router with file-based routing
-- 61+ static pages with trailing slashes enabled (including /my-network, /transport, /housing-assistance, /mentorship, /neighborhood-groups)
-- Static export configuration (no server-side features)
-- Clear London & UK geographic focus for Portuguese community
+**Content Categories:**
+- **Portuguese Cultural Content**: Traditional music, fado nights, cultural celebrations
+- **Business Workshops**: Professional development, AI workshops, digital marketing for Portuguese community
+- **Community Events**: Community meetings, announcements, interactive sessions
+- **Student Sessions**: Study groups, career advice, academic support for Portuguese students
+- **VIP Business Roundtables**: Premium exclusive content with industry leaders
 
-**State Management:**
-- React Context for global state (Language, Cart, Favorites, Following, Networking)
-- localStorage for persistence (cart, favorites, demo auth, networking data)
-- No Redux or external state libraries needed
+**Live Streaming Technology:**
+- YouTube integration for video hosting and streaming
+- Real-time viewer count tracking
+- Live chat widget for community interaction
+- Stream replay library for premium content
+- Schedule management for upcoming broadcasts
 
-**Styling System:**
-- Tailwind CSS with Portuguese-inspired brand colors
-- Semantic color naming (primary, secondary, accent, action, premium, coral)
-- Custom animations (fadeInUp, fadeIn, scaleIn, slideInRight)
-- Responsive breakpoints: xs, sm, md, lg, xl, 2xl
-- Mobile-first design with consistent 2-per-line card layouts (`grid-cols-2 lg:grid-cols-3/4`)
-- Uniform card heights and responsive gap spacing for optimal mobile experience
+**Subscription Integration:**
+- Premium content requires active subscription or trial
+- Student-exclusive streams with verified university access
+- Business tier access to professional roundtables
+- Free community content available to all members
 
-**Component Patterns:**
-- TypeScript interfaces for all props
-- Client components with 'use client' directive
-- Bilingual content support via useLanguage hook
-- Consistent naming: PascalCase for components
-- Mobile-optimized layouts with 2-per-line card grids
-- Fixed card heights with `h-[400px] sm:h-[450px] lg:h-[500px]` pattern
-- Concise CTA buttons (2 words max: "Book Now", "View More", "Learn More")
-- "From £XX" pricing format for transparency
+### Streaming Components
 
-**Data & Backend:**
-- Supabase for database, auth, storage
-- TypeScript types generated from database schema
-- Demo authentication system with hardcoded credentials
-- Environment variables for Supabase configuration
+**Core Streaming Components:**
+- `StreamPlayer.tsx`: YouTube video integration with access control
+- `StreamSchedule.tsx`: Upcoming events and programming calendar
+- `StreamReplayLibrary.tsx`: Archive of past streams for premium members
+- `StreamViewerStats.tsx`: Real-time analytics and viewer engagement
+- `StreamCategories.tsx`: Content categorization and filtering
+- `LiveChatWidget.tsx`: Real-time community interaction during streams
 
-**Animation & UI Libraries:**
-- Framer Motion for smooth animations and transitions
-- React Hot Toast for notification system
-- Headless UI for accessible component primitives
-- Heroicons and Lucide React for comprehensive icon sets
+**Content Management:**
+- Automatic scheduling integration with event system
+- Portuguese cultural programming priority
+- Business workshop series for professional development
+- Student-focused educational content
+- Community announcements and updates
 
-## Critical Development Patterns
+### Streaming Analytics
 
-**Bilingual Implementation:**
-- All user-facing text must support both English and Portuguese
-- Use `useLanguage` hook and `t()` function for translations
-- Translation files located in `src/i18n/`
-- Never hardcode English-only text in components
+**Viewer Engagement:**
+- Real-time viewer counts with fluctuation tracking
+- Peak viewership analytics
+- Total view counts across content categories
+- Engagement metrics for chat participation
+- Portuguese community participation rates
 
-**Code Quality & Performance:**
-- TypeScript errors are ignored during builds (`ignoreBuildErrors: true`) but should be checked with `npx tsc --noEmit`
-- ESLint runs during builds but warnings don't block deployment
-- Custom webpack configuration optimizes chunk splitting for development and production
-- Images are optimized with WebP/AVIF support from Unsplash domains
+**Content Performance:**
+- Category-based viewing preferences
+- Cultural content vs. business workshop engagement
+- Student session participation rates
+- Premium content conversion metrics
+- Community retention through streaming content
 
-**Mobile-First UI Patterns:**
-- **Professional 2x2 Grid Layouts**: All card sections use professional 2x2 grid layouts on mobile (`grid-cols-2 md:grid-cols-2 lg:grid-cols-3/4`)
-- **Mobile Search Optimization**: Enhanced search bar with mobile-first design and Portuguese community imagery
-- **Uniform Card Heights**: Service tiers and tour routes use fixed heights (`h-[580px] sm:h-[650px]`) for visual consistency
-- **Location-Aware Titles**: All mobile titles include "London & UK" context for geographic clarity
-- Consistent responsive gap spacing: `gap-3 sm:gap-4 lg:gap-6/8`
-- CTA buttons limited to 2 words maximum for mobile readability
-- Pricing displays must include "From" prefix for transparency ("From £XX")
-- **Enhanced Mobile Menu**: Larger hamburger icon (12x12px) with improved touch targets and visibility
-- **Portuguese Community Images**: Authentic Portuguese community imagery throughout mobile interface
+## LusoTown Student Partnership Program (UK Universities)
 
-**State Management Architecture:**
-- Global state via React Context providers (not Redux)
-- Five main contexts: Language, Cart, Favorites, Following, Networking
-- Providers must be wrapped in correct order in `layout.tsx`
-- Use localStorage for state persistence
+Comprehensive support system for Portuguese students across 8 partner universities in the UK, offering exclusive discounts, cultural programming, and academic support.
 
-**Static Export Configuration:**
-- Static export currently DISABLED due to dynamic routes complexity (see next.config.js line 15-16)
-- Can be re-enabled after refactoring dynamic routes to use server components
-- Images optimized with WebP/AVIF support (`unoptimized: false`)
-- All pages use trailing slashes (`trailingSlash: true`)
-- Supports Unsplash image domains for content
+### University Partnerships
 
-**TypeScript Configuration:**
-- `ignoreBuildErrors: true` in Next.js config
-- Use `npx tsc --noEmit` for type checking
-- Path alias configured: `@/*` maps to `./src/*`
-- All components must have proper TypeScript interfaces
+**Strategic Partners (Premium Support):**
+- University College London (UCL) - 420 Portuguese students
+- King's College London - 380 Portuguese students
+- University of Oxford - 95 Portuguese students
+- University of Cambridge - 85 Portuguese students
 
-**Webpack Optimization:**
-- Custom chunk splitting for development and production
-- Vendor code separated into dedicated chunks
-- Optimized bundle loading with cache groups
+**Official Partners (Full Support):**
+- University of Manchester - 290 Portuguese students
+- University of Edinburgh - 180 Portuguese students
 
-## Content Guidelines and Platform Positioning
+**Community Partners (Basic Support):**
+- London School of Economics - 340 Portuguese students
+- Imperial College London - 280 Portuguese students
 
-**Dual-Audience Approach:**
-- Platform serves both social users and business professionals
-- Content should be professional, inclusive, and welcoming
-- Support both social experiences AND business networking opportunities
-- Highlight revenue opportunities for event organizers and hosts
+**Total Portuguese Student Community:** 2,150+ students across UK universities
 
-**Content Tone Requirements:**
-- Professional, inclusive, and welcoming tone across all content
-- **Geographic Clarity**: All content emphasizes London & UK location for Portuguese speakers
-- No confusion with Portugal-based services - clearly UK-focused platform
-- Family/children mentions only on specific relevant pages (Transport Services, "Create Your Own Event/Trip" sections)
-- Clear messaging that platform offers both social experiences AND business networking
-- Support thriving ecosystem for both attendees AND organizers
-- **Mandatory Subscription Messaging**: Transport services require active £25/year membership
+### Student Benefits System
 
-**Event Content Strategy:**
-- Social events: music events, club nights, cultural activities, guided tours, social experiences
-- Business events: AI workshops, website creation masterclasses, digital marketing training, professional networking
-- Portuguese community focus while remaining open and inclusive to everyone
-- Emphasize monetization opportunities for event creators (ticket sales, sponsorships, partnerships)
+**Financial Benefits:**
+- 50% discount on LusoTown annual membership (£12.50 instead of £25)
+- Student-exclusive pricing for events and services
+- Scholarship opportunities for Portuguese studies programs
+- Emergency financial support for Portuguese students
 
-**Audience-Specific Development:**
-- Social features: event discovery, cultural activities, entertainment, tours
-- Business features: professional networking, skill development, entrepreneurship, industry workshops
-- Creator tools: event publishing, brand promotion, revenue generation, attendee relationship building
-- Bilingual support for all audience segments
+**Academic Support:**
+- Free Portuguese language exchange programs
+- Academic writing support for Portuguese-related studies
+- Research guidance and dissertation help
+- Portuguese cultural studies resources and library access
+- Study abroad support for Portugal and Brazil programs
 
-## Core Context Providers
+**Professional Development:**
+- Portuguese professional mentorship program
+- Career services with Portuguese business connections
+- Internship opportunities with Portuguese companies in London and UK
+- Networking events connecting students with Portuguese professionals
+- Business pitch competitions with Portuguese investors
 
-**LanguageContext:** Global language state (EN/PT) with localStorage persistence
-**CartContext:** Shopping cart and saved items management
-**FavoritesContext:** User favorites tracking
-**FollowingContext:** User connections and following state
-**NetworkingContext:** Event-based connections, network stats, achievements, and notifications
+**Cultural Integration:**
+- Student-exclusive cultural events (movie nights, fado workshops, traditional food experiences)
+- Portuguese cultural societies coordination
+- Heritage preservation projects
+- Language immersion activities
+- Festival celebration organization
 
-## Subscription Enforcement System
+### Student Verification System
 
-LusoTown implements a mandatory £25/year subscription model for accessing premium services, particularly transport booking and community support features.
+**Verification Process:**
+- University email verification (.ac.uk domains)
+- Student ID documentation upload
+- University enrollment confirmation
+- Academic year and program verification
+- Secure document processing (24-48 hour approval)
+
+**Supported Documentation:**
+- Valid university student ID cards
+- Official enrollment confirmation letters
+- Tuition payment receipts
+- University statements on official letterhead
+- Academic transcripts (for program verification)
+
+### Student Components
+
+**Core Student Components:**
+- `StudentVerificationSystem.tsx`: Complete verification workflow
+- Student-exclusive event booking system
+- University partnership portal
+- Portuguese academic resource library
+- Career mentorship matching platform
+
+**Integration Features:**
+- Automatic university partner recognition
+- Student discount application across all services
+- Academic calendar integration for events
+- Portuguese studies program support
+- Alumni networking connection system
+
+## Enhanced Subscription Management System
+
+Comprehensive subscription management with multiple tiers, student discounts, corporate accounts, and Stripe integration for seamless billing.
+
+### Subscription Tiers
+
+**Student Tier (50% Discount):**
+- £12.50/year for verified university students
+- All community features included
+- Priority academic support
+- Student-exclusive events and programming
+- Portuguese language exchange programs
+
+**Professional Tier (Standard):**
+- £25/year for individual professionals
+- Full platform access including transport services
+- Business networking events
+- Professional mentorship programs
+- Cultural event priority booking
+
+**Business Tier (Corporate):**
+- £75/year for corporate accounts
+- Multiple user management
+- Team event coordination
+- Corporate Portuguese cultural programs
+- Business partnership opportunities
+
+**VIP Tier (Premium):**
+- £150/year for exclusive access
+- VIP business roundtables and exclusive content
+- Priority transport and concierge services
+- Personal relationship manager
+- Exclusive networking events with Portuguese business leaders
 
 ### Subscription Features
-- **Annual Membership**: £25/year for full platform access
-- **Transport Booking Gate**: Transport services require active subscription
-- **Community Features**: Housing assistance and neighborhood groups behind subscription wall
-- **Professional Services**: Enhanced networking and mentorship features for subscribers
+
+**Stripe Integration:**
+- Secure payment processing with fallback demo keys
+- Automatic renewal management
+- Failed payment retry logic
+- Proration for tier upgrades/downgrades
+- Multiple currency support (GBP, EUR, USD)
+
+**Usage Tracking & Limits:**
+- Daily matches tracking (free: 5/day, premium: unlimited)
+- Monthly messaging limits
+- Premium event access quotas
+- Livestream viewing hours tracking
+- Service booking frequency limits
+
+**Student Verification Integration:**
+- University email domain verification
+- Automatic student discount application
+- Academic calendar integration
+- Partnership university benefits
+- Graduation transition support
 
 ### Subscription Components
-- `SubscriptionGate.tsx`: Membership validation and enforcement
-- `WhatsAppWidget.tsx`: Subscriber-only Portuguese community support
-- Subscription-aware transport booking flow
-- Premium feature unlocking system
 
-### Implementation Details
-- **localStorage Persistence**: Subscription status stored locally for demo purposes
-- **Feature Gating**: Premium features check subscription status before access
-- **Graceful Degradation**: Non-subscribers see subscription prompts instead of features
-- **London & UK Focus**: All subscription messaging emphasizes UK-based Portuguese community
+**Core Subscription Components:**
+- `SubscriptionContext.tsx`: Complete subscription state management
+- `MembershipTiers.tsx`: Tier comparison and selection interface
+- `MembershipPortal.tsx`: User subscription management dashboard
+- `PaymentProcessor.tsx`: Stripe checkout integration
+- Student verification and discount application system
 
-## LusoTown Transport Services (London & UK)
+**Revenue Optimization:**
+- Automatic upselling based on usage patterns
+- Service completion to membership conversion
+- Student-to-professional transition support
+- Corporate account expansion tracking
+- Lifetime value optimization strategies
 
-The platform features a comprehensive luxury transport and SIA-compliant close protection service designed specifically for the Portuguese community in London and the UK. All transport services require an active £25/year LusoTown subscription.
+## Platform Integration & User Journey System
 
-### Transport Services Features
+Advanced cross-platform integration system that tracks user journeys, generates intelligent recommendations, and optimizes revenue through seamless service-to-community bridging.
 
-**Premium Transportation Solutions:**
-- Professional transport services with Portuguese-speaking drivers
-- **SIA-Compliant Close Protection**: Licensed security professionals with SIA certification
-- Cultural tour routes highlighting Portuguese heritage in London & UK
-- Airport transfers with Portuguese community focus
-- Luxury vehicle fleet including Bentley, Mercedes S-Class, Rolls-Royce
+### Integration Features
 
-**Portuguese Cultural Integration:**
-- Bilingual transport service (Portuguese/English)
-- Cultural tour routes through Portuguese neighborhoods in London & UK
-- Knowledge of Portuguese businesses and community locations across UK
-- Portuguese cultural event transportation throughout UK
-- Heritage site tours and cultural immersion experiences
+**User Journey Tracking:**
+- Service-to-community journey mapping
+- Community-to-service conversion tracking
+- Cross-platform engagement optimization
+- Revenue opportunity identification
+- Ecosystem value calculation
 
-**Service Infrastructure:**
-- **Easy SIA Compliance Questionnaire**: Multiple-choice questionnaire with progress tracking
-- **Subscription-Gated Booking**: Requires active £25/year LusoTown membership
-- Risk assessment and compliance features
-- Customer testimonials and review system
-- Service area coverage across Greater London & UK
-- Emergency and last-minute booking capabilities
+**Smart Recommendations:**
+- AI-driven service suggestions based on community activity
+- Cultural event recommendations after transport bookings
+- Professional networking suggestions for high-engagement users
+- Membership conversion opportunities for frequent users
+- Portuguese business networking based on professional background
 
-### Transport Components
+**Cross-Platform Notifications:**
+- Service completion community invitations
+- Revenue opportunity alerts
+- Engagement milestone celebrations
+- Smart recommendation delivery
+- Community event reminders
 
-**Core Service Components:**
-- `OptimizedTransportPage.tsx`: Main transport services landing page with professional 2x2 mobile grid
-- `TransportBookingForm.tsx`: Advanced subscription-gated booking system with validation
-- `OptimizedTransportServiceCard.tsx`: Service display with uniform heights and London & UK pricing
-- `TransportTestimonials.tsx`: Authentic Portuguese community testimonials
-- `LondonTourRoutes.tsx`: Portuguese cultural tour routes across London & UK
-- `CustomToursSection.tsx`: Bespoke tour planning interface
-- `PortugueseCulturalTourRoutes.tsx`: Heritage-focused tour options
+### Integration Components
 
-**SIA Compliance Components:**
-- `SIAComplianceQuestionnaire.tsx`: Professional compliance questionnaire system
-- `EasySIAQuestionnaire.tsx`: Simplified multiple-choice compliance form
-- `SIABookingConfirmation.tsx`: Booking confirmation with compliance verification
-- `SIAAdminDashboard.tsx`: Administrative compliance management
-- `RiskAssessmentForm.tsx`: Professional risk assessment interface
-- `ComplianceStepIndicator.tsx`: Progress tracking for compliance process
+**Core Integration Components:**
+- `PlatformIntegrationContext.tsx`: Cross-platform state management and analytics
+- `EcosystemIntegration.tsx`: Service-to-community bridging interface
+- `ServiceCommunityBridge.tsx`: Automatic enrollment and suggestions
+- `CrossPlatformEngagementTriggers.tsx`: Smart notification system
+- `ConversionOptimizationEngine.tsx`: Revenue optimization tracking
 
-**Service Infrastructure:**
-- `transportServices.ts`: Core service definitions and availability
-- `transportPricing.ts`: Dynamic pricing engine with London & UK rates
-- `transportBooking.ts`: Subscription-enforced booking management
-- `transportCache.ts`: Performance optimization and caching
+**User Journey Analytics:**
+- Engagement score calculation (community participation + service usage)
+- Portuguese cultural interest scoring
+- Professional networking opportunity identification
+- Revenue contribution tracking
+- Monthly growth rate analysis
+- Cross-platform conversion optimization
 
-### Service Categories
+### Revenue Optimization
 
-**Executive Services:**
-- Business meeting transfers across London & UK
-- Airport VIP services with SIA-compliant security
-- Corporate event transportation throughout UK
-- Portuguese business networking events
+**Service Integration:**
+- Transport completion → Community event suggestions
+- High networking activity → Premium transport recommendations
+- Frequent engagement → Membership conversion campaigns
+- Student graduation → Professional tier transition
+- Community leadership → Business tier upgrade suggestions
 
-**Cultural Tours:**
-- Portuguese heritage sites across London & UK
-- Food tour experiences (Portuguese restaurants and markets)
-- Cultural event attendance with transportation
-- Community celebration transportation
-
-**Personal Services:**
-- Special occasion transportation with close protection
-- Family gathering coordination (including family-friendly events and occasions)
-- Shopping tours to Portuguese stores across UK
-- Medical appointment assistance for elderly Portuguese speakers
-- Family tour packages for Portuguese cultural sites in London & UK
-
-## LusoTown Community Features (London & UK)
-
-The platform features comprehensive community support services designed specifically for Portuguese speakers living in London and the UK.
-
-### Housing Assistance Program
-- **Targeted Support**: Housing assistance for Portuguese community in London & UK
-- **Subscription Required**: Access requires active £25/year LusoTown membership
-- **Local Focus**: London housing market expertise with Portuguese language support
-- **Community Networks**: Connect with other Portuguese families and professionals
-
-### Neighborhood Groups
-- **Location-Based Communities**: Portuguese community groups across London boroughs and UK cities
-- **Cultural Integration**: Support for Portuguese families integrating into UK neighborhoods
-- **Local Connections**: Hyperlocal networking for Portuguese speakers
-- **Family-Friendly**: Community groups welcoming families with children
-
-### Mentorship Programs
-- **Professional Development**: Career mentorship for Portuguese professionals in UK
-- **Cultural Bridge**: Experienced Portuguese community members supporting newcomers
-- **Industry-Specific**: Technology, business, healthcare, and creative industry mentorship
-- **Bilingual Support**: Mentorship conducted in Portuguese or English
+**Analytics & Insights:**
+- Total ecosystem value calculation
+- Monthly growth rate tracking
+- Cross-platform conversion metrics
+- Portuguese community engagement analysis
+- Revenue projection based on user behavior
 
 ## LusoTown Connections Networking System
 
@@ -436,6 +531,35 @@ interface Connection {
 - conversation_starters: Portuguese cultural conversation prompts
 - network_achievements: Achievement definitions and user progress
 
+**Premium Matches Tables:**
+- matches: Portuguese community compatibility matching records
+- match_preferences: User matching criteria and cultural preferences
+- match_conversations: Direct messaging between matched users
+- match_reports: Safety reporting and blocking functionality
+- compatibility_scores: Algorithm scoring for cultural, professional, location factors
+
+**Subscription & Billing Tables:**
+- subscriptions: User subscription records with Stripe integration
+- subscription_trials: Trial period tracking and management
+- subscription_usage: Feature usage limits and tracking
+- membership_usage: Benefits utilization and discount application
+- student_verifications: University email and document verification
+- corporate_accounts: Business tier multi-user management
+
+**Streaming Platform Tables:**
+- streams: Live streaming events and programming schedule
+- stream_viewers: Real-time viewer tracking and analytics
+- stream_categories: Content categorization (cultural, business, student, VIP)
+- stream_replays: Archive of past streams for premium access
+- stream_chat: Live chat messages and community interaction
+
+**University Partnership Tables:**
+- university_partnerships: Partner institutions and partnership levels
+- student_benefits: Available benefits by university and tier
+- student_events: University-specific events and programming
+- academic_support: Portuguese studies resources and mentorship
+- student_documents: Verification documents and approval status
+
 **Transport & SIA Tables:**
 - transport_bookings: SIA-compliant transport booking records
 - sia_compliance: Compliance questionnaire responses and risk assessments
@@ -448,10 +572,20 @@ interface Connection {
 - mentorship_programs: Professional mentorship matching and tracking
 - subscription_status: User subscription validation and enforcement
 
+**Platform Integration Tables:**
+- user_journeys: Cross-platform user journey tracking
+- service_recommendations: AI-generated service suggestions
+- platform_notifications: Cross-platform notification management
+- ecosystem_analytics: User engagement and revenue tracking
+- conversion_events: Service-to-community bridge tracking
+
 **Storage Buckets:**
 - profile-pictures
 - group-images
 - event-images
+- student-documents
+- stream-thumbnails
+- verification-documents
 
 ## Portuguese Brand Colors
 
@@ -558,6 +692,8 @@ Documentation: `.claude/AGENTS_GUIDE.md`
 - `src/context/FavoritesContext.tsx`: Favorites
 - `src/context/FollowingContext.tsx`: Connections
 - `src/context/NetworkingContext.tsx`: Event-based networking and achievements
+- `src/context/SubscriptionContext.tsx`: Subscription management and billing
+- `src/context/PlatformIntegrationContext.tsx`: Cross-platform analytics and recommendations
 
 **Auth & Data:**
 - `src/lib/auth.ts`: Demo auth system
@@ -589,12 +725,48 @@ Documentation: `.claude/AGENTS_GUIDE.md`
 - `src/components/CustomToursSection.tsx`: Bespoke tour planning interface
 - `src/components/PortugueseCulturalTourRoutes.tsx`: Heritage tours
 
-**SIA Compliance & New Feature Components:**
+**Premium Matches Components:**
+- `src/components/MatchCard.tsx`: Individual profile display with compatibility scoring
+- `src/components/MatchFilters.tsx`: Advanced filtering interface with Portuguese cultural options
+- `src/components/MatchingAlgorithm.tsx`: Compatibility calculation engine
+- `src/components/PremiumMatchesGate.tsx`: Subscription enforcement for premium features
+- `src/components/MatchConversations.tsx`: Direct messaging for matched connections
+- `src/components/SafetyCenter.tsx`: Community safety guidelines and reporting
+
+**Streaming Platform Components:**
+- `src/components/StreamPlayer.tsx`: YouTube video integration with access control
+- `src/components/StreamSchedule.tsx`: Upcoming events and programming calendar
+- `src/components/StreamReplayLibrary.tsx`: Archive of past streams for premium members
+- `src/components/StreamViewerStats.tsx`: Real-time analytics and viewer engagement
+- `src/components/StreamCategories.tsx`: Content categorization and filtering
+- `src/components/LiveChatWidget.tsx`: Real-time community interaction during streams
+
+**Student Partnership Components:**
+- `src/components/StudentVerificationSystem.tsx`: Complete verification workflow
+- Student-exclusive event booking system
+- University partnership portal
+- Portuguese academic resource library
+- Career mentorship matching platform
+
+**Enhanced Subscription Components:**
+- `src/components/SubscriptionContext.tsx`: Complete subscription state management
+- `src/components/MembershipTiers.tsx`: Tier comparison and selection interface
+- `src/components/MembershipPortal.tsx`: User subscription management dashboard
+- `src/components/PaymentProcessor.tsx`: Stripe checkout integration
+- `src/components/SubscriptionGate.tsx`: Membership enforcement component
+
+**Platform Integration Components:**
+- `src/components/PlatformIntegrationContext.tsx`: Cross-platform state management and analytics
+- `src/components/EcosystemIntegration.tsx`: Service-to-community bridging interface
+- `src/components/ServiceCommunityBridge.tsx`: Automatic enrollment and suggestions
+- `src/components/CrossPlatformEngagementTriggers.tsx`: Smart notification system
+- `src/components/ConversionOptimizationEngine.tsx`: Revenue optimization tracking
+
+**SIA Compliance & Transport Components:**
 - `src/components/SIAComplianceQuestionnaire.tsx`: Professional SIA compliance system
 - `src/components/EasySIAQuestionnaire.tsx`: Simplified compliance questionnaire
 - `src/components/MentorshipHero.tsx`: Portuguese mentorship program hero section
 - `src/components/MentorshipProgramsSection.tsx`: Mentorship programs display
-- `src/components/SubscriptionGate.tsx`: Membership enforcement component
 - `src/components/WhatsAppWidget.tsx`: Portuguese community support widget
 
 **Transport Service Infrastructure:**
@@ -635,6 +807,43 @@ The LusoTown platform has identified 10 key administrative and management positi
 
 **Documentation Reference:** `/workspaces/LusoTown/LUSOTOWN_ADMINISTRATIVE_ROLES.md` contains complete role specifications including original salary research.
 
+## Enhanced Features & Platform Integration (December 2025)
+
+### Premium Matches System
+- **Portuguese Cultural Matching**: Advanced compatibility algorithm considering Portuguese heritage, language preferences, and cultural interests
+- **Professional Networking Integration**: Career-focused matching for Portuguese professionals in London & UK
+- **Student Partnership Support**: University-verified student matching with 50% premium feature discounts
+- **Safety-First Design**: Comprehensive reporting system and community guidelines enforcement
+- **Subscription-Based Access**: Tiered access with free daily limits and premium unlimited matching
+
+### Live Streaming Platform (LusoTown TV)
+- **Portuguese Cultural Programming**: Traditional music, fado nights, cultural celebrations from London
+- **Business Workshop Series**: Professional development content for Portuguese entrepreneurs and professionals
+- **Student Educational Content**: Academic support and career guidance streams for Portuguese university students
+- **VIP Business Roundtables**: Exclusive premium content with Portuguese industry leaders
+- **Interactive Community Features**: Live chat, viewer analytics, and subscription-based content access
+
+### Enhanced Subscription Management
+- **Multi-Tier System**: Student (£12.50), Professional (£25), Business (£75), VIP (£150) annual tiers
+- **Stripe Integration**: Secure payment processing with automatic renewal and failed payment handling
+- **Usage Tracking**: Feature limits monitoring for matches, messaging, premium events, and livestream access
+- **Student Verification**: University email and document verification for 50% discount eligibility
+- **Corporate Accounts**: Multi-user management for Portuguese businesses and organizations
+
+### University Partnership Program
+- **8 Partner Universities**: Strategic partnerships with UCL, King's College, Oxford, Cambridge, Manchester, Edinburgh, LSE, Imperial
+- **2,150+ Portuguese Students**: Comprehensive support network across UK universities
+- **Academic Integration**: Portuguese studies program support, research resources, study abroad assistance
+- **Professional Development**: Career mentorship, internship opportunities, business networking events
+- **Cultural Programming**: Student-exclusive events, language exchange, heritage preservation projects
+
+### Platform Integration & Analytics
+- **Cross-Platform Journey Tracking**: Service-to-community and community-to-service conversion optimization
+- **Smart Recommendations**: AI-driven suggestions based on user behavior and Portuguese cultural interests
+- **Revenue Optimization**: Automatic upselling, conversion tracking, and lifetime value analysis
+- **Ecosystem Analytics**: Engagement scoring, growth rate tracking, Portuguese community participation metrics
+- **Intelligent Notifications**: Cross-platform alerts for service completion, community invitations, and revenue opportunities
+
 ## Recent Updates (August 2025)
 
 ### Enhanced User Onboarding & Branding
@@ -667,14 +876,39 @@ The LusoTown platform has identified 10 key administrative and management positi
 4. Verify responsive design shows professional 2x2 grids on mobile (375px width)
 5. Test networking features at /my-network page
 6. Test transport services at /transport page (including SIA compliance and subscription enforcement)
-7. Test new community features: /housing-assistance, /mentorship, /neighborhood-groups
-8. Verify event-based connection functionality
-9. Test dual-audience content (social users and business professionals)
-10. Verify professional, inclusive, and welcoming tone across all content
-11. Ensure event creator monetization features work correctly
-12. Test subscription enforcement for premium features
-13. Verify London & UK geographic messaging is clear throughout
-14. Test Portuguese community imagery displays correctly
+7. **Test Premium Matches System at /matches page**
+   - Verify compatibility scoring algorithm
+   - Test Portuguese cultural filtering options
+   - Check subscription enforcement for premium features
+   - Validate safety reporting and blocking functionality
+8. **Test Streaming Platform at /live page**
+   - Verify YouTube video integration
+   - Test real-time viewer count tracking
+   - Check subscription-based content access
+   - Validate live chat functionality
+9. **Test Student Partnership System at /students page**
+   - Verify university email verification system
+   - Test 50% student discount application
+   - Check partnership university benefits
+   - Validate student event booking system
+10. **Test Enhanced Subscription System at /premium-membership page**
+    - Verify Stripe integration and payment processing
+    - Test tier comparison and upgrade flows
+    - Check usage limits and tracking
+    - Validate corporate account features
+11. **Test Platform Integration Features**
+    - Cross-platform user journey tracking
+    - Service-to-community recommendation engine
+    - Revenue optimization analytics
+    - Smart notification system
+12. Test community features: /housing-assistance, /mentorship, /neighborhood-groups
+13. Verify event-based connection functionality
+14. Test dual-audience content (social users and business professionals)
+15. Verify professional, inclusive, and welcoming tone across all content
+16. Ensure event creator monetization features work correctly
+17. Test subscription enforcement for premium features
+18. Verify London & UK geographic messaging is clear throughout
+19. Test Portuguese community imagery displays correctly
 
 **Demo Account for Testing:**
 - Email: demo@lusotown.com

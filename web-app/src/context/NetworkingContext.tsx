@@ -69,12 +69,78 @@ export interface ConversationStarter {
 }
 
 export interface ConnectionFilters {
-  membershipTier?: 'free' | 'core' | 'premium'
+  membershipTier?: 'free' | 'core' | 'premium' | 'business' | 'student'
   location?: string
   minSharedEvents?: number
   connectionStrength?: 'weak' | 'medium' | 'strong'
   isVerified?: boolean
   lastInteractionDays?: number
+  // Premium filtering options
+  ageRange?: [number, number]
+  interests?: string[]
+  professionalBackground?: string[]
+  languagePreference?: 'portuguese' | 'english' | 'both'
+  culturalBackground?: 'portugal' | 'brazil' | 'other_lusophone' | 'any'
+  relationshipGoal?: 'friendship' | 'professional' | 'cultural_exchange' | 'any'
+  familyStatus?: 'single' | 'family' | 'any'
+}
+
+export interface PremiumMatch {
+  id: string
+  userId: string
+  matchedUserId: string
+  matchedUser: {
+    id: string
+    firstName: string
+    lastName?: string
+    profilePictureUrl?: string
+    location?: string
+    membershipTier: 'free' | 'core' | 'premium' | 'business' | 'student'
+    isVerified?: boolean
+    culturalBackground?: string
+    interests?: string[]
+    professionalBackground?: string
+    bio?: string
+    age?: number
+    languagePreference?: string
+  }
+  compatibilityScore: number
+  sharedInterests: string[]
+  culturalCompatibility: number
+  professionalCompatibility: number
+  locationCompatibility: number
+  matchReason: string
+  isLiked: boolean
+  isMatched: boolean
+  createdAt: string
+  expiresAt?: string
+}
+
+export interface SecureMessage {
+  id: string
+  conversationId: string
+  senderId: string
+  receiverId: string
+  content: string
+  messageType: 'text' | 'photo' | 'voice' | 'system'
+  isRead: boolean
+  isReported: boolean
+  safetyScore: number
+  createdAt: string
+  editedAt?: string
+}
+
+export interface Conversation {
+  id: string
+  participantIds: string[]
+  participants: PremiumMatch['matchedUser'][]
+  lastMessage?: SecureMessage
+  unreadCount: number
+  isActive: boolean
+  connectionType: 'mutual_match' | 'event_based' | 'professional'
+  safetyStatus: 'safe' | 'flagged' | 'blocked'
+  createdAt: string
+  updatedAt: string
 }
 
 export interface NetworkAnalytics {

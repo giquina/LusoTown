@@ -6,6 +6,8 @@ import Header from '@/components/Header'
 import { useLanguage } from '@/context/LanguageContext'
 import { useSubscription } from '@/context/SubscriptionContext'
 import { authService } from '@/lib/auth'
+import MembershipTiers from '@/components/MembershipTiers'
+import MembershipPortal from '@/components/MembershipPortal'
 import { 
   CheckCircleIcon, 
   CreditCardIcon, 
@@ -30,7 +32,8 @@ export default function SubscriptionPage() {
     trialDaysRemaining,
     isLoading,
     createSubscription,
-    cancelSubscription
+    cancelSubscription,
+    membershipTier
   } = useSubscription()
   
   const [isCreatingSubscription, setIsCreatingSubscription] = useState(false)
@@ -107,7 +110,17 @@ export default function SubscriptionPage() {
                 </p>
               </motion.div>
 
-              <div className="grid lg:grid-cols-3 gap-8">
+              {/* Premium Membership Tiers */}
+              {!hasActiveSubscription && !isInTrial && (
+                <MembershipTiers showCurrentTier={false} allowUpgrade={true} />
+              )}
+
+              {/* Member Portal for Active Members */}
+              {hasActiveSubscription && membershipTier !== 'none' && user && (
+                <MembershipPortal userId={user.id} />
+              )}
+
+              <div className="grid lg:grid-cols-3 gap-8 mt-12">
                 {/* Current Status */}
                 <div className="lg:col-span-2">
                   <motion.div

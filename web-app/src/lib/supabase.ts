@@ -680,3 +680,255 @@ export interface PricingCalculationResult {
     type: 'charge' | 'discount'
   }[]
 }
+
+// Premium Membership System Types
+export interface Subscription {
+  id: string
+  user_id: string
+  stripe_subscription_id?: string
+  stripe_customer_id?: string
+  status: 'active' | 'inactive' | 'cancelled' | 'past_due' | 'trialing'
+  plan_type: 'yearly'
+  tier: 'bronze' | 'silver' | 'gold' | 'platinum'
+  current_period_start?: string
+  current_period_end?: string
+  trial_end?: string
+  amount: number
+  currency: string
+  created_at: string
+  updated_at: string
+}
+
+export interface MembershipBenefit {
+  id: string
+  tier: 'bronze' | 'silver' | 'gold' | 'platinum'
+  benefit_type: 'service_discount' | 'cultural_events' | 'business_networking' | 'concierge_support' | 'premium_access'
+  benefit_name: string
+  benefit_description?: string
+  benefit_value?: string
+  is_active: boolean
+  sort_order: number
+  created_at: string
+  updated_at: string
+}
+
+export interface MembershipUsage {
+  id: string
+  user_id: string
+  subscription_id: string
+  benefit_type: string
+  usage_date: string
+  service_type?: string
+  discount_applied?: number
+  amount_saved?: number
+  notes?: string
+  created_at: string
+}
+
+export interface PortugueseCommunityPartnership {
+  id: string
+  partner_name: string
+  partner_type: 'chamber_of_commerce' | 'cultural_institute' | 'business_association' | 'community_organization'
+  partnership_description?: string
+  member_benefits?: string
+  required_tier?: 'bronze' | 'silver' | 'gold' | 'platinum'
+  contact_info?: any
+  is_active: boolean
+  created_at: string
+  updated_at: string
+}
+
+export type MembershipTier = 'basic' | 'student' | 'professional' | 'business' | 'vip'
+
+export interface MembershipTierConfig {
+  tier: MembershipTier
+  name: string
+  namePortuguese: string
+  monthlyPrice: number
+  yearlyPrice: number
+  description: string
+  descriptionPortuguese: string
+  color: string
+  icon: string
+  features: string[]
+  featuresPortuguese: string[]
+  limits: {
+    dailyMatches: number
+    monthlyMessages: number
+    premiumEvents: number
+    livestreamHours: number
+  }
+  popular?: boolean
+  studentDiscount?: number
+}
+
+// Membership utility functions
+export const getMembershipTierConfig = (tier: MembershipTier): MembershipTierConfig => {
+  const configs: Record<MembershipTier, MembershipTierConfig> = {
+    basic: {
+      tier: 'basic',
+      name: 'Basic',
+      namePortuguese: 'Básico',
+      monthlyPrice: 0,
+      yearlyPrice: 0,
+      description: 'Basic community access with limited features',
+      descriptionPortuguese: 'Acesso básico à comunidade com funcionalidades limitadas',
+      color: 'gray',
+      icon: 'UserIcon',
+      features: [
+        '5 matches per day',
+        '20 messages per month',
+        'Basic community events',
+        'Profile browsing'
+      ],
+      featuresPortuguese: [
+        '5 matches por dia',
+        '20 mensagens por mês',
+        'Eventos básicos da comunidade',
+        'Navegação de perfis'
+      ],
+      limits: {
+        dailyMatches: 5,
+        monthlyMessages: 20,
+        premiumEvents: 0,
+        livestreamHours: 0
+      }
+    },
+    student: {
+      tier: 'student',
+      name: 'Student',
+      namePortuguese: 'Estudante',
+      monthlyPrice: 1250, // £12.50
+      yearlyPrice: 12500, // £125 (50% off regular)
+      description: 'Special pricing for university students with verification',
+      descriptionPortuguese: 'Preços especiais para estudantes universitários com verificação',
+      color: 'blue',
+      icon: 'AcademicCapIcon',
+      features: [
+        '50 matches per day',
+        '100 messages per month',
+        '2 premium events per month',
+        '5 hours livestream access',
+        'University partnerships',
+        'Student network access'
+      ],
+      featuresPortuguese: [
+        '50 matches por dia',
+        '100 mensagens por mês',
+        '2 eventos premium por mês',
+        '5 horas de acesso a livestream',
+        'Parcerias universitárias',
+        'Acesso à rede de estudantes'
+      ],
+      limits: {
+        dailyMatches: 50,
+        monthlyMessages: 100,
+        premiumEvents: 2,
+        livestreamHours: 5
+      },
+      studentDiscount: 50
+    },
+    professional: {
+      tier: 'professional',
+      name: 'Professional',
+      namePortuguese: 'Profissional',
+      monthlyPrice: 2500, // £25
+      yearlyPrice: 25000, // £250
+      description: 'Full access for Portuguese professionals in London',
+      descriptionPortuguese: 'Acesso completo para profissionais portugueses em Londres',
+      color: 'primary',
+      icon: 'BriefcaseIcon',
+      features: [
+        'Unlimited matches',
+        'Unlimited messages',
+        '5 premium events per month',
+        '10 hours livestream access',
+        'Professional networking',
+        'Business directory listing'
+      ],
+      featuresPortuguese: [
+        'Matches ilimitados',
+        'Mensagens ilimitadas',
+        '5 eventos premium por mês',
+        '10 horas de acesso a livestream',
+        'Networking profissional',
+        'Listagem no diretório de negócios'
+      ],
+      limits: {
+        dailyMatches: -1,
+        monthlyMessages: -1,
+        premiumEvents: 5,
+        livestreamHours: 10
+      },
+      popular: true
+    },
+    business: {
+      tier: 'business',
+      name: 'Business',
+      namePortuguese: 'Negócios',
+      monthlyPrice: 9900, // £99
+      yearlyPrice: 99000, // £990
+      description: 'Corporate networking and partnership tools',
+      descriptionPortuguese: 'Ferramentas de networking empresarial e parcerias',
+      color: 'amber',
+      icon: 'BuildingOfficeIcon',
+      features: [
+        'Unlimited everything',
+        '25 hours livestream access',
+        'Corporate event hosting',
+        'Partnership opportunities',
+        'Bulk employee accounts',
+        'Business analytics'
+      ],
+      featuresPortuguese: [
+        'Tudo ilimitado',
+        '25 horas de acesso a livestream',
+        'Hospedagem de eventos corporativos',
+        'Oportunidades de parceria',
+        'Contas em massa para funcionários',
+        'Análises de negócios'
+      ],
+      limits: {
+        dailyMatches: -1,
+        monthlyMessages: -1,
+        premiumEvents: -1,
+        livestreamHours: 25
+      }
+    },
+    vip: {
+      tier: 'vip',
+      name: 'VIP',
+      namePortuguese: 'VIP',
+      monthlyPrice: 24900, // £249
+      yearlyPrice: 249000, // £2490
+      description: 'Exclusive VIP experiences and priority access',
+      descriptionPortuguese: 'Experiências VIP exclusivas e acesso prioritário',
+      color: 'purple',
+      icon: 'CrownIcon',
+      features: [
+        'Everything unlimited',
+        'VIP events and experiences',
+        'Personal concierge service',
+        'Priority matching algorithm',
+        'Exclusive networking events',
+        'Direct access to founders'
+      ],
+      featuresPortuguese: [
+        'Tudo ilimitado',
+        'Eventos e experiências VIP',
+        'Serviço de concierge pessoal',
+        'Algoritmo de matching prioritário',
+        'Eventos de networking exclusivos',
+        'Acesso direto aos fundadores'
+      ],
+      limits: {
+        dailyMatches: -1,
+        monthlyMessages: -1,
+        premiumEvents: -1,
+        livestreamHours: -1
+      }
+    }
+  }
+  
+  return configs[tier]
+}

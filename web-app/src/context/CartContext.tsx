@@ -5,7 +5,7 @@ import { toast } from 'react-hot-toast'
 
 export interface CartItem {
   id: string
-  type: 'event' | 'business_service' | 'product' | 'transport_service'
+  type: 'event' | 'business_service' | 'product' | 'transport_service' | 'premium_service'
   title: string
   description?: string
   price: number

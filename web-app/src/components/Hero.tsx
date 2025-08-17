@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { ArrowRightIcon, SparklesIcon, HeartIcon, UsersIcon } from '@heroicons/react/24/outline'
+import { ArrowRightIcon, SparklesIcon, HeartIcon, UsersIcon, MapPinIcon, ShieldCheckIcon } from '@heroicons/react/24/outline'
 import { useState, useEffect } from 'react'
 import SocialLogin from './SocialLogin'
 import SearchBar from './SearchBar'
@@ -94,6 +94,44 @@ export default function Hero() {
               </div>
             </div>
 
+            {/* Premium Services Quick Access */}
+            <div className={`transition-all duration-1000 delay-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+              <div className="bg-white/60 backdrop-blur-lg rounded-2xl p-4 sm:p-6 border border-white/20 shadow-lg">
+                <h3 className="text-lg font-bold text-gray-800 mb-4 text-center">
+                  {t('hero.services.title', 'Premium Portuguese Services')}
+                </h3>
+                <div className="grid grid-cols-3 gap-3">
+                  <a
+                    href="/services#cultural-tours"
+                    className="group flex flex-col items-center gap-2 p-3 rounded-xl bg-primary-50 hover:bg-primary-100 transition-all duration-200 hover:scale-105"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center">
+                      <MapPinIcon className="h-5 w-5 text-white" />
+                    </div>
+                    <span className="text-xs font-semibold text-gray-700 text-center">Cultural Tours</span>
+                  </a>
+                  <a
+                    href="/services#executive-transport"
+                    className="group flex flex-col items-center gap-2 p-3 rounded-xl bg-secondary-50 hover:bg-secondary-100 transition-all duration-200 hover:scale-105"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-secondary-600 flex items-center justify-center">
+                      <ArrowRightIcon className="h-5 w-5 text-white" />
+                    </div>
+                    <span className="text-xs font-semibold text-gray-700 text-center">Executive Transport</span>
+                  </a>
+                  <a
+                    href="/services#close-protection"
+                    className="group flex flex-col items-center gap-2 p-3 rounded-xl bg-premium-50 hover:bg-premium-100 transition-all duration-200 hover:scale-105"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-premium-600 flex items-center justify-center">
+                      <ShieldCheckIcon className="h-5 w-5 text-white" />
+                    </div>
+                    <span className="text-xs font-semibold text-gray-700 text-center">Close Protection</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
             {/* CTA Buttons */}
             <div className={`flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6 transition-all duration-1000 delay-800 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
               <a
@@ -107,10 +145,10 @@ export default function Hero() {
                 </span>
               </a>
               <a
-                href="/signup"
+                href="/services"
                 className="text-base sm:text-lg font-bold px-6 sm:px-8 py-3 sm:py-4 bg-white/70 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:text-secondary-700 hover:-translate-y-1 w-full sm:w-auto text-center"
               >
-                {t('hero.cta.secondary')}
+                {t('hero.cta.services', 'Premium Services')}
               </a>
               <a
                 href="/host"

@@ -11,6 +11,8 @@ import { FollowingProvider } from '@/context/FollowingContext'
 import { CartProvider } from '@/context/CartContext'
 import { NetworkingProvider } from '@/context/NetworkingContext'
 import { SubscriptionProvider } from '@/context/SubscriptionContext'
+import { NotificationProvider } from '@/context/NotificationContext'
+import { PlatformIntegrationProvider } from '@/context/PlatformIntegrationContext'
 import { AuthPopupProvider } from '@/components/AuthPopupProvider'
 import AuthPopup from '@/components/AuthPopup'
 import AuthIntentHandler from '@/components/AuthIntentHandler'
@@ -167,41 +169,45 @@ export default function RootLayout({
           <LanguageProvider>
             <FavoritesProvider>
               <FollowingProvider>
-                <NetworkingProvider>
-                  <SubscriptionProvider>
-                    <CartProvider>
-                      <AuthPopupProvider>
-                  <ComponentErrorBoundary componentName="User Type Selection">
-                    <UserTypeSelection />
-                  </ComponentErrorBoundary>
-                  
-                  <ErrorBoundary>
-                    {children}
-                  </ErrorBoundary>
-                  
-                  <ComponentErrorBoundary componentName="WhatsApp Widget">
-                    <WhatsAppWidget />
-                  </ComponentErrorBoundary>
-                  
-                  <ComponentErrorBoundary componentName="Live Feed Notifications">
-                    <LiveFeedNotifications />
-                  </ComponentErrorBoundary>
-                  
-                  <ComponentErrorBoundary componentName="Favorite Notification">
-                    <FavoriteNotification />
-                  </ComponentErrorBoundary>
-                  
-                  <ComponentErrorBoundary componentName="Auth Popup">
-                    <AuthPopup />
-                  </ComponentErrorBoundary>
-                  
-                  <ComponentErrorBoundary componentName="Auth Intent Handler">
-                    <AuthIntentHandler />
-                  </ComponentErrorBoundary>
-                      </AuthPopupProvider>
-                    </CartProvider>
-                  </SubscriptionProvider>
-                </NetworkingProvider>
+                <CartProvider>
+                  <NetworkingProvider>
+                    <SubscriptionProvider>
+                      <NotificationProvider>
+                        <AuthPopupProvider>
+                          <PlatformIntegrationProvider>
+                            <ComponentErrorBoundary componentName="User Type Selection">
+                              <UserTypeSelection />
+                            </ComponentErrorBoundary>
+                            
+                            <ErrorBoundary>
+                              {children}
+                            </ErrorBoundary>
+                            
+                            <ComponentErrorBoundary componentName="WhatsApp Widget">
+                              <WhatsAppWidget />
+                            </ComponentErrorBoundary>
+                            
+                            <ComponentErrorBoundary componentName="Live Feed Notifications">
+                              <LiveFeedNotifications />
+                            </ComponentErrorBoundary>
+                            
+                            <ComponentErrorBoundary componentName="Favorite Notification">
+                              <FavoriteNotification />
+                            </ComponentErrorBoundary>
+                            
+                            <ComponentErrorBoundary componentName="Auth Popup">
+                              <AuthPopup />
+                            </ComponentErrorBoundary>
+                            
+                            <ComponentErrorBoundary componentName="Auth Intent Handler">
+                              <AuthIntentHandler />
+                            </ComponentErrorBoundary>
+                          </PlatformIntegrationProvider>
+                        </AuthPopupProvider>
+                      </NotificationProvider>
+                    </SubscriptionProvider>
+                  </NetworkingProvider>
+                </CartProvider>
               </FollowingProvider>
             </FavoritesProvider>
           </LanguageProvider>

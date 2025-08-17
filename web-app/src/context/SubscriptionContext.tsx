@@ -16,12 +16,15 @@ export interface Subscription {
   stripe_subscription_id?: string
   stripe_customer_id?: string
   status: 'active' | 'inactive' | 'cancelled' | 'past_due' | 'trialing'
-  plan_type: 'yearly'
+  plan_type: 'monthly' | 'yearly'
+  tier: 'basic' | 'student' | 'professional' | 'business' | 'vip'
   current_period_start?: string
   current_period_end?: string
   trial_end?: string
   amount: number
   currency: string
+  student_verified?: boolean
+  corporate_account_id?: string
   created_at: string
   updated_at: string
 }
@@ -35,22 +38,54 @@ export interface SubscriptionTrial {
   created_at: string
 }
 
+export interface SubscriptionUsageLimits {
+  dailyMatches: number
+  monthlyMessages: number
+  premiumEvents: number
+  livestreamHours: number
+  hasUnlimitedAccess: boolean
+}
+
+export interface SubscriptionUsage {
+  dailyMatchesUsed: number
+  monthlyMessagesUsed: number
+  premiumEventsUsed: number
+  livestreamHoursUsed: number
+  lastResetDate: string
+}
+
 interface SubscriptionContextType {
   subscription: Subscription | null
   trial: SubscriptionTrial | null
+  usage: SubscriptionUsage | null
   isLoading: boolean
   hasActiveSubscription: boolean
   isInTrial: boolean
   trialDaysRemaining: number
   subscriptionRequired: boolean
   stripe: Stripe | null
+  membershipTier: 'basic' | 'student' | 'professional' | 'business' | 'vip'
+  serviceDiscount: number
+  usageLimits: SubscriptionUsageLimits
+  
+  // Feature access
+  canSendMessage: () => boolean
+  canCreateMatch: () => boolean
+  canAccessPremiumEvent: () => boolean
+  canAccessLivestream: () => boolean
+  getRemainingMatches: () => number
+  getRemainingMessages: () => number
   
   // Actions
   checkSubscriptionStatus: () => Promise<void>
-  createSubscription: () => Promise<string | null>
+  createSubscription: (tier?: 'basic' | 'student' | 'professional' | 'business' | 'vip', planType?: 'monthly' | 'yearly') => Promise<string | null>
+  upgradeSubscription: (newTier: 'basic' | 'student' | 'professional' | 'business' | 'vip') => Promise<boolean>
   cancelSubscription: () => Promise<boolean>
   redirectToSubscription: () => void
   markTrialAsUsed: () => Promise<void>
+  trackMembershipUsage: (benefitType: string, serviceType: string, discountApplied?: number, amountSaved?: number) => Promise<void>
+  trackFeatureUsage: (feature: 'match' | 'message' | 'premium_event' | 'livestream') => Promise<boolean>
+  validateStudentStatus: (studentEmail: string, universityId: string) => Promise<boolean>
 }
 
 const SubscriptionContext = createContext<SubscriptionContextType | undefined>(undefined)
@@ -63,6 +98,7 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
   const { language, t } = useLanguage()
   const [subscription, setSubscription] = useState<Subscription | null>(null)
   const [trial, setTrial] = useState<SubscriptionTrial | null>(null)
+  const [usage, setUsage] = useState<SubscriptionUsage | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [stripe, setStripe] = useState<Stripe | null>(null)
 
@@ -138,7 +174,10 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
     }
   }
 
-  const createSubscription = async (): Promise<string | null> => {
+  const createSubscription = async (
+    tier: 'basic' | 'student' | 'professional' | 'business' | 'vip' = 'professional',
+    planType: 'monthly' | 'yearly' = 'yearly'
+  ): Promise<string | null> => {
     try {
       const user = authService.getCurrentUser()
       if (!user || authService.isDemoUser()) {
@@ -155,6 +194,8 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
           userId: user.id,
           userEmail: user.email,
           userName: user.name,
+          tier: tier,
+          planType: planType,
         }),
       })
 
@@ -241,6 +282,49 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
     window.location.href = '/subscription'
   }
 
+  const upgradeSubscription = async (newTier: 'basic' | 'student' | 'professional' | 'business' | 'vip'): Promise<boolean> => {
+    try {
+      const user = authService.getCurrentUser()
+      if (!user || !subscription) {
+        return false
+      }
+
+      const response = await fetch('/api/upgrade-subscription', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          subscriptionId: subscription.stripe_subscription_id,
+          newTier: newTier,
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to upgrade subscription')
+      }
+
+      // Refresh subscription status
+      await checkSubscriptionStatus()
+      
+      toast.success(
+        language === 'pt' 
+          ? 'Subscrição atualizada com sucesso' 
+          : 'Subscription upgraded successfully'
+      )
+      
+      return true
+    } catch (error) {
+      console.error('Error upgrading subscription:', error)
+      toast.error(
+        language === 'pt' 
+          ? 'Erro ao atualizar subscrição' 
+          : 'Error upgrading subscription'
+      )
+      return false
+    }
+  }
+
   const markTrialAsUsed = async () => {
     try {
       const user = authService.getCurrentUser()
@@ -258,6 +342,151 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
       }
     } catch (error) {
       console.error('Error marking trial as used:', error)
+    }
+  }
+
+  const trackMembershipUsage = async (
+    benefitType: string, 
+    serviceType: string, 
+    discountApplied: number = 0, 
+    amountSaved: number = 0
+  ) => {
+    try {
+      const user = authService.getCurrentUser()
+      if (!user || !subscription) return
+
+      const { error } = await supabase
+        .from('membership_usage')
+        .insert({
+          user_id: user.id,
+          subscription_id: subscription.id,
+          benefit_type: benefitType,
+          service_type: serviceType,
+          discount_applied: discountApplied,
+          amount_saved: amountSaved,
+        })
+
+      if (error) {
+        console.error('Error tracking membership usage:', error)
+      }
+    } catch (error) {
+      console.error('Error tracking membership usage:', error)
+    }
+  }
+
+  const trackFeatureUsage = async (feature: 'match' | 'message' | 'premium_event' | 'livestream'): Promise<boolean> => {
+    try {
+      const user = authService.getCurrentUser()
+      if (!user) return false
+
+      // Check current usage limits
+      if (!canUseFeature(feature)) {
+        return false
+      }
+
+      // Update usage counts
+      const today = new Date().toISOString().split('T')[0]
+      const currentMonth = new Date().toISOString().substring(0, 7)
+      
+      let updatedUsage = { ...usage }
+      if (!updatedUsage || updatedUsage.lastResetDate !== today) {
+        // Reset daily counters
+        updatedUsage = {
+          dailyMatchesUsed: 0,
+          monthlyMessagesUsed: usage?.lastResetDate?.substring(0, 7) === currentMonth ? usage.monthlyMessagesUsed : 0,
+          premiumEventsUsed: 0,
+          livestreamHoursUsed: 0,
+          lastResetDate: today
+        }
+      }
+
+      // Increment the specific counter
+      switch (feature) {
+        case 'match':
+          updatedUsage.dailyMatchesUsed++
+          break
+        case 'message':
+          updatedUsage.monthlyMessagesUsed++
+          break
+        case 'premium_event':
+          updatedUsage.premiumEventsUsed++
+          break
+        case 'livestream':
+          updatedUsage.livestreamHoursUsed++
+          break
+      }
+
+      // Save to database
+      const { error } = await supabase
+        .from('subscription_usage')
+        .upsert({
+          user_id: user.id,
+          ...updatedUsage
+        })
+
+      if (error) {
+        console.error('Error tracking feature usage:', error)
+        return false
+      }
+
+      setUsage(updatedUsage)
+      return true
+    } catch (error) {
+      console.error('Error tracking feature usage:', error)
+      return false
+    }
+  }
+
+  const validateStudentStatus = async (studentEmail: string, universityId: string): Promise<boolean> => {
+    try {
+      const response = await fetch('/api/validate-student', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: studentEmail,
+          universityId: universityId,
+        }),
+      })
+
+      if (!response.ok) {
+        return false
+      }
+
+      const { isValid } = await response.json()
+      return isValid
+    } catch (error) {
+      console.error('Error validating student status:', error)
+      return false
+    }
+  }
+
+  // Helper function to check feature usage
+  const canUseFeature = (feature: 'match' | 'message' | 'premium_event' | 'livestream'): boolean => {
+    if (usageLimits.hasUnlimitedAccess) return true
+    if (!usage) return true // First time usage
+
+    const today = new Date().toISOString().split('T')[0]
+    const currentMonth = new Date().toISOString().substring(0, 7)
+    
+    // Reset counters if needed
+    const dailyReset = usage.lastResetDate !== today
+    const monthlyReset = usage.lastResetDate.substring(0, 7) !== currentMonth
+
+    switch (feature) {
+      case 'match':
+        const dailyMatches = dailyReset ? 0 : usage.dailyMatchesUsed
+        return dailyMatches < usageLimits.dailyMatches
+      case 'message':
+        const monthlyMessages = monthlyReset ? 0 : usage.monthlyMessagesUsed
+        return monthlyMessages < usageLimits.monthlyMessages
+      case 'premium_event':
+        return usage.premiumEventsUsed < usageLimits.premiumEvents
+      case 'livestream':
+        return usage.livestreamHoursUsed < usageLimits.livestreamHours
+      default:
+        return false
     }
   }
 
@@ -282,20 +511,136 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
   // Subscription is required for all users except demo users
   const subscriptionRequired = !authService.isDemoUser() && !hasActiveSubscription && !isInTrial
 
+  // Get current membership tier
+  const membershipTier: 'basic' | 'student' | 'professional' | 'business' | 'vip' = 
+    hasActiveSubscription && subscription?.tier ? subscription.tier : 'basic'
+
+  // Calculate service discount based on tier
+  const serviceDiscount = (() => {
+    switch (membershipTier) {
+      case 'student': return 50 // 50% student discount
+      case 'professional': return 10
+      case 'business': return 20
+      case 'vip': return 30
+      default: return 0
+    }
+  })()
+
+  // Usage limits based on tier
+  const usageLimits: SubscriptionUsageLimits = (() => {
+    switch (membershipTier) {
+      case 'basic':
+        return {
+          dailyMatches: 5,
+          monthlyMessages: 20,
+          premiumEvents: 0,
+          livestreamHours: 0,
+          hasUnlimitedAccess: false
+        }
+      case 'student':
+        return {
+          dailyMatches: 50,
+          monthlyMessages: 100,
+          premiumEvents: 2,
+          livestreamHours: 5,
+          hasUnlimitedAccess: false
+        }
+      case 'professional':
+        return {
+          dailyMatches: -1, // unlimited
+          monthlyMessages: -1, // unlimited
+          premiumEvents: 5,
+          livestreamHours: 10,
+          hasUnlimitedAccess: true
+        }
+      case 'business':
+        return {
+          dailyMatches: -1, // unlimited
+          monthlyMessages: -1, // unlimited
+          premiumEvents: -1, // unlimited
+          livestreamHours: 25,
+          hasUnlimitedAccess: true
+        }
+      case 'vip':
+        return {
+          dailyMatches: -1, // unlimited
+          monthlyMessages: -1, // unlimited
+          premiumEvents: -1, // unlimited
+          livestreamHours: -1, // unlimited
+          hasUnlimitedAccess: true
+        }
+      default:
+        return {
+          dailyMatches: 5,
+          monthlyMessages: 20,
+          premiumEvents: 0,
+          livestreamHours: 0,
+          hasUnlimitedAccess: false
+        }
+    }
+  })()
+
+  // Feature access functions
+  const canSendMessage = (): boolean => {
+    return canUseFeature('message')
+  }
+
+  const canCreateMatch = (): boolean => {
+    return canUseFeature('match')
+  }
+
+  const canAccessPremiumEvent = (): boolean => {
+    return canUseFeature('premium_event')
+  }
+
+  const canAccessLivestream = (): boolean => {
+    return canUseFeature('livestream')
+  }
+
+  const getRemainingMatches = (): number => {
+    if (usageLimits.hasUnlimitedAccess || usageLimits.dailyMatches === -1) return -1
+    
+    const today = new Date().toISOString().split('T')[0]
+    const dailyUsed = usage?.lastResetDate === today ? usage.dailyMatchesUsed : 0
+    return Math.max(0, usageLimits.dailyMatches - dailyUsed)
+  }
+
+  const getRemainingMessages = (): number => {
+    if (usageLimits.hasUnlimitedAccess || usageLimits.monthlyMessages === -1) return -1
+    
+    const currentMonth = new Date().toISOString().substring(0, 7)
+    const monthlyUsed = usage?.lastResetDate?.substring(0, 7) === currentMonth ? usage.monthlyMessagesUsed : 0
+    return Math.max(0, usageLimits.monthlyMessages - monthlyUsed)
+  }
+
   const value: SubscriptionContextType = {
     subscription,
     trial,
+    usage,
     isLoading,
     hasActiveSubscription,
     isInTrial,
     trialDaysRemaining,
     subscriptionRequired,
     stripe,
+    membershipTier,
+    serviceDiscount,
+    usageLimits,
+    canSendMessage,
+    canCreateMatch,
+    canAccessPremiumEvent,
+    canAccessLivestream,
+    getRemainingMatches,
+    getRemainingMessages,
     checkSubscriptionStatus,
     createSubscription,
+    upgradeSubscription,
     cancelSubscription,
     redirectToSubscription,
     markTrialAsUsed,
+    trackMembershipUsage,
+    trackFeatureUsage,
+    validateStudentStatus,
   }
 
   return (

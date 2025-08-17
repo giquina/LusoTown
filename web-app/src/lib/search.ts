@@ -4,7 +4,7 @@ import { Event, eventService } from '@/lib/events'
 
 export interface SearchResult {
   id: string
-  type: 'event' | 'business' | 'group' | 'page'
+  type: 'event' | 'business' | 'group' | 'page' | 'service'
   title: string
   description: string
   url: string
@@ -99,6 +99,58 @@ const mockGroups = [
     image: '/images/groups/football.jpg',
     memberCount: 156,
     tags: ['football', 'sports', 'national team', 'premier league', 'pubs']
+  }
+]
+
+// Premium services data for search
+const premiumServices = [
+  {
+    id: 'service-cultural-tours',
+    name: 'Portuguese Cultural Tours',
+    description: 'Discover London\'s hidden Portuguese heritage with expert bilingual guides',
+    category: 'Cultural Experience',
+    location: 'London',
+    url: '/services#cultural-tours',
+    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/portuguese-cultural-tour-london_dlqxkx.jpg',
+    price: 45,
+    rating: 4.9,
+    tags: ['cultural tours', 'portuguese heritage', 'bilingual guides', 'london history', 'heritage sites']
+  },
+  {
+    id: 'service-executive-transport',
+    name: 'Executive Transport Services',
+    description: 'Professional chauffeur services with Portuguese cultural expertise',
+    category: 'Transportation',
+    location: 'London & UK',
+    url: '/services#executive-transport',
+    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/executive-transport-london_dlqxkx.jpg',
+    price: 35,
+    rating: 4.8,
+    tags: ['executive transport', 'chauffeur', 'luxury vehicles', 'airport transfer', 'business transport']
+  },
+  {
+    id: 'service-close-protection',
+    name: 'Close Protection Services',
+    description: 'SIA-licensed CPOs providing discrete, culturally-aware security',
+    category: 'Security',
+    location: 'London & UK',
+    url: '/services#close-protection',
+    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/close-protection-london_dlqxkx.jpg',
+    price: 800,
+    rating: 5.0,
+    tags: ['close protection', 'security', 'sia licensed', 'vip escort', 'personal protection']
+  },
+  {
+    id: 'service-transport-sia',
+    name: 'Transport & SIA Compliance',
+    description: 'Comprehensive transport services with full SIA compliance and luxury fleet',
+    category: 'Premium Transport',
+    location: 'London & UK',
+    url: '/transport',
+    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/premium-security-service_dlqxkx.jpg',
+    price: 75,
+    rating: 4.9,
+    tags: ['transport', 'sia compliance', 'luxury fleet', 'security transport', 'bentley', 'mercedes']
   }
 ]
 
@@ -320,6 +372,37 @@ export async function searchContent(query: string): Promise<SearchResult[]> {
     }
   }
   
+  // Search premium services
+  for (const service of premiumServices) {
+    let score = 0
+    
+    score += calculateSimilarity(searchTerm, service.name) * 3
+    score += calculateSimilarity(searchTerm, service.description) * 2
+    score += calculateSimilarity(searchTerm, service.category) * 1.5
+    score += calculateSimilarity(searchTerm, service.location) * 1
+    
+    for (const tag of service.tags) {
+      score += calculateSimilarity(searchTerm, tag) * 1
+    }
+    
+    if (score > 0.5) {
+      results.push({
+        id: service.id,
+        type: 'service',
+        title: service.name,
+        description: service.description,
+        url: service.url,
+        location: service.location,
+        category: service.category,
+        tags: service.tags,
+        image: service.image,
+        price: service.price,
+        rating: service.rating,
+        score
+      })
+    }
+  }
+
   // Search pages
   for (const page of mockPages) {
     let score = 0
