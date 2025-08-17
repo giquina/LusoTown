@@ -30,8 +30,8 @@ const culturalExperiences: CulturalExperience[] = [
     name: 'Little Portugal Walking Tours',
     namePortuguese: 'Tours a Pé da Pequena Portugal',
     category: 'tours',
-    description: 'Authentic guided tours through London\'s Portuguese neighborhoods, visiting family-run businesses, traditional bakeries, and cultural landmarks.',
-    descriptionPortuguese: 'Tours guiados autênticos pelos bairros portugueses de Londres, visitando negócios familiares, padarias tradicionais e marcos culturais.',
+    description: 'Authentic guided tours through London\'s Portuguese neighborhoods, visiting community-run businesses, traditional bakeries, and cultural landmarks.',
+    descriptionPortuguese: 'Tours guiados autênticos pelos bairros portugueses de Londres, visitando negócios comunitários, padarias tradicionais e marcos culturais.',
     icon: MapPin,
     color: 'coral',
     featured: true,
@@ -42,13 +42,13 @@ const culturalExperiences: CulturalExperience[] = [
     communityImpactPortuguese: 'Apoia negócios portugueses locais e preserva o património cultural através de narrativas autênticas e conexões comunitárias.',
     memberBenefits: [
       'Access to 12+ authentic Portuguese cultural tours',
-      'Meet Portuguese families and business owners',
+      'Meet Portuguese community members and business owners',
       'Traditional Portuguese food tastings included',
       'Cultural storytelling by community elders'
     ],
     memberBenefitsPortuguese: [
       'Acesso a 12+ tours culturais portugueses autênticos',
-      'Conhecer famílias portuguesas e proprietários de negócios',
+      'Conhecer membros da comunidade portuguesa e proprietários de negócios',
       'Provas de comida portuguesa tradicional incluídas',
       'Narrativas culturais por anciãos da comunidade'
     ]
@@ -69,13 +69,13 @@ const culturalExperiences: CulturalExperience[] = [
     communityImpact: 'Preserves Portuguese musical heritage while creating intimate cultural connections and supporting Portuguese artists.',
     communityImpactPortuguese: 'Preserva o património musical português enquanto cria conexões culturais íntimas e apoia artistas portugueses.',
     memberBenefits: [
-      'Intimate Fado evenings with Portuguese families',
+      'Intimate Fado evenings with Portuguese community members',
       'Traditional Portuguese dinner experiences',
       'Portuguese guitar music education',
       'Cultural context and saudade understanding'
     ],
     memberBenefitsPortuguese: [
-      'Serões íntimos de Fado com famílias portuguesas',
+      'Serões íntimos de Fado com membros da comunidade portuguesa',
       'Experiências de jantar português tradicional',
       'Educação musical de guitarra portuguesa',
       'Contexto cultural e compreensão da saudade'
@@ -100,13 +100,13 @@ const culturalExperiences: CulturalExperience[] = [
       'Santos Populares and traditional Portuguese festivals',
       'Portuguese holiday celebrations with community',
       'Cultural workshops and educational events',
-      'Family-friendly Portuguese activities'
+      'All-ages Portuguese activities'
     ],
     memberBenefitsPortuguese: [
       'Santos Populares e festivais portugueses tradicionais',
       'Celebrações de feriados portugueses com a comunidade',
       'Workshops culturais e eventos educativos',
-      'Atividades portuguesas para toda a família'
+      'Atividades portuguesas para todas as idades'
     ]
   },
   {
@@ -114,8 +114,8 @@ const culturalExperiences: CulturalExperience[] = [
     name: 'Portuguese Business Network',
     namePortuguese: 'Rede de Negócios Portugueses',
     category: 'business',
-    description: 'Authentic Portuguese businesses in London, from family restaurants to professional services.',
-    descriptionPortuguese: 'Negócios portugueses autênticos em Londres, desde restaurantes familiares a serviços profissionais.',
+    description: 'Authentic Portuguese businesses in London, from community restaurants to professional services.',
+    descriptionPortuguese: 'Negócios portugueses autênticos em Londres, desde restaurantes comunitários a serviços profissionais.',
     icon: Building,
     color: 'accent',
     featured: false,
@@ -501,7 +501,7 @@ export default function PortugueseCulturalHub({ isPortuguese, onExploreExperienc
                     <ul className="text-sm opacity-90 space-y-1">
                       <li>• {isPortuguese ? 'Eventos comunitários exclusivos' : 'Exclusive community events'}</li>
                       <li>• {isPortuguese ? 'Calendário cultural português' : 'Portuguese cultural calendar'}</li>
-                      <li>• {isPortuguese ? 'Conexões familiares autênticas' : 'Authentic family connections'}</li>
+                      <li>• {isPortuguese ? 'Conexões comunitárias autênticas' : 'Authentic community connections'}</li>
                     </ul>
                   </div>
                   <div>

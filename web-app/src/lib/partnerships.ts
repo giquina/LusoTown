@@ -939,7 +939,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
       'Group travel arrangements',
       'Corporate travel solutions',
       'Portuguese diaspora travel packages',
-      'Family reunion flight discounts',
+      'Community reunion flight discounts',
       'Portuguese business delegation services'
     ],
     eventsHosted: [
@@ -955,7 +955,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
       'Extra baggage allowance for Portuguese trips',
       'Access to TAP lounges with guest privileges',
       'Portuguese cultural event travel packages',
-      'Family group booking discounts',
+      'Community group booking discounts',
       'Business travel account priority setup'
     ],
     
@@ -980,7 +980,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
         id: 'prog-heritage-travel',
         name: 'Portuguese Heritage Travel Program',
         namePortuguese: 'Programa de Viagens do Património Português',
-        description: 'Specialized travel packages for Portuguese diaspora visiting family, exploring heritage sites, and maintaining cultural connections.',
+        description: 'Specialized travel packages for Portuguese diaspora visiting community, exploring heritage sites, and maintaining cultural connections.',
         targetAudience: ['Portuguese diaspora', 'Heritage families', 'Cultural travelers'],
         frequency: 'Year-round availability',
         cost: 'Discounted packages from £189 return',
@@ -1321,12 +1321,12 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     upcomingEvents: [
       {
         id: 'event-kcl-heritage',
-        title: 'Portuguese Heritage Language Family Day',
-        titlePortuguese: 'Dia da Família da Língua Portuguesa como Herança',
+        title: 'Portuguese Heritage Language Community Day',
+        titlePortuguese: 'Dia da Comunidade da Língua Portuguesa como Herança',
         date: '2024-09-14',
         time: '10:00',
         location: 'King\'s College London, Virginia Woolf Building',
-        description: 'Family-friendly event promoting Portuguese language maintenance across generations',
+        description: 'Community-focused event promoting Portuguese language maintenance across generations',
         capacity: 60,
         price: 0,
         partnerId: 'partner-kings-college-portuguese'
@@ -1470,7 +1470,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
       'Immigration and visa support',
       'Portuguese property law assistance',
       'Business and commercial law guidance',
-      'Family law services for Portuguese families',
+      'Legal services for Portuguese community members',
       'Legal qualification recognition support',
       'Pro bono legal clinic for community',
       'Legal training and professional development'
@@ -1597,7 +1597,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
       'Heritage tour guide discounts',
       'Cultural preservation volunteer opportunities',
       'Portuguese heritage resource library access',
-      'Family heritage documentation services'
+      'Community heritage documentation services'
     ],
     
     communitySize: 650,

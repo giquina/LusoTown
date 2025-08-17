@@ -1,4 +1,4 @@
-// Additional London Events for Portuguese Community - Women 40+ and Family Events
+// Additional London Events for Portuguese Community - Women 40+ and Community Events
 
 export const additionalLondonEvents = [
   // WOMEN 40+ SOPHISTICATED EXPERIENCES - Elegant experiences for mature Portuguese women
@@ -123,12 +123,12 @@ export const additionalLondonEvents = [
     lastBookingTime: '168'
   },
 
-  // FAMILY EXPERIENCES - Portuguese families exploring London together
+  // COMMUNITY EXPERIENCES - Portuguese community members exploring London together
   {
-    id: 'london-family-harry-potter-1',
-    title: 'Harry Potter Studio Tour: Portuguese Families Magic Adventure',
-    description: 'Magical day trip to Harry Potter Studios for Portuguese families. Explore the wizarding world, learn filmmaking secrets, and create enchanting memories with families who share your language and cultural background.',
-    longDescription: 'Uma aventura mágica para toda a família portuguesa! Join fellow Portuguese-speaking families for an unforgettable day at the Warner Bros. Studio Tour London – The Making of Harry Potter, where movie magic meets family bonding in our native language.\n\nOur family adventure begins with comfortable coach transport from central London, giving children and parents time to get acquainted with other Portuguese families. Our family guide, João Santos, is a Portuguese father and film enthusiast who will share fascinating behind-the-scenes stories in both Portuguese and English.\n\nAt the studios, we\'ll explore the Great Hall where the Hogwarts feasts were filmed, walk down Diagon Alley, visit the Forbidden Forest, and see costumes, props, and sets from all eight films. Children will be amazed by the Hogwarts Express and Platform 9¾, while parents appreciate the incredible attention to detail and craftsmanship.\n\nWhat makes this experience special is sharing it with other Portuguese families. Children can make friends with peers who speak Portuguese at home, while parents connect over the unique experience of raising bilingual children in London. We\'ll have plenty of photo opportunities and time for families to explore together.\n\nThe day includes a traditional British lunch at the studio café, where families can continue conversations about the Harry Potter experience and share stories about introducing their children to both British and Portuguese culture.\n\nPerfect for families with children aged 6-16, this experience celebrates the magic of childhood while strengthening connections within London\'s Portuguese community. Transport, entry tickets, and guided experience included.',
+    id: 'london-community-harry-potter-1',
+    title: 'Harry Potter Studio Tour: Portuguese Community Magic Adventure',
+    description: 'Magical day trip to Harry Potter Studios for Portuguese community members. Explore the wizarding world, learn filmmaking secrets, and create enchanting memories with community members who share your language and cultural background.',
+    longDescription: 'Uma aventura mágica para toda a comunidade portuguesa! Join fellow Portuguese-speaking community members for an unforgettable day at the Warner Bros. Studio Tour London – The Making of Harry Potter, where movie magic meets community bonding in our native language.\n\nOur community adventure begins with comfortable coach transport from central London, giving participants time to get acquainted with other Portuguese community members. Our community guide, João Santos, is a Portuguese community leader and film enthusiast who will share fascinating behind-the-scenes stories in both Portuguese and English.\n\nAt the studios, we\'ll explore the Great Hall where the Hogwarts feasts were filmed, walk down Diagon Alley, visit the Forbidden Forest, and see costumes, props, and sets from all eight films. Younger participants will be amazed by the Hogwarts Express and Platform 9¾, while adults appreciate the incredible attention to detail and craftsmanship.\n\nWhat makes this experience special is sharing it with other Portuguese community members. Young people can make friends with peers who speak Portuguese at home, while adults connect over the unique experience of raising bilingual children in London. We\'ll have plenty of photo opportunities and time for community members to explore together.\n\nThe day includes a traditional British lunch at the studio café, where community members can continue conversations about the Harry Potter experience and share stories about introducing young people to both British and Portuguese culture.\n\nPerfect for Portuguese community members with young people aged 6-16, this experience celebrates the magic of childhood while strengthening connections within London\'s Portuguese community. Transport, entry tickets, and guided experience included.',
     date: '2025-09-14',
     time: '09:00',
     endTime: '17:00',
@@ -137,10 +137,10 @@ export const additionalLondonEvents = [
     coordinates: { lat: 51.6906, lng: -0.4180 },
     category: 'Travel & Adventures',
     subcategory: 'Day Trips',
-    tags: ['family', 'Harry Potter', 'children', 'Portuguese families', 'day trip', 'magic', 'studios'],
-    hostId: 'host-joao-family',
+    tags: ['community', 'Harry Potter', 'children', 'Portuguese community', 'day trip', 'magic', 'studios'],
+    hostId: 'host-joao-community',
     hostName: 'João Santos',
-    hostBio: 'Portuguese father and film enthusiast, organizing magical family experiences that bring Portuguese families together in London',
+    hostBio: 'Portuguese community leader and film enthusiast, organizing magical community experiences that bring Portuguese community members together in London',
     membershipRequired: 'free',
     price: 89,
     currency: 'GBP',
@@ -154,21 +154,21 @@ export const additionalLondonEvents = [
       'https://images.unsplash.com/photo-1551269901-5c5e14c25df7?w=600&h=400&fit=crop&auto=format',
       'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&auto=format'
     ],
-    whatToBring: ['Camera for magical family photos', 'Comfortable walking shoes', 'Excitement for movie magic'],
-    dresscode: 'Casual, comfortable for walking and family fun',
-    ageRestriction: 'Family-friendly (recommended for children 6-16 years)',
+    whatToBring: ['Camera for magical community photos', 'Comfortable walking shoes', 'Excitement for movie magic'],
+    dresscode: 'Casual, comfortable for walking and community fun',
+    ageRestriction: 'All ages welcome (recommended for participants 6-16 years)',
     skillLevel: 'all',
-    accessibility: ['Wheelchair accessible', 'Family-friendly facilities'],
+    accessibility: ['Wheelchair accessible', 'All-ages facilities'],
     allowWaitlist: true,
     requiresApproval: false,
     refundPolicy: 'Full refund 7+ days, 50% refund 3-7 days due to studio booking policies',
     lastBookingTime: '72'
   },
   {
-    id: 'london-family-zoo-1',
-    title: 'London Zoo Family Discovery: Portuguese Families Wildlife Adventure',
-    description: 'Educational and fun day at London Zoo for Portuguese families. Discover amazing animals, enjoy special talks, and connect with other Portuguese families while exploring one of the world\'s oldest zoos.',
-    longDescription: 'Uma aventura selvagem para famílias portuguesas! Join fellow Portuguese-speaking families for an exciting day at ZSL London Zoo, where wildlife conservation meets family fun in a beautiful Regent\'s Park setting.\n\nOur family zoo experience is led by Raquel Ferreira, a Portuguese marine biologist and mother who worked with zoo conservation programs. She\'ll guide our families through special exhibits while sharing fascinating animal facts in Portuguese, making learning accessible for all family members.\n\nHighlights include the Land of the Lions (where we\'ll learn about conservation efforts), Penguin Beach (perfect for family photos), the Reptile House (where Harry Potter scenes were filmed!), and the Children\'s Zoo where little ones can interact with friendly farm animals.\n\nWhat makes this special is experiencing it with other Portuguese families. Children practice Portuguese while learning about animals, parents connect over family life in London, and everyone enjoys the shared experience of discovering wildlife together. We\'ll have organized activities like animal-themed games in Portuguese and storytelling sessions.\n\nThe day includes a family picnic lunch in the zoo\'s beautiful gardens (Portuguese snacks included!), giving families time to relax and socialize. Children can play together while parents share experiences about raising bilingual children who love both Portuguese culture and British experiences.\n\nWe\'ll end with a visit to the Land of the Lions feeding time, followed by group photos at the zoo\'s most photogenic spots. This experience combines education, conservation awareness, and cultural connection in a fun, family-friendly environment.\n\nPerfect for families with children of all ages, especially those who want to connect with other Portuguese families while enjoying London\'s amazing wildlife.',
+    id: 'london-community-zoo-1',
+    title: 'London Zoo Community Discovery: Portuguese Community Wildlife Adventure',
+    description: 'Educational and fun day at London Zoo for Portuguese community members. Discover amazing animals, enjoy special talks, and connect with other Portuguese community members while exploring one of the world\'s oldest zoos.',
+    longDescription: 'Uma aventura selvagem para comunidade portuguesa! Join fellow Portuguese-speaking community members for an exciting day at ZSL London Zoo, where wildlife conservation meets community fun in a beautiful Regent\'s Park setting.\n\nOur community zoo experience is led by Raquel Ferreira, a Portuguese marine biologist and community educator who worked with zoo conservation programs. She\'ll guide our community members through special exhibits while sharing fascinating animal facts in Portuguese, making learning accessible for all community members.\n\nHighlights include the Land of the Lions (where we\'ll learn about conservation efforts), Penguin Beach (perfect for community photos), the Reptile House (where Harry Potter scenes were filmed!), and the Children\'s Zoo where little ones can interact with friendly farm animals.\n\nWhat makes this special is experiencing it with other Portuguese community members. Children practice Portuguese while learning about animals, parents connect over community life in London, and everyone enjoys the shared experience of discovering wildlife together. We\'ll have organized activities like animal-themed games in Portuguese and storytelling sessions.\n\nThe day includes a community picnic lunch in the zoo\'s beautiful gardens (Portuguese snacks included!), giving community members time to relax and socialize. Children can play together while parents share experiences about raising bilingual children who love both Portuguese culture and British experiences.\n\nWe\'ll end with a visit to the Land of the Lions feeding time, followed by group photos at the zoo\'s most photogenic spots. This experience combines education, conservation awareness, and cultural connection in a fun, all-ages welcome environment.\n\nPerfect for community members with children of all ages, especially those who want to connect with other Portuguese community members while enjoying London\'s amazing wildlife.',
     date: '2025-09-21',
     time: '10:00',
     endTime: '15:00',
@@ -176,11 +176,11 @@ export const additionalLondonEvents = [
     address: 'Outer Circle, Regent\'s Park, London NW1 4RY',
     coordinates: { lat: 51.5355, lng: -0.1531 },
     category: 'Lifestyle & Hobbies',
-    subcategory: 'Family Activities',
-    tags: ['family', 'zoo', 'children', 'Portuguese families', 'wildlife', 'education', 'conservation'],
+    subcategory: 'Community Activities',
+    tags: ['community', 'zoo', 'children', 'Portuguese community members', 'wildlife', 'education', 'conservation'],
     hostId: 'host-raquel-zoo',
     hostName: 'Raquel Ferreira',
-    hostBio: 'Portuguese marine biologist and mother, creating educational wildlife experiences that connect Portuguese families with conservation and nature',
+    hostBio: 'Portuguese marine biologist and mother, creating educational wildlife experiences that connect Portuguese community members with conservation and nature',
     membershipRequired: 'free',
     price: 35,
     currency: 'GBP',
@@ -194,21 +194,21 @@ export const additionalLondonEvents = [
       'https://images.unsplash.com/photo-1549366021-9f761d040a94?w=600&h=400&fit=crop&auto=format',
       'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&h=400&fit=crop&auto=format'
     ],
-    whatToBring: ['Comfortable walking shoes', 'Camera for family photos', 'Reusable water bottle'],
+    whatToBring: ['Comfortable walking shoes', 'Camera for community photos', 'Reusable water bottle'],
     dresscode: 'Casual, weather-appropriate for outdoor walking',
-    ageRestriction: 'Family-friendly (all ages welcome)',
+    ageRestriction: 'All ages welcome',
     skillLevel: 'all',
-    accessibility: ['Wheelchair accessible paths', 'Family facilities available'],
+    accessibility: ['Wheelchair accessible paths', 'Community facilities available'],
     allowWaitlist: true,
     requiresApproval: false,
     refundPolicy: 'Full refund 48h+ in advance',
     lastBookingTime: '48'
   },
   {
-    id: 'london-family-natural-history-1',
-    title: 'Natural History Museum Private Family Tour: Portuguese Heritage & Science',
-    description: 'Private guided tour of the Natural History Museum for Portuguese families, focusing on natural wonders from Portuguese-speaking countries and interactive learning experiences for children.',
-    longDescription: 'Uma jornada científica para famílias portuguesas! Join fellow Portuguese-speaking families for an exclusive guided tour of the Natural History Museum, where we\'ll explore natural wonders while celebrating the scientific discoveries from Portuguese-speaking nations.\n\nOur expert family guide, Dr. Miguel Tavares, is a Portuguese geologist and father who specializes in making science accessible for families. He\'ll take us on a fascinating journey through the museum, highlighting natural specimens and discoveries from Portugal, Brazil, Angola, Mozambique, and other Portuguese-speaking regions.\n\nChildren will be amazed by the famous dinosaur gallery, earthquake simulator, and the stunning mineral collection, while parents appreciate connections to Portuguese exploration and scientific history. We\'ll learn about Portuguese navigators who brought back exotic specimens, Brazilian gems in the museum\'s collection, and African fossils that tell the story of human evolution.\n\nSpecial activities include a family treasure hunt in Portuguese, hands-on workshops where children can handle real fossils and minerals, and storytelling sessions about Portuguese explorers who contributed to natural science. The famous museum dinosaur "Dippy" provides perfect photo opportunities for families.\n\nWhat makes this experience unique is sharing it with other Portuguese families who value education and cultural traditions. Children practice Portuguese while learning about science, and parents connect over raising curious, bilingual children in London.\n\nThe experience includes museum entry, private guided tour, family activity pack, and a special Portuguese-themed science booklet for each child to take home. We\'ll end with family photos in the museum\'s stunning main hall.\n\nPerfect for families with children aged 4-14 who want to combine scientific discovery with cultural connection.',
+    id: 'london-community-natural-history-1',
+    title: 'Natural History Museum Private Community Tour: Portuguese Heritage & Science',
+    description: 'Private guided tour of the Natural History Museum for Portuguese community members, focusing on natural wonders from Portuguese-speaking countries and interactive learning experiences for children.',
+    longDescription: 'Uma jornada científica para comunidade portuguesa! Join fellow Portuguese-speaking community members for an exclusive guided tour of the Natural History Museum, where we\'ll explore natural wonders while celebrating the scientific discoveries from Portuguese-speaking nations.\n\nOur expert community guide, Dr. Miguel Tavares, is a Portuguese geologist and father who specializes in making science accessible for community members. He\'ll take us on a fascinating journey through the museum, highlighting natural specimens and discoveries from Portugal, Brazil, Angola, Mozambique, and other Portuguese-speaking regions.\n\nChildren will be amazed by the famous dinosaur gallery, earthquake simulator, and the stunning mineral collection, while parents appreciate connections to Portuguese exploration and scientific history. We\'ll learn about Portuguese navigators who brought back exotic specimens, Brazilian gems in the museum\'s collection, and African fossils that tell the story of human evolution.\n\nSpecial activities include a community treasure hunt in Portuguese, hands-on workshops where children can handle real fossils and minerals, and storytelling sessions about Portuguese explorers who contributed to natural science. The famous museum dinosaur "Dippy" provides perfect photo opportunities for community members.\n\nWhat makes this experience unique is sharing it with other Portuguese community members who value education and cultural traditions. Children practice Portuguese while learning about science, and parents connect over raising curious, bilingual children in London.\n\nThe experience includes museum entry, private guided tour, community activity pack, and a special Portuguese-themed science booklet for each child to take home. We\'ll end with community photos in the museum\'s stunning main hall.\n\nPerfect for community members with children aged 4-14 who want to combine scientific discovery with cultural connection.',
     date: '2025-09-28',
     time: '10:30',
     endTime: '14:00',
@@ -217,10 +217,10 @@ export const additionalLondonEvents = [
     coordinates: { lat: 51.4967, lng: -0.1764 },
     category: 'Arts & Culture',
     subcategory: 'Museum Tours',
-    tags: ['family', 'Natural History Museum', 'science', 'Portuguese heritage', 'children', 'education', 'dinosaurs'],
+    tags: ['community', 'Natural History Museum', 'science', 'Portuguese heritage', 'children', 'education', 'dinosaurs'],
     hostId: 'host-miguel-science',
     hostName: 'Dr. Miguel Tavares',
-    hostBio: 'Portuguese geologist and science educator, creating engaging museum experiences that connect Portuguese families with scientific discovery and cultural heritage',
+    hostBio: 'Portuguese geologist and science educator, creating engaging museum experiences that connect Portuguese community members with scientific discovery and cultural heritage',
     membershipRequired: 'core',
     price: 42,
     currency: 'GBP',
@@ -236,19 +236,19 @@ export const additionalLondonEvents = [
     ],
     whatToBring: ['Comfortable walking shoes', 'Notebook for discoveries', 'Curiosity about natural world'],
     dresscode: 'Casual, comfortable for museum exploration',
-    ageRestriction: 'Family-friendly (recommended for children 4-14 years)',
+    ageRestriction: 'All ages welcome (recommended for participants 4-14 years)',
     skillLevel: 'all',
-    accessibility: ['Wheelchair accessible', 'Family learning facilities'],
+    accessibility: ['Wheelchair accessible', 'Community learning facilities'],
     allowWaitlist: true,
     requiresApproval: true,
     refundPolicy: 'Full refund 48h+ in advance due to group booking',
     lastBookingTime: '48'
   },
   {
-    id: 'london-family-thames-dinner-cruise-1',
+    id: 'london-community-thames-dinner-cruise-1',
     title: 'Thames Sunset Dinner Cruise: Portuguese Families London Celebration',
-    description: 'Elegant family dinner cruise on the Thames for Portuguese families. Enjoy delicious food, stunning London views, and cultural entertainment while celebrating life with families who share your heritage.',
-    longDescription: 'Uma celebração familiar no Tamisa! Join fellow Portuguese-speaking families for a magical evening cruise on the Thames, where London\'s iconic skyline provides the backdrop for family celebration and cultural connection.\n\nBoard our family-friendly vessel at Tower Pier as the sun begins to set over London. Our cruise coordinator, Carmen Silva, is a Portuguese event organizer and mother who has created the perfect family evening combining elegant dining with child-friendly entertainment.\n\nThe three-hour cruise features a delicious buffet dinner with international cuisine (including some Portuguese favorites), while we sail past illuminated London landmarks including Tower Bridge, London Eye, Houses of Parliament, and St. Paul\'s Cathedral. Children receive special activity packs and coloring materials themed around London and Portuguese culture.\n\nWhat makes this cruise special is the family atmosphere with other Portuguese speakers. Children can make friends with peers who understand their bilingual experience, while parents connect over family life in London. We\'ll have Portuguese music, family-friendly entertainment, and organized activities that celebrate both British and Portuguese culture.\n\nHighlights include a family dance session on deck (featuring both British and Portuguese music), storytelling about London landmarks in Portuguese, and group photo opportunities with London\'s sparkling skyline. Each family receives a professional group photo as a keepsake.\n\nThe evening concludes as we return to Tower Pier, with children often making new friendships and parents establishing connections that extend beyond the cruise. This experience perfectly balances sophisticated family dining with cultural celebration.\n\nIdeal for Portuguese families who want to celebrate special occasions or simply enjoy London\'s beauty together with other families who share their cultural background.',
+    description: 'Elegant community dinner cruise on the Thames for Portuguese community members. Enjoy delicious food, stunning London views, and cultural entertainment while celebrating life with community members who share your heritage.',
+    longDescription: 'Uma celebração familiar no Tamisa! Join fellow Portuguese-speaking community members for a magical evening cruise on the Thames, where London\'s iconic skyline provides the backdrop for community celebration and cultural connection.\n\nBoard our all-ages welcome vessel at Tower Pier as the sun begins to set over London. Our cruise coordinator, Carmen Silva, is a Portuguese event organizer and community educator who has created the perfect community evening combining elegant dining with child-friendly entertainment.\n\nThe three-hour cruise features a delicious buffet dinner with international cuisine (including some Portuguese favorites), while we sail past illuminated London landmarks including Tower Bridge, London Eye, Houses of Parliament, and St. Paul\'s Cathedral. Children receive special activity packs and coloring materials themed around London and Portuguese culture.\n\nWhat makes this cruise special is the community atmosphere with other Portuguese speakers. Children can make friends with peers who understand their bilingual experience, while parents connect over community life in London. We\'ll have Portuguese music, all-ages welcome entertainment, and organized activities that celebrate both British and Portuguese culture.\n\nHighlights include a community dance session on deck (featuring both British and Portuguese music), storytelling about London landmarks in Portuguese, and group photo opportunities with London\'s sparkling skyline. Each community receives a professional group photo as a keepsake.\n\nThe evening concludes as we return to Tower Pier, with children often making new friendships and parents establishing connections that extend beyond the cruise. This experience perfectly balances sophisticated community dining with cultural celebration.\n\nIdeal for Portuguese community members who want to celebrate special occasions or simply enjoy London\'s beauty together with other community members who share their cultural background.',
     date: '2025-10-05',
     time: '18:30',
     endTime: '21:30',
@@ -257,10 +257,10 @@ export const additionalLondonEvents = [
     coordinates: { lat: 51.5055, lng: -0.0754 },
     category: 'Wine & Dining',
     subcategory: 'Dining Experiences',
-    tags: ['family', 'Thames cruise', 'dinner', 'Portuguese families', 'London landmarks', 'celebration', 'cultural'],
+    tags: ['community', 'Thames cruise', 'dinner', 'Portuguese community members', 'London landmarks', 'celebration', 'cultural'],
     hostId: 'host-carmen-cruise',
     hostName: 'Carmen Silva',
-    hostBio: 'Portuguese event organizer and mother, creating memorable family experiences that bring Portuguese families together while celebrating London life',
+    hostBio: 'Portuguese event organizer and mother, creating memorable community experiences that bring Portuguese community members together while celebrating London life',
     membershipRequired: 'core',
     price: 75,
     currency: 'GBP',
@@ -274,11 +274,11 @@ export const additionalLondonEvents = [
       'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600&h=400&fit=crop&auto=format',
       'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&auto=format'
     ],
-    whatToBring: ['Light jacket for evening river breeze', 'Camera for family photos', 'Appetite for celebration'],
-    dresscode: 'Smart casual, suitable for family dinner cruise',
-    ageRestriction: 'Family-friendly (all ages welcome)',
+    whatToBring: ['Light jacket for evening river breeze', 'Camera for community photos', 'Appetite for celebration'],
+    dresscode: 'Smart casual, suitable for community dinner cruise',
+    ageRestriction: 'All ages welcome',
     skillLevel: 'all',
-    accessibility: ['Wheelchair accessible boarding', 'Family facilities onboard'],
+    accessibility: ['Wheelchair accessible boarding', 'Community facilities onboard'],
     allowWaitlist: true,
     requiresApproval: false,
     refundPolicy: 'Full refund 72h+ in advance due to cruise booking requirements',
@@ -352,15 +352,15 @@ export const categoryDescriptions = {
       "Celebration of wisdom, achievement, and Portuguese heritage"
     ]
   },
-  "family": {
-    title: "Family Adventures",
-    portuguese: "Aventuras em Família", 
-    description: "Fun, educational, and culturally enriching experiences designed for Portuguese-speaking families who want their children to maintain connection to Portuguese culture while embracing British experiences.",
+  "community": {
+    title: "Community Adventures",
+    portuguese: "Aventuras Comunitárias", 
+    description: "Fun, educational, and culturally enriching experiences designed for Portuguese-speaking community members who want their children to maintain connection to Portuguese culture while embracing British experiences.",
     highlights: [
       "Bilingual guides and activities",
       "Educational experiences at world-class London attractions",
       "Cultural connection for parents and children",
-      "Safe, family-friendly environments with other Portuguese families"
+      "Safe, all-ages welcome environments with other Portuguese community members"
     ]
   }
 };

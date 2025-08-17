@@ -36,12 +36,12 @@ const protectionPackages = [
     descriptionPortuguese: 'Proteção aprimorada para indivíduos de alto perfil',
   },
   {
-    id: 'family-protection',
-    name: 'Family Protection',
-    namePortuguese: 'Proteção Familiar',
+    id: 'community-protection',
+    name: 'Community Protection',
+    namePortuguese: 'Proteção Comunitária',
     price: 1000,
-    description: 'Comprehensive family security services',
-    descriptionPortuguese: 'Serviços abrangentes de segurança familiar',
+    description: 'Comprehensive community security services',
+    descriptionPortuguese: 'Serviços abrangentes de segurança comunitária',
   },
 ];
 

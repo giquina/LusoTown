@@ -186,13 +186,13 @@ const caseStudies = [
     duration: '5 days'
   },
   {
-    id: 'family-heritage',
+    id: 'community-heritage',
     title: 'Multi-Generation Heritage Tour',
     titlePortuguese: 'Tour de Património Multi-Geracional',
-    client: 'Família Santos (Brasil/Portugal)',
-    clientPortuguese: 'Família Santos (Brasil/Portugal)',
-    challenge: 'Cultural exploration for family spanning 4 generations (ages 8-82)',
-    challengePortuguese: 'Exploração cultural para família abrangendo 4 gerações (idades 8-82)',
+    client: 'Santos Community Group (Brasil/Portugal)',
+    clientPortuguese: 'Grupo Comunitário Santos (Brasil/Portugal)',
+    challenge: 'Cultural exploration for community group spanning 4 generations (ages 8-82)',
+    challengePortuguese: 'Exploração cultural para grupo comunitário abrangendo 4 gerações (idades 8-82)',
     solution: 'Custom accessibility-focused cultural tour with premium transport',
     solutionPortuguese: 'Tour cultural personalizado focado na acessibilidade com transporte premium',
     result: 'Emotional heritage connection, 5-star review, referral network activated',

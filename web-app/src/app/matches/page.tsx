@@ -47,7 +47,7 @@ interface UserProfile {
   age?: number
   languagePreference?: string
   relationshipGoal?: 'friendship' | 'professional' | 'cultural_exchange' | 'any'
-  familyStatus?: 'single' | 'family' | 'any'
+  status?: 'individual' | 'group' | 'any'
 }
 
 interface PremiumMatch {
@@ -74,7 +74,7 @@ interface MatchFilters {
   languagePreference?: 'portuguese' | 'english' | 'both'
   culturalBackground?: 'portugal' | 'brazil' | 'other_lusophone' | 'any'
   relationshipGoal?: 'friendship' | 'professional' | 'cultural_exchange' | 'any'
-  familyStatus?: 'single' | 'family' | 'any'
+  status?: 'individual' | 'group' | 'any'
   location?: string
   membershipTier?: 'free' | 'core' | 'premium' | 'business' | 'student'
   verifiedOnly?: boolean
@@ -137,7 +137,7 @@ export default function MatchesPage({}: MatchesPageProps) {
         age: 32,
         languagePreference: 'both',
         relationshipGoal: 'professional',
-        familyStatus: 'single'
+        status: 'individual'
       },
       {
         id: 'user-2',
@@ -148,13 +148,13 @@ export default function MatchesPage({}: MatchesPageProps) {
         membershipTier: 'core',
         isVerified: true,
         culturalBackground: 'portugal',
-        interests: ['football', 'portuguese_history', 'entrepreneurship', 'tech_innovation', 'family_activities'],
+        interests: ['football', 'portuguese_history', 'entrepreneurship', 'tech_innovation', 'community_activities'],
         professionalBackground: 'Technology & Startups',
         bio: 'Tech entrepreneur from Porto, building the next generation of Portuguese startups in London while staying connected to our roots.',
         age: 29,
         languagePreference: 'both',
         relationshipGoal: 'friendship',
-        familyStatus: 'family'
+        status: 'group'
       },
       {
         id: 'user-3',
@@ -171,7 +171,7 @@ export default function MatchesPage({}: MatchesPageProps) {
         age: 27,
         languagePreference: 'portuguese',
         relationshipGoal: 'cultural_exchange',
-        familyStatus: 'single'
+        status: 'individual'
       },
       {
         id: 'user-4',
@@ -188,7 +188,7 @@ export default function MatchesPage({}: MatchesPageProps) {
         age: 41,
         languagePreference: 'both',
         relationshipGoal: 'professional',
-        familyStatus: 'family'
+        status: 'group'
       },
       {
         id: 'user-5',
@@ -205,7 +205,7 @@ export default function MatchesPage({}: MatchesPageProps) {
         age: 24,
         languagePreference: 'both',
         relationshipGoal: 'friendship',
-        familyStatus: 'single'
+        status: 'individual'
       }
     ]
 

@@ -117,16 +117,16 @@ const servicePackages = [
     premium: true
   },
   {
-    id: 'family-protection',
-    name: 'Family Protection',
-    namePortuguese: 'Proteção Familiar',
+    id: 'community-protection',
+    name: 'Community Protection',
+    namePortuguese: 'Proteção Comunitária',
     price: 1000,
     priceUnit: 'day',
     priceUnitPortuguese: 'dia',
-    description: 'Comprehensive family security services',
-    descriptionPortuguese: 'Serviços abrangentes de segurança familiar',
+    description: 'Comprehensive community security services',
+    descriptionPortuguese: 'Serviços abrangentes de segurança comunitária',
     features: [
-      'Family-focused security protocols',
+      'Community-focused security protocols',
       'School and activity coordination',
       'Portuguese cultural integration',
       'Child protection specialists',
@@ -134,7 +134,7 @@ const servicePackages = [
       'Residential security assessment'
     ],
     featuresPortuguese: [
-      'Protocolos de segurança focados na família',
+      'Protocolos de segurança focados na comunidade',
       'Coordenação escolar e de atividades',
       'Integração cultural portuguesa',
       'Especialistas em proteção infantil',
@@ -236,8 +236,8 @@ export default function CloseProtectionPage() {
               
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                 {isPortuguese
-                  ? 'Operativos de proteção pessoal licenciados SIA com especialização cultural portuguesa, fornecendo segurança discreta e profissional para indivíduos e famílias de alto perfil.'
-                  : 'SIA-licensed Close Protection Operatives with Portuguese cultural expertise, providing discrete and professional security for high-profile individuals and families.'
+                  ? 'Operativos de proteção pessoal licenciados SIA com especialização cultural portuguesa, fornecendo segurança discreta e profissional para indivíduos e grupos de alto perfil.'
+                  : 'SIA-licensed Close Protection Operatives with Portuguese cultural expertise, providing discrete and professional security for high-profile individuals and groups.'
                 }
               </p>
 

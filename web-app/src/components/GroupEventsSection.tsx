@@ -91,14 +91,14 @@ const sampleGroupEvents: GroupEventData[] = [
   },
   {
     id: 'group-event-4',
-    title: 'Harry Potter Studio Tour Family Adventure',
-    description: 'Magical family day out at the Warner Bros Studio Tour. Perfect for Portuguese families with children, featuring behind-the-scenes magic, costumes, and sets from the beloved films.',
+    title: 'Harry Potter Studio Tour Community Adventure',
+    description: 'Magical community day out at the Warner Bros Studio Tour. Perfect for Portuguese community members, featuring behind-the-scenes magic, costumes, and sets from the beloved films.',
     date: '2025-08-24',
     time: '11:00 AM',
     location: 'Warner Bros Studio Tour, WD25 7LR',
     price: 55,
     currency: '£',
-    category: 'Family-Friendly',
+    category: 'Community Events',
     image: 'https://images.unsplash.com/photo-1551269901-5c5e14c25df7?auto=format&fit=crop&w=800&q=80',
     spotsLeft: 15,
     maxAttendees: 25,
@@ -109,7 +109,7 @@ const sampleGroupEvents: GroupEventData[] = [
     reviewCount: 89,
     isPopular: true,
     hasPhotos: true,
-    groupFocus: 'Family Fun',
+    groupFocus: 'Community Fun',
     ageRange: 'All ages welcome',
     languages: ['Portuguese', 'English']
   },
@@ -138,14 +138,14 @@ const sampleGroupEvents: GroupEventData[] = [
   },
   {
     id: 'group-event-6',
-    title: 'London Zoo Family Safari Day',
-    description: 'Fun-filled family day at London Zoo with Portuguese-speaking families. Educational talks, animal encounters, and special children\'s activities in a supportive community environment.',
+    title: 'London Zoo Community Safari Day',
+    description: 'Fun-filled community day at London Zoo with Portuguese-speaking community. Educational talks, animal encounters, and special children\'s activities in a supportive community environment.',
     date: '2025-08-26',
     time: '10:00 AM',
     location: 'London Zoo, NW1 4RY',
     price: 32,
     currency: '£',
-    category: 'Family-Friendly',
+    category: 'Community Events',
     image: 'https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&w=800&q=80',
     spotsLeft: 8,
     maxAttendees: 20,
@@ -156,7 +156,7 @@ const sampleGroupEvents: GroupEventData[] = [
     reviewCount: 71,
     hasPhotos: true,
     groupFocus: 'Wildlife & Education',
-    ageRange: 'Families with children',
+    ageRange: 'Community members',
     languages: ['Portuguese', 'English']
   }
 ]
@@ -184,7 +184,7 @@ export default function GroupEventsSection({
     { id: 'all', label: isPortuguese ? 'Todos' : 'All Events', count: sampleGroupEvents.length },
     { id: 'Women 30+', label: isPortuguese ? 'Mulheres 30+' : 'Women 30+', count: sampleGroupEvents.filter(e => e.category === 'Women 30+').length },
     { id: 'Women 40+', label: isPortuguese ? 'Mulheres 40+' : 'Women 40+', count: sampleGroupEvents.filter(e => e.category === 'Women 40+').length },
-    { id: 'Family-Friendly', label: isPortuguese ? 'Para Famílias' : 'Family-Friendly', count: sampleGroupEvents.filter(e => e.category === 'Family-Friendly').length }
+    { id: 'Community Events', label: isPortuguese ? 'Eventos Comunitários' : 'Community Events', count: sampleGroupEvents.filter(e => e.category === 'Community Events').length }
   ]
 
   const filteredEvents = selectedCategory === 'all' 
@@ -234,8 +234,8 @@ export default function GroupEventsSection({
               </h2>
               <p className="text-xl sm:text-2xl text-gray-700 mb-4 font-medium max-w-4xl mx-auto leading-relaxed">
                 {isPortuguese
-                  ? 'Junte-se a grupos portugueses para explorar Londres através de experiências culturais, passeios históricos e aventuras familiares'
-                  : 'Join Portuguese-speaking groups to explore London through cultural experiences, historical tours, and family adventures'
+                  ? 'Junte-se a grupos portugueses para explorar Londres através de experiências culturais, passeios históricos e aventuras comunitárias'
+                  : 'Join Portuguese-speaking groups to explore London through cultural experiences, historical tours, and community adventures'
                 }
               </p>
               <div className="flex items-center justify-center gap-6 text-sm text-gray-600">
@@ -249,7 +249,7 @@ export default function GroupEventsSection({
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 bg-secondary-400 rounded-full"></div>
-                  <span>{isPortuguese ? '25% Para Famílias' : '25% Family-Friendly'}</span>
+                  <span>{isPortuguese ? '25% Eventos Comunitários' : '25% Community Events'}</span>
                 </div>
               </div>
             </div>

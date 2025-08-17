@@ -17,7 +17,7 @@ interface PortugueseBusiness {
   website?: string
   email?: string
   establishedYear: number
-  familyOwned: boolean
+  communityOwned: boolean
   authenticityScore: number
   specialties: string[]
   specialtiesPortuguese: string[]
@@ -39,12 +39,12 @@ const portugueseBusinesses: PortugueseBusiness[] = [
     id: 'lisboa-patisserie',
     name: 'Lisboa Patisserie',
     category: 'bakery',
-    description: 'London\'s most authentic Portuguese bakery, family-owned for 50+ years, serving traditional pastéis de nata exactly as made in Belém, Portugal.',
+    description: 'London\'s most authentic Portuguese bakery, community-owned for 50+ years, serving traditional pastéis de nata exactly as made in Belém, Portugal.',
     descriptionPortuguese: 'A pastelaria portuguesa mais autêntica de Londres, familiar há mais de 50 anos, servindo pastéis de nata tradicionais exatamente como feitos em Belém, Portugal.',
     address: '57 Golborne Rd, London W10 5NR',
     phone: '+44 20 8968 5242',
     establishedYear: 1973,
-    familyOwned: true,
+    communityOwned: true,
     authenticityScore: 10,
     specialties: [
       'Traditional pastéis de nata (Portuguese custard tarts)',
@@ -63,7 +63,7 @@ const portugueseBusinesses: PortugueseBusiness[] = [
     portugueseRegion: 'Lisboa',
     portugueseRegionEnglish: 'Lisbon',
     communityRole: 'Cultural gathering place for Portuguese families, weekend meeting spot for Portuguese community elders, supplier for Portuguese community events.',
-    communityRolePortuguese: 'Local de encontro cultural para famílias portuguesas, ponto de encontro de fim de semana para anciãos da comunidade portuguesa, fornecedor para eventos da comunidade portuguesa.',
+    communityRolePortuguese: 'Local de encontro cultural para comunidade portuguesa, ponto de encontro de fim de semana para anciãos da comunidade portuguesa, fornecedor para eventos da comunidade portuguesa.',
     awards: [
       'Best Portuguese Bakery London 2020-2024',
       'Time Out London Best Pastéis de Nata',
@@ -77,20 +77,20 @@ const portugueseBusinesses: PortugueseBusiness[] = [
     openingHours: 'Mon-Sun 8:00-19:00',
     priceRange: '£',
     lusoTownPartnered: true,
-    certifications: ['Traditional Portuguese Recipes Certified', 'Family Heritage Business'],
+    certifications: ['Traditional Portuguese Recipes Certified', 'Community Heritage Business'],
     certificationsPortuguese: ['Receitas Portuguesas Tradicionais Certificadas', 'Negócio de Património Familiar']
   },
   {
     id: 'a-toca-restaurant',
     name: 'A Toca Restaurant',
     category: 'restaurant',
-    description: 'Intimate Portuguese restaurant serving authentic regional cuisine from Northern Portugal, family-run for over 40 years with recipes passed down through generations.',
+    description: 'Intimate Portuguese restaurant serving authentic regional cuisine from Northern Portugal, community-run for over 40 years with recipes passed down through generations.',
     descriptionPortuguese: 'Restaurante português íntimo servindo cozinha regional autêntica do Norte de Portugal, familiar há mais de 40 anos com receitas passadas através de gerações.',
     address: '62 Golborne Rd, London W10 5PS',
     phone: '+44 20 8968 8500',
     website: 'www.atoca-restaurant.co.uk',
     establishedYear: 1980,
-    familyOwned: true,
+    communityOwned: true,
     authenticityScore: 10,
     specialties: [
       'Traditional bacalhau preparations (7 different styles)',
@@ -109,7 +109,7 @@ const portugueseBusinesses: PortugueseBusiness[] = [
     portugueseRegion: 'Minho',
     portugueseRegionEnglish: 'Minho (Northern Portugal)',
     communityRole: 'Special occasion restaurant for Portuguese families, venue for Portuguese community celebrations, authentic Portuguese dining experience for cultural events.',
-    communityRolePortuguese: 'Restaurante de ocasiões especiais para famílias portuguesas, local para celebrações da comunidade portuguesa, experiência gastronómica portuguesa autêntica para eventos culturais.',
+    communityRolePortuguese: 'Restaurante de ocasiões especiais para comunidade portuguesa, local para celebrações da comunidade portuguesa, experiência gastronómica portuguesa autêntica para eventos culturais.',
     awards: [
       'Michelin Guide Recommended',
       'Portuguese Chamber of Commerce Excellence Award',
@@ -123,19 +123,19 @@ const portugueseBusinesses: PortugueseBusiness[] = [
     openingHours: 'Tue-Sun 18:00-23:00',
     priceRange: '££',
     lusoTownPartnered: true,
-    certifications: ['Authentic Portuguese Cuisine Certified', 'Family Heritage Recipe Collection'],
+    certifications: ['Authentic Portuguese Cuisine Certified', 'Community Heritage Recipe Collection'],
     certificationsPortuguese: ['Cozinha Portuguesa Autêntica Certificada', 'Coleção de Receitas de Património Familiar']
   },
   {
     id: 'o-cantinho-de-portugal',
     name: 'O Cantinho de Portugal',
     category: 'restaurant',
-    description: 'London\'s most established Portuguese restaurant, serving authentic Portuguese regional cuisine for over 45 years, famous for traditional atmosphere and family hospitality.',
+    description: 'London\'s most established Portuguese restaurant, serving authentic Portuguese regional cuisine for over 45 years, famous for traditional atmosphere and community hospitality.',
     descriptionPortuguese: 'O restaurante português mais estabelecido de Londres, servindo cozinha regional portuguesa autêntica há mais de 45 anos, famoso pela atmosfera tradicional e hospitalidade familiar.',
     address: '96 Golborne Rd, London W10 5PS',
     phone: '+44 20 8968 6522',
     establishedYear: 1977,
-    familyOwned: true,
+    communityOwned: true,
     authenticityScore: 10,
     specialties: [
       'Traditional Portuguese grilled meats and seafood',
@@ -168,7 +168,7 @@ const portugueseBusinesses: PortugueseBusiness[] = [
     openingHours: 'Mon-Sun 12:00-15:00, 18:00-23:00',
     priceRange: '££',
     lusoTownPartnered: true,
-    certifications: ['Portuguese Cultural Heritage Venue', 'Family Business Excellence'],
+    certifications: ['Portuguese Cultural Heritage Venue', 'Community Business Excellence'],
     certificationsPortuguese: ['Local de Património Cultural Português', 'Excelência de Negócio Familiar']
   },
   {
@@ -180,7 +180,7 @@ const portugueseBusinesses: PortugueseBusiness[] = [
     address: 'Wandsworth Road, London SW8',
     phone: '+44 20 7622 4088',
     establishedYear: 1985,
-    familyOwned: true,
+    communityOwned: true,
     authenticityScore: 9,
     specialties: [
       'Imported Portuguese wines and spirits',
@@ -199,7 +199,7 @@ const portugueseBusinesses: PortugueseBusiness[] = [
     portugueseRegion: 'Nacional',
     portugueseRegionEnglish: 'All Portuguese Regions',
     communityRole: 'Essential supplier for Portuguese families, source for authentic ingredients for Portuguese restaurants, cultural connection point for Portuguese food traditions.',
-    communityRolePortuguese: 'Fornecedor essencial para famílias portuguesas, fonte de ingredientes autênticos para restaurantes portugueses, ponto de conexão cultural para tradições alimentares portuguesas.',
+    communityRolePortuguese: 'Fornecedor essencial para comunidade portuguesa, fonte de ingredientes autênticos para restaurantes portugueses, ponto de conexão cultural para tradições alimentares portuguesas.',
     awards: [
       'Best Portuguese Grocery London',
       'Portuguese Import Quality Excellence',
@@ -221,20 +221,20 @@ const portugueseBusinesses: PortugueseBusiness[] = [
     name: 'Portuguese Legal Services UK',
     namePortuguese: 'Serviços Jurídicos Portugueses Reino Unido',
     category: 'professional',
-    description: 'Specialized legal services for Portuguese community, offering bilingual legal support for immigration, business, property, and family law matters.',
+    description: 'Specialized legal services for Portuguese community, offering bilingual legal support for immigration, business, property, and civil law matters.',
     descriptionPortuguese: 'Serviços jurídicos especializados para a comunidade portuguesa, oferecendo apoio jurídico bilingue para imigração, negócios, propriedade e questões de direito familiar.',
     address: 'Central London Legal District',
     phone: '+44 20 7123 4567',
     email: 'info@portugueselegal.uk',
     website: 'www.portugueselegalservices.uk',
     establishedYear: 1995,
-    familyOwned: false,
+    communityOwned: false,
     authenticityScore: 8,
     specialties: [
       'Portuguese immigration and citizenship law',
       'Portuguese business incorporation and compliance',
       'Property transactions Portugal-UK',
-      'Family law and Portuguese inheritance',
+      'Civil law and Portuguese inheritance',
       'Portuguese community legal education'
     ],
     specialtiesPortuguese: [
@@ -276,7 +276,7 @@ const portugueseBusinesses: PortugueseBusiness[] = [
     website: 'www.portuguesecentre.org.uk',
     email: 'info@portuguesecentre.org.uk',
     establishedYear: 1968,
-    familyOwned: false,
+    communityOwned: false,
     authenticityScore: 10,
     specialties: [
       'Portuguese language education all levels',
@@ -382,7 +382,7 @@ export default function PortugueseBusinessDirectory({ isPortuguese, onContactBus
           <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             {isPortuguese 
               ? 'Descubra negócios autênticos portugueses em Londres - desde restaurantes familiares tradicionais a serviços profissionais especializados, todos dedicados a servir e preservar a comunidade portuguesa'
-              : 'Discover authentic Portuguese businesses in London - from traditional family restaurants to specialized professional services, all dedicated to serving and preserving the Portuguese community'
+              : 'Discover authentic Portuguese businesses in London - from traditional community restaurants to specialized professional services, all dedicated to serving and preserving the Portuguese community'
             }
           </p>
         </div>
@@ -459,9 +459,9 @@ export default function PortugueseBusinessDirectory({ isPortuguese, onContactBus
                           ))}
                         </div>
                       </div>
-                      {business.familyOwned && (
+                      {business.communityOwned && (
                         <span className="text-xs bg-heart-100 text-heart-600 px-2 py-1 rounded-full">
-                          {isPortuguese ? 'Familiar' : 'Family'}
+                          {isPortuguese ? 'Comunitário' : 'Community'}
                         </span>
                       )}
                     </div>
