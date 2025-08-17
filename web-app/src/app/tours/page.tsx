@@ -23,122 +23,122 @@ export default function ToursPage() {
   const tours = [
     {
       id: 1,
-      title: isPortuguese ? "Portugal em Londres: Raízes Históricas" : "Portugal in London: Historic Roots",
+      title: isPortuguese ? "Londres Clássico: Os Marcos Icónicos" : "Classic London: The Iconic Landmarks",
       description: isPortuguese 
-        ? "Descubra 500+ anos de presença portuguesa em Londres. De Catarina de Bragança aos bairros portugueses de hoje, incluindo Casa de Portugal, Embassy Quarter e marcos históricos onde portugueses moldaram a cidade." 
-        : "Discover 500+ years of Portuguese presence in London. From Catherine of Braganza to today's Portuguese neighborhoods, including Casa de Portugal, Embassy Quarter and historic landmarks where Portuguese shaped the city.",
+        ? "Descubra os pontos turísticos mais famosos de Londres com guias portugueses experientes. Big Ben, Tower Bridge, Buckingham Palace, Westminster Abbey e muito mais. Uma introdução perfeita à capital britânica com explicações em português." 
+        : "Discover London's most famous tourist attractions with experienced Portuguese guides. Big Ben, Tower Bridge, Buckingham Palace, Westminster Abbey and much more. A perfect introduction to the British capital with explanations in Portuguese.",
       duration: "3.5h",
-      groupSize: "6-10",
+      groupSize: "8-12",
       rating: 4.9,
-      price: "£65",
-      image: "/images/tours/portugal-london-heritage.jpg",
+      price: "£45",
+      image: "/images/tours/classic-london.jpg",
       highlights: isPortuguese ? [
-        "Casa de Portugal em South Kensington",
-        "Embaixada de Portugal e história diplomática",
-        "St. James's Palace - Casamento real português",
-        "Portuguese cultural landmarks",
-        "Stockwell - Little Portugal walking tour"
+        "Big Ben e Houses of Parliament",
+        "Tower Bridge e Tower of London",
+        "Buckingham Palace e Changing of the Guard",
+        "Westminster Abbey",
+        "Trafalgar Square e Covent Garden"
       ] : [
-        "Casa de Portugal in South Kensington", 
-        "Portuguese Embassy and diplomatic history",
-        "St. James's Palace - Portuguese royal wedding",
-        "Portuguese cultural landmarks",
-        "Stockwell - Little Portugal walking tour"
+        "Big Ben and Houses of Parliament", 
+        "Tower Bridge and Tower of London",
+        "Buckingham Palace and Changing of the Guard",
+        "Westminster Abbey",
+        "Trafalgar Square and Covent Garden"
       ],
       guide: {
         name: "Carlos Mendoza",
-        credentials: isPortuguese ? "Historiador português, 15 anos em Londres" : "Portuguese historian, 15 years in London",
+        credentials: isPortuguese ? "Guia turístico licenciado, 15 anos de experiência" : "Licensed tour guide, 15 years experience",
         languages: "Português, English, Español"
       }
     },
     {
       id: 2,
-      title: isPortuguese ? "Mercados & Sabores: Experiência Gastronómica Portuguesa" : "Markets & Flavors: Portuguese Culinary Experience", 
+      title: isPortuguese ? "Mercados & Sabores de Londres" : "London Markets & Flavors", 
       description: isPortuguese 
-        ? "Tour gastronómico pelos melhores locais portugueses: Borough Market com produtos portugueses, restaurantes autênticos em Vauxhall, pastelarias tradicionais e mercados onde a comunidade portuguesa compra. Inclui degustações!"
-        : "Culinary tour through the best Portuguese spots: Borough Market with Portuguese products, authentic restaurants in Vauxhall, traditional pastéis shops and markets where Portuguese community shops. Includes tastings!",
-      duration: "4h",
-      groupSize: "8-12", 
+        ? "Explore os mercados mais famosos de Londres: Borough Market, Camden Market, Covent Garden Market. Prove comidas locais, descubra produtos únicos e experiencie a cultura gastronómica londrina com guias que falam português."
+        : "Explore London's most famous markets: Borough Market, Camden Market, Covent Garden Market. Try local foods, discover unique products and experience London's food culture with Portuguese-speaking guides.",
+      duration: "3h",
+      groupSize: "10-14", 
       rating: 4.8,
-      price: "£75",
-      image: "/images/tours/portuguese-food-tour.jpg",
+      price: "£55",
+      image: "/images/tours/london-markets.jpg",
       highlights: isPortuguese ? [
-        "Borough Market - produtos portugueses",
-        "Casa do Bacalhau em Stockwell",
-        "Pastelaria tradicional com pastéis de nata",
-        "Restaurante familiar português em Vauxhall",
-        "Degustação de vinhos portugueses"
+        "Borough Market - mercado gastronómico",
+        "Camden Market - cultura alternativa",
+        "Covent Garden - entretenimento de rua",
+        "Degustação de comidas locais",
+        "Compras em mercados autênticos"
       ] : [
-        "Borough Market - Portuguese products",
-        "Casa do Bacalhau in Stockwell", 
-        "Traditional pastéis de nata bakery",
-        "Family Portuguese restaurant in Vauxhall",
-        "Portuguese wine tasting"
+        "Borough Market - food market",
+        "Camden Market - alternative culture", 
+        "Covent Garden - street entertainment",
+        "Local food tastings",
+        "Shopping at authentic markets"
       ],
       guide: {
         name: "Maria Santos",
-        credentials: isPortuguese ? "Chef portuguesa, especialista em gastronomia lusa" : "Portuguese chef, specialist in Portuguese gastronomy",
+        credentials: isPortuguese ? "Especialista em gastronomia londrina" : "London food specialist",
         languages: "Português, English"
       }
     },
     {
       id: 3,
-      title: isPortuguese ? "Comunidade Portuguesa: Vida & Cultura em Londres" : "Portuguese Community: Life & Culture in London",
+      title: isPortuguese ? "Museus & Cultura de Londres" : "London Museums & Culture",
       description: isPortuguese 
-        ? "Explore os verdadeiros bairros portugueses: Stockwell, Vauxhall, South Lambeth. Visite centros comunitários, igrejas portuguesas, escolas de português e espaços onde a nossa comunidade se reúne. Conheça histórias reais de emigração."
-        : "Explore the real Portuguese neighborhoods: Stockwell, Vauxhall, South Lambeth. Visit community centers, Portuguese churches, Portuguese schools and spaces where our community gathers. Learn real emigration stories.",
-      duration: "3h",
-      groupSize: "6-8",
+        ? "Visite os museus mais famosos do mundo: British Museum, Tate Modern, National Gallery, Victoria & Albert Museum. Descubra tesouros históricos e arte mundial com explicações detalhadas em português."
+        : "Visit the world's most famous museums: British Museum, Tate Modern, National Gallery, Victoria & Albert Museum. Discover historical treasures and world art with detailed explanations in Portuguese.",
+      duration: "4h",
+      groupSize: "6-10",
       rating: 4.9,
-      price: "£55",
-      image: "/images/tours/portuguese-community.jpg", 
+      price: "£65",
+      image: "/images/tours/london-museums.jpg", 
       highlights: isPortuguese ? [
-        "Igreja Portuguesa em South Lambeth",
-        "Centro Comunitário Português",
-        "Escola Portuguesa de Londres",
-        "Associações culturais portuguesas",
-        "Histórias de emigrantes portugueses"
+        "British Museum - antiguidades mundiais",
+        "National Gallery - obras-primas da arte",
+        "Tate Modern - arte contemporânea",
+        "Victoria & Albert Museum",
+        "South Bank cultural walk"
       ] : [
-        "Portuguese Church in South Lambeth",
-        "Portuguese Community Center", 
-        "Portuguese School of London",
-        "Portuguese cultural associations",
-        "Portuguese emigrant stories"
+        "British Museum - world antiquities",
+        "National Gallery - art masterpieces", 
+        "Tate Modern - contemporary art",
+        "Victoria & Albert Museum",
+        "South Bank cultural walk"
       ],
       guide: {
-        name: "João Silva",
-        credentials: isPortuguese ? "Líder comunitário, 25 anos na comunidade portuguesa" : "Community leader, 25 years in Portuguese community",
-        languages: "Português, English"
+        name: "Dr. Ana Ferreira",
+        credentials: isPortuguese ? "Historiadora de arte, guia de museus certificada" : "Art historian, certified museum guide",
+        languages: "Português, English, Français"
       }
     },
     {
       id: 4,
-      title: isPortuguese ? "Londres Real: Palácios & Conexões Portuguesas" : "Royal London: Palaces & Portuguese Connections",
+      title: isPortuguese ? "Palácios Reais de Londres" : "Royal Palaces of London",
       description: isPortuguese 
-        ? "Tour exclusivo pelos palácios reais com foco nas conexões portuguesas: Catarina de Bragança em Whitehall, casa real portuguesa, influência no chá britânico e legado português na monarquia. Inclui acesso especial!"
-        : "Exclusive tour through royal palaces focusing on Portuguese connections: Catherine of Braganza at Whitehall, Portuguese royal house, influence on British tea culture and Portuguese legacy in monarchy. Includes special access!",
+        ? "Tour exclusivo pelos palácios reais mais famosos: Buckingham Palace, Kensington Palace, Hampton Court Palace. Descubra a história da monarquia britânica, jardins reais e tradições centenárias com acesso preferencial."
+        : "Exclusive tour of the most famous royal palaces: Buckingham Palace, Kensington Palace, Hampton Court Palace. Discover British monarchy history, royal gardens and centuries-old traditions with priority access.",
       duration: "4.5h",
-      groupSize: "4-6", 
+      groupSize: "6-8", 
       rating: 5.0,
-      price: "£95",
-      image: "/images/tours/royal-portuguese.jpg",
+      price: "£85",
+      image: "/images/tours/royal-palaces.jpg",
       highlights: isPortuguese ? [
-        "Whitehall e Catarina de Bragança",
-        "St. James's Palace - história real",
-        "Portuguese Chapel Royal",
-        "Braganza legacy em Windsor",
-        "Acesso exclusivo a áreas privadas"
+        "Buckingham Palace State Rooms",
+        "Kensington Palace e jardins",
+        "Hampton Court Palace",
+        "Torre de Londres e Joias da Coroa",
+        "Cerimónia da Guarda Real"
       ] : [
-        "Whitehall and Catherine of Braganza",
-        "St. James's Palace - royal history",
-        "Portuguese Chapel Royal", 
-        "Braganza legacy at Windsor",
-        "Exclusive access to private areas"
+        "Buckingham Palace State Rooms",
+        "Kensington Palace and gardens",
+        "Hampton Court Palace", 
+        "Tower of London and Crown Jewels",
+        "Changing of the Royal Guard"
       ],
       guide: {
-        name: "Dr. Isabel Ferreira",
-        credentials: isPortuguese ? "Historiadora real, PhD em História Anglo-Portuguesa" : "Royal historian, PhD in Anglo-Portuguese History",
-        languages: "Português, English, Français"
+        name: "João Silva",
+        credentials: isPortuguese ? "Especialista em história real britânica" : "British royal history specialist",
+        languages: "Português, English"
       }
     }
   ];
@@ -159,8 +159,8 @@ export default function ToursPage() {
               </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
                 {isPortuguese 
-                  ? "Descubra Londres com guias portugueses especializados. Experiências autênticas para a comunidade portuguesa."
-                  : "Discover London with specialized Portuguese guides. Authentic experiences for the Portuguese community."
+                  ? "Descubra os pontos turísticos mais famosos de Londres com guias portugueses experientes. Tours em português pelos marcos icónicos da capital britânica."
+                  : "Discover London's most famous tourist attractions with experienced Portuguese guides. Tours in Portuguese of the British capital's iconic landmarks."
                 }
               </p>
             </motion.div>
@@ -178,8 +178,8 @@ export default function ToursPage() {
               </h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese 
-                  ? "Experiências únicas que revelam a verdadeira presença portuguesa em Londres, guiadas por especialistas da nossa comunidade."
-                  : "Unique experiences revealing the true Portuguese presence in London, guided by specialists from our community."
+                  ? "Explore os marcos mais famosos de Londres com guias portugueses qualificados que explicam tudo na nossa língua."
+                  : "Explore London's most famous landmarks with qualified Portuguese guides who explain everything in our language."
                 }
               </p>
             </div>
@@ -318,8 +318,8 @@ export default function ToursPage() {
                 </div>
                 <p className="text-gray-600 mb-4 italic">
                   {isPortuguese 
-                    ? "\"O tour da Casa de Portugal foi incrível! Descobri lugares que nem sabia que existiam em Londres. O Carlos conhece cada história.\""
-                    : "\"The Casa de Portugal tour was incredible! I discovered places I didn't know existed in London. Carlos knows every story.\""
+                    ? "\"O tour clássico de Londres foi fantástico! Ver Big Ben, Tower Bridge e Buckingham Palace com explicações em português fez toda a diferença. O Carlos é um guia excelente!\""
+                    : "\"The classic London tour was fantastic! Seeing Big Ben, Tower Bridge and Buckingham Palace with explanations in Portuguese made all the difference. Carlos is an excellent guide!\""
                   }
                 </p>
                 <div className="flex items-center gap-3">
@@ -343,8 +343,8 @@ export default function ToursPage() {
                 </div>
                 <p className="text-gray-600 mb-4 italic">
                   {isPortuguese 
-                    ? "\"O tour gastronómico foi perfeito! Provámos pastéis de nata autênticos e descobrimos onde a comunidade portuguesa compra.\""
-                    : "\"The food tour was perfect! We tried authentic pastéis de nata and discovered where the Portuguese community shops.\""
+                    ? "\"O tour dos mercados foi incrível! Borough Market e Camden Market com um guia português que explica tudo na nossa língua. Experimentámos comidas deliciosas!\""
+                    : "\"The markets tour was incredible! Borough Market and Camden Market with a Portuguese guide who explains everything in our language. We tried delicious foods!\""
                   }
                 </p>
                 <div className="flex items-center gap-3">
@@ -368,8 +368,8 @@ export default function ToursPage() {
                 </div>
                 <p className="text-gray-600 mb-4 italic">
                   {isPortuguese 
-                    ? "\"Conhecer a história de Catarina de Bragança foi fascinante. Nunca imaginei que Portugal tivesse tanta influência em Londres!\""
-                    : "\"Learning about Catherine of Braganza's history was fascinating. I never imagined Portugal had so much influence in London!\""
+                    ? "\"Os museus de Londres são impressionantes! British Museum e National Gallery com explicações detalhadas em português. A Ana conhece tudo sobre arte e história!\""
+                    : "\"London's museums are impressive! British Museum and National Gallery with detailed explanations in Portuguese. Ana knows everything about art and history!\""
                   }
                 </p>
                 <div className="flex items-center gap-3">
@@ -474,12 +474,12 @@ export default function ToursPage() {
         <div className="container-width relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              {isPortuguese ? "Pronto para Descobrir o Teu Londres Português?" : "Ready to Discover Your Portuguese London?"}
+              {isPortuguese ? "Pronto para Descobrir Londres?" : "Ready to Discover London?"}
             </h2>
             <p className="text-xl md:text-2xl mb-8 opacity-90">
               {isPortuguese 
-                ? "Junta-te a centenas de portugueses que já descobriram a Londres que nunca viram nos guias turísticos."
-                : "Join hundreds of Portuguese people who have discovered the London they never saw in tourist guides."
+                ? "Junta-te a centenas de portugueses que já exploraram os marcos mais famosos de Londres com os nossos guias especializados."
+                : "Join hundreds of Portuguese people who have already explored London's most famous landmarks with our specialized guides."
               }
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -492,8 +492,8 @@ export default function ToursPage() {
             </div>
             <div className="mt-8 text-sm opacity-80">
               {isPortuguese 
-                ? "💬 Tours em português | 🏛️ Locais autênticos | 👥 Comunidade portuguesa"
-                : "💬 Tours in Portuguese | 🏛️ Authentic locations | 👥 Portuguese community"
+                ? "💬 Tours em português | 🏛️ Marcos famosos | 👥 Guias especializados"
+                : "💬 Tours in Portuguese | 🏛️ Famous landmarks | 👥 Specialized guides"
               }
             </div>
           </div>

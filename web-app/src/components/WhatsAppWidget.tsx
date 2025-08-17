@@ -43,13 +43,33 @@ const WhatsAppWidget: React.FC = () => {
       en: [
         {
           message:
-            "Olá! 👋 Welcome to LusoTown. How can I help you today? Choose an option below or type your message:",
+            "Olá! 👋 Planning a trip to London? Need a Portuguese-speaking guide or driver?",
           options: [
-            "Book a driver",
-            "See all events", 
-            "Email support",
+            "Yes, I'm visiting London!",
+            "I live here, show me events",
+            "Just browsing",
           ],
           icon: <Heart className="w-4 h-4 text-green-600" />,
+        },
+        {
+          message:
+            "Perfect! 🇬🇧 We have Portuguese-speaking drivers & guides ready to show you London. What interests you most?",
+          options: [
+            "Personal driver for my trip",
+            "Guided London tour", 
+            "Both driver & guide",
+          ],
+          icon: <Calendar className="w-4 h-4 text-action-600" />,
+        },
+        {
+          message:
+            "Great! 🎉 You're local. Join our Portuguese community events across London:",
+          options: [
+            "Show me upcoming events",
+            "Cultural & social meetups", 
+            "Business networking",
+          ],
+          icon: <Users className="w-4 h-4 text-secondary-600" />,
         },
         {
           message:
@@ -121,13 +141,33 @@ const WhatsAppWidget: React.FC = () => {
       pt: [
         {
           message:
-            "Olá! 👋 Bem-vindo à LusoTown. Como posso ajudar-te hoje? Escolhe uma opção ou escreve a tua mensagem:",
+            "Olá! 👋 Vens visitar Londres? Precisas de guia ou motorista que fale português?",
           options: [
-            "Reservar motorista",
-            "Ver todos os eventos",
-            "Email de apoio",
+            "Sim, vou visitar Londres!",
+            "Vivo aqui, mostra eventos",
+            "Só estou a ver",
           ],
           icon: <Heart className="w-4 h-4 text-green-600" />,
+        },
+        {
+          message:
+            "Perfeito! 🇬🇧 Temos motoristas e guias portugueses prontos para te mostrar Londres. O que te interessa mais?",
+          options: [
+            "Motorista pessoal para a viagem",
+            "Tour guiado de Londres", 
+            "Motorista e guia juntos",
+          ],
+          icon: <Calendar className="w-4 h-4 text-action-600" />,
+        },
+        {
+          message:
+            "Ótimo! 🎉 És local. Junta-te aos eventos da comunidade portuguesa em Londres:",
+          options: [
+            "Mostrar próximos eventos",
+            "Encontros culturais e sociais", 
+            "Networking empresarial",
+          ],
+          icon: <Users className="w-4 h-4 text-secondary-600" />,
         },
         {
           message:
@@ -262,7 +302,7 @@ const WhatsAppWidget: React.FC = () => {
     setCustomMessage("");
 
     // Send message to WhatsApp (your mobile)
-    const whatsappNumber = "+447508196996"; // Replace with your actual WhatsApp number
+    const whatsappNumber = "+447407655203";
     const encodedMessage = encodeURIComponent(`New message from LusoTown website:\n\n"${customMessage}"\n\n--- Sent via LusoTown Chat Widget ---`);
     
     // Simulate bot response
@@ -298,22 +338,22 @@ const WhatsAppWidget: React.FC = () => {
     };
     setMessages((prev) => [...prev, userMessage]);
 
-    // Fast-path: primary actions for transport/events/support
+    // Fast-path: primary actions for tourism/transport/events
     const opt = option.toLowerCase();
     if (
+      opt.includes("personal driver") ||
+      opt.includes("motorista pessoal") ||
       opt.includes("book a driver") ||
       opt.includes("reservar motorista") ||
-      opt.includes("book a personal driver") ||
-      opt.includes("reservar motorista pessoal") ||
-      opt.includes("get a quote for private transport") ||
-      opt.includes("pedir orçamento transporte privado")
+      opt.includes("both driver & guide") ||
+      opt.includes("motorista e guia juntos")
     ) {
       setTimeout(() => {
         const msg: Message = {
           id: Date.now() + 1,
           text: isPortuguese
-            ? "Abrindo a página de Transporte Privado…"
-            : "Opening the Private Transport page…",
+            ? "Excelente! 🚗 A abrir a página de reservas de motorista…"
+            : "Excellent! 🚗 Opening driver booking page…",
           isBot: true,
           timestamp: new Date(),
           icon: <Shield className="w-4 h-4 text-secondary-600" />,
@@ -345,17 +385,41 @@ const WhatsAppWidget: React.FC = () => {
     }
 
     if (
-      opt.includes("see all events") ||
-      opt.includes("ver todos os eventos") ||
-      opt.includes("see all london tours") ||
-      opt.includes("ver todos os tours de londres")
+      opt.includes("guided london tour") ||
+      opt.includes("tour guiado de londres") ||
+      opt.includes("london tour") ||
+      opt.includes("tour de londres")
     ) {
       setTimeout(() => {
         const msg: Message = {
           id: Date.now() + 1,
           text: isPortuguese
-            ? "A mostrar todos os eventos…"
-            : "Showing all events…",
+            ? "Perfeito! 🗺️ A mostrar os nossos tours guiados em português…"
+            : "Perfect! 🗺️ Showing our Portuguese-guided tours…",
+          isBot: true,
+          timestamp: new Date(),
+          icon: <Calendar className="w-4 h-4 text-action-600" />,
+        };
+        setMessages((prev) => [...prev, msg]);
+        setTimeout(() => window.open("/tours", "_blank"), 1200);
+      }, 800);
+      return;
+    }
+
+    if (
+      opt.includes("show me upcoming events") ||
+      opt.includes("mostrar próximos eventos") ||
+      opt.includes("see all events") ||
+      opt.includes("ver todos os eventos") ||
+      opt.includes("cultural & social meetups") ||
+      opt.includes("encontros culturais e sociais")
+    ) {
+      setTimeout(() => {
+        const msg: Message = {
+          id: Date.now() + 1,
+          text: isPortuguese
+            ? "Óptimo! 🎉 A mostrar eventos da comunidade portuguesa…"
+            : "Great! 🎉 Showing Portuguese community events…",
           isBot: true,
           timestamp: new Date(),
           icon: <Calendar className="w-4 h-4 text-action-600" />,
@@ -480,13 +544,17 @@ const WhatsAppWidget: React.FC = () => {
     }
 
     // Handle "browsing" responses
-    if (option.includes("browsing") || option.includes("Só estou a ver")) {
+    if (
+      opt.includes("just browsing") || 
+      opt.includes("só estou a ver") || 
+      opt.includes("browsing")
+    ) {
       setTimeout(() => {
         const laterMessage: Message = {
           id: Date.now() + 1,
           text: isPortuguese
-            ? "Sem problema! 😊 Estarei aqui sempre que estiveres pronto para explorar a nossa comunidade portuguesa global. Sente-te à vontade para navegar no site!"
-            : "No worries at all! 😊 I'll be here whenever you're ready to explore our amazing global Portuguese community. Feel free to browse our website!",
+            ? "Sem problema! 😊 Se mudares de ideias, estou aqui. Também podes escrever-me uma mensagem directa!"
+            : "No problem! 😊 If you change your mind, I'm here. You can also type me a direct message!",
           isBot: true,
           timestamp: new Date(),
           icon: <Heart className="w-4 h-4 text-green-600" />,
@@ -502,51 +570,42 @@ const WhatsAppWidget: React.FC = () => {
         conversationFlow[language as keyof typeof conversationFlow];
       let nextStepIndex = 1; // Default to first step after intro
 
-      // Route based on user selection
+      // Route based on user selection in new tourism-focused flow
       if (
-        option.includes("organize") ||
-        option.includes("organizar") ||
-        option.includes("create events") ||
-        option.includes("criar eventos")
+        opt.includes("yes, i'm visiting london") ||
+        opt.includes("sim, vou visitar londres") ||
+        opt.includes("visiting london") ||
+        opt.includes("visitar londres")
       ) {
-        nextStepIndex = 1; // Organizer path
+        nextStepIndex = 1; // Tourism services path
       } else if (
-        option.includes("social events") ||
-        option.includes("eventos sociais") ||
-        option.includes("find social") ||
-        option.includes("social experiences") ||
-        option.includes("experiências sociais")
+        opt.includes("i live here") ||
+        opt.includes("vivo aqui") ||
+        opt.includes("show me events") ||
+        opt.includes("mostra eventos")
       ) {
-        nextStepIndex = 2; // Social events path
+        nextStepIndex = 2; // Local events path
       } else if (
-        option.includes("business networking") ||
-        option.includes("networking empresarial") ||
-        option.includes("Business") ||
-        option.includes("Empresarial")
+        opt.includes("business networking") ||
+        opt.includes("networking empresarial")
       ) {
-        nextStepIndex = 3; // Business networking path
-      } else if (
-        option.includes("Tell me about") ||
-        option.includes("Conta-me sobre") ||
-        option.includes("Platform features") ||
-        option.includes("Funcionalidades")
-      ) {
-        nextStepIndex = 4; // Platform info path
-      } else if (currentStep === 1 || currentStep === 2 || currentStep === 3) {
-        // Continue with specific detailed flows
-        nextStepIndex = 5; // Detailed info for organizers/social/business
-      } else if (currentStep === 4) {
-        // From platform info, route based on choice
-        if (
-          option.includes("create events") ||
-          option.includes("criar eventos")
-        ) {
-          nextStepIndex = 5; // Creator details
-        } else {
-          nextStepIndex = 6; // Member details
-        }
+        // Business networking - direct to business networking page
+        setTimeout(() => {
+          const businessMsg: Message = {
+            id: Date.now() + 1,
+            text: isPortuguese
+              ? "Excelente! 💼 A mostrar eventos de networking empresarial português…"
+              : "Excellent! 💼 Showing Portuguese business networking events…",
+            isBot: true,
+            timestamp: new Date(),
+            icon: <Users className="w-4 h-4 text-premium-600" />,
+          };
+          setMessages((prev) => [...prev, businessMsg]);
+          setTimeout(() => window.open("/business-networking", "_blank"), 1200);
+        }, 800);
+        return;
       } else {
-        // Default progression
+        // Default progression for remaining steps
         nextStepIndex = Math.min(currentStep + 1, currentFlow.length - 1);
       }
 
