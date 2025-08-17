@@ -110,7 +110,7 @@ export default function CrossPlatformNavigationWidget({
           },
           {
             id: 'events-to-group-transport',
-            title: isPortuguese ? 'Transporte Compartilhado' : 'Shared Transport',
+            title: isPortuguese ? 'Transporte Privado' : 'Private Transport',
             description: isPortuguese ? 'Vá com suas conexões do LusoTown' : 'Go with your LusoTown connections',
             action: '/transport?mode=group',
             icon: Users,

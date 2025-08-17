@@ -10,10 +10,8 @@ import {
   Users,
   Globe,
   Sparkles,
-  Shield,
   ArrowRight,
-  Heart,
-  MapPin
+  Heart
 } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 
@@ -76,18 +74,6 @@ export default function AboutLusoTown() {
     }
   ]
 
-  const countries = [
-    { flag: '🇵🇹', name: 'Portugal', code: 'PT' },
-    { flag: '🇧🇷', name: 'Brazil', code: 'BR' },
-    { flag: '🇦🇴', name: 'Angola', code: 'AO' },
-    { flag: '🇲🇿', name: 'Mozambique', code: 'MZ' },
-    { flag: '🇨🇻', name: 'Cape Verde', code: 'CV' },
-    { flag: '🇬🇼', name: 'Guinea-Bissau', code: 'GW' },
-    { flag: '🇸🇹', name: 'São Tomé', code: 'ST' },
-    { flag: '🇹🇱', name: 'East Timor', code: 'TL' },
-    { flag: '🇲🇴', name: 'Macau', code: 'MO' },
-    { flag: '🇬🇶', name: 'Eq. Guinea', code: 'GQ' }
-  ]
 
   return (
     <section className="relative py-20 bg-gradient-to-br from-white via-gray-50 to-secondary-50 overflow-hidden">
@@ -167,50 +153,6 @@ export default function AboutLusoTown() {
           </div>
         </div>
 
-        {/* Countries Section */}
-        <div className={`bg-white/40 backdrop-blur-xl rounded-3xl p-8 sm:p-12 shadow-2xl border border-white/30 transition-all duration-1000 delay-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-3 bg-white/70 border border-gray-200 rounded-2xl px-6 py-3 shadow-lg mb-6">
-              <Shield className="h-5 w-5 text-secondary-500" />
-              <span className="text-sm font-bold text-gray-700">Professional Network • Adult Community</span>
-            </div>
-            
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Built for Portuguese speakers from <span className="bg-gradient-to-r from-secondary-600 to-primary-600 bg-clip-text text-transparent">across the globe</span>
-            </h3>
-          </div>
-          
-          {/* Countries Grid - Enhanced Multi-Column Layout */}
-          <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5 gap-2 xs:gap-3 sm:gap-4 justify-items-center mb-8">
-            {countries.map((country, index) => (
-              <div
-                key={country.code}
-                className={`group flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-2xl px-4 py-3 shadow-lg hover:shadow-xl border border-white/40 hover:border-secondary-300 transition-all duration-300 hover:scale-105 hover:-translate-y-1 transition-all duration-500 delay-${50 * index} ${mounted ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
-                style={{ transitionDelay: `${50 * index}ms` }}
-              >
-                <span className="text-xl group-hover:scale-110 transition-transform duration-300">
-                  {country.flag}
-                </span>
-                <span className="text-sm font-bold text-gray-700 group-hover:text-secondary-600 transition-colors duration-300">
-                  {country.name}
-                </span>
-              </div>
-            ))}
-          </div>
-          
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Whether you're from Portugal, Brazil, Angola, Mozambique, or any Portuguese-speaking nation, 
-              LusoTown London connects you with authentic venues where Portuguese culture thrives and community happens.
-            </p>
-            
-            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-secondary-500 via-primary-500 to-accent-500 text-white rounded-2xl px-8 py-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
-              <MapPin className="h-5 w-5" />
-              <span className="font-bold text-lg">Join 750+ Portuguese speakers meeting at authentic venues across London</span>
-              <Sparkles className="h-5 w-5" />
-            </div>
-          </div>
-        </div>
 
         {/* Call-to-Action */}
         <div className={`text-center mt-12 transition-all duration-1000 delay-900 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>

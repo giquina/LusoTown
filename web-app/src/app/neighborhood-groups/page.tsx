@@ -155,13 +155,13 @@ const neighborhoodGroups = [
     transportLinksPt: ['Southern Rail', 'Autocarro 68, 196'],
     highlights: [
       'Portuguese family meetups',
-      'Shared transport to events',
+      'Private transport to events',
       'Community WhatsApp groups',
       'Potential cultural center'
     ],
     highlightsPt: [
       'Encontros familiares portugueses',
-      'Transporte partilhado para eventos',
+      'Transporte privado para eventos',
       'Grupos WhatsApp comunitários',
       'Potencial centro cultural'
     ],
@@ -278,7 +278,7 @@ const communityResources = [
     icon: TruckIcon,
     items: [
       { name: 'Group transport to events', namePt: 'Transporte grupo para eventos', count: '15/week' },
-      { name: 'Shared transport networks', namePt: 'Redes transporte partilhado', count: '6 active' },
+      { name: 'Private transport networks', namePt: 'Redes transporte privado', count: '6 active' },
       { name: 'Regular routes to Stockwell', namePt: 'Rotas regulares para Stockwell', count: 'Daily' },
       { name: 'Event carpooling groups', namePt: 'Grupos boleia para eventos', count: '12 groups' }
     ]
@@ -978,8 +978,8 @@ export default function NeighborhoodGroups() {
                       </h4>
                       <p className="text-sm text-gray-600 text-center">
                         {isPortuguese ? 
-                          'Organiza transporte partilhado para eventos centrais' :
-                          'Organize shared transport to central events'
+                          'Organiza transporte privado para eventos centrais' :
+                          'Organize private transport to central events'
                         }
                       </p>
                     </div>
@@ -1058,7 +1058,7 @@ export default function NeighborhoodGroups() {
                   <div className="flex flex-col items-center gap-2">
                     <CheckCircleIconSolid className="h-6 w-6 text-green-500" />
                     <span className="text-gray-600 font-medium">
-                      {isPortuguese ? 'Transporte partilhado' : 'Shared transport'}
+                      {isPortuguese ? 'Transporte privado' : 'Private transport'}
                     </span>
                   </div>
                   <div className="flex flex-col items-center gap-2">

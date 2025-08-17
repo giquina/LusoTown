@@ -11,7 +11,7 @@ LusoTown: Bilingual Portuguese community platform (London & UK) serving Portugue
 
 - Dev: from repo root run in web app folder
   - cd web-app && npm install && npm run dev
-- Build checks
+- Build checks (run from web-app directory)
   - npm run lint
   - npx tsc --noEmit
   - npm run build (TypeScript/ESLint errors are ignored during build per next.config.js)
@@ -57,8 +57,10 @@ LusoTown: Bilingual Portuguese community platform (London & UK) serving Portugue
 ## Essential Commands
 
 ```bash
-# Development
-cd web-app && npm run dev    # Start dev server (localhost:3000)
+# Development (from repo root)
+cd web-app && npm install && npm run dev    # Start dev server (localhost:3000)
+
+# From web-app directory
 npm run build               # Production build
 npm run lint               # ESLint check
 npx tsc --noEmit          # TypeScript check
@@ -89,6 +91,8 @@ npm run test:accessibility  # Accessibility tests
 **Status:** Onboarding flow partially complete (Steps 1-3 implemented)
 **Commands:**
 - `cd mobile-app && npm install && npm start` - Start Expo development server
+- `npm run android` - Run on Android device/emulator
+- `npm run ios` - Run on iOS device/simulator
 - Scan QR code with Expo Go app for testing
 
 **Current Features:**

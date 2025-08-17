@@ -1,148 +1,239 @@
+"use client";
 
-'use client'
-
-import React, { useState, useEffect, useRef, useMemo } from 'react'
-import { X, MessageCircle, Heart, Users, Shield, Calendar, ArrowRight } from 'lucide-react'
-import { useLanguage } from '@/context/LanguageContext'
+import React, { useState, useEffect, useRef, useMemo } from "react";
+import {
+  X,
+  MessageCircle,
+  Heart,
+  Users,
+  Shield,
+  Calendar,
+  ArrowRight,
+} from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface Message {
-  id: number
-  text: string
-  isBot: boolean
-  timestamp: Date
-  options?: string[]
-  icon?: React.ReactNode
+  id: number;
+  text: string;
+  isBot: boolean;
+  timestamp: Date;
+  options?: string[];
+  icon?: React.ReactNode;
 }
 
 const WhatsAppWidget: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [isMinimized, setIsMinimized] = useState(false)
-  const [messages, setMessages] = useState<Message[]>([])
-  const [currentStep, setCurrentStep] = useState(0)
-  const [showWidget, setShowWidget] = useState(false)
-  const [isDismissed, setIsDismissed] = useState(false)
-  const [hasInteracted, setHasInteracted] = useState(false)
-  const messagesEndRef = useRef<HTMLDivElement>(null)
-  const { language } = useLanguage()
-  
+  const [isOpen, setIsOpen] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(false);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [currentStep, setCurrentStep] = useState(0);
+  const [showWidget, setShowWidget] = useState(false);
+  const [isDismissed, setIsDismissed] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const { language } = useLanguage();
+
   // Helper function to check if language is Portuguese
-  const isPortuguese = language === 'pt'
+  const isPortuguese = language === "pt";
 
   // Conversation flow for dual-audience Portuguese community platform
-  const conversationFlow = useMemo(() => ({
-    en: [
-      {
-        message: "Olá! 👋 Welcome to LusoTown. Need help with London Tours or Private Transport? I'm your guide. You can book a personal driver or security driver, explore tours, or ask how to use the site. If you need support at any time, email support@lusotown.com.",
-        options: [
-          "Book a personal driver",
-          "Book a security driver",
-          "See all London tours",
-          "How do I use the site?",
-          "Email support"
-        ],
-        icon: <Heart className="w-4 h-4 text-green-600" />
-      },
-      {
-        message: "Fantástico! 🎯 You want to organize events for Portuguese speakers! LusoTown helps you:\n\n📅 Create social & business events for our community\n🌆 Reach Portuguese speakers across London and UK\n💰 Monetize through tickets, sponsorships & partnerships\n📈 Track attendance and build long-term relationships\n🎉 Access promotional tools and bilingual templates\n\nReady to become a community leader?",
-        options: ["Yes, I want to organize!", "What about monetization?", "How do I reach the community?", "Tell me about promotional tools"],
-        icon: <Calendar className="w-4 h-4 text-green-600" />
-      },
-      {
-        message: "Great! 🎉 You want experiences. We offer Portuguese-guided tours and private transport across London. What would you like to do now?",
-        options: ["See all London tours", "Get a quote for private transport", "Shared transport for events", "Contact support"],
-        icon: <Users className="w-4 h-4 text-red-600" />
-      },
-      {
-        message: "Excelente! 💼 Ready for business networking! LusoTown offers:\n\n🚀 AI workshops & tech masterclasses\n💻 Website creation & digital marketing training\n🤝 Portuguese business community networking\n📈 Entrepreneurship workshops & mentoring\n🎯 Professional development opportunities\n\n*Build your business network with Portuguese professionals!*",
-        options: ["Show me tech workshops!", "Find networking events", "Business mentoring options", "Professional development"],
-        icon: <Calendar className="w-4 h-4 text-action-600" />
-      },
-      {
-        message: "Excelente! 🌆 LusoTown serves dual audiences in London & UK:\n\n🎪 **Event Creators:** Tools to create, promote & monetize social/business events\n🎭 **Social Users:** Cultural experiences, tours, entertainment & connections\n💼 **Business Professionals:** Networking, workshops, training & mentoring\n🌍 **Bilingual Platform:** Complete English/Portuguese experience\n\n*Professional, inclusive & welcoming to all Portuguese speakers!*",
-        options: ["I want to create events", "Show me social experiences", "Business networking options", "Platform features"],
-        icon: <Calendar className="w-4 h-4 text-premium-600" />
-      },
-      {
-        message: "Amazing! 🚀 As an event creator on LusoTown you get:\n\n💡 **Dual-Audience Tools:** Create both social & business events\n💰 **Revenue Opportunities:** Tickets, sponsorships & partnerships\n📊 **Advanced Analytics:** Track engagement & build relationships\n🌆 **Community Reach:** Access Portuguese speakers across UK\n📢 **Bilingual Marketing:** Templates in English & Portuguese\n🎯 **Quality Audience:** Verified community members only\n\nStart creating events today!",
-        options: ["Sign me up as creator!", "Revenue opportunities?", "Marketing support details", "Community reach info"],
-        icon: <ArrowRight className="w-4 h-4 text-action-600" />
-      },
-      {
-        message: "Need a hand? Here are quick actions:\n\n🚗 Book a personal or security driver\n🌆 Explore all London tours\n👣 How to navigate and use the site\n✉️ Email support: support@lusotown.com",
-        options: ["Book a personal driver", "Book a security driver", "See all London tours", "How do I use the site?"],
-        icon: <Shield className="w-4 h-4 text-secondary-600" />
-      }
-    ],
-    pt: [
-      {
-        message: "Olá! 👋 Bem-vindo à LusoTown. Precisas de ajuda com Tours em Londres ou Transporte Privado? Sou o teu guia. Podes reservar motorista pessoal ou de segurança, explorar tours, ou aprender a usar o site. Se precisares de apoio, envia email para support@lusotown.com.",
-        options: [
-          "Reservar motorista pessoal",
-          "Reservar motorista de segurança",
-          "Ver todos os tours de Londres",
-          "Como usar o site?",
-          "Email de apoio"
-        ],
-        icon: <Heart className="w-4 h-4 text-green-600" />
-      },
-      {
-        message: "Fantástico! 🎯 Queres organizar eventos para lusófonos! A LusoTown ajuda-te a:\n\n📅 Criar eventos sociais e empresariais para a comunidade\n🌍 Alcançar lusófonos em Londres e Reino Unido\n💰 Monetizar através de bilhetes, patrocínios e parcerias\n📈 Acompanhar participação e construir relacionamentos duradouros\n🎉 Aceder a ferramentas promocionais bilingues\n\nPronto para te tornares um líder comunitário?",
-        options: ["Sim, quero organizar!", "Oportunidades de receita?", "Como alcanço a comunidade?", "Ferramentas promocionais"],
-        icon: <Calendar className="w-4 h-4 text-green-600" />
-      },
-      {
-        message: "Ótimo! 🎉 Queres experiências. Temos tours guiados em português e transporte privado em Londres. O que queres fazer agora?",
-        options: ["Ver todos os tours de Londres", "Pedir orçamento transporte privado", "Transporte partilhado para eventos", "Contactar apoio"],
-        icon: <Users className="w-4 h-4 text-red-600" />
-      },
-      {
-        message: "Excelente! 💼 Pronto para networking empresarial! A LusoTown oferece:\n\n🚀 Workshops de IA e masterclasses tecnológicas\n💻 Criação de websites e treino de marketing digital\n🤝 Networking da comunidade empresarial portuguesa\n📈 Workshops de empreendedorismo e mentoria\n🎯 Oportunidades de desenvolvimento profissional\n\n*Constrói a tua rede empresarial com profissionais portugueses!*",
-        options: ["Mostra-me workshops tecnológicos!", "Encontrar eventos de networking", "Opções de mentoria empresarial", "Desenvolvimento profissional"],
-        icon: <Calendar className="w-4 h-4 text-action-600" />
-      },
-      {
-        message: "Excelente! 🌆 A LusoTown serve duas audiências em Londres e Reino Unido:\n\n🎪 **Criadores de Eventos:** Ferramentas para criar, promover e monetizar eventos sociais/empresariais\n🎭 **Utilizadores Sociais:** Experiências culturais, tours, entretenimento e conexões\n💼 **Profissionais Empresariais:** Networking, workshops, treino e mentoria\n🌍 **Plataforma Bilingue:** Experiência completa Português/Inglês\n\n*Profissional, inclusiva e acolhedora para todos os lusófonos!*",
-        options: ["Quero criar eventos", "Mostra-me experiências sociais", "Opções de networking empresarial", "Funcionalidades da plataforma"],
-        icon: <Calendar className="w-4 h-4 text-premium-600" />
-      },
-      {
-        message: "Incrível! 🚀 Como criador de eventos na LusoTown recebes:\n\n💡 **Ferramentas Duais:** Cria eventos sociais e empresariais\n💰 **Oportunidades de Receita:** Bilhetes, patrocínios e parcerias\n📊 **Analytics Avançadas:** Acompanha envolvimento e constrói relacionamentos\n🌆 **Alcance Comunitário:** Acesso a lusófonos em todo Reino Unido\n📢 **Marketing Bilingue:** Modelos em Inglês e Português\n🎯 **Audiência de Qualidade:** Apenas membros verificados da comunidade\n\nComeça a criar eventos hoje!",
-        options: ["Regista-me como criador!", "Oportunidades de receita?", "Detalhes do apoio de marketing", "Informações sobre alcance comunitário"],
-        icon: <ArrowRight className="w-4 h-4 text-action-600" />
-      },
-      {
-        message: "Precisas de ajuda? Ações rápidas:\n\n🚗 Reservar motorista pessoal ou de segurança\n🌆 Ver todos os tours de Londres\n👣 Como navegar e usar o site\n✉️ Email de apoio: support@lusotown.com",
-        options: ["Reservar motorista pessoal", "Reservar motorista de segurança", "Ver todos os tours de Londres", "Como usar o site?"],
-        icon: <Shield className="w-4 h-4 text-secondary-600" />
-      }
-    ]
-  }), [])
+  const conversationFlow = useMemo(
+    () => ({
+      en: [
+        {
+          message:
+            "Olá! 👋 Welcome to LusoTown. Need help with London Tours or Private Transport? I'm your guide. You can book a personal driver or security driver, explore tours, or ask how to use the site. If you need support at any time, email support@lusotown.com.",
+          options: [
+            "Book a personal driver",
+            "Book a security driver",
+            "See all London tours",
+            "How do I use the site?",
+            "Email support",
+          ],
+          icon: <Heart className="w-4 h-4 text-green-600" />,
+        },
+        {
+          message:
+            "Fantástico! 🎯 You want to organize events for Portuguese speakers! LusoTown helps you:\n\n📅 Create social & business events for our community\n🌆 Reach Portuguese speakers across London and UK\n💰 Monetize through tickets, sponsorships & partnerships\n📈 Track attendance and build long-term relationships\n🎉 Access promotional tools and bilingual templates\n\nReady to become a community leader?",
+          options: [
+            "Yes, I want to organize!",
+            "What about monetization?",
+            "How do I reach the community?",
+            "Tell me about promotional tools",
+          ],
+          icon: <Calendar className="w-4 h-4 text-green-600" />,
+        },
+        {
+          message:
+            "Great! 🎉 You want experiences. We offer Portuguese-guided tours and private transport across London. What would you like to do now?",
+          options: [
+            "See all London tours",
+            "Get a quote for private transport",
+            "Private transport for events",
+            "Contact support",
+          ],
+          icon: <Users className="w-4 h-4 text-red-600" />,
+        },
+        {
+          message:
+            "Excelente! 💼 Ready for business networking! LusoTown offers:\n\n🚀 AI workshops & tech masterclasses\n💻 Website creation & digital marketing training\n🤝 Portuguese business community networking\n📈 Entrepreneurship workshops & mentoring\n🎯 Professional development opportunities\n\n*Build your business network with Portuguese professionals!*",
+          options: [
+            "Show me tech workshops!",
+            "Find networking events",
+            "Business mentoring options",
+            "Professional development",
+          ],
+          icon: <Calendar className="w-4 h-4 text-action-600" />,
+        },
+        {
+          message:
+            "Excelente! 🌆 LusoTown serves dual audiences in London & UK:\n\n🎪 **Event Creators:** Tools to create, promote & monetize social/business events\n🎭 **Social Users:** Cultural experiences, tours, entertainment & connections\n💼 **Business Professionals:** Networking, workshops, training & mentoring\n🌍 **Bilingual Platform:** Complete English/Portuguese experience\n\n*Professional, inclusive & welcoming to all Portuguese speakers!*",
+          options: [
+            "I want to create events",
+            "Show me social experiences",
+            "Business networking options",
+            "Platform features",
+          ],
+          icon: <Calendar className="w-4 h-4 text-premium-600" />,
+        },
+        {
+          message:
+            "Amazing! 🚀 As an event creator on LusoTown you get:\n\n💡 **Dual-Audience Tools:** Create both social & business events\n💰 **Revenue Opportunities:** Tickets, sponsorships & partnerships\n📊 **Advanced Analytics:** Track engagement & build relationships\n🌆 **Community Reach:** Access Portuguese speakers across UK\n📢 **Bilingual Marketing:** Templates in English & Portuguese\n🎯 **Quality Audience:** Verified community members only\n\nStart creating events today!",
+          options: [
+            "Sign me up as creator!",
+            "Revenue opportunities?",
+            "Marketing support details",
+            "Community reach info",
+          ],
+          icon: <ArrowRight className="w-4 h-4 text-action-600" />,
+        },
+        {
+          message:
+            "Need a hand? Here are quick actions:\n\n🚗 Book a personal or security driver\n🌆 Explore all London tours\n👣 How to navigate and use the site\n✉️ Email support: support@lusotown.com",
+          options: [
+            "Book a personal driver",
+            "Book a security driver",
+            "See all London tours",
+            "How do I use the site?",
+          ],
+          icon: <Shield className="w-4 h-4 text-secondary-600" />,
+        },
+      ],
+      pt: [
+        {
+          message:
+            "Olá! 👋 Bem-vindo à LusoTown. Precisas de ajuda com Tours em Londres ou Transporte Privado? Sou o teu guia. Podes reservar motorista pessoal ou de segurança, explorar tours, ou aprender a usar o site. Se precisares de apoio, envia email para support@lusotown.com.",
+          options: [
+            "Reservar motorista pessoal",
+            "Reservar motorista de segurança",
+            "Ver todos os tours de Londres",
+            "Como usar o site?",
+            "Email de apoio",
+          ],
+          icon: <Heart className="w-4 h-4 text-green-600" />,
+        },
+        {
+          message:
+            "Fantástico! 🎯 Queres organizar eventos para lusófonos! A LusoTown ajuda-te a:\n\n📅 Criar eventos sociais e empresariais para a comunidade\n🌍 Alcançar lusófonos em Londres e Reino Unido\n💰 Monetizar através de bilhetes, patrocínios e parcerias\n📈 Acompanhar participação e construir relacionamentos duradouros\n🎉 Aceder a ferramentas promocionais bilingues\n\nPronto para te tornares um líder comunitário?",
+          options: [
+            "Sim, quero organizar!",
+            "Oportunidades de receita?",
+            "Como alcanço a comunidade?",
+            "Ferramentas promocionais",
+          ],
+          icon: <Calendar className="w-4 h-4 text-green-600" />,
+        },
+        {
+          message:
+            "Ótimo! 🎉 Queres experiências. Temos tours guiados em português e transporte privado em Londres. O que queres fazer agora?",
+          options: [
+            "Ver todos os tours de Londres",
+            "Pedir orçamento transporte privado",
+            "Transporte privado para eventos",
+            "Contactar apoio",
+          ],
+          icon: <Users className="w-4 h-4 text-red-600" />,
+        },
+        {
+          message:
+            "Excelente! 💼 Pronto para networking empresarial! A LusoTown oferece:\n\n🚀 Workshops de IA e masterclasses tecnológicas\n💻 Criação de websites e treino de marketing digital\n🤝 Networking da comunidade empresarial portuguesa\n📈 Workshops de empreendedorismo e mentoria\n🎯 Oportunidades de desenvolvimento profissional\n\n*Constrói a tua rede empresarial com profissionais portugueses!*",
+          options: [
+            "Mostra-me workshops tecnológicos!",
+            "Encontrar eventos de networking",
+            "Opções de mentoria empresarial",
+            "Desenvolvimento profissional",
+          ],
+          icon: <Calendar className="w-4 h-4 text-action-600" />,
+        },
+        {
+          message:
+            "Excelente! 🌆 A LusoTown serve duas audiências em Londres e Reino Unido:\n\n🎪 **Criadores de Eventos:** Ferramentas para criar, promover e monetizar eventos sociais/empresariais\n🎭 **Utilizadores Sociais:** Experiências culturais, tours, entretenimento e conexões\n💼 **Profissionais Empresariais:** Networking, workshops, treino e mentoria\n🌍 **Plataforma Bilingue:** Experiência completa Português/Inglês\n\n*Profissional, inclusiva e acolhedora para todos os lusófonos!*",
+          options: [
+            "Quero criar eventos",
+            "Mostra-me experiências sociais",
+            "Opções de networking empresarial",
+            "Funcionalidades da plataforma",
+          ],
+          icon: <Calendar className="w-4 h-4 text-premium-600" />,
+        },
+        {
+          message:
+            "Incrível! 🚀 Como criador de eventos na LusoTown recebes:\n\n💡 **Ferramentas Duais:** Cria eventos sociais e empresariais\n💰 **Oportunidades de Receita:** Bilhetes, patrocínios e parcerias\n📊 **Analytics Avançadas:** Acompanha envolvimento e constrói relacionamentos\n🌆 **Alcance Comunitário:** Acesso a lusófonos em todo Reino Unido\n📢 **Marketing Bilingue:** Modelos em Inglês e Português\n🎯 **Audiência de Qualidade:** Apenas membros verificados da comunidade\n\nComeça a criar eventos hoje!",
+          options: [
+            "Regista-me como criador!",
+            "Oportunidades de receita?",
+            "Detalhes do apoio de marketing",
+            "Informações sobre alcance comunitário",
+          ],
+          icon: <ArrowRight className="w-4 h-4 text-action-600" />,
+        },
+        {
+          message:
+            "Precisas de ajuda? Ações rápidas:\n\n🚗 Reservar motorista pessoal ou de segurança\n🌆 Ver todos os tours de Londres\n👣 Como navegar e usar o site\n✉️ Email de apoio: support@lusotown.com",
+          options: [
+            "Reservar motorista pessoal",
+            "Reservar motorista de segurança",
+            "Ver todos os tours de Londres",
+            "Como usar o site?",
+          ],
+          icon: <Shield className="w-4 h-4 text-secondary-600" />,
+        },
+      ],
+    }),
+    []
+  );
 
   // Check if device is mobile
   const isMobile = () => {
-    if (typeof window === 'undefined') return false
-    return window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-  }
+    if (typeof window === "undefined") return false;
+    return (
+      window.innerWidth < 768 ||
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    );
+  };
 
   // Always show widget, but control auto-popup behavior
   useEffect(() => {
     // Show widget immediately on load
-    setShowWidget(true)
-    
+    setShowWidget(true);
+
     // Auto-open only on desktop after 3 minutes
     if (!isMobile()) {
       const timer = setTimeout(() => {
         if (!hasInteracted) {
-          setIsOpen(true)
+          setIsOpen(true);
           setTimeout(() => {
-            addBotMessage(conversationFlow[language as keyof typeof conversationFlow][0])
-          }, 800)
+            addBotMessage(
+              conversationFlow[language as keyof typeof conversationFlow][0]
+            );
+          }, 800);
         }
-      }, 180000) // 3 minutes = 180000ms
-      
-      return () => clearTimeout(timer)
+      }, 180000); // 3 minutes = 180000ms
+
+      return () => clearTimeout(timer);
     }
-  }, [hasInteracted, language, conversationFlow])
+  }, [hasInteracted, language, conversationFlow]);
 
   const addBotMessage = (step: any) => {
     const newMessage: Message = {
@@ -151,164 +242,198 @@ const WhatsAppWidget: React.FC = () => {
       isBot: true,
       timestamp: new Date(),
       options: step.options,
-      icon: step.icon
-    }
-    setMessages(prev => [...prev, newMessage])
-  }
+      icon: step.icon,
+    };
+    setMessages((prev) => [...prev, newMessage]);
+  };
 
   const handleOptionClick = (option: string) => {
-    setHasInteracted(true)
-    
+    setHasInteracted(true);
+
     // Add user message
     const userMessage: Message = {
       id: Date.now(),
       text: option,
       isBot: false,
-      timestamp: new Date()
-    }
-    setMessages(prev => [...prev, userMessage])
+      timestamp: new Date(),
+    };
+    setMessages((prev) => [...prev, userMessage]);
 
     // Fast-path: primary actions for transport/tours/support
-    const opt = option.toLowerCase()
+    const opt = option.toLowerCase();
     if (
-      opt.includes('book a personal driver') ||
-      opt.includes('reservar motorista pessoal') ||
-      opt.includes('get a quote for private transport') ||
-      opt.includes('pedir orçamento transporte privado')
+      opt.includes("book a personal driver") ||
+      opt.includes("reservar motorista pessoal") ||
+      opt.includes("get a quote for private transport") ||
+      opt.includes("pedir orçamento transporte privado")
     ) {
       setTimeout(() => {
         const msg: Message = {
           id: Date.now() + 1,
           text: isPortuguese
-            ? 'Abrindo a página de Transporte Privado…'
-            : 'Opening the Private Transport page…',
+            ? "Abrindo a página de Transporte Privado…"
+            : "Opening the Private Transport page…",
           isBot: true,
           timestamp: new Date(),
-          icon: <Shield className="w-4 h-4 text-secondary-600" />
-        }
-        setMessages(prev => [...prev, msg])
-        setTimeout(() => window.open('/transport', '_blank'), 1200)
-      }, 800)
-      return
-    }
-
-    if (opt.includes('book a security driver') || opt.includes('reservar motorista de segurança')) {
-      setTimeout(() => {
-        const msg: Message = {
-          id: Date.now() + 1,
-          text: isPortuguese
-            ? 'A preparar reserva com motorista de segurança…'
-            : 'Preparing a booking with a security driver…',
-          isBot: true,
-          timestamp: new Date(),
-          icon: <Shield className="w-4 h-4 text-secondary-600" />
-        }
-        setMessages(prev => [...prev, msg])
-        setTimeout(() => window.open('/transport', '_blank'), 1200)
-      }, 800)
-      return
-    }
-
-    if (opt.includes('see all london tours') || opt.includes('ver todos os tours de londres')) {
-      setTimeout(() => {
-        const msg: Message = {
-          id: Date.now() + 1,
-          text: isPortuguese ? 'A mostrar Tours de Londres…' : 'Showing London Tours…',
-          isBot: true,
-          timestamp: new Date(),
-          icon: <Calendar className="w-4 h-4 text-action-600" />
-        }
-        setMessages(prev => [...prev, msg])
-        setTimeout(() => window.open('/london-tours#tours', '_blank'), 1200)
-      }, 800)
-      return
+          icon: <Shield className="w-4 h-4 text-secondary-600" />,
+        };
+        setMessages((prev) => [...prev, msg]);
+        setTimeout(() => window.open("/transport", "_blank"), 1200);
+      }, 800);
+      return;
     }
 
     if (
-      opt.includes('email support') ||
-      opt.includes('email de apoio') ||
-      opt.includes('contact support') ||
-      opt.includes('contactar apoio')
+      opt.includes("book a security driver") ||
+      opt.includes("reservar motorista de segurança")
     ) {
       setTimeout(() => {
         const msg: Message = {
           id: Date.now() + 1,
           text: isPortuguese
-            ? 'A abrir o teu email para contactar: support@lusotown.com'
-            : 'Opening your email to contact: support@lusotown.com',
+            ? "A preparar reserva com motorista de segurança…"
+            : "Preparing a booking with a security driver…",
           isBot: true,
           timestamp: new Date(),
-          icon: <Heart className="w-4 h-4 text-green-600" />
-        }
-        setMessages(prev => [...prev, msg])
-        setTimeout(() => window.open('mailto:support@lusotown.com', '_blank'), 1000)
-      }, 600)
-      return
+          icon: <Shield className="w-4 h-4 text-secondary-600" />,
+        };
+        setMessages((prev) => [...prev, msg]);
+        setTimeout(() => window.open("/transport", "_blank"), 1200);
+      }, 800);
+      return;
     }
 
-    if (opt.includes('how do i use the site') || opt.includes('como usar o site')) {
+    if (
+      opt.includes("see all london tours") ||
+      opt.includes("ver todos os tours de londres")
+    ) {
+      setTimeout(() => {
+        const msg: Message = {
+          id: Date.now() + 1,
+          text: isPortuguese
+            ? "A mostrar Tours de Londres…"
+            : "Showing London Tours…",
+          isBot: true,
+          timestamp: new Date(),
+          icon: <Calendar className="w-4 h-4 text-action-600" />,
+        };
+        setMessages((prev) => [...prev, msg]);
+        setTimeout(() => window.open("/london-tours#tours", "_blank"), 1200);
+      }, 800);
+      return;
+    }
+
+    if (
+      opt.includes("email support") ||
+      opt.includes("email de apoio") ||
+      opt.includes("contact support") ||
+      opt.includes("contactar apoio")
+    ) {
+      setTimeout(() => {
+        const msg: Message = {
+          id: Date.now() + 1,
+          text: isPortuguese
+            ? "A abrir o teu email para contactar: support@lusotown.com"
+            : "Opening your email to contact: support@lusotown.com",
+          isBot: true,
+          timestamp: new Date(),
+          icon: <Heart className="w-4 h-4 text-green-600" />,
+        };
+        setMessages((prev) => [...prev, msg]);
+        setTimeout(
+          () => window.open("mailto:support@lusotown.com", "_blank"),
+          1000
+        );
+      }, 600);
+      return;
+    }
+
+    if (
+      opt.includes("how do i use the site") ||
+      opt.includes("como usar o site")
+    ) {
       setTimeout(() => {
         const tips: Message = {
           id: Date.now() + 1,
           text: isPortuguese
-            ? 'Dica rápida:\n\n• Tours: vê todos em /london-tours (clica em London Tours → Tours)\n• Transporte: reservas rápidas em /transport\n• Apoio: support@lusotown.com\n\nQueres abrir uma destas páginas agora?'
-            : 'Quick tip:\n\n• Tours: see them all at /london-tours (hover London Tours → Tours)\n• Transport: quick bookings at /transport\n• Support: support@lusotown.com\n\nWant me to open one now?',
+            ? "Dica rápida:\n\n• Tours: vê todos em /london-tours (clica em London Tours → Tours)\n• Transporte: reservas rápidas em /transport\n• Apoio: support@lusotown.com\n\nQueres abrir uma destas páginas agora?"
+            : "Quick tip:\n\n• Tours: see them all at /london-tours (hover London Tours → Tours)\n• Transport: quick bookings at /transport\n• Support: support@lusotown.com\n\nWant me to open one now?",
           isBot: true,
           timestamp: new Date(),
           options: isPortuguese
-            ? ['Ver todos os tours de Londres', 'Reservar motorista pessoal', 'Email de apoio']
-            : ['See all London tours', 'Book a personal driver', 'Email support'],
-          icon: <MessageCircle className="w-4 h-4 text-action-600" />
-        }
-        setMessages(prev => [...prev, tips])
-      }, 600)
-      return
+            ? [
+                "Ver todos os tours de Londres",
+                "Reservar motorista pessoal",
+                "Email de apoio",
+              ]
+            : [
+                "See all London tours",
+                "Book a personal driver",
+                "Email support",
+              ],
+          icon: <MessageCircle className="w-4 h-4 text-action-600" />,
+        };
+        setMessages((prev) => [...prev, tips]);
+      }, 600);
+      return;
     }
 
     // Handle signup/registration actions
-    if (option.includes("sign me up") || option.includes("signup") || option.includes("organizer") || option.includes("creator") ||
-        option.includes("regista-me") || option.includes("Leva-me ao registo") || option.includes("Regista-me") || option.includes("criador") ||
-        option.includes("let's start") || option.includes("vamos começar")) {
+    if (
+      option.includes("sign me up") ||
+      option.includes("signup") ||
+      option.includes("organizer") ||
+      option.includes("creator") ||
+      option.includes("regista-me") ||
+      option.includes("Leva-me ao registo") ||
+      option.includes("Regista-me") ||
+      option.includes("criador") ||
+      option.includes("let's start") ||
+      option.includes("vamos começar")
+    ) {
       setTimeout(() => {
         const finalMessage: Message = {
           id: Date.now() + 1,
-          text: isPortuguese 
-            ? "Fantástico! 🚀 Bem-vindo à LusoTown global!\n\nA levar-te para a página de registo..." 
+          text: isPortuguese
+            ? "Fantástico! 🚀 Bem-vindo à LusoTown global!\n\nA levar-te para a página de registo..."
             : "Fantastic! 🚀 Welcome to global LusoTown!\n\nTaking you to the signup page...",
           isBot: true,
           timestamp: new Date(),
-          icon: <Heart className="w-4 h-4 text-green-600" />
-        }
-        setMessages(prev => [...prev, finalMessage])
-        
+          icon: <Heart className="w-4 h-4 text-green-600" />,
+        };
+        setMessages((prev) => [...prev, finalMessage]);
+
         // Redirect to signup after showing message
         setTimeout(() => {
-          window.open('/signup', '_blank')
-        }, 2000)
-      }, 1000)
-      return
+          window.open("/signup", "_blank");
+        }, 2000);
+      }, 1000);
+      return;
     }
 
     // Handle join community actions
-    if (option.includes("Join the community") || option.includes("Juntar-me à comunidade")) {
+    if (
+      option.includes("Join the community") ||
+      option.includes("Juntar-me à comunidade")
+    ) {
       setTimeout(() => {
         const joinMessage: Message = {
           id: Date.now() + 1,
-          text: isPortuguese 
-            ? "Excelente escolha! 🎉 Vamos conectar-te com lusófonos em todo o mundo!\n\nA levar-te para te juntares à comunidade..." 
+          text: isPortuguese
+            ? "Excelente escolha! 🎉 Vamos conectar-te com lusófonos em todo o mundo!\n\nA levar-te para te juntares à comunidade..."
             : "Excellent choice! 🎉 Let's connect you with Portuguese speakers worldwide!\n\nTaking you to join the community...",
           isBot: true,
           timestamp: new Date(),
-          icon: <Users className="w-4 h-4 text-green-600" />
-        }
-        setMessages(prev => [...prev, joinMessage])
-        
+          icon: <Users className="w-4 h-4 text-green-600" />,
+        };
+        setMessages((prev) => [...prev, joinMessage]);
+
         // Redirect to events page after showing message
         setTimeout(() => {
-          window.open('/events', '_blank')
-        }, 2000)
-      }, 1000)
-      return
+          window.open("/events", "_blank");
+        }, 2000);
+      }, 1000);
+      return;
     }
 
     // Handle "browsing" responses
@@ -321,45 +446,70 @@ const WhatsAppWidget: React.FC = () => {
             : "No worries at all! 😊 I'll be here whenever you're ready to explore our amazing global Portuguese community. Feel free to browse our website!",
           isBot: true,
           timestamp: new Date(),
-          icon: <Heart className="w-4 h-4 text-green-600" />
-        }
-        setMessages(prev => [...prev, laterMessage])
-      }, 1000)
-      return
+          icon: <Heart className="w-4 h-4 text-green-600" />,
+        };
+        setMessages((prev) => [...prev, laterMessage]);
+      }, 1000);
+      return;
     }
 
     // Handle path selection and routing
     setTimeout(() => {
-      const currentFlow = conversationFlow[language as keyof typeof conversationFlow]
-      let nextStepIndex = 1 // Default to first step after intro
+      const currentFlow =
+        conversationFlow[language as keyof typeof conversationFlow];
+      let nextStepIndex = 1; // Default to first step after intro
 
       // Route based on user selection
-      if (option.includes("organize") || option.includes("organizar") || option.includes("create events") || option.includes("criar eventos")) {
-        nextStepIndex = 1 // Organizer path
-      } else if (option.includes("social events") || option.includes("eventos sociais") || option.includes("find social") || option.includes("social experiences") || option.includes("experiências sociais")) {
-        nextStepIndex = 2 // Social events path  
-      } else if (option.includes("business networking") || option.includes("networking empresarial") || option.includes("Business") || option.includes("Empresarial")) {
-        nextStepIndex = 3 // Business networking path
-      } else if (option.includes("Tell me about") || option.includes("Conta-me sobre") || option.includes("Platform features") || option.includes("Funcionalidades")) {
-        nextStepIndex = 4 // Platform info path
+      if (
+        option.includes("organize") ||
+        option.includes("organizar") ||
+        option.includes("create events") ||
+        option.includes("criar eventos")
+      ) {
+        nextStepIndex = 1; // Organizer path
+      } else if (
+        option.includes("social events") ||
+        option.includes("eventos sociais") ||
+        option.includes("find social") ||
+        option.includes("social experiences") ||
+        option.includes("experiências sociais")
+      ) {
+        nextStepIndex = 2; // Social events path
+      } else if (
+        option.includes("business networking") ||
+        option.includes("networking empresarial") ||
+        option.includes("Business") ||
+        option.includes("Empresarial")
+      ) {
+        nextStepIndex = 3; // Business networking path
+      } else if (
+        option.includes("Tell me about") ||
+        option.includes("Conta-me sobre") ||
+        option.includes("Platform features") ||
+        option.includes("Funcionalidades")
+      ) {
+        nextStepIndex = 4; // Platform info path
       } else if (currentStep === 1 || currentStep === 2 || currentStep === 3) {
         // Continue with specific detailed flows
-        nextStepIndex = 5 // Detailed info for organizers/social/business
+        nextStepIndex = 5; // Detailed info for organizers/social/business
       } else if (currentStep === 4) {
         // From platform info, route based on choice
-        if (option.includes("create events") || option.includes("criar eventos")) {
-          nextStepIndex = 5 // Creator details
+        if (
+          option.includes("create events") ||
+          option.includes("criar eventos")
+        ) {
+          nextStepIndex = 5; // Creator details
         } else {
-          nextStepIndex = 6 // Member details
+          nextStepIndex = 6; // Member details
         }
       } else {
         // Default progression
-        nextStepIndex = Math.min(currentStep + 1, currentFlow.length - 1)
+        nextStepIndex = Math.min(currentStep + 1, currentFlow.length - 1);
       }
 
       if (nextStepIndex < currentFlow.length) {
-        addBotMessage(currentFlow[nextStepIndex])
-        setCurrentStep(nextStepIndex)
+        addBotMessage(currentFlow[nextStepIndex]);
+        setCurrentStep(nextStepIndex);
       } else {
         // End of conversation - encourage action
         const finalMessage: Message = {
@@ -369,48 +519,50 @@ const WhatsAppWidget: React.FC = () => {
             : "Thanks for chatting with me! 💕 LusoTown is here to connect Portuguese speakers worldwide. Ready to start?",
           isBot: true,
           timestamp: new Date(),
-          options: isPortuguese 
+          options: isPortuguese
             ? ["Sim, vamos começar!", "Vou pensar nisso"]
             : ["Yes, let's start!", "I'll think about it"],
-          icon: <Users className="w-4 h-4 text-red-600" />
-        }
-        setMessages(prev => [...prev, finalMessage])
+          icon: <Users className="w-4 h-4 text-red-600" />,
+        };
+        setMessages((prev) => [...prev, finalMessage]);
       }
-    }, 1500)
-  }
+    }, 1500);
+  };
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
-  useEffect(scrollToBottom, [messages])
+  useEffect(scrollToBottom, [messages]);
 
   const toggleWidget = () => {
-    setHasInteracted(true)
+    setHasInteracted(true);
     if (!isOpen) {
-      setIsOpen(true)
-      setIsMinimized(false)
+      setIsOpen(true);
+      setIsMinimized(false);
       if (messages.length === 0) {
         setTimeout(() => {
-          addBotMessage(conversationFlow[language as keyof typeof conversationFlow][0])
-        }, 500)
+          addBotMessage(
+            conversationFlow[language as keyof typeof conversationFlow][0]
+          );
+        }, 500);
       }
     } else {
-      setIsMinimized(!isMinimized)
+      setIsMinimized(!isMinimized);
     }
-  }
+  };
 
   const closeWidget = () => {
-    setIsOpen(false)
-    setIsMinimized(false)
-  }
+    setIsOpen(false);
+    setIsMinimized(false);
+  };
 
   const dismissWidget = () => {
-    setIsDismissed(true)
-    setShowWidget(false)
-  }
+    setIsDismissed(true);
+    setShowWidget(false);
+  };
 
-  if (!showWidget || isDismissed) return null
+  if (!showWidget || isDismissed) return null;
 
   return (
     <div className="fixed bottom-4 right-4 z-50 font-sans">
@@ -452,19 +604,30 @@ const WhatsAppWidget: React.FC = () => {
           {/* Messages */}
           <div className="flex-1 overflow-y-auto p-3 space-y-2 bg-gray-50 min-h-[150px] max-h-[40vh] sm:max-h-60">
             {messages.map((message) => (
-              <div key={message.id} className={`flex ${message.isBot ? 'justify-start' : 'justify-end'}`}>
-                <div className={`max-w-[90%] ${
-                  message.isBot 
-                    ? 'bg-white text-gray-800 rounded-xl rounded-bl-md shadow-sm border border-gray-200' 
-                    : 'bg-gradient-to-r from-green-600 to-red-600 text-white rounded-xl rounded-br-md shadow-sm'
-                } p-2.5`}>
+              <div
+                key={message.id}
+                className={`flex ${
+                  message.isBot ? "justify-start" : "justify-end"
+                }`}
+              >
+                <div
+                  className={`max-w-[90%] ${
+                    message.isBot
+                      ? "bg-white text-gray-800 rounded-xl rounded-bl-md shadow-sm border border-gray-200"
+                      : "bg-gradient-to-r from-green-600 to-red-600 text-white rounded-xl rounded-br-md shadow-sm"
+                  } p-2.5`}
+                >
                   {message.isBot && message.icon && (
                     <div className="flex items-center space-x-2 mb-2">
                       {message.icon}
-                      <span className="text-xs font-medium text-gray-600">LusoTown Helper</span>
+                      <span className="text-xs font-medium text-gray-600">
+                        LusoTown Helper
+                      </span>
                     </div>
                   )}
-                  <p className="text-xs whitespace-pre-line leading-relaxed">{message.text}</p>
+                  <p className="text-xs whitespace-pre-line leading-relaxed">
+                    {message.text}
+                  </p>
                   {message.options && (
                     <div className="mt-3 space-y-2">
                       {message.options.map((option, index) => (
@@ -491,7 +654,11 @@ const WhatsAppWidget: React.FC = () => {
           <div className="p-3 border-t border-gray-200 bg-white rounded-b-xl">
             <div className="flex items-center justify-center space-x-2 text-gray-500 text-xs">
               <MessageCircle className="w-4 h-4" />
-              <span>{isPortuguese ? 'Clica nas opções acima para continuar!' : 'Click the options above to continue chatting!'}</span>
+              <span>
+                {isPortuguese
+                  ? "Clica nas opções acima para continuar!"
+                  : "Click the options above to continue chatting!"}
+              </span>
             </div>
           </div>
         </div>
@@ -501,19 +668,19 @@ const WhatsAppWidget: React.FC = () => {
       <button
         onClick={toggleWidget}
         className={`w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-primary-600 via-action-600 to-premium-600 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center group relative overflow-hidden border-2 border-white/20 ${
-          isOpen && !isMinimized ? 'scale-90' : 'scale-100 hover:scale-110'
+          isOpen && !isMinimized ? "scale-90" : "scale-100 hover:scale-110"
         }`}
         aria-label="Open LusoTown chat"
       >
         {/* Animated background gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary-700 via-action-700 to-premium-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        
+
         {isOpen && !isMinimized ? (
           <div className="w-6 h-1 bg-white rounded relative z-10"></div>
         ) : (
           <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:scale-110 transition-transform duration-200 relative z-10" />
         )}
-        
+
         {/* Notification Badge */}
         {!hasInteracted && !isOpen && (
           <div className="absolute -top-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-red-600 text-white text-xs rounded-full flex items-center justify-center animate-pulse font-bold shadow-lg">
@@ -531,12 +698,12 @@ const WhatsAppWidget: React.FC = () => {
       {!hasInteracted && !isOpen && (
         <div className="absolute bottom-16 right-0 bg-white px-4 py-3 rounded-lg shadow-lg border border-gray-200 animate-fade-in whitespace-nowrap">
           <div className="text-xs text-red-600 font-medium">
-            {isPortuguese ? 'Clica para começar →' : 'Click to start →'}
+            {isPortuguese ? "Clica para começar →" : "Click to start →"}
           </div>
           {/* Arrow pointing to button */}
           <div className="absolute -bottom-2 right-6 w-0 h-0 border-l-6 border-l-transparent border-r-6 border-r-transparent border-t-6 border-t-white"></div>
           <div className="absolute -bottom-2.5 right-6 w-0 h-0 border-l-6 border-l-transparent border-r-6 border-r-transparent border-t-6 border-t-gray-200"></div>
-          
+
           {/* Close button for tooltip */}
           <button
             onClick={dismissWidget}
@@ -548,7 +715,7 @@ const WhatsAppWidget: React.FC = () => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default WhatsAppWidget
+export default WhatsAppWidget;

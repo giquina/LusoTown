@@ -9,6 +9,7 @@ import Features from '@/components/Features'
 import HowItWorks from '@/components/HowItWorks'
 import HowConnectionsWork from '@/components/HowConnectionsWork'
 import AboutLusoTown from '@/components/AboutLusoTown'
+import PortugueseSpeakersSection from '@/components/PortugueseSpeakersSection'
 import EventsShowcase from '@/components/EventsShowcase'
 import GroupsShowcase from '@/components/GroupsShowcase'
 import GroupEventsSection from '@/components/GroupEventsSection'
@@ -302,6 +303,7 @@ export default function Home() {
               </div>
             </div>
           </section>
+          <PortugueseSpeakersSection />
           <Features />
 
           <EventsShowcase />

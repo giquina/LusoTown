@@ -1,11 +1,11 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { 
-  UserGroupIcon, 
-  TruckIcon, 
-  CalendarDaysIcon, 
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  UserGroupIcon,
+  TruckIcon,
+  CalendarDaysIcon,
   SparklesIcon,
   ArrowRightIcon,
   CheckCircleIcon,
@@ -14,94 +14,101 @@ import {
   MapPinIcon,
   ClockIcon,
   CurrencyPoundIcon,
-  UsersIcon
-} from '@heroicons/react/24/outline'
-import { Car, Shield, Crown, TrendingUp, Users, MapPin } from 'lucide-react'
-import { useLanguage } from '@/context/LanguageContext'
-import { usePlatformIntegration } from '@/context/PlatformIntegrationContext'
-import { useSubscription } from '@/context/SubscriptionContext'
-import { useNetworking } from '@/context/NetworkingContext'
+  UsersIcon,
+} from "@heroicons/react/24/outline";
+import { Car, Shield, Crown, TrendingUp, Users, MapPin } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import { usePlatformIntegration } from "@/context/PlatformIntegrationContext";
+import { useSubscription } from "@/context/SubscriptionContext";
+import { useNetworking } from "@/context/NetworkingContext";
 
 interface UnifiedExperienceHubProps {
-  initialTab?: 'discover' | 'book' | 'connect' | 'upgrade'
-  onServiceBooked?: () => void
-  onEventJoined?: () => void
+  initialTab?: "discover" | "book" | "connect" | "upgrade";
+  onServiceBooked?: () => void;
+  onEventJoined?: () => void;
 }
 
-export default function UnifiedExperienceHub({ 
-  initialTab = 'discover',
+export default function UnifiedExperienceHub({
+  initialTab = "discover",
   onServiceBooked,
-  onEventJoined 
+  onEventJoined,
 }: UnifiedExperienceHubProps) {
-  const { language, t } = useLanguage()
-  const { 
-    bridgeOpportunities, 
+  const { language, t } = useLanguage();
+  const {
+    bridgeOpportunities,
     getPersonalizedRecommendations,
     getCulturalEventTransportPairings,
     findPortugueseBusinessConnections,
     getPortugueseCommunityInsights,
     updateJourneyProgress,
-    createGroupTransportBooking
-  } = usePlatformIntegration()
-  const { hasActiveSubscription, membershipTier, serviceDiscount } = useSubscription()
-  const { connections, stats } = useNetworking()
-  
-  const [activeTab, setActiveTab] = useState(initialTab)
-  const [selectedExperience, setSelectedExperience] = useState<any>(null)
-  const [isBooking, setIsBooking] = useState(false)
-  const isPortuguese = language === 'pt'
+    createGroupTransportBooking,
+  } = usePlatformIntegration();
+  const { hasActiveSubscription, membershipTier, serviceDiscount } =
+    useSubscription();
+  const { connections, stats } = useNetworking();
+
+  const [activeTab, setActiveTab] = useState(initialTab);
+  const [selectedExperience, setSelectedExperience] = useState<any>(null);
+  const [isBooking, setIsBooking] = useState(false);
+  const isPortuguese = language === "pt";
 
   const tabs = [
     {
-      id: 'discover',
-      name: isPortuguese ? 'Descobrir' : 'Discover',
+      id: "discover",
+      name: isPortuguese ? "Descobrir" : "Discover",
       icon: SparklesIcon,
-      description: isPortuguese ? 'Experiências integradas' : 'Integrated experiences'
+      description: isPortuguese
+        ? "Experiências integradas"
+        : "Integrated experiences",
     },
     {
-      id: 'book',
-      name: isPortuguese ? 'Reservar' : 'Book',
+      id: "book",
+      name: isPortuguese ? "Reservar" : "Book",
       icon: CalendarDaysIcon,
-      description: isPortuguese ? 'Serviços + Comunidade' : 'Services + Community'
+      description: isPortuguese
+        ? "Serviços + Comunidade"
+        : "Services + Community",
     },
     {
-      id: 'connect',
-      name: isPortuguese ? 'Conectar' : 'Connect',
+      id: "connect",
+      name: isPortuguese ? "Conectar" : "Connect",
       icon: UserGroupIcon,
-      description: isPortuguese ? 'Rede portuguesa' : 'Portuguese network'
+      description: isPortuguese ? "Rede portuguesa" : "Portuguese network",
     },
     {
-      id: 'upgrade',
-      name: isPortuguese ? 'Melhorar' : 'Upgrade',
+      id: "upgrade",
+      name: isPortuguese ? "Melhorar" : "Upgrade",
       icon: TrendingUp,
-      description: isPortuguese ? 'Mais benefícios' : 'More benefits'
-    }
-  ]
+      description: isPortuguese ? "Mais benefícios" : "More benefits",
+    },
+  ];
 
-  const recommendations = getPersonalizedRecommendations()
-  const communityInsights = getPortugueseCommunityInsights()
-  const businessConnections = findPortugueseBusinessConnections()
-  const eventTransportPairings = getCulturalEventTransportPairings()
+  const recommendations = getPersonalizedRecommendations();
+  const communityInsights = getPortugueseCommunityInsights();
+  const businessConnections = findPortugueseBusinessConnections();
+  const eventTransportPairings = getCulturalEventTransportPairings();
 
   const handleBookExperience = async (experience: any) => {
-    setIsBooking(true)
-    
+    setIsBooking(true);
+
     try {
-  // Track cross-platform activity
-  updateJourneyProgress('transport_booking', { experienceType: 'integrated_service', bridgeOpportunityId: experience.id })
+      // Track cross-platform activity
+      updateJourneyProgress("transport_booking", {
+        experienceType: "integrated_service",
+        bridgeOpportunityId: experience.id,
+      });
 
       // Simulate booking process
-      await new Promise(resolve => setTimeout(resolve, 2000))
-      
-      setSelectedExperience(experience)
-      onServiceBooked?.()
-      
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
+      setSelectedExperience(experience);
+      onServiceBooked?.();
     } catch (error) {
-      console.error('Booking error:', error)
+      console.error("Booking error:", error);
     } finally {
-      setIsBooking(false)
+      setIsBooking(false);
     }
-  }
+  };
 
   const renderDiscoverTab = () => (
     <div className="space-y-8">
@@ -109,7 +116,7 @@ export default function UnifiedExperienceHub({
       {recommendations.length > 0 && (
         <div>
           <h3 className="text-xl font-bold text-gray-900 mb-6">
-            {isPortuguese ? 'Recomendado Para Você' : 'Recommended For You'}
+            {isPortuguese ? "Recomendado Para Você" : "Recommended For You"}
           </h3>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {recommendations.map((rec, index) => (
@@ -125,9 +132,7 @@ export default function UnifiedExperienceHub({
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">
                       {rec.title}
                     </h4>
-                    <p className="text-gray-600 text-sm">
-                      {rec.description}
-                    </p>
+                    <p className="text-gray-600 text-sm">{rec.description}</p>
                   </div>
                   <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
                     <SparklesIcon className="w-6 h-6 text-primary-600" />
@@ -135,19 +140,23 @@ export default function UnifiedExperienceHub({
                 </div>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {rec.benefits.map((benefit: string) => (
-                    <span 
+                    <span
                       key={benefit}
                       className="px-3 py-1 bg-white text-primary-600 text-xs font-medium rounded-full border border-primary-200"
                     >
-                      {benefit.replace('_', ' ')}
+                      {benefit.replace("_", " ")}
                     </span>
                   ))}
                 </div>
                 <button
-                  onClick={() => setActiveTab(rec.action === 'view_events' ? 'book' : 'connect')}
+                  onClick={() =>
+                    setActiveTab(
+                      rec.action === "view_events" ? "book" : "connect"
+                    )
+                  }
                   className="text-primary-600 font-semibold text-sm hover:text-primary-700 flex items-center group"
                 >
-                  {isPortuguese ? 'Explorar' : 'Explore'}
+                  {isPortuguese ? "Explorar" : "Explore"}
                   <ArrowRightIcon className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </button>
               </motion.div>
@@ -159,7 +168,7 @@ export default function UnifiedExperienceHub({
       {/* Bridge Opportunities */}
       <div>
         <h3 className="text-xl font-bold text-gray-900 mb-6">
-          {isPortuguese ? 'Experiências Integradas' : 'Integrated Experiences'}
+          {isPortuguese ? "Experiências Integradas" : "Integrated Experiences"}
         </h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
           {bridgeOpportunities.map((opportunity) => (
@@ -199,10 +208,13 @@ export default function UnifiedExperienceHub({
 
                 <div className="flex items-center justify-between mb-4">
                   <div className="text-2xl font-bold text-gray-900">
-                    £{hasActiveSubscription ? 
-                      Math.round(opportunity.pricing.basePrice * (1 - opportunity.pricing.memberDiscount / 100)) :
-                      opportunity.pricing.basePrice
-                    }
+                    £
+                    {hasActiveSubscription
+                      ? Math.round(
+                          opportunity.pricing.basePrice *
+                            (1 - opportunity.pricing.memberDiscount / 100)
+                        )
+                      : opportunity.pricing.basePrice}
                   </div>
                   <div className="text-sm text-gray-500">
                     {opportunity.duration}
@@ -217,10 +229,12 @@ export default function UnifiedExperienceHub({
                   {isBooking ? (
                     <div className="flex items-center justify-center">
                       <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2" />
-                      {isPortuguese ? 'Reservando...' : 'Booking...'}
+                      {isPortuguese ? "Reservando..." : "Booking..."}
                     </div>
+                  ) : isPortuguese ? (
+                    "Reservar Experiência"
                   ) : (
-                    isPortuguese ? 'Reservar Experiência' : 'Book Experience'
+                    "Book Experience"
                   )}
                 </button>
               </div>
@@ -232,36 +246,54 @@ export default function UnifiedExperienceHub({
       {/* Community Insights */}
       <div className="bg-gradient-to-r from-accent-50 to-coral-50 rounded-xl p-6 border border-accent-200">
         <h3 className="text-xl font-bold text-gray-900 mb-6">
-          {isPortuguese ? 'Comunidade Portuguesa em Londres' : 'Portuguese Community in London'}
+          {isPortuguese
+            ? "Comunidade Portuguesa em Londres"
+            : "Portuguese Community in London"}
         </h3>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="text-center">
-            <div className="text-2xl font-bold text-accent-600">{communityInsights.totalMembers}</div>
-            <div className="text-sm text-gray-600">{isPortuguese ? 'Membros' : 'Members'}</div>
+            <div className="text-2xl font-bold text-accent-600">
+              {communityInsights.totalMembers}
+            </div>
+            <div className="text-sm text-gray-600">
+              {isPortuguese ? "Membros" : "Members"}
+            </div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-secondary-600">{communityInsights.activeLastMonth}</div>
-            <div className="text-sm text-gray-600">{isPortuguese ? 'Ativos este mês' : 'Active this month'}</div>
+            <div className="text-2xl font-bold text-secondary-600">
+              {communityInsights.activeLastMonth}
+            </div>
+            <div className="text-sm text-gray-600">
+              {isPortuguese ? "Ativos este mês" : "Active this month"}
+            </div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-primary-600">{communityInsights.averageConnections}</div>
-            <div className="text-sm text-gray-600">{isPortuguese ? 'Conexões médias' : 'Avg connections'}</div>
+            <div className="text-2xl font-bold text-primary-600">
+              {communityInsights.averageConnections}
+            </div>
+            <div className="text-sm text-gray-600">
+              {isPortuguese ? "Conexões médias" : "Avg connections"}
+            </div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-coral-600">{communityInsights.communityGrowth}</div>
-            <div className="text-sm text-gray-600">{isPortuguese ? 'Crescimento' : 'Growth'}</div>
+            <div className="text-2xl font-bold text-coral-600">
+              {communityInsights.communityGrowth}
+            </div>
+            <div className="text-sm text-gray-600">
+              {isPortuguese ? "Crescimento" : "Growth"}
+            </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 
   const renderBookTab = () => (
     <div className="space-y-8">
       {/* Event + Transport Pairings */}
       <div>
         <h3 className="text-xl font-bold text-gray-900 mb-6">
-          {isPortuguese ? 'Eventos + Transporte' : 'Events + Transport'}
+          {isPortuguese ? "Eventos + Transporte" : "Events + Transport"}
         </h3>
         <div className="space-y-4">
           {eventTransportPairings.map((pairing) => (
@@ -286,22 +318,25 @@ export default function UnifiedExperienceHub({
                     </div>
                     <div className="flex items-center text-primary-600">
                       <Car className="w-4 h-4 mr-1" />
-                      {pairing.transportOptions.length} {isPortuguese ? 'opções' : 'options'}
+                      {pairing.transportOptions.length}{" "}
+                      {isPortuguese ? "opções" : "options"}
                     </div>
                   </div>
                 </div>
                 <div className="flex space-x-2">
-                  <button 
+                  <button
                     className="px-4 py-2 border border-primary-600 text-primary-600 rounded-lg hover:bg-primary-50 transition-colors"
-                    onClick={() => window.location.href = `/events/${pairing.eventId}`}
+                    onClick={() =>
+                      (window.location.href = `/events/${pairing.eventId}`)
+                    }
                   >
-                    {isPortuguese ? 'Ver Evento' : 'View Event'}
+                    {isPortuguese ? "Ver Evento" : "View Event"}
                   </button>
-                  <button 
+                  <button
                     className="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
                     onClick={() => handleBookExperience(pairing)}
                   >
-                    {isPortuguese ? 'Reservar Conjunto' : 'Book Together'}
+                    {isPortuguese ? "Reservar Conjunto" : "Book Together"}
                   </button>
                 </div>
               </div>
@@ -314,13 +349,12 @@ export default function UnifiedExperienceHub({
       {connections.length >= 2 && (
         <div className="bg-gradient-to-r from-secondary-50 to-primary-50 rounded-xl p-6 border border-secondary-200">
           <h3 className="text-xl font-bold text-gray-900 mb-4">
-            {isPortuguese ? 'Reservas de Grupo' : 'Group Bookings'}
+            {isPortuguese ? "Reservas de Grupo" : "Group Bookings"}
           </h3>
           <p className="text-gray-600 mb-6">
-            {isPortuguese 
+            {isPortuguese
               ? `Você tem ${connections.length} conexões. Economize até 30% em reservas de grupo!`
-              : `You have ${connections.length} connections. Save up to 30% on group bookings!`
-            }
+              : `You have ${connections.length} connections. Save up to 30% on group bookings!`}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-white rounded-lg p-4 border border-gray-200">
@@ -328,15 +362,19 @@ export default function UnifiedExperienceHub({
                 <Car className="w-6 h-6 text-primary-600" />
                 <div>
                   <h4 className="font-semibold text-gray-900">
-                    {isPortuguese ? 'Transporte Partilhado' : 'Shared Transport'}
+                    {isPortuguese
+                      ? "Transporte Privado"
+                      : "Private Transport"}
                   </h4>
                   <p className="text-sm text-gray-600">
-                    {isPortuguese ? 'Para eventos culturais' : 'To cultural events'}
+                    {isPortuguese
+                      ? "Para eventos culturais"
+                      : "To cultural events"}
                   </p>
                 </div>
               </div>
               <button className="w-full bg-primary-600 text-white py-2 rounded-lg hover:bg-primary-700 transition-colors">
-                {isPortuguese ? 'Criar Grupo' : 'Create Group'}
+                {isPortuguese ? "Criar Grupo" : "Create Group"}
               </button>
             </div>
             <div className="bg-white rounded-lg p-4 border border-gray-200">
@@ -344,22 +382,24 @@ export default function UnifiedExperienceHub({
                 <Shield className="w-6 h-6 text-secondary-600" />
                 <div>
                   <h4 className="font-semibold text-gray-900">
-                    {isPortuguese ? 'Segurança VIP' : 'VIP Security'}
+                    {isPortuguese ? "Segurança VIP" : "VIP Security"}
                   </h4>
                   <p className="text-sm text-gray-600">
-                    {isPortuguese ? 'Para eventos de negócios' : 'For business events'}
+                    {isPortuguese
+                      ? "Para eventos de negócios"
+                      : "For business events"}
                   </p>
                 </div>
               </div>
               <button className="w-full bg-secondary-600 text-white py-2 rounded-lg hover:bg-secondary-700 transition-colors">
-                {isPortuguese ? 'Solicitar Cotação' : 'Request Quote'}
+                {isPortuguese ? "Solicitar Cotação" : "Request Quote"}
               </button>
             </div>
           </div>
         </div>
       )}
     </div>
-  )
+  );
 
   const renderConnectTab = () => (
     <div className="space-y-8">
@@ -367,7 +407,7 @@ export default function UnifiedExperienceHub({
       {businessConnections.length > 0 && (
         <div>
           <h3 className="text-xl font-bold text-gray-900 mb-6">
-            {isPortuguese ? 'Conexões de Negócios' : 'Business Connections'}
+            {isPortuguese ? "Conexões de Negócios" : "Business Connections"}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {businessConnections.slice(0, 4).map((connection) => (
@@ -385,13 +425,18 @@ export default function UnifiedExperienceHub({
                   />
                   <div className="flex-1">
                     <h4 className="font-semibold text-gray-900">
-                      {connection.connectedUser.firstName} {connection.connectedUser.lastName}
+                      {connection.connectedUser.firstName}{" "}
+                      {connection.connectedUser.lastName}
                     </h4>
-                    <p className="text-sm text-gray-600">{connection.businessType}</p>
-                    <p className="text-xs text-primary-600">{connection.businessArea}</p>
+                    <p className="text-sm text-gray-600">
+                      {connection.businessType}
+                    </p>
+                    <p className="text-xs text-primary-600">
+                      {connection.businessArea}
+                    </p>
                   </div>
                   <button className="px-3 py-1 border border-primary-600 text-primary-600 rounded-lg text-sm hover:bg-primary-50">
-                    {isPortuguese ? 'Conectar' : 'Connect'}
+                    {isPortuguese ? "Conectar" : "Connect"}
                   </button>
                 </div>
               </motion.div>
@@ -403,29 +448,45 @@ export default function UnifiedExperienceHub({
       {/* Network Stats */}
       <div className="bg-gradient-to-r from-premium-50 to-accent-50 rounded-xl p-6 border border-premium-200">
         <h3 className="text-xl font-bold text-gray-900 mb-6">
-          {isPortuguese ? 'Sua Rede Portuguesa' : 'Your Portuguese Network'}
+          {isPortuguese ? "Sua Rede Portuguesa" : "Your Portuguese Network"}
         </h3>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="text-center">
-            <div className="text-2xl font-bold text-premium-600">{stats.totalConnections}</div>
-            <div className="text-sm text-gray-600">{isPortuguese ? 'Conexões' : 'Connections'}</div>
+            <div className="text-2xl font-bold text-premium-600">
+              {stats.totalConnections}
+            </div>
+            <div className="text-sm text-gray-600">
+              {isPortuguese ? "Conexões" : "Connections"}
+            </div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-accent-600">{stats.eventsAttended}</div>
-            <div className="text-sm text-gray-600">{isPortuguese ? 'Eventos' : 'Events'}</div>
+            <div className="text-2xl font-bold text-accent-600">
+              {stats.eventsAttended}
+            </div>
+            <div className="text-sm text-gray-600">
+              {isPortuguese ? "Eventos" : "Events"}
+            </div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-secondary-600">{stats.newConnectionsThisMonth}</div>
-            <div className="text-sm text-gray-600">{isPortuguese ? 'Novas este mês' : 'New this month'}</div>
+            <div className="text-2xl font-bold text-secondary-600">
+              {stats.newConnectionsThisMonth}
+            </div>
+            <div className="text-sm text-gray-600">
+              {isPortuguese ? "Novas este mês" : "New this month"}
+            </div>
           </div>
           <div className="text-center">
-            <div className="text-2xl font-bold text-coral-600">{stats.connectionStrength.toFixed(1)}</div>
-            <div className="text-sm text-gray-600">{isPortuguese ? 'Força média' : 'Avg strength'}</div>
+            <div className="text-2xl font-bold text-coral-600">
+              {stats.connectionStrength.toFixed(1)}
+            </div>
+            <div className="text-sm text-gray-600">
+              {isPortuguese ? "Força média" : "Avg strength"}
+            </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 
   const renderUpgradeTab = () => (
     <div className="space-y-8">
@@ -434,13 +495,13 @@ export default function UnifiedExperienceHub({
         <div className="flex items-center justify-between">
           <div>
             <h3 className="text-xl font-bold mb-2">
-              {isPortuguese ? 'Membro' : 'Member'} {membershipTier.charAt(0).toUpperCase() + membershipTier.slice(1)}
+              {isPortuguese ? "Membro" : "Member"}{" "}
+              {membershipTier.charAt(0).toUpperCase() + membershipTier.slice(1)}
             </h3>
             <p className="opacity-90">
-              {isPortuguese 
+              {isPortuguese
                 ? `${serviceDiscount}% desconto em todos os serviços`
-                : `${serviceDiscount}% discount on all services`
-              }
+                : `${serviceDiscount}% discount on all services`}
             </p>
           </div>
           <Crown className="w-12 h-12 opacity-80" />
@@ -451,63 +512,90 @@ export default function UnifiedExperienceHub({
       {!hasActiveSubscription && (
         <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
           <h3 className="text-xl font-bold text-gray-900 mb-6">
-            {isPortuguese ? 'Desbloqueie Mais Benefícios' : 'Unlock More Benefits'}
+            {isPortuguese
+              ? "Desbloqueie Mais Benefícios"
+              : "Unlock More Benefits"}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <CheckCircleIcon className="w-6 h-6 text-secondary-600" />
-                <span>{isPortuguese ? '15% desconto em transportes' : '15% discount on transport'}</span>
+                <span>
+                  {isPortuguese
+                    ? "15% desconto em transportes"
+                    : "15% discount on transport"}
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircleIcon className="w-6 h-6 text-secondary-600" />
-                <span>{isPortuguese ? 'Acesso prioritário a eventos' : 'Priority event access'}</span>
+                <span>
+                  {isPortuguese
+                    ? "Acesso prioritário a eventos"
+                    : "Priority event access"}
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircleIcon className="w-6 h-6 text-secondary-600" />
-                <span>{isPortuguese ? 'Networking exclusivo' : 'Exclusive networking'}</span>
+                <span>
+                  {isPortuguese
+                    ? "Networking exclusivo"
+                    : "Exclusive networking"}
+                </span>
               </div>
             </div>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <CheckCircleIcon className="w-6 h-6 text-secondary-600" />
-                <span>{isPortuguese ? 'Reservas de grupo gratuitas' : 'Free group bookings'}</span>
+                <span>
+                  {isPortuguese
+                    ? "Reservas de grupo gratuitas"
+                    : "Free group bookings"}
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircleIcon className="w-6 h-6 text-secondary-600" />
-                <span>{isPortuguese ? 'Suporte português 24/7' : '24/7 Portuguese support'}</span>
+                <span>
+                  {isPortuguese
+                    ? "Suporte português 24/7"
+                    : "24/7 Portuguese support"}
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <CheckCircleIcon className="w-6 h-6 text-secondary-600" />
-                <span>{isPortuguese ? 'Eventos culturais exclusivos' : 'Exclusive cultural events'}</span>
+                <span>
+                  {isPortuguese
+                    ? "Eventos culturais exclusivos"
+                    : "Exclusive cultural events"}
+                </span>
               </div>
             </div>
           </div>
           <div className="mt-6">
-            <button 
-              onClick={() => window.location.href = '/premium'}
+            <button
+              onClick={() => (window.location.href = "/premium")}
               className="w-full bg-gradient-to-r from-premium-600 to-accent-600 text-white py-3 rounded-lg font-semibold hover:from-premium-700 hover:to-accent-700 transition-all duration-200"
             >
-              {isPortuguese ? 'Upgrade para Premium' : 'Upgrade to Premium'}
+              {isPortuguese ? "Upgrade para Premium" : "Upgrade to Premium"}
             </button>
           </div>
         </div>
       )}
     </div>
-  )
+  );
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Header */}
       <div className="text-center mb-8">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          {isPortuguese ? 'Centro de Experiências LusoTown' : 'LusoTown Experience Hub'}
+          {isPortuguese
+            ? "Centro de Experiências LusoTown"
+            : "LusoTown Experience Hub"}
         </h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
           {isPortuguese
-            ? 'Descubra, reserve e conecte-se numa plataforma integrada para a comunidade portuguesa'
-            : 'Discover, book, and connect in one integrated platform for the Portuguese community'
-          }
+            ? "Descubra, reserve e conecte-se numa plataforma integrada para a comunidade portuguesa"
+            : "Discover, book, and connect in one integrated platform for the Portuguese community"}
         </p>
       </div>
 
@@ -515,21 +603,21 @@ export default function UnifiedExperienceHub({
       <div className="flex justify-center mb-8">
         <div className="bg-gray-100 rounded-xl p-1 flex space-x-1">
           {tabs.map((tab) => {
-            const Icon = tab.icon
+            const Icon = tab.icon;
             return (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as any)}
                 className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                   activeTab === tab.id
-                    ? 'bg-white text-primary-600 shadow-md'
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? "bg-white text-primary-600 shadow-md"
+                    : "text-gray-600 hover:text-gray-900"
                 }`}
               >
                 <Icon className="w-5 h-5" />
                 <span className="hidden sm:inline">{tab.name}</span>
               </button>
-            )
+            );
           })}
         </div>
       </div>
@@ -543,10 +631,10 @@ export default function UnifiedExperienceHub({
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3 }}
         >
-          {activeTab === 'discover' && renderDiscoverTab()}
-          {activeTab === 'book' && renderBookTab()}
-          {activeTab === 'connect' && renderConnectTab()}
-          {activeTab === 'upgrade' && renderUpgradeTab()}
+          {activeTab === "discover" && renderDiscoverTab()}
+          {activeTab === "book" && renderBookTab()}
+          {activeTab === "connect" && renderConnectTab()}
+          {activeTab === "upgrade" && renderUpgradeTab()}
         </motion.div>
       </AnimatePresence>
 
@@ -572,19 +660,18 @@ export default function UnifiedExperienceHub({
                   <CheckCircleIcon className="w-8 h-8 text-secondary-600" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  {isPortuguese ? 'Reserva Confirmada!' : 'Booking Confirmed!'}
+                  {isPortuguese ? "Reserva Confirmada!" : "Booking Confirmed!"}
                 </h3>
                 <p className="text-gray-600 mb-6">
                   {isPortuguese
                     ? `Sua experiência "${selectedExperience.title}" foi reservada com sucesso.`
-                    : `Your "${selectedExperience.title}" experience has been booked successfully.`
-                  }
+                    : `Your "${selectedExperience.title}" experience has been booked successfully.`}
                 </p>
                 <button
                   onClick={() => setSelectedExperience(null)}
                   className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors"
                 >
-                  {isPortuguese ? 'Fechar' : 'Close'}
+                  {isPortuguese ? "Fechar" : "Close"}
                 </button>
               </div>
             </motion.div>
@@ -592,5 +679,5 @@ export default function UnifiedExperienceHub({
         )}
       </AnimatePresence>
     </div>
-  )
+  );
 }

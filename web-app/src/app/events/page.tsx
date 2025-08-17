@@ -484,19 +484,20 @@ export default function EventsPage() {
             "relative py-16 overflow-hidden"
           )}
         >
-          {/* Background Image */}
+          {/* Background Image - use text-free, people-centric images */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-secondary-900/80 to-accent-900/90 z-10"></div>
-            <div 
+            <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
               style={{
-                backgroundImage: activeTab === "events" 
-                  ? "url('/events/portuguese/portuguese-networking.jpg')"
-                  : "url('/events/art-tour.jpg')"
+                backgroundImage:
+                  activeTab === "events"
+                    ? "url('/events/networking.jpg')" // smiling people networking
+                    : "url('/events/art-tour.jpg')", // museum/presentation scene
               }}
             ></div>
           </div>
-          
+
           {/* Decorative Elements */}
           <div className="absolute inset-0 opacity-20 z-20">
             <div className="absolute -top-40 -right-40 w-80 h-80 bg-accent-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
@@ -966,19 +967,20 @@ export default function EventsPage() {
                 {/* Featured Section */}
                 {featuredItems.length > 0 && (
                   <div className="mb-12 relative overflow-hidden rounded-2xl">
-                    {/* Background Image for Featured Section */}
+                    {/* Background Image for Featured Section - avoid flyers/text */}
                     <div className="absolute inset-0">
                       <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/90 to-white/95 z-10"></div>
-                      <div 
+                      <div
                         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
                         style={{
-                          backgroundImage: activeTab === "events" 
-                            ? "url('/events/portuguese/cape-verde-night.jpg')"
-                            : "url('/events/wine-tasting.jpg')"
+                          backgroundImage:
+                            activeTab === "events"
+                              ? "url('/events/jazz-networking.jpg')"
+                              : "url('/events/book-brunch.jpg')",
                         }}
                       ></div>
                     </div>
-                    
+
                     <div className="relative z-20 p-8">
                       <div className="flex items-center gap-3 mb-6">
                         <SparklesIcon className="w-6 h-6 text-yellow-500" />
@@ -992,23 +994,23 @@ export default function EventsPage() {
                             : "Featured Experiences"}
                         </h2>
                       </div>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-                      {featuredItems.slice(0, 2).map((item, index) =>
-                        activeTab === "events" ? (
-                          <ImprovedEventCard
-                            key={item.id}
-                            event={item as Event}
-                            showPreviewOverlay={index > 0} // Show preview overlay for 2nd and 3rd featured events
-                            onUpgrade={handleUpgradeClick}
-                          />
-                        ) : (
-                          <EventToursCard
-                            key={item.id}
-                            event={item as EventTour}
-                          />
-                        )
-                      )}
-                    </div>
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+                        {featuredItems.slice(0, 2).map((item, index) =>
+                          activeTab === "events" ? (
+                            <ImprovedEventCard
+                              key={item.id}
+                              event={item as Event}
+                              showPreviewOverlay={index > 0} // Show preview overlay for 2nd and 3rd featured events
+                              onUpgrade={handleUpgradeClick}
+                            />
+                          ) : (
+                            <EventToursCard
+                              key={item.id}
+                              event={item as EventTour}
+                            />
+                          )
+                        )}
+                      </div>
                     </div>
                   </div>
                 )}
@@ -1152,13 +1154,13 @@ export default function EventsPage() {
 
         {/* Host Your Event CTA Section */}
         <section className="py-24 relative overflow-hidden">
-          {/* Background Image */}
+          {/* Background Image - avoid text overlays in imagery */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-r from-premium-900/85 via-coral-900/80 to-accent-900/85 z-10"></div>
-            <div 
+            <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
               style={{
-                backgroundImage: "url('/events/portuguese/mozambican-bbq.jpg')"
+                backgroundImage: "url('/events/ceramic-art.jpg')",
               }}
             ></div>
           </div>
