@@ -638,7 +638,6 @@ export default function TopicDetail() {
           </div>
         )}
       </div>
-      </div>
     </div>
     </>
   )

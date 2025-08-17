@@ -9,7 +9,7 @@ import {
   HeartIcon,
   GiftIcon,
   ShareIcon,
-  CrownIcon,
+  AcademicCapIcon,
   SparklesIcon,
   CheckCircleIcon,
   ClockIcon,
@@ -549,7 +549,7 @@ export default function RetentionGrowthMechanics({
       >
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
-            <CrownIcon className="w-8 h-8" />
+            <AcademicCapIcon className="w-8 h-8" />
             <div>
               <h3 className="text-xl font-bold">
                 {isPortuguese ? loyaltyProgram.levelNamePortuguese : loyaltyProgram.levelName}

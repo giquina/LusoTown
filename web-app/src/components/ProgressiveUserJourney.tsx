@@ -8,7 +8,7 @@ import {
   CalendarDaysIcon,
   BanknotesIcon,
   MapPinIcon,
-  CrownIcon,
+  StarIcon,
   ShareIcon,
   ChatBubbleLeftRightIcon,
   ArrowRightIcon,
@@ -199,7 +199,7 @@ export default function ProgressiveUserJourney({
       namePortuguese: 'Investimento Premium',
       description: 'Unlock the full Portuguese community experience with premium membership.',
       descriptionPortuguese: 'Desbloqueie a experiência completa da comunidade portuguesa com a subscrição premium.',
-      icon: CrownIcon,
+      icon: StarIcon,
       color: 'premium',
       progress: calculateInvestmentProgress(),
       isCompleted: calculateInvestmentProgress() >= 100,
@@ -328,11 +328,11 @@ export default function ProgressiveUserJourney({
     let progress = 0
     
     // Profile completion check (mock - would check actual profile data)
-    const hasCompletedProfile = localStorage.getItem('lusotown-profile-completed')
+    const hasCompletedProfile = typeof window !== 'undefined' ? localStorage.getItem('lusotown-profile-completed') : null
     if (hasCompletedProfile) progress += 40
     
     // Visited key pages
-    const visitedPages = JSON.parse(localStorage.getItem('lusotown-visited-pages') || '[]')
+    const visitedPages = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('lusotown-visited-pages') || '[]') : []
     if (visitedPages.includes('/events')) progress += 30
     if (visitedPages.includes('/transport')) progress += 30
     
@@ -349,7 +349,7 @@ export default function ProgressiveUserJourney({
     if (connections.length > 0) progress += 30
     
     // Transport booking (mock check)
-    const hasBookedTransport = localStorage.getItem('lusotown-transport-booked')
+    const hasBookedTransport = typeof window !== 'undefined' ? localStorage.getItem('lusotown-transport-booked') : null
     if (hasBookedTransport) progress += 20
     
     return Math.min(progress, 100)
@@ -359,12 +359,12 @@ export default function ProgressiveUserJourney({
     let progress = 0
     
     // Premium subscription (mock check)
-    const hasSubscription = localStorage.getItem('lusotown-subscription-active')
+    const hasSubscription = typeof window !== 'undefined' ? localStorage.getItem('lusotown-subscription-active') : null
     if (hasSubscription) progress += 60
     
     // Used premium features
-    const usedMentorship = localStorage.getItem('lusotown-mentorship-used')
-    const usedHousing = localStorage.getItem('lusotown-housing-used')
+    const usedMentorship = typeof window !== 'undefined' ? localStorage.getItem('lusotown-mentorship-used') : null
+    const usedHousing = typeof window !== 'undefined' ? localStorage.getItem('lusotown-housing-used') : null
     if (usedMentorship) progress += 20
     if (usedHousing) progress += 20
     
@@ -375,15 +375,15 @@ export default function ProgressiveUserJourney({
     let progress = 0
     
     // Referrals made (mock check)
-    const referralsMade = JSON.parse(localStorage.getItem('lusotown-referrals') || '[]').length
+    const referralsMade = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('lusotown-referrals') || '[]').length : 0
     if (referralsMade > 0) progress += 40
     
     // Events hosted (mock check)
-    const eventsHosted = JSON.parse(localStorage.getItem('lusotown-hosted-events') || '[]').length
+    const eventsHosted = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('lusotown-hosted-events') || '[]').length : 0
     if (eventsHosted > 0) progress += 40
     
     // Success story shared (mock check)
-    const sharedStory = localStorage.getItem('lusotown-shared-story')
+    const sharedStory = typeof window !== 'undefined' ? localStorage.getItem('lusotown-shared-story') : null
     if (sharedStory) progress += 20
     
     return Math.min(progress, 100)
@@ -411,10 +411,10 @@ export default function ProgressiveUserJourney({
     
     // Track page visits for progress calculation
     if (currentPage) {
-      const visitedPages = JSON.parse(localStorage.getItem('lusotown-visited-pages') || '[]')
+      const visitedPages = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('lusotown-visited-pages') || '[]') : []
       if (!visitedPages.includes(currentPage)) {
         visitedPages.push(currentPage)
-        localStorage.setItem('lusotown-visited-pages', JSON.stringify(visitedPages))
+        typeof window !== 'undefined' && localStorage.setItem('lusotown-visited-pages', JSON.stringify(visitedPages))
       }
     }
   }, [stats, connections, currentPage])
