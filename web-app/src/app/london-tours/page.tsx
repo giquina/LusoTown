@@ -46,8 +46,8 @@ export default function LondonToursPage() {
         </div>
       </section>
 
-      {/* Tours list */}
-      <section className="py-12">
+  {/* Tours list */}
+  <section id="tours" className="py-12">
         <div className="container-width">
           {tours.length === 0 ? (
             <div className="text-center text-gray-600">{isPortuguese ? 'Sem tours disponíveis no momento.' : 'No tours available at the moment.'}</div>
