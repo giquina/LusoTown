@@ -26,16 +26,33 @@ import { useLanguage } from "@/context/LanguageContext";
 
 const getNavigationLinks = (t: any) => [
   { name: t("nav.events", "Events"), href: "/events" },
-  { name: t("nav.london-tours", "London Tours"), href: "/london-tours" },
+  {
+    name: t("nav.london-tours", "London Tours"),
+    href: "/transport",
+    submenu: [
+      { name: t("nav.tours", "Tours"), href: "/transport#tours" },
+      { name: t("nav.private-transport", "Private Transport"), href: "/transport" },
+    ],
+  },
   { name: t("nav.students", "Students"), href: "/students" },
   { name: t("nav.pricing", "Pricing"), href: "/pricing" },
 ];
 
 const getAuthenticatedNavigationLinks = (t: any) => [
   { name: t("nav.events", "Events"), href: "/events" },
-  { name: t("nav.london-tours", "London Tours"), href: "/london-tours" },
+  { name: t("nav.matches", "Matches"), href: "/matches" },
+  {
+    name: t("nav.london-tours", "London Tours"),
+    href: "/transport",
+    submenu: [
+      { name: t("nav.tours", "Tours"), href: "/transport#tours" },
+      { name: t("nav.private-transport", "Private Transport"), href: "/transport" },
+    ],
+  },
   { name: t("nav.students", "Students"), href: "/students" },
+  { name: t("nav.my-network", "My Network"), href: "/my-network" },
   { name: t("nav.pricing", "Pricing"), href: "/pricing" },
+  { name: "Dashboard", href: "/dashboard" },
 ];
 
 // All footer links for the "More" dropdown
@@ -142,13 +159,51 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 ml-4 xl:ml-8">
             {navigationLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-              >
-                {link.name}
-              </a>
+              <div key={link.name} className="relative">
+                {link.submenu ? (
+                  <div
+                    className="relative"
+                    onMouseEnter={() => setShowLondonToursDropdown(true)}
+                    onMouseLeave={() => setShowLondonToursDropdown(false)}
+                  >
+                    <a
+                      href={link.href}
+                      className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1"
+                    >
+                      {link.name}
+                      <ChevronDownIcon className="w-4 h-4" />
+                    </a>
+
+                    <AnimatePresence>
+                      {showLondonToursDropdown && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
+                        >
+                          {link.submenu.map((submenuItem) => (
+                            <a
+                              key={submenuItem.name}
+                              href={submenuItem.href}
+                              className="block px-4 py-3 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
+                            >
+                              {submenuItem.name}
+                            </a>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : (
+                  <a
+                    href={link.href}
+                    className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  >
+                    {link.name}
+                  </a>
+                )}
+              </div>
             ))}
             
             {/* More Dropdown */}
