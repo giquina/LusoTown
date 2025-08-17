@@ -92,7 +92,7 @@ const sampleGroupEvents: GroupEventData[] = [
   {
     id: 'group-event-4',
     title: 'Harry Potter Studio Tour Community Adventure',
-    description: 'Magical day out at the Warner Bros Studio Tour. Perfect for Portuguese speakers in London - you'll be guided by Portuguese hosts and travel with fellow Portuguese speakers, making it feel like going with close friends who share your language and culture while exploring behind-the-scenes magic, costumes, and sets.',
+    description: 'Magical day out at the Warner Bros Studio Tour. Perfect for Portuguese speakers in London - you\'ll be guided by Portuguese hosts and travel with fellow Portuguese speakers, making it feel like going with close friends who share your language and culture while exploring behind-the-scenes magic, costumes, and sets.',
     date: '2025-08-24',
     time: '11:00 AM',
     location: 'Warner Bros Studio Tour, WD25 7LR',
@@ -139,7 +139,7 @@ const sampleGroupEvents: GroupEventData[] = [
   {
     id: 'group-event-6',
     title: 'London Zoo Community Safari Day',
-    description: 'Fun-filled day at London Zoo with Portuguese speakers in London. Educational talks, animal encounters, and activities led by Portuguese guides - experience London's wildlife while connecting with fellow Portuguese speakers who share your language and culture.',
+    description: 'Fun-filled day at London Zoo with Portuguese speakers in London. Educational talks, animal encounters, and activities led by Portuguese guides - experience London\'s wildlife while connecting with fellow Portuguese speakers who share your language and culture.',
     date: '2025-08-26',
     time: '10:00 AM',
     location: 'London Zoo, NW1 4RY',
@@ -176,7 +176,6 @@ export default function GroupEventsSection({
 }: GroupEventsSectionProps) {
   const { language } = useLanguage()
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
-  const [mounted, setMounted] = useState(false)
   
   const isPortuguese = language === 'pt'
 
@@ -307,7 +306,7 @@ export default function GroupEventsSection({
                 <p className="text-gray-700 max-w-3xl mx-auto">
                   {isPortuguese
                     ? 'Conecte-se com portugueses que partilham os seus interesses, explore Londres de forma autêntica e crie amizades duradouras.'
-                    : 'Connect with Portuguese speakers who share your interests. With Portuguese-speaking guides and hosts, you'll explore London authentically while building lasting friendships with people who understand your language and culture.'
+                    : 'Connect with Portuguese speakers who share your interests. With Portuguese-speaking guides and hosts, you\'ll explore London authentically while building lasting friendships with people who understand your language and culture.'
                   }
                 </p>
               </div>
