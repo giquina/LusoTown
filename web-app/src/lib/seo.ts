@@ -385,6 +385,22 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
     ],
     canonicalUrl: 'https://lusotown.com/matches',
     ogImage: 'https://lusotown.com/og-matches.jpg'
+  },
+  londonTours: {
+    title: 'London Tours for Portuguese Community | LusoTown',
+    titlePortuguese: 'Tours em Londres para a Comunidade Portuguesa | LusoTown',
+    description: 'Browse cultural London tours and iconic landmarks curated for the Portuguese community. Discover and book authentic experiences.',
+    descriptionPortuguese: 'Descubra tours culturais de Londres e marcos icónicos com curadoria para a comunidade portuguesa. Explore e reserve experiências autênticas.',
+    keywords: [
+      'london tours portuguese',
+      'tours londres português',
+      'cultural tours london',
+      'tours culturais londres',
+      'portuguese guide london',
+      'guia português londres'
+    ],
+    canonicalUrl: 'https://lusotown.com/london-tours',
+    ogImage: 'https://lusotown.com/og-london-tours.jpg'
   }
 }
 
