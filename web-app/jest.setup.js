@@ -62,47 +62,6 @@ jest.mock('react-hot-toast', () => ({
   Toaster: () => null,
 }))
 
-// Mock Supabase
-jest.mock('@/lib/supabase', () => ({
-  supabase: {
-    from: jest.fn(() => ({
-      select: jest.fn(() => ({
-        eq: jest.fn(() => ({
-          single: jest.fn(() => Promise.resolve({ data: null, error: null })),
-        })),
-        in: jest.fn(() => Promise.resolve({ data: [], error: null })),
-        order: jest.fn(() => Promise.resolve({ data: [], error: null })),
-      })),
-      insert: jest.fn(() => Promise.resolve({ data: null, error: null })),
-      update: jest.fn(() => ({
-        eq: jest.fn(() => Promise.resolve({ data: null, error: null })),
-      })),
-      delete: jest.fn(() => ({
-        eq: jest.fn(() => Promise.resolve({ data: null, error: null })),
-      })),
-    })),
-    auth: {
-      getUser: jest.fn(() => Promise.resolve({ data: { user: null }, error: null })),
-      signInWithPassword: jest.fn(() => Promise.resolve({ data: null, error: null })),
-      signUp: jest.fn(() => Promise.resolve({ data: null, error: null })),
-      signOut: jest.fn(() => Promise.resolve({ error: null })),
-      onAuthStateChange: jest.fn(() => ({ data: { subscription: { unsubscribe: jest.fn() } } })),
-    },
-  },
-}))
-
-// Mock Auth Service
-jest.mock('@/lib/auth', () => ({
-  authService: {
-    getCurrentUser: jest.fn(() => null),
-    isDemoUser: jest.fn(() => false),
-    onAuthStateChange: jest.fn(() => jest.fn()),
-    login: jest.fn(() => Promise.resolve(true)),
-    logout: jest.fn(() => Promise.resolve()),
-    register: jest.fn(() => Promise.resolve(true)),
-  },
-}))
-
 // Mock window.matchMedia for mobile testing
 Object.defineProperty(window, 'matchMedia', {
   writable: true,
@@ -110,8 +69,8 @@ Object.defineProperty(window, 'matchMedia', {
     matches: false,
     media: query,
     onchange: null,
-    addListener: jest.fn(), // deprecated
-    removeListener: jest.fn(), // deprecated
+    addListener: jest.fn(),
+    removeListener: jest.fn(),
     addEventListener: jest.fn(),
     removeEventListener: jest.fn(),
     dispatchEvent: jest.fn(),
