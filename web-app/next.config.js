@@ -12,8 +12,6 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // Note: Static export disabled for now due to dynamic routes complexity
-  // Can be re-enabled after refactoring dynamic routes to use server components
   webpack: (config, { dev, isServer }) => {
     // Fix chunk loading issues in development
     if (dev) {
