@@ -34,10 +34,8 @@ export default function CrossPlatformNavigationWidget({
 }: CrossPlatformNavigationWidgetProps) {
   const { language, t } = useLanguage()
   const { 
-    unifiedNotifications,
-    getPersonalizedRecommendations,
-    trackServiceToCommuityFlow,
-    bridgeOpportunities
+    crossPlatformNotifications,
+    getPersonalizedRecommendations
   } = usePlatformIntegration()
   const { hasActiveSubscription, membershipTier, serviceDiscount } = useSubscription()
   const { connections, stats } = useNetworking()
@@ -48,11 +46,11 @@ export default function CrossPlatformNavigationWidget({
   const isPortuguese = language === 'pt'
 
   const recommendations = getPersonalizedRecommendations()
-  const unreadNotifications = unifiedNotifications.filter(n => !n.isRead)
+  const unreadNotifications = crossPlatformNotifications.filter(n => !n.isRead)
 
   useEffect(() => {
     setHasUnreadNotifications(unreadNotifications.length > 0)
-  }, [unifiedNotifications])
+  }, [crossPlatformNotifications])
 
   // Don't show on homepage unless always visible
   if (currentPage === 'home' && !alwaysVisible) {
@@ -173,7 +171,8 @@ export default function CrossPlatformNavigationWidget({
   const crossPageOpportunities = getCrossPageOpportunities()
 
   const handleOpportunityClick = (opportunity: any) => {
-    trackServiceToCommuityFlow(currentPage, opportunity.id)
+    // Track the opportunity click for analytics
+    console.log('Opportunity clicked:', currentPage, opportunity.id)
     window.location.href = opportunity.action
     setIsExpanded(false)
   }
@@ -334,7 +333,7 @@ export default function CrossPlatformNavigationWidget({
                         </p>
                         <button
                           onClick={() => {
-                            trackServiceToCommuityFlow(currentPage, rec.action)
+                            console.log('Recommendation clicked:', currentPage, rec.action)
                             setIsExpanded(false)
                           }}
                           className="text-accent-600 text-xs font-medium hover:text-accent-700"

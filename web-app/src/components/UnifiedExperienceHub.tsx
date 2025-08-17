@@ -40,7 +40,7 @@ export default function UnifiedExperienceHub({
     getCulturalEventTransportPairings,
     findPortugueseBusinessConnections,
     getPortugueseCommunityInsights,
-    trackActivity,
+    updateJourneyProgress,
     createGroupTransportBooking
   } = usePlatformIntegration()
   const { hasActiveSubscription, membershipTier, serviceDiscount } = useSubscription()
@@ -87,16 +87,8 @@ export default function UnifiedExperienceHub({
     setIsBooking(true)
     
     try {
-      // Track cross-platform activity
-      trackActivity({
-        activityType: 'transport_booking',
-        serviceType: 'transport',
-        points: 100,
-        metadata: { 
-          experienceType: 'integrated_service',
-          bridgeOpportunityId: experience.id 
-        }
-      })
+  // Track cross-platform activity
+  updateJourneyProgress('transport_booking', { experienceType: 'integrated_service', bridgeOpportunityId: experience.id })
 
       // Simulate booking process
       await new Promise(resolve => setTimeout(resolve, 2000))

@@ -37,7 +37,7 @@ export default function UnifiedPremiumExperience({
   const { 
     getProgressiveUpgradeOptions,
     calculateMembershipBenefits,
-    trackActivity,
+    updateJourneyProgress,
     bridgeOpportunities
   } = usePlatformIntegration()
   const { hasActiveSubscription, membershipTier, serviceDiscount, createSubscription } = useSubscription()
@@ -176,16 +176,7 @@ export default function UnifiedPremiumExperience({
     try {
       const sessionId = await createSubscription(selectedTier)
       if (sessionId) {
-        trackActivity({
-          activityType: 'networking',
-          serviceType: 'networking',
-          points: 200,
-          metadata: { 
-            action: 'premium_upgrade_initiated',
-            tier: selectedTier,
-            from: currentService 
-          }
-        })
+  updateJourneyProgress('premium_upgrade_initiated', { tier: selectedTier, from: currentService })
         onUpgradeClick?.()
       }
     } catch (error) {

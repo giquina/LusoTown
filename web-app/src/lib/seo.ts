@@ -1,4 +1,4 @@
-'use client'
+// Note: This module is server-safe. Do not add client-only APIs here.
 
 // Portuguese Community SEO Strategy
 // Optimized for Portuguese speakers seeking community and business connections in London
@@ -211,7 +211,7 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
     titlePortuguese: 'Eventos Portugueses em Londres - Atividades Culturais e Agenda Social',
     description: 'Discover Portuguese cultural events, social activities, and community gatherings in London. From Fado nights to business networking, find your next Portuguese experience.',
     descriptionPortuguese: 'Descubra eventos culturais portugueses, atividades sociais e encontros comunitários em Londres. De noites de Fado a networking empresarial, encontre sua próxima experiência portuguesa.',
-    keywords: [
+  keywords: [
       'portuguese events london',
       'eventos portugueses londres',
       'fado nights london',
@@ -224,7 +224,9 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       'música portuguesa londres',
       'portuguese food events london',
       'eventos gastronomia portuguesa'
-    ]
+  ],
+  canonicalUrl: 'https://lusotown.com/events',
+  ogImage: 'https://lusotown.com/og-events.jpg'
   },
   
   businessDirectory: {
@@ -232,7 +234,7 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
     titlePortuguese: 'Diretório de Negócios Portugueses Londres - Serviços Lusófonos Autênticos',
     description: 'Find verified Portuguese-owned businesses in London. Restaurants, services, consulting, and more from authentic Portuguese entrepreneurs across the UK.',
     descriptionPortuguese: 'Encontre negócios verificados de proprietários portugueses em Londres. Restaurantes, serviços, consultoria e mais de empreendedores portugueses autênticos no Reino Unido.',
-    keywords: [
+  keywords: [
       'portuguese business directory london',
       'diretório negócios portugueses londres',
       'portuguese restaurants london',
@@ -245,7 +247,9 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       'negócios portugueses verificados',
       'lusophone business london',
       'empresas lusófonas londres'
-    ]
+  ],
+  canonicalUrl: 'https://lusotown.com/business-directory',
+  ogImage: 'https://lusotown.com/og-business-directory.jpg'
   },
   
   businessNetworking: {
@@ -253,7 +257,7 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
     titlePortuguese: 'Networking Empresarial Português Londres - Eventos e Parcerias',
     description: 'Connect with Portuguese entrepreneurs and business professionals in London. Networking events, investor meetups, and partnership opportunities for the Portuguese business community.',
     descriptionPortuguese: 'Conecte-se com empreendedores e profissionais portugueses em Londres. Eventos de networking, encontros de investidores e oportunidades de parceria para a comunidade empresarial portuguesa.',
-    keywords: [
+  keywords: [
       'portuguese business networking london',
       'networking empresarial português londres',
       'portuguese entrepreneurs london',
@@ -266,7 +270,9 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       'ecossistema startup português',
       'portuguese investors london',
       'investidores portugueses londres'
-    ]
+  ],
+  canonicalUrl: 'https://lusotown.com/business-networking',
+  ogImage: 'https://lusotown.com/og-business-networking.jpg'
   },
   
   community: {
@@ -274,7 +280,7 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
     titlePortuguese: 'Comunidade Portuguesa Londres - A Sua Família Lusófona no Reino Unido',
     description: 'Join London\'s vibrant Portuguese community where saudade transforms into joy. Make lifelong friends, celebrate our heritage, and stay connected to Portuguese culture while living in the UK.',
     descriptionPortuguese: 'Junte-se à vibrante comunidade portuguesa de Londres onde a saudade se transforma em alegria. Faça amizades para a vida, celebre a nossa herança, e mantenha-se conectado à cultura portuguesa enquanto vive no Reino Unido.',
-    keywords: [
+  keywords: [
       'portuguese community london',
       'comunidade portuguesa londres',
       'familia portuguesa londres',
@@ -294,7 +300,9 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       'saudade portugal london',
       'heritage preservation portuguese',
       'preservação cultural portuguesa'
-    ]
+  ],
+  canonicalUrl: 'https://lusotown.com/community',
+  ogImage: 'https://lusotown.com/og-community.jpg'
   },
   
   heritage: {
@@ -302,7 +310,7 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
     titlePortuguese: 'Cultura Portuguesa e Preservação Comunitária Londres - Parceria Instituto Camões',
     description: 'Preserve and celebrate Portuguese culture in London through our official Instituto Camões partnership. Cultural workshops, language classes, and community preservation programs',
     descriptionPortuguese: 'Preserve e celebre o património português em Londres através da nossa parceria oficial com o Instituto Camões. Oficinas culturais, aulas de língua e programas de preservação cultural.',
-    keywords: [
+  keywords: [
       'portuguese culture london',
       'cultura portuguesa londres',
       'instituto camões london',
@@ -317,7 +325,66 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       'tradições fado londres',
       'portuguese folklore london',
       'folclore português londres'
-    ]
+    ],
+    canonicalUrl: 'https://lusotown.com/instituto-camoes',
+    ogImage: 'https://lusotown.com/og-heritage.jpg'
+  }
+  ,
+  live: {
+    title: 'LusoTown TV - Live Portuguese Streams from London',
+    titlePortuguese: 'LusoTown TV - Transmissões ao vivo portuguesas de Londres',
+    description: 'Watch Portuguese cultural content, business workshops, and community events live from London. Replays and VIP sessions for members.',
+    descriptionPortuguese: 'Assista conteúdo cultural português, workshops de negócios e eventos comunitários ao vivo de Londres. Reprises e sessões VIP para membros.',
+    keywords: [
+      'portuguese live stream london',
+      'transmissão ao vivo portuguesa londres',
+      'fado live london',
+      'workshops negócios portugueses',
+      'lusophone tv london'
+    ],
+    canonicalUrl: 'https://lusotown.com/live',
+    ogImage: 'https://lusotown.com/og-live.jpg'
+  },
+  students: {
+    title: 'Portuguese Students UK - Partnerships, Discounts, Support',
+    titlePortuguese: 'Estudantes Portugueses no Reino Unido - Parcerias, Descontos, Apoio',
+    description: 'Exclusive support for Portuguese students across UK universities. Discounts, cultural programs, and career development.',
+    descriptionPortuguese: 'Apoio exclusivo para estudantes portugueses em universidades no Reino Unido. Descontos, programas culturais e desenvolvimento de carreira.',
+    keywords: [
+      'portuguese students uk',
+      'estudantes portugueses reino unido',
+      'university partnerships portugal uk',
+      'student discounts portuguese'
+    ],
+    canonicalUrl: 'https://lusotown.com/students',
+    ogImage: 'https://lusotown.com/og-students.jpg'
+  },
+  premiumMembership: {
+    title: 'LusoTown Premium Membership - Unlock VIP Portuguese Network',
+    titlePortuguese: 'LusoTown Assinatura Premium - Rede VIP Portuguesa',
+    description: 'Join premium to unlock transport services, VIP events, and exclusive Portuguese networking in London & UK.',
+    descriptionPortuguese: 'Assine premium para desbloquear serviços de transporte, eventos VIP e networking português exclusivo em Londres e no Reino Unido.',
+    keywords: [
+      'portuguese premium membership',
+      'assinatura premium portuguesa',
+      'vip portuguese london'
+    ],
+    canonicalUrl: 'https://lusotown.com/premium-membership',
+    ogImage: 'https://lusotown.com/og-premium.jpg'
+  },
+  matches: {
+    title: 'Portuguese Matches London - Cultural Compatibility & Networking',
+    titlePortuguese: 'Matches Portugueses em Londres - Compatibilidade Cultural e Networking',
+    description: 'Discover premium matches across the Portuguese community in London with cultural compatibility and professional networking.',
+    descriptionPortuguese: 'Descubra matches premium na comunidade portuguesa em Londres com compatibilidade cultural e networking profissional.',
+    keywords: [
+      'portuguese matches london',
+      'matches portugueses londres',
+      'compatibilidade cultural portuguesa',
+      'portuguese networking london'
+    ],
+    canonicalUrl: 'https://lusotown.com/matches',
+    ogImage: 'https://lusotown.com/og-matches.jpg'
   }
 }
 

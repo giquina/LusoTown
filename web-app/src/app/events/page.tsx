@@ -484,13 +484,26 @@ export default function EventsPage() {
             "relative py-16 overflow-hidden"
           )}
         >
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
-            <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-secondary-200 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-secondary-900/80 to-accent-900/90 z-10"></div>
+            <div 
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: activeTab === "events" 
+                  ? "url('/events/portuguese/portuguese-networking.jpg')"
+                  : "url('/events/art-tour.jpg')"
+              }}
+            ></div>
+          </div>
+          
+          {/* Decorative Elements */}
+          <div className="absolute inset-0 opacity-20 z-20">
+            <div className="absolute -top-40 -right-40 w-80 h-80 bg-accent-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+            <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-coral-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
           </div>
 
-          <div className={cn(Spacing.container, "relative z-10")}>
+          <div className={cn(Spacing.container, "relative z-30")}>
             <div className="text-center max-w-4xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -509,7 +522,7 @@ export default function EventsPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className={cn(Typography.display, "text-gray-900 mb-6")}
+                className={cn(Typography.display, "text-white mb-6")}
               >
                 {activeTab === "events" ? (
                   <>
@@ -547,7 +560,7 @@ export default function EventsPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className={cn(Typography.bodyLarge, "text-gray-600 mb-8")}
+                className={cn(Typography.bodyLarge, "text-white/90 mb-8")}
               >
                 {activeTab === "events" ? (
                   <>
@@ -630,10 +643,10 @@ export default function EventsPage() {
                 className="grid grid-cols-3 gap-8 max-w-md mx-auto mb-8"
               >
                 <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-primary-600 mb-1">
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
                     {activeTab === "events" ? "200+" : `${tours.length}+`}
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-white/80">
                     {activeTab === "events"
                       ? isPortuguese
                         ? "Experiências Mensais"
@@ -644,12 +657,12 @@ export default function EventsPage() {
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-secondary-600 mb-1">
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
                     {activeTab === "events"
                       ? "750+"
                       : Object.keys(EVENT_TOUR_CATEGORIES).length}
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-white/80">
                     {activeTab === "events"
                       ? isPortuguese
                         ? "Falantes de Português"
@@ -660,10 +673,10 @@ export default function EventsPage() {
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-purple-600 mb-1">
+                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
                     {activeTab === "events" ? "10+" : featuredItems.length}
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-white/80">
                     {activeTab === "events"
                       ? isPortuguese
                         ? "Países Lusófonos"
@@ -952,21 +965,35 @@ export default function EventsPage() {
 
                 {/* Featured Section */}
                 {featuredItems.length > 0 && (
-                  <div className="mb-12">
-                    <div className="flex items-center gap-3 mb-6">
-                      <SparklesIcon className="w-6 h-6 text-yellow-500" />
-                      <h2 className="text-2xl font-bold text-gray-900">
-                        {activeTab === "events"
-                          ? isPortuguese
-                            ? "Eventos em Destaque"
-                            : "Featured Events"
-                          : isPortuguese
-                          ? "Experiências em Destaque"
-                          : "Featured Experiences"}
-                      </h2>
+                  <div className="mb-12 relative overflow-hidden rounded-2xl">
+                    {/* Background Image for Featured Section */}
+                    <div className="absolute inset-0">
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/90 to-white/95 z-10"></div>
+                      <div 
+                        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+                        style={{
+                          backgroundImage: activeTab === "events" 
+                            ? "url('/events/portuguese/cape-verde-night.jpg')"
+                            : "url('/events/wine-tasting.jpg')"
+                        }}
+                      ></div>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                      {featuredItems.slice(0, 3).map((item, index) =>
+                    
+                    <div className="relative z-20 p-8">
+                      <div className="flex items-center gap-3 mb-6">
+                        <SparklesIcon className="w-6 h-6 text-yellow-500" />
+                        <h2 className="text-2xl font-bold text-gray-900">
+                          {activeTab === "events"
+                            ? isPortuguese
+                              ? "Eventos em Destaque"
+                              : "Featured Events"
+                            : isPortuguese
+                            ? "Experiências em Destaque"
+                            : "Featured Experiences"}
+                        </h2>
+                      </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+                      {featuredItems.slice(0, 2).map((item, index) =>
                         activeTab === "events" ? (
                           <ImprovedEventCard
                             key={item.id}
@@ -982,12 +1009,13 @@ export default function EventsPage() {
                         )
                       )}
                     </div>
+                    </div>
                   </div>
                 )}
 
                 {/* Main Content Grid */}
                 {loading ? (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
                     {[1, 2, 3, 4, 5, 6].map((i) => (
                       <div
                         key={i}
@@ -1040,7 +1068,7 @@ export default function EventsPage() {
                 ) : (
                   <motion.div
                     layout
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+                    className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8"
                   >
                     <AnimatePresence>
                       {currentData.map((item, index) =>
@@ -1123,15 +1151,25 @@ export default function EventsPage() {
         )}
 
         {/* Host Your Event CTA Section */}
-        <section className="py-24 bg-gradient-to-r from-premium-50 to-coral-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-24 relative overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-r from-premium-900/85 via-coral-900/80 to-accent-900/85 z-10"></div>
+            <div 
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: "url('/events/portuguese/mozambican-bbq.jpg')"
+              }}
+            ></div>
+          </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
             <div className="text-center max-w-4xl mx-auto">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
                 {isPortuguese
                   ? "Crie, Organize e Partilhe"
                   : "Create, Host & Share"}
               </h2>
-              <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+              <p className="text-lg text-white/90 mb-12 max-w-2xl mx-auto">
                 {isPortuguese
                   ? "Partilhe a sua experiência com a comunidade portuguesa. Organize eventos, crie grupos ou ofereça experiências únicas em Londres."
                   : "Share your expertise with the Portuguese community. Host events, create groups, or offer unique experiences in London."}

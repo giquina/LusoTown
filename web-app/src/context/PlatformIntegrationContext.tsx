@@ -83,6 +83,18 @@ interface PlatformIntegrationContextType {
   updateJourneyProgress: (step: string, metadata?: Record<string, any>) => void
   generateServiceRecommendations: (trigger: string, context?: Record<string, any>) => ServiceRecommendation[]
   
+  // Activity Tracking (used by UI components)
+  trackActivity: (activity: { activityType: string; serviceType?: string; points?: number; metadata?: Record<string, any> }) => void
+  
+  // UI helper data/functions expected by unified-experience components
+  bridgeOpportunities: Array<{ id: string; title: string; category: string; description: string }>
+  getCulturalEventTransportPairings: () => any[]
+  findPortugueseBusinessConnections: () => any[]
+  getPortugueseCommunityInsights: () => { highlights: string[]; groups: number; events: number }
+  createGroupTransportBooking: (params?: Record<string, any>) => Promise<string | null>
+  getProgressiveUpgradeOptions: () => any[]
+  calculateMembershipBenefits: () => { transportDiscount: number }
+  
   // Service to Community Bridges
   handleServiceCompletion: (serviceType: string, serviceData: Record<string, any>) => void
   suggestCommunityEngagement: (serviceType: string) => ServiceRecommendation[]
@@ -94,7 +106,7 @@ interface PlatformIntegrationContextType {
   generateBusinessNetworkingOpportunities: (networkData: Record<string, any>) => ServiceRecommendation[]
   
   // Smart Recommendations
-  getPersonalizedRecommendations: () => ServiceRecommendation[]
+  getPersonalizedRecommendations: () => (ServiceRecommendation & { benefits?: string[] })[]
   trackRecommendationInteraction: (recommendationId: string, action: 'viewed' | 'clicked' | 'booked' | 'dismissed') => void
   
   // Cross-Platform Notifications
@@ -521,12 +533,105 @@ export function PlatformIntegrationProvider({ children }: { children: ReactNode 
     }]
   }, [language])
 
-  const getPersonalizedRecommendations = useCallback((): ServiceRecommendation[] => {
+  const getPersonalizedRecommendations = useCallback((): (ServiceRecommendation & { benefits?: string[] })[] => {
     return activeRecommendations
       .filter(rec => rec.relevanceScore >= 7)
       .sort((a, b) => b.relevanceScore - a.relevanceScore)
       .slice(0, 5)
+      .map(rec => ({
+        ...rec,
+        // Ensure UI can safely render tags even if none provided
+        benefits: Array.isArray((rec as any).benefits)
+          ? (rec as any).benefits
+          : Array.isArray(rec.metadata?.benefits)
+            ? (rec.metadata.benefits as string[])
+            : ['community', 'transport_pairing']
+      }))
   }, [activeRecommendations])
+
+  // Activity tracking stub used by UI components
+  const trackActivity = useCallback((activity: { activityType: string; serviceType?: string; points?: number; metadata?: Record<string, any> }) => {
+    try {
+      updateJourneyProgress(activity.activityType, activity.metadata || {})
+    } catch (e) {
+      console.log('trackActivity stub:', activity)
+    }
+  }, [updateJourneyProgress])
+
+  // Helper data/functions expected by unified experience components
+  const bridgeOpportunities = useMemo(() => ([
+    {
+      id: 'bridge-1',
+      title: language === 'pt' ? 'Transporte + Evento' : 'Transport + Event',
+      category: 'integration',
+      description: language === 'pt' ? 'Combine transporte premium com eventos culturais' : 'Combine premium transport with cultural events',
+      serviceIntegration: { transportIncluded: true, eventAccess: true, networkingFeatures: false },
+      pricing: { basePrice: 120, memberDiscount: 15 },
+      duration: language === 'pt' ? 'Dia inteiro' : 'Full day'
+    },
+    {
+      id: 'bridge-2',
+      title: language === 'pt' ? 'Networking + Serviços' : 'Networking + Services',
+      category: 'community',
+      description: language === 'pt' ? 'Conecte-se e reserve serviços em conjunto' : 'Connect and book services together',
+      serviceIntegration: { transportIncluded: false, eventAccess: true, networkingFeatures: true },
+      pricing: { basePrice: 80, memberDiscount: 10 },
+      duration: language === 'pt' ? '3 horas' : '3 hours'
+    }
+  ]), [language])
+
+  const getCulturalEventTransportPairings = useCallback(() => {
+    return [
+      {
+        eventId: 'portuguese-music-night',
+        eventTitle: language === 'pt' ? 'Noite de Música Portuguesa' : 'Portuguese Music Night',
+        culturalExperience: language === 'pt' ? 'Fado ao vivo com transporte opcional' : 'Live Fado with optional transport',
+        groupSavings: language === 'pt' ? 'Poupe 20% em grupos' : 'Save 20% in groups',
+        transportOptions: ['standard', 'vip']
+      }
+    ]
+  }, [language])
+
+  const findPortugueseBusinessConnections = useCallback(() => {
+    return []
+  }, [])
+
+  const getPortugueseCommunityInsights = useCallback(() => {
+    const isPt = language === 'pt'
+    return {
+      highlights: [
+        isPt ? 'Crescimento estável da comunidade' : 'Steady community growth',
+        isPt ? 'Eventos culturais mensais' : 'Monthly cultural events'
+      ],
+      groups: 0,
+      events: 0,
+      totalMembers: 0,
+      activeLastMonth: 0,
+      averageConnections: 0,
+      communityGrowth: '0%'
+    }
+  }, [language])
+
+  const createGroupTransportBooking = useCallback(async (_params?: Record<string, any>) => {
+    return null
+  }, [])
+
+  const getProgressiveUpgradeOptions = useCallback(() => {
+    return []
+  }, [])
+
+  const calculateMembershipBenefits = useCallback(() => {
+    const base = 10
+    const extra = hasActiveSubscription
+      ? (membershipTier === 'vip' ? 15
+        : membershipTier === 'business' ? 10
+        : membershipTier === 'professional' ? 7
+        : membershipTier === 'student' ? 5
+        : membershipTier === 'basic' ? 3
+        : 0)
+      : 0
+    return { transportDiscount: base + extra }
+  }, [hasActiveSubscription, membershipTier])
 
   const trackRecommendationInteraction = useCallback((recommendationId: string, action: 'viewed' | 'clicked' | 'booked' | 'dismissed') => {
     // Update recommendation metrics
@@ -599,7 +704,7 @@ export function PlatformIntegrationProvider({ children }: { children: ReactNode 
   }, [ecosystemAnalytics])
 
   const getUserTimeline = useCallback(() => {
-    const timeline = []
+    const timeline: Array<{ type: string; title: string; date: string; metadata: Record<string, any> }> = []
     
     // Add journey steps
     if (userJourney) {
@@ -704,6 +809,15 @@ export function PlatformIntegrationProvider({ children }: { children: ReactNode 
     initializeUserJourney,
     updateJourneyProgress,
     generateServiceRecommendations,
+  // activity + UI helpers
+  trackActivity,
+  bridgeOpportunities,
+  getCulturalEventTransportPairings,
+  findPortugueseBusinessConnections,
+  getPortugueseCommunityInsights,
+  createGroupTransportBooking,
+  getProgressiveUpgradeOptions,
+  calculateMembershipBenefits,
     handleServiceCompletion,
     suggestCommunityEngagement,
     autoEnrollCommunityGroups,
@@ -729,6 +843,14 @@ export function PlatformIntegrationProvider({ children }: { children: ReactNode 
     initializeUserJourney,
     updateJourneyProgress,
     generateServiceRecommendations,
+  trackActivity,
+  bridgeOpportunities,
+  getCulturalEventTransportPairings,
+  findPortugueseBusinessConnections,
+  getPortugueseCommunityInsights,
+  createGroupTransportBooking,
+  getProgressiveUpgradeOptions,
+  calculateMembershipBenefits,
     handleServiceCompletion,
     suggestCommunityEngagement,
     autoEnrollCommunityGroups,

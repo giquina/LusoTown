@@ -33,7 +33,7 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://lusotown.vercel.app'),
+  metadataBase: new URL('https://lusotown.com'),
   title: 'LusoTown - London | Portuguese Social & Business Network',
   description: 'The Portuguese social and business network in London. Connect with Portuguese speakers, book cultural events, attend AI workshops, and build professional networks. Unidos pela Língua.',
   keywords: [

@@ -130,7 +130,7 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
-        className="h-[500px] sm:h-[550px] lg:h-[600px] flex flex-col bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+        className="h-auto min-h-[650px] sm:min-h-[680px] lg:min-h-[720px] flex flex-col bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
       >
         {/* Event Image Header */}
         <div className="relative h-48 sm:h-52 bg-cover bg-center rounded-t-xl overflow-hidden">
@@ -229,50 +229,54 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
 
         {/* Content Section - flexible */}
         <div className="flex-1 p-4 sm:p-6 flex flex-col">
-          {/* Title - ensure full visibility */}
-          <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-primary-600 transition-colors">
+          {/* Title - full visibility, no truncation */}
+          <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-primary-600 transition-colors">
             {event.title}
           </h3>
           
-          {/* Subtitle - ensure full visibility */}
-          <p className="text-gray-600 mb-4 line-clamp-3 flex-1">
-            {event.description}
-          </p>
-          
-          {/* Event details - one line format */}
-          <div className="flex items-center justify-between mb-4 text-sm">
-            <span className="text-gray-500 truncate mr-2">{event.hostName}</span>
-            <span className="text-primary-600 font-medium flex-shrink-0">{spotsLeft} spots available</span>
+          {/* Organizer name - full visibility */}
+          <div className="mb-3">
+            <p className="text-sm text-gray-500 font-medium">
+              {isPortuguese ? 'Organizado por' : 'Hosted by'} <span className="text-gray-700 font-semibold">{event.hostName}</span>
+            </p>
           </div>
+          
+          {/* Description - better spacing, no harsh truncation */}
+          <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+            {event.description.length > 150 ? `${event.description.substring(0, 150)}...` : event.description}
+          </p>
 
-          {/* Date, Time & Location */}
+          {/* Date, Time & Location - compact layout */}
           <div className="space-y-2 mb-4">
             <div className="flex items-center gap-2 text-sm text-gray-600">
               <CalendarIcon className="w-4 h-4 text-primary-500 flex-shrink-0" />
-              <span className="font-medium text-gray-900 truncate">{formatDate(event.date)}</span>
+              <span className="font-medium text-gray-900">{formatDate(event.date)}</span>
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-600">
               <ClockIcon className="w-4 h-4 text-primary-500 flex-shrink-0" />
-              <span className="font-medium text-gray-600 truncate">
+              <span className="font-medium text-gray-600">
                 {formatTime(event.time)}{event.endTime && ` - ${formatTime(event.endTime)}`}
               </span>
             </div>
             <div className="flex items-start gap-2 text-sm text-gray-600">
               <MapPinIcon className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
-              <span className="font-medium break-words line-clamp-1">{event.location}</span>
+              <span className="font-medium break-words">{event.location}</span>
             </div>
           </div>
 
-          {/* Price */}
-          <div className="mb-4 text-right">
-            <div className="text-lg sm:text-xl font-bold text-primary-600">
+          {/* Price and availability */}
+          <div className="flex items-center justify-between mb-4">
+            <div className="text-lg font-bold text-primary-600">
               {event.price === 0 ? 'FREE' : `£${event.price}`}
+              {event.membershipRequired !== 'free' && (
+                <span className="text-xs text-gray-500 capitalize font-medium ml-2">
+                  ({isPortuguese ? 'Membro' : 'Member'})
+                </span>
+              )}
             </div>
-            {event.membershipRequired !== 'free' && (
-              <div className="text-xs text-gray-500 capitalize font-medium">
-                {isPortuguese ? 'Membro' : 'Member'}
-              </div>
-            )}
+            <div className="text-sm text-primary-600 font-medium">
+              {spotsLeft} {isPortuguese ? 'vagas' : 'spots'}
+            </div>
           </div>
 
           {/* Network Connections Section */}
@@ -287,12 +291,12 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
             </div>
           )}
           
-          {/* CTA button - always at bottom */}
+          {/* CTA buttons - compact and inline */}
           <div className="mt-auto">
-            <div className="grid grid-cols-2 gap-3">
+            <div className="flex gap-2">
               <a
                 href={`/events/${event.id}`}
-                className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-3 px-3 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-xs leading-tight"
+                className="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-2.5 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-sm"
               >
                 {isFull ? (isPortuguese ? 'Lista' : 'Waitlist') : (isPortuguese ? 'Ver Mais' : 'View More')}
               </a>
@@ -313,9 +317,9 @@ const ImprovedEventCard = ({ event, showPreviewOverlay = false, onUpgrade }: Imp
                 showSave={false}
                 showCart={true}
                 iconOnly={false}
-                size="medium"
+                size="small"
                 variant="outline"
-                className="text-sm py-2 px-4"
+                className="flex-1 text-sm py-2.5 px-3 whitespace-nowrap"
               />
             </div>
           </div>

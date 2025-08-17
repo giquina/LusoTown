@@ -1,4 +1,5 @@
 'use client'
+export const dynamic = 'force-dynamic'
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
@@ -13,21 +14,13 @@ import { usePlatformIntegration } from '@/context/PlatformIntegrationContext'
 
 export default function UnifiedExperiencePage() {
   const { language } = useLanguage()
-  const { trackActivity } = usePlatformIntegration()
+  const { updateJourneyProgress } = usePlatformIntegration()
   const [activeDemo, setActiveDemo] = useState<'hub' | 'bridge' | 'premium'>('hub')
   const isPortuguese = language === 'pt'
 
   const handleDemoChange = (demo: 'hub' | 'bridge' | 'premium') => {
     setActiveDemo(demo)
-    trackActivity({
-      activityType: 'networking',
-      serviceType: 'community',
-      points: 10,
-      metadata: { 
-        demoSection: demo,
-        page: 'unified_experience_demo' 
-      }
-    })
+  updateJourneyProgress('demo_section_changed', { demoSection: demo, page: 'unified_experience_demo' })
   }
 
   return (
