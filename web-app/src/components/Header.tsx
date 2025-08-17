@@ -666,6 +666,73 @@ export default function Header() {
                     )
                   ))}
 
+                  {/* Mobile "More" Section - Match Desktop Structure */}
+                  <div className="space-y-1">
+                    <div className="text-gray-700 px-4 py-3 text-base font-medium min-h-[44px] flex items-center">
+                      More
+                    </div>
+                    
+                    {/* Quick Actions in Mobile */}
+                    <div className="ml-4 space-y-1 mb-2">
+                      <div className="text-xs font-semibold text-primary-600 px-2 py-1 uppercase tracking-wide">
+                        Quick Actions
+                      </div>
+                      <QuickActionCartButton />
+                      <QuickActionSavedButton />
+                    </div>
+                    
+                    {/* Community Links */}
+                    <div className="ml-4 space-y-1 mb-2">
+                      <div className="text-xs font-semibold text-primary-600 px-2 py-1 uppercase tracking-wide">
+                        Community
+                      </div>
+                      {moreDropdownLinks.community.slice(0, 5).map((link) => (
+                        <a
+                          key={link.name}
+                          href={link.href}
+                          className="text-gray-600 hover:text-primary-600 hover:bg-primary-50 block px-2 py-2 rounded-lg text-sm font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[36px] flex items-center"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {link.name}
+                        </a>
+                      ))}
+                    </div>
+                    
+                    {/* Services Links */}
+                    <div className="ml-4 space-y-1 mb-2">
+                      <div className="text-xs font-semibold text-premium-600 px-2 py-1 uppercase tracking-wide">
+                        Services
+                      </div>
+                      {moreDropdownLinks.services.slice(0, 5).map((link) => (
+                        <a
+                          key={link.name}
+                          href={link.href}
+                          className="text-gray-600 hover:text-premium-600 hover:bg-premium-50 block px-2 py-2 rounded-lg text-sm font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[36px] flex items-center"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {link.name}
+                        </a>
+                      ))}
+                    </div>
+                    
+                    {/* Support & Company Combined for Mobile */}
+                    <div className="ml-4 space-y-1">
+                      <div className="text-xs font-semibold text-secondary-600 px-2 py-1 uppercase tracking-wide">
+                        Support & Company
+                      </div>
+                      {[...moreDropdownLinks.support, ...moreDropdownLinks.company.slice(0, 4)].map((link) => (
+                        <a
+                          key={link.name}
+                          href={link.href}
+                          className="text-gray-600 hover:text-secondary-600 hover:bg-secondary-50 block px-2 py-2 rounded-lg text-sm font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[36px] flex items-center"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {link.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+
                   <div className="border-t border-primary-100 pt-4 pb-3">
                     {user ? (
                       <>
