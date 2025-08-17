@@ -26,33 +26,16 @@ import { useLanguage } from "@/context/LanguageContext";
 
 const getNavigationLinks = (t: any) => [
   { name: t("nav.events", "Events"), href: "/events" },
-  {
-    name: t("nav.london-tours", "London Tours"),
-    href: "/transport",
-    submenu: [
-      { name: t("nav.tours", "Tours"), href: "/transport#tours" },
-      { name: t("nav.private-transport", "Private Transport"), href: "/transport" },
-    ],
-  },
+  { name: t("nav.london-tours", "London Tours"), href: "/london-tours" },
   { name: t("nav.students", "Students"), href: "/students" },
   { name: t("nav.pricing", "Pricing"), href: "/pricing" },
 ];
 
 const getAuthenticatedNavigationLinks = (t: any) => [
   { name: t("nav.events", "Events"), href: "/events" },
-  { name: t("nav.matches", "Matches"), href: "/matches" },
-  {
-    name: t("nav.london-tours", "London Tours"),
-    href: "/transport",
-    submenu: [
-      { name: t("nav.tours", "Tours"), href: "/transport#tours" },
-      { name: t("nav.private-transport", "Private Transport"), href: "/transport" },
-    ],
-  },
+  { name: t("nav.london-tours", "London Tours"), href: "/london-tours" },
   { name: t("nav.students", "Students"), href: "/students" },
-  { name: t("nav.my-network", "My Network"), href: "/my-network" },
   { name: t("nav.pricing", "Pricing"), href: "/pricing" },
-  { name: "Dashboard", href: "/dashboard" },
 ];
 
 // All footer links for the "More" dropdown
@@ -69,6 +52,8 @@ const getMoreDropdownLinks = (t: any) => ({
   services: [
     { name: 'Premium Services', href: '/services' },
     { name: 'Cultural Tours', href: '/services#cultural-tours' },
+    { name: 'Executive Transport', href: '/services#executive-transport' },
+    { name: 'Close Protection', href: '/services#close-protection' },
     { name: 'Transport & SIA', href: '/transport' },
     { name: 'Matches', href: '/matches' },
     { name: 'Live TV', href: '/live' },
@@ -81,6 +66,7 @@ const getMoreDropdownLinks = (t: any) => ({
   ],
   company: [
     { name: 'About LusoTown', href: '/about' },
+    { name: 'Pricing', href: '/pricing' },
     { name: 'Success Stories', href: '/success-stories' },
     { name: 'Community Chat', href: '/forums' },
     { name: 'Case Studies', href: '/case-studies' },
@@ -88,8 +74,10 @@ const getMoreDropdownLinks = (t: any) => ({
     { name: 'Instituto Camões Partnership', href: '/instituto-camoes' },
   ],
   legal: [
+    { name: 'Community Guidelines', href: '/community-guidelines' },
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },
+    { name: 'Community Safety', href: '/safety' },
   ],
 });
 
@@ -98,7 +86,6 @@ export default function Header() {
   const [user, setUser] = useState<any | null>(null);
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [showMoreDropdown, setShowMoreDropdown] = useState(false);
-  const [showLondonToursDropdown, setShowLondonToursDropdown] = useState(false);
   const router = useRouter();
   const { t } = useLanguage();
 
@@ -159,51 +146,13 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 ml-4 xl:ml-8">
             {navigationLinks.map((link) => (
-              <div key={link.name} className="relative">
-                {link.submenu ? (
-                  <div
-                    className="relative"
-                    onMouseEnter={() => setShowLondonToursDropdown(true)}
-                    onMouseLeave={() => setShowLondonToursDropdown(false)}
-                  >
-                    <a
-                      href={link.href}
-                      className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1"
-                    >
-                      {link.name}
-                      <ChevronDownIcon className="w-4 h-4" />
-                    </a>
-
-                    <AnimatePresence>
-                      {showLondonToursDropdown && (
-                        <motion.div
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
-                          className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
-                        >
-                          {link.submenu.map((submenuItem) => (
-                            <a
-                              key={submenuItem.name}
-                              href={submenuItem.href}
-                              className="block px-4 py-3 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
-                            >
-                              {submenuItem.name}
-                            </a>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                ) : (
-                  <a
-                    href={link.href}
-                    className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
-                )}
-              </div>
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+              >
+                {link.name}
+              </a>
             ))}
             
             {/* More Dropdown */}
@@ -341,8 +290,6 @@ export default function Header() {
           {/* Desktop CTA / User Menu */}
           <div className="hidden md:flex items-center gap-2 lg:gap-3 flex-shrink-0">
             <SearchBar variant="header" />
-            <CartButton />
-            <SavedItemsButton />
             <NotificationBell className="hidden md:block" showDropdown />
             <LanguageToggle />
             {user ? (
@@ -453,11 +400,9 @@ export default function Header() {
 
           {/* Mobile menu button - Fixed spacing for better touch targets */}
           <div className="flex md:hidden items-center gap-1 relative z-50 flex-shrink-0">
-            {/* Only show cart and favorites when user is signed in */}
+            {/* Only show notifications when user is signed in */}
             {user && (
               <>
-                <CartButton />
-                <SavedItemsButton />
                 <NotificationBell className="md:hidden" />
               </>
             )}
@@ -511,39 +456,14 @@ export default function Header() {
               >
                 <div className="px-4 pt-6 pb-4 space-y-2">
                   {navigationLinks.map((link) => (
-                    <div key={link.name}>
-                      {link.submenu ? (
-                        <div className="space-y-1">
-                          <a
-                            href={link.href}
-                            className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px] flex items-center"
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            {link.name}
-                          </a>
-                          <div className="ml-4 space-y-1">
-                            {link.submenu.map((submenuItem) => (
-                              <a
-                                key={submenuItem.name}
-                                href={submenuItem.href}
-                                className="text-gray-600 hover:text-primary-600 hover:bg-primary-50 block px-4 py-2 rounded-lg text-sm transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[40px] flex items-center"
-                                onClick={() => setMobileMenuOpen(false)}
-                              >
-                                {submenuItem.name}
-                              </a>
-                            ))}
-                          </div>
-                        </div>
-                      ) : (
-                        <a
-                          href={link.href}
-                          className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px] flex items-center"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {link.name}
-                        </a>
-                      )}
-                    </div>
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px] flex items-center"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {link.name}
+                    </a>
                   ))}
 
                   <div className="border-t border-primary-100 pt-4 pb-3">

@@ -31,6 +31,7 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
+  const [emailError, setEmailError] = useState('')
   const [rememberMe, setRememberMe] = useState(false)
   const router = useRouter()
   const { language, t } = useLanguage()
@@ -45,12 +46,32 @@ export default function Login() {
     }
   }, [router])
 
+  // Real-time email validation
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email) {
+      setEmailError("");
+      return;
+    }
+    if (!emailRegex.test(email)) {
+      setEmailError(isPortuguese ? "Por favor, insira um endereço de email válido" : "Please enter a valid email address");
+    } else {
+      setEmailError("");
+    }
+  };
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({
       ...prev,
       [name]: value
     }))
+    
+    // Real-time validation
+    if (name === "email") {
+      validateEmail(value);
+    }
+    
     // Clear error when user starts typing
     if (error) setError('')
   }
@@ -151,9 +172,25 @@ export default function Login() {
                         </div>
                         <span className="text-2xl font-bold text-gray-900">LusoTown</span>
                       </div>
-                      <p className="text-gray-600">
+                      <p className="text-gray-600 mb-4">
                         {isPortuguese ? 'Entre na sua conta' : 'Sign in to your account'}
                       </p>
+                      
+                      {/* Social Proof */}
+                      <div className="flex items-center justify-center gap-4 text-xs text-gray-500">
+                        <div className="flex items-center gap-1">
+                          <UserGroupIcon className="h-4 w-4" />
+                          <span>750+ {isPortuguese ? 'Membros' : 'Members'}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <MapPinIcon className="h-4 w-4" />
+                          <span>London & UK</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <CheckBadgeIcon className="h-4 w-4 text-green-500" />
+                          <span>{isPortuguese ? 'Verificado' : 'Verified'}</span>
+                        </div>
+                      </div>
                     </div>
 
                     {/* Test Credentials Helper */}
@@ -223,12 +260,27 @@ export default function Login() {
                           name="email"
                           value={formData.email}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
+                          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-transparent transition-all ${
+                            emailError 
+                              ? 'border-red-300 focus:ring-red-400' 
+                              : formData.email && !emailError 
+                                ? 'border-green-300 focus:ring-green-400' 
+                                : 'border-gray-300 focus:ring-primary-400'
+                          }`}
                           placeholder={isPortuguese ? 'seu@email.com' : 'your@email.com'}
                           disabled={isLoading}
                           autoFocus
                           required
                         />
+                        {emailError && (
+                          <p className="mt-1 text-sm text-red-600">{emailError}</p>
+                        )}
+                        {formData.email && !emailError && (
+                          <p className="mt-1 text-sm text-green-600 flex items-center gap-1">
+                            <CheckBadgeIcon className="h-4 w-4" />
+                            {isPortuguese ? 'Email válido' : 'Valid email address'}
+                          </p>
+                        )}
                       </div>
                       
                       <div>

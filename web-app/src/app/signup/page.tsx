@@ -18,6 +18,7 @@ import {
   CameraIcon,
   StarIcon,
   ExclamationCircleIcon,
+  MapPinIcon,
 } from "@heroicons/react/24/outline";
 import { getImageWithFallback } from "@/lib/profileImages";
 import { authService } from "@/lib/auth";
@@ -90,7 +91,35 @@ export default function Signup() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordStrength, setPasswordStrength] = useState(0);
   const router = useRouter();
+
+  // Real-time email validation
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email) {
+      setEmailError("");
+      return;
+    }
+    if (!emailRegex.test(email)) {
+      setEmailError("Please enter a valid email address");
+    } else {
+      setEmailError("");
+    }
+  };
+
+  // Password strength calculation
+  const calculatePasswordStrength = (password: string) => {
+    let strength = 0;
+    if (password.length >= 6) strength += 1;
+    if (password.length >= 8) strength += 1;
+    if (/[A-Z]/.test(password)) strength += 1;
+    if (/[a-z]/.test(password)) strength += 1;
+    if (/[0-9]/.test(password)) strength += 1;
+    if (/[^A-Za-z0-9]/.test(password)) strength += 1;
+    return Math.min(strength, 4);
+  };
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -101,6 +130,15 @@ export default function Signup() {
       ...prev,
       [name]: type === "checkbox" ? checked : value,
     }));
+    
+    // Real-time validation
+    if (name === "email") {
+      validateEmail(value);
+    }
+    if (name === "password") {
+      setPasswordStrength(calculatePasswordStrength(value));
+    }
+    
     // Clear error when user starts typing
     if (error) setError("");
   };
@@ -336,9 +374,25 @@ export default function Signup() {
                       <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
                         Start Free Today
                       </h2>
-                      <p className="text-gray-600 text-sm sm:text-base">
+                      <p className="text-gray-600 text-sm sm:text-base mb-4">
                         Free community access • No barriers to participation
                       </p>
+                      
+                      {/* Social Proof */}
+                      <div className="flex items-center justify-center gap-4 text-xs text-gray-500 mb-4">
+                        <div className="flex items-center gap-1">
+                          <UserGroupIcon className="h-4 w-4" />
+                          <span>750+ Members</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <MapPinIcon className="h-4 w-4" />
+                          <span>London & UK</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <StarIcon className="h-4 w-4 text-yellow-400" />
+                          <span>4.9/5 Rating</span>
+                        </div>
+                      </div>
                     </div>
 
                     {/* Social Login Options */}
@@ -384,9 +438,24 @@ export default function Signup() {
                           onChange={handleInputChange}
                           disabled={isSubmitting}
                           required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50"
+                          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50 transition-colors ${
+                            emailError 
+                              ? 'border-red-300 focus:ring-red-400' 
+                              : formData.email && !emailError 
+                                ? 'border-green-300 focus:ring-green-400' 
+                                : 'border-gray-300 focus:ring-primary-400'
+                          }`}
                           placeholder="sarah@company.com"
                         />
+                        {emailError && (
+                          <p className="mt-1 text-sm text-red-600">{emailError}</p>
+                        )}
+                        {formData.email && !emailError && (
+                          <p className="mt-1 text-sm text-green-600 flex items-center gap-1">
+                            <CheckIcon className="h-4 w-4" />
+                            Valid email address
+                          </p>
+                        )}
                       </div>
 
                       <div>
@@ -428,8 +497,39 @@ export default function Signup() {
                           placeholder="Enter a secure password"
                           minLength={6}
                         />
+                        {formData.password && (
+                          <div className="mt-2">
+                            <div className="flex gap-1 mb-1">
+                              {[1, 2, 3, 4].map((level) => (
+                                <div
+                                  key={level}
+                                  className={`h-2 flex-1 rounded-full transition-colors ${
+                                    passwordStrength >= level
+                                      ? passwordStrength <= 1
+                                        ? 'bg-red-400'
+                                        : passwordStrength <= 2
+                                        ? 'bg-yellow-400'
+                                        : passwordStrength <= 3
+                                        ? 'bg-blue-400'
+                                        : 'bg-green-400'
+                                      : 'bg-gray-200'
+                                  }`}
+                                />
+                              ))}
+                            </div>
+                            <p className={`text-xs ${
+                              passwordStrength <= 1 ? 'text-red-600' :
+                              passwordStrength <= 2 ? 'text-yellow-600' :
+                              passwordStrength <= 3 ? 'text-blue-600' : 'text-green-600'
+                            }`}>
+                              {passwordStrength <= 1 ? 'Weak password' :
+                               passwordStrength <= 2 ? 'Fair password' :
+                               passwordStrength <= 3 ? 'Good password' : 'Strong password'}
+                            </p>
+                          </div>
+                        )}
                         <p className="text-xs text-gray-500 mt-1">
-                          At least 6 characters
+                          At least 6 characters, mix of letters, numbers, and symbols
                         </p>
                       </div>
 
