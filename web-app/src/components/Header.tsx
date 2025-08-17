@@ -80,7 +80,8 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [user, setUser] = useState<any | null>(null);
   const [showUserMenu, setShowUserMenu] = useState(false);
-  const [showServicesDropdown, setShowServicesDropdown] = useState(false);
+  const [showMoreDropdown, setShowMoreDropdown] = useState(false);
+  const [showLondonToursDropdown, setShowLondonToursDropdown] = useState(false);
   const router = useRouter();
   const { t } = useLanguage();
 
@@ -124,6 +125,8 @@ export default function Header() {
   const navigationLinks = user
     ? getAuthenticatedNavigationLinks(t)
     : getNavigationLinks(t);
+  
+  const moreDropdownLinks = getMoreDropdownLinks(t);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 min-h-[80px] lg:min-h-[88px]">
@@ -139,64 +142,145 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 ml-4 xl:ml-8">
             {navigationLinks.map((link) => (
-              <div key={link.name} className="relative">
-                {link.submenu ? (
-                  <div
-                    className="relative"
-                    onMouseEnter={() => setShowServicesDropdown(true)}
-                    onMouseLeave={() => setShowServicesDropdown(false)}
-                  >
-                    <a
-                      href={link.href}
-                      className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1"
-                    >
-                      {link.name}
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </a>
-
-                    <AnimatePresence>
-                      {showServicesDropdown && (
-                        <motion.div
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
-                          className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
-                        >
-                          {link.submenu.map((submenuItem) => (
-                            <a
-                              key={submenuItem.name}
-                              href={submenuItem.href}
-                              className="block px-4 py-3 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200"
-                            >
-                              {submenuItem.name}
-                            </a>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                ) : (
-                  <a
-                    href={link.href}
-                    className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
-                )}
-              </div>
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+              >
+                {link.name}
+              </a>
             ))}
+            
+            {/* More Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setShowMoreDropdown(true)}
+              onMouseLeave={() => setShowMoreDropdown(false)}
+            >
+              <button className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1">
+                More
+                <ChevronDownIcon className="w-4 h-4" />
+              </button>
+
+              <AnimatePresence>
+                {showMoreDropdown && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="absolute top-full right-0 mt-2 w-[900px] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-50"
+                  >
+                    <div className="grid grid-cols-5 gap-8 px-8">
+                      {/* Quick Actions Section */}
+                      <div className="border-r border-gray-200 pr-6">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
+                        <div className="space-y-3">
+                          <CartButton className="w-full justify-start" />
+                          <SavedItemsButton className="w-full justify-start" />
+                        </div>
+                      </div>
+                      
+                      {/* Community Links */}
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-primary-600">Community</h3>
+                        <ul className="space-y-2">
+                          {moreDropdownLinks.community.map((link) => (
+                            <li key={link.name}>
+                              <a
+                                href={link.href}
+                                className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded transition-colors duration-200"
+                              >
+                                {link.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Services Links */}
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-premium-600">Services</h3>
+                        <ul className="space-y-2">
+                          {moreDropdownLinks.services.map((link) => (
+                            <li key={link.name}>
+                              <a
+                                href={link.href}
+                                className="block text-sm text-gray-600 hover:text-premium-600 hover:bg-premium-50 px-2 py-1 rounded transition-colors duration-200"
+                              >
+                                {link.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Support & Company Links */}
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-secondary-600">Support</h3>
+                        <ul className="space-y-2 mb-6">
+                          {moreDropdownLinks.support.map((link) => (
+                            <li key={link.name}>
+                              <a
+                                href={link.href}
+                                className="block text-sm text-gray-600 hover:text-secondary-600 hover:bg-secondary-50 px-2 py-1 rounded transition-colors duration-200"
+                              >
+                                {link.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                        
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-accent-600">Company</h3>
+                        <ul className="space-y-2">
+                          {moreDropdownLinks.company.slice(0, 4).map((link) => (
+                            <li key={link.name}>
+                              <a
+                                href={link.href}
+                                className="block text-sm text-gray-600 hover:text-accent-600 hover:bg-accent-50 px-2 py-1 rounded transition-colors duration-200"
+                              >
+                                {link.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Legal & Contact */}
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-gray-700">Legal & Contact</h3>
+                        <ul className="space-y-2 mb-6">
+                          {moreDropdownLinks.legal.map((link) => (
+                            <li key={link.name}>
+                              <a
+                                href={link.href}
+                                className="block text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 px-2 py-1 rounded transition-colors duration-200"
+                              >
+                                {link.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+
+                        {/* Contact Info */}
+                        <div className="bg-gray-50 rounded-lg p-4">
+                          <h4 className="font-semibold text-gray-900 mb-2">Get in Touch</h4>
+                          <div className="space-y-2 text-sm text-gray-600">
+                            <div className="flex items-center gap-2">
+                              <MapPinIcon className="h-4 w-4" />
+                              <span>UK Portuguese Community</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <EnvelopeIcon className="h-4 w-4" />
+                              <span>connect@lusotown.co.uk</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </div>
 
           {/* Desktop CTA / User Menu */}
