@@ -172,178 +172,112 @@ export default function Header() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full right-0 mt-3 w-[1000px] bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden z-50"
+                    className="absolute top-full right-0 mt-2 w-[900px] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-50"
                   >
-                    {/* Header */}
-                    <div className="bg-gradient-to-r from-primary-50 via-secondary-50 to-accent-50 px-8 py-6 border-b border-gray-100">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <h2 className="text-xl font-bold text-gray-900">Explore LusoTown</h2>
-                          <p className="text-sm text-gray-600 mt-1">Your Portuguese community platform in London & UK</p>
-                        </div>
-                        {/* Quick Actions */}
-                        <div className="flex items-center gap-3">
-                          <CartButton className="bg-white hover:bg-gray-50 shadow-sm border border-gray-200" />
-                          <SavedItemsButton className="bg-white hover:bg-gray-50 shadow-sm border border-gray-200" />
+                    <div className="grid grid-cols-5 gap-8 px-8">
+                      {/* Quick Actions Section */}
+                      <div className="border-r border-gray-200 pr-6">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
+                        <div className="space-y-3">
+                          <CartButton className="w-full justify-start" />
+                          <SavedItemsButton className="w-full justify-start" />
                         </div>
                       </div>
-                    </div>
+                      
+                      {/* Community Links */}
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-primary-600">Community</h3>
+                        <ul className="space-y-2">
+                          {moreDropdownLinks.community.map((link) => (
+                            <li key={link.name}>
+                              <a
+                                href={link.href}
+                                className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded transition-colors duration-200"
+                              >
+                                {link.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
 
-                    {/* Main Content */}
-                    <div className="px-8 py-8">
-                      <div className="grid grid-cols-6 gap-8">
-                        {/* Community Column */}
-                        <div className="space-y-1">
-                          <div className="flex items-center gap-2 mb-4">
-                            <div className="w-2 h-2 rounded-full bg-primary-500"></div>
-                            <h3 className="text-base font-bold text-primary-600 uppercase tracking-wide">Community</h3>
-                          </div>
-                          <ul className="space-y-2">
-                            {moreDropdownLinks.community.map((link) => (
-                              <li key={link.name}>
-                                <a
-                                  href={link.href}
-                                  className="block text-sm text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-3 py-2 rounded-lg transition-all duration-200 font-medium"
-                                >
-                                  {link.name}
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                      {/* Services Links */}
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-premium-600">Services</h3>
+                        <ul className="space-y-2">
+                          {moreDropdownLinks.services.map((link) => (
+                            <li key={link.name}>
+                              <a
+                                href={link.href}
+                                className="block text-sm text-gray-600 hover:text-premium-600 hover:bg-premium-50 px-2 py-1 rounded transition-colors duration-200"
+                              >
+                                {link.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
 
-                        {/* Services Column */}
-                        <div className="space-y-1">
-                          <div className="flex items-center gap-2 mb-4">
-                            <div className="w-2 h-2 rounded-full bg-premium-500"></div>
-                            <h3 className="text-base font-bold text-premium-600 uppercase tracking-wide">Services</h3>
-                          </div>
-                          <ul className="space-y-2">
-                            {moreDropdownLinks.services.map((link) => (
-                              <li key={link.name}>
-                                <a
-                                  href={link.href}
-                                  className="block text-sm text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-3 py-2 rounded-lg transition-all duration-200 font-medium"
-                                >
-                                  {link.name}
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                      {/* Support & Company Links */}
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-secondary-600">Support</h3>
+                        <ul className="space-y-2 mb-6">
+                          {moreDropdownLinks.support.map((link) => (
+                            <li key={link.name}>
+                              <a
+                                href={link.href}
+                                className="block text-sm text-gray-600 hover:text-secondary-600 hover:bg-secondary-50 px-2 py-1 rounded transition-colors duration-200"
+                              >
+                                {link.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                        
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-accent-600">Company</h3>
+                        <ul className="space-y-2">
+                          {moreDropdownLinks.company.slice(0, 4).map((link) => (
+                            <li key={link.name}>
+                              <a
+                                href={link.href}
+                                className="block text-sm text-gray-600 hover:text-accent-600 hover:bg-accent-50 px-2 py-1 rounded transition-colors duration-200"
+                              >
+                                {link.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
 
-                        {/* Support Column */}
-                        <div className="space-y-1">
-                          <div className="flex items-center gap-2 mb-4">
-                            <div className="w-2 h-2 rounded-full bg-secondary-500"></div>
-                            <h3 className="text-base font-bold text-secondary-600 uppercase tracking-wide">Support</h3>
-                          </div>
-                          <ul className="space-y-2">
-                            {moreDropdownLinks.support.map((link) => (
-                              <li key={link.name}>
-                                <a
-                                  href={link.href}
-                                  className="block text-sm text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 px-3 py-2 rounded-lg transition-all duration-200 font-medium"
-                                >
-                                  {link.name}
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                      {/* Legal & Contact */}
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-gray-700">Legal & Contact</h3>
+                        <ul className="space-y-2 mb-6">
+                          {moreDropdownLinks.legal.map((link) => (
+                            <li key={link.name}>
+                              <a
+                                href={link.href}
+                                className="block text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 px-2 py-1 rounded transition-colors duration-200"
+                              >
+                                {link.name}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
 
-                        {/* Company Column */}
-                        <div className="space-y-1">
-                          <div className="flex items-center gap-2 mb-4">
-                            <div className="w-2 h-2 rounded-full bg-accent-500"></div>
-                            <h3 className="text-base font-bold text-accent-600 uppercase tracking-wide">Company</h3>
-                          </div>
-                          <ul className="space-y-2">
-                            {moreDropdownLinks.company.map((link) => (
-                              <li key={link.name}>
-                                <a
-                                  href={link.href}
-                                  className="block text-sm text-gray-700 hover:text-accent-600 hover:bg-accent-50 px-3 py-2 rounded-lg transition-all duration-200 font-medium"
-                                >
-                                  {link.name}
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {/* Legal Column */}
-                        <div className="space-y-1">
-                          <div className="flex items-center gap-2 mb-4">
-                            <div className="w-2 h-2 rounded-full bg-gray-500"></div>
-                            <h3 className="text-base font-bold text-gray-700 uppercase tracking-wide">Legal</h3>
-                          </div>
-                          <ul className="space-y-2">
-                            {moreDropdownLinks.legal.map((link) => (
-                              <li key={link.name}>
-                                <a
-                                  href={link.href}
-                                  className="block text-sm text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-3 py-2 rounded-lg transition-all duration-200 font-medium"
-                                >
-                                  {link.name}
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {/* Contact & Social Column */}
-                        <div className="space-y-1">
-                          <div className="flex items-center gap-2 mb-4">
-                            <div className="w-2 h-2 rounded-full bg-action-500"></div>
-                            <h3 className="text-base font-bold text-action-600 uppercase tracking-wide">Connect</h3>
-                          </div>
-                          
-                          {/* Contact Info */}
-                          <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-4 mb-4 border border-gray-200">
-                            <h4 className="font-semibold text-gray-900 mb-3 text-sm">Get in Touch</h4>
-                            <div className="space-y-2 text-xs text-gray-600">
-                              <div className="flex items-start gap-2">
-                                <MapPinIcon className="h-3 w-3 mt-0.5 flex-shrink-0" />
-                                <span className="leading-tight">UK Portuguese Community Platform</span>
-                              </div>
-                              <div className="flex items-start gap-2">
-                                <EnvelopeIcon className="h-3 w-3 mt-0.5 flex-shrink-0" />
-                                <span className="leading-tight">connect@lusotown.co.uk</span>
-                              </div>
+                        {/* Contact Info */}
+                        <div className="bg-gray-50 rounded-lg p-4">
+                          <h4 className="font-semibold text-gray-900 mb-2">Get in Touch</h4>
+                          <div className="space-y-2 text-sm text-gray-600">
+                            <div className="flex items-center gap-2">
+                              <MapPinIcon className="h-4 w-4" />
+                              <span>UK Portuguese Community</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <EnvelopeIcon className="h-4 w-4" />
+                              <span>connect@lusotown.co.uk</span>
                             </div>
                           </div>
-
-                          {/* Additional Quick Links */}
-                          <ul className="space-y-2">
-                            <li>
-                              <a
-                                href="/my-network"
-                                className="block text-sm text-gray-700 hover:text-action-600 hover:bg-action-50 px-3 py-2 rounded-lg transition-all duration-200 font-medium"
-                              >
-                                My Network
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                href="/dashboard"
-                                className="block text-sm text-gray-700 hover:text-action-600 hover:bg-action-50 px-3 py-2 rounded-lg transition-all duration-200 font-medium"
-                              >
-                                Dashboard
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Footer */}
-                    <div className="bg-gray-50 px-8 py-4 border-t border-gray-100">
-                      <div className="flex items-center justify-between text-xs text-gray-500">
-                        <span>© 2025 LusoTown UK. Connecting Portuguese speakers across London & UK.</span>
-                        <div className="flex items-center gap-4">
-                          <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full font-medium">Online</span>
-                          <span>2,150+ Active Members</span>
                         </div>
                       </div>
                     </div>
