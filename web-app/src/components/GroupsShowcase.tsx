@@ -69,74 +69,95 @@ export default function GroupsShowcase() {
       key={group.id}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.1 }}
-      className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-105"
+      transition={{ delay: index * 0.1, duration: 0.6 }}
+      whileHover={{ y: -8, scale: 1.02 }}
+      className="bg-white rounded-3xl shadow-xl border border-gray-100/50 overflow-hidden hover:shadow-2xl transition-all duration-500 group relative"
     >
       {/* Group Image */}
-      <div className="h-40 bg-gradient-to-r from-primary-500 to-secondary-500 relative">
+      <div className="h-48 sm:h-52 bg-gradient-to-br from-secondary-500 via-primary-500 to-accent-500 relative overflow-hidden">
         {group.image_url ? (
           <Image
             src={group.image_url}
             alt={group.name}
-            fill sizes="(max-width: 768px) 100vw, 400px" className="object-cover"
+            fill 
+            sizes="(max-width: 768px) 100vw, 400px" 
+            className="object-cover group-hover:scale-110 transition-transform duration-700"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center">
-            <UserGroupIcon className="w-12 h-12 text-white opacity-60" />
+          <div className="w-full h-full flex items-center justify-center relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-secondary-500/80 via-primary-500/60 to-accent-500/80"></div>
+            <div className="relative z-10 text-center text-white">
+              <div className="w-20 h-20 bg-white/20 backdrop-blur-md rounded-3xl flex items-center justify-center mx-auto mb-4 border border-white/30 shadow-2xl">
+                <UserGroupIcon className="w-10 h-10 text-white" />
+              </div>
+              <div className="text-sm font-medium opacity-90 bg-black/30 backdrop-blur-sm px-4 py-2 rounded-full">
+                Portuguese Community
+              </div>
+            </div>
           </div>
         )}
 
         {/* Category Badge */}
         {group.category_info && (
-          <div className="absolute top-3 left-3">
-            <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium text-white ${group.category_info.color_class || 'bg-primary-600'}`}>
+          <div className="absolute top-4 left-4">
+            <span className={`inline-flex items-center px-4 py-2 rounded-2xl text-sm font-semibold text-white backdrop-blur-md border border-white/30 shadow-xl ${group.category_info.color_class || 'bg-primary-600/90'}`}>
               {language === 'pt' ? group.category_info.name_pt : group.category_info.name_en}
             </span>
           </div>
         )}
+
+        {/* Member Count Badge */}
+        <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2 border border-white/40 shadow-lg">
+          <div className="flex items-center gap-2">
+            <UsersIcon className="w-4 h-4 text-secondary-600" />
+            <span className="text-sm font-bold text-gray-900">{group.current_member_count}</span>
+          </div>
+        </div>
       </div>
 
-      <div className="p-4">
-        <h3 className="font-semibold text-gray-900 mb-2 line-clamp-1">
+      <div className="p-6 sm:p-8">
+        <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 group-hover:text-secondary-600 transition-colors duration-300 line-clamp-1">
           {group.name}
         </h3>
-        <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+        <p className="text-gray-600 mb-6 text-base leading-relaxed line-clamp-2">
           {group.description}
         </p>
 
-        {/* Group Metadata */}
-        <div className="space-y-1 mb-4">
+        {/* Group Metadata - Enhanced Mobile Layout */}
+        <div className="space-y-3 mb-6">
           {group.london_borough && (
-            <div className="flex items-center text-xs text-gray-500">
-              <MapPinIcon className="w-3 h-3 mr-1" />
-              {group.london_borough}
+            <div className="flex items-center gap-3 text-sm text-gray-600">
+              <div className="w-8 h-8 bg-secondary-100 rounded-xl flex items-center justify-center">
+                <MapPinIcon className="w-4 h-4 text-secondary-600" />
+              </div>
+              <span className="font-medium">{group.london_borough}</span>
             </div>
           )}
-          <div className="flex items-center text-xs text-gray-500">
-            <UsersIcon className="w-3 h-3 mr-1" />
-            {group.current_member_count} {group.current_member_count === 1 ? 'member' : 'members'}
-          </div>
           {group.language_preference && group.language_preference !== 'both' && (
-            <div className="flex items-center text-xs text-gray-500">
-              <GlobeAltIcon className="w-3 h-3 mr-1" />
-              {group.language_preference === 'pt-pt' ? 'Português (PT)' : 
-               group.language_preference === 'pt-br' ? 'Português (BR)' : 
-               group.language_preference.charAt(0).toUpperCase() + group.language_preference.slice(1)}
+            <div className="flex items-center gap-3 text-sm text-gray-600">
+              <div className="w-8 h-8 bg-accent-100 rounded-xl flex items-center justify-center">
+                <GlobeAltIcon className="w-4 h-4 text-accent-600" />
+              </div>
+              <span className="font-medium">
+                {group.language_preference === 'pt-pt' ? 'Português (PT)' : 
+                 group.language_preference === 'pt-br' ? 'Português (BR)' : 
+                 group.language_preference.charAt(0).toUpperCase() + group.language_preference.slice(1)}
+              </span>
             </div>
           )}
         </div>
 
-        {/* Cultural Focus Indicators */}
+        {/* Cultural Focus Indicators - Improved Mobile Design */}
         {group.cultural_focus && (
-          <div className="flex flex-wrap gap-1 mb-3">
+          <div className="flex flex-wrap gap-2 mb-6">
             {group.cultural_focus.preserves_heritage && (
-              <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-0.5 rounded">
-                🇵🇹 Heritage
+              <span className="inline-flex items-center gap-2 text-sm bg-gradient-to-r from-coral-100 to-accent-100 text-coral-700 px-4 py-2 rounded-2xl font-medium border border-coral-200/50">
+                🇵🇹 Culture
               </span>
             )}
             {group.cultural_focus.professional_networking && (
-              <span className="text-xs bg-primary-100 text-primary-800 px-2 py-0.5 rounded">
-                💼 Professional
+              <span className="inline-flex items-center gap-2 text-sm bg-gradient-to-r from-primary-100 to-secondary-100 text-primary-700 px-4 py-2 rounded-2xl font-medium border border-primary-200/50">
+                💼 Business
               </span>
             )}
           </div>
@@ -144,10 +165,10 @@ export default function GroupsShowcase() {
 
         <Link
           href={`/groups/${group.id}`}
-          className="inline-flex items-center text-primary-600 hover:text-primary-700 text-sm font-medium"
+          className="inline-flex items-center gap-3 w-full bg-gradient-to-r from-secondary-500 via-primary-500 to-accent-500 text-white font-semibold px-6 py-4 rounded-2xl hover:from-secondary-600 hover:via-primary-600 hover:to-accent-600 transition-all duration-300 group-hover:scale-105 shadow-lg hover:shadow-xl text-center justify-center"
         >
-          View Group
-          <ArrowRightIcon className="w-4 h-4 ml-1" />
+          Join Group
+          <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>
     </motion.div>
@@ -158,17 +179,30 @@ export default function GroupsShowcase() {
   }
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container-width">
+    <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 via-secondary-50/30 to-accent-50/30 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-secondary-200/40 via-accent-100/30 to-coral-100/30 rounded-full opacity-60 animate-pulse"></div>
+        <div className="absolute bottom-20 left-20 w-40 h-40 bg-gradient-to-tr from-primary-200/40 via-secondary-100/30 to-accent-100/30 rounded-full opacity-50"></div>
+        <div className="absolute top-1/4 left-1/4 w-6 h-6 bg-secondary-400/50 rounded-full opacity-40"></div>
+        <div className="absolute top-3/4 right-1/3 w-4 h-4 bg-accent-400/50 rounded-full"></div>
+      </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center px-4 py-2 rounded-full bg-primary-50 text-primary-600 text-sm font-medium mb-4"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-secondary-50/80 via-accent-50/60 to-coral-50/60 border border-secondary-200/40 rounded-3xl px-8 py-4 shadow-xl mb-8 backdrop-blur-sm"
           >
-            <UserGroupIcon className="w-4 h-4 mr-2" />
-            Portuguese Community
+            <div className="flex items-center gap-3">
+              <div className="w-3 h-3 rounded-full bg-gradient-to-r from-green-500 to-red-500 animate-pulse shadow-sm"></div>
+              <UserGroupIcon className="w-5 h-5 text-secondary-600" />
+              <span className="text-sm font-bold bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 bg-clip-text text-transparent">
+                Portuguese Community Groups
+              </span>
+            </div>
+            <div className="w-2 h-2 bg-secondary-400 rounded-full animate-pulse"></div>
           </motion.div>
           
           <motion.h2
@@ -176,9 +210,12 @@ export default function GroupsShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-6 leading-tight"
           >
-            Join Portuguese Community
+            Find Your Portuguese
+            <span className="block bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 bg-clip-text text-transparent">
+              Community
+            </span>
           </motion.h2>
           
           <motion.p
@@ -186,63 +223,80 @@ export default function GroupsShowcase() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
+            className="text-xl sm:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium"
           >
-            Connect with Portuguese speakers who share your interests. From professional networking 
-            to cultural preservation, find your community in London.
+            Connect with Portuguese speakers across London & UK. From business networking 
+            to cultural events, discover groups that match your interests and make lasting friendships.
           </motion.p>
         </div>
 
-        {/* Featured Groups */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {/* Featured Groups - Mobile-First Responsive Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 mb-16">
           {featuredGroups.map((group, index) => renderGroupCard(group, index))}
         </div>
 
-        {/* Call to Action */}
+        {/* Call to Action - Enhanced Mobile Design */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
           className="text-center"
         >
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/groups"
-              className="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
-            >
-              <UserGroupIcon className="w-5 h-5 mr-2" />
-              Browse All Groups
-            </Link>
-            <Link
-              href="/groups/create"
-              className="inline-flex items-center px-6 py-3 border border-primary-600 text-primary-600 font-semibold rounded-lg hover:bg-primary-50 transition-colors"
-            >
-              Create Your Group
-              <ArrowRightIcon className="w-5 h-5 ml-2" />
-            </Link>
+          <div className="bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 rounded-3xl p-8 sm:p-12 text-white shadow-2xl border border-white/10">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-4">
+              Ready to Connect?
+            </h3>
+            <p className="text-lg sm:text-xl opacity-95 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Join Portuguese speakers who share your interests and build lasting friendships in London & UK.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/groups"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-secondary-600 font-bold rounded-2xl hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl group"
+              >
+                <UserGroupIcon className="w-6 h-6" />
+                Browse Groups
+                <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link
+                href="/groups/create"
+                className="inline-flex items-center gap-3 px-8 py-4 border-2 border-white text-white font-bold rounded-2xl hover:bg-white hover:text-secondary-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                Create Group
+              </Link>
+            </div>
           </div>
         </motion.div>
 
-        {/* Stats */}
+        {/* Stats - Mobile-Enhanced Design */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8"
         >
-          <div className="text-center">
-            <div className="text-2xl font-bold text-primary-600 mb-2">15+</div>
-            <div className="text-gray-600">Active Groups</div>
+          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-lg border border-gray-100/50 text-center group hover:shadow-xl transition-all duration-300">
+            <div className="w-16 h-16 bg-gradient-to-br from-secondary-500 to-primary-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <UserGroupIcon className="w-8 h-8 text-white" />
+            </div>
+            <div className="text-3xl font-bold text-secondary-600 mb-2">15+</div>
+            <div className="text-gray-600 font-medium">Active Groups</div>
           </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-secondary-600 mb-2">200+</div>
-            <div className="text-gray-600">Group Members</div>
+          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-lg border border-gray-100/50 text-center group hover:shadow-xl transition-all duration-300">
+            <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <UsersIcon className="w-8 h-8 text-white" />
+            </div>
+            <div className="text-3xl font-bold text-primary-600 mb-2">200+</div>
+            <div className="text-gray-600 font-medium">Community Members</div>
           </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-accent-600 mb-2">50+</div>
-            <div className="text-gray-600">Weekly Meetups</div>
+          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-lg border border-gray-100/50 text-center group hover:shadow-xl transition-all duration-300">
+            <div className="w-16 h-16 bg-gradient-to-br from-accent-500 to-coral-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+              <HeartIcon className="w-8 h-8 text-white" />
+            </div>
+            <div className="text-3xl font-bold text-accent-600 mb-2">50+</div>
+            <div className="text-gray-600 font-medium">Weekly Meetups</div>
           </div>
         </motion.div>
       </div>
