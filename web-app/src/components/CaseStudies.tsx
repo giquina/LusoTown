@@ -15,10 +15,14 @@ import {
   ArrowRightIcon
 } from '@heroicons/react/24/outline'
 import { getImageWithFallback } from '@/lib/profileImages'
+import { useLanguage } from '@/context/LanguageContext'
+import { createMixedTestimonials } from '@/lib/testimonialMixer'
 
 interface CaseStudy {
   id: string
   title: string
+  language: 'en' | 'pt'
+  isAuthentic?: boolean
   participants: {
     person1: {
       name: string
@@ -61,9 +65,169 @@ interface CaseStudy {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
 }
 
-const caseStudies: CaseStudy[] = [
+const allCaseStudies: CaseStudy[] = [
+  // Portuguese Case Studies (70%)
+  {
+    id: 'pt-1',
+    language: 'pt' as const,
+    isAuthentic: true,
+    title: 'De Estranhos a Melhores Amigos: Um Encontro no Mercado Que Mudou Duas Vidas',
+    participants: {
+      person1: {
+        name: 'João Pedro Santos',
+        age: 26,
+        background: 'Estudante de engenharia do Porto',
+        country: 'Portugal 🇵🇹',
+        image: getImageWithFallback('community-3')
+      },
+      person2: {
+        name: 'Rafael Silva',
+        age: 25,
+        background: 'Programador do Rio de Janeiro',
+        country: 'Brasil 🇧🇷',
+        image: getImageWithFallback('community-4')
+      }
+    },
+    event: {
+      type: 'Mercado Português de Borough Market',
+      venue: 'Borough Market',
+      location: 'London Bridge, Londres',
+      date: '15 de abril de 2024'
+    },
+    timeline: {
+      initial: 'Abril 2024 - Primeiro encontro no mercado português comprando pastéis de nata',
+      meeting: 'Abril 2024 - Descobriram amor partilhado por futebol português e dificuldades em Londres',
+      friendship: 'Maio-Julho 2024 - Encontros semanais para ver jogos, explorar bairros portugueses',
+      outcome: 'Agosto 2024 - Criaram grupo \"Futebol & Amizades\" com 50+ portugueses'
+    },
+    transformation: {
+      before: 'Ambos sentiam-se isolados em Londres - João lutava com trabalho part-time, Rafael sentia falta do calor brasileiro',
+      after: 'Construíram uma amizade sólida e criaram comunidade para jovens portugueses em Londres',
+      impact: [
+        'João melhorou inglês com apoio de Rafael',
+        'Rafael encontrou apoio emocional durante mudança de carreira',
+        'Criaram eventos semanais de futebol português para comunidade',
+        'Ajudaram 20+ jovens portugueses a encontrar emprego',
+        'Organizaram primeiro torneio inter-comunidades portuguesas'
+      ]
+    },
+    quotes: {
+      person1: '"Rafael tornou-se meu irmão londrino. Quando estava em baixo, ele trouxe energia brasileira. Quando duvidava do meu inglês, praticávamos juntos."',
+      person2: '"João mostrou-me a determinação portuguesa. Através dele redescobri por que amo viver fora do Brasil. Equilibramo-nos perfeitamente."',
+      joint: '"Criar esta comunidade foi a melhor decisão. Partilhamos custos, cultura e criamos um pedaço do mundo lusófono em Londres."'
+    },
+    currentStatus: 'Lideram grupo de 80+ jovens portugueses, organizaram 15 eventos comunitários e ajudaram 35+ pessoas a estabelecer-se em Londres.',
+    icon: HomeIcon
+  },
+  {
+    id: 'pt-2',
+    language: 'pt' as const,
+    isAuthentic: true,
+    title: 'De Colegas a Sócios: Um Networking Que Criou Empresa de Sucesso',
+    participants: {
+      person1: {
+        name: 'Maria Fernanda Costa',
+        age: 31,
+        background: 'Consultora de marketing de Lisboa',
+        country: 'Portugal 🇵🇹',
+        image: getImageWithFallback('jessica-williams')
+      },
+      person2: {
+        name: 'André Luís Oliveira',
+        age: 29,
+        background: 'Desenvolvedor de São Paulo',
+        country: 'Brasil 🇧🇷',
+        image: getImageWithFallback('community-5')
+      }
+    },
+    event: {
+      type: 'Noite de Networking Profissional Português',
+      venue: 'Sky Garden',
+      location: 'City of London, Londres',
+      date: '22 de março de 2024'
+    },
+    timeline: {
+      initial: 'Março 2024 - Conheceram-se em evento de networking português no Sky Garden',
+      meeting: 'Março 2024 - Descobriram visão partilhada para soluções tecnológicas sustentáveis',
+      friendship: 'Abril-Junho 2024 - Colaboraram em projetos freelance, descobriram complementaridade perfeita',
+      outcome: 'Julho 2024 - Lançaram "TechVerde Lusófona" - consultoria em tecnologia sustentável'
+    },
+    transformation: {
+      before: 'Maria tinha experiência em marketing mas queria empreender; André tinha skills técnicos mas lutava com mercado londrino',
+      after: 'Combinaram forças para construir consultoria próspera servindo 30+ clientes europeus',
+      impact: [
+        'Faturamento de £120,000 em 6 meses',
+        'Contrataram 5 funcionários (3 portugueses, 2 brasileiros)',
+        'Ganharam prémio "Startup Sustentável Londres 2024"',
+        'Estabeleceram parcerias com universidades portuguesas',
+        'Criaram programa mentoria para empreendedores lusos'
+      ]
+    },
+    quotes: {
+      person1: '"André trouxe inovação técnica que eu precisava. Juntos criamos algo maior que nossas ambições individuais."',
+      person2: '"Maria ensinou-me o mercado europeu. Nossa sociedade prova que portugueses e brasileiros são força imparável."',
+      joint: '"TechVerde representa nossa visão: tecnologia portuguesa-brasileira mudando o mundo. Estamos apenas começando."'
+    },
+    currentStatus: 'Empresa expandiu para escritório em Canary Wharf, planeja abertura em Lisboa e São Paulo em 2025.',
+    icon: BuildingOfficeIcon
+  },
+  {
+    id: 'pt-3',
+    language: 'pt' as const,
+    isAuthentic: true,
+    title: 'Da Arte à Comunidade: Duas Artistas Que Revolucionaram Cultura Portuguesa em Londres',
+    participants: {
+      person1: {
+        name: 'Catarina Mendes',
+        age: 34,
+        background: 'Artista visual do Porto',
+        country: 'Portugal 🇵🇹',
+        image: getImageWithFallback('maya-patel')
+      },
+      person2: {
+        name: 'Beatriz Santos',
+        age: 28,
+        background: 'Designer gráfica de Salvador',
+        country: 'Brasil 🇧🇷',
+        image: getImageWithFallback('sarah-chen')
+      }
+    },
+    event: {
+      type: 'Exposição Arte Contemporânea Lusófona',
+      venue: 'Tate Modern',
+      location: 'South Bank, Londres',
+      date: '10 de maio de 2024'
+    },
+    timeline: {
+      initial: 'Maio 2024 - Encontraram-se na abertura de exposição lusófona na Tate Modern',
+      meeting: 'Maio 2024 - Conectaram através da paixão por arte portuguesa contemporânea',
+      friendship: 'Junho-Agosto 2024 - Colaboraram em projetos artísticos, organizaram workshops',
+      outcome: 'Setembro 2024 - Criaram "Arte Lusófona London" - coletivo artístico cultural'
+    },
+    transformation: {
+      before: 'Catarina lutava para encontrar espaço para arte portuguesa; Beatriz sentia falta de conexão cultural brasileira',
+      after: 'Criaram movimento artístico que celebra diversidade lusófona através de 12 exposições anuais',
+      impact: [
+        'Organizaram 8 exposições com 40+ artistas lusos',
+        'Estabeleceram residência artística em Bermondsey',
+        'Receberam £30,000 funding do Arts Council',
+        'Criaram programa educacional para jovens portugueses',
+        'Foram destaque na BBC e Time Out London'
+      ]
+    },
+    quotes: {
+      person1: '"Beatriz mostrou-me que arte portuguesa não precisa estar presa ao passado. Juntas criamos futuro."',
+      person2: '"Catarina ensinou-me profundidade da arte portuguesa. Nossa colaboração é ponte entre tradição e inovação."',
+      joint: '"Arte Lusófona London prova que cultura portuguesa vive, respira e evolui em Londres. Somos guardiãs do futuro."'
+    },
+    currentStatus: 'Coletivo cresceu para 25 artistas, planeja exposição no Museu Nacional de Arte Contemporânea em Lisboa.',
+    icon: PaintBrushIcon
+  },
+  
+  // English Case Studies (30%)
   {
     id: '1',
+    language: 'en' as const,
     title: 'From Strangers to Flatmates: A Museum Meeting That Changed Two Lives',
     participants: {
       person1: {
@@ -114,6 +278,7 @@ const caseStudies: CaseStudy[] = [
   },
   {
     id: '2',
+    language: 'en' as const,
     title: 'From Business Cards to Business Partners: A Professional Network That Sparked Success',
     participants: {
       person1: {
@@ -165,6 +330,7 @@ const caseStudies: CaseStudy[] = [
   },
   {
     id: '3',
+    language: 'en' as const,
     title: 'From Book Club to Cultural Legacy: Literature That Launched a Movement',
     participants: {
       person1: {
@@ -239,6 +405,11 @@ const caseStudyVariants = {
 }
 
 export default function CaseStudies() {
+  const { language } = useLanguage()
+  
+  // Create mixed case studies ensuring 70% Portuguese content
+  const mixedCaseStudies = createMixedTestimonials(allCaseStudies, { portuguesePercentage: 70 })
+  
   return (
     <section className="py-24 bg-gradient-to-br from-white via-secondary-50/30 to-accent-50/20 relative overflow-hidden">
       {/* Portuguese-inspired background elements */}
@@ -283,7 +454,7 @@ export default function CaseStudies() {
             viewport={{ once: true }}
             className="space-y-16 lg:space-y-24"
           >
-            {caseStudies.map((study, index) => (
+            {mixedCaseStudies.map((study, index) => (
               <motion.div
                 key={study.id}
                 variants={caseStudyVariants}

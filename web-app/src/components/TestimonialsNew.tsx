@@ -182,8 +182,8 @@ const cardVariants = {
 export default function TestimonialsNew() {
   const { t, language } = useLanguage()
   
-  // Create mixed testimonials ensuring 30% Portuguese reviews
-  const mixedTestimonials = createMixedTestimonials(allTestimonials, { portuguesePercentage: 30 })
+  // Create mixed testimonials ensuring 70% Portuguese reviews
+  const mixedTestimonials = createMixedTestimonials(allTestimonials, { portuguesePercentage: 70 })
 
   return (
     <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-secondary-50 relative overflow-hidden">

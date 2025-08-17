@@ -1,5 +1,5 @@
 // Bilingual testimonial mixing utility
-// Ensures 30% Portuguese reviews are always displayed regardless of language setting
+// Ensures 70% Portuguese reviews are always displayed regardless of language setting
 
 export interface BaseTestimonial {
   id: string | number
@@ -10,7 +10,7 @@ export interface BaseTestimonial {
 }
 
 export interface TestimonialMixConfig {
-  portuguesePercentage: number // Default 30%
+  portuguesePercentage: number // Default 70%
   shuffleSeed?: string // For consistent ordering
 }
 
@@ -22,7 +22,7 @@ export interface TestimonialMixConfig {
  */
 export function createMixedTestimonials<T extends BaseTestimonial>(
   allTestimonials: T[],
-  config: TestimonialMixConfig = { portuguesePercentage: 30 }
+  config: TestimonialMixConfig = { portuguesePercentage: 70 }
 ): T[] {
   const { portuguesePercentage } = config
   
