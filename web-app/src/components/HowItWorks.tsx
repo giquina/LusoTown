@@ -87,9 +87,9 @@ export default function HowItWorks() {
     },
     {
       number: 6,
-      title: 'Preserve & Share Heritage',
-      subtitle: 'Preserve e Partilhe o Património',
-      description: 'Share traditional recipes, family stories, and cultural memories. Help preserve Portuguese heritage for future generations in London.',
+      title: 'Preserve & Share Culture',
+      subtitle: 'Preserve e Partilhe a Cultura',
+      description: 'Share traditional recipes, family stories, and cultural memories. Help preserve Portuguese culture for future generations in London.',
       icon: BookOpen,
       color: 'from-coral-500 to-premium-500',
       bgColor: 'from-coral-50 to-premium-100',

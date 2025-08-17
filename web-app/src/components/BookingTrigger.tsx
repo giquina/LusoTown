@@ -24,10 +24,10 @@ interface BookingTriggerProps {
 const FEATURED_SERVICES: ServiceType[] = [
   {
     id: 'portuguese-tours',
-    name: 'Portuguese Heritage Tours',
-    namePortuguese: 'Tours do Património Português',
-    description: 'Discover Portuguese culture and heritage across London & UK',
-    descriptionPortuguese: 'Descubra a cultura e património português em Londres e Reino Unido',
+    name: 'Portuguese Cultural Tours',
+    namePortuguese: 'Tours da Cultura Portuguesa',
+    description: 'Discover Portuguese culture and traditions across London & UK',
+    descriptionPortuguese: 'Descubra a cultura e tradições portuguesas em Londres e Reino Unido',
     category: 'standard',
     requiresSIA: false,
     basePrice: 65,
@@ -102,7 +102,7 @@ const FEATURED_SERVICES: ServiceType[] = [
     basePrice: 120,
     icon: SparklesIcon,
     features: [
-      'Luxury vehicles',
+      'Premium vehicles',
       'Cultural experiences',
       'Optional security',
       'Bespoke itineraries'

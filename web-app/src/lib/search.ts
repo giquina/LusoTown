@@ -114,19 +114,19 @@ const premiumServices = [
     image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/portuguese-cultural-tour-london_dlqxkx.jpg',
     price: 45,
     rating: 4.9,
-    tags: ['cultural tours', 'portuguese heritage', 'bilingual guides', 'london history', 'heritage sites']
+    tags: ['cultural tours', 'portuguese culture', 'bilingual guides', 'london history', 'cultural sites']
   },
   {
     id: 'service-executive-transport',
     name: 'Executive Transport Services',
-    description: 'Professional chauffeur services with Portuguese cultural expertise',
+    description: 'Professional transport services with Portuguese cultural expertise',
     category: 'Transportation',
     location: 'London & UK',
     url: '/services#executive-transport',
     image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/executive-transport-london_dlqxkx.jpg',
     price: 35,
     rating: 4.8,
-    tags: ['executive transport', 'chauffeur', 'luxury vehicles', 'airport transfer', 'business transport']
+    tags: ['executive transport', 'professional driver', 'premium vehicles', 'airport transfer', 'business transport']
   },
   {
     id: 'service-close-protection',

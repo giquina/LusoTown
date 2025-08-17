@@ -20,11 +20,9 @@ const getNavigationLinks = (t: any) => [
     name: t('nav.services', 'Services'), 
     href: '/services',
     submenu: [
-      { name: t('nav.services.cultural-tours', 'Cultural Tours'), href: '/services#cultural-tours' },
-      { name: t('nav.services.executive-transport', 'Executive Transport'), href: '/services#executive-transport' },
-      { name: t('nav.services.close-protection', 'Close Protection'), href: '/services#close-protection' },
-      { name: t('nav.services.framework', '7 Ps Framework'), href: '/close-protection-framework' },
-      { name: t('nav.services.transport-sia', 'Transport & SIA'), href: '/transport' },
+      { name: t('nav.services.tours', 'Tours'), href: '/services#tours' },
+      { name: t('nav.services.executive-transport-sia', 'Executive Transport & SIA'), href: '/transport' },
+      { name: t('nav.services.close-protection', 'Close Protection'), href: '/services/close-protection' },
     ]
   },
   { name: t('nav.live-tv', 'Live TV'), href: '/live' },
@@ -40,11 +38,9 @@ const getAuthenticatedNavigationLinks = (t: any) => [
     name: t('nav.services', 'Services'), 
     href: '/services',
     submenu: [
-      { name: t('nav.services.cultural-tours', 'Cultural Tours'), href: '/services#cultural-tours' },
-      { name: t('nav.services.executive-transport', 'Executive Transport'), href: '/services#executive-transport' },
-      { name: t('nav.services.close-protection', 'Close Protection'), href: '/services#close-protection' },
-      { name: t('nav.services.framework', '7 Ps Framework'), href: '/close-protection-framework' },
-      { name: t('nav.services.transport-sia', 'Transport & SIA'), href: '/transport' },
+      { name: t('nav.services.tours', 'Tours'), href: '/services#tours' },
+      { name: t('nav.services.executive-transport-sia', 'Executive Transport & SIA'), href: '/transport' },
+      { name: t('nav.services.close-protection', 'Close Protection'), href: '/services/close-protection' },
     ]
   },
   { name: t('nav.live-tv', 'Live TV'), href: '/live' },

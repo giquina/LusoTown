@@ -210,7 +210,7 @@ export const profileImages: Record<string, ProfileImage> = {
   'miguel-santos': {
     id: 'miguel-santos',
     path: '/profiles/testimonials/portuguese/miguel-santos.jpg',
-    alt: 'Miguel Santos - Fado soul and cultural heritage keeper from Elephant & Castle, London',
+    alt: 'Miguel Santos - Fado soul and cultural preservationist from Elephant & Castle, London',
     category: 'testimonial'
   },
   'joana-silva': {
@@ -246,7 +246,7 @@ export const profileImages: Record<string, ProfileImage> = {
   'antonio-pereira': {
     id: 'antonio-pereira',
     path: '/profiles/testimonials/portuguese/antonio-pereira.jpg',
-    alt: 'António Pereira - Heritage tours and business development from City of London',
+    alt: 'António Pereira - Cultural tours and business development from City of London',
     category: 'testimonial'
   },
   'fernanda-oliveira': {

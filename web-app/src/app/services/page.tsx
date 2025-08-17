@@ -72,11 +72,11 @@ const services = [
     icon: Car,
     color: 'secondary',
     image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/executive-transport-london_dlqxkx.jpg',
-    description: 'Professional chauffeur services with Portuguese cultural expertise',
-    descriptionPortuguese: 'Serviços de motorista profissional com especialização cultural portuguesa',
+    description: 'Professional transport services with Portuguese cultural expertise',
+    descriptionPortuguese: 'Serviços de transporte profissional com especialização cultural portuguesa',
     features: [
-      'Portuguese-speaking chauffeurs',
-      'Luxury vehicle fleet',
+      'Portuguese-speaking drivers',
+      'Premium vehicle fleet',
       'Cultural venue expertise',
       'Airport transfer specialization',
       'Event transportation',
@@ -209,6 +209,12 @@ export default function ServicesPage() {
   const [showSubscriptionGate, setShowSubscriptionGate] = useState(false)
 
   const handleBookService = (serviceId: string) => {
+    // Redirect to dedicated close protection page
+    if (serviceId === 'close-protection') {
+      window.location.href = '/services/close-protection'
+      return
+    }
+
     // Check subscription status for premium services
     const hasSubscription = localStorage.getItem('lusotown-subscription') === 'active'
     

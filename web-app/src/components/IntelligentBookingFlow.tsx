@@ -171,7 +171,7 @@ const SERVICE_TYPES: ServiceType[] = [
     basePrice: 120,
     icon: SparklesIcon,
     features: [
-      'Luxury vehicles',
+      'Premium vehicles',
       'Cultural experiences',
       'Optional security',
       'Bespoke itineraries'

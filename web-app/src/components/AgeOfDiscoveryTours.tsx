@@ -42,8 +42,8 @@ interface DiscoveryTour {
 const ageOfDiscoveryTours: DiscoveryTour[] = [
   {
     id: 'portuguese-maritime-london',
-    name: 'Portuguese Maritime Heritage in London',
-    namePortuguese: 'Património Marítimo Português em Londres',
+    name: 'Portuguese Maritime Culture in London',
+    namePortuguese: 'Cultura Marítima Portuguesa em Londres',
     description: 'Explore London\'s deep connections to Portuguese maritime discoveries, from the National Maritime Museum to historic trading routes that connected Portugal to London.',
     descriptionPortuguese: 'Explore as profundas conexões de Londres às descobertas marítimas portuguesas, do Museu Marítimo Nacional às rotas comerciais históricas que conectaram Portugal a Londres.',
     duration: '6 hours',

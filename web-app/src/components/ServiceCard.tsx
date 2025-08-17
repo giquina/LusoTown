@@ -75,7 +75,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isPortuguese, onBook
         type: 'service',
         title: isPortuguese ? service.namePortuguese : service.name,
         description: isPortuguese ? service.descriptionPortuguese : service.description,
-        url: `/services#${service.id}`,
+        url: service.id === 'close-protection' ? '/services/close-protection' : `/services#${service.id}`,
         imageUrl: service.image,
         category: service.color,
         addedAt: new Date().toISOString()
@@ -253,7 +253,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isPortuguese, onBook
           onClick={onBookNow}
           className={`w-full ${colorClasses.button} text-white py-3 px-6 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center group`}
         >
-          <span>{isPortuguese ? 'Reservar Agora' : 'Book Now'}</span>
+          <span>
+            {service.id === 'close-protection'
+              ? (isPortuguese ? 'Saber Mais' : 'Learn More')
+              : (isPortuguese ? 'Reservar Agora' : 'Book Now')
+            }
+          </span>
           <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
         </motion.button>
       </div>

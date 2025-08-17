@@ -94,14 +94,14 @@ const tourRoutes: TourRoute[] = [
     ],
     includes: [
       'Professional Portuguese-speaking guide',
-      'Luxury vehicle transport',
+      'Premium vehicle transport',
       'All attraction entry fees',
       'Historical guidebook',
       'Traditional afternoon tea'
     ],
     includesPortuguese: [
       'Guia profissional falante de português',
-      'Transporte em veículo de luxo',
+      'Transporte em veículo premium',
       'Todas as taxas de entrada em atrações',
       'Guia histórico',
       'Chá da tarde tradicional'

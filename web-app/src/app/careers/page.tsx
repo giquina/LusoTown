@@ -304,8 +304,8 @@ const jobRoles: JobRole[] = [
     location: 'London, UK',
     type: 'Part-time',
     typePt: 'Meio período',
-    description: 'Preserve and promote Portuguese heritage within the London community through educational and cultural initiatives.',
-    descriptionPt: 'Preserve e promova o património português dentro da comunidade de Londres através de iniciativas educacionais e culturais.',
+    description: 'Preserve and promote Portuguese culture within the London community through educational and cultural initiatives.',
+    descriptionPt: 'Preserve e promova a cultura portuguesa dentro da comunidade de Londres através de iniciativas educacionais e culturais.',
     responsibilities: [
       'Develop Portuguese heritage and cultural education programs',
       'Create content about Portuguese history and traditions',

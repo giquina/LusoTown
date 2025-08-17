@@ -1643,8 +1643,8 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     upcomingEvents: [
       {
         id: 'event-pht-festival',
-        title: 'Portuguese Heritage Festival London 2024',
-        titlePortuguese: 'Festival do Património Português Londres 2024',
+        title: 'Portuguese Cultural Festival London 2024',
+        titlePortuguese: 'Festival da Cultura Portuguesa Londres 2024',
         date: '2024-09-28',
         time: '11:00',
         location: 'Coram\'s Fields, London',

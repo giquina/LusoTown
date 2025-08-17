@@ -27,7 +27,7 @@ export default function CommunityGuidelines() {
     {
       icon: UserGroupIcon,
       title: "Cultura (Culture)",
-      description: "Preserve and celebrate Portuguese heritage through language, traditions, and cultural events. Share our rich cultural diversity with the wider London community."
+      description: "Preserve and celebrate Portuguese culture through language, traditions, and cultural events. Share our rich cultural diversity with the wider London community."
     },
     {
       icon: BuildingOfficeIcon,
@@ -81,7 +81,7 @@ export default function CommunityGuidelines() {
                 <div className="prose prose-lg text-gray-700 space-y-4">
                   <p>
                     LusoTown London is committed to maintaining a respectful, inclusive environment for all Portuguese speakers and working professionals. 
-                    Our community guidelines ensure everyone feels welcome, valued, and supported while advancing careers and preserving cultural heritage in London.
+                    Our community guidelines ensure everyone feels welcome, valued, and supported while advancing careers and celebrating Portuguese culture.
                   </p>
                   
                   <div className="bg-white border-l-4 border-primary-500 p-4 rounded-r-lg my-6">

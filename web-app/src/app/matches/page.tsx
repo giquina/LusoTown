@@ -133,7 +133,7 @@ export default function MatchesPage({}: MatchesPageProps) {
         culturalBackground: 'portugal',
         interests: ['fado', 'portuguese_cuisine', 'business_networking', 'wine_tasting', 'cultural_events'],
         professionalBackground: 'Finance & Banking',
-        bio: 'Portuguese finance professional passionate about preserving our cultural heritage while building meaningful business connections in London.',
+        bio: 'Portuguese finance professional passionate about preserving our cultural traditions while building meaningful business connections in London.',
         age: 32,
         languagePreference: 'both',
         relationshipGoal: 'professional',
