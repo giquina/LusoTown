@@ -37,20 +37,20 @@ const EventImage = ({ event }: { event: typeof upcomingEvents[0] }) => {
       {/* Category icon overlay */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="text-center text-white">
-          <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="w-20 h-20 bg-gradient-to-br from-white/30 to-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mx-auto mb-4 border border-white/30 shadow-xl">
             {event.icon}
           </div>
-          <div className="text-sm font-medium opacity-90">{event.category}</div>
+          <div className="text-sm font-semibold opacity-95 bg-black/30 backdrop-blur-sm px-3 py-1 rounded-full">{event.category}</div>
         </div>
       </div>
       
       {/* Date badge */}
-      <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2">
+      <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-2 border border-white/40 shadow-lg">
         <div className="text-xs font-bold text-gray-900">{event.date}</div>
       </div>
 
       {/* Price badge */}
-      <div className="absolute top-4 right-4 bg-green-500 text-white rounded-lg px-3 py-2">
+      <div className="absolute top-4 right-4 bg-gradient-to-r from-secondary-500 to-primary-500 text-white rounded-xl px-3 py-2 shadow-lg">
         <div className="text-xs font-bold">£{event.price}</div>
       </div>
     </div>
@@ -60,106 +60,55 @@ const EventImage = ({ event }: { event: typeof upcomingEvents[0] }) => {
 const upcomingEvents = [
   {
     id: 1,
-    title: "Brazilian Feijoada & Samba - Women 30+ Only",
-    description: "Authentic Brazilian feast with live samba music for mature Portuguese-speaking women",
-    location: "Brixton, London",
-    date: "Sat, 16 Dec",
-    time: "2:00 PM",
-    attendees: 18,
-    maxAttendees: 25,
-    price: 35,
-    category: "Cultural & Food",
-    image: "/events/portuguese/feijoada-samba.jpg",
-    color: "from-yellow-400 to-green-400",
-    icon: <MusicalNoteIcon className="w-5 h-5" />,
-    ageRestriction: "Women of all ages welcome",
-    tags: ["women-only", "all-ages", "Brazilian", "food", "samba"]
+    title: "Portuguese Business Networking Summit",
+    description: "Connect with Portuguese entrepreneurs and business leaders. Panel discussions on UK market expansion and cultural bridge-building in international business.",
+    location: "Canary Wharf, London",
+    date: "Fri, 15 Mar",
+    time: "6:00 PM",
+    attendees: 28,
+    maxAttendees: 50,
+    price: 45,
+    category: "Business & Professional",
+    image: "/events/portuguese/business-summit.jpg",
+    color: "from-primary-500 to-secondary-500",
+    icon: <UsersIcon className="w-6 h-6 text-white" />,
+    ageRestriction: "Professional networking for all ages",
+    tags: ["business", "networking", "entrepreneurship", "professional"]
   },
   {
     id: 2,
-    title: "Portuguese Football: Benfica vs Porto Screening",
-    description: "Watch the classic rivalry with bifanas, Super Bock and passionate Portuguese fans",
-    location: "Little Portugal, Stockwell",
-    date: "Sun, 17 Dec",
-    time: "4:00 PM",
-    attendees: 32,
-    maxAttendees: 45,
-    price: 15,
-    category: "Sports & Entertainment",
-    image: "/events/portuguese/football-screening.jpg",
-    color: "from-red-400 to-green-400",
-    icon: <TicketIcon className="w-5 h-5" />,
-    ageRestriction: "All Ages Welcome",
-    tags: ["football", "Portuguese", "community", "bifanas"]
+    title: "Traditional Portuguese Cooking Workshop",
+    description: "Learn to make authentic pastéis de nata, bacalhau à brás, and francesinha from a Portuguese chef. All skill levels welcome, recipes included.",
+    location: "Central London Culinary School",
+    date: "Sat, 23 Mar",
+    time: "2:00 PM",
+    attendees: 16,
+    maxAttendees: 24,
+    price: 55,
+    category: "Cooking & Culture",
+    image: "/events/portuguese/cooking-workshop.jpg",
+    color: "from-coral-500 to-accent-500",
+    icon: <BeakerIcon className="w-6 h-6 text-white" />,
+    ageRestriction: "Welcome to all ages and skill levels",
+    tags: ["cooking", "traditional", "pastéis de nata", "bacalhau", "all-ages"]
   },
   {
     id: 3,
-    title: "Portuguese-Speaking Professional Women Networking - All Ages",
-    description: "Career networking for Portuguese-speaking women with no children - child-free evening",
-    location: "Canary Wharf, London",
-    date: "Thu, 21 Dec", 
-    time: "6:30 PM",
-    attendees: 14,
-    maxAttendees: 20,
-    price: 42,
-    category: "Professional Networking",
-    image: "/events/portuguese/portuguese-networking.jpg",
-    color: "from-primary-400 to-premium-400",
-    icon: <UsersIcon className="w-5 h-5" />,
-    ageRestriction: "Women of all ages welcome",
-    tags: ["women-only", "all-ages", "professional", "networking", "career"]
+    title: "Premium Transport & Security Services Showcase",
+    description: "Experience our professional Portuguese-speaking transport and close protection services. Meet certified SIA officers and view our premium vehicle fleet.",
+    location: "South London Event Center",
+    date: "Sun, 31 Mar",
+    time: "11:00 AM",
+    attendees: 12,
+    maxAttendees: 30,
+    price: 25,
+    category: "Transport & Security",
+    image: "/events/portuguese/transport-showcase.jpg",
+    color: "from-action-500 to-premium-500",
+    icon: <TicketIcon className="w-6 h-6 text-white" />,
+    ageRestriction: "Open to business professionals and individuals",
+    tags: ["transport", "security", "SIA", "Portuguese-speaking", "professional"]
   },
-  {
-    id: 4,
-    title: "Cape Verdean Morna Music & Cachupa Night",
-    description: "Experience Cape Verde's soul music with traditional cachupa stew",
-    location: "East London Cultural Centre",
-    date: "Fri, 22 Dec",
-    time: "7:30 PM",
-    attendees: 22,
-    maxAttendees: 35,
-    price: 28,
-    category: "Cultural & Food",
-    image: "/events/portuguese/cape-verde-night.jpg",
-    color: "from-secondary-400 to-primary-400",
-    icon: <MusicalNoteIcon className="w-5 h-5" />,
-    ageRestriction: "All Ages Welcome",
-    tags: ["Cape Verde", "morna", "cachupa", "music", "culture"]
-  },
-  {
-    id: 5,
-    title: "Mozambican Seafood BBQ - Women Only Gathering",
-    description: "Beachside-style seafood BBQ for Portuguese-speaking women, childless welcome",
-    location: "South London Park",
-    date: "Sat, 23 Dec",
-    time: "1:00 PM",
-    attendees: 16,
-    maxAttendees: 22,
-    price: 38,
-    category: "Cultural & Food",
-    image: "/events/portuguese/mozambican-bbq.jpg",
-    color: "from-orange-400 to-red-400",
-    icon: <HeartIcon className="w-5 h-5" />,
-    ageRestriction: "Family-friendly, all ages welcome",
-    tags: ["women-only", "childless", "Mozambican", "seafood", "BBQ"]
-  },
-  {
-    id: 6,
-    title: "Portuguese Cinema Night: 'Capitães de Abril'",
-    description: "Classic Portuguese film screening with English subtitles and wine",
-    location: "Central London Cinema",
-    date: "Wed, 27 Dec",
-    time: "7:00 PM",
-    attendees: 28,
-    maxAttendees: 40,
-    price: 18,
-    category: "Film & Culture",
-    image: "/events/portuguese/portuguese-cinema.jpg",
-    color: "from-purple-400 to-pink-400",
-    icon: <SparklesIcon className="w-5 h-5" />,
-    ageRestriction: "Family-friendly, educational content",
-    tags: ["Portuguese", "cinema", "history", "culture", "wine"]
-  }
 ]
 
 const eventStats = [
@@ -240,8 +189,8 @@ export default function EventsShowcase() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -5, scale: 1.02 }}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden group h-full flex flex-col"
+              whileHover={{ y: -8, scale: 1.03 }}
+              className="bg-white rounded-3xl shadow-xl border border-gray-100/50 overflow-hidden group h-full flex flex-col hover:shadow-2xl transition-all duration-300"
             >
               {/* Event Image */}
               <EventImage event={event} />
@@ -295,9 +244,9 @@ export default function EventsShowcase() {
                 <div className="mt-auto">
                   <a 
                     href={`/events/${event.id}`}
-                    className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium py-3 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 group-hover:scale-105 block text-center"
+                    className="w-full bg-gradient-to-r from-secondary-500 via-primary-500 to-accent-500 text-white font-semibold py-4 rounded-2xl hover:from-secondary-600 hover:via-primary-600 hover:to-accent-600 transition-all duration-300 group-hover:scale-105 block text-center shadow-lg hover:shadow-xl"
                   >
-                    Reserve My Spot
+                    Book Now
                   </a>
                 </div>
               </div>
@@ -318,24 +267,24 @@ export default function EventsShowcase() {
           
           <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
             {[
-              { name: "Food Festivals", icon: "🍲", count: "25+ events" },
-              { name: "Fado & Music", icon: "🎶", count: "25+ events" },
-              { name: "Football Viewing", icon: "⚽", count: "22+ events" },
-              { name: "Women's Gatherings", icon: "👩‍🤝‍👩", count: "30+ events" },
-              { name: "Professional Network", icon: "💼", count: "15+ events" },
-              { name: "Cultural Cinema", icon: "🎬", count: "12+ events" }
+              { name: "Business Events", icon: "💼", count: "15+ events" },
+              { name: "Cooking Classes", icon: "👨‍🍳", count: "12+ events" },
+              { name: "Transport Services", icon: "🚗", count: "8+ services" },
+              { name: "Cultural Events", icon: "🎭", count: "25+ events" },
+              { name: "Professional Network", icon: "🤝", count: "18+ events" },
+              { name: "Food & Wine", icon: "🍷", count: "20+ events" }
             ].map((category, index) => (
               <div 
                 key={index}
-                className="text-center p-4 rounded-xl bg-gray-50 hover:bg-primary-50 transition-colors cursor-pointer group"
+                className="text-center p-4 rounded-2xl bg-gradient-to-br from-gray-50 to-secondary-50/30 hover:from-secondary-50 hover:to-primary-50 transition-all duration-300 cursor-pointer group border border-gray-100/50 hover:border-secondary-200/50 shadow-sm hover:shadow-lg"
               >
-                <div className="text-2xl mb-2 group-hover:scale-110 transition-transform">
+                <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">
                   {category.icon}
                 </div>
-                <div className="text-sm font-medium text-gray-900 mb-1">
+                <div className="text-sm font-semibold text-gray-900 mb-1">
                   {category.name}
                 </div>
-                <div className="text-xs text-gray-500">
+                <div className="text-xs text-gray-500 font-medium">
                   {category.count}
                 </div>
               </div>
@@ -350,28 +299,28 @@ export default function EventsShowcase() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <div className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">
-              Ready to Connect with Portuguese Culture?
+          <div className="bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 rounded-3xl p-10 text-white shadow-2xl border border-white/10">
+            <h3 className="text-3xl font-bold mb-6">
+              Join the Portuguese Community in London & UK
             </h3>
-            <p className="text-lg opacity-90 mb-6 max-w-2xl mx-auto">
-              Browse our full calendar of authentic Portuguese events, from traditional food festivals to professional networking. 
-              Your Portuguese-speaking community awaits - discover your heritage and make lifelong connections!
+            <p className="text-xl opacity-95 mb-8 max-w-3xl mx-auto leading-relaxed">
+              From business networking to traditional cooking, transport services to cultural events. 
+              Connect with fellow Portuguese speakers and build meaningful relationships.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link 
                 href="/events" 
-                className="inline-flex items-center bg-white text-primary-600 font-bold px-8 py-4 rounded-xl hover:bg-gray-50 transition-colors group"
+                className="inline-flex items-center bg-white text-secondary-600 font-bold px-10 py-4 rounded-2xl hover:bg-gray-50 transition-all duration-300 group shadow-lg hover:shadow-xl"
               >
-                Browse All Events
+                View Events
                 <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link 
                 href="/signup" 
-                className="inline-flex items-center border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white hover:text-primary-600 transition-colors"
+                className="inline-flex items-center border-2 border-white text-white font-bold px-10 py-4 rounded-2xl hover:bg-white hover:text-secondary-600 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
-                JOIN NOW
+                Join Now
               </Link>
             </div>
           </div>
