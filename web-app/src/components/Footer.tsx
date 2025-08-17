@@ -12,6 +12,7 @@ const getFooterLinks = (t: any) => ({
     { name: 'Business Directory', href: '/directory' },
     { name: t('footer.housing-assistance'), href: '/housing-assistance' },
     { name: t('footer.neighborhood-groups'), href: '/neighborhood-groups' },
+    { name: 'Mentorship Programs', href: '/mentorship' },
     { name: 'Community Guidelines', href: '/community-guidelines' },
   ],
   services: [
@@ -20,6 +21,7 @@ const getFooterLinks = (t: any) => ({
     { name: 'Executive Transport', href: '/services#executive-transport' },
     { name: 'Close Protection', href: '/services#close-protection' },
     { name: 'Transport & SIA', href: '/transport' },
+    { name: 'Business Networking', href: '/business-networking' },
   ],
   support: [
     { name: 'How It Works', href: '/how-it-works' },
@@ -33,8 +35,11 @@ const getFooterLinks = (t: any) => ({
     { name: 'Success Stories', href: '/success-stories' },
     { name: 'Community Chat', href: '/forums' },
     { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Careers', href: '/careers' },
     { name: 'Live TV', href: '/live' },
     { name: 'Partnerships', href: '/partnerships' },
+    { name: 'Corporate Partnerships', href: '/corporate-partnerships' },
+    { name: 'Institutional Partnerships', href: '/portuguese-institutional-partnerships' },
     { name: 'Instituto Camões Partnership', href: '/instituto-camoes' },
   ],
   legal: [
