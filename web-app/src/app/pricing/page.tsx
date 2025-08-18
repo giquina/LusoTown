@@ -320,6 +320,30 @@ const paymentOptions = [
 export default function Pricing() {
   const { language, t } = useLanguage()
   const isPortuguese = language === 'pt'
+  const [billingCycle, setBillingCycle] = useState<'yearly' | 'monthly'>('yearly') // Default to yearly for savings
+  
+  // Calculate pricing based on billing cycle
+  const getPlanPrice = (monthlyPrice: number, planId: string) => {
+    if (monthlyPrice === 0) return 0 // Free plan is always free
+    
+    if (billingCycle === 'yearly') {
+      // Yearly discount: 2 months free (16.67% discount)
+      const yearlyPrice = monthlyPrice * 10 // Pay for 10 months, get 12
+      return {
+        price: yearlyPrice,
+        monthlyEquivalent: yearlyPrice / 12,
+        savings: monthlyPrice * 2, // 2 months savings
+        discount: '17%'
+      }
+    }
+    
+    return {
+      price: monthlyPrice,
+      monthlyEquivalent: monthlyPrice,
+      savings: 0,
+      discount: '0%'
+    }
+  }
 
 
   return (
@@ -368,6 +392,38 @@ export default function Pricing() {
                 <div className="flex items-center">
                   <ClockIcon className="w-4 h-4 mr-2 text-primary-500" />
                   {isPortuguese ? 'Garantia 30 Dias' : '30-Day Guarantee'}
+                </div>
+              </div>
+              
+              {/* Billing Toggle */}
+              <div className="flex justify-center mb-8">
+                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-2 border border-white/30 shadow-lg">
+                  <div className="flex items-center">
+                    <button
+                      onClick={() => setBillingCycle('monthly')}
+                      className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                        billingCycle === 'monthly'
+                          ? 'bg-white shadow-lg text-primary-600 border border-primary-200'
+                          : 'text-gray-600 hover:text-primary-600'
+                      }`}
+                    >
+                      {isPortuguese ? 'Mensal' : 'Monthly'}
+                    </button>
+                    <button
+                      onClick={() => setBillingCycle('yearly')}
+                      className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 relative ${
+                        billingCycle === 'yearly'
+                          ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg'
+                          : 'text-gray-600 hover:text-primary-600'
+                      }`}
+                    >
+                      {isPortuguese ? 'Anual' : 'Yearly'}
+                      {/* Savings Badge */}
+                      <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                        {isPortuguese ? 'Poupa 17%' : 'Save 17%'}
+                      </span>
+                    </button>
+                  </div>
                 </div>
               </div>
               
@@ -455,15 +511,44 @@ export default function Pricing() {
                       </div>
                       
                       <div className="mb-8">
-                        <div className="flex items-center justify-center space-x-2 mb-2">
+                        <div className="flex flex-col items-center justify-center mb-2">
                           {plan.price === 0 ? (
                             <div className="text-4xl font-bold text-gray-900">
                               {isPortuguese ? 'Grátis' : 'Free'}
                             </div>
                           ) : (
                             <>
-                              <div className="text-4xl font-bold text-gray-900">£{plan.price}</div>
-                              <div className="text-lg text-gray-600">/{isPortuguese ? 'mês' : 'month'}</div>
+                              {(() => {
+                                const pricing = getPlanPrice(plan.price, plan.id)
+                                return (
+                                  <>
+                                    <div className="flex items-center space-x-2">
+                                      <div className="text-4xl font-bold text-gray-900">
+                                        £{pricing.price}
+                                      </div>
+                                      <div className="text-lg text-gray-600">
+                                        /{billingCycle === 'yearly' ? (isPortuguese ? 'ano' : 'year') : (isPortuguese ? 'mês' : 'month')}
+                                      </div>
+                                    </div>
+                                    {billingCycle === 'yearly' && pricing.savings > 0 && (
+                                      <div className="text-sm text-green-600 font-medium mt-1">
+                                        {isPortuguese 
+                                          ? `£${pricing.monthlyEquivalent.toFixed(2)}/mês • Poupa £${pricing.savings}/ano` 
+                                          : `£${pricing.monthlyEquivalent.toFixed(2)}/month • Save £${pricing.savings}/year`
+                                        }
+                                      </div>
+                                    )}
+                                    {billingCycle === 'monthly' && (
+                                      <div className="text-sm text-orange-600 font-medium mt-1">
+                                        {isPortuguese 
+                                          ? `Ou £${(plan.price * 10).toFixed(0)}/ano (Poupa £${(plan.price * 2).toFixed(0)})` 
+                                          : `Or £${(plan.price * 10).toFixed(0)}/year (Save £${(plan.price * 2).toFixed(0)})`
+                                        }
+                                      </div>
+                                    )}
+                                  </>
+                                )
+                              })()}
                             </>
                           )}
                         </div>
