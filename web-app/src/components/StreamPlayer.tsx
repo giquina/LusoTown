@@ -75,12 +75,17 @@ export default function StreamPlayer({ stream, hasAccess, onInteraction }: Strea
   }
 
   const handleFullscreen = () => {
-    if (playerRef.current) {
+    if (typeof document === 'undefined') return
+    const el = playerRef.current as any
+    try {
       if (document.fullscreenElement) {
-        document.exitFullscreen()
-      } else {
-        playerRef.current.requestFullscreen()
+        if (document.exitFullscreen) document.exitFullscreen()
+      } else if (el) {
+        const req = el.requestFullscreen || el.webkitRequestFullscreen || el.msRequestFullscreen
+        if (req) req.call(el)
       }
+    } catch (e) {
+      console.warn('Fullscreen request failed', e)
     }
   }
 
@@ -109,9 +114,11 @@ export default function StreamPlayer({ stream, hasAccess, onInteraction }: Strea
       ) : (
         <>
           {/* Stream Thumbnail */}
-          <img 
-            src={stream.thumbnail} 
+          {/* Using Next/Image not required here due to dynamic sources; keep img but add safe fallback */}
+          <img
+            src={stream.thumbnail || '/events/networking.jpg'}
             alt={stream.title}
+            onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/events/networking.jpg' }}
             className="w-full h-full object-cover"
           />
           

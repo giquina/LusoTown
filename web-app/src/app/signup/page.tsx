@@ -342,7 +342,9 @@ export default function Signup() {
                         <Image
                           src={testimonial.avatar}
                           alt={testimonial.name}
-                          className="w-10 h-10 rounded-full object-cover ring-2 ring-white shadow-sm"
+                          width={40}
+                          height={40}
+                          className="rounded-full object-cover ring-2 ring-white shadow-sm"
                         />
                         <div className="flex-1 min-w-0">
                           <p className="text-sm text-gray-700 italic mb-1">

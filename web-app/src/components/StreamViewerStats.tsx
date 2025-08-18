@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { EyeIcon, UserGroupIcon, ArrowArrowTrendingUpIcon, ClockIcon } from '@heroicons/react/24/outline'
+import { EyeIcon, ClockIcon, ArrowTrendingUpIcon } from '@heroicons/react/24/outline'
 import { Users, Activity, BarChart3, Globe } from 'lucide-react'
 
 interface StreamViewerStatsProps {
@@ -36,7 +36,7 @@ export default function StreamViewerStats({
       id: 'peak',
       label: language === 'pt' ? 'Pico de Audiência' : 'Peak Viewers',
       value: peakViewers.toLocaleString(),
-      icon: ArrowTrendingUpIcon,
+  icon: ArrowTrendingUpIcon,
       color: 'text-secondary-600',
       bgColor: 'bg-secondary-100',
       change: language === 'pt' ? 'hoje' : 'today',

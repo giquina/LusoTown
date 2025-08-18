@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { CalendarIcon, ClockIcon, UserGroupIcon, ArrowRightIcon, BellIcon, PlayIcon } from '@heroicons/react/24/outline'
 import { Crown, Users, Briefcase, GraduationCap, Music, Camera, Star } from 'lucide-react'
@@ -52,7 +53,7 @@ export default function StreamSchedule({ category, language }: StreamSchedulePro
       isPremium: false,
       isRecurring: true,
       seriesName: language === 'pt' ? 'Masterclasses Culturais' : 'Cultural Masterclasses',
-      thumbnail: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=225&fit=crop',
+  thumbnail: '/events/art-tour.jpg',
       tags: ['fado', 'music', 'masterclass', 'tradition'],
       registeredCount: 34
     },
@@ -67,7 +68,7 @@ export default function StreamSchedule({ category, language }: StreamSchedulePro
       host: 'Carlos Mendes',
       isPremium: true,
       isRecurring: false,
-      thumbnail: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=225&fit=crop',
+  thumbnail: '/events/book-club.jpg',
       tags: ['ai', 'business', 'workshop', 'technology'],
       viewerCapacity: 50,
       registeredCount: 42
@@ -84,7 +85,7 @@ export default function StreamSchedule({ category, language }: StreamSchedulePro
       isPremium: false,
       isRecurring: true,
       seriesName: language === 'pt' ? 'Café Comunitário Semanal' : 'Weekly Community Coffee',
-      thumbnail: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=225&fit=crop',
+  thumbnail: '/events/networking.jpg',
       tags: ['community', 'networking', 'coffee', 'social'],
       registeredCount: 28
     },
@@ -100,7 +101,7 @@ export default function StreamSchedule({ category, language }: StreamSchedulePro
       isPremium: false,
       isRecurring: true,
       seriesName: language === 'pt' ? 'Apoio ao Estudante' : 'Student Support',
-      thumbnail: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=225&fit=crop',
+  thumbnail: '/events/yoga.jpg',
       tags: ['students', 'career', 'advice', 'internships'],
       registeredCount: 19
     },
@@ -115,7 +116,7 @@ export default function StreamSchedule({ category, language }: StreamSchedulePro
       host: 'Miguel Santos & Guests',
       isPremium: true,
       isRecurring: false,
-      thumbnail: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=225&fit=crop',
+  thumbnail: '/events/jazz-networking.jpg',
       tags: ['vip', 'business', 'roundtable', 'ceo'],
       viewerCapacity: 25,
       registeredCount: 23
@@ -225,10 +226,16 @@ export default function StreamSchedule({ category, language }: StreamSchedulePro
                   {/* Stream Thumbnail */}
                   <div className="flex-shrink-0">
                     <div className="relative w-24 h-16 md:w-32 md:h-20 rounded-lg overflow-hidden bg-gray-200">
-                      <img 
-                        src={stream.thumbnail} 
+                      <Image
+                        src={stream.thumbnail || '/events/networking.jpg'}
                         alt={stream.title}
-                        className="w-full h-full object-cover"
+                        fill
+                        sizes="(max-width: 768px) 128px, 192px"
+                        className="object-cover"
+                        onError={(e) => {
+                          // Next/Image doesn't swap src on error; we rely on safe default via || above
+                        }}
+                        priority={index < 2}
                       />
                       {stream.isPremium && (
                         <div className="absolute top-1 right-1 bg-premium-500 rounded-full p-1">

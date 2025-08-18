@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { PlayIcon, ClockIcon, EyeIcon, HeartIcon, BookmarkIcon, MagnifyingGlassIcon, FunnelIcon } from '@heroicons/react/24/outline'
 import { Crown, Calendar, Filter, Users, Briefcase, GraduationCap, Music, Camera, Lock } from 'lucide-react'
@@ -55,7 +56,7 @@ export default function StreamReplayLibrary({ hasAccess, selectedCategory, langu
       likes: 189,
       host: 'Maria Santos & Convidados',
       isPremium: false,
-      thumbnail: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=225&fit=crop',
+  thumbnail: '/events/art-tour.jpg',
       youtubeVideoId: 'dQw4w9WgXcQ',
       tags: ['fado', 'music', 'tradition', 'portugal', 'culture'],
       keyMoments: [
@@ -76,7 +77,7 @@ export default function StreamReplayLibrary({ hasAccess, selectedCategory, langu
       likes: 156,
       host: 'Carlos Mendes',
       isPremium: true,
-      thumbnail: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=225&fit=crop',
+  thumbnail: '/events/book-club.jpg',
       youtubeVideoId: 'dQw4w9WgXcQ',
       tags: ['ai', 'business', 'workshop', 'technology', 'automation'],
       keyMoments: [
@@ -97,7 +98,7 @@ export default function StreamReplayLibrary({ hasAccess, selectedCategory, langu
       likes: 298,
       host: 'LusoTown Community Team',
       isPremium: false,
-      thumbnail: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=225&fit=crop',
+  thumbnail: '/events/networking.jpg',
       youtubeVideoId: 'dQw4w9WgXcQ',
       tags: ['community', 'stories', 'london', 'experiences', 'networking'],
       keyMoments: [
@@ -118,7 +119,7 @@ export default function StreamReplayLibrary({ hasAccess, selectedCategory, langu
       likes: 78,
       host: 'Ana Ribeiro',
       isPremium: false,
-      thumbnail: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=225&fit=crop',
+  thumbnail: '/events/yoga.jpg',
       youtubeVideoId: 'dQw4w9WgXcQ',
       tags: ['students', 'career', 'uk', 'advice', 'opportunities'],
       keyMoments: [
@@ -139,7 +140,7 @@ export default function StreamReplayLibrary({ hasAccess, selectedCategory, langu
       likes: 124,
       host: 'Miguel Santos & CEOs',
       isPremium: true,
-      thumbnail: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=225&fit=crop',
+  thumbnail: '/events/jazz-networking.jpg',
       youtubeVideoId: 'dQw4w9WgXcQ',
       tags: ['vip', 'ceo', 'business', 'brexit', 'strategy'],
       keyMoments: [
@@ -283,10 +284,13 @@ export default function StreamReplayLibrary({ hasAccess, selectedCategory, langu
               >
                 {/* Thumbnail */}
                 <div className="relative aspect-video bg-gray-200">
-                  <img 
-                    src={replay.thumbnail} 
+                  <Image
+                    src={replay.thumbnail || '/events/networking.jpg'}
                     alt={replay.title}
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+                    className="object-cover"
+                    priority={index < 2}
                   />
                   
                   {/* Play Button Overlay */}

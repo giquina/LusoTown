@@ -82,7 +82,7 @@ export default function LiveStreamingPage() {
     scheduledStart: new Date().toISOString(),
     viewerCount: 127,
     isPremium: false,
-    thumbnail: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=450&fit=crop',
+  thumbnail: '/events/networking.jpg',
     youtubeVideoId: 'dQw4w9WgXcQ', // Mock YouTube video ID
     host: 'Maria Santos',
     duration: 90,
@@ -98,7 +98,7 @@ export default function LiveStreamingPage() {
     }, 1000)
 
     return () => clearTimeout(timer)
-  }, [language])
+  }, [language, mockLiveStream])
 
   // Simulate real-time viewer count updates
   useEffect(() => {
