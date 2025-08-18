@@ -101,14 +101,14 @@ export default function StreamCategories({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2 }}
-      className="bg-white rounded-xl shadow-sm p-6"
+      className="bg-white rounded-xl shadow-sm p-4 sm:p-6"
     >
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-xl font-bold text-gray-900">
-          {language === 'pt' ? 'Categorias de Conteúdo' : 'Content Categories'}
+      <div className="flex items-center justify-between mb-4 sm:mb-6">
+        <h2 className="text-lg sm:text-xl font-bold text-gray-900">
+          {language === 'pt' ? 'Categorias 🇵🇹' : 'Categories 🇵🇹'}
         </h2>
-        <div className="text-sm text-gray-500">
-          {categories.reduce((total, cat) => total + cat.streamCount, 0)} {language === 'pt' ? 'streams' : 'streams'}
+        <div className="text-xs sm:text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
+          {categories.reduce((total, cat) => total + cat.streamCount, 0)} {language === 'pt' ? 'ao vivo' : 'live'}
         </div>
       </div>
 
@@ -143,8 +143,65 @@ export default function StreamCategories({
         </div>
       </motion.button>
 
-      {/* Category Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-4">
+      {/* Mobile: Horizontal Scroll Categories */}
+      <div className="block sm:hidden mb-6">
+        <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide">
+          {/* All Categories Chip */}
+          <motion.button
+            whileTap={{ scale: 0.95 }}
+            onClick={() => onCategorySelect('all')}
+            className={`flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap border-2 transition-all touch-manipulation ${
+              selectedCategory === 'all'
+                ? 'bg-primary-100 border-primary-500 text-primary-700'
+                : 'bg-white border-gray-200 text-gray-700 active:bg-gray-50'
+            }`}
+          >
+            <Users className="w-4 h-4" />
+            <span className="text-sm font-medium">
+              {language === 'pt' ? 'Todas' : 'All'}
+            </span>
+            <span className="text-xs bg-gray-100 px-1.5 py-0.5 rounded-full">
+              {categories.reduce((total, cat) => total + cat.streamCount, 0)}
+            </span>
+          </motion.button>
+
+          {/* Category Chips */}
+          {categories.map((category) => {
+            const isSelected = selectedCategory === category.id
+            const hasAccess = !category.isPremium || hasActiveSubscription
+            const colors = getColorClasses(category.color, isSelected, category.isPremium, hasAccess)
+            const IconComponent = getCategoryIcon(category.id)
+
+            return (
+              <motion.button
+                key={category.id}
+                whileTap={{ scale: hasAccess ? 0.95 : 1 }}
+                onClick={() => hasAccess && onCategorySelect(category.id)}
+                disabled={!hasAccess}
+                className={`flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap border-2 transition-all touch-manipulation ${colors.bg} ${
+                  hasAccess ? 'cursor-pointer' : 'cursor-not-allowed opacity-60'
+                }`}
+              >
+                <div className="relative">
+                  <IconComponent className="w-4 h-4" />
+                  {category.isPremium && (
+                    <Crown className="w-2.5 h-2.5 text-premium-500 absolute -top-1 -right-1" />
+                  )}
+                </div>
+                <span className={`text-sm font-medium ${colors.text}`}>
+                  {category.name.split(' ')[0]} {/* Show first word only on mobile */}
+                </span>
+                <span className="text-xs bg-gray-100 px-1.5 py-0.5 rounded-full">
+                  {category.streamCount}
+                </span>
+              </motion.button>
+            )
+          })}
+        </div>
+      </div>
+
+      {/* Desktop: Category Grid */}
+      <div className="hidden sm:grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 gap-4">
         {categories.map((category, index) => {
           const isSelected = selectedCategory === category.id
           const hasAccess = !category.isPremium || hasActiveSubscription

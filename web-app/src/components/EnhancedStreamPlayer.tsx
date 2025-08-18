@@ -273,8 +273,9 @@ export default function EnhancedStreamPlayer({
       <div className={`${showChat ? 'lg:flex-1' : 'w-full'}`}>
         <div 
           ref={playerRef}
-          className="relative w-full h-64 md:h-96 lg:h-[32rem] bg-black rounded-xl overflow-hidden group"
+          className="relative w-full h-56 sm:h-64 md:h-80 lg:h-96 xl:h-[32rem] bg-black rounded-xl overflow-hidden group"
           onMouseMove={handleMouseMove}
+          onTouchStart={handleMouseMove}
         >
           {/* Video Player */}
           {canFullAccess && isPlaying && stream.playback_url ? (
@@ -332,15 +333,15 @@ export default function EnhancedStreamPlayer({
                   </motion.div>
                 )}
 
-                {/* Play Button */}
+                {/* Play Button - Mobile Optimized */}
                 {canFullAccess && !isPlaying && (
                   <motion.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={handlePlay}
-                    className="bg-white/20 hover:bg-white/30 backdrop-blur-sm p-6 rounded-full transition-all duration-200"
+                    className="bg-white/20 hover:bg-white/30 active:bg-white/40 backdrop-blur-sm p-4 sm:p-6 rounded-full transition-all duration-200 touch-manipulation"
                   >
-                    <PlayIcon className="w-12 h-12 text-white ml-1" />
+                    <PlayIcon className="w-10 h-10 sm:w-12 sm:h-12 text-white ml-1" />
                   </motion.button>
                 )}
 
@@ -394,82 +395,93 @@ export default function EnhancedStreamPlayer({
             </motion.div>
           )}
 
-          {/* Enhanced Controls */}
+          {/* Enhanced Controls - Mobile First */}
           <AnimatePresence>
             {showControls && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-4"
+                className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/95 to-transparent p-3 sm:p-4"
               >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
+                {/* Mobile Layout: Stack controls for easier touch */}
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  {/* Primary Controls */}
+                  <div className="flex items-center justify-center sm:justify-start gap-4 sm:gap-3">
                     {canFullAccess && (
                       <>
                         <button
                           onClick={handlePlay}
-                          className="text-white hover:text-gray-300 transition-colors"
+                          className="text-white hover:text-gray-300 active:scale-95 transition-all touch-manipulation p-2 sm:p-0"
                         >
                           {isPlaying ? (
-                            <PauseIcon className="w-6 h-6" />
+                            <PauseIcon className="w-7 h-7 sm:w-6 sm:h-6" />
                           ) : (
-                            <PlayIcon className="w-6 h-6" />
+                            <PlayIcon className="w-7 h-7 sm:w-6 sm:h-6" />
                           )}
                         </button>
                         
                         <button
                           onClick={() => setIsMuted(!isMuted)}
-                          className="text-white hover:text-gray-300 transition-colors"
+                          className="text-white hover:text-gray-300 active:scale-95 transition-all touch-manipulation p-2 sm:p-0"
                         >
                           {isMuted ? (
-                            <SpeakerXMarkIcon className="w-6 h-6" />
+                            <SpeakerXMarkIcon className="w-7 h-7 sm:w-6 sm:h-6" />
                           ) : (
-                            <SpeakerWaveIcon className="w-6 h-6" />
+                            <SpeakerWaveIcon className="w-7 h-7 sm:w-6 sm:h-6" />
                           )}
                         </button>
                       </>
                     )}
 
                     {isLive && (
-                      <div className="text-white text-sm flex items-center gap-2">
+                      <div className="hidden sm:flex text-white text-sm items-center gap-2">
                         <div className="w-2 h-2 bg-action-500 rounded-full animate-pulse"></div>
-                        <span>{language === 'pt' ? 'Transmissão ao vivo' : 'Live broadcast'}</span>
+                        <span className="whitespace-nowrap">{language === 'pt' ? 'Ao vivo' : 'Live'}</span>
                       </div>
                     )}
                   </div>
 
-                  <div className="flex items-center gap-3">
+                  {/* Secondary Controls */}
+                  <div className="flex items-center justify-center sm:justify-end gap-4 sm:gap-3">
                     <button
                       onClick={handleLike}
-                      className={`text-white hover:text-red-400 transition-colors ${isLiked ? 'text-red-500' : ''}`}
+                      className={`text-white hover:text-red-400 active:scale-95 transition-all touch-manipulation p-2 sm:p-0 ${isLiked ? 'text-red-500' : ''}`}
                     >
-                      <Heart className={`w-5 h-5 ${isLiked ? 'fill-current' : ''}`} />
+                      <Heart className={`w-6 h-6 sm:w-5 sm:h-5 ${isLiked ? 'fill-current' : ''}`} />
                     </button>
 
                     <button
                       onClick={handleShare}
-                      className="text-white hover:text-gray-300 transition-colors"
+                      className="text-white hover:text-gray-300 active:scale-95 transition-all touch-manipulation p-2 sm:p-0"
                     >
-                      <Share2 className="w-5 h-5" />
+                      <Share2 className="w-6 h-6 sm:w-5 sm:h-5" />
                     </button>
 
                     {showChat && canChat && (
                       <button
-                        className="text-white hover:text-gray-300 transition-colors lg:hidden"
+                        className="text-white hover:text-gray-300 active:scale-95 transition-all touch-manipulation p-2 sm:p-0 lg:hidden"
                       >
-                        <ChatBubbleLeftIcon className="w-5 h-5" />
+                        <ChatBubbleLeftIcon className="w-6 h-6 sm:w-5 sm:h-5" />
                       </button>
                     )}
 
                     <button
                       onClick={handleFullscreen}
-                      className="text-white hover:text-gray-300 transition-colors"
+                      className="text-white hover:text-gray-300 active:scale-95 transition-all touch-manipulation p-2 sm:p-0"
                     >
-                      <ArrowsPointingOutIcon className="w-6 h-6" />
+                      <ArrowsPointingOutIcon className="w-7 h-7 sm:w-6 sm:h-6" />
                     </button>
                   </div>
                 </div>
+
+                {/* Mobile Live Indicator */}
+                {isLive && (
+                  <div className="flex sm:hidden text-white text-xs items-center justify-center gap-2 mt-2">
+                    <div className="w-1.5 h-1.5 bg-action-500 rounded-full animate-pulse"></div>
+                    <span>{language === 'pt' ? 'Transmissão ao vivo' : 'Live broadcast'}</span>
+                  </div>
+                )}
               </motion.div>
             )}
           </AnimatePresence>

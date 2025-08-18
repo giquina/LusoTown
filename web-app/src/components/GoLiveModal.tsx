@@ -203,25 +203,27 @@ export default function GoLiveModal({ isOpen, onClose, onStartStream }: GoLiveMo
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
-            className="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto mx-4 sm:mx-0"
             onClick={e => e.stopPropagation()}
           >
-            {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b">
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900">
-                  {t('streaming.go-live', 'Go Live')}
+            {/* Header - Mobile Optimized */}
+            <div className="flex items-center justify-between p-4 sm:p-6 border-b">
+              <div className="flex-1 min-w-0">
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
+                  {t('streaming.go-live', 'Go Live')} 🎥
                 </h2>
-                <p className="text-gray-600 mt-1">
-                  {language === 'pt' ? 'Partilhe com a comunidade portuguesa' : 'Share with the Portuguese community'}
+                <p className="text-gray-600 mt-1 text-sm sm:text-base">
+                  {language === 'pt' ? 'Partilhe com a comunidade 🇵🇹' : 'Share with Portuguese community 🇵🇹'}
                 </p>
               </div>
-              <button
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 onClick={onClose}
-                className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                className="p-2 hover:bg-gray-100 active:bg-gray-200 rounded-lg transition-colors touch-manipulation"
               >
                 <XMarkIcon className="w-6 h-6" />
-              </button>
+              </motion.button>
             </div>
 
             {/* Steps Indicator */}

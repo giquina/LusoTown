@@ -3,21 +3,22 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { 
-  StarIcon,
-  SparklesIcon,
+  HeartIcon,
   CheckCircleIcon,
   ArrowRightIcon,
-  TrophyIcon,
   ShieldCheckIcon,
-  AcademicCapIcon,
-  BriefcaseIcon,
-  BuildingOffice2Icon
+  StarIcon,
+  SparklesIcon,
+  UsersIcon,
+  TrophyIcon
 } from '@heroicons/react/24/outline'
+import { 
+  HeartIcon as HeartIconSolid,
+  StarIcon as StarIconSolid
+} from '@heroicons/react/24/solid'
 import { Crown } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { useSubscription } from '@/context/SubscriptionContext'
-import { getMembershipTierConfig, type MembershipTier } from '@/lib/supabase'
-import { PortuguesePricingEngine, type PricingConfig } from '@/lib/dynamicPricing'
 
 interface MembershipTiersProps {
   showCurrentTier?: boolean
@@ -28,6 +29,119 @@ interface MembershipTiersProps {
   promoCode?: string
 }
 
+// New 3-Tier Pricing Structure - Matches recent agreement
+const membershipTiers = [
+  {
+    id: 'free',
+    name: 'Grátis',
+    nameEn: 'Free',
+    price: 0,
+    monthlyPrice: 0,
+    description: 'Comece a explorar a comunidade portuguesa',
+    descriptionEn: 'Start exploring the Portuguese community',
+    icon: <HeartIcon className="w-6 h-6" />,
+    solidIcon: <HeartIconSolid className="w-6 h-6" />,
+    color: 'gray',
+    features: [
+      '3 matches por dia',
+      '10 mensagens por mês',
+      'Perfil básico',
+      'Pesquisa limitada'
+    ],
+    featuresEn: [
+      '3 matches per day',
+      '10 messages per month',
+      'Basic profile',
+      'Limited search'
+    ],
+    limitations: [
+      'Matches limitados',
+      'Mensagens limitadas',
+      'Sem acesso a eventos premium'
+    ],
+    limitationsEn: [
+      'Limited matches',
+      'Limited messages',
+      'No premium events access'
+    ],
+    buttonText: 'Começar Grátis',
+    buttonTextEn: 'Start Free',
+    highlighted: false
+  },
+  {
+    id: 'community',
+    name: 'Membro da Comunidade',
+    nameEn: 'Community Member',
+    price: 19.99,
+    monthlyPrice: 19.99,
+    description: 'Acesso completo à comunidade portuguesa',
+    descriptionEn: 'Full access to Portuguese community',
+    icon: <UsersIcon className="w-6 h-6" />,
+    solidIcon: <StarIconSolid className="w-6 h-6" />,
+    color: 'primary',
+    features: [
+      'Matches ilimitados',
+      'Mensagens ilimitadas',
+      'Acesso a todos os eventos',
+      'Perfil completo',
+      'Pesquisa avançada',
+      'Networking profissional'
+    ],
+    featuresEn: [
+      'Unlimited matches',
+      'Unlimited messaging',
+      'Access to all events',
+      'Complete profile',
+      'Advanced search',
+      'Professional networking'
+    ],
+    limitations: [],
+    limitationsEn: [],
+    buttonText: 'Juntar-se à Comunidade',
+    buttonTextEn: 'Join Community',
+    highlighted: true,
+    badge: 'Popular',
+    badgeEn: 'Popular'
+  },
+  {
+    id: 'ambassador',
+    name: 'Embaixador Cultural',
+    nameEn: 'Cultural Ambassador',
+    price: 39.99,
+    monthlyPrice: 39.99,
+    description: 'Lidere a comunidade portuguesa em Londres',
+    descriptionEn: 'Lead the Portuguese community in London',
+    icon: <Crown className="w-6 h-6" />,
+    solidIcon: <TrophyIcon className="w-6 h-6" />,
+    color: 'premium',
+    features: [
+      'Tudo do Membro da Comunidade',
+      'Visibilidade prioritária nos matches',
+      'Organizador de eventos',
+      'Perfil destacado',
+      'Acesso VIP a eventos',
+      'Mentoria comunitária',
+      'Suporte prioritário'
+    ],
+    featuresEn: [
+      'Everything in Community Member',
+      'Priority visibility in matches',
+      'Event hosting capabilities',
+      'Featured profile',
+      'VIP events access',
+      'Community mentorship',
+      'Priority support'
+    ],
+    limitations: [],
+    limitationsEn: [],
+    buttonText: 'Tornar-se Embaixador',
+    buttonTextEn: 'Become Ambassador',
+    highlighted: false,
+    badge: 'Premium',
+    badgeEn: 'Premium'
+  }
+]
+
 export default function MembershipTiers({ 
   showCurrentTier = true, 
   allowUpgrade = true,
@@ -37,130 +151,52 @@ export default function MembershipTiers({
   promoCode
 }: MembershipTiersProps) {
   const { language } = useLanguage()
-  const { membershipTier, createSubscription, upgradeSubscription } = useSubscription()
-  const [isUpgrading, setIsUpgrading] = useState<string | null>(null)
+  const { membershipTier, createSubscription } = useSubscription()
   const [isCreating, setIsCreating] = useState<string | null>(null)
-  const [showMonthly, setShowMonthly] = useState(false)
   
   const isPortuguese = language === 'pt'
   
-  const tiers: MembershipTier[] = ['basic', 'student', 'professional', 'business', 'vip']
-  
-  const getIcon = (tier: MembershipTier) => {
-    switch (tier) {
-      case 'basic': return StarIcon
-      case 'student': return AcademicCapIcon
-      case 'professional': return BriefcaseIcon
-      case 'business': return BuildingOffice2Icon
-      case 'vip': return Crown
-      default: return StarIcon
-    }
-  }
-  
-  const getColorClasses = (tier: MembershipTier) => {
-    switch (tier) {
-      case 'basic':
-        return {
-          border: 'border-gray-200',
-          bg: 'bg-gray-50',
-          iconBg: 'bg-gray-100',
-          iconText: 'text-gray-600',
-          button: 'bg-gray-500 hover:bg-gray-600 text-white',
-          badge: 'bg-gray-100 text-gray-800'
-        }
-      case 'student':
-        return {
-          border: 'border-secondary-200',
-          bg: 'bg-secondary-50',
-          iconBg: 'bg-secondary-100',
-          iconText: 'text-secondary-600',
-          button: 'bg-secondary-500 hover:bg-secondary-600 text-white',
-          badge: 'bg-secondary-100 text-secondary-800'
-        }
-      case 'professional':
-        return {
-          border: 'border-primary-200',
-          bg: 'bg-primary-50',
-          iconBg: 'bg-primary-100',
-          iconText: 'text-primary-600',
-          button: 'bg-primary-500 hover:bg-primary-600 text-white',
-          badge: 'bg-primary-100 text-primary-800'
-        }
-      case 'business':
-        return {
-          border: 'border-accent-200',
-          bg: 'bg-accent-50',
-          iconBg: 'bg-accent-100',
-          iconText: 'text-accent-600',
-          button: 'bg-accent-500 hover:bg-accent-600 text-white',
-          badge: 'bg-accent-100 text-accent-800'
-        }
-      case 'vip':
-        return {
-          border: 'border-premium-200',
-          bg: 'bg-premium-50',
-          iconBg: 'bg-premium-100',
-          iconText: 'text-premium-600',
-          button: 'bg-premium-500 hover:bg-premium-600 text-white',
-          badge: 'bg-premium-100 text-premium-800'
-        }
-      default:
-        return {
-          border: 'border-gray-200',
-          bg: 'bg-white',
-          iconBg: 'bg-gray-100',
-          iconText: 'text-gray-600',
-          button: 'bg-primary-500 hover:bg-primary-600 text-white',
-          badge: 'bg-gray-100 text-gray-800'
-        }
-    }
-  }
-  
-  const handleSubscribe = async (tier: MembershipTier) => {
-    setIsCreating(tier)
+  const handleSubscribe = async (tierId: string) => {
+    setIsCreating(tierId)
     try {
-      await createSubscription(tier, showMonthly ? 'monthly' : 'yearly')
+      await createSubscription(tierId === 'community' ? 'professional' : 'vip', 'monthly')
     } catch (error) {
       console.error('Error creating subscription:', error)
     } finally {
       setIsCreating(null)
     }
   }
-  
-  const handleUpgrade = async (tier: MembershipTier) => {
-    setIsUpgrading(tier)
-    try {
-      await upgradeSubscription(tier)
-    } catch (error) {
-      console.error('Error upgrading subscription:', error)
-    } finally {
-      setIsUpgrading(null)
+
+  const getColorClasses = (color: string) => {
+    const colorMap = {
+      gray: {
+        border: 'border-gray-200',
+        bg: 'bg-gray-50',
+        iconBg: 'bg-gray-100',
+        iconText: 'text-gray-600',
+        button: 'bg-gray-500 hover:bg-gray-600 text-white',
+        badge: 'bg-gray-100 text-gray-800'
+      },
+      primary: {
+        border: 'border-primary-300',
+        bg: 'bg-primary-50',
+        iconBg: 'bg-primary-100',
+        iconText: 'text-primary-600',
+        button: 'bg-primary-500 hover:bg-primary-600 text-white',
+        badge: 'bg-primary-100 text-primary-800'
+      },
+      premium: {
+        border: 'border-premium-300',
+        bg: 'bg-premium-50',
+        iconBg: 'bg-premium-100',
+        iconText: 'text-premium-600',
+        button: 'bg-premium-500 hover:bg-premium-600 text-white',
+        badge: 'bg-premium-100 text-premium-800'
+      }
     }
+    return colorMap[color as keyof typeof colorMap] || colorMap.gray
   }
-  
-  const formatPrice = (price: number) => {
-    return PortuguesePricingEngine.formatPortuguesePrice(price)
-  }
-  
-  const getPricingConfig = (tier: MembershipTier): PricingConfig => {
-    if (promoCode) {
-      const promoConfig = PortuguesePricingEngine.getPromotionalPricing(tier, promoCode)
-      if (promoConfig) return promoConfig
-    }
-    
-    return PortuguesePricingEngine.calculateOptimizedPricing(tier, userSegment)
-  }
-  
-  const canUpgrade = (tier: MembershipTier) => {
-    if (membershipTier === 'basic') return true
-    
-    const tierOrder = ['basic', 'student', 'professional', 'business', 'vip']
-    const currentIndex = tierOrder.indexOf(membershipTier)
-    const targetIndex = tierOrder.indexOf(tier)
-    
-    return targetIndex > currentIndex
-  }
-  
+
   return (
     <section className="py-12">
       <div className="container-width">
@@ -170,21 +206,19 @@ export default function MembershipTiers({
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
+          <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-primary-600 mb-6">
+            <HeartIconSolid className="w-4 h-4 mr-2" />
+            {isPortuguese ? 'Unidos pela Língua • Encontre a sua comunidade' : 'United by Language • Find Your Community'}
+          </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            {isPortuguese ? 'Associa��o Premium LusoTown' : 'LusoTown Premium Membership'}
+            {isPortuguese ? 'Planos de Adesão' : 'Membership Plans'}
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
             {isPortuguese
-              ? 'Junte-se ao nosso programa de associa��o premium e aceda a servi�os exclusivos da comunidade portuguesa de Londres.'
-              : 'Join our premium membership program and access exclusive services for London\'s Portuguese community.'
+              ? 'Escolha o plano ideal para se conectar com a comunidade portuguesa de Londres.'
+              : 'Choose the perfect plan to connect with London\'s Portuguese community.'
             }
           </p>
-          <div className="text-sm text-gray-500">
-            {isPortuguese
-              ? 'Receita projetada: �450,000-750,000 anuais de 150-250 membros'
-              : 'Projected revenue: �450,000-750,000 annually from 150-250 members'
-            }
-          </div>
         </motion.div>
 
         {/* Current Tier Display */}
@@ -194,54 +228,36 @@ export default function MembershipTiers({
             animate={{ opacity: 1, y: 0 }}
             className="mb-8 text-center"
           >
-            <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${getColorClasses(membershipTier).badge}`}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-800">
               <span className="text-sm font-medium">
-                {isPortuguese ? 'Membro Atual:' : 'Current Member:'} {getMembershipTierConfig(membershipTier).namePortuguese || getMembershipTierConfig(membershipTier).name}
+                {isPortuguese ? 'Membro Atual' : 'Current Member'}
               </span>
             </div>
           </motion.div>
         )}
 
         {/* Membership Tiers Grid */}
-        <div className={`grid gap-6 ${compact ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4'}`}>
-          {tiers.map((tier, index) => {
-            const config = getMembershipTierConfig(tier)
-            const pricingConfig = getPricingConfig(tier)
-            const colors = getColorClasses(tier)
-            const IconComponent = getIcon(tier)
-            const isCurrentTier = membershipTier === tier
-            const canUpgradeToTier = canUpgrade(tier)
-            const isProcessing = isUpgrading === tier || isCreating === tier
-            const displayPrice = showMonthly ? pricingConfig.currentMonthlyPrice : pricingConfig.currentYearlyPrice
+        <div className={`grid gap-8 ${compact ? 'md:grid-cols-2 lg:grid-cols-3' : 'md:grid-cols-2 lg:grid-cols-3'}`}>
+          {membershipTiers.map((tier, index) => {
+            const colors = getColorClasses(tier.color)
+            const isCurrentTier = false // Placeholder for current tier logic
+            const isProcessing = isCreating === tier.id
+            const isHighlighted = tier.highlighted
             
             return (
               <motion.div
-                key={tier}
+                key={tier.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 className={`relative bg-white rounded-2xl shadow-lg border-2 ${
-                  isCurrentTier ? 'border-primary-300 ring-2 ring-primary-100' : colors.border
+                  isHighlighted ? 'border-primary-400 ring-4 ring-primary-100 scale-105' : colors.border
                 } overflow-hidden ${compact ? 'p-4' : 'p-6'}`}
               >
-                {/* Popular Badge for Professional */}
-                {tier === 'professional' && (
+                {/* Badge */}
+                {tier.badge && (
                   <div className="absolute top-0 right-0 bg-primary-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
-                    {isPortuguese ? 'Popular' : 'Popular'}
-                  </div>
-                )}
-                
-                {/* Student Badge */}
-                {tier === 'student' && (
-                  <div className="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
-                    {isPortuguese ? '50% Desconto' : '50% Off'}
-                  </div>
-                )}
-                
-                {/* Promo Badge */}
-                {pricingConfig.promoCode && (
-                  <div className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
-                    -{pricingConfig.discountPercentage}%
+                    {isPortuguese ? tier.badge : tier.badgeEn}
                   </div>
                 )}
 
@@ -253,36 +269,41 @@ export default function MembershipTiers({
                 )}
 
                 {/* Icon */}
-                <div className={`w-12 h-12 ${colors.iconBg} rounded-xl flex items-center justify-center mb-4`}>
-                  <IconComponent className={`w-6 h-6 ${colors.iconText}`} />
+                <div className={`w-16 h-16 ${colors.iconBg} rounded-2xl flex items-center justify-center mb-6 mx-auto`}>
+                  {tier.solidIcon}
                 </div>
 
                 {/* Tier Name */}
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  {isPortuguese ? config.namePortuguese : config.name}
+                <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">
+                  {isPortuguese ? tier.name : tier.nameEn}
                 </h3>
 
                 {/* Price */}
-                <div className="mb-4">
-                  <div className="text-3xl font-bold text-gray-900">
-                    {formatPrice(config.price)}
-                  </div>
-                  <div className="text-sm text-gray-500">
-                    {isPortuguese ? 'por ano' : 'per year'}
-                  </div>
-                  <div className="text-xs text-gray-400">
-                    {formatPrice(Math.round(config.price / 12))} {isPortuguese ? 'por m�s' : 'per month'}
-                  </div>
+                <div className="mb-6 text-center">
+                  {tier.price === 0 ? (
+                    <div className="text-4xl font-bold text-gray-900">
+                      {isPortuguese ? 'Grátis' : 'Free'}
+                    </div>
+                  ) : (
+                    <>
+                      <div className="text-4xl font-bold text-gray-900">
+                        £{tier.price}
+                      </div>
+                      <div className="text-sm text-gray-500">
+                        {isPortuguese ? 'por mês' : 'per month'}
+                      </div>
+                    </>
+                  )}
                 </div>
 
                 {/* Description */}
-                <p className={`text-gray-600 mb-6 ${compact ? 'text-sm' : ''}`}>
-                  {isPortuguese ? config.descriptionPortuguese : config.description}
+                <p className={`text-gray-600 mb-6 text-center ${compact ? 'text-sm' : ''}`}>
+                  {isPortuguese ? tier.description : tier.descriptionEn}
                 </p>
 
                 {/* Features */}
-                <div className="space-y-3 mb-6">
-                  {(isPortuguese ? config.featuresPortuguese : config.features).map((feature, featureIndex) => (
+                <div className="space-y-3 mb-8">
+                  {(isPortuguese ? tier.features : tier.featuresEn).map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-start gap-3">
                       <CheckCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                       <span className={`text-gray-700 ${compact ? 'text-sm' : ''}`}>{feature}</span>
@@ -296,11 +317,11 @@ export default function MembershipTiers({
                     <div className="w-full py-3 px-4 bg-green-100 text-green-700 rounded-lg text-center font-medium">
                       {isPortuguese ? 'Plano Atual' : 'Current Plan'}
                     </div>
-                  ) : canUpgradeToTier && allowUpgrade ? (
+                  ) : (
                     <button
-                      onClick={() => membershipTier === 'basic' ? handleSubscribe(tier) : handleUpgrade(tier)}
+                      onClick={() => handleSubscribe(tier.id)}
                       disabled={isProcessing}
-                      className={`w-full py-3 px-4 rounded-lg font-semibold transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 ${colors.button}`}
+                      className={`w-full py-4 px-6 rounded-xl font-semibold text-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 ${colors.button} ${isHighlighted ? 'shadow-xl hover:shadow-2xl' : 'shadow-lg hover:shadow-xl'}`}
                     >
                       {isProcessing ? (
                         <>
@@ -309,18 +330,11 @@ export default function MembershipTiers({
                         </>
                       ) : (
                         <>
-                          {membershipTier === 'basic' 
-                            ? (isPortuguese ? 'Subscrever' : 'Subscribe')
-                            : (isPortuguese ? 'Atualizar' : 'Upgrade')
-                          }
-                          <ArrowRightIcon className="w-4 h-4" />
+                          {isPortuguese ? tier.buttonText : tier.buttonTextEn}
+                          <ArrowRightIcon className="w-5 h-5" />
                         </>
                       )}
                     </button>
-                  ) : (
-                    <div className="w-full py-3 px-4 bg-gray-100 text-gray-500 rounded-lg text-center font-medium">
-                      {isPortuguese ? 'N�o Dispon�vel' : 'Not Available'}
-                    </div>
                   )}
                 </div>
               </motion.div>
@@ -328,51 +342,68 @@ export default function MembershipTiers({
           })}
         </div>
 
-        {/* Additional Information */}
+        {/* Value Proposition */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="mt-12 text-center"
+          transition={{ delay: 0.6 }}
+          className="mt-16 text-center"
         >
-          <div className="bg-gray-50 rounded-2xl p-6">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">
-              {isPortuguese ? 'Benef�cios de Associa��o' : 'Membership Benefits'}
+          <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              {isPortuguese ? 'Porquê LusoTown?' : 'Why LusoTown?'}
             </h3>
-            <div className="grid md:grid-cols-3 gap-6 text-sm text-gray-600">
+            <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
-                <h4 className="font-medium text-gray-900 mb-2">
-                  {isPortuguese ? 'Integra��o Comunit�ria' : 'Community Integration'}
+                <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <HeartIcon className="w-6 h-6 text-primary-600" />
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">
+                  {isPortuguese ? 'Comunidade Autêntica' : 'Authentic Community'}
                 </h4>
-                <p>
+                <p className="text-sm text-gray-600">
                   {isPortuguese
-                    ? 'Convites autom�ticos para eventos culturais portugueses e acesso � C�mara de Com�rcio'
-                    : 'Automatic invitations to Portuguese cultural events and Chamber of Commerce access'
+                    ? 'Conecte-se com portugueses reais em Londres'
+                    : 'Connect with real Portuguese speakers in London'
                   }
                 </p>
               </div>
               <div>
-                <h4 className="font-medium text-gray-900 mb-2">
-                  {isPortuguese ? 'Ponte Servi�o-Comunidade' : 'Service-to-Community Bridge'}
+                <div className="w-12 h-12 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <ShieldCheckIcon className="w-6 h-6 text-secondary-600" />
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">
+                  {isPortuguese ? 'Perfis Verificados' : 'Verified Profiles'}
                 </h4>
-                <p>
+                <p className="text-sm text-gray-600">
                   {isPortuguese
-                    ? 'Clientes de servi�os qualificam automaticamente para membros da comunidade'
-                    : 'Service clients automatically qualify for community membership'
+                    ? 'Todos os membros são verificados para segurança'
+                    : 'All members are verified for safety'
                   }
                 </p>
               </div>
               <div>
-                <h4 className="font-medium text-gray-900 mb-2">
-                  {isPortuguese ? 'Gest�o de Benef�cios' : 'Benefits Management'}
+                <div className="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <SparklesIcon className="w-6 h-6 text-accent-600" />
+                </div>
+                <h4 className="font-semibold text-gray-900 mb-2">
+                  {isPortuguese ? 'Eventos Culturais' : 'Cultural Events'}
                 </h4>
-                <p>
+                <p className="text-sm text-gray-600">
                   {isPortuguese
-                    ? 'Portal de membro com rastreamento de benef�cios e aplica��o autom�tica de descontos'
-                    : 'Member portal with benefits tracking and automatic discount application'
+                    ? 'Participe em eventos e atividades portuguesas'
+                    : 'Join Portuguese events and activities'
                   }
                 </p>
               </div>
+            </div>
+            <div className="mt-8 text-center">
+              <p className="text-sm text-gray-600">
+                {isPortuguese
+                  ? 'Junte-se a 750+ portugueses que já encontraram a sua comunidade'
+                  : 'Join 750+ Portuguese speakers who found their community'
+                }
+              </p>
             </div>
           </div>
         </motion.div>

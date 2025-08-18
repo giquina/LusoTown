@@ -35,6 +35,7 @@ const getAuthenticatedNavigationLinks = (t: any) => [
   { name: t("nav.events", "Events"), href: "/events" },
   { name: t("nav.london-tours", "London Tours"), href: "/london-tours" },
   { name: t("nav.students", "Students"), href: "/students" },
+  { name: t("referral.title", "Referrals"), href: "/referrals" },
   { name: t("nav.pricing", "Pricing"), href: "/pricing" },
 ];
 

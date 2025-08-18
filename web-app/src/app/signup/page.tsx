@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import { useSubscription } from "@/context/SubscriptionContext";
@@ -18,10 +18,13 @@ import {
   StarIcon,
   ExclamationCircleIcon,
   MapPinIcon,
+  GiftIcon,
 } from "@heroicons/react/24/outline";
 import { getImageWithFallback } from "@/lib/profileImages";
 import { authService } from "@/lib/auth";
+import { referralService } from "@/lib/referral";
 import Footer from "@/components/Footer";
+import toast from "react-hot-toast";
 
 const benefits = [
   {
@@ -75,6 +78,7 @@ const testimonials = [
 export default function Signup() {
   const { language, t } = useLanguage();
   const { subscriptionRequired } = useSubscription();
+  const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     email: "",
     firstName: "",
@@ -86,13 +90,23 @@ export default function Signup() {
     londonArea: "",
     languagePreference: "en",
     interests: [] as string[],
+    referralCode: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordStrength, setPasswordStrength] = useState(0);
+  const [referralDiscount, setReferralDiscount] = useState<number | null>(null);
   const router = useRouter();
+
+  // Check for referral code in URL on component mount
+  useEffect(() => {
+    const refCode = searchParams.get('ref');
+    if (refCode) {
+      setFormData(prev => ({ ...prev, referralCode: refCode.toUpperCase() }));
+    }
+  }, [searchParams]);
 
   // Real-time email validation
   const validateEmail = (email: string) => {
@@ -210,10 +224,44 @@ export default function Signup() {
         }
       );
 
-      if (result.success) {
+      if (result.success && result.user) {
+        // Apply referral code if provided
+        if (formData.referralCode) {
+          try {
+            const referralResult = await referralService.createReferral(
+              formData.referralCode, 
+              result.user.id
+            );
+            
+            if (referralResult) {
+              toast.success(
+                language === 'pt' 
+                  ? 'Código de indicação aplicado! Ganhou 25% de desconto.'
+                  : 'Referral code applied! You got 25% discount.'
+              );
+              setReferralDiscount(25);
+            }
+          } catch (referralError) {
+            console.error('Error applying referral code:', referralError);
+            // Don't show error for referral failure as signup was successful
+          }
+        }
+
         setSuccess(
           "Account created successfully! Please check your email to verify your account."
         );
+        
+        // Show referral success message if applicable
+        if (referralDiscount) {
+          setTimeout(() => {
+            toast.success(
+              language === 'pt'
+                ? 'Bem-vindo! O seu desconto de 25% está ativo.'
+                : 'Welcome! Your 25% discount is now active.'
+            );
+          }, 1000);
+        }
+        
         // Redirect to success page after a short delay
         setTimeout(() => {
           router.push("/signup/success");
@@ -466,6 +514,39 @@ export default function Signup() {
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50"
                         placeholder="Sarah"
                       />
+                    </div>
+
+                    {/* Referral Code Field */}
+                    <div>
+                      <label
+                        htmlFor="referralCode"
+                        className="block text-sm font-medium text-gray-700 mb-2"
+                      >
+                        <div className="flex items-center gap-2">
+                          <GiftIcon className="h-4 w-4 text-green-600" />
+                          {language === 'pt' ? 'Código de Indicação (Opcional)' : 'Referral Code (Optional)'}
+                        </div>
+                      </label>
+                      <input
+                        type="text"
+                        id="referralCode"
+                        name="referralCode"
+                        value={formData.referralCode}
+                        onChange={handleInputChange}
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50 uppercase"
+                        placeholder={language === 'pt' ? 'Ex: JOÃO1234' : 'e.g., MARIA1234'}
+                        maxLength={20}
+                      />
+                      {formData.referralCode && (
+                        <p className="mt-1 text-sm text-green-600 flex items-center gap-1">
+                          <GiftIcon className="h-4 w-4" />
+                          {language === 'pt' 
+                            ? 'Ganhe 25% de desconto no primeiro mês!'
+                            : 'Get 25% off your first month!'
+                          }
+                        </p>
+                      )}
                     </div>
 
                     <div>

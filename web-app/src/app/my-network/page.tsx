@@ -29,6 +29,7 @@ import NetworkBadges from '@/components/NetworkBadges'
 import ConnectionNotificationBanner from '@/components/ConnectionNotificationBanner'
 import ConnectionFiltersComponent from '@/components/ConnectionFilters'
 import NetworkAnalytics from '@/components/NetworkAnalytics'
+import ReferralWidget from '@/components/ReferralWidget'
 
 export default function MyNetworkPage() {
   const { t, language } = useLanguage()
@@ -207,6 +208,9 @@ export default function MyNetworkPage() {
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
               {/* Sidebar */}
               <div className="lg:col-span-1 space-y-6">
+                {/* Referral Widget */}
+                <ReferralWidget variant="compact" showStats={true} />
+                
                 {/* Network Analytics */}
                 <NetworkAnalytics />
                 

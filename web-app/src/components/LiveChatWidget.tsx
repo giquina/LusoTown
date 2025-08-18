@@ -97,37 +97,37 @@ export default function LiveChatWidget({
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 }}
       className={`bg-white rounded-xl shadow-sm overflow-hidden flex flex-col ${
-        isExpanded ? 'fixed inset-4 z-40' : className || 'h-96'
+        isExpanded ? 'fixed inset-2 sm:inset-4 z-40' : className || 'h-80 sm:h-96'
       }`}
     >
-      {/* Header */}
-      <div className="p-4 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-primary-50">
+      {/* Header - Mobile Optimized */}
+      <div className="p-3 sm:p-4 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-primary-50">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="bg-gradient-to-r from-primary-500 to-secondary-500 p-2 rounded-lg">
+          <div className="flex items-center gap-2 sm:gap-3 flex-1">
+            <div className="bg-gradient-to-r from-primary-500 to-secondary-500 p-1.5 sm:p-2 rounded-lg">
               <MessageCircle className="w-4 h-4 text-white" />
             </div>
-            <div>
-              <h3 className="text-sm font-semibold text-gray-900">
-                {language === 'pt' ? 'Chat Interativo' : 'Interactive Chat'}
+            <div className="min-w-0 flex-1">
+              <h3 className="text-sm font-semibold text-gray-900 truncate">
+                {language === 'pt' ? 'Chat Português' : 'Portuguese Chat'}
               </h3>
               <div className="flex items-center gap-2 text-xs text-gray-500">
                 <motion.div
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ repeat: Infinity, duration: 2 }}
-                  className="w-2 h-2 bg-secondary-500 rounded-full"
+                  className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-secondary-500 rounded-full"
                 />
                 <span>{language === 'pt' ? 'Ao Vivo' : 'Live'}</span>
               </div>
             </div>
           </div>
           
-          <div className="flex items-center gap-2">
-            {/* View Toggle Buttons */}
-            <div className="flex bg-gray-100 rounded-lg p-1">
+          <div className="flex items-center gap-1 sm:gap-2">
+            {/* Mobile: Show fewer controls initially */}
+            <div className={`${isExpanded ? 'flex' : 'hidden sm:flex'} bg-gray-100 rounded-lg p-1`}>
               <button
                 onClick={() => setActiveView('chat')}
-                className={`p-1.5 rounded-md transition-colors ${
+                className={`p-2 sm:p-1.5 rounded-md transition-colors touch-manipulation ${
                   activeView === 'chat' 
                     ? 'bg-white text-primary-600 shadow-sm' 
                     : 'text-gray-500 hover:text-gray-700'
@@ -140,7 +140,7 @@ export default function LiveChatWidget({
               {showPolls && (
                 <button
                   onClick={() => setActiveView('polls')}
-                  className={`p-1.5 rounded-md transition-colors ${
+                  className={`p-2 sm:p-1.5 rounded-md transition-colors touch-manipulation ${
                     activeView === 'polls' 
                       ? 'bg-white text-primary-600 shadow-sm' 
                       : 'text-gray-500 hover:text-gray-700'
@@ -154,7 +154,7 @@ export default function LiveChatWidget({
               {canModerate && (
                 <button
                   onClick={() => setShowModeratorPanel(true)}
-                  className={`p-1.5 rounded-md transition-colors ${
+                  className={`p-2 sm:p-1.5 rounded-md transition-colors touch-manipulation ${
                     showModeratorPanel 
                       ? 'bg-white text-blue-600 shadow-sm' 
                       : 'text-gray-500 hover:text-gray-700'
@@ -166,19 +166,19 @@ export default function LiveChatWidget({
               )}
             </div>
 
-            {/* Expand/Close Buttons */}
+            {/* Expand/Close Buttons - Mobile Optimized */}
             <button
               onClick={toggleExpanded}
-              className="p-1 text-gray-500 hover:text-gray-700 rounded-lg"
+              className="p-2 sm:p-1 text-gray-500 hover:text-gray-700 active:scale-95 rounded-lg transition-all touch-manipulation"
               title={isExpanded 
                 ? (language === 'pt' ? 'Minimizar' : 'Minimize')
                 : (language === 'pt' ? 'Expandir' : 'Expand')
               }
             >
               {isExpanded ? (
-                <XMarkIcon className="w-4 h-4" />
+                <XMarkIcon className="w-5 h-5 sm:w-4 sm:h-4" />
               ) : (
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-5V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
                 </svg>
               )}
@@ -187,9 +187,9 @@ export default function LiveChatWidget({
             {onClose && !isExpanded && (
               <button
                 onClick={onClose}
-                className="p-1 text-gray-500 hover:text-gray-700 rounded-lg"
+                className="p-2 sm:p-1 text-gray-500 hover:text-gray-700 active:scale-95 rounded-lg transition-all touch-manipulation"
               >
-                <XMarkIcon className="w-4 h-4" />
+                <XMarkIcon className="w-5 h-5 sm:w-4 sm:h-4" />
               </button>
             )}
           </div>

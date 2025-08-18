@@ -217,9 +217,9 @@ export default function LiveStreamingPage() {
             </motion.div>
 
             {/* Main Content */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {/* Main Stream Player - Takes up 2/3 of desktop width */}
-              <div className="lg:col-span-2 space-y-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+              {/* Main Stream Player - Mobile-first responsive */}
+              <div className="lg:col-span-2 space-y-4 md:space-y-6">
                 {/* Live Stream Player */}
                 {currentStream && (
                   <motion.div
@@ -285,35 +285,43 @@ export default function LiveStreamingPage() {
                         </div>
                       </div>
 
-                      {/* Stream Actions */}
-                      <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
-                        <button
-                          onClick={() => handleStreamInteraction("like")}
-                          className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
-                        >
-                          <HeartIcon className="w-4 h-4" />
-                          <span className="text-sm">
-                            {language === "pt" ? "Gostar" : "Like"}
-                          </span>
-                        </button>
-                        <button
-                          onClick={() => handleStreamInteraction("share")}
-                          className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
-                        >
-                          <ShareIcon className="w-4 h-4" />
-                          <span className="text-sm">
-                            {language === "pt" ? "Partilhar" : "Share"}
-                          </span>
-                        </button>
-                        <button
-                          onClick={() => handleStreamInteraction("save")}
-                          className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
-                        >
-                          <BookmarkIcon className="w-4 h-4" />
-                          <span className="text-sm">
-                            {language === "pt" ? "Guardar" : "Save"}
-                          </span>
-                        </button>
+                      {/* Stream Actions - Mobile Optimized */}
+                      <div className="pt-4 border-t border-gray-200">
+                        {/* Mobile: Stack actions for better touch targets */}
+                        <div className="flex flex-col sm:flex-row gap-3">
+                          {/* Primary Actions Row */}
+                          <div className="flex gap-3 flex-1">
+                            <button
+                              onClick={() => handleStreamInteraction("like")}
+                              className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-3 sm:py-2 bg-gray-100 hover:bg-gray-200 active:bg-gray-300 rounded-lg transition-all touch-manipulation"
+                            >
+                              <HeartIcon className="w-5 h-5 sm:w-4 sm:h-4" />
+                              <span className="text-sm font-medium">
+                                {language === "pt" ? "Gostar" : "Like"}
+                              </span>
+                            </button>
+                            <button
+                              onClick={() => handleStreamInteraction("share")}
+                              className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-3 sm:py-2 bg-primary-100 hover:bg-primary-200 text-primary-700 rounded-lg transition-all touch-manipulation"
+                            >
+                              <ShareIcon className="w-5 h-5 sm:w-4 sm:h-4" />
+                              <span className="text-sm font-medium">
+                                {language === "pt" ? "Partilhar" : "Share"}
+                              </span>
+                            </button>
+                          </div>
+                          
+                          {/* Secondary Actions */}
+                          <button
+                            onClick={() => handleStreamInteraction("save")}
+                            className="flex items-center justify-center gap-2 px-4 py-3 sm:py-2 bg-secondary-100 hover:bg-secondary-200 text-secondary-700 rounded-lg transition-all touch-manipulation"
+                          >
+                            <BookmarkIcon className="w-5 h-5 sm:w-4 sm:h-4" />
+                            <span className="text-sm font-medium">
+                              {language === "pt" ? "Guardar" : "Save"}
+                            </span>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </motion.div>

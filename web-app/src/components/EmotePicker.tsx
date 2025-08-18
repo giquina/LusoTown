@@ -70,48 +70,51 @@ export default function EmotePicker({
         initial={{ opacity: 0, scale: 0.9, y: position === 'top' ? 10 : -10 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.9, y: position === 'top' ? 10 : -10 }}
-        className={`absolute ${position === 'top' ? 'bottom-full mb-2' : 'top-full mt-2'} right-0 z-50 
-          bg-white rounded-xl shadow-xl border border-gray-200 w-80 max-h-96 overflow-hidden`}
+        className={`fixed sm:absolute ${position === 'top' ? 'bottom-4 sm:bottom-full sm:mb-2' : 'top-4 sm:top-full sm:mt-2'} 
+          left-4 right-4 sm:left-auto sm:right-0 sm:w-80 z-50 
+          bg-white rounded-xl shadow-xl border border-gray-200 max-h-96 overflow-hidden`}
       >
-        {/* Header Tabs */}
+        {/* Header Tabs - Mobile Optimized */}
         <div className="flex border-b border-gray-200 bg-gray-50">
           <button
             onClick={() => setActiveTab('reactions')}
-            className={`flex-1 px-3 py-2 text-sm font-medium transition-colors ${
+            className={`flex-1 px-2 sm:px-3 py-3 sm:py-2 text-xs sm:text-sm font-medium transition-colors touch-manipulation ${
               activeTab === 'reactions'
                 ? 'text-primary-600 border-b-2 border-primary-600 bg-white'
-                : 'text-gray-500 hover:text-gray-700'
+                : 'text-gray-500 hover:text-gray-700 active:bg-gray-100'
             }`}
           >
-            <div className="flex items-center justify-center gap-1">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-1">
               <HeartIcon className="w-4 h-4" />
-              <span>{language === 'pt' ? 'Reações' : 'Reactions'}</span>
+              <span className="hidden sm:inline">{language === 'pt' ? 'Reações' : 'Reactions'}</span>
+              <span className="sm:hidden">{language === 'pt' ? 'Reações' : 'React'}</span>
             </div>
           </button>
           <button
             onClick={() => setActiveTab('emotes')}
-            className={`flex-1 px-3 py-2 text-sm font-medium transition-colors ${
+            className={`flex-1 px-2 sm:px-3 py-3 sm:py-2 text-xs sm:text-sm font-medium transition-colors touch-manipulation ${
               activeTab === 'emotes'
                 ? 'text-primary-600 border-b-2 border-primary-600 bg-white'
-                : 'text-gray-500 hover:text-gray-700'
+                : 'text-gray-500 hover:text-gray-700 active:bg-gray-100'
             }`}
           >
-            <div className="flex items-center justify-center gap-1">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-1">
               <FaceSmileIcon className="w-4 h-4" />
               <span>{language === 'pt' ? 'Emotes' : 'Emotes'}</span>
             </div>
           </button>
           <button
             onClick={() => setActiveTab('regional')}
-            className={`flex-1 px-3 py-2 text-sm font-medium transition-colors ${
+            className={`flex-1 px-2 sm:px-3 py-3 sm:py-2 text-xs sm:text-sm font-medium transition-colors touch-manipulation ${
               activeTab === 'regional'
                 ? 'text-primary-600 border-b-2 border-primary-600 bg-white'
-                : 'text-gray-500 hover:text-gray-700'
+                : 'text-gray-500 hover:text-gray-700 active:bg-gray-100'
             }`}
           >
-            <div className="flex items-center justify-center gap-1">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-1">
               <span className="text-sm">🌍</span>
-              <span>{language === 'pt' ? 'Regional' : 'Regional'}</span>
+              <span className="hidden sm:inline">{language === 'pt' ? 'Regional' : 'Regional'}</span>
+              <span className="sm:hidden">{language === 'pt' ? 'Região' : 'Region'}</span>
             </div>
           </button>
         </div>
@@ -125,15 +128,15 @@ export default function EmotePicker({
                 <h4 className="text-xs font-semibold text-gray-600 mb-2 uppercase tracking-wide">
                   {language === 'pt' ? 'Reações Rápidas' : 'Quick Reactions'}
                 </h4>
-                <div className="grid grid-cols-5 gap-2">
+                <div className="grid grid-cols-4 sm:grid-cols-5 gap-2 sm:gap-2">
                   {QUICK_REACTIONS.map((emoji, index) => (
                     <motion.button
                       key={index}
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                       onClick={() => handleReactionClick(emoji)}
-                      className="aspect-square flex items-center justify-center text-2xl hover:bg-gray-100 
-                        rounded-lg transition-colors p-2"
+                      className="aspect-square flex items-center justify-center text-2xl sm:text-2xl hover:bg-gray-100 
+                        active:bg-gray-200 rounded-lg transition-colors p-3 sm:p-2 touch-manipulation"
                     >
                       {emoji}
                     </motion.button>

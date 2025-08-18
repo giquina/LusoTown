@@ -72,17 +72,17 @@ export default function SubscriptionGate({
             ? 'Para aceder à sua conta LusoTown e conectar-se com a comunidade portuguesa, precisa de uma subscrição ativa.'
             : 'To access your LusoTown account and connect with the Portuguese community, you need an active subscription.',
           icon: ShieldCheckIcon,
-          buttonText: isPortuguese ? 'Subscrever por £25/ano' : 'Subscribe for £25/year'
+          buttonText: isPortuguese ? 'Começar com £19.99/mês' : 'Start from £19.99/month'
         }
       
       case 'signup':
         return {
           title: isPortuguese ? 'Junte-se à Comunidade LusoTown' : 'Join the LusoTown Community',
           description: isPortuguese 
-            ? 'A subscrição anual de £25 dá-lhe acesso completo à rede social portuguesa de Londres.'
-            : 'The £25 annual subscription gives you full access to London\'s Portuguese social network.',
+            ? 'Escolha entre planos mensais a partir de £19.99 para acesso completo à rede portuguesa de Londres.'
+            : 'Choose from monthly plans starting at £19.99 for full access to London\'s Portuguese network.',
           icon: HeartIcon,
-          buttonText: isPortuguese ? 'Começar Subscrição' : 'Start Subscription'
+          buttonText: isPortuguese ? 'Escolher Plano' : 'Choose Plan'
         }
       
       case 'transport':
@@ -192,15 +192,37 @@ export default function SubscriptionGate({
             </div>
           </div>
 
-          {/* Pricing */}
-          <div className="mb-6 p-4 bg-gray-50 rounded-lg border">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-gray-900 mb-1">£25</div>
-              <div className="text-sm text-gray-600 mb-2">
-                {isPortuguese ? 'por ano' : 'per year'}
+          {/* Pricing Options */}
+          <div className="mb-6">
+            <h4 className="text-sm font-semibold text-gray-900 mb-4 text-center">
+              {isPortuguese ? 'Escolha o seu plano:' : 'Choose your plan:'}
+            </h4>
+            <div className="grid grid-cols-1 gap-3">
+              {/* Community Member - Highlighted */}
+              <div className="p-4 bg-gradient-to-r from-primary-50 to-primary-100 rounded-lg border-2 border-primary-200">
+                <div className="text-center">
+                  <div className="text-xs text-primary-600 font-bold mb-1">POPULAR</div>
+                  <div className="text-2xl font-bold text-gray-900 mb-1">£19.99</div>
+                  <div className="text-sm text-gray-600 mb-2">
+                    {isPortuguese ? 'Membro da Comunidade' : 'Community Member'}
+                  </div>
+                  <div className="text-xs text-gray-500">
+                    {isPortuguese ? 'Por mês • Matches & mensagens ilimitadas' : 'Per month • Unlimited matches & messages'}
+                  </div>
+                </div>
               </div>
-              <div className="text-xs text-gray-500">
-                {isPortuguese ? 'Cerca de £2.08 por mês' : 'About £2.08 per month'}
+              
+              {/* Cultural Ambassador */}
+              <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
+                <div className="text-center">
+                  <div className="text-lg font-bold text-gray-900 mb-1">£39.99</div>
+                  <div className="text-sm text-gray-600 mb-1">
+                    {isPortuguese ? 'Embaixador Cultural' : 'Cultural Ambassador'}
+                  </div>
+                  <div className="text-xs text-gray-500">
+                    {isPortuguese ? 'Por mês • Tudo + visibilidade prioritária' : 'Per month • Everything + priority visibility'}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
