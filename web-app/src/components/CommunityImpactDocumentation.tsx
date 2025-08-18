@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { 
-  BuildingOfficeIcon,
+  BuildingOffice2Icon,
   AcademicCapIcon,
   UserGroupIcon,
   HeartIcon,
@@ -97,7 +97,7 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
     futureGoals: 'Expand to support 500+ Portuguese businesses by 2025, establish Portugal-UK trade office, and create £5M Portuguese investment fund.',
     futureGoalsPortuguese: 'Expandir para apoiar 500+ negócios portugueses até 2025, estabelecer escritório comercial Portugal-Reino Unido e criar fundo de investimento português de £5M.',
     mediaRecognition: ['BBC London Portuguese Business Feature', 'Portuguese Embassy Newsletter', 'London Chamber of Commerce Spotlight'],
-    icon: BuildingOfficeIcon,
+    icon: BuildingOffice2Icon,
     color: 'primary'
   },
   {

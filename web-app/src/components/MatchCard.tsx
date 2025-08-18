@@ -23,7 +23,8 @@ import {
   Stethoscope,
   Plane,
   Goal,
-  Wine
+  Wine,
+  Sparkles
 } from 'lucide-react'
 
 interface UserProfile {
@@ -200,78 +201,101 @@ export default function MatchCard({ match, onLike, onPass, isLiking, disabled }:
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.9 }}
-      className={`bg-white rounded-xl shadow-lg overflow-hidden ${disabled ? 'opacity-50' : ''}`}
+      whileHover={{ scale: 1.02, y: -4 }}
+      className={`bg-white/90 backdrop-blur-lg rounded-2xl shadow-xl border border-white/60 overflow-hidden transition-all duration-300 ${disabled ? 'opacity-50' : 'hover:shadow-2xl'}`}
     >
-      {/* Profile Image */}
-      <div className="relative h-64 bg-neutral-100">
+      {/* Enhanced Profile Image */}
+      <div className="relative h-56 sm:h-64 bg-gradient-to-br from-neutral-100 to-neutral-200 overflow-hidden">
         <img
           src={matchedUser.profilePictureUrl}
           alt={matchedUser.firstName}
-          className={`w-full h-full object-cover transition-opacity duration-300 ${
-            imageLoaded ? 'opacity-100' : 'opacity-0'
+          className={`w-full h-full object-cover transition-all duration-500 ${
+            imageLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
           }`}
           onLoad={() => setImageLoaded(true)}
         />
         
-        {/* Compatibility Score */}
-        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1">
-          <span className="text-sm font-semibold text-primary-600">
-            {compatibilityScore}% {t.compatibility}
-          </span>
+        {/* Gradient overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+        
+        {/* Enhanced Compatibility Score */}
+        <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md rounded-2xl px-3 py-2 shadow-lg border border-white/40">
+          <div className="flex items-center gap-2">
+            <div className={`w-3 h-3 rounded-full ${
+              compatibilityScore >= 90 ? 'bg-green-500' :
+              compatibilityScore >= 80 ? 'bg-yellow-500' :
+              compatibilityScore >= 70 ? 'bg-orange-500' : 'bg-red-500'
+            }`} />
+            <span className="text-sm font-bold text-neutral-800">
+              {compatibilityScore}%
+            </span>
+          </div>
         </div>
 
-        {/* Membership Badge */}
-        <div className={`absolute top-4 right-4 ${membershipBadge.color} rounded-full px-2 py-1 flex items-center gap-1`}>
-          <MembershipIcon className="h-3 w-3" />
-          <span className="text-xs font-medium">{membershipBadge.label}</span>
+        {/* Enhanced Membership Badge */}
+        <div className={`absolute top-3 right-3 ${membershipBadge.color} rounded-xl px-3 py-2 flex items-center gap-2 shadow-lg backdrop-blur-md`}>
+          <MembershipIcon className="h-4 w-4" />
+          <span className="text-xs font-bold">{membershipBadge.label}</span>
         </div>
 
-        {/* Verification Badge */}
+        {/* Enhanced Verification Badge */}
         {matchedUser.isVerified && (
-          <div className="absolute bottom-4 right-4 bg-secondary-500 text-white rounded-full p-2">
+          <div className="absolute bottom-3 right-3 bg-secondary-500 text-white rounded-xl p-2 shadow-lg">
             <Shield className="h-4 w-4" />
           </div>
         )}
 
-        {/* Cultural Background Flag */}
-        <div className="absolute bottom-4 left-4 text-2xl">
+        {/* Enhanced Cultural Background Flag */}
+        <div className="absolute bottom-3 left-3 text-3xl drop-shadow-lg">
           {getFlagEmoji(matchedUser.culturalBackground)}
         </div>
       </div>
 
-      {/* Profile Content */}
-      <div className="p-6">
-        {/* Basic Info */}
-        <div className="mb-4">
-          <div className="flex items-center justify-between mb-2">
-            <h3 className="text-xl font-bold text-neutral-900">
-              {matchedUser.firstName} {matchedUser.lastName}
-            </h3>
-            {matchedUser.age && (
-              <span className="text-sm text-neutral-600">
-                {matchedUser.age} {t.yearsOld}
-              </span>
-            )}
-          </div>
-          
-          <div className="flex items-center gap-4 text-sm text-neutral-600 mb-2">
-            <div className="flex items-center gap-1">
-              <MapPin className="h-4 w-4" />
-              {matchedUser.location}
+      {/* Enhanced Profile Content */}
+      <div className="p-4 sm:p-6">
+        {/* Enhanced Basic Info */}
+        <div className="mb-6">
+          <div className="flex items-start justify-between mb-3">
+            <div className="flex-1">
+              <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 leading-tight">
+                {matchedUser.firstName} {matchedUser.lastName}
+              </h3>
+              {matchedUser.relationshipGoal && (
+                <div className="mt-1">
+                  <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary-50 text-primary-700">
+                    {t.lookingFor}: {getGoalLabel(matchedUser.relationshipGoal)}
+                  </span>
+                </div>
+              )}
             </div>
-            {matchedUser.professionalBackground && (
-              <div className="flex items-center gap-1">
-                <Briefcase className="h-4 w-4" />
-                {matchedUser.professionalBackground}
+            {matchedUser.age && (
+              <div className="text-right">
+                <span className="text-lg font-bold text-neutral-700">
+                  {matchedUser.age}
+                </span>
+                <span className="text-xs text-neutral-500 block">
+                  {t.yearsOld}
+                </span>
               </div>
             )}
           </div>
-
-          {matchedUser.relationshipGoal && (
-            <div className="text-sm text-neutral-600 mb-3">
-              {t.lookingFor}: <span className="font-medium">{getGoalLabel(matchedUser.relationshipGoal)}</span>
+          
+          <div className="grid grid-cols-1 gap-2 text-sm">
+            <div className="flex items-center gap-2 text-neutral-600">
+              <div className="w-5 h-5 bg-primary-100 rounded-lg flex items-center justify-center">
+                <MapPin className="h-3 w-3 text-primary-600" />
+              </div>
+              <span className="font-medium">{matchedUser.location}</span>
             </div>
-          )}
+            {matchedUser.professionalBackground && (
+              <div className="flex items-center gap-2 text-neutral-600">
+                <div className="w-5 h-5 bg-secondary-100 rounded-lg flex items-center justify-center">
+                  <Briefcase className="h-3 w-3 text-secondary-600" />
+                </div>
+                <span className="font-medium">{matchedUser.professionalBackground}</span>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Bio */}
@@ -291,80 +315,127 @@ export default function MatchCard({ match, onLike, onPass, isLiking, disabled }:
           </div>
         )}
 
-        {/* Compatibility Breakdown */}
-        <div className="mb-4 space-y-2">
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-neutral-600">{t.cultural}</span>
-            <span className={`text-xs px-2 py-1 rounded-full ${getCompatibilityColor(culturalCompatibility)}`}>
-              {culturalCompatibility}%
-            </span>
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-neutral-600">{t.professional}</span>
-            <span className={`text-xs px-2 py-1 rounded-full ${getCompatibilityColor(professionalCompatibility)}`}>
-              {professionalCompatibility}%
-            </span>
-          </div>
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-neutral-600">{t.location}</span>
-            <span className={`text-xs px-2 py-1 rounded-full ${getCompatibilityColor(locationCompatibility)}`}>
-              {locationCompatibility}%
-            </span>
+        {/* Enhanced Compatibility Breakdown */}
+        <div className="mb-6">
+          <h4 className="text-sm font-bold text-neutral-900 mb-3 flex items-center gap-2">
+            <div className="w-4 h-4 bg-primary-500 rounded-full" />
+            {t.compatibility}
+          </h4>
+          <div className="space-y-3">
+            <div className="bg-neutral-50 rounded-xl p-3">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm font-medium text-neutral-700">{t.cultural}</span>
+                <span className={`text-xs font-bold px-3 py-1 rounded-full ${getCompatibilityColor(culturalCompatibility)}`}>
+                  {culturalCompatibility}%
+                </span>
+              </div>
+              <div className="w-full bg-neutral-200 rounded-full h-2">
+                <div 
+                  className="bg-gradient-to-r from-secondary-400 to-secondary-500 h-2 rounded-full transition-all duration-500"
+                  style={{ width: `${culturalCompatibility}%` }}
+                />
+              </div>
+            </div>
+            
+            <div className="bg-neutral-50 rounded-xl p-3">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm font-medium text-neutral-700">{t.professional}</span>
+                <span className={`text-xs font-bold px-3 py-1 rounded-full ${getCompatibilityColor(professionalCompatibility)}`}>
+                  {professionalCompatibility}%
+                </span>
+              </div>
+              <div className="w-full bg-neutral-200 rounded-full h-2">
+                <div 
+                  className="bg-gradient-to-r from-accent-400 to-accent-500 h-2 rounded-full transition-all duration-500"
+                  style={{ width: `${professionalCompatibility}%` }}
+                />
+              </div>
+            </div>
+            
+            <div className="bg-neutral-50 rounded-xl p-3">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm font-medium text-neutral-700">{t.location}</span>
+                <span className={`text-xs font-bold px-3 py-1 rounded-full ${getCompatibilityColor(locationCompatibility)}`}>
+                  {locationCompatibility}%
+                </span>
+              </div>
+              <div className="w-full bg-neutral-200 rounded-full h-2">
+                <div 
+                  className="bg-gradient-to-r from-coral-400 to-coral-500 h-2 rounded-full transition-all duration-500"
+                  style={{ width: `${locationCompatibility}%` }}
+                />
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Shared Interests */}
+        {/* Enhanced Shared Interests */}
         {sharedInterests.length > 0 && (
-          <div className="mb-4">
-            <h4 className="text-sm font-semibold text-neutral-900 mb-2">{t.sharedInterests}</h4>
-            <div className="flex flex-wrap gap-2">
-              {sharedInterests.slice(0, 3).map((interest) => {
+          <div className="mb-6">
+            <h4 className="text-sm font-bold text-neutral-900 mb-3 flex items-center gap-2">
+              <div className="w-4 h-4 bg-accent-500 rounded-full" />
+              {t.sharedInterests}
+            </h4>
+            <div className="grid grid-cols-2 gap-2">
+              {sharedInterests.slice(0, 4).map((interest) => {
                 const InterestIcon = getInterestIcon(interest)
                 return (
-                  <div
+                  <motion.div
                     key={interest}
-                    className="flex items-center gap-1 bg-primary-50 text-primary-700 px-2 py-1 rounded-full text-xs"
+                    whileHover={{ scale: 1.05 }}
+                    className="flex items-center gap-2 bg-gradient-to-r from-primary-50 to-secondary-50 border border-primary-200/50 text-primary-700 px-3 py-2 rounded-xl text-xs font-medium transition-all hover:shadow-md"
                   >
-                    <InterestIcon className="h-3 w-3" />
-                    {interest.replace('_', ' ')}
-                  </div>
+                    <InterestIcon className="h-3 w-3 flex-shrink-0" />
+                    <span className="truncate">{interest.replace('_', ' ')}</span>
+                  </motion.div>
                 )
               })}
-              {sharedInterests.length > 3 && (
-                <div className="bg-neutral-100 text-neutral-600 px-2 py-1 rounded-full text-xs">
-                  +{sharedInterests.length - 3} more
+              {sharedInterests.length > 4 && (
+                <div className="flex items-center justify-center bg-neutral-100 text-neutral-600 px-3 py-2 rounded-xl text-xs font-medium col-span-2">
+                  +{sharedInterests.length - 4} more interests
                 </div>
               )}
             </div>
           </div>
         )}
 
-        {/* Match Reason */}
-        <div className="mb-6 p-3 bg-accent-50 rounded-lg">
-          <p className="text-sm text-accent-800 italic">
-            "{matchReason}"
-          </p>
+        {/* Enhanced Match Reason */}
+        <div className="mb-6 p-4 bg-gradient-to-r from-accent-50 via-secondary-50 to-primary-50 border border-accent-200/50 rounded-2xl">
+          <div className="flex items-start gap-3">
+            <div className="w-6 h-6 bg-accent-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <Sparkles className="h-3 w-3 text-white" />
+            </div>
+            <p className="text-sm text-accent-800 font-medium leading-relaxed">
+              "{matchReason}"
+            </p>
+          </div>
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex gap-3">
-          <button
+        {/* Enhanced Action Buttons */}
+        <div className="flex gap-3 mt-6">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             onClick={onPass}
             disabled={disabled || isLiking}
-            className="flex-1 flex items-center justify-center gap-2 bg-neutral-100 text-neutral-700 py-3 rounded-xl font-medium hover:bg-neutral-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex-1 flex items-center justify-center gap-2 bg-neutral-100 hover:bg-neutral-200 text-neutral-700 py-4 rounded-2xl font-bold transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
           >
             <X className="h-5 w-5" />
-            {t.pass}
-          </button>
+            <span className="text-sm sm:text-base">{t.pass}</span>
+          </motion.button>
           
-          <button
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             onClick={onLike}
             disabled={disabled || isLiking}
-            className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-action-500 to-coral-500 text-white py-3 rounded-xl font-medium hover:from-action-600 hover:to-coral-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-action-500 via-coral-500 to-secondary-500 hover:from-action-600 hover:via-coral-600 hover:to-secondary-600 text-white py-4 rounded-2xl font-bold transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
           >
-            <Heart className={`h-5 w-5 ${isLiking ? 'animate-pulse' : ''}`} />
-            {isLiking ? '...' : t.like}
-          </button>
+            <Heart className={`h-5 w-5 ${isLiking ? 'animate-bounce' : ''}`} />
+            <span className="text-sm sm:text-base">
+              {isLiking ? '...' : t.like}
+            </span>
+          </motion.button>
         </div>
 
         {disabled && (

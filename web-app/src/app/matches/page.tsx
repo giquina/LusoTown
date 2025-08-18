@@ -374,22 +374,32 @@ export default function MatchesPage({}: MatchesPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50 pt-20">
-      {/* Header */}
-      <div className="bg-white border-b border-neutral-200">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-secondary-50/20 to-accent-50/20 pt-20">
+      {/* Enhanced Header */}
+      <div className="bg-gradient-to-r from-white via-secondary-50/30 to-accent-50/30 border-b border-neutral-200 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0">
+          <div className="absolute top-8 right-8 w-24 h-24 bg-gradient-to-br from-secondary-200/30 to-accent-200/30 rounded-full opacity-60 animate-pulse" />
+          <div className="absolute bottom-8 left-8 w-16 h-16 bg-gradient-to-tr from-action-200/30 to-coral-200/30 rounded-full opacity-40" />
+        </div>
+        
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
           <div className="text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="flex items-center justify-center gap-3 mb-4"
+              className="flex items-center justify-center gap-3 mb-6"
             >
-              <Heart className="h-8 w-8 text-primary-500" />
-              <h1 className="text-3xl lg:text-4xl font-bold text-neutral-900">
+              <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center shadow-lg">
+                <Heart className="h-6 w-6 text-white" />
+              </div>
+              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-neutral-900 via-primary-700 to-secondary-700 bg-clip-text text-transparent">
                 {currentTranslations.title}
               </h1>
               {hasActiveSubscription && (
-                <Crown className="h-6 w-6 text-premium-500" />
+                <div className="w-8 h-8 bg-gradient-to-br from-premium-500 to-accent-500 rounded-full flex items-center justify-center">
+                  <Crown className="h-5 w-5 text-white" />
+                </div>
               )}
             </motion.div>
             
@@ -397,7 +407,7 @@ export default function MatchesPage({}: MatchesPageProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-neutral-600 mb-6"
+              className="text-xl text-neutral-700 mb-8 max-w-3xl mx-auto leading-relaxed"
             >
               {currentTranslations.subtitle}
             </motion.p>
@@ -456,22 +466,40 @@ export default function MatchesPage({}: MatchesPageProps) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {currentTab === 'discover' && (
           <div className="space-y-8">
-            {/* Filters Bar */}
-            <div className="flex items-center justify-between bg-white p-4 rounded-xl shadow-sm">
-              <button
-                onClick={() => setShowFilters(!showFilters)}
-                className="flex items-center gap-2 text-neutral-600 hover:text-neutral-900"
-              >
-                <Filter className="h-5 w-5" />
-                {currentTranslations.filters}
-              </button>
-              
-              {!hasActiveSubscription && (
-                <div className="text-sm text-neutral-500">
-                  {hasReachedDailyLimit ? currentTranslations.upgradeForMore : `${DAILY_FREE_MATCHES - dailyMatchesUsed} matches remaining today`}
-                </div>
-              )}
-            </div>
+            {/* Enhanced Filters Bar */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="bg-white/80 backdrop-blur-lg border border-white/60 p-4 sm:p-6 rounded-2xl shadow-lg"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <button
+                  onClick={() => setShowFilters(!showFilters)}
+                  className="flex items-center gap-3 text-neutral-700 hover:text-primary-600 transition-colors font-medium"
+                >
+                  <div className="w-8 h-8 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-lg flex items-center justify-center">
+                    <Filter className="h-4 w-4 text-primary-600" />
+                  </div>
+                  {currentTranslations.filters}
+                  <span className={`ml-2 text-xs px-2 py-1 rounded-full transition-all ${
+                    showFilters 
+                      ? 'bg-primary-100 text-primary-700' 
+                      : 'bg-neutral-100 text-neutral-600'
+                  }`}>
+                    {showFilters ? 'Hide' : 'Show'}
+                  </span>
+                </button>
+                
+                {!hasActiveSubscription && (
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-action-500 rounded-full animate-pulse" />
+                    <span className="text-sm text-neutral-600 font-medium">
+                      {hasReachedDailyLimit ? currentTranslations.upgradeForMore : `${DAILY_FREE_MATCHES - dailyMatchesUsed} matches remaining today`}
+                    </span>
+                  </div>
+                )}
+              </div>
+            </motion.div>
 
             {/* Filters Panel */}
             {showFilters && (
@@ -482,26 +510,43 @@ export default function MatchesPage({}: MatchesPageProps) {
               />
             )}
 
-            {/* Matches Grid */}
+            {/* Enhanced Matches Grid */}
             {loading ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
                 {[...Array(6)].map((_, i) => (
-                  <div key={i} className="bg-white rounded-xl h-96 animate-pulse" />
-                ))}
-              </div>
-            ) : availableMatches.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {availableMatches.map((match) => (
-                  <MatchCard
-                    key={match.id}
-                    match={match}
-                    onLike={() => handleLike(match.id)}
-                    onPass={() => handlePass(match.id)}
-                    isLiking={isLiking === match.id}
-                    disabled={hasReachedDailyLimit}
+                  <motion.div 
+                    key={i} 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: i * 0.1 }}
+                    className="bg-white rounded-2xl h-96 animate-pulse shadow-lg"
                   />
                 ))}
               </div>
+            ) : availableMatches.length > 0 ? (
+              <motion.div 
+                className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+              >
+                {availableMatches.map((match, index) => (
+                  <motion.div
+                    key={match.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <MatchCard
+                      match={match}
+                      onLike={() => handleLike(match.id)}
+                      onPass={() => handlePass(match.id)}
+                      isLiking={isLiking === match.id}
+                      disabled={hasReachedDailyLimit}
+                    />
+                  </motion.div>
+                ))}
+              </motion.div>
             ) : (
               <div className="text-center py-12">
                 <Heart className="h-16 w-16 text-neutral-300 mx-auto mb-4" />
