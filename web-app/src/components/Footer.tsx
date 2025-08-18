@@ -43,6 +43,7 @@ const getFooterLinks = (t: any) => ({
   ],
   legal: [
     { name: 'Community Guidelines', href: '/community-guidelines' },
+  { name: 'Rules', href: '/rules' },
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },
     { name: 'Community Safety', href: '/safety' },
