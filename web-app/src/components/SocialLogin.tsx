@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react'
 import SocialLoginButton from './SocialLoginButton'
+import { supabase } from '@/lib/supabase'
+import toast from 'react-hot-toast'
 
 interface SocialLoginProps {
   mode: 'login' | 'signup'
@@ -10,18 +12,45 @@ interface SocialLoginProps {
 export default function SocialLogin({ mode }: SocialLoginProps) {
   const [loadingPlatform, setLoadingPlatform] = useState<string | null>(null)
 
-  const handleSocialLogin = (platform: string) => {
+  const handleSocialLogin = async (platform: 'Google' | 'Facebook' | 'Instagram' | 'LinkedIn') => {
+    // Instagram OAuth is not supported via Supabase; show notice.
+    if (platform === 'Instagram') {
+      toast.error('Instagram login is coming soon');
+      return;
+    }
+
+    // Map UI platform names to Supabase providers
+    const providerMap: Record<string, Parameters<typeof supabase.auth.signInWithOAuth>[0]['provider']> = {
+      Google: 'google',
+      Facebook: 'facebook',
+      LinkedIn: 'linkedin_oidc', // Requires LinkedIn OIDC configured in Supabase
+    }
+
+    const provider = providerMap[platform]
+    if (!provider) {
+      toast.error('Unsupported provider')
+      return
+    }
+
     setLoadingPlatform(platform)
-    
-    // Placeholder for actual OAuth integration
-    console.log(`${mode === 'login' ? 'Logging in' : 'Signing up'} with ${platform}`)
-    
-    // Simulate loading state
-    setTimeout(() => {
+    try {
+      const redirectTo = typeof window !== 'undefined' ? `${window.location.origin}/dashboard` : undefined
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider,
+        options: {
+          redirectTo,
+        },
+      })
+      if (error) {
+        toast.error(error.message)
+        setLoadingPlatform(null)
+      }
+      // On success, Supabase will redirect; no further action here.
+    } catch (e) {
+      console.error('Social login error:', e)
+      toast.error('Failed to start social login')
       setLoadingPlatform(null)
-      // Here you would redirect to OAuth provider or handle the authentication
-      console.log(`${platform} authentication would be implemented here`)
-    }, 1500)
+    }
   }
 
   return (

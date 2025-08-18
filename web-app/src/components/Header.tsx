@@ -64,6 +64,7 @@ const getMoreDropdownLinks = (t: any) => ({
     { name: "Transport & SIA", href: "/transport" },
     { name: "Find Your Match", href: "/matches" },
   { name: "Live TV", href: "/live" },
+  { name: "Streaming — Stream with us", href: "/streaming" },
   ],
   support: [
     { name: "How It Works", href: "/how-it-works" },
@@ -173,31 +174,76 @@ export default function Header() {
                           initial={{ opacity: 0, y: -10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
-                          className="absolute top-full left-0 mt-2 w-[320px] bg-white rounded-2xl shadow-2xl border border-gray-200 py-4 z-50"
+                          className="absolute top-full left-0 mt-2 w-[560px] bg-white rounded-2xl shadow-2xl border border-gray-200 py-6 z-50"
                         >
-                          <div className="px-4">
-                            <ul className="space-y-2">
-                              <li>
-                                <a
-                                  href="/transport"
-                                  className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-3 py-3 rounded-lg font-medium transition-colors duration-200"
-                                >
-                                  Transport Services
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  href="/"
-                                  className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-3 py-3 rounded-lg font-medium transition-colors duration-200"
-                                >
-                                  Platform Services
-                                </a>
-                              </li>
-                            </ul>
+                          <div className="grid grid-cols-2 gap-6 px-6">
+                            <div>
+                              <h3 className="text-sm font-semibold text-gray-900 mb-3">
+                                Tours & Experiences
+                              </h3>
+                              <ul className="space-y-2">
+                                <li>
+                                  <a
+                                    href="/london-tours"
+                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
+                                  >
+                                    All London Tours
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    href="/services#cultural-tours"
+                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
+                                  >
+                                    Cultural Tours
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    href="/services#executive-transport"
+                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
+                                  >
+                                    Executive Transport
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <div>
+                              <h3 className="text-sm font-semibold text-gray-900 mb-3">
+                                Transport & Security
+                              </h3>
+                              <ul className="space-y-2">
+                                <li>
+                                  <a
+                                    href="/transport"
+                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
+                                  >
+                                    Transport & SIA
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    href="/services#close-protection"
+                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
+                                  >
+                                    Close Protection
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    href="/services"
+                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
+                                  >
+                                    All Services
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
                           </div>
-                          <div className="px-4 pt-3 border-t border-gray-100 mt-3">
+                          <div className="px-6 pt-4">
                             <p className="text-xs text-gray-500">
-                              Connect with Portuguese speakers in London & UK. Unidos pela Língua.
+                              Explore authentic Portuguese-led tours and
+                              transport in London. Unidos pela Língua.
                             </p>
                           </div>
                         </motion.div>
@@ -257,7 +303,7 @@ export default function Header() {
 
                       {/* Community Links */}
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-primary-600">
+                        <h3 className="text-lg font-semibold mb-4 text-primary-600">
                           Community
                         </h3>
                         <ul className="space-y-2">
@@ -276,7 +322,7 @@ export default function Header() {
 
                       {/* Services Links */}
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-premium-600">
+                        <h3 className="text-lg font-semibold mb-4 text-premium-600">
                           Services
                         </h3>
                         <ul className="space-y-2">
@@ -303,7 +349,7 @@ export default function Header() {
 
                       {/* Support & Company Links */}
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-secondary-600">
+                        <h3 className="text-lg font-semibold mb-4 text-secondary-600">
                           Support
                         </h3>
                         <ul className="space-y-2 mb-6">
@@ -319,7 +365,7 @@ export default function Header() {
                           ))}
                         </ul>
 
-                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-accent-600">
+                        <h3 className="text-lg font-semibold mb-4 text-accent-600">
                           Company
                         </h3>
                         <ul className="space-y-2">
@@ -338,7 +384,7 @@ export default function Header() {
 
                       {/* Legal & Contact */}
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-gray-700">
+                        <h3 className="text-lg font-semibold mb-4 text-gray-700">
                           Legal & Contact
                         </h3>
                         <ul className="space-y-2 mb-6">
@@ -553,7 +599,9 @@ export default function Header() {
                 <div className="px-4 pt-6 pb-4 space-y-2">
                   {/* Quick Actions Section */}
                   <div className="pb-4 border-b border-gray-200">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-3">Quick Actions</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                      Quick Actions
+                    </h3>
                     <div className="space-y-2">
                       <CartButton className="w-full justify-start min-h-[44px]" />
                       <SavedItemsButton className="w-full justify-start min-h-[44px]" />
@@ -562,12 +610,14 @@ export default function Header() {
 
                   {/* Main Navigation Links */}
                   <div className="pb-4 border-b border-gray-200">
-                    <h3 className="text-lg font-semibold text-primary-600 mb-3">Navigation</h3>
+                    <h3 className="text-lg font-semibold text-primary-600 mb-3">
+                      Navigation
+                    </h3>
                     {navigationLinks.map((link) => (
                       <a
                         key={link.name}
                         href={link.href}
-                        className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px] flex items-center"
+                        className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px] flex items-center"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {link.name}
@@ -577,31 +627,33 @@ export default function Header() {
 
                   {/* Tours & Transport Section */}
                   <div className="pb-4 border-b border-gray-200">
-                    <h3 className="text-lg font-semibold text-premium-600 mb-3">Tours & Transport</h3>
+                    <h3 className="text-lg font-semibold text-premium-600 mb-3">
+                      Tours & Transport
+                    </h3>
                     <a
                       href="/services#cultural-tours"
-                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
+                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Cultural Tours
                     </a>
                     <a
                       href="/services#executive-transport"
-                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
+                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Executive Transport
                     </a>
                     <a
                       href="/transport"
-                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
+                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Transport & SIA
                     </a>
                     <a
                       href="/services#close-protection"
-                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
+                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Close Protection
@@ -610,7 +662,9 @@ export default function Header() {
 
                   {/* Services Section */}
                   <div className="pb-4 border-b border-gray-200">
-                    <h3 className="text-lg font-semibold text-secondary-600 mb-3">Services</h3>
+                    <h3 className="text-lg font-semibold text-secondary-600 mb-3">
+                      Services
+                    </h3>
                     <a
                       href="/matches"
                       className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center gap-2"
@@ -626,14 +680,21 @@ export default function Header() {
                     </a>
                     <a
                       href="/live"
-                      className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center"
+                      className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Live TV
                     </a>
                     <a
+                      href="/streaming"
+                      className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Streaming — Stream with us
+                    </a>
+                    <a
                       href="/services"
-                      className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center"
+                      className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Premium Services
@@ -642,12 +703,14 @@ export default function Header() {
 
                   {/* Community Section */}
                   <div className="pb-4 border-b border-gray-200">
-                    <h3 className="text-lg font-semibold text-accent-600 mb-3">Community</h3>
+                    <h3 className="text-lg font-semibold text-accent-600 mb-3">
+                      Community
+                    </h3>
                     {moreDropdownLinks.community.slice(0, 6).map((link) => (
                       <a
                         key={link.name}
                         href={link.href}
-                        className="text-gray-700 hover:text-accent-600 hover:bg-accent-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-accent-200 min-h-[44px] flex items-center"
+                        className="text-gray-700 hover:text-accent-600 hover:bg-accent-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-accent-200 min-h-[44px] flex items-center"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {link.name}
@@ -657,12 +720,14 @@ export default function Header() {
 
                   {/* Support & Company Section */}
                   <div className="pb-4 border-b border-gray-200">
-                    <h3 className="text-lg font-semibold text-gray-700 mb-3">Support & Company</h3>
+                    <h3 className="text-lg font-semibold text-gray-700 mb-3">
+                      Support & Company
+                    </h3>
                     {moreDropdownLinks.support.map((link) => (
                       <a
                         key={link.name}
                         href={link.href}
-                        className="text-gray-700 hover:text-gray-900 hover:bg-gray-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-gray-200 min-h-[44px] flex items-center"
+                        className="text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-gray-200 min-h-[44px] flex items-center"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {link.name}
@@ -672,7 +737,7 @@ export default function Header() {
                       <a
                         key={link.name}
                         href={link.href}
-                        className="text-gray-700 hover:text-gray-900 hover:bg-gray-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-gray-200 min-h-[44px] flex items-center"
+                        className="text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-gray-200 min-h-[44px] flex items-center"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {link.name}
@@ -770,10 +835,15 @@ export default function Header() {
                         <div className="mt-4 px-0">
                           <a
                             href="/signup"
-                            className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transform hover:scale-[1.02] active:scale-95 transition-all duration-200 w-full text-center block min-h-[44px] flex items-center justify-center"
+                            className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transform hover:scale-[1.02] active:scale-95 transition-all duration-200 w-full text-center min-h-[44px] flex items-center justify-center"
                             onClick={() => setMobileMenuOpen(false)}
                           >
-                            <span className="text-base">{t("nav.join-membership", "Join Now").toUpperCase()}</span>
+                            <span className="text-base">
+                              {t(
+                                "nav.join-membership",
+                                "Join Now"
+                              ).toUpperCase()}
+                            </span>
                           </a>
                         </div>
                       </>

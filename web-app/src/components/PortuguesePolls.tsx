@@ -1,170 +1,189 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { 
-  ChartBarIcon, 
-  PlayIcon, 
-  StopIcon, 
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  ChartBarIcon,
+  PlayIcon,
+  StopIcon,
   PlusIcon,
   XMarkIcon,
-  CheckCircleIcon
-} from '@heroicons/react/24/outline'
-import { BarChart3, Users, Clock, Trophy } from 'lucide-react'
-import { useLanguage } from '@/context/LanguageContext'
-import { PortuguesePoll, ChatUser } from '@/types/chat'
-import { socketManager } from '@/lib/socket-client'
+  CheckCircleIcon,
+} from "@heroicons/react/24/outline";
+import { BarChart3, Users, Clock, Trophy } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import { PortuguesePoll, ChatUser } from "@/types/chat";
+import { socketManager } from "@/lib/socket-client";
 
 interface PortuguesePollsProps {
-  currentUser: ChatUser | null
-  canCreatePolls: boolean
-  streamId: string
-  className?: string
+  currentUser: ChatUser | null;
+  canCreatePolls: boolean;
+  streamId: string;
+  className?: string;
 }
 
-export default function PortuguesePolls({ 
-  currentUser, 
-  canCreatePolls, 
-  streamId, 
-  className = '' 
+export default function PortuguesePolls({
+  currentUser,
+  canCreatePolls,
+  streamId,
+  className = "",
 }: PortuguesePollsProps) {
-  const { language } = useLanguage()
-  const [activePolls, setActivePolls] = useState<PortuguesePoll[]>([])
-  const [completedPolls, setCompletedPolls] = useState<PortuguesePoll[]>([])
-  const [showCreatePoll, setShowCreatePoll] = useState(false)
+  const { language } = useLanguage();
+  const [activePolls, setActivePolls] = useState<PortuguesePoll[]>([]);
+  const [completedPolls, setCompletedPolls] = useState<PortuguesePoll[]>([]);
+  const [showCreatePoll, setShowCreatePoll] = useState(false);
   const [newPoll, setNewPoll] = useState({
-    question: '',
-    options: ['', ''],
+    question: "",
+    options: ["", ""],
     duration: 60,
-    allowMultiple: false
-  })
+    allowMultiple: false,
+  });
 
   // Portuguese cultural poll templates
   const POLL_TEMPLATES = [
     {
-      question: language === 'pt' ? 'Qual o melhor prato português?' : 'What\'s the best Portuguese dish?',
-      options: ['Pastéis de Nata', 'Bacalhau', 'Francesinha', 'Caldo Verde']
+      question:
+        language === "pt"
+          ? "Qual o melhor prato português?"
+          : "What's the best Portuguese dish?",
+      options: ["Pastéis de Nata", "Bacalhau", "Francesinha", "Caldo Verde"],
     },
     {
-      question: language === 'pt' ? 'Melhor música portuguesa?' : 'Best Portuguese music?',
-      options: ['Fado', 'Pimba', 'Rock Português', 'Música Popular']
+      question:
+        language === "pt"
+          ? "Melhor música portuguesa?"
+          : "Best Portuguese music?",
+      options: ["Fado", "Pimba", "Rock Português", "Música Popular"],
     },
     {
-      question: language === 'pt' ? 'Cidade portuguesa favorita?' : 'Favorite Portuguese city?',
-      options: ['Lisboa', 'Porto', 'Coimbra', 'Aveiro']
+      question:
+        language === "pt"
+          ? "Cidade portuguesa favorita?"
+          : "Favorite Portuguese city?",
+      options: ["Lisboa", "Porto", "Coimbra", "Aveiro"],
     },
     {
-      question: language === 'pt' ? 'Melhor jogador português?' : 'Best Portuguese player?',
-      options: ['Cristiano Ronaldo', 'Eusébio', 'Luís Figo', 'Rui Costa']
+      question:
+        language === "pt"
+          ? "Melhor jogador português?"
+          : "Best Portuguese player?",
+      options: ["Cristiano Ronaldo", "Eusébio", "Luís Figo", "Rui Costa"],
     },
     {
-      question: language === 'pt' ? 'Tradição favorita?' : 'Favorite tradition?',
-      options: ['Santos Populares', 'Festa do Avante', 'Romarias', 'Vindimas']
-    }
-  ]
+      question:
+        language === "pt" ? "Tradição favorita?" : "Favorite tradition?",
+      options: ["Santos Populares", "Festa do Avante", "Romarias", "Vindimas"],
+    },
+  ];
 
   useEffect(() => {
     // Listen for poll updates from socket
     socketManager.onPollCreated((poll: PortuguesePoll) => {
-      setActivePolls(prev => [...prev, poll])
-    })
+      setActivePolls((prev) => [...prev, poll]);
+    });
 
     socketManager.onPollUpdated((poll: PortuguesePoll) => {
       if (poll.isActive) {
-        setActivePolls(prev => prev.map(p => p.id === poll.id ? poll : p))
+        setActivePolls((prev) =>
+          prev.map((p) => (p.id === poll.id ? poll : p))
+        );
       } else {
-        setActivePolls(prev => prev.filter(p => p.id !== poll.id))
-        setCompletedPolls(prev => [poll, ...prev.slice(0, 9)]) // Keep last 10 completed polls
+        setActivePolls((prev) => prev.filter((p) => p.id !== poll.id));
+        setCompletedPolls((prev) => [poll, ...prev.slice(0, 9)]); // Keep last 10 completed polls
       }
-    })
+    });
 
     return () => {
-      socketManager.removeAllListeners()
-    }
-  }, [])
+      socketManager.removeAllListeners();
+    };
+  }, []);
 
   const handleCreatePoll = () => {
-    if (!newPoll.question.trim() || newPoll.options.length < 2) return
+    if (!newPoll.question.trim() || newPoll.options.length < 2) return;
 
-    const poll: Omit<PortuguesePoll, 'id' | 'timestamp'> = {
+    const poll: Omit<PortuguesePoll, "id" | "timestamp"> = {
       question: newPoll.question,
       options: newPoll.options
-        .filter(option => option.trim())
+        .filter((option) => option.trim())
         .map((text, index) => ({
           id: `option_${index}`,
           text: text.trim(),
           votes: 0,
-          voters: []
+          voters: [],
         })),
-      createdBy: currentUser?.id || '',
+      createdBy: currentUser?.id || "",
       duration: newPoll.duration,
       isActive: true,
-      allowMultiple: newPoll.allowMultiple
-    }
+      allowMultiple: newPoll.allowMultiple,
+    };
 
-    socketManager.createPoll(poll)
-    
+    socketManager.createPoll(poll);
+
     // Reset form
     setNewPoll({
-      question: '',
-      options: ['', ''],
+      question: "",
+      options: ["", ""],
       duration: 60,
-      allowMultiple: false
-    })
-    setShowCreatePoll(false)
-  }
+      allowMultiple: false,
+    });
+    setShowCreatePoll(false);
+  };
 
   const handleVote = (pollId: string, optionId: string) => {
-    if (!currentUser) return
-    socketManager.votePoll(pollId, optionId)
-  }
+    if (!currentUser) return;
+    socketManager.votePoll(pollId, optionId);
+  };
 
   const addPollOption = () => {
     if (newPoll.options.length < 6) {
-      setNewPoll(prev => ({
+      setNewPoll((prev) => ({
         ...prev,
-        options: [...prev.options, '']
-      }))
+        options: [...prev.options, ""],
+      }));
     }
-  }
+  };
 
   const removePollOption = (index: number) => {
     if (newPoll.options.length > 2) {
-      setNewPoll(prev => ({
+      setNewPoll((prev) => ({
         ...prev,
-        options: prev.options.filter((_, i) => i !== index)
-      }))
+        options: prev.options.filter((_, i) => i !== index),
+      }));
     }
-  }
+  };
 
   const updatePollOption = (index: number, value: string) => {
-    setNewPoll(prev => ({
+    setNewPoll((prev) => ({
       ...prev,
-      options: prev.options.map((option, i) => i === index ? value : option)
-    }))
-  }
+      options: prev.options.map((option, i) => (i === index ? value : option)),
+    }));
+  };
 
   const applyTemplate = (template: any) => {
-    setNewPoll(prev => ({
+    setNewPoll((prev) => ({
       ...prev,
       question: template.question,
-      options: [...template.options]
-    }))
-  }
+      options: [...template.options],
+    }));
+  };
 
   const getTotalVotes = (poll: PortuguesePoll) => {
-    return poll.options.reduce((total, option) => total + option.votes, 0)
-  }
+    return poll.options.reduce((total, option) => total + option.votes, 0);
+  };
 
   const hasUserVoted = (poll: PortuguesePoll) => {
-    if (!currentUser) return false
-    return poll.options.some(option => option.voters.includes(currentUser.id))
-  }
+    if (!currentUser) return false;
+    return poll.options.some((option) =>
+      option.voters.includes(currentUser.id)
+    );
+  };
 
   const getUserVote = (poll: PortuguesePoll) => {
-    if (!currentUser) return null
-    return poll.options.find(option => option.voters.includes(currentUser.id))
-  }
+    if (!currentUser) return null;
+    return poll.options.find((option) =>
+      option.voters.includes(currentUser.id)
+    );
+  };
 
   return (
     <div className={`space-y-4 ${className}`}>
@@ -173,16 +192,16 @@ export default function PortuguesePolls({
         <div className="flex justify-between items-center">
           <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
             <ChartBarIcon className="w-5 h-5 text-primary-600" />
-            {language === 'pt' ? 'Sondagens Portuguesas' : 'Portuguese Polls'}
+            {language === "pt" ? "Sondagens Portuguesas" : "Portuguese Polls"}
           </h3>
-          
+
           <button
             onClick={() => setShowCreatePoll(true)}
             className="flex items-center gap-2 px-3 py-2 bg-primary-600 text-white rounded-lg 
               hover:bg-primary-700 transition-colors text-sm"
           >
             <PlusIcon className="w-4 h-4" />
-            {language === 'pt' ? 'Nova Sondagem' : 'New Poll'}
+            {language === "pt" ? "Nova Sondagem" : "New Poll"}
           </button>
         </div>
       )}
@@ -192,10 +211,11 @@ export default function PortuguesePolls({
         <div className="space-y-4">
           <h4 className="text-sm font-semibold text-gray-700 flex items-center gap-2">
             <PlayIcon className="w-4 h-4 text-green-600" />
-            {language === 'pt' ? 'Sondagens Ativas' : 'Active Polls'} ({activePolls.length})
+            {language === "pt" ? "Sondagens Ativas" : "Active Polls"} (
+            {activePolls.length})
           </h4>
-          
-          {activePolls.map(poll => (
+
+          {activePolls.map((poll) => (
             <PollCard
               key={poll.id}
               poll={poll}
@@ -213,11 +233,11 @@ export default function PortuguesePolls({
         <div className="space-y-4">
           <h4 className="text-sm font-semibold text-gray-700 flex items-center gap-2">
             <Trophy className="w-4 h-4 text-amber-600" />
-            {language === 'pt' ? 'Sondagens Anteriores' : 'Previous Polls'}
+            {language === "pt" ? "Sondagens Anteriores" : "Previous Polls"}
           </h4>
-          
+
           <div className="space-y-3 max-h-64 overflow-y-auto">
-            {completedPolls.slice(0, 3).map(poll => (
+            {completedPolls.slice(0, 3).map((poll) => (
               <PollCard
                 key={poll.id}
                 poll={poll}
@@ -236,10 +256,9 @@ export default function PortuguesePolls({
         <div className="text-center py-8 text-gray-500">
           <BarChart3 className="w-12 h-12 mx-auto mb-3 text-gray-300" />
           <p className="text-sm">
-            {language === 'pt' 
-              ? 'Nenhuma sondagem ainda. Que tal criar uma?'
-              : 'No polls yet. Why not create one?'
-            }
+            {language === "pt"
+              ? "Nenhuma sondagem ainda. Que tal criar uma?"
+              : "No polls yet. Why not create one?"}
           </p>
         </div>
       )}
@@ -252,7 +271,9 @@ export default function PortuguesePolls({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
-            onClick={(e) => e.target === e.currentTarget && setShowCreatePoll(false)}
+            onClick={(e) =>
+              e.target === e.currentTarget && setShowCreatePoll(false)
+            }
           >
             <motion.div
               initial={{ scale: 0.9, y: 20 }}
@@ -263,7 +284,7 @@ export default function PortuguesePolls({
               <div className="p-6">
                 <div className="flex justify-between items-center mb-4">
                   <h3 className="text-lg font-semibold text-gray-900">
-                    {language === 'pt' ? 'Criar Sondagem' : 'Create Poll'}
+                    {language === "pt" ? "Criar Sondagem" : "Create Poll"}
                   </h3>
                   <button
                     onClick={() => setShowCreatePoll(false)}
@@ -276,7 +297,9 @@ export default function PortuguesePolls({
                 {/* Poll Templates */}
                 <div className="mb-4">
                   <h4 className="text-sm font-medium text-gray-700 mb-2">
-                    {language === 'pt' ? 'Modelos Culturais' : 'Cultural Templates'}
+                    {language === "pt"
+                      ? "Modelos Culturais"
+                      : "Cultural Templates"}
                   </h4>
                   <div className="flex gap-2 overflow-x-auto pb-2">
                     {POLL_TEMPLATES.map((template, index) => (
@@ -286,7 +309,7 @@ export default function PortuguesePolls({
                         className="flex-shrink-0 px-3 py-2 bg-primary-50 text-primary-700 
                           rounded-full text-xs hover:bg-primary-100 transition-colors"
                       >
-                        {template.question.split('?')[0]}?
+                        {template.question.split("?")[0]}?
                       </button>
                     ))}
                   </div>
@@ -295,15 +318,21 @@ export default function PortuguesePolls({
                 {/* Question Input */}
                 <div className="mb-4">
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    {language === 'pt' ? 'Pergunta' : 'Question'}
+                    {language === "pt" ? "Pergunta" : "Question"}
                   </label>
                   <input
                     type="text"
                     value={newPoll.question}
-                    onChange={(e) => setNewPoll(prev => ({ ...prev, question: e.target.value }))}
-                    placeholder={language === 'pt' 
-                      ? 'Qual é a sua pergunta?' 
-                      : 'What\'s your question?'
+                    onChange={(e) =>
+                      setNewPoll((prev) => ({
+                        ...prev,
+                        question: e.target.value,
+                      }))
+                    }
+                    placeholder={
+                      language === "pt"
+                        ? "Qual é a sua pergunta?"
+                        : "What's your question?"
                     }
                     className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm 
                       focus:ring-2 focus:ring-primary-500 focus:border-transparent"
@@ -313,7 +342,7 @@ export default function PortuguesePolls({
                 {/* Options */}
                 <div className="mb-4">
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    {language === 'pt' ? 'Opções' : 'Options'}
+                    {language === "pt" ? "Opções" : "Options"}
                   </label>
                   <div className="space-y-2">
                     {newPoll.options.map((option, index) => (
@@ -321,8 +350,12 @@ export default function PortuguesePolls({
                         <input
                           type="text"
                           value={option}
-                          onChange={(e) => updatePollOption(index, e.target.value)}
-                          placeholder={`${language === 'pt' ? 'Opção' : 'Option'} ${index + 1}`}
+                          onChange={(e) =>
+                            updatePollOption(index, e.target.value)
+                          }
+                          placeholder={`${
+                            language === "pt" ? "Opção" : "Option"
+                          } ${index + 1}`}
                           className="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm 
                             focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                         />
@@ -336,7 +369,7 @@ export default function PortuguesePolls({
                         )}
                       </div>
                     ))}
-                    
+
                     {newPoll.options.length < 6 && (
                       <button
                         onClick={addPollOption}
@@ -345,7 +378,7 @@ export default function PortuguesePolls({
                           hover:border-gray-400 transition-colors w-full"
                       >
                         <PlusIcon className="w-4 h-4" />
-                        {language === 'pt' ? 'Adicionar opção' : 'Add option'}
+                        {language === "pt" ? "Adicionar opção" : "Add option"}
                       </button>
                     )}
                   </div>
@@ -355,17 +388,32 @@ export default function PortuguesePolls({
                 <div className="mb-6 space-y-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      {language === 'pt' ? 'Duração (segundos)' : 'Duration (seconds)'}
+                      {language === "pt"
+                        ? "Duração (segundos)"
+                        : "Duration (seconds)"}
                     </label>
                     <select
                       value={newPoll.duration}
-                      onChange={(e) => setNewPoll(prev => ({ ...prev, duration: parseInt(e.target.value) }))}
+                      onChange={(e) =>
+                        setNewPoll((prev) => ({
+                          ...prev,
+                          duration: parseInt(e.target.value),
+                        }))
+                      }
                       className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"
                     >
-                      <option value={30}>30 {language === 'pt' ? 'segundos' : 'seconds'}</option>
-                      <option value={60}>1 {language === 'pt' ? 'minuto' : 'minute'}</option>
-                      <option value={120}>2 {language === 'pt' ? 'minutos' : 'minutes'}</option>
-                      <option value={300}>5 {language === 'pt' ? 'minutos' : 'minutes'}</option>
+                      <option value={30}>
+                        30 {language === "pt" ? "segundos" : "seconds"}
+                      </option>
+                      <option value={60}>
+                        1 {language === "pt" ? "minuto" : "minute"}
+                      </option>
+                      <option value={120}>
+                        2 {language === "pt" ? "minutos" : "minutes"}
+                      </option>
+                      <option value={300}>
+                        5 {language === "pt" ? "minutos" : "minutes"}
+                      </option>
                     </select>
                   </div>
 
@@ -374,11 +422,21 @@ export default function PortuguesePolls({
                       type="checkbox"
                       id="allowMultiple"
                       checked={newPoll.allowMultiple}
-                      onChange={(e) => setNewPoll(prev => ({ ...prev, allowMultiple: e.target.checked }))}
+                      onChange={(e) =>
+                        setNewPoll((prev) => ({
+                          ...prev,
+                          allowMultiple: e.target.checked,
+                        }))
+                      }
                       className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
                     />
-                    <label htmlFor="allowMultiple" className="ml-2 text-sm text-gray-700">
-                      {language === 'pt' ? 'Permitir múltiplas escolhas' : 'Allow multiple choices'}
+                    <label
+                      htmlFor="allowMultiple"
+                      className="ml-2 text-sm text-gray-700"
+                    >
+                      {language === "pt"
+                        ? "Permitir múltiplas escolhas"
+                        : "Allow multiple choices"}
                     </label>
                   </div>
                 </div>
@@ -390,16 +448,19 @@ export default function PortuguesePolls({
                     className="flex-1 px-4 py-2 text-gray-700 bg-gray-100 rounded-lg 
                       hover:bg-gray-200 transition-colors"
                   >
-                    {language === 'pt' ? 'Cancelar' : 'Cancel'}
+                    {language === "pt" ? "Cancelar" : "Cancel"}
                   </button>
                   <button
                     onClick={handleCreatePoll}
-                    disabled={!newPoll.question.trim() || newPoll.options.filter(o => o.trim()).length < 2}
+                    disabled={
+                      !newPoll.question.trim() ||
+                      newPoll.options.filter((o) => o.trim()).length < 2
+                    }
                     className="flex-1 px-4 py-2 bg-primary-600 text-white rounded-lg 
                       hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed 
                       transition-colors"
                   >
-                    {language === 'pt' ? 'Criar Sondagem' : 'Create Poll'}
+                    {language === "pt" ? "Criar Sondagem" : "Create Poll"}
                   </button>
                 </div>
               </div>
@@ -408,35 +469,42 @@ export default function PortuguesePolls({
         )}
       </AnimatePresence>
     </div>
-  )
+  );
 }
 
 // Poll Card Component
-function PollCard({ 
-  poll, 
-  currentUser, 
-  onVote, 
-  language, 
-  isActive 
+function PollCard({
+  poll,
+  currentUser,
+  onVote,
+  language,
+  isActive,
 }: {
-  poll: PortuguesePoll
-  currentUser: ChatUser | null
-  onVote: (pollId: string, optionId: string) => void
-  language: 'en' | 'pt'
-  isActive: boolean
+  poll: PortuguesePoll;
+  currentUser: ChatUser | null;
+  onVote: (pollId: string, optionId: string) => void;
+  language: "en" | "pt";
+  isActive: boolean;
 }) {
-  const totalVotes = poll.options.reduce((sum, option) => sum + option.votes, 0)
-  const hasVoted = currentUser ? poll.options.some(option => option.voters.includes(currentUser.id)) : false
-  const userVote = currentUser ? poll.options.find(option => option.voters.includes(currentUser.id)) : null
+  const totalVotes = poll.options.reduce(
+    (sum, option) => sum + option.votes,
+    0
+  );
+  const hasVoted = currentUser
+    ? poll.options.some((option) => option.voters.includes(currentUser.id))
+    : false;
+  const userVote = currentUser
+    ? poll.options.find((option) => option.voters.includes(currentUser.id))
+    : null;
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       className={`p-4 rounded-xl border-2 ${
-        isActive 
-          ? 'border-primary-200 bg-primary-50' 
-          : 'border-gray-200 bg-gray-50'
+        isActive
+          ? "border-primary-200 bg-primary-50"
+          : "border-gray-200 bg-gray-50"
       }`}
     >
       <div className="flex items-center justify-between mb-3">
@@ -449,59 +517,67 @@ function PollCard({
 
       <div className="space-y-2">
         {poll.options.map((option) => {
-          const percentage = totalVotes > 0 ? (option.votes / totalVotes) * 100 : 0
-          const isSelected = userVote?.id === option.id
-          
+          const percentage =
+            totalVotes > 0 ? (option.votes / totalVotes) * 100 : 0;
+          const isSelected = userVote?.id === option.id;
+
           return (
             <button
               key={option.id}
-              onClick={() => isActive && currentUser && !hasVoted && onVote(poll.id, option.id)}
+              onClick={() =>
+                isActive &&
+                currentUser &&
+                !hasVoted &&
+                onVote(poll.id, option.id)
+              }
               disabled={!isActive || !currentUser || hasVoted}
               className={`w-full text-left p-3 rounded-lg border transition-all relative overflow-hidden ${
                 isSelected
-                  ? 'border-primary-300 bg-primary-100 text-primary-800'
+                  ? "border-primary-300 bg-primary-100 text-primary-800"
                   : hasVoted || !isActive
-                  ? 'border-gray-200 bg-gray-100 cursor-default'
-                  : 'border-gray-200 bg-white hover:border-primary-300 hover:bg-primary-50'
+                  ? "border-gray-200 bg-gray-100 cursor-default"
+                  : "border-gray-200 bg-white hover:border-primary-300 hover:bg-primary-50"
               }`}
             >
               {/* Progress Bar */}
               {totalVotes > 0 && (
-                <div 
+                <div
                   className={`absolute inset-0 ${
-                    isSelected ? 'bg-primary-200' : 'bg-gray-200'
+                    isSelected ? "bg-primary-200" : "bg-gray-200"
                   } transition-all duration-500 ease-out`}
                   style={{ width: `${percentage}%` }}
                 />
               )}
-              
+
               <div className="relative flex items-center justify-between">
                 <span className="text-sm font-medium">{option.text}</span>
                 <div className="flex items-center gap-2 text-xs">
                   {isSelected && <CheckCircleIcon className="w-4 h-4" />}
                   <span>{option.votes}</span>
                   {totalVotes > 0 && (
-                    <span className="text-gray-500">({Math.round(percentage)}%)</span>
+                    <span className="text-gray-500">
+                      ({Math.round(percentage)}%)
+                    </span>
                   )}
                 </div>
               </div>
             </button>
-          )
+          );
         })}
       </div>
 
       {isActive && currentUser && !hasVoted && (
         <p className="text-xs text-gray-600 mt-2">
-          {language === 'pt' ? 'Clique para votar' : 'Click to vote'}
+          {language === "pt" ? "Clique para votar" : "Click to vote"}
         </p>
       )}
-      
+
       {hasVoted && (
         <p className="text-xs text-primary-600 mt-2 flex items-center gap-1">
           <CheckCircleIcon className="w-3 h-3" />
-          {language === 'pt' ? 'Obrigado pelo seu voto!' : 'Thanks for voting!'}
+          {language === "pt" ? "Obrigado pelo seu voto!" : "Thanks for voting!"}
         </p>
       )}
     </motion.div>
-  )
+  );
 }

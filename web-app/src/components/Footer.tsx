@@ -39,7 +39,7 @@ const getFooterLinks = (t: any) => ({
     { name: "Community Chat", href: "/forums" },
     { name: "Case Studies", href: "/case-studies" },
     { name: "Careers", href: "/careers" },
-  { name: "Live TV", href: "/live" },
+    { name: "Streams", href: "/live" },
     { name: "Partnerships", href: "/partnerships" },
     { name: "Corporate Partnerships", href: "/corporate-partnerships" },
     {

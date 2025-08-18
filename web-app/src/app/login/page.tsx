@@ -21,6 +21,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useSubscription } from "@/context/SubscriptionContext";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
+import SocialLogin from "@/components/SocialLogin";
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -413,6 +414,10 @@ export default function Login() {
 
                 {/* Social Login & Alternative Options */}
                 <div className="mt-6 pt-6 border-t border-gray-200">
+                  {/* Social Login Buttons */}
+                  <div className="mb-6">
+                    <SocialLogin mode="login" />
+                  </div>
                   <div className="text-center mb-4">
                     <p className="text-gray-600 text-sm">
                       {isPortuguese

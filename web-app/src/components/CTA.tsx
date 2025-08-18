@@ -1,27 +1,33 @@
-'use client'
+"use client";
 
 // LusoTown Design System:
 // - Background: Portuguese gradient (from-secondary-600 via-action-600 to-accent-600)
 // - Button text: secondary-700 (green) for contrast against white background
 // - Never use primary (blue) colors for CTA sections
 
-import { motion } from 'framer-motion'
-import { ArrowRightIcon, CheckIcon, SparklesIcon } from '@heroicons/react/24/outline'
-import { useLanguage } from '@/context/LanguageContext'
-import { plans, formatPrice } from '@/config/pricing'
+import { motion } from "framer-motion";
+import {
+  ArrowRightIcon,
+  CheckIcon,
+  SparklesIcon,
+} from "@heroicons/react/24/outline";
+import { useLanguage } from "@/context/LanguageContext";
+import { membership, formatPrice } from "@/config/pricing";
 
 const getBenefits = (t: any) => [
-  "Connect with Portuguese speakers across London",
-  "Join authentic Portuguese cultural events", 
-  "Professional networking opportunities",
-  "Cultural compatibility matching",
-  "Premium support in Portuguese",
-  "Community-driven platform for Portuguese speakers"
-]
+  `${formatPrice(
+    membership.annual
+  )}/year - your ticket to the Portuguese community`,
+  "Pay only true cost for events and activities",
+  "No markups or hidden fees ever",
+  "Voice in community decisions",
+  "Unlimited access to all groups and events",
+  "Future cooperative ownership benefits",
+];
 
 export default function CTA() {
-  const { t } = useLanguage()
-  const benefits = getBenefits(t)
+  const { t } = useLanguage();
+  const benefits = getBenefits(t);
   return (
     <section className="py-20 bg-gradient-to-br from-secondary-600 via-action-600 to-accent-600 relative overflow-hidden">
       {/* Background Elements */}
@@ -43,13 +49,14 @@ export default function CTA() {
           >
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-white font-medium mb-6 border border-white/30">
               <SparklesIcon className="h-4 w-4" />
-              Join the Portuguese Community
+              Annual Membership - {formatPrice(membership.annual)}/Year
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Your Portuguese Community Awaits
+              Your Cultural Investment
             </h2>
             <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto">
-              Connect with Portuguese speakers in London. Choose your plan and start building meaningful cultural connections today.
+              One annual membership. Unlimited community access. Pay only true
+              cost for events. No markups, no surprises.
             </p>
           </motion.div>
 
@@ -71,7 +78,9 @@ export default function CTA() {
                 className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 min-h-[64px]"
               >
                 <CheckIcon className="h-5 w-5 text-white flex-shrink-0 mt-0.5" />
-                <span className="text-white font-medium leading-relaxed break-words">{benefit}</span>
+                <span className="text-white font-medium leading-relaxed break-words">
+                  {benefit}
+                </span>
               </motion.div>
             ))}
           </motion.div>
@@ -84,13 +93,19 @@ export default function CTA() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="space-y-6"
           >
-            <a href="/signup" className="bg-white text-secondary-700 hover:bg-gray-50 font-bold text-base sm:text-lg md:text-xl px-6 sm:px-10 md:px-16 py-4 sm:py-5 md:py-6 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 group inline-flex items-center justify-center w-full sm:w-auto max-w-sm mx-auto">
-              {t('cta.button', 'JOIN NOW')}
+            <a
+              href="/signup"
+              className="bg-white text-secondary-700 hover:bg-gray-50 font-bold text-base sm:text-lg md:text-xl px-6 sm:px-10 md:px-16 py-4 sm:py-5 md:py-6 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 group inline-flex items-center justify-center w-full sm:w-auto max-w-sm mx-auto"
+            >
+              {t("cta.button", "JOIN NOW")}
               <ArrowRightIcon className="h-5 w-5 sm:h-6 sm:w-6 ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform duration-200" />
             </a>
-            
+
             <p className="text-white/80 text-sm">
-              {t('cta.guarantee', 'No commitment • Start connecting immediately • Cancel anytime')}
+              {t(
+                "cta.guarantee",
+                "No commitment • Start connecting immediately • Cancel anytime"
+              )}
             </p>
           </motion.div>
 
@@ -116,10 +131,17 @@ export default function CTA() {
               </div>
             </div>
             <p className="text-white font-semibold text-lg mb-2">
-              23 {t('cta.social-proof', 'Portuguese speakers joined in the last 24 hours')}
+              23{" "}
+              {t(
+                "cta.social-proof",
+                "Portuguese speakers joined in the last 24 hours"
+              )}
             </p>
             <p className="text-white/80">
-              {t('cta.connect-time', 'Join now and connect with the Luso-London community within 48 hours')}
+              {t(
+                "cta.connect-time",
+                "Join now and connect with the Luso-London community within 48 hours"
+              )}
             </p>
           </motion.div>
 
@@ -133,19 +155,28 @@ export default function CTA() {
           >
             <div className="text-center">
               <div className="text-2xl font-bold text-white mb-1">100%</div>
-              <div className="text-sm">{t('cta.trust.verified-profiles', 'Verified Profiles')}</div>
+              <div className="text-sm">
+                {t("cta.trust.verified-profiles", "Verified Profiles")}
+              </div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-white mb-1">24/7</div>
-              <div className="text-sm">{t('cta.trust.community-support', 'Community Support')}</div>
+              <div className="text-sm">
+                {t("cta.trust.community-support", "Community Support")}
+              </div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-white mb-1">30-Days</div>
-              <div className="text-sm">{t('cta.trust.satisfaction-guarantee', 'Satisfaction Guarantee')}</div>
+              <div className="text-sm">
+                {t(
+                  "cta.trust.satisfaction-guarantee",
+                  "Satisfaction Guarantee"
+                )}
+              </div>
             </div>
           </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }

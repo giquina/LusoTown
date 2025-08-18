@@ -46,9 +46,6 @@ export default function UsageLimitIndicator({
   const remainingMatches = getRemainingMatches()
   const remainingMessages = getRemainingMessages()
   
-  // Don't show for premium users
-  if (hasActiveSubscription) return null
-
   // Calculate urgency level
   useEffect(() => {
     let level: 'low' | 'medium' | 'high' | 'critical' = 'low'
@@ -85,6 +82,9 @@ export default function UsageLimitIndicator({
       }
     }
   }, [urgencyLevel, type, remainingMatches, remainingMessages, lastAlertShown, showUpgradePrompt])
+
+  // Don't show for premium users
+  if (hasActiveSubscription) return null
 
   const getUrgencyConfig = () => {
     switch (urgencyLevel) {

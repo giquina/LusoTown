@@ -120,7 +120,7 @@ export default function ConversionOptimizer({
       }, 4000)
       return () => clearInterval(interval)
     }
-  }, [isVisible])
+  }, [isVisible, successStories.length])
 
   const handleClose = () => {
     setIsVisible(false)

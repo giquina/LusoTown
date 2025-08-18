@@ -1,42 +1,48 @@
-'use client'
+"use client";
 
-import React, { useEffect, useState } from 'react'
-import { useLanguage } from '@/context/LanguageContext'
-import { useSubscription } from '@/context/SubscriptionContext'
-import { authService } from '@/lib/auth'
-import { plans, formatPrice } from '@/config/pricing'
+import React, { useEffect, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
+import { useSubscription } from "@/context/SubscriptionContext";
+import { authService } from "@/lib/auth";
+import { plans, formatPrice } from "@/config/pricing";
 
 export interface EmailSequenceConfig {
-  type: 'welcome' | 'trial_reminder_day3' | 'trial_reminder_day6' | 'trial_expired' | 'upgrade_sequence' | 'retention'
-  delayDays?: number
-  delayHours?: number
+  type:
+    | "welcome"
+    | "trial_reminder_day3"
+    | "trial_reminder_day6"
+    | "trial_expired"
+    | "upgrade_sequence"
+    | "retention";
+  delayDays?: number;
+  delayHours?: number;
   conditions?: {
-    hasTrialStarted?: boolean
-    isTrialActive?: boolean
-    hasSubscription?: boolean
-    daysSinceSignup?: number
-    lastActivityDays?: number
-  }
+    hasTrialStarted?: boolean;
+    isTrialActive?: boolean;
+    hasSubscription?: boolean;
+    daysSinceSignup?: number;
+    lastActivityDays?: number;
+  };
 }
 
 interface EmailTemplate {
-  subject: { en: string; pt: string }
-  preheader: { en: string; pt: string }
-  content: { en: string; pt: string }
-  cta: { en: string; pt: string }
-  ctaUrl: string
+  subject: { en: string; pt: string };
+  preheader: { en: string; pt: string };
+  content: { en: string; pt: string };
+  cta: { en: string; pt: string };
+  ctaUrl: string;
 }
 
 // Email template configurations
-const EMAIL_TEMPLATES: Record<EmailSequenceConfig['type'], EmailTemplate> = {
+const EMAIL_TEMPLATES: Record<EmailSequenceConfig["type"], EmailTemplate> = {
   welcome: {
     subject: {
-      en: 'Welcome to LusoTown - Your Portuguese Community in London! 🇵🇹',
-      pt: 'Bem-vindo ao LusoTown - A Sua Comunidade Portuguesa em Londres! 🇵🇹'
+      en: "Welcome to LusoTown - Your Portuguese Community in London! 🇵🇹",
+      pt: "Bem-vindo ao LusoTown - A Sua Comunidade Portuguesa em Londres! 🇵🇹",
     },
     preheader: {
-      en: 'Start connecting with Portuguese speakers in London today',
-      pt: 'Comece a conectar com falantes de português em Londres hoje'
+      en: "Start connecting with Portuguese speakers in London today",
+      pt: "Comece a conectar com falantes de português em Londres hoje",
     },
     content: {
       en: `
@@ -94,23 +100,23 @@ const EMAIL_TEMPLATES: Record<EmailSequenceConfig['type'], EmailTemplate> = {
           <li>🍽️ Encontros de comida tradicional portuguesa e restaurantes</li>
           <li>⚽ Festas para ver futebol (Benfica, Porto, Sporting)</li>
         </ul>
-      `
+      `,
     },
     cta: {
-      en: 'Start Your Free Trial',
-      pt: 'Iniciar Teste Gratuito'
+      en: "Start Your Free Trial",
+      pt: "Iniciar Teste Gratuito",
     },
-    ctaUrl: '/subscription?trial=true'
+    ctaUrl: "/subscription?trial=true",
   },
 
   trial_reminder_day3: {
     subject: {
-      en: 'Your LusoTown trial - 4 days left to explore! ⏰',
-      pt: 'O seu teste LusoTown - 4 dias restantes para explorar! ⏰'
+      en: "Your LusoTown trial - 4 days left to explore! ⏰",
+      pt: "O seu teste LusoTown - 4 dias restantes para explorar! ⏰",
     },
     preheader: {
-      en: 'Have you tried unlimited matches with Portuguese speakers yet?',
-      pt: 'Já experimentou matches ilimitados com falantes de português?'
+      en: "Have you tried unlimited matches with Portuguese speakers yet?",
+      pt: "Já experimentou matches ilimitados com falantes de português?",
     },
     content: {
       en: `
@@ -152,23 +158,23 @@ const EMAIL_TEMPLATES: Record<EmailSequenceConfig['type'], EmailTemplate> = {
         </div>
         
         <p><strong>4 dias restantes</strong> para experimentar tudo. Depois disso, voltará ao plano gratuito (3 matches/dia, 10 mensagens/mês).</p>
-      `
+      `,
     },
     cta: {
-      en: 'Continue Your Trial',
-      pt: 'Continuar o Seu Teste'
+      en: "Continue Your Trial",
+      pt: "Continuar o Seu Teste",
     },
-    ctaUrl: '/matches'
+    ctaUrl: "/matches",
   },
 
   trial_reminder_day6: {
     subject: {
-      en: '⚡ Last day of your LusoTown trial - Don\'t miss out!',
-      pt: '⚡ Último dia do seu teste LusoTown - Não perca!'
+      en: "⚡ Last day of your LusoTown trial - Don't miss out!",
+      pt: "⚡ Último dia do seu teste LusoTown - Não perca!",
     },
     preheader: {
-      en: 'Your trial expires tomorrow - continue your Portuguese community journey',
-      pt: 'O seu teste expira amanhã - continue a sua jornada na comunidade portuguesa'
+      en: "Your trial expires tomorrow - continue your Portuguese community journey",
+      pt: "O seu teste expira amanhã - continue a sua jornada na comunidade portuguesa",
     },
     content: {
       en: `
@@ -178,7 +184,9 @@ const EMAIL_TEMPLATES: Record<EmailSequenceConfig['type'], EmailTemplate> = {
         
         <div style="background: linear-gradient(135deg, #dc2626, #ef4444); color: white; padding: 20px; border-radius: 12px; margin: 20px 0; text-align: center;">
           <h3 style="margin-bottom: 12px;">⏳ Less than 24 hours remaining</h3>
-          <p style="margin-bottom: 0;">Continue with Community Premium at just ${formatPrice(plans.community.monthly)}/month</p>
+          <p style="margin-bottom: 0;">Continue with Community Premium at just ${formatPrice(
+            plans.community.monthly
+          )}/month</p>
         </div>
         
         <h2>What you'll lose without Premium:</h2>
@@ -204,7 +212,9 @@ const EMAIL_TEMPLATES: Record<EmailSequenceConfig['type'], EmailTemplate> = {
         
         <div style="background: linear-gradient(135deg, #dc2626, #ef4444); color: white; padding: 20px; border-radius: 12px; margin: 20px 0; text-align: center;">
           <h3 style="margin-bottom: 12px;">⏳ Menos de 24 horas restantes</h3>
-          <p style="margin-bottom: 0;">Continue com Community Premium por apenas ${formatPrice(plans.community.monthly)}/mês</p>
+          <p style="margin-bottom: 0;">Continue com Community Premium por apenas ${formatPrice(
+            plans.community.monthly
+          )}/mês</p>
         </div>
         
         <h2>O que perderá sem Premium:</h2>
@@ -222,23 +232,23 @@ const EMAIL_TEMPLATES: Record<EmailSequenceConfig['type'], EmailTemplate> = {
         </div>
         
         <p>Junte-se a 2.500+ falantes de português que confiam no LusoTown para conexões comunitárias autênticas em Londres.</p>
-      `
+      `,
     },
     cta: {
-      en: 'Continue with Premium',
-      pt: 'Continuar com Premium'
+      en: "Continue with Premium",
+      pt: "Continuar com Premium",
     },
-    ctaUrl: '/subscription?upgrade=community'
+    ctaUrl: "/subscription?upgrade=community",
   },
 
   trial_expired: {
     subject: {
-      en: 'Your trial has ended - Special 20% discount for Portuguese community members',
-      pt: 'O seu teste terminou - Desconto especial de 20% para membros da comunidade portuguesa'
+      en: "Your trial has ended - Special 20% discount for Portuguese community members",
+      pt: "O seu teste terminou - Desconto especial de 20% para membros da comunidade portuguesa",
     },
     preheader: {
-      en: 'Come back with a special discount just for Portuguese speakers',
-      pt: 'Volte com um desconto especial só para falantes de português'
+      en: "Come back with a special discount just for Portuguese speakers",
+      pt: "Volte com um desconto especial só para falantes de português",
     },
     content: {
       en: `
@@ -290,23 +300,23 @@ const EMAIL_TEMPLATES: Record<EmailSequenceConfig['type'], EmailTemplate> = {
         <p>Este desconto é a nossa maneira de dizer obrigado por considerar a nossa plataforma da comunidade portuguesa.</p>
         
         <p style="color: #6b7280; font-size: 14px;">Oferta expira em 7 dias. Não pode ser combinada com outras ofertas.</p>
-      `
+      `,
     },
     cta: {
-      en: 'Claim 20% Discount',
-      pt: 'Reclamar 20% Desconto'
+      en: "Claim 20% Discount",
+      pt: "Reclamar 20% Desconto",
     },
-    ctaUrl: '/subscription?code=LUSO20'
+    ctaUrl: "/subscription?code=LUSO20",
   },
 
   upgrade_sequence: {
     subject: {
-      en: 'Unlock more Portuguese community connections 🇵🇹',
-      pt: 'Desbloqueie mais conexões da comunidade portuguesa 🇵🇹'
+      en: "Unlock more Portuguese community connections 🇵🇹",
+      pt: "Desbloqueie mais conexões da comunidade portuguesa 🇵🇹",
     },
     preheader: {
-      en: 'You\'re popular! Upgrade to connect with everyone interested in you',
-      pt: 'És popular! Faça upgrade para conectar com todos interessados em si'
+      en: "You're popular! Upgrade to connect with everyone interested in you",
+      pt: "És popular! Faça upgrade para conectar com todos interessados em si",
     },
     content: {
       en: `
@@ -362,23 +372,23 @@ const EMAIL_TEMPLATES: Record<EmailSequenceConfig['type'], EmailTemplate> = {
         </ul>
         
         <p>Pronto para desbloquear o seu potencial completo na comunidade portuguesa?</p>
-      `
+      `,
     },
     cta: {
-      en: 'Upgrade to Premium',
-      pt: 'Fazer Upgrade para Premium'
+      en: "Upgrade to Premium",
+      pt: "Fazer Upgrade para Premium",
     },
-    ctaUrl: '/subscription?source=activity'
+    ctaUrl: "/subscription?source=activity",
   },
 
   retention: {
     subject: {
-      en: 'Miss connecting with Portuguese speakers in London? Come back! 🏠',
-      pt: 'Sente falta de conectar com falantes de português em Londres? Volte! 🏠'
+      en: "Miss connecting with Portuguese speakers in London? Come back! 🏠",
+      pt: "Sente falta de conectar com falantes de português em Londres? Volte! 🏠",
     },
     preheader: {
-      en: 'Your Portuguese community is waiting for you',
-      pt: 'A sua comunidade portuguesa está à sua espera'
+      en: "Your Portuguese community is waiting for you",
+      pt: "A sua comunidade portuguesa está à sua espera",
     },
     content: {
       en: `
@@ -436,69 +446,69 @@ const EMAIL_TEMPLATES: Record<EmailSequenceConfig['type'], EmailTemplate> = {
         </ul>
         
         <p>A sua comunidade portuguesa está à espera. Volte para casa no LusoTown!</p>
-      `
+      `,
     },
     cta: {
-      en: 'Welcome Back - Get Extra Matches',
-      pt: 'Bem-vindo de Volta - Receber Matches Extra'
+      en: "Welcome Back - Get Extra Matches",
+      pt: "Bem-vindo de Volta - Receber Matches Extra",
     },
-    ctaUrl: '/login?welcome_back=true'
-  }
-}
+    ctaUrl: "/login?welcome_back=true",
+  },
+};
 
 // Email sequence manager
 export class EmailSequenceManager {
-  private static instance: EmailSequenceManager
-  
+  private static instance: EmailSequenceManager;
+
   static getInstance(): EmailSequenceManager {
     if (!EmailSequenceManager.instance) {
-      EmailSequenceManager.instance = new EmailSequenceManager()
+      EmailSequenceManager.instance = new EmailSequenceManager();
     }
-    return EmailSequenceManager.instance
+    return EmailSequenceManager.instance;
   }
 
   // Queue an email to be sent
   async queueEmail(
     userId: string,
-    emailType: EmailSequenceConfig['type'],
-    config: Omit<EmailSequenceConfig, 'type'> = {}
+    emailType: EmailSequenceConfig["type"],
+    config: Omit<EmailSequenceConfig, "type"> = {}
   ): Promise<boolean> {
     try {
-      const response = await fetch('/api/email/queue', {
-        method: 'POST',
+      const response = await fetch("/api/email/queue", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           userId,
           emailType,
           config: {
             ...config,
-            type: emailType
-          }
-        })
-      })
+            type: emailType,
+          },
+        }),
+      });
 
-      return response.ok
+      return response.ok;
     } catch (error) {
-      console.error('Failed to queue email:', error)
-      return false
+      console.error("Failed to queue email:", error);
+      return false;
     }
   }
 
   // Send immediate email
   async sendEmail(
     userId: string,
-    emailType: EmailSequenceConfig['type'],
-    userLanguage: 'en' | 'pt' = 'en'
+    emailType: EmailSequenceConfig["type"],
+    userLanguage: "en" | "pt" = "en"
   ): Promise<boolean> {
     try {
-      const template = EMAIL_TEMPLATES[emailType]
-      
-      const response = await fetch('/api/email/send', {
-        method: 'POST',
+      const template = EMAIL_TEMPLATES[emailType];
+
+      const response = await fetch("/api/email/send", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           userId,
@@ -508,109 +518,125 @@ export class EmailSequenceManager {
           content: template.content[userLanguage],
           cta: template.cta[userLanguage],
           ctaUrl: template.ctaUrl,
-          language: userLanguage
-        })
-      })
+          language: userLanguage,
+        }),
+      });
 
-      return response.ok
+      return response.ok;
     } catch (error) {
-      console.error('Failed to send email:', error)
-      return false
+      console.error("Failed to send email:", error);
+      return false;
     }
   }
 
   // Cancel scheduled emails
-  async cancelEmailSequence(userId: string, emailType?: EmailSequenceConfig['type']): Promise<boolean> {
+  async cancelEmailSequence(
+    userId: string,
+    emailType?: EmailSequenceConfig["type"]
+  ): Promise<boolean> {
     try {
-      const response = await fetch('/api/email/cancel', {
-        method: 'POST',
+      const response = await fetch("/api/email/cancel", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           userId,
-          emailType
-        })
-      })
+          emailType,
+        }),
+      });
 
-      return response.ok
+      return response.ok;
     } catch (error) {
-      console.error('Failed to cancel email sequence:', error)
-      return false
+      console.error("Failed to cancel email sequence:", error);
+      return false;
     }
   }
 }
 
 // React component for managing email sequences
-export function EmailSequenceProvider({ children }: { children: React.ReactNode }) {
-  const { language } = useLanguage()
-  const { trial, isInTrial, hasActiveSubscription, subscription } = useSubscription()
-  const [emailManager] = useState(() => EmailSequenceManager.getInstance())
+export function EmailSequenceProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const { language } = useLanguage();
+  const { trial, isInTrial, hasActiveSubscription, subscription } =
+    useSubscription();
+  const [emailManager] = useState(() => EmailSequenceManager.getInstance());
 
   // Handle new user welcome email
   useEffect(() => {
     const handleNewUser = async () => {
-      const user = authService.getCurrentUser()
-      if (!user || authService.isDemoUser()) return
+      const user = authService.getCurrentUser();
+      if (!user || authService.isDemoUser()) return;
 
       // Check if this is a new user (signed up recently)
-  const signupDate = new Date(user.joinedDate)
-      const now = new Date()
-      const daysSinceSignup = Math.floor((now.getTime() - signupDate.getTime()) / (1000 * 60 * 60 * 24))
+      const signupDate = new Date(user.joinedDate);
+      const now = new Date();
+      const daysSinceSignup = Math.floor(
+        (now.getTime() - signupDate.getTime()) / (1000 * 60 * 60 * 24)
+      );
 
       if (daysSinceSignup === 0) {
         // New user - send welcome email
-        await emailManager.sendEmail(user.id, 'welcome', language)
+        await emailManager.sendEmail(user.id, "welcome", language);
       }
-    }
+    };
 
-    handleNewUser()
-  }, [language, emailManager])
+    handleNewUser();
+  }, [language, emailManager]);
 
   // Handle trial reminder emails
   useEffect(() => {
     const handleTrialEmails = async () => {
-      const user = authService.getCurrentUser()
-      if (!user || !trial || !isInTrial) return
+      const user = authService.getCurrentUser();
+      if (!user || !trial || !isInTrial) return;
 
-      const trialStart = new Date(trial.trial_start)
-      const now = new Date()
-      const daysSinceTrialStart = Math.floor((now.getTime() - trialStart.getTime()) / (1000 * 60 * 60 * 24))
+      const trialStart = new Date(trial.trial_start);
+      const now = new Date();
+      const daysSinceTrialStart = Math.floor(
+        (now.getTime() - trialStart.getTime()) / (1000 * 60 * 60 * 24)
+      );
 
       // Day 3 reminder
       if (daysSinceTrialStart === 3) {
-        await emailManager.queueEmail(user.id, 'trial_reminder_day3')
+        await emailManager.queueEmail(user.id, "trial_reminder_day3");
       }
 
       // Day 6 reminder (last day)
       if (daysSinceTrialStart === 6) {
-        await emailManager.queueEmail(user.id, 'trial_reminder_day6')
+        await emailManager.queueEmail(user.id, "trial_reminder_day6");
       }
-    }
+    };
 
-    handleTrialEmails()
-  }, [trial, isInTrial, emailManager])
+    handleTrialEmails();
+  }, [trial, isInTrial, emailManager]);
 
   // Handle trial expiry
   useEffect(() => {
     const handleTrialExpiry = async () => {
-      const user = authService.getCurrentUser()
-      if (!user || !trial || isInTrial || hasActiveSubscription) return
+      const user = authService.getCurrentUser();
+      if (!user || !trial || isInTrial || hasActiveSubscription) return;
 
       // Check if trial just expired (within last day)
-      const trialEnd = new Date(trial.trial_end)
-      const now = new Date()
-      const hoursSinceTrialEnd = Math.floor((now.getTime() - trialEnd.getTime()) / (1000 * 60 * 60))
+      const trialEnd = new Date(trial.trial_end);
+      const now = new Date();
+      const hoursSinceTrialEnd = Math.floor(
+        (now.getTime() - trialEnd.getTime()) / (1000 * 60 * 60)
+      );
 
       if (hoursSinceTrialEnd >= 0 && hoursSinceTrialEnd <= 24) {
-        await emailManager.queueEmail(user.id, 'trial_expired', { delayHours: 2 })
+        await emailManager.queueEmail(user.id, "trial_expired", {
+          delayHours: 2,
+        });
       }
-    }
+    };
 
-    handleTrialExpiry()
-  }, [trial, isInTrial, hasActiveSubscription, emailManager])
+    handleTrialExpiry();
+  }, [trial, isInTrial, hasActiveSubscription, emailManager]);
 
-  return <>{children}</>
+  return <>{children}</>;
 }
 
-export default EmailSequenceManager
+export default EmailSequenceManager;

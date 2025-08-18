@@ -1,8 +1,8 @@
 // Shared Event types for events-related components
 // Keep this flexible to accommodate different event variants used across the app.
-import type { ReactNode } from 'react'
+import type { ReactNode } from "react";
 
-export type EventStatus = 'available' | 'fully-booked';
+export type EventStatus = "available" | "fully-booked";
 
 export interface Event {
   id: number;
@@ -30,7 +30,11 @@ export interface Event {
   culturalCategory?: string;
   portugueseCulturalFocus?: boolean;
   culturalTraditions?: string[];
-  languageRequirements?: 'portuguese_only' | 'english_only' | 'bilingual' | 'any';
+  languageRequirements?:
+    | "portuguese_only"
+    | "english_only"
+    | "bilingual"
+    | "any";
   heritageCelebration?: string;
   buddyPricingEnabled?: boolean;
   groupDiscountEnabled?: boolean;
@@ -44,8 +48,12 @@ export interface EventBuddy {
   requesterId: string;
   requesteeId: string;
   eventId: string;
-  buddyType: 'double_date' | 'friend_group' | 'cultural_companion' | 'networking_partner';
-  status: 'pending' | 'accepted' | 'declined' | 'cancelled' | 'completed';
+  buddyType:
+    | "double_date"
+    | "friend_group"
+    | "cultural_companion"
+    | "networking_partner";
+  status: "pending" | "accepted" | "declined" | "cancelled" | "completed";
   message?: string;
   groupSize: number;
   preferredGroupComposition?: Record<string, any>;
@@ -63,14 +71,19 @@ export interface GroupBooking {
   groupName?: string;
   totalParticipants: number;
   confirmedParticipants: number;
-  paymentSplitType: 'equal' | 'organizer_pays' | 'custom';
+  paymentSplitType: "equal" | "organizer_pays" | "custom";
   totalAmount: number;
   groupDiscountPercentage: number;
   groupDiscountAmount: number;
   finalAmount: number;
   currency: string;
-  bookingStatus: 'pending' | 'confirmed' | 'partial_confirmed' | 'cancelled' | 'completed';
-  paymentStatus: 'pending' | 'partial' | 'completed' | 'refunded';
+  bookingStatus:
+    | "pending"
+    | "confirmed"
+    | "partial_confirmed"
+    | "cancelled"
+    | "completed";
+  paymentStatus: "pending" | "partial" | "completed" | "refunded";
   specialRequirements?: string;
   expiresAt?: string;
   confirmedAt?: string;
@@ -82,9 +95,9 @@ export interface GroupBookingParticipant {
   id: string;
   groupBookingId: string;
   participantId: string;
-  invitationStatus: 'pending' | 'accepted' | 'declined' | 'expired';
+  invitationStatus: "pending" | "accepted" | "declined" | "expired";
   paymentShare: number;
-  paymentStatus: 'pending' | 'paid' | 'refunded';
+  paymentStatus: "pending" | "paid" | "refunded";
   invitedAt: string;
   respondedAt?: string;
   createdAt: string;
@@ -93,14 +106,29 @@ export interface GroupBookingParticipant {
 export interface CulturalPreferences {
   id: string;
   userId: string;
-  portugueseOrigin?: 'portugal' | 'brazil' | 'angola' | 'mozambique' | 'cape_verde' | 'guinea_bissau' | 'sao_tome_principe' | 'east_timor' | 'macau' | 'mixed' | 'other';
-  languagePreference: 'portuguese_only' | 'english_only' | 'both';
+  portugueseOrigin?:
+    | "portugal"
+    | "brazil"
+    | "angola"
+    | "mozambique"
+    | "cape_verde"
+    | "guinea_bissau"
+    | "sao_tome_principe"
+    | "east_timor"
+    | "macau"
+    | "mixed"
+    | "other";
+  languagePreference: "portuguese_only" | "english_only" | "both";
   culturalInterests: Record<string, any>;
   eventPreferences: Record<string, any>;
   culturalCelebrationPreferences: string[];
   musicPreferences: string[];
   foodPreferences: string[];
-  heritageConnectionLevel?: 'strong' | 'moderate' | 'learning' | 'heritage_seeker';
+  heritageConnectionLevel?:
+    | "strong"
+    | "moderate"
+    | "learning"
+    | "heritage_seeker";
   createdAt: string;
   updatedAt: string;
 }
@@ -128,8 +156,12 @@ export interface EventRecommendation {
   recommendationReason: string;
   sharedCulturalInterests: string[];
   portugueseCulturalFocus: boolean;
-  recommendationType: 'post_match' | 'compatibility_based' | 'cultural_event' | 'buddy_suggestion';
-  status: 'pending' | 'viewed' | 'dismissed' | 'booked' | 'expired';
+  recommendationType:
+    | "post_match"
+    | "compatibility_based"
+    | "cultural_event"
+    | "buddy_suggestion";
+  status: "pending" | "viewed" | "dismissed" | "booked" | "expired";
   expiresAt?: string;
   viewedAt?: string;
   createdAt: string;

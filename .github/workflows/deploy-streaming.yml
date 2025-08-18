@@ -3,18 +3,18 @@ name: Deploy LusoTown Streaming Infrastructure
 on:
   push:
     branches: [main]
-    paths: 
-      - 'streaming/**'
+    paths:
+      - "streaming/**"
   pull_request:
     branches: [main]
     paths:
-      - 'streaming/**'
+      - "streaming/**"
   workflow_dispatch:
     inputs:
       environment:
-        description: 'Deployment environment'
+        description: "Deployment environment"
         required: true
-        default: 'staging'
+        default: "staging"
         type: choice
         options:
           - staging
@@ -96,7 +96,7 @@ jobs:
         run: |
           cd streaming/docker-compose
           cp docker-compose.yml docker-compose.test.yml
-          
+
           # Override for testing
           cat >> docker-compose.test.yml << 'EOF'
           # Test overrides
@@ -110,19 +110,19 @@ jobs:
               environment:
                 - LUSOTOWN_STREAMING_SECRET=test_secret
           EOF
-          
+
           # Start services for testing
           docker-compose -f docker-compose.test.yml up -d srs-server
-          
+
           # Wait for services to be ready
           sleep 30
-          
+
           # Test SRS API
           curl -f http://localhost:1985/api/v1/summaries || exit 1
-          
+
           # Test streaming endpoint
           curl -f http://localhost:8080/ || exit 1
-          
+
           # Cleanup
           docker-compose -f docker-compose.test.yml down
 
@@ -152,7 +152,7 @@ jobs:
         run: |
           # Copy streaming infrastructure to staging server
           scp -r streaming ${{ secrets.STAGING_USER }}@${{ secrets.STAGING_HOST }}:/tmp/lusotown-streaming/
-          
+
           # Deploy on staging server
           ssh ${{ secrets.STAGING_USER }}@${{ secrets.STAGING_HOST }} << 'EOF'
             cd /tmp/lusotown-streaming
@@ -179,7 +179,7 @@ jobs:
         run: |
           # Wait for deployment to stabilize
           sleep 60
-          
+
           # Health check
           ssh ${{ secrets.STAGING_USER }}@${{ secrets.STAGING_HOST }} << 'EOF'
             curl -f https://staging-stream.lusotown.com/health || exit 1
@@ -214,7 +214,7 @@ jobs:
         run: |
           # Copy streaming infrastructure to production server
           scp -r streaming ${{ secrets.PRODUCTION_USER }}@${{ secrets.PRODUCTION_HOST }}:/tmp/lusotown-streaming/
-          
+
           # Deploy on production server
           ssh ${{ secrets.PRODUCTION_USER }}@${{ secrets.PRODUCTION_HOST }} << 'EOF'
             cd /tmp/lusotown-streaming
@@ -243,7 +243,7 @@ jobs:
         run: |
           # Wait for deployment to stabilize
           sleep 120
-          
+
           # Comprehensive health checks
           ssh ${{ secrets.PRODUCTION_USER }}@${{ secrets.PRODUCTION_HOST }} << 'EOF'
             # Health check
@@ -268,7 +268,7 @@ jobs:
         uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
-          channel: '#lusotown-deployments'
+          channel: "#lusotown-deployments"
           text: |
             LusoTown Portuguese Community Streaming Infrastructure Deployment
             Environment: ${{ github.event.inputs.environment || 'staging' }}
