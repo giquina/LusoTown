@@ -2,10 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-LusoTown: Bilingual Portuguese community platform (London & UK) serving Portuguese speakers with event discovery, group activities, premium matching, transport services, and university partnerships.
+LusoTown: Bilingual Portuguese community platform (London & UK) serving Portuguese speakers with event discovery, group activities, premium matching, transport services, streaming platform, and university partnerships.
 
-**Tech Stack:** Next.js 14 (TypeScript), Tailwind CSS, Supabase, Vercel
-**Status:** Production-ready - 75+ pages, 175+ components, complete bilingual system, enhanced mobile experience
+**Tech Stack:** Next.js 14 (TypeScript), Tailwind CSS, Supabase, Vercel, Simple Relay Server (SRS) media streaming, YouTube Live integration
+**Status:** Production-ready - 75+ pages, 175+ components, complete bilingual system, enhanced mobile experience, integrated streaming platform
 
 ## Contributor Quick Start
 
@@ -60,6 +60,11 @@ LusoTown: Bilingual Portuguese community platform (London & UK) serving Portugue
 # Development (from repo root)
 cd web-app && npm install && npm run dev    # Start dev server (localhost:3000)
 
+# Streaming Development (additional setup)
+npm run dev:streaming        # Start streaming development mode
+npm run build:streaming       # Build streaming components
+npm run test:streaming        # Run streaming-specific tests
+
 # From web-app directory
 npm run build               # Production build
 npm run lint               # ESLint check
@@ -88,7 +93,7 @@ npm run test:accessibility  # Accessibility tests
 
 **Location:** `/mobile-app/` directory
 **Framework:** React Native + Expo
-**Status:** Onboarding flow partially complete (Steps 1-3 implemented)
+**Status:** Early development - Onboarding flow partially complete (Steps 1-3 implemented)
 **Commands:**
 - `cd mobile-app && npm install && npm start` - Start Expo development server
 - `npm run android` - Run on Android device/emulator
@@ -96,16 +101,18 @@ npm run test:accessibility  # Accessibility tests
 - Scan QR code with Expo Go app for testing
 
 **Current Features:**
-- Onboarding flow with first name, age verification (30+), email validation
+- Basic onboarding flow with first name collection
+- Age verification (30+) with date of birth validation
+- Email validation with real-time feedback
 - Portuguese community focus with Firebase backend integration planned
-- Planned: Profile picture upload, selfie verification, interest selection
+- Planned: Profile picture upload, selfie verification, interest selection, welcome screen
 
 ## Core Architecture
 
 **Structure:** Next.js 14 App Router with TypeScript, React Context state management, Supabase PostgreSQL backend
 **Styling:** Tailwind CSS with Portuguese brand colors, mobile-first responsive layouts with enhanced touch targets
 **State Management:** React Context + localStorage (no Redux), bilingual support via LanguageContext
-**Key Pages:** /my-network, /transport, /matches, /live, /students, /premium-membership, /chauffeur, /events
+**Key Pages:** /my-network, /transport, /matches, /live, /students, /premium-membership, /chauffeur, /events, /streaming, /creator-dashboard
 **Contexts:** LanguageContext, CartContext, FavoritesContext, NetworkingContext, SubscriptionContext, PlatformIntegrationContext, NotificationContext, FollowingContext
 **Path Aliases:** `@/*` maps to `./src/*` for clean imports
 **Assets:** Images stored in `/public/images/`, events in `/public/events/`, with fallbacks for missing assets
@@ -132,14 +139,14 @@ Language, Cart, Favorites, Following, Networking, Subscription, PlatformIntegrat
 ## Key Features
 
 **Subscription Tiers:** Student (£12.50), Professional (£25), Business (£75), VIP (£150)
-**Premium Features:** Transport services, premium matches, live streaming, university partnerships
+**Premium Features:** Transport services, premium matches, live streaming platform with Portuguese cultural content, creator monetization, university partnerships
 **Networking:** Event-based connections, compatibility matching, cultural conversation starters
 
 ## Key Components
 
 **Transport:** SIA-compliant luxury transport with Portuguese-speaking drivers
 **Matches:** Premium Portuguese community matching with cultural compatibility 
-**Streaming:** LusoTown TV with cultural content and business workshops
+**Streaming:** LusoTown TV with Portuguese cultural content, business workshops, creator economy, real-time chat, and Portuguese emotes system
 **Students:** 8 university partnerships serving 2,150+ Portuguese students
 
 ## Testing Framework
@@ -172,12 +179,25 @@ Language, Cart, Favorites, Following, Networking, Subscription, PlatformIntegrat
 - `20250816_002_subscription_system.sql` - Subscription management
 - `20250817_001_premium_membership_tiers.sql` - Premium memberships
 - `20250817_002_enhanced_subscription_system.sql` - Enhanced subscriptions
+- `20250818_001_streaming_platform_schema.sql` - Streaming platform database
+- `20250818_002_portuguese_emotes_system.sql` - Portuguese cultural emotes
+- `20250818_003_creator_monetization_system.sql` - Creator economy and revenue sharing
 
 ## Environment Variables
 
 ```env
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+
+# Streaming Platform Configuration
+NEXT_PUBLIC_YOUTUBE_API_KEY=your_youtube_api_key
+SRS_SERVER_URL=your_srs_server_url
+BUNNY_CDN_API_KEY=your_bunny_cdn_key
+STREAMING_SECRET_KEY=your_streaming_secret
+
+# Portuguese Community Features
+PORTUGUESE_EMOTES_API_KEY=your_emotes_api_key
+CULTURAL_CONTENT_ENDPOINT=your_content_api
 ```
 
 ## Development Workflow
@@ -221,6 +241,24 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 - State persistence: localStorage keys for cart/favorites/networking
 
 ## Recent Platform Improvements (August 2025)
+
+### Streaming Platform Integration (August 18, 2025)
+**Complete Portuguese Streaming Platform:**
+- Integrated comprehensive streaming infrastructure based on master plan
+- Portuguese cultural emotes system (:saudade:, :festa:, :futebol:) with regional support
+- Creator monetization system with 70/30 → 85/15 revenue splits for Portuguese creators
+- Real-time chat with Portuguese language toxicity detection and cultural sensitivity
+- Portuguese-focused content categories and discovery optimization
+- Multi-region moderation system (Brazil/Portugal/Africa/Diaspora)
+- Creator dashboard with Portuguese market insights and multi-currency support (BRL, EUR, GBP)
+
+### Authentication & Subscription Updates
+**SubscriptionGate Authentication Changes:**
+- Removed subscription gating from /login and /signup pages per recent commit
+- Subscription enforcement now applies only to premium service flows (transport, matches, etc.)
+- Demo user authentication system allows bypassing subscription requirements
+- Enhanced subscription modes: 'login', 'signup', 'transport', 'general' with different presentation styles
+- Support for modal, compact, and full-page subscription gate variants
 
 ### Mobile Experience Enhancements
 **Homepage Events Cards Redesign:**

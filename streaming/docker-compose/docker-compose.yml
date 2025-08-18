@@ -1,0 +1,103 @@
+# LusoTown Portuguese Community Streaming Infrastructure
+# Development Docker Compose Configuration
+
+version: '3.8'
+
+services:
+  # SRS Media Server for Portuguese community streaming
+  srs-server:
+    build:
+      context: ../
+      dockerfile: Dockerfile.srs
+    container_name: lusotown-srs-dev
+    ports:
+      # RTMP ingestion for OBS/streaming software
+      - "1935:1935"
+      # HLS/HTTP streaming output
+      - "8080:8080"
+      # SRS API for management
+      - "1985:1985"
+      # WebRTC for low-latency streaming
+      - "8000:8000"
+      # SRT for professional streaming
+      - "10080:10080"
+    environment:
+      # Development environment variables
+      - SRS_LOG_LEVEL=info
+      - LUSOTOWN_STREAMING_SECRET=lusotown_dev_secret_2025
+      - CDN_ENDPOINT=${CDN_ENDPOINT:-}
+      - BUNNYCDN_API_KEY=${BUNNYCDN_API_KEY:-}
+      - BUNNYCDN_STORAGE_ZONE=${BUNNYCDN_STORAGE_ZONE:-}
+    volumes:
+      # Persistent logging for development
+      - srs-logs:/usr/local/srs/logs
+      # Streaming content storage
+      - streaming-content:/tmp
+      # Development configuration override
+      - ../conf/srs.conf:/usr/local/srs/conf/srs.conf:ro
+    networks:
+      - lusotown-streaming
+    restart: unless-stopped
+    healthcheck:
+      test: ["/usr/local/bin/health-check.sh"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # Redis for Portuguese community real-time features
+  redis-streaming:
+    image: redis:7-alpine
+    container_name: lusotown-redis-streaming-dev
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis-data:/data
+    networks:
+      - lusotown-streaming
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  # Development monitoring and analytics
+  streaming-monitor:
+    image: grafana/grafana:latest
+    container_name: lusotown-streaming-monitor-dev
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=lusotown2025
+      - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/etc/grafana/provisioning/dashboards/lusotown-streaming.json
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ../monitoring/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ../monitoring/datasources:/etc/grafana/provisioning/datasources:ro
+    networks:
+      - lusotown-streaming
+    restart: unless-stopped
+    depends_on:
+      - srs-server
+
+# Persistent volumes for development
+volumes:
+  srs-logs:
+    driver: local
+  streaming-content:
+    driver: local
+  redis-data:
+    driver: local
+  grafana-data:
+    driver: local
+
+# Network for Portuguese community streaming services
+networks:
+  lusotown-streaming:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

@@ -1,15 +1,31 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient as createSupabaseClient } from '@supabase/supabase-js'
+import { cookies } from 'next/headers'
 
 export const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co'
 export const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key'
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+export const supabase = createSupabaseClient(supabaseUrl, supabaseAnonKey, {
   auth: {
     autoRefreshToken: true,
     persistSession: true,
     detectSessionInUrl: true
   }
 })
+
+// Server-side client for API routes
+export function createClient(cookieStore?: ReturnType<typeof cookies>) {
+  return createSupabaseClient(
+    supabaseUrl,
+    supabaseAnonKey,
+    {
+      cookies: cookieStore ? {
+        get(name: string) {
+          return cookieStore.get(name)?.value
+        },
+      } : undefined,
+    }
+  )
+}
 
 // Types for our database
 export interface Profile {

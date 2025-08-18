@@ -183,35 +183,35 @@ export default function RootLayout({
                         <AuthPopupProvider>
                           <PlatformIntegrationProvider>
                             <WaitingListProvider>
-                            <ComponentErrorBoundary componentName="User Type Selection">
-                              <UserTypeSelection />
-                            </ComponentErrorBoundary>
+                              <ComponentErrorBoundary componentName="User Type Selection">
+                                <UserTypeSelection />
+                              </ComponentErrorBoundary>
 
-                            <ComponentErrorBoundary componentName="Header">
-                              <Header />
-                            </ComponentErrorBoundary>
+                              <ComponentErrorBoundary componentName="Header">
+                                <Header />
+                              </ComponentErrorBoundary>
 
-                            <ErrorBoundary>{children}</ErrorBoundary>
+                              <ErrorBoundary>{children}</ErrorBoundary>
 
-                            <ComponentErrorBoundary componentName="WhatsApp Widget">
-                              <WhatsAppWidget />
-                            </ComponentErrorBoundary>
+                              <ComponentErrorBoundary componentName="WhatsApp Widget">
+                                <WhatsAppWidget />
+                              </ComponentErrorBoundary>
 
-                            <ComponentErrorBoundary componentName="Live Feed Notifications">
-                              <LiveFeedNotifications />
-                            </ComponentErrorBoundary>
+                              <ComponentErrorBoundary componentName="Live Feed Notifications">
+                                <LiveFeedNotifications />
+                              </ComponentErrorBoundary>
 
-                            <ComponentErrorBoundary componentName="Favorite Notification">
-                              <FavoriteNotification />
-                            </ComponentErrorBoundary>
+                              <ComponentErrorBoundary componentName="Favorite Notification">
+                                <FavoriteNotification />
+                              </ComponentErrorBoundary>
 
-                            <ComponentErrorBoundary componentName="Auth Popup">
-                              <AuthPopup />
-                            </ComponentErrorBoundary>
+                              <ComponentErrorBoundary componentName="Auth Popup">
+                                <AuthPopup />
+                              </ComponentErrorBoundary>
 
-                            <ComponentErrorBoundary componentName="Auth Intent Handler">
-                              <AuthIntentHandler />
-                            </ComponentErrorBoundary>
+                              <ComponentErrorBoundary componentName="Auth Intent Handler">
+                                <AuthIntentHandler />
+                              </ComponentErrorBoundary>
                             </WaitingListProvider>
                           </PlatformIntegrationProvider>
                         </AuthPopupProvider>

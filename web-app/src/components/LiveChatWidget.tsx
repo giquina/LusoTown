@@ -1,190 +1,94 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChatBubbleLeftRightIcon, PaperAirplaneIcon, HeartIcon, UserGroupIcon } from '@heroicons/react/24/outline'
-import { Crown, Users, MessageCircle, Send } from 'lucide-react'
+import { 
+  ChatBubbleLeftRightIcon, 
+  PaperAirplaneIcon, 
+  HeartIcon, 
+  UserGroupIcon,
+  Cog6ToothIcon,
+  ChartBarIcon,
+  XMarkIcon
+} from '@heroicons/react/24/outline'
+import { Crown, Users, MessageCircle, Send, Shield, BarChart3 } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { useSubscription } from '@/context/SubscriptionContext'
-
-interface ChatMessage {
-  id: string
-  user: {
-    name: string
-    isPremium: boolean
-    isHost: boolean
-    avatar: string
-  }
-  message: string
-  timestamp: Date
-  isSuperchat?: boolean
-  reactions?: Array<{
-    emoji: string
-    count: number
-  }>
-}
+import { ChatUser, ChatRoom } from '@/types/chat'
+import ChatWindow from './ChatWindow'
+import ModeratorPanel from './ModeratorPanel'
+import PortuguesePolls from './PortuguesePolls'
 
 interface LiveChatWidgetProps {
   streamId: string
   isLive: boolean
   hasAccess: boolean
+  currentUser?: ChatUser | null
+  className?: string
+  showPolls?: boolean
+  onClose?: () => void
 }
 
-export default function LiveChatWidget({ streamId, isLive, hasAccess }: LiveChatWidgetProps) {
+export default function LiveChatWidget({ 
+  streamId, 
+  isLive, 
+  hasAccess, 
+  currentUser = null,
+  className = '',
+  showPolls = false,
+  onClose
+}: LiveChatWidgetProps) {
   const { language } = useLanguage()
   const { hasActiveSubscription, isInTrial } = useSubscription()
-  const [messages, setMessages] = useState<ChatMessage[]>([])
-  const [newMessage, setNewMessage] = useState('')
-  const [isConnected, setIsConnected] = useState(false)
-  const [viewerCount, setViewerCount] = useState(0)
-  const messagesEndRef = useRef<HTMLDivElement>(null)
-  const canParticipate = hasAccess && (hasActiveSubscription || isInTrial)
+  const [activeView, setActiveView] = useState<'chat' | 'polls' | 'moderation'>('chat')
+  const [showModeratorPanel, setShowModeratorPanel] = useState(false)
+  const [onlineUsers, setOnlineUsers] = useState<ChatUser[]>([])
+  const [room, setRoom] = useState<ChatRoom | null>(null)
+  const [isExpanded, setIsExpanded] = useState(false)
 
-  // Mock chat messages for demonstration
-  const mockMessages: ChatMessage[] = [
-    {
-      id: '1',
-      user: {
-        name: 'Maria Santos',
-        isPremium: false,
-        isHost: true,
-        avatar: 'MS'
-      },
-      message: language === 'pt' ? 'Bem-vindos à nossa noite de fado! 🎵' : 'Welcome to our fado night! 🎵',
-      timestamp: new Date(Date.now() - 5 * 60 * 1000)
-    },
-    {
-      id: '2',
-      user: {
-        name: 'João Silva',
-        isPremium: true,
-        isHost: false,
-        avatar: 'JS'
-      },
-      message: language === 'pt' ? 'Que voz maravilhosa! Obrigado por este momento especial' : 'What a wonderful voice! Thank you for this special moment',
-      timestamp: new Date(Date.now() - 4 * 60 * 1000),
-      reactions: [{ emoji: '❤️', count: 5 }, { emoji: '👏', count: 3 }]
-    },
-    {
-      id: '3',
-      user: {
-        name: 'Ana Costa',
-        isPremium: false,
-        isHost: false,
-        avatar: 'AC'
-      },
-      message: language === 'pt' ? 'Primeira vez a assistir fado ao vivo, estou emocionada!' : 'First time watching live fado, I\'m so moved!',
-      timestamp: new Date(Date.now() - 3 * 60 * 1000)
-    },
-    {
-      id: '4',
-      user: {
-        name: 'Carlos Mendes',
-        isPremium: true,
-        isHost: false,
-        avatar: 'CM'
-      },
-      message: language === 'pt' ? 'Conseguem partilhar o nome dessa música? É lindíssima!' : 'Can you share the name of that song? It\'s beautiful!',
-      timestamp: new Date(Date.now() - 2 * 60 * 1000),
-      isSuperchat: true
-    },
-    {
-      id: '5',
-      user: {
-        name: 'Rita Fernandes',
-        isPremium: false,
-        isHost: false,
-        avatar: 'RF'
-      },
-      message: language === 'pt' ? 'Saudades de Portugal... obrigada por isto 🇵🇹' : 'Missing Portugal... thank you for this 🇵🇹',
-      timestamp: new Date(Date.now() - 1 * 60 * 1000),
-      reactions: [{ emoji: '🇵🇹', count: 8 }, { emoji: '❤️', count: 12 }]
-    }
-  ]
+  // Mock current user if not provided (in real implementation, this would come from auth)
+  const mockCurrentUser: ChatUser | null = currentUser || (hasAccess ? {
+    id: 'mock-user-id',
+    username: language === 'pt' ? 'Visitante' : 'Guest',
+    displayName: language === 'pt' ? 'Visitante' : 'Guest',
+    avatar: 'GU',
+    region: 'diaspora',
+    isSubscriber: hasActiveSubscription,
+    isModerator: false,
+    isHost: false,
+    badges: [],
+    joinedAt: new Date()
+  } : null)
 
-  useEffect(() => {
-    if (isLive) {
-      setMessages(mockMessages)
-      setIsConnected(true)
-      setViewerCount(127)
+  const canModerate = mockCurrentUser && (mockCurrentUser.isModerator || mockCurrentUser.isHost)
+  const canCreatePolls = mockCurrentUser && (mockCurrentUser.isModerator || mockCurrentUser.isHost || mockCurrentUser.isSubscriber)
+  
+  const roomId = `stream_${streamId}`
 
-      // Simulate new messages coming in
-      const interval = setInterval(() => {
-        const randomMessages = [
-          language === 'pt' ? 'Que lindo! 😍' : 'So beautiful! 😍',
-          language === 'pt' ? 'Bravo! 👏' : 'Bravo! 👏',
-          language === 'pt' ? 'Obrigado pela música' : 'Thank you for the music',
-          language === 'pt' ? 'Estou a chorar de emoção' : 'I\'m crying with emotion',
-          language === 'pt' ? 'Viva Portugal! 🇵🇹' : 'Long live Portugal! 🇵🇹'
-        ]
-
-        const newMsg: ChatMessage = {
-          id: Date.now().toString(),
-          user: {
-            name: `Viewer${Math.floor(Math.random() * 1000)}`,
-            isPremium: Math.random() > 0.7,
-            isHost: false,
-            avatar: `V${Math.floor(Math.random() * 10)}`
-          },
-          message: randomMessages[Math.floor(Math.random() * randomMessages.length)],
-          timestamp: new Date()
-        }
-
-        setMessages(prev => [...prev.slice(-20), newMsg]) // Keep last 20 messages
-      }, Math.random() * 10000 + 5000) // Random interval 5-15 seconds
-
-      return () => clearInterval(interval)
-    }
-  }, [isLive, language])
-
-  useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }, [messages])
-
-  const handleSendMessage = () => {
-    if (!newMessage.trim() || !canParticipate) return
-
-    const message: ChatMessage = {
-      id: Date.now().toString(),
-      user: {
-        name: 'Você', // You
-        isPremium: hasActiveSubscription,
-        isHost: false,
-        avatar: 'YO'
-      },
-      message: newMessage,
-      timestamp: new Date()
-    }
-
-    setMessages(prev => [...prev, message])
-    setNewMessage('')
+  // Toggle expanded view
+  const toggleExpanded = () => {
+    setIsExpanded(!isExpanded)
   }
 
-  const handleReaction = (messageId: string, emoji: string) => {
-    if (!canParticipate) return
-
-    setMessages(prev => prev.map(msg => {
-      if (msg.id === messageId) {
-        const reactions = msg.reactions || []
-        const existingReaction = reactions.find(r => r.emoji === emoji)
-        
-        if (existingReaction) {
-          existingReaction.count += 1
-        } else {
-          reactions.push({ emoji, count: 1 })
-        }
-        
-        return { ...msg, reactions }
-      }
-      return msg
-    }))
-  }
-
-  const formatTime = (timestamp: Date) => {
-    return timestamp.toLocaleTimeString(language === 'pt' ? 'pt-PT' : 'en-GB', {
-      hour: '2-digit',
-      minute: '2-digit'
-    })
+  if (!isLive) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className={`bg-white rounded-xl shadow-sm overflow-hidden p-6 text-center ${className}`}
+      >
+        <MessageCircle className="w-12 h-12 mx-auto mb-3 text-gray-300" />
+        <h3 className="text-lg font-semibold text-gray-900 mb-2">
+          {language === 'pt' ? 'Stream Offline' : 'Stream Offline'}
+        </h3>
+        <p className="text-gray-600 text-sm">
+          {language === 'pt' 
+            ? 'O chat estará disponível quando a transmissão começar.'
+            : 'Chat will be available when the stream starts.'
+          }
+        </p>
+      </motion.div>
+    )
   }
 
   return (
@@ -192,10 +96,12 @@ export default function LiveChatWidget({ streamId, isLive, hasAccess }: LiveChat
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 }}
-      className="bg-white rounded-xl shadow-sm overflow-hidden h-96 flex flex-col"
+      className={`bg-white rounded-xl shadow-sm overflow-hidden flex flex-col ${
+        isExpanded ? 'fixed inset-4 z-40' : className || 'h-96'
+      }`}
     >
-      {/* Chat Header */}
-      <div className="p-4 border-b border-gray-200 bg-gray-50">
+      {/* Header */}
+      <div className="p-4 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-primary-50">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="bg-gradient-to-r from-primary-500 to-secondary-500 p-2 rounded-lg">
@@ -203,179 +109,182 @@ export default function LiveChatWidget({ streamId, isLive, hasAccess }: LiveChat
             </div>
             <div>
               <h3 className="text-sm font-semibold text-gray-900">
-                {language === 'pt' ? 'Chat ao Vivo' : 'Live Chat'}
+                {language === 'pt' ? 'Chat Interativo' : 'Interactive Chat'}
               </h3>
               <div className="flex items-center gap-2 text-xs text-gray-500">
-                {isConnected && (
-                  <>
-                    <motion.div
-                      animate={{ scale: [1, 1.2, 1] }}
-                      transition={{ repeat: Infinity, duration: 2 }}
-                      className="w-2 h-2 bg-secondary-500 rounded-full"
-                    />
-                    <span>{viewerCount} {language === 'pt' ? 'online' : 'online'}</span>
-                  </>
-                )}
+                <motion.div
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ repeat: Infinity, duration: 2 }}
+                  className="w-2 h-2 bg-secondary-500 rounded-full"
+                />
+                <span>{language === 'pt' ? 'Ao Vivo' : 'Live'}</span>
               </div>
             </div>
           </div>
           
-          {isLive && (
-            <motion.div
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ repeat: Infinity, duration: 2 }}
-              className="bg-action-500 text-white px-2 py-1 rounded-full text-xs font-bold"
+          <div className="flex items-center gap-2">
+            {/* View Toggle Buttons */}
+            <div className="flex bg-gray-100 rounded-lg p-1">
+              <button
+                onClick={() => setActiveView('chat')}
+                className={`p-1.5 rounded-md transition-colors ${
+                  activeView === 'chat' 
+                    ? 'bg-white text-primary-600 shadow-sm' 
+                    : 'text-gray-500 hover:text-gray-700'
+                }`}
+                title={language === 'pt' ? 'Chat' : 'Chat'}
+              >
+                <MessageCircle className="w-4 h-4" />
+              </button>
+              
+              {showPolls && (
+                <button
+                  onClick={() => setActiveView('polls')}
+                  className={`p-1.5 rounded-md transition-colors ${
+                    activeView === 'polls' 
+                      ? 'bg-white text-primary-600 shadow-sm' 
+                      : 'text-gray-500 hover:text-gray-700'
+                  }`}
+                  title={language === 'pt' ? 'Sondagens' : 'Polls'}
+                >
+                  <BarChart3 className="w-4 h-4" />
+                </button>
+              )}
+              
+              {canModerate && (
+                <button
+                  onClick={() => setShowModeratorPanel(true)}
+                  className={`p-1.5 rounded-md transition-colors ${
+                    showModeratorPanel 
+                      ? 'bg-white text-blue-600 shadow-sm' 
+                      : 'text-gray-500 hover:text-gray-700'
+                  }`}
+                  title={language === 'pt' ? 'Moderação' : 'Moderation'}
+                >
+                  <Shield className="w-4 h-4" />
+                </button>
+              )}
+            </div>
+
+            {/* Expand/Close Buttons */}
+            <button
+              onClick={toggleExpanded}
+              className="p-1 text-gray-500 hover:text-gray-700 rounded-lg"
+              title={isExpanded 
+                ? (language === 'pt' ? 'Minimizar' : 'Minimize')
+                : (language === 'pt' ? 'Expandir' : 'Expand')
+              }
             >
-              {language === 'pt' ? 'AO VIVO' : 'LIVE'}
-            </motion.div>
+              {isExpanded ? (
+                <XMarkIcon className="w-4 h-4" />
+              ) : (
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-5V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                </svg>
+              )}
+            </button>
+
+            {onClose && !isExpanded && (
+              <button
+                onClick={onClose}
+                className="p-1 text-gray-500 hover:text-gray-700 rounded-lg"
+              >
+                <XMarkIcon className="w-4 h-4" />
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* Active View Indicator */}
+        <div className="mt-2 flex gap-2 text-xs">
+          {activeView === 'chat' && (
+            <span className="bg-primary-100 text-primary-800 px-2 py-1 rounded-full">
+              {language === 'pt' ? 'Chat Português' : 'Portuguese Chat'}
+            </span>
+          )}
+          {activeView === 'polls' && (
+            <span className="bg-secondary-100 text-secondary-800 px-2 py-1 rounded-full">
+              {language === 'pt' ? 'Sondagens Culturais' : 'Cultural Polls'}
+            </span>
           )}
         </div>
       </div>
 
-      {/* Messages Container */}
-      <div className="flex-1 overflow-y-auto p-3 space-y-3 bg-gray-50">
-        <AnimatePresence initial={false}>
-          {messages.map((message) => (
-            <motion.div
-              key={message.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className={`flex gap-2 ${message.isSuperchat ? 'bg-accent-50 p-2 rounded-lg border-l-4 border-accent-500' : ''}`}
-            >
-              {/* Avatar */}
-              <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0 ${
-                message.user.isHost 
-                  ? 'bg-gradient-to-r from-action-500 to-secondary-500'
-                  : message.user.isPremium
-                  ? 'bg-gradient-to-r from-premium-500 to-premium-600'
-                  : 'bg-gradient-to-r from-gray-400 to-gray-500'
-              }`}>
-                {message.user.avatar}
-              </div>
+      {/* Content Area */}
+      <div className="flex-1 flex min-h-0">
+        {/* Main Content */}
+        <div className={`flex-1 ${showModeratorPanel ? 'mr-80' : ''} transition-all duration-300`}>
+          <AnimatePresence mode="wait">
+            {activeView === 'chat' && (
+              <motion.div
+                key="chat"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                className="h-full"
+              >
+                <ChatWindow
+                  streamId={streamId}
+                  roomId={roomId}
+                  currentUser={mockCurrentUser}
+                  isLive={isLive}
+                  hasAccess={hasAccess}
+                  className="h-full rounded-none shadow-none border-none"
+                />
+              </motion.div>
+            )}
 
-              <div className="flex-1 min-w-0">
-                {/* User Info */}
-                <div className="flex items-center gap-2 mb-1">
-                  <span className={`text-xs font-medium ${
-                    message.user.isHost ? 'text-action-600' : 'text-gray-700'
-                  }`}>
-                    {message.user.name}
-                  </span>
-                  
-                  {message.user.isHost && (
-                    <span className="bg-action-100 text-action-700 px-1.5 py-0.5 rounded text-xs font-medium">
-                      {language === 'pt' ? 'HOST' : 'HOST'}
-                    </span>
-                  )}
-                  
-                  {message.user.isPremium && !message.user.isHost && (
-                    <Crown className="w-3 h-3 text-premium-600" />
-                  )}
-                  
-                  <span className="text-xs text-gray-400">
-                    {formatTime(message.timestamp)}
-                  </span>
-                </div>
+            {activeView === 'polls' && showPolls && (
+              <motion.div
+                key="polls"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                className="h-full overflow-y-auto p-4"
+              >
+                <PortuguesePolls
+                  currentUser={mockCurrentUser}
+                  canCreatePolls={canCreatePolls}
+                  streamId={streamId}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
 
-                {/* Message */}
-                <div className="text-sm text-gray-900 break-words">
-                  {message.message}
-                </div>
-
-                {/* Reactions */}
-                {message.reactions && message.reactions.length > 0 && (
-                  <div className="flex gap-2 mt-2">
-                    {message.reactions.map((reaction, index) => (
-                      <button
-                        key={index}
-                        onClick={() => handleReaction(message.id, reaction.emoji)}
-                        disabled={!canParticipate}
-                        className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs transition-colors ${
-                          canParticipate 
-                            ? 'bg-gray-100 hover:bg-gray-200' 
-                            : 'bg-gray-100 cursor-not-allowed opacity-50'
-                        }`}
-                      >
-                        <span>{reaction.emoji}</span>
-                        <span className="text-gray-600">{reaction.count}</span>
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </motion.div>
-          ))}
-        </AnimatePresence>
-        <div ref={messagesEndRef} />
-      </div>
-
-      {/* Message Input */}
-      <div className="p-3 border-t border-gray-200">
-        {canParticipate ? (
-          <div className="flex gap-2">
-            <input
-              type="text"
-              value={newMessage}
-              onChange={(e) => setNewMessage(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-              placeholder={language === 'pt' ? 'Escreva uma mensagem...' : 'Type a message...'}
-              className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              maxLength={200}
+        {/* Moderator Panel Overlay */}
+        <AnimatePresence>
+          {showModeratorPanel && canModerate && (
+            <ModeratorPanel
+              room={room}
+              onlineUsers={onlineUsers}
+              currentUser={mockCurrentUser}
+              isVisible={showModeratorPanel}
+              onClose={() => setShowModeratorPanel(false)}
             />
-            <button
-              onClick={handleSendMessage}
-              disabled={!newMessage.trim()}
-              className="px-3 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-            >
-              <Send className="w-4 h-4" />
-            </button>
-          </div>
-        ) : (
-          <div className="text-center py-4">
-            <div className="text-sm text-gray-600 mb-2">
-              {language === 'pt' 
-                ? 'Faça login para participar no chat'
-                : 'Sign in to participate in chat'
-              }
-            </div>
-            <div className="flex gap-2 justify-center">
-              <a
-                href="/login"
-                className="px-3 py-1.5 bg-primary-600 text-white text-sm rounded-lg hover:bg-primary-700 transition-colors"
-              >
-                {language === 'pt' ? 'Entrar' : 'Sign In'}
-              </a>
-              <a
-                href="/subscription"
-                className="px-3 py-1.5 bg-premium-600 text-white text-sm rounded-lg hover:bg-premium-700 transition-colors"
-              >
-                {language === 'pt' ? 'Premium' : 'Premium'}
-              </a>
-            </div>
-          </div>
-        )}
-
-        {/* Quick Reactions */}
-        {canParticipate && (
-          <div className="flex gap-2 mt-2 justify-center">
-            {['❤️', '👏', '🎵', '🇵🇹', '😍'].map((emoji) => (
-              <button
-                key={emoji}
-                onClick={() => {
-                  const latestMessage = messages[messages.length - 1]
-                  if (latestMessage) {
-                    handleReaction(latestMessage.id, emoji)
-                  }
-                }}
-                className="p-1.5 hover:bg-gray-100 rounded-lg transition-colors text-lg"
-              >
-                {emoji}
-              </button>
-            ))}
-          </div>
-        )}
+          )}
+        </AnimatePresence>
       </div>
+
+      {/* Footer - Portuguese Cultural Touch */}
+      {isExpanded && (
+        <div className="border-t border-gray-200 p-3 bg-gradient-to-r from-primary-50 to-secondary-50">
+          <div className="flex items-center justify-between text-xs text-gray-600">
+            <div className="flex items-center gap-2">
+              <span className="flex items-center gap-1">
+                🇵🇹 <span>{language === 'pt' ? 'Comunidade Portuguesa' : 'Portuguese Community'}</span>
+              </span>
+            </div>
+            <div className="flex items-center gap-4">
+              <span className="flex items-center gap-1">
+                <Users className="w-3 h-3" />
+                {onlineUsers.length} online
+              </span>
+              <span>{language === 'pt' ? 'LusoTown TV' : 'LusoTown TV'}</span>
+            </div>
+          </div>
+        </div>
+      )}
     </motion.div>
   )
 }

@@ -41,43 +41,49 @@ const getAuthenticatedNavigationLinks = (t: any) => [
 // All footer links for the "More" dropdown
 const getMoreDropdownLinks = (t: any) => ({
   community: [
-    { name: 'Events & Culture', href: '/events' },
-    { name: 'Community', href: '/community' },
-    { name: 'Become a Host', href: '/host' },
-    { name: 'Business Directory', href: '/directory' },
-    { name: t('footer.housing-assistance', 'Housing Assistance'), href: '/housing-assistance' },
-    { name: t('footer.neighborhood-groups', 'Neighborhood Groups'), href: '/neighborhood-groups' },
-    { name: 'Community Guidelines', href: '/community-guidelines' },
+    { name: "Events & Culture", href: "/events" },
+    { name: "Community", href: "/community" },
+    { name: "Become a Host", href: "/host" },
+    { name: "Business Directory", href: "/directory" },
+    {
+      name: t("footer.housing-assistance", "Housing Assistance"),
+      href: "/housing-assistance",
+    },
+    {
+      name: t("footer.neighborhood-groups", "Neighborhood Groups"),
+      href: "/neighborhood-groups",
+    },
+    { name: "Community Guidelines", href: "/community-guidelines" },
   ],
   services: [
-    { name: 'Premium Services', href: '/services' },
-    { name: 'Cultural Tours', href: '/services#cultural-tours' },
-    { name: 'Executive Transport', href: '/services#executive-transport' },
-    { name: 'Close Protection', href: '/services#close-protection' },
-    { name: 'Transport & SIA', href: '/transport' },
-  { name: 'Find Your Match', href: '/matches' },
-    { name: 'Live TV', href: '/live' },
+    { name: "Premium Services", href: "/services" },
+    { name: "Cultural Tours", href: "/services#cultural-tours" },
+    { name: "Executive Transport", href: "/services#executive-transport" },
+    { name: "Close Protection", href: "/services#close-protection" },
+    { name: "Transport & SIA", href: "/transport" },
+    { name: "Find Your Match", href: "/matches" },
+    { name: "Live TV", href: "/live" },
   ],
   support: [
-    { name: 'How It Works', href: '/how-it-works' },
-    { name: 'Help Center', href: '/help' },
-    { name: 'Contact Us', href: '/contact' },
-    { name: 'Safety & Verification', href: '/safety' },
+    { name: "How It Works", href: "/how-it-works" },
+    { name: "Help Center", href: "/help" },
+    { name: "Contact Us", href: "/contact" },
+    { name: "Safety & Verification", href: "/safety" },
   ],
   company: [
-    { name: 'About LusoTown', href: '/about' },
-    { name: 'Pricing', href: '/pricing' },
-    { name: 'Success Stories', href: '/success-stories' },
-    { name: 'Community Chat', href: '/forums' },
-    { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Partnerships', href: '/partnerships' },
-    { name: 'Instituto Camões Partnership', href: '/instituto-camoes' },
+    { name: "About LusoTown", href: "/about" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "Success Stories", href: "/success-stories" },
+    { name: "Community Chat", href: "/forums" },
+    { name: "Case Studies", href: "/case-studies" },
+    { name: "Partnerships", href: "/partnerships" },
+    { name: "Instituto Camões Partnership", href: "/instituto-camoes" },
   ],
   legal: [
-    { name: 'Community Guidelines', href: '/community-guidelines' },
-    { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Service', href: '/terms' },
-    { name: 'Community Safety', href: '/safety' },
+    { name: "Community Guidelines", href: "/community-guidelines" },
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Terms of Service", href: "/terms" },
+    { name: "Community Safety", href: "/safety" },
   ],
 });
 
@@ -130,7 +136,7 @@ export default function Header() {
   const navigationLinks = user
     ? getAuthenticatedNavigationLinks(t)
     : getNavigationLinks(t);
-  
+
   const moreDropdownLinks = getMoreDropdownLinks(t);
 
   return (
@@ -170,36 +176,73 @@ export default function Header() {
                         >
                           <div className="grid grid-cols-2 gap-6 px-6">
                             <div>
-                              <h3 className="text-sm font-semibold text-gray-900 mb-3">Tours & Experiences</h3>
+                              <h3 className="text-sm font-semibold text-gray-900 mb-3">
+                                Tours & Experiences
+                              </h3>
                               <ul className="space-y-2">
                                 <li>
-                                  <a href="/london-tours" className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded">All London Tours</a>
+                                  <a
+                                    href="/london-tours"
+                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
+                                  >
+                                    All London Tours
+                                  </a>
                                 </li>
                                 <li>
-                                  <a href="/services#cultural-tours" className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded">Cultural Tours</a>
+                                  <a
+                                    href="/services#cultural-tours"
+                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
+                                  >
+                                    Cultural Tours
+                                  </a>
                                 </li>
                                 <li>
-                                  <a href="/services#executive-transport" className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded">Executive Transport</a>
+                                  <a
+                                    href="/services#executive-transport"
+                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
+                                  >
+                                    Executive Transport
+                                  </a>
                                 </li>
                               </ul>
                             </div>
                             <div>
-                              <h3 className="text-sm font-semibold text-gray-900 mb-3">Transport & Security</h3>
+                              <h3 className="text-sm font-semibold text-gray-900 mb-3">
+                                Transport & Security
+                              </h3>
                               <ul className="space-y-2">
                                 <li>
-                                  <a href="/transport" className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded">Transport & SIA</a>
+                                  <a
+                                    href="/transport"
+                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
+                                  >
+                                    Transport & SIA
+                                  </a>
                                 </li>
                                 <li>
-                                  <a href="/services#close-protection" className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded">Close Protection</a>
+                                  <a
+                                    href="/services#close-protection"
+                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
+                                  >
+                                    Close Protection
+                                  </a>
                                 </li>
                                 <li>
-                                  <a href="/services" className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded">All Services</a>
+                                  <a
+                                    href="/services"
+                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
+                                  >
+                                    All Services
+                                  </a>
                                 </li>
                               </ul>
                             </div>
                           </div>
                           <div className="px-6 pt-4">
-                            <p className="text-xs text-gray-500">Explore authentic Portuguese-led tours and transport in London. Unidos pela Língua.</p>
+                            <p className="text-xs text-gray-500">
+                              Explore authentic Portuguese-led tours and
+                              transport in London. Unidos pela Língua.
+                            </p>
                           </div>
                         </motion.div>
                       )}
@@ -217,9 +260,9 @@ export default function Header() {
                 </a>
               );
             })}
-            
+
             {/* More Dropdown */}
-            <div 
+            <div
               className="relative"
               onMouseEnter={() => setShowMoreDropdown(true)}
               onMouseLeave={() => setShowMoreDropdown(false)}
@@ -240,22 +283,27 @@ export default function Header() {
                     <div className="grid grid-cols-5 gap-8 px-8">
                       {/* Quick Actions Section */}
                       <div className="border-r border-gray-200 pr-6">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                          Quick Actions
+                        </h3>
                         <div className="space-y-3">
                           <CartButton className="w-full justify-start" />
                           <SavedItemsButton className="w-full justify-start" />
                         </div>
                         <div className="mt-6 pt-4 border-t border-gray-100">
                           <p className="text-xs text-gray-500 leading-relaxed">
-                            LusoTown connects Portuguese speakers in London & UK to cultural events,
-                            services and community. Where we discover, learn and thrive together.
+                            LusoTown connects Portuguese speakers in London & UK
+                            to cultural events, services and community. Where we
+                            discover, learn and thrive together.
                           </p>
                         </div>
                       </div>
-                      
+
                       {/* Community Links */}
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-primary-600">Community</h3>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-primary-600">
+                          Community
+                        </h3>
                         <ul className="space-y-2">
                           {moreDropdownLinks.community.map((link) => (
                             <li key={link.name}>
@@ -272,7 +320,9 @@ export default function Header() {
 
                       {/* Services Links */}
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-premium-600">Services</h3>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-premium-600">
+                          Services
+                        </h3>
                         <ul className="space-y-2">
                           {moreDropdownLinks.services.map((link) => (
                             <li key={link.name}>
@@ -289,7 +339,9 @@ export default function Header() {
 
                       {/* Support & Company Links */}
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-secondary-600">Support</h3>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-secondary-600">
+                          Support
+                        </h3>
                         <ul className="space-y-2 mb-6">
                           {moreDropdownLinks.support.map((link) => (
                             <li key={link.name}>
@@ -302,8 +354,10 @@ export default function Header() {
                             </li>
                           ))}
                         </ul>
-                        
-                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-accent-600">Company</h3>
+
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-accent-600">
+                          Company
+                        </h3>
                         <ul className="space-y-2">
                           {moreDropdownLinks.company.slice(0, 4).map((link) => (
                             <li key={link.name}>
@@ -320,7 +374,9 @@ export default function Header() {
 
                       {/* Legal & Contact */}
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-gray-700">Legal & Contact</h3>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4 text-gray-700">
+                          Legal & Contact
+                        </h3>
                         <ul className="space-y-2 mb-6">
                           {moreDropdownLinks.legal.map((link) => (
                             <li key={link.name}>
@@ -335,8 +391,10 @@ export default function Header() {
                         </ul>
 
                         {/* Contact Info */}
-        <div className="bg-gray-50 rounded-lg p-4 overflow-hidden">
-                          <h4 className="font-semibold text-gray-900 mb-2">Get in Touch</h4>
+                        <div className="bg-gray-50 rounded-lg p-4 overflow-hidden">
+                          <h4 className="font-semibold text-gray-900 mb-2">
+                            Get in Touch
+                          </h4>
                           <div className="space-y-2 text-sm text-gray-600">
                             <div className="flex items-center gap-2">
                               <MapPinIcon className="h-4 w-4" />
@@ -344,7 +402,12 @@ export default function Header() {
                             </div>
                             <div className="flex items-center gap-2">
                               <EnvelopeIcon className="h-4 w-4" />
-                              <a href="mailto:connect@lusotown.co.uk" className="break-all hover:underline">connect@lusotown.co.uk</a>
+                              <a
+                                href="mailto:connect@lusotown.co.uk"
+                                className="break-all hover:underline"
+                              >
+                                connect@lusotown.co.uk
+                              </a>
                             </div>
                           </div>
                         </div>
@@ -521,20 +584,133 @@ export default function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="md:hidden relative z-50 bg-white border-t border-primary-200 shadow-2xl rounded-b-lg mx-2 mb-2"
+                className="md:hidden relative z-50 bg-white border-t border-primary-200 shadow-2xl rounded-b-lg mx-2 mb-2 max-h-[80vh] overflow-y-auto"
               >
                 <div className="px-4 pt-6 pb-4 space-y-2">
-                  {navigationLinks.map((link) => (
+                  {/* Quick Actions Section */}
+                  <div className="pb-4 border-b border-gray-200">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3">Quick Actions</h3>
+                    <div className="space-y-2">
+                      <CartButton className="w-full justify-start min-h-[44px]" />
+                      <SavedItemsButton className="w-full justify-start min-h-[44px]" />
+                    </div>
+                  </div>
+
+                  {/* Main Navigation Links */}
+                  <div className="pb-4 border-b border-gray-200">
+                    <h3 className="text-lg font-semibold text-primary-600 mb-3">Navigation</h3>
+                    {navigationLinks.map((link) => (
+                      <a
+                        key={link.name}
+                        href={link.href}
+                        className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px] flex items-center"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {link.name}
+                      </a>
+                    ))}
+                  </div>
+
+                  {/* Tours & Transport Section */}
+                  <div className="pb-4 border-b border-gray-200">
+                    <h3 className="text-lg font-semibold text-premium-600 mb-3">Tours & Transport</h3>
                     <a
-                      key={link.name}
-                      href={link.href}
-                      className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px] flex items-center"
+                      href="/services#cultural-tours"
+                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      {link.name}
+                      Cultural Tours
                     </a>
-                  ))}
+                    <a
+                      href="/services#executive-transport"
+                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Executive Transport
+                    </a>
+                    <a
+                      href="/transport"
+                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Transport & SIA
+                    </a>
+                    <a
+                      href="/services#close-protection"
+                      className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Close Protection
+                    </a>
+                  </div>
 
+                  {/* Services Section */}
+                  <div className="pb-4 border-b border-gray-200">
+                    <h3 className="text-lg font-semibold text-secondary-600 mb-3">Services</h3>
+                    <a
+                      href="/matches"
+                      className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Find Your Match
+                    </a>
+                    <a
+                      href="/live"
+                      className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Live TV
+                    </a>
+                    <a
+                      href="/services"
+                      className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Premium Services
+                    </a>
+                  </div>
+
+                  {/* Community Section */}
+                  <div className="pb-4 border-b border-gray-200">
+                    <h3 className="text-lg font-semibold text-accent-600 mb-3">Community</h3>
+                    {moreDropdownLinks.community.slice(0, 6).map((link) => (
+                      <a
+                        key={link.name}
+                        href={link.href}
+                        className="text-gray-700 hover:text-accent-600 hover:bg-accent-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-accent-200 min-h-[44px] flex items-center"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {link.name}
+                      </a>
+                    ))}
+                  </div>
+
+                  {/* Support & Company Section */}
+                  <div className="pb-4 border-b border-gray-200">
+                    <h3 className="text-lg font-semibold text-gray-700 mb-3">Support & Company</h3>
+                    {moreDropdownLinks.support.map((link) => (
+                      <a
+                        key={link.name}
+                        href={link.href}
+                        className="text-gray-700 hover:text-gray-900 hover:bg-gray-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-gray-200 min-h-[44px] flex items-center"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {link.name}
+                      </a>
+                    ))}
+                    {moreDropdownLinks.company.slice(0, 4).map((link) => (
+                      <a
+                        key={link.name}
+                        href={link.href}
+                        className="text-gray-700 hover:text-gray-900 hover:bg-gray-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-gray-200 min-h-[44px] flex items-center"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {link.name}
+                      </a>
+                    ))}
+                  </div>
+
+                  {/* User Section */}
                   <div className="border-t border-primary-100 pt-4 pb-3">
                     {user ? (
                       <>

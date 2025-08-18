@@ -21,8 +21,8 @@ export default function PremiumMatchesGate() {
   const { language } = useLanguage()
   const { createSubscription } = useSubscription()
 
-  const handleUpgrade = async () => {
-    await createSubscription('bronze')
+  const handleUpgrade = async (tier: 'community' | 'ambassador') => {
+    await createSubscription(tier)
   }
 
   const translations = {
@@ -30,49 +30,44 @@ export default function PremiumMatchesGate() {
       title: 'Unlock Premium Matches',
       subtitle: 'Connect with More Portuguese Community Members',
       dailyLimitReached: 'Daily free match limit reached',
-      upgradeMessage: 'Upgrade to Premium to continue discovering meaningful connections in the Portuguese community.',
+      upgradeMessage: 'Join our Portuguese community matching to discover meaningful connections with fellow Portuguese speakers in London.',
+      freeFeatures: {
+        title: 'Free Matching',
+        matches: '3 matches per day',
+        messages: '10 messages per month',
+        viewing: 'Basic profile viewing',
+        search: 'Location-based search'
+      },
       features: {
-        unlimited: 'Unlimited daily matches',
-        advanced: 'Advanced filtering options',
-        priority: 'Priority profile visibility',
-        insights: 'Detailed compatibility insights',
-        messaging: 'Direct messaging with matches',
+        unlimited: 'Unlimited matches & messaging',
+        events: 'Unlimited cultural events access',
+        filters: 'Cultural compatibility filters',
         verification: 'Profile verification badge',
-        events: 'VIP access to exclusive events',
-        support: '24/7 Portuguese community support'
+        ambassador_priority: 'Priority profile visibility',
+        ambassador_coordination: 'Event hosting privileges',
+        ambassador_support: 'Direct Portuguese community support',
+        ambassador_streaming: 'Unlimited livestream hours'
       },
       pricing: {
-        title: 'Choose Your Membership',
+        title: 'Choose Your Community Level',
         monthly: 'Monthly',
         yearly: 'Yearly',
         save: 'Save 20%',
-        bronze: {
-          name: 'Bronze',
-          price: '£9.99',
-          period: '/month',
-          yearlyPrice: '£95.99',
-          description: 'Perfect for casual community connections'
-        },
-        silver: {
-          name: 'Silver',
+        community: {
+          name: 'Community Member',
           price: '£19.99',
           period: '/month',
-          yearlyPrice: '£191.99',
-          description: 'Great for active community members'
+          yearlyPrice: '£199',
+          yearlyMonthly: '£16.58/month',
+          description: 'Perfect for connecting with Portuguese speakers'
         },
-        gold: {
-          name: 'Gold',
+        ambassador: {
+          name: 'Cultural Ambassador',
           price: '£39.99',
           period: '/month',
-          yearlyPrice: '£383.99',
-          description: 'Ideal for business networking'
-        },
-        platinum: {
-          name: 'Platinum',
-          price: '£79.99',
-          period: '/month',
-          yearlyPrice: '£767.99',
-          description: 'Ultimate Portuguese community experience'
+          yearlyPrice: '£399',
+          yearlyMonthly: '£33.25/month',
+          description: 'Ideal for active community builders'
         }
       },
       buttons: {
@@ -101,49 +96,44 @@ export default function PremiumMatchesGate() {
       title: 'Desbloqueie Matches Premium',
       subtitle: 'Conecte-se com Mais Membros da Comunidade Portuguesa',
       dailyLimitReached: 'Limite diário de matches gratuitos atingido',
-      upgradeMessage: 'Faça upgrade para Premium para continuar a descobrir conexões significativas na comunidade portuguesa.',
+      upgradeMessage: 'Junte-se à nossa comunidade portuguesa para descobrir conexões significativas com outros falantes de português em Londres.',
+      freeFeatures: {
+        title: 'Matches Gratuitos',
+        matches: '3 matches por dia',
+        messages: '10 mensagens por mês',
+        viewing: 'Visualização básica de perfis',
+        search: 'Pesquisa por localização'
+      },
       features: {
-        unlimited: 'Matches diários ilimitados',
-        advanced: 'Opções de filtro avançadas',
-        priority: 'Visibilidade prioritária do perfil',
-        insights: 'Insights detalhados de compatibilidade',
-        messaging: 'Mensagens diretas com matches',
+        unlimited: 'Matches e mensagens ilimitados',
+        events: 'Acesso ilimitado a eventos culturais',
+        filters: 'Filtros de compatibilidade cultural',
         verification: 'Distintivo de perfil verificado',
-        events: 'Acesso VIP a eventos exclusivos',
-        support: 'Suporte 24/7 da comunidade portuguesa'
+        ambassador_priority: 'Visibilidade prioritária do perfil',
+        ambassador_coordination: 'Privilégios de organização de eventos',
+        ambassador_support: 'Suporte direto da comunidade portuguesa',
+        ambassador_streaming: 'Horas de transmissão ilimitadas'
       },
       pricing: {
-        title: 'Escolha a Sua Membership',
+        title: 'Escolha o Seu Nível Comunitário',
         monthly: 'Mensal',
         yearly: 'Anual',
         save: 'Poupe 20%',
-        bronze: {
-          name: 'Bronze',
-          price: '£9.99',
-          period: '/mês',
-          yearlyPrice: '£95.99',
-          description: 'Perfeito para conexões casuais da comunidade'
-        },
-        silver: {
-          name: 'Silver',
+        community: {
+          name: 'Membro da Comunidade',
           price: '£19.99',
           period: '/mês',
-          yearlyPrice: '£191.99',
-          description: 'Ótimo para membros ativos da comunidade'
+          yearlyPrice: '£199',
+          yearlyMonthly: '£16.58/mês',
+          description: 'Perfeito para conectar com falantes de português'
         },
-        gold: {
-          name: 'Gold',
+        ambassador: {
+          name: 'Embaixador Cultural',
           price: '£39.99',
           period: '/mês',
-          yearlyPrice: '£383.99',
-          description: 'Ideal para networking empresarial'
-        },
-        platinum: {
-          name: 'Platinum',
-          price: '£79.99',
-          period: '/mês',
-          yearlyPrice: '£767.99',
-          description: 'Experiência definitiva da comunidade portuguesa'
+          yearlyPrice: '£399',
+          yearlyMonthly: '£33.25/mês',
+          description: 'Ideal para construtores ativos da comunidade'
         }
       },
       buttons: {
@@ -174,48 +164,42 @@ export default function PremiumMatchesGate() {
 
   const tiers = [
     {
-      name: t.pricing.bronze.name,
-      price: t.pricing.bronze.price,
-      yearlyPrice: t.pricing.bronze.yearlyPrice,
-      period: t.pricing.bronze.period,
-      description: t.pricing.bronze.description,
-      color: 'coral',
+      name: 'Free Matching',
+      price: '£0',
+      yearlyPrice: '£0',
+      period: '/month',
+      description: language === 'pt' ? 'Comece a conectar com a comunidade' : 'Start connecting with the community',
+      color: 'neutral',
       icon: Heart,
       popular: false,
-      features: [t.features.unlimited, t.features.messaging, t.features.verification]
+      tier: 'free' as const,
+      features: [t.freeFeatures.matches, t.freeFeatures.messages, t.freeFeatures.viewing, t.freeFeatures.search]
     },
     {
-      name: t.pricing.silver.name,
-      price: t.pricing.silver.price,
-      yearlyPrice: t.pricing.silver.yearlyPrice,
-      period: t.pricing.silver.period,
-      description: t.pricing.silver.description,
-      color: 'neutral',
+      name: t.pricing.community.name,
+      price: t.pricing.community.price,
+      yearlyPrice: t.pricing.community.yearlyPrice,
+      yearlyMonthly: t.pricing.community.yearlyMonthly,
+      period: t.pricing.community.period,
+      description: t.pricing.community.description,
+      color: 'primary',
       icon: Star,
       popular: true,
-      features: [t.features.unlimited, t.features.advanced, t.features.messaging, t.features.verification, t.features.insights]
+      tier: 'community' as const,
+      features: [t.features.unlimited, t.features.events, t.features.filters, t.features.verification]
     },
     {
-      name: t.pricing.gold.name,
-      price: t.pricing.gold.price,
-      yearlyPrice: t.pricing.gold.yearlyPrice,
-      period: t.pricing.gold.period,
-      description: t.pricing.gold.description,
-      color: 'accent',
+      name: t.pricing.ambassador.name,
+      price: t.pricing.ambassador.price,
+      yearlyPrice: t.pricing.ambassador.yearlyPrice,
+      yearlyMonthly: t.pricing.ambassador.yearlyMonthly,
+      period: t.pricing.ambassador.period,
+      description: t.pricing.ambassador.description,
+      color: 'secondary',
       icon: Crown,
       popular: false,
-      features: [t.features.unlimited, t.features.advanced, t.features.priority, t.features.messaging, t.features.verification, t.features.insights, t.features.events]
-    },
-    {
-      name: t.pricing.platinum.name,
-      price: t.pricing.platinum.price,
-      yearlyPrice: t.pricing.platinum.yearlyPrice,
-      period: t.pricing.platinum.period,
-      description: t.pricing.platinum.description,
-      color: 'premium',
-      icon: Sparkles,
-      popular: false,
-      features: [t.features.unlimited, t.features.advanced, t.features.priority, t.features.messaging, t.features.verification, t.features.insights, t.features.events, t.features.support]
+      tier: 'ambassador' as const,
+      features: [t.features.unlimited, t.features.events, t.features.ambassador_priority, t.features.ambassador_coordination, t.features.ambassador_support, t.features.ambassador_streaming]
     }
   ]
 
@@ -240,18 +224,15 @@ export default function PremiumMatchesGate() {
             {t.subtitle}
           </p>
 
-          <div className="bg-action-50 border border-action-200 rounded-xl p-6 max-w-2xl mx-auto">
+          <div className="bg-primary-50 border border-primary-200 rounded-xl p-6 max-w-2xl mx-auto">
             <div className="flex items-center justify-center gap-2 mb-3">
-              <Lock className="h-5 w-5 text-action-600" />
-              <span className="font-semibold text-action-900">
-                {language === 'pt' ? 'Serviço Premium Temporariamente Esgotado' : 'Premium Service Temporarily Fully Booked'}
+              <Sparkles className="h-5 w-5 text-primary-600" />
+              <span className="font-semibold text-primary-900">
+                {language === 'pt' ? 'Conecte-se com a Comunidade Portuguesa em Londres' : 'Connect with the Portuguese Community in London'}
               </span>
             </div>
-            <p className="text-action-800">
-              {language === 'pt' 
-                ? 'O nosso serviço de matches premium está atualmente em alta demanda. Junte-se à nossa lista de espera para ser notificado quando a capacidade for restaurada.'
-                : 'Our premium matching service is currently in high demand. Join our waiting list to be notified when capacity is restored.'
-              }
+            <p className="text-primary-800">
+              {t.upgradeMessage}
             </p>
           </div>
         </motion.div>
@@ -269,13 +250,13 @@ export default function PremiumMatchesGate() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { icon: Heart, text: t.features.unlimited },
-              { icon: Filter, text: t.features.advanced },
-              { icon: Star, text: t.features.priority },
               { icon: MessageCircle, text: t.features.messaging },
+              { icon: Filter, text: t.features.filters },
               { icon: Shield, text: t.features.verification },
-              { icon: Sparkles, text: t.features.insights },
               { icon: Calendar, text: t.features.events },
-              { icon: Users, text: t.features.support }
+              { icon: Star, text: t.features.ambassador_priority },
+              { icon: Users, text: t.features.ambassador_coordination },
+              { icon: Sparkles, text: t.features.ambassador_support }
             ].map((feature, index) => (
               <motion.div
                 key={index}
@@ -302,9 +283,10 @@ export default function PremiumMatchesGate() {
             {t.pricing.title}
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {tiers.map((tier, index) => {
               const TierIcon = tier.icon
+              const isFree = tier.tier === 'free'
               return (
                 <motion.div
                   key={tier.name}
@@ -313,12 +295,12 @@ export default function PremiumMatchesGate() {
                   transition={{ delay: 0.5 + index * 0.1 }}
                   className={`relative bg-white rounded-xl p-6 shadow-lg border-2 ${
                     tier.popular ? 'border-primary-300 ring-2 ring-primary-100' : 'border-neutral-200'
-                  }`}
+                  } ${isFree ? 'opacity-75' : ''}`}
                 >
                   {tier.popular && (
                     <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                       <span className="bg-primary-600 text-white px-3 py-1 rounded-full text-xs font-medium">
-                        Most Popular
+                        {language === 'pt' ? 'Mais Popular' : 'Most Popular'}
                       </span>
                     </div>
                   )}
@@ -333,9 +315,11 @@ export default function PremiumMatchesGate() {
                       <span className="text-neutral-600">{tier.period}</span>
                     </div>
                     
-                    <div className="text-sm text-neutral-500">
-                      {t.pricing.yearly}: {tier.yearlyPrice} ({t.pricing.save})
-                    </div>
+                    {!isFree && tier.yearlyMonthly && (
+                      <div className="text-sm text-neutral-500">
+                        {t.pricing.yearly}: {tier.yearlyPrice} ({tier.yearlyMonthly})
+                      </div>
+                    )}
                   </div>
                   
                   <div className="space-y-3 mb-6">
@@ -347,12 +331,22 @@ export default function PremiumMatchesGate() {
                     ))}
                   </div>
                   
-                  <button
-                    className="w-full py-3 rounded-lg font-medium bg-gray-400 text-white cursor-not-allowed opacity-60"
-                    disabled
-                  >
-                    {language === 'pt' ? 'Temporariamente Indisponível' : 'Temporarily Unavailable'}
-                  </button>
+                  {isFree ? (
+                    <button className="w-full py-3 rounded-lg font-medium bg-neutral-200 text-neutral-600 cursor-default">
+                      {language === 'pt' ? 'Sempre Gratuito' : 'Always Free'}
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => handleUpgrade(tier.tier)}
+                      className={`w-full py-3 rounded-lg font-medium transition-colors ${
+                        tier.popular 
+                          ? 'bg-primary-600 hover:bg-primary-700 text-white' 
+                          : 'bg-secondary-600 hover:bg-secondary-700 text-white'
+                      }`}
+                    >
+                      {t.buttons.choosePlan}
+                    </button>
+                  )}
                 </motion.div>
               )
             })}
@@ -393,29 +387,30 @@ export default function PremiumMatchesGate() {
           transition={{ delay: 0.8 }}
           className="text-center space-y-4"
         >
-          <div className="space-y-4">
-            <button
-              className="bg-gray-400 text-white px-8 py-4 rounded-xl font-semibold text-lg cursor-not-allowed opacity-60"
-              disabled
-            >
-              {language === 'pt' ? 'Serviço Temporariamente Indisponível' : 'Service Temporarily Unavailable'}
-            </button>
-            <div className="flex justify-center">
-              <button
-                onClick={() => {
-                  console.log('Join premium matching waiting list');
-                }}
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-3 rounded-xl font-medium transition-all shadow-lg"
-              >
-                {language === 'pt' ? 'Entrar na Lista de Espera' : 'Join Waiting List'}
-              </button>
-            </div>
-            <p className="text-sm text-gray-600 text-center">
+          <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-6 max-w-2xl mx-auto">
+            <h3 className="text-xl font-bold text-primary-900 mb-3">
+              {language === 'pt' ? 'Pronto para se Conectar?' : 'Ready to Connect?'}
+            </h3>
+            <p className="text-primary-700 mb-4">
               {language === 'pt' 
-                ? 'Estimativa de disponibilidade: Abril 2025'
-                : 'Estimated availability: April 2025'
+                ? 'Junte-se à nossa comunidade de falantes de português em Londres e comece a formar conexões significativas hoje.'
+                : 'Join our community of Portuguese speakers in London and start forming meaningful connections today.'
               }
             </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <button
+                onClick={() => handleUpgrade('community')}
+                className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-lg"
+              >
+                {language === 'pt' ? 'Começar por £19.99/mês' : 'Start at £19.99/month'}
+              </button>
+              <button
+                onClick={() => handleUpgrade('ambassador')}
+                className="bg-secondary-600 hover:bg-secondary-700 text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-lg"
+              >
+                {language === 'pt' ? 'Embaixador por £39.99/mês' : 'Ambassador at £39.99/month'}
+              </button>
+            </div>
           </div>
           
           <div>

@@ -17,7 +17,7 @@ export interface Subscription {
   stripe_customer_id?: string
   status: 'active' | 'inactive' | 'cancelled' | 'past_due' | 'trialing'
   plan_type: 'monthly' | 'yearly'
-  tier: 'basic' | 'student' | 'professional' | 'business' | 'vip'
+  tier: 'free' | 'community' | 'ambassador'
   current_period_start?: string
   current_period_end?: string
   trial_end?: string
@@ -78,8 +78,8 @@ interface SubscriptionContextType {
   
   // Actions
   checkSubscriptionStatus: () => Promise<void>
-  createSubscription: (tier?: 'basic' | 'student' | 'professional' | 'business' | 'vip', planType?: 'monthly' | 'yearly') => Promise<string | null>
-  upgradeSubscription: (newTier: 'basic' | 'student' | 'professional' | 'business' | 'vip') => Promise<boolean>
+  createSubscription: (tier?: 'free' | 'community' | 'ambassador', planType?: 'monthly' | 'yearly') => Promise<string | null>
+  upgradeSubscription: (newTier: 'free' | 'community' | 'ambassador') => Promise<boolean>
   cancelSubscription: () => Promise<boolean>
   redirectToSubscription: () => void
   markTrialAsUsed: () => Promise<void>
@@ -175,8 +175,8 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
   }
 
   const createSubscription = async (
-    tier: 'basic' | 'student' | 'professional' | 'business' | 'vip' = 'professional',
-    planType: 'monthly' | 'yearly' = 'yearly'
+    tier: 'free' | 'community' | 'ambassador' = 'community',
+    planType: 'monthly' | 'yearly' = 'monthly'
   ): Promise<string | null> => {
     try {
       const user = authService.getCurrentUser()
@@ -282,7 +282,7 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
     window.location.href = '/subscription'
   }
 
-  const upgradeSubscription = async (newTier: 'basic' | 'student' | 'professional' | 'business' | 'vip'): Promise<boolean> => {
+  const upgradeSubscription = async (newTier: 'free' | 'community' | 'ambassador' | 'basic' | 'student' | 'professional' | 'business' | 'vip'): Promise<boolean> => {
     try {
       const user = authService.getCurrentUser()
       if (!user || !subscription) {
@@ -512,16 +512,14 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
   const subscriptionRequired = !authService.isDemoUser() && !hasActiveSubscription && !isInTrial
 
   // Get current membership tier
-  const membershipTier: 'basic' | 'student' | 'professional' | 'business' | 'vip' = 
-    hasActiveSubscription && subscription?.tier ? subscription.tier : 'basic'
+  const membershipTier: 'free' | 'community' | 'ambassador' = 
+    hasActiveSubscription && subscription?.tier ? subscription.tier : 'free'
 
   // Calculate service discount based on tier
   const serviceDiscount = (() => {
     switch (membershipTier) {
-      case 'student': return 50 // 50% student discount
-      case 'professional': return 10
-      case 'business': return 20
-      case 'vip': return 30
+      case 'community': return 10 // 10% member discount
+      case 'ambassador': return 20 // 20% ambassador discount
       default: return 0
     }
   })()
@@ -529,39 +527,23 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
   // Usage limits based on tier
   const usageLimits: SubscriptionUsageLimits = (() => {
     switch (membershipTier) {
-      case 'basic':
+      case 'free':
         return {
-          dailyMatches: 5,
-          monthlyMessages: 20,
+          dailyMatches: 3,
+          monthlyMessages: 10, // Allow 10 messages per month for free users
           premiumEvents: 0,
           livestreamHours: 0,
           hasUnlimitedAccess: false
         }
-      case 'student':
+      case 'community':
         return {
-          dailyMatches: 50,
-          monthlyMessages: 100,
-          premiumEvents: 2,
+          dailyMatches: -1, // unlimited matches
+          monthlyMessages: -1, // unlimited messaging
+          premiumEvents: -1, // unlimited events
           livestreamHours: 5,
           hasUnlimitedAccess: false
         }
-      case 'professional':
-        return {
-          dailyMatches: -1, // unlimited
-          monthlyMessages: -1, // unlimited
-          premiumEvents: 5,
-          livestreamHours: 10,
-          hasUnlimitedAccess: true
-        }
-      case 'business':
-        return {
-          dailyMatches: -1, // unlimited
-          monthlyMessages: -1, // unlimited
-          premiumEvents: -1, // unlimited
-          livestreamHours: 25,
-          hasUnlimitedAccess: true
-        }
-      case 'vip':
+      case 'ambassador':
         return {
           dailyMatches: -1, // unlimited
           monthlyMessages: -1, // unlimited
@@ -571,8 +553,8 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
         }
       default:
         return {
-          dailyMatches: 5,
-          monthlyMessages: 20,
+          dailyMatches: 3,
+          monthlyMessages: 10,
           premiumEvents: 0,
           livestreamHours: 0,
           hasUnlimitedAccess: false

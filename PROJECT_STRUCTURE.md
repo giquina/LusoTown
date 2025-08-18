@@ -2,7 +2,7 @@
 
 ## Overview
 
-LusoTown is a Portuguese adult social calendar platform (18+) for London-based Portuguese speakers. This document provides a comprehensive overview of the project structure, including all directories, key files, and their purposes.
+LusoTown is a Portuguese adult social calendar and streaming platform (18+) for London-based Portuguese speakers. This document provides a comprehensive overview of the project structure, including all directories, key files, streaming infrastructure, and their purposes.
 
 ## 🏗️ Root Directory Structure
 
@@ -15,6 +15,8 @@ LusoTown/
 ├── 📄 EVENT_FEED_IMPLEMENTATION.md             # Event feed technical documentation
 ├── 📄 SAVE_CART_IMPLEMENTATION_SUMMARY.md      # Save/Cart functionality guide
 ├── 📄 SUPABASE_COMPREHENSIVE_PLAN.md           # Database and backend documentation
+├── 📄 STREAMING_INTEGRATION_MASTER_PLAN.md     # Complete streaming platform master plan
+├── 📄 STREAMING_IMPLEMENTATION_GUIDE.md        # Streaming technical implementation
 ├── 📄 LUSOTOWN_ADMINISTRATIVE_ROLES.md         # Complete job role specifications (10 positions)
 ├── 📄 LICENSE                                  # MIT License
 ├── 📄 vercel.json                              # Vercel deployment configuration
@@ -23,6 +25,7 @@ LusoTown/
 ├── 🤖 .claude/                                 # Claude Code agent system
 ├── 📱 mobile-app/                              # React Native app (future)
 ├── 🌐 web-app/                                 # Next.js web application
+├── 📺 streaming-server/                         # SRS media server infrastructure (future)
 └── 🗄️ supabase/                                # Database and backend
 ```
 
@@ -83,8 +86,8 @@ web-app/
 ```
 src/
 ├── 📄 globals.css                              # Global styles with Portuguese colors
-├── 🎭 app/                                     # Next.js 14 App Router pages (38+ pages)
-├── 🧩 components/                              # React components (54+ components)
+├── 🎭 app/                                     # Next.js 14 App Router pages (60+ pages)
+├── 🧩 components/                              # React components (140+ components)
 ├── 🌐 context/                                 # React Context providers
 └── 📚 lib/                                     # Utility functions and services
 ```
@@ -124,6 +127,17 @@ app/
 │       ├── 📁 topic/                           # Forum topics
 │       │   └── 📁 [id]/                        # Individual topics
 │       └── 📁 create-topic/                    # Topic creation
+├── 📺 Streaming Platform
+│   ├── 📁 live/                                # Main live streaming page
+│   ├── 📁 streaming/                           # Streaming dashboard and discovery
+│   ├── 📁 creator-dashboard/                   # Creator tools and analytics
+│   │   ├── 📁 analytics/                       # Streaming analytics
+│   │   ├── 📁 monetization/                    # Revenue and earnings
+│   │   ├── 📁 content/                         # Content management
+│   │   └── 📁 settings/                        # Creator settings
+│   ├── 📁 watch/                               # Stream viewing pages
+│   │   └── 📁 [id]/                            # Individual stream pages
+│   └── 📁 replays/                             # Stream replay library
 ├── 🏪 Business & Networking
 │   ├── 📁 directory/                           # Portuguese business directory
 │   │   └── 📁 member/                          # Business profiles
@@ -182,6 +196,22 @@ components/
 │   ├── 📄 FeedFilters.tsx                      # Advanced filtering
 │   ├── 📄 LiveUpdateIndicator.tsx              # Real-time updates
 │   └── 📄 LiveFeedNotifications.tsx            # Live notifications
+├── 📺 Streaming Platform Components
+│   ├── 📄 StreamPlayer.tsx                     # HLS/WebRTC video player with Portuguese UI
+│   ├── 📄 StreamGrid.tsx                       # Mobile-first stream discovery
+│   ├── 📄 StreamCategories.tsx                 # Portuguese cultural categories
+│   ├── 📄 StreamSchedule.tsx                   # Scheduled streaming calendar
+│   ├── 📄 StreamReplayLibrary.tsx              # VOD and replay system
+│   ├── 📄 StreamViewerStats.tsx                # Real-time analytics dashboard
+│   ├── 📄 LiveChatWidget.tsx                   # Real-time chat with Portuguese emotes
+│   ├── 📄 PortugueseEmotes.tsx                 # Cultural emotes system (:saudade:, :festa:)
+│   ├── 📄 CreatorDashboard.tsx                 # Creator analytics and tools
+│   ├── 📄 GoLiveModal.tsx                      # Stream creation interface
+│   ├── 📄 StreamModerationTools.tsx            # Portuguese content moderation
+│   ├── 📄 CreatorMonetization.tsx              # Revenue sharing and virtual gifts
+│   ├── 📄 StreamNotifications.tsx              # Live streaming notifications
+│   ├── 📄 StreamDiscovery.tsx                  # Portuguese content discovery
+│   └── 📄 CulturalStreamingEvents.tsx          # Cultural event integration
 ├── 🛒 Save & Cart System
 │   ├── 📄 Cart.tsx                             # Shopping cart functionality
 │   ├── 📄 CartButton.tsx                       # Cart interaction button
@@ -237,6 +267,9 @@ context/
 ├── 📄 FavoritesContext.tsx                     # User favorites management
 ├── 📄 FollowingContext.tsx                     # User connections
 ├── 📄 CartContext.tsx                          # Shopping cart and saved items
+├── 📄 StreamingContext.tsx                     # Streaming platform state management
+├── 📄 CreatorContext.tsx                       # Creator dashboard and monetization state
+├── 📄 PortugueseEmotesContext.tsx              # Cultural emotes and regional preferences
 └── 📄 LanguageContext.tsx.backup               # Backup context file
 ```
 
@@ -253,6 +286,12 @@ lib/
 ├── 📄 forums.ts                                # Forum system functions
 ├── 📄 connections.ts                           # User connections
 ├── 📄 directory.ts                             # Business directory
+├── 📄 streaming.ts                             # Streaming platform functions
+├── 📄 creator.ts                               # Creator dashboard and analytics
+├── 📄 monetization.ts                          # Revenue sharing and virtual economy
+├── 📄 portuguese-emotes.ts                     # Cultural emotes and regional content
+├── 📄 stream-moderation.ts                     # Portuguese content moderation
+├── 📄 cultural-integration.ts                  # Cultural event and content integration
 ├── 📄 design.ts                                # Design system utilities
 ├── 📄 placeholders.ts                          # Placeholder data
 ├── 📄 profileImages.ts                         # Profile image management
@@ -306,7 +345,12 @@ supabase/
 └── 📁 migrations/                              # Database migrations
     ├── 📄 20250811_001_initial_schema.sql      # Initial database schema
     ├── 📄 20250812_001_messages_schema.sql     # Messaging system schema
-    └── 📄 20250814_001_enhanced_groups_safety.sql # Enhanced safety features
+    ├── 📄 20250814_001_enhanced_groups_safety.sql # Enhanced safety features
+    ├── 📄 20250818_001_streaming_platform_schema.sql # Streaming infrastructure
+    ├── 📄 20250818_002_portuguese_emotes_system.sql # Cultural emotes system
+    ├── 📄 20250818_003_creator_monetization_system.sql # Creator revenue system
+    ├── 📄 20250818_004_stream_categories_cultural.sql # Portuguese content categories
+    └── 📄 20250818_005_streaming_analytics_tables.sql # Analytics and metrics
 ```
 
 ## 📱 Mobile App (`mobile-app/`)
@@ -344,8 +388,8 @@ mobile-app/                                     # React Native + Expo (Future De
 - **Tailwind CSS** with Portuguese-inspired design system
 - **Framer Motion** for animations
 - **React Context** for bilingual state management
-- **38+ Static Pages** with complete functionality
-- **54+ React Components** with advanced features
+- **60+ Static Pages** with complete functionality
+- **140+ React Components** with advanced features
 
 #### Backend Infrastructure
 - **Supabase** (PostgreSQL, Authentication, Storage, Edge Functions)
@@ -459,8 +503,8 @@ npm run deploy       # Deploy to Vercel
 - **Brand Consistency**: 100% Portuguese brand compliance achieved
 
 ### Key Metrics
-- **38+ Static Pages**: All functional with Portuguese community focus
-- **54+ React Components**: Advanced community and interaction features
+- **60+ Static Pages**: All functional with Portuguese community focus
+- **140+ React Components**: Advanced community and interaction features
 - **16+ Specialized Agents**: Portuguese community and development specialists (deployed)
 - **10+ Proposed Agents**: Additional specialists researched and pending approval
 - **10 Administrative Roles**: Management positions defined with comprehensive job specifications

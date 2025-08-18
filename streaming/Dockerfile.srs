@@ -1,0 +1,54 @@
+# LusoTown Streaming Infrastructure - Simple Relay Server (SRS)
+FROM ossrs/srs:6
+
+# Install required packages for Portuguese streaming infrastructure
+RUN apt-get update && apt-get install -y \
+    curl \
+    jq \
+    nginx \
+    supervisor \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create necessary directories
+RUN mkdir -p /usr/local/srs/conf \
+    && mkdir -p /usr/local/srs/logs \
+    && mkdir -p /var/log/supervisor \
+    && mkdir -p /etc/nginx/sites-available \
+    && mkdir -p /etc/nginx/sites-enabled
+
+# Copy SRS configuration for Portuguese community streaming
+COPY conf/srs.conf /usr/local/srs/conf/srs.conf
+
+# Copy nginx configuration for CDN integration
+COPY conf/nginx.conf /etc/nginx/nginx.conf
+COPY conf/lusotown-streaming.conf /etc/nginx/sites-available/lusotown-streaming
+RUN ln -sf /etc/nginx/sites-available/lusotown-streaming /etc/nginx/sites-enabled/
+
+# Copy supervisor configuration
+COPY conf/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+# Copy startup scripts
+COPY scripts/start.sh /usr/local/bin/start.sh
+COPY scripts/health-check.sh /usr/local/bin/health-check.sh
+RUN chmod +x /usr/local/bin/start.sh /usr/local/bin/health-check.sh
+
+# Environment variables for Portuguese market optimization
+ENV SRS_LOG_LEVEL=info
+ENV SRS_HTTP_PORT=8080
+ENV SRS_RTMP_PORT=1935
+ENV SRS_HTTP_API_PORT=1985
+ENV SRS_SRT_PORT=10080
+ENV LUSOTOWN_STREAMING_SECRET=lusotown_streaming_2025
+ENV CDN_ENDPOINT=""
+ENV BUNNYCDN_API_KEY=""
+ENV BUNNYCDN_STORAGE_ZONE=""
+
+# Expose ports for streaming protocols
+EXPOSE 1935 8080 1985 10080 8443
+
+# Health check for production deployment
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD /usr/local/bin/health-check.sh
+
+# Start services via supervisor
+CMD ["/usr/local/bin/start.sh"]

@@ -224,10 +224,10 @@ function MatchesContent() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                {t('startMatching') || 'Start Matching'}
+                {t('startMatchingFree') || 'Start Free Matching'}
               </button>
-              <button className="bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/30 transition-all duration-300 transform hover:scale-105">
-                {t('learnMore') || 'Learn More'}
+              <button className="bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-secondary-600 hover:to-secondary-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                {t('upgradeToPremium') || 'Upgrade from £15/month'}
               </button>
             </div>
 
@@ -482,10 +482,15 @@ function MatchesContent() {
                   </div>
                 ))}
               </div>
-              <div className="mt-8">
-                <button className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  {t('joinNow') || 'JOIN NOW'}
+              <div className="mt-8 space-y-3">
+                <button className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto">
+                  {t('startFreeMembership') || 'START FREE (3 matches/day)'}
                 </button>
+                <div className="text-center">
+                  <span className="text-sm text-primary-600">
+                    {t('upgradeAnytime') || 'Upgrade anytime: Community Member £15/month • Cultural Ambassador £25/month'}
+                  </span>
+                </div>
               </div>
             </div>
             <div className="bg-white p-8 rounded-3xl border border-primary-200 shadow-lg">

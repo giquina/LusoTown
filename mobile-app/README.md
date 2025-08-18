@@ -19,12 +19,14 @@ npm start
 
 ## 📱 Current Features
 
-- ✅ Beautiful onboarding flow (Steps 1-2 complete)
-- ✅ First name collection
-- ✅ Age verification (30+ requirement)
-- 🔄 Email step (coming next)
-- 🔄 Profile picture upload (coming next)
-- 🔄 Selfie verification (coming next)
+- ✅ Beautiful onboarding flow (Steps 1-3 complete)
+- ✅ First name collection with validation
+- ✅ Age verification (30+ requirement) with date of birth input
+- ✅ Email validation with real-time feedback
+- 🔄 Profile picture upload (Step 4 - planned)
+- 🔄 Selfie verification (Step 5 - planned)
+- 🔄 Interest selection (Step 6 - planned)
+- 🔄 Welcome screen (Step 7 - planned)
 
 ## 🛠️ Tech Stack
 
@@ -78,8 +80,8 @@ Need help? Check the main project guide! 📚
 - 📋 **Onboarding Step 6**: Interest selection (planned)
 - 📋 **Onboarding Step 7**: Welcome screen (planned)
 
-*Auto-updated: 2025-08-10*
+*Auto-updated: 2025-08-18*
 
 ---
 
-*Last Updated: 2025-08-10*
+*Last Updated: 2025-08-18*

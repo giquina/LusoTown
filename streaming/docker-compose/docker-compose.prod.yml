@@ -1,0 +1,192 @@
+# LusoTown Portuguese Community Streaming Infrastructure
+# Production Docker Compose Configuration
+
+version: '3.8'
+
+services:
+  # SRS Media Server - Production Configuration
+  srs-server:
+    build:
+      context: ../
+      dockerfile: Dockerfile.srs
+    container_name: lusotown-srs-prod
+    ports:
+      # RTMP ingestion (secured via nginx proxy)
+      - "1935:1935"
+      # WebRTC for ultra-low latency
+      - "8000:8000"
+      # SRT for professional broadcasting
+      - "10080:10080"
+    environment:
+      # Production environment variables
+      - SRS_LOG_LEVEL=warn
+      - LUSOTOWN_STREAMING_SECRET=${LUSOTOWN_STREAMING_SECRET}
+      - CDN_ENDPOINT=${CDN_ENDPOINT}
+      - BUNNYCDN_API_KEY=${BUNNYCDN_API_KEY}
+      - BUNNYCDN_STORAGE_ZONE=${BUNNYCDN_STORAGE_ZONE}
+    volumes:
+      # Production logging (external mount)
+      - /var/log/lusotown/streaming:/usr/local/srs/logs
+      # Streaming content (NFS or block storage)
+      - /mnt/streaming-content:/tmp
+      # SSL certificates for secure streaming
+      - /etc/ssl/lusotown:/etc/ssl/certs:ro
+    networks:
+      - lusotown-production
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+          cpus: '2.0'
+        reservations:
+          memory: 2G
+          cpus: '1.0'
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        max_attempts: 3
+    healthcheck:
+      test: ["/usr/local/bin/health-check.sh"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # Nginx Load Balancer for Portuguese Community
+  nginx-streaming:
+    image: nginx:1.24-alpine
+    container_name: lusotown-nginx-streaming-prod
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      # Production nginx configuration
+      - ../conf/lusotown-streaming.conf:/etc/nginx/conf.d/default.conf:ro
+      - ../conf/nginx.conf:/etc/nginx/nginx.conf:ro
+      # SSL certificates
+      - /etc/ssl/lusotown:/etc/ssl/certs:ro
+      - /etc/ssl/lusotown:/etc/ssl/private:ro
+      # Logs for monitoring
+      - /var/log/lusotown/nginx:/var/log/nginx
+    environment:
+      - CDN_ENDPOINT=${CDN_ENDPOINT}
+    networks:
+      - lusotown-production
+    depends_on:
+      - srs-server
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '1.0'
+        reservations:
+          memory: 512M
+          cpus: '0.5'
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 5
+
+  # Redis Cluster for Real-time Features
+  redis-streaming-primary:
+    image: redis:7-alpine
+    container_name: lusotown-redis-primary-prod
+    ports:
+      - "6379:6379"
+    command: |
+      redis-server 
+      --appendonly yes 
+      --maxmemory 2gb 
+      --maxmemory-policy allkeys-lru
+      --save 900 1
+      --save 300 10
+      --save 60 10000
+    volumes:
+      - /var/lib/lusotown/redis:/data
+    networks:
+      - lusotown-production
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '1.0'
+        reservations:
+          memory: 1G
+          cpus: '0.5'
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        max_attempts: 3
+
+  # Streaming Analytics and Monitoring
+  streaming-analytics:
+    image: timescale/timescaledb:latest-pg14
+    container_name: lusotown-streaming-analytics-prod
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=lusotown_streaming_analytics
+      - POSTGRES_USER=${ANALYTICS_DB_USER}
+      - POSTGRES_PASSWORD=${ANALYTICS_DB_PASSWORD}
+      - TS_TUNE_MEMORY=2GB
+      - TS_TUNE_NUM_CPUS=2
+    volumes:
+      - /var/lib/lusotown/analytics:/var/lib/postgresql/data
+      - ../sql/analytics-schema.sql:/docker-entrypoint-initdb.d/01-analytics-schema.sql:ro
+    networks:
+      - lusotown-production
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '2.0'
+        reservations:
+          memory: 1G
+          cpus: '1.0'
+      restart_policy:
+        condition: on-failure
+        delay: 15s
+        max_attempts: 3
+
+  # Log Aggregation for Production Monitoring
+  streaming-logs:
+    image: fluent/fluent-bit:latest
+    container_name: lusotown-streaming-logs-prod
+    volumes:
+      - /var/log/lusotown:/var/log/lusotown:ro
+      - ../logging/fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf:ro
+    environment:
+      - LOG_LEVEL=info
+      - ELASTICSEARCH_HOST=${ELASTICSEARCH_HOST:-localhost}
+      - ELASTICSEARCH_PORT=${ELASTICSEARCH_PORT:-9200}
+    networks:
+      - lusotown-production
+    depends_on:
+      - srs-server
+      - nginx-streaming
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '0.5'
+        reservations:
+          memory: 256M
+          cpus: '0.25'
+
+# Production networking with security groups
+networks:
+  lusotown-production:
+    external: true
+    name: lusotown-production
+
+# External secrets management
+secrets:
+  streaming_secret:
+    external: true
+    name: lusotown_streaming_secret
+  ssl_certificate:
+    external: true
+    name: lusotown_ssl_certificate
+  ssl_private_key:
+    external: true
+    name: lusotown_ssl_private_key
