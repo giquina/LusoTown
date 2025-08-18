@@ -1,105 +1,92 @@
-"use client";
+'use client';
 
-import React, { useState, useEffect, useRef, useMemo } from "react";
-import {
-  X,
-  MessageCircle,
-  Heart,
-  Users,
-  Shield,
-  Calendar,
-  ArrowRight,
-} from "lucide-react";
-import { useLanguage } from "@/context/LanguageContext";
+import React, { useState, useRef, useEffect, useMemo } from 'react';
+import { MessageCircle, Send, X, Heart, Users, Calendar, Shield, ArrowRight } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
-interface Message {
-  id: number;
-  text: string;
-  isBot: boolean;
-  timestamp: Date;
-  options?: string[];
-  icon?: React.ReactNode;
-}
-
-const WhatsAppWidget: React.FC = () => {
+export default function WhatsAppWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMinimized, setIsMinimized] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<Array<{ text: string; isUser: boolean; options?: string[] }>>([]);
   const [currentStep, setCurrentStep] = useState(0);
-  const [showWidget, setShowWidget] = useState(false);
-  const [isDismissed, setIsDismissed] = useState(false);
-  const [hasInteracted, setHasInteracted] = useState(false);
+  const [userInput, setUserInput] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const { language } = useLanguage();
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   // Helper function to check if language is Portuguese
   const isPortuguese = language === "pt";
 
-  // Conversation flow for dual-audience Portuguese community platform
+  // Focused conversion flow targeting three key areas
   const conversationFlow = useMemo(
     () => ({
       en: [
         {
           message:
-            "Olá! 👋 Welcome to LusoTown. Need help with London Tours or Private Transport? I'm your guide. You can book a personal driver or security driver, explore tours, or ask how to use the site. If you need support at any time, email support@lusotown.com.",
+            "Ola! 👋 Welcome to LusoTown - London's Portuguese community! \n\nI'm here to help you discover:\n🤝 **Meet Your Match** - Connect with Portuguese speakers\n📺 **Live Streams** - Portuguese cultural content & events\n🚗 **Premium Transport** - Portuguese-speaking drivers\n\nWhat interests you most?",
           options: [
-            "Book a personal driver",
-            "Book a security driver",
-            "See all London tours",
-            "How do I use the site?",
-            "Email support",
+            "🤝 Find my Portuguese match",
+            "📺 Watch Portuguese streams",
+            "🚗 Book Portuguese driver",
+            "❓ How does LusoTown work?",
           ],
           icon: <Heart className="w-4 h-4 text-green-600" />,
         },
         {
           message:
-            "Fantástico! 🎯 You want to organize events for Portuguese speakers! LusoTown helps you:\n\n📅 Create social & business events for our community\n🌆 Reach Portuguese speakers across London and UK\n💰 Monetize through tickets, sponsorships & partnerships\n📈 Track attendance and build long-term relationships\n🎉 Access promotional tools and bilingual templates\n\nReady to become a community leader?",
+            "Fantastico! 💕 Meet Your Match connects Portuguese speakers in London for meaningful relationships!\n\n✨ **Cultural Compatibility Matching**\n🎯 **3 matches daily** (Free) or **unlimited** (£19.99/month)\n💬 **Portuguese conversation starters**\n🇵🇹 **Verified Portuguese community members**\n🎉 **Event-based connections** at fado nights, festivals\n\nReady to find your Portuguese connections?",
           options: [
-            "Yes, I want to organize!",
-            "What about monetization?",
-            "How do I reach the community?",
-            "Tell me about promotional tools",
+            "🚀 Sign up for matching",
+            "💰 Tell me about pricing",
+            "🛡️ How safe is it?",
+            "📍 Who's in my area?",
           ],
-          icon: <Calendar className="w-4 h-4 text-green-600" />,
+          icon: <Heart className="w-4 h-4 text-red-600" />,
         },
         {
           message:
-            "Great! 🎉 You want experiences. We offer Portuguese-guided tours and private transport across London. What would you like to do now?",
+            "Incrivel! 📺 LusoTown TV streams Portuguese culture, business workshops & community events!\n\n🎭 **Live Cultural Shows** - Fado, Portuguese music\n💼 **Business Workshops** - Entrepreneurship, AI training\n⚽ **Sports Events** - Portuguese football watch parties\n🗣️ **Community Discussions** - Real-time chat in Portuguese\n🎪 **Creator Economy** - Earn by streaming content\n\nWant to start watching or creating?",
           options: [
-            "See all London tours",
-            "Get a quote for private transport",
-            "Private transport for events",
-            "Contact support",
+            "📱 Start watching streams",
+            "🎥 Become a creator",
+            "💬 Join community chat",
+            "🔔 Get stream notifications",
           ],
-          icon: <Users className="w-4 h-4 text-red-600" />,
+          icon: <Users className="w-4 h-4 text-purple-600" />,
         },
         {
           message:
-            "Excelente! 💼 Ready for business networking! LusoTown offers:\n\n🚀 AI workshops & tech masterclasses\n💻 Website creation & digital marketing training\n🤝 Portuguese business community networking\n📈 Entrepreneurship workshops & mentoring\n🎯 Professional development opportunities\n\n*Build your business network with Portuguese professionals!*",
+            "Perfeito! 🚗 Premium Transport connects you with Portuguese-speaking drivers across London!\n\n🛡️ **SIA-Licensed Security Drivers** - £45-65/hour\n👔 **Professional Chauffeurs** - Airport, business, events\n🗣️ **Portuguese-Speaking** - Comfortable conversations\n🎉 **Event Transport** - Fado nights, Portuguese festivals\n⭐ **Luxury Vehicles** - Mercedes, BMW fleet\n\nReady to book your Portuguese driver?",
           options: [
-            "Show me tech workshops!",
-            "Find networking events",
-            "Business mentoring options",
-            "Professional development",
+            "🚗 Book chauffeur now",
+            "🛡️ Need security driver",
+            "💰 Get pricing quote",
+            "📍 Coverage areas",
           ],
-          icon: <Calendar className="w-4 h-4 text-action-600" />,
+          icon: <Shield className="w-4 h-4 text-blue-600" />,
         },
         {
           message:
-            "Excelente! 🌆 LusoTown serves dual audiences in London & UK:\n\n🎪 **Event Creators:** Tools to create, promote & monetize social/business events\n🎭 **Social Users:** Cultural experiences, tours, entertainment & connections\n💼 **Business Professionals:** Networking, workshops, training & mentoring\n🌍 **Bilingual Platform:** Complete English/Portuguese experience\n\n*Professional, inclusive & welcoming to all Portuguese speakers!*",
+            "Excelente! 🏠 LusoTown is London's complete Portuguese community platform:\n\n❤️ **Meet Your Match** - Find meaningful Portuguese connections\n📺 **LusoTown TV** - Stream & watch Portuguese cultural content\n🚗 **Premium Transport** - Portuguese-speaking drivers\n🎪 **Events & Groups** - Cultural festivals, business networking\n🎯 **All in Portuguese & English** - Feel at home in London\n\nWhich area interests you most?",
           options: [
-            "I want to create events",
-            "Show me social experiences",
-            "Business networking options",
-            "Platform features",
+            "❤️ Find my Portuguese match",
+            "📺 Explore streaming platform",
+            "🚗 Book premium transport",
+            "🎪 Join events & groups",
           ],
           icon: <Calendar className="w-4 h-4 text-premium-600" />,
         },
         {
           message:
-            "Amazing! 🚀 As an event creator on LusoTown you get:\n\n💡 **Dual-Audience Tools:** Create both social & business events\n💰 **Revenue Opportunities:** Tickets, sponsorships & partnerships\n📊 **Advanced Analytics:** Track engagement & build relationships\n🌆 **Community Reach:** Access Portuguese speakers across UK\n📢 **Bilingual Marketing:** Templates in English & Portuguese\n🎯 **Quality Audience:** Verified community members only\n\nStart creating events today!",
+            "Amazing! 🚀 As an event creator on LusoTown you get:\n\n💡 **Dual Tools:** Create both social and business events\n💰 **Revenue Opportunities:** Tickets, sponsorships and partnerships\n📊 **Advanced Analytics:** Track engagement and build long-term relationships\n🌆 **Community Reach:** Access Portuguese speakers across the UK\n📢 **Bilingual Marketing:** Templates in English and Portuguese\n🎯 **Quality Audience:** Verified community members only\n\nStart creating events today!",
           options: [
-            "Sign me up as creator!",
+            "Register me as creator!",
             "Revenue opportunities?",
             "Marketing support details",
             "Community reach info",
@@ -108,614 +95,281 @@ const WhatsAppWidget: React.FC = () => {
         },
         {
           message:
-            "Need a hand? Here are quick actions:\n\n🚗 Book a personal or security driver\n🌆 Explore all London tours\n👣 How to navigate and use the site\n✉️ Email support: support@lusotown.com",
+            "Need help? Quick actions:\n\n🚗 Book personal or security driver\n🌆 See all London tours\n👣 How to navigate and use the site\n✉️ Support email: support@lusotown.com",
           options: [
-            "Book a personal driver",
-            "Book a security driver",
-            "See all London tours",
-            "How do I use the site?",
+            "🚗 Book driver now",
+            "🌆 Browse London tours",
+            "📱 Site navigation help",
+            "✉️ Email support team",
           ],
-          icon: <Shield className="w-4 h-4 text-secondary-600" />,
+          icon: <Users className="w-4 h-4 text-green-600" />,
         },
       ],
       pt: [
         {
           message:
-            "Olá! 👋 Bem-vindo à LusoTown. Precisas de ajuda com Tours em Londres ou Transporte Privado? Sou o teu guia. Podes reservar motorista pessoal ou de segurança, explorar tours, ou aprender a usar o site. Se precisares de apoio, envia email para support@lusotown.com.",
+            "Ola! 👋 Bem-vindo a LusoTown - a comunidade portuguesa de Londres! \n\nEstou aqui para te ajudar a descobrir:\n🤝 **Encontra o Teu Match** - Conecta com lusofonos\n📺 **Streams ao Vivo** - Conteudo cultural portugues\n🚗 **Transporte Premium** - Motoristas que falam portugues\n\nO que te interessa mais?",
           options: [
-            "Reservar motorista pessoal",
-            "Reservar motorista de segurança",
-            "Ver todos os tours de Londres",
-            "Como usar o site?",
-            "Email de apoio",
+            "🤝 Encontrar o meu match portugues",
+            "📺 Ver streams portugueses",
+            "🚗 Reservar motorista portugues",
+            "❓ Como funciona a LusoTown?",
           ],
           icon: <Heart className="w-4 h-4 text-green-600" />,
         },
         {
           message:
-            "Fantástico! 🎯 Queres organizar eventos para lusófonos! A LusoTown ajuda-te a:\n\n📅 Criar eventos sociais e empresariais para a comunidade\n🌍 Alcançar lusófonos em Londres e Reino Unido\n💰 Monetizar através de bilhetes, patrocínios e parcerias\n📈 Acompanhar participação e construir relacionamentos duradouros\n🎉 Aceder a ferramentas promocionais bilingues\n\nPronto para te tornares um líder comunitário?",
+            "Fantastico! 💕 Encontra o Teu Match conecta lusofonos em Londres para relacionamentos significativos!\n\n✨ **Compatibilidade Cultural**\n🎯 **3 matches diarios** (Gratis) ou **ilimitados** (£19.99/mes)\n💬 **Conversas em portugues**\n🇵🇹 **Comunidade portuguesa verificada**\n🎉 **Conexoes em eventos** - noites de fado, festivais\n\nPronto para encontrar as tuas conexoes portuguesas?",
           options: [
-            "Sim, quero organizar!",
-            "Oportunidades de receita?",
-            "Como alcanço a comunidade?",
-            "Ferramentas promocionais",
+            "🚀 Registar para matching",
+            "💰 Fala-me dos precos",
+            "🛡️ E seguro?",
+            "📍 Quem esta na minha area?",
           ],
-          icon: <Calendar className="w-4 h-4 text-green-600" />,
+          icon: <Heart className="w-4 h-4 text-red-600" />,
         },
         {
           message:
-            "Ótimo! 🎉 Queres experiências. Temos tours guiados em português e transporte privado em Londres. O que queres fazer agora?",
+            "Incrivel! 📺 LusoTown TV transmite cultura portuguesa, workshops empresariais e eventos comunitarios!\n\n🎭 **Shows Culturais ao Vivo** - Fado, musica portuguesa\n💼 **Workshops Empresariais** - Empreendedorismo, treino IA\n⚽ **Eventos Desportivos** - Jogos de futebol portugues\n🗣️ **Discussoes Comunitarias** - Chat em tempo real\n🎪 **Economia de Criadores** - Ganha dinheiro a transmitir\n\nQueres comecar a ver ou criar conteudo?",
           options: [
-            "Ver todos os tours de Londres",
-            "Pedir orçamento transporte privado",
-            "Transporte privado para eventos",
-            "Contactar apoio",
+            "📱 Comecar a ver streams",
+            "🎥 Tornar-me criador",
+            "💬 Juntar-me ao chat",
+            "🔔 Receber notificacoes",
           ],
-          icon: <Users className="w-4 h-4 text-red-600" />,
+          icon: <Users className="w-4 h-4 text-purple-600" />,
         },
         {
           message:
-            "Excelente! 💼 Pronto para networking empresarial! A LusoTown oferece:\n\n🚀 Workshops de IA e masterclasses tecnológicas\n💻 Criação de websites e treino de marketing digital\n🤝 Networking da comunidade empresarial portuguesa\n📈 Workshops de empreendedorismo e mentoria\n🎯 Oportunidades de desenvolvimento profissional\n\n*Constrói a tua rede empresarial com profissionais portugueses!*",
+            "Perfeito! 🚗 Transporte Premium conecta-te com motoristas que falam portugues em Londres!\n\n🛡️ **Motoristas de Seguranca SIA** - £45-65/hora\n👔 **Chauffeurs Profissionais** - Aeroporto, negocios, eventos\n🗣️ **Falam Portugues** - Conversas confortaveis\n🎉 **Transporte para Eventos** - Noites de fado, festivais\n⭐ **Veiculos de Luxo** - Frota Mercedes, BMW\n\nPronto para reservar o teu motorista portugues?",
           options: [
-            "Mostra-me workshops tecnológicos!",
-            "Encontrar eventos de networking",
-            "Opções de mentoria empresarial",
-            "Desenvolvimento profissional",
+            "🚗 Reservar chauffeur agora",
+            "🛡️ Preciso motorista seguranca",
+            "💰 Pedir orcamento",
+            "📍 Areas de cobertura",
           ],
-          icon: <Calendar className="w-4 h-4 text-action-600" />,
+          icon: <Shield className="w-4 h-4 text-blue-600" />,
         },
         {
           message:
-            "Excelente! 🌆 A LusoTown serve duas audiências em Londres e Reino Unido:\n\n🎪 **Criadores de Eventos:** Ferramentas para criar, promover e monetizar eventos sociais/empresariais\n🎭 **Utilizadores Sociais:** Experiências culturais, tours, entretenimento e conexões\n💼 **Profissionais Empresariais:** Networking, workshops, treino e mentoria\n🌍 **Plataforma Bilingue:** Experiência completa Português/Inglês\n\n*Profissional, inclusiva e acolhedora para todos os lusófonos!*",
+            "Excelente! 🏠 LusoTown e a plataforma completa da comunidade portuguesa de Londres:\n\n❤️ **Encontra o Teu Match** - Conexoes portuguesas significativas\n📺 **LusoTown TV** - Transmite e ve conteudo cultural portugues\n🚗 **Transporte Premium** - Motoristas que falam portugues\n🎪 **Eventos e Grupos** - Festivais culturais, networking\n🎯 **Tudo em Portugues e Ingles** - Sente-te em casa em Londres\n\nQue area te interessa mais?",
           options: [
-            "Quero criar eventos",
-            "Mostra-me experiências sociais",
-            "Opções de networking empresarial",
-            "Funcionalidades da plataforma",
+            "❤️ Encontrar o meu match portugues",
+            "📺 Explorar plataforma streaming",
+            "🚗 Reservar transporte premium",
+            "🎪 Juntar-me a eventos e grupos",
           ],
           icon: <Calendar className="w-4 h-4 text-premium-600" />,
         },
         {
           message:
-            "Incrível! 🚀 Como criador de eventos na LusoTown recebes:\n\n💡 **Ferramentas Duais:** Cria eventos sociais e empresariais\n💰 **Oportunidades de Receita:** Bilhetes, patrocínios e parcerias\n📊 **Analytics Avançadas:** Acompanha envolvimento e constrói relacionamentos\n🌆 **Alcance Comunitário:** Acesso a lusófonos em todo Reino Unido\n📢 **Marketing Bilingue:** Modelos em Inglês e Português\n🎯 **Audiência de Qualidade:** Apenas membros verificados da comunidade\n\nComeça a criar eventos hoje!",
+            "Incrivel! 🚀 Como criador de eventos na LusoTown recebes:\n\n💡 **Ferramentas Duais:** Cria eventos sociais e empresariais\n💰 **Oportunidades de Receita:** Bilhetes, patrocinios e parcerias\n📊 **Analytics Avancadas:** Acompanha envolvimento e constroi relacionamentos\n🌆 **Alcance Comunitario:** Acesso a lusofonos em todo Reino Unido\n📢 **Marketing Bilingue:** Modelos em Ingles e Portugues\n🎯 **Audiencia de Qualidade:** Apenas membros verificados da comunidade\n\nComeca a criar eventos hoje!",
           options: [
             "Regista-me como criador!",
             "Oportunidades de receita?",
             "Detalhes do apoio de marketing",
-            "Informações sobre alcance comunitário",
+            "Informacoes sobre alcance comunitario",
           ],
           icon: <ArrowRight className="w-4 h-4 text-action-600" />,
         },
         {
           message:
-            "Precisas de ajuda? Ações rápidas:\n\n🚗 Reservar motorista pessoal ou de segurança\n🌆 Ver todos os tours de Londres\n👣 Como navegar e usar o site\n✉️ Email de apoio: support@lusotown.com",
+            "Precisas de ajuda? Acoes rapidas:\n\n🚗 Reservar motorista pessoal ou de seguranca\n🌆 Ver todos os tours de Londres\n👣 Como navegar e usar o site\n✉️ Email de apoio: support@lusotown.com",
           options: [
-            "Reservar motorista pessoal",
-            "Reservar motorista de segurança",
-            "Ver todos os tours de Londres",
-            "Como usar o site?",
+            "🚗 Reservar motorista agora",
+            "🌆 Explorar tours de Londres",
+            "📱 Ajuda de navegacao do site",
+            "✉️ Email equipa de apoio",
           ],
-          icon: <Shield className="w-4 h-4 text-secondary-600" />,
+          icon: <Users className="w-4 h-4 text-green-600" />,
         },
       ],
     }),
-    []
+    [language]
   );
 
-  // Check if device is mobile
-  const isMobile = () => {
-    if (typeof window === "undefined") return false;
-    return (
-      window.innerWidth < 768 ||
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
-      )
-    );
-  };
+  const currentFlow = isPortuguese ? conversationFlow.pt : conversationFlow.en;
 
-  // Always show widget, but control auto-popup behavior
+  // Initialize chat when opened
   useEffect(() => {
-    // Show widget immediately on load
-    setShowWidget(true);
-
-    // Auto-open only on desktop after 3 minutes
-    if (!isMobile()) {
-      const timer = setTimeout(() => {
-        if (!hasInteracted) {
-          setIsOpen(true);
-          setTimeout(() => {
-            addBotMessage(
-              conversationFlow[language as keyof typeof conversationFlow][0]
-            );
-          }, 800);
-        }
-      }, 180000); // 3 minutes = 180000ms
-
-      return () => clearTimeout(timer);
+    if (isOpen && messages.length === 0) {
+      const welcomeMessage = currentFlow[0];
+      setMessages([
+        {
+          text: welcomeMessage.message,
+          isUser: false,
+          options: welcomeMessage.options,
+        },
+      ]);
     }
-  }, [hasInteracted, language, conversationFlow]);
+  }, [isOpen, messages.length, currentFlow]);
 
-  const addBotMessage = (step: any) => {
-    const newMessage: Message = {
-      id: Date.now(),
-      text: step.message,
-      isBot: true,
-      timestamp: new Date(),
-      options: step.options,
-      icon: step.icon,
-    };
-    setMessages((prev) => [...prev, newMessage]);
-  };
+  const handleOptionClick = (option: string, optionIndex: number) => {
+    // Add user's selection
+    setMessages((prev) => [...prev, { text: option, isUser: true }]);
 
-  const handleOptionClick = (option: string) => {
-    setHasInteracted(true);
-
-    // Add user message
-    const userMessage: Message = {
-      id: Date.now(),
-      text: option,
-      isBot: false,
-      timestamp: new Date(),
-    };
-    setMessages((prev) => [...prev, userMessage]);
-
-    // Fast-path: primary actions for transport/tours/support
-    const opt = option.toLowerCase();
-    if (
-      opt.includes("book a personal driver") ||
-      opt.includes("reservar motorista pessoal") ||
-      opt.includes("get a quote for private transport") ||
-      opt.includes("pedir orçamento transporte privado")
-    ) {
-      setTimeout(() => {
-        const msg: Message = {
-          id: Date.now() + 1,
-          text: isPortuguese
-            ? "Abrindo a página de Transporte Privado…"
-            : "Opening the Private Transport page…",
-          isBot: true,
-          timestamp: new Date(),
-          icon: <Shield className="w-4 h-4 text-secondary-600" />,
-        };
-        setMessages((prev) => [...prev, msg]);
-        setTimeout(() => window.open("/transport", "_blank"), 1200);
-      }, 800);
-      return;
+    // Determine next step based on current step and option selected
+    let nextStep = 0;
+    
+    // Main menu navigation
+    if (currentStep === 0) {
+      if (optionIndex === 0) nextStep = 1; // Meet Your Match
+      else if (optionIndex === 1) nextStep = 2; // Streaming
+      else if (optionIndex === 2) nextStep = 3; // Transport
+      else if (optionIndex === 3) nextStep = 4; // How it works
+    }
+    // Sub-menu navigation - redirect to signup/relevant pages
+    else if (currentStep >= 1 && currentStep <= 4) {
+      nextStep = 5; // Event creator info
+    }
+    // Final step - support options
+    else {
+      nextStep = 6; // Support options
     }
 
-    if (
-      opt.includes("book a security driver") ||
-      opt.includes("reservar motorista de segurança")
-    ) {
-      setTimeout(() => {
-        const msg: Message = {
-          id: Date.now() + 1,
-          text: isPortuguese
-            ? "A preparar reserva com motorista de segurança…"
-            : "Preparing a booking with a security driver…",
-          isBot: true,
-          timestamp: new Date(),
-          icon: <Shield className="w-4 h-4 text-secondary-600" />,
-        };
-        setMessages((prev) => [...prev, msg]);
-        setTimeout(() => window.open("/transport", "_blank"), 1200);
-      }, 800);
-      return;
-    }
-
-    if (
-      opt.includes("see all london tours") ||
-      opt.includes("ver todos os tours de londres")
-    ) {
-      setTimeout(() => {
-        const msg: Message = {
-          id: Date.now() + 1,
-          text: isPortuguese
-            ? "A mostrar Tours de Londres…"
-            : "Showing London Tours…",
-          isBot: true,
-          timestamp: new Date(),
-          icon: <Calendar className="w-4 h-4 text-action-600" />,
-        };
-        setMessages((prev) => [...prev, msg]);
-        setTimeout(() => window.open("/london-tours#tours", "_blank"), 1200);
-      }, 800);
-      return;
-    }
-
-    if (
-      opt.includes("email support") ||
-      opt.includes("email de apoio") ||
-      opt.includes("contact support") ||
-      opt.includes("contactar apoio")
-    ) {
-      setTimeout(() => {
-        const msg: Message = {
-          id: Date.now() + 1,
-          text: isPortuguese
-            ? "A abrir o teu email para contactar: support@lusotown.com"
-            : "Opening your email to contact: support@lusotown.com",
-          isBot: true,
-          timestamp: new Date(),
-          icon: <Heart className="w-4 h-4 text-green-600" />,
-        };
-        setMessages((prev) => [...prev, msg]);
-        setTimeout(
-          () => window.open("mailto:support@lusotown.com", "_blank"),
-          1000
-        );
-      }, 600);
-      return;
-    }
-
-    if (
-      opt.includes("how do i use the site") ||
-      opt.includes("como usar o site")
-    ) {
-      setTimeout(() => {
-        const tips: Message = {
-          id: Date.now() + 1,
-          text: isPortuguese
-            ? "Dica rápida:\n\n• Tours: vê todos em /london-tours (clica em London Tours → Tours)\n• Transporte: reservas rápidas em /transport\n• Apoio: support@lusotown.com\n\nQueres abrir uma destas páginas agora?"
-            : "Quick tip:\n\n• Tours: see them all at /london-tours (hover London Tours → Tours)\n• Transport: quick bookings at /transport\n• Support: support@lusotown.com\n\nWant me to open one now?",
-          isBot: true,
-          timestamp: new Date(),
-          options: isPortuguese
-            ? [
-                "Ver todos os tours de Londres",
-                "Reservar motorista pessoal",
-                "Email de apoio",
-              ]
-            : [
-                "See all London tours",
-                "Book a personal driver",
-                "Email support",
-              ],
-          icon: <MessageCircle className="w-4 h-4 text-action-600" />,
-        };
-        setMessages((prev) => [...prev, tips]);
-      }, 600);
-      return;
-    }
-
-    // Handle signup/registration actions
-    if (
-      option.includes("sign me up") ||
-      option.includes("signup") ||
-      option.includes("organizer") ||
-      option.includes("creator") ||
-      option.includes("regista-me") ||
-      option.includes("Leva-me ao registo") ||
-      option.includes("Regista-me") ||
-      option.includes("criador") ||
-      option.includes("let's start") ||
-      option.includes("vamos começar")
-    ) {
-      setTimeout(() => {
-        const finalMessage: Message = {
-          id: Date.now() + 1,
-          text: isPortuguese
-            ? "Fantástico! 🚀 Bem-vindo à LusoTown global!\n\nA levar-te para a página de registo..."
-            : "Fantastic! 🚀 Welcome to global LusoTown!\n\nTaking you to the signup page...",
-          isBot: true,
-          timestamp: new Date(),
-          icon: <Heart className="w-4 h-4 text-green-600" />,
-        };
-        setMessages((prev) => [...prev, finalMessage]);
-
-        // Redirect to signup after showing message
-        setTimeout(() => {
-          window.open("/signup", "_blank");
-        }, 2000);
-      }, 1000);
-      return;
-    }
-
-    // Handle join community actions
-    if (
-      option.includes("Join the community") ||
-      option.includes("Juntar-me à comunidade")
-    ) {
-      setTimeout(() => {
-        const joinMessage: Message = {
-          id: Date.now() + 1,
-          text: isPortuguese
-            ? "Excelente escolha! 🎉 Vamos conectar-te com lusófonos em todo o mundo!\n\nA levar-te para te juntares à comunidade..."
-            : "Excellent choice! 🎉 Let's connect you with Portuguese speakers worldwide!\n\nTaking you to join the community...",
-          isBot: true,
-          timestamp: new Date(),
-          icon: <Users className="w-4 h-4 text-green-600" />,
-        };
-        setMessages((prev) => [...prev, joinMessage]);
-
-        // Redirect to events page after showing message
-        setTimeout(() => {
-          window.open("/events", "_blank");
-        }, 2000);
-      }, 1000);
-      return;
-    }
-
-    // Handle "browsing" responses
-    if (option.includes("browsing") || option.includes("Só estou a ver")) {
-      setTimeout(() => {
-        const laterMessage: Message = {
-          id: Date.now() + 1,
-          text: isPortuguese
-            ? "Sem problema! 😊 Estarei aqui sempre que estiveres pronto para explorar a nossa comunidade portuguesa global. Sente-te à vontade para navegar no site!"
-            : "No worries at all! 😊 I'll be here whenever you're ready to explore our amazing global Portuguese community. Feel free to browse our website!",
-          isBot: true,
-          timestamp: new Date(),
-          icon: <Heart className="w-4 h-4 text-green-600" />,
-        };
-        setMessages((prev) => [...prev, laterMessage]);
-      }, 1000);
-      return;
-    }
-
-    // Handle path selection and routing
+    // Add bot response after short delay
     setTimeout(() => {
-      const currentFlow =
-        conversationFlow[language as keyof typeof conversationFlow];
-      let nextStepIndex = 1; // Default to first step after intro
-
-      // Route based on user selection
-      if (
-        option.includes("organize") ||
-        option.includes("organizar") ||
-        option.includes("create events") ||
-        option.includes("criar eventos")
-      ) {
-        nextStepIndex = 1; // Organizer path
-      } else if (
-        option.includes("social events") ||
-        option.includes("eventos sociais") ||
-        option.includes("find social") ||
-        option.includes("social experiences") ||
-        option.includes("experiências sociais")
-      ) {
-        nextStepIndex = 2; // Social events path
-      } else if (
-        option.includes("business networking") ||
-        option.includes("networking empresarial") ||
-        option.includes("Business") ||
-        option.includes("Empresarial")
-      ) {
-        nextStepIndex = 3; // Business networking path
-      } else if (
-        option.includes("Tell me about") ||
-        option.includes("Conta-me sobre") ||
-        option.includes("Platform features") ||
-        option.includes("Funcionalidades")
-      ) {
-        nextStepIndex = 4; // Platform info path
-      } else if (currentStep === 1 || currentStep === 2 || currentStep === 3) {
-        // Continue with specific detailed flows
-        nextStepIndex = 5; // Detailed info for organizers/social/business
-      } else if (currentStep === 4) {
-        // From platform info, route based on choice
-        if (
-          option.includes("create events") ||
-          option.includes("criar eventos")
-        ) {
-          nextStepIndex = 5; // Creator details
-        } else {
-          nextStepIndex = 6; // Member details
-        }
-      } else {
-        // Default progression
-        nextStepIndex = Math.min(currentStep + 1, currentFlow.length - 1);
+      if (nextStep < currentFlow.length) {
+        const nextMessage = currentFlow[nextStep];
+        setMessages((prev) => [
+          ...prev,
+          {
+            text: nextMessage.message,
+            isUser: false,
+            options: nextMessage.options,
+          },
+        ]);
+        setCurrentStep(nextStep);
       }
-
-      if (nextStepIndex < currentFlow.length) {
-        addBotMessage(currentFlow[nextStepIndex]);
-        setCurrentStep(nextStepIndex);
-      } else {
-        // End of conversation - encourage action
-        const finalMessage: Message = {
-          id: Date.now() + 1,
-          text: isPortuguese
-            ? "Obrigado por falares comigo! 💕 A LusoTown está aqui para conectar lusófonos em todo o mundo. Pronto para começar?"
-            : "Thanks for chatting with me! 💕 LusoTown is here to connect Portuguese speakers worldwide. Ready to start?",
-          isBot: true,
-          timestamp: new Date(),
-          options: isPortuguese
-            ? ["Sim, vamos começar!", "Vou pensar nisso"]
-            : ["Yes, let's start!", "I'll think about it"],
-          icon: <Users className="w-4 h-4 text-red-600" />,
-        };
-        setMessages((prev) => [...prev, finalMessage]);
-      }
-    }, 1500);
+    }, 800);
   };
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  useEffect(scrollToBottom, [messages]);
-
-  const toggleWidget = () => {
-    setHasInteracted(true);
-    if (!isOpen) {
-      setIsOpen(true);
-      setIsMinimized(false);
-      if (messages.length === 0) {
-        setTimeout(() => {
-          addBotMessage(
-            conversationFlow[language as keyof typeof conversationFlow][0]
-          );
-        }, 500);
-      }
-    } else {
-      setIsMinimized(!isMinimized);
+  const handleSendMessage = () => {
+    if (userInput.trim()) {
+      setMessages((prev) => [...prev, { text: userInput, isUser: true }]);
+      setUserInput('');
+      
+      // Add generic helpful response
+      setTimeout(() => {
+        const helpMessage = isPortuguese
+          ? "Obrigado pela tua mensagem! Para melhor assistencia, usa as opcoes acima ou contacta support@lusotown.com 📧"
+          : "Thank you for your message! For better assistance, use the options above or contact support@lusotown.com 📧";
+        setMessages((prev) => [
+          ...prev,
+          { text: helpMessage, isUser: false },
+        ]);
+      }, 1000);
     }
   };
 
-  const closeWidget = () => {
-    setIsOpen(false);
-    setIsMinimized(false);
+  const resetChat = () => {
+    setMessages([]);
+    setCurrentStep(0);
+    setUserInput('');
   };
-
-  const dismissWidget = () => {
-    setIsDismissed(true);
-    setShowWidget(false);
-  };
-
-  if (!showWidget || isDismissed) return null;
 
   return (
-    <div className="fixed bottom-4 right-4 z-50 font-sans">
+    <>
+      {/* WhatsApp Widget Button */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+          aria-label={isPortuguese ? "Abrir chat WhatsApp" : "Open WhatsApp chat"}
+        >
+          {isOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <MessageCircle className="w-6 h-6" />
+          )}
+        </button>
+      </div>
+
       {/* Chat Window */}
-      {isOpen && !isMinimized && (
-        <div className="mb-3 bg-white rounded-xl shadow-xl border border-gray-200 w-[calc(100vw-2rem)] sm:w-72 max-w-[calc(100vw-2rem)] max-h-[70vh] sm:max-h-96 flex flex-col animate-scale-in">
+      {isOpen && (
+        <div className="fixed bottom-24 right-6 z-50 w-80 bg-white rounded-lg shadow-2xl border">
           {/* Header */}
-          <div className="flex items-center justify-between p-3 bg-gradient-to-r from-primary-600 via-action-600 to-premium-600 text-white rounded-t-xl shadow-md">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-white/20">
-                <span className="text-primary-600 font-bold text-xs">LT</span>
+          <div className="bg-green-500 text-white p-4 rounded-t-lg flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                <span className="text-green-500 font-bold">LT</span>
               </div>
               <div>
-                <h3 className="font-semibold text-sm">LusoTown Assistant</h3>
-                <p className="text-xs opacity-90 flex items-center">
-                  <span className="w-2 h-2 bg-secondary-400 rounded-full mr-2 animate-pulse"></span>
-                  Online now
+                <h3 className="font-semibold">LusoTown</h3>
+                <p className="text-xs text-green-100">
+                  {isPortuguese ? "Comunidade Portuguesa" : "Portuguese Community"}
                 </p>
               </div>
             </div>
-            <div className="flex items-center space-x-2">
-              <button
-                onClick={toggleWidget}
-                className="p-3 hover:bg-white/20 rounded-full transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
-                aria-label="Minimize"
-              >
-                <div className="w-4 h-1 bg-white rounded"></div>
-              </button>
-              <button
-                onClick={closeWidget}
-                className="p-3 hover:bg-white/20 rounded-full transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
-                aria-label="Close"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
+            <button
+              onClick={resetChat}
+              className="text-green-200 hover:text-white text-sm"
+              title={isPortuguese ? "Reiniciar chat" : "Reset chat"}
+            >
+              {isPortuguese ? "Reiniciar" : "Reset"}
+            </button>
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-3 space-y-2 bg-gray-50 min-h-[150px] max-h-[40vh] sm:max-h-60">
-            {messages.map((message) => (
-              <div
-                key={message.id}
-                className={`flex ${
-                  message.isBot ? "justify-start" : "justify-end"
-                }`}
-              >
+          <div className="h-96 overflow-y-auto p-4 bg-gray-50">
+            {messages.map((message, index) => (
+              <div key={index} className="mb-4">
                 <div
-                  className={`max-w-[90%] ${
-                    message.isBot
-                      ? "bg-white text-gray-800 rounded-xl rounded-bl-md shadow-sm border border-gray-200"
-                      : "bg-gradient-to-r from-green-600 to-red-600 text-white rounded-xl rounded-br-md shadow-sm"
-                  } p-2.5`}
+                  className={`max-w-xs p-3 rounded-lg ${
+                    message.isUser
+                      ? 'bg-green-500 text-white ml-auto'
+                      : 'bg-white text-gray-800 shadow-sm border'
+                  }`}
                 >
-                  {message.isBot && message.icon && (
-                    <div className="flex items-center space-x-2 mb-2">
-                      {message.icon}
-                      <span className="text-xs font-medium text-gray-600">
-                        LusoTown Helper
-                      </span>
-                    </div>
-                  )}
-                  <p className="text-xs whitespace-pre-line leading-relaxed">
-                    {message.text}
-                  </p>
-                  {message.options && (
-                    <div className="mt-3 space-y-2">
-                      {message.options.map((option, index) => (
-                        <button
-                          key={index}
-                          onClick={() => handleOptionClick(option)}
-                          className="block w-full text-left p-2.5 text-xs bg-gradient-to-r from-primary-600 to-action-600 text-white rounded-lg hover:from-primary-700 hover:to-action-700 transition-all duration-200 font-medium shadow-md hover:shadow-lg transform hover:scale-[1.02] border border-white/10"
-                        >
-                          <span className="flex items-center justify-between">
-                            {option}
-                            <ArrowRight className="w-3 h-3 opacity-70" />
-                          </span>
-                        </button>
-                      ))}
-                    </div>
-                  )}
+                  <p className="text-sm whitespace-pre-line">{message.text}</p>
                 </div>
+                
+                {/* Option buttons */}
+                {message.options && !message.isUser && (
+                  <div className="mt-2 space-y-2">
+                    {message.options.map((option, optionIndex) => (
+                      <button
+                        key={optionIndex}
+                        onClick={() => handleOptionClick(option, optionIndex)}
+                        className="block w-full text-left text-sm bg-blue-50 hover:bg-blue-100 text-blue-700 p-2 rounded border transition-colors"
+                      >
+                        {option}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Footer */}
-          <div className="p-3 border-t border-gray-200 bg-white rounded-b-xl">
-            <div className="flex items-center justify-center space-x-2 text-gray-500 text-xs">
-              <MessageCircle className="w-4 h-4" />
-              <span>
-                {isPortuguese
-                  ? "Clica nas opções acima para continuar!"
-                  : "Click the options above to continue chatting!"}
-              </span>
+          {/* Input */}
+          <div className="p-3 border-t bg-white rounded-b-lg">
+            <div className="flex gap-2">
+              <input
+                type="text"
+                value={userInput}
+                onChange={(e) => setUserInput(e.target.value)}
+                onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+                placeholder={isPortuguese ? "Escreve uma mensagem..." : "Type a message..."}
+                className="flex-1 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-green-500"
+              />
+              <button
+                onClick={handleSendMessage}
+                className="bg-green-500 hover:bg-green-600 text-white p-2 rounded-full transition-colors"
+                aria-label={isPortuguese ? "Enviar mensagem" : "Send message"}
+              >
+                <Send className="w-4 h-4" />
+              </button>
             </div>
+            <p className="text-xs text-gray-500 mt-2 text-center">
+              {isPortuguese
+                ? "Comunidade Portuguesa em Londres"
+                : "Portuguese Community in London"}
+            </p>
           </div>
         </div>
       )}
-
-      {/* Floating Button */}
-      <button
-        onClick={toggleWidget}
-        className={`w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-primary-600 via-action-600 to-premium-600 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center justify-center group relative overflow-hidden border-2 border-white/20 ${
-          isOpen && !isMinimized ? "scale-90" : "scale-100 hover:scale-110"
-        }`}
-        aria-label="Open LusoTown chat"
-      >
-        {/* Animated background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-700 via-action-700 to-premium-700 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-        {isOpen && !isMinimized ? (
-          <div className="w-6 h-1 bg-white rounded relative z-10"></div>
-        ) : (
-          <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:scale-110 transition-transform duration-200 relative z-10" />
-        )}
-
-        {/* Notification Badge */}
-        {!hasInteracted && !isOpen && (
-          <div className="absolute -top-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-red-600 text-white text-xs rounded-full flex items-center justify-center animate-pulse font-bold shadow-lg">
-            1
-          </div>
-        )}
-
-        {/* Pulse animation ring */}
-        {!hasInteracted && !isOpen && (
-          <div className="absolute inset-0 rounded-full border-4 border-red-600 animate-ping opacity-20"></div>
-        )}
-      </button>
-
-      {/* Initial Welcome Tooltip */}
-      {!hasInteracted && !isOpen && (
-        <div className="absolute bottom-16 right-0 bg-white px-4 py-3 rounded-lg shadow-lg border border-gray-200 animate-fade-in whitespace-nowrap">
-          <div className="text-xs text-red-600 font-medium">
-            {isPortuguese ? "Clica para começar →" : "Click to start →"}
-          </div>
-          {/* Arrow pointing to button */}
-          <div className="absolute -bottom-2 right-6 w-0 h-0 border-l-6 border-l-transparent border-r-6 border-r-transparent border-t-6 border-t-white"></div>
-          <div className="absolute -bottom-2.5 right-6 w-0 h-0 border-l-6 border-l-transparent border-r-6 border-r-transparent border-t-6 border-t-gray-200"></div>
-
-          {/* Close button for tooltip */}
-          <button
-            onClick={dismissWidget}
-            className="absolute top-1 right-2 p-1 rounded-full hover:bg-gray-100 transition-colors"
-            aria-label="Dismiss widget"
-          >
-            <X className="w-3 h-3 text-gray-400" />
-          </button>
-        </div>
-      )}
-    </div>
+    </>
   );
-};
-
-export default WhatsAppWidget;
+}

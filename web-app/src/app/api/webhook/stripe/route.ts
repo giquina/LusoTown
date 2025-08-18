@@ -92,10 +92,10 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription) {
       stripe_subscription_id: subscription.id,
       stripe_customer_id: subscription.customer as string,
       status: subscription.status as any,
-      plan_type: 'yearly',
+      plan_type: 'monthly',
       current_period_start: new Date((subscription as any).current_period_start * 1000).toISOString(),
       current_period_end: new Date((subscription as any).current_period_end * 1000).toISOString(),
-      amount: 25.00,
+      amount: 19.99,
       currency: 'GBP',
     })
 

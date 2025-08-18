@@ -185,7 +185,7 @@ class ReferralService {
         completedReferrals,
         activeReferrals,
         pendingReferrals,
-        totalEarnings: totalFreeDays * 25, // Assuming £25 value per free month
+        totalEarnings: totalFreeDays * 19.99, // Assuming £19.99 value per free month
         totalFreeDays,
         bonusUnlocked: completedReferrals >= 5,
         progressToBonus: Math.min(completedReferrals / 5, 1),

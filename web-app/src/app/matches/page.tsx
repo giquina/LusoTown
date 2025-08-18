@@ -26,6 +26,7 @@ import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { plans, formatPrice } from '@/config/pricing'
 import PremiumMatchesGate from '@/components/PremiumMatchesGate'
+import SuccessStoryIntroduction from '@/components/SuccessStoryIntroduction'
 
 // Mock Portuguese profiles for demonstration
 const mockProfiles = [
@@ -238,7 +239,7 @@ function MatchesContent() {
   ]
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen pt-20">
       {/* Enhanced Hero Section */}
       <div className="relative min-h-[70vh] xl:min-h-[85vh] 2xl:min-h-[90vh] bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 overflow-hidden">
         {/* Portuguese flag inspired decorative elements - Enhanced for desktop */}
@@ -419,6 +420,18 @@ function MatchesContent() {
           </div>
         </div>
       </div>
+
+      {/* Success Stories Introduction */}
+      <SuccessStoryIntroduction 
+        onStartQuiz={() => {
+          // Navigate to cultural quiz or open modal
+          console.log('Start cultural quiz')
+        }}
+        onSignUp={() => {
+          // Navigate to signup or open signup modal
+          console.log('Start signup process')
+        }}
+      />
 
       {/* Interactive Matching Section */}
       <section className="py-20 xl:py-32 2xl:py-40 bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50">

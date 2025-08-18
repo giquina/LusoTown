@@ -326,7 +326,7 @@ export default function EventsPage() {
   // Preview system state
   const [user, setUser] = useState(getCurrentUser());
 
-  // Check URL parameters on component mount
+  // Check URL parameters on component mount and handle navigation
   useEffect(() => {
     if (typeof window !== "undefined") {
       const urlParams = new URLSearchParams(window.location.search);
@@ -336,6 +336,20 @@ export default function EventsPage() {
       }
     }
   }, []);
+
+  // Update URL when tab changes
+  const handleTabChange = (tab: "events" | "tours") => {
+    setActiveTab(tab);
+    if (typeof window !== "undefined") {
+      const url = new URL(window.location.href);
+      if (tab === "tours") {
+        url.searchParams.set("tab", "tours");
+      } else {
+        url.searchParams.delete("tab");
+      }
+      window.history.pushState({}, "", url.toString());
+    }
+  };
   const [events, setEvents] = useState<Event[]>([]);
   const [tours, setTours] = useState<EventTour[]>([]);
   const [loading, setLoading] = useState(true);
@@ -475,31 +489,19 @@ export default function EventsPage() {
     <div className="min-h-screen bg-gray-50">
 
       <main className="pt-16">
-        {/* Hero Section */}
-        <section
-          className={cn(
-            PortugueseGradients.oceanLight,
-            "relative py-16 overflow-hidden"
-          )}
-        >
-          {/* Background Image - use text-free, people-centric images */}
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-secondary-900/80 to-accent-900/90 z-10"></div>
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{
-                backgroundImage:
-                  activeTab === "events"
-                    ? "url('/events/networking.jpg')" // smiling people networking
-                    : "url('/events/art-tour.jpg')", // museum/presentation scene
-              }}
-            ></div>
+        {/* Hero Section - Clean Modern Design */}
+        <section className="relative py-20 overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+          {/* Subtle Pattern Background */}
+          <div className="absolute inset-0 opacity-40">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23058B49' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+            }}></div>
           </div>
 
-          {/* Decorative Elements */}
-          <div className="absolute inset-0 opacity-20 z-20">
-            <div className="absolute -top-40 -right-40 w-80 h-80 bg-accent-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
-            <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-coral-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+          {/* Floating Elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-r from-primary-200 to-secondary-200 rounded-full mix-blend-multiply filter blur-3xl animate-pulse opacity-30"></div>
+            <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-r from-accent-200 to-coral-200 rounded-full mix-blend-multiply filter blur-3xl animate-pulse opacity-30"></div>
           </div>
 
           <div className={cn(Spacing.container, "relative z-30")}>
@@ -521,7 +523,7 @@ export default function EventsPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className={cn(Typography.display, "text-white mb-6")}
+                className={cn(Typography.display, "text-gray-900 mb-6")}
               >
                 {activeTab === "events" ? (
                   <>
@@ -559,7 +561,7 @@ export default function EventsPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className={cn(Typography.bodyLarge, "text-white/90 mb-8")}
+                className={cn(Typography.bodyLarge, "text-gray-700 mb-8")}
               >
                 {activeTab === "events" ? (
                   <>
@@ -601,10 +603,10 @@ export default function EventsPage() {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="flex justify-center mb-8 px-4"
               >
-                <div className="bg-white/80 backdrop-blur-sm p-2 sm:p-2 rounded-2xl shadow-lg border border-gray-200 w-full max-w-md">
+                <div className="bg-white/90 backdrop-blur-sm p-2 sm:p-2 rounded-2xl shadow-xl border border-gray-200 w-full max-w-md">
                   <div className="grid grid-cols-2 gap-2">
                     <button
-                      onClick={() => setActiveTab("events")}
+                      onClick={() => handleTabChange("events")}
                       className={`px-4 sm:px-6 py-3.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-sm transition-all duration-200 touch-manipulation min-h-[44px] flex items-center justify-center ${
                         activeTab === "events"
                           ? "bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-md"
@@ -614,7 +616,7 @@ export default function EventsPage() {
                       {isPortuguese ? "Eventos" : "Events"}
                     </button>
                     <button
-                      onClick={() => setActiveTab("tours")}
+                      onClick={() => handleTabChange("tours")}
                       className={`px-4 sm:px-6 py-3.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-sm transition-all duration-200 touch-manipulation min-h-[44px] flex items-center justify-center ${
                         activeTab === "tours"
                           ? "bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-md"
@@ -642,10 +644,10 @@ export default function EventsPage() {
                 className="grid grid-cols-3 gap-8 max-w-md mx-auto mb-8"
               >
                 <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
+                  <div className="text-2xl sm:text-3xl font-bold text-primary-600 mb-1">
                     {activeTab === "events" ? "200+" : `${tours.length}+`}
                   </div>
-                  <div className="text-sm text-white/80">
+                  <div className="text-sm text-gray-600">
                     {activeTab === "events"
                       ? isPortuguese
                         ? "Experiências Mensais"
@@ -656,12 +658,12 @@ export default function EventsPage() {
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
+                  <div className="text-2xl sm:text-3xl font-bold text-secondary-600 mb-1">
                     {activeTab === "events"
                       ? "750+"
                       : Object.keys(EVENT_TOUR_CATEGORIES).length}
                   </div>
-                  <div className="text-sm text-white/80">
+                  <div className="text-sm text-gray-600">
                     {activeTab === "events"
                       ? isPortuguese
                         ? "Falantes de Português"
@@ -672,10 +674,10 @@ export default function EventsPage() {
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
+                  <div className="text-2xl sm:text-3xl font-bold text-accent-600 mb-1">
                     {activeTab === "events" ? "10+" : featuredItems.length}
                   </div>
-                  <div className="text-sm text-white/80">
+                  <div className="text-sm text-gray-600">
                     {activeTab === "events"
                       ? isPortuguese
                         ? "Países Lusófonos"
@@ -708,7 +710,7 @@ export default function EventsPage() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyPress={(e) => e.key === "Enter" && handleSearch()}
-                  className="w-full pl-10 sm:pl-12 pr-20 sm:pr-32 py-3 sm:py-4 text-base sm:text-lg rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent shadow-lg bg-white/80 backdrop-blur-sm"
+                  className="w-full pl-10 sm:pl-12 pr-20 sm:pr-32 py-3 sm:py-4 text-base sm:text-lg rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent shadow-lg bg-white backdrop-blur-sm"
                 />
                 <MagnifyingGlassIcon className="absolute left-6 sm:left-8 top-1/2 transform -translate-y-1/2 w-5 h-5 sm:w-6 sm:h-6 text-gray-400" />
                 <button

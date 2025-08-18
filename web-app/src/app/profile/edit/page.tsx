@@ -9,12 +9,14 @@ import {
   CameraIcon,
   ShieldCheckIcon,
   Cog6ToothIcon,
-  PhotoIcon
+  PhotoIcon,
+  HeartIcon
 } from '@heroicons/react/24/outline'
-import { getCurrentUser, getCurrentUserProfile, UserProfile, updateProfile } from '@/lib/supabase'
+import { getCurrentUser, getCurrentUserProfile, UserProfile, updateProfile, getCulturalPreferences, saveCulturalPreferences } from '@/lib/supabase'
 import ProfileEditForm from '@/components/profile/ProfileEditForm'
 import ProfilePhotoManager from '@/components/profile/ProfilePhotoManager'
 import ProfileCompletion from '@/components/profile/ProfileCompletion'
+import PortugueseCulturalPreferences from '@/components/profile/PortugueseCulturalPreferences'
 
 // Define interest categories
 const INTEREST_CATEGORIES = {
@@ -73,9 +75,17 @@ interface ProfileFormData {
     allow_messages: 'everyone' | 'connections' | 'premium'
     profile_visibility: 'public' | 'members_only' | 'connections_only'
   }
+  cultural_preferences?: {
+    origins: string[]
+    language_preference: string
+    cultural_celebrations: string[]
+    professional_goals: string[]
+    cultural_values: Record<string, number>
+    lifestyle_preferences: string[]
+  }
 }
 
-type EditTab = 'profile' | 'photos' | 'completion'
+type EditTab = 'profile' | 'cultural' | 'photos' | 'completion'
 
 function ProfileEditPageContent() {
   const router = useRouter()
@@ -105,13 +115,31 @@ function ProfileEditPageContent() {
       show_location: true,
       allow_messages: 'connections',
       profile_visibility: 'members_only'
+    },
+    cultural_preferences: {
+      origins: [],
+      language_preference: '',
+      cultural_celebrations: [],
+      professional_goals: [],
+      cultural_values: {},
+      lifestyle_preferences: []
     }
   })
+
+  const [culturalPreferences, setCulturalPreferences] = useState({
+    origins: [],
+    language_preference: '',
+    cultural_celebrations: [],
+    professional_goals: [],
+    cultural_values: {},
+    lifestyle_preferences: []
+  })
+  const [savingCultural, setSavingCultural] = useState(false)
 
   useEffect(() => {
     // Get tab from URL params
     const tab = searchParams.get('tab') as EditTab
-    if (tab && ['profile', 'photos', 'completion'].includes(tab)) {
+    if (tab && ['profile', 'cultural', 'photos', 'completion'].includes(tab)) {
       setActiveTab(tab)
     }
   }, [searchParams])
@@ -135,6 +163,19 @@ function ProfileEditPageContent() {
       // Load profile data
       const profileData = await getCurrentUserProfile()
       setProfile(profileData)
+      
+      // Load cultural preferences
+      const culturalData = await getCulturalPreferences(user.id)
+      if (culturalData) {
+        setCulturalPreferences({
+          origins: culturalData.origins,
+          language_preference: culturalData.language_preference,
+          cultural_celebrations: culturalData.cultural_celebrations,
+          professional_goals: culturalData.professional_goals,
+          cultural_values: culturalData.cultural_values,
+          lifestyle_preferences: culturalData.lifestyle_preferences
+        })
+      }
 
       // Populate form data
       if (profileData) {
@@ -196,12 +237,46 @@ function ProfileEditPageContent() {
     }))
   }
 
+  const handleCulturalPreferencesChange = (culturalData: any) => {
+    setCulturalPreferences(culturalData)
+    setFormData(prev => ({
+      ...prev,
+      cultural_preferences: culturalData
+    }))
+  }
+
+  const handleSaveCulturalPreferences = async () => {
+    if (!currentUser) return
+    
+    setSavingCultural(true)
+    try {
+      const result = await saveCulturalPreferences(currentUser.id, culturalPreferences)
+      
+      if (result.success) {
+        alert('Cultural preferences saved successfully!')
+      } else {
+        alert(result.error || 'Failed to save cultural preferences')
+      }
+    } catch (error) {
+      console.error('Error saving cultural preferences:', error)
+      alert('Failed to save cultural preferences')
+    } finally {
+      setSavingCultural(false)
+    }
+  }
+
   const tabs = [
     {
       id: 'profile' as EditTab,
       name: 'Profile Info',
       icon: <UserCircleIcon className="w-4 h-4" />,
       description: 'Basic information and interests'
+    },
+    {
+      id: 'cultural' as EditTab,
+      name: 'Cultural Background',
+      icon: <HeartIcon className="w-4 h-4" />,
+      description: 'Portuguese cultural preferences'
     },
     {
       id: 'photos' as EditTab,
@@ -350,6 +425,16 @@ function ProfileEditPageContent() {
                   />
                 )}
                 
+                {activeTab === 'cultural' && (
+                  <PortugueseCulturalPreferences
+                    initialData={culturalPreferences}
+                    onChange={handleCulturalPreferencesChange}
+                    onSave={handleSaveCulturalPreferences}
+                    saving={savingCultural}
+                    showCompletion={true}
+                  />
+                )}
+                
                 {activeTab === 'photos' && (
                   <ProfilePhotoManager
                     profile={profile}
@@ -365,6 +450,8 @@ function ProfileEditPageContent() {
                       // Navigate to appropriate tab based on step
                       if (['profile_picture'].includes(stepId)) {
                         setActiveTab('photos')
+                      } else if (['cultural_preferences'].includes(stepId)) {
+                        setActiveTab('cultural')
                       } else {
                         setActiveTab('profile')
                       }

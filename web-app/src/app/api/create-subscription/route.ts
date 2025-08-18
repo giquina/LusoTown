@@ -60,13 +60,13 @@ export async function POST(request: NextRequest) {
           price_data: {
             currency: 'gbp',
             product_data: {
-              name: 'LusoTown Annual Membership',
-              description: 'Annual access to the Portuguese community network in London',
+              name: 'LusoTown Community Membership',
+              description: 'Monthly access to the Portuguese community network in London',
               images: ['https://lusotown.vercel.app/lusotown-membership.jpg'],
             },
-            unit_amount: 2500, // £25.00 in pence
+            unit_amount: 1999, // £19.99 in pence
             recurring: {
-              interval: 'year',
+              interval: 'month',
             },
           },
           quantity: 1,

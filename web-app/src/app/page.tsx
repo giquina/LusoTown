@@ -83,6 +83,7 @@ export default function Home() {
         <div className="pt-16 w-full">
           <Hero />
           <PortugueseSpeakersSection />
+          <TestimonialsNew />
           <HowItWorks />
           <HowConnectionsWork />
           <AboutLusoTown />
@@ -315,7 +316,6 @@ export default function Home() {
           <HostWithUsSection />
           <CaseStudies />
           <AppDownloadSection />
-          <TestimonialsNew />
           
           {/* User Journey Progress Widget */}
           <section className="py-16 bg-gray-50">

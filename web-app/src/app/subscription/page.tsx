@@ -102,8 +102,8 @@ export default function SubscriptionPage() {
                 </h1>
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                   {isPortuguese 
-                    ? 'Gerir a sua subscrição anual da comunidade portuguesa de Londres'
-                    : 'Manage your annual London Portuguese community subscription'
+                    ? 'Gerir a sua subscrição da comunidade portuguesa de Londres'
+                    : 'Manage your London Portuguese community subscription'
                   }
                 </p>
               </motion.div>
@@ -145,7 +145,7 @@ export default function SubscriptionPage() {
                         {subscription && (
                           <div className="space-y-2 text-sm text-green-700">
                             <p>
-                              <strong>{isPortuguese ? 'Tipo:' : 'Plan:'}</strong> {isPortuguese ? 'Anual' : 'Yearly'} (£25)
+                              <strong>{isPortuguese ? 'Tipo:' : 'Plan:'}</strong> {isPortuguese ? 'Membro da Comunidade' : 'Community Member'} (£19.99/mês)
                             </p>
                             <p>
                               <strong>{isPortuguese ? 'Renova em:' : 'Renews on:'}</strong>{' '}
@@ -313,12 +313,12 @@ export default function SubscriptionPage() {
                       {isPortuguese ? 'Preço' : 'Pricing'}
                     </h3>
                     <div className="text-center">
-                      <div className="text-3xl font-bold text-gray-900 mb-1">£25</div>
+                      <div className="text-3xl font-bold text-gray-900 mb-1">£19.99</div>
                       <div className="text-sm text-gray-600 mb-3">
-                        {isPortuguese ? 'por ano' : 'per year'}
+                        {isPortuguese ? 'por mês' : 'per month'}
                       </div>
                       <div className="text-xs text-gray-500 mb-4">
-                        {isPortuguese ? 'Apenas £2.08 por mês' : 'Just £2.08 per month'}
+                        {isPortuguese ? 'Comunidade portuguesa em Londres' : 'London Portuguese community'}
                       </div>
                       {!hasActiveSubscription && !isInTrial && (
                         <button

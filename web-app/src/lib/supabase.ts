@@ -948,3 +948,181 @@ export const getMembershipTierConfig = (tier: MembershipTier): MembershipTierCon
   
   return configs[tier]
 }
+
+// Cultural Preferences Types
+export interface CulturalPreferences {
+  id: string
+  user_id: string
+  origins: string[]
+  language_preference: string
+  cultural_celebrations: string[]
+  professional_goals: string[]
+  cultural_values: Record<string, number>
+  lifestyle_preferences: string[]
+  compatibility_score?: number
+  cultural_depth_score?: number
+  community_engagement_score?: number
+  completed_at: string
+  last_updated: string
+  quiz_version: string
+}
+
+export interface CulturalCompatibility {
+  id: string
+  user_a_id: string
+  user_b_id: string
+  origin_compatibility: number
+  language_compatibility: number
+  cultural_compatibility: number
+  professional_compatibility: number
+  values_compatibility: number
+  lifestyle_compatibility: number
+  overall_compatibility: number
+  compatibility_insights: string[]
+  shared_elements: string[]
+  calculated_at: string
+  last_updated: string
+}
+
+// Cultural Preferences Functions
+export const getCulturalPreferences = async (userId: string): Promise<CulturalPreferences | null> => {
+  try {
+    const { data, error } = await supabase
+      .from('cultural_preferences')
+      .select('*')
+      .eq('user_id', userId)
+      .single()
+    
+    if (error && error.code !== 'PGRST116') { // PGRST116 means no rows found
+      throw error
+    }
+    
+    return data
+  } catch (error) {
+    console.error('Error fetching cultural preferences:', error)
+    return null
+  }
+}
+
+export const saveCulturalPreferences = async (
+  userId: string, 
+  preferences: {
+    origins: string[]
+    language_preference: string
+    cultural_celebrations: string[]
+    professional_goals: string[]
+    cultural_values: Record<string, number>
+    lifestyle_preferences: string[]
+  }
+) => {
+  try {
+    const { data, error } = await supabase
+      .from('cultural_preferences')
+      .upsert({
+        user_id: userId,
+        ...preferences,
+        last_updated: new Date().toISOString(),
+        quiz_version: '1.0'
+      })
+      .select()
+      .single()
+    
+    if (error) throw error
+    
+    // Trigger compatibility calculation for this user
+    try {
+      await supabase.rpc('update_user_compatibility_scores', {
+        target_user_id: userId
+      })
+    } catch (compatError) {
+      console.warn('Failed to update compatibility scores:', compatError)
+      // Don't fail the main operation if compatibility calculation fails
+    }
+    
+    return { success: true, data }
+  } catch (error) {
+    console.error('Error saving cultural preferences:', error)
+    return { 
+      success: false, 
+      error: error instanceof Error ? error.message : 'Unknown error' 
+    }
+  }
+}
+
+export const getCulturalCompatibility = async (
+  userAId: string, 
+  userBId: string
+): Promise<CulturalCompatibility | null> => {
+  try {
+    const { data, error } = await supabase
+      .from('cultural_compatibility')
+      .select('*')
+      .eq('user_a_id', userAId)
+      .eq('user_b_id', userBId)
+      .single()
+    
+    if (error && error.code !== 'PGRST116') {
+      throw error
+    }
+    
+    return data
+  } catch (error) {
+    console.error('Error fetching cultural compatibility:', error)
+    return null
+  }
+}
+
+export const getTopCulturalMatches = async (
+  userId: string, 
+  limit: number = 10
+): Promise<Array<CulturalCompatibility & { profile: UserProfile }> | []> => {
+  try {
+    const { data, error } = await supabase
+      .from('cultural_compatibility')
+      .select(`
+        *,
+        profile:profiles!cultural_compatibility_user_b_id_fkey(*)
+      `)
+      .eq('user_a_id', userId)
+      .order('overall_compatibility', { ascending: false })
+      .limit(limit)
+    
+    if (error) throw error
+    return data || []
+  } catch (error) {
+    console.error('Error fetching top cultural matches:', error)
+    return []
+  }
+}
+
+export const getPortugueseCulturalElements = async () => {
+  try {
+    const { data, error } = await supabase
+      .from('portuguese_cultural_elements')
+      .select('*')
+      .eq('is_active', true)
+      .order('popularity_score', { ascending: false })
+    
+    if (error) throw error
+    return data || []
+  } catch (error) {
+    console.error('Error fetching Portuguese cultural elements:', error)
+    return []
+  }
+}
+
+export const getCulturalInsights = async () => {
+  try {
+    const { data, error } = await supabase
+      .from('cultural_insights')
+      .select('*')
+      .eq('is_active', true)
+      .order('category')
+    
+    if (error) throw error
+    return data || []
+  } catch (error) {
+    console.error('Error fetching cultural insights:', error)
+    return []
+  }
+}

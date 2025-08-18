@@ -63,7 +63,7 @@ const getMoreDropdownLinks = (t: any) => ({
     { name: "Close Protection", href: "/services#close-protection" },
     { name: "Transport & SIA", href: "/transport" },
     { name: "Find Your Match", href: "/matches" },
-  { name: "Streams", href: "/live" },
+  { name: "Live TV", href: "/live" },
   ],
   support: [
     { name: "How It Works", href: "/how-it-works" },
@@ -173,76 +173,31 @@ export default function Header() {
                           initial={{ opacity: 0, y: -10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
-                          className="absolute top-full left-0 mt-2 w-[560px] bg-white rounded-2xl shadow-2xl border border-gray-200 py-6 z-50"
+                          className="absolute top-full left-0 mt-2 w-[320px] bg-white rounded-2xl shadow-2xl border border-gray-200 py-4 z-50"
                         >
-                          <div className="grid grid-cols-2 gap-6 px-6">
-                            <div>
-                              <h3 className="text-sm font-semibold text-gray-900 mb-3">
-                                Tours & Experiences
-                              </h3>
-                              <ul className="space-y-2">
-                                <li>
-                                  <a
-                                    href="/london-tours"
-                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
-                                  >
-                                    All London Tours
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="/services#cultural-tours"
-                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
-                                  >
-                                    Cultural Tours
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="/services#executive-transport"
-                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
-                                  >
-                                    Executive Transport
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div>
-                              <h3 className="text-sm font-semibold text-gray-900 mb-3">
-                                Transport & Security
-                              </h3>
-                              <ul className="space-y-2">
-                                <li>
-                                  <a
-                                    href="/transport"
-                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
-                                  >
-                                    Transport & SIA
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="/services#close-protection"
-                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
-                                  >
-                                    Close Protection
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="/services"
-                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
-                                  >
-                                    All Services
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
+                          <div className="px-4">
+                            <ul className="space-y-2">
+                              <li>
+                                <a
+                                  href="/transport"
+                                  className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-3 py-3 rounded-lg font-medium transition-colors duration-200"
+                                >
+                                  Portuguese Transport Services
+                                </a>
+                              </li>
+                              <li>
+                                <a
+                                  href="/"
+                                  className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-3 py-3 rounded-lg font-medium transition-colors duration-200"
+                                >
+                                  Portuguese Platform Services
+                                </a>
+                              </li>
+                            </ul>
                           </div>
-                          <div className="px-6 pt-4">
+                          <div className="px-4 pt-3 border-t border-gray-100 mt-3">
                             <p className="text-xs text-gray-500">
-                              Explore authentic Portuguese-led tours and
-                              transport in London. Unidos pela Língua.
+                              Connect with Portuguese speakers in London & UK. Unidos pela Língua.
                             </p>
                           </div>
                         </motion.div>
@@ -674,7 +629,7 @@ export default function Header() {
                       className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Streams
+                      Live TV
                     </a>
                     <a
                       href="/services"

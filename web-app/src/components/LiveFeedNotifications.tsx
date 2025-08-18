@@ -9,16 +9,28 @@ import {
   CalendarIcon,
   ChatBubbleLeftRightIcon,
   XMarkIcon,
+  TruckIcon,
+  VideoCameraIcon,
+  BriefcaseIcon,
+  SparklesIcon,
+  AcademicCapIcon,
+  MapPinIcon,
 } from "@heroicons/react/24/solid";
 
 interface NotificationItem {
   id: string;
   type:
-    | "tour_booking"
+    | "match_made"
+    | "event_created"
     | "transport_booking"
-    | "tour_review"
-    | "airport_transfer"
-    | "signup";
+    | "stream_started"
+    | "business_workshop"
+    | "signup"
+    | "student_joined"
+    | "cultural_event"
+    | "premium_upgrade"
+    | "group_joined"
+    | "success_story";
   name: string;
   location: string;
   action: string;
@@ -51,96 +63,128 @@ const LiveFeedNotifications = () => {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // Mock data refocused on London Tours & Private Transport
+  // Portuguese community activities focused on real LusoTown features
   const mockNotifications = useMemo<Omit<NotificationItem, "id" | "timeAgo">[]>(
     () => [
       {
-        type: "tour_booking",
+        type: "match_made",
         name: "Ana Sofia",
         location: "Westminster",
-        action: "booked the Classic London Tour (4h) with a Portuguese guide",
+        action: "matched with a fellow Portuguese speaker for weekend activities",
+        icon: <HeartIcon className="w-4 h-4 text-white" />,
+        gradient: "from-pink-400 to-rose-500",
+      },
+      {
+        type: "event_created",
+        name: "Miguel Santos",
+        location: "Chelsea",
+        action: "created 'Fado Night at Portuguese Restaurant' event",
         icon: <CalendarIcon className="w-4 h-4 text-white" />,
         gradient: "from-primary-400 to-secondary-500",
       },
       {
-        type: "transport_booking",
-        name: "Miguel Santos",
-        location: "Chelsea",
-        action: "scheduled a personal driver for a museum day trip",
-        icon: <UserPlusIcon className="w-4 h-4 text-white" />,
-        gradient: "from-green-400 to-emerald-500",
-      },
-      {
-        type: "tour_review",
+        type: "stream_started",
         name: "Beatriz Ferreira",
         location: "Kensington",
-        action: "left a 5★ review for the Royal Heritage Tour",
-        icon: <StarIcon className="w-4 h-4 text-white" />,
-        gradient: "from-yellow-400 to-orange-500",
-      },
-      {
-        type: "tour_booking",
-        name: "João Pereira",
-        location: "Canary Wharf",
-        action: "booked a private driver for a Fado Night experience",
-        icon: <ChatBubbleLeftRightIcon className="w-4 h-4 text-white" />,
+        action: "started streaming 'Portuguese Cooking Class' on LusoTown TV",
+        icon: <VideoCameraIcon className="w-4 h-4 text-white" />,
         gradient: "from-purple-400 to-violet-500",
       },
       {
-        type: "airport_transfer",
-        name: "Catarina Silva",
-        location: "Clapham",
-        action: "booked an airport transfer with Portuguese driver",
-        icon: <CalendarIcon className="w-4 h-4 text-white" />,
-        gradient: "from-primary-400 to-secondary-500",
+        type: "business_workshop",
+        name: "João Pereira",
+        location: "Canary Wharf",
+        action: "joined 'Starting Your UK Business' workshop",
+        icon: <BriefcaseIcon className="w-4 h-4 text-white" />,
+        gradient: "from-blue-400 to-indigo-500",
       },
       {
         type: "transport_booking",
+        name: "Catarina Silva",
+        location: "Clapham",
+        action: "booked premium transport with Portuguese-speaking driver",
+        icon: <TruckIcon className="w-4 h-4 text-white" />,
+        gradient: "from-green-400 to-emerald-500",
+      },
+      {
+        type: "cultural_event",
         name: "Ricardo Oliveira",
         location: "Brixton",
-        action: "reserved a security driver for a business meeting",
-        icon: <HeartIcon className="w-4 h-4 text-white" />,
-        gradient: "from-pink-400 to-rose-500",
+        action: "registered for 'Portuguese Heritage Walking Tour'",
+        icon: <MapPinIcon className="w-4 h-4 text-white" />,
+        gradient: "from-amber-400 to-orange-500",
       },
       {
         type: "signup",
         name: "Mariana Costa",
         location: "Greenwich",
-        action: "just joined LusoTown London to plan summer tours",
+        action: "joined LusoTown to connect with Portuguese community",
         icon: <UserPlusIcon className="w-4 h-4 text-white" />,
-        gradient: "from-green-400 to-emerald-500",
+        gradient: "from-primary-400 to-secondary-500",
       },
       {
-        type: "tour_review",
+        type: "student_joined",
         name: "Pedro Almeida",
-        location: "Notting Hill",
-        action: "left a 5★ review for the Harry Potter London Experience",
-        icon: <StarIcon className="w-4 h-4 text-white" />,
+        location: "King's College",
+        action: "verified as student and joined Portuguese student network",
+        icon: <AcademicCapIcon className="w-4 h-4 text-white" />,
+        gradient: "from-cyan-400 to-blue-500",
+      },
+      {
+        type: "premium_upgrade",
+        name: "Inês Rodrigues",
+        location: "Hampstead",
+        action: "upgraded to Cultural Ambassador membership",
+        icon: <SparklesIcon className="w-4 h-4 text-white" />,
         gradient: "from-yellow-400 to-orange-500",
       },
       {
-        type: "tour_booking",
-        name: "Inês Rodrigues",
-        location: "Hampstead",
-        action: "booked the Modern London Architecture Tour",
-        icon: <CalendarIcon className="w-4 h-4 text-white" />,
-        gradient: "from-primary-400 to-secondary-500",
-      },
-      {
-        type: "tour_booking",
+        type: "group_joined",
         name: "Gonçalo Martins",
         location: "Richmond",
-        action: "arranged private transport for a museum tour group",
+        action: "joined 'Portuguese Professionals in London' group",
         icon: <ChatBubbleLeftRightIcon className="w-4 h-4 text-white" />,
-        gradient: "from-purple-400 to-violet-500",
+        gradient: "from-emerald-400 to-teal-500",
       },
       {
-        type: "airport_transfer",
+        type: "success_story",
         name: "Sofia Mendes",
         location: "Fulham",
-        action: "scheduled return transfer with Portuguese-speaking driver",
+        action: "shared success story about finding her Portuguese mentor",
+        icon: <StarIcon className="w-4 h-4 text-white" />,
+        gradient: "from-pink-400 to-rose-500",
+      },
+      {
+        type: "match_made",
+        name: "Tiago Carvalho",
+        location: "Shoreditch",
+        action: "matched with someone for Portuguese language exchange",
+        icon: <HeartIcon className="w-4 h-4 text-white" />,
+        gradient: "from-red-400 to-pink-500",
+      },
+      {
+        type: "event_created",
+        name: "Lúcia Fernandes",
+        location: "Camden",
+        action: "organized 'Portuguese Film Night' community event",
         icon: <CalendarIcon className="w-4 h-4 text-white" />,
         gradient: "from-primary-400 to-secondary-500",
+      },
+      {
+        type: "stream_started",
+        name: "Rui Moreira",
+        location: "Islington",
+        action: "broadcasting live 'Portuguese Guitar Lessons'",
+        icon: <VideoCameraIcon className="w-4 h-4 text-white" />,
+        gradient: "from-violet-400 to-purple-500",
+      },
+      {
+        type: "business_workshop",
+        name: "Cristina Alves",
+        location: "City of London",
+        action: "attending 'UK Tax for Portuguese Entrepreneurs' session",
+        icon: <BriefcaseIcon className="w-4 h-4 text-white" />,
+        gradient: "from-indigo-400 to-blue-500",
       },
     ],
     []

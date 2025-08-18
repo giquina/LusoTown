@@ -54,6 +54,3 @@ export const planPriceLabel = (plan: keyof typeof plans, locale: 'en' | 'pt' = '
 };
 
 export const monthlyPrice = (plan: keyof typeof plans) => plans[plan].monthly;
-export const annualMembershipPrice = () => membership.annual;
-export const studentAnnualPrice = () => membership.studentAnnual;
-export const groupAnnualPrice = () => membership.groupAnnual;
