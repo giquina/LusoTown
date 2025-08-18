@@ -13,8 +13,10 @@ import {
   CheckCircleIcon,
   UserIcon,
   GlobeAltIcon,
-  CalendarDaysIcon
+  CalendarDaysIcon,
+  ExclamationTriangleIcon
 } from "@heroicons/react/24/outline";
+import { isServiceAvailable, getServiceStatus, getAvailabilityStyles, getAvailabilityLabel } from "@/lib/serviceAvailability";
 
 export default function ToursPage() {
   const { language } = useLanguage();
@@ -24,6 +26,7 @@ export default function ToursPage() {
     {
       id: 1,
       title: isPortuguese ? "Londres Clássico: Os Marcos Icónicos" : "Classic London: The Iconic Landmarks",
+      serviceKey: "london_tours", // Available service
       description: isPortuguese 
         ? "Descubra os pontos turísticos mais famosos de Londres com guias portugueses experientes. Big Ben, Tower Bridge, Buckingham Palace, Westminster Abbey e muito mais. Uma introdução perfeita à capital britânica com explicações em português." 
         : "Discover London's most famous tourist attractions with experienced Portuguese guides. Big Ben, Tower Bridge, Buckingham Palace, Westminster Abbey and much more. A perfect introduction to the British capital with explanations in Portuguese.",
@@ -53,7 +56,8 @@ export default function ToursPage() {
     },
     {
       id: 2,
-      title: isPortuguese ? "Mercados & Sabores de Londres" : "London Markets & Flavors", 
+      title: isPortuguese ? "Mercados & Sabores de Londres" : "London Markets & Flavors",
+      serviceKey: "custom_tours", // Unavailable service 
       description: isPortuguese 
         ? "Explore os mercados mais famosos de Londres: Borough Market, Camden Market, Covent Garden Market. Prove comidas locais, descubra produtos únicos e experiencie a cultura gastronómica londrina com guias que falam português."
         : "Explore London's most famous markets: Borough Market, Camden Market, Covent Garden Market. Try local foods, discover unique products and experience London's food culture with Portuguese-speaking guides.",
@@ -84,6 +88,7 @@ export default function ToursPage() {
     {
       id: 3,
       title: isPortuguese ? "Museus & Cultura de Londres" : "London Museums & Culture",
+      serviceKey: "portuguese_cultural_tours", // Unavailable service
       description: isPortuguese 
         ? "Visite os museus mais famosos do mundo: British Museum, Tate Modern, National Gallery, Victoria & Albert Museum. Descubra tesouros históricos e arte mundial com explicações detalhadas em português."
         : "Visit the world's most famous museums: British Museum, Tate Modern, National Gallery, Victoria & Albert Museum. Discover historical treasures and world art with detailed explanations in Portuguese.",
@@ -114,6 +119,7 @@ export default function ToursPage() {
     {
       id: 4,
       title: isPortuguese ? "Palácios Reais de Londres" : "Royal Palaces of London",
+      serviceKey: "london_tours", // Available service
       description: isPortuguese 
         ? "Tour exclusivo pelos palácios reais mais famosos: Buckingham Palace, Kensington Palace, Hampton Court Palace. Descubra a história da monarquia britânica, jardins reais e tradições centenárias com acesso preferencial."
         : "Exclusive tour of the most famous royal palaces: Buckingham Palace, Kensington Palace, Hampton Court Palace. Discover British monarchy history, royal gardens and centuries-old traditions with priority access.",
@@ -185,7 +191,13 @@ export default function ToursPage() {
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {tours.map((tour, index) => (
+              {tours.map((tour, index) => {
+                const serviceStatus = getServiceStatus(tour.serviceKey);
+                const available = isServiceAvailable(tour.serviceKey);
+                const availabilityStyles = serviceStatus ? getAvailabilityStyles(serviceStatus.status) : null;
+                const availabilityLabel = serviceStatus ? getAvailabilityLabel(serviceStatus.status, isPortuguese) : null;
+                
+                return (
                 <motion.div
                   key={tour.id}
                   initial={{ opacity: 0, y: 20 }}
@@ -200,9 +212,21 @@ export default function ToursPage() {
                       <MapPinIcon className="w-20 h-20 text-white/90" />
                     </div>
                     <div className="absolute top-4 left-4">
-                      <span className="bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
-                        {isPortuguese ? "Tour Premium" : "Premium Tour"}
-                      </span>
+                      {available ? (
+                        <span className={`${availabilityStyles?.bg} ${availabilityStyles?.text} px-3 py-1.5 rounded-full text-sm font-bold shadow-lg border ${availabilityStyles?.border}`}>
+                          <div className="flex items-center space-x-1.5">
+                            <CheckCircleIcon className="w-3 h-3 flex-shrink-0" />
+                            <span>{availabilityLabel}</span>
+                          </div>
+                        </span>
+                      ) : (
+                        <span className={`${availabilityStyles?.bg} ${availabilityStyles?.text} px-3 py-1.5 rounded-full text-sm font-bold shadow-lg border ${availabilityStyles?.border}`}>
+                          <div className="flex items-center space-x-1.5">
+                            <ExclamationTriangleIcon className="w-3 h-3 flex-shrink-0" />
+                            <span>{availabilityLabel}</span>
+                          </div>
+                        </span>
+                      )}
                     </div>
                     <div className="absolute top-4 right-4 flex items-center gap-1 bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full">
                       <StarIcon className="w-4 h-4 fill-current" />
@@ -273,19 +297,52 @@ export default function ToursPage() {
                     </div>
                     
                     {/* Action Buttons */}
-                    <div className="flex gap-3">
-                      <button className="flex-1 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold py-3 px-6 rounded-xl hover:from-primary-700 hover:to-secondary-700 transition-all duration-200 flex items-center justify-center gap-2 group-hover:scale-105">
-                        {isPortuguese ? "Reservar Agora" : "Book Now"}
-                        <ArrowRightIcon className="w-4 h-4" />
-                      </button>
-                      <button className="px-6 py-3 border-2 border-primary-600 text-primary-600 font-semibold rounded-xl hover:bg-primary-50 transition-all duration-200 flex items-center gap-2">
-                        <CalendarDaysIcon className="w-4 h-4" />
-                        {isPortuguese ? "Ver Datas" : "View Dates"}
-                      </button>
+                    <div className="space-y-3">
+                      {available ? (
+                        <div className="flex gap-3">
+                          <button className="flex-1 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-bold py-3 px-6 rounded-xl hover:from-primary-700 hover:to-secondary-700 transition-all duration-200 flex items-center justify-center gap-2 group-hover:scale-105">
+                            {isPortuguese ? "Reservar Agora" : "Book Now"}
+                            <ArrowRightIcon className="w-4 h-4" />
+                          </button>
+                          <button className="px-6 py-3 border-2 border-primary-600 text-primary-600 font-semibold rounded-xl hover:bg-primary-50 transition-all duration-200 flex items-center gap-2">
+                            <CalendarDaysIcon className="w-4 h-4" />
+                            {isPortuguese ? "Ver Datas" : "View Dates"}
+                          </button>
+                        </div>
+                      ) : (
+                        <div className="space-y-2">
+                          <button 
+                            className="w-full bg-gray-400 text-white py-3 px-6 rounded-xl font-bold cursor-not-allowed opacity-60"
+                            disabled
+                          >
+                            {serviceStatus?.status === 'fully_booked' 
+                              ? (isPortuguese ? 'Esgotado' : 'Fully Booked')
+                              : (isPortuguese ? 'Indisponível' : 'Unavailable')
+                            }
+                          </button>
+                          {serviceStatus?.waitingListAvailable && (
+                            <button
+                              onClick={() => {
+                                console.log(`Join waiting list for tour ${tour.serviceKey}`);
+                              }}
+                              className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-2.5 px-6 rounded-xl font-bold transition-all duration-300"
+                            >
+                              {isPortuguese ? 'Entrar na Lista de Espera' : 'Join Waiting List'}
+                            </button>
+                          )}
+                          {serviceStatus?.estimatedAvailability && (
+                            <p className="text-xs text-gray-600 text-center">
+                              {isPortuguese ? 'Estimativa: ' : 'Estimated: '}
+                              {isPortuguese ? serviceStatus.estimatedAvailabilityPortuguese : serviceStatus.estimatedAvailability}
+                            </p>
+                          )}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </motion.div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>

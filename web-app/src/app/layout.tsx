@@ -13,6 +13,7 @@ import { NetworkingProvider } from "@/context/NetworkingContext";
 import { SubscriptionProvider } from "@/context/SubscriptionContext";
 import { NotificationProvider } from "@/context/NotificationContext";
 import { PlatformIntegrationProvider } from "@/context/PlatformIntegrationContext";
+import { WaitingListProvider } from "@/context/WaitingListContext";
 import { AuthPopupProvider } from "@/components/AuthPopupProvider";
 import AuthPopup from "@/components/AuthPopup";
 import AuthIntentHandler from "@/components/AuthIntentHandler";
@@ -179,8 +180,9 @@ export default function RootLayout({
                   <NetworkingProvider>
                     <SubscriptionProvider>
                       <NotificationProvider>
-                        <AuthPopupProvider>
-                          <PlatformIntegrationProvider>
+                        <WaitingListProvider>
+                          <AuthPopupProvider>
+                            <PlatformIntegrationProvider>
                             <ComponentErrorBoundary componentName="User Type Selection">
                               <UserTypeSelection />
                             </ComponentErrorBoundary>
@@ -210,8 +212,9 @@ export default function RootLayout({
                             <ComponentErrorBoundary componentName="Auth Intent Handler">
                               <AuthIntentHandler />
                             </ComponentErrorBoundary>
-                          </PlatformIntegrationProvider>
-                        </AuthPopupProvider>
+                            </PlatformIntegrationProvider>
+                          </AuthPopupProvider>
+                        </WaitingListProvider>
                       </NotificationProvider>
                     </SubscriptionProvider>
                   </NetworkingProvider>

@@ -18,6 +18,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { Crown } from 'lucide-react'
 import FavoriteButton from '@/components/FavoriteButton'
+import WaitingListModal from '@/components/WaitingListModal'
 import { useCart } from '@/context/CartContext'
 import { useLanguage } from '@/context/LanguageContext'
 import { useAuthRequired } from '@/hooks/useAuthRequired'
@@ -35,6 +36,7 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
   const { language, t } = useLanguage()
   const { requireAuthForCart } = useAuthRequired()
   const [addingToCart, setAddingToCart] = useState(false)
+  const [showWaitingListModal, setShowWaitingListModal] = useState(false)
   
   const isPortuguese = language === 'pt'
   const inCart = isInCart(event.title)
@@ -60,7 +62,7 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
 
   const spotsLeft = event.maxAttendees - event.currentAttendees
   const isAlmostFull = spotsLeft <= 3 && spotsLeft > 0
-  const isFull = spotsLeft <= 0
+  const isFull = spotsLeft <= 0 || event.status === 'fully-booked'
 
   const getCategoryColor = (category: string) => {
     const colors = {
@@ -263,9 +265,18 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
       <div className="p-6 flex-grow flex flex-col">
         {/* Header - Title & Price */}
         <div className="flex items-start justify-between mb-4 gap-3">
-          <h3 className="font-bold text-lg sm:text-xl text-gray-900 group-hover:text-primary-600 transition-colors flex-1 leading-tight min-h-[3.5rem] flex items-start">
-            <span className="line-clamp-3">{event.title}</span>
-          </h3>
+          <div className="flex-1">
+            <h3 className="font-bold text-lg sm:text-xl text-gray-900 group-hover:text-primary-600 transition-colors leading-tight min-h-[3.5rem] flex items-start">
+              <span className="line-clamp-3">{event.title}</span>
+            </h3>
+            {isFull && (
+              <div className="mt-2">
+                <span className="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                  {isPortuguese ? 'LOTADO' : 'FULLY BOOKED'}
+                </span>
+              </div>
+            )}
+          </div>
           <div className="text-right flex-shrink-0">
             <div className="text-lg sm:text-xl font-bold text-primary-600">
               {formatPrice(event.price, event.currency)}
@@ -400,8 +411,11 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
             </a>
             
             {isFull ? (
-              <button className="border border-red-300 text-red-600 bg-red-50 font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:bg-red-100 transition-colors text-center text-xs sm:text-sm">
-                {isPortuguese ? 'Lista' : 'Waitlist'}
+              <button 
+                onClick={() => setShowWaitingListModal(true)}
+                className="bg-gradient-to-r from-orange-500 to-coral-500 text-white font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-orange-600 hover:to-coral-600 transition-all duration-200 text-center text-xs sm:text-sm transform hover:scale-105"
+              >
+                {isPortuguese ? 'ENTRAR NA LISTA DE ESPERA' : 'JOIN WAITING LIST'}
               </button>
             ) : (
               <button 
@@ -453,6 +467,16 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
           </button>
         </div>
       </div>
+
+      {/* Waiting List Modal */}
+      <WaitingListModal
+        isOpen={showWaitingListModal}
+        onClose={() => setShowWaitingListModal(false)}
+        eventId={event.id}
+        eventTitle={event.title}
+        currentWaitlistCount={0}
+        maxWaitingList={event.maxWaitingList || 50}
+      />
     </motion.div>
   )
 }

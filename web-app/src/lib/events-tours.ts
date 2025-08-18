@@ -14,6 +14,9 @@ export interface EventTour {
   currency: string
   maxAttendees: number
   currentAttendees: number
+  status?: 'draft' | 'published' | 'cancelled' | 'completed' | 'fully-booked'
+  allowWaitlist?: boolean
+  maxWaitingList?: number
   hostName: string
   hostImage?: string
   imageUrl?: string
@@ -62,7 +65,10 @@ export const eventsTours: EventTour[] = [
     price: 85,
     currency: 'GBP',
     maxAttendees: 20,
-    currentAttendees: 12,
+    currentAttendees: 20,
+    status: 'fully-booked',
+    allowWaitlist: true,
+    maxWaitingList: 50,
     hostName: 'Maria Santos',
     hostImage: '/profiles/community/member-3.jpg',
     imageUrl: '/events/wine-tasting.jpg',
@@ -97,7 +103,7 @@ export const eventsTours: EventTour[] = [
   {
     id: 'et-002',
     title: 'Website Creation Masterclass: Portuguese Professionals',
-    description: 'Learn to build modern websites using HTML, CSS, and JavaScript for business growth. Open to all community members interested in web development, from complete beginners to business professionals.',
+    description: 'Learn to build modern websites using HTML, CSS, and JavaScript for business growth. Open to all Portuguese speakers interested in web development, from complete beginners to business professionals.',
     date: '2025-08-22',
     time: '14:00',
     endTime: '16:30',
@@ -107,7 +113,10 @@ export const eventsTours: EventTour[] = [
     price: 125,
     currency: 'GBP',
     maxAttendees: 30,
-    currentAttendees: 18,
+    currentAttendees: 30,
+    status: 'fully-booked',
+    allowWaitlist: true,
+    maxWaitingList: 50,
     hostName: 'Ricardo Silva',
     hostImage: '/profiles/community/member-5.jpg',
     imageUrl: '/events/art-tour.jpg',
@@ -142,7 +151,7 @@ export const eventsTours: EventTour[] = [
   {
     id: 'et-003',
     title: 'Women 40+ Professional Portuguese Network',
-    description: 'Exclusive networking dinner for established Portuguese women (40+) in London. Share professional experiences, mentor younger community members, and build business connections within the Portuguese diaspora.',
+    description: 'Exclusive networking dinner for established Portuguese women (40+) in London. Share professional experiences, mentor younger Portuguese speakers, and build business connections within the Portuguese diaspora.',
     date: '2025-08-25',
     time: '18:30',
     endTime: '21:30',
@@ -152,7 +161,10 @@ export const eventsTours: EventTour[] = [
     price: 165,
     currency: 'GBP',
     maxAttendees: 16,
-    currentAttendees: 9,
+    currentAttendees: 16,
+    status: 'fully-booked',
+    allowWaitlist: true,
+    maxWaitingList: 50,
     hostName: 'Dr. Teresa Rodrigues',
     hostImage: '/profiles/community/member-8.jpg',
     imageUrl: '/events/networking.jpg',
@@ -187,7 +199,7 @@ export const eventsTours: EventTour[] = [
   {
     id: 'et-004',
     title: 'Portuguese Language Exchange at Tate Modern',
-    description: 'Combine art appreciation with language learning! Portuguese and English speakers explore contemporary art while practicing languages. Perfect for Portuguese community members wanting to improve English or help others learn Portuguese.',
+    description: 'Combine art appreciation with language learning! Portuguese and English speakers explore contemporary art while practicing languages. Perfect for Portuguese speakers wanting to improve English or help others learn Portuguese.',
     date: '2025-08-24',
     time: '11:00',
     endTime: '14:00',
@@ -197,7 +209,10 @@ export const eventsTours: EventTour[] = [
     price: 75,
     currency: 'GBP',
     maxAttendees: 24,
-    currentAttendees: 15,
+    currentAttendees: 24,
+    status: 'fully-booked',
+    allowWaitlist: true,
+    maxWaitingList: 50,
     hostName: 'Carlos Mendes',
     hostImage: '/profiles/community/member-7.jpg',
     imageUrl: '/events/art-tour.jpg',
@@ -232,7 +247,7 @@ export const eventsTours: EventTour[] = [
   {
     id: 'et-005',
     title: 'Fado Night & Cultural Heritage Celebration',
-    description: 'Authentic Fado evening celebrating Portuguese soul music and cultural heritage. Experience traditional Fado performances while connecting with Portuguese community members who share love for our musical traditions.',
+    description: 'Authentic Fado evening celebrating Portuguese soul music and cultural heritage. Experience traditional Fado performances while connecting with Portuguese speakers who share love for our musical traditions.',
     date: '2025-08-28',
     time: '20:00',
     endTime: '23:00',
@@ -530,7 +545,7 @@ export const EVENT_TOUR_CATEGORIES = {
     color: 'bg-accent-600'
   },
   'Mixed Groups': {
-    description: 'Open experiences welcoming all Portuguese community members',
+    description: 'Open experiences welcoming all Portuguese speakers',
     icon: '👥',
     color: 'bg-primary-600'
   },
@@ -562,7 +577,7 @@ export const EVENT_TOUR_CATEGORIES = {
     color: 'bg-secondary-600'
   },
   'Finance & Investment': {
-    description: 'Financial education and investment guidance for community members',
+    description: 'Financial education and investment guidance for Portuguese speakers',
     icon: '💰',
     color: 'bg-secondary-700'
   }

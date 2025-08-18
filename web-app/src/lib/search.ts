@@ -105,18 +105,6 @@ const mockGroups = [
 // Premium services data for search
 const premiumServices = [
   {
-    id: 'service-cultural-tours',
-    name: 'Portuguese Cultural Tours',
-    description: 'Discover London\'s hidden Portuguese heritage with expert bilingual guides',
-    category: 'Cultural Experience',
-    location: 'London',
-    url: '/services#cultural-tours',
-    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/portuguese-cultural-tour-london_dlqxkx.jpg',
-    price: 45,
-    rating: 4.9,
-    tags: ['cultural tours', 'portuguese culture', 'bilingual guides', 'london history', 'cultural sites']
-  },
-  {
     id: 'service-executive-transport',
     name: 'Executive Transport Services',
     description: 'Professional transport services with Portuguese cultural expertise',

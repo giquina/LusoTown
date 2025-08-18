@@ -552,7 +552,7 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
           id: 'ach-1',
           type: 'connector',
           name: 'Community Connector',
-          description: 'Connected with 3+ Portuguese community members',
+          description: 'Connected with 3+ Portuguese Portuguese speakers',
           icon: '🤝',
           earnedAt: '2024-01-15T20:30:00Z',
           isActive: true

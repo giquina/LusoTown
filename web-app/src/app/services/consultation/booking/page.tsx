@@ -38,15 +38,6 @@ export default function ConsultationBookingPage() {
 
   const consultationTypes = [
     {
-      id: 'cultural-tours',
-      name: 'Cultural Tours Planning',
-      namePortuguese: 'Planeamento de Tours Culturais',
-      description: 'Plan custom Portuguese heritage tours for individuals or groups',
-      descriptionPortuguese: 'Planear tours de património português personalizados para indivíduos ou grupos',
-      duration: '45-60 minutes',
-      price: 'Free consultation'
-    },
-    {
       id: 'executive-transport',
       name: 'Executive Transport Solutions',
       namePortuguese: 'Soluções de Transporte Executivo',

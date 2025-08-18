@@ -83,7 +83,7 @@ export default function HostPage() {
     {
       icon: UserGroupIcon,
       title: isPortuguese ? 'Alcance 750+ Portugueses' : 'Reach 750+ Portuguese Speakers',
-      description: isPortuguese ? 'Conecte com profissionais e membros da comunidade portuguesa' : 'Connect with Portuguese professionals and community members'
+      description: isPortuguese ? 'Conecte com profissionais e membros da comunidade portuguesa' : 'Connect with Portuguese professionals and Portuguese speakers'
     },
     {
       icon: CurrencyPoundIcon,

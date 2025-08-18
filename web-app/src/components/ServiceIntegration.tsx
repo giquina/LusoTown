@@ -21,11 +21,11 @@ const ServiceIntegration: React.FC<ServiceIntegrationProps> = ({ isPortuguese })
   const integrationScenarios = [
     {
       id: 'complete-experience',
-      title: 'Complete Cultural Experience',
-      titlePortuguese: 'Experiência Cultural Completa',
-      description: 'Cultural tour + Executive transport + Light security for VIP experience',
-      descriptionPortuguese: 'Tour cultural + Transporte executivo + Segurança leve para experiência VIP',
-      services: ['cultural-tours', 'executive-transport', 'close-protection'],
+      title: 'Premium Transport Experience',
+      titlePortuguese: 'Experiência de Transporte Premium',
+      description: 'Executive transport + Professional security for premium VIP experience',
+      descriptionPortuguese: 'Transporte executivo + Segurança profissional para experiência VIP premium',
+      services: ['executive-transport', 'close-protection'],
       duration: '6 hours',
       durationPortuguese: '6 horas',
       price: 'From £450',

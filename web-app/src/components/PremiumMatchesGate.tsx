@@ -240,12 +240,19 @@ export default function PremiumMatchesGate() {
             {t.subtitle}
           </p>
 
-          <div className="bg-coral-50 border border-coral-200 rounded-xl p-6 max-w-2xl mx-auto">
+          <div className="bg-red-50 border border-red-200 rounded-xl p-6 max-w-2xl mx-auto">
             <div className="flex items-center justify-center gap-2 mb-3">
-              <Zap className="h-5 w-5 text-coral-600" />
-              <span className="font-semibold text-coral-900">{t.dailyLimitReached}</span>
+              <Lock className="h-5 w-5 text-red-600" />
+              <span className="font-semibold text-red-900">
+                {language === 'pt' ? 'Serviço Premium Temporariamente Esgotado' : 'Premium Service Temporarily Fully Booked'}
+              </span>
             </div>
-            <p className="text-coral-800">{t.upgradeMessage}</p>
+            <p className="text-red-800">
+              {language === 'pt' 
+                ? 'O nosso serviço de matches premium está atualmente em alta demanda. Junte-se à nossa lista de espera para ser notificado quando a capacidade for restaurada.'
+                : 'Our premium matching service is currently in high demand. Join our waiting list to be notified when capacity is restored.'
+              }
+            </p>
           </div>
         </motion.div>
 
@@ -341,14 +348,10 @@ export default function PremiumMatchesGate() {
                   </div>
                   
                   <button
-                    onClick={handleUpgrade}
-                    className={`w-full py-3 rounded-lg font-medium transition-colors ${
-                      tier.popular
-                        ? 'bg-primary-600 text-white hover:bg-primary-700'
-                        : `bg-${tier.color}-100 text-${tier.color}-700 hover:bg-${tier.color}-200`
-                    }`}
+                    className="w-full py-3 rounded-lg font-medium bg-gray-400 text-white cursor-not-allowed opacity-60"
+                    disabled
                   >
-                    {t.buttons.choosePlan}
+                    {language === 'pt' ? 'Temporariamente Indisponível' : 'Temporarily Unavailable'}
                   </button>
                 </motion.div>
               )
@@ -390,12 +393,30 @@ export default function PremiumMatchesGate() {
           transition={{ delay: 0.8 }}
           className="text-center space-y-4"
         >
-          <button
-            onClick={handleUpgrade}
-            className="bg-gradient-to-r from-primary-600 to-coral-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-primary-700 hover:to-coral-700 transition-all shadow-lg"
-          >
-            {t.buttons.upgrade}
-          </button>
+          <div className="space-y-4">
+            <button
+              className="bg-gray-400 text-white px-8 py-4 rounded-xl font-semibold text-lg cursor-not-allowed opacity-60"
+              disabled
+            >
+              {language === 'pt' ? 'Serviço Temporariamente Indisponível' : 'Service Temporarily Unavailable'}
+            </button>
+            <div className="flex justify-center">
+              <button
+                onClick={() => {
+                  console.log('Join premium matching waiting list');
+                }}
+                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 py-3 rounded-xl font-medium transition-all shadow-lg"
+              >
+                {language === 'pt' ? 'Entrar na Lista de Espera' : 'Join Waiting List'}
+              </button>
+            </div>
+            <p className="text-sm text-gray-600 text-center">
+              {language === 'pt' 
+                ? 'Estimativa de disponibilidade: Abril 2025'
+                : 'Estimated availability: April 2025'
+              }
+            </p>
+          </div>
           
           <div>
             <button

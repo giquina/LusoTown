@@ -27,40 +27,6 @@ import SubscriptionGate from '@/components/SubscriptionGate'
 // Premium service offerings with Portuguese cultural expertise
 const services = [
   {
-    id: 'cultural-tours',
-    name: 'Cultural Tours',
-    namePortuguese: 'Tours Culturais',
-    price: 45,
-    maxPrice: 85,
-    priceUnit: 'person',
-    priceUnitPortuguese: 'pessoa',
-    icon: MapPinIcon,
-    color: 'primary',
-    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/portuguese-cultural-tour-london_dlqxkx.jpg',
-    description: 'Discover London\'s hidden Portuguese heritage with expert bilingual guides',
-    descriptionPortuguese: 'Descubra o património português escondido de Londres com guias bilíngues especializados',
-    features: [
-      'Bilingual Portuguese-English guides',
-      'Exclusive Portuguese heritage sites',
-      'Small group experiences (max 12)',
-      'Traditional Portuguese refreshments',
-      'Cultural storytelling sessions',
-      'Historical documentation provided'
-    ],
-    featuresPortuguese: [
-      'Guias bilíngues português-inglês',
-      'Locais exclusivos do património português',
-      'Experiências em grupos pequenos (máx. 12)',
-      'Refrescos tradicionais portugueses',
-      'Sessões de narração cultural',
-      'Documentação histórica fornecida'
-    ],
-    popular: true,
-    testimonials: 3,
-    rating: 4.9,
-    bookings: '200+ monthly'
-  },
-  {
     id: 'executive-transport',
     name: 'Executive Transport',
     namePortuguese: 'Transporte Executivo',

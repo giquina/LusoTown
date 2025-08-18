@@ -266,7 +266,7 @@ export default function Pricing() {
             <div className="text-center mb-16">
               <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-primary-600 mb-6">
                 <HeartIconSolid className="w-4 h-4 mr-2" />
-                {isPortuguese ? 'Unidos pela Língua • 750+ membros da comunidade' : 'United by Language • 750+ community members'}
+                {isPortuguese ? 'Unidos pela Língua • 750+ membros da comunidade' : 'United by Language • 750+ Portuguese speakers'}
               </div>
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
                 {isPortuguese ? (
@@ -604,7 +604,7 @@ export default function Pricing() {
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese ? 
                   'Criamos opções de pagamento que funcionam para todos os membros da comunidade portuguesa, com descontos especiais e flexibilidade total' :
-                  'We\'ve created payment options that work for all Portuguese community members, with special discounts and full flexibility'
+                  'We\'ve created payment options that work for all Portuguese Portuguese speakers, with special discounts and full flexibility'
                 }
               </p>
             </div>
@@ -733,7 +733,7 @@ export default function Pricing() {
                           'Complete Portuguese business directory',
                           'Professional networking events',
                           'Private groups by sector/interest',
-                          'Mentorship for new community members',
+                          'Mentorship for new Portuguese speakers',
                           'Business partnership opportunities'
                         ]
                       },
@@ -1021,7 +1021,7 @@ export default function Pricing() {
                   questionPt: "Posso alterar ou cancelar a minha adesão?",
                   questionEn: "Can I change or cancel my membership?",
                   answerPt: "Absolutamente! Entendemos que os membros da comunidade portuguesa têm necessidades que mudam. Pode fazer upgrade, downgrade, ou cancelar a qualquer momento. Upgrades têm efeito imediato, cancelamentos mantêm-se ativos até ao fim do ciclo atual. Oferecemos também pausas temporárias para dificuldades financeiras.",
-                  answerEn: "Absolutely! We understand that Portuguese community members have changing needs. You can upgrade, downgrade, or cancel anytime. Upgrades take effect immediately, cancellations remain active until the current cycle ends. We also offer temporary pauses for financial difficulties."
+                  answerEn: "Absolutely! We understand that Portuguese Portuguese speakers have changing needs. You can upgrade, downgrade, or cancel anytime. Upgrades take effect immediately, cancellations remain active until the current cycle ends. We also offer temporary pauses for financial difficulties."
                 },
                 {
                   questionPt: "Que tipos de eventos culturais organizam?",
@@ -1089,7 +1089,7 @@ export default function Pricing() {
                 <HeartIconSolid className="w-4 h-4 mr-2" />
                 {isPortuguese ? 
                   'Unidos pela Língua • Junta-te a 750+ membros da comunidade portuguesa' :
-                  'United by Language • Join 750+ Portuguese community members'
+                  'United by Language • Join 750+ Portuguese Portuguese speakers'
                 }
               </div>
               

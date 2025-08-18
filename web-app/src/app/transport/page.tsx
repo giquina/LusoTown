@@ -29,6 +29,7 @@ const serviceTiers = [
     id: "premium",
     name: "Premium Security",
     namePortuguese: "Segurança Premium",
+    serviceKey: "security_personal", // Maps to available service
     price: 75,
     originalPrice: 85,
     image:
@@ -75,6 +76,7 @@ const serviceTiers = [
     id: "vip",
     name: "VIP London Experience",
     namePortuguese: "Experiência VIP de Londres",
+    serviceKey: "close_protection", // Maps to available service
     price: 95,
     originalPrice: 110,
     image:
@@ -123,6 +125,7 @@ const serviceTiers = [
     id: "elite",
     name: "Elite Protection",
     namePortuguese: "Proteção Elite",
+    serviceKey: "executive_transport", // Maps to unavailable service
     price: 140,
     originalPrice: 160,
     image:

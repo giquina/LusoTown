@@ -20,6 +20,8 @@ export default function ProfilePage() {
   const [profile, setProfile] = useState<UserProfile | null>(null)
   const [loading, setLoading] = useState(true)
   const [isOwnProfile, setIsOwnProfile] = useState(false)
+  const [selectedPhoto, setSelectedPhoto] = useState<{photo: any, index: number} | null>(null)
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false)
 
   const profileId = params.id as string
 
@@ -66,8 +68,9 @@ export default function ProfilePage() {
   }
 
   const handlePhotoClick = (photo: any, index: number) => {
-    // TODO: Open photo lightbox/modal
-    console.log('Photo clicked:', photo, index)
+    // Open photo lightbox/modal
+    setSelectedPhoto({ photo, index })
+    setIsLightboxOpen(true)
   }
 
   const handlePhotoAdd = async (files: File[]) => {
@@ -100,19 +103,24 @@ export default function ProfilePage() {
 
   const handlePhotoDelete = async (photoId: string) => {
     try {
-      // TODO: Implement photo deletion
+      // Implement photo deletion
+      await profileService.deletePhoto(photoId)
       toast.success('Photo deleted')
       loadProfileData()
     } catch (error) {
+      console.error('Error deleting photo:', error)
       toast.error('Failed to delete photo')
     }
   }
 
   const handlePhotoLike = async (photoId: string) => {
     try {
-      // TODO: Implement photo liking
-      console.log('Liked photo:', photoId)
+      // Implement photo liking
+      await profileService.togglePhotoLike(photoId)
+      toast.success('Photo liked')
+      loadProfileData()
     } catch (error) {
+      console.error('Error liking photo:', error)
       toast.error('Failed to like photo')
     }
   }

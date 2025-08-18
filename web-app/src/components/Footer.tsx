@@ -17,7 +17,6 @@ const getFooterLinks = (t: any) => ({
   ],
   services: [
     { name: 'Premium Services', href: '/services' },
-    { name: 'Cultural Tours', href: '/services#cultural-tours' },
     { name: 'Executive Transport', href: '/services#executive-transport' },
     { name: 'Close Protection', href: '/services#close-protection' },
     { name: 'Transport & SIA', href: '/transport' },

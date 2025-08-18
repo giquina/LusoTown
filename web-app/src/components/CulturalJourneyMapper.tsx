@@ -124,7 +124,7 @@ export default function CulturalJourneyMapper({
               id: 'book_heritage_tour',
               title: 'Book Heritage Tour',
               titlePortuguese: 'Reservar Tour do Património',
-              href: '/services/cultural-tours/booking',
+              href: '/transport',
               type: 'primary',
               culturalValue: 'Connect with roots',
               culturalValuePortuguese: 'Conectar com as raízes'

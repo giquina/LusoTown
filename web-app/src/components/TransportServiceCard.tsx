@@ -1,8 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { CheckCircleIcon, StarIcon } from '@heroicons/react/24/outline'
+import { CheckCircleIcon, StarIcon, ClockIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 import { Crown } from 'lucide-react'
+import { isServiceAvailable, getServiceStatus, getAvailabilityStyles, getAvailabilityLabel } from '@/lib/serviceAvailability'
 
 interface ServiceTier {
   id: string
@@ -18,6 +19,7 @@ interface ServiceTier {
   image?: string
   imageAlt?: string
   imageAltPortuguese?: string
+  serviceKey?: string // Map to service availability system
 }
 
 interface TransportServiceCardProps {
@@ -33,6 +35,12 @@ export default function TransportServiceCard({
   onBookNow, 
   index 
 }: TransportServiceCardProps) {
+  // Check service availability
+  const serviceKey = tier.serviceKey || tier.id;
+  const serviceStatus = getServiceStatus(serviceKey);
+  const available = isServiceAvailable(serviceKey);
+  const availabilityStyles = serviceStatus ? getAvailabilityStyles(serviceStatus.status) : null;
+  const availabilityLabel = serviceStatus ? getAvailabilityLabel(serviceStatus.status, isPortuguese) : null;
   const getColorClasses = (color: string) => {
     const colorMap = {
       primary: {
@@ -79,6 +87,25 @@ export default function TransportServiceCard({
         tier.popular ? 'border-premium-300 shadow-3xl scale-105' : colors.border
       } overflow-hidden hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 group h-[750px] sm:h-[800px] flex flex-col`}
     >
+      {/* Availability Badge */}
+      <div className="absolute top-4 right-4 z-20">
+        {available ? (
+          <div className={`${availabilityStyles?.bg} ${availabilityStyles?.text} px-3 py-1.5 rounded-full text-xs font-bold shadow-lg border ${availabilityStyles?.border}`}>
+            <div className="flex items-center space-x-1.5">
+              <CheckCircleIcon className="w-3 h-3 flex-shrink-0" />
+              <span>{availabilityLabel}</span>
+            </div>
+          </div>
+        ) : (
+          <div className={`${availabilityStyles?.bg} ${availabilityStyles?.text} px-3 py-1.5 rounded-full text-xs font-bold shadow-lg border ${availabilityStyles?.border}`}>
+            <div className="flex items-center space-x-1.5">
+              <ClockIcon className="w-3 h-3 flex-shrink-0" />
+              <span>{availabilityLabel}</span>
+            </div>
+          </div>
+        )}
+      </div>
+
       {/* Popular Badge */}
       {tier.popular && (
         <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20">
@@ -132,12 +159,43 @@ export default function TransportServiceCard({
 
       {/* Footer */}
       <div className="mt-auto px-6 py-6">
-        <button
-          onClick={onBookNow}
-          className={`w-full ${colors.button} text-white py-4 px-6 rounded-2xl font-bold transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1`}
-        >
-          {isPortuguese ? 'Reservar' : 'Book Now'}
-        </button>
+        {available ? (
+          <button
+            onClick={onBookNow}
+            className={`w-full ${colors.button} text-white py-4 px-6 rounded-2xl font-bold transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1`}
+          >
+            {isPortuguese ? 'Reservar' : 'Book Now'}
+          </button>
+        ) : (
+          <div className="space-y-3">
+            <button
+              className="w-full bg-gray-400 text-white py-4 px-6 rounded-2xl font-bold cursor-not-allowed opacity-60"
+              disabled
+            >
+              {serviceStatus?.status === 'fully_booked' 
+                ? (isPortuguese ? 'Esgotado' : 'Fully Booked')
+                : (isPortuguese ? 'Indisponível' : 'Unavailable')
+              }
+            </button>
+            {serviceStatus?.waitingListAvailable && (
+              <button
+                onClick={() => {
+                  // Handle waiting list signup
+                  console.log(`Join waiting list for ${serviceKey}`);
+                }}
+                className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-3 px-6 rounded-2xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                {isPortuguese ? 'Entrar na Lista de Espera' : 'Join Waiting List'}
+              </button>
+            )}
+            {serviceStatus?.estimatedAvailability && (
+              <p className="text-xs text-gray-600 text-center">
+                {isPortuguese ? 'Estimativa: ' : 'Estimated: '}
+                {isPortuguese ? serviceStatus.estimatedAvailabilityPortuguese : serviceStatus.estimatedAvailability}
+              </p>
+            )}
+          </div>
+        )}
         
         {/* Security Level Indicator */}
         <div className="mt-4 flex justify-center">

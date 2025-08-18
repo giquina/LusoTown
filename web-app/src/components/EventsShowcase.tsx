@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { 
   CalendarDaysIcon, 
@@ -13,10 +13,16 @@ import {
   HeartIcon,
   BeakerIcon,
   BookOpenIcon,
-  MusicalNoteIcon
+  MusicalNoteIcon,
+  CpuChipIcon,
+  GiftIcon,
+  CheckCircleIcon
 } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import EventImageWithFallback from '@/components/EventImageWithFallback'
+import WaitingListModal from '@/components/WaitingListModal'
+import { useWaitingList } from '@/context/WaitingListContext'
+import { useLanguage } from '@/context/LanguageContext'
 
 // Event Image Component with fallback
 const EventImage = ({ event }: { event: typeof upcomingEvents[0] }) => {
@@ -49,15 +55,65 @@ const EventImage = ({ event }: { event: typeof upcomingEvents[0] }) => {
         <div className="text-xs font-bold text-gray-900">{event.date}</div>
       </div>
 
-      {/* Price badge */}
-      <div className="absolute top-4 right-4 bg-gradient-to-r from-secondary-500 to-primary-500 text-white rounded-xl px-3 py-2 shadow-lg">
-        <div className="text-xs font-bold">£{event.price}</div>
+      {/* Status/Price badge */}
+      <div className={`absolute top-4 right-4 rounded-xl px-3 py-2 shadow-lg ${
+        event.status === 'available' 
+          ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
+          : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white'
+      }`}>
+        <div className="text-xs font-bold">
+          {event.status === 'available' ? `£${event.price}` : 'SOLD OUT'}
+        </div>
       </div>
+
+      {/* Special badges for featured event */}
+      {event.featured && (
+        <>
+          <div className="absolute top-16 left-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-lg px-2 py-1 shadow-lg animate-pulse">
+            <div className="text-xs font-bold flex items-center">
+              <GiftIcon className="w-3 h-3 mr-1" />
+              FREE GIVEAWAY
+            </div>
+          </div>
+          <div className="absolute top-28 left-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg px-2 py-1 shadow-lg">
+            <div className="text-xs font-bold">NEW EVENT</div>
+          </div>
+        </>
+      )}
     </div>
   )
 }
 
 const upcomingEvents = [
+  {
+    id: 4,
+    title: "AI Business App Creation Workshop",
+    description: "Beginners session on using AI apps and generative AI tools to create business applications. Free live app creation for business ideas - we'll build your app during the event!",
+    location: "Tech Hub Central London",
+    address: "123 Innovation Street, London EC2A 3LT",
+    date: "Mon, 2 Dec",
+    time: "2:00 PM",
+    endTime: "6:00 PM",
+    attendees: 50,
+    maxAttendees: 50,
+    price: 30,
+    category: "AI & Technology",
+    image: "/events/portuguese/ai-workshop.svg",
+    color: "from-action-500 to-premium-500",
+    icon: <CpuChipIcon className="w-6 h-6 text-white" />,
+    ageRestriction: "Open to all ages - beginners welcome",
+    tags: ["AI", "technology", "business", "workshop", "live-demo", "free-giveaway"],
+    status: "fully-booked",
+    featured: true,
+    specialOffer: "Free app creation for business ideas",
+    agenda: [
+      "2:00-2:30 PM: Welcome & AI Tools Overview",
+      "2:30-3:30 PM: ChatGPT, Claude & Business Apps",
+      "3:30-4:00 PM: Break & Networking",
+      "4:00-5:30 PM: Live App Creation Demo",
+      "5:30-6:00 PM: Your Business Idea Workshop"
+    ]
+  },
   {
     id: 1,
     title: "Portuguese Business Networking Summit",
@@ -65,7 +121,7 @@ const upcomingEvents = [
     location: "Canary Wharf, London",
     date: "Fri, 15 Mar",
     time: "6:00 PM",
-    attendees: 28,
+    attendees: 50,
     maxAttendees: 50,
     price: 45,
     category: "Business & Professional",
@@ -73,7 +129,8 @@ const upcomingEvents = [
     color: "from-primary-500 to-secondary-500",
     icon: <UsersIcon className="w-6 h-6 text-white" />,
     ageRestriction: "Professional networking for all ages",
-    tags: ["business", "networking", "entrepreneurship", "professional"]
+    tags: ["business", "networking", "entrepreneurship", "professional"],
+    status: "fully-booked"
   },
   {
     id: 2,
@@ -82,7 +139,7 @@ const upcomingEvents = [
     location: "Central London Culinary School",
     date: "Sat, 23 Mar",
     time: "2:00 PM",
-    attendees: 16,
+    attendees: 24,
     maxAttendees: 24,
     price: 55,
     category: "Cooking & Culture",
@@ -90,7 +147,8 @@ const upcomingEvents = [
     color: "from-coral-500 to-accent-500",
     icon: <BeakerIcon className="w-6 h-6 text-white" />,
     ageRestriction: "Welcome to all ages and skill levels",
-    tags: ["cooking", "traditional", "pastéis de nata", "bacalhau", "all-ages"]
+    tags: ["cooking", "traditional", "pastéis de nata", "bacalhau", "all-ages"],
+    status: "fully-booked"
   },
   {
     id: 3,
@@ -107,7 +165,8 @@ const upcomingEvents = [
     color: "from-action-500 to-premium-500",
     icon: <TicketIcon className="w-6 h-6 text-white" />,
     ageRestriction: "Open to business professionals and individuals",
-    tags: ["transport", "security", "SIA", "Portuguese-speaking", "professional"]
+    tags: ["transport", "security", "SIA", "Portuguese-speaking", "professional"],
+    status: "available"
   },
 ]
 
@@ -119,6 +178,16 @@ const eventStats = [
 ]
 
 export default function EventsShowcase() {
+  const { getWaitingListCount } = useWaitingList()
+  const { language } = useLanguage()
+  const [waitingListModalOpen, setWaitingListModalOpen] = useState(false)
+  const [selectedEvent, setSelectedEvent] = useState<typeof upcomingEvents[0] | null>(null)
+
+  const handleJoinWaitingList = (event: typeof upcomingEvents[0]) => {
+    setSelectedEvent(event)
+    setWaitingListModalOpen(true)
+  }
+
   return (
     <section className="py-24 bg-gradient-to-br from-white via-gray-50 to-secondary-50 relative overflow-hidden">
       {/* Background decoration */}
@@ -197,9 +266,16 @@ export default function EventsShowcase() {
 
               {/* Event Content */}
               <div className="p-6 flex-grow flex flex-col">
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
-                  {event.title}
-                </h3>
+                <div className="flex items-start justify-between mb-3">
+                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors flex-1">
+                    {event.title}
+                  </h3>
+                  {event.status === 'fully-booked' && (
+                    <div className="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full ml-2 flex-shrink-0">
+                      {language === 'pt' ? 'LOTADO' : 'FULLY BOOKED'}
+                    </div>
+                  )}
+                </div>
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
                   {event.description}
                 </p>
@@ -224,30 +300,73 @@ export default function EventsShowcase() {
                   </div>
                 </div>
 
-                {/* Attendance bar */}
+                {/* Attendance bar or Special Features */}
                 <div className="mb-4">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-xs text-gray-500">Spaces filling fast</span>
-                    <span className="text-xs font-medium text-primary-600">
-                      {event.maxAttendees - event.attendees} left
-                    </span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div 
-                      className="bg-gradient-to-r from-primary-500 to-secondary-500 h-2 rounded-full transition-all duration-300"
-                      style={{ width: `${(event.attendees / event.maxAttendees) * 100}%` }}
-                    ></div>
-                  </div>
+                  {event.status === 'available' ? (
+                    <>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-xs text-green-600 font-medium flex items-center">
+                          <CheckCircleIcon className="w-3 h-3 mr-1" />
+                          Available to book
+                        </span>
+                        <span className="text-xs font-medium text-primary-600">
+                          {event.maxAttendees - event.attendees} spots left
+                        </span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-2">
+                        <div 
+                          className="bg-gradient-to-r from-green-500 to-emerald-500 h-2 rounded-full transition-all duration-300"
+                          style={{ width: `${(event.attendees / event.maxAttendees) * 100}%` }}
+                        ></div>
+                      </div>
+                      {event.specialOffer && (
+                        <div className="mt-2 text-xs text-amber-600 font-medium bg-amber-50 px-2 py-1 rounded-lg border border-amber-200">
+                          🎁 {event.specialOffer}
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-xs text-red-600 font-medium">
+                          {language === 'pt' ? 'Completo' : 'Fully booked'}
+                        </span>
+                        <span className="text-xs font-medium text-gray-500">
+                          {event.attendees}/{event.maxAttendees} attending
+                        </span>
+                      </div>
+                      <div className="w-full bg-gray-200 rounded-full h-2">
+                        <div 
+                          className="bg-gradient-to-r from-gray-500 to-gray-600 h-2 rounded-full transition-all duration-300"
+                          style={{ width: `100%` }}
+                        ></div>
+                      </div>
+                      {/* Waiting List Info */}
+                      <div className="mt-2 text-xs text-orange-600 font-medium bg-orange-50 px-2 py-1 rounded-lg border border-orange-200">
+                        <UsersIcon className="w-3 h-3 inline mr-1" />
+                        {getWaitingListCount(event.id)} {language === 'pt' ? 'na lista de espera' : 'on waiting list'}
+                      </div>
+                    </>
+                  )}
                 </div>
 
                 {/* RSVP Button */}
                 <div className="mt-auto">
-                  <a 
-                    href={`/events/${event.id}`}
-                    className="w-full bg-gradient-to-r from-secondary-500 via-primary-500 to-accent-500 text-white font-semibold py-4 rounded-2xl hover:from-secondary-600 hover:via-primary-600 hover:to-accent-600 transition-all duration-300 group-hover:scale-105 block text-center shadow-lg hover:shadow-xl"
-                  >
-                    Book Now
-                  </a>
+                  {event.status === 'available' ? (
+                    <a 
+                      href={`/events/${event.id}/book`}
+                      className="w-full bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 text-white font-semibold py-4 rounded-2xl hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 transition-all duration-300 group-hover:scale-105 block text-center shadow-lg hover:shadow-xl animate-pulse"
+                    >
+                      Book Now - £{event.price}
+                    </a>
+                  ) : (
+                    <button 
+                      onClick={() => handleJoinWaitingList(event)}
+                      className="w-full bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 text-white font-semibold py-4 rounded-2xl hover:from-orange-600 hover:via-amber-600 hover:to-yellow-600 transition-all duration-300 group-hover:scale-105 block text-center shadow-lg hover:shadow-xl"
+                    >
+                      {language === 'pt' ? 'Juntar à Lista de Espera' : 'Join Waiting List'}
+                    </button>
+                  )}
                 </div>
               </div>
             </motion.div>
@@ -267,12 +386,12 @@ export default function EventsShowcase() {
           
           <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
             {[
+              { name: "AI & Technology", icon: "🤖", count: "1 available" },
               { name: "Business Events", icon: "💼", count: "15+ events" },
               { name: "Cooking Classes", icon: "👨‍🍳", count: "12+ events" },
               { name: "Transport Services", icon: "🚗", count: "8+ services" },
               { name: "Cultural Events", icon: "🎭", count: "25+ events" },
-              { name: "Professional Network", icon: "🤝", count: "18+ events" },
-              { name: "Food & Wine", icon: "🍷", count: "20+ events" }
+              { name: "Professional Network", icon: "🤝", count: "18+ events" }
             ].map((category, index) => (
               <div 
                 key={index}
@@ -326,6 +445,15 @@ export default function EventsShowcase() {
           </div>
         </motion.div>
       </div>
+
+      {/* Waiting List Modal */}
+      {selectedEvent && (
+        <WaitingListModal
+          isOpen={waitingListModalOpen}
+          onClose={() => setWaitingListModalOpen(false)}
+          event={selectedEvent}
+        />
+      )}
     </section>
   )
 }

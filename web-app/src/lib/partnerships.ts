@@ -1470,7 +1470,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
       'Immigration and visa support',
       'Portuguese property law assistance',
       'Business and commercial law guidance',
-      'Legal services for Portuguese community members',
+      'Legal services for Portuguese Portuguese speakers',
       'Legal qualification recognition support',
       'Pro bono legal clinic for community',
       'Legal training and professional development'
@@ -1512,10 +1512,10 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
         id: 'prog-pln-community',
         name: 'Community Legal Support Programme',
         namePortuguese: 'Programa de Apoio Jurídico Comunitário',
-        description: 'Pro bono legal support program providing essential legal services to Portuguese community members',
-        targetAudience: ['Portuguese community members', 'Low-income families', 'Recent immigrants'],
+        description: 'Pro bono legal support program providing essential legal services to Portuguese Portuguese speakers',
+        targetAudience: ['Portuguese Portuguese speakers', 'Low-income families', 'Recent immigrants'],
         frequency: 'Weekly legal clinics',
-        cost: 'Free for qualifying community members',
+        cost: 'Free for qualifying Portuguese speakers',
         registrationRequired: true,
         maxParticipants: 20
       },

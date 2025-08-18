@@ -79,9 +79,9 @@ export default function Home() {
       <main className="min-h-screen w-full overflow-x-hidden">
         <div className="pt-16 w-full">
           <Hero />
+          <PortugueseSpeakersSection />
           <HowItWorks />
           <HowConnectionsWork />
-          <PortugueseSpeakersSection />
           <AboutLusoTown />
           {/* What You Can Do Section */}
           <section className="py-24 bg-gradient-to-br from-white via-secondary-50/30 to-accent-50/30 relative overflow-hidden border-t border-gray-100">

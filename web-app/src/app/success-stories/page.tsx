@@ -1,5 +1,9 @@
 import { Metadata } from 'next'
 import Footer from '@/components/Footer'
+import HeritagePreservationHub from '@/components/HeritagePreservationHub'
+import CommunityImpactDocumentation from '@/components/CommunityImpactDocumentation'
+import LusophoneDiversityShowcase from '@/components/LusophoneDiversityShowcase'
+import CulturalBridgeBuilding from '@/components/CulturalBridgeBuilding'
 import { 
   HeartIcon, 
   UserGroupIcon, 
@@ -113,7 +117,7 @@ export default function SuccessStories() {
 
       Through the network, I met Carlos, a Brazilian designer, and Ana, a software engineer from Lisbon. We started a monthly meetup for Portuguese-speaking tech professionals that now attracts 40+ people regularly. We discuss everything from career growth to preserving Portuguese work culture values in London's corporate environment.
 
-      The community also supported my side project - a language learning app for Portuguese children born in the UK. Three community members became beta testers, two invested in the startup, and one became my business partner.
+      The community also supported my side project - a language learning app for Portuguese children born in the UK. Three Portuguese speakers became beta testers, two invested in the startup, and one became my business partner.
 
       Last month, we organized London's first Portuguese Tech Summit, attended by 150+ professionals from across the UK. It was covered by Portuguese media and even attracted attention from companies wanting to hire Portuguese talent.
 
@@ -479,6 +483,18 @@ export default function SuccessStories() {
           </div>
         </section>
 
+        {/* Heritage Preservation Hub */}
+        <HeritagePreservationHub />
+
+        {/* Community Impact Documentation */}
+        <CommunityImpactDocumentation />
+
+        {/* Lusophone Diversity Showcase */}
+        <LusophoneDiversityShowcase />
+
+        {/* Cultural Bridge Building */}
+        <CulturalBridgeBuilding />
+
         {/* Newsletter Signup */}
         <section className="py-16 bg-white">
           <div className="container-width">
@@ -488,7 +504,7 @@ export default function SuccessStories() {
               </h3>
               <p className="text-gray-600 mb-8">
                 Subscribe to receive monthly success stories, community highlights, and tips for building 
-                meaningful friendships as an independent woman.
+                meaningful connections in London's Portuguese community.
               </p>
               
               <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">

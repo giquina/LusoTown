@@ -69,12 +69,11 @@ const getMoreDropdownLinks = (t: any) => ({
   ],
   services: [
     { name: 'Premium Services', href: '/services' },
-    { name: 'Cultural Tours', href: '/services#cultural-tours' },
     { name: 'Executive Transport', href: '/services#executive-transport' },
     { name: 'Close Protection', href: '/services#close-protection' },
     { name: 'Transport & SIA', href: '/transport' },
     { name: 'Business Networking', href: '/business-networking' },
-    { name: 'Matches', href: '/matches' },
+    { name: 'Meet Portuguese', href: '/matches', isNew: true },
     { name: 'Live TV', href: '/live' },
   ],
   support: [
@@ -148,13 +147,13 @@ function QuickActionCartButton() {
       </div>
       <div className="flex-1 min-w-0">
         <div className="text-sm font-medium text-gray-900 group-hover:text-primary-600">
-          {isPortuguese ? 'Carrinho' : 'Shopping Cart'}
+          {isPortuguese ? 'Lista de Desejos' : 'Wish List'}
         </div>
         <div className="text-xs text-gray-500">
           {isLoggedIn ? (
             cartCount > 0 
               ? `${cartCount} ${isPortuguese ? (cartCount === 1 ? 'item' : 'itens') : (cartCount === 1 ? 'item' : 'items')}`
-              : (isPortuguese ? 'Carrinho vazio' : 'Empty cart')
+              : (isPortuguese ? 'Lista vazia' : 'Empty list')
           ) : (
             isPortuguese ? 'Registar para usar' : 'Sign up to use'
           )}
@@ -390,7 +389,14 @@ export default function Header() {
                                 href={link.href}
                                 className="block text-xs lg:text-sm text-gray-600 hover:text-premium-600 hover:bg-premium-50 px-2 py-1 rounded transition-colors duration-200"
                               >
-                                {link.name}
+                                <div className="flex items-center justify-between">
+                                  <span>{link.name}</span>
+                                  {link.isNew && (
+                                    <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium bg-gradient-to-r from-action-500 to-secondary-500 text-white">
+                                      New
+                                    </span>
+                                  )}
+                                </div>
                               </a>
                             </li>
                           ))}
@@ -434,13 +440,13 @@ export default function Header() {
                         <div className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-lg p-3 lg:p-4 mb-4">
                           <h4 className="font-semibold text-gray-900 mb-2 text-sm lg:text-base">Get in Touch</h4>
                           <div className="space-y-2 text-xs lg:text-sm text-gray-600">
-                            <div className="flex items-start gap-2">
-                              <MapPinIcon className="h-3 w-3 lg:h-4 lg:w-4 mt-0.5 flex-shrink-0" />
-                              <span className="leading-tight">UK Portuguese Community</span>
+                            <div className="flex items-center gap-2">
+                              <EnvelopeIcon className="h-3 w-3 lg:h-4 lg:w-4 flex-shrink-0" />
+                              <span className="leading-tight">connect@lusotown.co.uk</span>
                             </div>
-                            <div className="flex items-start gap-2">
-                              <EnvelopeIcon className="h-3 w-3 lg:h-4 lg:w-4 mt-0.5 flex-shrink-0" />
-                              <span className="leading-tight break-all">connect@lusotown.co.uk</span>
+                            <div className="flex items-center gap-2">
+                              <MapPinIcon className="h-3 w-3 lg:h-4 lg:w-4 flex-shrink-0" />
+                              <span className="leading-tight">UK Portuguese Community</span>
                             </div>
                           </div>
                         </div>
@@ -714,7 +720,14 @@ export default function Header() {
                           className="text-gray-600 hover:text-premium-600 hover:bg-premium-50 block px-2 py-2 rounded-lg text-sm font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[36px] flex items-center"
                           onClick={() => setMobileMenuOpen(false)}
                         >
-                          {link.name}
+                          <div className="flex items-center justify-between w-full">
+                            <span>{link.name}</span>
+                            {link.isNew && (
+                              <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium bg-gradient-to-r from-action-500 to-secondary-500 text-white">
+                                New
+                              </span>
+                            )}
+                          </div>
                         </a>
                       ))}
                     </div>

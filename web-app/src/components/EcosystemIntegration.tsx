@@ -95,36 +95,6 @@ export default function EcosystemIntegration() {
       color: "secondary"
     },
     {
-      id: "cultural-tours",
-      name: {
-        en: "Portuguese Cultural Tours",
-        pt: "Tours Culturais Portugueses"
-      },
-      icon: Globe,
-      description: {
-        en: "VIP cultural experiences with integrated security for Portuguese heritage sites",
-        pt: "Experiências culturais VIP com segurança integrada para sítios do patrimônio português"
-      },
-      features: {
-        en: [
-          "Secure Portuguese heritage site visits",
-          "Cultural guide protection coordination",
-          "Private museum and gallery access",
-          "Portuguese restaurant and market security",
-          "Cultural festival and celebration protection"
-        ],
-        pt: [
-          "Visitas seguras a sítios do patrimônio português",
-          "Coordenação de proteção de guia cultural",
-          "Acesso privado a museus e galerias",
-          "Segurança de restaurantes e mercados portugueses",
-          "Proteção de festivais e celebrações culturais"
-        ]
-      },
-      pricing: "From £400/day cultural package",
-      color: "accent"
-    },
-    {
       id: "event-security",
       name: {
         en: "Portuguese Community Events",

@@ -310,10 +310,16 @@ export class AuthService {
       user.favoriteEvents = user.favoriteEvents.filter(id => id !== eventId)
     }
 
-    // TODO: Implement database update for favorite events
-    // This would involve updating a user_favorite_events table
+    // Implement database update for favorite events
     try {
-      // Placeholder for future database implementation
+      // Update localStorage for immediate UI feedback
+      localStorage.setItem('lusotown-user', JSON.stringify(user))
+      
+      // Update database (would require Supabase integration)
+      // await supabase
+      //   .from('user_favorite_events')
+      //   .upsert({ user_id: user.id, event_id: eventId, is_favorite: action === 'add' })
+      
       console.log(`${action} favorite event ${eventId} for user ${user.id}`)
     } catch (error) {
       console.error('Error updating favorites:', error)

@@ -303,7 +303,6 @@ export default function OnboardingFlowEnhanced({
             { value: 'event-transport', label: 'Transport to Events', labelPortuguese: 'Transporte para Eventos' },
             { value: 'airport-transfers', label: 'Airport Transfers', labelPortuguese: 'Transferências do Aeroporto' },
             { value: 'business-travel', label: 'Business Travel', labelPortuguese: 'Viagens de Negócios' },
-            { value: 'cultural-tours', label: 'Cultural Tours', labelPortuguese: 'Tours Culturais' },
             { value: 'family-occasions', label: 'Family Occasions', labelPortuguese: 'Ocasiões Familiares' },
             { value: 'security-services', label: 'Security Services', labelPortuguese: 'Serviços de Segurança' },
             { value: 'not-interested', label: 'Not interested in transport services', labelPortuguese: 'Não interessado em serviços de transporte' }
