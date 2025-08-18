@@ -41,6 +41,7 @@
     "@types/jsonwebtoken": "^9.0.10",
     "@types/redis": "^4.0.10",
     "@types/socket.io": "^3.0.1",
+    "date-fns": "^4.1.0",
     "dotenv": "^17.2.1",
     "framer-motion": "^10.16.4",
     "ioredis": "^5.7.0",

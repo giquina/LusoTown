@@ -47,6 +47,9 @@ import {
   Typography,
   cn,
 } from "@/lib/design";
+import PortugueseCulturalCalendar from "@/components/PortugueseCulturalCalendar";
+import EventsDiscovery from "@/components/EventsDiscovery";
+import CommunityEventCreation from "@/components/CommunityEventCreation";
 
 // EventCard component is no longer needed - using ImprovedEventCard instead
 
@@ -320,7 +323,7 @@ const FilterSidebar = ({
 export default function EventsPage() {
   const { language, t } = useLanguage();
   const isPortuguese = language === "pt";
-  const [activeTab, setActiveTab] = useState<"events" | "tours">("events");
+  const [activeTab, setActiveTab] = useState<"events" | "tours" | "cultural" | "create">("events");
   const { getConnectionsByEvent } = useNetworking();
 
   // Preview system state
@@ -338,12 +341,12 @@ export default function EventsPage() {
   }, []);
 
   // Update URL when tab changes
-  const handleTabChange = (tab: "events" | "tours") => {
+  const handleTabChange = (tab: "events" | "tours" | "cultural" | "create") => {
     setActiveTab(tab);
     if (typeof window !== "undefined") {
       const url = new URL(window.location.href);
-      if (tab === "tours") {
-        url.searchParams.set("tab", "tours");
+      if (tab !== "events") {
+        url.searchParams.set("tab", tab);
       } else {
         url.searchParams.delete("tab");
       }
@@ -603,8 +606,8 @@ export default function EventsPage() {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="flex justify-center mb-8 px-4"
               >
-                <div className="bg-white/90 backdrop-blur-sm p-2 sm:p-2 rounded-2xl shadow-xl border border-gray-200 w-full max-w-md">
-                  <div className="grid grid-cols-2 gap-2">
+                <div className="bg-white/90 backdrop-blur-sm p-2 sm:p-2 rounded-2xl shadow-xl border border-gray-200 w-full max-w-4xl">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                     <button
                       onClick={() => handleTabChange("events")}
                       className={`px-4 sm:px-6 py-3.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-sm transition-all duration-200 touch-manipulation min-h-[44px] flex items-center justify-center ${
@@ -616,6 +619,21 @@ export default function EventsPage() {
                       {isPortuguese ? "Eventos" : "Events"}
                     </button>
                     <button
+                      onClick={() => handleTabChange("cultural")}
+                      className={`px-4 sm:px-6 py-3.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-sm transition-all duration-200 touch-manipulation min-h-[44px] flex items-center justify-center ${
+                        activeTab === "cultural"
+                          ? "bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-md"
+                          : "text-gray-600 hover:text-gray-900 hover:bg-white/50"
+                      }`}
+                    >
+                      <span className="hidden sm:inline">
+                        {isPortuguese ? "Calendário Cultural" : "Cultural Calendar"}
+                      </span>
+                      <span className="sm:hidden">
+                        {isPortuguese ? "Cultural" : "Cultural"}
+                      </span>
+                    </button>
+                    <button
                       onClick={() => handleTabChange("tours")}
                       className={`px-4 sm:px-6 py-3.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-sm transition-all duration-200 touch-manipulation min-h-[44px] flex items-center justify-center ${
                         activeTab === "tours"
@@ -624,12 +642,25 @@ export default function EventsPage() {
                       }`}
                     >
                       <span className="hidden sm:inline">
-                        {isPortuguese
-                          ? "Tours & Experiências"
-                          : "Tours & Experiences"}
+                        {isPortuguese ? "Tours" : "Tours"}
                       </span>
                       <span className="sm:hidden">
                         {isPortuguese ? "Tours" : "Tours"}
+                      </span>
+                    </button>
+                    <button
+                      onClick={() => handleTabChange("create")}
+                      className={`px-4 sm:px-6 py-3.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-sm transition-all duration-200 touch-manipulation min-h-[44px] flex items-center justify-center ${
+                        activeTab === "create"
+                          ? "bg-gradient-to-r from-accent-500 to-coral-500 text-white shadow-md"
+                          : "text-gray-600 hover:text-gray-900 hover:bg-white/50"
+                      }`}
+                    >
+                      <span className="hidden sm:inline">
+                        {isPortuguese ? "Criar Evento" : "Create Event"}
+                      </span>
+                      <span className="sm:hidden">
+                        {isPortuguese ? "Criar" : "Create"}
                       </span>
                     </button>
                   </div>
@@ -875,38 +906,62 @@ export default function EventsPage() {
         {/* Main Content */}
         <section className="py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex gap-8">
-              {/* Sidebar Filters - Desktop */}
-              <div className="hidden lg:block w-80 flex-shrink-0">
-                <div className="bg-white rounded-2xl p-6 shadow-lg sticky top-24">
-                  <h3 className="text-lg font-bold mb-6">
-                    {activeTab === "events"
-                      ? isPortuguese
-                        ? "Filtrar Eventos"
-                        : "Filter Events"
-                      : isPortuguese
-                      ? "Filtrar Tours"
-                      : "Filter Tours"}
-                  </h3>
-                  {activeTab === "events" ? (
-                    <FilterSidebar
-                      isOpen={true}
-                      onClose={() => {}}
-                      filters={eventFilters}
-                      onFilterChange={handleEventFilterChange}
-                    />
-                  ) : (
-                    <CategoryFilter
-                      selectedCategory={tourFilters.category}
-                      onCategoryChange={handleTourCategoryChange}
-                      eventCounts={eventCounts}
-                    />
-                  )}
-                </div>
-              </div>
+            {/* Cultural Calendar Tab */}
+            {activeTab === "cultural" && (
+              <PortugueseCulturalCalendar
+                isPortuguese={isPortuguese}
+                onJoinCelebration={(celebrationId) => {
+                  // Handle joining cultural celebrations
+                  console.log("Joining celebration:", celebrationId);
+                }}
+              />
+            )}
 
-              {/* Events Grid */}
-              <div className="flex-1">
+            {/* Create Event Tab */}
+            {activeTab === "create" && (
+              <CommunityEventCreation
+                onEventCreated={(eventId) => {
+                  // Handle successful event creation
+                  console.log("Event created:", eventId);
+                  setActiveTab("events");
+                }}
+              />
+            )}
+
+            {/* Events and Tours Content */}
+            {(activeTab === "events" || activeTab === "tours") && (
+              <div className="flex gap-8">
+                {/* Sidebar Filters - Desktop */}
+                <div className="hidden lg:block w-80 flex-shrink-0">
+                  <div className="bg-white rounded-2xl p-6 shadow-lg sticky top-24">
+                    <h3 className="text-lg font-bold mb-6">
+                      {activeTab === "events"
+                        ? isPortuguese
+                          ? "Filtrar Eventos"
+                          : "Filter Events"
+                        : isPortuguese
+                        ? "Filtrar Tours"
+                        : "Filter Tours"}
+                    </h3>
+                    {activeTab === "events" ? (
+                      <FilterSidebar
+                        isOpen={true}
+                        onClose={() => {}}
+                        filters={eventFilters}
+                        onFilterChange={handleEventFilterChange}
+                      />
+                    ) : (
+                      <CategoryFilter
+                        selectedCategory={tourFilters.category}
+                        onCategoryChange={handleTourCategoryChange}
+                        eventCounts={eventCounts}
+                      />
+                    )}
+                  </div>
+                </div>
+
+                {/* Events Grid */}
+                <div className="flex-1">
                 {/* Controls */}
                 <div className="flex items-center justify-between mb-8">
                   <div className="flex items-center gap-4">
@@ -1093,8 +1148,9 @@ export default function EventsPage() {
                     </AnimatePresence>
                   </motion.div>
                 )}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </section>
 

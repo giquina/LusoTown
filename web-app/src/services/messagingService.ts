@@ -1,4 +1,4 @@
-import { createClient } from '@/utils/supabase/client'
+import { supabase } from '@/lib/supabase'
 
 export interface MessagePermissionCheck {
   can_message: boolean
@@ -55,16 +55,16 @@ export interface ConversationMessage {
 }
 
 class MessagingService {
-  private supabase = createClient()
+  private supabaseClient = supabase
 
   /**
    * Check if two users can message each other
    */
   async checkMessagePermission(targetUserId: string): Promise<MessagePermissionCheck> {
-    const { data: user } = await this.supabase.auth.getUser()
+    const { data: user } = await this.supabaseClient.auth.getUser()
     if (!user.user) throw new Error('User not authenticated')
 
-    const { data, error } = await this.supabase
+    const { data, error } = await this.supabaseClient
       .rpc('can_users_message', {
         user_a: user.user.id,
         user_b: targetUserId
@@ -79,10 +79,10 @@ class MessagingService {
    * Get user's mutual matches with messaging permissions
    */
   async getMutualMatches(): Promise<Match[]> {
-    const { data: user } = await this.supabase.auth.getUser()
+    const { data: user } = await this.supabaseClient.auth.getUser()
     if (!user.user) throw new Error('User not authenticated')
 
-    const { data, error } = await this.supabase
+    const { data, error } = await this.supabaseClient
       .from('user_matches')
       .select(`
         *,
@@ -109,10 +109,10 @@ class MessagingService {
    * Get users from shared events with messaging permissions
    */
   async getEventBasedContacts(): Promise<any[]> {
-    const { data: user } = await this.supabase.auth.getUser()
+    const { data: user } = await this.supabaseClient.auth.getUser()
     if (!user.user) throw new Error('User not authenticated')
 
-    const { data, error } = await this.supabase
+    const { data, error } = await this.supabaseClient
       .from('messaging_permissions')
       .select(`
         *,
@@ -145,7 +145,7 @@ class MessagingService {
    * Create or get existing conversation between two users
    */
   async getOrCreateConversation(targetUserId: string): Promise<Conversation> {
-    const { data: user } = await this.supabase.auth.getUser()
+    const { data: user } = await this.supabaseClient.auth.getUser()
     if (!user.user) throw new Error('User not authenticated')
 
     // Check permission first
@@ -155,7 +155,7 @@ class MessagingService {
     }
 
     // Check for existing conversation
-    const { data: existingConversation } = await this.supabase
+    const { data: existingConversation } = await this.supabaseClient
       .from('conversations')
       .select('*')
       .contains('participant_ids', [user.user.id])
@@ -171,7 +171,7 @@ class MessagingService {
     const connectionType = permission.has_mutual_match ? 'mutual_match' : 
                           permission.has_event_permission ? 'event_based' : 'professional'
 
-    const { data: newConversation, error } = await this.supabase
+    const { data: newConversation, error } = await this.supabaseClient
       .from('conversations')
       .insert({
         participant_ids: [user.user.id, targetUserId],
@@ -193,11 +193,11 @@ class MessagingService {
     content: string, 
     messageType: 'text' | 'image' | 'voice' = 'text'
   ): Promise<ConversationMessage> {
-    const { data: user } = await this.supabase.auth.getUser()
+    const { data: user } = await this.supabaseClient.auth.getUser()
     if (!user.user) throw new Error('User not authenticated')
 
     // The trigger function will validate permissions automatically
-    const { data, error } = await this.supabase
+    const { data, error } = await this.supabaseClient
       .from('conversation_messages')
       .insert({
         conversation_id: conversationId,
@@ -217,7 +217,7 @@ class MessagingService {
     }
 
     // Update conversation last activity
-    await this.supabase
+    await this.supabaseClient
       .from('conversations')
       .update({ last_activity_at: new Date().toISOString() })
       .eq('id', conversationId)
@@ -229,10 +229,10 @@ class MessagingService {
    * Get messages for a conversation
    */
   async getConversationMessages(conversationId: string): Promise<ConversationMessage[]> {
-    const { data: user } = await this.supabase.auth.getUser()
+    const { data: user } = await this.supabaseClient.auth.getUser()
     if (!user.user) throw new Error('User not authenticated')
 
-    const { data, error } = await this.supabase
+    const { data, error } = await this.supabaseClient
       .from('conversation_messages')
       .select(`
         *,
@@ -262,10 +262,10 @@ class MessagingService {
    * Get user's active conversations
    */
   async getUserConversations(): Promise<any[]> {
-    const { data: user } = await this.supabase.auth.getUser()
+    const { data: user } = await this.supabaseClient.auth.getUser()
     if (!user.user) throw new Error('User not authenticated')
 
-    const { data, error } = await this.supabase
+    const { data, error } = await this.supabaseClient
       .from('conversations')
       .select(`
         *,
@@ -291,7 +291,7 @@ class MessagingService {
           (id: string) => id !== user.user.id
         )
 
-        const { data: participant } = await this.supabase
+        const { data: participant } = await this.supabaseClient
           .from('profiles')
           .select('id, first_name, last_name, profile_picture_url, location')
           .eq('id', otherParticipantId)
@@ -315,10 +315,10 @@ class MessagingService {
    * Mark messages as read
    */
   async markMessagesAsRead(conversationId: string): Promise<void> {
-    const { data: user } = await this.supabase.auth.getUser()
+    const { data: user } = await this.supabaseClient.auth.getUser()
     if (!user.user) throw new Error('User not authenticated')
 
-    const { error } = await this.supabase
+    const { error } = await this.supabaseClient
       .from('conversation_messages')
       .update({ is_read: true })
       .eq('conversation_id', conversationId)
@@ -332,10 +332,10 @@ class MessagingService {
    * Like a user (for matching)
    */
   async likeUser(targetUserId: string): Promise<Match> {
-    const { data: user } = await this.supabase.auth.getUser()
+    const { data: user } = await this.supabaseClient.auth.getUser()
     if (!user.user) throw new Error('User not authenticated')
 
-    const { data, error } = await this.supabase
+    const { data, error } = await this.supabaseClient
       .from('user_matches')
       .insert({
         user_id: user.user.id,
@@ -359,10 +359,10 @@ class MessagingService {
    * Pass on a user (for matching)
    */
   async passUser(targetUserId: string): Promise<Match> {
-    const { data: user } = await this.supabase.auth.getUser()
+    const { data: user } = await this.supabaseClient.auth.getUser()
     if (!user.user) throw new Error('User not authenticated')
 
-    const { data, error } = await this.supabase
+    const { data, error } = await this.supabaseClient
       .from('user_matches')
       .insert({
         user_id: user.user.id,
@@ -386,10 +386,10 @@ class MessagingService {
    * Report inappropriate message
    */
   async reportMessage(messageId: string, reason: string): Promise<void> {
-    const { data: user } = await this.supabase.auth.getUser()
+    const { data: user } = await this.supabaseClient.auth.getUser()
     if (!user.user) throw new Error('User not authenticated')
 
-    const { error } = await this.supabase
+    const { error } = await this.supabaseClient
       .from('conversation_messages')
       .update({ 
         is_blocked: true,
@@ -400,7 +400,7 @@ class MessagingService {
     if (error) throw error
 
     // Also add to moderation queue
-    const { error: moderationError } = await this.supabase
+    const { error: moderationError } = await this.supabaseClient
       .from('moderation_queue')
       .insert({
         message_id: messageId,
@@ -415,11 +415,11 @@ class MessagingService {
    * Block a user
    */
   async blockUser(targetUserId: string): Promise<void> {
-    const { data: user } = await this.supabase.auth.getUser()
+    const { data: user } = await this.supabaseClient.auth.getUser()
     if (!user.user) throw new Error('User not authenticated')
 
     // Update any existing matches to blocked status
-    const { error: matchError } = await this.supabase
+    const { error: matchError } = await this.supabaseClient
       .from('user_matches')
       .update({ status: 'blocked' })
       .or(`and(user_id.eq.${user.user.id},target_user_id.eq.${targetUserId}),and(user_id.eq.${targetUserId},target_user_id.eq.${user.user.id})`)
@@ -427,7 +427,7 @@ class MessagingService {
     if (matchError) throw matchError
 
     // Deactivate messaging permissions
-    const { error: permissionError } = await this.supabase
+    const { error: permissionError } = await this.supabaseClient
       .from('messaging_permissions')
       .update({ is_active: false })
       .or(`and(user_id.eq.${user.user.id},target_user_id.eq.${targetUserId}),and(user_id.eq.${targetUserId},target_user_id.eq.${user.user.id})`)
@@ -435,7 +435,7 @@ class MessagingService {
     if (permissionError) throw permissionError
 
     // Deactivate conversations
-    const { error: conversationError } = await this.supabase
+    const { error: conversationError } = await this.supabaseClient
       .from('conversations')
       .update({ is_active: false })
       .contains('participant_ids', [user.user.id])
