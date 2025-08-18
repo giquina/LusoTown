@@ -1,17 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { supabase } from '@/lib/supabase'
-import { authService } from '@/lib/auth'
+import { cookies } from 'next/headers'
+import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
+
+// Always dynamic; this route depends on authenticated user request
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
 export async function GET(request: NextRequest) {
   try {
-    // Get current user
-    const user = authService.getCurrentUser()
-    if (!user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-    }
+    const supabase = createRouteHandlerClient({ cookies })
+    const {
+      data: { user },
+    } = await supabase.auth.getUser()
+    if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
     // Get user's referral code
-    const { data: referralCode } = await supabase
+  const { data: referralCode } = await supabase
       .from('referral_codes')
       .select('code')
       .eq('user_id', user.id)
@@ -33,7 +37,7 @@ export async function GET(request: NextRequest) {
     }
 
     // Get referral statistics
-    const { data: referrals } = await supabase
+  const { data: referrals } = await supabase
       .from('referrals')
       .select(`
         id,
@@ -57,7 +61,7 @@ export async function GET(request: NextRequest) {
     }, 0) || 0
 
     // Get leaderboard position
-    const { data: leaderboard } = await supabase
+  const { data: leaderboard } = await supabase
       .from('referral_leaderboard')
       .select('id, completed_referrals')
       .order('completed_referrals', { ascending: false })

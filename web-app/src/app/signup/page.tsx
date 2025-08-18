@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
@@ -75,7 +75,7 @@ const testimonials = [
   },
 ];
 
-export default function Signup() {
+function SignupInner() {
   const { language, t } = useLanguage();
   const { subscriptionRequired } = useSubscription();
   const searchParams = useSearchParams();
@@ -1078,5 +1078,13 @@ export default function Signup() {
       </div>
       <Footer />
     </main>
+  );
+}
+
+export default function Signup() {
+  return (
+    <Suspense>
+      <SignupInner />
+    </Suspense>
   );
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect } from 'react'
+import React, { Suspense, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { useLanguage } from '@/context/LanguageContext'
 import { useSubscription } from '@/context/SubscriptionContext'
@@ -11,7 +11,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Users, Gift, TrendingUp } from 'lucide-react'
 
-export default function ReferralsPage() {
+function ReferralsPageInner() {
   const { language, t } = useLanguage()
   const { hasActiveSubscription, isInTrial } = useSubscription()
   const searchParams = useSearchParams()
@@ -142,5 +142,13 @@ export default function ReferralsPage() {
       
       <Footer />
     </div>
+  )
+}
+
+export default function ReferralsPage() {
+  return (
+    <Suspense>
+      <ReferralsPageInner />
+    </Suspense>
   )
 }
