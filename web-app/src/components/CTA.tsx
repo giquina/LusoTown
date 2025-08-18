@@ -8,9 +8,10 @@
 import { motion } from 'framer-motion'
 import { ArrowRightIcon, CheckIcon, SparklesIcon } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
+import { membership, formatPrice } from '@/config/pricing'
 
 const getBenefits = (t: any) => [
-  "£25/year - your ticket to the Portuguese community",
+  `${formatPrice(membership.annual)}/year - your ticket to the Portuguese community`,
   "Pay only true cost for events and activities", 
   "No markups or hidden fees ever",
   "Voice in community decisions",
@@ -42,7 +43,7 @@ export default function CTA() {
           >
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-white font-medium mb-6 border border-white/30">
               <SparklesIcon className="h-4 w-4" />
-              Annual Membership - £25/Year
+              Annual Membership - {formatPrice(membership.annual)}/Year
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Your Cultural Investment

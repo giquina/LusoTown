@@ -16,6 +16,7 @@ import {
   Lock,
   Zap
 } from 'lucide-react'
+import { plans, formatPrice } from '@/config/pricing'
 
 export default function PremiumMatchesGate() {
   const { language } = useLanguage()
@@ -55,18 +56,18 @@ export default function PremiumMatchesGate() {
         save: 'Save 20%',
         community: {
           name: 'Community Member',
-          price: '£19.99',
+          price: formatPrice(plans.community.monthly),
           period: '/month',
-          yearlyPrice: '£199',
-          yearlyMonthly: '£16.58/month',
+          yearlyPrice: formatPrice(199),
+          yearlyMonthly: `${formatPrice(16.58)}/month`,
           description: 'Perfect for connecting with Portuguese speakers'
         },
         ambassador: {
           name: 'Cultural Ambassador',
-          price: '£39.99',
+          price: formatPrice(plans.ambassador.monthly),
           period: '/month',
-          yearlyPrice: '£399',
-          yearlyMonthly: '£33.25/month',
+          yearlyPrice: formatPrice(399),
+          yearlyMonthly: `${formatPrice(33.25)}/month`,
           description: 'Ideal for active community builders'
         }
       },
@@ -121,18 +122,18 @@ export default function PremiumMatchesGate() {
         save: 'Poupe 20%',
         community: {
           name: 'Membro da Comunidade',
-          price: '£19.99',
+          price: formatPrice(plans.community.monthly),
           period: '/mês',
-          yearlyPrice: '£199',
-          yearlyMonthly: '£16.58/mês',
+          yearlyPrice: formatPrice(199),
+          yearlyMonthly: `${formatPrice(16.58)}/mês`,
           description: 'Perfeito para conectar com falantes de português'
         },
         ambassador: {
           name: 'Embaixador Cultural',
-          price: '£39.99',
+          price: formatPrice(plans.ambassador.monthly),
           period: '/mês',
-          yearlyPrice: '£399',
-          yearlyMonthly: '£33.25/mês',
+          yearlyPrice: formatPrice(399),
+          yearlyMonthly: `${formatPrice(33.25)}/mês`,
           description: 'Ideal para construtores ativos da comunidade'
         }
       },
@@ -250,7 +251,7 @@ export default function PremiumMatchesGate() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { icon: Heart, text: t.features.unlimited },
-              { icon: MessageCircle, text: t.features.messaging },
+              { icon: MessageCircle, text: t.features.unlimited },
               { icon: Filter, text: t.features.filters },
               { icon: Shield, text: t.features.verification },
               { icon: Calendar, text: t.features.events },
@@ -402,13 +403,17 @@ export default function PremiumMatchesGate() {
                 onClick={() => handleUpgrade('community')}
                 className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-lg"
               >
-                {language === 'pt' ? 'Começar por £19.99/mês' : 'Start at £19.99/month'}
+                {language === 'pt' 
+                  ? `Começar por ${formatPrice(plans.community.monthly)}/mês`
+                  : `Start at ${formatPrice(plans.community.monthly)}/month`}
               </button>
               <button
                 onClick={() => handleUpgrade('ambassador')}
                 className="bg-secondary-600 hover:bg-secondary-700 text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-lg"
               >
-                {language === 'pt' ? 'Embaixador por £39.99/mês' : 'Ambassador at £39.99/month'}
+                {language === 'pt' 
+                  ? `Embaixador por ${formatPrice(plans.ambassador.monthly)}/mês`
+                  : `Ambassador at ${formatPrice(plans.ambassador.monthly)}/month`}
               </button>
             </div>
           </div>

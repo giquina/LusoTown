@@ -185,7 +185,7 @@ jobs:
           # Health check
           ssh ${{ secrets.STAGING_USER }}@${{ secrets.STAGING_HOST }} << 'EOF'
             curl -f https://staging-stream.lusotown.com/health || exit 1
-            echo " Staging deployment is healthy"
+            echo "Staging deployment is healthy"
           EOF
 
   # Deploy to production
@@ -257,7 +257,7 @@ jobs:
             # WebRTC endpoint check
             curl -f https://stream.lusotown.com:8000 || exit 1
             
-            echo " Production deployment is healthy and ready for Portuguese community"
+            echo "Production deployment is healthy and ready for Portuguese community"
           EOF
 
   # Notify on deployment success/failure
@@ -272,7 +272,7 @@ jobs:
           status: ${{ job.status }}
           channel: '#lusotown-deployments'
           text: |
-            <õ<ù LusoTown Portuguese Community Streaming Infrastructure Deployment
+            LusoTown Portuguese Community Streaming Infrastructure Deployment
             Environment: ${{ github.event.inputs.environment || 'staging' }}
             Status: ${{ job.status }}
             Commit: ${{ github.sha }}

@@ -303,7 +303,7 @@ export default function ServiceCommunityBridge({
         
         <div className="bg-primary-50 rounded-lg p-4">
           <div className="flex items-center space-x-2 mb-2">
-            <ShieldIcon className="w-5 h-5 text-primary-600" />
+            <Shield className="w-5 h-5 text-primary-600" />
             <span className="font-medium text-gray-900">
               {isPortuguese ? 'Segurança' : 'Safety'}
             </span>

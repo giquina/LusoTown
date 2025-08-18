@@ -7,7 +7,7 @@ import { HeartIcon } from '@heroicons/react/24/outline'
 import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid'
 import { useCart } from '@/context/CartContext'
 import { useLanguage } from '@/context/LanguageContext'
-import { isAuthenticated, useAuthState } from '@/lib/auth'
+import { isAuthenticated, useAuthState as onAuthStateChange } from '@/lib/auth'
 import { useAuthPopup } from '@/components/AuthPopupProvider'
 
 interface SavedItemsButtonProps {
@@ -35,7 +35,7 @@ export default function SavedItemsButton({
   }, [])
 
   useEffect(() => {
-    const unsubscribe = useAuthState((user) => {
+    const unsubscribe = onAuthStateChange((user) => {
       setIsLoggedIn(!!user)
     })
     return unsubscribe

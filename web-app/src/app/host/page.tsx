@@ -22,6 +22,7 @@ import {
 import { CheckIcon } from '@heroicons/react/24/solid'
 import Footer from '@/components/Footer'
 import { useLanguage } from '@/context/LanguageContext'
+import { creator, formatPrice } from '@/config/pricing'
 import { toast } from 'react-hot-toast'
 
 export default function HostPage() {
@@ -182,8 +183,8 @@ export default function HostPage() {
                 className="text-base sm:text-lg text-gray-600 mb-8"
               >
                 {isPortuguese 
-                  ? 'Sem barreiras para criar eventos. Comece grátis com 1 evento mensal, depois escolha entre Creator Pro (£24.99) ou modelo de transação (8% + £0.40 por bilhete).'
-                  : 'No barriers to event creation. Start free with 1 monthly event, then choose Creator Pro (£24.99) or transaction model (8% + £0.40 per ticket).'
+                  ? `Sem barreiras para criar eventos. Comece grátis com 1 evento mensal, depois escolha entre Creator Pro (${formatPrice(creator.proMonthly)}) ou modelo de transação (${creator.ticketFeePercent}% + ${formatPrice(creator.ticketFeeFlat)} por bilhete).`
+                  : `No barriers to event creation. Start free with 1 monthly event, then choose Creator Pro (${formatPrice(creator.proMonthly)}) or transaction model (${creator.ticketFeePercent}% + ${formatPrice(creator.ticketFeeFlat)} per ticket).`
                 }
               </motion.p>
 
@@ -350,7 +351,7 @@ export default function HostPage() {
                 </div>
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">Creator Pro</h3>
-                  <div className="text-4xl font-bold text-gray-900 mb-2">£24.99</div>
+                  <div className="text-4xl font-bold text-gray-900 mb-2">{formatPrice(creator.proMonthly)}</div>
                   <p className="text-gray-600">
                     {isPortuguese ? 'por mês' : 'per month'}
                   </p>
@@ -392,7 +393,7 @@ export default function HostPage() {
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     {isPortuguese ? 'Por Transação' : 'Per Transaction'}
                   </h3>
-                  <div className="text-3xl font-bold text-gray-900 mb-2">8% + £0.40</div>
+                  <div className="text-3xl font-bold text-gray-900 mb-2">{creator.ticketFeePercent}% + {formatPrice(creator.ticketFeeFlat)}</div>
                   <p className="text-gray-600">
                     {isPortuguese ? 'por bilhete vendido' : 'per ticket sold'}
                   </p>

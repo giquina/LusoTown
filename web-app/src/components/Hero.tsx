@@ -7,6 +7,7 @@ import SocialLogin from './SocialLogin'
 import SearchBar from './SearchBar'
 import { getImagesByCategory } from '@/lib/profileImages'
 import { useLanguage } from '@/context/LanguageContext'
+import { membership, formatPrice } from '@/config/pricing'
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false)
@@ -36,7 +37,7 @@ export default function Hero() {
               <div className="flex items-center gap-2">
                 <SparklesIcon className="h-5 w-5 text-secondary-600" />
                 <span className="text-sm font-bold bg-gradient-to-r from-secondary-600 to-action-600 bg-clip-text text-transparent">
-                  ANNUAL MEMBERSHIP - £25/YEAR
+                  ANNUAL MEMBERSHIP - {formatPrice(membership.annual)}/YEAR
                 </span>
               </div>
               <div className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">
@@ -169,7 +170,7 @@ export default function Hero() {
               <div className="space-y-6">
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-gray-800 mb-2">Annual Membership - Your Cultural Investment</h3>
-                  <p className="text-gray-600">£25/year gets you unlimited access to the Portuguese community. Pay only true cost for events and activities - no markups, no surprises.</p>
+                  <p className="text-gray-600">{formatPrice(membership.annual)}/year gets you unlimited access to the Portuguese community. Pay only true cost for events and activities - no markups, no surprises.</p>
                 </div>
 
                 {/* Member avatars */}

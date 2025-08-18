@@ -18,6 +18,7 @@ import {
   Mail,
   BarChart3
 } from 'lucide-react'
+import { plans, formatPrice } from '@/config/pricing'
 
 // Import our conversion components
 import UpgradePrompts, { useUpgradePrompt } from './UpgradePrompts'
@@ -163,7 +164,7 @@ export default function ConversionFunnelDemo() {
               <Crown className="h-8 w-8 text-white" />
             </div>
             <h4 className="font-semibold mb-2">
-              {language === 'pt' ? 'Comunidade £19.99' : 'Community £19.99'}
+              {language === 'pt' ? `Comunidade ${formatPrice(plans.community.monthly)}` : `Community ${formatPrice(plans.community.monthly)}`}
             </h4>
             <p className="text-sm text-neutral-600">
               {language === 'pt' ? 'Ilimitado + eventos' : 'Unlimited + events'}
@@ -175,7 +176,7 @@ export default function ConversionFunnelDemo() {
               <Zap className="h-8 w-8 text-white" />
             </div>
             <h4 className="font-semibold mb-2">
-              {language === 'pt' ? 'Embaixador £39.99' : 'Ambassador £39.99'}
+              {language === 'pt' ? `Embaixador ${formatPrice(plans.ambassador.monthly)}` : `Ambassador ${formatPrice(plans.ambassador.monthly)}`}
             </h4>
             <p className="text-sm text-neutral-600">
               {language === 'pt' ? 'Tudo + hosting' : 'Everything + hosting'}
@@ -190,15 +191,15 @@ export default function ConversionFunnelDemo() {
         
         <div className="flex items-center gap-3 mb-4">
           <div className={`p-2 rounded-full ${
-            membershipTier === 'free' ? 'bg-neutral-100' :
-            membershipTier === 'community' ? 'bg-primary-100' :
+            membershipTier === 'basic' ? 'bg-neutral-100' :
+            membershipTier === 'professional' ? 'bg-primary-100' :
             'bg-secondary-100'
           }`}>
-            {membershipTier === 'ambassador' ? (
+            {membershipTier === 'vip' ? (
               <Crown className={`h-5 w-5 text-secondary-600`} />
             ) : (
               <Users className={`h-5 w-5 ${
-                membershipTier === 'community' ? 'text-primary-600' : 'text-neutral-600'
+                membershipTier === 'professional' ? 'text-primary-600' : 'text-neutral-600'
               }`} />
             )}
           </div>
@@ -264,16 +265,16 @@ export default function ConversionFunnelDemo() {
         <h3 className="text-lg font-semibold mb-4">{t.demo_actions}</h3>
         
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-          {[
+          {([
             { key: 'matches_limit', icon: Heart, color: 'coral' },
             { key: 'messages_limit', icon: MessageCircle, color: 'primary' },
             { key: 'after_match', icon: Zap, color: 'secondary' },
             { key: 'premium_event', icon: Calendar, color: 'premium' },
             { key: 'general', icon: Crown, color: 'primary' }
-          ].map(({ key, icon: Icon, color }) => (
+          ] as Array<{ key: 'matches_limit' | 'messages_limit' | 'after_match' | 'premium_event' | 'general'; icon: any; color: string }>).map(({ key, icon: Icon, color }) => (
             <button
               key={key}
-              onClick={() => showPrompt(key as any, Math.floor(Math.random() * 3), { demo: true })}
+              onClick={() => showPrompt(key, Math.floor(Math.random() * 3), { demo: true })}
               className={`p-3 rounded-lg border border-${color}-200 bg-${color}-50 hover:bg-${color}-100 transition-colors text-center`}
             >
               <Icon className={`h-6 w-6 text-${color}-600 mx-auto mb-2`} />
@@ -292,7 +293,7 @@ export default function ConversionFunnelDemo() {
             {language === 'pt' ? 'Prompt Ativo:' : 'Active Prompt:'}
           </h4>
           <p className="text-yellow-700">
-            {t.prompts[activePrompt.trigger]} - {language === 'pt' ? 'Demonstração' : 'Demo Mode'}
+            {t.prompts[activePrompt.trigger as 'matches_limit' | 'messages_limit' | 'after_match' | 'premium_event' | 'general']} - {language === 'pt' ? 'Demonstração' : 'Demo Mode'}
           </p>
         </div>
       )}

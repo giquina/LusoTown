@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { useSubscription } from '@/context/SubscriptionContext'
 import { authService } from '@/lib/auth'
+import { plans, formatPrice } from '@/config/pricing'
 
 export interface EmailSequenceConfig {
   type: 'welcome' | 'trial_reminder_day3' | 'trial_reminder_day6' | 'trial_expired' | 'upgrade_sequence' | 'retention'
@@ -177,7 +178,7 @@ const EMAIL_TEMPLATES: Record<EmailSequenceConfig['type'], EmailTemplate> = {
         
         <div style="background: linear-gradient(135deg, #dc2626, #ef4444); color: white; padding: 20px; border-radius: 12px; margin: 20px 0; text-align: center;">
           <h3 style="margin-bottom: 12px;">⏳ Less than 24 hours remaining</h3>
-          <p style="margin-bottom: 0;">Continue with Community Premium at just £19.99/month</p>
+          <p style="margin-bottom: 0;">Continue with Community Premium at just ${formatPrice(plans.community.monthly)}/month</p>
         </div>
         
         <h2>What you'll lose without Premium:</h2>
@@ -203,7 +204,7 @@ const EMAIL_TEMPLATES: Record<EmailSequenceConfig['type'], EmailTemplate> = {
         
         <div style="background: linear-gradient(135deg, #dc2626, #ef4444); color: white; padding: 20px; border-radius: 12px; margin: 20px 0; text-align: center;">
           <h3 style="margin-bottom: 12px;">⏳ Menos de 24 horas restantes</h3>
-          <p style="margin-bottom: 0;">Continue com Community Premium por apenas £19.99/mês</p>
+          <p style="margin-bottom: 0;">Continue com Community Premium por apenas ${formatPrice(plans.community.monthly)}/mês</p>
         </div>
         
         <h2>O que perderá sem Premium:</h2>
@@ -553,7 +554,7 @@ export function EmailSequenceProvider({ children }: { children: React.ReactNode 
       if (!user || authService.isDemoUser()) return
 
       // Check if this is a new user (signed up recently)
-      const signupDate = new Date(user.created_at || user.createdAt)
+  const signupDate = new Date(user.joinedDate)
       const now = new Date()
       const daysSinceSignup = Math.floor((now.getTime() - signupDate.getTime()) / (1000 * 60 * 60 * 24))
 

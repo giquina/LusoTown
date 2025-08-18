@@ -14,6 +14,7 @@ import {
 import { useLanguage } from '@/context/LanguageContext'
 import { useSubscription } from '@/context/SubscriptionContext'
 import { authService } from '@/lib/auth'
+import { plans, formatPrice } from '@/config/pricing'
 
 interface SubscriptionGateProps {
   children: ReactNode
@@ -72,15 +73,17 @@ export default function SubscriptionGate({
             ? 'Para aceder à sua conta LusoTown e conectar-se com a comunidade portuguesa, precisa de uma subscrição ativa.'
             : 'To access your LusoTown account and connect with the Portuguese community, you need an active subscription.',
           icon: ShieldCheckIcon,
-          buttonText: isPortuguese ? 'Começar com £19.99/mês' : 'Start from £19.99/month'
+          buttonText: isPortuguese 
+            ? `Começar com ${formatPrice(plans.community.monthly)}/mês`
+            : `Start from ${formatPrice(plans.community.monthly)}/month`
         }
       
       case 'signup':
         return {
           title: isPortuguese ? 'Junte-se à Comunidade LusoTown' : 'Join the LusoTown Community',
           description: isPortuguese 
-            ? 'Escolha entre planos mensais a partir de £19.99 para acesso completo à rede portuguesa de Londres.'
-            : 'Choose from monthly plans starting at £19.99 for full access to London\'s Portuguese network.',
+            ? `Escolha entre planos mensais a partir de ${formatPrice(plans.community.monthly)} para acesso completo à rede portuguesa de Londres.`
+            : `Choose from monthly plans starting at ${formatPrice(plans.community.monthly)} for full access to London's Portuguese network.`,
           icon: HeartIcon,
           buttonText: isPortuguese ? 'Escolher Plano' : 'Choose Plan'
         }
@@ -202,7 +205,7 @@ export default function SubscriptionGate({
               <div className="p-4 bg-gradient-to-r from-primary-50 to-primary-100 rounded-lg border-2 border-primary-200">
                 <div className="text-center">
                   <div className="text-xs text-primary-600 font-bold mb-1">POPULAR</div>
-                  <div className="text-2xl font-bold text-gray-900 mb-1">£19.99</div>
+                  <div className="text-2xl font-bold text-gray-900 mb-1">{formatPrice(plans.community.monthly)}</div>
                   <div className="text-sm text-gray-600 mb-2">
                     {isPortuguese ? 'Membro da Comunidade' : 'Community Member'}
                   </div>
@@ -215,7 +218,7 @@ export default function SubscriptionGate({
               {/* Cultural Ambassador */}
               <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
                 <div className="text-center">
-                  <div className="text-lg font-bold text-gray-900 mb-1">£39.99</div>
+                  <div className="text-lg font-bold text-gray-900 mb-1">{formatPrice(plans.ambassador.monthly)}</div>
                   <div className="text-sm text-gray-600 mb-1">
                     {isPortuguese ? 'Embaixador Cultural' : 'Cultural Ambassador'}
                   </div>

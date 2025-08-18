@@ -416,14 +416,23 @@ export function UsageDashboard() {
 // Inline usage indicators for forms/buttons
 export function InlineUsageCheck({ feature }: { feature: 'matches' | 'messages' | 'events' | 'livestream' }) {
   const { language } = useLanguage()
-  const featureChecks = {
-    matches: () => useSubscription().canCreateMatch(),
-    messages: () => useSubscription().canSendMessage(), 
-    events: () => useSubscription().canAccessPremiumEvent(),
-    livestream: () => useSubscription().canAccessLivestream()
-  }
+  const subscription = useSubscription()
 
-  const canUse = featureChecks[feature]()
+  let canUse = false
+  switch (feature) {
+    case 'matches':
+      canUse = subscription.canCreateMatch()
+      break
+    case 'messages':
+      canUse = subscription.canSendMessage()
+      break
+    case 'events':
+      canUse = subscription.canAccessPremiumEvent()
+      break
+    case 'livestream':
+      canUse = subscription.canAccessLivestream()
+      break
+  }
   
   if (canUse) return null
 

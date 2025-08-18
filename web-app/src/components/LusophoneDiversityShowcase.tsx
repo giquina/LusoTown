@@ -18,6 +18,7 @@ import {
   AcademicCapIcon,
   BuildingOffice2Icon
 } from '@heroicons/react/24/outline'
+import { CalendarDaysIcon } from '@heroicons/react/24/solid'
 import { useLanguage } from '@/context/LanguageContext'
 
 interface LusophoneCountry {

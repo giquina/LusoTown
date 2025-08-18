@@ -5,7 +5,7 @@ import { ShoppingCartIcon } from '@heroicons/react/24/outline'
 import { ShoppingCartIcon as CartSolidIcon } from '@heroicons/react/24/solid'
 import { useCart } from '@/context/CartContext'
 import { useLanguage } from '@/context/LanguageContext'
-import { isAuthenticated, useAuthState } from '@/lib/auth'
+import { isAuthenticated, useAuthState as onAuthStateChange } from '@/lib/auth'
 import { useAuthPopup } from '@/components/AuthPopupProvider'
 import Cart from '@/components/Cart'
 
@@ -23,7 +23,7 @@ export default function CartButton() {
   }, [])
 
   useEffect(() => {
-    const unsubscribe = useAuthState((user) => {
+    const unsubscribe = onAuthStateChange((user) => {
       setIsLoggedIn(!!user)
     })
     return unsubscribe

@@ -144,7 +144,7 @@ export default function PortuguesePolls({
     }))
   }
 
-  const useTemplate = (template: any) => {
+  const applyTemplate = (template: any) => {
     setNewPoll(prev => ({
       ...prev,
       question: template.question,
@@ -282,7 +282,7 @@ export default function PortuguesePolls({
                     {POLL_TEMPLATES.map((template, index) => (
                       <button
                         key={index}
-                        onClick={() => useTemplate(template)}
+                        onClick={() => applyTemplate(template)}
                         className="flex-shrink-0 px-3 py-2 bg-primary-50 text-primary-700 
                           rounded-full text-xs hover:bg-primary-100 transition-colors"
                       >

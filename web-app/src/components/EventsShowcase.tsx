@@ -83,6 +83,7 @@ const EventImage = memo(({ event }: { event: typeof upcomingEvents[0] }) => {
     </div>
   )
 })
+EventImage.displayName = 'EventImage'
 
 const upcomingEvents = [
   {
@@ -462,5 +463,6 @@ const EventsShowcase = memo(() => {
     </section>
   )
 })
+EventsShowcase.displayName = 'EventsShowcase'
 
 export default EventsShowcase

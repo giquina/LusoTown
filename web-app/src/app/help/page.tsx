@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Footer from '@/components/Footer'
+import { plans, formatPrice } from '@/config/pricing'
 import { 
   QuestionMarkCircleIcon, 
   ChatBubbleLeftRightIcon, 
@@ -58,7 +59,7 @@ export default function HelpCenter() {
         },
         {
           question: 'Do I need to pay to use LusoTown London?',
-          answer: 'We offer a free membership with basic features. Core membership (£19.99/month) unlocks full community access, unlimited messaging, and event creation. Premium membership (£39.99/month) adds exclusive events and priority support.'
+          answer: `We offer a free membership with basic features. Core membership (${formatPrice(plans.community.monthly)}/month) unlocks full community access, unlimited messaging, and event creation. Premium membership (${formatPrice(plans.ambassador.monthly)}/month) adds exclusive events and priority support.`
         },
         {
           question: 'What areas does LusoTown cover?',

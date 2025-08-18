@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { useSubscription } from '@/context/SubscriptionContext'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -16,6 +16,7 @@ import {
   Clock,
   Star
 } from 'lucide-react'
+import { plans, formatPrice } from '@/config/pricing'
 
 export interface UpgradePromptProps {
   trigger: 'matches_limit' | 'messages_limit' | 'after_match' | 'premium_event' | 'general'
@@ -38,15 +39,7 @@ export default function UpgradePrompts({
   const { createSubscription, trackFeatureUsage } = useSubscription()
   const [isProcessing, setIsProcessing] = useState(false)
 
-  // Track conversion events
-  useEffect(() => {
-    if (isVisible) {
-      // Analytics tracking for prompt shown
-      trackConversionEvent('upgrade_prompt_shown', trigger)
-    }
-  }, [isVisible, trigger])
-
-  const trackConversionEvent = async (event: string, trigger: string) => {
+  const trackConversionEvent = useCallback(async (event: string, trigger: string) => {
     try {
       await fetch('/api/analytics/conversion', {
         method: 'POST',
@@ -62,7 +55,15 @@ export default function UpgradePrompts({
     } catch (error) {
       console.error('Analytics tracking error:', error)
     }
-  }
+  }, [language, contextData])
+
+  // Track conversion events
+  useEffect(() => {
+    if (isVisible) {
+      // Analytics tracking for prompt shown
+      trackConversionEvent('upgrade_prompt_shown', trigger)
+    }
+  }, [isVisible, trigger, trackConversionEvent])
 
   const handleUpgrade = async (tier: 'community' | 'ambassador') => {
     setIsProcessing(true)
@@ -185,9 +186,9 @@ export default function UpgradePrompts({
     en: {
       community: {
         name: 'Community Member',
-        price: '£19.99',
+        price: formatPrice(plans.community.monthly),
         period: '/month',
-        yearlyPrice: '£199/year',
+        yearlyPrice: `${formatPrice(199)}/year`,
         savings: 'Save 17%',
         features: [
           'Unlimited matches & messaging',
@@ -198,9 +199,9 @@ export default function UpgradePrompts({
       },
       ambassador: {
         name: 'Cultural Ambassador',
-        price: '£39.99', 
+        price: formatPrice(plans.ambassador.monthly), 
         period: '/month',
-        yearlyPrice: '£399/year',
+        yearlyPrice: `${formatPrice(399)}/year`,
         savings: 'Save 17%',
         features: [
           'All Community features',
@@ -216,9 +217,9 @@ export default function UpgradePrompts({
     pt: {
       community: {
         name: 'Membro da Comunidade',
-        price: '£19.99',
+        price: formatPrice(plans.community.monthly),
         period: '/mês',
-        yearlyPrice: '£199/ano',
+        yearlyPrice: `${formatPrice(199)}/ano`,
         savings: 'Poupe 17%',
         features: [
           'Matches e mensagens ilimitados',
@@ -229,9 +230,9 @@ export default function UpgradePrompts({
       },
       ambassador: {
         name: 'Embaixador Cultural',
-        price: '£39.99',
+        price: formatPrice(plans.ambassador.monthly),
         period: '/mês', 
-        yearlyPrice: '£399/ano',
+        yearlyPrice: `${formatPrice(399)}/ano`,
         savings: 'Poupe 17%',
         features: [
           'Todas as funcionalidades da Comunidade',

@@ -11,7 +11,8 @@ import {
   ChevronRightIcon,
   QuoteIcon,
 } from "@heroicons/react/24/outline";
-import { Crown, Shield, Users, Quote } from "lucide-react";
+import { ClockIcon } from "@heroicons/react/24/outline";
+import { Crown, Shield, Users, Quote, Clock } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 const fadeInUp = {

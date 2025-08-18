@@ -63,7 +63,7 @@ const getMoreDropdownLinks = (t: any) => ({
     { name: "Close Protection", href: "/services#close-protection" },
     { name: "Transport & SIA", href: "/transport" },
     { name: "Find Your Match", href: "/matches" },
-    { name: "Live TV", href: "/live" },
+  { name: "Streams", href: "/live" },
   ],
   support: [
     { name: "How It Works", href: "/how-it-works" },
@@ -674,7 +674,7 @@ export default function Header() {
                       className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Live TV
+                      Streams
                     </a>
                     <a
                       href="/services"

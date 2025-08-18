@@ -6,6 +6,7 @@ import { HeartIcon as HeartIconSolid } from '@heroicons/react/24/solid'
 import { useLanguage } from '@/context/LanguageContext'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
+import { plans, formatPrice } from '@/config/pricing'
 
 // Mock Portuguese profiles for demonstration
 const mockProfiles = [
@@ -83,6 +84,8 @@ const mockProfiles = [
   }
 ]
 
+type Profile = typeof mockProfiles[number]
+
 function MatchesContent() {
   const { t } = useLanguage()
   const [currentProfileIndex, setCurrentProfileIndex] = useState(0)
@@ -90,7 +93,7 @@ function MatchesContent() {
   const [isLiking, setIsLiking] = useState(false)
   const [isSkipping, setIsSkipping] = useState(false)
   const [showMatchModal, setShowMatchModal] = useState(false)
-  const [matchedProfile, setMatchedProfile] = useState(null)
+  const [matchedProfile, setMatchedProfile] = useState<Profile | null>(null)
 
   const currentProfile = profiles[currentProfileIndex]
 
@@ -130,7 +133,7 @@ function MatchesContent() {
     }
   }
 
-  const getOriginFlag = (origin) => {
+  const getOriginFlag = (origin: string) => {
     if (origin.includes('Portugal') || origin.includes('Porto') || origin.includes('Lisboa') || origin.includes('Braga') || origin.includes('Aveiro') || origin.includes('Coimbra')) return '🇵🇹'
     if (origin.includes('Brasil') || origin.includes('São Paulo') || origin.includes('Rio')) return '🇧🇷'
     if (origin.includes('Angola')) return '🇦🇴'
@@ -412,7 +415,7 @@ function MatchesContent() {
               <div className="text-6xl mb-4">🎉</div>
               <h3 className="text-3xl font-bold text-primary-900 mb-2">It's a Match!</h3>
               <p className="text-primary-700 mb-6">
-                You and {matchedProfile.name} both liked each other! Start chatting and plan to meet at a Portuguese event.
+                You and {matchedProfile?.name} both liked each other! Start chatting and plan to meet at a Portuguese event.
               </p>
               <div className="flex gap-4">
                 <button
@@ -488,7 +491,7 @@ function MatchesContent() {
                 </button>
                 <div className="text-center">
                   <span className="text-sm text-primary-600">
-                    {t('upgradeAnytime') || 'Upgrade anytime: Community Member £15/month • Cultural Ambassador £25/month'}
+                    {t('upgradeAnytime') || `Upgrade anytime: Community Member ${formatPrice(plans.community.monthly)}/month • Cultural Ambassador ${formatPrice(plans.ambassador.monthly)}/month`}
                   </span>
                 </div>
               </div>

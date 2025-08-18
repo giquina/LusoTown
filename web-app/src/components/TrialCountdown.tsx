@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import { plans, formatPrice } from '@/config/pricing'
 import { useLanguage } from '@/context/LanguageContext'
 import { useSubscription } from '@/context/SubscriptionContext'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -238,14 +239,14 @@ export default function TrialCountdown({
                   onClick={() => handleUpgrade('community')}
                   className="w-full bg-primary-600 hover:bg-primary-700 text-white py-3 rounded-xl font-semibold transition-colors"
                 >
-                  {t.continueWith} £19.99/mês
+                  {t.continueWith} {formatPrice(plans.community.monthly)}/mês
                 </button>
                 
                 <button
                   onClick={() => handleUpgrade('ambassador')}
                   className="w-full bg-secondary-600 hover:bg-secondary-700 text-white py-3 rounded-xl font-semibold transition-colors"
                 >
-                  {t.ambassadorUpgrade} £39.99/mês
+                  {t.ambassadorUpgrade} {formatPrice(plans.ambassador.monthly)}/mês
                 </button>
                 
                 <button

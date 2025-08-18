@@ -19,6 +19,7 @@ import {
 import { Crown } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { useSubscription } from '@/context/SubscriptionContext'
+import { plans, formatPrice } from '@/config/pricing'
 
 interface MembershipTiersProps {
   showCurrentTier?: boolean
@@ -72,8 +73,8 @@ const membershipTiers = [
     id: 'community',
     name: 'Membro da Comunidade',
     nameEn: 'Community Member',
-    price: 19.99,
-    monthlyPrice: 19.99,
+  price: plans.community.monthly,
+  monthlyPrice: plans.community.monthly,
     description: 'Acesso completo à comunidade portuguesa',
     descriptionEn: 'Full access to Portuguese community',
     icon: <UsersIcon className="w-6 h-6" />,
@@ -107,8 +108,8 @@ const membershipTiers = [
     id: 'ambassador',
     name: 'Embaixador Cultural',
     nameEn: 'Cultural Ambassador',
-    price: 39.99,
-    monthlyPrice: 39.99,
+  price: plans.ambassador.monthly,
+  monthlyPrice: plans.ambassador.monthly,
     description: 'Lidere a comunidade portuguesa em Londres',
     descriptionEn: 'Lead the Portuguese community in London',
     icon: <Crown className="w-6 h-6" />,
@@ -159,7 +160,7 @@ export default function MembershipTiers({
   const handleSubscribe = async (tierId: string) => {
     setIsCreating(tierId)
     try {
-      await createSubscription(tierId === 'community' ? 'professional' : 'vip', 'monthly')
+      await createSubscription(tierId === 'community' ? 'community' : 'ambassador')
     } catch (error) {
       console.error('Error creating subscription:', error)
     } finally {
