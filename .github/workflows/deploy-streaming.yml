@@ -5,12 +5,10 @@ on:
     branches: [main]
     paths: 
       - 'streaming/**'
-      - '.github/workflows/deploy-streaming.yml'
   pull_request:
     branches: [main]
     paths:
       - 'streaming/**'
-      - '.github/workflows/deploy-streaming.yml'
   workflow_dispatch:
     inputs:
       environment:
