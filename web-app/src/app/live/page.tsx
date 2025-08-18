@@ -34,6 +34,24 @@ export default function LiveStreamingPage() {
   const [viewerCount, setViewerCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
+  // Scroll to top when component mounts (fixes navigation issue)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  // Handle start streaming action
+  const handleStartStreaming = () => {
+    // Check if user has subscription for streaming
+    if (!hasActiveSubscription && !isInTrial) {
+      // Show subscription gate
+      setSubscriptionRequired && setSubscriptionRequired(true);
+      return;
+    }
+    
+    // In production, this would navigate to creator dashboard or streaming setup
+    window.location.href = '/creator-signup';
+  };
+
   // Mock data for demonstration - in production, this would come from YouTube API
   const streamCategories = [
     {
@@ -252,7 +270,9 @@ export default function LiveStreamingPage() {
                   </div>
                 </button>
                 
-                <button className="group bg-white hover:bg-gray-50 text-primary-600 border-2 border-primary-600 px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 hover:shadow-xl active:scale-95 touch-manipulation min-w-[200px]">
+                <button 
+                  onClick={handleStartStreaming}
+                  className="group bg-white hover:bg-gray-50 text-primary-600 border-2 border-primary-600 px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 hover:shadow-xl active:scale-95 touch-manipulation min-w-[200px]">
                   <div className="flex items-center justify-center gap-3">
                     <Mic className="w-6 h-6" />
                     {t('streaming.hero.cta.create')}
@@ -373,7 +393,9 @@ export default function LiveStreamingPage() {
                 </div>
                 
                 <div className="mt-6">
-                  <button className="w-full bg-secondary-600 hover:bg-secondary-700 text-white px-6 py-3 rounded-xl font-semibold transition-all transform hover:scale-105 active:scale-95 touch-manipulation">
+                  <button 
+                    onClick={handleStartStreaming}
+                    className="w-full bg-secondary-600 hover:bg-secondary-700 text-white px-6 py-3 rounded-xl font-semibold transition-all transform hover:scale-105 active:scale-95 touch-manipulation">
                     {t('streaming.hero.cta.create')}
                   </button>
                 </div>

@@ -284,13 +284,13 @@ function SignupInner() {
       <div className="pt-16">
         <section className="py-8 bg-gradient-to-br from-primary-50 to-secondary-50">
           <div className="container-width w-full">
-            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:items-center">
               {/* Left side - Benefits */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
-                className="order-2 lg:order-1"
+                className="order-2 lg:order-1 flex flex-col justify-center"
               >
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center shadow-lg">
@@ -399,7 +399,7 @@ function SignupInner() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="order-1 lg:order-2"
+                className="order-1 lg:order-2 flex flex-col justify-center"
               >
                 <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-2xl p-6 sm:p-8 border border-white/50">
                   <div className="text-center mb-6 sm:mb-8">
