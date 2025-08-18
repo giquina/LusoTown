@@ -222,19 +222,19 @@ function MatchesContent() {
   ]
 
   const benefits = [
-    "All matches are Portuguese speakers in London & UK",
-    "Cultural compatibility scoring",
-    "Event-based meetups for natural connections",
-    "Professional and social networking opportunities",
-    "Safe and verified community members"
+    "Portuguese speakers from Brazil, Portugal, Africa & beyond",
+    "Cultural understanding beyond language barriers",
+    "Meet people who share your journey and heritage",
+    "Professional and social connections with cultural depth",
+    "Safe community of verified Portuguese speakers"
   ]
 
   const benefitsPt = [
-    "Todas as correspondências são falantes de português em Londres e Reino Unido",
-    "Pontuação de compatibilidade cultural",
-    "Encontros baseados em eventos para conexões naturais",
-    "Oportunidades de networking profissional e social",
-    "Membros da comunidade seguros e verificados"
+    "Falantes de português do Brasil, Portugal, África e além",
+    "Compreensão cultural além das barreiras linguísticas",
+    "Conheça pessoas que partilham a sua jornada e herança",
+    "Conexões profissionais e sociais com profundidade cultural",
+    "Comunidade segura de falantes de português verificados"
   ]
 
   return (
@@ -263,12 +263,12 @@ function MatchesContent() {
                 <HeartIcon className="w-12 h-12 sm:w-16 sm:h-16 xl:w-20 xl:h-20 2xl:w-24 2xl:h-24 text-white/90 animate-pulse hover:scale-110 transition-transform duration-300" />
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white mb-4 sm:mb-6 xl:mb-8 2xl:mb-10 leading-tight px-2 hover:scale-105 transition-transform duration-500">
-                {language === 'pt' ? 'Encontre o Seu Match' : 'Find Your Match'}
+                {language === 'pt' ? 'Encontre Conexões Significativas' : 'Find Meaningful Connections'}
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-white/90 mb-6 sm:mb-8 xl:mb-12 2xl:mb-16 leading-relaxed max-w-4xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-4 xl:px-8">
                 {language === 'pt' 
-                  ? 'Conecte-se com falantes de português em Londres que partilham os seus interesses, valores e património cultural. Mais que um app de encontros - uma comunidade.' 
-                  : 'Connect with Portuguese speakers in London who share your interests, values, and cultural heritage. More than a dating app - a community.'}
+                  ? 'A única plataforma criada especificamente para falantes de português em Londres encontrarem conexões significativas com quem compreende a sua cultura, língua e jornada.' 
+                  : 'The only app built specifically for Portuguese speakers in London to find meaningful connections who understand your culture, language, and journey.'}
               </p>
               
               {/* Live Success Counter */}
@@ -429,8 +429,8 @@ function MatchesContent() {
             </h2>
             <p className="text-xl xl:text-2xl 2xl:text-3xl text-primary-700 max-w-3xl xl:max-w-5xl 2xl:max-w-6xl mx-auto mb-6 xl:mb-10 2xl:mb-12 leading-relaxed">
               {language === 'pt' 
-                ? 'Navegue por falantes de português em Londres que partilham os seus interesses e património cultural. Cada perfil é cuidadosamente verificado.' 
-                : 'Browse through Portuguese speakers in London who share your interests and cultural background. Every profile is carefully verified.'}
+                ? 'Descubra falantes de português de todas as origens - Brasil, Portugal, África e comunidade lusófona - que vivem em Londres e compreendem a sua experiência única.' 
+                : 'Discover Portuguese speakers from all backgrounds - Brazil, Portugal, Africa, and the broader lusophone community - living in London who understand your unique experience.'}
             </p>
             
             {/* Cultural Compatibility Highlight */}

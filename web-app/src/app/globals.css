@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Ensure proper emoji and flag rendering across all platforms */
+.flag-emoji {
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Twemoji Mozilla', 'EmojiOne Color', 'Android Emoji', sans-serif;
+  font-feature-settings: "liga" off, "kern" off;
+  text-rendering: optimizeLegibility;
+  -webkit-font-feature-settings: "liga" off, "kern" off;
+  -moz-font-feature-settings: "liga" off, "kern" off;
+}
+
+/* Fallback for systems that don't support color emojis */
+@supports not (font-variation-settings: normal) {
+  .flag-emoji::before {
+    content: attr(data-flag);
+  }
+  
+  .flag-emoji {
+    font-size: 0;
+  }
+}
+
 /* Custom base styles for LusoTown London */
 @layer base {
   html {

@@ -28,10 +28,10 @@ export default function PremiumMatchesGate() {
 
   const translations = {
     en: {
-      title: 'Unlock Premium Matches',
-      subtitle: 'Connect with More Portuguese Community Members',
+      title: 'Unlock Meaningful Connections',
+      subtitle: 'Connect with Portuguese Speakers Who Understand Your Journey',
       dailyLimitReached: 'Daily free match limit reached',
-      upgradeMessage: 'Join our Portuguese community matching to discover meaningful connections with fellow Portuguese speakers in London.',
+      upgradeMessage: 'The only platform built specifically for Portuguese speakers aged 25-40 in London to find meaningful connections with people who understand your culture, language, and journey.',
       freeFeatures: {
         title: 'Free Matching',
         matches: '3 matches per day',
@@ -94,10 +94,10 @@ export default function PremiumMatchesGate() {
       }
     },
     pt: {
-      title: 'Desbloqueie Matches Premium',
-      subtitle: 'Conecte-se com Mais Membros da Comunidade Portuguesa',
+      title: 'Desbloqueie Conexões Significativas',
+      subtitle: 'Conecte-se com Falantes de Português que Compreendem a Sua Jornada',
       dailyLimitReached: 'Limite diário de matches gratuitos atingido',
-      upgradeMessage: 'Junte-se à nossa comunidade portuguesa para descobrir conexões significativas com outros falantes de português em Londres.',
+      upgradeMessage: 'A única plataforma criada especificamente para falantes de português entre 25-40 anos em Londres encontrarem conexões significativas com pessoas que compreendem a sua cultura, língua e jornada.',
       freeFeatures: {
         title: 'Matches Gratuitos',
         matches: '3 matches por dia',
@@ -229,7 +229,7 @@ export default function PremiumMatchesGate() {
             <div className="flex items-center justify-center gap-2 mb-3">
               <Sparkles className="h-5 w-5 text-primary-600" />
               <span className="font-semibold text-primary-900">
-                {language === 'pt' ? 'Conecte-se com a Comunidade Portuguesa em Londres' : 'Connect with the Portuguese Community in London'}
+                {language === 'pt' ? 'Para Falantes de Português do Brasil, Portugal, África e Além' : 'For Portuguese Speakers from Brazil, Portugal, Africa & Beyond'}
               </span>
             </div>
             <p className="text-primary-800">
@@ -390,12 +390,12 @@ export default function PremiumMatchesGate() {
         >
           <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-6 max-w-2xl mx-auto">
             <h3 className="text-xl font-bold text-primary-900 mb-3">
-              {language === 'pt' ? 'Pronto para se Conectar?' : 'Ready to Connect?'}
+              {language === 'pt' ? 'Pronto para Encontrar a Sua Comunidade?' : 'Ready to Find Your Community?'}
             </h3>
             <p className="text-primary-700 mb-4">
               {language === 'pt' 
-                ? 'Junte-se à nossa comunidade de falantes de português em Londres e comece a formar conexões significativas hoje.'
-                : 'Join our community of Portuguese speakers in London and start forming meaningful connections today.'
+                ? 'Encontre pessoas que verdadeiramente compreendem a sua cultura, língua e jornada. De brasileiros a portugueses, angolanos a cabo-verdianos - toda a comunidade lusófona espera por si.'
+                : 'Find people who truly understand your culture, language, and journey. From Brazilians to Portuguese, Angolans to Cape Verdeans - the entire lusophone community awaits you.'
               }
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">

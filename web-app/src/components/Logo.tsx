@@ -2,6 +2,25 @@
 
 import { motion } from 'framer-motion'
 
+// Flag component to ensure proper flag rendering across all platforms
+const Flag = ({ country, className = "" }: { country: 'PT' | 'GB', className?: string }) => {
+  const flags = {
+    PT: { emoji: '🇵🇹', fallback: 'PT' },
+    GB: { emoji: '🇬🇧', fallback: 'GB' }
+  }
+  
+  return (
+    <span 
+      className={`flag-emoji ${className}`}
+      data-flag={flags[country].fallback}
+      role="img"
+      aria-label={country === 'PT' ? 'Portugal flag' : 'United Kingdom flag'}
+    >
+      {flags[country].emoji}
+    </span>
+  )
+}
+
 interface LogoProps {
   size?: 'small' | 'medium' | 'large' | 'compact'
   className?: string
@@ -40,8 +59,8 @@ export default function Logo({ size = 'medium', className = '', animated = false
               LusoTown
             </h1>
             <div className="flex items-center space-x-0.5 ml-1">
-              <span className="text-xs">🇵🇹</span>
-              <span className="text-xs">🇬🇧</span>
+              <Flag country="PT" className="text-xs" />
+              <Flag country="GB" className="text-xs" />
             </div>
           </div>
           <span className="text-[10px] font-bold text-gray-600 uppercase tracking-widest leading-none mt-0.5">
@@ -85,9 +104,9 @@ export default function Logo({ size = 'medium', className = '', animated = false
         </h1>
         {size !== 'small' && (
           <span className={`text-xs font-bold text-gray-600 uppercase tracking-widest ${size === 'large' ? 'sm:text-sm' : ''} flex items-center gap-1`}>
-            <span className="text-[8px]">🇵🇹</span>
+            <Flag country="PT" className="text-[8px]" />
             London
-            <span className="text-[8px]">🇬🇧</span>
+            <Flag country="GB" className="text-[8px]" />
           </span>
         )}
       </div>
