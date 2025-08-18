@@ -25,7 +25,9 @@
     "test:mobile": "jest --testNamePattern='mobile|Mobile'",
     "test:security": "jest --testNamePattern='security|Security|XSS|SQL'",
     "test:accessibility": "jest --testNamePattern='accessibility|a11y|screen reader'",
-    "test:all": "npm run test:unit && npm run test:integration && npm run test:performance"
+    "test:all": "npm run test:unit && npm run test:integration && npm run test:performance",
+    "db:migrate": "node scripts/apply-migration.js",
+    "db:migrate:streaming": "node scripts/apply-streaming-migration.js"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.7",
@@ -35,12 +37,21 @@
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.10",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/redis": "^4.0.10",
+    "@types/socket.io": "^3.0.1",
+    "dotenv": "^17.2.1",
     "framer-motion": "^10.16.4",
+    "ioredis": "^5.7.0",
+    "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.294.0",
     "next": "^14.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.5.2",
+    "redis": "^5.8.1",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
     "stripe": "^18.4.0"
   },
   "devDependencies": {
