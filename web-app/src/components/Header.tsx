@@ -182,7 +182,7 @@ export default function Header() {
                                   href="/transport"
                                   className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-3 py-3 rounded-lg font-medium transition-colors duration-200"
                                 >
-                                  Portuguese Transport Services
+                                  Transport Services
                                 </a>
                               </li>
                               <li>
@@ -190,7 +190,7 @@ export default function Header() {
                                   href="/"
                                   className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-3 py-3 rounded-lg font-medium transition-colors duration-200"
                                 >
-                                  Portuguese Platform Services
+                                  Platform Services
                                 </a>
                               </li>
                             </ul>

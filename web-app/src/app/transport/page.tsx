@@ -685,7 +685,7 @@ export default function TransportPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight"
+              className="text-4xl lg:text-6xl font-black text-gray-900 mb-8 leading-tight"
             >
               {/* Desktop full title */}
               <span className="hidden sm:block">
@@ -737,72 +737,132 @@ export default function TransportPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
+              className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
             >
               {/* Desktop full subtitle */}
               <span className="hidden sm:block">
                 {isPortuguese
-                  ? "Descubra Londres como jamais imaginou: com o seu próprio motorista e guia pessoal falando português fluente. Acesso VIP a palácios, castelos e experiências exclusivas que outros turistas nunca terão. Segurança profissional, conforto premium e comunicação no seu idioma."
-                  : "Experience London like never before: with your own personal Portuguese-speaking driver and guide. VIP access to palaces, castles, and exclusive experiences other tourists will never have. Professional security, premium comfort, and communication in your language."}
+                  ? "Descubra Londres com total confiança: motorista e guia português certificados, veículos premium e experiências VIP exclusivas. Comunicação fluente no seu idioma, conhecimento cultural autêntico e acesso privilegiado aos melhores locais de Londres."
+                  : "Discover London with complete confidence: certified Portuguese driver and guide, premium vehicles, and exclusive VIP experiences. Fluent communication in your language, authentic cultural knowledge, and privileged access to London's finest locations."}
               </span>
               {/* Mobile short subtitle */}
               <span className="sm:hidden">
                 {isPortuguese
-                  ? "Acesso VIP a Londres com motorista e guia português pessoal. Experiências exclusivas que outros turistas jamais terão!"
-                  : "VIP London access with personal Portuguese driver & guide. Exclusive experiences other tourists will never get!"}
+                  ? "Motorista e guia português certificados em Londres. Experiências VIP com comunicação no seu idioma!"
+                  : "Certified Portuguese driver & guide in London. VIP experiences with communication in your language!"}
               </span>
             </motion.p>
 
+            {/* Trust Indicators */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6"
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
             >
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <div className="w-2 h-2 bg-secondary-500 rounded-full"></div>
-                <span>
-                  {isPortuguese
-                    ? "Guias Falantes de Português"
-                    : "Portuguese-Speaking Guides"}
-                </span>
+              <div className="flex items-center gap-2 text-sm font-medium text-secondary-700 bg-white px-4 py-2 rounded-full shadow-sm border border-secondary-100">
+                <ShieldCheckIcon className="w-4 h-4 text-secondary-600" />
+                {isPortuguese ? "SIA Licenciados" : "SIA Licensed"}
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <div className="w-2 h-2 bg-premium-500 rounded-full"></div>
-                <span>
-                  {isPortuguese
-                    ? "Atrações Premium de Londres"
-                    : "Premium London Attractions"}
-                </span>
+              <div className="flex items-center gap-2 text-sm font-medium text-secondary-700 bg-white px-4 py-2 rounded-full shadow-sm border border-secondary-100">
+                <StarIcon className="w-4 h-4 text-secondary-600" />
+                {isPortuguese ? "5 Estrelas" : "5 Star Service"}
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
-                <span>
-                  {isPortuguese
-                    ? "Transporte de Segurança"
-                    : "Secure Transport"}
+              <div className="flex items-center gap-2 text-sm font-medium text-secondary-700 bg-white px-4 py-2 rounded-full shadow-sm border border-secondary-100">
+                <ClockIcon className="w-4 h-4 text-secondary-600" />
+                {isPortuguese ? "Disponível 24/7" : "Available 24/7"}
+              </div>
+            </motion.div>
+            
+            {/* Quick Contact Info */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.45 }}
+              className="mt-8 text-center"
+            >
+              <p className="text-sm text-gray-500 mb-2">
+                {isPortuguese 
+                  ? "Preferência por reservas antecipadas | Emergências aceites" 
+                  : "Advance bookings preferred | Emergencies accepted"}
+              </p>
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-600">
+                <span className="flex items-center gap-1">
+                  <MapPinIcon className="w-4 h-4" />
+                  Londres & Arredores
+                </span>
+                <span className="flex items-center gap-1">
+                  <CurrencyPoundIcon className="w-4 h-4" />
+                  From £65/hour
                 </span>
               </div>
             </motion.div>
 
+            {/* Main CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
             >
               <button
-                onClick={() => setShowSIABookingFlow(true)}
-                className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1"
+                onClick={() => handleBookService('premium')}
+                className="group bg-gradient-to-r from-secondary-600 to-secondary-700 hover:from-secondary-700 hover:to-secondary-800 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-3 min-w-[280px] justify-center"
               >
-                {isPortuguese ? "Reservar Agora" : "Book Now"}
+                <Crown className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                {isPortuguese ? "Reserve Agora" : "Book Now"}
+                <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
-              <a
-                href="#services"
-                className="border-2 border-secondary-600 text-secondary-600 px-8 py-4 rounded-2xl font-bold hover:bg-secondary-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 hover:-translate-y-1"
+              <button
+                onClick={() => setShowBookingForm(true)}
+                className="group bg-white hover:bg-gray-50 text-secondary-700 border-2 border-secondary-200 hover:border-secondary-300 px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-3 min-w-[280px] justify-center"
               >
-                {isPortuguese ? "Ver Serviços" : "View Services"}
-              </a>
+                <PhoneIcon className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                {isPortuguese ? "Falar Connosco" : "Contact Us"}
+              </button>
+            </motion.div>
+            
+            {/* Pricing Preview */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.35 }}
+              className="bg-white/80 backdrop-blur-sm border border-white/50 rounded-2xl p-6 max-w-2xl mx-auto shadow-lg"
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                <div className="border-r border-gray-200 last:border-r-0 pr-4 last:pr-0">
+                  <div className="text-2xl font-bold text-secondary-700">£65+</div>
+                  <div className="text-sm text-gray-600">
+                    {isPortuguese ? "Por Hora" : "Per Hour"}
+                  </div>
+                </div>
+                <div className="border-r border-gray-200 last:border-r-0 pr-4 last:pr-0">
+                  <div className="text-2xl font-bold text-secondary-700">£320+</div>
+                  <div className="text-sm text-gray-600">
+                    {isPortuguese ? "Tours Londres" : "London Tours"}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-secondary-700">£400+</div>
+                  <div className="text-sm text-gray-600">
+                    {isPortuguese ? "Segurança VIP" : "VIP Security"}
+                  </div>
+                </div>
+              </div>
+              
+              {/* Additional pricing info */}
+              <div className="text-center mt-6 pt-4 border-t border-gray-200">
+                <p className="text-sm text-gray-600 font-medium">
+                  {isPortuguese 
+                    ? "Todos os preços incluem motorista português certificado" 
+                    : "All prices include certified Portuguese driver"}
+                </p>
+                <p className="text-xs text-gray-500 mt-1">
+                  {isPortuguese 
+                    ? "Membros LusoTown recebem descontos especiais" 
+                    : "LusoTown members receive special discounts"}
+                </p>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -1382,20 +1442,84 @@ export default function TransportPage() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-24 bg-gradient-to-br from-white via-secondary-50/30 to-accent-50/30">
-        <div className="container-width">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">
+      {/* Features Section - Why Choose Us */}
+      <section className="py-24 bg-gradient-to-br from-secondary-900 via-premium-900 to-action-900 text-white relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-10 right-10 w-20 h-20 bg-gradient-to-br from-secondary-400/20 via-accent-300/20 to-coral-300/20 rounded-full opacity-60 animate-pulse" />
+          <div className="absolute bottom-10 left-10 w-16 h-16 bg-gradient-to-tr from-action-400/20 via-secondary-300/20 to-accent-300/20 rounded-full opacity-50 animate-bounce" />
+        </div>
+        
+        <div className="container-width relative">
+          <div className="text-center mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="mb-8"
+            >
+              <span className="inline-flex items-center px-8 py-4 rounded-full text-base font-bold bg-white/10 backdrop-blur-sm border border-white/20 shadow-xl">
+                <StarIcon className="w-5 h-5 mr-3 text-yellow-400" />
+                <span className="text-white">
+                  {isPortuguese
+                    ? "Por Que Escolher a LusoTown?"
+                    : "Why Choose LusoTown?"}
+                </span>
+              </span>
+            </motion.div>
+            
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-4xl lg:text-6xl font-black text-white mb-8 leading-tight"
+            >
               {isPortuguese
-                ? "Por Que Somos Sua Melhor Escolha?"
-                : "Why Are We Your Best Choice?"}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                ? "A Diferença Está no Detalhe"
+                : "The Difference is in the Details"}
+            </motion.h2>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-medium"
+            >
               {isPortuguese
-                ? "Serviço premium com comunicação em português e os mais altos padrões de segurança"
-                : "Premium service with Portuguese language communication and the highest security standards"}
-            </p>
+                ? "Não somos apenas um serviço de transporte. Somos os seus parceiros de confiança em Londres, oferecendo experiências autênticas com total compreensão cultural."
+                : "We're not just a transport service. We're your trusted partners in London, offering authentic experiences with complete cultural understanding."}
+            </motion.p>
+            
+            {/* Statistics */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16 max-w-4xl mx-auto"
+            >
+              <div className="text-center">
+                <div className="text-4xl font-black text-white mb-2">500+</div>
+                <div className="text-gray-300">
+                  {isPortuguese ? "Clientes Satisfeitos" : "Satisfied Clients"}
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-black text-white mb-2">24/7</div>
+                <div className="text-gray-300">
+                  {isPortuguese ? "Disponibilidade" : "Availability"}
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-black text-white mb-2">100%</div>
+                <div className="text-gray-300">
+                  {isPortuguese ? "Português Fluente" : "Fluent Portuguese"}
+                </div>
+              </div>
+            </motion.div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-8">
@@ -1652,20 +1776,84 @@ export default function TransportPage() {
       {/* Service Tiers Section */}
       <section
         id="services"
-        className="py-24 bg-gradient-to-br from-gray-50 via-secondary-50/30 to-accent-50/30"
+        className="py-24 bg-gradient-to-br from-white via-secondary-50/50 to-accent-50/50 relative overflow-hidden"
       >
-        <div className="container-width">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-10 right-10 w-32 h-32 bg-gradient-to-br from-secondary-200/30 via-accent-100/20 to-coral-100/20 rounded-full opacity-60 animate-pulse" />
+          <div className="absolute bottom-10 left-10 w-24 h-24 bg-gradient-to-tr from-action-200/30 via-secondary-100/20 to-accent-100/20 rounded-full opacity-50 animate-bounce" />
+        </div>
+        
+        <div className="container-width relative">
+          <div className="text-center mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="mb-8"
+            >
+              <span className="inline-flex items-center px-8 py-4 rounded-full text-base font-bold bg-gradient-to-r from-secondary-100 via-premium-50 to-accent-100 border border-secondary-200 shadow-xl">
+                <Crown className="w-5 h-5 mr-3 text-premium-600" />
+                <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">
+                  {isPortuguese
+                    ? "Serviços Premium para Portugueses em Londres"
+                    : "Premium Services for Portuguese in London"}
+                </span>
+              </span>
+            </motion.div>
+            
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-4xl lg:text-6xl font-black text-gray-900 mb-8 leading-tight"
+            >
               {isPortuguese
-                ? "Qual Nível de Proteção Precisa em Londres?"
-                : "What Level of Protection Do You Need in London?"}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                ? "O Que Precisa em Londres?"
+                : "What Do You Need in London?"}
+            </motion.h2>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium"
+            >
               {isPortuguese
-                ? "Escolha o nível de proteção e serviço que melhor se adequa às suas necessidades para operações em Londres. Membros LusoTown recebem descontos automáticos."
-                : "Choose the level of protection and service that best fits your needs for London-based operations. LusoTown members receive automatic discounts."}
-            </p>
+                ? "Transporte seguro, guias especializados e experiências únicas em Londres - tudo com profissionais que falam o seu idioma e compreendem a sua cultura."
+                : "Safe transport, expert guides, and unique London experiences - all with professionals who speak your language and understand your culture."}
+            </motion.p>
+            
+            {/* Key Benefits Bar */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="flex flex-wrap justify-center gap-6 mt-12 max-w-4xl mx-auto"
+            >
+              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-md border border-gray-100">
+                <CheckCircleIcon className="w-5 h-5 text-secondary-600" />
+                <span className="font-semibold text-gray-800">
+                  {isPortuguese ? "Comunicação em Português" : "Portuguese Communication"}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-md border border-gray-100">
+                <CheckCircleIcon className="w-5 h-5 text-secondary-600" />
+                <span className="font-semibold text-gray-800">
+                  {isPortuguese ? "Licenciados SIA" : "SIA Licensed"}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-md border border-gray-100">
+                <CheckCircleIcon className="w-5 h-5 text-secondary-600" />
+                <span className="font-semibold text-gray-800">
+                  {isPortuguese ? "Disponível 24/7" : "Available 24/7"}
+                </span>
+              </div>
+            </motion.div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-8">
@@ -1938,45 +2126,113 @@ export default function TransportPage() {
       {/* Testimonials Section */}
       <TransportTestimonials />
 
-      {/* Contact Section */}
-      <section className="py-24 bg-gradient-to-br from-secondary-900 via-premium-900 to-action-900 text-white relative overflow-hidden">
+      {/* Final CTA Section */}
+      <section className="py-32 bg-gradient-to-br from-secondary-900 via-premium-900 to-action-900 text-white relative overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-10 right-10 w-20 h-20 bg-gradient-to-br from-secondary-400/20 via-accent-300/20 to-coral-300/20 rounded-full opacity-60 animate-pulse" />
+          <div className="absolute top-10 right-10 w-32 h-32 bg-gradient-to-br from-secondary-400/30 via-accent-300/30 to-coral-300/30 rounded-full opacity-60 animate-pulse" />
           <div
-            className="absolute bottom-10 left-10 w-16 h-16 bg-gradient-to-tr from-action-400/20 via-secondary-300/20 to-accent-300/20 rounded-full opacity-50 animate-bounce"
+            className="absolute bottom-10 left-10 w-24 h-24 bg-gradient-to-tr from-action-400/30 via-secondary-300/30 to-accent-300/30 rounded-full opacity-50 animate-bounce"
             style={{ animationDuration: "6s" }}
           />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-gradient-to-br from-premium-400/20 via-accent-400/20 to-coral-400/20 rounded-full opacity-40 animate-ping" />
         </div>
 
         <div className="container-width relative z-10">
-          <div className="text-center">
-            <h2 className="text-4xl font-black mb-4">
+          <div className="text-center max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="mb-8"
+            >
+              <span className="inline-flex items-center px-8 py-4 rounded-full text-base font-bold bg-white/10 backdrop-blur-sm border border-white/20 shadow-xl">
+                <Crown className="w-5 h-5 mr-3 text-yellow-400" />
+                <span className="text-white">
+                  {isPortuguese
+                    ? "Pronto para Descobrir Londres?"
+                    : "Ready to Discover London?"}
+                </span>
+              </span>
+            </motion.div>
+            
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-4xl lg:text-6xl font-black mb-8 leading-tight"
+            >
               {isPortuguese
-                ? "Precisa de Assistência Imediata?"
-                : "Need Immediate Assistance?"}
-            </h2>
-            <p className="text-xl text-secondary-200 mb-8 max-w-2xl mx-auto">
+                ? "Sua Aventura em Londres Começa Aqui"
+                : "Your London Adventure Starts Here"}
+            </motion.h2>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+            >
               {isPortuguese
-                ? "A nossa equipa está disponível 24/7 para emergências e reservas de última hora"
-                : "Our team is available 24/7 for emergencies and last-minute bookings"}
-            </p>
+                ? "Fale connosco agora e reserve a sua experiência premium em Londres. Nossa equipa está disponível 24/7 para criar momentos inesquecíveis."
+                : "Contact us now and book your premium London experience. Our team is available 24/7 to create unforgettable moments."}
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
+            >
               <a
                 href="tel:+447777777777"
-                className="inline-flex items-center justify-center bg-gradient-to-r from-action-600 to-coral-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-action-700 hover:to-coral-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105"
+                className="group inline-flex items-center justify-center bg-gradient-to-r from-action-600 to-coral-600 hover:from-action-700 hover:to-coral-700 text-white px-10 py-5 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300 min-w-[280px]"
               >
-                <PhoneIcon className="w-5 h-5 mr-2" />
+                <PhoneIcon className="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform" />
                 {isPortuguese ? "Ligar Agora" : "Call Now"}
+                <span className="ml-2 text-sm opacity-80">24/7</span>
               </a>
               <button
                 onClick={() => setShowSIABookingFlow(true)}
-                className="border-2 border-white text-white px-8 py-4 rounded-2xl font-bold hover:bg-white hover:text-secondary-900 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="group border-2 border-white hover:bg-white hover:text-secondary-900 text-white px-10 py-5 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 min-w-[280px] flex items-center justify-center"
               >
+                <Crown className="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform" />
                 {isPortuguese ? "Reserva Online" : "Book Online"}
+                <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
-            </div>
+            </motion.div>
+            
+            {/* Final trust indicators */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="flex flex-wrap justify-center gap-8 text-center"
+            >
+              <div className="flex items-center gap-2 text-gray-300">
+                <ShieldCheckIcon className="w-5 h-5 text-green-400" />
+                <span className="font-semibold">
+                  {isPortuguese ? "Licenciados SIA" : "SIA Licensed"}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-300">
+                <ClockIcon className="w-5 h-5 text-blue-400" />
+                <span className="font-semibold">
+                  {isPortuguese ? "Disponível 24/7" : "Available 24/7"}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 text-gray-300">
+                <StarIcon className="w-5 h-5 text-yellow-400" />
+                <span className="font-semibold">
+                  {isPortuguese ? "Comunicação em Português" : "Portuguese Communication"}
+                </span>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
