@@ -14,7 +14,7 @@ env:
 jobs:
   Deploy-Preview:
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
+  if: ${{ github.event_name == 'pull_request' && secrets.VERCEL_TOKEN != '' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -47,7 +47,7 @@ jobs:
 
   Deploy-Production:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+  if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' && secrets.VERCEL_TOKEN != '' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
