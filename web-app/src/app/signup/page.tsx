@@ -102,9 +102,9 @@ function SignupInner() {
 
   // Check for referral code in URL on component mount
   useEffect(() => {
-    const refCode = searchParams.get('ref');
+    const refCode = searchParams.get("ref");
     if (refCode) {
-      setFormData(prev => ({ ...prev, referralCode: refCode.toUpperCase() }));
+      setFormData((prev) => ({ ...prev, referralCode: refCode.toUpperCase() }));
     }
   }, [searchParams]);
 
@@ -229,20 +229,20 @@ function SignupInner() {
         if (formData.referralCode) {
           try {
             const referralResult = await referralService.createReferral(
-              formData.referralCode, 
+              formData.referralCode,
               result.user.id
             );
-            
+
             if (referralResult) {
               toast.success(
-                language === 'pt' 
-                  ? 'Código de indicação aplicado! Ganhou 25% de desconto.'
-                  : 'Referral code applied! You got 25% discount.'
+                language === "pt"
+                  ? "Código de indicação aplicado! Ganhou 25% de desconto."
+                  : "Referral code applied! You got 25% discount."
               );
               setReferralDiscount(25);
             }
           } catch (referralError) {
-            console.error('Error applying referral code:', referralError);
+            console.error("Error applying referral code:", referralError);
             // Don't show error for referral failure as signup was successful
           }
         }
@@ -250,18 +250,18 @@ function SignupInner() {
         setSuccess(
           "Account created successfully! Please check your email to verify your account."
         );
-        
+
         // Show referral success message if applicable
         if (referralDiscount) {
           setTimeout(() => {
             toast.success(
-              language === 'pt'
-                ? 'Bem-vindo! O seu desconto de 25% está ativo.'
-                : 'Welcome! Your 25% discount is now active.'
+              language === "pt"
+                ? "Bem-vindo! O seu desconto de 25% está ativo."
+                : "Welcome! Your 25% discount is now active."
             );
           }, 1000);
         }
-        
+
         // Redirect to success page after a short delay
         setTimeout(() => {
           router.push("/signup/success");
@@ -284,13 +284,13 @@ function SignupInner() {
       <div className="pt-16">
         <section className="py-8 bg-gradient-to-br from-primary-50 to-secondary-50">
           <div className="container-width w-full">
-            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:items-center">
+            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
               {/* Left side - Benefits */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
-                className="order-2 lg:order-1 flex flex-col justify-center"
+                className="order-2 lg:order-1"
               >
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center shadow-lg">
@@ -399,7 +399,7 @@ function SignupInner() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="order-1 lg:order-2 flex flex-col justify-center"
+                className="order-1 lg:order-2"
               >
                 <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-2xl p-6 sm:p-8 border border-white/50">
                   <div className="text-center mb-6 sm:mb-8">
@@ -524,7 +524,9 @@ function SignupInner() {
                       >
                         <div className="flex items-center gap-2">
                           <GiftIcon className="h-4 w-4 text-green-600" />
-                          {language === 'pt' ? 'Código de Indicação (Opcional)' : 'Referral Code (Optional)'}
+                          {language === "pt"
+                            ? "Código de Indicação (Opcional)"
+                            : "Referral Code (Optional)"}
                         </div>
                       </label>
                       <input
@@ -535,16 +537,17 @@ function SignupInner() {
                         onChange={handleInputChange}
                         disabled={isSubmitting}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50 uppercase"
-                        placeholder={language === 'pt' ? 'Ex: JOÃO1234' : 'e.g., MARIA1234'}
+                        placeholder={
+                          language === "pt" ? "Ex: JOÃO1234" : "e.g., MARIA1234"
+                        }
                         maxLength={20}
                       />
                       {formData.referralCode && (
                         <p className="mt-1 text-sm text-green-600 flex items-center gap-1">
                           <GiftIcon className="h-4 w-4" />
-                          {language === 'pt' 
-                            ? 'Ganhe 25% de desconto no primeiro mês!'
-                            : 'Get 25% off your first month!'
-                          }
+                          {language === "pt"
+                            ? "Ganhe 25% de desconto no primeiro mês!"
+                            : "Get 25% off your first month!"}
                         </p>
                       )}
                     </div>
