@@ -24,7 +24,8 @@ import {
   Plane,
   Goal,
   Wine,
-  Sparkles
+  Sparkles,
+  Calendar
 } from 'lucide-react'
 
 interface UserProfile {
@@ -408,6 +409,41 @@ export default function MatchCard({ match, onLike, onPass, isLiking, disabled }:
             <p className="text-sm text-accent-800 font-medium leading-relaxed">
               "{matchReason}"
             </p>
+          </div>
+        </div>
+
+        {/* Event Recommendations Preview */}
+        <div className="mb-6 p-4 bg-gradient-to-r from-accent-50 via-secondary-50 to-coral-50 rounded-2xl border border-accent-200">
+          <div className="flex items-center gap-2 mb-3">
+            <Calendar className="h-4 w-4 text-accent-600" />
+            <span className="text-sm font-medium text-accent-800">Perfect Events Together</span>
+          </div>
+          <div className="text-xs text-accent-700 mb-2">
+            Based on your shared cultural interests:
+          </div>
+          <div className="grid grid-cols-1 gap-2">
+            <div className="bg-white/70 rounded-lg p-2 border border-accent-200/50">
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 bg-coral-100 rounded-lg flex items-center justify-center">
+                  <Music className="h-3 w-3 text-coral-600" />
+                </div>
+                <div>
+                  <div className="text-xs font-medium text-gray-900">Noite de Fado</div>
+                  <div className="text-xs text-gray-600">95% compatibility</div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white/70 rounded-lg p-2 border border-accent-200/50">
+              <div className="flex items-center gap-2">
+                <div className="w-6 h-6 bg-secondary-100 rounded-lg flex items-center justify-center">
+                  <Utensils className="h-3 w-3 text-secondary-600" />
+                </div>
+                <div>
+                  <div className="text-xs font-medium text-gray-900">Portuguese Cooking</div>
+                  <div className="text-xs text-gray-600">88% compatibility</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

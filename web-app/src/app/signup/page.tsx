@@ -282,7 +282,7 @@ function SignupInner() {
   return (
     <main className="min-h-screen">
       <div className="pt-16">
-        <section className="py-12 sm:py-20 bg-gradient-to-br from-primary-50 to-secondary-50 min-h-screen flex items-center">
+        <section className="py-8 bg-gradient-to-br from-primary-50 to-secondary-50">
           <div className="container-width w-full">
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Left side - Benefits */}

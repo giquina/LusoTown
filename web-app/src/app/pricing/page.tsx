@@ -63,44 +63,109 @@ interface PricingTier {
   culturalContextEn: string
 }
 
-// Single Annual Membership Model
-const annualMembership = {
-  name: 'Membro Anual LusoTown',
-  nameEn: 'LusoTown Annual Membership',
-  price: 25,
-  description: 'O seu bilhete para a comunidade portuguesa de Londres',
-  descriptionEn: 'Your ticket to London\'s Portuguese community',
-  culturalContext: 'Investimento na preservação da nossa cultura e língua em Londres',
-  culturalContextEn: 'Investment in preserving our culture and language in London',
-  icon: <HeartIcon className="w-6 h-6" />,
-  solidIcon: <HeartIconSolid className="w-6 h-6" />,
-  features: [
-    'Acesso ilimitado à plataforma durante todo o ano',
-    'Participação em eventos a preço de custo',
-    'Acesso a todos os grupos privados',
-    'Eventos VIP exclusivos da comunidade',
-    'Networking profissional português',
-    'Preços transparentes - apenas pague o custo real',
-    'Voz nas decisões da comunidade',
-    'Benefícios cooperativos ao longo do tempo'
-  ],
-  featuresEn: [
-    'Unlimited platform access throughout the year',
-    'Event participation at cost price',
-    'Access to all private groups',
-    'Exclusive VIP community events',
-    'Portuguese professional networking',
-    'Transparent pricing - only pay true cost',
-    'Voice in community decisions',
-    'Cooperative benefits over time'
-  ],
-  limitations: [],
-  limitationsEn: [],
-  highlighted: true,
-  buttonText: 'Juntar-se à Comunidade',
-  buttonTextEn: 'Join the Community',
-  buttonStyle: 'btn-primary'
-}
+// New 3-Tier Pricing Structure
+const membershipPlans = [
+  {
+    id: 'free',
+    name: 'Membro Grátis',
+    nameEn: 'Free Member',
+    price: 0,
+    description: 'Comece a explorar a comunidade portuguesa',
+    descriptionEn: 'Start exploring the Portuguese community',
+    culturalContext: 'Descubra a sua comunidade portuguesa em Londres',
+    culturalContextEn: 'Discover your Portuguese community in London',
+    icon: <HeartIcon className="w-6 h-6" />,
+    solidIcon: <HeartIconSolid className="w-6 h-6" />,
+    features: [
+      '3 matches por dia',
+      '10 mensagens por mês',
+      'Perfil básico',
+      'Pesquisa limitada',
+      '1 evento gratuito por mês'
+    ],
+    featuresEn: [
+      '3 matches per day',
+      '10 messages per month',
+      'Basic profile',
+      'Limited search',
+      '1 free event per month'
+    ],
+    highlighted: false,
+    buttonText: 'Começar Grátis',
+    buttonTextEn: 'Start Free',
+    color: 'gray'
+  },
+  {
+    id: 'community',
+    name: 'Membro da Comunidade',
+    nameEn: 'Community Member',
+    price: 19.99,
+    description: 'Acesso completo à comunidade portuguesa',
+    descriptionEn: 'Full access to Portuguese community',
+    culturalContext: 'Investimento na preservação da nossa cultura e língua em Londres',
+    culturalContextEn: 'Investment in preserving our culture and language in London',
+    icon: <UsersIcon className="w-6 h-6" />,
+    solidIcon: <StarIconSolid className="w-6 h-6" />,
+    features: [
+      'Matches ilimitados',
+      'Mensagens ilimitadas',
+      'Acesso a todos os eventos',
+      'Perfil completo',
+      'Pesquisa avançada',
+      'Networking profissional'
+    ],
+    featuresEn: [
+      'Unlimited matches',
+      'Unlimited messaging',
+      'Access to all events',
+      'Complete profile',
+      'Advanced search',
+      'Professional networking'
+    ],
+    highlighted: true,
+    buttonText: 'Juntar-se à Comunidade',
+    buttonTextEn: 'Join Community',
+    color: 'primary',
+    badge: 'Popular',
+    badgeEn: 'Popular'
+  },
+  {
+    id: 'ambassador',
+    name: 'Embaixador Cultural',
+    nameEn: 'Cultural Ambassador',
+    price: 39.99,
+    description: 'Lidere a comunidade portuguesa em Londres',
+    descriptionEn: 'Lead the Portuguese community in London',
+    culturalContext: 'Torne-se um líder da comunidade portuguesa',
+    culturalContextEn: 'Become a Portuguese community leader',
+    icon: <Crown className="w-6 h-6" />,
+    solidIcon: <TrophyIcon className="w-6 h-6" />,
+    features: [
+      'Tudo do Membro da Comunidade',
+      'Visibilidade prioritária nos matches',
+      'Organizador de eventos',
+      'Perfil destacado',
+      'Acesso VIP a eventos',
+      'Mentoria comunitária',
+      'Suporte prioritário'
+    ],
+    featuresEn: [
+      'Everything in Community Member',
+      'Priority visibility in matches',
+      'Event hosting capabilities',
+      'Featured profile',
+      'VIP events access',
+      'Community mentorship',
+      'Priority support'
+    ],
+    highlighted: false,
+    buttonText: 'Tornar-se Embaixador',
+    buttonTextEn: 'Become Ambassador',
+    color: 'premium',
+    badge: 'Premium',
+    badgeEn: 'Premium'
+  }
+]
 
 const features = [
   {
@@ -152,9 +217,9 @@ const testimonials = [
     name: 'Maria Santos',
     age: 34,
     location: 'Stockwell, Londres',
-    membership: 'Membro Anual',
-    quote: 'Por £25, encontrei uma família portuguesa em Londres. Já participei em 15 eventos este ano - noites de fado, workshops de pastéis de nata, networking. O valor é incrível.',
-    quoteEn: 'For £25, I found a Portuguese family in London. I\'ve attended 15 events this year - fado nights, pastéis de nata workshops, networking. The value is incredible.',
+    membership: 'Membro da Comunidade',
+    quote: 'Por £19.99/mês, encontrei uma família portuguesa em Londres. Já participei em 15 eventos este ano - noites de fado, workshops de pastéis de nata, networking. O valor é incrível.',
+    quoteEn: 'For £19.99/month, I found a Portuguese family in London. I\'ve attended 15 events this year - fado nights, pastéis de nata workshops, networking. The value is incredible.',
     rating: 5,
     cultural: 'Profissional de marketing, originária do Porto',
     roi: '£280+ valor por £25 investidos'
@@ -163,7 +228,7 @@ const testimonials = [
     name: 'João Rodrigues',
     age: 42,
     location: 'Vauxhall, Londres',
-    membership: 'Membro Anual',
+    membership: 'Membro da Comunidade',
     quote: 'Como empresário português, consegui 3 novos clientes através da rede LusoTown. A adesão pagou-se milhares de vezes. Comunidade é investimento, não custo.',
     quoteEn: 'As a Portuguese entrepreneur, I gained 3 new clients through the LusoTown network. The membership paid for itself thousands of times over. Community is investment, not cost.',
     rating: 5,
@@ -174,9 +239,9 @@ const testimonials = [
     name: 'Ana Ferreira',
     age: 29,
     location: 'Camden, Londres',
-    membership: 'Membro Anual',
-    quote: 'Combati a solidão por £2 por mês. Encontrei amigos portugueses genuínos, um grupo de caminhadas, e até um mentor de carreira. Melhor investimento da minha vida.',
-    quoteEn: 'I beat loneliness for £2 per month. Found genuine Portuguese friends, a hiking group, and even a career mentor. Best investment of my life.',
+    membership: 'Membro da Comunidade',
+    quote: 'Com o plano da comunidade por £19.99/mês, encontrei amigos portugueses genuínos, um grupo de caminhadas, e até um mentor de carreira. Melhor investimento da minha vida.',
+    quoteEn: 'With the community plan at £19.99/month, I found genuine Portuguese friends, a hiking group, and even a career mentor. Best investment of my life.',
     rating: 5,
     cultural: 'Jovem profissional, do Algarve',
     roi: 'Bem-estar mental: inestimável'
@@ -185,7 +250,7 @@ const testimonials = [
     name: 'Carlos Silva',
     age: 55,
     location: 'South Kensington, Londres',
-    membership: 'Membro Anual',
+    membership: 'Membro da Comunidade',
     quote: 'Há 20 anos em Londres, o LusoTown finalmente me conectou à comunidade portuguesa. £25 por acesso a eventos premium que custam centenas? Sem dúvida o melhor valor.',
     quoteEn: 'After 20 years in London, LusoTown finally connected me to the Portuguese community. £25 for access to premium events that cost hundreds? Absolutely the best value.',
     rating: 5,
@@ -281,8 +346,8 @@ export default function Pricing() {
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                 {isPortuguese ? 
-                  'Simplificámos os preços para facilitar o seu início na nossa comunidade portuguesa.' :
-                  'We\'ve simplified pricing to make it easier for you to get started in our Portuguese community.'
+                  'Escolha o plano perfeito para se conectar com a comunidade portuguesa de Londres.' :
+                  'Choose the perfect plan to connect with London\'s Portuguese community.'
                 }
               </p>
               
@@ -322,152 +387,173 @@ export default function Pricing() {
               </div>
             </div>
 
-            {/* Single Annual Membership Card */}
-            <div className="max-w-2xl mx-auto">
-              <div className="relative rounded-3xl p-8 bg-white border-2 border-primary-400 shadow-2xl">
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-3 rounded-full text-lg font-bold">
-                    {isPortuguese ? 'Adesão Anual' : 'Annual Membership'}
-                  </span>
-                </div>
+            {/* Three-Tier Pricing Cards */}
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {membershipPlans.map((plan, index) => {
+                const getColorClasses = (color: string) => {
+                  const colorMap = {
+                    gray: {
+                      border: 'border-gray-200',
+                      bg: 'bg-gray-50',
+                      iconBg: 'bg-gray-100',
+                      iconText: 'text-gray-600',
+                      button: 'bg-gray-500 hover:bg-gray-600 text-white',
+                      badge: 'bg-gray-100 text-gray-800'
+                    },
+                    primary: {
+                      border: 'border-primary-300',
+                      bg: 'bg-primary-50',
+                      iconBg: 'bg-primary-100',
+                      iconText: 'text-primary-600',
+                      button: 'bg-primary-500 hover:bg-primary-600 text-white',
+                      badge: 'bg-primary-100 text-primary-800'
+                    },
+                    premium: {
+                      border: 'border-premium-300',
+                      bg: 'bg-premium-50',
+                      iconBg: 'bg-premium-100',
+                      iconText: 'text-premium-600',
+                      button: 'bg-premium-500 hover:bg-premium-600 text-white',
+                      badge: 'bg-premium-100 text-premium-800'
+                    }
+                  }
+                  return colorMap[color as keyof typeof colorMap] || colorMap.gray
+                }
                 
-                <div className="text-center mb-8 mt-4">
-                  <div className="w-20 h-20 mx-auto mb-6 rounded-3xl flex items-center justify-center bg-gradient-to-r from-primary-100 to-secondary-100 text-primary-600">
-                    {annualMembership.solidIcon}
-                  </div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                    {isPortuguese ? annualMembership.name : annualMembership.nameEn}
-                  </h3>
-                  
-                  {/* Cultural Context */}
-                  <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-4 mb-6">
-                    <p className="text-lg text-gray-700 italic">
-                      {isPortuguese ? annualMembership.culturalContext : annualMembership.culturalContextEn}
-                    </p>
-                  </div>
-                  
-                  <div className="mb-8">
-                    <div className="flex items-center justify-center space-x-2 mb-2">
-                      <div className="text-5xl font-bold text-gray-900">£{annualMembership.price}</div>
-                      <div className="text-xl text-gray-600">/{isPortuguese ? 'ano' : 'year'}</div>
-                    </div>
-                    <p className="text-gray-600 text-lg">
-                      {isPortuguese ? annualMembership.description : annualMembership.descriptionEn}
-                    </p>
-                  </div>
+                const colors = getColorClasses(plan.color)
+                const isHighlighted = plan.highlighted
+                
+                return (
+                  <div 
+                    key={plan.id}
+                    className={`relative rounded-3xl p-8 bg-white shadow-2xl ${
+                      isHighlighted ? 'border-4 border-primary-400 ring-4 ring-primary-100 scale-105' : 'border-2 border-gray-200'
+                    }`}
+                  >
+                    {/* Badge */}
+                    {plan.badge && (
+                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-2 rounded-full text-sm font-bold">
+                          {isPortuguese ? plan.badge : plan.badgeEn}
+                        </span>
+                      </div>
+                    )}
+                    
+                    <div className="text-center mb-8">
+                      <div className={`w-20 h-20 mx-auto mb-6 rounded-3xl flex items-center justify-center ${colors.iconBg} ${colors.iconText}`}>
+                        {plan.solidIcon}
+                      </div>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                        {isPortuguese ? plan.name : plan.nameEn}
+                      </h3>
+                      
+                      {/* Cultural Context */}
+                      <div className={`${colors.bg} rounded-xl p-4 mb-6`}>
+                        <p className="text-base text-gray-700 italic">
+                          {isPortuguese ? plan.culturalContext : plan.culturalContextEn}
+                        </p>
+                      </div>
+                      
+                      <div className="mb-8">
+                        <div className="flex items-center justify-center space-x-2 mb-2">
+                          {plan.price === 0 ? (
+                            <div className="text-4xl font-bold text-gray-900">
+                              {isPortuguese ? 'Grátis' : 'Free'}
+                            </div>
+                          ) : (
+                            <>
+                              <div className="text-4xl font-bold text-gray-900">£{plan.price}</div>
+                              <div className="text-lg text-gray-600">/{isPortuguese ? 'mês' : 'month'}</div>
+                            </>
+                          )}
+                        </div>
+                        <p className="text-gray-600 text-base">
+                          {isPortuguese ? plan.description : plan.descriptionEn}
+                        </p>
+                      </div>
 
-                  <button className="w-full py-4 px-8 rounded-2xl font-bold text-lg bg-gradient-to-r from-primary-500 to-secondary-500 text-white hover:from-primary-600 hover:to-secondary-600 shadow-xl hover:shadow-2xl transition-all duration-200 group mb-8">
-                    <span className="flex items-center justify-center">
-                      {isPortuguese ? annualMembership.buttonText : annualMembership.buttonTextEn}
-                      <ArrowRightIcon className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </button>
-                </div>
-
-                {/* Features - Fixed mobile text truncation */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {(isPortuguese ? annualMembership.features : annualMembership.featuresEn).map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-start space-x-3 min-h-[48px]">
-                      <CheckIconSolid className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                      <span className="text-gray-700 leading-relaxed break-words">{feature}</span>
+                      <button className={`w-full py-4 px-6 rounded-2xl font-semibold text-lg transition-all duration-200 group mb-8 ${colors.button} ${isHighlighted ? 'shadow-xl hover:shadow-2xl' : 'shadow-lg hover:shadow-xl'}`}>
+                        <span className="flex items-center justify-center">
+                          {isPortuguese ? plan.buttonText : plan.buttonTextEn}
+                          <ArrowRightIcon className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </span>
+                      </button>
                     </div>
-                  ))}
-                </div>
-              </div>
+
+                    {/* Features */}
+                    <div className="space-y-3">
+                      {(isPortuguese ? plan.features : plan.featuresEn).map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-start space-x-3">
+                          <CheckIconSolid className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
+                          <span className="text-gray-700 text-sm leading-relaxed break-words">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )
+              })}
             </div>
 
           </div>
         </section>
 
-        {/* Annual Membership Explanation Section */}
+        {/* Value Proposition Section */}
         <section className="py-20 bg-gradient-to-r from-primary-50 to-secondary-50">
           <div className="container-width">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  {isPortuguese ? 'O que é a Adesão Anual?' : 'What is the Annual Membership?'}
+                  {isPortuguese ? 'Por que Escolher LusoTown?' : 'Why Choose LusoTown?'}
                 </h2>
                 <p className="text-xl text-gray-600 leading-relaxed mb-8">
                   {isPortuguese ?
-                    'É o seu bilhete para a comunidade portuguesa de Londres. Por uma taxa anual de £25, torna-se membro da LusoTown.' :
-                    'It\'s your ticket to London\'s Portuguese community. For a flat fee of £25 per year, you become a member of LusoTown.'
+                    'A única plataforma dedicada exclusivamente à comunidade portuguesa de Londres.' :
+                    'The only platform dedicated exclusively to London\'s Portuguese community.'
                   }
                 </p>
-                
-                <div className="bg-gradient-to-r from-accent-50 to-coral-50 rounded-2xl p-6 mb-8 border border-accent-200">
-                  <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                    🛒 {isPortuguese ? 'Como o Costco para a Cultura Portuguesa' : 'Like Costco for Portuguese Culture'}
-                  </h4>
-                  <p className="text-gray-700 leading-relaxed">
-                    {isPortuguese ?
-                      'Pague a adesão anual para entrar. Depois, participe em eventos, workshops e atividades culturais apenas pelo custo real - sem markups ou taxas escondidas. A sua adesão cobre os nossos custos operacionais.' :
-                      'Pay the annual membership to get in the door. Then participate in events, workshops, and cultural activities at true cost only - no markups or hidden fees. Your membership covers our operational costs.'
-                    }
-                  </p>
-                </div>
               </div>
               
               <div className="bg-white rounded-3xl p-8 shadow-lg mb-12">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-                  {isPortuguese ? 'Porquê £25/ano em vez de mensalidades?' : 'Why £25/year instead of monthly plans?'}
+                  {isPortuguese ? 'Planos Flexíveis para Suas Necessidades' : 'Flexible Plans for Your Needs'}
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">
-                      {isPortuguese ? '🚫 Não somos como outras empresas SaaS' : '🚫 We\'re not like other SaaS companies'}
-                    </h4>
-                    <p className="text-gray-600 leading-relaxed">
-                      {isPortuguese ?
-                        'Subscrições mensais criam relações predatórias onde as empresas lucram com o facto de se esquecer de cancelar. Odiamos esse modelo.' :
-                        'Monthly subscriptions create predatory relationships where companies profit from you forgetting to cancel. We hate that model.'
-                      }
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                  <div className="p-6">
+                    <div className="text-4xl font-bold text-gray-600 mb-2">
+                      {isPortuguese ? 'Gratuito' : 'Free'}
+                    </div>
+                    <div className="text-sm text-gray-600 mb-4">
+                      {isPortuguese ? 'Explore a comunidade' : 'Explore the community'}
+                    </div>
+                    <p className="text-sm text-gray-700">
+                      {isPortuguese ? 'Perfeito para conhecer a plataforma e começar a conectar-se' : 'Perfect for getting to know the platform and start connecting'}
                     </p>
                   </div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3">
-                      {isPortuguese ? '🤝 O nosso sucesso alinha-se com o seu' : '🤝 Our success aligns with yours'}
-                    </h4>
-                    <p className="text-gray-600 leading-relaxed">
-                      {isPortuguese ?
-                        'A adesão anual alinha o nosso sucesso com o seu. Investimos genuinamente na preservação da cultura portuguesa em Londres.' :
-                        'Annual membership aligns our success with yours. We genuinely invest in preserving Portuguese culture in London.'
-                      }
+                  <div className="p-6 border-2 border-primary-200 rounded-lg bg-primary-50">
+                    <div className="text-4xl font-bold text-primary-600 mb-2">£19.99</div>
+                    <div className="text-sm text-gray-600 mb-4">
+                      {isPortuguese ? 'Por mês' : 'Per month'}
+                    </div>
+                    <p className="text-sm text-gray-700">
+                      {isPortuguese ? 'Acesso completo à comunidade portuguesa de Londres' : 'Full access to London\'s Portuguese community'}
+                    </p>
+                  </div>
+                  <div className="p-6">
+                    <div className="text-4xl font-bold text-premium-600 mb-2">£39.99</div>
+                    <div className="text-sm text-gray-600 mb-4">
+                      {isPortuguese ? 'Por mês' : 'Per month'}
+                    </div>
+                    <p className="text-sm text-gray-700">
+                      {isPortuguese ? 'Para líderes da comunidade e organizadores de eventos' : 'For community leaders and event organizers'}
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center mb-12">
-                <div className="bg-white rounded-2xl p-6 shadow-lg">
-                  <div className="text-3xl font-bold text-primary-600 mb-2">750+</div>
-                  <div className="text-sm text-gray-600">
-                    {isPortuguese ? 'Membros Anuais' : 'Annual Members'}
-                  </div>
-                </div>
-                <div className="bg-white rounded-2xl p-6 shadow-lg">
-                  <div className="text-3xl font-bold text-secondary-600 mb-2">£25</div>
-                  <div className="text-sm text-gray-600">
-                    {isPortuguese ? 'Por Ano Completo' : 'For Full Year'}
-                  </div>
-                </div>
-                <div className="bg-white rounded-2xl p-6 shadow-lg">
-                  <div className="text-3xl font-bold text-accent-600 mb-2">0%</div>
-                  <div className="text-sm text-gray-600">
-                    {isPortuguese ? 'Markups Escondidos' : 'Hidden Markups'}
-                  </div>
-                </div>
-                <div className="bg-white rounded-2xl p-6 shadow-lg">
-                  <div className="text-3xl font-bold text-green-600 mb-2">100%</div>
-                  <div className="text-sm text-gray-600">
-                    {isPortuguese ? 'Transparente' : 'Transparent'}
-                  </div>
-                </div>
-              </div>
-              
-              {/* Cooperative Benefits Section */}
+              {/* Benefits Section */}
               <div className="bg-white rounded-3xl p-8 shadow-lg">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-                  {isPortuguese ? 'O que recebe com a sua adesão?' : 'What do you get with your membership?'}
+                  {isPortuguese ? 'Benefícios da Comunidade' : 'Community Benefits'}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-4">
@@ -477,10 +563,10 @@ export default function Pricing() {
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900">
-                          {isPortuguese ? 'Acesso Ilimitado à Plataforma' : 'Unlimited Platform Access'}
+                          {isPortuguese ? 'Comunidade Verificada' : 'Verified Community'}
                         </h4>
                         <p className="text-sm text-gray-600">
-                          {isPortuguese ? 'Participe em todos os eventos e grupos da comunidade' : 'Join all community events and groups'}
+                          {isPortuguese ? 'Todos os membros são portugueses verificados' : 'All members are verified Portuguese speakers'}
                         </p>
                       </div>
                     </div>
@@ -490,10 +576,10 @@ export default function Pricing() {
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900">
-                          {isPortuguese ? 'Preços de Custo Real' : 'True Cost Pricing'}
+                          {isPortuguese ? 'Eventos Culturais' : 'Cultural Events'}
                         </h4>
                         <p className="text-sm text-gray-600">
-                          {isPortuguese ? 'Pague apenas o custo real dos eventos, sem markups' : 'Pay only true cost for events, no markups'}
+                          {isPortuguese ? 'Noites de fado, festivais portugueses, networking' : 'Fado nights, Portuguese festivals, networking'}
                         </p>
                       </div>
                     </div>
@@ -505,10 +591,10 @@ export default function Pricing() {
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900">
-                          {isPortuguese ? 'Voz na Comunidade' : 'Voice in Community'}
+                          {isPortuguese ? 'Flexibilidade Total' : 'Complete Flexibility'}
                         </h4>
                         <p className="text-sm text-gray-600">
-                          {isPortuguese ? 'Influência nas decisões da comunidade' : 'Influence in community decisions'}
+                          {isPortuguese ? 'Cancele ou mude de plano a qualquer momento' : 'Cancel or change plan anytime'}
                         </p>
                       </div>
                     </div>
@@ -518,10 +604,10 @@ export default function Pricing() {
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900">
-                          {isPortuguese ? 'Benefícios Cooperativos' : 'Cooperative Benefits'}
+                          {isPortuguese ? 'Suporte em Português' : 'Portuguese Support'}
                         </h4>
                         <p className="text-sm text-gray-600">
-                          {isPortuguese ? 'Propriedade futura da plataforma como membro fundador' : 'Future platform ownership as founding member'}
+                          {isPortuguese ? 'Atendimento na nossa língua materna' : 'Customer service in our native language'}
                         </p>
                       </div>
                     </div>

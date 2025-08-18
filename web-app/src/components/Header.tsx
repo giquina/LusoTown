@@ -531,7 +531,7 @@ export default function Header() {
                   className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-2 px-4 lg:px-6 rounded-lg shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transform hover:scale-105 transition-all duration-200 whitespace-nowrap h-10 flex items-center text-sm"
                 >
                   <span className="hidden lg:inline">
-                    {t("nav.join-membership", "BECOME A MEMBER")}
+                    {t("nav.join-membership", "Join Now")}
                   </span>
                   <span className="lg:hidden">JOIN</span>
                 </a>
@@ -818,7 +818,7 @@ export default function Header() {
                             className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transform hover:scale-[1.02] active:scale-95 transition-all duration-200 w-full text-center block min-h-[44px] flex items-center justify-center"
                             onClick={() => setMobileMenuOpen(false)}
                           >
-                            <span className="text-base">BECOME A MEMBER</span>
+                            <span className="text-base">{t("nav.join-membership", "Join Now").toUpperCase()}</span>
                           </a>
                         </div>
                       </>

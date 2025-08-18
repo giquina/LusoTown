@@ -23,9 +23,11 @@ import EventImageWithFallback from '@/components/EventImageWithFallback'
 import WaitingListModal from '@/components/WaitingListModal'
 import { useWaitingList } from '@/context/WaitingListContext'
 import { useLanguage } from '@/context/LanguageContext'
+import type { Event } from '@/types/event'
+import { formatPrice } from '@/config/pricing'
 
 // Event Image Component with fallback - Memoized for performance
-const EventImage = memo(({ event }: { event: typeof upcomingEvents[0] }) => {
+const EventImage = memo(({ event }: { event: Event }) => {
   return (
     <div className="h-48 relative overflow-hidden">
       <EventImageWithFallback
@@ -62,7 +64,7 @@ const EventImage = memo(({ event }: { event: typeof upcomingEvents[0] }) => {
           : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white'
       }`}>
         <div className="text-xs font-bold">
-          {event.status === 'available' ? `£${event.price}` : 'SOLD OUT'}
+          {event.status === 'available' ? `${formatPrice(event.price)}` : 'SOLD OUT'}
         </div>
       </div>
 
@@ -85,7 +87,7 @@ const EventImage = memo(({ event }: { event: typeof upcomingEvents[0] }) => {
 })
 EventImage.displayName = 'EventImage'
 
-const upcomingEvents = [
+const upcomingEvents: Event[] = [
   {
     id: 4,
     title: "AI Business App Creation Workshop",
@@ -182,14 +184,14 @@ const EventsShowcase = memo(() => {
   const { getWaitingListCount } = useWaitingList()
   const { language } = useLanguage()
   const [waitingListModalOpen, setWaitingListModalOpen] = useState(false)
-  const [selectedEvent, setSelectedEvent] = useState<typeof upcomingEvents[0] | null>(null)
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null)
   
   // Memoize filtered events for performance
   const filteredEvents = useMemo(() => {
     return upcomingEvents.slice(0, 6) // Show only first 6 events
   }, [])
 
-  const handleJoinWaitingList = (event: typeof upcomingEvents[0]) => {
+  const handleJoinWaitingList = (event: Event) => {
     setSelectedEvent(event)
     setWaitingListModalOpen(true)
   }
@@ -357,14 +359,23 @@ const EventsShowcase = memo(() => {
                 </div>
 
                 {/* RSVP Button */}
-                <div className="mt-auto">
+                <div className="mt-auto space-y-3">
                   {event.status === 'available' ? (
-                    <a 
-                      href={`/events/${event.id}/book`}
-                      className="w-full bg-gradient-to-r from-secondary-500 via-secondary-600 to-secondary-700 text-white font-semibold py-4 rounded-2xl hover:from-secondary-600 hover:via-secondary-700 hover:to-secondary-800 transition-all duration-300 group-hover:scale-105 block text-center shadow-xl hover:shadow-2xl animate-pulse min-h-[44px] flex items-center justify-center"
-                    >
-                      Book Now - £{event.price}
-                    </a>
+                    <>
+                      <a 
+                        href={`/events/${event.id}/book`}
+                        className="w-full bg-gradient-to-r from-secondary-500 via-secondary-600 to-secondary-700 text-white font-semibold py-4 rounded-2xl hover:from-secondary-600 hover:via-secondary-700 hover:to-secondary-800 transition-all duration-300 group-hover:scale-105 text-center shadow-xl hover:shadow-2xl animate-pulse min-h-[44px] flex items-center justify-center"
+                      >
+                        Book Now - {formatPrice(event.price)}
+                      </a>
+                      {/* Book Together Button for Portuguese cultural events */}
+                      {event.featured && (
+                        <button className="w-full bg-gradient-to-r from-coral-500 to-accent-500 text-white font-medium py-3 rounded-xl hover:from-coral-600 hover:to-accent-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl min-h-[40px] flex items-center justify-center gap-2">
+                          <UsersIcon className="w-4 h-4" />
+                          {language === 'pt' ? 'Reservar em Grupo' : 'Book Together'}
+                        </button>
+                      )}
+                    </>
                   ) : (
                     <button 
                       onClick={() => handleJoinWaitingList(event)}

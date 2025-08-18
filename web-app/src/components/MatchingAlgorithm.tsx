@@ -84,7 +84,9 @@ export default function MatchingAlgorithm() {
         ai: 'AI-powered cultural compatibility analysis',
         learning: 'Machine learning from Portuguese community patterns',
         realtime: 'Real-time updates based on community activity',
-        privacy: 'Privacy-first approach with secure data handling'
+        privacy: 'Privacy-first approach with secure data handling',
+        eventMatching: 'Event compatibility and buddy suggestions',
+        culturalEvents: 'Portuguese cultural event recommendations'
       }
     },
     
@@ -153,7 +155,9 @@ export default function MatchingAlgorithm() {
         ai: 'Análise de compatibilidade cultural com IA',
         learning: 'Machine learning de padrões da comunidade portuguesa',
         realtime: 'Atualizações em tempo real baseadas na atividade da comunidade',
-        privacy: 'Abordagem privacy-first com tratamento seguro de dados'
+        privacy: 'Abordagem privacy-first com tratamento seguro de dados',
+        eventMatching: 'Compatibilidade de eventos e sugestões de companheiros',
+        culturalEvents: 'Recomendações de eventos culturais portugueses'
       }
     }
   }
@@ -292,7 +296,9 @@ export default function MatchingAlgorithm() {
             { icon: Brain, text: t.features.ai },
             { icon: TrendingUp, text: t.features.learning },
             { icon: Globe, text: t.features.realtime },
-            { icon: Target, text: t.features.privacy }
+            { icon: Target, text: t.features.privacy },
+            { icon: Calendar, text: t.features.eventMatching },
+            { icon: Heart, text: t.features.culturalEvents }
           ].map((feature, index) => (
             <div key={index} className="flex items-center gap-3">
               <feature.icon className="h-5 w-5 text-premium-600 flex-shrink-0" />

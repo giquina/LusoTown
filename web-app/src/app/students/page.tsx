@@ -112,7 +112,7 @@ const UNIVERSITIES: University[] = [
       languageCourses: ['Portuguese A1-C2', 'Business Portuguese', 'Portuguese for Heritage Speakers']
     },
     benefits: [
-      '50% discount on LusoTown membership (£12.50/year)',
+      '50% discount on LusoTown membership (£9.99/month)',
       'Priority access to Portuguese cultural events',
       'Free Portuguese language exchange sessions',
       'Career mentorship with Portuguese professionals',
@@ -357,13 +357,13 @@ const STUDENT_BENEFITS: StudentBenefit[] = [
     id: 'membership-discount',
     title: '50% Student Discount on Annual Membership',
     titlePortuguese: '50% Desconto Estudante na Adesão Anual',
-    description: 'Exclusive 50% discount on LusoTown annual membership for verified students. Pay only £12.50 instead of £25 for full community access.',
-    descriptionPortuguese: 'Desconto exclusivo de 50% na adesão anual LusoTown para estudantes verificados. Pague apenas £12.50 em vez de £25 por acesso completo à comunidade.',
+    description: 'Exclusive 50% discount on LusoTown Community membership for verified students. Pay only £9.99/month instead of £19.99 for full community access.',
+    descriptionPortuguese: 'Desconto exclusivo de 50% na adesão Comunidade LusoTown para estudantes verificados. Pague apenas £9.99/mês em vez de £19.99 por acesso completo à comunidade.',
     category: 'financial',
     discountAmount: '50%',
     eligibility: ['Current university students', 'Valid .ac.uk email required', 'Student ID verification'],
     verificationRequired: true,
-    value: '£12.50 savings per year'
+    value: '£9.99 savings per year'
   },
   {
     id: 'language-exchange',
@@ -768,7 +768,7 @@ export default function StudentsPage() {
                   <div className="text-xs text-gray-600">{language === 'pt' ? 'Desconto Estudante' : 'Student Discount'}</div>
                 </div>
                 <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-                  <div className="text-2xl font-bold text-premium-600 mb-1">£12.50</div>
+                  <div className="text-2xl font-bold text-premium-600 mb-1">£9.99</div>
                   <div className="text-xs text-gray-600">{language === 'pt' ? 'Adesão Anual' : 'Annual Membership'}</div>
                 </div>
               </motion.div>
@@ -880,7 +880,7 @@ export default function StudentsPage() {
                   <div className="text-sm text-gray-600">{language === 'pt' ? 'Valor anual em benefícios' : 'Annual value in benefits'}</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-primary-600 mb-2">£12.50</div>
+                  <div className="text-3xl font-bold text-primary-600 mb-2">£9.99</div>
                   <div className="text-sm text-gray-600">{language === 'pt' ? 'Custo anual para estudantes' : 'Annual cost for students'}</div>
                 </div>
                 <div>
@@ -1449,8 +1449,8 @@ export default function StudentsPage() {
               
               <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
                 {language === 'pt' ?
-                  'Apenas £12.50/ano para acesso completo a benefícios exclusivos, eventos culturais e networking profissional.' :
-                  'Just £12.50/year for full access to exclusive benefits, cultural events, and professional networking.'
+                  'Apenas £9.99/mês para acesso completo a benefícios exclusivos, eventos culturais e networking profissional.' :
+                  'Just £9.99/month for full access to exclusive benefits, cultural events, and professional networking.'
                 }
               </p>
 
