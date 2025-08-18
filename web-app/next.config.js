@@ -15,6 +15,20 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      // Allow Cloudinary-hosted assets (used across services/transport pages)
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        port: '',
+        pathname: '/**',
+      },
+      // In case any absolute URLs to our own Vercel domain are used with next/image
+      {
+        protocol: 'https',
+        hostname: 'lusotown-london.vercel.app',
+        port: '',
+        pathname: '/**',
+      },
     ],
     formats: ['image/webp', 'image/avif']
   },
