@@ -336,6 +336,10 @@ export default function EventsPage() {
       const tabParam = urlParams.get("tab");
       if (tabParam === "tours") {
         setActiveTab("tours");
+      } else if (tabParam === "cultural") {
+        setActiveTab("cultural");
+      } else if (tabParam === "create") {
+        setActiveTab("create");
       }
     }
   }, []);
@@ -571,14 +575,14 @@ export default function EventsPage() {
                     {/* Desktop full subtitle */}
                     <span className="hidden sm:block">
                       {isPortuguese
-                        ? "Para profissionais portugueses em Londres e no Reino Unido - participe em workshops de negócios, eventos culturais e experiências sociais. De workshops de IA a networking executivo, do fado aos investimentos imobiliários - seu desenvolvimento profissional e pessoal espera!"
-                        : "For Portuguese professionals in London and across the UK - join business workshops, cultural events, and social experiences. From AI workshops to executive networking, from fado to property investment - your professional and personal development awaits!"}
+                        ? "Descubra eventos autênticos nos bairros portugueses de Londres - de Santos Populares em Stockwell a noites de Fado em Camden. Conecte-se com a sua comunidade através de experiências culturais genuínas, networking profissional e tradições que unem gerações."
+                        : "Discover authentic events in London's Portuguese neighborhoods - from Santos Populares in Stockwell to Fado nights in Camden. Connect with your community through genuine cultural experiences, professional networking, and traditions that unite generations."}
                     </span>
                     {/* Mobile short subtitle */}
                     <span className="sm:hidden">
                       {isPortuguese
-                        ? "O seu calendário social espera!"
-                        : "Your Portuguese social calendar awaits!"}
+                        ? "Eventos portugueses autênticos em Londres!"
+                        : "Authentic Portuguese events in London!"}
                     </span>
                   </>
                 ) : (
@@ -962,6 +966,13 @@ export default function EventsPage() {
 
                 {/* Events Grid */}
                 <div className="flex-1">
+                  {/* Portuguese Events Discovery */}
+                  {activeTab === "events" && (
+                    <div className="mb-8">
+                      <EventsDiscovery />
+                    </div>
+                  )}
+
                 {/* Controls */}
                 <div className="flex items-center justify-between mb-8">
                   <div className="flex items-center gap-4">
