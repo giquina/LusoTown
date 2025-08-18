@@ -529,8 +529,8 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
     switch (membershipTier) {
       case 'free':
         return {
-          dailyMatches: 3,
-          monthlyMessages: 10, // Allow 10 messages per month for free users
+          dailyMatches: 2, // Reduced from 3 to 2 for higher conversion pressure
+          monthlyMessages: 5, // Reduced from 10 to 5 for immediate upgrade urgency
           premiumEvents: 0,
           livestreamHours: 0,
           hasUnlimitedAccess: false

@@ -11,7 +11,7 @@ export const plans = {
     monthly: 0,
     labelEn: 'Free Member',
     labelPt: 'Membro Grátis',
-    features: ['3 matches/day', '10 messages/month', 'Basic profile', '1 free event/month'],
+    features: ['2 matches/day', '5 messages/month', 'Basic profile', 'Preview premium events'],
   },
   community: {
     monthly: 19.99,
