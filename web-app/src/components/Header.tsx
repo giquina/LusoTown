@@ -55,7 +55,7 @@ const getMoreDropdownLinks = (t: any) => ({
     { name: 'Executive Transport', href: '/services#executive-transport' },
     { name: 'Close Protection', href: '/services#close-protection' },
     { name: 'Transport & SIA', href: '/transport' },
-    { name: 'Matches', href: '/matches' },
+  { name: 'Find Your Match', href: '/matches' },
     { name: 'Live TV', href: '/live' },
   ],
   support: [
@@ -86,6 +86,7 @@ export default function Header() {
   const [user, setUser] = useState<any | null>(null);
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [showMoreDropdown, setShowMoreDropdown] = useState(false);
+  const [showToursDropdown, setShowToursDropdown] = useState(false);
   const router = useRouter();
   const { t } = useLanguage();
 
@@ -145,15 +146,77 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 ml-4 xl:ml-8">
-            {navigationLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-              >
-                {link.name}
-              </a>
-            ))}
+            {navigationLinks.map((link) => {
+              const isTours = link.href === "/london-tours";
+              if (isTours) {
+                return (
+                  <div
+                    key={link.name}
+                    className="relative"
+                    onMouseEnter={() => setShowToursDropdown(true)}
+                    onMouseLeave={() => setShowToursDropdown(false)}
+                  >
+                    <button className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1">
+                      {link.name}
+                      <ChevronDownIcon className="w-4 h-4" />
+                    </button>
+                    <AnimatePresence>
+                      {showToursDropdown && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          className="absolute top-full left-0 mt-2 w-[560px] bg-white rounded-2xl shadow-2xl border border-gray-200 py-6 z-50"
+                        >
+                          <div className="grid grid-cols-2 gap-6 px-6">
+                            <div>
+                              <h3 className="text-sm font-semibold text-gray-900 mb-3">Tours & Experiences</h3>
+                              <ul className="space-y-2">
+                                <li>
+                                  <a href="/london-tours" className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded">All London Tours</a>
+                                </li>
+                                <li>
+                                  <a href="/services#cultural-tours" className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded">Cultural Tours</a>
+                                </li>
+                                <li>
+                                  <a href="/services#executive-transport" className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded">Executive Transport</a>
+                                </li>
+                              </ul>
+                            </div>
+                            <div>
+                              <h3 className="text-sm font-semibold text-gray-900 mb-3">Transport & Security</h3>
+                              <ul className="space-y-2">
+                                <li>
+                                  <a href="/transport" className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded">Transport & SIA</a>
+                                </li>
+                                <li>
+                                  <a href="/services#close-protection" className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded">Close Protection</a>
+                                </li>
+                                <li>
+                                  <a href="/services" className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded">All Services</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div className="px-6 pt-4">
+                            <p className="text-xs text-gray-500">Explore authentic Portuguese-led tours and transport in London. Unidos pela Língua.</p>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                >
+                  {link.name}
+                </a>
+              );
+            })}
             
             {/* More Dropdown */}
             <div 
@@ -181,6 +244,12 @@ export default function Header() {
                         <div className="space-y-3">
                           <CartButton className="w-full justify-start" />
                           <SavedItemsButton className="w-full justify-start" />
+                        </div>
+                        <div className="mt-6 pt-4 border-t border-gray-100">
+                          <p className="text-xs text-gray-500 leading-relaxed">
+                            LusoTown connects Portuguese speakers in London & UK to cultural events,
+                            services and community. Where we discover, learn and thrive together.
+                          </p>
                         </div>
                       </div>
                       
@@ -266,7 +335,7 @@ export default function Header() {
                         </ul>
 
                         {/* Contact Info */}
-                        <div className="bg-gray-50 rounded-lg p-4">
+        <div className="bg-gray-50 rounded-lg p-4 overflow-hidden">
                           <h4 className="font-semibold text-gray-900 mb-2">Get in Touch</h4>
                           <div className="space-y-2 text-sm text-gray-600">
                             <div className="flex items-center gap-2">
@@ -275,7 +344,7 @@ export default function Header() {
                             </div>
                             <div className="flex items-center gap-2">
                               <EnvelopeIcon className="h-4 w-4" />
-                              <span>connect@lusotown.co.uk</span>
+                              <a href="mailto:connect@lusotown.co.uk" className="break-all hover:underline">connect@lusotown.co.uk</a>
                             </div>
                           </div>
                         </div>
