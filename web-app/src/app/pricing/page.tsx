@@ -38,6 +38,7 @@ import {
 } from '@heroicons/react/24/solid'
 import { Crown } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
+import { formatPrice } from '@/config/pricing'
 import Footer from '@/components/Footer'
 
 interface PricingTier {
@@ -323,11 +324,13 @@ export default function Pricing() {
   const [billingCycle, setBillingCycle] = useState<'yearly' | 'monthly'>('yearly') // Default to yearly for savings
   
   // Calculate pricing based on billing cycle
-  const getPlanPrice = (monthlyPrice: number, planId: string) => {
-    if (monthlyPrice === 0) return 0 // Free plan is always free
-    
+  type PlanPricing = { price: number; monthlyEquivalent: number; savings: number; discount: string }
+  const getPlanPrice = (monthlyPrice: number, planId: string): PlanPricing => {
+    if (monthlyPrice === 0) {
+      return { price: 0, monthlyEquivalent: 0, savings: 0, discount: '0%' }
+    }
     if (billingCycle === 'yearly') {
-      // Yearly discount: 2 months free (16.67% discount)
+      // Yearly discount: 2 months free (≈16.67% discount)
       const yearlyPrice = monthlyPrice * 10 // Pay for 10 months, get 12
       return {
         price: yearlyPrice,
@@ -336,7 +339,6 @@ export default function Pricing() {
         discount: '17%'
       }
     }
-    
     return {
       price: monthlyPrice,
       monthlyEquivalent: monthlyPrice,
@@ -524,7 +526,7 @@ export default function Pricing() {
                                   <>
                                     <div className="flex items-center space-x-2">
                                       <div className="text-4xl font-bold text-gray-900">
-                                        £{pricing.price}
+                                        {formatPrice(pricing.price)}
                                       </div>
                                       <div className="text-lg text-gray-600">
                                         /{billingCycle === 'yearly' ? (isPortuguese ? 'ano' : 'year') : (isPortuguese ? 'mês' : 'month')}
@@ -533,16 +535,16 @@ export default function Pricing() {
                                     {billingCycle === 'yearly' && pricing.savings > 0 && (
                                       <div className="text-sm text-green-600 font-medium mt-1">
                                         {isPortuguese 
-                                          ? `£${pricing.monthlyEquivalent.toFixed(2)}/mês • Poupa £${pricing.savings}/ano` 
-                                          : `£${pricing.monthlyEquivalent.toFixed(2)}/month • Save £${pricing.savings}/year`
+                                          ? `${formatPrice(pricing.monthlyEquivalent)}/mês • Poupa ${formatPrice(pricing.savings)}/ano` 
+                                          : `${formatPrice(pricing.monthlyEquivalent)}/month • Save ${formatPrice(pricing.savings)}/year`
                                         }
                                       </div>
                                     )}
                                     {billingCycle === 'monthly' && (
                                       <div className="text-sm text-orange-600 font-medium mt-1">
                                         {isPortuguese 
-                                          ? `Ou £${(plan.price * 10).toFixed(0)}/ano (Poupa £${(plan.price * 2).toFixed(0)})` 
-                                          : `Or £${(plan.price * 10).toFixed(0)}/year (Save £${(plan.price * 2).toFixed(0)})`
+                                          ? `Ou ${formatPrice(plan.price * 10)}/ano (Poupa ${formatPrice(plan.price * 2)})` 
+                                          : `Or ${formatPrice(plan.price * 10)}/year (Save ${formatPrice(plan.price * 2)})`
                                         }
                                       </div>
                                     )}
