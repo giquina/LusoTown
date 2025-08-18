@@ -5,25 +5,35 @@ export type Currency = 'GBP';
 export const currency: Currency = 'GBP';
 export const currencySymbol = '£';
 
-// Core plans (display amounts in major units)
+// Updated 3-Tier Pricing Structure (monthly plans)
 export const plans = {
+  free: {
+    monthly: 0,
+    labelEn: 'Free Member',
+    labelPt: 'Membro Grátis',
+    features: ['3 matches/day', '10 messages/month', 'Basic profile', '1 free event/month'],
+  },
   community: {
     monthly: 19.99,
-    labelEn: 'Community',
-    labelPt: 'Comunidade',
+    labelEn: 'Community Member',
+    labelPt: 'Membro da Comunidade',
+    features: ['Unlimited matches', 'Unlimited messaging', 'Full events access', 'Priority support'],
+    popular: true,
   },
   ambassador: {
     monthly: 39.99,
-    labelEn: 'Ambassador',
-    labelPt: 'Embaixador',
+    labelEn: 'Cultural Ambassador',
+    labelPt: 'Embaixador Cultural',
+    features: ['Everything in Community', 'Priority event visibility', 'Host events', 'VIP experiences'],
   },
 } as const;
 
-// Memberships
+// Legacy memberships (deprecated - use monthly plans above)
 export const membership = {
-  annual: 25, // £25/year standard membership
-  studentAnnual: 12.5, // 50% student rate
-  groupAnnual: 20, // group pricing per person used on pricing page
+  // These are kept for backward compatibility but should not be used in new features
+  annual: 25, // DEPRECATED: Use monthly plans instead
+  studentAnnual: 12.5, // DEPRECATED: Student discounts now applied to monthly plans  
+  groupAnnual: 20, // DEPRECATED: Group discounts applied to monthly plans
 } as const;
 
 // Creator/Events pricing

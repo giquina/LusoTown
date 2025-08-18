@@ -332,8 +332,8 @@ export default function OnboardingFlowEnhanced({
       titlePortuguese: 'Interesse em Serviços Premium',
       subtitle: 'Explore our comprehensive Portuguese community support',
       subtitlePortuguese: 'Explore o nosso apoio abrangente à comunidade portuguesa',
-      description: 'Our £25/year premium membership unlocks transport booking, mentorship programs, housing assistance, and priority access to all community features.',
-      descriptionPortuguese: 'A nossa subscrição premium de £25/ano desbloqueia reservas de transporte, programas de mentoria, assistência habitacional e acesso prioritário a todas as funcionalidades comunitárias.',
+      description: 'Our £19.99/month Community membership unlocks transport booking, mentorship programs, housing assistance, and priority access to all community features.',
+      descriptionPortuguese: 'A nossa subscrição de Comunidade £19.99/mês desbloqueia reservas de transporte, programas de mentoria, assistência habitacional e acesso prioritário a todas as funcionalidades comunitárias.',
       icon: SparklesIcon,
       color: 'coral',
       fields: [

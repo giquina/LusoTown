@@ -178,8 +178,8 @@ export default function CrossPlatformEngagementTriggers({
       descriptionPortuguese: 'Tem estado ativo nos nossos serviços! Atualize para premium para reservas ilimitadas de transporte, acesso a mentoria e assistência habitacional.',
       icon: StarIcon,
       primaryAction: {
-        text: 'Upgrade for £25/year',
-        textPortuguese: 'Atualizar por £25/ano',
+        text: 'Upgrade to Community £19.99/month',
+        textPortuguese: 'Atualizar para Comunidade £19.99/mês',
         href: '/subscription',
         style: 'premium'
       },

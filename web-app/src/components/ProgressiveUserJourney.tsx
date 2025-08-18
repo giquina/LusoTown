@@ -214,8 +214,8 @@ export default function ProgressiveUserJourney({
           type: 'primary',
           estimatedTime: '2 minutes',
           estimatedTimePortuguese: '2 minutos',
-          value: 'Complete access £25/year',
-          valuePortuguese: 'Acesso completo £25/ano'
+          value: 'Complete access £19.99/month',
+          valuePortuguese: 'Acesso completo £19.99/mês'
         },
         {
           id: 'use-mentorship',

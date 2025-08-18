@@ -222,7 +222,7 @@ const testimonials = [
     quoteEn: 'For £19.99/month, I found a Portuguese family in London. I\'ve attended 15 events this year - fado nights, pastéis de nata workshops, networking. The value is incredible.',
     rating: 5,
     cultural: 'Profissional de marketing, originária do Porto',
-    roi: '£280+ valor por £25 investidos'
+    roi: '£400+ valor por £240 investidos anualmente'
   },
   {
     name: 'João Rodrigues',
@@ -251,8 +251,8 @@ const testimonials = [
     age: 55,
     location: 'South Kensington, Londres',
     membership: 'Membro da Comunidade',
-    quote: 'Há 20 anos em Londres, o LusoTown finalmente me conectou à comunidade portuguesa. £25 por acesso a eventos premium que custam centenas? Sem dúvida o melhor valor.',
-    quoteEn: 'After 20 years in London, LusoTown finally connected me to the Portuguese community. £25 for access to premium events that cost hundreds? Absolutely the best value.',
+    quote: 'Há 20 anos em Londres, o LusoTown finalmente me conectou à comunidade portuguesa. £19.99/mês por acesso a eventos premium que custam centenas? Sem dúvida o melhor valor.',
+    quoteEn: 'After 20 years in London, LusoTown finally connected me to the Portuguese community. £19.99/month for access to premium events that cost hundreds? Absolutely the best value.',
     rating: 5,
     cultural: 'Consultor sénior, de Coimbra',
     roi: '£400+ valor em eventos e networking'
@@ -717,41 +717,35 @@ export default function Pricing() {
                 <div className="text-center">
                   <HeartIconSolid className="w-12 h-12 text-primary-600 mx-auto mb-4" />
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    {isPortuguese ? 'Planos Especiais para Grupos' : 'Special Group Plans'}
+                    {isPortuguese ? 'Planos Especiais com Desconto' : 'Special Discounted Plans'}
                   </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="bg-white rounded-xl p-6">
-                      <div className="text-3xl font-bold text-primary-600 mb-2">£20</div>
+                      <div className="text-3xl font-bold text-secondary-600 mb-2">£9.99</div>
                       <div className="text-sm text-gray-600 mb-2">
-                        {isPortuguese ? 'Grupo de 4 pessoas/ano' : 'Group of 4 people/year'}
+                        {isPortuguese ? 'Estudantes Portugueses/mês' : 'Portuguese Students/month'}
                       </div>
-                      <div className="text-xs text-green-600 font-medium">
-                        {isPortuguese ? 'Poupa £5 por pessoa!' : 'Save £5 per person!'}
-                      </div>
+                      <div className="text-xs text-green-600 font-medium">50% {isPortuguese ? 'desconto no plano Comunidade' : 'discount on Community plan'}</div>
                       <div className="text-xs text-gray-500 mt-1">
-                        {isPortuguese ? '(£25 individual vs £20 grupo)' : '(£25 individual vs £20 group)'}
+                        {isPortuguese ? '(Com comprovativo estudante)' : '(With valid student ID)'}
                       </div>
                     </div>
                     <div className="bg-white rounded-xl p-6">
-                      <div className="text-3xl font-bold text-secondary-600 mb-2">£12.50</div>
+                      <div className="text-3xl font-bold text-purple-600 mb-2">£14.99</div>
                       <div className="text-sm text-gray-600 mb-2">
-                        {isPortuguese ? 'Estudantes Portugueses' : 'Portuguese Students'}
+                        {isPortuguese ? 'Sénior (60+)/mês' : 'Senior (60+)/month'}
                       </div>
-                      <div className="text-xs text-green-600 font-medium">50% {isPortuguese ? 'desconto' : 'discount'}</div>
+                      <div className="text-xs text-green-600 font-medium">25% {isPortuguese ? 'desconto no plano Comunidade' : 'discount on Community plan'}</div>
                       <div className="text-xs text-gray-500 mt-1">
-                        {isPortuguese ? '(Com comprovativo estudante)' : '(With student proof)'}
+                        {isPortuguese ? '(Com verificação de idade)' : '(With age verification)'}
                       </div>
                     </div>
-                    <div className="bg-white rounded-xl p-6">
-                      <div className="text-3xl font-bold text-purple-600 mb-2">£17.50</div>
-                      <div className="text-sm text-gray-600 mb-2">
-                        {isPortuguese ? 'Sénior (60+)' : 'Senior (60+)'}
-                      </div>
-                      <div className="text-xs text-green-600 font-medium">30% {isPortuguese ? 'desconto' : 'discount'}</div>
-                      <div className="text-xs text-gray-500 mt-1">
-                        {isPortuguese ? '(Com comprovativo idade)' : '(With age verification)'}
-                      </div>
-                    </div>
+                  </div>
+                  <div className="mt-6 text-sm text-gray-600">
+                    {isPortuguese 
+                      ? '🇵🇹 Apoiamos estudantes e seniores da comunidade portuguesa com preços especiais'
+                      : '🇵🇹 We support Portuguese community students and seniors with special pricing'
+                    }
                   </div>
                 </div>
               </div>
@@ -768,8 +762,8 @@ export default function Pricing() {
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese ?
-                  'Com a adesão anual de £25, desbloqueia o acesso completo à comunidade portuguesa de Londres' :
-                  'With your £25 annual membership, unlock full access to London\'s Portuguese community'
+                  'Escolha o plano perfeito para si e desbloqueie o acesso à comunidade portuguesa de Londres' :
+                  'Choose the perfect plan for you and unlock access to London\'s Portuguese community'
                 }
               </p>
             </div>
@@ -779,11 +773,24 @@ export default function Pricing() {
                 <div className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-8 py-6">
                   <div className="text-center">
                     <h3 className="text-2xl font-bold mb-2">
-                      {isPortuguese ? 'Adesão Anual LusoTown' : 'LusoTown Annual Membership'}
+                      {isPortuguese ? 'Planos de Adesão LusoTown' : 'LusoTown Membership Plans'}
                     </h3>
-                    <div className="text-4xl font-bold">£25 / {isPortuguese ? 'ano' : 'year'}</div>
+                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4 text-2xl font-bold">
+                      <div className="text-center">
+                        <div className="text-white/80 text-sm">FREE</div>
+                        <div>£0/mês</div>
+                      </div>
+                      <div className="text-center bg-white/20 rounded-lg px-4 py-2">
+                        <div className="text-yellow-200 text-sm">POPULAR</div>
+                        <div>£19.99/mês</div>
+                      </div>
+                      <div className="text-center">
+                        <div className="text-white/80 text-sm">VIP</div>
+                        <div>£39.99/mês</div>
+                      </div>
+                    </div>
                     <p className="text-lg opacity-90 mt-2">
-                      {isPortuguese ? 'Acesso completo à comunidade portuguesa' : 'Full access to Portuguese community'}
+                      {isPortuguese ? 'Acesso flexível à comunidade portuguesa' : 'Flexible access to Portuguese community'}
                     </p>
                   </div>
                 </div>
@@ -907,8 +914,8 @@ export default function Pricing() {
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese ?
-                  'Por apenas £25/ano, obtenha acesso a uma comunidade que vale centenas de libras em experiências e ligações' :
-                  'For just £25/year, get access to a community worth hundreds of pounds in experiences and connections'
+                  'Por apenas £19.99/mês, obtenha acesso a uma comunidade que vale centenas de libras em experiências e ligações' :
+                  'For just £19.99/month, get access to a community worth hundreds of pounds in experiences and connections'
                 }
               </p>
             </div>
@@ -943,7 +950,7 @@ export default function Pricing() {
                       </div>
                       <div className="border-t pt-2 flex justify-between text-lg font-bold">
                         <span>{isPortuguese ? 'Total individual:' : 'Individual total:'}</span>
-                        <span className="text-red-600">£340+</span>
+                        <span className="text-red-600">£340+/ano</span>
                       </div>
                     </div>
                   </div>
@@ -969,16 +976,16 @@ export default function Pricing() {
                         <span className="font-medium text-green-600">✓</span>
                       </div>
                       <div className="border-t pt-2 flex justify-between text-lg font-bold">
-                        <span>{isPortuguese ? 'Custo anual:' : 'Annual cost:'}</span>
-                        <span className="text-green-600">£25</span>
+                        <span>{isPortuguese ? 'Custo anual (Comunidade):' : 'Annual cost (Community):'}</span>
+                        <span className="text-green-600">£239.88</span>
                       </div>
                     </div>
                     <div className="mt-4 p-4 bg-green-100 rounded-lg text-center">
                       <div className="text-2xl font-bold text-green-700">
-                        {isPortuguese ? 'Poupança: £315+' : 'Savings: £315+'}
+                        {isPortuguese ? 'Poupança: £100+' : 'Savings: £100+'}
                       </div>
                       <div className="text-sm text-green-600">
-                        {isPortuguese ? '(Retorno de 1260%)' : '(1260% return)'}
+                        {isPortuguese ? '(Retorno de 42%)' : '(42% return)'}
                       </div>
                     </div>
                   </div>
@@ -1187,8 +1194,8 @@ export default function Pricing() {
               </h2>
               <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
                 {isPortuguese ?
-                  'Uma adesão anual simples. Uma comunidade para toda a vida. Invista na preservação da cultura portuguesa em Londres.' :
-                  'One simple annual membership. A community for life. Invest in preserving Portuguese culture in London.'
+                  'Planos de adesão flexíveis. Uma comunidade para toda a vida. Invista na preservação da cultura portuguesa em Londres.' :
+                  'Flexible membership plans. A community for life. Invest in preserving Portuguese culture in London.'
                 }
               </p>
 
