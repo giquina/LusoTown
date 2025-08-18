@@ -7,7 +7,6 @@ import { useSubscription } from '@/context/SubscriptionContext'
 import { authService } from '@/lib/auth'
 import ReferralDashboard from '@/components/ReferralDashboard'
 import SubscriptionGate from '@/components/SubscriptionGate'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Users, Gift, TrendingUp } from 'lucide-react'
 
@@ -24,8 +23,7 @@ function ReferralsPageInner() {
   if (!user) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <Header />
-        <main className="container mx-auto px-4 py-8">
+        <main className="container mx-auto px-4 pt-24 pb-8">
           <div className="max-w-2xl mx-auto text-center">
             <div className="bg-white rounded-xl shadow-lg p-8">
               <Users className="h-16 w-16 text-red-600 mx-auto mb-4" />
@@ -54,9 +52,7 @@ function ReferralsPageInner() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
-      
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 pt-24 pb-8">
         {/* Hero Section */}
         <div className="max-w-4xl mx-auto mb-8">
           <div className="bg-gradient-to-r from-red-600 to-green-600 text-white rounded-xl p-8 text-center">

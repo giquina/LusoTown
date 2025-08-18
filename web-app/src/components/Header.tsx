@@ -329,9 +329,17 @@ export default function Header() {
                             <li key={link.name}>
                               <a
                                 href={link.href}
-                                className="block text-sm text-gray-600 hover:text-premium-600 hover:bg-premium-50 px-2 py-1 rounded transition-colors duration-200"
+                                className="flex items-center gap-2 text-sm text-gray-600 hover:text-premium-600 hover:bg-premium-50 px-2 py-1 rounded transition-colors duration-200"
                               >
-                                {link.name}
+                                <span>{link.name}</span>
+                                {link.href === "/matches" && (
+                                  <span
+                                    className="ml-1 inline-block text-[10px] leading-4 font-semibold uppercase bg-secondary-100 text-secondary-700 px-2 py-0.5 rounded-full border border-secondary-200"
+                                    aria-label="New feature"
+                                  >
+                                    New
+                                  </span>
+                                )}
                               </a>
                             </li>
                           ))}
@@ -650,10 +658,16 @@ export default function Header() {
                     <h3 className="text-lg font-semibold text-secondary-600 mb-3">Services</h3>
                     <a
                       href="/matches"
-                      className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center"
+                      className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center gap-2"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Find Your Match
+                      <span>Find Your Match</span>
+                      <span
+                        className="ml-1 inline-block text-[10px] leading-4 font-semibold uppercase bg-secondary-100 text-secondary-700 px-2 py-0.5 rounded-full border border-secondary-200"
+                        aria-label="New feature"
+                      >
+                        New
+                      </span>
                     </a>
                     <a
                       href="/live"
