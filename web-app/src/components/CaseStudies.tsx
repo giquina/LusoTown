@@ -8,7 +8,7 @@ import {
   CalendarDaysIcon, 
   UserGroupIcon, 
   HomeIcon,
-  BuildingOfficeIcon,
+  BuildingOffice2Icon,
   SparklesIcon,
   AcademicCapIcon,
   PaintBrushIcon,
@@ -169,7 +169,7 @@ const allCaseStudies: CaseStudy[] = [
       joint: '"TechVerde representa nossa visão: tecnologia portuguesa-brasileira mudando o mundo. Estamos apenas começando."'
     },
     currentStatus: 'Empresa expandiu para escritório em Canary Wharf, planeja abertura em Lisboa e São Paulo em 2025.',
-    icon: BuildingOfficeIcon
+    icon: BuildingOffice2Icon
   },
   {
     id: 'pt-3',
@@ -326,7 +326,7 @@ const allCaseStudies: CaseStudy[] = [
       joint: '"Our partnership works because we share values but bring different perspectives. We\'re proving Portuguese speakers can lead innovation in London\'s tech scene."'
     },
     currentStatus: 'Verde Digital has secured £500K investment for expansion across Europe. They\'re mentoring 10 Portuguese-speaking entrepreneurs and planning to open an office in Lisbon by 2025.',
-    icon: BuildingOfficeIcon
+    icon: BuildingOffice2Icon
   },
   {
     id: '3',

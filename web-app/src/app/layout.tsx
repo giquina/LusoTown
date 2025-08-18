@@ -180,9 +180,9 @@ export default function RootLayout({
                   <NetworkingProvider>
                     <SubscriptionProvider>
                       <NotificationProvider>
-                        <WaitingListProvider>
-                          <AuthPopupProvider>
-                            <PlatformIntegrationProvider>
+                        <AuthPopupProvider>
+                          <PlatformIntegrationProvider>
+                            <WaitingListProvider>
                             <ComponentErrorBoundary componentName="User Type Selection">
                               <UserTypeSelection />
                             </ComponentErrorBoundary>
@@ -212,9 +212,9 @@ export default function RootLayout({
                             <ComponentErrorBoundary componentName="Auth Intent Handler">
                               <AuthIntentHandler />
                             </ComponentErrorBoundary>
-                            </PlatformIntegrationProvider>
-                          </AuthPopupProvider>
-                        </WaitingListProvider>
+                            </WaitingListProvider>
+                          </PlatformIntegrationProvider>
+                        </AuthPopupProvider>
                       </NotificationProvider>
                     </SubscriptionProvider>
                   </NetworkingProvider>

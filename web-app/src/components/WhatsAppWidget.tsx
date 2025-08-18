@@ -29,8 +29,6 @@ const WhatsAppWidget: React.FC = () => {
   const [showWidget, setShowWidget] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
-  const [customMessage, setCustomMessage] = useState("");
-  const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const { language } = useLanguage();
 
@@ -43,33 +41,15 @@ const WhatsAppWidget: React.FC = () => {
       en: [
         {
           message:
-            "Olá! 👋 Planning a trip to London? Need a Portuguese-speaking guide or driver?",
+            "Olá! 👋 Welcome to LusoTown. Need help with London Tours or Private Transport? I'm your guide. You can book a personal driver or security driver, explore tours, or ask how to use the site. If you need support at any time, email support@lusotown.com.",
           options: [
-            "Yes, I'm visiting London!",
-            "I live here, show me events",
-            "Just browsing",
+            "Book a personal driver",
+            "Book a security driver",
+            "See all London tours",
+            "How do I use the site?",
+            "Email support",
           ],
           icon: <Heart className="w-4 h-4 text-green-600" />,
-        },
-        {
-          message:
-            "Perfect! 🇬🇧 We have Portuguese-speaking drivers & guides ready to show you London. What interests you most?",
-          options: [
-            "Personal driver for my trip",
-            "Guided London tour", 
-            "Both driver & guide",
-          ],
-          icon: <Calendar className="w-4 h-4 text-action-600" />,
-        },
-        {
-          message:
-            "Great! 🎉 You're local. Join our Portuguese community events across London:",
-          options: [
-            "Show me upcoming events",
-            "Cultural & social meetups", 
-            "Business networking",
-          ],
-          icon: <Users className="w-4 h-4 text-secondary-600" />,
         },
         {
           message:
@@ -141,33 +121,15 @@ const WhatsAppWidget: React.FC = () => {
       pt: [
         {
           message:
-            "Olá! 👋 Vens visitar Londres? Precisas de guia ou motorista que fale português?",
+            "Olá! 👋 Bem-vindo à LusoTown. Precisas de ajuda com Tours em Londres ou Transporte Privado? Sou o teu guia. Podes reservar motorista pessoal ou de segurança, explorar tours, ou aprender a usar o site. Se precisares de apoio, envia email para support@lusotown.com.",
           options: [
-            "Sim, vou visitar Londres!",
-            "Vivo aqui, mostra eventos",
-            "Só estou a ver",
+            "Reservar motorista pessoal",
+            "Reservar motorista de segurança",
+            "Ver todos os tours de Londres",
+            "Como usar o site?",
+            "Email de apoio",
           ],
           icon: <Heart className="w-4 h-4 text-green-600" />,
-        },
-        {
-          message:
-            "Perfeito! 🇬🇧 Temos motoristas e guias portugueses prontos para te mostrar Londres. O que te interessa mais?",
-          options: [
-            "Motorista pessoal para a viagem",
-            "Tour guiado de Londres", 
-            "Motorista e guia juntos",
-          ],
-          icon: <Calendar className="w-4 h-4 text-action-600" />,
-        },
-        {
-          message:
-            "Ótimo! 🎉 És local. Junta-te aos eventos da comunidade portuguesa em Londres:",
-          options: [
-            "Mostrar próximos eventos",
-            "Encontros culturais e sociais", 
-            "Networking empresarial",
-          ],
-          icon: <Users className="w-4 h-4 text-secondary-600" />,
         },
         {
           message:
@@ -285,47 +247,6 @@ const WhatsAppWidget: React.FC = () => {
     setMessages((prev) => [...prev, newMessage]);
   };
 
-  const handleCustomMessage = () => {
-    if (!customMessage.trim()) return;
-    
-    setHasInteracted(true);
-    setIsTyping(true);
-
-    // Add user message
-    const userMessage: Message = {
-      id: Date.now(),
-      text: customMessage,
-      isBot: false,
-      timestamp: new Date(),
-    };
-    setMessages((prev) => [...prev, userMessage]);
-    setCustomMessage("");
-
-    // Send message to WhatsApp (your mobile)
-    const whatsappNumber = "+447407655203";
-    const encodedMessage = encodeURIComponent(`New message from LusoTown website:\n\n"${customMessage}"\n\n--- Sent via LusoTown Chat Widget ---`);
-    
-    // Simulate bot response
-    setTimeout(() => {
-      const botResponse: Message = {
-        id: Date.now() + 1,
-        text: isPortuguese
-          ? `Obrigado pela tua mensagem! 📱 Vou enviar isto para o WhatsApp do nosso suporte. Também podes contactar-nos diretamente: support@lusotown.com`
-          : `Thank you for your message! 📱 I'll send this to our support WhatsApp. You can also contact us directly: support@lusotown.com`,
-        isBot: true,
-        timestamp: new Date(),
-        icon: <MessageCircle className="w-4 h-4 text-green-600" />,
-      };
-      setMessages((prev) => [...prev, botResponse]);
-      setIsTyping(false);
-      
-      // Open WhatsApp with the message
-      setTimeout(() => {
-        window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
-      }, 1000);
-    }, 1500);
-  };
-
   const handleOptionClick = (option: string) => {
     setHasInteracted(true);
 
@@ -338,22 +259,20 @@ const WhatsAppWidget: React.FC = () => {
     };
     setMessages((prev) => [...prev, userMessage]);
 
-    // Fast-path: primary actions for tourism/transport/events
+    // Fast-path: primary actions for transport/tours/support
     const opt = option.toLowerCase();
     if (
-      opt.includes("personal driver") ||
-      opt.includes("motorista pessoal") ||
-      opt.includes("book a driver") ||
-      opt.includes("reservar motorista") ||
-      opt.includes("both driver & guide") ||
-      opt.includes("motorista e guia juntos")
+      opt.includes("book a personal driver") ||
+      opt.includes("reservar motorista pessoal") ||
+      opt.includes("get a quote for private transport") ||
+      opt.includes("pedir orçamento transporte privado")
     ) {
       setTimeout(() => {
         const msg: Message = {
           id: Date.now() + 1,
           text: isPortuguese
-            ? "Excelente! 🚗 A abrir a página de reservas de motorista…"
-            : "Excellent! 🚗 Opening driver booking page…",
+            ? "Abrindo a página de Transporte Privado…"
+            : "Opening the Private Transport page…",
           isBot: true,
           timestamp: new Date(),
           icon: <Shield className="w-4 h-4 text-secondary-600" />,
@@ -385,47 +304,21 @@ const WhatsAppWidget: React.FC = () => {
     }
 
     if (
-      opt.includes("guided london tour") ||
-      opt.includes("tour guiado de londres") ||
-      opt.includes("london tour") ||
-      opt.includes("tour de londres")
+      opt.includes("see all london tours") ||
+      opt.includes("ver todos os tours de londres")
     ) {
       setTimeout(() => {
         const msg: Message = {
           id: Date.now() + 1,
           text: isPortuguese
-            ? "Perfeito! 🗺️ A mostrar os nossos tours guiados em português…"
-            : "Perfect! 🗺️ Showing our Portuguese-guided tours…",
+            ? "A mostrar Tours de Londres…"
+            : "Showing London Tours…",
           isBot: true,
           timestamp: new Date(),
           icon: <Calendar className="w-4 h-4 text-action-600" />,
         };
         setMessages((prev) => [...prev, msg]);
-        setTimeout(() => window.open("/tours", "_blank"), 1200);
-      }, 800);
-      return;
-    }
-
-    if (
-      opt.includes("show me upcoming events") ||
-      opt.includes("mostrar próximos eventos") ||
-      opt.includes("see all events") ||
-      opt.includes("ver todos os eventos") ||
-      opt.includes("cultural & social meetups") ||
-      opt.includes("encontros culturais e sociais")
-    ) {
-      setTimeout(() => {
-        const msg: Message = {
-          id: Date.now() + 1,
-          text: isPortuguese
-            ? "Óptimo! 🎉 A mostrar eventos da comunidade portuguesa…"
-            : "Great! 🎉 Showing Portuguese community events…",
-          isBot: true,
-          timestamp: new Date(),
-          icon: <Calendar className="w-4 h-4 text-action-600" />,
-        };
-        setMessages((prev) => [...prev, msg]);
-        setTimeout(() => window.open("/events", "_blank"), 1200);
+        setTimeout(() => window.open("/london-tours#tours", "_blank"), 1200);
       }, 800);
       return;
     }
@@ -544,17 +437,13 @@ const WhatsAppWidget: React.FC = () => {
     }
 
     // Handle "browsing" responses
-    if (
-      opt.includes("just browsing") || 
-      opt.includes("só estou a ver") || 
-      opt.includes("browsing")
-    ) {
+    if (option.includes("browsing") || option.includes("Só estou a ver")) {
       setTimeout(() => {
         const laterMessage: Message = {
           id: Date.now() + 1,
           text: isPortuguese
-            ? "Sem problema! 😊 Se mudares de ideias, estou aqui. Também podes escrever-me uma mensagem directa!"
-            : "No problem! 😊 If you change your mind, I'm here. You can also type me a direct message!",
+            ? "Sem problema! 😊 Estarei aqui sempre que estiveres pronto para explorar a nossa comunidade portuguesa global. Sente-te à vontade para navegar no site!"
+            : "No worries at all! 😊 I'll be here whenever you're ready to explore our amazing global Portuguese community. Feel free to browse our website!",
           isBot: true,
           timestamp: new Date(),
           icon: <Heart className="w-4 h-4 text-green-600" />,
@@ -570,42 +459,51 @@ const WhatsAppWidget: React.FC = () => {
         conversationFlow[language as keyof typeof conversationFlow];
       let nextStepIndex = 1; // Default to first step after intro
 
-      // Route based on user selection in new tourism-focused flow
+      // Route based on user selection
       if (
-        opt.includes("yes, i'm visiting london") ||
-        opt.includes("sim, vou visitar londres") ||
-        opt.includes("visiting london") ||
-        opt.includes("visitar londres")
+        option.includes("organize") ||
+        option.includes("organizar") ||
+        option.includes("create events") ||
+        option.includes("criar eventos")
       ) {
-        nextStepIndex = 1; // Tourism services path
+        nextStepIndex = 1; // Organizer path
       } else if (
-        opt.includes("i live here") ||
-        opt.includes("vivo aqui") ||
-        opt.includes("show me events") ||
-        opt.includes("mostra eventos")
+        option.includes("social events") ||
+        option.includes("eventos sociais") ||
+        option.includes("find social") ||
+        option.includes("social experiences") ||
+        option.includes("experiências sociais")
       ) {
-        nextStepIndex = 2; // Local events path
+        nextStepIndex = 2; // Social events path
       } else if (
-        opt.includes("business networking") ||
-        opt.includes("networking empresarial")
+        option.includes("business networking") ||
+        option.includes("networking empresarial") ||
+        option.includes("Business") ||
+        option.includes("Empresarial")
       ) {
-        // Business networking - direct to business networking page
-        setTimeout(() => {
-          const businessMsg: Message = {
-            id: Date.now() + 1,
-            text: isPortuguese
-              ? "Excelente! 💼 A mostrar eventos de networking empresarial português…"
-              : "Excellent! 💼 Showing Portuguese business networking events…",
-            isBot: true,
-            timestamp: new Date(),
-            icon: <Users className="w-4 h-4 text-premium-600" />,
-          };
-          setMessages((prev) => [...prev, businessMsg]);
-          setTimeout(() => window.open("/business-networking", "_blank"), 1200);
-        }, 800);
-        return;
+        nextStepIndex = 3; // Business networking path
+      } else if (
+        option.includes("Tell me about") ||
+        option.includes("Conta-me sobre") ||
+        option.includes("Platform features") ||
+        option.includes("Funcionalidades")
+      ) {
+        nextStepIndex = 4; // Platform info path
+      } else if (currentStep === 1 || currentStep === 2 || currentStep === 3) {
+        // Continue with specific detailed flows
+        nextStepIndex = 5; // Detailed info for organizers/social/business
+      } else if (currentStep === 4) {
+        // From platform info, route based on choice
+        if (
+          option.includes("create events") ||
+          option.includes("criar eventos")
+        ) {
+          nextStepIndex = 5; // Creator details
+        } else {
+          nextStepIndex = 6; // Member details
+        }
       } else {
-        // Default progression for remaining steps
+        // Default progression
         nextStepIndex = Math.min(currentStep + 1, currentFlow.length - 1);
       }
 
@@ -749,61 +647,18 @@ const WhatsAppWidget: React.FC = () => {
                 </div>
               </div>
             ))}
-            
-            {/* Typing Indicator */}
-            {isTyping && (
-              <div className="flex justify-start">
-                <div className="bg-white text-gray-800 rounded-xl rounded-bl-md shadow-sm border border-gray-200 p-2.5 max-w-[90%]">
-                  <div className="flex items-center space-x-2">
-                    <MessageCircle className="w-4 h-4 text-green-600" />
-                    <span className="text-xs font-medium text-gray-600">LusoTown Helper</span>
-                  </div>
-                  <div className="flex items-center space-x-1 mt-2">
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.1s" }}></div>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></div>
-                  </div>
-                </div>
-              </div>
-            )}
-            
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Footer with Message Input */}
-          <div className="border-t border-gray-200 bg-white rounded-b-xl">
-            {/* Message Input */}
-            <div className="p-3">
-              <div className="flex items-center space-x-2">
-                <input
-                  type="text"
-                  value={customMessage}
-                  onChange={(e) => setCustomMessage(e.target.value)}
-                  onKeyPress={(e) => e.key === 'Enter' && handleCustomMessage()}
-                  placeholder={isPortuguese ? "Escreve a tua mensagem..." : "Type your message..."}
-                  className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  disabled={isTyping}
-                />
-                <button
-                  onClick={handleCustomMessage}
-                  disabled={!customMessage.trim() || isTyping}
-                  className="px-4 py-2 bg-gradient-to-r from-primary-600 to-action-600 text-white rounded-lg hover:from-primary-700 hover:to-action-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed text-sm font-medium min-w-[60px]"
-                >
-                  {isTyping ? "..." : (isPortuguese ? "Enviar" : "Send")}
-                </button>
-              </div>
-            </div>
-            
-            {/* Help Text */}
-            <div className="px-3 pb-3">
-              <div className="flex items-center justify-center space-x-2 text-gray-500 text-xs">
-                <MessageCircle className="w-4 h-4" />
-                <span>
-                  {isPortuguese
-                    ? "Escolhe opções acima ou escreve uma mensagem"
-                    : "Choose options above or type a message"}
-                </span>
-              </div>
+          {/* Footer */}
+          <div className="p-3 border-t border-gray-200 bg-white rounded-b-xl">
+            <div className="flex items-center justify-center space-x-2 text-gray-500 text-xs">
+              <MessageCircle className="w-4 h-4" />
+              <span>
+                {isPortuguese
+                  ? "Clica nas opções acima para continuar!"
+                  : "Click the options above to continue chatting!"}
+              </span>
             </div>
           </div>
         </div>

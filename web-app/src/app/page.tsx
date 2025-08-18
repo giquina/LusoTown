@@ -2,27 +2,30 @@
 
 import type { Metadata } from 'next'
 import { useLanguage } from '@/context/LanguageContext'
-import ContextTestComponent from '@/components/ContextTestComponent'
+import dynamic from 'next/dynamic'
 import Hero from '@/components/Hero'
 import Features from '@/components/Features'
-import HowItWorks from '@/components/HowItWorks'
-import HowConnectionsWork from '@/components/HowConnectionsWork'
-import AboutLusoTown from '@/components/AboutLusoTown'
-import PortugueseSpeakersSection from '@/components/PortugueseSpeakersSection'
-import EventsShowcase from '@/components/EventsShowcase'
-import GroupsShowcase from '@/components/GroupsShowcase'
-import GroupEventsSection from '@/components/GroupEventsSection'
-import SuccessStories from '@/components/SuccessStories'
-import CaseStudies from '@/components/CaseStudies'
-import AppDownloadSection from '@/components/AppDownloadSection'
-import TestimonialsNew from '@/components/TestimonialsNew'
-import CustomToursSection from '@/components/CustomToursSection'
-import HostWithUsSection from '@/components/HostWithUsSection'
-import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
-import ProgressiveUserJourney from '@/components/ProgressiveUserJourney'
-import CrossPlatformEngagementTriggers from '@/components/CrossPlatformEngagementTriggers'
-import RetentionGrowthMechanics from '@/components/RetentionGrowthMechanics'
+
+// Lazy load components with loading placeholders for better performance
+const ContextTestComponent = dynamic(() => import('@/components/ContextTestComponent'), { ssr: false })
+const HowItWorks = dynamic(() => import('@/components/HowItWorks'))
+const HowConnectionsWork = dynamic(() => import('@/components/HowConnectionsWork'))
+const AboutLusoTown = dynamic(() => import('@/components/AboutLusoTown'))
+const PortugueseSpeakersSection = dynamic(() => import('@/components/PortugueseSpeakersSection'))
+const EventsShowcase = dynamic(() => import('@/components/EventsShowcase'))
+const GroupsShowcase = dynamic(() => import('@/components/GroupsShowcase'))
+const GroupEventsSection = dynamic(() => import('@/components/GroupEventsSection'))
+const SuccessStories = dynamic(() => import('@/components/SuccessStories'))
+const CaseStudies = dynamic(() => import('@/components/CaseStudies'))
+const AppDownloadSection = dynamic(() => import('@/components/AppDownloadSection'))
+const TestimonialsNew = dynamic(() => import('@/components/TestimonialsNew'))
+const CustomToursSection = dynamic(() => import('@/components/CustomToursSection'))
+const HostWithUsSection = dynamic(() => import('@/components/HostWithUsSection'))
+const CTA = dynamic(() => import('@/components/CTA'))
+const ProgressiveUserJourney = dynamic(() => import('@/components/ProgressiveUserJourney'))
+const CrossPlatformEngagementTriggers = dynamic(() => import('@/components/CrossPlatformEngagementTriggers'))
+const RetentionGrowthMechanics = dynamic(() => import('@/components/RetentionGrowthMechanics'))
 import { 
   ChatBubbleLeftRightIcon, 
   HeartIcon, 

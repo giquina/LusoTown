@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { BuildingOfficeIcon, MapPinIcon, PhoneIcon, GlobeAltIcon, StarIcon, ClockIcon } from '@heroicons/react/24/outline'
+import { BuildingOffice2Icon, MapPinIcon, PhoneIcon, GlobeAltIcon, StarIcon, ClockIcon } from '@heroicons/react/24/outline'
 import { Users, Crown, Heart, Coffee, Utensils, ShoppingBag, Wrench, Home, Briefcase } from 'lucide-react'
 import { useState } from 'react'
 
@@ -315,7 +315,7 @@ const portugueseBusinesses: PortugueseBusiness[] = [
 ]
 
 const BUSINESS_CATEGORIES = [
-  { id: 'all', icon: BuildingOfficeIcon, label: { en: 'All Businesses', pt: 'Todos os Negócios' } },
+  { id: 'all', icon: BuildingOffice2Icon, label: { en: 'All Businesses', pt: 'Todos os Negócios' } },
   { id: 'restaurant', icon: Utensils, label: { en: 'Restaurants', pt: 'Restaurantes' } },
   { id: 'bakery', icon: Coffee, label: { en: 'Bakeries', pt: 'Pastelarias' } },
   { id: 'grocery', icon: ShoppingBag, label: { en: 'Groceries', pt: 'Mercearias' } },
@@ -342,7 +342,7 @@ export default function PortugueseBusinessDirectory({ isPortuguese, onContactBus
 
   const getCategoryIcon = (category: string) => {
     const categoryData = BUSINESS_CATEGORIES.find(cat => cat.id === category)
-    return categoryData ? categoryData.icon : BuildingOfficeIcon
+    return categoryData ? categoryData.icon : BuildingOffice2Icon
   }
 
   const getCategoryColor = (category: string) => {
@@ -371,7 +371,7 @@ export default function PortugueseBusinessDirectory({ isPortuguese, onContactBus
             className="mb-6"
           >
             <span className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-secondary-100 via-accent-50 to-premium-100 border border-secondary-200">
-              <BuildingOfficeIcon className="w-4 h-4 mr-2" />
+              <BuildingOffice2Icon className="w-4 h-4 mr-2" />
               {isPortuguese ? 'Negócios Portugueses Autênticos' : 'Authentic Portuguese Businesses'}
             </span>
           </motion.div>
@@ -572,7 +572,7 @@ export default function PortugueseBusinessDirectory({ isPortuguese, onContactBus
           className="text-center mt-16"
         >
           <div className="bg-gradient-to-r from-secondary-50 via-accent-50 to-premium-50 rounded-2xl p-8 border border-secondary-200">
-            <BuildingOfficeIcon className="w-16 h-16 mx-auto mb-4 text-secondary-500" />
+            <BuildingOffice2Icon className="w-16 h-16 mx-auto mb-4 text-secondary-500" />
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               {isPortuguese ? 'Adicione o Seu Negócio' : 'Add Your Business'}
             </h3>

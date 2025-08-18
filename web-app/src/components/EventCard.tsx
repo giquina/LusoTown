@@ -128,8 +128,8 @@ export default function EventCard({
               <UsersIcon className="w-4 h-4 mr-2 text-primary-500" />
               {event.attendees}/{event.maxAttendees} attending
             </div>
-            <div className="flex items-center text-sm text-orange-600 font-medium">
-              <SparklesIcon className="w-4 h-4 mr-2 text-orange-500" />
+            <div className="flex items-center text-sm text-coral-600 font-medium">
+              <SparklesIcon className="w-4 h-4 mr-2 text-coral-500" />
               {event.ageRestriction}
             </div>
           </div>
@@ -139,7 +139,7 @@ export default function EventCard({
             {bookingStatus.status === 'available' ? (
               <>
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-xs text-green-600 font-medium flex items-center">
+                  <span className="text-xs text-secondary-600 font-medium flex items-center">
                     <CheckCircleIcon className="w-3 h-3 mr-1" />
                     {statusMessages.primary}
                   </span>
@@ -149,12 +149,12 @@ export default function EventCard({
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2">
                   <div 
-                    className="bg-gradient-to-r from-green-500 to-emerald-500 h-2 rounded-full transition-all duration-300"
+                    className="bg-gradient-to-r from-secondary-500 to-secondary-600 h-2 rounded-full transition-all duration-300"
                     style={{ width: `${(event.attendees / event.maxAttendees) * 100}%` }}
                   ></div>
                 </div>
                 {event.specialOffer && (
-                  <div className="mt-2 text-xs text-amber-600 font-medium bg-amber-50 px-2 py-1 rounded-lg border border-amber-200">
+                  <div className="mt-2 text-xs text-accent-600 font-medium bg-accent-50 px-2 py-1 rounded-lg border border-accent-200">
                     🎁 {event.specialOffer}
                   </div>
                 )}
@@ -162,7 +162,7 @@ export default function EventCard({
             ) : (
               <>
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-xs text-red-600 font-medium">
+                  <span className="text-xs text-action-600 font-medium">
                     {statusMessages.primary}
                   </span>
                   <span className="text-xs font-medium text-gray-500">
@@ -176,7 +176,7 @@ export default function EventCard({
                   ></div>
                 </div>
                 {/* Waiting List Info */}
-                <div className="mt-2 text-xs text-orange-600 font-medium bg-orange-50 px-2 py-1 rounded-lg border border-orange-200">
+                <div className="mt-2 text-xs text-coral-600 font-medium bg-coral-50 px-2 py-1 rounded-lg border border-coral-200">
                   <UsersIcon className="w-3 h-3 inline mr-1" />
                   {statusMessages.secondary}
                 </div>

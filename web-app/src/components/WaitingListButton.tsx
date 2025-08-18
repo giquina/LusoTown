@@ -47,7 +47,7 @@ export default function WaitingListButton({
   if (isJoined) {
     return (
       <>
-        <div className={`flex items-center justify-center gap-2 bg-green-100 text-green-800 py-2 px-4 rounded-lg font-medium ${className}`}>
+        <div className={`flex items-center justify-center gap-2 bg-secondary-100 text-secondary-800 py-3 px-4 rounded-lg font-medium min-h-[44px] shadow-xl ${className}`}>
           <CheckCircleIcon className="w-4 h-4" />
           <span className="text-sm">
             {isPortuguese ? 'Na Lista de Espera' : 'On Waiting List'}
@@ -71,8 +71,8 @@ export default function WaitingListButton({
               onClick={(e) => e.stopPropagation()}
             >
               <div className="text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <CheckCircleIcon className="w-8 h-8 text-green-600" />
+                <div className="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CheckCircleIcon className="w-8 h-8 text-secondary-600" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {isPortuguese ? 'Adicionado à Lista de Espera!' : 'Added to Waiting List!'}
@@ -91,7 +91,7 @@ export default function WaitingListButton({
                 )}
                 <button
                   onClick={() => setShowModal(false)}
-                  className="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-2 px-4 rounded-lg font-medium hover:from-primary-700 hover:to-secondary-700 transition-all duration-200"
+                  className="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-3 px-4 rounded-lg font-medium hover:from-primary-700 hover:to-secondary-700 transition-all duration-200 min-h-[44px] shadow-xl hover:shadow-2xl"
                 >
                   {isPortuguese ? 'Entendido' : 'Got it'}
                 </button>
@@ -107,7 +107,7 @@ export default function WaitingListButton({
     <button
       onClick={handleJoinWaitingList}
       disabled={isLoading}
-      className={`bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-2 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed ${className}`}
+      className={`bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed min-h-[44px] shadow-xl hover:shadow-2xl ${className}`}
     >
       {isLoading ? (
         <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />

@@ -9,7 +9,7 @@ import {
   UserGroupIcon,
   CheckCircleIcon,
   ArrowRightIcon,
-  BuildingOfficeIcon,
+  BuildingOffice2Icon,
   HeartIcon,
   SparklesIcon
 } from '@heroicons/react/24/outline'
@@ -212,7 +212,7 @@ export default function MentorshipProgramsSection() {
                           {(program.industries || program.pairings || program.skills)?.map((item, itemIndex) => (
                             <div key={itemIndex} className="bg-white/70 rounded-2xl p-4 shadow-lg">
                               <div className="flex items-center gap-3">
-                                {program.id === 'professional' && <BuildingOfficeIcon className="w-5 h-5 text-secondary-600 flex-shrink-0" />}
+                                {program.id === 'professional' && <BuildingOffice2Icon className="w-5 h-5 text-secondary-600 flex-shrink-0" />}
                                 {program.id === 'language' && <HeartIcon className="w-5 h-5 text-accent-600 flex-shrink-0" />}
                                 {program.id === 'cultural' && <SparklesIcon className="w-5 h-5 text-action-600 flex-shrink-0" />}
                                 <span className="text-gray-800 font-medium text-sm">{item}</span>

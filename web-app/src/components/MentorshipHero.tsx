@@ -14,7 +14,7 @@ export default function MentorshipHero() {
   const { t } = useLanguage()
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-secondary-50 via-white to-accent-50 overflow-hidden">
+    <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
       {/* Portuguese Cultural Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 right-20 w-40 h-40 bg-gradient-to-br from-secondary-200/40 via-accent-100/30 to-coral-100/30 rounded-full opacity-60 animate-pulse" />
@@ -28,48 +28,59 @@ export default function MentorshipHero() {
         <div className="absolute bottom-40 right-10 w-12 h-12 border-2 border-accent-200/30 rotate-12 opacity-25" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
-        <div className="max-w-7xl mx-auto">
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=1080&fit=crop&auto=format')] bg-cover bg-center opacity-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-900/10 via-transparent to-secondary-900/10"></div>
+      <div className="relative container-width py-16 lg:py-24">
+        <div className="text-center max-w-4xl mx-auto">
           {/* Hero Content */}
-          <div className="text-center mb-16">
-            {/* Portuguese Badge */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-secondary-50/90 via-accent-50/70 to-coral-50/70 border border-secondary-200/50 rounded-3xl px-8 py-4 shadow-xl mb-8 backdrop-blur-sm"
+              className="mb-6"
             >
-              <div className="flex items-center gap-3">
-                <div className="w-3 h-3 rounded-full bg-gradient-to-r from-green-500 to-red-500 animate-pulse shadow-sm"></div>
-                <span className="text-sm font-bold bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent">
-                  {t('mentorship.hero.badge', 'Mentoria Comunitária • Community Mentorship')}
+              <span className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-primary-100 via-secondary-50 to-accent-100 border border-primary-200 shadow-lg">
+                <HeartIcon className="w-4 h-4 mr-2 text-secondary-600" />
+                <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent font-bold">
+                  {t('mentorship.hero.badge', 'Mentoria Comunitária Portuguesa')}
                 </span>
-              </div>
-              <HeartIcon className="w-4 h-4 text-action-500 animate-pulse" />
+              </span>
             </motion.div>
 
-            {/* Main Title */}
-            <motion.h1 
-              initial={{ opacity: 0, y: 30 }}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-8 leading-tight"
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-4xl lg:text-6xl font-black text-neutral-900 mb-6 leading-tight"
             >
-              {t('mentorship.hero.title', 'Portuguese Community')}
-              <br />
-              <span className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent">
-                {t('mentorship.hero.title.highlight', 'Mentorship Network')}
+              <span className="hidden sm:block">
+                Conecte-se com mentores
+                <br />
+                <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
+                  portugueses experientes
+                </span>
+              </span>
+              <span className="sm:hidden">
+                Mentoria
+                <br />
+                <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
+                  Portuguesa
+                </span>
               </span>
             </motion.h1>
 
-            {/* Subtitle */}
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl sm:text-2xl text-gray-700 mb-8 font-medium max-w-4xl mx-auto leading-relaxed"
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-xl text-neutral-600 mb-8 max-w-3xl mx-auto"
             >
-              {t('mentorship.hero.subtitle', 'Connect with established Portuguese professionals, practice language skills, and preserve cultural traditions through our three-tier mentorship system')}
+              <span className="hidden sm:block">
+                LusoTown conecta-o com mentores portugueses estabelecidos em Londres. Desenvolva competências profissionais, pratique idiomas e preserve tradições culturais através do nosso sistema de mentoria em três níveis.
+              </span>
+              <span className="sm:hidden">
+                Conecte-se com mentores portugueses experientes em Londres. Desenvolva competências e preserve tradições culturais.
+              </span>
             </motion.p>
 
             {/* Three Pillars Overview */}
@@ -119,56 +130,74 @@ export default function MentorshipHero() {
               </div>
             </motion.div>
 
-            {/* CTA Buttons */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6"
+            >
+              <div className="flex items-center gap-2 text-sm text-neutral-600">
+                <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+                <span>Mentores Certificados</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-neutral-600">
+                <div className="w-2 h-2 bg-secondary-500 rounded-full"></div>
+                <span>Intercâmbio Cultural</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-neutral-600">
+                <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
+                <span>Desenvolvimento Profissional</span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <a
-                href="#mentorship-registration"
-                className="group relative text-lg font-bold px-10 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden"
+              <button
+                className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-secondary-700 via-action-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative z-10 flex items-center justify-center gap-3 whitespace-nowrap">
-                  {t('mentorship.hero.cta.primary', 'Join Mentorship')}
-                  <ArrowRightIcon className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
-                </span>
-              </a>
+                Juntar-se à Mentoria
+              </button>
               <a
                 href="#mentorship-programs"
-                className="text-lg font-bold px-10 py-4 bg-white/90 backdrop-blur-lg text-gray-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 hover:bg-white/95 whitespace-nowrap"
+                className="border border-neutral-300 text-neutral-700 px-8 py-4 rounded-2xl font-semibold hover:bg-neutral-50 hover:border-neutral-400 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
-                {t('mentorship.hero.cta.secondary', 'Learn More')}
+                Saber Mais
               </a>
             </motion.div>
 
-            {/* Community Stats */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1 }}
-              className="mt-16 bg-white/70 backdrop-blur-lg border border-white/60 rounded-2xl p-8 shadow-xl max-w-4xl mx-auto"
-            >
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-                <div className="text-center">
-                  <div className="text-3xl font-black text-secondary-600 mb-2">150+</div>
-                  <div className="text-gray-700 font-medium">{t('mentorship.hero.stats.mentors', 'Active Mentors')}</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-black text-accent-600 mb-2">750+</div>
-                  <div className="text-gray-700 font-medium">{t('mentorship.hero.stats.connections', 'Successful Matches')}</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-black text-action-600 mb-2">25</div>
-                  <div className="text-gray-700 font-medium">{t('mentorship.hero.stats.industries', 'Industries Covered')}</div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
         </div>
       </div>
+
+      {/* Community Stats */}
+      <section className="py-20 bg-neutral-50">
+        <div className="container-width">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className="bg-white/70 backdrop-blur-lg border border-white/60 rounded-3xl p-8 shadow-xl max-w-4xl mx-auto"
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="text-3xl font-black text-secondary-600 mb-2">150+</div>
+                <div className="text-neutral-700 font-medium">Mentores Ativos</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-black text-accent-600 mb-2">750+</div>
+                <div className="text-neutral-700 font-medium">Conexões Bem-sucedidas</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-black text-action-600 mb-2">25</div>
+                <div className="text-neutral-700 font-medium">Indústrias Cobertas</div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </section>
   )
 }

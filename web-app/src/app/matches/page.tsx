@@ -1,690 +1,523 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { Suspense, useState, useEffect } from 'react'
+import { HeartIcon, UserGroupIcon, CalendarIcon, ChatBubbleLeftRightIcon, SparklesIcon, CheckCircleIcon, XMarkIcon, MapPinIcon, AcademicCapIcon, BriefcaseIcon } from '@heroicons/react/24/outline'
+import { HeartIcon as HeartIconSolid } from '@heroicons/react/24/solid'
 import { useLanguage } from '@/context/LanguageContext'
-import { useNetworking } from '@/context/NetworkingContext'
-import { useSubscription } from '@/context/SubscriptionContext'
-import { motion } from 'framer-motion'
-import { 
-  Heart, 
-  X, 
-  Filter, 
-  MapPin, 
-  Briefcase, 
-  GraduationCap, 
-  Coffee,
-  Calendar,
-  MessageCircle,
-  Shield,
-  Crown,
-  Sparkles,
-  Users,
-  Globe,
-  Music,
-  Camera
-} from 'lucide-react'
-import MatchCard from '@/components/MatchCard'
-import MatchFilters from '@/components/MatchFilters'
-import MatchingAlgorithm from '@/components/MatchingAlgorithm'
-import PremiumMatchesGate from '@/components/PremiumMatchesGate'
-import SafetyCenter from '@/components/SafetyCenter'
-import MatchConversations from '@/components/MatchConversations'
+import Image from 'next/image'
+import { motion, AnimatePresence } from 'framer-motion'
 
-interface MatchesPageProps {}
-
-interface UserProfile {
-  id: string
-  firstName: string
-  lastName?: string
-  profilePictureUrl?: string
-  location?: string
-  membershipTier: 'free' | 'core' | 'premium' | 'business' | 'student'
-  isVerified?: boolean
-  culturalBackground?: string
-  interests?: string[]
-  professionalBackground?: string
-  bio?: string
-  age?: number
-  languagePreference?: string
-  relationshipGoal?: 'friendship' | 'professional' | 'cultural_exchange' | 'any'
-  status?: 'individual' | 'group' | 'any'
-}
-
-interface PremiumMatch {
-  id: string
-  userId: string
-  matchedUserId: string
-  matchedUser: UserProfile
-  compatibilityScore: number
-  sharedInterests: string[]
-  culturalCompatibility: number
-  professionalCompatibility: number
-  locationCompatibility: number
-  matchReason: string
-  isLiked: boolean
-  isMatched: boolean
-  createdAt: string
-  expiresAt?: string
-}
-
-interface MatchFilters {
-  ageRange?: [number, number]
-  interests?: string[]
-  professionalBackground?: string[]
-  languagePreference?: 'portuguese' | 'english' | 'both'
-  culturalBackground?: 'portugal' | 'brazil' | 'other_lusophone' | 'any'
-  relationshipGoal?: 'friendship' | 'professional' | 'cultural_exchange' | 'any'
-  status?: 'individual' | 'group' | 'any'
-  location?: string
-  membershipTier?: 'free' | 'core' | 'premium' | 'business' | 'student'
-  verifiedOnly?: boolean
-}
-
-export default function MatchesPage({}: MatchesPageProps) {
-  const { language, t } = useLanguage()
-  const { hasActiveSubscription, membershipTier, subscriptionRequired } = useSubscription()
-  
-  const [currentTab, setCurrentTab] = useState<'discover' | 'matches' | 'conversations' | 'safety'>('discover')
-  const [showFilters, setShowFilters] = useState(false)
-  const [matches, setMatches] = useState<PremiumMatch[]>([])
-  const [filters, setFilters] = useState<MatchFilters>({})
-  const [dailyMatchesUsed, setDailyMatchesUsed] = useState(0)
-  const [loading, setLoading] = useState(true)
-  const [isLiking, setIsLiking] = useState<string | null>(null)
-
-  // Free tier limits
-  const DAILY_FREE_MATCHES = 5
-  const hasReachedDailyLimit = !hasActiveSubscription && dailyMatchesUsed >= DAILY_FREE_MATCHES
-
-  useEffect(() => {
-    loadMatches()
-    loadDailyUsage()
-  }, [filters])
-
-  const loadMatches = async () => {
-    setLoading(true)
-    try {
-      // Mock API call - in real app would fetch from backend
-      const mockMatches = generateMockMatches()
-      setMatches(mockMatches)
-    } catch (error) {
-      console.error('Error loading matches:', error)
-    } finally {
-      setLoading(false)
-    }
+// Mock Portuguese profiles for demonstration
+const mockProfiles = [
+  {
+    id: 1,
+    name: "Ana Sofia",
+    age: 28,
+    location: "Stockwell",
+    profession: "Marketing Manager",
+    origin: "Porto, Portugal",
+    interests: ["Fado", "Portuguese Cuisine", "Professional Networking", "Arts & Crafts"],
+    bio: "Portuguese marketing professional looking to connect with fellow lusófonos in London. Love fado nights and traditional cooking!",
+    image: "/images/profiles/ana-sofia.jpg",
+    compatibility: 94
+  },
+  {
+    id: 2,
+    name: "Miguel Santos",
+    age: 32,
+    location: "Vauxhall",
+    profession: "Software Engineer",
+    origin: "Lisboa, Portugal",
+    interests: ["Professional Networking", "Football", "Language Exchange", "Tech Meetups"],
+    bio: "Tech enthusiast from Lisbon. Always up for watching Benfica games and meeting other Portuguese professionals in tech.",
+    image: "/images/profiles/miguel-santos.jpg",
+    compatibility: 89
+  },
+  {
+    id: 3,
+    name: "Beatriz Oliveira",
+    age: 26,
+    location: "Camden",
+    profession: "Medical Student",
+    origin: "Braga, Portugal",
+    interests: ["Dancing", "Cultural Events", "Young Professionals", "Education"],
+    bio: "Medical student from Braga. Love traditional Portuguese dancing and meeting other young professionals.",
+    image: "/images/profiles/beatriz-oliveira.jpg",
+    compatibility: 91
+  },
+  {
+    id: 4,
+    name: "João Ferreira",
+    age: 35,
+    location: "Bermondsey", 
+    profession: "Chef",
+    origin: "Aveiro, Portugal",
+    interests: ["Portuguese Cuisine", "Cultural Events", "Business Networking", "Sports"],
+    bio: "Chef specializing in traditional Portuguese cuisine. Looking to connect with food lovers and fellow entrepreneurs.",
+    image: "/images/profiles/joao-ferreira.jpg",
+    compatibility: 87
+  },
+  {
+    id: 5,
+    name: "Carolina Lima",
+    age: 29,
+    location: "Kensington",
+    profession: "Financial Analyst",
+    origin: "São Paulo, Brasil",
+    interests: ["Professional Networking", "Language Exchange", "Arts & Crafts", "Dance"],
+    bio: "Brazilian financial analyst living in London. Love connecting with Portuguese speakers and exploring the city.",
+    image: "/images/profiles/carolina-lima.jpg",
+    compatibility: 92
+  },
+  {
+    id: 6,
+    name: "Ricardo Costa",
+    age: 31,
+    location: "Elephant & Castle",
+    profession: "Architect",
+    origin: "Coimbra, Portugal",
+    interests: ["Cultural Events", "Professional Networking", "Football", "Architecture"],
+    bio: "Architect from Coimbra passionate about Portuguese culture and design. Always ready for a good conversation over coffee.",
+    image: "/images/profiles/ricardo-costa.jpg",
+    compatibility: 88
   }
+]
 
-  const loadDailyUsage = () => {
-    const today = new Date().toDateString()
-    const savedUsage = localStorage.getItem(`lusotown-daily-matches-${today}`)
-    setDailyMatchesUsed(savedUsage ? parseInt(savedUsage) : 0)
-  }
+function MatchesContent() {
+  const { t } = useLanguage()
+  const [currentProfileIndex, setCurrentProfileIndex] = useState(0)
+  const [profiles, setProfiles] = useState(mockProfiles)
+  const [isLiking, setIsLiking] = useState(false)
+  const [isSkipping, setIsSkipping] = useState(false)
+  const [showMatchModal, setShowMatchModal] = useState(false)
+  const [matchedProfile, setMatchedProfile] = useState(null)
 
-  const generateMockMatches = (): PremiumMatch[] => {
-    const mockProfiles: UserProfile[] = [
-      {
-        id: 'user-1',
-        firstName: 'Sofia',
-        lastName: 'Fernandes',
-        profilePictureUrl: 'https://images.unsplash.com/photo-1494790108755-2616b612b1ac?w=400&h=400&fit=crop&crop=face&auto=format',
-        location: 'Canary Wharf, London',
-        membershipTier: 'premium',
-        isVerified: true,
-        culturalBackground: 'portugal',
-        interests: ['fado', 'portuguese_cuisine', 'business_networking', 'wine_tasting', 'cultural_events'],
-        professionalBackground: 'Finance & Banking',
-        bio: 'Portuguese finance professional passionate about preserving our cultural traditions while building meaningful business connections in London.',
-        age: 32,
-        languagePreference: 'both',
-        relationshipGoal: 'professional',
-        status: 'individual'
-      },
-      {
-        id: 'user-2',
-        firstName: 'Miguel',
-        lastName: 'Santos',
-        profilePictureUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format',
-        location: 'Vauxhall, London',
-        membershipTier: 'core',
-        isVerified: true,
-        culturalBackground: 'portugal',
-        interests: ['football', 'portuguese_history', 'entrepreneurship', 'tech_innovation', 'community_activities'],
-        professionalBackground: 'Technology & Startups',
-        bio: 'Tech entrepreneur from Porto, building the next generation of Portuguese startups in London while staying connected to our roots.',
-        age: 29,
-        languagePreference: 'both',
-        relationshipGoal: 'friendship',
-        status: 'group'
-      },
-      {
-        id: 'user-3',
-        firstName: 'Ana',
-        lastName: 'Rodrigues',
-        profilePictureUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face&auto=format',
-        location: 'Camden, London',
-        membershipTier: 'premium',
-        isVerified: true,
-        culturalBackground: 'brazil',
-        interests: ['brazilian_music', 'cultural_exchange', 'photography', 'arts_and_culture', 'language_learning'],
-        professionalBackground: 'Creative Arts & Media',
-        bio: 'Brazilian photographer documenting the lusophone community in London. Love sharing stories through images and connecting cultures.',
-        age: 27,
-        languagePreference: 'portuguese',
-        relationshipGoal: 'cultural_exchange',
-        status: 'individual'
-      },
-      {
-        id: 'user-4',
-        firstName: 'Carlos',
-        lastName: 'Oliveira',
-        profilePictureUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format',
-        location: 'Greenwich, London',
-        membershipTier: 'business',
-        isVerified: true,
-        culturalBackground: 'portugal',
-        interests: ['real_estate', 'portuguese_business', 'investment', 'networking', 'golf'],
-        professionalBackground: 'Real Estate & Investment',
-        bio: 'Portuguese real estate investor helping fellow Portuguese speakers find their perfect home in London. Business partnerships welcome.',
-        age: 41,
-        languagePreference: 'both',
-        relationshipGoal: 'professional',
-        status: 'group'
-      },
-      {
-        id: 'user-5',
-        firstName: 'Beatriz',
-        lastName: 'Costa',
-        profilePictureUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face&auto=format',
-        location: 'South Kensington, London',
-        membershipTier: 'student',
-        isVerified: false,
-        culturalBackground: 'portugal',
-        interests: ['medical_studies', 'portuguese_literature', 'volunteering', 'student_life', 'cultural_preservation'],
-        professionalBackground: 'Healthcare & Medicine',
-        bio: 'Medical student from Lisbon studying in London. Looking to connect with other Portuguese students and young professionals.',
-        age: 24,
-        languagePreference: 'both',
-        relationshipGoal: 'friendship',
-        status: 'individual'
-      }
-    ]
+  const currentProfile = profiles[currentProfileIndex]
 
-    return mockProfiles.map((profile, index) => ({
-      id: `match-${profile.id}`,
-      userId: 'current-user',
-      matchedUserId: profile.id,
-      matchedUser: profile,
-      compatibilityScore: Math.floor(75 + Math.random() * 20), // 75-95%
-      sharedInterests: profile.interests?.slice(0, 2 + Math.floor(Math.random() * 2)) || [],
-      culturalCompatibility: Math.floor(80 + Math.random() * 15), // 80-95%
-      professionalCompatibility: Math.floor(70 + Math.random() * 25), // 70-95%
-      locationCompatibility: Math.floor(60 + Math.random() * 30), // 60-90%
-      matchReason: generateMatchReason(profile),
-      isLiked: false,
-      isMatched: false,
-      createdAt: new Date().toISOString(),
-      expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString() // 7 days
-    }))
-  }
-
-  const generateMatchReason = (profile: UserProfile): string => {
-    const reasons = [
-      `Shared Portuguese heritage and ${profile.professionalBackground?.toLowerCase()} background`,
-      `Both interested in ${profile.interests?.[0]?.replace('_', ' ')} and located in London`,
-      `Strong cultural compatibility and similar relationship goals`,
-      `Professional synergy in ${profile.professionalBackground} with cultural connection`,
-      `Geographic proximity and shared Portuguese community interests`
-    ]
-    return reasons[Math.floor(Math.random() * reasons.length)]
-  }
-
-  const handleLike = async (matchId: string) => {
-    if (hasReachedDailyLimit) {
-      return
-    }
-
-    setIsLiking(matchId)
+  const handleLike = () => {
+    if (isLiking || isSkipping) return
+    setIsLiking(true)
     
-    try {
-      // Update local state
-      setMatches(prev => prev.map(match => 
-        match.id === matchId 
-          ? { ...match, isLiked: true, isMatched: Math.random() > 0.7 } // 30% chance of mutual match
-          : match
-      ))
-
-      // Update daily usage for free users
-      if (!hasActiveSubscription) {
-        const newUsage = dailyMatchesUsed + 1
-        setDailyMatchesUsed(newUsage)
-        const today = new Date().toDateString()
-        localStorage.setItem(`lusotown-daily-matches-${today}`, newUsage.toString())
+    // Simulate match probability (30% chance for demo)
+    const isMatch = Math.random() > 0.7
+    
+    setTimeout(() => {
+      if (isMatch && currentProfile) {
+        setMatchedProfile(currentProfile)
+        setShowMatchModal(true)
       }
+      nextProfile()
+      setIsLiking(false)
+    }, 600)
+  }
 
-      // Mock API call to record like
-      console.log('Liked match:', matchId)
-      
-    } catch (error) {
-      console.error('Error liking match:', error)
-    } finally {
-      setIsLiking(null)
+  const handleSkip = () => {
+    if (isLiking || isSkipping) return
+    setIsSkipping(true)
+    
+    setTimeout(() => {
+      nextProfile()
+      setIsSkipping(false)
+    }, 400)
+  }
+
+  const nextProfile = () => {
+    if (currentProfileIndex < profiles.length - 1) {
+      setCurrentProfileIndex(currentProfileIndex + 1)
+    } else {
+      // Reset to beginning or show "no more profiles" message
+      setCurrentProfileIndex(0)
     }
   }
 
-  const handlePass = async (matchId: string) => {
-    if (hasReachedDailyLimit) {
-      return
-    }
-
-    try {
-      // Remove from current matches
-      setMatches(prev => prev.filter(match => match.id !== matchId))
-
-      // Update daily usage for free users
-      if (!hasActiveSubscription) {
-        const newUsage = dailyMatchesUsed + 1
-        setDailyMatchesUsed(newUsage)
-        const today = new Date().toDateString()
-        localStorage.setItem(`lusotown-daily-matches-${today}`, newUsage.toString())
-      }
-
-      // Mock API call to record pass
-      console.log('Passed on match:', matchId)
-      
-    } catch (error) {
-      console.error('Error passing match:', error)
-    }
+  const getOriginFlag = (origin) => {
+    if (origin.includes('Portugal') || origin.includes('Porto') || origin.includes('Lisboa') || origin.includes('Braga') || origin.includes('Aveiro') || origin.includes('Coimbra')) return '🇵🇹'
+    if (origin.includes('Brasil') || origin.includes('São Paulo') || origin.includes('Rio')) return '🇧🇷'
+    if (origin.includes('Angola')) return '🇦🇴'
+    if (origin.includes('Mozambique')) return '🇲🇿'
+    if (origin.includes('Cabo Verde')) return '🇨🇻'
+    return '🌍'
   }
 
-  const mutualMatches = matches.filter(match => match.isMatched)
-  const likedMatches = matches.filter(match => match.isLiked && !match.isMatched)
-  const availableMatches = matches.filter(match => !match.isLiked)
-
-  const translations = {
-    en: {
-      title: 'Premium Matches',
-      subtitle: 'Connect with Portuguese Community Members in London & UK',
-      tabs: {
-        discover: 'Discover',
-        matches: 'Matches',
-        conversations: 'Conversations',
-        safety: 'Safety'
-      },
-      dailyLimit: `Daily matches: ${dailyMatchesUsed}/${DAILY_FREE_MATCHES}`,
-      unlimited: 'Unlimited matches',
-      noMatches: 'No more matches available',
-      upgradeForMore: 'Upgrade to Premium for unlimited matches',
-      filters: 'Filters',
-      compatibility: 'Compatibility',
-      sharedInterests: 'Shared Interests',
-      culturalMatch: 'Cultural Match',
-      professionalMatch: 'Professional Match',
-      locationMatch: 'Location Match',
-      mutualMatches: 'Mutual Matches',
-      likedProfiles: 'Liked Profiles',
-      startConversation: 'Start Conversation',
-      waitingForResponse: 'Waiting for response...',
-      premiumFeatures: {
-        title: 'Premium Matching Features',
-        unlimited: 'Unlimited daily matches',
-        advanced: 'Advanced filtering options',
-        priority: 'Priority profile visibility',
-        insights: 'Detailed compatibility insights',
-        vip: 'VIP event access for matches'
-      }
+  const steps = [
+    {
+      icon: UserGroupIcon,
+      title: "Complete Your Profile",
+      description: "Share your interests, location in London, and what you're looking for in the Portuguese community",
+      titlePt: "Complete o Seu Perfil",
+      descriptionPt: "Partilhe os seus interesses, localização em Londres e o que procura na comunidade portuguesa"
     },
-    pt: {
-      title: 'Matches Premium',
-      subtitle: 'Conecte-se com Membros da Comunidade Portuguesa em Londres e Reino Unido',
-      tabs: {
-        discover: 'Descobrir',
-        matches: 'Matches',
-        conversations: 'Conversas',
-        safety: 'Segurança'
-      },
-      dailyLimit: `Matches diários: ${dailyMatchesUsed}/${DAILY_FREE_MATCHES}`,
-      unlimited: 'Matches ilimitados',
-      noMatches: 'Não há mais matches disponíveis',
-      upgradeForMore: 'Upgrade para Premium para matches ilimitados',
-      filters: 'Filtros',
-      compatibility: 'Compatibilidade',
-      sharedInterests: 'Interesses Partilhados',
-      culturalMatch: 'Match Cultural',
-      professionalMatch: 'Match Profissional',
-      locationMatch: 'Match de Localização',
-      mutualMatches: 'Matches Mútuos',
-      likedProfiles: 'Perfis Curtidos',
-      startConversation: 'Iniciar Conversa',
-      waitingForResponse: 'Aguardando resposta...',
-      premiumFeatures: {
-        title: 'Funcionalidades Premium de Matching',
-        unlimited: 'Matches diários ilimitados',
-        advanced: 'Opções de filtro avançadas',
-        priority: 'Visibilidade prioritária do perfil',
-        insights: 'Insights detalhados de compatibilidade',
-        vip: 'Acesso VIP a eventos para matches'
-      }
+    {
+      icon: SparklesIcon,
+      title: "Smart Matching",
+      description: "Our algorithm connects you with Portuguese speakers based on compatibility, interests, and proximity",
+      titlePt: "Correspondência Inteligente",
+      descriptionPt: "O nosso algoritmo conecta-o com falantes de português baseado em compatibilidade, interesses e proximidade"
+    },
+    {
+      icon: CalendarIcon,
+      title: "Attend Events Together",
+      description: "Meet your matches at Portuguese cultural events, networking meetups, and social gatherings",
+      titlePt: "Participem em Eventos Juntos",
+      descriptionPt: "Conheça as suas correspondências em eventos culturais portugueses, encontros de networking e reuniões sociais"
+    },
+    {
+      icon: ChatBubbleLeftRightIcon,
+      title: "Build Connections",
+      description: "Start conversations in Portuguese or English and build lasting friendships or professional relationships",
+      titlePt: "Construa Conexões",
+      descriptionPt: "Inicie conversas em português ou inglês e construa amizades duradouras ou relacionamentos profissionais"
     }
-  }
+  ]
 
-  const currentTranslations = translations[language]
+  const benefits = [
+    "All matches are Portuguese speakers in London & UK",
+    "Cultural compatibility scoring",
+    "Event-based meetups for natural connections",
+    "Professional and social networking opportunities",
+    "Safe and verified community members"
+  ]
 
-  if (subscriptionRequired && currentTab === 'discover' && hasReachedDailyLimit) {
-    return <PremiumMatchesGate />
-  }
+  const benefitsPt = [
+    "Todas as correspondências são falantes de português em Londres e Reino Unido",
+    "Pontuação de compatibilidade cultural",
+    "Encontros baseados em eventos para conexões naturais",
+    "Oportunidades de networking profissional e social",
+    "Membros da comunidade seguros e verificados"
+  ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-secondary-50/20 to-accent-50/20 pt-20">
-      {/* Enhanced Header */}
-      <div className="bg-gradient-to-r from-white via-secondary-50/30 to-accent-50/30 border-b border-neutral-200 relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute inset-0">
-          <div className="absolute top-8 right-8 w-24 h-24 bg-gradient-to-br from-secondary-200/30 to-accent-200/30 rounded-full opacity-60 animate-pulse" />
-          <div className="absolute bottom-8 left-8 w-16 h-16 bg-gradient-to-tr from-action-200/30 to-coral-200/30 rounded-full opacity-40" />
-        </div>
+    <div className="min-h-screen pt-16">
+      {/* Enhanced Hero Section */}
+      <div className="relative min-h-[70vh] bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 overflow-hidden">
+        {/* Portuguese flag inspired decorative elements */}
+        <div className="absolute top-12 left-12 w-32 h-32 bg-gradient-to-br from-secondary-400/20 to-secondary-500/30 rounded-full animate-pulse" />
+        <div className="absolute bottom-16 right-16 w-24 h-24 bg-gradient-to-br from-action-400/20 to-action-500/30 rounded-full animate-pulse delay-1000" />
+        <div className="absolute top-1/3 right-1/4 w-16 h-16 bg-gradient-to-br from-accent-400/20 to-accent-500/30 rounded-full animate-pulse delay-500" />
         
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-          <div className="text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="flex items-center justify-center gap-3 mb-6"
-            >
-              <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center shadow-lg">
-                <Heart className="h-6 w-6 text-white" />
-              </div>
-              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-neutral-900 via-primary-700 to-secondary-700 bg-clip-text text-transparent">
-                {currentTranslations.title}
+        {/* Subtle pattern overlay */}
+        <div className="absolute inset-0 bg-primary-900/10" />
+        
+        <div className="relative z-10 flex items-center justify-center min-h-[70vh] px-4">
+          <div className="text-center max-w-4xl mx-auto">
+            {/* Hero Content */}
+            <div className="mb-8">
+              <HeartIcon className="w-16 h-16 text-white/90 mx-auto mb-6 animate-pulse" />
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                {t('findYourMatch') || 'Find Your Match'}
               </h1>
-              {hasActiveSubscription && (
-                <div className="w-8 h-8 bg-gradient-to-br from-premium-500 to-accent-500 rounded-full flex items-center justify-center">
-                  <Crown className="h-5 w-5 text-white" />
-                </div>
-              )}
-            </motion.div>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-neutral-700 mb-8 max-w-3xl mx-auto leading-relaxed"
-            >
-              {currentTranslations.subtitle}
-            </motion.p>
-
-            {/* Match Counter */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="flex items-center justify-center gap-4 mb-6"
-            >
-              <div className="bg-primary-50 text-primary-700 px-4 py-2 rounded-full text-sm font-medium">
-                {hasActiveSubscription ? currentTranslations.unlimited : currentTranslations.dailyLimit}
-              </div>
+              <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+                {t('connectWithPortugueseSpeakers') || 'Connect with Portuguese speakers in London who share your interests, values, and cultural background'}
+              </p>
               
-              {membershipTier !== 'none' && (
-                <div className={`px-4 py-2 rounded-full text-sm font-medium ${
-                  membershipTier === 'platinum' ? 'bg-premium-50 text-premium-700' :
-                  membershipTier === 'gold' ? 'bg-accent-50 text-accent-700' :
-                  membershipTier === 'silver' ? 'bg-neutral-100 text-neutral-700' :
-                  'bg-coral-50 text-coral-700'
-                }`}>
-                  {membershipTier.charAt(0).toUpperCase() + membershipTier.slice(1)} Member
-                </div>
-              )}
-            </motion.div>
-
-            {/* Navigation Tabs */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="flex justify-center"
-            >
-              <div className="bg-neutral-100 p-1 rounded-xl">
-                {Object.entries(currentTranslations.tabs).map(([key, label]) => (
-                  <button
-                    key={key}
-                    onClick={() => setCurrentTab(key as any)}
-                    className={`px-6 py-2 rounded-lg text-sm font-medium transition-all ${
-                      currentTab === key
-                        ? 'bg-white text-primary-600 shadow-sm'
-                        : 'text-neutral-600 hover:text-neutral-900'
-                    }`}
-                  >
-                    {label}
-                  </button>
-                ))}
+              {/* Cultural Quote */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-white/20">
+                <blockquote className="text-lg md:text-xl text-white/95 italic">
+                  "{t('culturalQuote') || 'Unidos pela língua, conectados pelo coração'}"
+                </blockquote>
+                <cite className="text-white/80 text-sm block mt-2">
+                  {t('culturalQuoteAuthor') || 'Portuguese Community in London'}
+                </cite>
               </div>
-            </motion.div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                {t('startMatching') || 'Start Matching'}
+              </button>
+              <button className="bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/30 transition-all duration-300 transform hover:scale-105">
+                {t('learnMore') || 'Learn More'}
+              </button>
+            </div>
+
+            {/* Stats */}
+            <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-white">750+</div>
+                <div className="text-white/80 text-sm">{t('members') || 'Portuguese Speakers'}</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-white">200+</div>
+                <div className="text-white/80 text-sm">{t('successfulMatches') || 'Successful Matches'}</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-white">50+</div>
+                <div className="text-white/80 text-sm">{t('monthlyEvents') || 'Monthly Events'}</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-white">95%</div>
+                <div className="text-white/80 text-sm">{t('satisfaction') || 'Satisfaction Rate'}</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {currentTab === 'discover' && (
-          <div className="space-y-8">
-            {/* Enhanced Filters Bar */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="bg-white/80 backdrop-blur-lg border border-white/60 p-4 sm:p-6 rounded-2xl shadow-lg"
-            >
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <button
-                  onClick={() => setShowFilters(!showFilters)}
-                  className="flex items-center gap-3 text-neutral-700 hover:text-primary-600 transition-colors font-medium"
-                >
-                  <div className="w-8 h-8 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-lg flex items-center justify-center">
-                    <Filter className="h-4 w-4 text-primary-600" />
-                  </div>
-                  {currentTranslations.filters}
-                  <span className={`ml-2 text-xs px-2 py-1 rounded-full transition-all ${
-                    showFilters 
-                      ? 'bg-primary-100 text-primary-700' 
-                      : 'bg-neutral-100 text-neutral-600'
-                  }`}>
-                    {showFilters ? 'Hide' : 'Show'}
-                  </span>
-                </button>
-                
-                {!hasActiveSubscription && (
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-action-500 rounded-full animate-pulse" />
-                    <span className="text-sm text-neutral-600 font-medium">
-                      {hasReachedDailyLimit ? currentTranslations.upgradeForMore : `${DAILY_FREE_MATCHES - dailyMatchesUsed} matches remaining today`}
-                    </span>
-                  </div>
-                )}
-              </div>
-            </motion.div>
+      {/* Interactive Matching Section */}
+      <section className="py-20 bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary-900 mb-6">
+              {t('discoverYourMatches') || 'Discover Your Matches'}
+            </h2>
+            <p className="text-xl text-primary-700 max-w-3xl mx-auto">
+              {t('swipeToConnect') || 'Swipe through Portuguese speakers in London who share your interests and cultural background'}
+            </p>
+          </div>
 
-            {/* Filters Panel */}
-            {showFilters && (
-              <MatchFilters
-                filters={filters}
-                onFiltersChange={setFilters}
-                hasActiveSubscription={hasActiveSubscription}
-              />
-            )}
-
-            {/* Enhanced Matches Grid */}
-            {loading ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
-                {[...Array(6)].map((_, i) => (
-                  <motion.div 
-                    key={i} 
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: i * 0.1 }}
-                    className="bg-white rounded-2xl h-96 animate-pulse shadow-lg"
-                  />
-                ))}
-              </div>
-            ) : availableMatches.length > 0 ? (
-              <motion.div 
-                className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
-              >
-                {availableMatches.map((match, index) => (
+          <div className="max-w-md mx-auto">
+            {/* Profile Card Stack */}
+            <div className="relative h-[600px] mb-8">
+              <AnimatePresence mode="wait">
+                {currentProfile && (
                   <motion.div
-                    key={match.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: index * 0.1 }}
+                    key={currentProfile.id}
+                    initial={{ scale: 0.8, opacity: 0, rotateY: 90 }}
+                    animate={{ 
+                      scale: 1, 
+                      opacity: 1, 
+                      rotateY: 0,
+                      x: isLiking ? 100 : isSkipping ? -100 : 0,
+                      rotate: isLiking ? 10 : isSkipping ? -10 : 0
+                    }}
+                    exit={{ 
+                      scale: 0.8, 
+                      opacity: 0,
+                      x: isLiking ? 200 : isSkipping ? -200 : 0,
+                      rotate: isLiking ? 20 : isSkipping ? -20 : 0
+                    }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="absolute inset-0 bg-white rounded-3xl shadow-2xl overflow-hidden border border-primary-100"
                   >
-                    <MatchCard
-                      match={match}
-                      onLike={() => handleLike(match.id)}
-                      onPass={() => handlePass(match.id)}
-                      isLiking={isLiking === match.id}
-                      disabled={hasReachedDailyLimit}
-                    />
-                  </motion.div>
-                ))}
-              </motion.div>
-            ) : (
-              <div className="text-center py-12">
-                <Heart className="h-16 w-16 text-neutral-300 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-neutral-900 mb-2">
-                  {currentTranslations.noMatches}
-                </h3>
-                {!hasActiveSubscription && (
-                  <p className="text-neutral-600 mb-6">
-                    {currentTranslations.upgradeForMore}
-                  </p>
-                )}
-              </div>
-            )}
-          </div>
-        )}
-
-        {currentTab === 'matches' && (
-          <div className="space-y-8">
-            {/* Mutual Matches */}
-            {mutualMatches.length > 0 && (
-              <div>
-                <h3 className="text-xl font-semibold text-neutral-900 mb-4 flex items-center gap-2">
-                  <Sparkles className="h-5 w-5 text-accent-500" />
-                  {currentTranslations.mutualMatches} ({mutualMatches.length})
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {mutualMatches.map((match) => (
-                    <div key={match.id} className="bg-white rounded-xl p-6 shadow-sm border-2 border-accent-200">
-                      <div className="flex items-center gap-4 mb-4">
-                        <img
-                          src={match.matchedUser.profilePictureUrl}
-                          alt={match.matchedUser.firstName}
-                          className="w-16 h-16 rounded-full object-cover"
-                        />
-                        <div>
-                          <h4 className="font-semibold text-neutral-900">
-                            {match.matchedUser.firstName} {match.matchedUser.lastName}
-                          </h4>
-                          <p className="text-sm text-neutral-600 flex items-center gap-1">
-                            <MapPin className="h-4 w-4" />
-                            {match.matchedUser.location}
-                          </p>
-                        </div>
+                    {/* Profile Image */}
+                    <div className="relative h-72 bg-gradient-to-br from-primary-200 to-secondary-200">
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-6xl text-primary-400">👤</div>
                       </div>
-                      <button className="w-full bg-accent-500 text-white py-2 rounded-lg font-medium hover:bg-accent-600 transition-colors">
-                        {currentTranslations.startConversation}
-                      </button>
+                      
+                      {/* Compatibility Badge */}
+                      <div className="absolute top-4 right-4 bg-secondary-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg">
+                        {currentProfile.compatibility}% Match
+                      </div>
+                      
+                      {/* Origin Flag */}
+                      <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium shadow-lg">
+                        {getOriginFlag(currentProfile.origin)} {currentProfile.origin}
+                      </div>
                     </div>
-                  ))}
-                </div>
-              </div>
-            )}
 
-            {/* Liked Profiles */}
-            {likedMatches.length > 0 && (
-              <div>
-                <h3 className="text-xl font-semibold text-neutral-900 mb-4 flex items-center gap-2">
-                  <Heart className="h-5 w-5 text-action-500" />
-                  {currentTranslations.likedProfiles} ({likedMatches.length})
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {likedMatches.map((match) => (
-                    <div key={match.id} className="bg-white rounded-xl p-6 shadow-sm">
-                      <div className="flex items-center gap-4 mb-4">
-                        <img
-                          src={match.matchedUser.profilePictureUrl}
-                          alt={match.matchedUser.firstName}
-                          className="w-16 h-16 rounded-full object-cover"
-                        />
+                    {/* Profile Info */}
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-4">
                         <div>
-                          <h4 className="font-semibold text-neutral-900">
-                            {match.matchedUser.firstName} {match.matchedUser.lastName}
-                          </h4>
-                          <p className="text-sm text-neutral-600 flex items-center gap-1">
-                            <MapPin className="h-4 w-4" />
-                            {match.matchedUser.location}
-                          </p>
+                          <h3 className="text-2xl font-bold text-primary-900 mb-1">
+                            {currentProfile.name}, {currentProfile.age}
+                          </h3>
+                          <div className="flex items-center gap-2 text-primary-600 mb-2">
+                            <BriefcaseIcon className="w-4 h-4" />
+                            <span className="text-sm">{currentProfile.profession}</span>
+                          </div>
+                          <div className="flex items-center gap-2 text-primary-600">
+                            <MapPinIcon className="w-4 h-4" />
+                            <span className="text-sm">{currentProfile.location}, London</span>
+                          </div>
                         </div>
                       </div>
-                      <p className="text-sm text-neutral-500 text-center">
-                        {currentTranslations.waitingForResponse}
+
+                      <p className="text-primary-700 text-sm mb-4 leading-relaxed">
+                        {currentProfile.bio}
                       </p>
+
+                      {/* Interests */}
+                      <div className="mb-4">
+                        <h4 className="text-sm font-semibold text-primary-800 mb-2">Interests:</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {currentProfile.interests.slice(0, 4).map((interest, index) => (
+                            <span
+                              key={index}
+                              className="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-xs font-medium"
+                            >
+                              {interest}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Portuguese Community Connection */}
+                      <div className="bg-gradient-to-r from-secondary-50 to-accent-50 p-4 rounded-xl border border-secondary-200">
+                        <div className="flex items-center gap-2 text-secondary-700 text-sm">
+                          <SparklesIcon className="w-4 h-4" />
+                          <span className="font-medium">
+                            {t('sharedCulturalBackground') || 'Shared Portuguese cultural background'}
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                  ))}
-                </div>
-              </div>
-            )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
-            {mutualMatches.length === 0 && likedMatches.length === 0 && (
-              <div className="text-center py-12">
-                <Users className="h-16 w-16 text-neutral-300 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-neutral-900 mb-2">
-                  No matches yet
-                </h3>
-                <p className="text-neutral-600">
-                  Start discovering profiles to make your first match!
-                </p>
-              </div>
-            )}
-          </div>
-        )}
-
-        {currentTab === 'conversations' && (
-          <MatchConversations mutualMatches={mutualMatches} />
-        )}
-
-        {currentTab === 'safety' && (
-          <SafetyCenter />
-        )}
-      </div>
-
-      {/* Premium Features Sidebar (Premium users only) */}
-      {hasActiveSubscription && (
-        <div className="fixed right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-xl shadow-lg p-4 w-64 hidden xl:block">
-          <div className="text-center mb-4">
-            <Crown className="h-8 w-8 text-premium-500 mx-auto mb-2" />
-            <h4 className="font-semibold text-neutral-900">{currentTranslations.premiumFeatures.title}</h4>
-          </div>
-          <div className="space-y-3 text-sm">
-            <div className="flex items-center gap-2 text-secondary-600">
-              <Sparkles className="h-4 w-4" />
-              {currentTranslations.premiumFeatures.unlimited}
+              {/* Background Cards for Stack Effect */}
+              <div className="absolute inset-0 bg-white rounded-3xl shadow-lg transform translate-y-2 translate-x-1 border border-primary-50 -z-10"></div>
+              <div className="absolute inset-0 bg-white rounded-3xl shadow-md transform translate-y-4 translate-x-2 border border-primary-50 -z-20"></div>
             </div>
-            <div className="flex items-center gap-2 text-secondary-600">
-              <Filter className="h-4 w-4" />
-              {currentTranslations.premiumFeatures.advanced}
+
+            {/* Action Buttons */}
+            <div className="flex justify-center gap-6">
+              <button
+                onClick={handleSkip}
+                disabled={isLiking || isSkipping || !currentProfile}
+                className="w-16 h-16 bg-white border-2 border-gray-300 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              >
+                <XMarkIcon className="w-8 h-8 text-gray-500" />
+              </button>
+              
+              <button
+                onClick={handleLike}
+                disabled={isLiking || isSkipping || !currentProfile}
+                className="w-16 h-16 bg-gradient-to-r from-action-500 to-action-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              >
+                <HeartIconSolid className="w-8 h-8 text-white" />
+              </button>
             </div>
-            <div className="flex items-center gap-2 text-secondary-600">
-              <Crown className="h-4 w-4" />
-              {currentTranslations.premiumFeatures.priority}
-            </div>
-            <div className="flex items-center gap-2 text-secondary-600">
-              <Calendar className="h-4 w-4" />
-              {currentTranslations.premiumFeatures.vip}
+
+            {/* Instructions */}
+            <div className="text-center mt-6">
+              <p className="text-primary-600 text-sm">
+                {t('swipeInstructions') || 'Tap ❌ to skip • Tap ❤️ to like • Meet at Portuguese events!'}
+              </p>
             </div>
           </div>
         </div>
-      )}
+      </section>
+
+      {/* Match Modal */}
+      <AnimatePresence>
+        {showMatchModal && matchedProfile && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={() => setShowMatchModal(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.5, opacity: 0 }}
+              className="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl"
+              onClick={e => e.stopPropagation()}
+            >
+              <div className="text-6xl mb-4">🎉</div>
+              <h3 className="text-3xl font-bold text-primary-900 mb-2">It's a Match!</h3>
+              <p className="text-primary-700 mb-6">
+                You and {matchedProfile.name} both liked each other! Start chatting and plan to meet at a Portuguese event.
+              </p>
+              <div className="flex gap-4">
+                <button
+                  onClick={() => setShowMatchModal(false)}
+                  className="flex-1 bg-primary-100 text-primary-700 py-3 rounded-xl font-semibold hover:bg-primary-200 transition-colors"
+                >
+                  Keep Swiping
+                </button>
+                <button
+                  onClick={() => setShowMatchModal(false)}
+                  className="flex-1 bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-3 rounded-xl font-semibold hover:from-primary-700 hover:to-secondary-700 transition-all"
+                >
+                  Send Message
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* How It Works Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary-900 mb-6">
+              {t('howItWorks') || 'How It Works'}
+            </h2>
+            <p className="text-xl text-primary-700 max-w-3xl mx-auto">
+              {t('howItWorksDescription') || 'Our matching system is designed specifically for Portuguese speakers in London, focusing on cultural compatibility and shared experiences'}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {steps.map((step, index) => (
+              <div key={index} className="text-center group">
+                <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-primary-100">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <step.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="text-3xl font-bold text-primary-600 mb-4">{index + 1}</div>
+                  <h3 className="text-xl font-bold text-primary-900 mb-3">
+                    {t('currentLang') === 'pt' ? step.titlePt : step.title}
+                  </h3>
+                  <p className="text-primary-700 leading-relaxed">
+                    {t('currentLang') === 'pt' ? step.descriptionPt : step.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-20 bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold text-primary-900 mb-8">
+                {t('whyChooseOurMatching') || 'Why Choose Our Matching System?'}
+              </h2>
+              <div className="space-y-4">
+                {(t('currentLang') === 'pt' ? benefitsPt : benefits).map((benefit, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <CheckCircleIcon className="w-6 h-6 text-secondary-500 mt-1 flex-shrink-0" />
+                    <p className="text-lg text-primary-800">{benefit}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8">
+                <button className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  {t('joinNow') || 'JOIN NOW'}
+                </button>
+              </div>
+            </div>
+            <div className="bg-white p-8 rounded-3xl border border-primary-200 shadow-lg">
+              <div className="text-center">
+                <HeartIcon className="w-16 h-16 text-action-500 mx-auto mb-6" />
+                <h3 className="text-2xl font-bold text-primary-900 mb-4">
+                  {t('joinCommunity') || 'Join Our Community'}
+                </h3>
+                <p className="text-primary-700 mb-6">
+                  {t('joinCommunityDescription') || 'Connect with Portuguese speakers who understand your culture, language, and journey in London'}
+                </p>
+                <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-4 rounded-xl border border-primary-100">
+                  <div className="text-3xl font-bold text-primary-600">750+</div>
+                  <div className="text-sm text-primary-600">{t('activeMember') || 'Active Portuguese Speakers'}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
+  )
+}
+
+export default function MatchesPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gray-50 pt-20 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-600"></div>
+      </div>
+    }>
+      <MatchesContent />
+    </Suspense>
   )
 }

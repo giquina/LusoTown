@@ -13,27 +13,16 @@ import {
   PhotoIcon,
   ArrowRightIcon,
   SparklesIcon,
-  CheckCircleIcon,
-  ExclamationTriangleIcon,
 } from "@heroicons/react/24/outline";
 import EventImageWithFallback from "@/components/EventImageWithFallback";
 import SaveFavoriteCartButton from "@/components/SaveFavoriteCartButton";
 import NetworkPreview from "@/components/NetworkPreview";
-import WaitingListButton from "@/components/WaitingListButton";
 import { Event } from "@/lib/events";
 import { useCart } from "@/context/CartContext";
 import { useLanguage } from "@/context/LanguageContext";
 import { useNetworking } from "@/context/NetworkingContext";
 import { formatEventDate } from "@/lib/dateUtils";
 import { getCurrentUser } from "@/lib/auth";
-import { 
-  updateEventAvailability, 
-  isEventAvailable, 
-  hasWaitingListAvailable, 
-  getEventAvailabilityLabel, 
-  getEventAvailabilityColor,
-  getEventEstimatedAvailability
-} from "@/lib/eventAvailability";
 
 interface ImprovedEventCardProps {
   event: Event;
@@ -52,14 +41,6 @@ const ImprovedEventCard = ({
   const { getConnectionsByEvent } = useNetworking();
   const [showPhotoGallery, setShowPhotoGallery] = useState(false);
   const [user, setUser] = useState(getCurrentUser());
-
-  // Update event availability status
-  const updatedEvent = updateEventAvailability(event);
-  const available = isEventAvailable(updatedEvent);
-  const waitingListAvailable = hasWaitingListAvailable(updatedEvent);
-  const availabilityLabel = getEventAvailabilityLabel(updatedEvent, isPortuguese);
-  const availabilityColor = getEventAvailabilityColor(updatedEvent);
-  const estimatedAvailability = getEventEstimatedAvailability(updatedEvent, isPortuguese);
 
   // Get connections for this event
   const eventConnections = getConnectionsByEvent(event.id);
@@ -224,15 +205,17 @@ const ImprovedEventCard = ({
               <div className="flex items-end justify-between">
                 {/* Left: Availability Status */}
                 <div>
-                  {available ? (
-                    <span className={`${availabilityColor.bg} ${availabilityColor.text} text-xs font-bold px-3 py-1.5 rounded-full shadow-lg border ${availabilityColor.border} flex items-center gap-1.5`}>
-                      <CheckCircleIcon className="w-3 h-3" />
-                      {availabilityLabel.toUpperCase()}
+                  {isFull ? (
+                    <span className="bg-action-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                      FULL {event.allowWaitlist && "• JOIN WAITLIST"}
+                    </span>
+                  ) : isAlmostFull ? (
+                    <span className="bg-coral-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                      {spotsLeft} SPOT{spotsLeft === 1 ? "" : "S"} LEFT
                     </span>
                   ) : (
-                    <span className={`${availabilityColor.bg} ${availabilityColor.text} text-xs font-bold px-3 py-1.5 rounded-full shadow-lg border ${availabilityColor.border} flex items-center gap-1.5`}>
-                      <ExclamationTriangleIcon className="w-3 h-3" />
-                      {availabilityLabel.toUpperCase()}
+                    <span className="bg-secondary-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                      {spotsLeft} SPOTS AVAILABLE
                     </span>
                   )}
                 </div>
@@ -330,64 +313,41 @@ const ImprovedEventCard = ({
 
             {/* CTA buttons - compact and inline */}
             <div className="mt-auto">
-              {available ? (
-                <div className="flex gap-2">
-                  <a
-                    href={`/events/${event.id}`}
-                    className="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-2.5 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-sm"
-                  >
-                    {isPortuguese ? "Ver Mais" : "View More"}
-                  </a>
-                  <SaveFavoriteCartButton
-                    itemId={event.id}
-                    itemType="event"
-                    title={event.title}
-                    description={event.description}
-                    imageUrl={event.images?.[0]}
-                    category={event.category}
-                    eventDate={event.date}
-                    eventTime={event.time}
-                    eventLocation={event.location}
-                    eventPrice={event.price}
-                    spotsLeft={updatedEvent.maxAttendees - updatedEvent.currentAttendees}
-                    requiresApproval={event.requiresApproval}
-                    membershipRequired={event.membershipRequired}
-                    showSave={false}
-                    showCart={true}
-                    iconOnly={false}
-                    size="small"
-                    variant="outline"
-                    className="flex-1 text-sm py-2.5 px-4 whitespace-nowrap"
-                  />
-                </div>
-              ) : (
-                <div className="space-y-2">
-                  <div className="flex gap-2">
-                    <a
-                      href={`/events/${event.id}`}
-                      className="flex-1 bg-gray-400 text-white font-semibold py-2.5 px-4 rounded-lg text-center text-sm opacity-60 cursor-not-allowed"
-                    >
-                      {isPortuguese ? "Esgotado" : "Fully Booked"}
-                    </a>
-                    <button
-                      className="flex-1 bg-gray-400 text-white font-semibold py-2.5 px-4 rounded-lg text-sm opacity-60 cursor-not-allowed"
-                      disabled
-                    >
-                      {isPortuguese ? "Indisponível" : "Unavailable"}
-                    </button>
-                  </div>
-                  {waitingListAvailable && (
-                    <WaitingListButton
-                      serviceId={event.id}
-                      serviceName={event.title}
-                      serviceNamePortuguese={event.title}
-                      estimatedAvailability={estimatedAvailability || undefined}
-                      estimatedAvailabilityPortuguese={estimatedAvailability || undefined}
-                      className="w-full"
-                    />
-                  )}
-                </div>
-              )}
+              <div className="flex gap-2">
+                <a
+                  href={`/events/${event.id}`}
+                  className="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-2.5 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-sm"
+                >
+                  {isFull
+                    ? isPortuguese
+                      ? "Lista"
+                      : "Waitlist"
+                    : isPortuguese
+                    ? "Ver Mais"
+                    : "View More"}
+                </a>
+                <SaveFavoriteCartButton
+                  itemId={event.id}
+                  itemType="event"
+                  title={event.title}
+                  description={event.description}
+                  imageUrl={event.images?.[0]}
+                  category={event.category}
+                  eventDate={event.date}
+                  eventTime={event.time}
+                  eventLocation={event.location}
+                  eventPrice={event.price}
+                  spotsLeft={spotsLeft}
+                  requiresApproval={event.requiresApproval}
+                  membershipRequired={event.membershipRequired}
+                  showSave={false}
+                  showCart={true}
+                  iconOnly={false}
+                  size="small"
+                  variant="outline"
+                  className="flex-1 text-sm py-2.5 px-4 whitespace-nowrap"
+                />
+              </div>
             </div>
           </div>
         </motion.div>

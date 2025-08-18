@@ -222,9 +222,9 @@ export default function MatchCard({ match, onLike, onPass, isLiking, disabled }:
         <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md rounded-2xl px-3 py-2 shadow-lg border border-white/40">
           <div className="flex items-center gap-2">
             <div className={`w-3 h-3 rounded-full ${
-              compatibilityScore >= 90 ? 'bg-green-500' :
-              compatibilityScore >= 80 ? 'bg-yellow-500' :
-              compatibilityScore >= 70 ? 'bg-orange-500' : 'bg-red-500'
+              compatibilityScore >= 90 ? 'bg-secondary-500' :
+              compatibilityScore >= 80 ? 'bg-accent-500' :
+              compatibilityScore >= 70 ? 'bg-coral-500' : 'bg-action-500'
             }`} />
             <span className="text-sm font-bold text-neutral-800">
               {compatibilityScore}%

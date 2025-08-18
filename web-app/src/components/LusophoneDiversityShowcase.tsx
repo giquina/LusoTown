@@ -15,7 +15,8 @@ import {
   MapPinIcon,
   StarIcon,
   FlagIcon,
-  AcademicCapIcon
+  AcademicCapIcon,
+  BuildingOffice2Icon
 } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
 
@@ -646,7 +647,7 @@ export default function LusophoneDiversityShowcase() {
 
                       <div>
                         <h5 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                          <BuildingOfficeIcon className="w-4 h-4" />
+                          <BuildingOffice2Icon className="w-4 h-4" />
                           {language === 'pt' ? 'Negócios:' : 'Businesses:'}
                         </h5>
                         <ul className="space-y-1">

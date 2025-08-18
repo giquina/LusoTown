@@ -47,8 +47,9 @@ export default function LanguageToggle() {
         onClick={() => setIsOpen(!isOpen)}
         className="group flex items-center justify-center bg-white/90 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 shadow-lg border border-secondary-200/40 hover:border-secondary-400 hover:shadow-xl hover:bg-gradient-to-r hover:from-secondary-50 hover:to-accent-50 transition-all duration-300 hover:scale-105 min-w-[44px] min-h-[44px]"
         title={`Current: ${currentLang.label}`}
+        style={{ fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto, sans-serif' }}
       >
-        <span className="text-lg sm:text-xl group-hover:scale-110 transition-transform duration-300">{getCurrentFlag()}</span>
+        <span className="text-lg sm:text-xl group-hover:scale-110 transition-transform duration-300 block" style={{ lineHeight: 1 }}>{getCurrentFlag()}</span>
       </button>
 
       {isOpen && (
@@ -77,7 +78,7 @@ export default function LanguageToggle() {
                   : 'text-gray-700 hover:text-secondary-700'
               }`}
             >
-              <span className="text-xl group-hover:scale-110 transition-transform duration-300">{lang.flag}</span>
+              <span className="text-xl group-hover:scale-110 transition-transform duration-300 block" style={{ lineHeight: 1, fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto, sans-serif' }}>{lang.flag}</span>
               <div className="flex-1 text-left">
                 <div className="font-semibold">{lang.label}</div>
                 {lang.value === 'pt-pt' && <div className="text-xs text-gray-500">Europa • África • Ásia</div>}

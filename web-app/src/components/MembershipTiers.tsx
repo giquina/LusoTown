@@ -11,9 +11,9 @@ import {
   ShieldCheckIcon,
   AcademicCapIcon,
   BriefcaseIcon,
-  BuildingOfficeIcon,
-  CrownIcon
+  BuildingOffice2Icon
 } from '@heroicons/react/24/outline'
+import { Crown } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { useSubscription } from '@/context/SubscriptionContext'
 import { getMembershipTierConfig, type MembershipTier } from '@/lib/supabase'
@@ -51,8 +51,8 @@ export default function MembershipTiers({
       case 'basic': return StarIcon
       case 'student': return AcademicCapIcon
       case 'professional': return BriefcaseIcon
-      case 'business': return BuildingOfficeIcon
-      case 'vip': return CrownIcon
+      case 'business': return BuildingOffice2Icon
+      case 'vip': return Crown
       default: return StarIcon
     }
   }
@@ -70,12 +70,12 @@ export default function MembershipTiers({
         }
       case 'student':
         return {
-          border: 'border-blue-200',
-          bg: 'bg-blue-50',
-          iconBg: 'bg-blue-100',
-          iconText: 'text-blue-600',
-          button: 'bg-blue-500 hover:bg-blue-600 text-white',
-          badge: 'bg-blue-100 text-blue-800'
+          border: 'border-secondary-200',
+          bg: 'bg-secondary-50',
+          iconBg: 'bg-secondary-100',
+          iconText: 'text-secondary-600',
+          button: 'bg-secondary-500 hover:bg-secondary-600 text-white',
+          badge: 'bg-secondary-100 text-secondary-800'
         }
       case 'professional':
         return {
@@ -88,21 +88,21 @@ export default function MembershipTiers({
         }
       case 'business':
         return {
-          border: 'border-amber-200',
-          bg: 'bg-amber-50',
-          iconBg: 'bg-amber-100',
-          iconText: 'text-amber-600',
-          button: 'bg-amber-500 hover:bg-amber-600 text-white',
-          badge: 'bg-amber-100 text-amber-800'
+          border: 'border-accent-200',
+          bg: 'bg-accent-50',
+          iconBg: 'bg-accent-100',
+          iconText: 'text-accent-600',
+          button: 'bg-accent-500 hover:bg-accent-600 text-white',
+          badge: 'bg-accent-100 text-accent-800'
         }
       case 'vip':
         return {
-          border: 'border-purple-200',
-          bg: 'bg-purple-50',
-          iconBg: 'bg-purple-100',
-          iconText: 'text-purple-600',
-          button: 'bg-purple-500 hover:bg-purple-600 text-white',
-          badge: 'bg-purple-100 text-purple-800'
+          border: 'border-premium-200',
+          bg: 'bg-premium-50',
+          iconBg: 'bg-premium-100',
+          iconText: 'text-premium-600',
+          button: 'bg-premium-500 hover:bg-premium-600 text-white',
+          badge: 'bg-premium-100 text-premium-800'
         }
       default:
         return {

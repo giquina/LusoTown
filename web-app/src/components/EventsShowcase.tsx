@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, memo, useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { 
   CalendarDaysIcon, 
@@ -24,8 +24,8 @@ import WaitingListModal from '@/components/WaitingListModal'
 import { useWaitingList } from '@/context/WaitingListContext'
 import { useLanguage } from '@/context/LanguageContext'
 
-// Event Image Component with fallback
-const EventImage = ({ event }: { event: typeof upcomingEvents[0] }) => {
+// Event Image Component with fallback - Memoized for performance
+const EventImage = memo(({ event }: { event: typeof upcomingEvents[0] }) => {
   return (
     <div className="h-48 relative overflow-hidden">
       <EventImageWithFallback
@@ -58,7 +58,7 @@ const EventImage = ({ event }: { event: typeof upcomingEvents[0] }) => {
       {/* Status/Price badge */}
       <div className={`absolute top-4 right-4 rounded-xl px-3 py-2 shadow-lg ${
         event.status === 'available' 
-          ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
+          ? 'bg-gradient-to-r from-secondary-500 to-secondary-600 text-white'
           : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white'
       }`}>
         <div className="text-xs font-bold">
@@ -69,20 +69,20 @@ const EventImage = ({ event }: { event: typeof upcomingEvents[0] }) => {
       {/* Special badges for featured event */}
       {event.featured && (
         <>
-          <div className="absolute top-16 left-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-lg px-2 py-1 shadow-lg animate-pulse">
+          <div className="absolute top-16 left-4 bg-gradient-to-r from-accent-400 to-coral-500 text-white rounded-lg px-2 py-1 shadow-lg animate-pulse">
             <div className="text-xs font-bold flex items-center">
               <GiftIcon className="w-3 h-3 mr-1" />
               FREE GIVEAWAY
             </div>
           </div>
-          <div className="absolute top-28 left-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg px-2 py-1 shadow-lg">
+          <div className="absolute top-28 left-4 bg-gradient-to-r from-primary-500 to-premium-600 text-white rounded-lg px-2 py-1 shadow-lg">
             <div className="text-xs font-bold">NEW EVENT</div>
           </div>
         </>
       )}
     </div>
   )
-}
+})
 
 const upcomingEvents = [
   {
@@ -125,7 +125,7 @@ const upcomingEvents = [
     maxAttendees: 50,
     price: 45,
     category: "Business & Professional",
-    image: "/events/portuguese/business-summit.jpg",
+    image: "/events/portuguese/portuguese-networking.jpg",
     color: "from-primary-500 to-secondary-500",
     icon: <UsersIcon className="w-6 h-6 text-white" />,
     ageRestriction: "Professional networking for all ages",
@@ -143,7 +143,7 @@ const upcomingEvents = [
     maxAttendees: 24,
     price: 55,
     category: "Cooking & Culture",
-    image: "/events/portuguese/cooking-workshop.jpg",
+    image: "/events/wine-paint.jpg",
     color: "from-coral-500 to-accent-500",
     icon: <BeakerIcon className="w-6 h-6 text-white" />,
     ageRestriction: "Welcome to all ages and skill levels",
@@ -177,11 +177,16 @@ const eventStats = [
   { number: "15+", label: "UK Cities", icon: <MapPinIcon className="w-5 h-5" /> }
 ]
 
-export default function EventsShowcase() {
+const EventsShowcase = memo(() => {
   const { getWaitingListCount } = useWaitingList()
   const { language } = useLanguage()
   const [waitingListModalOpen, setWaitingListModalOpen] = useState(false)
   const [selectedEvent, setSelectedEvent] = useState<typeof upcomingEvents[0] | null>(null)
+  
+  // Memoize filtered events for performance
+  const filteredEvents = useMemo(() => {
+    return upcomingEvents.slice(0, 6) // Show only first 6 events
+  }, [])
 
   const handleJoinWaitingList = (event: typeof upcomingEvents[0]) => {
     setSelectedEvent(event)
@@ -240,7 +245,7 @@ export default function EventsShowcase() {
           className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16"
         >
           {eventStats.map((stat, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 shadow-sm text-center">
+            <div key={index} className="bg-white rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 text-center">
               <div className="w-12 h-12 bg-primary-100 text-primary-600 rounded-xl flex items-center justify-center mx-auto mb-3">
                 {stat.icon}
               </div>
@@ -252,7 +257,7 @@ export default function EventsShowcase() {
 
         {/* Featured Events - Enhanced Multi-Column Responsive Layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 lg:gap-8 mb-12 sm:mb-16">
-          {upcomingEvents.slice(0, 3).map((event, index) => (
+          {filteredEvents.slice(0, 3).map((event, index) => (
             <motion.div
               key={event.id}
               initial={{ opacity: 0, y: 30 }}
@@ -271,7 +276,7 @@ export default function EventsShowcase() {
                     {event.title}
                   </h3>
                   {event.status === 'fully-booked' && (
-                    <div className="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full ml-2 flex-shrink-0">
+                    <div className="bg-action-500 text-white text-xs font-bold px-2 py-1 rounded-full ml-2 flex-shrink-0">
                       {language === 'pt' ? 'LOTADO' : 'FULLY BOOKED'}
                     </div>
                   )}
@@ -294,8 +299,8 @@ export default function EventsShowcase() {
                     <UsersIcon className="w-4 h-4 mr-2 text-primary-500" />
                     {event.attendees}/{event.maxAttendees} attending
                   </div>
-                  <div className="flex items-center text-sm text-orange-600 font-medium">
-                    <SparklesIcon className="w-4 h-4 mr-2 text-orange-500" />
+                  <div className="flex items-center text-sm text-coral-600 font-medium">
+                    <SparklesIcon className="w-4 h-4 mr-2 text-coral-500" />
                     {event.ageRestriction}
                   </div>
                 </div>
@@ -305,7 +310,7 @@ export default function EventsShowcase() {
                   {event.status === 'available' ? (
                     <>
                       <div className="flex justify-between items-center mb-2">
-                        <span className="text-xs text-green-600 font-medium flex items-center">
+                        <span className="text-xs text-secondary-600 font-medium flex items-center">
                           <CheckCircleIcon className="w-3 h-3 mr-1" />
                           Available to book
                         </span>
@@ -315,7 +320,7 @@ export default function EventsShowcase() {
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2">
                         <div 
-                          className="bg-gradient-to-r from-green-500 to-emerald-500 h-2 rounded-full transition-all duration-300"
+                          className="bg-gradient-to-r from-secondary-500 to-secondary-600 h-2 rounded-full transition-all duration-300"
                           style={{ width: `${(event.attendees / event.maxAttendees) * 100}%` }}
                         ></div>
                       </div>
@@ -328,7 +333,7 @@ export default function EventsShowcase() {
                   ) : (
                     <>
                       <div className="flex justify-between items-center mb-2">
-                        <span className="text-xs text-red-600 font-medium">
+                        <span className="text-xs text-action-600 font-medium">
                           {language === 'pt' ? 'Completo' : 'Fully booked'}
                         </span>
                         <span className="text-xs font-medium text-gray-500">
@@ -342,7 +347,7 @@ export default function EventsShowcase() {
                         ></div>
                       </div>
                       {/* Waiting List Info */}
-                      <div className="mt-2 text-xs text-orange-600 font-medium bg-orange-50 px-2 py-1 rounded-lg border border-orange-200">
+                      <div className="mt-2 text-xs text-coral-600 font-medium bg-coral-50 px-2 py-1 rounded-lg border border-coral-200">
                         <UsersIcon className="w-3 h-3 inline mr-1" />
                         {getWaitingListCount(event.id)} {language === 'pt' ? 'na lista de espera' : 'on waiting list'}
                       </div>
@@ -355,14 +360,14 @@ export default function EventsShowcase() {
                   {event.status === 'available' ? (
                     <a 
                       href={`/events/${event.id}/book`}
-                      className="w-full bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 text-white font-semibold py-4 rounded-2xl hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 transition-all duration-300 group-hover:scale-105 block text-center shadow-lg hover:shadow-xl animate-pulse"
+                      className="w-full bg-gradient-to-r from-secondary-500 via-secondary-600 to-secondary-700 text-white font-semibold py-4 rounded-2xl hover:from-secondary-600 hover:via-secondary-700 hover:to-secondary-800 transition-all duration-300 group-hover:scale-105 block text-center shadow-xl hover:shadow-2xl animate-pulse min-h-[44px] flex items-center justify-center"
                     >
                       Book Now - £{event.price}
                     </a>
                   ) : (
                     <button 
                       onClick={() => handleJoinWaitingList(event)}
-                      className="w-full bg-gradient-to-r from-orange-500 via-amber-500 to-yellow-500 text-white font-semibold py-4 rounded-2xl hover:from-orange-600 hover:via-amber-600 hover:to-yellow-600 transition-all duration-300 group-hover:scale-105 block text-center shadow-lg hover:shadow-xl"
+                      className="w-full bg-gradient-to-r from-coral-500 via-accent-500 to-accent-600 text-white font-semibold py-4 rounded-2xl hover:from-coral-600 hover:via-accent-600 hover:to-accent-700 transition-all duration-300 group-hover:scale-105 block text-center shadow-xl hover:shadow-2xl min-h-[44px]"
                     >
                       {language === 'pt' ? 'Juntar à Lista de Espera' : 'Join Waiting List'}
                     </button>
@@ -395,7 +400,7 @@ export default function EventsShowcase() {
             ].map((category, index) => (
               <div 
                 key={index}
-                className="text-center p-4 rounded-2xl bg-gradient-to-br from-gray-50 to-secondary-50/30 hover:from-secondary-50 hover:to-primary-50 transition-all duration-300 cursor-pointer group border border-gray-100/50 hover:border-secondary-200/50 shadow-sm hover:shadow-lg"
+                className="text-center p-4 rounded-2xl bg-gradient-to-br from-gray-50 to-secondary-50/30 hover:from-secondary-50 hover:to-primary-50 transition-all duration-300 cursor-pointer group border border-gray-100/50 hover:border-secondary-200/50 shadow-xl hover:shadow-2xl"
               >
                 <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">
                   {category.icon}
@@ -430,14 +435,14 @@ export default function EventsShowcase() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link 
                 href="/events" 
-                className="inline-flex items-center bg-white text-secondary-600 font-bold px-10 py-4 rounded-2xl hover:bg-gray-50 transition-all duration-300 group shadow-lg hover:shadow-xl"
+                className="inline-flex items-center bg-white text-secondary-600 font-bold px-10 py-4 rounded-2xl hover:bg-gray-50 transition-all duration-300 group shadow-xl hover:shadow-2xl min-h-[44px]"
               >
                 View Events
                 <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link 
                 href="/signup" 
-                className="inline-flex items-center border-2 border-white text-white font-bold px-10 py-4 rounded-2xl hover:bg-white hover:text-secondary-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center border-2 border-white text-white font-bold px-10 py-4 rounded-2xl hover:bg-white hover:text-secondary-600 transition-all duration-300 shadow-xl hover:shadow-2xl min-h-[44px]"
               >
                 Join Now
               </Link>
@@ -456,4 +461,6 @@ export default function EventsShowcase() {
       )}
     </section>
   )
-}
+})
+
+export default EventsShowcase

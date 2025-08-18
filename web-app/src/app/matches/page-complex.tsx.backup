@@ -1,0 +1,988 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+import { useLanguage } from '@/context/LanguageContext'
+import { useNetworking } from '@/context/NetworkingContext'
+import { useSubscription } from '@/context/SubscriptionContext'
+import { motion } from 'framer-motion'
+import { 
+  Heart, 
+  X, 
+  Filter, 
+  MapPin, 
+  Briefcase, 
+  GraduationCap, 
+  Coffee,
+  Calendar,
+  MessageCircle,
+  Shield,
+  Crown,
+  Sparkles,
+  Users,
+  Globe,
+  Music,
+  Camera
+} from 'lucide-react'
+import MatchCard from '@/components/MatchCard'
+import MatchFilters from '@/components/MatchFilters'
+import MatchingAlgorithm from '@/components/MatchingAlgorithm'
+import PremiumMatchesGate from '@/components/PremiumMatchesGate'
+import SafetyCenter from '@/components/SafetyCenter'
+import MatchConversations from '@/components/MatchConversations'
+
+interface MatchesPageProps {}
+
+interface UserProfile {
+  id: string
+  firstName: string
+  lastName?: string
+  profilePictureUrl?: string
+  location?: string
+  membershipTier: 'free' | 'core' | 'premium' | 'business' | 'student'
+  isVerified?: boolean
+  culturalBackground?: string
+  interests?: string[]
+  professionalBackground?: string
+  bio?: string
+  age?: number
+  languagePreference?: string
+  relationshipGoal?: 'friendship' | 'professional' | 'cultural_exchange' | 'any'
+  status?: 'individual' | 'group' | 'any'
+}
+
+interface PremiumMatch {
+  id: string
+  userId: string
+  matchedUserId: string
+  matchedUser: UserProfile
+  compatibilityScore: number
+  sharedInterests: string[]
+  culturalCompatibility: number
+  professionalCompatibility: number
+  locationCompatibility: number
+  matchReason: string
+  isLiked: boolean
+  isMatched: boolean
+  createdAt: string
+  expiresAt?: string
+}
+
+interface MatchFilters {
+  ageRange?: [number, number]
+  interests?: string[]
+  professionalBackground?: string[]
+  languagePreference?: 'portuguese' | 'english' | 'both'
+  culturalBackground?: 'portugal' | 'brazil' | 'other_lusophone' | 'any'
+  relationshipGoal?: 'friendship' | 'professional' | 'cultural_exchange' | 'any'
+  status?: 'individual' | 'group' | 'any'
+  location?: string
+  membershipTier?: 'free' | 'core' | 'premium' | 'business' | 'student'
+  verifiedOnly?: boolean
+}
+
+export default function MatchesPage({}: MatchesPageProps) {
+  const { language, t } = useLanguage()
+  const { hasActiveSubscription, membershipTier, subscriptionRequired } = useSubscription()
+  
+  const [currentTab, setCurrentTab] = useState<'discover' | 'matches' | 'conversations' | 'safety'>('discover')
+  const [showFilters, setShowFilters] = useState(false)
+  const [matches, setMatches] = useState<PremiumMatch[]>([])
+  const [filters, setFilters] = useState<MatchFilters>({})
+  const [dailyMatchesUsed, setDailyMatchesUsed] = useState(0)
+  const [loading, setLoading] = useState(true)
+  const [isLiking, setIsLiking] = useState<string | null>(null)
+
+  // Free tier limits
+  const DAILY_FREE_MATCHES = 5
+  const hasReachedDailyLimit = !hasActiveSubscription && dailyMatchesUsed >= DAILY_FREE_MATCHES
+
+  useEffect(() => {
+    loadMatches()
+    loadDailyUsage()
+  }, [filters])
+
+  const loadMatches = async () => {
+    setLoading(true)
+    try {
+      // Mock API call - in real app would fetch from backend
+      const mockMatches = generateMockMatches()
+      setMatches(mockMatches)
+    } catch (error) {
+      console.error('Error loading matches:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  const loadDailyUsage = () => {
+    const today = new Date().toDateString()
+    const savedUsage = localStorage.getItem(`lusotown-daily-matches-${today}`)
+    setDailyMatchesUsed(savedUsage ? parseInt(savedUsage) : 0)
+  }
+
+  const generateMockMatches = (): PremiumMatch[] => {
+    const mockProfiles: UserProfile[] = [
+      {
+        id: 'user-1',
+        firstName: 'Sofia',
+        lastName: 'Fernandes',
+        profilePictureUrl: 'https://images.unsplash.com/photo-1494790108755-2616b612b1ac?w=400&h=400&fit=crop&crop=face&auto=format',
+        location: 'Canary Wharf, London',
+        membershipTier: 'premium',
+        isVerified: true,
+        culturalBackground: 'portugal',
+        interests: ['fado', 'portuguese_cuisine', 'business_networking', 'wine_tasting', 'cultural_events'],
+        professionalBackground: 'Finance & Banking',
+        bio: 'Portuguese finance professional passionate about preserving our cultural traditions while building meaningful business connections in London.',
+        age: 32,
+        languagePreference: 'both',
+        relationshipGoal: 'professional',
+        status: 'individual'
+      },
+      {
+        id: 'user-2',
+        firstName: 'Miguel',
+        lastName: 'Santos',
+        profilePictureUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face&auto=format',
+        location: 'Vauxhall, London',
+        membershipTier: 'core',
+        isVerified: true,
+        culturalBackground: 'portugal',
+        interests: ['football', 'portuguese_history', 'entrepreneurship', 'tech_innovation', 'community_activities'],
+        professionalBackground: 'Technology & Startups',
+        bio: 'Tech entrepreneur from Porto, building the next generation of Portuguese startups in London while staying connected to our roots.',
+        age: 29,
+        languagePreference: 'both',
+        relationshipGoal: 'friendship',
+        status: 'group'
+      },
+      {
+        id: 'user-3',
+        firstName: 'Ana',
+        lastName: 'Rodrigues',
+        profilePictureUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face&auto=format',
+        location: 'Camden, London',
+        membershipTier: 'premium',
+        isVerified: true,
+        culturalBackground: 'brazil',
+        interests: ['brazilian_music', 'cultural_exchange', 'photography', 'arts_and_culture', 'language_learning'],
+        professionalBackground: 'Creative Arts & Media',
+        bio: 'Brazilian photographer documenting the lusophone community in London. Love sharing stories through images and connecting cultures.',
+        age: 27,
+        languagePreference: 'portuguese',
+        relationshipGoal: 'cultural_exchange',
+        status: 'individual'
+      },
+      {
+        id: 'user-4',
+        firstName: 'Carlos',
+        lastName: 'Oliveira',
+        profilePictureUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format',
+        location: 'Greenwich, London',
+        membershipTier: 'business',
+        isVerified: true,
+        culturalBackground: 'portugal',
+        interests: ['real_estate', 'portuguese_business', 'investment', 'networking', 'golf'],
+        professionalBackground: 'Real Estate & Investment',
+        bio: 'Portuguese real estate investor helping fellow Portuguese speakers find their perfect home in London. Business partnerships welcome.',
+        age: 41,
+        languagePreference: 'both',
+        relationshipGoal: 'professional',
+        status: 'group'
+      },
+      {
+        id: 'user-5',
+        firstName: 'Beatriz',
+        lastName: 'Costa',
+        profilePictureUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face&auto=format',
+        location: 'South Kensington, London',
+        membershipTier: 'student',
+        isVerified: false,
+        culturalBackground: 'portugal',
+        interests: ['medical_studies', 'portuguese_literature', 'volunteering', 'student_life', 'cultural_preservation'],
+        professionalBackground: 'Healthcare & Medicine',
+        bio: 'Medical student from Lisbon studying in London. Looking to connect with other Portuguese students and young professionals.',
+        age: 24,
+        languagePreference: 'both',
+        relationshipGoal: 'friendship',
+        status: 'individual'
+      }
+    ]
+
+    return mockProfiles.map((profile, index) => ({
+      id: `match-${profile.id}`,
+      userId: 'current-user',
+      matchedUserId: profile.id,
+      matchedUser: profile,
+      compatibilityScore: Math.floor(75 + Math.random() * 20), // 75-95%
+      sharedInterests: profile.interests?.slice(0, 2 + Math.floor(Math.random() * 2)) || [],
+      culturalCompatibility: Math.floor(80 + Math.random() * 15), // 80-95%
+      professionalCompatibility: Math.floor(70 + Math.random() * 25), // 70-95%
+      locationCompatibility: Math.floor(60 + Math.random() * 30), // 60-90%
+      matchReason: generateMatchReason(profile),
+      isLiked: false,
+      isMatched: false,
+      createdAt: new Date().toISOString(),
+      expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString() // 7 days
+    }))
+  }
+
+  const generateMatchReason = (profile: UserProfile): string => {
+    const reasons = [
+      `Shared Portuguese heritage and ${profile.professionalBackground?.toLowerCase()} background`,
+      `Both interested in ${profile.interests?.[0]?.replace('_', ' ')} and located in London`,
+      `Strong cultural compatibility and similar relationship goals`,
+      `Professional synergy in ${profile.professionalBackground} with cultural connection`,
+      `Geographic proximity and shared Portuguese community interests`
+    ]
+    return reasons[Math.floor(Math.random() * reasons.length)]
+  }
+
+  const handleLike = async (matchId: string) => {
+    if (hasReachedDailyLimit) {
+      return
+    }
+
+    setIsLiking(matchId)
+    
+    try {
+      // Update local state
+      setMatches(prev => prev.map(match => 
+        match.id === matchId 
+          ? { ...match, isLiked: true, isMatched: Math.random() > 0.7 } // 30% chance of mutual match
+          : match
+      ))
+
+      // Update daily usage for free users
+      if (!hasActiveSubscription) {
+        const newUsage = dailyMatchesUsed + 1
+        setDailyMatchesUsed(newUsage)
+        const today = new Date().toDateString()
+        localStorage.setItem(`lusotown-daily-matches-${today}`, newUsage.toString())
+      }
+
+      // Mock API call to record like
+      console.log('Liked match:', matchId)
+      
+    } catch (error) {
+      console.error('Error liking match:', error)
+    } finally {
+      setIsLiking(null)
+    }
+  }
+
+  const handlePass = async (matchId: string) => {
+    if (hasReachedDailyLimit) {
+      return
+    }
+
+    try {
+      // Remove from current matches
+      setMatches(prev => prev.filter(match => match.id !== matchId))
+
+      // Update daily usage for free users
+      if (!hasActiveSubscription) {
+        const newUsage = dailyMatchesUsed + 1
+        setDailyMatchesUsed(newUsage)
+        const today = new Date().toDateString()
+        localStorage.setItem(`lusotown-daily-matches-${today}`, newUsage.toString())
+      }
+
+      // Mock API call to record pass
+      console.log('Passed on match:', matchId)
+      
+    } catch (error) {
+      console.error('Error passing match:', error)
+    }
+  }
+
+  const mutualMatches = matches.filter(match => match.isMatched)
+  const likedMatches = matches.filter(match => match.isLiked && !match.isMatched)
+  const availableMatches = matches.filter(match => !match.isLiked)
+
+  const translations = {
+    en: {
+      title: 'Premium Matches',
+      subtitle: 'Connect with Portuguese Community Members in London & UK',
+      tabs: {
+        discover: 'Discover',
+        matches: 'Matches',
+        conversations: 'Conversations',
+        safety: 'Safety'
+      },
+      dailyLimit: `Daily matches: ${dailyMatchesUsed}/${DAILY_FREE_MATCHES}`,
+      unlimited: 'Unlimited matches',
+      noMatches: 'No more matches available',
+      upgradeForMore: 'Upgrade to Premium for unlimited matches',
+      filters: 'Filters',
+      compatibility: 'Compatibility',
+      sharedInterests: 'Shared Interests',
+      culturalMatch: 'Cultural Match',
+      professionalMatch: 'Professional Match',
+      locationMatch: 'Location Match',
+      mutualMatches: 'Mutual Matches',
+      likedProfiles: 'Liked Profiles',
+      startConversation: 'Start Conversation',
+      waitingForResponse: 'Waiting for response...',
+      premiumFeatures: {
+        title: 'Premium Matching Features',
+        unlimited: 'Unlimited daily matches',
+        advanced: 'Advanced filtering options',
+        priority: 'Priority profile visibility',
+        insights: 'Detailed compatibility insights',
+        vip: 'VIP event access for matches'
+      }
+    },
+    pt: {
+      title: 'Matches Premium',
+      subtitle: 'Conecte-se com Membros da Comunidade Portuguesa em Londres e Reino Unido',
+      tabs: {
+        discover: 'Descobrir',
+        matches: 'Matches',
+        conversations: 'Conversas',
+        safety: 'Segurança'
+      },
+      dailyLimit: `Matches diários: ${dailyMatchesUsed}/${DAILY_FREE_MATCHES}`,
+      unlimited: 'Matches ilimitados',
+      noMatches: 'Não há mais matches disponíveis',
+      upgradeForMore: 'Upgrade para Premium para matches ilimitados',
+      filters: 'Filtros',
+      compatibility: 'Compatibilidade',
+      sharedInterests: 'Interesses Partilhados',
+      culturalMatch: 'Match Cultural',
+      professionalMatch: 'Match Profissional',
+      locationMatch: 'Match de Localização',
+      mutualMatches: 'Matches Mútuos',
+      likedProfiles: 'Perfis Curtidos',
+      startConversation: 'Iniciar Conversa',
+      waitingForResponse: 'Aguardando resposta...',
+      premiumFeatures: {
+        title: 'Funcionalidades Premium de Matching',
+        unlimited: 'Matches diários ilimitados',
+        advanced: 'Opções de filtro avançadas',
+        priority: 'Visibilidade prioritária do perfil',
+        insights: 'Insights detalhados de compatibilidade',
+        vip: 'Acesso VIP a eventos para matches'
+      }
+    }
+  }
+
+  const currentTranslations = translations[language]
+
+  if (subscriptionRequired && currentTab === 'discover' && hasReachedDailyLimit) {
+    return <PremiumMatchesGate />
+  }
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-secondary-50/20 to-accent-50/20 pt-20">
+      {/* Premium Enhanced Hero Section */}
+      <div className="relative min-h-[70vh] bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 overflow-hidden">
+        {/* Background Pattern & Decorations */}
+        <div className="absolute inset-0">
+          {/* Animated gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-500/90 via-secondary-500/80 to-accent-500/90"></div>
+          
+          {/* Portuguese flag inspired elements */}
+          <div className="absolute top-0 left-0 w-full h-full">
+            <div className="absolute top-12 left-12 w-32 h-32 bg-gradient-to-br from-green-400/20 to-green-500/30 rounded-full animate-pulse" />
+            <div className="absolute top-24 right-16 w-24 h-24 bg-gradient-to-bl from-red-400/20 to-red-500/30 rounded-full animate-pulse delay-1000" />
+            <div className="absolute bottom-20 left-20 w-20 h-20 bg-gradient-to-tr from-yellow-400/20 to-yellow-500/30 rounded-full animate-pulse delay-2000" />
+            <div className="absolute bottom-32 right-32 w-28 h-28 bg-gradient-to-tl from-blue-400/20 to-blue-500/30 rounded-full animate-pulse delay-3000" />
+          </div>
+          
+          {/* Heart patterns */}
+          <div className="absolute inset-0 opacity-10">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.5, rotate: 0 }}
+                animate={{ 
+                  opacity: [0.1, 0.3, 0.1], 
+                  scale: [0.8, 1.2, 0.8],
+                  rotate: [0, 180, 360]
+                }}
+                transition={{ 
+                  duration: 6 + i, 
+                  repeat: Infinity, 
+                  delay: i * 0.5 
+                }}
+                className={`absolute w-8 h-8 text-white ${
+                  i % 4 === 0 ? 'top-1/4 left-1/4' :
+                  i % 4 === 1 ? 'top-1/3 right-1/4' :
+                  i % 4 === 2 ? 'bottom-1/3 left-1/3' :
+                  'bottom-1/4 right-1/3'
+                }`}
+                style={{
+                  transform: `translate(${i * 30}px, ${i * 20}px)`
+                }}
+              >
+                <Heart className="w-full h-full" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+          <div className="text-center">
+            {/* Enhanced Title Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="mb-8"
+            >
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <motion.div 
+                  initial={{ scale: 0.5, rotate: -180 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ duration: 0.8, type: "spring", bounce: 0.5 }}
+                  className="w-16 h-16 bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/30 shadow-2xl"
+                >
+                  <Heart className="h-8 w-8 text-white drop-shadow-lg" />
+                </motion.div>
+                
+                {hasActiveSubscription && (
+                  <motion.div 
+                    initial={{ scale: 0.5, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ delay: 0.3, duration: 0.5 }}
+                    className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center shadow-xl border-2 border-white/30"
+                  >
+                    <Crown className="h-6 w-6 text-white drop-shadow-lg" />
+                  </motion.div>
+                )}
+              </div>
+              
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-4 leading-tight tracking-tight drop-shadow-2xl">
+                <span className="block">{currentTranslations.title}</span>
+              </h1>
+              
+              <div className="w-24 h-1 bg-gradient-to-r from-white/50 via-white to-white/50 mx-auto mb-6 rounded-full"></div>
+            </motion.div>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="text-xl sm:text-2xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed font-medium drop-shadow-lg"
+            >
+              {currentTranslations.subtitle}
+            </motion.p>
+
+            {/* Portuguese Cultural Touch */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="mb-10"
+            >
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 max-w-2xl mx-auto border border-white/20 shadow-2xl">
+                <p className="text-white/80 text-lg font-medium italic">
+                  {language === 'pt' 
+                    ? '"Onde há portugueses, há sempre lugar para mais um" - Encontre a sua comunidade em Londres'
+                    : '"Where there are Portuguese, there\'s always room for one more" - Find your community in London'
+                  }
+                </p>
+                <div className="flex items-center justify-center gap-2 mt-4">
+                  <span className="text-2xl">🇵🇹</span>
+                  <span className="text-white/60 text-sm font-semibold tracking-wider">UNIDOS PELA LÍNGUA</span>
+                  <span className="text-2xl">🇬🇧</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Premium Match Counter & Stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 0.8 }}
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
+            >
+              <div className="bg-white/20 backdrop-blur-md text-white px-6 py-3 rounded-full text-lg font-semibold border border-white/30 shadow-xl">
+                {hasActiveSubscription ? currentTranslations.unlimited : currentTranslations.dailyLimit}
+              </div>
+              
+              {membershipTier !== 'none' && (
+                <div className={`px-6 py-3 rounded-full text-lg font-semibold shadow-xl border-2 ${
+                  membershipTier === 'platinum' ? 'bg-gradient-to-r from-yellow-400 to-yellow-500 text-white border-yellow-300' :
+                  membershipTier === 'gold' ? 'bg-gradient-to-r from-accent-400 to-accent-500 text-white border-accent-300' :
+                  membershipTier === 'silver' ? 'bg-gradient-to-r from-gray-300 to-gray-400 text-gray-800 border-gray-200' :
+                  'bg-gradient-to-r from-coral-400 to-coral-500 text-white border-coral-300'
+                }`}>
+                  {membershipTier.charAt(0).toUpperCase() + membershipTier.slice(1)} Member
+                </div>
+              )}
+              
+              <div className="bg-white/20 backdrop-blur-md text-white px-6 py-3 rounded-full text-lg font-semibold border border-white/30 shadow-xl">
+                🇵🇹 {language === 'pt' ? 'Londres & Reino Unido' : 'London & UK Only'}
+              </div>
+            </motion.div>
+
+            {/* How It Works Quick Preview */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9, duration: 0.8 }}
+              className="mb-12"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-xl">
+                  <div className="w-12 h-12 bg-gradient-to-br from-white/30 to-white/20 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                    <Heart className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="text-white font-bold text-lg mb-2">
+                    {language === 'pt' ? '1. Descubra Matches' : '1. Discover Matches'}
+                  </h3>
+                  <p className="text-white/80 text-sm">
+                    {language === 'pt' 
+                      ? 'Encontre portugueses com interesses similares baseados em Londres'
+                      : 'Find Portuguese speakers with similar interests based in London'
+                    }
+                  </p>
+                </div>
+                
+                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-xl">
+                  <div className="w-12 h-12 bg-gradient-to-br from-white/30 to-white/20 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                    <MessageCircle className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="text-white font-bold text-lg mb-2">
+                    {language === 'pt' ? '2. Conecte-se' : '2. Connect'}
+                  </h3>
+                  <p className="text-white/80 text-sm">
+                    {language === 'pt' 
+                      ? 'Converse e conheça melhor sua comunidade portuguesa'
+                      : 'Chat and get to know your Portuguese community better'
+                    }
+                  </p>
+                </div>
+                
+                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-xl">
+                  <div className="w-12 h-12 bg-gradient-to-br from-white/30 to-white/20 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                    <Calendar className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="text-white font-bold text-lg mb-2">
+                    {language === 'pt' ? '3. Vão a Eventos' : '3. Attend Events'}
+                  </h3>
+                  <p className="text-white/80 text-sm">
+                    {language === 'pt' 
+                      ? 'Encontrem-se em eventos portugueses reais em Londres'
+                      : 'Meet at real Portuguese events happening in London'
+                    }
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Premium Navigation Tabs */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.1, duration: 0.8 }}
+              className="flex justify-center"
+            >
+              <div className="bg-white/20 backdrop-blur-md p-2 rounded-2xl border border-white/30 shadow-2xl">
+                {Object.entries(currentTranslations.tabs).map(([key, label]) => (
+                  <button
+                    key={key}
+                    onClick={() => setCurrentTab(key as any)}
+                    className={`px-6 sm:px-8 py-3 rounded-xl text-base font-semibold transition-all duration-300 ${
+                      currentTab === key
+                        ? 'bg-white text-primary-600 shadow-xl transform scale-105'
+                        : 'text-white/80 hover:text-white hover:bg-white/10'
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* How It Works - Detailed Section */}
+      <div className="bg-white py-16 sm:py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              {language === 'pt' ? 'Como Funciona o Sistema de Matches' : 'How the Matching System Works'}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              {language === 'pt' 
+                ? 'Conectamos portugueses em Londres através de interesses partilhados e depois encorajamos encontros reais em eventos da comunidade.'
+                : 'We connect Portuguese speakers in London through shared interests, then encourage real-world meetups at community events.'
+              }
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
+            {/* Left Side - Steps */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <span className="text-white font-bold text-lg">1</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    {language === 'pt' ? 'Apenas Portugueses em Londres' : 'Portuguese Speakers in London Only'}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {language === 'pt' 
+                      ? 'Todos os utilizadores são falantes de português verificados que vivem em Londres ou no Reino Unido. Sem exceções.'
+                      : 'All users are verified Portuguese speakers living in London or the UK. No exceptions.'
+                    }
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-accent-500 to-coral-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <span className="text-white font-bold text-lg">2</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    {language === 'pt' ? 'Matching Inteligente' : 'Smart Matching'}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {language === 'pt' 
+                      ? 'O nosso algoritmo combina-vos baseado em interesses, profissão, idade e objetivos - desde amizades a networking profissional.'
+                      : 'Our algorithm matches you based on interests, profession, age, and goals - from friendships to professional networking.'
+                    }
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <span className="text-white font-bold text-lg">3</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    {language === 'pt' ? 'Encontros Reais em Eventos' : 'Real Meetups at Events'}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {language === 'pt' 
+                      ? 'Encorajamos que se encontrem em eventos portugueses reais - desde noites de fado a workshops de negócios em Londres.'
+                      : 'We encourage you to meet at real Portuguese events - from fado nights to business workshops happening in London.'
+                    }
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right Side - Visual */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-3xl p-8 lg:p-12">
+                <div className="text-center">
+                  <div className="flex items-center justify-center gap-4 mb-6">
+                    <span className="text-4xl">🇵🇹</span>
+                    <Heart className="h-8 w-8 text-primary-600" />
+                    <span className="text-4xl">🇬🇧</span>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    {language === 'pt' ? 'Unidos pela Língua' : 'United by Language'}
+                  </h3>
+                  <p className="text-gray-600 mb-6">
+                    {language === 'pt' 
+                      ? 'Mais de 500 portugueses ativos em Londres esperando para se conectar contigo.'
+                      : 'Over 500 active Portuguese speakers in London waiting to connect with you.'
+                    }
+                  </p>
+                  <div className="grid grid-cols-2 gap-4 text-center">
+                    <div className="bg-white rounded-2xl p-4 shadow-lg">
+                      <div className="text-2xl font-bold text-primary-600">150+</div>
+                      <div className="text-sm text-gray-600">
+                        {language === 'pt' ? 'Eventos/Mês' : 'Events/Month'}
+                      </div>
+                    </div>
+                    <div className="bg-white rounded-2xl p-4 shadow-lg">
+                      <div className="text-2xl font-bold text-secondary-600">95%</div>
+                      <div className="text-sm text-gray-600">
+                        {language === 'pt' ? 'Taxa de Sucesso' : 'Success Rate'}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Event Connection CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 rounded-3xl p-8 lg:p-12 text-center text-white"
+          >
+            <h3 className="text-2xl sm:text-3xl font-bold mb-4">
+              {language === 'pt' ? '✨ A Magia Acontece nos Eventos!' : '✨ The Magic Happens at Events!'}
+            </h3>
+            <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+              {language === 'pt' 
+                ? 'Quando fizerem match, sugerimos que se encontrem num dos nossos eventos portugueses em Londres. É mais seguro, mais divertido e conhecem outros portugueses também!'
+                : 'When you match, we suggest meeting at one of our Portuguese events in London. It\'s safer, more fun, and you\'ll meet other Portuguese speakers too!'
+              }
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="/events"
+                className="bg-white text-primary-600 font-bold px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+              >
+                {language === 'pt' ? 'Ver Eventos Portugueses' : 'View Portuguese Events'}
+              </a>
+              <a 
+                href="/community"
+                className="bg-white/20 backdrop-blur-md text-white font-bold px-8 py-4 rounded-2xl border border-white/30 hover:bg-white/30 transition-all duration-300"
+              >
+                {language === 'pt' ? 'Conhecer a Comunidade' : 'Meet the Community'}
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {currentTab === 'discover' && (
+          <div className="space-y-8">
+            {/* Enhanced Filters Bar */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="bg-white/80 backdrop-blur-lg border border-white/60 p-4 sm:p-6 rounded-2xl shadow-lg"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <button
+                  onClick={() => setShowFilters(!showFilters)}
+                  className="flex items-center gap-3 text-neutral-700 hover:text-primary-600 transition-colors font-medium"
+                >
+                  <div className="w-8 h-8 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-lg flex items-center justify-center">
+                    <Filter className="h-4 w-4 text-primary-600" />
+                  </div>
+                  {currentTranslations.filters}
+                  <span className={`ml-2 text-xs px-2 py-1 rounded-full transition-all ${
+                    showFilters 
+                      ? 'bg-primary-100 text-primary-700' 
+                      : 'bg-neutral-100 text-neutral-600'
+                  }`}>
+                    {showFilters ? 'Hide' : 'Show'}
+                  </span>
+                </button>
+                
+                {!hasActiveSubscription && (
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-action-500 rounded-full animate-pulse" />
+                    <span className="text-sm text-neutral-600 font-medium">
+                      {hasReachedDailyLimit ? currentTranslations.upgradeForMore : `${DAILY_FREE_MATCHES - dailyMatchesUsed} matches remaining today`}
+                    </span>
+                  </div>
+                )}
+              </div>
+            </motion.div>
+
+            {/* Filters Panel */}
+            {showFilters && (
+              <MatchFilters
+                filters={filters}
+                onFiltersChange={setFilters}
+                hasActiveSubscription={hasActiveSubscription}
+              />
+            )}
+
+            {/* Enhanced Matches Grid */}
+            {loading ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
+                {[...Array(6)].map((_, i) => (
+                  <motion.div 
+                    key={i} 
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: i * 0.1 }}
+                    className="bg-white rounded-2xl h-96 animate-pulse shadow-lg"
+                  />
+                ))}
+              </div>
+            ) : availableMatches.length > 0 ? (
+              <motion.div 
+                className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+              >
+                {availableMatches.map((match, index) => (
+                  <motion.div
+                    key={match.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <MatchCard
+                      match={match}
+                      onLike={() => handleLike(match.id)}
+                      onPass={() => handlePass(match.id)}
+                      isLiking={isLiking === match.id}
+                      disabled={hasReachedDailyLimit}
+                    />
+                  </motion.div>
+                ))}
+              </motion.div>
+            ) : (
+              <div className="text-center py-12">
+                <Heart className="h-16 w-16 text-neutral-300 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-neutral-900 mb-2">
+                  {currentTranslations.noMatches}
+                </h3>
+                {!hasActiveSubscription && (
+                  <p className="text-neutral-600 mb-6">
+                    {currentTranslations.upgradeForMore}
+                  </p>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+
+        {currentTab === 'matches' && (
+          <div className="space-y-8">
+            {/* Mutual Matches */}
+            {mutualMatches.length > 0 && (
+              <div>
+                <h3 className="text-xl font-semibold text-neutral-900 mb-4 flex items-center gap-2">
+                  <Sparkles className="h-5 w-5 text-accent-500" />
+                  {currentTranslations.mutualMatches} ({mutualMatches.length})
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {mutualMatches.map((match) => (
+                    <div key={match.id} className="bg-white rounded-xl p-6 shadow-sm border-2 border-accent-200">
+                      <div className="flex items-center gap-4 mb-4">
+                        <img
+                          src={match.matchedUser.profilePictureUrl}
+                          alt={match.matchedUser.firstName}
+                          className="w-16 h-16 rounded-full object-cover"
+                        />
+                        <div>
+                          <h4 className="font-semibold text-neutral-900">
+                            {match.matchedUser.firstName} {match.matchedUser.lastName}
+                          </h4>
+                          <p className="text-sm text-neutral-600 flex items-center gap-1">
+                            <MapPin className="h-4 w-4" />
+                            {match.matchedUser.location}
+                          </p>
+                        </div>
+                      </div>
+                      <button className="w-full bg-accent-500 text-white py-2 rounded-lg font-medium hover:bg-accent-600 transition-colors">
+                        {currentTranslations.startConversation}
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Liked Profiles */}
+            {likedMatches.length > 0 && (
+              <div>
+                <h3 className="text-xl font-semibold text-neutral-900 mb-4 flex items-center gap-2">
+                  <Heart className="h-5 w-5 text-action-500" />
+                  {currentTranslations.likedProfiles} ({likedMatches.length})
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {likedMatches.map((match) => (
+                    <div key={match.id} className="bg-white rounded-xl p-6 shadow-sm">
+                      <div className="flex items-center gap-4 mb-4">
+                        <img
+                          src={match.matchedUser.profilePictureUrl}
+                          alt={match.matchedUser.firstName}
+                          className="w-16 h-16 rounded-full object-cover"
+                        />
+                        <div>
+                          <h4 className="font-semibold text-neutral-900">
+                            {match.matchedUser.firstName} {match.matchedUser.lastName}
+                          </h4>
+                          <p className="text-sm text-neutral-600 flex items-center gap-1">
+                            <MapPin className="h-4 w-4" />
+                            {match.matchedUser.location}
+                          </p>
+                        </div>
+                      </div>
+                      <p className="text-sm text-neutral-500 text-center">
+                        {currentTranslations.waitingForResponse}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {mutualMatches.length === 0 && likedMatches.length === 0 && (
+              <div className="text-center py-12">
+                <Users className="h-16 w-16 text-neutral-300 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-neutral-900 mb-2">
+                  No matches yet
+                </h3>
+                <p className="text-neutral-600">
+                  Start discovering profiles to make your first match!
+                </p>
+              </div>
+            )}
+          </div>
+        )}
+
+        {currentTab === 'conversations' && (
+          <MatchConversations mutualMatches={mutualMatches} />
+        )}
+
+        {currentTab === 'safety' && (
+          <SafetyCenter />
+        )}
+      </div>
+
+      {/* Premium Features Sidebar (Premium users only) */}
+      {hasActiveSubscription && (
+        <div className="fixed right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-xl shadow-lg p-4 w-64 hidden xl:block">
+          <div className="text-center mb-4">
+            <Crown className="h-8 w-8 text-premium-500 mx-auto mb-2" />
+            <h4 className="font-semibold text-neutral-900">{currentTranslations.premiumFeatures.title}</h4>
+          </div>
+          <div className="space-y-3 text-sm">
+            <div className="flex items-center gap-2 text-secondary-600">
+              <Sparkles className="h-4 w-4" />
+              {currentTranslations.premiumFeatures.unlimited}
+            </div>
+            <div className="flex items-center gap-2 text-secondary-600">
+              <Filter className="h-4 w-4" />
+              {currentTranslations.premiumFeatures.advanced}
+            </div>
+            <div className="flex items-center gap-2 text-secondary-600">
+              <Crown className="h-4 w-4" />
+              {currentTranslations.premiumFeatures.priority}
+            </div>
+            <div className="flex items-center gap-2 text-secondary-600">
+              <Calendar className="h-4 w-4" />
+              {currentTranslations.premiumFeatures.vip}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}

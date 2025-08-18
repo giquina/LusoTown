@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 import Footer from '@/components/Footer'
 import { useLanguage } from '@/context/LanguageContext'
 import { 
@@ -606,66 +607,171 @@ export default function StudentsPage() {
     <main className="min-h-screen bg-white">
       <div className="pt-16">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50">
-          <div className="container-width">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-primary-600 mb-6">
-                <AcademicCapIcon className="w-4 h-4 mr-2" />
-                {language === 'pt' ? 'Estudantes Portugueses em Londres e Reino Unido • 8 Universidades Parceiras' : 'Portuguese Students in London & UK • 8 Partner Universities'}
-              </div>
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                {language === 'pt' ? (
-                  <>
-                    Estudantes Portugueses em <span className="gradient-text">Universidades do Reino Unido</span>
-                  </>
-                ) : (
-                  <>
-                    Portuguese Students at <span className="gradient-text">UK Universities</span>
-                  </>
-                )}
-              </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                {language === 'pt' ? 
-                  'Conecte-se com estudantes portugueses que estudam em universidades de Londres e do Reino Unido. Descontos exclusivos, eventos culturais, networking profissional e apoio acadêmico.' :
-                  'Connect with Portuguese students studying at London and UK universities. Exclusive discounts, cultural events, professional networking, and academic support.'
-                }
-              </p>
+        <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
+          <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535201/university-students-london_q8w9xr.jpg')] bg-cover bg-center opacity-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-900/10 via-transparent to-secondary-900/10"></div>
+          <div className="relative container-width py-16 lg:py-24">
+            <div className="text-center max-w-4xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="mb-6"
+              >
+                <span className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-primary-100 via-secondary-50 to-accent-100 border border-primary-200 shadow-lg">
+                  <AcademicCapIcon className="w-4 h-4 mr-2 text-secondary-600" />
+                  <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent font-bold">
+                    {language === 'pt'
+                      ? "Estudantes Portugueses • 8 Universidades Parceiras"
+                      : "Portuguese Students • 8 Partner Universities"}
+                  </span>
+                </span>
+              </motion.div>
+
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="text-4xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight"
+              >
+                {/* Desktop full title */}
+                <span className="hidden sm:block">
+                  {language === 'pt' ? (
+                    <>
+                      Estudantes portugueses em
+                      <br />
+                      <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
+                        universidades do Reino Unido
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      Portuguese students at
+                      <br />
+                      <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
+                        UK universities
+                      </span>
+                    </>
+                  )}
+                </span>
+                {/* Mobile short title */}
+                <span className="sm:hidden">
+                  {language === 'pt' ? (
+                    <>
+                      Estudantes
+                      <br />
+                      <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
+                        Portugueses
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      Portuguese
+                      <br />
+                      <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
+                        Students
+                      </span>
+                    </>
+                  )}
+                </span>
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
+              >
+                {/* Desktop full subtitle */}
+                <span className="hidden sm:block">
+                  {language === 'pt'
+                    ? "Conecte-se com a maior comunidade de estudantes portugueses em universidades de Londres e do Reino Unido. Descontos exclusivos de 50%, eventos culturais autênticos, networking profissional e apoio académico especializado."
+                    : "Connect with the largest community of Portuguese students at London and UK universities. Exclusive 50% discounts, authentic cultural events, professional networking, and specialized academic support."}
+                </span>
+                {/* Mobile short subtitle */}
+                <span className="sm:hidden">
+                  {language === 'pt'
+                    ? "Conecte-se com estudantes portugueses em universidades do Reino Unido. Descontos exclusivos, eventos culturais e networking profissional."
+                    : "Connect with Portuguese students at UK universities. Exclusive discounts, cultural events, and professional networking."}
+                </span>
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.25 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6"
+              >
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+                  <span>
+                    {language === 'pt'
+                      ? "2,150+ Estudantes Portugueses"
+                      : "2,150+ Portuguese Students"}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-secondary-500 rounded-full"></div>
+                  <span>
+                    {language === 'pt'
+                      ? "50% Desconto na Adesão"
+                      : "50% Membership Discount"}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
+                  <span>
+                    {language === 'pt'
+                      ? "Eventos Exclusivos"
+                      : "Exclusive Events"}
+                  </span>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
+              >
+                <button
+                  onClick={handleVerification}
+                  className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1"
+                >
+                  {language === 'pt' ? "Verificar Email Estudante" : "Verify Student Email"}
+                </button>
+                <button
+                  onClick={() => document.getElementById('partner-universities')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="border border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  {language === 'pt' ? "Ver Universidades Parceiras" : "View Partner Universities"}
+                </button>
+              </motion.div>
 
               {/* Key Statistics */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-12">
-                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4">
-                  <div className="text-2xl font-bold text-primary-600">2,150+</div>
-                  <div className="text-sm text-gray-600">{language === 'pt' ? 'Estudantes Portugueses no Reino Unido' : 'Portuguese Students in UK'}</div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.35 }}
+                className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
+              >
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                  <div className="text-2xl font-bold text-primary-600 mb-1">2,150+</div>
+                  <div className="text-xs text-gray-600">{language === 'pt' ? 'Estudantes Portugueses no Reino Unido' : 'Portuguese Students in UK'}</div>
                 </div>
-                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4">
-                  <div className="text-2xl font-bold text-secondary-600">8</div>
-                  <div className="text-sm text-gray-600">{language === 'pt' ? 'Universidades do Reino Unido' : 'UK Universities'}</div>
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                  <div className="text-2xl font-bold text-secondary-600 mb-1">8</div>
+                  <div className="text-xs text-gray-600">{language === 'pt' ? 'Universidades Parceiras' : 'Partner Universities'}</div>
                 </div>
-                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4">
-                  <div className="text-2xl font-bold text-accent-600">50%</div>
-                  <div className="text-sm text-gray-600">{language === 'pt' ? 'Desconto Estudante' : 'Student Discount'}</div>
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                  <div className="text-2xl font-bold text-accent-600 mb-1">50%</div>
+                  <div className="text-xs text-gray-600">{language === 'pt' ? 'Desconto Estudante' : 'Student Discount'}</div>
                 </div>
-                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4">
-                  <div className="text-2xl font-bold text-premium-600">£12.50</div>
-                  <div className="text-sm text-gray-600">{language === 'pt' ? 'Adesão Anual' : 'Annual Membership'}</div>
+                <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                  <div className="text-2xl font-bold text-premium-600 mb-1">£12.50</div>
+                  <div className="text-xs text-gray-600">{language === 'pt' ? 'Adesão Anual' : 'Annual Membership'}</div>
                 </div>
-              </div>
-
-              {/* Primary CTA */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button 
-                  onClick={handleVerification}
-                  className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-bold py-4 px-8 rounded-xl hover:from-primary-600 hover:to-secondary-600 shadow-xl hover:shadow-2xl transition-all duration-200 group"
-                >
-                  <span className="flex items-center justify-center">
-                    {language === 'pt' ? 'Verificar Email Estudante' : 'Verify Student Email'}
-                    <ArrowRightIcon className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </button>
-                <button className="border-2 border-primary-400 text-primary-600 hover:bg-primary-400 hover:text-white font-bold py-4 px-8 rounded-xl transition-all duration-200">
-                  {language === 'pt' ? 'Ver Universidades Parceiras' : 'View Partner Universities'}
-                </button>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -709,10 +815,10 @@ export default function StudentsPage() {
                   <div className="p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                        benefit.category === 'financial' ? 'bg-green-100 text-green-600' :
-                        benefit.category === 'academic' ? 'bg-blue-100 text-blue-600' :
-                        benefit.category === 'professional' ? 'bg-purple-100 text-purple-600' :
-                        benefit.category === 'cultural' ? 'bg-orange-100 text-orange-600' :
+                        benefit.category === 'financial' ? 'bg-secondary-100 text-secondary-600' :
+                        benefit.category === 'academic' ? 'bg-primary-100 text-primary-600' :
+                        benefit.category === 'professional' ? 'bg-premium-100 text-premium-600' :
+                        benefit.category === 'cultural' ? 'bg-coral-100 text-coral-600' :
                         'bg-gray-100 text-gray-600'
                       }`}>
                         {benefit.category === 'financial' && <BanknotesIcon className="w-6 h-6" />}
@@ -722,7 +828,7 @@ export default function StudentsPage() {
                         {benefit.category === 'social' && <UserGroupIcon className="w-6 h-6" />}
                       </div>
                       {benefit.discountAmount && (
-                        <span className="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-medium">
+                        <span className="bg-secondary-100 text-secondary-700 px-2 py-1 rounded-full text-xs font-medium">
                           {benefit.discountAmount} {language === 'pt' ? 'desconto' : 'off'}
                         </span>
                       )}
@@ -742,7 +848,7 @@ export default function StudentsPage() {
                       </div>
                       {benefit.eligibility.slice(0, 2).map((req, index) => (
                         <div key={index} className="flex items-center text-xs text-gray-600">
-                          <CheckIconSolid className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" />
+                          <CheckIconSolid className="w-3 h-3 text-secondary-500 mr-2 flex-shrink-0" />
                           {req}
                         </div>
                       ))}
@@ -753,7 +859,7 @@ export default function StudentsPage() {
                         {benefit.value}
                       </span>
                       {benefit.verificationRequired && (
-                        <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full">
+                        <span className="text-xs bg-accent-100 text-accent-700 px-2 py-1 rounded-full">
                           {language === 'pt' ? 'Verificação requerida' : 'Verification required'}
                         </span>
                       )}
@@ -764,13 +870,13 @@ export default function StudentsPage() {
             </div>
 
             {/* Value Proposition */}
-            <div className="bg-gradient-to-r from-green-50 to-primary-50 rounded-2xl p-8 text-center">
+            <div className="bg-gradient-to-r from-secondary-50 to-primary-50 rounded-2xl p-8 text-center">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 {language === 'pt' ? 'Valor Total dos Benefícios para Estudantes' : 'Total Value of Student Benefits'}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
-                  <div className="text-3xl font-bold text-green-600 mb-2">£800+</div>
+                  <div className="text-3xl font-bold text-secondary-600 mb-2">£800+</div>
                   <div className="text-sm text-gray-600">{language === 'pt' ? 'Valor anual em benefícios' : 'Annual value in benefits'}</div>
                 </div>
                 <div>
@@ -787,7 +893,7 @@ export default function StudentsPage() {
         </section>
 
         {/* Partner Universities Section */}
-        <section className="py-20 bg-gray-50">
+        <section id="partner-universities" className="py-20 bg-gray-50">
           <div className="container-width">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -902,7 +1008,7 @@ export default function StudentsPage() {
                       <div className="space-y-1">
                         {university.benefits.slice(0, 2).map((benefit, index) => (
                           <div key={index} className="flex items-start text-sm text-gray-600">
-                            <CheckIconSolid className="w-3 h-3 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                            <CheckIconSolid className="w-3 h-3 text-secondary-500 mr-2 mt-0.5 flex-shrink-0" />
                             {benefit}
                           </div>
                         ))}
@@ -922,14 +1028,14 @@ export default function StudentsPage() {
                     
                     {/* Action Buttons */}
                     <div className="flex gap-2">
-                      <button className="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium py-2 px-4 rounded-lg text-sm hover:from-primary-600 hover:to-secondary-600 transition-all duration-200">
+                      <button className="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium py-3 px-4 rounded-lg text-sm hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 min-h-[44px] shadow-xl hover:shadow-2xl">
                         {language === 'pt' ? 'Ver Detalhes' : 'View Details'}
                       </button>
                       <a
                         href={university.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-3 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+                        className="px-3 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-all duration-200 min-h-[44px] shadow-lg hover:shadow-xl"
                       >
                         <LinkIcon className="w-4 h-4" />
                       </a>
@@ -988,10 +1094,10 @@ export default function StudentsPage() {
                   <div className="p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                        event.type === 'career' ? 'bg-green-100 text-green-600' :
-                        event.type === 'academic' ? 'bg-blue-100 text-blue-600' :
-                        event.type === 'networking' ? 'bg-purple-100 text-purple-600' :
-                        event.type === 'cultural' ? 'bg-orange-100 text-orange-600' :
+                        event.type === 'career' ? 'bg-secondary-100 text-secondary-600' :
+                        event.type === 'academic' ? 'bg-primary-100 text-primary-600' :
+                        event.type === 'networking' ? 'bg-premium-100 text-premium-600' :
+                        event.type === 'cultural' ? 'bg-coral-100 text-coral-600' :
                         'bg-gray-100 text-gray-600'
                       }`}>
                         {event.type === 'career' && <BriefcaseIcon className="w-6 h-6" />}
@@ -1046,7 +1152,7 @@ export default function StudentsPage() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
                         {event.price === 0 ? (
-                          <span className="text-lg font-bold text-green-600">
+                          <span className="text-lg font-bold text-secondary-600">
                             {language === 'pt' ? 'Grátis' : 'Free'}
                           </span>
                         ) : (
@@ -1063,7 +1169,7 @@ export default function StudentsPage() {
                       </span>
                     </div>
                     
-                    <button className="w-full mt-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium py-2 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200">
+                    <button className="w-full mt-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium py-3 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 min-h-[44px] shadow-xl hover:shadow-2xl">
                       {language === 'pt' ? 'Reservar Lugar' : 'Book Spot'}
                     </button>
                   </div>
@@ -1172,7 +1278,7 @@ export default function StudentsPage() {
                         language === 'pt' ? 'Declaração da universidade (em papel timbrado)' : 'University statement (on letterhead)'
                       ].map((doc, index) => (
                         <div key={index} className="flex items-start">
-                          <CheckIconSolid className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <CheckIconSolid className="w-4 h-4 text-secondary-500 mr-2 mt-0.5 flex-shrink-0" />
                           <span className="text-sm text-gray-600">{doc}</span>
                         </div>
                       ))}
@@ -1190,7 +1296,7 @@ export default function StudentsPage() {
                         language === 'pt' ? 'Imagem clara e legível' : 'Clear and readable image'
                       ].map((req, index) => (
                         <div key={index} className="flex items-start">
-                          <CheckIconSolid className="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <CheckIconSolid className="w-4 h-4 text-primary-500 mr-2 mt-0.5 flex-shrink-0" />
                           <span className="text-sm text-gray-600">{req}</span>
                         </div>
                       ))}
@@ -1303,7 +1409,7 @@ export default function StudentsPage() {
                     <div className="space-y-1">
                       {testimonial.benefits.map((benefit, benefitIndex) => (
                         <div key={benefitIndex} className="flex items-center text-xs text-gray-600">
-                          <CheckIconSolid className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" />
+                          <CheckIconSolid className="w-3 h-3 text-secondary-500 mr-2 flex-shrink-0" />
                           {benefit}
                         </div>
                       ))}
@@ -1518,7 +1624,7 @@ export default function StudentsPage() {
 
                 {verificationStep === 3 && (
                   <div className="text-center">
-                    <CheckBadgeIcon className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                    <CheckBadgeIcon className="w-16 h-16 text-secondary-500 mx-auto mb-4" />
                     <h4 className="text-lg font-semibold text-gray-900 mb-4">
                       {language === 'pt' ? 'Verificação Submetida!' : 'Verification Submitted!'}
                     </h4>

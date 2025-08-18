@@ -9,7 +9,7 @@ import {
   UserGroupIcon,
   GlobeAltIcon,
   AcademicCapIcon,
-  BuildingOfficeIcon,
+  BuildingOffice2Icon,
   SparklesIcon,
   StarIcon,
   ArrowPathRoundedSquareIcon,
@@ -186,7 +186,7 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
     futurePlans: 'Launch executive leadership programme, expand to 100 companies, create Portuguese-British business accelerator.',
     futurePlansPortuguese: 'Lançar programa de liderança executiva, expandir para 100 empresas, criar acelerador empresarial luso-britânico.',
     mediaRecognition: ['Financial Times Diversity', 'HR Magazine', 'Portuguese Business Weekly', 'London Business Journal'],
-    icon: BuildingOfficeIcon,
+    icon: BuildingOffice2Icon,
     color: 'secondary'
   },
   {
@@ -459,7 +459,7 @@ const CATEGORY_CONFIG = {
     labelPt: 'Pontes Educacionais'
   },
   'professional': {
-    icon: BuildingOfficeIcon,
+    icon: BuildingOffice2Icon,
     color: 'secondary',
     labelEn: 'Professional Integration',
     labelPt: 'Integração Profissional'

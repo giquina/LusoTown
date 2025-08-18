@@ -54,11 +54,11 @@ export default function PremiumMembershipPage() {
                   <span className="text-2xl font-bold text-gray-900">LusoTown Premium</span>
                 </div>
                 <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-                  {isPortuguese ? 'Associa��o Premium' : 'Premium Membership'}
+                  {isPortuguese ? 'Associação Premium' : 'Premium Membership'}
                 </h1>
                 <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                   {isPortuguese 
-                    ? 'Experi�ncia completa da comunidade portuguesa de Londres com servi�os premium e benef�cios exclusivos'
+                    ? 'Experiência completa da comunidade portuguesa de Londres com serviços premium e benefícios exclusivos'
                     : 'Complete London Portuguese community experience with premium services and exclusive benefits'
                   }
                 </p>
@@ -77,11 +77,11 @@ export default function PremiumMembershipPage() {
                       <UserGroupIcon className="w-8 h-8 text-primary-600" />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                      {isPortuguese ? 'Integra��o Comunit�ria' : 'Community Integration'}
+                      {isPortuguese ? 'Integração Comunitária' : 'Community Integration'}
                     </h3>
                     <p className="text-gray-600">
                       {isPortuguese
-                        ? 'Clientes de servi�os automaticamente qualificam para membros da comunidade'
+                        ? 'Clientes de serviços automaticamente qualificam para membros da comunidade'
                         : 'Service clients automatically qualify for community membership'
                       }
                     </p>
@@ -96,7 +96,7 @@ export default function PremiumMembershipPage() {
                     </h3>
                     <p className="text-gray-600">
                       {isPortuguese
-                        ? 'Convites autom�ticos para eventos culturais portugueses e acesso � C�mara de Com�rcio'
+                        ? 'Convites automáticos para eventos culturais portugueses e acesso à Câmara de Comércio'
                         : 'Automatic invitations to Portuguese cultural events and Chamber of Commerce access'
                       }
                     </p>
@@ -111,7 +111,7 @@ export default function PremiumMembershipPage() {
                     </h3>
                     <p className="text-gray-600">
                       {isPortuguese
-                        ? 'At� 25% de desconto em todos os servi�os premium com rastreamento autom�tico'
+                        ? 'Até 25% de desconto em todos os serviços premium com rastreamento automático'
                         : 'Up to 25% discount on all premium services with automatic tracking'
                       }
                     </p>
@@ -153,11 +153,11 @@ export default function PremiumMembershipPage() {
               >
                 <div className="text-center mb-8">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                    {isPortuguese ? 'Sistema de Gest�o de Benef�cios' : 'Benefits Management System'}
+                    {isPortuguese ? 'Sistema de Gestão de Benefícios' : 'Benefits Management System'}
                   </h2>
                   <p className="text-gray-600 max-w-2xl mx-auto">
                     {isPortuguese
-                      ? 'Portal completo de membro com rastreamento de benef�cios e aplica��o autom�tica de descontos'
+                      ? 'Portal completo de membro com rastreamento de benefícios e aplicação automática de descontos'
                       : 'Complete member portal with benefits tracking and automatic discount application'
                     }
                   </p>
@@ -165,7 +165,7 @@ export default function PremiumMembershipPage() {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                   <div className="text-center p-4 bg-gray-50 rounded-xl">
-                    <div className="text-2xl font-bold text-primary-600 mb-2">�450K-750K</div>
+                    <div className="text-2xl font-bold text-primary-600 mb-2">£450K-750K</div>
                     <div className="text-sm text-gray-600">
                       {isPortuguese ? 'Receita Projetada Anual' : 'Projected Annual Revenue'}
                     </div>
@@ -181,14 +181,14 @@ export default function PremiumMembershipPage() {
                   <div className="text-center p-4 bg-gray-50 rounded-xl">
                     <div className="text-2xl font-bold text-accent-600 mb-2">4</div>
                     <div className="text-sm text-gray-600">
-                      {isPortuguese ? 'N�veis Premium' : 'Premium Tiers'}
+                      {isPortuguese ? 'Níveis Premium' : 'Premium Tiers'}
                     </div>
                   </div>
 
                   <div className="text-center p-4 bg-gray-50 rounded-xl">
                     <div className="text-2xl font-bold text-action-600 mb-2">25%</div>
                     <div className="text-sm text-gray-600">
-                      {isPortuguese ? 'Desconto M�ximo' : 'Maximum Discount'}
+                      {isPortuguese ? 'Desconto Máximo' : 'Maximum Discount'}
                     </div>
                   </div>
                 </div>
@@ -205,11 +205,11 @@ export default function PremiumMembershipPage() {
                   <div className="max-w-2xl mx-auto">
                     <SparklesIcon className="w-12 h-12 mx-auto mb-4" />
                     <h2 className="text-2xl font-bold mb-4">
-                      {isPortuguese ? 'Pronto para Come�ar?' : 'Ready to Get Started?'}
+                      {isPortuguese ? 'Pronto para Começar?' : 'Ready to Get Started?'}
                     </h2>
                     <p className="text-primary-100 mb-6">
                       {isPortuguese
-                        ? 'Junte-se � nossa comunidade premium e comece a desfrutar de benef�cios exclusivos hoje.'
+                        ? 'Junte-se à nossa comunidade premium e comece a desfrutar de benefícios exclusivos hoje.'
                         : 'Join our premium community and start enjoying exclusive benefits today.'
                       }
                     </p>

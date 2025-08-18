@@ -258,7 +258,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         bioPortuguese: 'Empreendedora em série com 15 anos de experiência criando empresas de tecnologia entre Londres e Lisboa.',
         expertise: ['technology', 'international_expansion', 'venture_capital'],
         country: 'Portugal',
-        imageUrl: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80',
+  imageUrl: '/profiles/default-avatar.svg',
         linkedinUrl: 'https://linkedin.com/in/ana-ferreira-ceo',
         presentationTopic: 'Scaling Portuguese Tech Startups in the UK Market',
         presentationLanguage: 'bilingual'

@@ -30,8 +30,8 @@ const serviceTiers = [
     name: "Premium Security",
     namePortuguese: "Segurança Premium",
     serviceKey: "security_personal", // Maps to available service
-    price: 75,
-    originalPrice: 85,
+    price: 400,
+    originalPrice: 450,
     image:
       "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/premium-security-service_dlqxkx.jpg",
     imageAlt:
@@ -45,9 +45,9 @@ const serviceTiers = [
     },
     minimumHours: 3,
     description:
-      "Enhanced security with licensed protection officer for London-based operations",
+      "Enhanced security with licensed protection officer for London-based operations (£400/day, 3-hour minimum)",
     descriptionPortuguese:
-      "Segurança melhorada com oficial de proteção licenciado para operações baseadas em Londres",
+      "Segurança melhorada com oficial de proteção licenciado para operações baseadas em Londres (£400/dia, mínimo 3 horas)",
     popular: true,
     features: [
       "Portuguese-speaking driver and security officer",
@@ -77,8 +77,8 @@ const serviceTiers = [
     name: "VIP London Experience",
     namePortuguese: "Experiência VIP de Londres",
     serviceKey: "close_protection", // Maps to available service
-    price: 95,
-    originalPrice: 110,
+    price: 800,
+    originalPrice: 900,
     image:
       "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535201/vip-london-bridge_hml2nr.jpg",
     imageAlt:
@@ -126,8 +126,8 @@ const serviceTiers = [
     name: "Elite Protection",
     namePortuguese: "Proteção Elite",
     serviceKey: "executive_transport", // Maps to unavailable service
-    price: 140,
-    originalPrice: 160,
+    price: 65,
+    originalPrice: 75,
     image:
       "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535202/elite-protection-service_dqmxvr.jpg",
     imageAlt: "Elite protection service with professional vehicle in London",
@@ -141,9 +141,9 @@ const serviceTiers = [
     minimumHours: 4,
     callOutPremium: 50,
     description:
-      "Maximum security with close protection team for high-profile individuals - London operations only",
+      "Maximum security with close protection team for high-profile individuals - London operations only (£800/day, 4-hour minimum)",
     descriptionPortuguese:
-      "Segurança máxima com equipa de proteção próxima para indivíduos de alto perfil - operações apenas em Londres",
+      "Segurança máxima com equipa de proteção próxima para indivíduos de alto perfil - operações apenas em Londres (£800/dia, mínimo 4 horas)",
     features: [
       "All VIP London Experience features",
       "Multi-person close protection team for London",
@@ -713,20 +713,21 @@ export default function TransportPage() {
               <span className="sm:hidden">
                 {isPortuguese ? (
                   <>
-                    Motorista ou
+                    LusoTown - Londres
                     <br />
                     <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">
-                      Segurança
+                      Transporte
                     </span>{" "}
                     Português
                   </>
                 ) : (
                   <>
-                    Portuguese Driver
+                    LusoTown - London
                     <br />
                     <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">
-                      or Security
-                    </span>
+                      Portuguese
+                    </span>{" "}
+                    Transport
                   </>
                 )}
               </span>

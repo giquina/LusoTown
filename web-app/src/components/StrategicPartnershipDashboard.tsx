@@ -12,9 +12,7 @@ import {
   BuildingOffice2Icon,
   UserGroupIcon,
   CurrencyPoundIcon,
-  TrendingUpIcon,
   CalendarDaysIcon,
-  HandshakeIcon,
   DocumentTextIcon,
   PresentationChartLineIcon,
   CheckCircleIcon,
@@ -35,6 +33,7 @@ import {
   HeartIcon,
   TrophyIcon
 } from '@heroicons/react/24/outline'
+import { TrendingUp } from 'lucide-react'
 
 interface DashboardMetrics {
   totalPartnerships: number
@@ -196,7 +195,7 @@ const StrategicPartnershipDashboard: React.FC = () => {
           {[
             { id: 'overview', name: language === 'pt' ? 'Visão Geral' : 'Overview', icon: ChartBarIcon },
             { id: 'strategies', name: language === 'pt' ? 'Estratégias' : 'Strategies', icon: PresentationChartLineIcon },
-            { id: 'pipeline', name: language === 'pt' ? 'Pipeline' : 'Pipeline', icon: TrendingUpIcon },
+            { id: 'pipeline', name: language === 'pt' ? 'Pipeline' : 'Pipeline', icon: TrendingUp },
             { id: 'analytics', name: language === 'pt' ? 'Análises' : 'Analytics', icon: ChartBarIcon }
           ].map((tab) => (
             <button
@@ -223,7 +222,7 @@ const StrategicPartnershipDashboard: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
                 <div className="flex items-center">
-                  <HandshakeIcon className="w-8 h-8 text-primary-500" />
+                  <HeartIcon className="w-8 h-8 text-primary-500" />
                   <div className="ml-4">
                     <p className="text-sm font-medium text-gray-600">
                       {language === 'pt' ? 'Total de Parcerias' : 'Total Partnerships'}
@@ -519,7 +518,7 @@ const StrategicPartnershipDashboard: React.FC = () => {
                     <p className="text-2xl font-bold text-gray-900">{metrics.communityGrowthRate}%</p>
                     <p className="text-xs text-green-600">{language === 'pt' ? 'mensal' : 'monthly'}</p>
                   </div>
-                  <TrendingUpIcon className="w-8 h-8 text-green-500" />
+                  <TrendingUp className="w-8 h-8 text-green-500" />
                 </div>
               </div>
 

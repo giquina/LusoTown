@@ -69,7 +69,7 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-300 min-w-0">
                 <MapPinIcon className="h-5 w-5 text-action-400 flex-shrink-0" />
-                <span className="break-words">UK Portuguese Community Platform</span>
+                <span className="break-words">Portuguese speakers in London & UK | Unidos pela Língua</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300 min-w-0">
                 <EnvelopeIcon className="h-5 w-5 text-secondary-400 flex-shrink-0" />
@@ -204,7 +204,7 @@ export default function Footer() {
               <div className="flex items-center gap-3">
                 <span className="text-xs text-gray-500 hidden sm:block">We Accept:</span>
                 {/* Visa */}
-                <div className="w-8 h-5 bg-blue-600 rounded-sm flex items-center justify-center">
+                <div className="w-8 h-5 bg-primary-600 rounded-sm flex items-center justify-center">
                   <span className="text-white text-xs font-bold">VISA</span>
                 </div>
                 {/* Mastercard */}
@@ -223,7 +223,7 @@ export default function Footer() {
                   <span className="text-xs font-bold text-gray-700">G</span>
                 </div>
                 {/* PayPal */}
-                <div className="w-8 h-5 bg-blue-700 rounded-sm flex items-center justify-center">
+                <div className="w-8 h-5 bg-primary-700 rounded-sm flex items-center justify-center">
                   <span className="text-white text-xs font-bold">PP</span>
                 </div>
               </div>

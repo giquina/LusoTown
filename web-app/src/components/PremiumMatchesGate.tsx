@@ -240,14 +240,14 @@ export default function PremiumMatchesGate() {
             {t.subtitle}
           </p>
 
-          <div className="bg-red-50 border border-red-200 rounded-xl p-6 max-w-2xl mx-auto">
+          <div className="bg-action-50 border border-action-200 rounded-xl p-6 max-w-2xl mx-auto">
             <div className="flex items-center justify-center gap-2 mb-3">
-              <Lock className="h-5 w-5 text-red-600" />
-              <span className="font-semibold text-red-900">
+              <Lock className="h-5 w-5 text-action-600" />
+              <span className="font-semibold text-action-900">
                 {language === 'pt' ? 'Serviço Premium Temporariamente Esgotado' : 'Premium Service Temporarily Fully Booked'}
               </span>
             </div>
-            <p className="text-red-800">
+            <p className="text-action-800">
               {language === 'pt' 
                 ? 'O nosso serviço de matches premium está atualmente em alta demanda. Junte-se à nossa lista de espera para ser notificado quando a capacidade for restaurada.'
                 : 'Our premium matching service is currently in high demand. Join our waiting list to be notified when capacity is restored.'

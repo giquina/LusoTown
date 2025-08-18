@@ -95,7 +95,7 @@ export class AuthService {
       name: 'Maria Silva',
       role: 'user',
       membershipTier: 'premium',
-      profileImage: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80',
+  profileImage: '/profiles/default-avatar.svg',
       joinedDate: '2024-01-15',
       interests: ['Cultural Events', 'Portuguese Food', 'Language Exchange', 'Fado Music', 'Portuguese Literature'],
       favoriteEvents: ['event-1', 'event-3', 'event-5'],

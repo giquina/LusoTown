@@ -193,7 +193,7 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
                 {query && (
                   <button
                     onClick={clearSearch}
-                    className="absolute right-0 top-1/2 transform -translate-y-1/2 p-1.5 sm:p-2 hover:bg-gray-100 rounded-full transition-colors min-h-[36px] min-w-[36px] sm:min-h-[44px] sm:min-w-[44px] flex items-center justify-center"
+                    className="absolute right-0 top-1/2 transform -translate-y-1/2 p-1.5 sm:p-2 hover:bg-gray-100 rounded-full transition-all duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center shadow-lg hover:shadow-xl"
                   >
                     <XMarkIcon className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
                   </button>
@@ -201,7 +201,7 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
               </div>
               <button
                 onClick={() => handleSearch()}
-                className="flex-shrink-0 px-3 py-2.5 sm:p-3 lg:px-6 lg:py-3 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-semibold rounded-lg sm:rounded-xl lg:rounded-2xl transition-all duration-300 hover:scale-105 shadow-lg min-h-[40px] min-w-[40px] sm:min-h-[44px] sm:min-w-[44px] lg:min-w-auto"
+                className="flex-shrink-0 px-3 py-2.5 sm:p-3 lg:px-6 lg:py-3 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-semibold rounded-lg sm:rounded-xl lg:rounded-2xl transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl min-h-[44px] min-w-[44px] lg:min-w-auto"
                 aria-label={t('search.button')}
               >
                 {/* Mobile (up to 640px): Show only icon */}
@@ -229,7 +229,7 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
                     <button
                       key={`${suggestion.type}-${suggestion.id}-${index}`}
                       onClick={() => handleSuggestionClick(suggestion)}
-                      className="w-full text-left p-2 sm:p-3 rounded-xl hover:bg-primary-50 transition-colors group min-h-[44px]"
+                      className="w-full text-left p-2 sm:p-3 rounded-xl hover:bg-primary-50 transition-all duration-200 group min-h-[44px] hover:shadow-lg"
                     >
                       <div className="flex items-start gap-2 sm:gap-3">
                         <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 rounded-lg bg-primary-100 group-hover:bg-primary-200 transition-colors flex items-center justify-center text-primary-600">
@@ -265,7 +265,7 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
               <div className="border-t border-gray-100 p-3 bg-gray-50">
                 <button
                   onClick={() => handleSearch()}
-                  className="w-full text-sm text-primary-600 font-medium hover:text-primary-700 flex items-center justify-center gap-2 min-h-[44px]"
+                  className="w-full text-sm text-primary-600 font-medium hover:text-primary-700 flex items-center justify-center gap-2 min-h-[44px] hover:bg-primary-50 rounded-lg transition-all duration-200 py-2 px-3 shadow-lg hover:shadow-xl"
                 >
                   <MagnifyingGlassIcon className="w-4 h-4" />
                   <span className="truncate">{t('search.see-all-results').replace('{query}', query)}</span>
@@ -328,7 +328,7 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
                 )}
                 <button
                   onClick={() => handleSearch()}
-                  className="p-2 text-primary-600 hover:bg-primary-50 rounded-full transition-colors min-h-[36px] min-w-[36px] flex items-center justify-center"
+                  className="p-2 text-primary-600 hover:bg-primary-50 rounded-full transition-all duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center shadow-lg hover:shadow-xl"
                 >
                   <MagnifyingGlassIcon className="w-4 h-4" />
                 </button>
@@ -345,7 +345,7 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
                 <button
                   key={`${suggestion.type}-${suggestion.id}-${index}`}
                   onClick={() => handleSuggestionClick(suggestion)}
-                  className="w-full text-left p-3 hover:bg-gray-50 border-b border-gray-100 last:border-b-0 min-h-[44px]"
+                  className="w-full text-left p-3 hover:bg-gray-50 border-b border-gray-100 last:border-b-0 min-h-[44px] transition-all duration-200 hover:shadow-lg"
                 >
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 rounded-md bg-primary-100 flex items-center justify-center text-primary-600">
@@ -403,7 +403,7 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
               <button
                 key={`${suggestion.type}-${suggestion.id}-${index}`}
                 onClick={() => handleSuggestionClick(suggestion)}
-                className="w-full text-left p-3 rounded-lg hover:bg-gray-50 transition-colors min-h-[44px]"
+                className="w-full text-left p-3 rounded-lg hover:bg-gray-50 transition-all duration-200 min-h-[44px] hover:shadow-lg"
               >
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-primary-100 flex items-center justify-center text-primary-600">

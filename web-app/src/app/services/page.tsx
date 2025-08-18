@@ -30,8 +30,8 @@ const services = [
     id: 'executive-transport',
     name: 'Executive Transport',
     namePortuguese: 'Transporte Executivo',
-    price: 35,
-    maxPrice: 95,
+    price: 45,
+    maxPrice: 75,
     priceUnit: 'hour',
     priceUnitPortuguese: 'hora',
     icon: Car,
@@ -201,90 +201,177 @@ export default function ServicesPage() {
     <div className="min-h-screen bg-white">
       
       {/* Hero Section */}
-      <section className="relative pt-28 lg:pt-32 pb-16 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
+        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/executive-transport-london_dlqxkx.jpg')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-900/10 via-transparent to-secondary-900/10"></div>
+        <div className="relative container-width py-16 lg:py-24">
+          <div className="text-center max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="mb-8"
+              className="mb-6"
             >
-              <div className="inline-flex items-center px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-medium mb-6">
-                <Crown className="w-4 h-4 mr-2" />
-                {isPortuguese ? 'Serviços Premium' : 'Premium Services'}
-              </div>
-              
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              <span className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-primary-100 via-secondary-50 to-accent-100 border border-primary-200 shadow-lg">
+                <Crown className="w-4 h-4 mr-2 text-secondary-600" />
+                <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent font-bold">
+                  {isPortuguese
+                    ? "Serviços Premium Portugueses"
+                    : "Premium Portuguese Services"}
+                </span>
+              </span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-4xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight"
+            >
+              {/* Desktop full title */}
+              <span className="hidden sm:block">
                 {isPortuguese ? (
                   <>
-                    A Premier Plataforma de <br />
-                    <span className="text-primary-600">Serviços Portugueses</span> em Londres
+                    A plataforma líder de
+                    <br />
+                    <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
+                      serviços portugueses
+                    </span>{" "}
+                    em Londres
                   </>
                 ) : (
                   <>
-                    London's Premier <br />
-                    <span className="text-primary-600">Portuguese Services</span> Platform
+                    London's leading
+                    <br />
+                    <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
+                      Portuguese services
+                    </span>{" "}
+                    platform
                   </>
                 )}
-              </h1>
-              
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                {isPortuguese
-                  ? 'Serviços de transporte, segurança e tours culturais de nível mundial com especialização cultural portuguesa para a comunidade de Londres e do Reino Unido'
-                  : 'World-class transport, security, and cultural tour services with Portuguese cultural expertise for London & UK community'
-                }
-              </p>
+              </span>
+              {/* Mobile short title */}
+              <span className="sm:hidden">
+                {isPortuguese ? (
+                  <>
+                    Serviços
+                    <br />
+                    <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
+                      Premium
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    Premium
+                    <br />
+                    <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
+                      Services
+                    </span>
+                  </>
+                )}
+              </span>
+            </motion.h1>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="bg-primary-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary-700 transition-all duration-200 shadow-lg hover:shadow-xl"
-                >
-                  {isPortuguese ? 'Explorar Serviços' : 'Explore Services'}
-                </motion.button>
-                
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => document.getElementById('trust-badges')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-xl font-semibold hover:bg-primary-600 hover:text-white transition-all duration-200"
-                >
-                  {isPortuguese ? 'Ver Credenciais' : 'View Credentials'}
-                </motion.button>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
+            >
+              {/* Desktop full subtitle */}
+              <span className="hidden sm:block">
+                {isPortuguese
+                  ? "Serviços de transporte executivo, segurança pessoal e tours culturais de nível mundial com especialização cultural portuguesa. Conectando a comunidade portuguesa de Londres com experiências premium e culturalmente autênticas."
+                  : "World-class executive transport, personal security, and cultural tour services with Portuguese cultural expertise. Connecting London's Portuguese community with premium and culturally authentic experiences."}
+              </span>
+              {/* Mobile short subtitle */}
+              <span className="sm:hidden">
+                {isPortuguese
+                  ? "Transporte executivo, segurança e tours com especialização cultural portuguesa para a comunidade de Londres."
+                  : "Executive transport, security, and tours with Portuguese cultural expertise for London's community."}
+              </span>
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6"
+            >
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+                <span>
+                  {isPortuguese
+                    ? "SIA Licenciado & TfL Aprovado"
+                    : "SIA Licensed & TfL Approved"}
+                </span>
               </div>
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="w-2 h-2 bg-secondary-500 rounded-full"></div>
+                <span>
+                  {isPortuguese
+                    ? "Especialização Cultural"
+                    : "Cultural Expertise"}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
+                <span>
+                  {isPortuguese
+                    ? "Disponível 24/7"
+                    : "Available 24/7"}
+                </span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
+            >
+              <button
+                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1"
+              >
+                {isPortuguese ? "Explorar Serviços" : "Explore Services"}
+              </button>
+              <button
+                onClick={() => document.getElementById('trust-badges')?.scrollIntoView({ behavior: 'smooth' })}
+                className="border border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                {isPortuguese ? "Ver Credenciais" : "View Credentials"}
+              </button>
             </motion.div>
 
             {/* Key Statistics */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
+              transition={{ duration: 0.6, delay: 0.35 }}
+              className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
             >
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary-600 mb-2">500+</div>
-                <div className="text-gray-600 text-sm">
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                <div className="text-2xl font-bold text-primary-600 mb-1">500+</div>
+                <div className="text-xs text-gray-600">
                   {isPortuguese ? 'Clientes Satisfeitos' : 'Satisfied Clients'}
                 </div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-secondary-600 mb-2">4.9</div>
-                <div className="text-gray-600 text-sm">
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                <div className="text-2xl font-bold text-secondary-600 mb-1">4.9</div>
+                <div className="text-xs text-gray-600">
                   {isPortuguese ? 'Avaliação Média' : 'Average Rating'}
                 </div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-accent-600 mb-2">24/7</div>
-                <div className="text-gray-600 text-sm">
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                <div className="text-2xl font-bold text-accent-600 mb-1">24/7</div>
+                <div className="text-xs text-gray-600">
                   {isPortuguese ? 'Disponibilidade' : 'Availability'}
                 </div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-premium-600 mb-2">£5M+</div>
-                <div className="text-gray-600 text-sm">
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                <div className="text-2xl font-bold text-premium-600 mb-1">£5M+</div>
+                <div className="text-xs text-gray-600">
                   {isPortuguese ? 'Cobertura de Seguro' : 'Insurance Coverage'}
                 </div>
               </div>

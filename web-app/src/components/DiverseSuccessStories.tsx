@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { 
   HeartIcon, 
-  BuildingOfficeIcon,
+  BuildingOffice2Icon,
   AcademicCapIcon,
   UserGroupIcon,
   GlobeAltIcon,
@@ -26,7 +26,7 @@ export default function DiverseSuccessStories() {
       story: 'Left Porto with coding dreams but London\'s tech scene felt cold and competitive. The saudade for Portuguese warmth was crushing my confidence until LusoTown connected me with Mulheres Portuguesas em Tech. Over bifanas and galão at The Portuguese Café in Vauxhall, I found sisters who understood both algorithms and nossa alma. Now I mentor 150+ Portuguese women in tech, proving that success tastes better when shared with quem nos entende.',
       achievement: 'Founded "Mulheres Portuguesas em Tech Londres" - 150+ tech sisters strong',
       category: 'Professional Success',
-      icon: BuildingOfficeIcon,
+      icon: BuildingOffice2Icon,
       color: 'from-primary-500 to-secondary-500',
       memberSince: '2022',
       eventsAttended: 45

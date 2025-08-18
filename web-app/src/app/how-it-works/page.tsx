@@ -21,28 +21,28 @@ export default function HowItWorks() {
         'See events happening at gyms, galleries, restaurants, tours & more',
         'All events are for Portuguese speakers to meet in person',
         'Filter by location, date, and activity type',
-        'View event details including exact address and meetup time',
-        'See who else is attending each real-life meetup'
+        'View event details including exact address and gathering time',
+        'See who else is attending each Portuguese speaker gathering'
       ]
     },
     {
       icon: HeartIcon,
       title: 'Save & Favourite Events',
-      description: 'Save events and locations you love so you never miss a real-life meetup that interests you.',
+      description: 'Save events and locations you love so you never miss a Portuguese speaker gathering that interests you.',
       details: [
         'Click the heart icon to save any real-life event',
         'Create your personal list of favorite events and locations',
         'Get notified about similar events at your saved locations',
         'Access your favorites anytime from your profile',
-        'Never miss a meetup at places you love'
+        'Never miss a Portuguese speaker gathering at places you love'
       ]
     },
     {
       icon: UserGroupIcon,
-      title: 'Create & Join Meetups',
-      description: 'Create your own real-life meetups or join existing ones. Meet Portuguese speakers for activities you enjoy.',
+      title: 'Create & Join Portuguese Gatherings',
+      description: 'Create your own Portuguese speaker gatherings or join existing ones. Meet fellow lusófonos for activities you enjoy.',
       details: [
-        'Create meetups at your favorite gyms, cafes, or cultural venues',
+        'Create Portuguese speaker gatherings at your favorite gyms, cafes, or cultural venues',
         'Set real addresses and specific meeting points',
         'RSVP to events you want to attend in person',
         'Meet Portuguese speakers who share your interests',
@@ -52,13 +52,13 @@ export default function HowItWorks() {
     {
       icon: ChatBubbleLeftRightIcon,
       title: 'Connect at Real Events',
-      description: 'Share experiences from real-life meetups and discover new Portuguese speakers in your area.',
+      description: 'Share experiences from Portuguese speaker gatherings and discover new lusófonos in your area.',
       details: [
         'Share photos and stories from events you attended',
         'Tag the real locations where you met other Portuguese speakers',
         'Recommend venues and activities to the community',
         'Connect with people you met at real-life events',
-        'Plan future meetups with your new Portuguese-speaking friends'
+        'Plan future Portuguese gatherings with your new lusófono friends'
       ]
     }
   ]
@@ -76,10 +76,10 @@ export default function HowItWorks() {
               className="max-w-4xl mx-auto text-center"
             >
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-                How Real-Life <span className="gradient-text">Meetups</span> Work
+                How Portuguese <span className="gradient-text">Gatherings</span> Work
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Join 750+ Portuguese speakers meeting in real places across London & UK
+                Join 750+ Portuguese speakers (lusófonos) meeting in real places across London & UK. Unidos pela Língua - connected through language and culture.
               </p>
               
               <div className="bg-white rounded-2xl p-6 shadow-lg max-w-2xl mx-auto">
@@ -177,7 +177,7 @@ export default function HowItWorks() {
                       <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                         <span className="text-primary-600 text-xs">3</span>
                       </div>
-                      <span className="text-gray-700">Filter by location, date, activity type to find meetups near you</span>
+                      <span className="text-gray-700">Filter by location, date, activity type to find Portuguese gatherings near you</span>
                     </li>
                   </ul>
                 </div>
@@ -207,7 +207,7 @@ export default function HowItWorks() {
                       <div className="w-6 h-6 bg-secondary-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                         +
                       </div>
-                      <span className="text-gray-700">Create your own meetups at places you love</span>
+                      <span className="text-gray-700">Create your own Portuguese gatherings at places you love</span>
                     </li>
                   </ul>
                 </div>
@@ -231,7 +231,7 @@ export default function HowItWorks() {
                   Your Favorites System
                 </h2>
                 <p className="text-lg text-gray-600">
-                  Save events and locations for real-life Portuguese meetups
+                  Save events and locations for Portuguese speaker gatherings
                 </p>
               </div>
               
@@ -242,7 +242,7 @@ export default function HowItWorks() {
                       <HeartIcon className="w-8 h-8 text-gray-400" />
                     </div>
                     <h3 className="font-semibold text-gray-900 mb-2">Save Real Events</h3>
-                    <p className="text-gray-600 text-sm">Click the heart icon on any real-life meetup or venue</p>
+                    <p className="text-gray-600 text-sm">Click the heart icon on any Portuguese gathering or venue</p>
                   </div>
                   
                   <div className="text-center">
@@ -268,7 +268,7 @@ export default function HowItWorks() {
                     <li>When you see a real-life event you like, click the heart icon ❤️</li>
                     <li>The heart will fill with red to show the event is saved</li>
                     <li>Go to your profile and click "My Favourites" to see all saved events</li>
-                    <li>Click any saved event to see details and RSVP for the meetup</li>
+                    <li>Click any saved event to see details and RSVP for the Portuguese gathering</li>
                     <li>Get notified about similar events at locations you've favorited</li>
                   </ol>
                 </div>

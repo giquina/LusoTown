@@ -152,23 +152,147 @@ export default function ToursPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="pt-28 md:pt-32 pb-16 bg-gradient-to-br from-primary-50 to-secondary-50 relative overflow-hidden">
-        <div className="container-width">
-          <div className="max-w-4xl mx-auto text-center">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
+        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535204/london-skyline-heritage_kqw8xr.jpg')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-900/10 via-transparent to-secondary-900/10"></div>
+        <div className="relative container-width py-16 lg:py-24">
+          <div className="text-center max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
+              className="mb-6"
             >
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                {isPortuguese ? "Tours de Londres" : "London Tours"}
-              </h1>
-              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                {isPortuguese 
-                  ? "Descubra os pontos turísticos mais famosos de Londres com guias portugueses experientes. Tours em português pelos marcos icónicos da capital britânica."
-                  : "Discover London's most famous tourist attractions with experienced Portuguese guides. Tours in Portuguese of the British capital's iconic landmarks."
-                }
-              </p>
+              <span className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-primary-100 via-secondary-50 to-accent-100 border border-primary-200 shadow-lg">
+                <SparklesIcon className="w-4 h-4 mr-2 text-secondary-600" />
+                <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent font-bold">
+                  {isPortuguese
+                    ? "Tours Autênticos em Londres"
+                    : "Authentic London Tours"}
+                </span>
+              </span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-4xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight"
+            >
+              {/* Desktop full title */}
+              <span className="hidden sm:block">
+                {isPortuguese ? (
+                  <>
+                    Descubra Londres com
+                    <br />
+                    <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
+                      guias portugueses
+                    </span>{" "}
+                    experientes
+                  </>
+                ) : (
+                  <>
+                    Discover London with
+                    <br />
+                    <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
+                      experienced Portuguese
+                    </span>{" "}
+                    guides
+                  </>
+                )}
+              </span>
+              {/* Mobile short title */}
+              <span className="sm:hidden">
+                {isPortuguese ? (
+                  <>
+                    Tours de
+                    <br />
+                    <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
+                      Londres
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    London
+                    <br />
+                    <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
+                      Tours
+                    </span>
+                  </>
+                )}
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
+            >
+              {/* Desktop full subtitle */}
+              <span className="hidden sm:block">
+                {isPortuguese
+                  ? "Explore os marcos icónicos de Londres com guias portugueses qualificados. Experiências culturais autênticas, storytelling em português e descoberta dos segredos da capital britânica através dos olhos da comunidade portuguesa."
+                  : "Explore London's iconic landmarks with qualified Portuguese guides. Authentic cultural experiences, Portuguese storytelling, and discover British capital secrets through the eyes of the Portuguese community."}
+              </span>
+              {/* Mobile short subtitle */}
+              <span className="sm:hidden">
+                {isPortuguese
+                  ? "Explore Londres com guias portugueses qualificados! Experiências culturais autênticas e storytelling em português."
+                  : "Explore London with qualified Portuguese guides! Authentic cultural experiences and Portuguese storytelling."}
+              </span>
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6"
+            >
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+                <span>
+                  {isPortuguese
+                    ? "Guias Portugueses Experientes"
+                    : "Experienced Portuguese Guides"}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="w-2 h-2 bg-secondary-500 rounded-full"></div>
+                <span>
+                  {isPortuguese
+                    ? "Marcos Históricos Icónicos"
+                    : "Iconic Historic Landmarks"}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
+                <span>
+                  {isPortuguese
+                    ? "Storytelling em Português"
+                    : "Portuguese Storytelling"}
+                </span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <button
+                onClick={() => document.getElementById('tours')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1"
+              >
+                {isPortuguese ? "Ver Tours" : "View Tours"}
+              </button>
+              <button
+                onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })}
+                className="border border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                {isPortuguese ? "Testemunhos" : "Testimonials"}
+              </button>
             </motion.div>
           </div>
         </div>
@@ -349,7 +473,7 @@ export default function ToursPage() {
       </section>
 
       {/* Portuguese Tour Testimonials */}
-      <section className="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
+      <section id="testimonials" className="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
         <div className="container-width">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">

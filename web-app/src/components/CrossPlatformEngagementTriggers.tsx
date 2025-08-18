@@ -143,7 +143,7 @@ export default function CrossPlatformEngagementTriggers({
       type: 'events_to_networking',
       title: 'Connect with Fellow Portuguese Speakers',
       titlePortuguese: 'Conecte-se com Outros Falantes de Português',
-      description: 'You\'ve attended your first event! Build meaningful connections with Portuguese community members who share your interests.',
+      description: 'You\'ve attended your first event! Build meaningful connections with Portuguese speakers who share your interests.',
       descriptionPortuguese: 'Participou no seu primeiro evento! Construa conexões significativas com membros da comunidade portuguesa que partilham os seus interesses.',
       icon: UserGroupIcon,
       primaryAction: {

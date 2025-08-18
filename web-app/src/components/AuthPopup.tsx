@@ -96,7 +96,7 @@ export default function AuthPopup() {
       case 'view-details':
         return {
           title: isPortuguese ? 'Quer ver todos os detalhes do evento? Registe-se gratuitamente!' : 'Want to see full event details? Sign up for free!',
-          message: isPortuguese ? 'Informações detalhadas estão disponíveis apenas para membros da comunidade.' : 'Detailed information is available to community members only.',
+          message: isPortuguese ? 'Informações detalhadas estão disponíveis apenas para falantes de português.' : 'Detailed information is available to Portuguese speakers only.',
           benefits: [
             {
               icon: EyeIcon,

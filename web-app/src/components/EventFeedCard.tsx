@@ -100,21 +100,21 @@ export default function EventFeedCard({
   const getPostTypeIcon = (type: EventFeedCardData['type']) => {
     switch (type) {
       case 'event_created':
-        return <CalendarDaysIcon className="w-4 h-4 text-green-500" />
+        return <CalendarDaysIcon className="w-4 h-4 text-secondary-500" />
       case 'event_update':
         return <ClockIcon className="w-4 h-4 text-primary-500" />
       case 'event_photo':
-        return <PhotoIcon className="w-4 h-4 text-purple-500" />
+        return <PhotoIcon className="w-4 h-4 text-premium-500" />
       case 'event_review':
-        return <StarIcon className="w-4 h-4 text-yellow-500" />
+        return <StarIcon className="w-4 h-4 text-accent-500" />
       case 'event_reminder':
-        return <ClockIcon className="w-4 h-4 text-orange-500" />
+        return <ClockIcon className="w-4 h-4 text-coral-500" />
       case 'user_joined':
         return <UserGroupIcon className="w-4 h-4 text-secondary-500" />
       case 'event_full':
-        return <EyeIcon className="w-4 h-4 text-red-500" />
+        return <EyeIcon className="w-4 h-4 text-action-500" />
       default:
-        return <CalendarDaysIcon className="w-4 h-4 text-gray-500" />
+        return <CalendarDaysIcon className="w-4 h-4 text-neutral-500" />
     }
   }
 
@@ -139,7 +139,7 @@ export default function EventFeedCard({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300 min-h-[520px] sm:min-h-[580px] flex flex-col ${
+      className={`bg-white rounded-3xl shadow-xl hover:shadow-2xl border border-neutral-100 overflow-hidden transition-all duration-300 min-h-[520px] sm:min-h-[580px] flex flex-col group ${
         post.priority === 'high' ? 'ring-2 ring-primary-100' : ''
       } ${className}`}
     >
@@ -169,14 +169,14 @@ export default function EventFeedCard({
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h4 className="font-semibold text-gray-900">{post.hostName}</h4>
+                <h4 className="font-semibold text-neutral-900">{post.hostName}</h4>
                 {post.isSponsored && (
                   <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">
                     {isPortuguese ? 'Patrocinado' : 'Sponsored'}
                   </span>
                 )}
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-500">
+              <div className="flex items-center gap-2 text-sm text-neutral-500">
                 {getPostTypeIcon(post.type)}
                 <span>{getPostTypeLabel(post.type)}</span>
                 <span>•</span>
@@ -196,7 +196,7 @@ export default function EventFeedCard({
         </div>
 
         {/* Post Content */}
-        <p className="text-gray-700 mb-4 whitespace-pre-line text-sm sm:text-base break-words leading-relaxed">{post.content}</p>
+        <p className="text-neutral-700 mb-4 whitespace-pre-line text-sm sm:text-base break-words leading-relaxed">{post.content}</p>
 
         {/* Post Images Grid */}
         {post.images && post.images.length > 0 && (
@@ -286,9 +286,9 @@ export default function EventFeedCard({
             )}
             
             <div className="flex-1 min-w-0">
-              <h5 className="font-semibold text-gray-900 mb-2 line-clamp-2 text-sm sm:text-base break-words">{post.eventTitle}</h5>
+              <h5 className="font-semibold text-neutral-900 mb-2 line-clamp-2 text-sm sm:text-base break-words">{post.eventTitle}</h5>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-gray-600 mb-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-neutral-600 mb-3">
                 <div className="flex items-center gap-1">
                   <CalendarDaysIcon className="w-4 h-4 text-primary-500" />
                   <span>{formatDate(post.eventDate)} • {post.eventTime}</span>
@@ -298,7 +298,7 @@ export default function EventFeedCard({
                   <span className="truncate">{post.eventLocation}</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <UserGroupIcon className="w-4 h-4 text-purple-500" />
+                  <UserGroupIcon className="w-4 h-4 text-premium-500" />
                   <span>
                     {post.eventSpotsLeft > 0 
                       ? `${post.eventSpotsLeft} ${isPortuguese ? 'vagas' : 'spots'}`
@@ -348,15 +348,15 @@ export default function EventFeedCard({
             {!showPhotoUpload ? (
               <button
                 onClick={() => setShowPhotoUpload(true)}
-                className="w-full bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-dashed border-purple-300 rounded-xl p-4 text-center hover:from-purple-100 hover:to-pink-100 transition-all duration-200 group"
+                className="w-full bg-gradient-to-r from-premium-50 to-coral-50 border-2 border-dashed border-premium-300 rounded-xl p-4 text-center hover:from-premium-100 hover:to-coral-100 transition-all duration-200 group"
               >
-                <div className="flex items-center justify-center gap-2 text-purple-600">
+                <div className="flex items-center justify-center gap-2 text-premium-600">
                   <CameraIcon className="w-5 h-5" />
                   <span className="font-medium">
                     {isPortuguese ? 'Adicionar Fotos do Evento' : 'Add Event Photos'}
                   </span>
                 </div>
-                <p className="text-sm text-purple-500 mt-1">
+                <p className="text-sm text-premium-500 mt-1">
                   {isPortuguese 
                     ? 'Partilhe momentos especiais deste evento'
                     : 'Share special moments from this event'
@@ -364,7 +364,7 @@ export default function EventFeedCard({
                 </p>
               </button>
             ) : (
-              <div className="bg-gray-50 rounded-xl p-4">
+              <div className="bg-neutral-50 rounded-xl p-4">
                 <PhotoUpload
                   onPhotosUploaded={handlePhotoUpload}
                   eventId={post.eventId}
@@ -373,7 +373,7 @@ export default function EventFeedCard({
                 <div className="flex justify-end gap-2 mt-4">
                   <button
                     onClick={() => setShowPhotoUpload(false)}
-                    className="px-4 py-2 text-gray-600 hover:text-gray-800 text-sm"
+                    className="px-4 py-2 text-neutral-600 hover:text-gray-800 text-sm"
                   >
                     {isPortuguese ? 'Cancelar' : 'Cancel'}
                   </button>
@@ -393,7 +393,7 @@ export default function EventFeedCard({
         )}
 
         {/* Reactions Bar */}
-        <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
+        <div className="flex items-center gap-4 text-sm text-neutral-500 mb-4">
           <button 
             onClick={() => handleReaction('interested')}
             className="flex items-center gap-1 hover:text-primary-500 transition-colors"
@@ -412,7 +412,7 @@ export default function EventFeedCard({
           
           <button 
             onClick={() => handleReaction('love')}
-            className="flex items-center gap-1 hover:text-red-500 transition-colors"
+            className="flex items-center gap-1 hover:text-action-500 transition-colors"
           >
             <span>❤️</span>
             <span>{post.reactions.love}</span>
@@ -420,7 +420,7 @@ export default function EventFeedCard({
           
           <button 
             onClick={() => handleReaction('wow')}
-            className="flex items-center gap-1 hover:text-yellow-500 transition-colors"
+            className="flex items-center gap-1 hover:text-accent-500 transition-colors"
           >
             <span>😍</span>
             <span>{post.reactions.wow}</span>
@@ -429,27 +429,27 @@ export default function EventFeedCard({
       </div>
 
       {/* Post Actions */}
-      <div className="px-4 sm:px-6 py-3 sm:py-4 bg-gray-50 border-t border-gray-100 mt-auto">
+      <div className="px-4 sm:px-6 py-3 sm:py-4 bg-neutral-50 border-t border-neutral-100 mt-auto">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center gap-4 sm:gap-6">
             <button 
               onClick={handleLike}
-              className="flex items-center gap-2 text-gray-600 hover:text-red-500 transition-colors min-h-[44px] px-2"
+              className="flex items-center gap-2 text-neutral-600 hover:text-action-500 transition-colors min-h-[44px] px-2"
             >
               {post.liked ? (
-                <HeartSolidIcon className="w-5 h-5 text-red-500" />
+                <HeartSolidIcon className="w-5 h-5 text-action-500" />
               ) : (
                 <HeartOutlineIcon className="w-5 h-5" />
               )}
               <span className="text-xs sm:text-sm font-medium">{post.likes}</span>
             </button>
             
-            <button className="flex items-center gap-2 text-gray-600 hover:text-primary-500 transition-colors min-h-[44px] px-2">
+            <button className="flex items-center gap-2 text-neutral-600 hover:text-primary-500 transition-colors min-h-[44px] px-2">
               <ChatBubbleLeftRightIcon className="w-5 h-5" />
               <span className="text-xs sm:text-sm font-medium">{post.comments}</span>
             </button>
             
-            <button className="flex items-center gap-2 text-gray-600 hover:text-secondary-500 transition-colors min-h-[44px] px-2">
+            <button className="flex items-center gap-2 text-neutral-600 hover:text-secondary-500 transition-colors min-h-[44px] px-2">
               <ShareIcon className="w-5 h-5" />
               <span className="text-xs sm:text-sm font-medium">{post.shares}</span>
             </button>
@@ -457,7 +457,7 @@ export default function EventFeedCard({
           
           <a
             href={`/events/${post.eventId}`}
-            className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white text-xs sm:text-sm px-3 sm:px-4 py-2.5 sm:py-2 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 font-medium min-h-[44px] flex items-center justify-center text-center"
+            className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white text-xs sm:text-sm px-3 sm:px-4 py-2.5 sm:py-2 rounded-lg hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-200 font-medium min-h-[44px] flex items-center justify-center text-center shadow-lg hover:shadow-xl"
           >
             <span className="hidden sm:inline">{isPortuguese ? 'Ver Evento Completo' : 'View Full Event'}</span>
             <span className="sm:hidden">{isPortuguese ? 'Ver Evento' : 'View Event'}</span>
