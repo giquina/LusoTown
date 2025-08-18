@@ -73,7 +73,7 @@ const EmailStep = ({ onNext, email, setEmail, onBack }) => {
           <Text style={styles.stepNumber}>3 of 7</Text>
           <Text style={styles.title}>What's your email?</Text>
           <Text style={styles.subtitle}>
-            We'll use this to send you community updates and keep your account secure
+            We'll use this to send you Portuguese community updates and keep your account secure
           </Text>
         </View>
 

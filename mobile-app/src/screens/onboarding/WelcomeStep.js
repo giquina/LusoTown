@@ -6,12 +6,22 @@ import {
   StyleSheet,
   ScrollView,
   Animated,
+  ActivityIndicator,
+  Alert,
 } from 'react-native';
 import { Colors, Spacing, Typography, CommonStyles } from '../../constants/Styles';
+import { 
+  signUpWithEmail, 
+  createProfile, 
+  uploadProfilePicture, 
+  uploadVerificationSelfie,
+  addUserInterests 
+} from '../../lib/supabase';
 
 const WelcomeStep = ({ onComplete, userData }) => {
   const [fadeAnim] = useState(new Animated.Value(0));
   const [slideAnim] = useState(new Animated.Value(50));
+  const [isCompletingSignup, setIsCompletingSignup] = useState(false);
 
   useEffect(() => {
     // Start welcome animation
@@ -29,9 +39,95 @@ const WelcomeStep = ({ onComplete, userData }) => {
     ]).start();
   }, []);
 
-  const handleComplete = () => {
-    // In a real app, this would save user data and navigate to main app
-    onComplete(userData);
+  const handleComplete = async () => {
+    try {
+      setIsCompletingSignup(true);
+      
+      // Generate a temporary password for the user (in real app, they'd set this)
+      const tempPassword = `LusoTown2024_${Math.random().toString(36).substring(7)}`;
+      
+      // 1. Sign up the user with email
+      const { user } = await signUpWithEmail(userData.email, tempPassword, {
+        first_name: userData.firstName,
+        date_of_birth: userData.dateOfBirth?.toISOString(),
+        age_verified: true,
+        verification_completed: userData.selfieVerification?.verified || false,
+      });
+
+      if (!user) throw new Error('Failed to create user account');
+
+      // 2. Create profile
+      const profileData = {
+        first_name: userData.firstName,
+        email: userData.email,
+        date_of_birth: userData.dateOfBirth?.toISOString(),
+        age_verified: true,
+        verification_completed: userData.selfieVerification?.verified || false,
+        onboarding_completed: true,
+        created_at: new Date().toISOString(),
+      };
+
+      // 3. Upload profile picture if exists
+      if (userData.profilePicture) {
+        try {
+          const profilePictureUrl = await uploadProfilePicture(
+            user.id, 
+            userData.profilePicture, 
+            `profile_${Date.now()}.jpg`
+          );
+          profileData.profile_picture_url = profilePictureUrl;
+        } catch (error) {
+          console.warn('Failed to upload profile picture:', error);
+          // Continue with signup even if profile picture upload fails
+        }
+      }
+
+      // 4. Upload verification selfie if exists
+      if (userData.selfieVerification?.uri) {
+        try {
+          await uploadVerificationSelfie(
+            user.id,
+            userData.selfieVerification.uri,
+            `verification_${Date.now()}.jpg`
+          );
+        } catch (error) {
+          console.warn('Failed to upload verification selfie:', error);
+          // Continue with signup even if verification upload fails
+        }
+      }
+
+      await createProfile(user.id, profileData);
+
+      // 5. Add user interests
+      if (userData.selectedInterests && userData.selectedInterests.length > 0) {
+        try {
+          await addUserInterests(user.id, userData.selectedInterests);
+        } catch (error) {
+          console.warn('Failed to add user interests:', error);
+          // Continue even if interests fail to save
+        }
+      }
+
+      // Complete onboarding
+      onComplete({
+        ...userData,
+        userId: user.id,
+        tempPassword, // Pass this so user can be notified to change it
+      });
+
+    } catch (error) {
+      console.error('Error completing signup:', error);
+      Alert.alert(
+        'Signup Error',
+        'There was a problem completing your registration. Please try again.',
+        [
+          { text: 'Try Again', onPress: handleComplete },
+          { text: 'Skip for Now', onPress: () => onComplete(userData) },
+        ]
+      );
+    } finally {
+      setIsCompletingSignup(false);
+    }
   };
 
   const getGreeting = () => {
@@ -58,12 +154,12 @@ const WelcomeStep = ({ onComplete, userData }) => {
       >
         {/* Celebration Header */}
         <View style={styles.celebrationContainer}>
-          <Text style={styles.celebrationEmoji}>🎉</Text>
+          <Text style={styles.celebrationEmoji}>🇵🇹</Text>
           <Text style={styles.welcomeTitle}>
-            Welcome to AdyaTribe, {userData?.firstName}!
+            Welcome to LusoTown, {userData?.firstName}!
           </Text>
           <Text style={styles.welcomeSubtitle}>
-            {getGreeting()}! You're now part of our amazing community of 30+ women.
+            {getGreeting()}! You're now part of our amazing Portuguese community in London.
           </Text>
         </View>
 
@@ -128,7 +224,7 @@ const WelcomeStep = ({ onComplete, userData }) => {
           <View style={styles.guideline}>
             <Text style={styles.guidelineIcon}>🤝</Text>
             <Text style={styles.guidelineText}>
-              <Text style={styles.guidelineBold}>Be Kind & Respectful</Text> - Treat everyone with kindness and respect
+              <Text style={styles.guidelineBold}>Seja Gentil</Text> - Treat everyone with kindness and respect
             </Text>
           </View>
 
@@ -142,14 +238,14 @@ const WelcomeStep = ({ onComplete, userData }) => {
           <View style={styles.guideline}>
             <Text style={styles.guidelineIcon}>💬</Text>
             <Text style={styles.guidelineText}>
-              <Text style={styles.guidelineBold}>Authentic Connections</Text> - Be genuine and build real friendships
+              <Text style={styles.guidelineBold}>Authentic Connections</Text> - Build genuine Portuguese friendships
             </Text>
           </View>
 
           <View style={styles.guideline}>
-            <Text style={styles.guidelineIcon}>🚫</Text>
+            <Text style={styles.guidelineIcon}>🇵🇹</Text>
             <Text style={styles.guidelineText}>
-              <Text style={styles.guidelineBold}>No Harassment</Text> - Report inappropriate behavior immediately
+              <Text style={styles.guidelineBold}>Celebrate Culture</Text> - Share and preserve Portuguese traditions
             </Text>
           </View>
         </View>
@@ -161,42 +257,47 @@ const WelcomeStep = ({ onComplete, userData }) => {
           <View style={styles.nextStep}>
             <Text style={styles.nextStepNumber}>1</Text>
             <Text style={styles.nextStepText}>
-              Browse groups based on your interests
+              Browse Portuguese events and groups in London
             </Text>
           </View>
 
           <View style={styles.nextStep}>
             <Text style={styles.nextStepNumber}>2</Text>
             <Text style={styles.nextStepText}>
-              Join conversations and introduce yourself
+              Connect with fellow Portuguese speakers
             </Text>
           </View>
 
           <View style={styles.nextStep}>
             <Text style={styles.nextStepNumber}>3</Text>
             <Text style={styles.nextStepText}>
-              Attend events and meet amazing women near you
+              Attend events and build your Portuguese community
             </Text>
           </View>
         </View>
 
         {/* Complete Button */}
         <TouchableOpacity 
-          style={styles.completeButton} 
+          style={[styles.completeButton, isCompletingSignup && styles.completeButtonDisabled]} 
           onPress={handleComplete}
+          disabled={isCompletingSignup}
         >
-          <Text style={styles.completeButtonText}>
-            Start My AdyaTribe Journey! 🚀
-          </Text>
+          {isCompletingSignup ? (
+            <ActivityIndicator color={Colors.surface} size="small" />
+          ) : (
+            <Text style={styles.completeButtonText}>
+              Start My LusoTown Journey! 🇵🇹
+            </Text>
+          )}
         </TouchableOpacity>
 
         {/* Footer Message */}
         <View style={styles.footerContainer}>
           <Text style={styles.footerText}>
-            Ready to build amazing friendships and discover new adventures?
+            Ready to connect with Portuguese speakers and discover London's Portuguese community?
           </Text>
           <Text style={styles.footerSubtext}>
-            Welcome to your tribe! 💜
+            Bem-vindo à LusoTown! 🇵🇹
           </Text>
         </View>
       </Animated.View>
@@ -349,6 +450,9 @@ const styles = StyleSheet.create({
     color: Colors.surface,
     fontSize: 18,
     fontWeight: 'bold',
+  },
+  completeButtonDisabled: {
+    backgroundColor: Colors.border,
   },
   footerContainer: {
     alignItems: 'center',

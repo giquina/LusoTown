@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import { Colors, Spacing, Typography, CommonStyles } from '../../constants/Styles';
+import { uploadProfilePicture } from '../../lib/supabase';
 
 const ProfilePictureStep = ({ onNext, onBack, profilePicture, setProfilePicture }) => {
   const [isUploading, setIsUploading] = useState(false);
@@ -58,7 +59,11 @@ const ProfilePictureStep = ({ onNext, onBack, profilePicture, setProfilePicture 
       });
 
       if (!result.canceled && result.assets && result.assets[0]) {
-        setProfilePicture(result.assets[0].uri);
+        const localUri = result.assets[0].uri;
+        setProfilePicture(localUri);
+        
+        // TODO: Upload to Supabase when user completes onboarding
+        // For now, store local URI - will be uploaded in WelcomeStep
       }
     } catch (error) {
       Alert.alert('Error', 'Failed to take photo. Please try again.');
@@ -83,7 +88,11 @@ const ProfilePictureStep = ({ onNext, onBack, profilePicture, setProfilePicture 
       });
 
       if (!result.canceled && result.assets && result.assets[0]) {
-        setProfilePicture(result.assets[0].uri);
+        const localUri = result.assets[0].uri;
+        setProfilePicture(localUri);
+        
+        // TODO: Upload to Supabase when user completes onboarding
+        // For now, store local URI - will be uploaded in WelcomeStep
       }
     } catch (error) {
       Alert.alert('Error', 'Failed to select photo. Please try again.');
@@ -110,7 +119,7 @@ const ProfilePictureStep = ({ onNext, onBack, profilePicture, setProfilePicture 
     if (!profilePicture) {
       Alert.alert(
         'Profile Picture Required',
-        'Adding a profile picture helps other members get to know you better and builds trust in our community.',
+        'Adding a profile picture helps other Portuguese community members get to know you better and builds trust.',
         [
           { text: 'Add Photo', onPress: showPhotoOptions },
           { text: 'Skip for Now', onPress: onNext, style: 'cancel' },
@@ -133,7 +142,7 @@ const ProfilePictureStep = ({ onNext, onBack, profilePicture, setProfilePicture 
         <Text style={styles.stepNumber}>4 of 7</Text>
         <Text style={styles.title}>Add your profile picture</Text>
         <Text style={styles.subtitle}>
-          Help other members get to know you! A friendly photo builds trust and connection in our community.
+          Help other Portuguese community members get to know you! A friendly photo builds trust and connection.
         </Text>
       </View>
 

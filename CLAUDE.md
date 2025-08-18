@@ -60,10 +60,9 @@ LusoTown: Bilingual Portuguese community platform (London & UK) serving Portugue
 # Development (from repo root)
 cd web-app && npm install && npm run dev    # Start dev server (localhost:3000)
 
-# Streaming Development (additional setup)
-npm run dev:streaming        # Start streaming development mode
-npm run build:streaming       # Build streaming components
-npm run test:streaming        # Run streaming-specific tests
+# Database migrations (from web-app directory)
+npm run db:migrate           # Apply general database migrations
+npm run db:migrate:streaming # Apply streaming-specific migrations
 
 # From web-app directory
 npm run build               # Production build
@@ -130,7 +129,7 @@ npm run test:accessibility  # Accessibility tests
 **Tone:** Professional, inclusive, welcoming. London & UK focus targeting Portuguese speakers specifically.
 **Audiences:** Portuguese speakers in London & UK - social users + business professionals. Event creators can monetize.
 **Messaging:** Emphasis on "Portuguese speakers," cultural comfort, Portuguese-speaking hosts/guides.
-**Subscription:** Transport services require £25/year membership.
+**Membership:** Annual membership £25/year for transport services, Student rate £12.50/year (50% discount).
 
 ## Context Providers
 
@@ -138,7 +137,7 @@ Language, Cart, Favorites, Following, Networking, Subscription, PlatformIntegrat
 
 ## Key Features
 
-**Subscription Tiers:** Student (£12.50), Professional (£25), Business (£75), VIP (£150)
+**Subscription Tiers:** Free (3 matches/day + 10 messages/month), Community Member (£19.99/month), Cultural Ambassador (£39.99/month)
 **Premium Features:** Transport services, premium matches, live streaming platform with Portuguese cultural content, creator monetization, university partnerships
 **Networking:** Event-based connections, compatibility matching, cultural conversation starters
 
@@ -180,8 +179,8 @@ Language, Cart, Favorites, Following, Networking, Subscription, PlatformIntegrat
 - `20250817_001_premium_membership_tiers.sql` - Premium memberships
 - `20250817_002_enhanced_subscription_system.sql` - Enhanced subscriptions
 - `20250818_001_streaming_platform_schema.sql` - Streaming platform database
-- `20250818_002_portuguese_emotes_system.sql` - Portuguese cultural emotes
-- `20250818_003_creator_monetization_system.sql` - Creator economy and revenue sharing
+- `20250818_002_conversion_funnel_system.sql` - Conversion tracking and analytics
+- `20250818_004_referral_system.sql` - Referral system and rewards
 
 ## Environment Variables
 
@@ -189,15 +188,21 @@ Language, Cart, Favorites, Following, Networking, Subscription, PlatformIntegrat
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 
-# Streaming Platform Configuration
-NEXT_PUBLIC_YOUTUBE_API_KEY=your_youtube_api_key
-SRS_SERVER_URL=your_srs_server_url
-BUNNY_CDN_API_KEY=your_bunny_cdn_key
-STREAMING_SECRET_KEY=your_streaming_secret
+# Stripe Configuration
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_publishable_key
+STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key
+STRIPE_WEBHOOK_SECRET=whsec_your_stripe_webhook_secret
 
-# Portuguese Community Features
-PORTUGUESE_EMOTES_API_KEY=your_emotes_api_key
-CULTURAL_CONTENT_ENDPOINT=your_content_api
+# Streaming Infrastructure Configuration
+NEXT_PUBLIC_STREAMING_SERVER_URL=http://localhost:8080
+NEXT_PUBLIC_RTMP_SERVER_URL=rtmp://localhost:1935
+NEXT_PUBLIC_WEBRTC_SERVER_URL=http://localhost:8000
+STREAMING_API_SECRET=your_streaming_api_secret
+
+# CDN Configuration (Optional for development)
+NEXT_PUBLIC_CDN_ENDPOINT=
+BUNNYCDN_API_KEY=
+BUNNYCDN_STORAGE_ZONE=
 ```
 
 ## Development Workflow

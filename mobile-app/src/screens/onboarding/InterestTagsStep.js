@@ -9,8 +9,18 @@ import {
 } from 'react-native';
 import { Colors, Spacing, Typography, CommonStyles } from '../../constants/Styles';
 
-// Interest categories perfect for 30+ women in London/UK
+// Interest categories perfect for Portuguese speakers in London/UK
 const INTEREST_CATEGORIES = {
+  'Portuguese Culture': [
+    { id: 'fado-music', name: 'Fado Music', icon: '🎵' },
+    { id: 'portuguese-festivals', name: 'Portuguese Festivals', icon: '🎉' },
+    { id: 'portuguese-cuisine', name: 'Portuguese Cuisine', icon: '🍽️' },
+    { id: 'portuguese-history', name: 'Portuguese History', icon: '🏛️' },
+    { id: 'portuguese-language', name: 'Portuguese Language', icon: '🇵🇹' },
+    { id: 'azores-culture', name: 'Azores Culture', icon: '🌋' },
+    { id: 'madeira-culture', name: 'Madeira Culture', icon: '🌺' },
+    { id: 'brazilian-culture', name: 'Brazilian Culture', icon: '🇧🇷' },
+  ],
   'Fitness & Wellness': [
     { id: 'london-walks', name: 'London Walks', icon: '🚶‍♀️' },
     { id: 'yoga', name: 'Yoga', icon: '🧘‍♀️' },
@@ -18,7 +28,7 @@ const INTEREST_CATEGORIES = {
     { id: 'pilates', name: 'Pilates', icon: '💪' },
     { id: 'cycling', name: 'London Cycling', icon: '🚴‍♀️' },
     { id: 'swimming', name: 'Swimming', icon: '🏊‍♀️' },
-    { id: 'climbing', name: 'Climbing', icon: '🧗‍♀️' },
+    { id: 'football', name: 'Football', icon: '⚽' },
     { id: 'meditation', name: 'Meditation', icon: '🕯️' },
   ],
   'Arts & Culture': [
@@ -32,14 +42,14 @@ const INTEREST_CATEGORIES = {
     { id: 'pottery', name: 'Pottery', icon: '🏺' },
   ],
   'Food & Drink': [
-    { id: 'wine-tasting', name: 'Wine Tasting', icon: '🍷' },
-    { id: 'cooking', name: 'Cooking', icon: '👩‍🍳' },
-    { id: 'baking', name: 'Baking', icon: '🧁' },
+    { id: 'portuguese-wine', name: 'Portuguese Wine', icon: '🍷' },
+    { id: 'pasteis-de-nata', name: 'Pastéis de Nata', icon: '🧁' },
+    { id: 'bacalhau-dishes', name: 'Bacalhau Dishes', icon: '🐟' },
+    { id: 'portuguese-cooking', name: 'Portuguese Cooking', icon: '👩‍🍳' },
     { id: 'london-dining', name: 'London Dining', icon: '🍽️' },
     { id: 'coffee-culture', name: 'Coffee Culture', icon: '☕' },
-    { id: 'borough-market', name: 'Food Markets', icon: '🥕' },
-    { id: 'pub-culture', name: 'Pub Culture', icon: '🍺' },
-    { id: 'cocktails', name: 'Cocktail Bars', icon: '🍸' },
+    { id: 'food-markets', name: 'Food Markets', icon: '🥕' },
+    { id: 'portuguese-restaurants', name: 'Portuguese Restaurants', icon: '🍽️' },
   ],
   'Learning & Growth': [
     { id: 'book-clubs', name: 'Book Clubs', icon: '📚' },
@@ -52,14 +62,14 @@ const INTEREST_CATEGORIES = {
     { id: 'mentoring', name: 'Mentoring', icon: '👥' },
   ],
   'Travel & Adventure': [
+    { id: 'portugal-visits', name: 'Portugal Visits', icon: '🇵🇹' },
+    { id: 'azores-travel', name: 'Azores Travel', icon: '🌋' },
+    { id: 'madeira-trips', name: 'Madeira Trips', icon: '🌺' },
     { id: 'uk-travel', name: 'UK Travel', icon: '✈️' },
     { id: 'weekend-getaways', name: 'Weekend Getaways', icon: '🎒' },
-    { id: 'countryside', name: 'Countryside Trips', icon: '🌿' },
     { id: 'coastal-walks', name: 'Coastal Walks', icon: '🌊' },
     { id: 'historic-sites', name: 'Historic Sites', icon: '🏰' },
-    { id: 'seaside-trips', name: 'Seaside Trips', icon: '🏖️' },
-    { id: 'city-breaks', name: 'UK City Breaks', icon: '🏙️' },
-    { id: 'heritage-tours', name: 'Heritage Tours', icon: '🗺️' },
+    { id: 'european-cities', name: 'European Cities', icon: '🏙️' },
   ],
   'Social & Entertainment': [
     { id: 'game-nights', name: 'Game Nights', icon: '🎲' },
@@ -108,7 +118,7 @@ const InterestTagsStep = ({ onNext, onBack, selectedInterests, setSelectedIntere
     if (interests.length < 3) {
       Alert.alert(
         'Select More Interests',
-        'Please select at least 3 interests to help us connect you with like-minded community members.',
+        'Please select at least 3 interests to help us connect you with like-minded Portuguese community members.',
         [{ text: 'OK' }]
       );
       return;
@@ -135,7 +145,7 @@ const InterestTagsStep = ({ onNext, onBack, selectedInterests, setSelectedIntere
           <Text style={styles.stepNumber}>6 of 7</Text>
           <Text style={styles.title}>What are your interests?</Text>
           <Text style={styles.subtitle}>
-            Select activities you enjoy so we can connect you with like-minded community members.
+            Select activities you enjoy so we can connect you with like-minded Portuguese community members.
           </Text>
         </View>
 

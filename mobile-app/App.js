@@ -1,3 +1,4 @@
+import 'react-native-url-polyfill/auto';
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { View, Text, StyleSheet } from 'react-native';
@@ -35,10 +36,10 @@ export default function App() {
       <StatusBar style="dark" backgroundColor={Colors.background} />
       <View style={styles.container}>
         <Text style={styles.welcomeText}>
-          Welcome to AdyaTribe, {user?.firstName}! 🎉
+          Welcome to LusoTown, {user?.firstName}! 🎉
         </Text>
         <Text style={styles.subText}>
-          Main app coming soon...
+          Your Portuguese community in London awaits...
         </Text>
       </View>
     </SafeAreaProvider>

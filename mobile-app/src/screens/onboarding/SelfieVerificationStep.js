@@ -20,7 +20,7 @@ const SelfieVerificationStep = ({ onNext, onBack, selfieVerification, setSelfieV
     if (status !== 'granted') {
       Alert.alert(
         'Camera Permission Required',
-        'We need camera access for identity verification to keep our community safe. Please enable camera permissions in your device settings.',
+        'We need camera access for identity verification to keep our Portuguese community safe. Please enable camera permissions in your device settings.',
         [{ text: 'OK' }]
       );
       return false;
@@ -54,7 +54,7 @@ const SelfieVerificationStep = ({ onNext, onBack, selfieVerification, setSelfieV
           
           Alert.alert(
             'Verification Successful! 🎉',
-            'Your identity has been verified. Welcome to the AdyaTribe community!',
+            'Your identity has been verified. Welcome to the LusoTown community!',
             [{ text: 'Continue' }]
           );
         }, 2000); // Simulate 2-second verification process
@@ -75,7 +75,7 @@ const SelfieVerificationStep = ({ onNext, onBack, selfieVerification, setSelfieV
     if (!selfieVerification?.verified) {
       Alert.alert(
         'Verification Required',
-        'Identity verification helps us maintain a safe, trusted community for all members. This step is required to continue.',
+        'Identity verification helps us maintain a safe, trusted Portuguese community for all members. This step is required to continue.',
         [
           { text: 'Take Verification Photo', onPress: takeVerificationSelfie },
           { text: 'Learn More', onPress: showVerificationInfo },
@@ -89,7 +89,7 @@ const SelfieVerificationStep = ({ onNext, onBack, selfieVerification, setSelfieV
   const showVerificationInfo = () => {
     Alert.alert(
       'Why Identity Verification?',
-      'AdyaTribe uses identity verification to:\n\n• Prevent fake profiles and catfishing\n• Maintain a safe environment for all women\n• Build trust within our community\n• Protect against harassment\n\nYour verification photo is processed securely and not shared with other members.',
+      'LusoTown uses identity verification to:\n\n• Prevent fake profiles and catfishing\n• Maintain a safe environment for Portuguese speakers\n• Build trust within our community\n• Protect against harassment\n\nYour verification photo is processed securely and not shared with other members.',
       [
         { text: 'Take Photo Now', onPress: takeVerificationSelfie },
         { text: 'Cancel', style: 'cancel' },
@@ -109,7 +109,7 @@ const SelfieVerificationStep = ({ onNext, onBack, selfieVerification, setSelfieV
         <Text style={styles.stepNumber}>5 of 7</Text>
         <Text style={styles.title}>Identity Verification</Text>
         <Text style={styles.subtitle}>
-          Take a quick verification selfie to keep our community safe and trusted.
+          Take a quick verification selfie to keep our Portuguese community safe and trusted.
         </Text>
       </View>
 
@@ -130,7 +130,7 @@ const SelfieVerificationStep = ({ onNext, onBack, selfieVerification, setSelfieV
             </View>
             <Text style={styles.verifiedTitle}>Verification Complete!</Text>
             <Text style={styles.verifiedText}>
-              Your identity has been successfully verified. Welcome to AdyaTribe!
+              Your identity has been successfully verified. Welcome to LusoTown!
             </Text>
             <TouchableOpacity style={styles.retakeButton} onPress={retakeSelfie}>
               <Text style={styles.retakeButtonText}>Take Another Photo</Text>
@@ -144,7 +144,7 @@ const SelfieVerificationStep = ({ onNext, onBack, selfieVerification, setSelfieV
             </View>
             <Text style={styles.captureTitle}>Ready for verification?</Text>
             <Text style={styles.captureText}>
-              We'll take a quick photo to verify your identity and keep our community safe.
+              We'll take a quick photo to verify your identity and keep our Portuguese community safe.
             </Text>
             <TouchableOpacity 
               style={styles.captureButton} 

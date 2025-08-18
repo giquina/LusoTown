@@ -46,7 +46,7 @@ const DateOfBirthStep = ({ onNext, dateOfBirth, setDateOfBirth, onBack }) => {
     if (age < 30) {
       Alert.alert(
         'Age Requirement', 
-        'Our community is designed for women 30 and over. We appreciate your interest!'
+        'LusoTown is designed for Portuguese speakers aged 30 and over. We appreciate your interest!'
       );
       return;
     }
@@ -72,7 +72,7 @@ const DateOfBirthStep = ({ onNext, dateOfBirth, setDateOfBirth, onBack }) => {
           <Text style={styles.stepNumber}>2 of 7</Text>
           <Text style={styles.title}>When's your birthday?</Text>
           <Text style={styles.subtitle}>
-            Our community is for amazing women 30 and over ✨
+            LusoTown connects Portuguese speakers in London aged 30+ 🇵🇹
           </Text>
         </View>
 
@@ -89,7 +89,7 @@ const DateOfBirthStep = ({ onNext, dateOfBirth, setDateOfBirth, onBack }) => {
 
           {age && (
             <Text style={[styles.ageText, isValidAge ? styles.ageValid : styles.ageInvalid]}>
-              {isValidAge ? `Perfect! You're ${age} 🎉` : `You're ${age} - our community is for 30+`}
+              {isValidAge ? `Perfeito! You're ${age} 🎉` : `You're ${age} - LusoTown is for Portuguese speakers 30+`}
             </Text>
           )}
         </View>
