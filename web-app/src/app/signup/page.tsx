@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import SubscriptionGate from "@/components/SubscriptionGate";
 import { useLanguage } from "@/context/LanguageContext";
 import { useSubscription } from "@/context/SubscriptionContext";
 import SocialLogin from "@/components/SocialLogin";
@@ -233,19 +232,6 @@ export default function Signup() {
   const isPortuguese = language === "pt";
 
   return (
-    <SubscriptionGate
-      mode="signup"
-      title={
-        isPortuguese
-          ? "Junte-se à Comunidade LusoTown"
-          : "Join the LusoTown Community"
-      }
-      description={
-        isPortuguese
-          ? "A subscrição anual de £25 dá-lhe acesso completo à rede social portuguesa de Londres."
-          : "The £25 annual subscription gives you full access to London's Portuguese social network."
-      }
-    >
       <main className="min-h-screen">
         <div className="pt-16">
           <section className="py-12 sm:py-20 bg-gradient-to-br from-primary-50 to-secondary-50 min-h-screen flex items-center">
@@ -1007,7 +993,6 @@ export default function Signup() {
           </section>
         </div>
         <Footer />
-      </main>
-    </SubscriptionGate>
+  </main>
   );
 }

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import SubscriptionGate from '@/components/SubscriptionGate'
 import { 
   HeartIcon, 
   EyeIcon, 
@@ -142,14 +141,6 @@ export default function Login() {
   }, [isLoading, loadingMessages.length])
 
   return (
-    <SubscriptionGate 
-      mode="login"
-      title={isPortuguese ? 'Subscrição Necessária para Entrar' : 'Subscription Required to Login'}
-      description={isPortuguese 
-        ? 'Para aceder à sua conta LusoTown e conectar-se com a comunidade portuguesa, precisa de uma subscrição ativa.'
-        : 'To access your LusoTown account and connect with the Portuguese community, you need an active subscription.'
-      }
-    >
       <main className="min-h-screen">
         <div className="pt-16">
           <section className="py-8 bg-gradient-to-br from-primary-50 via-white to-secondary-50 min-h-screen">
@@ -398,6 +389,5 @@ export default function Login() {
         </div>
         <Footer />
       </main>
-    </SubscriptionGate>
   )
 }
