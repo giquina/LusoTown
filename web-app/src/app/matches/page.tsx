@@ -1,6 +1,7 @@
 "use client";
 
-import { Suspense, useState, useEffect } from "react";
+import { Suspense, useState, useEffect, useMemo, useCallback } from "react";
+import type React from "react";
 import {
   HeartIcon,
   UserGroupIcon,
@@ -150,8 +151,24 @@ function MatchesContent() {
   const [dailyMatchesUsed, setDailyMatchesUsed] = useState(0);
   const [showUpgradePrompt, setShowUpgradePrompt] = useState(false);
   const [successStories, setSuccessStories] = useState(0);
+  const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
+  const [lastActions, setLastActions] = useState<{ id: number; action: "like" | "skip" }[]>([]);
+  const swipeThreshold = 50; // px
 
-  const currentProfile = profiles[currentProfileIndex];
+  const interestOptions = useMemo(() => {
+    const set = new Set<string>();
+    profiles.forEach((p) => p.interests.forEach((i) => set.add(i)));
+    return Array.from(set).sort();
+  }, [profiles]);
+
+  const filteredProfiles = useMemo(() => {
+    if (!selectedInterests.length) return profiles;
+    return profiles.filter((p) =>
+      selectedInterests.every((i) => p.interests.includes(i))
+    );
+  }, [profiles, selectedInterests]);
+
+  const currentProfile = filteredProfiles[currentProfileIndex];
   const remainingMatches = dailyMatches - dailyMatchesUsed;
   const isFreeTier = !hasActiveSubscription;
 
@@ -163,7 +180,20 @@ function MatchesContent() {
     return () => clearInterval(interval);
   }, []);
 
-  const handleLike = () => {
+  // Reset index when filters change
+  useEffect(() => {
+    setCurrentProfileIndex(0);
+  }, [selectedInterests]);
+
+  // Keyboard shortcuts: Left = skip, Right = like
+
+  const nextProfile = useCallback(() => {
+    setCurrentProfileIndex((idx) =>
+      idx < filteredProfiles.length - 1 ? idx + 1 : 0
+    );
+  }, [filteredProfiles.length]);
+
+  const handleLike = useCallback(() => {
     if (isLiking || isSkipping) return;
 
     // Check if user has reached daily limit (free tier only)
@@ -178,7 +208,7 @@ function MatchesContent() {
     const matchProbability = hasActiveSubscription ? 0.6 : 0.65;
     const isMatch = Math.random() > matchProbability;
 
-    setTimeout(() => {
+  setTimeout(() => {
       if (isMatch && currentProfile) {
         setMatchedProfile(currentProfile);
         setShowMatchModal(true);
@@ -189,29 +219,84 @@ function MatchesContent() {
         setDailyMatchesUsed((prev) => prev + 1);
       }
 
+      if (currentProfile) {
+        setLastActions((prev) =>
+          [...prev, { id: currentProfile.id, action: "like" as const }].slice(-10)
+        );
+      }
+
       nextProfile();
       setIsLiking(false);
     }, 600);
-  };
+  }, [isLiking, isSkipping, isFreeTier, dailyMatchesUsed, dailyMatches, hasActiveSubscription, currentProfile, nextProfile]);
 
-  const handleSkip = () => {
+  const handleSkip = useCallback(() => {
     if (isLiking || isSkipping) return;
     setIsSkipping(true);
 
     setTimeout(() => {
+      if (currentProfile) {
+        setLastActions((prev) =>
+          [...prev, { id: currentProfile.id, action: "skip" as const }].slice(-10)
+        );
+      }
       nextProfile();
       setIsSkipping(false);
     }, 400);
-  };
+  }, [isLiking, isSkipping, currentProfile, nextProfile]);
 
-  const nextProfile = () => {
-    if (currentProfileIndex < profiles.length - 1) {
-      setCurrentProfileIndex(currentProfileIndex + 1);
-    } else {
-      // Reset to beginning or show "no more profiles" message
-      setCurrentProfileIndex(0);
+  
+
+  const handleUndo = () => {
+    if (!lastActions.length || isLiking || isSkipping) return;
+    const last = lastActions[lastActions.length - 1];
+    setLastActions((prev) => prev.slice(0, -1));
+    // Only move back if there is at least one shown
+    if (currentProfileIndex > 0 || filteredProfiles.length) {
+      setCurrentProfileIndex((i) => (i > 0 ? i - 1 : 0));
+      if (isFreeTier && last.action === "like") {
+        setDailyMatchesUsed((u) => Math.max(0, u - 1));
+      }
     }
   };
+
+  // Simple touch swipe handlers
+  const [touchStart, setTouchStart] = useState<{ x: number; y: number } | null>(null);
+  const onTouchStart = (e: React.TouchEvent) => {
+    const t = e.touches[0];
+    setTouchStart({ x: t.clientX, y: t.clientY });
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (!touchStart) return;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - touchStart.x;
+    const dy = t.clientY - touchStart.y;
+    // Horizontal swipe with minimal vertical movement
+    if (Math.abs(dx) > swipeThreshold && Math.abs(dy) < 40) {
+      if (dx > 0) {
+        handleLike();
+      } else {
+        handleSkip();
+      }
+    }
+    setTouchStart(null);
+  };
+
+  // Keyboard shortcuts: Left = skip, Right = like
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (showMatchModal) return; // avoid conflicts while modal open
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        handleSkip();
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        handleLike();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [showMatchModal, handleLike, handleSkip]);
 
   const getOriginFlag = (origin: string) => {
     if (
@@ -525,6 +610,48 @@ function MatchesContent() {
           </div>
 
           <div className="max-w-md mx-auto">
+            {/* Filters: Quick interest chips */}
+            <div className="mb-6">
+              <div className="flex items-center justify-between mb-2">
+                <h4 className="text-sm font-semibold text-primary-800">
+                  {language === "pt" ? "Filtrar por interesses" : "Filter by interests"}
+                </h4>
+                {selectedInterests.length > 0 && (
+                  <button
+                    onClick={() => setSelectedInterests([])}
+                    className="text-xs text-primary-600 hover:text-primary-800"
+                  >
+                    {language === "pt" ? "Limpar" : "Clear"}
+                  </button>
+                )}
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {interestOptions.slice(0, 12).map((interest) => {
+                  const active = selectedInterests.includes(interest);
+                  return (
+                    <button
+                      key={interest}
+                      onClick={() =>
+                        setSelectedInterests((prev) =>
+                          prev.includes(interest)
+                            ? prev.filter((i) => i !== interest)
+                            : [...prev, interest]
+                        )
+                      }
+                      className={
+                        "px-3 py-1 rounded-full text-xs font-medium border transition-colors " +
+                        (active
+                          ? "bg-primary-600 text-white border-primary-600"
+                          : "bg-white text-primary-700 border-primary-200 hover:bg-primary-50")
+                      }
+                      aria-pressed={active}
+                    >
+                      {interest}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
             {/* Profile Card Stack */}
             <div className="relative h-[480px] md:h-[520px] mb-6">
               <AnimatePresence mode="wait">
@@ -547,6 +674,8 @@ function MatchesContent() {
                     }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
                     className="absolute inset-0 bg-white rounded-3xl shadow-2xl overflow-hidden border border-primary-100"
+                    onTouchStart={onTouchStart}
+                    onTouchEnd={onTouchEnd}
                   >
                     {/* Profile Image */}
                     <div className="relative h-56 md:h-60 bg-gradient-to-br from-primary-200 to-secondary-200">
@@ -651,6 +780,20 @@ function MatchesContent() {
                             {language === "pt" ? "Experiências" : "Experiences"}
                           </div>
                         </div>
+                        {/* Why we think you'll connect */}
+                        <div className="mt-3 text-[11px] md:text-xs text-secondary-700">
+                          <span className="font-semibold">
+                            {language === "pt" ? "Porque achamos que combinam:" : "Why we think you'll connect:"}
+                          </span>
+                          <ul className="list-disc ml-5 mt-1 space-y-1">
+                            {currentProfile.interests.slice(0, 2).map((i, idx) => (
+                              <li key={idx}>{language === "pt" ? `Interesse partilhado: ${i}` : `Shared interest: ${i}`}</li>
+                            ))}
+                            <li>
+                              {language === "pt" ? `Localização próxima: ${currentProfile.location}` : `Nearby location: ${currentProfile.location}`}
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </motion.div>
@@ -668,6 +811,7 @@ function MatchesContent() {
                 onClick={handleSkip}
                 disabled={isLiking || isSkipping || !currentProfile}
                 className="w-16 h-16 bg-white border-2 border-gray-300 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                aria-label={language === "pt" ? "Passar" : "Skip"}
               >
                 <XMarkIcon className="w-8 h-8 text-gray-500" />
               </button>
@@ -676,8 +820,20 @@ function MatchesContent() {
                 onClick={handleLike}
                 disabled={isLiking || isSkipping || !currentProfile}
                 className="w-16 h-16 bg-gradient-to-r from-action-500 to-action-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                aria-label={language === "pt" ? "Gostar" : "Like"}
               >
                 <HeartIconSolid className="w-8 h-8 text-white" />
+              </button>
+            </div>
+
+            {/* Undo */}
+            <div className="mt-3 text-center">
+              <button
+                onClick={handleUndo}
+                disabled={!lastActions.length || isLiking || isSkipping}
+                className="text-xs text-primary-600 hover:text-primary-800 disabled:opacity-40"
+              >
+                {language === "pt" ? "Desfazer" : "Undo"}
               </button>
             </div>
 

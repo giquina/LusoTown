@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useSubscription } from "@/context/SubscriptionContext";
+import { toast } from "react-hot-toast";
 
 interface ScheduledStream {
   id: string;
@@ -54,11 +55,12 @@ export default function StreamSchedule({
   const { hasActiveSubscription, isInTrial } = useSubscription();
   const [selectedDay, setSelectedDay] = useState("today");
   const [reminders, setReminders] = useState<string[]>([]);
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   const hasAccess = hasActiveSubscription || isInTrial;
 
   // Mock scheduled streams data
-  const scheduledStreams: ScheduledStream[] = [
+  const scheduledStreams: ScheduledStream[] = useMemo(() => [
     {
       id: "fado-masterclass-tonight",
       title:
@@ -185,12 +187,26 @@ export default function StreamSchedule({
       viewerCapacity: 25,
       registeredCount: 23,
     },
-  ];
+  ], [language]);
 
-  const filteredStreams =
-    category === "all"
+  const filteredByCategory = useMemo(() => {
+    return category === "all"
       ? scheduledStreams
       : scheduledStreams.filter((stream) => stream.category === category);
+  }, [category, scheduledStreams]);
+
+  const filteredStreams = useMemo(() => {
+    if (!selectedTags.length) return filteredByCategory;
+    return filteredByCategory.filter((s) =>
+      selectedTags.every((t) => s.tags.includes(t))
+    );
+  }, [filteredByCategory, selectedTags]);
+
+  const allVisibleTags = useMemo(() => {
+    const set = new Set<string>();
+    filteredByCategory.forEach((s) => s.tags.forEach((t) => set.add(t)));
+    return Array.from(set).sort();
+  }, [filteredByCategory]);
 
   const getCategoryIcon = (categoryId: string) => {
     const iconMap = {
@@ -224,13 +240,56 @@ export default function StreamSchedule({
     }
   };
 
-  const toggleReminder = (streamId: string) => {
-    setReminders((prev) =>
-      prev.includes(streamId)
-        ? prev.filter((id) => id !== streamId)
-        : [...prev, streamId]
+  const toggleReminder = useCallback(
+    (streamId: string, title?: string) => {
+      setReminders((prev) => {
+        const exists = prev.includes(streamId);
+        const next = exists
+          ? prev.filter((id) => id !== streamId)
+          : [...prev, streamId];
+        if (exists) {
+          toast(
+            language === "pt"
+              ? `Lembrete removido${title ? `: ${title}` : ""}`
+              : `Reminder removed${title ? `: ${title}` : ""}`
+          );
+        } else {
+          toast.success(
+            language === "pt"
+              ? `Lembrete definido${title ? `: ${title}` : ""}`
+              : `Reminder set${title ? `: ${title}` : ""}`
+          );
+        }
+        return next;
+      });
+    },
+    [language]
+  );
+
+  // Persist reminders locally for now; will wire to auth/notifications later
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem("lusotown_stream_reminders");
+      if (stored) setReminders(JSON.parse(stored));
+    } catch {}
+  }, []);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(
+        "lusotown_stream_reminders",
+        JSON.stringify(reminders)
+      );
+    } catch {}
+  }, [reminders]);
+
+  const toggleTag = useCallback((tag: string) => {
+    setSelectedTags((prev) =>
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
     );
-  };
+  }, []);
+
+  const clearTags = useCallback(() => setSelectedTags([]), []);
 
   const canAccessStream = (stream: ScheduledStream) => {
     return !stream.isPremium || hasAccess;
@@ -244,7 +303,7 @@ export default function StreamSchedule({
       className="bg-white rounded-xl shadow-sm p-6"
       id="schedule"
     >
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between mb-4 sm:mb-6">
         <h2 className="text-xl font-bold text-gray-900">
           {language === "pt" ? "Programação Próxima" : "Upcoming Schedule"}
         </h2>
@@ -256,6 +315,44 @@ export default function StreamSchedule({
           </span>
         </div>
       </div>
+
+      {/* Tag Filters */}
+      {allVisibleTags.length > 0 && (
+        <div className="mb-4">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-xs text-gray-500 mr-1">
+              {language === "pt" ? "Filtrar por tags:" : "Filter by tags:"}
+            </span>
+            {allVisibleTags.map((tag) => {
+              const active = selectedTags.includes(tag);
+              return (
+                <button
+                  key={tag}
+                  type="button"
+                  onClick={() => toggleTag(tag)}
+                  className={`px-2.5 py-1 rounded-full text-xs border transition-colors focus:outline-none focus:ring-2 focus:ring-offset-1 ${
+                    active
+                      ? "bg-primary-600 text-white border-primary-600"
+                      : "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100"
+                  }`}
+                  aria-pressed={active}
+                >
+                  #{tag}
+                </button>
+              );
+            })}
+            {selectedTags.length > 0 && (
+              <button
+                type="button"
+                onClick={clearTags}
+                className="ml-auto text-xs text-primary-700 hover:underline"
+              >
+                {language === "pt" ? "Limpar" : "Clear"}
+              </button>
+            )}
+          </div>
+        </div>
+      )}
 
       {filteredStreams.length === 0 ? (
         <div className="text-center py-12">
@@ -337,7 +434,7 @@ export default function StreamSchedule({
                       <div className="flex items-center gap-2 ml-2">
                         {hasStreamAccess && (
                           <button
-                            onClick={() => toggleReminder(stream.id)}
+                            onClick={() => toggleReminder(stream.id, stream.title)}
                             className={`p-2 rounded-lg transition-colors ${
                               hasReminder
                                 ? "bg-accent-100 text-accent-600"
@@ -345,6 +442,16 @@ export default function StreamSchedule({
                             }`}
                             title={
                               language === "pt"
+                                ? "Definir lembrete"
+                                : "Set reminder"
+                            }
+                            aria-pressed={hasReminder}
+                            aria-label={
+                              hasReminder
+                                ? language === "pt"
+                                  ? "Remover lembrete"
+                                  : "Remove reminder"
+                                : language === "pt"
                                 ? "Definir lembrete"
                                 : "Set reminder"
                             }
@@ -396,16 +503,27 @@ export default function StreamSchedule({
                     </div>
 
                     {/* Stream Actions */}
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between gap-3">
                       <div className="flex flex-wrap gap-1">
-                        {stream.tags.slice(0, 3).map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full"
-                          >
-                            #{tag}
-                          </span>
-                        ))}
+                        {stream.tags.slice(0, 4).map((tag) => {
+                          const active = selectedTags.includes(tag);
+                          return (
+                            <button
+                              key={tag}
+                              type="button"
+                              onClick={() => toggleTag(tag)}
+                              className={`px-2 py-1 rounded-full text-xs border transition-colors focus:outline-none focus:ring-2 focus:ring-offset-1 ${
+                                active
+                                  ? "bg-primary-600 text-white border-primary-600"
+                                  : "bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200"
+                              }`}
+                              aria-pressed={active}
+                              aria-label={`#${tag}`}
+                            >
+                              #{tag}
+                            </button>
+                          );
+                        })}
                       </div>
 
                       {hasStreamAccess ? (

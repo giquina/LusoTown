@@ -30,6 +30,7 @@
     "db:migrate:streaming": "node scripts/apply-streaming-migration.js"
   },
   "dependencies": {
+  "hls.js": "^1.5.13",
     "@headlessui/react": "^2.2.7",
     "@heroicons/react": "^2.2.0",
     "@stripe/stripe-js": "^7.8.0",

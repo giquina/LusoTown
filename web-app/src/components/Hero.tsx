@@ -39,7 +39,7 @@ export default function Hero() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-12 sm:py-16 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left Column - Content */}
           <div
             className={`space-y-6 sm:space-y-8 transition-all duration-1000 ${
@@ -155,9 +155,9 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Premium Services Quick Access */}
+            {/* Premium Services Quick Access (mobile-first). Hidden on desktop and placed under the right card there. */}
             <div
-              className={`transition-all duration-1000 delay-700 ${
+              className={`transition-all duration-1000 delay-700 lg:hidden ${
                 mounted
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-5"
@@ -246,7 +246,7 @@ export default function Hero() {
           <div
             className={`relative transition-all duration-1000 delay-600 ${
               mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
-            }`}
+            } self-start lg:-mt-8`}
           >
             <div className="relative z-10 bg-white/20 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/30">
               <div className="space-y-6">
@@ -304,6 +304,50 @@ export default function Hero() {
                     Quick Join
                   </div>
                   <SocialLogin mode="signup" />
+                </div>
+              </div>
+            </div>
+
+            {/* Premium Services Quick Access (desktop-only, placed under the membership card) */}
+            <div className="hidden lg:block mt-6">
+              <div className="bg-white/70 backdrop-blur-lg rounded-2xl p-6 border border-white/30 shadow-xl">
+                <h3 className="text-lg font-bold text-gray-800 mb-4 text-center">
+                  {t("hero.services.title", "Premium Portuguese Services")}
+                </h3>
+                <div className="grid grid-cols-3 gap-4">
+                  <a
+                    href="/transport"
+                    className="group flex flex-col items-center gap-2 p-3 rounded-xl bg-primary-50 hover:bg-primary-100 transition-all duration-200 hover:scale-105 min-h-[44px] shadow-lg hover:shadow-xl"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center">
+                      <MapPinIcon className="h-5 w-5 text-white" />
+                    </div>
+                    <span className="text-xs font-semibold text-gray-700 text-center">
+                      London Tours
+                    </span>
+                  </a>
+                  <a
+                    href="/transport"
+                    className="group flex flex-col items-center gap-2 p-3 rounded-xl bg-secondary-50 hover:bg-secondary-100 transition-all duration-200 hover:scale-105 min-h-[44px] shadow-lg hover:shadow-xl"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-secondary-600 flex items-center justify-center">
+                      <ArrowRightIcon className="h-5 w-5 text-white" />
+                    </div>
+                    <span className="text-xs font-semibold text-gray-700 text-center">
+                      Executive Transport
+                    </span>
+                  </a>
+                  <a
+                    href="/transport"
+                    className="group flex flex-col items-center gap-2 p-3 rounded-xl bg-premium-50 hover:bg-premium-100 transition-all duration-200 hover:scale-105 min-h-[44px] shadow-lg hover:shadow-xl"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-premium-600 flex items-center justify-center">
+                      <ShieldCheckIcon className="h-5 w-5 text-white" />
+                    </div>
+                    <span className="text-xs font-semibold text-gray-700 text-center">
+                      Close Protection
+                    </span>
+                  </a>
                 </div>
               </div>
             </div>

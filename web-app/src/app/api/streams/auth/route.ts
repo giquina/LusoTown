@@ -35,7 +35,8 @@ export async function POST(request: NextRequest) {
     // Mock streaming URLs (would be real in production)
     const streamUrls = {
       rtmp: `rtmp://localhost:1935/live/${streamId}`,
-      hls: `http://localhost:8080/hls/${streamId}/index.m3u8`,
+      // Align with SRS/dev scripts: HLS served at /live/<streamId>.m3u8
+      hls: `http://localhost:8080/live/${streamId}.m3u8`,
       webrtc: `ws://localhost:8080/webrtc/${streamId}`,
       chat: `ws://localhost:3001/chat/${streamId}`
     }

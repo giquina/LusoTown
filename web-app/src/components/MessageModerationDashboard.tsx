@@ -19,7 +19,8 @@ import {
   MessageSquare,
   TrendingUp,
   TrendingDown,
-  Users
+  Users,
+  X
 } from 'lucide-react'
 
 interface ModerationItem {

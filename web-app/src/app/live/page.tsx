@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   PlayIcon,
@@ -48,6 +49,12 @@ export default function LiveStreamingPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [viewerCount, setViewerCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [showMiniPlayer, setShowMiniPlayer] = useState(false);
+  const playerContainerRef = useRef<HTMLDivElement | null>(null);
+  // Base URL for self-hosted HLS playback (SRS dev default is http://localhost:8080)
+  const HLS_BASE =
+    (process.env.NEXT_PUBLIC_STREAMING_SERVER_URL as string) ||
+    "http://localhost:8080";
 
   // Mock data for demonstration - in production, this would come from YouTube API
   const streamCategories = [
@@ -119,7 +126,7 @@ export default function LiveStreamingPage() {
 
   useEffect(() => {
     // Simulate loading current stream data
-    const mockLiveStream = {
+  const mockLiveStream = {
       id: "live-fado-night-2025",
       title:
         language === "pt"
@@ -139,6 +146,8 @@ export default function LiveStreamingPage() {
       host: "Maria Santos",
       duration: 90,
       tags: ["fado", "music", "portuguese", "culture", "live"],
+  // Provide self-hosted HLS URL so StreamPlayer uses the onsite player by default
+  hlsUrl: `${HLS_BASE}/live/live-fado-night-2025.m3u8`,
     };
 
     const timer = setTimeout(() => {
@@ -148,7 +157,7 @@ export default function LiveStreamingPage() {
     }, 1000);
 
     return () => clearTimeout(timer);
-  }, [language]);
+  }, [language, HLS_BASE]);
 
   // Simulate real-time viewer count updates
   useEffect(() => {
@@ -163,6 +172,18 @@ export default function LiveStreamingPage() {
 
     return () => clearInterval(interval);
   }, [currentStream]);
+
+  // Show mini-player when main player is out of view
+  useEffect(() => {
+    if (!playerContainerRef.current) return;
+    const el = playerContainerRef.current;
+    const observer = new IntersectionObserver(
+      ([entry]) => setShowMiniPlayer(!entry.isIntersecting),
+      { threshold: 0.2 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const handleStreamInteraction = (type: string) => {
     console.log(`Stream interaction: ${type}`);
@@ -261,14 +282,20 @@ export default function LiveStreamingPage() {
                 transition={{ delay: 0.4 }}
                 className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
               >
-                <a href="#player" className="group bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 hover:shadow-xl active:scale-95 touch-manipulation min-w-[200px]">
+                <a
+                  href="#player"
+                  className="group bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 hover:shadow-xl active:scale-95 touch-manipulation min-w-[200px]"
+                >
                   <div className="flex items-center justify-center gap-3">
                     <Play className="w-6 h-6" />
                     {t("streaming.hero.cta.watch")}
                   </div>
                 </a>
 
-                <a href="/creator-signup" className="group bg-white hover:bg-gray-50 text-primary-600 border-2 border-primary-600 px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 hover:shadow-xl active:scale-95 touch-manipulation min-w-[200px]">
+                <a
+                  href="/creator-signup"
+                  className="group bg-white hover:bg-gray-50 text-primary-600 border-2 border-primary-600 px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 hover:shadow-xl active:scale-95 touch-manipulation min-w-[200px]"
+                >
                   <div className="flex items-center justify-center gap-3">
                     <Mic className="w-6 h-6" />
                     {t("streaming.hero.cta.create")}
@@ -284,9 +311,14 @@ export default function LiveStreamingPage() {
                 className="text-center mb-10 text-sm text-gray-600"
               >
                 <p>
-                  {t("streaming.hero.curator.prompt", "Do you want to be a curator or sign up as a curator?")}
-                  {" "}
-                  <a href="/creator-signup" className="text-primary-600 font-semibold hover:underline">
+                  {t(
+                    "streaming.hero.curator.prompt",
+                    "Do you want to be a curator or sign up as a curator?"
+                  )}{" "}
+                  <a
+                    href="/creator-signup"
+                    className="text-primary-600 font-semibold hover:underline"
+                  >
                     {t("streaming.hero.curator.cta", "Become a curator")}
                   </a>
                 </p>
@@ -495,12 +527,13 @@ export default function LiveStreamingPage() {
               {/* Main Stream Player - Mobile-first responsive */}
               <div className="lg:col-span-2 space-y-4 md:space-y-6">
                 {/* Live Stream Player */}
-                {currentStream && (
+        {currentStream && (
                   <motion.div
                     id="player"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="bg-white rounded-xl shadow-lg overflow-hidden"
+          className="bg-white rounded-xl shadow-lg overflow-hidden"
+          ref={playerContainerRef}
                   >
                     <StreamPlayer
                       stream={currentStream}
@@ -525,7 +558,7 @@ export default function LiveStreamingPage() {
 
                           {/* Stream Metadata */}
                           <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
-                            <div className="flex items-center gap-1">
+                            <div className="flex items-center gap-1" aria-live="polite">
                               <EyeIcon className="w-4 h-4" />
                               <span>
                                 {viewerCount.toLocaleString()}{" "}
@@ -603,18 +636,22 @@ export default function LiveStreamingPage() {
                 )}
 
                 {/* Stream Categories */}
+                <div id="categories">
                 <StreamCategories
                   categories={streamCategories}
                   selectedCategory={selectedCategory}
                   onCategorySelect={setSelectedCategory}
                   hasActiveSubscription={hasActiveSubscription || isInTrial}
                 />
+                </div>
 
                 {/* Upcoming Schedule */}
-                <StreamSchedule
-                  category={selectedCategory}
-                  language={language}
-                />
+                <div id="schedule">
+                  <StreamSchedule
+                    category={selectedCategory}
+                    language={language}
+                  />
+                </div>
               </div>
 
               {/* Sidebar - Takes up 1/3 of desktop width */}
@@ -716,6 +753,80 @@ export default function LiveStreamingPage() {
           </div>
         </div>
       </div>
+
+      {/* Community Section (anchor target for quick nav) */}
+      <div id="community" className="pb-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                {language === "pt" ? "Junte-se à Comunidade" : "Join the Community"}
+              </h3>
+              <p className="text-gray-600 mb-4">
+                {language === "pt"
+                  ? "Converse no chat em direto, participe nos fóruns e descubra eventos para conhecer pessoas pessoalmente."
+                  : "Chat live, join the forums, and discover events to meet people in person."}
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a href="/forums" className="px-4 py-2 rounded-lg bg-primary-50 text-primary-700 border border-primary-200 hover:bg-primary-100 text-sm font-medium">
+                  {language === "pt" ? "Ir para os Fóruns" : "Go to Forums"}
+                </a>
+                <a href="/events" className="px-4 py-2 rounded-lg bg-secondary-50 text-secondary-700 border border-secondary-200 hover:bg-secondary-100 text-sm font-medium">
+                  {language === "pt" ? "Explorar Eventos" : "Explore Events"}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Sticky Mini-Player */}
+      {currentStream && showMiniPlayer && (
+        <motion.button
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          className="fixed bottom-4 right-4 z-50 w-64 sm:w-72 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden text-left"
+          onClick={() => {
+            const el = document.getElementById("player");
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }}
+          aria-label={language === "pt" ? "Voltar ao leitor" : "Return to player"}
+        >
+          <div className="flex">
+            <div className="relative w-28 h-20 flex-shrink-0">
+              <Image
+                src={currentStream.thumbnail || "/events/networking.jpg"}
+                alt={currentStream.title}
+                fill
+                sizes="(max-width: 768px) 112px, 112px"
+                className="object-cover"
+                priority={false}
+              />
+            </div>
+            <div className="p-3 flex-1">
+              <div className="flex items-center gap-2 mb-1">
+                {currentStream.isLive && (
+                  <span className="inline-flex items-center px-2 py-0.5 rounded bg-action-600 text-white text-[10px] font-bold">
+                    {language === "pt" ? "AO VIVO" : "LIVE"}
+                  </span>
+                )}
+                {currentStream.isPremium && (
+                  <span className="inline-flex items-center px-2 py-0.5 rounded bg-premium-600 text-white text-[10px] font-bold">
+                    Premium
+                  </span>
+                )}
+              </div>
+              <div className="text-sm font-semibold text-gray-900 line-clamp-2">
+                {currentStream.title}
+              </div>
+              <div className="mt-1 text-xs text-gray-600">
+                {viewerCount.toLocaleString()} {language === "pt" ? "a ver" : "watching"}
+              </div>
+            </div>
+          </div>
+        </motion.button>
+      )}
 
       <Footer />
     </div>

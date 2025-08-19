@@ -106,6 +106,29 @@ function SignupInner() {
     if (refCode) {
       setFormData((prev) => ({ ...prev, referralCode: refCode.toUpperCase() }));
     }
+
+    // Capture origin param for attribution
+    const origin = searchParams.get("origin");
+    if (origin) {
+      try {
+        sessionStorage.setItem("lusotown_signup_origin", origin);
+      } catch {}
+    }
+
+    // Preselect interests from query (?interests=fado,business)
+    const interestsCsv = searchParams.get("interests");
+    if (interestsCsv) {
+      const parsed = interestsCsv
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean);
+      if (parsed.length) {
+        setFormData((prev) => ({ ...prev, interests: Array.from(new Set([...
+          prev.interests,
+          ...parsed,
+        ])) }));
+      }
+    }
   }, [searchParams]);
 
   // Real-time email validation
@@ -311,11 +334,12 @@ function SignupInner() {
                   </span>
                 </h1>
 
-                <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed">
+                <p className="text-lg sm:text-xl text-gray-600 mb-3 sm:mb-4 leading-relaxed">
                   No barriers to community participation. Start free, explore
                   events, connect with 750+ Portuguese speakers, and upgrade
                   only when you're ready for premium experiences.
                 </p>
+                <p className="text-sm text-gray-500 mb-6 sm:mb-8">No credit card required</p>
 
                 <div className="space-y-4 sm:space-y-6 mb-8">
                   {benefits.map((benefit, index) => {

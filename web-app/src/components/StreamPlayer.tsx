@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   PlayIcon,
@@ -24,6 +25,7 @@ interface StreamPlayerProps {
     thumbnail: string;
     viewerCount: number;
     previewDuration?: number;
+  hlsUrl?: string; // optional self-hosted HLS URL
   };
   hasAccess: boolean;
   onInteraction: (type: string) => void;
@@ -44,6 +46,7 @@ export default function StreamPlayer({
   ); // 5 minutes default
   const [showSubscriptionPrompt, setShowSubscriptionPrompt] = useState(false);
   const playerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const controlsTimeoutRef = useRef<NodeJS.Timeout>();
 
   const canFullAccess = hasAccess || hasActiveSubscription || isInTrial;
@@ -110,14 +113,47 @@ export default function StreamPlayer({
     return `${mins}:${secs.toString().padStart(2, "0")}`;
   };
 
+  // Initialize HLS if self-hosted URL is present (dynamic import to avoid SSR/type issues)
+  useEffect(() => {
+    if (!stream.hlsUrl || !videoRef.current) return;
+    const video = videoRef.current;
+    let hls: any;
+    const setup = async () => {
+      const mod: any = await import("hls.js");
+      const HLS = mod.default;
+      if (HLS && HLS.isSupported && HLS.isSupported()) {
+        hls = new HLS({ enableWorker: true, lowLatencyMode: true });
+        hls.loadSource(stream.hlsUrl as string);
+        hls.attachMedia(video);
+      } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+        video.src = stream.hlsUrl as string;
+      }
+    };
+    setup();
+    return () => {
+      if (hls) {
+        try { hls.destroy(); } catch {}
+      }
+    };
+  }, [stream.hlsUrl]);
+
   return (
     <div
       ref={playerRef}
       className="relative w-full h-64 md:h-96 lg:h-[28rem] bg-black rounded-t-xl overflow-hidden group"
       onMouseMove={handleMouseMove}
     >
-      {/* YouTube Embed or Thumbnail */}
-      {canFullAccess && isPlaying ? (
+      {/* HLS Player (self-hosted) or YouTube fallback */}
+      {canFullAccess && isPlaying && (stream.hlsUrl ? (
+        <video
+          ref={videoRef}
+          className="w-full h-full"
+          autoPlay
+          muted={isMuted}
+          controls={false}
+          playsInline
+        />
+      ) : (
         <iframe
           src={`https://www.youtube.com/embed/${stream.youtubeVideoId}${
             stream.isLive ? "?autoplay=1&mute=0" : "?autoplay=1"
@@ -128,19 +164,20 @@ export default function StreamPlayer({
           allowFullScreen
           title={stream.title}
         />
-      ) : (
+      ))}
+      {!isPlaying && (
         <>
           {/* Stream Thumbnail */}
-          {/* Using Next/Image not required here due to dynamic sources; keep img but add safe fallback */}
-          <img
-            src={stream.thumbnail || "/events/networking.jpg"}
-            alt={stream.title}
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).src =
-                "/events/networking.jpg";
-            }}
-            className="w-full h-full object-cover"
-          />
+          <div className="absolute inset-0">
+            <Image
+              src={stream.thumbnail || "/events/networking.jpg"}
+              alt={stream.title}
+              fill
+              priority={false}
+              sizes="(max-width: 1024px) 100vw, 66vw"
+              className="object-cover"
+            />
+          </div>
 
           {/* Overlay for non-premium users or when paused */}
           <div className="absolute inset-0 bg-black/40 flex items-center justify-center">

@@ -97,6 +97,40 @@ export default function HowItWorks() {
           </div>
         </section>
 
+        {/* 3-Step Strip */}
+        <section className="py-12 bg-white">
+          <div className="container-width">
+            <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+              {[
+                {
+                  step: 1,
+                  title: "Discover",
+                  desc: "Browse meetups at real places near you",
+                },
+                { step: 2, title: "RSVP", desc: "Confirm and save your spot" },
+                {
+                  step: 3,
+                  title: "Meet",
+                  desc: "Show up and connect in Portuguese",
+                },
+              ].map((s) => (
+                <div
+                  key={s.step}
+                  className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-5 text-center"
+                >
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-100 text-primary-700 font-bold mb-3">
+                    {s.step}
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                    {s.title}
+                  </h3>
+                  <p className="text-sm text-gray-600">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Features Explanation */}
         <section className="py-20 bg-white">
           <div className="container-width">
@@ -277,6 +311,47 @@ export default function HowItWorks() {
           </div>
         </section>
 
+        {/* Tiny FAQ */}
+        <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+          <div className="container-width">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-10">
+                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+                  Quick FAQ
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+                <div className="bg-white border border-gray-200 rounded-xl p-5">
+                  <h3 className="font-semibold text-gray-900 mb-2 text-lg">
+                    Is it free?
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    Yes. Start free. Optional VIP upgrade for premium events.
+                  </p>
+                </div>
+                <div className="bg-white border border-gray-200 rounded-xl p-5">
+                  <h3 className="font-semibold text-gray-900 mb-2 text-lg">
+                    Language
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    English and Portuguese events available. Choose your
+                    preference.
+                  </p>
+                </div>
+                <div className="bg-white border border-gray-200 rounded-xl p-5">
+                  <h3 className="font-semibold text-gray-900 mb-2 text-lg">
+                    Safety & verification
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    Selfie checks and guidelines keep events respectful and
+                    safe.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Final CTA */}
         <section className="py-20 bg-gradient-to-br from-primary-500 to-secondary-500 text-white">
           <div className="container-width">
@@ -306,7 +381,7 @@ export default function HowItWorks() {
                   href="/signup" 
                   className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-200"
                 >
-                  JOIN NOW
+                  Start Free
                 </a>
               </div>
               
