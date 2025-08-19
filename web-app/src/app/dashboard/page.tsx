@@ -137,10 +137,10 @@ export default function Dashboard() {
   const { language, t } = useLanguage()
   const { 
     userJourney, 
-    crossPlatformActivities, 
     getPersonalizedRecommendations,
     getPortugueseCommunityInsights,
-    calculateMembershipBenefits
+    calculateMembershipBenefits,
+    getUserTimeline
   } = usePlatformIntegration()
   const { stats, connections } = useNetworking()
   const { hasActiveSubscription, membershipTier } = useSubscription()
@@ -324,7 +324,7 @@ export default function Dashboard() {
             {activeTab === 'activity' && (
               <div className="space-y-6">
                 {/* Unified Activity Timeline */}
-                <UnifiedActivity activities={crossPlatformActivities} />
+                <UnifiedActivity activities={getUserTimeline() || []} />
                 
                 {/* Platform Stats Summary */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -387,10 +387,10 @@ export default function Dashboard() {
                         {connections.slice(0, 3).map(connection => (
                           <div key={connection.id} className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
                             <div className="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center text-white text-sm font-medium">
-                              {connection.connectedUser.name.split(' ').map(n => n[0]).join('')}
+                              {connection.connectedUser.firstName.split(' ').map(n => n[0]).join('')}
                             </div>
                             <div>
-                              <p className="font-medium text-gray-900">{connection.connectedUser.name}</p>
+                              <p className="font-medium text-gray-900">{connection.connectedUser.firstName} {connection.connectedUser.lastName || ''}</p>
                               <p className="text-sm text-gray-600">{connection.sharedEventsCount} {language === 'pt' ? 'eventos compartilhados' : 'shared events'}</p>
                             </div>
                           </div>

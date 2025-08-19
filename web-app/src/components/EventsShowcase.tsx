@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, memo, useMemo } from "react";
+import React, { useState, memo, useMemo, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   CalendarDaysIcon,
@@ -25,6 +25,7 @@ import { useWaitingList } from "@/context/WaitingListContext";
 import { useLanguage } from "@/context/LanguageContext";
 import type { Event } from "@/types/event";
 import { formatPrice } from "@/config/pricing";
+import { eventManagementService, PortugueseEvent } from '@/services';
 
 // Event Image Component with fallback - Memoized for performance
 const EventImage = memo(({ event }: { event: Event }) => {
@@ -93,108 +94,18 @@ const EventImage = memo(({ event }: { event: Event }) => {
 });
 EventImage.displayName = "EventImage";
 
-const upcomingEvents: Event[] = [
-  {
-    id: 4,
-    title: "AI Business App Creation Workshop",
-    description:
-      "Beginners session on using AI apps and generative AI tools to create business applications. Free live app creation for business ideas - we'll build your app during the event!",
-    location: "Tech Hub Central London",
-    address: "123 Innovation Street, London EC2A 3LT",
-    date: "Mon, 2 Dec",
-    time: "2:00 PM",
-    endTime: "6:00 PM",
-    attendees: 50,
-    maxAttendees: 50,
-    price: 30,
-    category: "AI & Technology",
-    image: "/events/portuguese/ai-workshop.svg",
-    color: "from-action-500 to-premium-500",
-    icon: <CpuChipIcon className="w-6 h-6 text-white" />,
-    ageRestriction: "Open to all ages - beginners welcome",
-    tags: [
-      "AI",
-      "technology",
-      "business",
-      "workshop",
-      "live-demo",
-      "free-giveaway",
-    ],
-    status: "fully-booked",
-    featured: true,
-    specialOffer: "Free app creation for business ideas",
-    agenda: [
-      "2:00-2:30 PM: Welcome & AI Tools Overview",
-      "2:30-3:30 PM: ChatGPT, Claude & Business Apps",
-      "3:30-4:00 PM: Break & Networking",
-      "4:00-5:30 PM: Live App Creation Demo",
-      "5:30-6:00 PM: Your Business Idea Workshop",
-    ],
-  },
-  {
-    id: 1,
-    title: "Portuguese Business Networking Summit",
-    description:
-      "Connect with Portuguese entrepreneurs and business leaders. Panel discussions on UK market expansion and cultural bridge-building in international business.",
-    location: "Canary Wharf, London",
-    date: "Fri, 15 Mar",
-    time: "6:00 PM",
-    attendees: 50,
-    maxAttendees: 50,
-    price: 45,
-    category: "Business & Professional",
-    image: "/events/portuguese/portuguese-networking.jpg",
-    color: "from-primary-500 to-secondary-500",
-    icon: <UsersIcon className="w-6 h-6 text-white" />,
-    ageRestriction: "Professional networking for all ages",
-    tags: ["business", "networking", "entrepreneurship", "professional"],
-    status: "fully-booked",
-  },
-  {
-    id: 2,
-    title: "Traditional Portuguese Cooking Workshop",
-    description:
-      "Learn to make authentic pastéis de nata, bacalhau à brás, and francesinha from a Portuguese chef. All skill levels welcome, recipes included.",
-    location: "Central London Culinary School",
-    date: "Sat, 23 Mar",
-    time: "2:00 PM",
-    attendees: 24,
-    maxAttendees: 24,
-    price: 55,
-    category: "Cooking & Culture",
-    image: "/events/wine-paint.jpg",
-    color: "from-coral-500 to-accent-500",
-    icon: <BeakerIcon className="w-6 h-6 text-white" />,
-    ageRestriction: "Welcome to all ages and skill levels",
-    tags: ["cooking", "traditional", "pastéis de nata", "bacalhau", "all-ages"],
-    status: "fully-booked",
-  },
-  {
-    id: 3,
-    title: "Premium Transport & Security Services Showcase",
-    description:
-      "Experience our professional Portuguese-speaking transport and close protection services. Meet certified SIA officers and view our premium vehicle fleet.",
-    location: "South London Event Center",
-    date: "Sun, 31 Mar",
-    time: "11:00 AM",
-    attendees: 12,
-    maxAttendees: 30,
-    price: 25,
-    category: "Transport & Security",
-    image: "/events/portuguese/transport-showcase.jpg",
-    color: "from-action-500 to-premium-500",
-    icon: <TicketIcon className="w-6 h-6 text-white" />,
-    ageRestriction: "Open to business professionals and individuals",
-    tags: [
-      "transport",
-      "security",
-      "SIA",
-      "Portuguese-speaking",
-      "professional",
-    ],
-    status: "available",
-  },
-];
+// Helper function to get category icons
+const getCategoryIcon = (category?: string) => {
+  const iconMap: Record<string, React.ReactElement> = {
+    'fado': <MusicalNoteIcon className="w-6 h-6 text-white" />,
+    'business': <UsersIcon className="w-6 h-6 text-white" />,
+    'cultural': <SparklesIcon className="w-6 h-6 text-white" />,
+    'food': <BeakerIcon className="w-6 h-6 text-white" />,
+    'technology': <CpuChipIcon className="w-6 h-6 text-white" />,
+    'santos_populares': <SparklesIcon className="w-6 h-6 text-white" />
+  };
+  return iconMap[category?.toLowerCase() || ''] || <CalendarDaysIcon className="w-6 h-6 text-white" />;
+};
 
 const eventStats = [
   {
@@ -224,16 +135,103 @@ const EventsShowcase = memo(() => {
   const { language } = useLanguage();
   const [waitingListModalOpen, setWaitingListModalOpen] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
+  
+  // State for real Portuguese events data
+  const [upcomingEvents, setUpcomingEvents] = useState<Event[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  // Fetch real Portuguese events
+  useEffect(() => {
+    const fetchRealEvents = async () => {
+      try {
+        const realEvents = await eventManagementService.getUpcomingEvents({ limit: 6 });
+        
+        // Transform Portuguese events to match existing Event interface
+        const transformedEvents: Event[] = realEvents.map((event: PortugueseEvent) => ({
+          id: parseInt(event.id),
+          title: event.title,
+          description: event.description || '',
+          location: event.venue?.name || event.location || 'London',
+          address: event.venue?.address || event.location || '',
+          date: new Date(event.start_datetime).toLocaleDateString('en-GB', {
+            weekday: 'short',
+            day: 'numeric',
+            month: 'short'
+          }),
+          time: new Date(event.start_datetime).toLocaleTimeString('en-GB', {
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true
+          }),
+          endTime: new Date(event.end_datetime).toLocaleTimeString('en-GB', {
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true
+          }),
+          attendees: event.current_attendee_count,
+          maxAttendees: event.max_attendees || 0,
+          price: event.price,
+          category: event.cultural_category || 'Cultural Event',
+          image: event.image_url || `/events/portuguese/${event.cultural_category || 'default'}.jpg`,
+          color: "from-primary-500 to-secondary-500",
+          icon: getCategoryIcon(event.cultural_category),
+          ageRestriction: "Welcome to Portuguese speakers and friends",
+          tags: event.tags || [],
+          status: event.status === 'active' && (!event.max_attendees || event.current_attendee_count < event.max_attendees) 
+            ? "available" 
+            : "fully-booked",
+          featured: event.is_featured || false
+        }));
+        
+        setUpcomingEvents(transformedEvents);
+      } catch (error) {
+        console.error('Error fetching Portuguese events:', error);
+        // Fallback to empty array
+        setUpcomingEvents([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchRealEvents();
+  }, []);
 
   // Memoize filtered events for performance
   const filteredEvents = useMemo(() => {
     return upcomingEvents.slice(0, 6); // Show only first 6 events
-  }, []);
+  }, [upcomingEvents]);
 
   const handleJoinWaitingList = (event: Event) => {
     setSelectedEvent(event);
     setWaitingListModalOpen(true);
   };
+
+  // Show loading state while fetching events
+  if (loading) {
+    return (
+      <section className="py-24 bg-gradient-to-br from-white via-gray-50 to-secondary-50 relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <div className="animate-pulse">
+              <div className="h-8 bg-gray-200 rounded w-64 mx-auto mb-4"></div>
+              <div className="h-4 bg-gray-200 rounded w-96 mx-auto"></div>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {Array(6).fill(0).map((_, i) => (
+              <div key={i} className="animate-pulse">
+                <div className="bg-gray-200 h-48 rounded-t-2xl"></div>
+                <div className="bg-white p-6 rounded-b-2xl">
+                  <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
+                  <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-24 bg-gradient-to-br from-white via-gray-50 to-secondary-50 relative overflow-hidden">

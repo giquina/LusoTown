@@ -32,43 +32,21 @@ const benefits = [
     icon: CheckIcon,
     text: "Free to join the Portuguese community",
     subtext: "No membership fees or barriers to participation",
-    tag: "FREE",
-    tagColor: "bg-green-500"
   },
   {
     icon: UserGroupIcon,
     text: `Connect with ${communityStats.members} Portuguese speakers`,
     subtext: "From Portugal, Brazil, Angola, Mozambique & beyond",
-    tag: "FREE",
-    tagColor: "bg-green-500"
-  },
-  {
-    icon: HeartIcon,
-    text: "3 daily matches + unlimited messaging",
-    subtext: "Find Portuguese speakers who share your story",
-    tag: "FREE",
-    tagColor: "bg-green-500"
-  },
-  {
-    icon: CameraIcon,
-    text: "Watch LusoTown TV streaming platform",
-    subtext: "Portuguese content, fado sessions, cultural shows",
-    tag: "FREE",
-    tagColor: "bg-green-500"
   },
   {
     icon: SparklesIcon,
-    text: "Unlimited matches + VIP Portuguese events",
-    subtext: "Premium matching, fado nights, luxury transport",
-    tag: "£19.99/mo",
-    tagColor: "bg-gradient-to-r from-red-500 via-yellow-500 to-green-500"
+    text: "Start free, upgrade when ready",
+    subtext: "Access VIP events and exclusive experiences optionally",
   },
   {
-    icon: StarIcon,
-    text: "Cultural Ambassador + Creator revenue",
-    subtext: "Priority visibility, host events, monetize content",
-    tag: "£39.99/mo",
-    tagColor: "bg-gradient-to-r from-yellow-500 via-red-500 to-green-500"
+    icon: ShieldCheckIcon,
+    text: "Premium features available",
+    subtext: "Priority booking, secret societies, exclusive events",
   },
 ];
 
@@ -376,20 +354,15 @@ function SignupInner() {
                           delay: 0.2 + index * 0.1,
                           duration: 0.6,
                         }}
-                        className="flex items-start gap-4 p-4 bg-white/50 backdrop-blur-sm rounded-xl border border-white/70 hover:bg-white/70 transition-all duration-300 hover:scale-[1.02] cursor-pointer"
+                        className="flex items-start gap-4 p-4 bg-white/50 backdrop-blur-sm rounded-xl border border-white/70"
                       >
                         <div className="w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
                           <IconComponent className="h-4 w-4 text-white" />
                         </div>
-                        <div className="flex-1">
-                          <div className="flex items-center justify-between mb-1">
-                            <span className="font-semibold text-gray-900">
-                              {benefit.text}
-                            </span>
-                            <span className={`text-xs font-bold text-white px-2 py-1 rounded-full ${benefit.tagColor}`}>
-                              {benefit.tag}
-                            </span>
-                          </div>
+                        <div>
+                          <span className="font-semibold text-gray-900 block">
+                            {benefit.text}
+                          </span>
                           <span className="text-sm text-gray-600">
                             {benefit.subtext}
                           </span>
@@ -1127,152 +1100,6 @@ function SignupInner() {
                   ))}
                 </div>
               </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Premium Upselling Section */}
-        <section className="py-16 bg-gradient-to-br from-red-50 via-yellow-50 to-green-50 border-t border-red-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                <span className="bg-gradient-to-r from-red-600 via-yellow-500 to-green-600 bg-clip-text text-transparent">
-                  Unlock the Full Portuguese Experience
-                </span>
-              </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                While you can enjoy LusoTown for free, our premium memberships unlock the true essence of Portuguese community life in London
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {/* Community Member - £19.99/month */}
-              <div className="bg-white rounded-3xl shadow-xl p-8 border-2 border-green-200 relative overflow-hidden">
-                <div className="absolute top-0 right-0 bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-bl-2xl text-sm font-bold">
-                  MOST POPULAR
-                </div>
-                <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <HeartIcon className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Community Member</h3>
-                  <div className="text-3xl font-bold text-green-600 mb-1">£19.99</div>
-                  <div className="text-gray-600 text-sm">per month</div>
-                </div>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-                      <CheckIcon className="h-3 w-3 text-green-600" />
-                    </div>
-                    <span className="text-gray-700">Unlimited daily matches</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-                      <CheckIcon className="h-3 w-3 text-green-600" />
-                    </div>
-                    <span className="text-gray-700">Unlimited messaging</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-                      <CheckIcon className="h-3 w-3 text-green-600" />
-                    </div>
-                    <span className="text-gray-700">Priority event booking</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-                      <CheckIcon className="h-3 w-3 text-green-600" />
-                    </div>
-                    <span className="text-gray-700">Exclusive fado nights & cultural events</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center">
-                      <CheckIcon className="h-3 w-3 text-green-600" />
-                    </div>
-                    <span className="text-gray-700">Access to premium Portuguese venues</span>
-                  </li>
-                </ul>
-                <button className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-4 rounded-xl hover:from-green-600 hover:to-green-700 transition-all duration-300 hover:scale-105 shadow-lg">
-                  Start Community Membership
-                </button>
-              </div>
-
-              {/* Cultural Ambassador - £39.99/month */}
-              <div className="bg-gradient-to-br from-red-50 via-yellow-50 to-green-50 rounded-3xl shadow-xl p-8 border-2 border-red-200 relative overflow-hidden">
-                <div className="absolute top-0 right-0 bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 text-white px-4 py-2 rounded-bl-2xl text-sm font-bold">
-                  PREMIUM
-                </div>
-                <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <StarIcon className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Cultural Ambassador</h3>
-                  <div className="text-3xl font-bold bg-gradient-to-r from-red-600 via-yellow-500 to-green-600 bg-clip-text text-transparent mb-1">£39.99</div>
-                  <div className="text-gray-600 text-sm">per month</div>
-                </div>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-gradient-to-r from-red-500 to-green-500 flex items-center justify-center">
-                      <CheckIcon className="h-3 w-3 text-white" />
-                    </div>
-                    <span className="text-gray-700">Everything in Community Member</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-gradient-to-r from-red-500 to-green-500 flex items-center justify-center">
-                      <CheckIcon className="h-3 w-3 text-white" />
-                    </div>
-                    <span className="text-gray-700">Priority profile visibility</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-gradient-to-r from-red-500 to-green-500 flex items-center justify-center">
-                      <CheckIcon className="h-3 w-3 text-white" />
-                    </div>
-                    <span className="text-gray-700">Host & monetize your own events</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-gradient-to-r from-red-500 to-green-500 flex items-center justify-center">
-                      <CheckIcon className="h-3 w-3 text-white" />
-                    </div>
-                    <span className="text-gray-700">Portuguese chauffeur services</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-gradient-to-r from-red-500 to-green-500 flex items-center justify-center">
-                      <CheckIcon className="h-3 w-3 text-white" />
-                    </div>
-                    <span className="text-gray-700">Creator revenue from LusoTown TV</span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full bg-gradient-to-r from-red-500 to-green-500 flex items-center justify-center">
-                      <CheckIcon className="h-3 w-3 text-white" />
-                    </div>
-                    <span className="text-gray-700">VIP access to all exclusive events</span>
-                  </li>
-                </ul>
-                <button className="w-full bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 text-white font-bold py-4 rounded-xl hover:from-red-600 hover:via-yellow-600 hover:to-green-600 transition-all duration-300 hover:scale-105 shadow-lg">
-                  Become Cultural Ambassador
-                </button>
-              </div>
-            </div>
-
-            {/* Value Proposition */}
-            <div className="text-center mt-12 bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-white/80">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Why Upgrade?</h3>
-              <div className="grid md:grid-cols-3 gap-6 text-sm text-gray-600">
-                <div>
-                  <span className="text-2xl mb-2 block">🇵🇹</span>
-                  <strong>Authentic Portuguese Community:</strong> Connect with verified Portuguese speakers who understand your cultural heritage
-                </div>
-                <div>
-                  <span className="text-2xl mb-2 block">💕</span>
-                  <strong>Higher Match Success:</strong> Premium members have 3x higher match rates and longer-lasting connections
-                </div>
-                <div>
-                  <span className="text-2xl mb-2 block">🎭</span>
-                  <strong>Exclusive Cultural Events:</strong> VIP access to intimate fado nights, Portuguese wine tastings, and cultural celebrations
-                </div>
-              </div>
-              <p className="text-xs text-gray-500 mt-6">
-                💳 Start your free account now - upgrade anytime. Cancel easily. No long-term commitments.
-              </p>
             </div>
           </div>
         </section>

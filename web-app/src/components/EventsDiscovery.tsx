@@ -16,8 +16,12 @@ import {
   MusicalNoteIcon,
   AcademicCapIcon,
   BuildingOfficeIcon,
-  UserGroupIcon
+  UserGroupIcon,
+  StarIcon,
+  BookOpenIcon,
+  CakeIcon
 } from '@heroicons/react/24/outline'
+import { Typography, Spacing, IconSystem, cn } from '@/lib/design'
 import { HeartIcon as HeartSolidIcon, StarIcon } from '@heroicons/react/24/solid'
 import { useLanguage } from '@/context/LanguageContext'
 import { useFavorites } from '@/context/FavoritesContext'
@@ -109,54 +113,55 @@ const PORTUGUESE_NEIGHBORHOODS: NeighborhoodData[] = [
   }
 ]
 
+// Professional icon mapping for Portuguese cultural categories
 const CULTURAL_CATEGORIES = [
   {
     id: 'santos_populares',
     name: { en: 'Santos Populares', pt: 'Santos Populares' },
-    icon: '🎉',
-    color: 'bg-red-500',
+    icon: CakeIcon,
+    color: 'bg-gradient-to-br from-action-500 to-action-600',
     description: 'Traditional Portuguese summer festivals'
   },
   {
     id: 'fado_music',
     name: { en: 'Fado Music', pt: 'Música de Fado' },
-    icon: '🎵',
-    color: 'bg-purple-500',
+    icon: MusicalNoteIcon,
+    color: 'bg-gradient-to-br from-premium-500 to-premium-600',
     description: 'Portuguese soul music experiences'
   },
   {
     id: 'football_culture',
     name: { en: 'Football Culture', pt: 'Cultura do Futebol' },
-    icon: '⚽',
-    color: 'bg-green-500',
+    icon: StarIcon,
+    color: 'bg-gradient-to-br from-secondary-500 to-secondary-600',
     description: 'Portuguese football viewing and discussion'
   },
   {
     id: 'business_networking',
     name: { en: 'Business Networking', pt: 'Networking de Negócios' },
-    icon: '💼',
-    color: 'bg-blue-500',
+    icon: BuildingOfficeIcon,
+    color: 'bg-gradient-to-br from-primary-500 to-primary-600',
     description: 'Professional development and networking'
   },
   {
     id: 'cultural_preservation',
     name: { en: 'Cultural Preservation', pt: 'Preservação Cultural' },
-    icon: '🏛️',
-    color: 'bg-amber-500',
+    icon: AcademicCapIcon,
+    color: 'bg-gradient-to-br from-accent-500 to-accent-600',
     description: 'Heritage and tradition preservation'
   },
   {
     id: 'gastronomy',
     name: { en: 'Portuguese Gastronomy', pt: 'Gastronomia Portuguesa' },
-    icon: '🍽️',
-    color: 'bg-orange-500',
+    icon: CakeIcon,
+    color: 'bg-gradient-to-br from-coral-500 to-coral-600',
     description: 'Cooking classes and food experiences'
   },
   {
     id: 'language_culture',
     name: { en: 'Language & Culture', pt: 'Língua e Cultura' },
-    icon: '📚',
-    color: 'bg-indigo-500',
+    icon: BookOpenIcon,
+    color: 'bg-gradient-to-br from-accent-500 to-premium-600',
     description: 'Portuguese language and cultural education'
   }
 ]
@@ -380,9 +385,11 @@ export default function EventsDiscovery({
     return Math.round((current / max) * 100)
   }
 
+  // Get professional icon component for category
   const getCategoryIcon = (categoryId: string) => {
     const category = CULTURAL_CATEGORIES.find(cat => cat.id === categoryId)
-    return category ? category.icon : '🎭'
+    const IconComponent = category ? category.icon : SparklesIcon
+    return <IconComponent className={cn(IconSystem.sizes.lg, 'text-white')} />
   }
 
   const getCategoryName = (categoryId: string) => {
@@ -474,19 +481,19 @@ export default function EventsDiscovery({
   }
 
   return (
-    <div className={`bg-white rounded-2xl shadow-lg ${className}`}>
+    <div className={`bg-white rounded-2xl shadow-lg overflow-hidden ${className}`}>
       {/* Header */}
-      <div className="p-6 border-b border-gray-100">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
-              <SparklesIcon className="w-6 h-6 text-white" />
+      <div className="p-4 sm:p-6 border-b border-gray-100">
+        <div className="flex items-start sm:items-center justify-between mb-4 gap-4">
+          <div className="flex items-start sm:items-center space-x-3 min-w-0 flex-1">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center flex-shrink-0">
+              <SparklesIcon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
             </div>
-            <div>
-              <h2 className="text-xl font-bold text-gray-900">
+            <div className="min-w-0 flex-1">
+              <h2 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight">
                 {isPortuguese ? 'Descobrir Eventos Portugueses' : 'Discover Portuguese Events'}
               </h2>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 text-sm leading-tight mt-1">
                 {isPortuguese
                   ? 'Eventos autênticos nos bairros portugueses de Londres'
                   : 'Authentic events in London\'s Portuguese neighborhoods'}
@@ -495,7 +502,7 @@ export default function EventsDiscovery({
           </div>
           <button
             onClick={() => setShowFilters(!showFilters)}
-            className="md:hidden bg-gray-100 p-2 rounded-lg hover:bg-gray-200 transition-colors"
+            className="md:hidden bg-gray-100 p-2.5 rounded-lg hover:bg-gray-200 transition-colors flex-shrink-0 min-h-[44px] min-w-[44px] flex items-center justify-center"
           >
             <AdjustmentsHorizontalIcon className="w-5 h-5" />
           </button>
@@ -574,11 +581,11 @@ export default function EventsDiscovery({
                 layout
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all cursor-pointer group"
+                className="border border-gray-200 rounded-xl p-4 sm:p-6 hover:shadow-lg transition-all cursor-pointer group overflow-hidden"
               >
-                <div className="flex flex-col md:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
                   {/* Event Image */}
-                  <div className="md:w-48 h-32 md:h-24 relative overflow-hidden rounded-lg bg-gray-100">
+                  <div className="sm:w-32 md:w-48 h-32 sm:h-24 relative overflow-hidden rounded-lg bg-gray-100 flex-shrink-0">
                     <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-secondary-500/20"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
                       <span className="text-3xl">{getCategoryIcon(event.cultural_category)}</span>
@@ -641,7 +648,7 @@ export default function EventsDiscovery({
                     </div>
 
                     {/* Event Meta */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm text-gray-600">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600">
                       <div className="flex items-center space-x-1">
                         <CalendarDaysIcon className="w-4 h-4" />
                         <span>{eventDate.toLocaleDateString()}</span>

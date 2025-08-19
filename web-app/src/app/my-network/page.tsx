@@ -26,7 +26,7 @@ import ConnectionsGrid from '@/components/ConnectionsGrid'
 import SortingControls from '@/components/SortingControls'
 import NetworkBadges from '@/components/NetworkBadges'
 import ConnectionNotificationBanner from '@/components/ConnectionNotificationBanner'
-import ConnectionFiltersComponent from '@/components/ConnectionFilters'
+import ConnectionFilters from '@/components/ConnectionFilters'
 import NetworkAnalytics from '@/components/NetworkAnalytics'
 import ReferralWidget from '@/components/ReferralWidget'
 
@@ -173,7 +173,7 @@ export default function MyNetworkPage() {
 
                   {/* Controls Row */}
                   <div className="flex items-center gap-4">
-                    <ConnectionFiltersComponent 
+                    <ConnectionFilters 
                       onFiltersChange={handleFiltersChange}
                       activeFilters={activeFilters}
                       onClearFilters={handleClearFilters}

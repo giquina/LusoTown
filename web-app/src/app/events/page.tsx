@@ -909,7 +909,7 @@ export default function EventsPage() {
 
         {/* Main Content */}
         <section className="py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
             {/* Cultural Calendar Tab */}
             {activeTab === "cultural" && (
               <PortugueseCulturalCalendar
@@ -974,11 +974,11 @@ export default function EventsPage() {
                   )}
 
                 {/* Controls */}
-                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 px-4 sm:px-0">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
                   <div className="flex items-center gap-4 w-full sm:w-auto">
                     <button
                       onClick={() => setShowFilters(true)}
-                      className="lg:hidden flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                      className="lg:hidden flex items-center gap-2 bg-white px-4 py-3 rounded-lg shadow-md hover:shadow-lg transition-shadow min-h-[44px] text-sm font-medium"
                     >
                       <AdjustmentsHorizontalIcon className="w-5 h-5" />
                       <span>{isPortuguese ? "Filtros" : "Filters"}</span>
@@ -1083,7 +1083,7 @@ export default function EventsPage() {
 
                 {/* Main Content Grid */}
                 {loading ? (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-0">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
                     {[1, 2, 3, 4, 5, 6].map((i) => (
                       <div
                         key={i}

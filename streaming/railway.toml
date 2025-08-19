@@ -1,0 +1,16 @@
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "npm start"
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3
+
+[variables]
+NODE_ENV = "production"
+PORT = "3002"
+HTTP_PORT = "8080"
+RTMP_PORT = "1935"
+HOST = "0.0.0.0"
+LUSOTOWN_STREAMING_SECRET = "lusotown_production_secret_2025_secure"
+LOG_LEVEL = "warn"

@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  transpilePackages: ["@lusotown/ui", "@lusotown/design-tokens"],
   images: {
     unoptimized: false,
     remotePatterns: [
@@ -93,7 +94,20 @@ const nextConfig = {
       },
     ];
   },
+  experimental: {
+    scrollRestoration: true,
+  },
   webpack: (config, { dev, isServer }) => {
+    // Enable react-native-web + monorepo shared packages
+    config.resolve.alias = {
+      ...(config.resolve.alias || {}),
+      'react-native$': 'react-native-web',
+    };
+    config.resolve.extensions = [
+      '.web.tsx', '.web.ts', '.web.jsx', '.web.js',
+      ...config.resolve.extensions,
+    ];
+
     // Fix chunk loading issues in development
     if (dev) {
       config.optimization.splitChunks = {

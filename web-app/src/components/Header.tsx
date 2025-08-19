@@ -43,13 +43,13 @@ const getAuthenticatedNavigationLinks = (t: any) => [
 const getMoreDropdownLinks = (t: any) => ({
   community: [
     { name: "Events & Culture", href: "/events" },
-    { name: "Cultural Calendar", href: "/cultural-calendar" },
     { name: "Community", href: "/community" },
-    { name: "Language Exchange", href: "/language-exchange" },
-    { name: "Portuguese Jobs", href: "/jobs" },
-    { name: "Housing Assistance", href: "/housing" },
     { name: "Become a Host", href: "/host" },
     { name: "Business Directory", href: "/directory" },
+    {
+      name: t("footer.housing-assistance", "Housing Assistance"),
+      href: "/housing-assistance",
+    },
     {
       name: t("footer.neighborhood-groups", "Neighborhood Groups"),
       href: "/neighborhood-groups",
@@ -63,7 +63,8 @@ const getMoreDropdownLinks = (t: any) => ({
     { name: "Close Protection", href: "/services#close-protection" },
   { name: "London Transport", href: "/transport" },
     { name: "Find Your Match", href: "/matches" },
-  { name: "Live TV & Streaming", href: "/live" },
+  { name: "Live TV", href: "/live" },
+  { name: "Streaming — Stream with us", href: "/streaming" },
   ],
   support: [
     { name: "How It Works", href: "/how-it-works" },
@@ -287,7 +288,7 @@ export default function Header() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[1200px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-50"
+                    className="absolute top-full right-0 mt-2 w-[1100px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-50"
                   >
                     <div className="grid grid-cols-5 gap-8 px-8">
                       {/* Quick Actions Section */}
@@ -697,7 +698,14 @@ export default function Header() {
                       className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Live TV & Streaming
+                      Live TV
+                    </a>
+                    <a
+                      href="/streaming"
+                      className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Streaming — Stream with us
                     </a>
                     <a
                       href="/services"

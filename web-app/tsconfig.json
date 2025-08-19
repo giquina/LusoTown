@@ -1,4 +1,5 @@
 {
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
     "lib": [
       "dom",
@@ -25,7 +26,8 @@
     "paths": {
       "@/*": [
         "./src/*"
-      ]
+      ],
+      "react-native$": ["react-native-web"]
     }
   },
   "include": [

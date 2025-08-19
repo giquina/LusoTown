@@ -398,18 +398,13 @@ function MatchesContent() {
                 <div className="text-2xl md:text-3xl">❤️</div>
                 <HeartIcon className="w-10 h-10 md:w-12 md:h-12 text-white/90 animate-pulse" />
               </div>
-              <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
-                {language === "pt" ? "O Seu Amor Português Espera" : "Your Portuguese Love Story Awaits"}
+              <h1 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                {language === "pt" ? "Encontre o Seu Match" : "Find Your Match"}
               </h1>
-              <p className="text-lg md:text-xl text-white/95 mb-4 leading-relaxed max-w-4xl mx-auto font-medium">
+              <p className="text-sm md:text-base text-white/90 mb-6 leading-relaxed max-w-3xl mx-auto">
                 {language === "pt"
-                  ? "💕 Da saudade ao amor verdadeiro - conecte-se com almas portuguesas que entendem o seu coração em Londres"
-                  : "💕 From saudade to true love - connect with Portuguese souls who understand your heart in London"}
-              </p>
-              <p className="text-sm md:text-base text-white/80 mb-6 leading-relaxed max-w-3xl mx-auto italic">
-                {language === "pt"
-                  ? "\"Onde o fado encontra o amor, onde as tradições se tornam conversas, onde Londres se torna casa\""
-                  : "\"Where fado meets love, where traditions become conversations, where London becomes home\""}
+                  ? "Conecte-se com falantes de português em Londres que partilham os seus interesses, valores e património cultural. Mais que um app de encontros - uma comunidade."
+                  : "Connect with Portuguese speakers in London who share your interests, values, and cultural heritage. More than a dating app - a community."}
               </p>
 
               {/* Live Success Counter */}
@@ -440,62 +435,21 @@ function MatchesContent() {
                 </div>
               </div>
 
-              {/* Portuguese Love Stories Carousel */}
-              <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-6 mb-6 border border-white/20">
-                <div className="text-center mb-4">
-                  <span className="text-white/90 font-semibold text-sm">
-                    {language === "pt" ? "🇵🇹 Histórias de Amor Portuguesas" : "🇵🇹 Portuguese Love Stories"}
-                  </span>
-                </div>
-                <motion.div
-                  key={successStories % 3}
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  className="text-center"
-                >
-                  {(successStories % 3) === 0 && (
-                    <div>
-                      <blockquote className="text-base md:text-lg text-white/95 italic mb-3">
-                        "
-                        {language === "pt"
-                          ? "Conhecemo-nos a falar de bacalhau e casámos a dançar fado! O LusoTown trouxe-nos mais que amor - trouxe-nos casa."
-                          : "We met talking about bacalhau and married dancing fado! LusoTown brought us more than love - it brought us home."}
-                        "
-                      </blockquote>
-                      <cite className="text-white/80 text-sm">
-                        — {language === "pt" ? "Sofia & Miguel, casados há 2 anos" : "Sofia & Miguel, married 2 years"}
-                      </cite>
-                    </div>
-                  )}
-                  {(successStories % 3) === 1 && (
-                    <div>
-                      <blockquote className="text-base md:text-lg text-white/95 italic mb-3">
-                        "
-                        {language === "pt"
-                          ? "Ela percebia porque é que eu choro quando ouço 'Lágrima' e eu percebo porque ela faz dois pastéis de nata desaparecerem em 5 minutos!"
-                          : "She understood why I cry when I hear 'Lágrima' and I understand why she makes two pastéis de nata disappear in 5 minutes!"}
-                        "
-                      </blockquote>
-                      <cite className="text-white/80 text-sm">
-                        — {language === "pt" ? "João & Ana, noivos" : "João & Ana, engaged"}
-                      </cite>
-                    </div>
-                  )}
-                  {(successStories % 3) === 2 && (
-                    <div>
-                      <blockquote className="text-base md:text-lg text-white/95 italic mb-3">
-                        "
-                        {language === "pt"
-                          ? "Primeiro encontro: café no Borough Market. Segundo encontro: ela fez-me francesinha. Terceiro encontro: conheci a família dela no Zoom para o Porto!"
-                          : "First date: coffee at Borough Market. Second date: she made me francesinha. Third date: I met her family on Zoom to Porto!"}
-                        "
-                      </blockquote>
-                      <cite className="text-white/80 text-sm">
-                        — {language === "pt" ? "Ricardo, apaixonado" : "Ricardo, head over heels"}
-                      </cite>
-                    </div>
-                  )}
-                </motion.div>
+              {/* Cultural Quote */}
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 mb-6 border border-white/20">
+                <blockquote className="text-base md:text-lg text-white/95 italic">
+                  "
+                  {language === "pt"
+                    ? "Finalmente alguém que percebe a saudade e ama pastéis de nata tanto quanto eu!"
+                    : "Finally someone who understands saudade and loves pastéis de nata as much as I do!"}
+                  "
+                </blockquote>
+                <cite className="text-white/80 text-xs block mt-1">
+                  —{" "}
+                  {language === "pt"
+                    ? "Sofia, 29, Stockwell"
+                    : "Sofia, 29, Stockwell"}
+                </cite>
               </div>
             </div>
 
@@ -700,8 +654,8 @@ function MatchesContent() {
                 })}
               </div>
             </div>
-            {/* Profile Card Stack */}
-            <div className="relative h-[480px] md:h-[520px] mb-6">
+            {/* Enhanced Profile Card Stack */}
+            <div className="relative h-[580px] md:h-[620px] mb-6">
               <AnimatePresence mode="wait">
                 {currentProfile && (
                   <motion.div
@@ -721,129 +675,150 @@ function MatchesContent() {
                       rotate: isLiking ? 20 : isSkipping ? -20 : 0,
                     }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="absolute inset-0 bg-white rounded-3xl shadow-2xl overflow-hidden border border-primary-100"
+                    className="absolute inset-0 bg-white rounded-3xl shadow-2xl overflow-hidden border border-primary-100 hover:shadow-3xl transition-shadow duration-300"
                     onTouchStart={onTouchStart}
                     onTouchEnd={onTouchEnd}
                   >
-                    {/* Profile Image */}
-                    <div className="relative h-56 md:h-60 bg-gradient-to-br from-primary-200 to-secondary-200">
+                    {/* Enhanced Profile Image Section */}
+                    <div className="relative h-48 md:h-52 bg-gradient-to-br from-primary-200 via-secondary-200 to-accent-200 overflow-hidden">
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-6xl text-primary-400">👤</div>
+                        <div className="text-5xl md:text-6xl text-primary-400 drop-shadow-lg">👤</div>
                       </div>
 
-                      {/* Compatibility Badge */}
-                      <div className="absolute top-4 right-4 bg-secondary-500 text-white px-3 py-1 rounded-full text-xs md:text-sm font-semibold shadow-lg">
-                        {currentProfile.compatibility}% Match
+                      {/* Enhanced Compatibility Badge */}
+                      <div className="absolute top-3 right-3 bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-4 py-2 rounded-2xl text-xs md:text-sm font-bold shadow-xl backdrop-blur-sm border border-white/20">
+                        <div className="flex items-center gap-1">
+                          <StarIconSolid className="w-3 h-3 text-yellow-300" />
+                          {currentProfile.compatibility}% Match
+                        </div>
                       </div>
 
-                      {/* Origin Flag */}
-                      <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs md:text-sm font-medium shadow-lg">
-                        {getOriginFlag(currentProfile.origin)}{" "}
-                        {currentProfile.origin}
+                      {/* Enhanced Origin Badge */}
+                      <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-2xl text-xs md:text-sm font-semibold shadow-xl border border-primary-100">
+                        <div className="flex items-center gap-2">
+                          <span className="text-lg">{getOriginFlag(currentProfile.origin)}</span>
+                          <span className="text-primary-700 truncate max-w-24 md:max-w-32">{currentProfile.origin}</span>
+                        </div>
                       </div>
+
+                      {/* Gradient Overlay */}
+                      <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white via-white/90 to-transparent"></div>
                     </div>
 
-                    {/* Profile Info */}
-                    <div className="p-5 md:p-6">
-                      <div className="flex items-center justify-between mb-4">
-                        <div>
-                          <h3 className="text-xl md:text-2xl font-bold text-primary-900 mb-1">
-                            {currentProfile.name}, {currentProfile.age}
-                          </h3>
-                          <div className="flex items-center gap-2 text-primary-600 mb-1.5">
-                            <BriefcaseIcon className="w-4 h-4" />
-                            <span className="text-sm">
-                              {currentProfile.profession}
-                            </span>
-                          </div>
-                          <div className="flex items-center gap-2 text-primary-600">
-                            <MapPinIcon className="w-4 h-4" />
-                            <span className="text-sm">
-                              {currentProfile.location}, London
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-
-                      <p className="text-primary-700 text-sm mb-3 leading-relaxed">
-                        {currentProfile.bio}
-                      </p>
-
-                      {/* Interests */}
+                    {/* Enhanced Profile Info with Better Layout */}
+                    <div className="p-4 md:p-6 flex flex-col h-[calc(100%-12rem)] md:h-[calc(100%-13rem)]">
+                      {/* Header Section */}
                       <div className="mb-4">
-                        <h4 className="text-sm font-semibold text-primary-800 mb-1.5">
-                          Interests:
-                        </h4>
-                        <div className="flex flex-wrap gap-2">
-                          {currentProfile.interests
-                            .slice(0, 4)
-                            .map((interest, index) => (
-                              <span
-                                key={index}
-                                className="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-xs font-medium"
-                              >
-                                {interest}
-                              </span>
-                            ))}
+                        <div className="flex items-start justify-between mb-3">
+                          <div className="min-w-0 flex-1">
+                            <h3 className="text-xl md:text-2xl font-bold text-primary-900 mb-2 leading-tight">
+                              {currentProfile.name}, {currentProfile.age}
+                            </h3>
+                            <div className="space-y-1.5">
+                              <div className="flex items-center gap-2 text-primary-600">
+                                <BriefcaseIcon className="w-4 h-4 flex-shrink-0" />
+                                <span className="text-sm font-medium truncate">{currentProfile.profession}</span>
+                              </div>
+                              <div className="flex items-center gap-2 text-primary-600">
+                                <MapPinIcon className="w-4 h-4 flex-shrink-0" />
+                                <span className="text-sm font-medium">{currentProfile.location}, London</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Bio Section with Better Typography */}
+                        <div className="bg-primary-25 p-3 rounded-xl border border-primary-100">
+                          <p className="text-primary-800 text-sm leading-relaxed line-clamp-3">
+                            {currentProfile.bio}
+                          </p>
                         </div>
                       </div>
 
-                      {/* Portuguese Community Connection */}
-                      <div className="bg-gradient-to-r from-red-50 via-yellow-50 to-green-50 p-4 rounded-xl border-2 border-red-200">
+                      {/* Interests Section - Enhanced */}
+                      <div className="mb-4">
+                        <h4 className="text-sm font-bold text-primary-900 mb-2.5 flex items-center gap-2">
+                          <SparklesIcon className="w-4 h-4 text-secondary-500" />
+                          Common Interests
+                        </h4>
+                        <div className="grid grid-cols-2 gap-2">
+                          {currentProfile.interests.slice(0, 4).map((interest, index) => (
+                            <div
+                              key={index}
+                              className="bg-gradient-to-r from-primary-50 to-secondary-50 text-primary-700 px-3 py-2 rounded-xl text-xs font-semibold border border-primary-200 text-center"
+                            >
+                              {interest}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Enhanced Portuguese Cultural Connection */}
+                      <div className="bg-gradient-to-r from-secondary-50 via-accent-50 to-coral-50 p-4 rounded-2xl border border-secondary-200 shadow-inner flex-1 flex flex-col">
                         <div className="flex items-center justify-between mb-3">
-                          <div className="flex items-center gap-2 text-red-700 text-sm">
-                            <span className="text-lg">🇵🇹</span>
-                            <span className="font-bold">
-                              {language === "pt"
-                                ? "Alma Portuguesa"
-                                : "Portuguese Soul"}
+                          <div className="flex items-center gap-2">
+                            <div className="w-8 h-8 bg-gradient-to-r from-secondary-500 to-accent-500 rounded-full flex items-center justify-center">
+                              <HeartIcon className="w-4 h-4 text-white" />
+                            </div>
+                            <span className="font-bold text-secondary-800 text-sm">
+                              {language === "pt" ? "Conexão Cultural" : "Cultural Connection"}
                             </span>
                           </div>
-          <div className="flex items-center gap-1">
+                          <div className="flex items-center gap-1">
                             {Array.from({ length: 5 }).map((_, i) => (
-                              <span key={i} className="text-sm">⭐</span>
+                              <StarIconSolid key={i} className="w-3.5 h-3.5 text-yellow-400" />
                             ))}
                           </div>
                         </div>
-                        <div className="grid grid-cols-2 gap-3 text-xs text-red-800 mb-3">
-                          <div className="flex items-center gap-2">
-                            <span>🗣️</span>
-                            <span className="font-medium">
-                              {language === "pt" ? "Português Nativo" : "Native Portuguese"}
+                        
+                        <div className="grid grid-cols-2 gap-2 mb-3">
+                          <div className="flex items-center gap-2 bg-white/60 p-2 rounded-lg">
+                            <div className="w-2.5 h-2.5 bg-green-500 rounded-full"></div>
+                            <span className="text-xs font-medium text-secondary-700">
+                              {language === "pt" ? "Língua" : "Language"}
                             </span>
                           </div>
-                          <div className="flex items-center gap-2">
-                            <span>🎭</span>
-                            <span className="font-medium">
-                              {language === "pt" ? "Ama Fado" : "Loves Fado"}
+                          <div className="flex items-center gap-2 bg-white/60 p-2 rounded-lg">
+                            <div className="w-2.5 h-2.5 bg-blue-500 rounded-full"></div>
+                            <span className="text-xs font-medium text-secondary-700">
+                              {language === "pt" ? "Tradições" : "Traditions"}
                             </span>
                           </div>
-                          <div className="flex items-center gap-2">
-                            <span>🥐</span>
-                            <span className="font-medium">
-                              {language === "pt" ? "Pastéis Expert" : "Pastéis Expert"}
+                          <div className="flex items-center gap-2 bg-white/60 p-2 rounded-lg">
+                            <div className="w-2.5 h-2.5 bg-purple-500 rounded-full"></div>
+                            <span className="text-xs font-medium text-secondary-700">
+                              {language === "pt" ? "Valores" : "Values"}
                             </span>
                           </div>
-                          <div className="flex items-center gap-2">
-                            <span>⚽</span>
-                            <span className="font-medium">
-                              {language === "pt" ? "Benfica/Porto" : "Benfica/Porto"}
+                          <div className="flex items-center gap-2 bg-white/60 p-2 rounded-lg">
+                            <div className="w-2.5 h-2.5 bg-orange-500 rounded-full"></div>
+                            <span className="text-xs font-medium text-secondary-700">
+                              {language === "pt" ? "Experiências" : "Experiences"}
                             </span>
                           </div>
                         </div>
-                        {/* Why we think you'll connect */}
-                        <div className="mt-3 text-[11px] md:text-xs text-secondary-700">
-                          <span className="font-semibold">
-                            {language === "pt" ? "Porque achamos que combinam:" : "Why we think you'll connect:"}
-                          </span>
-                          <ul className="list-disc ml-5 mt-1 space-y-1">
-                            {currentProfile.interests.slice(0, 2).map((i, idx) => (
-                              <li key={idx}>{language === "pt" ? `Interesse partilhado: ${i}` : `Shared interest: ${i}`}</li>
+                        
+                        {/* Connection Reasons */}
+                        <div className="bg-white/80 backdrop-blur-sm p-3 rounded-xl border border-white/60 mt-auto">
+                          <h5 className="font-bold text-secondary-800 mb-2 text-xs">
+                            {language === "pt" ? "Por que vocês combinam:" : "Why you'll connect:"}
+                          </h5>
+                          <div className="space-y-1">
+                            {currentProfile.interests.slice(0, 2).map((interest, idx) => (
+                              <div key={idx} className="flex items-center gap-2">
+                                <CheckCircleIcon className="w-3 h-3 text-green-500 flex-shrink-0" />
+                                <span className="text-xs text-secondary-700 truncate">
+                                  {language === "pt" ? `${interest}` : `${interest}`}
+                                </span>
+                              </div>
                             ))}
-                            <li>
-                              {language === "pt" ? `Localização próxima: ${currentProfile.location}` : `Nearby location: ${currentProfile.location}`}
-                            </li>
-                          </ul>
+                            <div className="flex items-center gap-2">
+                              <MapPinIcon className="w-3 h-3 text-blue-500 flex-shrink-0" />
+                              <span className="text-xs text-secondary-700 truncate">
+                                {language === "pt" ? `Próximo: ${currentProfile.location}` : `Near: ${currentProfile.location}`}
+                              </span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -856,25 +831,55 @@ function MatchesContent() {
               <div className="absolute inset-0 bg-white rounded-3xl shadow-md transform translate-y-4 translate-x-2 border border-primary-50 -z-20"></div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex justify-center gap-5">
+            {/* Enhanced Action Buttons */}
+            <div className="flex justify-center gap-6 px-4">
               <button
                 onClick={handleSkip}
                 disabled={isLiking || isSkipping || !currentProfile}
-                className="w-16 h-16 bg-white border-2 border-gray-300 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="group relative w-18 h-18 bg-white border-3 border-gray-200 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:border-red-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 aria-label={language === "pt" ? "Passar" : "Skip"}
               >
-                <XMarkIcon className="w-8 h-8 text-gray-500" />
+                <div className="absolute inset-0 bg-gradient-to-r from-red-50 to-orange-50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <XMarkIcon className="relative w-8 h-8 text-gray-600 group-hover:text-red-600 transition-colors duration-300" />
+                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="bg-gray-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+                    {language === "pt" ? "Passar" : "Skip"}
+                  </span>
+                </div>
               </button>
 
               <button
                 onClick={handleLike}
                 disabled={isLiking || isSkipping || !currentProfile}
-                className="w-16 h-16 bg-gradient-to-r from-action-500 to-action-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="group relative w-20 h-20 bg-gradient-to-r from-action-500 via-secondary-500 to-accent-500 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 aria-label={language === "pt" ? "Gostar" : "Like"}
               >
-                <HeartIconSolid className="w-8 h-8 text-white" />
+                <div className="absolute inset-0 bg-gradient-to-r from-action-600 via-secondary-600 to-accent-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <HeartIconSolid className="relative w-9 h-9 text-white animate-pulse" />
+                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="bg-gray-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+                    {language === "pt" ? "Gostar" : "Like"}
+                  </span>
+                </div>
               </button>
+
+              {/* Super Like Button - Premium Feature */}
+              {hasActiveSubscription && (
+                <button
+                  onClick={() => {/* Add super like logic */}}
+                  disabled={isLiking || isSkipping || !currentProfile}
+                  className="group relative w-18 h-18 bg-gradient-to-r from-yellow-400 to-orange-500 border-2 border-yellow-300 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  aria-label={language === "pt" ? "Super Like" : "Super Like"}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <StarIcon className="relative w-8 h-8 text-white" />
+                  <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="bg-gray-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+                      Super Like
+                    </span>
+                  </div>
+                </button>
+              )}
             </div>
 
             {/* Undo */}

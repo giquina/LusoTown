@@ -2,6 +2,13 @@
   "name": "lusotown",
   "version": "1.0.0",
   "description": "LusoTown - Your Lusophone Home in London 🇵🇹",
+  "private": true,
+  "workspaces": [
+    "web-app",
+    "mobile-app",
+    "streaming",
+    "packages/*"
+  ],
   "scripts": {
     "dev": "cd web-app && npm run dev",
     "build": "cd web-app && npm run build",

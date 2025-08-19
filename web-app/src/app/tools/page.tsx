@@ -28,7 +28,7 @@ export default function ToolsPage() {
 
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
           <Link
-            href="/live"
+            href="/streaming"
             className="block rounded-xl border p-5 bg-white hover:shadow-md transition"
           >
             <div className="text-lg font-semibold text-gray-900 mb-1">

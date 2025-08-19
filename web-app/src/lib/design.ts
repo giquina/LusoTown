@@ -118,70 +118,117 @@ export const PortugueseGradients = {
 } as const
 
 /**
- * Standard Button Classes
- * Consistent button styling across the application
+ * Unified Button System
+ * Consistent button styling with size variants and semantic types
  */
 export const ButtonStyles = {
-  // Primary CTAs - Main actions like "JOIN NOW"
-  primaryCTA: `
+  // Base button classes - shared across all variants
+  base: `
     inline-flex items-center justify-center
-    bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600
-    hover:from-secondary-700 hover:via-action-700 hover:to-accent-700
-    text-white font-bold text-lg
-    px-8 py-4 rounded-2xl
-    shadow-2xl hover:shadow-3xl
-    transform transition-all duration-300
-    hover:-translate-y-1 hover:scale-105
-    relative overflow-hidden
-    group
+    font-semibold rounded-xl transition-all duration-200
+    focus:outline-none focus:ring-2 focus:ring-offset-2
+    disabled:opacity-50 disabled:cursor-not-allowed
+    touch-manipulation
   `,
 
-  // Secondary CTAs - Supporting actions
-  secondaryCTA: `
-    inline-flex items-center justify-center
-    bg-white/70 backdrop-blur-lg
-    text-gray-800 border-2 border-gray-200
-    hover:border-secondary-300 hover:text-secondary-700
-    font-bold text-lg
-    px-8 py-4 rounded-2xl
-    shadow-lg hover:shadow-xl
-    transform transition-all duration-300
-    hover:-translate-y-1
-  `,
+  // Size variants with proper touch targets
+  sizes: {
+    small: 'min-h-[36px] px-3 py-2 text-sm',
+    medium: 'min-h-[44px] px-4 py-2.5 text-base', // 44px minimum for touch
+    large: 'min-h-[48px] px-6 py-3 text-lg',
+    xlarge: 'min-h-[56px] px-8 py-4 text-xl'
+  },
 
-  // Small buttons for cards and secondary actions
-  smallButton: `
-    inline-flex items-center justify-center
-    bg-gradient-to-r from-primary-500 to-secondary-500
-    hover:from-primary-600 hover:to-secondary-600
-    text-white font-medium
-    px-6 py-3 rounded-xl
-    transition-all duration-200
-    hover:scale-105
-  `,
+  // Semantic button variants
+  variants: {
+    // Primary - Main actions
+    primary: `
+      bg-gradient-to-r from-primary-500 to-secondary-500
+      hover:from-primary-600 hover:to-secondary-600
+      focus:ring-primary-500 text-white shadow-lg
+      hover:shadow-xl hover:-translate-y-0.5
+    `,
 
-  // White buttons with colored text
-  whiteCTA: `
-    inline-flex items-center justify-center
-    bg-white text-primary-600
-    hover:bg-gray-50 hover:text-primary-700
-    font-bold text-lg
-    px-8 py-4 rounded-xl
-    shadow-2xl hover:shadow-3xl
-    transform transition-all duration-300
-    hover:-translate-y-2 hover:scale-105
-  `,
+    // Secondary - Supporting actions  
+    secondary: `
+      bg-white border-2 border-gray-300
+      hover:border-primary-500 hover:text-primary-600
+      focus:ring-primary-500 text-gray-700
+      shadow-sm hover:shadow-md
+    `,
 
-  // Outlined buttons
-  outlined: `
-    inline-flex items-center justify-center
-    border-2 border-white text-white
-    hover:bg-white hover:text-primary-600
-    font-bold
-    px-8 py-4 rounded-xl
-    transition-all duration-300
-  `,
+    // Outline - Subtle actions
+    outline: `
+      border-2 border-primary-500 text-primary-600
+      hover:bg-primary-500 hover:text-white
+      focus:ring-primary-500 bg-transparent
+    `,
+
+    // Ghost - Minimal actions
+    ghost: `
+      text-primary-600 hover:bg-primary-50
+      focus:ring-primary-500 bg-transparent
+    `,
+
+    // Danger - Destructive actions
+    danger: `
+      bg-action-500 hover:bg-action-600
+      focus:ring-action-500 text-white shadow-lg
+      hover:shadow-xl hover:-translate-y-0.5
+    `,
+
+    // Success - Positive actions
+    success: `
+      bg-secondary-500 hover:bg-secondary-600
+      focus:ring-secondary-500 text-white shadow-lg
+      hover:shadow-xl hover:-translate-y-0.5
+    `,
+
+    // Premium - Special actions
+    premium: `
+      bg-gradient-to-r from-premium-500 to-accent-500
+      hover:from-premium-600 hover:to-accent-600
+      focus:ring-premium-500 text-white shadow-lg
+      hover:shadow-xl hover:-translate-y-0.5
+    `
+  },
+
+  // Legacy styles for gradual migration
+  legacy: {
+    primaryCTA: `
+      inline-flex items-center justify-center min-h-[48px]
+      bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600
+      hover:from-secondary-700 hover:via-action-700 hover:to-accent-700
+      text-white font-bold text-lg px-8 py-4 rounded-2xl
+      shadow-2xl hover:shadow-3xl transition-all duration-300
+      hover:-translate-y-1 hover:scale-105 relative overflow-hidden group
+    `,
+    
+    secondaryCTA: `
+      inline-flex items-center justify-center min-h-[44px]
+      bg-white/70 backdrop-blur-lg text-gray-800
+      border-2 border-gray-200 hover:border-secondary-300
+      hover:text-secondary-700 font-bold text-lg px-8 py-4
+      rounded-2xl shadow-lg hover:shadow-xl
+      transform transition-all duration-300 hover:-translate-y-1
+    `,
+    
+    smallButton: `
+      inline-flex items-center justify-center min-h-[36px]
+      bg-gradient-to-r from-primary-500 to-secondary-500
+      hover:from-primary-600 hover:to-secondary-600
+      text-white font-medium px-6 py-3 rounded-xl
+      transition-all duration-200 hover:scale-105
+    `
+  }
 } as const
+
+/**
+ * Button utility function to combine classes
+ */
+export const getButtonStyles = (variant: keyof typeof ButtonStyles.variants, size: keyof typeof ButtonStyles.sizes = 'medium') => {
+  return `${ButtonStyles.base} ${ButtonStyles.sizes[size]} ${ButtonStyles.variants[variant]}`
+}
 
 /**
  * Card Styles
@@ -213,31 +260,91 @@ export const CardStyles = {
 } as const
 
 /**
- * Typography Scale
- * Portuguese-inspired typography hierarchy
+ * Typography Scale with Information Hierarchy
+ * Portuguese-inspired typography with clear visual hierarchy
  */
 export const Typography = {
-  displayLarge: 'text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight',
-  display: 'text-3xl sm:text-4xl md:text-5xl font-bold leading-tight',
-  heading1: 'text-2xl sm:text-3xl md:text-4xl font-bold',
-  heading2: 'text-xl sm:text-2xl md:text-3xl font-bold',
-  heading3: 'text-lg sm:text-xl md:text-2xl font-bold',
-  body: 'text-base sm:text-lg leading-relaxed',
-  bodyLarge: 'text-lg sm:text-xl leading-relaxed',
-  caption: 'text-sm text-gray-600',
-  small: 'text-xs text-gray-500',
+  // Display typography for hero sections
+  displayLarge: 'text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight text-gray-900',
+  display: 'text-3xl sm:text-4xl md:text-5xl font-bold leading-tight text-gray-900',
+  
+  // Heading hierarchy with consistent line-height
+  heading1: 'text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-gray-900',
+  heading2: 'text-xl sm:text-2xl md:text-3xl font-bold leading-tight text-gray-900', 
+  heading3: 'text-lg sm:text-xl md:text-2xl font-bold leading-tight text-gray-900',
+  heading4: 'text-base sm:text-lg font-bold leading-tight text-gray-900',
+  heading5: 'text-sm sm:text-base font-bold leading-tight text-gray-900',
+  
+  // Body text with optimal readability
+  body: 'text-base leading-relaxed text-gray-700',
+  bodyLarge: 'text-lg leading-relaxed text-gray-700',
+  bodySmall: 'text-sm leading-relaxed text-gray-600',
+  
+  // Supporting text
+  caption: 'text-sm leading-normal text-gray-600',
+  small: 'text-xs leading-normal text-gray-500',
+  
+  // Interactive elements
+  label: 'text-sm font-medium leading-normal text-gray-900',
+  button: 'font-semibold leading-normal',
+  link: 'font-medium text-primary-600 hover:text-primary-700',
+  
+  // Price and important data
+  price: 'font-bold text-primary-600',
+  priceSmall: 'text-sm font-bold text-primary-600',
+  priceLarge: 'text-lg font-bold text-primary-600',
+  
+  // Status and badges
+  badge: 'text-xs font-medium uppercase tracking-wide',
+  status: 'text-sm font-medium',
+  
+  // Utility classes
+  truncate: 'truncate',
+  lineClamp2: 'line-clamp-2',
+  lineClamp3: 'line-clamp-3'
 } as const
 
 /**
- * Spacing Scale
- * Consistent spacing throughout the application
+ * Comprehensive Spacing Scale
+ * Consistent spacing with touch-friendly sizing
  */
 export const Spacing = {
-  section: 'py-20',
+  // Section spacing
+  section: 'py-16 sm:py-20 lg:py-24',
+  sectionSmall: 'py-8 sm:py-12',
+  sectionLarge: 'py-20 sm:py-24 lg:py-32',
+  
+  // Container layouts
   container: 'container mx-auto px-4 sm:px-6 lg:px-8',
-  cardPadding: 'p-6 sm:p-8',
-  buttonPadding: 'px-8 py-4',
-  smallPadding: 'px-6 py-3',
+  containerSmall: 'max-w-4xl mx-auto px-4 sm:px-6',
+  containerLarge: 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8',
+  
+  // Card spacing
+  card: 'p-4 sm:p-6',
+  cardSmall: 'p-3 sm:p-4',
+  cardLarge: 'p-6 sm:p-8',
+  
+  // Component spacing
+  component: 'mb-6 sm:mb-8',
+  componentSmall: 'mb-3 sm:mb-4',
+  componentLarge: 'mb-8 sm:mb-12',
+  
+  // Element spacing (4px scale)
+  xs: 'gap-1', // 4px
+  sm: 'gap-2', // 8px  
+  md: 'gap-3', // 12px
+  lg: 'gap-4', // 16px
+  xl: 'gap-6', // 24px
+  '2xl': 'gap-8', // 32px
+  
+  // Touch-friendly minimums
+  touchTarget: 'min-h-[44px] min-w-[44px]', // 44px minimum
+  touchPadding: 'p-2', // 8px padding for 44px total
+  
+  // Grid spacing
+  gridSmall: 'gap-3 sm:gap-4',
+  gridMedium: 'gap-4 sm:gap-6',
+  gridLarge: 'gap-6 sm:gap-8'
 } as const
 
 /**
@@ -274,16 +381,79 @@ export const cn = (...classes: (string | undefined | false)[]) => {
 }
 
 /**
- * Icon background colors for different categories
+ * Professional Icon System
+ * Consistent icon styling with semantic colors
  */
-export const IconBackgrounds = {
-  cultural: 'bg-gradient-to-br from-action-500 to-action-600',
-  social: 'bg-gradient-to-br from-secondary-500 to-secondary-600', 
-  professional: 'bg-gradient-to-br from-primary-500 to-primary-600',
-  food: 'bg-gradient-to-br from-accent-500 to-coral-500',
-  music: 'bg-gradient-to-br from-premium-500 to-premium-600',
-  sports: 'bg-gradient-to-br from-action-500 to-secondary-500',
+export const IconSystem = {
+  // Icon sizes with consistent proportions
+  sizes: {
+    xs: 'w-3 h-3', // 12px
+    sm: 'w-4 h-4', // 16px
+    md: 'w-5 h-5', // 20px - default
+    lg: 'w-6 h-6', // 24px
+    xl: 'w-8 h-8', // 32px
+    '2xl': 'w-10 h-10' // 40px
+  },
+  
+  // Icon background containers
+  containers: {
+    small: 'w-8 h-8 rounded-lg flex items-center justify-center',
+    medium: 'w-10 h-10 rounded-xl flex items-center justify-center',
+    large: 'w-12 h-12 rounded-xl flex items-center justify-center',
+    xlarge: 'w-16 h-16 rounded-2xl flex items-center justify-center'
+  },
+  
+  // Category-specific styling
+  categories: {
+    cultural: {
+      bg: 'bg-gradient-to-br from-action-500 to-action-600',
+      text: 'text-action-600',
+      bgLight: 'bg-action-50',
+      icon: 'text-white'
+    },
+    social: {
+      bg: 'bg-gradient-to-br from-secondary-500 to-secondary-600',
+      text: 'text-secondary-600', 
+      bgLight: 'bg-secondary-50',
+      icon: 'text-white'
+    },
+    professional: {
+      bg: 'bg-gradient-to-br from-primary-500 to-primary-600',
+      text: 'text-primary-600',
+      bgLight: 'bg-primary-50',
+      icon: 'text-white'
+    },
+    food: {
+      bg: 'bg-gradient-to-br from-accent-500 to-coral-500',
+      text: 'text-accent-600',
+      bgLight: 'bg-accent-50',
+      icon: 'text-white'
+    },
+    music: {
+      bg: 'bg-gradient-to-br from-premium-500 to-premium-600',
+      text: 'text-premium-600',
+      bgLight: 'bg-premium-50',
+      icon: 'text-white'
+    },
+    sports: {
+      bg: 'bg-gradient-to-br from-action-500 to-secondary-500',
+      text: 'text-secondary-600',
+      bgLight: 'bg-secondary-50',
+      icon: 'text-white'
+    }
+  },
+  
+  // Common icon states
+  states: {
+    default: 'text-gray-600',
+    hover: 'hover:text-primary-600',
+    active: 'text-primary-600',
+    disabled: 'text-gray-400'
+  }
 } as const
+
+// Legacy icon backgrounds for migration
+export const IconBackgrounds = IconSystem.categories
 
 // Export color usage guidelines
 export const ColorGuidelines = {

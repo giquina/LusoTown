@@ -13,6 +13,7 @@ import { useCart } from '@/context/CartContext'
 import { useLanguage } from '@/context/LanguageContext'
 import { useAuthRequired } from '@/hooks/useAuthRequired'
 import { toast } from 'react-hot-toast'
+import { getButtonStyles, cn, Typography, Spacing, IconSystem } from '@/lib/design'
 
 interface SaveFavoriteCartButtonProps {
   // Item identification
@@ -192,40 +193,30 @@ export default function SaveFavoriteCartButton({
     requireAuthForCart(addToCartAction, itemId, title, cartItem)
   }
 
+  // Use design system sizing
   const getSizeClasses = () => {
     if (iconOnly) {
-      switch (size) {
-        case 'small':
-          return 'w-8 h-8 text-sm'
-        case 'large':
-          return 'w-12 h-12 text-lg'
-        default:
-          return 'w-10 h-10 text-base'
-      }
-    } else {
-      // For buttons with text, use flexible sizing
-      switch (size) {
-        case 'small':
-          return 'min-h-8 px-3 py-2 text-sm'
-        case 'large':
-          return 'min-h-12 px-6 py-3 text-lg'
-        default:
-          return 'min-h-10 px-4 py-2.5 text-base'
-      }
+      return cn(Spacing.touchTarget, 'rounded-lg')
     }
+    // For buttons with text, use design system sizes
+    return '' // Size handled by getButtonStyles
   }
 
+  // Use unified button system
   const getVariantClasses = (active: boolean) => {
-    const baseClasses = 'transition-all duration-200 rounded-lg flex items-center justify-center relative overflow-hidden'
-    
-    switch (variant) {
-      case 'ghost':
-        return `${baseClasses} hover:bg-gray-100 ${active ? 'text-primary-600' : 'text-gray-600'}`
-      case 'outline':
-        return `${baseClasses} border ${active ? 'border-primary-500 bg-primary-50 text-primary-600' : 'border-gray-300 hover:border-gray-400 text-gray-600'}`
-      default:
-        return `${baseClasses} ${active ? 'bg-primary-100 text-primary-600' : 'bg-white hover:bg-gray-50 text-gray-600 shadow-sm border border-gray-200'}`
+    if (iconOnly) {
+      return cn(
+        'transition-all duration-200 rounded-lg flex items-center justify-center relative',
+        active ? 'bg-primary-100 text-primary-600' : 'bg-white hover:bg-gray-50 text-gray-600 shadow-sm border border-gray-200'
+      )
     }
+    
+    // Map our variants to design system variants
+    const designVariant = variant === 'outline' ? 'outline' : 
+                         variant === 'ghost' ? 'ghost' : 
+                         active ? 'primary' : 'secondary'
+    
+    return getButtonStyles(designVariant as any, size as any)
   }
 
   const getLayoutClasses = () => {
@@ -274,16 +265,16 @@ export default function SaveFavoriteCartButton({
                   transition={{ duration: 0.2 }}
                 >
                   {itemSaved ? (
-                    <HeartSolidIcon className="w-5 h-5 text-red-500" />
+                    <HeartSolidIcon className={cn(IconSystem.sizes.md, 'text-red-500')} />
                   ) : (
-                    <HeartIcon className="w-5 h-5 group-hover:text-red-500" />
+                    <HeartIcon className={cn(IconSystem.sizes.md, 'group-hover:text-red-500')} />
                   )}
                 </motion.div>
               )}
             </AnimatePresence>
             
             {!iconOnly && (
-              <span className="ml-2 font-medium text-sm">
+              <span className={cn('ml-2', Typography.button)}>
                 {itemSaved ? t('favorites.saved') : t('favorites.save')}
               </span>
             )}
@@ -306,7 +297,7 @@ export default function SaveFavoriteCartButton({
             onMouseEnter={() => setShowTooltip(itemInCart ? t('cart.in-cart', 'In Cart') : t('cart.add-to-cart'))}
             onMouseLeave={() => setShowTooltip(null)}
             disabled={itemInCart || (spotsLeft !== undefined && spotsLeft <= 0)}
-            className={`${getSizeClasses()} ${getVariantClasses(itemInCart)} group disabled:opacity-50 disabled:cursor-not-allowed w-full`}
+            className={`${getSizeClasses()} ${getVariantClasses(itemInCart)} group disabled:opacity-50 disabled:cursor-not-allowed w-full ${className}`}
             title={itemInCart ? t('cart.in-cart', 'In Cart') : t('cart.add-to-cart')}
           >
             <AnimatePresence mode="wait">
@@ -328,16 +319,16 @@ export default function SaveFavoriteCartButton({
                   transition={{ duration: 0.2 }}
                 >
                   {itemInCart ? (
-                    <CartSolidIcon className="w-5 h-5 text-primary-600" />
+                    <CartSolidIcon className={cn(IconSystem.sizes.md, 'text-primary-600')} />
                   ) : (
-                    <ShoppingCartIcon className="w-5 h-5 group-hover:text-primary-600" />
+                    <ShoppingCartIcon className={cn(IconSystem.sizes.md, 'group-hover:text-primary-600')} />
                   )}
                 </motion.div>
               )}
             </AnimatePresence>
             
             {!iconOnly && (
-              <span className="ml-2 font-medium text-sm">
+              <span className={cn('ml-2', Typography.button)}>
                 {itemInCart ? t('cart.added') : 
                  spotsLeft !== undefined && spotsLeft <= 0 ? t('event.full') :
                  t('cart.add-to-cart')}
@@ -355,7 +346,7 @@ export default function SaveFavoriteCartButton({
           {/* Warnings */}
           {spotsLeft !== undefined && spotsLeft <= 3 && spotsLeft > 0 && (
             <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-orange-600 whitespace-nowrap flex items-center gap-1">
-              <ExclamationTriangleIcon className="w-3 h-3" />
+              <ExclamationTriangleIcon className={IconSystem.sizes.xs} />
               {spotsLeft} {t('event.spots-left')}
             </div>
           )}

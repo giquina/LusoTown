@@ -32,7 +32,7 @@ export default function EcosystemOverview() {
   const membershipBenefits = calculateMembershipBenefits()
 
   const getJourneyStage = () => {
-    const stage = userJourney?.currentStage || 'discovery'
+    const stage = userJourney?.currentStep || 'discovery'
     const stageLabels = {
       discovery: { 
         pt: 'Descobrindo a Comunidade', 

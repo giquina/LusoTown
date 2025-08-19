@@ -1,0 +1,610 @@
+// Service Worker for LusoTown Portuguese Community Platform
+// Version: 2.0.0 - Portuguese Cultural PWA
+
+const CACHE_NAME = 'lusotown-v2-portuguese-community';
+const OFFLINE_URL = '/offline';
+const PORTUGUESE_CULTURAL_CACHE = 'portuguese-cultural-v1';
+const API_CACHE = 'api-cache-v1';
+
+// Portuguese cultural assets that should be cached
+const PORTUGUESE_ASSETS = [
+  '/',
+  '/offline',
+  '/events',
+  '/my-network',
+  '/business-directory',
+  '/live',
+  '/transport',
+  '/matches',
+  '/students',
+  '/premium-membership',
+  // Portuguese cultural images
+  '/images/portuguese-flag.svg',
+  '/images/fado-guitar.svg',
+  '/images/azulejos-pattern.svg',
+  '/images/pasteis-de-nata.jpg',
+  '/images/christ-the-king.jpg',
+  '/images/ponte-25-abril.jpg',
+  // Cultural event assets
+  '/events/fado-night.jpg',
+  '/events/festa-junina.jpg',
+  '/events/santo-antonio.jpg',
+  '/events/festa-do-avante.jpg',
+  // Business directory assets
+  '/icons/restaurant.svg',
+  '/icons/business.svg',
+  '/icons/services.svg',
+  '/icons/culture.svg',
+  // Fonts and styles
+  '/fonts/poppins-regular.woff2',
+  '/fonts/poppins-semibold.woff2',
+  '/fonts/inter-regular.woff2'
+];
+
+// Portuguese cultural event categories for priority caching
+const PORTUGUESE_EVENT_CATEGORIES = [
+  'fado-nights',
+  'festa-junina',
+  'santo-antonio',
+  'festa-do-avante',
+  'portuguese-wine-tasting',
+  'azulejos-workshop',
+  'portuguese-cooking-class',
+  'lusophone-networking',
+  'brazilian-capoeira',
+  'cape-verdean-music',
+  'angolan-culture',
+  'mozambican-heritage'
+];
+
+// Install event - Cache Portuguese cultural assets
+self.addEventListener('install', event => {
+  console.log('[SW] Installing LusoTown Portuguese Community Service Worker');
+  
+  event.waitUntil(
+    (async () => {
+      try {
+        // Cache core Portuguese cultural assets
+        const cache = await caches.open(CACHE_NAME);
+        console.log('[SW] Caching Portuguese cultural assets...');
+        await cache.addAll(PORTUGUESE_ASSETS);
+        
+        // Cache Portuguese cultural event categories
+        const culturalCache = await caches.open(PORTUGUESE_CULTURAL_CACHE);
+        const culturalRequests = PORTUGUESE_EVENT_CATEGORIES.map(category => 
+          new Request(`/api/events?category=${category}&lang=pt`)
+        );
+        
+        // Pre-cache popular Portuguese cultural content
+        await Promise.allSettled(
+          culturalRequests.map(async request => {
+            try {
+              const response = await fetch(request);
+              if (response.ok) {
+                await culturalCache.put(request, response);
+              }
+            } catch (error) {
+              console.log(`[SW] Failed to cache Portuguese cultural content: ${request.url}`, error);
+            }
+          })
+        );
+        
+        console.log('[SW] Portuguese cultural assets cached successfully');
+      } catch (error) {
+        console.error('[SW] Failed to cache Portuguese cultural assets:', error);
+      }
+    })()
+  );
+  
+  self.skipWaiting();
+});
+
+// Activate event - Clean up old caches
+self.addEventListener('activate', event => {
+  console.log('[SW] Activating LusoTown Portuguese Community Service Worker');
+  
+  event.waitUntil(
+    (async () => {
+      const cacheNames = await caches.keys();
+      const oldCaches = cacheNames.filter(name => 
+        name !== CACHE_NAME && 
+        name !== PORTUGUESE_CULTURAL_CACHE && 
+        name !== API_CACHE
+      );
+      
+      await Promise.all(
+        oldCaches.map(name => {
+          console.log(`[SW] Deleting old cache: ${name}`);
+          return caches.delete(name);
+        })
+      );
+    })()
+  );
+  
+  self.clients.claim();
+});
+
+// Fetch event - Portuguese cultural caching strategy
+self.addEventListener('fetch', event => {
+  const { request } = event;
+  const url = new URL(request.url);
+  
+  // Skip non-GET requests
+  if (request.method !== 'GET') return;
+  
+  // Skip external domains (except Portuguese cultural CDNs)
+  if (url.origin !== location.origin && !isPortugueseCulturalCDN(url.origin)) {
+    return;
+  }
+  
+  event.respondWith(handleFetchRequest(request));
+});
+
+// Handle different types of requests with Portuguese cultural priority
+async function handleFetchRequest(request) {
+  const url = new URL(request.url);
+  
+  try {
+    // API requests - Network first with cache fallback
+    if (url.pathname.startsWith('/api/')) {
+      return await handleApiRequest(request);
+    }
+    
+    // Portuguese cultural content - Cache first
+    if (isPortugueseCulturalContent(url.pathname)) {
+      return await handlePortugueseCulturalRequest(request);
+    }
+    
+    // Navigation requests - Network first with offline fallback
+    if (request.mode === 'navigate') {
+      return await handleNavigationRequest(request);
+    }
+    
+    // Static assets - Cache first
+    if (isStaticAsset(url.pathname)) {
+      return await handleStaticAssetRequest(request);
+    }
+    
+    // Default: Network first
+    return await handleNetworkFirstRequest(request);
+    
+  } catch (error) {
+    console.error('[SW] Fetch error:', error);
+    return await handleOfflineRequest(request);
+  }
+}
+
+// Portuguese cultural content handler
+async function handlePortugueseCulturalRequest(request) {
+  const culturalCache = await caches.open(PORTUGUESE_CULTURAL_CACHE);
+  const cachedResponse = await culturalCache.match(request);
+  
+  if (cachedResponse) {
+    console.log('[SW] Serving Portuguese cultural content from cache:', request.url);
+    
+    // Update cache in background
+    fetch(request).then(response => {
+      if (response.ok) {
+        culturalCache.put(request, response.clone());
+      }
+    }).catch(() => {
+      // Ignore background update failures
+    });
+    
+    return cachedResponse;
+  }
+  
+  try {
+    const response = await fetch(request);
+    if (response.ok) {
+      await culturalCache.put(request, response.clone());
+    }
+    return response;
+  } catch (error) {
+    return createPortugueseOfflineResponse();
+  }
+}
+
+// API request handler with Portuguese context
+async function handleApiRequest(request) {
+  const url = new URL(request.url);
+  
+  try {
+    const response = await fetch(request);
+    
+    if (response.ok) {
+      // Cache Portuguese community data
+      if (isPortugueseApiEndpoint(url.pathname)) {
+        const apiCache = await caches.open(API_CACHE);
+        await apiCache.put(request, response.clone());
+      }
+    }
+    
+    return response;
+  } catch (error) {
+    // Try to serve from cache for Portuguese community endpoints
+    if (isPortugueseApiEndpoint(url.pathname)) {
+      const apiCache = await caches.open(API_CACHE);
+      const cachedResponse = await apiCache.match(request);
+      
+      if (cachedResponse) {
+        console.log('[SW] Serving Portuguese API data from cache:', request.url);
+        return cachedResponse;
+      }
+    }
+    
+    throw error;
+  }
+}
+
+// Navigation request handler
+async function handleNavigationRequest(request) {
+  try {
+    const response = await fetch(request);
+    return response;
+  } catch (error) {
+    const cache = await caches.open(CACHE_NAME);
+    const offlineResponse = await cache.match(OFFLINE_URL);
+    
+    if (offlineResponse) {
+      return offlineResponse;
+    }
+    
+    return createPortugueseOfflineResponse();
+  }
+}
+
+// Static asset handler
+async function handleStaticAssetRequest(request) {
+  const cache = await caches.open(CACHE_NAME);
+  const cachedResponse = await cache.match(request);
+  
+  if (cachedResponse) {
+    return cachedResponse;
+  }
+  
+  try {
+    const response = await fetch(request);
+    if (response.ok) {
+      await cache.put(request, response.clone());
+    }
+    return response;
+  } catch (error) {
+    throw error;
+  }
+}
+
+// Network first handler
+async function handleNetworkFirstRequest(request) {
+  try {
+    const response = await fetch(request);
+    
+    if (response.ok) {
+      const cache = await caches.open(CACHE_NAME);
+      await cache.put(request, response.clone());
+    }
+    
+    return response;
+  } catch (error) {
+    const cache = await caches.open(CACHE_NAME);
+    const cachedResponse = await cache.match(request);
+    
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    
+    throw error;
+  }
+}
+
+// Offline request handler
+async function handleOfflineRequest(request) {
+  const cache = await caches.open(CACHE_NAME);
+  const cachedResponse = await cache.match(request);
+  
+  if (cachedResponse) {
+    return cachedResponse;
+  }
+  
+  return createPortugueseOfflineResponse();
+}
+
+// Utility functions
+function isPortugueseCulturalContent(pathname) {
+  const culturalPaths = [
+    '/events/fado',
+    '/events/festa',
+    '/events/santo',
+    '/events/portuguese',
+    '/events/brazilian',
+    '/events/angolan',
+    '/events/cape-verdean',
+    '/events/mozambican',
+    '/business-directory/portuguese',
+    '/business-directory/restaurants',
+    '/cultural-calendar',
+    '/portuguese-heritage'
+  ];
+  
+  return culturalPaths.some(path => pathname.startsWith(path));
+}
+
+function isPortugueseApiEndpoint(pathname) {
+  const apiEndpoints = [
+    '/api/events',
+    '/api/businesses',
+    '/api/community',
+    '/api/matches',
+    '/api/cultural-content',
+    '/api/portuguese-speakers'
+  ];
+  
+  return apiEndpoints.some(endpoint => pathname.startsWith(endpoint));
+}
+
+function isPortugueseCulturalCDN(origin) {
+  const culturalCDNs = [
+    'portuguese-content.lusotown.com',
+    'lusotown-portuguese-content.b-cdn.net',
+    'lusotown-portuguese-streams.b-cdn.net',
+    'res.cloudinary.com'
+  ];
+  
+  return culturalCDNs.some(cdn => origin.includes(cdn));
+}
+
+function isStaticAsset(pathname) {
+  const staticExtensions = ['.js', '.css', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp', '.woff', '.woff2'];
+  return staticExtensions.some(ext => pathname.endsWith(ext));
+}
+
+function createPortugueseOfflineResponse() {
+  const offlineHtml = `
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>LusoTown - Offline | Comunidade Portuguesa</title>
+        <style>
+          body {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #DC2626, #B91C1C);
+            color: white;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+          }
+          .container {
+            max-width: 400px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+          }
+          .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+          }
+          h1 { margin-bottom: 0.5rem; font-size: 1.5rem; }
+          p { opacity: 0.9; line-height: 1.6; margin-bottom: 2rem; }
+          .portuguese { font-style: italic; opacity: 0.8; margin-top: 1rem; }
+          .retry-btn {
+            background: white;
+            color: #DC2626;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+          }
+          .retry-btn:hover {
+            transform: translateY(-2px);
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <div class="icon">🇵🇹</div>
+          <h1>You're Offline</h1>
+          <p>Can't connect to the Portuguese community right now. Check your internet connection and try again.</p>
+          <p class="portuguese">Não consegues conectar à comunidade portuguesa. Verifica a tua ligação à internet.</p>
+          <button class="retry-btn" onclick="window.location.reload()">
+            Try Again | Tentar Novamente
+          </button>
+        </div>
+      </body>
+    </html>
+  `;
+  
+  return new Response(offlineHtml, {
+    status: 200,
+    statusText: 'OK',
+    headers: {
+      'Content-Type': 'text/html; charset=utf-8'
+    }
+  });
+}
+
+// Push notification handler for Portuguese cultural events
+self.addEventListener('push', event => {
+  console.log('[SW] Push notification received');
+  
+  if (!event.data) return;
+  
+  try {
+    const data = event.data.json();
+    const options = createPortugueseNotificationOptions(data);
+    
+    event.waitUntil(
+      self.registration.showNotification(data.title || 'LusoTown', options)
+    );
+  } catch (error) {
+    console.error('[SW] Error handling push notification:', error);
+  }
+});
+
+// Notification click handler
+self.addEventListener('notificationclick', event => {
+  console.log('[SW] Notification clicked');
+  
+  event.notification.close();
+  
+  const urlToOpen = event.notification.data?.url || '/';
+  
+  event.waitUntil(
+    clients.matchAll({ type: 'window', includeUncontrolled: true })
+      .then(clientList => {
+        // Check if LusoTown is already open
+        for (const client of clientList) {
+          if (client.url.includes(self.location.origin) && 'focus' in client) {
+            client.navigate(urlToOpen);
+            return client.focus();
+          }
+        }
+        
+        // Open new window
+        if (clients.openWindow) {
+          return clients.openWindow(urlToOpen);
+        }
+      })
+  );
+});
+
+function createPortugueseNotificationOptions(data) {
+  const defaultOptions = {
+    body: data.body,
+    icon: '/icons/icon-192x192.png',
+    badge: '/icons/badge-72x72.png',
+    tag: data.tag || 'lusotown-general',
+    requireInteraction: data.requireInteraction || false,
+    data: {
+      url: data.url || '/'
+    },
+    actions: []
+  };
+  
+  // Add Portuguese cultural context to notifications
+  if (data.type === 'cultural-event') {
+    defaultOptions.actions = [
+      {
+        action: 'view-event',
+        title: 'Ver Evento',
+        icon: '/icons/event-action.png'
+      },
+      {
+        action: 'share-event',
+        title: 'Partilhar',
+        icon: '/icons/share-action.png'
+      }
+    ];
+  } else if (data.type === 'community-match') {
+    defaultOptions.actions = [
+      {
+        action: 'view-match',
+        title: 'Ver Perfil',
+        icon: '/icons/profile-action.png'
+      },
+      {
+        action: 'send-message',
+        title: 'Enviar Mensagem',
+        icon: '/icons/message-action.png'
+      }
+    ];
+  }
+  
+  return defaultOptions;
+}
+
+// Background sync for Portuguese community content
+self.addEventListener('sync', event => {
+  console.log('[SW] Background sync triggered:', event.tag);
+  
+  if (event.tag === 'portuguese-community-sync') {
+    event.waitUntil(syncPortugueseCommunityContent());
+  } else if (event.tag === 'cultural-events-sync') {
+    event.waitUntil(syncCulturalEvents());
+  } else if (event.tag === 'business-directory-sync') {
+    event.waitUntil(syncBusinessDirectory());
+  }
+});
+
+async function syncPortugueseCommunityContent() {
+  try {
+    console.log('[SW] Syncing Portuguese community content...');
+    
+    const apiCache = await caches.open(API_CACHE);
+    const culturalCache = await caches.open(PORTUGUESE_CULTURAL_CACHE);
+    
+    // Sync Portuguese cultural events
+    const eventsResponse = await fetch('/api/events?lang=pt&featured=true');
+    if (eventsResponse.ok) {
+      await culturalCache.put('/api/events?lang=pt&featured=true', eventsResponse);
+    }
+    
+    // Sync Portuguese businesses
+    const businessResponse = await fetch('/api/businesses?lang=pt&featured=true');
+    if (businessResponse.ok) {
+      await apiCache.put('/api/businesses?lang=pt&featured=true', businessResponse);
+    }
+    
+    console.log('[SW] Portuguese community content synced successfully');
+  } catch (error) {
+    console.error('[SW] Failed to sync Portuguese community content:', error);
+  }
+}
+
+async function syncCulturalEvents() {
+  try {
+    console.log('[SW] Syncing Portuguese cultural events...');
+    
+    const culturalCache = await caches.open(PORTUGUESE_CULTURAL_CACHE);
+    
+    for (const category of PORTUGUESE_EVENT_CATEGORIES) {
+      try {
+        const response = await fetch(`/api/events?category=${category}&lang=pt&limit=10`);
+        if (response.ok) {
+          await culturalCache.put(`/api/events?category=${category}&lang=pt&limit=10`, response);
+        }
+      } catch (error) {
+        console.log(`[SW] Failed to sync events for category ${category}:`, error);
+      }
+    }
+    
+    console.log('[SW] Portuguese cultural events synced successfully');
+  } catch (error) {
+    console.error('[SW] Failed to sync cultural events:', error);
+  }
+}
+
+async function syncBusinessDirectory() {
+  try {
+    console.log('[SW] Syncing Portuguese business directory...');
+    
+    const apiCache = await caches.open(API_CACHE);
+    
+    const businessTypes = ['restaurants', 'services', 'retail', 'professional', 'cultural'];
+    
+    for (const type of businessTypes) {
+      try {
+        const response = await fetch(`/api/businesses?type=${type}&portuguese=true&limit=20`);
+        if (response.ok) {
+          await apiCache.put(`/api/businesses?type=${type}&portuguese=true&limit=20`, response);
+        }
+      } catch (error) {
+        console.log(`[SW] Failed to sync businesses for type ${type}:`, error);
+      }
+    }
+    
+    console.log('[SW] Portuguese business directory synced successfully');
+  } catch (error) {
+    console.error('[SW] Failed to sync business directory:', error);
+  }
+}
+
+console.log('[SW] LusoTown Portuguese Community Service Worker loaded successfully');

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { AdjustmentsHorizontalIcon } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
 import { EVENT_TOUR_CATEGORIES } from '@/lib/events-tours'
+import { Typography, Spacing, IconSystem, getButtonStyles, cn } from '@/lib/design'
 
 interface CategoryFilterProps {
   selectedCategory?: string
@@ -59,10 +60,10 @@ export default function CategoryFilter({
 
   return (
     <div className={`space-y-6 ${className}`}>
-      {/* Header */}
-      <div className="flex items-center gap-3">
-        <AdjustmentsHorizontalIcon className="w-5 h-5 text-primary-500" />
-        <h3 className="text-lg font-bold text-gray-900">
+      {/* Header - improved hierarchy */}
+      <div className={cn('flex items-center', Spacing.sm)}>
+        <AdjustmentsHorizontalIcon className={cn(IconSystem.sizes.md, 'text-primary-500')} />
+        <h3 className={Typography.heading3}>
           {isPortuguese ? 'Filtrar por Categoria' : 'Filter by Category'}
         </h3>
       </div>
@@ -79,25 +80,30 @@ export default function CategoryFilter({
         whileTap={{ scale: 0.98 }}
       >
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="text-2xl">🎯</div>
+          <div className={cn('flex items-center', Spacing.sm)}>
+            <div className={cn(IconSystem.containers.medium, 'bg-gradient-to-br from-primary-500 to-secondary-500')}>
+              <span className="text-xl text-white">🎯</span>
+            </div>
             <div>
-              <div className={`font-semibold ${
+              <div className={cn(
+                Typography.label,
                 !selectedCategory ? 'text-primary-700' : 'text-gray-900'
-              }`}>
+              )}>
                 {isPortuguese ? 'Todas as Categorias' : 'All Categories'}
               </div>
-              <div className="text-sm text-gray-600">
+              <div className={Typography.caption}>
                 {isPortuguese ? 'Ver todas as experiências disponíveis' : 'See all available experiences'}
               </div>
             </div>
           </div>
           {Object.values(eventCounts).reduce((a, b) => a + b, 0) > 0 && (
-            <span className={`px-2 py-1 rounded-full text-xs font-bold ${
+            <span className={cn(
+              Typography.badge,
+              'px-2 py-1 rounded-full',
               !selectedCategory
                 ? 'bg-primary-500 text-white'
                 : 'bg-gray-200 text-gray-700'
-            }`}>
+            )}>
               {Object.values(eventCounts).reduce((a, b) => a + b, 0)}
             </span>
           )}
@@ -119,25 +125,31 @@ export default function CategoryFilter({
             whileTap={{ scale: 0.98 }}
           >
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="text-2xl">{info.icon}</div>
+              <div className={cn('flex items-center', Spacing.sm)}>
+                <div className={cn(IconSystem.containers.medium, IconSystem.categories.professional.bg)}>
+                  <span className="text-xl text-white">{info.icon}</span>
+                </div>
                 <div>
-                  <div className={`font-semibold ${
+                  <div className={cn(
+                    Typography.label,
+                    'break-words leading-tight',
                     selectedCategory === category ? 'text-primary-700' : 'text-gray-900'
-                  } break-words leading-tight`}>
+                  )}>
                     {getCategoryDisplayName(category)}
                   </div>
-                  <div className="text-sm text-gray-600 break-words leading-relaxed">
+                  <div className={cn(Typography.caption, 'break-words leading-relaxed')}>
                     {getCategoryDescription(category)}
                   </div>
                 </div>
               </div>
               {eventCounts[category] && (
-                <span className={`px-2 py-1 rounded-full text-xs font-bold ${
+                <span className={cn(
+                  Typography.badge,
+                  'px-2 py-1 rounded-full',
                   selectedCategory === category
                     ? 'bg-primary-500 text-white'
                     : 'bg-gray-200 text-gray-700'
-                }`}>
+                )}>
                   {eventCounts[category]}
                 </span>
               )}

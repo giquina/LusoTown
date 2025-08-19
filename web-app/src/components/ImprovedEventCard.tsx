@@ -23,6 +23,14 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useNetworking } from "@/context/NetworkingContext";
 import { formatEventDate } from "@/lib/dateUtils";
 import { getCurrentUser } from "@/lib/auth";
+import {
+  ButtonStyles,
+  Typography,
+  Spacing,
+  IconSystem,
+  getButtonStyles,
+  cn,
+} from "@/lib/design";
 
 interface ImprovedEventCardProps {
   event: Event;
@@ -191,10 +199,10 @@ const ImprovedEventCard = ({
                     size="small"
                     iconOnly={true}
                     variant="default"
-                    className="min-w-[44px] min-h-[44px] bg-white/90 backdrop-blur-sm rounded-full shadow-lg"
+                    className={cn(Spacing.touchTarget, "bg-white/90 backdrop-blur-sm rounded-full shadow-lg")}
                   />
-                  <button className="min-w-[44px] min-h-[44px] bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors shadow-lg">
-                    <ShareIcon className="w-4 h-4 text-gray-600" />
+                  <button className={cn(Spacing.touchTarget, "bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors shadow-lg")}>
+                    <ShareIcon className={cn(IconSystem.sizes.sm, "text-gray-600")} />
                   </button>
                 </div>
               </div>
@@ -227,9 +235,12 @@ const ImprovedEventCard = ({
                       e.preventDefault();
                       setShowPhotoGallery(true);
                     }}
-                    className="bg-black/70 text-white text-xs px-3 py-2 rounded-full hover:bg-black/80 transition-colors flex items-center gap-1.5 font-medium shadow-lg min-h-[36px]"
+                    className={cn(
+                      "bg-black/70 text-white text-xs px-3 py-2 rounded-full hover:bg-black/80 transition-colors flex items-center gap-1.5 font-medium shadow-lg",
+                      Spacing.touchTarget
+                    )}
                   >
-                    <PhotoIcon className="w-3.5 h-3.5" />
+                    <PhotoIcon className={IconSystem.sizes.xs} />
                     {event.photos.length} Photos
                   </button>
                 )}
@@ -239,62 +250,60 @@ const ImprovedEventCard = ({
 
           {/* Content Section - flexible */}
           <div className="flex-1 p-4 sm:p-6 flex flex-col">
-            {/* Title - full visibility, no truncation */}
-            <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-primary-600 transition-colors">
+            {/* Title - improved hierarchy */}
+            <h3 className={cn(Typography.heading4, "mb-3 group-hover:text-primary-600 transition-colors")}>
               {event.title}
             </h3>
 
-            {/* Organizer name - full visibility */}
-            <div className="mb-3">
-              <p className="text-sm text-gray-500 font-medium">
+            {/* Organizer name - improved hierarchy */}
+            <div className={Spacing.componentSmall}>
+              <p className={cn(Typography.caption, "font-medium")}>
                 {isPortuguese ? "Organizado por" : "Hosted by"}{" "}
-                <span className="text-gray-700 font-semibold">
+                <span className={cn(Typography.label, "text-gray-900")}>
                   {event.hostName}
                 </span>
               </p>
             </div>
 
-            {/* Description - better spacing, no harsh truncation */}
-            <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-              {event.description.length > 150
-                ? `${event.description.substring(0, 150)}...`
-                : event.description}
+            {/* Description - better readability */}
+            <p className={cn(Typography.bodySmall, "mb-4", Typography.lineClamp2)}>
+              {event.description}
             </p>
 
-            {/* Date, Time & Location - compact layout */}
-            <div className="space-y-2 mb-4">
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <CalendarIcon className="w-4 h-4 text-primary-500 flex-shrink-0" />
-                <span className="font-medium text-gray-900">
+            {/* Event details with improved hierarchy */}
+            <div className={cn("space-y-2", Spacing.component)}>
+              <div className={cn("flex items-center", Spacing.sm)}>
+                <CalendarIcon className={cn(IconSystem.sizes.sm, "text-primary-500 flex-shrink-0")} />
+                <span className={cn(Typography.label, "text-gray-900")}>
                   {formatDate(event.date)}
                 </span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-600">
-                <ClockIcon className="w-4 h-4 text-primary-500 flex-shrink-0" />
-                <span className="font-medium text-gray-600">
+              <div className={cn("flex items-center", Spacing.sm)}>
+                <ClockIcon className={cn(IconSystem.sizes.sm, "text-primary-500 flex-shrink-0")} />
+                <span className={Typography.caption}>
                   {formatTime(event.time)}
                   {event.endTime && ` - ${formatTime(event.endTime)}`}
                 </span>
               </div>
-              <div className="flex items-start gap-2 text-sm text-gray-600">
-                <MapPinIcon className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
-                <span className="font-medium break-words">
+              <div className={cn("flex items-start", Spacing.sm)}>
+                <MapPinIcon className={cn(IconSystem.sizes.sm, "text-primary-500 mt-0.5 flex-shrink-0")} />
+                <span className={cn(Typography.caption, "break-words")}>
                   {event.location}
                 </span>
               </div>
             </div>
 
-            {/* Price and availability */}
-            <div className="flex items-center justify-between mb-4">
-              <div className="text-lg font-bold text-primary-600">
+            {/* Price and availability - improved hierarchy */}
+            <div className={cn("flex items-center justify-between", Spacing.component)}>
+              <div className={Typography.priceLarge}>
                 {event.price === 0 ? "FREE" : `£${event.price}`}
                 {event.membershipRequired !== "free" && (
-                  <span className="text-xs text-gray-500 capitalize font-medium ml-2">
+                  <span className={cn(Typography.small, "ml-2 capitalize")}>
                     ({isPortuguese ? "Membro" : "Member"})
                   </span>
                 )}
               </div>
-              <div className="text-sm text-primary-600 font-medium">
+              <div className={cn(Typography.status, "text-primary-600")}>
                 {spotsLeft} {isPortuguese ? "vagas" : "spots"}
               </div>
             </div>
@@ -311,12 +320,15 @@ const ImprovedEventCard = ({
               </div>
             )}
 
-            {/* CTA buttons - equal sizing and consistent styling */}
+            {/* CTA buttons - unified design system */}
             <div className="mt-auto">
-              <div className="flex gap-2">
+              <div className={cn("flex", Spacing.sm)}>
                 <a
                   href={`/events/${event.id}`}
-                  className="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium py-3 px-3 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-sm min-h-[44px] flex items-center justify-center"
+                  className={cn(
+                    getButtonStyles('primary', 'medium'),
+                    "flex-1 text-center"
+                  )}
                 >
                   {isFull
                     ? isPortuguese
@@ -343,9 +355,9 @@ const ImprovedEventCard = ({
                   showSave={false}
                   showCart={true}
                   iconOnly={false}
-                  size="small"
+                  size="medium"
                   variant="outline"
-                  className="flex-1 text-sm font-medium py-3 px-3 min-h-[44px] border-2 border-gray-300 text-gray-700 hover:border-primary-500 hover:text-primary-600 rounded-lg transition-all duration-200 flex items-center justify-center"
+                  className="flex-1"
                 />
               </div>
             </div>

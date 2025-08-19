@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
-  TouchableOpacity,
   StyleSheet,
   ScrollView,
   Animated,
   ActivityIndicator,
   Alert,
 } from 'react-native';
+import SharedButton from '../../components/SharedButton';
 import { Colors, Spacing, Typography, CommonStyles } from '../../constants/Styles';
+// TODO: Replace TouchableOpacity with shared <Button /> from '@lusotown/ui' once verified on device
 import { 
   signUpWithEmail, 
   createProfile, 
@@ -277,19 +278,13 @@ const WelcomeStep = ({ onComplete, userData }) => {
         </View>
 
         {/* Complete Button */}
-        <TouchableOpacity 
-          style={[styles.completeButton, isCompletingSignup && styles.completeButtonDisabled]} 
-          onPress={handleComplete}
-          disabled={isCompletingSignup}
-        >
+        <View style={{ marginBottom: Spacing.xl }}>
           {isCompletingSignup ? (
             <ActivityIndicator color={Colors.surface} size="small" />
           ) : (
-            <Text style={styles.completeButtonText}>
-              Start My LusoTown Journey! 🇵🇹
-            </Text>
+            <SharedButton title="Start My LusoTown Journey! 🇵🇹" onPress={handleComplete} />
           )}
-        </TouchableOpacity>
+        </View>
 
         {/* Footer Message */}
         <View style={styles.footerContainer}>
@@ -439,21 +434,7 @@ const styles = StyleSheet.create({
     color: Colors.text,
     flex: 1,
   },
-  completeButton: {
-    ...CommonStyles.button,
-    backgroundColor: Colors.primary,
-    marginBottom: Spacing.xl,
-    paddingVertical: Spacing.lg,
-  },
-  completeButtonText: {
-    ...CommonStyles.buttonText,
-    color: Colors.surface,
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  completeButtonDisabled: {
-    backgroundColor: Colors.border,
-  },
+  // complete button styles moved to SharedButton
   footerContainer: {
     alignItems: 'center',
   },

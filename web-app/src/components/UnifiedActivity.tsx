@@ -5,13 +5,15 @@ import { useLanguage } from '@/context/LanguageContext'
 import { Activity, Calendar, Users, MapPin } from 'lucide-react'
 
 interface ActivityItem {
-  id: string
-  type: 'event' | 'networking' | 'service' | 'community'
+  id?: string
+  type: 'event' | 'networking' | 'service' | 'community' | string
   title: string
-  description: string
-  timestamp: string
-  platform: string
-  icon: React.ReactNode
+  description?: string
+  timestamp?: string
+  date?: string
+  platform?: string
+  icon?: React.ReactNode
+  metadata?: Record<string, any>
 }
 
 interface UnifiedActivityProps {
@@ -33,7 +35,18 @@ export default function UnifiedActivity({ activities = [] }: UnifiedActivityProp
     }
   ]
 
-  const displayActivities = activities.length > 0 ? activities : defaultActivities
+  // Normalize activities to match expected format
+  const normalizedActivities = activities.map(activity => ({
+    id: activity.id || `activity-${Math.random()}`,
+    type: activity.type,
+    title: activity.title,
+    description: activity.description || '',
+    timestamp: activity.timestamp || activity.date || 'Recently',
+    platform: activity.platform || activity.metadata?.platform || 'Platform',
+    icon: activity.icon || <Activity className="w-4 h-4" />
+  }))
+
+  const displayActivities = normalizedActivities.length > 0 ? normalizedActivities : defaultActivities
 
   return (
     <div className="bg-white rounded-xl shadow-sm p-6">
@@ -43,8 +56,53 @@ export default function UnifiedActivity({ activities = [] }: UnifiedActivityProp
           {language === 'pt' ? 'Atividade Recente' : 'Recent Activity'}
         </h2>
       </div>
-      <div className="text-center py-8">
-        <p className="text-gray-600">Recent activity will be displayed here</p>
+      
+      <div className="space-y-4">
+        {displayActivities.map((activity, index) => (
+          <div key={activity.id} className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+            <div className="flex-shrink-0 w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center text-white">
+              {activity.icon}
+            </div>
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center justify-between">
+                <h3 className="text-sm font-medium text-gray-900 truncate">
+                  {activity.title}
+                </h3>
+                <span className="text-xs text-gray-500 whitespace-nowrap ml-2">
+                  {activity.timestamp}
+                </span>
+              </div>
+              {activity.description && (
+                <p className="text-sm text-gray-600 mt-1">
+                  {activity.description}
+                </p>
+              )}
+              <div className="flex items-center space-x-2 mt-2">
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
+                  {activity.platform}
+                </span>
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800 capitalize">
+                  {activity.type}
+                </span>
+              </div>
+            </div>
+          </div>
+        ))}
+        
+        {displayActivities.length === 0 && (
+          <div className="text-center py-8">
+            <Activity className="w-12 h-12 text-gray-300 mx-auto mb-4" />
+            <p className="text-gray-600">
+              {language === 'pt' ? 'Nenhuma atividade recente' : 'No recent activity'}
+            </p>
+            <p className="text-sm text-gray-500 mt-2">
+              {language === 'pt' 
+                ? 'Comece a participar em eventos e usar serviços para ver sua atividade aqui'
+                : 'Start attending events and using services to see your activity here'
+              }
+            </p>
+          </div>
+        )}
       </div>
     </div>
   )
