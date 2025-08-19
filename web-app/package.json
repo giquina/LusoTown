@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "LusoTown Web Application",
   "engines": {
-    "node": "18.x",
+  "node": "22.x",
     "npm": "9.x"
   },
   "scripts": {
+  "preinstall": "npx --yes npm@9 --version >/dev/null 2>&1 && (node -e \"try{require('child_process').execSync('npm -v',{stdio:'inherit'})}catch(e){}\") || true",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
