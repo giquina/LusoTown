@@ -33,6 +33,7 @@ import {
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
 import { useSubscription } from "@/context/SubscriptionContext";
+import { communityStats } from '@/config/community';
 import SubscriptionGate from "@/components/SubscriptionGate";
 import StreamPlayer from "@/components/StreamPlayer";
 import StreamSchedule from "@/components/StreamSchedule";
@@ -55,6 +56,15 @@ export default function LiveStreamingPage() {
   const HLS_BASE =
     (process.env.NEXT_PUBLIC_STREAMING_SERVER_URL as string) ||
     "http://localhost:8080";
+
+  // Ensure we land at the top when navigating to /live without a hash
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (!window.location.hash) {
+      // Use a microtask to run after mount layout
+      setTimeout(() => window.scrollTo({ top: 0, behavior: 'auto' }), 0);
+    }
+  }, []);
 
   // Mock data for demonstration - in production, this would come from YouTube API
   const streamCategories = [
@@ -282,15 +292,23 @@ export default function LiveStreamingPage() {
                 transition={{ delay: 0.4 }}
                 className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
               >
-                <a
-                  href="#player"
+                <button
+                  onClick={() => {
+                    const el = document.getElementById('player');
+                    if (!el) return;
+                    const header = document.querySelector('header');
+                    const offset = header ? (header as HTMLElement).offsetHeight : 0;
+                    const rect = el.getBoundingClientRect();
+                    const top = window.scrollY + rect.top - offset - 12;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                  }}
                   className="group bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 hover:shadow-xl active:scale-95 touch-manipulation min-w-[200px]"
                 >
                   <div className="flex items-center justify-center gap-3">
                     <Play className="w-6 h-6" />
                     {t("streaming.hero.cta.watch")}
                   </div>
-                </a>
+                </button>
 
                 <a
                   href="/creator-signup"
@@ -346,7 +364,7 @@ export default function LiveStreamingPage() {
                 <div className="flex items-center justify-center w-12 h-12 bg-primary-100 rounded-xl mx-auto mb-4">
                   <Users className="w-6 h-6 text-primary-600" />
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">45+</div>
+                <div className="text-3xl font-bold text-gray-900 mb-1">{communityStats.creators}</div>
                 <div className="text-sm text-gray-600">
                   {t("streaming.hero.stats.creators")}
                 </div>
@@ -357,7 +375,7 @@ export default function LiveStreamingPage() {
                   <TrendingUp className="w-6 h-6 text-secondary-600" />
                 </div>
                 <div className="text-3xl font-bold text-gray-900 mb-1">
-                  1,200+
+                  {communityStats.streamingHours}
                 </div>
                 <div className="text-sm text-gray-600">
                   {t("streaming.hero.stats.hours")}
@@ -369,7 +387,7 @@ export default function LiveStreamingPage() {
                   <Globe className="w-6 h-6 text-accent-600" />
                 </div>
                 <div className="text-3xl font-bold text-gray-900 mb-1">
-                  2,150+
+                  {communityStats.viewers}
                 </div>
                 <div className="text-sm text-gray-600">
                   {t("streaming.hero.stats.viewers")}
@@ -519,7 +537,7 @@ export default function LiveStreamingPage() {
         </div>
       </section>
 
-      <div className="py-12">
+      <div className="py-12 pb-20 md:pb-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             {/* Main Content */}
@@ -598,7 +616,7 @@ export default function LiveStreamingPage() {
                         {/* Mobile: Stack actions for better touch targets */}
                         <div className="flex flex-col sm:flex-row gap-3">
                           {/* Primary Actions Row */}
-                          <div className="flex gap-3 flex-1">
+                          <div className="flex gap-3 flex-1 flex-wrap">
                             <button
                               onClick={() => handleStreamInteraction("like")}
                               className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-3 sm:py-2 bg-gray-100 hover:bg-gray-200 active:bg-gray-300 rounded-lg transition-all touch-manipulation"
@@ -780,13 +798,82 @@ export default function LiveStreamingPage() {
         </div>
       </div>
 
+      {/* Mobile Sticky Tabs */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white border-t border-gray-200 shadow-lg">
+        <div className="flex">
+          <button
+            onClick={() => {
+              const el = document.getElementById('player');
+              if (!el) return;
+              const header = document.querySelector('header');
+              const offset = header ? (header as HTMLElement).offsetHeight : 0;
+              const rect = el.getBoundingClientRect();
+              const top = window.scrollY + rect.top - offset - 12;
+              window.scrollTo({ top, behavior: 'smooth' });
+            }}
+            className="flex-1 flex flex-col items-center justify-center py-2 px-1 text-xs font-medium text-gray-600 hover:text-primary-600 transition-colors"
+          >
+            <Play className="w-5 h-5 mb-1" />
+            <span>{language === "pt" ? "Player" : "Player"}</span>
+          </button>
+          
+          <button
+            onClick={() => {
+              const el = document.getElementById('schedule');
+              if (!el) return;
+              const header = document.querySelector('header');
+              const offset = header ? (header as HTMLElement).offsetHeight : 0;
+              const rect = el.getBoundingClientRect();
+              const top = window.scrollY + rect.top - offset - 12;
+              window.scrollTo({ top, behavior: 'smooth' });
+            }}
+            className="flex-1 flex flex-col items-center justify-center py-2 px-1 text-xs font-medium text-gray-600 hover:text-secondary-600 transition-colors"
+          >
+            <Calendar className="w-5 h-5 mb-1" />
+            <span>{language === "pt" ? "Agenda" : "Schedule"}</span>
+          </button>
+          
+          <button
+            onClick={() => {
+              const el = document.getElementById('replays');
+              if (!el) return;
+              const header = document.querySelector('header');
+              const offset = header ? (header as HTMLElement).offsetHeight : 0;
+              const rect = el.getBoundingClientRect();
+              const top = window.scrollY + rect.top - offset - 12;
+              window.scrollTo({ top, behavior: 'smooth' });
+            }}
+            className="flex-1 flex flex-col items-center justify-center py-2 px-1 text-xs font-medium text-gray-600 hover:text-accent-600 transition-colors"
+          >
+            <Video className="w-5 h-5 mb-1" />
+            <span>{language === "pt" ? "Replays" : "Replays"}</span>
+          </button>
+          
+          <button
+            onClick={() => {
+              const el = document.getElementById('community');
+              if (!el) return;
+              const header = document.querySelector('header');
+              const offset = header ? (header as HTMLElement).offsetHeight : 0;
+              const rect = el.getBoundingClientRect();
+              const top = window.scrollY + rect.top - offset - 12;
+              window.scrollTo({ top, behavior: 'smooth' });
+            }}
+            className="flex-1 flex flex-col items-center justify-center py-2 px-1 text-xs font-medium text-gray-600 hover:text-action-600 transition-colors"
+          >
+            <Users className="w-5 h-5 mb-1" />
+            <span>{language === "pt" ? "Chat" : "Chat"}</span>
+          </button>
+        </div>
+      </div>
+
       {/* Sticky Mini-Player */}
       {currentStream && showMiniPlayer && (
         <motion.button
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
-          className="fixed bottom-4 right-4 z-50 w-64 sm:w-72 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden text-left"
+          className="fixed bottom-20 right-4 z-50 w-64 sm:w-72 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden text-left md:bottom-4"
           onClick={() => {
             const el = document.getElementById("player");
             if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });

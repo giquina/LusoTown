@@ -145,7 +145,10 @@ export default function StreamCategories({
 
       {/* Mobile: Horizontal Scroll Categories */}
       <div className="block sm:hidden mb-6">
-        <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide">
+        <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 [scrollbar-width:none] [-ms-overflow-style:none]">
+          <style jsx>{`
+            div::-webkit-scrollbar { display: none; }
+          `}</style>
           {/* All Categories Chip */}
           <motion.button
             whileTap={{ scale: 0.95 }}

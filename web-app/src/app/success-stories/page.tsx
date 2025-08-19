@@ -4,6 +4,7 @@ import HeritagePreservationHub from '@/components/HeritagePreservationHub'
 import CommunityImpactDocumentation from '@/components/CommunityImpactDocumentation'
 import LusophoneDiversityShowcase from '@/components/LusophoneDiversityShowcase'
 import CulturalBridgeBuilding from '@/components/CulturalBridgeBuilding'
+import { communityStats } from '@/config/community'
 import { 
   HeartIcon, 
   UserGroupIcon, 
@@ -210,10 +211,10 @@ export default function SuccessStories() {
   ]
 
   const impactStats: ImpactStat[] = [
-    { label: "Portuguese Friendships Formed", value: "750+", icon: HeartIcon },
+    { label: "Portuguese Friendships Formed", value: communityStats.members, icon: HeartIcon },
     { label: "Cultural Communities Created", value: "85+", icon: UserGroupIcon },
     { label: "Portuguese Business Partnerships", value: "42+", icon: TrophyIcon },
-    { label: "Portuguese Speakers Connected", value: "1,200+", icon: SparklesIcon }
+    { label: "Portuguese Speakers Connected", value: communityStats.streamingHours, icon: SparklesIcon }
   ]
 
   return (

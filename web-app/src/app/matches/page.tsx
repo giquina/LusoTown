@@ -2,6 +2,8 @@
 
 import { Suspense, useState, useEffect, useMemo, useCallback } from "react";
 import type React from "react";
+import { communityStats } from '@/config/community';
+import { mockProfileImages } from '@/config/mockData';
 import {
   HeartIcon,
   UserGroupIcon,
@@ -46,7 +48,7 @@ const mockProfiles = [
       "Arts & Crafts",
     ],
     bio: "Portuguese marketing professional looking to connect with fellow lusófonos in London. Love fado nights and traditional cooking!",
-    image: "/images/profiles/ana-sofia.jpg",
+    image: mockProfileImages['ana-sofia'],
     compatibility: 94,
   },
   {
@@ -63,7 +65,7 @@ const mockProfiles = [
       "Tech Meetups",
     ],
     bio: "Tech enthusiast from Lisbon. Always up for watching Benfica games and meeting other Portuguese professionals in tech.",
-    image: "/images/profiles/miguel-santos.jpg",
+    image: mockProfileImages['miguel-santos'],
     compatibility: 89,
   },
   {
@@ -80,7 +82,7 @@ const mockProfiles = [
       "Education",
     ],
     bio: "Medical student from Braga. Love traditional Portuguese dancing and meeting other young professionals.",
-    image: "/images/profiles/beatriz-oliveira.jpg",
+    image: mockProfileImages['beatriz-oliveira'],
     compatibility: 91,
   },
   {
@@ -97,7 +99,7 @@ const mockProfiles = [
       "Sports",
     ],
     bio: "Chef specializing in traditional Portuguese cuisine. Looking to connect with food lovers and fellow entrepreneurs.",
-    image: "/images/profiles/joao-ferreira.jpg",
+    image: mockProfileImages['joao-ferreira'],
     compatibility: 87,
   },
   {
@@ -114,7 +116,7 @@ const mockProfiles = [
       "Dance",
     ],
     bio: "Brazilian financial analyst living in London. Love connecting with Portuguese speakers and exploring the city.",
-    image: "/images/profiles/carolina-lima.jpg",
+    image: mockProfileImages['carolina-lima'],
     compatibility: 92,
   },
   {
@@ -131,7 +133,7 @@ const mockProfiles = [
       "Architecture",
     ],
     bio: "Architect from Coimbra passionate about Portuguese culture and design. Always ready for a good conversation over coffee.",
-    image: "/images/profiles/ricardo-costa.jpg",
+    image: mockProfileImages['ricardo-costa'],
     compatibility: 88,
   },
 ];
@@ -503,7 +505,7 @@ function MatchesContent() {
       className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:scale-110 transition-transform"
                   whileHover={{ scale: 1.1 }}
                 >
-                  750+
+                  {communityStats.members}
                 </motion.div>
                 <div className="text-white/80 text-sm">
                   {language === "pt"
@@ -1088,7 +1090,7 @@ function MatchesContent() {
                 </p>
                 <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-4 rounded-xl border border-primary-100">
       <div className="text-xl md:text-2xl font-bold text-primary-600">
-                    750+
+                    {communityStats.members}
                   </div>
                   <div className="text-sm text-primary-600">
                     {t("activeMember") || "Active Portuguese Speakers"}

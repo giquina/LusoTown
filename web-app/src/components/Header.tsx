@@ -174,7 +174,7 @@ export default function Header() {
                           initial={{ opacity: 0, y: -10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
-                          className="absolute top-full left-0 mt-2 w-[560px] bg-white rounded-2xl shadow-2xl border border-gray-200 py-6 z-50"
+                          className="absolute top-full left-0 mt-2 w-[680px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-6 z-50"
                         >
                           <div className="grid grid-cols-2 gap-6 px-6">
                             <div>
@@ -185,7 +185,7 @@ export default function Header() {
                                 <li>
                                   <a
                                     href="/london-tours"
-                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
+                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
                                   >
                                     All London Tours
                                   </a>
@@ -193,7 +193,7 @@ export default function Header() {
                                 <li>
                                   <a
                                     href="/london-tours"
-                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
+                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
                                   >
                                     Tours
                                   </a>
@@ -201,7 +201,7 @@ export default function Header() {
                                 <li>
                                   <a
                                     href="/services#cultural-tours"
-                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
+                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
                                   >
                                     Cultural Tours
                                   </a>
@@ -209,7 +209,7 @@ export default function Header() {
                                 <li>
                                   <a
                                     href="/services#executive-transport"
-                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
+                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
                                   >
                                     Executive Transport
                                   </a>
@@ -224,7 +224,7 @@ export default function Header() {
                                 <li>
                                   <a
                                     href="/transport"
-                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
+                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
                                   >
                                     London Transport
                                   </a>
@@ -232,7 +232,7 @@ export default function Header() {
                                 <li>
                                   <a
                                     href="/services#close-protection"
-                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
+                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
                                   >
                                     Close Protection
                                   </a>
@@ -240,7 +240,7 @@ export default function Header() {
                                 <li>
                                   <a
                                     href="/services"
-                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded"
+                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
                                   >
                                     All Services
                                   </a>
@@ -288,7 +288,7 @@ export default function Header() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full right-0 mt-2 w-[900px] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-50"
+                    className="absolute top-full right-0 mt-2 w-[1100px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-50"
                   >
                     <div className="grid grid-cols-5 gap-8 px-8">
                       {/* Quick Actions Section */}
@@ -319,7 +319,7 @@ export default function Header() {
                             <li key={link.name}>
                               <a
                                 href={link.href}
-                                className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded transition-colors duration-200"
+                                className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded transition-colors duration-200 whitespace-nowrap"
                               >
                                 {link.name}
                               </a>
@@ -338,7 +338,7 @@ export default function Header() {
                             <li key={link.name}>
                               <a
                                 href={link.href}
-                                className="flex items-center gap-2 text-sm text-gray-600 hover:text-premium-600 hover:bg-premium-50 px-2 py-1 rounded transition-colors duration-200"
+                                className="flex items-center gap-2 text-sm text-gray-600 hover:text-premium-600 hover:bg-premium-50 px-2 py-1 rounded transition-colors duration-200 whitespace-nowrap"
                               >
                                 <span>{link.name}</span>
                                 {link.href === "/matches" && (
@@ -365,7 +365,7 @@ export default function Header() {
                             <li key={link.name}>
                               <a
                                 href={link.href}
-                                className="block text-sm text-gray-600 hover:text-secondary-600 hover:bg-secondary-50 px-2 py-1 rounded transition-colors duration-200"
+                                className="block text-sm text-gray-600 hover:text-secondary-600 hover:bg-secondary-50 px-2 py-1 rounded transition-colors duration-200 whitespace-nowrap"
                               >
                                 {link.name}
                               </a>
@@ -381,7 +381,7 @@ export default function Header() {
                             <li key={link.name}>
                               <a
                                 href={link.href}
-                                className="block text-sm text-gray-600 hover:text-accent-600 hover:bg-accent-50 px-2 py-1 rounded transition-colors duration-200"
+                                className="block text-sm text-gray-600 hover:text-accent-600 hover:bg-accent-50 px-2 py-1 rounded transition-colors duration-200 whitespace-nowrap"
                               >
                                 {link.name}
                               </a>
@@ -400,7 +400,7 @@ export default function Header() {
                             <li key={link.name}>
                               <a
                                 href={link.href}
-                                className="block text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 px-2 py-1 rounded transition-colors duration-200"
+                                className="block text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 px-2 py-1 rounded transition-colors duration-200 whitespace-nowrap"
                               >
                                 {link.name}
                               </a>

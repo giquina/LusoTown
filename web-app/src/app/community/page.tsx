@@ -8,10 +8,11 @@ import { StarIcon, CalendarDaysIcon, MapPinIcon, UsersIcon, HeartIcon, ChatBubbl
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
 import { getImageWithFallback } from '@/lib/profileImages'
 import { useLanguage } from '@/context/LanguageContext'
+import { communityStats as stats } from '@/config/community'
 
-const communityStats = [
-  { number: '750+', label: 'Portuguese Community Members', labelPt: 'Membros da Comunidade Portuguesa', icon: UsersIcon },
-  { number: '150+', label: 'Monthly Experiences', labelPt: 'Experiências Mensais', icon: CalendarDaysIcon },
+const communityStatsConfig = [
+  { number: `${stats.members}`, label: 'Portuguese Community Members', labelPt: 'Membros da Comunidade Portuguesa', icon: UsersIcon },
+  { number: `${stats.events}`, label: 'Monthly Experiences', labelPt: 'Experiências Mensais', icon: CalendarDaysIcon },
   { number: '8', label: 'London Boroughs', labelPt: 'Bairros de Londres', icon: MapPinIcon },
   { number: '15+', label: 'Countries Represented', labelPt: 'Países Representados', icon: HeartIcon }
 ]
@@ -242,14 +243,14 @@ export default function Community() {
                   {/* Desktop full subtitle */}
                   <span className="hidden sm:block">
                     {isPortuguese ? (
-                      'Descobre a vibrante comunidade de falantes de português em Londres. Desde padarias autênticas em Stockwell a centros culturais em Vauxhall, desde festivais brasileiros a noites de Fado - aqui é onde 750+ profissionais portugueses se encontram e prosperam.'
+                      `Descobre a vibrante comunidade de falantes de português em Londres. Desde padarias autênticas em Stockwell a centros culturais em Vauxhall, desde festivais brasileiros a noites de Fado - aqui é onde ${stats.members} profissionais portugueses se encontram e prosperam.`
                     ) : (
-                      'Discover the vibrant Portuguese-speaking community in London. From authentic bakeries in Stockwell to cultural centers in Vauxhall, from Brazilian festivals to Fado nights - this is where 750+ Portuguese professionals gather and thrive.'
+                      `Discover the vibrant Portuguese-speaking community in London. From authentic bakeries in Stockwell to cultural centers in Vauxhall, from Brazilian festivals to Fado nights - this is where ${stats.members} Portuguese professionals gather and thrive.`
                     )}
                   </span>
                   {/* Mobile short subtitle */}
                   <span className="sm:hidden">
-                    {isPortuguese ? '750+ portugueses em Londres!' : '750+ Portuguese speakers in London!'}
+                    {isPortuguese ? `${stats.members} portugueses em Londres!` : `${stats.members} Portuguese speakers in London!`}
                   </span>
                 </p>
               </motion.div>
@@ -261,7 +262,7 @@ export default function Community() {
                 transition={{ delay: 0.2, duration: 0.8 }}
                 className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
               >
-                {communityStats.map((stat, index) => {
+                {communityStatsConfig.map((stat, index) => {
                   const Icon = stat.icon
                   return (
                     <div key={stat.label} className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300">
@@ -823,9 +824,9 @@ export default function Community() {
                 </h2>
                 <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
                   {isPortuguese ? (
-                    'A tua rede portuguesa está à espera. Junta-te a 750+ falantes de português que fizeram de Londres a sua casa, uma conexão profissional de cada vez. Unidos pela língua, unidos pela ambição.'
+                    `A tua rede portuguesa está à espera. Junta-te a ${stats.members} falantes de português que fizeram de Londres a sua casa, uma conexão profissional de cada vez. Unidos pela língua, unidos pela ambição.`
                   ) : (
-                    'Your Portuguese network is waiting. Join 750+ Portuguese speakers who have made London their home, one professional connection at a time. United by language, united by ambition.'
+                    `Your Portuguese network is waiting. Join ${stats.members} Portuguese speakers who have made London their home, one professional connection at a time. United by language, united by ambition.`
                   )}
                 </p>
                 

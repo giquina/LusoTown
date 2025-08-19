@@ -29,6 +29,51 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      // Streaming infrastructure domains
+      {
+        protocol: "https",
+        hostname: "stream.lusotown.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "portuguese-content.lusotown.com",
+        port: "",
+        pathname: "/**",
+      },
+      // BunnyCDN domains for Portuguese content
+      {
+        protocol: "https",
+        hostname: "*.b-cdn.net",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "lusotown-portuguese-content.b-cdn.net",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "lusotown-portuguese-streams.b-cdn.net",
+        port: "",
+        pathname: "/**",
+      },
+      // YouTube thumbnail domains for Portuguese cultural content
+      {
+        protocol: "https",
+        hostname: "img.youtube.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "i.ytimg.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
     formats: ["image/webp", "image/avif"],
   },

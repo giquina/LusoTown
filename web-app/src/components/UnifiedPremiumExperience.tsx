@@ -29,6 +29,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { usePlatformIntegration } from "@/context/PlatformIntegrationContext";
 import { useSubscription } from "@/context/SubscriptionContext";
 import { useNetworking } from "@/context/NetworkingContext";
+import { plans, formatPrice } from "@/config/pricing";
 
 interface UnifiedPremiumExperienceProps {
   showUpgradePrompt?: boolean;
@@ -70,8 +71,8 @@ export default function UnifiedPremiumExperience({
     {
       id: "bronze",
       name: isPortuguese ? "Bronze" : "Bronze",
-      price: "£25",
-      period: isPortuguese ? "por ano" : "per year",
+      price: formatPrice(plans.community.monthly),
+      period: isPortuguese ? "por mês" : "per month",
       popular: false,
       description: isPortuguese
         ? "Perfeito para começar"

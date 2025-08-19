@@ -2,6 +2,7 @@
 
 import type { Metadata } from 'next'
 import { useLanguage } from '@/context/LanguageContext'
+import { communityStats } from '@/config/community'
 import dynamic from 'next/dynamic'
 import Hero from '@/components/Hero'
 import Features from '@/components/Features'
@@ -281,7 +282,7 @@ export default function Home() {
                       </span>
                     </h3>
                     <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-                      Join 750+ Portuguese speakers from Brazil, Portugal, Africa and beyond living meaningful lives together in London - from cultural events to professional networking, family-friendly activities to weekend getaways.
+                      Join {communityStats.members} Portuguese speakers from Brazil, Portugal, Africa and beyond living meaningful lives together in London - from cultural events to professional networking, family-friendly activities to weekend getaways.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                       <a

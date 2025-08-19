@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import { plans, formatPrice } from "@/config/pricing";
+import { contactInfo } from '@/config/contact';
 import {
   QuestionMarkCircleIcon,
   ChatBubbleLeftRightIcon,
@@ -94,7 +95,7 @@ export default function HelpCenter() {
         {
           question: "How do I report concerning behavior?",
           answer:
-            "Use the report button on any profile or message, or email safety@lusotown.com. We investigate all reports within 24 hours and take appropriate action to maintain community safety.",
+            `Use the report button on any profile or message, or email ${contactInfo.safety}. We investigate all reports within 24 hours and take appropriate action to maintain community safety.`,
         },
         {
           question: "Can I block or remove someone?",
@@ -163,7 +164,7 @@ export default function HelpCenter() {
     {
       title: "Email Support",
       description: "Get personalized help from our support team",
-      contact: "hello@lusotown.com",
+      contact: contactInfo.general,
       icon: EnvelopeIcon,
       color: "primary",
       response: "Usually within 4-6 hours",
@@ -172,7 +173,7 @@ export default function HelpCenter() {
     {
       title: "Safety Concerns",
       description: "Report safety issues or concerning behavior",
-      contact: "safety@lusotown.com",
+      contact: contactInfo.safety,
       icon: ShieldCheckIcon,
       color: "red",
       response: "Within 2-4 hours",
@@ -400,7 +401,7 @@ export default function HelpCenter() {
                       </p>
                       <p>
                         • <strong>Platform safety:</strong> Email
-                        safety@lusotown.com
+                        {contactInfo.safety}
                       </p>
                       <p>
                         • <strong>Block and report:</strong> Use in-app
@@ -518,7 +519,7 @@ export default function HelpCenter() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="mailto:hello@lusotown.com"
+                  href={`mailto:${contactInfo.general}`}
                   className="bg-white text-primary-600 hover:bg-gray-50 font-semibold px-8 py-4 rounded-xl transition-colors duration-200 flex items-center justify-center"
                 >
                   <EnvelopeIcon className="w-5 h-5 mr-2" />

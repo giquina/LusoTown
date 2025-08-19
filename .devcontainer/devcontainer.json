@@ -1,8 +1,9 @@
 {
-  "name": "AdyaTribe Development Environment",
+  "name": "LusoTown Portuguese Streaming Platform",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:18",
   
   "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers/features/git:1": {}
   },
@@ -10,16 +11,14 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "ms-vscode.vscode-expo",
-        "bradlc.vscode-tailwindcss", 
+        "ms-vscode.vscode-typescript-next",
+        "bradlc.vscode-tailwindcss",
         "esbenp.prettier-vscode",
+        "ms-vscode.vscode-docker",
         "ms-vscode.vscode-json",
         "formulahendry.auto-rename-tag",
-        "ms-vscode.vscode-typescript-next",
         "ms-vscode.vscode-eslint",
-        "ms-vscode.js-debug",
-        "GitHubCopilot.github-copilot",
-        "ms-vscode.atom-keybindings"
+        "ms-vscode.js-debug"
       ],
       "settings": {
         "editor.formatOnSave": true,
@@ -36,27 +35,60 @@
     }
   },
   
-  "forwardPorts": [19006, 19001, 19002, 3000, 8081],
+  "forwardPorts": [
+    1935,  // RTMP for Streamlabs ingestion
+    8080,  // HLS streaming output  
+    1985,  // SRS API management
+    3000,  // LusoTown web platform
+    3002,  // Streaming API server
+    6379   // Redis
+  ],
+  
   "portsAttributes": {
-    "19006": {
-      "label": "Expo Dev Server",
+    "1935": {
+      "label": "🎥 RTMP Ingestion (Streamlabs)",
+      "protocol": "tcp",
+      "visibility": "public",
       "onAutoForward": "notify"
     },
-    "19001": {
-      "label": "Expo Metro Bundler",
+    "8080": {
+      "label": "📺 HLS Streaming Output",
+      "protocol": "https", 
+      "visibility": "public",
+      "onAutoForward": "notify"
+    },
+    "1985": {
+      "label": "🔧 SRS API Management",
+      "protocol": "https",
+      "visibility": "public",
       "onAutoForward": "silent"
     },
     "3000": {
-      "label": "Web Dashboard",
+      "label": "🇵🇹 LusoTown Web Platform",
+      "protocol": "https",
+      "visibility": "public",
       "onAutoForward": "notify"
+    },
+    "3002": {
+      "label": "🚀 Streaming API Server",
+      "protocol": "https",
+      "visibility": "public",
+      "onAutoForward": "silent"
+    },
+    "6379": {
+      "label": "💾 Redis",
+      "protocol": "tcp",
+      "visibility": "private",
+      "onAutoForward": "silent"
     }
   },
   
-  "postCreateCommand": "npm install -g @anthropic-ai/claude-code && cd mobile-app && npm install && echo '🎉 AdyaTribe development environment with Claude Code is ready!'",
+  "postCreateCommand": "cd web-app && npm install && echo '🇵🇹 LusoTown Portuguese streaming environment ready!'",
   
   "remoteUser": "node",
   
   "mounts": [
-    "source=adyatribe-node-modules,target=${containerWorkspaceFolder}/mobile-app/node_modules,type=volume"
+    "source=lusotown-node-modules,target=${containerWorkspaceFolder}/web-app/node_modules,type=volume",
+    "source=lusotown-streaming-modules,target=${containerWorkspaceFolder}/streaming/node_modules,type=volume"
   ]
 }

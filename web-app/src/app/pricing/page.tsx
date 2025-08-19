@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { communityStats } from '@/config/community'
 import { 
   CheckIcon, 
   XMarkIcon, 
@@ -262,7 +263,7 @@ const testimonials = [
 
 const stats = [
   { 
-    number: '750+', 
+    number: communityStats.members, 
     label: 'Membros Grátis',
     labelEn: 'Free Members', 
     icon: <UsersIcon className="w-6 h-6" /> 
@@ -357,7 +358,7 @@ export default function Pricing() {
             <div className="text-center mb-16">
               <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-primary-600 mb-6">
                 <HeartIconSolid className="w-4 h-4 mr-2" />
-                {isPortuguese ? 'Unidos pela Língua • 750+ membros da comunidade' : 'United by Language • 750+ Portuguese speakers'}
+                {isPortuguese ? `Unidos pela Língua • ${communityStats.members} membros da comunidade` : `United by Language • ${communityStats.members} Portuguese speakers`}
               </div>
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
                 {isPortuguese ? (
@@ -970,7 +971,7 @@ export default function Pricing() {
                     <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-lg p-6">
                       <div className="flex items-center justify-center space-x-4 text-center">
                         <div>
-                          <div className="text-2xl font-bold text-primary-600">750+</div>
+                          <div className="text-2xl font-bold text-primary-600">{communityStats.members}</div>
                           <div className="text-xs text-gray-600">{isPortuguese ? 'Membros ativos' : 'Active members'}</div>
                         </div>
                         <div className="w-px h-8 bg-gray-300"></div>
@@ -1268,8 +1269,8 @@ export default function Pricing() {
               <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium mb-6">
                 <HeartIconSolid className="w-4 h-4 mr-2" />
                 {isPortuguese ? 
-                  'Unidos pela Língua • Junta-te a 750+ membros da comunidade portuguesa' :
-                  'United by Language • Join 750+ Portuguese Portuguese speakers'
+                  `Unidos pela Língua • Junta-te a ${communityStats.members} membros da comunidade portuguesa` :
+                  `United by Language • Join ${communityStats.members} Portuguese speakers`
                 }
               </div>
               

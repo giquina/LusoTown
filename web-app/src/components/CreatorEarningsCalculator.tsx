@@ -243,7 +243,7 @@ export default function CreatorEarningsCalculator() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
                       {isPt ? 'Preço Workshop (£)' : 'Workshop Price (£)'}

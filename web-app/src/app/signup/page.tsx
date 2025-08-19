@@ -6,6 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import { useSubscription } from "@/context/SubscriptionContext";
+import { communityStats } from "@/config/community";
 import SocialLogin from "@/components/SocialLogin";
 import {
   HeartIcon,
@@ -34,7 +35,7 @@ const benefits = [
   },
   {
     icon: UserGroupIcon,
-    text: "Connect with 750+ Portuguese speakers",
+    text: `Connect with ${communityStats.members} Portuguese speakers`,
     subtext: "From Portugal, Brazil, Angola, Mozambique & beyond",
   },
   {
@@ -336,7 +337,7 @@ function SignupInner() {
 
                 <p className="text-lg sm:text-xl text-gray-600 mb-3 sm:mb-4 leading-relaxed">
                   No barriers to community participation. Start free, explore
-                  events, connect with 750+ Portuguese speakers, and upgrade
+                  events, connect with {communityStats.members} Portuguese speakers, and upgrade
                   only when you're ready for premium experiences.
                 </p>
                 <p className="text-sm text-gray-500 mb-6 sm:mb-8">No credit card required</p>
@@ -442,7 +443,7 @@ function SignupInner() {
                     <div className="flex items-center justify-center gap-4 text-xs text-gray-500 mb-4">
                       <div className="flex items-center gap-1">
                         <UserGroupIcon className="h-4 w-4" />
-                        <span>750+ Members</span>
+                        <span>{communityStats.members} Members</span>
                       </div>
                       <div className="flex items-center gap-1">
                         <MapPinIcon className="h-4 w-4" />
@@ -958,7 +959,7 @@ function SignupInner() {
                             </span>
                           </div>
                           <span>
-                            Connect with 750+ Portuguese speakers for free
+                            Connect with {communityStats.members} Portuguese speakers for free
                           </span>
                         </div>
                         <div className="flex items-center gap-2">

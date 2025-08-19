@@ -63,6 +63,7 @@ cd web-app && npm install && npm run dev    # Start dev server (localhost:3000)
 # Database migrations (from web-app directory)
 npm run db:migrate           # Apply general database migrations
 npm run db:migrate:streaming # Apply streaming-specific migrations
+npm run db:migrate:streaming:complete # Apply complete streaming migration
 
 # From web-app directory
 npm run build               # Production build
@@ -83,6 +84,20 @@ npm run test:portuguese     # Portuguese-specific tests
 npm run test:mobile         # Mobile-specific tests
 npm run test:security       # Security tests
 npm run test:accessibility  # Accessibility tests
+npm run test:all            # Run unit + integration + performance tests
+
+# Creator/verification scripts
+npm run verify:creator-monetization # Verify creator monetization setup
+
+# Streaming server (from repo root)
+cd streaming && npm install && npm start    # Start streaming server (localhost:3002)
+cd streaming && npm run health-check        # Check streaming server health
+node streaming/streamlabs-setup.js          # Generate Streamlabs mobile configuration
+
+# Streamlabs mobile setup (RTMP ingestion)
+# RTMP URL: rtmp://[CODESPACE-URL]:1935/live/
+# Stream Key: streamlabs_lusotown_2025
+# HLS Output: https://[CODESPACE-URL]:8080/live/[stream_key].m3u8
 ```
 
 **Demo Login:** demo@lusotown.com / LusoTown2025!
@@ -105,6 +120,24 @@ npm run test:accessibility  # Accessibility tests
 - Email validation with real-time feedback
 - Portuguese community focus with Firebase backend integration planned
 - Planned: Profile picture upload, selfie verification, interest selection, welcome screen
+
+## Streaming Infrastructure
+
+**Location:** `/streaming/` directory
+**Framework:** Node.js with Simple Relay Server (SRS)
+**Status:** Production ready - Complete Portuguese streaming platform
+**Commands:**
+- `cd streaming && npm install && npm start` - Start streaming server (localhost:8080)
+- `npm run health-check` - Verify streaming infrastructure
+- `npm test` - Run streaming tests
+
+**Features:**
+- RTMP ingestion with WebRTC and HLS delivery
+- Portuguese cultural emotes system (:saudade:, :festa:, :futebol:)
+- Real-time chat with Portuguese language moderation
+- Creator monetization with 85/15 revenue splits
+- Multi-currency support (BRL, EUR, GBP)
+- Redis caching for performance optimization
 
 ## Core Architecture
 
@@ -219,12 +252,13 @@ BUNNYCDN_STORAGE_ZONE=
 - Subscription enforcement for transport services
 - "Portuguese speakers in London" messaging consistency
 
-**Quality Checks:**
-- `npm run lint` and `npx tsc --noEmit`
+**Quality Checks (Always run before committing):**
+- `npm run lint` and `npx tsc --noEmit` (from web-app directory)
 - Verify Portuguese brand colors (no generic Tailwind)
 - Test responsive design (mobile/tablet/desktop)
 - Validate CTAs (2 words max) and pricing ("From £XX")
 - Run test suite: `npm run test:all` (unit + integration + performance)
+- Check streaming infrastructure: `cd streaming && npm run health-check`
 
 ## Deployment & Automation
 
@@ -244,6 +278,25 @@ BUNNYCDN_STORAGE_ZONE=
 - Language switching: check LanguageContext + localStorage
 - Mobile layouts: ensure responsive grids with proper touch targets, test button accessibility
 - State persistence: localStorage keys for cart/favorites/networking
+- Streaming server connection: Ensure streaming server is running before testing live features
+- Environment variables: Copy .env.local.example to .env.local and configure Supabase keys
+
+## Current Development Status
+
+**Branch:** main (production-ready branch)
+**Recent Focus:** Complete streaming platform integration, 3-tier pricing overhaul, mobile UX improvements
+**Key Modified Files (from git status):**
+- Pricing system: MembershipTiers.tsx, pricing configuration
+- Streaming components: StreamPlayer.tsx, StreamSchedule.tsx, creator components
+- Mobile improvements: GroupsShowcase.tsx, GroupEventsSection.tsx, EventsShowcase.tsx
+- Authentication flow: Creator signup pages and verification scripts
+- Configuration: next.config.js, package.json updates for streaming
+
+**Development Notes:**
+- All features are production-ready but many files show as modified (M) - this is expected during active development
+- TypeScript build errors are intentionally ignored in production builds per next.config.js
+- Recent commits focus on streaming integration, pricing optimization, and mobile experience
+- Demo user system allows testing without full subscription requirements
 
 ## Recent Platform Improvements (August 2025)
 

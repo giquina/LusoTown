@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
+import { communityStats } from '@/config/community'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   Heart, 
@@ -562,7 +563,7 @@ export default function SuccessStoryIntroduction({ onStartQuiz, onSignUp }: Succ
                 
                 <div className="text-center p-4 bg-gradient-to-br from-coral-50 to-coral-100 rounded-xl">
                   <div className="text-2xl mb-2">🗺️</div>
-                  <div className="text-lg font-bold text-coral-600 mb-1">45+</div>
+                  <div className="text-lg font-bold text-coral-600 mb-1">{communityStats.creators}</div>
                   <div className="text-xs text-coral-700">{t.diasporaMembers}</div>
                 </div>
               </div>

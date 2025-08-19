@@ -12,17 +12,17 @@ import {
   SparklesIcon,
 } from "@heroicons/react/24/outline";
 import { useLanguage } from "@/context/LanguageContext";
-import { membership, formatPrice } from "@/config/pricing";
+import { plans, formatPrice } from "@/config/pricing";
 
 const getBenefits = (t: any) => [
-  `${formatPrice(
-    membership.annual
-  )}/year - your ticket to the Portuguese community`,
-  "Pay only true cost for events and activities",
-  "No markups or hidden fees ever",
-  "Voice in community decisions",
-  "Unlimited access to all groups and events",
-  "Future cooperative ownership benefits",
+  `From ${formatPrice(
+    plans.community.monthly
+  )}/month - Connect with Portuguese speakers across London`,
+  "Unlimited matches and messaging",
+  "Access to all community events",
+  "Professional networking opportunities",
+  "Advanced search and profile features",
+  "Priority support and safety features",
 ];
 
 export default function CTA() {
@@ -49,14 +49,14 @@ export default function CTA() {
           >
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-white font-medium mb-6 border border-white/30">
               <SparklesIcon className="h-4 w-4" />
-              Annual Membership - {formatPrice(membership.annual)}/Year
+              Community Membership - From {formatPrice(plans.community.monthly)}/Month
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Your Cultural Investment
+              Join the Portuguese Community
             </h2>
             <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto">
-              One annual membership. Unlimited community access. Pay only true
-              cost for events. No markups, no surprises.
+              Choose your membership tier. Connect with Portuguese speakers. Build meaningful
+              relationships in London's vibrant Portuguese community.
             </p>
           </motion.div>
 

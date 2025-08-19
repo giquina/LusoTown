@@ -390,7 +390,7 @@ export default function StreamSchedule({
                     : "border-gray-200 bg-gray-50 opacity-75"
                 }`}
               >
-                <div className="flex gap-4">
+                <div className="flex gap-4 items-start">
                   {/* Stream Thumbnail */}
                   <div className="flex-shrink-0">
                     <div className="relative w-24 h-16 md:w-32 md:h-20 rounded-lg overflow-hidden bg-gray-200">
@@ -504,7 +504,7 @@ export default function StreamSchedule({
 
                     {/* Stream Actions */}
                     <div className="flex items-center justify-between gap-3">
-                      <div className="flex flex-wrap gap-1">
+                      <div className="flex flex-wrap gap-1 max-w-full">
                         {stream.tags.slice(0, 4).map((tag) => {
                           const active = selectedTags.includes(tag);
                           return (
@@ -527,7 +527,23 @@ export default function StreamSchedule({
                       </div>
 
                       {hasStreamAccess ? (
-                        <button className="flex items-center gap-2 px-3 py-1.5 bg-primary-600 text-white text-sm rounded-lg hover:bg-primary-700 transition-colors">
+                        <button 
+                          onClick={() => {
+                            const playerEl = document.getElementById('player');
+                            if (!playerEl) return;
+                            const header = document.querySelector('header');
+                            const offset = header ? (header as HTMLElement).offsetHeight : 0;
+                            const rect = playerEl.getBoundingClientRect();
+                            const top = window.scrollY + rect.top - offset - 12;
+                            window.scrollTo({ top, behavior: 'smooth' });
+                            // Trigger playback if possible
+                            const playButton = playerEl.querySelector('button[aria-label*="play"], button[title*="play"], .play-button');
+                            if (playButton) {
+                              (playButton as HTMLElement).click();
+                            }
+                          }}
+                          className="flex items-center gap-2 px-3 py-1.5 bg-primary-600 text-white text-sm rounded-lg hover:bg-primary-700 transition-colors whitespace-nowrap"
+                        >
                           <PlayIcon className="w-4 h-4" />
                           <span>
                             {language === "pt" ? "Assistir" : "Watch"}
@@ -537,7 +553,7 @@ export default function StreamSchedule({
                       ) : (
                         <a
                           href="/subscription"
-                          className="flex items-center gap-2 px-3 py-1.5 bg-premium-600 text-white text-sm rounded-lg hover:bg-premium-700 transition-colors"
+                          className="flex items-center gap-2 px-3 py-1.5 bg-premium-600 text-white text-sm rounded-lg hover:bg-premium-700 transition-colors whitespace-nowrap"
                         >
                           <Crown className="w-4 h-4" />
                           <span>

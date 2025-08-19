@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { communityStats } from '@/config/community'
 import { 
   BuildingOffice2Icon,
   AcademicCapIcon,
@@ -210,7 +211,7 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
     location: 'London & Greater UK',
     keyAchievements: [
       'Assisted 450+ families with housing searches and accommodation issues',
-      'Provided translation services for 1,200+ NHS and government appointments',
+      `Provided translation services for ${communityStats.streamingHours} NHS and government appointments`,
       'Created emergency support fund helping 85+ families during COVID-19',
       'Established Portuguese-speaking mental health support groups (12 groups active)',
       'Coordinated legal assistance for 200+ immigration and citizenship cases',

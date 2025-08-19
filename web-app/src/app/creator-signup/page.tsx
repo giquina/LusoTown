@@ -34,9 +34,9 @@ import {
 import { useLanguage } from '@/context/LanguageContext'
 import Footer from '@/components/Footer'
 import CreatorEarningsCalculator from '@/components/CreatorEarningsCalculator'
+import CreatorApplicationForm from '@/components/CreatorApplicationForm'
+import CreatorTestimonials from '@/components/CreatorTestimonials'
 // TODO: Create missing components
-// import CreatorApplicationForm from '@/components/CreatorApplicationForm'
-// import CreatorTestimonials from '@/components/CreatorTestimonials'
 // import CreatorOnboardingSteps from '@/components/CreatorOnboardingSteps'
 
 export default function CreatorSignupPage() {
@@ -44,6 +44,7 @@ export default function CreatorSignupPage() {
   const [activeTab, setActiveTab] = useState('overview')
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
   const [showApplication, setShowApplication] = useState(false)
+  const [streamKey, setStreamKey] = useState<string | null>(null)
 
   const isPt = language === 'pt'
 
@@ -512,8 +513,7 @@ export default function CreatorSignupPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
               >
-                {/* TODO: Create CreatorTestimonials component */}
-                <div className="text-center p-8 text-gray-500">Testimonials component coming soon</div>
+                <CreatorTestimonials />
               </motion.div>
             )}
 
@@ -637,20 +637,14 @@ export default function CreatorSignupPage() {
       </section>
 
       {/* Creator Application Modal */}
-      {/* TODO: Create CreatorApplicationForm component */}
       {showApplication && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-8 max-w-md mx-4">
-            <h3 className="text-lg font-bold mb-4">Application Form Coming Soon</h3>
-            <p className="text-gray-600 mb-4">The creator application form is under development.</p>
-            <button
-              onClick={() => setShowApplication(false)}
-              className="bg-primary-600 text-white px-4 py-2 rounded-md hover:bg-primary-700"
-            >
-              Close
-            </button>
-          </div>
-        </div>
+        <CreatorApplicationForm
+          onClose={() => setShowApplication(false)}
+          onComplete={(generatedStreamKey) => {
+            setStreamKey(generatedStreamKey)
+            setShowApplication(false)
+          }}
+        />
       )}
 
       <Footer />

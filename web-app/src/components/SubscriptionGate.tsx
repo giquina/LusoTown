@@ -102,12 +102,12 @@ export default function SubscriptionGate({
             ? "Subscrição Necessária para Reservas de Transporte"
             : "Subscription Required for Transport Bookings",
           description: isPortuguese
-            ? "Para reservar os nossos serviços de transporte privado e motorista, precisa de uma subscrição ativa LusoTown."
-            : "To book our private transport and driver services, you need an active LusoTown subscription.",
+            ? `Para reservar os nossos serviços de transporte privado com motoristas falantes de português, precisa de uma subscrição Community Member (${formatPrice(plans.community.monthly)}/mês) ou superior.`
+            : `To book our private transport services with Portuguese-speaking drivers, you need a Community Member subscription (${formatPrice(plans.community.monthly)}/month) or higher.`,
           icon: CreditCardIcon,
           buttonText: isPortuguese
-            ? "Ativar Subscrição"
-            : "Activate Subscription",
+            ? `Começar com ${formatPrice(plans.community.monthly)}/mês`
+            : `Start from ${formatPrice(plans.community.monthly)}/month`,
         };
 
       default:

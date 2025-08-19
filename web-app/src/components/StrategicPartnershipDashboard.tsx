@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
+import { communityStats } from '@/config/community'
 import { 
   institutionalPartnershipsService, 
   InstitutionalPartnershipStrategy, 
@@ -580,8 +581,8 @@ const StrategicPartnershipDashboard: React.FC = () => {
                 </div>
                 <p className="text-sm text-blue-700 mb-2">
                   {language === 'pt' 
-                    ? 'Rede universitária expandida para 8 instituições servindo 1,200+ estudantes portugueses'
-                    : 'University network expanded to 8 institutions serving 1,200+ Portuguese students'
+                    ? `Rede universitária expandida para 8 instituições servindo ${communityStats.streamingHours} estudantes portugueses`
+                    : `University network expanded to 8 institutions serving ${communityStats.streamingHours} Portuguese students`
                   }
                 </p>
                 <div className="text-xs text-blue-600">

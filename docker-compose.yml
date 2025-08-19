@@ -1,0 +1,90 @@
+version: '3.8'
+
+services:
+  # SRS Media Server - Portuguese Community Streaming
+  srs:
+    image: ossrs/srs:5
+    container_name: lusotown-srs
+    ports:
+      - "1935:1935"    # RTMP port for Streamlabs ingestion
+      - "1985:1985"    # HTTP API port for management
+      - "8080:8080"    # HTTP port for HLS delivery
+      - "8000:8000"    # WebRTC port
+    volumes:
+      - ./streaming/srs.conf:/usr/local/srs/conf/srs.conf
+      - ./streaming/www:/usr/local/srs/objs/nginx/html
+      - ./streaming/logs:/usr/local/srs/logs
+    environment:
+      - SRS_STREAM_CASTER_ENABLED=on
+      - SRS_HTTP_API_ENABLED=on
+      - SRS_HTTP_API_LISTEN=1985
+      - SRS_VHOST_HTTP_HOOKS_ENABLED=on
+    restart: unless-stopped
+    networks:
+      - lusotown
+
+  # Redis for Portuguese community real-time features
+  redis:
+    image: redis:7-alpine
+    container_name: lusotown-redis
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes --requirepass lusotown_redis_2025
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    networks:
+      - lusotown
+
+  # LusoTown Streaming API Server
+  streaming-api:
+    build:
+      context: ./streaming
+      dockerfile: Dockerfile
+    container_name: lusotown-streaming-api
+    ports:
+      - "3002:3002"    # API server port
+    environment:
+      - NODE_ENV=production
+      - PORT=3002
+      - RTMP_PORT=1935
+      - HTTP_PORT=8080
+      - REDIS_URL=redis://:lusotown_redis_2025@redis:6379
+      - LUSOTOWN_STREAMING_SECRET=lusotown_streaming_production_2025
+    depends_on:
+      - redis
+      - srs
+    volumes:
+      - ./streaming/media:/app/media
+      - ./streaming/logs:/app/logs
+    restart: unless-stopped
+    networks:
+      - lusotown
+
+  # LusoTown Web Platform
+  web-app:
+    build:
+      context: ./web-app
+      dockerfile: Dockerfile
+    container_name: lusotown-web
+    ports:
+      - "3000:3000"    # Main web application
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_STREAMING_SERVER_URL=http://localhost:3002
+      - NEXT_PUBLIC_RTMP_SERVER_URL=rtmp://localhost:1935
+      - NEXT_PUBLIC_HLS_SERVER_URL=http://localhost:8080
+      - REDIS_URL=redis://:lusotown_redis_2025@redis:6379
+    depends_on:
+      - streaming-api
+      - redis
+    restart: unless-stopped
+    networks:
+      - lusotown
+
+volumes:
+  redis_data:
+
+networks:
+  lusotown:
+    driver: bridge

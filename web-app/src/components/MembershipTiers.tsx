@@ -20,6 +20,7 @@ import { Crown } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useSubscription } from "@/context/SubscriptionContext";
 import { plans, formatPrice } from "@/config/pricing";
+import { communityStats } from "@/config/community";
 
 interface MembershipTiersProps {
   showCurrentTier?: boolean;
@@ -434,8 +435,8 @@ export default function MembershipTiers({
             <div className="mt-8 text-center">
               <p className="text-sm text-gray-600">
                 {isPortuguese
-                  ? "Junte-se a 750+ portugueses que já encontraram a sua comunidade"
-                  : "Join 750+ Portuguese speakers who found their community"}
+                  ? `Junte-se a ${communityStats.members} portugueses que já encontraram a sua comunidade`
+                  : `Join ${communityStats.members} Portuguese speakers who found their community`}
               </p>
             </div>
           </div>

@@ -1,0 +1,65 @@
+{
+  "streamlabs": {
+    "rtmpUrl": "rtmp://fluffy-space-system-rx4vw4769q6hx7j-1935-app.github.dev/live/",
+    "streamKey": "streamlabs_lusotown_2025",
+    "video": {
+      "resolution": "1280x720",
+      "framerate": 30,
+      "bitrate": 2500,
+      "encoder": "x264",
+      "preset": "veryfast",
+      "keyframeInterval": 2
+    },
+    "audio": {
+      "bitrate": 128,
+      "sampleRate": 44100,
+      "channels": 2,
+      "encoder": "AAC"
+    },
+    "advanced": {
+      "bufferSize": "2048KB",
+      "lowLatencyMode": true,
+      "portugueseOptimized": true,
+      "culturalContentMode": true
+    }
+  },
+  "playback": {
+    "hlsUrl": "https://fluffy-space-system-rx4vw4769q6hx7j-8080-app.github.dev/live/streamlabs_lusotown_2025.m3u8",
+    "webPlayerUrl": "https://fluffy-space-system-rx4vw4769q6hx7j-3000-app.github.dev/live/streamlabs_lusotown_2025",
+    "apiUrl": "https://fluffy-space-system-rx4vw4769q6hx7j-3002-app.github.dev/api/v1/streams",
+    "statsUrl": "https://fluffy-space-system-rx4vw4769q6hx7j-1985-app.github.dev/api/v1/streams"
+  },
+  "community": {
+    "emotes": [
+      ":saudade:",
+      ":festa:",
+      ":futebol:",
+      ":fado:",
+      ":portugal:",
+      ":brasil:"
+    ],
+    "chatLanguages": [
+      "pt",
+      "en"
+    ],
+    "culturalTags": [
+      "portuguese",
+      "cultural",
+      "business",
+      "lusotown"
+    ],
+    "regions": [
+      "portugal",
+      "brazil",
+      "angola",
+      "mozambique",
+      "diaspora"
+    ]
+  },
+  "mobile": {
+    "recommendedBandwidth": "5 Mbps upload minimum",
+    "networkType": "WiFi preferred, 4G/5G acceptable",
+    "batteryOptimization": "Use power saving mode for longer streams",
+    "storageRequirement": "1GB free space recommended"
+  }
+}

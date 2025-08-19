@@ -14,7 +14,7 @@ import TransportTestimonials from './TransportTestimonials'
 const LazyBookingForm = React.lazy(() => import('./TransportBookingForm'))
 
 interface OptimizedTransportPageProps {
-  userMembershipLevel?: 'free' | 'family' | 'ambassador'
+  userMembershipLevel?: 'free' | 'community' | 'ambassador'
 }
 
 const OptimizedTransportPage: React.FC<OptimizedTransportPageProps> = ({

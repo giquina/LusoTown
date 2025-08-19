@@ -103,7 +103,7 @@ export default function PortugueseValueShowcase({
       name: isPortuguese ? 'Noite de Fado - Quinta-feira' : 'Fado Night - Thursday',
       location: 'Stockwell Portuguese Centre',
       attendees: 45,
-      price: '£25'
+      price: '£30'
     },
     {
       name: isPortuguese ? 'Jantar de Negócios - Sexta-feira' : 'Business Dinner - Friday',

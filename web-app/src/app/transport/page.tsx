@@ -39,8 +39,8 @@ const serviceTiers = [
     imageAltPortuguese:
       "Serviço de segurança profissional com veículo profissional em marco de Londres",
     membershipDiscounts: {
-      visitor: 0,
-      family: 5,
+      free: 0,
+      community: 5,
       ambassador: 10,
     },
     minimumHours: 3,
@@ -86,8 +86,8 @@ const serviceTiers = [
     imageAltPortuguese:
       "Experiência VIP de Londres com Tower Bridge e serviço profissional",
     membershipDiscounts: {
-      visitor: 0,
-      family: 5,
+      free: 0,
+      community: 5,
       ambassador: 15,
     },
     minimumHours: 4,
@@ -134,8 +134,8 @@ const serviceTiers = [
     imageAltPortuguese:
       "Serviço de proteção elite com veículo profissional em Londres",
     membershipDiscounts: {
-      visitor: 0,
-      family: 5,
+      free: 0,
+      community: 5,
       ambassador: 10,
     },
     minimumHours: 4,
@@ -189,8 +189,8 @@ const londonTourismExperiences = [
     imageAltPortuguese:
       "Big Ben e Westminster Bridge - Marcos clássicos de Londres",
     membershipDiscounts: {
-      visitor: 0,
-      family: 8, // £294.40
+      free: 0,
+      community: 8, // £294.40
       ambassador: 15, // £272
     },
     minimumGuests: 1,
@@ -235,8 +235,8 @@ const londonTourismExperiences = [
     imageAltPortuguese:
       "Palácio de Buckingham com guardas reais - Experiência real de Londres",
     membershipDiscounts: {
-      visitor: 0,
-      family: 10, // £342
+      free: 0,
+      community: 10, // £342
       ambassador: 18, // £311.60
     },
     minimumGuests: 1,
@@ -280,8 +280,8 @@ const londonTourismExperiences = [
     imageAlt: "The Shard and modern London skyline with Thames river",
     imageAltPortuguese: "The Shard e skyline moderno de Londres com rio Tâmisa",
     membershipDiscounts: {
-      visitor: 0,
-      family: 10, // £405
+      free: 0,
+      community: 10, // £405
       ambassador: 15, // £382.50
     },
     minimumGuests: 2,
@@ -325,8 +325,8 @@ const londonTourismExperiences = [
     imageAlt: "Covent Garden market and shopping area in London",
     imageAltPortuguese: "Mercado de Covent Garden e área de compras em Londres",
     membershipDiscounts: {
-      visitor: 0,
-      family: 8, // £478.40
+      free: 0,
+      community: 8, // £478.40
       ambassador: 12, // £457.60
     },
     minimumGuests: 1,
@@ -370,8 +370,8 @@ const multiDayPackages = [
     originalPrice: 320,
     duration: "4 hours",
     membershipDiscounts: {
-      visitor: 0,
-      family: 10, // £252
+      free: 0,
+      community: 10, // £252
       ambassador: 18, // £229.60
     },
     minimumGuests: 1,
@@ -402,8 +402,8 @@ const multiDayPackages = [
     imageAltPortuguese:
       "Tower Bridge ao pôr do sol - Exploração completa de Londres",
     membershipDiscounts: {
-      visitor: 0,
-      family: 12, // £510.40
+      free: 0,
+      community: 12, // £510.40
       ambassador: 20, // £464
     },
     minimumGuests: 1,
@@ -430,8 +430,8 @@ const multiDayPackages = [
     originalPrice: 1650,
     duration: "2-3 days",
     membershipDiscounts: {
-      visitor: 0,
-      family: 15, // £1258
+      free: 0,
+      community: 15, // £1258
       ambassador: 25, // £1110
     },
     minimumGuests: 1,
@@ -463,8 +463,8 @@ const multiDayPackages = [
     imageAltPortuguese:
       "Atrações familiares de Londres - Aventura e atividades culturais",
     membershipDiscounts: {
-      visitor: 0,
-      family: 20, // £336
+      free: 0,
+      community: 20, // £336
       ambassador: 25, // £315
     },
     minimumGuests: 2,
@@ -495,8 +495,8 @@ const standardPackages = [
     originalPrice: "Consultation Required",
     duration: "Flexible (4-12 hours)",
     membershipDiscounts: {
-      visitor: 0,
-      family: 10,
+      free: 0,
+      community: 10,
       ambassador: 20,
     },
     minimumGuests: 1,
@@ -523,8 +523,8 @@ const standardPackages = [
     originalPrice: 165,
     duration: "2 hours",
     membershipDiscounts: {
-      visitor: 0,
-      family: 8, // £133.40
+      free: 0,
+      community: 8, // £133.40
       ambassador: 15, // £123.25
     },
     minimumGuests: 1,
@@ -550,8 +550,8 @@ const standardPackages = [
     originalPrice: 360,
     duration: "4 hours",
     membershipDiscounts: {
-      visitor: 0,
-      family: 12, // £281.60
+      free: 0,
+      community: 12, // £281.60
       ambassador: 18, // £262.40
     },
     minimumGuests: 1,
@@ -577,8 +577,8 @@ const standardPackages = [
     originalPrice: 420,
     duration: "3 hours",
     membershipDiscounts: {
-      visitor: 0,
-      family: 8, // £349.60
+      free: 0,
+      community: 8, // £349.60
       ambassador: 15, // £323
     },
     minimumGuests: 1,

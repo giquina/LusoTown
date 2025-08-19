@@ -19,11 +19,11 @@ export const plans = {
   },
 } as const;
 
-// Memberships
+// Legacy pricing (deprecated - use plans instead)
 export const membership = {
-  annual: 25, // £25/year standard membership
-  studentAnnual: 12.5, // 50% student rate
-  groupAnnual: 20, // group pricing per person used on pricing page
+  annual: 25, // Legacy £25/year - deprecated
+  studentAnnual: 12.5, // Legacy student rate - deprecated
+  groupAnnual: 20, // Legacy group pricing - deprecated
 } as const;
 
 // Creator/Events pricing
@@ -49,6 +49,12 @@ export const planPriceLabel = (
 };
 
 export const monthlyPrice = (plan: keyof typeof plans) => plans[plan].monthly;
+
+// New subscription helper functions
+export const getCommunityMembershipPrice = () => plans.community.monthly;
+export const getCulturalAmbassadorPrice = () => plans.ambassador.monthly;
+
+// Legacy helpers (deprecated)
 export const annualMembershipPrice = () => membership.annual;
 export const studentAnnualPrice = () => membership.studentAnnual;
 export const groupAnnualPrice = () => membership.groupAnnual;

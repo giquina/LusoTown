@@ -14,7 +14,7 @@ import SocialLogin from "./SocialLogin";
 import SearchBar from "./SearchBar";
 import { getImagesByCategory } from "@/lib/profileImages";
 import { useLanguage } from "@/context/LanguageContext";
-import { membership, formatPrice } from "@/config/pricing";
+import { plans, formatPrice } from "@/config/pricing";
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
@@ -59,7 +59,7 @@ export default function Hero() {
               <div className="flex items-center gap-2">
                 <SparklesIcon className="h-5 w-5 text-secondary-600" />
                 <span className="text-sm font-bold bg-gradient-to-r from-secondary-600 to-action-600 bg-clip-text text-transparent">
-                  ANNUAL MEMBERSHIP - {formatPrice(membership.annual)}/YEAR
+                  COMMUNITY MEMBER - FROM {formatPrice(plans.community.monthly)}/MONTH
                 </span>
               </div>
               <div className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">
@@ -252,13 +252,20 @@ export default function Hero() {
               <div className="space-y-6">
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                    Annual Membership - Your Cultural Investment
+                    Join the Portuguese Community
                   </h3>
                   <p className="text-gray-600">
-                    {formatPrice(membership.annual)}/year gets you unlimited
-                    access to the Portuguese community. Pay only true cost for
-                    events and activities - no markups, no surprises.
+                    From {formatPrice(plans.community.monthly)}/month - Connect with Portuguese speakers
+                    across London. Unlimited matches, events, and networking.
                   </p>
+                  <div className="mt-4 space-y-2">
+                    <div className="text-sm text-gray-500">
+                      <span className="font-semibold text-primary-600">Community Member:</span> {formatPrice(plans.community.monthly)}/month
+                    </div>
+                    <div className="text-sm text-gray-500">
+                      <span className="font-semibold text-premium-600">Cultural Ambassador:</span> {formatPrice(plans.ambassador.monthly)}/month
+                    </div>
+                  </div>
                 </div>
 
                 {/* Member avatars */}

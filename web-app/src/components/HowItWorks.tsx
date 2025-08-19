@@ -19,6 +19,7 @@ import {
   BookOpen
 } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
+import { communityStats } from '@/config/community'
 
 export default function HowItWorks() {
   const [mounted, setMounted] = useState(false)
@@ -34,7 +35,7 @@ export default function HowItWorks() {
       number: 1,
       title: 'Join Portuguese Community',
       subtitle: 'Junta-te à Comunidade Portuguesa',
-      description: 'Connect with 750+ Portuguese speakers across London. From professionals to community members - find your network.',
+      description: `Connect with ${communityStats.members} Portuguese speakers across London. From professionals to community members - find your network.`,
       icon: UserPlus,
       color: 'from-secondary-500 to-secondary-600',
       bgColor: 'from-secondary-50 to-secondary-100',
@@ -248,7 +249,7 @@ export default function HowItWorks() {
             <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary-500 to-secondary-600 flex items-center justify-center group-hover:rotate-6 transition-transform duration-300 shadow-lg mx-auto mb-6">
               <Users className="h-8 w-8 text-white" />
             </div>
-            <div className="text-3xl font-black text-gray-800 mb-2">750+</div>
+            <div className="text-3xl font-black text-gray-800 mb-2">{communityStats.members}</div>
             <div className="text-sm font-bold text-gray-600 tracking-wide mb-2">PORTUGUESE SPEAKERS</div>
             <div className="text-xs text-gray-500 italic">From Portugal, Brazil, Angola & more in London</div>
           </div>
@@ -291,7 +292,7 @@ export default function HowItWorks() {
               </span>
             </h3>
             <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Book experiences with <strong className="text-secondary-600">750+ Portuguese speakers</strong> in London. 
+              Book experiences with <strong className="text-secondary-600">{communityStats.members} Portuguese speakers</strong> in London. 
               <strong className="text-gray-800">Real experiences, real venues, active social life.</strong>
             </p>
             

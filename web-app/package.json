@@ -27,7 +27,9 @@
     "test:accessibility": "jest --testNamePattern='accessibility|a11y|screen reader'",
     "test:all": "npm run test:unit && npm run test:integration && npm run test:performance",
     "db:migrate": "node scripts/apply-migration.js",
-    "db:migrate:streaming": "node scripts/apply-streaming-migration.js"
+    "db:migrate:streaming": "node scripts/apply-streaming-migration.js",
+    "db:migrate:streaming:complete": "node scripts/apply-complete-streaming-migration.js",
+    "verify:creator-monetization": "node scripts/verify-creator-monetization.js"
   },
   "dependencies": {
   "hls.js": "^1.5.13",

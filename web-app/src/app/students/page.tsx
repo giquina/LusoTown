@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Footer from '@/components/Footer'
 import { useLanguage } from '@/context/LanguageContext'
+import { communityStats } from '@/config/community'
 import { 
   AcademicCapIcon,
   StarIcon,
@@ -355,8 +356,8 @@ const UNIVERSITIES: University[] = [
 const STUDENT_BENEFITS: StudentBenefit[] = [
   {
     id: 'membership-discount',
-    title: '50% Student Discount on Annual Membership',
-    titlePortuguese: '50% Desconto Estudante na Adesão Anual',
+    title: '50% Student Discount on Community Membership',
+    titlePortuguese: '50% Desconto Estudante na Adesão Comunidade',
     description: 'Exclusive 50% discount on LusoTown Community membership for verified students. Pay only £9.99/month instead of £19.99 for full community access.',
     descriptionPortuguese: 'Desconto exclusivo de 50% na adesão Comunidade LusoTown para estudantes verificados. Pague apenas £9.99/mês em vez de £19.99 por acesso completo à comunidade.',
     category: 'financial',
@@ -706,8 +707,8 @@ export default function StudentsPage() {
                   <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
                   <span>
                     {language === 'pt'
-                      ? "2,150+ Estudantes Portugueses"
-                      : "2,150+ Portuguese Students"}
+                      ? `${communityStats.viewers} Estudantes Portugueses`
+                      : `${communityStats.viewers} Portuguese Students`}
                   </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-gray-600">
@@ -756,7 +757,7 @@ export default function StudentsPage() {
                 className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
               >
                 <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-                  <div className="text-2xl font-bold text-primary-600 mb-1">2,150+</div>
+                  <div className="text-2xl font-bold text-primary-600 mb-1">{communityStats.viewers}</div>
                   <div className="text-xs text-gray-600">{language === 'pt' ? 'Estudantes Portugueses no Reino Unido' : 'Portuguese Students in UK'}</div>
                 </div>
                 <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
@@ -769,7 +770,7 @@ export default function StudentsPage() {
                 </div>
                 <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
                   <div className="text-2xl font-bold text-premium-600 mb-1">£9.99</div>
-                  <div className="text-xs text-gray-600">{language === 'pt' ? 'Adesão Anual' : 'Annual Membership'}</div>
+                  <div className="text-xs text-gray-600">{language === 'pt' ? 'Por mês (estudante)' : 'Per month (student)'}</div>
                 </div>
               </motion.div>
             </div>
@@ -1052,7 +1053,7 @@ export default function StudentsPage() {
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
                 <div>
-                  <div className="text-3xl font-bold text-primary-600 mb-2">2,150+</div>
+                  <div className="text-3xl font-bold text-primary-600 mb-2">{communityStats.viewers}</div>
                   <div className="text-sm text-gray-600">{language === 'pt' ? 'Estudantes Portugueses Apoiados' : 'Portuguese Students Supported'}</div>
                 </div>
                 <div>
@@ -1435,8 +1436,8 @@ export default function StudentsPage() {
               <div className="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium mb-6">
                 <AcademicCapIcon className="w-4 h-4 mr-2" />
                 {language === 'pt' ? 
-                  'Comunidade Estudantil • 2,150+ estudantes portugueses em universidades do Reino Unido' :
-                  'Student Community • 2,150+ Portuguese students at UK universities'
+                  `Comunidade Estudantil • ${communityStats.viewers} estudantes portugueses em universidades do Reino Unido` :
+                  `Student Community • ${communityStats.viewers} Portuguese students at UK universities`
                 }
               </div>
               

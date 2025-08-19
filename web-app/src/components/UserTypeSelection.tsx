@@ -17,6 +17,25 @@ export default function UserTypeSelection() {
     } catch {}
   }, [])
 
+  useEffect(() => {
+    // Prevent body scroll when modal is open on mobile
+    if (showModal) {
+      document.body.style.overflow = 'hidden'
+      document.body.style.position = 'fixed'
+      document.body.style.width = '100%'
+    } else {
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
+    }
+
+    return () => {
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
+    }
+  }, [showModal])
+
   const closeAndRemember = () => {
     try { localStorage.setItem('lusotown-onboarded-v2', '1') } catch {}
     setDismissed(true)
@@ -27,6 +46,17 @@ export default function UserTypeSelection() {
     closeAndRemember()
     window.location.href = path
   }
+
+  // For testing - add to window object
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      (window as any).showUserTypeModal = () => {
+        localStorage.removeItem('lusotown-onboarded-v2')
+        setDismissed(false)
+        setShowModal(true)
+      }
+    }
+  }, [])
 
   const strings = {
     en: {
@@ -64,60 +94,147 @@ export default function UserTypeSelection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4"
+          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm"
         >
-          <motion.div
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 20, opacity: 0 }}
-            className="bg-white w-full sm:max-w-3xl rounded-t-3xl sm:rounded-2xl shadow-2xl overflow-hidden"
-          >
-            {/* Header */}
-            <div className="relative px-5 sm:px-8 pt-5 sm:pt-8 pb-2 border-b">
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">{t.title}</h2>
-              <p className="text-gray-600 mt-1">{t.subtitle}</p>
-              <button
-                aria-label="Close"
-                onClick={closeAndRemember}
-                className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100"
-              >
-                <XMarkIcon className="h-5 w-5 text-gray-600" />
-              </button>
-            </div>
-
-            {/* Options Grid */}
-            <div className="grid grid-cols-2 gap-3 sm:gap-4 p-5 sm:p-8">
-              {t.cards.map((card) => (
-                <button
-                  key={card.title}
-                  onClick={() => go(card.href)}
-                  className="group text-left rounded-2xl border border-gray-200 shadow hover:shadow-lg transition-all bg-white overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-300"
-                >
-                  <div className={`h-1.5 w-full bg-gradient-to-r ${card.color}`} />
-                  <div className="p-4 sm:p-5 flex items-start gap-3 sm:gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center">
-                      <card.icon className="h-6 w-6 text-primary-600" />
-                    </div>
-                    <div className="min-w-0">
-                      <div className="text-base sm:text-lg font-bold text-gray-900 truncate">{card.title}</div>
-                      <div className="text-sm text-gray-600 line-clamp-2">{card.desc}</div>
-                      <div className="mt-2 text-primary-700 text-sm font-semibold group-hover:underline">{card.cta}</div>
-                    </div>
+          {/* Mobile Layout */}
+          <div className="block sm:hidden h-full overflow-y-auto">
+            <motion.div
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 50, opacity: 0 }}
+              className="min-h-full bg-white flex flex-col"
+            >
+              {/* Mobile Header */}
+              <div className="relative px-6 pt-8 pb-6 border-b bg-gradient-to-br from-primary-50 to-secondary-50">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <HeartIcon className="h-8 w-8 text-white" />
                   </div>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-2">{t.title}</h2>
+                  <p className="text-gray-600">{t.subtitle}</p>
+                </div>
+                <button
+                  aria-label="Close"
+                  onClick={closeAndRemember}
+                  className="absolute top-4 right-4 p-2 rounded-full bg-white/80 hover:bg-white transition-colors"
+                >
+                  <XMarkIcon className="h-5 w-5 text-gray-600" />
                 </button>
-              ))}
-            </div>
+              </div>
 
-            {/* Footer */}
-            <div className="px-5 sm:px-8 pb-6 sm:pb-8">
-              <button
-                onClick={closeAndRemember}
-                className="w-full sm:w-auto sm:inline-flex text-gray-600 hover:text-gray-800 text-sm font-medium"
-              >
-                {t.skip}
-              </button>
-            </div>
-          </motion.div>
+              {/* Mobile Cards - Single Column */}
+              <div className="flex-1 p-6 space-y-4">
+                {t.cards.map((card, index) => (
+                  <motion.button
+                    key={card.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 * index }}
+                    onClick={() => go(card.href)}
+                    className="group w-full text-left rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all bg-white overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-300 active:scale-[0.98]"
+                  >
+                    <div className={`h-2 w-full bg-gradient-to-r ${card.color}`} />
+                    <div className="p-5 flex items-center gap-4">
+                      <div className="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center flex-shrink-0">
+                        <card.icon className="h-7 w-7 text-primary-600" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-lg font-bold text-gray-900 mb-1">{card.title}</div>
+                        <div className="text-sm text-gray-600 leading-relaxed">{card.desc}</div>
+                        <div className="mt-3 inline-flex items-center text-primary-700 text-sm font-semibold group-hover:underline">
+                          {card.cta}
+                          <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.button>
+                ))}
+              </div>
+
+              {/* Mobile Footer */}
+              <div className="p-6 border-t bg-gray-50">
+                <button
+                  onClick={closeAndRemember}
+                  className="w-full py-3 px-4 text-gray-600 hover:text-gray-800 text-center font-medium rounded-xl hover:bg-gray-100 transition-colors"
+                >
+                  {t.skip}
+                </button>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Desktop Layout */}
+          <div className="hidden sm:flex items-center justify-center min-h-full p-4">
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="bg-white max-w-4xl w-full rounded-2xl shadow-2xl overflow-hidden"
+            >
+              {/* Desktop Header */}
+              <div className="relative px-8 pt-8 pb-6 border-b bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+                <div className="text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <HeartIcon className="h-10 w-10 text-white" />
+                  </div>
+                  <h2 className="text-3xl font-bold text-gray-900 mb-3">{t.title}</h2>
+                  <p className="text-lg text-gray-600">{t.subtitle}</p>
+                </div>
+                <button
+                  aria-label="Close"
+                  onClick={closeAndRemember}
+                  className="absolute top-6 right-6 p-2 rounded-full hover:bg-gray-100 transition-colors"
+                >
+                  <XMarkIcon className="h-6 w-6 text-gray-600" />
+                </button>
+              </div>
+
+              {/* Desktop Cards - 2x2 Grid */}
+              <div className="p-8">
+                <div className="grid grid-cols-2 gap-6">
+                  {t.cards.map((card, index) => (
+                    <motion.button
+                      key={card.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.1 * index }}
+                      onClick={() => go(card.href)}
+                      className="group text-left rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 bg-white overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-300 hover:scale-[1.02] active:scale-[0.98]"
+                    >
+                      <div className={`h-2 w-full bg-gradient-to-r ${card.color}`} />
+                      <div className="p-6 flex items-start gap-4">
+                        <div className="w-16 h-16 rounded-2xl bg-gray-50 flex items-center justify-center flex-shrink-0">
+                          <card.icon className="h-8 w-8 text-primary-600" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="text-xl font-bold text-gray-900 mb-2">{card.title}</div>
+                          <div className="text-gray-600 leading-relaxed mb-4">{card.desc}</div>
+                          <div className="inline-flex items-center text-primary-700 font-semibold group-hover:underline">
+                            {card.cta}
+                            <svg className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </motion.button>
+                  ))}
+                </div>
+
+                {/* Desktop Footer */}
+                <div className="mt-8 text-center">
+                  <button
+                    onClick={closeAndRemember}
+                    className="px-6 py-3 text-gray-600 hover:text-gray-800 font-medium rounded-xl hover:bg-gray-100 transition-colors"
+                  >
+                    {t.skip}
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>
