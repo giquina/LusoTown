@@ -49,10 +49,6 @@ export default function LiveStreamingPage() {
   const [currentStream, setCurrentStream] = useState<any>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   
-  // Fix scroll position on page load
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   const [viewerCount, setViewerCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [showMiniPlayer, setShowMiniPlayer] = useState(false);
