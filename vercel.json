@@ -1,10 +1,7 @@
 {
   "framework": "nextjs",
-  "rootDirectory": "web-app",
-  "installCommand": "npx -y npm@9 install --no-audit --no-fund --loglevel=error --legacy-peer-deps",
-  "buildCommand": "npx -y npm@9 run build",
-  "devCommand": "npm run dev",
-  "outputDirectory": ".next",
+  "buildCommand": "npm run build --workspace=web-app",
+  "outputDirectory": "web-app/.next",
   "headers": [
     {
       "source": "/(.*)",
