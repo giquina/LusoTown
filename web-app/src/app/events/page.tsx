@@ -974,8 +974,8 @@ export default function EventsPage() {
                   )}
 
                 {/* Controls */}
-                <div className="flex items-center justify-between mb-8">
-                  <div className="flex items-center gap-4">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 px-4 sm:px-0">
+                  <div className="flex items-center gap-4 w-full sm:w-auto">
                     <button
                       onClick={() => setShowFilters(true)}
                       className="lg:hidden flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-md hover:shadow-lg transition-shadow"
@@ -984,7 +984,7 @@ export default function EventsPage() {
                       <span>{isPortuguese ? "Filtros" : "Filters"}</span>
                     </button>
 
-                    <div className="text-gray-600">
+                    <div className="text-gray-600 text-sm sm:text-base">
                       {loading
                         ? isPortuguese
                           ? "Carregando..."
@@ -1012,7 +1012,7 @@ export default function EventsPage() {
                   <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value as any)}
-                    className="bg-white border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary-400"
+                    className="bg-white border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 w-full sm:w-auto min-w-[120px]"
                   >
                     <option value="date">
                       {isPortuguese ? "Ordenar por Data" : "Sort by Date"}
@@ -1083,7 +1083,7 @@ export default function EventsPage() {
 
                 {/* Main Content Grid */}
                 {loading ? (
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-0">
                     {[1, 2, 3, 4, 5, 6].map((i) => (
                       <div
                         key={i}

@@ -43,13 +43,13 @@ const getAuthenticatedNavigationLinks = (t: any) => [
 const getMoreDropdownLinks = (t: any) => ({
   community: [
     { name: "Events & Culture", href: "/events" },
+    { name: "Cultural Calendar", href: "/cultural-calendar" },
     { name: "Community", href: "/community" },
+    { name: "Language Exchange", href: "/language-exchange" },
+    { name: "Portuguese Jobs", href: "/jobs" },
+    { name: "Housing Assistance", href: "/housing" },
     { name: "Become a Host", href: "/host" },
     { name: "Business Directory", href: "/directory" },
-    {
-      name: t("footer.housing-assistance", "Housing Assistance"),
-      href: "/housing-assistance",
-    },
     {
       name: t("footer.neighborhood-groups", "Neighborhood Groups"),
       href: "/neighborhood-groups",

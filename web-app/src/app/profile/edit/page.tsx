@@ -13,7 +13,7 @@ import {
   HeartIcon
 } from '@heroicons/react/24/outline'
 import { getCurrentUser, getCurrentUserProfile, UserProfile, updateProfile, getCulturalPreferences, saveCulturalPreferences } from '@/lib/supabase'
-// ProfileEditForm removed during cleanup
+import ProfileEditForm from '@/components/ProfileEditForm'
 
 // Define interest categories
 const INTEREST_CATEGORIES = {

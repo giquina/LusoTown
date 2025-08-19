@@ -162,7 +162,8 @@ export default function MembershipTiers({
     setIsCreating(tierId);
     try {
       await createSubscription(
-        tierId === "community" ? "community" : "ambassador"
+        tierId === "community" ? "community" : tierId === "ambassador" ? "ambassador" : "community",
+        "monthly"
       );
     } catch (error) {
       console.error("Error creating subscription:", error);

@@ -311,12 +311,12 @@ const ImprovedEventCard = ({
               </div>
             )}
 
-            {/* CTA buttons - compact and inline */}
+            {/* CTA buttons - equal sizing and consistent styling */}
             <div className="mt-auto">
               <div className="flex gap-2">
                 <a
                   href={`/events/${event.id}`}
-                  className="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-2.5 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-sm"
+                  className="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium py-3 px-3 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-sm min-h-[44px] flex items-center justify-center"
                 >
                   {isFull
                     ? isPortuguese
@@ -345,7 +345,7 @@ const ImprovedEventCard = ({
                   iconOnly={false}
                   size="small"
                   variant="outline"
-                  className="flex-1 text-sm py-2.5 px-4 whitespace-nowrap"
+                  className="flex-1 text-sm font-medium py-3 px-3 min-h-[44px] border-2 border-gray-300 text-gray-700 hover:border-primary-500 hover:text-primary-600 rounded-lg transition-all duration-200 flex items-center justify-center"
                 />
               </div>
             </div>

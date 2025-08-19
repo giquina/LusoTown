@@ -524,13 +524,13 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
     }
   })()
 
-  // Usage limits based on tier
+  // Usage limits based on tier - Optimized for Portuguese community conversion
   const usageLimits: SubscriptionUsageLimits = (() => {
     switch (membershipTier) {
       case 'free':
         return {
-          dailyMatches: 2, // Reduced from 3 to 2 for higher conversion pressure
-          monthlyMessages: 5, // Reduced from 10 to 5 for immediate upgrade urgency
+          dailyMatches: 2, // Optimized for conversion - Portuguese community values connections
+          monthlyMessages: 3, // Further reduced to create upgrade urgency
           premiumEvents: 0,
           livestreamHours: 0,
           hasUnlimitedAccess: false

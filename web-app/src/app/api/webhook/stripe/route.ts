@@ -80,9 +80,20 @@ async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) 
 
 async function handleSubscriptionCreated(subscription: Stripe.Subscription) {
   const userId = subscription.metadata?.lusotown_user_id
+  const tier = subscription.metadata?.lusotown_tier || 'community'
+  const planType = subscription.metadata?.lusotown_plan_type || 'monthly'
+  
   if (!userId) return
 
-  console.log('Subscription created for user:', userId)
+  console.log('Subscription created for user:', userId, 'tier:', tier, 'planType:', planType)
+
+  // Determine amount based on tier and plan type
+  const pricing = {
+    community: { monthly: 19.99, yearly: 199.99 },
+    ambassador: { monthly: 39.99, yearly: 399.99 }
+  }
+  
+  const amount = pricing[tier as keyof typeof pricing]?.[planType as keyof typeof pricing.community] || 19.99
 
   // Create subscription record
   await supabase
@@ -92,10 +103,11 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription) {
       stripe_subscription_id: subscription.id,
       stripe_customer_id: subscription.customer as string,
       status: subscription.status as any,
-      plan_type: 'monthly',
+      tier: tier,
+      plan_type: planType,
       current_period_start: new Date((subscription as any).current_period_start * 1000).toISOString(),
       current_period_end: new Date((subscription as any).current_period_end * 1000).toISOString(),
-      amount: 19.99,
+      amount: amount,
       currency: 'GBP',
     })
 
