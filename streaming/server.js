@@ -14,6 +14,7 @@ const { Server } = require('socket.io');
 const path = require('path');
 const fs = require('fs');
 const Redis = require('redis');
+const adsRouter = require('./routes/ads');
 
 // Configuration for Portuguese community streaming
 const config = {
@@ -348,6 +349,9 @@ app.post('/api/streaming/heartbeat', (req, res) => {
     portuguese_community: 'active'
   });
 });
+
+// Ad Revenue API routes
+app.use('/api/ads', adsRouter);
 
 // WebSocket for real-time Portuguese community features
 io.on('connection', (socket) => {

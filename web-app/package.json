@@ -57,7 +57,10 @@
     "redis": "^5.8.1",
     "socket.io": "^4.8.1",
     "socket.io-client": "^4.8.1",
-    "stripe": "^18.4.0"
+    "stripe": "^18.4.0",
+    "video.js": "^8.12.0",
+    "videojs-contrib-ads": "^7.2.1",
+    "videojs-ima": "^2.1.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.54.2",
