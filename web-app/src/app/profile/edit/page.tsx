@@ -13,7 +13,7 @@ import {
   HeartIcon
 } from '@heroicons/react/24/outline'
 import { getCurrentUser, getCurrentUserProfile, UserProfile, updateProfile, getCulturalPreferences, saveCulturalPreferences } from '@/lib/supabase'
-import ProfileEditForm from '@/components/ProfileEditForm'
+// ProfileEditForm removed during cleanup
 
 // Define interest categories
 const INTEREST_CATEGORIES = {
@@ -423,37 +423,24 @@ function ProfileEditPageContent() {
                 )}
                 
                 {activeTab === 'cultural' && (
-                  <PortugueseCulturalPreferences
-                    initialData={culturalPreferences}
-                    onChange={handleCulturalPreferencesChange}
-                    onSave={handleSaveCulturalPreferences}
-                    saving={savingCultural}
-                    showCompletion={true}
-                  />
+                  <div className="bg-white rounded-xl p-6 shadow-sm">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Portuguese Cultural Preferences</h3>
+                    <p className="text-gray-600">Cultural preferences component temporarily removed during cleanup</p>
+                  </div>
                 )}
                 
                 {activeTab === 'photos' && (
-                  <ProfilePhotoManager
-                    profile={profile}
-                    onUpdate={loadProfileData}
-                  />
+                  <div className="bg-white rounded-xl p-6 shadow-sm">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Photo Management</h3>
+                    <p className="text-gray-600">Photo manager component temporarily removed during cleanup</p>
+                  </div>
                 )}
                 
                 {activeTab === 'completion' && currentUser && (
-                  <ProfileCompletion
-                    userId={currentUser.id}
-                    profile={profile}
-                    onStepClick={(stepId) => {
-                      // Navigate to appropriate tab based on step
-                      if (['profile_picture'].includes(stepId)) {
-                        setActiveTab('photos')
-                      } else if (['cultural_preferences'].includes(stepId)) {
-                        setActiveTab('cultural')
-                      } else {
-                        setActiveTab('profile')
-                      }
-                    }}
-                  />
+                  <div className="bg-white rounded-xl p-6 shadow-sm">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">Profile Completion</h3>
+                    <p className="text-gray-600">Profile completion component temporarily removed during cleanup</p>
+                  </div>
                 )}
               </motion.div>
             </AnimatePresence>

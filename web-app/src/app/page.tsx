@@ -80,7 +80,6 @@ export default function Home() {
       <main className="min-h-screen w-full overflow-x-hidden">
         <div className="pt-16 w-full">
           <Hero />
-          <PortugueseSpeakersSection />
           <TestimonialsNew />
           <HowItWorks />
           <HowConnectionsWork />

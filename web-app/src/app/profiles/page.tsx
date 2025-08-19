@@ -16,7 +16,7 @@ import { Crown } from 'lucide-react'
 import { authService, User } from '@/lib/auth'
 import { UserProfile } from '@/lib/connections'
 import { profileService, LONDON_AREAS, ALL_INTERESTS } from '@/lib/profile'
-import ProfileCard from '@/components/ProfileCard'
+// ProfileCard removed during cleanup
 import { toast } from 'react-hot-toast'
 import Footer from '@/components/Footer'
 
@@ -434,11 +434,11 @@ function ProfilesPageContent() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <ProfileCard
-                    profile={profile}
-                    currentUserId={currentUser?.id || ''}
-                    onClick={() => handleProfileClick(profile.id)}
-                  />
+                  <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow cursor-pointer"
+                       onClick={() => handleProfileClick(profile.id)}>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{profile.firstName} {profile.lastName}</h3>
+                    <p className="text-gray-600">{profile.area || 'London'}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>
