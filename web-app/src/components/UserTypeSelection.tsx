@@ -61,24 +61,96 @@ export default function UserTypeSelection() {
   const strings = {
     en: {
       title: 'Welcome to LusoTown',
-      subtitle: "Choose what you're here for",
-      skip: 'Skip for now',
+      subtitle: "London's Portuguese community platform • 750+ members across UK",
+      skip: 'Explore all features',
       cards: [
-        { title: 'Meet Your Match', desc: 'Connect with Portuguese speakers', cta: 'Go to Matches', href: '/matches', icon: HeartIcon, color: 'from-secondary-600 via-action-600 to-accent-600' },
-        { title: 'Events', desc: 'Explore Portuguese events in London', cta: 'Go to Events', href: '/events', icon: CalendarDaysIcon, color: 'from-primary-600 via-secondary-600 to-action-600' },
-  { title: 'Streaming', desc: 'Watch live Portuguese content', cta: 'Go to Streaming', href: '/live', icon: PlayCircleIcon, color: 'from-accent-600 via-action-600 to-secondary-600' },
-        { title: 'Tools', desc: 'Creator and business tools', cta: 'Go to Tools', href: '/tools', icon: WrenchScrewdriverIcon, color: 'from-premium-600 via-secondary-600 to-action-600' },
+        { 
+          title: 'Meet Your Match', 
+          desc: 'Find love, friendships & business connections with Portuguese speakers who share your values, culture, and location in London', 
+          cta: 'Start Matching', 
+          href: '/matches', 
+          icon: HeartIcon, 
+          color: 'from-secondary-600 via-action-600 to-accent-600',
+          benefit: '2,750+ verified Portuguese speakers',
+          stats: '94% cultural compatibility'
+        },
+        { 
+          title: 'Portuguese Events', 
+          desc: 'Discover authentic fado nights, Santos Populares, football screenings, business networking & cultural celebrations across London', 
+          cta: 'Browse Events', 
+          href: '/events', 
+          icon: CalendarDaysIcon, 
+          color: 'from-primary-600 via-secondary-600 to-action-600',
+          benefit: '150+ monthly events',
+          stats: 'Hosted by Portuguese speakers'
+        },
+        { 
+          title: 'LusoTown TV', 
+          desc: 'Watch live Portuguese cultural content, business workshops, fado performances & community discussions - exclusive to UK Portuguese speakers', 
+          cta: 'Watch Now', 
+          href: '/live', 
+          icon: PlayCircleIcon, 
+          color: 'from-accent-600 via-action-600 to-secondary-600',
+          benefit: '24/7 Portuguese content',
+          stats: 'Live chat with community'
+        },
+        { 
+          title: 'Community Features', 
+          desc: 'Access Portuguese-led London tours, student support (8 university partnerships), housing assistance & business directory', 
+          cta: 'Discover More', 
+          href: '/community', 
+          icon: WrenchScrewdriverIcon, 
+          color: 'from-premium-600 via-secondary-600 to-action-600',
+          benefit: 'Comprehensive support system',
+          stats: '8 UK university partnerships'
+        },
       ],
     },
     pt: {
       title: 'Bem-vindo à LusoTown',
-      subtitle: 'O que procuras hoje?',
-      skip: 'Saltar por agora',
+      subtitle: 'Plataforma da comunidade portuguesa em Londres • 750+ membros no Reino Unido',
+      skip: 'Explorar todas as funcionalidades',
       cards: [
-        { title: 'Encontra o Teu Match', desc: 'Conecta com falantes de português', cta: 'Ir para Matches', href: '/matches', icon: HeartIcon, color: 'from-secondary-600 via-action-600 to-accent-600' },
-        { title: 'Eventos', desc: 'Explora eventos portugueses em Londres', cta: 'Ir para Eventos', href: '/events', icon: CalendarDaysIcon, color: 'from-primary-600 via-secondary-600 to-action-600' },
-  { title: 'Streaming', desc: 'Vê conteúdo português ao vivo', cta: 'Ir para Streaming', href: '/live', icon: PlayCircleIcon, color: 'from-accent-600 via-action-600 to-secondary-600' },
-        { title: 'Ferramentas', desc: 'Ferramentas para criadores e negócios', cta: 'Ir para Ferramentas', href: '/tools', icon: WrenchScrewdriverIcon, color: 'from-premium-600 via-secondary-600 to-action-600' },
+        { 
+          title: 'Encontra o Teu Match', 
+          desc: 'Encontra amor, amizades e conexões de negócio com falantes de português que partilham os teus valores, cultura e localização em Londres', 
+          cta: 'Começar Matching', 
+          href: '/matches', 
+          icon: HeartIcon, 
+          color: 'from-secondary-600 via-action-600 to-accent-600',
+          benefit: '2.750+ falantes de português verificados',
+          stats: '94% compatibilidade cultural'
+        },
+        { 
+          title: 'Eventos Portugueses', 
+          desc: 'Descobre noites de fado autênticas, Santos Populares, jogos de futebol, networking de negócios e celebrações culturais por Londres', 
+          cta: 'Ver Eventos', 
+          href: '/events', 
+          icon: CalendarDaysIcon, 
+          color: 'from-primary-600 via-secondary-600 to-action-600',
+          benefit: '150+ eventos mensais',
+          stats: 'Apresentados por falantes de português'
+        },
+        { 
+          title: 'LusoTown TV', 
+          desc: 'Vê conteúdo cultural português ao vivo, workshops de negócios, apresentações de fado e discussões comunitárias - exclusivo para portugueses no Reino Unido', 
+          cta: 'Ver Agora', 
+          href: '/live', 
+          icon: PlayCircleIcon, 
+          color: 'from-accent-600 via-action-600 to-secondary-600',
+          benefit: 'Conteúdo português 24/7',
+          stats: 'Chat ao vivo com a comunidade'
+        },
+        { 
+          title: 'Funcionalidades Comunitárias', 
+          desc: 'Acede a tours de Londres liderados por portugueses, apoio estudantil (8 parcerias universitárias), assistência habitacional e diretório de negócios', 
+          cta: 'Descobrir Mais', 
+          href: '/community', 
+          icon: WrenchScrewdriverIcon, 
+          color: 'from-premium-600 via-secondary-600 to-action-600',
+          benefit: 'Sistema de apoio abrangente',
+          stats: '8 parcerias universitárias no Reino Unido'
+        },
       ],
     },
   } as const
@@ -134,14 +206,20 @@ export default function UserTypeSelection() {
                     className="group w-full text-left rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all bg-white overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-300 active:scale-[0.98]"
                   >
                     <div className={`h-2 w-full bg-gradient-to-r ${card.color}`} />
-                    <div className="p-5 flex items-center gap-4">
-                      <div className="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center flex-shrink-0">
-                        <card.icon className="h-7 w-7 text-primary-600" />
+                    <div className="p-5">
+                      <div className="flex items-start gap-4 mb-3">
+                        <div className="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center flex-shrink-0">
+                          <card.icon className="h-7 w-7 text-primary-600" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="text-lg font-bold text-gray-900 mb-1">{card.title}</div>
+                          <div className="text-xs text-primary-600 font-medium mb-2">{card.benefit}</div>
+                        </div>
                       </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="text-lg font-bold text-gray-900 mb-1">{card.title}</div>
-                        <div className="text-sm text-gray-600 leading-relaxed">{card.desc}</div>
-                        <div className="mt-3 inline-flex items-center text-primary-700 text-sm font-semibold group-hover:underline">
+                      <div className="text-sm text-gray-600 leading-relaxed mb-3">{card.desc}</div>
+                      <div className="flex items-center justify-between">
+                        <div className="text-xs text-gray-500 font-medium">{card.stats}</div>
+                        <div className="inline-flex items-center text-primary-700 text-sm font-semibold group-hover:underline">
                           {card.cta}
                           <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -204,13 +282,19 @@ export default function UserTypeSelection() {
                       className="group text-left rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 bg-white overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-300 hover:scale-[1.02] active:scale-[0.98]"
                     >
                       <div className={`h-2 w-full bg-gradient-to-r ${card.color}`} />
-                      <div className="p-6 flex items-start gap-4">
-                        <div className="w-16 h-16 rounded-2xl bg-gray-50 flex items-center justify-center flex-shrink-0">
-                          <card.icon className="h-8 w-8 text-primary-600" />
+                      <div className="p-6">
+                        <div className="flex items-start gap-4 mb-4">
+                          <div className="w-16 h-16 rounded-2xl bg-gray-50 flex items-center justify-center flex-shrink-0">
+                            <card.icon className="h-8 w-8 text-primary-600" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="text-xl font-bold text-gray-900 mb-2">{card.title}</div>
+                            <div className="text-sm text-primary-600 font-medium mb-1">{card.benefit}</div>
+                            <div className="text-xs text-gray-500 font-medium">{card.stats}</div>
+                          </div>
                         </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="text-xl font-bold text-gray-900 mb-2">{card.title}</div>
-                          <div className="text-gray-600 leading-relaxed mb-4">{card.desc}</div>
+                        <div className="text-gray-600 leading-relaxed mb-4">{card.desc}</div>
+                        <div className="flex items-center justify-end">
                           <div className="inline-flex items-center text-primary-700 font-semibold group-hover:underline">
                             {card.cta}
                             <svg className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

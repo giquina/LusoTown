@@ -49,6 +49,10 @@ export interface PortugueseBusiness {
   lastUpdated: string
   featuredUntil?: string
   communityBadges: BusinessBadge[]
+  
+  // Geolocation (optional - can be calculated from address)
+  latitude?: number
+  longitude?: number
 }
 
 export interface BusinessVerification {

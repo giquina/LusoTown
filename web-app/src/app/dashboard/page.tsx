@@ -14,6 +14,7 @@ import UnifiedActivity from '@/components/UnifiedActivity'
 import SmartRecommendations from '@/components/SmartRecommendations'
 import QuickActions from '@/components/QuickActions'
 import EcosystemStats from '@/components/EcosystemStats'
+import SocialFeed from '@/components/social/SocialFeed'
 import { 
   Heart, 
   Calendar, 
@@ -37,7 +38,8 @@ import {
   Activity,
   Network,
   Car,
-  Sparkles
+  Sparkles,
+  Twitter
 } from 'lucide-react'
 
 interface Event {
@@ -283,6 +285,7 @@ export default function Dashboard() {
                   { id: 'networking', label: language === 'pt' ? 'Rede' : 'Network', icon: <Network className="w-4 h-4" /> },
                   { id: 'services', label: language === 'pt' ? 'Serviços' : 'Services', icon: <Car className="w-4 h-4" /> },
                   { id: 'events', label: language === 'pt' ? 'Eventos' : 'Events', icon: <Users className="w-4 h-4" /> },
+                  { id: 'social', label: language === 'pt' ? 'Comunidade' : 'Social', icon: <Twitter className="w-4 h-4" /> },
                   { id: 'favorites', label: language === 'pt' ? 'Favoritos' : 'Favorites', icon: <Heart className="w-4 h-4" /> },
                   { id: 'profile', label: language === 'pt' ? 'Perfil' : 'Profile', icon: <Settings className="w-4 h-4" /> }
                 ].map(tab => (
@@ -443,6 +446,71 @@ export default function Dashboard() {
                         {language === 'pt' ? 'Acessar Suporte' : 'Access Support'}
                       </button>
                     </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'social' && (
+              <div className="space-y-6">
+                <div className="bg-white rounded-xl shadow-sm p-6">
+                  <div className="flex items-center justify-between mb-6">
+                    <div>
+                      <h2 className="text-xl font-semibold text-gray-900">
+                        {t('dashboard.social.title')}
+                      </h2>
+                      <p className="text-gray-600">
+                        {t('dashboard.social.subtitle')}
+                      </p>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-10 h-10 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-lg flex items-center justify-center">
+                        <Twitter className="w-5 h-5 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Social Feed Integration */}
+                  <SocialFeed 
+                    initialFilter="all"
+                    className="mt-6"
+                  />
+                </div>
+                
+                {/* Additional Social Features */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                      {t('dashboard.social.share_events')}
+                    </h3>
+                    <p className="text-gray-600 mb-4">
+                      {t('dashboard.social.share_events_desc')}
+                    </p>
+                    <button 
+                      onClick={() => setActiveTab('events')}
+                      className="w-full px-4 py-2 bg-[#1DA1F2] text-white rounded-lg hover:bg-[#1a91da] transition-colors flex items-center justify-center space-x-2"
+                    >
+                      <Twitter className="w-4 h-4" />
+                      <span>{t('dashboard.social.view_events')}</span>
+                    </button>
+                  </div>
+                  
+                  <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                      {t('dashboard.social.follow_lusotown')}
+                    </h3>
+                    <p className="text-gray-600 mb-4">
+                      {t('dashboard.social.follow_desc')}
+                    </p>
+                    <a
+                      href="https://twitter.com/lusotown"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full px-4 py-2 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] text-white rounded-lg hover:shadow-lg transition-all flex items-center justify-center space-x-2"
+                    >
+                      <Twitter className="w-4 h-4" />
+                      <span>{t('dashboard.social.follow')}</span>
+                    </a>
                   </div>
                 </div>
               </div>

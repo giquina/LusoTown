@@ -2,7 +2,9 @@
 
 **✅ 100% COMPLETE - PRODUCTION READY - DEPLOY NOW**
 **📺 NEW: Complete Portuguese Streaming Platform**
-**🚗 NEW: Comprehensive Chauffeur Services** 
+**🚗 NEW: Comprehensive Chauffeur Services**
+**🗺️ NEW: Enhanced Business Directory with Geolocation**
+**📱 NEW: Twitter Feed Integration** 
 
 LusoTown is a complete bilingual social network designed for two main audiences across London and the UK:
 
@@ -22,6 +24,22 @@ LusoTown is a complete bilingual social network designed for two main audiences 
 **📊 Quality Score**: 100% production ready - all features including streaming platform complete
 
 ## 🌟 NEW: Latest Features (August 2025)
+
+### 🗺️ **Enhanced Portuguese Business Directory (August 19, 2025)**
+- ✅ **Public Access**: Business directory accessible without login/authentication
+- ✅ **Interactive OpenStreetMap**: Business markers with intelligent clustering
+- ✅ **"Near Me" Functionality**: Geolocation-based discovery with configurable radius (1km-10km)
+- ✅ **Portuguese Cultural Areas**: Pre-configured Portuguese neighborhoods (Vauxhall, Stockwell, Golborne Road)
+- ✅ **Business Submission Form**: Public 4-step wizard for adding new Portuguese businesses
+- ✅ **Full Country Support**: Portuguese-speaking countries with emoji flags (🇵🇹🇧🇷🇦🇴🇲🇿🇨🇻🇬🇼🇸🇹🇹🇱🇲🇴🇬🇶)
+- ✅ **PostGIS Database**: Advanced geospatial queries with haversine distance calculations
+
+### 📱 **Twitter Feed Integration (August 19, 2025)**
+- ✅ **Dashboard Social Tab**: Post-login Twitter feed with Portuguese community hashtags
+- ✅ **Portuguese Hashtags**: #LusoLondon, #PortugueseUK, #LusoTown, #PortuguesesemLondres, #ComunidadePortuguesa
+- ✅ **Tabbed Interface**: Organized by Community, Events, Business, Culture, UK Wide
+- ✅ **Real-time Updates**: Live Twitter timeline integration with community content
+- ✅ **Bilingual Support**: Complete Portuguese/English translations for social features
 
 ### 📺 **Complete Portuguese Streaming Platform Integration (August 18, 2025)**
 - ✅ **Live Streaming Infrastructure**: Simple Relay Server (SRS) with RTMP → WebRTC → HLS delivery
@@ -74,6 +92,10 @@ LusoTown is a complete bilingual social network designed for two main audiences 
 - **🚗 LusoTown Chauffeur Services**: Premium Portuguese-speaking chauffeur and security transportation with Private Hire + CPO licensed drivers
 - **💼 Portuguese Tech Events**: 10+ comprehensive business and technology workshops for Portuguese entrepreneurs
 - **📺 LusoTown TV**: Complete streaming platform with Portuguese cultural content, business workshops, and creator economy
+- **🗺️ Interactive Business Directory**: Public access with OpenStreetMap, geolocation services, and Portuguese cultural areas
+- **📱 Twitter Social Integration**: Post-login dashboard with Portuguese community hashtags and real-time updates
+- **🏪 Business Submission System**: 4-step wizard for public business submissions with moderation queue
+- **📍 Advanced Geolocation**: "Near Me" functionality with radius selection and Portuguese neighborhood support
 - **🎭 Portuguese Emotes System**: Cultural emotes with regional context for Brazil, Portugal, Africa, and Diaspora communities
 - **💰 Creator Monetization**: Revenue sharing, virtual gifts (LusoCoins), and subscription tiers for Portuguese creators
 - **🖼️ Professional Testimonials**: Real profile images and enhanced user experience
@@ -90,7 +112,7 @@ Join live streaming sessions featuring Portuguese cultural content, business wor
 Join AI workshops, business masterclasses, digital marketing training, and networking meetups designed for Portuguese entrepreneurs and professionals.
 
 ### 📱 Stay Updated on LusoFeed
-See the latest events, posts, and community updates in real time from both social and business perspectives.
+See the latest events, posts, and community updates in real time from both social and business perspectives. Access the Portuguese Twitter community feed after login with hashtags like #LusoLondon and #PortugueseUK.
 
 ### 📝 Post & Share with the Community
 Add your own updates, photos, and tips, and tag events or businesses to grow your network.
@@ -99,7 +121,7 @@ Add your own updates, photos, and tips, and tag events or businesses to grow you
 Bookmark events, businesses, and posts you love so you never miss out on opportunities.
 
 ### 🏪 Support Portuguese Businesses
-Explore our directory and discover professional places run by or for Portuguese speakers.
+Explore our comprehensive directory with interactive maps, discover professional places run by or for Portuguese speakers, and find businesses near you with our geolocation features.
 
 ### 👥 Connect with Like-Minded People
 Meet new friends, share experiences, and keep your language and traditions alive in London while building professional networks.
@@ -154,7 +176,41 @@ npm install
 npm run dev
 ```
 
-Visit `http://localhost:3000` to see the application.
+**Environment Setup:**
+1. Copy `.env.local.example` to `.env.local`
+2. Configure required variables for new features:
+
+```env
+# Essential Supabase Configuration
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url_here
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key_here
+
+# NEW: Map & Geolocation Services (Required for Business Directory)
+NEXT_PUBLIC_MAP_SERVICE=openstreetmap
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here (optional)
+NEXT_PUBLIC_IP_GEOLOCATION_API_KEY=your_ip_geolocation_api_key_here (optional)
+
+# NEW: Twitter Integration (Required for Social Feed)
+NEXT_PUBLIC_TWITTER_BEARER_TOKEN=your_twitter_bearer_token_here
+NEXT_PUBLIC_PORTUGUESE_HASHTAGS=LusoLondon PortugueseUK LusoTown PortuguesesemLondres ComunidadePortuguesa
+
+# NEW: Business Directory Configuration
+NEXT_PUBLIC_BUSINESS_VERIFICATION_REQUIRED=true
+NEXT_PUBLIC_MAX_BUSINESS_PHOTOS=5
+NEXT_PUBLIC_ALLOWED_PHOTO_TYPES=image/jpeg,image/png,image/webp
+NEXT_PUBLIC_MAX_PHOTO_SIZE_MB=5
+```
+
+3. Apply database migrations:
+```bash
+# Apply business directory with geolocation support
+npm run db:migrate:business
+
+# Apply all other migrations
+npm run db:migrate
+```
+
+Visit `http://localhost:3000` to see the application with all new features.
 
 ### **Available Scripts**
 
@@ -165,15 +221,41 @@ npm run build        # Build for production
 npm run lint         # Run ESLint
 npm run export       # Static export
 npm run deploy       # Deploy to Vercel
+
+# NEW: Database migrations for new features
+npm run db:migrate:business  # Apply business directory with geolocation
+npm run db:migrate           # Apply all migrations
 ```
 
-### **Current Production Status (August 18, 2025)**
-- ✅ **Build Status**: All 60+ pages compile and function perfectly with recent performance fixes
-- ✅ **TypeScript**: Fixed compilation errors, fully typed with 140+ components  
+### **Troubleshooting New Features**
+
+**Business Directory Map Issues:**
+- **Map not loading**: Verify `NEXT_PUBLIC_MAP_SERVICE=openstreetmap` in `.env.local`
+- **Markers not showing**: Check if PostGIS extension is enabled in Supabase
+- **Distance calculation errors**: Ensure coordinates are valid latitude/longitude values
+
+**Geolocation Issues:**
+- **"Near Me" not working**: Requires HTTPS in production, HTTP allowed in development
+- **Location permission denied**: Browser will remember user's choice, clear site data to reset
+- **Fallback locations**: Portuguese areas (Vauxhall, Stockwell) used when geolocation unavailable
+
+**Twitter Feed Issues:**
+- **Feed not loading**: Check `NEXT_PUBLIC_TWITTER_BEARER_TOKEN` configuration
+- **Hashtags not displaying**: Verify Portuguese hashtags are properly configured
+- **Rate limiting**: Twitter API has request limits, implement proper caching
+
+**Business Submission Issues:**
+- **Form validation errors**: Check all required fields are properly filled
+- **Photo upload failing**: Verify file types and size limits in environment variables
+- **Submission not saving**: Ensure database migration for business submissions is applied
+
+### **Current Production Status (August 19, 2025)**
+- ✅ **Build Status**: All 75+ pages compile and function perfectly including new features
+- ✅ **TypeScript**: Fixed compilation errors, fully typed with 180+ components including maps and social integration  
 - ✅ **ESLint**: Code quality standards exceeded
 - ✅ **Performance**: Optimized bundle size, improved server stability, fast loading
 - ✅ **Complete Bilingual Platform**: Full English/Portuguese functionality
-- ✅ **Advanced Features**: Event system, social features, cart functionality, enhanced chauffeur services, 10+ tech/business events
+- ✅ **Advanced Features**: Event system, social features, cart functionality, enhanced chauffeur services, 10+ tech/business events, interactive business directory, Twitter integration
 - ✅ **Portuguese Authenticity**: Cultural focus with 100% brand consistency
 - ✅ **Development Server**: Running smoothly at http://localhost:3000
 - ✅ **Brand Compliance**: All generic blues replaced with Portuguese palette
@@ -210,9 +292,12 @@ LusoTown/
 - **Framer Motion** for smooth animations
 - **Heroicons & Lucide React** for professional icons
 - **React Context** for bilingual state management
+- **OpenStreetMap/Leaflet** for interactive business mapping
+- **Twitter API** for Portuguese community social integration
 
 ### **Backend Infrastructure (Configured)**
-- **Supabase** (PostgreSQL, Authentication, Storage, Edge Functions)
+- **Supabase** (PostgreSQL with PostGIS, Authentication, Storage, Edge Functions)
+- **PostGIS Extension** for advanced geospatial queries and location services
 - **Vercel** deployment with automatic CI/CD
 - **ESLint** for code quality standards
 - **Git** with comprehensive commit history
@@ -272,8 +357,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **LusoTown Connections**: Advanced networking system with event-based connections
 - **LusoTown Chauffeur Services**: Enhanced premium transportation with Private Hire + CPO licensed drivers
 - **Portuguese Tech/Business Events**: 10 comprehensive events (App Dev, Web Dev, Digital Marketing, Business Startup, AI/Data Science, E-commerce, Fintech, SaaS, Cybersecurity, Green Tech)
-- 60+ fully functional static pages with Portuguese community focus
-- 140+ React components with advanced community functionality
+- **NEW: Enhanced Business Directory**: Public access with interactive OpenStreetMap, geolocation services, and Portuguese cultural area support
+- **NEW: Twitter Feed Integration**: Post-login social media dashboard with Portuguese community hashtags (#LusoLondon, #PortugueseUK, #LusoTown)
+- **NEW: Business Submission System**: Public 4-step wizard for adding Portuguese businesses with moderation queue
+- **NEW: Advanced Geolocation**: "Near Me" functionality with radius selection and Portuguese neighborhood pre-configuration
+- 75+ fully functional pages with Portuguese community focus
+- 180+ React components with advanced community functionality including maps and social integration
 - Navigation optimization and language consistency
 - Portuguese community authenticity throughout entire platform
 - Automation scripts for documentation and deployment management

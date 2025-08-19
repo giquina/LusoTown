@@ -4,8 +4,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 LusoTown: Bilingual Portuguese community platform (London & UK) serving Portuguese speakers with event discovery, group activities, premium matching, transport services, streaming platform, and university partnerships.
 
-**Tech Stack:** Next.js 14 (TypeScript), Tailwind CSS, Supabase, Vercel, Simple Relay Server (SRS) media streaming, YouTube Live integration
-**Status:** Production-ready - 75+ pages, 175+ components, complete bilingual system, enhanced mobile experience, integrated streaming platform
+**Tech Stack:** Next.js 14 (TypeScript), Tailwind CSS, Supabase, Vercel, Simple Relay Server (SRS) media streaming, YouTube Live integration, OpenStreetMap/Leaflet, PostGIS, Twitter API
+**Status:** Production-ready - 75+ pages, 180+ components, complete bilingual system, enhanced mobile experience, integrated streaming platform, public business directory with geolocation, Twitter feed integration
 
 ## Contributor Quick Start
 
@@ -47,12 +47,21 @@ LusoTown: Bilingual Portuguese community platform (London & UK) serving Portugue
   - [MembershipTiers.tsx](web-app/src/components/MembershipTiers.tsx)
   - [MembershipPortal.tsx](web-app/src/components/MembershipPortal.tsx)
   - [PaymentProcessor.tsx](web-app/src/components/PaymentProcessor.tsx)
+- Business Directory & Maps: web-app/src/components/
+  - [BusinessMap.tsx](web-app/src/components/BusinessMap.tsx) - Interactive OpenStreetMap with business markers and clustering
+  - [BusinessSubmissionForm.tsx](web-app/src/components/BusinessSubmissionForm.tsx) - Public business submission form with 4-step wizard
+  - [NearMeButton.tsx](web-app/src/components/NearMeButton.tsx) - Location-based business discovery with radius selector
+- Social Media Integration: web-app/src/components/
+  - [TwitterFeedWidget.tsx](web-app/src/components/TwitterFeedWidget.tsx) - Portuguese community Twitter feed integration
+  - [TwitterHashtagTabs.tsx](web-app/src/components/TwitterHashtagTabs.tsx) - Hashtag category tabs for community content
 - Integration & Journey: web-app/src/components/
   - [PlatformIntegrationContext.tsx](web-app/src/context/PlatformIntegrationContext.tsx)
   - [EcosystemIntegration.tsx](web-app/src/components/EcosystemIntegration.tsx)
   - [ServiceCommunityBridge.tsx](web-app/src/components/ServiceCommunityBridge.tsx)
   - [CrossPlatformEngagementTriggers.tsx](web-app/src/components/CrossPlatformEngagementTriggers.tsx)
   - [ConversionOptimizationEngine.tsx](web-app/src/components/ConversionOptimizationEngine.tsx)
+- Geolocation Services: web-app/src/lib/
+  - [geolocation.ts](web-app/src/lib/geolocation.ts) - Location detection and distance calculations with Portuguese areas
 
 ## Essential Commands
 
@@ -69,6 +78,7 @@ cd web-app && npm run build               # Production build test
 npm run db:migrate           # Apply general database migrations
 npm run db:migrate:streaming # Apply streaming-specific migrations
 npm run db:migrate:streaming:complete # Apply complete streaming migration
+npm run db:migrate:business  # Apply business directory with geolocation migration
 
 # Testing (comprehensive test suite available)
 npm test                    # Run all unit tests
@@ -148,7 +158,7 @@ git status                                         # Check working tree status
 **Structure:** Next.js 14 App Router with TypeScript, React Context state management, Supabase PostgreSQL backend
 **Styling:** Tailwind CSS with Portuguese brand colors, mobile-first responsive layouts with enhanced touch targets
 **State Management:** React Context + localStorage (no Redux), bilingual support via LanguageContext
-**Key Pages:** /my-network, /transport, /matches, /live, /students, /premium-membership, /chauffeur, /events, /streaming, /creator-dashboard
+**Key Pages:** /my-network, /transport, /matches, /live, /students, /premium-membership, /chauffeur, /events, /streaming, /creator-dashboard, /business-directory (public access), /dashboard (post-login with Twitter feed)
 **Contexts:** LanguageContext, CartContext, FavoritesContext, NetworkingContext, SubscriptionContext, PlatformIntegrationContext, NotificationContext, FollowingContext
 **Path Aliases:** `@/*` maps to `./src/*` for clean imports
 **Assets:** Images stored in `/public/images/`, events in `/public/events/`, with fallbacks for missing assets
@@ -243,6 +253,7 @@ Language, Cart, Favorites, Following, Networking, Subscription, PlatformIntegrat
 - `20250818_001_streaming_platform_schema.sql` - Streaming platform database
 - `20250818_002_conversion_funnel_system.sql` - Conversion tracking and analytics
 - `20250818_004_referral_system.sql` - Referral system and rewards
+- `20250819_004_public_business_directory_with_geolocation.sql` - Business directory with PostGIS geospatial support
 
 ## Environment Variables
 
@@ -260,6 +271,15 @@ NEXT_PUBLIC_STREAMING_SERVER_URL=http://localhost:8080
 NEXT_PUBLIC_RTMP_SERVER_URL=rtmp://localhost:1935
 NEXT_PUBLIC_WEBRTC_SERVER_URL=http://localhost:8000
 STREAMING_API_SECRET=your_streaming_api_secret
+
+# Map & Geolocation Services
+NEXT_PUBLIC_MAP_SERVICE=openstreetmap
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
+NEXT_PUBLIC_IP_GEOLOCATION_API_KEY=your_ip_geolocation_api_key_here
+
+# Twitter Integration
+NEXT_PUBLIC_TWITTER_BEARER_TOKEN=your_twitter_bearer_token_here
+NEXT_PUBLIC_PORTUGUESE_HASHTAGS=LusoLondon PortugueseUK LusoTown PortuguesesemLondres ComunidadePortuguesa
 
 # CDN Configuration (Optional for development)
 NEXT_PUBLIC_CDN_ENDPOINT=
@@ -280,6 +300,12 @@ BUNNYCDN_STORAGE_ZONE=
 - Group events section mobile improvements (2x2 button grids)
 - Subscription enforcement for transport services
 - "Portuguese speakers in London" messaging consistency
+- **NEW:** Business directory public access without authentication
+- **NEW:** Interactive map with business markers and clustering
+- **NEW:** "Near Me" geolocation functionality with radius selector
+- **NEW:** Business submission form (4-step wizard)
+- **NEW:** Twitter feed integration with Portuguese hashtags
+- **NEW:** Post-login dashboard with social media tab
 
 **Quality Checks (Always run before committing):**
 - `npm run lint` and `npx tsc --noEmit` (from web-app directory)
@@ -312,6 +338,10 @@ BUNNYCDN_STORAGE_ZONE=
 - Environment variables: Copy .env.local.example to .env.local and configure Supabase keys
 - Component not found: Check path aliases (`@/*` = `./src/*`) and file extensions (.tsx)
 - Portuguese translations missing: Add keys to both `src/i18n/en.json` and `src/i18n/pt.json`
+- **NEW:** Map not loading: Check NEXT_PUBLIC_MAP_SERVICE environment variable
+- **NEW:** Geolocation not working: Ensure HTTPS in production, check browser permissions
+- **NEW:** Business directory empty: Verify PostGIS extension and migration applied
+- **NEW:** Twitter feed not loading: Check NEXT_PUBLIC_TWITTER_BEARER_TOKEN configuration
 
 **Debug Steps:**
 1. Check browser console for React/Next.js errors
@@ -490,4 +520,140 @@ BUNNYCDN_STORAGE_ZONE=
 2. Decide whether to commit or archive documentation files
 3. Test new MessageModerationDashboard component integration
 4. Verify streaming deployment configuration is production-ready
+
+---
+
+## MAJOR NEW FEATURES (August 19, 2025)
+
+### 🗺️ **Enhanced Portuguese Business Directory (August 19, 2025)**
+**Revolutionary Business Discovery Platform:**
+- **Public Access**: Business directory now accessible without login/authentication
+- **Interactive Mapping**: OpenStreetMap integration with business markers and clustering
+- **Geolocation Services**: "Near Me" functionality with distance calculations using haversine formula
+- **Portuguese Cultural Areas**: Pre-configured Portuguese neighborhoods (Vauxhall, Stockwell, Golborne Road)
+- **Business Submission**: Public 4-step wizard for adding new businesses
+- **Country Support**: Full Portuguese-speaking countries with emoji flags (🇵🇹🇧🇷🇦🇴🇲🇿🇨🇻🇬🇼🇸🇹🇹🇱🇲🇴🇬🇶)
+
+**Key Components:**
+- **BusinessMap.tsx**: Interactive map with markers, clustering, and business selection
+- **NearMeButton.tsx**: Location-based discovery with configurable radius (1km, 2km, 5km, 10km)
+- **BusinessSubmissionForm.tsx**: Multi-step business submission with validation
+- **geolocation.ts**: Location services with Portuguese area definitions
+
+**Technical Implementation:**
+- **PostGIS Extension**: Geospatial database support for location queries
+- **Database Migration**: `20250819_004_public_business_directory_with_geolocation.sql`
+- **Distance Calculations**: Haversine formula for accurate distance measurements
+- **Fallback Locations**: Portuguese cultural areas as default search centers
+
+### 📱 **Twitter Feed Integration (August 19, 2025)**
+**Portuguese Community Social Integration:**
+- **Dashboard Integration**: Post-login social media tab with community hashtags
+- **Portuguese Hashtags**: #LusoLondon, #PortugueseUK, #LusoTown, #PortuguesesemLondres
+- **Tabbed Interface**: Organized content by Community, Events, Business, Culture, UK Wide
+- **Real-time Updates**: Live Twitter feed integration with Portuguese community content
+- **Bilingual Support**: Complete Portuguese/English translations
+
+**Key Components:**
+- **TwitterFeedWidget.tsx**: Embedded Twitter timeline with Portuguese hashtags
+- **TwitterHashtagTabs.tsx**: Category-based hashtag organization
+- **Dashboard Integration**: Social media tab accessible post-login
+
+**Community Hashtags:**
+- **#LusoLondon**: General Portuguese London community
+- **#PortugueseUK**: UK-wide Portuguese content  
+- **#LusoTown**: Platform-specific hashtag
+- **#PortuguesesemLondres**: Portuguese community without borders
+- **#ComunidadePortuguesa**: Portuguese community engagement
+
+### 🏢 **Database Architecture Enhancements**
+**PostGIS Geospatial Support:**
+- **PostgreSQL Extension**: PostGIS for advanced geospatial queries
+- **Business Tables**: Enhanced schema with latitude/longitude coordinates
+- **Country Mapping**: Portuguese-speaking countries with flag support
+- **Reviews & Photos**: Business review system with photo upload support
+- **Cultural Events**: Business-hosted cultural events integration
+
+**Migration Features:**
+- **Location Indexing**: Optimized queries for distance-based searches
+- **Public Submissions**: Table for managing public business submissions
+- **Moderation System**: Business verification and approval workflows
+- **Portuguese Areas**: Pre-configured Portuguese cultural neighborhoods
+
+### 🚀 **API Integration Layer**
+**Third-Party Service Integration:**
+- **OpenStreetMap**: Free alternative to Google Maps with full feature parity
+- **Leaflet**: Open-source mapping library with clustering support
+- **Twitter API**: Real-time hashtag monitoring and community content
+- **IP Geolocation**: Fallback location detection for users
+- **Browser Geolocation**: Native location services with privacy controls
+
+**Environment Configuration:**
+```env
+# Map & Geolocation Services
+NEXT_PUBLIC_MAP_SERVICE=openstreetmap
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
+NEXT_PUBLIC_IP_GEOLOCATION_API_KEY=your_ip_geolocation_api_key_here
+
+# Twitter Integration
+NEXT_PUBLIC_TWITTER_BEARER_TOKEN=your_twitter_bearer_token_here
+NEXT_PUBLIC_PORTUGUESE_HASHTAGS=LusoLondon PortugueseUK LusoTown PortuguesesemLondres ComunidadePortuguesa
+
+# Business Directory Configuration
+NEXT_PUBLIC_BUSINESS_VERIFICATION_REQUIRED=true
+NEXT_PUBLIC_MAX_BUSINESS_PHOTOS=5
+NEXT_PUBLIC_ALLOWED_PHOTO_TYPES=image/jpeg,image/png,image/webp
+NEXT_PUBLIC_MAX_PHOTO_SIZE_MB=5
+```
+
+### 🎯 **User Experience Improvements**
+**Enhanced Navigation & Discovery:**
+- **Public Business Access**: No authentication required for business discovery
+- **Location-Based Search**: "Near Me" with radius selection for targeted discovery
+- **Visual Clustering**: Map markers cluster intelligently to prevent overlap
+- **Mobile-First**: Touch-optimized controls and responsive map interface
+- **Portuguese Context**: Cultural areas and neighborhoods prominently featured
+
+**Accessibility Features:**
+- **Keyboard Navigation**: Full keyboard support for map interaction
+- **Screen Reader**: ARIA labels and semantic HTML throughout
+- **High Contrast**: Portuguese brand colors maintain accessibility standards
+- **Mobile Touch Targets**: Enhanced button sizes for mobile interaction
+
+### 💡 **Development Workflow Updates**
+**New Testing Requirements:**
+- **Map Interaction Testing**: Verify marker clustering and business selection
+- **Location Permission Testing**: Test geolocation prompt handling
+- **Offline Fallback Testing**: Verify functionality without location access
+- **Twitter API Testing**: Hashtag filtering and community content display
+- **Business Submission Testing**: Multi-step form validation and submission
+
+**Quality Assurance Checklist:**
+- ✅ Map loads correctly with OpenStreetMap tiles
+- ✅ Business markers display with correct clustering
+- ✅ "Near Me" button requests and handles location permissions
+- ✅ Twitter feed displays Portuguese community hashtags
+- ✅ Business submission form validates all required fields
+- ✅ Portuguese areas are pre-configured and selectable
+- ✅ Mobile interface is fully touch-optimized
+- ✅ Bilingual support works across all new features
+
+### 🔒 **Security & Privacy**
+**Location Privacy:**
+- **User Consent**: Explicit permission requests for location access
+- **Secure Storage**: Location data cached locally, not stored on servers
+- **Fallback Options**: Postal code and area selection when geolocation unavailable
+- **Portuguese Areas**: Pre-configured cultural neighborhoods as safe defaults
+
+**Business Data Protection:**
+- **Moderation Queue**: All public business submissions reviewed before approval
+- **Verification System**: Business authenticity checks and validation
+- **Content Filtering**: Inappropriate content detection and removal
+- **Portuguese Community Focus**: Cultural sensitivity in business categorization
+
+**API Security:**
+- **Rate Limiting**: Twitter API requests throttled to prevent abuse
+- **Token Security**: Environment variables for sensitive API keys
+- **CORS Configuration**: Restricted domains for map tile requests
+- **Input Validation**: Sanitized user inputs across all forms
 

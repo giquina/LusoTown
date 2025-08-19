@@ -288,7 +288,7 @@ export default function Header() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full right-0 mt-2 w-[1100px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-50"
+                    className="absolute top-full right-0 mt-2 w-[1200px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-50"
                   >
                     <div className="grid grid-cols-5 gap-8 px-8">
                       {/* Quick Actions Section */}

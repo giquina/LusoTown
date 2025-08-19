@@ -94,39 +94,53 @@ const EventImage = memo(({ event }: { event: Event }) => {
 });
 EventImage.displayName = "EventImage";
 
-// Helper function to get category icons
+// Helper function to get category icons with Portuguese cultural symbols
 const getCategoryIcon = (category?: string) => {
   const iconMap: Record<string, React.ReactElement> = {
     'fado': <MusicalNoteIcon className="w-6 h-6 text-white" />,
+    'futebol': <div className="w-6 h-6 text-white text-lg">⚽</div>,
+    'gastronomia': <div className="w-6 h-6 text-white text-lg">🍷</div>,
     'business': <UsersIcon className="w-6 h-6 text-white" />,
+    'negocios': <div className="w-6 h-6 text-white text-lg">🤝</div>,
     'cultural': <SparklesIcon className="w-6 h-6 text-white" />,
-    'food': <BeakerIcon className="w-6 h-6 text-white" />,
-    'technology': <CpuChipIcon className="w-6 h-6 text-white" />,
-    'santos_populares': <SparklesIcon className="w-6 h-6 text-white" />
+    'santos_populares': <div className="w-6 h-6 text-white text-lg">🎉</div>,
+    'festa_junina': <div className="w-6 h-6 text-white text-lg">🌽</div>,
+    'literatura': <BookOpenIcon className="w-6 h-6 text-white" />,
+    'musica': <MusicalNoteIcon className="w-6 h-6 text-white" />,
+    'danca': <div className="w-6 h-6 text-white text-lg">💃</div>,
+    'pasteis_de_nata': <div className="w-6 h-6 text-white text-lg">🧁</div>,
+    'vinho_verde': <div className="w-6 h-6 text-white text-lg">🍾</div>,
+    'historia': <div className="w-6 h-6 text-white text-lg">⛵</div>,
+    'tecnologia': <CpuChipIcon className="w-6 h-6 text-white" />,
+    'familia': <div className="w-6 h-6 text-white text-lg">👨‍👩‍👧‍👦</div>
   };
   return iconMap[category?.toLowerCase() || ''] || <CalendarDaysIcon className="w-6 h-6 text-white" />;
 };
 
 const eventStats = [
   {
-    number: "150+",
-    label: "Monthly Experiences",
+    number: "200+",
+    label: "Eventos Mensais | Monthly Events",
     icon: <CalendarDaysIcon className="w-5 h-5" />,
+    flag: "🇵🇹"
   },
   {
-    number: "750+",
-    label: "Portuguese Speakers",
+    number: "1,200+",
+    label: "Lusófonos | Portuguese Speakers",
     icon: <UsersIcon className="w-5 h-5" />,
+    flag: "🇧🇷"
   },
   {
-    number: "96%",
-    label: "Cultural Satisfaction",
+    number: "98%",
+    label: "Satisfação Cultural | Cultural Satisfaction",
     icon: <HeartIcon className="w-5 h-5" />,
+    flag: "🌍"
   },
   {
-    number: "15+",
-    label: "UK Cities",
+    number: "25+",
+    label: "Cidades Reino Unido | UK Cities",
     icon: <MapPinIcon className="w-5 h-5" />,
+    flag: "🇬🇧"
   },
 ];
 
@@ -255,7 +269,7 @@ const EventsShowcase = memo(() => {
           >
             <SparklesIcon className="w-5 h-5 text-primary-600 mr-2" />
             <span className="text-primary-700 font-medium">
-              Discover Amazing Events
+              {language === "pt" ? "Descubra Eventos Incríveis" : "Discover Amazing Events"}
             </span>
           </motion.div>
 
@@ -265,7 +279,9 @@ const EventsShowcase = memo(() => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
           >
-            From Feijoada Lunches to Fado Evenings
+            {language === "pt" 
+              ? "De Almoços de Feijoada a Noites de Fado" 
+              : "From Feijoada Lunches to Fado Evenings"}
           </motion.h2>
 
           <motion.p
@@ -274,13 +290,40 @@ const EventsShowcase = memo(() => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl text-gray-600 max-w-3xl mx-auto"
           >
-            Discover authentic Portuguese-speaking cultural events across the
-            UK. From traditional food festivals to professional networking,
-            connect with your heritage and build lasting friendships.
+            {language === "pt"
+              ? "Descubra eventos culturais autênticos lusófonos pelo Reino Unido. De festivais gastronómicos tradicionais a networking profissional, conecte-se com a sua herança e construa amizades duradouras."
+              : "Discover authentic Portuguese-speaking cultural events across the UK. From traditional food festivals to professional networking, connect with your heritage and build lasting friendships."
+            }
           </motion.p>
+          
+          {/* Portuguese Community Areas in London */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-6 flex flex-wrap justify-center gap-4 text-sm"
+          >
+            {[
+              { area: "Stockwell", icon: "🇵🇹", description: language === "pt" ? "Coração da comunidade" : "Heart of community" },
+              { area: "Vauxhall", icon: "🇧🇷", description: language === "pt" ? "Centro brasileiro" : "Brazilian hub" },
+              { area: "Elephant & Castle", icon: "🇦🇴", description: language === "pt" ? "Diversidade lusófona" : "Lusophone diversity" },
+              { area: "Borough Market", icon: "🍷", description: language === "pt" ? "Sabores portugueses" : "Portuguese flavors" },
+              { area: "Kentish Town", icon: "🎵", description: language === "pt" ? "Noites de fado" : "Fado nights" }
+            ].map((location, index) => (
+              <div
+                key={index}
+                className="bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 shadow-md border border-gray-200"
+              >
+                <span className="text-base">{location.icon}</span>
+                <span className="font-medium text-gray-800">{location.area}</span>
+                <span className="text-gray-600">•</span>
+                <span className="text-gray-600">{location.description}</span>
+              </div>
+            ))}
+          </motion.div>
         </div>
 
-        {/* Stats Bar - Enhanced Multi-Column Layout */}
+        {/* Stats Bar - Enhanced Multi-Column Layout with Portuguese Cultural Elements */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -290,15 +333,16 @@ const EventsShowcase = memo(() => {
           {eventStats.map((stat, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 text-center"
+              className="bg-white rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 text-center border border-gray-100 hover:border-primary-200"
             >
-              <div className="w-12 h-12 bg-primary-100 text-primary-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+              <div className="w-12 h-12 bg-gradient-to-br from-primary-100 to-secondary-100 text-primary-600 rounded-xl flex items-center justify-center mx-auto mb-3 relative">
                 {stat.icon}
+                <div className="absolute -top-1 -right-1 text-lg">{stat.flag}</div>
               </div>
               <div className="text-2xl font-bold text-gray-900 mb-1">
                 {stat.number}
               </div>
-              <div className="text-sm text-gray-600">{stat.label}</div>
+              <div className="text-sm text-gray-600 leading-tight">{stat.label}</div>
             </div>
           ))}
         </motion.div>
@@ -446,34 +490,108 @@ const EventsShowcase = memo(() => {
           ))}
         </div>
 
-        {/* Event Categories Preview */}
+        {/* Portuguese Cultural Event Categories */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-white rounded-2xl p-4 sm:p-6 md:p-7 lg:p-8 shadow-lg mb-12"
+          className="bg-white rounded-2xl p-4 sm:p-6 md:p-7 lg:p-8 shadow-lg mb-12 border border-gray-100"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-            Explore Events by Your Interests
-          </h3>
+          <div className="text-center mb-6">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              {language === "pt" ? "Explore por Categoria Cultural" : "Explore by Cultural Category"}
+            </h3>
+            <p className="text-gray-600">
+              {language === "pt" 
+                ? "Descubra eventos autênticos da cultura lusófona em Londres" 
+                : "Discover authentic Portuguese cultural events across London"}
+            </p>
+          </div>
 
           <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-6 gap-2 xs:gap-3 sm:gap-4 md:gap-5">
             {[
-              { name: "AI & Technology", icon: "🤖", count: "1 available" },
-              { name: "Business Events", icon: "💼", count: "15+ events" },
-              { name: "Cooking Classes", icon: "👨‍🍳", count: "12+ events" },
-              { name: "Transport Services", icon: "🚗", count: "8+ services" },
-              { name: "Cultural Events", icon: "🎭", count: "25+ events" },
-              { name: "Professional Network", icon: "🤝", count: "18+ events" },
+              { 
+                name: language === "pt" ? "Fado & Música" : "Fado & Music", 
+                icon: "🎵", 
+                count: language === "pt" ? "15+ eventos" : "15+ events", 
+                flag: "🇵🇹" 
+              },
+              { 
+                name: language === "pt" ? "Futebol & Desporto" : "Football & Sports", 
+                icon: "⚽", 
+                count: language === "pt" ? "20+ jogos" : "20+ matches", 
+                flag: "🇵🇹" 
+              },
+              { 
+                name: language === "pt" ? "Gastronomia" : "Portuguese Cuisine", 
+                icon: "🍷", 
+                count: language === "pt" ? "25+ eventos" : "25+ events", 
+                flag: "🇧🇷" 
+              },
+              { 
+                name: language === "pt" ? "Santos Populares" : "Popular Saints", 
+                icon: "🎉", 
+                count: language === "pt" ? "12+ festas" : "12+ festivals", 
+                flag: "🇵🇹" 
+              },
+              { 
+                name: language === "pt" ? "Negócios" : "Business Network", 
+                icon: "🤝", 
+                count: language === "pt" ? "30+ eventos" : "30+ events", 
+                flag: "🌍" 
+              },
+              { 
+                name: language === "pt" ? "Pastéis de Nata" : "Pastéis de Nata", 
+                icon: "🧁", 
+                count: language === "pt" ? "8+ workshops" : "8+ workshops", 
+                flag: "🇵🇹" 
+              },
+              { 
+                name: language === "pt" ? "Vinho Verde" : "Wine Tasting", 
+                icon: "🍾", 
+                count: language === "pt" ? "10+ degustações" : "10+ tastings", 
+                flag: "🇵🇹" 
+              },
+              { 
+                name: language === "pt" ? "Literatura" : "Literature", 
+                icon: "📚", 
+                count: language === "pt" ? "6+ eventos" : "6+ events", 
+                flag: "🇧🇷" 
+              },
+              { 
+                name: language === "pt" ? "História Naval" : "Maritime History", 
+                icon: "⛵", 
+                count: language === "pt" ? "4+ tours" : "4+ tours", 
+                flag: "🇵🇹" 
+              },
+              { 
+                name: language === "pt" ? "Dança" : "Traditional Dance", 
+                icon: "💃", 
+                count: language === "pt" ? "12+ aulas" : "12+ classes", 
+                flag: "🇵🇹" 
+              },
+              { 
+                name: language === "pt" ? "Festa Junina" : "June Festivals", 
+                icon: "🌽", 
+                count: language === "pt" ? "6+ festas" : "6+ festivals", 
+                flag: "🇧🇷" 
+              },
+              { 
+                name: language === "pt" ? "Família" : "Family Events", 
+                icon: "👨‍👩‍👧‍👦", 
+                count: language === "pt" ? "18+ eventos" : "18+ events", 
+                flag: "🌍" 
+              }
             ].map((category, index) => (
               <div
                 key={index}
-                className="text-center p-4 rounded-2xl bg-gradient-to-br from-gray-50 to-secondary-50/30 hover:from-secondary-50 hover:to-primary-50 transition-all duration-300 cursor-pointer group border border-gray-100/50 hover:border-secondary-200/50 shadow-xl hover:shadow-2xl"
+                className="text-center p-4 rounded-2xl bg-gradient-to-br from-gray-50 to-secondary-50/30 hover:from-secondary-50 hover:to-primary-50 transition-all duration-300 cursor-pointer group border border-gray-100/50 hover:border-secondary-200/50 shadow-lg hover:shadow-xl relative"
               >
+                <div className="absolute top-2 right-2 text-sm">{category.flag}</div>
                 <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">
                   {category.icon}
                 </div>
-                <div className="text-sm font-semibold text-gray-900 mb-1">
+                <div className="text-sm font-semibold text-gray-900 mb-1 leading-tight">
                   {category.name}
                 </div>
                 <div className="text-xs text-gray-500 font-medium">
@@ -482,39 +600,179 @@ const EventsShowcase = memo(() => {
               </div>
             ))}
           </div>
+          
+          {/* Portuguese Cultural Quote */}
+          <div className="mt-8 text-center p-4 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl border border-primary-100">
+            <p className="text-sm italic text-gray-700 mb-2">
+              {language === "pt" 
+                ? "\"A cultura é a nossa segunda alma\" - Teixeira de Pascoaes"
+                : "\"Culture is our second soul\" - Teixeira de Pascoaes"}
+            </p>
+            <div className="flex items-center justify-center gap-2 text-xs text-gray-600">
+              <span>🇵🇹</span>
+              <span>{language === "pt" ? "Poeta português, 1877-1952" : "Portuguese poet, 1877-1952"}</span>
+            </div>
+          </div>
         </motion.div>
 
-        {/* CTA Section */}
+        {/* Portuguese Community Testimonials */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-white rounded-2xl p-6 md:p-8 shadow-lg mb-12 border border-gray-100"
+        >
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              {language === "pt" ? "Vozes da Nossa Comunidade" : "Voices from Our Community"}
+            </h3>
+            <p className="text-gray-600">
+              {language === "pt" 
+                ? "Histórias reais de lusófonos que encontraram casa em Londres"
+                : "Real stories from Portuguese speakers who found home in London"}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Maria Santos",
+                location: "Stockwell",
+                region: "🇵🇹 Porto",
+                quote: language === "pt" 
+                  ? "\"Finalmente encontrei pessoas que compreendem a saudade. Os eventos de fado são como estar em casa.\""
+                  : "\"I finally found people who understand saudade. The fado nights feel like being home.\"",
+                event: language === "pt" ? "Noites de Fado no Soho" : "Fado Nights in Soho"
+              },
+              {
+                name: "João Silva",
+                location: "Vauxhall", 
+                region: "🇧🇷 São Paulo",
+                quote: language === "pt"
+                  ? "\"A festa junina em Londres foi incrível! As crianças adoraram e senti-me conectado às minhas raízes.\""
+                  : "\"The festa junina in London was amazing! My kids loved it and I felt connected to my roots.\"",
+                event: language === "pt" ? "Festa Junina Brasileira" : "Brazilian June Festival"
+              },
+              {
+                name: "Ana Pereira",
+                location: "Borough Market",
+                region: "🇦🇴 Luanda", 
+                quote: language === "pt"
+                  ? "\"O workshop de pastéis de nata ensinou-me receitas da minha avó. Que experiência especial!\""
+                  : "\"The pastéis de nata workshop taught me my grandmother's recipes. Such a special experience!\"",
+                event: language === "pt" ? "Workshop Pastéis de Nata" : "Pastéis de Nata Workshop"
+              }
+            ].map((testimonial, index) => (
+              <div key={index} className="bg-gradient-to-br from-gray-50 to-secondary-50/30 rounded-xl p-6 border border-gray-100">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white font-bold">
+                    {testimonial.name.split(' ').map(n => n[0]).join('')}
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                    <div className="text-sm text-gray-600 flex items-center gap-1">
+                      <MapPinIcon className="w-3 h-3" />
+                      {testimonial.location}
+                    </div>
+                    <div className="text-xs text-gray-500">{testimonial.region}</div>
+                  </div>
+                </div>
+                <blockquote className="text-gray-700 italic mb-3 text-sm leading-relaxed">
+                  {testimonial.quote}
+                </blockquote>
+                <div className="text-xs text-primary-600 font-medium bg-primary-50 px-2 py-1 rounded-full inline-block">
+                  {testimonial.event}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Portuguese Expressions Section */}
+          <div className="mt-8 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-6 border border-primary-100">
+            <h4 className="font-bold text-gray-900 mb-4 text-center">
+              {language === "pt" ? "Expressões que Nos Unem" : "Expressions That Unite Us"}
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+              <div className="text-center p-3 bg-white rounded-lg border border-gray-100">
+                <div className="font-medium text-gray-900">Saudade</div>
+                <div className="text-gray-600 text-xs">
+                  {language === "pt" ? "Sentimento únicamente português" : "Uniquely Portuguese feeling"}
+                </div>
+              </div>
+              <div className="text-center p-3 bg-white rounded-lg border border-gray-100">
+                <div className="font-medium text-gray-900">Desenrascanço</div>
+                <div className="text-gray-600 text-xs">
+                  {language === "pt" ? "Arte de resolver problemas" : "Art of problem-solving"}
+                </div>
+              </div>
+              <div className="text-center p-3 bg-white rounded-lg border border-gray-100">
+                <div className="font-medium text-gray-900">Cafezinho</div>
+                <div className="text-gray-600 text-xs">
+                  {language === "pt" ? "Pausa brasileira essencial" : "Essential Brazilian break"}
+                </div>
+              </div>
+              <div className="text-center p-3 bg-white rounded-lg border border-gray-100">
+                <div className="font-medium text-gray-900">Convívio</div>
+                <div className="text-gray-600 text-xs">
+                  {language === "pt" ? "Partilhar momentos juntos" : "Sharing moments together"}
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* CTA Section with Portuguese Cultural Elements */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <div className="bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 rounded-3xl p-10 text-white shadow-2xl border border-white/10">
-            <h3 className="text-3xl font-bold mb-6">
-              Join the Portuguese Community in London & UK
-            </h3>
-            <p className="text-xl opacity-95 mb-8 max-w-3xl mx-auto leading-relaxed">
-              From business networking to traditional cooking, transport
-              services to cultural events. Connect with fellow Portuguese
-              speakers and build meaningful relationships.
-            </p>
+          <div className="bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 rounded-3xl p-10 text-white shadow-2xl border border-white/10 relative overflow-hidden">
+            {/* Portuguese Cultural Background Pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-4 left-4 text-6xl">🇵🇹</div>
+              <div className="absolute top-4 right-4 text-6xl">🇧🇷</div>
+              <div className="absolute bottom-4 left-1/4 text-4xl">⚽</div>
+              <div className="absolute bottom-4 right-1/4 text-4xl">🎵</div>
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-8xl opacity-5">🍷</div>
+            </div>
+            
+            <div className="relative z-10">
+              <h3 className="text-3xl font-bold mb-6">
+                {language === "pt" 
+                  ? "Junte-se à Comunidade Portuguesa em Londres & Reino Unido"
+                  : "Join the Portuguese Community in London & UK"}
+              </h3>
+              <p className="text-xl opacity-95 mb-8 max-w-3xl mx-auto leading-relaxed">
+                {language === "pt"
+                  ? "De networking empresarial a culinária tradicional, serviços de transporte a eventos culturais. Conecte-se com outros lusófonos e construa relacionamentos significativos."
+                  : "From business networking to traditional cooking, transport services to cultural events. Connect with fellow Portuguese speakers and build meaningful relationships."
+                }
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Link
-                href="/events"
-                className="inline-flex items-center bg-white text-secondary-600 font-bold px-10 py-4 rounded-2xl hover:bg-gray-50 transition-all duration-300 group shadow-xl hover:shadow-2xl min-h-[44px]"
-              >
-                View Events
-                <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                href="/signup"
-                className="inline-flex items-center border-2 border-white text-white font-bold px-10 py-4 rounded-2xl hover:bg-white hover:text-secondary-600 transition-all duration-300 shadow-xl hover:shadow-2xl min-h-[44px]"
-              >
-                Join Now
-              </Link>
+              {/* Portuguese Saying */}
+              <div className="mb-8 text-lg italic opacity-90">
+                {language === "pt" 
+                  ? "\"Quem tem amigos, tem tudo\" - Provérbio Português"
+                  : "\"Those who have friends, have everything\" - Portuguese Proverb"}
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <Link
+                  href="/events"
+                  className="inline-flex items-center bg-white text-secondary-600 font-bold px-10 py-4 rounded-2xl hover:bg-gray-50 transition-all duration-300 group shadow-xl hover:shadow-2xl min-h-[44px]"
+                >
+                  {language === "pt" ? "Ver Eventos" : "View Events"}
+                  <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link
+                  href="/signup"
+                  className="inline-flex items-center border-2 border-white text-white font-bold px-10 py-4 rounded-2xl hover:bg-white hover:text-secondary-600 transition-all duration-300 shadow-xl hover:shadow-2xl min-h-[44px]"
+                >
+                  {language === "pt" ? "Juntar-se Agora" : "Join Now"}
+                </Link>
+              </div>
             </div>
           </div>
         </motion.div>

@@ -25,6 +25,8 @@ import { getImageWithFallback } from "@/lib/profileImages";
 import { authService } from "@/lib/auth";
 import { referralService } from "@/lib/referral";
 import Footer from "@/components/Footer";
+import UserOnboardingFlow from "@/components/UserOnboardingFlow";
+import GrowthFeatures from "@/components/GrowthFeatures";
 import toast from "react-hot-toast";
 
 const benefits = [
@@ -99,6 +101,9 @@ function SignupInner() {
   const [emailError, setEmailError] = useState("");
   const [passwordStrength, setPasswordStrength] = useState(0);
   const [referralDiscount, setReferralDiscount] = useState<number | null>(null);
+  const [showOnboarding, setShowOnboarding] = useState(false);
+  const [showGrowthFeatures, setShowGrowthFeatures] = useState(false);
+  const [onboardingData, setOnboardingData] = useState<any>(null);
   const router = useRouter();
 
   // Check for referral code in URL on component mount
@@ -286,10 +291,10 @@ function SignupInner() {
           }, 1000);
         }
 
-        // Redirect to success page after a short delay
+        // Show onboarding flow instead of redirecting immediately
         setTimeout(() => {
-          router.push("/signup/success");
-        }, 2000);
+          setShowOnboarding(true);
+        }, 1000);
       } else {
         setError(result.error || "Failed to create account");
       }
@@ -302,6 +307,44 @@ function SignupInner() {
   };
 
   const isPortuguese = language === "pt";
+
+  // Onboarding flow handlers
+  const handleOnboardingComplete = (data: any) => {
+    setOnboardingData(data);
+    setShowOnboarding(false);
+    setShowGrowthFeatures(true);
+  };
+
+  const handleOnboardingClose = () => {
+    setShowOnboarding(false);
+    router.push("/signup/success");
+  };
+
+  const handleGrowthFeaturesComplete = (action: string, data?: any) => {
+    console.log('Growth feature action:', action, data);
+    // Handle different growth actions
+    switch (action) {
+      case 'claim_welcome_bonus':
+        toast.success(isPortuguese ? 'Bónus ativado!' : 'Bonus activated!');
+        break;
+      case 'student_verification_started':
+        toast.success(isPortuguese ? 'Verificação iniciada!' : 'Verification started!');
+        break;
+      case 'referral_code_copied':
+        toast.success(isPortuguese ? 'Código copiado!' : 'Code copied!');
+        break;
+      case 'start_premium_trial':
+        toast.success(isPortuguese ? 'Teste iniciado!' : 'Trial started!');
+        break;
+      default:
+        break;
+    }
+  };
+
+  const handleGrowthFeaturesClose = () => {
+    setShowGrowthFeatures(false);
+    router.push("/signup/success");
+  };
 
   return (
     <main className="min-h-screen">
@@ -462,6 +505,19 @@ function SignupInner() {
                       Quick signup with social media
                     </p>
                     <SocialLogin mode="signup" />
+                    
+                    {/* Demo Onboarding Button - Remove in production */}
+                    {process.env.NODE_ENV === 'development' && (
+                      <div className="mt-4 text-center">
+                        <button
+                          type="button"
+                          onClick={() => setShowOnboarding(true)}
+                          className="text-xs text-purple-600 hover:text-purple-700 underline"
+                        >
+                          🚀 Demo Onboarding Flow
+                        </button>
+                      </div>
+                    )}
                   </div>
 
                   {/* Error Display */}
@@ -1105,6 +1161,21 @@ function SignupInner() {
         </section>
       </div>
       <Footer />
+
+      {/* Onboarding Flow */}
+      <UserOnboardingFlow
+        isOpen={showOnboarding}
+        onClose={handleOnboardingClose}
+        onComplete={handleOnboardingComplete}
+      />
+
+      {/* Growth Features */}
+      <GrowthFeatures
+        isOpen={showGrowthFeatures}
+        onClose={handleGrowthFeaturesClose}
+        userType="new_member"
+        onActionComplete={handleGrowthFeaturesComplete}
+      />
     </main>
   );
 }

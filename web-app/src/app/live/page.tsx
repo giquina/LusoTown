@@ -59,10 +59,14 @@ export default function LiveStreamingPage() {
     (process.env.NEXT_PUBLIC_STREAMING_SERVER_URL as string) ||
     "http://localhost:8080";
 
-  // Ensure we land at the top when navigating to /live without a hash
+  // Only scroll to top when directly accessing /live without a hash
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    if (!window.location.hash) {
+    // Check if user came from direct navigation vs clicking a link
+    const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    const isDirectNavigation = navigationEntry?.type === 'navigate';
+    
+    if (isDirectNavigation && !window.location.hash) {
       // Use a microtask to run after mount layout
       setTimeout(() => window.scrollTo({ top: 0, behavior: 'auto' }), 0);
     }

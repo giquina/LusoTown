@@ -10,23 +10,44 @@ import Footer from '@/components/Footer'
 
 // Lazy load components with loading placeholders for better performance
 const HowItWorks = dynamic(() => import('@/components/HowItWorks'))
-const HowConnectionsWork = dynamic(() => import('@/components/HowConnectionsWork'))
-const AboutLusoTown = dynamic(() => import('@/components/AboutLusoTown'))
-const EventsShowcase = dynamic(() => import('@/components/EventsShowcase'))
-const GroupsShowcase = dynamic(() => import('@/components/GroupsShowcase'))
-const GroupEventsSection = dynamic(() => import('@/components/GroupEventsSection'))
-const SuccessStories = dynamic(() => import('@/components/SuccessStories'))
-const CaseStudies = dynamic(() => import('@/components/CaseStudies'))
-const AppDownloadSection = dynamic(() => import('@/components/AppDownloadSection'))
-const TestimonialsNew = dynamic(() => import('@/components/TestimonialsNew'))
-const CustomToursSection = dynamic(() => import('@/components/CustomToursSection'))
-const HostWithUsSection = dynamic(() => import('@/components/HostWithUsSection'))
-const CTA = dynamic(() => import('@/components/CTA'))
-const ProgressiveUserJourney = dynamic(() => import('@/components/ProgressiveUserJourney'))
-const RetentionGrowthMechanics = dynamic(() => import('@/components/RetentionGrowthMechanics'))
+const AboutLusoTown = dynamic(() => import('@/components/AboutLusoTown'), {
+  loading: () => <div className="h-80 bg-gray-50 animate-pulse rounded-xl" />
+})
+const EventsShowcase = dynamic(() => import('@/components/EventsShowcase'), {
+  loading: () => <div className="h-screen bg-gray-50 animate-pulse rounded-xl" />
+})
+const GroupsShowcase = dynamic(() => import('@/components/GroupsShowcase'), {
+  loading: () => <div className="h-96 bg-gray-50 animate-pulse rounded-xl" />
+})
+const SuccessStories = dynamic(() => import('@/components/SuccessStories'), {
+  loading: () => <div className="h-80 bg-gray-50 animate-pulse rounded-xl" />
+})
+const AppDownloadSection = dynamic(() => import('@/components/AppDownloadSection'), {
+  loading: () => <div className="h-64 bg-gray-50 animate-pulse rounded-xl" />
+})
+const TestimonialsNew = dynamic(() => import('@/components/TestimonialsNew'), {
+  loading: () => <div className="h-64 bg-gray-50 animate-pulse rounded-xl" />
+})
+const CustomToursSection = dynamic(() => import('@/components/CustomToursSection'), {
+  loading: () => <div className="h-96 bg-gray-50 animate-pulse rounded-xl" />
+})
+const MatchHowItWorks = dynamic(() => import('@/components/MatchHowItWorks'), {
+  loading: () => <div className="h-screen bg-gray-50 animate-pulse rounded-xl" />
+})
+const CTA = dynamic(() => import('@/components/CTA'), {
+  loading: () => <div className="h-48 bg-gray-50 animate-pulse rounded-xl" />
+})
+const StudentSupportSection = dynamic(() => import('@/components/StudentSupportSection'), {
+  loading: () => <div className="h-64 bg-gray-50 animate-pulse rounded-xl" />
+})
+const CoreFeaturesShowcase = dynamic(() => import('@/components/CoreFeaturesShowcase'), {
+  loading: () => <div className="h-screen bg-gray-50 animate-pulse rounded-xl" />
+})
+const CommunityFeedSection = dynamic(() => import('@/components/CommunityFeedSection'), {
+  loading: () => <div className="h-screen bg-gray-50 animate-pulse rounded-xl" />
+})
 import { 
   ChatBubbleLeftRightIcon, 
-  HeartIcon, 
   CalendarDaysIcon,
   ArrowRightIcon as ArrowRight,
   UserGroupIcon,
@@ -79,17 +100,18 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
-      <main className="min-h-screen w-full overflow-x-hidden">
+      <main className="min-h-screen w-full overflow-x-hidden" role="main">
         <div className="pt-24 w-full">
           <Hero />
+          <CoreFeaturesShowcase />
           <TestimonialsNew />
           <HowItWorks />
-          <HowConnectionsWork />
+          <MatchHowItWorks />
           <AboutLusoTown />
-          {/* What You Can Do Section */}
-          <section className="py-24 bg-gradient-to-br from-white via-secondary-50/30 to-accent-50/30 relative overflow-hidden border-t border-gray-100">
+          {/* Portuguese Community Activities Section */}
+          <section className="py-24 bg-gradient-to-br from-white via-secondary-50/30 to-accent-50/30 relative overflow-hidden border-t border-gray-100" aria-labelledby="community-activities">
             {/* Portuguese-inspired background decorative elements */}
-            <div className="absolute inset-0">
+            <div className="absolute inset-0" aria-hidden="true">
               <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-secondary-200/40 via-accent-100/30 to-coral-100/30 rounded-full opacity-60 animate-pulse" />
               <div className="absolute bottom-20 left-20 w-24 h-24 bg-gradient-to-tr from-action-200/40 via-secondary-100/30 to-accent-100/30 rounded-full opacity-50 animate-bounce" style={{ animationDuration: '8s' }} />
               <div className="absolute top-1/4 left-1/6 w-6 h-6 bg-secondary-300/50 rounded-full opacity-40" />
@@ -100,37 +122,37 @@ export default function Home() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               <div className="max-w-7xl mx-auto">
                 {/* Section Header with Portuguese Cultural Elements */}
-                <div className="text-center mb-20">
+                <header className="text-center mb-20">
                   <div className="inline-flex items-center gap-3 bg-gradient-to-r from-secondary-50/80 via-accent-50/60 to-coral-50/60 border border-secondary-200/40 rounded-3xl px-10 py-5 shadow-2xl mb-10 backdrop-blur-sm">
                     <div className="flex items-center gap-3">
-                      <div className="w-3 h-3 rounded-full bg-gradient-to-r from-green-500 to-red-500 animate-pulse shadow-sm"></div>
+                      <div className="w-3 h-3 rounded-full bg-gradient-to-r from-green-500 to-red-500 animate-pulse shadow-sm" aria-hidden="true"></div>
                       <span className="text-sm font-bold bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent">
                         {t('what-you-can-do.badge')}
                       </span>
                     </div>
-                    <div className="w-2 h-2 bg-secondary-400 rounded-full animate-pulse"></div>
+                    <div className="w-2 h-2 bg-secondary-400 rounded-full animate-pulse" aria-hidden="true"></div>
                   </div>
                   
-                  <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-8 leading-tight">
+                  <h2 id="community-activities" className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-8 leading-tight">
                     {t('what-you-can-do.title')}
                   </h2>
                   <p className="text-xl sm:text-2xl lg:text-3xl text-gray-700 mb-6 font-medium max-w-6xl mx-auto leading-relaxed">
                     {t('what-you-can-do.subtitle')}
                   </p>
-                  <blockquote className="text-lg sm:text-xl lg:text-2xl text-gray-600 italic max-w-5xl mx-auto font-medium">
+                  <blockquote className="text-lg sm:text-xl lg:text-2xl text-gray-600 italic max-w-5xl mx-auto font-medium" cite="Maria, London">
                     {t('what-you-can-do.testimonial')}
                   </blockquote>
-                </div>
+                </header>
                 
-                {/* 2-Column Grid Layout for better readability - Fixed for mobile text truncation */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-20">
+                {/* Portuguese Community Activities Grid */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-20" role="group" aria-label="Portuguese community activities">
                   {/* Find & Join Events */}
-                  <div className="group relative">
+                  <article className="group relative">
                     <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
-                      <div className="absolute inset-0 bg-gradient-to-br from-secondary-50/60 via-transparent to-accent-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+                      <div className="absolute inset-0 bg-gradient-to-br from-secondary-50/60 via-transparent to-accent-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" aria-hidden="true" />
                       
                       <div className="relative z-10 flex flex-col h-full">
-                        <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
+                        <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-2xl flex items-center justify-center mb-4 lg:mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl" aria-hidden="true">
                           <ChatBubbleLeftRightIcon className="w-6 h-6 lg:w-8 lg:h-8 text-white" />
                         </div>
                         <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold text-gray-900 mb-4 lg:mb-6 group-hover:text-secondary-600 transition-colors duration-300">
@@ -145,13 +167,14 @@ export default function Home() {
                         <a 
                           href="/events" 
                           className="inline-flex items-center gap-2 text-secondary-600 font-semibold hover:text-secondary-700 transition-colors group-hover:gap-3 duration-300 text-base lg:text-lg"
+                          aria-describedby="events-description"
                         >
                           {t('what-you-can-do.events.cta')}
-                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                         </a>
                       </div>
                     </div>
-                  </div>
+                  </article>
 
                   {/* Create Your Own Groups */}
                   <div className="group relative">
@@ -306,231 +329,18 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Portuguese Community Features */}
-          <section className="py-24 bg-white relative overflow-hidden">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="max-w-7xl mx-auto">
-                {/* Section Header */}
-                <div className="text-center mb-16">
-                  <div className="inline-flex items-center gap-3 bg-gradient-to-r from-secondary-50/80 via-accent-50/60 to-coral-50/60 border border-secondary-200/40 rounded-3xl px-8 py-4 shadow-xl mb-8 backdrop-blur-sm">
-                    <div className="w-3 h-3 rounded-full bg-gradient-to-r from-green-500 to-red-500 animate-pulse shadow-sm"></div>
-                    <span className="text-sm font-bold bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent">
-                      Portuguese Community Features
-                    </span>
-                  </div>
-                  
-                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
-                    Everything You Need to Thrive in London
-                  </h2>
-                  <p className="text-xl sm:text-2xl text-gray-700 mb-6 font-medium max-w-4xl mx-auto leading-relaxed">
-                    From finding work to learning languages, we support your journey as a Portuguese speaker in London
-                  </p>
-                </div>
-                
-                {/* 2x2 Grid Layout for Portuguese Features */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-                  {/* Portuguese Jobs */}
-                  <div className="group relative">
-                    <div className="bg-white/90 backdrop-blur-lg border border-gray-200 rounded-3xl p-8 min-h-[320px] shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] relative overflow-hidden flex flex-col">
-                      <div className="absolute inset-0 bg-gradient-to-br from-secondary-50/60 via-transparent to-accent-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
-                      
-                      <div className="relative z-10 flex flex-col h-full">
-                        <div className="w-16 h-16 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform duration-500 shadow-xl">
-                          <BriefcaseIcon className="w-8 h-8 text-white" />
-                        </div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-secondary-600 transition-colors duration-300">
-                          Portuguese Jobs in London
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed mb-6 flex-grow text-lg">
-                          Find Portuguese-friendly employers and bilingual opportunities across London's top industries
-                        </p>
-                        <div className="text-base text-gray-500 mb-4 font-medium">
-                          150+ active jobs • £45k average salary
-                        </div>
-                        <a 
-                          href="/jobs" 
-                          className="inline-flex items-center gap-2 text-secondary-600 font-semibold hover:text-secondary-700 transition-colors group-hover:gap-3 duration-300 text-lg"
-                        >
-                          Browse Jobs
-                          <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Housing Assistance */}
-                  <div className="group relative">
-                    <div className="bg-white/90 backdrop-blur-lg border border-gray-200 rounded-3xl p-8 min-h-[320px] shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] relative overflow-hidden flex flex-col">
-                      <div className="absolute inset-0 bg-gradient-to-br from-accent-50/60 via-transparent to-coral-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
-                      
-                      <div className="relative z-10 flex flex-col h-full">
-                        <div className="w-16 h-16 bg-gradient-to-br from-accent-500 to-coral-500 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform duration-500 shadow-xl">
-                          <HomeIcon className="w-8 h-8 text-white" />
-                        </div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-accent-600 transition-colors duration-300">
-                          Housing Assistance
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed mb-6 flex-grow text-lg">
-                          Find Portuguese-friendly housing with landlords who understand your journey to London
-                        </p>
-                        <div className="text-base text-gray-500 mb-4 font-medium">
-                          250+ properties • 89% Portuguese-friendly
-                        </div>
-                        <a 
-                          href="/housing" 
-                          className="inline-flex items-center gap-2 text-accent-600 font-semibold hover:text-accent-700 transition-colors group-hover:gap-3 duration-300 text-lg"
-                        >
-                          Find Housing
-                          <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Language Exchange */}
-                  <div className="group relative">
-                    <div className="bg-white/90 backdrop-blur-lg border border-gray-200 rounded-3xl p-8 min-h-[320px] shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] relative overflow-hidden flex flex-col">
-                      <div className="absolute inset-0 bg-gradient-to-br from-coral-50/60 via-transparent to-action-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
-                      
-                      <div className="relative z-10 flex flex-col h-full">
-                        <div className="w-16 h-16 bg-gradient-to-br from-coral-500 to-action-500 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform duration-500 shadow-xl">
-                          <ChatBubbleLeftRightIcon className="w-8 h-8 text-white" />
-                        </div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-coral-500 transition-colors duration-300">
-                          Language Exchange
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed mb-6 flex-grow text-lg">
-                          Practice Portuguese and English with native speakers through conversation sessions and cultural activities
-                        </p>
-                        <div className="text-base text-gray-500 mb-4 font-medium">
-                          180+ members • 25+ weekly sessions
-                        </div>
-                        <a 
-                          href="/language-exchange" 
-                          className="inline-flex items-center gap-2 text-coral-500 font-semibold hover:text-coral-600 transition-colors group-hover:gap-3 duration-300 text-lg"
-                        >
-                          Join Exchange
-                          <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Cultural Calendar */}
-                  <div className="group relative">
-                    <div className="bg-white/90 backdrop-blur-lg border border-gray-200 rounded-3xl p-8 min-h-[320px] shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] relative overflow-hidden flex flex-col">
-                      <div className="absolute inset-0 bg-gradient-to-br from-premium-50/60 via-transparent to-secondary-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
-                      
-                      <div className="relative z-10 flex flex-col h-full">
-                        <div className="w-16 h-16 bg-gradient-to-br from-premium-500 to-secondary-500 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-6 transition-transform duration-500 shadow-xl">
-                          <CalendarDaysIcon className="w-8 h-8 text-white" />
-                        </div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-premium-600 transition-colors duration-300">
-                          Cultural Calendar
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed mb-6 flex-grow text-lg">
-                          Discover authentic Portuguese festivals, cultural events, and celebrations happening throughout London
-                        </p>
-                        <div className="text-base text-gray-500 mb-4 font-medium">
-                          50+ annual events • Year-round celebrations
-                        </div>
-                        <a 
-                          href="/cultural-calendar" 
-                          className="inline-flex items-center gap-2 text-premium-600 font-semibold hover:text-premium-700 transition-colors group-hover:gap-3 duration-300 text-lg"
-                        >
-                          View Calendar
-                          <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Call-to-Action */}
-                <div className="text-center">
-                  <div className="bg-gradient-to-r from-gray-50 to-secondary-50/30 border border-gray-200 rounded-3xl p-12 shadow-xl max-w-4xl mx-auto">
-                    <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                      Ready to Connect with the 
-                      <span className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 bg-clip-text text-transparent">
-                        Portuguese Community?
-                      </span>
-                    </h3>
-                    <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-                      Join thousands of Portuguese speakers making London their home with our comprehensive support platform
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <a
-                        href="/signup"
-                        className="group relative text-lg font-bold px-8 py-3 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
-                      >
-                        <span className="relative z-10 flex items-center justify-center gap-2">
-                          Get Started
-                          <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
-                        </span>
-                      </a>
-                      <a
-                        href="/community"
-                        className="text-lg font-bold px-8 py-3 bg-white text-gray-800 border-2 border-gray-200 rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1"
-                      >
-                        Explore Community
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
 
           <Features />
 
           <EventsShowcase />
-          <GroupEventsSection variant="homepage" maxEvents={6} />
           <GroupsShowcase />
+          <CommunityFeedSection />
           <SuccessStories />
           <CustomToursSection showHeader={true} />
-          <HostWithUsSection />
-          <CaseStudies />
           <AppDownloadSection />
           
-          {/* User Journey Progress Widget */}
-          <section className="py-16 bg-gray-50">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="max-w-4xl mx-auto">
-                <div className="text-center mb-12">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                    {t('user-journey.title', 'Track Your Portuguese Community Journey')}
-                  </h2>
-                  <p className="text-lg text-gray-600">
-                    {t('user-journey.description', 'See your progress and discover new opportunities to connect with the Portuguese community across London and the UK.')}
-                  </p>
-                </div>
-                
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  {/* Journey Progress Widget */}
-                  <ProgressiveUserJourney 
-                    variant="widget" 
-                    currentPage="/" 
-                  />
-                  
-                  {/* Community Achievements Widget */}
-                  <RetentionGrowthMechanics 
-                    variant="dashboard"
-                    showRecentAchievements={true}
-                  />
-                </div>
-                
-                <div className="text-center mt-8">
-                  <a
-                    href="/user-journey"
-                    className="inline-flex items-center gap-2 bg-primary-500 text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary-600 transition-colors"
-                  >
-                    {t('user-journey.view-full', 'View Full Journey')}
-                    <ArrowRight className="w-5 h-5" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
+          {/* Student Support Section */}
+          <StudentSupportSection />
           
           <CTA />
           <Footer />

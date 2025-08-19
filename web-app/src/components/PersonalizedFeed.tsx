@@ -15,12 +15,19 @@ import {
   LanguageIcon,
   BellIcon,
   StarIcon,
-  FunnelIcon as FilterIcon
+  FunnelIcon as FilterIcon,
+  TruckIcon,
+  BriefcaseIcon,
+  HomeIcon,
+  SparklesIcon
 } from '@heroicons/react/24/outline'
 import { HeartIcon as HeartSolidIcon, CheckBadgeIcon } from '@heroicons/react/24/solid'
 import { useFollowing, FollowableEntity } from '@/context/FollowingContext'
 import { useLanguage } from '@/context/LanguageContext'
+import { useSubscription } from '@/context/SubscriptionContext'
 import FollowButton from '@/components/FollowButton'
+import EnhancedPostCreator from '@/components/EnhancedPostCreator'
+import ServiceIntegrationFeed from '@/components/ServiceIntegrationFeed'
 
 interface FeedPost {
   id: string
@@ -59,6 +66,8 @@ interface FeedPost {
   culturalTags?: string[]
   isFromFollowing: boolean
   priority?: 'high' | 'medium' | 'low'
+  servicePost?: boolean
+  serviceType?: 'transport' | 'tour' | 'event' | 'business' | 'housing'
 }
 
 // Mock posts from followed entities
@@ -134,6 +143,57 @@ const generatePersonalizedPosts = (followedEntities: FollowableEntity[]): FeedPo
       reactions: { heart: 12, thumbsUp: 5, laugh: 1, wow: 1, sad: 0, angry: 0 },
       hashtags: ['ComidaPortuguesa', 'Birmingham', 'PaoDeMillho'],
       culturalTags: ['Portuguese Food', 'Local Business']
+    },
+    {
+      id: 'post-6',
+      content: 'Available this weekend for Portuguese cultural tours of London! Just completed an amazing tour to Tower Bridge where I shared the story of Portuguese explorers. Bilingual service and deep cultural knowledge included! 🚗🇵🇹',
+      createdAt: '3 hours ago',
+      likes: 31,
+      comments: 7,
+      liked: false,
+      reactions: { heart: 18, thumbsUp: 10, laugh: 2, wow: 1, sad: 0, angry: 0 },
+      hashtags: ['CulturalTours', 'PortugueseGuide', 'LondonTours'],
+      culturalTags: ['Transport Service', 'Cultural Heritage'],
+      servicePost: true,
+      serviceType: 'transport',
+      linkedBusiness: {
+        id: 'portuguese_tours',
+        name: 'Portuguese Heritage Tours London',
+        category: 'Cultural Tours & Transport'
+      }
+    },
+    {
+      id: 'post-7',
+      authorVerified: true,
+      content: 'Coordinating group transport for the upcoming Fado night at Portuguese Cultural Centre! 🚌 Multiple pickup points across London including Stockwell, Vauxhall, and Elephant & Castle. Portuguese-speaking drivers and cultural commentary included!',
+      createdAt: '5 hours ago',
+      likes: 42,
+      comments: 15,
+      liked: true,
+      reactions: { heart: 25, thumbsUp: 12, laugh: 3, wow: 2, sad: 0, angry: 0 },
+      hashtags: ['EventTransport', 'FadoNight', 'GroupService'],
+      culturalTags: ['Community Event', 'Transport Coordination'],
+      servicePost: true,
+      serviceType: 'event',
+      linkedEvent: {
+        id: 'fado_night_transport',
+        title: 'Fado Night - Group Transport',
+        date: '2025-08-22',
+        location: 'Multiple London Pickups'
+      }
+    },
+    {
+      id: 'post-8',
+      content: 'Procuro apartamento T1/T2 na área portuguesa de Londres (Stockwell/Vauxhall). Preferência por propriedades perto da comunidade portuguesa. Sou profissional, não fumador, referências disponíveis! 🏠',
+      createdAt: '1 day ago',
+      likes: 23,
+      comments: 11,
+      liked: false,
+      reactions: { heart: 15, thumbsUp: 6, laugh: 1, wow: 1, sad: 0, angry: 0 },
+      hashtags: ['HabitacaoLondres', 'ComunidadePortuguesa', 'Stockwell'],
+      culturalTags: ['Housing Search', 'Community Areas'],
+      servicePost: true,
+      serviceType: 'housing'
     }
   ]
 
@@ -172,10 +232,12 @@ interface PersonalizedFeedProps {
 export default function PersonalizedFeed({ className = '' }: PersonalizedFeedProps) {
   const { following, isFollowing } = useFollowing()
   const { language } = useLanguage()
+  const { membershipTier } = useSubscription()
   const [posts, setPosts] = useState<FeedPost[]>([])
-  const [filter, setFilter] = useState<'all' | 'following' | 'suggested'>('all')
+  const [filter, setFilter] = useState<'all' | 'following' | 'services' | 'cultural'>('all')
   const [newPost, setNewPost] = useState('')
   const [showCreatePost, setShowCreatePost] = useState(false)
+  const [showServiceFeed, setShowServiceFeed] = useState(false)
   
   // Helper function to check if language is Portuguese
   const isPortuguese = language === 'pt'
@@ -214,35 +276,44 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
     switch (filter) {
       case 'following':
         return posts.filter(post => post.isFromFollowing)
-      case 'suggested':
-        return posts.filter(post => !post.isFromFollowing)
+      case 'services':
+        return posts.filter(post => post.servicePost)
+      case 'cultural':
+        return posts.filter(post => !post.servicePost && post.culturalTags && post.culturalTags.length > 0)
       default:
         return posts
     }
   }, [posts, filter])
 
-  const handleCreatePost = () => {
-    if (newPost.trim()) {
-      const post: FeedPost = {
-        id: `post-${Date.now()}`,
-        authorId: 'currentUser',
-authorName: isPortuguese ? 'Tu' : 'You',
-        authorAvatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop&crop=face&auto=format',
-        authorType: 'person',
-        content: newPost,
-createdAt: isPortuguese ? 'Agora mesmo' : 'Just now',
-        likes: 0,
-        comments: 0,
-        liked: false,
-        reactions: { heart: 0, thumbsUp: 0, laugh: 0, wow: 0, sad: 0, angry: 0 },
-        hashtags: [],
-        isFromFollowing: false,
-        priority: 'medium'
-      }
-      setPosts([post, ...posts])
-      setNewPost('')
-      setShowCreatePost(false)
+  const handleCreatePost = (content: string, category: string, template?: string) => {
+    const post: FeedPost = {
+      id: `post-${Date.now()}`,
+      authorId: 'currentUser',
+      authorName: isPortuguese ? 'Tu' : 'You',
+      authorAvatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop&crop=face&auto=format',
+      authorType: 'person',
+      content,
+      createdAt: isPortuguese ? 'Agora mesmo' : 'Just now',
+      likes: 0,
+      comments: 0,
+      liked: false,
+      reactions: { heart: 0, thumbsUp: 0, laugh: 0, wow: 0, sad: 0, angry: 0 },
+      hashtags: extractHashtags(content),
+      culturalTags: template ? [template] : undefined,
+      servicePost: ['transport', 'business', 'housing', 'event'].includes(category),
+      serviceType: ['transport', 'business', 'housing', 'event'].includes(category) ? category as any : undefined,
+      isFromFollowing: false,
+      priority: 'high' // User's own posts get high priority
     }
+    
+    setPosts([post, ...posts])
+    setShowCreatePost(false)
+  }
+
+  const extractHashtags = (content: string): string[] => {
+    const hashtagRegex = /#[\w\u00C0-\u017F]+/g
+    const matches = content.match(hashtagRegex) || []
+    return matches.map(tag => tag.substring(1)) // Remove the # symbol
   }
 
   const getAuthorTypeIcon = (type: FollowableEntity['type']) => {
@@ -308,11 +379,11 @@ createdAt: isPortuguese ? 'Agora mesmo' : 'Just now',
           </button>
         </div>
 
-        {/* Filters */}
-        <div className="flex gap-2">
+        {/* Enhanced Filters */}
+        <div className="flex gap-2 overflow-x-auto">
           <button
             onClick={() => setFilter('all')}
-            className={`px-3 py-1.5 text-sm rounded-lg font-medium transition-colors flex items-center gap-2 ${
+            className={`px-3 py-1.5 text-sm rounded-lg font-medium transition-colors flex items-center gap-2 whitespace-nowrap ${
               filter === 'all'
                 ? 'bg-primary-100 text-primary-700'
                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -323,7 +394,7 @@ createdAt: isPortuguese ? 'Agora mesmo' : 'Just now',
           </button>
           <button
             onClick={() => setFilter('following')}
-            className={`px-3 py-1.5 text-sm rounded-lg font-medium transition-colors flex items-center gap-2 ${
+            className={`px-3 py-1.5 text-sm rounded-lg font-medium transition-colors flex items-center gap-2 whitespace-nowrap ${
               filter === 'following'
                 ? 'bg-primary-100 text-primary-700'
                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -332,66 +403,37 @@ createdAt: isPortuguese ? 'Agora mesmo' : 'Just now',
             <HeartSolidIcon className="w-4 h-4" />
             {isPortuguese ? 'A Seguir' : 'Following'} ({posts.filter(p => p.isFromFollowing).length})
           </button>
+          <button
+            onClick={() => setFilter('services')}
+            className={`px-3 py-1.5 text-sm rounded-lg font-medium transition-colors flex items-center gap-2 whitespace-nowrap ${
+              filter === 'services'
+                ? 'bg-secondary-100 text-secondary-700'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            }`}
+          >
+            <TruckIcon className="w-4 h-4" />
+            {isPortuguese ? 'Serviços' : 'Services'} ({posts.filter(p => p.servicePost).length})
+          </button>
+          <button
+            onClick={() => setFilter('cultural')}
+            className={`px-3 py-1.5 text-sm rounded-lg font-medium transition-colors flex items-center gap-2 whitespace-nowrap ${
+              filter === 'cultural'
+                ? 'bg-accent-100 text-accent-700'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            }`}
+          >
+            <SparklesIcon className="w-4 h-4" />
+            {isPortuguese ? 'Cultural' : 'Cultural'} ({posts.filter(p => !p.servicePost && p.culturalTags).length})
+          </button>
         </div>
       </div>
 
-      {/* Create Post Modal */}
+      {/* Enhanced Create Post Modal */}
       {showCreatePost && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
-            <div className="p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-gray-900">
-                  {isPortuguese ? 'Criar Publicação' : 'Create Post'}
-                </h3>
-                <button 
-                  onClick={() => setShowCreatePost(false)}
-                  className="text-gray-500 hover:text-gray-700"
-                >
-                  ✕
-                </button>
-              </div>
-              
-              <div className="flex items-start gap-3 mb-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-primary-400 to-secondary-400 flex items-center justify-center text-white font-bold">
-                  {isPortuguese ? 'T' : 'Y'}
-                </div>
-                <textarea
-                  value={newPost}
-                  onChange={(e) => setNewPost(e.target.value)}
-                  placeholder={isPortuguese 
-                    ? 'O que está a acontecer na tua comunidade portuguesa?'
-                    : "What's happening in your Portuguese community?"
-                  }
-                  className="flex-1 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
-                  rows={4}
-                />
-              </div>
-              
-              <div className="flex items-center justify-between pt-4 border-t border-gray-200">
-                <div className="flex gap-2">
-                  <button className="p-2 text-gray-500 hover:text-primary-500 hover:bg-primary-50 rounded-lg">
-                    <PhotoIcon className="w-5 h-5" />
-                  </button>
-                  <button className="p-2 text-gray-500 hover:text-primary-500 hover:bg-primary-50 rounded-lg">
-                    <LinkIcon className="w-5 h-5" />
-                  </button>
-                  <button className="p-2 text-gray-500 hover:text-primary-500 hover:bg-primary-50 rounded-lg">
-                    <CalendarDaysIcon className="w-5 h-5" />
-                  </button>
-                </div>
-                
-                <button
-                  onClick={handleCreatePost}
-                  disabled={!newPost.trim()}
-                  className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-4 py-2 rounded-lg font-semibold hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {isPortuguese ? 'Publicar' : 'Post'}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <EnhancedPostCreator
+          onCreatePost={handleCreatePost}
+          onClose={() => setShowCreatePost(false)}
+        />
       )}
 
       {/* Feed Posts */}
@@ -433,6 +475,21 @@ createdAt: isPortuguese ? 'Agora mesmo' : 'Just now',
                       {post.isFromFollowing && (
                         <span className="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded-full">
                           {isPortuguese ? 'A seguir' : 'Following'}
+                        </span>
+                      )}
+                      {post.servicePost && (
+                        <span className={`text-xs px-2 py-1 rounded-full font-medium ${
+                          post.serviceType === 'transport' ? 'bg-blue-100 text-blue-700' :
+                          post.serviceType === 'business' ? 'bg-green-100 text-green-700' :
+                          post.serviceType === 'housing' ? 'bg-orange-100 text-orange-700' :
+                          post.serviceType === 'event' ? 'bg-purple-100 text-purple-700' :
+                          'bg-gray-100 text-gray-700'
+                        }`}>
+                          {post.serviceType === 'transport' ? (isPortuguese ? 'Transporte' : 'Transport') :
+                           post.serviceType === 'business' ? (isPortuguese ? 'Negócio' : 'Business') :
+                           post.serviceType === 'housing' ? (isPortuguese ? 'Habitação' : 'Housing') :
+                           post.serviceType === 'event' ? (isPortuguese ? 'Evento' : 'Event') :
+                           (isPortuguese ? 'Serviço' : 'Service')}
                         </span>
                       )}
                     </div>
@@ -568,6 +625,94 @@ createdAt: isPortuguese ? 'Agora mesmo' : 'Just now',
           </div>
         ))}
       </div>
+
+      {/* Service Integration Section */}
+      {filter === 'services' && (
+        <div className="mt-8">
+          <ServiceIntegrationFeed />
+        </div>
+      )}
+
+      {/* Quick Access to Services */}
+      {filter === 'all' && (membershipTier === 'community' || membershipTier === 'ambassador') && (
+        <div className="mt-8 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-6 border border-primary-200">
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
+                <TruckIcon className="w-5 h-5 text-primary-600" />
+                {isPortuguese ? 'Serviços Disponíveis' : 'Available Services'}
+              </h3>
+              <p className="text-sm text-gray-600">
+                {isPortuguese 
+                  ? 'Serviços da comunidade portuguesa verificada'
+                  : 'Services from verified Portuguese community'
+                }
+              </p>
+            </div>
+            <button
+              onClick={() => setFilter('services')}
+              className="text-primary-600 hover:text-primary-700 font-medium text-sm flex items-center gap-1"
+            >
+              {isPortuguese ? 'Ver Todos' : 'View All'}
+              <SparklesIcon className="w-4 h-4" />
+            </button>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <button
+              onClick={() => setFilter('services')}
+              className="flex flex-col items-center p-3 bg-white rounded-lg hover:bg-primary-50 transition-colors border border-gray-200"
+            >
+              <TruckIcon className="w-6 h-6 text-blue-600 mb-2" />
+              <span className="text-sm font-medium text-gray-700">
+                {isPortuguese ? 'Transporte' : 'Transport'}
+              </span>
+              <span className="text-xs text-gray-500">
+                {posts.filter(p => p.serviceType === 'transport').length} {isPortuguese ? 'disponível' : 'available'}
+              </span>
+            </button>
+
+            <button
+              onClick={() => setFilter('services')}
+              className="flex flex-col items-center p-3 bg-white rounded-lg hover:bg-primary-50 transition-colors border border-gray-200"
+            >
+              <CalendarDaysIcon className="w-6 h-6 text-purple-600 mb-2" />
+              <span className="text-sm font-medium text-gray-700">
+                {isPortuguese ? 'Eventos' : 'Events'}
+              </span>
+              <span className="text-xs text-gray-500">
+                {posts.filter(p => p.serviceType === 'event').length} {isPortuguese ? 'ativos' : 'active'}
+              </span>
+            </button>
+
+            <button
+              onClick={() => setFilter('services')}
+              className="flex flex-col items-center p-3 bg-white rounded-lg hover:bg-primary-50 transition-colors border border-gray-200"
+            >
+              <BriefcaseIcon className="w-6 h-6 text-green-600 mb-2" />
+              <span className="text-sm font-medium text-gray-700">
+                {isPortuguese ? 'Negócios' : 'Business'}
+              </span>
+              <span className="text-xs text-gray-500">
+                {posts.filter(p => p.serviceType === 'business').length} {isPortuguese ? 'recomendações' : 'recommendations'}
+              </span>
+            </button>
+
+            <button
+              onClick={() => setFilter('services')}
+              className="flex flex-col items-center p-3 bg-white rounded-lg hover:bg-primary-50 transition-colors border border-gray-200"
+            >
+              <HomeIcon className="w-6 h-6 text-orange-600 mb-2" />
+              <span className="text-sm font-medium text-gray-700">
+                {isPortuguese ? 'Habitação' : 'Housing'}
+              </span>
+              <span className="text-xs text-gray-500">
+                {posts.filter(p => p.serviceType === 'housing').length} {isPortuguese ? 'oportunidades' : 'opportunities'}
+              </span>
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

@@ -1,5 +1,5 @@
 -- LusoTown Database Migrations
--- Applied: 2025-08-18T20:32:16.725Z
+-- Applied: 2025-08-19T20:37:03.971Z
 -- Migrations: 20250818_004_youtube_integration_system.sql, 20250818_005_tiktok_style_messaging_system.sql
 
 -- ============================================================
