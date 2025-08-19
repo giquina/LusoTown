@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
@@ -41,6 +41,7 @@ import StreamReplayLibrary from "@/components/StreamReplayLibrary";
 import StreamViewerStats from "@/components/StreamViewerStats";
 import StreamCategories from "@/components/StreamCategories";
 import LiveChatWidget from "@/components/LiveChatWidget";
+import HowStreamingWorks from "@/components/HowStreamingWorks";
 
 export default function LiveStreamingPage() {
   const { language, t } = useLanguage();
@@ -918,7 +919,12 @@ export default function LiveStreamingPage() {
         </motion.button>
       )}
 
+      {!hasActiveSubscription && !isInTrial && (
+        <HowStreamingWorks />
+      )}
+
       <Footer />
     </div>
   );
 }
+

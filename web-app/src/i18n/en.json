@@ -92,20 +92,7 @@
   "buttons.upgrade": "Upgrade",
   "buttons.downgrade": "Downgrade",
   
-  "favorites.save": "Save",
-  "favorites.saved": "Saved", 
-  "favorites.remove": "Remove from Favorites",
-  "favorites.added": "Added to Favorites",
-  "favorites.removed": "Removed from Favorites",
   
-  "cart.add_to_cart": "Add to Cart",
-  "cart.added": "Added",
-  "cart.in_cart": "In Cart",
-  "cart.already_in_cart": "Already in cart",
-  
-  "event.full": "Full",
-  "event.spots_left": "spots left",
-  "event.waitlist": "Waitlist",
   
   "status.loading": "Loading...",
   "status.error": "Error", 
@@ -716,7 +703,7 @@
   "instituto.cta.secondary": "Cultural Heritage",
 
   "hero.badge": "Unidos pela Língua • United by Language",
-  "hero.title": "London's Portuguese Community Hub",
+  "hero.title": "United Kingdom's Portuguese Community Hub",
   "hero.title.mobile": "Portuguese London Community",
   "hero.subtitle": "Where Portuguese culture thrives in London & across the UK - join events, make connections, and celebrate your heritage together",
   "hero.subtitle.mobile": "Connect with Portuguese speakers in London & the UK",
@@ -1352,7 +1339,7 @@
 
   "matches.find_your_match": "Find Your Match",
   "matches.discover_matches": "Discover Your Matches",
-  "matches.connect_portuguese_speakers": "Connect with Portuguese speakers in London who share your interests, values, and cultural heritage. More than a dating app - a community.",
+  "matches.connect_portuguese_speakers": "Connect with Portuguese speakers in the United Kingdom who share your interests, values, and cultural heritage. More than a dating app - a community.",
   "matches.live_success_stories": "Live Success Stories",
   "matches.portuguese_connected_month": "Portuguese speakers connected through LusoTown this month",
   "matches.cultural_quote": "Finally someone who understands saudade and loves pastéis de nata as much as I do!",
@@ -1369,7 +1356,7 @@
   "matches.to_meet_in_person": "To meet in person",
   "matches.satisfaction_rate": "Satisfaction Rate",
   "matches.premium_members": "Premium Members",
-  "matches.browse_portuguese_speakers": "Browse through Portuguese speakers in London who share your interests and cultural background. Every profile is carefully verified.",
+  "matches.browse_portuguese_speakers": "Browse through Portuguese speakers in the United Kingdom who share your interests and cultural background. Every profile is carefully verified.",
   "matches.cultural_compatibility": "Cultural Compatibility",
   "matches.verified_profiles": "Verified Profiles",
   "matches.near_you": "Near You",
