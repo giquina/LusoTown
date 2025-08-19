@@ -1,0 +1,52 @@
+# LusoTown Streaming Server with Ad Revenue System
+# Portuguese community streaming platform with integrated monetization
+
+FROM node:18-alpine
+
+# Install system dependencies
+RUN apk add --no-cache \
+    ffmpeg \
+    python3 \
+    make \
+    g++ \
+    && rm -rf /var/cache/apk/*
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+COPY streaming/package*.json ./streaming/
+
+# Install dependencies
+RUN npm install --only=production
+RUN cd streaming && npm install --only=production
+
+# Install additional dependencies for ad system
+RUN cd streaming && npm install nodemailer geoip-lite
+
+# Copy application code
+COPY . .
+
+# Create media directory for streaming
+RUN mkdir -p streaming/media streaming/www
+
+# Set proper permissions
+RUN chown -R node:node /app
+USER node
+
+# Expose ports
+EXPOSE 8080 1935
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD curl -f http://localhost:8080/health || exit 1
+
+# Environment variables
+ENV NODE_ENV=production
+ENV PORT=8080
+ENV RTMP_PORT=1935
+ENV HOST=0.0.0.0
+
+# Start services
+CMD ["sh", "-c", "cd streaming && node server.js"]
