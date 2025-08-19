@@ -19,7 +19,7 @@ import {
   CurrencyPoundIcon,
   BanknotesIcon,
   UserGroupIcon,
-  HandshakeIcon,
+  HandRaisedIcon,
   PresentationChartLineIcon,
   LanguageIcon,
   GiftIcon,
@@ -949,7 +949,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
 
       {/* Call to Action */}
       <div className="text-center bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-8">
-        <HandshakeIcon className="w-12 h-12 text-primary-500 mx-auto mb-4" />
+  <HandRaisedIcon className="w-12 h-12 text-primary-500 mx-auto mb-4" />
         <h2 className="text-2xl font-bold text-gray-900 mb-4">
           {language === 'pt' ? 'Fortaleça Sua Conexão com Portugal' : 'Strengthen Your Connection with Portugal'}
         </h2>

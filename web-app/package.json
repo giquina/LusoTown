@@ -37,6 +37,8 @@
     "verify:creator-monetization": "node scripts/verify-creator-monetization.js"
   },
   "dependencies": {
+  "@lusotown/design-tokens": "file:../packages/design-tokens",
+  "@lusotown/ui": "file:../packages/ui",
   "hls.js": "^1.5.13",
     "react-native-web": "^0.19.11",
     "@headlessui/react": "^2.2.7",

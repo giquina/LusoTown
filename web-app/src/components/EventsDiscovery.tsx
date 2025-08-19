@@ -17,12 +17,12 @@ import {
   AcademicCapIcon,
   BuildingOfficeIcon,
   UserGroupIcon,
-  StarIcon,
+  StarIcon as StarOutlineIcon,
   BookOpenIcon,
   CakeIcon
 } from '@heroicons/react/24/outline'
 import { Typography, Spacing, IconSystem, cn } from '@/lib/design'
-import { HeartIcon as HeartSolidIcon, StarIcon } from '@heroicons/react/24/solid'
+import { HeartIcon as HeartSolidIcon, StarIcon as StarSolidIcon } from '@heroicons/react/24/solid'
 import { useLanguage } from '@/context/LanguageContext'
 import { useFavorites } from '@/context/FavoritesContext'
 import Link from 'next/link'
@@ -132,7 +132,7 @@ const CULTURAL_CATEGORIES = [
   {
     id: 'football_culture',
     name: { en: 'Football Culture', pt: 'Cultura do Futebol' },
-    icon: StarIcon,
+  icon: StarOutlineIcon,
     color: 'bg-gradient-to-br from-secondary-500 to-secondary-600',
     description: 'Portuguese football viewing and discussion'
   },
@@ -607,7 +607,7 @@ export default function EventsDiscovery({
                           )}
                           <div className="flex items-center space-x-1">
                             {Array.from({ length: 5 }, (_, i) => (
-                              <StarIcon
+                              <StarSolidIcon
                                 key={i}
                                 className={`w-3 h-3 ${
                                   i < Math.floor(event.cultural_authenticity_score / 20)

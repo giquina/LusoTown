@@ -19,7 +19,6 @@ import AuthPopup from "@/components/AuthPopup";
 import AuthIntentHandler from "@/components/AuthIntentHandler";
 import FavoriteNotification from "@/components/FavoriteNotification";
 import Header from "@/components/Header";
-import { Button } from "@lusotown/ui";
 import ScrollToTop from "@/components/ScrollToTop";
 import ErrorBoundary, {
   ComponentErrorBoundary,
@@ -196,10 +195,7 @@ export default function RootLayout({
                               <ScrollToTop />
 
                               <ErrorBoundary>
-                                {/* Demo: shared UI button from packages/ui */}
-                                <div className="p-4">
-                                  <Button title="Shared Button" onPress={() => console.log('clicked')} />
-                                </div>
+                                {/* Demo removed from SSR path to avoid server/client boundary issues */}
                                 {children}
                               </ErrorBoundary>
 

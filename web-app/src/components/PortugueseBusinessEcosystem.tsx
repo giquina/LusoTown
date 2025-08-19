@@ -16,7 +16,7 @@ import {
   CheckBadgeIcon,
   ShieldCheckIcon,
   TrophyIcon,
-  HandshakeIcon,
+  HandRaisedIcon,
   CurrencyPoundIcon,
   BanknotesIcon
 } from "@heroicons/react/24/outline";
@@ -67,7 +67,7 @@ const businessCategories: BusinessCategory[] = [
   },
   {
     id: 'legal',
-    name: 'Serviços Jurídicos',
+    name: 'Serviï¿½os Jurï¿½dicos',
     nameEn: 'Legal Services',
     icon: <ShieldCheckIcon className="w-6 h-6" />,
     businessCount: 32,
@@ -77,7 +77,7 @@ const businessCategories: BusinessCategory[] = [
   },
   {
     id: 'financial',
-    name: 'Serviços Financeiros',
+    name: 'Serviï¿½os Financeiros',
     nameEn: 'Financial Services',
     icon: <BanknotesIcon className="w-6 h-6" />,
     businessCount: 28,
@@ -87,9 +87,9 @@ const businessCategories: BusinessCategory[] = [
   },
   {
     id: 'healthcare',
-    name: 'Saúde e Bem-estar',
+    name: 'Saï¿½de e Bem-estar',
     nameEn: 'Health & Wellness',
-    icon: <HandshakeIcon className="w-6 h-6" />,
+  icon: <HandRaisedIcon className="w-6 h-6" />,
     businessCount: 67,
     featured: false,
     revenueModel: 'Subscription',
@@ -97,7 +97,7 @@ const businessCategories: BusinessCategory[] = [
   },
   {
     id: 'education',
-    name: 'Educação e Línguas',
+    name: 'Educaï¿½ï¿½o e Lï¿½nguas',
     nameEn: 'Education & Languages',
     icon: <TrophyIcon className="w-6 h-6" />,
     businessCount: 54,
@@ -107,7 +107,7 @@ const businessCategories: BusinessCategory[] = [
   },
   {
     id: 'real_estate',
-    name: 'Imobiliário',
+    name: 'Imobiliï¿½rio',
     nameEn: 'Real Estate',
     icon: <BuildingOfficeIcon className="w-6 h-6" />,
     businessCount: 23,
@@ -122,7 +122,7 @@ const featuredBusinesses: PortugueseBusiness[] = [
     id: 'tasca-do-bairro',
     name: 'Tasca do Bairro',
     category: 'restaurants',
-    description: 'Restaurante tradicional português com pratos caseiros e ambiente familiar',
+    description: 'Restaurante tradicional portuguï¿½s com pratos caseiros e ambiente familiar',
     descriptionEn: 'Traditional Portuguese restaurant with homemade dishes and family atmosphere',
     address: '45 Charlotte Street, Fitzrovia, London W1T 1RS',
     phone: '+44 20 7636 2431',
@@ -136,11 +136,11 @@ const featuredBusinesses: PortugueseBusiness[] = [
     subscriptionTier: 'professional',
     monthlyFee: 85,
     features: [
-      'Listagem prioritária nos resultados',
+      'Listagem prioritï¿½ria nos resultados',
       'Reservas online integradas',
       'Marketing cultural direcionado',
-      'Análise de clientes portugueses',
-      'Suporte técnico em português'
+      'Anï¿½lise de clientes portugueses',
+      'Suporte tï¿½cnico em portuguï¿½s'
     ],
     featuresEn: [
       'Priority listing in results',
@@ -154,7 +154,7 @@ const featuredBusinesses: PortugueseBusiness[] = [
     id: 'luso-legal',
     name: 'Luso Legal Services',
     category: 'legal',
-    description: 'Escritório de advocacia especializado em direito português e imigração',
+    description: 'Escritï¿½rio de advocacia especializado em direito portuguï¿½s e imigraï¿½ï¿½o',
     descriptionEn: 'Law firm specialized in Portuguese law and immigration',
     address: '123 Holborn, London WC1V 6NA',
     phone: '+44 20 7242 5678',
@@ -168,11 +168,11 @@ const featuredBusinesses: PortugueseBusiness[] = [
     subscriptionTier: 'enterprise',
     monthlyFee: 250,
     features: [
-      'Consultas jurídicas especializadas',
-      'Assistência com vistos e cidadania',
-      'Contratos em português e inglês',
+      'Consultas jurï¿½dicas especializadas',
+      'Assistï¿½ncia com vistos e cidadania',
+      'Contratos em portuguï¿½s e inglï¿½s',
       'Rede de contactos em Portugal',
-      'Atendimento em português'
+      'Atendimento em portuguï¿½s'
     ],
     featuresEn: [
       'Specialized legal consultations',
@@ -214,19 +214,19 @@ export default function PortugueseBusinessEcosystem() {
           >
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 text-sm font-medium mb-8">
               <BuildingOfficeIcon className="w-5 h-5 mr-2" />
-              {isPortuguese ? 'Ecossistema Empresarial Português' : 'Portuguese Business Ecosystem'}
+              {isPortuguese ? 'Ecossistema Empresarial Portuguï¿½s' : 'Portuguese Business Ecosystem'}
             </div>
             
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
               {isPortuguese 
-                ? 'Conecte-se com Negócios Portugueses em Londres'
+                ? 'Conecte-se com Negï¿½cios Portugueses em Londres'
                 : 'Connect with Portuguese Businesses in London'
               }
             </h1>
             
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
               {isPortuguese
-                ? 'A maior plataforma de negócios portugueses no Reino Unido. Descubra serviços autênticos, conecte-se com profissionais e faça crescer a sua empresa dentro da comunidade portuguesa.'
+                ? 'A maior plataforma de negï¿½cios portugueses no Reino Unido. Descubra serviï¿½os autï¿½nticos, conecte-se com profissionais e faï¿½a crescer a sua empresa dentro da comunidade portuguesa.'
                 : 'The largest Portuguese business platform in the UK. Discover authentic services, connect with professionals, and grow your business within the Portuguese community.'
               }
             </p>
@@ -234,7 +234,7 @@ export default function PortugueseBusinessEcosystem() {
             {/* Revenue Dashboard Toggle */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button className="bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/95 transition-all">
-                {isPortuguese ? 'Explorar Negócios' : 'Explore Businesses'}
+                {isPortuguese ? 'Explorar Negï¿½cios' : 'Explore Businesses'}
               </button>
               
               <button 
@@ -258,7 +258,7 @@ export default function PortugueseBusinessEcosystem() {
         >
           <div className="container-width">
             <h2 className="text-3xl font-bold text-center mb-12">
-              {isPortuguese ? 'Análise de Receitas - Ecossistema Empresarial' : 'Revenue Analysis - Business Ecosystem'}
+              {isPortuguese ? 'Anï¿½lise de Receitas - Ecossistema Empresarial' : 'Revenue Analysis - Business Ecosystem'}
             </h2>
             
             <div className="grid md:grid-cols-4 gap-6 mb-12">
@@ -269,9 +269,9 @@ export default function PortugueseBusinessEcosystem() {
                     {isPortuguese ? 'Receita Mensal Total' : 'Total Monthly Revenue'}
                   </h3>
                 </div>
-                <p className="text-3xl font-bold">£{totalMonthlyRevenue.toLocaleString()}</p>
+                <p className="text-3xl font-bold">ï¿½{totalMonthlyRevenue.toLocaleString()}</p>
                 <p className="text-green-100 text-sm">
-                  {isPortuguese ? '+15% mês anterior' : '+15% from previous month'}
+                  {isPortuguese ? '+15% mï¿½s anterior' : '+15% from previous month'}
                 </p>
               </div>
 
@@ -279,21 +279,21 @@ export default function PortugueseBusinessEcosystem() {
                 <div className="flex items-center gap-3 mb-4">
                   <ChartBarIcon className="w-8 h-8" />
                   <h3 className="text-lg font-semibold">
-                    {isPortuguese ? 'Subscrições' : 'Subscriptions'}
+                    {isPortuguese ? 'Subscriï¿½ï¿½es' : 'Subscriptions'}
                   </h3>
                 </div>
-                <p className="text-3xl font-bold">£{Math.round(revenueBreakdown.subscriptions).toLocaleString()}</p>
+                <p className="text-3xl font-bold">ï¿½{Math.round(revenueBreakdown.subscriptions).toLocaleString()}</p>
                 <p className="text-blue-100 text-sm">65% {isPortuguese ? 'da receita total' : 'of total revenue'}</p>
               </div>
 
               <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <HandshakeIcon className="w-8 h-8" />
+                  <HandRaisedIcon className="w-8 h-8" />
                   <h3 className="text-lg font-semibold">
-                    {isPortuguese ? 'Comissões' : 'Commissions'}
+                    {isPortuguese ? 'Comissï¿½es' : 'Commissions'}
                   </h3>
                 </div>
-                <p className="text-3xl font-bold">£{Math.round(revenueBreakdown.commissions).toLocaleString()}</p>
+                <p className="text-3xl font-bold">ï¿½{Math.round(revenueBreakdown.commissions).toLocaleString()}</p>
                 <p className="text-purple-100 text-sm">25% {isPortuguese ? 'da receita total' : 'of total revenue'}</p>
               </div>
 
@@ -304,7 +304,7 @@ export default function PortugueseBusinessEcosystem() {
                     {isPortuguese ? 'Parcerias' : 'Partnerships'}
                   </h3>
                 </div>
-                <p className="text-3xl font-bold">£{Math.round(revenueBreakdown.partnerships).toLocaleString()}</p>
+                <p className="text-3xl font-bold">ï¿½{Math.round(revenueBreakdown.partnerships).toLocaleString()}</p>
                 <p className="text-orange-100 text-sm">10% {isPortuguese ? 'da receita total' : 'of total revenue'}</p>
               </div>
             </div>
@@ -312,14 +312,14 @@ export default function PortugueseBusinessEcosystem() {
             {/* Annual Revenue Projection */}
             <div className="bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl p-8 text-center">
               <h3 className="text-2xl font-bold mb-4">
-                {isPortuguese ? 'Projeção Anual' : 'Annual Projection'}
+                {isPortuguese ? 'Projeï¿½ï¿½o Anual' : 'Annual Projection'}
               </h3>
               <p className="text-4xl font-bold mb-2">
-                £{(totalMonthlyRevenue * 12 * 1.15).toLocaleString()}
+                ï¿½{(totalMonthlyRevenue * 12 * 1.15).toLocaleString()}
               </p>
               <p className="text-white/80">
                 {isPortuguese 
-                  ? 'Incluindo crescimento de 15% previsto para negócios portugueses em Londres'
+                  ? 'Incluindo crescimento de 15% previsto para negï¿½cios portugueses em Londres'
                   : 'Including 15% projected growth for Portuguese businesses in London'
                 }
               </p>
@@ -337,11 +337,11 @@ export default function PortugueseBusinessEcosystem() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-              {isPortuguese ? 'Categorias de Negócios' : 'Business Categories'}
+              {isPortuguese ? 'Categorias de Negï¿½cios' : 'Business Categories'}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               {isPortuguese
-                ? 'Explore categorias de negócios portugueses verificados e certificados para qualidade cultural'
+                ? 'Explore categorias de negï¿½cios portugueses verificados e certificados para qualidade cultural'
                 : 'Explore Portuguese business categories verified and certified for cultural quality'
               }
             </p>
@@ -377,7 +377,7 @@ export default function PortugueseBusinessEcosystem() {
                       {isPortuguese ? category.name : category.nameEn}
                     </h3>
                     <p className="text-gray-600">
-                      {category.businessCount} {isPortuguese ? 'negócios' : 'businesses'}
+                      {category.businessCount} {isPortuguese ? 'negï¿½cios' : 'businesses'}
                     </p>
                   </div>
                 </div>
@@ -395,7 +395,7 @@ export default function PortugueseBusinessEcosystem() {
                   {category.commission > 0 && (
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-gray-600">
-                        {isPortuguese ? 'Comissão:' : 'Commission:'}
+                        {isPortuguese ? 'Comissï¿½o:' : 'Commission:'}
                       </span>
                       <span className="text-sm font-bold text-green-600">
                         {category.commission}%
@@ -422,11 +422,11 @@ export default function PortugueseBusinessEcosystem() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-              {isPortuguese ? 'Negócios em Destaque' : 'Featured Businesses'}
+              {isPortuguese ? 'Negï¿½cios em Destaque' : 'Featured Businesses'}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               {isPortuguese
-                ? 'Negócios portugueses premium com autenticidade cultural verificada'
+                ? 'Negï¿½cios portugueses premium com autenticidade cultural verificada'
                 : 'Premium Portuguese businesses with verified cultural authenticity'
               }
             </p>
@@ -507,7 +507,7 @@ export default function PortugueseBusinessEcosystem() {
                           {isPortuguese ? 'Taxa Mensal:' : 'Monthly Fee:'}
                         </span>
                         <span className="ml-2 font-bold text-green-600">
-                          £{business.monthlyFee}
+                          ï¿½{business.monthlyFee}
                         </span>
                       </div>
                     </div>
@@ -515,7 +515,7 @@ export default function PortugueseBusinessEcosystem() {
 
                   <div className="mt-6">
                     <h4 className="font-semibold text-gray-900 mb-3">
-                      {isPortuguese ? 'Características Premium:' : 'Premium Features:'}
+                      {isPortuguese ? 'Caracterï¿½sticas Premium:' : 'Premium Features:'}
                     </h4>
                     <div className="grid md:grid-cols-2 gap-2">
                       {(isPortuguese ? business.features : business.featuresEn).slice(0, 4).map((feature, idx) => (
@@ -551,24 +551,24 @@ export default function PortugueseBusinessEcosystem() {
           >
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
               {isPortuguese 
-                ? 'Integre o Seu Negócio no Ecossistema Português'
+                ? 'Integre o Seu Negï¿½cio no Ecossistema Portuguï¿½s'
                 : 'Integrate Your Business into the Portuguese Ecosystem'
               }
             </h2>
             
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
               {isPortuguese
-                ? 'Junte-se a centenas de negócios portugueses que crescem através da nossa plataforma. Acesso exclusivo à maior comunidade portuguesa do Reino Unido.'
+                ? 'Junte-se a centenas de negï¿½cios portugueses que crescem atravï¿½s da nossa plataforma. Acesso exclusivo ï¿½ maior comunidade portuguesa do Reino Unido.'
                 : 'Join hundreds of Portuguese businesses growing through our platform. Exclusive access to the largest Portuguese community in the UK.'
               }
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/95 transition-all">
-                {isPortuguese ? 'Registar Negócio' : 'Register Business'}
+                {isPortuguese ? 'Registar Negï¿½cio' : 'Register Business'}
               </button>
               <button className="bg-white/10 border border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all">
-                {isPortuguese ? 'Agendar Demonstração' : 'Schedule Demo'}
+                {isPortuguese ? 'Agendar Demonstraï¿½ï¿½o' : 'Schedule Demo'}
               </button>
             </div>
           </motion.div>

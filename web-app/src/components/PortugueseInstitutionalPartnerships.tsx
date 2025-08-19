@@ -8,7 +8,7 @@ import {
   BuildingOffice2Icon,
   AcademicCapIcon,
   GlobeAltIcon,
-  HandshakeIcon,
+  HandRaisedIcon,
   ChartBarIcon,
   UserGroupIcon,
   StarIcon,

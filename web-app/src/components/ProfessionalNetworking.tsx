@@ -10,7 +10,7 @@ import {
   LightBulbIcon,
   GlobeAltIcon,
   ArrowTrendingUpIcon,
-  HandshakeIcon
+  HandRaisedIcon
 } from '@heroicons/react/24/outline'
 
 interface ProfessionalNetworkingProps {
@@ -104,7 +104,7 @@ export default function ProfessionalNetworking({
       labelPt: 'Networking Profissional',
       description: 'Build business connections',
       descriptionPt: 'Construir conexões de negócios',
-      icon: HandshakeIcon 
+  icon: HandRaisedIcon 
     },
     { 
       id: 'mentorship', 
@@ -136,7 +136,7 @@ export default function ProfessionalNetworking({
       labelPt: 'Parcerias de Negócio',
       description: 'Form strategic partnerships',
       descriptionPt: 'Formar parcerias estratégicas',
-      icon: HandshakeIcon 
+  icon: HandRaisedIcon 
     },
     { 
       id: 'skill-development', 

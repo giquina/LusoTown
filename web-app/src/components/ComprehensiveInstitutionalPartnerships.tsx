@@ -20,7 +20,7 @@ import {
   CheckBadgeIcon,
   StarIcon,
   ArrowRightIcon,
-  HandshakeIcon,
+  HandRaisedIcon,
   PresentationChartLineIcon,
   ChartBarIcon,
   DocumentTextIcon,
@@ -345,7 +345,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
       {/* Header */}
       <div className="text-center mb-12">
         <div className="flex items-center justify-center mb-6">
-          <HandshakeIcon className="w-12 h-12 text-primary-500 mr-4" />
+          <HandRaisedIcon className="w-12 h-12 text-primary-500 mr-4" />
           <GlobeAltIcon className="w-12 h-12 text-secondary-500" />
         </div>
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
@@ -764,7 +764,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
                   <ul className="space-y-2">
                     {region.keyPartnerships.map((partnership, index) => (
                       <li key={index} className="flex items-center text-sm text-gray-700">
-                        <HandshakeIcon className="w-4 h-4 text-primary-500 mr-2 flex-shrink-0" />
+                        <HandRaisedIcon className="w-4 h-4 text-primary-500 mr-2 flex-shrink-0" />
                         {partnership}
                       </li>
                     ))}
@@ -817,7 +817,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
 
       {/* Call to Action */}
       <div className="mt-16 text-center bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-8">
-        <HandshakeIcon className="w-12 h-12 text-primary-500 mx-auto mb-4" />
+  <HandRaisedIcon className="w-12 h-12 text-primary-500 mx-auto mb-4" />
         <h2 className="text-2xl font-bold text-gray-900 mb-4">
           {language === 'pt' ? 'Torne-se um Parceiro Institucional' : 'Become an Institutional Partner'}
         </h2>

@@ -22,7 +22,7 @@ import {
   ArrowRightIcon,
   DocumentTextIcon,
   PresentationChartLineIcon,
-  HandshakeIcon,
+  HandRaisedIcon,
   SparklesIcon,
   BriefcaseIcon,
   LanguageIcon,
@@ -892,7 +892,7 @@ const PortugueseUniversityNetwork: React.FC = () => {
                       <ul className="space-y-2">
                         {(language === 'pt' ? selectedUniversityData.partnershipsPortuguese : selectedUniversityData.partnerships).map((partnership, index) => (
                           <li key={index} className="flex items-center text-sm text-gray-700">
-                            <HandshakeIcon className="w-4 h-4 text-blue-500 mr-2 flex-shrink-0" />
+                            <HandRaisedIcon className="w-4 h-4 text-blue-500 mr-2 flex-shrink-0" />
                             {partnership}
                           </li>
                         ))}

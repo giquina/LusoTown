@@ -967,3 +967,6 @@ export function useNotifications() {
   }
   return context
 }
+
+// Backward-compatible alias used by some components
+export const useNotification = useNotifications
