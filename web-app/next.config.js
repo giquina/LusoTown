@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  distDir: '.next',
   transpilePackages: ["@lusotown/ui", "@lusotown/design-tokens"],
   images: {
     unoptimized: false,

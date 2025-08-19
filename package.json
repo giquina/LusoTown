@@ -9,6 +9,11 @@
     "streaming",
     "packages/*"
   ],
+  "engines": {
+    "node": "18.x",
+    "npm": "9.x"
+  },
+  "packageManager": "npm@9.9.3",
   "scripts": {
     "dev": "cd web-app && npm run dev",
     "build": "cd web-app && npm run build",
