@@ -40,13 +40,13 @@
    💾 Storage: 1GB free space recommended
 
 🔑 ADDITIONAL STREAM KEYS FOR PORTUGUESE CONTENT:
-   🎭 Cultural Events: portuguese_cultural_1755568120367
-   💼 Business Workshops: portuguese_business_1755568120367
-   🎉 Social Gatherings: portuguese_social_1755568120367
-   🎵 Fado Sessions: fado_session_1755568120367
-   🍽️ Cooking Shows: portuguese_cooking_1755568120367
-   📚 Language Lessons: portuguese_lessons_1755568120367
-   ⚽ Sports Commentary: portuguese_sports_1755568120367
+   🎭 Cultural Events: portuguese_cultural_1755571338759
+   💼 Business Workshops: portuguese_business_1755571338759
+   🎉 Social Gatherings: portuguese_social_1755571338759
+   🎵 Fado Sessions: fado_session_1755571338759
+   🍽️ Cooking Shows: portuguese_cooking_1755571338759
+   📚 Language Lessons: portuguese_lessons_1755571338759
+   ⚽ Sports Commentary: portuguese_sports_1755571338759
 
 🚀 QUICK START STEPS:
    1. Configure Streamlabs with settings above

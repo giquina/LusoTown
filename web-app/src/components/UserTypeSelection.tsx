@@ -60,25 +60,101 @@ export default function UserTypeSelection() {
 
   const strings = {
     en: {
-      title: 'Welcome to LusoTown',
-      subtitle: "Choose what you're here for",
-      skip: 'Skip for now',
+      title: 'Welcome Home',
+      subtitle: 'Portuguese speakers in London',
+      tagline: 'From Fado to Football, From Saudade to Success',
+      description: 'Find your Portuguese community in the heart of London',
+      skip: 'Explore later',
       cards: [
-        { title: 'Meet Your Match', desc: 'Connect with Portuguese speakers', cta: 'Go to Matches', href: '/matches', icon: HeartIcon, color: 'from-secondary-600 via-action-600 to-accent-600' },
-        { title: 'Events', desc: 'Explore Portuguese events in London', cta: 'Go to Events', href: '/events', icon: CalendarDaysIcon, color: 'from-primary-600 via-secondary-600 to-action-600' },
-  { title: 'Streaming', desc: 'Watch live Portuguese content', cta: 'Go to Streaming', href: '/live', icon: PlayCircleIcon, color: 'from-accent-600 via-action-600 to-secondary-600' },
-        { title: 'Tools', desc: 'Creator and business tools', cta: 'Go to Tools', href: '/tools', icon: WrenchScrewdriverIcon, color: 'from-premium-600 via-secondary-600 to-action-600' },
+        { 
+          title: 'Find Your Pessoa', 
+          desc: 'Connect with Portuguese speakers who share your story', 
+          cta: 'Meet People', 
+          href: '/matches', 
+          icon: HeartIcon, 
+          color: 'from-red-500 via-green-500 to-red-600',
+          emoji: '💕',
+          benefit: 'Cultural connections that feel like home'
+        },
+        { 
+          title: 'Portuguese Events', 
+          desc: 'Fado nights, football watch parties & cultural celebrations', 
+          cta: 'Join Events', 
+          href: '/events', 
+          icon: CalendarDaysIcon, 
+          color: 'from-green-600 via-red-500 to-green-600',
+          emoji: '🎉',
+          benefit: 'Never miss Portuguese culture in London'
+        },
+        { 
+          title: 'LusoTown TV', 
+          desc: 'Live Portuguese content, talk shows & community streams', 
+          cta: 'Watch Now', 
+          href: '/live', 
+          icon: PlayCircleIcon, 
+          color: 'from-red-600 via-yellow-500 to-green-600',
+          emoji: '📺',
+          benefit: 'Portuguese voices, London stories'
+        },
+        { 
+          title: 'Creator Hub', 
+          desc: 'Share your talents with the Portuguese community', 
+          cta: 'Start Creating', 
+          href: '/tools', 
+          icon: WrenchScrewdriverIcon, 
+          color: 'from-yellow-500 via-red-500 to-green-600',
+          emoji: '🚀',
+          benefit: 'Turn your culture into your career'
+        },
       ],
     },
     pt: {
-      title: 'Bem-vindo à LusoTown',
-      subtitle: 'O que procuras hoje?',
-      skip: 'Saltar por agora',
+      title: 'Bem-vindo a Casa',
+      subtitle: 'Falantes de português em Londres',
+      tagline: 'Do Fado ao Futebol, da Saudade ao Sucesso',
+      description: 'Encontra a tua comunidade portuguesa no coração de Londres',
+      skip: 'Explorar mais tarde',
       cards: [
-        { title: 'Encontra o Teu Match', desc: 'Conecta com falantes de português', cta: 'Ir para Matches', href: '/matches', icon: HeartIcon, color: 'from-secondary-600 via-action-600 to-accent-600' },
-        { title: 'Eventos', desc: 'Explora eventos portugueses em Londres', cta: 'Ir para Eventos', href: '/events', icon: CalendarDaysIcon, color: 'from-primary-600 via-secondary-600 to-action-600' },
-  { title: 'Streaming', desc: 'Vê conteúdo português ao vivo', cta: 'Ir para Streaming', href: '/live', icon: PlayCircleIcon, color: 'from-accent-600 via-action-600 to-secondary-600' },
-        { title: 'Ferramentas', desc: 'Ferramentas para criadores e negócios', cta: 'Ir para Ferramentas', href: '/tools', icon: WrenchScrewdriverIcon, color: 'from-premium-600 via-secondary-600 to-action-600' },
+        { 
+          title: 'Encontra a Tua Pessoa', 
+          desc: 'Conecta com portugueses que partilham a tua história', 
+          cta: 'Conhecer Pessoas', 
+          href: '/matches', 
+          icon: HeartIcon, 
+          color: 'from-red-500 via-green-500 to-red-600',
+          emoji: '💕',
+          benefit: 'Ligações culturais que sabem a casa'
+        },
+        { 
+          title: 'Eventos Portugueses', 
+          desc: 'Noites de fado, futebol e celebrações culturais', 
+          cta: 'Juntar aos Eventos', 
+          href: '/events', 
+          icon: CalendarDaysIcon, 
+          color: 'from-green-600 via-red-500 to-green-600',
+          emoji: '🎉',
+          benefit: 'Nunca percas a cultura portuguesa em Londres'
+        },
+        { 
+          title: 'LusoTown TV', 
+          desc: 'Conteúdo português ao vivo, talk shows e streams', 
+          cta: 'Ver Agora', 
+          href: '/live', 
+          icon: PlayCircleIcon, 
+          color: 'from-red-600 via-yellow-500 to-green-600',
+          emoji: '📺',
+          benefit: 'Vozes portuguesas, histórias de Londres'
+        },
+        { 
+          title: 'Hub de Criadores', 
+          desc: 'Partilha os teus talentos com a comunidade', 
+          cta: 'Começar a Criar', 
+          href: '/tools', 
+          icon: WrenchScrewdriverIcon, 
+          color: 'from-yellow-500 via-red-500 to-green-600',
+          emoji: '🚀',
+          benefit: 'Transforma a tua cultura na tua carreira'
+        },
       ],
     },
   } as const
@@ -105,13 +181,20 @@ export default function UserTypeSelection() {
               className="min-h-full bg-white flex flex-col"
             >
               {/* Mobile Header */}
-              <div className="relative px-6 pt-8 pb-6 border-b bg-gradient-to-br from-primary-50 to-secondary-50">
+              <div className="relative px-6 pt-8 pb-6 border-b bg-gradient-to-br from-red-50 via-yellow-50 to-green-50">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <HeartIcon className="h-8 w-8 text-white" />
+                  <div className="relative w-20 h-20 mx-auto mb-4">
+                    <div className="w-20 h-20 bg-gradient-to-br from-red-500 via-yellow-400 to-green-600 rounded-full flex items-center justify-center animate-pulse">
+                      <span className="text-2xl animate-bounce">🏠</span>
+                    </div>
+                    <div className="absolute -top-1 -right-1 w-6 h-6 bg-red-600 rounded-full border-2 border-white flex items-center justify-center">
+                      <span className="text-xs">🇵🇹</span>
+                    </div>
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-2">{t.title}</h2>
-                  <p className="text-gray-600">{t.subtitle}</p>
+                  <h2 className="text-3xl font-bold bg-gradient-to-r from-red-600 via-green-600 to-red-600 bg-clip-text text-transparent mb-2">{t.title}</h2>
+                  <p className="text-lg font-medium text-gray-700 mb-1">{t.subtitle}</p>
+                  <p className="text-sm text-gray-600 italic">{t.tagline}</p>
+                  <p className="text-xs text-gray-500 mt-2">{t.description}</p>
                 </div>
                 <button
                   aria-label="Close"
@@ -131,19 +214,27 @@ export default function UserTypeSelection() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 * index }}
                     onClick={() => go(card.href)}
-                    className="group w-full text-left rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all bg-white overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-300 active:scale-[0.98]"
+                    className="group w-full text-left rounded-2xl border-2 border-gray-100 shadow-md hover:shadow-xl hover:border-red-200 transition-all duration-300 bg-white overflow-hidden focus:outline-none focus:ring-2 focus:ring-red-300 active:scale-[0.98] hover:scale-[1.02]"
                   >
-                    <div className={`h-2 w-full bg-gradient-to-r ${card.color}`} />
-                    <div className="p-5 flex items-center gap-4">
-                      <div className="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center flex-shrink-0">
-                        <card.icon className="h-7 w-7 text-primary-600" />
+                    <div className={`h-3 w-full bg-gradient-to-r ${card.color} relative overflow-hidden`}>
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                    </div>
+                    <div className="p-6 flex items-start gap-4">
+                      <div className="relative">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                          <card.icon className="h-8 w-8 text-red-600 group-hover:text-green-600 transition-colors" />
+                        </div>
+                        <div className="absolute -top-1 -right-1 text-lg group-hover:animate-bounce">
+                          {card.emoji}
+                        </div>
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="text-lg font-bold text-gray-900 mb-1">{card.title}</div>
-                        <div className="text-sm text-gray-600 leading-relaxed">{card.desc}</div>
-                        <div className="mt-3 inline-flex items-center text-primary-700 text-sm font-semibold group-hover:underline">
+                        <div className="text-lg font-bold text-gray-900 mb-1 group-hover:text-red-700 transition-colors">{card.title}</div>
+                        <div className="text-sm text-gray-600 leading-relaxed mb-2">{card.desc}</div>
+                        <div className="text-xs text-green-600 font-medium mb-3 italic">{card.benefit}</div>
+                        <div className="inline-flex items-center text-red-700 text-sm font-bold group-hover:text-green-700 group-hover:underline transition-colors">
                           {card.cta}
-                          <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                           </svg>
                         </div>
@@ -174,13 +265,21 @@ export default function UserTypeSelection() {
               className="bg-white max-w-4xl w-full rounded-2xl shadow-2xl overflow-hidden"
             >
               {/* Desktop Header */}
-              <div className="relative px-8 pt-8 pb-6 border-b bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+              <div className="relative px-8 pt-8 pb-6 border-b bg-gradient-to-br from-red-50 via-yellow-50 to-green-50">
                 <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <HeartIcon className="h-10 w-10 text-white" />
+                  <div className="relative w-24 h-24 mx-auto mb-6">
+                    <div className="w-24 h-24 bg-gradient-to-br from-red-500 via-yellow-400 to-green-600 rounded-full flex items-center justify-center animate-pulse shadow-lg">
+                      <span className="text-3xl animate-bounce">🏠</span>
+                    </div>
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-red-600 rounded-full border-3 border-white flex items-center justify-center shadow-md">
+                      <span className="text-sm">🇵🇹</span>
+                    </div>
+                    <div className="absolute inset-0 rounded-full border-2 border-red-200 animate-ping opacity-20"></div>
                   </div>
-                  <h2 className="text-3xl font-bold text-gray-900 mb-3">{t.title}</h2>
-                  <p className="text-lg text-gray-600">{t.subtitle}</p>
+                  <h2 className="text-4xl font-bold bg-gradient-to-r from-red-600 via-green-600 to-red-600 bg-clip-text text-transparent mb-3">{t.title}</h2>
+                  <p className="text-xl font-semibold text-gray-700 mb-2">{t.subtitle}</p>
+                  <p className="text-lg text-gray-600 italic mb-1">{t.tagline}</p>
+                  <p className="text-sm text-gray-500">{t.description}</p>
                 </div>
                 <button
                   aria-label="Close"
@@ -201,19 +300,27 @@ export default function UserTypeSelection() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.1 * index }}
                       onClick={() => go(card.href)}
-                      className="group text-left rounded-2xl border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 bg-white overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-300 hover:scale-[1.02] active:scale-[0.98]"
+                      className="group text-left rounded-2xl border-2 border-gray-100 shadow-lg hover:shadow-2xl hover:border-red-200 transition-all duration-300 bg-white overflow-hidden focus:outline-none focus:ring-2 focus:ring-red-300 hover:scale-[1.05] active:scale-[0.98]"
                     >
-                      <div className={`h-2 w-full bg-gradient-to-r ${card.color}`} />
-                      <div className="p-6 flex items-start gap-4">
-                        <div className="w-16 h-16 rounded-2xl bg-gray-50 flex items-center justify-center flex-shrink-0">
-                          <card.icon className="h-8 w-8 text-primary-600" />
+                      <div className={`h-4 w-full bg-gradient-to-r ${card.color} relative overflow-hidden`}>
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform skew-x-12 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                      </div>
+                      <div className="p-8 flex items-start gap-6">
+                        <div className="relative">
+                          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-md">
+                            <card.icon className="h-10 w-10 text-red-600 group-hover:text-green-600 transition-colors" />
+                          </div>
+                          <div className="absolute -top-2 -right-2 text-xl group-hover:animate-bounce">
+                            {card.emoji}
+                          </div>
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="text-xl font-bold text-gray-900 mb-2">{card.title}</div>
-                          <div className="text-gray-600 leading-relaxed mb-4">{card.desc}</div>
-                          <div className="inline-flex items-center text-primary-700 font-semibold group-hover:underline">
+                          <div className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-red-700 transition-colors">{card.title}</div>
+                          <div className="text-gray-600 leading-relaxed mb-3">{card.desc}</div>
+                          <div className="text-sm text-green-600 font-semibold mb-4 italic">{card.benefit}</div>
+                          <div className="inline-flex items-center text-red-700 font-bold text-lg group-hover:text-green-700 group-hover:underline transition-colors">
                             {card.cta}
-                            <svg className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                             </svg>
                           </div>

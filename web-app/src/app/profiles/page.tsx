@@ -16,7 +16,7 @@ import { Crown } from 'lucide-react'
 import { authService, User } from '@/lib/auth'
 import { UserProfile } from '@/lib/connections'
 import { profileService, LONDON_AREAS, ALL_INTERESTS } from '@/lib/profile'
-import ProfileCard from '@/components/profile/ProfileCard'
+import ProfileCard from '@/components/ProfileCard'
 import { toast } from 'react-hot-toast'
 import Footer from '@/components/Footer'
 

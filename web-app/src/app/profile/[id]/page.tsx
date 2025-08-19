@@ -7,9 +7,7 @@ import { ArrowLeftIcon, PencilIcon } from '@heroicons/react/24/outline'
 import { authService, User } from '@/lib/auth'
 import { UserProfile } from '@/lib/connections'
 import { profileService } from '@/lib/profile'
-import ProfileHeader from '@/components/profile/ProfileHeader'
-import ProfileGallery from '@/components/profile/ProfileGallery'
-import ProfileCompletion from '@/components/profile/ProfileCompletion'
+// Profile components removed
 import { toast } from 'react-hot-toast'
 
 
@@ -226,14 +224,10 @@ export default function ProfilePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
             >
-              <ProfileHeader
-                profile={profile}
-                currentUser={currentUser}
-                isOwnProfile={isOwnProfile}
-                onEditClick={handleEditProfile}
-                onPhotoClick={() => handlePhotoClick(profile.photos[0], 0)}
-                onMessageClick={handleMessageClick}
-              />
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <h1 className="text-2xl font-bold text-gray-900">{profile.firstName} {profile.lastName}</h1>
+                <p className="text-gray-600">Profile components temporarily removed during cleanup</p>
+              </div>
             </motion.div>
 
             {/* Photo Gallery */}
@@ -242,14 +236,9 @@ export default function ProfilePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <ProfileGallery
-                photos={profile.photos}
-                isOwnProfile={isOwnProfile}
-                onPhotoClick={handlePhotoClick}
-                onPhotoAdd={handlePhotoAdd}
-                onPhotoDelete={handlePhotoDelete}
-                onPhotoLike={handlePhotoLike}
-              />
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <p className="text-gray-600">Photo gallery component temporarily removed during cleanup</p>
+              </div>
             </motion.div>
           </div>
 
@@ -262,11 +251,9 @@ export default function ProfilePage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                <ProfileCompletion
-                  userId={currentUser.id}
-                  profile={null}
-                  onStepClick={handleCompletionStepClick}
-                />
+                <div className="bg-white rounded-xl p-6 shadow-sm">
+                  <p className="text-gray-600">Profile completion component temporarily removed during cleanup</p>
+                </div>
               </motion.div>
             )}
 

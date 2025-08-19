@@ -398,13 +398,18 @@ function MatchesContent() {
                 <div className="text-2xl md:text-3xl">❤️</div>
                 <HeartIcon className="w-10 h-10 md:w-12 md:h-12 text-white/90 animate-pulse" />
               </div>
-              <h1 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
-                {language === "pt" ? "Encontre o Seu Match" : "Find Your Match"}
+              <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                {language === "pt" ? "O Seu Amor Português Espera" : "Your Portuguese Love Story Awaits"}
               </h1>
-              <p className="text-sm md:text-base text-white/90 mb-6 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-lg md:text-xl text-white/95 mb-4 leading-relaxed max-w-4xl mx-auto font-medium">
                 {language === "pt"
-                  ? "Conecte-se com falantes de português em Londres que partilham os seus interesses, valores e património cultural. Mais que um app de encontros - uma comunidade."
-                  : "Connect with Portuguese speakers in London who share your interests, values, and cultural heritage. More than a dating app - a community."}
+                  ? "💕 Da saudade ao amor verdadeiro - conecte-se com almas portuguesas que entendem o seu coração em Londres"
+                  : "💕 From saudade to true love - connect with Portuguese souls who understand your heart in London"}
+              </p>
+              <p className="text-sm md:text-base text-white/80 mb-6 leading-relaxed max-w-3xl mx-auto italic">
+                {language === "pt"
+                  ? "\"Onde o fado encontra o amor, onde as tradições se tornam conversas, onde Londres se torna casa\""
+                  : "\"Where fado meets love, where traditions become conversations, where London becomes home\""}
               </p>
 
               {/* Live Success Counter */}
@@ -435,21 +440,62 @@ function MatchesContent() {
                 </div>
               </div>
 
-              {/* Cultural Quote */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 mb-6 border border-white/20">
-                <blockquote className="text-base md:text-lg text-white/95 italic">
-                  "
-                  {language === "pt"
-                    ? "Finalmente alguém que percebe a saudade e ama pastéis de nata tanto quanto eu!"
-                    : "Finally someone who understands saudade and loves pastéis de nata as much as I do!"}
-                  "
-                </blockquote>
-                <cite className="text-white/80 text-xs block mt-1">
-                  —{" "}
-                  {language === "pt"
-                    ? "Sofia, 29, Stockwell"
-                    : "Sofia, 29, Stockwell"}
-                </cite>
+              {/* Portuguese Love Stories Carousel */}
+              <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-6 mb-6 border border-white/20">
+                <div className="text-center mb-4">
+                  <span className="text-white/90 font-semibold text-sm">
+                    {language === "pt" ? "🇵🇹 Histórias de Amor Portuguesas" : "🇵🇹 Portuguese Love Stories"}
+                  </span>
+                </div>
+                <motion.div
+                  key={successStories % 3}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  className="text-center"
+                >
+                  {(successStories % 3) === 0 && (
+                    <div>
+                      <blockquote className="text-base md:text-lg text-white/95 italic mb-3">
+                        "
+                        {language === "pt"
+                          ? "Conhecemo-nos a falar de bacalhau e casámos a dançar fado! O LusoTown trouxe-nos mais que amor - trouxe-nos casa."
+                          : "We met talking about bacalhau and married dancing fado! LusoTown brought us more than love - it brought us home."}
+                        "
+                      </blockquote>
+                      <cite className="text-white/80 text-sm">
+                        — {language === "pt" ? "Sofia & Miguel, casados há 2 anos" : "Sofia & Miguel, married 2 years"}
+                      </cite>
+                    </div>
+                  )}
+                  {(successStories % 3) === 1 && (
+                    <div>
+                      <blockquote className="text-base md:text-lg text-white/95 italic mb-3">
+                        "
+                        {language === "pt"
+                          ? "Ela percebia porque é que eu choro quando ouço 'Lágrima' e eu percebo porque ela faz dois pastéis de nata desaparecerem em 5 minutos!"
+                          : "She understood why I cry when I hear 'Lágrima' and I understand why she makes two pastéis de nata disappear in 5 minutes!"}
+                        "
+                      </blockquote>
+                      <cite className="text-white/80 text-sm">
+                        — {language === "pt" ? "João & Ana, noivos" : "João & Ana, engaged"}
+                      </cite>
+                    </div>
+                  )}
+                  {(successStories % 3) === 2 && (
+                    <div>
+                      <blockquote className="text-base md:text-lg text-white/95 italic mb-3">
+                        "
+                        {language === "pt"
+                          ? "Primeiro encontro: café no Borough Market. Segundo encontro: ela fez-me francesinha. Terceiro encontro: conheci a família dela no Zoom para o Porto!"
+                          : "First date: coffee at Borough Market. Second date: she made me francesinha. Third date: I met her family on Zoom to Porto!"}
+                        "
+                      </blockquote>
+                      <cite className="text-white/80 text-sm">
+                        — {language === "pt" ? "Ricardo, apaixonado" : "Ricardo, head over heels"}
+                      </cite>
+                    </div>
+                  )}
+                </motion.div>
               </div>
             </div>
 
@@ -743,43 +789,46 @@ function MatchesContent() {
                       </div>
 
                       {/* Portuguese Community Connection */}
-                      <div className="bg-gradient-to-r from-secondary-50 to-accent-50 p-3.5 rounded-xl border border-secondary-200">
-                        <div className="flex items-center justify-between mb-2">
-                          <div className="flex items-center gap-2 text-secondary-700 text-sm">
-                            <SparklesIcon className="w-4 h-4" />
-                            <span className="font-medium">
+                      <div className="bg-gradient-to-r from-red-50 via-yellow-50 to-green-50 p-4 rounded-xl border-2 border-red-200">
+                        <div className="flex items-center justify-between mb-3">
+                          <div className="flex items-center gap-2 text-red-700 text-sm">
+                            <span className="text-lg">🇵🇹</span>
+                            <span className="font-bold">
                               {language === "pt"
-                                ? "Património Cultural Partilhado"
-                                : "Shared Cultural Heritage"}
+                                ? "Alma Portuguesa"
+                                : "Portuguese Soul"}
                             </span>
                           </div>
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1">
                             {Array.from({ length: 5 }).map((_, i) => (
-                              <StarIconSolid
-                                key={i}
-            className="w-3 h-3 text-yellow-400"
-                              />
+                              <span key={i} className="text-sm">⭐</span>
                             ))}
                           </div>
                         </div>
-                        <div className="grid grid-cols-2 gap-2 text-[11px] md:text-xs text-secondary-600">
-                          <div className="flex items-center gap-1">
-                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                            {language === "pt"
-                              ? "Língua Nativa"
-                              : "Native Language"}
+                        <div className="grid grid-cols-2 gap-3 text-xs text-red-800 mb-3">
+                          <div className="flex items-center gap-2">
+                            <span>🗣️</span>
+                            <span className="font-medium">
+                              {language === "pt" ? "Português Nativo" : "Native Portuguese"}
+                            </span>
                           </div>
-                          <div className="flex items-center gap-1">
-                            <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                            {language === "pt" ? "Tradições" : "Traditions"}
+                          <div className="flex items-center gap-2">
+                            <span>🎭</span>
+                            <span className="font-medium">
+                              {language === "pt" ? "Ama Fado" : "Loves Fado"}
+                            </span>
                           </div>
-                          <div className="flex items-center gap-1">
-                            <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                            {language === "pt" ? "Valores" : "Values"}
+                          <div className="flex items-center gap-2">
+                            <span>🥐</span>
+                            <span className="font-medium">
+                              {language === "pt" ? "Pastéis Expert" : "Pastéis Expert"}
+                            </span>
                           </div>
-                          <div className="flex items-center gap-1">
-                            <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                            {language === "pt" ? "Experiências" : "Experiences"}
+                          <div className="flex items-center gap-2">
+                            <span>⚽</span>
+                            <span className="font-medium">
+                              {language === "pt" ? "Benfica/Porto" : "Benfica/Porto"}
+                            </span>
                           </div>
                         </div>
                         {/* Why we think you'll connect */}

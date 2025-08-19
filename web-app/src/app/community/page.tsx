@@ -2,7 +2,6 @@
 import Image from 'next/image'
 
 import Footer from '@/components/Footer'
-import CaseStudiesPromo from '@/components/CaseStudiesPromo'
 import { motion } from 'framer-motion'
 import { StarIcon, CalendarDaysIcon, MapPinIcon, UsersIcon, HeartIcon, ChatBubbleLeftIcon, ArrowRightIcon, HomeIcon, AcademicCapIcon, BuildingStorefrontIcon, MusicalNoteIcon } from '@heroicons/react/24/outline'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
@@ -887,12 +886,7 @@ export default function Community() {
           </div>
         </section>
 
-        {/* Case Studies Section */}
-        <section className="py-16 bg-white">
-          <div className="container-width">
-            <CaseStudiesPromo variant="banner" className="max-w-4xl mx-auto" />
-          </div>
-        </section>
+        {/* Case Studies Section - Removed CaseStudiesPromo component */}
       </div>
       <Footer />
     </main>

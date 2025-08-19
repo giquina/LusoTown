@@ -13,10 +13,7 @@ import {
   HeartIcon
 } from '@heroicons/react/24/outline'
 import { getCurrentUser, getCurrentUserProfile, UserProfile, updateProfile, getCulturalPreferences, saveCulturalPreferences } from '@/lib/supabase'
-import ProfileEditForm from '@/components/profile/ProfileEditForm'
-import ProfilePhotoManager from '@/components/profile/ProfilePhotoManager'
-import ProfileCompletion from '@/components/profile/ProfileCompletion'
-import PortugueseCulturalPreferences from '@/components/profile/PortugueseCulturalPreferences'
+import ProfileEditForm from '@/components/ProfileEditForm'
 
 // Define interest categories
 const INTEREST_CATEGORIES = {

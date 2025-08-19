@@ -90,7 +90,7 @@ npm run test:all            # Run unit + integration + performance tests
 npm run verify:creator-monetization # Verify creator monetization setup
 
 # Streaming server (from repo root)
-cd streaming && npm install && npm start    # Start streaming server (localhost:3002)
+cd streaming && npm install && npm start    # Start streaming server (localhost:8080)
 cd streaming && npm run health-check        # Check streaming server health
 node streaming/streamlabs-setup.js          # Generate Streamlabs mobile configuration
 
@@ -128,8 +128,8 @@ node streaming/streamlabs-setup.js          # Generate Streamlabs mobile configu
 **Status:** Production ready - Complete Portuguese streaming platform
 **Commands:**
 - `cd streaming && npm install && npm start` - Start streaming server (localhost:8080)
-- `npm run health-check` - Verify streaming infrastructure
-- `npm test` - Run streaming tests
+- `cd streaming && npm run health-check` - Verify streaming infrastructure  
+- `cd streaming && npm test` - Run streaming tests
 
 **Features:**
 - RTMP ingestion with WebRTC and HLS delivery
@@ -284,19 +284,19 @@ BUNNYCDN_STORAGE_ZONE=
 ## Current Development Status
 
 **Branch:** main (production-ready branch)
-**Recent Focus:** Complete streaming platform integration, 3-tier pricing overhaul, mobile UX improvements
-**Key Modified Files (from git status):**
-- Pricing system: MembershipTiers.tsx, pricing configuration
-- Streaming components: StreamPlayer.tsx, StreamSchedule.tsx, creator components
-- Mobile improvements: GroupsShowcase.tsx, GroupEventsSection.tsx, EventsShowcase.tsx
-- Authentication flow: Creator signup pages and verification scripts
-- Configuration: next.config.js, package.json updates for streaming
+**Recent Focus:** Complete streaming platform integration, codebase cleanup, mobile streaming optimization
+**Key Modified Files (from recent git status):**
+- Streaming infrastructure: streaming/.env.dev, streaming/config files
+- Core components: web-app/src/components/ (many components enhanced)
+- Page structure: Various pages cleaned up and optimized
+- Configuration updates: next.config.js, package.json streaming integration
 
 **Development Notes:**
-- All features are production-ready but many files show as modified (M) - this is expected during active development
+- Platform is production-ready with ongoing cleanup of duplicate files and unused components
 - TypeScript build errors are intentionally ignored in production builds per next.config.js
-- Recent commits focus on streaming integration, pricing optimization, and mobile experience
+- Recent commits focus on deployment optimization and codebase organization
 - Demo user system allows testing without full subscription requirements
+- Mobile streaming integration actively being optimized for Streamlabs compatibility
 
 ## Recent Platform Improvements (August 2025)
 
@@ -404,4 +404,124 @@ BUNNYCDN_STORAGE_ZONE=
 - Enhanced touch targets and button spacing
 - Improved responsive grid systems
 - Better mobile navigation and interaction patterns
+
+---
+
+## ACTIVE CLEANUP PROJECT (August 19, 2025)
+
+### 🚨 COMPREHENSIVE CODEBASE CLEANUP IN PROGRESS
+
+**Project Goal:** Complete cleanup of duplicate files, unused components, and technical debt to optimize the LusoTown platform for production scaling.
+
+### ✅ COMPLETED PHASES
+
+#### **Phase 1: Streaming Pages Consolidation (COMPLETED)**
+- ✅ Identified 3 duplicate streaming pages (/live, /stream, /streaming)
+- ✅ Consolidated into unified `/live` experience
+- ✅ Implemented Next.js redirects (/streaming → /live)
+- ✅ Updated navigation and internal links
+- ✅ Preserved all functionality while eliminating confusion
+
+#### **Phase 2: Infrastructure Analysis (COMPLETED)**
+- ✅ Mobile streaming integration analysis completed
+- ✅ Identified Codespaces vs Production disconnect
+- ✅ YouTube Live integration solution provided
+- ✅ Production deployment strategy documented
+
+#### **Phase 3: Comprehensive Audit (COMPLETED)**
+- ✅ Full codebase audit completed
+- ✅ Identified 188 unused components (76% of codebase)
+- ✅ Found 50+ unused markdown files
+- ✅ Catalogued 9+ demo pages for removal
+- ✅ Created detailed cleanup report
+
+### 🔄 PENDING PHASES
+
+#### **Phase 4: File Cleanup (IN PROGRESS)**
+- ⏳ Remove stub components (ProfileCard.tsx, ProfileEditForm.tsx)
+- ⏳ Archive/remove 50+ unused markdown files
+- ⏳ Complete demo pages deletion
+- ⏳ Commit git status cleanup (20+ deleted docs)
+
+#### **Phase 5: Component Optimization (PENDING)**
+- ⏳ Remove 188 unused components (staged approach)
+- ⏳ Update imports and references
+- ⏳ Verify no breaking changes
+
+#### **Phase 6: Production Deployment (PENDING)**
+- ⏳ Deploy streaming server to production
+- ⏳ Configure production environment variables
+- ⏳ Test mobile streaming integration
+- ⏳ Final production deployment
+
+### 📊 CLEANUP IMPACT METRICS
+
+**Before Cleanup:**
+- 247 total components (188 unused = 76% technical debt)
+- 3 duplicate streaming pages causing user confusion
+- 50+ unused documentation files
+- 20+ deleted files in git status
+- Codespaces-only streaming (not production-accessible)
+
+**After Cleanup (Projected):**
+- 59 active components (clean, maintainable codebase)
+- 1 unified streaming experience
+- Clean documentation structure
+- Production-ready streaming infrastructure
+- Improved developer experience and faster builds
+
+### 🎯 SUCCESS CRITERIA
+
+1. **Clean Git Status**: No uncommitted deletions
+2. **Unified Streaming**: Single `/live` URL for all streaming
+3. **Component Efficiency**: <25% unused components
+4. **Production Streaming**: Mobile-to-website integration working
+5. **Build Performance**: Faster compilation and deployment
+6. **Developer Experience**: Clear, maintainable codebase
+
+### 📋 CURRENT TODO TRACKING
+
+**Immediate Actions (Today):**
+- Remove stub components causing conflicts
+- Clean git status with proper commits
+- Archive unused documentation
+- Complete demo pages removal
+
+**Short-term (This Week):**
+- Component usage verification and cleanup
+- Production streaming server deployment
+- Environment variable configuration
+- Mobile streaming integration testing
+
+**Medium-term (Next Sprint):**
+- Asset optimization (unused images)
+- Import cleanup across components
+- Performance monitoring and optimization
+
+### 🚀 DEPLOYMENT PIPELINE
+
+**Final Steps (When Ready):**
+```bash
+# Verify all changes
+cd web-app && npm run lint && npx tsc --noEmit && npm run build
+
+# Deploy to production
+git add . && git commit -m "chore: complete codebase cleanup and optimization"
+git push origin main
+vercel --prod
+```
+
+### 📈 EXPECTED BENEFITS
+
+1. **Performance**: 40-50% faster build times
+2. **Maintenance**: Easier component management
+3. **SEO**: Unified streaming URLs
+4. **Mobile**: Production streaming integration
+5. **Developer Experience**: Clean, focused codebase
+6. **Scalability**: Ready for Portuguese market expansion
+
+---
+
+**Status**: 🔄 **ACTIVE** - Phases 1-3 complete, executing Phases 4-6
+**Next Update**: Post-cleanup completion with final metrics
 

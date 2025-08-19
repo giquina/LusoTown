@@ -1,0 +1,4947 @@
+🔍 COMPREHENSIVE UNUSED FILES AUDIT FOR LUSOTOWN
+
+📦 Checking React Components...
+📄 Checking Pages...
+🔧 Checking Utils and Lib files...
+🖼️ Checking Images...
+📝 Checking Markdown files...
+🗑️ Checking Backup files...
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+/bin/sh: 1: rg: not found
+
+================================================================================
+📊 UNUSED FILES AUDIT RESULTS
+================================================================================
+
+🔴 UNUSED REACT COMPONENTS (215):
+  - ProfileCard.tsx (303 B) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ProfileCard.tsx
+  - CrossPlatformEngagementTriggers.tsx (323 B) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CrossPlatformEngagementTriggers.tsx
+  - SIABadge.tsx (284 B) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/SIABadge.tsx
+  - LondonTourRoutes.tsx (301 B) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/LondonTourRoutes.tsx
+  - PaymentProcessor.tsx (30.25 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/PaymentProcessor.tsx
+  - StreamSchedule.tsx (22.22 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/StreamSchedule.tsx
+  - CreatorTestimonials.tsx (19.08 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CreatorTestimonials.tsx
+  - UsageLimitIndicator.tsx (14.36 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/UsageLimitIndicator.tsx
+  - StreamPlayer.tsx (12.76 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/StreamPlayer.tsx
+  - LiveFeedNotifications.tsx (115 B) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/LiveFeedNotifications.tsx
+  - LiveChatWidget.tsx (10.87 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/LiveChatWidget.tsx
+  - MessageAuthorizationGate.tsx (7.56 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/MessageAuthorizationGate.tsx
+  - Logo.tsx (5.67 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/Logo.tsx
+  - WhatsAppWidget.tsx (105 B) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/WhatsAppWidget.tsx
+  - PrimeirosPassos.tsx (15.25 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/PrimeirosPassos.tsx
+  - NotificationBell.tsx (300 B) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/NotificationBell.tsx
+  - FeedPost.tsx (8.35 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/FeedPost.tsx
+  - FrameworkPillars.tsx (300 B) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/FrameworkPillars.tsx
+  - SavedItemsButton.tsx (3.82 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/SavedItemsButton.tsx
+  - SuccessStoryIntroduction.tsx (28.87 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/SuccessStoryIntroduction.tsx
+  - Header.tsx (41.91 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/Header.tsx
+  - FavoriteButton.tsx (2.33 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/FavoriteButton.tsx
+  - PersonalizedFeed.tsx (22.5 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/PersonalizedFeed.tsx
+  - HostWithUsSection.tsx (17.68 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/HostWithUsSection.tsx
+  - EnhancedStreamPlayer.tsx (22.6 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/EnhancedStreamPlayer.tsx
+  - CommunityEventCreation.tsx (35.31 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CommunityEventCreation.tsx
+  - EventBuddySystem.tsx (23.77 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/EventBuddySystem.tsx
+  - MatchFilters.tsx (17 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/MatchFilters.tsx
+  - YouTubeContentManager.tsx (28.17 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/YouTubeContentManager.tsx
+  - StreamViewerStats.tsx (7.47 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/StreamViewerStats.tsx
+  - OfficialPartnershipBadge.tsx (5 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/OfficialPartnershipBadge.tsx
+  - ProtectionTestimonials.tsx (16.47 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ProtectionTestimonials.tsx
+  - EventsToursSection.tsx (14.69 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/EventsToursSection.tsx
+  - EventBuddyDashboard.tsx (20.98 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/EventBuddyDashboard.tsx
+  - SaveFavoriteCartButton.tsx (10.79 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/SaveFavoriteCartButton.tsx
+  - CartButton.tsx (3.11 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CartButton.tsx
+  - StudentVerificationSystem.tsx (33.98 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/StudentVerificationSystem.tsx
+  - PortugueseValueShowcase.tsx (14.86 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/PortugueseValueShowcase.tsx
+  - NetworkPreview.tsx (3.8 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/NetworkPreview.tsx
+  - MatchConversations.tsx (28.36 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/MatchConversations.tsx
+  - PremiumMatchesGate.tsx (18.36 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/PremiumMatchesGate.tsx
+  - DiverseSuccessStories.tsx (12.32 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/DiverseSuccessStories.tsx
+  - EmotePicker.tsx (11.36 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/EmotePicker.tsx
+  - FadoExperiencePackages.tsx (30.01 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/FadoExperiencePackages.tsx
+  - MentorshipHero.tsx (10.65 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/MentorshipHero.tsx
+  - ProgressiveUserJourney.tsx (28.67 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ProgressiveUserJourney.tsx
+  - GroupEventCard.tsx (19.13 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/GroupEventCard.tsx
+  - SearchBar.tsx (18.11 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/SearchBar.tsx
+  - TestimonialsNew.tsx (24.01 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/TestimonialsNew.tsx
+  - SocialLogin.tsx (3.09 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/SocialLogin.tsx
+  - NetworkAnalytics.tsx (6.05 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/NetworkAnalytics.tsx
+  - TransportTestimonials.tsx (15.45 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/TransportTestimonials.tsx
+  - GroupsShowcase.tsx (14.38 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/GroupsShowcase.tsx
+  - EventToursCard.tsx (19.19 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/EventToursCard.tsx
+  - MembershipTiers.tsx (15.59 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/MembershipTiers.tsx
+  - SocialLoginButton.tsx (4.79 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/SocialLoginButton.tsx
+  - PartnershipIntegrationDashboard.tsx (19.5 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/PartnershipIntegrationDashboard.tsx
+  - BookTogetherModal.tsx (26.76 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/BookTogetherModal.tsx
+  - GroupReportModal.tsx (5.75 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/GroupReportModal.tsx
+  - NetworkMilestoneAlert.tsx (7.32 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/NetworkMilestoneAlert.tsx
+  - PortugueseCulturalHub.tsx (27.36 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/PortugueseCulturalHub.tsx
+  - EventImageWithFallback.tsx (1.61 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/EventImageWithFallback.tsx
+  - StreamReplayLibrary.tsx (24.69 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/StreamReplayLibrary.tsx
+  - CorporatePortugueseCulturalPrograms.tsx (37.47 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CorporatePortugueseCulturalPrograms.tsx
+  - MembershipPortal.tsx (14.34 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/MembershipPortal.tsx
+  - ConversionOptimizationEngine.tsx (26.23 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ConversionOptimizationEngine.tsx
+  - Cart.tsx (21.36 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/Cart.tsx
+  - UnifiedActivity.tsx (1.51 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/UnifiedActivity.tsx
+  - PortuguesePolls.tsx (19.8 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/PortuguesePolls.tsx
+  - SIACertificationDisplay.tsx (12.6 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/SIACertificationDisplay.tsx
+  - Hero.tsx (19.55 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/Hero.tsx
+  - PortugueseSEO.tsx (6.11 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/PortugueseSEO.tsx
+  - EventPreviewGenerator.tsx (29.75 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/EventPreviewGenerator.tsx
+  - PremiumProtectionPricing.tsx (21.18 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/PremiumProtectionPricing.tsx
+  - ServiceCommunityBridge.tsx (20.82 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ServiceCommunityBridge.tsx
+  - CTA.tsx (15.83 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CTA.tsx
+  - AuthIntentHandler.tsx (270 B) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/AuthIntentHandler.tsx
+  - TransportBookingForm.tsx (24.39 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/TransportBookingForm.tsx
+  - CrossPlatformNavigationWidget.tsx (15.17 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CrossPlatformNavigationWidget.tsx
+  - RiskAssessmentForm.tsx (22.53 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/RiskAssessmentForm.tsx
+  - MobileOptimizedOnboarding.tsx (22.81 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/MobileOptimizedOnboarding.tsx
+  - ConnectionCard.tsx (10 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ConnectionCard.tsx
+  - StreamGrid.tsx (12.51 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/StreamGrid.tsx
+  - ReferralWidget.tsx (9.28 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ReferralWidget.tsx
+  - EventsDiscovery.tsx (28.26 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/EventsDiscovery.tsx
+  - NetworkBadges.tsx (4.43 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/NetworkBadges.tsx
+  - MatchingAlgorithm.tsx (11.43 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/MatchingAlgorithm.tsx
+  - RestrictedMessagingInterface.tsx (13.53 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/RestrictedMessagingInterface.tsx
+  - StreamCard.tsx (9.85 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/StreamCard.tsx
+  - UnifiedPremiumExperience.tsx (24.64 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/UnifiedPremiumExperience.tsx
+  - SortingControls.tsx (1.99 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/SortingControls.tsx
+  - ConnectionFilters.tsx (10.26 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ConnectionFilters.tsx
+  - TransportServiceCard.tsx (9.84 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/TransportServiceCard.tsx
+  - ErrorBoundary.tsx (7.83 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ErrorBoundary.tsx
+  - QuestionExplainer.tsx (6.03 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/QuestionExplainer.tsx
+  - SIAAdminDashboard.tsx (21.21 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/SIAAdminDashboard.tsx
+  - OptimizedTransportServiceCard.tsx (14.07 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/OptimizedTransportServiceCard.tsx
+  - CreatorAgreement.tsx (19.46 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CreatorAgreement.tsx
+  - CreatorDashboardPreview.tsx (13.28 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CreatorDashboardPreview.tsx
+  - LoadingSpinner.tsx (2.44 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/LoadingSpinner.tsx
+  - ServiceCard.tsx (9.4 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ServiceCard.tsx
+  - ProfileEditForm.tsx (307 B) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ProfileEditForm.tsx
+  - UsageLimitIndicators.tsx (15.44 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/UsageLimitIndicators.tsx
+  - SuccessStories.tsx (15.24 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/SuccessStories.tsx
+  - UnifiedExperienceHub.tsx (26.8 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/UnifiedExperienceHub.tsx
+  - GroupEventsPageClient.tsx (5.12 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/GroupEventsPageClient.tsx
+  - ConversationManager.tsx (15.86 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ConversationManager.tsx
+  - AuthenticEvents.tsx (11.53 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/AuthenticEvents.tsx
+  - ModeratorPanel.tsx (18.18 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ModeratorPanel.tsx
+  - StreamHeader.tsx (11.17 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/StreamHeader.tsx
+  - CreatorApplicationForm.tsx (50.05 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CreatorApplicationForm.tsx
+  - EventCard.tsx (8.39 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/EventCard.tsx
+  - EcosystemStats.tsx (1.35 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/EcosystemStats.tsx
+  - MessagingInterface.tsx (13.37 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/MessagingInterface.tsx
+  - FeatureGateModal.tsx (8.34 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/FeatureGateModal.tsx
+  - CommunityImpactDocumentation.tsx (41.89 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CommunityImpactDocumentation.tsx
+  - SIAComplianceQuestionnaire.tsx (53.85 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/SIAComplianceQuestionnaire.tsx
+  - EcosystemOverview.tsx (10.55 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/EcosystemOverview.tsx
+  - CustomToursSection.tsx (10.46 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CustomToursSection.tsx
+  - LanguageToggle.tsx (5.3 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/LanguageToggle.tsx
+  - StudentVerificationModal.tsx (14.98 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/StudentVerificationModal.tsx
+  - ReferralDashboard.tsx (18.58 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ReferralDashboard.tsx
+  - AuthPopupProvider.tsx (1.72 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/AuthPopupProvider.tsx
+  - SIABookingConfirmation.tsx (23.83 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/SIABookingConfirmation.tsx
+  - WaitingListModal.tsx (18.33 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/WaitingListModal.tsx
+  - MatchCard.tsx (18.51 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/MatchCard.tsx
+  - RetentionGrowthMechanics.tsx (29.08 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/RetentionGrowthMechanics.tsx
+  - EventFeed.tsx (25.1 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/EventFeed.tsx
+  - ServiceIntegration.tsx (13.61 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ServiceIntegration.tsx
+  - GrowthAnalyticsDashboard.tsx (29.55 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/GrowthAnalyticsDashboard.tsx
+  - ConnectionNotificationBanner.tsx (5.38 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ConnectionNotificationBanner.tsx
+  - NotificationCenter.tsx (14.85 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/NotificationCenter.tsx
+  - EventReviewSystem.tsx (20.41 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/EventReviewSystem.tsx
+  - CulturalBridgeBuilding.tsx (48.05 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CulturalBridgeBuilding.tsx
+  - CorporatePartnershipProgram.tsx (25.53 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CorporatePartnershipProgram.tsx
+  - CulturalHeritageTimeline.tsx (21.01 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CulturalHeritageTimeline.tsx
+  - OnboardingFlowEnhanced.tsx (31.99 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/OnboardingFlowEnhanced.tsx
+  - ConnectionsGrid.tsx (1.26 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ConnectionsGrid.tsx
+  - CloudinaryImage.tsx (5.65 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CloudinaryImage.tsx
+  - FollowButton.tsx (5.74 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/FollowButton.tsx
+  - GroupEventsSection.tsx (21.94 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/GroupEventsSection.tsx
+  - StreamCategories.tsx (12.13 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/StreamCategories.tsx
+  - PortugueseCommunityModerationPanel.tsx (17.17 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/PortugueseCommunityModerationPanel.tsx
+  - OfficialRecognitionFramework.tsx (29.03 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/OfficialRecognitionFramework.tsx
+  - PortugueseBusinessDirectory.tsx (30.16 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/PortugueseBusinessDirectory.tsx
+  - CreatorEarningsCalculator.tsx (19.46 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CreatorEarningsCalculator.tsx
+  - EventFeedCard.tsx (18.45 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/EventFeedCard.tsx
+  - SafetyCenter.tsx (19.28 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/SafetyCenter.tsx
+  - Hashtag.tsx (652 B) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/Hashtag.tsx
+  - HeritagePreservationHub.tsx (31.03 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/HeritagePreservationHub.tsx
+  - AuthPopup.tsx (11.6 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/AuthPopup.tsx
+  - AboutLusoTown.tsx (8.56 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/AboutLusoTown.tsx
+  - EventsShowcase.tsx (22.51 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/EventsShowcase.tsx
+  - Footer.tsx (19.07 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/Footer.tsx
+  - QuickActions.tsx (1.27 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/QuickActions.tsx
+  - CategoryBadge.tsx (7.91 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CategoryBadge.tsx
+  - SubscriptionGate.tsx (11.54 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/SubscriptionGate.tsx
+  - TrialCountdown.tsx (12.54 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/TrialCountdown.tsx
+  - FeedFilters.tsx (13.42 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/FeedFilters.tsx
+  - BusinessCard.tsx (6.17 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/BusinessCard.tsx
+  - WaitingListButton.tsx (4.7 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/WaitingListButton.tsx
+  - LittlePortugalTours.tsx (24.77 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/LittlePortugalTours.tsx
+  - BookingTrigger.tsx (11.93 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/BookingTrigger.tsx
+  - PortugueseCulturalTourRoutes.tsx (23.15 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/PortugueseCulturalTourRoutes.tsx
+  - NotificationPreferences.tsx (32.8 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/NotificationPreferences.tsx
+  - MatchToMessageFlow.tsx (11.03 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/MatchToMessageFlow.tsx
+  - CaseStudies.tsx (32.95 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CaseStudies.tsx
+  - PortugueseLoadingSpinner.tsx (5.64 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/PortugueseLoadingSpinner.tsx
+  - ComplianceStepIndicator.tsx (11.79 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ComplianceStepIndicator.tsx
+  - MemberSpotlightManager.tsx (27.62 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/MemberSpotlightManager.tsx
+  - AppDownloadSection.tsx (15.41 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/AppDownloadSection.tsx
+  - UserTypeSelection.tsx (16.09 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/UserTypeSelection.tsx
+  - ConversationsList.tsx (12.57 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ConversationsList.tsx
+  - ReactionButton.tsx (735 B) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ReactionButton.tsx
+  - LusophoneDiversityShowcase.tsx (53.43 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/LusophoneDiversityShowcase.tsx
+  - SmartRecommendations.tsx (1.29 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/SmartRecommendations.tsx
+  - ProgressTracker.tsx (4.97 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ProgressTracker.tsx
+  - WelcomeModal.tsx (14.83 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/WelcomeModal.tsx
+  - StrategicPartnershipDashboard.tsx (27.23 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/StrategicPartnershipDashboard.tsx
+  - PortugueseCulturalCalendar.tsx (33.38 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/PortugueseCulturalCalendar.tsx
+  - HowItWorks.tsx (19.66 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/HowItWorks.tsx
+  - LusoTownTV.tsx (16.75 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/LusoTownTV.tsx
+  - SmartNotificationTrigger.tsx (11.04 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/notifications/SmartNotificationTrigger.tsx
+  - WhatsAppNotificationWidget.tsx (11.82 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/notifications/WhatsAppNotificationWidget.tsx
+  - NotificationToast.tsx (10.3 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/notifications/NotificationToast.tsx
+  - EmailNotificationTemplates.tsx (16.86 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/notifications/EmailNotificationTemplates.tsx
+  - Features.tsx (9.2 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/Features.tsx
+  - OptimizedTransportPage.tsx (23.87 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/OptimizedTransportPage.tsx
+  - StepIndicator.tsx (6.49 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/StepIndicator.tsx
+  - AgeVerificationModal.tsx (23.7 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/AgeVerificationModal.tsx
+  - FavoriteNotification.tsx (1.75 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/FavoriteNotification.tsx
+  - LiveUpdateIndicator.tsx (10.85 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/LiveUpdateIndicator.tsx
+  - SmartBookingSystem.tsx (21.75 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/SmartBookingSystem.tsx
+  - HowConnectionsWork.tsx (10.83 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/HowConnectionsWork.tsx
+  - ChatMessage.tsx (9.55 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ChatMessage.tsx
+  - MentorshipProgramsSection.tsx (15.32 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/MentorshipProgramsSection.tsx
+  - PortugueseCulturalBadge.tsx (6.81 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/PortugueseCulturalBadge.tsx
+  - PhotoUpload.tsx (11.07 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/PhotoUpload.tsx
+  - CategoryFilter.tsx (8.97 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CategoryFilter.tsx
+  - TransportBookingFlow.tsx (21.53 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/TransportBookingFlow.tsx
+  - PortugueseInstitutionalPartnerships.tsx (27.31 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/PortugueseInstitutionalPartnerships.tsx
+  - NetworkHeader.tsx (2.77 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/NetworkHeader.tsx
+  - CulturalPreferenceQuiz.tsx (34.83 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CulturalPreferenceQuiz.tsx
+  - ImprovedEventCard.tsx (19.65 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ImprovedEventCard.tsx
+  - EasySIAQuestionnaire.tsx (56.58 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/EasySIAQuestionnaire.tsx
+  - EventCompatibilityMatcher.tsx (15.88 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/EventCompatibilityMatcher.tsx
+  - AuthPopupDemo.tsx (17.58 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/AuthPopupDemo.tsx
+  - MessageModerationDashboard.tsx (24.64 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/MessageModerationDashboard.tsx
+  - ChatWindow.tsx (16.93 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/ChatWindow.tsx
+  - PortugueseCommunityReferralSystem.tsx (28.97 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/PortugueseCommunityReferralSystem.tsx
+  - TrustBadges.tsx (6.83 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/TrustBadges.tsx
+  - CulturalJourneyMapper.tsx (28.82 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CulturalJourneyMapper.tsx
+  - CaseStudyShowcase.tsx (19.68 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/CaseStudyShowcase.tsx
+  - PortugueseSEOOptimizer.tsx (26.89 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/PortugueseSEOOptimizer.tsx
+  - GoLiveModal.tsx (28.05 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/components/GoLiveModal.tsx
+
+🔴 UNUSED PAGES (86):
+  - /terms (36.94 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/terms/page.tsx
+  - /admin (25.07 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/admin/page.tsx
+  - /[id] (23.67 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/groups/[id]/page.tsx
+  - /create (29.44 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/groups/create/page.tsx
+  - /groups (16.61 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/groups/page.tsx
+  - /saved (18.92 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/saved/page.tsx
+  - /corporate-partnerships (12.42 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/corporate-partnerships/page.tsx
+  - /notification-preferences (11.38 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/notification-preferences/page.tsx
+  - /pricing (71.63 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/pricing/page.tsx
+  - /my-network (10.9 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/my-network/page.tsx
+  - /primeiros-passos (10.06 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/primeiros-passos/page.tsx
+  - /business-networking (30.52 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/business-networking/page.tsx
+  - /signup (57.01 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/signup/page.tsx
+  - /success (6.63 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/signup/success/page.tsx
+  - /messages (8.13 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/messages/page.tsx
+  - /community (45.8 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/community/page.tsx
+  - /tours (35.72 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/tours/page.tsx
+  - /safety (37.54 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/safety/page.tsx
+  - /community-guidelines (11.71 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/community-guidelines/page.tsx
+  - /feed (25.8 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/feed/page.tsx
+  - /services (23.12 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/services/page.tsx
+  - /confirmation (931 B) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/services/cultural-tours/confirmation/page.tsx
+  - /booking (925 B) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/services/cultural-tours/booking/page.tsx
+  - /close-protection (23.14 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/services/close-protection/page.tsx
+  - /booking (17.21 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/services/close-protection/booking/page.tsx
+  - /confirmation (12.32 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/services/close-protection/booking/confirmation/page.tsx
+  - /confirmation (13.87 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/services/consultation/confirmation/page.tsx
+  - /booking (19.04 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/services/consultation/booking/page.tsx
+  - /cancelled (8.84 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/subscription/cancelled/page.tsx
+  - /subscription (17.26 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/subscription/page.tsx
+  - /success (10.08 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/subscription/success/page.tsx
+  - /[id] (10.46 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/profile/[id]/page.tsx
+  - /edit (15.24 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/profile/edit/page.tsx
+  - /creator-signup (29.54 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/creator-signup/page.tsx
+  - /london-tours (11.86 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/london-tours/page.tsx
+  - /about (46.58 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/about/page.tsx
+  - /case-studies (16.76 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/case-studies/page.tsx
+  - /[id] (44.82 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/events/[id]/page.tsx
+  - /confirmation (18.92 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/events/[id]/confirmation/page.tsx
+  - /book (30.75 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/events/[id]/book/page.tsx
+  - /groups (3.17 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/events/groups/page.tsx
+  - /create (35.9 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/events/create/page.tsx
+  - /events (57.29 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/events/page.tsx
+  - /portuguese-institutional-partnerships (414 B) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/portuguese-institutional-partnerships/page.tsx
+  - /directory (25.85 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/directory/page.tsx
+  - /[id] (20.63 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/directory/member/[id]/page.tsx
+  - /contact (22.33 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/contact/page.tsx
+  - /instituto-camoes (43.62 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/instituto-camoes/page.tsx
+  - /search (18.79 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/search/page.tsx
+  - /forgot-password (10.29 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/forgot-password/page.tsx
+  - /how-it-works (18.82 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/how-it-works/page.tsx
+  - /favorites (15.3 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/favorites/page.tsx
+  - /privacy (25.49 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/privacy/page.tsx
+  - /[id] (23.01 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/chat/[id]/page.tsx
+  - /chat (19.33 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/chat/page.tsx
+  - /rules (3.67 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/rules/page.tsx
+  - /partnerships (19.5 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/partnerships/page.tsx
+  - /profiles (17.68 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/profiles/page.tsx
+  - /unified-experience (12.73 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/unified-experience/page.tsx
+  - /following (19.39 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/following/page.tsx
+  - /success-stories (27.67 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/success-stories/page.tsx
+  - /stream (40 B) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/stream/page.tsx
+  - /premium-membership (10.27 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/premium-membership/page.tsx
+  - /strategic-partnership-dashboard (390 B) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/strategic-partnership-dashboard/page.tsx
+  - /social-networks (23.54 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/social-networks/page.tsx
+  - /streaming (9.69 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/streaming/page.tsx
+  - /dashboard (30.88 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/dashboard/page.tsx
+  - /chauffeur (627 B) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/chauffeur/page.tsx
+  - /referrals (6.14 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/referrals/page.tsx
+  - /host (36.54 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/host/page.tsx
+  - /matches (55.95 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/matches/page.tsx
+  - /live (39.55 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/live/page.tsx
+  - /housing-assistance (22.1 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/housing-assistance/page.tsx
+  - /students (83.7 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/students/page.tsx
+  - /login (18.35 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/login/page.tsx
+  - /mentorship (2.43 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/mentorship/page.tsx
+  - /careers (53.88 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/careers/page.tsx
+  - /create-topic (15.27 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/forums/create-topic/page.tsx
+  - /forums (19.01 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/forums/page.tsx
+  - /[id] (24.31 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/forums/topic/[id]/page.tsx
+  - /business-directory (27.28 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/business-directory/page.tsx
+  - /user-journey (21.88 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/user-journey/page.tsx
+  - /tools (3.28 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/tools/page.tsx
+  - /neighborhood-groups (57.87 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/neighborhood-groups/page.tsx
+  - /help (22.19 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/help/page.tsx
+  - /transport (104.68 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/web-app/src/app/transport/page.tsx
+
+🔴 UNUSED UTILS/LIBS (47):
+  - imageUtils.ts (1.24 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/utils/imageUtils.ts
+  - design.ts (8.3 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/design.ts
+  - businessDirectory.ts (25.62 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/businessDirectory.ts
+  - profileImages.ts (10.34 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/profileImages.ts
+  - networkingEvents.ts (69.69 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/networkingEvents.ts
+  - serviceToCommunitBridge.ts (11.04 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/serviceToCommunitBridge.ts
+  - portuguese-moderation.ts (9.47 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/portuguese-moderation.ts
+  - referral.ts (12.44 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/referral.ts
+  - eventAvailability.ts (4.6 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/eventAvailability.ts
+  - events.ts (163.44 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/events.ts
+  - seo.ts (24.28 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/seo.ts
+  - errorHandling.tsx (10.53 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/errorHandling.tsx
+  - transportBooking.ts (15.63 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/transportBooking.ts
+  - supabase.ts (29.76 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/supabase.ts
+  - serviceCartUtils.ts (3.23 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/serviceCartUtils.ts
+  - feed.ts (4.03 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/feed.ts
+  - socket-client.ts (7.51 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/socket-client.ts
+  - socialNetworks.ts (20.12 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/socialNetworks.ts
+  - universityPartnerships.ts (20.85 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/universityPartnerships.ts
+  - cloudinary.ts (7.62 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/cloudinary.ts
+  - portuguese-emotes.ts (6.03 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/portuguese-emotes.ts
+  - dynamicPricing.ts (23.95 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/dynamicPricing.ts
+  - transportPricing.ts (17.86 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/transportPricing.ts
+  - business-events-london.ts (15.81 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/business-events-london.ts
+  - streaming.ts (7.97 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/streaming.ts
+  - auth.ts (12.56 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/auth.ts
+  - testimonialMixer.ts (8.51 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/testimonialMixer.ts
+  - partnerships.ts (80.76 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/partnerships.ts
+  - messaging.ts (31.6 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/messaging.ts
+  - connections.ts (17.45 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/connections.ts
+  - transportCache.ts (9.29 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/transportCache.ts
+  - next-metadata.ts (1.28 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/next-metadata.ts
+  - forums.ts (25.5 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/forums.ts
+  - profile.ts (12.71 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/profile.ts
+  - directory.ts (22.31 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/directory.ts
+  - placeholders.ts (9.81 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/placeholders.ts
+  - serviceAvailability.ts (8.88 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/serviceAvailability.ts
+  - transportServices.ts (15 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/transportServices.ts
+  - search.ts (15.47 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/search.ts
+  - institutionalPartnerships.ts (21.66 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/institutionalPartnerships.ts
+  - dateUtils.ts (4.49 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/dateUtils.ts
+  - london-events-additional.ts (30.25 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/london-events-additional.ts
+  - events-tours.ts (26.51 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/lib/events-tours.ts
+  - useNotificationIntegration.ts (13.41 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/hooks/useNotificationIntegration.ts
+  - useAuthIntentRestore.ts (2.59 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/hooks/useAuthIntentRestore.ts
+  - useWaitingListActions.tsx (3.77 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/hooks/useWaitingListActions.tsx
+  - useAuthRequired.ts (1.6 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/src/hooks/useAuthRequired.ts
+
+🔴 UNUSED IMAGES (59):
+  - yoga.jpg (42.02 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/events/yoga.jpg
+  - art-tour.jpg (41.5 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/events/art-tour.jpg
+  - wine-paint.jpg (115.74 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/events/wine-paint.jpg
+  - wine-tasting.jpg (61.48 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/events/wine-tasting.jpg
+  - ceramic-art.jpg (45.56 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/events/ceramic-art.jpg
+  - jazz-networking.jpg (57.41 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/events/jazz-networking.jpg
+  - book-brunch.jpg (98.82 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/events/book-brunch.jpg
+  - placeholder.svg (568 B) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/events/placeholder.svg
+  - networking.jpg (81.67 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/events/networking.jpg
+  - pottery-wine-1.jpg (41.5 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/events/pottery-wine-1.jpg
+  - book-club.jpg (52.87 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/events/book-club.jpg
+  - mozambican-bbq.jpg (7.94 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/events/portuguese/mozambican-bbq.jpg
+  - cape-verde-night.jpg (8.1 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/events/portuguese/cape-verde-night.jpg
+  - football-screening.jpg (8.26 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/events/portuguese/football-screening.jpg
+  - portuguese-cinema.jpg (7.9 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/events/portuguese/portuguese-cinema.jpg
+  - ai-workshop.svg (3.34 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/events/portuguese/ai-workshop.svg
+  - portuguese-networking.jpg (8.77 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/events/portuguese/portuguese-networking.jpg
+  - member-7.jpg (7.65 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/community/member-7.jpg
+  - member-6.jpg (6.68 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/community/member-6.jpg
+  - member-8.jpg (5.88 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/community/member-8.jpg
+  - member-11.jpg (6.2 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/community/member-11.jpg
+  - member-9.jpg (8.09 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/community/member-9.jpg
+  - member-4.jpg (6.23 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/community/member-4.jpg
+  - member-2.jpg (5.85 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/community/member-2.jpg
+  - member-10.jpg (5.4 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/community/member-10.jpg
+  - member-5.jpg (6.66 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/community/member-5.jpg
+  - member-12.jpg (6.01 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/community/member-12.jpg
+  - member-3.jpg (6.28 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/community/member-3.jpg
+  - member-1.jpg (8.82 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/community/member-1.jpg
+  - emma-wilson.jpg (7.25 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/directory/emma-wilson.jpg
+  - rachel-green.jpg (6.59 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/directory/rachel-green.jpg
+  - chloe-brown.jpg (6.72 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/directory/chloe-brown.jpg
+  - sophia-martinez.jpg (7.69 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/directory/sophia-martinez.jpg
+  - ava-davis.jpg (6.09 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/directory/ava-davis.jpg
+  - olivia-taylor.jpg (5.96 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/directory/olivia-taylor.jpg
+  - priya-sharma.jpg (5.9 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/testimonials/priya-sharma.jpg
+  - emma-johnson.jpg (3.76 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/testimonials/emma-johnson.jpg
+  - sarah-chen.jpg (5.01 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/testimonials/sarah-chen.jpg
+  - maya-patel.jpg (6.91 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/testimonials/maya-patel.jpg
+  - jessica-williams.jpg (6.71 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/testimonials/jessica-williams.jpg
+  - fernanda-santos.jpg (5.68 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/fernanda-santos.jpg
+  - antonio-pereira.jpg (5.49 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/antonio-pereira.jpg
+  - miguel-santos.jpg (5.52 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/miguel-santos.jpg
+  - pedro-costa.jpg (5.44 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/pedro-costa.jpg
+  - fernanda-oliveira.jpg (5.68 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/fernanda-oliveira.jpg
+  - teresa-rodrigues.jpg (5.74 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/teresa-rodrigues.jpg
+  - joana-silva.jpg (5.34 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/joana-silva.jpg
+  - catarina-lopes.jpg (5.5 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/catarina-lopes.jpg
+  - ana-ferreira.jpg (5.37 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/ana-ferreira.jpg
+  - ricardo-oliveira.jpg (5.58 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/ricardo-oliveira.jpg
+  - marco-santos.jpg (5.48 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/marco-santos.jpg
+  - carlos-silva.jpg (5.41 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/carlos-silva.jpg
+  - lisa-thompson.jpg (3.19 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/testimonials/lisa-thompson.jpg
+  - default-avatar.svg (1.12 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/default-avatar.svg
+  - forum-user-3.jpg (2.44 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/forums/forum-user-3.jpg
+  - forum-user-5.jpg (2.28 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/forums/forum-user-5.jpg
+  - forum-user-2.jpg (2.16 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/forums/forum-user-2.jpg
+  - forum-user-1.jpg (1.74 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/forums/forum-user-1.jpg
+  - forum-user-4.jpg (2.29 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/public/profiles/forums/forum-user-4.jpg
+
+🔴 UNUSED MARKDOWN FILES (42):
+  - PORTUGUESE_COMMUNITY_MARKETING_CAMPAIGN.md (15.95 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/PORTUGUESE_COMMUNITY_MARKETING_CAMPAIGN.md
+  - INTELLIGENT_BOOKING_SYSTEM.md (10.48 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/INTELLIGENT_BOOKING_SYSTEM.md
+  - CAMPAIGN_TIMELINE_BUDGET.md (11.51 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/CAMPAIGN_TIMELINE_BUDGET.md
+  - NETWORKING_ARCHITECTURE.md (12.77 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/NETWORKING_ARCHITECTURE.md
+  - COMPREHENSIVE_PORTUGUESE_CONTENT_STRATEGY.md (40.67 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/COMPREHENSIVE_PORTUGUESE_CONTENT_STRATEGY.md
+  - LUSOTOWN_API_DOCUMENTATION.md (14.96 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/LUSOTOWN_API_DOCUMENTATION.md
+  - SUPABASE_COMPREHENSIVE_PLAN.md (26.88 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/SUPABASE_COMPREHENSIVE_PLAN.md
+  - AUTOMATION_SCRIPTS.md (7.51 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/AUTOMATION_SCRIPTS.md
+  - PORTUGUESE_CULTURAL_CONTENT_SUMMARY.md (9.49 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/PORTUGUESE_CULTURAL_CONTENT_SUMMARY.md
+  - CORPORATE_PARTNERSHIP_STRATEGY.md (14 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/CORPORATE_PARTNERSHIP_STRATEGY.md
+  - PARTNERSHIP_PROPOSALS_AND_CONTACTS.md (12.61 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/PARTNERSHIP_PROPOSALS_AND_CONTACTS.md
+  - PRICING_OPTIMIZATION_SUMMARY.md (1.69 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/PRICING_OPTIMIZATION_SUMMARY.md
+  - CODEBASE_AUDIT_REPORT.md (12.11 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/CODEBASE_AUDIT_REPORT.md
+  - CREATOR_SIGNUP_SUMMARY.md (8.63 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/CREATOR_SIGNUP_SUMMARY.md
+  - PORTUGUESE_CULTURAL_TOURISM_SUMMARY.md (7.77 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/PORTUGUESE_CULTURAL_TOURISM_SUMMARY.md
+  - STRATEGIC_ROADMAP.md (8.34 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/STRATEGIC_ROADMAP.md
+  - PROJECT_STRUCTURE.md (31.16 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/PROJECT_STRUCTURE.md
+  - DOCUMENTATION_UPDATE_SUMMARY.md (10.25 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/DOCUMENTATION_UPDATE_SUMMARY.md
+  - tudo.md (17.1 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/tudo.md
+  - YOUTUBE_INTEGRATION_SYSTEM.md (10.41 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/YOUTUBE_INTEGRATION_SYSTEM.md
+  - TODO.md (16.48 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/TODO.md
+  - PORTUGUESE_CREATOR_ONBOARDING_GUIDE.md (17.41 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/PORTUGUESE_CREATOR_ONBOARDING_GUIDE.md
+  - PORTUGUESE_INSTITUTIONAL_OUTREACH.md (23.19 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/PORTUGUESE_INSTITUTIONAL_OUTREACH.md
+  - MARKETING_COPY_TEMPLATES.md (18.49 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/MARKETING_COPY_TEMPLATES.md
+  - RULES.md (11.69 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/RULES.md
+  - LUSOTOWN_ARCHITECTURE_FIXES_SUMMARY.md (7.36 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/LUSOTOWN_ARCHITECTURE_FIXES_SUMMARY.md
+  - DOCUMENTATION_INDEX.md (14.41 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/DOCUMENTATION_INDEX.md
+  - IMPLEMENTATION_SUMMARY.md (7.68 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/IMPLEMENTATION_SUMMARY.md
+  - GROUP_EVENTS_UI_DESIGN.md (6.98 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/GROUP_EVENTS_UI_DESIGN.md
+  - PORTUGUESE_BRAND_COLORS.md (9.5 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/PORTUGUESE_BRAND_COLORS.md
+  - PLATFORM_INTEGRATION_ARCHITECTURE.md (13.72 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/PLATFORM_INTEGRATION_ARCHITECTURE.md
+  - UNIVERSITY_PARTNERSHIPS_STRATEGY.md (23.2 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/UNIVERSITY_PARTNERSHIPS_STRATEGY.md
+  - LUSOTOWN_ADMINISTRATIVE_ROLES.md (21.73 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/LUSOTOWN_ADMINISTRATIVE_ROLES.md
+  - STREAMING_PLATFORM_DEPLOYMENT_GUIDE.md (10.54 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/STREAMING_PLATFORM_DEPLOYMENT_GUIDE.md
+  - STREAMING_IMPLEMENTATION_GUIDE.md (17.45 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/STREAMING_IMPLEMENTATION_GUIDE.md
+  - STREAMING_DEVELOPER_GUIDE.md (58.62 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/STREAMING_DEVELOPER_GUIDE.md
+  - PARTNERSHIP_IMPLEMENTATION_ROADMAP.md (13.39 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/PARTNERSHIP_IMPLEMENTATION_ROADMAP.md
+  - PARTNERSHIP_IMPLEMENTATION_STRATEGY.md (9.77 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/PARTNERSHIP_IMPLEMENTATION_STRATEGY.md
+  - STREAMING_API_DOCUMENTATION.md (23.04 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/STREAMING_API_DOCUMENTATION.md
+  - PARTNERSHIP_MANAGEMENT_SYSTEM.md (13.26 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/PARTNERSHIP_MANAGEMENT_SYSTEM.md
+  - SECURITY_PERFORMANCE_FIXES_REPORT.md (8.88 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/SECURITY_PERFORMANCE_FIXES_REPORT.md
+  - STREAMING_INTEGRATION_MASTER_PLAN.md (12.87 KB) [MEDIUM]
+    Path: /workspaces/LusoTown/STREAMING_INTEGRATION_MASTER_PLAN.md
+
+🔴 BACKUP FILES (5):
+  - index.pack.gz.old (448.19 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/.next/cache/webpack/server-development/index.pack.gz.old
+  - index.pack.gz.old (359.07 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/.next/cache/webpack/client-development/index.pack.gz.old
+  - index.pack.old (18.1 MB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/.next/cache/webpack/client-production/index.pack.old
+  - index.pack.old (26.34 MB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/.next/cache/webpack/server-production/index.pack.old
+  - index.pack.old (9.44 KB) [HIGH]
+    Path: /workspaces/LusoTown/web-app/.next/cache/webpack/edge-server-production/index.pack.old
+
+================================================================================
+💾 TOTAL ESTIMATED SAVINGS: 53.03 MB
+================================================================================
+
+🧹 SAFE CLEANUP COMMANDS:
+# High confidence files (safe to delete):
+rm -f \
+  "/workspaces/LusoTown/web-app/src/components/ProfileCard.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CrossPlatformEngagementTriggers.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/SIABadge.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/LondonTourRoutes.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/PaymentProcessor.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/StreamSchedule.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CreatorTestimonials.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/UsageLimitIndicator.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/StreamPlayer.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/LiveFeedNotifications.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/LiveChatWidget.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/MessageAuthorizationGate.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/Logo.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/WhatsAppWidget.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/PrimeirosPassos.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/NotificationBell.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/FeedPost.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/FrameworkPillars.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/SavedItemsButton.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/SuccessStoryIntroduction.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/Header.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/FavoriteButton.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/PersonalizedFeed.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/HostWithUsSection.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/EnhancedStreamPlayer.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CommunityEventCreation.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/EventBuddySystem.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/MatchFilters.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/YouTubeContentManager.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/StreamViewerStats.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/OfficialPartnershipBadge.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ProtectionTestimonials.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/EventsToursSection.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/EventBuddyDashboard.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/SaveFavoriteCartButton.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CartButton.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/StudentVerificationSystem.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/PortugueseValueShowcase.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/NetworkPreview.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/MatchConversations.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/PremiumMatchesGate.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/DiverseSuccessStories.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/EmotePicker.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/FadoExperiencePackages.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/MentorshipHero.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ProgressiveUserJourney.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/GroupEventCard.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/SearchBar.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/TestimonialsNew.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/SocialLogin.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/NetworkAnalytics.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/TransportTestimonials.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/GroupsShowcase.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/EventToursCard.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/MembershipTiers.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/SocialLoginButton.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/PartnershipIntegrationDashboard.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/BookTogetherModal.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/GroupReportModal.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/NetworkMilestoneAlert.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/PortugueseCulturalHub.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/EventImageWithFallback.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/StreamReplayLibrary.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CorporatePortugueseCulturalPrograms.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/MembershipPortal.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ConversionOptimizationEngine.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/Cart.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/UnifiedActivity.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/PortuguesePolls.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/SIACertificationDisplay.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/Hero.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/PortugueseSEO.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/EventPreviewGenerator.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/PremiumProtectionPricing.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ServiceCommunityBridge.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CTA.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/AuthIntentHandler.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/TransportBookingForm.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CrossPlatformNavigationWidget.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/RiskAssessmentForm.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/MobileOptimizedOnboarding.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ConnectionCard.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/StreamGrid.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ReferralWidget.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/EventsDiscovery.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/NetworkBadges.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/MatchingAlgorithm.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/RestrictedMessagingInterface.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/StreamCard.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/UnifiedPremiumExperience.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/SortingControls.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ConnectionFilters.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/TransportServiceCard.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ErrorBoundary.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/QuestionExplainer.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/SIAAdminDashboard.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/OptimizedTransportServiceCard.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CreatorAgreement.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CreatorDashboardPreview.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/LoadingSpinner.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ServiceCard.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ProfileEditForm.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/UsageLimitIndicators.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/SuccessStories.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/UnifiedExperienceHub.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/GroupEventsPageClient.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ConversationManager.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/AuthenticEvents.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ModeratorPanel.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/StreamHeader.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CreatorApplicationForm.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/EventCard.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/EcosystemStats.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/MessagingInterface.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/FeatureGateModal.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CommunityImpactDocumentation.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/SIAComplianceQuestionnaire.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/EcosystemOverview.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CustomToursSection.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/LanguageToggle.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/StudentVerificationModal.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ReferralDashboard.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/AuthPopupProvider.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/SIABookingConfirmation.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/WaitingListModal.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/MatchCard.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/RetentionGrowthMechanics.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/EventFeed.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ServiceIntegration.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/GrowthAnalyticsDashboard.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ConnectionNotificationBanner.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/NotificationCenter.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/EventReviewSystem.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CulturalBridgeBuilding.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CorporatePartnershipProgram.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CulturalHeritageTimeline.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/OnboardingFlowEnhanced.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ConnectionsGrid.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CloudinaryImage.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/FollowButton.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/GroupEventsSection.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/StreamCategories.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/PortugueseCommunityModerationPanel.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/OfficialRecognitionFramework.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/PortugueseBusinessDirectory.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CreatorEarningsCalculator.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/EventFeedCard.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/SafetyCenter.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/Hashtag.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/HeritagePreservationHub.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/AuthPopup.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/AboutLusoTown.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/EventsShowcase.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/Footer.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/QuickActions.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CategoryBadge.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/SubscriptionGate.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/TrialCountdown.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/FeedFilters.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/BusinessCard.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/WaitingListButton.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/LittlePortugalTours.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/BookingTrigger.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/PortugueseCulturalTourRoutes.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/NotificationPreferences.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/MatchToMessageFlow.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CaseStudies.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/PortugueseLoadingSpinner.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ComplianceStepIndicator.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/MemberSpotlightManager.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/AppDownloadSection.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/UserTypeSelection.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ConversationsList.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ReactionButton.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/LusophoneDiversityShowcase.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/SmartRecommendations.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ProgressTracker.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/WelcomeModal.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/StrategicPartnershipDashboard.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/PortugueseCulturalCalendar.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/HowItWorks.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/LusoTownTV.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/notifications/SmartNotificationTrigger.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/notifications/WhatsAppNotificationWidget.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/notifications/NotificationToast.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/notifications/EmailNotificationTemplates.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/Features.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/OptimizedTransportPage.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/StepIndicator.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/AgeVerificationModal.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/FavoriteNotification.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/LiveUpdateIndicator.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/SmartBookingSystem.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/HowConnectionsWork.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ChatMessage.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/MentorshipProgramsSection.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/PortugueseCulturalBadge.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/PhotoUpload.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CategoryFilter.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/TransportBookingFlow.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/PortugueseInstitutionalPartnerships.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/NetworkHeader.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CulturalPreferenceQuiz.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ImprovedEventCard.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/EasySIAQuestionnaire.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/EventCompatibilityMatcher.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/AuthPopupDemo.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/MessageModerationDashboard.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/ChatWindow.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/PortugueseCommunityReferralSystem.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/TrustBadges.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CulturalJourneyMapper.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/CaseStudyShowcase.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/PortugueseSEOOptimizer.tsx" \
+  "/workspaces/LusoTown/web-app/src/components/GoLiveModal.tsx" \
+  "/workspaces/LusoTown/web-app/src/utils/imageUtils.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/design.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/businessDirectory.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/profileImages.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/networkingEvents.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/serviceToCommunitBridge.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/portuguese-moderation.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/referral.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/eventAvailability.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/events.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/seo.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/errorHandling.tsx" \
+  "/workspaces/LusoTown/web-app/src/lib/transportBooking.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/supabase.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/serviceCartUtils.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/feed.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/socket-client.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/socialNetworks.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/universityPartnerships.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/cloudinary.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/portuguese-emotes.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/dynamicPricing.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/transportPricing.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/business-events-london.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/streaming.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/auth.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/testimonialMixer.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/partnerships.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/messaging.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/connections.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/transportCache.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/next-metadata.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/forums.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/profile.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/directory.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/placeholders.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/serviceAvailability.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/transportServices.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/search.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/institutionalPartnerships.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/dateUtils.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/london-events-additional.ts" \
+  "/workspaces/LusoTown/web-app/src/lib/events-tours.ts" \
+  "/workspaces/LusoTown/web-app/src/hooks/useNotificationIntegration.ts" \
+  "/workspaces/LusoTown/web-app/src/hooks/useAuthIntentRestore.ts" \
+  "/workspaces/LusoTown/web-app/src/hooks/useWaitingListActions.tsx" \
+  "/workspaces/LusoTown/web-app/src/hooks/useAuthRequired.ts" \
+  "/workspaces/LusoTown/web-app/public/events/yoga.jpg" \
+  "/workspaces/LusoTown/web-app/public/events/art-tour.jpg" \
+  "/workspaces/LusoTown/web-app/public/events/wine-paint.jpg" \
+  "/workspaces/LusoTown/web-app/public/events/wine-tasting.jpg" \
+  "/workspaces/LusoTown/web-app/public/events/ceramic-art.jpg" \
+  "/workspaces/LusoTown/web-app/public/events/jazz-networking.jpg" \
+  "/workspaces/LusoTown/web-app/public/events/book-brunch.jpg" \
+  "/workspaces/LusoTown/web-app/public/events/placeholder.svg" \
+  "/workspaces/LusoTown/web-app/public/events/networking.jpg" \
+  "/workspaces/LusoTown/web-app/public/events/pottery-wine-1.jpg" \
+  "/workspaces/LusoTown/web-app/public/events/book-club.jpg" \
+  "/workspaces/LusoTown/web-app/public/events/portuguese/mozambican-bbq.jpg" \
+  "/workspaces/LusoTown/web-app/public/events/portuguese/cape-verde-night.jpg" \
+  "/workspaces/LusoTown/web-app/public/events/portuguese/football-screening.jpg" \
+  "/workspaces/LusoTown/web-app/public/events/portuguese/portuguese-cinema.jpg" \
+  "/workspaces/LusoTown/web-app/public/events/portuguese/ai-workshop.svg" \
+  "/workspaces/LusoTown/web-app/public/events/portuguese/portuguese-networking.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/community/member-7.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/community/member-6.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/community/member-8.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/community/member-11.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/community/member-9.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/community/member-4.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/community/member-2.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/community/member-10.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/community/member-5.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/community/member-12.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/community/member-3.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/community/member-1.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/directory/emma-wilson.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/directory/rachel-green.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/directory/chloe-brown.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/directory/sophia-martinez.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/directory/ava-davis.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/directory/olivia-taylor.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/testimonials/priya-sharma.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/testimonials/emma-johnson.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/testimonials/sarah-chen.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/testimonials/maya-patel.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/testimonials/jessica-williams.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/fernanda-santos.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/antonio-pereira.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/miguel-santos.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/pedro-costa.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/fernanda-oliveira.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/teresa-rodrigues.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/joana-silva.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/catarina-lopes.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/ana-ferreira.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/ricardo-oliveira.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/marco-santos.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/testimonials/portuguese/carlos-silva.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/testimonials/lisa-thompson.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/default-avatar.svg" \
+  "/workspaces/LusoTown/web-app/public/profiles/forums/forum-user-3.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/forums/forum-user-5.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/forums/forum-user-2.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/forums/forum-user-1.jpg" \
+  "/workspaces/LusoTown/web-app/public/profiles/forums/forum-user-4.jpg" \
+  "/workspaces/LusoTown/web-app/.next/cache/webpack/server-development/index.pack.gz.old" \
+  "/workspaces/LusoTown/web-app/.next/cache/webpack/client-development/index.pack.gz.old" \
+  "/workspaces/LusoTown/web-app/.next/cache/webpack/client-production/index.pack.old" \
+  "/workspaces/LusoTown/web-app/.next/cache/webpack/server-production/index.pack.old" \
+  "/workspaces/LusoTown/web-app/.next/cache/webpack/edge-server-production/index.pack.old"
+
+# Medium confidence files (manual review recommended):
+# rm "/workspaces/LusoTown/web-app/src/app/terms/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/admin/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/groups/[id]/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/groups/create/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/groups/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/saved/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/corporate-partnerships/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/notification-preferences/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/pricing/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/my-network/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/primeiros-passos/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/business-networking/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/signup/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/signup/success/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/messages/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/community/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/tours/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/safety/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/community-guidelines/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/feed/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/services/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/services/cultural-tours/confirmation/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/services/cultural-tours/booking/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/services/close-protection/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/services/close-protection/booking/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/services/close-protection/booking/confirmation/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/services/consultation/confirmation/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/services/consultation/booking/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/subscription/cancelled/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/subscription/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/subscription/success/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/profile/[id]/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/profile/edit/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/creator-signup/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/london-tours/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/about/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/case-studies/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/events/[id]/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/events/[id]/confirmation/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/events/[id]/book/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/events/groups/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/events/create/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/events/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/portuguese-institutional-partnerships/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/directory/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/directory/member/[id]/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/contact/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/instituto-camoes/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/search/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/forgot-password/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/how-it-works/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/favorites/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/privacy/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/chat/[id]/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/chat/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/rules/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/partnerships/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/profiles/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/unified-experience/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/following/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/success-stories/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/stream/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/premium-membership/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/strategic-partnership-dashboard/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/social-networks/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/streaming/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/dashboard/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/chauffeur/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/referrals/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/host/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/matches/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/live/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/housing-assistance/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/students/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/login/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/mentorship/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/careers/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/forums/create-topic/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/forums/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/forums/topic/[id]/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/business-directory/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/user-journey/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/tools/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/neighborhood-groups/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/help/page.tsx"
+# rm "/workspaces/LusoTown/web-app/src/app/transport/page.tsx"
+# rm "/workspaces/LusoTown/PORTUGUESE_COMMUNITY_MARKETING_CAMPAIGN.md"
+# rm "/workspaces/LusoTown/INTELLIGENT_BOOKING_SYSTEM.md"
+# rm "/workspaces/LusoTown/CAMPAIGN_TIMELINE_BUDGET.md"
+# rm "/workspaces/LusoTown/NETWORKING_ARCHITECTURE.md"
+# rm "/workspaces/LusoTown/COMPREHENSIVE_PORTUGUESE_CONTENT_STRATEGY.md"
+# rm "/workspaces/LusoTown/LUSOTOWN_API_DOCUMENTATION.md"
+# rm "/workspaces/LusoTown/SUPABASE_COMPREHENSIVE_PLAN.md"
+# rm "/workspaces/LusoTown/AUTOMATION_SCRIPTS.md"
+# rm "/workspaces/LusoTown/PORTUGUESE_CULTURAL_CONTENT_SUMMARY.md"
+# rm "/workspaces/LusoTown/CORPORATE_PARTNERSHIP_STRATEGY.md"
+# rm "/workspaces/LusoTown/PARTNERSHIP_PROPOSALS_AND_CONTACTS.md"
+# rm "/workspaces/LusoTown/PRICING_OPTIMIZATION_SUMMARY.md"
+# rm "/workspaces/LusoTown/CODEBASE_AUDIT_REPORT.md"
+# rm "/workspaces/LusoTown/CREATOR_SIGNUP_SUMMARY.md"
+# rm "/workspaces/LusoTown/PORTUGUESE_CULTURAL_TOURISM_SUMMARY.md"
+# rm "/workspaces/LusoTown/STRATEGIC_ROADMAP.md"
+# rm "/workspaces/LusoTown/PROJECT_STRUCTURE.md"
+# rm "/workspaces/LusoTown/DOCUMENTATION_UPDATE_SUMMARY.md"
+# rm "/workspaces/LusoTown/tudo.md"
+# rm "/workspaces/LusoTown/YOUTUBE_INTEGRATION_SYSTEM.md"
+# rm "/workspaces/LusoTown/TODO.md"
+# rm "/workspaces/LusoTown/PORTUGUESE_CREATOR_ONBOARDING_GUIDE.md"
+# rm "/workspaces/LusoTown/PORTUGUESE_INSTITUTIONAL_OUTREACH.md"
+# rm "/workspaces/LusoTown/MARKETING_COPY_TEMPLATES.md"
+# rm "/workspaces/LusoTown/RULES.md"
+# rm "/workspaces/LusoTown/LUSOTOWN_ARCHITECTURE_FIXES_SUMMARY.md"
+# rm "/workspaces/LusoTown/DOCUMENTATION_INDEX.md"
+# rm "/workspaces/LusoTown/IMPLEMENTATION_SUMMARY.md"
+# rm "/workspaces/LusoTown/GROUP_EVENTS_UI_DESIGN.md"
+# rm "/workspaces/LusoTown/PORTUGUESE_BRAND_COLORS.md"
+# rm "/workspaces/LusoTown/PLATFORM_INTEGRATION_ARCHITECTURE.md"
+# rm "/workspaces/LusoTown/UNIVERSITY_PARTNERSHIPS_STRATEGY.md"
+# rm "/workspaces/LusoTown/LUSOTOWN_ADMINISTRATIVE_ROLES.md"
+# rm "/workspaces/LusoTown/STREAMING_PLATFORM_DEPLOYMENT_GUIDE.md"
+# rm "/workspaces/LusoTown/STREAMING_IMPLEMENTATION_GUIDE.md"
+# rm "/workspaces/LusoTown/STREAMING_DEVELOPER_GUIDE.md"
+# rm "/workspaces/LusoTown/PARTNERSHIP_IMPLEMENTATION_ROADMAP.md"
+# rm "/workspaces/LusoTown/PARTNERSHIP_IMPLEMENTATION_STRATEGY.md"
+# rm "/workspaces/LusoTown/STREAMING_API_DOCUMENTATION.md"
+# rm "/workspaces/LusoTown/PARTNERSHIP_MANAGEMENT_SYSTEM.md"
+# rm "/workspaces/LusoTown/SECURITY_PERFORMANCE_FIXES_REPORT.md"
+# rm "/workspaces/LusoTown/STREAMING_INTEGRATION_MASTER_PLAN.md"
+
+✅ Audit complete!

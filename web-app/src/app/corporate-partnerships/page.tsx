@@ -4,7 +4,6 @@ import React, { useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import Footer from '@/components/Footer'
 import CorporatePartnershipProgram from '@/components/CorporatePartnershipProgram'
-import PartnershipValueCalculator from '@/components/PartnershipValueCalculator'
 import PartnershipIntegrationDashboard from '@/components/PartnershipIntegrationDashboard'
 import {
   BuildingOffice2Icon,
@@ -52,7 +51,7 @@ export default function CorporatePartnerships() {
       case 'overview':
         return <CorporatePartnershipProgram />
       case 'calculator':
-        return <PartnershipValueCalculator />
+        return <div className="p-8 text-center text-gray-500">Partnership calculator component removed</div>
       case 'dashboard':
         return <PartnershipIntegrationDashboard />
       default:

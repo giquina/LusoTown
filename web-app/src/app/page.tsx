@@ -9,11 +9,9 @@ import Features from '@/components/Features'
 import Footer from '@/components/Footer'
 
 // Lazy load components with loading placeholders for better performance
-const ContextTestComponent = dynamic(() => import('@/components/ContextTestComponent'), { ssr: false })
 const HowItWorks = dynamic(() => import('@/components/HowItWorks'))
 const HowConnectionsWork = dynamic(() => import('@/components/HowConnectionsWork'))
 const AboutLusoTown = dynamic(() => import('@/components/AboutLusoTown'))
-const PortugueseSpeakersSection = dynamic(() => import('@/components/PortugueseSpeakersSection'))
 const EventsShowcase = dynamic(() => import('@/components/EventsShowcase'))
 const GroupsShowcase = dynamic(() => import('@/components/GroupsShowcase'))
 const GroupEventsSection = dynamic(() => import('@/components/GroupEventsSection'))
@@ -25,7 +23,6 @@ const CustomToursSection = dynamic(() => import('@/components/CustomToursSection
 const HostWithUsSection = dynamic(() => import('@/components/HostWithUsSection'))
 const CTA = dynamic(() => import('@/components/CTA'))
 const ProgressiveUserJourney = dynamic(() => import('@/components/ProgressiveUserJourney'))
-const CrossPlatformEngagementTriggers = dynamic(() => import('@/components/CrossPlatformEngagementTriggers'))
 const RetentionGrowthMechanics = dynamic(() => import('@/components/RetentionGrowthMechanics'))
 import { 
   ChatBubbleLeftRightIcon, 
@@ -363,10 +360,7 @@ export default function Home() {
         </div>
         
         {/* Cross-Platform Engagement Triggers */}
-        <CrossPlatformEngagementTriggers
-          currentPage="/"
-          userActivity={userActivity}
-        />
+        {/* CrossPlatformEngagementTriggers component removed */}
       </main>
     </>
   )

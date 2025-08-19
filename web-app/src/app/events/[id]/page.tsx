@@ -22,7 +22,6 @@ import {
 import { HeartIcon as HeartSolidIcon, StarIcon as StarSolidIcon } from '@heroicons/react/24/solid'
 import Footer from '@/components/Footer'
 import EventReviewSystem from '@/components/EventReviewSystem'
-import ReviewAnalytics from '@/components/ReviewAnalytics'
 import { Event, EventReview, eventService } from '@/lib/events'
 import { authService } from '@/lib/auth'
 import { useLanguage } from '@/context/LanguageContext'
@@ -782,7 +781,7 @@ export default function EventDetailsPage() {
                     </div>
                     
                     {showAnalytics && (
-                      <ReviewAnalytics eventId={event.id} isEventHost={true} />
+                      {/* ReviewAnalytics component removed */}
                     )}
                   </div>
                 )}

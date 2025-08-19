@@ -33,69 +33,75 @@ export default function HowItWorks() {
   const steps = [
     {
       number: 1,
-      title: 'Join Portuguese Community',
-      subtitle: 'Junta-te à Comunidade Portuguesa',
-      description: `Connect with ${communityStats.members} Portuguese speakers across London. From professionals to community members - find your network.`,
+      title: 'Create Your Portuguese Profile',
+      subtitle: 'Crie o Seu Perfil Português',
+      description: `Join ${communityStats.members} Portuguese speakers in London. Share your heritage: Portugal, Brazil, or Lusophone countries. Add your interests from fado to football, pastéis de nata to professional networking.`,
       icon: UserPlus,
-      color: 'from-secondary-500 to-secondary-600',
-      bgColor: 'from-secondary-50 to-secondary-100',
-      accentColor: 'secondary-500',
-      examples: 'Portugal, Brazil, Angola, Mozambique, Cape Verde communities in London'
+      color: 'from-red-500 via-yellow-500 to-green-500',
+      bgColor: 'from-red-50 via-yellow-50 to-green-50',
+      accentColor: 'red-600',
+      examples: '🇵🇹 Heritage verification • 💼 Professional interests • ⚽ Cultural passions • 📍 London area',
+      emoji: '🏠'
     },
     {
       number: 2,
-      title: 'Book Portuguese Events',
-      subtitle: 'Reserve Eventos Portugueses',
-      description: 'Browse and book events for Portuguese speakers: AI workshops, Fado nights, cooking classes, networking, and tours.',
-      icon: Calendar,
-      color: 'from-accent-500 to-coral-500',
-      bgColor: 'from-accent-50 to-coral-100',
-      accentColor: 'accent-500',
-      examples: 'AI workshops, Fado nights, cooking classes, networking events, cultural tours'
+      title: 'Discover Your Matches',
+      subtitle: 'Descubra os Seus Matches',
+      description: 'AI-powered cultural compatibility matching. Find Portuguese speakers who share your saudade, love the same football team, or understand your professional journey in London.',
+      icon: Heart,
+      color: 'from-red-600 via-green-500 to-red-500',
+      bgColor: 'from-red-50 via-green-50 to-red-50',
+      accentColor: 'green-600',
+      examples: '💕 Cultural compatibility • ⚽ Team loyalties • 🎭 Music tastes • 💼 Career paths',
+      emoji: '❤️'
     },
     {
       number: 3,
-      title: 'Professional Growth & Culture',
-      subtitle: 'Crescimento Profissional e Cultura',
-      description: 'Attend business workshops, cultural experiences, and networking events. Learn from Portuguese entrepreneurs and expand your network.',
-      icon: Coffee,
-      color: 'from-action-500 to-action-600',
-      bgColor: 'from-action-50 to-action-100',
-      accentColor: 'action-500',
-      examples: 'Business coaching, digital marketing, investment seminars, heritage tours'
+      title: 'Book Authentic Portuguese Events',
+      subtitle: 'Reserve Eventos Portugueses Autênticos',
+      description: 'From intimate fado nights in Stockwell to Portuguese business networking in the City. Real venues, real culture, real connections.',
+      icon: Calendar,
+      color: 'from-green-500 via-red-500 to-yellow-500',
+      bgColor: 'from-green-50 via-red-50 to-yellow-50',
+      accentColor: 'green-500',
+      examples: '🎭 Fado nights • ☕ Portuguese café meetups • 🍷 Wine & networking • 🥐 Cooking classes',
+      emoji: '🎉'
     },
     {
       number: 4,
-      title: 'Host Your Own Events',
-      subtitle: 'Organize os Seus Próprios Eventos',
-      description: 'Share your expertise by hosting events for the Portuguese community. Monetize your skills while preserving heritage.',
-      icon: Heart,
-      color: 'from-premium-500 to-premium-600',
-      bgColor: 'from-premium-50 to-premium-100',
-      accentColor: 'premium-500',
-      examples: 'Host workshops, cultural events, promote business, share expertise'
+      title: 'Stream & Create Content',
+      subtitle: 'Transmita e Crie Conteúdo',
+      description: 'Join LusoTown TV - our Portuguese streaming platform. Watch live cultural content, host your own shows, or share your London-Portuguese journey with the community.',
+      icon: Camera,
+      color: 'from-yellow-500 via-red-500 to-green-500',
+      bgColor: 'from-yellow-50 via-red-50 to-green-50',
+      accentColor: 'yellow-600',
+      examples: '📺 Live streaming • 🎙️ Portuguese podcasts • 💰 Creator monetization • 🌟 Cultural shows',
+      emoji: '📺'
     },
     {
       number: 5,
-      title: 'Build Cultural Networks',
-      subtitle: 'Construa Redes Culturais',
-      description: 'Connect through shared events and experiences. Build meaningful relationships within the Portuguese community across London.',
-      icon: Users,
-      color: 'from-secondary-500 to-action-500',
-      bgColor: 'from-secondary-50 to-action-100',
-      accentColor: 'secondary-600',
-      examples: 'Event connections, cultural networking, professional relationships, community building'
+      title: 'Access Premium Services',
+      subtitle: 'Aceda a Serviços Premium',
+      description: 'Luxury transport with Portuguese-speaking drivers, priority event booking, exclusive networking events, and premium matches.',
+      icon: Sparkles,
+      color: 'from-red-500 via-green-500 to-yellow-500',
+      bgColor: 'from-red-50 via-green-50 to-yellow-50',
+      accentColor: 'red-500',
+      examples: '🚗 Portuguese chauffeurs • 🎫 VIP event access • ⭐ Premium matching • 🍾 Exclusive gatherings',
+      emoji: '⭐'
     },
     {
       number: 6,
-      title: 'Preserve & Share Culture',
-      subtitle: 'Preserve e Partilhe a Cultura',
-      description: 'Share traditional recipes, family stories, and cultural memories. Help preserve Portuguese culture for future generations in London.',
+      title: 'Build Your Portuguese Legacy',
+      subtitle: 'Construa o Seu Legado Português',
+      description: 'Share family recipes, connect with university partnerships, mentor other Portuguese speakers, and help preserve our culture for future generations in London.',
       icon: BookOpen,
-      color: 'from-coral-500 to-premium-500',
-      bgColor: 'from-coral-50 to-premium-100',
-      accentColor: 'coral-500',
-      examples: 'Family recipes, cultural stories, Portuguese traditions, heritage preservation'
+      color: 'from-green-500 via-yellow-500 to-red-500',
+      bgColor: 'from-green-50 via-yellow-50 to-red-50',
+      accentColor: 'green-500',
+      examples: '👨‍🍳 Family recipes • 🎓 Student mentoring • 📚 Cultural stories • 🏛️ Heritage preservation',
+      emoji: '🇵🇹'
     }
   ]
 
@@ -165,36 +171,32 @@ export default function HowItWorks() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-20">
           {steps.map((step, index) => {
             const IconComponent = step.icon
-            const cardPatterns = [
-              { emoji1: '🏛️', emoji2: '🎭', emoji3: '⚽' }, // Events
-              { emoji1: '👥', emoji2: '🤝', emoji3: '💼' }, // Groups  
-              { emoji1: '☕', emoji2: '💡', emoji3: '🚀' }, // Professional
-              { emoji1: '🎯', emoji2: '💡', emoji3: '🚀' }, // Host
-              { emoji1: '🌐', emoji2: '🤝', emoji3: '💚' }, // Network
-              { emoji1: '📚', emoji2: '🏛️', emoji3: '🇵🇹' }  // Heritage
-            ]
-            const pattern = cardPatterns[index] || cardPatterns[0]
+            const pattern = {
+              emoji1: step.emoji,
+              emoji2: '🇵🇹',
+              emoji3: step.emoji
+            }
             
-            const borderColor = step.accentColor === 'secondary-500' ? 'border-secondary-200' :
-                               step.accentColor === 'accent-500' ? 'border-accent-200' :
-                               step.accentColor === 'action-500' ? 'border-action-200' :
-                               step.accentColor === 'premium-500' ? 'border-premium-200' :
-                               step.accentColor === 'secondary-600' ? 'border-secondary-200' :
-                               'border-coral-200'
+            const borderColor = step.accentColor === 'red-600' ? 'border-red-200' :
+                               step.accentColor === 'green-600' ? 'border-green-200' :
+                               step.accentColor === 'green-500' ? 'border-green-200' :
+                               step.accentColor === 'yellow-600' ? 'border-yellow-200' :
+                               step.accentColor === 'red-500' ? 'border-red-200' :
+                               'border-green-200'
             
-            const textColor = step.accentColor === 'secondary-500' ? 'text-secondary-500/20 group-hover:text-secondary-500/30' :
-                             step.accentColor === 'accent-500' ? 'text-accent-500/20 group-hover:text-accent-500/30' :
-                             step.accentColor === 'action-500' ? 'text-action-500/20 group-hover:text-action-500/30' :
-                             step.accentColor === 'premium-500' ? 'text-premium-500/20 group-hover:text-premium-500/30' :
-                             step.accentColor === 'secondary-600' ? 'text-secondary-600/20 group-hover:text-secondary-600/30' :
-                             'text-coral-500/20 group-hover:text-coral-500/30'
+            const textColor = step.accentColor === 'red-600' ? 'text-red-600/20 group-hover:text-red-600/30' :
+                             step.accentColor === 'green-600' ? 'text-green-600/20 group-hover:text-green-600/30' :
+                             step.accentColor === 'green-500' ? 'text-green-500/20 group-hover:text-green-500/30' :
+                             step.accentColor === 'yellow-600' ? 'text-yellow-600/20 group-hover:text-yellow-600/30' :
+                             step.accentColor === 'red-500' ? 'text-red-500/20 group-hover:text-red-500/30' :
+                             'text-green-500/20 group-hover:text-green-500/30'
             
-            const buttonColor = step.accentColor === 'secondary-500' ? 'bg-secondary-500 hover:bg-secondary-700' :
-                               step.accentColor === 'accent-500' ? 'bg-accent-500 hover:bg-accent-700' :
-                               step.accentColor === 'action-500' ? 'bg-action-500 hover:bg-action-700' :
-                               step.accentColor === 'premium-500' ? 'bg-premium-500 hover:bg-premium-700' :
-                               step.accentColor === 'secondary-600' ? 'bg-secondary-600 hover:bg-secondary-700' :
-                               'bg-coral-500 hover:bg-coral-700'
+            const buttonColor = step.accentColor === 'red-600' ? 'bg-red-600 hover:bg-red-700' :
+                               step.accentColor === 'green-600' ? 'bg-green-600 hover:bg-green-700' :
+                               step.accentColor === 'green-500' ? 'bg-green-500 hover:bg-green-700' :
+                               step.accentColor === 'yellow-600' ? 'bg-yellow-600 hover:bg-yellow-700' :
+                               step.accentColor === 'red-500' ? 'bg-red-500 hover:bg-red-700' :
+                               'bg-green-500 hover:bg-green-700'
 
             return (
               <div key={step.number} className="group relative transition-all duration-500 hover:scale-105">

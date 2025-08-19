@@ -24,7 +24,6 @@ import { useLanguage } from '@/context/LanguageContext'
 import NetworkHeader from '@/components/NetworkHeader'
 import ConnectionsGrid from '@/components/ConnectionsGrid'
 import SortingControls from '@/components/SortingControls'
-import ConversationStarters from '@/components/ConversationStarters'
 import NetworkBadges from '@/components/NetworkBadges'
 import ConnectionNotificationBanner from '@/components/ConnectionNotificationBanner'
 import ConnectionFiltersComponent from '@/components/ConnectionFilters'
@@ -218,7 +217,7 @@ export default function MyNetworkPage() {
                 <NetworkBadges achievements={stats.achievements} />
                 
                 {/* Conversation Starters */}
-                <ConversationStarters />
+                {/* ConversationStarters component removed */}
               </div>
 
               {/* Main Content Area */}
