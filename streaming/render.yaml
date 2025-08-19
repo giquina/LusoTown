@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: lusotown-streaming-server
+    env: node
+    plan: starter
+    region: oregon
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3002
+      - key: HOST
+        value: 0.0.0.0
+      - key: LUSOTOWN_STREAMING_SECRET
+        generateValue: true
+      - key: RTMP_PORT
+        value: 1935
+      - key: HTTP_PORT
+        value: 8080
+      - key: CORS_ALLOWED_ORIGINS
+        value: https://lusotown-london.vercel.app,https://*.vercel.app,https://lusotown.com,https://*.lusotown.com
+      - key: CULTURAL_CONTENT_BOOST
+        value: true
+      - key: PORTUGUESE_LANGUAGE_PRIORITY
+        value: true
+      - key: COMMUNITY_CHAT_ENABLED
+        value: true
+      - key: PORTUGUESE_EMOTES_ENABLED
+        value: true
+    autoDeploy: true
+    disk:
+      name: streaming-disk
+      mountPath: /app/media
+      sizeGB: 5
