@@ -1141,6 +1141,8 @@ function SignupInner() {
                       <Image
                         src={testimonial.avatar}
                         alt={testimonial.name}
+                        width={40}
+                        height={40}
                         className="w-10 h-10 rounded-full object-cover ring-2 ring-white shadow-sm flex-shrink-0"
                       />
                       <div className="flex-1 min-w-0">
