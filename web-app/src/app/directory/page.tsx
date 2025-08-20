@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { authService, User } from '@/lib/auth'
 import { directoryService, DirectoryFilters, LONDON_AREAS, COMMON_INTERESTS } from '@/lib/directory'
 import { connectionService } from '@/lib/connections'
@@ -33,7 +33,7 @@ import {
 
 interface MemberCardProps {
   member: UserProfile
-  currentUser: User
+  currentUser: User | null
   onViewProfile: (memberId: string) => void
   onSendConnection: (memberId: string) => void
   onSendMessage: (memberId: string) => void
@@ -69,6 +69,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
 
   const canMessage = () => {
     if (member.privacy.allowMessages === 'everyone') return true
+    if (!currentUser) return false
     if (member.privacy.allowMessages === 'premium' && currentUser.membershipTier === 'premium') return true
     // In real app, check if connected for 'connections' option
     return false
@@ -254,42 +255,8 @@ export default function Directory() {
 
   const router = useRouter()
 
-  useEffect(() => {
-    const currentUser = authService.getCurrentUser()
-    if (!currentUser) {
-      router.push('/login')
-      return
-    }
-    
-    setUser(currentUser)
-    loadInitialData(currentUser)
-  }, [router])
-
-  useEffect(() => {
-    if (user) {
-      loadMembers(user, true) // Reset to first page
-    }
-  }, [filters, user])
-
-  const loadInitialData = async (currentUser: User) => {
-    try {
-      const [suggested, newMembersData, online] = await Promise.all([
-        directoryService.getSuggestedMembers(currentUser.id, 6),
-        directoryService.getNewMembers(8),
-        directoryService.getOnlineMembers(10)
-      ])
-      
-      setSuggestedMembers(suggested)
-      setNewMembers(newMembersData)
-      setOnlineMembers(online)
-      
-      await loadMembers(currentUser, true)
-    } catch (error) {
-      console.error('Error loading directory data:', error)
-    }
-  }
-
-  const loadMembers = async (currentUser: User, reset: boolean = false) => {
+  // Memoized loaders
+  const loadMembers = useCallback(async (currentUser: User, reset: boolean = false) => {
     try {
       const currentPage = reset ? 1 : page
       if (reset) {
@@ -299,7 +266,7 @@ export default function Directory() {
       }
 
       const result = await directoryService.searchMembers(
-        currentUser.id,
+        currentUser?.id || '',
         filters,
         currentPage,
         20
@@ -321,7 +288,45 @@ export default function Directory() {
       setLoading(false)
       setLoadingMore(false)
     }
-  }
+  }, [filters, page])
+
+  const loadInitialData = useCallback(async (currentUser: User | null) => {
+    try {
+      const [suggested, newMembersData, online] = await Promise.all([
+        currentUser ? directoryService.getSuggestedMembers(currentUser.id, 6) : Promise.resolve([]),
+        directoryService.getNewMembers(8),
+        directoryService.getOnlineMembers(10)
+      ])
+
+      if (currentUser) setSuggestedMembers(suggested)
+      setNewMembers(newMembersData)
+      setOnlineMembers(online)
+      
+      await loadMembers(currentUser || { id: '' } as User, true)
+    } catch (error) {
+      console.error('Error loading directory data:', error)
+    }
+  }, [loadMembers])
+
+  useEffect(() => {
+    const currentUser = authService.getCurrentUser()
+    if (currentUser) {
+      setUser(currentUser)
+      loadInitialData(currentUser)
+    } else {
+      loadInitialData(null)
+    }
+  }, [router, loadInitialData])
+
+  useEffect(() => {
+    if (user) {
+      loadMembers(user, true)
+    } else {
+      loadMembers({ id: '' } as User, true)
+    }
+  }, [filters, user, loadMembers])
+
+  // (removed duplicate non-memoized loaders)
 
   const handleFilterChange = (key: keyof DirectoryFilters, value: any) => {
     setFilters(prev => ({ ...prev, [key]: value }))
@@ -357,7 +362,10 @@ export default function Directory() {
   }
 
   const handleSendConnection = async (memberId: string) => {
-    if (!user) return
+    if (!user) {
+      router.push('/login')
+      return
+    }
     
     // In real app, would show connection request modal
     try {
@@ -374,6 +382,10 @@ export default function Directory() {
   }
 
   const handleSendMessage = (memberId: string) => {
+    if (!user) {
+      router.push('/login')
+      return
+    }
     router.push(`/chat/direct/${memberId}`)
   }
 
@@ -385,9 +397,7 @@ export default function Directory() {
     )
   }
 
-  if (!user) {
-    return null
-  }
+  // Guests can view directory; actions will prompt login
 
   const activeFiltersCount = [
     filters.search,
@@ -667,7 +677,7 @@ export default function Directory() {
             {hasMore && (
               <div className="text-center mt-8">
                 <button
-                  onClick={() => loadMembers(user, false)}
+                  onClick={() => loadMembers((user || { id: '' } as User), false)}
                   disabled={loadingMore}
                   className="px-6 py-3 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >

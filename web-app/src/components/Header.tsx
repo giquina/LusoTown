@@ -26,14 +26,14 @@ import { useLanguage } from "@/context/LanguageContext";
 
 const getNavigationLinks = (t: any) => [
   { name: t("nav.events", "London Events"), href: "/events" },
-  { name: t("nav.london-tours", "London Tours"), href: "/london-tours" },
+  { name: t("nav.london-tours", "London Tours"), href: "/tours" },
   { name: t("nav.students", "Students"), href: "/students" },
   { name: t("nav.pricing", "Pricing"), href: "/pricing" },
 ];
 
 const getAuthenticatedNavigationLinks = (t: any) => [
   { name: t("nav.events", "London Events"), href: "/events" },
-  { name: t("nav.london-tours", "London Tours"), href: "/london-tours" },
+  { name: t("nav.london-tours", "London Tours"), href: "/tours" },
   { name: t("nav.students", "Students"), href: "/students" },
   { name: t("referral.title", "Referrals"), href: "/referrals" },
   { name: t("nav.pricing", "Pricing"), href: "/pricing" },
@@ -49,8 +49,8 @@ const getMoreDropdownLinks = (t: any) => ({
   ],
   services: [
     { name: "Find Your Match", href: "/matches" },
-    { name: "Live TV", href: "/live" },
-    { name: "Streaming — Stream with us", href: "/streaming" },
+  { name: "Live TV", href: "/tv" },
+  { name: "Streaming — Stream with us", href: "/live" },
     { name: "Cultural Tours", href: "/services#cultural-tours" },
     { name: "Executive Transport", href: "/services#executive-transport" },
     { name: "London Transport", href: "/transport" },
@@ -159,7 +159,7 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 ml-4 xl:ml-8">
             {navigationLinks.map((link) => {
-              const isTours = link.href === "/london-tours";
+              const isTours = link.href === "/tours";
               if (isTours) {
                 return (
                   <div
@@ -195,7 +195,7 @@ export default function Header() {
                               <ul className="space-y-2">
                                 <li>
                                   <a
-                                    href="/london-tours"
+                                    href="/tours"
                                     className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
                                   >
                                     All London Tours
@@ -203,7 +203,7 @@ export default function Header() {
                                 </li>
                                 <li>
                                   <a
-                                    href="/london-tours"
+                                    href="/tours"
                                     className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
                                   >
                                     Tours
@@ -685,7 +685,7 @@ export default function Header() {
                       Tours & Transport
                     </h3>
                     <a
-                      href="/london-tours"
+                      href="/tours"
                       className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >

@@ -66,8 +66,8 @@ export default function EnhancedHowItWorks() {
       description: isPortuguese
         ? 'Assista conteúdo cultural português ao vivo, crie programas e conecte-se com a comunidade da diáspora'
         : 'Watch live Portuguese cultural content, create shows, and connect with the diaspora community',
-      cta: isPortuguese ? 'Começar a Ver' : 'Start Watching',
-      link: '/live',
+  cta: isPortuguese ? 'Começar a Ver' : 'Start Watching',
+  link: '/tv',
       icon: PlayIcon,
       solidIcon: PlaySolidIcon,
       gradient: 'from-primary-500 via-accent-500 to-coral-500',

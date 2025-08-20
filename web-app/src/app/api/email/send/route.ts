@@ -184,7 +184,7 @@ function generateEmailHTML(content: EmailContent, userInfo: any): string {
               <a href="${baseUrl}" style="margin: 0 12px;">${content.language === 'pt' ? 'Website' : 'Website'}</a>
               <a href="${baseUrl}/events" style="margin: 0 12px;">${content.language === 'pt' ? 'Eventos' : 'Events'}</a>
               <a href="${baseUrl}/matches" style="margin: 0 12px;">${content.language === 'pt' ? 'Matches' : 'Matches'}</a>
-              <a href="${baseUrl}/live" style="margin: 0 12px;">${content.language === 'pt' ? 'TV Ao Vivo' : 'Live TV'}</a>
+              <a href="${baseUrl}/tv" style="margin: 0 12px;">${content.language === 'pt' ? 'TV Ao Vivo' : 'Live TV'}</a>
             </div>
             
             <div class="unsubscribe">
