@@ -323,8 +323,8 @@ export default function EnhancedMatchDashboard({
               </h1>
               <p className="text-primary-600">
                 {language === "pt" 
-                  ? "Conecte-se com a comunidade portuguesa em Londres"
-                  : "Connect with the Portuguese community in London"}
+                  ? "Conecte-se com a comunidade portuguesa no Reino Unido"
+                  : "Connect with the Portuguese community in the United Kingdom"}
               </p>
             </div>
           </div>

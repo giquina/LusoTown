@@ -290,7 +290,7 @@ export default function MatchEventSuggestions({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="border border-primary-100 rounded-xl p-4 hover:shadow-lg transition-all duration-300 hover:border-primary-200"
+              className="border border-primary-100 rounded-xl p-4 hover:shadow-lg transition-all duration-300 hover:border-primary-200 overflow-hidden"
             >
               {/* Event Header */}
               <div className="flex items-start gap-4">
@@ -357,14 +357,14 @@ export default function MatchEventSuggestions({
                   
                   {/* Special Badges */}
                   {(event.isFadoFeatured || event.culturalAuthenticity >= 95) && (
-                    <div className="flex gap-2 mb-3">
+                    <div className="flex flex-wrap gap-2 mb-3 overflow-hidden">
                       {event.isFadoFeatured && (
-                        <span className="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-2 py-1 rounded-lg text-xs font-bold">
+                        <span className="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-2 py-1 rounded-lg text-xs font-bold whitespace-nowrap">
                           🎵 Fado Autêntico
                         </span>
                       )}
                       {event.culturalAuthenticity >= 95 && (
-                        <span className="bg-gradient-to-r from-green-500 to-green-600 text-white px-2 py-1 rounded-lg text-xs font-bold">
+                        <span className="bg-gradient-to-r from-green-500 to-green-600 text-white px-2 py-1 rounded-lg text-xs font-bold whitespace-nowrap">
                           ✨ Tradição 100%
                         </span>
                       )}
@@ -372,10 +372,10 @@ export default function MatchEventSuggestions({
                   )}
                   
                   {/* Action Buttons */}
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 overflow-hidden">
                     <button
                       onClick={() => handleBookTogether(event)}
-                      className="flex-1 bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-2 px-3 rounded-lg text-sm font-semibold hover:from-primary-700 hover:to-secondary-700 transition-all flex items-center justify-center gap-1"
+                      className="flex-1 bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-2 px-3 rounded-lg text-sm font-semibold hover:from-primary-700 hover:to-secondary-700 transition-all flex items-center justify-center gap-1 whitespace-nowrap"
                     >
                       <UsersIcon className="w-4 h-4" />
                       {language === "pt" ? "Reservar Juntos" : "Book Together"}

@@ -715,16 +715,9 @@ function MatchesContent() {
                         </div>
                       </div>
 
-                      {/* Enhanced Origin Badge */}
-                      <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-2xl text-xs md:text-sm font-semibold shadow-xl border border-primary-100">
-                        <div className="flex items-center gap-2">
-                          <span className="text-lg">
-                            {getOriginFlag(currentProfile.origin)}
-                          </span>
-                          <span className="text-primary-700 truncate max-w-24 md:max-w-32">
-                            {currentProfile.origin}
-                          </span>
-                        </div>
+                      {/* Enhanced Origin Badge - Flag Only */}
+                      <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-2xl text-xs md:text-sm font-semibold shadow-xl border border-primary-100">
+                        <span className="text-lg">{getOriginFlag(currentProfile.origin)}</span>
                       </div>
 
                       {/* Gradient Overlay */}

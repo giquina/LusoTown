@@ -466,7 +466,7 @@ const EventsShowcase = memo(() => {
                       </a>
                       {/* Book Together Button for Portuguese cultural events */}
                       {event.featured && (
-                        <button className="w-full bg-gradient-to-r from-coral-500 to-accent-500 text-white font-medium py-3 rounded-xl hover:from-coral-600 hover:to-accent-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl min-h-[40px] flex items-center justify-center gap-2">
+                        <button className="w-full bg-gradient-to-r from-coral-500 to-accent-500 text-white font-medium py-3 rounded-xl hover:from-coral-600 hover:to-accent-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl min-h-[40px] flex items-center justify-center gap-2 whitespace-nowrap">
                           <UsersIcon className="w-4 h-4" />
                           {language === "pt"
                             ? "Reservar em Grupo"

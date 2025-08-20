@@ -168,14 +168,9 @@ export default function EnhancedMatchCard({
           </div>
         </div>
 
-        {/* Enhanced Origin Badge */}
-        <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-2xl shadow-xl border border-primary-100">
-          <div className="flex items-center gap-2">
-            <span className="text-lg">{getOriginFlag(profile.origin)}</span>
-            <span className="text-primary-700 font-semibold text-sm truncate max-w-28">
-              {profile.origin}
-            </span>
-          </div>
+        {/* Enhanced Origin Badge - Flag Only */}
+        <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-2 rounded-2xl shadow-xl border border-primary-100">
+          <span className="text-lg">{getOriginFlag(profile.origin)}</span>
         </div>
 
         {/* Verification Badge */}
