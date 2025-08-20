@@ -1,5 +1,8 @@
 'use client';
 
+// Force dynamic rendering to avoid prerender/export issues on complex live TV page
+export const dynamic = 'force-dynamic';
+
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
