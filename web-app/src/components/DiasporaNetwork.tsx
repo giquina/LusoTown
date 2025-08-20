@@ -80,7 +80,7 @@ export default function DiasporaNetwork({
       id: 'business-partnership-uk-brazil',
       type: 'business',
       title: 'UK-Brazil Portuguese Business Partnership',
-      description: 'A Portuguese restaurant owner in London partnered with a Brazilian food distributor through LusoTown professional network.',
+      description: 'A Portuguese restaurant owner in the U.K. partnered with a Brazilian food distributor through LusoTown professional network.',
       participants: ['Maria\'s Portuguese Kitchen - London', 'Sabores do Brasil - São Paulo'],
       countries: ['uk', 'brazil'],
       outcome: 'Successful business partnership with 300% increase in authentic ingredient imports',

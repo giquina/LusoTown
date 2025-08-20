@@ -435,7 +435,7 @@ export default function MobileCameraIntegration({
         title: language === 'pt' ? 'Foto da LusoTown' : 'LusoTown Photo',
         text: language === 'pt' 
           ? 'Partilhado da comunidade portuguesa em Londres' 
-          : 'Shared from Portuguese community in London',
+          : 'Shared from Portuguese community in the U.K.',
         files: [file]
       });
 

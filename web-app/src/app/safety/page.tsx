@@ -39,7 +39,7 @@ export default function SafetyCenter() {
       title: isPortuguese ? 'Verificação Comunitária Portuguesa' : 'Portuguese Community Verification',
       description: isPortuguese ? 
         'Verificação de perfil assegura conexões genuínas com falantes de português em Londres' :
-        'Profile verification ensures genuine connections with Portuguese speakers in London',
+        'Profile verification ensures genuine connections with Portuguese speakers in the U.K.',
       icon: CheckCircleIcon,
       color: 'accent'
     },
@@ -227,7 +227,7 @@ export default function SafetyCenter() {
               <p className="text-xl sm:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto mb-8">
                 {isPortuguese ? 
                   'O LusoTown foi construído com a segurança da comunidade portuguesa no centro. Aprenda sobre as nossas funcionalidades de segurança abrangentes, obtenha dicas para encontros seguros, e aceda a recursos para navegar amizades com confiança em Londres.' :
-                  'LusoTown is built with Portuguese community safety at its core. Learn about our comprehensive safety features, get tips for safe meetups, and access resources to help you navigate friendships with confidence in London.'
+                  'LusoTown is built with Portuguese community safety at its core. Learn about our comprehensive safety features, get tips for safe meetups, and access resources to help you navigate friendships with confidence in the U.K..'
                 }
               </p>
               
@@ -373,7 +373,7 @@ export default function SafetyCenter() {
                 <p className="text-xl sm:text-2xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
                   {isPortuguese ? 
                     'Múltiplas camadas de proteção para garantir conexões autênticas portuguesas e interações seguras em Londres' :
-                    'Multiple layers of protection to ensure authentic Portuguese connections and safe interactions in London'
+                    'Multiple layers of protection to ensure authentic Portuguese connections and safe interactions in the U.K.'
                   }
                 </p>
               </div>

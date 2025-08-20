@@ -89,7 +89,7 @@ export default function NotFound() {
             <p className="text-xs text-gray-600 italic">
               {isPortuguese 
                 ? '"Onde há portugueses, há sempre uma mesa para mais um" - A comunidade portuguesa de Londres espera por si!'
-                : '"Where there are Portuguese, there\'s always room for one more" - The Portuguese community in London awaits you!'
+                : '"Where there are Portuguese, there\'s always room for one more" - The Portuguese community in the U.K. awaits you!'
               }
             </p>
           </div>

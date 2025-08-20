@@ -1,7 +1,7 @@
 // Note: This module is server-safe. Do not add client-only APIs here.
 
 // Portuguese Community SEO Strategy
-// Optimized for Portuguese speakers seeking community and business connections in London
+// Optimized for Portuguese speakers seeking community and business connections in the U.K.
 
 import { SITE_URL, absoluteUrl } from '@/config/site'
 import { ROUTES } from '@/config/routes'
@@ -158,9 +158,9 @@ export const COMPETITOR_KEYWORDS = [
 // SEO Page Configurations
 export const SEO_PAGES: { [key: string]: SEOMetadata } = {
   home: {
-    title: 'LusoTown London - Your Portuguese Social Calendar in London',
+    title: 'LusoTown London - Your Portuguese Social Calendar in the U.K.',
     titlePortuguese: 'LusoTown London - Sua Agenda Social Portuguesa em Londres',
-    description: 'Your Portuguese social calendar in London. Book experiences, find activities, and connect with Portuguese speakers from museums and football to concerts and weekend trips.',
+    description: 'Your Portuguese social calendar in the U.K.. Book experiences, find activities, and connect with Portuguese speakers from museums and football to concerts and weekend trips.',
     descriptionPortuguese: 'Sua agenda social portuguesa em Londres. Reserve experiências, encontre atividades e conecte-se com lusófonos - de museus e futebol a concertos e viagens de fim de semana.',
     keywords: [
       'portuguese social calendar london',
@@ -189,7 +189,7 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       "@type": "Organization",
       "name": "LusoTown London",
       "alternateName": "LusoTown",
-      "description": "Portuguese social calendar and community platform in London",
+      "description": "Portuguese social calendar and community platform in the U.K.",
   "url": SITE_URL,
   "logo": absoluteUrl('/logo.png'),
       "sameAs": [
@@ -204,15 +204,15 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       },
       "audience": {
         "@type": "Audience",
-        "audienceType": "Portuguese speakers in London"
+        "audienceType": "Portuguese speakers in the U.K."
       }
     }
   },
   
   events: {
-    title: 'Portuguese Events in London - Cultural Activities & Social Calendar',
+    title: 'Portuguese Events in the U.K. - Cultural Activities & Social Calendar',
     titlePortuguese: 'Eventos Portugueses em Londres - Atividades Culturais e Agenda Social',
-    description: 'Discover Portuguese cultural events, social activities, and community gatherings in London. From Fado nights to business networking, find your next Portuguese experience.',
+    description: 'Discover Portuguese cultural events, social activities, and community gatherings in the U.K.. From Fado nights to business networking, find your next Portuguese experience.',
     descriptionPortuguese: 'Descubra eventos culturais portugueses, atividades sociais e encontros comunitários em Londres. De noites de Fado a networking empresarial, encontre sua próxima experiência portuguesa.',
   keywords: [
       'portuguese events london',
@@ -235,7 +235,7 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
   businessDirectory: {
     title: 'Portuguese Business Directory London - Authentic Lusophone Services',
     titlePortuguese: 'Diretório de Negócios Portugueses Londres - Serviços Lusófonos Autênticos',
-    description: 'Find verified Portuguese-owned businesses in London. Restaurants, services, consulting, and more from authentic Portuguese entrepreneurs across the UK.',
+    description: 'Find verified Portuguese-owned businesses in the U.K.. Restaurants, services, consulting, and more from authentic Portuguese entrepreneurs across the UK.',
     descriptionPortuguese: 'Encontre negócios verificados de proprietários portugueses em Londres. Restaurantes, serviços, consultoria e mais de empreendedores portugueses autênticos no Reino Unido.',
   keywords: [
       'portuguese business directory london',
@@ -258,7 +258,7 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
   businessNetworking: {
     title: 'Portuguese Business Networking London - Entrepreneur Events & Partnerships',
     titlePortuguese: 'Networking Empresarial Português Londres - Eventos e Parcerias',
-    description: 'Connect with Portuguese entrepreneurs and business professionals in London. Networking events, investor meetups, and partnership opportunities for the Portuguese business community.',
+    description: 'Connect with Portuguese entrepreneurs and business professionals in the U.K.. Networking events, investor meetups, and partnership opportunities for the Portuguese business community.',
     descriptionPortuguese: 'Conecte-se com empreendedores e profissionais portugueses em Londres. Eventos de networking, encontros de investidores e oportunidades de parceria para a comunidade empresarial portuguesa.',
   keywords: [
       'portuguese business networking london',
@@ -281,7 +281,7 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
   community: {
     title: 'Portuguese Community London - Your Lusophone Family in the UK',
     titlePortuguese: 'Comunidade Portuguesa Londres - A Sua Família Lusófona no Reino Unido',
-    description: 'Join London\'s vibrant Portuguese community where saudade transforms into joy. Make lifelong friends, celebrate our heritage, and stay connected to Portuguese culture while living in the UK.',
+    description: 'Join the U.K.\'s vibrant Portuguese community where saudade transforms into joy. Make lifelong friends, celebrate our heritage, and stay connected to Portuguese culture while living in the UK.',
     descriptionPortuguese: 'Junte-se à vibrante comunidade portuguesa de Londres onde a saudade se transforma em alegria. Faça amizades para a vida, celebre a nossa herança, e mantenha-se conectado à cultura portuguesa enquanto vive no Reino Unido.',
   keywords: [
       'portuguese community london',
@@ -311,7 +311,7 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
   heritage: {
     title: 'Portuguese Culture & Community Preservation London - Instituto Camões Partnership',
     titlePortuguese: 'Cultura Portuguesa e Preservação Comunitária Londres - Parceria Instituto Camões',
-    description: 'Preserve and celebrate Portuguese culture in London through our official Instituto Camões partnership. Cultural workshops, language classes, and community preservation programs',
+    description: 'Preserve and celebrate Portuguese culture in the U.K. through our official Instituto Camões partnership. Cultural workshops, language classes, and community preservation programs',
     descriptionPortuguese: 'Preserve e celebre o património português em Londres através da nossa parceria oficial com o Instituto Camões. Oficinas culturais, aulas de língua e programas de preservação cultural.',
   keywords: [
       'portuguese culture london',
@@ -365,7 +365,7 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
   premiumMembership: {
     title: 'LusoTown Premium Membership - Unlock VIP Portuguese Network',
     titlePortuguese: 'LusoTown Assinatura Premium - Rede VIP Portuguesa',
-    description: 'Join premium to unlock transport services, VIP events, and exclusive Portuguese networking in London & UK.',
+    description: 'Join premium to unlock transport services, VIP events, and exclusive Portuguese networking in the U.K. & UK.',
     descriptionPortuguese: 'Assine premium para desbloquear serviços de transporte, eventos VIP e networking português exclusivo em Londres e no Reino Unido.',
     keywords: [
       'portuguese premium membership',
@@ -378,7 +378,7 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
   matches: {
     title: 'Portuguese Matches London - Cultural Compatibility & Networking',
     titlePortuguese: 'Matches Portugueses em Londres - Compatibilidade Cultural e Networking',
-    description: 'Discover premium matches across the Portuguese community in London with cultural compatibility and professional networking.',
+    description: 'Discover premium matches across the Portuguese community in the U.K. with cultural compatibility and professional networking.',
     descriptionPortuguese: 'Descubra matches premium na comunidade portuguesa em Londres com compatibilidade cultural e networking profissional.',
     keywords: [
       'portuguese matches london',
@@ -610,11 +610,11 @@ Crawl-delay: 1`
       },
       metaDescriptions: {
         home: {
-          en: "Connect with Portuguese speakers in London. Join events, make friends, discover businesses.",
+          en: "Connect with Portuguese speakers in the U.K.. Join events, make friends, discover businesses.",
           pt: "Conecte-se com lusófonos em Londres. Participe em eventos, faça amigos, descubra negócios."
         },
         events: {
-          en: "Portuguese cultural events and activities in London. From Fado to business networking.",
+          en: "Portuguese cultural events and activities in the U.K.. From Fado to business networking.",
           pt: "Eventos culturais e atividades portuguesas em Londres. Do Fado ao networking empresarial."
         }
       }

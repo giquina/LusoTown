@@ -220,7 +220,7 @@ export default function PortugueseBusinessEcosystem() {
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
               {isPortuguese 
                 ? 'Conecte-se com Neg�cios Portugueses em Londres'
-                : 'Connect with Portuguese Businesses in London'
+                : 'Connect with Portuguese Businesses in the U.K.'
               }
             </h1>
             
@@ -320,7 +320,7 @@ export default function PortugueseBusinessEcosystem() {
               <p className="text-white/80">
                 {isPortuguese 
                   ? 'Incluindo crescimento de 15% previsto para neg�cios portugueses em Londres'
-                  : 'Including 15% projected growth for Portuguese businesses in London'
+                  : 'Including 15% projected growth for Portuguese businesses in the U.K.'
                 }
               </p>
             </div>

@@ -392,7 +392,7 @@ export default function NeighborhoodGroups() {
                       </>
                     ) : (
                       <>
-                        Portuguese <span className="gradient-text">Neighborhood</span><br />Groups in London
+                        Portuguese <span className="gradient-text">Neighborhood</span><br />Groups in the U.K.
                       </>
                     )}
                   </span>
@@ -432,7 +432,7 @@ export default function NeighborhoodGroups() {
                     <UsersIcon className="h-8 w-8 text-primary-400 mx-auto mb-2" />
                     <p className="text-2xl font-bold text-gray-900">26,000+</p>
                     <p className="text-sm text-gray-600">
-                      {isPortuguese ? 'Portugueses em Londres' : 'Portuguese in London'}
+                      {isPortuguese ? 'Portugueses em Londres' : 'Portuguese in the U.K.'}
                     </p>
                   </div>
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-white/50">
@@ -558,7 +558,7 @@ export default function NeighborhoodGroups() {
                   {isPortuguese ? (
                     'Encontra a tua comunidade local portuguesa em Londres. Cada bairro tem a sua própria personalidade e necessidades únicas.'
                   ) : (
-                    'Find your local Portuguese community in London. Each neighborhood has its own personality and unique needs.'
+                    'Find your local Portuguese community in the U.K.. Each neighborhood has its own personality and unique needs.'
                   )}
                 </p>
               </motion.div>

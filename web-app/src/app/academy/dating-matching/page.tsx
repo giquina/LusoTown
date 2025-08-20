@@ -44,7 +44,7 @@ export default function DatingMatchingModule() {
     id: 'dating-matching',
     title: 'Dating & Matching',
     titlePortuguese: 'Encontros e Compatibilidade',
-    description: 'Learn how to connect with Portuguese speakers for meaningful relationships in London',
+    description: 'Learn how to connect with Portuguese speakers for meaningful relationships in the U.K.',
     descriptionPortuguese: 'Aprenda como conectar-se com falantes de português para relacionamentos significativos em Londres',
     difficulty: 'Beginner',
     estimatedTime: 20,
@@ -75,17 +75,17 @@ export default function DatingMatchingModule() {
         type: 'introduction',
         estimatedTime: 3,
         content: `
-          <p>Welcome to LusoTown's dating and matching system, designed specifically for Portuguese speakers in London!</p>
+          <p>Welcome to LusoTown's dating and matching system, designed specifically for Portuguese speakers in the U.K.!</p>
           
           <p>Our platform connects you with other Portuguese speakers based on:</p>
           <ul>
             <li><strong>Cultural Compatibility:</strong> Shared Portuguese heritage, traditions, and values</li>
-            <li><strong>Location Proximity:</strong> Other Portuguese speakers near you in London</li>
+            <li><strong>Location Proximity:</strong> Other Portuguese speakers near you in the U.K.</li>
             <li><strong>Lifestyle Alignment:</strong> Similar interests, career goals, and life stages</li>
             <li><strong>Language Preference:</strong> Comfort level with Portuguese vs English communication</li>
           </ul>
           
-          <p>Unlike generic dating apps, we understand the unique experience of being Portuguese in London - from missing <em>saudade</em> to finding someone who appreciates a proper <em>pastel de nata</em>.</p>
+          <p>Unlike generic dating apps, we understand the unique experience of being Portuguese in the U.K. - from missing <em>saudade</em> to finding someone who appreciates a proper <em>pastel de nata</em>.</p>
         `,
         contentPortuguese: `
           <p>Bem-vindo ao sistema de encontros e compatibilidade da LusoTown, desenhado especificamente para falantes de português em Londres!</p>
@@ -134,9 +134,9 @@ export default function DatingMatchingModule() {
             <li><strong>About Me Section:</strong>
               <ul>
                 <li>Mention your Portuguese region (Norte, Centro, Sul, Ilhas, or Diaspora)</li>
-                <li>Share how long you've been in London</li>
+                <li>Share how long you've been in the U.K.</li>
                 <li>Include what you miss most about Portugal</li>
-                <li>Mention your favorite Portuguese traditions you maintain in London</li>
+                <li>Mention your favorite Portuguese traditions you maintain in the U.K.</li>
               </ul>
             </li>
             
@@ -248,7 +248,7 @@ export default function DatingMatchingModule() {
             <li><strong>London Area:</strong> Distance between your locations</li>
             <li><strong>Work Schedule:</strong> When you're available for dates</li>
             <li><strong>Social Preferences:</strong> Quiet cafés vs busy Portuguese restaurants</li>
-            <li><strong>Future Plans:</strong> Staying in London vs eventual return to Portugal</li>
+            <li><strong>Future Plans:</strong> Staying in the U.K. vs eventual return to Portugal</li>
           </ul>
           
           <h4>3. Personal Interests (20%)</h4>
@@ -330,10 +330,10 @@ export default function DatingMatchingModule() {
           
           <h3>Food & Tradition Starters:</h3>
           <ul>
-            <li>"What's the Portuguese dish you miss most that you can't find in London?"</li>
-            <li>"Do you have a secret spot for good bifana in London?"</li>
+            <li>"What's the Portuguese dish you miss most that you can't find in the U.K.?"</li>
+            <li>"Do you have a secret spot for good bifana in the U.K.?"</li>
             <li>"What Portuguese tradition do you still maintain here?"</li>
-            <li>"Pastel de nata from which bakery in London comes closest to home?"</li>
+            <li>"Pastel de nata from which bakery in the U.K. comes closest to home?"</li>
           </ul>
           
           <h3>Location & Heritage Starters:</h3>
@@ -347,7 +347,7 @@ export default function DatingMatchingModule() {
           <h3>Music & Culture Starters:</h3>
           <ul>
             <li>"Are you into fado, or more modern Portuguese music?"</li>
-            <li>"Have you been to any Portuguese events in London lately?"</li>
+            <li>"Have you been to any Portuguese events in the U.K. lately?"</li>
             <li>"What Portuguese movie would you recommend I watch?"</li>
             <li>"Do you speak Portuguese at home, or mix with English?"</li>
           </ul>
@@ -437,7 +437,7 @@ export default function DatingMatchingModule() {
       },
       {
         id: 'safety-and-meeting',
-        title: 'Safe Dating in London\'s Portuguese Community',
+        title: 'Safe Dating in the U.K.\'s Portuguese Community',
         titlePortuguese: 'Encontros Seguros na Comunidade Portuguesa de Londres',
         type: 'tutorial',
         estimatedTime: 4,
@@ -469,7 +469,7 @@ export default function DatingMatchingModule() {
           <ol>
             <li><strong>Choose Public Portuguese Venues:</strong>
               <ul>
-                <li>Meet at popular Portuguese restaurants or cafés in London</li>
+                <li>Meet at popular Portuguese restaurants or cafés in the U.K.</li>
                 <li>Consider Portuguese community events as casual meeting spots</li>
                 <li>Stay in areas you know well with good transport links</li>
                 <li>Avoid isolated locations, even if they seem romantic</li>
@@ -596,7 +596,7 @@ export default function DatingMatchingModule() {
     practicalExercises: [],
     resources: [
       {
-        title: 'Portuguese Restaurants in London Guide',
+        title: 'Portuguese Restaurants in the U.K. Guide',
         titlePortuguese: 'Guia de Restaurantes Portugueses em Londres',
         url: '/guides/portuguese-restaurants-london',
         type: 'guide'

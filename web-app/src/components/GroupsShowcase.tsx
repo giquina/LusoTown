@@ -249,7 +249,7 @@ export default function GroupsShowcase() {
               Ready to Connect?
             </h3>
             <p className="text-lg sm:text-xl opacity-95 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Join Portuguese speakers who share your interests and build lasting friendships in London & UK.
+              Join Portuguese speakers who share your interests and build lasting friendships in the U.K. & UK.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

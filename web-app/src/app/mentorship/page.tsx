@@ -16,7 +16,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'EducationalOrganization',
   name: 'LusoTown Portuguese Community Mentorship',
-  description: 'Three-tier mentorship system connecting Portuguese professionals, language learners, and cultural knowledge sharers in London',
+  description: 'Three-tier mentorship system connecting Portuguese professionals, language learners, and cultural knowledge sharers in the U.K.',
   url: 'https://lusotown.london/mentorship',
   serviceType: [
     'Professional Integration Mentorship',

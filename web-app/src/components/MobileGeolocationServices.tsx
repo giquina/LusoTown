@@ -20,7 +20,7 @@ import {
   Settings
 } from 'lucide-react';
 
-// Portuguese cultural locations in London
+// Portuguese cultural locations in the U.K.
 const PORTUGUESE_CULTURAL_SITES = [
   {
     id: 'casa-do-bacalhau',
@@ -30,7 +30,7 @@ const PORTUGUESE_CULTURAL_SITES = [
     coordinates: { lat: 51.5074, lng: -0.1278 },
     address: 'Sample Street, London',
     description: 'Traditional Portuguese restaurant',
-    culturalSignificance: 'Authentic Portuguese cuisine in London'
+    culturalSignificance: 'Authentic Portuguese cuisine in the U.K.'
   },
   {
     id: 'portuguese-church',
@@ -40,7 +40,7 @@ const PORTUGUESE_CULTURAL_SITES = [
     coordinates: { lat: 51.5155, lng: -0.1426 },
     address: 'Sample Road, London',
     description: 'Portuguese Catholic community center',
-    culturalSignificance: 'Center of Portuguese Catholic community in London'
+    culturalSignificance: 'Center of Portuguese Catholic community in the U.K.'
   },
   {
     id: 'fado-venue',

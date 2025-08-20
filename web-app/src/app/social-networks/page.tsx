@@ -431,7 +431,7 @@ export default function SocialNetworks() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {language === 'pt' 
               ? 'Conecte-se com grupos, canais e comunidades portuguesas ativas em Londres. WhatsApp, Facebook, Telegram e muito mais.'
-              : 'Connect with active Portuguese groups, channels, and communities in London. WhatsApp, Facebook, Telegram, and more.'}
+              : 'Connect with active Portuguese groups, channels, and communities in the U.K.. WhatsApp, Facebook, Telegram, and more.'}
           </p>
           
           {/* Statistics */}
@@ -548,7 +548,7 @@ export default function SocialNetworks() {
           <p className="text-lg mb-6 opacity-90">
             {language === 'pt' 
               ? 'Ajude-nos a construir um diretório completo das redes sociais portuguesas em Londres.'
-              : 'Help us build a comprehensive directory of Portuguese social networks in London.'}
+              : 'Help us build a comprehensive directory of Portuguese social networks in the U.K..'}
           </p>
           <button className="bg-white text-primary-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">
             {language === 'pt' ? 'Sugerir Rede' : 'Suggest Network'}

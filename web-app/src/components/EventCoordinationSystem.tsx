@@ -237,7 +237,7 @@ export default function EventCoordinationSystem({
       title: isPortuguese ? 'Networking Empresarial Português' : 'Portuguese Business Networking',
       description: isPortuguese
         ? 'Conecta-te com empresários e profissionais portugueses em Londres. Oportunidades de negócio e parcerias.'
-        : 'Connect with Portuguese entrepreneurs and professionals in London. Business opportunities and partnerships.',
+        : 'Connect with Portuguese entrepreneurs and professionals in the U.K.. Business opportunities and partnerships.',
       date: '2025-08-29',
       time: '18:00',
       location: {

@@ -80,7 +80,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
       id: '4',
       name: 'João Rodrigues',
       avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
-      bio: 'Transport service owner helping Portuguese families in London',
+      bio: 'Transport service owner helping Portuguese families in the U.K.',
       location: 'South London',
       membershipTier: 'community',
       verified: false,
@@ -144,7 +144,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
                 {t('suggestions.title') || 'People You May Know'}
               </h3>
               <p className="text-sm text-gray-600">
-                {t('suggestions.subtitle') || 'Portuguese speakers in London'}
+                {t('suggestions.subtitle') || 'Portuguese speakers in the U.K.'}
               </p>
             </div>
           </div>

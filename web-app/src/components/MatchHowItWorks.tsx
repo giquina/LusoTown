@@ -48,7 +48,7 @@ export default function MatchHowItWorks() {
       number: 1,
       title: 'Create Your Portuguese Profile',
       titlePt: 'Crie o Seu Perfil Português',
-      description: 'Join our community of Portuguese speakers in London. Share your heritage, interests, and what you\'re looking for in authentic connections.',
+      description: 'Join our community of Portuguese speakers in the U.K.. Share your heritage, interests, and what you\'re looking for in authentic connections.',
       descriptionPt: 'Junte-se à nossa comunidade de falantes de português em Londres. Partilhe a sua herança, interesses e o que procura em conexões autênticas.',
       icon: UserIcon,
       color: 'from-red-500 via-yellow-500 to-green-500',
@@ -196,7 +196,7 @@ export default function MatchHowItWorks() {
       number: '2,750+',
       label: 'Portuguese Speakers',
       labelPt: 'Falantes de Português',
-      sublabel: 'Active in London',
+      sublabel: 'Active in the U.K.',
       sublabelPt: 'Ativos em Londres'
     },
     {
@@ -426,7 +426,7 @@ export default function MatchHowItWorks() {
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               {language === 'pt' 
                 ? 'Mais que um app de encontros - uma comunidade portuguesa autêntica em Londres'
-                : 'More than a dating app - an authentic Portuguese community in London'
+                : 'More than a dating app - an authentic Portuguese community in the U.K.'
               }
             </p>
           </div>
@@ -466,7 +466,7 @@ export default function MatchHowItWorks() {
                 Our Community in Numbers
               </h3>
               <p className="text-white/90 text-base sm:text-lg">
-                Real results from Portuguese connections in London
+                Real results from Portuguese connections in the U.K.
               </p>
             </div>
 
@@ -563,7 +563,7 @@ export default function MatchHowItWorks() {
               <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
                 {language === 'pt' 
                   ? 'Junte-se a milhares de falantes de português em Londres. Encontre alguém que entende a sua cultura, tradições e sonhos.'
-                  : 'Join thousands of Portuguese speakers in London. Find someone who understands your culture, traditions, and dreams.'
+                  : 'Join thousands of Portuguese speakers in the U.K.. Find someone who understands your culture, traditions, and dreams.'
                 }
               </p>
             </div>

@@ -71,7 +71,7 @@ const mockGroups = [
   {
     id: 'group-1',
     name: 'Portuguese Professionals Network',
-    description: 'Networking group for Portuguese-speaking professionals in London',
+    description: 'Networking group for Portuguese-speaking professionals in the U.K.',
     category: 'Professional',
     location: 'London',
     url: '/groups/portuguese-professionals-network',
@@ -81,8 +81,8 @@ const mockGroups = [
   },
   {
     id: 'group-2',
-    name: 'Young Portuguese in London',
-    description: 'Social group for Portuguese speakers aged 18-35 living in London',
+    name: 'Young Portuguese in the U.K.',
+    description: 'Social group for Portuguese speakers aged 18-35 living in the U.K.',
     category: 'Social',
     location: 'London',
     url: '/groups/young-portuguese-london',
@@ -148,7 +148,7 @@ const mockPages = [
   {
     id: 'events-page',
     title: 'Events & Tours',
-    description: 'Discover Portuguese cultural events, tours, and activities in London',
+    description: 'Discover Portuguese cultural events, tours, and activities in the U.K.',
   url: ROUTES.events,
     category: 'Navigation',
     tags: ['events', 'tours', 'activities', 'culture', 'social calendar']
@@ -156,7 +156,7 @@ const mockPages = [
   {
     id: 'business-directory',
     title: 'Portuguese Business Directory',
-    description: 'Find Portuguese-owned businesses and services in London',
+    description: 'Find Portuguese-owned businesses and services in the U.K.',
     url: '/business-directory',
     category: 'Directory',
     tags: ['businesses', 'services', 'directory', 'portuguese owned', 'support local']

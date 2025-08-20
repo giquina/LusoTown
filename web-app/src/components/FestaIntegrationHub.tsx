@@ -791,7 +791,7 @@ export default function FestaIntegrationHub() {
           {t('festa.memories.title', 'Preserve Our Festa Memories')}
         </h2>
         <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-          {t('festa.memories.subtitle', 'Share photos, videos, and stories from Portuguese celebrations to create a living archive of our cultural heritage in London')}
+          {t('festa.memories.subtitle', 'Share photos, videos, and stories from Portuguese celebrations to create a living archive of our cultural heritage in the U.K.')}
         </p>
       </div>
 
@@ -960,7 +960,7 @@ export default function FestaIntegrationHub() {
           {t('festa.traditions.title', 'Learn Our Festa Traditions')}
         </h2>
         <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-          {t('festa.traditions.subtitle', 'Discover the deep cultural meanings, regional variations, and authentic ways to celebrate Portuguese festivals in London')}
+          {t('festa.traditions.subtitle', 'Discover the deep cultural meanings, regional variations, and authentic ways to celebrate Portuguese festivals in the U.K.')}
         </p>
       </div>
 
@@ -977,7 +977,7 @@ export default function FestaIntegrationHub() {
             howToPt: 'Grelhadas no carvão com sal grosso, servir com pimentos assados e broa',
             regionalVariations: ['Lisbon style with basil', 'Porto style with olive oil', 'Algarve style with herbs'],
             seasonality: 'Peak in June during Santos Populares',
-            londonAdaptation: 'Use outdoor grills in London parks with proper permits',
+            londonAdaptation: 'Use outdoor grills in the U.K. parks with proper permits',
             culturalMeaning: 'Represents abundance from the sea and sharing with community',
             materials: ['Fresh sardines', 'Coarse sea salt', 'Charcoal grill', 'Olive oil'],
             difficulty: 'Easy',
@@ -1186,7 +1186,7 @@ export default function FestaIntegrationHub() {
             {t('festa.title', 'Celebrate Portuguese')}
             <br />
             <span className="bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 bg-clip-text text-transparent">
-              {t('festa.festivities', 'Festivities in London')}
+              {t('festa.festivities', 'Festivities in the U.K.')}
             </span>
           </motion.h1>
           

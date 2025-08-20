@@ -4,11 +4,11 @@ import GroupEventsPageClient from '@/components/GroupEventsPageClient'
 
 // Page metadata
 export const metadata: Metadata = {
-  title: 'Portuguese Group Events & Tours in London | LusoTown',
+  title: 'Portuguese Group Events & Tours in the U.K. | LusoTown',
   description: 'Join Portuguese-speaking groups for cultural tours, museum visits, and London adventures. Connect with Portuguese community through organized group experiences.',
   keywords: 'Portuguese groups London, Portuguese tours London, Portuguese cultural events, Portuguese community groups UK',
   openGraph: {
-    title: 'Portuguese Group Events & Tours in London | LusoTown',
+    title: 'Portuguese Group Events & Tours in the U.K. | LusoTown',
     description: 'Join Portuguese-speaking groups for cultural tours, museum visits, and London adventures.',
     type: 'website',
     locale: 'en_GB',
@@ -19,13 +19,13 @@ export const metadata: Metadata = {
         url: 'https://lusotown.london/og-group-events.jpg',
         width: 1200,
         height: 630,
-        alt: 'Portuguese Group Events in London'
+        alt: 'Portuguese Group Events in the U.K.'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Portuguese Group Events & Tours in London | LusoTown',
+    title: 'Portuguese Group Events & Tours in the U.K. | LusoTown',
     description: 'Join Portuguese-speaking groups for cultural tours, museum visits, and London adventures.',
     images: ['https://lusotown.london/og-group-events.jpg']
   },
@@ -53,8 +53,8 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'EventSeries',
-  name: 'Portuguese Group Events & Tours in London',
-  description: 'Regular group events and tours for Portuguese speakers in London, including cultural experiences, historical tours, and family activities.',
+  name: 'Portuguese Group Events & Tours in the U.K.',
+  description: 'Regular group events and tours for Portuguese speakers in the U.K., including cultural experiences, historical tours, and family activities.',
   url: 'https://lusotown.london/events/groups',
   organizer: {
     '@type': 'Organization',

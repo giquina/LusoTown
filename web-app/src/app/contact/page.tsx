@@ -353,7 +353,7 @@ export default function Contact() {
                   {/* Portuguese Cultural Centers */}
                   <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 border border-primary-100">
                     <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                      🏛️ {t('contact.cultural-centers', 'Portuguese Cultural Centers in London')}
+                      🏛️ {t('contact.cultural-centers', 'Portuguese Cultural Centers in the U.K.')}
                     </h3>
                     <p className="text-gray-600 mb-6">
                       {t('contact.cultural-centers-description', 'Visit these community spaces for in-person support and cultural connections:')}

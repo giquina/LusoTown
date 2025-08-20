@@ -275,7 +275,7 @@ export default function AuthPopup() {
                 <p className="text-center text-xs text-gray-500 mt-3 leading-relaxed">
                   {isPortuguese ? 
                     'Junte-se a centenas de falantes de português em Londres' : 
-                    'Join hundreds of Portuguese speakers in London'
+                    'Join hundreds of Portuguese speakers in the U.K.'
                   }
                 </p>
               </div>

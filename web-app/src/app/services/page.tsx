@@ -394,7 +394,7 @@ export default function ServicesPage() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               {isPortuguese
                 ? 'Serviços especializados projetados para a comunidade portuguesa em Londres e no Reino Unido'
-                : 'Specialized services designed for the Portuguese community in London & UK'
+                : 'Specialized services designed for the Portuguese community in the U.K. & UK'
               }
             </p>
           </div>

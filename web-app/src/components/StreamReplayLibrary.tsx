@@ -173,7 +173,7 @@ export default function StreamReplayLibrary({
       description:
         language === "pt"
           ? "Membros da comunidade partilham as suas experiências em Londres"
-          : "Community members share their experiences in London",
+          : "Community members share their experiences in the U.K.",
       category: "community-events",
       categoryName:
         language === "pt" ? "Eventos Comunitários" : "Community Events",
@@ -191,7 +191,7 @@ export default function StreamReplayLibrary({
           time: 8,
           title: language === "pt" ? "História da Ana" : "Ana's Story",
           description:
-            language === "pt" ? "Chegada a Londres" : "Arrival in London",
+            language === "pt" ? "Chegada a Londres" : "Arrival in the U.K.",
         },
         {
           time: 25,

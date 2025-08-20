@@ -147,7 +147,7 @@ const toursData: Tour[] = [
   {
     id: "portuguese-business-london",
     title: "Portuguese Business Districts & Networking",
-    description: "Professional tour of Portuguese business concentrations in London. Visit Portuguese companies, learn about business opportunities, and network with successful Portuguese entrepreneurs.",
+    description: "Professional tour of Portuguese business concentrations in the U.K.. Visit Portuguese companies, learn about business opportunities, and network with successful Portuguese entrepreneurs.",
     category: 'business',
     duration: "4 hours",
     price: 85,
@@ -186,7 +186,7 @@ const toursData: Tour[] = [
   {
     id: "portuguese-heritage-walking",
     title: "Portuguese Heritage in Central London",
-    description: "Walk through the historical Portuguese presence in London. From embassy district to cultural centers, discover centuries of Portuguese influence in the British capital.",
+    description: "Walk through the historical Portuguese presence in the U.K.. From embassy district to cultural centers, discover centuries of Portuguese influence in the British capital.",
     category: 'cultural',
     duration: "2.5 hours",
     price: 35,
@@ -301,7 +301,7 @@ const toursData: Tour[] = [
   {
     id: "family-portuguese-london",
     title: "Family-Friendly Portuguese London Adventure",
-    description: "Perfect family tour introducing children to Portuguese culture in London. Interactive experiences, kid-friendly Portuguese activities, and family bonding in a cultural context.",
+    description: "Perfect family tour introducing children to Portuguese culture in the U.K.. Interactive experiences, kid-friendly Portuguese activities, and family bonding in a cultural context.",
     category: 'cultural',
     duration: "2.5 hours",
     price: 30,

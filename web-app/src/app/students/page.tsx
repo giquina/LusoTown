@@ -348,7 +348,7 @@ const UNIVERSITIES: University[] = [
       'Edinburgh Portuguese Society partnership',
       'Scottish-Portuguese cultural exchange',
       'Research funding for Portuguese studies',
-      'Virtual connection to London Portuguese community'
+      'Virtual connection to U.K. Portuguese community'
     ],
     website: 'https://www.ed.ac.uk',
     contact: {
@@ -421,7 +421,7 @@ const STUDENT_BENEFITS: StudentBenefit[] = [
     id: 'internship-opportunities',
     title: 'Portuguese Business Internship Network',
     titlePortuguese: 'Rede de Estágios em Negócios Portugueses',
-    description: 'Exclusive access to internship opportunities with Portuguese businesses in London, UK, and Portugal. Gain professional experience in Portuguese-speaking environments.',
+    description: 'Exclusive access to internship opportunities with Portuguese businesses in the U.K., UK, and Portugal. Gain professional experience in Portuguese-speaking environments.',
     descriptionPortuguese: 'Acesso exclusivo a oportunidades de estágio com empresas portuguesas em Londres, Reino Unido e Portugal. Ganhe experiência profissional em ambientes de língua portuguesa.',
     category: 'professional',
     eligibility: ['University students', 'Recent graduates', 'All disciplines considered'],
@@ -588,7 +588,7 @@ export default function StudentsPage() {
   const universityTypes = [
     { value: 'all', label: { en: 'All Universities', pt: 'Todas as Universidades' } },
     { value: 'russell_group', label: { en: 'Russell Group', pt: 'Grupo Russell' } },
-    { value: 'london_university', label: { en: 'London Universities', pt: 'Universidades de Londres' } },
+    { value: 'uk_university', label: { en: 'U.K. Universities', pt: 'Universidades do Reino Unido' } },
     { value: 'red_brick', label: { en: 'Red Brick', pt: 'Red Brick' } },
     { value: 'specialist', label: { en: 'Specialist', pt: 'Especializadas' } }
   ]
@@ -694,7 +694,7 @@ export default function StudentsPage() {
                 <span className="hidden sm:block">
                   {language === 'pt'
                     ? "Conecte-se com a maior comunidade de estudantes portugueses em universidades de Londres e do Reino Unido. Descontos exclusivos de 50%, eventos culturais autênticos, networking profissional e apoio académico especializado."
-                    : "Connect with the largest community of Portuguese students at London and UK universities. Exclusive 50% discounts, authentic cultural events, professional networking, and specialized academic support."}
+                    : "Connect with the largest community of Portuguese students at U.K. universities. Exclusive 50% discounts, authentic cultural events, professional networking, and specialized academic support."}
                 </span>
                 {/* Mobile short subtitle */}
                 <span className="sm:hidden">
@@ -794,7 +794,7 @@ export default function StudentsPage() {
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                 {language === 'pt' ?
                   'Descontos especiais, eventos exclusivos e apoio acadêmico para estudantes portugueses que estudam em universidades de Londres e do Reino Unido' :
-                  'Special discounts, exclusive events, and academic support for Portuguese students studying at London and UK universities'
+                  'Special discounts, exclusive events, and academic support for Portuguese students studying at U.K. universities'
                 }
               </p>
 
@@ -910,7 +910,7 @@ export default function StudentsPage() {
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                 {language === 'pt' ?
                   'Colaboramos com as principais universidades de Londres e do Reino Unido para apoiar estudantes portugueses e programas de estudos portugueses' :
-                  'We collaborate with leading London and UK universities to support Portuguese students and Portuguese studies programs'
+                  'We collaborate with leading U.K. universities to support Portuguese students and Portuguese studies programs'
                 }
               </p>
 

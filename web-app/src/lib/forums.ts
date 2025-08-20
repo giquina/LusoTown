@@ -211,7 +211,7 @@ export const mockForumTopics: ForumTopic[] = [
     id: 'topic-1',
     categoryId: 'cat-new-members',
     title: 'Hello from Kensington! New member introduction 👋',
-    description: 'Just joined LusoTown and so excited to meet like-minded women in London! I\'m Emma, 34, marketing professional who loves wine tasting and book clubs. Looking forward to making genuine connections!',
+    description: 'Just joined LusoTown and so excited to meet like-minded women in the U.K.! I\'m Emma, 34, marketing professional who loves wine tasting and book clubs. Looking forward to making genuine connections!',
     author: {
       id: 'user-001',
       name: 'Rachel Green',

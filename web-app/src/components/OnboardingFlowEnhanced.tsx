@@ -94,7 +94,7 @@ export default function OnboardingFlowEnhanced({
       id: 'welcome',
       title: 'Welcome to LusoTown!',
       titlePortuguese: 'Bem-vindo ao LusoTown!',
-      subtitle: 'Your Portuguese Community in London & UK',
+      subtitle: 'Your Portuguese Community in the U.K. & UK',
       subtitlePortuguese: 'A Sua Comunidade Portuguesa em Londres e Reino Unido',
       description: 'Connect with Portuguese speakers, discover cultural events, access premium transport services, and build meaningful relationships across the UK.',
       descriptionPortuguese: 'Conecte-se com falantes de português, descubra eventos culturais, acesse serviços de transporte premium e construa relacionamentos significativos por todo o Reino Unido.',

@@ -15,7 +15,7 @@ let userFavorites: Record<string, any[]> = {
       id: 'business1',
       type: 'business',
       title: 'Casa do Pão',
-      description: 'Authentic Portuguese bakery and café in Shoreditch with the best pastéis de nata in London.',
+      description: 'Authentic Portuguese bakery and café in Shoreditch with the best pastéis de nata in the U.K.',
       imageUrl: 'https://images.unsplash.com/photo-1574329818413-10376febd3f0?w=600&h=400&fit=crop&auto=format',
       liked: true
     }

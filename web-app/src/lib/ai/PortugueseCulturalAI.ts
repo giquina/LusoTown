@@ -4,7 +4,7 @@
  * 
  * Advanced AI system for generating authentic Portuguese cultural content,
  * personalized recommendations, and cultural insights for the Portuguese
- * diaspora community in London.
+ * diaspora community in the U.K..
  */
 
 import { culturalCompatibilityAI, CulturalMatchResult } from './CulturalCompatibilityAI'
@@ -230,7 +230,7 @@ export class PortugueseCulturalAI {
       relatedContent: ['portuguese_etiquette', 'cultural_adaptation'],
       shareability: 80,
       conversationStarters: [
-        'How do you navigate cultural differences in London?',
+        'How do you navigate cultural differences in the U.K.?',
         'What Portuguese customs do you maintain?'
       ]
     }
@@ -330,7 +330,7 @@ export class PortugueseCulturalAI {
       shareability: 95,
       conversationStarters: [
         'Do you make this recipe like your family taught you?',
-        'How do you adapt Portuguese recipes in London?'
+        'How do you adapt Portuguese recipes in the U.K.?'
       ]
     }
   }
@@ -417,7 +417,7 @@ export class PortugueseCulturalAI {
       relatedContent: ['portuguese_festivals', 'cultural_traditions'],
       shareability: 75,
       conversationStarters: [
-        'Do you celebrate this tradition in London?',
+        'Do you celebrate this tradition in the U.K.?',
         'How has this tradition changed in the diaspora?'
       ]
     }
@@ -462,7 +462,7 @@ export class PortugueseCulturalAI {
       shareability: 92,
       conversationStarters: [
         'What sounds from home do you miss most?',
-        'How do you recreate these moments in London?'
+        'How do you recreate these moments in the U.K.?'
       ]
     }
   }
@@ -505,7 +505,7 @@ export class PortugueseCulturalAI {
       relatedContent: ['cultural_adaptation', 'diaspora_challenges'],
       shareability: 78,
       conversationStarters: [
-        'How do you maintain your Portuguese identity in London?',
+        'How do you maintain your Portuguese identity in the U.K.?',
         'What adaptation challenges have you faced?'
       ]
     }
@@ -629,7 +629,7 @@ export class PortugueseCulturalAI {
       ],
       recommendations: [
         'Add personal stories for emotional connection',
-        'Include practical application in London context'
+        'Include practical application in the U.K. context'
       ]
     }
   }

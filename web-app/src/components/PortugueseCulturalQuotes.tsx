@@ -60,7 +60,7 @@ const culturalQuotes: CulturalQuote[] = [
     },
     modernRelevance: {
       pt: "Ressoa com imigrantes portugueses adaptando-se à vida em Londres",
-      en: "Resonates with Portuguese immigrants adapting to life in London"
+      en: "Resonates with Portuguese immigrants adapting to life in the U.K."
     }
   },
   {
@@ -108,7 +108,7 @@ const culturalQuotes: CulturalQuote[] = [
     },
     modernRelevance: {
       pt: "Essencial para comunidades portuguesas em Londres construindo laços",
-      en: "Essential for Portuguese communities in London building bonds"
+      en: "Essential for Portuguese communities in the U.K. building bonds"
     }
   },
   {
@@ -156,7 +156,7 @@ const culturalQuotes: CulturalQuote[] = [
     },
     modernRelevance: {
       pt: "Noites de fado em Londres conectam corações lusófonos",
-      en: "Fado nights in London connect Portuguese hearts"
+      en: "Fado nights in the U.K. connect Portuguese hearts"
     }
   },
   {
@@ -180,7 +180,7 @@ const culturalQuotes: CulturalQuote[] = [
     },
     modernRelevance: {
       pt: "Ressoa com desafios da adaptação cultural em Londres",
-      en: "Resonates with challenges of cultural adaptation in London"
+      en: "Resonates with challenges of cultural adaptation in the U.K."
     }
   },
   {
@@ -204,7 +204,7 @@ const culturalQuotes: CulturalQuote[] = [
     },
     modernRelevance: {
       pt: "Fala à missão de preservar cultura portuguesa em Londres",
-      en: "Speaks to the mission of preserving Portuguese culture in London"
+      en: "Speaks to the mission of preserving Portuguese culture in the U.K."
     }
   },
   {
@@ -451,7 +451,7 @@ const PortugueseCulturalQuotes: React.FC = () => {
           <p className="text-lg opacity-95 max-w-2xl mx-auto leading-relaxed">
             {language === "pt"
               ? "Estas palavras não são apenas citações - são pontes entre o passado e o presente, ligando corações portugueses em Londres e pelo mundo."
-              : "These words are not just quotes - they are bridges between past and present, connecting Portuguese hearts in London and around the world."
+              : "These words are not just quotes - they are bridges between past and present, connecting Portuguese hearts in the U.K. and around the world."
             }
           </p>
           <div className="mt-6 flex items-center justify-center gap-4 text-4xl opacity-75">

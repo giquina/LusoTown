@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
       community: {
         name: 'LusoTown Community Member',
         namePortuguese: 'Membro da Comunidade LusoTown',
-        description: 'Full access to Portuguese community network in London',
+        description: 'Full access to Portuguese community network in the U.K.',
         descriptionPortuguese: 'Acesso completo à rede da comunidade portuguesa em Londres',
         price: 1999, // £19.99 in pence
       },

@@ -375,7 +375,7 @@ export default function UnifiedPremiumExperience({
               title: isPortuguese ? "Comunidade VIP" : "VIP Community",
               description: isPortuguese
                 ? "Conecte-se com a elite portuguesa em Londres"
-                : "Connect with the Portuguese elite in London",
+                : "Connect with the Portuguese elite in the U.K.",
             },
             {
               icon: TrendingUp,

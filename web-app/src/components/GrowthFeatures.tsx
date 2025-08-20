@@ -480,7 +480,7 @@ export default function GrowthFeatures({
           <p className="text-gray-600">
             {isPortuguese 
               ? 'Descontos especiais para estudantes portugueses em Londres'
-              : 'Special discounts for Portuguese students in London'
+              : 'Special discounts for Portuguese students in the U.K.'
             }
           </p>
         </div>

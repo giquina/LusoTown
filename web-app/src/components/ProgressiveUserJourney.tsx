@@ -115,7 +115,7 @@ export default function ProgressiveUserJourney({
       id: 'discovery',
       name: 'Discovery & Entry',
       namePortuguese: 'Descoberta e Entrada',
-      description: 'Welcome to the Portuguese community in London! Start exploring our services and connect with fellow Portuguese speakers.',
+      description: 'Welcome to the Portuguese community in the U.K.! Start exploring our services and connect with fellow Portuguese speakers.',
       descriptionPortuguese: 'Bem-vindo à comunidade portuguesa em Londres! Comece a explorar os nossos serviços e conecte-se com outros falantes de português.',
       icon: MapPinIcon,
       color: 'secondary',
@@ -163,7 +163,7 @@ export default function ProgressiveUserJourney({
         }
       ],
       benefits: [
-        'Connect with 750+ Portuguese speakers in London',
+        'Connect with 750+ Portuguese speakers in the U.K.',
         'Access to authentic Portuguese events and experiences',
         'Safe and familiar transport with Portuguese-speaking drivers'
       ],
@@ -177,7 +177,7 @@ export default function ProgressiveUserJourney({
       id: 'engagement',
       name: 'Active Engagement',
       namePortuguese: 'Envolvimento Ativo',
-      description: 'Start participating in events and building your Portuguese network in London.',
+      description: 'Start participating in events and building your Portuguese network in the U.K..',
       descriptionPortuguese: 'Comece a participar em eventos e construir a sua rede portuguesa em Londres.',
       icon: UserGroupIcon,
       color: 'accent',

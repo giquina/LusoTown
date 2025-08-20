@@ -98,7 +98,7 @@ const serviceTiers = [
     features: [
       "All Premium Security features for London operations",
       "Certified Portuguese-speaking London guide",
-      "Professional driver + security personnel in London",
+      "Professional driver + security personnel in the U.K.",
       "London commentary and historical insights",
       "Professional photography service during London tours",
       "Curated London dining recommendations with reservations",
@@ -130,7 +130,7 @@ const serviceTiers = [
     originalPrice: 75,
     image:
       "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535202/elite-protection-service_dqmxvr.jpg",
-    imageAlt: "Elite protection service with professional vehicle in London",
+    imageAlt: "Elite protection service with professional vehicle in the U.K.",
     imageAltPortuguese:
       "Serviço de proteção elite com veículo profissional em Londres",
     membershipDiscounts: {
@@ -148,7 +148,7 @@ const serviceTiers = [
       "All VIP London Experience features",
       "Multi-person close protection team for London",
       "Advanced London route planning and reconnaissance",
-      "Counter-surveillance measures within London",
+      "Counter-surveillance measures within the U.K.",
       "Medical support and first aid qualified personnel",
       "Emergency evacuation protocols for London",
       "Professional security vehicles for London operations",
@@ -322,7 +322,7 @@ const londonTourismExperiences = [
     duration: "8 hours",
     image:
       "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535206/covent-garden_dxh3qm.jpg",
-    imageAlt: "Covent Garden market and shopping area in London",
+    imageAlt: "Covent Garden market and shopping area in the U.K.",
     imageAltPortuguese: "Mercado de Covent Garden e área de compras em Londres",
     membershipDiscounts: {
       free: 0,
@@ -705,7 +705,7 @@ export default function TransportPage() {
                     <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">
                       or security
                     </span>{" "}
-                    in London?
+                    in the U.K.?
                   </>
                 )}
               </span>
@@ -749,7 +749,7 @@ export default function TransportPage() {
               <span className="sm:hidden">
                 {isPortuguese
                   ? "Motorista e guia português certificados em Londres. Experiências VIP com comunicação no seu idioma!"
-                  : "Certified Portuguese driver & guide in London. VIP experiences with communication in your language!"}
+                  : "Certified Portuguese driver & guide in the U.K.. VIP experiences with communication in your language!"}
               </span>
             </motion.p>
 
@@ -1111,7 +1111,7 @@ export default function TransportPage() {
               <p className="text-secondary-200 mb-6 max-w-2xl mx-auto">
                 {isPortuguese
                   ? "Inicie o processo de reserva agora e tenha proteção profissional em Londres em poucas horas"
-                  : "Start the booking process now and have professional protection in London within hours"}
+                  : "Start the booking process now and have professional protection in the U.K. within hours"}
               </p>
               <button
                 onClick={() => setShowSIABookingFlow(true)}
@@ -1305,7 +1305,7 @@ export default function TransportPage() {
                   <span>
                     {isPortuguese
                       ? "Proteção discreta para turistas em Londres"
-                      : "Discreet tourist protection in London"}
+                      : "Discreet tourist protection in the U.K."}
                   </span>
                 </li>
                 <li className="flex items-center gap-2">
@@ -1354,7 +1354,7 @@ export default function TransportPage() {
             >
               {isPortuguese
                 ? "Descubra os marcos icónicos e atrações imperdíveis de Londres com os nossos guias especializados"
-                : "Discover iconic landmarks and must-see attractions in London with our specialist guides"}
+                : "Discover iconic landmarks and must-see attractions in the U.K. with our specialist guides"}
             </motion.p>
           </div>
 
@@ -1490,7 +1490,7 @@ export default function TransportPage() {
             >
               {isPortuguese
                 ? "Não somos apenas um serviço de transporte. Somos os seus parceiros de confiança em Londres, oferecendo experiências autênticas com total compreensão cultural."
-                : "We're not just a transport service. We're your trusted partners in London, offering authentic experiences with complete cultural understanding."}
+                : "We're not just a transport service. We're your trusted partners in the U.K., offering authentic experiences with complete cultural understanding."}
             </motion.p>
             
             {/* Statistics */}
@@ -1798,7 +1798,7 @@ export default function TransportPage() {
                 <span className="bg-gradient-to-r from-secondary-600 via-premium-600 to-accent-600 bg-clip-text text-transparent">
                   {isPortuguese
                     ? "Serviços Premium para Portugueses em Londres"
-                    : "Premium Services for Portuguese in London"}
+                    : "Premium Services for Portuguese in the U.K."}
                 </span>
               </span>
             </motion.div>
@@ -1812,7 +1812,7 @@ export default function TransportPage() {
             >
               {isPortuguese
                 ? "O Que Precisa em Londres?"
-                : "What Do You Need in London?"}
+                : "What Do You Need in the U.K.?"}
             </motion.h2>
             
             <motion.p

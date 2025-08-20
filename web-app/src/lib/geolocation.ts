@@ -26,7 +26,7 @@ export const LONDON_CENTER: Location = {
   longitude: -0.1278
 }
 
-// Portuguese cultural areas in London with coordinates
+// Portuguese cultural areas in the U.K. with coordinates
 export const PORTUGUESE_AREAS = {
   vauxhall: { latitude: 51.4863, longitude: -0.1225, name: 'Vauxhall' },
   stockwell: { latitude: 51.4723, longitude: -0.1225, name: 'Stockwell' },

@@ -139,7 +139,7 @@ const jobRoles: JobRole[] = [
     location: 'London, UK',
     type: 'Full-time',
     typePt: 'Tempo integral',
-    description: 'Create engaging Portuguese and English content for our community. Tell authentic stories of Portuguese life in London.',
+    description: 'Create engaging Portuguese and English content for our community. Tell authentic stories of Portuguese life in the U.K..',
     descriptionPt: 'Crie conteúdo envolvente em português e inglês para a nossa comunidade. Conte histórias autênticas da vida portuguesa em Londres.',
     responsibilities: [
       'Create bilingual content for social media and website',
@@ -265,7 +265,7 @@ const jobRoles: JobRole[] = [
     description: 'Build relationships with Portuguese businesses across London and facilitate partnerships within our platform.',
     descriptionPt: 'Construa relacionamentos com empresas portuguesas em Londres e facilite parcerias dentro da nossa plataforma.',
     responsibilities: [
-      'Identify and onboard Portuguese-owned businesses in London',
+      'Identify and onboard Portuguese-owned businesses in the U.K.',
       'Develop business directory and partnership programs',
       'Support Portuguese entrepreneurs and business owners',
       'Organize business networking events',
@@ -472,7 +472,7 @@ const jobRoles: JobRole[] = [
     descriptionPt: 'Conduza a gestão de redes sociais bilingue especificamente para o envolvimento da diáspora portuguesa em todas as plataformas.',
     responsibilities: [
       'Develop Portuguese-focused social media strategy across Instagram, Facebook, TikTok, LinkedIn',
-      'Create culturally authentic content for Portuguese diaspora in London',
+      'Create culturally authentic content for Portuguese diaspora in the U.K.',
       'Manage bilingual community engagement and respond to comments/messages',
       'Analyze social media metrics and optimize for Portuguese community growth',
       'Collaborate with Portuguese influencers and community leaders'
@@ -530,7 +530,7 @@ const jobRoles: JobRole[] = [
       'Bachelor\'s degree in Computer Science or related field',
       'Experience with API development and third-party integrations',
       'Knowledge of booking systems and venue management platforms',
-      'Understanding of Portuguese business landscape in London',
+      'Understanding of Portuguese business landscape in the U.K.',
       'Strong problem-solving and communication skills'
     ],
     requirementsPt: [
@@ -554,7 +554,7 @@ const jobRoles: JobRole[] = [
     description: 'Build strategic partnerships with Portuguese restaurants, cultural centers, and institutions to expand our platform ecosystem.',
     descriptionPt: 'Construir parcerias estratégicas com restaurantes portugueses, centros culturais e instituições para expandir o nosso ecossistema de plataforma.',
     responsibilities: [
-      'Identify and secure partnerships with Portuguese restaurants and cafés in London',
+      'Identify and secure partnerships with Portuguese restaurants and cafés in the U.K.',
       'Develop relationships with Portuguese cultural centers and institutions',
       'Negotiate partnership agreements and revenue-sharing models',
       'Create business development strategies for Portuguese market expansion',
@@ -638,7 +638,7 @@ const jobRoles: JobRole[] = [
     descriptionPt: 'Analisar o comportamento da comunidade portuguesa e otimizar estratégias de crescimento através de insights baseados em dados e compreensão cultural.',
     responsibilities: [
       'Analyze Portuguese community engagement patterns and user behavior',
-      'Develop growth strategies specific to Portuguese diaspora in London',
+      'Develop growth strategies specific to Portuguese diaspora in the U.K.',
       'Create data-driven insights for community feature development',
       'Monitor KPIs and measure success of Portuguese community initiatives',
       'Provide analytics support for marketing and business development teams'
@@ -720,7 +720,7 @@ const jobRoles: JobRole[] = [
     description: 'Execute targeted marketing campaigns to Portuguese speakers across London, driving community growth through cultural authenticity.',
     descriptionPt: 'Executar campanhas de marketing direcionadas a falantes de português em Londres, impulsionando o crescimento da comunidade através da autenticidade cultural.',
     responsibilities: [
-      'Develop and execute marketing campaigns targeting Portuguese speakers in London',
+      'Develop and execute marketing campaigns targeting Portuguese speakers in the U.K.',
       'Create user acquisition strategies for Portuguese diaspora community',
       'Manage digital advertising across Portuguese-focused channels',
       'Partner with Portuguese organizations and influencers for marketing',
@@ -845,7 +845,7 @@ const jobRoles: JobRole[] = [
     description: 'Conduct comprehensive market research on Portuguese community demographics and business intelligence for strategic planning.',
     descriptionPt: 'Conduzir investigação de mercado abrangente sobre demografia da comunidade portuguesa e business intelligence para planeamento estratégico.',
     responsibilities: [
-      'Research Portuguese community demographics and migration patterns in London',
+      'Research Portuguese community demographics and migration patterns in the U.K.',
       'Analyze economic impact and business opportunities within Portuguese diaspora',
       'Provide market intelligence for business development and expansion strategies',
       'Create detailed reports on Portuguese community trends and behaviors',
@@ -925,7 +925,7 @@ export default function CareersPage() {
             <p className="text-xl text-gray-600">
               {isPortuguese 
                 ? 'Somos uma startup em crescimento dedicada a unir a comunidade portuguesa em Londres através de experiências autênticas.'
-                : 'We\'re a growing startup dedicated to uniting the Portuguese community in London through authentic experiences.'
+                : 'We\'re a growing startup dedicated to uniting the Portuguese community in the U.K. through authentic experiences.'
               }
             </p>
           </div>
@@ -941,7 +941,7 @@ export default function CareersPage() {
               <p className="text-gray-600">
                 {isPortuguese 
                   ? 'Trabalhe numa missão que importa - conectar portugueses e preservar a nossa cultura em Londres.'
-                  : 'Work on a mission that matters - connecting Portuguese people and preserving our culture in London.'
+                  : 'Work on a mission that matters - connecting Portuguese people and preserving our culture in the U.K..'
                 }
               </p>
             </div>

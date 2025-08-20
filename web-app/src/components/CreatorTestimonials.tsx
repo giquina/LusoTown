@@ -38,7 +38,7 @@ export default function CreatorTestimonials() {
       rating: 4.9,
       quote: isPt 
         ? 'Em apenas 6 meses na LusoTown, consegui transformar a minha paixão pelo fado numa fonte de rendimento estável. A plataforma conectou-me com portugueses em Londres que ansiavam por autêntica cultura portuguesa. Os meus workshops de fado online têm sempre casa cheia!'
-        : 'In just 6 months on LusoTown, I turned my passion for fado into a stable income source. The platform connected me with Portuguese people in London who were craving authentic Portuguese culture. My online fado workshops are always sold out!',
+        : 'In just 6 months on LusoTown, I turned my passion for fado into a stable income source. The platform connected me with Portuguese people in the U.K. who were craving authentic Portuguese culture. My online fado workshops are always sold out!',
       achievements: [
         { 
           icon: DollarSign, 
@@ -74,7 +74,7 @@ export default function CreatorTestimonials() {
       rating: 4.8,
       quote: isPt
         ? 'Ensinar receitas brasileiras para a comunidade portuguesa em Londres tem sido incrivelmente gratificante. A partilha de receitas e a monetização acontecem naturalmente na plataforma. Nunca pensei que podia ganhar dinheiro a ensinar como fazer coxinhas!'
-        : 'Teaching Brazilian recipes to the Portuguese community in London has been incredibly rewarding. Recipe sharing and monetization happen naturally on the platform. I never thought I could make money teaching how to make coxinhas!',
+        : 'Teaching Brazilian recipes to the Portuguese community in the U.K. has been incredibly rewarding. Recipe sharing and monetization happen naturally on the platform. I never thought I could make money teaching how to make coxinhas!',
       achievements: [
         { 
           icon: PlayCircle, 
@@ -110,7 +110,7 @@ export default function CreatorTestimonials() {
       rating: 4.7,
       quote: isPt
         ? 'Partilhar a história e tradições de Angola com a diáspora portuguesa tem criado ligações profundas. Os workshops ao vivo sobre a influência angolana na cultura portuguesa geram tanto impacto cultural quanto financeiro. É maravilhoso ver jovens em Londres interessados nas suas raízes.'
-        : 'Sharing Angola\'s history and traditions with the Portuguese diaspora has created deep connections. Live workshops about Angolan influence on Portuguese culture generate both cultural and financial impact. It\'s wonderful to see young people in London interested in their roots.',
+        : 'Sharing Angola\'s history and traditions with the Portuguese diaspora has created deep connections. Live workshops about Angolan influence on Portuguese culture generate both cultural and financial impact. It\'s wonderful to see young people in the U.K. interested in their roots.',
       achievements: [
         { 
           icon: Star, 
@@ -146,7 +146,7 @@ export default function CreatorTestimonials() {
       rating: 4.8,
       quote: isPt
         ? 'Como empresário português em Londres, uso a LusoTown para partilhar conhecimentos sobre como montar negócios no Reino Unido. A comunidade é muito engajada e os workshops sobre vistos de negócios e networking profissional são sempre muito procurados.'
-        : 'As a Portuguese entrepreneur in London, I use LusoTown to share knowledge about setting up businesses in the UK. The community is very engaged and workshops about business visas and professional networking are always in high demand.',
+        : 'As a Portuguese entrepreneur in the U.K., I use LusoTown to share knowledge about setting up businesses in the UK. The community is very engaged and workshops about business visas and professional networking are always in high demand.',
       achievements: [
         { 
           icon: DollarSign, 
@@ -182,7 +182,7 @@ export default function CreatorTestimonials() {
       rating: 4.9,
       quote: isPt
         ? 'Ensinar morna e coladeira para a comunidade cabo-verdiana em Londres tem sido uma experiência única. A LusoTown permite-me manter viva a cultura cabo-verdiana entre os mais jovens da diáspora, e ainda consigo sustentar a minha família com isso.'
-        : 'Teaching morna and coladeira to the Cape Verdean community in London has been a unique experience. LusoTown allows me to keep Cape Verdean culture alive among the younger diaspora, and I can still support my family with it.',
+        : 'Teaching morna and coladeira to the Cape Verdean community in the U.K. has been a unique experience. LusoTown allows me to keep Cape Verdean culture alive among the younger diaspora, and I can still support my family with it.',
       achievements: [
         { 
           icon: PlayCircle, 

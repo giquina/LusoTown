@@ -4,7 +4,7 @@ import { ShieldCheckIcon, HeartIcon, UserGroupIcon, ExclamationTriangleIcon, Glo
 
 export const metadata = {
   title: 'Community Guidelines | LusoTown London - Portuguese Community Standards',
-  description: 'Learn about LusoTown London community guidelines that ensure a respectful, inclusive environment for the Portuguese diaspora community in London.',
+  description: 'Learn about LusoTown London community guidelines that ensure a respectful, inclusive environment for the Portuguese diaspora community in the U.K..',
 }
 
 export default function CommunityGuidelines() {
@@ -22,7 +22,7 @@ export default function CommunityGuidelines() {
     {
       icon: HeartIcon,
       title: "Rede (Network)",
-      description: "Support each other through professional and personal connections. Help fellow Portuguese speakers navigate life in London and build strong community networks."
+      description: "Support each other through professional and personal connections. Help fellow Portuguese speakers navigate life in the U.K. and build strong community networks."
     },
     {
       icon: UserGroupIcon,
@@ -32,7 +32,7 @@ export default function CommunityGuidelines() {
     {
       icon: BuildingOfficeIcon,
       title: "Comunidade (Community)",
-      description: "Foster professional networking and mutual support. Help fellow Portuguese speakers thrive in London's business environment while maintaining our cultural identity."
+      description: "Foster professional networking and mutual support. Help fellow Portuguese speakers thrive in the U.K.'s business environment while maintaining our cultural identity."
     },
     {
       icon: ExclamationTriangleIcon,
@@ -51,7 +51,7 @@ export default function CommunityGuidelines() {
                 Community Guidelines
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Creating a respectful, inclusive environment for the Portuguese diaspora community in London to connect, support each other, and celebrate our shared heritage.
+                Creating a respectful, inclusive environment for the Portuguese diaspora community in the U.K. to connect, support each other, and celebrate our shared heritage.
               </p>
             </div>
           </div>
@@ -135,7 +135,7 @@ export default function CommunityGuidelines() {
                       </li>
                       <li className="flex items-start">
                         <span className="w-2 h-2 bg-yellow-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>Keep our beautiful language alive and thriving in London</span>
+                        <span>Keep our beautiful language alive and thriving in the U.K.</span>
                       </li>
                       <li className="flex items-start">
                         <span className="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
@@ -175,7 +175,7 @@ export default function CommunityGuidelines() {
                 <h3 className="text-2xl font-bold mb-4">Juntos Somos Mais Fortes • Together We Are Stronger</h3>
                 <p className="text-lg mb-6 opacity-90">
                   These guidelines aren't rules—they're our promise to each other. A commitment to creating 
-                  the kind of community where every Portuguese speaker in London feels at home, valued, and loved.
+                  the kind of community where every Portuguese speaker in the U.K. feels at home, valued, and loved.
                 </p>
                 <p className="text-base mb-8 opacity-80">
                   Tem perguntas sobre as nossas diretrizes da comunidade? Estamos aqui para ajudar. 

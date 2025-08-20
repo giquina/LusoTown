@@ -104,7 +104,7 @@ export default function ConversationManager({
         {
           id: 'cs-1',
           category: 'culture',
-          promptEn: "What's your favorite Portuguese tradition you still celebrate in London?",
+          promptEn: "What's your favorite Portuguese tradition you still celebrate in the U.K.?",
           promptPt: 'Qual é a tradição portuguesa que mais gosta de celebrar em Londres?',
           culturalContext: 'Helps discover shared cultural values and practices',
           usageCount: 145
@@ -112,7 +112,7 @@ export default function ConversationManager({
         {
           id: 'cs-2',
           category: 'food',
-          promptEn: "Where do you find the best pastéis de nata in London?",
+          promptEn: "Where do you find the best pastéis de nata in the U.K.?",
           promptPt: 'Onde encontra os melhores pastéis de nata em Londres?',
           culturalContext: 'Classic Portuguese pastry conversation starter',
           usageCount: 203
@@ -128,7 +128,7 @@ export default function ConversationManager({
         {
           id: 'cs-4',
           category: 'events',
-          promptEn: "Have you been to any Portuguese cultural events in London recently?",
+          promptEn: "Have you been to any Portuguese cultural events in the U.K. recently?",
           promptPt: 'Tem ido a eventos culturais portugueses em Londres?',
           culturalContext: 'Connects to LusoTown community events',
           usageCount: 167
@@ -136,7 +136,7 @@ export default function ConversationManager({
         {
           id: 'cs-5',
           category: 'sports',
-          promptEn: "How do you follow Portuguese football while living in London?",
+          promptEn: "How do you follow Portuguese football while living in the U.K.?",
           promptPt: 'Como acompanha o futebol português vivendo em Londres?',
           culturalContext: 'Football is central to Portuguese culture',
           usageCount: 134
@@ -152,7 +152,7 @@ export default function ConversationManager({
         {
           id: 'cs-7',
           category: 'holidays',
-          promptEn: "How do you celebrate Portuguese holidays like Santos Populares in London?",
+          promptEn: "How do you celebrate Portuguese holidays like Santos Populares in the U.K.?",
           promptPt: 'Como celebra as festas portuguesas como os Santos Populares em Londres?',
           culturalContext: 'Traditional June festivals',
           usageCount: 76

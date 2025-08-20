@@ -69,7 +69,7 @@ const storyTemplates = {
   first_meet: {
     en: [
       "Just met {name} at {location}! The Portuguese connection was instant - we bonded over {cultural_element}. Sometimes the best conversations happen in Portuguese! 🇵🇹",
-      "First coffee with {name} and it felt like talking to a childhood friend from Portugal. Amazing how {cultural_element} brings people together in London! ☕",
+      "First coffee with {name} and it felt like talking to a childhood friend from Portugal. Amazing how {cultural_element} brings people together in the U.K.! ☕",
       "Met {name} through LusoTown and discovered we both miss {cultural_element} from home. Already planning our next Portuguese adventure! 🌟"
     ],
     pt: [
@@ -81,7 +81,7 @@ const storyTemplates = {
   event_together: {
     en: [
       "Attended the {event_name} with {name} - such an authentic Portuguese experience! Nothing beats sharing {cultural_element} with someone who truly understands. 🎵",
-      "Fado night with {name} was magical! We both got emotional during {cultural_element}. These are the moments that make living in London special. ❤️",
+      "Fado night with {name} was magical! We both got emotional during {cultural_element}. These are the moments that make living in the U.K. special. ❤️",
       "Portuguese wine tasting with {name} - discovered we both love {cultural_element}! Already booking our next cultural adventure together. 🍷"
     ],
     pt: [
@@ -105,7 +105,7 @@ const storyTemplates = {
   cultural_moment: {
     en: [
       "Cooked pastéis de nata with {name} today! Teaching each other family recipes and sharing stories about {cultural_element}. This is what community means. 👨‍🍳",
-      "Celebrated Santos Populares with {name} in the local park! Even in London, we keep our {cultural_element} traditions alive. Saudade hits different when shared. 🎉",
+      "Celebrated Santos Populares with {name} in the local park! Even in the U.K., we keep our {cultural_element} traditions alive. Saudade hits different when shared. 🎉",
       "Sunday morning at the Portuguese market with {name} - found ingredients for {cultural_element}! Nothing like speaking Portuguese while shopping for a taste of home. 🛒"
     ],
     pt: [
@@ -140,7 +140,7 @@ const mockSuccessStories: SuccessStory[] = [
     id: 'story-1',
     matchId: 'match-1',
     type: 'first_meet',
-    title: 'First Portuguese Connection in London',
+    title: 'First Portuguese Connection in the U.K.',
     description: 'Just met Sofia at Borough Market! The Portuguese connection was instant - we bonded over pastéis de nata. Sometimes the best conversations happen in Portuguese! 🇵🇹',
     culturalElement: 'pastéis de nata',
     location: 'Borough Market',
@@ -159,7 +159,7 @@ const mockSuccessStories: SuccessStory[] = [
     matchId: 'match-3',
     type: 'event_together',
     title: 'Magical Fado Night Experience',
-    description: 'Fado night with Ana was magical! We both got emotional during traditional saudade songs. These are the moments that make living in London special. ❤️',
+    description: 'Fado night with Ana was magical! We both got emotional during traditional saudade songs. These are the moments that make living in the U.K. special. ❤️',
     culturalElement: 'fado music',
     location: 'Portuguese Cultural Centre',
     date: '1 week ago',

@@ -44,11 +44,11 @@ export default function About() {
               <p className="text-xl text-gray-600 leading-relaxed">
                 {/* Desktop full subtitle */}
                 <span className="hidden sm:block">
-                  LusoTown connects Portuguese speakers and friends through real-life meetups in London. Whether you're new to the city, have roots in a Portuguese-speaking country, or simply love our culture and language, this is your space to meet people in person, share, and celebrate.
+                  LusoTown connects Portuguese speakers and friends through real-life meetups in the U.K.. Whether you're new to the city, have roots in a Portuguese-speaking country, or simply love our culture and language, this is your space to meet people in person, share, and celebrate.
                 </span>
                 {/* Mobile short subtitle */}
                 <span className="sm:hidden">
-                  Connecting Portuguese speakers in London through real-life meetups!
+                  Connecting Portuguese speakers in the U.K. through real-life meetups!
                 </span>
               </p>
             </div>
@@ -164,7 +164,7 @@ export default function About() {
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-1">Connect with People Like You</h4>
-                      <p className="text-gray-600">Meet new friends, share experiences, and keep your language and traditions alive in London.</p>
+                      <p className="text-gray-600">Meet new friends, share experiences, and keep your language and traditions alive in the U.K..</p>
                     </div>
                   </div>
                 </div>
@@ -205,7 +205,7 @@ export default function About() {
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">Language Preservation</h3>
                   <p className="text-gray-600">
                     Helping preserve Portuguese language and culture, supporting those who are proud of their heritage, 
-                    and keeping our beautiful language alive in London.
+                    and keeping our beautiful language alive in the U.K..
                   </p>
                 </div>
                 <div className="text-center">
@@ -215,7 +215,7 @@ export default function About() {
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">Community Support</h3>
                   <p className="text-gray-600">
                     From finding Portuguese schools to navigating UK systems, we help each other with the practical 
-                    and emotional challenges of life in London as Portuguese speakers.
+                    and emotional challenges of life in the U.K. as Portuguese speakers.
                   </p>
                 </div>
               </div>
@@ -232,7 +232,7 @@ export default function About() {
                   Nossa Missão: Preservar a Cultura, Conectar Corações
                 </h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                  We believe every Portuguese speaker in London deserves a community that celebrates 
+                  We believe every Portuguese speaker in the U.K. deserves a community that celebrates 
                   our heritage, supports our community, and keeps our beautiful language thriving.
                 </p>
               </div>
@@ -243,7 +243,7 @@ export default function About() {
                   <div className="space-y-4 text-gray-600">
                     <div className="flex items-start">
                       <CheckCircleIcon className="w-5 h-5 text-primary-500 mt-1 mr-3 flex-shrink-0" />
-                      <p><strong>Cultural preservation.</strong> Keeping our traditions, values, and way of life alive in London.</p>
+                      <p><strong>Cultural preservation.</strong> Keeping our traditions, values, and way of life alive in the U.K..</p>
                     </div>
                     <div className="flex items-start">
                       <CheckCircleIcon className="w-5 h-5 text-primary-500 mt-1 mr-3 flex-shrink-0" />
@@ -255,7 +255,7 @@ export default function About() {
                     </div>
                     <div className="flex items-start">
                       <CheckCircleIcon className="w-5 h-5 text-primary-500 mt-1 mr-3 flex-shrink-0" />
-                      <p><strong>Mutual support.</strong> Helping each other navigate life in London while staying connected to home.</p>
+                      <p><strong>Mutual support.</strong> Helping each other navigate life in the U.K. while staying connected to home.</p>
                     </div>
                   </div>
                 </div>
@@ -510,7 +510,7 @@ export default function About() {
                 <div className="bg-white rounded-xl p-6 shadow-sm">
                   <div className="text-3xl font-bold text-primary-600 mb-2">750+</div>
                   <div className="text-sm text-gray-600">Portuguese Community Members</div>
-                  <div className="text-xs text-gray-500 mt-1">Connected in London</div>
+                  <div className="text-xs text-gray-500 mt-1">Connected in the U.K.</div>
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-sm">
                   <div className="text-3xl font-bold text-secondary-600 mb-2">15+</div>
@@ -575,7 +575,7 @@ export default function About() {
                 <div className="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8">
                   <h3 className="text-xl font-semibold text-purple-600 mb-4">👨‍👩‍👧‍👦 Family Support</h3>
                   <p className="text-gray-600">
-                    Supporting Portuguese families in London with resources, connections, and community that 
+                    Supporting Portuguese families in the U.K. with resources, connections, and community that 
                     help children grow proud of their heritage while thriving in British society.
                   </p>
                 </div>
@@ -610,7 +610,7 @@ export default function About() {
                       supporting one another in this beautiful, challenging journey called life.
                     </p>
                     <p className="mb-4">
-                      <strong>We ask only for respect, kindness, and mutual support.</strong> Life in London can be challenging 
+                      <strong>We ask only for respect, kindness, and mutual support.</strong> Life in the U.K. can be challenging 
                       enough without facing it alone. Together, we create a space where Portuguese speakers can find friendship, 
                       guidance, and the warmth of home, no matter where that home originally was.
                     </p>
@@ -700,7 +700,7 @@ export default function About() {
               </h2>
               <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
                 Whether you're from Portugal, Brazil, Angola, or any Portuguese-speaking nation, 
-                your community in London is waiting for you.
+                your community in the U.K. is waiting for you.
               </p>
               <a 
                 href={ROUTES.signup}

@@ -296,7 +296,7 @@ const EventsShowcase = memo(() => {
             }
           </motion.p>
           
-          {/* Portuguese Community Areas in London */}
+          {/* Portuguese Community Areas in the U.K. */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -629,7 +629,7 @@ const EventsShowcase = memo(() => {
             <p className="text-gray-600">
               {language === "pt" 
                 ? "Histórias reais de lusófonos que encontraram casa em Londres"
-                : "Real stories from Portuguese speakers who found home in London"}
+                : "Real stories from Portuguese speakers who found home in the U.K."}
             </p>
           </div>
 
@@ -650,7 +650,7 @@ const EventsShowcase = memo(() => {
                 region: "🇧🇷 São Paulo",
                 quote: language === "pt"
                   ? "\"A festa junina em Londres foi incrível! As crianças adoraram e senti-me conectado às minhas raízes.\""
-                  : "\"The festa junina in London was amazing! My kids loved it and I felt connected to my roots.\"",
+                  : "\"The festa junina in the U.K. was amazing! My kids loved it and I felt connected to my roots.\"",
                 event: language === "pt" ? "Festa Junina Brasileira" : "Brazilian June Festival"
               },
               {
@@ -742,7 +742,7 @@ const EventsShowcase = memo(() => {
               <h3 className="text-3xl font-bold mb-6">
                 {language === "pt" 
                   ? "Junte-se à Comunidade Portuguesa em Londres & Reino Unido"
-                  : "Join the Portuguese Community in London & UK"}
+                  : "Join the Portuguese Community in the U.K. & UK"}
               </h3>
               <p className="text-xl opacity-95 mb-8 max-w-3xl mx-auto leading-relaxed">
                 {language === "pt"

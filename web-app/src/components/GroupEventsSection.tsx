@@ -100,7 +100,7 @@ const sampleGroupEvents: GroupEventData[] = [
     id: "group-event-4",
     title: "Harry Potter Studio Tour Community Adventure",
     description:
-      "Magical day out at the Warner Bros Studio Tour. Perfect for Portuguese speakers in London - you will be guided by Portuguese hosts and travel with fellow Portuguese speakers, making it feel like going with close friends who share your language and culture while exploring behind-the-scenes magic, costumes, and sets.",
+      "Magical day out at the Warner Bros Studio Tour. Perfect for Portuguese speakers in the U.K. - you will be guided by Portuguese hosts and travel with fellow Portuguese speakers, making it feel like going with close friends who share your language and culture while exploring behind-the-scenes magic, costumes, and sets.",
     date: "2025-08-24",
     time: "11:00 AM",
     location: "Warner Bros Studio Tour, WD25 7LR",
@@ -153,7 +153,7 @@ const sampleGroupEvents: GroupEventData[] = [
     id: "group-event-6",
     title: "London Zoo Community Safari Day",
     description:
-      "Fun-filled day at London Zoo with Portuguese speakers in London. Educational talks, animal encounters, and activities led by Portuguese guides - experience London's wildlife while connecting with fellow Portuguese speakers who share your language and culture.",
+      "Fun-filled day at London Zoo with Portuguese speakers in the U.K.. Educational talks, animal encounters, and activities led by Portuguese guides - experience London's wildlife while connecting with fellow Portuguese speakers who share your language and culture.",
     date: "2025-08-26",
     time: "10:00 AM",
     location: "London Zoo, NW1 4RY",
@@ -465,7 +465,7 @@ export default function GroupEventsSection({
             <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
               {isPortuguese
                 ? "Descubra eventos organizados especialmente para portugueses em Londres. Conecte-se, explore e crie memórias inesquecíveis."
-                : "Discover events organized specifically for Portuguese speakers in London. Connect, explore, and create unforgettable memories."}
+                : "Discover events organized specifically for Portuguese speakers in the U.K.. Connect, explore, and create unforgettable memories."}
             </p>
           </div>
 

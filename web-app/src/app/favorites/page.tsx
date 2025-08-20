@@ -36,7 +36,7 @@ const mockFavorites = [
     id: '2',
     type: 'business',
     title: 'Casa do Pão',
-    description: 'Authentic Portuguese bakery and café in Shoreditch with the best pastéis de nata in London.',
+    description: 'Authentic Portuguese bakery and café in Shoreditch with the best pastéis de nata in the U.K..',
     category: 'Café & Bakery',
     location: 'Shoreditch, London',
     rating: 4.8,

@@ -273,7 +273,7 @@ const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
   {
     id: 'diaspora_comfort_1',
     dimension: 'diasporaComfort',
-    questionEn: 'How at home do you feel living in London versus Portugal?',
+    questionEn: 'How at home do you feel living in the U.K. versus Portugal?',
     questionPt: 'Quão em casa se sente vivendo em Londres versus Portugal?',
     contextEn: 'Consider social connections, cultural comfort, and daily life ease',
     contextPt: 'Considere conexões sociais, conforto cultural e facilidade da vida diária',

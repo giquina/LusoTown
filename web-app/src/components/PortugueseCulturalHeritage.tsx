@@ -203,7 +203,7 @@ const PortugueseCulturalHeritage: React.FC = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {language === "pt"
               ? "Descubra as tradições, sabores e histórias que definem a nossa identidade lusófona em Londres."
-              : "Discover the traditions, flavors, and stories that define our Portuguese identity in London."
+              : "Discover the traditions, flavors, and stories that define our Portuguese identity in the U.K.."
             }
           </p>
         </motion.div>
@@ -273,7 +273,7 @@ const PortugueseCulturalHeritage: React.FC = () => {
                   <div className="flex items-center gap-2 mb-2">
                     <MapPinIcon className="w-4 h-4 text-primary-500" />
                     <span className="text-sm font-medium text-gray-700">
-                      {language === "pt" ? "Onde encontrar em Londres:" : "Where to find in London:"}
+                      {language === "pt" ? "Onde encontrar em Londres:" : "Where to find in the U.K.:"}
                     </span>
                   </div>
                   <div className="flex flex-wrap gap-1">
@@ -337,7 +337,7 @@ const PortugueseCulturalHeritage: React.FC = () => {
             <p className="text-lg opacity-95">
               {language === "pt"
                 ? "Preserve a nossa cultura lusófona para as próximas gerações em Londres."
-                : "Preserve our Portuguese culture for the next generations in London."
+                : "Preserve our Portuguese culture for the next generations in the U.K.."
               }
             </p>
           </div>

@@ -205,7 +205,7 @@ const BRIDGE_INITIATIVES: BridgeInitiative[] = [
     location: 'Hyde Park, Southbank, Borough Market, Trafalgar Square',
     objectives: [
       'Showcase Portuguese culture to London\'s diverse communities',
-      'Learn about and appreciate other cultures represented in London',
+      'Learn about and appreciate other cultures represented in the U.K.',
       'Build friendships between Portuguese and other ethnic communities',
       'Promote cultural understanding and reduce prejudice',
       'Celebrate London\'s multicultural identity'

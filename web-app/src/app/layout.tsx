@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   metadataBase: METADATA_BASE,
   title: "LusoTown - London | Portuguese Social & Business Network",
   description:
-    "The Portuguese social and business network in London. Connect with Portuguese speakers, book cultural events, attend technology workshops, and build professional networks. Unidos pela Língua.",
+    "The Portuguese social and business network in the U.K.. Connect with Portuguese speakers, book cultural events, attend technology workshops, and build professional networks. Unidos pela Língua.",
   keywords: [
     // Primary Portuguese SEO Keywords
     "portuguese social calendar london",
@@ -123,14 +123,14 @@ export const metadata: Metadata = {
     url: METADATA_BASE.toString(),
     title: "LusoTown London - Your Portuguese Social Calendar",
     description:
-      "Connect with Portuguese speakers from Portugal, Brazil, Angola, Mozambique, Cape Verde & beyond in London. Book experiences, join activities, live life together with your lusophone community.",
+      "Connect with Portuguese speakers from Portugal, Brazil, Angola, Mozambique, Cape Verde & beyond in the U.K.. Book experiences, join activities, live life together with your lusophone community.",
     siteName: "LusoTown London",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "LusoTown - Real-Life Portuguese Meetups in London & UK",
+        alt: "LusoTown - Real-Life Portuguese Meetups in the U.K. & UK",
       },
     ],
   },

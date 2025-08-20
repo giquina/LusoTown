@@ -50,12 +50,12 @@ export interface EventToursFilters {
   groupSize?: 'small' | 'medium' | 'large'
 }
 
-// Sample Events & Tours Data for Portuguese Community in London
+// Sample Events & Tours Data for Portuguese Community in the U.K.
 export const eventsTours: EventTour[] = [
   {
     id: 'et-001',
     title: 'Portuguese Women 30+ Wine & Cultural Evening',
-    description: 'An intimate evening for Portuguese women in their 30s to connect over authentic Portuguese wines and share stories about preserving our culture in London. Join us for heartfelt conversations about heritage, career, and building meaningful friendships.',
+    description: 'An intimate evening for Portuguese women in their 30s to connect over authentic Portuguese wines and share stories about preserving our culture in the U.K.. Join us for heartfelt conversations about heritage, career, and building meaningful friendships.',
     date: '2025-08-20',
     time: '19:00',
     endTime: '22:00',
@@ -81,7 +81,7 @@ export const eventsTours: EventTour[] = [
     tags: ['Women Only', 'Wine Tasting', 'Cultural Heritage', 'Networking', 'Stockwell'],
     highlights: [
       'Curated Portuguese wine selection from Douro Valley',
-      'Discussion about preserving Portuguese traditions in London',
+      'Discussion about preserving Portuguese traditions in the U.K.',
       'Small group setting for meaningful connections',
       'Traditional petiscos (Portuguese appetizers)'
     ],
@@ -92,7 +92,7 @@ export const eventsTours: EventTour[] = [
       'Exchange contacts and plan future meetups'
     ],
     whatToHear: 'Stories from Portuguese women about adapting to London life while staying connected to heritage',
-    whatToLearn: 'How to maintain cultural identity while building a successful life in London',
+    whatToLearn: 'How to maintain cultural identity while building a successful life in the U.K.',
     groupSize: 'Small (15-20 people)',
     difficulty: 'Easy',
     averageRating: 4.8,
@@ -151,7 +151,7 @@ export const eventsTours: EventTour[] = [
   {
     id: 'et-003',
     title: 'Women 40+ Professional Portuguese Network',
-    description: 'Exclusive networking dinner for established Portuguese women (40+) in London. Share professional experiences, mentor younger Portuguese speakers, and build business connections within the Portuguese diaspora.',
+    description: 'Exclusive networking dinner for established Portuguese women (40+) in the U.K.. Share professional experiences, mentor younger Portuguese speakers, and build business connections within the Portuguese diaspora.',
     date: '2025-08-25',
     time: '18:30',
     endTime: '21:30',
@@ -187,7 +187,7 @@ export const eventsTours: EventTour[] = [
       'Mentorship circle for community guidance',
       'Strategic partnerships and collaboration opportunities'
     ],
-    whatToHear: 'Career success stories from Portuguese women who built businesses in London',
+    whatToHear: 'Career success stories from Portuguese women who built businesses in the U.K.',
     whatToLearn: 'Professional strategies for advancing in UK market while maintaining Portuguese identity',
     groupSize: 'Small (12-16 people)',
     difficulty: 'Easy',
@@ -415,8 +415,8 @@ export const eventsTours: EventTour[] = [
       'Stories about Portuguese immigration to London',
       'Photo opportunities at cultural landmarks'
     ],
-    whatToHear: 'Stories of Portuguese families who built businesses in London',
-    whatToLearn: 'Hidden Portuguese cultural spots and community history in London',
+    whatToHear: 'Stories of Portuguese families who built businesses in the U.K.',
+    whatToLearn: 'Hidden Portuguese cultural spots and community history in the U.K.',
     groupSize: 'Medium (20-25 people)',
     difficulty: 'Easy',
     averageRating: 4.6,

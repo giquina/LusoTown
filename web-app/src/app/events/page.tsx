@@ -577,13 +577,13 @@ export default function EventsPage() {
                     <span className="hidden sm:block">
                       {isPortuguese
                         ? "Descubra eventos autênticos nos bairros portugueses de Londres - de Santos Populares em Stockwell a noites de Fado em Camden. Conecte-se com a sua comunidade através de experiências culturais genuínas, networking profissional e tradições que unem gerações."
-                        : "Discover authentic events in London's Portuguese neighborhoods - from Santos Populares in Stockwell to Fado nights in Camden. Connect with your community through genuine cultural experiences, professional networking, and traditions that unite generations."}
+                        : "Discover authentic events in the U.K.'s Portuguese neighborhoods - from Santos Populares in Stockwell to Fado nights in Camden. Connect with your community through genuine cultural experiences, professional networking, and traditions that unite generations."}
                     </span>
                     {/* Mobile short subtitle */}
                     <span className="sm:hidden">
                       {isPortuguese
                         ? "Eventos portugueses autênticos em Londres!"
-                        : "Authentic Portuguese events in London!"}
+                        : "Authentic Portuguese events in the U.K.!"}
                     </span>
                   </>
                 ) : (
@@ -1236,7 +1236,7 @@ export default function EventsPage() {
               <p className="text-lg text-white/90 mb-12 max-w-2xl mx-auto">
                 {isPortuguese
                   ? "Partilhe a sua experiência com a comunidade portuguesa. Organize eventos, crie grupos ou ofereça experiências únicas em Londres."
-                  : "Share your expertise with the Portuguese community. Host events, create groups, or offer unique experiences in London."}
+                  : "Share your expertise with the Portuguese community. Host events, create groups, or offer unique experiences in the U.K.."}
               </p>
 
               {/* Three CTA Options */}

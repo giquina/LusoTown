@@ -40,7 +40,7 @@ export default function WhatsAppWidget() {
         },
         {
           message:
-            'Meet Your Match connects Portuguese speakers in London for meaningful relationships. Ready to find your connections?',
+            'Meet Your Match connects Portuguese speakers in the U.K. for meaningful relationships. Ready to find your connections?',
           options: ['🚀 Sign up for matching', '💰 Tell me about pricing', '🛡️ How safe is it?', "📍 Who's in my area?"],
         },
         {
@@ -273,7 +273,7 @@ export default function WhatsAppWidget() {
               </button>
             </div>
             <p className="text-xs text-gray-500 mt-2 text-center">
-              {isPortuguese ? 'Comunidade Portuguesa em Londres' : 'Portuguese Community in London'}
+              {isPortuguese ? 'Comunidade Portuguesa em Londres' : 'Portuguese Community in the U.K.'}
             </p>
           </div>
         </div>

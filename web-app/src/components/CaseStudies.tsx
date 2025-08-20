@@ -259,7 +259,7 @@ const allCaseStudies: CaseStudy[] = [
       outcome: 'July 2024 - Moved in together to a shared flat in Stockwell'
     },
     transformation: {
-      before: 'Both felt isolated in London - Ana struggling with student life, Mariana overwhelmed in corporate world',
+      before: 'Both felt isolated in the U.K. - Ana struggling with student life, Mariana overwhelmed in corporate world',
       after: 'Built an unbreakable friendship while creating their perfect Portuguese-speaking household',
       impact: [
         'Ana improved her English confidence with Mariana\'s support',
@@ -272,9 +272,9 @@ const allCaseStudies: CaseStudy[] = [
     quotes: {
       person1: '"Mariana became my London sister. When I was homesick, she\'d cook Portuguese comfort food. When I doubted my English, she practiced presentations with me."',
       person2: '"Ana brought such joy and perspective. Through her eyes, I rediscovered why I loved London. We balanced each other perfectly - my experience, her optimism."',
-      joint: '"Living together has been the best decision. We share costs, culture, and create a piece of Portugal in London. Our flat is now the gathering place for the whole Portuguese community."'
+      joint: '"Living together has been the best decision. We share costs, culture, and create a piece of Portugal in the U.K.. Our flat is now the gathering place for the whole Portuguese community."'
     },
-    currentStatus: 'Still living together in their Stockwell flat, planning to buy a property together in 2025. They host monthly Portuguese dinner parties and have helped 15+ newcomers settle in London.',
+    currentStatus: 'Still living together in their Stockwell flat, planning to buy a property together in 2025. They host monthly Portuguese dinner parties and have helped 15+ newcomers settle in the U.K..',
     icon: HomeIcon
   },
   {
@@ -324,7 +324,7 @@ const allCaseStudies: CaseStudy[] = [
     quotes: {
       person1: '"Sofia understood both Portuguese work culture and London business dynamics. She helped me navigate UK partnerships I never could have secured alone."',
       person2: '"Carlos brought technical innovation I\'d never seen in traditional marketing. Together we created something neither could achieve individually."',
-      joint: '"Our partnership works because we share values but bring different perspectives. We\'re proving Portuguese speakers can lead innovation in London\'s tech scene."'
+      joint: '"Our partnership works because we share values but bring different perspectives. We\'re proving Portuguese speakers can lead innovation in the U.K.\'s tech scene."'
     },
     currentStatus: 'Verde Digital has secured £500K investment for expansion across Europe. They\'re mentoring 10 Portuguese-speaking entrepreneurs and planning to open an office in Lisbon by 2025.',
     icon: BuildingOffice2Icon
@@ -362,7 +362,7 @@ const allCaseStudies: CaseStudy[] = [
       outcome: 'April 2024 - Launched "Palavras de Londres" (Words of London) cultural initiative'
     },
     transformation: {
-      before: 'Isabel felt disconnected from Portuguese academic community; Fernanda struggled to find platform for Brazilian cultural expression in London',
+      before: 'Isabel felt disconnected from Portuguese academic community; Fernanda struggled to find platform for Brazilian cultural expression in the U.K.',
       after: 'Created London\'s premier Portuguese cultural organization connecting 200+ families with their heritage',
       impact: [
         'Established monthly Portuguese authors\' readings at Southbank Centre',
@@ -374,9 +374,9 @@ const allCaseStudies: CaseStudy[] = [
       ]
     },
     quotes: {
-      person1: '"Fernanda showed me how Portuguese culture could thrive in London, not just survive. Together we\'re ensuring our children grow up proud of our literary heritage."',
+      person1: '"Fernanda showed me how Portuguese culture could thrive in the U.K., not just survive. Together we\'re ensuring our children grow up proud of our literary heritage."',
       person2: '"Isabel brought the academic rigor I needed to legitimize our cultural work. We\'re not just preserving culture - we\'re evolving it for a new generation."',
-      joint: '"Through literature, we\'ve built bridges between Portugal, Brazil, and all Portuguese speakers in London. We\'re creating a cultural legacy our grandchildren will be proud of."'
+      joint: '"Through literature, we\'ve built bridges between Portugal, Brazil, and all Portuguese speakers in the U.K.. We\'re creating a cultural legacy our grandchildren will be proud of."'
     },
     currentStatus: 'Palavras de Londres now runs 12 programs annually, has published an anthology of London Portuguese writers, and is establishing partnerships with universities in Portugal and Brazil. They\'re planning a documentary about Portuguese literary heritage in the UK.',
     icon: AcademicCapIcon
@@ -443,7 +443,7 @@ export default function CaseStudies() {
             </h2>
             <p className="text-xl sm:text-2xl text-gray-700 max-w-5xl mx-auto leading-relaxed font-medium">
               From strangers at a museum to business partners at The Shard to cultural leaders at the British Library. 
-              These are the real transformation stories that happen when Portuguese speakers connect in London.
+              These are the real transformation stories that happen when Portuguese speakers connect in the U.K..
             </p>
           </motion.div>
 

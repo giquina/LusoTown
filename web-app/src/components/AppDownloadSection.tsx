@@ -156,7 +156,7 @@ export default function AppDownloadSection() {
               <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed">
                 {isPortuguese 
                   ? 'Nunca perca encontros portugueses em Londres, conversas de grupo ou novas ligações. Descarregue a app LusoTown e mantenha-se conectado com a comunidade portuguesa onde quer que vá.'
-                  : 'Never miss Portuguese meetups in London, group chats or new connections. Get the LusoTown mobile app and stay connected with the Portuguese community wherever you go.'}
+                  : 'Never miss Portuguese meetups in the U.K., group chats or new connections. Get the LusoTown mobile app and stay connected with the Portuguese community wherever you go.'}
               </p>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}

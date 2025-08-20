@@ -120,7 +120,7 @@ export default function StreamSchedule({
       description:
         language === "pt"
           ? "Sessão informal para conhecer outros portugueses em Londres"
-          : "Informal session to meet other Portuguese speakers in London",
+          : "Informal session to meet other Portuguese speakers in the U.K.",
       category: "community-events",
       categoryName:
         language === "pt" ? "Eventos Comunitários" : "Community Events",

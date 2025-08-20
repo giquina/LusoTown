@@ -158,7 +158,7 @@ export default function TransportTestimonials() {
           >
             {isPortuguese 
               ? 'Experiências reais de membros da comunidade portuguesa em Londres'
-              : 'Real experiences from Portuguese community members in London'
+              : 'Real experiences from Portuguese community members in the U.K.'
             }
           </motion.p>
         </div>

@@ -370,7 +370,7 @@ export default function CommunityEventCreation({
               <p className="text-gray-600 text-sm">
                 {isPortuguese
                   ? 'Partilhe experiências portuguesas autênticas em Londres'
-                  : 'Share authentic Portuguese experiences in London'}
+                  : 'Share authentic Portuguese experiences in the U.K.'}
               </p>
             </div>
           </div>

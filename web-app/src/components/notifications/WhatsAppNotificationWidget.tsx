@@ -181,7 +181,7 @@ export default function WhatsAppNotificationWidget({
                 <p className="text-sm text-neutral-700">
                   {language === 'pt' 
                     ? 'Receba atualizações exclusivas da comunidade portuguesa em Londres via WhatsApp:'
-                    : 'Get exclusive Portuguese community updates in London via WhatsApp:'
+                    : 'Get exclusive Portuguese community updates in the U.K. via WhatsApp:'
                   }
                 </p>
                 

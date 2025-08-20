@@ -579,7 +579,7 @@ export default function ToursPage() {
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese 
                   ? "Não somos apenas mais uma empresa de tours. Somos portugueses que vivem em Londres e queremos partilhar as nossas descobertas."
-                  : "We're not just another tour company. We're Portuguese people living in London who want to share our discoveries."
+                  : "We're not just another tour company. We're Portuguese people living in the U.K. who want to share our discoveries."
                 }
               </p>
             </div>

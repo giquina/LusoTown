@@ -99,7 +99,7 @@ export default function PadrinhoMentorshipSystem() {
         successfulMentorships: 8,
         rating: 4.9,
         profileImage: '/images/mentors/ana.jpg',
-        bio: 'Experienced marketing professional who has helped numerous Portuguese professionals establish themselves in London\'s competitive market.',
+        bio: 'Experienced marketing professional who has helped numerous Portuguese professionals establish themselves in the U.K.\'s competitive market.',
         mentorshipPhilosophy: 'I believe in empowering others through shared experiences and cultural pride while embracing new opportunities.',
         achievements: ['Promoted 3 Portuguese colleagues to senior positions', 'Founded Portuguese Professional Network London'],
         isVerified: true,
@@ -120,7 +120,7 @@ export default function PadrinhoMentorshipSystem() {
         successfulMentorships: 12,
         rating: 4.8,
         profileImage: '/images/mentors/carlos.jpg',
-        bio: 'Successful Portuguese restaurant owner who has built a thriving business celebrating authentic Portuguese culture in London.',
+        bio: 'Successful Portuguese restaurant owner who has built a thriving business celebrating authentic Portuguese culture in the U.K..',
         mentorshipPhilosophy: 'Success comes from combining Portuguese authenticity with London\'s multicultural business environment.',
         achievements: ['2x Portuguese Restaurant of the Year', 'Mentored 5 successful Portuguese food businesses'],
         isVerified: true,
@@ -142,7 +142,7 @@ export default function PadrinhoMentorshipSystem() {
         rating: 5.0,
         profileImage: '/images/mentors/maria.jpg',
         bio: 'Dedicated healthcare professional who has helped countless Portuguese families navigate London\'s systems with compassion and expertise.',
-        mentorshipPhilosophy: 'Every Portuguese family deserves to feel at home in London while maintaining their cultural identity.',
+        mentorshipPhilosophy: 'Every Portuguese family deserves to feel at home in the U.K. while maintaining their cultural identity.',
         achievements: ['Established Portuguese Healthcare Support Network', 'Helped 20+ families with NHS navigation'],
         isVerified: true,
         responseTime: 'Within 24 hours'
@@ -204,7 +204,7 @@ export default function PadrinhoMentorshipSystem() {
         id: '3',
         nameEn: 'Portuguese Business Incubator',
         namePt: 'Incubadora de Negócios Portugueses',
-        descriptionEn: 'Entrepreneurship program supporting Portuguese business ventures in London',
+        descriptionEn: 'Entrepreneurship program supporting Portuguese business ventures in the U.K.',
         descriptionPt: 'Programa de empreendedorismo apoiando ventures portugueses de negócios em Londres',
         duration: '18 months',
         structure: 'Weekly consultations + monthly investor pitches',
@@ -292,9 +292,9 @@ export default function PadrinhoMentorshipSystem() {
             className="rounded-xl border-gray-300 focus:border-secondary-500 focus:ring-secondary-500"
           >
             <option value="">{t('mentorship.filters.all_experience', 'All Experience Levels')}</option>
-            <option value="5-10">5-10 years in London</option>
-            <option value="10-15">10-15 years in London</option>
-            <option value="15+">15+ years in London</option>
+            <option value="5-10">5-10 years in the U.K.</option>
+            <option value="10-15">10-15 years in the U.K.</option>
+            <option value="15+">15+ years in the U.K.</option>
           </select>
         </div>
       </div>
@@ -417,7 +417,7 @@ export default function PadrinhoMentorshipSystem() {
         </h2>
         
         <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-          {t('mentorship.become.subtitle', 'Use your experience in London to help fellow Portuguese speakers thrive while preserving our cultural identity')}
+          {t('mentorship.become.subtitle', 'Use your experience in the U.K. to help fellow Portuguese speakers thrive while preserving our cultural identity')}
         </p>
       </div>
 
@@ -532,7 +532,7 @@ export default function PadrinhoMentorshipSystem() {
           {t('mentorship.programs.title', 'Structured Mentorship Programs')}
         </h2>
         <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-          {t('mentorship.programs.subtitle', 'Choose from specialized programs designed to address specific aspects of Portuguese life in London')}
+          {t('mentorship.programs.subtitle', 'Choose from specialized programs designed to address specific aspects of Portuguese life in the U.K.')}
         </p>
       </div>
 

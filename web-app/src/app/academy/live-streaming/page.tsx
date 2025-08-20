@@ -44,7 +44,7 @@ export default function LiveStreamingModule() {
     id: 'live-streaming',
     title: 'Live Streaming',
     titlePortuguese: 'Transmissão Ao Vivo',
-    description: 'Master Portuguese streaming platform, build your audience, and monetize your cultural content',
+    description: 'Master streaming platform, build your audience, and monetize your cultural content',
     descriptionPortuguese: 'Domine a plataforma de streaming portuguesa, construa a sua audiência e monetize o seu conteúdo cultural',
     difficulty: 'Intermediate',
     estimatedTime: 35,
@@ -77,7 +77,7 @@ export default function LiveStreamingModule() {
         type: 'introduction',
         estimatedTime: 5,
         content: `
-          <p>Welcome to LusoTown TV - the premier Portuguese streaming platform in London! Our platform is specifically designed for Portuguese content creators to connect with the diaspora community.</p>
+          <p>Welcome to LusoTown TV - the premier Portuguese streaming platform in the U.K.! Our platform is specifically designed for Portuguese content creators to connect with the diaspora community.</p>
           
           <h3>What Makes LusoTown Streaming Special:</h3>
           <ul>
@@ -324,7 +324,7 @@ export default function LiveStreamingModule() {
         type: 'tutorial',
         estimatedTime: 10,
         content: `
-          <p>Creating engaging Portuguese content requires understanding your diaspora audience and their unique interests in London.</p>
+          <p>Creating engaging Portuguese content requires understanding your diaspora audience and their unique interests in the U.K..</p>
           
           <h3>Content Pillars for Portuguese Streamers:</h3>
           
@@ -362,7 +362,7 @@ export default function LiveStreamingModule() {
               <ul>
                 <li>Portuguese business owner interviews</li>
                 <li>Community event coverage</li>
-                <li>Portuguese student experiences in London universities</li>
+                <li>Portuguese student experiences in the U.K. universities</li>
                 <li>Success stories of Portuguese professionals</li>
               </ul>
             </li>
@@ -378,11 +378,11 @@ export default function LiveStreamingModule() {
           
           <h4>3. Professional Development (20% of content)</h4>
           <ul>
-            <li><strong>Career Growth in London:</strong>
+            <li><strong>Career Growth in the U.K.:</strong>
               <ul>
                 <li>CV writing tips for Portuguese professionals</li>
                 <li>Interview preparation in English vs Portuguese contexts</li>
-                <li>Networking strategies in London's Portuguese community</li>
+                <li>Networking strategies in the U.K.'s Portuguese community</li>
                 <li>Industry-specific guidance (tech, finance, healthcare)</li>
               </ul>
             </li>
@@ -450,7 +450,7 @@ export default function LiveStreamingModule() {
           <h3>Collaboration Opportunities:</h3>
           <ul>
             <li><strong>Other Portuguese Streamers:</strong> Joint cooking sessions, cultural discussions</li>
-            <li><strong>Portuguese Businesses in London:</strong> Restaurant features, product reviews</li>
+            <li><strong>Portuguese Businesses in the U.K.:</strong> Restaurant features, product reviews</li>
             <li><strong>Portuguese Cultural Organizations:</strong> Event coverage, educational content</li>
             <li><strong>Cross-Cultural Content:</strong> British-Portuguese cultural exchanges</li>
           </ul>
@@ -621,11 +621,11 @@ export default function LiveStreamingModule() {
         content: `
           <p>Building a loyal Portuguese-speaking audience requires understanding the diaspora community's unique needs and creating genuine connections.</p>
           
-          <h3>Understanding Your Portuguese Audience in London:</h3>
+          <h3>Understanding Your Portuguese Audience in the U.K.:</h3>
           
           <h4>Audience Segments:</h4>
           <ul>
-            <li><strong>Recent Immigrants (0-2 years in London):</strong>
+            <li><strong>Recent Immigrants (0-2 years in the U.K.):</strong>
               <ul>
                 <li>Need: Practical London life guidance, language support</li>
                 <li>Content: How-to guides, cultural comparisons, community integration</li>
@@ -661,7 +661,7 @@ export default function LiveStreamingModule() {
           <ul>
             <li><strong>Portuguese Community Events:</strong>
               <ul>
-                <li>Stream live from Portuguese festivals and events in London</li>
+                <li>Stream live from Portuguese festivals and events in the U.K.</li>
                 <li>Cover Portuguese religious celebrations and cultural gatherings</li>
                 <li>Interview community leaders and Portuguese business owners</li>
                 <li>Document Portuguese community milestones and achievements</li>
@@ -972,7 +972,7 @@ export default function LiveStreamingModule() {
           
           <h4>4. Sponsored Content & Partnerships</h4>
           <ul>
-            <li><strong>Portuguese Business Partnerships:</strong> Restaurants, shops, services in London</li>
+            <li><strong>Portuguese Business Partnerships:</strong> Restaurants, shops, services in the U.K.</li>
             <li><strong>Cultural Event Sponsorships:</strong> Portuguese festivals, concerts, community events</li>
             <li><strong>Product Reviews:</strong> Portuguese food imports, cultural products</li>
             <li><strong>Service Promotions:</strong> Portuguese travel agencies, legal services, education</li>
@@ -1019,7 +1019,7 @@ export default function LiveStreamingModule() {
           
           <h4>Portuguese Community Marketing:</h4>
           <ul>
-            <li><strong>Cultural Value Proposition:</strong> "Support Portuguese culture preservation in London"</li>
+            <li><strong>Cultural Value Proposition:</strong> "Support Portuguese culture preservation in the U.K."</li>
             <li><strong>Community Building:</strong> "Join exclusive Portuguese community"</li>
             <li><strong>Language Maintenance:</strong> "Help your children maintain Portuguese"</li>
             <li><strong>Professional Networking:</strong> "Connect with Portuguese professionals"</li>

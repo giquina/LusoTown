@@ -151,9 +151,9 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     id: "networking-001",
     title: "Portuguese Entrepreneurs Breakfast Network",
     description:
-      "Monthly networking breakfast for Portuguese-speaking entrepreneurs in London. Share experiences, make connections, grow your business.",
+      "Monthly networking breakfast for Portuguese-speaking entrepreneurs in the U.K.. Share experiences, make connections, grow your business.",
     longDescription:
-      "Join London's most active Portuguese business community for our monthly networking breakfast. Connect with fellow entrepreneurs from Portugal, Brazil, Angola, and other Portuguese-speaking countries. This is your opportunity to expand your professional network, share challenges and successes, and discover new business opportunities. We facilitate structured networking, host guest speakers, and provide a platform for meaningful business relationships. Language: Bilingual (Portuguese and English). Dress code: Business casual.",
+      "Join the U.K.'s most active Portuguese business community for our monthly networking breakfast. Connect with fellow entrepreneurs from Portugal, Brazil, Angola, and other Portuguese-speaking countries. This is your opportunity to expand your professional network, share challenges and successes, and discover new business opportunities. We facilitate structured networking, host guest speakers, and provide a platform for meaningful business relationships. Language: Bilingual (Portuguese and English). Dress code: Business casual.",
     date: "2024-02-15",
     time: "08:00",
     endTime: "10:00",
@@ -312,9 +312,9 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     id: "networking-002",
     title: "Portuguese-Brazilian Business Summit",
     description:
-      "Annual summit connecting Portuguese and Brazilian business communities in London. Explore trade opportunities, partnerships, and cultural exchange.",
+      "Annual summit connecting Portuguese and Brazilian business communities in the U.K.. Explore trade opportunities, partnerships, and cultural exchange.",
     longDescription:
-      "The premier annual event bringing together Portuguese and Brazilian entrepreneurs, investors, and business leaders in London. This full-day summit features keynote presentations, panel discussions, networking sessions, and exhibition opportunities. Focus areas include fintech, renewable energy, tourism, and digital innovation. Simultaneous Portuguese-English translation available for all main sessions.",
+      "The premier annual event bringing together Portuguese and Brazilian entrepreneurs, investors, and business leaders in the U.K.. This full-day summit features keynote presentations, panel discussions, networking sessions, and exhibition opportunities. Focus areas include fintech, renewable energy, tourism, and digital innovation. Simultaneous Portuguese-English translation available for all main sessions.",
     date: "2024-03-22",
     time: "09:00",
     endTime: "18:00",
@@ -479,9 +479,9 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     id: "networking-003",
     title: "Portuguese Women in Business Leadership Circle",
     description:
-      "Exclusive networking circle for Portuguese women business leaders and entrepreneurs in London. Empowerment, mentorship, and strategic partnerships.",
+      "Exclusive networking circle for Portuguese women business leaders and entrepreneurs in the U.K.. Empowerment, mentorship, and strategic partnerships.",
     longDescription:
-      "An intimate and powerful networking circle designed specifically for Portuguese women who are leading businesses, managing teams, or building startups in London. This monthly gathering focuses on leadership development, strategic partnerships, and creating meaningful support networks. We address unique challenges faced by Portuguese women in business, celebrate successes, and provide mentorship opportunities. Conducted primarily in Portuguese with English support.",
+      "An intimate and powerful networking circle designed specifically for Portuguese women who are leading businesses, managing teams, or building startups in the U.K.. This monthly gathering focuses on leadership development, strategic partnerships, and creating meaningful support networks. We address unique challenges faced by Portuguese women in business, celebrate successes, and provide mentorship opportunities. Conducted primarily in Portuguese with English support.",
     date: "2024-02-28",
     time: "18:30",
     endTime: "21:00",
@@ -634,7 +634,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
     hostImage:
       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop",
     hostBio:
-      "Community of Portuguese software developers building the future of technology in London.",
+      "Community of Portuguese software developers building the future of technology in the U.K..",
     membershipRequired: "free",
     price: 25,
     currency: "GBP",
@@ -684,7 +684,7 @@ export const MOCK_NETWORKING_EVENTS: NetworkingEvent[] = [
         name: "João Pedro Silva",
         title: "Senior Mobile Developer",
         company: "Meta London",
-        bio: "Senior mobile developer with 8+ years building apps used by millions. Originally from Porto, now leading mobile teams in London.",
+        bio: "Senior mobile developer with 8+ years building apps used by millions. Originally from Porto, now leading mobile teams in the U.K..",
         bioPortuguese:
           "Desenvolvedor mobile sénior com mais de 8 anos a construir apps usadas por milhões. Natural do Porto, agora lidera equipas móveis em Londres.",
         expertise: ["react_native", "flutter", "mobile_architecture"],

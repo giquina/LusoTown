@@ -284,7 +284,7 @@ export default function EventsDiscovery({
     {
       id: 'business-networking-kensington',
       title: 'Portuguese Entrepreneurs Network',
-      description: 'Monthly networking event for Portuguese business owners and professionals in London',
+      description: 'Monthly networking event for Portuguese business owners and professionals in the U.K.',
       cultural_category: 'business_networking',
       portuguese_neighborhood: 'North Kensington',
       date: '2025-01-30',
@@ -497,7 +497,7 @@ export default function EventsDiscovery({
               <p className="text-gray-600 text-sm leading-tight mt-1">
                 {isPortuguese
                   ? 'Eventos autênticos nos bairros portugueses de Londres'
-                  : 'Authentic events in London\'s Portuguese neighborhoods'}
+                  : 'Authentic events in the U.K.\'s Portuguese neighborhoods'}
               </p>
             </div>
           </div>

@@ -112,7 +112,7 @@ const membershipTiers = [
     price: plans.ambassador.monthly,
     monthlyPrice: plans.ambassador.monthly,
     description: "Lidere a comunidade portuguesa em Londres",
-    descriptionEn: "Lead the Portuguese community in London",
+    descriptionEn: "Lead the Portuguese community in the U.K.",
     icon: <Crown className="w-6 h-6" />,
     solidIcon: <TrophyIcon className="w-6 h-6" />,
     color: "premium",
@@ -403,7 +403,7 @@ export default function MembershipTiers({
                 <p className="text-sm text-gray-600">
                   {isPortuguese
                     ? "Conecte-se com portugueses reais em Londres"
-                    : "Connect with real Portuguese speakers in London"}
+                    : "Connect with real Portuguese speakers in the U.K."}
                 </p>
               </div>
               <div>

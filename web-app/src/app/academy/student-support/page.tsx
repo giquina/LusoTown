@@ -443,7 +443,7 @@ const studentSupportModule = {
               <MapPinIcon class="h-4 w-4" />
               Cultural Walks
             </h5>
-            <p class="text-sm text-green-700">Monthly walks exploring Portuguese history in London</p>
+            <p class="text-sm text-green-700">Monthly walks exploring Portuguese history in the U.K.</p>
             <p class="text-xs text-green-600 mt-1">Guided tours in Portuguese and English</p>
           </div>
           

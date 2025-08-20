@@ -147,7 +147,7 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
     ],
     culturalContributions: {
       music:
-        "Fado performances in London venues, Portuguese traditional folk groups, classical guitar ensembles",
+        "Fado performances in the U.K. venues, Portuguese traditional folk groups, classical guitar ensembles",
       musicPortuguese:
         "Performances de fado em locais de Londres, grupos folclóricos portugueses tradicionais, conjuntos de guitarra clássica",
       cuisine:
@@ -332,7 +332,7 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
         profession: "Cultural Event Organizer",
         professionPortuguese: "Organizadora de Eventos Culturais",
         achievement:
-          'Founded "Angola in London" festival attracting 5,000+ attendees and showcasing Angolan culture across the UK',
+          'Founded "Angola in the U.K." festival attracting 5,000+ attendees and showcasing Angolan culture across the UK',
         achievementPortuguese:
           'Fundou festival "Angola em Londres" atraindo 5.000+ participantes e exibindo cultura angolana por todo o Reino Unido',
         quote:
@@ -427,7 +427,7 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
         achievementPortuguese:
           "Estabeleceu rede de apoio ajudando 200+ famílias moçambicanas a navegar sistemas do Reino Unido enquanto preserva identidade cultural",
         quote:
-          "Ubuntu philosophy guides my work - we rise together. Every family I help strengthens our entire Mozambican community in London.",
+          "Ubuntu philosophy guides my work - we rise together. Every family I help strengthens our entire Mozambican community in the U.K..",
         quotePortuguese:
           "A filosofia Ubuntu guia meu trabalho - crescemos juntos. Cada família que ajudo fortalece toda nossa comunidade moçambicana em Londres.",
       },
@@ -527,7 +527,7 @@ const LUSOPHONE_COUNTRIES: LusophoneCountry[] = [
         profession: "Healthcare Administrator",
         professionPortuguese: "Administradora de Cuidados de Saúde",
         achievement:
-          "Developed multilingual healthcare services reaching 1,000+ Cape Verdean families in London boroughs",
+          "Developed multilingual healthcare services reaching 1,000+ Cape Verdean families in the U.K. boroughs",
         achievementPortuguese:
           "Desenvolveu serviços de saúde multilingues alcançando 1.000+ famílias cabo-verdianas nos distritos de Londres",
         quote:
@@ -704,7 +704,7 @@ export default function LusophoneDiversityShowcase() {
           <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
             {language === "pt"
               ? "Celebrando a rica diversidade das comunidades lusófonas em Londres - desde Portugal ao Brasil, Angola a Cabo Verde, todas unidas pela língua portuguesa mas únicas nas suas tradições culturais."
-              : "Celebrating the rich diversity of Portuguese-speaking communities in London - from Portugal to Brazil, Angola to Cape Verde, all united by Portuguese language but unique in their cultural traditions."}
+              : "Celebrating the rich diversity of Portuguese-speaking communities in the U.K. - from Portugal to Brazil, Angola to Cape Verde, all united by Portuguese language but unique in their cultural traditions."}
           </p>
         </motion.div>
 
@@ -723,7 +723,7 @@ export default function LusophoneDiversityShowcase() {
             <div className="text-sm text-gray-600">
               {language === "pt"
                 ? "Lusófonos em Londres"
-                : "Portuguese Speakers in London"}
+                : "Portuguese Speakers in the U.K."}
             </div>
           </div>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/50">
@@ -850,7 +850,7 @@ export default function LusophoneDiversityShowcase() {
                       {currentCountry.londonPresence.years}
                     </div>
                     <div className="text-sm opacity-90">
-                      {language === "pt" ? "em Londres" : "in London"}
+                      {language === "pt" ? "em Londres" : "in the U.K."}
                     </div>
                   </div>
                 </div>
@@ -927,7 +927,7 @@ export default function LusophoneDiversityShowcase() {
                     <h4 className="text-xl font-bold text-gray-900 mb-4">
                       {language === "pt"
                         ? "Presença Comunitária em Londres"
-                        : "Community Presence in London"}
+                        : "Community Presence in the U.K."}
                     </h4>
                     <p className="text-gray-700 mb-6">
                       {language === "pt"
@@ -1145,7 +1145,7 @@ export default function LusophoneDiversityShowcase() {
                   <h4 className="text-xl font-bold text-gray-900 mb-6">
                     {language === "pt"
                       ? "Presença Histórica em Londres"
-                      : "Historical Presence in London"}
+                      : "Historical Presence in the U.K."}
                   </h4>
 
                   <div className="bg-gradient-to-r from-primary-50 via-secondary-50 to-accent-50 rounded-lg p-6">
@@ -1240,7 +1240,7 @@ export default function LusophoneDiversityShowcase() {
             <p className="text-lg mb-8 opacity-90 max-w-3xl mx-auto">
               {language === "pt"
                 ? "Junte-se à maior comunidade lusófona de Londres. Independentemente do seu país de origem, todos são bem-vindos na nossa família linguística e cultural diversificada."
-                : "Join London's largest Portuguese-speaking community. Regardless of your country of origin, everyone is welcome in our diverse linguistic and cultural family."}
+                : "Join the U.K.'s largest Portuguese-speaking community. Regardless of your country of origin, everyone is welcome in our diverse linguistic and cultural family."}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <a

@@ -197,12 +197,12 @@ export default function Features() {
                   </div>
                 </div>
                 <p className="text-lg text-gray-600 italic mb-4">
-                  "I was homesick and felt lost in London. Through LusoTown, I found my Portuguese network - professionals who understand my story and welcome me into their circles. Now I have colleagues, mentors, and friends everywhere I go."
+                  "I was homesick and felt lost in the U.K.. Through LusoTown, I found my Portuguese network - professionals who understand my story and welcome me into their circles. Now I have colleagues, mentors, and friends everywhere I go."
                 </p>
               </div>
               
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Built by lusophone professionals from Portugal 🇵🇹, Brazil 🇧🇷, Angola 🇦🇴, Mozambique 🇲🇿, Cape Verde 🇨🇻, and beyond who know what it's like to thrive in London while honoring diverse Portuguese-speaking heritages. 
+                Built by lusophone professionals from Portugal 🇵🇹, Brazil 🇧🇷, Angola 🇦🇴, Mozambique 🇲🇿, Cape Verde 🇨🇻, and beyond who know what it's like to thrive in the U.K. while honoring diverse Portuguese-speaking heritages. 
                 Every feature celebrates our shared language while respecting unique cultural traditions from across the Portuguese-speaking world.
               </p>
             </div>

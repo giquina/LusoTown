@@ -424,7 +424,7 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
           titlePortuguese: `${event.namePortuguese} aproxima-se!`,
           body: language === 'pt'
             ? `Preparate para celebrar a cultura portuguesa em Londres`
-            : `Get ready to celebrate Portuguese culture in London`,
+            : `Get ready to celebrate Portuguese culture in the U.K.`,
           bodyPortuguese: `Preparate para celebrar a cultura portuguesa em Londres`,
           scheduledTime: notificationDate.toISOString(),
           culturalContext: {
@@ -457,7 +457,7 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
         {
           body: language === 'pt'
             ? 'A tua comunidade portuguesa em Londres está conectada!'
-            : 'Your Portuguese community in London is now connected!',
+            : 'Your Portuguese community in the U.K. is now connected!',
           icon: '/icons/icon-192x192.png',
           badge: '/icons/badge-72x72.png',
           tag: 'welcome',

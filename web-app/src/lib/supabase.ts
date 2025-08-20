@@ -850,7 +850,7 @@ export const getMembershipTierConfig = (tier: MembershipTier): MembershipTierCon
       namePortuguese: 'Profissional',
       monthlyPrice: 2500, // £25
       yearlyPrice: 25000, // £250
-      description: 'Full access for Portuguese professionals in London',
+      description: 'Full access for Portuguese professionals in the U.K.',
       descriptionPortuguese: 'Acesso completo para profissionais portugueses em Londres',
       color: 'primary',
       icon: 'BriefcaseIcon',

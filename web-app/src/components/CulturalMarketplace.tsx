@@ -576,7 +576,7 @@ export default function CulturalMarketplace() {
             <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
               {isPortuguese
                 ? 'Conecte-se diretamente com a comunidade portuguesa em Londres. Zero custos iniciais, comissões competitivas e suporte especializado.'
-                : 'Connect directly with the Portuguese community in London. Zero startup costs, competitive commissions, and specialized support.'
+                : 'Connect directly with the Portuguese community in the U.K.. Zero startup costs, competitive commissions, and specialized support.'
               }
             </p>
 
@@ -615,7 +615,7 @@ export default function CulturalMarketplace() {
                 <p className="text-white/80">
                   {isPortuguese
                     ? 'Entrega rápida em Londres e Reino Unido'
-                    : 'Fast delivery in London and across the UK'
+                    : 'Fast delivery in the U.K. and across the UK'
                   }
                 </p>
               </div>

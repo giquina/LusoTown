@@ -248,7 +248,7 @@ export default function Login() {
                   <p className="text-xs text-primary-700 mb-3">
                     {isPortuguese
                       ? "Preencha o seu calendário social com falantes de português em Londres."
-                      : "Fill your social calendar with Portuguese speakers in London."}
+                      : "Fill your social calendar with Portuguese speakers in the U.K.."}
                   </p>
                   <a
                     href={ROUTES.signup}

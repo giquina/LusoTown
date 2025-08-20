@@ -189,7 +189,7 @@ export default function PWAFeaturesPage() {
           <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto">
             {language === 'pt'
               ? 'Experiência móvel completa para a comunidade portuguesa em Londres. App nativo, câmara, localização, notificações e muito mais.'
-              : 'Complete mobile experience for the Portuguese community in London. Native app experience, camera, location, notifications, and much more.'
+              : 'Complete mobile experience for the Portuguese community in the U.K.. Native app experience, camera, location, notifications, and much more.'
             }
           </p>
           
@@ -355,7 +355,7 @@ export default function PWAFeaturesPage() {
             <p className="text-xl mb-8">
               {language === 'pt'
                 ? 'Exploraste todas as funcionalidades PWA da LusoTown! Agora podes desfrutar da experiência completa da comunidade portuguesa em Londres.'
-                : 'You\'ve explored all LusoTown PWA features! Now you can enjoy the complete Portuguese community experience in London.'
+                : 'You\'ve explored all LusoTown PWA features! Now you can enjoy the complete Portuguese community experience in the U.K..'
               }
             </p>
             

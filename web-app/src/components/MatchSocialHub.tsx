@@ -89,7 +89,7 @@ const mockMatches: MatchProfile[] = [
     profession: 'Software Developer',
     origin: 'São Paulo, Brasil',
     interests: ['Football', 'Tech Meetups', 'Brazilian Culture', 'Professional Networking'],
-    bio: 'Brazilian developer passionate about tech and maintaining cultural connections in London.',
+    bio: 'Brazilian developer passionate about tech and maintaining cultural connections in the U.K..',
     compatibility: 89,
     isMatch: true,
     matchedAt: '1 week ago',

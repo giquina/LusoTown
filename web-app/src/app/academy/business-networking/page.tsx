@@ -53,7 +53,7 @@ export default function BusinessNetworkingModule() {
     title: "Business Networking",
     titlePortuguese: "Networking Empresarial",
     description:
-      "Master professional networking within the Portuguese business community in London",
+      "Master professional networking within the Portuguese business community in the U.K.",
     descriptionPortuguese:
       "Domine o networking profissional dentro da comunidade empresarial portuguesa em Londres",
     difficulty: "Intermediate",
@@ -80,12 +80,12 @@ export default function BusinessNetworkingModule() {
     steps: [
       {
         id: "introduction-portuguese-business",
-        title: "Portuguese Business Landscape in London",
+        title: "Portuguese Business Landscape in the U.K.",
         titlePortuguese: "Panorama Empresarial Português em Londres",
         type: "introduction",
         estimatedTime: 4,
         content: `
-          <p>Welcome to the Portuguese business community in London - one of the most dynamic and interconnected networks in the city!</p>
+          <p>Welcome to the Portuguese business community in the U.K. - one of the most dynamic and interconnected networks in the city!</p>
           
           <p>Our business ecosystem spans multiple industries and offers unique advantages:</p>
           
@@ -160,7 +160,7 @@ export default function BusinessNetworkingModule() {
           <ul>
             <li><strong>Family and Background:</strong> Share your Portuguese heritage story</li>
             <li><strong>Regional Pride:</strong> Discuss your connection to specific Portuguese regions</li>
-            <li><strong>London Experience:</strong> Exchange stories about settling in London</li>
+            <li><strong>London Experience:</strong> Exchange stories about settling in the U.K.</li>
             <li><strong>Cultural Interests:</strong> Mention Portuguese traditions you maintain</li>
           </ul>
           
@@ -185,7 +185,7 @@ export default function BusinessNetworkingModule() {
             <li>"What brought you from Portugal to London in your career?"</li>
             <li>"How has your Portuguese background influenced your business approach?"</li>
             <li>"What opportunities do you see in connecting UK and Portuguese markets?"</li>
-            <li>"Which Portuguese business traditions do you maintain in London?"</li>
+            <li>"Which Portuguese business traditions do you maintain in the U.K.?"</li>
           </ul>
         `,
         contentPortuguese: `
@@ -234,7 +234,7 @@ export default function BusinessNetworkingModule() {
                 textPortuguese: "Prepare a sua história de herança portuguesa",
               },
               {
-                text: "Research 3 Portuguese business leaders in London",
+                text: "Research 3 Portuguese business leaders in the U.K.",
                 textPortuguese:
                   "Pesquise 3 líderes empresariais portugueses em Londres",
               },
@@ -403,7 +403,7 @@ export default function BusinessNetworkingModule() {
           data: {
             items: [
               {
-                text: "Research upcoming Portuguese business events in London",
+                text: "Research upcoming Portuguese business events in the U.K.",
                 textPortuguese:
                   "Pesquise próximos eventos empresariais portugueses em Londres",
               },
@@ -442,7 +442,7 @@ export default function BusinessNetworkingModule() {
         type: "interactive",
         estimatedTime: 5,
         content: `
-          <p>Your Portuguese heritage is a significant business asset in London's diverse market. Here's how to leverage it effectively:</p>
+          <p>Your Portuguese heritage is a significant business asset in the U.K.'s diverse market. Here's how to leverage it effectively:</p>
           
           <h3>Cultural Assets for Business Success:</h3>
           
@@ -464,7 +464,7 @@ export default function BusinessNetworkingModule() {
           
           <h4>3. Industry-Specific Opportunities</h4>
           <ul>
-            <li><strong>Tourism & Hospitality:</strong> Authentic Portuguese experiences in London</li>
+            <li><strong>Tourism & Hospitality:</strong> Authentic Portuguese experiences in the U.K.</li>
             <li><strong>Import/Export:</strong> Unique products from Portugal and Portuguese-speaking countries</li>
             <li><strong>Financial Services:</strong> Cross-border banking and investment</li>
             <li><strong>Technology:</strong> Bridge between European and Latin American markets</li>

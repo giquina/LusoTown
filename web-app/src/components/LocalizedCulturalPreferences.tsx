@@ -91,7 +91,7 @@ export default function LocalizedCulturalPreferences({
         {
           id: 'fado-uk',
           name: 'Fado Nights',
-          description: 'Traditional Portuguese music performances in London venues',
+          description: 'Traditional Portuguese music performances in the U.K. venues',
           origin: 'Portugal',
           significance: 'Maintains connection to Portuguese musical heritage',
           modernAdaptation: 'Fusion with contemporary music styles',

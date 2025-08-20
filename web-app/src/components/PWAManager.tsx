@@ -334,7 +334,7 @@ export default function PWAManager({ className = '' }: PWAManagerProps) {
         {
           body: language === 'pt' 
             ? 'A tua comunidade portuguesa em Londres está aqui!' 
-            : 'Your Portuguese community in London is here!',
+            : 'Your Portuguese community in the U.K. is here!',
           icon: '/icons/icon-192x192.png',
           badge: '/icons/badge-72x72.png',
           tag: 'welcome',

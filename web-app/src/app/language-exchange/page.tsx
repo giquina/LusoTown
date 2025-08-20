@@ -55,7 +55,7 @@ const mockExchanges = [
     time: 'Tuesday 7:00 PM',
     duration: '90 minutes',
     level: 'Intermediate to Advanced',
-    description: 'Focus on professional English skills for Portuguese speakers in London workplaces.',
+    description: 'Focus on professional English skills for Portuguese speakers in the U.K. workplaces.',
     participants: 6,
     maxParticipants: 8,
     organizer: {
@@ -79,7 +79,7 @@ const mockExchanges = [
     time: 'Sunday 11:00 AM',
     duration: '2 hours',
     level: 'All Levels',
-    description: 'Explore Portuguese cultural sites in London while practicing both languages.',
+    description: 'Explore Portuguese cultural sites in the U.K. while practicing both languages.',
     participants: 12,
     maxParticipants: 15,
     organizer: {
@@ -246,7 +246,7 @@ export default function LanguageExchangePage() {
               </h1>
               
               <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Connect with Portuguese and English speakers for language practice, cultural exchange, and new friendships in London
+                Connect with Portuguese and English speakers for language practice, cultural exchange, and new friendships in the U.K.
               </p>
 
               {/* Quick Stats */}

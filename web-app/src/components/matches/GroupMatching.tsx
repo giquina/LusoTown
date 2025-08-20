@@ -127,7 +127,7 @@ export default function GroupMatching({
       name: language === "pt" ? "Exploração Cultural" : "Cultural Exploration",
       description: language === "pt"
         ? "Explorar a herança portuguesa em Londres juntos"
-        : "Explore Portuguese heritage in London together",
+        : "Explore Portuguese heritage in the U.K. together",
       icon: "🇵🇹",
       minSize: 3,
       maxSize: 6,
@@ -203,7 +203,7 @@ export default function GroupMatching({
         preferredNeighborhoods: ["Camden", "Islington", "City"],
         description: language === "pt"
           ? "Profissional português em Londres procura expandir rede social. Interessado em networking e desporto."
-          : "Portuguese professional in London looking to expand social network. Interested in networking and sports.",
+          : "Portuguese professional in the U.K. looking to expand social network. Interested in networking and sports.",
         status: "open",
         createdAt: "2025-08-19",
         expiresAt: "2025-09-02",
@@ -226,7 +226,7 @@ export default function GroupMatching({
         preferredNeighborhoods: ["Central London", "South London"],
         description: language === "pt"
           ? "Grupo de jovens portugueses interessados em explorar museus e locais históricos portugueses em Londres."
-          : "Group of young Portuguese interested in exploring museums and Portuguese historical sites in London.",
+          : "Group of young Portuguese interested in exploring museums and Portuguese historical sites in the U.K..",
         status: "open",
         createdAt: "2025-08-18",
         expiresAt: "2025-09-01",
@@ -569,7 +569,7 @@ export default function GroupMatching({
             <p className="text-primary-600 text-sm mb-6">
               {language === "pt"
                 ? "Forme grupos para explorar a cultura portuguesa em Londres juntos!"
-                : "Form groups to explore Portuguese culture in London together!"}
+                : "Form groups to explore Portuguese culture in the U.K. together!"}
             </p>
 
             {/* Request Type Options */}

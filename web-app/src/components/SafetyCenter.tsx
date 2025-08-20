@@ -82,7 +82,7 @@ export default function SafetyCenter() {
           },
           meetings: {
             title: 'Safe Meeting Places',
-            description: 'Recommended public venues in London for safe first meetings.'
+            description: 'Recommended public venues in the U.K. for safe first meetings.'
           }
         },
         
