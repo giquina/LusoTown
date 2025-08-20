@@ -649,17 +649,6 @@ export default function Header() {
                     </h3>
                     <div className="space-y-3">
                       <div className="flex items-start gap-3">
-                        <CartButton className="flex-shrink-0" />
-                        <div className="flex-1 min-w-0">
-                          <h4 className="text-sm font-medium text-gray-900 mb-1">
-                            {t("cart.title", "Your Cart")}
-                          </h4>
-                          <p className="text-xs text-gray-600 leading-relaxed">
-                            {t("cart.description", "View and manage your saved events, tours, and services. Complete your booking from here.")}
-                          </p>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-3">
                         <SavedItemsButton className="flex-shrink-0" />
                         <div className="flex-1 min-w-0">
                           <h4 className="text-sm font-medium text-gray-900 mb-1">
