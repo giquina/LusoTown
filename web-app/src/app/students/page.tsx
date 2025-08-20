@@ -348,7 +348,7 @@ const UNIVERSITIES: University[] = [
       'Edinburgh Portuguese Society partnership',
       'Scottish-Portuguese cultural exchange',
       'Research funding for Portuguese studies',
-      'Virtual connection to London Portuguese community'
+      'Virtual connection to U.K. Portuguese community'
     ],
     website: 'https://www.ed.ac.uk',
     contact: {

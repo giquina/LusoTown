@@ -137,7 +137,7 @@ export default function MyNetworkPage() {
               <p className="text-lg sm:text-xl text-gray-600 mb-8">
                 {isPortuguese 
                   ? 'Conecte-se com falantes de português que conheceu em eventos do LusoTown. Construa amizades duradouras e explore Londres juntos.'
-                  : 'Connect with Portuguese speakers you\'ve met at LusoTown events. Build lasting friendships and explore London together.'
+                  : 'Connect with Portuguese speakers you\'ve met at LusoTown events. Build lasting friendships and explore the U.K. together.'
                 }
               </p>
 

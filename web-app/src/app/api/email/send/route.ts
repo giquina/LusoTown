@@ -181,7 +181,7 @@ function generateEmailHTML(content: EmailContent, userInfo: any): string {
               <strong>LusoTown</strong> - ${
                 content.language === "pt"
                   ? "A Sua Comunidade Portuguesa em Londres"
-                  : "Your Portuguese Community in London"
+                  : "Your Portuguese Community in the U.K."
               }
             </p>
             <p>

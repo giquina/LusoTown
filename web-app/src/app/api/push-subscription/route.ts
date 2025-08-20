@@ -185,7 +185,7 @@ async function sendWelcomeNotification(subscription: any, language: string = 'en
       title: language === 'pt' ? '🇵🇹 Bem-vindo à LusoTown!' : '🇵🇹 Welcome to LusoTown!',
       body: language === 'pt'
         ? 'A tua comunidade portuguesa em Londres está agora conectada!'
-        : 'Your Portuguese community in London is now connected!',
+        : 'Your Portuguese community in the U.K. is now connected!',
       icon: '/icons/icon-192x192.png',
       badge: '/icons/badge-72x72.png',
       tag: 'welcome',
@@ -226,7 +226,7 @@ export async function schedulePortugueseCulturalNotifications() {
       titlePT: 'Dia da Liberdade',
       titleEN: 'Freedom Day',
       bodyPT: 'Celebra a liberdade e democracia portuguesas em Londres',
-      bodyEN: 'Celebrate Portuguese freedom and democracy in London'
+      bodyEN: 'Celebrate Portuguese freedom and democracy in the U.K.'
     },
     {
       date: '2025-06-10',

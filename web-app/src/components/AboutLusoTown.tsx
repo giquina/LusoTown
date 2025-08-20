@@ -27,7 +27,7 @@ export default function AboutLusoTown() {
     {
       icon: Calendar,
       title: 'Discover & Join Events',
-      description: 'Find Portuguese cultural events at authentic London venues - from Fado nights to food festivals at real Portuguese locations.',
+      description: 'Find Portuguese cultural events at authentic U.K. venues - from Fado nights to food festivals at real Portuguese locations.',
       gradient: 'from-action-500 to-action-600',
       lightBg: 'from-action-50 to-action-100/50',
       shadowColor: 'shadow-action-500/20'
@@ -67,7 +67,7 @@ export default function AboutLusoTown() {
     {
       icon: Users,
       title: 'Connect with Portuguese Speakers',
-      description: 'Find Your Match among Portuguese speakers through real-life meetups at authentic London venues, share experiences, and keep your language and traditions alive.',
+      description: 'Find Your Match among Portuguese speakers through real-life meetups at authentic U.K. venues, share experiences, and keep your language and traditions alive.',
       gradient: 'from-coral-500 to-action-500',
       lightBg: 'from-coral-50 to-action-100/50',
       shadowColor: 'shadow-coral-500/20'
@@ -102,7 +102,7 @@ export default function AboutLusoTown() {
           </h2>
           
           <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto font-medium">
-            LusoTown is where Portuguese hearts find their London network. Whether you're homesick, building your career while honoring your heritage, 
+            LusoTown is where Portuguese hearts find their U.K. network. Whether you're homesick, building your career while honoring your heritage, 
             or simply miss the warmth of Portuguese conversation, this is your professional home. Every person here understands your journey and opens their networks to support you.
           </p>
         </div>
@@ -158,7 +158,7 @@ export default function AboutLusoTown() {
         <div className={`text-center mt-12 transition-all duration-1000 delay-900 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           <div className="inline-flex items-center gap-3 text-accent-600 hover:text-accent-700 transition-colors duration-300">
             <Sparkles className="h-6 w-6 animate-pulse" />
-            <span className="text-lg font-bold">Ready to book experiences with Portuguese speakers across London?</span>
+            <span className="text-lg font-bold">Ready to book experiences with Portuguese speakers across the U.K.?</span>
             <ArrowRight className="h-6 w-6 transform group-hover:translate-x-1 transition-transform duration-200" />
           </div>
         </div>
