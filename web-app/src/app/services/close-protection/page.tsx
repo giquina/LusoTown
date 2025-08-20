@@ -22,6 +22,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import FrameworkPillars from '@/components/FrameworkPillars';
 import SubscriptionGate from '@/components/SubscriptionGate';
 import TrustBadges from '@/components/TrustBadges';
+import { ROUTES } from '@/config/routes';
 
 // Close Protection specific trust indicators
 const trustIndicators = [
@@ -526,7 +527,7 @@ export default function CloseProtectionPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.location.href = '/contact'}
+                onClick={() => window.location.href = ROUTES.contact}
                 className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-premium-600 transition-all duration-200"
               >
                 {isPortuguese ? 'Contactar' : 'Contact Us'}

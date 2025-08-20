@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { PlayIcon, EyeIcon, ClockIcon, UserGroupIcon } from '@heroicons/react/24/outline'
 import { Crown, Users, Briefcase, GraduationCap, Music, Camera, MapPin, Calendar } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config/routes'
 
 interface Stream {
   id: string
@@ -274,7 +275,7 @@ export default function StreamCard({
             </button>
           ) : (
             <a
-              href="/subscription"
+              href={ROUTES.subscription}
               className="px-3 py-1.5 bg-premium-600 text-white text-xs rounded-lg hover:bg-premium-700 transition-colors flex items-center gap-1"
             >
               <Crown className="w-3 h-3" />

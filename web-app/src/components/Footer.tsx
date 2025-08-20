@@ -7,10 +7,11 @@ import {
 } from "@heroicons/react/24/outline";
 import { useLanguage } from "@/context/LanguageContext";
 import Logo from "@/components/Logo";
+import { ROUTES } from '@/config/routes'
 
 const getFooterLinks = (t: any) => ({
   community: [
-    { name: "Events & Culture", href: "/events" },
+    { name: "Events & Culture", href: ROUTES.events },
     { name: "Community", href: "/community" },
     { name: "Become a Host", href: "/host" },
     { name: "Business Directory", href: "/directory" },

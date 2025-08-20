@@ -1,3 +1,6 @@
+import { SITE_URL } from '@/config/site'
+import { ROUTES } from '@/config/routes'
+
 /**
  * YouTube API Service for LusoTown's Streaming Platform
  * Handles all YouTube API operations with Portuguese cultural content focus
@@ -419,9 +422,10 @@ class YouTubeAPIService {
 
     // Add community links
     enhanced += '🔗 Links úteis:\n';
-    enhanced += '• Website: https://lusotown.com\n';
-    enhanced += '• Eventos: https://lusotown.com/events\n';
-    enhanced += '• Comunidade: https://lusotown.com/my-network\n';
+  const site = (process.env.NEXT_PUBLIC_SITE_URL || '').trim() || SITE_URL;
+  enhanced += `• Website: ${site}\n`;
+  enhanced += `• Eventos: ${site}${ROUTES.events}\n`;
+  enhanced += `• Comunidade: ${site}${ROUTES.myNetwork}\n`;
     enhanced += '• Instagram: @LusoTownLondon\n';
 
     return enhanced;
@@ -611,4 +615,5 @@ class YouTubeAPIService {
   }
 }
 
-export default new YouTubeAPIService();
+const youTubeService = new YouTubeAPIService();
+export default youTubeService;

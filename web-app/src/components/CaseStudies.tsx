@@ -16,6 +16,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { getImageWithFallback } from '@/lib/profileImages'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config/routes'
 import { createMixedTestimonials } from '@/lib/testimonialMixer'
 
 interface CaseStudy {
@@ -670,7 +671,7 @@ export default function CaseStudies() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="/events"
+                  href={ROUTES.events}
                   className="group relative text-lg font-bold px-10 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-secondary-700 via-action-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -680,7 +681,7 @@ export default function CaseStudies() {
                   </span>
                 </a>
                 <a
-                  href="/signup"
+                  href={ROUTES.signup}
                   className="text-lg font-bold px-10 py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 hover:bg-white/90"
                 >
                   Join the Community

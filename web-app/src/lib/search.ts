@@ -1,6 +1,7 @@
 'use client'
 
 import { Event, eventService } from '@/lib/events'
+import { ROUTES } from '@/config/routes'
 
 export interface SearchResult {
   id: string
@@ -148,7 +149,7 @@ const mockPages = [
     id: 'events-page',
     title: 'Events & Tours',
     description: 'Discover Portuguese cultural events, tours, and activities in London',
-    url: '/events',
+  url: ROUTES.events,
     category: 'Navigation',
     tags: ['events', 'tours', 'activities', 'culture', 'social calendar']
   },

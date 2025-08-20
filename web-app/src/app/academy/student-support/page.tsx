@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-import { 
+import {
   AcademicCapIcon,
   CurrencyPoundIcon,
   UserGroupIcon,
@@ -14,21 +14,25 @@ import {
   PhoneIcon,
   ComputerDesktopIcon,
   ChatBubbleLeftEllipsisIcon,
-  ClockIcon
+  ClockIcon,
 } from "@heroicons/react/24/outline";
-import LearningModuleFramework, { LearningModule } from "../../../components/academy/LearningModuleFramework";
+import LearningModuleFramework, {
+  LearningModule,
+} from "../../../components/academy/LearningModuleFramework";
 // Using local page-defined module shape; no external types import
 
 const studentSupportModule = {
-  id: 'student-support',
-  title: 'Student Support',
-  titlePortuguese: 'Apoio ao Estudante',
-  description: 'Comprehensive support system for Portuguese students in UK universities',
-  descriptionPortuguese: 'Sistema abrangente de apoio para estudantes portugueses em universidades do Reino Unido',
-  difficulty: 'Beginner',
+  id: "student-support",
+  title: "Student Support",
+  titlePortuguese: "Apoio ao Estudante",
+  description:
+    "Comprehensive support system for Portuguese students in UK universities",
+  descriptionPortuguese:
+    "Sistema abrangente de apoio para estudantes portugueses em universidades do Reino Unido",
+  difficulty: "Beginner",
   estimatedTime: 25,
-  category: 'education',
-  categoryPortuguese: 'educação',
+  category: "education",
+  categoryPortuguese: "educação",
   icon: AcademicCapIcon,
   prerequisites: [],
   prerequisitesPortuguese: [],
@@ -38,9 +42,9 @@ const studentSupportModule = {
   resources: [],
   steps: [
     {
-      id: 'university-partnerships',
-      title: 'University Partnership Network',
-      titlePortuguese: 'Rede de Parcerias Universitárias',
+      id: "university-partnerships",
+      title: "University Partnership Network",
+      titlePortuguese: "Rede de Parcerias Universitárias",
       content: `
         <p>LusoTown has established partnerships with 8 leading UK universities to provide dedicated support for Portuguese-speaking students. Our network ensures you have access to cultural familiarity and language support throughout your academic journey.</p>
         
@@ -105,34 +109,38 @@ const studentSupportModule = {
       estimatedTime: 8,
       interactiveElements: [
         {
-          type: 'checklist',
-          title: 'University Partnership Checklist',
-          titlePortuguese: 'Lista de Verificação de Parcerias Universitárias',
+          type: "checklist",
+          title: "University Partnership Checklist",
+          titlePortuguese: "Lista de Verificação de Parcerias Universitárias",
           items: [
-            { 
-              text: 'Connect with Portuguese student societies at your university',
-              textPortuguese: 'Conectar-se com associações de estudantes portugueses na sua universidade'
+            {
+              text: "Connect with Portuguese student societies at your university",
+              textPortuguese:
+                "Conectar-se com associações de estudantes portugueses na sua universidade",
             },
-            { 
-              text: 'Register for Portuguese-speaking academic support services',
-              textPortuguese: 'Registar-se para serviços de apoio académico em português'
+            {
+              text: "Register for Portuguese-speaking academic support services",
+              textPortuguese:
+                "Registar-se para serviços de apoio académico em português",
             },
-            { 
-              text: 'Join cross-university Portuguese student events',
-              textPortuguese: 'Juntar-se a eventos de estudantes portugueses inter-universitários'
+            {
+              text: "Join cross-university Portuguese student events",
+              textPortuguese:
+                "Juntar-se a eventos de estudantes portugueses inter-universitários",
             },
-            { 
-              text: 'Access career services with Portuguese network connections',
-              textPortuguese: 'Aceder a serviços de carreira com conexões da rede portuguesa'
-            }
-          ]
-        }
-      ]
+            {
+              text: "Access career services with Portuguese network connections",
+              textPortuguese:
+                "Aceder a serviços de carreira com conexões da rede portuguesa",
+            },
+          ],
+        },
+      ],
     },
     {
-      id: 'financial-support',
-      title: 'Financial Support & Scholarships',
-      titlePortuguese: 'Apoio Financeiro e Bolsas',
+      id: "financial-support",
+      title: "Financial Support & Scholarships",
+      titlePortuguese: "Apoio Financeiro e Bolsas",
       content: `
         <p>Navigate the complex landscape of UK university funding with dedicated support for Portuguese students. We help you access scholarships, understand student finance, and manage costs effectively.</p>
         
@@ -217,34 +225,38 @@ const studentSupportModule = {
       estimatedTime: 7,
       interactiveElements: [
         {
-          type: 'checklist',
-          title: 'Financial Planning Checklist',
-          titlePortuguese: 'Lista de Verificação de Planeamento Financeiro',
+          type: "checklist",
+          title: "Financial Planning Checklist",
+          titlePortuguese: "Lista de Verificação de Planeamento Financeiro",
           items: [
-            { 
-              text: 'Research and apply for Portuguese-specific scholarships',
-              textPortuguese: 'Pesquisar e candidatar-se a bolsas específicas para portugueses'
+            {
+              text: "Research and apply for Portuguese-specific scholarships",
+              textPortuguese:
+                "Pesquisar e candidatar-se a bolsas específicas para portugueses",
             },
-            { 
-              text: 'Open UK bank account with Portuguese documentation support',
-              textPortuguese: 'Abrir conta bancária do Reino Unido com apoio de documentação portuguesa'
+            {
+              text: "Open UK bank account with Portuguese documentation support",
+              textPortuguese:
+                "Abrir conta bancária do Reino Unido com apoio de documentação portuguesa",
             },
-            { 
-              text: 'Attend monthly budgeting workshops in Portuguese',
-              textPortuguese: 'Participar em workshops mensais de orçamentação em português'
+            {
+              text: "Attend monthly budgeting workshops in Portuguese",
+              textPortuguese:
+                "Participar em workshops mensais de orçamentação em português",
             },
-            { 
-              text: 'Register for LusoTown student discount membership',
-              textPortuguese: 'Registar-se para a membresía com desconto estudantil da LusoTown'
-            }
-          ]
-        }
-      ]
+            {
+              text: "Register for LusoTown student discount membership",
+              textPortuguese:
+                "Registar-se para a membresía com desconto estudantil da LusoTown",
+            },
+          ],
+        },
+      ],
     },
     {
-      id: 'academic-integration',
-      title: 'Academic Integration & Support',
-      titlePortuguese: 'Integração e Apoio Académico',
+      id: "academic-integration",
+      title: "Academic Integration & Support",
+      titlePortuguese: "Integração e Apoio Académico",
       content: `
         <p>Thrive academically with culturally-aware support systems designed specifically for Portuguese students navigating UK higher education.</p>
         
@@ -365,38 +377,44 @@ const studentSupportModule = {
       estimatedTime: 6,
       interactiveElements: [
         {
-          type: 'decision-tree',
-          title: 'Find Your Academic Support',
-          titlePortuguese: 'Encontre o Seu Apoio Académico',
-          question: 'What type of academic support do you need most?',
-          questionPortuguese: 'Que tipo de apoio académico mais precisa?',
+          type: "decision-tree",
+          title: "Find Your Academic Support",
+          titlePortuguese: "Encontre o Seu Apoio Académico",
+          question: "What type of academic support do you need most?",
+          questionPortuguese: "Que tipo de apoio académico mais precisa?",
           options: [
             {
-              text: 'Study groups for specific subjects',
-              textPortuguese: 'Grupos de estudo para disciplinas específicas',
-              result: 'Join Portuguese study groups in your field - available for engineering, business, medicine, humanities, and more.',
-              resultPortuguese: 'Junte-se a grupos de estudo portugueses na sua área - disponível para engenharia, negócios, medicina, humanidades e mais.'
+              text: "Study groups for specific subjects",
+              textPortuguese: "Grupos de estudo para disciplinas específicas",
+              result:
+                "Join Portuguese study groups in your field - available for engineering, business, medicine, humanities, and more.",
+              resultPortuguese:
+                "Junte-se a grupos de estudo portugueses na sua área - disponível para engenharia, negócios, medicina, humanidades e mais.",
             },
             {
-              text: 'Academic writing and English support',
-              textPortuguese: 'Apoio à escrita académica e inglês',
-              result: 'Access Language Bridge Support with specialized academic English coaching.',
-              resultPortuguese: 'Aceda ao Apoio Ponte Linguística com coaching especializado em inglês académico.'
+              text: "Academic writing and English support",
+              textPortuguese: "Apoio à escrita académica e inglês",
+              result:
+                "Access Language Bridge Support with specialized academic English coaching.",
+              resultPortuguese:
+                "Aceda ao Apoio Ponte Linguística com coaching especializado em inglês académico.",
             },
             {
-              text: 'Mentorship and career guidance',
-              textPortuguese: 'Mentoria e orientação de carreira',
-              result: 'Connect with Portuguese professionals and academic mentors in your field.',
-              resultPortuguese: 'Conecte-se com profissionais portugueses e mentores académicos na sua área.'
-            }
-          ]
-        }
-      ]
+              text: "Mentorship and career guidance",
+              textPortuguese: "Mentoria e orientação de carreira",
+              result:
+                "Connect with Portuguese professionals and academic mentors in your field.",
+              resultPortuguese:
+                "Conecte-se com profissionais portugueses e mentores académicos na sua área.",
+            },
+          ],
+        },
+      ],
     },
     {
-      id: 'community-connection',
-      title: 'Student Community & Social Integration',
-      titlePortuguese: 'Comunidade Estudantil e Integração Social',
+      id: "community-connection",
+      title: "Student Community & Social Integration",
+      titlePortuguese: "Comunidade Estudantil e Integração Social",
       content: `
         <p>Build lasting friendships and professional networks with fellow Portuguese students across London and the UK. Our community events are designed to create meaningful connections while celebrating Portuguese culture.</p>
         
@@ -531,35 +549,40 @@ const studentSupportModule = {
       estimatedTime: 4,
       interactiveElements: [
         {
-          type: 'checklist',
-          title: 'Community Integration Checklist',
-          titlePortuguese: 'Lista de Verificação de Integração Comunitária',
+          type: "checklist",
+          title: "Community Integration Checklist",
+          titlePortuguese: "Lista de Verificação de Integração Comunitária",
           items: [
-            { 
-              text: 'Join weekly coffee meetups with Portuguese students',
-              textPortuguese: 'Juntar-se aos encontros semanais de café com estudantes portugueses'
+            {
+              text: "Join weekly coffee meetups with Portuguese students",
+              textPortuguese:
+                "Juntar-se aos encontros semanais de café com estudantes portugueses",
             },
-            { 
-              text: 'Connect with university-specific WhatsApp groups',
-              textPortuguese: 'Conectar-se com grupos WhatsApp específicos da universidade'
+            {
+              text: "Connect with university-specific WhatsApp groups",
+              textPortuguese:
+                "Conectar-se com grupos WhatsApp específicos da universidade",
             },
-            { 
-              text: 'Attend monthly cultural walks and events',
-              textPortuguese: 'Participar em caminhadas culturais e eventos mensais'
+            {
+              text: "Attend monthly cultural walks and events",
+              textPortuguese:
+                "Participar em caminhadas culturais e eventos mensais",
             },
-            { 
-              text: 'Participate in professional development workshops',
-              textPortuguese: 'Participar em workshops de desenvolvimento profissional'
+            {
+              text: "Participate in professional development workshops",
+              textPortuguese:
+                "Participar em workshops de desenvolvimento profissional",
             },
-            { 
-              text: 'Find Portuguese study buddies and accommodation sharing',
-              textPortuguese: 'Encontrar companheiros de estudo portugueses e partilha de alojamento'
-            }
-          ]
-        }
-      ]
-    }
-  ]
+            {
+              text: "Find Portuguese study buddies and accommodation sharing",
+              textPortuguese:
+                "Encontrar companheiros de estudo portugueses e partilha de alojamento",
+            },
+          ],
+        },
+      ],
+    },
+  ],
 };
 
 export default function StudentSupportPage() {
@@ -567,7 +590,9 @@ export default function StudentSupportPage() {
 
   // basic handlers to satisfy component contract
   const handleStepComplete = (stepId: string) => {
-    setCompletedSteps((prev) => (prev.includes(stepId) ? prev : [...prev, stepId]));
+    setCompletedSteps((prev) =>
+      prev.includes(stepId) ? prev : [...prev, stepId]
+    );
   };
   const handleComplete = () => {
     // no-op for now

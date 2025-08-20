@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState, Suspense } from 'react'
+import { ROUTES } from '@/config/routes'
 import { motion } from 'framer-motion'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useLanguage } from '@/context/LanguageContext'
@@ -22,7 +23,7 @@ function SuccessPageContent() {
   const [isLoading, setIsLoading] = useState(true)
   
   const isPortuguese = language === 'pt'
-  const sessionId = searchParams.get('session_id')
+  const sessionId = searchParams?.get('session_id') || ''
 
   useEffect(() => {
     // Verify the subscription and update status
@@ -54,7 +55,7 @@ function SuccessPageContent() {
       title: isPortuguese ? 'Junte-se a Eventos' : 'Join Events',
       description: isPortuguese ? 'Descubra eventos culturais e atividades da comunidade' : 'Discover cultural events and community activities',
       action: isPortuguese ? 'Ver Eventos' : 'View Events',
-      link: '/events'
+    link: ROUTES.events
     },
     {
       icon: ShieldCheckIcon,
@@ -178,7 +179,7 @@ function SuccessPageContent() {
                         {isPortuguese ? 'Ir para o Dashboard' : 'Go to Dashboard'}
                       </button>
                       <button
-                        onClick={() => router.push('/events')}
+                        onClick={() => router.push(require('@/config/routes').ROUTES.events)}
                         className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary-600 transition-colors"
                       >
                         {isPortuguese ? 'Ver Eventos' : 'Browse Events'}

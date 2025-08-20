@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  distDir: '.next',
+  distDir: ".next",
   transpilePackages: ["@lusotown/ui", "@lusotown/design-tokens"],
   images: {
     unoptimized: false,
@@ -89,23 +89,26 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/streaming',
-        destination: '/live',
+        source: "/streaming",
+        destination: "/live",
         permanent: true,
       },
     ];
   },
   experimental: {
-  scrollRestoration: true,
+    scrollRestoration: true,
   },
   webpack: (config, { dev, isServer }) => {
     // Enable react-native-web + monorepo shared packages
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
-      'react-native$': 'react-native-web',
+      "react-native$": "react-native-web",
     };
     config.resolve.extensions = [
-      '.web.tsx', '.web.ts', '.web.jsx', '.web.js',
+      ".web.tsx",
+      ".web.ts",
+      ".web.jsx",
+      ".web.js",
       ...config.resolve.extensions,
     ];
 

@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { ROUTES } from '@/config/routes'
 import Footer from '@/components/Footer'
 import { 
   ChatBubbleLeftRightIcon,
@@ -371,14 +372,14 @@ export default function HowItWorks() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
-                  href="/events" 
+                  href={ROUTES.events} 
                   className="bg-white text-primary-600 hover:bg-gray-100 font-semibold px-8 py-4 rounded-lg text-lg transition-colors duration-200 inline-flex items-center gap-2"
                 >
                   Browse Real Meetups
                   <ArrowRightIcon className="w-5 h-5" />
                 </a>
                 <a 
-                  href="/signup" 
+                  href={ROUTES.signup} 
                   className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-200"
                 >
                   Start Free

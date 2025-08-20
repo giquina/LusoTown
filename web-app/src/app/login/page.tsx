@@ -22,6 +22,7 @@ import { useSubscription } from "@/context/SubscriptionContext";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
 import SocialLogin from "@/components/SocialLogin";
+import { ROUTES } from "@/config/routes";
 
 export default function Login() {
   const [formData, setFormData] = useState({
@@ -42,7 +43,7 @@ export default function Login() {
   useEffect(() => {
     // Redirect if already authenticated
     if (authService.isAuthenticated()) {
-      router.push("/dashboard");
+      router.push(ROUTES.dashboard);
     }
   }, [router]);
 
@@ -104,9 +105,9 @@ export default function Login() {
       if (result.success) {
         // Redirect based on user role
         if (result.user?.role === "admin") {
-          router.push("/admin");
+          router.push(ROUTES.admin);
         } else {
-          router.push("/dashboard");
+          router.push(ROUTES.dashboard);
         }
       } else {
         setError(
@@ -125,10 +126,10 @@ export default function Login() {
     }
   };
 
-  // Test credentials for demo
+  // Test credentials for demo (placeholders only)
   const testCredentials = {
-    email: "demo@lusotown.com",
-    password: "LusoTown2025!",
+    email: "demo@example.com",
+    password: "demo-password",
   };
 
   const fillTestCredentials = () => {
@@ -218,13 +219,13 @@ export default function Login() {
                     <div className="text-xs text-gray-600 mb-1">
                       Email:{" "}
                       <span className="font-mono text-gray-900">
-                        demo@lusotown.com
+                        demo@example.com
                       </span>
                     </div>
                     <div className="text-xs text-gray-600">
                       Password:{" "}
                       <span className="font-mono text-gray-900">
-                        LusoTown2025!
+                        demo-password
                       </span>
                     </div>
                   </div>
@@ -250,7 +251,7 @@ export default function Login() {
                       : "Fill your social calendar with Portuguese speakers in London."}
                   </p>
                   <a
-                    href="/signup"
+                    href={ROUTES.signup}
                     className="block w-full text-center p-3 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all text-sm font-semibold shadow-md hover:shadow-lg"
                   >
                     {isPortuguese ? "Juntar à Rede →" : "Join Our Network →"}
@@ -366,7 +367,7 @@ export default function Login() {
                     </div>
 
                     <a
-                      href="/forgot-password"
+                      href={ROUTES.forgotPassword}
                       className="text-sm text-primary-500 hover:text-primary-600 font-medium"
                     >
                       {isPortuguese
@@ -424,7 +425,7 @@ export default function Login() {
                         ? "Não tem conta?"
                         : "Don't have an account?"}{" "}
                       <a
-                        href="/signup"
+                        href={ROUTES.signup}
                         className="text-primary-500 hover:text-primary-600 font-semibold"
                       >
                         {isPortuguese ? "Juntar à Família" : "Join Our Family"}
@@ -440,14 +441,14 @@ export default function Login() {
                       ? "Ao entrar, concorda com os nossos"
                       : "By signing in, you agree to our"}{" "}
                     <a
-                      href="/terms"
+                      href={ROUTES.terms}
                       className="text-primary-500 hover:text-primary-600"
                     >
                       {isPortuguese ? "Termos de Serviço" : "Terms of Service"}
                     </a>{" "}
                     {isPortuguese ? "e" : "and"}{" "}
                     <a
-                      href="/privacy"
+                      href={ROUTES.privacy}
                       className="text-primary-500 hover:text-primary-600"
                     >
                       {isPortuguese

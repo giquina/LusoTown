@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { ROUTES } from '@/config/routes'
 import { 
   ArrowRightIcon,
   XMarkIcon,
@@ -50,7 +51,7 @@ export default function CrossPlatformNavigationWidget({
 
   useEffect(() => {
     setHasUnreadNotifications(unreadNotifications.length > 0)
-  }, [crossPlatformNotifications])
+  }, [crossPlatformNotifications, unreadNotifications.length])
 
   // Don't show on homepage unless always visible
   if (currentPage === 'home' && !alwaysVisible) {
@@ -81,7 +82,7 @@ export default function CrossPlatformNavigationWidget({
             id: 'transport-to-events',
             title: isPortuguese ? 'Eventos Portugueses' : 'Portuguese Events',
             description: isPortuguese ? 'Encontre eventos para ir com seu transporte' : 'Find events to go to with your transport',
-            action: '/events',
+            action: ROUTES.events,
             icon: CalendarDaysIcon,
             color: 'secondary',
             badge: stats.eventsAttended < 3 ? (isPortuguese ? 'Novo' : 'New') : null
@@ -90,7 +91,7 @@ export default function CrossPlatformNavigationWidget({
             id: 'transport-to-networking',
             title: isPortuguese ? 'Rede Portuguesa' : 'Portuguese Network',
             description: isPortuguese ? 'Conecte-se com outros que usam transporte' : 'Connect with others who use transport',
-            action: '/my-network',
+            action: ROUTES.myNetwork,
             icon: UserGroupIcon,
             color: 'accent',
             badge: connections.length >= 3 ? `${connections.length}` : null
@@ -103,7 +104,7 @@ export default function CrossPlatformNavigationWidget({
             id: 'events-to-transport',
             title: isPortuguese ? 'Transporte Premium' : 'Premium Transport',
             description: isPortuguese ? 'Chegue ao evento com segurança e estilo' : 'Arrive at the event safely and in style',
-            action: '/transport',
+            action: ROUTES.transport,
             icon: Car,
             color: 'primary',
             badge: hasActiveSubscription ? `${serviceDiscount}% OFF` : null
@@ -112,7 +113,7 @@ export default function CrossPlatformNavigationWidget({
             id: 'events-to-group-transport',
             title: isPortuguese ? 'Transporte Privado' : 'Private Transport',
             description: isPortuguese ? 'Vá com suas conexões do LusoTown' : 'Go with your LusoTown connections',
-            action: '/transport?mode=group',
+              action: ROUTES.transportGroup,
             icon: Users,
             color: 'secondary',
             badge: connections.length >= 2 ? (isPortuguese ? 'Disponível' : 'Available') : null
@@ -125,7 +126,7 @@ export default function CrossPlatformNavigationWidget({
             id: 'community-to-events',
             title: isPortuguese ? 'Eventos da Comunidade' : 'Community Events',
             description: isPortuguese ? 'Participe de eventos com sua rede' : 'Join events with your network',
-            action: '/events',
+            action: ROUTES.events,
             icon: CalendarDaysIcon,
             color: 'secondary',
             badge: null
@@ -134,7 +135,7 @@ export default function CrossPlatformNavigationWidget({
             id: 'community-to-premium-services',
             title: isPortuguese ? 'Serviços Premium' : 'Premium Services',
             description: isPortuguese ? 'Acesso exclusivo a transporte VIP' : 'Exclusive access to VIP transport',
-            action: '/transport',
+              action: ROUTES.transport,
             icon: Crown,
             color: 'premium',
             badge: hasActiveSubscription ? (isPortuguese ? 'Incluído' : 'Included') : null
@@ -147,7 +148,7 @@ export default function CrossPlatformNavigationWidget({
             id: 'networking-to-events',
             title: isPortuguese ? 'Eventos para Networking' : 'Networking Events',
             description: isPortuguese ? 'Encontre eventos para expandir sua rede' : 'Find events to expand your network',
-            action: '/events?category=networking',
+            action: `${ROUTES.events}?category=networking`,
             icon: SparklesIcon,
             color: 'accent',
             badge: null
@@ -156,7 +157,7 @@ export default function CrossPlatformNavigationWidget({
             id: 'networking-to-group-services',
             title: isPortuguese ? 'Serviços em Grupo' : 'Group Services',
             description: isPortuguese ? 'Organize transporte com suas conexões' : 'Organize transport with your connections',
-            action: '/transport?mode=group',
+              action: ROUTES.transportGroup,
             icon: UsersIcon,
             color: 'primary',
             badge: connections.length >= 3 ? (isPortuguese ? 'Economia 30%' : '30% Savings') : null
@@ -253,9 +254,12 @@ export default function CrossPlatformNavigationWidget({
                           <p className="text-xs text-gray-600 mb-2">
                             {notification.message}
                           </p>
-                          {notification.actionUrl && (
+                          {notification.actionType === 'redirect' && (notification.actionData as any)?.url && (
                             <button
-                              onClick={() => window.location.href = notification.actionUrl}
+                              onClick={() => {
+                                const url = (notification.actionData as any)?.url as string | undefined
+                                if (url) window.location.href = url
+                              }}
                               className="text-primary-600 text-xs font-medium hover:text-primary-700"
                             >
                               {isPortuguese ? 'Ver Mais' : 'See More'}
@@ -333,7 +337,7 @@ export default function CrossPlatformNavigationWidget({
                         </p>
                         <button
                           onClick={() => {
-                            console.log('Recommendation clicked:', currentPage, rec.action)
+                            console.log('Recommendation clicked:', currentPage, rec.id)
                             setIsExpanded(false)
                           }}
                           className="text-accent-600 text-xs font-medium hover:text-accent-700"

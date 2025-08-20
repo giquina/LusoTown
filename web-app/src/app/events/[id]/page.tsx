@@ -25,6 +25,7 @@ import EventReviewSystem from '@/components/EventReviewSystem'
 import { Event, EventReview, eventService } from '@/lib/events'
 import { authService } from '@/lib/auth'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config/routes'
 
 
 
@@ -331,7 +332,7 @@ export default function EventDetailsPage() {
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Event Not Found</h2>
             <p className="text-gray-600 mb-6">The event you're looking for doesn't exist or has been removed.</p>
             <a
-              href="/events"
+              href={ROUTES.events}
               className="bg-primary-500 text-white px-6 py-3 rounded-lg hover:bg-primary-600 transition-colors font-medium"
             >
               Browse All Events

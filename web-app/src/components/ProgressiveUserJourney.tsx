@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   TruckIcon, 
@@ -17,6 +17,7 @@ import {
   MegaphoneIcon
 } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config/routes'
 import { useNetworking } from '@/context/NetworkingContext'
 
 interface UserJourneyStage {
@@ -68,7 +69,48 @@ export default function ProgressiveUserJourney({
   const isPortuguese = language === 'pt'
 
   // Define user journey stages with Portuguese cultural context
-  const stages: UserJourneyStage[] = [
+  const calculateDiscoveryProgress = useCallback(function calculateDiscoveryProgress(): number {
+    let progress = 0
+    const hasCompletedProfile = typeof window !== 'undefined' ? localStorage.getItem('lusotown-profile-completed') : null
+    if (hasCompletedProfile) progress += 40
+    const visitedPages = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('lusotown-visited-pages') || '[]') : []
+    if (visitedPages.includes('/events')) progress += 30
+    if (visitedPages.includes('/transport')) progress += 30
+    return Math.min(progress, 100)
+  }, [])
+
+  const calculateEngagementProgress = useCallback(function calculateEngagementProgress(): number {
+    let progress = 0
+    if (stats.eventsAttended > 0) progress += 50
+    if (connections.length > 0) progress += 30
+    const hasBookedTransport = typeof window !== 'undefined' ? localStorage.getItem('lusotown-transport-booked') : null
+    if (hasBookedTransport) progress += 20
+    return Math.min(progress, 100)
+  }, [stats.eventsAttended, connections.length])
+
+  const calculateInvestmentProgress = useCallback(function calculateInvestmentProgress(): number {
+    let progress = 0
+    const hasSubscription = typeof window !== 'undefined' ? localStorage.getItem('lusotown-subscription-active') : null
+    if (hasSubscription) progress += 60
+    const usedMentorship = typeof window !== 'undefined' ? localStorage.getItem('lusotown-mentorship-used') : null
+    const usedHousing = typeof window !== 'undefined' ? localStorage.getItem('lusotown-housing-used') : null
+    if (usedMentorship) progress += 20
+    if (usedHousing) progress += 20
+    return Math.min(progress, 100)
+  }, [])
+
+  const calculateAdvocacyProgress = useCallback(function calculateAdvocacyProgress(): number {
+    let progress = 0
+    const referralsMade = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('lusotown-referrals') || '[]').length : 0
+    if (referralsMade > 0) progress += 40
+    const eventsHosted = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('lusotown-hosted-events') || '[]').length : 0
+    if (eventsHosted > 0) progress += 40
+    const sharedStory = typeof window !== 'undefined' ? localStorage.getItem('lusotown-shared-story') : null
+    if (sharedStory) progress += 20
+    return Math.min(progress, 100)
+  }, [])
+
+  const stages: UserJourneyStage[] = useMemo(() => [
     {
       id: 'discovery',
       name: 'Discovery & Entry',
@@ -99,7 +141,7 @@ export default function ProgressiveUserJourney({
           titlePortuguese: 'Explorar Eventos Culturais',
           description: 'Discover Portuguese cultural events happening across London',
           descriptionPortuguese: 'Descubra eventos culturais portugueses acontecendo por toda Londres',
-          href: '/events',
+          href: ROUTES.events,
           type: 'secondary',
           estimatedTime: '10 minutes',
           estimatedTimePortuguese: '10 minutos',
@@ -148,7 +190,7 @@ export default function ProgressiveUserJourney({
           titlePortuguese: 'Participe no Seu Primeiro Evento',
           description: 'Join a Portuguese cultural event and start building connections',
           descriptionPortuguese: 'Junte-se a um evento cultural português e comece a construir conexões',
-          href: '/events',
+          href: ROUTES.events,
           type: 'primary',
           estimatedTime: '2-3 hours',
           estimatedTimePortuguese: '2-3 horas',
@@ -321,73 +363,9 @@ export default function ProgressiveUserJourney({
         'Construa um legado na comunidade portuguesa de Londres'
       ]
     }
-  ]
+  ], [calculateDiscoveryProgress, calculateEngagementProgress, calculateInvestmentProgress, calculateAdvocacyProgress])
 
   // Calculate progress for each stage based on user activity
-  function calculateDiscoveryProgress(): number {
-    let progress = 0
-    
-    // Profile completion check (mock - would check actual profile data)
-    const hasCompletedProfile = typeof window !== 'undefined' ? localStorage.getItem('lusotown-profile-completed') : null
-    if (hasCompletedProfile) progress += 40
-    
-    // Visited key pages
-    const visitedPages = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('lusotown-visited-pages') || '[]') : []
-    if (visitedPages.includes('/events')) progress += 30
-    if (visitedPages.includes('/transport')) progress += 30
-    
-    return Math.min(progress, 100)
-  }
-
-  function calculateEngagementProgress(): number {
-    let progress = 0
-    
-    // Event attendance (from networking context)
-    if (stats.eventsAttended > 0) progress += 50
-    
-    // Network connections (from networking context)  
-    if (connections.length > 0) progress += 30
-    
-    // Transport booking (mock check)
-    const hasBookedTransport = typeof window !== 'undefined' ? localStorage.getItem('lusotown-transport-booked') : null
-    if (hasBookedTransport) progress += 20
-    
-    return Math.min(progress, 100)
-  }
-
-  function calculateInvestmentProgress(): number {
-    let progress = 0
-    
-    // Premium subscription (mock check)
-    const hasSubscription = typeof window !== 'undefined' ? localStorage.getItem('lusotown-subscription-active') : null
-    if (hasSubscription) progress += 60
-    
-    // Used premium features
-    const usedMentorship = typeof window !== 'undefined' ? localStorage.getItem('lusotown-mentorship-used') : null
-    const usedHousing = typeof window !== 'undefined' ? localStorage.getItem('lusotown-housing-used') : null
-    if (usedMentorship) progress += 20
-    if (usedHousing) progress += 20
-    
-    return Math.min(progress, 100)
-  }
-
-  function calculateAdvocacyProgress(): number {
-    let progress = 0
-    
-    // Referrals made (mock check)
-    const referralsMade = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('lusotown-referrals') || '[]').length : 0
-    if (referralsMade > 0) progress += 40
-    
-    // Events hosted (mock check)
-    const eventsHosted = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('lusotown-hosted-events') || '[]').length : 0
-    if (eventsHosted > 0) progress += 40
-    
-    // Success story shared (mock check)
-    const sharedStory = typeof window !== 'undefined' ? localStorage.getItem('lusotown-shared-story') : null
-    if (sharedStory) progress += 20
-    
-    return Math.min(progress, 100)
-  }
 
   useEffect(() => {
     // Update stages with current progress
@@ -417,7 +395,7 @@ export default function ProgressiveUserJourney({
         typeof window !== 'undefined' && localStorage.setItem('lusotown-visited-pages', JSON.stringify(visitedPages))
       }
     }
-  }, [stats, connections, currentPage])
+  }, [stats, connections, currentPage, stages, calculateDiscoveryProgress, calculateEngagementProgress, calculateInvestmentProgress, calculateAdvocacyProgress])
 
   const handleActionClick = (action: JourneyAction) => {
     // Track action completion for progress calculation

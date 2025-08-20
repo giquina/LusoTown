@@ -47,9 +47,9 @@
   "messaging.people": "people",
   "messaging.start_conversation": "Start Conversation",
   "messaging.safety_tip": "Keep conversations respectful and report any concerns",
-  
+
   "buttons.view_more": "View More",
-  "buttons.view_details": "View Details", 
+  "buttons.view_details": "View Details",
   "buttons.add_to_cart": "Add to Cart",
   "buttons.save": "Save",
   "buttons.saved": "Saved",
@@ -91,7 +91,7 @@
   "buttons.log_out": "Log Out",
   "buttons.upgrade": "Upgrade",
   "buttons.downgrade": "Downgrade",
-  
+
   "matches.enhanced.title": "Portuguese Matches",
   "matches.enhanced.subtitle": "Connect with the Portuguese community in the United Kingdom",
   "matches.enhanced.discover": "Discover",
@@ -108,7 +108,7 @@
   "matches.enhanced.keep_discovering": "Keep discovering people to make your first matches!",
   "matches.enhanced.unlock_potential": "Unlock Full Matching Potential",
   "matches.enhanced.premium_benefits": "Premium members get unlimited matches, exclusive event suggestions, VIP group access and much more.",
-  
+
   "matches.events.suggested_for_you": "Suggested Events for You Two",
   "matches.events.you_and": "You and",
   "matches.events.compatible": "compatible",
@@ -127,7 +127,7 @@
   "matches.events.compatibility": "Compatibility",
   "matches.events.maybe_later": "Maybe later",
   "matches.events.book_now": "Book Now",
-  
+
   "matches.buddy.find_event_buddies": "Find Event Buddies",
   "matches.buddy.find_buddies": "Find Buddies",
   "matches.buddy.create_request": "Create Request",
@@ -141,7 +141,7 @@
   "matches.buddy.find_together": "Find someone to attend Portuguese events together!",
   "matches.buddy.want_more_options": "Want more buddy options?",
   "matches.buddy.premium_more_requests": "Premium members see 5x more requests and get exclusive discounts.",
-  
+
   "matches.achievements.cultural_achievements": "Cultural Achievements",
   "matches.achievements.total_points": "Total Points",
   "matches.achievements.level": "Level",
@@ -162,7 +162,7 @@
   "matches.achievements.participate_events": "Participate in events and make matches to unlock achievements!",
   "matches.achievements.unlock_more": "Unlock more achievements!",
   "matches.achievements.premium_exclusive": "Premium members get access to exclusive achievements and special rewards.",
-  
+
   "matches.groups.group_matching": "Group Matching",
   "matches.groups.browse_groups": "Browse Groups",
   "matches.groups.create_request": "Create Request",
@@ -200,9 +200,9 @@
   "matches.groups.join": "Join",
   "matches.groups.want_unlimited_groups": "Want unlimited group creation?",
   "matches.groups.premium_unlimited": "Premium members can create unlimited groups and access advanced features.",
-  
+
   "status.loading": "Loading...",
-  "status.error": "Error", 
+  "status.error": "Error",
   "status.success": "Success",
   "status.warning": "Warning",
   "status.info": "Info",
@@ -232,7 +232,7 @@
   "creator.application.subtitle": "Join the LusoTown creator program",
   "creator.application.step1.title": "Personal Information",
   "creator.application.step1.subtitle": "Tell us about yourself",
-  "creator.application.step2.title": "Content Information", 
+  "creator.application.step2.title": "Content Information",
   "creator.application.step2.subtitle": "What type of content do you plan to create?",
   "creator.application.step3.title": "Business Information",
   "creator.application.step3.subtitle": "Details for payments and taxes",
@@ -1040,7 +1040,6 @@
   "event.people-on-waitlist": "people on waiting list",
   "event.on-waitlist": "on waiting list",
 
-  
   "waitlist.form.name": "Full Name *",
   "waitlist.form.name-placeholder": "Enter your full name",
   "waitlist.form.email": "Email Address *",
@@ -1632,7 +1631,6 @@
   "streaming.hero.categories.student": "Student Support & Career Advice",
   "streaming.hero.social_proof": "Join 2,150+ Portuguese speakers already streaming and watching",
 
-  
   "streaming.info.badge": "LusoTown Streaming",
   "streaming.info.title": "Stream with us",
   "streaming.info.subtitle": "Share music, culture, workshops, and events with the Portuguese community in London and the UK. Easy to start, generous for creators.",
@@ -1816,7 +1814,6 @@
   "compatibility_matcher.recommendation_reasons.heritage": "Perfect for celebrating Portuguese heritage",
   "compatibility_matcher.recommendation_reasons.networking": "Great for professional networking",
 
-  
   "core_features.badge": "Portuguese Community Hub",
   "core_features.title": "Your Portuguese Life in London",
   "core_features.subtitle": "Everything you need to connect, explore, learn, and thrive in London's Portuguese community",

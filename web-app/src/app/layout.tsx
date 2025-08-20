@@ -23,6 +23,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import ErrorBoundary, {
   ComponentErrorBoundary,
 } from "@/components/ErrorBoundary";
+import { METADATA_BASE } from "@/config/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -38,7 +39,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lusotown.com"),
+  metadataBase: METADATA_BASE,
   title: "LusoTown - London | Portuguese Social & Business Network",
   description:
     "The Portuguese social and business network in London. Connect with Portuguese speakers, book cultural events, attend technology workshops, and build professional networks. Unidos pela Língua.",
@@ -119,7 +120,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_GB",
     alternateLocale: ["pt_PT", "pt_BR"],
-    url: "https://lusotown.vercel.app",
+    url: METADATA_BASE.toString(),
     title: "LusoTown London - Your Portuguese Social Calendar",
     description:
       "Connect with Portuguese speakers from Portugal, Brazil, Angola, Mozambique, Cape Verde & beyond in London. Book experiences, join activities, live life together with your lusophone community.",

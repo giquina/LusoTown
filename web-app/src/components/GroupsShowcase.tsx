@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { ROUTES } from '@/config/routes'
 import { 
   UsersIcon, 
   MapPinIcon, 
@@ -167,7 +168,7 @@ export default function GroupsShowcase() {
           href={`/groups/${group.id}`}
           className="inline-flex items-center gap-3 w-full bg-gradient-to-r from-secondary-500 via-primary-500 to-accent-500 text-white font-semibold px-6 py-4 rounded-2xl hover:from-secondary-600 hover:via-primary-600 hover:to-accent-600 transition-all duration-300 group-hover:scale-105 shadow-xl hover:shadow-2xl text-center justify-center min-h-[44px]"
         >
-          Join Group
+            Join Group
           <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>
@@ -252,7 +253,7 @@ export default function GroupsShowcase() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/groups"
+                href={ROUTES.groups}
                 className="inline-flex items-center gap-3 px-8 py-4 bg-white text-secondary-600 font-bold rounded-2xl hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl group min-h-[44px]"
               >
                 <UserGroupIcon className="w-6 h-6" />
@@ -260,7 +261,7 @@ export default function GroupsShowcase() {
                 <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
-                href="/groups/create"
+                href={ROUTES.groupsCreate}
                 className="inline-flex items-center gap-3 px-8 py-4 border-2 border-white text-white font-bold rounded-2xl hover:bg-white hover:text-secondary-600 transition-all duration-300 shadow-xl hover:shadow-2xl min-h-[44px]"
               >
                 Create Group

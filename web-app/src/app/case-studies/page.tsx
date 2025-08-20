@@ -13,6 +13,7 @@ import {
   StarIcon,
   ChatBubbleOvalLeftIcon
 } from '@heroicons/react/24/outline'
+import { ROUTES } from '@/config/routes'
 
 export const metadata: Metadata = {
   title: 'Case Studies - Real Portuguese Community Connections | LusoTown London',
@@ -288,14 +289,14 @@ export default function CaseStudiesPage() {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a
-                      href="/events"
+                      href={ROUTES.events}
                       className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 font-semibold px-8 py-4 rounded-xl transition-colors duration-200 flex items-center justify-center"
                     >
                       <CalendarIcon className="w-5 h-5 mr-2" />
                       Browse This Week's Events
                     </a>
                     <a
-                      href="/signup"
+                      href={ROUTES.signup}
                       className="bg-white text-secondary-600 hover:bg-gray-50 border-2 border-secondary-200 font-semibold px-8 py-4 rounded-xl transition-colors duration-200 flex items-center justify-center"
                     >
                       <UserGroupIcon className="w-5 h-5 mr-2" />

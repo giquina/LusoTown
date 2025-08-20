@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 import { useSubscription } from "@/context/SubscriptionContext";
 import { communityStats } from "@/config/community";
+import { ROUTES } from '@/config/routes';
 import SocialLogin from "@/components/SocialLogin";
 import {
   HeartIcon,
@@ -1121,7 +1122,7 @@ function SignupInner() {
                       <p className="text-gray-600 text-sm">
                         Already a member?{" "}
                         <a
-                          href="/login"
+                          href={ROUTES.login}
                           className="text-primary-400 hover:text-primary-500 font-medium"
                         >
                           Sign into your account

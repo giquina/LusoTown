@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import { ROUTES } from '@/config/routes'
 import { useCart } from '@/context/CartContext'
 import { isAuthenticated } from '@/lib/auth'
 import { toast } from 'react-hot-toast'
@@ -50,7 +51,7 @@ export function useAuthIntentRestore() {
             router.push(intent.redirectPath)
           } else if (intent.eventId) {
             // Redirect to event details page
-            router.push(`/events/${intent.eventId}`)
+            router.push(`${ROUTES.events}/${intent.eventId}`)
           }
           break
           

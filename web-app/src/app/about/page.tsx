@@ -1,6 +1,7 @@
 'use client'
 
 import Footer from '@/components/Footer'
+import { ROUTES } from '@/config/routes'
 import { 
   HeartIcon, 
   UserGroupIcon, 
@@ -702,7 +703,7 @@ export default function About() {
                 your community in London is waiting for you.
               </p>
               <a 
-                href="/signup"
+                href={ROUTES.signup}
                 className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
               >
                 JOIN NOW

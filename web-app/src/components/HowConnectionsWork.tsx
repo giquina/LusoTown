@@ -9,6 +9,7 @@ import {
   UserPlusIcon,
   BellAlertIcon
 } from '@heroicons/react/24/outline'
+import { ROUTES } from '@/config/routes'
 import { useLanguage } from '@/context/LanguageContext'
 
 export default function HowConnectionsWork() {
@@ -209,7 +210,7 @@ export default function HowConnectionsWork() {
         >
           <div className="inline-flex flex-col sm:flex-row gap-4">
             <a
-              href="/events"
+              href={ROUTES.events}
               className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm sm:text-base"
             >
               <CalendarDaysIcon className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -217,7 +218,7 @@ export default function HowConnectionsWork() {
             </a>
             
             <a
-              href="/my-network"
+              href={ROUTES.myNetwork}
               className="bg-white text-gray-700 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl border-2 border-gray-200 hover:border-primary-300 hover:text-primary-700 transition-all duration-200 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm sm:text-base"
             >
               <UserGroupIcon className="w-4 h-4 sm:w-5 sm:h-5" />

@@ -15,6 +15,7 @@ import SearchBar from "./SearchBar";
 import { getImagesByCategory } from "@/lib/profileImages";
 import { useLanguage } from "@/context/LanguageContext";
 import { plans, formatPrice } from "@/config/pricing";
+import { ROUTES } from "@/config/routes";
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
@@ -104,7 +105,7 @@ export default function Hero() {
               }`}
             >
               <a
-                href="/events"
+                href={ROUTES.events}
                 className="group flex flex-col items-center gap-2 sm:gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-3 sm:p-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 min-h-[88px] sm:min-h-[96px] cursor-pointer"
               >
                 <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-xl bg-gradient-to-br from-action-500 to-action-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
@@ -115,7 +116,7 @@ export default function Hero() {
                 </span>
               </a>
               <a
-                href="/community"
+                href={ROUTES.community}
                 className="group flex flex-col items-center gap-2 sm:gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-3 sm:p-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 min-h-[88px] sm:min-h-[96px] cursor-pointer"
               >
                 <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-xl bg-gradient-to-br from-secondary-500 to-secondary-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
@@ -126,7 +127,7 @@ export default function Hero() {
                 </span>
               </a>
               <a
-                href="/groups"
+                href={ROUTES.groups}
                 className="group flex flex-col items-center gap-2 sm:gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-3 sm:p-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 min-h-[88px] sm:min-h-[96px] cursor-pointer"
               >
                 <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-xl bg-gradient-to-br from-accent-500 to-coral-500 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
@@ -137,7 +138,7 @@ export default function Hero() {
                 </span>
               </a>
               <a
-                href="/my-network"
+                href={ROUTES.myNetwork}
                 className="group flex flex-col items-center gap-2 sm:gap-3 bg-white/50 backdrop-blur-sm border border-white/20 rounded-xl p-3 sm:p-4 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 min-h-[88px] sm:min-h-[96px] cursor-pointer"
               >
                 <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 rounded-xl bg-gradient-to-br from-premium-500 to-premium-600 flex items-center justify-center group-hover:rotate-3 transition-transform duration-300">
@@ -163,7 +164,7 @@ export default function Hero() {
                 </h3>
                 <div className="grid grid-cols-3 gap-3">
                   <a
-                    href="/transport"
+                    href={ROUTES.londonTours}
                     className="group flex flex-col items-center gap-2 p-3 rounded-xl bg-primary-50 hover:bg-primary-100 transition-all duration-200 hover:scale-105 min-h-[44px] shadow-lg hover:shadow-xl"
                   >
                     <div className="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center">
@@ -174,7 +175,7 @@ export default function Hero() {
                     </span>
                   </a>
                   <a
-                    href="/transport"
+                    href={ROUTES.transport}
                     className="group flex flex-col items-center gap-2 p-3 rounded-xl bg-secondary-50 hover:bg-secondary-100 transition-all duration-200 hover:scale-105 min-h-[44px] shadow-lg hover:shadow-xl"
                   >
                     <div className="w-8 h-8 rounded-lg bg-secondary-600 flex items-center justify-center">
@@ -185,7 +186,7 @@ export default function Hero() {
                     </span>
                   </a>
                   <a
-                    href="/transport"
+                    href={ROUTES.transport}
                     className="group flex flex-col items-center gap-2 p-3 rounded-xl bg-premium-50 hover:bg-premium-100 transition-all duration-200 hover:scale-105 min-h-[44px] shadow-lg hover:shadow-xl"
                   >
                     <div className="w-8 h-8 rounded-lg bg-premium-600 flex items-center justify-center">
@@ -208,7 +209,7 @@ export default function Hero() {
               }`}
             >
               <a
-                href="/events"
+                href={ROUTES.events}
                 className="group relative text-base sm:text-lg font-bold px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden w-full sm:w-auto text-center"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-secondary-700 via-action-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -218,13 +219,13 @@ export default function Hero() {
                 </span>
               </a>
               <a
-                href="/services"
+                href={ROUTES.services}
                 className="text-base sm:text-lg font-bold px-6 sm:px-8 py-3 sm:py-4 bg-white/70 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:text-secondary-700 hover:-translate-y-1 w-full sm:w-auto text-center"
               >
                 {t("hero.cta.services", "Premium Services")}
               </a>
               <a
-                href="/host"
+                href={ROUTES.host}
                 className="group relative text-base sm:text-lg font-bold px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-premium-600 via-coral-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden w-full sm:w-auto text-center"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-premium-700 via-coral-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -317,7 +318,7 @@ export default function Hero() {
                 </h3>
                 <div className="grid grid-cols-3 gap-4">
                   <a
-                    href="/transport"
+                    href={ROUTES.londonTours}
                     className="group flex flex-col items-center gap-2 p-3 rounded-xl bg-primary-50 hover:bg-primary-100 transition-all duration-200 hover:scale-105 min-h-[44px] shadow-lg hover:shadow-xl"
                   >
                     <div className="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center">
@@ -328,7 +329,7 @@ export default function Hero() {
                     </span>
                   </a>
                   <a
-                    href="/transport"
+                    href={ROUTES.transport}
                     className="group flex flex-col items-center gap-2 p-3 rounded-xl bg-secondary-50 hover:bg-secondary-100 transition-all duration-200 hover:scale-105 min-h-[44px] shadow-lg hover:shadow-xl"
                   >
                     <div className="w-8 h-8 rounded-lg bg-secondary-600 flex items-center justify-center">
@@ -339,7 +340,7 @@ export default function Hero() {
                     </span>
                   </a>
                   <a
-                    href="/transport"
+                    href={ROUTES.transport}
                     className="group flex flex-col items-center gap-2 p-3 rounded-xl bg-premium-50 hover:bg-premium-100 transition-all duration-200 hover:scale-105 min-h-[44px] shadow-lg hover:shadow-xl"
                   >
                     <div className="w-8 h-8 rounded-lg bg-premium-600 flex items-center justify-center">

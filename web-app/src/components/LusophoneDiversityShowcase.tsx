@@ -20,6 +20,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { CalendarDaysIcon } from "@heroicons/react/24/solid";
 import { useLanguage } from "@/context/LanguageContext";
+import { ROUTES } from "@/config/routes";
 
 interface LusophoneCountry {
   id: string;
@@ -1243,7 +1244,7 @@ export default function LusophoneDiversityShowcase() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <a
-                href="/signup"
+                href={ROUTES.signup}
                 className="bg-white text-primary-600 font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors shadow-lg"
               >
                 {language === "pt"
@@ -1251,7 +1252,7 @@ export default function LusophoneDiversityShowcase() {
                   : "Join the Community"}
               </a>
               <a
-                href="/events"
+                href={ROUTES.events}
                 className="border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white hover:text-primary-600 transition-colors"
               >
                 {language === "pt" ? "Explorar Eventos" : "Explore Events"}

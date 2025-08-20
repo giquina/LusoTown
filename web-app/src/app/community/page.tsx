@@ -8,6 +8,7 @@ import { CheckCircleIcon } from '@heroicons/react/24/solid'
 import { getImageWithFallback } from '@/lib/profileImages'
 import { useLanguage } from '@/context/LanguageContext'
 import { communityStats as stats } from '@/config/community'
+import { ROUTES } from '@/config/routes'
 
 const communityStatsConfig = [
   { number: `${stats.members}`, label: 'Portuguese Community Members', labelPt: 'Membros da Comunidade Portuguesa', icon: UsersIcon },
@@ -368,7 +369,7 @@ export default function Community() {
 
               <div className="text-center mt-10">
                 <a 
-                  href="/events"
+                  href={ROUTES.events}
                   className="inline-flex items-center gap-2 bg-white border-2 border-primary-200 text-primary-600 px-8 py-4 rounded-xl hover:bg-primary-50 hover:border-primary-300 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl"
                 >
                   {isPortuguese ? 'Ver Todos os Eventos' : 'View All Events'}
@@ -792,7 +793,7 @@ export default function Community() {
               </div>
               <div className="mt-8">
                 <a 
-                  href="/directory"
+                  href={ROUTES.directory}
                   className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-8 py-4 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl"
                 >
                   {isPortuguese ? 'Ver Diretório Completo' : 'View Full Directory'}
@@ -831,14 +832,14 @@ export default function Community() {
                 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-10">
                   <a 
-                    href="/signup" 
+                    href={ROUTES.signup} 
                     className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 hover:from-secondary-700 hover:via-primary-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
                   >
                     {isPortuguese ? 'JUNTAR À REDE' : 'JOIN THE NETWORK'}
                     <ArrowRightIcon className="h-6 w-6 ml-3" />
                   </a>
                   <a 
-                    href="/groups" 
+                    href={ROUTES.groups} 
                     className="border-2 border-primary-300 text-primary-700 px-10 py-5 rounded-2xl font-bold hover:bg-primary-50 hover:border-primary-400 transition-all duration-300 inline-flex items-center gap-3 shadow-lg hover:shadow-xl"
                   >
                     {isPortuguese ? 'Ver Grupos' : 'View Groups'}

@@ -56,19 +56,19 @@ export default function OnboardingDemo() {
         break
       case 'share_referral_whatsapp':
         const whatsappMessage = isPortuguese 
-          ? `Olá! Junta-te à maior comunidade portuguesa em Londres: https://lusotown.com/?ref=${data?.code}`
-          : `Hi! Join London's largest Portuguese community: https://lusotown.com/?ref=${data?.code}`
+          ? `Olá! Junta-te à maior comunidade portuguesa em Londres: ${(process.env.NEXT_PUBLIC_SITE_URL||'').trim() || require('@/config/site').SITE_URL}/?ref=${data?.code}`
+          : `Hi! Join London's largest Portuguese community: ${(process.env.NEXT_PUBLIC_SITE_URL||'').trim() || require('@/config/site').SITE_URL}/?ref=${data?.code}`
         window.open(`https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`, '_blank')
         break
       case 'share_referral_generic':
-        navigator.clipboard.writeText(`https://lusotown.com/?ref=${data?.code}`)
+  navigator.clipboard.writeText(`${(process.env.NEXT_PUBLIC_SITE_URL||'').trim() || require('@/config/site').SITE_URL}/?ref=${data?.code}`)
         toast.success(isPortuguese ? 'Link de convite copiado!' : 'Referral link copied!')
         break
       case 'start_premium_trial':
         toast.success(isPortuguese ? 'Teste premium de 7 dias iniciado!' : '7-day premium trial started!')
         break
       default:
-        toast.info(`Action: ${action}`)
+  toast(`Action: ${action}`)
         break
     }
   }

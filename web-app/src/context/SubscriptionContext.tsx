@@ -6,6 +6,7 @@ import { useLanguage } from './LanguageContext'
 import { authService } from '@/lib/auth'
 import { supabase } from '@/lib/supabase'
 import toast from 'react-hot-toast'
+import { ROUTES } from '@/config/routes'
 
 // Initialize Stripe
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '')
@@ -64,7 +65,7 @@ interface SubscriptionContextType {
   trialDaysRemaining: number
   subscriptionRequired: boolean
   stripe: Stripe | null
-  membershipTier: 'basic' | 'student' | 'professional' | 'business' | 'vip'
+  membershipTier: 'none' | 'free' | 'community' | 'ambassador'
   serviceDiscount: number
   usageLimits: SubscriptionUsageLimits
   
@@ -279,10 +280,10 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
   }
 
   const redirectToSubscription = () => {
-    window.location.href = '/subscription'
+  window.location.href = ROUTES.subscription
   }
 
-  const upgradeSubscription = async (newTier: 'free' | 'community' | 'ambassador' | 'basic' | 'student' | 'professional' | 'business' | 'vip'): Promise<boolean> => {
+  const upgradeSubscription = async (newTier: 'free' | 'community' | 'ambassador'): Promise<boolean> => {
     try {
       const user = authService.getCurrentUser()
       if (!user || !subscription) {
@@ -388,16 +389,21 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
       const today = new Date().toISOString().split('T')[0]
       const currentMonth = new Date().toISOString().substring(0, 7)
       
-      let updatedUsage = { ...usage }
-      if (!updatedUsage || updatedUsage.lastResetDate !== today) {
-        // Reset daily counters
-        updatedUsage = {
-          dailyMatchesUsed: 0,
-          monthlyMessagesUsed: usage?.lastResetDate?.substring(0, 7) === currentMonth ? usage.monthlyMessagesUsed : 0,
-          premiumEventsUsed: 0,
-          livestreamHoursUsed: 0,
-          lastResetDate: today
-        }
+      // Start from a strongly-typed baseline and then copy forward allowed counters
+      let updatedUsage: SubscriptionUsage = {
+        dailyMatchesUsed: 0,
+        monthlyMessagesUsed:
+          usage?.lastResetDate?.substring(0, 7) === currentMonth ? usage!.monthlyMessagesUsed : 0,
+        premiumEventsUsed: 0,
+        livestreamHoursUsed: 0,
+        lastResetDate: today,
+      }
+
+      // If same day, carry forward today's counters
+      if (usage && usage.lastResetDate === today) {
+        updatedUsage.dailyMatchesUsed = usage.dailyMatchesUsed
+        updatedUsage.premiumEventsUsed = usage.premiumEventsUsed
+        updatedUsage.livestreamHoursUsed = usage.livestreamHoursUsed
       }
 
       // Increment the specific counter
@@ -429,7 +435,7 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
         return false
       }
 
-      setUsage(updatedUsage)
+  setUsage(updatedUsage)
       return true
     } catch (error) {
       console.error('Error tracking feature usage:', error)
@@ -512,12 +518,15 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
   const subscriptionRequired = !authService.isDemoUser() && !hasActiveSubscription && !isInTrial
 
   // Get current membership tier
-  const membershipTier: 'free' | 'community' | 'ambassador' = 
-    hasActiveSubscription && subscription?.tier ? subscription.tier : 'free'
+  const membershipTier: 'none' | 'free' | 'community' | 'ambassador' = 
+    hasActiveSubscription && subscription?.tier ? subscription.tier : 'none'
+
+  // Normalize to an effective tier for limits/discounts
+  const effectiveTier: 'free' | 'community' | 'ambassador' = membershipTier === 'none' ? 'free' : membershipTier
 
   // Calculate service discount based on tier
   const serviceDiscount = (() => {
-    switch (membershipTier) {
+    switch (effectiveTier) {
       case 'community': return 10 // 10% member discount
       case 'ambassador': return 20 // 20% ambassador discount
       default: return 0
@@ -526,7 +535,7 @@ export function SubscriptionProvider({ children }: SubscriptionProviderProps) {
 
   // Usage limits based on tier - Optimized for Portuguese community conversion
   const usageLimits: SubscriptionUsageLimits = (() => {
-    switch (membershipTier) {
+    switch (effectiveTier) {
       case 'free':
         return {
           dailyMatches: 2, // Optimized for conversion - Portuguese community values connections

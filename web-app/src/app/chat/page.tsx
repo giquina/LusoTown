@@ -18,6 +18,7 @@ import { BellIcon as BellSolidIcon } from '@heroicons/react/24/solid'
 import Footer from '@/components/Footer'
 import { ChatRoom, CHAT_CATEGORIES, messagingService } from '@/lib/messaging'
 import { authService } from '@/lib/auth'
+import { ROUTES } from '@/config/routes'
 
 const ChatRoomCard = ({ 
   room, 
@@ -295,7 +296,7 @@ export default function ChatRoomsPage() {
   const handleJoinRoom = async (roomId: string) => {
     const currentUser = authService.getCurrentUser()
     if (!currentUser) {
-      window.location.href = '/login'
+      window.location.href = ROUTES.login
       return
     }
 

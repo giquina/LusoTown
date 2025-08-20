@@ -3,6 +3,9 @@
 // Portuguese Community SEO Strategy
 // Optimized for Portuguese speakers seeking community and business connections in London
 
+import { SITE_URL, absoluteUrl } from '@/config/site'
+import { ROUTES } from '@/config/routes'
+
 export interface SEOMetadata {
   title: string
   titlePortuguese?: string
@@ -175,11 +178,11 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       'portuguese culture london',
       'cultura portuguesa londres'
     ],
-    canonicalUrl: 'https://lusotown.com',
-    ogImage: 'https://lusotown.com/og-image-home.jpg',
+    canonicalUrl: SITE_URL,
+    ogImage: absoluteUrl('/og-image-home.jpg'),
     hreflang: {
-      'en': 'https://lusotown.com',
-      'pt': 'https://lusotown.com?lang=pt'
+      'en': SITE_URL,
+      'pt': `${SITE_URL}?lang=pt`
     },
     structuredData: {
       "@context": "https://schema.org",
@@ -187,8 +190,8 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       "name": "LusoTown London",
       "alternateName": "LusoTown",
       "description": "Portuguese social calendar and community platform in London",
-      "url": "https://lusotown.com",
-      "logo": "https://lusotown.com/logo.png",
+  "url": SITE_URL,
+  "logo": absoluteUrl('/logo.png'),
       "sameAs": [
         "https://facebook.com/lusotownlondon",
         "https://instagram.com/lusotownlondon",
@@ -225,8 +228,8 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       'portuguese food events london',
       'eventos gastronomia portuguesa'
   ],
-  canonicalUrl: 'https://lusotown.com/events',
-  ogImage: 'https://lusotown.com/og-events.jpg'
+  canonicalUrl: absoluteUrl(ROUTES.events),
+  ogImage: absoluteUrl('/og-events.jpg')
   },
   
   businessDirectory: {
@@ -248,8 +251,8 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       'lusophone business london',
       'empresas lusófonas londres'
   ],
-  canonicalUrl: 'https://lusotown.com/business-directory',
-  ogImage: 'https://lusotown.com/og-business-directory.jpg'
+  canonicalUrl: absoluteUrl(ROUTES.businessDirectory),
+  ogImage: absoluteUrl('/og-business-directory.jpg')
   },
   
   businessNetworking: {
@@ -271,8 +274,8 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       'portuguese investors london',
       'investidores portugueses londres'
   ],
-  canonicalUrl: 'https://lusotown.com/business-networking',
-  ogImage: 'https://lusotown.com/og-business-networking.jpg'
+  canonicalUrl: absoluteUrl(ROUTES.businessNetworking),
+  ogImage: absoluteUrl('/og-business-networking.jpg')
   },
   
   community: {
@@ -301,8 +304,8 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       'heritage preservation portuguese',
       'preservação cultural portuguesa'
   ],
-  canonicalUrl: 'https://lusotown.com/community',
-  ogImage: 'https://lusotown.com/og-community.jpg'
+  canonicalUrl: absoluteUrl(ROUTES.community),
+  ogImage: absoluteUrl('/og-community.jpg')
   },
   
   heritage: {
@@ -326,8 +329,8 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       'portuguese folklore london',
       'folclore português londres'
     ],
-    canonicalUrl: 'https://lusotown.com/instituto-camoes',
-    ogImage: 'https://lusotown.com/og-heritage.jpg'
+  canonicalUrl: absoluteUrl(ROUTES.instituteCamoes),
+  ogImage: absoluteUrl('/og-heritage.jpg')
   }
   ,
   live: {
@@ -342,8 +345,8 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       'workshops negócios portugueses',
       'lusophone tv london'
     ],
-    canonicalUrl: 'https://lusotown.com/live',
-    ogImage: 'https://lusotown.com/og-live.jpg'
+  canonicalUrl: absoluteUrl(ROUTES.live),
+  ogImage: absoluteUrl('/og-live.jpg')
   },
   students: {
     title: 'Portuguese Students UK - Partnerships, Discounts, Support',
@@ -356,8 +359,8 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       'university partnerships portugal uk',
       'student discounts portuguese'
     ],
-    canonicalUrl: 'https://lusotown.com/students',
-    ogImage: 'https://lusotown.com/og-students.jpg'
+  canonicalUrl: absoluteUrl(ROUTES.students),
+  ogImage: absoluteUrl('/og-students.jpg')
   },
   premiumMembership: {
     title: 'LusoTown Premium Membership - Unlock VIP Portuguese Network',
@@ -369,8 +372,8 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       'assinatura premium portuguesa',
       'vip portuguese london'
     ],
-    canonicalUrl: 'https://lusotown.com/premium-membership',
-    ogImage: 'https://lusotown.com/og-premium.jpg'
+  canonicalUrl: absoluteUrl(ROUTES.premiumMembership),
+  ogImage: absoluteUrl('/og-premium.jpg')
   },
   matches: {
     title: 'Portuguese Matches London - Cultural Compatibility & Networking',
@@ -383,8 +386,8 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       'compatibilidade cultural portuguesa',
       'portuguese networking london'
     ],
-    canonicalUrl: 'https://lusotown.com/matches',
-    ogImage: 'https://lusotown.com/og-matches.jpg'
+  canonicalUrl: absoluteUrl(ROUTES.matches),
+  ogImage: absoluteUrl('/og-matches.jpg')
   },
   londonTours: {
     title: 'London Tours for Portuguese Community | LusoTown',
@@ -399,8 +402,8 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       'portuguese guide london',
       'guia português londres'
     ],
-    canonicalUrl: 'https://lusotown.com/london-tours',
-    ogImage: 'https://lusotown.com/og-london-tours.jpg'
+  canonicalUrl: absoluteUrl(ROUTES.londonTours),
+  ogImage: absoluteUrl('/og-london-tours.jpg')
   }
 }
 
@@ -443,18 +446,18 @@ export class SEOService {
   }
 
   static generateSitemap(): string {
-    const baseUrl = 'https://lusotown.com'
+  const baseUrl = SITE_URL
     const pages = [
       { url: '/', priority: '1.0', changefreq: 'daily' },
-      { url: '/events', priority: '0.9', changefreq: 'daily' },
+  { url: ROUTES.events, priority: '0.9', changefreq: 'daily' },
       { url: '/business-directory', priority: '0.9', changefreq: 'weekly' },
       { url: '/business-networking', priority: '0.8', changefreq: 'weekly' },
       { url: '/community', priority: '0.8', changefreq: 'weekly' },
       { url: '/about', priority: '0.7', changefreq: 'monthly' },
       { url: '/contact', priority: '0.6', changefreq: 'monthly' },
       { url: '/feed', priority: '0.8', changefreq: 'daily' },
-      { url: '/directory', priority: '0.7', changefreq: 'weekly' },
-      { url: '/groups', priority: '0.7', changefreq: 'weekly' }
+  { url: ROUTES.directory, priority: '0.7', changefreq: 'weekly' },
+  { url: ROUTES.groups, priority: '0.7', changefreq: 'weekly' }
     ]
 
     let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -480,7 +483,7 @@ export class SEOService {
   }
 
   static generateRobotsTxt(): string {
-    const baseUrl = 'https://lusotown.com'
+  const baseUrl = SITE_URL
     
     return `User-agent: *
 Allow: /
@@ -572,7 +575,7 @@ Crawl-delay: 1`
       "organizer": {
         "@type": "Organization",
         "name": event.hostName,
-        "url": "https://lusotown.com"
+    "url": SITE_URL
       },
       "offers": {
         "@type": "Offer",
@@ -581,7 +584,7 @@ Crawl-delay: 1`
         "availability": event.currentAttendees < event.maxAttendees 
           ? "https://schema.org/InStock" 
           : "https://schema.org/SoldOut",
-        "url": `https://lusotown.com/events/${event.id}`
+  "url": `${absoluteUrl(ROUTES.events)}/${event.id}`
       },
       "audience": {
         "@type": "Audience",

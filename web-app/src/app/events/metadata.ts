@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+import { SITE_URL, absoluteUrl } from '@/config/site'
+import { ROUTES } from '@/config/routes'
 
 export const metadata: Metadata = {
   title: 'Portuguese Events in London | LusoTown - Social Calendar',
@@ -21,12 +23,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Portuguese Events in London | LusoTown Social Calendar',
     description: 'Connect with Portuguese speakers through authentic cultural events, professional workshops, and social gatherings across London.',
-    url: 'https://lusotown.vercel.app/events',
+  url: absoluteUrl(ROUTES.events),
     siteName: 'LusoTown London',
     type: 'website',
     locale: 'en_GB',
     alternateLocale: ['pt_PT', 'pt_BR'],
-    images: [
+  images: [
       {
         url: '/events-og.jpg',
         width: 1200,
@@ -42,10 +44,10 @@ export const metadata: Metadata = {
     images: ['/events-og.jpg'],
   },
   alternates: {
-    canonical: 'https://lusotown.vercel.app/events',
+    canonical: absoluteUrl(ROUTES.events),
     languages: {
-      'en': 'https://lusotown.vercel.app/events',
-      'pt': 'https://lusotown.vercel.app/events?lang=pt',
+      'en': absoluteUrl(ROUTES.events),
+      'pt': `${absoluteUrl(ROUTES.events)}?lang=pt`,
     },
   },
 }

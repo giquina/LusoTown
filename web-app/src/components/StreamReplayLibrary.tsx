@@ -24,6 +24,7 @@ import {
   Lock,
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { ROUTES } from "@/config/routes";
 
 interface StreamReplay {
   id: string;
@@ -596,7 +597,7 @@ export default function StreamReplayLibrary({
               </div>
             </div>
             <a
-              href="/subscription"
+              href={ROUTES.subscription}
               className="px-4 py-2 bg-premium-600 text-white text-sm font-medium rounded-lg hover:bg-premium-700 transition-colors whitespace-nowrap"
             >
               {language === "pt" ? "Ver Premium" : "View Premium"}

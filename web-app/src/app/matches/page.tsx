@@ -2,8 +2,8 @@
 
 import { Suspense, useState, useEffect, useMemo, useCallback } from "react";
 import type React from "react";
-import { communityStats } from '@/config/community';
-import { mockProfileImages } from '@/config/mockData';
+import { communityStats } from "@/config/community";
+import { mockProfileImages } from "@/config/mockData";
 import {
   HeartIcon,
   UserGroupIcon,
@@ -28,6 +28,7 @@ import {
 import { useLanguage } from "@/context/LanguageContext";
 import { useSubscription } from "@/context/SubscriptionContext";
 import Image from "next/image";
+import { ROUTES } from "@/config/routes";
 import { motion, AnimatePresence } from "framer-motion";
 import { plans, formatPrice } from "@/config/pricing";
 import PremiumMatchesGate from "@/components/PremiumMatchesGate";
@@ -49,7 +50,7 @@ const mockProfiles = [
       "Arts & Crafts",
     ],
     bio: "Portuguese marketing professional looking to connect with fellow lusófonos in London. Love fado nights and traditional cooking!",
-    image: mockProfileImages['ana-sofia'],
+    image: mockProfileImages["ana-sofia"],
     compatibility: 94,
   },
   {
@@ -66,7 +67,7 @@ const mockProfiles = [
       "Tech Meetups",
     ],
     bio: "Tech enthusiast from Lisbon. Always up for watching Benfica games and meeting other Portuguese professionals in tech.",
-    image: mockProfileImages['miguel-santos'],
+    image: mockProfileImages["miguel-santos"],
     compatibility: 89,
   },
   {
@@ -83,7 +84,7 @@ const mockProfiles = [
       "Education",
     ],
     bio: "Medical student from Braga. Love traditional Portuguese dancing and meeting other young professionals.",
-    image: mockProfileImages['beatriz-oliveira'],
+    image: mockProfileImages["beatriz-oliveira"],
     compatibility: 91,
   },
   {
@@ -100,7 +101,7 @@ const mockProfiles = [
       "Sports",
     ],
     bio: "Chef specializing in traditional Portuguese cuisine. Looking to connect with food lovers and fellow entrepreneurs.",
-    image: mockProfileImages['joao-ferreira'],
+    image: mockProfileImages["joao-ferreira"],
     compatibility: 87,
   },
   {
@@ -117,7 +118,7 @@ const mockProfiles = [
       "Dance",
     ],
     bio: "Brazilian financial analyst living in London. Love connecting with Portuguese speakers and exploring the city.",
-    image: mockProfileImages['carolina-lima'],
+    image: mockProfileImages["carolina-lima"],
     compatibility: 92,
   },
   {
@@ -134,7 +135,7 @@ const mockProfiles = [
       "Architecture",
     ],
     bio: "Architect from Coimbra passionate about Portuguese culture and design. Always ready for a good conversation over coffee.",
-    image: mockProfileImages['ricardo-costa'],
+    image: mockProfileImages["ricardo-costa"],
     compatibility: 88,
   },
 ];
@@ -155,7 +156,9 @@ function MatchesContent() {
   const [showUpgradePrompt, setShowUpgradePrompt] = useState(false);
   const [successStories, setSuccessStories] = useState(0);
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
-  const [lastActions, setLastActions] = useState<{ id: number; action: "like" | "skip" }[]>([]);
+  const [lastActions, setLastActions] = useState<
+    { id: number; action: "like" | "skip" }[]
+  >([]);
   const swipeThreshold = 50; // px
 
   const interestOptions = useMemo(() => {
@@ -211,7 +214,7 @@ function MatchesContent() {
     const matchProbability = hasActiveSubscription ? 0.6 : 0.65;
     const isMatch = Math.random() > matchProbability;
 
-  setTimeout(() => {
+    setTimeout(() => {
       if (isMatch && currentProfile) {
         setMatchedProfile(currentProfile);
         setShowMatchModal(true);
@@ -224,14 +227,25 @@ function MatchesContent() {
 
       if (currentProfile) {
         setLastActions((prev) =>
-          [...prev, { id: currentProfile.id, action: "like" as const }].slice(-10)
+          [...prev, { id: currentProfile.id, action: "like" as const }].slice(
+            -10
+          )
         );
       }
 
       nextProfile();
       setIsLiking(false);
     }, 600);
-  }, [isLiking, isSkipping, isFreeTier, dailyMatchesUsed, dailyMatches, hasActiveSubscription, currentProfile, nextProfile]);
+  }, [
+    isLiking,
+    isSkipping,
+    isFreeTier,
+    dailyMatchesUsed,
+    dailyMatches,
+    hasActiveSubscription,
+    currentProfile,
+    nextProfile,
+  ]);
 
   const handleSkip = useCallback(() => {
     if (isLiking || isSkipping) return;
@@ -240,15 +254,15 @@ function MatchesContent() {
     setTimeout(() => {
       if (currentProfile) {
         setLastActions((prev) =>
-          [...prev, { id: currentProfile.id, action: "skip" as const }].slice(-10)
+          [...prev, { id: currentProfile.id, action: "skip" as const }].slice(
+            -10
+          )
         );
       }
       nextProfile();
       setIsSkipping(false);
     }, 400);
   }, [isLiking, isSkipping, currentProfile, nextProfile]);
-
-  
 
   const handleUndo = () => {
     if (!lastActions.length || isLiking || isSkipping) return;
@@ -264,7 +278,9 @@ function MatchesContent() {
   };
 
   // Simple touch swipe handlers
-  const [touchStart, setTouchStart] = useState<{ x: number; y: number } | null>(null);
+  const [touchStart, setTouchStart] = useState<{ x: number; y: number } | null>(
+    null
+  );
   const onTouchStart = (e: React.TouchEvent) => {
     const t = e.touches[0];
     setTouchStart({ x: t.clientX, y: t.clientY });
@@ -328,10 +344,10 @@ function MatchesContent() {
       icon: UserGroupIcon,
       title: "Complete Your Profile",
       description:
-        "Share your interests, location in London, and what you're looking for in the Portuguese community",
+        "Share your interests, your UK location, and what you're looking for in the Portuguese community",
       titlePt: "Complete o Seu Perfil",
       descriptionPt:
-        "Partilhe os seus interesses, localização em Londres e o que procura na comunidade portuguesa",
+        "Partilhe os seus interesses, localização no Reino Unido e o que procura na comunidade portuguesa",
     },
     {
       icon: SparklesIcon,
@@ -363,7 +379,7 @@ function MatchesContent() {
   ];
 
   const benefits = [
-    "All matches are Portuguese speakers in London & UK",
+    "All matches are Portuguese speakers across the United Kingdom",
     "Cultural compatibility scoring",
     "Event-based meetups for natural connections",
     "Professional and social networking opportunities",
@@ -371,7 +387,7 @@ function MatchesContent() {
   ];
 
   const benefitsPt = [
-    "Todas as correspondências são falantes de português em Londres e Reino Unido",
+    "Todas as correspondências são falantes de português em todo o Reino Unido",
     "Pontuação de compatibilidade cultural",
     "Encontros baseados em eventos para conexões naturais",
     "Oportunidades de networking profissional e social",
@@ -380,8 +396,8 @@ function MatchesContent() {
 
   return (
     <div className="min-h-screen pt-20 md:pt-24 pb-8">
-    {/* Enhanced Hero Section */}
-  <div className="relative min-h-[42vh] md:min-h-[52vh] bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 overflow-hidden">
+      {/* Enhanced Hero Section */}
+      <div className="relative min-h-[42vh] md:min-h-[52vh] bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 overflow-hidden">
         {/* Portuguese flag inspired decorative elements */}
         <div className="absolute top-12 left-12 w-32 h-32 bg-gradient-to-br from-secondary-400/20 to-secondary-500/30 rounded-full animate-pulse" />
         <div className="absolute bottom-16 right-16 w-24 h-24 bg-gradient-to-br from-action-400/20 to-action-500/30 rounded-full animate-pulse delay-1000" />
@@ -390,7 +406,7 @@ function MatchesContent() {
         {/* Subtle pattern overlay */}
         <div className="absolute inset-0 bg-primary-900/10" />
 
-  <div className="relative z-10 flex items-start justify-center px-4 pt-8 md:pt-14 pb-8">
+        <div className="relative z-10 flex items-start justify-center px-4 pt-8 md:pt-14 pb-8">
           <div className="text-center max-w-4xl mx-auto">
             {/* Hero Content */}
             <div className="mb-8">
@@ -484,7 +500,10 @@ function MatchesContent() {
 
             {/* CTA Buttons */}
             <div className="flex flex-row gap-3 sm:gap-4 justify-center">
-              <a href="/signup" className="bg-white text-primary-600 px-4 sm:px-5 py-3 rounded-xl font-semibold text-sm md:text-base hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg flex-1 max-w-[160px] sm:max-w-none text-center">
+              <a
+                href={ROUTES.signup}
+                className="bg-white text-primary-600 px-4 sm:px-5 py-3 rounded-xl font-semibold text-sm md:text-base hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg flex-1 max-w-[160px] sm:max-w-none text-center"
+              >
                 {language === "pt" ? "Start Free" : "Start Free"}
               </a>
               <button
@@ -498,10 +517,10 @@ function MatchesContent() {
             </div>
 
             {/* Enhanced Stats */}
-  <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-5">
+            <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-5">
               <div className="text-center group">
                 <motion.div
-      className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:scale-110 transition-transform"
+                  className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:scale-110 transition-transform"
                   whileHover={{ scale: 1.1 }}
                 >
                   {communityStats.members}
@@ -569,15 +588,15 @@ function MatchesContent() {
       </div>
 
       {/* Interactive Matching Section */}
-  <section className="py-10 md:py-14 bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50">
+      <section className="py-10 md:py-14 bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50">
         <div className="max-w-6xl mx-auto px-4">
-      <div className="text-center mb-10">
-    <h2 className="text-2xl md:text-3xl font-bold text-primary-900 mb-3 md:mb-5">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-primary-900 mb-3 md:mb-5">
               {language === "pt"
                 ? "Descubra os Seus Matches"
                 : "Discover Your Matches"}
             </h2>
-  <p className="text-sm md:text-base text-primary-700 max-w-3xl mx-auto mb-5">
+            <p className="text-sm md:text-base text-primary-700 max-w-3xl mx-auto mb-5">
               {language === "pt"
                 ? "Navegue por falantes de português no Reino Unido que partilham os seus interesses e património cultural. Cada perfil é cuidadosamente verificado."
                 : "Browse through Portuguese speakers in the United Kingdom who share your interests and cultural background. Every profile is carefully verified."}
@@ -615,7 +634,9 @@ function MatchesContent() {
             <div className="mb-6">
               <div className="flex items-center justify-between mb-2">
                 <h4 className="text-sm font-semibold text-primary-800">
-                  {language === "pt" ? "Filtrar por interesses" : "Filter by interests"}
+                  {language === "pt"
+                    ? "Filtrar por interesses"
+                    : "Filter by interests"}
                 </h4>
                 {selectedInterests.length > 0 && (
                   <button
@@ -681,7 +702,9 @@ function MatchesContent() {
                     {/* Enhanced Profile Image Section */}
                     <div className="relative h-48 md:h-52 bg-gradient-to-br from-primary-200 via-secondary-200 to-accent-200 overflow-hidden">
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-5xl md:text-6xl text-primary-400 drop-shadow-lg">👤</div>
+                        <div className="text-5xl md:text-6xl text-primary-400 drop-shadow-lg">
+                          👤
+                        </div>
                       </div>
 
                       {/* Enhanced Compatibility Badge */}
@@ -695,8 +718,12 @@ function MatchesContent() {
                       {/* Enhanced Origin Badge */}
                       <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-2xl text-xs md:text-sm font-semibold shadow-xl border border-primary-100">
                         <div className="flex items-center gap-2">
-                          <span className="text-lg">{getOriginFlag(currentProfile.origin)}</span>
-                          <span className="text-primary-700 truncate max-w-24 md:max-w-32">{currentProfile.origin}</span>
+                          <span className="text-lg">
+                            {getOriginFlag(currentProfile.origin)}
+                          </span>
+                          <span className="text-primary-700 truncate max-w-24 md:max-w-32">
+                            {currentProfile.origin}
+                          </span>
                         </div>
                       </div>
 
@@ -716,11 +743,15 @@ function MatchesContent() {
                             <div className="space-y-1.5">
                               <div className="flex items-center gap-2 text-primary-600">
                                 <BriefcaseIcon className="w-4 h-4 flex-shrink-0" />
-                                <span className="text-sm font-medium truncate">{currentProfile.profession}</span>
+                                <span className="text-sm font-medium truncate">
+                                  {currentProfile.profession}
+                                </span>
                               </div>
                               <div className="flex items-center gap-2 text-primary-600">
                                 <MapPinIcon className="w-4 h-4 flex-shrink-0" />
-                                <span className="text-sm font-medium">{currentProfile.location}, London</span>
+                                <span className="text-sm font-medium">
+                                  {currentProfile.location}, London
+                                </span>
                               </div>
                             </div>
                           </div>
@@ -741,14 +772,16 @@ function MatchesContent() {
                           Common Interests
                         </h4>
                         <div className="flex flex-wrap gap-2">
-                          {currentProfile.interests.slice(0, 4).map((interest, index) => (
-                            <div
-                              key={index}
-                              className="bg-gradient-to-r from-primary-50 to-secondary-50 text-primary-700 px-3 py-1.5 rounded-lg text-xs font-semibold border border-primary-200 whitespace-nowrap"
-                            >
-                              {interest}
-                            </div>
-                          ))}
+                          {currentProfile.interests
+                            .slice(0, 4)
+                            .map((interest, index) => (
+                              <div
+                                key={index}
+                                className="bg-gradient-to-r from-primary-50 to-secondary-50 text-primary-700 px-3 py-1.5 rounded-lg text-xs font-semibold border border-primary-200 whitespace-nowrap"
+                              >
+                                {interest}
+                              </div>
+                            ))}
                         </div>
                       </div>
 
@@ -760,16 +793,21 @@ function MatchesContent() {
                               <HeartIcon className="w-3 h-3 text-white" />
                             </div>
                             <span className="font-bold text-secondary-800 text-xs">
-                              {language === "pt" ? "Conexão Cultural" : "Cultural Connection"}
+                              {language === "pt"
+                                ? "Conexão Cultural"
+                                : "Cultural Connection"}
                             </span>
                           </div>
                           <div className="flex items-center gap-0.5">
                             {Array.from({ length: 5 }).map((_, i) => (
-                              <StarIconSolid key={i} className="w-3 h-3 text-yellow-400" />
+                              <StarIconSolid
+                                key={i}
+                                className="w-3 h-3 text-yellow-400"
+                              />
                             ))}
                           </div>
                         </div>
-                        
+
                         <div className="grid grid-cols-2 gap-1.5 mb-3">
                           <div className="flex items-center gap-1.5 bg-white/60 p-1.5 rounded-lg">
                             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
@@ -796,21 +834,26 @@ function MatchesContent() {
                             </span>
                           </div>
                         </div>
-                        
+
                         {/* Connection Reasons */}
                         <div className="bg-white/80 backdrop-blur-sm p-2.5 rounded-xl border border-white/60">
                           <h5 className="font-bold text-secondary-800 mb-2 text-xs">
                             Why you'll connect:
                           </h5>
                           <div className="space-y-1">
-                            {currentProfile.interests.slice(0, 2).map((interest, idx) => (
-                              <div key={idx} className="flex items-center gap-2">
-                                <CheckCircleIcon className="w-3 h-3 text-green-500 flex-shrink-0" />
-                                <span className="text-xs text-secondary-700 truncate">
-                                  {interest}
-                                </span>
-                              </div>
-                            ))}
+                            {currentProfile.interests
+                              .slice(0, 2)
+                              .map((interest, idx) => (
+                                <div
+                                  key={idx}
+                                  className="flex items-center gap-2"
+                                >
+                                  <CheckCircleIcon className="w-3 h-3 text-green-500 flex-shrink-0" />
+                                  <span className="text-xs text-secondary-700 truncate">
+                                    {interest}
+                                  </span>
+                                </div>
+                              ))}
                             <div className="flex items-center gap-2">
                               <MapPinIcon className="w-3 h-3 text-blue-500 flex-shrink-0" />
                               <span className="text-xs text-secondary-700 truncate">
@@ -865,7 +908,9 @@ function MatchesContent() {
               {/* Super Like Button - Premium Feature */}
               {hasActiveSubscription && (
                 <button
-                  onClick={() => {/* Add super like logic */}}
+                  onClick={() => {
+                    /* Add super like logic */
+                  }}
                   disabled={isLiking || isSkipping || !currentProfile}
                   className="group relative w-18 h-18 bg-gradient-to-r from-yellow-400 to-orange-500 border-2 border-yellow-300 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                   aria-label={language === "pt" ? "Super Like" : "Super Like"}
@@ -1024,13 +1069,13 @@ function MatchesContent() {
       </AnimatePresence>
 
       {/* How It Works Section */}
-  <section className="py-10 md:py-14 bg-white">
+      <section className="py-10 md:py-14 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-      <div className="text-center mb-12">
-    <h2 className="text-2xl md:text-3xl font-bold text-primary-900 mb-3 md:mb-5">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-primary-900 mb-3 md:mb-5">
               {t("howItWorks") || "How It Works"}
             </h2>
-  <p className="text-sm md:text-base text-primary-700 max-w-3xl mx-auto">
+            <p className="text-sm md:text-base text-primary-700 max-w-3xl mx-auto">
               {t("howItWorksDescription") ||
                 "Our matching system is designed specifically for Portuguese speakers in London, focusing on cultural compatibility and shared experiences"}
             </p>
@@ -1043,13 +1088,13 @@ function MatchesContent() {
                   <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-5 md:mb-6 group-hover:scale-110 transition-transform duration-300">
                     <step.icon className="w-8 h-8 text-white" />
                   </div>
-      <div className="text-xl md:text-2xl font-bold text-primary-600 mb-3 md:mb-4">
+                  <div className="text-xl md:text-2xl font-bold text-primary-600 mb-3 md:mb-4">
                     {index + 1}
                   </div>
-      <h3 className="text-base md:text-lg font-bold text-primary-900 mb-2 md:mb-3">
+                  <h3 className="text-base md:text-lg font-bold text-primary-900 mb-2 md:mb-3">
                     {t("currentLang") === "pt" ? step.titlePt : step.title}
                   </h3>
-      <p className="text-primary-700 leading-relaxed text-sm md:text-base">
+                  <p className="text-primary-700 leading-relaxed text-sm md:text-base">
                     {t("currentLang") === "pt"
                       ? step.descriptionPt
                       : step.description}
@@ -1066,7 +1111,7 @@ function MatchesContent() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-  <h2 className="text-2xl md:text-3xl font-bold text-primary-900 mb-5 md:mb-7">
+              <h2 className="text-2xl md:text-3xl font-bold text-primary-900 mb-5 md:mb-7">
                 {t("whyChooseOurMatching") || "Why Choose Our Matching System?"}
               </h2>
               <div className="space-y-4">
@@ -1074,7 +1119,9 @@ function MatchesContent() {
                   (benefit, index) => (
                     <div key={index} className="flex items-start space-x-3">
                       <CheckCircleIcon className="w-5 h-5 md:w-6 md:h-6 text-secondary-500 mt-1 flex-shrink-0" />
-          <p className="text-sm md:text-base text-primary-800">{benefit}</p>
+                      <p className="text-sm md:text-base text-primary-800">
+                        {benefit}
+                      </p>
                     </div>
                   )
                 )}
@@ -1094,7 +1141,10 @@ function MatchesContent() {
                       <div className="text-sm text-gray-500 mb-2">
                         {language === "pt" ? "3 matches/dia" : "3 matches/day"}
                       </div>
-                      <a href="/signup" className="w-full inline-block text-center bg-gray-100 text-gray-600 py-2 rounded-lg text-sm font-medium">
+                      <a
+                        href={ROUTES.signup}
+                        className="w-full inline-block text-center bg-gray-100 text-gray-600 py-2 rounded-lg text-sm font-medium"
+                      >
                         {language === "pt" ? "Começar Grátis" : "Start Free"}
                       </a>
                     </div>
@@ -1107,8 +1157,8 @@ function MatchesContent() {
                           ? "Matches ilimitados"
                           : "Unlimited matches"}
                       </div>
-                       <button
-                         onClick={() => createSubscription("community")}
+                      <button
+                        onClick={() => createSubscription("community")}
                         className="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-2 rounded-lg text-sm font-semibold hover:from-primary-700 hover:to-secondary-700 transition-all"
                       >
                         {language === "pt"
@@ -1134,15 +1184,15 @@ function MatchesContent() {
             <div className="bg-white p-8 rounded-3xl border border-primary-200 shadow-lg">
               <div className="text-center">
                 <HeartIcon className="w-16 h-16 text-action-500 mx-auto mb-6" />
-    <h3 className="text-lg md:text-xl font-bold text-primary-900 mb-2">
+                <h3 className="text-lg md:text-xl font-bold text-primary-900 mb-2">
                   {t("joinCommunity") || "Join Our Community"}
                 </h3>
-    <p className="text-primary-700 mb-5 text-sm md:text-base">
+                <p className="text-primary-700 mb-5 text-sm md:text-base">
                   {t("joinCommunityDescription") ||
                     "Connect with Portuguese speakers who understand your culture, language, and journey in London"}
                 </p>
                 <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-4 rounded-xl border border-primary-100">
-      <div className="text-xl md:text-2xl font-bold text-primary-600">
+                  <div className="text-xl md:text-2xl font-bold text-primary-600">
                     {communityStats.members}
                   </div>
                   <div className="text-sm text-primary-600">
@@ -1266,7 +1316,7 @@ export default function MatchesPage() {
 
   // If user doesn't have subscription and hits daily limits, show premium gate
   // For now, we'll integrate this with the enhanced dashboard
-  
+
   return (
     <Suspense
       fallback={
@@ -1286,7 +1336,9 @@ export default function MatchesPage() {
         }}
         onEventBooking={(eventId, matchId) => {
           // Handle event booking
-          console.log(`Event ${eventId} booked${matchId ? ` with match ${matchId}` : ''}`);
+          console.log(
+            `Event ${eventId} booked${matchId ? ` with match ${matchId}` : ""}`
+          );
         }}
       />
     </Suspense>

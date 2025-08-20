@@ -9,6 +9,7 @@ import ReferralDashboard from "@/components/ReferralDashboard";
 import SubscriptionGate from "@/components/SubscriptionGate";
 import Footer from "@/components/Footer";
 import { Users, Gift, TrendingUp } from "lucide-react";
+import { ROUTES } from "@/config/routes";
 
 function ReferralsPageInner() {
   const { language, t } = useLanguage();
@@ -38,7 +39,7 @@ function ReferralsPageInner() {
                   : "Access your referral dashboard and start earning rewards."}
               </p>
               <a
-                href="/login"
+                href={ROUTES.login}
                 className="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors inline-flex items-center gap-2"
               >
                 {language === "pt" ? "Fazer Login" : "Log In"}

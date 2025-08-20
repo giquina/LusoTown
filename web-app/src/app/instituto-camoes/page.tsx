@@ -26,6 +26,7 @@ import {
   ShieldCheckIcon
 } from '@heroicons/react/24/outline'
 import Footer from '@/components/Footer'
+import { ROUTES } from '@/config/routes'
 
 interface InstitutoCamoesProgram {
   id: string
@@ -838,13 +839,13 @@ export default function InstitutoCamoes() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <a
-              href="/signup"
+              href={ROUTES.signup}
               className="bg-white text-primary-600 font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors shadow-lg"
             >
               {t('cta.join')}
             </a>
             <a
-              href="/contact"
+              href={ROUTES.contact}
               className="border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white hover:text-primary-600 transition-colors"
             >
               {t('cta.learn')}

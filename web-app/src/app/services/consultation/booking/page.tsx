@@ -15,6 +15,7 @@ import {
 import { Crown, MessageSquare, Users } from 'lucide-react'
 import Footer from '@/components/Footer'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config/routes'
 
 export default function ConsultationBookingPage() {
   const { language } = useLanguage()
@@ -91,8 +92,8 @@ export default function ConsultationBookingPage() {
   const handleSubmit = () => {
     // Handle form submission
     console.log('Consultation booking:', formData)
-    // Redirect to confirmation page
-    window.location.href = '/services/consultation/confirmation'
+  // Redirect to confirmation page
+  window.location.href = `${ROUTES.services}/consultation/confirmation`
   }
 
   const renderStep1 = () => (

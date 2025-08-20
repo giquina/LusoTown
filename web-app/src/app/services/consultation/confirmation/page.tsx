@@ -15,6 +15,7 @@ import {
 import { Crown, MessageSquare, Star, Users } from 'lucide-react'
 import Footer from '@/components/Footer'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config/routes'
 
 export default function ConsultationConfirmationPage() {
   const { language } = useLanguage()
@@ -314,14 +315,14 @@ export default function ConsultationConfirmationPage() {
           >
             <div className="space-y-4">
               <button
-                onClick={() => window.location.href = '/services'}
+                onClick={() => window.location.href = ROUTES.services}
                 className="bg-primary-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary-700 transition-all duration-200 mr-4"
               >
                 {isPortuguese ? 'Explorar Outros Serviços' : 'Explore Other Services'}
               </button>
               
               <button
-                onClick={() => window.location.href = '/'}
+                onClick={() => window.location.href = ROUTES.home}
                 className="border-2 border-primary-600 text-primary-600 px-8 py-3 rounded-xl font-semibold hover:bg-primary-600 hover:text-white transition-all duration-200"
               >
                 {isPortuguese ? 'Voltar ao Início' : 'Return to Home'}

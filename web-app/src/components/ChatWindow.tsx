@@ -12,6 +12,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { Crown, Users, MessageCircle, Send, Shield, AlertTriangle } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config/routes'
 import { useSubscription } from '@/context/SubscriptionContext'
 import { ChatMessage, ChatUser, ChatRoom } from '@/types/chat'
 import { socketManager } from '@/lib/socket-client'
@@ -438,14 +439,14 @@ export default function ChatWindow({
               {!currentUser ? (
                 <>
                   <a
-                    href="/login"
+                    href={ROUTES.login}
                     className="px-3 py-1.5 bg-primary-600 text-white text-sm rounded-lg 
                       hover:bg-primary-700 transition-colors"
                   >
                     {language === 'pt' ? 'Entrar' : 'Sign In'}
                   </a>
                   <a
-                    href="/signup"
+                    href={ROUTES.signup}
                     className="px-3 py-1.5 bg-secondary-600 text-white text-sm rounded-lg 
                       hover:bg-secondary-700 transition-colors"
                   >
@@ -454,7 +455,7 @@ export default function ChatWindow({
                 </>
               ) : (
                 <a
-                  href="/premium-membership"
+                  href={ROUTES.premiumMembership}
                   className="px-3 py-1.5 bg-premium-600 text-white text-sm rounded-lg 
                     hover:bg-premium-700 transition-colors"
                 >

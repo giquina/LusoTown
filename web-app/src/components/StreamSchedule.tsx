@@ -21,6 +21,7 @@ import {
   Star,
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { ROUTES } from "@/config/routes";
 import { useSubscription } from "@/context/SubscriptionContext";
 import { toast } from "react-hot-toast";
 
@@ -552,7 +553,7 @@ export default function StreamSchedule({
                         </button>
                       ) : (
                         <a
-                          href="/subscription"
+                          href={ROUTES.subscription}
                           className="flex items-center gap-2 px-3 py-1.5 bg-premium-600 text-white text-sm rounded-lg hover:bg-premium-700 transition-colors whitespace-nowrap"
                         >
                           <Crown className="w-4 h-4" />

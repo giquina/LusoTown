@@ -8,6 +8,7 @@ import { CheckCircleIcon } from "@heroicons/react/24/outline";
 import { Shield } from "lucide-react";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
+import { ROUTES } from '@/config/routes';
 
 const protectionPackages = [
   {
@@ -73,7 +74,7 @@ function BookingContent() {
     e.preventDefault();
     setIsSubmitting(true);
     await new Promise((r) => setTimeout(r, 1200));
-    window.location.href = "/services/close-protection/booking/confirmation";
+  window.location.href = `${ROUTES.services}/close-protection/booking/confirmation`;
   };
 
   const renderStep = () => {

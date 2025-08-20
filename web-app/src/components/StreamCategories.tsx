@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Crown, Lock, Users, Briefcase, GraduationCap, Music, Camera } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config/routes'
 
 interface StreamCategory {
   id: string
@@ -283,7 +284,7 @@ export default function StreamCategories({
               </div>
             </div>
             <a
-              href="/subscription"
+              href={ROUTES.subscription}
               className="px-4 py-2 bg-premium-600 text-white text-sm font-medium rounded-lg hover:bg-premium-700 transition-colors"
             >
               {language === 'pt' ? 'Upgrade' : 'Upgrade'}

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { SEOService, SEO_PAGES } from '@/lib/seo'
+import { SITE_URL } from '@/config/site'
 
-const BASE = 'https://lusotown.com'
+const BASE = SITE_URL
 
 export function metadataFor(page: keyof typeof SEO_PAGES, path: string, lang: 'en' | 'pt' = 'en'): Metadata {
   const data = SEOService.generateMetaTags(page, lang)

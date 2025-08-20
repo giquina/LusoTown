@@ -22,6 +22,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { usePlatformIntegration } from "@/context/PlatformIntegrationContext";
 import { useSubscription } from "@/context/SubscriptionContext";
 import { useNetworking } from "@/context/NetworkingContext";
+import { ROUTES } from "@/config/routes";
 
 interface ServiceCommunityBridgeProps {
   triggerContext?:
@@ -416,7 +417,7 @@ export default function ServiceCommunityBridge({
           </button>
         )}
         <button
-          onClick={() => (window.location.href = "/transport")}
+          onClick={() => (window.location.href = ROUTES.transport)}
           className="flex-1 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 flex items-center justify-center space-x-2"
         >
           <span>{isPortuguese ? "Reservar Agora" : "Book Now"}</span>

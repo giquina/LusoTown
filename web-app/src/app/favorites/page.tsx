@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import { ROUTES } from '@/config/routes'
 
 import { useState, useEffect } from 'react'
 import Footer from '@/components/Footer'
@@ -183,7 +184,7 @@ export default function FavoritesPage() {
                     Start saving your favorite events, businesses, and feed posts by clicking the heart icon.
                   </p>
                   <a 
-                    href="/events" 
+                    href={ROUTES.events} 
                     className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-3 rounded-lg font-semibold hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 inline-flex items-center gap-2"
                   >
                     Explore Events

@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { absoluteUrl } from "@/config/site";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -21,6 +22,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/admin/", "/api/", "/profile/edit", "/dashboard/private"],
       },
     ],
-    sitemap: "https://lusotown.com/sitemap.xml",
+    sitemap: absoluteUrl("/sitemap.xml"),
   };
 }

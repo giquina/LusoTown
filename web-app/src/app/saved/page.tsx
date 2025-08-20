@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Footer from '@/components/Footer'
 import { useCart } from '@/context/CartContext'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config/routes'
 import {
   HeartIcon as HeartSolidIcon,
   CalendarDaysIcon,
@@ -180,7 +181,7 @@ export default function SavedItemsPage() {
                     }
                   </p>
                   <a 
-                    href="/events" 
+                    href={ROUTES.events} 
                     className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-3 rounded-lg font-semibold hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 inline-flex items-center gap-2"
                   >
                     {isPortuguese ? 'Explorar Eventos' : 'Explore Events'}

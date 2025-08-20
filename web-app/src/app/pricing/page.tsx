@@ -41,6 +41,7 @@ import { Crown } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { formatPrice } from '@/config/pricing'
 import Footer from '@/components/Footer'
+import { ROUTES } from '@/config/routes'
 
 interface PricingTier {
   name: string
@@ -1250,7 +1251,7 @@ export default function Pricing() {
               <p className="text-gray-600 mb-4">
                 {isPortuguese ? 'Ainda tem perguntas?' : 'Still have questions?'}
               </p>
-              <a href="/contact" className="inline-flex items-center gap-2 border-2 border-primary-400 text-primary-600 hover:bg-primary-400 hover:text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200">
+              <a href={ROUTES.contact} className="inline-flex items-center gap-2 border-2 border-primary-400 text-primary-600 hover:bg-primary-400 hover:text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200">
                 <PhoneIcon className="w-4 h-4" />
                 {isPortuguese ? 'Contacte a Nossa Equipa' : 'Contact Our Team'}
               </a>
@@ -1325,11 +1326,11 @@ export default function Pricing() {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <a href="/signup" className="inline-flex items-center gap-2 bg-white text-primary-600 hover:bg-gray-100 text-lg font-semibold px-8 py-4 rounded-xl group transform hover:scale-105 transition-all duration-200 shadow-lg">
+                <a href={ROUTES.signup} className="inline-flex items-center gap-2 bg-white text-primary-600 hover:bg-gray-100 text-lg font-semibold px-8 py-4 rounded-xl group transform hover:scale-105 transition-all duration-200 shadow-lg">
                   {isPortuguese ? 'Começar Grátis' : 'Start Free'}
                   <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
-                <a href="/login" className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-primary-600 text-lg font-semibold px-8 py-4 rounded-xl transform hover:scale-105 transition-all duration-200">
+                <a href={ROUTES.login} className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-primary-600 text-lg font-semibold px-8 py-4 rounded-xl transform hover:scale-105 transition-all duration-200">
                   {isPortuguese ? 'Já é Membro? Entrar' : 'Already a Member? Sign In'}
                 </a>
               </div>

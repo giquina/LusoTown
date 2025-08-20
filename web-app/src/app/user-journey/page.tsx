@@ -19,6 +19,7 @@ import OnboardingFlowEnhanced from '@/components/OnboardingFlowEnhanced'
 import ConversionOptimizationEngine from '@/components/ConversionOptimizationEngine'
 import RetentionGrowthMechanics from '@/components/RetentionGrowthMechanics'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config/routes'
 import { useNetworking } from '@/context/NetworkingContext'
 
 export default function UserJourneyPage() {
@@ -83,7 +84,7 @@ export default function UserJourneyPage() {
     // Add mock activity based on page visits
     const visitedPages = JSON.parse(localStorage.getItem('lusotown-visited-pages') || '[]')
     if (visitedPages.includes('/transport')) activity.push('viewed_transport')
-    if (visitedPages.includes('/events')) activity.push('viewed_events')
+  if (visitedPages.includes(ROUTES.events)) activity.push('viewed_events')
     if (visitedPages.includes('/my-network')) activity.push('viewed_networking')
     
     setUserActivity(activity)

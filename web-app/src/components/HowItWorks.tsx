@@ -20,6 +20,7 @@ import {
 } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import { communityStats } from '@/config/community'
+import { ROUTES } from '@/config/routes'
 
 export default function HowItWorks() {
   const [mounted, setMounted] = useState(false)
@@ -310,7 +311,7 @@ export default function HowItWorks() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/events"
+                href={ROUTES.events}
                 className="group relative text-lg font-bold px-8 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-xl shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-secondary-700 via-action-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -320,7 +321,7 @@ export default function HowItWorks() {
                 </span>
               </a>
               <a
-                href="/signup"
+                href={ROUTES.signup}
                 className="text-lg font-bold px-8 py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 whitespace-nowrap"
               >
                 Join Now

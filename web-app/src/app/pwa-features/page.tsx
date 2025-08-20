@@ -22,6 +22,7 @@ import {
   CheckCircle,
   Star
 } from 'lucide-react';
+import { ROUTES } from '@/config/routes';
 
 export default function PWAFeaturesPage() {
   const { language, t } = useLanguage();
@@ -360,7 +361,7 @@ export default function PWAFeaturesPage() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/"
+                href={ROUTES.home}
                 className="inline-flex items-center space-x-2 bg-white text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
               >
                 <span>{language === 'pt' ? 'Voltar à Comunidade' : 'Back to Community'}</span>
@@ -368,7 +369,7 @@ export default function PWAFeaturesPage() {
               </a>
               
               <a
-                href="/events"
+                href={ROUTES.events}
                 className="inline-flex items-center space-x-2 bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors"
               >
                 <span>{language === 'pt' ? 'Ver Eventos' : 'View Events'}</span>

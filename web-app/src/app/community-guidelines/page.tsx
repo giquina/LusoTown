@@ -1,4 +1,5 @@
 import Footer from '@/components/Footer'
+import { ROUTES } from '@/config/routes'
 import { ShieldCheckIcon, HeartIcon, UserGroupIcon, ExclamationTriangleIcon, GlobeAltIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline'
 
 export const metadata = {
@@ -180,8 +181,8 @@ export default function CommunityGuidelines() {
                   Tem perguntas sobre as nossas diretrizes da comunidade? Estamos aqui para ajudar. 
                   Questions about our community guidelines? We're here to help.
                 </p>
-                <a 
-                  href="/contact" 
+                 <a 
+                   href={ROUTES.contact} 
                   className="inline-flex items-center gap-2 bg-white text-primary-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors duration-200"
                 >
                   Entre em Contato / Contact Our Team
