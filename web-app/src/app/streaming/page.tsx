@@ -1,0 +1,677 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import {
+  PlayIcon,
+  VideoCameraIcon,
+  UserGroupIcon,
+  StarIcon,
+  ClockIcon,
+  CurrencyPoundIcon,
+  ArrowRightIcon,
+  CheckCircleIcon,
+  MicrophoneIcon,
+  TvIcon,
+  GlobeAltIcon,
+  ShieldCheckIcon,
+  SparklesIcon,
+} from "@heroicons/react/24/outline";
+import { 
+  Crown, 
+  Video, 
+  Zap, 
+  TrendingUp, 
+  DollarSign,
+  Users,
+  Settings,
+  BarChart3,
+  Gamepad2,
+  Music,
+  Briefcase,
+  Heart,
+} from "lucide-react";
+import Footer from "@/components/Footer";
+import { useLanguage } from "@/context/LanguageContext";
+import { useSubscription } from "@/context/SubscriptionContext";
+import { communityStats } from '@/config/community';
+import { CONTENT } from "@/config/content";
+import { ROUTES } from "@/config/routes";
+
+// Metadata for SEO - this is generated from content config
+export const metadata = {
+  title: CONTENT.streaming.seoTitle,
+  description: CONTENT.streaming.seoDescription,
+};
+
+// Creator tier packages - generalized for broader audience
+const creatorTiers = [
+  {
+    id: "starter",
+    name: "Creator Starter",
+    namePortuguese: "Criador Iniciante", 
+    price: 19,
+    originalPrice: 29,
+    image: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/creator-starter-setup_dlqxkx.jpg",
+    imageAlt: "Content creator setup with professional streaming equipment",
+    imageAltPortuguese: "Configuração de criador de conteúdo com equipamento de streaming profissional",
+    membershipDiscounts: {
+      free: 0,
+      community: 10,
+      ambassador: 20,
+    },
+    description: `Perfect for content creators starting their streaming journey in ${CONTENT.region.prepositioned}`,
+    descriptionPortuguese: `Perfeito para criadores de conteúdo começando sua jornada de streaming no ${CONTENT.region.short}`,
+    popular: true,
+    features: [
+      "RTMP streaming to community",
+      "Cultural emotes pack (:saudade:, :festa:, :futebol:)",
+      "Community chat moderation",
+      "Basic analytics dashboard",
+      "Mobile streaming support via Streamlabs",
+      `${CONTENT.region.short} events integration`,
+      "Multi-language support",
+      "Community networking opportunities",
+    ],
+    featuresPortuguese: [
+      "Streaming RTMP para comunidade",
+      "Pack de emotes culturais (:saudade:, :festa:, :futebol:)",
+      "Moderação de chat da comunidade",
+      "Dashboard de analytics básico",
+      "Suporte para streaming mobile via Streamlabs",
+      `Integração com eventos do ${CONTENT.region.short}`,
+      "Suporte multi-idioma",
+      "Oportunidades de networking comunitário",
+    ],
+    color: "secondary",
+    targetAudience: "content_creators",
+  },
+  {
+    id: "professional",
+    name: "Professional Creator",
+    namePortuguese: "Criador Profissional",
+    price: 49,
+    originalPrice: 69,
+    image: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535201/professional-creator-studio_hml2nr.jpg",
+    imageAlt: `Professional streaming studio with advanced equipment and ${CONTENT.region.short} backdrop`,
+    imageAltPortuguese: `Estúdio de streaming profissional com equipamento avançado e cenário do ${CONTENT.region.short}`,
+    membershipDiscounts: {
+      free: 0,
+      community: 15,
+      ambassador: 25,
+    },
+    description: `Advanced streaming tools for established content creators and businesses in ${CONTENT.region.prepositioned}`,
+    descriptionPortuguese: `Ferramentas avançadas de streaming para criadores de conteúdo estabelecidos e empresas no ${CONTENT.region.short}`,
+    features: [
+      "All Creator Starter features",
+      "Multi-stream to YouTube, Twitch, TikTok simultaneously",
+      "Advanced cultural content categories",
+      "Revenue sharing program (85/15 split)",
+      "Priority community promotion",
+      "Custom streaming overlays and graphics",
+      "Advanced analytics and audience insights",
+      "Direct integration with local events",
+      "Business workshop streaming capabilities",
+      "Multi-language chat support",
+    ],
+    featuresPortuguese: [
+      "Todas as funcionalidades do Criador Iniciante",
+      "Multi-stream para YouTube, Twitch, TikTok simultaneamente",
+      "Categorias avançadas de conteúdo cultural",
+      "Programa de partilha de receitas (85/15 divisão)",
+      "Promoção prioritária na comunidade",
+      "Overlays e gráficos personalizados para streaming",
+      "Analytics avançados e insights de audiência",
+      "Integração direta com eventos locais",
+      "Capacidades de streaming de workshops de negócios",
+      "Suporte de chat multi-idioma",
+    ],
+    color: "primary",
+    targetAudience: "professional_creators",
+  },
+  {
+    id: "enterprise",
+    name: "Enterprise Creator",
+    namePortuguese: "Criador Empresarial",
+    price: 199,
+    originalPrice: 299,
+    image: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535202/enterprise-streaming-setup_abc123.jpg",
+    imageAlt: "Enterprise streaming setup for business events and community broadcasts",
+    imageAltPortuguese: "Configuração de streaming empresarial para eventos de negócios e transmissões comunitárias",
+    membershipDiscounts: {
+      free: 0,
+      community: 20,
+      ambassador: 30,
+    },
+    description: `Complete streaming solution for businesses, organizations, and major community events in ${CONTENT.region.prepositioned}`,
+    descriptionPortuguese: `Solução completa de streaming para empresas, organizações e grandes eventos comunitários no ${CONTENT.region.short}`,
+    features: [
+      "All Professional Creator features",
+      "Dedicated community channel",
+      "White-label streaming platform",
+      `Multi-location ${CONTENT.region.short} streaming support`,
+      "Professional production team support",
+      "Custom cultural programming",
+      "Enterprise-grade security and moderation",
+      "API access for custom integrations",
+      "Dedicated account manager",
+      "Premium community partnerships",
+      `Event venue streaming partnerships in ${CONTENT.region.prepositioned}`,
+      "Corporate training and workshop capabilities",
+    ],
+    featuresPortuguese: [
+      "Todas as funcionalidades do Criador Profissional",
+      "Canal dedicado da comunidade",
+      "Plataforma de streaming white-label",
+      `Suporte para streaming multi-localização no ${CONTENT.region.short}`,
+      "Suporte de equipa de produção profissional",
+      "Programação cultural personalizada",
+      "Segurança e moderação de nível empresarial",
+      "Acesso API para integrações personalizadas",
+      "Gestor de conta dedicado",
+      "Parcerias premium da comunidade",
+      `Parcerias de streaming com locais de eventos no ${CONTENT.region.short}`,
+      "Capacidades de formação corporativa e workshops",
+    ],
+    color: "accent",
+    targetAudience: "enterprise_organizations",
+  },
+];
+
+// Content categories - generalized
+const contentCategories = [
+  {
+    id: "culture",
+    name: "Culture & Heritage",
+    namePortuguese: "Cultura e Património",
+    icon: Music,
+    description: "Cultural celebrations, traditional content, heritage preservation",
+    descriptionPortuguese: "Celebrações culturais, conteúdo tradicional, preservação do património",
+    streamers: 45,
+    color: "from-red-500 to-green-500",
+  },
+  {
+    id: "business-networking",
+    name: "Business & Networking", 
+    namePortuguese: "Negócios e Networking",
+    icon: Briefcase,
+    description: "Professional development, technology workshops, startup talks",
+    descriptionPortuguese: "Desenvolvimento profissional, workshops de tecnologia, conversas sobre startups",
+    streamers: 28,
+    color: "from-blue-500 to-purple-500",
+  },
+  {
+    id: "gaming",
+    name: "Gaming",
+    namePortuguese: "Gaming",
+    icon: Gamepad2,
+    description: "Gaming community, tournaments, live gameplay",
+    descriptionPortuguese: "Comunidade de gaming, torneios, gameplay ao vivo",
+    streamers: 67,
+    color: "from-green-500 to-blue-500",
+  },
+  {
+    id: "lifestyle",
+    name: "Lifestyle & Travel",
+    namePortuguese: "Estilo de Vida e Viagens", 
+    icon: Heart,
+    description: `${CONTENT.region.short} life, community events, travel vlogs`,
+    descriptionPortuguese: `Vida no ${CONTENT.region.short}, eventos da comunidade, vlogs de viagem`,
+    streamers: 34,
+    color: "from-pink-500 to-orange-500",
+  },
+];
+
+// Success metrics for streamers
+const streamingStats = [
+  { label: "Active Streamers", labelPt: "Streamers Ativos", value: "180+", icon: Video },
+  { label: "Monthly Viewers", labelPt: "Visualizadores Mensais", value: "12.5K", icon: Users },
+  { label: "Revenue Generated", labelPt: "Receita Gerada", value: "£45K+", icon: DollarSign },
+  { label: "Avg. Monthly Earnings", labelPt: "Ganhos Médios Mensais", value: "£340", icon: TrendingUp },
+];
+
+export default function StreamingPage() {
+  const { language, t } = useLanguage();
+  const { hasActiveSubscription, createSubscription } = useSubscription();
+  const [selectedTier, setSelectedTier] = useState<string | null>(null);
+  const [showBookingForm, setShowBookingForm] = useState(false);
+
+  // Success counter animation
+  const [visibleStreamers, setVisibleStreamers] = useState(180);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisibleStreamers(prev => prev === 180 ? 184 : 180);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const isPortuguese = language === "pt";
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
+        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/streaming-setup_dlqxkx.jpg')] bg-cover bg-center opacity-5"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-900/5 via-transparent to-secondary-900/5"></div>
+        
+        <div className="relative container-width py-16 lg:py-24">
+          <div className="text-center max-w-4xl mx-auto">
+            {/* Badge */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-6"
+            >
+              <span className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-primary-100 via-secondary-50 to-accent-100 border border-primary-200 shadow-lg">
+                <VideoCameraIcon className="w-4 h-4 mr-2 text-primary-600" />
+                <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent font-bold">
+                  {isPortuguese ? "Plataforma de Streaming" : "Streaming Platform"}
+                </span>
+              </span>
+            </motion.div>
+
+            {/* Title with Desktop/Mobile Responsive */}
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-4xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight"
+            >
+              <span className="hidden sm:block">
+                {isPortuguese ? "Quer tornar-se um streamer?" : CONTENT.streaming.heroTitle}
+              </span>
+              <span className="sm:hidden">
+                {isPortuguese ? "Streaming" : "Streaming"}
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
+                {isPortuguese ? `no ${CONTENT.region.short}` : `in ${CONTENT.region.prepositioned}`}
+              </span>
+            </motion.h1>
+
+            {/* Subtitle with Desktop/Mobile Responsive */}
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
+            >
+              <span className="hidden sm:block">
+                {isPortuguese 
+                  ? `Torne-se um criador de conteúdo e faça crescer a sua audiência no ${CONTENT.region.short}.`
+                  : CONTENT.streaming.heroSubtitle
+                }
+              </span>
+              <span className="sm:hidden">
+                {isPortuguese 
+                  ? `Streaming no ${CONTENT.region.short}`
+                  : `Streaming in ${CONTENT.region.prepositioned}`
+                }
+              </span>
+            </motion.p>
+
+            {/* Feature dots */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
+            >
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="w-2 h-2 bg-secondary-500 rounded-full"></div>
+                <span>{isPortuguese ? "RTMP Professional" : "Professional RTMP"}</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+                <span>{isPortuguese ? "Emotes Culturais" : "Cultural Emotes"}</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
+                <span>{isPortuguese ? "85/15 Revenue Split" : "85/15 Revenue Split"}</span>
+              </div>
+            </motion.div>
+
+            {/* CTAs using centralized copy and routes */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="flex flex-row gap-3 sm:gap-4 justify-center mb-8"
+            >
+              <a 
+                href={ROUTES.streamingGetStarted}
+                className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-6 sm:px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1 flex-1 max-w-[180px] sm:max-w-none text-center"
+              >
+                {isPortuguese ? "Começar a Criar" : CONTENT.streaming.ctaPrimary}
+              </a>
+              <a 
+                href={ROUTES.streamingLearn} 
+                className="border border-gray-300 text-gray-700 px-6 sm:px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-lg hover:shadow-xl flex-1 max-w-[180px] sm:max-w-none text-center"
+              >
+                {isPortuguese ? "Saber Mais" : CONTENT.streaming.ctaSecondary}
+              </a>
+            </motion.div>
+
+            {/* Live stats */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center"
+            >
+              {streamingStats.map((stat, index) => (
+                <div key={index} className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/40">
+                  <stat.icon className="w-6 h-6 text-primary-600 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-gray-900 mb-1">
+                    {stat.label === "Active Streamers" ? visibleStreamers + "+" : stat.value}
+                  </div>
+                  <div className="text-xs text-gray-600">
+                    {isPortuguese ? stat.labelPt : stat.label}
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Content Categories Section */}
+      <section className="py-16 bg-white">
+        <div className="container-width">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-5">
+              {isPortuguese ? "Categorias de Conteúdo" : "Content Categories"}
+            </h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              {isPortuguese 
+                ? "Escolha a sua categoria e conecte-se com audiências que partilham os seus interesses"
+                : "Choose your category and connect with audiences who share your interests"
+              }
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {contentCategories.map((category, index) => (
+              <motion.div
+                key={category.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 overflow-hidden"
+              >
+                <div className={`h-2 bg-gradient-to-r ${category.color}`}></div>
+                <div className="p-6">
+                  <div className="w-14 h-14 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <category.icon className="w-8 h-8 text-gray-600" />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                    {isPortuguese ? category.namePortuguese : category.name}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                    {isPortuguese ? category.descriptionPortuguese : category.description}
+                  </p>
+                  <div className="flex items-center gap-2 text-primary-600">
+                    <Users className="w-4 h-4" />
+                    <span className="text-sm font-medium">{category.streamers} streamers</span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Creator Packages Section */}
+      <section id="packages" className="py-16 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container-width">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-5">
+              {isPortuguese ? "Pacotes para Criadores" : "Creator Packages"}
+            </h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              {isPortuguese 
+                ? "Escolha o pacote perfeito para a sua jornada de criação de conteúdo"
+                : "Choose the perfect package for your content creation journey"
+              }
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+            {creatorTiers.map((tier, index) => (
+              <motion.div
+                key={tier.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className={`relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group ${
+                  tier.popular ? 'ring-2 ring-primary-200' : ''
+                }`}
+              >
+                {/* Popular Badge */}
+                {tier.popular && (
+                  <div className="absolute top-4 right-4 z-10">
+                    <span className="bg-gradient-to-r from-action-500 to-secondary-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                      {isPortuguese ? "Mais Popular" : "Most Popular"}
+                    </span>
+                  </div>
+                )}
+
+                {/* Image */}
+                <div className="relative h-64 overflow-hidden">
+                  <div className="w-full h-full bg-gradient-to-br from-primary-200 via-secondary-200 to-accent-200 flex items-center justify-center">
+                    <div className="text-6xl text-primary-400">🎥</div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  
+                  {/* Price overlay */}
+                  <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-2">
+                    <div className="flex items-center gap-2">
+                      {tier.originalPrice > tier.price && (
+                        <span className="text-sm text-gray-500 line-through">£{tier.originalPrice}</span>
+                      )}
+                      <span className="text-2xl font-bold text-gray-900">£{tier.price}</span>
+                      <span className="text-sm text-gray-600">/month</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    {isPortuguese ? tier.namePortuguese : tier.name}
+                  </h3>
+                  <p className="text-gray-600 mb-6">
+                    {isPortuguese ? tier.descriptionPortuguese : tier.description}
+                  </p>
+                  
+                  {/* Features */}
+                  <div className="space-y-3 mb-8">
+                    {(isPortuguese ? tier.featuresPortuguese : tier.features).slice(0, 6).map((feature, idx) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <CheckCircleIcon className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-gray-700">{feature}</span>
+                      </div>
+                    ))}
+                    {(isPortuguese ? tier.featuresPortuguese : tier.features).length > 6 && (
+                      <div className="text-sm text-primary-600 font-medium">
+                        +{(isPortuguese ? tier.featuresPortuguese : tier.features).length - 6} {isPortuguese ? "mais funcionalidades" : "more features"}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* CTA */}
+                  <a
+                    href={ROUTES.streamingGetStarted}
+                    className={`block w-full py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-center ${
+                      tier.popular
+                        ? 'bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                  >
+                    {isPortuguese ? "Começar Agora" : "Start Now"}
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-16 bg-white">
+        <div className="container-width">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-5">
+              {isPortuguese ? "Como Funciona" : "How It Works"}
+            </h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              {isPortuguese 
+                ? "Comece a fazer streaming para a comunidade em apenas 3 passos simples"
+                : "Start streaming to the community in just 3 simple steps"
+              }
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                step: 1,
+                title: isPortuguese ? "Escolha Seu Pacote" : "Choose Your Package",
+                description: isPortuguese ? "Selecione o pacote que melhor se adequa às suas necessidades de criação de conteúdo" : "Select the package that best fits your content creation needs",
+                icon: Crown,
+              },
+              {
+                step: 2,
+                title: isPortuguese ? "Configure Seu Setup" : "Set Up Your Stream",
+                description: isPortuguese ? "Configuramos seu RTMP, emotes culturais e integração com eventos" : "We configure your RTMP, cultural emotes, and events integration",
+                icon: Settings,
+              },
+              {
+                step: 3,
+                title: isPortuguese ? "Comece a Transmitir" : "Start Broadcasting",
+                description: isPortuguese ? "Conecte-se com milhares de pessoas e comece a construir sua audiência" : "Connect with thousands of people and start building your audience",
+                icon: Video,
+              },
+            ].map((step, index) => (
+              <motion.div
+                key={step.step}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2 }}
+                className="text-center group"
+              >
+                <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <step.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="text-2xl font-bold text-primary-600 mb-4">
+                    {step.step}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Success Stories & Community */}
+      <section className="py-16 bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50">
+        <div className="container-width">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-5">
+              {isPortuguese ? "Histórias de Sucesso" : "Success Stories"}
+            </h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              {isPortuguese 
+                ? "Criadores estão a prosperar na nossa plataforma"
+                : "Creators are thriving on our platform"
+              }
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Maria Santos",
+                category: isPortuguese ? "Culinária" : "Cooking",
+                achievement: isPortuguese ? "2.3K seguidores em 3 meses" : "2.3K followers in 3 months",
+                quote: isPortuguese ? "A plataforma conectou-me com pessoas de todo o Reino Unido que adoram a nossa gastronomia!" : "The platform connected me with people all over the U.K. who love our cuisine!",
+              },
+              {
+                name: "João Ferreira", 
+                category: isPortuguese ? "Workshops de Negócios" : "Business Workshops",
+                achievement: isPortuguese ? "£1.2K receita mensal" : "£1.2K monthly revenue",
+                quote: isPortuguese ? "Transformei meu conhecimento em tecnologia em streams educativos para a comunidade." : "I turned my technology knowledge into educational streams for the community.",
+              },
+              {
+                name: "Ana Costa",
+                category: isPortuguese ? "Música" : "Music", 
+                achievement: isPortuguese ? "Eventos em 5 locais" : "Events in 5 venues",
+                quote: isPortuguese ? "O streaming ajudou-me a levar a música a mais pessoas no Reino Unido." : "Streaming helped me bring music to more people in the U.K.",
+              },
+            ].map((story, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <div className="text-center mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary-200 to-secondary-200 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-2xl">👤</span>
+                  </div>
+                  <h4 className="font-bold text-gray-900">{story.name}</h4>
+                  <p className="text-sm text-primary-600">{story.category}</p>
+                </div>
+                <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-3 mb-4 text-center">
+                  <p className="text-green-800 font-semibold text-sm">{story.achievement}</p>
+                </div>
+                <blockquote className="text-gray-600 italic text-sm leading-relaxed">
+                  "{story.quote}"
+                </blockquote>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-16 bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600">
+        <div className="container-width text-center text-white">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+            {isPortuguese ? "Pronto para Começar?" : "Ready to Get Started?"}
+          </h2>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            {isPortuguese 
+              ? `Junte-se a centenas de criadores que estão a construir suas audiências no ${CONTENT.region.short}`
+              : `Join hundreds of creators who are building their audiences in ${CONTENT.region.prepositioned}`
+            }
+          </p>
+          <div className="flex flex-row gap-4 justify-center">
+            <a 
+              href={ROUTES.streamingGetStarted}
+              className="bg-white text-primary-600 px-8 py-4 rounded-2xl font-bold hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-2xl flex-1 max-w-[200px]"
+            >
+              {isPortuguese ? "Começar Agora" : "Start Now"}
+            </a>
+            <a 
+              href={ROUTES.streamingLearn} 
+              className="bg-white/10 backdrop-blur-sm text-white border border-white/20 px-8 py-4 rounded-2xl font-semibold hover:bg-white/20 transition-all duration-300 flex-1 max-w-[200px]"
+            >
+              {isPortuguese ? "Saber Mais" : "Learn More"}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}
