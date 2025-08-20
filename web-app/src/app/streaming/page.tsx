@@ -35,8 +35,16 @@ import Footer from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
 import { useSubscription } from "@/context/SubscriptionContext";
 import { communityStats } from '@/config/community';
+import { CONTENT } from "@/config/content";
+import { ROUTES } from "@/config/routes";
 
-// Creator tier packages - similar to transport service structure
+// Metadata for SEO - this is generated from content config
+export const metadata = {
+  title: CONTENT.streaming.seoTitle,
+  description: CONTENT.streaming.seoDescription,
+};
+
+// Creator tier packages - generalized for broader audience
 const creatorTiers = [
   {
     id: "starter",
@@ -46,14 +54,14 @@ const creatorTiers = [
     originalPrice: 29,
     image: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/creator-starter-setup_dlqxkx.jpg",
     imageAlt: "Content creator setup with professional streaming equipment",
-    imageAltPortuguese: "Configuração de criador de conteúdo português com equipamento de streaming profissional",
+    imageAltPortuguese: "Configuração de criador de conteúdo com equipamento de streaming profissional",
     membershipDiscounts: {
       free: 0,
       community: 10,
       ambassador: 20,
     },
-    description: "Perfect for content creators starting their streaming journey in the U.K.",
-    descriptionPortuguese: "Perfeito para falantes de português começando sua jornada de streaming em Londres e Reino Unido",
+    description: `Perfect for content creators starting their streaming journey in ${CONTENT.region.prepositioned}`,
+    descriptionPortuguese: `Perfeito para criadores de conteúdo começando sua jornada de streaming no ${CONTENT.region.short}`,
     popular: true,
     features: [
       "RTMP streaming to community",
@@ -61,18 +69,18 @@ const creatorTiers = [
       "Community chat moderation",
       "Basic analytics dashboard",
       "Mobile streaming support via Streamlabs",
-      "U.K. events integration",
+      `${CONTENT.region.short} events integration`,
       "Multi-language support",
       "Community networking opportunities",
     ],
     featuresPortuguese: [
-      "Streaming RTMP para comunidade portuguesa",
-      "Pack de emotes culturais portugueses (:saudade:, :festa:, :futebol:)",
+      "Streaming RTMP para comunidade",
+      "Pack de emotes culturais (:saudade:, :festa:, :futebol:)",
       "Moderação de chat da comunidade",
       "Dashboard de analytics básico",
       "Suporte para streaming mobile via Streamlabs",
-      "Integração com eventos de Londres",
-      "Suporte em língua portuguesa",
+      `Integração com eventos do ${CONTENT.region.short}`,
+      "Suporte multi-idioma",
       "Oportunidades de networking comunitário",
     ],
     color: "secondary",
@@ -85,15 +93,15 @@ const creatorTiers = [
     price: 49,
     originalPrice: 69,
     image: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535201/professional-creator-studio_hml2nr.jpg",
-    imageAlt: "Professional streaming studio with advanced equipment and U.K. backdrop",
-    imageAltPortuguese: "Estúdio de streaming português profissional com equipamento avançado e cenário de Londres",
+    imageAlt: `Professional streaming studio with advanced equipment and ${CONTENT.region.short} backdrop`,
+    imageAltPortuguese: `Estúdio de streaming profissional com equipamento avançado e cenário do ${CONTENT.region.short}`,
     membershipDiscounts: {
       free: 0,
       community: 15,
       ambassador: 25,
     },
-    description: "Advanced streaming tools for established content creators and businesses",
-    descriptionPortuguese: "Ferramentas avançadas de streaming para criadores de conteúdo portugueses estabelecidos e empresas",
+    description: `Advanced streaming tools for established content creators and businesses in ${CONTENT.region.prepositioned}`,
+    descriptionPortuguese: `Ferramentas avançadas de streaming para criadores de conteúdo estabelecidos e empresas no ${CONTENT.region.short}`,
     features: [
       "All Creator Starter features",
       "Multi-stream to YouTube, Twitch, TikTok simultaneously",
@@ -109,14 +117,14 @@ const creatorTiers = [
     featuresPortuguese: [
       "Todas as funcionalidades do Criador Iniciante",
       "Multi-stream para YouTube, Twitch, TikTok simultaneamente",
-      "Categorias avançadas de conteúdo cultural português",
+      "Categorias avançadas de conteúdo cultural",
       "Programa de partilha de receitas (85/15 divisão)",
-      "Promoção prioritária na comunidade portuguesa",
+      "Promoção prioritária na comunidade",
       "Overlays e gráficos personalizados para streaming",
       "Analytics avançados e insights de audiência",
-      "Integração direta com eventos portugueses",
+      "Integração direta com eventos locais",
       "Capacidades de streaming de workshops de negócios",
-      "Suporte de chat bilingue português/inglês",
+      "Suporte de chat multi-idioma",
     ],
     color: "primary",
     targetAudience: "professional_creators",
@@ -129,40 +137,40 @@ const creatorTiers = [
     originalPrice: 299,
     image: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535202/enterprise-streaming-setup_abc123.jpg",
     imageAlt: "Enterprise streaming setup for business events and community broadcasts",
-    imageAltPortuguese: "Configuração de streaming empresarial português para eventos de negócios e transmissões comunitárias",
+    imageAltPortuguese: "Configuração de streaming empresarial para eventos de negócios e transmissões comunitárias",
     membershipDiscounts: {
       free: 0,
       community: 20,
       ambassador: 30,
     },
-    description: "Complete streaming solution for businesses, organizations, and major community events",
-    descriptionPortuguese: "Solução completa de streaming para empresas portuguesas, organizações e grandes eventos comunitários",
+    description: `Complete streaming solution for businesses, organizations, and major community events in ${CONTENT.region.prepositioned}`,
+    descriptionPortuguese: `Solução completa de streaming para empresas, organizações e grandes eventos comunitários no ${CONTENT.region.short}`,
     features: [
       "All Professional Creator features",
       "Dedicated community channel",
       "White-label streaming platform",
-      "Multi-location U.K. streaming support",
+      `Multi-location ${CONTENT.region.short} streaming support`,
       "Professional production team support",
       "Custom cultural programming",
       "Enterprise-grade security and moderation",
       "API access for custom integrations",
       "Dedicated account manager",
       "Premium community partnerships",
-      "Event venue streaming partnerships in the U.K.",
+      `Event venue streaming partnerships in ${CONTENT.region.prepositioned}`,
       "Corporate training and workshop capabilities",
     ],
     featuresPortuguese: [
       "Todas as funcionalidades do Criador Profissional",
-      "Canal dedicado da comunidade portuguesa",
+      "Canal dedicado da comunidade",
       "Plataforma de streaming white-label",
-      "Suporte para streaming multi-localização em Londres",
+      `Suporte para streaming multi-localização no ${CONTENT.region.short}`,
       "Suporte de equipa de produção profissional",
-      "Programação cultural portuguesa personalizada",
+      "Programação cultural personalizada",
       "Segurança e moderação de nível empresarial",
       "Acesso API para integrações personalizadas",
-      "Gestor de conta dedicado (falante de português)",
-      "Parcerias premium da comunidade portuguesa",
-      "Parcerias de streaming com locais de eventos em Londres",
+      "Gestor de conta dedicado",
+      "Parcerias premium da comunidade",
+      `Parcerias de streaming com locais de eventos no ${CONTENT.region.short}`,
       "Capacidades de formação corporativa e workshops",
     ],
     color: "accent",
@@ -170,7 +178,7 @@ const creatorTiers = [
   },
 ];
 
-// Content categories for streamers
+// Content categories - generalized
 const contentCategories = [
   {
     id: "culture",
@@ -198,7 +206,7 @@ const contentCategories = [
     namePortuguese: "Gaming",
     icon: Gamepad2,
     description: "Gaming community, tournaments, live gameplay",
-    descriptionPortuguese: "Comunidade de gaming portuguesa, torneios FIFA",
+    descriptionPortuguese: "Comunidade de gaming, torneios, gameplay ao vivo",
     streamers: 67,
     color: "from-green-500 to-blue-500",
   },
@@ -207,8 +215,8 @@ const contentCategories = [
     name: "Lifestyle & Travel",
     namePortuguese: "Estilo de Vida e Viagens", 
     icon: Heart,
-    description: "U.K. life, community events, travel vlogs",
-    descriptionPortuguese: "Vida em Londres, eventos da comunidade portuguesa, vlogs de viagem",
+    description: `${CONTENT.region.short} life, community events, travel vlogs`,
+    descriptionPortuguese: `Vida no ${CONTENT.region.short}, eventos da comunidade, vlogs de viagem`,
     streamers: 34,
     color: "from-pink-500 to-orange-500",
   },
@@ -241,9 +249,9 @@ export default function StreamingPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Similar to London Transport style */}
+      {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
-        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/portuguese-streaming-london_dlqxkx.jpg')] bg-cover bg-center opacity-5"></div>
+        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/streaming-setup_dlqxkx.jpg')] bg-cover bg-center opacity-5"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-primary-900/5 via-transparent to-secondary-900/5"></div>
         
         <div className="relative container-width py-16 lg:py-24">
@@ -270,14 +278,14 @@ export default function StreamingPage() {
               className="text-4xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight"
             >
               <span className="hidden sm:block">
-                {isPortuguese ? "Torne-se um Criador de Conteúdo" : "Become a Content Creator"}
+                {isPortuguese ? "Quer tornar-se um streamer?" : CONTENT.streaming.heroTitle}
               </span>
               <span className="sm:hidden">
                 {isPortuguese ? "Streaming" : "Streaming"}
               </span>
               <br />
               <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
-                {isPortuguese ? "em Londres" : "in the U.K."}
+                {isPortuguese ? `no ${CONTENT.region.short}` : `in ${CONTENT.region.prepositioned}`}
               </span>
             </motion.h1>
 
@@ -290,14 +298,14 @@ export default function StreamingPage() {
             >
               <span className="hidden sm:block">
                 {isPortuguese 
-                  ? "Conecte-se com a comunidade através de streaming. Partilhe sua cultura, negócios e paixões com milhares de pessoas no Reino Unido."
-                  : "Connect with the community through streaming. Share your culture, business, and passions with thousands of people in the U.K."
+                  ? `Torne-se um criador de conteúdo e faça crescer a sua audiência no ${CONTENT.region.short}.`
+                  : CONTENT.streaming.heroSubtitle
                 }
               </span>
               <span className="sm:hidden">
                 {isPortuguese 
-                  ? "Streaming para a comunidade no Reino Unido"
-                  : "Streaming for community in the U.K."
+                  ? `Streaming no ${CONTENT.region.short}`
+                  : `Streaming in ${CONTENT.region.prepositioned}`
                 }
               </span>
             </motion.p>
@@ -323,24 +331,24 @@ export default function StreamingPage() {
               </div>
             </motion.div>
 
-            {/* CTAs */}
+            {/* CTAs using centralized copy and routes */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
               className="flex flex-row gap-3 sm:gap-4 justify-center mb-8"
             >
-              <button 
-                onClick={() => setShowBookingForm(true)}
+              <a 
+                href={ROUTES.streamingGetStarted}
                 className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-6 sm:px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1 flex-1 max-w-[180px] sm:max-w-none text-center"
               >
-                {isPortuguese ? "Começar Streaming" : "Start Streaming"}
-              </button>
+                {isPortuguese ? "Começar a Criar" : CONTENT.streaming.ctaPrimary}
+              </a>
               <a 
-                href="#packages" 
+                href={ROUTES.streamingLearn} 
                 className="border border-gray-300 text-gray-700 px-6 sm:px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-lg hover:shadow-xl flex-1 max-w-[180px] sm:max-w-none text-center"
               >
-                {isPortuguese ? "Ver Pacotes" : "View Packages"}
+                {isPortuguese ? "Saber Mais" : CONTENT.streaming.ctaSecondary}
               </a>
             </motion.div>
 
@@ -413,7 +421,7 @@ export default function StreamingPage() {
         </div>
       </section>
 
-      {/* Creator Packages Section - Similar to Transport Services */}
+      {/* Creator Packages Section */}
       <section id="packages" className="py-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="container-width">
           <div className="text-center mb-12">
@@ -422,8 +430,8 @@ export default function StreamingPage() {
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
               {isPortuguese 
-                ? "Escolha o pacote perfeito para a sua jornada de criação de conteúdo português"
-                : "Choose the perfect package for your Portuguese content creation journey"
+                ? "Escolha o pacote perfeito para a sua jornada de criação de conteúdo"
+                : "Choose the perfect package for your content creation journey"
               }
             </p>
           </div>
@@ -492,16 +500,16 @@ export default function StreamingPage() {
                   </div>
 
                   {/* CTA */}
-                  <button
-                    onClick={() => setShowBookingForm(true)}
-                    className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 ${
+                  <a
+                    href={ROUTES.streamingGetStarted}
+                    className={`block w-full py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-center ${
                       tier.popular
                         ? 'bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                   >
                     {isPortuguese ? "Começar Agora" : "Start Now"}
-                  </button>
+                  </a>
                 </div>
               </motion.div>
             ))}
@@ -518,8 +526,8 @@ export default function StreamingPage() {
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
               {isPortuguese 
-                ? "Comece a fazer streaming para a comunidade portuguesa em apenas 3 passos simples"
-                : "Start streaming to the Portuguese community in just 3 simple steps"
+                ? "Comece a fazer streaming para a comunidade em apenas 3 passos simples"
+                : "Start streaming to the community in just 3 simple steps"
               }
             </p>
           </div>
@@ -535,13 +543,13 @@ export default function StreamingPage() {
               {
                 step: 2,
                 title: isPortuguese ? "Configure Seu Setup" : "Set Up Your Stream",
-                description: isPortuguese ? "Configuramos seu RTMP, emotes culturais e integração com eventos portugueses" : "We configure your RTMP, cultural emotes, and Portuguese events integration",
+                description: isPortuguese ? "Configuramos seu RTMP, emotes culturais e integração com eventos" : "We configure your RTMP, cultural emotes, and events integration",
                 icon: Settings,
               },
               {
                 step: 3,
                 title: isPortuguese ? "Comece a Transmitir" : "Start Broadcasting",
-                description: isPortuguese ? "Conecte-se com milhares de portugueses e comece a construir sua audiência" : "Connect with thousands of Portuguese speakers and start building your audience",
+                description: isPortuguese ? "Conecte-se com milhares de pessoas e comece a construir sua audiência" : "Connect with thousands of people and start building your audience",
                 icon: Video,
               },
             ].map((step, index) => (
@@ -581,8 +589,8 @@ export default function StreamingPage() {
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
               {isPortuguese 
-                ? "Criadores portugueses estão a prosperar na nossa plataforma"
-                : "Portuguese creators are thriving on our platform"
+                ? "Criadores estão a prosperar na nossa plataforma"
+                : "Creators are thriving on our platform"
               }
             </p>
           </div>
@@ -591,7 +599,7 @@ export default function StreamingPage() {
             {[
               {
                 name: "Maria Santos",
-                category: isPortuguese ? "Culinária Portuguesa" : "Portuguese Cooking",
+                category: isPortuguese ? "Culinária" : "Cooking",
                 achievement: isPortuguese ? "2.3K seguidores em 3 meses" : "2.3K followers in 3 months",
                 quote: isPortuguese ? "A plataforma conectou-me com pessoas de todo o Reino Unido que adoram a nossa gastronomia!" : "The platform connected me with people all over the U.K. who love our cuisine!",
               },
@@ -599,11 +607,11 @@ export default function StreamingPage() {
                 name: "João Ferreira", 
                 category: isPortuguese ? "Workshops de Negócios" : "Business Workshops",
                 achievement: isPortuguese ? "£1.2K receita mensal" : "£1.2K monthly revenue",
-                quote: isPortuguese ? "Transformei meu conhecimento em tecnologia em streams educativos para a comunidade portuguesa." : "I turned my technology knowledge into educational streams for the Portuguese community.",
+                quote: isPortuguese ? "Transformei meu conhecimento em tecnologia em streams educativos para a comunidade." : "I turned my technology knowledge into educational streams for the community.",
               },
               {
                 name: "Ana Costa",
-                category: isPortuguese ? "Noites de Fado" : "Fado Nights", 
+                category: isPortuguese ? "Música" : "Music", 
                 achievement: isPortuguese ? "Eventos em 5 locais" : "Events in 5 venues",
                 quote: isPortuguese ? "O streaming ajudou-me a levar a música a mais pessoas no Reino Unido." : "Streaming helped me bring music to more people in the U.K.",
               },
@@ -642,19 +650,19 @@ export default function StreamingPage() {
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             {isPortuguese 
-              ? "Junte-se a centenas de criadores que estão a construir suas audiências no Reino Unido"
-              : "Join hundreds of creators who are building their audiences in the U.K."
+              ? `Junte-se a centenas de criadores que estão a construir suas audiências no ${CONTENT.region.short}`
+              : `Join hundreds of creators who are building their audiences in ${CONTENT.region.prepositioned}`
             }
           </p>
           <div className="flex flex-row gap-4 justify-center">
-            <button 
-              onClick={() => setShowBookingForm(true)}
+            <a 
+              href={ROUTES.streamingGetStarted}
               className="bg-white text-primary-600 px-8 py-4 rounded-2xl font-bold hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-2xl flex-1 max-w-[200px]"
             >
               {isPortuguese ? "Começar Agora" : "Start Now"}
-            </button>
+            </a>
             <a 
-              href="#packages" 
+              href={ROUTES.streamingLearn} 
               className="bg-white/10 backdrop-blur-sm text-white border border-white/20 px-8 py-4 rounded-2xl font-semibold hover:bg-white/20 transition-all duration-300 flex-1 max-w-[200px]"
             >
               {isPortuguese ? "Saber Mais" : "Learn More"}
@@ -662,37 +670,6 @@ export default function StreamingPage() {
           </div>
         </div>
       </section>
-
-      {/* Booking Form Modal */}
-      {showBookingForm && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl p-8 max-w-md w-full">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              {isPortuguese ? "Começar Streaming" : "Start Streaming"}
-            </h3>
-            <p className="text-gray-600 mb-6">
-              {isPortuguese 
-                ? "Entre em contato connosco para configurar sua conta de streaming"
-                : "Get in touch with us to set up your streaming account"
-              }
-            </p>
-            <div className="space-y-4">
-              <button className="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-3 rounded-xl font-semibold">
-                {isPortuguese ? "Contactar Equipa" : "Contact Team"}
-              </button>
-              <button className="w-full bg-gray-100 text-gray-700 py-3 rounded-xl font-semibold">
-                {isPortuguese ? "Agendar Demonstração" : "Schedule Demo"}
-              </button>
-              <button 
-                onClick={() => setShowBookingForm(false)}
-                className="w-full text-gray-500 py-2"
-              >
-                {isPortuguese ? "Fechar" : "Close"}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
       <Footer />
     </div>

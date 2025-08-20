@@ -24,6 +24,8 @@ export const ROUTES = {
   live: '/live',
   tv: '/tv',
   streaming: '/streaming',
+  streamingGetStarted: '/streaming/get-started',
+  streamingLearn: '/streaming/learn',
   subscription: '/subscription',
   students: '/students',
   premiumMembership: '/premium-membership',

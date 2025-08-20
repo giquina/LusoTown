@@ -104,7 +104,7 @@ export default function PrimeirosPassosPage() {
               <p className="text-xl md:text-2xl text-primary-100 mb-8 max-w-3xl mx-auto">
                 {language === 'pt' 
                   ? 'Bem-vindo à sua nova casa portuguesa em Londres. Vamos começar esta jornada juntos!'
-                  : 'Welcome to your new Portuguese home in London. Let\'s start this journey together!'
+                  : 'Welcome to your new Portuguese home in the U.K. Let\'s start this journey together!'
                 }
               </p>
               

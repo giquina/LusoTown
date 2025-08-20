@@ -76,7 +76,7 @@ const membershipPlans = [
     description: 'Comece a explorar a comunidade portuguesa',
     descriptionEn: 'Start exploring the Portuguese community',
     culturalContext: 'Descubra a sua comunidade portuguesa em Londres',
-    culturalContextEn: 'Discover your Portuguese community in London',
+    culturalContextEn: 'Discover your Portuguese community in the U.K.',
     icon: <HeartIcon className="w-6 h-6" />,
     solidIcon: <HeartIconSolid className="w-6 h-6" />,
     features: [
@@ -106,7 +106,7 @@ const membershipPlans = [
     description: 'Acesso completo à comunidade portuguesa',
     descriptionEn: 'Full access to Portuguese community',
     culturalContext: 'Investimento na preservação da nossa cultura e língua em Londres',
-    culturalContextEn: 'Investment in preserving our culture and language in London',
+    culturalContextEn: 'Investment in preserving our culture and language in the U.K.',
     icon: <UsersIcon className="w-6 h-6" />,
     solidIcon: <StarIconSolid className="w-6 h-6" />,
     features: [
@@ -138,7 +138,7 @@ const membershipPlans = [
     nameEn: 'Cultural Ambassador',
     price: 39.99,
     description: 'Lidere a comunidade portuguesa em Londres',
-    descriptionEn: 'Lead the Portuguese community in London',
+    descriptionEn: 'Lead the Portuguese community in the U.K.',
     culturalContext: 'Torne-se um líder da comunidade portuguesa',
     culturalContextEn: 'Become a Portuguese community leader',
     icon: <Crown className="w-6 h-6" />,
@@ -222,7 +222,7 @@ const testimonials = [
     location: 'Stockwell, Londres',
     membership: 'Membro da Comunidade',
     quote: 'Por £19.99/mês, encontrei uma família portuguesa em Londres. Já participei em 15 eventos este ano - noites de fado, workshops de pastéis de nata, networking. O valor é incrível.',
-    quoteEn: 'For £19.99/month, I found a Portuguese family in London. I\'ve attended 15 events this year - fado nights, pastéis de nata workshops, networking. The value is incredible.',
+    quoteEn: 'For £19.99/month, I found a Portuguese family in the U.K. I\'ve attended 15 events this year - fado nights, pastéis de nata workshops, networking. The value is incredible.',
     rating: 5,
     cultural: 'Profissional de marketing, originária do Porto',
     roi: '£400+ valor por £240 investidos anualmente'
@@ -255,7 +255,7 @@ const testimonials = [
     location: 'South Kensington, Londres',
     membership: 'Membro da Comunidade',
     quote: 'Há 20 anos em Londres, o LusoTown finalmente me conectou à comunidade portuguesa. £19.99/mês por acesso a eventos premium que custam centenas? Sem dúvida o melhor valor.',
-    quoteEn: 'After 20 years in London, LusoTown finally connected me to the Portuguese community. £19.99/month for access to premium events that cost hundreds? Absolutely the best value.',
+    quoteEn: 'After 20 years in the U.K., LusoTown finally connected me to the Portuguese community. £19.99/month for access to premium events that cost hundreds? Absolutely the best value.',
     rating: 5,
     cultural: 'Consultor sénior, de Coimbra',
     roi: '£400+ valor em eventos e networking'
@@ -717,7 +717,7 @@ export default function Pricing() {
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese ?
                   'Ouça como outros portugueses, profissionais e indivíduos encontraram o seu lugar em Londres através da nossa comunidade' :
-                  'Hear how other Portuguese individuals and professionals found their place in London through our community'
+                  'Hear how other Portuguese individuals and professionals found their place in the U.K. through our community'
                 }
               </p>
             </div>
@@ -1123,7 +1123,7 @@ export default function Pricing() {
                 <p className="text-gray-600 leading-relaxed">
                   {isPortuguese ?
                     'Combata a solidão e saudades de casa. Encontre a sua "família" portuguesa em Londres - valor inestimável para a sua saúde mental.' :
-                    'Combat loneliness and homesickness. Find your Portuguese "family" in London - invaluable for your mental health and wellbeing.'
+                    'Combat loneliness and homesickness. Find your Portuguese "family" in the U.K. - invaluable for your mental health and wellbeing.'
                   }
                 </p>
               </div>
@@ -1197,7 +1197,7 @@ export default function Pricing() {
                   questionPt: "O que torna LusoTown diferente de outras plataformas?",
                   questionEn: "What makes LusoTown different from other platforms?",
                   answerPt: "LusoTown é exclusivamente para a comunidade portuguesa de Londres. Focamos em locais autênticos - desde as padarias de Stockwell às noites de fado em South Kensington. Não somos apenas uma app - somos o teu sistema de apoio para preservar a cultura portuguesa, criar amizades verdadeiras e sentires-te em casa em Londres.",
-                  answerEn: "LusoTown is exclusively for London's Portuguese community. We focus on authentic venues - from Stockwell's bakeries to fado nights in South Kensington. We're not just an app - we're your support system for preserving Portuguese culture, creating real friendships, and feeling at home in London."
+                  answerEn: "LusoTown is exclusively for the U.K.'s Portuguese community. We focus on authentic venues - from Stockwell's bakeries to fado nights in South Kensington. We're not just an app - we're your support system for preserving Portuguese culture, creating real friendships, and feeling at home in the U.K."
                 },
                 {
                   questionPt: "Posso alterar ou cancelar a minha adesão?",
@@ -1284,7 +1284,7 @@ export default function Pricing() {
               <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
                 {isPortuguese ?
                   'Planos de adesão flexíveis. Uma comunidade para toda a vida. Invista na preservação da cultura portuguesa em Londres.' :
-                  'Flexible membership plans. A community for life. Invest in preserving Portuguese culture in London.'
+                  'Flexible membership plans. A community for life. Invest in preserving Portuguese culture in the U.K.'
                 }
               </p>
 
