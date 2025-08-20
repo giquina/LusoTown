@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
-  GraduationCapIcon, 
   ChartBarIcon, 
   ClockIcon,
   ArrowRightIcon,
@@ -288,7 +287,7 @@ export default function AcademyHomePage() {
               className="mb-6"
             >
               <span className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-primary-100 via-secondary-50 to-accent-100 border border-primary-200 shadow-lg">
-                <GraduationCapIcon className="w-4 h-4 mr-2 text-primary-600" />
+                <GraduationCap className="w-4 h-4 mr-2 text-primary-600" />
                 <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent font-bold">
                   {isPortuguese ? 'Academia LusoTown' : 'LusoTown Academy'}
                 </span>

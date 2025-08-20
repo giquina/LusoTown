@@ -97,7 +97,6 @@ const nextConfig = {
   },
   experimental: {
   scrollRestoration: true,
-  appDir: false,
   },
   webpack: (config, { dev, isServer }) => {
     // Enable react-native-web + monorepo shared packages

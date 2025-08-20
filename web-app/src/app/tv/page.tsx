@@ -194,7 +194,20 @@ export default function TVPage() {
               
               <div className="grid lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2">
-                  <StreamPlayer />
+                  <StreamPlayer
+                    stream={{
+                      id: "default",
+                      title: isPortuguese ? "Transmissão" : "Stream",
+                      youtubeVideoId: "dQw4w9WgXcQ",
+                      isLive: true,
+                      isPremium: false,
+                      thumbnail: "/events/networking.jpg",
+                      viewerCount: 0,
+                      previewDuration: 300,
+                    }}
+                    hasAccess={true}
+                    onInteraction={() => {}}
+                  />
                   <StreamViewerStats />
                 </div>
                 <div>

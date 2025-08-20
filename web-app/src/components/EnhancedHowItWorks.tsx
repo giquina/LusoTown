@@ -9,12 +9,12 @@ import {
   UserGroupIcon,
   MapPinIcon,
   TruckIcon,
-  GraduationCapIcon,
   ChatBubbleLeftRightIcon,
   ArrowRightIcon,
   StarIcon,
   SparklesIcon
 } from '@heroicons/react/24/outline'
+import { GraduationCap } from 'lucide-react'
 import { 
   HeartIcon as HeartSolidIcon,
   PlayIcon as PlaySolidIcon,

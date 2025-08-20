@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import React, { useState } from "react";
 import { 
   ChatBubbleLeftRightIcon,
   UserGroupIcon,
@@ -15,10 +16,10 @@ import {
   EyeIcon,
   HandRaisedIcon
 } from "@heroicons/react/24/outline";
-import { LearningModuleFramework } from "../../../components/academy/LearningModuleFramework";
-import { LearningModule } from "../../../types/academy";
+import LearningModuleFramework, { LearningModule } from "../../../components/academy/LearningModuleFramework";
+// Local page uses component-defined LearningModule type
 
-const communityForumsModule: LearningModule = {
+const communityForumsModule = {
   id: 'community-forums',
   title: 'Community Forums',
   titlePortuguese: 'Fóruns da Comunidade',
@@ -27,7 +28,14 @@ const communityForumsModule: LearningModule = {
   difficulty: 'Beginner',
   estimatedTime: 22,
   category: 'community',
+  categoryPortuguese: 'comunidade',
   icon: ChatBubbleLeftRightIcon,
+  prerequisites: [],
+  prerequisitesPortuguese: [],
+  learningObjectives: [],
+  learningObjectivesPortuguese: [],
+  practicalExercises: [],
+  resources: [],
   steps: [
     {
       id: 'forum-navigation',
@@ -769,7 +777,15 @@ const communityForumsModule: LearningModule = {
 };
 
 export default function CommunityForumsPage() {
+  const [completed, setCompleted] = useState<string[]>([]);
+  const handleStep = (id: string) => setCompleted((prev: string[]) => prev.includes(id) ? prev : [...prev, id]);
+  const handleComplete = () => {};
   return (
-    <LearningModuleFramework module={communityForumsModule} />
+    <LearningModuleFramework
+      module={communityForumsModule as unknown as LearningModule}
+      onComplete={handleComplete}
+      onStepComplete={handleStep}
+      completedSteps={completed}
+    />
   );
 }

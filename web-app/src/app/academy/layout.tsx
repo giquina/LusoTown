@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { 
-  GraduationCapIcon,
   BookOpenIcon,
   ChartBarIcon,
   UserGroupIcon,
@@ -224,7 +223,7 @@ export default function AcademyLayout({ children }: AcademyLayoutProps) {
       <div className="flex">
         {/* Sidebar Navigation */}
         <AnimatePresence>
-          {(sidebarOpen || window.innerWidth >= 1024) && (
+          {(sidebarOpen || (typeof window !== 'undefined' && window.innerWidth >= 1024)) && (
             <motion.aside
               initial={{ x: -320 }}
               animate={{ x: 0 }}
