@@ -134,7 +134,7 @@ const MOCK_POSTS: SocialPost[] = [
       verified: true,
       membershipTier: 'cultural_ambassador'
     },
-    content: '🚗 Professional Portuguese-speaking drivers available for weekend cultural tours! Visit the best Portuguese spots in London with someone who knows the community. Book your transport experience today.',
+    content: '🚗 Professional Portuguese-speaking drivers available for weekend cultural tours! Visit the best Portuguese spots in the U.K. with someone who knows the community. Book your transport experience today.',
     contentType: 'service_promotion',
     culturalTags: ['transport', 'cultural_tours', 'portuguese_service'],
     locationTags: ['london'],
@@ -268,7 +268,7 @@ export default function SocialFeed({ className = '', initialFilter = 'all' }: So
                 {t('social_feed.title') || 'Portuguese Community Feed'}
               </h2>
               <p className="text-gray-600">
-                {t('social_feed.subtitle') || 'Connect with Portuguese speakers in London'}
+                {t('social_feed.subtitle') || 'Connect with Portuguese speakers in the U.K.'}
               </p>
             </div>
           </div>

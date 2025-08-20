@@ -199,7 +199,7 @@ export default function TVPage() {
               <span className="hidden sm:block">
                 {isPortuguese
                   ? "Televisão Portuguesa em Londres"
-                  : "Portuguese Television in London"}
+                  : "Portuguese Television in the U.K."}
               </span>
               <span className="sm:hidden">
                 {isPortuguese ? "LusoTown TV" : "LusoTown TV"}
@@ -218,7 +218,7 @@ export default function TVPage() {
             >
               {isPortuguese
                 ? "Assista programação portuguesa ao vivo, participe em eventos culturais e conecte-se com a comunidade portuguesa em Londres."
-                : "Watch Portuguese programming live, join cultural events, and connect with the Portuguese community in London."}
+                : "Watch Portuguese programming live, join cultural events, and connect with the Portuguese community in the U.K.."}
             </motion.p>
           </div>
         </div>

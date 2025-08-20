@@ -217,7 +217,7 @@ export default function CommunityFeedSection() {
           heritage: 'Cape Verde',
           badges: ['Community Moderator']
         },
-        content: 'Had an interesting conversation about maintaining our mother tongue while living abroad. How do you keep Portuguese alive in your daily life here in London? My kids are starting to prefer English, and I want them to stay connected to our roots. Any tips? 🤔',
+        content: 'Had an interesting conversation about maintaining our mother tongue while living abroad. How do you keep Portuguese alive in your daily life here in the U.K.? My kids are starting to prefer English, and I want them to stay connected to our roots. Any tips? 🤔',
         timestamp: new Date(Date.now() - 18 * 60 * 60 * 1000).toISOString(),
         timeAgo: '18 hours ago',
         metrics: { likes: 73, comments: 58, shares: 12, views: 456 },

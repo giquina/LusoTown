@@ -260,7 +260,7 @@ export default function EnhancedHowItWorks() {
           >
             {isPortuguese
               ? "Descubra tudo o que pode fazer na maior comunidade portuguesa de Londres"
-              : "Discover everything you can do in London's largest Portuguese community"}
+              : "Discover everything you can do in the U.K.'s largest Portuguese community"}
           </motion.p>
         </div>
 
@@ -472,7 +472,7 @@ export default function EnhancedHowItWorks() {
             <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
               {isPortuguese
                 ? "Junte-se a centenas de portugueses que já descobriram a sua comunidade em Londres"
-                : "Join hundreds of Portuguese speakers who have already discovered their community in London"}
+                : "Join hundreds of Portuguese speakers who have already discovered their community in the U.K."}
             </p>
             <a
               href="/signup"

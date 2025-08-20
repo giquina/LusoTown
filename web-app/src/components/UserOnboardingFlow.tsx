@@ -98,7 +98,7 @@ export default function UserOnboardingFlow({
       title: isPortuguese ? 'Bem-vindo à LusoTown!' : 'Welcome to LusoTown!',
       subtitle: isPortuguese 
         ? 'A sua comunidade portuguesa em Londres'
-        : 'Your Portuguese community in London',
+        : 'Your Portuguese community in the U.K.',
       component: WelcomeStep
     },
     {
@@ -119,7 +119,7 @@ export default function UserOnboardingFlow({
     },
     {
       id: 'location',
-      title: isPortuguese ? 'Onde está em Londres?' : 'Where are you in London?',
+      title: isPortuguese ? 'Onde está em Londres?' : 'Where are you in the U.K.?',
       subtitle: isPortuguese
         ? 'Ajude-nos a conectá-lo com portugueses perto de si'
         : 'Help us connect you with Portuguese speakers near you',
@@ -263,7 +263,7 @@ export default function UserOnboardingFlow({
                     <div>
                       <h1 className="text-2xl font-bold text-gray-900">LusoTown</h1>
                       <p className="text-sm text-gray-600">
-                        {isPortuguese ? 'Comunidade Portuguesa em Londres' : 'Portuguese Community in London'}
+                        {isPortuguese ? 'Comunidade Portuguesa em Londres' : 'Portuguese Community in the U.K.'}
                       </p>
                     </div>
                   </div>
@@ -351,7 +351,7 @@ function WelcomeStep({ onNext, isPortuguese, isMobile }: any) {
         >
           {isPortuguese 
             ? 'A maior comunidade de falantes de português em Londres. Conecte-se, descubra eventos, faça amigos e sinta-se em casa.'
-            : 'The largest community of Portuguese speakers in London. Connect, discover events, make friends, and feel at home.'
+            : 'The largest community of Portuguese speakers in the U.K.. Connect, discover events, make friends, and feel at home.'
           }
         </motion.p>
       </div>

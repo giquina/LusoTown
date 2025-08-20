@@ -445,7 +445,7 @@ export class CulturalCompatibilityAI {
     experiences.push('Missing extended family gatherings')
     experiences.push('Nostalgia triggered by Portuguese music')
     experiences.push('Explaining Portuguese culture to British friends')
-    experiences.push('Finding authentic Portuguese ingredients in London')
+    experiences.push('Finding authentic Portuguese ingredients in the U.K.')
     
     return experiences.slice(0, 6)
   }
@@ -632,7 +632,7 @@ export class CulturalCompatibilityAI {
       activities.push('Portuguese landscape photography walk')
     }
     
-    activities.push('Portuguese cultural exploration in London')
+    activities.push('Portuguese cultural exploration in the U.K.')
     activities.push('Language practice and cultural exchange')
     
     return activities

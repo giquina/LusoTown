@@ -76,7 +76,7 @@ export default function UserPathwayAssessment({
       id: "student",
       name: "Student",
       namePortuguese: "Estudante",
-      description: "Perfect for Portuguese students in London universities",
+      description: "Perfect for Portuguese students in the U.K. universities",
       descriptionPortuguese:
         "Perfeito para estudantes portugueses nas universidades de Londres",
       detailedDescription:
@@ -122,7 +122,7 @@ export default function UserPathwayAssessment({
       id: "professional",
       name: "Professional",
       namePortuguese: "Profissional",
-      description: "Ideal for Portuguese professionals working in London",
+      description: "Ideal for Portuguese professionals working in the U.K.",
       descriptionPortuguese:
         "Ideal para profissionais portugueses que trabalham em Londres",
       detailedDescription:
@@ -172,7 +172,7 @@ export default function UserPathwayAssessment({
       descriptionPortuguese:
         "Para criadores de conteúdo portugueses e influenciadores",
       detailedDescription:
-        "Learn streaming, community building, monetization strategies, and how to grow your Portuguese audience in London.",
+        "Learn streaming, community building, monetization strategies, and how to grow your Portuguese audience in the U.K..",
       detailedDescriptionPortuguese:
         "Aprenda streaming, construção de comunidade, estratégias de monetização e como aumentar a sua audiência portuguesa em Londres.",
       icon: Video,
@@ -218,7 +218,7 @@ export default function UserPathwayAssessment({
       descriptionPortuguese:
         "Perfeito para se conectar socialmente com a comunidade portuguesa",
       detailedDescription:
-        "Discover dating opportunities, cultural events, community connections, and build meaningful relationships within London's Portuguese community.",
+        "Discover dating opportunities, cultural events, community connections, and build meaningful relationships within the U.K.'s Portuguese community.",
       detailedDescriptionPortuguese:
         "Descubra oportunidades de encontros, eventos culturais, conexões comunitárias e construa relacionamentos significativos na comunidade portuguesa de Londres.",
       icon: Heart,

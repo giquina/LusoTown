@@ -74,7 +74,7 @@ const testimonials = [
     age: "38",
     location: "Shoreditch",
     quote:
-      "Finally found other Portuguese speakers in London. The events are amazing!",
+      "Finally found other Portuguese speakers in the U.K.. The events are amazing!",
     avatar: getImageWithFallback("maya-patel"),
   },
 ];
@@ -1006,7 +1006,7 @@ function SignupInner() {
                             </span>
                           </div>
                           <span>
-                            Browse and join Portuguese events in London
+                            Browse and join Portuguese events in the U.K.
                           </span>
                         </div>
                         <div className="flex items-center gap-2">

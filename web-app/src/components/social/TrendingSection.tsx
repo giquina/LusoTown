@@ -216,7 +216,7 @@ export default function TrendingSection({ className = '' }: { className?: string
           
           <div className="space-y-2">
             <h5 className="font-medium text-primary-800">
-              {t('trending.fado_weekend') || 'Fado Weekend in London'}
+              {t('trending.fado_weekend') || 'Fado Weekend in the U.K.'}
             </h5>
             <p className="text-sm text-primary-700">
               {t('trending.fado_description') || 'Join the Portuguese community for an authentic Fado experience across London venues this weekend.'}

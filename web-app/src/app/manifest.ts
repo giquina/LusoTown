@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'LusoTown London - Portuguese Social Calendar',
     short_name: 'LusoTown',
-    description: 'Connect with Portuguese speakers in London. Book experiences, join activities, live life together with your lusophone community.',
+    description: 'Connect with Portuguese speakers in the U.K.. Book experiences, join activities, live life together with your lusophone community.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

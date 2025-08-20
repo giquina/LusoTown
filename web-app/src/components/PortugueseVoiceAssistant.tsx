@@ -6,7 +6,7 @@
  * 
  * Advanced voice AI system with Portuguese voice recognition,
  * cultural context understanding, and bilingual response capabilities.
- * Designed specifically for the Portuguese diaspora community in London.
+ * Designed specifically for the Portuguese diaspora community in the U.K..
  */
 
 import React, { useState, useEffect, useRef, useCallback } from 'react'
@@ -112,7 +112,7 @@ const CULTURAL_KNOWLEDGE = {
       keywords: ['comida', 'food', 'bacalhau', 'pastéis de nata', 'francesinha', 'cozido'],
       responses: [
         'Portuguese food carries so many memories! What dish makes you feel most connected to home?',
-        'I can help you find authentic Portuguese ingredients in London or share traditional recipes.'
+        'I can help you find authentic Portuguese ingredients in the U.K. or share traditional recipes.'
       ]
     },
     music: {
@@ -144,8 +144,8 @@ const VOICE_ASSISTANT_CAPABILITIES = [
     icon: MapPinIcon,
     title: 'London Portuguese Guide',
     titlePt: 'Guia Português de Londres',
-    description: 'Find Portuguese shops, restaurants, and community events in London',
-    examples: ['Where can I find good pastéis de nata?', 'Portuguese churches in London?']
+    description: 'Find Portuguese shops, restaurants, and community events in the U.K.',
+    examples: ['Where can I find good pastéis de nata?', 'Portuguese churches in the U.K.?']
   },
   {
     icon: HeartIcon,
@@ -368,7 +368,7 @@ export default function PortugueseVoiceAssistant() {
       emotionalTone = 'empathetic'
       
       return {
-        text: 'I understand that feeling of saudade - it\'s so uniquely Portuguese. That deep longing for home, for people, for moments that live in our hearts. Many Portuguese speakers in London experience this. Would you like to talk about what triggers your saudade most?',
+        text: 'I understand that feeling of saudade - it\'s so uniquely Portuguese. That deep longing for home, for people, for moments that live in our hearts. Many Portuguese speakers in the U.K. experience this. Would you like to talk about what triggers your saudade most?',
         textPt: 'Compreendo esse sentimento de saudade - é tão unicamente português. Essa profunda nostalgia por casa, por pessoas, por momentos que vivem nos nossos corações. Muitos falantes de português em Londres sentem isto. Gostaria de falar sobre o que mais provoca a sua saudade?',
         culturalContext: 'Portuguese emotional experience and diaspora psychology',
         emotionalTone,
@@ -387,14 +387,14 @@ export default function PortugueseVoiceAssistant() {
       culturalTopic = 'food'
       
       return {
-        text: 'Portuguese food is so much more than just sustenance - it carries our culture, our memories, our family traditions. What Portuguese dish are you craving today? I can help you find authentic ingredients in London or share traditional recipes.',
+        text: 'Portuguese food is so much more than just sustenance - it carries our culture, our memories, our family traditions. What Portuguese dish are you craving today? I can help you find authentic ingredients in the U.K. or share traditional recipes.',
         textPt: 'A comida portuguesa é muito mais que só sustento - carrega a nossa cultura, as nossas memórias, as tradições familiares. Que prato português está com vontade de comer hoje? Posso ajudá-lo a encontrar ingredientes autênticos em Londres ou partilhar receitas tradicionais.',
         culturalContext: 'Portuguese culinary culture and food as cultural connection',
         emotionalTone: 'supportive',
         followUpSuggestions: [
           'Where can I find Portuguese ingredients?',
           'Teach me to make bacalhau',
-          'Portuguese restaurants in London'
+          'Portuguese restaurants in the U.K.'
         ],
         relatedTopics: ['Portuguese shops', 'Cooking classes', 'Food events'],
         confidence: 0.88
@@ -414,7 +414,7 @@ export default function PortugueseVoiceAssistant() {
         followUpSuggestions: [
           'Recommend Portuguese music for my mood',
           'Tell me about Amália Rodrigues',
-          'Where can I hear fado in London?'
+          'Where can I hear fado in the U.K.?'
         ],
         relatedTopics: ['Portuguese events', 'Cultural performances', 'Music therapy'],
         confidence: 0.92
@@ -430,7 +430,7 @@ export default function PortugueseVoiceAssistant() {
         emotionalTone: 'encouraging',
         followUpSuggestions: [
           'Explain Portuguese family traditions',
-          'How to maintain culture in London',
+          'How to maintain culture in the U.K.',
           'Portuguese values and customs'
         ],
         relatedTopics: ['Family traditions', 'Cultural events', 'Portuguese community'],
@@ -440,12 +440,12 @@ export default function PortugueseVoiceAssistant() {
     
     // Default response for general queries
     return {
-      text: 'I\'m here to help you with anything related to Portuguese culture, community, or life in London. You can ask me about traditions, find Portuguese services, get emotional support, or just have a chat in Portuguese or English. What would you like to know?',
+      text: 'I\'m here to help you with anything related to Portuguese culture, community, or life in the U.K.. You can ask me about traditions, find Portuguese services, get emotional support, or just have a chat in Portuguese or English. What would you like to know?',
       textPt: 'Estou aqui para ajudá-lo com qualquer coisa relacionada com a cultura portuguesa, comunidade, ou vida em Londres. Pode perguntar-me sobre tradições, encontrar serviços portugueses, obter apoio emocional, ou simplesmente conversar em português ou inglês. O que gostaria de saber?',
       culturalContext: 'General Portuguese diaspora support and guidance',
       emotionalTone: 'supportive',
       followUpSuggestions: [
-        'Tell me about Portuguese events in London',
+        'Tell me about Portuguese events in the U.K.',
         'Help me connect with Portuguese community',
         'I need emotional support today'
       ],

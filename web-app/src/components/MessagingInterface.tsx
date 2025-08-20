@@ -76,7 +76,7 @@ export default function MessagingInterface({
         'Olá! How are you enjoying London?',
         'What\'s your favorite Portuguese restaurant here?',
         'Have you been to any Portuguese events recently?',
-        'How do you stay connected to Portuguese culture in London?'
+        'How do you stay connected to Portuguese culture in the U.K.?'
       ],
       startConversation: 'Start the conversation with a friendly greeting!'
     },

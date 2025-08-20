@@ -291,7 +291,7 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
             className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
           >
             Connect with fellow Portuguese speakers at authentic cultural events, 
-            business networking sessions, and traditional celebrations in London.
+            business networking sessions, and traditional celebrations in the U.K..
           </motion.p>
         </div>
 

@@ -175,7 +175,7 @@ export default function PortugueseCulturalCalendar() {
           }
         ],
         historicalBackground: 'Ancient festivals honoring popular saints, particularly strong in Lisbon and Porto traditions',
-        modernAdaptations: ['park venues in London', 'electric grills for safety', 'fusion music performances'],
+        modernAdaptations: ['park venues in the U.K.', 'electric grills for safety', 'fusion music performances'],
         familyFriendly: true,
         emoji: '🎉',
         color: 'from-yellow-500 to-red-500',
@@ -734,7 +734,7 @@ export default function PortugueseCulturalCalendar() {
           {t('calendar.regions.title', 'Cultural Celebrations by Portuguese Region')}
         </h3>
         <p className="text-gray-600">
-          {t('calendar.regions.subtitle', 'Explore the unique cultural traditions from each Portuguese region celebrated in London')}
+          {t('calendar.regions.subtitle', 'Explore the unique cultural traditions from each Portuguese region celebrated in the U.K.')}
         </p>
       </div>
 
@@ -857,7 +857,7 @@ export default function PortugueseCulturalCalendar() {
             transition={{ delay: 0.2 }}
             className="text-xl sm:text-2xl text-gray-700 max-w-4xl mx-auto"
           >
-            {t('calendar.subtitle', 'Discover, celebrate, and never miss Portuguese cultural holidays, saint days, and traditional celebrations in London')}
+            {t('calendar.subtitle', 'Discover, celebrate, and never miss Portuguese cultural holidays, saint days, and traditional celebrations in the U.K.')}
           </motion.p>
         </div>
 
@@ -1113,7 +1113,7 @@ export default function PortugueseCulturalCalendar() {
 
                     <div>
                       <h4 className="text-xl font-bold text-gray-900 mb-3">
-                        {t('calendar.modern_adaptations', 'Modern Adaptations in London')}
+                        {t('calendar.modern_adaptations', 'Modern Adaptations in the U.K.')}
                       </h4>
                       <ul className="space-y-2">
                         {selectedEvent.modernAdaptations.map((adaptation) => (

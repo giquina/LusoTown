@@ -322,7 +322,7 @@ export default function NotificationPreferences({ className = '' }: Notification
         <p className="text-sm text-neutral-600">
           {language === 'pt' 
             ? 'Personalize como e quando recebe notificações da comunidade portuguesa em Londres'
-            : 'Customize how and when you receive notifications from the Portuguese community in London'
+            : 'Customize how and when you receive notifications from the Portuguese community in the U.K.'
           }
         </p>
       </div>

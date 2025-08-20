@@ -49,7 +49,7 @@ const mockProfiles = [
       "Professional Networking",
       "Arts & Crafts",
     ],
-    bio: "Portuguese marketing professional looking to connect with fellow lusófonos in London. Love fado nights and traditional cooking!",
+    bio: "Portuguese marketing professional looking to connect with fellow lusófonos in the U.K.. Love fado nights and traditional cooking!",
     image: mockProfileImages["ana-sofia"],
     compatibility: 94,
   },
@@ -117,7 +117,7 @@ const mockProfiles = [
       "Arts & Crafts",
       "Dance",
     ],
-    bio: "Brazilian financial analyst living in London. Love connecting with Portuguese speakers and exploring the city.",
+    bio: "Brazilian financial analyst living in the U.K.. Love connecting with Portuguese speakers and exploring the city.",
     image: mockProfileImages["carolina-lima"],
     compatibility: 92,
   },
@@ -1077,7 +1077,7 @@ function MatchesContent() {
             </h2>
             <p className="text-sm md:text-base text-primary-700 max-w-3xl mx-auto">
               {t("howItWorksDescription") ||
-                "Our matching system is designed specifically for Portuguese speakers in London, focusing on cultural compatibility and shared experiences"}
+                "Our matching system is designed specifically for Portuguese speakers in the U.K., focusing on cultural compatibility and shared experiences"}
             </p>
           </div>
 
@@ -1189,7 +1189,7 @@ function MatchesContent() {
                 </h3>
                 <p className="text-primary-700 mb-5 text-sm md:text-base">
                   {t("joinCommunityDescription") ||
-                    "Connect with Portuguese speakers who understand your culture, language, and journey in London"}
+                    "Connect with Portuguese speakers who understand your culture, language, and journey in the U.K."}
                 </p>
                 <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-4 rounded-xl border border-primary-100">
                   <div className="text-xl md:text-2xl font-bold text-primary-600">

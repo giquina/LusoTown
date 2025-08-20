@@ -32,7 +32,7 @@ const mockCulturalEvents = [
     location: 'Potters Fields Park, London Bridge',
     category: 'Festival',
     type: 'Community Event',
-    description: 'Join us for the biggest Portuguese cultural celebration in London! Traditional music, food, and festivities celebrating São António.',
+    description: 'Join us for the biggest Portuguese cultural celebration in the U.K.! Traditional music, food, and festivities celebrating São António.',
     organizer: 'Portuguese Cultural Association',
     attendees: 245,
     maxAttendees: 500,
@@ -282,7 +282,7 @@ export default function CulturalCalendarPage() {
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                Celebrate Portuguese Culture in London
+                Celebrate Portuguese Culture in the U.K.
               </h1>
               
               <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -611,7 +611,7 @@ export default function CulturalCalendarPage() {
               Organizing a Portuguese Cultural Event?
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Share your event with the Portuguese community in London and help preserve our culture
+              Share your event with the Portuguese community in the U.K. and help preserve our culture
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-premium-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-premium-700 transition-colors">

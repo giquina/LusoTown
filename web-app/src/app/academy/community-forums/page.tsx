@@ -46,7 +46,7 @@ const communityForumsModule = {
       title: "Understanding LusoTown Forums",
       titlePortuguese: "Compreender os Fóruns da LusoTown",
       content: `
-        <p>LusoTown's community forums are the heart of our Portuguese-speaking community in London. Learn how to navigate, search, and participate in meaningful discussions that celebrate our shared heritage while respecting diverse perspectives.</p>
+        <p>LusoTown's community forums are the heart of our Portuguese-speaking community in the U.K.. Learn how to navigate, search, and participate in meaningful discussions that celebrate our shared heritage while respecting diverse perspectives.</p>
         
         <h4>Forum Categories</h4>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
@@ -113,7 +113,7 @@ const communityForumsModule = {
         </ul>
         
         <div class="bg-green-50 border-l-4 border-green-400 p-4 my-4">
-          <p><strong>Getting Started Tip:</strong> Begin by browsing the "New Members" section where fellow Portuguese speakers share their first experiences in London. It's a welcoming space to introduce yourself and ask initial questions.</p>
+          <p><strong>Getting Started Tip:</strong> Begin by browsing the "New Members" section where fellow Portuguese speakers share their first experiences in the U.K.. It's a welcoming space to introduce yourself and ask initial questions.</p>
         </div>
       `,
       contentPortuguese: `
@@ -253,7 +253,7 @@ const communityForumsModule = {
             <h5 class="font-semibold text-purple-800">Detailed Context</h5>
             <p class="text-sm text-purple-700 mt-2">Provide helpful background information:</p>
             <ul class="text-xs text-purple-600 mt-2 list-disc list-inside">
-              <li>Your location in London (area/borough)</li>
+              <li>Your location in the U.K. (area/borough)</li>
               <li>Timeline for your question (urgent vs. general inquiry)</li>
               <li>Previous steps you've already taken</li>
               <li>Specific preferences or requirements</li>
@@ -657,13 +657,13 @@ const communityForumsModule = {
         <h4>Long-term Community Building</h4>
         <div class="bg-gradient-to-r from-primary-50 to-secondary-50 border border-primary-200 rounded-lg p-4 my-4">
           <h5 class="font-semibold text-primary-800">Your Portuguese Community Legacy</h5>
-          <p class="text-sm text-primary-700 mt-2">Consider how you want to contribute to the long-term growth and success of Portuguese speakers in London:</p>
+          <p class="text-sm text-primary-700 mt-2">Consider how you want to contribute to the long-term growth and success of Portuguese speakers in the U.K.:</p>
           <ul class="text-xs text-primary-600 mt-2 list-disc list-inside space-y-1">
             <li>Mentor new Portuguese arrivals in your professional field</li>
             <li>Document and share resources for common challenges (housing, healthcare, education)</li>
             <li>Build bridges between different Portuguese-speaking communities (Portugal, Brazil, African countries)</li>
             <li>Create lasting traditions and events that strengthen community bonds</li>
-            <li>Develop resources that will help future generations of Portuguese speakers in London</li>
+            <li>Develop resources that will help future generations of Portuguese speakers in the U.K.</li>
           </ul>
         </div>
         

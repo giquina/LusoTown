@@ -104,7 +104,7 @@ const mockServicePosts: ServicePost[] = [
       rating: 4.8,
       completedServices: 189
     },
-    content: 'Amazing cultural tour of Stockwell Portuguese community today! Visited the best Portuguese bakeries, explored the Portuguese murals, and ended at the Portuguese Cultural Centre. My guests loved learning about our community\'s history in London! 🇵🇹',
+    content: 'Amazing cultural tour of Stockwell Portuguese community today! Visited the best Portuguese bakeries, explored the Portuguese murals, and ended at the Portuguese Cultural Centre. My guests loved learning about our community\'s history in the U.K.! 🇵🇹',
     serviceDetails: {
       type: 'Cultural Walking Tour',
       price: 'From £25 per person',

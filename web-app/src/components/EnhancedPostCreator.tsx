@@ -427,7 +427,7 @@ Contact: {contact}
               <p className="text-gray-600 mt-1">
                 {isPortuguese 
                   ? 'Partilhe conteúdo relevante para a comunidade portuguesa em Londres'
-                  : 'Share content relevant to the Portuguese community in London'
+                  : 'Share content relevant to the Portuguese community in the U.K.'
                 }
               </p>
             </div>
@@ -575,7 +575,7 @@ Contact: {contact}
                 onChange={(e) => handleContentChange(e.target.value)}
                 placeholder={isPortuguese 
                   ? 'Partilhe algo relevante para a comunidade portuguesa em Londres...'
-                  : 'Share something relevant to the Portuguese community in London...'
+                  : 'Share something relevant to the Portuguese community in the U.K....'
                 }
                 className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-400 resize-none"
                 rows={6}

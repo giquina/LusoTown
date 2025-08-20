@@ -186,7 +186,7 @@ export const PORTUGUESE_BUSINESS_KEYWORDS = [
   'portuguese owned business'
 ]
 
-// Sample verified Portuguese businesses in London
+// Sample verified Portuguese businesses in the U.K.
 export const MOCK_PORTUGUESE_BUSINESSES: PortugueseBusiness[] = [
   {
     id: 'business-001',
@@ -490,7 +490,7 @@ export const MOCK_PORTUGUESE_BUSINESSES: PortugueseBusiness[] = [
     name: 'Centro Cultural Português',
     namePortuguese: 'Centro Cultural Português de Londres',
     category: 'cultural_center',
-    description: 'Portuguese cultural center offering language classes, cultural events, and community services for Portuguese speakers in London.',
+    description: 'Portuguese cultural center offering language classes, cultural events, and community services for Portuguese speakers in the U.K..',
     descriptionPortuguese: 'Centro cultural português oferecendo aulas de língua, eventos culturais e serviços comunitários para lusófonos em Londres.',
     
     address: '180 High Street, London',

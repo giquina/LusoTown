@@ -37,7 +37,7 @@ const HASHTAG_TABS: HashtagTab[] = [
       pt: 'Comunidade'
     },
     description: {
-      en: 'General Portuguese community in London',
+      en: 'General Portuguese community in the U.K.',
       pt: 'Comunidade portuguesa geral em Londres'
     },
     icon: <Users className="w-4 h-4" />,

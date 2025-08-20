@@ -74,7 +74,7 @@ export default function HelpCenter() {
         {
           question: "What areas does LusoTown cover?",
           answer:
-            "We currently serve women across the UK, with the largest communities in London, Manchester, Birmingham, Edinburgh, and Bristol. We're expanding to more cities based on member demand.",
+            "We currently serve women across the UK, with the largest communities in the U.K., Manchester, Birmingham, Edinburgh, and Bristol. We're expanding to more cities based on member demand.",
         },
       ],
     },

@@ -104,7 +104,7 @@ const serviceTypeOptions = [
     iconEn: HeartIcon,
     labelEn: 'Portuguese Nightlife Security', 
     labelPt: 'Segurança para Vida Noturna Portuguesa',
-    exampleEn: 'Portuguese club nights, late-night venues in London',
+    exampleEn: 'Portuguese club nights, late-night venues in the U.K.',
     examplePt: 'Noites de clube portuguesas, locais noturnos em Londres',
     riskBase: 4
   },
@@ -122,7 +122,7 @@ const serviceTypeOptions = [
     iconEn: GlobeEuropeAfricaIcon,
     labelEn: 'Portuguese Heritage Tour', 
     labelPt: 'Tour do Património Português',
-    exampleEn: 'Guided tour of Portuguese areas in London (Stockwell, Lambeth)',
+    exampleEn: 'Guided tour of Portuguese areas in the U.K. (Stockwell, Lambeth)',
     examplePt: 'Tour guiado das áreas portuguesas em Londres (Stockwell, Lambeth)',
     riskBase: 3
   },

@@ -265,7 +265,7 @@ export const EventReviewSystem: React.FC<EventReviewSystemProps> = ({
               <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-4 rounded-lg border border-primary-100">
                 <h3 className="font-semibold text-gray-900 mb-2">Como foi a sua experiência? • How was your experience?</h3>
                 <p className="text-sm text-gray-700">
-                  Your honest feedback helps strengthen our Portuguese community in London
+                  Your honest feedback helps strengthen our Portuguese community in the U.K.
                 </p>
               </div>
 

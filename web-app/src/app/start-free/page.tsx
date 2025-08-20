@@ -161,7 +161,7 @@ export default function StartFree() {
                       {isPortuguese ? "Comunidade Portuguesa" : "Portuguese Community"}
                     </span>
                     <span className="block text-2xl sm:text-3xl lg:text-4xl text-gray-600 mt-2">
-                      {isPortuguese ? "em Londres" : "in London"}
+                      {isPortuguese ? "em Londres" : "in the U.K."}
                     </span>
                   </h1>
 
@@ -226,7 +226,7 @@ export default function StartFree() {
                   <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                     <Image
                       src={getImageWithFallback("portuguese-london-community")}
-                      alt="Portuguese community in London"
+                      alt="Portuguese community in the U.K."
                       width={600}
                       height={400}
                       className="w-full h-auto object-cover"
@@ -298,7 +298,7 @@ export default function StartFree() {
                 <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                   {isPortuguese 
                     ? "Tudo o que precisa para começar a sua jornada na comunidade portuguesa de Londres."
-                    : "Everything you need to start your journey in London's Portuguese community."}
+                    : "Everything you need to start your journey in the U.K.'s Portuguese community."}
                 </p>
               </div>
 
@@ -497,7 +497,7 @@ export default function StartFree() {
                 <p className="text-sm text-primary-100">
                   {isPortuguese 
                     ? "Junte-se a mais de 2,000 portugueses em Londres • 100% gratuito para sempre"
-                    : "Join 2,000+ Portuguese speakers in London • 100% free forever"}
+                    : "Join 2,000+ Portuguese speakers in the U.K. • 100% free forever"}
                 </p>
               </div>
             </div>
@@ -518,7 +518,7 @@ export default function StartFree() {
               <p className="text-gray-600 mb-6">
                 {isPortuguese 
                   ? "Descubra como a nossa comunidade está a transformar vidas de portugueses em Londres."
-                  : "Discover how our community is transforming Portuguese lives in London."}
+                  : "Discover how our community is transforming Portuguese lives in the U.K.."}
               </p>
               <div className="space-y-4">
                 <button

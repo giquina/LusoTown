@@ -253,7 +253,7 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
     {
       id: 'cultural-1',
       category: 'cultural',
-      text_en: "What's your favorite Portuguese tradition to celebrate in London?",
+      text_en: "What's your favorite Portuguese tradition to celebrate in the U.K.?",
       text_pt: "Qual é a sua tradição portuguesa favorita para celebrar em Londres?",
       context: 'Tradições culturais lusófonas'
     },
@@ -274,7 +274,7 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
     {
       id: 'cultural-6',
       category: 'cultural',
-      text_en: "How do you celebrate Santos Populares in London?",
+      text_en: "How do you celebrate Santos Populares in the U.K.?",
       text_pt: "Como celebra os Santos Populares em Londres?",
       context: 'Festividades tradicionais portuguesas'
     },
@@ -302,7 +302,7 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
     {
       id: 'professional-1',
       category: 'professional',
-      text_en: "How has being part of the Portuguese community helped your career in London?",
+      text_en: "How has being part of the Portuguese community helped your career in the U.K.?",
       text_pt: "Como é que fazer parte da comunidade portuguesa ajudou a tua carreira em Londres?",
       context: 'Professional networking'
     },
@@ -323,21 +323,21 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
     {
       id: 'personal-4',
       category: 'personal',
-      text_en: "What Portuguese expression best describes your experience in London?",
+      text_en: "What Portuguese expression best describes your experience in the U.K.?",
       text_pt: "Que expressão portuguesa melhor descreve a sua experiência em Londres?",
       context: 'Expressões idiomáticas portuguesas'
     },
     {
       id: 'personal-5',
       category: 'personal',
-      text_en: "How has living in London changed your perspective on being Portuguese?",
+      text_en: "How has living in the U.K. changed your perspective on being Portuguese?",
       text_pt: "Como é que viver em Londres mudou a sua perspetiva de ser português?",
       context: 'Identidade cultural na diáspora'
     },
     {
       id: 'cultural-3',
       category: 'cultural',
-      text_en: "What's your favorite Portuguese recipe to cook in London?",
+      text_en: "What's your favorite Portuguese recipe to cook in the U.K.?",
       text_pt: "Qual é a tua receita portuguesa favorita para cozinhar em Londres?",
       context: 'Food and cooking traditions'
     },
@@ -351,7 +351,7 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
     {
       id: 'professional-4',
       category: 'professional',
-      text_en: "Do you work with Portuguese clients or suppliers from your role in London?",
+      text_en: "Do you work with Portuguese clients or suppliers from your role in the U.K.?",
       text_pt: "Trabalha com clientes ou fornecedores portugueses no seu papel em Londres?",
       context: 'Negócios transnacionais lusófonos'
     },
@@ -365,7 +365,7 @@ export function NetworkingProvider({ children }: { children: ReactNode }) {
     {
       id: 'cultural-4',
       category: 'cultural',
-      text_en: "Do you celebrate any Portuguese holidays or festivals in London?",
+      text_en: "Do you celebrate any Portuguese holidays or festivals in the U.K.?",
       text_pt: "Celebras algum feriado ou festival português em Londres?",
       context: 'Holiday celebrations'
     },

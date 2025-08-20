@@ -228,7 +228,7 @@ export default function CloseProtectionPage() {
                 ) : (
                   <>
                     Elite Close Protection <br />
-                    <span className="text-premium-600">Services</span> in London
+                    <span className="text-premium-600">Services</span> in the U.K.
                   </>
                 )}
               </h1>

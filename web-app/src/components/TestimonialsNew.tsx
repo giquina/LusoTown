@@ -369,7 +369,7 @@ export default function TestimonialsNew() {
           className="text-center mt-12"
         >
           <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-            Ready to Connect with Portuguese Speakers in London?
+            Ready to Connect with Portuguese Speakers in the U.K.?
           </h3>
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
             Join thousands of Portuguese speakers across London who are organizing events, building communities, and creating lasting connections throughout the city.

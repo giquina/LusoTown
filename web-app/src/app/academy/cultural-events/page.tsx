@@ -44,7 +44,7 @@ export default function CulturalEventsModule() {
     id: 'cultural-events',
     title: 'Cultural Events',
     titlePortuguese: 'Eventos Culturais',
-    description: 'Discover, attend, and organize authentic Portuguese cultural events in London',
+    description: 'Discover, attend, and organize authentic Portuguese cultural events in the U.K.',
     descriptionPortuguese: 'Descubra, participe e organize eventos culturais portugueses autênticos em Londres',
     difficulty: 'Beginner',
     estimatedTime: 22,
@@ -70,14 +70,14 @@ export default function CulturalEventsModule() {
     steps: [
       {
         id: 'portuguese-cultural-calendar',
-        title: 'Understanding the Portuguese Cultural Calendar in London',
+        title: 'Understanding the Portuguese Cultural Calendar in the U.K.',
         titlePortuguese: 'Compreendendo o Calendário Cultural Português em Londres',
         type: 'introduction',
         estimatedTime: 4,
         content: `
           <p>London's Portuguese community maintains a rich cultural calendar that celebrates our heritage while embracing our new home. Understanding this calendar helps you stay connected to your roots and build meaningful relationships.</p>
           
-          <h3>Major Portuguese Cultural Events in London:</h3>
+          <h3>Major Portuguese Cultural Events in the U.K.:</h3>
           
           <h4>Annual Celebrations:</h4>
           <ul>
@@ -395,7 +395,7 @@ export default function CulturalEventsModule() {
           type: 'checklist',
           data: {
             items: [
-              { text: 'Research 3 upcoming Portuguese cultural events in London', textPortuguese: 'Pesquise 3 próximos eventos culturais portugueses em Londres' },
+              { text: 'Research 3 upcoming Portuguese cultural events in the U.K.', textPortuguese: 'Pesquise 3 próximos eventos culturais portugueses em Londres' },
               { text: 'Learn 5 Portuguese cultural phrases and their meanings', textPortuguese: 'Aprenda 5 frases culturais portuguesas e os seus significados' },
               { text: 'Prepare a traditional Portuguese dish to share at events', textPortuguese: 'Prepare um prato tradicional português para partilhar em eventos' },
               { text: 'Practice introducing yourself and your Portuguese heritage', textPortuguese: 'Pratique apresentar-se e a sua herança portuguesa' }
@@ -484,7 +484,7 @@ export default function CulturalEventsModule() {
             <li><strong>London Adaptation:</strong> Portuguese restaurants and wine bars host events</li>
           </ul>
           
-          <h3>Regional Celebrations in London:</h3>
+          <h3>Regional Celebrations in the U.K.:</h3>
           
           <h4>Madeiran Traditions:</h4>
           <ul>
@@ -637,7 +637,7 @@ export default function CulturalEventsModule() {
             items: [
               { text: 'Research your family\'s regional Portuguese traditions', textPortuguese: 'Pesquise as tradições portuguesas regionais da sua família' },
               { text: 'Learn the history behind 2 major Portuguese celebrations', textPortuguese: 'Aprenda a história por trás de 2 grandes celebrações portuguesas' },
-              { text: 'Find local Portuguese cultural organizations in London', textPortuguese: 'Encontre organizações culturais portuguesas locais em Londres' },
+              { text: 'Find local Portuguese cultural organizations in the U.K.', textPortuguese: 'Encontre organizações culturais portuguesas locais em Londres' },
               { text: 'Practice traditional Portuguese songs or prayers', textPortuguese: 'Pratique canções ou orações tradicionais portuguesas' }
             ]
           }
@@ -1011,7 +1011,7 @@ export default function CulturalEventsModule() {
         },
         tips: [
           'Start small with intimate gatherings before organizing larger events',
-          'Always have backup plans for outdoor Portuguese celebrations in London weather',
+          'Always have backup plans for outdoor Portuguese celebrations in the U.K. weather',
           'Create bilingual materials to accommodate different comfort levels with Portuguese'
         ],
         tipsPortuguese: [

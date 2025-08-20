@@ -44,7 +44,7 @@ export default function TransportChauffeurModule() {
     id: 'transport-chauffeur',
     title: 'Transport & Chauffeur',
     titlePortuguese: 'Transporte e Motorista',
-    description: 'Learn to use premium Portuguese-speaking transport services in London safely and efficiently',
+    description: 'Learn to use premium Portuguese-speaking transport services in the U.K. safely and efficiently',
     descriptionPortuguese: 'Aprenda a usar serviços de transporte premium com falantes de português em Londres de forma segura e eficiente',
     difficulty: 'Beginner',
     estimatedTime: 15,

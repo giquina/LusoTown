@@ -187,7 +187,7 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
       rolePortuguese: 'Coordenadora de Eventos Culturais'
     },
     partnerships: ['Portuguese Cultural Centre', 'Southbank Centre', 'Museum of London', 'Greater London Authority'],
-    futureGoals: 'Establish permanent Portuguese cultural center in London, expand festivals to 10 UK cities, create Portuguese heritage trail across London.',
+    futureGoals: 'Establish permanent Portuguese cultural center in the U.K., expand festivals to 10 UK cities, create Portuguese heritage trail across London.',
     futureGoalsPortuguese: 'Estabelecer centro cultural português permanente em Londres, expandir festivais para 10 cidades do Reino Unido, criar trilha patrimonial portuguesa através de Londres.',
     mediaRecognition: ['Time Out London', 'Evening Standard Culture', 'Portuguese National Media', 'BBC Arts & Culture'],
     icon: SparklesIcon,
@@ -226,7 +226,7 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
       'Organizados 300+ eventos de integração comunitária facilitando conexões sociais'
     ],
     testimonial: {
-      quote: 'When I arrived in London with my children, everything felt overwhelming. The Portuguese community support network became our lifeline - helping with school applications, NHS registration, even connecting us with Portuguese-speaking doctors. They didn\'t just help us survive; they helped us thrive.',
+      quote: 'When I arrived in the U.K. with my children, everything felt overwhelming. The Portuguese community support network became our lifeline - helping with school applications, NHS registration, even connecting us with Portuguese-speaking doctors. They didn\'t just help us survive; they helped us thrive.',
       quotePortuguese: 'Quando cheguei a Londres com meus filhos, tudo parecia esmagador. A rede de apoio da comunidade portuguesa tornou-se nossa tábua de salvação - ajudando com inscrições escolares, registo no NHS, até conectando-nos com médicos que falam português. Não apenas nos ajudaram a sobreviver; ajudaram-nos a prosperar.',
       author: 'Mariana Silva',
       role: 'Single Mother, Community Advocate',
@@ -257,7 +257,7 @@ const COMMUNITY_IMPACTS: CommunityImpact[] = [
     location: 'UK Electoral Districts with Portuguese Communities',
     keyAchievements: [
       'Registered 2,500+ eligible Portuguese citizens to vote in UK elections',
-      'Elected 3 Portuguese councillors in London borough elections',
+      'Elected 3 Portuguese councillors in the U.K. borough elections',
       'Established Portuguese Civic Engagement Forum with 200+ active members',
       'Organized candidate meet-and-greet events in Portuguese for 500+ voters',
       'Created multilingual voting guides distributed to 1,800+ Portuguese households',
@@ -422,7 +422,7 @@ export default function CommunityImpactDocumentation() {
           <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
             {language === 'pt' 
               ? 'Impacto quantificável e documentado da comunidade portuguesa em Londres através de contribuições económicas, educacionais, culturais e sociais mensuráveis.'
-              : 'Quantifiable and documented impact of the Portuguese community in London through measurable economic, educational, cultural, and social contributions.'}
+              : 'Quantifiable and documented impact of the Portuguese community in the U.K. through measurable economic, educational, cultural, and social contributions.'}
           </p>
         </motion.div>
 
@@ -695,7 +695,7 @@ export default function CommunityImpactDocumentation() {
             <p className="text-lg mb-8 opacity-90 max-w-3xl mx-auto">
               {language === 'pt' 
                 ? 'Junte-se à comunidade portuguesa mais impactante de Londres. Juntos, continuamos a transformar Londres através da nossa cultura, valores e contribuições positivas.'
-                : 'Join London\'s most impactful Portuguese community. Together, we continue transforming London through our culture, values, and positive contributions.'}
+                : 'Join the U.K.\'s most impactful Portuguese community. Together, we continue transforming London through our culture, values, and positive contributions.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <a

@@ -123,7 +123,7 @@ export default function HousingAssistanceModule() {
             <li><strong>Portuguese Estate Agents:</strong> Bilingual service and cultural sensitivity</li>
           </ul>
           
-          <h4>Preferred Portuguese Areas in London:</h4>
+          <h4>Preferred Portuguese Areas in the U.K.:</h4>
           <ul>
             <li><strong>South London:</strong>
               <ul>
@@ -260,7 +260,7 @@ export default function HousingAssistanceModule() {
         type: 'tutorial',
         estimatedTime: 6,
         content: `
-          <p>The Portuguese community in London has developed strong networks and resources to help each other navigate housing challenges. Here's how to access and contribute to these support systems.</p>
+          <p>The Portuguese community in the U.K. has developed strong networks and resources to help each other navigate housing challenges. Here's how to access and contribute to these support systems.</p>
           
           <h3>Portuguese Community Housing Networks:</h3>
           
@@ -276,7 +276,7 @@ export default function HousingAssistanceModule() {
             </li>
             <li><strong>Facebook Groups:</strong>
               <ul>
-                <li>"Portuguese in London - Housing Help"</li>
+                <li>"Portuguese in the U.K. - Housing Help"</li>
                 <li>"Brasileiros e Portugueses em Londres - Habitação"</li>
                 <li>"Portuguese Families London Housing"</li>
                 <li>"Portuguese Property London"</li>
@@ -418,7 +418,7 @@ export default function HousingAssistanceModule() {
             </li>
             <li><strong>Grupos Facebook:</strong>
               <ul>
-                <li>"Portuguese in London - Housing Help"</li>
+                <li>"Portuguese in the U.K. - Housing Help"</li>
                 <li>"Brasileiros e Portugueses em Londres - Habitação"</li>
                 <li>"Portuguese Families London Housing"</li>
                 <li>"Portuguese Property London"</li>
@@ -548,7 +548,7 @@ export default function HousingAssistanceModule() {
           data: {
             items: [
               { text: 'Join 3 Portuguese housing WhatsApp or Facebook groups', textPortuguese: 'Junte-se a 3 grupos habitacionais portugueses no WhatsApp ou Facebook' },
-              { text: 'Research Portuguese estate agents in London', textPortuguese: 'Pesquise agentes imobiliários portugueses em Londres' },
+              { text: 'Research Portuguese estate agents in the U.K.', textPortuguese: 'Pesquise agentes imobiliários portugueses em Londres' },
               { text: 'Connect with Portuguese community centers for housing advice', textPortuguese: 'Conecte-se com centros comunitários portugueses para aconselhamento habitacional' },
               { text: 'Attend a Portuguese community event to network about housing', textPortuguese: 'Participe num evento da comunidade portuguesa para fazer networking sobre habitação' }
             ]
@@ -997,7 +997,7 @@ export default function HousingAssistanceModule() {
         type: 'interactive',
         estimatedTime: 9,
         content: `
-          <p>Building long-term housing stability requires strategic planning, community integration, and ongoing support networks within the Portuguese community in London.</p>
+          <p>Building long-term housing stability requires strategic planning, community integration, and ongoing support networks within the Portuguese community in the U.K..</p>
           
           <h3>Long-term Housing Planning Strategy:</h3>
           
@@ -1222,7 +1222,7 @@ export default function HousingAssistanceModule() {
                 <li>Support development of Portuguese community centers</li>
                 <li>Contribute to Portuguese community housing funds</li>
                 <li>Help establish Portuguese housing cooperatives</li>
-                <li>Work toward sustainable Portuguese community growth in London</li>
+                <li>Work toward sustainable Portuguese community growth in the U.K.</li>
               </ul>
             </li>
           </ul>

@@ -372,7 +372,7 @@ const ACCOMMODATION_TIPS: AccommodationTip[] = [
   {
     id: 'portuguese-areas',
     category: 'cultural',
-    title: 'Portuguese Communities in London',
+    title: 'Portuguese Communities in the U.K.',
     titlePortuguese: 'Comunidades Portuguesas em Londres',
     content: 'Vauxhall, Stockwell, and Golborne Road have large Portuguese communities with shops, restaurants, and cultural centers. Living nearby provides cultural connection and support.',
     contentPortuguese: 'Vauxhall, Stockwell e Golborne Road têm grandes comunidades portuguesas com lojas, restaurantes e centros culturais. Viver perto proporciona conexão cultural e apoio.',
@@ -513,7 +513,7 @@ export default function AccommodationSupportSection() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             {language === 'pt' 
               ? 'Apoio abrangente para encontrar alojamento em Londres, conectar-se com colegas portugueses e navegar no sistema de arrendamento do Reino Unido com confiança.'
-              : 'Comprehensive support to find accommodation in London, connect with Portuguese housemates, and navigate the UK rental system with confidence.'}
+              : 'Comprehensive support to find accommodation in the U.K., connect with Portuguese housemates, and navigate the UK rental system with confidence.'}
           </p>
 
           {/* Quick Stats */}

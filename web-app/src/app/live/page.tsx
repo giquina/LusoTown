@@ -54,7 +54,7 @@ const creatorTiers = [
       community: 10,
       ambassador: 20,
     },
-    description: "Perfect for Portuguese speakers starting their streaming journey in London & UK",
+    description: "Perfect for Portuguese speakers starting their streaming journey in the U.K. & UK",
     descriptionPortuguese: "Perfeito para falantes de português começando sua jornada de streaming em Londres e Reino Unido",
     popular: true,
     features: [
@@ -150,7 +150,7 @@ const creatorTiers = [
       "API access for custom integrations",
       "Dedicated account manager (Portuguese-speaking)",
       "Premium Portuguese community partnerships",
-      "Event venue streaming partnerships in London",
+      "Event venue streaming partnerships in the U.K.",
       "Corporate training and workshop capabilities",
     ],
     featuresPortuguese: [
@@ -607,7 +607,7 @@ export default function StreamingPage() {
                 name: "Ana Costa",
                 category: isPortuguese ? "Noites de Fado" : "Fado Nights", 
                 achievement: isPortuguese ? "Eventos em 5 locais de Londres" : "Events in 5 London venues",
-                quote: isPortuguese ? "O streaming ajudou-me a levar o fado a mais portugueses em Londres." : "Streaming helped me bring fado to more Portuguese people in London.",
+                quote: isPortuguese ? "O streaming ajudou-me a levar o fado a mais portugueses em Londres." : "Streaming helped me bring fado to more Portuguese people in the U.K..",
               },
             ].map((story, index) => (
               <motion.div
@@ -645,7 +645,7 @@ export default function StreamingPage() {
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             {isPortuguese 
               ? "Junte-se a centenas de criadores portugueses que estão a construir suas audiências em Londres"
-              : "Join hundreds of Portuguese creators who are building their audiences in London"
+              : "Join hundreds of Portuguese creators who are building their audiences in the U.K."
             }
           </p>
           <div className="flex flex-row gap-4 justify-center">

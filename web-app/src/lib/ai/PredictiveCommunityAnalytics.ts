@@ -782,7 +782,7 @@ export class PredictiveCommunityAnalytics {
   private generatePersonalizedContent(member: CommunityMember): string[] {
     return [
       'Regional Portuguese recipes from your hometown',
-      'Stories from other Portuguese families in London',
+      'Stories from other Portuguese families in the U.K.',
       'Cultural events matching your interests'
     ]
   }

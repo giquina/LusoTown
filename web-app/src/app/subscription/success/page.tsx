@@ -46,7 +46,7 @@ function SuccessPageContent() {
     {
       icon: UserGroupIcon,
       title: isPortuguese ? 'Explore a Comunidade' : 'Explore the Community',
-      description: isPortuguese ? 'Conecte-se com outros membros portugueses em Londres' : 'Connect with other Portuguese members in London',
+      description: isPortuguese ? 'Conecte-se com outros membros portugueses em Londres' : 'Connect with other Portuguese members in the U.K.',
       action: isPortuguese ? 'Ver Membros' : 'View Members',
       link: '/members'
     },
@@ -168,7 +168,7 @@ function SuccessPageContent() {
                     <p className="text-primary-100 mb-6">
                       {isPortuguese 
                         ? 'Explore o seu novo lar digital na comunidade portuguesa de Londres.'
-                        : 'Explore your new digital home in London\'s Portuguese community.'
+                        : 'Explore your new digital home in the U.K.\'s Portuguese community.'
                       }
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">

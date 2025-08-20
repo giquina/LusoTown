@@ -479,7 +479,7 @@ export function PlatformIntegrationProvider({
         message:
           language === "pt"
             ? "Explore nossa comunidade portuguesa e serviços premium em Londres"
-            : "Explore our Portuguese community and premium services in London",
+            : "Explore our Portuguese community and premium services in the U.K.",
   actionType: "redirect",
   actionData: { url: ROUTES.myNetwork },
         priority: "medium",
@@ -737,7 +737,7 @@ export function PlatformIntegrationProvider({
             : "Premium Networking Events",
           description: isPortuguese
             ? "Eventos exclusivos para profissionais portugueses em Londres"
-            : "Exclusive events for Portuguese professionals in London",
+            : "Exclusive events for Portuguese professionals in the U.K.",
           relevanceScore: 8.5,
           basedOn: ["networking_activity", "professional_connections"],
           cta: isPortuguese ? "Ver Eventos" : "View Events",

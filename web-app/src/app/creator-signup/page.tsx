@@ -129,7 +129,7 @@ export default function CreatorSignupPage() {
       monthlyEarnings: 1850,
       quote: isPt 
         ? 'Em apenas 6 meses, consegui transformar a minha paixão pelo fado numa fonte de rendimento estável. A plataforma LusoTown conectou-me com portugueses em Londres que ansiavam por autêntica cultura portuguesa.'
-        : 'In just 6 months, I turned my passion for fado into a stable income source. LusoTown connected me with Portuguese people in London who were craving authentic Portuguese culture.',
+        : 'In just 6 months, I turned my passion for fado into a stable income source. LusoTown connected me with Portuguese people in the U.K. who were craving authentic Portuguese culture.',
       followers: 2400,
       streams: 48
     },
@@ -141,7 +141,7 @@ export default function CreatorSignupPage() {
       monthlyEarnings: 1340,
       quote: isPt
         ? 'Ensinar receitas brasileiras para a comunidade portuguesa em Londres tem sido incrivelmente gratificante. A partilha de receitas e a monetização acontecem naturalmente na plataforma.'
-        : 'Teaching Brazilian recipes to the Portuguese community in London has been incredibly rewarding. Recipe sharing and monetization happen naturally on the platform.',
+        : 'Teaching Brazilian recipes to the Portuguese community in the U.K. has been incredibly rewarding. Recipe sharing and monetization happen naturally on the platform.',
       followers: 1890,
       streams: 52
     },
@@ -219,7 +219,7 @@ export default function CreatorSignupPage() {
       question: isPt ? 'Posso transmitir do meu país de origem?' : 'Can I stream from my home country?',
       answer: isPt
         ? 'Sim! Criadores de Portugal, Brasil, África Lusófona e diáspora global são bem-vindos. A plataforma conecta criadores globais com a comunidade portuguesa em Londres.'
-        : 'Yes! Creators from Portugal, Brazil, Lusophone Africa, and global diaspora are welcome. The platform connects global creators with the Portuguese community in London.'
+        : 'Yes! Creators from Portugal, Brazil, Lusophone Africa, and global diaspora are welcome. The platform connects global creators with the Portuguese community in the U.K..'
     },
     {
       question: isPt ? 'Há apoio para criadores iniciantes?' : 'Is there support for beginner creators?',
@@ -268,7 +268,7 @@ export default function CreatorSignupPage() {
             >
               {isPt
                 ? 'Junte-se a mais de 200 criadores portugueses que já ganham uma média de £1,200/mês partilhando a sua paixão cultural com a comunidade portuguesa em Londres.'
-                : 'Join 200+ Portuguese creators already earning an average of £1,200/month sharing their cultural passion with the Portuguese community in London.'}
+                : 'Join 200+ Portuguese creators already earning an average of £1,200/month sharing their cultural passion with the Portuguese community in the U.K..'}
             </motion.p>
 
             {/* Key Stats */}

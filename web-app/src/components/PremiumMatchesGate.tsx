@@ -32,7 +32,7 @@ export default function PremiumMatchesGate() {
       subtitle: "Connect with More Portuguese Community Members",
       dailyLimitReached: "Daily free match limit reached",
       upgradeMessage:
-        "Join our Portuguese community matching to discover meaningful connections with fellow Portuguese speakers in London.",
+        "Join our Portuguese community matching to discover meaningful connections with fellow Portuguese speakers in the U.K..",
       freeFeatures: {
         title: "Free Matching",
         matches: "3 matches per day",
@@ -85,7 +85,7 @@ export default function PremiumMatchesGate() {
           author: "Maria Santos, Finance Professional",
         },
         carlos: {
-          text: "The cultural matching algorithm is incredible. I've met fellow Portuguese families and we now have regular gatherings in London.",
+          text: "The cultural matching algorithm is incredible. I've met fellow Portuguese families and we now have regular gatherings in the U.K..",
           author: "Carlos Oliveira, Family Man",
         },
         ana: {
@@ -251,7 +251,7 @@ export default function PremiumMatchesGate() {
               <span className="font-semibold text-primary-900">
                 {language === "pt"
                   ? "Conecte-se com a Comunidade Portuguesa em Londres"
-                  : "Connect with the Portuguese Community in London"}
+                  : "Connect with the Portuguese Community in the U.K."}
               </span>
             </div>
             <p className="text-primary-800">{t.upgradeMessage}</p>
@@ -445,7 +445,7 @@ export default function PremiumMatchesGate() {
             <p className="text-primary-700 mb-4">
               {language === "pt"
                 ? "Junte-se à nossa comunidade de falantes de português em Londres e comece a formar conexões significativas hoje."
-                : "Join our community of Portuguese speakers in London and start forming meaningful connections today."}
+                : "Join our community of Portuguese speakers in the U.K. and start forming meaningful connections today."}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <button

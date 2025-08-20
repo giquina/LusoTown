@@ -57,12 +57,12 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   name: 'LusoTown Portuguese Community Case Studies',
-  description: 'Real transformation stories from Portuguese speakers who connected through LusoTown events in London',
+  description: 'Real transformation stories from Portuguese speakers who connected through LusoTown events in the U.K.',
   url: 'https://lusotown.london/case-studies',
   mainEntity: {
     '@type': 'ItemList',
     name: 'Portuguese Community Success Stories',
-    description: 'Detailed case studies showing how Portuguese speakers built meaningful connections in London',
+    description: 'Detailed case studies showing how Portuguese speakers built meaningful connections in the U.K.',
     numberOfItems: 3,
     itemListElement: [
       {
@@ -121,10 +121,10 @@ export default function CaseStudiesPage() {
               <div className="max-w-4xl mx-auto text-center">
                 <div className="inline-flex items-center bg-white/60 backdrop-blur-sm rounded-full px-6 py-3 text-sm font-medium text-primary-600 mb-6">
                   <SparklesIcon className="w-5 h-5 mr-2" />
-                  Portuguese Communities in London Case Studies
+                  Portuguese Communities in the U.K. Case Studies
                 </div>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 text-balance">
-                  Portuguese Communities in London Case Studies
+                  Portuguese Communities in the U.K. Case Studies
                 </h1>
                 <p className="text-lg sm:text-xl text-gray-600 leading-relaxed text-balance">
                   Detailed case studies showing how Portuguese speakers from Brazil, Portugal, Angola, and beyond 
@@ -140,7 +140,7 @@ export default function CaseStudiesPage() {
             <div className="container-width">
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-2xl font-bold text-center text-gray-900 mb-12">
-                  Portuguese Community Impact in London
+                  Portuguese Community Impact in the U.K.
                 </h2>
                 
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -215,7 +215,7 @@ export default function CaseStudiesPage() {
                     <h3 className="text-xl font-semibold text-gray-900 mb-4">Diverse Portuguese Heritage</h3>
                     <p className="text-gray-600">
                       Stories include speakers from Portugal, Brazil, Angola - showcasing how all Portuguese 
-                      speakers find common ground and mutual support in London's diaspora community.
+                      speakers find common ground and mutual support in the U.K.'s diaspora community.
                     </p>
                   </div>
                   
@@ -237,7 +237,7 @@ export default function CaseStudiesPage() {
             <div className="container-width">
               <div className="max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl font-bold text-gray-900 mb-8">
-                  How to Write Your Own Portuguese Story in London
+                  How to Write Your Own Portuguese Story in the U.K.
                 </h2>
                 <p className="text-xl text-gray-600 mb-12">
                   These transformations all started with someone attending their first LusoTown event. 

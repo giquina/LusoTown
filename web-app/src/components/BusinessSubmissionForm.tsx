@@ -420,7 +420,7 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
                   className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
                     validationErrors.address ? 'border-red-300' : 'border-gray-300'
                   }`}
-                  placeholder={t('form.address_placeholder', 'Full business address in London')}
+                  placeholder={t('form.address_placeholder', 'Full business address in the U.K.')}
                 />
                 {validationErrors.address && (
                   <p className="text-red-600 text-sm mt-1">{validationErrors.address}</p>

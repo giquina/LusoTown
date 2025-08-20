@@ -79,7 +79,7 @@ export default function Footer() {
               <div className="flex items-center gap-3 text-gray-300 min-w-0">
                 <MapPinIcon className="h-5 w-5 text-action-400 flex-shrink-0" />
                 <span className="break-words">
-                  Portuguese speakers in London & UK | Unidos pela Língua
+                  Portuguese speakers in the U.K. & UK | Unidos pela Língua
                 </span>
               </div>
               <div className="flex items-center gap-3 text-gray-300 min-w-0">

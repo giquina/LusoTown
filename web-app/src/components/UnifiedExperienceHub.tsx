@@ -249,7 +249,7 @@ export default function UnifiedExperienceHub({
         <h3 className="text-xl font-bold text-gray-900 mb-6">
           {isPortuguese
             ? "Comunidade Portuguesa em Londres"
-            : "Portuguese Community in London"}
+            : "Portuguese Community in the U.K."}
         </h3>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="text-center">

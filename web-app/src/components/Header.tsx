@@ -263,7 +263,7 @@ export default function Header() {
                           <div className="px-6 pt-4">
                             <p className="text-xs text-gray-500">
                               Explore authentic Portuguese-led tours and
-                              transport in London. Unidos pela Língua.
+                              transport in the U.K.. Unidos pela Língua.
                             </p>
                           </div>
                         </motion.div>

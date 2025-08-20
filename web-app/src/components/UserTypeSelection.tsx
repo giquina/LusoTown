@@ -67,7 +67,7 @@ export default function UserTypeSelection() {
       cards: [
         { 
           title: 'Meet Your Match', 
-          desc: 'Find love, friendships & business connections with Portuguese speakers who share your values, culture, and location in London', 
+          desc: 'Find love, friendships & business connections with Portuguese speakers who share your values, culture, and location in the U.K.', 
           cta: 'Start Matching', 
           href: '/matches', 
           icon: HeartIcon, 

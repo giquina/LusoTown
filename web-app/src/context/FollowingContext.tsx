@@ -157,7 +157,7 @@ export function FollowingProvider({ children }: { children: ReactNode }) {
         type: 'group',
         name: 'Fado Lovers London',
         title: 'Traditional Portuguese Music Community',
-        description: 'Dedicated to preserving and celebrating Fado music in London',
+        description: 'Dedicated to preserving and celebrating Fado music in the U.K.',
         imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=150&h=150&fit=crop&auto=format',
         location: 'London, UK',
         followers: 1240,

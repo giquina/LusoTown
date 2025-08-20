@@ -40,7 +40,7 @@ const defaultSteps: OnboardingStep[] = [
     id: 'welcome',
     titleEn: 'Welcome to LusoTown',
     titlePt: 'Bem-vindo à LusoTown',
-    descriptionEn: 'Your Portuguese community awaits! Let\'s get you started with finding your people in London.',
+    descriptionEn: 'Your Portuguese community awaits! Let\'s get you started with finding your people in the U.K..',
     descriptionPt: 'A sua comunidade portuguesa espera! Vamos começar a encontrar a sua gente em Londres.',
     icon: UserGroupIcon,
     action: 'Get Started',

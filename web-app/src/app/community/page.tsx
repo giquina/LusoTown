@@ -104,7 +104,7 @@ const memberSpotlight = [
   }
 ]
 
-// Portuguese community areas in London
+// Portuguese community areas in the U.K.
 const communityAreas = [
   {
     name: 'Stockwell',
@@ -222,7 +222,7 @@ export default function Community() {
                       </>
                     ) : (
                       <>
-                        The Portuguese <span className="gradient-text">Community</span><br />in London
+                        The Portuguese <span className="gradient-text">Community</span><br />in the U.K.
                       </>
                     )}
                   </span>
@@ -245,12 +245,12 @@ export default function Community() {
                     {isPortuguese ? (
                       `Descobre a vibrante comunidade de falantes de português em Londres. Desde padarias autênticas em Stockwell a centros culturais em Vauxhall, desde festivais brasileiros a noites de Fado - aqui é onde ${stats.members} profissionais portugueses se encontram e prosperam.`
                     ) : (
-                      `Discover the vibrant Portuguese-speaking community in London. From authentic bakeries in Stockwell to cultural centers in Vauxhall, from Brazilian festivals to Fado nights - this is where ${stats.members} Portuguese professionals gather and thrive.`
+                      `Discover the vibrant Portuguese-speaking community in the U.K.. From authentic bakeries in Stockwell to cultural centers in Vauxhall, from Brazilian festivals to Fado nights - this is where ${stats.members} Portuguese professionals gather and thrive.`
                     )}
                   </span>
                   {/* Mobile short subtitle */}
                   <span className="sm:hidden">
-                    {isPortuguese ? `${stats.members} portugueses em Londres!` : `${stats.members} Portuguese speakers in London!`}
+                    {isPortuguese ? `${stats.members} portugueses em Londres!` : `${stats.members} Portuguese speakers in the U.K.!`}
                   </span>
                 </p>
               </motion.div>
@@ -401,7 +401,7 @@ export default function Community() {
                 {isPortuguese ? (
                   'Descobre onde a comunidade portuguesa se reúne em Londres. Cada bairro tem a sua própria personalidade, desde padarias autênticas a centros culturais vibrantes.'
                 ) : (
-                  'Discover where the Portuguese community gathers in London. Each area has its own personality, from authentic bakeries to vibrant cultural centers.'
+                  'Discover where the Portuguese community gathers in the U.K.. Each area has its own personality, from authentic bakeries to vibrant cultural centers.'
                 )}
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -719,7 +719,7 @@ export default function Community() {
                 {isPortuguese ? (
                   <>Negócios <span className="gradient-text">Portugueses</span> em Londres</>
                 ) : (
-                  <>Portuguese <span className="gradient-text">Businesses</span> in London</>
+                  <>Portuguese <span className="gradient-text">Businesses</span> in the U.K.</>
                 )}
               </h2>
               <p className="text-lg text-gray-600 mb-12 max-w-4xl mx-auto">
@@ -745,7 +745,7 @@ export default function Community() {
                     {isPortuguese ? (
                       'Sabores de casa em Londres. Francesinha, pastéis de nata, bacalhau e muito mais.'
                     ) : (
-                      'Flavors of home in London. Francesinha, pastéis de nata, bacalhau and much more.'
+                      'Flavors of home in the U.K.. Francesinha, pastéis de nata, bacalhau and much more.'
                     )}
                   </p>
                   <span className="text-primary-600 font-semibold text-sm">25+ {isPortuguese ? 'estabelecimentos' : 'establishments'}</span>
@@ -878,7 +878,7 @@ export default function Community() {
                     {isPortuguese ? (
                       '"Unidos pela Língua" - Onde quer que venhas no mundo lusófono, aqui tens casa em Londres.'
                     ) : (
-                      '"Unidos pela Língua" - Wherever you come from in the Portuguese-speaking world, you have a home here in London.'
+                      '"Unidos pela Língua" - Wherever you come from in the Portuguese-speaking world, you have a home here in the U.K..'
                     )}
                   </p>
                 </div>

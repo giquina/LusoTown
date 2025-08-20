@@ -104,7 +104,7 @@ const mockJobs = [
     salary: '£25,000 - £30,000',
     type: 'Full-time',
     posted: '4 days ago',
-    description: 'Support Portuguese-speaking patients in London hospitals. Make a difference in your community.',
+    description: 'Support Portuguese-speaking patients in the U.K. hospitals. Make a difference in your community.',
     requirements: ['Healthcare experience preferred', 'Fluent Portuguese and English', 'Compassionate nature'],
     benefits: ['NHS pension', 'Career progression', 'Serve Portuguese community'],
     featured: false,
@@ -193,15 +193,15 @@ export default function JobsPage() {
             >
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 mb-8">
                 <BriefcaseIcon className="w-5 h-5 text-white" />
-                <span className="text-white font-semibold">Portuguese Jobs in London</span>
+                <span className="text-white font-semibold">Portuguese Jobs in the U.K.</span>
               </div>
               
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                Find Your Perfect Job in London
+                Find Your Perfect Job in the U.K.
               </h1>
               
               <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Connect with Portuguese-friendly employers and opportunities designed for bilingual professionals in London
+                Connect with Portuguese-friendly employers and opportunities designed for bilingual professionals in the U.K.
               </p>
 
               {/* Quick Stats */}

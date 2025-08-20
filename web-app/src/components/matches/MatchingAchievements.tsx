@@ -212,7 +212,7 @@ export default function MatchingAchievements({
         name: language === "pt" ? "Embaixador Cultural" : "Cultural Ambassador",
         description: language === "pt"
           ? "Organizou eventos culturais e promoveu a herança portuguesa em Londres"
-          : "Organized cultural events and promoted Portuguese heritage in London",
+          : "Organized cultural events and promoted Portuguese heritage in the U.K.",
         category: "community",
         level: 1,
         maxLevel: 1,

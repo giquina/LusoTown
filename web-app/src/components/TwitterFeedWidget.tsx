@@ -233,7 +233,7 @@ export default function TwitterFeedWidget({
           >
             {language === 'pt' 
               ? 'Tweets sobre a comunidade portuguesa em Londres'
-              : 'Tweets about Portuguese community in London'
+              : 'Tweets about Portuguese community in the U.K.'
             }
           </a>
         )}

@@ -181,7 +181,7 @@ export default function HousingAssistancePage() {
             >
               {isPortuguese
                 ? "Encontre habitação com famílias e falantes de português em Londres. Mantenha-se conectado à comunidade mesmo quando se muda para novas áreas."
-                : "Find housing with Portuguese-speaking families and flatmates in London. Stay connected to the community even when moving to new areas."}
+                : "Find housing with Portuguese-speaking families and flatmates in the U.K.. Stay connected to the community even when moving to new areas."}
             </motion.p>
 
             {/* Community Stats */}
@@ -199,7 +199,7 @@ export default function HousingAssistancePage() {
                   <div className="text-sm text-gray-600">
                     {isPortuguese
                       ? "Falantes de Português em Londres"
-                      : "Portuguese Speakers in London"}
+                      : "Portuguese Speakers in the U.K."}
                   </div>
                 </div>
                 <div>

@@ -56,7 +56,7 @@ export default function CTA() {
             </h2>
             <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto">
               Choose your membership tier. Connect with Portuguese speakers. Build meaningful
-              relationships in London's vibrant Portuguese community.
+              relationships in the U.K.'s vibrant Portuguese community.
             </p>
           </motion.div>
 

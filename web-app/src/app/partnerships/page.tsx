@@ -329,7 +329,7 @@ export default function Partnerships() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {language === 'pt' 
               ? 'Trabalhamos com organizações oficiais portuguesas para oferecer serviços autênticos e apoio à comunidade lusófona em Londres.'
-              : 'We work with official Portuguese organizations to provide authentic services and support for the Portuguese-speaking community in London.'}
+              : 'We work with official Portuguese organizations to provide authentic services and support for the Portuguese-speaking community in the U.K..'}
           </p>
           
           {/* Partnership Statistics */}
@@ -435,7 +435,7 @@ export default function Partnerships() {
           <p className="text-lg mb-6 opacity-90">
             {language === 'pt' 
               ? 'É uma organização portuguesa? Junte-se a nós para servir melhor a comunidade lusófona em Londres.'
-              : 'Are you a Portuguese organization? Join us in better serving the Portuguese-speaking community in London.'}
+              : 'Are you a Portuguese organization? Join us in better serving the Portuguese-speaking community in the U.K..'}
           </p>
           <button className="bg-white text-primary-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">
             {language === 'pt' ? 'Contactar-nos' : 'Contact Us'}

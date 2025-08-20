@@ -36,7 +36,7 @@ export default function HowItWorks() {
       number: 1,
       title: 'Create Your Portuguese Profile',
       subtitle: 'Crie o Seu Perfil Português',
-      description: `Join ${communityStats.members} Portuguese speakers in London. Share your heritage: Portugal, Brazil, or Lusophone countries. Add your interests from fado to football, pastéis de nata to professional networking.`,
+      description: `Join ${communityStats.members} Portuguese speakers in the U.K.. Share your heritage: Portugal, Brazil, or Lusophone countries. Add your interests from fado to football, pastéis de nata to professional networking.`,
       icon: UserPlus,
       color: 'from-red-500 via-yellow-500 to-green-500',
       bgColor: 'from-red-50 via-yellow-50 to-green-50',
@@ -48,7 +48,7 @@ export default function HowItWorks() {
       number: 2,
       title: 'Discover Your Matches',
       subtitle: 'Descubra os Seus Matches',
-      description: 'AI-powered cultural compatibility matching. Find Portuguese speakers who share your saudade, love the same football team, or understand your professional journey in London.',
+      description: 'AI-powered cultural compatibility matching. Find Portuguese speakers who share your saudade, love the same football team, or understand your professional journey in the U.K..',
       icon: Heart,
       color: 'from-red-600 via-green-500 to-red-500',
       bgColor: 'from-red-50 via-green-50 to-red-50',
@@ -96,7 +96,7 @@ export default function HowItWorks() {
       number: 6,
       title: 'Build Your Portuguese Legacy',
       subtitle: 'Construa o Seu Legado Português',
-      description: 'Share family recipes, connect with university partnerships, mentor other Portuguese speakers, and help preserve our culture for future generations in London.',
+      description: 'Share family recipes, connect with university partnerships, mentor other Portuguese speakers, and help preserve our culture for future generations in the U.K..',
       icon: BookOpen,
       color: 'from-green-500 via-yellow-500 to-red-500',
       bgColor: 'from-green-50 via-yellow-50 to-red-50',
@@ -140,7 +140,7 @@ export default function HowItWorks() {
           </h2>
           
           <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 leading-relaxed max-w-4xl mx-auto font-medium mb-6">
-            Connect, experience, and preserve Portuguese culture in London through six meaningful steps
+            Connect, experience, and preserve Portuguese culture in the U.K. through six meaningful steps
           </p>
           
           <p className="text-lg text-gray-600 italic max-w-3xl mx-auto leading-relaxed">
@@ -254,7 +254,7 @@ export default function HowItWorks() {
             </div>
             <div className="text-3xl font-black text-gray-800 mb-2">{communityStats.members}</div>
             <div className="text-sm font-bold text-gray-600 tracking-wide mb-2">PORTUGUESE SPEAKERS</div>
-            <div className="text-xs text-gray-500 italic">From Portugal, Brazil, Angola & more in London</div>
+            <div className="text-xs text-gray-500 italic">From Portugal, Brazil, Angola & more in the U.K.</div>
           </div>
           
           <div className="group text-center bg-white/60 backdrop-blur-lg border border-white/40 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
@@ -263,7 +263,7 @@ export default function HowItWorks() {
             </div>
             <div className="text-3xl font-black text-gray-800 mb-2">40+</div>
             <div className="text-sm font-bold text-gray-600 tracking-wide mb-2">MONTHLY MEETUPS</div>
-            <div className="text-xs text-gray-500 italic">At real Portuguese venues in London</div>
+            <div className="text-xs text-gray-500 italic">At real Portuguese venues in the U.K.</div>
           </div>
           
           <div className="group text-center bg-white/60 backdrop-blur-lg border border-white/40 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
@@ -295,7 +295,7 @@ export default function HowItWorks() {
               </span>
             </h3>
             <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Book experiences with <strong className="text-secondary-600">{communityStats.members} Portuguese speakers</strong> in London. 
+              Book experiences with <strong className="text-secondary-600">{communityStats.members} Portuguese speakers</strong> in the U.K.. 
               <strong className="text-gray-800">Real experiences, real venues, active social life.</strong>
             </p>
             

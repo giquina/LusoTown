@@ -48,7 +48,7 @@ interface ImpactStat {
 
 export const metadata: Metadata = {
   title: 'Success Stories - Portuguese Community Connections | LusoTown London',
-  description: 'Real success stories from Portuguese speakers who found their community in London. From Portugal to Brazil, Angola to Mozambique - discover how LusoTown connects Portuguese hearts across the UK.',
+  description: 'Real success stories from Portuguese speakers who found their community in the U.K.. From Portugal to Brazil, Angola to Mozambique - discover how LusoTown connects Portuguese hearts across the UK.',
   keywords: [
     'Portuguese community London success stories',
     'Brazilian community UK testimonials',
@@ -90,8 +90,8 @@ export default function SuccessStories() {
       name: "Maria & Sofia",
       location: "Stockwell, London",
       memberSince: "March 2024",
-      title: "From Saudade to Irmandade: Portuguese Sisters Born in London",
-      excerpt: "Two Portuguese souls meeting over shared saudade, now building Portuguese family traditions in London. From strangers to sisters through fado, food, and our ancestors' wisdom.",
+      title: "From Saudade to Irmandade: Portuguese Sisters Born in the U.K.",
+      excerpt: "Two Portuguese souls meeting over shared saudade, now building Portuguese family traditions in the U.K.. From strangers to sisters through fado, food, and our ancestors' wisdom.",
       story: `Vim do Porto for my banking career carrying minha mãe's prayers and minha avó's strength, but London's success tasted empty without Portuguese warmth. The saudade cut deeper than homesickness - it was cultural soul-longing that no amount of professional achievement could heal.
 
       Sofia and I met at a magical fado night at Portuguese Cultural Centre in Camden. She'd come from São Paulo with similar dreams and identical heartache. As 'Lágrima' played, we both cried - not from sadness, but from recognition. Finally, alguém who understood that success without cultura feels hollow.
@@ -113,11 +113,11 @@ export default function SuccessStories() {
       memberSince: "January 2024",
       title: "Building My London Portuguese Network",
       excerpt: "After years in tech feeling isolated, LusoTown helped me find Portuguese professionals who understand both my career ambitions and cultural background.",
-      story: `Working in London's tech scene for three years, I was successful professionally but culturally isolated. Most networking events felt superficial, and I missed the depth of Portuguese relationships and conversation.
+      story: `Working in the U.K.'s tech scene for three years, I was successful professionally but culturally isolated. Most networking events felt superficial, and I missed the depth of Portuguese relationships and conversation.
 
       LusoTown's Portuguese professional network changed everything. I connected with other Portuguese speakers in tech, finance, and creative industries who understood the balance between career ambition and maintaining cultural identity.
 
-      Through the network, I met Carlos, a Brazilian designer, and Ana, a software engineer from Lisbon. We started a monthly meetup for Portuguese-speaking tech professionals that now attracts 40+ people regularly. We discuss everything from career growth to preserving Portuguese work culture values in London's corporate environment.
+      Through the network, I met Carlos, a Brazilian designer, and Ana, a software engineer from Lisbon. We started a monthly meetup for Portuguese-speaking tech professionals that now attracts 40+ people regularly. We discuss everything from career growth to preserving Portuguese work culture values in the U.K.'s corporate environment.
 
       The community also supported my side project - a language learning app for Portuguese children born in the UK. Three Portuguese speakers became beta testers, two invested in the startup, and one became my business partner.
 
@@ -127,7 +127,7 @@ export default function SuccessStories() {
       image: "members/joao-pedro.jpg",
       tags: ["Professional Network", "Tech Community", "Cultural Identity"],
       joinDate: "2024-01",
-      testimonial: "Finding Portuguese professionals who share my values and ambitions has been transformative - both for my career and my sense of belonging in London."
+      testimonial: "Finding Portuguese professionals who share my values and ambitions has been transformative - both for my career and my sense of belonging in the U.K.."
     },
     {
       id: 3,
@@ -146,11 +146,11 @@ export default function SuccessStories() {
 
       We've also created a practical support network - from sharing Portuguese children's books to coordinating visits to Portugal so kids can travel together. When my mother visits from Braga, she now has multiple Portuguese families to visit and our children have Portuguese grandmothers and aunts.
 
-      LusoTown helped us realize we weren't alone in wanting to raise confident, bilingual Portuguese children in London. We've built the Portuguese village our children needed to thrive.`,
+      LusoTown helped us realize we weren't alone in wanting to raise confident, bilingual Portuguese children in the U.K.. We've built the Portuguese village our children needed to thrive.`,
       image: "members/ana-lucia-family.jpg",
       tags: ["Family Community", "Bilingual Children", "Cultural Transmission"],
       joinDate: "2024-02",
-      testimonial: "Our children are growing up proud to be Portuguese in London because LusoTown helped us find families who share our values and cultural commitment."
+      testimonial: "Our children are growing up proud to be Portuguese in the U.K. because LusoTown helped us find families who share our values and cultural commitment."
     }
   ]
 
@@ -176,7 +176,7 @@ export default function SuccessStories() {
     {
       name: "Fernanda",
       location: "Bermondsey, London",
-      story: "Teaching minha avó's receitas to Portuguese families in London! From caldo verde to bacalhau, preserving our mothers' wisdom one meal at a time. Cooking together, keeping cultura alive!",
+      story: "Teaching minha avó's receitas to Portuguese families in the U.K.! From caldo verde to bacalhau, preserving our mothers' wisdom one meal at a time. Cooking together, keeping cultura alive!",
       category: "Avó's Recipes & Heritage"
     },
     {
@@ -230,7 +230,7 @@ export default function SuccessStories() {
                 Real Stories • Real Friendships
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 text-balance">
-                From Saudade to Success: Portuguese Hearts United in London
+                From Saudade to Success: Portuguese Hearts United in the U.K.
               </h1>
               <p className="text-lg sm:text-xl text-gray-600 leading-relaxed text-balance">
                 Real Portuguese souls who transformed London loneliness into thriving community connections. From pastéis de nata meetups in Stockwell to fado nights in Camden - discover how nossa gente builds lasting bonds while preserving Portuguese heart in the city's rhythm.
@@ -506,7 +506,7 @@ export default function SuccessStories() {
               </h3>
               <p className="text-gray-600 mb-8">
                 Subscribe to receive monthly success stories, community highlights, and tips for building 
-                meaningful connections in London's Portuguese community.
+                meaningful connections in the U.K.'s Portuguese community.
               </p>
               
               <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">

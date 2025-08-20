@@ -115,7 +115,7 @@ export type CommunityFocus =
   | 'buying_selling'
   | 'services_exchange'
 
-// Real Portuguese Community Networks in London
+// Real Portuguese Community Networks in the U.K.
 export const PORTUGUESE_SOCIAL_NETWORKS: PortugueseSocialNetwork[] = [
   {
     id: 'network-whatsapp-portuguese-london',
@@ -123,7 +123,7 @@ export const PORTUGUESE_SOCIAL_NETWORKS: PortugueseSocialNetwork[] = [
     namePortuguese: 'Comunidade Portuguesa Londres',
     platform: 'whatsapp',
     type: 'general_community',
-    description: 'Main WhatsApp group for Portuguese speakers in London. Share events, ask questions, make friends, and stay connected with the community.',
+    description: 'Main WhatsApp group for Portuguese speakers in the U.K.. Share events, ask questions, make friends, and stay connected with the community.',
     descriptionPortuguese: 'Grupo principal do WhatsApp para lusófonos em Londres. Partilhe eventos, faça perguntas, conheça pessoas e mantenha-se conectado com a comunidade.',
     
     memberCount: 450,
@@ -192,7 +192,7 @@ export const PORTUGUESE_SOCIAL_NETWORKS: PortugueseSocialNetwork[] = [
     namePortuguese: 'Brasileiros em Londres',
     platform: 'facebook',
     type: 'location_based',
-    description: 'Large Facebook group for Brazilians living in London. Share experiences, events, job opportunities, and connect with the Brazilian community.',
+    description: 'Large Facebook group for Brazilians living in the U.K.. Share experiences, events, job opportunities, and connect with the Brazilian community.',
     descriptionPortuguese: 'Grande grupo do Facebook para brasileiros que vivem em Londres. Partilhe experiências, eventos, oportunidades de trabalho e conecte-se com a comunidade brasileira.',
     
     memberCount: 12500,
@@ -201,7 +201,7 @@ export const PORTUGUESE_SOCIAL_NETWORKS: PortugueseSocialNetwork[] = [
     location: 'London & Greater London',
     
     focus: ['social_meetups', 'job_opportunities', 'housing_support', 'cultural_events', 'news_updates'],
-    targetAudience: ['Brazilians in London', 'Portuguese speakers', 'Young professionals'],
+    targetAudience: ['Brazilians in the U.K.', 'Portuguese speakers', 'Young professionals'],
     ageGroup: '20-45',
     
     joinMethod: 'admin_approval',
@@ -261,7 +261,7 @@ export const PORTUGUESE_SOCIAL_NETWORKS: PortugueseSocialNetwork[] = [
     namePortuguese: 'Rede de Negócios Portuguesa Londres',
     platform: 'whatsapp',
     type: 'business_networking',
-    description: 'Exclusive WhatsApp group for Portuguese business owners and entrepreneurs in London. Share opportunities, partnerships, and professional advice.',
+    description: 'Exclusive WhatsApp group for Portuguese business owners and entrepreneurs in the U.K.. Share opportunities, partnerships, and professional advice.',
     descriptionPortuguese: 'Grupo exclusivo do WhatsApp para empresários e empreendedores portugueses em Londres. Partilhe oportunidades, parcerias e conselhos profissionais.',
     
     memberCount: 85,
@@ -330,7 +330,7 @@ export const PORTUGUESE_SOCIAL_NETWORKS: PortugueseSocialNetwork[] = [
     namePortuguese: 'Eventos Portugueses Londres',
     platform: 'telegram',
     type: 'cultural_events',
-    description: 'Telegram channel dedicated to Portuguese cultural events, festivals, and community gatherings in London and the UK.',
+    description: 'Telegram channel dedicated to Portuguese cultural events, festivals, and community gatherings in the U.K. and the UK.',
     descriptionPortuguese: 'Canal do Telegram dedicado a eventos culturais portugueses, festivais e encontros comunitários em Londres e no Reino Unido.',
     
     memberCount: 890,

@@ -1,7 +1,7 @@
 'use client'
 
 // Portuguese Embassy and Cultural Center Partnerships
-// Real organizations and institutions serving the Portuguese community in London
+// Real organizations and institutions serving the Portuguese community in the U.K.
 
 export interface PartnershipOrganization {
   id: string
@@ -105,11 +105,11 @@ export type PartnershipLevel =
   | 'community_partner'
   | 'supporting_partner'
 
-// Real Portuguese Organizations in London and UK
+// Real Portuguese Organizations in the U.K. and UK
 export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
   {
     id: 'partner-embassy',
-    name: 'Portuguese Embassy in London',
+    name: 'Portuguese Embassy in the U.K.',
     namePortuguese: 'Embaixada de Portugal em Londres',
     type: 'embassy',
     description: 'Official diplomatic mission of Portugal to the United Kingdom, providing consular services and cultural programming for Portuguese citizens and the Portuguese community.',
@@ -479,10 +479,10 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
   
   {
     id: 'partner-casa-brasil',
-    name: 'Casa do Brasil in London',
+    name: 'Casa do Brasil in the U.K.',
     namePortuguese: 'Casa do Brasil em Londres',
     type: 'cultural_center',
-    description: 'Cultural center promoting Brazilian arts, culture, and community connections in London, supporting the Brazilian diaspora.',
+    description: 'Cultural center promoting Brazilian arts, culture, and community connections in the U.K., supporting the Brazilian diaspora.',
     descriptionPortuguese: 'Centro cultural promovendo artes, cultura e conexões comunitárias brasileiras em Londres, apoiando a diáspora brasileira.',
     
     website: 'https://www.casadobrasil.org.uk',
@@ -575,16 +575,16 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
       title: 'Cultural Director',
       email: 'ana@casadobrasil.org.uk',
       phone: '+44 20 7357 6022',
-      bio: 'Cultural Director and artist, passionate about promoting Brazilian culture and supporting the Brazilian community in London.'
+      bio: 'Cultural Director and artist, passionate about promoting Brazilian culture and supporting the Brazilian community in the U.K..'
     }
   },
   
   {
     id: 'partner-portuguese-church',
-    name: 'Portuguese Catholic Mission in London',
+    name: 'Portuguese Catholic Mission in the U.K.',
     namePortuguese: 'Missão Católica Portuguesa em Londres',
     type: 'religious_organization',
-    description: 'Spiritual and community support for Portuguese Catholics in London, providing religious services and community programs.',
+    description: 'Spiritual and community support for Portuguese Catholics in the U.K., providing religious services and community programs.',
     descriptionPortuguese: 'Apoio espiritual e comunitário para católicos portugueses em Londres, oferecendo serviços religiosos e programas comunitários.',
     
     website: 'https://www.missaoportuguesalondres.org',
@@ -674,7 +674,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
       title: 'Parish Priest',
       email: 'padre.joao@missaoportuguesalondres.org',
       phone: '+44 20 7735 8417',
-      bio: 'Parish priest serving the Portuguese Catholic community in London for over 10 years.'
+      bio: 'Parish priest serving the Portuguese Catholic community in the U.K. for over 10 years.'
     }
   },
 

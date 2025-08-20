@@ -433,7 +433,7 @@ export default function BusinessNetworking() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               {language === 'pt' 
                 ? 'Conecte-se com empreendedores e profissionais portugueses em Londres. Construa relacionamentos, encontre oportunidades, faça negócios.'
-                : 'Connect with Portuguese entrepreneurs and professionals in London. Build relationships, find opportunities, make deals.'}
+                : 'Connect with Portuguese entrepreneurs and professionals in the U.K.. Build relationships, find opportunities, make deals.'}
             </p>
             
             {/* Statistics */}

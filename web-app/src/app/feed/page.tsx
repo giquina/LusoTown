@@ -245,7 +245,7 @@ export default function CommunityFeed() {
               <p className="text-lg text-gray-600 mb-8">
                 {isPortuguese 
                   ? 'Partilha atualizações, conecta-te com outros e mantém-te a par das últimas novidades da nossa comunidade portuguesa em Londres'
-                  : 'Share updates, connect with others, and stay in the loop with the latest from our Portuguese community in London'
+                  : 'Share updates, connect with others, and stay in the loop with the latest from our Portuguese community in the U.K.'
                 }
               </p>
               
