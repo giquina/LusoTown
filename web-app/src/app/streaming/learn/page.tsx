@@ -17,12 +17,6 @@ import Footer from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
 import { CONTENT } from '@/config/content';
 import { ROUTES } from '@/config/routes';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: `Learn Streaming - ${CONTENT.streaming.seoTitle}`,
-  description: `Comprehensive streaming tutorials and tips for creators in ${CONTENT.region.prepositioned}`,
-};
 
 const learningModules = [
   {

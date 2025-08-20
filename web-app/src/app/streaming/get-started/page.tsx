@@ -15,12 +15,6 @@ import Footer from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
 import { CONTENT } from '@/config/content';
 import { ROUTES } from '@/config/routes';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: `Get Started Streaming - ${CONTENT.streaming.seoTitle}`,
-  description: `Learn how to start streaming and grow your audience in ${CONTENT.region.prepositioned}`,
-};
 
 const streamingSteps = [
   {

@@ -37,13 +37,6 @@ import { useSubscription } from "@/context/SubscriptionContext";
 import { communityStats } from '@/config/community';
 import { CONTENT } from '@/config/content';
 import { ROUTES } from '@/config/routes';
-import type { Metadata } from 'next';
-
-// Export metadata for SEO
-export const metadata: Metadata = {
-  title: CONTENT.streaming.seoTitle,
-  description: CONTENT.streaming.seoDescription,
-};
 
 // Creator tier packages - generalized for any audience
 const creatorTiers = [
