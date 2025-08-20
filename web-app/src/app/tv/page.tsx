@@ -62,6 +62,64 @@ export default function TVPage() {
 
   const isPortuguese = language === "pt";
 
+  // Stream categories for filtering and display
+  const categories = [
+    {
+      id: "portuguese-culture",
+      name: isPortuguese ? "Cultura Portuguesa" : "Portuguese Culture",
+      description: isPortuguese ? "Música, tradição e arte" : "Music, tradition and art",
+      icon: "music",
+      color: "primary",
+      isPremium: false,
+      streamCount: 3,
+    },
+    {
+      id: "business-workshops",
+      name: isPortuguese ? "Workshops de Negócios" : "Business Workshops",
+      description: isPortuguese ? "IA, tecnologia e gestão" : "AI, technology and management",
+      icon: "briefcase",
+      color: "secondary",
+      isPremium: true,
+      streamCount: 2,
+    },
+    {
+      id: "community-events",
+      name: isPortuguese ? "Eventos Comunitários" : "Community Events",
+      description: isPortuguese ? "Encontros e histórias" : "Meetups and stories",
+      icon: "users",
+      color: "action",
+      isPremium: false,
+      streamCount: 4,
+    },
+    {
+      id: "student-sessions",
+      name: isPortuguese ? "Sessões de Estudantes" : "Student Sessions",
+      description: isPortuguese ? "Carreiras e apoio" : "Careers and support",
+      icon: "graduation",
+      color: "accent",
+      isPremium: false,
+      streamCount: 1,
+    },
+    {
+      id: "vip-business",
+      name: isPortuguese ? "VIP Business" : "VIP Business",
+      description: isPortuguese ? "Eventos exclusivos" : "Exclusive events",
+      icon: "crown",
+      color: "premium",
+      isPremium: true,
+      streamCount: 1,
+    },
+    {
+      id: "behind-scenes",
+      name: isPortuguese ? "Bastidores" : "Behind the Scenes",
+      description: isPortuguese ? "Câmara e produção" : "Camera and production",
+      icon: "camera",
+      color: "coral",
+      isPremium: false,
+      streamCount: 1,
+    },
+  ];
+
   const navigationTabs = [
     {
       id: "live",
@@ -208,12 +266,21 @@ export default function TVPage() {
                     hasAccess={true}
                     onInteraction={() => {}}
                   />
-                  <StreamViewerStats />
+                  <div className="mt-4">
+                    <StreamViewerStats
+                      currentViewers={viewerCount}
+                      peakViewers={Math.max(viewerCount, 100)}
+                      totalViews={1000 + viewerCount}
+                      language={language}
+                    />
+                  </div>
                 </div>
                 <div>
                   <StreamCategories 
+                    categories={categories}
                     selectedCategory={selectedCategory}
-                    onCategoryChange={setSelectedCategory}
+                    onCategorySelect={setSelectedCategory}
+                    hasActiveSubscription={hasActiveSubscription}
                   />
                 </div>
               </div>
@@ -235,7 +302,10 @@ export default function TVPage() {
                 </p>
               </div>
               
-              <StreamSchedule />
+              <StreamSchedule 
+                category={selectedCategory}
+                language={language}
+              />
             </div>
           )}
 
@@ -254,7 +324,11 @@ export default function TVPage() {
                 </p>
               </div>
               
-              <StreamReplayLibrary />
+              <StreamReplayLibrary 
+                hasAccess={hasActiveSubscription || isInTrial}
+                selectedCategory={selectedCategory}
+                language={language}
+              />
             </div>
           )}
 
@@ -274,7 +348,11 @@ export default function TVPage() {
               </div>
               
               <div className="max-w-4xl mx-auto">
-                <LiveChatWidget />
+                <LiveChatWidget 
+                  streamId={(currentStream && currentStream.id) || "default"}
+                  isLive={(currentStream && currentStream.isLive) ?? true}
+                  hasAccess={hasActiveSubscription || isInTrial}
+                />
               </div>
             </div>
           )}
