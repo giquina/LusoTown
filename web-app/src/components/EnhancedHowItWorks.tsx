@@ -47,8 +47,8 @@ export default function EnhancedHowItWorks() {
       gradient: 'from-action-500 via-secondary-500 to-action-500',
       bgGradient: 'from-action-50/80 via-secondary-50/60 to-action-50/80',
       hoverGradient: 'from-action-100 via-secondary-100 to-action-100',
-      stat: `${communityStats.members} portugueses em Londres`,
-      statEn: `${communityStats.members} Portuguese speakers in London`,
+  stat: `${communityStats.members} portugueses no Reino Unido`,
+  statEn: `${communityStats.members} Portuguese speakers in the United Kingdom`,
       preview: {
         type: 'match',
         data: {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Bars3Icon,
@@ -299,16 +299,16 @@ export default function Header() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[1200px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-50"
+                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[1600px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-50"
                     style={{
                       left: '50%',
                       transform: 'translateX(-50%)',
                       maxWidth: 'calc(100vw - 2rem)',
-                      marginLeft: 'max(-600px, calc(-50vw + 1rem))',
-                      marginRight: 'max(-600px, calc(-50vw + 1rem))'
+                      marginLeft: 'max(-800px, calc(-50vw + 1rem))',
+                      marginRight: 'max(-800px, calc(-50vw + 1rem))'
                     }}
                   >
-                    <div className="grid grid-cols-5 gap-8 px-8">
+                    <div className="grid grid-cols-4 gap-8 px-8">
                       {/* Contact Section - Professional hierarchy first */}
                       <div className="border-r border-gray-200 pr-6">
                         <h3 className="text-lg font-semibold text-gray-900 mb-4">
@@ -335,13 +335,13 @@ export default function Header() {
                           <div className="space-y-1 text-xs text-gray-600">
                             <div className="flex items-center gap-1.5">
                               <MapPinIcon className="h-3 w-3 flex-shrink-0" />
-                              <span className="truncate">UK Portuguese Community</span>
+                              <span className="whitespace-nowrap">UK Community</span>
                             </div>
                             <div className="flex items-center gap-1.5">
                               <EnvelopeIcon className="h-3 w-3 flex-shrink-0" />
                               <a
                                 href="mailto:connect@lusotown.co.uk"
-                                className="truncate hover:underline text-primary-600"
+                                className="hover:underline text-primary-600 whitespace-nowrap"
                               >
                                 connect@lusotown.co.uk
                               </a>
@@ -431,42 +431,7 @@ export default function Header() {
                         </ul>
                       </div>
 
-                      {/* Quick Actions Section */}
-                      <div>
-                        <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                          Quick Actions
-                        </h3>
-                        <div className="space-y-4">
-                          <div className="flex items-start gap-3">
-                            <CartButton className="flex-shrink-0" />
-                            <div className="flex-1 min-w-0">
-                              <h4 className="text-sm font-medium text-gray-900 mb-1">
-                                {t("cart.title", "Your Cart")}
-                              </h4>
-                              <p className="text-xs text-gray-600 leading-relaxed">
-                                {t("cart.description", "Manage your bookings.")}
-                              </p>
-                            </div>
-                          </div>
-                          <div className="flex items-start gap-3">
-                            <SavedItemsButton className="flex-shrink-0" />
-                            <div className="flex-1 min-w-0">
-                              <h4 className="text-sm font-medium text-gray-900 mb-1">
-                                {t("favorites.title", "Saved Items")}
-                              </h4>
-                              <p className="text-xs text-gray-600 leading-relaxed">
-                                {t("favorites.description", "Your saved content.")}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="mt-6 pt-4 border-t border-gray-100">
-                          <p className="text-xs text-gray-500 leading-relaxed">
-                            LusoTown connects Portuguese speakers in London & UK
-                            to cultural events, services and community.
-                          </p>
-                        </div>
-                      </div>
+                      {/* Quick Actions removed per request */}
                     </div>
                   </motion.div>
                 )}

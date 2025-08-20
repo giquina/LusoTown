@@ -404,8 +404,8 @@ function MatchesContent() {
               </h1>
               <p className="text-sm md:text-base text-white/90 mb-6 leading-relaxed max-w-3xl mx-auto">
                 {language === "pt"
-                  ? "Conecte-se com falantes de português em Londres que partilham os seus interesses, valores e património cultural. Mais que um app de encontros - uma comunidade."
-                  : "Connect with Portuguese speakers in London who share your interests, values, and cultural heritage. More than a dating app - a community."}
+                  ? "Conecte-se com falantes de português no Reino Unido que partilham os seus interesses, valores e património cultural. Mais que um app de encontros - uma comunidade."
+                  : "Connect with Portuguese speakers in the United Kingdom who share your interests, values, and cultural heritage. More than a dating app - a community."}
               </p>
 
               {/* Live Success Counter */}
@@ -513,8 +513,8 @@ function MatchesContent() {
                 </div>
                 <div className="text-white/60 text-xs mt-1">
                   {language === "pt"
-                    ? "Em Londres & Reino Unido"
-                    : "In London & UK"}
+                    ? "Em todo o Reino Unido"
+                    : "Across the United Kingdom"}
                 </div>
               </div>
               <div className="text-center group">
@@ -579,8 +579,8 @@ function MatchesContent() {
             </h2>
   <p className="text-sm md:text-base text-primary-700 max-w-3xl mx-auto mb-5">
               {language === "pt"
-                ? "Navegue por falantes de português em Londres que partilham os seus interesses e património cultural. Cada perfil é cuidadosamente verificado."
-                : "Browse through Portuguese speakers in London who share your interests and cultural background. Every profile is carefully verified."}
+                ? "Navegue por falantes de português no Reino Unido que partilham os seus interesses e património cultural. Cada perfil é cuidadosamente verificado."
+                : "Browse through Portuguese speakers in the United Kingdom who share your interests and cultural background. Every profile is carefully verified."}
             </p>
 
             {/* Cultural Compatibility Highlight */}
