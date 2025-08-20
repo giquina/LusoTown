@@ -259,6 +259,42 @@ import { Spacing } from '@/lib/design'
 - **Element gaps:** `gap-6 sm:gap-8` (24px → 32px responsive)
 - **Text spacing:** `mb-4` (16px) for paragraphs, `mb-6` (24px) for headings
 
+## Component Guidelines
+
+### Modal Components
+Use consistent responsive sizing and accessibility patterns:
+
+```typescript
+// Welcome modal responsive sizing
+<div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+  <div className="relative w-full max-w-3xl max-h-[85vh] overflow-y-auto bg-white rounded-2xl shadow-2xl">
+    {/* Modal content */}
+  </div>
+</div>
+```
+
+**Key Standards:**
+- **Mobile:** `max-h-[85vh]` to ensure proper viewport fit
+- **Desktop:** `max-w-3xl` for optimal content width
+- **Accessibility:** Click-outside-to-close functionality
+- **Content:** Use 2x2 grid layout for feature cards on mobile
+
+### Navigation Dropdowns
+Use intelligent centering to prevent viewport overflow:
+
+```typescript
+// Centered dropdown positioning
+<div className="absolute left-1/2 transform -translate-x-1/2 mt-2 bg-white rounded-lg shadow-lg">
+  {/* Dropdown content */}
+</div>
+```
+
+**Key Standards:**
+- **Positioning:** `left-1/2 transform -translate-x-1/2` for center alignment
+- **Overflow Prevention:** Add margin calculations for viewport boundaries
+- **Responsive:** Adjust positioning based on available space
+- **Consistency:** Apply same centering pattern across all dropdowns
+
 ## Best Practices
 
 ### CTA Button Guidelines

@@ -5,6 +5,13 @@ import { motion } from 'framer-motion'
 import Footer from '@/components/Footer'
 import { useLanguage } from '@/context/LanguageContext'
 import { communityStats } from '@/config/community'
+
+// Import new student-specific components
+import StudentEventsSection from '@/components/students/StudentEventsSection'
+import AcademicNetworkingSection from '@/components/students/AcademicNetworkingSection'
+import CareerHubSection from '@/components/students/CareerHubSection'
+import StudentDiscountsSection from '@/components/students/StudentDiscountsSection'
+import AccommodationSupportSection from '@/components/students/AccommodationSupportSection'
 import { 
   AcademicCapIcon,
   StarIcon,
@@ -1073,129 +1080,22 @@ export default function StudentsPage() {
           </div>
         </section>
 
-        {/* Student Events Section */}
-        <section className="py-20 bg-white">
-          <div className="container-width">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                {language === 'pt' ? 'Eventos Exclusivos para Estudantes' : 'Student-Exclusive Events'}
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                {language === 'pt' ?
-                  'Eventos especiais desenhados para estudantes portugueses: workshops de carreira, noites culturais, sessões de networking e muito mais' :
-                  'Special events designed for Portuguese students: career workshops, cultural nights, networking sessions, and much more'
-                }
-              </p>
-            </div>
+        {/* Enhanced Student Events Section */}
+        <StudentEventsSection />
 
-            {/* Events Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-              {STUDENT_EVENTS.map(event => (
-                <div key={event.id} className="bg-white rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-                  <div className="p-6">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                        event.type === 'career' ? 'bg-secondary-100 text-secondary-600' :
-                        event.type === 'academic' ? 'bg-primary-100 text-primary-600' :
-                        event.type === 'networking' ? 'bg-premium-100 text-premium-600' :
-                        event.type === 'cultural' ? 'bg-coral-100 text-coral-600' :
-                        'bg-gray-100 text-gray-600'
-                      }`}>
-                        {event.type === 'career' && <BriefcaseIcon className="w-6 h-6" />}
-                        {event.type === 'academic' && <BookOpenIcon className="w-6 h-6" />}
-                        {event.type === 'networking' && <UserGroupIcon className="w-6 h-6" />}
-                        {event.type === 'cultural' && <HeartIcon className="w-6 h-6" />}
-                        {event.type === 'workshop' && <PresentationChartLineIcon className="w-6 h-6" />}
-                      </div>
-                      {event.isStudentExclusive && (
-                        <span className="bg-primary-100 text-primary-700 px-2 py-1 rounded-full text-xs font-medium">
-                          {language === 'pt' ? 'Exclusivo Estudantes' : 'Students Only'}
-                        </span>
-                      )}
-                    </div>
-                    
-                    <h3 className="font-bold text-lg text-gray-900 mb-3">
-                      {language === 'pt' ? event.titlePortuguese : event.title}
-                    </h3>
-                    
-                    <div className="space-y-2 mb-4 text-sm text-gray-600">
-                      <div className="flex items-center">
-                        <CalendarDaysIcon className="w-4 h-4 mr-2" />
-                        {new Date(event.date).toLocaleDateString()} • {event.time}
-                      </div>
-                      <div className="flex items-center">
-                        <MapPinIcon className="w-4 h-4 mr-2" />
-                        {event.location}
-                      </div>
-                      {event.university && (
-                        <div className="flex items-center">
-                          <BuildingLibraryIcon className="w-4 h-4 mr-2" />
-                          {event.university}
-                        </div>
-                      )}
-                    </div>
-                    
-                    <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                      {event.description}
-                    </p>
-                    
-                    {event.speakers.length > 0 && (
-                      <div className="mb-4">
-                        <div className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-2">
-                          {language === 'pt' ? 'Oradores:' : 'Speakers:'}
-                        </div>
-                        {event.speakers.slice(0, 2).map((speaker, index) => (
-                          <div key={index} className="text-xs text-gray-600">• {speaker}</div>
-                        ))}
-                      </div>
-                    )}
-                    
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-2">
-                        {event.price === 0 ? (
-                          <span className="text-lg font-bold text-secondary-600">
-                            {language === 'pt' ? 'Grátis' : 'Free'}
-                          </span>
-                        ) : (
-                          <div className="flex items-center space-x-2">
-                            <span className="text-lg font-bold text-gray-900">£{event.price}</span>
-                            {event.originalPrice && (
-                              <span className="text-sm text-gray-500 line-through">£{event.originalPrice}</span>
-                            )}
-                          </div>
-                        )}
-                      </div>
-                      <span className="text-xs text-gray-500">
-                        {event.capacity} {language === 'pt' ? 'lugares' : 'spots'}
-                      </span>
-                    </div>
-                    
-                    <button className="w-full mt-4 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium py-3 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 min-h-[44px] shadow-xl hover:shadow-2xl">
-                      {language === 'pt' ? 'Reservar Lugar' : 'Book Spot'}
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Events Calendar CTA */}
-            <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 text-center">
-              <CalendarDaysIcon className="w-16 h-16 text-primary-600 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                {language === 'pt' ? 'Calendário Completo de Eventos' : 'Full Events Calendar'}
-              </h3>
-              <p className="text-lg text-gray-600 mb-6">
-                {language === 'pt' ?
-                  'Aceda ao calendário completo de eventos para estudantes, workshops e atividades culturais' :
-                  'Access the complete calendar of student events, workshops, and cultural activities'
-                }
-              </p>
-              <button className="bg-white text-primary-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-50 transition-colors">
-                {language === 'pt' ? 'Ver Calendário Completo' : 'View Full Calendar'}
-              </button>
-            </div>
-          </div>
-        </section>
+        {/* New Enhanced Student Sections */}
+        
+        {/* Academic Networking Section */}
+        <AcademicNetworkingSection />
+        
+        {/* Career Hub Section */}
+        <CareerHubSection />
+        
+        {/* Student Discounts Section */}
+        <StudentDiscountsSection />
+        
+        {/* Accommodation Support Section */}
+        <AccommodationSupportSection />
 
         {/* Student Verification Section */}
         <section className="py-20 bg-gray-50">

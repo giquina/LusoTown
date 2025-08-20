@@ -23,7 +23,7 @@ import {
 import Footer from '@/components/Footer'
 import { useLanguage } from '@/context/LanguageContext'
 
-const AIWorkshopBookingPage = () => {
+const TechnologyWorkshopBookingPage = () => {
   const params = useParams()
   const router = useRouter()
   const { t } = useLanguage()
@@ -36,7 +36,7 @@ const AIWorkshopBookingPage = () => {
     email: '',
     phone: '',
     businessIdea: '',
-    aiExperience: 'beginner',
+    techExperience: 'beginner',
     dietaryRequirements: '',
     specialRequests: '',
     agreeToTerms: false,
@@ -47,7 +47,7 @@ const AIWorkshopBookingPage = () => {
   const [step, setStep] = useState(1)
   const [notification, setNotification] = useState<{ type: 'success' | 'error'; message: string } | null>(null)
 
-  // Only show for the AI Workshop event (ID 4)
+  // Only show for the Technology Workshop event (ID 4)
   useEffect(() => {
     if (eventId !== '4') {
       router.push('/events')
@@ -56,8 +56,8 @@ const AIWorkshopBookingPage = () => {
 
   const event = {
     id: 4,
-    title: "AI Business App Creation Workshop",
-    description: "Beginners session on using AI apps and generative AI tools to create business applications",
+    title: "Technology Business App Creation Workshop",
+    description: "Beginners session on using technology apps and modern tools to create business applications",
     location: "Tech Hub Central London",
     address: "123 Innovation Street, London EC2A 3LT",
     date: "Monday, 2nd December 2025",
@@ -67,7 +67,7 @@ const AIWorkshopBookingPage = () => {
     maxAttendees: 50,
     specialOffer: "Free app creation for business ideas",
     agenda: [
-      "2:00-2:30 PM: Welcome & AI Tools Overview",
+      "2:00-2:30 PM: Welcome & Technology Tools Overview",
       "2:30-3:30 PM: ChatGPT, Claude & Business Apps",
       "3:30-4:00 PM: Break & Networking",
       "4:00-5:30 PM: Live App Creation Demo",
@@ -163,10 +163,10 @@ const AIWorkshopBookingPage = () => {
                   </div>
                   
                   <h1 className="text-3xl lg:text-4xl font-bold mb-4">
-                    Book: AI Business App Creation Workshop
+                    Book: Technology Business App Creation Workshop
                   </h1>
                   <p className="text-xl text-white/90 mb-6">
-                    Learn to create business applications using AI tools. Free live app creation for your business idea!
+                    Learn to create business applications using modern tools. Free live app creation for your business idea!
                   </p>
                   
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -353,7 +353,7 @@ const AIWorkshopBookingPage = () => {
 
                             <div>
                               <label className="block text-sm font-medium text-gray-700 mb-2">
-                                AI Experience Level
+                                Technology Experience Level
                               </label>
                               <select
                                 name="aiExperience"
@@ -451,7 +451,7 @@ const AIWorkshopBookingPage = () => {
                               <div className="space-y-2 text-sm">
                                 <div className="flex justify-between">
                                   <span>Event:</span>
-                                  <span className="font-medium">AI Business App Creation Workshop</span>
+                                  <span className="font-medium">Technology Business App Creation Workshop</span>
                                 </div>
                                 <div className="flex justify-between">
                                   <span>Date & Time:</span>
@@ -498,7 +498,7 @@ const AIWorkshopBookingPage = () => {
                                   className="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                                 />
                                 <label className="text-sm text-gray-700">
-                                  I'd like to receive updates about future AI workshops and Portuguese community events
+                                  I'd like to receive updates about future technology workshops and Portuguese community events
                                 </label>
                               </div>
                             </div>
@@ -555,7 +555,7 @@ const AIWorkshopBookingPage = () => {
                       <div className="space-y-3">
                         <div className="flex items-start gap-3">
                           <SparklesIcon className="w-5 h-5 text-blue-500 mt-0.5" />
-                          <span className="text-sm text-gray-700">AI tools overview (ChatGPT, Claude, etc.)</span>
+                          <span className="text-sm text-gray-700">Technology tools overview (platforms, apps, etc.)</span>
                         </div>
                         <div className="flex items-start gap-3">
                           <SparklesIcon className="w-5 h-5 text-purple-500 mt-0.5" />
@@ -644,4 +644,4 @@ const AIWorkshopBookingPage = () => {
   )
 }
 
-export default AIWorkshopBookingPage
+export default TechnologyWorkshopBookingPage

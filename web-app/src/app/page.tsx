@@ -145,7 +145,7 @@ export default function Home() {
                 </header>
                 
                 {/* Portuguese Community Activities Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-20" role="group" aria-label="Portuguese community activities">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-20" role="group" aria-label="Portuguese community activities">
                   {/* Find & Join Events */}
                   <article className="group relative">
                     <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
@@ -305,22 +305,22 @@ export default function Home() {
                     <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
                       Join {communityStats.members} Portuguese speakers from Brazil, Portugal, Africa and beyond living meaningful lives together in London - from cultural events to professional networking, family-friendly activities to weekend getaways.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <div className="flex flex-row gap-3 sm:gap-4 justify-center">
                       <a
                         href="/signup"
-                        className="group relative text-lg font-bold px-10 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden"
+                        className="group relative text-base sm:text-lg font-bold px-6 sm:px-10 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden flex-1 max-w-[180px] sm:max-w-none"
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-secondary-700 via-action-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <span className="relative z-10 flex items-center justify-center gap-3 whitespace-nowrap">
-                          Join Now
-                          <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-200" />
+                        <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3 whitespace-nowrap">
+                          Join Community
+                          <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-1 transition-transform duration-200" />
                         </span>
                       </a>
                       <a
                         href="/events"
-                        className="text-lg font-bold px-10 py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 hover:bg-white/90 whitespace-nowrap"
+                        className="text-base sm:text-lg font-bold px-6 sm:px-10 py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 hover:bg-white/90 whitespace-nowrap flex-1 max-w-[180px] sm:max-w-none text-center"
                       >
-                        Browse Events
+                        Explore Features
                       </a>
                     </div>
                   </div>

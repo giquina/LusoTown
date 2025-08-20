@@ -39,55 +39,59 @@ const getAuthenticatedNavigationLinks = (t: any) => [
   { name: t("nav.pricing", "Pricing"), href: "/pricing" },
 ];
 
-// All footer links for the "More" dropdown
+// Navigation dropdown links with professional hierarchy: Contact → Services → Community
 const getMoreDropdownLinks = (t: any) => ({
+  contact: [
+    { name: "Contact Us", href: "/contact" },
+    { name: "Help Center", href: "/help" },
+    { name: "Safety & Verification", href: "/safety" },
+    { name: "How It Works", href: "/how-it-works" },
+  ],
+  services: [
+    { name: "Find Your Match", href: "/matches" },
+    { name: "Live TV", href: "/live" },
+    { name: "Streaming — Stream with us", href: "/streaming" },
+    { name: "Cultural Tours", href: "/services#cultural-tours" },
+    { name: "Executive Transport", href: "/services#executive-transport" },
+    { name: "London Transport", href: "/transport" },
+    { name: "Close Protection", href: "/services#close-protection" },
+  ],
   community: [
     { name: "Events & Culture", href: "/events" },
     { name: "Community", href: "/community" },
-    { name: "Become a Host", href: "/host" },
     { name: "Business Directory", href: "/directory" },
-    {
-      name: t("footer.housing-assistance", "Housing Assistance"),
-      href: "/housing-assistance",
-    },
-    {
-      name: t("footer.neighborhood-groups", "Neighborhood Groups"),
-      href: "/neighborhood-groups",
-    },
+    { name: "Become a Host", href: "/host" },
     { name: "Community Guidelines", href: "/community-guidelines" },
-  ],
-  services: [
-    { name: "Premium Services", href: "/services" },
-    { name: "Cultural Tours", href: "/services#cultural-tours" },
-    { name: "Executive Transport", href: "/services#executive-transport" },
-    { name: "Close Protection", href: "/services#close-protection" },
-  { name: "London Transport", href: "/transport" },
-    { name: "Find Your Match", href: "/matches" },
-  { name: "Live TV", href: "/live" },
-  { name: "Streaming — Stream with us", href: "/streaming" },
-  ],
-  support: [
-    { name: "How It Works", href: "/how-it-works" },
-    { name: "Help Center", href: "/help" },
-    { name: "Contact Us", href: "/contact" },
-    { name: "Safety & Verification", href: "/safety" },
   ],
   company: [
     { name: "About LusoTown", href: "/about" },
     { name: "Pricing", href: "/pricing" },
     { name: "Success Stories", href: "/success-stories" },
-    { name: "Community Chat", href: "/forums" },
     { name: "Case Studies", href: "/case-studies" },
     { name: "Partnerships", href: "/partnerships" },
     { name: "Instituto Camões Partnership", href: "/instituto-camoes" },
   ],
   legal: [
-    { name: "Community Guidelines", href: "/community-guidelines" },
     { name: "Privacy Policy", href: "/privacy" },
     { name: "Terms of Service", href: "/terms" },
     { name: "Community Safety", href: "/safety" },
   ],
 });
+
+// Footer-only links (includes the removed navigation items)
+const getFooterOnlyLinks = (t: any) => [
+  {
+    name: t("footer.housing-assistance", "Housing Assistance"),
+    href: "/housing-assistance",
+  },
+  {
+    name: t("footer.neighborhood-groups", "Neighborhood Groups"),
+    href: "/neighborhood-groups",
+  },
+  { name: "Premium Services", href: "/services" },
+  { name: "Community Chat", href: "/forums" },
+  // Add Cultural Tools and Clothes Protection when those pages exist
+];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -174,7 +178,14 @@ export default function Header() {
                           initial={{ opacity: 0, y: -10 }}
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -10 }}
-                          className="absolute top-full left-0 mt-2 w-[680px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-6 z-50"
+                          className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[680px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-6 z-50"
+                          style={{
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            maxWidth: 'calc(100vw - 2rem)',
+                            marginLeft: 'max(-340px, calc(-50vw + 1rem))',
+                            marginRight: 'max(-340px, calc(-50vw + 1rem))'
+                          }}
                         >
                           <div className="grid grid-cols-2 gap-6 px-6">
                             <div>
@@ -288,48 +299,59 @@ export default function Header() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full right-0 mt-2 w-[1200px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-50"
+                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[1200px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-50"
+                    style={{
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      maxWidth: 'calc(100vw - 2rem)',
+                      marginLeft: 'max(-600px, calc(-50vw + 1rem))',
+                      marginRight: 'max(-600px, calc(-50vw + 1rem))'
+                    }}
                   >
                     <div className="grid grid-cols-5 gap-8 px-8">
-                      {/* Quick Actions Section */}
+                      {/* Contact Section - Professional hierarchy first */}
                       <div className="border-r border-gray-200 pr-6">
                         <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                          Quick Actions
+                          Contact
                         </h3>
-                        <div className="space-y-3">
-                          <CartButton className="w-full justify-start" />
-                          <SavedItemsButton className="w-full justify-start" />
-                        </div>
-                        <div className="mt-6 pt-4 border-t border-gray-100">
-                          <p className="text-xs text-gray-500 leading-relaxed">
-                            LusoTown connects Portuguese speakers in London & UK
-                            to cultural events, services and community. Where we
-                            discover, learn and thrive together.
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Community Links */}
-                      <div>
-                        <h3 className="text-lg font-semibold mb-4 text-primary-600">
-                          Community
-                        </h3>
-                        <ul className="space-y-2">
-                          {moreDropdownLinks.community.map((link) => (
+                        <ul className="space-y-2 mb-6">
+                          {moreDropdownLinks.contact.map((link) => (
                             <li key={link.name}>
                               <a
                                 href={link.href}
-                                className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded transition-colors duration-200 whitespace-nowrap"
+                                className="block text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 px-2 py-1 rounded transition-colors duration-200 whitespace-nowrap"
                               >
                                 {link.name}
                               </a>
                             </li>
                           ))}
                         </ul>
+
+                        {/* Compact Contact Info */}
+                        <div className="bg-gray-50 rounded-lg p-3 border border-gray-200">
+                          <h4 className="font-medium text-gray-900 text-sm mb-2">
+                            Get in Touch
+                          </h4>
+                          <div className="space-y-1 text-xs text-gray-600">
+                            <div className="flex items-center gap-1.5">
+                              <MapPinIcon className="h-3 w-3 flex-shrink-0" />
+                              <span className="truncate">UK Portuguese Community</span>
+                            </div>
+                            <div className="flex items-center gap-1.5">
+                              <EnvelopeIcon className="h-3 w-3 flex-shrink-0" />
+                              <a
+                                href="mailto:connect@lusotown.co.uk"
+                                className="truncate hover:underline text-primary-600"
+                              >
+                                connect@lusotown.co.uk
+                              </a>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
-                      {/* Services Links */}
-                      <div>
+                      {/* Services Section */}
+                      <div className="border-r border-gray-200 pr-6">
                         <h3 className="text-lg font-semibold mb-4 text-premium-600">
                           Services
                         </h3>
@@ -355,28 +377,31 @@ export default function Header() {
                         </ul>
                       </div>
 
-                      {/* Support & Company Links */}
-                      <div>
-                        <h3 className="text-lg font-semibold mb-4 text-secondary-600">
-                          Support
+                      {/* Community Section */}
+                      <div className="border-r border-gray-200 pr-6">
+                        <h3 className="text-lg font-semibold mb-4 text-primary-600">
+                          Community
                         </h3>
-                        <ul className="space-y-2 mb-6">
-                          {moreDropdownLinks.support.map((link) => (
+                        <ul className="space-y-2">
+                          {moreDropdownLinks.community.map((link) => (
                             <li key={link.name}>
                               <a
                                 href={link.href}
-                                className="block text-sm text-gray-600 hover:text-secondary-600 hover:bg-secondary-50 px-2 py-1 rounded transition-colors duration-200 whitespace-nowrap"
+                                className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded transition-colors duration-200 whitespace-nowrap"
                               >
                                 {link.name}
                               </a>
                             </li>
                           ))}
                         </ul>
+                      </div>
 
+                      {/* Company & Legal Section */}
+                      <div className="border-r border-gray-200 pr-6">
                         <h3 className="text-lg font-semibold mb-4 text-accent-600">
                           Company
                         </h3>
-                        <ul className="space-y-2">
+                        <ul className="space-y-2 mb-6">
                           {moreDropdownLinks.company.slice(0, 4).map((link) => (
                             <li key={link.name}>
                               <a
@@ -388,46 +413,58 @@ export default function Header() {
                             </li>
                           ))}
                         </ul>
-                      </div>
 
-                      {/* Legal & Contact */}
-                      <div>
-                        <h3 className="text-lg font-semibold mb-4 text-gray-700">
-                          Legal & Contact
+                        <h3 className="text-sm font-semibold mb-3 text-gray-700">
+                          Legal
                         </h3>
-                        <ul className="space-y-2 mb-6">
+                        <ul className="space-y-1">
                           {moreDropdownLinks.legal.map((link) => (
                             <li key={link.name}>
                               <a
                                 href={link.href}
-                                className="block text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 px-2 py-1 rounded transition-colors duration-200 whitespace-nowrap"
+                                className="block text-xs text-gray-600 hover:text-gray-900 hover:bg-gray-50 px-2 py-1 rounded transition-colors duration-200 whitespace-nowrap"
                               >
                                 {link.name}
                               </a>
                             </li>
                           ))}
                         </ul>
+                      </div>
 
-                        {/* Contact Info */}
-                        <div className="bg-gray-50 rounded-lg p-4 overflow-hidden">
-                          <h4 className="font-semibold text-gray-900 mb-2">
-                            Get in Touch
-                          </h4>
-                          <div className="space-y-2 text-sm text-gray-600">
-                            <div className="flex items-center gap-2">
-                              <MapPinIcon className="h-4 w-4" />
-                              <span>UK Portuguese Community</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <EnvelopeIcon className="h-4 w-4" />
-                              <a
-                                href="mailto:connect@lusotown.co.uk"
-                                className="break-all hover:underline"
-                              >
-                                connect@lusotown.co.uk
-                              </a>
+                      {/* Quick Actions Section */}
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                          Quick Actions
+                        </h3>
+                        <div className="space-y-4">
+                          <div className="flex items-start gap-3">
+                            <CartButton className="flex-shrink-0" />
+                            <div className="flex-1 min-w-0">
+                              <h4 className="text-sm font-medium text-gray-900 mb-1">
+                                {t("cart.title", "Your Cart")}
+                              </h4>
+                              <p className="text-xs text-gray-600 leading-relaxed">
+                                {t("cart.description", "Manage your bookings.")}
+                              </p>
                             </div>
                           </div>
+                          <div className="flex items-start gap-3">
+                            <SavedItemsButton className="flex-shrink-0" />
+                            <div className="flex-1 min-w-0">
+                              <h4 className="text-sm font-medium text-gray-900 mb-1">
+                                {t("favorites.title", "Saved Items")}
+                              </h4>
+                              <p className="text-xs text-gray-600 leading-relaxed">
+                                {t("favorites.description", "Your saved content.")}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="mt-6 pt-4 border-t border-gray-100">
+                          <p className="text-xs text-gray-500 leading-relaxed">
+                            LusoTown connects Portuguese speakers in London & UK
+                            to cultural events, services and community.
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -610,9 +647,29 @@ export default function Header() {
                     <h3 className="text-lg font-semibold text-gray-900 mb-3">
                       Quick Actions
                     </h3>
-                    <div className="space-y-2">
-                      <CartButton className="w-full justify-start min-h-[44px]" />
-                      <SavedItemsButton className="w-full justify-start min-h-[44px]" />
+                    <div className="space-y-3">
+                      <div className="flex items-start gap-3">
+                        <CartButton className="flex-shrink-0" />
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-sm font-medium text-gray-900 mb-1">
+                            {t("cart.title", "Your Cart")}
+                          </h4>
+                          <p className="text-xs text-gray-600 leading-relaxed">
+                            {t("cart.description", "View and manage your saved events, tours, and services. Complete your booking from here.")}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <SavedItemsButton className="flex-shrink-0" />
+                        <div className="flex-1 min-w-0">
+                          <h4 className="text-sm font-medium text-gray-900 mb-1">
+                            {t("favorites.title", "Saved Items")}
+                          </h4>
+                          <p className="text-xs text-gray-600 leading-relaxed">
+                            {t("favorites.description", "Access your favorite events, places, and services. Keep track of what interests you most.")}
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
@@ -675,53 +732,71 @@ export default function Header() {
                     </a>
                   </div>
 
+                  {/* Contact Section */}
+                  <div className="pb-4 border-b border-gray-200">
+                    <h3 className="text-lg font-semibold text-gray-700 mb-3">
+                      Contact
+                    </h3>
+                    {moreDropdownLinks.contact.map((link) => (
+                      <a
+                        key={link.name}
+                        href={link.href}
+                        className="text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-gray-200 min-h-[44px] flex items-center"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {link.name}
+                      </a>
+                    ))}
+                  </div>
+
                   {/* Services Section */}
                   <div className="pb-4 border-b border-gray-200">
-                    <h3 className="text-lg font-semibold text-secondary-600 mb-3">
+                    <h3 className="text-lg font-semibold text-premium-600 mb-3">
                       Services
                     </h3>
-                    <a
-                      href="/matches"
-                      className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center gap-2"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      <span>Find Your Match</span>
-                      <span
-                        className="ml-1 inline-block text-[10px] leading-4 font-semibold uppercase bg-secondary-100 text-secondary-700 px-2 py-0.5 rounded-full border border-secondary-200"
-                        aria-label="New feature"
+                    {moreDropdownLinks.services.map((link) => (
+                      <a
+                        key={link.name}
+                        href={link.href}
+                        className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center gap-2"
+                        onClick={() => setMobileMenuOpen(false)}
                       >
-                        New
-                      </span>
-                    </a>
-                    <a
-                      href="/live"
-                      className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Live TV
-                    </a>
-                    <a
-                      href="/streaming"
-                      className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Streaming — Stream with us
-                    </a>
-                    <a
-                      href="/services"
-                      className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Premium Services
-                    </a>
+                        <span>{link.name}</span>
+                        {link.href === "/matches" && (
+                          <span
+                            className="ml-1 inline-block text-[10px] leading-4 font-semibold uppercase bg-secondary-100 text-secondary-700 px-2 py-0.5 rounded-full border border-secondary-200"
+                            aria-label="New feature"
+                          >
+                            New
+                          </span>
+                        )}
+                      </a>
+                    ))}
                   </div>
 
                   {/* Community Section */}
                   <div className="pb-4 border-b border-gray-200">
-                    <h3 className="text-lg font-semibold text-accent-600 mb-3">
+                    <h3 className="text-lg font-semibold text-primary-600 mb-3">
                       Community
                     </h3>
-                    {moreDropdownLinks.community.slice(0, 6).map((link) => (
+                    {moreDropdownLinks.community.map((link) => (
+                      <a
+                        key={link.name}
+                        href={link.href}
+                        className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px] flex items-center"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {link.name}
+                      </a>
+                    ))}
+                  </div>
+
+                  {/* Company & Legal Section */}
+                  <div className="pb-4 border-b border-gray-200">
+                    <h3 className="text-lg font-semibold text-accent-600 mb-3">
+                      Company & Legal
+                    </h3>
+                    {moreDropdownLinks.company.slice(0, 4).map((link) => (
                       <a
                         key={link.name}
                         href={link.href}
@@ -731,28 +806,11 @@ export default function Header() {
                         {link.name}
                       </a>
                     ))}
-                  </div>
-
-                  {/* Support & Company Section */}
-                  <div className="pb-4 border-b border-gray-200">
-                    <h3 className="text-lg font-semibold text-gray-700 mb-3">
-                      Support & Company
-                    </h3>
-                    {moreDropdownLinks.support.map((link) => (
+                    {moreDropdownLinks.legal.map((link) => (
                       <a
                         key={link.name}
                         href={link.href}
-                        className="text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-gray-200 min-h-[44px] flex items-center"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {link.name}
-                      </a>
-                    ))}
-                    {moreDropdownLinks.company.slice(0, 4).map((link) => (
-                      <a
-                        key={link.name}
-                        href={link.href}
-                        className="text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-gray-200 min-h-[44px] flex items-center"
+                        className="text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 border border-transparent hover:border-gray-200 min-h-[44px] flex items-center"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {link.name}

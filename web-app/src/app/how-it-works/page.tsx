@@ -45,7 +45,7 @@ export default function HowItWorks() {
         'Create Portuguese speaker gatherings at your favorite gyms, cafes, or cultural venues',
         'Set real addresses and specific meeting points',
         'RSVP to events you want to attend in person',
-        'Meet Portuguese speakers who share your interests',
+        'Find Your Match among Portuguese speakers who share your interests',
         'Build real friendships through in-person activities'
       ]
     },
@@ -366,7 +366,7 @@ export default function HowItWorks() {
                 Ready to Join Real-Life Portuguese Meetups?
               </h2>
               <p className="text-xl opacity-90 leading-relaxed mb-8">
-                Meet Portuguese speakers at real places across London & UK. Join gyms, galleries, restaurants, tours and more.
+                Find Your Match among Portuguese speakers at real places across London & UK. Join gyms, galleries, restaurants, tours and more.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

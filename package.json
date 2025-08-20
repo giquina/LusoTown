@@ -15,12 +15,12 @@
   },
   "packageManager": "npm@9.9.3",
   "scripts": {
-  "dev": "cd web-app && npm run dev",
-  "build": "cd web-app && npm run build",
-  "start": "cd web-app && npm run start",
-  "lint": "cd web-app && npm run lint",
-  "install:web-only": "npm --workspaces=false ci --ignore-scripts && cd web-app && npm ci --ignore-scripts",
-  "prebuild:web": "cd web-app && npx -y npm@9 run build"
+    "dev": "cd web-app && npm run dev",
+    "build": "cd web-app && npm run build",
+    "start": "cd web-app && npm run start",
+    "lint": "cd web-app && npm run lint",
+    "install:web-only": "npm --workspaces=false ci --ignore-scripts && cd web-app && npm ci --ignore-scripts",
+    "prebuild:web": "cd web-app && npx -y npm@9 run build"
   },
   "repository": {
     "type": "git",

@@ -1,934 +1,700 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useRef } from "react";
-import Image from "next/image";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   PlayIcon,
-  ClockIcon,
+  VideoCameraIcon,
   UserGroupIcon,
-  EyeIcon,
-  HeartIcon,
-  ShareIcon,
-  BookmarkIcon,
   StarIcon,
-  CheckIcon,
+  ClockIcon,
+  CurrencyPoundIcon,
+  ArrowRightIcon,
+  CheckCircleIcon,
+  MicrophoneIcon,
+  TvIcon,
+  GlobeAltIcon,
+  ShieldCheckIcon,
+  SparklesIcon,
 } from "@heroicons/react/24/outline";
-import {
-  Crown,
-  Calendar,
+import { 
+  Crown, 
+  Video, 
+  Zap, 
+  TrendingUp, 
+  DollarSign,
   Users,
-  Tv,
-  Video,
-  Zap,
-  Play,
-  Mic,
-  TrendingUp,
-  Globe,
+  Settings,
+  BarChart3,
+  Gamepad2,
   Music,
   Briefcase,
-  GraduationCap,
   Heart,
 } from "lucide-react";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
 import { useSubscription } from "@/context/SubscriptionContext";
 import { communityStats } from '@/config/community';
-import SubscriptionGate from "@/components/SubscriptionGate";
-import StreamPlayer from "@/components/StreamPlayer";
-import StreamSchedule from "@/components/StreamSchedule";
-import StreamReplayLibrary from "@/components/StreamReplayLibrary";
-import StreamViewerStats from "@/components/StreamViewerStats";
-import StreamCategories from "@/components/StreamCategories";
-import LiveChatWidget from "@/components/LiveChatWidget";
-import HowStreamingWorks from "@/components/HowStreamingWorks";
 
-export default function LiveStreamingPage() {
+// Creator tier packages - similar to transport service structure
+const creatorTiers = [
+  {
+    id: "starter",
+    name: "Creator Starter",
+    namePortuguese: "Criador Iniciante", 
+    price: 19,
+    originalPrice: 29,
+    image: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/creator-starter-setup_dlqxkx.jpg",
+    imageAlt: "Portuguese content creator setup with professional streaming equipment",
+    imageAltPortuguese: "Configuração de criador de conteúdo português com equipamento de streaming profissional",
+    membershipDiscounts: {
+      free: 0,
+      community: 10,
+      ambassador: 20,
+    },
+    description: "Perfect for Portuguese speakers starting their streaming journey in London & UK",
+    descriptionPortuguese: "Perfeito para falantes de português começando sua jornada de streaming em Londres e Reino Unido",
+    popular: true,
+    features: [
+      "RTMP streaming to Portuguese community",
+      "Portuguese cultural emotes pack (:saudade:, :festa:, :futebol:)",
+      "Community chat moderation",
+      "Basic analytics dashboard",
+      "Mobile streaming support via Streamlabs",
+      "London events integration",
+      "Portuguese language support",
+      "Community networking opportunities",
+    ],
+    featuresPortuguese: [
+      "Streaming RTMP para comunidade portuguesa",
+      "Pack de emotes culturais portugueses (:saudade:, :festa:, :futebol:)",
+      "Moderação de chat da comunidade",
+      "Dashboard de analytics básico",
+      "Suporte para streaming mobile via Streamlabs",
+      "Integração com eventos de Londres",
+      "Suporte em língua portuguesa",
+      "Oportunidades de networking comunitário",
+    ],
+    color: "secondary",
+    targetAudience: "content_creators",
+  },
+  {
+    id: "professional",
+    name: "Professional Creator",
+    namePortuguese: "Criador Profissional",
+    price: 49,
+    originalPrice: 69,
+    image: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535201/professional-creator-studio_hml2nr.jpg",
+    imageAlt: "Professional Portuguese streaming studio with advanced equipment and London backdrop",
+    imageAltPortuguese: "Estúdio de streaming português profissional com equipamento avançado e cenário de Londres",
+    membershipDiscounts: {
+      free: 0,
+      community: 15,
+      ambassador: 25,
+    },
+    description: "Advanced streaming tools for established Portuguese content creators and businesses",
+    descriptionPortuguese: "Ferramentas avançadas de streaming para criadores de conteúdo portugueses estabelecidos e empresas",
+    features: [
+      "All Creator Starter features",
+      "Multi-stream to YouTube, Twitch, TikTok simultaneously",
+      "Advanced Portuguese cultural content categories",
+      "Revenue sharing program (85/15 split)",
+      "Priority Portuguese community promotion",
+      "Custom streaming overlays and graphics",
+      "Advanced analytics and audience insights",
+      "Direct integration with Portuguese events",
+      "Business workshop streaming capabilities",
+      "Portuguese/English bilingual chat support",
+    ],
+    featuresPortuguese: [
+      "Todas as funcionalidades do Criador Iniciante",
+      "Multi-stream para YouTube, Twitch, TikTok simultaneamente",
+      "Categorias avançadas de conteúdo cultural português",
+      "Programa de partilha de receitas (85/15 divisão)",
+      "Promoção prioritária na comunidade portuguesa",
+      "Overlays e gráficos personalizados para streaming",
+      "Analytics avançados e insights de audiência",
+      "Integração direta com eventos portugueses",
+      "Capacidades de streaming de workshops de negócios",
+      "Suporte de chat bilingue português/inglês",
+    ],
+    color: "primary",
+    targetAudience: "professional_creators",
+  },
+  {
+    id: "enterprise",
+    name: "Enterprise Creator",
+    namePortuguese: "Criador Empresarial",
+    price: 199,
+    originalPrice: 299,
+    image: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535202/enterprise-streaming-setup_abc123.jpg",
+    imageAlt: "Enterprise Portuguese streaming setup for business events and community broadcasts",
+    imageAltPortuguese: "Configuração de streaming empresarial português para eventos de negócios e transmissões comunitárias",
+    membershipDiscounts: {
+      free: 0,
+      community: 20,
+      ambassador: 30,
+    },
+    description: "Complete streaming solution for Portuguese businesses, organizations, and major community events",
+    descriptionPortuguese: "Solução completa de streaming para empresas portuguesas, organizações e grandes eventos comunitários",
+    features: [
+      "All Professional Creator features",
+      "Dedicated Portuguese community channel",
+      "White-label streaming platform",
+      "Multi-location London streaming support",
+      "Professional production team support",
+      "Custom Portuguese cultural programming",
+      "Enterprise-grade security and moderation",
+      "API access for custom integrations",
+      "Dedicated account manager (Portuguese-speaking)",
+      "Premium Portuguese community partnerships",
+      "Event venue streaming partnerships in London",
+      "Corporate training and workshop capabilities",
+    ],
+    featuresPortuguese: [
+      "Todas as funcionalidades do Criador Profissional",
+      "Canal dedicado da comunidade portuguesa",
+      "Plataforma de streaming white-label",
+      "Suporte para streaming multi-localização em Londres",
+      "Suporte de equipa de produção profissional",
+      "Programação cultural portuguesa personalizada",
+      "Segurança e moderação de nível empresarial",
+      "Acesso API para integrações personalizadas",
+      "Gestor de conta dedicado (falante de português)",
+      "Parcerias premium da comunidade portuguesa",
+      "Parcerias de streaming com locais de eventos em Londres",
+      "Capacidades de formação corporativa e workshops",
+    ],
+    color: "accent",
+    targetAudience: "enterprise_organizations",
+  },
+];
+
+// Content categories for Portuguese streamers
+const contentCategories = [
+  {
+    id: "portuguese-culture",
+    name: "Portuguese Culture",
+    namePortuguese: "Cultura Portuguesa",
+    icon: Music,
+    description: "Fado nights, traditional cooking, cultural celebrations",
+    descriptionPortuguese: "Noites de fado, culinária tradicional, celebrações culturais",
+    streamers: 45,
+    color: "from-red-500 to-green-500",
+  },
+  {
+    id: "business-networking",
+    name: "Business & Networking", 
+    namePortuguese: "Negócios e Networking",
+    icon: Briefcase,
+    description: "Professional development, technology workshops, startup talks",
+    descriptionPortuguese: "Desenvolvimento profissional, workshops de tecnologia, conversas sobre startups",
+    streamers: 28,
+    color: "from-blue-500 to-purple-500",
+  },
+  {
+    id: "gaming",
+    name: "Gaming",
+    namePortuguese: "Gaming",
+    icon: Gamepad2,
+    description: "Portuguese gaming community, FIFA tournaments",
+    descriptionPortuguese: "Comunidade de gaming portuguesa, torneios FIFA",
+    streamers: 67,
+    color: "from-green-500 to-blue-500",
+  },
+  {
+    id: "lifestyle",
+    name: "Lifestyle & Travel",
+    namePortuguese: "Estilo de Vida e Viagens", 
+    icon: Heart,
+    description: "London life, Portuguese community events, travel vlogs",
+    descriptionPortuguese: "Vida em Londres, eventos da comunidade portuguesa, vlogs de viagem",
+    streamers: 34,
+    color: "from-pink-500 to-orange-500",
+  },
+];
+
+// Success metrics for streamers
+const streamingStats = [
+  { label: "Active Streamers", labelPt: "Streamers Ativos", value: "180+", icon: Video },
+  { label: "Monthly Viewers", labelPt: "Visualizadores Mensais", value: "12.5K", icon: Users },
+  { label: "Revenue Generated", labelPt: "Receita Gerada", value: "£45K+", icon: DollarSign },
+  { label: "Avg. Monthly Earnings", labelPt: "Ganhos Médios Mensais", value: "£340", icon: TrendingUp },
+];
+
+export default function StreamingPage() {
   const { language, t } = useLanguage();
-  const { hasActiveSubscription, isInTrial, subscriptionRequired } =
-    useSubscription();
-  const [currentStream, setCurrentStream] = useState<any>(null);
-  const [selectedCategory, setSelectedCategory] = useState<string>("all");
-  
-  const [viewerCount, setViewerCount] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
-  const [showMiniPlayer, setShowMiniPlayer] = useState(false);
-  const playerContainerRef = useRef<HTMLDivElement | null>(null);
-  // Base URL for self-hosted HLS playback (SRS dev default is http://localhost:8080)
-  const HLS_BASE =
-    (process.env.NEXT_PUBLIC_STREAMING_SERVER_URL as string) ||
-    "http://localhost:8080";
+  const { hasActiveSubscription, createSubscription } = useSubscription();
+  const [selectedTier, setSelectedTier] = useState<string | null>(null);
+  const [showBookingForm, setShowBookingForm] = useState(false);
 
-  // Only scroll to top when directly accessing /live without a hash
+  // Success counter animation
+  const [visibleStreamers, setVisibleStreamers] = useState(180);
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    // Check if user came from direct navigation vs clicking a link
-    const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-    const isDirectNavigation = navigationEntry?.type === 'navigate';
-    
-    if (isDirectNavigation && !window.location.hash) {
-      // Use a microtask to run after mount layout
-      setTimeout(() => window.scrollTo({ top: 0, behavior: 'auto' }), 0);
-    }
-  }, []);
-
-  // Mock data for demonstration - in production, this would come from YouTube API
-  const streamCategories = [
-    {
-      id: "portuguese-culture",
-      name:
-        language === "pt"
-          ? "Conteúdo Cultural Português"
-          : "Portuguese Cultural Content",
-      description:
-        language === "pt"
-          ? "Música tradicional portuguesa, noites de fado, celebrações culturais"
-          : "Traditional Portuguese music, fado nights, cultural celebrations",
-      icon: "🎵",
-      color: "primary",
-      isPremium: false,
-      streamCount: 12,
-    },
-    {
-      id: "business-workshops",
-      name: language === "pt" ? "Workshops de Negócios" : "Business Workshops",
-      description:
-        language === "pt"
-          ? "Desenvolvimento profissional, workshops de IA, marketing digital"
-          : "Professional development, AI workshops, digital marketing",
-      icon: "💼",
-      color: "action",
-      isPremium: true,
-      streamCount: 8,
-    },
-    {
-      id: "community-events",
-      name: language === "pt" ? "Eventos Comunitários" : "Community Events",
-      description:
-        language === "pt"
-          ? "Reuniões comunitárias, anúncios, sessões interativas"
-          : "Community meetings, announcements, interactive sessions",
-      icon: "👥",
-      color: "secondary",
-      isPremium: false,
-      streamCount: 15,
-    },
-    {
-      id: "student-sessions",
-      name: language === "pt" ? "Sessões de Estudantes" : "Student Sessions",
-      description:
-        language === "pt"
-          ? "Grupos de estudo, conselhos de carreira, apoio académico"
-          : "Study groups, career advice, academic support",
-      icon: "🎓",
-      color: "accent",
-      isPremium: false,
-      streamCount: 6,
-    },
-    {
-      id: "vip-business",
-      name:
-        language === "pt" ? "Mesas Redondas VIP" : "VIP Business Roundtables",
-      description:
-        language === "pt"
-          ? "Conteúdo premium exclusivo com líderes da indústria"
-          : "Exclusive premium content with industry leaders",
-      icon: "👑",
-      color: "premium",
-      isPremium: true,
-      streamCount: 4,
-    },
-  ];
-
-  useEffect(() => {
-    // Simulate loading current stream data
-  const mockLiveStream = {
-      id: "live-fado-night-2025",
-      title:
-        language === "pt"
-          ? "Noite de Fado ao Vivo com Maria Santos"
-          : "Live Fado Night with Maria Santos",
-      description:
-        language === "pt"
-          ? "Junte-se a nós para uma noite especial de fado tradicional português ao vivo de Londres"
-          : "Join us for a special night of traditional Portuguese fado live from London",
-      category: "portuguese-culture",
-      isLive: true,
-      scheduledStart: new Date().toISOString(),
-      viewerCount: 127,
-      isPremium: false,
-      thumbnail: "/events/networking.jpg",
-      youtubeVideoId: "dQw4w9WgXcQ", // Mock YouTube video ID
-      host: "Maria Santos",
-      duration: 90,
-      tags: ["fado", "music", "portuguese", "culture", "live"],
-  // Provide self-hosted HLS URL so StreamPlayer uses the onsite player by default
-  hlsUrl: `${HLS_BASE}/live/live-fado-night-2025.m3u8`,
-    };
-
-    const timer = setTimeout(() => {
-      setCurrentStream(mockLiveStream);
-      setViewerCount(mockLiveStream.viewerCount);
-      setIsLoading(false);
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, [language, HLS_BASE]);
-
-  // Simulate real-time viewer count updates
-  useEffect(() => {
-    if (!currentStream?.isLive) return;
-
     const interval = setInterval(() => {
-      setViewerCount((prev) => {
-        const change = Math.floor(Math.random() * 6) - 2; // -2 to +3 viewers
-        return Math.max(0, prev + change);
-      });
-    }, 5000);
-
+      setVisibleStreamers(prev => prev === 180 ? 184 : 180);
+    }, 3000);
     return () => clearInterval(interval);
-  }, [currentStream]);
-
-  // Show mini-player when main player is out of view
-  useEffect(() => {
-    if (!playerContainerRef.current) return;
-    const el = playerContainerRef.current;
-    const observer = new IntersectionObserver(
-      ([entry]) => setShowMiniPlayer(!entry.isIntersecting),
-      { threshold: 0.2 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
   }, []);
 
-  const handleStreamInteraction = (type: string) => {
-    console.log(`Stream interaction: ${type}`);
-    // In production, this would update the database and trigger networking connections
-  };
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-gray-50">
-        <div className="pt-20 lg:pt-24 pb-12">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
-              <div className="animate-pulse">
-                <div className="bg-gray-300 rounded-lg h-64 md:h-96 mb-6"></div>
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                  <div className="lg:col-span-2 space-y-4">
-                    <div className="bg-gray-300 h-8 w-3/4 rounded"></div>
-                    <div className="bg-gray-300 h-4 w-full rounded"></div>
-                    <div className="bg-gray-300 h-4 w-2/3 rounded"></div>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="bg-gray-300 h-48 rounded-lg"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
+  const isPortuguese = language === "pt";
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Enhanced Hero Section */}
-      <section className="pt-32 lg:pt-36 pb-16 bg-gradient-to-br from-primary-50 via-white to-secondary-50 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-primary-500 rounded-full blur-xl"></div>
-          <div className="absolute bottom-20 right-10 w-40 h-40 bg-secondary-500 rounded-full blur-xl"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-accent-500 rounded-full blur-xl"></div>
-        </div>
-
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-7xl mx-auto">
-            {/* Main Hero Content */}
-            <div className="text-center mb-16">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="inline-flex items-center bg-primary-100 backdrop-blur-sm rounded-full px-6 py-3 text-sm font-medium text-primary-700 mb-8 border border-primary-200 shadow-sm"
-              >
-                <Tv className="w-5 h-5 mr-2" />
-                {t("streaming.hero.subtitle")}
-              </motion.div>
-
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-                className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-6 tracking-tight px-4"
-              >
-                {t("streaming.hero.title")}
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed px-4"
-              >
-                {t("streaming.hero.description")}
-              </motion.p>
-
-              {/* Live Status Badge */}
-              {currentStream?.isLive && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.3 }}
-                  className="inline-flex items-center bg-action-600 text-white px-6 py-3 rounded-full text-base font-bold shadow-lg mb-8"
-                >
-                  <span className="w-3 h-3 bg-white rounded-full mr-3 animate-pulse"></span>
-                  {t("streaming.live-now").toUpperCase()}
-                  <span className="ml-3 text-sm opacity-90">
-                    • {viewerCount} {t("streaming.viewers")}
-                  </span>
-                </motion.div>
-              )}
-
-              {/* Primary CTAs - Horizontal layout for all screen sizes */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="flex gap-3 justify-center items-center mb-12 px-4"
-              >
-                {/* Start Watching Button - Left */}
-                <button
-                  onClick={() => {
-                    const el = document.getElementById('player');
-                    if (!el) return;
-                    const header = document.querySelector('header');
-                    const offset = header ? (header as HTMLElement).offsetHeight : 0;
-                    const rect = el.getBoundingClientRect();
-                    const top = window.scrollY + rect.top - offset - 12;
-                    window.scrollTo({ top, behavior: 'smooth' });
-                  }}
-                  className="flex-1 max-w-[180px] group bg-primary-600 hover:bg-primary-700 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-all transform hover:scale-105 hover:shadow-xl active:scale-95 touch-manipulation"
-                >
-                  <div className="flex items-center justify-center gap-2">
-                    <Play className="w-4 h-4 sm:w-5 sm:h-5" />
-                    <span className="truncate text-xs sm:text-sm">{t("streaming.hero.cta.watch")}</span>
-                  </div>
-                </button>
-
-                {/* Start Streaming Button - Right */}
-                <a
-                  href="/creator-signup"
-                  className="flex-1 max-w-[180px] group bg-white hover:bg-gray-50 text-primary-600 border-2 border-primary-600 px-4 sm:px-6 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-all transform hover:scale-105 hover:shadow-xl active:scale-95 touch-manipulation"
-                >
-                  <div className="flex items-center justify-center gap-2">
-                    <Mic className="w-4 h-4 sm:w-5 sm:h-5" />
-                    <span className="truncate text-xs sm:text-sm">{t("streaming.hero.cta.create")}</span>
-                  </div>
-                </a>
-              </motion.div>
-
-              {/* Curator Prompt */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
-                className="text-center mb-10 text-sm text-gray-600"
-              >
-                <p>
-                  {t(
-                    "streaming.hero.curator.prompt",
-                    "Do you want to be a curator or sign up as a curator?"
-                  )}{" "}
-                  <a
-                    href="/creator-signup"
-                    className="text-primary-600 font-semibold hover:underline"
-                  >
-                    {t("streaming.hero.curator.cta", "Become a curator")}
-                  </a>
-                </p>
-              </motion.div>
-
-              {/* Social Proof */}
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
-                className="text-gray-500 text-sm"
-              >
-                {t("streaming.hero.social_proof")}
-              </motion.p>
-            </div>
-
-            {/* Stats Section */}
-            <motion.div
+    <div className="min-h-screen">
+      {/* Hero Section - Similar to London Transport style */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
+        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/portuguese-streaming-london_dlqxkx.jpg')] bg-cover bg-center opacity-5"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-900/5 via-transparent to-secondary-900/5"></div>
+        
+        <div className="relative container-width py-16 lg:py-24">
+          <div className="text-center max-w-4xl mx-auto">
+            {/* Badge */}
+            <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
+              className="mb-6"
             >
-              <div className="text-center bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-lg">
-                <div className="flex items-center justify-center w-12 h-12 bg-primary-100 rounded-xl mx-auto mb-4">
-                  <Users className="w-6 h-6 text-primary-600" />
-                </div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">{communityStats.creators}</div>
-                <div className="text-sm text-gray-600">
-                  {t("streaming.hero.stats.creators")}
-                </div>
-              </div>
+              <span className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-primary-100 via-secondary-50 to-accent-100 border border-primary-200 shadow-lg">
+                <VideoCameraIcon className="w-4 h-4 mr-2 text-primary-600" />
+                <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent font-bold">
+                  {isPortuguese ? "Plataforma de Streaming Portuguesa" : "Portuguese Streaming Platform"}
+                </span>
+              </span>
+            </motion.div>
 
-              <div className="text-center bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-lg">
-                <div className="flex items-center justify-center w-12 h-12 bg-secondary-100 rounded-xl mx-auto mb-4">
-                  <TrendingUp className="w-6 h-6 text-secondary-600" />
-                </div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">
-                  {communityStats.streamingHours}
-                </div>
-                <div className="text-sm text-gray-600">
-                  {t("streaming.hero.stats.hours")}
-                </div>
-              </div>
+            {/* Title with Desktop/Mobile Responsive */}
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-4xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight"
+            >
+              <span className="hidden sm:block">
+                {isPortuguese ? "Torne-se um Criador de Conteúdo Português" : "Become a Portuguese Content Creator"}
+              </span>
+              <span className="sm:hidden">
+                {isPortuguese ? "Streaming Português" : "Portuguese Streaming"}
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
+                {isPortuguese ? "em Londres" : "in London"}
+              </span>
+            </motion.h1>
 
-              <div className="text-center bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-lg">
-                <div className="flex items-center justify-center w-12 h-12 bg-accent-100 rounded-xl mx-auto mb-4">
-                  <Globe className="w-6 h-6 text-accent-600" />
-                </div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">
-                  {communityStats.viewers}
-                </div>
-                <div className="text-sm text-gray-600">
-                  {t("streaming.hero.stats.viewers")}
-                </div>
+            {/* Subtitle with Desktop/Mobile Responsive */}
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
+            >
+              <span className="hidden sm:block">
+                {isPortuguese 
+                  ? "Conecte-se com a comunidade portuguesa através de streaming. Partilhe sua cultura, negócios e paixões com milhares de portugueses em Londres."
+                  : "Connect with the Portuguese community through streaming. Share your culture, business, and passions with thousands of Portuguese speakers in London."
+                }
+              </span>
+              <span className="sm:hidden">
+                {isPortuguese 
+                  ? "Streaming para a comunidade portuguesa em Londres"
+                  : "Streaming for Portuguese community in London"
+                }
+              </span>
+            </motion.p>
+
+            {/* Feature dots */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
+            >
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="w-2 h-2 bg-secondary-500 rounded-full"></div>
+                <span>{isPortuguese ? "RTMP Professional" : "Professional RTMP"}</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+                <span>{isPortuguese ? "Emotes Culturais" : "Cultural Emotes"}</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
+                <span>{isPortuguese ? "85/15 Revenue Split" : "85/15 Revenue Split"}</span>
               </div>
             </motion.div>
 
-            {/* Feature Showcase */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-              {/* For Viewers */}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.7 }}
-                className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-lg"
-              >
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="flex items-center justify-center w-12 h-12 bg-primary-100 rounded-xl">
-                    <Play className="w-6 h-6 text-primary-600" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">
-                    {t("streaming.hero.benefits.viewer.title")}
-                  </h3>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <Music className="w-5 h-5 text-primary-600 mt-1 flex-shrink-0" />
-                    <span className="text-gray-700">
-                      {t("streaming.hero.benefits.viewer.fado")}
-                    </span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Briefcase className="w-5 h-5 text-primary-600 mt-1 flex-shrink-0" />
-                    <span className="text-gray-700">
-                      {t("streaming.hero.benefits.viewer.business")}
-                    </span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Heart className="w-5 h-5 text-primary-600 mt-1 flex-shrink-0" />
-                    <span className="text-gray-700">
-                      {t("streaming.hero.benefits.viewer.cultural")}
-                    </span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <GraduationCap className="w-5 h-5 text-primary-600 mt-1 flex-shrink-0" />
-                    <span className="text-gray-700">
-                      {t("streaming.hero.benefits.viewer.support")}
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* For Creators */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.8 }}
-                className="bg-gradient-to-br from-secondary-50 to-accent-50 backdrop-blur-sm rounded-2xl p-8 border border-secondary-200 shadow-lg"
-              >
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="flex items-center justify-center w-12 h-12 bg-secondary-100 rounded-xl">
-                    <Mic className="w-6 h-6 text-secondary-600" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">
-                    {t("streaming.hero.benefits.creator.title")}
-                  </h3>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <CheckIcon className="w-5 h-5 text-secondary-600 mt-1 flex-shrink-0" />
-                    <span className="text-gray-700">
-                      {t("streaming.hero.benefits.creator.monetize")}
-                    </span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckIcon className="w-5 h-5 text-secondary-600 mt-1 flex-shrink-0" />
-                    <span className="text-gray-700">
-                      {t("streaming.hero.benefits.creator.community")}
-                    </span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckIcon className="w-5 h-5 text-secondary-600 mt-1 flex-shrink-0" />
-                    <span className="text-gray-700">
-                      {t("streaming.hero.benefits.creator.tools")}
-                    </span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <StarIcon className="w-5 h-5 text-amber-500 mt-1 flex-shrink-0" />
-                    <span className="text-gray-700 font-medium">
-                      {t("streaming.hero.benefits.creator.revenue")}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="mt-6">
-                  <button className="w-full bg-secondary-600 hover:bg-secondary-700 text-white px-6 py-3 rounded-xl font-semibold transition-all transform hover:scale-105 active:scale-95 touch-manipulation">
-                    {t("streaming.hero.cta.create")}
-                  </button>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Popular Categories Preview */}
-            <motion.div
+            {/* CTAs */}
+            <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 }}
-              className="text-center"
+              transition={{ delay: 0.4 }}
+              className="flex flex-row gap-3 sm:gap-4 justify-center mb-8"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">
-                {t("streaming.hero.categories.title")}
-              </h2>
+              <button 
+                onClick={() => setShowBookingForm(true)}
+                className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-6 sm:px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1 flex-1 max-w-[180px] sm:max-w-none text-center"
+              >
+                {isPortuguese ? "Começar Streaming" : "Start Streaming"}
+              </button>
+              <a 
+                href="#packages" 
+                className="border border-gray-300 text-gray-700 px-6 sm:px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-lg hover:shadow-xl flex-1 max-w-[180px] sm:max-w-none text-center"
+              >
+                {isPortuguese ? "Ver Pacotes" : "View Packages"}
+              </a>
+            </motion.div>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-white/20 shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer">
-                  <div className="text-2xl mb-3">🎵</div>
-                  <div className="font-semibold text-gray-900 text-sm">
-                    {t("streaming.hero.categories.music")}
+            {/* Live stats */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center"
+            >
+              {streamingStats.map((stat, index) => (
+                <div key={index} className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-white/40">
+                  <stat.icon className="w-6 h-6 text-primary-600 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-gray-900 mb-1">
+                    {stat.label === "Active Streamers" ? visibleStreamers + "+" : stat.value}
+                  </div>
+                  <div className="text-xs text-gray-600">
+                    {isPortuguese ? stat.labelPt : stat.label}
                   </div>
                 </div>
-
-                <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-white/20 shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer">
-                  <div className="text-2xl mb-3">💼</div>
-                  <div className="font-semibold text-gray-900 text-sm">
-                    {t("streaming.hero.categories.business")}
-                  </div>
-                </div>
-
-                <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-white/20 shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer">
-                  <div className="text-2xl mb-3">🎉</div>
-                  <div className="font-semibold text-gray-900 text-sm">
-                    {t("streaming.hero.categories.culture")}
-                  </div>
-                </div>
-
-                <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 border border-white/20 shadow-lg hover:shadow-xl transition-all hover:scale-105 cursor-pointer">
-                  <div className="text-2xl mb-3">🎓</div>
-                  <div className="font-semibold text-gray-900 text-sm">
-                    {t("streaming.hero.categories.student")}
-                  </div>
-                </div>
-              </div>
+              ))}
             </motion.div>
           </div>
         </div>
       </section>
 
-      <div className="py-8 pb-20 md:pb-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            {/* Main Content */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
-              {/* Main Stream Player - Mobile-first responsive */}
-              <div className="lg:col-span-2 space-y-4 md:space-y-6">
-                {/* Live Stream Player */}
-        {currentStream && (
-                  <motion.div
-                    id="player"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-          className="bg-white rounded-lg sm:rounded-xl shadow-lg overflow-hidden"
-          ref={playerContainerRef}
-                  >
-                    <StreamPlayer
-                      stream={currentStream}
-                      hasAccess={
-                        !currentStream.isPremium ||
-                        hasActiveSubscription ||
-                        isInTrial
-                      }
-                      onInteraction={handleStreamInteraction}
-                    />
+      {/* Content Categories Section */}
+      <section className="py-16 bg-white">
+        <div className="container-width">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-5">
+              {isPortuguese ? "Categorias de Conteúdo" : "Content Categories"}
+            </h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              {isPortuguese 
+                ? "Escolha a sua categoria e conecte-se com audiências que partilham os seus interesses"
+                : "Choose your category and connect with audiences who share your interests"
+              }
+            </p>
+          </div>
 
-                    {/* Stream Info */}
-                    <div className="p-4 sm:p-6">
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="flex-1">
-                          <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 leading-tight">
-                            {currentStream.title}
-                          </h2>
-                          <p className="text-gray-600 mb-3 text-sm sm:text-base">
-                            {currentStream.description}
-                          </p>
-
-                          {/* Stream Metadata */}
-                          <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
-                            <div className="flex items-center gap-1" aria-live="polite">
-                              <EyeIcon className="w-4 h-4" />
-                              <span>
-                                {viewerCount.toLocaleString()}{" "}
-                                {language === "pt" ? "espectadores" : "viewers"}
-                              </span>
-                            </div>
-                            <div className="flex items-center gap-1">
-                              <ClockIcon className="w-4 h-4" />
-                              <span>
-                                {currentStream.duration}{" "}
-                                {language === "pt" ? "min" : "min"}
-                              </span>
-                            </div>
-                            <div className="flex items-center gap-1">
-                              <UserGroupIcon className="w-4 h-4" />
-                              <span>
-                                {language === "pt"
-                                  ? "Apresentado por"
-                                  : "Hosted by"}{" "}
-                                {currentStream.host}
-                              </span>
-                            </div>
-                            {currentStream.isPremium && (
-                              <div className="flex items-center gap-1 text-premium-600">
-                                <Crown className="w-4 h-4" />
-                                <span>
-                                  {language === "pt" ? "Premium" : "Premium"}
-                                </span>
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Stream Actions - Mobile Optimized */}
-                      <div className="pt-4 border-t border-gray-200">
-                        {/* Mobile: Stack actions for better touch targets */}
-                        <div className="flex flex-col sm:flex-row gap-3">
-                          {/* Primary Actions Row */}
-                          <div className="flex gap-3 flex-1 flex-wrap">
-                            <button
-                              onClick={() => handleStreamInteraction("like")}
-                              className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-3 sm:py-2 bg-gray-100 hover:bg-gray-200 active:bg-gray-300 rounded-lg transition-all touch-manipulation"
-                            >
-                              <HeartIcon className="w-5 h-5 sm:w-4 sm:h-4" />
-                              <span className="text-sm font-medium">
-                                {language === "pt" ? "Gostar" : "Like"}
-                              </span>
-                            </button>
-                            <button
-                              onClick={() => handleStreamInteraction("share")}
-                              className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-3 sm:py-2 bg-primary-100 hover:bg-primary-200 text-primary-700 rounded-lg transition-all touch-manipulation"
-                            >
-                              <ShareIcon className="w-5 h-5 sm:w-4 sm:h-4" />
-                              <span className="text-sm font-medium">
-                                {language === "pt" ? "Partilhar" : "Share"}
-                              </span>
-                            </button>
-                          </div>
-
-                          {/* Secondary Actions */}
-                          <button
-                            onClick={() => handleStreamInteraction("save")}
-                            className="flex items-center justify-center gap-2 px-4 py-3 sm:py-2 bg-secondary-100 hover:bg-secondary-200 text-secondary-700 rounded-lg transition-all touch-manipulation"
-                          >
-                            <BookmarkIcon className="w-5 h-5 sm:w-4 sm:h-4" />
-                            <span className="text-sm font-medium">
-                              {language === "pt" ? "Guardar" : "Save"}
-                            </span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-
-                {/* Stream Categories */}
-                <div id="categories">
-                <StreamCategories
-                  categories={streamCategories}
-                  selectedCategory={selectedCategory}
-                  onCategorySelect={setSelectedCategory}
-                  hasActiveSubscription={hasActiveSubscription || isInTrial}
-                />
-                </div>
-
-                {/* Upcoming Schedule */}
-                <div id="schedule">
-                  <StreamSchedule
-                    category={selectedCategory}
-                    language={language}
-                  />
-                </div>
-              </div>
-
-              {/* Sidebar - Takes up 1/3 of desktop width */}
-              <div className="space-y-4 sm:space-y-6">
-                {/* Viewer Stats */}
-                <StreamViewerStats
-                  currentViewers={viewerCount}
-                  peakViewers={156}
-                  totalViews={2847}
-                  language={language}
-                />
-
-                {/* Live Chat Widget */}
-                {currentStream?.isLive && (
-                  <LiveChatWidget
-                    streamId={currentStream.id}
-                    isLive={true}
-                    hasAccess={
-                      !currentStream.isPremium ||
-                      hasActiveSubscription ||
-                      isInTrial
-                    }
-                  />
-                )}
-
-                {/* Premium Subscription Prompt */}
-                {subscriptionRequired && (
-                  <SubscriptionGate
-                    mode="general"
-                    title={
-                      language === "pt"
-                        ? "Subscrição necessária para conteúdo premium"
-                        : "Subscription required for premium content"
-                    }
-                    description={
-                      language === "pt"
-                        ? "Aceda a conteúdo exclusivo, workshops de negócios e replays de streams."
-                        : "Access exclusive content, business workshops, and stream replays."
-                    }
-                  >
-                    {/* No child content in this context */}
-                    <div />
-                  </SubscriptionGate>
-                )}
-
-                {/* Quick Navigation */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                  className="bg-white rounded-xl shadow-sm p-6"
-                >
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                    {language === "pt"
-                      ? "Navegação Rápida"
-                      : "Quick Navigation"}
-                  </h3>
-                  <div className="space-y-3">
-                    <a
-                      href="#schedule"
-                      className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
-                    >
-                      <Calendar className="w-5 h-5 text-primary-600" />
-                      <span className="text-sm font-medium">
-                        {language === "pt" ? "Programação" : "Schedule"}
-                      </span>
-                    </a>
-                    <a
-                      href="#replays"
-                      className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
-                    >
-                      <Video className="w-5 h-5 text-secondary-600" />
-                      <span className="text-sm font-medium">
-                        {language === "pt" ? "Replays" : "Replays"}
-                      </span>
-                    </a>
-                    <a
-                      href="#community"
-                      className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
-                    >
-                      <Users className="w-5 h-5 text-action-600" />
-                      <span className="text-sm font-medium">
-                        {language === "pt" ? "Comunidade" : "Community"}
-                      </span>
-                    </a>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {contentCategories.map((category, index) => (
+              <motion.div
+                key={category.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 overflow-hidden"
+              >
+                <div className={`h-2 bg-gradient-to-r ${category.color}`}></div>
+                <div className="p-6">
+                  <div className="w-14 h-14 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <category.icon className="w-8 h-8 text-gray-600" />
                   </div>
-                </motion.div>
-              </div>
-            </div>
-
-            {/* Stream Replay Library */}
-            <div id="replays" className="mt-12">
-              <StreamReplayLibrary
-                hasAccess={hasActiveSubscription || isInTrial}
-                selectedCategory={selectedCategory}
-                language={language}
-              />
-            </div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">
+                    {isPortuguese ? category.namePortuguese : category.name}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                    {isPortuguese ? category.descriptionPortuguese : category.description}
+                  </p>
+                  <div className="flex items-center gap-2 text-primary-600">
+                    <Users className="w-4 h-4" />
+                    <span className="text-sm font-medium">{category.streamers} streamers</span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Community Section (anchor target for quick nav) */}
-      <div id="community" className="pb-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                {language === "pt" ? "Junte-se à Comunidade" : "Join the Community"}
-              </h3>
-              <p className="text-gray-600 mb-4">
-                {language === "pt"
-                  ? "Converse no chat em direto, participe nos fóruns e descubra eventos para conhecer pessoas pessoalmente."
-                  : "Chat live, join the forums, and discover events to meet people in person."}
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <a href="/forums" className="px-4 py-2 rounded-lg bg-primary-50 text-primary-700 border border-primary-200 hover:bg-primary-100 text-sm font-medium">
-                  {language === "pt" ? "Ir para os Fóruns" : "Go to Forums"}
-                </a>
-                <a href="/events" className="px-4 py-2 rounded-lg bg-secondary-50 text-secondary-700 border border-secondary-200 hover:bg-secondary-100 text-sm font-medium">
-                  {language === "pt" ? "Explorar Eventos" : "Explore Events"}
-                </a>
-              </div>
-            </div>
+      {/* Creator Packages Section - Similar to Transport Services */}
+      <section id="packages" className="py-16 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container-width">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-5">
+              {isPortuguese ? "Pacotes para Criadores" : "Creator Packages"}
+            </h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              {isPortuguese 
+                ? "Escolha o pacote perfeito para a sua jornada de criação de conteúdo português"
+                : "Choose the perfect package for your Portuguese content creation journey"
+              }
+            </p>
           </div>
-        </div>
-      </div>
 
-      {/* Mobile Sticky Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white border-t border-gray-200 shadow-lg">
-        <div className="grid grid-cols-4 gap-0">
-          <button
-            onClick={() => {
-              const el = document.getElementById('player');
-              if (!el) return;
-              const header = document.querySelector('header');
-              const offset = header ? (header as HTMLElement).offsetHeight : 0;
-              const rect = el.getBoundingClientRect();
-              const top = window.scrollY + rect.top - offset - 12;
-              window.scrollTo({ top, behavior: 'smooth' });
-            }}
-            className="flex flex-col items-center justify-center py-3 px-2 text-xs font-medium text-gray-600 hover:text-primary-600 active:bg-primary-50 transition-all touch-manipulation"
-          >
-            <Play className="w-6 h-6 mb-1" />
-            <span>{language === "pt" ? "Player" : "Player"}</span>
-          </button>
-          
-          <button
-            onClick={() => {
-              const el = document.getElementById('schedule');
-              if (!el) return;
-              const header = document.querySelector('header');
-              const offset = header ? (header as HTMLElement).offsetHeight : 0;
-              const rect = el.getBoundingClientRect();
-              const top = window.scrollY + rect.top - offset - 12;
-              window.scrollTo({ top, behavior: 'smooth' });
-            }}
-            className="flex flex-col items-center justify-center py-3 px-2 text-xs font-medium text-gray-600 hover:text-secondary-600 active:bg-secondary-50 transition-all touch-manipulation"
-          >
-            <Calendar className="w-6 h-6 mb-1" />
-            <span>{language === "pt" ? "Agenda" : "Schedule"}</span>
-          </button>
-          
-          <button
-            onClick={() => {
-              const el = document.getElementById('replays');
-              if (!el) return;
-              const header = document.querySelector('header');
-              const offset = header ? (header as HTMLElement).offsetHeight : 0;
-              const rect = el.getBoundingClientRect();
-              const top = window.scrollY + rect.top - offset - 12;
-              window.scrollTo({ top, behavior: 'smooth' });
-            }}
-            className="flex flex-col items-center justify-center py-3 px-2 text-xs font-medium text-gray-600 hover:text-accent-600 active:bg-accent-50 transition-all touch-manipulation"
-          >
-            <Video className="w-6 h-6 mb-1" />
-            <span>{language === "pt" ? "Replays" : "Replays"}</span>
-          </button>
-          
-          <button
-            onClick={() => {
-              const el = document.getElementById('community');
-              if (!el) return;
-              const header = document.querySelector('header');
-              const offset = header ? (header as HTMLElement).offsetHeight : 0;
-              const rect = el.getBoundingClientRect();
-              const top = window.scrollY + rect.top - offset - 12;
-              window.scrollTo({ top, behavior: 'smooth' });
-            }}
-            className="flex flex-col items-center justify-center py-3 px-2 text-xs font-medium text-gray-600 hover:text-action-600 active:bg-action-50 transition-all touch-manipulation"
-          >
-            <Users className="w-6 h-6 mb-1" />
-            <span>{language === "pt" ? "Chat" : "Chat"}</span>
-          </button>
-        </div>
-      </div>
-
-      {/* Sticky Mini-Player */}
-      {currentStream && showMiniPlayer && (
-        <motion.button
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          className="fixed bottom-20 right-4 z-50 w-64 sm:w-72 bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden text-left md:bottom-4"
-          onClick={() => {
-            const el = document.getElementById("player");
-            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-          }}
-          aria-label={language === "pt" ? "Voltar ao leitor" : "Return to player"}
-        >
-          <div className="flex">
-            <div className="relative w-28 h-20 flex-shrink-0">
-              <Image
-                src={currentStream.thumbnail || "/events/networking.jpg"}
-                alt={currentStream.title}
-                fill
-                sizes="(max-width: 768px) 112px, 112px"
-                className="object-cover"
-                priority={false}
-              />
-            </div>
-            <div className="p-3 flex-1">
-              <div className="flex items-center gap-2 mb-1">
-                {currentStream.isLive && (
-                  <span className="inline-flex items-center px-2 py-0.5 rounded bg-action-600 text-white text-[10px] font-bold">
-                    {language === "pt" ? "AO VIVO" : "LIVE"}
-                  </span>
+          <div className="grid lg:grid-cols-3 gap-8">
+            {creatorTiers.map((tier, index) => (
+              <motion.div
+                key={tier.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className={`relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group ${
+                  tier.popular ? 'ring-2 ring-primary-200' : ''
+                }`}
+              >
+                {/* Popular Badge */}
+                {tier.popular && (
+                  <div className="absolute top-4 right-4 z-10">
+                    <span className="bg-gradient-to-r from-action-500 to-secondary-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                      {isPortuguese ? "Mais Popular" : "Most Popular"}
+                    </span>
+                  </div>
                 )}
-                {currentStream.isPremium && (
-                  <span className="inline-flex items-center px-2 py-0.5 rounded bg-premium-600 text-white text-[10px] font-bold">
-                    Premium
-                  </span>
-                )}
-              </div>
-              <div className="text-sm font-semibold text-gray-900 line-clamp-2">
-                {currentStream.title}
-              </div>
-              <div className="mt-1 text-xs text-gray-600">
-                {viewerCount.toLocaleString()} {language === "pt" ? "a ver" : "watching"}
-              </div>
+
+                {/* Image */}
+                <div className="relative h-64 overflow-hidden">
+                  <div className="w-full h-full bg-gradient-to-br from-primary-200 via-secondary-200 to-accent-200 flex items-center justify-center">
+                    <div className="text-6xl text-primary-400">🎥</div>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  
+                  {/* Price overlay */}
+                  <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-2">
+                    <div className="flex items-center gap-2">
+                      {tier.originalPrice > tier.price && (
+                        <span className="text-sm text-gray-500 line-through">£{tier.originalPrice}</span>
+                      )}
+                      <span className="text-2xl font-bold text-gray-900">£{tier.price}</span>
+                      <span className="text-sm text-gray-600">/month</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    {isPortuguese ? tier.namePortuguese : tier.name}
+                  </h3>
+                  <p className="text-gray-600 mb-6">
+                    {isPortuguese ? tier.descriptionPortuguese : tier.description}
+                  </p>
+                  
+                  {/* Features */}
+                  <div className="space-y-3 mb-8">
+                    {(isPortuguese ? tier.featuresPortuguese : tier.features).slice(0, 6).map((feature, idx) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <CheckCircleIcon className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-gray-700">{feature}</span>
+                      </div>
+                    ))}
+                    {(isPortuguese ? tier.featuresPortuguese : tier.features).length > 6 && (
+                      <div className="text-sm text-primary-600 font-medium">
+                        +{(isPortuguese ? tier.featuresPortuguese : tier.features).length - 6} {isPortuguese ? "mais funcionalidades" : "more features"}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* CTA */}
+                  <button
+                    onClick={() => setShowBookingForm(true)}
+                    className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 ${
+                      tier.popular
+                        ? 'bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                  >
+                    {isPortuguese ? "Começar Agora" : "Start Now"}
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-16 bg-white">
+        <div className="container-width">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-5">
+              {isPortuguese ? "Como Funciona" : "How It Works"}
+            </h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              {isPortuguese 
+                ? "Comece a fazer streaming para a comunidade portuguesa em apenas 3 passos simples"
+                : "Start streaming to the Portuguese community in just 3 simple steps"
+              }
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                step: 1,
+                title: isPortuguese ? "Escolha Seu Pacote" : "Choose Your Package",
+                description: isPortuguese ? "Selecione o pacote que melhor se adequa às suas necessidades de criação de conteúdo" : "Select the package that best fits your content creation needs",
+                icon: Crown,
+              },
+              {
+                step: 2,
+                title: isPortuguese ? "Configure Seu Setup" : "Set Up Your Stream",
+                description: isPortuguese ? "Configuramos seu RTMP, emotes culturais e integração com eventos portugueses" : "We configure your RTMP, cultural emotes, and Portuguese events integration",
+                icon: Settings,
+              },
+              {
+                step: 3,
+                title: isPortuguese ? "Comece a Transmitir" : "Start Broadcasting",
+                description: isPortuguese ? "Conecte-se com milhares de portugueses e comece a construir sua audiência" : "Connect with thousands of Portuguese speakers and start building your audience",
+                icon: Video,
+              },
+            ].map((step, index) => (
+              <motion.div
+                key={step.step}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2 }}
+                className="text-center group"
+              >
+                <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <step.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="text-2xl font-bold text-primary-600 mb-4">
+                    {step.step}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Success Stories & Community */}
+      <section className="py-16 bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50">
+        <div className="container-width">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-5">
+              {isPortuguese ? "Histórias de Sucesso" : "Success Stories"}
+            </h2>
+            <p className="text-gray-600 max-w-3xl mx-auto">
+              {isPortuguese 
+                ? "Criadores portugueses estão a prosperar na nossa plataforma"
+                : "Portuguese creators are thriving on our platform"
+              }
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Maria Santos",
+                category: isPortuguese ? "Culinária Portuguesa" : "Portuguese Cooking",
+                achievement: isPortuguese ? "2.3K seguidores em 3 meses" : "2.3K followers in 3 months",
+                quote: isPortuguese ? "A plataforma conectou-me com portugueses de todo Londres que adoram a nossa gastronomia!" : "The platform connected me with Portuguese people all over London who love our cuisine!",
+              },
+              {
+                name: "João Ferreira", 
+                category: isPortuguese ? "Workshops de Negócios" : "Business Workshops",
+                achievement: isPortuguese ? "£1.2K receita mensal" : "£1.2K monthly revenue",
+                quote: isPortuguese ? "Transformei meu conhecimento em tecnologia em streams educativos para a comunidade portuguesa." : "I turned my technology knowledge into educational streams for the Portuguese community.",
+              },
+              {
+                name: "Ana Costa",
+                category: isPortuguese ? "Noites de Fado" : "Fado Nights", 
+                achievement: isPortuguese ? "Eventos em 5 locais de Londres" : "Events in 5 London venues",
+                quote: isPortuguese ? "O streaming ajudou-me a levar o fado a mais portugueses em Londres." : "Streaming helped me bring fado to more Portuguese people in London.",
+              },
+            ].map((story, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <div className="text-center mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary-200 to-secondary-200 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-2xl">👤</span>
+                  </div>
+                  <h4 className="font-bold text-gray-900">{story.name}</h4>
+                  <p className="text-sm text-primary-600">{story.category}</p>
+                </div>
+                <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-lg p-3 mb-4 text-center">
+                  <p className="text-green-800 font-semibold text-sm">{story.achievement}</p>
+                </div>
+                <blockquote className="text-gray-600 italic text-sm leading-relaxed">
+                  "{story.quote}"
+                </blockquote>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-16 bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600">
+        <div className="container-width text-center text-white">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+            {isPortuguese ? "Pronto para Começar?" : "Ready to Get Started?"}
+          </h2>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            {isPortuguese 
+              ? "Junte-se a centenas de criadores portugueses que estão a construir suas audiências em Londres"
+              : "Join hundreds of Portuguese creators who are building their audiences in London"
+            }
+          </p>
+          <div className="flex flex-row gap-4 justify-center">
+            <button 
+              onClick={() => setShowBookingForm(true)}
+              className="bg-white text-primary-600 px-8 py-4 rounded-2xl font-bold hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-2xl flex-1 max-w-[200px]"
+            >
+              {isPortuguese ? "Começar Agora" : "Start Now"}
+            </button>
+            <a 
+              href="#packages" 
+              className="bg-white/10 backdrop-blur-sm text-white border border-white/20 px-8 py-4 rounded-2xl font-semibold hover:bg-white/20 transition-all duration-300 flex-1 max-w-[200px]"
+            >
+              {isPortuguese ? "Saber Mais" : "Learn More"}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Booking Form Modal */}
+      {showBookingForm && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-3xl p-8 max-w-md w-full">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              {isPortuguese ? "Começar Streaming" : "Start Streaming"}
+            </h3>
+            <p className="text-gray-600 mb-6">
+              {isPortuguese 
+                ? "Entre em contato connosco para configurar sua conta de streaming"
+                : "Get in touch with us to set up your streaming account"
+              }
+            </p>
+            <div className="space-y-4">
+              <button className="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-3 rounded-xl font-semibold">
+                {isPortuguese ? "Contactar Equipa" : "Contact Team"}
+              </button>
+              <button className="w-full bg-gray-100 text-gray-700 py-3 rounded-xl font-semibold">
+                {isPortuguese ? "Agendar Demonstração" : "Schedule Demo"}
+              </button>
+              <button 
+                onClick={() => setShowBookingForm(false)}
+                className="w-full text-gray-500 py-2"
+              >
+                {isPortuguese ? "Fechar" : "Close"}
+              </button>
             </div>
           </div>
-        </motion.button>
-      )}
-
-      {!hasActiveSubscription && !isInTrial && (
-        <HowStreamingWorks />
+        </div>
       )}
 
       <Footer />
     </div>
   );
 }
-

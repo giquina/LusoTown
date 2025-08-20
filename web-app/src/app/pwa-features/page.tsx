@@ -99,8 +99,8 @@ export default function PWAFeaturesPage() {
       title: language === 'pt' ? 'Otimização de Performance' : 'Performance Optimization',
       titlePortuguese: 'Otimização de Performance',
       description: language === 'pt'
-        ? 'Carregamento rápido de conteúdo português, cache inteligente e modo de dados limitados'
-        : 'Fast loading of Portuguese content, intelligent caching, and data-saving mode',
+        ? 'Carregamento rápido de conteúdo português, cache avançado e modo de dados limitados'
+        : 'Fast loading of Portuguese content, advanced caching, and data-saving mode',
       icon: Zap,
       color: 'yellow',
       component: PerformanceOptimization

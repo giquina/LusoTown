@@ -25,6 +25,14 @@ LusoTown is a complete bilingual social network designed for two main audiences 
 
 ## 🌟 NEW: Latest Features (August 2025)
 
+### 🎨 **UI/UX Improvements (August 20, 2025)**
+- ✅ **Welcome Modal Enhancements**: Fixed responsive modal sizing with `max-h-[85vh]` (mobile) and `max-w-[3xl]` (desktop)
+- ✅ **Mobile Layout Optimization**: Improved mobile layout with compact 2x2 grid for feature cards
+- ✅ **Enhanced User Experience**: Added click-outside-to-close functionality for better accessibility
+- ✅ **Updated CTA Text**: Changed skip button from "Explore all features" to "Skip for now" (EN/PT)
+- ✅ **Navigation Dropdown Centering**: Fixed dropdown positioning for 'More' and 'Events' navigation using intelligent centering
+- ✅ **Viewport Overflow Protection**: Added margin calculations to prevent dropdowns extending beyond screen boundaries
+
 ### 🗺️ **Enhanced Portuguese Business Directory (August 19, 2025)**
 - ✅ **Public Access**: Business directory accessible without login/authentication
 - ✅ **Interactive OpenStreetMap**: Business markers with intelligent clustering
@@ -248,6 +256,12 @@ npm run db:migrate           # Apply all migrations
 - **Form validation errors**: Check all required fields are properly filled
 - **Photo upload failing**: Verify file types and size limits in environment variables
 - **Submission not saving**: Ensure database migration for business submissions is applied
+
+**UI/UX Issues:**
+- **Welcome modal too large**: Ensure responsive sizing with `max-h-[85vh]` (mobile) and `max-w-[3xl]` (desktop)
+- **Navigation dropdowns misaligned**: Use `left-1/2 transform -translate-x-1/2` for proper centering
+- **Modal not closing on backdrop click**: Verify click-outside-to-close handlers are implemented
+- **Dropdown viewport overflow**: Add margin calculations to prevent extending beyond screen boundaries
 
 ### **Current Production Status (August 19, 2025)**
 - ✅ **Build Status**: All 75+ pages compile and function perfectly including new features

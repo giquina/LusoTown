@@ -33,7 +33,7 @@ interface ModerationItem {
   receiverName: string
   content: string
   flaggedReasons: string[]
-  aiAnalysis: {
+  systemAnalysis: {
     blocked: boolean
     score: number
     flags: string[]
@@ -51,7 +51,7 @@ interface ModerationStats {
   totalPending: number
   totalResolved: number
   averageResponseTime: number
-  flaggedByAI: number
+  flaggedBySystem: number
   flaggedByUsers: number
   approvalRate: number
   rejectionRate: number
@@ -171,7 +171,7 @@ export default function MessageModerationDashboard() {
         totalPending: 47,
         totalResolved: 312,
         averageResponseTime: 3.2,
-        flaggedByAI: 28,
+        flaggedBySystem: 28,
         flaggedByUsers: 19,
         approvalRate: 68,
         rejectionRate: 22
@@ -240,7 +240,7 @@ export default function MessageModerationDashboard() {
         totalPending: 'Pending Review',
         totalResolved: 'Resolved Today',
         averageResponseTime: 'Avg Response Time',
-        flaggedByAI: 'AI Flagged',
+        flaggedBySystem: 'System Flagged',
         flaggedByUsers: 'User Reported',
         approvalRate: 'Approval Rate',
         rejectionRate: 'Rejection Rate',
@@ -259,7 +259,7 @@ export default function MessageModerationDashboard() {
         noItems: 'No pending moderation items',
         allClear: 'All messages have been reviewed!',
         flaggedReasons: 'Flagged for',
-        aiScore: 'AI Safety Score',
+        safetyScore: 'Safety Score',
         timeAgo: 'ago',
         from: 'From',
         to: 'To',
@@ -298,7 +298,7 @@ export default function MessageModerationDashboard() {
         totalPending: 'Pendente Revisão',
         totalResolved: 'Resolvidas Hoje',
         averageResponseTime: 'Tempo Médio Resposta',
-        flaggedByAI: 'Sinalizadas por IA',
+        flaggedBySystem: 'Sinalizadas pelo Sistema',
         flaggedByUsers: 'Reportadas por Utilizadores',
         approvalRate: 'Taxa de Aprovação',
         rejectionRate: 'Taxa de Rejeição',
@@ -507,7 +507,7 @@ export default function MessageModerationDashboard() {
                       <p className="text-sm text-neutral-700 line-clamp-2">{item.content}</p>
                     </div>
 
-                    {/* Flagged Reasons and AI Score */}
+                    {/* Flagged Reasons and Safety Score */}
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <span className="text-sm text-neutral-500">{t.queue.flaggedReasons}:</span>

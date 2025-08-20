@@ -2,10 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-LusoTown: Bilingual Portuguese community platform (London & UK) serving Portuguese speakers with event discovery, group activities, premium matching, transport services, streaming platform, and university partnerships.
+LusoTown: Production-ready bilingual Portuguese community platform serving London & UK Portuguese speakers with event discovery, group activities, premium matching, transport services, streaming platform, business directory, and university partnerships.
 
-**Tech Stack:** Next.js 14 (TypeScript), Tailwind CSS, Supabase, Vercel, Simple Relay Server (SRS) media streaming, YouTube Live integration, OpenStreetMap/Leaflet, PostGIS, Twitter API
-**Status:** Production-ready - 75+ pages, 180+ components, complete bilingual system, enhanced mobile experience, integrated streaming platform, public business directory with geolocation, Twitter feed integration
+**Tech Stack:** Next.js 14 App Router (TypeScript), Tailwind CSS, Supabase PostgreSQL, Simple Relay Server (SRS), OpenStreetMap/Leaflet, PostGIS, Twitter API, Stripe, React Context state management
+**Status:** Production-ready - 75+ pages, 180+ components, complete bilingual i18n system, mobile-first responsive design, integrated streaming platform, public business directory with geolocation
 
 ## Contributor Quick Start
 
@@ -65,53 +65,73 @@ LusoTown: Bilingual Portuguese community platform (London & UK) serving Portugue
 
 ## Essential Commands
 
+### Development Setup
 ```bash
-# Development (from repo root)
-cd web-app && npm install && npm run dev    # Start dev server (localhost:3000)
+# Start development (from repo root)
+cd web-app && npm install && npm run dev    # Web app at localhost:3000
 
-# Quality checks before committing (ALWAYS run these)
-cd web-app && npm run lint                  # ESLint check
-cd web-app && npx tsc --noEmit             # TypeScript check
-cd web-app && npm run build               # Production build test
+# Start streaming server (parallel terminal)
+cd streaming && npm install && npm start    # Streaming at localhost:8080
 
-# Database migrations (from web-app directory)
-npm run db:migrate           # Apply general database migrations
-npm run db:migrate:streaming # Apply streaming-specific migrations
-npm run db:migrate:streaming:complete # Apply complete streaming migration
-npm run db:migrate:business  # Apply business directory with geolocation migration
+# Start mobile app (optional - React Native/Expo)
+cd mobile-app && npm install && npm start   # Expo dev server
+```
 
-# Testing (comprehensive test suite available)
-npm test                    # Run all unit tests
-npm run test:watch          # Run tests in watch mode
-npm run test:coverage       # Generate test coverage report
-npm run test:ci             # CI test run with coverage
-npm run test:unit           # Component/context/utils tests only
-npm run test:integration    # Integration tests only
-npm run test:performance    # Performance tests only
-npm run test:e2e            # End-to-end tests (Playwright)
-npm run test:e2e:headed     # E2E tests with browser UI
-npm run test:portuguese     # Portuguese-specific tests
-npm run test:mobile         # Mobile-specific tests
-npm run test:security       # Security tests
-npm run test:accessibility  # Accessibility tests
-npm run test:all            # Run unit + integration + performance tests
+### Quality Assurance (ALWAYS run before commits)
+```bash
+cd web-app                   # Navigate to web app directory
 
-# Creator/verification scripts
-npm run verify:creator-monetization # Verify creator monetization setup
+npm run lint                 # ESLint check - must pass
+npx tsc --noEmit            # TypeScript check - must pass  
+npm run build               # Production build test
+npm run test:all            # Run comprehensive test suite
+```
 
-# Streaming server (from repo root)
-cd streaming && npm install && npm start    # Start streaming server (localhost:8080)
-cd streaming && npm run health-check        # Check streaming server health
-node streaming/streamlabs-setup.js          # Generate Streamlabs mobile configuration
+### Testing Framework
+```bash
+# Unit tests
+npm test                    # Run all tests
+npm run test:watch          # Watch mode
+npm run test:coverage       # Coverage report (generates /coverage/)
+npm run test:unit           # Components/contexts/utils only
+npm run test:integration    # User journey tests
+npm run test:performance    # Performance benchmarks
 
-# Streamlabs mobile setup (RTMP ingestion)
-# RTMP URL: rtmp://[CODESPACE-URL]:1935/live/
-# Stream Key: streamlabs_lusotown_2025
-# HLS Output: https://[CODESPACE-URL]:8080/live/[stream_key].m3u8
+# E2E tests (Playwright)
+npm run test:e2e            # Headless E2E tests
+npm run test:e2e:headed     # With browser UI
+npm run test:e2e:debug      # Debug mode
 
-# Git workflow
-git add . && git commit -m "feat: describe change"  # Standard commit
-git status                                         # Check working tree status
+# Specialized tests
+npm run test:portuguese     # Portuguese-specific features
+npm run test:mobile         # Mobile responsive tests
+npm run test:security       # Security validations
+npm run test:accessibility  # A11y compliance
+```
+
+### Database Operations
+```bash
+# Apply migrations (from web-app directory)
+npm run db:migrate                    # General database migrations
+npm run db:migrate:streaming          # Streaming platform schema
+npm run db:migrate:streaming:complete # Complete streaming migration
+npm run db:migrate:business           # Business directory with PostGIS
+
+# Verification scripts
+npm run verify:creator-monetization   # Verify streaming setup
+```
+
+### Streaming Infrastructure
+```bash
+# Streaming server health
+cd streaming && npm run health-check  # Verify streaming infrastructure
+
+# Streamlabs mobile configuration
+node streaming/streamlabs-setup.js    # Generate mobile streaming config
+
+# Production URLs (for deployment)
+# RTMP: rtmp://stream.lusotown.com:1935/live/
+# HLS: https://stream.lusotown.com/live/[stream_key].m3u8
 ```
 
 **Demo Login:** demo@lusotown.com / LusoTown2025!
@@ -155,38 +175,63 @@ git status                                         # Check working tree status
 
 ## Core Architecture
 
-**Structure:** Next.js 14 App Router with TypeScript, React Context state management, Supabase PostgreSQL backend
-**Styling:** Tailwind CSS with Portuguese brand colors, mobile-first responsive layouts with enhanced touch targets
-**State Management:** React Context + localStorage (no Redux), bilingual support via LanguageContext
-**Key Pages:** /my-network, /transport, /matches, /live, /students, /premium-membership, /chauffeur, /events, /streaming, /creator-dashboard, /business-directory (public access), /dashboard (post-login with Twitter feed)
-**Contexts:** LanguageContext, CartContext, FavoritesContext, NetworkingContext, SubscriptionContext, PlatformIntegrationContext, NotificationContext, FollowingContext
-**Path Aliases:** `@/*` maps to `./src/*` for clean imports
-**Assets:** Images stored in `/public/images/`, events in `/public/events/`, with fallbacks for missing assets
+### Project Structure
+```
+/workspaces/LusoTown/
+├── web-app/           # Next.js 14 main application
+│   ├── src/app/       # App Router pages (layout.tsx, page.tsx, etc.)
+│   ├── src/components/ # React components (180+ components)
+│   ├── src/context/   # React Context providers (state management)
+│   ├── src/i18n/      # Bilingual translations (en.json, pt.json)
+│   └── src/lib/       # Utility functions and services
+├── streaming/         # Node.js streaming server (SRS)
+├── mobile-app/        # React Native/Expo mobile app
+├── supabase/          # Database migrations and configuration
+└── packages/          # Shared design tokens and UI components
+```
 
-### Important Architecture Decisions
+### Technology Stack
+- **Frontend:** Next.js 14 App Router, TypeScript, Tailwind CSS
+- **State:** React Context + localStorage (no Redux)
+- **Backend:** Supabase PostgreSQL with PostGIS extension
+- **Streaming:** Simple Relay Server (SRS) with RTMP/WebRTC/HLS
+- **Maps:** OpenStreetMap/Leaflet with geolocation services
+- **Testing:** Jest + Testing Library + Playwright E2E
+- **Deployment:** Vercel (web), Railway (streaming)
 
-**Bilingual System:** 
-- All UI text comes from `src/i18n/{en.json, pt.json}` - NEVER hardcode strings
-- Use `useLanguage()` hook from LanguageContext for translations
-- Format: `t('page.section.key')` for consistent namespacing
+### Critical Architecture Patterns
 
-**Component Structure:**
-- Features organized by domain (Events, Groups, Matches, Streaming, etc.)
+**Bilingual System (NEVER hardcode strings):**
+```typescript
+// Always use translations
+const { t } = useLanguage()
+return <h1>{t('page.hero.title')}</h1>
+
+// File structure: src/i18n/en.json, src/i18n/pt.json
+// Format: t('page.section.key') for consistent namespacing
+```
+
+**State Management (React Context only):**
+```typescript
+// Available contexts:
+// LanguageContext, CartContext, FavoritesContext, NetworkingContext,
+// SubscriptionContext, PlatformIntegrationContext, NotificationContext
+
+// Persistence via localStorage:
+// - cart items, favorites, language preference, auth state
+```
+
+**Component Organization:**
+- Domain-based: Events, Groups, Matches, Streaming, Transport
 - Shared UI components in `/components/` root
-- Page-specific components near their pages in `/app/` structure
-- Portuguese cultural elements integrated throughout (not separate sections)
+- Page components in `/app/` structure
+- Portuguese cultural elements integrated throughout
 
-**State Architecture:**
-- React Context for global state (no external state libraries)
-- localStorage for persistence (cart, favorites, language preference)
-- Supabase for backend data and real-time subscriptions
-- No Redux - intentionally kept simple for Portuguese community focus
-
-**Streaming Integration:**
-- Separate `/streaming/` Node.js server for media handling
-- WebRTC/HLS delivery with Portuguese cultural features
-- Real-time chat integration with Portuguese language moderation
-- Creator monetization with Portuguese market focus (BRL, EUR, GBP)
+**Streaming Architecture:**
+- Separate Node.js server at `/streaming/` directory
+- RTMP ingestion → WebRTC/HLS delivery pipeline
+- Portuguese cultural emotes system with regional support
+- Multi-currency creator monetization (BRL, EUR, GBP)
 
 ## Critical Patterns
 
@@ -255,65 +300,75 @@ Language, Cart, Favorites, Following, Networking, Subscription, PlatformIntegrat
 - `20250818_004_referral_system.sql` - Referral system and rewards
 - `20250819_004_public_business_directory_with_geolocation.sql` - Business directory with PostGIS geospatial support
 
-## Environment Variables
+## Environment Configuration
+
+### Required Environment Variables
+Copy `web-app/.env.local.example` to `web-app/.env.local` and configure:
 
 ```env
+# Supabase (Required)
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 
-# Stripe Configuration
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_publishable_key
-STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key
-STRIPE_WEBHOOK_SECRET=whsec_your_stripe_webhook_secret
+# Stripe Payments (Required for subscriptions)
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_key
+STRIPE_SECRET_KEY=sk_test_your_stripe_secret
+STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret
 
-# Streaming Infrastructure Configuration
+# Streaming Infrastructure
 NEXT_PUBLIC_STREAMING_SERVER_URL=http://localhost:8080
 NEXT_PUBLIC_RTMP_SERVER_URL=rtmp://localhost:1935
-NEXT_PUBLIC_WEBRTC_SERVER_URL=http://localhost:8000
-STREAMING_API_SECRET=your_streaming_api_secret
+STREAMING_API_SECRET=your_streaming_secret
 
-# Map & Geolocation Services
+# Maps & Geolocation (OpenStreetMap is free alternative)
 NEXT_PUBLIC_MAP_SERVICE=openstreetmap
-NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
-NEXT_PUBLIC_IP_GEOLOCATION_API_KEY=your_ip_geolocation_api_key_here
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=optional_google_maps_key
+NEXT_PUBLIC_IP_GEOLOCATION_API_KEY=optional_ip_geolocation_key
 
-# Twitter Integration
-NEXT_PUBLIC_TWITTER_BEARER_TOKEN=your_twitter_bearer_token_here
-NEXT_PUBLIC_PORTUGUESE_HASHTAGS=LusoLondon PortugueseUK LusoTown PortuguesesemLondres ComunidadePortuguesa
+# Twitter Feed Integration
+NEXT_PUBLIC_TWITTER_BEARER_TOKEN=your_twitter_bearer_token
+NEXT_PUBLIC_PORTUGUESE_HASHTAGS=LusoLondon PortugueseUK LusoTown
 
-# CDN Configuration (Optional for development)
-NEXT_PUBLIC_CDN_ENDPOINT=
-BUNNYCDN_API_KEY=
-BUNNYCDN_STORAGE_ZONE=
+# Business Directory
+NEXT_PUBLIC_BUSINESS_VERIFICATION_REQUIRED=true
+NEXT_PUBLIC_MAX_BUSINESS_PHOTOS=5
+```
+
+### Path Aliases & Imports
+```typescript
+// Configured in tsconfig.json
+import { Component } from '@/components/Component'  // maps to ./src/
+import { useLanguage } from '@/context/LanguageContext'
+import { events } from '@/lib/events'
 ```
 
 ## Development Workflow
 
-**Start Development:** `cd web-app && npm run dev` (localhost:3000)
-**Demo Login:** demo@lusotown.com / LusoTown2025!
+### Quick Start
+1. **Setup:** Copy `web-app/.env.local.example` → `web-app/.env.local`
+2. **Start:** `cd web-app && npm install && npm run dev` (localhost:3000)
+3. **Stream:** `cd streaming && npm install && npm start` (localhost:8080)  
+4. **Demo Login:** demo@lusotown.com / LusoTown2025!
 
-**Testing Checklist:**
-- English/Portuguese language toggle
-- Mobile responsive layouts with enhanced touch targets (375px width)
-- Key pages: /my-network, /transport, /matches, /live, /students, /premium-membership
-- Event cards mobile-first design with Portuguese cultural context
-- Group events section mobile improvements (2x2 button grids)
-- Subscription enforcement for transport services
-- "Portuguese speakers in London" messaging consistency
-- **NEW:** Business directory public access without authentication
-- **NEW:** Interactive map with business markers and clustering
-- **NEW:** "Near Me" geolocation functionality with radius selector
-- **NEW:** Business submission form (4-step wizard)
-- **NEW:** Twitter feed integration with Portuguese hashtags
-- **NEW:** Post-login dashboard with social media tab
+### Pre-Commit Checklist (ALWAYS run)
+```bash
+cd web-app                           # Navigate to web app
+npm run lint                         # ESLint - must pass
+npx tsc --noEmit                     # TypeScript - must pass
+npm run build                        # Production build test
+npm run test:all                     # Comprehensive test suite
+cd ../streaming && npm run health-check  # Streaming infrastructure
+```
 
-**Quality Checks (Always run before committing):**
-- `npm run lint` and `npx tsc --noEmit` (from web-app directory)
-- Verify Portuguese brand colors (no generic Tailwind)
-- Test responsive design (mobile/tablet/desktop)
-- Validate CTAs (2 words max) and pricing ("From £XX")
-- Run test suite: `npm run test:all` (unit + integration + performance)
-- Check streaming infrastructure: `cd streaming && npm run health-check`
+### Key Testing Areas
+- **Bilingual:** EN/PT language toggle works on all pages
+- **Mobile:** Responsive design at 375px, 768px, 1024px breakpoints
+- **Authentication:** Demo login, subscription gates, protected routes
+- **Portuguese Features:** Cultural elements, brand colors, messaging
+- **Core Pages:** /events, /transport, /matches, /live, /business-directory
+- **Maps:** Business directory, geolocation, clustering, "Near Me"
+- **Streaming:** Live streaming, chat, creator dashboard
+- **Subscriptions:** Payment flow, tier enforcement, usage limits
 
 ## Deployment & Automation
 
@@ -328,332 +383,146 @@ BUNNYCDN_STORAGE_ZONE=
 
 **GitHub Actions:** Deployment workflows configured in `.github/workflows/deploy.yml`
 
-**Common Issues:**
-- TypeScript errors: `npx tsc --noEmit` (from web-app directory)
-- Build failures: Check for missing dependencies or unused imports
-- Language switching: check LanguageContext + localStorage (key: 'lusotown-language')
-- Mobile layouts: ensure responsive grids with proper touch targets, test button accessibility
-- State persistence: localStorage keys for cart/favorites/networking
-- Streaming server connection: Ensure streaming server is running before testing live features
-- Environment variables: Copy .env.local.example to .env.local and configure Supabase keys
-- Component not found: Check path aliases (`@/*` = `./src/*`) and file extensions (.tsx)
-- Portuguese translations missing: Add keys to both `src/i18n/en.json` and `src/i18n/pt.json`
-- **NEW:** Map not loading: Check NEXT_PUBLIC_MAP_SERVICE environment variable
-- **NEW:** Geolocation not working: Ensure HTTPS in production, check browser permissions
-- **NEW:** Business directory empty: Verify PostGIS extension and migration applied
-- **NEW:** Twitter feed not loading: Check NEXT_PUBLIC_TWITTER_BEARER_TOKEN configuration
+## Troubleshooting Guide
 
-**Debug Steps:**
-1. Check browser console for React/Next.js errors
-2. Verify all imports are correct (especially component paths)
-3. Ensure all Context providers are wrapped properly in app structure
-4. Test responsive design at mobile breakpoints (375px, 768px, 1024px)
-5. Validate Portuguese cultural elements are integrated (not just translated)
+### Common Issues & Solutions
 
-## Current Development Status
-
-**Branch:** main (production-ready branch)
-**Recent Focus:** Complete streaming platform integration, codebase cleanup, mobile streaming optimization
-**Key Modified Files (from recent git status):**
-- Streaming infrastructure: streaming/.env.dev, streaming/config files
-- Core components: web-app/src/components/ (many components enhanced)
-- Page structure: Various pages cleaned up and optimized
-- Configuration updates: next.config.js, package.json streaming integration
-
-**Development Notes:**
-- Platform is production-ready with ongoing cleanup of duplicate files and unused components
-- TypeScript build errors are intentionally ignored in production builds per next.config.js
-- Recent commits focus on deployment optimization and codebase organization
-- Demo user system allows testing without full subscription requirements
-- Mobile streaming integration actively being optimized for Streamlabs compatibility
-
-## Recent Platform Improvements (August 2025)
-
-### Complete 3-Tier Pricing Structure Implementation (August 18, 2025)
-**Revolutionary Pricing Overhaul:**
-- **Removed confusing 5-tier system** (basic, student, professional, business, vip)
-- **Implemented data-driven 3-tier structure** optimized for conversion:
-  - **Free**: 3 matches/day + 10 messages/month
-  - **Community Member**: £19.99/month - Unlimited matches & messaging + events
-  - **Cultural Ambassador**: £39.99/month - Everything + priority visibility + event hosting
-- **Charm pricing strategy** (£19.99/£39.99) targeting psychological sweet spots
-- **84% conversion rate** expected to £19.99 tier
-- **£31,188 annual revenue potential** from 750 users
-- **Competitive positioning** against Bumble (£39.99) and Hinge (£29.49)
-
-### Platform-Wide Consistency Updates
-**Complete Pricing Uniformity:**
-- Updated MembershipTiers.tsx from complex 5-tier to clean 3-tier display
-- Redesigned SubscriptionGate.tsx with new monthly pricing options
-- Consistent pricing across all components (no more conflicting displays)
-- Enhanced mobile navigation with complete desktop parity
-- Portuguese/English bilingual support for all pricing displays
-
-### Streaming Platform Integration (August 18, 2025)
-**Complete Portuguese Streaming Platform:**
-- Integrated comprehensive streaming infrastructure based on master plan
-- Portuguese cultural emotes system (:saudade:, :festa:, :futebol:) with regional support
-- Creator monetization system with 70/30 → 85/15 revenue splits for Portuguese creators
-- Real-time chat with Portuguese language toxicity detection and cultural sensitivity
-- Portuguese-focused content categories and discovery optimization
-- Multi-region moderation system (Brazil/Portugal/Africa/Diaspora)
-- Creator dashboard with Portuguese market insights and multi-currency support (BRL, EUR, GBP)
-
-### Growth & Conversion Optimization
-**Advanced Marketing Infrastructure:**
-- **Referral system implementation** with code generation and tracking
-- **Conversion funnel analytics** with detailed user journey tracking  
-- **Email marketing automation** with Portuguese cultural messaging
-- **Usage limit indicators** to drive upgrade conversions
-- **Trial countdown systems** to create urgency
-- **A/B testing framework** for pricing optimization
-
-### Authentication & Subscription Updates
-**Enhanced User Experience:**
-- Removed subscription gating from /login and /signup pages per recent commit
-- Subscription enforcement now applies only to premium service flows (transport, matches, etc.)
-- Demo user authentication system allows bypassing subscription requirements
-- Enhanced subscription modes: 'login', 'signup', 'transport', 'general' with different presentation styles
-- Support for modal, compact, and full-page subscription gate variants
-
-### Mobile Experience Enhancements
-**Homepage Events Cards Redesign:**
-- Mobile-first responsive grid layouts with enhanced touch targets
-- Portuguese brand color consistency throughout
-- Improved card interactions and hover states
-- Better mobile button accessibility and spacing
-
-**GroupEventsSection Mobile Improvements:**
-- Fixed unclickable mobile buttons issue 
-- Enhanced 2x2 button grid layout for better mobile usability
-- Improved responsive design for events filtering
-- Better touch targets for mobile users
-
-**GroupsShowcase Complete Redesign:**
-- Modern mobile-first layout with enhanced visual hierarchy
-- Portuguese community focus with cultural indicators
-- Improved member count displays and group metadata
-- Enhanced call-to-action buttons with better mobile accessibility
-
-### Messaging Strategy Updates
-**Portuguese Speaker Focus:**
-- Updated language from "community members" to "Portuguese speakers in London"
-- Emphasis on Portuguese-speaking hosts, guides, and cultural comfort
-- Clear benefits explanation highlighting language and cultural familiarity
-- Community-focused messaging without family targeting per business requirements
-
-### Component Architecture Improvements
-**EventsShowcase.tsx Enhancements:**
-- Enhanced multi-column responsive layouts
-- Portuguese cultural context in event descriptions
-- Improved event category preview with better mobile design
-- Mobile-optimized stats bar with responsive grid
-
-**GroupEventsSection.tsx Mobile Fixes:**
-- Fixed mobile button interaction issues
-- Improved category filtering with better mobile UX
-- Enhanced Portuguese group benefits section
-- Mobile-optimized call-to-action buttons
-
-**GroupsShowcase.tsx Complete Rebuild:**
-- Modern component architecture with better mobile support
-- Enhanced Portuguese community group discovery
-- Improved stats section with mobile-first design
-- Better integration with Supabase group data
-
-### Visual Design Improvements
-**Portuguese Brand Consistency:**
-- Consistent use of Portuguese brand colors throughout
-- Enhanced gradient designs reflecting Portuguese flag colors
-- Improved visual hierarchy for mobile devices
-- Better contrast and accessibility compliance
-
-**Mobile-First Approach:**
-- All components now prioritize mobile experience
-- Enhanced touch targets and button spacing
-- Improved responsive grid systems
-- Better mobile navigation and interaction patterns
-
----
-
-## CODEBASE STATUS (August 19, 2025)
-
-### 🎉 COMPREHENSIVE CLEANUP PROJECT - COMPLETED
-
-**Major Achievement:** Successfully completed comprehensive codebase optimization
-
-#### **Final Results:**
-- **Unified Streaming**: Single `/live` URL replaces 3 duplicate pages
-- **Component Cleanup**: 142 files cleaned, removed unused components
-- **Production Deployment**: https://lusotown-london-5au5n074m-giquinas-projects.vercel.app
-- **Build Quality**: All TypeScript/ESLint issues resolved
-- **Performance**: Faster builds, cleaner codebase structure
-
-#### **Current Architecture Status:**
-- ✅ Production website deployed and operational
-- ✅ Streaming server with Portuguese cultural features
-- ✅ Clean repository with organized documentation  
-- ✅ Mobile streaming integration architecture ready
-
-### 🚨 ACTIVE GIT STATUS ITEMS
-
-**Modified Files Needing Attention:**
-- `web-app/package.json` - Updated streaming dependencies (hls.js added)
-- `web-app/src/app/live/page.tsx` - Unified streaming page (redirects from /streaming)
-- `web-app/src/components/Header.tsx` - Navigation updates
-- `web-app/src/components/CTA.tsx` - Call-to-action updates
-- `web-app/src/components/UserTypeSelection.tsx` - Enhanced user onboarding
-- `web-app/src/components/WhatsAppWidget.tsx` - Communication widget
-- i18n files - Portuguese translations updated for new features
-
-**Untracked Files to Consider:**
-- `COMPONENT_CLEANUP_REPORT.md` - Documentation of cleanup process
-- `PRODUCTION_STREAMING_DEPLOYMENT.md` - Production deployment guide
-- `streaming/config/MOBILE_STREAMING_SETUP.md` - Mobile streaming configuration
-- `streaming/deploy-railway.sh` - Railway deployment script
-- `streaming/railway.toml` - Railway configuration
-- `streaming/verify-production.sh` - Production verification script
-- `web-app/src/components/MessageModerationDashboard.tsx` - New moderation component
-
-**Next Actions:**
-1. Review modified files and commit if changes are complete
-2. Decide whether to commit or archive documentation files
-3. Test new MessageModerationDashboard component integration
-4. Verify streaming deployment configuration is production-ready
-
----
-
-## MAJOR NEW FEATURES (August 19, 2025)
-
-### 🗺️ **Enhanced Portuguese Business Directory (August 19, 2025)**
-**Revolutionary Business Discovery Platform:**
-- **Public Access**: Business directory now accessible without login/authentication
-- **Interactive Mapping**: OpenStreetMap integration with business markers and clustering
-- **Geolocation Services**: "Near Me" functionality with distance calculations using haversine formula
-- **Portuguese Cultural Areas**: Pre-configured Portuguese neighborhoods (Vauxhall, Stockwell, Golborne Road)
-- **Business Submission**: Public 4-step wizard for adding new businesses
-- **Country Support**: Full Portuguese-speaking countries with emoji flags (🇵🇹🇧🇷🇦🇴🇲🇿🇨🇻🇬🇼🇸🇹🇹🇱🇲🇴🇬🇶)
-
-**Key Components:**
-- **BusinessMap.tsx**: Interactive map with markers, clustering, and business selection
-- **NearMeButton.tsx**: Location-based discovery with configurable radius (1km, 2km, 5km, 10km)
-- **BusinessSubmissionForm.tsx**: Multi-step business submission with validation
-- **geolocation.ts**: Location services with Portuguese area definitions
-
-**Technical Implementation:**
-- **PostGIS Extension**: Geospatial database support for location queries
-- **Database Migration**: `20250819_004_public_business_directory_with_geolocation.sql`
-- **Distance Calculations**: Haversine formula for accurate distance measurements
-- **Fallback Locations**: Portuguese cultural areas as default search centers
-
-### 📱 **Twitter Feed Integration (August 19, 2025)**
-**Portuguese Community Social Integration:**
-- **Dashboard Integration**: Post-login social media tab with community hashtags
-- **Portuguese Hashtags**: #LusoLondon, #PortugueseUK, #LusoTown, #PortuguesesemLondres
-- **Tabbed Interface**: Organized content by Community, Events, Business, Culture, UK Wide
-- **Real-time Updates**: Live Twitter feed integration with Portuguese community content
-- **Bilingual Support**: Complete Portuguese/English translations
-
-**Key Components:**
-- **TwitterFeedWidget.tsx**: Embedded Twitter timeline with Portuguese hashtags
-- **TwitterHashtagTabs.tsx**: Category-based hashtag organization
-- **Dashboard Integration**: Social media tab accessible post-login
-
-**Community Hashtags:**
-- **#LusoLondon**: General Portuguese London community
-- **#PortugueseUK**: UK-wide Portuguese content  
-- **#LusoTown**: Platform-specific hashtag
-- **#PortuguesesemLondres**: Portuguese community without borders
-- **#ComunidadePortuguesa**: Portuguese community engagement
-
-### 🏢 **Database Architecture Enhancements**
-**PostGIS Geospatial Support:**
-- **PostgreSQL Extension**: PostGIS for advanced geospatial queries
-- **Business Tables**: Enhanced schema with latitude/longitude coordinates
-- **Country Mapping**: Portuguese-speaking countries with flag support
-- **Reviews & Photos**: Business review system with photo upload support
-- **Cultural Events**: Business-hosted cultural events integration
-
-**Migration Features:**
-- **Location Indexing**: Optimized queries for distance-based searches
-- **Public Submissions**: Table for managing public business submissions
-- **Moderation System**: Business verification and approval workflows
-- **Portuguese Areas**: Pre-configured Portuguese cultural neighborhoods
-
-### 🚀 **API Integration Layer**
-**Third-Party Service Integration:**
-- **OpenStreetMap**: Free alternative to Google Maps with full feature parity
-- **Leaflet**: Open-source mapping library with clustering support
-- **Twitter API**: Real-time hashtag monitoring and community content
-- **IP Geolocation**: Fallback location detection for users
-- **Browser Geolocation**: Native location services with privacy controls
-
-**Environment Configuration:**
-```env
-# Map & Geolocation Services
-NEXT_PUBLIC_MAP_SERVICE=openstreetmap
-NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
-NEXT_PUBLIC_IP_GEOLOCATION_API_KEY=your_ip_geolocation_api_key_here
-
-# Twitter Integration
-NEXT_PUBLIC_TWITTER_BEARER_TOKEN=your_twitter_bearer_token_here
-NEXT_PUBLIC_PORTUGUESE_HASHTAGS=LusoLondon PortugueseUK LusoTown PortuguesesemLondres ComunidadePortuguesa
-
-# Business Directory Configuration
-NEXT_PUBLIC_BUSINESS_VERIFICATION_REQUIRED=true
-NEXT_PUBLIC_MAX_BUSINESS_PHOTOS=5
-NEXT_PUBLIC_ALLOWED_PHOTO_TYPES=image/jpeg,image/png,image/webp
-NEXT_PUBLIC_MAX_PHOTO_SIZE_MB=5
+**Build/TypeScript Errors:**
+```bash
+npx tsc --noEmit  # Check TypeScript errors
+npm run lint      # Check ESLint errors
+npm run build     # Test production build
 ```
 
-### 🎯 **User Experience Improvements**
-**Enhanced Navigation & Discovery:**
-- **Public Business Access**: No authentication required for business discovery
-- **Location-Based Search**: "Near Me" with radius selection for targeted discovery
-- **Visual Clustering**: Map markers cluster intelligently to prevent overlap
-- **Mobile-First**: Touch-optimized controls and responsive map interface
-- **Portuguese Context**: Cultural areas and neighborhoods prominently featured
+**Component Import Issues:**
+- Path aliases: `@/*` maps to `./src/*`
+- File extensions: Use `.tsx` for React components
+- Check casing: React components must be PascalCase
 
-**Accessibility Features:**
-- **Keyboard Navigation**: Full keyboard support for map interaction
-- **Screen Reader**: ARIA labels and semantic HTML throughout
-- **High Contrast**: Portuguese brand colors maintain accessibility standards
-- **Mobile Touch Targets**: Enhanced button sizes for mobile interaction
+**Bilingual System Issues:**
+- Missing translations: Add keys to both `en.json` and `pt.json`
+- Language not persisting: Check localStorage key 'lusotown-language'
+- Hardcoded strings: Never use literal text, always use `t('key')`
 
-### 💡 **Development Workflow Updates**
-**New Testing Requirements:**
-- **Map Interaction Testing**: Verify marker clustering and business selection
-- **Location Permission Testing**: Test geolocation prompt handling
-- **Offline Fallback Testing**: Verify functionality without location access
-- **Twitter API Testing**: Hashtag filtering and community content display
-- **Business Submission Testing**: Multi-step form validation and submission
+**State Management Issues:**
+- Context not available: Ensure providers wrap components in layout.tsx
+- localStorage not working: Check keys (cart, favorites, networking, auth)
+- State not persisting: Verify Context + localStorage integration
 
-**Quality Assurance Checklist:**
-- ✅ Map loads correctly with OpenStreetMap tiles
-- ✅ Business markers display with correct clustering
-- ✅ "Near Me" button requests and handles location permissions
-- ✅ Twitter feed displays Portuguese community hashtags
-- ✅ Business submission form validates all required fields
-- ✅ Portuguese areas are pre-configured and selectable
-- ✅ Mobile interface is fully touch-optimized
-- ✅ Bilingual support works across all new features
+**Map & Geolocation Issues:**
+- Map not loading: Check `NEXT_PUBLIC_MAP_SERVICE=openstreetmap`
+- Geolocation failing: Requires HTTPS in production, check browser permissions
+- Business directory empty: Verify PostGIS migration applied
+- "Near Me" not working: Check location permissions and fallback areas
 
-### 🔒 **Security & Privacy**
-**Location Privacy:**
-- **User Consent**: Explicit permission requests for location access
-- **Secure Storage**: Location data cached locally, not stored on servers
-- **Fallback Options**: Postal code and area selection when geolocation unavailable
-- **Portuguese Areas**: Pre-configured cultural neighborhoods as safe defaults
+**Streaming Issues:**
+- Streaming server not responding: `cd streaming && npm run health-check`
+- RTMP connection failed: Verify streaming server is running on port 8080
+- Chat not working: Check socket.io connection and moderation system
 
-**Business Data Protection:**
-- **Moderation Queue**: All public business submissions reviewed before approval
-- **Verification System**: Business authenticity checks and validation
-- **Content Filtering**: Inappropriate content detection and removal
-- **Portuguese Community Focus**: Cultural sensitivity in business categorization
+**Mobile Responsive Issues:**
+- Test breakpoints: 375px (mobile), 768px (tablet), 1024px (desktop)
+- Touch targets: Ensure buttons are >44px for mobile accessibility
+- Layout overflow: Check container widths and responsive grids
 
-**API Security:**
-- **Rate Limiting**: Twitter API requests throttled to prevent abuse
-- **Token Security**: Environment variables for sensitive API keys
-- **CORS Configuration**: Restricted domains for map tile requests
-- **Input Validation**: Sanitized user inputs across all forms
+**Modal & Dropdown Issues:**
+- Modal not responsive: Use `max-h-[85vh]` (mobile) and `max-w-[3xl]` (desktop) for proper sizing
+- Dropdown misaligned: Implement `left-1/2 transform -translate-x-1/2` for center positioning
+- Click-outside not working: Ensure backdrop click handlers are properly implemented
+- Viewport overflow: Add margin calculations to prevent dropdowns extending beyond screen
+
+### Debug Checklist
+1. **Console Errors:** Check browser console for React/Next.js errors
+2. **Network Tab:** Verify API calls to Supabase and streaming server
+3. **Context Providers:** Ensure all providers in app/layout.tsx
+4. **Environment Variables:** Verify all required variables are set
+5. **Portuguese Elements:** Check cultural integration vs. generic design
+
+## Current Status & Implementation Notes
+
+### Platform Status
+- **Production Ready:** 75+ pages, 180+ components, complete bilingual system
+- **Streaming Platform:** Fully integrated SRS server with Portuguese cultural features
+- **Business Directory:** Public access with geolocation and interactive maps
+- **Mobile App:** React Native/Expo (early development, onboarding flow complete)
+
+### Key Implementation Details
+
+**Next.js Configuration:**
+- `ignoreBuildErrors: true` - TypeScript errors ignored in builds for faster deployment
+- `transpilePackages` - Supports shared packages (@lusotown/ui, @lusotown/design-tokens)
+- App Router with `/streaming` → `/live` redirect
+- Image optimization for Unsplash, Cloudinary, BunnyCDN domains
+
+**Subscription Tiers:**
+- **Free:** 3 matches/day + 10 messages/month
+- **Community Member:** £19.99/month - Unlimited matches & messaging
+- **Cultural Ambassador:** £39.99/month - Priority visibility + event hosting
+
+**Portuguese Brand Colors (use these, not generic Tailwind):**
+- Primary: Portuguese brand colors only
+- No generic blue/gray - always use Portuguese cultural color palette
+- Mobile-first responsive design with enhanced touch targets
+
+**Demo System:**
+- Login: demo@lusotown.com / LusoTown2025!
+- Bypass subscription requirements for testing
+- Access all features without payment
+
+## Latest Features & Updates
+
+### Recent Major Features (August 2025)
+
+**🗺️ Business Directory with Geolocation:**
+- Public access without authentication required
+- Interactive OpenStreetMap with business markers and clustering  
+- "Near Me" functionality with configurable radius (1km-10km)
+- Portuguese cultural areas pre-configured (Vauxhall, Stockwell, Golborne Road)
+- 4-step business submission wizard with moderation queue
+
+**📱 Twitter Feed Integration:**
+- Post-login dashboard with Portuguese community hashtags
+- Real-time feeds: #LusoLondon, #PortugueseUK, #LusoTown, #PortuguesesemLondres
+- Tabbed interface: Community, Events, Business, Culture, UK Wide
+- Complete bilingual support with live updates
+
+**📺 Complete Streaming Platform:**
+- Simple Relay Server (SRS) with RTMP → WebRTC → HLS pipeline
+- Portuguese cultural emotes (:saudade:, :festa:, :futebol:)
+- Creator monetization with 85/15 revenue splits
+- Multi-currency support (BRL, EUR, GBP)
+- Real-time chat with Portuguese language moderation
+
+**💼 3-Tier Subscription System:**
+- Simplified from complex 5-tier to data-driven 3-tier structure
+- Free (3 matches/day), Community (£19.99/month), Ambassador (£39.99/month)
+- Subscription enforcement only on premium features (not login/signup)
+- Demo system bypasses all subscription requirements
+
+### Recent UI/UX Improvements (August 2025)
+
+**🎨 Welcome Modal Enhancements:**
+- Fixed responsive modal sizing with `max-h-[85vh]` (mobile) and `max-w-[3xl]` (desktop)
+- Improved mobile layout with compact 2x2 grid for feature cards
+- Added click-outside-to-close functionality for better UX
+- Updated skip button text from "Explore all features" to "Skip for now" (EN/PT)
+- Enhanced accessibility and mobile usability across all device sizes
+
+**🧭 Navigation Dropdown Centering:**
+- Fixed dropdown menu positioning for 'More' and 'Events' navigation items
+- Implemented intelligent centering using `left-1/2 transform -translate-x-1/2`
+- Added margin calculations to prevent viewport overflow
+- Both dropdowns now properly center under their trigger buttons
+
+### Key Architecture Changes
+
+**Mobile-First Redesign:**
+- All components prioritize mobile experience with enhanced touch targets
+- Responsive grids optimized for 375px, 768px, 1024px breakpoints
+- 2x2 button grids for better mobile usability
+
+**Portuguese Cultural Integration:**
+- Brand colors throughout (no generic Tailwind blues/grays)
+- Cultural elements integrated, not separate sections
+- Portuguese-speaking focus in all messaging and UX
 

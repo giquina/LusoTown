@@ -67,7 +67,7 @@ export default function AboutLusoTown() {
     {
       icon: Users,
       title: 'Connect with Portuguese Speakers',
-      description: 'Meet Portuguese speakers through real-life meetups at authentic London venues, share experiences, and keep your language and traditions alive.',
+      description: 'Find Your Match among Portuguese speakers through real-life meetups at authentic London venues, share experiences, and keep your language and traditions alive.',
       gradient: 'from-coral-500 to-action-500',
       lightBg: 'from-coral-50 to-action-100/50',
       shadowColor: 'shadow-coral-500/20'

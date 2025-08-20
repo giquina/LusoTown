@@ -196,7 +196,7 @@ interface PlatformIntegrationContextType {
     metadata: Record<string, any>;
   }>;
 
-  // AI-Driven Insights
+  // Data-Driven Insights
   generateUserInsights: () => {
     strengths: string[];
     opportunities: string[];
@@ -772,11 +772,11 @@ export function PlatformIntegrationProvider({
           id: `business-opportunity-${Date.now()}`,
           type: "business_networking",
           title: isPortuguese
-            ? "Workshop de IA para Empresários"
-            : "AI Workshop for Entrepreneurs",
+            ? "Workshop de Tecnologia para Empresários"
+            : "Technology Workshop for Entrepreneurs",
           description: isPortuguese
-            ? "Aprenda IA aplicada a negócios com outros empreendedores portugueses"
-            : "Learn business AI with other Portuguese entrepreneurs",
+            ? "Aprenda tecnologia aplicada a negócios com outros empreendedores portugueses"
+            : "Learn business technology with other Portuguese entrepreneurs",
           relevanceScore: 9,
           basedOn: ["networking_activity", "professional_interest"],
           cta: isPortuguese ? "Inscrever-se" : "Register",

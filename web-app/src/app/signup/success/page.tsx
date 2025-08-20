@@ -22,7 +22,7 @@ const nextSteps = [
     step: 2,
     icon: CameraIcon,
     title: "Complete Verification",
-    description: "Take a selfie for our AI-powered safety verification",
+    description: "Take a selfie for our advanced safety verification",
     timeframe: "2-3 minutes"
   },
   {

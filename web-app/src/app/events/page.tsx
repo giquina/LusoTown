@@ -394,7 +394,7 @@ export default function EventsPage() {
         tourData = tourData.sort((a, b) => {
           // Business event categories for tours
           const businessCategories = [
-            "Technology & AI",
+            "Technology & Innovation",
             "Business & Professional",
             "Finance & Investment",
             "Professional Networking",
@@ -410,7 +410,7 @@ export default function EventsPage() {
           // Within business events, maintain priority order
           if (aIsBusiness && bIsBusiness) {
             const businessPriority = {
-              "Technology & AI": 1,
+              "Technology & Innovation": 1,
               "Professional Networking": 2,
               "Business & Professional": 3,
               "Finance & Investment": 4,
@@ -774,9 +774,9 @@ export default function EventsPage() {
                     ? /* Event Quick Filters */
                       [
                         {
-                          key: "Technology & AI",
-                          label: "🤖 AI/Tech",
-                          description: "AI workshops and technology training",
+                          key: "Technology & Innovation",
+                          label: "🤖 Tech/Innovation",
+                          description: "Technology workshops and innovation training",
                         },
                         {
                           key: "Business & Entrepreneurship",

@@ -68,8 +68,8 @@ export default function HostPage() {
       id: "professional",
       title: isPortuguese ? "Serviços Profissionais" : "Professional Services",
       description: isPortuguese
-        ? "Workshops de IA, coaching empresarial, consultoria"
-        : "AI workshops, business coaching, consulting",
+        ? "Workshops de tecnologia, coaching empresarial, consultoria"
+        : "Technology workshops, business coaching, consulting",
       icon: AcademicCapIcon,
       color: "premium",
       examples: isPortuguese
@@ -78,7 +78,7 @@ export default function HostPage() {
             "Coaching Empresarial",
             "Consultoria Investimento",
           ]
-        : ["AI Workshops", "Business Coaching", "Investment Consulting"],
+        : ["Technology Workshops", "Business Coaching", "Investment Consulting"],
     },
     {
       id: "cultural",
@@ -175,10 +175,10 @@ export default function HostPage() {
   const successStories = [
     {
       name: "Maria Santos",
-      role: isPortuguese ? "Instrutora de IA" : "AI Instructor",
+      role: isPortuguese ? "Instrutora de Tecnologia" : "Technology Instructor",
       quote: isPortuguese
-        ? "Organizei 15 workshops de IA e construí uma base sólida de clientes portugueses. O apoio da comunidade é incrível!"
-        : "I've hosted 15 AI workshops and built a solid Portuguese client base. The community support is incredible!",
+        ? "Organizei 15 workshops de tecnologia e construí uma base sólida de clientes portugueses. O apoio da comunidade é incrível!"
+        : "I've hosted 15 technology workshops and built a solid Portuguese client base. The community support is incredible!",
       revenue: "£3,500/month",
       avatar: "MS",
     },
@@ -766,8 +766,8 @@ export default function HostPage() {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-premium-400 focus:border-transparent"
                     placeholder={
                       isPortuguese
-                        ? "Ex: Consultor de IA, Chef, Instrutor de Fado"
-                        : "Ex: AI Consultant, Chef, Fado Instructor"
+                        ? "Ex: Consultor de Tecnologia, Chef, Instrutor de Fado"
+                        : "Ex: Technology Consultant, Chef, Fado Instructor"
                     }
                   />
                 </div>

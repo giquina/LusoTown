@@ -12,7 +12,7 @@ import {
   Car,
   Users,
   ExternalLink,
-  Fire
+  Flame as Fire
 } from 'lucide-react'
 
 interface TrendingItem {

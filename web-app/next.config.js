@@ -76,13 +76,6 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
-      // Placeholder images for development
-      {
-        protocol: "https",
-        hostname: "via.placeholder.com",
-        port: "",
-        pathname: "/**",
-      },
     ],
     formats: ["image/webp", "image/avif"],
   },
@@ -103,7 +96,8 @@ const nextConfig = {
     ];
   },
   experimental: {
-    scrollRestoration: true,
+  scrollRestoration: true,
+  appDir: false,
   },
   webpack: (config, { dev, isServer }) => {
     // Enable react-native-web + monorepo shared packages

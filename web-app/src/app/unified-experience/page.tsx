@@ -138,8 +138,8 @@ export default function UnifiedExperiencePage() {
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 {isPortuguese
-                  ? "LusoTown não é apenas uma coleção de serviços - é um ecossistema que cria valor através de conexões inteligentes"
-                  : "LusoTown isn't just a collection of services - it's an ecosystem that creates value through intelligent connections"}
+                  ? "LusoTown não é apenas uma coleção de serviços - é um ecossistema que cria valor através de conexões avançadas"
+                  : "LusoTown isn't just a collection of services - it's an ecosystem that creates value through advanced connections"}
               </p>
             </motion.div>
 

@@ -31,6 +31,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { plans, formatPrice } from "@/config/pricing";
 import PremiumMatchesGate from "@/components/PremiumMatchesGate";
+import EnhancedMatchDashboard from "@/components/matches/EnhancedMatchDashboard";
 
 // Mock Portuguese profiles for demonstration
 const mockProfiles = [
@@ -334,12 +335,12 @@ function MatchesContent() {
     },
     {
       icon: SparklesIcon,
-      title: "Smart Matching",
+      title: "Advanced Matching",
       description:
-        "Our algorithm connects you with Portuguese speakers based on compatibility, interests, and proximity",
-      titlePt: "Correspondência Inteligente",
+        "Our system connects you with Portuguese speakers based on compatibility, interests, and proximity",
+      titlePt: "Correspondência Avançada",
       descriptionPt:
-        "O nosso algoritmo conecta-o com falantes de português baseado em compatibilidade, interesses e proximidade",
+        "O nosso sistema conecta-o com falantes de português baseado em compatibilidade, interesses e proximidade",
     },
     {
       icon: CalendarIcon,
@@ -378,7 +379,7 @@ function MatchesContent() {
   ];
 
   return (
-    <div className="min-h-screen pt-28 md:pt-32">
+    <div className="min-h-screen pt-20 md:pt-24 pb-8">
     {/* Enhanced Hero Section */}
   <div className="relative min-h-[42vh] md:min-h-[52vh] bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 overflow-hidden">
         {/* Portuguese flag inspired decorative elements */}
@@ -482,19 +483,17 @@ function MatchesContent() {
             )}
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a href="/signup" className="bg-white text-primary-600 px-5 py-3 rounded-xl font-semibold text-sm md:text-base hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                {language === "pt" ? "Começar Grátis" : "Start Free"}
+            <div className="flex flex-row gap-3 sm:gap-4 justify-center">
+              <a href="/signup" className="bg-white text-primary-600 px-4 sm:px-5 py-3 rounded-xl font-semibold text-sm md:text-base hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg flex-1 max-w-[160px] sm:max-w-none text-center">
+                {language === "pt" ? "Start Free" : "Start Free"}
               </a>
               <button
                 onClick={() => createSubscription("community")}
-                className="bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-5 py-3 rounded-xl font-semibold text-sm md:text-base hover:from-secondary-600 hover:to-secondary-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-4 sm:px-5 py-3 rounded-xl font-semibold text-sm md:text-base hover:from-secondary-600 hover:to-secondary-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex-1 max-w-[160px] sm:max-w-none text-center"
               >
                 {language === "pt"
-                  ? `Premium por ${formatPrice(plans.community.monthly)}/mês`
-                  : `Premium from ${formatPrice(
-                      plans.community.monthly
-                    )}/month`}
+                  ? `${formatPrice(plans.community.monthly)}/month`
+                  : `${formatPrice(plans.community.monthly)}/month`}
               </button>
             </div>
 
@@ -655,7 +654,7 @@ function MatchesContent() {
               </div>
             </div>
             {/* Enhanced Profile Card Stack */}
-            <div className="relative h-[580px] md:h-[620px] mb-6">
+            <div className="relative min-h-[600px] md:min-h-[640px] mb-6">
               <AnimatePresence mode="wait">
                 {currentProfile && (
                   <motion.div
@@ -675,7 +674,7 @@ function MatchesContent() {
                       rotate: isLiking ? 20 : isSkipping ? -20 : 0,
                     }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="absolute inset-0 bg-white rounded-3xl shadow-2xl overflow-hidden border border-primary-100 hover:shadow-3xl transition-shadow duration-300"
+                    className="absolute inset-0 bg-white rounded-3xl shadow-2xl overflow-hidden border border-primary-100 hover:shadow-3xl transition-shadow duration-300 flex flex-col"
                     onTouchStart={onTouchStart}
                     onTouchEnd={onTouchEnd}
                   >
@@ -706,7 +705,7 @@ function MatchesContent() {
                     </div>
 
                     {/* Enhanced Profile Info with Better Layout */}
-                    <div className="p-4 md:p-6 flex flex-col h-[calc(100%-12rem)] md:h-[calc(100%-13rem)]">
+                    <div className="p-4 md:p-6 flex flex-col flex-1">
                       {/* Header Section */}
                       <div className="mb-4">
                         <div className="flex items-start justify-between mb-3">
@@ -729,7 +728,7 @@ function MatchesContent() {
 
                         {/* Bio Section with Better Typography */}
                         <div className="bg-primary-25 p-3 rounded-xl border border-primary-100">
-                          <p className="text-primary-800 text-sm leading-relaxed line-clamp-3">
+                          <p className="text-primary-800 text-sm leading-relaxed">
                             {currentProfile.bio}
                           </p>
                         </div>
@@ -741,11 +740,11 @@ function MatchesContent() {
                           <SparklesIcon className="w-4 h-4 text-secondary-500" />
                           Common Interests
                         </h4>
-                        <div className="grid grid-cols-2 gap-2">
+                        <div className="flex flex-wrap gap-2">
                           {currentProfile.interests.slice(0, 4).map((interest, index) => (
                             <div
                               key={index}
-                              className="bg-gradient-to-r from-primary-50 to-secondary-50 text-primary-700 px-3 py-2 rounded-xl text-xs font-semibold border border-primary-200 text-center"
+                              className="bg-gradient-to-r from-primary-50 to-secondary-50 text-primary-700 px-3 py-1.5 rounded-lg text-xs font-semibold border border-primary-200 whitespace-nowrap"
                             >
                               {interest}
                             </div>
@@ -754,68 +753,68 @@ function MatchesContent() {
                       </div>
 
                       {/* Enhanced Portuguese Cultural Connection */}
-                      <div className="bg-gradient-to-r from-secondary-50 via-accent-50 to-coral-50 p-4 rounded-2xl border border-secondary-200 shadow-inner flex-1 flex flex-col">
+                      <div className="bg-gradient-to-r from-secondary-50 via-accent-50 to-coral-50 p-3 rounded-2xl border border-secondary-200 shadow-inner">
                         <div className="flex items-center justify-between mb-3">
                           <div className="flex items-center gap-2">
-                            <div className="w-8 h-8 bg-gradient-to-r from-secondary-500 to-accent-500 rounded-full flex items-center justify-center">
-                              <HeartIcon className="w-4 h-4 text-white" />
+                            <div className="w-6 h-6 bg-gradient-to-r from-secondary-500 to-accent-500 rounded-full flex items-center justify-center">
+                              <HeartIcon className="w-3 h-3 text-white" />
                             </div>
-                            <span className="font-bold text-secondary-800 text-sm">
+                            <span className="font-bold text-secondary-800 text-xs">
                               {language === "pt" ? "Conexão Cultural" : "Cultural Connection"}
                             </span>
                           </div>
-                          <div className="flex items-center gap-1">
+                          <div className="flex items-center gap-0.5">
                             {Array.from({ length: 5 }).map((_, i) => (
-                              <StarIconSolid key={i} className="w-3.5 h-3.5 text-yellow-400" />
+                              <StarIconSolid key={i} className="w-3 h-3 text-yellow-400" />
                             ))}
                           </div>
                         </div>
                         
-                        <div className="grid grid-cols-2 gap-2 mb-3">
-                          <div className="flex items-center gap-2 bg-white/60 p-2 rounded-lg">
-                            <div className="w-2.5 h-2.5 bg-green-500 rounded-full"></div>
+                        <div className="grid grid-cols-2 gap-1.5 mb-3">
+                          <div className="flex items-center gap-1.5 bg-white/60 p-1.5 rounded-lg">
+                            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                             <span className="text-xs font-medium text-secondary-700">
-                              {language === "pt" ? "Língua" : "Language"}
+                              Language
                             </span>
                           </div>
-                          <div className="flex items-center gap-2 bg-white/60 p-2 rounded-lg">
-                            <div className="w-2.5 h-2.5 bg-blue-500 rounded-full"></div>
+                          <div className="flex items-center gap-1.5 bg-white/60 p-1.5 rounded-lg">
+                            <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                             <span className="text-xs font-medium text-secondary-700">
-                              {language === "pt" ? "Tradições" : "Traditions"}
+                              Traditions
                             </span>
                           </div>
-                          <div className="flex items-center gap-2 bg-white/60 p-2 rounded-lg">
-                            <div className="w-2.5 h-2.5 bg-purple-500 rounded-full"></div>
+                          <div className="flex items-center gap-1.5 bg-white/60 p-1.5 rounded-lg">
+                            <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
                             <span className="text-xs font-medium text-secondary-700">
-                              {language === "pt" ? "Valores" : "Values"}
+                              Values
                             </span>
                           </div>
-                          <div className="flex items-center gap-2 bg-white/60 p-2 rounded-lg">
-                            <div className="w-2.5 h-2.5 bg-orange-500 rounded-full"></div>
+                          <div className="flex items-center gap-1.5 bg-white/60 p-1.5 rounded-lg">
+                            <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
                             <span className="text-xs font-medium text-secondary-700">
-                              {language === "pt" ? "Experiências" : "Experiences"}
+                              Location
                             </span>
                           </div>
                         </div>
                         
                         {/* Connection Reasons */}
-                        <div className="bg-white/80 backdrop-blur-sm p-3 rounded-xl border border-white/60 mt-auto">
+                        <div className="bg-white/80 backdrop-blur-sm p-2.5 rounded-xl border border-white/60">
                           <h5 className="font-bold text-secondary-800 mb-2 text-xs">
-                            {language === "pt" ? "Por que vocês combinam:" : "Why you'll connect:"}
+                            Why you'll connect:
                           </h5>
                           <div className="space-y-1">
                             {currentProfile.interests.slice(0, 2).map((interest, idx) => (
                               <div key={idx} className="flex items-center gap-2">
                                 <CheckCircleIcon className="w-3 h-3 text-green-500 flex-shrink-0" />
                                 <span className="text-xs text-secondary-700 truncate">
-                                  {language === "pt" ? `${interest}` : `${interest}`}
+                                  {interest}
                                 </span>
                               </div>
                             ))}
                             <div className="flex items-center gap-2">
                               <MapPinIcon className="w-3 h-3 text-blue-500 flex-shrink-0" />
                               <span className="text-xs text-secondary-700 truncate">
-                                {language === "pt" ? `Próximo: ${currentProfile.location}` : `Near: ${currentProfile.location}`}
+                                Near: {currentProfile.location}
                               </span>
                             </div>
                           </div>
@@ -1263,6 +1262,11 @@ function MatchesContent() {
 }
 
 export default function MatchesPage() {
+  const { hasActiveSubscription } = useSubscription();
+
+  // If user doesn't have subscription and hits daily limits, show premium gate
+  // For now, we'll integrate this with the enhanced dashboard
+  
   return (
     <Suspense
       fallback={
@@ -1271,7 +1275,20 @@ export default function MatchesPage() {
         </div>
       }
     >
-      <MatchesContent />
+      <EnhancedMatchDashboard
+        currentUserId="demo-user"
+        showEventSuggestions={true}
+        showAchievements={true}
+        showGroupMatching={true}
+        onMatchAction={(matchId, action) => {
+          // Handle match actions (like, skip, super_like)
+          console.log(`Match action: ${action} on match ${matchId}`);
+        }}
+        onEventBooking={(eventId, matchId) => {
+          // Handle event booking
+          console.log(`Event ${eventId} booked${matchId ? ` with match ${matchId}` : ''}`);
+        }}
+      />
     </Suspense>
   );
 }

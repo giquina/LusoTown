@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://lusotown.com"),
   title: "LusoTown - London | Portuguese Social & Business Network",
   description:
-    "The Portuguese social and business network in London. Connect with Portuguese speakers, book cultural events, attend AI workshops, and build professional networks. Unidos pela Língua.",
+    "The Portuguese social and business network in London. Connect with Portuguese speakers, book cultural events, attend technology workshops, and build professional networks. Unidos pela Língua.",
   keywords: [
     // Primary Portuguese SEO Keywords
     "portuguese social calendar london",

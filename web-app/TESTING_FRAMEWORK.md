@@ -47,6 +47,14 @@ __tests__/
 - Mobile menu functionality with touch interactions
 - Services dropdown with Portuguese cultural services
 - User authentication states and premium membership indicators
+- Navigation dropdown centering and responsive positioning
+- Dropdown viewport overflow prevention and margin calculations
+
+#### Modal Component Tests
+- Welcome modal responsive sizing (`max-h-[85vh]` mobile, `max-w-[3xl]` desktop)
+- Click-outside-to-close functionality and accessibility
+- Mobile layout optimization with 2x2 grid feature cards
+- Bilingual skip button text ("Skip for now" in EN/PT)
 
 #### Event Components Tests
 - Portuguese event card rendering and cultural content display

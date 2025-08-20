@@ -1,2 +1,2 @@
-export { Button } from './primitives/Button';
-export { Text } from './primitives/Text';
+export { Button } from "./primitives/Button";
+export { Text } from "./primitives/Text";

@@ -192,16 +192,16 @@ export default function CommunityFeedSection() {
           location: 'Camden, London',
           verified: true,
           heritage: 'Brazil',
-          badges: ['Cultural Ambassador', 'Language Teacher']
+          badges: ['Embaixadora Cultural', 'Professora de Idiomas']
         },
-        content: 'Teaching my English friends about Festa Junina traditions today! Made pamonha, played quadrilha, and explained why we jump over bonfires. Their faces when they tried paçoca for the first time! 😂 Love sharing our beautiful culture here in London! 🎪🌽',
+        content: '🇧🇷 Ensinei os meus amigos ingleses sobre as tradições da Festa Junina hoje! Fiz pamonha, dançámos quadrilha e expliquei porque saltamos por cima das fogueiras. As caras deles quando provaram paçoca pela primeira vez! 😂 Amo partilhar a nossa cultura linda aqui em Londres! A saudade do Brasil fica mais leve quando partilhamos as nossas tradições. 🎪🌽 #BrasileirosEmLondres',
         images: ['https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&h=300&fit=crop&crop=center', 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&h=300&fit=crop&crop=center'],
         timestamp: new Date(Date.now() - 12 * 60 * 60 * 1000).toISOString(),
         timeAgo: '12 hours ago',
         metrics: { likes: 127, comments: 45, shares: 33, views: 678 },
         userInteraction: { liked: true, saved: false },
         location: 'Camden, London',
-        tags: ['#FestaJunina', '#BrazilianCulture', '#CulturalExchange'],
+        tags: ['#FestaJunina', '#CulturaBrasileira', '#BrasileirosEmLondres'],
         isLive: false
       },
       {
@@ -235,24 +235,89 @@ export default function CommunityFeedSection() {
           location: 'Notting Hill, London',
           verified: true,
           heritage: 'Portugal',
-          badges: ['Event Organizer', 'Football Fan']
+          badges: ['Organizadora de Eventos', 'Adepta de Futebol']
         },
-        content: 'PORTUGAL MATCH TOMORROW! 🇵🇹⚽ Watch party at The Portuguese pub in Notting Hill. Big screen, Super Bock on tap, and guaranteed passionate commentary! Come celebrate our boys in red and green! Força Portugal! 💪',
+        content: '🇵🇹 JOGO DE PORTUGAL AMANHÃ! ⚽ Festa no pub português em Notting Hill. Ecrã grande, Super Bock à pressão e comentários apaixonados garantidos! Venham celebrar os nossos rapazes de vermelho e verde! Força Portugal! A união faz a força, principalmente aqui em Londres longe da nossa terra. Que bela forma de matar as saudades! 💪 #PortugalCaralho',
         images: ['https://images.unsplash.com/photo-1567336273898-ebbf9eb3c2bf?w=400&h=300&fit=crop&crop=center'],
         timestamp: new Date(Date.now() - 22 * 60 * 60 * 1000).toISOString(),
         timeAgo: '22 hours ago',
         metrics: { likes: 156, comments: 67, shares: 44, views: 892 },
         userInteraction: { liked: true, saved: true },
         location: 'Notting Hill, London',
-        tags: ['#PortugalMatch', '#Football', '#NottingHill'],
+        tags: ['#PortugalCaralho', '#Futebol', '#TugasEmLondres'],
         linkedContent: {
           type: 'event',
           id: 'portugal_match_watch',
-          title: 'Portugal vs Spain Watch Party',
+          title: 'Portugal vs Espanha - Ver Juntos',
           subtitle: 'The Portuguese Pub',
-          date: 'Tomorrow, 8:00 PM'
+          date: 'Amanhã, 20:00'
         },
         isLive: true
+      },
+      {
+        id: '8',
+        type: 'culture',
+        author: {
+          id: 'carlos_lisboa',
+          name: 'Carlos Lisboa',
+          avatar: '/images/avatars/default.jpg',
+          location: 'Stockwell, London',
+          verified: true,
+          heritage: 'Portugal',
+          badges: ['Mestre Fadista', 'Guia Turístico']
+        },
+        content: '🇵🇹 Ontem foi noite de fado no nosso quintal português aqui em Stockwell! Que saudades senti da minha Lisboa quando a guitarra começou a chorar... A Mariazinha cantou "Lágrima" e não houve olho seco. É isto que nos faz portugueses: a capacidade de transformar a dor em beleza. Aqui em Londres, o fado ganha um sabor especial - mistura-se a saudade da terra com a esperança do futuro. 🎸💔 #FadoEmLondres #Saudade',
+        images: ['https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop&crop=center'],
+        timestamp: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(),
+        timeAgo: '1 day ago',
+        metrics: { likes: 203, comments: 67, shares: 45, views: 1024 },
+        userInteraction: { liked: true, saved: true },
+        location: 'Stockwell, London',
+        tags: ['#FadoEmLondres', '#Saudade', '#CulturaPortuguesa'],
+        isLive: false
+      },
+      {
+        id: '9',
+        type: 'culture',
+        author: {
+          id: 'luciana_santos',
+          name: 'Luciana Santos',
+          avatar: '/images/avatars/default.jpg',
+          location: 'Elephant & Castle, London',
+          verified: true,
+          heritage: 'Brazil',
+          badges: ['Chef Brasileira', 'Influencer Gastronômica']
+        },
+        content: '🇧🇷 Gente, hoje fiz um almoço de domingo brasileiro completo aqui em Londres! Feijoada, farofa, couve, laranja... Os ingleses da vizinhança vieram provar e ficaram apaixonados! Uma senhora me disse que nunca tinha comido algo tão saboroso. Chorei de emoção! É assim que levamos o Brasil no coração: um prato de cada vez, uma história de cada vez. Quem aí tá sentindo cheiro de dendê? 😭❤️ #BrasilNoPrato #SaudadeBoa',
+        images: ['https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=300&fit=crop&crop=center'],
+        timestamp: new Date(Date.now() - 30 * 60 * 60 * 1000).toISOString(),
+        timeAgo: '1 day ago',
+        metrics: { likes: 289, comments: 89, shares: 67, views: 1456 },
+        userInteraction: { liked: false, saved: true },
+        location: 'Elephant & Castle, London',
+        tags: ['#BrasilNoPrato', '#Feijoada', '#CozinhaBrasileira'],
+        isLive: false
+      },
+      {
+        id: '10',
+        type: 'discussion',
+        author: {
+          id: 'maria_porto',
+          name: 'Maria do Porto',
+          avatar: '/images/avatars/default.jpg',
+          location: 'Camden, London',
+          verified: true,
+          heritage: 'Portugal',
+          badges: ['Professora', 'Mãe Portuguesa']
+        },
+        content: '🇵🇹 Alguém mais aqui luta para que os filhos não percam o sotaque português? O meu pequeno já começa a dizer "mum" em vez de "mãe" e o coração aperta-se-me todo... Como é que mantemos viva a nossa língua quando estamos rodeados de inglês? Preciso de dicas das outras mães portuguesas! A nossa identidade passa tanto pela forma como falamos... #MãesPortuguesasEmLondres #LínguaMaterna',
+        timestamp: new Date(Date.now() - 36 * 60 * 60 * 1000).toISOString(),
+        timeAgo: '1 day ago',
+        metrics: { likes: 156, comments: 94, shares: 23, views: 789 },
+        userInteraction: { liked: true, saved: false },
+        location: 'Camden, London',
+        tags: ['#MãesPortuguesas', '#LínguaPortuguesa', '#Identidade'],
+        trending: true
       }
     ]
 

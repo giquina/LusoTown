@@ -186,7 +186,7 @@ export default function WhatsAppWidget() {
   return (
     <>
       {/* WhatsApp Widget Button */}
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="fixed bottom-20 sm:bottom-6 right-6 z-50">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="bg-primary-600 hover:bg-primary-700 text-white p-4 rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-primary-300"
@@ -198,7 +198,7 @@ export default function WhatsAppWidget() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-50 w-80 bg-white rounded-lg shadow-2xl border">
+        <div className="fixed bottom-32 sm:bottom-24 right-6 z-50 w-80 bg-white rounded-lg shadow-2xl border">
           {/* Header */}
           <div className="bg-primary-600 text-white p-4 rounded-t-lg flex items-center justify-between">
             <div className="flex items-center gap-3">

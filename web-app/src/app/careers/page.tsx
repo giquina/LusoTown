@@ -515,7 +515,7 @@ const jobRoles: JobRole[] = [
     responsibilities: [
       'Develop and maintain API integrations with London venues and booking systems',
       'Create technical partnerships with Portuguese restaurants and cultural venues',
-      'Build automated systems for event booking and venue management',
+      'Build efficient systems for event booking and venue management',
       'Ensure platform scalability for Portuguese community growth',
       'Provide technical support for business directory integrations'
     ],

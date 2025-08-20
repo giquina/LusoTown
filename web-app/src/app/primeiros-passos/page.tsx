@@ -47,8 +47,8 @@ export default function PrimeirosPassosPage() {
       icon: UserGroupIcon,
       titleEn: 'Connect with Community',
       titlePt: 'Conectar com a Comunidade',
-      descriptionEn: 'Meet Portuguese speakers from all over London and the UK',
-      descriptionPt: 'Conhecer falantes de português de todo Londres e Reino Unido'
+      descriptionEn: 'Find Your Match among Portuguese speakers from all over London and the UK',
+      descriptionPt: 'Encontre o seu match entre falantes de português de todo Londres e Reino Unido'
     },
     {
       icon: CalendarDaysIcon,

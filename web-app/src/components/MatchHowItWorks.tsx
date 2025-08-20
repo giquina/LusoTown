@@ -460,36 +460,33 @@ export default function MatchHowItWorks() {
 
         {/* Statistics Section */}
         <div className={`mb-20 transition-all duration-1000 delay-500 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-          <div className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 rounded-3xl p-8 md:p-12 text-white shadow-2xl">
-            <div className="text-center mb-10">
-              <h3 className="text-3xl md:text-4xl font-bold mb-4">
-                {language === 'pt' ? 'Números da Nossa Comunidade' : 'Our Community in Numbers'}
+          <div className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 rounded-3xl p-6 sm:p-8 md:p-12 text-white shadow-2xl mx-4 sm:mx-0">
+            <div className="text-center mb-8 md:mb-10">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
+                Our Community in Numbers
               </h3>
-              <p className="text-white/90 text-lg">
-                {language === 'pt' 
-                  ? 'Resultados reais de conexões portuguesas em Londres'
-                  : 'Real results from Portuguese connections in London'
-                }
+              <p className="text-white/90 text-base sm:text-lg">
+                Real results from Portuguese connections in London
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {stats.map((stat, index) => (
                 <motion.div 
                   key={index}
-                  className="text-center"
+                  className="text-center px-2"
                   initial={{ opacity: 0, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <div className="text-3xl md:text-4xl font-black mb-2">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-black mb-2">
                     {stat.number}
                   </div>
-                  <div className="text-white/90 font-semibold text-sm md:text-base mb-1">
-                    {language === 'pt' ? stat.labelPt : stat.label}
+                  <div className="text-white/90 font-semibold text-xs sm:text-sm md:text-base mb-1 break-words">
+                    {stat.label}
                   </div>
-                  <div className="text-white/70 text-xs">
-                    {language === 'pt' ? stat.sublabelPt : stat.sublabel}
+                  <div className="text-white/70 text-xs break-words">
+                    {stat.sublabel}
                   </div>
                 </motion.div>
               ))}
@@ -587,26 +584,26 @@ export default function MatchHowItWorks() {
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-row gap-3 sm:gap-4 justify-center">
               <motion.a
                 href="/matches"
-                className="group relative text-lg font-bold px-8 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden"
+                className="group relative text-base sm:text-lg font-bold px-6 sm:px-8 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden flex-1 max-w-[180px] sm:max-w-none"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-secondary-700 via-action-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10 flex items-center justify-center gap-2 whitespace-nowrap">
-                  {language === 'pt' ? 'Encontrar Matches' : 'Find Matches'}
-                  <HeartIconSolid className="h-5 w-5 group-hover:scale-110 transition-transform duration-200" />
+                  Find Matches
+                  <HeartIconSolid className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform duration-200" />
                 </span>
               </motion.a>
               <motion.a
                 href="/signup"
-                className="text-lg font-bold px-8 py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:border-secondary-300 whitespace-nowrap"
+                className="text-base sm:text-lg font-bold px-6 sm:px-8 py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:border-secondary-300 whitespace-nowrap flex-1 max-w-[180px] sm:max-w-none text-center"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
-                {language === 'pt' ? 'Começar Grátis' : 'Start Free'}
+                Start Free
               </motion.a>
             </div>
 
