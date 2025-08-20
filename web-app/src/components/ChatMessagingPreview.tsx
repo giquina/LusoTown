@@ -35,6 +35,7 @@ import {
 import { useLanguage } from '@/context/LanguageContext'
 import Link from 'next/link'
 import { ROUTES } from "@/config/routes";
+import { CONTENT } from '@/config/content';
 
 interface ChatMessage {
   id: string
@@ -190,8 +191,8 @@ export default function ChatMessagingPreview() {
     },
     {
       id: 'santos-populares',
-      name: 'Santos Populares London',
-      nameEn: 'Santos Populares London',
+      name: `Santos Populares ${CONTENT.region.short}`,
+      nameEn: `Santos Populares ${CONTENT.region.short}`,
       memberCount: 567,
       isActive: true,
       category: 'events',
@@ -208,8 +209,8 @@ export default function ChatMessagingPreview() {
     },
     {
       id: 'south-london',
-      name: 'South London Lusos',
-      nameEn: 'South London Portuguese',
+      name: `South ${CONTENT.region.short} Lusos`,
+      nameEn: `South ${CONTENT.region.short} Portuguese`,
       memberCount: 423,
       isActive: true,
       category: 'location',
@@ -297,8 +298,8 @@ export default function ChatMessagingPreview() {
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             {language === 'pt'
-              ? 'Junte-se a milhares de portugueses em Londres. Chat em tempo real, grupos culturais, coordenação de eventos - tudo num só lugar.'
-              : 'Join thousands of Portuguese speakers in London. Real-time chat, cultural groups, event coordination - all in one place.'
+              ? `Junte-se a milhares de portugueses em ${CONTENT.region.prepositioned}. Chat em tempo real, grupos culturais, coordenação de eventos - tudo num só lugar.`
+              : `Join thousands of Portuguese speakers in ${CONTENT.region.prepositioned}. Real-time chat, cultural groups, event coordination - all in one place.`
             }
           </p>
           
@@ -660,8 +661,8 @@ export default function ChatMessagingPreview() {
             </h3>
             <p className="text-lg opacity-90 mb-6 max-w-2xl mx-auto">
               {language === 'pt'
-                ? 'Conecte-se com milhares de portugueses em Londres. Chat em tempo real, grupos culturais, e coordenação de eventos.'
-                : 'Connect with thousands of Portuguese speakers in London. Real-time chat, cultural groups, and event coordination.'
+                ? `Conecte-se com milhares de portugueses em ${CONTENT.region.prepositioned}. Chat em tempo real, grupos culturais, e coordenação de eventos.`
+                : `Connect with thousands of Portuguese speakers in ${CONTENT.region.prepositioned}. Real-time chat, cultural groups, and event coordination.`
               }
             </p>
             

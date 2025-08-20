@@ -35,6 +35,8 @@ import Footer from "@/components/Footer";
 import { useLanguage } from "@/context/LanguageContext";
 import { useSubscription } from "@/context/SubscriptionContext";
 import { communityStats } from '@/config/community';
+import { CONTENT } from '@/config/content';
+import { ROUTES } from '@/config/routes';
 
 // Creator tier packages - similar to transport service structure
 const creatorTiers = [
@@ -257,7 +259,7 @@ export default function StreamingPage() {
               <span className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-primary-100 via-secondary-50 to-accent-100 border border-primary-200 shadow-lg">
                 <VideoCameraIcon className="w-4 h-4 mr-2 text-primary-600" />
                 <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent font-bold">
-                  {isPortuguese ? "Plataforma de Streaming Portuguesa" : "Portuguese Streaming Platform"}
+                  {isPortuguese ? "Plataforma de Streaming" : "Streaming Platform"}
                 </span>
               </span>
             </motion.div>
@@ -270,14 +272,14 @@ export default function StreamingPage() {
               className="text-4xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight"
             >
               <span className="hidden sm:block">
-                {isPortuguese ? "Torne-se um Criador de Conteúdo Português" : "Become a Portuguese Content Creator"}
+                {isPortuguese ? "Quer tornar-se um streamer?" : CONTENT.streaming.heroTitle}
               </span>
               <span className="sm:hidden">
-                {isPortuguese ? "Streaming Português" : "Portuguese Streaming"}
+                {isPortuguese ? "Streaming" : "Streaming"}
               </span>
               <br />
               <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent">
-                {isPortuguese ? "em Londres" : "in London"}
+                {isPortuguese ? `em ${CONTENT.region.prepositioned}` : `in ${CONTENT.region.prepositioned}`}
               </span>
             </motion.h1>
 
@@ -290,14 +292,14 @@ export default function StreamingPage() {
             >
               <span className="hidden sm:block">
                 {isPortuguese 
-                  ? "Conecte-se com a comunidade portuguesa através de streaming. Partilhe sua cultura, negócios e paixões com milhares de portugueses em Londres."
-                  : "Connect with the Portuguese community through streaming. Share your culture, business, and passions with thousands of Portuguese speakers in London."
+                  ? `Torne-se um criador de conteúdo e faça crescer sua audiência em ${CONTENT.region.prepositioned}.`
+                  : CONTENT.streaming.heroSubtitle
                 }
               </span>
               <span className="sm:hidden">
                 {isPortuguese 
-                  ? "Streaming para a comunidade portuguesa em Londres"
-                  : "Streaming for Portuguese community in London"
+                  ? `Streaming em ${CONTENT.region.prepositioned}`
+                  : `Streaming in ${CONTENT.region.prepositioned}`
                 }
               </span>
             </motion.p>
@@ -330,17 +332,17 @@ export default function StreamingPage() {
               transition={{ delay: 0.4 }}
               className="flex flex-row gap-3 sm:gap-4 justify-center mb-8"
             >
-              <button 
-                onClick={() => setShowBookingForm(true)}
+              <a 
+                href={ROUTES.streamingGetStarted}
                 className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-6 sm:px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1 flex-1 max-w-[180px] sm:max-w-none text-center"
               >
-                {isPortuguese ? "Começar Streaming" : "Start Streaming"}
-              </button>
+                {isPortuguese ? "Começar a Criar" : CONTENT.streaming.ctaPrimary}
+              </a>
               <a 
-                href="#packages" 
+                href={ROUTES.streamingLearn}
                 className="border border-gray-300 text-gray-700 px-6 sm:px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-lg hover:shadow-xl flex-1 max-w-[180px] sm:max-w-none text-center"
               >
-                {isPortuguese ? "Ver Pacotes" : "View Packages"}
+                {isPortuguese ? "Saber Mais" : CONTENT.streaming.ctaSecondary}
               </a>
             </motion.div>
 
