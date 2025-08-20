@@ -33,6 +33,7 @@ import {
 } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import Footer from '@/components/Footer'
+import { ROUTES } from '@/config/routes'
 import CreatorEarningsCalculator from '@/components/CreatorEarningsCalculator'
 import CreatorApplicationForm from '@/components/CreatorApplicationForm'
 import CreatorTestimonials from '@/components/CreatorTestimonials'
@@ -603,7 +604,7 @@ export default function CreatorSignupPage() {
                 <ArrowRight className="w-5 h-5" />
               </button>
               <a
-                href="/contact"
+                href={ROUTES.contact}
                 className="px-8 py-4 bg-transparent hover:bg-white/10 text-white border-2 border-white rounded-xl font-semibold text-lg flex items-center justify-center gap-2 transition-all"
               >
                 {isPt ? 'Falar Connosco' : 'Talk to Us'}

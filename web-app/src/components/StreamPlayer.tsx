@@ -14,6 +14,7 @@ import { Lock, Crown, Zap } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { useSubscription } from "@/context/SubscriptionContext";
 import SubscriptionGate from "@/components/SubscriptionGate";
+import { ROUTES } from "@/config/routes";
 
 interface StreamPlayerProps {
   stream: {
@@ -354,7 +355,7 @@ export default function StreamPlayer({
                   {language === "pt" ? "Fechar" : "Close"}
                 </button>
                 <button
-                  onClick={() => (window.location.href = "/subscription")}
+                  onClick={() => (window.location.href = ROUTES.subscription)}
                   className="flex-1 px-4 py-2 bg-premium-600 text-white rounded-lg hover:bg-premium-700 transition-colors font-medium"
                 >
                   {language === "pt" ? "Upgrade" : "Upgrade"}

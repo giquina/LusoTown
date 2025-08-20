@@ -40,6 +40,7 @@ import { useCart } from "@/context/CartContext";
 import { useLanguage } from "@/context/LanguageContext";
 import { useNetworking } from "@/context/NetworkingContext";
 import { getCurrentUser } from "@/lib/auth";
+import { ROUTES } from "@/config/routes";
 import {
   ButtonStyles,
   PortugueseGradients,
@@ -456,7 +457,7 @@ export default function EventsPage() {
   // Preview system handlers
   const handleUpgradeClick = () => {
     // Navigate to membership/signup page
-    window.location.href = "/join";
+    window.location.href = ROUTES.signup;
   };
 
   const handleSearch = () => {
@@ -751,7 +752,7 @@ export default function EventsPage() {
                 <button
                   onClick={handleSearch}
                   className={cn(
-                    ButtonStyles.smallButton,
+                    ButtonStyles.legacy.smallButton,
                     "absolute right-6 sm:right-8 top-1/2 -translate-y-1/2 px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm"
                   )}
                 >
@@ -912,13 +913,7 @@ export default function EventsPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
             {/* Cultural Calendar Tab */}
             {activeTab === "cultural" && (
-              <PortugueseCulturalCalendar
-                isPortuguese={isPortuguese}
-                onJoinCelebration={(celebrationId) => {
-                  // Handle joining cultural celebrations
-                  console.log("Joining celebration:", celebrationId);
-                }}
-              />
+              <PortugueseCulturalCalendar />
             )}
 
             {/* Create Event Tab */}
@@ -1247,7 +1242,7 @@ export default function EventsPage() {
               {/* Three CTA Options */}
               <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 mb-8">
                 <a
-                  href="/events/create"
+                  href={ROUTES.events + "/create"}
                   className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
                 >
                   <CalendarIcon className="w-8 h-8 text-premium-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
@@ -1262,7 +1257,7 @@ export default function EventsPage() {
                 </a>
 
                 <a
-                  href="/groups/create"
+                  href={ROUTES.groups + "/create"}
                   className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
                 >
                   <UserGroupIcon className="w-8 h-8 text-coral-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
@@ -1277,7 +1272,7 @@ export default function EventsPage() {
                 </a>
 
                 <a
-                  href="/host"
+                  href={ROUTES.host}
                   className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
                 >
                   <SparklesIcon className="w-8 h-8 text-accent-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
@@ -1294,7 +1289,7 @@ export default function EventsPage() {
 
               {/* Main CTA */}
               <a
-                href="/host"
+                href={ROUTES.host}
                 className="inline-flex items-center gap-3 bg-gradient-to-r from-premium-600 via-coral-600 to-accent-600 text-white font-bold px-8 py-4 rounded-2xl hover:from-premium-700 hover:via-coral-700 hover:to-accent-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg"
               >
                 <AcademicCapIcon className="w-6 h-6" />
@@ -1319,7 +1314,7 @@ export default function EventsPage() {
                   : "See which of your connections are also attending events and build your Portuguese-speaking network."}
               </p>
               <a
-                href="/my-network"
+                href={ROUTES.myNetwork}
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold px-8 py-3 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
                 <UserGroupIcon className="w-5 h-5" />

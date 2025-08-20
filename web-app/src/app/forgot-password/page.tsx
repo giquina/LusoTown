@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Footer from '@/components/Footer'
+import { ROUTES } from '@/config/routes'
 import { authService } from '@/lib/auth'
 import { 
   LockClosedIcon, 
@@ -176,7 +177,7 @@ export default function ForgotPassword() {
                 <div className="mt-6 pt-6 border-t border-gray-200">
                   <div className="flex flex-col space-y-3">
                     <a
-                      href="/login"
+                      href={ROUTES.login}
                       className="text-center text-primary-600 hover:underline font-medium flex items-center justify-center"
                     >
                       <ArrowLeftIcon className="w-4 h-4 mr-2" />
@@ -185,7 +186,7 @@ export default function ForgotPassword() {
                     
                     <div className="text-center text-sm text-gray-500">
                       Don't have an account?{' '}
-                      <a href="/signup" className="text-primary-600 hover:underline font-medium">
+                      <a href={ROUTES.signup} className="text-primary-600 hover:underline font-medium">
                         Sign up here
                       </a>
                     </div>

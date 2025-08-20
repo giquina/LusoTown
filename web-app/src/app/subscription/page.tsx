@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config/routes'
 import { useSubscription } from '@/context/SubscriptionContext'
 import { authService } from '@/lib/auth'
 import MembershipTiers from '@/components/MembershipTiers'
@@ -18,11 +19,9 @@ import {
   CalendarDaysIcon,
   ArrowRightIcon
 } from '@heroicons/react/24/outline'
-import { useRouter } from 'next/navigation'
 
 export default function SubscriptionPage() {
   const { language, t } = useLanguage()
-  const router = useRouter()
   const { 
     subscription,
     trial,
@@ -42,10 +41,10 @@ export default function SubscriptionPage() {
   const user = authService.getCurrentUser()
 
   useEffect(() => {
-    if (!user) {
-      router.push('/login')
+    if (!user && typeof window !== 'undefined') {
+      window.location.href = ROUTES.login
     }
-  }, [user, router])
+  }, [user])
 
   const handleSubscribe = async () => {
     setIsCreatingSubscription(true)
@@ -114,7 +113,7 @@ export default function SubscriptionPage() {
               )}
 
               {/* Member Portal for Active Members */}
-              {hasActiveSubscription && membershipTier !== 'none' && user && (
+              {hasActiveSubscription && user && (
                 <MembershipPortal userId={user.id} />
               )}
 
@@ -346,21 +345,21 @@ export default function SubscriptionPage() {
                     </h3>
                     <div className="space-y-3">
                       <a 
-                        href="/contact" 
+                        href={ROUTES.contact} 
                         className="flex items-center gap-2 text-sm text-gray-600 hover:text-primary-600 transition-colors"
                       >
                         <span>{isPortuguese ? 'Contactar Suporte' : 'Contact Support'}</span>
                         <ArrowRightIcon className="w-4 h-4" />
                       </a>
                       <a 
-                        href="/faq" 
+                        href={ROUTES.faq} 
                         className="flex items-center gap-2 text-sm text-gray-600 hover:text-primary-600 transition-colors"
                       >
                         <span>{isPortuguese ? 'Perguntas Frequentes' : 'Frequently Asked Questions'}</span>
                         <ArrowRightIcon className="w-4 h-4" />
                       </a>
                       <a 
-                        href="/terms" 
+                        href={ROUTES.terms} 
                         className="flex items-center gap-2 text-sm text-gray-600 hover:text-primary-600 transition-colors"
                       >
                         <span>{isPortuguese ? 'Termos de Serviço' : 'Terms of Service'}</span>

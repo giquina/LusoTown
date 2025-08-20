@@ -20,6 +20,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { HeartIcon as HeartSolidIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
+import { ROUTES } from "@/config/routes";
 import EventImageWithFallback from "@/components/EventImageWithFallback";
 import { useLanguage } from "@/context/LanguageContext";
 import { eventManagementService, PortugueseEvent, PortugueseServiceUtils } from "@/services";
@@ -136,7 +137,7 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
   showFilters = true,
   featuredOnly = false
 }) => {
-  const { t, currentLanguage } = useLanguage();
+  const { t } = useLanguage();
   const [events, setEvents] = useState<PortugueseEvent[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedFilter, setSelectedFilter] = useState<string>("all");
@@ -470,7 +471,7 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
             className="text-center mt-16"
           >
             <Link
-              href="/events"
+                  href={ROUTES.events}
               className="inline-flex items-center bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 text-white font-semibold py-4 px-8 rounded-2xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
             >
               View All Portuguese Events

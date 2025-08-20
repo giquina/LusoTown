@@ -1,20 +1,25 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Briefcase } from 'lucide-react';
-import LearningModuleFramework, { LearningModule, LearningStep } from '@/components/academy/LearningModuleFramework';
-import { useLanguage } from '@/context/LanguageContext';
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Briefcase } from "lucide-react";
+import LearningModuleFramework, {
+  LearningModule,
+  LearningStep,
+} from "@/components/academy/LearningModuleFramework";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function BusinessNetworkingModule() {
   const { language } = useLanguage();
   const [completedSteps, setCompletedSteps] = useState<string[]>([]);
-  
-  const isPortuguese = language === 'pt';
+
+  const isPortuguese = language === "pt";
 
   // Load progress from localStorage
   useEffect(() => {
-    const saved = localStorage.getItem('lusotown-academy-business-networking-progress');
+    const saved = localStorage.getItem(
+      "lusotown-academy-business-networking-progress"
+    );
     if (saved) {
       const progress = JSON.parse(saved);
       setCompletedSteps(progress.completedSteps || []);
@@ -25,54 +30,59 @@ export default function BusinessNetworkingModule() {
     if (!completedSteps.includes(stepId)) {
       const newCompleted = [...completedSteps, stepId];
       setCompletedSteps(newCompleted);
-      
+
       // Save to localStorage
-      localStorage.setItem('lusotown-academy-business-networking-progress', JSON.stringify({
-        completedSteps: newCompleted,
-        lastAccess: Date.now()
-      }));
+      localStorage.setItem(
+        "lusotown-academy-business-networking-progress",
+        JSON.stringify({
+          completedSteps: newCompleted,
+          lastAccess: Date.now(),
+        })
+      );
     }
   };
 
   const handleModuleComplete = () => {
     // Module completion logic
-    console.log('Business Networking module completed!');
+    console.log("Business Networking module completed!");
   };
 
   // Define the learning module structure
   const businessNetworkingModule: LearningModule = {
-    id: 'business-networking',
-    title: 'Business Networking',
-    titlePortuguese: 'Networking Empresarial',
-    description: 'Master professional networking within the Portuguese business community in London',
-    descriptionPortuguese: 'Domine o networking profissional dentro da comunidade empresarial portuguesa em Londres',
-    difficulty: 'Intermediate',
+    id: "business-networking",
+    title: "Business Networking",
+    titlePortuguese: "Networking Empresarial",
+    description:
+      "Master professional networking within the Portuguese business community in London",
+    descriptionPortuguese:
+      "Domine o networking profissional dentro da comunidade empresarial portuguesa em Londres",
+    difficulty: "Intermediate",
     estimatedTime: 25,
     icon: Briefcase,
-    category: 'Professional',
-    categoryPortuguese: 'Profissional',
+    category: "Professional",
+    categoryPortuguese: "Profissional",
     prerequisites: [],
     prerequisitesPortuguese: [],
     learningObjectives: [
-      'Build meaningful professional connections with Portuguese entrepreneurs',
-      'Navigate business etiquette in bilingual environments',
-      'Leverage cultural heritage for business advantages',
-      'Create lasting partnerships and collaborations',
-      'Develop your personal brand within the Portuguese community'
+      "Build meaningful professional connections with Portuguese entrepreneurs",
+      "Navigate business etiquette in bilingual environments",
+      "Leverage cultural heritage for business advantages",
+      "Create lasting partnerships and collaborations",
+      "Develop your personal brand within the Portuguese community",
     ],
     learningObjectivesPortuguese: [
-      'Construir conexões profissionais significativas com empreendedores portugueses',
-      'Navegar etiqueta empresarial em ambientes bilingues',
-      'Aproveitar herança cultural para vantagens empresariais',
-      'Criar parcerias e colaborações duradouras',
-      'Desenvolver sua marca pessoal dentro da comunidade portuguesa'
+      "Construir conexões profissionais significativas com empreendedores portugueses",
+      "Navegar etiqueta empresarial em ambientes bilingues",
+      "Aproveitar herança cultural para vantagens empresariais",
+      "Criar parcerias e colaborações duradouras",
+      "Desenvolver sua marca pessoal dentro da comunidade portuguesa",
     ],
     steps: [
       {
-        id: 'introduction-portuguese-business',
-        title: 'Portuguese Business Landscape in London',
-        titlePortuguese: 'Panorama Empresarial Português em Londres',
-        type: 'introduction',
+        id: "introduction-portuguese-business",
+        title: "Portuguese Business Landscape in London",
+        titlePortuguese: "Panorama Empresarial Português em Londres",
+        type: "introduction",
         estimatedTime: 4,
         content: `
           <p>Welcome to the Portuguese business community in London - one of the most dynamic and interconnected networks in the city!</p>
@@ -125,21 +135,21 @@ export default function BusinessNetworkingModule() {
           <p>Compreender estas fundações ajudá-lo-á a navegar e contribuir para a nossa próspera comunidade empresarial.</p>
         `,
         tips: [
-          'Start by observing existing business interactions at Portuguese events',
-          'Research successful Portuguese business owners in your industry',
-          'Understand the blend of British business formality with Portuguese warmth'
+          "Start by observing existing business interactions at Portuguese events",
+          "Research successful Portuguese business owners in your industry",
+          "Understand the blend of British business formality with Portuguese warmth",
         ],
         tipsPortuguese: [
-          'Comece por observar interações empresariais existentes em eventos portugueses',
-          'Pesquise empresários portugueses bem-sucedidos na sua indústria',
-          'Compreenda a mistura de formalidade empresarial britânica com cordialidade portuguesa'
-        ]
+          "Comece por observar interações empresariais existentes em eventos portugueses",
+          "Pesquise empresários portugueses bem-sucedidos na sua indústria",
+          "Compreenda a mistura de formalidade empresarial britânica com cordialidade portuguesa",
+        ],
       },
       {
-        id: 'building-professional-relationships',
-        title: 'Building Authentic Professional Relationships',
-        titlePortuguese: 'Construindo Relacionamentos Profissionais Autênticos',
-        type: 'tutorial',
+        id: "building-professional-relationships",
+        title: "Building Authentic Professional Relationships",
+        titlePortuguese: "Construindo Relacionamentos Profissionais Autênticos",
+        type: "tutorial",
         estimatedTime: 6,
         content: `
           <p>Portuguese business culture emphasizes genuine relationships over transactional interactions. Here's how to build lasting professional connections:</p>
@@ -216,32 +226,47 @@ export default function BusinessNetworkingModule() {
           </ul>
         `,
         interactive: {
-          type: 'checklist',
+          type: "checklist",
           data: {
             items: [
-              { text: 'Prepare your Portuguese heritage story', textPortuguese: 'Prepare a sua história de herança portuguesa' },
-              { text: 'Research 3 Portuguese business leaders in London', textPortuguese: 'Pesquise 3 líderes empresariais portugueses em Londres' },
-              { text: 'Practice professional introduction in both English and Portuguese', textPortuguese: 'Pratique apresentação profissional em inglês e português' },
-              { text: 'Identify ways you can contribute to the Portuguese business community', textPortuguese: 'Identifique formas de contribuir para a comunidade empresarial portuguesa' }
-            ]
-          }
+              {
+                text: "Prepare your Portuguese heritage story",
+                textPortuguese: "Prepare a sua história de herança portuguesa",
+              },
+              {
+                text: "Research 3 Portuguese business leaders in London",
+                textPortuguese:
+                  "Pesquise 3 líderes empresariais portugueses em Londres",
+              },
+              {
+                text: "Practice professional introduction in both English and Portuguese",
+                textPortuguese:
+                  "Pratique apresentação profissional em inglês e português",
+              },
+              {
+                text: "Identify ways you can contribute to the Portuguese business community",
+                textPortuguese:
+                  "Identifique formas de contribuir para a comunidade empresarial portuguesa",
+              },
+            ],
+          },
         },
         tips: [
-          'Always follow up within 48 hours after meeting someone new',
-          'Connect on LinkedIn with a personalized message referencing your conversation',
-          'Offer specific help or resources rather than generic "let me know if I can help"'
+          "Always follow up within 48 hours after meeting someone new",
+          "Connect on LinkedIn with a personalized message referencing your conversation",
+          'Offer specific help or resources rather than generic "let me know if I can help"',
         ],
         tipsPortuguese: [
-          'Sempre faça seguimento dentro de 48 horas após conhecer alguém novo',
-          'Conecte no LinkedIn com uma mensagem personalizada referenciando a sua conversa',
-          'Ofereça ajuda específica ou recursos em vez de genérico "me diga se posso ajudar"'
-        ]
+          "Sempre faça seguimento dentro de 48 horas após conhecer alguém novo",
+          "Conecte no LinkedIn com uma mensagem personalizada referenciando a sua conversa",
+          'Ofereça ajuda específica ou recursos em vez de genérico "me diga se posso ajudar"',
+        ],
       },
       {
-        id: 'networking-events-strategies',
-        title: 'Mastering Portuguese Business Events',
-        titlePortuguese: 'Dominando Eventos Empresariais Portugueses',
-        type: 'tutorial',
+        id: "networking-events-strategies",
+        title: "Mastering Portuguese Business Events",
+        titlePortuguese: "Dominando Eventos Empresariais Portugueses",
+        type: "tutorial",
         estimatedTime: 5,
         content: `
           <p>Portuguese business events blend professional networking with cultural celebration. Here's how to maximize your impact:</p>
@@ -374,32 +399,47 @@ export default function BusinessNetworkingModule() {
           </ul>
         `,
         interactive: {
-          type: 'checklist',
+          type: "checklist",
           data: {
             items: [
-              { text: 'Research upcoming Portuguese business events in London', textPortuguese: 'Pesquise próximos eventos empresariais portugueses em Londres' },
-              { text: 'Prepare your 30-second elevator pitch in both languages', textPortuguese: 'Prepare o seu pitch de elevador de 30 segundos em ambos os idiomas' },
-              { text: 'Design business cards with Portuguese cultural elements', textPortuguese: 'Desenhe cartões de visita com elementos culturais portugueses' },
-              { text: 'Practice active listening techniques', textPortuguese: 'Pratique técnicas de escuta ativa' }
-            ]
-          }
+              {
+                text: "Research upcoming Portuguese business events in London",
+                textPortuguese:
+                  "Pesquise próximos eventos empresariais portugueses em Londres",
+              },
+              {
+                text: "Prepare your 30-second elevator pitch in both languages",
+                textPortuguese:
+                  "Prepare o seu pitch de elevador de 30 segundos em ambos os idiomas",
+              },
+              {
+                text: "Design business cards with Portuguese cultural elements",
+                textPortuguese:
+                  "Desenhe cartões de visita com elementos culturais portugueses",
+              },
+              {
+                text: "Practice active listening techniques",
+                textPortuguese: "Pratique técnicas de escuta ativa",
+              },
+            ],
+          },
         },
         tips: [
-          'Dress slightly more formally than expected - Portuguese business culture values presentation',
-          'Learn key business phrases in Portuguese even if the event is primarily in English',
-          'Bring small Portuguese gifts (like pastéis de nata) to memorable first meetings'
+          "Dress slightly more formally than expected - Portuguese business culture values presentation",
+          "Learn key business phrases in Portuguese even if the event is primarily in English",
+          "Bring small Portuguese gifts (like pastéis de nata) to memorable first meetings",
         ],
         tipsPortuguese: [
-          'Vista-se ligeiramente mais formal do que esperado - a cultura empresarial portuguesa valoriza a apresentação',
-          'Aprenda frases empresariais chave em português mesmo que o evento seja principalmente em inglês',
-          'Traga pequenos presentes portugueses (como pastéis de nata) para primeiros encontros memoráveis'
-        ]
+          "Vista-se ligeiramente mais formal do que esperado - a cultura empresarial portuguesa valoriza a apresentação",
+          "Aprenda frases empresariais chave em português mesmo que o evento seja principalmente em inglês",
+          "Traga pequenos presentes portugueses (como pastéis de nata) para primeiros encontros memoráveis",
+        ],
       },
       {
-        id: 'leveraging-cultural-heritage',
-        title: 'Leveraging Your Portuguese Heritage in Business',
-        titlePortuguese: 'Aproveitando a Sua Herança Portuguesa nos Negócios',
-        type: 'interactive',
+        id: "leveraging-cultural-heritage",
+        title: "Leveraging Your Portuguese Heritage in Business",
+        titlePortuguese: "Aproveitando a Sua Herança Portuguesa nos Negócios",
+        type: "interactive",
         estimatedTime: 5,
         content: `
           <p>Your Portuguese heritage is a significant business asset in London's diverse market. Here's how to leverage it effectively:</p>
@@ -530,32 +570,48 @@ export default function BusinessNetworkingModule() {
           </ul>
         `,
         interactive: {
-          type: 'checklist',
+          type: "checklist",
           data: {
             items: [
-              { text: 'List your Portuguese cultural strengths and how they apply to business', textPortuguese: 'Liste as suas forças culturais portuguesas e como se aplicam aos negócios' },
-              { text: 'Identify potential Portuguese business partnerships in your industry', textPortuguese: 'Identifique potenciais parcerias empresariais portuguesas na sua indústria' },
-              { text: 'Research Portuguese market opportunities for your business', textPortuguese: 'Pesquise oportunidades de mercado português para o seu negócio' },
-              { text: 'Plan ways to incorporate Portuguese elements into your professional brand', textPortuguese: 'Planeie formas de incorporar elementos portugueses na sua marca profissional' }
-            ]
-          }
+              {
+                text: "List your Portuguese cultural strengths and how they apply to business",
+                textPortuguese:
+                  "Liste as suas forças culturais portuguesas e como se aplicam aos negócios",
+              },
+              {
+                text: "Identify potential Portuguese business partnerships in your industry",
+                textPortuguese:
+                  "Identifique potenciais parcerias empresariais portuguesas na sua indústria",
+              },
+              {
+                text: "Research Portuguese market opportunities for your business",
+                textPortuguese:
+                  "Pesquise oportunidades de mercado português para o seu negócio",
+              },
+              {
+                text: "Plan ways to incorporate Portuguese elements into your professional brand",
+                textPortuguese:
+                  "Planeie formas de incorporar elementos portugueses na sua marca profissional",
+              },
+            ],
+          },
         },
         tips: [
-          'Be proud but not overwhelming about your heritage - let it enhance rather than define your professional identity',
-          'Stay updated on Portuguese economic and cultural news to provide current insights',
-          'Consider obtaining dual citizenship if eligible for enhanced business opportunities'
+          "Be proud but not overwhelming about your heritage - let it enhance rather than define your professional identity",
+          "Stay updated on Portuguese economic and cultural news to provide current insights",
+          "Consider obtaining dual citizenship if eligible for enhanced business opportunities",
         ],
         tipsPortuguese: [
-          'Seja orgulhoso mas não avassalador sobre a sua herança - deixe-a melhorar em vez de definir a sua identidade profissional',
-          'Mantenha-se atualizado sobre notícias económicas e culturais portuguesas para fornecer insights atuais',
-          'Considere obter dupla cidadania se elegível para oportunidades empresariais melhoradas'
-        ]
+          "Seja orgulhoso mas não avassalador sobre a sua herança - deixe-a melhorar em vez de definir a sua identidade profissional",
+          "Mantenha-se atualizado sobre notícias económicas e culturais portuguesas para fornecer insights atuais",
+          "Considere obter dupla cidadania se elegível para oportunidades empresariais melhoradas",
+        ],
       },
       {
-        id: 'digital-networking-and-follow-up',
-        title: 'Digital Networking and Relationship Maintenance',
-        titlePortuguese: 'Networking Digital e Manutenção de Relacionamentos',
-        type: 'tutorial',
+        id: "digital-networking-and-follow-up",
+        title: "Digital Networking and Relationship Maintenance",
+        titlePortuguese: "Networking Digital e Manutenção de Relacionamentos",
+        type: "tutorial",
         estimatedTime: 5,
         content: `
           <p>In today's hybrid business environment, digital networking is essential for maintaining and growing your Portuguese professional network.</p>
@@ -754,57 +810,73 @@ export default function BusinessNetworkingModule() {
           </ul>
         `,
         interactive: {
-          type: 'checklist',
+          type: "checklist",
           data: {
             items: [
-              { text: 'Optimize your LinkedIn profile with Portuguese business elements', textPortuguese: 'Otimize o seu perfil LinkedIn com elementos empresariais portugueses' },
-              { text: 'Join 3 Portuguese business WhatsApp or LinkedIn groups', textPortuguese: 'Junte-se a 3 grupos empresariais portugueses no WhatsApp ou LinkedIn' },
-              { text: 'Create a contact management system for follow-ups', textPortuguese: 'Crie um sistema de gestão de contactos para seguimentos' },
-              { text: 'Schedule monthly relationship review in your calendar', textPortuguese: 'Agende revisão mensal de relacionamentos no seu calendário' }
-            ]
-          }
+              {
+                text: "Optimize your LinkedIn profile with Portuguese business elements",
+                textPortuguese:
+                  "Otimize o seu perfil LinkedIn com elementos empresariais portugueses",
+              },
+              {
+                text: "Join 3 Portuguese business WhatsApp or LinkedIn groups",
+                textPortuguese:
+                  "Junte-se a 3 grupos empresariais portugueses no WhatsApp ou LinkedIn",
+              },
+              {
+                text: "Create a contact management system for follow-ups",
+                textPortuguese:
+                  "Crie um sistema de gestão de contactos para seguimentos",
+              },
+              {
+                text: "Schedule monthly relationship review in your calendar",
+                textPortuguese:
+                  "Agende revisão mensal de relacionamentos no seu calendário",
+              },
+            ],
+          },
         },
         warnings: [
-          'Never add people to WhatsApp groups without permission',
-          'Avoid over-posting on professional platforms - quality over quantity',
-          'Respect privacy settings and professional boundaries',
-          "Don't mix personal and business communication unless appropriate"
+          "Never add people to WhatsApp groups without permission",
+          "Avoid over-posting on professional platforms - quality over quantity",
+          "Respect privacy settings and professional boundaries",
+          "Don't mix personal and business communication unless appropriate",
         ],
         warningsPortuguese: [
-          'Nunca adicione pessoas a grupos WhatsApp sem permissão',
-          'Evite postar demais em plataformas profissionais - qualidade sobre quantidade',
-          'Respeite configurações de privacidade e limites profissionais',
-          'Não misture comunicação pessoal e empresarial a menos que apropriado'
-        ]
-      }
+          "Nunca adicione pessoas a grupos WhatsApp sem permissão",
+          "Evite postar demais em plataformas profissionais - qualidade sobre quantidade",
+          "Respeite configurações de privacidade e limites profissionais",
+          "Não misture comunicação pessoal e empresarial a menos que apropriado",
+        ],
+      },
     ],
     practicalExercises: [],
     resources: [
       {
-        title: 'Portuguese Chamber of Commerce UK Events',
-        titlePortuguese: 'Eventos da Câmara de Comércio Portuguesa Reino Unido',
-        url: '/business-networking/chamber-events',
-        type: 'external'
+        title: "Portuguese Chamber of Commerce UK Events",
+        titlePortuguese: "Eventos da Câmara de Comércio Portuguesa Reino Unido",
+        url: "/business-networking/chamber-events",
+        type: "external",
       },
       {
-        title: 'Business Networking Email Templates',
-        titlePortuguese: 'Modelos de Email para Networking Empresarial',
-        url: '/downloads/business-networking-templates.pdf',
-        type: 'download'
+        title: "Business Networking Email Templates",
+        titlePortuguese: "Modelos de Email para Networking Empresarial",
+        url: "/downloads/business-networking-templates.pdf",
+        type: "download",
       },
       {
-        title: 'Portuguese Business Etiquette Guide',
-        titlePortuguese: 'Guia de Etiqueta Empresarial Portuguesa',
-        url: '/guides/portuguese-business-etiquette',
-        type: 'guide'
+        title: "Portuguese Business Etiquette Guide",
+        titlePortuguese: "Guia de Etiqueta Empresarial Portuguesa",
+        url: "/guides/portuguese-business-etiquette",
+        type: "guide",
       },
       {
-        title: 'LinkedIn Optimization Checklist',
-        titlePortuguese: 'Lista de Verificação de Otimização LinkedIn',
-        url: '/downloads/linkedin-optimization-checklist.pdf',
-        type: 'download'
-      }
-    ]
+        title: "LinkedIn Optimization Checklist",
+        titlePortuguese: "Lista de Verificação de Otimização LinkedIn",
+        url: "/downloads/linkedin-optimization-checklist.pdf",
+        type: "download",
+      },
+    ],
   };
 
   return (

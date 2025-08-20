@@ -19,6 +19,7 @@ import {
 import { Crown, Shield, Car, Users, Award, TrendingUp } from 'lucide-react'
 import Footer from '@/components/Footer'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config/routes'
 import ServiceCard from '@/components/ServiceCard'
 import TrustBadges from '@/components/TrustBadges'
 import ServiceIntegration from '@/components/ServiceIntegration'
@@ -176,7 +177,7 @@ export default function ServicesPage() {
   const handleBookService = (serviceId: string) => {
     // Redirect to dedicated close protection page
     if (serviceId === 'close-protection') {
-      window.location.href = '/services/close-protection'
+      window.location.href = `${ROUTES.services}/close-protection`
       return
     }
 
@@ -190,7 +191,7 @@ export default function ServicesPage() {
 
     setSelectedService(serviceId)
     // Navigate to booking flow
-    window.location.href = `/services/${serviceId}/booking`
+  window.location.href = `${ROUTES.services}/${serviceId}/booking`
   }
 
   const handleCloseSubscriptionGate = () => {
@@ -529,7 +530,7 @@ export default function ServicesPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.location.href = '/contact'}
+                onClick={() => window.location.href = ROUTES.contact}
                 className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-primary-600 transition-all duration-200"
               >
                 {isPortuguese ? 'Falar Conosco' : 'Contact Us'}

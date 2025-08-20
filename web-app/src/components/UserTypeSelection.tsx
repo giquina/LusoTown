@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { PlayCircleIcon, HeartIcon, WrenchScrewdriverIcon, CalendarDaysIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config/routes'
 
 export default function UserTypeSelection() {
   const [showModal, setShowModal] = useState(false)
@@ -78,7 +79,7 @@ export default function UserTypeSelection() {
           title: 'Portuguese Events', 
           desc: 'Discover authentic fado nights, Santos Populares, football screenings, business networking & cultural celebrations across London', 
           cta: 'Browse Events', 
-          href: '/events', 
+          href: ROUTES.events, 
           icon: CalendarDaysIcon, 
           color: 'from-primary-600 via-secondary-600 to-action-600',
           benefit: '150+ monthly events',
@@ -125,7 +126,7 @@ export default function UserTypeSelection() {
           title: 'Eventos Portugueses', 
           desc: 'Descobre noites de fado autênticas, Santos Populares, jogos de futebol, networking de negócios e celebrações culturais por Londres', 
           cta: 'Ver Eventos', 
-          href: '/events', 
+          href: ROUTES.events, 
           icon: CalendarDaysIcon, 
           color: 'from-primary-600 via-secondary-600 to-action-600',
           benefit: '150+ eventos mensais',
@@ -170,7 +171,7 @@ export default function UserTypeSelection() {
           onClick={closeAndRemember}
         >
           {/* Mobile Layout */}
-          <div className="block sm:hidden flex items-center justify-center min-h-full p-4">
+          <div className="sm:hidden flex items-center justify-center min-h-full p-4">
             <motion.div
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}

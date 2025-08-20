@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { ROUTES } from '@/config/routes'
 import { motion } from 'framer-motion'
 import {
   CalendarIcon,
@@ -145,7 +146,7 @@ export default function CreateEventPage() {
       
       if (newEvent) {
         // Redirect to the new event page
-        router.push(`/events/${newEvent.id}`)
+  router.push(`${ROUTES.events}/${newEvent.id}`)
       } else {
         throw new Error('Failed to create event')
       }

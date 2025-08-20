@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic'
 import Hero from '@/components/Hero'
 import Features from '@/components/Features'
 import Footer from '@/components/Footer'
+import { ROUTES } from '@/config/routes'
 
 // Lazy load components with loading placeholders for better performance
 const HowItWorks = dynamic(() => import('@/components/HowItWorks'))
@@ -165,7 +166,7 @@ export default function Home() {
                           {t('what-you-can-do.events.locations')}
                         </div>
                         <a 
-                          href="/events" 
+                          href={ROUTES.events} 
                           className="inline-flex items-center gap-2 text-secondary-600 font-semibold hover:text-secondary-700 transition-colors group-hover:gap-3 duration-300 text-base lg:text-lg"
                           aria-describedby="events-description"
                         >
@@ -194,13 +195,13 @@ export default function Home() {
                         <div className="text-sm lg:text-base text-gray-500 mb-3 lg:mb-4 font-medium break-words">
                           {t('what-you-can-do.groups.examples')}
                         </div>
-                        <a 
-                          href="/groups/create" 
-                          className="inline-flex items-center gap-2 text-accent-600 font-semibold hover:text-accent-700 transition-colors group-hover:gap-3 duration-300 text-base lg:text-lg"
-                        >
-                          {t('what-you-can-do.groups.cta')}
-                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                        </a>
+                          <a 
+                            href={`${ROUTES.groups}/create`} 
+                            className="inline-flex items-center gap-2 text-accent-600 font-semibold hover:text-accent-700 transition-colors group-hover:gap-3 duration-300 text-base lg:text-lg"
+                          >
+                            {t('what-you-can-do.groups.cta')}
+                            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                          </a>
                       </div>
                     </div>
                   </div>
@@ -224,7 +225,7 @@ export default function Home() {
                           {t('what-you-can-do.feed.features')}
                         </div>
                         <a 
-                          href="/feed" 
+                          href={ROUTES.feed} 
                           className="inline-flex items-center gap-2 text-coral-500 font-semibold hover:text-coral-600 transition-colors group-hover:gap-3 duration-300 text-base lg:text-lg"
                         >
                           {t('what-you-can-do.feed.cta')}
@@ -253,7 +254,7 @@ export default function Home() {
                           {t('what-you-can-do.favorites.types')}
                         </div>
                         <a 
-                          href="/saved" 
+                          href={ROUTES.saved} 
                           className="inline-flex items-center gap-2 text-action-600 font-semibold hover:text-action-700 transition-colors group-hover:gap-3 duration-300 text-base lg:text-lg"
                         >
                           {t('what-you-can-do.favorites.cta')}
@@ -281,13 +282,13 @@ export default function Home() {
                         <div className="text-sm lg:text-base text-gray-500 mb-3 lg:mb-4 font-medium break-words">
                           {t('what-you-can-do.host.examples')}
                         </div>
-                        <a 
-                          href="/host" 
-                          className="inline-flex items-center gap-2 text-premium-600 font-semibold hover:text-premium-700 transition-colors group-hover:gap-3 duration-300 text-base lg:text-lg"
-                        >
-                          {t('what-you-can-do.host.cta')}
-                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                        </a>
+                          <a 
+                            href={ROUTES.host} 
+                            className="inline-flex items-center gap-2 text-premium-600 font-semibold hover:text-premium-700 transition-colors group-hover:gap-3 duration-300 text-base lg:text-lg"
+                          >
+                            {t('what-you-can-do.host.cta')}
+                            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                          </a>
                       </div>
                     </div>
                   </div>
@@ -307,7 +308,7 @@ export default function Home() {
                     </p>
                     <div className="flex flex-row gap-3 sm:gap-4 justify-center">
                       <a
-                        href="/signup"
+                        href={ROUTES.signup}
                         className="group relative text-base sm:text-lg font-bold px-6 sm:px-10 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden flex-1 max-w-[180px] sm:max-w-none"
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-secondary-700 via-action-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -317,7 +318,7 @@ export default function Home() {
                         </span>
                       </a>
                       <a
-                        href="/events"
+                        href={ROUTES.events}
                         className="text-base sm:text-lg font-bold px-6 sm:px-10 py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 hover:bg-white/90 whitespace-nowrap flex-1 max-w-[180px] sm:max-w-none text-center"
                       >
                         Explore Features

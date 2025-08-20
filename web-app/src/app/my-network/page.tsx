@@ -19,6 +19,7 @@ import { CrownIcon } from 'lucide-react'
 import Footer from '@/components/Footer'
 import { useNetworking, ConnectionFilters as ConnectionFiltersType } from '@/context/NetworkingContext'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config/routes'
 
 // Import components we'll create
 import NetworkHeader from '@/components/NetworkHeader'
@@ -244,7 +245,7 @@ export default function MyNetworkPage() {
                     </p>
                     {!searchQuery && (
                       <a 
-                        href="/events" 
+                        href={ROUTES.events} 
                         className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium px-6 py-3 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 shadow-lg"
                       >
                         <CalendarIcon className="w-5 h-5" />

@@ -2,6 +2,7 @@
 
 import { useLanguage } from '@/context/LanguageContext'
 import GroupEventsSection from '@/components/GroupEventsSection'
+import { ROUTES } from '@/config/routes'
 
 export default function GroupEventsPageClient() {
   const { t } = useLanguage()
@@ -12,11 +13,11 @@ export default function GroupEventsPageClient() {
       <div className="bg-gray-50 border-b border-gray-200 py-4">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center space-x-2 text-sm text-gray-600">
-            <a href="/" className="hover:text-primary-600 transition-colors">
+            <a href={ROUTES.home} className="hover:text-primary-600 transition-colors">
               {t('nav.home')}
             </a>
             <span className="text-gray-400">/</span>
-            <a href="/events" className="hover:text-primary-600 transition-colors">
+            <a href={ROUTES.events} className="hover:text-primary-600 transition-colors">
               {t('nav.events')}
             </a>
             <span className="text-gray-400">/</span>
@@ -88,7 +89,7 @@ export default function GroupEventsPageClient() {
                   Have an idea for a Portuguese group experience? We support community members who want to organize events for specific interests, age groups, or activities.
                 </p>
                 <a
-                  href="/groups/create"
+                  href={ROUTES.groupsCreate}
                   className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold px-6 py-3 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                 >
                   <span>Create Group Event</span>

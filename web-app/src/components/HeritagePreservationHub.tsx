@@ -23,6 +23,7 @@ import {
   SpeakerWaveIcon
 } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config/routes'
 
 interface HeritageProject {
   id: string
@@ -578,13 +579,13 @@ export default function HeritagePreservationHub() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <a
-                href="/signup"
+                href={ROUTES.signup}
                 className="bg-white text-primary-600 font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors shadow-lg"
               >
                 {language === 'pt' ? 'Participar Agora' : 'Get Involved'}
               </a>
               <a
-                href="/contact"
+                href={ROUTES.contact}
                 className="border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white hover:text-primary-600 transition-colors"
               >
                 {language === 'pt' ? 'Saber Mais' : 'Learn More'}

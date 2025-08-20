@@ -23,58 +23,59 @@ import SavedItemsButton from "@/components/SavedItemsButton";
 import SearchBar from "@/components/SearchBar";
 import NotificationBell from "@/components/NotificationBell";
 import { useLanguage } from "@/context/LanguageContext";
+import { ROUTES } from '@/config/routes'
 
 const getNavigationLinks = (t: any) => [
-  { name: t("nav.events", "London Events"), href: "/events" },
-  { name: t("nav.london-tours", "London Tours"), href: "/tours" },
-  { name: t("nav.students", "Students"), href: "/students" },
-  { name: t("nav.pricing", "Pricing"), href: "/pricing" },
+  { name: t("nav.events", "London Events"), href: ROUTES.events },
+  { name: t("nav.london-tours", "London Tours"), href: ROUTES.londonTours },
+  { name: t("nav.students", "Students"), href: ROUTES.students },
+  { name: t("nav.pricing", "Pricing"), href: ROUTES.pricing },
 ];
 
 const getAuthenticatedNavigationLinks = (t: any) => [
-  { name: t("nav.events", "London Events"), href: "/events" },
-  { name: t("nav.london-tours", "London Tours"), href: "/tours" },
-  { name: t("nav.students", "Students"), href: "/students" },
-  { name: t("referral.title", "Referrals"), href: "/referrals" },
-  { name: t("nav.pricing", "Pricing"), href: "/pricing" },
+  { name: t("nav.events", "London Events"), href: ROUTES.events },
+  { name: t("nav.london-tours", "London Tours"), href: ROUTES.londonTours },
+  { name: t("nav.students", "Students"), href: ROUTES.students },
+  { name: t("referral.title", "Referrals"), href: ROUTES.referrals },
+  { name: t("nav.pricing", "Pricing"), href: ROUTES.pricing },
 ];
 
 // Navigation dropdown links with professional hierarchy: Contact → Services → Community
 const getMoreDropdownLinks = (t: any) => ({
   contact: [
-    { name: "Contact Us", href: "/contact" },
-    { name: "Help Center", href: "/help" },
-    { name: "Safety & Verification", href: "/safety" },
-    { name: "How It Works", href: "/how-it-works" },
+  { name: "Contact Us", href: ROUTES.contact },
+  { name: "Help Center", href: ROUTES.help },
+  { name: "Safety & Verification", href: ROUTES.safety },
+    { name: "How It Works", href: ROUTES.howItWorks },
   ],
   services: [
-    { name: "Find Your Match", href: "/matches" },
-  { name: "Live TV", href: "/tv" },
-  { name: "Streaming — Stream with us", href: "/live" },
-    { name: "Cultural Tours", href: "/services#cultural-tours" },
-    { name: "Executive Transport", href: "/services#executive-transport" },
-    { name: "London Transport", href: "/transport" },
-    { name: "Close Protection", href: "/services#close-protection" },
+  { name: "Find Your Match", href: ROUTES.matches },
+  { name: "Live TV", href: ROUTES.tv },
+  { name: "Streaming — Stream with us", href: ROUTES.live },
+  { name: "Cultural Tours", href: `${ROUTES.services}#cultural-tours` },
+  { name: "Executive Transport", href: `${ROUTES.services}#executive-transport` },
+  { name: "London Transport", href: ROUTES.transport },
+  { name: "Close Protection", href: `${ROUTES.services}#close-protection` },
   ],
   community: [
-    { name: "Events & Culture", href: "/events" },
-    { name: "Community", href: "/community" },
-    { name: "Business Directory", href: "/directory" },
-    { name: "Become a Host", href: "/host" },
-    { name: "Community Guidelines", href: "/community-guidelines" },
+    { name: "Events & Culture", href: ROUTES.events },
+  { name: "Community", href: ROUTES.community },
+  { name: "Business Directory", href: ROUTES.directory },
+  { name: "Become a Host", href: ROUTES.host },
+  { name: "Community Guidelines", href: ROUTES.communityGuidelines },
   ],
   company: [
-    { name: "About LusoTown", href: "/about" },
-    { name: "Pricing", href: "/pricing" },
-    { name: "Success Stories", href: "/success-stories" },
-    { name: "Case Studies", href: "/case-studies" },
-    { name: "Partnerships", href: "/partnerships" },
-    { name: "Instituto Camões Partnership", href: "/instituto-camoes" },
+  { name: "About LusoTown", href: ROUTES.about },
+    { name: "Pricing", href: ROUTES.pricing },
+  { name: "Success Stories", href: ROUTES.successStories },
+    { name: "Case Studies", href: ROUTES.caseStudies },
+    { name: "Partnerships", href: ROUTES.partnerships },
+  { name: "Instituto Camões Partnership", href: ROUTES.instituteCamoes },
   ],
   legal: [
-    { name: "Privacy Policy", href: "/privacy" },
-    { name: "Terms of Service", href: "/terms" },
-    { name: "Community Safety", href: "/safety" },
+  { name: "Privacy Policy", href: ROUTES.privacy },
+  { name: "Terms of Service", href: ROUTES.terms },
+  { name: "Community Safety", href: ROUTES.safety },
   ],
 });
 
@@ -82,14 +83,14 @@ const getMoreDropdownLinks = (t: any) => ({
 const getFooterOnlyLinks = (t: any) => [
   {
     name: t("footer.housing-assistance", "Housing Assistance"),
-    href: "/housing-assistance",
+    href: ROUTES.housingAssistance,
   },
   {
     name: t("footer.neighborhood-groups", "Neighborhood Groups"),
-    href: "/neighborhood-groups",
+    href: ROUTES.neighborhoodGroups,
   },
-  { name: "Premium Services", href: "/services" },
-  { name: "Community Chat", href: "/forums" },
+  { name: "Premium Services", href: ROUTES.services },
+  { name: "Community Chat", href: ROUTES.forums },
   // Add Cultural Tools and Clothes Protection when those pages exist
 ];
 
@@ -151,7 +152,7 @@ export default function Header() {
         <div className="flex items-center justify-between py-3 sm:py-4 lg:py-5 gap-2 sm:gap-4">
           {/* Logo - Compact design for header */}
           <div className="flex items-center flex-shrink-0">
-            <a href="/" className="flex items-center">
+            <a href={ROUTES.home} className="flex items-center">
               <Logo size="compact" animated />
             </a>
           </div>
@@ -159,7 +160,7 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 ml-4 xl:ml-8">
             {navigationLinks.map((link) => {
-              const isTours = link.href === "/tours";
+              const isTours = link.href === ROUTES.londonTours;
               if (isTours) {
                 return (
                   <div
@@ -180,11 +181,11 @@ export default function Header() {
                           exit={{ opacity: 0, y: -10 }}
                           className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[680px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-6 z-50"
                           style={{
-                            left: '50%',
-                            transform: 'translateX(-50%)',
-                            maxWidth: 'calc(100vw - 2rem)',
-                            marginLeft: 'max(-340px, calc(-50vw + 1rem))',
-                            marginRight: 'max(-340px, calc(-50vw + 1rem))'
+                            left: "50%",
+                            transform: "translateX(-50%)",
+                            maxWidth: "calc(100vw - 2rem)",
+                            marginLeft: "max(-340px, calc(-50vw + 1rem))",
+                            marginRight: "max(-340px, calc(-50vw + 1rem))",
                           }}
                         >
                           <div className="grid grid-cols-2 gap-6 px-6">
@@ -194,8 +195,8 @@ export default function Header() {
                               </h3>
                               <ul className="space-y-2">
                                 <li>
-                                  <a
-                                    href="/tours"
+                  <a
+                    href={ROUTES.londonTours}
                                     className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
                                   >
                                     All London Tours
@@ -203,23 +204,23 @@ export default function Header() {
                                 </li>
                                 <li>
                                   <a
-                                    href="/tours"
+                                    href={ROUTES.londonTours}
                                     className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
                                   >
                                     Tours
                                   </a>
                                 </li>
                                 <li>
-                                  <a
-                                    href="/services#cultural-tours"
+                  <a
+                    href={`${ROUTES.services}#cultural-tours`}
                                     className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
                                   >
                                     Cultural Tours
                                   </a>
                                 </li>
                                 <li>
-                                  <a
-                                    href="/services#executive-transport"
+                  <a
+                    href={`${ROUTES.services}#executive-transport`}
                                     className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
                                   >
                                     Executive Transport
@@ -233,24 +234,24 @@ export default function Header() {
                               </h3>
                               <ul className="space-y-2">
                                 <li>
-                                  <a
-                                    href="/transport"
+                  <a
+                    href={ROUTES.transport}
                                     className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
                                   >
                                     London Transport
                                   </a>
                                 </li>
                                 <li>
-                                  <a
-                                    href="/services#close-protection"
+                  <a
+                    href={`${ROUTES.services}#close-protection`}
                                     className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
                                   >
                                     Close Protection
                                   </a>
                                 </li>
                                 <li>
-                                  <a
-                                    href="/services"
+                  <a
+                    href={ROUTES.services}
                                     className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
                                   >
                                     All Services
@@ -301,11 +302,11 @@ export default function Header() {
                     exit={{ opacity: 0, y: -10 }}
                     className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[1600px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-50"
                     style={{
-                      left: '50%',
-                      transform: 'translateX(-50%)',
-                      maxWidth: 'calc(100vw - 2rem)',
-                      marginLeft: 'max(-800px, calc(-50vw + 1rem))',
-                      marginRight: 'max(-800px, calc(-50vw + 1rem))'
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      maxWidth: "calc(100vw - 2rem)",
+                      marginLeft: "max(-800px, calc(-50vw + 1rem))",
+                      marginRight: "max(-800px, calc(-50vw + 1rem))",
                     }}
                   >
                     <div className="grid grid-cols-4 gap-8 px-8">
@@ -335,7 +336,9 @@ export default function Header() {
                           <div className="space-y-1 text-xs text-gray-600">
                             <div className="flex items-center gap-1.5">
                               <MapPinIcon className="h-3 w-3 flex-shrink-0" />
-                              <span className="whitespace-nowrap">UK Community</span>
+                              <span className="whitespace-nowrap">
+                                UK Community
+                              </span>
                             </div>
                             <div className="flex items-center gap-1.5">
                               <EnvelopeIcon className="h-3 w-3 flex-shrink-0" />
@@ -491,7 +494,7 @@ export default function Header() {
                         <span>My Profile</span>
                       </a>
                       <a
-                        href="/favorites"
+                        href={ROUTES.favorites}
                         className="flex items-center space-x-2 px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 min-h-[44px]"
                         onClick={() => setShowUserMenu(false)}
                       >
@@ -499,7 +502,7 @@ export default function Header() {
                         <span>My Favourites</span>
                       </a>
                       <a
-                        href="/dashboard"
+                        href={ROUTES.dashboard}
                         className="flex items-center space-x-2 px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 min-h-[44px]"
                         onClick={() => setShowUserMenu(false)}
                       >
@@ -508,7 +511,7 @@ export default function Header() {
                       </a>
                       {user.role === "admin" && (
                         <a
-                          href="/admin"
+                          href={ROUTES.admin}
                           className="flex items-center space-x-2 px-4 py-3 text-sm text-premium-700 hover:bg-premium-50 min-h-[44px]"
                           onClick={() => setShowUserMenu(false)}
                         >
@@ -531,14 +534,14 @@ export default function Header() {
             ) : (
               <>
                 <a
-                  href="/login"
+                  href={ROUTES.login}
                   className="text-gray-600 hover:text-primary-600 p-2 rounded-md transition-colors duration-200 h-10 w-10 flex items-center justify-center"
                   title="Login"
                 >
                   <UserIcon className="w-5 h-5" />
                 </a>
                 <a
-                  href="/signup"
+                  href={ROUTES.signup}
                   className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-2 px-4 lg:px-6 rounded-lg shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transform hover:scale-105 transition-all duration-200 whitespace-nowrap h-10 flex items-center text-sm"
                 >
                   <span className="hidden lg:inline">
@@ -620,7 +623,10 @@ export default function Header() {
                             {t("favorites.title", "Saved Items")}
                           </h4>
                           <p className="text-xs text-gray-600 leading-relaxed">
-                            {t("favorites.description", "Access your favorite events, places, and services. Keep track of what interests you most.")}
+                            {t(
+                              "favorites.description",
+                              "Access your favorite events, places, and services. Keep track of what interests you most."
+                            )}
                           </p>
                         </div>
                       </div>
@@ -650,35 +656,35 @@ export default function Header() {
                       Tours & Transport
                     </h3>
                     <a
-                      href="/tours"
+                      href={ROUTES.londonTours}
                       className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       London Tours
                     </a>
                     <a
-                      href="/services#cultural-tours"
+                      href={`${ROUTES.services}#cultural-tours`}
                       className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Cultural Tours
                     </a>
                     <a
-                      href="/services#executive-transport"
+                      href={`${ROUTES.services}#executive-transport`}
                       className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Executive Transport
                     </a>
                     <a
-                      href="/transport"
+                      href={ROUTES.transport}
                       className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       London Transport
                     </a>
                     <a
-                      href="/services#close-protection"
+                      href={`${ROUTES.services}#close-protection`}
                       className="text-gray-700 hover:text-premium-600 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px] flex items-center"
                       onClick={() => setMobileMenuOpen(false)}
                     >
@@ -810,7 +816,7 @@ export default function Header() {
                           <span>My Profile</span>
                         </a>
                         <a
-                          href="/favorites"
+                          href={ROUTES.favorites}
                           className="flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px]"
                           onClick={() => setMobileMenuOpen(false)}
                         >
@@ -819,7 +825,7 @@ export default function Header() {
                         </a>
 
                         <a
-                          href="/dashboard"
+                          href={ROUTES.dashboard}
                           className="flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px]"
                           onClick={() => setMobileMenuOpen(false)}
                         >
@@ -829,7 +835,7 @@ export default function Header() {
 
                         {user.role === "admin" && (
                           <a
-                            href="/admin"
+                            href={ROUTES.admin}
                             className="flex items-center space-x-3 text-premium-600 hover:text-premium-700 hover:bg-premium-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-premium-200 min-h-[44px]"
                             onClick={() => setMobileMenuOpen(false)}
                           >
@@ -852,7 +858,7 @@ export default function Header() {
                     ) : (
                       <>
                         <a
-                          href="/login"
+                          href={ROUTES.login}
                           className="flex items-center space-x-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px]"
                           onClick={() => setMobileMenuOpen(false)}
                         >
@@ -861,7 +867,7 @@ export default function Header() {
                         </a>
                         <div className="mt-4 px-0">
                           <a
-                            href="/signup"
+                            href={ROUTES.signup}
                             className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white font-bold py-4 px-6 rounded-xl shadow-lg hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 hover:shadow-xl transform hover:scale-[1.02] active:scale-95 transition-all duration-200 w-full text-center min-h-[44px] flex items-center justify-center"
                             onClick={() => setMobileMenuOpen(false)}
                           >

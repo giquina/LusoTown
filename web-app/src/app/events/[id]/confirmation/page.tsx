@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
+import { ROUTES } from '@/config/routes'
 import { motion } from 'framer-motion'
 import {
   CheckCircleIcon,
@@ -28,7 +29,7 @@ const BookingConfirmationPage = () => {
   // Only show for the AI Workshop event (ID 4)
   useEffect(() => {
     if (eventId !== '4') {
-      router.push('/events')
+  router.push(ROUTES.events)
     }
   }, [eventId, router])
 
@@ -311,7 +312,7 @@ const BookingConfirmationPage = () => {
                         </button>
 
                         <Link
-                          href="/my-events"
+                          href={ROUTES.myEvents}
                           className="w-full flex items-center gap-3 p-3 bg-purple-50 border border-purple-200 rounded-lg hover:bg-purple-100 transition-colors"
                         >
                           <UserGroupIcon className="w-5 h-5 text-purple-600" />

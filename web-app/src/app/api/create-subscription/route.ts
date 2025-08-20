@@ -3,9 +3,11 @@ import Stripe from 'stripe'
 import { supabase } from '@/lib/supabase'
 
 const getStripe = () => {
-  const key = process.env.STRIPE_SECRET_KEY || 'sk_test_51Demo123456789012345678901234567890Demo'
+  const key = process.env.STRIPE_SECRET_KEY as string
   return new Stripe(key, {
-    apiVersion: '2024-06-20',
+  // Use the SDK's default pinned version to avoid type mismatches
+  // See types in node-stripe SDK for allowed literal values
+  apiVersion: undefined,
   })
 }
 
@@ -90,7 +92,7 @@ export async function POST(request: NextRequest) {
             product_data: {
               name: selectedTier.name,
               description: selectedTier.description,
-              images: ['https://lusotown.vercel.app/lusotown-membership.jpg'],
+              images: [require('@/config/site').absoluteUrl('/lusotown-membership.jpg')],
             },
             unit_amount: selectedTier.price,
             recurring: {

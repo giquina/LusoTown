@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import { ROUTES } from '@/config/routes'
 import { HomeIcon, ArrowLeftIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
 
@@ -38,7 +39,7 @@ export default function NotFound() {
           {/* Action Buttons */}
           <div className="space-y-3">
             <Link
-              href="/"
+              href={ROUTES.home}
               className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-semibold px-6 py-3 rounded-xl hover:from-primary-700 hover:to-secondary-700 transition-all duration-200 shadow-lg hover:shadow-xl"
             >
               <HomeIcon className="w-5 h-5" />
@@ -46,7 +47,7 @@ export default function NotFound() {
             </Link>
 
             <Link
-              href="/events"
+              href={ROUTES.events}
               className="w-full inline-flex items-center justify-center gap-2 bg-white text-gray-700 font-semibold px-6 py-3 rounded-xl border-2 border-gray-200 hover:border-primary-300 hover:text-primary-700 transition-all duration-200"
             >
               <MagnifyingGlassIcon className="w-5 h-5" />
@@ -68,16 +69,16 @@ export default function NotFound() {
               {isPortuguese ? 'Páginas Populares:' : 'Popular Pages:'}
             </p>
             <div className="grid grid-cols-2 gap-3 text-sm">
-              <Link href="/community" className="text-primary-600 hover:text-primary-700 hover:underline">
+              <Link href={ROUTES.community} className="text-primary-600 hover:text-primary-700 hover:underline">
                 {isPortuguese ? 'Comunidade' : 'Community'}
               </Link>
-              <Link href="/groups" className="text-primary-600 hover:text-primary-700 hover:underline">
+              <Link href={ROUTES.groups} className="text-primary-600 hover:text-primary-700 hover:underline">
                 {isPortuguese ? 'Grupos' : 'Groups'}
               </Link>
-              <Link href="/london-tours" className="text-primary-600 hover:text-primary-700 hover:underline">
+              <Link href={ROUTES.londonTours} className="text-primary-600 hover:text-primary-700 hover:underline">
                 {isPortuguese ? 'Tours Londres' : 'London Tours'}
               </Link>
-              <Link href="/contact" className="text-primary-600 hover:text-primary-700 hover:underline">
+              <Link href={ROUTES.contact} className="text-primary-600 hover:text-primary-700 hover:underline">
                 {isPortuguese ? 'Contato' : 'Contact'}
               </Link>
             </div>

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { MapPinIcon, ShieldCheckIcon, StarIcon, CameraIcon } from '@heroicons/react/24/outline'
 import { CheckCircleIcon, Crown, Users } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config/routes'
 
 interface CustomToursSectionProps {
   onBookTour?: (tourId: string) => void
@@ -80,8 +81,8 @@ export default function CustomToursSection({ onBookTour, showHeader = true }: Cu
     if (onBookTour) {
       onBookTour('custom-tour')
     } else {
-      // Redirect to transport page
-      window.location.href = '/transport'
+  // Redirect to transport page
+  window.location.href = ROUTES.transport
     }
   }
 

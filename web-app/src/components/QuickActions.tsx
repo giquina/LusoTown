@@ -3,6 +3,7 @@
 import React from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { useRouter } from 'next/navigation'
+import { ROUTES } from '@/config/routes'
 import { Calendar, Users, Car, Home, UserPlus, MessageSquare, Plus, ArrowRight } from 'lucide-react'
 
 interface QuickActionsProps {
@@ -20,7 +21,7 @@ export default function QuickActions({ onTabChange }: QuickActionsProps) {
       description: language === 'pt' ? 'Descubra eventos locais' : 'Discover local events',
       icon: <Calendar className="w-5 h-5" />,
       color: 'bg-primary-500 hover:bg-primary-600',
-      action: () => router.push('/events')
+  action: () => router.push(ROUTES.events)
     }
   ]
 

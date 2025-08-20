@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { authService, User } from '@/lib/auth'
 import { useRouter } from 'next/navigation'
+import { ROUTES } from '@/config/routes'
 import { useLanguage } from '@/context/LanguageContext'
 import { usePlatformIntegration } from '@/context/PlatformIntegrationContext'
 import { useNetworking } from '@/context/NetworkingContext'
@@ -422,7 +423,7 @@ export default function Dashboard() {
                         <p>• {language === 'pt' ? 'Tours culturais portugueses' : 'Portuguese cultural tours'}</p>
                       </div>
                       <button 
-                        onClick={() => router.push('/transport')}
+                        onClick={() => router.push(ROUTES.transport)}
                         className="w-full px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors"
                       >
                         {language === 'pt' ? 'Reservar Transporte' : 'Book Transport'}

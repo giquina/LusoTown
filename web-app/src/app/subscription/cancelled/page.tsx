@@ -11,6 +11,7 @@ import {
   HeartIcon,
   QuestionMarkCircleIcon
 } from '@heroicons/react/24/outline'
+import { ROUTES } from '@/config/routes'
 
 export default function SubscriptionCancelledPage() {
   const { language, t } = useLanguage()
@@ -182,14 +183,14 @@ export default function SubscriptionCancelledPage() {
                   }
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  <a
-                    href="/events"
+                    <a
+                      href={ROUTES.events}
                     className="text-sm text-primary-600 hover:text-primary-700 font-medium underline"
                   >
                     {isPortuguese ? 'Ver Eventos Próximos' : 'View Upcoming Events'}
                   </a>
-                  <a
-                    href="/contact"
+                    <a
+                      href={ROUTES.contact}
                     className="text-sm text-primary-600 hover:text-primary-700 font-medium underline"
                   >
                     {isPortuguese ? 'Falar com a Equipa' : 'Talk to Our Team'}

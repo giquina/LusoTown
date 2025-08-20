@@ -19,6 +19,7 @@ import {
   CheckCircleIcon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { ROUTES } from "@/config/routes";
 import EventImageWithFallback from "@/components/EventImageWithFallback";
 import WaitingListModal from "@/components/WaitingListModal";
 import { useWaitingList } from "@/context/WaitingListContext";
@@ -263,7 +264,6 @@ const EventsShowcase = memo(() => {
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="inline-flex items-center bg-gradient-to-r from-primary-100 to-secondary-100 rounded-full px-6 py-3 mb-6"
           >
@@ -459,7 +459,7 @@ const EventsShowcase = memo(() => {
                   {event.status === "available" ? (
                     <>
                       <a
-                        href={`/events/${event.id}/book`}
+                        href={`${ROUTES.events}/${event.id}/book`}
                         className="w-full bg-gradient-to-r from-secondary-500 via-secondary-600 to-secondary-700 text-white font-semibold py-4 rounded-2xl hover:from-secondary-600 hover:via-secondary-700 hover:to-secondary-800 transition-all duration-300 group-hover:scale-105 text-center shadow-xl hover:shadow-2xl animate-pulse min-h-[44px] flex items-center justify-center"
                       >
                         Book Now - {formatPrice(event.price)}
@@ -760,14 +760,14 @@ const EventsShowcase = memo(() => {
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <Link
-                  href="/events"
+                  href={ROUTES.events}
                   className="inline-flex items-center bg-white text-secondary-600 font-bold px-10 py-4 rounded-2xl hover:bg-gray-50 transition-all duration-300 group shadow-xl hover:shadow-2xl min-h-[44px]"
                 >
                   {language === "pt" ? "Ver Eventos" : "View Events"}
                   <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 <Link
-                  href="/signup"
+                  href={ROUTES.signup}
                   className="inline-flex items-center border-2 border-white text-white font-bold px-10 py-4 rounded-2xl hover:bg-white hover:text-secondary-600 transition-all duration-300 shadow-xl hover:shadow-2xl min-h-[44px]"
                 >
                   {language === "pt" ? "Juntar-se Agora" : "Join Now"}

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { ROUTES } from '@/config/routes'
 import { 
   UsersIcon, 
   MapPinIcon, 
@@ -323,7 +324,7 @@ export default function GroupsPage() {
             transition={{ delay: 0.3 }}
           >
             <Link
-              href="/groups/create"
+              href={ROUTES.groupsCreate}
               className="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
             >
               <PlusIcon className="w-5 h-5 mr-2" />
@@ -439,7 +440,7 @@ export default function GroupsPage() {
               Try adjusting your search criteria or create a new group.
             </p>
             <Link
-              href="/groups/create"
+              href={ROUTES.groupsCreate}
               className="inline-flex items-center px-6 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
             >
               <PlusIcon className="w-5 h-5 mr-2" />

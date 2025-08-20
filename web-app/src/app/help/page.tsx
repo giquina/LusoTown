@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { ROUTES } from "@/config/routes";
 import Footer from "@/components/Footer";
 import { plans, formatPrice } from "@/config/pricing";
-import { contactInfo } from '@/config/contact';
+import { contactInfo } from "@/config/contact";
 import {
   QuestionMarkCircleIcon,
   ChatBubbleLeftRightIcon,
@@ -94,8 +95,7 @@ export default function HelpCenter() {
         },
         {
           question: "How do I report concerning behavior?",
-          answer:
-            `Use the report button on any profile or message, or email ${contactInfo.safety}. We investigate all reports within 24 hours and take appropriate action to maintain community safety.`,
+          answer: `Use the report button on any profile or message, or email ${contactInfo.safety}. We investigate all reports within 24 hours and take appropriate action to maintain community safety.`,
         },
         {
           question: "Can I block or remove someone?",
@@ -461,7 +461,7 @@ export default function HelpCenter() {
                     safe, supportive environment.
                   </p>
                   <a
-                    href="/community"
+                    href={ROUTES.community}
                     className="text-primary-600 hover:underline font-medium"
                   >
                     Read Guidelines →
@@ -478,7 +478,7 @@ export default function HelpCenter() {
                     stay safe while making connections.
                   </p>
                   <a
-                    href="/safety"
+                    href={ROUTES.safety}
                     className="text-secondary-600 hover:underline font-medium"
                   >
                     Visit Safety Center →
@@ -495,7 +495,7 @@ export default function HelpCenter() {
                     through LusoTown.
                   </p>
                   <a
-                    href="/success-stories"
+                    href={ROUTES.successStories}
                     className="text-purple-600 hover:underline font-medium"
                   >
                     Read Stories →
@@ -526,7 +526,7 @@ export default function HelpCenter() {
                   Email Support
                 </a>
                 <a
-                  href="/contact"
+                  href={ROUTES.contact}
                   className="bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 font-semibold px-8 py-4 rounded-xl transition-colors duration-200 flex items-center justify-center"
                 >
                   <ChatBubbleLeftRightIcon className="w-5 h-5 mr-2" />

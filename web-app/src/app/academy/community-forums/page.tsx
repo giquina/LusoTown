@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-import { 
+import {
   ChatBubbleLeftRightIcon,
   UserGroupIcon,
   ShieldCheckIcon,
@@ -14,21 +14,25 @@ import {
   BellIcon,
   StarIcon,
   EyeIcon,
-  HandRaisedIcon
+  HandRaisedIcon,
 } from "@heroicons/react/24/outline";
-import LearningModuleFramework, { LearningModule } from "../../../components/academy/LearningModuleFramework";
+import LearningModuleFramework, {
+  LearningModule,
+} from "../../../components/academy/LearningModuleFramework";
 // Local page uses component-defined LearningModule type
 
 const communityForumsModule = {
-  id: 'community-forums',
-  title: 'Community Forums',
-  titlePortuguese: 'Fóruns da Comunidade',
-  description: 'Navigate and contribute to Portuguese community discussions with confidence and cultural awareness',
-  descriptionPortuguese: 'Navegue e contribua para discussões da comunidade portuguesa com confiança e consciência cultural',
-  difficulty: 'Beginner',
+  id: "community-forums",
+  title: "Community Forums",
+  titlePortuguese: "Fóruns da Comunidade",
+  description:
+    "Navigate and contribute to Portuguese community discussions with confidence and cultural awareness",
+  descriptionPortuguese:
+    "Navegue e contribua para discussões da comunidade portuguesa com confiança e consciência cultural",
+  difficulty: "Beginner",
   estimatedTime: 22,
-  category: 'community',
-  categoryPortuguese: 'comunidade',
+  category: "community",
+  categoryPortuguese: "comunidade",
   icon: ChatBubbleLeftRightIcon,
   prerequisites: [],
   prerequisitesPortuguese: [],
@@ -38,9 +42,9 @@ const communityForumsModule = {
   resources: [],
   steps: [
     {
-      id: 'forum-navigation',
-      title: 'Understanding LusoTown Forums',
-      titlePortuguese: 'Compreender os Fóruns da LusoTown',
+      id: "forum-navigation",
+      title: "Understanding LusoTown Forums",
+      titlePortuguese: "Compreender os Fóruns da LusoTown",
       content: `
         <p>LusoTown's community forums are the heart of our Portuguese-speaking community in London. Learn how to navigate, search, and participate in meaningful discussions that celebrate our shared heritage while respecting diverse perspectives.</p>
         
@@ -187,34 +191,37 @@ const communityForumsModule = {
       estimatedTime: 6,
       interactiveElements: [
         {
-          type: 'checklist',
-          title: 'Forum Navigation Checklist',
-          titlePortuguese: 'Lista de Verificação de Navegação do Fórum',
+          type: "checklist",
+          title: "Forum Navigation Checklist",
+          titlePortuguese: "Lista de Verificação de Navegação do Fórum",
           items: [
-            { 
-              text: 'Explore all four main forum categories',
-              textPortuguese: 'Explorar todas as quatro categorias principais do fórum'
+            {
+              text: "Explore all four main forum categories",
+              textPortuguese:
+                "Explorar todas as quatro categorias principais do fórum",
             },
-            { 
-              text: 'Set up notification preferences for relevant topics',
-              textPortuguese: 'Configurar preferências de notificação para tópicos relevantes'
+            {
+              text: "Set up notification preferences for relevant topics",
+              textPortuguese:
+                "Configurar preferências de notificação para tópicos relevantes",
             },
-            { 
+            {
               text: 'Introduce yourself in the "New Members" section',
-              textPortuguese: 'Apresentar-se na secção "Novos Membros"'
+              textPortuguese: 'Apresentar-se na secção "Novos Membros"',
             },
-            { 
-              text: 'Practice using search and tag filtering features',
-              textPortuguese: 'Praticar o uso de pesquisa e funcionalidades de filtragem por tags'
-            }
-          ]
-        }
-      ]
+            {
+              text: "Practice using search and tag filtering features",
+              textPortuguese:
+                "Praticar o uso de pesquisa e funcionalidades de filtragem por tags",
+            },
+          ],
+        },
+      ],
     },
     {
-      id: 'posting-guidelines',
-      title: 'Community Posting Guidelines',
-      titlePortuguese: 'Diretrizes de Publicação da Comunidade',
+      id: "posting-guidelines",
+      title: "Community Posting Guidelines",
+      titlePortuguese: "Diretrizes de Publicação da Comunidade",
       content: `
         <p>Create meaningful, respectful posts that contribute to our vibrant Portuguese community. Learn the cultural norms and best practices that make LusoTown forums a welcoming space for all Portuguese speakers.</p>
         
@@ -343,38 +350,44 @@ const communityForumsModule = {
       estimatedTime: 7,
       interactiveElements: [
         {
-          type: 'decision-tree',
-          title: 'Choose Your Post Type',
-          titlePortuguese: 'Escolha o Seu Tipo de Publicação',
-          question: 'What type of post do you want to create?',
-          questionPortuguese: 'Que tipo de publicação quer criar?',
+          type: "decision-tree",
+          title: "Choose Your Post Type",
+          titlePortuguese: "Escolha o Seu Tipo de Publicação",
+          question: "What type of post do you want to create?",
+          questionPortuguese: "Que tipo de publicação quer criar?",
           options: [
             {
-              text: 'Asking for help or recommendations',
-              textPortuguese: 'Pedir ajuda ou recomendações',
-              result: 'Use clear subject line, provide location/context, and ask specific questions. End with gratitude.',
-              resultPortuguese: 'Use linha de assunto clara, forneça localização/contexto, e faça perguntas específicas. Termine com gratidão.'
+              text: "Asking for help or recommendations",
+              textPortuguese: "Pedir ajuda ou recomendações",
+              result:
+                "Use clear subject line, provide location/context, and ask specific questions. End with gratitude.",
+              resultPortuguese:
+                "Use linha de assunto clara, forneça localização/contexto, e faça perguntas específicas. Termine com gratidão.",
             },
             {
-              text: 'Sharing an experience or recommendation',
-              textPortuguese: 'Partilhar uma experiência ou recomendação',
-              result: 'Start with location/context, share detailed experience, and invite others to ask questions.',
-              resultPortuguese: 'Comece com localização/contexto, partilhe experiência detalhada, e convide outros a fazer perguntas.'
+              text: "Sharing an experience or recommendation",
+              textPortuguese: "Partilhar uma experiência ou recomendação",
+              result:
+                "Start with location/context, share detailed experience, and invite others to ask questions.",
+              resultPortuguese:
+                "Comece com localização/contexto, partilhe experiência detalhada, e convide outros a fazer perguntas.",
             },
             {
-              text: 'Organizing a meetup or event',
-              textPortuguese: 'Organizar um encontro ou evento',
-              result: 'Include clear date, time, location, and how to RSVP. Explain the Portuguese cultural element.',
-              resultPortuguese: 'Inclua data, hora, localização clara, e como confirmar presença. Explique o elemento cultural português.'
-            }
-          ]
-        }
-      ]
+              text: "Organizing a meetup or event",
+              textPortuguese: "Organizar um encontro ou evento",
+              result:
+                "Include clear date, time, location, and how to RSVP. Explain the Portuguese cultural element.",
+              resultPortuguese:
+                "Inclua data, hora, localização clara, e como confirmar presença. Explique o elemento cultural português.",
+            },
+          ],
+        },
+      ],
     },
     {
-      id: 'community-safety',
-      title: 'Safety & Moderation Standards',
-      titlePortuguese: 'Segurança e Padrões de Moderação',
+      id: "community-safety",
+      title: "Safety & Moderation Standards",
+      titlePortuguese: "Segurança e Padrões de Moderação",
       content: `
         <p>LusoTown forums maintain high safety standards while preserving the warmth and openness of Portuguese community culture. Learn how our moderation works and how to contribute to a safe, welcoming environment.</p>
         
@@ -541,38 +554,39 @@ const communityForumsModule = {
       estimatedTime: 5,
       interactiveElements: [
         {
-          type: 'checklist',
-          title: 'Safety Practices Checklist',
-          titlePortuguese: 'Lista de Verificação de Práticas de Segurança',
+          type: "checklist",
+          title: "Safety Practices Checklist",
+          titlePortuguese: "Lista de Verificação de Práticas de Segurança",
           items: [
-            { 
-              text: 'Review and understand community guidelines',
-              textPortuguese: 'Rever e compreender diretrizes da comunidade'
+            {
+              text: "Review and understand community guidelines",
+              textPortuguese: "Rever e compreender diretrizes da comunidade",
             },
-            { 
-              text: 'Set privacy preferences for your profile',
-              textPortuguese: 'Configurar preferências de privacidade para o seu perfil'
+            {
+              text: "Set privacy preferences for your profile",
+              textPortuguese:
+                "Configurar preferências de privacidade para o seu perfil",
             },
-            { 
-              text: 'Learn how to report inappropriate content',
-              textPortuguese: 'Aprender como reportar conteúdo inadequado'
+            {
+              text: "Learn how to report inappropriate content",
+              textPortuguese: "Aprender como reportar conteúdo inadequado",
             },
-            { 
-              text: 'Practice positive community engagement',
-              textPortuguese: 'Praticar envolvimento comunitário positivo'
+            {
+              text: "Practice positive community engagement",
+              textPortuguese: "Praticar envolvimento comunitário positivo",
             },
-            { 
-              text: 'Save emergency contact information',
-              textPortuguese: 'Guardar informações de contacto de emergência'
-            }
-          ]
-        }
-      ]
+            {
+              text: "Save emergency contact information",
+              textPortuguese: "Guardar informações de contacto de emergência",
+            },
+          ],
+        },
+      ],
     },
     {
-      id: 'engagement-mastery',
-      title: 'Building Meaningful Connections',
-      titlePortuguese: 'Construir Conexões Significativas',
+      id: "engagement-mastery",
+      title: "Building Meaningful Connections",
+      titlePortuguese: "Construir Conexões Significativas",
       content: `
         <p>Master the art of forum engagement to build lasting relationships within the Portuguese community. Learn advanced techniques for meaningful participation that leads to real friendships and professional opportunities.</p>
         
@@ -745,40 +759,48 @@ const communityForumsModule = {
       estimatedTime: 4,
       interactiveElements: [
         {
-          type: 'checklist',
-          title: 'Community Leadership Checklist',
-          titlePortuguese: 'Lista de Verificação de Liderança Comunitária',
+          type: "checklist",
+          title: "Community Leadership Checklist",
+          titlePortuguese: "Lista de Verificação de Liderança Comunitária",
           items: [
-            { 
-              text: 'Welcome and help at least 3 new community members each month',
-              textPortuguese: 'Receber e ajudar pelo menos 3 novos membros da comunidade a cada mês'
+            {
+              text: "Welcome and help at least 3 new community members each month",
+              textPortuguese:
+                "Receber e ajudar pelo menos 3 novos membros da comunidade a cada mês",
             },
-            { 
-              text: 'Share your professional expertise and local knowledge regularly',
-              textPortuguese: 'Partilhar a sua expertise profissional e conhecimento local regularmente'
+            {
+              text: "Share your professional expertise and local knowledge regularly",
+              textPortuguese:
+                "Partilhar a sua expertise profissional e conhecimento local regularmente",
             },
-            { 
-              text: 'Organize or participate in offline community meetups',
-              textPortuguese: 'Organizar ou participar em encontros comunitários offline'
+            {
+              text: "Organize or participate in offline community meetups",
+              textPortuguese:
+                "Organizar ou participar em encontros comunitários offline",
             },
-            { 
-              text: 'Connect members with similar interests or needs',
-              textPortuguese: 'Conectar membros com interesses ou necessidades similares'
+            {
+              text: "Connect members with similar interests or needs",
+              textPortuguese:
+                "Conectar membros com interesses ou necessidades similares",
             },
-            { 
-              text: 'Contribute to community resources and FAQ development',
-              textPortuguese: 'Contribuir para recursos comunitários e desenvolvimento de FAQ'
-            }
-          ]
-        }
-      ]
-    }
-  ]
+            {
+              text: "Contribute to community resources and FAQ development",
+              textPortuguese:
+                "Contribuir para recursos comunitários e desenvolvimento de FAQ",
+            },
+          ],
+        },
+      ],
+    },
+  ],
 };
 
 export default function CommunityForumsPage() {
   const [completed, setCompleted] = useState<string[]>([]);
-  const handleStep = (id: string) => setCompleted((prev: string[]) => prev.includes(id) ? prev : [...prev, id]);
+  const handleStep = (id: string) =>
+    setCompleted((prev: string[]) =>
+      prev.includes(id) ? prev : [...prev, id]
+    );
   const handleComplete = () => {};
   return (
     <LearningModuleFramework

@@ -18,6 +18,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
 import { useRouter } from 'next/navigation'
+import { ROUTES } from '@/config/routes'
 import { Event } from '@/lib/events'
 import { searchEvents, searchContent, SearchResult } from '@/lib/search'
 
@@ -102,7 +103,7 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
 
   const handleSuggestionClick = (suggestion: SearchResult) => {
     if (suggestion.type === 'event') {
-      router.push(`/events/${suggestion.id}`)
+  router.push(`${ROUTES.events}/${suggestion.id}`)
     } else {
       router.push(suggestion.url)
     }

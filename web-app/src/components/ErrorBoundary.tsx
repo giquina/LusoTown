@@ -3,6 +3,7 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react'
 import { ExclamationTriangleIcon, HomeIcon, ArrowPathIcon } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config/routes'
 
 interface Props {
   children: ReactNode
@@ -101,7 +102,7 @@ class ErrorBoundary extends Component<Props, State> {
                   </button>
                   
                   <button
-                    onClick={() => window.location.href = '/'}
+                    onClick={() => window.location.href = ROUTES.home}
                     className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors"
                   >
                     <HomeIcon className="w-4 h-4 mr-2" />

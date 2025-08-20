@@ -329,7 +329,7 @@ class ReferralService {
 
   // Generate share links and messages
   generateShareData(code: string, language: 'en' | 'pt' = 'en') {
-    const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://lusotown.com'
+  const baseUrl = typeof window !== 'undefined' ? window.location.origin : (process.env.NEXT_PUBLIC_SITE_URL || require('@/config/site').SITE_URL)
     const referralUrl = `${baseUrl}/signup?ref=${code}`
     
     const messages = {

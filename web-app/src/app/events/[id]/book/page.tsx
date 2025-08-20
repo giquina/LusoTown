@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
+import { ROUTES } from '@/config/routes'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   CalendarIcon,
@@ -50,7 +51,7 @@ const TechnologyWorkshopBookingPage = () => {
   // Only show for the Technology Workshop event (ID 4)
   useEffect(() => {
     if (eventId !== '4') {
-      router.push('/events')
+      router.push(ROUTES.events)
     }
   }, [eventId, router])
 
@@ -98,7 +99,7 @@ const TechnologyWorkshopBookingPage = () => {
       
       // Redirect to confirmation page after a delay
       setTimeout(() => {
-        router.push(`/events/${eventId}/confirmation`)
+    router.push(`${ROUTES.events}/${eventId}/confirmation`)
       }, 3000)
       
     } catch (error) {
@@ -356,8 +357,8 @@ const TechnologyWorkshopBookingPage = () => {
                                 Technology Experience Level
                               </label>
                               <select
-                                name="aiExperience"
-                                value={formData.aiExperience}
+                                name="techExperience"
+                                value={formData.techExperience}
                                 onChange={handleInputChange}
                                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                               >
@@ -485,7 +486,7 @@ const TechnologyWorkshopBookingPage = () => {
                                   required
                                 />
                                 <label className="text-sm text-gray-700">
-                                  I agree to the <a href="/terms" className="text-blue-600 hover:underline">Terms and Conditions</a> and <a href="/privacy" className="text-blue-600 hover:underline">Privacy Policy</a> *
+                                  I agree to the <a href={ROUTES.terms} className="text-blue-600 hover:underline">Terms and Conditions</a> and <a href={ROUTES.privacy} className="text-blue-600 hover:underline">Privacy Policy</a> *
                                 </label>
                               </div>
 

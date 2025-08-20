@@ -34,6 +34,7 @@ import {
 } from 'lucide-react'
 import { useLanguage } from '@/context/LanguageContext'
 import Link from 'next/link'
+import { ROUTES } from "@/config/routes";
 
 interface ChatMessage {
   id: string
@@ -665,7 +666,7 @@ export default function ChatMessagingPreview() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-              <Link href="/signup">
+              <Link href={ROUTES.signup}>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -676,7 +677,7 @@ export default function ChatMessagingPreview() {
                 </motion.button>
               </Link>
               
-              <Link href="/groups">
+              <Link href={ROUTES.groups}>
                 <button className="px-8 py-3 border-2 border-white text-white rounded-xl font-semibold hover:bg-white hover:text-primary-600 transition-colors">
                   {language === 'pt' ? 'Explorar Grupos' : 'Explore Groups'}
                 </button>

@@ -21,6 +21,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { usePlatformIntegration } from "@/context/PlatformIntegrationContext";
 import { useSubscription } from "@/context/SubscriptionContext";
 import { useNetworking } from "@/context/NetworkingContext";
+import { ROUTES } from "@/config/routes";
 
 interface UnifiedExperienceHubProps {
   initialTab?: "discover" | "book" | "connect" | "upgrade";
@@ -327,7 +328,7 @@ export default function UnifiedExperienceHub({
                   <button
                     className="px-4 py-2 border border-primary-600 text-primary-600 rounded-lg hover:bg-primary-50 transition-colors"
                     onClick={() =>
-                      (window.location.href = `/events/${pairing.eventId}`)
+                      (window.location.href = `${ROUTES.events}/${pairing.eventId}`)
                     }
                   >
                     {isPortuguese ? "Ver Evento" : "View Event"}
@@ -572,7 +573,7 @@ export default function UnifiedExperienceHub({
           </div>
           <div className="mt-6">
             <button
-              onClick={() => (window.location.href = "/premium")}
+              onClick={() => (window.location.href = ROUTES.premiumMembership)}
               className="w-full bg-gradient-to-r from-premium-600 to-accent-600 text-white py-3 rounded-lg font-semibold hover:from-premium-700 hover:to-accent-700 transition-all duration-200"
             >
               {isPortuguese ? "Upgrade para Premium" : "Upgrade to Premium"}

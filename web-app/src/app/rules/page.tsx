@@ -5,6 +5,7 @@ import {
   ExclamationTriangleIcon,
   HandRaisedIcon,
 } from "@heroicons/react/24/outline";
+import { ROUTES } from '@/config/routes';
 
 export const metadata = {
   title: "Rules | LusoTown London - Community Rules",
@@ -50,7 +51,7 @@ export default function RulesPage() {
                 Simple rules so everyone feels safe, respected, and welcome. For
                 the full standard, see our{" "}
                 <a
-                  href="/community-guidelines"
+                  href={ROUTES.communityGuidelines}
                   className="text-primary-600 underline"
                 >
                   Community Guidelines
@@ -87,7 +88,7 @@ export default function RulesPage() {
               <p className="text-gray-700">
                 Violations may result in warnings, suspensions, or permanent
                 bans per our{" "}
-                <a href="/terms" className="text-primary-600 underline">
+                <a href={ROUTES.terms} className="text-primary-600 underline">
                   Terms of Service
                 </a>
                 . For help, contact{" "}

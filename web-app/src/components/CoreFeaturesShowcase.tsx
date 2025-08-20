@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { communityStats } from '@/config/community'
+import { ROUTES } from '@/config/routes'
 import { 
   HeartIcon,
   CalendarDaysIcon,
@@ -99,7 +100,7 @@ const coreFeatures: CoreFeature[] = [
       highlight: '18 este fim-de-semana'
     },
     ctaKey: 'core_features.events.cta',
-    ctaUrl: '/events',
+    ctaUrl: ROUTES.events,
     gradient: 'from-emerald-500 via-teal-500 to-cyan-500',
     accentColor: 'text-emerald-600',
     bgPattern: 'bg-gradient-to-br from-emerald-50/60 via-teal-50/40 to-cyan-50/30',
@@ -599,7 +600,7 @@ export default function CoreFeaturesShowcase() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="/signup"
+                  href={ROUTES.signup}
                   className="group relative text-lg font-bold px-10 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-secondary-700 via-action-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -609,7 +610,7 @@ export default function CoreFeaturesShowcase() {
                   </span>
                 </a>
                 <a
-                  href="/events"
+                  href={ROUTES.events}
                   className="text-lg font-bold px-10 py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 hover:bg-white/90"
                 >
                   {t('core_features.explore_features')}

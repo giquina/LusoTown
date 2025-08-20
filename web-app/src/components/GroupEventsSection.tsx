@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { ROUTES } from '@/config/routes'
 import {
   CalendarDaysIcon,
   UserGroupIcon,
@@ -431,7 +432,7 @@ export default function GroupEventsSection({
                     </span>
                   </a>
                   <a
-                    href="/groups/create"
+                    href={ROUTES.groupsCreate}
                     className="text-lg font-bold px-8 py-4 bg-white/70 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-coral-300 hover:-translate-y-1"
                   >
                     {isPortuguese

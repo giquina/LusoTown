@@ -27,6 +27,7 @@ import { useLanguage } from '@/context/LanguageContext'
 import { useFavorites } from '@/context/FavoritesContext'
 import Link from 'next/link'
 import Image from 'next/image'
+import { ROUTES } from '@/config/routes'
 
 interface PortugueseEvent {
   id: string
@@ -420,7 +421,7 @@ export default function EventsDiscovery({
             {isPortuguese ? 'Eventos Próximos' : 'Upcoming Events'}
           </h3>
           <Link
-            href="/events"
+            href={ROUTES.events}
             className="text-primary-600 hover:text-primary-700 text-sm font-medium"
           >
             {isPortuguese ? 'Ver Todos' : 'View All'}

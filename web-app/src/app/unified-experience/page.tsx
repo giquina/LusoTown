@@ -10,6 +10,7 @@ import UnifiedPremiumExperience from "@/components/UnifiedPremiumExperience";
 import CrossPlatformNavigationWidget from "@/components/CrossPlatformNavigationWidget";
 import { useLanguage } from "@/context/LanguageContext";
 import { usePlatformIntegration } from "@/context/PlatformIntegrationContext";
+import { ROUTES } from '@/config/routes';
 
 export default function UnifiedExperiencePage() {
   const { language } = useLanguage();
@@ -268,13 +269,13 @@ export default function UnifiedExperiencePage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="/signup"
+                  href={ROUTES.signup}
                   className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:from-primary-700 hover:to-secondary-700 transition-all duration-200"
                 >
                   {isPortuguese ? "Começar Agora" : "Get Started Now"}
                 </a>
                 <a
-                  href="/transport"
+                  href={ROUTES.transport}
                   className="border-2 border-primary-600 text-primary-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-primary-600 hover:text-white transition-all duration-200"
                 >
                   {isPortuguese ? "Explorar Transportes" : "Explore Transport"}

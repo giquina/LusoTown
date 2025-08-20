@@ -1,39 +1,40 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { createServerActionClient } from '@supabase/auth-helpers-nextjs'
-import { cookies } from 'next/headers'
+import { NextRequest, NextResponse } from "next/server";
+import { createServerActionClient } from "@supabase/auth-helpers-nextjs";
+import { cookies } from "next/headers";
+import { SITE_URL } from "@/config/site";
 
 // Email service configuration
 const EMAIL_SERVICE_CONFIG = {
   // Using SendGrid as example - replace with your preferred email service
   sendgridApiKey: process.env.SENDGRID_API_KEY,
-  fromEmail: process.env.FROM_EMAIL || 'community@lusotown.com',
-  fromName: process.env.FROM_NAME || 'LusoTown Community',
-  
+  fromEmail: process.env.FROM_EMAIL || "community@lusotown.com",
+  fromName: process.env.FROM_NAME || "LusoTown Community",
+
   // Alternative services can be configured here
   resendApiKey: process.env.RESEND_API_KEY,
   mailgunApiKey: process.env.MAILGUN_API_KEY,
   ses: {
-    region: process.env.AWS_REGION || 'eu-west-1',
+    region: process.env.AWS_REGION || "eu-west-1",
     accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
-  }
-}
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  },
+};
 
 interface EmailContent {
-  subject: string
-  preheader: string
-  content: string
-  cta: string
-  ctaUrl: string
-  language: 'en' | 'pt'
+  subject: string;
+  preheader: string;
+  content: string;
+  cta: string;
+  ctaUrl: string;
+  language: "en" | "pt";
 }
 
 // Generate HTML email template
 function generateEmailHTML(content: EmailContent, userInfo: any): string {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://lusotown.com'
-  const logoUrl = `${baseUrl}/images/lusotown-logo.png`
-  const flagEmoji = content.language === 'pt' ? '🇵🇹' : '🇬🇧'
-  
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || SITE_URL;
+  const logoUrl = `${baseUrl}/images/lusotown-logo.png`;
+  const flagEmoji = content.language === "pt" ? "🇵🇹" : "🇬🇧";
+
   return `
     <!DOCTYPE html>
     <html lang="${content.language}">
@@ -160,7 +161,9 @@ function generateEmailHTML(content: EmailContent, userInfo: any): string {
           <div class="header">
             <img src="${logoUrl}" alt="LusoTown" style="height: 40px; margin-bottom: 16px;">
             <h1>LusoTown Community ${flagEmoji}</h1>
-            <p style="margin: 0; opacity: 0.9; font-size: 14px;">${content.preheader}</p>
+            <p style="margin: 0; opacity: 0.9; font-size: 14px;">${
+              content.preheader
+            }</p>
           </div>
           
           <div class="content">
@@ -175,31 +178,56 @@ function generateEmailHTML(content: EmailContent, userInfo: any): string {
           
           <div class="footer">
             <p>
-              <strong>LusoTown</strong> - ${content.language === 'pt' ? 'A Sua Comunidade Portuguesa em Londres' : 'Your Portuguese Community in London'}
+              <strong>LusoTown</strong> - ${
+                content.language === "pt"
+                  ? "A Sua Comunidade Portuguesa em Londres"
+                  : "Your Portuguese Community in London"
+              }
             </p>
             <p>
-              ${content.language === 'pt' ? 'Conectando falantes de português em toda Londres' : 'Connecting Portuguese speakers across London'}
+              ${
+                content.language === "pt"
+                  ? "Conectando falantes de português em toda Londres"
+                  : "Connecting Portuguese speakers across London"
+              }
             </p>
             <div style="margin: 16px 0;">
-              <a href="${baseUrl}" style="margin: 0 12px;">${content.language === 'pt' ? 'Website' : 'Website'}</a>
-              <a href="${baseUrl}/events" style="margin: 0 12px;">${content.language === 'pt' ? 'Eventos' : 'Events'}</a>
-              <a href="${baseUrl}/matches" style="margin: 0 12px;">${content.language === 'pt' ? 'Matches' : 'Matches'}</a>
-              <a href="${baseUrl}/tv" style="margin: 0 12px;">${content.language === 'pt' ? 'TV Ao Vivo' : 'Live TV'}</a>
+              <a href="${baseUrl}" style="margin: 0 12px;">${
+    content.language === "pt" ? "Website" : "Website"
+  }</a>
+              <a href="${baseUrl}/events" style="margin: 0 12px;">${
+    content.language === "pt" ? "Eventos" : "Events"
+  }</a>
+              <a href="${baseUrl}/matches" style="margin: 0 12px;">${
+    content.language === "pt" ? "Matches" : "Matches"
+  }</a>
+              <a href="${baseUrl}/tv" style="margin: 0 12px;">${
+    content.language === "pt" ? "TV Ao Vivo" : "Live TV"
+  }</a>
             </div>
             
             <div class="unsubscribe">
               <p>
-                ${content.language === 'pt' 
-                  ? 'Recebeu este email porque é membro do LusoTown.' 
-                  : 'You received this email because you are a LusoTown member.'
+                ${
+                  content.language === "pt"
+                    ? "Recebeu este email porque é membro do LusoTown."
+                    : "You received this email because you are a LusoTown member."
                 }
               </p>
               <p>
                 <a href="${baseUrl}/unsubscribe?email=${userInfo.email}">
-                  ${content.language === 'pt' ? 'Cancelar subscrição' : 'Unsubscribe'}
+                  ${
+                    content.language === "pt"
+                      ? "Cancelar subscrição"
+                      : "Unsubscribe"
+                  }
                 </a> | 
                 <a href="${baseUrl}/email/preferences">
-                  ${content.language === 'pt' ? 'Preferências de email' : 'Email preferences'}
+                  ${
+                    content.language === "pt"
+                      ? "Preferências de email"
+                      : "Email preferences"
+                  }
                 </a>
               </p>
             </div>
@@ -208,86 +236,100 @@ function generateEmailHTML(content: EmailContent, userInfo: any): string {
       </div>
     </body>
     </html>
-  `
+  `;
 }
 
 // Send email using SendGrid (replace with your preferred service)
-async function sendEmailWithSendGrid(to: string, subject: string, htmlContent: string): Promise<boolean> {
+async function sendEmailWithSendGrid(
+  to: string,
+  subject: string,
+  htmlContent: string
+): Promise<boolean> {
   if (!EMAIL_SERVICE_CONFIG.sendgridApiKey) {
-    console.error('SendGrid API key not configured')
-    return false
+    console.error("SendGrid API key not configured");
+    return false;
   }
 
   try {
-    const response = await fetch('https://api.sendgrid.com/v3/mail/send', {
-      method: 'POST',
+    const response = await fetch("https://api.sendgrid.com/v3/mail/send", {
+      method: "POST",
       headers: {
-        'Authorization': `Bearer ${EMAIL_SERVICE_CONFIG.sendgridApiKey}`,
-        'Content-Type': 'application/json'
+        Authorization: `Bearer ${EMAIL_SERVICE_CONFIG.sendgridApiKey}`,
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        personalizations: [{
-          to: [{ email: to }],
-          subject: subject
-        }],
+        personalizations: [
+          {
+            to: [{ email: to }],
+            subject: subject,
+          },
+        ],
         from: {
           email: EMAIL_SERVICE_CONFIG.fromEmail,
-          name: EMAIL_SERVICE_CONFIG.fromName
+          name: EMAIL_SERVICE_CONFIG.fromName,
         },
-        content: [{
-          type: 'text/html',
-          value: htmlContent
-        }]
-      })
-    })
+        content: [
+          {
+            type: "text/html",
+            value: htmlContent,
+          },
+        ],
+      }),
+    });
 
-    return response.ok
+    return response.ok;
   } catch (error) {
-    console.error('SendGrid email error:', error)
-    return false
+    console.error("SendGrid email error:", error);
+    return false;
   }
 }
 
 // Alternative: Send email using Resend
-async function sendEmailWithResend(to: string, subject: string, htmlContent: string): Promise<boolean> {
+async function sendEmailWithResend(
+  to: string,
+  subject: string,
+  htmlContent: string
+): Promise<boolean> {
   if (!EMAIL_SERVICE_CONFIG.resendApiKey) {
-    console.error('Resend API key not configured')
-    return false
+    console.error("Resend API key not configured");
+    return false;
   }
 
   try {
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
+    const response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
       headers: {
-        'Authorization': `Bearer ${EMAIL_SERVICE_CONFIG.resendApiKey}`,
-        'Content-Type': 'application/json'
+        Authorization: `Bearer ${EMAIL_SERVICE_CONFIG.resendApiKey}`,
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         from: `${EMAIL_SERVICE_CONFIG.fromName} <${EMAIL_SERVICE_CONFIG.fromEmail}>`,
         to: [to],
         subject: subject,
-        html: htmlContent
-      })
-    })
+        html: htmlContent,
+      }),
+    });
 
-    return response.ok
+    return response.ok;
   } catch (error) {
-    console.error('Resend email error:', error)
-    return false
+    console.error("Resend email error:", error);
+    return false;
   }
 }
 
 export async function POST(request: NextRequest) {
   try {
-    const supabase = createServerActionClient({ cookies })
-    const { data: { user } } = await supabase.auth.getUser()
-    
+    const supabase = createServerActionClient({ cookies });
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
     if (!user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const body = await request.json()
-    const { 
+    const body = await request.json();
+    const {
       userId,
       emailType,
       subject,
@@ -295,27 +337,30 @@ export async function POST(request: NextRequest) {
       content,
       cta,
       ctaUrl,
-      language = 'en'
-    } = body
+      language = "en",
+    } = body;
 
     // Validate userId matches authenticated user
     if (userId !== user.id) {
-      return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
 
     // Get user profile information
     const { data: profile, error: profileError } = await supabase
-      .from('profiles')
-      .select('email, first_name, last_name, language_preference')
-      .eq('id', userId)
-      .single()
+      .from("profiles")
+      .select("email, first_name, last_name, language_preference")
+      .eq("id", userId)
+      .single();
 
     if (profileError || !profile) {
-      return NextResponse.json({ error: 'User profile not found' }, { status: 404 })
+      return NextResponse.json(
+        { error: "User profile not found" },
+        { status: 404 }
+      );
     }
 
     // Use user's preferred language if not specified
-    const emailLanguage = language || profile.language_preference || 'en'
+    const emailLanguage = language || profile.language_preference || "en";
 
     // Generate HTML content
     const emailContent: EmailContent = {
@@ -324,55 +369,69 @@ export async function POST(request: NextRequest) {
       content,
       cta,
       ctaUrl,
-      language: emailLanguage
-    }
+      language: emailLanguage,
+    };
 
     const htmlContent = generateEmailHTML(emailContent, {
       email: profile.email,
       firstName: profile.first_name,
-      lastName: profile.last_name
-    })
+      lastName: profile.last_name,
+    });
 
     // Try to send email (using SendGrid by default, fallback to Resend)
-    let emailSent = false
-    
+    let emailSent = false;
+
     if (EMAIL_SERVICE_CONFIG.sendgridApiKey) {
-      emailSent = await sendEmailWithSendGrid(profile.email, subject, htmlContent)
+      emailSent = await sendEmailWithSendGrid(
+        profile.email,
+        subject,
+        htmlContent
+      );
     } else if (EMAIL_SERVICE_CONFIG.resendApiKey) {
-      emailSent = await sendEmailWithResend(profile.email, subject, htmlContent)
+      emailSent = await sendEmailWithResend(
+        profile.email,
+        subject,
+        htmlContent
+      );
     } else {
-      console.error('No email service configured')
-      return NextResponse.json({ error: 'Email service not configured' }, { status: 500 })
+      console.error("No email service configured");
+      return NextResponse.json(
+        { error: "Email service not configured" },
+        { status: 500 }
+      );
     }
 
     if (!emailSent) {
-      return NextResponse.json({ error: 'Failed to send email' }, { status: 500 })
+      return NextResponse.json(
+        { error: "Failed to send email" },
+        { status: 500 }
+      );
     }
 
     // Log email send in database
-    const { error: logError } = await supabase
-      .from('email_logs')
-      .insert({
-        user_id: userId,
-        email_type: emailType,
-        recipient_email: profile.email,
-        subject: subject,
-        status: 'sent',
-        sent_at: new Date().toISOString(),
-        language: emailLanguage
-      })
+    const { error: logError } = await supabase.from("email_logs").insert({
+      user_id: userId,
+      email_type: emailType,
+      recipient_email: profile.email,
+      subject: subject,
+      status: "sent",
+      sent_at: new Date().toISOString(),
+      language: emailLanguage,
+    });
 
     if (logError) {
-      console.error('Error logging email send:', logError)
+      console.error("Error logging email send:", logError);
     }
 
-    return NextResponse.json({ 
+    return NextResponse.json({
       success: true,
-      message: 'Email sent successfully'
-    })
-    
+      message: "Email sent successfully",
+    });
   } catch (error) {
-    console.error('Email send error:', error)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    console.error("Email send error:", error);
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
   }
 }
