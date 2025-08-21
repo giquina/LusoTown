@@ -69,6 +69,9 @@ export const ROUTES = {
   instituteCamoes: '/instituto-camoes',
   partnerships: '/partnerships',
   universities: '/universities',
+  mentorship: '/mentorship',
+  corporatePartnerships: '/corporate-partnerships',
+  portugueseInstitutionalPartnerships: '/portuguese-institutional-partnerships',
   
   // Support & Information
   help: '/help',

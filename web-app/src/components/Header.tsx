@@ -27,36 +27,93 @@ import { ROUTES } from '@/config/routes'
 
 const getNavigationLinks = (t: any) => [
   { name: t("nav.events", "London Events"), href: "/events" },
-  { name: t("nav.tours", "London Tours"), href: "/tours" },
   { name: t("nav.students", "Students"), href: "/students" },
   { name: t("nav.pricing", "Pricing"), href: "/pricing" },
 ];
 
 const getAuthenticatedNavigationLinks = (t: any) => [
   { name: t("nav.events", "London Events"), href: "/events" },
-  { name: t("nav.tours", "London Tours"), href: "/tours" },
   { name: t("nav.students", "Students"), href: "/students" },
   { name: t("referral.title", "Referrals"), href: "/referrals" },
   { name: t("nav.pricing", "Pricing"), href: "/pricing" },
 ];
 
+// Tours dropdown links
+const getToursDropdownLinks = (t: any) => [
+  { 
+    name: t("nav.london-tours", "London Tours"), 
+    href: ROUTES.londonTours,
+    description: t("nav.london-tours-desc", "Portuguese-guided tours of Westminster, Camden Market, Tower Bridge & London attractions")
+  },
+  { 
+    name: t("nav.london-transport", "London Transport"), 
+    href: ROUTES.transport,
+    description: t("nav.london-transport-desc", "Airport transfers, London city rides with verified Portuguese-speaking drivers")
+  },
+];
+
+// Events dropdown links
+const getEventsDropdownLinks = (t: any) => [
+  { 
+    name: t("nav.cultural-events", "Cultural Events"), 
+    href: `${ROUTES.events}?category=Cultural`,
+    description: t("nav.cultural-events-desc", "Music nights in Camden, cultural celebrations in Stockwell, festivals for Portuguese speakers across London & UK")
+  },
+  { 
+    name: t("nav.business-networking", "Business Networking"), 
+    href: ROUTES.businessNetworking,
+    description: t("nav.business-networking-desc", "Professional meetups for Portuguese speakers in London, startup events, UK career workshops")
+  },
+  { 
+    name: t("nav.social-meetups", "Social Meetups"), 
+    href: `${ROUTES.events}?category=Social`,
+    description: t("nav.social-meetups-desc", "Portuguese-speaking community gatherings in London pubs, UK social events, weekend meetups")
+  },
+  { 
+    name: t("nav.portuguese-language", "Portuguese Language"), 
+    href: `${ROUTES.events}?category=Language`,
+    description: t("nav.portuguese-language-desc", "Portuguese conversation groups in London, language practice sessions across UK cities")
+  },
+  { 
+    name: t("nav.food-dining", "Food & Dining"), 
+    href: `${ROUTES.events}?category=Food`,
+    description: t("nav.food-dining-desc", "Cooking classes in London, wine tastings, dining experiences at UK restaurants")
+  },
+  { 
+    name: t("nav.arts-entertainment", "Arts & Entertainment"), 
+    href: `${ROUTES.events}?category=Arts`,
+    description: t("nav.arts-entertainment-desc", "Live music in London venues, cultural shows, art exhibitions across the UK")
+  },
+  { 
+    name: t("nav.sports-fitness", "Sports & Fitness"), 
+    href: `${ROUTES.events}?category=Sports`,
+    description: t("nav.sports-fitness-desc", "Football viewing parties in London pubs, sports clubs, fitness groups across UK")
+  },
+  { 
+    name: t("nav.all-events", "All Events"), 
+    href: ROUTES.events,
+    description: t("nav.all-events-desc", "Complete calendar of events for Portuguese speakers happening across London & the UK")
+  },
+];
+
 // Simplified navigation dropdown links - Services & Community only
 const getMoreDropdownLinks = (t: any) => ({
   services: [
-    { name: "Find Your Match", href: "/matches" },
-    { name: "Live TV", href: "/tv" },
-    { name: "Streaming Income", href: "/live" },
-  ],
-  community: [
-    { name: "Events & Culture", href: ROUTES.events },
-    { name: "Community", href: ROUTES.community },
-    { name: "Business Directory", href: ROUTES.directory },
-    { name: "Become a Host", href: ROUTES.host },
-    { name: "Community Guidelines", href: ROUTES.communityGuidelines },
-  ],
-  contact: [
-    { name: "Contact Us", href: ROUTES.contact },
-    { name: "Help Center", href: ROUTES.help },
+    { 
+      name: "Find Your Match", 
+      href: ROUTES.matches,
+      description: "Connect with Portuguese speakers throughout the United Kingdom who share your interests and lifestyle"
+    },
+    { 
+      name: "Live TV", 
+      href: ROUTES.tv,
+      description: "Watch shows for Portuguese speakers, UK business workshops, and cultural content from London"
+    },
+    { 
+      name: "Streaming Income", 
+      href: ROUTES.live,
+      description: "Monetize your expertise through live streaming - create content and earn revenue"
+    },
   ],
   company: [
     { name: "About Us", href: ROUTES.about },
@@ -87,6 +144,7 @@ export default function Header() {
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [showMoreDropdown, setShowMoreDropdown] = useState(false);
   const [showToursDropdown, setShowToursDropdown] = useState(false);
+  const [showEventsDropdown, setShowEventsDropdown] = useState(false);
   const router = useRouter();
   const { t } = useLanguage();
 
@@ -146,7 +204,7 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden xl:flex items-center space-x-4 xl:space-x-6 ml-4 xl:ml-8">
-            {navigationLinks.map((link) => (
+            {navigationLinks.filter(link => !link.name.includes("Events")).map((link) => (
               <a
                 key={link.name}
                 href={link.href}
@@ -155,6 +213,92 @@ export default function Header() {
                 {link.name}
               </a>
             ))}
+
+            {/* Events Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setShowEventsDropdown(true)}
+              onMouseLeave={() => setShowEventsDropdown(false)}
+            >
+              <button className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1">
+                {t("nav.events", "Events")}
+                <ChevronDownIcon className="w-4 h-4" />
+              </button>
+
+              <AnimatePresence>
+                {showEventsDropdown && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] max-w-[calc(100vw-2rem)] bg-white rounded-xl shadow-xl border border-gray-200 py-6 z-50"
+                    style={{
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      maxWidth: "calc(100vw - 2rem)",
+                      marginLeft: "max(-400px, calc(-50vw + 1rem))",
+                      marginRight: "max(-400px, calc(-50vw + 1rem))",
+                    }}
+                  >
+                    <div className="grid grid-cols-3 gap-4 px-6">
+                      {getEventsDropdownLinks(t).map((link) => (
+                        <a
+                          key={link.name}
+                          href={link.href}
+                          className="block p-4 text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 rounded-lg border border-gray-100 hover:border-primary-200"
+                        >
+                          <div className="font-medium text-sm mb-2">{link.name}</div>
+                          <div className="text-xs text-gray-500 leading-relaxed">{link.description}</div>
+                        </a>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Tours Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setShowToursDropdown(true)}
+              onMouseLeave={() => setShowToursDropdown(false)}
+            >
+              <button className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1">
+                {t("nav.tours", "Tours")}
+                <ChevronDownIcon className="w-4 h-4" />
+              </button>
+
+              <AnimatePresence>
+                {showToursDropdown && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[600px] max-w-[calc(100vw-2rem)] bg-white rounded-xl shadow-xl border border-gray-200 py-6 z-50"
+                    style={{
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      maxWidth: "calc(100vw - 2rem)",
+                      marginLeft: "max(-300px, calc(-50vw + 1rem))",
+                      marginRight: "max(-300px, calc(-50vw + 1rem))",
+                    }}
+                  >
+                    <div className="grid grid-cols-2 gap-4 px-6">
+                      {getToursDropdownLinks(t).map((link) => (
+                        <a
+                          key={link.name}
+                          href={link.href}
+                          className="block p-4 text-gray-600 hover:text-secondary-600 hover:bg-secondary-50 transition-colors duration-200 rounded-lg border border-gray-100 hover:border-secondary-200"
+                        >
+                          <div className="font-medium text-sm mb-2">{link.name}</div>
+                          <div className="text-xs text-gray-500 leading-relaxed">{link.description}</div>
+                        </a>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
             {/* More Dropdown */}
             <div
@@ -173,60 +317,40 @@ export default function Header() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-50"
+                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[700px] max-w-[calc(100vw-2rem)] bg-white rounded-xl shadow-xl border border-gray-200 py-6 z-50"
                     style={{
                       left: "50%",
                       transform: "translateX(-50%)",
                       maxWidth: "calc(100vw - 2rem)",
-                      marginLeft: "max(-400px, calc(-50vw + 1rem))",
-                      marginRight: "max(-400px, calc(-50vw + 1rem))",
+                      marginLeft: "max(-350px, calc(-50vw + 1rem))",
+                      marginRight: "max(-350px, calc(-50vw + 1rem))",
                     }}
                   >
-                    <div className="grid grid-cols-2 gap-8 px-8">
-                      {/* Services Section */}
-                      <div className="border-r border-gray-200 pr-6">
-                        <h3 className="text-lg font-semibold mb-4 text-premium-600">
-                          Services
-                        </h3>
-                        <ul className="space-y-2">
-                          {moreDropdownLinks.services.map((link) => (
-                            <li key={link.name}>
-                              <a
-                                href={link.href}
-                                className="flex items-center gap-2 text-sm text-gray-600 hover:text-premium-600 hover:bg-premium-50 px-2 py-1 rounded transition-colors duration-200 whitespace-nowrap"
-                              >
-                                <span>{link.name}</span>
-                                {link.href === "/matches" && (
-                                  <span
-                                    className="ml-1 inline-block text-[10px] leading-4 font-semibold uppercase bg-secondary-100 text-secondary-700 px-2 py-0.5 rounded-full border border-secondary-200"
-                                    aria-label="New feature"
-                                  >
-                                    New
-                                  </span>
-                                )}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Community Section */}
-                      <div>
-                        <h3 className="text-lg font-semibold mb-4 text-primary-600">
-                          Community
-                        </h3>
-                        <ul className="space-y-2">
-                          {moreDropdownLinks.community.map((link) => (
-                            <li key={link.name}>
-                              <a
-                                href={link.href}
-                                className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded transition-colors duration-200 whitespace-nowrap"
-                              >
-                                {link.name}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
+                    <div className="px-6">
+                      <h3 className="text-lg font-semibold mb-4 text-premium-600 text-center">
+                        Services
+                      </h3>
+                      <div className="grid grid-cols-3 gap-4">
+                        {moreDropdownLinks.services.map((link) => (
+                          <a
+                            key={link.name}
+                            href={link.href}
+                            className="block p-4 text-gray-600 hover:text-premium-600 hover:bg-premium-50 transition-colors duration-200 rounded-lg border border-gray-100 hover:border-premium-200"
+                          >
+                            <div className="flex items-center gap-2 mb-2">
+                              <span className="font-medium text-sm">{link.name}</span>
+                              {link.href === "/matches" && (
+                                <span
+                                  className="inline-block text-[10px] leading-4 font-semibold uppercase bg-secondary-100 text-secondary-700 px-2 py-0.5 rounded-full border border-secondary-200"
+                                  aria-label="New feature"
+                                >
+                                  New
+                                </span>
+                              )}
+                            </div>
+                            <div className="text-xs text-gray-500 leading-relaxed">{link.description}</div>
+                          </a>
+                        ))}
                       </div>
                     </div>
                   </motion.div>
@@ -431,11 +555,45 @@ export default function Header() {
                     <h3 className="text-lg font-semibold text-primary-600 mb-3">
                       Navigation
                     </h3>
-                    {navigationLinks.map((link) => (
+                    {navigationLinks.filter(link => !link.name.includes("Events")).map((link) => (
                       <a
                         key={link.name}
                         href={link.href}
                         className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px] flex items-center"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {link.name}
+                      </a>
+                    ))}
+                  </div>
+
+                  {/* Events Category Links for Mobile */}
+                  <div className="pb-4 border-b border-gray-200">
+                    <h3 className="text-lg font-semibold text-primary-600 mb-3">
+                      Events
+                    </h3>
+                    {getEventsDropdownLinks(t).map((link) => (
+                      <a
+                        key={link.name}
+                        href={link.href}
+                        className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px] flex items-center"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {link.name}
+                      </a>
+                    ))}
+                  </div>
+                    
+                  {/* Tours Dropdown Links for Mobile */}
+                  <div className="pb-4 border-b border-gray-200">
+                    <h3 className="text-lg font-semibold text-secondary-600 mb-3">
+                      Tours
+                    </h3>
+                    {getToursDropdownLinks(t).map((link) => (
+                      <a
+                        key={link.name}
+                        href={link.href}
+                        className="text-gray-700 hover:text-secondary-600 hover:bg-secondary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {link.name}
@@ -471,22 +629,6 @@ export default function Header() {
                     </a>
                   </div>
 
-                  {/* Contact Section */}
-                  <div className="pb-4 border-b border-gray-200">
-                    <h3 className="text-lg font-semibold text-gray-700 mb-3">
-                      Contact
-                    </h3>
-                    {moreDropdownLinks.contact.map((link) => (
-                      <a
-                        key={link.name}
-                        href={link.href}
-                        className="text-gray-700 hover:text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-gray-200 min-h-[44px] flex items-center"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {link.name}
-                      </a>
-                    ))}
-                  </div>
 
                   {/* Services Section */}
                   <div className="pb-4 border-b border-gray-200">
@@ -513,22 +655,6 @@ export default function Header() {
                     ))}
                   </div>
 
-                  {/* Community Section */}
-                  <div className="pb-4 border-b border-gray-200">
-                    <h3 className="text-lg font-semibold text-primary-600 mb-3">
-                      Community
-                    </h3>
-                    {moreDropdownLinks.community.map((link) => (
-                      <a
-                        key={link.name}
-                        href={link.href}
-                        className="text-gray-700 hover:text-primary-600 hover:bg-primary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-primary-200 min-h-[44px] flex items-center"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {link.name}
-                      </a>
-                    ))}
-                  </div>
 
                   {/* Company & Legal Section */}
                   <div className="pb-4 border-b border-gray-200">

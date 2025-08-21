@@ -34,6 +34,8 @@ import { plans, formatPrice } from "@/config/pricing";
 import PremiumMatchesGate from "@/components/PremiumMatchesGate";
 import EnhancedMatchDashboard from "@/components/matches/EnhancedMatchDashboard";
 import MatchTestimonials from "@/components/MatchTestimonials";
+import HowItWorksSection from "@/components/matches/HowItWorksSection";
+import PageHeader from "@/components/PageHeader";
 
 // Mock Portuguese profiles for demonstration
 const mockProfiles = [
@@ -376,7 +378,7 @@ function MatchesContent() {
       icon: UserGroupIcon,
       title: "Complete Your Profile",
       description:
-        "Share your interests, your UK location, and what you're looking for in the Portuguese community",
+        "Share your interests, your UK location, and what you're looking for in the Portuguese-speaking community",
       titlePt: "Complete o Seu Perfil",
       descriptionPt:
         "Partilhe os seus interesses, localização no Reino Unido e o que procura na comunidade portuguesa",
@@ -411,7 +413,7 @@ function MatchesContent() {
   ];
 
   const benefits = [
-    "All matches are Portuguese speakers across the United Kingdom",
+    "All matches are Portuguese speakers from diverse backgrounds across the United Kingdom",
     "Cultural compatibility scoring",
     "Event-based meetups for natural connections",
     "Professional and social networking opportunities",
@@ -462,12 +464,12 @@ function MatchesContent() {
                 <HeartIcon className="w-10 h-10 md:w-12 md:h-12 text-white/90 animate-pulse" />
               </div>
               <h1 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
-                {language === "pt" ? "Encontre a Sua Comunidade Portuguesa no Reino Unido" : "Find Your Portuguese Community Match in the United Kingdom"}
+                {language === "pt" ? "Encontre Falantes de Português no Reino Unido" : "Connect with Portuguese Speakers in the UK"}
               </h1>
               <p className="text-sm md:text-base text-white/90 mb-6 leading-relaxed max-w-3xl mx-auto">
                 {language === "pt"
-                  ? "Conecte-se com falantes de português em todo o Reino Unido que partilham os seus interesses, valores e património cultural. Do Porto a São Paulo, do Rio a Luanda - aqui encontra a sua comunidade."
-                  : "Connect with Portuguese speakers across the United Kingdom who share your interests, values, and cultural heritage. From Porto to São Paulo, Rio to Luanda - find your community here."}
+                  ? "Conecte-se com uma comunidade vibrante de falantes de português - brasileiros, portugueses, angolanos, cabo-verdianos e mais. Partilhe a sua língua, cultura e experiências no Reino Unido."
+                  : "Connect with a vibrant community of Portuguese speakers - Brazilians, Portuguese, Angolans, Cape Verdeans and more. Share your language, culture, and experiences in the United Kingdom."}
               </p>
 
               {/* Live Success Counter */}
@@ -1573,7 +1575,7 @@ function MatchesContent() {
                 </h3>
                 <p className="text-primary-700 mb-5 text-sm md:text-base">
                   {t("joinCommunityDescription") ||
-                    "Connect with Portuguese speakers who understand your culture, language, and journey in London"}
+                    "Connect with Portuguese speakers from all backgrounds who understand your language, culture, and journey in the UK"}
                 </p>
                 <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-4 rounded-xl border border-primary-100">
                   <div className="text-xl md:text-2xl font-bold text-primary-600">
@@ -1898,6 +1900,9 @@ export default function MatchesPage() {
             }}
           />
         </Suspense>
+        
+        {/* How It Works Section */}
+        <HowItWorksSection />
       </main>
       <footer className="bg-gray-900 text-white py-8">
         <div className="container mx-auto px-4 text-center">

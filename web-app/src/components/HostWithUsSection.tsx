@@ -255,7 +255,7 @@ export default function HostWithUsSection() {
                   </span>
                 </a>
                 <a
-                  href="/host/learn-more"
+                  href="/host"
                   className="text-sm sm:text-base font-bold px-6 sm:px-8 lg:px-10 py-3 sm:py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200/60 rounded-xl lg:rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-premium-300 hover:-translate-y-1 hover:bg-white/90"
                 >
                   Learn More

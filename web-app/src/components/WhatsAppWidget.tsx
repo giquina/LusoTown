@@ -187,34 +187,56 @@ export default function WhatsAppWidget() {
     <>
       {/* WhatsApp Widget Button */}
       <div className="fixed bottom-20 sm:bottom-6 right-6 z-50">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="bg-primary-600 hover:bg-primary-700 text-white p-4 rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-primary-300"
-          aria-label={isPortuguese ? 'Abrir chat WhatsApp' : 'Open WhatsApp chat'}
-        >
-          {isOpen ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
-        </button>
+        <div className="relative">
+          {/* Pulsing background effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-secondary-500 to-accent-500 rounded-full animate-ping opacity-75"></div>
+          
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="relative bg-gradient-to-r from-secondary-600 via-accent-600 to-coral-600 hover:from-secondary-700 hover:via-accent-700 hover:to-coral-700 text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-secondary-300 group"
+            aria-label={isPortuguese ? 'Abrir chat LusoTown' : 'Open LusoTown chat'}
+          >
+            {/* Background glow */}
+            <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            
+            {isOpen ? (
+              <X className="relative w-6 h-6 z-10" />
+            ) : (
+              <div className="relative z-10 flex items-center">
+                <MessageCircle className="w-6 h-6" />
+                {/* Notification dot */}
+                <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 border-2 border-white rounded-full animate-pulse"></div>
+              </div>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-32 sm:bottom-24 right-6 z-50 w-80 bg-white rounded-lg shadow-2xl border">
+        <div className="fixed bottom-32 sm:bottom-24 right-6 z-50 w-80 bg-white rounded-2xl shadow-2xl border border-primary-200 overflow-hidden">
           {/* Header */}
-          <div className="bg-primary-600 text-white p-4 rounded-t-lg flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                <span className="text-primary-600 font-bold">LT</span>
+          <div className="bg-gradient-to-r from-secondary-600 via-accent-600 to-coral-600 text-white p-5 flex items-center justify-between relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-20 h-20 bg-white/10 rounded-full blur-xl transform translate-x-10 -translate-y-10"></div>
+            
+            <div className="flex items-center gap-3 relative z-10">
+              <div className="w-12 h-12 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-lg">LT</span>
               </div>
               <div>
-                <h3 className="font-semibold">LusoTown</h3>
-                <p className="text-xs text-primary-100">
-                  {isPortuguese ? 'Comunidade Portuguesa' : 'Portuguese Community'}
-                </p>
+                <h3 className="font-bold text-lg">LusoTown</h3>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <p className="text-xs text-white/90 font-medium">
+                    {isPortuguese ? 'Comunidade Portuguesa Online' : 'Portuguese Community Online'}
+                  </p>
+                </div>
               </div>
             </div>
             <button
               onClick={resetChat}
-              className="text-primary-100 hover:text-white text-sm"
+              className="relative z-10 text-white/80 hover:text-white text-sm bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm border border-white/30 hover:bg-white/30 transition-all duration-200"
               title={isPortuguese ? 'Reiniciar chat' : 'Reset chat'}
             >
               {isPortuguese ? 'Reiniciar' : 'Reset'}
@@ -222,59 +244,73 @@ export default function WhatsAppWidget() {
           </div>
 
           {/* Messages */}
-          <div className="h-96 overflow-y-auto p-4 bg-gray-50">
-            {messages.map((message, index) => (
-              <div key={index} className="mb-4">
-                <div
-                  className={`max-w-xs p-3 rounded-lg ${
-                    message.isUser
-                      ? 'bg-primary-600 text-white ml-auto'
-                      : 'bg-white text-gray-800 shadow-sm border'
-                  }`}
-                >
-                  <p className="text-sm whitespace-pre-line">{message.text}</p>
-                </div>
-
-                {message.options && !message.isUser && (
-                  <div className="mt-2 space-y-2">
-                    {message.options.map((option, optionIndex) => (
-                      <button
-                        key={optionIndex}
-                        onClick={() => handleOptionClick(option, optionIndex)}
-                        className="block w-full text-left text-sm bg-primary-50 hover:bg-primary-100 text-primary-800 p-2 rounded border transition-colors"
-                      >
-                        {option}
-                      </button>
-                    ))}
+          <div className="h-96 overflow-y-auto p-5 bg-gradient-to-b from-primary-50/30 to-secondary-50/30 relative">
+            {/* Background pattern */}
+            <div className="absolute inset-0 opacity-5">
+              <div className="w-full h-full" style={{backgroundImage: 'radial-gradient(circle, #0066cc 1px, transparent 1px)', backgroundSize: '20px 20px'}}></div>
+            </div>
+            
+            <div className="relative z-10">
+              {messages.map((message, index) => (
+                <div key={index} className="mb-4">
+                  <div
+                    className={`max-w-xs p-4 rounded-2xl shadow-lg ${
+                      message.isUser
+                        ? 'bg-gradient-to-r from-secondary-600 to-accent-600 text-white ml-auto border border-secondary-500/20'
+                        : 'bg-white text-gray-800 border border-primary-200/50 backdrop-blur-sm'
+                    }`}
+                  >
+                    <p className="text-sm whitespace-pre-line leading-relaxed">{message.text}</p>
                   </div>
-                )}
-              </div>
-            ))}
-            <div ref={messagesEndRef} />
+
+                  {message.options && !message.isUser && (
+                    <div className="mt-3 space-y-2">
+                      {message.options.map((option, optionIndex) => (
+                        <button
+                          key={optionIndex}
+                          onClick={() => handleOptionClick(option, optionIndex)}
+                          className="group block w-full text-left text-sm bg-gradient-to-r from-primary-50 to-secondary-50 hover:from-primary-100 hover:to-secondary-100 text-primary-800 p-3 rounded-xl border border-primary-200 hover:border-primary-300 transition-all duration-200 hover:shadow-md hover:scale-[1.02]"
+                        >
+                          <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 bg-gradient-to-r from-secondary-500 to-accent-500 rounded-full group-hover:scale-125 transition-transform duration-200"></div>
+                            <span className="font-medium">{option}</span>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+              <div ref={messagesEndRef} />
+            </div>
           </div>
 
           {/* Input */}
-          <div className="p-3 border-t bg-white rounded-b-lg">
-            <div className="flex gap-2">
+          <div className="p-5 border-t border-primary-200 bg-white">
+            <div className="flex gap-3">
               <input
                 type="text"
                 value={userInput}
                 onChange={(e) => setUserInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
                 placeholder={isPortuguese ? 'Escreve uma mensagem...' : 'Type a message...'}
-                className="flex-1 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-primary-500"
+                className="flex-1 border border-primary-200 rounded-full px-4 py-3 text-sm focus:outline-none focus:border-secondary-400 focus:ring-2 focus:ring-secondary-200 bg-primary-50/50 transition-all duration-200"
               />
               <button
                 onClick={handleSendMessage}
-                className="bg-primary-600 hover:bg-primary-700 text-white p-2 rounded-full transition-colors"
+                className="bg-gradient-to-r from-secondary-600 to-accent-600 hover:from-secondary-700 hover:to-accent-700 text-white p-3 rounded-full transition-all duration-200 hover:scale-110 shadow-lg"
                 aria-label={isPortuguese ? 'Enviar mensagem' : 'Send message'}
               >
                 <Send className="w-4 h-4" />
               </button>
             </div>
-            <p className="text-xs text-gray-500 mt-2 text-center">
-              {isPortuguese ? 'Comunidade Portuguesa em Londres' : 'Portuguese Community in London'}
-            </p>
+            <div className="mt-3 text-center">
+              <p className="text-xs text-gray-600 font-medium flex items-center justify-center gap-2">
+                <div className="w-2 h-2 bg-gradient-to-r from-secondary-500 to-accent-500 rounded-full"></div>
+                {isPortuguese ? 'Comunidade Portuguesa em Londres' : 'Portuguese Community in London'}
+                <div className="w-2 h-2 bg-gradient-to-r from-secondary-500 to-accent-500 rounded-full"></div>
+              </p>
+            </div>
           </div>
         </div>
       )}

@@ -113,100 +113,106 @@ function generateTrustIndicators(heritage: any): TrustIndicator[] {
   ]
 }
 
-// Mock recent activities with Portuguese cultural context
+// Showcase LusoTown benefits through real community activities
 const mockActivities: CommunityActivity[] = [
   {
     id: '1',
-    type: 'cultural_moment',
+    type: 'member_joined',
     title: { 
-      en: 'Fado Performance at Kentish Town', 
-      pt: 'Apresentação de Fado em Kentish Town' 
+      en: 'Found Portuguese Speaking Driver', 
+      pt: 'Encontrou Motorista que Fala Português' 
     },
     description: { 
-      en: 'Maria shared photos from last night\'s intimate fado performance', 
-      pt: 'Maria partilhou fotos da apresentação íntima de fado de ontem à noite' 
+      en: 'Ana found a verified Portuguese-speaking luxury driver for airport transfers', 
+      pt: 'Ana encontrou um motorista de luxo verificado que fala português para transfers do aeroporto' 
     },
     actor: {
-      name: 'Maria Santos',
-      location: 'Kentish Town',
-      region: 'Porto',
+      name: 'Ana Costa',
+      location: 'Heathrow Terminal 5',
+      region: 'Minho',
       flag: '🇵🇹'
     },
-    timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000), // 2 hours ago
+    timestamp: new Date(Date.now() - 1 * 60 * 60 * 1000), // 1 hour ago
     metadata: {
-      culturalTag: 'fado',
+      eventType: 'transport',
       rating: 5
     },
-    trustScore: 95,
+    trustScore: 98,
     verified: true
   },
   {
     id: '2',
     type: 'event_created',
     title: { 
-      en: 'Pastéis de Nata Workshop This Saturday', 
-      pt: 'Workshop de Pastéis de Nata Este Sábado' 
+      en: 'Premium Match Success: Found Life Partner', 
+      pt: 'Sucesso Premium Match: Encontrou Parceiro de Vida' 
     },
     description: { 
-      en: 'Traditional Portuguese baking workshop in Borough Market', 
-      pt: 'Workshop tradicional de pastelaria portuguesa no Borough Market' 
+      en: 'Miguel & Sofia met through LusoTown Premium Matching and are now engaged!', 
+      pt: 'Miguel e Sofia conheceram-se através do LusoTown Premium Matching e agora estão noivos!' 
     },
     actor: {
-      name: 'João Silva',
-      location: 'Borough Market',
-      region: 'Lisboa',
+      name: 'Miguel & Sofia',
+      location: 'Vauxhall Portuguese Centre',
+      region: 'Porto & Lisboa',
       flag: '🇵🇹'
     },
-    timestamp: new Date(Date.now() - 4 * 60 * 60 * 1000), // 4 hours ago
+    timestamp: new Date(Date.now() - 3 * 60 * 60 * 1000), // 3 hours ago
     metadata: {
-      eventType: 'gastronomia'
+      eventType: 'premium_matching',
+      rating: 5
     },
-    trustScore: 92,
+    trustScore: 96,
     verified: true
   },
   {
     id: '3',
-    type: 'member_joined',
+    type: 'cultural_moment',
     title: { 
-      en: 'New member from São Paulo', 
-      pt: 'Novo membro de São Paulo' 
+      en: 'LusoTown TV: Business Networking Success', 
+      pt: 'LusoTown TV: Sucesso de Networking Empresarial' 
     },
     description: { 
-      en: 'Ana joined looking for Brazilian community events in Vauxhall', 
-      pt: 'Ana juntou-se procurando eventos da comunidade brasileira em Vauxhall' 
+      en: 'Carlos started his Portuguese catering business after meeting investors on LusoTown TV livestream', 
+      pt: 'Carlos começou o seu negócio de catering português depois de conhecer investidores no livestream LusoTown TV' 
     },
     actor: {
-      name: 'Ana Pereira',
-      location: 'Vauxhall',
-      region: 'São Paulo',
-      flag: '🇧🇷'
+      name: 'Carlos Rodrigues',
+      location: 'Elephant & Castle',
+      region: 'Açores',
+      flag: '🇵🇹'
     },
-    timestamp: new Date(Date.now() - 6 * 60 * 60 * 1000), // 6 hours ago
-    trustScore: 88,
-    verified: false
+    timestamp: new Date(Date.now() - 5 * 60 * 60 * 1000), // 5 hours ago
+    metadata: {
+      culturalTag: 'business_success',
+      rating: 5
+    },
+    trustScore: 94,
+    verified: true
   },
   {
     id: '4',
-    type: 'business_added',
+    type: 'review_posted',
     title: { 
-      en: 'New Portuguese Restaurant in Stockwell', 
-      pt: 'Novo Restaurante Português em Stockwell' 
+      en: 'Student Housing Success: University Partnership', 
+      pt: 'Sucesso em Habitação Estudantil: Parceria Universitária' 
     },
     description: { 
-      en: 'Casa do Bacalhau brings authentic Portuguese flavors to South London', 
-      pt: 'Casa do Bacalhau traz sabores portugueses autênticos ao Sul de Londres' 
+      en: 'Beatriz found Portuguese-speaking flatmates through LusoTown\'s King\'s College partnership program', 
+      pt: 'Beatriz encontrou colegas de casa que falam português através do programa de parceria do LusoTown com King\'s College' 
     },
     actor: {
-      name: 'Carlos Mendes',
-      location: 'Stockwell',
-      region: 'Aveiro',
+      name: 'Beatriz Lima',
+      location: 'King\'s College London',
+      region: 'Braga',
       flag: '🇵🇹'
     },
-    timestamp: new Date(Date.now() - 8 * 60 * 60 * 1000), // 8 hours ago
+    timestamp: new Date(Date.now() - 7 * 60 * 60 * 1000), // 7 hours ago
     metadata: {
-      businessCategory: 'restaurant'
+      eventType: 'student_services',
+      rating: 5
     },
-    trustScore: 90,
+    trustScore: 97,
     verified: true
   }
 ];
@@ -288,53 +294,64 @@ const PortugueseCommunityActivity: React.FC = () => {
   }
 
   return (
-    <section className="py-12 bg-white">
+    <section className="py-16 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Trust & Safety Indicators */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-12"
+          className="mb-16"
         >
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-100 to-secondary-100 px-4 py-2 rounded-full mb-4">
+              <SparklesIcon className="w-5 h-5 text-primary-600" />
+              <span className="text-primary-700 font-semibold text-sm">
+                {language === "pt" ? "Comunidade Verificada" : "Verified Community"}
+              </span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent mb-3">
               {language === "pt" ? "Confiança e Segurança Cultural" : "Cultural Trust & Safety"}
             </h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               {language === "pt" 
                 ? "Nossa comunidade prioriza a autenticidade e sensibilidade cultural portuguesa"
                 : "Our community prioritizes authenticity and Portuguese cultural sensitivity"}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {trustIndicators.map((indicator, index) => (
               <motion.div
                 key={indicator.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl p-6 border border-primary-100"
+                className="group bg-white rounded-2xl p-6 border border-primary-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 relative overflow-hidden"
               >
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="text-2xl">{indicator.icon}</div>
+                {/* Background decoration */}
+                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary-100/50 to-secondary-100/50 rounded-full blur-xl transform translate-x-8 -translate-y-8 group-hover:scale-150 transition-transform duration-500"></div>
+                
+                <div className="flex items-center gap-3 mb-4 relative z-10">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center text-2xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    {indicator.icon}
+                  </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-gray-900 text-sm">
+                    <h3 className="font-bold text-primary-900 text-base mb-2">
                       {language === "pt" ? indicator.name.pt : indicator.name.en}
                     </h3>
                     <div className="flex items-center gap-2">
-                      <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div className="flex-1 bg-primary-100 rounded-full h-3 overflow-hidden">
                         <div 
-                          className="bg-gradient-to-r from-primary-500 to-secondary-500 h-2 rounded-full transition-all duration-500"
+                          className="bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 h-3 rounded-full transition-all duration-1000 group-hover:animate-pulse"
                           style={{ width: `${indicator.score}%` }}
                         ></div>
                       </div>
-                      <span className="text-xs font-bold text-primary-600">{indicator.score}%</span>
+                      <span className="text-sm font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">{indicator.score}%</span>
                     </div>
                   </div>
                 </div>
-                <p className="text-xs text-gray-600 leading-relaxed">
+                <p className="text-sm text-gray-700 leading-relaxed relative z-10">
                   {language === "pt" ? indicator.culturalContext.pt : indicator.culturalContext.en}
                 </p>
               </motion.div>
@@ -347,111 +364,128 @@ const PortugueseCommunityActivity: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-12"
+          className="mb-16"
         >
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between mb-8">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-1">
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-secondary-100 to-accent-100 px-4 py-2 rounded-full mb-4">
+                <ArrowTrendingUpIcon className="w-5 h-5 text-secondary-600" />
+                <span className="text-secondary-700 font-semibold text-sm">
+                  {language === "pt" ? "Ao Vivo" : "Live Updates"}
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-secondary-600 to-accent-600 bg-clip-text text-transparent mb-2">
                 {language === "pt" ? "Atividade da Comunidade" : "Community Activity"}
               </h2>
-              <p className="text-gray-600 flex items-center gap-2">
-                <ArrowTrendingUpIcon className="w-4 h-4 text-primary-500" />
+              <p className="text-gray-600 text-lg">
                 {language === "pt" 
                   ? "Últimas atualizações da nossa comunidade lusófona"
                   : "Latest updates from our Portuguese community"}
               </p>
             </div>
-            <div className="text-right">
-              <div className="text-2xl font-bold text-primary-600">
+            <div className="text-right bg-white rounded-2xl p-6 shadow-lg border border-primary-200">
+              <div className="text-3xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
                 {activities.length}
               </div>
-              <div className="text-xs text-gray-600">
+              <div className="text-sm text-gray-600 font-medium">
                 {language === "pt" ? "atividades hoje" : "activities today"}
               </div>
             </div>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-6">
             {activities.map((activity, index) => (
               <motion.div
                 key={activity.id}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+                className="group bg-white border border-primary-200 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 hover:scale-[1.02] relative overflow-hidden"
               >
-                <div className="flex items-start gap-4">
+                {/* Background decoration */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-full blur-2xl transform translate-x-16 -translate-y-16 group-hover:scale-150 transition-transform duration-700"></div>
+                
+                <div className="flex items-start gap-6 relative z-10">
                   {/* Activity Icon */}
-                  <div className={`w-12 h-12 bg-gradient-to-r ${getActivityColor(activity.type)} rounded-xl flex items-center justify-center text-white flex-shrink-0`}>
+                  <div className={`w-16 h-16 bg-gradient-to-br ${getActivityColor(activity.type)} rounded-2xl flex items-center justify-center text-white flex-shrink-0 shadow-xl group-hover:scale-110 transition-transform duration-300`}>
                     {getActivityIcon(activity.type)}
                   </div>
 
                   {/* Activity Content */}
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between mb-2">
+                    <div className="flex items-start justify-between mb-3">
                       <div className="flex-1">
-                        <h3 className="font-semibold text-gray-900 text-lg mb-1">
-                          {language === "pt" ? activity.title.pt : activity.title.en}
-                        </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">
+                        <div className="flex items-center gap-2 mb-2">
+                          <h3 className="font-bold text-primary-900 text-xl">
+                            {language === "pt" ? activity.title.pt : activity.title.en}
+                          </h3>
+                          {activity.verified && (
+                            <div className="flex items-center gap-1 bg-green-100 px-2 py-1 rounded-full">
+                              <CheckBadgeIcon className="w-4 h-4 text-green-600" />
+                              <span className="text-green-700 text-xs font-semibold">
+                                {language === "pt" ? "Verificado" : "Verified"}
+                              </span>
+                            </div>
+                          )}
+                        </div>
+                        <p className="text-gray-700 text-base leading-relaxed">
                           {language === "pt" ? activity.description.pt : activity.description.en}
                         </p>
                       </div>
-                      {activity.verified && (
-                        <CheckBadgeIcon className="w-5 h-5 text-green-500 flex-shrink-0 ml-2" />
-                      )}
                     </div>
 
                     {/* Actor Info */}
-                    <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
-                      <div className="flex items-center gap-2">
-                        <span className="text-base">{activity.actor.flag}</span>
-                        <span className="font-medium">{activity.actor.name}</span>
-                        <span>•</span>
-                        <span>{activity.actor.region}</span>
+                    <div className="flex flex-wrap items-center gap-4 text-sm mb-4">
+                      <div className="flex items-center gap-2 bg-gradient-to-r from-primary-50 to-secondary-50 px-3 py-2 rounded-full">
+                        <span className="text-lg">{activity.actor.flag}</span>
+                        <span className="font-bold text-primary-900">{activity.actor.name}</span>
+                        <span className="text-primary-400">•</span>
+                        <span className="text-primary-700 font-medium">{activity.actor.region}</span>
                       </div>
-                      <div className="flex items-center gap-1">
-                        <MapPinIcon className="w-3 h-3" />
-                        <span>{activity.actor.location}</span>
+                      <div className="flex items-center gap-1 text-secondary-600">
+                        <MapPinIcon className="w-4 h-4" />
+                        <span className="font-medium">{activity.actor.location}</span>
                       </div>
-                      <div className="flex items-center gap-1">
-                        <ClockIcon className="w-3 h-3" />
-                        <span>{formatTimeAgo(activity.timestamp)}</span>
+                      <div className="flex items-center gap-1 text-accent-600">
+                        <ClockIcon className="w-4 h-4" />
+                        <span className="font-medium">{formatTimeAgo(activity.timestamp)}</span>
                       </div>
                     </div>
 
-                    {/* Trust Score */}
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <span className="text-xs text-gray-500">
+                    {/* Trust Score & Metadata */}
+                    <div className="flex items-center justify-between flex-wrap gap-4">
+                      <div className="flex items-center gap-3 bg-white rounded-full px-4 py-2 border border-primary-200 shadow-sm">
+                        <span className="text-sm text-primary-700 font-medium">
                           {language === "pt" ? "Confiança:" : "Trust:"}
                         </span>
-                        <div className="flex items-center gap-1">
-                          <div className="w-16 bg-gray-200 rounded-full h-1.5">
+                        <div className="flex items-center gap-2">
+                          <div className="w-20 bg-primary-100 rounded-full h-2 overflow-hidden">
                             <div 
-                              className="bg-gradient-to-r from-primary-500 to-secondary-500 h-1.5 rounded-full"
+                              className="bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 h-2 rounded-full transition-all duration-1000"
                               style={{ width: `${activity.trustScore}%` }}
                             ></div>
                           </div>
-                          <span className="text-xs font-medium text-primary-600">
+                          <span className="text-sm font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
                             {activity.trustScore}%
                           </span>
                         </div>
                       </div>
 
-                      {/* Cultural Tags */}
-                      {activity.metadata?.culturalTag && (
-                        <span className="px-2 py-1 bg-primary-50 text-primary-700 text-xs rounded-full">
-                          #{activity.metadata.culturalTag}
-                        </span>
-                      )}
-                      {activity.metadata?.rating && (
-                        <div className="flex items-center gap-1">
-                          {Array(activity.metadata.rating).fill(0).map((_, i) => (
-                            <StarIcon key={i} className="w-3 h-3 text-yellow-400 fill-current" />
-                          ))}
-                        </div>
-                      )}
+                      <div className="flex items-center gap-3">
+                        {/* Cultural Tags */}
+                        {activity.metadata?.culturalTag && (
+                          <span className="px-3 py-1 bg-gradient-to-r from-accent-100 to-coral-100 text-accent-700 text-sm font-semibold rounded-full border border-accent-200">
+                            #{activity.metadata.culturalTag}
+                          </span>
+                        )}
+                        {activity.metadata?.rating && (
+                          <div className="flex items-center gap-1 bg-yellow-50 px-3 py-1 rounded-full border border-yellow-200">
+                            {Array(activity.metadata.rating).fill(0).map((_, i) => (
+                              <StarIcon key={i} className="w-4 h-4 text-yellow-500 fill-current" />
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -460,29 +494,41 @@ const PortugueseCommunityActivity: React.FC = () => {
           </div>
 
           {/* Fresh Content Indicators */}
-          <div className="mt-8 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-6 border border-primary-100">
-            <div className="text-center">
-              <h3 className="font-bold text-gray-900 mb-2">
-                {language === "pt" ? "🔥 Comunidade Ativa" : "🔥 Active Community"}
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                <div className="flex items-center justify-center gap-2">
-                  <ChatBubbleLeftRightIcon className="w-4 h-4 text-primary-500" />
-                  <span className="text-gray-700">
-                    {language === "pt" ? "24 conversas ativas hoje" : "24 active conversations today"}
-                  </span>
+          <div className="mt-12 relative">
+            <div className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 rounded-3xl p-8 md:p-10 shadow-2xl relative overflow-hidden">
+              {/* Background decorations */}
+              <div className="absolute top-0 left-0 w-40 h-40 bg-white/10 rounded-full blur-xl transform -translate-x-20 -translate-y-20"></div>
+              <div className="absolute bottom-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-xl transform translate-x-16 translate-y-16"></div>
+              
+              <div className="text-center relative z-10">
+                <div className="inline-flex items-center gap-3 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full mb-6">
+                  <FireIcon className="w-6 h-6 text-yellow-300" />
+                  <h3 className="font-bold text-white text-xl">
+                    {language === "pt" ? "Comunidade Ativa" : "Active Community"}
+                  </h3>
                 </div>
-                <div className="flex items-center justify-center gap-2">
-                  <CalendarDaysIcon className="w-4 h-4 text-secondary-500" />
-                  <span className="text-gray-700">
-                    {language === "pt" ? "8 novos eventos esta semana" : "8 new events this week"}
-                  </span>
-                </div>
-                <div className="flex items-center justify-center gap-2">
-                  <UsersIcon className="w-4 h-4 text-accent-500" />
-                  <span className="text-gray-700">
-                    {language === "pt" ? "15 novos membros hoje" : "15 new members today"}
-                  </span>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                    <ChatBubbleLeftRightIcon className="w-8 h-8 text-white mx-auto mb-3" />
+                    <div className="text-2xl font-bold text-white mb-1">24</div>
+                    <span className="text-white/90 text-sm font-medium">
+                      {language === "pt" ? "conversas ativas hoje" : "active conversations today"}
+                    </span>
+                  </div>
+                  <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                    <CalendarDaysIcon className="w-8 h-8 text-white mx-auto mb-3" />
+                    <div className="text-2xl font-bold text-white mb-1">8</div>
+                    <span className="text-white/90 text-sm font-medium">
+                      {language === "pt" ? "novos eventos esta semana" : "new events this week"}
+                    </span>
+                  </div>
+                  <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                    <UsersIcon className="w-8 h-8 text-white mx-auto mb-3" />
+                    <div className="text-2xl font-bold text-white mb-1">15</div>
+                    <span className="text-white/90 text-sm font-medium">
+                      {language === "pt" ? "novos membros hoje" : "new members today"}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

@@ -364,7 +364,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
                       className="mt-4 pt-4 border-t border-gray-100"
                     >
                       <Link
-                        href={`/students/cities/${t(city.nameKey).toLowerCase()}`}
+                        href="/students"
                         className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium text-sm"
                       >
                         Explore Community
@@ -546,7 +546,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
                   {t('students.cta.verify')}
                 </button>
                 <Link
-                  href="/students/community"
+                  href="/students"
                   className="bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/30 transition-colors duration-300 flex items-center justify-center"
                 >
                   <UsersIcon className="w-5 h-5 mr-2" />
@@ -555,7 +555,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
               </div>
               <div className="mt-6">
                 <Link
-                  href="/students/support"
+                  href="/students"
                   className="text-white/80 hover:text-white text-sm inline-flex items-center"
                 >
                   {t('students.cta.learn_more')}

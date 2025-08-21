@@ -12,7 +12,7 @@ import { useSubscription } from '@/context/SubscriptionContext'
 import Footer from '@/components/Footer'
 import EventImageWithFallback from '@/components/EventImageWithFallback'
 import EcosystemOverview from '@/components/EcosystemOverview'
-import UnifiedActivity from '@/components/UnifiedActivity'
+import PortugueseCommunityActivity from '@/components/PortugueseCommunityActivity'
 import SmartRecommendations from '@/components/SmartRecommendations'
 import QuickActions from '@/components/QuickActions'
 import EcosystemStats from '@/components/EcosystemStats'
@@ -328,8 +328,8 @@ export default function Dashboard() {
 
             {activeTab === 'activity' && (
               <div className="space-y-6">
-                {/* Unified Activity Timeline */}
-                <UnifiedActivity activities={getUserTimeline() || []} />
+                {/* Portuguese Community Activity Timeline */}
+                <PortugueseCommunityActivity />
                 
                 {/* Platform Stats Summary */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

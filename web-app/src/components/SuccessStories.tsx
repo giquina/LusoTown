@@ -28,14 +28,14 @@ interface SuccessStory {
 
 // Generate dynamic success stories based on heritage context
 function generateSuccessStories(heritage: any, geography: any): SuccessStory[] {
-  const culturalEvents = Object.keys(heritage.streaming.contentCategories)
-  const mainTradition = heritage.culture.traditions[0] || 'Cultural celebration'
-  const culturalAreas = geography.culturalAreas
-  const mainCountry = geography.mainCountry.name
-  const diasporaCity = geography.city
-  const foods = heritage.culture.foods
-  const celebrations = heritage.culture.celebrations
-  const music = heritage.culture.music
+  const culturalEvents = Object.keys(heritage?.streaming?.contentCategories || {})
+  const mainTradition = heritage?.culture?.traditions?.[0] || 'Cultural celebration'
+  const culturalAreas = geography?.culturalAreas || geography?.diasporaHub?.culturalAreas || []
+  const mainCountry = geography?.mainCountry?.name || 'Portugal'
+  const diasporaCity = geography?.city || geography?.diasporaHub?.city || 'London'
+  const foods = heritage?.culture?.foods || []
+  const celebrations = heritage?.culture?.celebrations || []
+  const music = heritage?.culture?.music || []
 
   return [
   // Found Love Stories

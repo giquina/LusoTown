@@ -148,12 +148,37 @@
   }
   
   .section-padding {
-    @apply px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24;
+    @apply px-6 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24;
   }
   
   .container-width {
-    @apply max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8;
+    @apply max-w-[1600px] mx-auto w-full px-4 sm:px-6 lg:px-12;
   }
+  
+  /* Wide container variants for better screen utilization */
+  .container-wide {
+    @apply max-w-[1400px] mx-auto w-full px-4 sm:px-6 lg:px-10;
+  }
+  
+  .container-extra-wide {
+    @apply max-w-[1600px] mx-auto w-full px-4 sm:px-6 lg:px-12;
+  }
+  
+  .container-full {
+    @apply max-w-[1800px] mx-auto w-full px-4 sm:px-6 lg:px-16;
+  }
+  
+  /* Override common narrow widths with wider alternatives */
+  .max-w-4xl { @apply max-w-[1200px] !important; }
+  .max-w-5xl { @apply max-w-[1300px] !important; }
+  .max-w-6xl { @apply max-w-[1400px] !important; }
+  .max-w-7xl { @apply max-w-[1600px] !important; }
+  
+  /* Additional width overrides for better space utilization */
+  .max-w-3xl { @apply max-w-[1100px] !important; }
+  .max-w-2xl { @apply max-w-[900px] !important; }
+  .max-w-xl { @apply max-w-[700px] !important; }
+  
   
   /* Mobile-first responsive container */
   .mobile-safe {
