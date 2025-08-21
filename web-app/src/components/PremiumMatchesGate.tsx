@@ -16,7 +16,7 @@ import {
   Lock,
   Zap,
 } from "lucide-react";
-import { plans, formatPrice } from "@/config/pricing";
+import { SUBSCRIPTION_PLANS, formatPrice, getPlanLabel, getFormattedPlanPrice } from "@/config/pricing";
 
 export default function PremiumMatchesGate() {
   const { language } = useLanguage();
@@ -187,12 +187,12 @@ export default function PremiumMatchesGate() {
       ],
     },
     {
-      name: t.pricing.community.name,
-      price: t.pricing.community.price,
-      yearlyPrice: t.pricing.community.yearlyPrice,
-      yearlyMonthly: t.pricing.community.yearlyMonthly,
-      period: t.pricing.community.period,
-      description: t.pricing.community.description,
+      name: getPlanLabel('community', language),
+      price: getFormattedPlanPrice('community', 'monthly', language),
+      yearlyPrice: getFormattedPlanPrice('community', 'annual', language),
+      yearlyMonthly: formatPrice(SUBSCRIPTION_PLANS.community.annual / 12),
+      period: language === 'pt' ? '/mês' : '/month',
+      description: language === 'pt' ? 'Perfeito para conectar com falantes de português' : 'Perfect for connecting with Portuguese speakers',
       color: "primary",
       icon: Star,
       popular: true,
@@ -205,12 +205,12 @@ export default function PremiumMatchesGate() {
       ],
     },
     {
-      name: t.pricing.ambassador.name,
-      price: t.pricing.ambassador.price,
-      yearlyPrice: t.pricing.ambassador.yearlyPrice,
-      yearlyMonthly: t.pricing.ambassador.yearlyMonthly,
-      period: t.pricing.ambassador.period,
-      description: t.pricing.ambassador.description,
+      name: getPlanLabel('ambassador', language),
+      price: getFormattedPlanPrice('ambassador', 'monthly', language),
+      yearlyPrice: getFormattedPlanPrice('ambassador', 'annual', language),
+      yearlyMonthly: formatPrice(SUBSCRIPTION_PLANS.ambassador.annual / 12),
+      period: language === 'pt' ? '/mês' : '/month',
+      description: language === 'pt' ? 'Ideal para construtores ativos da comunidade' : 'Ideal for active community builders',
       color: "secondary",
       icon: Crown,
       popular: false,
