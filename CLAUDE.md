@@ -241,6 +241,136 @@ return <h1>{t('page.hero.title')}</h1>
 **Colors:** Portuguese brand colors only (primary, secondary, accent, action, premium, coral)
 **CTAs:** Max 2 words, pricing with "From £XX" format
 
+## Hardcoding Prevention Rules (CRITICAL)
+
+### Overview
+LusoTown is a production platform requiring strict configurability for multi-language support, dynamic pricing, geographic expansion, and content management.
+
+### ❌ NEVER Hardcode These Values:
+
+#### 1. Content Strings (Service Descriptions, Headers, Labels, etc.)
+**Rule**: All user-facing text MUST come from config/CMS/localization for easy updates and translation
+```typescript
+// ❌ BAD
+<button>Join Community</button>
+<h1>Welcome to LusoTown</h1>
+
+// ✅ GOOD  
+<button>{t('buttons.join_community')}</button>
+<h1>{t('hero.title')}</h1>
+```
+
+#### 2. Links, URLs, and Routes
+**Rule**: All routes MUST be referenced from routes/config file
+```typescript
+// ❌ BAD
+<a href="/events/create">Create Event</a>
+
+// ✅ GOOD
+<a href={`${ROUTES.events}/create`}>{t('actions.create_event')}</a>
+```
+
+#### 3. API Keys, Tokens, Credentials, and Secrets
+**Rule**: MUST NEVER be hardcoded. Store in .env files and reference securely
+```typescript
+// ❌ BAD - SECURITY VIOLATION
+const STRIPE_KEY = "pk_test_51Demo123456789"
+
+// ✅ GOOD
+const STRIPE_KEY = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+```
+
+#### 4. User Data (Names, IDs, Emails, Permissions, Prices, Account Tiers)
+**Rule**: User data MUST NOT be hardcoded. Should come from database
+```typescript
+// ❌ BAD
+const membershipPrice = 19.99;
+const userEmail = "demo@lusotown.com";
+
+// ✅ GOOD
+const membershipPrice = await getPricing('community');
+const userEmail = user.email;
+```
+
+#### 5. Feature Flags (Streaming Enabled, Feeds Visible, Account Tier Limits)
+**Rule**: Must be configurable, not hardcoded
+```typescript
+// ❌ BAD
+const isStreamingEnabled = true;
+
+// ✅ GOOD
+const isStreamingEnabled = featureFlags.streaming.enabled;
+```
+
+#### 6. Brand Identity Values (Site Name, Logo Path, Contact Email, Phone, Social Links)
+**Rule**: Should be dynamic, pulled from config or CMS
+```typescript
+// ❌ BAD
+const siteName = "LusoTown";
+const supportEmail = "hello@lusotown.com";
+
+// ✅ GOOD
+const siteName = brand.name;
+const supportEmail = contact.support.email;
+```
+
+#### 7. Pricing, Packages, and Booking Rules
+**Rule**: Must be stored in config/database for easy updates
+```typescript
+// ❌ BAD
+const transportPrice = 45;
+const membershipTiers = ['Free', 'Community'];
+
+// ✅ GOOD
+const transportPrice = await getServicePricing('transport');
+const membershipTiers = await getMembershipTiers();
+```
+
+### ✅ Exceptions (Safe to Hardcode):
+
+#### Static Layout Structure
+```typescript
+// ✅ OK - HTML structure and CSS classes
+<div className="flex items-center justify-between p-6">
+```
+
+#### Icons and Images (Permanent Design Assets)
+```typescript
+// ✅ OK - Permanent design assets with documentation
+<img src="/icons/hero-icon.svg" alt="Hero decoration" /> // Permanent UI element
+```
+
+#### Fallback Values (Only if Clearly Documented)
+```typescript
+// ✅ OK - With clear comments explaining why
+const maxRetries = config.api.maxRetries || 3; // Fallback for API reliability
+```
+
+### Code Review Checklist - Hardcoding Prevention:
+
+**Before Every Commit:**
+- [ ] No hardcoded text strings in JSX (`"Hello World"` → `{t('greeting')}`)
+- [ ] No hardcoded routes (`"/events"` → `{ROUTES.events}`)
+- [ ] No hardcoded URLs or CDN links (use config functions)
+- [ ] No hardcoded prices or business rules (use config/database)
+- [ ] No hardcoded feature flags or user limits
+- [ ] No hardcoded contact info or brand details
+- [ ] No hardcoded API keys or credentials (use env vars)
+- [ ] No hardcoded user data (fetch from database)
+- [ ] All user-facing text supports EN/PT translation
+- [ ] All exceptions are clearly documented with comments
+
+### Enforcement Strategy:
+1. **ESLint checks** prevent new violations
+2. **Pre-commit hooks** scan for hardcoded content  
+3. **Code reviews** verify compliance with checklist
+4. **Monthly audits** catch missed violations
+5. **Automated testing** validates configuration loading
+
+### Current Status (August 2025):
+**🚨 Critical**: 97,904+ violations across 508 files
+**Priority**: Content strings (95,828), routes (826), URLs (575), pricing/user data
+
 ## Content Guidelines
 
 **Tone:** Professional, inclusive, welcoming. London & UK focus targeting Portuguese speakers specifically.

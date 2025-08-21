@@ -251,7 +251,7 @@ export default function Hero() {
                   </h3>
                   <p className="text-gray-600">
                     From {formatPrice(plans.community.monthly)}/month - Connect with Portuguese speakers
-                    across London. Unlimited matches, events, and networking.
+                    across the United Kingdom. Unlimited matches, events, and networking nationwide.
                   </p>
                   <div className="mt-4 space-y-2">
                     <div className="text-sm text-gray-500">
@@ -292,10 +292,10 @@ export default function Hero() {
                   </div>
                   <div className="bg-white/40 rounded-2xl p-4">
                     <div className="text-3xl font-bold text-action-600">
-                      10+
+                      25+
                     </div>
                     <div className="text-sm text-gray-600">
-                      Countries Represented
+                      UK Cities
                     </div>
                   </div>
                 </div>

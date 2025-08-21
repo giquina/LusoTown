@@ -10,24 +10,54 @@ import {
   ArrowRightIcon,
   CheckIcon,
   SparklesIcon,
+  UserGroupIcon,
+  CalendarDaysIcon,
+  GlobeAltIcon,
+  HeartIcon,
 } from "@heroicons/react/24/outline";
 import { useLanguage } from "@/context/LanguageContext";
 import { plans, formatPrice } from "@/config/pricing";
+import { communityStats } from "@/config/community";
 
-const getBenefits = (t: any) => [
-  `From ${formatPrice(
-    plans.community.monthly
-  )}/month - Connect with Portuguese speakers across London`,
-  "Unlimited matches and messaging",
-  "Access to all community events",
-  "Professional networking opportunities",
-  "Advanced search and profile features",
-  "Priority support and safety features",
+// Social login providers
+const socialProviders = [
+  { name: 'Google', icon: '🔍', href: '/auth/google' },
+  { name: 'Facebook', icon: '📘', href: '/auth/facebook' },
+  { name: 'Instagram', icon: '📸', href: '/auth/instagram' },
+  { name: 'LinkedIn', icon: '💼', href: '/auth/linkedin' },
+];
+
+// Enhanced community highlights with UK focus
+const communityHighlights = [
+  { 
+    label: "Portuguese Speakers", 
+    value: communityStats.members, 
+    icon: UserGroupIcon,
+    description: "Across the United Kingdom"
+  },
+  { 
+    label: "Monthly UK Events", 
+    value: "150+", 
+    icon: CalendarDaysIcon,
+    description: "London, Manchester, Birmingham & more"
+  },
+  { 
+    label: "UK Cities", 
+    value: "25+", 
+    icon: GlobeAltIcon,
+    description: "From Edinburgh to Brighton"
+  },
+  { 
+    label: "Success Stories", 
+    value: "500+", 
+    icon: HeartIcon,
+    description: "Portuguese connections made in the UK"
+  },
 ];
 
 export default function CTA() {
   const { t } = useLanguage();
-  const benefits = getBenefits(t);
+  
   return (
     <section className="py-20 bg-gradient-to-br from-secondary-600 via-action-600 to-accent-600 relative overflow-hidden">
       {/* Background Elements */}
@@ -38,140 +68,185 @@ export default function CTA() {
       </div>
 
       <div className="container-width section-padding relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Header */}
+        <div className="max-w-6xl mx-auto">
+          
+          {/* Header - Improved */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mb-12"
+            className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-white font-medium mb-6 border border-white/30">
-              <SparklesIcon className="h-4 w-4" />
-              Community Membership - From {formatPrice(plans.community.monthly)}/Month
+            <div className="inline-flex items-center gap-3 bg-white/20 backdrop-blur-sm rounded-full px-6 py-3 text-white font-semibold mb-8 border border-white/30">
+              <div className="flex items-center gap-2">
+                <span className="text-lg">🇵🇹</span>
+                <span className="text-lg">🇬🇧</span>
+              </div>
+              <SparklesIcon className="h-5 w-5" />
+              Portuguese Community in the UK
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Join the Portuguese Community
+            
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              From {formatPrice(plans.community.monthly)}/month
             </h2>
-            <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto">
-              Choose your membership tier. Connect with Portuguese speakers. Build meaningful
-              relationships in London's vibrant Portuguese community.
-            </p>
+            
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-4xl mx-auto mb-8 border border-white/20">
+              <p className="text-2xl sm:text-3xl text-white font-bold mb-4 leading-tight">
+                Connect with Portuguese speakers across the United Kingdom
+              </p>
+              <p className="text-lg text-white/90 leading-relaxed">
+                From London to Manchester, Birmingham to Edinburgh - join the largest Portuguese community platform in the UK. 
+                Unlimited matches, cultural events, and professional networking nationwide.
+              </p>
+            </div>
+
+            {/* Pricing Tiers - UK Focused */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto mb-12">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 text-center">
+                <h3 className="text-white font-bold text-xl mb-2">UK Community Member</h3>
+                <p className="text-white/90 text-2xl font-bold">{formatPrice(plans.community.monthly)}/month</p>
+                <p className="text-white/80 text-sm mt-3 leading-relaxed">
+                  Connect with Portuguese speakers across England, Scotland, Wales & Northern Ireland
+                </p>
+              </div>
+              <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-6 border border-white/30 text-center relative overflow-hidden">
+                <div className="absolute -top-2 -right-2 bg-coral-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                  Most Popular
+                </div>
+                <h3 className="text-white font-bold text-xl mb-2">Cultural Ambassador</h3>
+                <p className="text-white/90 text-2xl font-bold">{formatPrice(plans.ambassador.monthly)}/month</p>
+                <p className="text-white/80 text-sm mt-3 leading-relaxed">
+                  Premium access + priority visibility across all UK Portuguese events
+                </p>
+              </div>
+            </div>
           </motion.div>
 
-          {/* Benefits List - Fixed mobile text truncation */}
+          {/* Community Stats - More Visual */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12 max-w-3xl mx-auto"
+            className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12"
           >
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={benefit}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
-                className="flex items-start gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 min-h-[64px]"
-              >
-                <CheckIcon className="h-5 w-5 text-white flex-shrink-0 mt-0.5" />
-                <span className="text-white font-medium leading-relaxed break-words">
-                  {benefit}
-                </span>
-              </motion.div>
-            ))}
+            {communityHighlights.map((highlight, index) => {
+              const IconComponent = highlight.icon;
+              return (
+                <motion.div
+                  key={highlight.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 + index * 0.1, duration: 0.5 }}
+                  className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center border border-white/20"
+                >
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <IconComponent className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="text-2xl font-bold text-white mb-1">{highlight.value}</div>
+                  <div className="text-white/90 font-semibold text-sm mb-2">{highlight.label}</div>
+                  <div className="text-white/70 text-xs">{highlight.description}</div>
+                </motion.div>
+              );
+            })}
           </motion.div>
 
-          {/* Main CTA */}
+          {/* Main CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="space-y-6"
+            className="text-center mb-12"
           >
-            <a
-              href="/signup"
-              className="bg-white text-secondary-700 hover:bg-gray-50 font-bold text-base sm:text-lg md:text-xl px-6 sm:px-10 md:px-16 py-4 sm:py-5 md:py-6 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 group inline-flex items-center justify-center w-full sm:w-auto max-w-sm mx-auto"
-            >
-              {t("nav.start-free", "Start Free")}
-              <ArrowRightIcon className="h-5 w-5 sm:h-6 sm:w-6 ml-2 sm:ml-3 group-hover:translate-x-1 transition-transform duration-200" />
-            </a>
+            <div className="flex flex-col items-center space-y-6">
+              {/* Primary Action */}
+              <a
+                href="/signup"
+                className="bg-white text-secondary-700 hover:bg-gray-50 font-bold text-xl px-12 py-6 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 group inline-flex items-center justify-center"
+              >
+                Quick Join
+                <ArrowRightIcon className="h-6 w-6 ml-3 group-hover:translate-x-1 transition-transform duration-200" />
+              </a>
 
-            <p className="text-white/80 text-sm">
-              {t(
-                "cta.guarantee",
-                "No commitment • Start connecting immediately • Cancel anytime"
-              )}
-            </p>
+              {/* Social Login Options */}
+              <div className="w-full max-w-md">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="flex-1 h-px bg-white/30"></div>
+                  <span className="text-white/80 font-medium">or continue with</span>
+                  <div className="flex-1 h-px bg-white/30"></div>
+                </div>
+                
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  {socialProviders.map((provider, index) => (
+                    <motion.a
+                      key={provider.name}
+                      href={provider.href}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.5 + index * 0.1, duration: 0.3 }}
+                      className="bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-xl p-4 text-center border border-white/20 hover:border-white/40 transition-all duration-300 group flex flex-col items-center"
+                    >
+                      <span className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-200">{provider.icon}</span>
+                      <span className="text-white text-sm font-medium">{provider.name}</span>
+                    </motion.a>
+                  ))}
+                </div>
+                
+                <p className="text-white/70 text-center mt-4 text-sm">
+                  or continue with email
+                </p>
+              </div>
+            </div>
           </motion.div>
 
-          {/* Urgency/Scarcity */}
+          {/* Enhanced Trust Signals */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="mt-12 bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 max-w-2xl mx-auto"
+            className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 max-w-4xl mx-auto"
           >
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="flex -space-x-2">
+            {/* Social Proof - UK Focused */}
+            <div className="text-center mb-8">
+              <div className="flex justify-center -space-x-3 mb-4">
                 {[1, 2, 3, 4, 5, 6, 7].map((i) => (
                   <div
                     key={i}
-                    className="w-10 h-10 rounded-full border-2 border-white"
+                    className="w-12 h-12 rounded-full border-2 border-white shadow-lg flex items-center justify-center text-xs font-bold text-white"
                     style={{
-                      backgroundColor: `hsl(${(i * 60) % 360}, 70%, 60%)`,
+                      backgroundColor: `hsl(${(i * 51) % 360}, 65%, 55%)`,
                     }}
-                  />
+                  >
+                    UK
+                  </div>
                 ))}
               </div>
+              <p className="text-white font-bold text-xl mb-2">
+                23 Portuguese speakers from across the UK joined today
+              </p>
+              <p className="text-white/80 text-lg">
+                Connect with your Portuguese community nationwide within 48 hours
+              </p>
             </div>
-            <p className="text-white font-semibold text-lg mb-2">
-              23{" "}
-              {t(
-                "cta.social-proof",
-                "Portuguese speakers joined in the last 24 hours"
-              )}
-            </p>
-            <p className="text-white/80">
-              {t(
-                "cta.connect-time",
-                "Join now and connect with the Luso-London community within 48 hours"
-              )}
-            </p>
-          </motion.div>
 
-          {/* Trust Signals - Enhanced Multi-Column Layout - Fixed mobile spacing */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-            className="mt-12 grid grid-cols-3 gap-4 sm:gap-6 lg:gap-8 text-white/80"
-          >
-            <div className="text-center">
-              <div className="text-2xl font-bold text-white mb-1">100%</div>
-              <div className="text-sm">
-                {t("cta.trust.verified-profiles", "Verified Profiles")}
+            {/* Trust Signals Grid */}
+            <div className="grid grid-cols-3 gap-6 text-center">
+              <div>
+                <div className="text-3xl font-bold text-white mb-2">100%</div>
+                <div className="text-white/80 text-sm">Verified Profiles</div>
               </div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-white mb-1">24/7</div>
-              <div className="text-sm">
-                {t("cta.trust.community-support", "Community Support")}
+              <div>
+                <div className="text-3xl font-bold text-white mb-2">24/7</div>
+                <div className="text-white/80 text-sm">Community Support</div>
               </div>
-            </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-white mb-1">30-Days</div>
-              <div className="text-sm">
-                {t(
-                  "cta.trust.satisfaction-guarantee",
-                  "Satisfaction Guarantee"
-                )}
+              <div>
+                <div className="text-3xl font-bold text-white mb-2">30-Day</div>
+                <div className="text-white/80 text-sm">Money Back Guarantee</div>
               </div>
             </div>
           </motion.div>

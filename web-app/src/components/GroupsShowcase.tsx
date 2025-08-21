@@ -58,8 +58,79 @@ export default function GroupsShowcase() {
 
       setFeaturedGroups(groupsWithCategories)
     } catch (error) {
-      console.error('Error loading featured groups:', error)
-      // Fail silently on homepage
+      console.warn('Supabase unavailable, using local groups data:', error)
+      
+      // Fallback to mock Portuguese groups data
+      const mockGroups: GroupWithCategory[] = [
+        {
+          id: 'group-1',
+          name: 'Portuguese Professionals London',
+          description: 'Connecting Portuguese-speaking professionals across London for networking, career development, and cultural exchange.',
+          category: 'professional',
+          current_member_count: 245,
+          max_members: 500,
+          is_private: false,
+          is_active: true,
+          moderation_status: 'approved',
+          created_at: new Date().toISOString(),
+          updated_at: new Date().toISOString(),
+          created_by: 'mock-user-id',
+          cover_image_url: '/events/networking.jpg',
+          category_info: {
+            id: 'professional',
+            name: 'Professional',
+            description: 'Career and business networking',
+            color: '#058B49',
+            icon: '💼'
+          }
+        },
+        {
+          id: 'group-2', 
+          name: 'Fado & Portuguese Culture',
+          description: 'Preserving and sharing Portuguese musical heritage through Fado sessions and cultural events.',
+          category: 'cultural',
+          current_member_count: 189,
+          max_members: 300,
+          is_private: false,
+          is_active: true,
+          moderation_status: 'approved',
+          created_at: new Date().toISOString(),
+          updated_at: new Date().toISOString(),
+          created_by: 'mock-user-id',
+          cover_image_url: '/events/jazz-networking.jpg',
+          category_info: {
+            id: 'cultural',
+            name: 'Cultural',
+            description: 'Cultural preservation and traditions',
+            color: '#DC2626',
+            icon: '🎭'
+          }
+        },
+        {
+          id: 'group-3',
+          name: 'Portuguese Families London & UK',
+          description: 'Supporting Portuguese families with children, family-friendly events, and cultural education.',
+          category: 'family',
+          current_member_count: 156,
+          max_members: 400,
+          is_private: false,
+          is_active: true,
+          moderation_status: 'approved',
+          created_at: new Date().toISOString(),
+          updated_at: new Date().toISOString(),
+          created_by: 'mock-user-id',
+          cover_image_url: '/events/book-club.jpg',
+          category_info: {
+            id: 'family',
+            name: 'Family',
+            description: 'Family-oriented activities and support',
+            color: '#7C3AED',
+            icon: '👨‍👩‍👧‍👦'
+          }
+        }
+      ]
+      
+      setFeaturedGroups(mockGroups)
     } finally {
       setLoading(false)
     }
@@ -226,8 +297,8 @@ export default function GroupsShowcase() {
             transition={{ delay: 0.2 }}
             className="text-xl sm:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium"
           >
-            Connect with Portuguese speakers across London & UK. From business networking 
-            to cultural events, discover groups that match your interests and make lasting friendships.
+            Connect with Portuguese speakers across the United Kingdom. From business networking in London
+            to cultural events in Manchester, discover groups nationwide that match your interests and make lasting friendships.
           </motion.p>
         </div>
 

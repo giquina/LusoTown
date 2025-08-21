@@ -13,6 +13,7 @@ import {
   FireIcon,
   StarIcon,
   CheckCircleIcon,
+  BriefcaseIcon,
 } from "@heroicons/react/24/outline";
 import {
   HeartIcon as HeartSolid,
@@ -25,6 +26,7 @@ import MatchEventSuggestions from "./MatchEventSuggestions";
 import EventBuddyFinder from "./EventBuddyFinder";
 import MatchingAchievements from "./MatchingAchievements";
 import GroupMatching from "./GroupMatching";
+import BusinessNetworkingMatch from "./BusinessNetworkingMatch";
 
 interface Match {
   id: string;
@@ -97,7 +99,7 @@ export default function EnhancedMatchDashboard({
   const [currentMatch, setCurrentMatch] = useState<Match | null>(null);
   const [matches, setMatches] = useState<Match[]>([]);
   const [currentMatchIndex, setCurrentMatchIndex] = useState(0);
-  const [activeTab, setActiveTab] = useState<'discover' | 'mutual' | 'events' | 'groups' | 'achievements'>('discover');
+  const [activeTab, setActiveTab] = useState<'discover' | 'mutual' | 'events' | 'groups' | 'achievements' | 'business'>('discover');
   const [mutualMatches, setMutualMatches] = useState<Match[]>([]);
   const [loading, setLoading] = useState(true);
   const [dailyStats, setDailyStats] = useState({
@@ -283,6 +285,12 @@ export default function EnhancedMatchDashboard({
       label: language === "pt" ? "Grupos" : "Groups",
       icon: UserGroupIcon,
       count: 3,
+    },
+    {
+      id: 'business' as const,
+      label: language === "pt" ? "Profissional" : "Business",
+      icon: BriefcaseIcon,
+      count: 12,
     },
     {
       id: 'achievements' as const,
@@ -565,6 +573,31 @@ export default function EnhancedMatchDashboard({
                     ...prev,
                     matchesReceived: prev.matchesReceived + groupMembers.length,
                   }));
+                }}
+              />
+            </motion.div>
+          )}
+
+          {activeTab === 'business' && (
+            <motion.div
+              key="business"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+            >
+              <BusinessNetworkingMatch
+                currentUserId={currentUserId}
+                onBusinessMatchAction={(matchId, action) => {
+                  // Handle business match actions
+                  console.log('Business match action:', matchId, action);
+                }}
+                onMentorshipRequest={(menteeId, mentorId) => {
+                  // Handle mentorship requests
+                  console.log('Mentorship request:', menteeId, mentorId);
+                }}
+                onBusinessEventBooking={(eventId, matchId) => {
+                  // Handle business event booking
+                  console.log('Business event booking:', eventId, matchId);
                 }}
               />
             </motion.div>

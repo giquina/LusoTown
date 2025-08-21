@@ -351,7 +351,7 @@ const EventsShowcase = memo(() => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 lg:gap-8 mb-12 sm:mb-16">
           {filteredEvents.slice(0, 3).map((event, index) => (
             <motion.div
-              key={event.id}
+              key={event.id || `event-${index}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}

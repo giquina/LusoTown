@@ -33,6 +33,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { plans, formatPrice } from "@/config/pricing";
 import PremiumMatchesGate from "@/components/PremiumMatchesGate";
 import EnhancedMatchDashboard from "@/components/matches/EnhancedMatchDashboard";
+import MatchTestimonials from "@/components/MatchTestimonials";
 
 // Mock Portuguese profiles for demonstration
 const mockProfiles = [
@@ -416,12 +417,12 @@ function MatchesContent() {
                 <HeartIcon className="w-10 h-10 md:w-12 md:h-12 text-white/90 animate-pulse" />
               </div>
               <h1 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
-                {language === "pt" ? "Encontre o Seu Match" : "Find Your Match"}
+                {language === "pt" ? "Conecte-se com Falantes de Português no Reino Unido" : "Connect with Portuguese Speakers in the UK"}
               </h1>
               <p className="text-sm md:text-base text-white/90 mb-6 leading-relaxed max-w-3xl mx-auto">
                 {language === "pt"
-                  ? "Conecte-se com falantes de português no Reino Unido que partilham os seus interesses, valores e património cultural. Mais que um app de encontros - uma comunidade."
-                  : "Connect with Portuguese speakers in the United Kingdom who share your interests, values, and cultural heritage. More than a dating app - a community."}
+                  ? "Conecte-se com falantes de português em todo o Reino Unido que partilham os seus interesses, valores e património cultural. Do Porto a São Paulo, do Rio a Luanda - aqui encontra a sua comunidade."
+                  : "Connect with Portuguese speakers across the United Kingdom who share your interests, values, and cultural heritage. From Porto to São Paulo, Rio to Luanda - find your community here."}
               </p>
 
               {/* Live Success Counter */}
@@ -587,19 +588,67 @@ function MatchesContent() {
         </div>
       </div>
 
+      {/* Portuguese-Speaking Nations Section */}
+      <section className="py-8 md:py-12 bg-white border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-8">
+            <h2 className="text-xl md:text-2xl font-bold text-primary-900 mb-3">
+              {language === "pt" ? "Unidos pela Língua Portuguesa" : "United by the Portuguese Language"}
+            </h2>
+            <p className="text-sm md:text-base text-primary-700 max-w-2xl mx-auto">
+              {language === "pt" 
+                ? "Conectamos falantes de português de todas as nações lusófonas no Reino Unido"
+                : "Connecting Portuguese speakers from all Lusophone nations across the UK"}
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-9 gap-4 md:gap-6">
+            {[
+              { flag: "🇵🇹", country: "Portugal", name: language === "pt" ? "Portugal" : "Portugal" },
+              { flag: "🇧🇷", country: "Brazil", name: language === "pt" ? "Brasil" : "Brazil" },
+              { flag: "🇦🇴", country: "Angola", name: "Angola" },
+              { flag: "🇲🇿", country: "Mozambique", name: language === "pt" ? "Moçambique" : "Mozambique" },
+              { flag: "🇨🇻", country: "Cape Verde", name: language === "pt" ? "Cabo Verde" : "Cape Verde" },
+              { flag: "🇬🇼", country: "Guinea-Bissau", name: "Guiné-Bissau" },
+              { flag: "🇸🇹", country: "São Tomé and Príncipe", name: language === "pt" ? "São Tomé e Príncipe" : "São Tomé and Príncipe" },
+              { flag: "🇹🇱", country: "East Timor", name: language === "pt" ? "Timor-Leste" : "East Timor" },
+              { flag: "🇲🇴", country: "Macau", name: "Macau" }
+            ].map((nation, index) => (
+              <div key={nation.country} className="flex flex-col items-center group hover:transform hover:scale-105 transition-all duration-200">
+                <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary-50 to-secondary-50 flex items-center justify-center text-2xl md:text-3xl shadow-lg group-hover:shadow-xl transition-shadow duration-200 border border-primary-100">
+                  {nation.flag}
+                </div>
+                <span className="text-xs md:text-sm font-medium text-primary-800 mt-2 text-center leading-tight">
+                  {nation.name}
+                </span>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-8">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-50 to-secondary-50 px-4 py-2 rounded-full border border-primary-200">
+              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-sm font-medium text-primary-800">
+                {language === "pt" ? "260+ milhões de falantes unidos" : "260+ million speakers united"}
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Interactive Matching Section */}
       <section className="py-10 md:py-14 bg-gradient-to-br from-primary-50 via-secondary-50 to-accent-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-bold text-primary-900 mb-3 md:mb-5">
               {language === "pt"
-                ? "Descubra os Seus Matches"
-                : "Discover Your Matches"}
+                ? "Descubra Falantes de Português Próximos de Si"
+                : "Discover Portuguese Speakers Near You"}
             </h2>
             <p className="text-sm md:text-base text-primary-700 max-w-3xl mx-auto mb-5">
               {language === "pt"
-                ? "Navegue por falantes de português no Reino Unido que partilham os seus interesses e património cultural. Cada perfil é cuidadosamente verificado."
-                : "Browse through Portuguese speakers in the United Kingdom who share your interests and cultural background. Every profile is carefully verified."}
+                ? "Navegue por falantes de português em todo o Reino Unido que partilham os seus interesses, valores e património cultural. Cada perfil é cuidadosamente verificado para garantir ligações autênticas."
+                : "Browse Portuguese speakers across the United Kingdom who share your interests, values, and cultural heritage. Every profile is carefully verified to ensure authentic connections."}
             </p>
 
             {/* Cultural Compatibility Highlight */}
@@ -1061,20 +1110,43 @@ function MatchesContent() {
         )}
       </AnimatePresence>
 
-      {/* How It Works Section */}
-      <section className="py-10 md:py-14 bg-white">
+      {/* How It Works Section - Enhanced */}
+      <section className="py-12 md:py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-primary-900 mb-3 md:mb-5">
-              {t("howItWorks") || "How It Works"}
+            <h2 className="text-2xl md:text-3xl font-bold text-primary-900 mb-4">
+              {language === "pt" ? "Como Funciona o Nosso Sistema" : "How Our Matching System Works"}
             </h2>
-            <p className="text-sm md:text-base text-primary-700 max-w-3xl mx-auto">
-              {t("howItWorksDescription") ||
-                "Our matching system is designed specifically for Portuguese speakers in London, focusing on cultural compatibility and shared experiences"}
+            <p className="text-sm md:text-base text-primary-700 max-w-3xl mx-auto mb-8">
+              {language === "pt"
+                ? "O nosso algoritmo de correspondência foi especificamente desenvolvido para falantes de português no Reino Unido, focando na compatibilidade cultural e experiências partilhadas."
+                : "Our matching algorithm is specifically designed for Portuguese speakers in the UK, focusing on cultural compatibility and shared experiences."}
             </p>
+            
+            {/* Algorithm Highlights */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+              <div className="bg-gradient-to-br from-primary-50 to-primary-100 p-4 rounded-xl border border-primary-200">
+                <div className="text-primary-600 font-bold text-lg mb-1">94%</div>
+                <div className="text-sm text-primary-800">
+                  {language === "pt" ? "Taxa de Compatibilidade" : "Compatibility Rate"}
+                </div>
+              </div>
+              <div className="bg-gradient-to-br from-secondary-50 to-secondary-100 p-4 rounded-xl border border-secondary-200">
+                <div className="text-secondary-600 font-bold text-lg mb-1">2.3</div>
+                <div className="text-sm text-secondary-800">
+                  {language === "pt" ? "Dias Médios para Match" : "Days to Match"}
+                </div>
+              </div>
+              <div className="bg-gradient-to-br from-accent-50 to-accent-100 p-4 rounded-xl border border-accent-200">
+                <div className="text-accent-600 font-bold text-lg mb-1">85%</div>
+                <div className="text-sm text-accent-800">
+                  {language === "pt" ? "Encontram-se Pessoalmente" : "Meet in Person"}
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
             {steps.map((step, index) => (
               <div key={index} className="text-center group">
                 <div className="bg-white p-5 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-primary-100">
@@ -1085,16 +1157,185 @@ function MatchesContent() {
                     {index + 1}
                   </div>
                   <h3 className="text-base md:text-lg font-bold text-primary-900 mb-2 md:mb-3">
-                    {t("currentLang") === "pt" ? step.titlePt : step.title}
+                    {language === "pt" ? step.titlePt : step.title}
                   </h3>
                   <p className="text-primary-700 leading-relaxed text-sm md:text-base">
-                    {t("currentLang") === "pt"
-                      ? step.descriptionPt
-                      : step.description}
+                    {language === "pt" ? step.descriptionPt : step.description}
                   </p>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Account Types & Features */}
+          <div className="bg-gradient-to-r from-primary-50 via-secondary-50 to-accent-50 rounded-3xl p-8 md:p-10 border border-primary-200">
+            <div className="text-center mb-8">
+              <h3 className="text-xl md:text-2xl font-bold text-primary-900 mb-3">
+                {language === "pt" ? "Planos e Funcionalidades" : "Plans & Features"}
+              </h3>
+              <p className="text-primary-700 max-w-2xl mx-auto">
+                {language === "pt" 
+                  ? "Escolha o plano que melhor se adapta às suas necessidades de networking na comunidade portuguesa."
+                  : "Choose the plan that best fits your Portuguese community networking needs."}
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Free Plan */}
+              <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-md">
+                <div className="text-center mb-6">
+                  <div className="text-2xl font-bold text-gray-600 mb-2">FREE</div>
+                  <div className="text-sm text-gray-500 mb-4">
+                    {language === "pt" ? "Comece a conectar-se" : "Start connecting"}
+                  </div>
+                </div>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <span className="text-sm">
+                      {language === "pt" ? "3 matches por dia" : "3 matches per day"}
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <span className="text-sm">
+                      {language === "pt" ? "10 mensagens por mês" : "10 messages per month"}
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <span className="text-sm">
+                      {language === "pt" ? "Filtros básicos" : "Basic filters"}
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <span className="text-sm">
+                      {language === "pt" ? "Eventos públicos" : "Public events"}
+                    </span>
+                  </li>
+                </ul>
+                <a
+                  href={ROUTES.signup}
+                  className="w-full bg-gray-100 text-gray-700 py-3 rounded-xl font-medium text-center block hover:bg-gray-200 transition-colors"
+                >
+                  {language === "pt" ? "Começar Grátis" : "Start Free"}
+                </a>
+              </div>
+
+              {/* Community Plan */}
+              <div className="bg-white rounded-2xl p-6 border-2 border-primary-300 shadow-lg relative">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-primary-600 text-white px-4 py-1 rounded-full text-xs font-semibold">
+                    {language === "pt" ? "MAIS POPULAR" : "MOST POPULAR"}
+                  </div>
+                </div>
+                <div className="text-center mb-6">
+                  <div className="text-2xl font-bold text-primary-600 mb-2">
+                    {formatPrice(plans.community.monthly)}
+                  </div>
+                  <div className="text-sm text-primary-600 mb-4">
+                    {language === "pt" ? "Membro da Comunidade" : "Community Member"}
+                  </div>
+                </div>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <span className="text-sm">
+                      {language === "pt" ? "Matches ilimitados" : "Unlimited matches"}
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <span className="text-sm">
+                      {language === "pt" ? "Mensagens ilimitadas" : "Unlimited messaging"}
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <span className="text-sm">
+                      {language === "pt" ? "Filtros culturais avançados" : "Advanced cultural filters"}
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <span className="text-sm">
+                      {language === "pt" ? "Eventos exclusivos" : "Exclusive events"}
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <span className="text-sm">
+                      {language === "pt" ? "Perfil em destaque" : "Featured profile"}
+                    </span>
+                  </li>
+                </ul>
+                <button
+                  onClick={() => createSubscription("community")}
+                  className="w-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-3 rounded-xl font-semibold hover:from-primary-700 hover:to-secondary-700 transition-all"
+                >
+                  {language === "pt" ? "Começar Premium" : "Start Premium"}
+                </button>
+              </div>
+
+              {/* Ambassador Plan */}
+              <div className="bg-white rounded-2xl p-6 border border-premium-200 shadow-md">
+                <div className="text-center mb-6">
+                  <div className="text-2xl font-bold text-premium-600 mb-2">
+                    {formatPrice(plans.ambassador.monthly)}
+                  </div>
+                  <div className="text-sm text-premium-600 mb-4">
+                    {language === "pt" ? "Embaixador Cultural" : "Cultural Ambassador"}
+                  </div>
+                </div>
+                <ul className="space-y-3 mb-6">
+                  <li className="flex items-center gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <span className="text-sm">
+                      {language === "pt" ? "Tudo do Comunidade +" : "Everything in Community +"}
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <span className="text-sm">
+                      {language === "pt" ? "Super Likes ilimitados" : "Unlimited Super Likes"}
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <span className="text-sm">
+                      {language === "pt" ? "Hospedar eventos" : "Host events"}
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <span className="text-sm">
+                      {language === "pt" ? "Badges VIP" : "VIP badges"}
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                    <span className="text-sm">
+                      {language === "pt" ? "Suporte prioritário" : "Priority support"}
+                    </span>
+                  </li>
+                </ul>
+                <button
+                  onClick={() => createSubscription("ambassador")}
+                  className="w-full bg-gradient-to-r from-premium-600 to-premium-700 text-white py-3 rounded-xl font-semibold hover:from-premium-700 hover:to-premium-800 transition-all"
+                >
+                  {language === "pt" ? "Ser Embaixador" : "Become Ambassador"}
+                </button>
+              </div>
+            </div>
+
+            <div className="text-center mt-8">
+              <p className="text-sm text-primary-600">
+                {language === "pt" 
+                  ? "Todos os planos incluem acesso à comunidade portuguesa no Reino Unido • Cancele a qualquer momento"
+                  : "All plans include access to the Portuguese community in the UK • Cancel anytime"}
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -1197,6 +1438,10 @@ function MatchesContent() {
           </div>
         </div>
       </section>
+
+      {/* Success Stories Section */}
+      <MatchTestimonials />
+
       {/* Upgrade Prompt Modal */}
       <AnimatePresence>
         {showUpgradePrompt && (
@@ -1311,29 +1556,38 @@ export default function MatchesPage() {
   // For now, we'll integrate this with the enhanced dashboard
 
   return (
-    <Suspense
-      fallback={
-        <div className="min-h-screen bg-gray-50 pt-20 flex items-center justify-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-600"></div>
+    <>
+      <main className="min-h-screen">
+        <Suspense
+          fallback={
+            <div className="min-h-screen bg-gray-50 pt-20 flex items-center justify-center">
+              <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-600"></div>
+            </div>
+          }
+        >
+          <EnhancedMatchDashboard
+            currentUserId="demo-user"
+            showEventSuggestions={true}
+            showAchievements={true}
+            showGroupMatching={true}
+            onMatchAction={(matchId, action) => {
+              // Handle match actions (like, skip, super_like)
+              console.log(`Match action: ${action} on match ${matchId}`);
+            }}
+            onEventBooking={(eventId, matchId) => {
+              // Handle event booking
+              console.log(
+                `Event ${eventId} booked${matchId ? ` with match ${matchId}` : ""}`
+              );
+            }}
+          />
+        </Suspense>
+      </main>
+      <footer className="bg-gray-900 text-white py-8">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-gray-400">© 2025 LusoTown. All rights reserved.</p>
         </div>
-      }
-    >
-      <EnhancedMatchDashboard
-        currentUserId="demo-user"
-        showEventSuggestions={true}
-        showAchievements={true}
-        showGroupMatching={true}
-        onMatchAction={(matchId, action) => {
-          // Handle match actions (like, skip, super_like)
-          console.log(`Match action: ${action} on match ${matchId}`);
-        }}
-        onEventBooking={(eventId, matchId) => {
-          // Handle event booking
-          console.log(
-            `Event ${eventId} booked${matchId ? ` with match ${matchId}` : ""}`
-          );
-        }}
-      />
-    </Suspense>
+      </footer>
+    </>
   );
 }

@@ -27,55 +27,44 @@ import { ROUTES } from '@/config/routes'
 
 const getNavigationLinks = (t: any) => [
   { name: t("nav.events", "London Events"), href: "/events" },
-  { name: t("nav.london-tours", "London Tours"), href: "/london-tours" },
   { name: t("nav.students", "Students"), href: "/students" },
   { name: t("nav.pricing", "Pricing"), href: "/pricing" },
 ];
 
 const getAuthenticatedNavigationLinks = (t: any) => [
   { name: t("nav.events", "London Events"), href: "/events" },
-  { name: t("nav.london-tours", "London Tours"), href: "/london-tours" },
   { name: t("nav.students", "Students"), href: "/students" },
   { name: t("referral.title", "Referrals"), href: "/referrals" },
   { name: t("nav.pricing", "Pricing"), href: "/pricing" },
 ];
 
-// Navigation dropdown links with professional hierarchy: Contact → Services → Community
+// Simplified navigation dropdown links - Services & Community only
 const getMoreDropdownLinks = (t: any) => ({
-  contact: [
-  { name: "Contact Us", href: ROUTES.contact },
-  { name: "Help Center", href: ROUTES.help },
-  { name: "Safety & Verification", href: ROUTES.safety },
-    { name: "How It Works", href: ROUTES.howItWorks },
-  ],
   services: [
     { name: "Find Your Match", href: "/matches" },
-  { name: "Live TV", href: "/tv" },
-  { name: "Streaming", href: "/live" },
-    { name: "Cultural Tours", href: "/services#cultural-tours" },
-    { name: "Executive Transport", href: "/services#executive-transport" },
-    { name: "London Transport", href: "/transport" },
-    { name: "Close Protection", href: "/services#close-protection" },
+    { name: "Live TV", href: "/tv" },
+    { name: "Streaming", href: "/live" },
   ],
   community: [
     { name: "Events & Culture", href: ROUTES.events },
-  { name: "Community", href: ROUTES.community },
-  { name: "Business Directory", href: ROUTES.directory },
-  { name: "Become a Host", href: ROUTES.host },
-  { name: "Community Guidelines", href: ROUTES.communityGuidelines },
+    { name: "Community", href: ROUTES.community },
+    { name: "Business Directory", href: ROUTES.directory },
+    { name: "Become a Host", href: ROUTES.host },
+    { name: "Community Guidelines", href: ROUTES.communityGuidelines },
+  ],
+  contact: [
+    { name: "Contact Us", href: ROUTES.contact },
+    { name: "Help Center", href: ROUTES.help },
   ],
   company: [
-  { name: "About LusoTown", href: ROUTES.about },
-    { name: "Pricing", href: ROUTES.pricing },
-  { name: "Success Stories", href: ROUTES.successStories },
+    { name: "About Us", href: ROUTES.about },
+    { name: "Careers", href: ROUTES.careers },
     { name: "Case Studies", href: ROUTES.caseStudies },
-    { name: "Partnerships", href: ROUTES.partnerships },
-  { name: "Instituto Camões Partnership", href: ROUTES.instituteCamoes },
+    { name: "Success Stories", href: ROUTES.successStories },
   ],
   legal: [
-  { name: "Privacy Policy", href: ROUTES.privacy },
-  { name: "Terms of Service", href: ROUTES.terms },
-  { name: "Community Safety", href: ROUTES.safety },
+    { name: "Privacy Policy", href: ROUTES.privacy },
+    { name: "Terms of Service", href: ROUTES.terms },
   ],
 });
 
@@ -158,130 +147,16 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 ml-4 xl:ml-8">
-            {navigationLinks.map((link) => {
-              const isTours = link.href === "/london-tours";
-              if (isTours) {
-                return (
-                  <div
-                    key={link.name}
-                    className="relative"
-                    onMouseEnter={() => setShowToursDropdown(true)}
-                    onMouseLeave={() => setShowToursDropdown(false)}
-                  >
-                    <button className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center gap-1">
-                      {link.name}
-                      <ChevronDownIcon className="w-4 h-4" />
-                    </button>
-                    <AnimatePresence>
-                      {showToursDropdown && (
-                        <motion.div
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
-                          className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[680px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-6 z-50"
-                          style={{
-                            left: "50%",
-                            transform: "translateX(-50%)",
-                            maxWidth: "calc(100vw - 2rem)",
-                            marginLeft: "max(-340px, calc(-50vw + 1rem))",
-                            marginRight: "max(-340px, calc(-50vw + 1rem))",
-                          }}
-                        >
-                          <div className="grid grid-cols-2 gap-6 px-6">
-                            <div>
-                              <h3 className="text-sm font-semibold text-gray-900 mb-3">
-                                Tours & Experiences
-                              </h3>
-                              <ul className="space-y-2">
-                                <li>
-                                  <a
-                                    href="/london-tours"
-                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
-                                  >
-                                    All London Tours
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="/london-tours"
-                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
-                                  >
-                                    Tours
-                                  </a>
-                                </li>
-                                <li>
-                  <a
-                    href={`${ROUTES.services}#cultural-tours`}
-                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
-                                  >
-                                    Cultural Tours
-                                  </a>
-                                </li>
-                                <li>
-                  <a
-                    href={`${ROUTES.services}#executive-transport`}
-                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
-                                  >
-                                    Executive Transport
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div>
-                              <h3 className="text-sm font-semibold text-gray-900 mb-3">
-                                London Transport
-                              </h3>
-                              <ul className="space-y-2">
-                                <li>
-                  <a
-                    href={ROUTES.transport}
-                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
-                                  >
-                                    London Transport
-                                  </a>
-                                </li>
-                                <li>
-                  <a
-                    href={`${ROUTES.services}#close-protection`}
-                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
-                                  >
-                                    Close Protection
-                                  </a>
-                                </li>
-                                <li>
-                  <a
-                    href={ROUTES.services}
-                                    className="block text-sm text-gray-600 hover:text-primary-600 hover:bg-primary-50 px-2 py-1 rounded whitespace-nowrap"
-                                  >
-                                    All Services
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div className="px-6 pt-4">
-                            <p className="text-xs text-gray-500">
-                              Explore authentic Portuguese-led tours and
-                              transport in London. Unidos pela Língua.
-                            </p>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                );
-              }
-              return (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-                >
-                  {link.name}
-                </a>
-              );
-            })}
+          <div className="hidden xl:flex items-center space-x-4 xl:space-x-6 ml-4 xl:ml-8">
+            {navigationLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-gray-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+              >
+                {link.name}
+              </a>
+            ))}
 
             {/* More Dropdown */}
             <div
@@ -300,59 +175,16 @@ export default function Header() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[1600px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-50"
+                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-50"
                     style={{
                       left: "50%",
                       transform: "translateX(-50%)",
                       maxWidth: "calc(100vw - 2rem)",
-                      marginLeft: "max(-800px, calc(-50vw + 1rem))",
-                      marginRight: "max(-800px, calc(-50vw + 1rem))",
+                      marginLeft: "max(-400px, calc(-50vw + 1rem))",
+                      marginRight: "max(-400px, calc(-50vw + 1rem))",
                     }}
                   >
-                    <div className="grid grid-cols-4 gap-8 px-8">
-                      {/* Contact Section - Professional hierarchy first */}
-                      <div className="border-r border-gray-200 pr-6">
-                        <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                          Contact
-                        </h3>
-                        <ul className="space-y-2 mb-6">
-                          {moreDropdownLinks.contact.map((link) => (
-                            <li key={link.name}>
-                              <a
-                                href={link.href}
-                                className="block text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 px-2 py-1 rounded transition-colors duration-200 whitespace-nowrap"
-                              >
-                                {link.name}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-
-                        {/* Compact Contact Info */}
-                        <div className="bg-gray-50 rounded-lg p-3 border border-gray-200">
-                          <h4 className="font-medium text-gray-900 text-sm mb-2">
-                            Get in Touch
-                          </h4>
-                          <div className="space-y-1 text-xs text-gray-600">
-                            <div className="flex items-center gap-1.5">
-                              <MapPinIcon className="h-3 w-3 flex-shrink-0" />
-                              <span className="whitespace-nowrap">
-                                UK Community
-                              </span>
-                            </div>
-                            <div className="flex items-center gap-1.5">
-                              <EnvelopeIcon className="h-3 w-3 flex-shrink-0" />
-                              <a
-                                href="mailto:connect@lusotown.co.uk"
-                                className="hover:underline text-primary-600 whitespace-nowrap"
-                              >
-                                connect@lusotown.co.uk
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
+                    <div className="grid grid-cols-2 gap-8 px-8">
                       {/* Services Section */}
                       <div className="border-r border-gray-200 pr-6">
                         <h3 className="text-lg font-semibold mb-4 text-premium-600">
@@ -381,7 +213,7 @@ export default function Header() {
                       </div>
 
                       {/* Community Section */}
-                      <div className="border-r border-gray-200 pr-6">
+                      <div>
                         <h3 className="text-lg font-semibold mb-4 text-primary-600">
                           Community
                         </h3>
@@ -398,43 +230,6 @@ export default function Header() {
                           ))}
                         </ul>
                       </div>
-
-                      {/* Company & Legal Section */}
-                      <div className="border-r border-gray-200 pr-6">
-                        <h3 className="text-lg font-semibold mb-4 text-accent-600">
-                          Company
-                        </h3>
-                        <ul className="space-y-2 mb-6">
-                          {moreDropdownLinks.company.slice(0, 4).map((link) => (
-                            <li key={link.name}>
-                              <a
-                                href={link.href}
-                                className="block text-sm text-gray-600 hover:text-accent-600 hover:bg-accent-50 px-2 py-1 rounded transition-colors duration-200 whitespace-nowrap"
-                              >
-                                {link.name}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-
-                        <h3 className="text-sm font-semibold mb-3 text-gray-700">
-                          Legal
-                        </h3>
-                        <ul className="space-y-1">
-                          {moreDropdownLinks.legal.map((link) => (
-                            <li key={link.name}>
-                              <a
-                                href={link.href}
-                                className="block text-xs text-gray-600 hover:text-gray-900 hover:bg-gray-50 px-2 py-1 rounded transition-colors duration-200 whitespace-nowrap"
-                              >
-                                {link.name}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Quick Actions removed per request */}
                     </div>
                   </motion.div>
                 )}
@@ -443,7 +238,7 @@ export default function Header() {
           </div>
 
           {/* Desktop CTA / User Menu */}
-          <div className="hidden md:flex items-center gap-2 lg:gap-3 flex-shrink-0">
+          <div className="hidden xl:flex items-center gap-2 lg:gap-3 flex-shrink-0">
             <SearchBar variant="header" />
             <NotificationBell className="hidden md:block" showDropdown />
             <LanguageToggle />
@@ -554,7 +349,7 @@ export default function Header() {
           </div>
 
           {/* Mobile menu button - Fixed spacing for better touch targets */}
-          <div className="flex md:hidden items-center gap-1 relative z-50 flex-shrink-0">
+          <div className="flex xl:hidden items-center gap-1 relative z-50 flex-shrink-0">
             {/* Only show notifications when user is signed in */}
             {user && (
               <>
@@ -597,7 +392,7 @@ export default function Header() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 md:hidden"
+                className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 xl:hidden"
                 onClick={() => setMobileMenuOpen(false)}
               />
 
@@ -607,7 +402,7 @@ export default function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="md:hidden relative z-50 bg-white border-t border-primary-200 shadow-2xl rounded-b-lg mx-2 mb-2 max-h-[80vh] overflow-y-auto"
+                className="xl:hidden relative z-50 bg-white border-t border-primary-200 shadow-2xl rounded-b-lg mx-2 mb-2 max-h-[80vh] overflow-y-auto"
               >
                 <div className="px-4 pt-6 pb-4 space-y-2">
                   {/* Quick Actions Section */}

@@ -68,9 +68,9 @@ const coreFeatures: CoreFeature[] = [
       'core_features.matches.features.event_connections'
     ],
     statsKey: {
-      primary: '47 matches hoje',
-      secondary: '89% compatibilidade',
-      highlight: '234 conversas ativas'
+      primary: 'core_features.matches.stats.primary',
+      secondary: 'core_features.matches.stats.secondary',
+      highlight: 'core_features.matches.stats.highlight'
     },
     ctaKey: 'core_features.matches.cta',
     ctaUrl: '/matches',
@@ -95,9 +95,9 @@ const coreFeatures: CoreFeature[] = [
       'core_features.events.features.community_calendar'
     ],
     statsKey: {
-      primary: '12+ eventos/mês',
-      secondary: '450+ participantes',
-      highlight: '18 este fim-de-semana'
+      primary: 'core_features.events.stats.primary',
+      secondary: 'core_features.events.stats.secondary', 
+      highlight: 'core_features.events.stats.highlight'
     },
     ctaKey: 'core_features.events.cta',
     ctaUrl: ROUTES.events,
@@ -122,9 +122,9 @@ const coreFeatures: CoreFeature[] = [
       'core_features.tours.features.small_groups'
     ],
     statsKey: {
-      primary: '25+ tours únicos',
-      secondary: '98% satisfação',
-      highlight: '150+ locais cobertos'
+      primary: 'core_features.tours.stats.primary',
+      secondary: 'core_features.tours.stats.secondary',
+      highlight: 'core_features.tours.stats.highlight'
     },
     ctaKey: 'core_features.tours.cta',
     ctaUrl: '/tours',
@@ -149,9 +149,9 @@ const coreFeatures: CoreFeature[] = [
       'core_features.students.features.student_community'
     ],
     statsKey: {
-      primary: '2150+ estudantes',
-      secondary: '8 universidades',
-      highlight: '92% taxa de sucesso'
+      primary: 'core_features.students.stats.primary',
+      secondary: 'core_features.students.stats.secondary',
+      highlight: 'core_features.students.stats.highlight'
     },
     ctaKey: 'core_features.students.cta',
     ctaUrl: '/students',
@@ -176,9 +176,9 @@ const coreFeatures: CoreFeature[] = [
       'core_features.community.features.safe_spaces'
     ],
     statsKey: {
-      primary: '750+ membros ativos',
-      secondary: '1.2k mensagens/dia',
-      highlight: '45 grupos temáticos'
+      primary: 'core_features.community.stats.primary',
+      secondary: 'core_features.community.stats.secondary',
+      highlight: 'core_features.community.stats.highlight'
     },
     ctaKey: 'core_features.community.cta',
     ctaUrl: '/community',
@@ -419,7 +419,7 @@ export default function CoreFeaturesShowcase() {
                         <div className="space-y-4">
                           <div className="text-center p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-200/60">
                             <div className="text-3xl font-black text-green-600 mb-1">
-                              {currentFeature.statsKey.primary}
+                              {t(currentFeature.statsKey.primary)}
                             </div>
                             <div className="text-sm font-medium text-green-700">
                               {t('core_features.stats.primary')}
@@ -427,7 +427,7 @@ export default function CoreFeaturesShowcase() {
                           </div>
                           <div className="text-center p-4 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl border border-blue-200/60">
                             <div className="text-3xl font-black text-blue-600 mb-1">
-                              {currentFeature.statsKey.secondary}
+                              {t(currentFeature.statsKey.secondary)}
                             </div>
                             <div className="text-sm font-medium text-blue-700">
                               {t('core_features.stats.secondary')}
@@ -435,7 +435,7 @@ export default function CoreFeaturesShowcase() {
                           </div>
                           <div className="text-center p-4 bg-gradient-to-r from-purple-50 to-violet-50 rounded-xl border border-purple-200/60">
                             <div className="text-3xl font-black text-purple-600 mb-1">
-                              {currentFeature.statsKey.highlight}
+                              {t(currentFeature.statsKey.highlight)}
                             </div>
                             <div className="text-sm font-medium text-purple-700">
                               {t('core_features.stats.highlight')}
@@ -566,10 +566,10 @@ export default function CoreFeaturesShowcase() {
                     <div className="pt-4 border-t border-gray-200/60">
                       <div className="text-center">
                         <div className="text-2xl font-black text-gray-800 mb-1">
-                          {feature.statsKey.primary.split(' ')[0]}
+                          {t(feature.statsKey.primary).split(' ')[0]}
                         </div>
                         <div className="text-xs font-medium text-gray-600">
-                          {feature.statsKey.primary.split(' ').slice(1).join(' ')}
+                          {t(feature.statsKey.primary).split(' ').slice(1).join(' ')}
                         </div>
                       </div>
                     </div>

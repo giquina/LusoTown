@@ -9,43 +9,50 @@ import Features from '@/components/Features'
 import Footer from '@/components/Footer'
 import { ROUTES } from '@/config/routes'
 
-// Lazy load components with loading placeholders for better performance
-const HowItWorks = dynamic(() => import('@/components/HowItWorks'))
+// Optimized lazy loading with priority-based loading and better placeholders
+const HowItWorks = dynamic(() => import('@/components/HowItWorks'), {
+  loading: () => <div className="h-80 bg-gradient-to-r from-gray-50 to-gray-100 animate-pulse rounded-xl" />
+})
 const AboutLusoTown = dynamic(() => import('@/components/AboutLusoTown'), {
-  loading: () => <div className="h-80 bg-gray-50 animate-pulse rounded-xl" />
+  loading: () => <div className="h-80 bg-gradient-to-r from-secondary-50 to-accent-50 animate-pulse rounded-xl" />
 })
-const EventsShowcase = dynamic(() => import('@/components/EventsShowcase'), {
-  loading: () => <div className="h-screen bg-gray-50 animate-pulse rounded-xl" />
-})
+// Critical above-the-fold - load immediately
+const EventsShowcase = dynamic(() => import('@/components/EventsShowcase'))
 const GroupsShowcase = dynamic(() => import('@/components/GroupsShowcase'), {
-  loading: () => <div className="h-96 bg-gray-50 animate-pulse rounded-xl" />
+  loading: () => <div className="h-96 bg-gradient-to-r from-accent-50 to-coral-50 animate-pulse rounded-xl" />
 })
+// Lower priority components - defer loading
 const SuccessStories = dynamic(() => import('@/components/SuccessStories'), {
-  loading: () => <div className="h-80 bg-gray-50 animate-pulse rounded-xl" />
+  loading: () => <div className="h-80 bg-gradient-to-r from-coral-50 to-secondary-50 animate-pulse rounded-xl" />,
+  ssr: false // Client-side only for better initial load
 })
 const AppDownloadSection = dynamic(() => import('@/components/AppDownloadSection'), {
-  loading: () => <div className="h-64 bg-gray-50 animate-pulse rounded-xl" />
+  loading: () => <div className="h-64 bg-gradient-to-r from-action-50 to-premium-50 animate-pulse rounded-xl" />,
+  ssr: false
 })
 const TestimonialsNew = dynamic(() => import('@/components/TestimonialsNew'), {
-  loading: () => <div className="h-64 bg-gray-50 animate-pulse rounded-xl" />
+  loading: () => <div className="h-64 bg-gradient-to-r from-premium-50 to-secondary-50 animate-pulse rounded-xl" />
 })
 const CustomToursSection = dynamic(() => import('@/components/CustomToursSection'), {
-  loading: () => <div className="h-96 bg-gray-50 animate-pulse rounded-xl" />
+  loading: () => <div className="h-96 bg-gradient-to-r from-accent-50 to-coral-50 animate-pulse rounded-xl" />,
+  ssr: false
 })
 const MatchHowItWorks = dynamic(() => import('@/components/MatchHowItWorks'), {
-  loading: () => <div className="h-screen bg-gray-50 animate-pulse rounded-xl" />
+  loading: () => <div className="h-screen bg-gradient-to-r from-secondary-50 to-action-50 animate-pulse rounded-xl" />
 })
 const CTA = dynamic(() => import('@/components/CTA'), {
-  loading: () => <div className="h-48 bg-gray-50 animate-pulse rounded-xl" />
+  loading: () => <div className="h-48 bg-gradient-to-r from-secondary-600 to-accent-600 animate-pulse rounded-xl" />
 })
 const StudentSupportSection = dynamic(() => import('@/components/StudentSupportSection'), {
-  loading: () => <div className="h-64 bg-gray-50 animate-pulse rounded-xl" />
+  loading: () => <div className="h-64 bg-gradient-to-r from-premium-50 to-coral-50 animate-pulse rounded-xl" />,
+  ssr: false
 })
 const CoreFeaturesShowcase = dynamic(() => import('@/components/CoreFeaturesShowcase'), {
-  loading: () => <div className="h-screen bg-gray-50 animate-pulse rounded-xl" />
+  loading: () => <div className="h-screen bg-gradient-to-r from-secondary-50 to-accent-50 animate-pulse rounded-xl" />
 })
 const CommunityFeedSection = dynamic(() => import('@/components/CommunityFeedSection'), {
-  loading: () => <div className="h-screen bg-gray-50 animate-pulse rounded-xl" />
+  loading: () => <div className="h-screen bg-gradient-to-r from-coral-50 to-action-50 animate-pulse rounded-xl" />,
+  ssr: false // Client-side only for Twitter API calls
 })
 import { 
   ChatBubbleLeftRightIcon, 

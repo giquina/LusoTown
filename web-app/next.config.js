@@ -97,6 +97,18 @@ const nextConfig = {
   },
   experimental: {
     scrollRestoration: true,
+    optimizePackageImports: ['@heroicons/react', 'framer-motion'],
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
+  },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
   },
   webpack: (config, { dev, isServer }) => {
     // Enable react-native-web + monorepo shared packages
@@ -126,24 +138,61 @@ const nextConfig = {
       };
     }
 
-    // Optimize for production
+    // Enhanced optimization for production
     if (!dev) {
       config.optimization.splitChunks = {
         chunks: "all",
+        maxAsyncRequests: 10,
+        maxInitialRequests: 5,
         cacheGroups: {
           vendor: {
             test: /[\\/]node_modules[\\/]/,
             name: "vendors",
             chunks: "all",
+            priority: 10,
+          },
+          heroicons: {
+            test: /[\\/]node_modules[\\/]@heroicons[\\/]/,
+            name: "heroicons",
+            chunks: "all",
+            priority: 20,
+          },
+          framer: {
+            test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
+            name: "framer-motion",
+            chunks: "all",
+            priority: 20,
+          },
+          react: {
+            test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+            name: "react",
+            chunks: "all",
+            priority: 30,
           },
           common: {
             name: "common",
             minChunks: 2,
             chunks: "all",
+            priority: 5,
             enforce: true,
           },
         },
       };
+      
+      // Add performance optimizations
+      config.optimization.usedExports = true;
+      config.optimization.sideEffects = false;
+    }
+
+    // Add bundle analyzer in development
+    if (dev && process.env.ANALYZE === 'true') {
+      const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+      config.plugins.push(
+        new BundleAnalyzerPlugin({
+          analyzerMode: 'server',
+          openAnalyzer: true,
+        })
+      );
     }
 
     return config;

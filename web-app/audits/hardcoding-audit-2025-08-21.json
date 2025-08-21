@@ -1,0 +1,930 @@
+{
+  "summary": {
+    "totalViolations": 97904,
+    "byCategory": {
+      "hardcoded_text": 95828,
+      "hardcoded_routes": 826,
+      "console_logs": 137,
+      "hardcoded_urls": 575,
+      "hardcoded_colors": 313,
+      "hardcoded_prices": 165,
+      "hardcoded_analytics": 60
+    },
+    "bySeverity": {
+      "high": 96568,
+      "medium": 1199,
+      "low": 137
+    },
+    "filesAffected": 508,
+    "timestamp": "2025-08-21T03:57:14.178Z",
+    "recommendations": [
+      "🚨 CRITICAL: Implement bilingual system with t() function",
+      "🔧 Create config/cdn.ts for URL management",
+      "💰 Create formatPrice() utility function",
+      "⚠️ Schedule immediate cleanup sprint"
+    ]
+  },
+  "violations": [
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "'use client'",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 3,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "'@/components/Footer'",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 4,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "'@/config/routes'",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 18,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "'@heroicons/react/24/outline'",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 19,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "'@/context/LanguageContext'",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 24,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"min-h-screen\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 25,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n        {/* Hero Section */}\n        <section className=\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 27,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n          <div className=\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 28,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n            <div className=\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 29,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n              <div className=\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 30,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                <GlobeAltIcon className=\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 32,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "'about.hero.badge'",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 32,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "'Unidos pela Língua • United by Language'",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 34,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-4xl sm:text-5xl font-bold text-gray-900 mb-6\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 36,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"hidden sm:block\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 37,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"gradient-text\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 40,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"sm:hidden\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 37,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"gradient-text\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 44,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-xl text-gray-600 leading-relaxed\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 36,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"hidden sm:block\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 47,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "'re new to the city, have roots in a Portuguese-speaking country, or simply love our culture and language, this is your space to meet people in person, share, and celebrate.\n                </span>\n                {/* Mobile short subtitle */}\n                <span className=\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 50,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                  Connecting Portuguese speakers in London through real-life meetups!\n                </span>\n              </p>\n            </div>\n          </div>\n        </section>\n\n        {/* Founder Story Section */}\n        <section className=\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 27,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n          <div className=\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 28,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n            <div className=\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 29,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n              <div className=\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 62,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                <div>\n                  <div className=\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 64,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                    <div className=\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 65,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                      <div className=\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 66,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                        LT\n                      </div>\n                      <p className=\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 69,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">LusoTown Team</p>\n                      <p className=\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 70,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">Community Builders</p>\n                      <p className=\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 71,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">London • Portuguese Heritage</p>\n                    </div>\n                  </div>\n                </div>\n                <div>\n                  <h2 className=\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 77,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"We Know How Much It Means to Keep the Language Alive\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 79,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"prose text-gray-600 space-y-4\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 82,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "'re \n                      from Portugal, Brazil, Angola, or any Portuguese-speaking nation, the UK is now home.\n                    </p>\n                    <p>\n                      <strong>We'",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 90,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "'s Portuguese diaspora is rich and diverse,</strong> but we'",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 98,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"bg-gradient-to-br from-primary-50 to-white rounded-2xl p-8 mb-16\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 99,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-xl text-gray-700 font-medium italic text-center mb-6\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 100,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"A saudade que sentimos da nossa terra natal nunca desaparece, mas em Londres, \n                  podemos criar um pedacinho de casa juntos. LusoTown é onde nos encontramos, \n                  onde celebramos quem somos.\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 65,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-center\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 105,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"w-12 h-12 bg-gradient-to-br from-primary-400 to-secondary-400 rounded-full flex items-center justify-center text-white text-sm font-bold mx-auto mb-2\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 108,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-sm text-gray-600 font-medium\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 113,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"bg-white rounded-2xl p-8 shadow-lg mb-16\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 114,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-2xl font-semibold text-gray-900 mb-6 text-center\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 115,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"grid md:grid-cols-2 gap-6\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 116,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"flex items-start gap-3\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 117,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"w-8 h-8 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 121,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"font-semibold text-gray-900 mb-1\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 122,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-gray-600\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 116,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"flex items-start gap-3\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 126,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"w-8 h-8 bg-secondary-100 text-secondary-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 121,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"font-semibold text-gray-900 mb-1\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 122,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-gray-600\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 116,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"flex items-start gap-3\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 135,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"w-8 h-8 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 121,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"font-semibold text-gray-900 mb-1\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 122,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-gray-600\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 116,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"flex items-start gap-3\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 144,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"w-8 h-8 bg-pink-100 text-pink-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 121,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"font-semibold text-gray-900 mb-1\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 122,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-gray-600\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 116,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"flex items-start gap-3\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 153,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 121,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"font-semibold text-gray-900 mb-1\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 122,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-gray-600\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 116,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"flex items-start gap-3\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 117,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"w-8 h-8 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 121,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"font-semibold text-gray-900 mb-1\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 122,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-gray-600\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 172,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"mt-8 pt-6 border-t border-gray-200\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 173,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-gray-600 text-center\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 182,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Aha\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 183,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"py-20 bg-gray-50\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 28,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"container-width\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 61,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"max-w-4xl mx-auto\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 186,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-3xl font-bold text-gray-900 text-center mb-12\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 190,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"grid md:grid-cols-3 gap-8 mb-16\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 65,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-center\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 192,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"w-16 h-16 bg-primary-100 text-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-4\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 195,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-xl font-semibold text-gray-900 mb-3\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 122,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-gray-600\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 65,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-center\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 202,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"w-16 h-16 bg-secondary-100 text-secondary-600 rounded-2xl flex items-center justify-center mx-auto mb-4\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 195,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-xl font-semibold text-gray-900 mb-3\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 122,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-gray-600\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 65,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-center\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 212,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"w-16 h-16 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 195,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-xl font-semibold text-gray-900 mb-3\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 122,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-gray-600\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 59,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"py-20 bg-white\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 28,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"container-width\"",
+      "timestamp": "2025-08-21T03:57:11.843Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 229,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"max-w-6xl mx-auto\"",
+      "timestamp": "2025-08-21T03:57:11.844Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 230,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-center mb-16\"",
+      "timestamp": "2025-08-21T03:57:11.844Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 231,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-3xl md:text-4xl font-bold text-gray-900 mb-4\"",
+      "timestamp": "2025-08-21T03:57:11.844Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 234,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-xl text-gray-600 max-w-3xl mx-auto\"",
+      "timestamp": "2025-08-21T03:57:11.844Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 240,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"grid lg:grid-cols-2 gap-12 mb-16\"",
+      "timestamp": "2025-08-21T03:57:11.844Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 241,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"bg-gradient-to-br from-primary-50 to-white rounded-2xl p-8\"",
+      "timestamp": "2025-08-21T03:57:11.844Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 242,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-2xl font-semibold text-gray-900 mb-6\"",
+      "timestamp": "2025-08-21T03:57:11.844Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 243,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"space-y-4 text-gray-600\"",
+      "timestamp": "2025-08-21T03:57:11.844Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 244,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"flex items-start\"",
+      "timestamp": "2025-08-21T03:57:11.844Z"
+    }
+  ],
+  "fullViolationCount": 97904
+}

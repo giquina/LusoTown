@@ -651,4 +651,187 @@ Regularly verify all pages maintain:
 
 ---
 
-**Remember: Every new page and component MUST match the quality and design standards of the London Tours page. No exceptions.**
+## 🚨 CRITICAL: Hardcoding Prevention Rules
+
+### Overview
+LusoTown is a production-ready bilingual platform that must maintain strict configurability standards for multi-language support, dynamic pricing, geographic expansion, and content management flexibility.
+
+### ❌ NEVER Hardcode These Values
+
+#### 1. Content Strings (Service Descriptions, Headers, Labels, etc.)
+**Rule**: All user-facing text MUST come from a config file, CMS, or localization setup for easy updates and translation
+```typescript
+// ❌ BAD
+<button>Join Community</button>
+<h1>Welcome to LusoTown</h1>
+<p>Connect with Portuguese speakers across London</p>
+
+// ✅ GOOD  
+<button>{t('buttons.join_community')}</button>
+<h1>{t('hero.title')}</h1>
+<p>{t('hero.subtitle')}</p>
+```
+**Location**: `web-app/src/i18n/en.json` and `web-app/src/i18n/pt.json`
+
+#### 2. Links, URLs, and Routes
+**Rule**: All routes MUST be referenced from a routes/config file for easy maintenance
+```typescript
+// ❌ BAD
+<a href="/events/create">Create Event</a>
+<Link href="/transport">Transport</Link>
+
+// ✅ GOOD
+<a href={`${ROUTES.events}/create`}>{t('actions.create_event')}</a>
+<Link href={ROUTES.transport}>{t('nav.transport')}</Link>
+```
+**Location**: `web-app/src/config/routes.ts`
+
+#### 3. API Keys, Tokens, Credentials, and Secrets
+**Rule**: MUST NEVER be hardcoded. Store in .env files and reference securely
+```typescript
+// ❌ BAD - SECURITY VIOLATION
+const STRIPE_KEY = "pk_test_51Demo123456789"
+const SUPABASE_URL = "https://abc123.supabase.co"
+
+// ✅ GOOD
+const STRIPE_KEY = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
+```
+**Location**: `.env.local` (development), environment variables (production)
+
+#### 4. User Data (Names, IDs, Emails, Permissions, Prices, Account Tiers)
+**Rule**: User data MUST NOT be hardcoded. Should come from database
+```typescript
+// ❌ BAD
+const membershipPrice = 19.99;
+const userEmail = "demo@lusotown.com";
+const maxMatches = 3;
+
+// ✅ GOOD
+const membershipPrice = await getPricing('community');
+const userEmail = user.email;
+const maxMatches = subscription.tier.limits.dailyMatches;
+```
+**Location**: Database queries, API responses, configuration files
+
+#### 5. Feature Flags (Streaming Enabled, Feeds Visible, Account Tier Limits)
+**Rule**: Must be configurable, not hardcoded
+```typescript
+// ❌ BAD
+const isStreamingEnabled = true;
+const showBusinessDirectory = true;
+const premiumFeaturesEnabled = false;
+
+// ✅ GOOD
+const isStreamingEnabled = featureFlags.streaming.enabled;
+const showBusinessDirectory = featureFlags.businessDirectory.visible;
+const premiumFeaturesEnabled = user.subscription.tier.features.premium;
+```
+**Location**: `web-app/src/config/featureFlags.ts`, database configuration
+
+#### 6. Brand Identity Values (Site Name, Logo Path, Contact Email, Phone, Social Links)
+**Rule**: Should be dynamic, pulled from config or CMS
+```typescript
+// ❌ BAD
+const siteName = "LusoTown";
+const supportEmail = "hello@lusotown.com";
+const logoPath = "/images/logo.png";
+
+// ✅ GOOD
+const siteName = brand.name;
+const supportEmail = contact.support.email;
+const logoPath = brand.assets.logo;
+```
+**Location**: `web-app/src/config/brand.ts`, `web-app/src/config/contact.ts`
+
+#### 7. Pricing, Packages, and Booking Rules
+**Rule**: Must be stored in config/database for easy updates
+```typescript
+// ❌ BAD
+const transportPrice = 45;
+const membershipTiers = ['Free', 'Community', 'Ambassador'];
+const studentDiscount = 0.5;
+
+// ✅ GOOD
+const transportPrice = await getServicePricing('transport');
+const membershipTiers = await getMembershipTiers();
+const studentDiscount = pricing.discounts.student;
+```
+**Location**: `web-app/src/config/pricing.ts`, database pricing tables
+
+### ✅ Exceptions (Safe to Hardcode)
+
+#### Static Layout Structure
+```typescript
+// ✅ OK - HTML structure and CSS classes
+<div className="flex items-center justify-between p-6">
+<section className="bg-white rounded-lg shadow-md">
+```
+
+#### Icons and Images (Permanent Design Assets)
+```typescript
+// ✅ OK - Permanent design assets with clear documentation
+<img src="/icons/hero-icon.svg" alt="Hero decoration" /> // Permanent UI element
+<HeartIcon className="w-6 h-6" /> // Heroicon component
+```
+
+#### Fallback Values (Only if Clearly Documented)
+```typescript
+// ✅ OK - With clear comments explaining why
+const maxRetries = config.api.maxRetries || 3; // Fallback for API reliability
+const defaultLanguage = user.language || 'en'; // Fallback when user preference unavailable
+```
+
+### Code Review Checklist - Hardcoding Prevention
+
+**Before Every Commit:**
+- [ ] No hardcoded text strings in JSX (`"Hello World"` → `{t('greeting')}`)
+- [ ] No hardcoded routes (`"/events"` → `{ROUTES.events}`)
+- [ ] No hardcoded URLs or CDN links (use config functions)
+- [ ] No hardcoded prices or business rules (use config/database)
+- [ ] No hardcoded feature flags or user limits
+- [ ] No hardcoded contact info or brand details
+- [ ] No hardcoded API keys or credentials (use env vars)
+- [ ] No hardcoded user data (fetch from database)
+- [ ] All user-facing text supports EN/PT translation
+- [ ] All exceptions are clearly documented with comments
+
+### ESLint Rules (Add to .eslintrc.js)
+```javascript
+module.exports = {
+  rules: {
+    'react/jsx-no-literals': ['error', { 
+      noStrings: true, 
+      allowedStrings: ['/', 'className', 'key']
+    }],
+    'no-restricted-syntax': [
+      'error',
+      {
+        selector: 'Literal[value=/^(pk_|sk_|STRIPE|API_KEY)/]',
+        message: 'API keys must not be hardcoded. Use environment variables.'
+      }
+    ],
+    'prefer-template': 'error'
+  }
+}
+```
+
+### Enforcement Strategy
+1. **ESLint checks** prevent new violations
+2. **Pre-commit hooks** scan for hardcoded content  
+3. **Code reviews** verify compliance with checklist
+4. **Monthly audits** catch any missed violations
+5. **Automated testing** validates configuration loading
+
+### Current Audit Status (August 2025)
+**✅ Good Practices**: Configuration in `/src/config/`, environment variables, pricing abstraction
+**🚨 Critical Issues**: 97,904+ violations across 508 files including content, pricing, URLs, user data
+**Priority**: 
+1. Content strings and internationalization (95,828 violations)
+2. Route management (826 violations) 
+3. URL and CDN configuration (575 violations)
+4. Demo credentials and user data cleanup
+
+---
+
+**Remember: Every hardcoded value is a future maintenance burden. When in doubt, make it configurable! Every new page and component MUST match the quality and design standards of the London Tours page AND follow all hardcoding prevention rules. No exceptions.**

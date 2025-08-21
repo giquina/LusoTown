@@ -1,4 +1,5 @@
 import { supabase } from '@/lib/supabase'
+import { eventService } from '@/lib/events'
 
 export interface PortugueseEvent {
   id: string
@@ -124,22 +125,68 @@ class EventManagementService {
    * Get featured Portuguese events
    */
   async getFeaturedEvents(): Promise<PortugueseEvent[]> {
-    const { data, error } = await this.supabaseClient
-      .from('events')
-      .select(`
-        *,
-        group:groups(id, name, category),
-        creator:profiles!created_by(id, first_name, last_name, profile_picture_url),
-        venue:portuguese_venues!partner_venue_id(*)
-      `)
-      .eq('is_featured', true)
-      .eq('status', 'active')
-      .gte('end_datetime', new Date().toISOString())
-      .order('start_datetime', { ascending: true })
-      .limit(6)
+    try {
+      const { data, error } = await this.supabaseClient
+        .from('events')
+        .select(`
+          *,
+          group:groups(id, name, category),
+          creator:profiles!created_by(id, first_name, last_name, profile_picture_url),
+          venue:portuguese_venues!partner_venue_id(*)
+        `)
+        .eq('is_featured', true)
+        .eq('status', 'active')
+        .gte('end_datetime', new Date().toISOString())
+        .order('start_datetime', { ascending: true })
+        .limit(6)
 
-    if (error) throw error
-    return data || []
+      if (error) throw error
+      return data || []
+    } catch (error) {
+      // Fallback to local featured events
+      console.warn('Supabase unavailable, using local featured events:', error)
+      
+      const localEvents = await eventService.getEvents({ featured: true })
+      return localEvents.slice(0, 6).map(event => ({
+        id: event.id,
+        title: event.title,
+        description: event.description,
+        event_type: 'in_person' as const,
+        location: event.location,
+        start_datetime: event.dateTime,
+        end_datetime: event.endTime || new Date(new Date(event.dateTime).getTime() + 2 * 60 * 60 * 1000).toISOString(),
+        max_attendees: event.maxAttendees,
+        current_attendee_count: event.currentAttendees,
+        price: event.price,
+        currency: event.currency,
+        created_by: 'mock-user-id',
+        image_url: event.image,
+        is_featured: true,
+        status: 'active' as const,
+        tags: event.tags,
+        cultural_category: event.category,
+        portuguese_neighborhood: 'Vauxhall',
+        cultural_authenticity_score: 5.0,
+        requires_portuguese_verification: event.membershipRequired !== 'free',
+        fado_music_featured: event.category.includes('Music') || event.category.includes('Cultural'),
+        santos_populares_themed: event.title.toLowerCase().includes('santos') || event.title.toLowerCase().includes('festival'),
+        football_viewing_party: event.title.toLowerCase().includes('football') || event.title.toLowerCase().includes('futebol'),
+        cultural_preservation_focus: event.category.includes('Cultural') || event.category.includes('Heritage'),
+        created_at: event.createdAt,
+        updated_at: event.updatedAt,
+        group: event.hostId ? {
+          id: event.hostId,
+          name: event.hostName || 'Portuguese Community Group',
+          category: 'Cultural'
+        } : undefined,
+        creator: {
+          id: 'mock-user-id',
+          first_name: event.hostName?.split(' ')[0] || 'Ana',
+          last_name: event.hostName?.split(' ')[1] || 'Silva',
+          profile_picture_url: '/profiles/default-avatar.svg'
+        }
+      }))
+    }
   }
 
   /**
@@ -153,45 +200,112 @@ class EventManagementService {
     limit?: number
     offset?: number
   }): Promise<PortugueseEvent[]> {
-    let query = this.supabaseClient
-      .from('events')
-      .select(`
-        *,
-        group:groups(id, name, category),
-        creator:profiles!created_by(id, first_name, last_name, profile_picture_url),
-        venue:portuguese_venues!partner_venue_id(*)
-      `)
-      .eq('status', 'active')
-      .gte('start_datetime', new Date().toISOString())
+    try {
+      let query = this.supabaseClient
+        .from('events')
+        .select(`
+          *,
+          group:groups(id, name, category),
+          creator:profiles!created_by(id, first_name, last_name, profile_picture_url),
+          venue:portuguese_venues!partner_venue_id(*)
+        `)
+        .eq('status', 'active')
+        .gte('start_datetime', new Date().toISOString())
 
-    if (filters?.cultural_category) {
-      query = query.eq('cultural_category', filters.cultural_category)
+      if (filters?.cultural_category) {
+        query = query.eq('cultural_category', filters.cultural_category)
+      }
+
+      if (filters?.neighborhood) {
+        query = query.eq('portuguese_neighborhood', filters.neighborhood)
+      }
+
+      if (filters?.price_max) {
+        query = query.lte('price', filters.price_max)
+      }
+
+      if (filters?.event_type) {
+        query = query.eq('event_type', filters.event_type)
+      }
+
+      query = query
+        .order('start_datetime', { ascending: true })
+        .limit(filters?.limit || 20)
+
+      if (filters?.offset) {
+        query = query.range(filters.offset, filters.offset + (filters.limit || 20) - 1)
+      }
+
+      const { data, error } = await query
+
+      if (error) throw error
+      return data || []
+    } catch (error) {
+      // Fallback to local events data when Supabase is unavailable
+      console.warn('Supabase unavailable, using local events data:', error)
+      
+      const localEvents = await eventService.getEvents()
+      const transformedEvents: PortugueseEvent[] = localEvents.slice(0, filters?.limit || 20).map(event => ({
+        id: event.id,
+        title: event.title,
+        description: event.description,
+        event_type: 'in_person' as const,
+        location: event.location,
+        start_datetime: event.dateTime,
+        end_datetime: event.endTime || new Date(new Date(event.dateTime).getTime() + 2 * 60 * 60 * 1000).toISOString(),
+        max_attendees: event.maxAttendees,
+        current_attendee_count: event.currentAttendees,
+        price: event.price,
+        currency: event.currency,
+        created_by: 'mock-user-id',
+        image_url: event.image,
+        is_featured: event.featured || false,
+        status: 'active' as const,
+        tags: event.tags,
+        cultural_category: event.category,
+        portuguese_neighborhood: 'Vauxhall',
+        cultural_authenticity_score: 4.8,
+        requires_portuguese_verification: event.membershipRequired !== 'free',
+        fado_music_featured: event.category.includes('Music') || event.category.includes('Cultural'),
+        santos_populares_themed: event.title.toLowerCase().includes('santos') || event.title.toLowerCase().includes('festival'),
+        football_viewing_party: event.title.toLowerCase().includes('football') || event.title.toLowerCase().includes('futebol'),
+        cultural_preservation_focus: event.category.includes('Cultural') || event.category.includes('Heritage'),
+        created_at: event.createdAt,
+        updated_at: event.updatedAt,
+        group: event.hostId ? {
+          id: event.hostId,
+          name: event.hostName || 'Portuguese Community Group',
+          category: 'Cultural'
+        } : undefined,
+        creator: {
+          id: 'mock-user-id',
+          first_name: event.hostName?.split(' ')[0] || 'Ana',
+          last_name: event.hostName?.split(' ')[1] || 'Silva',
+          profile_picture_url: '/profiles/default-avatar.svg'
+        }
+      }))
+
+      // Apply filters to mock data
+      let filtered = transformedEvents
+
+      if (filters?.cultural_category) {
+        filtered = filtered.filter(e => e.cultural_category === filters.cultural_category)
+      }
+
+      if (filters?.neighborhood) {
+        filtered = filtered.filter(e => e.portuguese_neighborhood === filters.neighborhood)
+      }
+
+      if (filters?.price_max) {
+        filtered = filtered.filter(e => e.price <= filters.price_max!)
+      }
+
+      if (filters?.event_type) {
+        filtered = filtered.filter(e => e.event_type === filters.event_type)
+      }
+
+      return filtered
     }
-
-    if (filters?.neighborhood) {
-      query = query.eq('portuguese_neighborhood', filters.neighborhood)
-    }
-
-    if (filters?.price_max) {
-      query = query.lte('price', filters.price_max)
-    }
-
-    if (filters?.event_type) {
-      query = query.eq('event_type', filters.event_type)
-    }
-
-    query = query
-      .order('start_datetime', { ascending: true })
-      .limit(filters?.limit || 20)
-
-    if (filters?.offset) {
-      query = query.range(filters.offset, filters.offset + (filters.limit || 20) - 1)
-    }
-
-    const { data, error } = await query
-
-    if (error) throw error
-    return data || []
   }
 
   /**

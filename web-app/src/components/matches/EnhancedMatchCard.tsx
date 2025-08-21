@@ -22,6 +22,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { useLanguage } from "@/context/LanguageContext";
 import Image from "next/image";
+import CulturalCompatibilityBadge from "./CulturalCompatibilityBadge";
 
 interface MatchProfile {
   id: string;
@@ -283,18 +284,11 @@ export default function EnhancedMatchCard({
                     {getCulturalCompatibilityText(profile.culturalAlignment)}
                   </span>
                 </div>
-                <div className="flex items-center gap-0.5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <StarSolid
-                      key={i}
-                      className={`w-3 h-3 ${
-                        i < Math.floor(profile.culturalAlignment / 20)
-                          ? "text-yellow-400"
-                          : "text-gray-300"
-                      }`}
-                    />
-                  ))}
-                </div>
+                <CulturalCompatibilityBadge
+                  overallScore={profile.culturalAlignment}
+                  size="small"
+                  animated={false}
+                />
               </div>
 
               <div className="grid grid-cols-3 gap-2 mb-3">
@@ -392,57 +386,73 @@ export default function EnhancedMatchCard({
           <div className="space-y-4">
             <div className="text-center mb-4">
               <h4 className="font-bold text-primary-900 mb-2">
-                {language === "pt" ? "Iniciadores de Conversa" : "Conversation Starters"}
+                {language === "pt" ? "Messaging com Proteção" : "Protected Messaging"}
               </h4>
               <p className="text-sm text-primary-600">
                 {language === "pt"
-                  ? "Frases culturais portuguesas para quebrar o gelo"
-                  : "Portuguese cultural phrases to break the ice"}
+                  ? "Mensagens só ficam disponíveis após match mútuo ou eventos partilhados"
+                  : "Messaging unlocked after mutual match or shared events"}
+              </p>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+              <div className="flex items-center gap-2 mb-2">
+                <CheckCircleIcon className="w-4 h-4 text-blue-600" />
+                <span className="text-sm font-semibold text-blue-800">
+                  {language === "pt" ? "Sistema de Segurança TikTok-Style" : "TikTok-Style Safety System"}
+                </span>
+              </div>
+              <p className="text-xs text-blue-700">
+                {language === "pt"
+                  ? "As mensagens só ficam disponíveis quando há interesse mútuo ou quando participam em eventos juntos, garantindo conexões autênticas e seguras."
+                  : "Messages only unlock when there's mutual interest or when you attend events together, ensuring authentic and safe connections."}
               </p>
             </div>
 
             <div className="space-y-3">
-              {profile.conversationStarters.map((starter) => (
+              {profile.conversationStarters.slice(0, 3).map((starter) => (
                 <div
                   key={starter.id}
-                  className={`border rounded-xl p-3 cursor-pointer transition-all ${
-                    selectedStarter === starter.id
-                      ? "border-primary-400 bg-primary-50"
-                      : "border-primary-200 hover:border-primary-300 hover:bg-primary-25"
-                  }`}
-                  onClick={() => setSelectedStarter(starter.id)}
+                  className="border border-gray-200 rounded-xl p-3 bg-gray-50 opacity-60"
                 >
                   <div className="flex items-start justify-between mb-2">
-                    <p className="text-sm text-primary-800 leading-relaxed flex-1">
+                    <p className="text-sm text-gray-600 leading-relaxed flex-1">
                       "{starter.text}"
                     </p>
                     <div className="flex items-center gap-1 ml-2">
-                      <FireIcon className="w-3 h-3 text-orange-500" />
-                      <span className="text-xs text-orange-600 font-medium">
+                      <FireIcon className="w-3 h-3 text-gray-400" />
+                      <span className="text-xs text-gray-500 font-medium">
                         {starter.popularity}
                       </span>
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-xs bg-secondary-100 text-secondary-700 px-2 py-1 rounded-lg">
+                    <span className="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded-lg">
                       {starter.category}
                     </span>
-                    <span className="text-xs text-primary-500">
-                      {language === "pt" ? "Toque para usar" : "Tap to use"}
+                    <span className="text-xs text-gray-400">
+                      {language === "pt" ? "Bloqueado" : "Locked"}
                     </span>
                   </div>
                 </div>
               ))}
             </div>
 
-            {selectedStarter && (
-              <button
-                onClick={() => onStartConversation?.(profile.id, selectedStarter)}
-                className="w-full bg-gradient-to-r from-secondary-600 to-accent-600 text-white py-3 rounded-xl font-semibold hover:from-secondary-700 hover:to-accent-700 transition-all"
-              >
-                {language === "pt" ? "Iniciar Conversa" : "Start Conversation"}
-              </button>
-            )}
+            <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-4 border border-primary-200">
+              <h5 className="font-semibold text-primary-900 mb-2">
+                {language === "pt" ? "Como Desbloquear Mensagens:" : "How to Unlock Messaging:"}
+              </h5>
+              <div className="space-y-2 text-sm text-primary-700">
+                <div className="flex items-center gap-2">
+                  <HeartIcon className="w-4 h-4 text-red-500" />
+                  <span>{language === "pt" ? "Match mútuo (ambos gostam)" : "Mutual match (both like each other)"}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CalendarDaysIcon className="w-4 h-4 text-blue-500" />
+                  <span>{language === "pt" ? "Participar em eventos juntos" : "Attend events together"}</span>
+                </div>
+              </div>
+            </div>
           </div>
         )}
 
