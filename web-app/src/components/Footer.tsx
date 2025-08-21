@@ -79,12 +79,12 @@ export default function Footer() {
               <div className="flex items-center gap-3 text-gray-300 min-w-0">
                 <MapPinIcon className="h-5 w-5 text-action-400 flex-shrink-0" />
                 <span className="break-words">
-                  Portuguese speakers in London & UK | Unidos pela Língua
+                  {t('components.Footer.portuguese_speakers_in_london_uk_unidos_pela_lngua')}
                 </span>
               </div>
               <div className="flex items-center gap-3 text-gray-300 min-w-0">
                 <EnvelopeIcon className="h-5 w-5 text-secondary-400 flex-shrink-0" />
-                <span className="break-all">connect@lusotown.co.uk</span>
+                <span className="break-all">{t('components.Footer.connectlusotowncouk')}</span>
               </div>
             </div>
           </div>
@@ -94,7 +94,7 @@ export default function Footer() {
             {/* Community */}
             <div>
               <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-primary-300">
-                Community
+                {t('components.Footer.community')}
               </h3>
               <ul className="space-y-3">
                 {footerLinks.community.map((link) => (
@@ -113,7 +113,7 @@ export default function Footer() {
             {/* Services */}
             <div>
               <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-premium-300">
-                Services
+                {t('components.Footer.services')}
               </h3>
               <ul className="space-y-3">
                 {footerLinks.services.map((link) => (
@@ -132,7 +132,7 @@ export default function Footer() {
             {/* Support */}
             <div>
               <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-secondary-300">
-                Support
+                {t('components.Footer.support')}
               </h3>
               <ul className="space-y-3">
                 {footerLinks.support.map((link) => (
@@ -151,7 +151,7 @@ export default function Footer() {
             {/* Company */}
             <div>
               <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-primary-300">
-                Company
+                {t('components.Footer.company')}
               </h3>
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
@@ -170,7 +170,7 @@ export default function Footer() {
             {/* Legal */}
             <div>
               <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-secondary-300">
-                Legal
+                {t('components.Footer.legal')}
               </h3>
               <ul className="space-y-3">
                 {footerLinks.legal.map((link) => (
@@ -200,14 +200,14 @@ export default function Footer() {
             <form className="flex gap-3">
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder={t('components.Footer.enter_your_email')}
                 className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent min-w-0 min-h-[44px]"
               />
               <button
                 type="submit"
                 className="btn-primary whitespace-nowrap min-h-[44px]"
               >
-                Subscribe
+                {t('components.Footer.subscribe')}
               </button>
             </form>
           </div>
@@ -227,7 +227,7 @@ export default function Footer() {
               {/* Payment Methods */}
               <div className="flex items-center gap-3">
                 <span className="text-xs text-gray-500 hidden sm:block">
-                  We Accept:
+                  {t('components.Footer.we_accept')}
                 </span>
                 {/* Visa */}
                 <div className="w-8 h-5 bg-primary-600 rounded-sm flex items-center justify-center">
@@ -265,7 +265,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-primary-500 transition-colors duration-200 p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
-                  aria-label="Follow us on Facebook"
+                  aria-label={t('components.Footer.follow_us_on_facebook')}
                 >
                   <svg
                     className="w-5 h-5"
@@ -281,7 +281,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-secondary-500 transition-colors duration-200 p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
-                  aria-label="Follow us on Instagram"
+                  aria-label={t('components.Footer.follow_us_on_instagram')}
                 >
                   <svg
                     className="w-5 h-5"
@@ -297,7 +297,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-primary-500 transition-colors duration-200 p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
-                  aria-label="Follow us on Twitter"
+                  aria-label={t('components.Footer.follow_us_on_twitter')}
                 >
                   <svg
                     className="w-5 h-5"
@@ -313,7 +313,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-primary-500 transition-colors duration-200 p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
-                  aria-label="Follow us on LinkedIn"
+                  aria-label={t('components.Footer.follow_us_on_linkedin')}
                 >
                   <svg
                     className="w-5 h-5"
@@ -329,7 +329,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-action-500 transition-colors duration-200 p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
-                  aria-label="Subscribe to our YouTube channel"
+                  aria-label={t('components.Footer.subscribe_to_our_youtube_channel')}
                 >
                   <svg
                     className="w-5 h-5"
@@ -345,7 +345,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-secondary-500 transition-colors duration-200 p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
-                  aria-label="Contact us on WhatsApp"
+                  aria-label={t('components.Footer.contact_us_on_whatsapp')}
                 >
                   <svg
                     className="w-5 h-5"

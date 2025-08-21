@@ -8,6 +8,31 @@ export const brandConfig = {
   descriptionPt: process.env.NEXT_PUBLIC_BRAND_DESCRIPTION_PT || 'Plataforma da comunidade portuguesa de Londres para conexões autênticas'
 };
 
+export const contactInfo = {
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@lusotown.com',
+  support: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'support@lusotown.com',
+  business: process.env.NEXT_PUBLIC_BUSINESS_EMAIL || 'business@lusotown.com',
+  partnerships: process.env.NEXT_PUBLIC_PARTNERSHIPS_EMAIL || 'partnerships@lusotown.com',
+  press: process.env.NEXT_PUBLIC_PRESS_EMAIL || 'press@lusotown.com',
+  phone: process.env.NEXT_PUBLIC_PHONE || '+44 20 7123 4567',
+  address: {
+    line1: 'LusoTown Ltd',
+    line2: 'Portuguese Community Centre',
+    city: 'London',
+    postcode: 'SW8 4UH',
+    country: 'United Kingdom'
+  }
+};
+
+export const socialLinks = {
+  facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL || 'https://facebook.com/lusotown',
+  instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL || 'https://instagram.com/lusotown',
+  twitter: process.env.NEXT_PUBLIC_TWITTER_URL || 'https://twitter.com/lusotown',
+  linkedin: process.env.NEXT_PUBLIC_LINKEDIN_URL || 'https://linkedin.com/company/lusotown',
+  youtube: process.env.NEXT_PUBLIC_YOUTUBE_URL || 'https://youtube.com/@lusotown',
+  tiktok: process.env.NEXT_PUBLIC_TIKTOK_URL || 'https://tiktok.com/@lusotown'
+};
+
 export const defaultImages = {
   event: process.env.NEXT_PUBLIC_DEFAULT_EVENT_IMAGE || '/events/networking.jpg',
   profile: process.env.NEXT_PUBLIC_DEFAULT_PROFILE_IMAGE || '/images/profiles/default.jpg',

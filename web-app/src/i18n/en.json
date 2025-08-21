@@ -2227,5 +2227,21 @@
   "components.CTA.verified_profiles": "Verified Profiles",
   "components.CTA.community_support": "Community Support",
   "components.CTA.30day": "30-Day",
-  "components.CTA.money_back_guarantee": "Money Back Guarantee"
+  "components.CTA.money_back_guarantee": "Money Back Guarantee",
+  "components.Footer.portuguese_speakers_in_london_uk_unidos_pela_lngua": "Portuguese speakers in London & UK | Unidos pela Língua",
+  "components.Footer.connectlusotowncouk": "connect@lusotown.co.uk",
+  "components.Footer.community": "Community",
+  "components.Footer.services": "Services",
+  "components.Footer.support": "Support",
+  "components.Footer.company": "Company",
+  "components.Footer.legal": "Legal",
+  "components.Footer.subscribe": "Subscribe",
+  "components.Footer.we_accept": "We Accept:",
+  "components.Footer.enter_your_email": "Enter your email",
+  "components.Footer.follow_us_on_facebook": "Follow us on Facebook",
+  "components.Footer.follow_us_on_instagram": "Follow us on Instagram",
+  "components.Footer.follow_us_on_twitter": "Follow us on Twitter",
+  "components.Footer.follow_us_on_linkedin": "Follow us on LinkedIn",
+  "components.Footer.subscribe_to_our_youtube_channel": "Subscribe to our YouTube channel",
+  "components.Footer.contact_us_on_whatsapp": "Contact us on WhatsApp"
 }

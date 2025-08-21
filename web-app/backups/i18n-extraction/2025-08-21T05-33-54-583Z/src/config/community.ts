@@ -1,0 +1,30 @@
+export const communityStats = {
+  members: process.env.NEXT_PUBLIC_TOTAL_MEMBERS || '750+',
+  creators: process.env.NEXT_PUBLIC_TOTAL_CREATORS || '45+',
+  streamingHours: process.env.NEXT_PUBLIC_STREAMING_HOURS || '1200+',
+  viewers: process.env.NEXT_PUBLIC_TOTAL_VIEWERS || '2150+',
+  students: process.env.NEXT_PUBLIC_TOTAL_STUDENTS || '2150+',
+  partnerships: process.env.NEXT_PUBLIC_UNIVERSITY_PARTNERSHIPS || '8',
+  events: process.env.NEXT_PUBLIC_MONTHLY_EVENTS || '12+'
+};
+
+export const communityMilestones = {
+  foundedYear: process.env.NEXT_PUBLIC_FOUNDED_YEAR || '2024',
+  firstEvent: process.env.NEXT_PUBLIC_FIRST_EVENT_DATE || '2024',
+  majorMilestones: [
+    { year: '2024', description: 'Platform Launch' },
+    { year: '2024', description: 'First 500 Members' },
+    { year: '2025', description: '750+ Portuguese Speakers' }
+  ]
+};
+
+// Helper function to get numeric value from stats (removes + and converts to number)
+export const getNumericStat = (stat: string): number => {
+  return parseInt(stat.replace(/[^\d]/g, '')) || 0;
+};
+
+// Helper function to format stats for display
+export const formatStat = (stat: string, showPlus: boolean = true): string => {
+  const num = getNumericStat(stat);
+  return showPlus ? `${num}+` : num.toString();
+};

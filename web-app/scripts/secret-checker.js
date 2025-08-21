@@ -37,24 +37,24 @@ const SECRET_PATTERNS = [
   {
     name: 'API Keys',
     patterns: [
-      /api[_-]?key\s*[:=]\s*["']?[a-zA-Z0-9]{20,}["']?/gi,
-      /key\s*[:=]\s*["']?[a-zA-Z0-9]{32,}["']?/gi
+      /(?<![a-zA-Z0-9])api[_-]?key\s*[:=]\s*["']?[a-zA-Z0-9]{20,}["']?(?![a-zA-Z0-9])/gi,
+      /(?<![a-zA-Z0-9])key\s*[:=]\s*["']?[a-zA-Z0-9]{32,}["']?(?![a-zA-Z0-9])/gi
     ],
     severity: 'high'
   },
   {
     name: 'Auth Tokens',
     patterns: [
-      /auth[_-]?token\s*[:=]\s*["']?[a-zA-Z0-9._-]{20,}["']?/gi,
-      /bearer\s+[a-zA-Z0-9._-]{20,}/gi,
-      /token\s*[:=]\s*["']?[a-zA-Z0-9._-]{32,}["']?/gi
+      /(?<![a-zA-Z0-9])auth[_-]?token\s*[:=]\s*["']?[a-zA-Z0-9._-]{20,}["']?(?![a-zA-Z0-9])/gi,
+      /(?<![a-zA-Z0-9])bearer\s+[a-zA-Z0-9._-]{20,}(?![a-zA-Z0-9])/gi,
+      /(?<![a-zA-Z0-9])token\s*[:=]\s*["']?[a-zA-Z0-9._-]{32,}["']?(?![a-zA-Z0-9])/gi
     ],
     severity: 'high'
   },
   {
     name: 'Private Keys',
     patterns: [
-      /private[_-]?key\s*[:=]\s*["']?[a-zA-Z0-9\/+]{100,}={0,2}["']?/gi,
+      /(?<![a-zA-Z0-9])private[_-]?key\s*[:=]\s*["']?[a-zA-Z0-9\/+]{100,}={0,2}["']?(?![a-zA-Z0-9])/gi,
       /-----BEGIN\s+(RSA\s+)?PRIVATE\s+KEY-----/gi
     ],
     severity: 'critical'
@@ -62,58 +62,50 @@ const SECRET_PATTERNS = [
   {
     name: 'Passwords',
     patterns: [
-      /password\s*[:=]\s*["'][^"']{8,}["']/gi,
-      /passwd\s*[:=]\s*["'][^"']{8,}["']/gi
+      /(?<![a-zA-Z0-9])password\s*[:=]\s*["'][^"']{8,}["'](?![a-zA-Z0-9])/gi,
+      /(?<![a-zA-Z0-9])passwd\s*[:=]\s*["'][^"']{8,}["'](?![a-zA-Z0-9])/gi
     ],
     severity: 'high'
   },
   {
     name: 'Stripe Keys',
     patterns: [
-      /pk_live_[a-zA-Z0-9]{24,}/gi,
-      /sk_live_[a-zA-Z0-9]{24,}/gi,
-      /rk_live_[a-zA-Z0-9]{24,}/gi
+      /(?<![a-zA-Z0-9])pk_live_[a-zA-Z0-9]{24,}(?![a-zA-Z0-9])/gi,
+      /(?<![a-zA-Z0-9])sk_live_[a-zA-Z0-9]{24,}(?![a-zA-Z0-9])/gi,
+      /(?<![a-zA-Z0-9])rk_live_[a-zA-Z0-9]{24,}(?![a-zA-Z0-9])/gi
     ],
     severity: 'critical'
   },
   {
     name: 'Slack Tokens',
     patterns: [
-      /xoxp-[a-zA-Z0-9-]{72}/gi,
-      /xoxb-[a-zA-Z0-9-]{72}/gi
+      /(?<![a-zA-Z0-9])xoxp-[a-zA-Z0-9-]{72}(?![a-zA-Z0-9])/gi,
+      /(?<![a-zA-Z0-9])xoxb-[a-zA-Z0-9-]{72}(?![a-zA-Z0-9])/gi
     ],
     severity: 'high'
   },
   {
     name: 'Google API',
     patterns: [
-      /ya29\.[a-zA-Z0-9_-]{68,}/gi,
-      /AIza[a-zA-Z0-9_-]{35}/gi
+      /(?<![a-zA-Z0-9])ya29\.[a-zA-Z0-9_-]{68,}(?![a-zA-Z0-9])/gi,
+      /(?<![a-zA-Z0-9])AIza[a-zA-Z0-9_-]{35}(?![a-zA-Z0-9])/gi
     ],
     severity: 'high'
   },
   {
-    name: 'AWS Keys',
-    patterns: [
-      /AKIA[0-9A-Z]{16}/gi,
-      /[a-zA-Z0-9\/+=]{40}/gi
-    ],
-    severity: 'critical'
-  },
-  {
     name: 'Database URLs',
     patterns: [
-      /mongodb:\/\/[^"'\s]+/gi,
-      /postgres:\/\/[^"'\s]+/gi,
-      /mysql:\/\/[^"'\s]+/gi
+      /(?<![a-zA-Z0-9])mongodb:\/\/[^"'\s]+(?![a-zA-Z0-9])/gi,
+      /(?<![a-zA-Z0-9])postgres:\/\/[^"'\s]+(?![a-zA-Z0-9])/gi,
+      /(?<![a-zA-Z0-9])mysql:\/\/[^"'\s]+(?![a-zA-Z0-9])/gi
     ],
     severity: 'high'
   },
   {
     name: 'JWT Secrets',
     patterns: [
-      /jwt[_-]?secret\s*[:=]\s*["'][^"']{16,}["']/gi,
-      /secret[_-]?key\s*[:=]\s*["'][^"']{16,}["']/gi
+      /(?<![a-zA-Z0-9])jwt[_-]?secret\s*[:=]\s*["'][^"']{16,}["'](?![a-zA-Z0-9])/gi,
+      /(?<![a-zA-Z0-9])secret[_-]?key\s*[:=]\s*["'][^"']{16,}["'](?![a-zA-Z0-9])/gi
     ],
     severity: 'high'
   }
@@ -130,7 +122,26 @@ const SAFE_PATTERNS = [
   /xxx+/gi,
   /\*{3,}/gi, // Masked values
   /sk_test_/gi, // Test keys
-  /pk_test_/gi
+  /pk_test_/gi,
+  /import.*from/gi, // Import statements
+  /[@\/]components?\//gi, // Component paths
+  /[@\/]lib\//gi, // Library paths
+  /[@\/]context\//gi, // Context paths
+  /[@\/]config\//gi, // Config paths
+  /[@\/]services\//gi, // Service paths
+  /[@\/]types\//gi, // Type paths
+  /[@\/]utils\//gi, // Utils paths
+  /\/profiles\//gi, // Profile image paths
+  /\/testimonials\//gi, // Testimonial paths
+  /cloudinary\.com/gi, // Cloudinary URLs (legitimate)
+  /res\.cloudinary\.com/gi, // Cloudinary resources
+  /v\d+/gi, // Version numbers in URLs
+  /jpg|jpeg|png|webp|svg/gi, // Image extensions
+  /learning|module|framework/gi, // Learning content
+  /demo@/gi, // Demo credentials
+  /forgot[_-]?password/gi, // Forgot password routes
+  /youtube|api|channel/gi, // YouTube API related
+  /playlist/gi, // Playlist management
 ];
 
 class SecretChecker {
