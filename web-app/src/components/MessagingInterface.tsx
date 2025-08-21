@@ -203,13 +203,13 @@ export default function MessagingInterface({
 
   const getMessageStatusIcon = (message: ConversationMessage) => {
     if (message.approval_status === 'pending') {
-      return <Clock className="w-3 h-3 text-yellow-500" />
+      return <Clock className="w-3 h-3 text-accent-500" />
     }
     if (message.is_blocked) {
-      return <AlertTriangle className="w-3 h-3 text-red-500" />
+      return <AlertTriangle className="w-3 h-3 text-coral-500" />
     }
     if (message.is_read) {
-      return <CheckCircle className="w-3 h-3 text-green-500" />
+      return <CheckCircle className="w-3 h-3 text-action-500" />
     }
     return <CheckCircle className="w-3 h-3 text-gray-400" />
   }
@@ -224,7 +224,7 @@ export default function MessagingInterface({
         <div className={`relative px-4 py-2 rounded-lg ${
           isOwn 
             ? 'bg-primary-600 text-white' 
-            : 'bg-gray-100 text-gray-900'
+            : 'bg-secondary-100 text-gray-900'
         }`}>
           <p className="text-sm">{message.content}</p>
           
@@ -266,13 +266,13 @@ export default function MessagingInterface({
   return (
     <div className={`flex flex-col h-full bg-white ${className}`}>
       {/* Header */}
-      <div className="flex items-center space-x-4 p-4 border-b border-gray-200 bg-white sticky top-0 z-10">
+      <div className="flex items-center space-x-4 p-4 border-b border-secondary-200 bg-white sticky top-0 z-10">
         {onBack && (
           <button
             onClick={onBack}
-            className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+            className="p-2 hover:bg-secondary-100 rounded-full transition-colors"
           >
-            <ArrowLeft className="w-5 h-5 text-gray-600" />
+            <ArrowLeft className="w-5 h-5 text-secondary-600" />
           </button>
         )}
         
@@ -290,10 +290,10 @@ export default function MessagingInterface({
           {conversation && (
             <div className="flex items-center space-x-2 mt-1">
               {conversation.connection_type === 'mutual_match' && (
-                <Heart className="w-4 h-4 text-red-500" />
+                <Heart className="w-4 h-4 text-coral-500" />
               )}
               {conversation.connection_type === 'event_based' && (
-                <Calendar className="w-4 h-4 text-blue-500" />
+                <Calendar className="w-4 h-4 text-primary-500" />
               )}
               <span className="text-xs text-gray-500">
                 {t.connectionType[conversation.connection_type]}
@@ -302,8 +302,8 @@ export default function MessagingInterface({
           )}
         </div>
         
-        <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
-          <MoreVertical className="w-5 h-5 text-gray-600" />
+        <button className="p-2 hover:bg-secondary-100 rounded-full transition-colors">
+          <MoreVertical className="w-5 h-5 text-secondary-600" />
         </button>
       </div>
 
@@ -322,16 +322,16 @@ export default function MessagingInterface({
             </div>
           ) : messages.length === 0 ? (
             <div className="text-center py-8">
-              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Heart className="w-8 h-8 text-gray-400" />
               </div>
-              <p className="text-gray-600 mb-4">{t.startConversation}</p>
+              <p className="text-secondary-600 mb-4">{t.startConversation}</p>
               <div className="space-y-2">
                 {t.conversationStarters.map((starter, index) => (
                   <button
                     key={index}
                     onClick={() => setNewMessage(starter)}
-                    className="block w-full p-2 text-left text-sm text-gray-600 hover:bg-gray-50 rounded-lg transition-colors"
+                    className="block w-full p-2 text-left text-sm text-secondary-600 hover:bg-secondary-50 rounded-lg transition-colors"
                   >
                     "{starter}"
                   </button>
@@ -354,14 +354,14 @@ export default function MessagingInterface({
 
         {/* Safety Notice */}
         <div className="px-4 py-2 bg-blue-50 border-t border-blue-100">
-          <div className="flex items-center space-x-2 text-sm text-blue-700">
+          <div className="flex items-center space-x-2 text-sm text-primary-700">
             <Shield className="w-4 h-4" />
             <span>{t.safetyNotice}</span>
           </div>
         </div>
 
         {/* Message Input */}
-        <div className="p-4 border-t border-gray-200 bg-white">
+        <div className="p-4 border-t border-secondary-200 bg-white">
           {error && (
             <div className="mb-3 p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-700">
               {error}
@@ -375,7 +375,7 @@ export default function MessagingInterface({
                 onChange={(e) => setNewMessage(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder={t.typeMessage}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg resize-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-secondary-300 rounded-lg resize-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 rows={1}
                 style={{ minHeight: '40px', maxHeight: '120px' }}
               />

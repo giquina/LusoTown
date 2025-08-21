@@ -235,17 +235,17 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="animate-pulse">
-              <div className="h-8 bg-gray-200 rounded w-64 mx-auto mb-4"></div>
-              <div className="h-4 bg-gray-200 rounded w-96 mx-auto"></div>
+              <div className="h-8 bg-secondary-200 rounded w-64 mx-auto mb-4"></div>
+              <div className="h-4 bg-secondary-200 rounded w-96 mx-auto"></div>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {Array(6).fill(0).map((_, i) => (
               <div key={i} className="animate-pulse">
-                <div className="bg-gray-200 h-48 rounded-t-2xl"></div>
+                <div className="bg-secondary-200 h-48 rounded-t-2xl"></div>
                 <div className="bg-white p-6 rounded-b-2xl">
-                  <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
-                  <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+                  <div className="h-4 bg-secondary-200 rounded w-3/4 mb-2"></div>
+                  <div className="h-4 bg-secondary-200 rounded w-1/2"></div>
                 </div>
               </div>
             ))}
@@ -288,7 +288,7 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-secondary-600 max-w-3xl mx-auto leading-relaxed"
           >
             Connect with fellow Portuguese speakers at authentic cultural events, 
             business networking sessions, and traditional celebrations in London.
@@ -306,13 +306,13 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
           {eventStats.map((stat, index) => (
             <div
               key={index}
-              className="text-center p-6 bg-white rounded-2xl border border-gray-100 hover:border-primary-200 transition-all duration-300 shadow-sm hover:shadow-lg"
+              className="text-center p-6 bg-white rounded-2xl border border-secondary-100 hover:border-primary-200 transition-all duration-300 shadow-sm hover:shadow-lg"
             >
               <div className="flex justify-center mb-3">{stat.icon}</div>
               <div className="text-2xl font-bold text-gray-900 mb-1">
                 {stat.value}
               </div>
-              <div className="text-sm text-gray-600">{stat.label}</div>
+              <div className="text-sm text-secondary-600">{stat.label}</div>
             </div>
           ))}
         </motion.div>
@@ -335,7 +335,7 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
                   className={`flex items-center px-6 py-3 rounded-full border transition-all duration-300 ${
                     selectedFilter === filter.value
                       ? "bg-primary-500 text-white border-primary-500 shadow-lg shadow-primary-500/25"
-                      : "bg-white text-gray-700 border-gray-200 hover:border-primary-300 hover:text-primary-700 hover:shadow-md"
+                      : "bg-white text-secondary-700 border-secondary-200 hover:border-primary-300 hover:text-primary-700 hover:shadow-md"
                   }`}
                 >
                   <Icon className="w-5 h-5 mr-2" />
@@ -355,7 +355,7 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-primary-200 hover:-translate-y-2"
+              className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-secondary-100 hover:border-primary-200 hover:-transecondary-y-2"
             >
               <PortugueseEventImage event={event} />
 
@@ -365,16 +365,16 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
                     <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-700 transition-colors">
                       {event.title}
                     </h3>
-                    <p className="text-gray-600 text-sm mb-3 line-clamp-2">
+                    <p className="text-secondary-600 text-sm mb-3 line-clamp-2">
                       {event.description}
                     </p>
                   </div>
                   <button
                     onClick={() => handleFavorite(event.id)}
-                    className="ml-2 p-2 rounded-full hover:bg-gray-100 transition-colors"
+                    className="ml-2 p-2 rounded-full hover:bg-secondary-100 transition-colors"
                   >
                     {favorites.has(event.id) ? (
-                      <HeartSolidIcon className="w-5 h-5 text-red-500" />
+                      <HeartSolidIcon className="w-5 h-5 text-coral-500" />
                     ) : (
                       <HeartIcon className="w-5 h-5 text-gray-400" />
                     )}
@@ -383,7 +383,7 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
 
                 {/* Event Details */}
                 <div className="space-y-2 mb-4">
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-secondary-600">
                     <CalendarDaysIcon className="w-4 h-4 mr-2" />
                     {new Date(event.start_datetime).toLocaleDateString('en-GB', {
                       weekday: 'long',
@@ -394,7 +394,7 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
                     })}
                   </div>
                   
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-secondary-600">
                     <MapPinIcon className="w-4 h-4 mr-2" />
                     <span className="truncate">
                       {event.venue?.name || event.location || 'London'}
@@ -406,7 +406,7 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
                     </span>
                   </div>
 
-                  <div className="flex items-center text-sm text-gray-600">
+                  <div className="flex items-center text-sm text-secondary-600">
                     <UsersIcon className="w-4 h-4 mr-2" />
                     {event.current_attendee_count} attending
                     {event.max_attendees && (
@@ -418,7 +418,7 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
                 {/* Portuguese Cultural Badges */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {event.fado_music_featured && (
-                    <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full">
+                    <span className="text-xs bg-accent-100 text-accent-700 px-2 py-1 rounded-full">
                       🎵 Fado Music
                     </span>
                   )}
@@ -447,12 +447,12 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
                   {event.price > 0 ? (
                     <>
                       Book for {PortugueseServiceUtils.formatEuroPrice(event.price)}
-                      <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:transecondary-x-1 transition-transform" />
                     </>
                   ) : (
                     <>
                       Join Free Event
-                      <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:transecondary-x-1 transition-transform" />
                     </>
                   )}
                 </Link>

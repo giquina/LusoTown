@@ -205,7 +205,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-50 backdrop-blur-sm transition-opacity" />
+          <div className="fixed inset-0 bg-secondary-500 bg-opacity-50 backdrop-blur-sm transition-opacity" />
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-hidden">
@@ -214,11 +214,11 @@ export default function Cart({ isOpen, onClose }: CartProps) {
               <Transition.Child
                 as={Fragment}
                 enter="transform transition ease-in-out duration-300"
-                enterFrom="translate-x-full"
-                enterTo="translate-x-0"
+                enterFrom="transecondary-x-full"
+                enterTo="transecondary-x-0"
                 leave="transform transition ease-in-out duration-300"
-                leaveFrom="translate-x-0"
-                leaveTo="translate-x-full"
+                leaveFrom="transecondary-x-0"
+                leaveTo="transecondary-x-full"
               >
                 <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
                   <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
@@ -229,7 +229,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                           <div className="relative">
                             <CartSolidIcon className="h-7 w-7 text-primary-500" />
                             {cartCount > 0 && (
-                              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                              <span className="absolute -top-2 -right-2 bg-coral-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                                 {cartCount}
                               </span>
                             )}
@@ -280,7 +280,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                   >
-                                    <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-lg border border-gray-200">
+                                    <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-lg border border-secondary-200">
                                       {item.imageUrl ? (
                                         <Image
                                           src={item.imageUrl}
@@ -349,10 +349,10 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                                       <div className="flex flex-1 items-end justify-between text-sm">
                                         <div className="flex items-center gap-2">
                                           {/* Quantity Controls */}
-                                          <div className="flex items-center border border-gray-300 rounded-lg">
+                                          <div className="flex items-center border border-secondary-300 rounded-lg">
                                             <button
                                               onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                                              className="p-1 text-gray-400 hover:text-gray-600"
+                                              className="p-1 text-gray-400 hover:text-secondary-600"
                                             >
                                               <MinusIcon className="w-4 h-4" />
                                             </button>
@@ -361,7 +361,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                                             </span>
                                             <button
                                               onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                                              className="p-1 text-gray-400 hover:text-gray-600"
+                                              className="p-1 text-gray-400 hover:text-secondary-600"
                                               disabled={Boolean(item.maxQuantity && item.quantity >= item.maxQuantity)}
                                             >
                                               <PlusIcon className="w-4 h-4" />
@@ -378,7 +378,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                                           <button
                                             type="button"
                                             onClick={() => handleSaveForLater(item)}
-                                            className="text-gray-400 hover:text-red-500 transition-colors"
+                                            className="text-gray-400 hover:text-coral-500 transition-colors"
                                             title={isPortuguese ? 'Guardar para mais tarde' : 'Save for later'}
                                           >
                                             <HeartIcon className="w-4 h-4" />
@@ -388,7 +388,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                                           <button
                                             type="button"
                                             onClick={() => removeFromCart(item.id)}
-                                            className="text-gray-400 hover:text-red-500 transition-colors"
+                                            className="text-gray-400 hover:text-coral-500 transition-colors"
                                             title={isPortuguese ? 'Remover' : 'Remove'}
                                           >
                                             <TrashIcon className="w-4 h-4" />
@@ -407,7 +407,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
 
                     {/* Footer with Checkout */}
                     {cartItems.length > 0 && (
-                      <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
+                      <div className="border-t border-secondary-200 px-4 py-6 sm:px-6">
                         {/* Summary */}
                         <div className="space-y-4 mb-6">
                           <div className="flex justify-between text-base font-medium text-gray-900">
@@ -430,7 +430,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                         {/* Clear Cart */}
                         <button
                           onClick={clearCart}
-                          className="w-full mb-3 bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition-colors"
+                          className="w-full mb-3 bg-secondary-100 text-secondary-700 px-6 py-3 rounded-lg font-medium hover:bg-secondary-200 transition-colors"
                         >
                           {isPortuguese ? 'Limpar Carrinho' : 'Clear Cart'}
                         </button>

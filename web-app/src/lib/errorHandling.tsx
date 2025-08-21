@@ -354,7 +354,7 @@ export function withErrorHandling<P extends object>(
             Erro ao carregar componente{errorContext?.componentName ? ` ${errorContext.componentName}` : ''}.
             <button 
               onClick={() => window.location.reload()} 
-              className="ml-2 text-red-600 hover:text-red-700 underline"
+              className="ml-2 text-coral-600 hover:text-red-700 underline"
             >
               Recarregar página
             </button>

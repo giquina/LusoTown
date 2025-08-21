@@ -59,7 +59,7 @@ export default function UnifiedActivity({ activities = [] }: UnifiedActivityProp
       
       <div className="space-y-4">
         {displayActivities.map((activity, index) => (
-          <div key={activity.id} className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+          <div key={activity.id} className="flex items-start space-x-4 p-4 bg-secondary-50 rounded-lg hover:bg-secondary-100 transition-colors">
             <div className="flex-shrink-0 w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center text-white">
               {activity.icon}
             </div>
@@ -73,7 +73,7 @@ export default function UnifiedActivity({ activities = [] }: UnifiedActivityProp
                 </span>
               </div>
               {activity.description && (
-                <p className="text-sm text-gray-600 mt-1">
+                <p className="text-sm text-secondary-600 mt-1">
                   {activity.description}
                 </p>
               )}
@@ -81,7 +81,7 @@ export default function UnifiedActivity({ activities = [] }: UnifiedActivityProp
                 <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
                   {activity.platform}
                 </span>
-                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800 capitalize">
+                <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-secondary-100 text-secondary-800 capitalize">
                   {activity.type}
                 </span>
               </div>
@@ -92,7 +92,7 @@ export default function UnifiedActivity({ activities = [] }: UnifiedActivityProp
         {displayActivities.length === 0 && (
           <div className="text-center py-8">
             <Activity className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {language === 'pt' ? 'Nenhuma atividade recente' : 'No recent activity'}
             </p>
             <p className="text-sm text-gray-500 mt-2">

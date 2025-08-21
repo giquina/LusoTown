@@ -107,7 +107,7 @@ const ImprovedEventCard = ({
               <h3 className="text-xl font-bold">Event Photos</h3>
               <button
                 onClick={() => setShowPhotoGallery(false)}
-                className="text-gray-500 hover:text-gray-700 p-3 rounded-full hover:bg-gray-100 min-h-[44px] min-w-[44px] flex items-center justify-center"
+                className="text-gray-500 hover:text-secondary-700 p-3 rounded-full hover:bg-secondary-100 min-h-[44px] min-w-[44px] flex items-center justify-center"
               >
                 ✕
               </button>
@@ -127,7 +127,7 @@ const ImprovedEventCard = ({
                     height={300}
                   />
                   {photo.caption && (
-                    <p className="mt-2 text-sm text-gray-600">
+                    <p className="mt-2 text-sm text-secondary-600">
                       {photo.caption}
                     </p>
                   )}
@@ -202,7 +202,7 @@ const ImprovedEventCard = ({
                     className={cn(Spacing.touchTarget, "bg-white/90 backdrop-blur-sm rounded-full shadow-lg")}
                   />
                   <button className={cn(Spacing.touchTarget, "bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors shadow-lg")}>
-                    <ShareIcon className={cn(IconSystem.sizes.sm, "text-gray-600")} />
+                    <ShareIcon className={cn(IconSystem.sizes.sm, "text-secondary-600")} />
                   </button>
                 </div>
               </div>
@@ -390,7 +390,7 @@ const ImprovedEventCard = ({
                         ? "Evento Exclusivo para Membros"
                         : "Exclusive Member Event"}
                     </h3>
-                    <p className="text-xs text-gray-600">
+                    <p className="text-xs text-secondary-600">
                       {isPortuguese
                         ? "Disponível apenas para membros"
                         : "Available to members only"}
@@ -399,7 +399,7 @@ const ImprovedEventCard = ({
                 </div>
 
                 {/* Content preview stats */}
-                <div className="flex items-center justify-between mb-4 text-xs text-gray-600">
+                <div className="flex items-center justify-between mb-4 text-xs text-secondary-600">
                   <div className="flex items-center gap-4">
                     <div className="flex items-center gap-1">
                       <UserGroupIcon className="w-4 h-4" />
@@ -419,7 +419,7 @@ const ImprovedEventCard = ({
                 </div>
 
                 {/* Event description preview */}
-                <p className="text-sm text-gray-700 mb-4 line-clamp-2">
+                <p className="text-sm text-secondary-700 mb-4 line-clamp-2">
                   {event.description}
                 </p>
 
@@ -449,7 +449,7 @@ const ImprovedEventCard = ({
                 </button>
 
                 {/* Benefits preview */}
-                <div className="mt-3 pt-3 border-t border-gray-200">
+                <div className="mt-3 pt-3 border-t border-secondary-200">
                   <div className="flex items-center justify-between text-xs">
                     <span className="text-gray-500">
                       {isPortuguese

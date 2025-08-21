@@ -615,10 +615,10 @@ export default function SaudadeMatchingSystem({
                 onChange={(e) => setSliderValue(Number(e.target.value))}
                 className="w-full h-3 bg-gradient-to-r from-gray-200 via-primary-200 to-primary-400 rounded-lg appearance-none cursor-pointer"
                 style={{
-                  background: `linear-gradient(to right, #f3f4f6 0%, #e5e7eb ${(sliderValue - 1) * 10}%, #dc2626 ${(sliderValue - 1) * 10}%, #dc2626 100%)`,
+                  background: `linear-gradient(to right, #f3f4f6 0%, #e5e7eb ${(sliderValue - 1) * 10}%, var(--color-coral-500) ${(sliderValue - 1) * 10}%, var(--color-coral-500) 100%)`,
                 }}
               />
-              <div className="flex justify-between text-sm text-gray-600 mt-3">
+              <div className="flex justify-between text-sm text-secondary-600 mt-3">
                 <span className="text-left max-w-[40%]">
                   {language === 'pt' 
                     ? currentQuestion.sliderConfig?.labelMinPt 
@@ -628,7 +628,7 @@ export default function SaudadeMatchingSystem({
                   <span className="font-bold text-2xl text-primary-600 mb-1">{sliderValue}</span>
                   <div className="flex">
                     {[...Array(sliderValue)].map((_, i) => (
-                      <HeartSolid key={i} className="w-3 h-3 text-red-500 mx-0.5" />
+                      <HeartSolid key={i} className="w-3 h-3 text-coral-500 mx-0.5" />
                     ))}
                   </div>
                 </div>
@@ -649,7 +649,7 @@ export default function SaudadeMatchingSystem({
         return (
           <div className="space-y-3">
             {isMultiSelect && (
-              <p className="text-sm text-gray-600 text-center mb-4">
+              <p className="text-sm text-secondary-600 text-center mb-4">
                 {language === 'pt' ? 'Selecione todas as opções que se aplicam' : 'Select all that apply'}
               </p>
             )}
@@ -669,8 +669,8 @@ export default function SaudadeMatchingSystem({
                 }}
                 className={`w-full p-4 rounded-xl border-2 text-left transition-all duration-200 ${
                   selectedOptions.includes(option.id)
-                    ? 'border-red-500 bg-red-50 text-red-900 shadow-lg'
-                    : 'border-gray-200 bg-white hover:border-red-300 hover:bg-red-25'
+                    ? 'border-coral-500 bg-red-50 text-red-900 shadow-lg'
+                    : 'border-secondary-200 bg-white hover:border-red-300 hover:bg-red-25'
                 }`}
               >
                 <div className="flex items-center gap-4">
@@ -680,13 +680,13 @@ export default function SaudadeMatchingSystem({
                       {language === 'pt' ? option.labelPt : option.labelEn}
                     </span>
                     {option.description && (
-                      <span className="text-sm text-gray-600 block mt-1">
+                      <span className="text-sm text-secondary-600 block mt-1">
                         {option.description}
                       </span>
                     )}
                   </div>
                   {selectedOptions.includes(option.id) && (
-                    <HeartSolid className="w-5 h-5 text-red-500" />
+                    <HeartSolid className="w-5 h-5 text-coral-500" />
                   )}
                 </div>
               </button>
@@ -736,7 +736,7 @@ export default function SaudadeMatchingSystem({
             <h2 className="text-2xl font-bold text-primary-900 mb-2">
               {language === 'pt' ? 'Perfil de Saudade Completo!' : 'Saudade Profile Complete!'}
             </h2>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {language === 'pt' 
                 ? 'Descubra conexões emocionais autênticas baseadas na sua saudade'
                 : 'Discover authentic emotional connections based on your saudade'}
@@ -756,7 +756,7 @@ export default function SaudadeMatchingSystem({
             
             <button
               onClick={onClose}
-              className="w-full bg-gray-100 text-gray-700 py-3 rounded-xl font-medium hover:bg-gray-200 transition-colors"
+              className="w-full bg-secondary-100 text-secondary-700 py-3 rounded-xl font-medium hover:bg-secondary-200 transition-colors"
             >
               {language === 'pt' ? 'Fechar' : 'Close'}
             </button>
@@ -774,7 +774,7 @@ export default function SaudadeMatchingSystem({
           <h2 className="text-xl font-bold text-primary-900">
             {language === 'pt' ? 'Avaliação de Saudade e Compatibilidade Cultural' : 'Saudade & Cultural Compatibility Assessment'}
           </h2>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-secondary-600">
             {language === 'pt' 
               ? `Pergunta ${currentQuestionIndex + 1} de ${saudadeAssessmentQuestions.length} - Compreenda a sua saudade`
               : `Question ${currentQuestionIndex + 1} of ${saudadeAssessmentQuestions.length} - Understanding your saudade`}
@@ -783,7 +783,7 @@ export default function SaudadeMatchingSystem({
         {showAsModal && (
           <button
             onClick={onClose}
-            className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
+            className="w-8 h-8 bg-secondary-100 rounded-full flex items-center justify-center hover:bg-secondary-200 transition-colors"
           >
             ×
           </button>
@@ -791,7 +791,7 @@ export default function SaudadeMatchingSystem({
       </div>
 
       {/* Progress Bar */}
-      <div className="w-full bg-gray-200 rounded-full h-3 mb-8">
+      <div className="w-full bg-secondary-200 rounded-full h-3 mb-8">
         <motion.div
           className="bg-gradient-to-r from-red-500 via-primary-500 to-secondary-500 h-3 rounded-full"
           initial={{ width: 0 }}
@@ -816,7 +816,7 @@ export default function SaudadeMatchingSystem({
         </h3>
         
         {currentQuestion.descriptionEn && (
-          <p className="text-sm text-gray-600 mb-6">
+          <p className="text-sm text-secondary-600 mb-6">
             {language === 'pt' ? currentQuestion.descriptionPt : currentQuestion.descriptionEn}
           </p>
         )}
@@ -832,7 +832,7 @@ export default function SaudadeMatchingSystem({
         <button
           onClick={handlePrevious}
           disabled={currentQuestionIndex === 0}
-          className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="flex items-center gap-2 px-4 py-2 text-secondary-600 hover:text-secondary-800 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <ChevronLeftIcon className="w-4 h-4" />
           {language === 'pt' ? 'Anterior' : 'Previous'}

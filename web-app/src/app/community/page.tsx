@@ -239,7 +239,7 @@ export default function Community() {
                     )}
                   </span>
                 </h1>
-                <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-4xl mx-auto">
+                <p className="text-xl text-secondary-600 leading-relaxed mb-8 max-w-4xl mx-auto">
                   {/* Desktop full subtitle */}
                   <span className="hidden sm:block">
                     {isPortuguese ? (
@@ -268,7 +268,7 @@ export default function Community() {
                     <div key={stat.label} className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50 hover:shadow-xl transition-all duration-300">
                       <Icon className="h-8 w-8 text-primary-400 mx-auto mb-3" />
                       <p className="text-3xl font-bold text-gray-900 mb-1">{stat.number}</p>
-                      <p className="text-sm text-gray-600 font-medium">
+                      <p className="text-sm text-secondary-600 font-medium">
                         {isPortuguese ? stat.labelPt : stat.label}
                       </p>
                     </div>
@@ -297,7 +297,7 @@ export default function Community() {
                     <>What's <span className="gradient-text">Happening Now</span></>
                   )}
                 </h2>
-                <p className="text-lg text-gray-600">
+                <p className="text-lg text-secondary-600">
                   {isPortuguese ? (
                     'Junta-te a estes eventos culturais portugueses acontecendo esta semana por Londres'
                   ) : (
@@ -326,7 +326,7 @@ export default function Community() {
                             <h3 className="font-bold text-gray-900 mb-2 text-lg">
                               {isPortuguese ? activity.titlePt : activity.title}
                             </h3>
-                            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3">
+                            <div className="flex flex-wrap items-center gap-4 text-sm text-secondary-600 mb-3">
                               <span className="inline-flex items-center gap-1">
                                 <CalendarDaysIcon className="h-4 w-4" />
                                 {isPortuguese ? activity.datePt : activity.date}
@@ -349,7 +349,7 @@ export default function Community() {
                       <div className="flex items-center gap-4">
                         {activity.spots > 0 ? (
                           <>
-                            <span className="text-sm text-green-600 font-semibold bg-green-50 px-3 py-2 rounded-lg">
+                            <span className="text-sm text-action-600 font-semibold bg-green-50 px-3 py-2 rounded-lg">
                               {activity.spots} {isPortuguese ? 'vagas restantes' : 'spots left'}
                             </span>
                             <button className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-3 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-300 text-sm font-semibold shadow-lg hover:shadow-xl">
@@ -357,7 +357,7 @@ export default function Community() {
                             </button>
                           </>
                         ) : (
-                          <span className="text-sm text-gray-500 font-medium bg-gray-100 px-4 py-2 rounded-lg">
+                          <span className="text-sm text-gray-500 font-medium bg-secondary-100 px-4 py-2 rounded-lg">
                             {isPortuguese ? 'Completo (Lista de Espera)' : 'Full (Join Waitlist)'}
                           </span>
                         )}
@@ -397,7 +397,7 @@ export default function Community() {
                   <>Portuguese Community <span className="gradient-text">Areas</span></>
                 )}
               </h2>
-              <p className="text-lg text-gray-600 mb-12 max-w-4xl mx-auto">
+              <p className="text-lg text-secondary-600 mb-12 max-w-4xl mx-auto">
                 {isPortuguese ? (
                   'Descobre onde a comunidade portuguesa se reúne em Londres. Cada bairro tem a sua própria personalidade, desde padarias autênticas a centros culturais vibrantes.'
                 ) : (
@@ -419,7 +419,7 @@ export default function Community() {
                         <span className="text-3xl">{area.icon}</span>
                       </div>
                       <h3 className="text-xl font-bold mb-3 text-gray-900">{area.name}</h3>
-                      <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                      <p className="text-secondary-600 mb-4 text-sm leading-relaxed">
                         {isPortuguese ? area.descriptionPt : area.description}
                       </p>
                       <div className="text-sm text-primary-600 font-bold mb-4 bg-primary-50 py-2 px-3 rounded-lg">
@@ -461,7 +461,7 @@ export default function Community() {
                   <>Communities by <span className="gradient-text">Origin</span></>
                 )}
               </h2>
-              <p className="text-lg text-gray-600 mb-12 max-w-4xl mx-auto">
+              <p className="text-lg text-secondary-600 mb-12 max-w-4xl mx-auto">
                 {isPortuguese ? (
                   'Cada país lusófono traz a sua própria cultura, tradições e calor humano. Encontra a tua comunidade de origem ou descobre outras culturas portuguesas.'
                 ) : (
@@ -478,14 +478,14 @@ export default function Community() {
                     transition={{ delay: 0.1 * index, duration: 0.6 }}
                     className="group"
                   >
-                    <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg p-6 text-center hover:scale-105 transition-all duration-300 border border-gray-200 h-full">
+                    <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg p-6 text-center hover:scale-105 transition-all duration-300 border border-secondary-200 h-full">
                       <div className="w-20 h-20 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                         <span className="text-4xl">{community.flag}</span>
                       </div>
                       <h3 className="text-xl font-bold mb-3 text-gray-900">
                         {isPortuguese ? community.countryPt : community.country}
                       </h3>
-                      <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                      <p className="text-secondary-600 mb-4 text-sm leading-relaxed">
                         {isPortuguese ? community.descriptionPt : community.description}
                       </p>
                       <div className="text-sm text-primary-600 font-bold mb-4 bg-primary-50 py-2 px-3 rounded-lg">
@@ -527,7 +527,7 @@ export default function Community() {
                   <>Meet Our <span className="gradient-text">Community Members</span></>
                 )}
               </h2>
-              <p className="text-lg text-gray-600 mb-12">
+              <p className="text-lg text-secondary-600 mb-12">
                 {isPortuguese ? (
                   'Pessoas reais fazendo conexões reais através de Londres - histórias da comunidade portuguesa'
                 ) : (
@@ -564,7 +564,7 @@ export default function Community() {
                     <p className="text-xs text-primary-600 mb-4 font-medium bg-primary-50 px-2 py-1 rounded-full inline-block">
                       {isPortuguese ? member.originPt : member.origin}
                     </p>
-                    <blockquote className="text-gray-700 italic mb-4 min-h-[3rem] flex items-center justify-center text-sm leading-relaxed">
+                    <blockquote className="text-secondary-700 italic mb-4 min-h-[3rem] flex items-center justify-center text-sm leading-relaxed">
                       "{isPortuguese ? member.quotePt : member.quote}"
                     </blockquote>
                     <span className="inline-block bg-gradient-to-r from-secondary-100 to-accent-100 text-secondary-700 px-4 py-2 rounded-full text-xs font-semibold">
@@ -596,7 +596,7 @@ export default function Community() {
                       <>Our <span className="gradient-text">Community Values</span></>
                     )}
                   </h2>
-                  <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+                  <p className="text-lg text-secondary-600 max-w-4xl mx-auto">
                     {isPortuguese ? (
                       'O que torna a nossa comunidade especial? Estes valores partilhados que cada membro abraça, refletindo o melhor da cultura portuguesa.'
                     ) : (
@@ -612,7 +612,7 @@ export default function Community() {
                         <h3 className="font-bold text-gray-900 mb-2">
                           {isPortuguese ? 'Saudade e Conexões Autênticas' : 'Saudade & Authentic Connections'}
                         </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">
+                        <p className="text-secondary-600 text-sm leading-relaxed">
                           {isPortuguese ? (
                             'Compreendemos a saudade. Construímos conexões genuínas que curam a nostalgia e criam novos lares.'
                           ) : (
@@ -627,7 +627,7 @@ export default function Community() {
                         <h3 className="font-bold text-gray-900 mb-2">
                           {isPortuguese ? 'Rede e Apoio Mútuo' : 'Network & Mutual Support'}
                         </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">
+                        <p className="text-secondary-600 text-sm leading-relaxed">
                           {isPortuguese ? (
                             'Tratamo-nos como uma rede profissional. Celebramos sucessos juntos e apoiamo-nos nos desafios.'
                           ) : (
@@ -642,7 +642,7 @@ export default function Community() {
                         <h3 className="font-bold text-gray-900 mb-2">
                           {isPortuguese ? 'Preservação Cultural' : 'Cultural Preservation'}
                         </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">
+                        <p className="text-secondary-600 text-sm leading-relaxed">
                           {isPortuguese ? (
                             'Mantemos vivas as nossas tradições, língua e costumes para as próximas gerações.'
                           ) : (
@@ -659,7 +659,7 @@ export default function Community() {
                         <h3 className="font-bold text-gray-900 mb-2">
                           {isPortuguese ? 'Hospitalidade Portuguesa' : 'Portuguese Hospitality'}
                         </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">
+                        <p className="text-secondary-600 text-sm leading-relaxed">
                           {isPortuguese ? (
                             'Abrimos os braços a todos. "Onde há portugueses, há sempre uma mesa para mais um."'
                           ) : (
@@ -674,7 +674,7 @@ export default function Community() {
                         <h3 className="font-bold text-gray-900 mb-2">
                           {isPortuguese ? 'Diversidade Lusófona' : 'Portuguese-Speaking Diversity'}
                         </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">
+                        <p className="text-secondary-600 text-sm leading-relaxed">
                           {isPortuguese ? (
                             'Celebramos toda a diversidade do mundo lusófono - de Portugal ao Brasil, de Angola a Cabo Verde.'
                           ) : (
@@ -689,7 +689,7 @@ export default function Community() {
                         <h3 className="font-bold text-gray-900 mb-2">
                           {isPortuguese ? 'Amor por Londres' : 'Love for London'}
                         </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">
+                        <p className="text-secondary-600 text-sm leading-relaxed">
                           {isPortuguese ? (
                             'Partilhamos a paixão por esta cidade incrível que agora chamamos de casa.'
                           ) : (
@@ -722,7 +722,7 @@ export default function Community() {
                   <>Portuguese <span className="gradient-text">Businesses</span> in London</>
                 )}
               </h2>
-              <p className="text-lg text-gray-600 mb-12 max-w-4xl mx-auto">
+              <p className="text-lg text-secondary-600 mb-12 max-w-4xl mx-auto">
                 {isPortuguese ? (
                   'Apoia a nossa comunidade empresarial. Desde padarias autênticas que fazem pastéis tradicionais, a restaurantes que servem francesinha autêntica, a serviços prestados por pessoas que compreendem a nossa cultura.'
                 ) : (
@@ -741,7 +741,7 @@ export default function Community() {
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
                     {isPortuguese ? 'Restaurantes & Cafés' : 'Restaurants & Cafés'}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-4">
+                  <p className="text-secondary-600 text-sm mb-4">
                     {isPortuguese ? (
                       'Sabores de casa em Londres. Francesinha, pastéis de nata, bacalhau e muito mais.'
                     ) : (
@@ -761,7 +761,7 @@ export default function Community() {
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
                     {isPortuguese ? 'Serviços Comunitários' : 'Community Services'}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-4">
+                  <p className="text-secondary-600 text-sm mb-4">
                     {isPortuguese ? (
                       'Cabeleireiros, tradutores, contabilistas que falam português e compreendem as nossas necessidades.'
                     ) : (
@@ -781,7 +781,7 @@ export default function Community() {
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
                     {isPortuguese ? 'Educação & Cultura' : 'Education & Culture'}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-4">
+                  <p className="text-secondary-600 text-sm mb-4">
                     {isPortuguese ? (
                       'Escolas de português, aulas de guitarra, grupos de dança tradicional portuguesa.'
                     ) : (
@@ -822,7 +822,7 @@ export default function Community() {
                     <>Ready to Join the <span className="gradient-text">Portuguese Network?</span></>
                   )}
                 </h2>
-                <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+                <p className="text-xl text-secondary-600 mb-8 max-w-4xl mx-auto leading-relaxed">
                   {isPortuguese ? (
                     `A tua rede portuguesa está à espera. Junta-te a ${stats.members} falantes de português que fizeram de Londres a sua casa, uma conexão profissional de cada vez. Unidos pela língua, unidos pela ambição.`
                   ) : (
@@ -833,7 +833,7 @@ export default function Community() {
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-10">
                   <a 
                     href={ROUTES.signup} 
-                    className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 hover:from-secondary-700 hover:via-primary-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+                    className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 hover:from-secondary-700 hover:via-primary-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-transecondary-y-1 hover:scale-105"
                   >
                     {isPortuguese ? 'JUNTAR À REDE' : 'JOIN THE NETWORK'}
                     <ArrowRightIcon className="h-6 w-6 ml-3" />
@@ -848,26 +848,26 @@ export default function Community() {
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm">
                   <div className="flex flex-col items-center gap-2">
-                    <CheckCircleIcon className="h-6 w-6 text-green-500" />
-                    <span className="text-gray-600 font-medium">
+                    <CheckCircleIcon className="h-6 w-6 text-action-500" />
+                    <span className="text-secondary-600 font-medium">
                       {isPortuguese ? 'Grátis para participar' : 'Free to join'}
                     </span>
                   </div>
                   <div className="flex flex-col items-center gap-2">
-                    <CheckCircleIcon className="h-6 w-6 text-green-500" />
-                    <span className="text-gray-600 font-medium">
+                    <CheckCircleIcon className="h-6 w-6 text-action-500" />
+                    <span className="text-secondary-600 font-medium">
                       {isPortuguese ? 'Membros verificados' : 'Verified members'}
                     </span>
                   </div>
                   <div className="flex flex-col items-center gap-2">
-                    <CheckCircleIcon className="h-6 w-6 text-green-500" />
-                    <span className="text-gray-600 font-medium">
+                    <CheckCircleIcon className="h-6 w-6 text-action-500" />
+                    <span className="text-secondary-600 font-medium">
                       {isPortuguese ? 'Eventos autênticos' : 'Authentic events'}
                     </span>
                   </div>
                   <div className="flex flex-col items-center gap-2">
-                    <CheckCircleIcon className="h-6 w-6 text-green-500" />
-                    <span className="text-gray-600 font-medium">
+                    <CheckCircleIcon className="h-6 w-6 text-action-500" />
+                    <span className="text-secondary-600 font-medium">
                       {isPortuguese ? 'Rede portuguesa' : 'Portuguese network'}
                     </span>
                   </div>

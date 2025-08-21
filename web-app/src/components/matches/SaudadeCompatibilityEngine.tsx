@@ -1,8 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import { buildUnsplashUrl } from '@/config'
 import { motion } from 'framer-motion';
+import { buildUnsplashUrl } from '@/config'
 import { useLanguage } from '@/context/LanguageContext';
+import { buildUnsplashUrl } from '@/config'
 import {
   HeartIcon,
   SparklesIcon,
@@ -25,6 +28,7 @@ import {
   StarIcon as StarSolid,
 } from '@heroicons/react/24/solid';
 import type { SaudadeProfile, CulturalDepthProfile, SaudadeCompatibilityResult, RegionalIdentity } from './SaudadeMatchingSystem';
+import { buildUnsplashUrl } from '@/config'
 
 interface CompatibilityMatch {
   id: string;
@@ -168,7 +172,7 @@ export default function SaudadeCompatibilityEngine({
         userId: 'user_1',
         name: 'Sofia',
         age: 29,
-        photo: 'https://images.unsplash.com/photo-1494790108755-2616b612b1c5?w=150&h=150&fit=crop&crop=face',
+        photo: buildUnsplashUrl('photo-1494790108755-2616b612b1c5?w=150&h=150&fit=crop&crop=face'),
         distance: 2.3,
         lastActive: '2 hours ago',
         saudadeProfile: {
@@ -202,7 +206,7 @@ export default function SaudadeCompatibilityEngine({
         userId: 'user_2',
         name: 'Miguel',
         age: 34,
-        photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+        photo: buildUnsplashUrl('photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face'),
         distance: 5.7,
         lastActive: '1 day ago',
         saudadeProfile: {
@@ -236,7 +240,7 @@ export default function SaudadeCompatibilityEngine({
         userId: 'user_3',
         name: 'Ana',
         age: 26,
-        photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
+        photo: buildUnsplashUrl('photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face'),
         distance: 1.2,
         lastActive: '30 minutes ago',
         saudadeProfile: {
@@ -438,10 +442,10 @@ export default function SaudadeCompatibilityEngine({
   };
 
   const getCompatibilityColor = (score: number) => {
-    if (score >= 85) return 'text-green-600 bg-green-50';
-    if (score >= 70) return 'text-blue-600 bg-blue-50';
+    if (score >= 85) return 'text-action-600 bg-green-50';
+    if (score >= 70) return 'text-primary-600 bg-blue-50';
     if (score >= 55) return 'text-yellow-600 bg-yellow-50';
-    return 'text-gray-600 bg-gray-50';
+    return 'text-secondary-600 bg-secondary-50';
   };
 
   if (loading) {
@@ -449,7 +453,7 @@ export default function SaudadeCompatibilityEngine({
       <div className="space-y-6">
         <div className="animate-pulse space-y-4">
           {[...Array(3)].map((_, i) => (
-            <div key={i} className="bg-gray-100 rounded-2xl p-6 h-48"></div>
+            <div key={i} className="bg-secondary-100 rounded-2xl p-6 h-48"></div>
           ))}
         </div>
       </div>
@@ -461,12 +465,12 @@ export default function SaudadeCompatibilityEngine({
       {/* Header */}
       <div className="text-center mb-8">
         <div className="flex items-center justify-center gap-2 mb-4">
-          <HeartSolid className="w-6 h-6 text-red-500" />
+          <HeartSolid className="w-6 h-6 text-coral-500" />
           <h2 className="text-2xl font-bold text-primary-900">
             {language === 'pt' ? 'Matches Baseados em Saudade' : 'Saudade-Based Matches'}
           </h2>
         </div>
-        <p className="text-gray-600 max-w-2xl mx-auto">
+        <p className="text-secondary-600 max-w-2xl mx-auto">
           {language === 'pt' 
             ? 'Encontre conexões emocionais autênticas com pessoas que compreendem a sua saudade e herança cultural'
             : 'Find authentic emotional connections with people who understand your saudade and cultural heritage'}
@@ -483,7 +487,7 @@ export default function SaudadeCompatibilityEngine({
               key={match.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+              className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100 hover:shadow-xl transition-all duration-300"
             >
               {/* Profile Header */}
               <div className="flex items-center gap-4 mb-4">
@@ -502,7 +506,7 @@ export default function SaudadeCompatibilityEngine({
                     <h3 className="text-lg font-semibold text-gray-900">{match.name}</h3>
                     <span className="text-sm text-gray-500">{match.age}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <div className="flex items-center gap-2 text-sm text-secondary-600">
                     <MapPinIcon className="w-4 h-4" />
                     <span>{match.distance}km away</span>
                     <span>•</span>
@@ -514,14 +518,14 @@ export default function SaudadeCompatibilityEngine({
               {/* Compatibility Score */}
               <div className="mb-4">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-gray-700">
+                  <span className="text-sm font-medium text-secondary-700">
                     {language === 'pt' ? 'Compatibilidade Emocional' : 'Emotional Compatibility'}
                   </span>
                   <span className={`text-sm font-bold px-2 py-1 rounded-full ${getCompatibilityColor(match.compatibilityResult.compatibilityScore)}`}>
                     {match.compatibilityResult.compatibilityScore}%
                   </span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
+                <div className="w-full bg-secondary-200 rounded-full h-2">
                   <div
                     className="bg-gradient-to-r from-red-500 to-primary-500 h-2 rounded-full transition-all duration-500"
                     style={{ width: `${match.compatibilityResult.compatibilityScore}%` }}
@@ -532,7 +536,7 @@ export default function SaudadeCompatibilityEngine({
               {/* Connection Type */}
               <div className="mb-4">
                 <div className="flex items-center gap-2 p-3 bg-gradient-to-r from-red-50 to-primary-50 rounded-lg">
-                  <IconComponent className="w-5 h-5 text-red-600" />
+                  <IconComponent className="w-5 h-5 text-coral-600" />
                   <span className="text-sm font-medium text-red-800">
                     {getConnectionTypeLabel(match.compatibilityResult.connectionType)}
                   </span>
@@ -542,34 +546,34 @@ export default function SaudadeCompatibilityEngine({
               {/* Compatibility Breakdown */}
               <div className="grid grid-cols-2 gap-3 mb-4">
                 <div className="text-center">
-                  <div className="text-lg font-bold text-red-600">
+                  <div className="text-lg font-bold text-coral-600">
                     {match.compatibilityResult.saudadeAlignment}%
                   </div>
-                  <div className="text-xs text-gray-600">
+                  <div className="text-xs text-secondary-600">
                     {language === 'pt' ? 'Saudade' : 'Saudade'}
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-lg font-bold text-blue-600">
+                  <div className="text-lg font-bold text-primary-600">
                     {match.compatibilityResult.emotionalSupport}%
                   </div>
-                  <div className="text-xs text-gray-600">
+                  <div className="text-xs text-secondary-600">
                     {language === 'pt' ? 'Apoio' : 'Support'}
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-lg font-bold text-green-600">
+                  <div className="text-lg font-bold text-action-600">
                     {match.compatibilityResult.culturalDepth}%
                   </div>
-                  <div className="text-xs text-gray-600">
+                  <div className="text-xs text-secondary-600">
                     {language === 'pt' ? 'Cultura' : 'Culture'}
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-lg font-bold text-purple-600">
+                  <div className="text-lg font-bold text-accent-600">
                     {match.compatibilityResult.heritageAlignment}%
                   </div>
-                  <div className="text-xs text-gray-600">
+                  <div className="text-xs text-secondary-600">
                     {language === 'pt' ? 'Herança' : 'Heritage'}
                   </div>
                 </div>
@@ -577,7 +581,7 @@ export default function SaudadeCompatibilityEngine({
 
               {/* Shared Elements */}
               <div className="mb-4">
-                <h4 className="text-sm font-medium text-gray-700 mb-2">
+                <h4 className="text-sm font-medium text-secondary-700 mb-2">
                   {language === 'pt' ? 'Conexões Partilhadas:' : 'Shared Connections:'}
                 </h4>
                 <div className="flex flex-wrap gap-1">
@@ -608,7 +612,7 @@ export default function SaudadeCompatibilityEngine({
                     setSelectedMatch(match);
                     setShowAnalysis(true);
                   }}
-                  className="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors"
+                  className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg text-sm font-medium hover:bg-secondary-50 transition-colors"
                 >
                   {language === 'pt' ? 'Análise' : 'Analysis'}
                 </button>
@@ -636,7 +640,7 @@ export default function SaudadeCompatibilityEngine({
               </h3>
               <button
                 onClick={() => setShowAnalysis(false)}
-                className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
+                className="w-8 h-8 bg-secondary-100 rounded-full flex items-center justify-center hover:bg-secondary-200 transition-colors"
               >
                 ×
               </button>
@@ -651,7 +655,7 @@ export default function SaudadeCompatibilityEngine({
               />
               <div>
                 <h4 className="font-semibold text-gray-900">{selectedMatch.name}</h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-secondary-600">
                   {getConnectionTypeLabel(selectedMatch.compatibilityResult.connectionType)}
                 </p>
               </div>
@@ -660,13 +664,13 @@ export default function SaudadeCompatibilityEngine({
             {/* Support Strengths */}
             <div className="mb-6">
               <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                <StarSolid className="w-5 h-5 text-yellow-500" />
+                <StarSolid className="w-5 h-5 text-accent-500" />
                 {language === 'pt' ? 'Pontos Fortes do Apoio' : 'Support Strengths'}
               </h4>
               <div className="space-y-2">
                 {selectedMatch.compatibilityResult.supportStrengths.map((strength, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-sm text-gray-700">
-                    <div className="w-2 h-2 bg-green-500 rounded-full" />
+                  <div key={idx} className="flex items-center gap-2 text-sm text-secondary-700">
+                    <div className="w-2 h-2 bg-action-500 rounded-full" />
                     {strength}
                   </div>
                 ))}
@@ -676,12 +680,12 @@ export default function SaudadeCompatibilityEngine({
             {/* Recommended Activities */}
             <div className="mb-6">
               <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                <HeartSolid className="w-5 h-5 text-red-500" />
+                <HeartSolid className="w-5 h-5 text-coral-500" />
                 {language === 'pt' ? 'Atividades Recomendadas' : 'Recommended Activities'}
               </h4>
               <div className="space-y-2">
                 {selectedMatch.compatibilityResult.recommendedActivities.map((activity, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-sm text-gray-700">
+                  <div key={idx} className="flex items-center gap-2 text-sm text-secondary-700">
                     <div className="w-2 h-2 bg-primary-500 rounded-full" />
                     {activity}
                   </div>
@@ -698,7 +702,7 @@ export default function SaudadeCompatibilityEngine({
                 </h4>
                 <div className="space-y-2">
                   {selectedMatch.compatibilityResult.potentialChallenges.map((challenge, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-sm text-gray-700">
+                    <div key={idx} className="flex items-center gap-2 text-sm text-secondary-700">
                       <div className="w-2 h-2 bg-orange-500 rounded-full" />
                       {challenge}
                     </div>

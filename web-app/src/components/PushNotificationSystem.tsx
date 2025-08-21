@@ -139,7 +139,6 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
       setPermission(Notification.permission);
     }
 
-    console.log('[Push Notifications] Support check:', {
       supported,
       permission: Notification.permission,
       serviceWorker: 'serviceWorker' in navigator,
@@ -182,7 +181,6 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
       if (existingSubscription) {
         setIsSubscribed(true);
         setSubscription(existingSubscription);
-        console.log('[Push Notifications] Existing subscription found');
       }
     } catch (error) {
       console.error('[Push Notifications] Failed to check subscription:', error);
@@ -357,7 +355,6 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
         throw new Error('Failed to save subscription');
       }
 
-      console.log('[Push Notifications] Subscription sent to backend');
     } catch (error) {
       console.error('[Push Notifications] Failed to send subscription:', error);
     }
@@ -373,7 +370,6 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
         body: JSON.stringify({ subscription })
       });
 
-      console.log('[Push Notifications] Subscription removed from backend');
     } catch (error) {
       console.error('[Push Notifications] Failed to remove subscription:', error);
     }
@@ -393,7 +389,6 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
         })
       });
 
-      console.log('[Push Notifications] Preferences updated');
     } catch (error) {
       console.error('[Push Notifications] Failed to update preferences:', error);
     }
@@ -444,7 +439,6 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
       scheduledNotifications.push(notification);
       localStorage.setItem('lusotown-scheduled-notifications', JSON.stringify(scheduledNotifications));
       
-      console.log('[Push Notifications] Scheduled notification:', notification);
     } catch (error) {
       console.error('[Push Notifications] Failed to schedule notification:', error);
     }
@@ -563,11 +557,11 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
   return (
     <div className={`space-y-6 ${className}`}>
       {/* Main notification toggle */}
-      <div className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-6">
+      <div className="bg-gradient-to-r from-blue-50 to-accent-50 border border-blue-200 rounded-lg p-6">
         <div className="flex items-start space-x-4">
           <div className="flex-shrink-0">
             {isSubscribed ? (
-              <Bell className="h-8 w-8 text-blue-600" />
+              <Bell className="h-8 w-8 text-primary-600" />
             ) : (
               <BellOff className="h-8 w-8 text-gray-400" />
             )}
@@ -577,7 +571,7 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
             <h2 className="text-lg font-semibold text-gray-900">
               {language === 'pt' ? 'Notificações da Comunidade' : 'Community Notifications'}
             </h2>
-            <p className="text-gray-600 mt-1">
+            <p className="text-secondary-600 mt-1">
               {language === 'pt' 
                 ? 'Recebe alertas sobre eventos portugueses, matches da comunidade e atualizações culturais' 
                 : 'Get alerts about Portuguese events, community matches, and cultural updates'}
@@ -588,7 +582,7 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
                 <button
                   onClick={subscribe}
                   disabled={isLoading}
-                  className="inline-flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors disabled:opacity-50"
+                  className="inline-flex items-center space-x-2 bg-primary-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors disabled:opacity-50"
                 >
                   {isLoading ? (
                     <div className="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full" />
@@ -606,7 +600,7 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
                 <div className="flex space-x-3">
                   <button
                     onClick={() => setShowSettings(!showSettings)}
-                    className="inline-flex items-center space-x-2 bg-gray-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-gray-700 transition-colors"
+                    className="inline-flex items-center space-x-2 bg-secondary-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-secondary-700 transition-colors"
                   >
                     <Settings className="h-5 w-5" />
                     <span>{language === 'pt' ? 'Definições' : 'Settings'}</span>
@@ -615,7 +609,7 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
                   <button
                     onClick={sendTestNotification}
                     disabled={testNotificationSent}
-                    className="inline-flex items-center space-x-2 bg-green-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-700 transition-colors disabled:opacity-50"
+                    className="inline-flex items-center space-x-2 bg-action-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-green-700 transition-colors disabled:opacity-50"
                   >
                     <Smartphone className="h-5 w-5" />
                     <span>
@@ -629,7 +623,7 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
                   <button
                     onClick={unsubscribe}
                     disabled={isLoading}
-                    className="inline-flex items-center space-x-2 bg-red-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-red-700 transition-colors disabled:opacity-50"
+                    className="inline-flex items-center space-x-2 bg-coral-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-red-700 transition-colors disabled:opacity-50"
                   >
                     <BellOff className="h-5 w-5" />
                     <span>{language === 'pt' ? 'Desativar' : 'Disable'}</span>
@@ -643,7 +637,7 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
 
       {/* Notification preferences */}
       {isSubscribed && showSettings && (
-        <div className="bg-white border border-gray-200 rounded-lg p-6">
+        <div className="bg-white border border-secondary-200 rounded-lg p-6">
           <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center space-x-2">
             <Settings className="h-5 w-5" />
             <span>{language === 'pt' ? 'Preferências de Notificações' : 'Notification Preferences'}</span>
@@ -653,12 +647,12 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
             {/* Cultural Events */}
             <div className="flex items-center justify-between p-3 bg-red-50 rounded-lg">
               <div className="flex items-center space-x-3">
-                <Calendar className="h-5 w-5 text-red-600" />
+                <Calendar className="h-5 w-5 text-coral-600" />
                 <div>
                   <h4 className="font-medium text-gray-900">
                     {language === 'pt' ? 'Eventos Culturais' : 'Cultural Events'}
                   </h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {language === 'pt' ? 'Fado, festas, workshops portugueses' : 'Fado nights, Portuguese festivals, workshops'}
                   </p>
                 </div>
@@ -666,11 +660,11 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
               <button
                 onClick={() => updatePreference('culturalEvents', !preferences.culturalEvents)}
                 className={`w-12 h-6 rounded-full transition-colors ${
-                  preferences.culturalEvents ? 'bg-red-600' : 'bg-gray-300'
+                  preferences.culturalEvents ? 'bg-coral-600' : 'bg-secondary-300'
                 }`}
               >
                 <div className={`w-5 h-5 bg-white rounded-full transition-transform ${
-                  preferences.culturalEvents ? 'translate-x-6' : 'translate-x-1'
+                  preferences.culturalEvents ? 'transecondary-x-6' : 'transecondary-x-1'
                 }`} />
               </button>
             </div>
@@ -683,7 +677,7 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
                   <h4 className="font-medium text-gray-900">
                     {language === 'pt' ? 'Matches da Comunidade' : 'Community Matches'}
                   </h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {language === 'pt' ? 'Novos portugueses compatíveis' : 'New compatible Portuguese speakers'}
                   </p>
                 </div>
@@ -691,11 +685,11 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
               <button
                 onClick={() => updatePreference('communityMatches', !preferences.communityMatches)}
                 className={`w-12 h-6 rounded-full transition-colors ${
-                  preferences.communityMatches ? 'bg-pink-600' : 'bg-gray-300'
+                  preferences.communityMatches ? 'bg-pink-600' : 'bg-secondary-300'
                 }`}
               >
                 <div className={`w-5 h-5 bg-white rounded-full transition-transform ${
-                  preferences.communityMatches ? 'translate-x-6' : 'translate-x-1'
+                  preferences.communityMatches ? 'transecondary-x-6' : 'transecondary-x-1'
                 }`} />
               </button>
             </div>
@@ -703,12 +697,12 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
             {/* Festival Reminders */}
             <div className="flex items-center justify-between p-3 bg-green-50 rounded-lg">
               <div className="flex items-center space-x-3">
-                <Star className="h-5 w-5 text-green-600" />
+                <Star className="h-5 w-5 text-action-600" />
                 <div>
                   <h4 className="font-medium text-gray-900">
                     {language === 'pt' ? 'Lembretes de Festas' : 'Festival Reminders'}
                   </h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {language === 'pt' ? 'Santo António, São João, Festa do Avante' : 'Santo António, São João, Festa do Avante'}
                   </p>
                 </div>
@@ -716,24 +710,24 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
               <button
                 onClick={() => updatePreference('festivalReminders', !preferences.festivalReminders)}
                 className={`w-12 h-6 rounded-full transition-colors ${
-                  preferences.festivalReminders ? 'bg-green-600' : 'bg-gray-300'
+                  preferences.festivalReminders ? 'bg-action-600' : 'bg-secondary-300'
                 }`}
               >
                 <div className={`w-5 h-5 bg-white rounded-full transition-transform ${
-                  preferences.festivalReminders ? 'translate-x-6' : 'translate-x-1'
+                  preferences.festivalReminders ? 'transecondary-x-6' : 'transecondary-x-1'
                 }`} />
               </button>
             </div>
 
             {/* Fado Nights */}
-            <div className="flex items-center justify-between p-3 bg-purple-50 rounded-lg">
+            <div className="flex items-center justify-between p-3 bg-accent-50 rounded-lg">
               <div className="flex items-center space-x-3">
-                <Music className="h-5 w-5 text-purple-600" />
+                <Music className="h-5 w-5 text-accent-600" />
                 <div>
                   <h4 className="font-medium text-gray-900">
                     {language === 'pt' ? 'Noites de Fado' : 'Fado Nights'}
                   </h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {language === 'pt' ? 'Performances de fado autêntico' : 'Authentic fado performances'}
                   </p>
                 </div>
@@ -741,11 +735,11 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
               <button
                 onClick={() => updatePreference('fadoNights', !preferences.fadoNights)}
                 className={`w-12 h-6 rounded-full transition-colors ${
-                  preferences.fadoNights ? 'bg-purple-600' : 'bg-gray-300'
+                  preferences.fadoNights ? 'bg-accent-600' : 'bg-secondary-300'
                 }`}
               >
                 <div className={`w-5 h-5 bg-white rounded-full transition-transform ${
-                  preferences.fadoNights ? 'translate-x-6' : 'translate-x-1'
+                  preferences.fadoNights ? 'transecondary-x-6' : 'transecondary-x-1'
                 }`} />
               </button>
             </div>
@@ -758,7 +752,7 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
                   <h4 className="font-medium text-gray-900">
                     {language === 'pt' ? 'Especiais dos Restaurantes' : 'Restaurant Specials'}
                   </h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {language === 'pt' ? 'Ofertas em restaurantes portugueses' : 'Deals at Portuguese restaurants'}
                   </p>
                 </div>
@@ -766,11 +760,11 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
               <button
                 onClick={() => updatePreference('restaurantSpecials', !preferences.restaurantSpecials)}
                 className={`w-12 h-6 rounded-full transition-colors ${
-                  preferences.restaurantSpecials ? 'bg-orange-600' : 'bg-gray-300'
+                  preferences.restaurantSpecials ? 'bg-orange-600' : 'bg-secondary-300'
                 }`}
               >
                 <div className={`w-5 h-5 bg-white rounded-full transition-transform ${
-                  preferences.restaurantSpecials ? 'translate-x-6' : 'translate-x-1'
+                  preferences.restaurantSpecials ? 'transecondary-x-6' : 'transecondary-x-1'
                 }`} />
               </button>
             </div>
@@ -778,12 +772,12 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
             {/* Emergency Alerts */}
             <div className="flex items-center justify-between p-3 bg-red-50 rounded-lg border border-red-200">
               <div className="flex items-center space-x-3">
-                <Globe className="h-5 w-5 text-red-600" />
+                <Globe className="h-5 w-5 text-coral-600" />
                 <div>
                   <h4 className="font-medium text-gray-900">
                     {language === 'pt' ? 'Alertas de Emergência' : 'Emergency Alerts'}
                   </h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {language === 'pt' ? 'Avisos importantes para a comunidade' : 'Important community alerts'}
                   </p>
                 </div>
@@ -791,11 +785,11 @@ export default function PushNotificationSystem({ className = '' }: PushNotificat
               <button
                 onClick={() => updatePreference('emergencyAlerts', !preferences.emergencyAlerts)}
                 className={`w-12 h-6 rounded-full transition-colors ${
-                  preferences.emergencyAlerts ? 'bg-red-600' : 'bg-gray-300'
+                  preferences.emergencyAlerts ? 'bg-coral-600' : 'bg-secondary-300'
                 }`}
               >
                 <div className={`w-5 h-5 bg-white rounded-full transition-transform ${
-                  preferences.emergencyAlerts ? 'translate-x-6' : 'translate-x-1'
+                  preferences.emergencyAlerts ? 'transecondary-x-6' : 'transecondary-x-1'
                 }`} />
               </button>
             </div>

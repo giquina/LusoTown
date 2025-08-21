@@ -200,7 +200,7 @@ const PortugueseCulturalHeritage: React.FC = () => {
               : "Preserve and Celebrate Our Culture"}
           </h2>
 
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
             {language === "pt"
               ? "Descubra as tradições, sabores e histórias que definem a nossa identidade lusófona em Londres."
               : "Discover the traditions, flavors, and stories that define our Portuguese identity in London."
@@ -222,7 +222,7 @@ const PortugueseCulturalHeritage: React.FC = () => {
               className={`flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300 ${
                 selectedCategory === category.id
                   ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg'
-                  : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200 hover:shadow-md'
+                  : 'bg-white text-secondary-700 hover:bg-secondary-50 border border-secondary-200 hover:shadow-md'
               }`}
             >
               <span className="text-base">{category.icon}</span>
@@ -241,7 +241,7 @@ const PortugueseCulturalHeritage: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer group"
+              className="bg-white rounded-2xl shadow-lg border border-secondary-100 overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer group"
               onClick={() => setSelectedElement(element)}
             >
               {/* Header */}
@@ -255,7 +255,7 @@ const PortugueseCulturalHeritage: React.FC = () => {
                       <h3 className="font-bold text-lg text-gray-900 group-hover:text-primary-600 transition-colors">
                         {language === "pt" ? element.namePt : element.nameEn}
                       </h3>
-                      <div className="flex items-center gap-1 text-sm text-gray-600">
+                      <div className="flex items-center gap-1 text-sm text-secondary-600">
                         <span>{element.flag}</span>
                         <span>{element.region}</span>
                       </div>
@@ -264,7 +264,7 @@ const PortugueseCulturalHeritage: React.FC = () => {
                   {getCategoryIcon(element.category)}
                 </div>
 
-                <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
+                <p className="text-secondary-600 text-sm leading-relaxed mb-4 line-clamp-3">
                   {language === "pt" ? element.descriptionPt : element.descriptionEn}
                 </p>
 
@@ -272,7 +272,7 @@ const PortugueseCulturalHeritage: React.FC = () => {
                 <div className="mb-4">
                   <div className="flex items-center gap-2 mb-2">
                     <MapPinIcon className="w-4 h-4 text-primary-500" />
-                    <span className="text-sm font-medium text-gray-700">
+                    <span className="text-sm font-medium text-secondary-700">
                       {language === "pt" ? "Onde encontrar em Londres:" : "Where to find in London:"}
                     </span>
                   </div>
@@ -286,7 +286,7 @@ const PortugueseCulturalHeritage: React.FC = () => {
                       </span>
                     ))}
                     {element.whereFound.length > 2 && (
-                      <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
+                      <span className="px-2 py-1 bg-secondary-100 text-secondary-600 text-xs rounded-full">
                         +{element.whereFound.length - 2} more
                       </span>
                     )}
@@ -360,17 +360,17 @@ const PortugueseCulturalHeritage: React.FC = () => {
                 </h3>
                 <button
                   onClick={() => setSelectedElement(null)}
-                  className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
+                  className="w-8 h-8 bg-secondary-100 rounded-full flex items-center justify-center hover:bg-secondary-200 transition-colors"
                 >
                   ×
                 </button>
               </div>
               {/* Add more detailed content here */}
-              <p className="text-gray-600 mb-4">
+              <p className="text-secondary-600 mb-4">
                 {language === "pt" ? selectedElement.descriptionPt : selectedElement.descriptionEn}
               </p>
               <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-lg p-4">
-                <p className="text-sm text-gray-700">
+                <p className="text-sm text-secondary-700">
                   {language === "pt" ? selectedElement.funFact.pt : selectedElement.funFact.en}
                 </p>
               </div>

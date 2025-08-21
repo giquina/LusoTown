@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { buildCloudinaryUrl } from '@/config'
 import { motion } from "framer-motion";
+import { buildCloudinaryUrl } from '@/config'
 import {
   ShieldCheckIcon,
   StarIcon,
@@ -12,16 +14,27 @@ import {
   ArrowRightIcon,
 } from "@heroicons/react/24/outline";
 import { CheckCircleIcon, Crown } from "lucide-react";
+import { buildCloudinaryUrl } from '@/config'
 import Footer from "@/components/Footer";
+import { buildCloudinaryUrl } from '@/config'
 import TransportBookingForm from "@/components/TransportBookingForm";
+import { buildCloudinaryUrl } from '@/config'
 import TransportBookingFlow from "@/components/TransportBookingFlow";
+import { buildCloudinaryUrl } from '@/config'
 import TransportServiceCard from "@/components/TransportServiceCard";
+import { buildCloudinaryUrl } from '@/config'
 import TransportTestimonials from "@/components/TransportTestimonials";
+import { buildCloudinaryUrl } from '@/config'
 import LondonTourRoutes from "@/components/LondonTourRoutes";
+import { buildCloudinaryUrl } from '@/config'
 import CustomToursSection from "@/components/CustomToursSection";
+import { buildCloudinaryUrl } from '@/config'
 import ServiceCommunityBridge from "@/components/ServiceCommunityBridge";
+import { buildCloudinaryUrl } from '@/config'
 import CrossPlatformNavigationWidget from "@/components/CrossPlatformNavigationWidget";
+import { buildCloudinaryUrl } from '@/config'
 import { useLanguage } from "@/context/LanguageContext";
+import { buildCloudinaryUrl } from '@/config'
 
 // Premium security and VIP services - London-focused operations only
 const serviceTiers = [
@@ -33,7 +46,7 @@ const serviceTiers = [
     price: 400,
     originalPrice: 450,
     image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/premium-security-service_dlqxkx.jpg",
+      buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535200/premium-security-service_dlqxkx.jpg"),
     imageAlt:
       "Professional security service with professional vehicle at London landmark",
     imageAltPortuguese:
@@ -80,7 +93,7 @@ const serviceTiers = [
     price: 800,
     originalPrice: 900,
     image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535201/vip-london-bridge_hml2nr.jpg",
+      buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535201/vip-london-bridge_hml2nr.jpg"),
     imageAlt:
       "VIP London experience with Tower Bridge and professional service",
     imageAltPortuguese:
@@ -129,7 +142,7 @@ const serviceTiers = [
     price: 65,
     originalPrice: 75,
     image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535202/elite-protection-service_dqmxvr.jpg",
+      buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535202/elite-protection-service_dqmxvr.jpg"),
     imageAlt: "Elite protection service with professional vehicle in London",
     imageAltPortuguese:
       "Serviço de proteção elite com veículo profissional em Londres",
@@ -184,7 +197,7 @@ const londonTourismExperiences = [
     originalPrice: 350,
     duration: "4 hours",
     image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535203/big-ben-westminster_zlkd5m.jpg",
+      buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535203/big-ben-westminster_zlkd5m.jpg"),
     imageAlt: "Big Ben and Westminster Bridge - Classic London landmarks",
     imageAltPortuguese:
       "Big Ben e Westminster Bridge - Marcos clássicos de Londres",
@@ -230,7 +243,7 @@ const londonTourismExperiences = [
     originalPrice: 420,
     duration: "6 hours",
     image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535204/buckingham-palace_xnr8wp.jpg",
+      buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535204/buckingham-palace_xnr8wp.jpg"),
     imageAlt: "Buckingham Palace with royal guards - Royal London experience",
     imageAltPortuguese:
       "Palácio de Buckingham com guardas reais - Experiência real de Londres",
@@ -276,7 +289,7 @@ const londonTourismExperiences = [
     originalPrice: 495,
     duration: "6 hours",
     image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535205/the-shard-london_kqe9xr.jpg",
+      buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535205/the-shard-london_kqe9xr.jpg"),
     imageAlt: "The Shard and modern London skyline with Thames river",
     imageAltPortuguese: "The Shard e skyline moderno de Londres com rio Tâmisa",
     membershipDiscounts: {
@@ -321,7 +334,7 @@ const londonTourismExperiences = [
     originalPrice: 580,
     duration: "8 hours",
     image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535206/covent-garden_dxh3qm.jpg",
+      buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535206/covent-garden_dxh3qm.jpg"),
     imageAlt: "Covent Garden market and shopping area in London",
     imageAltPortuguese: "Mercado de Covent Garden e área de compras em Londres",
     membershipDiscounts: {
@@ -397,7 +410,7 @@ const multiDayPackages = [
     originalPrice: 650,
     duration: "8 hours",
     image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535207/tower-bridge-sunset_kml8pr.jpg",
+      buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535207/tower-bridge-sunset_kml8pr.jpg"),
     imageAlt: "Tower Bridge at sunset - Complete London exploration",
     imageAltPortuguese:
       "Tower Bridge ao pôr do sol - Exploração completa de Londres",
@@ -458,7 +471,7 @@ const multiDayPackages = [
     originalPrice: 470,
     duration: "5 hours",
     image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535209/london-attractions-collage_dxh4mn.jpg",
+      buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535209/london-attractions-collage_dxh4mn.jpg"),
     imageAlt: "London family attractions - Adventure and cultural activities",
     imageAltPortuguese:
       "Atrações familiares de Londres - Aventura e atividades culturais",
@@ -661,7 +674,7 @@ export default function TransportPage() {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-secondary-50 via-white to-accent-50 pt-20">
-        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535205/the-shard-london_kqe9xr.jpg')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url(buildCloudinaryUrl('dqhbeqttp/image/upload/v1734535205/the-shard-london_kqe9xr.jpg'))] bg-cover bg-center opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-secondary-900/10 via-transparent to-accent-900/10"></div>
         <div className="relative container-width py-16 lg:py-24">
           <div className="text-center max-w-4xl mx-auto">
@@ -737,7 +750,7 @@ export default function TransportPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
+              className="text-xl text-secondary-600 mb-8 max-w-3xl mx-auto leading-relaxed"
             >
               {/* Desktop full subtitle */}
               <span className="hidden sm:block">
@@ -786,7 +799,7 @@ export default function TransportPage() {
                   ? "Preferência por reservas antecipadas | Emergências aceites" 
                   : "Advance bookings preferred | Emergencies accepted"}
               </p>
-              <div className="flex items-center justify-center gap-4 text-sm text-gray-600">
+              <div className="flex items-center justify-center gap-4 text-sm text-secondary-600">
                 <span className="flex items-center gap-1">
                   <MapPinIcon className="w-4 h-4" />
                   Londres & Arredores
@@ -807,15 +820,15 @@ export default function TransportPage() {
             >
               <button
                 onClick={() => handleBookService('premium')}
-                className="group bg-gradient-to-r from-secondary-600 to-secondary-700 hover:from-secondary-700 hover:to-secondary-800 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-3 min-w-[280px] justify-center"
+                className="group bg-gradient-to-r from-secondary-600 to-secondary-700 hover:from-secondary-700 hover:to-secondary-800 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-transecondary-y-1 transition-all duration-300 flex items-center gap-3 min-w-[280px] justify-center"
               >
                 <Crown className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                 {isPortuguese ? "Reserve Agora" : "Book Now"}
-                <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRightIcon className="w-5 h-5 group-hover:transecondary-x-1 transition-transform" />
               </button>
               <button
                 onClick={() => setShowBookingForm(true)}
-                className="group bg-white hover:bg-gray-50 text-secondary-700 border-2 border-secondary-200 hover:border-secondary-300 px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-3 min-w-[280px] justify-center"
+                className="group bg-white hover:bg-secondary-50 text-secondary-700 border-2 border-secondary-200 hover:border-secondary-300 px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-transecondary-y-1 transition-all duration-300 flex items-center gap-3 min-w-[280px] justify-center"
               >
                 <PhoneIcon className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                 {isPortuguese ? "Falar Connosco" : "Contact Us"}
@@ -830,29 +843,29 @@ export default function TransportPage() {
               className="bg-white/80 backdrop-blur-sm border border-white/50 rounded-2xl p-6 max-w-2xl mx-auto shadow-lg"
             >
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-                <div className="border-r border-gray-200 last:border-r-0 pr-4 last:pr-0">
+                <div className="border-r border-secondary-200 last:border-r-0 pr-4 last:pr-0">
                   <div className="text-2xl font-bold text-secondary-700">£65+</div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-secondary-600">
                     {isPortuguese ? "Por Hora" : "Per Hour"}
                   </div>
                 </div>
-                <div className="border-r border-gray-200 last:border-r-0 pr-4 last:pr-0">
+                <div className="border-r border-secondary-200 last:border-r-0 pr-4 last:pr-0">
                   <div className="text-2xl font-bold text-secondary-700">£320+</div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-secondary-600">
                     {isPortuguese ? "Tours Londres" : "London Tours"}
                   </div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-secondary-700">£400+</div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-secondary-600">
                     {isPortuguese ? "Segurança VIP" : "VIP Security"}
                   </div>
                 </div>
               </div>
               
               {/* Additional pricing info */}
-              <div className="text-center mt-6 pt-4 border-t border-gray-200">
-                <p className="text-sm text-gray-600 font-medium">
+              <div className="text-center mt-6 pt-4 border-t border-secondary-200">
+                <p className="text-sm text-secondary-600 font-medium">
                   {isPortuguese 
                     ? "Todos os preços incluem motorista português certificado" 
                     : "All prices include certified Portuguese driver"}
@@ -869,7 +882,7 @@ export default function TransportPage() {
       </section>
 
       {/* How SIA Close Protection Works Section */}
-      <section className="py-24 bg-white border-t border-gray-100">
+      <section className="py-24 bg-white border-t border-secondary-100">
         <div className="container-width">
           <div className="text-center mb-16">
             <motion.div
@@ -892,7 +905,7 @@ export default function TransportPage() {
                 ? "Processo Profissional de Proteção SIA"
                 : "Professional SIA Protection Process"}
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+            <p className="text-xl text-secondary-600 max-w-4xl mx-auto">
               {isPortuguese
                 ? "Nosso sistema garante total conformidade com regulamentações SIA do Reino Unido e os mais altos padrões de segurança"
                 : "Our system ensures full compliance with UK SIA regulations and the highest security standards"}
@@ -915,14 +928,14 @@ export default function TransportPage() {
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
                   {isPortuguese ? "Escolha o Serviço" : "Choose Your Service"}
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-secondary-600 text-sm">
                   {isPortuguese
                     ? "Selecione o nível de proteção adequado às suas necessidades"
                     : "Select the protection level suitable for your needs"}
                 </p>
               </div>
               {/* Arrow */}
-              <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+              <div className="hidden lg:block absolute top-1/2 -right-4 transform -transecondary-y-1/2">
                 <ArrowRightIcon className="w-6 h-6 text-secondary-400" />
               </div>
             </motion.div>
@@ -942,13 +955,13 @@ export default function TransportPage() {
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
                   {isPortuguese ? "Questionário SIA" : "SIA Questionnaire"}
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-secondary-600 text-sm">
                   {isPortuguese
                     ? "Complete avaliação obrigatória de segurança e conformidade"
                     : "Complete mandatory safety & compliance assessment"}
                 </p>
               </div>
-              <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+              <div className="hidden lg:block absolute top-1/2 -right-4 transform -transecondary-y-1/2">
                 <ArrowRightIcon className="w-6 h-6 text-accent-400" />
               </div>
             </motion.div>
@@ -968,13 +981,13 @@ export default function TransportPage() {
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
                   {isPortuguese ? "Detalhes & Reserva" : "Details & Booking"}
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-secondary-600 text-sm">
                   {isPortuguese
                     ? "Forneça detalhes pessoais e confirme reserva segura"
                     : "Provide personal details and secure booking"}
                 </p>
               </div>
-              <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+              <div className="hidden lg:block absolute top-1/2 -right-4 transform -transecondary-y-1/2">
                 <ArrowRightIcon className="w-6 h-6 text-premium-400" />
               </div>
             </motion.div>
@@ -994,13 +1007,13 @@ export default function TransportPage() {
                 <h3 className="text-lg font-bold text-gray-900 mb-2">
                   {isPortuguese ? "Revisão SIA" : "SIA Review"}
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-secondary-600 text-sm">
                   {isPortuguese
                     ? "Oficial licenciado revisa e confirma sua reserva"
                     : "Licensed officer reviews and confirms booking"}
                 </p>
               </div>
-              <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+              <div className="hidden lg:block absolute top-1/2 -right-4 transform -transecondary-y-1/2">
                 <ArrowRightIcon className="w-6 h-6 text-action-400" />
               </div>
             </motion.div>
@@ -1022,7 +1035,7 @@ export default function TransportPage() {
                     ? "Serviço Profissional"
                     : "Professional Service"}
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-secondary-600 text-sm">
                   {isPortuguese
                     ? "Desfrute de proteção profissional e discreta"
                     : "Enjoy professional & discreet protection"}
@@ -1046,7 +1059,7 @@ export default function TransportPage() {
               <h4 className="text-lg font-bold text-gray-900 mb-2">
                 {isPortuguese ? "Totalmente Conforme" : "Fully Compliant"}
               </h4>
-              <p className="text-gray-600">
+              <p className="text-secondary-600">
                 {isPortuguese
                   ? "Todos os oficiais são licenciados SIA e seguem protocolos rigorosos do Reino Unido"
                   : "All officers are SIA licensed and follow strict UK protocols"}
@@ -1066,7 +1079,7 @@ export default function TransportPage() {
               <h4 className="text-lg font-bold text-gray-900 mb-2">
                 {isPortuguese ? "Revisão Rápida" : "Fast Review"}
               </h4>
-              <p className="text-gray-600">
+              <p className="text-secondary-600">
                 {isPortuguese
                   ? "Confirmação em 2-4 horas com designação imediata de oficial"
                   : "Confirmation within 2-4 hours with immediate officer assignment"}
@@ -1086,7 +1099,7 @@ export default function TransportPage() {
               <h4 className="text-lg font-bold text-gray-900 mb-2">
                 {isPortuguese ? "Serviço Premium" : "Premium Service"}
               </h4>
-              <p className="text-gray-600">
+              <p className="text-secondary-600">
                 {isPortuguese
                   ? "Comunicação em português e conhecimento cultural especializado"
                   : "Portuguese communication and specialized cultural knowledge"}
@@ -1125,7 +1138,7 @@ export default function TransportPage() {
       </section>
 
       {/* Cultural Authenticity Section */}
-      <section className="py-24 bg-gradient-to-br from-secondary-50/60 via-white to-accent-50/40 border-t border-gray-100 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-br from-secondary-50/60 via-white to-accent-50/40 border-t border-secondary-100 relative overflow-hidden">
         {/* Portuguese-inspired background decorative elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-secondary-200/40 via-accent-100/30 to-coral-100/30 rounded-full opacity-60 animate-pulse" />
@@ -1162,7 +1175,7 @@ export default function TransportPage() {
                 ? "Quer Explorar Londres com Total Segurança?"
                 : "Want to Explore London with Complete Safety?"}
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+            <p className="text-xl text-secondary-600 max-w-4xl mx-auto">
               {isPortuguese
                 ? "Nossos motoristas e pessoal de segurança especializados oferecem proteção pessoal discreta e comunicação fluente em português. Explore Londres com confiança total!"
                 : "Our specialized drivers and security personnel provide discreet personal protection and fluent Portuguese communication. Explore London with complete confidence!"}
@@ -1176,7 +1189,7 @@ export default function TransportPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-white/90 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/60 hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 group"
+              className="bg-white/90 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/60 hover:shadow-3xl transition-all duration-500 hover:-transecondary-y-3 hover:scale-105 group"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
                 <svg
@@ -1192,12 +1205,12 @@ export default function TransportPage() {
                   ? "Especialistas em Turismo de Londres"
                   : "London Tourism Specialists"}
               </h3>
-              <p className="text-gray-600 mb-6 flex-1">
+              <p className="text-secondary-600 mb-6 flex-1">
                 {isPortuguese
                   ? "Guias profissionais com conhecimento profundo da história de Londres, atrações principais e experiências premium, oferecendo tours em português fluente."
                   : "Professional guides with deep knowledge of London's history, top attractions, and premium experiences, offering tours in fluent Portuguese."}
               </p>
-              <ul className="space-y-2 text-sm text-gray-600">
+              <ul className="space-y-2 text-sm text-secondary-600">
                 <li className="flex items-center gap-2">
                   <CheckCircleIcon className="w-4 h-4 text-secondary-500" />
                   <span>
@@ -1230,7 +1243,7 @@ export default function TransportPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/90 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/60 hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 group"
+              className="bg-white/90 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/60 hover:shadow-3xl transition-all duration-500 hover:-transecondary-y-3 hover:scale-105 group"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-premium-100 to-premium-200 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
                 <svg
@@ -1246,12 +1259,12 @@ export default function TransportPage() {
                   ? "Acesso VIP às Atrações de Londres"
                   : "VIP Access to London Attractions"}
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-secondary-600 mb-6">
                 {isPortuguese
                   ? "Conexões exclusivas para acesso VIP às principais atrações de Londres, restaurantes premium e experiências especiais, tudo com assistência em português."
                   : "Exclusive connections for VIP access to London's top attractions, premium restaurants, and special experiences, all with Portuguese language assistance."}
               </p>
-              <ul className="space-y-2 text-sm text-gray-600">
+              <ul className="space-y-2 text-sm text-secondary-600">
                 <li className="flex items-center gap-2">
                   <CheckCircleIcon className="w-4 h-4 text-premium-500" />
                   <span>
@@ -1284,7 +1297,7 @@ export default function TransportPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-white/90 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/60 hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 group"
+              className="bg-white/90 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/60 hover:shadow-3xl transition-all duration-500 hover:-transecondary-y-3 hover:scale-105 group"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-accent-100 to-accent-200 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
                 <ShieldCheckIcon className="w-8 h-8 text-accent-600" />
@@ -1294,12 +1307,12 @@ export default function TransportPage() {
                   ? "Segurança Turística Profissional"
                   : "Professional Tourist Security"}
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-secondary-600 mb-6">
                 {isPortuguese
                   ? "Proteção profissional especializada em turismo com comunicação fluente em português, oferecendo segurança discreta durante experiências turísticas em Londres especificamente."
                   : "Tourism-specialized professional protection with fluent Portuguese communication, providing discreet security during London tourism experiences specifically."}
               </p>
-              <ul className="space-y-2 text-sm text-gray-600">
+              <ul className="space-y-2 text-sm text-secondary-600">
                 <li className="flex items-center gap-2">
                   <CheckCircleIcon className="w-4 h-4 text-accent-500" />
                   <span>
@@ -1350,7 +1363,7 @@ export default function TransportPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="text-xl text-gray-600 max-w-2xl mx-auto"
+              className="text-xl text-secondary-600 max-w-2xl mx-auto"
             >
               {isPortuguese
                 ? "Descubra os marcos icónicos e atrações imperdíveis de Londres com os nossos guias especializados"
@@ -1361,56 +1374,56 @@ export default function TransportPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {[
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535203/big-ben-westminster_zlkd5m.jpg",
+                src: buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535203/big-ben-westminster_zlkd5m.jpg"),
                 alt: "Big Ben and Westminster",
                 altPt: "Big Ben e Westminster",
                 title: "Westminster & Big Ben",
                 titlePt: "Westminster e Big Ben",
               },
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535204/buckingham-palace_xnr8wp.jpg",
+                src: buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535204/buckingham-palace_xnr8wp.jpg"),
                 alt: "Buckingham Palace",
                 altPt: "Palácio de Buckingham",
                 title: "Buckingham Palace",
                 titlePt: "Palácio de Buckingham",
               },
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535201/vip-london-bridge_hml2nr.jpg",
+                src: buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535201/vip-london-bridge_hml2nr.jpg"),
                 alt: "Tower Bridge",
                 altPt: "Tower Bridge",
                 title: "Tower Bridge",
                 titlePt: "Tower Bridge",
               },
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535205/the-shard-london_kqe9xr.jpg",
+                src: buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535205/the-shard-london_kqe9xr.jpg"),
                 alt: "The Shard",
                 altPt: "The Shard",
                 title: "The Shard",
                 titlePt: "The Shard",
               },
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535206/covent-garden_dxh3qm.jpg",
+                src: buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535206/covent-garden_dxh3qm.jpg"),
                 alt: "Covent Garden",
                 altPt: "Covent Garden",
                 title: "Covent Garden",
                 titlePt: "Covent Garden",
               },
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535204/buckingham-palace_xnr8wp.jpg",
+                src: buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535204/buckingham-palace_xnr8wp.jpg"),
                 alt: "London Eye",
                 altPt: "London Eye",
                 title: "London Eye",
                 titlePt: "London Eye",
               },
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535207/tower-of-london_kmlr5p.jpg",
+                src: buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535207/tower-of-london_kmlr5p.jpg"),
                 alt: "Tower of London",
                 altPt: "Torre de Londres",
                 title: "Tower of London",
                 titlePt: "Torre de Londres",
               },
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535208/st-pauls-cathedral_r9nxhw.jpg",
+                src: buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535208/st-pauls-cathedral_r9nxhw.jpg"),
                 alt: "St Paul's Cathedral",
                 altPt: "Catedral de St. Paul",
                 title: "St Paul's Cathedral",
@@ -1431,7 +1444,7 @@ export default function TransportPage() {
                   className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform transecondary-y-full group-hover:transecondary-y-0 transition-transform duration-300">
                   <h4 className="font-bold text-sm">
                     {isPortuguese ? attraction.titlePt : attraction.title}
                   </h4>
@@ -1538,7 +1551,7 @@ export default function TransportPage() {
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {isPortuguese ? feature.titlePortuguese : feature.title}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-secondary-600">
                   {isPortuguese
                     ? feature.descriptionPortuguese
                     : feature.description}
@@ -1567,7 +1580,7 @@ export default function TransportPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              className="text-xl text-secondary-600 max-w-3xl mx-auto"
             >
               {isPortuguese
                 ? "Planeie a sua experiência de Londres antes mesmo de chegar. Reserve com antecedência e tenha o seu motorista falante de português pronto para o receber no aeroporto."
@@ -1596,12 +1609,12 @@ export default function TransportPage() {
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 {isPortuguese ? "Reservas Antecipadas" : "Advance Bookings"}
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-secondary-600 mb-4">
                 {isPortuguese
                   ? "Reserve seus serviços de transporte e tours com semanas de antecedência. Garantimos disponibilidade e preços preferenciais."
                   : "Book your transport services and tours weeks in advance. We guarantee availability and preferential pricing."}
               </p>
-              <ul className="space-y-2 text-sm text-gray-600">
+              <ul className="space-y-2 text-sm text-secondary-600">
                 <li className="flex items-center gap-2">
                   <CheckCircleIcon className="w-4 h-4 text-accent-500" />
                   <span>
@@ -1648,12 +1661,12 @@ export default function TransportPage() {
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 {isPortuguese ? "Recolha no Aeroporto" : "Airport Pickup"}
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-secondary-600 mb-4">
                 {isPortuguese
                   ? "O seu motorista falante de português estará à sua espera no aeroporto com um sinal personalizado. Comece a sua experiência em Londres imediatamente."
                   : "Your Portuguese-speaking driver will be waiting at the airport with a personalized sign. Start your London experience immediately."}
               </p>
-              <ul className="space-y-2 text-sm text-gray-600">
+              <ul className="space-y-2 text-sm text-secondary-600">
                 <li className="flex items-center gap-2">
                   <CheckCircleIcon className="w-4 h-4 text-secondary-500" />
                   <span>
@@ -1698,12 +1711,12 @@ export default function TransportPage() {
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 {isPortuguese ? "Planejamento Completo" : "Complete Planning"}
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-secondary-600 mb-4">
                 {isPortuguese
                   ? "Planeamos todo o seu itinerário de Londres antes da sua chegada. Inclui tours, refeições, e experiências culturais portuguesas."
                   : "We plan your entire London itinerary before your arrival. Includes tours, dining, and Portuguese cultural experiences."}
               </p>
-              <ul className="space-y-2 text-sm text-gray-600">
+              <ul className="space-y-2 text-sm text-secondary-600">
                 <li className="flex items-center gap-2">
                   <CheckCircleIcon className="w-4 h-4 text-primary-500" />
                   <span>
@@ -1745,7 +1758,7 @@ export default function TransportPage() {
                   ? "Pronto para Sua Aventura VIP em Londres?"
                   : "Ready for Your VIP London Adventure?"}
               </h3>
-              <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+              <p className="text-lg text-secondary-600 mb-6 max-w-2xl mx-auto">
                 {isPortuguese
                   ? "Seu motorista pessoal estará no aeroporto com o seu nome. Sem stress, sem confusão, só conforto e experiências inesquecíveis!"
                   : "Your personal driver will be at the airport with your name. No stress, no confusion, just comfort and unforgettable experiences!"}
@@ -1820,7 +1833,7 @@ export default function TransportPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium"
+              className="text-2xl text-secondary-600 max-w-4xl mx-auto leading-relaxed font-medium"
             >
               {isPortuguese
                 ? "Transporte seguro, guias especializados e experiências únicas em Londres - tudo com profissionais que falam o seu idioma e compreendem a sua cultura."
@@ -1835,21 +1848,21 @@ export default function TransportPage() {
               viewport={{ once: true }}
               className="flex flex-wrap justify-center gap-6 mt-12 max-w-4xl mx-auto"
             >
-              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-md border border-gray-100">
+              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-md border border-secondary-100">
                 <CheckCircleIcon className="w-5 h-5 text-secondary-600" />
-                <span className="font-semibold text-gray-800">
+                <span className="font-semibold text-secondary-800">
                   {isPortuguese ? "Comunicação em Português" : "Portuguese Communication"}
                 </span>
               </div>
-              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-md border border-gray-100">
+              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-md border border-secondary-100">
                 <CheckCircleIcon className="w-5 h-5 text-secondary-600" />
-                <span className="font-semibold text-gray-800">
+                <span className="font-semibold text-secondary-800">
                   {isPortuguese ? "Licenciados SIA" : "SIA Licensed"}
                 </span>
               </div>
-              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-md border border-gray-100">
+              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-md border border-secondary-100">
                 <CheckCircleIcon className="w-5 h-5 text-secondary-600" />
-                <span className="font-semibold text-gray-800">
+                <span className="font-semibold text-secondary-800">
                   {isPortuguese ? "Disponível 24/7" : "Available 24/7"}
                 </span>
               </div>
@@ -1896,7 +1909,7 @@ export default function TransportPage() {
                 ? "Quer Conhecer Londres Como um VIP?"
                 : "Want to Experience London Like a VIP?"}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto mb-8">
               {isPortuguese
                 ? "Acesso exclusivo às melhores atrações de Londres com seu guia pessoal falante de português. Pule filas, entre pelos fundos e tenha experiências que outros turistas nunca terão!"
                 : "Exclusive access to London's top attractions with your personal Portuguese-speaking guide. Skip lines, enter through the back, and have experiences other tourists will never get!"}
@@ -1968,7 +1981,7 @@ export default function TransportPage() {
                       </div>
                     </div>
 
-                    <p className="text-gray-600 mb-3 sm:mb-4 leading-relaxed text-xs sm:text-sm lg:text-base flex-1">
+                    <p className="text-secondary-600 mb-3 sm:mb-4 leading-relaxed text-xs sm:text-sm lg:text-base flex-1">
                       {isPortuguese
                         ? pkg.descriptionPortuguese
                         : pkg.description}
@@ -1989,7 +2002,7 @@ export default function TransportPage() {
                             .map((highlight, idx) => (
                               <li
                                 key={idx}
-                                className="flex items-start text-xs sm:text-sm text-gray-600"
+                                className="flex items-start text-xs sm:text-sm text-secondary-600"
                               >
                                 <CheckCircleIcon className="w-3 h-3 sm:w-4 sm:h-4 text-secondary-500 mt-0.5 mr-1 sm:mr-2 flex-shrink-0" />
                                 <span>{highlight}</span>
@@ -2026,7 +2039,7 @@ export default function TransportPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 flex flex-col h-full"
+                  className="bg-white rounded-xl shadow-lg border border-secondary-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 flex flex-col h-full"
                 >
                   <div className="p-6 flex flex-col flex-1">
                     <div className="text-center mb-4">
@@ -2045,7 +2058,7 @@ export default function TransportPage() {
                       </h3>
                     </div>
 
-                    <p className="text-gray-600 text-sm mb-6 leading-relaxed flex-1">
+                    <p className="text-secondary-600 text-sm mb-6 leading-relaxed flex-1">
                       {isPortuguese
                         ? pkg.descriptionPortuguese
                         : pkg.description}
@@ -2076,7 +2089,7 @@ export default function TransportPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow flex flex-col h-full"
+                  className="bg-white rounded-xl shadow-lg border border-secondary-200 overflow-hidden hover:shadow-xl transition-shadow flex flex-col h-full"
                 >
                   <div className="p-6 flex flex-col flex-1">
                     <div className="flex justify-between items-start mb-4">
@@ -2097,7 +2110,7 @@ export default function TransportPage() {
                       </div>
                     </div>
 
-                    <p className="text-gray-600 mb-6">
+                    <p className="text-secondary-600 mb-6">
                       {isPortuguese
                         ? pkg.descriptionPortuguese
                         : pkg.description}
@@ -2135,7 +2148,7 @@ export default function TransportPage() {
             className="absolute bottom-10 left-10 w-24 h-24 bg-gradient-to-tr from-action-400/30 via-secondary-300/30 to-accent-300/30 rounded-full opacity-50 animate-bounce"
             style={{ animationDuration: "6s" }}
           />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-gradient-to-br from-premium-400/20 via-accent-400/20 to-coral-400/20 rounded-full opacity-40 animate-ping" />
+          <div className="absolute top-1/2 left-1/2 transform -transecondary-x-1/2 -transecondary-y-1/2 w-40 h-40 bg-gradient-to-br from-premium-400/20 via-accent-400/20 to-coral-400/20 rounded-full opacity-40 animate-ping" />
         </div>
 
         <div className="container-width relative z-10">
@@ -2190,7 +2203,7 @@ export default function TransportPage() {
             >
               <a
                 href="tel:+447777777777"
-                className="group inline-flex items-center justify-center bg-gradient-to-r from-action-600 to-coral-600 hover:from-action-700 hover:to-coral-700 text-white px-10 py-5 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300 min-w-[280px]"
+                className="group inline-flex items-center justify-center bg-gradient-to-r from-action-600 to-coral-600 hover:from-action-700 hover:to-coral-700 text-white px-10 py-5 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:-transecondary-y-1 transition-all duration-300 min-w-[280px]"
               >
                 <PhoneIcon className="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform" />
                 {isPortuguese ? "Ligar Agora" : "Call Now"}
@@ -2198,11 +2211,11 @@ export default function TransportPage() {
               </a>
               <button
                 onClick={() => setShowSIABookingFlow(true)}
-                className="group border-2 border-white hover:bg-white hover:text-secondary-900 text-white px-10 py-5 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 min-w-[280px] flex items-center justify-center"
+                className="group border-2 border-white hover:bg-white hover:text-secondary-900 text-white px-10 py-5 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-transecondary-y-1 transition-all duration-300 min-w-[280px] flex items-center justify-center"
               >
                 <Crown className="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform" />
                 {isPortuguese ? "Reserva Online" : "Book Online"}
-                <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:transecondary-x-1 transition-transform" />
               </button>
             </motion.div>
             
@@ -2275,7 +2288,6 @@ export default function TransportPage() {
       <ServiceCommunityBridge 
         triggerContext="transport_page"
         onIntegrationSelected={(integration) => {
-          console.log('Integration selected:', integration)
           // Could open booking flow with integration
         }}
       />

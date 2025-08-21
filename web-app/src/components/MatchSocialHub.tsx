@@ -229,9 +229,9 @@ export default function MatchSocialHub({
 
   const getConnectionStrengthColor = (strength: 'weak' | 'medium' | 'strong') => {
     switch (strength) {
-      case 'strong': return 'text-green-600 bg-green-100'
+      case 'strong': return 'text-action-600 bg-green-100'
       case 'medium': return 'text-yellow-600 bg-yellow-100'
-      case 'weak': return 'text-gray-600 bg-gray-100'
+      case 'weak': return 'text-secondary-600 bg-secondary-100'
     }
   }
 
@@ -278,7 +278,7 @@ export default function MatchSocialHub({
               <BoltIcon className="w-6 h-6 text-primary-500" />
               {isPortuguese ? 'Hub Match-Social' : 'Match-Social Hub'}
             </h2>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {isPortuguese 
                 ? 'Conecte os seus matches à rede social portuguesa'
                 : 'Connect your matches to the Portuguese social network'
@@ -293,9 +293,9 @@ export default function MatchSocialHub({
                   type="checkbox"
                   checked={autoFollowEnabled}
                   onChange={(e) => setAutoFollowEnabled(e.target.checked)}
-                  className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                  className="rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
                 />
-                <span className="text-gray-700">
+                <span className="text-secondary-700">
                   {isPortuguese ? 'Auto-seguir matches' : 'Auto-follow matches'}
                 </span>
               </label>
@@ -312,7 +312,7 @@ export default function MatchSocialHub({
             <div className="text-2xl font-bold text-primary-600 mb-1">
               {enhancedMatches.filter(m => m.isFollowedInSocial).length}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? 'Matches Conectados' : 'Connected Matches'}
             </div>
           </div>
@@ -320,7 +320,7 @@ export default function MatchSocialHub({
             <div className="text-2xl font-bold text-secondary-600 mb-1">
               {socialConnections.reduce((sum, conn) => sum + conn.sharedEvents, 0)}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? 'Eventos Partilhados' : 'Shared Events'}
             </div>
           </div>
@@ -328,7 +328,7 @@ export default function MatchSocialHub({
             <div className="text-2xl font-bold text-accent-600 mb-1">
               {socialConnections.reduce((sum, conn) => sum + conn.serviceBookings, 0)}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? 'Serviços Reservados' : 'Services Booked'}
             </div>
           </div>
@@ -336,7 +336,7 @@ export default function MatchSocialHub({
             <div className="text-2xl font-bold text-coral-600 mb-1">
               {socialConnections.reduce((sum, conn) => sum + conn.storiesGenerated, 0)}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPortuguese ? 'Histórias Criadas' : 'Stories Created'}
             </div>
           </div>
@@ -344,7 +344,7 @@ export default function MatchSocialHub({
       </div>
 
       {/* Navigation Tabs */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-1">
+      <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-1">
         <div className="flex gap-1 overflow-x-auto">
           {[
             { id: 'overview', label: isPortuguese ? 'Visão Geral' : 'Overview', icon: SparklesIcon },
@@ -359,7 +359,7 @@ export default function MatchSocialHub({
               className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-colors whitespace-nowrap ${
                 activeTab === tab.id
                   ? 'bg-primary-500 text-white'
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                  : 'text-secondary-600 hover:text-gray-900 hover:bg-secondary-50'
               }`}
             >
               <tab.icon className="w-4 h-4" />
@@ -381,15 +381,15 @@ export default function MatchSocialHub({
           {activeTab === 'overview' && (
             <div className="space-y-6">
               {/* Enhanced Matches Overview */}
-              <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+              <div className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                  <HeartSolidIcon className="w-5 h-5 text-red-500" />
+                  <HeartSolidIcon className="w-5 h-5 text-coral-500" />
                   {isPortuguese ? 'Matches Integrados' : 'Integrated Matches'}
                 </h3>
                 
                 <div className="space-y-4">
                   {enhancedMatches.map((match) => (
-                    <div key={match.id} className="border border-gray-200 rounded-xl p-4">
+                    <div key={match.id} className="border border-secondary-200 rounded-xl p-4">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center gap-3">
                           <div className="w-12 h-12 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full flex items-center justify-center text-white font-bold">
@@ -397,7 +397,7 @@ export default function MatchSocialHub({
                           </div>
                           <div>
                             <h4 className="font-semibold text-gray-900">{match.name}, {match.age}</h4>
-                            <p className="text-sm text-gray-600">{match.location} • {match.profession}</p>
+                            <p className="text-sm text-secondary-600">{match.location} • {match.profession}</p>
                           </div>
                         </div>
                         
@@ -412,7 +412,7 @@ export default function MatchSocialHub({
                       </div>
                       
                       {match.socialConnection && (
-                        <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                        <div className="flex items-center gap-4 text-sm text-secondary-600 mb-3">
                           <span className="flex items-center gap-1">
                             <CalendarIcon className="w-4 h-4" />
                             {match.socialConnection.sharedEvents} {isPortuguese ? 'eventos' : 'events'}
@@ -505,7 +505,7 @@ export default function MatchSocialHub({
                 }
               </p>
             </div>
-            <button className="bg-white text-primary-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+            <button className="bg-white text-primary-600 px-4 py-2 rounded-lg font-semibold hover:bg-secondary-50 transition-colors">
               {isPortuguese ? 'Upgrade' : 'Upgrade'}
             </button>
           </div>

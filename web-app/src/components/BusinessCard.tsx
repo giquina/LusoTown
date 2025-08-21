@@ -44,7 +44,7 @@ export default function BusinessCard({
   const isPortuguese = language === 'pt'
 
   return (
-    <div className="bg-white rounded-3xl shadow-xl hover:shadow-2xl border border-neutral-100 overflow-hidden transition-all duration-300 group min-h-[420px] sm:min-h-[460px] flex flex-col">
+    <div className="bg-white rounded-3xl shadow-xl hover:shadow-2xl border border-secondary-100 overflow-hidden transition-all duration-300 group min-h-[420px] sm:min-h-[460px] flex flex-col">
       {/* Image */}
       <div className="relative h-48 overflow-hidden">
         {imageUrl ? (
@@ -74,7 +74,7 @@ export default function BusinessCard({
         
         {/* Category Badge */}
         <div className="absolute bottom-3 left-3">
-          <span className="bg-white/90 backdrop-blur-sm text-neutral-700 text-xs font-medium px-3 py-1 rounded-full">
+          <span className="bg-white/90 backdrop-blur-sm text-secondary-700 text-xs font-medium px-3 py-1 rounded-full">
             {category}
           </span>
         </div>
@@ -83,12 +83,12 @@ export default function BusinessCard({
       {/* Content */}
       <div className="p-4 sm:p-6 flex-grow flex flex-col pb-20 sm:pb-16 relative">
         <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-3 gap-2">
-          <h3 className="font-bold text-base sm:text-lg text-neutral-900 group-hover:text-primary-600 transition-colors line-clamp-2 flex-1 min-w-0 break-words">
+          <h3 className="font-bold text-base sm:text-lg text-secondary-900 group-hover:text-primary-600 transition-colors line-clamp-2 flex-1 min-w-0 break-words">
             {name}
           </h3>
         </div>
         
-        <p className="text-neutral-600 text-sm mb-4 line-clamp-2 break-words leading-relaxed">
+        <p className="text-secondary-600 text-sm mb-4 line-clamp-2 break-words leading-relaxed">
           {description}
         </p>
         
@@ -98,31 +98,31 @@ export default function BusinessCard({
             {[...Array(5)].map((_, i) => (
               <StarIcon 
                 key={i} 
-                className={`w-4 h-4 ${i < Math.floor(rating) ? 'text-accent-400 fill-current' : 'text-neutral-300'}`} 
+                className={`w-4 h-4 ${i < Math.floor(rating) ? 'text-accent-400 fill-current' : 'text-secondary-300'}`} 
               />
             ))}
           </div>
-          <span className="text-sm text-neutral-600">
+          <span className="text-sm text-secondary-600">
             {rating} ({reviewCount} reviews)
           </span>
         </div>
         
         {/* Details */}
         <div className="space-y-3 mb-4">
-          <div className="flex items-start gap-3 text-sm text-neutral-600 min-w-0">
+          <div className="flex items-start gap-3 text-sm text-secondary-600 min-w-0">
             <MapPinIcon className="w-5 h-5 text-secondary-500 flex-shrink-0" />
             <span className="truncate max-w-full line-clamp-1">{location}</span>
           </div>
           
           {phone && (
-            <div className="flex items-center gap-3 text-sm text-neutral-600 min-w-0">
+            <div className="flex items-center gap-3 text-sm text-secondary-600 min-w-0">
               <PhoneIcon className="w-5 h-5 text-primary-500 flex-shrink-0" />
               <span className="truncate">{phone}</span>
             </div>
           )}
           
           {website && (
-            <div className="flex items-center gap-3 text-sm text-neutral-600 min-w-0">
+            <div className="flex items-center gap-3 text-sm text-secondary-600 min-w-0">
               <GlobeAltIcon className="w-5 h-5 text-action-500 flex-shrink-0" />
               <a 
                 href={website} 
@@ -137,7 +137,7 @@ export default function BusinessCard({
           )}
           
           {hours && (
-            <div className="flex items-center gap-3 text-sm text-neutral-600 min-w-0">
+            <div className="flex items-center gap-3 text-sm text-secondary-600 min-w-0">
               <ClockIcon className="w-5 h-5 text-premium-500 flex-shrink-0" />
               <span className="truncate">{hours}</span>
             </div>
@@ -152,7 +152,7 @@ export default function BusinessCard({
               <span className="sm:hidden">{isPortuguese ? 'Conectar' : 'Connect'}</span>
             </button>
             
-            <button className="sm:flex-shrink-0 border border-neutral-300 text-neutral-700 font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:bg-neutral-50 transition-all duration-200 text-center text-xs sm:text-sm flex items-center justify-center min-h-[44px] sm:min-w-[120px]">
+            <button className="sm:flex-shrink-0 border border-secondary-300 text-secondary-700 font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:bg-secondary-50 transition-all duration-200 text-center text-xs sm:text-sm flex items-center justify-center min-h-[44px] sm:min-w-[120px]">
               <span className="hidden sm:inline">{isPortuguese ? 'Contactar' : 'Contact'}</span>
               <span className="sm:hidden">{isPortuguese ? 'Contactar' : 'Contact'}</span>
             </button>

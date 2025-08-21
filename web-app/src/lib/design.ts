@@ -13,9 +13,9 @@ export const PortugueseColors = {
     200: '#bfdbfe',
     300: '#93c5fd',
     400: '#60a5fa',
-    500: '#1e40af', // Main brand color
+    500: 'var(--color-primary-800)', // Main brand color
     600: '#1e3a8a',
-    700: '#1d4ed8',
+    700: 'var(--color-primary-700)',
     800: '#1e3a8a',
     900: '#1e3a8a',
   },
@@ -27,9 +27,9 @@ export const PortugueseColors = {
     200: '#a7f3d0', 
     300: '#6ee7b7',
     400: '#34d399',
-    500: '#059669', // Main secondary
-    600: '#047857',
-    700: '#065f46',
+    500: 'var(--color-action-500)', // Main secondary
+    600: 'var(--color-action-600)',
+    700: 'var(--color-action-700)',
     800: '#064e3b',
     900: '#022c22',
   },
@@ -41,8 +41,8 @@ export const PortugueseColors = {
     200: '#fde68a',
     300: '#fcd34d', 
     400: '#fbbf24',
-    500: '#f59e0b', // Main accent
-    600: '#d97706',
+    500: 'var(--color-accent-500)', // Main accent
+    600: 'var(--color-accent-600)',
     700: '#b45309',
     800: '#92400e',
     900: '#78350f',
@@ -55,9 +55,9 @@ export const PortugueseColors = {
     200: '#fecaca',
     300: '#fca5a5',
     400: '#f87171',
-    500: '#dc2626', // Main action
-    600: '#b91c1c',
-    700: '#991b1b',
+    500: 'var(--color-coral-500)', // Main action
+    600: 'var(--color-coral-600)',
+    700: 'var(--color-coral-700)',
     800: '#7f1d1d',
     900: '#7f1d1d',
   },
@@ -151,9 +151,9 @@ export const ButtonStyles = {
 
     // Secondary - Supporting actions  
     secondary: `
-      bg-white border-2 border-gray-300
+      bg-white border-2 border-secondary-300
       hover:border-primary-500 hover:text-primary-600
-      focus:ring-primary-500 text-gray-700
+      focus:ring-primary-500 text-secondary-700
       shadow-sm hover:shadow-md
     `,
 
@@ -206,7 +206,7 @@ export const ButtonStyles = {
     
     secondaryCTA: `
       inline-flex items-center justify-center min-h-[44px]
-      bg-white/70 backdrop-blur-lg text-gray-800
+      bg-white/70 backdrop-blur-lg text-secondary-800
       border-2 border-gray-200 hover:border-secondary-300
       hover:text-secondary-700 font-bold text-lg px-8 py-4
       rounded-2xl shadow-lg hover:shadow-xl
@@ -276,12 +276,12 @@ export const Typography = {
   heading5: 'text-sm sm:text-base font-bold leading-tight text-gray-900',
   
   // Body text with optimal readability
-  body: 'text-base leading-relaxed text-gray-700',
-  bodyLarge: 'text-lg leading-relaxed text-gray-700',
-  bodySmall: 'text-sm leading-relaxed text-gray-600',
+  body: 'text-base leading-relaxed text-secondary-700',
+  bodyLarge: 'text-lg leading-relaxed text-secondary-700',
+  bodySmall: 'text-sm leading-relaxed text-secondary-600',
   
   // Supporting text
-  caption: 'text-sm leading-normal text-gray-600',
+  caption: 'text-sm leading-normal text-secondary-600',
   small: 'text-xs leading-normal text-gray-500',
   
   // Interactive elements
@@ -445,7 +445,7 @@ export const IconSystem = {
   
   // Common icon states
   states: {
-    default: 'text-gray-600',
+    default: 'text-secondary-600',
     hover: 'hover:text-primary-600',
     active: 'text-primary-600',
     disabled: 'text-gray-400'

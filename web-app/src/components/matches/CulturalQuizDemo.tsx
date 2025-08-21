@@ -176,7 +176,7 @@ export default function CulturalQuizDemo({ showAsPrompt = true, className = "" }
       </div>
 
       {/* Quiz Preview */}
-      <div className="bg-white rounded-2xl border border-gray-200 p-6">
+      <div className="bg-white rounded-2xl border border-secondary-200 p-6">
         <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
           <SparklesIcon className="w-5 h-5 text-primary-600" />
           {language === 'pt' ? 'Exemplo de Perguntas do Quiz' : 'Sample Quiz Questions'}
@@ -218,7 +218,7 @@ export default function CulturalQuizDemo({ showAsPrompt = true, className = "" }
         </div>
 
         <div className="mt-4 text-center">
-          <span className="text-sm text-gray-600">
+          <span className="text-sm text-secondary-600">
             {language === 'pt' 
               ? '...e mais 15 perguntas sobre família, integração, comunidade e valores'
               : '...and 15+ more questions about family, integration, community & values'}
@@ -235,19 +235,19 @@ export default function CulturalQuizDemo({ showAsPrompt = true, className = "" }
         <div className="grid md:grid-cols-2 gap-4">
           <ul className="space-y-2">
             <li className="flex items-start gap-2 text-sm text-green-800">
-              <span className="text-green-600 font-bold">✓</span>
+              <span className="text-action-600 font-bold">✓</span>
               {language === 'pt' 
                 ? 'Encontre pessoas com valores culturais similares'
                 : 'Find people with similar cultural values'}
             </li>
             <li className="flex items-start gap-2 text-sm text-green-800">
-              <span className="text-green-600 font-bold">✓</span>
+              <span className="text-action-600 font-bold">✓</span>
               {language === 'pt' 
                 ? 'Veja scores de compatibilidade detalhados'
                 : 'See detailed compatibility scores'}
             </li>
             <li className="flex items-start gap-2 text-sm text-green-800">
-              <span className="text-green-600 font-bold">✓</span>
+              <span className="text-action-600 font-bold">✓</span>
               {language === 'pt' 
                 ? 'Filtre matches por força cultural'
                 : 'Filter matches by cultural strength'}
@@ -255,19 +255,19 @@ export default function CulturalQuizDemo({ showAsPrompt = true, className = "" }
           </ul>
           <ul className="space-y-2">
             <li className="flex items-start gap-2 text-sm text-green-800">
-              <span className="text-green-600 font-bold">✓</span>
+              <span className="text-action-600 font-bold">✓</span>
               {language === 'pt' 
                 ? 'Receba recomendações culturais personalizadas'
                 : 'Get personalized cultural recommendations'}
             </li>
             <li className="flex items-start gap-2 text-sm text-green-800">
-              <span className="text-green-600 font-bold">✓</span>
+              <span className="text-action-600 font-bold">✓</span>
               {language === 'pt' 
                 ? 'Conecte-se baseado em tradições partilhadas'
                 : 'Connect based on shared traditions'}
             </li>
             <li className="flex items-start gap-2 text-sm text-green-800">
-              <span className="text-green-600 font-bold">✓</span>
+              <span className="text-action-600 font-bold">✓</span>
               {language === 'pt' 
                 ? 'Entenda sua própria identidade cultural'
                 : 'Understand your own cultural identity'}

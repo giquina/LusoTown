@@ -36,7 +36,6 @@ export default function TransportChauffeurModule() {
 
   const handleModuleComplete = () => {
     // Module completion logic
-    console.log('Transport & Chauffeur module completed!');
   };
 
   // Define the learning module structure
@@ -295,33 +294,33 @@ export default function TransportChauffeurModule() {
           <h3>Pricing Structure & Payment:</h3>
           
           <h4>Hourly Rate Structure:</h4>
-          <table class="w-full border-collapse border border-gray-300 my-4">
+          <table class="w-full border-collapse border border-secondary-300 my-4">
             <thead>
-              <tr class="bg-gray-100">
-                <th class="border border-gray-300 p-2">Service Type</th>
-                <th class="border border-gray-300 p-2">Standard Rate</th>
-                <th class="border border-gray-300 p-2">Member Rate</th>
-                <th class="border border-gray-300 p-2">Minimum</th>
+              <tr class="bg-secondary-100">
+                <th class="border border-secondary-300 p-2">Service Type</th>
+                <th class="border border-secondary-300 p-2">Standard Rate</th>
+                <th class="border border-secondary-300 p-2">Member Rate</th>
+                <th class="border border-secondary-300 p-2">Minimum</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="border border-gray-300 p-2">Cultural/Social</td>
-                <td class="border border-gray-300 p-2">£35-50/hour</td>
-                <td class="border border-gray-300 p-2">£30-42/hour</td>
-                <td class="border border-gray-300 p-2">2 hours</td>
+                <td class="border border-secondary-300 p-2">Cultural/Social</td>
+                <td class="border border-secondary-300 p-2">£35-50/hour</td>
+                <td class="border border-secondary-300 p-2">£30-42/hour</td>
+                <td class="border border-secondary-300 p-2">2 hours</td>
               </tr>
               <tr>
-                <td class="border border-gray-300 p-2">Executive</td>
-                <td class="border border-gray-300 p-2">£45-65/hour</td>
-                <td class="border border-gray-300 p-2">£38-55/hour</td>
-                <td class="border border-gray-300 p-2">2 hours</td>
+                <td class="border border-secondary-300 p-2">Executive</td>
+                <td class="border border-secondary-300 p-2">£45-65/hour</td>
+                <td class="border border-secondary-300 p-2">£38-55/hour</td>
+                <td class="border border-secondary-300 p-2">2 hours</td>
               </tr>
               <tr>
-                <td class="border border-gray-300 p-2">Security</td>
-                <td class="border border-gray-300 p-2">£65-85/hour</td>
-                <td class="border border-gray-300 p-2">£55-72/hour</td>
-                <td class="border border-gray-300 p-2">3 hours</td>
+                <td class="border border-secondary-300 p-2">Security</td>
+                <td class="border border-secondary-300 p-2">£65-85/hour</td>
+                <td class="border border-secondary-300 p-2">£55-72/hour</td>
+                <td class="border border-secondary-300 p-2">3 hours</td>
               </tr>
             </tbody>
           </table>
@@ -443,33 +442,33 @@ export default function TransportChauffeurModule() {
           <h3>Estrutura de Preços e Pagamento:</h3>
           
           <h4>Estrutura de Tarifas por Hora:</h4>
-          <table class="w-full border-collapse border border-gray-300 my-4">
+          <table class="w-full border-collapse border border-secondary-300 my-4">
             <thead>
-              <tr class="bg-gray-100">
-                <th class="border border-gray-300 p-2">Tipo de Serviço</th>
-                <th class="border border-gray-300 p-2">Tarifa Padrão</th>
-                <th class="border border-gray-300 p-2">Tarifa de Membro</th>
-                <th class="border border-gray-300 p-2">Mínimo</th>
+              <tr class="bg-secondary-100">
+                <th class="border border-secondary-300 p-2">Tipo de Serviço</th>
+                <th class="border border-secondary-300 p-2">Tarifa Padrão</th>
+                <th class="border border-secondary-300 p-2">Tarifa de Membro</th>
+                <th class="border border-secondary-300 p-2">Mínimo</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="border border-gray-300 p-2">Cultural/Social</td>
-                <td class="border border-gray-300 p-2">£35-50/hora</td>
-                <td class="border border-gray-300 p-2">£30-42/hora</td>
-                <td class="border border-gray-300 p-2">2 horas</td>
+                <td class="border border-secondary-300 p-2">Cultural/Social</td>
+                <td class="border border-secondary-300 p-2">£35-50/hora</td>
+                <td class="border border-secondary-300 p-2">£30-42/hora</td>
+                <td class="border border-secondary-300 p-2">2 horas</td>
               </tr>
               <tr>
-                <td class="border border-gray-300 p-2">Executivo</td>
-                <td class="border border-gray-300 p-2">£45-65/hora</td>
-                <td class="border border-gray-300 p-2">£38-55/hora</td>
-                <td class="border border-gray-300 p-2">2 horas</td>
+                <td class="border border-secondary-300 p-2">Executivo</td>
+                <td class="border border-secondary-300 p-2">£45-65/hora</td>
+                <td class="border border-secondary-300 p-2">£38-55/hora</td>
+                <td class="border border-secondary-300 p-2">2 horas</td>
               </tr>
               <tr>
-                <td class="border border-gray-300 p-2">Segurança</td>
-                <td class="border border-gray-300 p-2">£65-85/hora</td>
-                <td class="border border-gray-300 p-2">£55-72/hora</td>
-                <td class="border border-gray-300 p-2">3 horas</td>
+                <td class="border border-secondary-300 p-2">Segurança</td>
+                <td class="border border-secondary-300 p-2">£65-85/hora</td>
+                <td class="border border-secondary-300 p-2">£55-72/hora</td>
+                <td class="border border-secondary-300 p-2">3 horas</td>
               </tr>
             </tbody>
           </table>

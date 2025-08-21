@@ -170,7 +170,7 @@ const OptimizedTransportServiceCard = memo<OptimizedTransportServiceCardProps>((
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 + index * 0.1 }}
-          className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10"
+          className="absolute -top-4 left-1/2 transform -transecondary-x-1/2 z-10"
         >
           <div className="bg-gradient-to-r from-premium-600 to-premium-700 text-white px-6 py-2 rounded-full text-sm font-bold shadow-xl">
             <div className="flex items-center space-x-2">
@@ -205,7 +205,7 @@ const OptimizedTransportServiceCard = memo<OptimizedTransportServiceCardProps>((
             {isPortuguese ? tier.namePortuguese : tier.name}
           </h3>
           
-          <p className="text-gray-600 mb-4 leading-relaxed">
+          <p className="text-secondary-600 mb-4 leading-relaxed">
             {isPortuguese ? tier.descriptionPortuguese : tier.description}
           </p>
 
@@ -243,7 +243,7 @@ const OptimizedTransportServiceCard = memo<OptimizedTransportServiceCardProps>((
               </div>
             ) : (
               <div className="flex items-baseline justify-center">
-                <span className="text-sm text-gray-600 mr-1">{isPortuguese ? 'a partir de' : 'from'}</span>
+                <span className="text-sm text-secondary-600 mr-1">{isPortuguese ? 'a partir de' : 'from'}</span>
                 <span className="text-4xl font-bold text-gray-900">£{tier.price}</span>
                 <span className="text-gray-500 ml-2">{isPortuguese ? '/hora' : '/hour'}</span>
               </div>
@@ -258,7 +258,7 @@ const OptimizedTransportServiceCard = memo<OptimizedTransportServiceCardProps>((
               transition={{ delay: 0.7 + index * 0.1 }}
               className={`mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
                 membershipLevel === 'ambassador' 
-                  ? 'bg-purple-100 text-purple-800' 
+                  ? 'bg-accent-100 text-accent-800' 
                   : 'bg-blue-100 text-blue-800'
               }`}
             >
@@ -285,7 +285,7 @@ const OptimizedTransportServiceCard = memo<OptimizedTransportServiceCardProps>((
               className="flex items-start group-hover:text-gray-900 transition-colors"
             >
               <CheckCircleIcon className={`w-4 h-4 ${colorClasses.text} mt-0.5 mr-2 flex-shrink-0`} />
-              <span className="text-gray-700 text-xs sm:text-sm leading-relaxed">{feature}</span>
+              <span className="text-secondary-700 text-xs sm:text-sm leading-relaxed">{feature}</span>
             </motion.div>
           ))}
         </div>

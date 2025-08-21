@@ -93,7 +93,7 @@ const FilterSidebar = ({
                 </h3>
                 <button
                   onClick={onClose}
-                  className="text-gray-500 hover:text-gray-700"
+                  className="text-gray-500 hover:text-secondary-700"
                 >
                   ✕
                 </button>
@@ -309,7 +309,7 @@ const FilterSidebar = ({
               {/* Clear Filters */}
               <button
                 onClick={() => onFilterChange({})}
-                className="w-full bg-gray-100 text-gray-700 font-medium py-2 px-4 rounded-lg hover:bg-gray-200 transition-colors"
+                className="w-full bg-secondary-100 text-secondary-700 font-medium py-2 px-4 rounded-lg hover:bg-secondary-200 transition-colors"
               >
                 {isPortuguese ? "Limpar Todos os Filtros" : "Clear All Filters"}
               </button>
@@ -494,7 +494,7 @@ export default function EventsPage() {
       : {};
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
 
       <main className="pt-16">
         {/* Hero Section - Clean Modern Design */}
@@ -569,7 +569,7 @@ export default function EventsPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className={cn(Typography.bodyLarge, "text-gray-700 mb-8")}
+                className={cn(Typography.bodyLarge, "text-secondary-700 mb-8")}
               >
                 {activeTab === "events" ? (
                   <>
@@ -611,14 +611,14 @@ export default function EventsPage() {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="flex justify-center mb-8 px-4"
               >
-                <div className="bg-white/90 backdrop-blur-sm p-2 sm:p-2 rounded-2xl shadow-xl border border-gray-200 w-full max-w-4xl">
+                <div className="bg-white/90 backdrop-blur-sm p-2 sm:p-2 rounded-2xl shadow-xl border border-secondary-200 w-full max-w-4xl">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                     <button
                       onClick={() => handleTabChange("events")}
                       className={`px-4 sm:px-6 py-3.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-sm transition-all duration-200 touch-manipulation min-h-[44px] flex items-center justify-center ${
                         activeTab === "events"
                           ? "bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-md"
-                          : "text-gray-600 hover:text-gray-900 hover:bg-white/50"
+                          : "text-secondary-600 hover:text-gray-900 hover:bg-white/50"
                       }`}
                     >
                       {isPortuguese ? "Eventos" : "Events"}
@@ -628,7 +628,7 @@ export default function EventsPage() {
                       className={`px-4 sm:px-6 py-3.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-sm transition-all duration-200 touch-manipulation min-h-[44px] flex items-center justify-center ${
                         activeTab === "cultural"
                           ? "bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-md"
-                          : "text-gray-600 hover:text-gray-900 hover:bg-white/50"
+                          : "text-secondary-600 hover:text-gray-900 hover:bg-white/50"
                       }`}
                     >
                       <span className="hidden sm:inline">
@@ -643,7 +643,7 @@ export default function EventsPage() {
                       className={`px-4 sm:px-6 py-3.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-sm transition-all duration-200 touch-manipulation min-h-[44px] flex items-center justify-center ${
                         activeTab === "tours"
                           ? "bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-md"
-                          : "text-gray-600 hover:text-gray-900 hover:bg-white/50"
+                          : "text-secondary-600 hover:text-gray-900 hover:bg-white/50"
                       }`}
                     >
                       <span className="hidden sm:inline">
@@ -658,7 +658,7 @@ export default function EventsPage() {
                       className={`px-4 sm:px-6 py-3.5 sm:py-3 rounded-xl font-semibold text-sm sm:text-sm transition-all duration-200 touch-manipulation min-h-[44px] flex items-center justify-center ${
                         activeTab === "create"
                           ? "bg-gradient-to-r from-accent-500 to-coral-500 text-white shadow-md"
-                          : "text-gray-600 hover:text-gray-900 hover:bg-white/50"
+                          : "text-secondary-600 hover:text-gray-900 hover:bg-white/50"
                       }`}
                     >
                       <span className="hidden sm:inline">
@@ -683,7 +683,7 @@ export default function EventsPage() {
                   <div className="text-2xl sm:text-3xl font-bold text-primary-600 mb-1">
                     {activeTab === "events" ? "200+" : `${tours.length}+`}
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-secondary-600">
                     {activeTab === "events"
                       ? isPortuguese
                         ? "Experiências Mensais"
@@ -699,7 +699,7 @@ export default function EventsPage() {
                       ? "750+"
                       : Object.keys(EVENT_TOUR_CATEGORIES).length}
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-secondary-600">
                     {activeTab === "events"
                       ? isPortuguese
                         ? "Falantes de Português"
@@ -713,7 +713,7 @@ export default function EventsPage() {
                   <div className="text-2xl sm:text-3xl font-bold text-accent-600 mb-1">
                     {activeTab === "events" ? "10+" : featuredItems.length}
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-secondary-600">
                     {activeTab === "events"
                       ? isPortuguese
                         ? "Países Lusófonos"
@@ -746,14 +746,14 @@ export default function EventsPage() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyPress={(e) => e.key === "Enter" && handleSearch()}
-                  className="w-full pl-10 sm:pl-12 pr-20 sm:pr-32 py-3 sm:py-4 text-base sm:text-lg rounded-2xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent shadow-lg bg-white backdrop-blur-sm"
+                  className="w-full pl-10 sm:pl-12 pr-20 sm:pr-32 py-3 sm:py-4 text-base sm:text-lg rounded-2xl border border-secondary-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent shadow-lg bg-white backdrop-blur-sm"
                 />
-                <MagnifyingGlassIcon className="absolute left-6 sm:left-8 top-1/2 transform -translate-y-1/2 w-5 h-5 sm:w-6 sm:h-6 text-gray-400" />
+                <MagnifyingGlassIcon className="absolute left-6 sm:left-8 top-1/2 transform -transecondary-y-1/2 w-5 h-5 sm:w-6 sm:h-6 text-gray-400" />
                 <button
                   onClick={handleSearch}
                   className={cn(
                     ButtonStyles.legacy.smallButton,
-                    "absolute right-6 sm:right-8 top-1/2 -translate-y-1/2 px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm"
+                    "absolute right-6 sm:right-8 top-1/2 -transecondary-y-1/2 px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm"
                   )}
                 >
                   <span className="hidden sm:inline">
@@ -819,7 +819,7 @@ export default function EventsPage() {
                           className={`group px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 touch-manipulation ${
                             eventFilters.category === filter.key
                               ? "bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg transform scale-105"
-                              : "bg-white/80 text-gray-700 hover:bg-white hover:shadow-md border border-gray-200"
+                              : "bg-white/80 text-secondary-700 hover:bg-white hover:shadow-md border border-secondary-200"
                           }`}
                           title={filter.description}
                         >
@@ -841,7 +841,7 @@ export default function EventsPage() {
                             className={`group px-2 sm:px-3 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 flex items-center gap-1 touch-manipulation justify-center text-center ${
                               tourFilters.category === category
                                 ? "bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg transform scale-105"
-                                : "bg-white/80 text-gray-700 hover:bg-white hover:shadow-md border border-gray-200"
+                                : "bg-white/80 text-secondary-700 hover:bg-white hover:shadow-md border border-secondary-200"
                             }`}
                           >
                             <span className="text-sm sm:text-base">
@@ -853,7 +853,7 @@ export default function EventsPage() {
                                 className={`px-1.5 sm:px-2 py-0.5 rounded-full text-xs font-bold ${
                                   tourFilters.category === category
                                     ? "bg-white/20 text-white"
-                                    : "bg-gray-200 text-gray-700"
+                                    : "bg-secondary-200 text-secondary-700"
                                 }`}
                               >
                                 {eventCounts[category]}
@@ -921,7 +921,6 @@ export default function EventsPage() {
               <CommunityEventCreation
                 onEventCreated={(eventId) => {
                   // Handle successful event creation
-                  console.log("Event created:", eventId);
                   setActiveTab("events");
                 }}
               />
@@ -979,7 +978,7 @@ export default function EventsPage() {
                       <span>{isPortuguese ? "Filtros" : "Filters"}</span>
                     </button>
 
-                    <div className="text-gray-600 text-sm sm:text-base">
+                    <div className="text-secondary-600 text-sm sm:text-base">
                       {loading
                         ? isPortuguese
                           ? "Carregando..."
@@ -1007,7 +1006,7 @@ export default function EventsPage() {
                   <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value as any)}
-                    className="bg-white border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 w-full sm:w-auto min-w-[120px]"
+                    className="bg-white border border-secondary-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 w-full sm:w-auto min-w-[120px]"
                   >
                     <option value="date">
                       {isPortuguese ? "Ordenar por Data" : "Sort by Date"}
@@ -1044,7 +1043,7 @@ export default function EventsPage() {
 
                     <div className="relative z-20 p-8">
                       <div className="flex items-center gap-3 mb-6">
-                        <SparklesIcon className="w-6 h-6 text-yellow-500" />
+                        <SparklesIcon className="w-6 h-6 text-accent-500" />
                         <h2 className="text-2xl font-bold text-gray-900">
                           {activeTab === "events"
                             ? isPortuguese
@@ -1084,13 +1083,13 @@ export default function EventsPage() {
                         key={i}
                         className="bg-white rounded-2xl shadow-lg overflow-hidden animate-pulse"
                       >
-                        <div className="h-48 bg-gray-200"></div>
+                        <div className="h-48 bg-secondary-200"></div>
                         <div className="p-4 sm:p-6">
-                          <div className="h-4 bg-gray-200 rounded mb-2"></div>
-                          <div className="h-4 bg-gray-200 rounded mb-4 w-2/3"></div>
-                          <div className="h-3 bg-gray-200 rounded mb-2"></div>
-                          <div className="h-3 bg-gray-200 rounded mb-4 w-3/4"></div>
-                          <div className="h-10 bg-gray-200 rounded"></div>
+                          <div className="h-4 bg-secondary-200 rounded mb-2"></div>
+                          <div className="h-4 bg-secondary-200 rounded mb-4 w-2/3"></div>
+                          <div className="h-3 bg-secondary-200 rounded mb-2"></div>
+                          <div className="h-3 bg-secondary-200 rounded mb-4 w-3/4"></div>
+                          <div className="h-10 bg-secondary-200 rounded"></div>
                         </div>
                       </div>
                     ))}
@@ -1107,7 +1106,7 @@ export default function EventsPage() {
                         ? "Nenhuma experiência encontrada"
                         : "No experiences found"}
                     </h3>
-                    <p className="text-gray-600 mb-6">
+                    <p className="text-secondary-600 mb-6">
                       {isPortuguese
                         ? "Tente ajustar seus critérios de pesquisa ou limpar os filtros."
                         : "Try adjusting your search criteria or clear your filters."}
@@ -1193,7 +1192,7 @@ export default function EventsPage() {
                       </h3>
                       <button
                         onClick={() => setShowFilters(false)}
-                        className="text-gray-500 hover:text-gray-700"
+                        className="text-gray-500 hover:text-secondary-700"
                       >
                         ✕
                       </button>
@@ -1243,13 +1242,13 @@ export default function EventsPage() {
               <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 mb-8">
                 <a
                   href={ROUTES.events + "/create"}
-                  className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+                  className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-transecondary-y-1 border border-secondary-100"
                 >
                   <CalendarIcon className="w-8 h-8 text-premium-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
                   <h3 className="font-bold text-gray-900 mb-2">
                     {isPortuguese ? "Criar Evento" : "Create Event"}
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {isPortuguese
                       ? "Workshops, encontros culturais"
                       : "Workshops, cultural meetups"}
@@ -1258,13 +1257,13 @@ export default function EventsPage() {
 
                 <a
                   href={ROUTES.groups + "/create"}
-                  className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+                  className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-transecondary-y-1 border border-secondary-100"
                 >
                   <UserGroupIcon className="w-8 h-8 text-coral-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
                   <h3 className="font-bold text-gray-900 mb-2">
                     {isPortuguese ? "Criar Grupo" : "Create Group"}
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {isPortuguese
                       ? "Comunidades especializadas"
                       : "Specialized communities"}
@@ -1273,13 +1272,13 @@ export default function EventsPage() {
 
                 <a
                   href={ROUTES.host}
-                  className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+                  className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-transecondary-y-1 border border-secondary-100"
                 >
                   <SparklesIcon className="w-8 h-8 text-accent-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
                   <h3 className="font-bold text-gray-900 mb-2">
                     {isPortuguese ? "Criar Experiência" : "Create Experience"}
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {isPortuguese
                       ? "Tours, atividades únicas"
                       : "Tours, unique activities"}
@@ -1290,7 +1289,7 @@ export default function EventsPage() {
               {/* Main CTA */}
               <a
                 href={ROUTES.host}
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-premium-600 via-coral-600 to-accent-600 text-white font-bold px-8 py-4 rounded-2xl hover:from-premium-700 hover:via-coral-700 hover:to-accent-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-premium-600 via-coral-600 to-accent-600 text-white font-bold px-8 py-4 rounded-2xl hover:from-premium-700 hover:via-coral-700 hover:to-accent-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-transecondary-y-1 text-lg"
               >
                 <AcademicCapIcon className="w-6 h-6" />
                 {isPortuguese ? "Começar a Organizar" : "Start Hosting"}
@@ -1308,7 +1307,7 @@ export default function EventsPage() {
                   ? "Conecte-se com a Sua Rede"
                   : "Connect with Your Network"}
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className="text-secondary-600 mb-6">
                 {isPortuguese
                   ? "Veja quais dos seus contactos também estão a participar em eventos e construa a sua rede de falantes de português."
                   : "See which of your connections are also attending events and build your Portuguese-speaking network."}

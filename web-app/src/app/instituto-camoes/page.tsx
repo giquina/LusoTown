@@ -397,7 +397,7 @@ export default function InstitutoCamoes() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
             {t('page.title')}
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-700 mb-8 font-medium max-w-5xl mx-auto leading-relaxed">
+          <p className="text-xl sm:text-2xl text-secondary-700 mb-8 font-medium max-w-5xl mx-auto leading-relaxed">
             {t('page.subtitle')}
           </p>
           
@@ -405,19 +405,19 @@ export default function InstitutoCamoes() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-8">
             <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-white/60">
               <div className="text-3xl font-bold text-primary-600 mb-2">15+</div>
-              <div className="text-sm text-gray-600">{t('stats.courses')}</div>
+              <div className="text-sm text-secondary-600">{t('stats.courses')}</div>
             </div>
             <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-white/60">
               <div className="text-3xl font-bold text-secondary-600 mb-2">50+</div>
-              <div className="text-sm text-gray-600">{t('stats.events')}</div>
+              <div className="text-sm text-secondary-600">{t('stats.events')}</div>
             </div>
             <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-white/60">
               <div className="text-3xl font-bold text-accent-600 mb-2">1000+</div>
-              <div className="text-sm text-gray-600">{t('stats.resources')}</div>
+              <div className="text-sm text-secondary-600">{t('stats.resources')}</div>
             </div>
             <div className="bg-white/80 backdrop-blur-lg rounded-2xl p-6 shadow-lg border border-white/60">
               <div className="text-3xl font-bold text-premium-600 mb-2">5000+</div>
-              <div className="text-sm text-gray-600">{t('stats.members')}</div>
+              <div className="text-sm text-secondary-600">{t('stats.members')}</div>
             </div>
           </div>
         </div>
@@ -432,7 +432,7 @@ export default function InstitutoCamoes() {
                 className={`px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
                   activeTab === tab
                     ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg'
-                    : 'text-gray-700 hover:bg-gray-100 hover:text-primary-600'
+                    : 'text-secondary-700 hover:bg-secondary-100 hover:text-primary-600'
                 }`}
               >
                 {t(`nav.${tab}`)}
@@ -451,7 +451,7 @@ export default function InstitutoCamoes() {
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">
                     {t('partnership.title')}
                   </h2>
-                  <p className="text-gray-700 text-lg mb-6 leading-relaxed">
+                  <p className="text-secondary-700 text-lg mb-6 leading-relaxed">
                     {t('partnership.description')}
                   </p>
                   
@@ -463,7 +463,7 @@ export default function InstitutoCamoes() {
                         <h4 className="font-semibold text-gray-900">
                           {language === 'pt' ? 'Reconhecimento Oficial do Governo Português' : 'Official Portuguese Government Recognition'}
                         </h4>
-                        <p className="text-gray-600 text-sm">
+                        <p className="text-secondary-600 text-sm">
                           {language === 'pt' 
                             ? 'Endossado pelo Instituto Camões e pela Embaixada Portuguesa no Reino Unido.'
                             : 'Endorsed by Instituto Camões and the Portuguese Embassy in the UK.'}
@@ -477,7 +477,7 @@ export default function InstitutoCamoes() {
                         <h4 className="font-semibold text-gray-900">
                           {language === 'pt' ? 'Programas Educacionais Certificados' : 'Certified Educational Programs'}
                         </h4>
-                        <p className="text-gray-600 text-sm">
+                        <p className="text-secondary-600 text-sm">
                           {language === 'pt' 
                             ? 'Acesso exclusivo a cursos de língua portuguesa certificados e recursos culturais.'
                             : 'Exclusive access to certified Portuguese language courses and cultural resources.'}
@@ -491,7 +491,7 @@ export default function InstitutoCamoes() {
                         <h4 className="font-semibold text-gray-900">
                           {language === 'pt' ? 'Plataforma Comunitária Autorizada' : 'Authoritative Community Platform'}
                         </h4>
-                        <p className="text-gray-600 text-sm">
+                        <p className="text-secondary-600 text-sm">
                           {language === 'pt' 
                             ? 'Única plataforma digital reconhecida para a comunidade portuguesa no Reino Unido.'
                             : 'The only recognized digital platform for the Portuguese community in the UK.'}
@@ -505,10 +505,10 @@ export default function InstitutoCamoes() {
                   <div className="text-center">
                     <BuildingLibraryIcon className="w-20 h-20 text-primary-600 mx-auto mb-4" />
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">Instituto Camões</h3>
-                    <p className="text-gray-600 mb-4">
+                    <p className="text-secondary-600 mb-4">
                       {language === 'pt' ? 'Instituto oficial da língua e cultura portuguesa' : 'Official institute for Portuguese language and culture'}
                     </p>
-                    <div className="space-y-2 text-sm text-gray-700">
+                    <div className="space-y-2 text-sm text-secondary-700">
                       <div className="flex items-center justify-center gap-2">
                         <MapPinIcon className="w-4 h-4" />
                         <span>King's College London</span>
@@ -539,7 +539,7 @@ export default function InstitutoCamoes() {
                   <h3 className="text-lg font-bold text-gray-900 mb-2">
                     {language === 'pt' ? 'Descontos em Cursos' : 'Course Discounts'}
                   </h3>
-                  <p className="text-gray-700 text-sm mb-3">
+                  <p className="text-secondary-700 text-sm mb-3">
                     {language === 'pt' 
                       ? '25% de desconto em todos os cursos de língua portuguesa do Instituto Camões.'
                       : '25% discount on all Instituto Camões Portuguese language courses.'}
@@ -554,7 +554,7 @@ export default function InstitutoCamoes() {
                   <h3 className="text-lg font-bold text-gray-900 mb-2">
                     {language === 'pt' ? 'Acesso Prioritário a Eventos' : 'Priority Event Access'}
                   </h3>
-                  <p className="text-gray-700 text-sm mb-3">
+                  <p className="text-secondary-700 text-sm mb-3">
                     {language === 'pt' 
                       ? 'Reservas prioritárias para eventos culturais e conferências académicas.'
                       : 'Priority booking for cultural events and academic conferences.'}
@@ -569,7 +569,7 @@ export default function InstitutoCamoes() {
                   <h3 className="text-lg font-bold text-gray-900 mb-2">
                     {language === 'pt' ? 'Biblioteca Digital' : 'Digital Library'}
                   </h3>
-                  <p className="text-gray-700 text-sm mb-3">
+                  <p className="text-secondary-700 text-sm mb-3">
                     {language === 'pt' 
                       ? 'Acesso completo à biblioteca digital com 10.000+ recursos portugueses.'
                       : 'Full access to digital library with 10,000+ Portuguese resources.'}
@@ -598,7 +598,7 @@ export default function InstitutoCamoes() {
                         {language === 'pt' ? program.namePortuguese : program.name}
                       </h3>
                       <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        program.level === 'all' ? 'bg-gray-100 text-gray-700' :
+                        program.level === 'all' ? 'bg-secondary-100 text-secondary-700' :
                         program.level === 'beginner' ? 'bg-green-100 text-green-700' :
                         program.level === 'intermediate' ? 'bg-yellow-100 text-yellow-700' :
                         'bg-red-100 text-red-700'
@@ -607,7 +607,7 @@ export default function InstitutoCamoes() {
                       </span>
                     </div>
                     
-                    <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                    <p className="text-secondary-600 text-sm mb-4 line-clamp-3">
                       {language === 'pt' ? program.descriptionPortuguese : program.description}
                     </p>
                     
@@ -643,7 +643,7 @@ export default function InstitutoCamoes() {
                           </span>
                         ))}
                         {program.benefits.length > 3 && (
-                          <span className="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-full">
+                          <span className="px-2 py-1 bg-secondary-50 text-secondary-600 text-xs rounded-full">
                             +{program.benefits.length - 3} {language === 'pt' ? 'mais' : 'more'}
                           </span>
                         )}
@@ -656,18 +656,18 @@ export default function InstitutoCamoes() {
                       </button>
                       <button 
                         onClick={() => setSelectedProgram(selectedProgram === program.id ? null : program.id)}
-                        className="px-4 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+                        className="px-4 py-3 bg-secondary-100 text-secondary-700 rounded-lg hover:bg-secondary-200 transition-colors"
                       >
                         {language === 'pt' ? 'Detalhes' : 'Details'}
                       </button>
                     </div>
                     
                     {selectedProgram === program.id && (
-                      <div className="mt-4 p-4 bg-gray-50 rounded-lg">
+                      <div className="mt-4 p-4 bg-secondary-50 rounded-lg">
                         <h5 className="font-medium text-gray-900 mb-2">
                           {language === 'pt' ? 'Público-alvo:' : 'Target audience:'}
                         </h5>
-                        <ul className="text-sm text-gray-600 space-y-1">
+                        <ul className="text-sm text-secondary-600 space-y-1">
                           {program.targetAudience.map(audience => (
                             <li key={audience} className="flex items-center gap-2">
                               <div className="w-1.5 h-1.5 bg-primary-500 rounded-full"></div>
@@ -702,30 +702,30 @@ export default function InstitutoCamoes() {
                         event.type === 'conference' ? 'bg-primary-100 text-primary-700' :
                         event.type === 'workshop' ? 'bg-secondary-100 text-secondary-700' :
                         event.type === 'film' ? 'bg-accent-100 text-accent-700' :
-                        'bg-gray-100 text-gray-700'
+                        'bg-secondary-100 text-secondary-700'
                       }`}>
                         {event.type}
                       </span>
                     </div>
                     
-                    <p className="text-gray-600 text-sm mb-4">
+                    <p className="text-secondary-600 text-sm mb-4">
                       {language === 'pt' ? event.descriptionPortuguese : event.description}
                     </p>
                     
                     <div className="space-y-2 mb-4">
-                      <div className="flex items-center gap-3 text-sm text-gray-700">
+                      <div className="flex items-center gap-3 text-sm text-secondary-700">
                         <CalendarDaysIcon className="w-4 h-4 text-primary-500" />
                         <span>{new Date(event.date).toLocaleDateString()} • {event.time}</span>
                       </div>
-                      <div className="flex items-center gap-3 text-sm text-gray-700">
+                      <div className="flex items-center gap-3 text-sm text-secondary-700">
                         <MapPinIcon className="w-4 h-4 text-primary-500" />
                         <span>{event.location}</span>
                       </div>
-                      <div className="flex items-center gap-3 text-sm text-gray-700">
+                      <div className="flex items-center gap-3 text-sm text-secondary-700">
                         <CurrencyPoundIcon className="w-4 h-4 text-primary-500" />
                         <span>{formatPrice(event.price)}</span>
                       </div>
-                      <div className="flex items-center gap-3 text-sm text-gray-700">
+                      <div className="flex items-center gap-3 text-sm text-secondary-700">
                         <UsersIcon className="w-4 h-4 text-primary-500" />
                         <span>{event.capacity} {language === 'pt' ? 'lugares' : 'places'}</span>
                       </div>
@@ -735,7 +735,7 @@ export default function InstitutoCamoes() {
                       <h4 className="text-sm font-medium text-gray-900 mb-1">
                         {language === 'pt' ? 'Significado Cultural:' : 'Cultural Significance:'}
                       </h4>
-                      <p className="text-xs text-gray-700">{event.culturalSignificance}</p>
+                      <p className="text-xs text-secondary-700">{event.culturalSignificance}</p>
                     </div>
                     
                     <div className="flex gap-3">
@@ -746,7 +746,7 @@ export default function InstitutoCamoes() {
                         href={event.registrationLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-4 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+                        className="px-4 py-3 bg-secondary-100 text-secondary-700 rounded-lg hover:bg-secondary-200 transition-colors"
                       >
                         <LinkIcon className="w-5 h-5" />
                       </a>
@@ -781,18 +781,18 @@ export default function InstitutoCamoes() {
                       </span>
                     </div>
                     
-                    <p className="text-gray-600 text-sm mb-4">
+                    <p className="text-secondary-600 text-sm mb-4">
                       {language === 'pt' ? resource.descriptionPortuguese : resource.description}
                     </p>
                     
                     <div className="flex items-center gap-2 mb-4">
-                      <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+                      <span className="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded-full">
                         {resource.category}
                       </span>
-                      <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+                      <span className="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded-full">
                         {getLevelLabel(resource.level)}
                       </span>
-                      <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+                      <span className="px-2 py-1 bg-secondary-100 text-secondary-700 text-xs rounded-full">
                         {resource.type}
                       </span>
                     </div>
@@ -813,7 +813,7 @@ export default function InstitutoCamoes() {
                           href={resource.externalUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`${resource.downloadUrl ? 'px-4' : 'flex-1'} py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors ${resource.downloadUrl ? '' : 'text-center font-semibold'}`}
+                          className={`${resource.downloadUrl ? 'px-4' : 'flex-1'} py-3 bg-secondary-100 text-secondary-700 rounded-lg hover:bg-secondary-200 transition-colors ${resource.downloadUrl ? '' : 'text-center font-semibold'}`}
                         >
                           {resource.downloadUrl ? <LinkIcon className="w-5 h-5" /> : (language === 'pt' ? 'Aceder' : 'Access')}
                         </a>
@@ -840,7 +840,7 @@ export default function InstitutoCamoes() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <a
               href={ROUTES.signup}
-              className="bg-white text-primary-600 font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors shadow-lg"
+              className="bg-white text-primary-600 font-bold px-8 py-4 rounded-xl hover:bg-secondary-100 transition-colors shadow-lg"
             >
               {t('cta.join')}
             </a>

@@ -818,7 +818,6 @@ export function NotificationProvider({ children }: { children: ReactNode }) {
   // Analytics and optimization
   const trackNotificationEngagement = (notificationId: string, action: 'clicked' | 'dismissed' | 'shared') => {
     // In production, this would send analytics data to tracking service
-    console.log(`Notification ${notificationId} was ${action}`)
   }
 
   const getPersonalizedRecommendations = (): BaseNotification[] => {

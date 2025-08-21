@@ -17,7 +17,7 @@ export default function ReactionButton({ emoji, count, isActive, onClick, toolti
       className={`flex items-center gap-1 px-2 py-1 rounded-full text-sm transition-all duration-200 ${
         isActive
           ? 'bg-primary-100 text-primary-700 hover:bg-primary-200'
-          : 'text-gray-500 hover:bg-gray-100 hover:text-gray-700'
+          : 'text-gray-500 hover:bg-secondary-100 hover:text-secondary-700'
       }`}
       title={tooltip}
     >

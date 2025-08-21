@@ -192,10 +192,10 @@ export default function EventBuddyFinder({
   };
 
   const getCompatibilityColor = (score: number) => {
-    if (score >= 90) return "text-green-600 bg-green-50";
-    if (score >= 80) return "text-blue-600 bg-blue-50";
+    if (score >= 90) return "text-action-600 bg-green-50";
+    if (score >= 80) return "text-primary-600 bg-blue-50";
     if (score >= 70) return "text-orange-600 bg-orange-50";
-    return "text-gray-600 bg-gray-50";
+    return "text-secondary-600 bg-secondary-50";
   };
 
   const getCategoryIcon = (category: string) => {
@@ -324,7 +324,7 @@ export default function EventBuddyFinder({
                             {request.requesterName}, {request.requesterAge}
                           </span>
                           {request.isVerified && (
-                            <CheckCircleIcon className="w-3 h-3 text-green-500" />
+                            <CheckCircleIcon className="w-3 h-3 text-action-500" />
                           )}
                         </div>
                       </div>
@@ -346,7 +346,7 @@ export default function EventBuddyFinder({
                       <div className="flex items-center gap-1 text-primary-600">
                         <TicketIcon className="w-3 h-3" />
                         <span>{formatPrice(request.eventPrice)}</span>
-                        <span className="text-green-600 font-semibold">
+                        <span className="text-action-600 font-semibold">
                           (-{request.buddyDiscountPercent}%)
                         </span>
                       </div>
@@ -527,7 +527,7 @@ export default function EventBuddyFinder({
                     <span className="text-primary-700">
                       {language === "pt" ? "Poupança:" : "Savings:"}
                     </span>
-                    <span className="font-bold text-green-600">
+                    <span className="font-bold text-action-600">
                       {formatPrice(selectedRequest.eventPrice * 2 * (selectedRequest.buddyDiscountPercent / 100))}
                     </span>
                   </div>

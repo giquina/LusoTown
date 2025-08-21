@@ -380,10 +380,10 @@ export default function ContentModerationSystem({
       className="space-y-4"
     >
       {/* Validation Score */}
-      <div className="bg-white border border-gray-200 rounded-lg p-4">
+      <div className="bg-white border border-secondary-200 rounded-lg p-4">
         <div className="flex items-center justify-between mb-3">
           <h4 className="font-semibold text-gray-900 flex items-center gap-2">
-            <ShieldCheckIcon className="w-5 h-5 text-blue-600" />
+            <ShieldCheckIcon className="w-5 h-5 text-primary-600" />
             {isPortuguese ? 'Análise de Conteúdo' : 'Content Analysis'}
           </h4>
           <div className={`flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium ${
@@ -406,17 +406,17 @@ export default function ContentModerationSystem({
         {/* Score Bar */}
         <div className="mb-3">
           <div className="flex items-center justify-between text-sm mb-1">
-            <span className="text-gray-600">
+            <span className="text-secondary-600">
               {isPortuguese ? 'Relevância da Comunidade' : 'Community Relevance'}
             </span>
             <span className="font-medium">{validation.score}/100</span>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-2">
+          <div className="w-full bg-secondary-200 rounded-full h-2">
             <div 
               className={`h-2 rounded-full transition-all duration-500 ${
-                validation.score >= 70 ? 'bg-green-500' :
-                validation.score >= 40 ? 'bg-yellow-500' :
-                'bg-red-500'
+                validation.score >= 70 ? 'bg-action-500' :
+                validation.score >= 40 ? 'bg-accent-500' :
+                'bg-coral-500'
               }`}
               style={{ width: `${validation.score}%` }}
             />
@@ -426,16 +426,16 @@ export default function ContentModerationSystem({
         {/* Category */}
         {validation.category && (
           <div className="mb-3">
-            <span className="text-sm text-gray-600">
+            <span className="text-sm text-secondary-600">
               {isPortuguese ? 'Categoria:' : 'Category:'}
             </span>
             <span className={`ml-2 px-2 py-1 rounded-full text-xs font-medium ${
-              validation.category === 'transport' ? 'bg-blue-100 text-blue-700' :
-              validation.category === 'cultural' ? 'bg-purple-100 text-purple-700' :
+              validation.category === 'transport' ? 'bg-blue-100 text-primary-700' :
+              validation.category === 'cultural' ? 'bg-accent-100 text-accent-700' :
               validation.category === 'business' ? 'bg-green-100 text-green-700' :
               validation.category === 'housing' ? 'bg-orange-100 text-orange-700' :
               validation.category === 'event' ? 'bg-pink-100 text-pink-700' :
-              'bg-gray-100 text-gray-700'
+              'bg-secondary-100 text-secondary-700'
             }`}>
               {validation.category}
             </span>
@@ -445,7 +445,7 @@ export default function ContentModerationSystem({
         {/* Toggle Details */}
         <button
           onClick={() => setShowDetails(!showDetails)}
-          className="text-sm text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1"
+          className="text-sm text-primary-600 hover:text-primary-700 font-medium flex items-center gap-1"
         >
           <EyeIcon className="w-4 h-4" />
           {showDetails 
@@ -478,11 +478,11 @@ export default function ContentModerationSystem({
                   >
                     <div className="flex items-center gap-2">
                       {issue.type === 'error' ? (
-                        <XCircleIcon className="w-4 h-4 text-red-600" />
+                        <XCircleIcon className="w-4 h-4 text-coral-600" />
                       ) : issue.type === 'warning' ? (
                         <ExclamationTriangleIcon className="w-4 h-4 text-yellow-600" />
                       ) : (
-                        <InformationCircleIcon className="w-4 h-4 text-blue-600" />
+                        <InformationCircleIcon className="w-4 h-4 text-primary-600" />
                       )}
                       <span className={`text-sm font-medium ${
                         issue.type === 'error' ? 'text-red-800' :
@@ -534,7 +534,7 @@ export default function ContentModerationSystem({
                   <UserGroupIcon className="w-4 h-4" />
                   {isPortuguese ? 'Sugestões de Melhoria' : 'Improvement Suggestions'}
                 </h5>
-                <ul className="text-sm text-blue-700 list-disc list-inside">
+                <ul className="text-sm text-primary-700 list-disc list-inside">
                   {validation.suggestedImprovements.map((suggestion, index) => (
                     <li key={index}>{suggestion}</li>
                   ))}

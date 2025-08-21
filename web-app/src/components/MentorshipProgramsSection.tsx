@@ -140,7 +140,7 @@ export default function MentorshipProgramsSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl sm:text-2xl text-gray-700 mb-6 font-medium max-w-5xl mx-auto leading-relaxed"
+              className="text-xl sm:text-2xl text-secondary-700 mb-6 font-medium max-w-5xl mx-auto leading-relaxed"
             >
               {t('mentorship.programs.subtitle', 'Three specialized pathways connecting Portuguese professionals, language learners, and cultural knowledge sharers across London')}
             </motion.p>
@@ -171,7 +171,7 @@ export default function MentorshipProgramsSection() {
                       {program.subtitle}
                     </p>
                     
-                    <p className="text-gray-700 leading-relaxed mb-8 text-lg">
+                    <p className="text-secondary-700 leading-relaxed mb-8 text-lg">
                       {program.description}
                     </p>
 
@@ -180,7 +180,7 @@ export default function MentorshipProgramsSection() {
                       {program.features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-start gap-3">
                           <CheckCircleIcon className="w-5 h-5 text-secondary-500 mt-0.5 flex-shrink-0" />
-                          <span className="text-gray-700">{feature}</span>
+                          <span className="text-secondary-700">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -188,10 +188,10 @@ export default function MentorshipProgramsSection() {
                     {/* CTA Button */}
                     <a
                       href="#mentorship-registration"
-                      className="inline-flex items-center gap-3 bg-gradient-to-r from-secondary-600 to-action-600 text-white font-bold px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 group"
+                      className="inline-flex items-center gap-3 bg-gradient-to-r from-secondary-600 to-action-600 text-white font-bold px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-transecondary-y-1 group"
                     >
                       {program.cta}
-                      <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+                      <ArrowRightIcon className="w-5 h-5 group-hover:transecondary-x-1 transition-transform duration-200" />
                     </a>
                   </div>
 
@@ -215,7 +215,7 @@ export default function MentorshipProgramsSection() {
                                 {program.id === 'professional' && <BuildingOffice2Icon className="w-5 h-5 text-secondary-600 flex-shrink-0" />}
                                 {program.id === 'language' && <HeartIcon className="w-5 h-5 text-accent-600 flex-shrink-0" />}
                                 {program.id === 'cultural' && <SparklesIcon className="w-5 h-5 text-action-600 flex-shrink-0" />}
-                                <span className="text-gray-800 font-medium text-sm">{item}</span>
+                                <span className="text-secondary-800 font-medium text-sm">{item}</span>
                               </div>
                             </div>
                           ))}
@@ -229,7 +229,7 @@ export default function MentorshipProgramsSection() {
                               {program.id === 'language' && '200+'}
                               {program.id === 'cultural' && '75+'}
                             </div>
-                            <div className="text-gray-600 text-sm font-medium">
+                            <div className="text-secondary-600 text-sm font-medium">
                               {program.id === 'professional' && t('mentorship.programs.professional.stat1', 'Mentors')}
                               {program.id === 'language' && t('mentorship.programs.language.stat1', 'Partnerships')}
                               {program.id === 'cultural' && t('mentorship.programs.cultural.stat1', 'Instructors')}
@@ -241,7 +241,7 @@ export default function MentorshipProgramsSection() {
                               {program.id === 'language' && '4.9★'}
                               {program.id === 'cultural' && '150+'}
                             </div>
-                            <div className="text-gray-600 text-sm font-medium">
+                            <div className="text-secondary-600 text-sm font-medium">
                               {program.id === 'professional' && t('mentorship.programs.professional.stat2', 'Success Rate')}
                               {program.id === 'language' && t('mentorship.programs.language.stat2', 'Rating')}
                               {program.id === 'cultural' && t('mentorship.programs.cultural.stat2', 'Skills Taught')}

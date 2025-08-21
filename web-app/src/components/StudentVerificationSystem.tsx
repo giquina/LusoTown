@@ -314,7 +314,7 @@ export default function StudentVerificationSystem({
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {language === 'pt' ? 'Verificação de Email Universitário' : 'University Email Verification'}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-secondary-600">
                 {language === 'pt' ?
                   'Insira o seu email universitário oficial (.ac.uk) para verificação automática da sua universidade.' :
                   'Enter your official university email (.ac.uk) for automatic university verification.'
@@ -324,24 +324,24 @@ export default function StudentVerificationSystem({
 
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {language === 'pt' ? 'Email Universitário' : 'University Email'}
-                  <span className="text-red-500 ml-1">*</span>
+                  <span className="text-coral-500 ml-1">*</span>
                 </label>
                 <div className="relative">
-                  <EnvelopeIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <EnvelopeIcon className="absolute left-3 top-1/2 transform -transecondary-y-1/2 w-5 h-5 text-gray-400" />
                   <input
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
                     placeholder="your.name@university.ac.uk"
                     className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                      errors.email ? 'border-red-300' : 'border-gray-300'
+                      errors.email ? 'border-red-300' : 'border-secondary-300'
                     }`}
                   />
                 </div>
                 {errors.email && (
-                  <p className="mt-1 text-sm text-red-600 flex items-center">
+                  <p className="mt-1 text-sm text-coral-600 flex items-center">
                     <ExclamationTriangleIcon className="w-4 h-4 mr-1" />
                     {errors.email}
                   </p>
@@ -369,7 +369,7 @@ export default function StudentVerificationSystem({
               {emailVerificationResult?.isValid && emailVerificationResult.university && (
                 <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                   <div className="flex items-start">
-                    <CheckBadgeIcon className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                    <CheckBadgeIcon className="w-5 h-5 text-action-600 mr-2 mt-0.5 flex-shrink-0" />
                     <div>
                       <h4 className="font-medium text-green-800 mb-1">
                         {language === 'pt' ? 'Universidade Verificada' : 'University Verified'}
@@ -385,7 +385,7 @@ export default function StudentVerificationSystem({
               <button
                 onClick={handleEmailVerification}
                 disabled={!formData.email}
-                className="w-full bg-primary-500 text-white font-medium py-3 px-4 rounded-lg hover:bg-primary-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+                className="w-full bg-primary-500 text-white font-medium py-3 px-4 rounded-lg hover:bg-primary-600 disabled:bg-secondary-300 disabled:cursor-not-allowed transition-colors"
               >
                 {language === 'pt' ? 'Verificar Email' : 'Verify Email'}
               </button>
@@ -400,7 +400,7 @@ export default function StudentVerificationSystem({
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {language === 'pt' ? 'Informações Acadêmicas' : 'Academic Information'}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-secondary-600">
                 {language === 'pt' ?
                   'Forneça os seus dados acadêmicos para completar a verificação.' :
                   'Provide your academic details to complete verification.'
@@ -410,45 +410,45 @@ export default function StudentVerificationSystem({
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {language === 'pt' ? 'Nome' : 'First Name'}
-                  <span className="text-red-500 ml-1">*</span>
+                  <span className="text-coral-500 ml-1">*</span>
                 </label>
                 <input
                   type="text"
                   value={formData.firstName}
                   onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                    errors.firstName ? 'border-red-300' : 'border-gray-300'
+                    errors.firstName ? 'border-red-300' : 'border-secondary-300'
                   }`}
                 />
                 {errors.firstName && (
-                  <p className="mt-1 text-sm text-red-600">{errors.firstName}</p>
+                  <p className="mt-1 text-sm text-coral-600">{errors.firstName}</p>
                 )}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {language === 'pt' ? 'Sobrenome' : 'Last Name'}
-                  <span className="text-red-500 ml-1">*</span>
+                  <span className="text-coral-500 ml-1">*</span>
                 </label>
                 <input
                   type="text"
                   value={formData.lastName}
                   onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                    errors.lastName ? 'border-red-300' : 'border-gray-300'
+                    errors.lastName ? 'border-red-300' : 'border-secondary-300'
                   }`}
                 />
                 {errors.lastName && (
-                  <p className="mt-1 text-sm text-red-600">{errors.lastName}</p>
+                  <p className="mt-1 text-sm text-coral-600">{errors.lastName}</p>
                 )}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {language === 'pt' ? 'Programa de Estudo' : 'Study Program'}
-                  <span className="text-red-500 ml-1">*</span>
+                  <span className="text-coral-500 ml-1">*</span>
                 </label>
                 <input
                   type="text"
@@ -456,24 +456,24 @@ export default function StudentVerificationSystem({
                   onChange={(e) => setFormData(prev => ({ ...prev, program: e.target.value }))}
                   placeholder={language === 'pt' ? 'Ex: Estudos Portugueses' : 'e.g., Portuguese Studies'}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                    errors.program ? 'border-red-300' : 'border-gray-300'
+                    errors.program ? 'border-red-300' : 'border-secondary-300'
                   }`}
                 />
                 {errors.program && (
-                  <p className="mt-1 text-sm text-red-600">{errors.program}</p>
+                  <p className="mt-1 text-sm text-coral-600">{errors.program}</p>
                 )}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {language === 'pt' ? 'Ano de Estudo' : 'Year of Study'}
-                  <span className="text-red-500 ml-1">*</span>
+                  <span className="text-coral-500 ml-1">*</span>
                 </label>
                 <select
                   value={formData.yearOfStudy}
                   onChange={(e) => setFormData(prev => ({ ...prev, yearOfStudy: e.target.value }))}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                    errors.yearOfStudy ? 'border-red-300' : 'border-gray-300'
+                    errors.yearOfStudy ? 'border-red-300' : 'border-secondary-300'
                   }`}
                 >
                   <option value="">{language === 'pt' ? 'Selecione o ano' : 'Select year'}</option>
@@ -485,24 +485,24 @@ export default function StudentVerificationSystem({
                   <option value="phd">PhD / Research</option>
                 </select>
                 {errors.yearOfStudy && (
-                  <p className="mt-1 text-sm text-red-600">{errors.yearOfStudy}</p>
+                  <p className="mt-1 text-sm text-coral-600">{errors.yearOfStudy}</p>
                 )}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {language === 'pt' ? 'Graduação Esperada' : 'Expected Graduation'}
                 </label>
                 <input
                   type="month"
                   value={formData.expectedGraduation}
                   onChange={(e) => setFormData(prev => ({ ...prev, expectedGraduation: e.target.value }))}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {language === 'pt' ? 'Número de Estudante' : 'Student Number'}
                   <span className="text-xs text-gray-500 ml-1">({language === 'pt' ? 'opcional' : 'optional'})</span>
                 </label>
@@ -510,7 +510,7 @@ export default function StudentVerificationSystem({
                   type="text"
                   value={formData.studentNumber}
                   onChange={(e) => setFormData(prev => ({ ...prev, studentNumber: e.target.value }))}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 />
               </div>
             </div>
@@ -518,7 +518,7 @@ export default function StudentVerificationSystem({
             <div className="flex gap-3 mt-6">
               <button
                 onClick={() => setCurrentStep(1)}
-                className="flex-1 border border-gray-300 text-gray-700 font-medium py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors"
+                className="flex-1 border border-secondary-300 text-secondary-700 font-medium py-3 px-4 rounded-lg hover:bg-secondary-50 transition-colors"
               >
                 {language === 'pt' ? 'Voltar' : 'Back'}
               </button>
@@ -539,7 +539,7 @@ export default function StudentVerificationSystem({
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {language === 'pt' ? 'Documentos de Verificação' : 'Verification Documents'}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-secondary-600">
                 {language === 'pt' ?
                   'Carregue pelo menos um documento para verificar o seu status de estudante.' :
                   'Upload at least one document to verify your student status.'
@@ -549,13 +549,13 @@ export default function StudentVerificationSystem({
 
             <div className="space-y-4">
               {/* Student ID Upload */}
-              <div className="border-2 border-dashed border-gray-300 rounded-lg p-6">
+              <div className="border-2 border-dashed border-secondary-300 rounded-lg p-6">
                 <div className="text-center">
                   <PhotoIcon className="w-12 h-12 text-gray-400 mx-auto mb-4" />
                   <h4 className="font-medium text-gray-900 mb-2">
                     {language === 'pt' ? 'Cartão de Estudante' : 'Student ID Card'}
                   </h4>
-                  <p className="text-sm text-gray-600 mb-4">
+                  <p className="text-sm text-secondary-600 mb-4">
                     {language === 'pt' ? 
                       'Fotografia clara do seu cartão de estudante oficial' :
                       'Clear photo of your official student ID card'
@@ -570,7 +570,7 @@ export default function StudentVerificationSystem({
                   />
                   <label
                     htmlFor="student-id"
-                    className="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 cursor-pointer"
+                    className="inline-flex items-center px-4 py-2 bg-white border border-secondary-300 rounded-lg text-sm font-medium text-secondary-700 hover:bg-secondary-50 cursor-pointer"
                   >
                     <PaperClipIcon className="w-4 h-4 mr-2" />
                     {language === 'pt' ? 'Selecionar Arquivo' : 'Select File'}
@@ -579,13 +579,13 @@ export default function StudentVerificationSystem({
               </div>
 
               {/* Enrollment Letter Upload */}
-              <div className="border-2 border-dashed border-gray-300 rounded-lg p-6">
+              <div className="border-2 border-dashed border-secondary-300 rounded-lg p-6">
                 <div className="text-center">
                   <DocumentTextIcon className="w-12 h-12 text-gray-400 mx-auto mb-4" />
                   <h4 className="font-medium text-gray-900 mb-2">
                     {language === 'pt' ? 'Carta de Confirmação' : 'Enrollment Letter'}
                   </h4>
-                  <p className="text-sm text-gray-600 mb-4">
+                  <p className="text-sm text-secondary-600 mb-4">
                     {language === 'pt' ? 
                       'Carta oficial da universidade confirmando a sua matrícula' :
                       'Official letter from university confirming your enrollment'
@@ -600,7 +600,7 @@ export default function StudentVerificationSystem({
                   />
                   <label
                     htmlFor="enrollment-letter"
-                    className="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 cursor-pointer"
+                    className="inline-flex items-center px-4 py-2 bg-white border border-secondary-300 rounded-lg text-sm font-medium text-secondary-700 hover:bg-secondary-50 cursor-pointer"
                   >
                     <PaperClipIcon className="w-4 h-4 mr-2" />
                     {language === 'pt' ? 'Selecionar Arquivo' : 'Select File'}
@@ -616,7 +616,7 @@ export default function StudentVerificationSystem({
                   </h4>
                   <div className="space-y-3">
                     {documents.map((doc) => (
-                      <div key={doc.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                      <div key={doc.id} className="flex items-center justify-between p-3 bg-secondary-50 rounded-lg">
                         <div className="flex items-center">
                           <DocumentTextIcon className="w-5 h-5 text-gray-400 mr-3" />
                           <div>
@@ -629,7 +629,7 @@ export default function StudentVerificationSystem({
                         <div className="flex items-center">
                           {doc.uploadProgress < 100 ? (
                             <div className="flex items-center">
-                              <div className="w-24 bg-gray-200 rounded-full h-2 mr-3">
+                              <div className="w-24 bg-secondary-200 rounded-full h-2 mr-3">
                                 <div 
                                   className="bg-primary-500 h-2 rounded-full" 
                                   style={{ width: `${doc.uploadProgress}%` }}
@@ -638,9 +638,9 @@ export default function StudentVerificationSystem({
                               <span className="text-xs text-gray-500">{doc.uploadProgress}%</span>
                             </div>
                           ) : doc.verified ? (
-                            <CheckIconSolid className="w-5 h-5 text-green-500" />
+                            <CheckIconSolid className="w-5 h-5 text-action-500" />
                           ) : (
-                            <ClockIcon className="w-5 h-5 text-yellow-500" />
+                            <ClockIcon className="w-5 h-5 text-accent-500" />
                           )}
                         </div>
                       </div>
@@ -650,7 +650,7 @@ export default function StudentVerificationSystem({
               )}
 
               {errors.documents && (
-                <p className="text-sm text-red-600 flex items-center">
+                <p className="text-sm text-coral-600 flex items-center">
                   <ExclamationTriangleIcon className="w-4 h-4 mr-1" />
                   {errors.documents}
                 </p>
@@ -660,14 +660,14 @@ export default function StudentVerificationSystem({
             <div className="flex gap-3 mt-6">
               <button
                 onClick={() => setCurrentStep(2)}
-                className="flex-1 border border-gray-300 text-gray-700 font-medium py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors"
+                className="flex-1 border border-secondary-300 text-secondary-700 font-medium py-3 px-4 rounded-lg hover:bg-secondary-50 transition-colors"
               >
                 {language === 'pt' ? 'Voltar' : 'Back'}
               </button>
               <button
                 onClick={handleSubmitVerification}
                 disabled={documents.length === 0 || isSubmitting}
-                className="flex-1 bg-primary-500 text-white font-medium py-3 px-4 rounded-lg hover:bg-primary-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+                className="flex-1 bg-primary-500 text-white font-medium py-3 px-4 rounded-lg hover:bg-primary-600 disabled:bg-secondary-300 disabled:cursor-not-allowed transition-colors"
               >
                 {isSubmitting ? 
                   (language === 'pt' ? 'Submetendo...' : 'Submitting...') :
@@ -681,11 +681,11 @@ export default function StudentVerificationSystem({
       case 4:
         return (
           <div className="text-center">
-            <CheckBadgeIcon className="w-16 h-16 text-green-500 mx-auto mb-6" />
+            <CheckBadgeIcon className="w-16 h-16 text-action-500 mx-auto mb-6" />
             <h3 className="text-xl font-bold text-gray-900 mb-4">
               {language === 'pt' ? 'Verificação Submetida com Sucesso!' : 'Verification Successfully Submitted!'}
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-secondary-600 mb-6">
               {language === 'pt' ?
                 'A sua verificação de estudante foi submetida e está sendo processada. Receberá um email de confirmação em 24-48 horas.' :
                 'Your student verification has been submitted and is being processed. You will receive a confirmation email within 24-48 hours.'
@@ -708,28 +708,28 @@ export default function StudentVerificationSystem({
               </h4>
               <ul className="text-sm text-green-700 space-y-2 text-left">
                 <li className="flex items-start">
-                  <CheckIconSolid className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <CheckIconSolid className="w-4 h-4 text-action-500 mr-2 mt-0.5 flex-shrink-0" />
                   {language === 'pt' ? 
                     'Verifique o seu email para confirmação da submissão' :
                     'Check your email for submission confirmation'
                   }
                 </li>
                 <li className="flex items-start">
-                  <CheckIconSolid className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <CheckIconSolid className="w-4 h-4 text-action-500 mr-2 mt-0.5 flex-shrink-0" />
                   {language === 'pt' ? 
                     'Complete o seu perfil LusoTown enquanto aguarda' :
                     'Complete your LusoTown profile while waiting'
                   }
                 </li>
                 <li className="flex items-start">
-                  <CheckIconSolid className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <CheckIconSolid className="w-4 h-4 text-action-500 mr-2 mt-0.5 flex-shrink-0" />
                   {language === 'pt' ? 
                     'Explore eventos abertos para todos os membros' :
                     'Explore events open to all members'
                   }
                 </li>
                 <li className="flex items-start">
-                  <CheckIconSolid className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <CheckIconSolid className="w-4 h-4 text-action-500 mr-2 mt-0.5 flex-shrink-0" />
                   {language === 'pt' ? 
                     'Junte-se aos grupos de estudantes portugueses' :
                     'Join Portuguese student groups'
@@ -764,7 +764,7 @@ export default function StudentVerificationSystem({
               </button>
               <button
                 onClick={() => window.open('/students/events', '_blank')}
-                className="flex-1 border border-gray-300 text-gray-700 font-medium py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors"
+                className="flex-1 border border-secondary-300 text-secondary-700 font-medium py-3 px-4 rounded-lg hover:bg-secondary-50 transition-colors"
               >
                 {language === 'pt' ? 'Ver Eventos' : 'View Events'}
               </button>
@@ -786,7 +786,7 @@ export default function StudentVerificationSystem({
             <h2 className="text-2xl font-bold text-gray-900">
               {language === 'pt' ? 'Verificação de Estudante' : 'Student Verification'}
             </h2>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {language === 'pt' ? 
                 'Obtenha 50% de desconto na adesão LusoTown' :
                 'Get 50% discount on LusoTown membership'
@@ -796,7 +796,7 @@ export default function StudentVerificationSystem({
           {isModal && onClose && (
             <button 
               onClick={onClose}
-              className="text-gray-400 hover:text-gray-600"
+              className="text-gray-400 hover:text-secondary-600"
             >
               <XCircleIcon className="w-6 h-6" />
             </button>
@@ -810,9 +810,9 @@ export default function StudentVerificationSystem({
               <React.Fragment key={step.id}>
                 <div className="flex flex-col items-center">
                   <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium ${
-                    step.completed ? 'bg-green-500 text-white' :
+                    step.completed ? 'bg-action-500 text-white' :
                     step.current ? 'bg-primary-500 text-white' :
-                    'bg-gray-200 text-gray-600'
+                    'bg-secondary-200 text-secondary-600'
                   }`}>
                     {step.completed ? (
                       <CheckIconSolid className="w-5 h-5" />
@@ -830,7 +830,7 @@ export default function StudentVerificationSystem({
                 </div>
                 {index < steps.length - 1 && (
                   <div className={`flex-1 h-1 mx-4 ${
-                    step.completed ? 'bg-green-500' : 'bg-gray-200'
+                    step.completed ? 'bg-action-500' : 'bg-secondary-200'
                   }`}></div>
                 )}
               </React.Fragment>
@@ -845,7 +845,7 @@ export default function StudentVerificationSystem({
         {errors.submit && (
           <div className="mt-4 bg-red-50 border border-red-200 rounded-lg p-4">
             <div className="flex items-center">
-              <ExclamationTriangleIcon className="w-5 h-5 text-red-600 mr-2" />
+              <ExclamationTriangleIcon className="w-5 h-5 text-coral-600 mr-2" />
               <p className="text-sm text-red-700">{errors.submit}</p>
             </div>
           </div>

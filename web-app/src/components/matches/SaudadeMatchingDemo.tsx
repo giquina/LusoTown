@@ -1,8 +1,11 @@
 "use client";
 
 import React, { useState } from 'react';
+import { buildUnsplashUrl } from '@/config'
 import { motion } from 'framer-motion';
+import { buildUnsplashUrl } from '@/config'
 import { useLanguage } from '@/context/LanguageContext';
+import { buildUnsplashUrl } from '@/config'
 import {
   HeartIcon,
   SparklesIcon,
@@ -19,7 +22,9 @@ import {
 
 // Import our saudade components
 import SaudadeMatchingIntegration from './SaudadeMatchingIntegration';
+import { buildUnsplashUrl } from '@/config'
 import type { CulturalDepthProfile } from './SaudadeMatchingSystem';
+import { buildUnsplashUrl } from '@/config'
 
 interface SaudadeMatchingDemoProps {
   showAsDemo?: boolean;
@@ -39,7 +44,7 @@ export default function SaudadeMatchingDemo({
     {
       name: 'Sofia',
       age: 29,
-      photo: 'https://images.unsplash.com/photo-1494790108755-2616b612b1c5?w=150&h=150&fit=crop&crop=face',
+      photo: buildUnsplashUrl('photo-1494790108755-2616b612b1c5?w=150&h=150&fit=crop&crop=face'),
       type: language === 'pt' ? 'Alma Saudosa' : 'Saudade Soul',
       saudadeIntensity: 8,
       compatibility: 94,
@@ -50,7 +55,7 @@ export default function SaudadeMatchingDemo({
     {
       name: 'Miguel',
       age: 34,
-      photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+      photo: buildUnsplashUrl('photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face'),
       type: language === 'pt' ? 'Curador Cultural' : 'Cultural Healer',
       saudadeIntensity: 6,
       compatibility: 87,
@@ -61,7 +66,7 @@ export default function SaudadeMatchingDemo({
     {
       name: 'Ana',
       age: 26,
-      photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
+      photo: buildUnsplashUrl('photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face'),
       type: language === 'pt' ? 'Guardião da Herança' : 'Heritage Guardian',
       saudadeIntensity: 9,
       compatibility: 91,
@@ -86,7 +91,7 @@ export default function SaudadeMatchingDemo({
       descriptionEn: 'Advanced algorithm matches based on saudade levels, cultural support needs, and heritage preservation.',
       descriptionPt: 'Algoritmo avançado que combina baseado em níveis de saudade, necessidades de apoio cultural e preservação da herança.',
       icon: SparklesIcon,
-      color: 'from-blue-500 to-purple-500',
+      color: 'from-blue-500 to-accent-500',
     },
     {
       titleEn: 'Cultural Healing',
@@ -143,7 +148,7 @@ export default function SaudadeMatchingDemo({
               ? 'Encontre Sua Alma Gémea de Saudade'
               : 'Find Your Saudade Soulmate'}
           </h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
             {language === 'pt'
               ? 'O primeiro sistema de matching que compreende verdadeiramente a profundidade emocional da experiência portuguesa. Conecte-se com base na saudade, herança cultural e necessidades de apoio emocional.'
               : 'The first matching system that truly understands the emotional depth of the Portuguese experience. Connect based on saudade, cultural heritage, and emotional support needs.'}
@@ -160,25 +165,25 @@ export default function SaudadeMatchingDemo({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
-                className={`relative bg-white rounded-2xl p-6 shadow-lg border border-gray-100 ${
+                className={`relative bg-white rounded-2xl p-6 shadow-lg border border-secondary-100 ${
                   currentStep === index ? 'ring-2 ring-red-500' : ''
                 }`}
               >
                 <div className={`w-12 h-12 bg-gradient-to-r ${step.color} rounded-xl flex items-center justify-center mb-4`}>
                   <IconComponent className="w-6 h-6 text-white" />
                 </div>
-                <div className="text-sm text-red-600 font-semibold mb-2">
+                <div className="text-sm text-coral-600 font-semibold mb-2">
                   {language === 'pt' ? `Passo ${index + 1}` : `Step ${index + 1}`}
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {language === 'pt' ? step.titlePt : step.titleEn}
                 </h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-secondary-600">
                   {language === 'pt' ? step.descriptionPt : step.descriptionEn}
                 </p>
                 
                 {index < demoSteps.length - 1 && (
-                  <div className="hidden md:block absolute -right-3 top-1/2 transform -translate-y-1/2">
+                  <div className="hidden md:block absolute -right-3 top-1/2 transform -transecondary-y-1/2">
                     <ArrowRightIcon className="w-6 h-6 text-gray-300" />
                   </div>
                 )}
@@ -193,7 +198,7 @@ export default function SaudadeMatchingDemo({
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               {language === 'pt' ? 'Exemplos de Matches Baseados em Saudade' : 'Sample Saudade-Based Matches'}
             </h2>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {language === 'pt'
                 ? 'Veja como o nosso sistema encontra conexões emocionais autênticas'
                 : 'See how our system finds authentic emotional connections'}
@@ -216,12 +221,12 @@ export default function SaudadeMatchingDemo({
                     className="w-16 h-16 rounded-full object-cover mx-auto mb-3"
                   />
                   <h3 className="font-semibold text-gray-900">{profile.name}, {profile.age}</h3>
-                  <div className="text-sm text-red-600 font-medium">{profile.type}</div>
+                  <div className="text-sm text-coral-600 font-medium">{profile.type}</div>
                 </div>
 
                 <div className="space-y-3 mb-4">
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-600">
+                    <span className="text-secondary-600">
                       {language === 'pt' ? 'Saudade:' : 'Saudade:'}
                     </span>
                     <div className="flex items-center gap-1">
@@ -229,7 +234,7 @@ export default function SaudadeMatchingDemo({
                         <div
                           key={i}
                           className={`w-2 h-2 rounded-full ${
-                            i < profile.saudadeIntensity ? 'bg-red-500' : 'bg-gray-200'
+                            i < profile.saudadeIntensity ? 'bg-coral-500' : 'bg-secondary-200'
                           }`}
                         />
                       ))}
@@ -237,14 +242,14 @@ export default function SaudadeMatchingDemo({
                   </div>
                   
                   <div className="flex items-center justify-between text-sm">
-                    <span className="text-gray-600">
+                    <span className="text-secondary-600">
                       {language === 'pt' ? 'Compatibilidade:' : 'Compatibility:'}
                     </span>
-                    <span className="text-green-600 font-bold">{profile.compatibility}%</span>
+                    <span className="text-action-600 font-bold">{profile.compatibility}%</span>
                   </div>
                 </div>
 
-                <p className="text-xs text-gray-600 mb-4">{profile.description}</p>
+                <p className="text-xs text-secondary-600 mb-4">{profile.description}</p>
 
                 <button className="w-full bg-gradient-to-r from-red-500 to-primary-500 text-white py-2 rounded-lg text-sm font-semibold hover:from-red-600 hover:to-primary-600 transition-all">
                   {language === 'pt' ? 'Ver Perfil Completo' : 'View Full Profile'}
@@ -264,7 +269,7 @@ export default function SaudadeMatchingDemo({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 + index * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100"
+                className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100"
               >
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-gradient-to-r from-red-500 to-primary-500 rounded-xl">
@@ -274,7 +279,7 @@ export default function SaudadeMatchingDemo({
                     <h3 className="font-semibold text-gray-900 mb-2">
                       {language === 'pt' ? feature.titlePt : feature.titleEn}
                     </h3>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-secondary-600">
                       {language === 'pt' ? feature.descriptionPt : feature.descriptionEn}
                     </p>
                   </div>
@@ -308,10 +313,8 @@ export default function SaudadeMatchingDemo({
     <SaudadeMatchingIntegration
       userId="demo-user"
       onProfileUpdate={(profile: CulturalDepthProfile) => {
-        console.log('Profile updated:', profile);
       }}
       onMatchInteraction={(matchId: string, action: 'like' | 'pass' | 'message') => {
-        console.log('Match interaction:', matchId, action);
       }}
     />
   );

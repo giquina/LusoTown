@@ -170,7 +170,6 @@ const BusinessMap: React.FC<BusinessMapProps> = ({
     )
 
     // You can emit this data to parent component if needed
-    console.log('Nearby businesses:', nearbyBusinesses)
   }
 
   const handleMarkerClick = (marker: BusinessMarker) => {
@@ -209,13 +208,13 @@ const BusinessMap: React.FC<BusinessMapProps> = ({
 
   if (mapError) {
     return (
-      <div className={`bg-gray-100 rounded-lg flex items-center justify-center ${className}`} style={{ height }}>
+      <div className={`bg-secondary-100 rounded-lg flex items-center justify-center ${className}`} style={{ height }}>
         <div className="text-center p-8">
-          <ExclamationTriangleIcon className="w-12 h-12 text-red-500 mx-auto mb-4" />
+          <ExclamationTriangleIcon className="w-12 h-12 text-coral-500 mx-auto mb-4" />
           <h3 className="text-lg font-medium text-gray-900 mb-2">
             {t('map.error_title', 'Map Unavailable')}
           </h3>
-          <p className="text-gray-600">
+          <p className="text-secondary-600">
             {mapError}
           </p>
         </div>
@@ -260,7 +259,7 @@ const BusinessMap: React.FC<BusinessMapProps> = ({
                 className="w-3 h-3 rounded-full"
                 style={{ backgroundColor: PORTUGUESE_COLORS.accent }}
               />
-              <span className="text-gray-700">{area.name}</span>
+              <span className="text-secondary-700">{area.name}</span>
             </div>
           ))}
         </div>
@@ -275,7 +274,7 @@ const BusinessMap: React.FC<BusinessMapProps> = ({
         {!mapReady ? (
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-500 mx-auto mb-4"></div>
-            <p className="text-gray-600">{t('map.loading', 'Loading map...')}</p>
+            <p className="text-secondary-600">{t('map.loading', 'Loading map...')}</p>
           </div>
         ) : (
           <div className="w-full h-full relative">
@@ -298,7 +297,7 @@ const BusinessMap: React.FC<BusinessMapProps> = ({
               {businessMarkers.slice(0, 20).map((marker, index) => (
                 <div
                   key={marker.business.id}
-                  className="absolute cursor-pointer transform -translate-x-1/2 -translate-y-1/2"
+                  className="absolute cursor-pointer transform -transecondary-x-1/2 -transecondary-y-1/2"
                   style={{
                     left: `${20 + (index % 8) * 10}%`,
                     top: `${30 + Math.floor(index / 8) * 15}%`,
@@ -317,11 +316,11 @@ const BusinessMap: React.FC<BusinessMapProps> = ({
                     
                     {/* Verification badge */}
                     {marker.business.verificationStatus === 'verified' && (
-                      <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border border-white"></div>
+                      <div className="absolute -top-1 -right-1 w-3 h-3 bg-action-500 rounded-full border border-white"></div>
                     )}
 
                     {/* Hover tooltip */}
-                    <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-20">
+                    <div className="absolute bottom-full mb-2 left-1/2 transform -transecondary-x-1/2 bg-secondary-900 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-20">
                       {marker.business.name}
                     </div>
                   </div>
@@ -331,14 +330,14 @@ const BusinessMap: React.FC<BusinessMapProps> = ({
               {/* User location marker */}
               {userLocation && (
                 <div
-                  className="absolute transform -translate-x-1/2 -translate-y-1/2"
+                  className="absolute transform -transecondary-x-1/2 -transecondary-y-1/2"
                   style={{
                     left: '50%',
                     top: '50%'
                   }}
                 >
                   <div className="relative">
-                    <div className="w-4 h-4 bg-blue-500 rounded-full border-2 border-white shadow-lg animate-pulse"></div>
+                    <div className="w-4 h-4 bg-primary-500 rounded-full border-2 border-white shadow-lg animate-pulse"></div>
                     <div className="absolute inset-0 w-4 h-4 bg-blue-400 rounded-full animate-ping"></div>
                   </div>
                 </div>
@@ -374,7 +373,7 @@ const BusinessMap: React.FC<BusinessMapProps> = ({
                     setSelectedMarker(null)
                     onBusinessSelect?.(null)
                   }}
-                  className="p-1 hover:bg-gray-100 rounded-full flex-shrink-0"
+                  className="p-1 hover:bg-secondary-100 rounded-full flex-shrink-0"
                 >
                   <XMarkIcon className="w-4 h-4 text-gray-500" />
                 </button>
@@ -384,19 +383,19 @@ const BusinessMap: React.FC<BusinessMapProps> = ({
               <div className="flex items-center gap-2 mb-2">
                 <div className="flex items-center">
                   <StarSolidIcon className="w-4 h-4 text-yellow-400" />
-                  <span className="text-sm text-gray-600 ml-1">
+                  <span className="text-sm text-secondary-600 ml-1">
                     {selectedMarker.business.rating}
                   </span>
                 </div>
                 <span className="text-gray-400">•</span>
-                <span className="text-sm text-gray-600">
+                <span className="text-sm text-secondary-600">
                   {getRegionFlag(selectedMarker.business.ownerRegion)}
                   {selectedMarker.business.ownerRegion.replace('_', ' ')}
                 </span>
               </div>
 
               {/* Address and Phone */}
-              <div className="space-y-1 text-sm text-gray-600">
+              <div className="space-y-1 text-sm text-secondary-600">
                 <div className="flex items-center gap-1">
                   <MapPinIcon className="w-3 h-3 flex-shrink-0" />
                   <span className="truncate">{selectedMarker.business.address}</span>
@@ -416,7 +415,7 @@ const BusinessMap: React.FC<BusinessMapProps> = ({
             </button>
             <button 
               onClick={() => window.open(`tel:${selectedMarker.business.phone}`, '_self')}
-              className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+              className="px-4 py-2 bg-secondary-100 text-secondary-700 rounded-lg hover:bg-secondary-200 transition-colors"
             >
               <PhoneIcon className="w-4 h-4" />
             </button>

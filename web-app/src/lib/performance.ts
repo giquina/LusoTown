@@ -1,3 +1,4 @@
+import { buildUnsplashUrl, buildCloudinaryUrl } from '@/config'
 // Performance optimization utilities for LusoTown
 
 // Image optimization
@@ -63,7 +64,6 @@ export const lazyLoadImages = () => {
 
 // Memory management for large components
 export const cleanupComponent = (componentName: string) => {
-  console.log(`Cleaning up ${componentName}`)
   // Clear any intervals, timeouts, event listeners
 }
 
@@ -71,7 +71,7 @@ export const cleanupComponent = (componentName: string) => {
 export const criticalCSS = `
   .hero-section { 
     min-height: 100vh;
-    background: linear-gradient(135deg, #10b981, #059669);
+    background: linear-gradient(135deg, #10b981, var(--color-action-500));
   }
   .loading-skeleton {
     background: linear-gradient(90deg, #f3f4f6, #e5e7eb, #f3f4f6);
@@ -98,7 +98,6 @@ export const measurePerformance = (name: string, fn: () => void) => {
     const start = performance.now()
     fn()
     const end = performance.now()
-    console.log(`${name} took ${end - start} milliseconds`)
   } else {
     fn()
   }

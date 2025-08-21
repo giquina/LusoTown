@@ -83,17 +83,17 @@ export default function MyNetworkPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-secondary-50">
         <main className="pt-16">
           <div className="container mx-auto px-4 py-12">
             <div className="animate-pulse">
-              <div className="h-8 bg-gray-200 rounded w-1/3 mb-6"></div>
+              <div className="h-8 bg-secondary-200 rounded w-1/3 mb-6"></div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[1, 2, 3, 4, 5, 6].map((i) => (
                   <div key={i} className="bg-white rounded-xl p-6 shadow-sm">
-                    <div className="h-16 w-16 bg-gray-200 rounded-full mb-4"></div>
-                    <div className="h-4 bg-gray-200 rounded mb-2"></div>
-                    <div className="h-3 bg-gray-200 rounded w-2/3"></div>
+                    <div className="h-16 w-16 bg-secondary-200 rounded-full mb-4"></div>
+                    <div className="h-4 bg-secondary-200 rounded mb-2"></div>
+                    <div className="h-3 bg-secondary-200 rounded w-2/3"></div>
                   </div>
                 ))}
               </div>
@@ -106,7 +106,7 @@ export default function MyNetworkPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       
       <main className="pt-16">
         {/* Hero Section */}
@@ -134,7 +134,7 @@ export default function MyNetworkPage() {
                 {isPortuguese ? 'A Minha Rede' : 'My Network'}
               </h1>
               
-              <p className="text-lg sm:text-xl text-gray-600 mb-8">
+              <p className="text-lg sm:text-xl text-secondary-600 mb-8">
                 {isPortuguese 
                   ? 'Conecte-se com falantes de português que conheceu em eventos do LusoTown. Construa amizades duradouras e explore Londres juntos.'
                   : 'Connect with Portuguese speakers you\'ve met at LusoTown events. Build lasting friendships and explore London together.'
@@ -162,13 +162,13 @@ export default function MyNetworkPage() {
                 <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
                   {/* Search Bar */}
                   <div className="relative flex-1 max-w-md">
-                    <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -transecondary-y-1/2 w-5 h-5 text-gray-400" />
                     <input
                       type="text"
                       placeholder={isPortuguese ? 'Procurar conexões...' : 'Search connections...'}
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                      className="w-full pl-10 pr-4 py-3 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
                     />
                   </div>
 
@@ -185,7 +185,7 @@ export default function MyNetworkPage() {
                 
                 {/* Results Count */}
                 <div className="flex justify-between items-center text-sm">
-                  <span className="text-gray-600">
+                  <span className="text-secondary-600">
                     {filteredConnections.length} {isPortuguese ? 'conexões' : 'connections'}
                     {Object.keys(activeFilters).length > 0 && (
                       <span className="ml-2 text-primary-600">
@@ -233,7 +233,7 @@ export default function MyNetworkPage() {
                         : (isPortuguese ? 'Comece a fazer conexões!' : 'Start making connections!')
                       }
                     </h3>
-                    <p className="text-gray-600 mb-6">
+                    <p className="text-secondary-600 mb-6">
                       {searchQuery
                         ? (isPortuguese 
                             ? 'Tente ajustar os seus critérios de pesquisa.'

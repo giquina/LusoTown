@@ -104,7 +104,7 @@ export default function MessageAuthorizationGate({
   if (loading) {
     return (
       <div className="flex items-center justify-center p-8">
-        <div className="flex items-center space-x-3 text-gray-600">
+        <div className="flex items-center space-x-3 text-secondary-600">
           <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-primary-600"></div>
           <span>{t.checking}</span>
         </div>
@@ -119,10 +119,10 @@ export default function MessageAuthorizationGate({
           <AlertCircle className="h-5 w-5" />
           <span className="font-medium">Error</span>
         </div>
-        <p className="text-red-600 mb-4">{error}</p>
+        <p className="text-coral-600 mb-4">{error}</p>
         <button
           onClick={checkPermissions}
-          className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+          className="px-4 py-2 bg-coral-600 text-white rounded-lg hover:bg-red-700 transition-colors"
         >
           {t.tryAgain}
         </button>
@@ -153,7 +153,7 @@ export default function MessageAuthorizationGate({
             )}
             
             {permission.has_event_permission && (
-              <div className="flex items-center space-x-2 px-3 py-1 bg-blue-100 rounded-full text-sm text-blue-700">
+              <div className="flex items-center space-x-2 px-3 py-1 bg-blue-100 rounded-full text-sm text-primary-700">
                 <Calendar className="h-4 w-4" />
                 <span>{t.sharedEventsCount(permission.shared_events_count)}</span>
               </div>
@@ -171,9 +171,9 @@ export default function MessageAuthorizationGate({
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="p-6 bg-gray-50 border border-gray-200 rounded-lg"
+      className="p-6 bg-secondary-50 border border-secondary-200 rounded-lg"
     >
-      <div className="flex items-center space-x-3 text-gray-700 mb-4">
+      <div className="flex items-center space-x-3 text-secondary-700 mb-4">
         <Lock className="h-5 w-5" />
         <span className="font-medium">{t.unauthorized}</span>
       </div>
@@ -188,7 +188,7 @@ export default function MessageAuthorizationGate({
         )}
         <div>
           <h3 className="font-medium text-gray-900">{targetUserName}</h3>
-          <p className="text-sm text-gray-600">{t.noPermission}</p>
+          <p className="text-sm text-secondary-600">{t.noPermission}</p>
         </div>
       </div>
       
@@ -200,7 +200,7 @@ export default function MessageAuthorizationGate({
             <Heart className="h-5 w-5 text-primary-600 mt-0.5" />
             <div>
               <h5 className="font-medium text-gray-900">Mutual Match</h5>
-              <p className="text-sm text-gray-600">{t.steps.match}</p>
+              <p className="text-sm text-secondary-600">{t.steps.match}</p>
             </div>
           </div>
           
@@ -208,7 +208,7 @@ export default function MessageAuthorizationGate({
             <Calendar className="h-5 w-5 text-secondary-600 mt-0.5" />
             <div>
               <h5 className="font-medium text-gray-900">Shared Events</h5>
-              <p className="text-sm text-gray-600">{t.steps.event}</p>
+              <p className="text-sm text-secondary-600">{t.steps.event}</p>
             </div>
           </div>
         </div>

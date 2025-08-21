@@ -81,7 +81,7 @@ export default function FeedFilters({ activeFilter, onFilterChange, className = 
   }
 
   return (
-    <div className={`bg-white rounded-xl shadow-sm border border-gray-200 p-6 ${className}`}>
+    <div className={`bg-white rounded-xl shadow-sm border border-secondary-200 p-6 ${className}`}>
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center space-x-2">
           <Filter className="w-5 h-5 text-gray-400" />
@@ -117,7 +117,7 @@ export default function FeedFilters({ activeFilter, onFilterChange, className = 
             
             {/* Active indicator */}
             {activeFilter === filter.id && (
-              <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-8 h-1 bg-current rounded-full opacity-60" />
+              <div className="absolute -bottom-1 left-1/2 transform -transecondary-x-1/2 w-8 h-1 bg-current rounded-full opacity-60" />
             )}
           </button>
         ))}
@@ -143,7 +143,7 @@ export default function FeedFilters({ activeFilter, onFilterChange, className = 
       </div>
 
       {/* Active Filter Description */}
-      <div className="mt-4 p-3 bg-gray-50 rounded-lg">
+      <div className="mt-4 p-3 bg-secondary-50 rounded-lg">
         <div className="flex items-center space-x-2">
           <div className={`
             w-8 h-8 rounded-lg flex items-center justify-center
@@ -161,7 +161,7 @@ export default function FeedFilters({ activeFilter, onFilterChange, className = 
             <h4 className="font-medium text-gray-900">
               {t(`feed_filters.active_${activeFilter}`) || filters.find(f => f.id === activeFilter)?.label}
             </h4>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-secondary-600">
               {filters.find(f => f.id === activeFilter)?.description}
             </p>
           </div>
@@ -172,15 +172,15 @@ export default function FeedFilters({ activeFilter, onFilterChange, className = 
       <div className="mt-4 grid grid-cols-3 gap-4 text-center text-sm">
         <div>
           <p className="font-semibold text-primary-600">247</p>
-          <p className="text-gray-600">{t('feed_filters.posts_today') || 'Posts Today'}</p>
+          <p className="text-secondary-600">{t('feed_filters.posts_today') || 'Posts Today'}</p>
         </div>
         <div>
           <p className="font-semibold text-secondary-600">1.2k</p>
-          <p className="text-gray-600">{t('feed_filters.interactions') || 'Interactions'}</p>
+          <p className="text-secondary-600">{t('feed_filters.interactions') || 'Interactions'}</p>
         </div>
         <div>
           <p className="font-semibold text-accent-600">89%</p>
-          <p className="text-gray-600">{t('feed_filters.relevance') || 'Relevance'}</p>
+          <p className="text-secondary-600">{t('feed_filters.relevance') || 'Relevance'}</p>
         </div>
       </div>
     </div>

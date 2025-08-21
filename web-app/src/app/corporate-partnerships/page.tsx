@@ -60,7 +60,7 @@ export default function CorporatePartnerships() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       
       <div className="pt-20">
         {/* Hero Section */}
@@ -118,7 +118,7 @@ export default function CorporatePartnerships() {
         </div>
 
         {/* Partnership Success Stories Banner */}
-        <div className="bg-white border-b border-gray-200">
+        <div className="bg-white border-b border-secondary-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="text-center">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
@@ -126,37 +126,37 @@ export default function CorporatePartnerships() {
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-6 gap-8 items-center opacity-60">
                 <div className="text-center">
-                  <div className="text-lg font-semibold text-gray-700">Millennium Bank</div>
+                  <div className="text-lg font-semibold text-secondary-700">Millennium Bank</div>
                   <div className="text-sm text-gray-500">
                     {language === 'pt' ? 'Serviços Bancários' : 'Banking Services'}
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-lg font-semibold text-gray-700">Instituto Camões</div>
+                  <div className="text-lg font-semibold text-secondary-700">Instituto Camões</div>
                   <div className="text-sm text-gray-500">
                     {language === 'pt' ? 'Educação Cultural' : 'Cultural Education'}
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-lg font-semibold text-gray-700">TAP Air Portugal</div>
+                  <div className="text-lg font-semibold text-secondary-700">TAP Air Portugal</div>
                   <div className="text-sm text-gray-500">
                     {language === 'pt' ? 'Viagens' : 'Travel'}
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-lg font-semibold text-gray-700">Portugal Foods UK</div>
+                  <div className="text-lg font-semibold text-secondary-700">Portugal Foods UK</div>
                   <div className="text-sm text-gray-500">
                     {language === 'pt' ? 'Alimentação' : 'Food & Beverage'}
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-lg font-semibold text-gray-700">Anglo-Portuguese Society</div>
+                  <div className="text-lg font-semibold text-secondary-700">Anglo-Portuguese Society</div>
                   <div className="text-sm text-gray-500">
                     {language === 'pt' ? 'Relações Diplomáticas' : 'Diplomatic Relations'}
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-lg font-semibold text-gray-700">Portuguese Embassy</div>
+                  <div className="text-lg font-semibold text-secondary-700">Portuguese Embassy</div>
                   <div className="text-sm text-gray-500">
                     {language === 'pt' ? 'Oficiais' : 'Official'}
                   </div>
@@ -169,7 +169,7 @@ export default function CorporatePartnerships() {
         {/* Navigation Tabs */}
         <div className="bg-white shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="border-b border-gray-200">
+            <div className="border-b border-secondary-200">
               <nav className="-mb-px flex space-x-8">
                 {tabs.map((tab) => (
                   <button
@@ -178,7 +178,7 @@ export default function CorporatePartnerships() {
                     className={`group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm ${
                       activeTab === tab.id
                         ? 'border-primary-500 text-primary-600'
-                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                        : 'border-transparent text-gray-500 hover:text-secondary-700 hover:border-secondary-300'
                     }`}
                   >
                     <span className={`mr-2 ${
@@ -200,7 +200,7 @@ export default function CorporatePartnerships() {
         </div>
 
         {/* Bottom CTA Section */}
-        <div className="bg-gray-900 text-white">
+        <div className="bg-secondary-900 text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div className="text-center">
               <SparklesIcon className="w-16 h-16 mx-auto mb-6 text-accent-400" />

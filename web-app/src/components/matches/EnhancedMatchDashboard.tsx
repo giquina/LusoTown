@@ -484,7 +484,7 @@ export default function EnhancedMatchDashboard({
                               {match.profile.location} • {match.compatibilityScore}% match
                             </p>
                           </div>
-                          <div className="text-green-500">
+                          <div className="text-action-500">
                             <HeartSolid className="w-5 h-5" />
                           </div>
                         </div>
@@ -589,15 +589,12 @@ export default function EnhancedMatchDashboard({
                 currentUserId={currentUserId}
                 onBusinessMatchAction={(matchId, action) => {
                   // Handle business match actions
-                  console.log('Business match action:', matchId, action);
                 }}
                 onMentorshipRequest={(menteeId, mentorId) => {
                   // Handle mentorship requests
-                  console.log('Mentorship request:', menteeId, mentorId);
                 }}
                 onBusinessEventBooking={(eventId, matchId) => {
                   // Handle business event booking
-                  console.log('Business event booking:', eventId, matchId);
                 }}
               />
             </motion.div>

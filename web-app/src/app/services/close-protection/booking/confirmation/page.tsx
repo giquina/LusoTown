@@ -82,14 +82,14 @@ export default function BookingConfirmationPage() {
               transition={{ duration: 0.6 }}
             >
               <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-6">
-                <CheckCircleIcon className="w-8 h-8 text-green-600" />
+                <CheckCircleIcon className="w-8 h-8 text-action-600" />
               </div>
               
               <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
                 {isPortuguese ? 'Solicitação Confirmada!' : 'Request Confirmed!'}
               </h1>
               
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+              <p className="text-lg text-secondary-600 max-w-2xl mx-auto mb-8">
                 {isPortuguese
                   ? 'Obrigado por escolher nossos serviços de proteção pessoal premium. Nossa equipe entrará em contato em breve.'
                   : 'Thank you for choosing our premium close protection services. Our team will be in touch shortly.'
@@ -97,7 +97,7 @@ export default function BookingConfirmationPage() {
               </p>
 
               <div className="inline-flex items-center px-6 py-3 bg-white rounded-xl shadow-md">
-                <span className="text-sm text-gray-600 mr-2">
+                <span className="text-sm text-secondary-600 mr-2">
                   {isPortuguese ? 'Referência:' : 'Reference:'}
                 </span>
                 <span className="font-mono font-semibold text-premium-600">
@@ -116,7 +116,7 @@ export default function BookingConfirmationPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               {isPortuguese ? 'Próximos Passos' : 'Next Steps'}
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-secondary-600">
               {isPortuguese
                 ? 'Aqui está o que acontece a seguir no processo de consulta de segurança'
                 : 'Here\'s what happens next in the security consultation process'
@@ -135,10 +135,10 @@ export default function BookingConfirmationPage() {
                 className="flex items-start"
               >
                 <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center mr-6 ${
-                  step.completed ? 'bg-green-100' : 'bg-gray-100'
+                  step.completed ? 'bg-green-100' : 'bg-secondary-100'
                 }`}>
                   <step.icon className={`w-6 h-6 ${
-                    step.completed ? 'text-green-600' : 'text-gray-600'
+                    step.completed ? 'text-action-600' : 'text-secondary-600'
                   }`} />
                 </div>
                 
@@ -153,7 +153,7 @@ export default function BookingConfirmationPage() {
                       {step.timeframe}
                     </span>
                   </div>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {isPortuguese ? step.descriptionPortuguese : step.description}
                   </p>
                 </div>
@@ -164,7 +164,7 @@ export default function BookingConfirmationPage() {
       </section>
 
       {/* Contact Information */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-secondary-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-2xl p-8 shadow-lg">
             <div className="text-center mb-8">
@@ -177,7 +177,7 @@ export default function BookingConfirmationPage() {
                 {isPortuguese ? 'Precisa de Assistência Imediata?' : 'Need Immediate Assistance?'}
               </h2>
               
-              <p className="text-gray-600 mb-6">
+              <p className="text-secondary-600 mb-6">
                 {isPortuguese
                   ? 'Para situações urgentes de segurança, contacte-nos diretamente'
                   : 'For urgent security situations, contact us directly'
@@ -200,7 +200,7 @@ export default function BookingConfirmationPage() {
                     {isPortuguese ? 'Chamada de Emergência' : 'Emergency Call'}
                   </div>
                   <div className="font-semibold text-gray-900">{emergencyContact.phone}</div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-secondary-600">
                     {isPortuguese ? 'Disponível 24/7' : 'Available 24/7'}
                   </div>
                 </div>
@@ -220,7 +220,7 @@ export default function BookingConfirmationPage() {
                     {isPortuguese ? 'Email de Segurança' : 'Security Email'}
                   </div>
                   <div className="font-semibold text-gray-900">{emergencyContact.email}</div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-secondary-600">
                     {isPortuguese ? 'Resposta rápida' : 'Fast response'}
                   </div>
                 </div>
@@ -238,7 +238,7 @@ export default function BookingConfirmationPage() {
               {isPortuguese ? 'Informações Importantes' : 'Important Information'}
             </h3>
             
-            <div className="space-y-4 text-gray-700">
+            <div className="space-y-4 text-secondary-700">
               <div className="flex items-start">
                 <CheckCircleIcon className="w-5 h-5 text-premium-600 mt-0.5 mr-3 flex-shrink-0" />
                 <span>

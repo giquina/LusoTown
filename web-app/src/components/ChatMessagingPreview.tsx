@@ -302,7 +302,7 @@ export default function ChatMessagingPreview() {
       mozambique: "bg-premium-500",
       diaspora: "bg-coral-500",
     };
-    return colors[region as keyof typeof colors] || "bg-gray-500";
+    return colors[region as keyof typeof colors] || "bg-secondary-500";
   };
 
   return (
@@ -326,7 +326,7 @@ export default function ChatMessagingPreview() {
               ? "Conversas da Comunidade Portuguesa"
               : "Portuguese Community Conversations"}
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
             {language === "pt"
               ? "Junte-se a milhares de portugueses em Londres. Chat em tempo real, grupos culturais, coordenação de eventos - tudo num só lugar."
               : "Join thousands of Portuguese speakers in London. Real-time chat, cultural groups, event coordination - all in one place."}
@@ -336,20 +336,20 @@ export default function ChatMessagingPreview() {
           <div className="flex items-center justify-center mt-6 space-x-6">
             <div className="flex items-center">
               <div className="w-3 h-3 bg-secondary-500 rounded-full animate-pulse mr-2"></div>
-              <span className="text-sm font-medium text-gray-700">
+              <span className="text-sm font-medium text-secondary-700">
                 {language === "pt" ? "AO VIVO" : "LIVE"}
               </span>
             </div>
             <div className="flex items-center">
               <EyeIcon className="w-4 h-4 text-gray-500 mr-1" />
-              <span className="text-sm text-gray-600">
+              <span className="text-sm text-secondary-600">
                 {viewerCount.toLocaleString()}{" "}
                 {language === "pt" ? "online" : "online"}
               </span>
             </div>
             <div className="flex items-center">
               <UserGroupIcon className="w-4 h-4 text-gray-500 mr-1" />
-              <span className="text-sm text-gray-600">
+              <span className="text-sm text-secondary-600">
                 12{language === "pt" ? "k membros" : "k members"}
               </span>
             </div>
@@ -360,7 +360,7 @@ export default function ChatMessagingPreview() {
         <div className="max-w-6xl mx-auto">
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
             {/* Tab Navigation */}
-            <div className="border-b border-gray-200 bg-gray-50">
+            <div className="border-b border-secondary-200 bg-secondary-50">
               <div className="flex space-x-8 px-6 py-4">
                 {(["live", "groups", "events"] as const).map((tab) => (
                   <button
@@ -369,7 +369,7 @@ export default function ChatMessagingPreview() {
                     className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-colors ${
                       activeTab === tab
                         ? "bg-primary-500 text-white"
-                        : "text-gray-600 hover:text-gray-900 hover:bg-white"
+                        : "text-secondary-600 hover:text-gray-900 hover:bg-white"
                     }`}
                   >
                     {tab === "live" && (
@@ -396,7 +396,7 @@ export default function ChatMessagingPreview() {
               {/* Chat Messages */}
               <div className="lg:col-span-2 flex flex-col">
                 {/* Chat Header */}
-                <div className="px-6 py-4 border-b border-gray-200 bg-gradient-to-r from-primary-500 to-secondary-500">
+                <div className="px-6 py-4 border-b border-secondary-200 bg-gradient-to-r from-primary-500 to-secondary-500">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
                       <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
@@ -422,7 +422,7 @@ export default function ChatMessagingPreview() {
                 </div>
 
                 {/* Messages Container */}
-                <div className="flex-1 p-6 space-y-4 overflow-y-auto bg-gray-50">
+                <div className="flex-1 p-6 space-y-4 overflow-y-auto bg-secondary-50">
                   <AnimatePresence mode="popLayout">
                     {mockMessages.slice(0, 4).map((message, index) => (
                       <motion.div
@@ -484,7 +484,7 @@ export default function ChatMessagingPreview() {
                             </span>
                           </div>
 
-                          <p className="text-gray-800 text-sm mt-1 leading-relaxed">
+                          <p className="text-secondary-800 text-sm mt-1 leading-relaxed">
                             {message.message}
                           </p>
 
@@ -511,15 +511,15 @@ export default function ChatMessagingPreview() {
                                   key={idx}
                                   whileHover={{ scale: 1.1 }}
                                   whileTap={{ scale: 0.95 }}
-                                  className="flex items-center space-x-1 px-2 py-1 rounded-full bg-white border border-gray-200 text-xs hover:bg-gray-50 transition-colors"
+                                  className="flex items-center space-x-1 px-2 py-1 rounded-full bg-white border border-secondary-200 text-xs hover:bg-secondary-50 transition-colors"
                                 >
                                   <span>{reaction.emoji}</span>
-                                  <span className="text-gray-600">
+                                  <span className="text-secondary-600">
                                     {reaction.count}
                                   </span>
                                 </motion.button>
                               ))}
-                              <button className="w-6 h-6 rounded-full border border-gray-300 flex items-center justify-center text-gray-400 hover:text-gray-600 hover:border-gray-400 transition-colors">
+                              <button className="w-6 h-6 rounded-full border border-secondary-300 flex items-center justify-center text-gray-400 hover:text-secondary-600 hover:border-secondary-400 transition-colors">
                                 <PlusIcon className="w-3 h-3" />
                               </button>
                             </div>
@@ -531,7 +531,7 @@ export default function ChatMessagingPreview() {
                 </div>
 
                 {/* Message Input */}
-                <div className="px-6 py-4 border-t border-gray-200 bg-white">
+                <div className="px-6 py-4 border-t border-secondary-200 bg-white">
                   <div className="flex items-center space-x-3">
                     <div className="flex-1 relative">
                       <input
@@ -541,12 +541,12 @@ export default function ChatMessagingPreview() {
                             ? "Escreva sua mensagem..."
                             : "Type your message..."
                         }
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                         disabled
                       />
-                      <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center space-x-2">
+                      <div className="absolute right-3 top-1/2 -transecondary-y-1/2 flex items-center space-x-2">
                         <Smile className="w-4 h-4 text-gray-400" />
-                        <div className="w-px h-4 bg-gray-300"></div>
+                        <div className="w-px h-4 bg-secondary-300"></div>
                         <span className="text-xs text-gray-500">🇵🇹</span>
                       </div>
                     </div>
@@ -572,7 +572,7 @@ export default function ChatMessagingPreview() {
                     ].map((emote, idx) => (
                       <button
                         key={idx}
-                        className="px-2 py-1 text-xs bg-gray-100 rounded hover:bg-gray-200 transition-colors"
+                        className="px-2 py-1 text-xs bg-secondary-100 rounded hover:bg-secondary-200 transition-colors"
                         disabled
                       >
                         {emote}
@@ -583,7 +583,7 @@ export default function ChatMessagingPreview() {
               </div>
 
               {/* Sidebar */}
-              <div className="border-l border-gray-200 bg-gray-50">
+              <div className="border-l border-secondary-200 bg-secondary-50">
                 {activeTab === "groups" && (
                   <div className="p-6">
                     <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
@@ -637,7 +637,7 @@ export default function ChatMessagingPreview() {
                           >
                             {message.user.avatar}
                           </div>
-                          <span className="text-sm text-gray-700 truncate flex-1">
+                          <span className="text-sm text-secondary-700 truncate flex-1">
                             {message.user.name}
                           </span>
                           <span className="text-xs">
@@ -755,7 +755,7 @@ export default function ChatMessagingPreview() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-3 bg-white text-primary-600 rounded-xl font-semibold hover:bg-gray-50 transition-colors flex items-center"
+                  className="px-8 py-3 bg-white text-primary-600 rounded-xl font-semibold hover:bg-secondary-50 transition-colors flex items-center"
                 >
                   {language === "pt" ? "Começar Chat" : "Start Chatting"}
                   <ArrowRightIcon className="w-5 h-5 ml-2" />

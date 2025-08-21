@@ -535,7 +535,7 @@ export default function OnboardingFlowEnhanced({
                   <div key={field.id} className="space-y-3">
                     <label className="block text-sm font-semibold text-gray-900">
                       {isPortuguese ? field.labelPortuguese : field.label}
-                      {field.required && <span className="text-red-500 ml-1">*</span>}
+                      {field.required && <span className="text-coral-500 ml-1">*</span>}
                     </label>
 
                     {field.type === 'radio' && (
@@ -546,7 +546,7 @@ export default function OnboardingFlowEnhanced({
                             className={`block p-4 rounded-xl border-2 cursor-pointer transition-all ${
                               value === option.value
                                 ? `border-${currentStepData.color}-500 bg-${currentStepData.color}-50`
-                                : 'border-gray-200 hover:border-gray-300'
+                                : 'border-secondary-200 hover:border-secondary-300'
                             }`}
                           >
                             <div className="flex items-start gap-3">
@@ -563,7 +563,7 @@ export default function OnboardingFlowEnhanced({
                                   {isPortuguese ? option.labelPortuguese : option.label}
                                 </div>
                                 {option.description && (
-                                  <div className="text-sm text-gray-600 mt-1">
+                                  <div className="text-sm text-secondary-600 mt-1">
                                     {isPortuguese ? option.descriptionPortuguese : option.description}
                                   </div>
                                 )}
@@ -579,7 +579,7 @@ export default function OnboardingFlowEnhanced({
                         value={value || ''}
                         onChange={(e) => handleFieldChange(field.id, e.target.value)}
                         className={`w-full p-4 border-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-${currentStepData.color}-500 ${
-                          hasError ? 'border-red-500' : 'border-gray-200 focus:border-gray-300'
+                          hasError ? 'border-coral-500' : 'border-secondary-200 focus:border-secondary-300'
                         }`}
                       >
                         <option value="">
@@ -604,7 +604,7 @@ export default function OnboardingFlowEnhanced({
                               className={`block p-3 rounded-lg border cursor-pointer transition-all ${
                                 isSelected
                                   ? `border-${currentStepData.color}-500 bg-${currentStepData.color}-50`
-                                  : 'border-gray-200 hover:border-gray-300'
+                                  : 'border-secondary-200 hover:border-secondary-300'
                               }`}
                             >
                               <div className="flex items-center gap-3">
@@ -618,7 +618,7 @@ export default function OnboardingFlowEnhanced({
                                       : currentValue.filter(v => v !== option.value)
                                     handleFieldChange(field.id, newValue)
                                   }}
-                                  className={`rounded border-gray-300 text-${currentStepData.color}-600 focus:ring-${currentStepData.color}-500`}
+                                  className={`rounded border-secondary-300 text-${currentStepData.color}-600 focus:ring-${currentStepData.color}-500`}
                                 />
                                 <span className="text-sm font-medium text-gray-900">
                                   {isPortuguese ? option.labelPortuguese : option.label}
@@ -631,7 +631,7 @@ export default function OnboardingFlowEnhanced({
                     )}
 
                     {hasError && (
-                      <p className="text-sm text-red-600">{hasError}</p>
+                      <p className="text-sm text-coral-600">{hasError}</p>
                     )}
                   </div>
                 )
@@ -639,11 +639,11 @@ export default function OnboardingFlowEnhanced({
             </div>
 
             {/* Navigation */}
-            <div className="flex items-center justify-between mt-8 pt-6 border-t border-gray-200">
+            <div className="flex items-center justify-between mt-8 pt-6 border-t border-secondary-200">
               <button
                 onClick={handlePrevious}
                 disabled={currentStep === 0}
-                className="flex items-center gap-2 px-6 py-3 text-gray-600 hover:text-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="flex items-center gap-2 px-6 py-3 text-secondary-600 hover:text-secondary-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 <ArrowLeftIcon className="w-5 h-5" />
                 {isPortuguese ? 'Anterior' : 'Previous'}
@@ -652,7 +652,7 @@ export default function OnboardingFlowEnhanced({
               <div className="flex items-center gap-4">
                 <button
                   onClick={handleSkip}
-                  className="px-6 py-3 text-gray-600 hover:text-gray-800 transition-colors"
+                  className="px-6 py-3 text-secondary-600 hover:text-secondary-800 transition-colors"
                 >
                   {isPortuguese ? 'Pular por Agora' : 'Skip for Now'}
                 </button>

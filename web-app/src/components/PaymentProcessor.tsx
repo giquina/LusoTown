@@ -379,12 +379,12 @@ export default function PaymentProcessor({
             onClick={e => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-t-2xl">
+            <div className="flex items-center justify-between p-6 border-b border-secondary-200 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-t-2xl">
               <div>
                 <h2 className="text-2xl font-bold text-gray-900">
                   {isPortuguese ? 'Processamento de Pagamento' : 'Payment Processing'}
                 </h2>
-                <p className="text-gray-600 mt-1">
+                <p className="text-secondary-600 mt-1">
                   {isPortuguese 
                     ? 'Suporte para 135+ moedas com segurança total'
                     : 'Supporting 135+ currencies with complete security'
@@ -393,7 +393,7 @@ export default function PaymentProcessor({
               </div>
               <button
                 onClick={onClose}
-                className="p-2 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-100 transition-colors"
+                className="p-2 text-gray-400 hover:text-secondary-600 rounded-lg hover:bg-secondary-100 transition-colors"
               >
                 <CreditCardIcon className="w-6 h-6" />
               </button>
@@ -407,11 +407,11 @@ export default function PaymentProcessor({
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-12"
                 >
-                  <CheckCircleIcon className="w-20 h-20 text-green-500 mx-auto mb-6" />
+                  <CheckCircleIcon className="w-20 h-20 text-action-500 mx-auto mb-6" />
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
                     {isPortuguese ? 'Pagamento Processado!' : 'Payment Processed!'}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {isPortuguese 
                       ? 'A sua reserva foi confirmada. Receberá um email de confirmação em breve.'
                       : 'Your booking has been confirmed. You will receive a confirmation email shortly.'
@@ -443,7 +443,7 @@ export default function PaymentProcessor({
                                 p-4 border-2 rounded-lg transition-all
                                 ${selectedPaymentMethod?.id === method.id
                                   ? 'border-primary-500 bg-primary-50'
-                                  : 'border-gray-200 bg-white hover:border-gray-300'
+                                  : 'border-secondary-200 bg-white hover:border-secondary-300'
                                 }
                               `}>
                                 <div className="flex items-start space-x-4">
@@ -451,7 +451,7 @@ export default function PaymentProcessor({
                                     p-3 rounded-lg
                                     ${selectedPaymentMethod?.id === method.id
                                       ? 'bg-primary-100 text-primary-600'
-                                      : 'bg-gray-100 text-gray-600'
+                                      : 'bg-secondary-100 text-secondary-600'
                                     }
                                   `}>
                                     <IconComponent className="w-6 h-6" />
@@ -460,7 +460,7 @@ export default function PaymentProcessor({
                                     <h4 className="font-semibold text-gray-900">
                                       {isPortuguese ? method.namePortuguese : method.name}
                                     </h4>
-                                    <p className="text-sm text-gray-600 mt-1">
+                                    <p className="text-sm text-secondary-600 mt-1">
                                       {isPortuguese ? method.descriptionPortuguese : method.description}
                                     </p>
                                     
@@ -476,10 +476,10 @@ export default function PaymentProcessor({
                                         <p className="text-xs text-gray-500 mb-1">
                                           {isPortuguese ? 'Requisitos:' : 'Requirements:'}
                                         </p>
-                                        <ul className="text-xs text-gray-600 space-y-1">
+                                        <ul className="text-xs text-secondary-600 space-y-1">
                                           {(isPortuguese ? method.requirementsPortuguese : method.requirements)?.map((req, index) => (
                                             <li key={index} className="flex items-center">
-                                              <div className="w-1 h-1 bg-gray-400 rounded-full mr-2" />
+                                              <div className="w-1 h-1 bg-secondary-400 rounded-full mr-2" />
                                               {req}
                                             </li>
                                           ))}
@@ -521,7 +521,7 @@ export default function PaymentProcessor({
                               p-3 border-2 rounded-lg text-center transition-all
                               ${selectedCurrency === currency.code
                                 ? 'border-secondary-500 bg-secondary-50 text-secondary-700'
-                                : 'border-gray-200 bg-white hover:border-gray-300'
+                                : 'border-secondary-200 bg-white hover:border-secondary-300'
                               }
                             `}>
                               <div className="font-semibold">{currency.symbol}</div>
@@ -541,27 +541,27 @@ export default function PaymentProcessor({
                         
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                            <label className="block text-sm font-medium text-secondary-700 mb-2">
                               {isPortuguese ? 'Número da Ordem de Compra' : 'Purchase Order Number'}
                             </label>
                             <input
                               type="text"
                               value={purchaseOrderNumber}
                               onChange={(e) => setPurchaseOrderNumber(e.target.value)}
-                              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                              className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                               placeholder="PO-2024-001"
                             />
                           </div>
                           
                           <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                            <label className="block text-sm font-medium text-secondary-700 mb-2">
                               {isPortuguese ? 'Autorização de Faturação' : 'Billing Authorization'}
                             </label>
                             <input
                               type="text"
                               value={billingAuthorization}
                               onChange={(e) => setBillingAuthorization(e.target.value)}
-                              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                              className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                               placeholder={isPortuguese ? 'Nome do aprovador' : 'Approver name'}
                             />
                           </div>
@@ -576,13 +576,13 @@ export default function PaymentProcessor({
                         </h4>
                         
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                          <label className="block text-sm font-medium text-secondary-700 mb-2">
                             {isPortuguese ? 'Número de Prestações' : 'Number of Installments'}
                           </label>
                           <select
                             value={installmentMonths}
                             onChange={(e) => setInstallmentMonths(parseInt(e.target.value))}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                            className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                           >
                             <option value={3}>3 {isPortuguese ? 'meses' : 'months'}</option>
                             <option value={6}>6 {isPortuguese ? 'meses' : 'months'}</option>
@@ -595,7 +595,7 @@ export default function PaymentProcessor({
                               type="checkbox"
                               checked={installmentTermsAccepted}
                               onChange={(e) => setInstallmentTermsAccepted(e.target.checked)}
-                              className="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500 mt-0.5"
+                              className="w-4 h-4 text-primary-600 border-secondary-300 rounded focus:ring-primary-500 mt-0.5"
                             />
                             <div className="flex-1">
                               <label className="text-sm font-medium text-gray-900 cursor-pointer">
@@ -604,7 +604,7 @@ export default function PaymentProcessor({
                                   : 'I accept the installment plan terms'
                                 }
                               </label>
-                              <p className="text-xs text-gray-600 mt-1">
+                              <p className="text-xs text-secondary-600 mt-1">
                                 {isPortuguese 
                                   ? 'Pagamentos automáticos mensais, taxa de processamento aplicável'
                                   : 'Automatic monthly payments, processing fee applicable'
@@ -619,14 +619,14 @@ export default function PaymentProcessor({
 
                   {/* Payment Summary */}
                   <div className="lg:col-span-1">
-                    <div className="bg-gray-50 rounded-lg p-6 sticky top-6">
+                    <div className="bg-secondary-50 rounded-lg p-6 sticky top-6">
                       <h3 className="text-lg font-semibold text-gray-900 mb-4">
                         {isPortuguese ? 'Resumo do Pagamento' : 'Payment Summary'}
                       </h3>
                       
                       <div className="space-y-3 mb-6">
                         <div className="flex justify-between">
-                          <span className="text-gray-600">
+                          <span className="text-secondary-600">
                             {isPortuguese ? 'Subtotal:' : 'Subtotal:'}
                           </span>
                           <span className="font-medium">
@@ -671,7 +671,7 @@ export default function PaymentProcessor({
                         </div>
                         
                         {selectedPaymentMethod?.type === 'installments' && (
-                          <div className="text-sm text-gray-600">
+                          <div className="text-sm text-secondary-600">
                             {formatCurrency(
                               (convertedAmount + convertedAmount * (selectedPaymentMethod.processingFee! / 100)) / installmentMonths,
                               selectedCurrency
@@ -684,7 +684,7 @@ export default function PaymentProcessor({
                       {paymentError && (
                         <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
                           <div className="flex items-start space-x-2">
-                            <ExclamationTriangleIcon className="w-5 h-5 text-red-600 mt-0.5" />
+                            <ExclamationTriangleIcon className="w-5 h-5 text-coral-600 mt-0.5" />
                             <p className="text-sm text-red-700">{paymentError}</p>
                           </div>
                         </div>

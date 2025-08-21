@@ -110,7 +110,6 @@ export default function ChatWindow({
 
     socketManager.onUserTimeout((userId: string, duration: number) => {
       // Handle user timeout UI update
-      console.log(`User ${userId} timed out for ${duration} seconds`)
     })
 
     socketManager.onReactionAdded((messageId: string, emoji: string, userId: string) => {
@@ -237,7 +236,7 @@ export default function ChatWindow({
       className={`bg-white rounded-xl shadow-sm overflow-hidden flex flex-col ${className}`}
     >
       {/* Chat Header */}
-      <div className="p-4 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-primary-50">
+      <div className="p-4 border-b border-secondary-200 bg-gradient-to-r from-gray-50 to-primary-50">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="bg-gradient-to-r from-primary-500 to-secondary-500 p-2 rounded-lg">
@@ -265,7 +264,7 @@ export default function ChatWindow({
                   </>
                 ) : (
                   <>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full" />
+                    <div className="w-2 h-2 bg-secondary-400 rounded-full" />
                     <span>{language === 'pt' ? 'Desconectado' : 'Disconnected'}</span>
                   </>
                 )}
@@ -285,7 +284,7 @@ export default function ChatWindow({
             )}
             
             {canModerate && (
-              <button className="p-1 text-gray-500 hover:text-gray-700 rounded-lg">
+              <button className="p-1 text-gray-500 hover:text-secondary-700 rounded-lg">
                 <Cog6ToothIcon className="w-4 h-4" />
               </button>
             )}
@@ -315,7 +314,7 @@ export default function ChatWindow({
       </div>
 
       {/* Messages Container */}
-      <div className="flex-1 overflow-y-auto p-3 space-y-3 bg-gray-50 min-h-0">
+      <div className="flex-1 overflow-y-auto p-3 space-y-3 bg-secondary-50 min-h-0">
         <AnimatePresence initial={false}>
           {messages.map((message) => (
             <ChatMessageComponent
@@ -362,7 +361,7 @@ export default function ChatWindow({
       </AnimatePresence>
 
       {/* Message Input */}
-      <div className="p-3 border-t border-gray-200">
+      <div className="p-3 border-t border-secondary-200">
         {canParticipate ? (
           <div className="space-y-2">
             <div className="flex gap-2 relative">
@@ -374,15 +373,15 @@ export default function ChatWindow({
                 onKeyPress={handleKeyPress}
                 placeholder={language === 'pt' ? 'Escreva uma mensagem...' : 'Type a message...'}
                 disabled={slowModeCountdown > 0}
-                className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm 
+                className="flex-1 px-3 py-2 border border-secondary-300 rounded-lg text-sm 
                   focus:ring-2 focus:ring-primary-500 focus:border-transparent
-                  disabled:bg-gray-100 disabled:cursor-not-allowed"
+                  disabled:bg-secondary-100 disabled:cursor-not-allowed"
                 maxLength={500}
               />
               
               <button
                 onClick={() => setIsEmotePickerOpen(!isEmotePickerOpen)}
-                className="px-3 py-2 text-gray-500 hover:text-gray-700 rounded-lg hover:bg-gray-100 
+                className="px-3 py-2 text-gray-500 hover:text-secondary-700 rounded-lg hover:bg-secondary-100 
                   transition-colors"
                 type="button"
               >
@@ -421,14 +420,14 @@ export default function ChatWindow({
                     {REGIONAL_INDICATORS[currentUser.region].name}
                   </span>
                   {currentUser.isSubscriber && <Crown className="w-3 h-3 text-premium-600" />}
-                  {currentUser.isModerator && <Shield className="w-3 h-3 text-blue-600" />}
+                  {currentUser.isModerator && <Shield className="w-3 h-3 text-primary-600" />}
                 </div>
               )}
             </div>
           </div>
         ) : (
           <div className="text-center py-4">
-            <div className="text-sm text-gray-600 mb-2">
+            <div className="text-sm text-secondary-600 mb-2">
               {!currentUser ? (
                 language === 'pt' ? 'Faça login para participar no chat' : 'Sign in to participate in chat'
               ) : (

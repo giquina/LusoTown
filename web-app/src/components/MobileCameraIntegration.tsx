@@ -121,7 +121,6 @@ export default function MobileCameraIntegration({
         videoRef.current.play();
       }
 
-      console.log('[Camera] Initialized successfully');
     } catch (error) {
       console.error('[Camera] Initialization failed:', error);
       addNotification({
@@ -156,7 +155,6 @@ export default function MobileCameraIntegration({
       scanner.render(handleQRScanSuccess, handleQRScanError);
       qrScannerRef.current = scanner;
 
-      console.log('[QR Scanner] Initialized successfully');
     } catch (error) {
       console.error('[QR Scanner] Initialization failed:', error);
       addNotification({
@@ -172,7 +170,6 @@ export default function MobileCameraIntegration({
   };
 
   const handleQRScanSuccess = (decodedText: string) => {
-    console.log('[QR Scanner] Scan successful:', decodedText);
     
     try {
       const result = parseQRCode(decodedText);
@@ -203,7 +200,6 @@ export default function MobileCameraIntegration({
   const handleQRScanError = (error: string) => {
     // Ignore frequent scanning errors
     if (!error.includes('NotFoundException')) {
-      console.log('[QR Scanner] Scan error:', error);
     }
   };
 
@@ -289,7 +285,6 @@ export default function MobileCameraIntegration({
         navigator.vibrate(50);
       }
 
-      console.log('[Camera] Photo captured successfully');
 
       addNotification({
         id: 'photo-captured',
@@ -369,13 +364,11 @@ export default function MobileCameraIntegration({
           navigator.geolocation.getCurrentPosition(resolve, reject);
         });
 
-        console.log('[Camera] Location added to photo:', position.coords);
         
         // Send location data with photo for Portuguese cultural mapping
         // This would be sent to backend for cultural site identification
         
       } catch (error) {
-        console.log('[Camera] Location not available:', error);
       }
     }
   };
@@ -469,7 +462,7 @@ export default function MobileCameraIntegration({
       <div className="flex items-center justify-between p-4 bg-black text-white">
         <button
           onClick={closeCamera}
-          className="p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
+          className="p-2 rounded-full bg-secondary-800 hover:bg-secondary-700 transition-colors"
         >
           <X className="h-6 w-6" />
         </button>
@@ -494,7 +487,7 @@ export default function MobileCameraIntegration({
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <div className="relative">
                 <div className="w-64 h-64 border-2 border-white rounded-lg"></div>
-                <ScanLine className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-8 w-8 text-white animate-pulse" />
+                <ScanLine className="absolute top-1/2 left-1/2 transform -transecondary-x-1/2 -transecondary-y-1/2 h-8 w-8 text-white animate-pulse" />
               </div>
             </div>
             
@@ -548,11 +541,11 @@ export default function MobileCameraIntegration({
                 </div>
 
                 {/* Capture button */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+                <div className="absolute bottom-8 left-1/2 transform -transecondary-x-1/2">
                   <button
                     onClick={capturePhoto}
                     disabled={isProcessing}
-                    className={`w-16 h-16 rounded-full border-4 border-white bg-red-600 hover:bg-red-700 transition-colors ${isProcessing ? 'opacity-50' : ''}`}
+                    className={`w-16 h-16 rounded-full border-4 border-white bg-coral-600 hover:bg-red-700 transition-colors ${isProcessing ? 'opacity-50' : ''}`}
                   >
                     {isProcessing ? (
                       <div className="animate-spin w-8 h-8 border-2 border-white border-t-transparent rounded-full mx-auto" />
@@ -572,10 +565,10 @@ export default function MobileCameraIntegration({
                 />
                 
                 {/* Photo actions */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4">
+                <div className="absolute bottom-8 left-1/2 transform -transecondary-x-1/2 flex space-x-4">
                   <button
                     onClick={retakePhoto}
-                    className="flex items-center space-x-2 bg-gray-800 text-white px-4 py-2 rounded-lg"
+                    className="flex items-center space-x-2 bg-secondary-800 text-white px-4 py-2 rounded-lg"
                   >
                     <RotateCcw className="h-4 w-4" />
                     <span>{language === 'pt' ? 'Repetir' : 'Retake'}</span>
@@ -583,7 +576,7 @@ export default function MobileCameraIntegration({
                   
                   <button
                     onClick={downloadImage}
-                    className="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg"
+                    className="flex items-center space-x-2 bg-primary-600 text-white px-4 py-2 rounded-lg"
                   >
                     <Download className="h-4 w-4" />
                     <span>{language === 'pt' ? 'Guardar' : 'Save'}</span>
@@ -592,7 +585,7 @@ export default function MobileCameraIntegration({
                   {navigator.share && (
                     <button
                       onClick={shareImage}
-                      className="flex items-center space-x-2 bg-green-600 text-white px-4 py-2 rounded-lg"
+                      className="flex items-center space-x-2 bg-action-600 text-white px-4 py-2 rounded-lg"
                     >
                       <Share2 className="h-4 w-4" />
                       <span>{language === 'pt' ? 'Partilhar' : 'Share'}</span>
@@ -601,7 +594,7 @@ export default function MobileCameraIntegration({
                   
                   <button
                     onClick={savePhoto}
-                    className="flex items-center space-x-2 bg-red-600 text-white px-4 py-2 rounded-lg"
+                    className="flex items-center space-x-2 bg-coral-600 text-white px-4 py-2 rounded-lg"
                   >
                     <Upload className="h-4 w-4" />
                     <span>{language === 'pt' ? 'Usar' : 'Use'}</span>
@@ -618,9 +611,9 @@ export default function MobileCameraIntegration({
         <div className="absolute bottom-4 left-4 right-4 bg-white rounded-lg p-4 shadow-lg">
           <div className="flex items-start space-x-3">
             <div className="flex-shrink-0">
-              {scanResult.type === 'business' && <MapPin className="h-6 w-6 text-red-600" />}
-              {scanResult.type === 'event' && <Heart className="h-6 w-6 text-green-600" />}
-              {scanResult.type === 'cultural-site' && <Sparkles className="h-6 w-6 text-blue-600" />}
+              {scanResult.type === 'business' && <MapPin className="h-6 w-6 text-coral-600" />}
+              {scanResult.type === 'event' && <Heart className="h-6 w-6 text-action-600" />}
+              {scanResult.type === 'cultural-site' && <Sparkles className="h-6 w-6 text-primary-600" />}
             </div>
             <div className="flex-1">
               <h3 className="font-semibold text-gray-900">
@@ -631,7 +624,7 @@ export default function MobileCameraIntegration({
                   href={scanResult.data.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 text-sm mt-1 inline-block"
+                  className="text-primary-600 hover:text-blue-800 text-sm mt-1 inline-block"
                 >
                   {language === 'pt' ? 'Abrir ligação' : 'Open link'}
                 </a>
@@ -639,7 +632,7 @@ export default function MobileCameraIntegration({
             </div>
             <button
               onClick={() => setScanResult(null)}
-              className="p-1 text-gray-400 hover:text-gray-600"
+              className="p-1 text-gray-400 hover:text-secondary-600"
             >
               <X className="h-4 w-4" />
             </button>

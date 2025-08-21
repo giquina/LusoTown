@@ -267,11 +267,11 @@ export default function SaudadeConnectionMatcher() {
       >
         {/* Progress Bar */}
         <div className="mb-8">
-          <div className="flex justify-between text-sm text-gray-600 mb-2">
+          <div className="flex justify-between text-sm text-secondary-600 mb-2">
             <span>{t('saudade.assessment.progress', 'Progress')}</span>
             <span>{assessmentStep + 1} / {assessmentQuestions.length}</span>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-2">
+          <div className="w-full bg-secondary-200 rounded-full h-2">
             <div 
               className="bg-gradient-to-r from-secondary-500 to-accent-500 h-2 rounded-full transition-all duration-500"
               style={{ width: `${((assessmentStep + 1) / assessmentQuestions.length) * 100}%` }}
@@ -284,13 +284,13 @@ export default function SaudadeConnectionMatcher() {
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
             {language === 'pt' ? question.questionPt : question.questionEn}
           </h3>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-secondary-600">
             {language === 'pt' ? question.descriptionPt : question.descriptionEn}
           </p>
         </div>
 
         {/* Saudade Intensity Scale */}
-        <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 mb-8">
+        <div className="bg-white rounded-3xl p-8 shadow-xl border border-secondary-100 mb-8">
           <div className="flex justify-between items-center mb-6">
             <span className="text-sm text-gray-500">
               {t('saudade.scale.none', 'Not at all')}
@@ -308,7 +308,7 @@ export default function SaudadeConnectionMatcher() {
                 className={`w-12 h-12 rounded-full flex items-center justify-center text-lg font-semibold transition-all ${
                   currentValue === i
                     ? 'bg-gradient-to-br from-secondary-500 to-accent-500 text-white shadow-lg transform scale-110'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
                 }`}
               >
                 {i}
@@ -323,7 +323,7 @@ export default function SaudadeConnectionMatcher() {
                 key={i}
                 className={`w-5 h-5 transition-all duration-300 ${
                   i < currentValue
-                    ? 'text-red-500'
+                    ? 'text-coral-500'
                     : 'text-gray-200'
                 }`}
               />
@@ -336,7 +336,7 @@ export default function SaudadeConnectionMatcher() {
           <button
             onClick={() => assessmentStep > 0 && setAssessmentStep(assessmentStep - 1)}
             disabled={assessmentStep === 0}
-            className="px-6 py-3 rounded-xl border-2 border-gray-300 text-gray-600 font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:border-gray-400 transition-colors"
+            className="px-6 py-3 rounded-xl border-2 border-secondary-300 text-secondary-600 font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:border-secondary-400 transition-colors"
           >
             {t('common.back', 'Back')}
           </button>
@@ -387,7 +387,7 @@ export default function SaudadeConnectionMatcher() {
         namePt: 'Saudade Cultural',
         descEn: 'You deeply miss Portuguese culture, language, and traditions',
         descPt: 'Sente profundamente a falta da cultura, língua e tradições portuguesas',
-        color: 'from-purple-500 to-indigo-500',
+        color: 'from-accent-500 to-primary-500',
         icon: MusicalNoteIcon
       },
       balanced_saudade: {
@@ -415,7 +415,7 @@ export default function SaudadeConnectionMatcher() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, type: 'spring' }}
-            className="inline-flex items-center gap-4 bg-white rounded-3xl p-8 shadow-2xl border border-gray-100 mb-8"
+            className="inline-flex items-center gap-4 bg-white rounded-3xl p-8 shadow-2xl border border-secondary-100 mb-8"
           >
             <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${typeInfo.color} flex items-center justify-center`}>
               <Icon className="w-10 h-10 text-white" />
@@ -424,7 +424,7 @@ export default function SaudadeConnectionMatcher() {
               <h3 className="text-3xl font-bold text-gray-900 mb-2">
                 {language === 'pt' ? typeInfo.namePt : typeInfo.nameEn}
               </h3>
-              <p className="text-lg text-gray-600 max-w-md">
+              <p className="text-lg text-secondary-600 max-w-md">
                 {language === 'pt' ? typeInfo.descPt : typeInfo.descEn}
               </p>
               <div className="mt-3 flex items-center gap-2">
@@ -436,7 +436,7 @@ export default function SaudadeConnectionMatcher() {
                     <HeartSolid
                       key={i}
                       className={`w-4 h-4 ${
-                        i < profile.average ? 'text-red-500' : 'text-gray-200'
+                        i < profile.average ? 'text-coral-500' : 'text-gray-200'
                       }`}
                     />
                   ))}
@@ -449,7 +449,7 @@ export default function SaudadeConnectionMatcher() {
           <h2 className="text-4xl font-black text-gray-900 mb-4">
             {t('saudade.results.title', 'Your Saudade Connection Matches')}
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          <p className="text-xl text-secondary-700 max-w-3xl mx-auto">
             {t('saudade.results.subtitle', 'Based on your emotional profile, we\'ve found people, groups, and activities to help you feel more connected to home')}
           </p>
         </div>
@@ -461,7 +461,7 @@ export default function SaudadeConnectionMatcher() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+            className="bg-white rounded-3xl p-8 shadow-xl border border-secondary-100"
           >
             <div className="text-center mb-6">
               <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -470,14 +470,14 @@ export default function SaudadeConnectionMatcher() {
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 {t('saudade.buddies.title', 'Saudade Buddies')}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-secondary-600">
                 {t('saudade.buddies.desc', 'Connect with others who understand your specific type of longing')}
               </p>
             </div>
             
             <div className="space-y-4 mb-6">
               {matches.slice(0, 2).map((match) => (
-                <div key={match.id} className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
+                <div key={match.id} className="flex items-center gap-3 p-4 bg-secondary-50 rounded-xl">
                   <div className="w-12 h-12 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full flex items-center justify-center">
                     <span className="text-white font-semibold text-lg">
                       {match.name.charAt(0)}
@@ -485,7 +485,7 @@ export default function SaudadeConnectionMatcher() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <h4 className="font-semibold text-gray-900 truncate">{match.name}</h4>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-secondary-600">
                       {match.compatibilityScore}% {t('common.compatibility', 'compatibility')} • {match.location}
                     </p>
                   </div>
@@ -514,27 +514,27 @@ export default function SaudadeConnectionMatcher() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+            className="bg-white rounded-3xl p-8 shadow-xl border border-secondary-100"
           >
             <div className="text-center mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-accent-500 to-primary-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <UsersIcon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 {t('saudade.groups.title', 'Support Groups')}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-secondary-600">
                 {t('saudade.groups.desc', 'Join caring communities that provide emotional support and understanding')}
               </p>
             </div>
             
             <div className="space-y-4 mb-6">
               {supportGroups.map((group) => (
-                <div key={group.id} className="p-4 bg-gray-50 rounded-xl">
+                <div key={group.id} className="p-4 bg-secondary-50 rounded-xl">
                   <h4 className="font-semibold text-gray-900 mb-2">
                     {language === 'pt' ? group.namePt : group.nameEn}
                   </h4>
-                  <p className="text-sm text-gray-600 mb-3">
+                  <p className="text-sm text-secondary-600 mb-3">
                     {language === 'pt' ? group.descriptionPt : group.descriptionEn}
                   </p>
                   <div className="flex justify-between text-xs text-gray-500">
@@ -545,7 +545,7 @@ export default function SaudadeConnectionMatcher() {
               ))}
             </div>
             
-            <button className="w-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
+            <button className="w-full bg-gradient-to-r from-accent-500 to-primary-500 text-white py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
               {t('saudade.groups.cta', 'Join a Group')}
             </button>
           </motion.div>
@@ -555,7 +555,7 @@ export default function SaudadeConnectionMatcher() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+            className="bg-white rounded-3xl p-8 shadow-xl border border-secondary-100"
           >
             <div className="text-center mb-6">
               <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -564,18 +564,18 @@ export default function SaudadeConnectionMatcher() {
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 {t('saudade.activities.title', 'Comfort Activities')}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-secondary-600">
                 {t('saudade.activities.desc', 'Therapeutic activities rooted in Portuguese traditions to ease your saudade')}
               </p>
             </div>
             
             <div className="space-y-4 mb-6">
               {comfortActivities.map((activity) => (
-                <div key={activity.id} className="p-4 bg-gray-50 rounded-xl">
+                <div key={activity.id} className="p-4 bg-secondary-50 rounded-xl">
                   <h4 className="font-semibold text-gray-900 mb-2">
                     {language === 'pt' ? activity.namePt : activity.nameEn}
                   </h4>
-                  <p className="text-sm text-gray-600 mb-3">
+                  <p className="text-sm text-secondary-600 mb-3">
                     {language === 'pt' ? activity.descriptionPt : activity.descriptionEn}
                   </p>
                   <div className="flex justify-between items-center text-xs text-gray-500">
@@ -606,7 +606,7 @@ export default function SaudadeConnectionMatcher() {
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
               {t('saudade.cta.title', 'Ready to Heal Your Saudade?')}
             </h3>
-            <p className="text-lg text-gray-700 mb-6 max-w-3xl mx-auto">
+            <p className="text-lg text-secondary-700 mb-6 max-w-3xl mx-auto">
               {t('saudade.cta.desc', 'Join our Portuguese community platform to connect with people who truly understand your journey')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -636,7 +636,7 @@ export default function SaudadeConnectionMatcher() {
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-3 bg-gradient-to-r from-red-50 to-pink-50 border border-red-200 rounded-3xl px-6 py-3 mb-6"
           >
-            <HeartSolid className="w-5 h-5 text-red-500" />
+            <HeartSolid className="w-5 h-5 text-coral-500" />
             <span className="font-semibold text-red-700">
               {t('saudade.badge', 'Saudade Connection System')}
             </span>
@@ -650,7 +650,7 @@ export default function SaudadeConnectionMatcher() {
           >
             {t('saudade.title', 'Find Others Who Understand Your')}
             <br />
-            <span className="bg-gradient-to-r from-red-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-red-600 via-pink-600 to-accent-600 bg-clip-text text-transparent">
               {t('saudade.saudade', 'Saudade')}
             </span>
           </motion.h1>
@@ -659,7 +659,7 @@ export default function SaudadeConnectionMatcher() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl sm:text-2xl text-gray-700 max-w-4xl mx-auto"
+            className="text-xl sm:text-2xl text-secondary-700 max-w-4xl mx-auto"
           >
             {t('saudade.subtitle', 'Connect with Portuguese speakers who share your unique emotional journey of longing, homesickness, and cultural displacement')}
           </motion.p>

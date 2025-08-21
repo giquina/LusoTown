@@ -272,7 +272,7 @@ const PortugueseCommunityActivity: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="animate-pulse space-y-4">
             {Array(4).fill(0).map((_, i) => (
-              <div key={i} className="bg-gray-200 h-20 rounded-lg"></div>
+              <div key={i} className="bg-secondary-200 h-20 rounded-lg"></div>
             ))}
           </div>
         </div>
@@ -294,7 +294,7 @@ const PortugueseCommunityActivity: React.FC = () => {
             <h2 className="text-2xl font-bold text-gray-900 mb-2">
               {language === "pt" ? "Confiança e Segurança Cultural" : "Cultural Trust & Safety"}
             </h2>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {language === "pt" 
                 ? "Nossa comunidade prioriza a autenticidade e sensibilidade cultural portuguesa"
                 : "Our community prioritizes authenticity and Portuguese cultural sensitivity"}
@@ -317,7 +317,7 @@ const PortugueseCommunityActivity: React.FC = () => {
                       {language === "pt" ? indicator.name.pt : indicator.name.en}
                     </h3>
                     <div className="flex items-center gap-2">
-                      <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div className="flex-1 bg-secondary-200 rounded-full h-2">
                         <div 
                           className="bg-gradient-to-r from-primary-500 to-secondary-500 h-2 rounded-full transition-all duration-500"
                           style={{ width: `${indicator.score}%` }}
@@ -327,7 +327,7 @@ const PortugueseCommunityActivity: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <p className="text-xs text-gray-600 leading-relaxed">
+                <p className="text-xs text-secondary-600 leading-relaxed">
                   {language === "pt" ? indicator.culturalContext.pt : indicator.culturalContext.en}
                 </p>
               </motion.div>
@@ -347,7 +347,7 @@ const PortugueseCommunityActivity: React.FC = () => {
               <h2 className="text-2xl font-bold text-gray-900 mb-1">
                 {language === "pt" ? "Atividade da Comunidade" : "Community Activity"}
               </h2>
-              <p className="text-gray-600 flex items-center gap-2">
+              <p className="text-secondary-600 flex items-center gap-2">
                 <ArrowTrendingUpIcon className="w-4 h-4 text-primary-500" />
                 {language === "pt" 
                   ? "Últimas atualizações da nossa comunidade lusófona"
@@ -358,7 +358,7 @@ const PortugueseCommunityActivity: React.FC = () => {
               <div className="text-2xl font-bold text-primary-600">
                 {activities.length}
               </div>
-              <div className="text-xs text-gray-600">
+              <div className="text-xs text-secondary-600">
                 {language === "pt" ? "atividades hoje" : "activities today"}
               </div>
             </div>
@@ -371,7 +371,7 @@ const PortugueseCommunityActivity: React.FC = () => {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white border border-gray-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
+                className="bg-white border border-secondary-100 rounded-xl p-6 hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-start gap-4">
                   {/* Activity Icon */}
@@ -386,17 +386,17 @@ const PortugueseCommunityActivity: React.FC = () => {
                         <h3 className="font-semibold text-gray-900 text-lg mb-1">
                           {language === "pt" ? activity.title.pt : activity.title.en}
                         </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed">
+                        <p className="text-secondary-600 text-sm leading-relaxed">
                           {language === "pt" ? activity.description.pt : activity.description.en}
                         </p>
                       </div>
                       {activity.verified && (
-                        <CheckBadgeIcon className="w-5 h-5 text-green-500 flex-shrink-0 ml-2" />
+                        <CheckBadgeIcon className="w-5 h-5 text-action-500 flex-shrink-0 ml-2" />
                       )}
                     </div>
 
                     {/* Actor Info */}
-                    <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                    <div className="flex items-center gap-4 text-sm text-secondary-600 mb-3">
                       <div className="flex items-center gap-2">
                         <span className="text-base">{activity.actor.flag}</span>
                         <span className="font-medium">{activity.actor.name}</span>
@@ -420,7 +420,7 @@ const PortugueseCommunityActivity: React.FC = () => {
                           {language === "pt" ? "Confiança:" : "Trust:"}
                         </span>
                         <div className="flex items-center gap-1">
-                          <div className="w-16 bg-gray-200 rounded-full h-1.5">
+                          <div className="w-16 bg-secondary-200 rounded-full h-1.5">
                             <div 
                               className="bg-gradient-to-r from-primary-500 to-secondary-500 h-1.5 rounded-full"
                               style={{ width: `${activity.trustScore}%` }}
@@ -461,19 +461,19 @@ const PortugueseCommunityActivity: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                 <div className="flex items-center justify-center gap-2">
                   <ChatBubbleLeftRightIcon className="w-4 h-4 text-primary-500" />
-                  <span className="text-gray-700">
+                  <span className="text-secondary-700">
                     {language === "pt" ? "24 conversas ativas hoje" : "24 active conversations today"}
                   </span>
                 </div>
                 <div className="flex items-center justify-center gap-2">
                   <CalendarDaysIcon className="w-4 h-4 text-secondary-500" />
-                  <span className="text-gray-700">
+                  <span className="text-secondary-700">
                     {language === "pt" ? "8 novos eventos esta semana" : "8 new events this week"}
                   </span>
                 </div>
                 <div className="flex items-center justify-center gap-2">
                   <UsersIcon className="w-4 h-4 text-accent-500" />
-                  <span className="text-gray-700">
+                  <span className="text-secondary-700">
                     {language === "pt" ? "15 novos membros hoje" : "15 new members today"}
                   </span>
                 </div>

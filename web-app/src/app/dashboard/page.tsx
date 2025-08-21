@@ -200,9 +200,9 @@ export default function Dashboard() {
 
   const getMembershipBadge = (tier: string) => {
     const badges = {
-      free: { icon: <UserIcon className="w-3 h-3" />, color: 'bg-gray-100 text-gray-600', label: 'Free' },
+      free: { icon: <UserIcon className="w-3 h-3" />, color: 'bg-secondary-100 text-secondary-600', label: 'Free' },
       core: { icon: <Star className="w-3 h-3" />, color: 'bg-[#FF6B6B] text-white', label: 'Core' },
-      premium: { icon: <Crown className="w-3 h-3" />, color: 'bg-gradient-to-r from-purple-500 to-pink-500 text-white', label: 'Premium' }
+      premium: { icon: <Crown className="w-3 h-3" />, color: 'bg-gradient-to-r from-accent-500 to-pink-500 text-white', label: 'Premium' }
     }
     return badges[tier as keyof typeof badges] || badges.free
   }
@@ -214,7 +214,7 @@ export default function Dashboard() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-secondary-50 flex items-center justify-center">
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#FF6B6B]"></div>
       </div>
     )
@@ -229,7 +229,7 @@ export default function Dashboard() {
   const accessibleEvents = upcomingEvents.filter(e => canAccessEvent(e.membershipRequired, user.membershipTier))
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       
       {/* Dashboard Content */}
       <div className="pt-16 bg-white shadow-sm border-b">
@@ -247,7 +247,7 @@ export default function Dashboard() {
                     {getMembershipBadge(user.membershipTier).label} Member
                   </span>
                   {user.role === 'admin' && (
-                    <span className="px-2 py-1 bg-purple-100 text-purple-600 rounded-full text-xs font-medium flex items-center space-x-1">
+                    <span className="px-2 py-1 bg-accent-100 text-accent-600 rounded-full text-xs font-medium flex items-center space-x-1">
                       <Shield className="w-3 h-3" />
                       <span>Admin</span>
                     </span>
@@ -257,7 +257,7 @@ export default function Dashboard() {
             </div>
             <button
               onClick={handleLogout}
-              className="flex items-center space-x-2 px-4 py-2 bg-red-100 text-red-600 rounded-lg hover:bg-red-200 transition-colors"
+              className="flex items-center space-x-2 px-4 py-2 bg-red-100 text-coral-600 rounded-lg hover:bg-red-200 transition-colors"
             >
               <LogOut className="w-4 h-4" />
               <span>Logout</span>
@@ -276,7 +276,7 @@ export default function Dashboard() {
                   {user.name.split(' ').map(n => n[0]).join('')}
                 </div>
                 <h3 className="font-semibold text-gray-900">{user.name}</h3>
-                <p className="text-gray-600 text-sm">{user.location}</p>
+                <p className="text-secondary-600 text-sm">{user.location}</p>
               </div>
               
               <nav className="space-y-2">
@@ -296,7 +296,7 @@ export default function Dashboard() {
                     className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors ${
                       activeTab === tab.id
                         ? 'bg-primary-500 text-white'
-                        : 'text-gray-600 hover:bg-gray-100'
+                        : 'text-secondary-600 hover:bg-secondary-100'
                     }`}
                   >
                     {tab.icon}
@@ -335,7 +335,7 @@ export default function Dashboard() {
                   <div className="bg-white rounded-xl shadow-sm p-6">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-gray-600 text-sm">{language === 'pt' ? 'Conexões da Rede' : 'Network Connections'}</p>
+                        <p className="text-secondary-600 text-sm">{language === 'pt' ? 'Conexões da Rede' : 'Network Connections'}</p>
                         <p className="text-2xl font-bold text-gray-900">{stats.totalConnections}</p>
                       </div>
                       <Network className="w-8 h-8 text-primary-500" />
@@ -344,7 +344,7 @@ export default function Dashboard() {
                   <div className="bg-white rounded-xl shadow-sm p-6">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-gray-600 text-sm">{language === 'pt' ? 'Eventos Participados' : 'Events Attended'}</p>
+                        <p className="text-secondary-600 text-sm">{language === 'pt' ? 'Eventos Participados' : 'Events Attended'}</p>
                         <p className="text-2xl font-bold text-gray-900">{stats.eventsAttended}</p>
                       </div>
                       <Calendar className="w-8 h-8 text-secondary-500" />
@@ -353,7 +353,7 @@ export default function Dashboard() {
                   <div className="bg-white rounded-xl shadow-sm p-6">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-gray-600 text-sm">{language === 'pt' ? 'Pontos da Plataforma' : 'Platform Points'}</p>
+                        <p className="text-secondary-600 text-sm">{language === 'pt' ? 'Pontos da Plataforma' : 'Platform Points'}</p>
                         <p className="text-2xl font-bold text-gray-900">{userJourney?.lifetimeValue || 0}</p>
                       </div>
                       <Star className="w-8 h-8 text-accent-500" />
@@ -371,16 +371,16 @@ export default function Dashboard() {
                     <div className="space-y-4">
                       <h3 className="font-medium text-gray-900">{language === 'pt' ? 'Estatísticas da Rede' : 'Network Stats'}</h3>
                       <div className="space-y-3">
-                        <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                          <span className="text-gray-600">{language === 'pt' ? 'Total de Conexões' : 'Total Connections'}</span>
+                        <div className="flex justify-between items-center p-3 bg-secondary-50 rounded-lg">
+                          <span className="text-secondary-600">{language === 'pt' ? 'Total de Conexões' : 'Total Connections'}</span>
                           <span className="font-semibold text-primary-600">{stats.totalConnections}</span>
                         </div>
-                        <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                          <span className="text-gray-600">{language === 'pt' ? 'Eventos Compartilhados' : 'Shared Events'}</span>
+                        <div className="flex justify-between items-center p-3 bg-secondary-50 rounded-lg">
+                          <span className="text-secondary-600">{language === 'pt' ? 'Eventos Compartilhados' : 'Shared Events'}</span>
                           <span className="font-semibold text-secondary-600">{stats.eventsAttended}</span>
                         </div>
-                        <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                          <span className="text-gray-600">{language === 'pt' ? 'Crescimento Mensal' : 'Monthly Growth'}</span>
+                        <div className="flex justify-between items-center p-3 bg-secondary-50 rounded-lg">
+                          <span className="text-secondary-600">{language === 'pt' ? 'Crescimento Mensal' : 'Monthly Growth'}</span>
                           <span className="font-semibold text-accent-600">+{stats.monthlyGrowth || 0}</span>
                         </div>
                       </div>
@@ -389,13 +389,13 @@ export default function Dashboard() {
                       <h3 className="font-medium text-gray-900">{language === 'pt' ? 'Conexões Recentes' : 'Recent Connections'}</h3>
                       <div className="space-y-3">
                         {connections.slice(0, 3).map(connection => (
-                          <div key={connection.id} className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                          <div key={connection.id} className="flex items-center space-x-3 p-3 bg-secondary-50 rounded-lg">
                             <div className="w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center text-white text-sm font-medium">
                               {connection.connectedUser.firstName.split(' ').map(n => n[0]).join('')}
                             </div>
                             <div>
                               <p className="font-medium text-gray-900">{connection.connectedUser.firstName} {connection.connectedUser.lastName || ''}</p>
-                              <p className="text-sm text-gray-600">{connection.sharedEventsCount} {language === 'pt' ? 'eventos compartilhados' : 'shared events'}</p>
+                              <p className="text-sm text-secondary-600">{connection.sharedEventsCount} {language === 'pt' ? 'eventos compartilhados' : 'shared events'}</p>
                             </div>
                           </div>
                         ))}
@@ -411,13 +411,13 @@ export default function Dashboard() {
                 <div className="bg-white rounded-xl shadow-sm p-6">
                   <h2 className="text-xl font-semibold text-gray-900 mb-6">{language === 'pt' ? 'Seus Serviços' : 'Your Services'}</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="border border-gray-200 rounded-lg p-6">
+                    <div className="border border-secondary-200 rounded-lg p-6">
                       <div className="flex items-center space-x-3 mb-4">
                         <Car className="w-6 h-6 text-primary-500" />
                         <h3 className="font-semibold text-gray-900">{language === 'pt' ? 'Transporte Premium' : 'Premium Transport'}</h3>
                       </div>
-                      <p className="text-gray-600 mb-4">{language === 'pt' ? 'Serviços de transporte profissional com foco na comunidade portuguesa' : 'Professional transport services with Portuguese community focus'}</p>
-                      <div className="space-y-2 text-sm text-gray-600 mb-4">
+                      <p className="text-secondary-600 mb-4">{language === 'pt' ? 'Serviços de transporte profissional com foco na comunidade portuguesa' : 'Professional transport services with Portuguese community focus'}</p>
+                      <div className="space-y-2 text-sm text-secondary-600 mb-4">
                         <p>• {language === 'pt' ? 'Motoristas que falam português' : 'Portuguese-speaking drivers'}</p>
                         <p>• {language === 'pt' ? 'Segurança licenciada SIA' : 'SIA-licensed security'}</p>
                         <p>• {language === 'pt' ? 'Tours culturais portugueses' : 'Portuguese cultural tours'}</p>
@@ -429,13 +429,13 @@ export default function Dashboard() {
                         {language === 'pt' ? 'Reservar Transporte' : 'Book Transport'}
                       </button>
                     </div>
-                    <div className="border border-gray-200 rounded-lg p-6">
+                    <div className="border border-secondary-200 rounded-lg p-6">
                       <div className="flex items-center space-x-3 mb-4">
                         <Users className="w-6 h-6 text-secondary-500" />
                         <h3 className="font-semibold text-gray-900">{language === 'pt' ? 'Suporte Comunitário' : 'Community Support'}</h3>
                       </div>
-                      <p className="text-gray-600 mb-4">{language === 'pt' ? 'Assistência habitacional, grupos de vizinhança e mentoria' : 'Housing assistance, neighborhood groups, and mentorship'}</p>
-                      <div className="space-y-2 text-sm text-gray-600 mb-4">
+                      <p className="text-secondary-600 mb-4">{language === 'pt' ? 'Assistência habitacional, grupos de vizinhança e mentoria' : 'Housing assistance, neighborhood groups, and mentorship'}</p>
+                      <div className="space-y-2 text-sm text-secondary-600 mb-4">
                         <p>• {language === 'pt' ? 'Assistência habitacional' : 'Housing assistance'}</p>
                         <p>• {language === 'pt' ? 'Grupos de vizinhança' : 'Neighborhood groups'}</p>
                         <p>• {language === 'pt' ? 'Programas de mentoria' : 'Mentorship programs'}</p>
@@ -460,7 +460,7 @@ export default function Dashboard() {
                       <h2 className="text-xl font-semibold text-gray-900">
                         {t('dashboard.social.title')}
                       </h2>
-                      <p className="text-gray-600">
+                      <p className="text-secondary-600">
                         {t('dashboard.social.subtitle')}
                       </p>
                     </div>
@@ -480,11 +480,11 @@ export default function Dashboard() {
                 
                 {/* Additional Social Features */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                  <div className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">
                       {t('dashboard.social.share_events')}
                     </h3>
-                    <p className="text-gray-600 mb-4">
+                    <p className="text-secondary-600 mb-4">
                       {t('dashboard.social.share_events_desc')}
                     </p>
                     <button 
@@ -496,11 +496,11 @@ export default function Dashboard() {
                     </button>
                   </div>
                   
-                  <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                  <div className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">
                       {t('dashboard.social.follow_lusotown')}
                     </h3>
-                    <p className="text-gray-600 mb-4">
+                    <p className="text-secondary-600 mb-4">
                       {t('dashboard.social.follow_desc')}
                     </p>
                     <a
@@ -522,7 +522,7 @@ export default function Dashboard() {
                 <h2 className="text-xl font-semibold text-gray-900 mb-6">All Events</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {upcomingEvents.map(event => (
-                    <div key={event.id} className="border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow">
+                    <div key={event.id} className="border border-secondary-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow">
                       <div className="h-48 relative">
                         <EventImageWithFallback
                           src={event.image}
@@ -545,7 +545,7 @@ export default function Dashboard() {
                           <h3 className="font-semibold text-gray-900 flex-1">{event.title}</h3>
                           <button
                             onClick={() => toggleFavorite(event.id)}
-                            className="ml-2 p-1 hover:bg-gray-100 rounded-full transition-colors"
+                            className="ml-2 p-1 hover:bg-secondary-100 rounded-full transition-colors"
                           >
                             <Heart
                               className={`w-5 h-5 ${
@@ -556,8 +556,8 @@ export default function Dashboard() {
                             />
                           </button>
                         </div>
-                        <p className="text-gray-600 text-sm mb-3">{event.description}</p>
-                        <div className="space-y-2 text-sm text-gray-600">
+                        <p className="text-secondary-600 text-sm mb-3">{event.description}</p>
+                        <div className="space-y-2 text-sm text-secondary-600">
                           <div className="flex items-center space-x-2">
                             <Calendar className="w-4 h-4" />
                             <span>{event.date} at {event.time}</span>
@@ -580,7 +580,7 @@ export default function Dashboard() {
                               {language === 'pt' ? 'Participar' : 'Join Event'}
                             </button>
                           ) : (
-                            <button className="px-4 py-2 bg-gray-300 text-gray-500 rounded-lg cursor-not-allowed text-sm">
+                            <button className="px-4 py-2 bg-secondary-300 text-gray-500 rounded-lg cursor-not-allowed text-sm">
                               {language === 'pt' ? 'Upgrade Necessário' : 'Upgrade Needed'}
                             </button>
                           )}
@@ -599,7 +599,7 @@ export default function Dashboard() {
                   <div className="text-center py-12">
                     <Heart className="w-16 h-16 text-gray-300 mx-auto mb-4" />
                     <h3 className="text-lg font-medium text-gray-900 mb-2">No favorites yet</h3>
-                    <p className="text-gray-600 mb-6">Start adding events to your favorites to see them here!</p>
+                    <p className="text-secondary-600 mb-6">Start adding events to your favorites to see them here!</p>
                     <button 
                       onClick={() => setActiveTab('events')}
                       className="px-6 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors"
@@ -610,7 +610,7 @@ export default function Dashboard() {
                 ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {favoriteEvents.map(event => (
-                      <div key={event.id} className="border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow">
+                      <div key={event.id} className="border border-secondary-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow">
                         <div className="h-48 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] flex items-center justify-center">
                           <div className="text-white text-center">
                             {getCategoryIcon(event.category)}
@@ -622,13 +622,13 @@ export default function Dashboard() {
                             <h3 className="font-semibold text-gray-900 flex-1">{event.title}</h3>
                             <button
                               onClick={() => toggleFavorite(event.id)}
-                              className="ml-2 p-1 hover:bg-gray-100 rounded-full transition-colors"
+                              className="ml-2 p-1 hover:bg-secondary-100 rounded-full transition-colors"
                             >
                               <Heart className="w-5 h-5 text-[#FF6B6B] fill-current" />
                             </button>
                           </div>
-                          <p className="text-gray-600 text-sm mb-3">{event.description}</p>
-                          <div className="space-y-2 text-sm text-gray-600">
+                          <p className="text-secondary-600 text-sm mb-3">{event.description}</p>
+                          <div className="space-y-2 text-sm text-secondary-600">
                             <div className="flex items-center space-x-2">
                               <Calendar className="w-4 h-4" />
                               <span>{event.date} at {event.time}</span>
@@ -657,34 +657,34 @@ export default function Dashboard() {
                 <div className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                      <label className="block text-sm font-medium text-secondary-700 mb-2">Name</label>
                       <input
                         type="text"
                         value={user.name}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-[#FF6B6B] focus:border-[#FF6B6B]"
+                        className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-[#FF6B6B] focus:border-[#FF6B6B]"
                         readOnly
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                      <label className="block text-sm font-medium text-secondary-700 mb-2">Email</label>
                       <input
                         type="email"
                         value={user.email}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-[#FF6B6B] focus:border-[#FF6B6B]"
+                        className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-[#FF6B6B] focus:border-[#FF6B6B]"
                         readOnly
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Location</label>
+                      <label className="block text-sm font-medium text-secondary-700 mb-2">Location</label>
                       <input
                         type="text"
                         value={user.location}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-[#FF6B6B] focus:border-[#FF6B6B]"
+                        className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-[#FF6B6B] focus:border-[#FF6B6B]"
                         readOnly
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Membership</label>
+                      <label className="block text-sm font-medium text-secondary-700 mb-2">Membership</label>
                       <div className="flex items-center space-x-2">
                         {getMembershipBadge(user.membershipTier).icon}
                         <span className={`px-3 py-2 rounded-lg text-sm font-medium ${getMembershipBadge(user.membershipTier).color}`}>
@@ -695,7 +695,7 @@ export default function Dashboard() {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-3">Interests</label>
+                    <label className="block text-sm font-medium text-secondary-700 mb-3">Interests</label>
                     <div className="flex flex-wrap gap-2">
                       {user.interests.map((interest, index) => (
                         <span
@@ -708,12 +708,12 @@ export default function Dashboard() {
                     </div>
                   </div>
 
-                  <div className="pt-6 border-t border-gray-200">
+                  <div className="pt-6 border-t border-secondary-200">
                     <div className="flex space-x-4">
                       <button className="px-6 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors">
                         {language === 'pt' ? 'Atualizar Perfil' : 'Update Profile'}
                       </button>
-                      <button className="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors">
+                      <button className="px-6 py-3 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-secondary-50 transition-colors">
                         {language === 'pt' ? 'Alterar Senha' : 'Change Password'}
                       </button>
                     </div>

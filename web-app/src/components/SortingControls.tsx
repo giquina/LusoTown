@@ -42,7 +42,7 @@ export default function SortingControls({ sortBy, onSortChange }: SortingControl
       <select
         value={sortBy}
         onChange={(e) => onSortChange(e.target.value as any)}
-        className="appearance-none bg-white border border-gray-200 rounded-lg px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent cursor-pointer min-w-[200px] min-h-[44px]"
+        className="appearance-none bg-white border border-secondary-200 rounded-lg px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent cursor-pointer min-w-[200px] min-h-[44px]"
       >
         {sortOptions.map((option) => (
           <option key={option.value} value={option.value}>
@@ -51,7 +51,7 @@ export default function SortingControls({ sortBy, onSortChange }: SortingControl
         ))}
       </select>
       
-      <ChevronDownIcon className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+      <ChevronDownIcon className="absolute right-3 top-1/2 transform -transecondary-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
     </div>
   )
 }

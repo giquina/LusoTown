@@ -70,7 +70,7 @@ export default function ConnectionFilters({
         className={`flex items-center gap-2 px-4 py-3 rounded-lg border transition-all duration-200 ${
           hasActiveFilters || showFilters
             ? 'bg-primary-50 border-primary-200 text-primary-700'
-            : 'bg-white border-gray-200 text-gray-600 hover:border-gray-300'
+            : 'bg-white border-secondary-200 text-secondary-600 hover:border-secondary-300'
         }`}
       >
         <FunnelIcon className="w-5 h-5" />
@@ -91,7 +91,7 @@ export default function ConnectionFilters({
             initial={{ opacity: 0, y: -10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
-            className="absolute top-full left-0 mt-2 w-80 bg-white rounded-2xl shadow-xl border border-gray-200 z-20 p-6"
+            className="absolute top-full left-0 mt-2 w-80 bg-white rounded-2xl shadow-xl border border-secondary-200 z-20 p-6"
           >
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
@@ -103,7 +103,7 @@ export default function ConnectionFilters({
               </div>
               <button
                 onClick={() => setShowFilters(false)}
-                className="p-1 text-gray-400 hover:text-gray-600 transition-colors"
+                className="p-1 text-gray-400 hover:text-secondary-600 transition-colors"
               >
                 <XMarkIcon className="w-5 h-5" />
               </button>
@@ -112,14 +112,14 @@ export default function ConnectionFilters({
             <div className="space-y-6">
               {/* Membership Tier */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
+                <label className="flex items-center gap-2 text-sm font-medium text-secondary-700 mb-2">
                   <UserGroupIcon className="w-4 h-4" />
                   {isPortuguese ? 'Tipo de Membro' : 'Membership Type'}
                 </label>
                 <select
                   value={activeFilters.membershipTier || ''}
                   onChange={(e) => handleFilterChange('membershipTier', e.target.value as any)}
-                  className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
                 >
                   {membershipOptions.map((option) => (
                     <option key={option.value} value={option.value}>
@@ -131,7 +131,7 @@ export default function ConnectionFilters({
 
               {/* Location */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
+                <label className="flex items-center gap-2 text-sm font-medium text-secondary-700 mb-2">
                   <MapPinIcon className="w-4 h-4" />
                   {isPortuguese ? 'Localização' : 'Location'}
                 </label>
@@ -140,20 +140,20 @@ export default function ConnectionFilters({
                   placeholder={isPortuguese ? 'ex: Camberwell, Kennington...' : 'e.g. Camberwell, Kennington...'}
                   value={activeFilters.location || ''}
                   onChange={(e) => handleFilterChange('location', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
                 />
               </div>
 
               {/* Connection Strength */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
+                <label className="flex items-center gap-2 text-sm font-medium text-secondary-700 mb-2">
                   <StarIcon className="w-4 h-4" />
                   {isPortuguese ? 'Força da Conexão' : 'Connection Strength'}
                 </label>
                 <select
                   value={activeFilters.connectionStrength || ''}
                   onChange={(e) => handleFilterChange('connectionStrength', e.target.value as any)}
-                  className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
                 >
                   {strengthOptions.map((option) => (
                     <option key={option.value} value={option.value}>
@@ -165,7 +165,7 @@ export default function ConnectionFilters({
 
               {/* Minimum Shared Events */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
+                <label className="flex items-center gap-2 text-sm font-medium text-secondary-700 mb-2">
                   <CalendarIcon className="w-4 h-4" />
                   {isPortuguese ? 'Eventos Mínimos em Comum' : 'Minimum Shared Events'}
                 </label>
@@ -176,20 +176,20 @@ export default function ConnectionFilters({
                   placeholder="0"
                   value={activeFilters.minSharedEvents || ''}
                   onChange={(e) => handleFilterChange('minSharedEvents', parseInt(e.target.value) || undefined)}
-                  className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
                 />
               </div>
 
               {/* Last Interaction */}
               <div>
-                <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
+                <label className="flex items-center gap-2 text-sm font-medium text-secondary-700 mb-2">
                   <CalendarIcon className="w-4 h-4" />
                   {isPortuguese ? 'Última Interação' : 'Last Interaction'}
                 </label>
                 <select
                   value={activeFilters.lastInteractionDays || ''}
                   onChange={(e) => handleFilterChange('lastInteractionDays', parseInt(e.target.value) || undefined)}
-                  className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
                 >
                   {interactionOptions.map((option) => (
                     <option key={option.value} value={option.value}>
@@ -206,11 +206,11 @@ export default function ConnectionFilters({
                     type="checkbox"
                     checked={activeFilters.isVerified === true}
                     onChange={(e) => handleFilterChange('isVerified', e.target.checked || undefined)}
-                    className="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
+                    className="w-4 h-4 text-primary-600 border-secondary-300 rounded focus:ring-primary-500"
                   />
                   <div className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-4 h-4 text-blue-500" />
-                    <span className="text-sm font-medium text-gray-700">
+                    <CheckCircleIcon className="w-4 h-4 text-primary-500" />
+                    <span className="text-sm font-medium text-secondary-700">
                       {isPortuguese ? 'Apenas verificados' : 'Verified only'}
                     </span>
                   </div>
@@ -219,10 +219,10 @@ export default function ConnectionFilters({
             </div>
 
             {/* Actions */}
-            <div className="flex gap-3 mt-6 pt-6 border-t border-gray-200">
+            <div className="flex gap-3 mt-6 pt-6 border-t border-secondary-200">
               <button
                 onClick={onClearFilters}
-                className="flex-1 px-4 py-2 text-gray-600 hover:text-gray-800 transition-colors text-sm font-medium"
+                className="flex-1 px-4 py-2 text-secondary-600 hover:text-secondary-800 transition-colors text-sm font-medium"
                 disabled={!hasActiveFilters}
               >
                 {isPortuguese ? 'Limpar' : 'Clear'}

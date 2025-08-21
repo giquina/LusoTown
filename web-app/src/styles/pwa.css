@@ -423,7 +423,7 @@
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: #374151;
+  background: var(--color-secondary-700);
   color: white;
   padding: 12px 24px;
   border-radius: 25px;

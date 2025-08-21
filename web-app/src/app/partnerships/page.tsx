@@ -70,13 +70,13 @@ const PartnershipCard: React.FC<PartnershipCardProps> = ({ partnership }) => {
       strategic_partner: { label: language === 'pt' ? 'Parceiro Estratégico' : 'Strategic Partner', color: 'bg-primary-500' },
       official_partner: { label: language === 'pt' ? 'Parceiro Oficial' : 'Official Partner', color: 'bg-secondary-500' },
       community_partner: { label: language === 'pt' ? 'Parceiro Comunitário' : 'Community Partner', color: 'bg-premium-500' },
-      supporting_partner: { label: language === 'pt' ? 'Parceiro Apoiante' : 'Supporting Partner', color: 'bg-gray-500' }
+      supporting_partner: { label: language === 'pt' ? 'Parceiro Apoiante' : 'Supporting Partner', color: 'bg-secondary-500' }
     }
     return badges[level] || badges.supporting_partner
   }
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group">
+    <div className="bg-white rounded-2xl shadow-lg border border-secondary-100 overflow-hidden hover:shadow-xl transition-all duration-300 group">
       {/* Header with Partnership Level */}
       <div className={`${getLevelBadge(partnership.partnershipLevel).color} text-white px-6 py-3`}>
         <div className="flex items-center justify-between">
@@ -100,8 +100,8 @@ const PartnershipCard: React.FC<PartnershipCardProps> = ({ partnership }) => {
             </div>
           </div>
           
-          <div className="flex items-center gap-2 text-sm text-gray-600 mb-3">
-            <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">
+          <div className="flex items-center gap-2 text-sm text-secondary-600 mb-3">
+            <span className="bg-secondary-100 text-secondary-700 px-2 py-1 rounded-full text-xs">
               {getTypeLabel(partnership.type)}
             </span>
             <span>•</span>
@@ -109,7 +109,7 @@ const PartnershipCard: React.FC<PartnershipCardProps> = ({ partnership }) => {
             {partnership.governmentRecognized && (
               <>
                 <span>•</span>
-                <span className="text-green-600 font-medium">
+                <span className="text-action-600 font-medium">
                   {language === 'pt' ? 'Reconhecido pelo Governo' : 'Government Recognized'}
                 </span>
               </>
@@ -117,19 +117,19 @@ const PartnershipCard: React.FC<PartnershipCardProps> = ({ partnership }) => {
           </div>
         </div>
         
-        <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+        <p className="text-secondary-600 text-sm mb-4 line-clamp-3">
           {language === 'pt' ? partnership.descriptionPortuguese : partnership.description}
         </p>
         
         {/* Community Impact */}
         <div className="grid grid-cols-2 gap-4 mb-4 text-center">
-          <div className="bg-gray-50 rounded-lg p-3">
+          <div className="bg-secondary-50 rounded-lg p-3">
             <div className="text-lg font-bold text-primary-600">{partnership.communitySize.toLocaleString()}</div>
-            <div className="text-xs text-gray-600">{language === 'pt' ? 'Membros' : 'Members'}</div>
+            <div className="text-xs text-secondary-600">{language === 'pt' ? 'Membros' : 'Members'}</div>
           </div>
-          <div className="bg-gray-50 rounded-lg p-3">
+          <div className="bg-secondary-50 rounded-lg p-3">
             <div className="text-lg font-bold text-secondary-600">{partnership.programs.length}</div>
-            <div className="text-xs text-gray-600">{language === 'pt' ? 'Programas' : 'Programs'}</div>
+            <div className="text-xs text-secondary-600">{language === 'pt' ? 'Programas' : 'Programs'}</div>
           </div>
         </div>
         
@@ -149,7 +149,7 @@ const PartnershipCard: React.FC<PartnershipCardProps> = ({ partnership }) => {
               </span>
             ))}
             {partnership.servicesOffered.length > 3 && (
-              <span className="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-full">
+              <span className="px-2 py-1 bg-secondary-50 text-secondary-600 text-xs rounded-full">
                 +{partnership.servicesOffered.length - 3} {language === 'pt' ? 'mais' : 'more'}
               </span>
             )}
@@ -169,7 +169,7 @@ const PartnershipCard: React.FC<PartnershipCardProps> = ({ partnership }) => {
                   <h5 className="font-medium text-green-800 text-sm">
                     {language === 'pt' && event.titlePortuguese ? event.titlePortuguese : event.title}
                   </h5>
-                  <div className="flex items-center gap-2 text-xs text-green-600 mt-1">
+                  <div className="flex items-center gap-2 text-xs text-action-600 mt-1">
                     <CalendarDaysIcon className="w-3 h-3" />
                     <span>{new Date(event.date).toLocaleDateString()}</span>
                     <span>•</span>
@@ -189,23 +189,23 @@ const PartnershipCard: React.FC<PartnershipCardProps> = ({ partnership }) => {
         
         {/* Contact Information */}
         <div className="mb-4 space-y-2">
-          <div className="flex items-center gap-3 text-sm text-gray-600">
+          <div className="flex items-center gap-3 text-sm text-secondary-600">
             <MapPinIcon className="w-4 h-4 flex-shrink-0" />
             <span className="truncate">{partnership.address}, {partnership.postcode}</span>
           </div>
           
-          <div className="flex items-center gap-3 text-sm text-gray-600">
+          <div className="flex items-center gap-3 text-sm text-secondary-600">
             <PhoneIcon className="w-4 h-4 flex-shrink-0" />
             <span>{partnership.phone}</span>
           </div>
           
-          <div className="flex items-center gap-3 text-sm text-gray-600">
+          <div className="flex items-center gap-3 text-sm text-secondary-600">
             <EnvelopeIcon className="w-4 h-4 flex-shrink-0" />
             <span className="truncate">{partnership.email}</span>
           </div>
           
           {partnership.website && (
-            <div className="flex items-center gap-3 text-sm text-gray-600">
+            <div className="flex items-center gap-3 text-sm text-secondary-600">
               <GlobeAltIcon className="w-4 h-4 flex-shrink-0" />
               <a 
                 href={partnership.website} 
@@ -220,14 +220,14 @@ const PartnershipCard: React.FC<PartnershipCardProps> = ({ partnership }) => {
         </div>
         
         {/* Contact Person */}
-        <div className="mb-4 bg-gray-50 rounded-lg p-3">
+        <div className="mb-4 bg-secondary-50 rounded-lg p-3">
           <h4 className="font-medium text-gray-900 mb-2 text-sm">
             {language === 'pt' ? 'Contacto Principal' : 'Main Contact'}
           </h4>
           <div className="text-sm">
             <p className="font-medium text-gray-900">{partnership.contactPerson.name}</p>
-            <p className="text-gray-600">{partnership.contactPerson.title}</p>
-            <p className="text-gray-600">{partnership.contactPerson.email}</p>
+            <p className="text-secondary-600">{partnership.contactPerson.title}</p>
+            <p className="text-secondary-600">{partnership.contactPerson.email}</p>
           </div>
         </div>
         
@@ -241,7 +241,7 @@ const PartnershipCard: React.FC<PartnershipCardProps> = ({ partnership }) => {
               href={partnership.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+              className="px-4 py-3 bg-secondary-100 text-secondary-700 rounded-lg hover:bg-secondary-200 transition-colors"
             >
               <LinkIcon className="w-5 h-5" />
             </a>
@@ -312,21 +312,21 @@ export default function Partnerships() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center pt-20">
+      <div className="min-h-screen bg-secondary-50 flex items-center justify-center pt-20">
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-500"></div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-secondary-50 pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             {language === 'pt' ? 'Nossas Parcerias Oficiais' : 'Our Official Partnerships'}
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
             {language === 'pt' 
               ? 'Trabalhamos com organizações oficiais portuguesas para oferecer serviços autênticos e apoio à comunidade lusófona em Londres.'
               : 'We work with official Portuguese organizations to provide authentic services and support for the Portuguese-speaking community in London.'}
@@ -337,19 +337,19 @@ export default function Partnerships() {
             <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="bg-white rounded-lg p-4 shadow-sm">
                 <div className="text-2xl font-bold text-primary-600">{statistics.totalPartnerships}</div>
-                <div className="text-sm text-gray-600">{language === 'pt' ? 'Parcerias' : 'Partnerships'}</div>
+                <div className="text-sm text-secondary-600">{language === 'pt' ? 'Parcerias' : 'Partnerships'}</div>
               </div>
               <div className="bg-white rounded-lg p-4 shadow-sm">
                 <div className="text-2xl font-bold text-secondary-600">{statistics.officialPartnerships}</div>
-                <div className="text-sm text-gray-600">{language === 'pt' ? 'Oficiais' : 'Official'}</div>
+                <div className="text-sm text-secondary-600">{language === 'pt' ? 'Oficiais' : 'Official'}</div>
               </div>
               <div className="bg-white rounded-lg p-4 shadow-sm">
                 <div className="text-2xl font-bold text-accent-600">{statistics.totalCommunitySize.toLocaleString()}</div>
-                <div className="text-sm text-gray-600">{language === 'pt' ? 'Membros' : 'Members'}</div>
+                <div className="text-sm text-secondary-600">{language === 'pt' ? 'Membros' : 'Members'}</div>
               </div>
               <div className="bg-white rounded-lg p-4 shadow-sm">
                 <div className="text-2xl font-bold text-premium-600">{statistics.totalPrograms}</div>
-                <div className="text-sm text-gray-600">{language === 'pt' ? 'Programas' : 'Programs'}</div>
+                <div className="text-sm text-secondary-600">{language === 'pt' ? 'Programas' : 'Programs'}</div>
               </div>
             </div>
           )}
@@ -365,7 +365,7 @@ export default function Partnerships() {
                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                   selectedType === type.value
                     ? 'bg-primary-500 text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                    : 'bg-white text-secondary-700 hover:bg-secondary-100'
                 }`}
               >
                 {type.label[language]}
@@ -386,7 +386,7 @@ export default function Partnerships() {
           <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
             {language === 'pt' ? 'Benefícios para Membros' : 'Member Benefits'}
           </h2>
-          <p className="text-gray-600 text-center mb-8">
+          <p className="text-secondary-600 text-center mb-8">
             {language === 'pt' 
               ? 'Como membro da LusoTown, desfrute de benefícios exclusivos com nossos parceiros oficiais.'
               : 'As a LusoTown member, enjoy exclusive benefits with our official partners.'}
@@ -394,19 +394,19 @@ export default function Partnerships() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {benefits.map(benefit => (
-              <div key={benefit.id} className="border border-gray-200 rounded-lg p-6">
+              <div key={benefit.id} className="border border-secondary-200 rounded-lg p-6">
                 <h3 className="font-semibold text-gray-900 mb-2">
                   {language === 'pt' ? benefit.titlePortuguese : benefit.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-3">
+                <p className="text-secondary-600 text-sm mb-3">
                   {language === 'pt' ? benefit.descriptionPortuguese : benefit.description}
                 </p>
                 <div className="flex items-center gap-2">
                   <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                    benefit.category === 'cultural' ? 'bg-purple-100 text-purple-700' :
+                    benefit.category === 'cultural' ? 'bg-accent-100 text-accent-700' :
                     benefit.category === 'business' ? 'bg-primary-100 text-primary-700' :
                     benefit.category === 'education' ? 'bg-green-100 text-green-700' :
-                    'bg-gray-100 text-gray-700'
+                    'bg-secondary-100 text-secondary-700'
                   }`}>
                     {benefit.category}
                   </span>
@@ -437,7 +437,7 @@ export default function Partnerships() {
               ? 'É uma organização portuguesa? Junte-se a nós para servir melhor a comunidade lusófona em Londres.'
               : 'Are you a Portuguese organization? Join us in better serving the Portuguese-speaking community in London.'}
           </p>
-          <button className="bg-white text-primary-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">
+          <button className="bg-white text-primary-600 font-semibold px-8 py-3 rounded-lg hover:bg-secondary-100 transition-colors">
             {language === 'pt' ? 'Contactar-nos' : 'Contact Us'}
           </button>
         </div>

@@ -32,7 +32,7 @@ export default function EcosystemStats() {
         </h2>
       </div>
       <div className="text-center py-8">
-        <p className="text-gray-600">Ecosystem statistics will be displayed here</p>
+        <p className="text-secondary-600">Ecosystem statistics will be displayed here</p>
       </div>
     </div>
   )

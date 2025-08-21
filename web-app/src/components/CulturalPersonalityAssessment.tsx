@@ -481,7 +481,7 @@ export default function CulturalPersonalityAssessment() {
           {t('assessment.title', 'Portuguese Cultural Personality Assessment')}
         </h2>
         
-        <p className="text-xl text-gray-700 mb-6 max-w-3xl mx-auto">
+        <p className="text-xl text-secondary-700 mb-6 max-w-3xl mx-auto">
           {t('assessment.subtitle', 'Discover your unique Portuguese cultural personality and how it shapes your experience in the diaspora community')}
         </p>
         
@@ -491,7 +491,7 @@ export default function CulturalPersonalityAssessment() {
             <h3 className="font-bold text-lg mb-2">
               {t('assessment.discover', 'Discover Your Archetype')}
             </h3>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {t('assessment.discover_desc', 'Identify your Portuguese cultural archetype and understand your unique cultural expression')}
             </p>
           </div>
@@ -501,7 +501,7 @@ export default function CulturalPersonalityAssessment() {
             <h3 className="font-bold text-lg mb-2">
               {t('assessment.insights', 'Personal Insights')}
             </h3>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {t('assessment.insights_desc', 'Get personalized recommendations for cultural activities and community connections')}
             </p>
           </div>
@@ -513,19 +513,19 @@ export default function CulturalPersonalityAssessment() {
           </h4>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
             <div className="flex items-center gap-2">
-              <HeartIcon className="w-4 h-4 text-red-500" />
+              <HeartIcon className="w-4 h-4 text-coral-500" />
               <span>{t('assessment.saudade', 'Saudade Capacity')}</span>
             </div>
             <div className="flex items-center gap-2">
-              <UserGroupIcon className="w-4 h-4 text-blue-500" />
+              <UserGroupIcon className="w-4 h-4 text-primary-500" />
               <span>{t('assessment.family', 'Family Centricity')}</span>
             </div>
             <div className="flex items-center gap-2">
-              <HomeIcon className="w-4 h-4 text-green-500" />
+              <HomeIcon className="w-4 h-4 text-action-500" />
               <span>{t('assessment.tradition', 'Tradition Adherence')}</span>
             </div>
             <div className="flex items-center gap-2">
-              <GlobeEuropeAfricaIcon className="w-4 h-4 text-purple-500" />
+              <GlobeEuropeAfricaIcon className="w-4 h-4 text-accent-500" />
               <span>{t('assessment.adaptation', 'Cultural Adaptation')}</span>
             </div>
           </div>
@@ -557,11 +557,11 @@ export default function CulturalPersonalityAssessment() {
       >
         {/* Progress Bar */}
         <div className="mb-8">
-          <div className="flex justify-between text-sm text-gray-600 mb-2">
+          <div className="flex justify-between text-sm text-secondary-600 mb-2">
             <span>{t('assessment.progress', 'Progress')}</span>
             <span>{currentQuestion + 1} / {ASSESSMENT_QUESTIONS.length}</span>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-3">
+          <div className="w-full bg-secondary-200 rounded-full h-3">
             <div 
               className="bg-gradient-to-r from-secondary-500 to-accent-500 h-3 rounded-full transition-all duration-500"
               style={{ width: `${progress}%` }}
@@ -570,19 +570,19 @@ export default function CulturalPersonalityAssessment() {
         </div>
 
         {/* Question */}
-        <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 mb-8">
+        <div className="bg-white rounded-3xl p-8 shadow-xl border border-secondary-100 mb-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
             {language === 'pt' ? question.questionPt : question.questionEn}
           </h3>
           
-          <p className="text-lg text-gray-600 mb-6">
+          <p className="text-lg text-secondary-600 mb-6">
             {language === 'pt' ? question.contextPt : question.contextEn}
           </p>
 
           {/* Scenario Questions */}
           {question.responseType === 'scenario' && (
-            <div className="bg-gray-50 rounded-xl p-6 mb-6">
-              <pre className="text-gray-700 whitespace-pre-line font-sans">
+            <div className="bg-secondary-50 rounded-xl p-6 mb-6">
+              <pre className="text-secondary-700 whitespace-pre-line font-sans">
                 {language === 'pt' ? question.scenarioPt : question.scenarioEn}
               </pre>
             </div>
@@ -604,7 +604,7 @@ export default function CulturalPersonalityAssessment() {
                     className={`w-12 h-12 rounded-full flex items-center justify-center text-lg font-semibold transition-all ${
                       currentResponse === i
                         ? 'bg-gradient-to-br from-secondary-500 to-accent-500 text-white shadow-lg transform scale-110'
-                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                        : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
                     }`}
                   >
                     {i}
@@ -638,7 +638,7 @@ export default function CulturalPersonalityAssessment() {
                   className={`p-4 rounded-xl border-2 font-semibold transition-all ${
                     currentResponse === index * 2.5
                       ? 'border-secondary-500 bg-secondary-50 text-secondary-700'
-                      : 'border-gray-300 text-gray-700 hover:border-gray-400'
+                      : 'border-secondary-300 text-secondary-700 hover:border-secondary-400'
                   }`}
                 >
                   {option}
@@ -653,7 +653,7 @@ export default function CulturalPersonalityAssessment() {
           <button
             onClick={previousQuestion}
             disabled={currentQuestion === 0}
-            className="flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-gray-300 text-gray-600 font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:border-gray-400 transition-colors"
+            className="flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-secondary-300 text-secondary-600 font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:border-secondary-400 transition-colors"
           >
             <ArrowLeftIcon className="w-5 h-5" />
             {t('common.back', 'Back')}
@@ -689,7 +689,7 @@ export default function CulturalPersonalityAssessment() {
           {t('assessment.processing', 'Analyzing Your Cultural Personality')}
         </h3>
         
-        <p className="text-gray-600 mb-6">
+        <p className="text-secondary-600 mb-6">
           {t('assessment.processing_desc', 'Our AI is analyzing your responses to create your personalized Portuguese cultural profile...')}
         </p>
         
@@ -721,11 +721,11 @@ export default function CulturalPersonalityAssessment() {
               {language === 'pt' ? culturalArchetype.namePt : culturalArchetype.nameEn}
             </h2>
             
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-6">
+            <p className="text-xl text-secondary-700 max-w-3xl mx-auto mb-6">
               {language === 'pt' ? culturalArchetype.descriptionPt : culturalArchetype.descriptionEn}
             </p>
             
-            <div className="flex items-center justify-center gap-4 text-sm text-gray-600">
+            <div className="flex items-center justify-center gap-4 text-sm text-secondary-600">
               <span>{culturalArchetype.prevalenceInDiaspora}% of Portuguese diaspora</span>
               <span>•</span>
               <span>{culturalArchetype.culturalSignificance}</span>
@@ -741,8 +741,8 @@ export default function CulturalPersonalityAssessment() {
               <ul className="space-y-2">
                 {(language === 'pt' ? culturalArchetype.strengthsPt : culturalArchetype.strengthsEn).map((strength, index) => (
                   <li key={index} className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-5 h-5 text-green-600 flex-shrink-0" />
-                    <span className="text-gray-700">{strength}</span>
+                    <CheckCircleIcon className="w-5 h-5 text-action-600 flex-shrink-0" />
+                    <span className="text-secondary-700">{strength}</span>
                   </li>
                 ))}
               </ul>
@@ -756,7 +756,7 @@ export default function CulturalPersonalityAssessment() {
                 {(language === 'pt' ? culturalArchetype.challengesPt : culturalArchetype.challengesEn).map((challenge, index) => (
                   <li key={index} className="flex items-center gap-2">
                     <SparklesIcon className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                    <span className="text-gray-700">{challenge}</span>
+                    <span className="text-secondary-700">{challenge}</span>
                   </li>
                 ))}
               </ul>
@@ -774,18 +774,18 @@ export default function CulturalPersonalityAssessment() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100"
+              className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100"
             >
               <div className="flex items-start gap-4">
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
                   insight.strengthLevel === 'very_high' ? 'bg-red-100' :
                   insight.strengthLevel === 'high' ? 'bg-orange-100' :
-                  insight.strengthLevel === 'moderate' ? 'bg-yellow-100' : 'bg-gray-100'
+                  insight.strengthLevel === 'moderate' ? 'bg-yellow-100' : 'bg-secondary-100'
                 }`}>
                   <HeartSolid className={`w-6 h-6 ${
-                    insight.strengthLevel === 'very_high' ? 'text-red-600' :
+                    insight.strengthLevel === 'very_high' ? 'text-coral-600' :
                     insight.strengthLevel === 'high' ? 'text-orange-600' :
-                    insight.strengthLevel === 'moderate' ? 'text-yellow-600' : 'text-gray-600'
+                    insight.strengthLevel === 'moderate' ? 'text-yellow-600' : 'text-secondary-600'
                   }`} />
                 </div>
                 
@@ -794,7 +794,7 @@ export default function CulturalPersonalityAssessment() {
                     {language === 'pt' ? insight.titlePt : insight.title}
                   </h4>
                   
-                  <p className="text-gray-700 mb-4">
+                  <p className="text-secondary-700 mb-4">
                     {language === 'pt' ? insight.descriptionPt : insight.description}
                   </p>
                   
@@ -805,7 +805,7 @@ export default function CulturalPersonalityAssessment() {
                       </h5>
                       <ul className="space-y-1">
                         {insight.developmentSuggestions.slice(0, 2).map((suggestion, i) => (
-                          <li key={i} className="text-gray-600">• {suggestion}</li>
+                          <li key={i} className="text-secondary-600">• {suggestion}</li>
                         ))}
                       </ul>
                     </div>
@@ -816,7 +816,7 @@ export default function CulturalPersonalityAssessment() {
                       </h5>
                       <ul className="space-y-1">
                         {insight.culturalActivities.slice(0, 2).map((activity, i) => (
-                          <li key={i} className="text-gray-600">• {activity}</li>
+                          <li key={i} className="text-secondary-600">• {activity}</li>
                         ))}
                       </ul>
                     </div>
@@ -827,7 +827,7 @@ export default function CulturalPersonalityAssessment() {
                       </h5>
                       <ul className="space-y-1">
                         {insight.compatibilityImplications.slice(0, 2).map((implication, i) => (
-                          <li key={i} className="text-gray-600">• {implication}</li>
+                          <li key={i} className="text-secondary-600">• {implication}</li>
                         ))}
                       </ul>
                     </div>
@@ -846,7 +846,7 @@ export default function CulturalPersonalityAssessment() {
             {t('assessment.next_steps', 'Ready to Connect with Your Portuguese Community?')}
           </h3>
           
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-secondary-700 mb-6">
             {t('assessment.next_desc', 'Use your cultural personality insights to find better matches and join more relevant community activities')}
           </p>
           
@@ -861,7 +861,7 @@ export default function CulturalPersonalityAssessment() {
             
             <button
               onClick={restartAssessment}
-              className="px-6 py-3 text-gray-600 hover:text-gray-800 transition-colors"
+              className="px-6 py-3 text-secondary-600 hover:text-secondary-800 transition-colors"
             >
               {t('assessment.retake', 'Retake Assessment')}
             </button>

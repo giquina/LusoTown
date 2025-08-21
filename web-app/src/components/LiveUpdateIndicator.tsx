@@ -179,7 +179,7 @@ export default function LiveUpdateIndicator({
       case 'user_joined':
         return <CheckCircleIcon className="w-4 h-4 text-secondary-500" />
       case 'photo_added':
-        return <span className="text-purple-500">📸</span>
+        return <span className="text-accent-500">📸</span>
       case 'spots_filled':
         return <ExclamationTriangleIcon className="w-4 h-4 text-orange-500" />
       default:
@@ -190,11 +190,11 @@ export default function LiveUpdateIndicator({
   const getConnectionIcon = () => {
     switch (connectionStatus) {
       case 'connected':
-        return <WifiIcon className="w-4 h-4 text-green-500" />
+        return <WifiIcon className="w-4 h-4 text-action-500" />
       case 'reconnecting':
-        return <ArrowPathIcon className="w-4 h-4 text-yellow-500 animate-spin" />
+        return <ArrowPathIcon className="w-4 h-4 text-accent-500 animate-spin" />
       case 'offline':
-        return <ExclamationTriangleIcon className="w-4 h-4 text-red-500" />
+        return <ExclamationTriangleIcon className="w-4 h-4 text-coral-500" />
     }
   }
 
@@ -234,12 +234,12 @@ export default function LiveUpdateIndicator({
             initial={{ opacity: 0, x: 100, scale: 0.9 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, x: 100, scale: 0.9 }}
-            className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden max-w-sm"
+            className="bg-white rounded-xl shadow-lg border border-secondary-200 overflow-hidden max-w-sm"
             onMouseEnter={() => setShowIndicator(true)}
             onMouseLeave={() => setShowIndicator(false)}
           >
             {/* Header */}
-            <div className="bg-primary-50 px-4 py-3 border-b border-gray-100">
+            <div className="bg-primary-50 px-4 py-3 border-b border-secondary-100">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
@@ -262,7 +262,7 @@ export default function LiveUpdateIndicator({
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => handleUpdateClick(update)}
-                  className="p-4 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0"
+                  className="p-4 hover:bg-secondary-50 cursor-pointer border-b border-secondary-100 last:border-b-0"
                 >
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 mt-0.5">
@@ -283,7 +283,7 @@ export default function LiveUpdateIndicator({
 
             {/* Footer */}
             {updates.length > 3 && (
-              <div className="px-4 py-3 bg-gray-50 border-t border-gray-100">
+              <div className="px-4 py-3 bg-secondary-50 border-t border-secondary-100">
                 <button className="text-sm text-primary-600 hover:text-primary-700 font-medium">
                   {isPortuguese 
                     ? `Ver mais ${updates.length - 3} atualizações`
@@ -308,7 +308,7 @@ export default function LiveUpdateIndicator({
           >
             <BellIcon className="w-5 h-5" />
             {updates.length > 0 && (
-              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
+              <span className="absolute -top-1 -right-1 bg-coral-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
                 {updates.length > 9 ? '9+' : updates.length}
               </span>
             )}

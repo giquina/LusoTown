@@ -174,7 +174,7 @@ function ProfilesPageContent() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 pt-20">
+      <div className="min-h-screen bg-secondary-50 pt-20">
         <div className="container-width py-8">
           <div className="flex items-center justify-center py-12">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#FF6B6B]"></div>
@@ -185,22 +185,22 @@ function ProfilesPageContent() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       <div className="pt-20 container-width py-8">
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Discover Members</h1>
-          <p className="text-gray-600">Connect with like-minded women in your community. After meeting members at events or in groups, you can leave reviews to help improve future experiences - just like Google My Business!</p>
+          <p className="text-secondary-600">Connect with like-minded women in your community. After meeting members at events or in groups, you can leave reviews to help improve future experiences - just like Google My Business!</p>
         </div>
 
         {/* View Mode Tabs */}
-        <div className="flex items-center gap-4 mb-6 border-b border-gray-200">
+        <div className="flex items-center gap-4 mb-6 border-b border-secondary-200">
           <button
             onClick={() => setViewMode('recommended')}
             className={`px-4 py-2 font-medium border-b-2 transition-colors ${
               viewMode === 'recommended'
                 ? 'border-[#FF6B6B] text-[#FF6B6B]'
-                : 'border-transparent text-gray-600 hover:text-gray-900'
+                : 'border-transparent text-secondary-600 hover:text-gray-900'
             }`}
           >
             <div className="flex items-center gap-2">
@@ -213,7 +213,7 @@ function ProfilesPageContent() {
             className={`px-4 py-2 font-medium border-b-2 transition-colors ${
               viewMode === 'browse'
                 ? 'border-[#FF6B6B] text-[#FF6B6B]'
-                : 'border-transparent text-gray-600 hover:text-gray-900'
+                : 'border-transparent text-secondary-600 hover:text-gray-900'
             }`}
           >
             <div className="flex items-center gap-2">
@@ -224,17 +224,17 @@ function ProfilesPageContent() {
         </div>
 
         {/* Search and Filter Bar */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-8">
+        <div className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-6 mb-8">
           <div className="flex flex-col sm:flex-row gap-4">
             {/* Search Input */}
             <div className="flex-1 relative">
-              <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -transecondary-y-1/2 w-5 h-5 text-gray-400" />
               <input
                 type="text"
                 placeholder="Search profiles..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
+                className="w-full pl-10 pr-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
               />
             </div>
             
@@ -244,7 +244,7 @@ function ProfilesPageContent() {
               className={`flex items-center gap-2 px-4 py-3 border rounded-lg transition-colors ${
                 showFilters || activeFiltersCount > 0
                   ? 'bg-[#FF6B6B] text-white border-[#FF6B6B]'
-                  : 'border-gray-300 text-gray-700 hover:bg-gray-50'
+                  : 'border-secondary-300 text-secondary-700 hover:bg-secondary-50'
               }`}
             >
               <FunnelIcon className="w-5 h-5" />
@@ -265,7 +265,7 @@ function ProfilesPageContent() {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-8 overflow-hidden"
+              className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-6 mb-8 overflow-hidden"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {/* Age Range */}
@@ -284,7 +284,7 @@ function ProfilesPageContent() {
                         })}
                         className="flex-1"
                       />
-                      <span className="text-sm text-gray-600 w-8">{filters.ageRange.min}</span>
+                      <span className="text-sm text-secondary-600 w-8">{filters.ageRange.min}</span>
                     </div>
                     <div className="flex items-center gap-4">
                       <input
@@ -298,9 +298,9 @@ function ProfilesPageContent() {
                         })}
                         className="flex-1"
                       />
-                      <span className="text-sm text-gray-600 w-8">{filters.ageRange.max}</span>
+                      <span className="text-sm text-secondary-600 w-8">{filters.ageRange.max}</span>
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-secondary-600">
                       {filters.ageRange.min} - {filters.ageRange.max} years
                     </div>
                   </div>
@@ -324,7 +324,7 @@ function ProfilesPageContent() {
                             }}
                             className="rounded text-[#FF6B6B] focus:ring-[#FF6B6B]"
                           />
-                          <span className="ml-2 text-sm text-gray-700 truncate">{area}</span>
+                          <span className="ml-2 text-sm text-secondary-700 truncate">{area}</span>
                         </label>
                       ))}
                     </div>
@@ -349,7 +349,7 @@ function ProfilesPageContent() {
                             }}
                             className="rounded text-[#FF6B6B] focus:ring-[#FF6B6B]"
                           />
-                          <span className="ml-2 text-sm text-gray-700 truncate">{interest}</span>
+                          <span className="ml-2 text-sm text-secondary-700 truncate">{interest}</span>
                         </label>
                       ))}
                     </div>
@@ -362,7 +362,7 @@ function ProfilesPageContent() {
                   <select
                     value={filters.membershipTier || ''}
                     onChange={(e) => handleFilterChange('membershipTier', e.target.value || undefined)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
+                    className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
                   >
                     <option value="">All Members</option>
                     <option value="free">Free & Above</option>
@@ -382,14 +382,14 @@ function ProfilesPageContent() {
                         onChange={(e) => handleFilterChange('onlineOnly', e.target.checked)}
                         className="rounded text-[#FF6B6B] focus:ring-[#FF6B6B]"
                       />
-                      <span className="ml-2 text-sm text-gray-700">Online now only</span>
+                      <span className="ml-2 text-sm text-secondary-700">Online now only</span>
                     </label>
                   </div>
                 </div>
               </div>
 
               {/* Filter Actions */}
-              <div className="flex items-center gap-4 mt-6 pt-6 border-t border-gray-100">
+              <div className="flex items-center gap-4 mt-6 pt-6 border-t border-secondary-100">
                 <button
                   onClick={loadData}
                   className="bg-[#FF6B6B] text-white px-6 py-2 rounded-lg hover:bg-[#FF5252] transition-colors"
@@ -398,11 +398,11 @@ function ProfilesPageContent() {
                 </button>
                 <button
                   onClick={clearFilters}
-                  className="text-gray-600 hover:text-gray-900 transition-colors"
+                  className="text-secondary-600 hover:text-gray-900 transition-colors"
                 >
                   Clear All
                 </button>
-                <div className="ml-auto text-sm text-gray-600">
+                <div className="ml-auto text-sm text-secondary-600">
                   {filteredProfiles.length} member{filteredProfiles.length !== 1 ? 's' : ''} found
                 </div>
               </div>
@@ -418,7 +418,7 @@ function ProfilesPageContent() {
               <h2 className="text-xl font-semibold text-gray-900">
                 {viewMode === 'recommended' ? 'Recommended for You' : 'Browse Members'}
               </h2>
-              <p className="text-gray-600 mt-1">
+              <p className="text-secondary-600 mt-1">
                 {filteredProfiles.length} member{filteredProfiles.length !== 1 ? 's' : ''} found
               </p>
             </div>
@@ -434,10 +434,10 @@ function ProfilesPageContent() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-200 hover:shadow-md transition-shadow cursor-pointer"
+                  <div className="bg-white rounded-xl p-6 shadow-sm border border-secondary-200 hover:shadow-md transition-shadow cursor-pointer"
                        onClick={() => handleProfileClick(profile.id)}>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">{profile.firstName} {profile.lastName}</h3>
-                    <p className="text-gray-600">{profile.area || 'London'}</p>
+                    <p className="text-secondary-600">{profile.area || 'London'}</p>
                   </div>
                 </motion.div>
               ))}
@@ -446,7 +446,7 @@ function ProfilesPageContent() {
             <div className="text-center py-12">
               <UserGroupIcon className="w-16 h-16 mx-auto text-gray-300 mb-4" />
               <h3 className="text-lg font-medium text-gray-900 mb-2">No members found</h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-secondary-600 mb-4">
                 Try adjusting your search criteria or filters
               </p>
               <button
@@ -467,7 +467,7 @@ function ProfilesPageContent() {
 export default function ProfilesPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-secondary-50 flex items-center justify-center">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-400"></div>
       </div>
     }>

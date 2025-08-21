@@ -212,7 +212,6 @@ export default function MobileGeolocationServices({
       setCurrentLocation(locationData);
       setLocationPermission('granted');
 
-      console.log('[Geolocation] Location obtained:', locationData);
 
       addNotification({
         id: 'location-success',
@@ -281,10 +280,8 @@ export default function MobileGeolocationServices({
         };
 
         setCurrentLocation(locationData);
-        console.log('[Geolocation] Location updated:', locationData);
       },
       (error) => {
-        console.log('[Geolocation] Watch error:', error);
       },
       options
     );
@@ -379,11 +376,11 @@ export default function MobileGeolocationServices({
   const renderLocationPrompt = () => (
     <div className="bg-gradient-to-r from-red-50 to-green-50 border border-red-200 rounded-lg p-6">
       <div className="text-center">
-        <MapPin className="h-12 w-12 text-red-600 mx-auto mb-4" />
+        <MapPin className="h-12 w-12 text-coral-600 mx-auto mb-4" />
         <h3 className="text-lg font-semibold text-gray-900 mb-2">
           {language === 'pt' ? 'Descobrir Comunidade Portuguesa' : 'Discover Portuguese Community'}
         </h3>
-        <p className="text-gray-600 mb-4">
+        <p className="text-secondary-600 mb-4">
           {language === 'pt' 
             ? 'Permite acesso à localização para encontrares portugueses, negócios e eventos culturais próximos' 
             : 'Allow location access to find nearby Portuguese speakers, businesses, and cultural events'}
@@ -391,7 +388,7 @@ export default function MobileGeolocationServices({
         <button
           onClick={requestLocationPermission}
           disabled={isLoadingLocation}
-          className="inline-flex items-center space-x-2 bg-red-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-red-700 transition-colors disabled:opacity-50"
+          className="inline-flex items-center space-x-2 bg-coral-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-red-700 transition-colors disabled:opacity-50"
         >
           {isLoadingLocation ? (
             <div className="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full" />
@@ -436,25 +433,25 @@ export default function MobileGeolocationServices({
   const renderNearbyBusinesses = () => (
     <div className="space-y-4">
       <h3 className="text-lg font-semibold text-gray-900 flex items-center space-x-2">
-        <Store className="h-5 w-5 text-red-600" />
+        <Store className="h-5 w-5 text-coral-600" />
         <span>{language === 'pt' ? 'Negócios Portugueses' : 'Portuguese Businesses'}</span>
         <span className="text-sm text-gray-500 font-normal">({nearbyBusinesses.length})</span>
       </h3>
 
       {nearbyBusinesses.length === 0 ? (
-        <p className="text-gray-600 text-sm">
+        <p className="text-secondary-600 text-sm">
           {language === 'pt' ? 'Nenhum negócio português encontrado próximo' : 'No Portuguese businesses found nearby'}
         </p>
       ) : (
         <div className="space-y-3">
           {nearbyBusinesses.slice(0, 5).map((business) => (
-            <div key={business.id} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+            <div key={business.id} className="bg-white border border-secondary-200 rounded-lg p-4 shadow-sm">
               <div className="flex items-start space-x-3">
                 <div className="flex-shrink-0">
                   {business.type === 'restaurant' && <Coffee className="h-6 w-6 text-orange-600" />}
-                  {business.type === 'services' && <Settings className="h-6 w-6 text-blue-600" />}
-                  {business.type === 'cultural' && <Music className="h-6 w-6 text-purple-600" />}
-                  {!['restaurant', 'services', 'cultural'].includes(business.type) && <Store className="h-6 w-6 text-gray-600" />}
+                  {business.type === 'services' && <Settings className="h-6 w-6 text-primary-600" />}
+                  {business.type === 'cultural' && <Music className="h-6 w-6 text-accent-600" />}
+                  {!['restaurant', 'services', 'cultural'].includes(business.type) && <Store className="h-6 w-6 text-secondary-600" />}
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between">
@@ -462,9 +459,9 @@ export default function MobileGeolocationServices({
                       <h4 className="font-medium text-gray-900 truncate">
                         {language === 'pt' && business.namePortuguese ? business.namePortuguese : business.name}
                       </h4>
-                      <p className="text-sm text-gray-600 truncate">{business.address}</p>
+                      <p className="text-sm text-secondary-600 truncate">{business.address}</p>
                       {business.specialties.length > 0 && (
-                        <p className="text-xs text-blue-600 mt-1">
+                        <p className="text-xs text-primary-600 mt-1">
                           {business.specialties.slice(0, 2).join(', ')}
                         </p>
                       )}
@@ -483,7 +480,7 @@ export default function MobileGeolocationServices({
                   <div className="flex items-center space-x-3 mt-3">
                     <button
                       onClick={() => openInMaps(business.coordinates, business.name)}
-                      className="flex items-center space-x-1 text-blue-600 hover:text-blue-800 text-sm"
+                      className="flex items-center space-x-1 text-primary-600 hover:text-blue-800 text-sm"
                     >
                       <Navigation className="h-4 w-4" />
                       <span>{language === 'pt' ? 'Direções' : 'Directions'}</span>
@@ -491,7 +488,7 @@ export default function MobileGeolocationServices({
                     {business.phone && (
                       <a
                         href={`tel:${business.phone}`}
-                        className="flex items-center space-x-1 text-green-600 hover:text-green-800 text-sm"
+                        className="flex items-center space-x-1 text-action-600 hover:text-green-800 text-sm"
                       >
                         <span>{language === 'pt' ? 'Ligar' : 'Call'}</span>
                       </a>
@@ -509,19 +506,19 @@ export default function MobileGeolocationServices({
   const renderNearbyCommunity = () => (
     <div className="space-y-4">
       <h3 className="text-lg font-semibold text-gray-900 flex items-center space-x-2">
-        <Users className="h-5 w-5 text-green-600" />
+        <Users className="h-5 w-5 text-action-600" />
         <span>{language === 'pt' ? 'Portugueses Próximos' : 'Nearby Portuguese Speakers'}</span>
         <span className="text-sm text-gray-500 font-normal">({nearbyMembers.length})</span>
       </h3>
 
       {nearbyMembers.length === 0 ? (
-        <p className="text-gray-600 text-sm">
+        <p className="text-secondary-600 text-sm">
           {language === 'pt' ? 'Nenhum português encontrado próximo' : 'No Portuguese speakers found nearby'}
         </p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {nearbyMembers.slice(0, 6).map((member) => (
-            <div key={member.id} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+            <div key={member.id} className="bg-white border border-secondary-200 rounded-lg p-4 shadow-sm">
               <div className="flex items-center space-x-3">
                 <div className="relative">
                   <img
@@ -530,7 +527,7 @@ export default function MobileGeolocationServices({
                     className="w-12 h-12 rounded-full object-cover"
                   />
                   {member.online && (
-                    <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></div>
+                    <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-action-500 border-2 border-white rounded-full"></div>
                   )}
                 </div>
                 <div className="flex-1 min-w-0">
@@ -548,7 +545,7 @@ export default function MobileGeolocationServices({
                     </span>
                   </div>
                   {member.interests.length > 0 && (
-                    <p className="text-xs text-blue-600 mt-1">
+                    <p className="text-xs text-primary-600 mt-1">
                       {member.interests.slice(0, 2).join(', ')}
                     </p>
                   )}
@@ -564,31 +561,31 @@ export default function MobileGeolocationServices({
   const renderNearbyEvents = () => (
     <div className="space-y-4">
       <h3 className="text-lg font-semibold text-gray-900 flex items-center space-x-2">
-        <Calendar className="h-5 w-5 text-purple-600" />
+        <Calendar className="h-5 w-5 text-accent-600" />
         <span>{language === 'pt' ? 'Eventos Culturais' : 'Cultural Events'}</span>
         <span className="text-sm text-gray-500 font-normal">({nearbyEvents.length})</span>
       </h3>
 
       {nearbyEvents.length === 0 ? (
-        <p className="text-gray-600 text-sm">
+        <p className="text-secondary-600 text-sm">
           {language === 'pt' ? 'Nenhum evento cultural encontrado próximo' : 'No cultural events found nearby'}
         </p>
       ) : (
         <div className="space-y-3">
           {nearbyEvents.slice(0, 4).map((event) => (
-            <div key={event.id} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+            <div key={event.id} className="bg-white border border-secondary-200 rounded-lg p-4 shadow-sm">
               <div className="flex items-start space-x-3">
                 <div className="flex-shrink-0">
-                  {event.type === 'fado' && <Music className="h-6 w-6 text-purple-600" />}
-                  {event.type === 'festa' && <Heart className="h-6 w-6 text-red-600" />}
+                  {event.type === 'fado' && <Music className="h-6 w-6 text-accent-600" />}
+                  {event.type === 'festa' && <Heart className="h-6 w-6 text-coral-600" />}
                   {event.type === 'food' && <Coffee className="h-6 w-6 text-orange-600" />}
-                  {!['fado', 'festa', 'food'].includes(event.type) && <Calendar className="h-6 w-6 text-blue-600" />}
+                  {!['fado', 'festa', 'food'].includes(event.type) && <Calendar className="h-6 w-6 text-primary-600" />}
                 </div>
                 <div className="flex-1 min-w-0">
                   <h4 className="font-medium text-gray-900">
                     {language === 'pt' && event.titlePortuguese ? event.titlePortuguese : event.title}
                   </h4>
-                  <div className="flex items-center space-x-2 text-sm text-gray-600 mt-1">
+                  <div className="flex items-center space-x-2 text-sm text-secondary-600 mt-1">
                     <Clock className="h-4 w-4" />
                     <span>{new Date(event.date).toLocaleDateString()}</span>
                     {event.distance !== undefined && (
@@ -598,10 +595,10 @@ export default function MobileGeolocationServices({
                       </>
                     )}
                   </div>
-                  <p className="text-sm text-gray-600 mt-1">{event.venue}</p>
+                  <p className="text-sm text-secondary-600 mt-1">{event.venue}</p>
                   <button
                     onClick={() => openInMaps(event.coordinates, event.title)}
-                    className="flex items-center space-x-1 text-blue-600 hover:text-blue-800 text-sm mt-2"
+                    className="flex items-center space-x-1 text-primary-600 hover:text-blue-800 text-sm mt-2"
                   >
                     <Navigation className="h-4 w-4" />
                     <span>{language === 'pt' ? 'Ver no mapa' : 'View on map'}</span>
@@ -640,7 +637,7 @@ export default function MobileGeolocationServices({
           <span className="font-medium">
             {language === 'pt' ? 'Localização Ativa' : 'Location Active'}
           </span>
-          <span className="text-sm text-green-600">
+          <span className="text-sm text-action-600">
             ({language === 'pt' ? 'Precisão' : 'Accuracy'}: {Math.round(currentLocation.accuracy)}m)
           </span>
         </div>
@@ -660,8 +657,8 @@ export default function MobileGeolocationServices({
             onClick={() => setSelectedCategory(id as any)}
             className={`flex items-center space-x-2 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
               selectedCategory === id
-                ? 'bg-red-600 text-white'
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                ? 'bg-coral-600 text-white'
+                : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
             }`}
           >
             <Icon className="h-4 w-4" />
@@ -678,23 +675,23 @@ export default function MobileGeolocationServices({
       {selectedCategory === 'cultural' && (
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-gray-900 flex items-center space-x-2">
-            <Compass className="h-5 w-5 text-blue-600" />
+            <Compass className="h-5 w-5 text-primary-600" />
             <span>{language === 'pt' ? 'Locais Culturais Portugueses' : 'Portuguese Cultural Sites'}</span>
           </h3>
           <div className="space-y-3">
             {PORTUGUESE_CULTURAL_SITES.map((site) => (
-              <div key={site.id} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+              <div key={site.id} className="bg-white border border-secondary-200 rounded-lg p-4 shadow-sm">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <h4 className="font-medium text-gray-900">
                       {language === 'pt' ? site.namePortuguese : site.name}
                     </h4>
-                    <p className="text-sm text-gray-600 mt-1">{site.address}</p>
-                    <p className="text-sm text-blue-600 mt-1">{site.culturalSignificance}</p>
+                    <p className="text-sm text-secondary-600 mt-1">{site.address}</p>
+                    <p className="text-sm text-primary-600 mt-1">{site.culturalSignificance}</p>
                   </div>
                   <button
                     onClick={() => openInMaps(site.coordinates, site.name)}
-                    className="flex items-center space-x-1 text-blue-600 hover:text-blue-800 text-sm"
+                    className="flex items-center space-x-1 text-primary-600 hover:text-blue-800 text-sm"
                   >
                     <Navigation className="h-4 w-4" />
                     <span>{language === 'pt' ? 'Ir' : 'Go'}</span>

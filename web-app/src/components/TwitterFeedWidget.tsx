@@ -1,8 +1,11 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
+import { SOCIAL_URLS } from '@/config'
 import { useLanguage } from '@/context/LanguageContext'
+import { SOCIAL_URLS } from '@/config'
 import { Twitter, Users, TrendingUp, MessageCircle, ExternalLink } from 'lucide-react'
+import { SOCIAL_URLS } from '@/config'
 
 interface TwitterFeedWidgetProps {
   hashtag?: string
@@ -102,13 +105,13 @@ export default function TwitterFeedWidget({
   }
 
   const fallbackContent = () => (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+    <div className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
       <div className="text-center">
         <Twitter className="w-12 h-12 text-[#1DA1F2] mx-auto mb-4" />
         <h3 className="text-lg font-semibold text-gray-900 mb-2">
           {t('twitter_feed.unavailable_title')}
         </h3>
-        <p className="text-gray-600 mb-4">
+        <p className="text-secondary-600 mb-4">
           {t('twitter_feed.unavailable_subtitle')}
         </p>
         <div className="space-y-3">
@@ -137,23 +140,23 @@ export default function TwitterFeedWidget({
   )
 
   const loadingContent = () => (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+    <div className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
       <div className="animate-pulse space-y-4">
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 bg-gray-200 rounded-full"></div>
+          <div className="w-10 h-10 bg-secondary-200 rounded-full"></div>
           <div className="space-y-2 flex-1">
-            <div className="h-4 bg-gray-200 rounded w-1/3"></div>
-            <div className="h-3 bg-gray-200 rounded w-1/4"></div>
+            <div className="h-4 bg-secondary-200 rounded w-1/3"></div>
+            <div className="h-3 bg-secondary-200 rounded w-1/4"></div>
           </div>
         </div>
         <div className="space-y-2">
-          <div className="h-4 bg-gray-200 rounded"></div>
-          <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+          <div className="h-4 bg-secondary-200 rounded"></div>
+          <div className="h-4 bg-secondary-200 rounded w-5/6"></div>
         </div>
         <div className="flex space-x-4">
-          <div className="h-8 bg-gray-200 rounded w-16"></div>
-          <div className="h-8 bg-gray-200 rounded w-16"></div>
-          <div className="h-8 bg-gray-200 rounded w-16"></div>
+          <div className="h-8 bg-secondary-200 rounded w-16"></div>
+          <div className="h-8 bg-secondary-200 rounded w-16"></div>
+          <div className="h-8 bg-secondary-200 rounded w-16"></div>
         </div>
       </div>
     </div>
@@ -175,7 +178,7 @@ export default function TwitterFeedWidget({
             <h2 className="text-lg font-semibold text-gray-900">
               {t('twitter_feed.title')}
             </h2>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-secondary-600">
               {t('twitter_feed.subtitle')}
             </p>
           </div>
@@ -194,22 +197,22 @@ export default function TwitterFeedWidget({
       </div>
 
       {/* Stats Bar */}
-      <div className="bg-gray-50 rounded-lg p-3">
+      <div className="bg-secondary-50 rounded-lg p-3">
         <div className="grid grid-cols-3 gap-4 text-center">
           <div>
-            <div className="flex items-center justify-center space-x-1 text-xs text-gray-600">
+            <div className="flex items-center justify-center space-x-1 text-xs text-secondary-600">
               <Users className="w-3 h-3" />
               <span>{t('twitter_feed.community_stats')}</span>
             </div>
           </div>
           <div>
-            <div className="flex items-center justify-center space-x-1 text-xs text-gray-600">
+            <div className="flex items-center justify-center space-x-1 text-xs text-secondary-600">
               <TrendingUp className="w-3 h-3" />
               <span>{t('twitter_feed.trending_stats')}</span>
             </div>
           </div>
           <div>
-            <div className="flex items-center justify-center space-x-1 text-xs text-gray-600">
+            <div className="flex items-center justify-center space-x-1 text-xs text-secondary-600">
               <MessageCircle className="w-3 h-3" />
               <span>{t('twitter_feed.conversations_stats')}</span>
             </div>
@@ -218,7 +221,7 @@ export default function TwitterFeedWidget({
       </div>
 
       {/* Twitter Timeline */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+      <div className="bg-white rounded-xl shadow-sm border border-secondary-200 overflow-hidden">
         {isLoading && loadingContent()}
         
         {!isLoading && !hasError && (
@@ -247,7 +250,7 @@ export default function TwitterFeedWidget({
             href={`https://twitter.com/hashtag/${tag}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-2 py-1 bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-gray-800 rounded-full text-xs transition-colors"
+            className="inline-flex items-center px-2 py-1 bg-secondary-100 hover:bg-secondary-200 text-secondary-600 hover:text-secondary-800 rounded-full text-xs transition-colors"
           >
             #{tag}
           </a>

@@ -258,11 +258,11 @@ export default function ConversationManager({
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               {timeUntilExpiry === 'Expired' ? (
-                <X className="h-5 w-5 text-red-600" />
+                <X className="h-5 w-5 text-coral-600" />
               ) : isExpiringSoon ? (
                 <AlertTriangle className="h-5 w-5 text-amber-600" />
               ) : (
-                <Clock className="h-5 w-5 text-green-600" />
+                <Clock className="h-5 w-5 text-action-600" />
               )}
               
               <div>
@@ -303,7 +303,7 @@ export default function ConversationManager({
       )}
 
       {/* Conversation Starters Toggle */}
-      <div className="bg-white rounded-lg shadow-sm border border-neutral-100 p-4">
+      <div className="bg-white rounded-lg shadow-sm border border-secondary-100 p-4">
         <button
           onClick={() => setShowStarters(!showStarters)}
           className="w-full flex items-center justify-between"
@@ -311,11 +311,11 @@ export default function ConversationManager({
           <div className="flex items-center gap-3">
             <Zap className="h-5 w-5 text-primary-600" />
             <div className="text-left">
-              <h3 className="font-medium text-neutral-900">{t.title}</h3>
-              <p className="text-sm text-neutral-600">{t.subtitle}</p>
+              <h3 className="font-medium text-secondary-900">{t.title}</h3>
+              <p className="text-sm text-secondary-600">{t.subtitle}</p>
             </div>
           </div>
-          <ArrowRight className={`h-5 w-5 text-neutral-400 transform transition-transform ${showStarters ? 'rotate-90' : ''}`} />
+          <ArrowRight className={`h-5 w-5 text-secondary-400 transform transition-transform ${showStarters ? 'rotate-90' : ''}`} />
         </button>
 
         <AnimatePresence>
@@ -328,7 +328,7 @@ export default function ConversationManager({
             >
               {/* Categories */}
               <div>
-                <p className="text-sm font-medium text-neutral-700 mb-3">{t.categories}</p>
+                <p className="text-sm font-medium text-secondary-700 mb-3">{t.categories}</p>
                 <div className="flex flex-wrap gap-2">
                   {categories.map((category) => {
                     const IconComponent = category.icon
@@ -339,7 +339,7 @@ export default function ConversationManager({
                         className={`flex items-center gap-2 px-3 py-2 rounded-full text-sm transition-all ${
                           selectedCategory === category.id
                             ? 'bg-primary-600 text-white'
-                            : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'
+                            : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
                         }`}
                       >
                         <IconComponent className="h-4 w-4" />
@@ -357,12 +357,12 @@ export default function ConversationManager({
                     key={starter.id}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="border border-neutral-200 rounded-lg p-4 hover:border-primary-300 hover:shadow-md transition-all cursor-pointer group"
+                    className="border border-secondary-200 rounded-lg p-4 hover:border-primary-300 hover:shadow-md transition-all cursor-pointer group"
                     onClick={() => onSendStarter(starter)}
                   >
                     <div className="space-y-3">
                       <div className="flex items-start justify-between">
-                        <p className="text-sm text-neutral-900 leading-relaxed group-hover:text-primary-700">
+                        <p className="text-sm text-secondary-900 leading-relaxed group-hover:text-primary-700">
                           {language === 'pt' ? starter.promptPt : starter.promptEn}
                         </p>
                         {starter.usageCount > 100 && (
@@ -372,7 +372,7 @@ export default function ConversationManager({
                         )}
                       </div>
 
-                      <div className="text-xs text-neutral-500">
+                      <div className="text-xs text-secondary-500">
                         <p className="mb-1">
                           <span className="font-medium">{t.culturalContext}:</span> {starter.culturalContext}
                         </p>
@@ -381,7 +381,7 @@ export default function ConversationManager({
                         </p>
                       </div>
 
-                      <button className="w-full bg-neutral-50 group-hover:bg-primary-50 text-neutral-700 group-hover:text-primary-700 py-2 px-4 rounded-lg text-sm font-medium transition-all flex items-center justify-center gap-2">
+                      <button className="w-full bg-secondary-50 group-hover:bg-primary-50 text-secondary-700 group-hover:text-primary-700 py-2 px-4 rounded-lg text-sm font-medium transition-all flex items-center justify-center gap-2">
                         <MessageCircle className="h-4 w-4" />
                         {t.startConversation}
                       </button>
@@ -392,23 +392,23 @@ export default function ConversationManager({
 
               {/* Portuguese Community Tips */}
               <div className="bg-gradient-to-r from-green-50 to-red-50 rounded-lg p-4 border border-green-200">
-                <h4 className="font-medium text-neutral-900 mb-3">{t.tips.title}</h4>
+                <h4 className="font-medium text-secondary-900 mb-3">{t.tips.title}</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="flex items-start gap-2">
-                    <Heart className="h-4 w-4 text-green-600 mt-0.5" />
-                    <p className="text-sm text-neutral-700">{t.tips.tip1}</p>
+                    <Heart className="h-4 w-4 text-action-600 mt-0.5" />
+                    <p className="text-sm text-secondary-700">{t.tips.tip1}</p>
                   </div>
                   <div className="flex items-start gap-2">
-                    <Utensils className="h-4 w-4 text-red-600 mt-0.5" />
-                    <p className="text-sm text-neutral-700">{t.tips.tip2}</p>
+                    <Utensils className="h-4 w-4 text-coral-600 mt-0.5" />
+                    <p className="text-sm text-secondary-700">{t.tips.tip2}</p>
                   </div>
                   <div className="flex items-start gap-2">
-                    <Flag className="h-4 w-4 text-green-600 mt-0.5" />
-                    <p className="text-sm text-neutral-700">{t.tips.tip3}</p>
+                    <Flag className="h-4 w-4 text-action-600 mt-0.5" />
+                    <p className="text-sm text-secondary-700">{t.tips.tip3}</p>
                   </div>
                   <div className="flex items-start gap-2">
-                    <Calendar className="h-4 w-4 text-red-600 mt-0.5" />
-                    <p className="text-sm text-neutral-700">{t.tips.tip4}</p>
+                    <Calendar className="h-4 w-4 text-coral-600 mt-0.5" />
+                    <p className="text-sm text-secondary-700">{t.tips.tip4}</p>
                   </div>
                 </div>
               </div>

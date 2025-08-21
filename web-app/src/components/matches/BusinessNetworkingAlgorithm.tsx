@@ -68,7 +68,7 @@ export default function BusinessNetworkingAlgorithm({
         : "Calculates mutual value potential and collaboration opportunities",
       weight: 20,
       icon: UserGroupIcon,
-      color: "from-purple-500 to-purple-600",
+      color: "from-accent-500 to-accent-600",
       factors: [
         language === "pt" ? "Complementaridade de competências" : "Skill complementarity",
         language === "pt" ? "Potencial de referências" : "Referral potential",
@@ -233,7 +233,7 @@ export default function BusinessNetworkingAlgorithm({
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                       {metric.factors.map((factor, index) => (
                         <div key={index} className="flex items-center gap-2">
-                          <CheckCircleIcon className="w-4 h-4 text-green-500" />
+                          <CheckCircleIcon className="w-4 h-4 text-action-500" />
                           <span className="text-sm text-primary-700">{factor}</span>
                         </div>
                       ))}

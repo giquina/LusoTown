@@ -1,8 +1,11 @@
 'use client'
 
 import React, { useState } from 'react'
+import { ROUTES } from '@/config'
 import { motion } from 'framer-motion'
+import { ROUTES } from '@/config'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config'
 import {
   AcademicCapIcon,
   HomeIcon,
@@ -31,6 +34,7 @@ import {
   CheckBadgeIcon as CheckBadgeIconSolid
 } from '@heroicons/react/24/solid'
 import Link from 'next/link'
+import { ROUTES } from '@/config'
 
 interface StudentSupportSectionProps {
   onStudentVerificationClick?: () => void
@@ -105,7 +109,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
       icon: <UsersIcon className="w-8 h-8" />,
       titleKey: 'students.features.study_groups.title',
       descriptionKey: 'students.features.study_groups.description',
-      color: 'bg-gradient-to-br from-purple-500 to-purple-600'
+      color: 'bg-gradient-to-br from-accent-500 to-accent-600'
     },
     {
       icon: <ChatBubbleLeftRightIcon className="w-8 h-8" />,
@@ -123,7 +127,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
       icon: <BookOpenIcon className="w-8 h-8" />,
       titleKey: 'students.features.support.title',
       descriptionKey: 'students.features.support.description',
-      color: 'bg-gradient-to-br from-indigo-500 to-indigo-600'
+      color: 'bg-gradient-to-br from-primary-500 to-primary-600'
     }
   ]
 
@@ -204,7 +208,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             {t('students.title')}
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
             {t('students.subtitle')}
           </p>
         </motion.div>
@@ -217,7 +221,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mb-16"
         >
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
+          <div className="bg-white rounded-2xl shadow-lg border border-secondary-100 p-8">
             <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
               {t('students.stats.title')}
             </h3>
@@ -229,7 +233,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
                 <div className="text-3xl font-bold text-gray-900 mb-2">
                   {studentStats.totalStudents.toLocaleString()}+
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-secondary-600">
                   {t('students.stats.total_students')}
                 </div>
               </div>
@@ -240,7 +244,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
                 <div className="text-3xl font-bold text-gray-900 mb-2">
                   {studentStats.universities}
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-secondary-600">
                   {t('students.stats.universities')}
                 </div>
               </div>
@@ -251,7 +255,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
                 <div className="text-3xl font-bold text-gray-900 mb-2">
                   {studentStats.cities}
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-secondary-600">
                   {t('students.stats.cities')}
                 </div>
               </div>
@@ -262,7 +266,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
                 <div className="text-3xl font-bold text-gray-900 mb-2">
                   {studentStats.successRate}%
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-secondary-600">
                   {t('students.stats.success_rate')}
                 </div>
               </div>
@@ -282,7 +286,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
               {t('students.features.title')}
             </h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
               {t('students.features.subtitle')}
             </p>
           </div>
@@ -294,7 +298,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 * index }}
-                className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-shadow duration-300"
+                className="bg-white rounded-xl shadow-lg border border-secondary-100 p-6 hover:shadow-xl transition-shadow duration-300"
               >
                 <div className={`${feature.color} w-16 h-16 rounded-xl flex items-center justify-center mb-6`}>
                   <div className="text-white">
@@ -304,7 +308,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
                 <h4 className="text-xl font-semibold text-gray-900 mb-4">
                   {t(feature.titleKey)}
                 </h4>
-                <p className="text-gray-600">
+                <p className="text-secondary-600">
                   {t(feature.descriptionKey)}
                 </p>
               </motion.div>
@@ -324,7 +328,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
               {t('students.cities.title')}
             </h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
               {t('students.cities.subtitle')}
             </p>
           </div>
@@ -336,7 +340,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 * index }}
-                className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
+                className="bg-white rounded-xl shadow-lg border border-secondary-100 overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
                 onClick={() => setSelectedCity(selectedCity === t(city.nameKey) ? null : t(city.nameKey))}
               >
                 <div className="h-32 bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center relative">
@@ -353,7 +357,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-secondary-600 leading-relaxed">
                     {t(city.descriptionKey)}
                   </p>
                   {selectedCity === t(city.nameKey) && (
@@ -361,7 +365,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
                       transition={{ duration: 0.3 }}
-                      className="mt-4 pt-4 border-t border-gray-100"
+                      className="mt-4 pt-4 border-t border-secondary-100"
                     >
                       <Link
                         href={`/students/cities/${t(city.nameKey).toLowerCase()}`}
@@ -390,7 +394,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
               {t('students.resources.title')}
             </h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
               {t('students.resources.subtitle')}
             </p>
           </div>
@@ -402,7 +406,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 * index }}
-                className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-shadow duration-300"
+                className="bg-white rounded-xl shadow-lg border border-secondary-100 p-6 hover:shadow-xl transition-shadow duration-300"
               >
                 <div className={`${resource.color} w-14 h-14 rounded-xl flex items-center justify-center mb-4`}>
                   <div className="text-white">
@@ -412,7 +416,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
                 <h4 className="text-lg font-semibold text-gray-900 mb-3">
                   {t(resource.titleKey)}
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-secondary-600">
                   {t(resource.descriptionKey)}
                 </p>
               </motion.div>
@@ -432,7 +436,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
               {t('students.testimonials.title')}
             </h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
               {t('students.testimonials.subtitle')}
             </p>
           </div>
@@ -444,7 +448,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 * index }}
-                className="bg-white rounded-xl shadow-lg border border-gray-100 p-6"
+                className="bg-white rounded-xl shadow-lg border border-secondary-100 p-6"
               >
                 <div className="flex items-center mb-4">
                   <div className="flex text-yellow-400">
@@ -453,7 +457,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
                     ))}
                   </div>
                 </div>
-                <blockquote className="text-gray-700 mb-6 italic">
+                <blockquote className="text-secondary-700 mb-6 italic">
                   "{t(testimonial.quoteKey)}"
                 </blockquote>
                 <div className="flex items-center">
@@ -464,7 +468,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
                     <div className="font-semibold text-gray-900">
                       {t(testimonial.nameKey)}
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-secondary-600">
                       {t(testimonial.universityKey)}
                     </div>
                   </div>
@@ -486,11 +490,11 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
               {t('students.partnerships.title')}
             </h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
               {t('students.partnerships.subtitle')}
             </p>
           </div>
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
+          <div className="bg-white rounded-2xl shadow-lg border border-secondary-100 p-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {universityPartnerships.map((university, index) => (
                 <motion.div
@@ -501,7 +505,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
                   transition={{ duration: 0.6, delay: 0.1 * index }}
                   className="text-center group"
                 >
-                  <div className="bg-gray-50 rounded-xl p-6 mb-4 group-hover:bg-gray-100 transition-colors duration-300">
+                  <div className="bg-secondary-50 rounded-xl p-6 mb-4 group-hover:bg-secondary-100 transition-colors duration-300">
                     <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-3">
                       <AcademicCapIcon className="w-8 h-8 text-white" />
                     </div>
@@ -540,7 +544,7 @@ export default function StudentSupportSection({ onStudentVerificationClick }: St
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
                   onClick={onStudentVerificationClick}
-                  className="bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-colors duration-300 flex items-center justify-center"
+                  className="bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold hover:bg-secondary-50 transition-colors duration-300 flex items-center justify-center"
                 >
                   <IdentificationIcon className="w-5 h-5 mr-2" />
                   {t('students.cta.verify')}

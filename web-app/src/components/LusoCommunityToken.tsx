@@ -431,17 +431,16 @@ const LusoCommunityToken: React.FC = () => {
 
   const voteOnProposal = (proposalId: string, support: boolean, votingPower: number) => {
     // Simulate voting
-    console.log(`Voted ${support ? 'FOR' : 'AGAINST'} proposal ${proposalId} with ${votingPower} voting power`);
   };
 
   const getRarityColor = (rarity: string) => {
     switch (rarity) {
-      case 'common': return 'text-gray-600 bg-gray-100';
-      case 'uncommon': return 'text-green-600 bg-green-100';
-      case 'rare': return 'text-blue-600 bg-blue-100';
-      case 'epic': return 'text-purple-600 bg-purple-100';
+      case 'common': return 'text-secondary-600 bg-secondary-100';
+      case 'uncommon': return 'text-action-600 bg-green-100';
+      case 'rare': return 'text-primary-600 bg-blue-100';
+      case 'epic': return 'text-accent-600 bg-accent-100';
       case 'legendary': return 'text-yellow-600 bg-yellow-100';
-      default: return 'text-gray-600 bg-gray-100';
+      default: return 'text-secondary-600 bg-secondary-100';
     }
   };
 
@@ -457,7 +456,7 @@ const LusoCommunityToken: React.FC = () => {
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
+            className="text-4xl md:text-5xl font-bold text-secondary-800 mb-4"
           >
             🪙 {language === 'pt' ? 'LusoToken - Token da Comunidade' : 'LusoToken - Community Token'}
           </motion.h1>
@@ -465,7 +464,7 @@ const LusoCommunityToken: React.FC = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-gray-600 max-w-3xl mx-auto mb-8"
+            className="text-xl text-secondary-600 max-w-3xl mx-auto mb-8"
           >
             {language === 'pt'
               ? 'Ganhe tokens participando na comunidade portuguesa, apoie projetos culturais e tenha voz na governança comunitária.'
@@ -485,9 +484,9 @@ const LusoCommunityToken: React.FC = () => {
                 <span>{language === 'pt' ? 'Conectar Carteira' : 'Connect Wallet'}</span>
               </motion.button>
             ) : (
-              <div className="bg-white border border-gray-200 rounded-lg px-6 py-3 flex items-center space-x-3 shadow-sm">
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                <span className="text-sm font-medium text-gray-700">
+              <div className="bg-white border border-secondary-200 rounded-lg px-6 py-3 flex items-center space-x-3 shadow-sm">
+                <div className="w-3 h-3 bg-action-500 rounded-full"></div>
+                <span className="text-sm font-medium text-secondary-700">
                   {language === 'pt' ? 'Carteira Conectada' : 'Wallet Connected'}
                 </span>
               </div>
@@ -503,15 +502,15 @@ const LusoCommunityToken: React.FC = () => {
               <div className="text-sm text-gray-500">{language === 'pt' ? 'Total de Tokens' : 'Total Tokens'}</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-blue-600">{formatTokenAmount(tokenBalance.available)}</div>
+              <div className="text-3xl font-bold text-primary-600">{formatTokenAmount(tokenBalance.available)}</div>
               <div className="text-sm text-gray-500">{language === 'pt' ? 'Disponível' : 'Available'}</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-purple-600">{formatTokenAmount(tokenBalance.staked)}</div>
+              <div className="text-3xl font-bold text-accent-600">{formatTokenAmount(tokenBalance.staked)}</div>
               <div className="text-sm text-gray-500">{language === 'pt' ? 'Investido' : 'Staked'}</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-green-600">{formatTokenAmount(tokenBalance.earned)}</div>
+              <div className="text-3xl font-bold text-action-600">{formatTokenAmount(tokenBalance.earned)}</div>
               <div className="text-sm text-gray-500">{language === 'pt' ? 'Ganho' : 'Earned'}</div>
             </div>
             <div>
@@ -539,7 +538,7 @@ const LusoCommunityToken: React.FC = () => {
                   className={`flex-1 px-6 py-4 text-center font-semibold transition-colors flex items-center justify-center space-x-2 ${
                     activeTab === tab.id
                       ? 'border-b-2 border-emerald-500 text-emerald-600'
-                      : 'text-gray-500 hover:text-gray-700'
+                      : 'text-gray-500 hover:text-secondary-700'
                   }`}
                 >
                   <Icon className="h-5 w-5" />
@@ -554,7 +553,7 @@ const LusoCommunityToken: React.FC = () => {
             {/* Earn Tokens Tab */}
             {activeTab === 'earn' && (
               <div>
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">
+                <h2 className="text-2xl font-bold text-secondary-800 mb-6">
                   {language === 'pt' ? 'Ganhe Tokens Participando' : 'Earn Tokens by Participating'}
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -563,14 +562,14 @@ const LusoCommunityToken: React.FC = () => {
                       key={reward.id}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-all duration-300"
+                      className="bg-secondary-50 rounded-xl p-6 hover:shadow-md transition-all duration-300"
                     >
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex-1">
-                          <h3 className="text-lg font-bold text-gray-800 mb-2">
+                          <h3 className="text-lg font-bold text-secondary-800 mb-2">
                             {language === 'pt' ? reward.activityPt : reward.activity}
                           </h3>
-                          <p className="text-gray-600 text-sm mb-3">
+                          <p className="text-secondary-600 text-sm mb-3">
                             {language === 'pt' ? reward.descriptionPt : reward.description}
                           </p>
                         </div>
@@ -588,10 +587,10 @@ const LusoCommunityToken: React.FC = () => {
                       
                       <div className="space-y-3">
                         <div>
-                          <div className="text-sm font-semibold text-gray-700 mb-1">
+                          <div className="text-sm font-semibold text-secondary-700 mb-1">
                             {language === 'pt' ? 'Requisitos:' : 'Requirements:'}
                           </div>
-                          <ul className="text-xs text-gray-600 space-y-1">
+                          <ul className="text-xs text-secondary-600 space-y-1">
                             {(language === 'pt' ? reward.requirementsPt : reward.requirements).map((req, index) => (
                               <li key={index} className="flex items-center">
                                 <span className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span>
@@ -603,8 +602,8 @@ const LusoCommunityToken: React.FC = () => {
                         
                         <div className="flex items-center justify-between">
                           <div className="flex items-center space-x-2">
-                            <div className="w-4 h-4 bg-purple-500 rounded-full"></div>
-                            <span className="text-xs text-gray-600">
+                            <div className="w-4 h-4 bg-accent-500 rounded-full"></div>
+                            <span className="text-xs text-secondary-600">
                               {language === 'pt' ? 'Significância Cultural:' : 'Cultural Significance:'} {reward.culturalSignificance}%
                             </span>
                           </div>
@@ -622,7 +621,7 @@ const LusoCommunityToken: React.FC = () => {
             {/* Staking Tab */}
             {activeTab === 'stake' && (
               <div>
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">
+                <h2 className="text-2xl font-bold text-secondary-800 mb-6">
                   {language === 'pt' ? 'Investir Tokens para Apoiar Projetos' : 'Stake Tokens to Support Projects'}
                 </h2>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -631,13 +630,13 @@ const LusoCommunityToken: React.FC = () => {
                       key={pool.id}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="bg-gradient-to-br from-white to-gray-50 rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-all duration-300"
+                      className="bg-gradient-to-br from-white to-gray-50 rounded-xl p-6 border border-secondary-200 hover:shadow-lg transition-all duration-300"
                     >
                       <div className="text-center mb-6">
-                        <h3 className="text-xl font-bold text-gray-800 mb-2">
+                        <h3 className="text-xl font-bold text-secondary-800 mb-2">
                           {language === 'pt' ? pool.namePt : pool.name}
                         </h3>
-                        <p className="text-gray-600 text-sm mb-4">
+                        <p className="text-secondary-600 text-sm mb-4">
                           {language === 'pt' ? pool.descriptionPt : pool.description}
                         </p>
                         <div className="text-3xl font-bold text-emerald-600 mb-2">
@@ -650,13 +649,13 @@ const LusoCommunityToken: React.FC = () => {
 
                       <div className="space-y-4 mb-6">
                         <div>
-                          <div className="text-sm font-semibold text-gray-700 mb-2">
+                          <div className="text-sm font-semibold text-secondary-700 mb-2">
                             {language === 'pt' ? 'Benefícios:' : 'Benefits:'}
                           </div>
-                          <ul className="text-xs text-gray-600 space-y-1">
+                          <ul className="text-xs text-secondary-600 space-y-1">
                             {(language === 'pt' ? pool.benefitsPt : pool.benefits).map((benefit, index) => (
                               <li key={index} className="flex items-center">
-                                <Star className="h-3 w-3 text-yellow-500 mr-2" />
+                                <Star className="h-3 w-3 text-accent-500 mr-2" />
                                 {benefit}
                               </li>
                             ))}
@@ -664,10 +663,10 @@ const LusoCommunityToken: React.FC = () => {
                         </div>
                         
                         <div>
-                          <div className="text-sm font-semibold text-gray-700 mb-2">
+                          <div className="text-sm font-semibold text-secondary-700 mb-2">
                             {language === 'pt' ? 'Impacto Cultural:' : 'Cultural Impact:'}
                           </div>
-                          <div className="text-xs text-gray-600 mb-2">
+                          <div className="text-xs text-secondary-600 mb-2">
                             {pool.culturalImpact.beneficiaries.toLocaleString()} {language === 'pt' ? 'beneficiários' : 'beneficiaries'}
                           </div>
                           <div className="flex flex-wrap gap-1">
@@ -683,7 +682,7 @@ const LusoCommunityToken: React.FC = () => {
                       <div className="space-y-3">
                         <div className="grid grid-cols-2 gap-3 text-center text-sm">
                           <div>
-                            <div className="font-semibold text-gray-800">{formatTokenAmount(pool.totalStaked)}</div>
+                            <div className="font-semibold text-secondary-800">{formatTokenAmount(pool.totalStaked)}</div>
                             <div className="text-gray-500 text-xs">{language === 'pt' ? 'Total Investido' : 'Total Staked'}</div>
                           </div>
                           <div>
@@ -711,7 +710,7 @@ const LusoCommunityToken: React.FC = () => {
             {activeTab === 'governance' && (
               <div>
                 <div className="flex items-center justify-between mb-8">
-                  <h2 className="text-2xl font-bold text-gray-800">
+                  <h2 className="text-2xl font-bold text-secondary-800">
                     {language === 'pt' ? 'Governança da Comunidade' : 'Community Governance'}
                   </h2>
                   <div className="text-right">
@@ -726,27 +725,27 @@ const LusoCommunityToken: React.FC = () => {
                       key={proposal.id}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-all duration-300"
+                      className="bg-white border border-secondary-200 rounded-xl p-6 hover:shadow-md transition-all duration-300"
                     >
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex-1">
                           <div className="flex items-center space-x-3 mb-2">
-                            <h3 className="text-xl font-bold text-gray-800">
+                            <h3 className="text-xl font-bold text-secondary-800">
                               {language === 'pt' ? proposal.titlePt : proposal.title}
                             </h3>
                             <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
                               proposal.status === 'active' ? 'bg-blue-100 text-blue-800' :
                               proposal.status === 'passed' ? 'bg-green-100 text-green-800' :
                               proposal.status === 'rejected' ? 'bg-red-100 text-red-800' :
-                              'bg-gray-100 text-gray-800'
+                              'bg-secondary-100 text-secondary-800'
                             }`}>
                               {proposal.status.toUpperCase()}
                             </span>
                           </div>
-                          <p className="text-gray-600 mb-3">
+                          <p className="text-secondary-600 mb-3">
                             {language === 'pt' ? proposal.descriptionPt : proposal.description}
                           </p>
-                          <p className="text-sm text-purple-600 mb-3">
+                          <p className="text-sm text-accent-600 mb-3">
                             💡 {language === 'pt' ? proposal.culturalImpactPt : proposal.culturalImpact}
                           </p>
                         </div>
@@ -754,15 +753,15 @@ const LusoCommunityToken: React.FC = () => {
                       
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 text-center text-sm">
                         <div>
-                          <div className="font-semibold text-green-600">{formatTokenAmount(proposal.votesFor)}</div>
+                          <div className="font-semibold text-action-600">{formatTokenAmount(proposal.votesFor)}</div>
                           <div className="text-gray-500">{language === 'pt' ? 'Votos a Favor' : 'Votes For'}</div>
                         </div>
                         <div>
-                          <div className="font-semibold text-red-600">{formatTokenAmount(proposal.votesAgainst)}</div>
+                          <div className="font-semibold text-coral-600">{formatTokenAmount(proposal.votesAgainst)}</div>
                           <div className="text-gray-500">{language === 'pt' ? 'Votos Contra' : 'Votes Against'}</div>
                         </div>
                         <div>
-                          <div className="font-semibold text-purple-600">{formatTokenAmount(proposal.fundingRequired)}</div>
+                          <div className="font-semibold text-accent-600">{formatTokenAmount(proposal.fundingRequired)}</div>
                           <div className="text-gray-500">{language === 'pt' ? 'Financiamento' : 'Funding'}</div>
                         </div>
                         <div>
@@ -777,7 +776,7 @@ const LusoCommunityToken: React.FC = () => {
                           <span>{language === 'pt' ? 'Progresso da Votação' : 'Voting Progress'}</span>
                           <span>{Math.round((proposal.votesFor + proposal.votesAgainst) / proposal.quorum * 100)}% {language === 'pt' ? 'do quórum' : 'of quorum'}</span>
                         </div>
-                        <div className="w-full bg-gray-200 rounded-full h-2">
+                        <div className="w-full bg-secondary-200 rounded-full h-2">
                           <div
                             className="bg-gradient-to-r from-green-500 to-emerald-500 h-2 rounded-full transition-all duration-500"
                             style={{ width: `${Math.min((proposal.votesFor + proposal.votesAgainst) / proposal.quorum * 100, 100)}%` }}
@@ -791,7 +790,7 @@ const LusoCommunityToken: React.FC = () => {
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                             onClick={() => voteOnProposal(proposal.id, true, userVotingPower)}
-                            className="flex-1 bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center space-x-2"
+                            className="flex-1 bg-action-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center justify-center space-x-2"
                           >
                             <span>✓</span>
                             <span>{language === 'pt' ? 'Votar a Favor' : 'Vote For'}</span>
@@ -800,7 +799,7 @@ const LusoCommunityToken: React.FC = () => {
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                             onClick={() => voteOnProposal(proposal.id, false, userVotingPower)}
-                            className="flex-1 bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors flex items-center justify-center space-x-2"
+                            className="flex-1 bg-coral-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors flex items-center justify-center space-x-2"
                           >
                             <span>✗</span>
                             <span>{language === 'pt' ? 'Votar Contra' : 'Vote Against'}</span>
@@ -809,7 +808,7 @@ const LusoCommunityToken: React.FC = () => {
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                             onClick={() => setSelectedProposal(proposal)}
-                            className="px-6 bg-gray-600 text-white py-3 rounded-lg font-semibold hover:bg-gray-700 transition-colors"
+                            className="px-6 bg-secondary-600 text-white py-3 rounded-lg font-semibold hover:bg-secondary-700 transition-colors"
                           >
                             <ChevronRight className="h-5 w-5" />
                           </motion.button>
@@ -824,7 +823,7 @@ const LusoCommunityToken: React.FC = () => {
             {/* Achievements Tab */}
             {activeTab === 'achievements' && (
               <div>
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">
+                <h2 className="text-2xl font-bold text-secondary-800 mb-6">
                   {language === 'pt' ? 'Conquistas Culturais' : 'Cultural Achievements'}
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -836,15 +835,15 @@ const LusoCommunityToken: React.FC = () => {
                       className={`rounded-xl p-6 border-2 transition-all duration-300 ${
                         achievement.unlockedAt
                           ? 'bg-gradient-to-br from-yellow-50 to-amber-50 border-yellow-300 shadow-lg'
-                          : 'bg-white border-gray-200 hover:border-gray-300'
+                          : 'bg-white border-secondary-200 hover:border-secondary-300'
                       }`}
                     >
                       <div className="text-center mb-4">
                         <div className="text-4xl mb-3">{achievement.icon}</div>
-                        <h3 className="text-lg font-bold text-gray-800 mb-2">
+                        <h3 className="text-lg font-bold text-secondary-800 mb-2">
                           {language === 'pt' ? achievement.titlePt : achievement.title}
                         </h3>
-                        <p className="text-gray-600 text-sm mb-3">
+                        <p className="text-secondary-600 text-sm mb-3">
                           {language === 'pt' ? achievement.descriptionPt : achievement.description}
                         </p>
                       </div>
@@ -855,7 +854,7 @@ const LusoCommunityToken: React.FC = () => {
                             <span>{language === 'pt' ? 'Progresso' : 'Progress'}</span>
                             <span>{achievement.progress}/{achievement.maxProgress}</span>
                           </div>
-                          <div className="w-full bg-gray-200 rounded-full h-2">
+                          <div className="w-full bg-secondary-200 rounded-full h-2">
                             <div
                               className="bg-gradient-to-r from-emerald-500 to-teal-500 h-2 rounded-full transition-all duration-500"
                               style={{ width: `${(achievement.progress / achievement.maxProgress) * 100}%` }}
@@ -890,12 +889,12 @@ const LusoCommunityToken: React.FC = () => {
             {/* Marketplace Tab */}
             {activeTab === 'marketplace' && (
               <div>
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">
+                <h2 className="text-2xl font-bold text-secondary-800 mb-6">
                   {language === 'pt' ? 'Mercado de Tokens' : 'Token Marketplace'}
                 </h2>
                 <div className="text-center py-12">
                   <Gift className="h-24 w-24 text-gray-300 mx-auto mb-6" />
-                  <h3 className="text-xl font-semibold text-gray-600 mb-4">
+                  <h3 className="text-xl font-semibold text-secondary-600 mb-4">
                     {language === 'pt' ? 'Mercado em Desenvolvimento' : 'Marketplace Coming Soon'}
                   </h3>
                   <p className="text-gray-500 max-w-md mx-auto">
@@ -911,18 +910,18 @@ const LusoCommunityToken: React.FC = () => {
 
         {/* Recent Transactions */}
         <div className="bg-white rounded-2xl shadow-lg p-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">
+          <h2 className="text-2xl font-bold text-secondary-800 mb-6">
             {language === 'pt' ? 'Transações Recentes' : 'Recent Transactions'}
           </h2>
           <div className="space-y-4">
             {transactions.map((tx) => (
-              <div key={tx.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+              <div key={tx.id} className="flex items-center justify-between p-4 bg-secondary-50 rounded-lg">
                 <div className="flex items-center space-x-4">
                   <div className={`p-2 rounded-full ${
-                    tx.type === 'earned' ? 'bg-green-100 text-green-600' :
-                    tx.type === 'staked' ? 'bg-blue-100 text-blue-600' :
-                    tx.type === 'spent' ? 'bg-red-100 text-red-600' :
-                    'bg-gray-100 text-gray-600'
+                    tx.type === 'earned' ? 'bg-green-100 text-action-600' :
+                    tx.type === 'staked' ? 'bg-blue-100 text-primary-600' :
+                    tx.type === 'spent' ? 'bg-red-100 text-coral-600' :
+                    'bg-secondary-100 text-secondary-600'
                   }`}>
                     {tx.type === 'earned' && <Zap className="h-5 w-5" />}
                     {tx.type === 'staked' && <Target className="h-5 w-5" />}
@@ -930,21 +929,21 @@ const LusoCommunityToken: React.FC = () => {
                     {tx.type === 'governance' && <Users className="h-5 w-5" />}
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-800">
+                    <div className="font-semibold text-secondary-800">
                       {language === 'pt' ? tx.descriptionPt : tx.description}
                     </div>
                     <div className="text-sm text-gray-500">
                       {new Date(tx.timestamp).toLocaleDateString()}
                       {tx.culturalActivity && (
-                        <span className="ml-2 text-purple-600">• {tx.culturalActivity}</span>
+                        <span className="ml-2 text-accent-600">• {tx.culturalActivity}</span>
                       )}
                     </div>
                   </div>
                 </div>
                 <div className={`text-lg font-bold ${
-                  tx.type === 'earned' ? 'text-green-600' :
-                  tx.type === 'spent' ? 'text-red-600' :
-                  'text-blue-600'
+                  tx.type === 'earned' ? 'text-action-600' :
+                  tx.type === 'spent' ? 'text-coral-600' :
+                  'text-primary-600'
                 }`}>
                   {tx.type === 'earned' ? '+' : tx.type === 'spent' ? '-' : ''}{tx.amount} LT
                 </div>

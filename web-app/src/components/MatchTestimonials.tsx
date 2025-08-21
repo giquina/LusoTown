@@ -1,10 +1,15 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { ROUTES } from '@/config'
 import Image from 'next/image'
+import { ROUTES } from '@/config'
 import { HeartIcon, SparklesIcon, CheckCircleIcon } from '@heroicons/react/24/outline'
+import { ROUTES } from '@/config'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config'
 import { getImageWithFallback } from '@/lib/profileImages'
+import { ROUTES } from '@/config'
 
 interface MatchTestimonial {
   id: string
@@ -187,7 +192,7 @@ export default function MatchTestimonials() {
               {t('success_stories.subtitle')}
             </span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
+          <p className="text-lg sm:text-xl text-secondary-600 leading-relaxed">
             {t('success_stories.description')}
           </p>
         </motion.div>
@@ -201,9 +206,9 @@ export default function MatchTestimonials() {
         >
           {[
             { label: t('success_stories.found_love'), count: 2, color: 'bg-red-100 text-red-700' },
-            { label: t('success_stories.business_partners'), count: 1, color: 'bg-blue-100 text-blue-700' },
+            { label: t('success_stories.business_partners'), count: 1, color: 'bg-blue-100 text-primary-700' },
             { label: t('success_stories.community_family'), count: 1, color: 'bg-green-100 text-green-700' },
-            { label: t('success_stories.student_success'), count: 1, color: 'bg-purple-100 text-purple-700' },
+            { label: t('success_stories.student_success'), count: 1, color: 'bg-accent-100 text-accent-700' },
             { label: t('success_stories.cultural_connection'), count: 1, color: 'bg-orange-100 text-orange-700' }
           ].map((category, index) => (
             <div key={index} className={`${category.color} px-4 py-2 rounded-full text-sm font-semibold`}>
@@ -243,7 +248,7 @@ export default function MatchTestimonials() {
                       <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary-200 via-secondary-200 to-accent-200 flex items-center justify-center border-4 border-white shadow-lg">
                         <div className="text-2xl text-primary-400">👤</div>
                       </div>
-                      <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white flex items-center justify-center">
+                      <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-action-500 rounded-full border-2 border-white flex items-center justify-center">
                         <HeartIcon className="h-2 w-2 text-white fill-current" />
                       </div>
                     </motion.div>
@@ -266,7 +271,7 @@ export default function MatchTestimonials() {
                   <h3 className="font-bold text-lg text-gray-900 mb-1">
                     {testimonial.name} & {testimonial.partnerName}
                   </h3>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-secondary-600 text-sm">
                     {testimonial.age} • {testimonial.location} • {testimonial.timeframe}
                   </p>
                   <div className="inline-flex items-center gap-1 bg-primary-100 text-primary-700 text-xs font-medium px-2 py-1 rounded-full mt-2">
@@ -276,7 +281,7 @@ export default function MatchTestimonials() {
                 </div>
 
                 {/* Story */}
-                <blockquote className="text-gray-700 text-sm italic mb-4 leading-relaxed flex-grow">
+                <blockquote className="text-secondary-700 text-sm italic mb-4 leading-relaxed flex-grow">
                   "{testimonial.story}"
                 </blockquote>
 
@@ -306,7 +311,7 @@ export default function MatchTestimonials() {
                 {/* Current Status */}
                 <div className="bg-green-50 p-3 rounded-lg border border-green-200">
                   <div className="flex items-center gap-2 mb-2">
-                    <SparklesIcon className="w-4 h-4 text-green-600" />
+                    <SparklesIcon className="w-4 h-4 text-action-600" />
                     <span className="font-semibold text-green-800 text-xs">
                       {t('success_stories.current_status')}
                     </span>
@@ -331,19 +336,19 @@ export default function MatchTestimonials() {
           <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
             {t('success_stories.ready_title')}
           </h3>
-          <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-secondary-600 mb-8 max-w-3xl mx-auto leading-relaxed">
             {t('success_stories.ready_description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="/signup" 
-              className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+              href={ROUTES.auth.signup} 
+              className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-transecondary-y-1 hover:scale-105"
             >
               {t('success_stories.start_now')}
             </a>
             <a 
               href="/success-stories" 
-              className="inline-flex items-center justify-center bg-white text-secondary-600 hover:bg-gray-50 border-2 border-secondary-200 hover:border-secondary-300 font-bold text-lg px-10 py-4 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1"
+              className="inline-flex items-center justify-center bg-white text-secondary-600 hover:bg-secondary-50 border-2 border-secondary-200 hover:border-secondary-300 font-bold text-lg px-10 py-4 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-transecondary-y-1"
             >
               {t('success_stories.read_more')}
             </a>

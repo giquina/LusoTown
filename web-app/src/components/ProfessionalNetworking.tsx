@@ -1,7 +1,9 @@
 'use client'
 
 import React, { useState } from 'react'
+import { SOCIAL_URLS } from '@/config'
 import { motion } from 'framer-motion'
+import { SOCIAL_URLS } from '@/config'
 import { 
   BriefcaseIcon,
   BuildingOfficeIcon,
@@ -216,7 +218,7 @@ export default function ProfessionalNetworking({
             className={`px-4 py-2 rounded-lg font-medium text-sm transition-all ${
               activeSection === section.id
                 ? 'bg-primary-500 text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
             }`}
           >
             {section.label}
@@ -235,7 +237,7 @@ export default function ProfessionalNetworking({
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
               {isPortuguese ? 'Estágio da Carreira' : 'Career Stage'}
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-secondary-600 mb-6">
               {isPortuguese 
                 ? 'Onde está na sua jornada profissional?'
                 : 'Where are you in your professional journey?'
@@ -255,26 +257,26 @@ export default function ProfessionalNetworking({
                     className={`p-4 rounded-xl border-2 text-left transition-all ${
                       formData.career_stage === stage.value
                         ? 'border-primary-500 bg-primary-50'
-                        : 'border-gray-200 bg-white hover:border-gray-300'
+                        : 'border-secondary-200 bg-white hover:border-secondary-300'
                     }`}
                   >
                     <div className="flex items-start gap-3">
                       <div className={`p-2 rounded-lg ${
                         formData.career_stage === stage.value
                           ? 'bg-primary-100'
-                          : 'bg-gray-100'
+                          : 'bg-secondary-100'
                       }`}>
                         <Icon className={`w-6 h-6 ${
                           formData.career_stage === stage.value
                             ? 'text-primary-600'
-                            : 'text-gray-600'
+                            : 'text-secondary-600'
                         }`} />
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900">
                           {isPortuguese ? stage.labelPt : stage.label}
                         </h4>
-                        <p className="text-sm text-gray-600 mt-1">
+                        <p className="text-sm text-secondary-600 mt-1">
                           {isPortuguese ? stage.descriptionPt : stage.description}
                         </p>
                       </div>
@@ -289,7 +291,7 @@ export default function ProfessionalNetworking({
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
               {isPortuguese ? 'Setores de Interesse' : 'Industries of Interest'}
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-secondary-600 mb-6">
               {isPortuguese 
                 ? 'Selecione até 3 setores onde tem experiência ou interesse'
                 : 'Select up to 3 industries where you have experience or interest'
@@ -308,7 +310,7 @@ export default function ProfessionalNetworking({
                   className={`p-3 rounded-lg border-2 text-sm font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed ${
                     (formData.industries || []).includes(industry.value)
                       ? 'border-primary-500 bg-primary-50 text-primary-700'
-                      : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300'
+                      : 'border-secondary-200 bg-white text-secondary-700 hover:border-secondary-300'
                   }`}
                 >
                   {isPortuguese ? industry.labelPt : industry.label}
@@ -326,27 +328,27 @@ export default function ProfessionalNetworking({
 
           <div className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {isPortuguese ? 'Cargo Atual' : 'Current Job Title'}
               </label>
               <input
                 type="text"
                 value={formData.job_title || ''}
                 onChange={(e) => updateFormData('job_title', e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+                className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
                 placeholder={isPortuguese ? 'Seu cargo atual' : 'Your current job title'}
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {isPortuguese ? 'Empresa/Organização' : 'Company/Organization'}
               </label>
               <input
                 type="text"
                 value={formData.company || ''}
                 onChange={(e) => updateFormData('company', e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+                className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
                 placeholder={isPortuguese ? 'Nome da sua empresa' : 'Your company name'}
               />
             </div>
@@ -365,7 +367,7 @@ export default function ProfessionalNetworking({
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
               {isPortuguese ? 'Objetivos Profissionais' : 'Professional Goals'}
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-secondary-600 mb-6">
               {isPortuguese 
                 ? 'O que espera alcançar através do networking na comunidade portuguesa?'
                 : 'What do you hope to achieve through networking in the Portuguese community?'
@@ -385,26 +387,26 @@ export default function ProfessionalNetworking({
                     className={`p-4 rounded-xl border-2 text-left transition-all ${
                       (formData.professional_goals || []).includes(goal.id)
                         ? 'border-primary-500 bg-primary-50'
-                        : 'border-gray-200 bg-white hover:border-gray-300'
+                        : 'border-secondary-200 bg-white hover:border-secondary-300'
                     }`}
                   >
                     <div className="flex items-start gap-3">
                       <div className={`p-2 rounded-lg ${
                         (formData.professional_goals || []).includes(goal.id)
                           ? 'bg-primary-100'
-                          : 'bg-gray-100'
+                          : 'bg-secondary-100'
                       }`}>
                         <Icon className={`w-6 h-6 ${
                           (formData.professional_goals || []).includes(goal.id)
                             ? 'text-primary-600'
-                            : 'text-gray-600'
+                            : 'text-secondary-600'
                         }`} />
                       </div>
                       <div>
                         <h4 className="font-semibold text-gray-900">
                           {isPortuguese ? goal.labelPt : goal.label}
                         </h4>
-                        <p className="text-sm text-gray-600 mt-1">
+                        <p className="text-sm text-secondary-600 mt-1">
                           {isPortuguese ? goal.descriptionPt : goal.description}
                         </p>
                       </div>
@@ -416,14 +418,14 @@ export default function ProfessionalNetworking({
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-secondary-700 mb-2">
               {isPortuguese ? 'Objetivos Específicos' : 'Specific Goals'}
             </label>
             <textarea
               value={formData.specific_goals || ''}
               onChange={(e) => updateFormData('specific_goals', e.target.value)}
               rows={4}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+              className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
               placeholder={isPortuguese ? 
                 'Descreva objetivos específicos que gostaria de alcançar...' : 
                 'Describe specific goals you would like to achieve...'
@@ -448,7 +450,7 @@ export default function ProfessionalNetworking({
             <h3 className="text-xl font-semibold text-gray-900 mb-4">
               {isPortuguese ? 'Competências e Especialidades' : 'Skills & Expertise'}
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-secondary-600 mb-6">
               {isPortuguese 
                 ? 'Selecione as competências onde tem experiência ou pode ajudar outros'
                 : 'Select skills where you have experience or can help others'
@@ -466,7 +468,7 @@ export default function ProfessionalNetworking({
                   className={`p-3 rounded-lg border-2 text-sm font-medium transition-all ${
                     (formData.professional_skills || []).includes(skill)
                       ? 'border-primary-500 bg-primary-50 text-primary-700'
-                      : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300'
+                      : 'border-secondary-200 bg-white text-secondary-700 hover:border-secondary-300'
                   }`}
                 >
                   {skill}
@@ -483,14 +485,14 @@ export default function ProfessionalNetworking({
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-secondary-700 mb-2">
               {isPortuguese ? 'Competências Adicionais' : 'Additional Skills'}
             </label>
             <input
               type="text"
               value={formData.additional_skills || ''}
               onChange={(e) => updateFormData('additional_skills', e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+              className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
               placeholder={isPortuguese ? 
                 'Outras competências não listadas acima...' : 
                 'Other skills not listed above...'
@@ -514,7 +516,7 @@ export default function ProfessionalNetworking({
 
             <div className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-4">
+                <label className="block text-sm font-medium text-secondary-700 mb-4">
                   {isPortuguese ? 'Disponibilidade para Networking' : 'Networking Availability'}
                 </label>
                 
@@ -531,7 +533,7 @@ export default function ProfessionalNetworking({
                       className={`p-4 rounded-xl border-2 text-center transition-all ${
                         formData.networking_availability === option.value
                           ? 'border-primary-500 bg-primary-50 text-primary-700'
-                          : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300'
+                          : 'border-secondary-200 bg-white text-secondary-700 hover:border-secondary-300'
                       }`}
                     >
                       <div className="font-semibold">
@@ -543,7 +545,7 @@ export default function ProfessionalNetworking({
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-4">
+                <label className="block text-sm font-medium text-secondary-700 mb-4">
                   {isPortuguese ? 'Formato Preferido' : 'Preferred Format'}
                 </label>
                 
@@ -560,7 +562,7 @@ export default function ProfessionalNetworking({
                       className={`p-4 rounded-xl border-2 text-center transition-all ${
                         formData.networking_format === option.value
                           ? 'border-primary-500 bg-primary-50 text-primary-700'
-                          : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300'
+                          : 'border-secondary-200 bg-white text-secondary-700 hover:border-secondary-300'
                       }`}
                     >
                       <div className="font-semibold">
@@ -572,27 +574,27 @@ export default function ProfessionalNetworking({
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {isPortuguese ? 'LinkedIn Profile' : 'LinkedIn Profile'}
                 </label>
                 <input
                   type="url"
                   value={formData.linkedin_profile || ''}
                   onChange={(e) => updateFormData('linkedin_profile', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
                   placeholder="https://linkedin.com/in/yourprofile"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {isPortuguese ? 'Website/Portfolio' : 'Website/Portfolio'}
                 </label>
                 <input
                   type="url"
                   value={formData.website || ''}
                   onChange={(e) => updateFormData('website', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
                   placeholder="https://yourwebsite.com"
                 />
               </div>
@@ -602,17 +604,17 @@ export default function ProfessionalNetworking({
       )}
 
       {/* Summary */}
-      <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl border border-blue-200">
+      <div className="bg-gradient-to-r from-blue-50 to-accent-50 p-6 rounded-xl border border-blue-200">
         <h4 className="font-semibold text-gray-900 mb-4">
           {isPortuguese ? 'Resumo Profissional' : 'Professional Summary'}
         </h4>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
           <div>
-            <p className="font-medium text-gray-700 mb-1">
+            <p className="font-medium text-secondary-700 mb-1">
               {isPortuguese ? 'Estágio:' : 'Stage:'}
             </p>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {formData.career_stage ? 
                 careerStages.find(s => s.value === formData.career_stage)?.[isPortuguese ? 'labelPt' : 'label'] || formData.career_stage :
                 (isPortuguese ? 'Não definido' : 'Not set')
@@ -621,28 +623,28 @@ export default function ProfessionalNetworking({
           </div>
           
           <div>
-            <p className="font-medium text-gray-700 mb-1">
+            <p className="font-medium text-secondary-700 mb-1">
               {isPortuguese ? 'Setores:' : 'Industries:'}
             </p>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {(formData.industries || []).length || 0} {isPortuguese ? 'selecionados' : 'selected'}
             </p>
           </div>
           
           <div>
-            <p className="font-medium text-gray-700 mb-1">
+            <p className="font-medium text-secondary-700 mb-1">
               {isPortuguese ? 'Objetivos:' : 'Goals:'}
             </p>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {(formData.professional_goals || []).length || 0} {isPortuguese ? 'selecionados' : 'selected'}
             </p>
           </div>
           
           <div>
-            <p className="font-medium text-gray-700 mb-1">
+            <p className="font-medium text-secondary-700 mb-1">
               {isPortuguese ? 'Competências:' : 'Skills:'}
             </p>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {(formData.professional_skills || []).length || 0} {isPortuguese ? 'selecionadas' : 'selected'}
             </p>
           </div>

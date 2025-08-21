@@ -344,9 +344,9 @@ export default function StudentDiscountsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-green-100 via-blue-50 to-purple-100 border border-green-200 shadow-lg mb-6">
-            <TagIcon className="w-4 h-4 mr-2 text-green-600" />
-            <span className="bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent font-bold">
+          <div className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-green-100 via-blue-50 to-accent-100 border border-green-200 shadow-lg mb-6">
+            <TagIcon className="w-4 h-4 mr-2 text-action-600" />
+            <span className="bg-gradient-to-r from-green-600 via-blue-600 to-accent-600 bg-clip-text text-transparent font-bold">
               {language === 'pt' 
                 ? "Descontos Exclusivos para Estudantes Portugueses"
                 : "Exclusive Discounts for Portuguese Students"}
@@ -359,7 +359,7 @@ export default function StudentDiscountsSection() {
               : 'Save Hundreds of Pounds Per Year'}
           </h2>
           
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-secondary-600 max-w-3xl mx-auto mb-8">
             {language === 'pt' 
               ? 'Acesso exclusivo a descontos especiais para estudantes portugueses verificados. Da adesão da comunidade a eventos culturais e serviços profissionais.'
               : 'Exclusive access to special discounts for verified Portuguese students. From community membership to cultural events and professional services.'}
@@ -367,21 +367,21 @@ export default function StudentDiscountsSection() {
 
           {/* Savings Overview */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
-            <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100">
-              <div className="text-2xl font-bold text-green-600 mb-1">£{totalPotentialSavings}</div>
-              <div className="text-sm text-gray-600">{language === 'pt' ? 'Poupanças anuais' : 'Annual savings'}</div>
+            <div className="bg-white rounded-xl p-4 shadow-lg border border-secondary-100">
+              <div className="text-2xl font-bold text-action-600 mb-1">£{totalPotentialSavings}</div>
+              <div className="text-sm text-secondary-600">{language === 'pt' ? 'Poupanças anuais' : 'Annual savings'}</div>
             </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100">
-              <div className="text-2xl font-bold text-blue-600 mb-1">{STUDENT_DISCOUNTS.length}</div>
-              <div className="text-sm text-gray-600">{language === 'pt' ? 'Descontos ativos' : 'Active discounts'}</div>
+            <div className="bg-white rounded-xl p-4 shadow-lg border border-secondary-100">
+              <div className="text-2xl font-bold text-primary-600 mb-1">{STUDENT_DISCOUNTS.length}</div>
+              <div className="text-sm text-secondary-600">{language === 'pt' ? 'Descontos ativos' : 'Active discounts'}</div>
             </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100">
-              <div className="text-2xl font-bold text-purple-600 mb-1">50%</div>
-              <div className="text-sm text-gray-600">{language === 'pt' ? 'Desconto médio' : 'Average discount'}</div>
+            <div className="bg-white rounded-xl p-4 shadow-lg border border-secondary-100">
+              <div className="text-2xl font-bold text-accent-600 mb-1">50%</div>
+              <div className="text-sm text-secondary-600">{language === 'pt' ? 'Desconto médio' : 'Average discount'}</div>
             </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100">
+            <div className="bg-white rounded-xl p-4 shadow-lg border border-secondary-100">
               <div className="text-2xl font-bold text-coral-600 mb-1">24h</div>
-              <div className="text-sm text-gray-600">{language === 'pt' ? 'Verificação' : 'Verification'}</div>
+              <div className="text-sm text-secondary-600">{language === 'pt' ? 'Verificação' : 'Verification'}</div>
             </div>
           </div>
         </motion.div>
@@ -438,8 +438,8 @@ export default function StudentDiscountsSection() {
                   onClick={() => setSelectedCategory(category.value)}
                   className={`flex items-center gap-2 px-4 py-3 rounded-xl font-medium transition-all duration-300 ${
                     selectedCategory === category.value
-                      ? 'bg-white text-gray-900 shadow-lg border border-gray-200'
-                      : 'bg-white/50 text-gray-600 hover:bg-white hover:shadow-md border border-gray-100'
+                      ? 'bg-white text-gray-900 shadow-lg border border-secondary-200'
+                      : 'bg-white/50 text-secondary-600 hover:bg-white hover:shadow-md border border-secondary-100'
                   }`}
                 >
                   <IconComponent className="w-4 h-4" />
@@ -462,7 +462,7 @@ export default function StudentDiscountsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 * index }}
-                className="bg-white rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+                className="bg-white rounded-2xl border border-secondary-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
               >
                 {/* Header */}
                 <div className={`px-6 py-4 bg-gradient-to-r ${getCategoryColor(discount.category)} text-white relative`}>
@@ -494,7 +494,7 @@ export default function StudentDiscountsSection() {
                     {language === 'pt' ? discount.titlePortuguese : discount.title}
                   </h3>
 
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-3">
+                  <p className="text-secondary-600 text-sm mb-4 leading-relaxed line-clamp-3">
                     {language === 'pt' ? discount.descriptionPortuguese : discount.description}
                   </p>
 
@@ -502,7 +502,7 @@ export default function StudentDiscountsSection() {
                   <div className="mb-4">
                     <div className="flex items-baseline gap-2 mb-2">
                       {discount.studentPrice === 0 ? (
-                        <span className="text-2xl font-bold text-green-600">
+                        <span className="text-2xl font-bold text-action-600">
                           {language === 'pt' ? 'Grátis' : 'Free'}
                         </span>
                       ) : (
@@ -514,7 +514,7 @@ export default function StudentDiscountsSection() {
                         </>
                       )}
                     </div>
-                    <div className="text-sm text-green-600 font-medium">
+                    <div className="text-sm text-action-600 font-medium">
                       {language === 'pt' ? 'Poupa' : 'Save'} £{discount.savings} {language === 'pt' ? 'por ano' : 'per year'}
                     </div>
                   </div>
@@ -526,8 +526,8 @@ export default function StudentDiscountsSection() {
                     </h4>
                     <div className="space-y-1">
                       {discount.eligibility.slice(0, 2).map((req, i) => (
-                        <div key={i} className="flex items-start text-xs text-gray-600">
-                          <CheckIcon className="w-3 h-3 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        <div key={i} className="flex items-start text-xs text-secondary-600">
+                          <CheckIcon className="w-3 h-3 text-action-500 mr-2 mt-0.5 flex-shrink-0" />
                           {req}
                         </div>
                       ))}
@@ -579,7 +579,7 @@ export default function StudentDiscountsSection() {
                   <button 
                     className={`w-full font-semibold py-3 px-4 rounded-xl transition-all duration-200 ${
                       !isStudentVerified && discount.verificationRequired
-                        ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                        ? 'bg-secondary-100 text-gray-400 cursor-not-allowed'
                         : `bg-gradient-to-r ${getCategoryColor(discount.category)} text-white hover:shadow-lg`
                     }`}
                     disabled={!isStudentVerified && discount.verificationRequired}
@@ -607,7 +607,7 @@ export default function StudentDiscountsSection() {
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               {language === 'pt' ? 'Como Funciona a Verificação de Estudante' : 'How Student Verification Works'}
             </h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
               {language === 'pt' 
                 ? 'Processo simples e seguro para verificar o seu status de estudante e desbloquear todos os descontos.'
                 : 'Simple and secure process to verify your student status and unlock all discounts.'}
@@ -618,7 +618,7 @@ export default function StudentDiscountsSection() {
             {VERIFICATION_STEPS.map((step, index) => {
               const IconComponent = step.icon
               return (
-                <div key={step.id} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center">
+                <div key={step.id} className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100 text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <IconComponent className="w-8 h-8 text-primary-600" />
                   </div>
@@ -628,7 +628,7 @@ export default function StudentDiscountsSection() {
                   <h4 className="font-bold text-gray-900 mb-3">
                     {language === 'pt' ? step.titlePortuguese : step.title}
                   </h4>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                  <p className="text-secondary-600 text-sm mb-4 leading-relaxed">
                     {language === 'pt' ? step.descriptionPortuguese : step.description}
                   </p>
                   <div className="text-xs text-primary-600 font-medium">
@@ -662,11 +662,11 @@ export default function StudentDiscountsSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               onClick={handleStartVerification}
-              className="bg-white text-green-600 font-bold px-8 py-3 rounded-xl hover:bg-gray-100 transition-colors"
+              className="bg-white text-action-600 font-bold px-8 py-3 rounded-xl hover:bg-secondary-100 transition-colors"
             >
               {language === 'pt' ? 'Verificar Status de Estudante' : 'Verify Student Status'}
             </button>
-            <button className="border-2 border-white text-white hover:bg-white hover:text-green-600 font-bold px-8 py-3 rounded-xl transition-all duration-200">
+            <button className="border-2 border-white text-white hover:bg-white hover:text-action-600 font-bold px-8 py-3 rounded-xl transition-all duration-200">
               {language === 'pt' ? 'Ver Todos os Descontos' : 'View All Discounts'}
             </button>
           </div>
@@ -683,7 +683,7 @@ export default function StudentDiscountsSection() {
                   </h3>
                   <button 
                     onClick={() => setShowVerificationModal(false)}
-                    className="text-gray-400 hover:text-gray-600"
+                    className="text-gray-400 hover:text-secondary-600"
                   >
                     <span className="sr-only">{language === 'pt' ? 'Fechar' : 'Close'}</span>
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -697,12 +697,12 @@ export default function StudentDiscountsSection() {
                   {VERIFICATION_STEPS.map((step, index) => (
                     <React.Fragment key={step.id}>
                       <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
-                        verificationStep >= step.id ? 'bg-primary-500 text-white' : 'bg-gray-200 text-gray-600'
+                        verificationStep >= step.id ? 'bg-primary-500 text-white' : 'bg-secondary-200 text-secondary-600'
                       }`}>
                         {step.id}
                       </div>
                       {index < VERIFICATION_STEPS.length - 1 && (
-                        <div className={`flex-1 h-1 mx-2 ${verificationStep > step.id ? 'bg-primary-500' : 'bg-gray-200'}`}></div>
+                        <div className={`flex-1 h-1 mx-2 ${verificationStep > step.id ? 'bg-primary-500' : 'bg-secondary-200'}`}></div>
                       )}
                     </React.Fragment>
                   ))}
@@ -723,7 +723,7 @@ export default function StudentDiscountsSection() {
                         <h4 className="text-xl font-bold text-gray-900 mb-2">
                           {language === 'pt' ? step.titlePortuguese : step.title}
                         </h4>
-                        <p className="text-gray-600">
+                        <p className="text-secondary-600">
                           {language === 'pt' ? step.descriptionPortuguese : step.description}
                         </p>
                       </div>
@@ -732,13 +732,13 @@ export default function StudentDiscountsSection() {
                       {step.id === 1 && (
                         <div className="space-y-4">
                           <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                            <label className="block text-sm font-medium text-secondary-700 mb-2">
                               {language === 'pt' ? 'Email Universitário' : 'University Email'}
                             </label>
                             <input
                               type="email"
                               placeholder="your.name@university.ac.uk"
-                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                              className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                             />
                           </div>
                           <button 
@@ -752,9 +752,9 @@ export default function StudentDiscountsSection() {
 
                       {step.id === 2 && (
                         <div className="space-y-4">
-                          <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+                          <div className="border-2 border-dashed border-secondary-300 rounded-lg p-6 text-center">
                             <DocumentTextIcon className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                            <p className="text-gray-600 mb-2">
+                            <p className="text-secondary-600 mb-2">
                               {language === 'pt' ? 'Carregar cartão de estudante' : 'Upload student ID'}
                             </p>
                             <p className="text-xs text-gray-500">
@@ -774,7 +774,7 @@ export default function StudentDiscountsSection() {
                       {step.id === 3 && (
                         <div className="text-center space-y-4">
                           <div className="animate-spin w-8 h-8 border-4 border-primary-500 border-t-transparent rounded-full mx-auto"></div>
-                          <p className="text-gray-600">
+                          <p className="text-secondary-600">
                             {language === 'pt' 
                               ? 'A verificar com a universidade...'
                               : 'Verifying with university...'}
@@ -790,18 +790,18 @@ export default function StudentDiscountsSection() {
 
                       {step.id === 4 && (
                         <div className="text-center">
-                          <CheckBadgeIcon className="w-16 h-16 text-green-500 mx-auto mb-4" />
+                          <CheckBadgeIcon className="w-16 h-16 text-action-500 mx-auto mb-4" />
                           <h4 className="text-xl font-bold text-gray-900 mb-4">
                             {language === 'pt' ? 'Verificação Completa!' : 'Verification Complete!'}
                           </h4>
-                          <p className="text-gray-600 mb-6">
+                          <p className="text-secondary-600 mb-6">
                             {language === 'pt' 
                               ? 'Todos os descontos de estudante estão agora disponíveis na sua conta.'
                               : 'All student discounts are now available in your account.'}
                           </p>
                           <button 
                             onClick={() => setShowVerificationModal(false)}
-                            className="bg-green-500 text-white font-medium py-3 px-6 rounded-lg hover:bg-green-600 transition-colors"
+                            className="bg-action-500 text-white font-medium py-3 px-6 rounded-lg hover:bg-action-600 transition-colors"
                           >
                             {language === 'pt' ? 'Começar a Poupar' : 'Start Saving'}
                           </button>

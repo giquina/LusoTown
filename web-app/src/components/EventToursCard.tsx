@@ -90,9 +90,9 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
 
   const getMembershipBadge = (tier: string) => {
     const badges = {
-      free: { icon: '🌟', color: 'text-green-600', label: isPortuguese ? 'Grátis' : 'Free' },
+      free: { icon: '🌟', color: 'text-action-600', label: isPortuguese ? 'Grátis' : 'Free' },
       core: { icon: '❤️', color: 'text-orange-600', label: isPortuguese ? 'Core+' : 'Core+' },
-      premium: { icon: <Crown className="w-3 h-3" />, color: 'text-purple-600', label: isPortuguese ? 'Premium' : 'Premium' }
+      premium: { icon: <Crown className="w-3 h-3" />, color: 'text-accent-600', label: isPortuguese ? 'Premium' : 'Premium' }
     }
     return badges[tier as keyof typeof badges] || badges.free
   }
@@ -178,7 +178,7 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group h-full flex flex-col ${
+      className={`bg-white rounded-2xl shadow-lg border border-secondary-100 overflow-hidden hover:shadow-xl transition-all duration-300 group h-full flex flex-col ${
         event.featured ? 'ring-2 ring-yellow-300' : ''
       } ${className}`}
     >
@@ -244,7 +244,7 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
             {/* Availability Status */}
             <div>
               {isFull ? (
-                <span className="bg-red-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                <span className="bg-coral-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
                   {isPortuguese ? 'LOTADO' : 'FULL'}
                 </span>
               ) : isAlmostFull ? (
@@ -252,7 +252,7 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
                   {isPortuguese ? `${spotsLeft} VAGA${spotsLeft === 1 ? '' : 'S'}` : `${spotsLeft} SPOT${spotsLeft === 1 ? '' : 'S'} LEFT`}
                 </span>
               ) : (
-                <span className="bg-green-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                <span className="bg-action-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
                   {isPortuguese ? `${spotsLeft} VAGAS` : `${spotsLeft} SPOTS`}
                 </span>
               )}
@@ -271,7 +271,7 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
             </h3>
             {isFull && (
               <div className="mt-2">
-                <span className="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                <span className="bg-coral-500 text-white text-xs font-bold px-2 py-1 rounded-full">
                   {isPortuguese ? 'LOTADO' : 'FULLY BOOKED'}
                 </span>
               </div>
@@ -290,37 +290,37 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
           </div>
         </div>
         
-        <p className="text-gray-600 text-sm sm:text-base mb-6 leading-relaxed min-h-[4rem] flex items-start">
+        <p className="text-secondary-600 text-sm sm:text-base mb-6 leading-relaxed min-h-[4rem] flex items-start">
           <span className="line-clamp-4">{event.description}</span>
         </p>
         
         {/* Event Details */}
         <div className="space-y-3 mb-4">
-          <div className="flex items-center gap-3 text-sm text-gray-600">
+          <div className="flex items-center gap-3 text-sm text-secondary-600">
             <CalendarDaysIcon className="w-5 h-5 text-primary-500 flex-shrink-0" />
             <div className="flex-1">
               <div className="font-semibold text-gray-900 text-sm">{formatDate(event.date)}</div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-secondary-600">
                 {formatTime(event.time)}{event.endTime && ` - ${formatTime(event.endTime)}`}
               </div>
             </div>
           </div>
           
-          <div className="flex items-center gap-3 text-sm text-gray-600">
+          <div className="flex items-center gap-3 text-sm text-secondary-600">
             <MapPinIcon className="w-5 h-5 text-secondary-500 flex-shrink-0" />
             <div className="flex-1 min-w-0">
               <div className="font-semibold text-gray-900 text-sm line-clamp-1">{event.location}</div>
-              <div className="text-sm text-gray-600 line-clamp-1">{event.address}</div>
+              <div className="text-sm text-secondary-600 line-clamp-1">{event.address}</div>
             </div>
           </div>
           
-          <div className="flex items-center gap-3 text-sm text-gray-600">
-            <UserGroupIcon className="w-5 h-5 text-purple-500 flex-shrink-0" />
+          <div className="flex items-center gap-3 text-sm text-secondary-600">
+            <UserGroupIcon className="w-5 h-5 text-accent-500 flex-shrink-0" />
             <div className="flex-1">
               <div className="font-semibold text-gray-900 text-sm">
                 {event.currentAttendees}/{event.maxAttendees} {isPortuguese ? 'Participantes' : 'Attending'}
               </div>
-              <div className="text-sm text-gray-600 line-clamp-1">
+              <div className="text-sm text-secondary-600 line-clamp-1">
                 {event.groupSize} • {isPortuguese ? 'Por' : 'By'} {event.hostName}
               </div>
             </div>
@@ -328,7 +328,7 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
 
           {/* Age Restriction */}
           {event.ageRestriction && (
-            <div className="flex items-center gap-3 text-sm text-gray-600">
+            <div className="flex items-center gap-3 text-sm text-secondary-600">
               <AcademicCapIcon className="w-5 h-5 text-orange-500 flex-shrink-0" />
               <span className="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded-full font-medium">
                 {event.ageRestriction}
@@ -338,8 +338,8 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
 
           {/* Portuguese Origins */}
           {event.portugueseOrigin && event.portugueseOrigin.length > 0 && (
-            <div className="flex items-center gap-3 text-sm text-gray-600">
-              <GlobeAltIcon className="w-5 h-5 text-green-500 flex-shrink-0" />
+            <div className="flex items-center gap-3 text-sm text-secondary-600">
+              <GlobeAltIcon className="w-5 h-5 text-action-500 flex-shrink-0" />
               <div className="flex flex-wrap gap-1">
                 {event.portugueseOrigin.map((origin) => (
                   <span key={origin} className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">
@@ -352,8 +352,8 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
 
           {/* Rating */}
           {event.averageRating && event.averageRating > 0 && (
-            <div className="flex items-center gap-3 text-sm text-gray-600">
-              <StarIcon className="w-5 h-5 text-yellow-500 flex-shrink-0" />
+            <div className="flex items-center gap-3 text-sm text-secondary-600">
+              <StarIcon className="w-5 h-5 text-accent-500 flex-shrink-0" />
               <div>
                 <div className="font-medium text-gray-900">
                   {event.averageRating.toFixed(1)} ⭐ ({event.totalReviews} {isPortuguese ? 'avaliações' : 'reviews'})
@@ -365,11 +365,11 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
 
         {/* Highlights */}
         {event.highlights && event.highlights.length > 0 && (
-          <div className="mb-4 p-3 bg-gray-50 rounded-lg">
+          <div className="mb-4 p-3 bg-secondary-50 rounded-lg">
             <h4 className="text-sm font-semibold text-gray-900 mb-2">
               {isPortuguese ? 'Destaques da Experiência:' : 'Experience Highlights:'}
             </h4>
-            <ul className="text-xs text-gray-600 space-y-1">
+            <ul className="text-xs text-secondary-600 space-y-1">
               {event.highlights.slice(0, 2).map((highlight, index) => (
                 <li key={index} className="flex items-start gap-2">
                   <span className="text-primary-500 mt-0.5">•</span>
@@ -424,11 +424,11 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
                 className={`font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg transition-all duration-200 text-center text-xs sm:text-sm flex items-center justify-center gap-1 sm:gap-2 ${
                   inCart 
                     ? 'bg-green-100 text-green-700 border border-green-300'
-                    : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
+                    : 'border border-secondary-300 text-secondary-700 hover:bg-secondary-50'
                 }`}
               >
                 {addingToCart ? (
-                  <div className="w-4 h-4 border-2 border-gray-400 border-t-transparent rounded-full animate-spin" />
+                  <div className="w-4 h-4 border-2 border-secondary-400 border-t-transparent rounded-full animate-spin" />
                 ) : inCart ? (
                   <>
                     <CheckIcon className="w-4 h-4" />
@@ -449,7 +449,7 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
           {/* Secondary Action */}
           <button
             onClick={handleSaveForLater}
-            className="w-full text-gray-600 hover:text-primary-600 text-xs sm:text-sm font-medium transition-colors flex items-center justify-center gap-2 py-1"
+            className="w-full text-secondary-600 hover:text-primary-600 text-xs sm:text-sm font-medium transition-colors flex items-center justify-center gap-2 py-1"
           >
             <HeartIcon className="w-4 h-4" />
             <span className="hidden sm:inline">

@@ -223,7 +223,7 @@ export default function PortugueseCulturalCalendar() {
         familyFriendly: true,
         religiousSignificance: 'Honors the Holy Spirit through acts of charity and community sharing',
         emoji: '👑',
-        color: 'from-red-600 to-purple-600',
+        color: 'from-red-600 to-accent-600',
         isUserFavorite: false,
         reminderSet: false
       },
@@ -339,7 +339,7 @@ export default function PortugueseCulturalCalendar() {
         modernAdaptations: ['indoor celebrations', 'multicultural influences', 'family-friendly timing'],
         familyFriendly: true,
         emoji: '🎭',
-        color: 'from-purple-500 to-pink-500',
+        color: 'from-accent-500 to-pink-500',
         isUserFavorite: false,
         reminderSet: false
       }
@@ -347,9 +347,9 @@ export default function PortugueseCulturalCalendar() {
   }, [])
 
   const celebrationTypes = [
-    { key: 'religious', nameEn: 'Religious', namePt: 'Religiosas', color: 'bg-purple-100 text-purple-700', icon: '⛪' },
+    { key: 'religious', nameEn: 'Religious', namePt: 'Religiosas', color: 'bg-accent-100 text-accent-700', icon: '⛪' },
     { key: 'national', nameEn: 'National', namePt: 'Nacionais', color: 'bg-green-100 text-green-700', icon: '🇵🇹' },
-    { key: 'regional', nameEn: 'Regional', namePt: 'Regionais', color: 'bg-blue-100 text-blue-700', icon: '🏝️' },
+    { key: 'regional', nameEn: 'Regional', namePt: 'Regionais', color: 'bg-blue-100 text-primary-700', icon: '🏝️' },
     { key: 'traditional', nameEn: 'Traditional', namePt: 'Tradicionais', color: 'bg-yellow-100 text-yellow-700', icon: '🎉' },
     { key: 'community', nameEn: 'Community', namePt: 'Comunitárias', color: 'bg-pink-100 text-pink-700', icon: '👥' },
     { key: 'seasonal', nameEn: 'Seasonal', namePt: 'Sazonais', color: 'bg-orange-100 text-orange-700', icon: '🌸' }
@@ -414,7 +414,7 @@ export default function PortugueseCulturalCalendar() {
         <div className="flex items-center justify-between bg-white rounded-2xl p-6 shadow-lg">
           <button
             onClick={() => setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1))}
-            className="p-2 hover:bg-gray-100 rounded-xl transition-colors"
+            className="p-2 hover:bg-secondary-100 rounded-xl transition-colors"
           >
             <ChevronLeftIcon className="w-5 h-5" />
           </button>
@@ -426,14 +426,14 @@ export default function PortugueseCulturalCalendar() {
                 year: 'numeric' 
               })}
             </h3>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {monthEvents.length} {t('calendar.cultural_events', 'cultural events')}
             </p>
           </div>
           
           <button
             onClick={() => setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1))}
-            className="p-2 hover:bg-gray-100 rounded-xl transition-colors"
+            className="p-2 hover:bg-secondary-100 rounded-xl transition-colors"
           >
             <ChevronRightIcon className="w-5 h-5" />
           </button>
@@ -451,7 +451,7 @@ export default function PortugueseCulturalCalendar() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 whileHover={{ y: -5 }}
-                className="bg-white rounded-3xl p-6 shadow-xl border border-gray-100 cursor-pointer transform transition-all hover:shadow-2xl"
+                className="bg-white rounded-3xl p-6 shadow-xl border border-secondary-100 cursor-pointer transform transition-all hover:shadow-2xl"
                 onClick={() => setSelectedEvent(event)}
               >
                 {/* Event Header */}
@@ -464,7 +464,7 @@ export default function PortugueseCulturalCalendar() {
                       </h3>
                       <div className="flex items-center gap-2 mt-1">
                         {regionInfo && (
-                          <span className="text-sm text-gray-600">{regionInfo.flag}</span>
+                          <span className="text-sm text-secondary-600">{regionInfo.flag}</span>
                         )}
                         <span className={`px-2 py-1 rounded-full text-xs font-medium ${typeInfo?.color}`}>
                           {language === 'pt' ? typeInfo?.namePt : typeInfo?.nameEn}
@@ -480,7 +480,7 @@ export default function PortugueseCulturalCalendar() {
                         toggleFavorite(event.id)
                       }}
                       className={`p-2 rounded-xl transition-colors ${
-                        event.isUserFavorite ? 'text-red-500' : 'text-gray-400 hover:text-red-500'
+                        event.isUserFavorite ? 'text-coral-500' : 'text-gray-400 hover:text-coral-500'
                       }`}
                     >
                       {event.isUserFavorite ? <HeartSolid className="w-5 h-5" /> : <HeartIcon className="w-5 h-5" />}
@@ -491,7 +491,7 @@ export default function PortugueseCulturalCalendar() {
                         toggleReminder(event.id)
                       }}
                       className={`p-2 rounded-xl transition-colors ${
-                        event.reminderSet ? 'text-blue-500' : 'text-gray-400 hover:text-blue-500'
+                        event.reminderSet ? 'text-primary-500' : 'text-gray-400 hover:text-primary-500'
                       }`}
                     >
                       <BellIcon className="w-5 h-5" />
@@ -502,7 +502,7 @@ export default function PortugueseCulturalCalendar() {
                 {/* Event Date */}
                 <div className="mb-4">
                   {event.dateType === 'fixed' && event.celebrationDate && (
-                    <div className="flex items-center gap-2 text-gray-600">
+                    <div className="flex items-center gap-2 text-secondary-600">
                       <CalendarDaysIcon className="w-5 h-5 text-secondary-500" />
                       <span className="font-semibold">
                         {new Date(event.celebrationDate).toLocaleDateString(
@@ -513,7 +513,7 @@ export default function PortugueseCulturalCalendar() {
                     </div>
                   )}
                   {event.dateType === 'variable' && (
-                    <div className="flex items-center gap-2 text-gray-600">
+                    <div className="flex items-center gap-2 text-secondary-600">
                       <CalendarDaysIcon className="w-5 h-5 text-secondary-500" />
                       <span className="font-semibold">
                         {t('calendar.variable_date', 'Variable date in')} {
@@ -528,7 +528,7 @@ export default function PortugueseCulturalCalendar() {
                 </div>
 
                 {/* Cultural Significance */}
-                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                <p className="text-secondary-600 text-sm mb-4 line-clamp-2">
                   {language === 'pt' ? event.culturalSignificancePt : event.culturalSignificanceEn}
                 </p>
 
@@ -536,7 +536,7 @@ export default function PortugueseCulturalCalendar() {
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-2">
                     <MapPinIcon className="w-4 h-4 text-secondary-500" />
-                    <span className="text-sm text-gray-600">{t('calendar.london_celebration', 'London Celebration')}</span>
+                    <span className="text-sm text-secondary-600">{t('calendar.london_celebration', 'London Celebration')}</span>
                   </div>
                   <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, i) => (
@@ -562,7 +562,7 @@ export default function PortugueseCulturalCalendar() {
                       </span>
                     ))}
                     {event.typicalActivities.length > 3 && (
-                      <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs">
+                      <span className="px-2 py-1 bg-secondary-100 text-secondary-600 rounded-full text-xs">
                         +{event.typicalActivities.length - 3}
                       </span>
                     )}
@@ -573,7 +573,7 @@ export default function PortugueseCulturalCalendar() {
                 {event.londonEvents && event.londonEvents.length > 0 && (
                   <div className="bg-green-50 rounded-xl p-3">
                     <div className="flex items-center gap-2 mb-2">
-                      <EyeIcon className="w-4 h-4 text-green-600" />
+                      <EyeIcon className="w-4 h-4 text-action-600" />
                       <span className="text-sm font-semibold text-green-800">
                         {event.londonEvents.length} {t('calendar.london_events', 'London events planned')}
                       </span>
@@ -594,7 +594,7 @@ export default function PortugueseCulturalCalendar() {
             <h3 className="text-xl font-semibold text-gray-900 mb-2">
               {t('calendar.no_events', 'No Cultural Events This Month')}
             </h3>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {t('calendar.check_other_months', 'Check other months or explore different celebration types')}
             </p>
           </div>
@@ -609,7 +609,7 @@ export default function PortugueseCulturalCalendar() {
         <h3 className="text-2xl font-bold text-gray-900 mb-2">
           {t('calendar.timeline.title', 'Portuguese Cultural Year Timeline')}
         </h3>
-        <p className="text-gray-600">
+        <p className="text-secondary-600">
           {t('calendar.timeline.subtitle', 'Follow the rhythm of Portuguese celebrations throughout the year')}
         </p>
       </div>
@@ -636,7 +636,7 @@ export default function PortugueseCulturalCalendar() {
               >
                 <div className="absolute left-6 w-5 h-5 bg-white border-4 border-secondary-500 rounded-full"></div>
                 
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                <div className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
                       <div className="text-2xl">{event.emoji}</div>
@@ -644,7 +644,7 @@ export default function PortugueseCulturalCalendar() {
                         <h4 className="text-lg font-bold text-gray-900">
                           {language === 'pt' ? event.namePt : event.nameEn}
                         </h4>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-secondary-600">
                           {event.celebrationDate ? 
                             new Date(event.celebrationDate).toLocaleDateString(
                               language === 'pt' ? 'pt-PT' : 'en-GB', 
@@ -671,7 +671,7 @@ export default function PortugueseCulturalCalendar() {
                     </div>
                   </div>
                   
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-secondary-600 mb-4">
                     {language === 'pt' ? event.culturalSignificancePt : event.culturalSignificanceEn}
                   </p>
                   
@@ -682,7 +682,7 @@ export default function PortugueseCulturalCalendar() {
                       </h5>
                       <ul className="space-y-1">
                         {event.typicalActivities.slice(0, 3).map((activity) => (
-                          <li key={activity} className="text-gray-600">• {activity}</li>
+                          <li key={activity} className="text-secondary-600">• {activity}</li>
                         ))}
                       </ul>
                     </div>
@@ -692,7 +692,7 @@ export default function PortugueseCulturalCalendar() {
                       </h5>
                       <ul className="space-y-1">
                         {event.foodTraditions.slice(0, 3).map((food) => (
-                          <li key={food} className="text-gray-600">• {food}</li>
+                          <li key={food} className="text-secondary-600">• {food}</li>
                         ))}
                       </ul>
                     </div>
@@ -702,7 +702,7 @@ export default function PortugueseCulturalCalendar() {
                       </h5>
                       <ul className="space-y-1">
                         {event.musicTraditions.slice(0, 3).map((music) => (
-                          <li key={music} className="text-gray-600">• {music}</li>
+                          <li key={music} className="text-secondary-600">• {music}</li>
                         ))}
                       </ul>
                     </div>
@@ -733,7 +733,7 @@ export default function PortugueseCulturalCalendar() {
         <h3 className="text-2xl font-bold text-gray-900 mb-2">
           {t('calendar.regions.title', 'Cultural Celebrations by Portuguese Region')}
         </h3>
-        <p className="text-gray-600">
+        <p className="text-secondary-600">
           {t('calendar.regions.subtitle', 'Explore the unique cultural traditions from each Portuguese region celebrated in London')}
         </p>
       </div>
@@ -746,7 +746,7 @@ export default function PortugueseCulturalCalendar() {
             key={region.key}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+            className="bg-white rounded-3xl p-8 shadow-xl border border-secondary-100"
           >
             <div className="flex items-center gap-4 mb-6">
               <div className="text-4xl">{region.flag}</div>
@@ -754,7 +754,7 @@ export default function PortugueseCulturalCalendar() {
                 <h4 className="text-2xl font-bold text-gray-900">
                   {language === 'pt' ? region.namePt : region.nameEn}
                 </h4>
-                <p className="text-gray-600">
+                <p className="text-secondary-600">
                   {regionEvents.length} {t('calendar.celebrations', 'celebrations')}
                 </p>
               </div>
@@ -765,7 +765,7 @@ export default function PortugueseCulturalCalendar() {
                 {regionEvents.map((event) => (
                   <div
                     key={event.id}
-                    className="border border-gray-200 rounded-2xl p-4 hover:shadow-lg transition-all cursor-pointer"
+                    className="border border-secondary-200 rounded-2xl p-4 hover:shadow-lg transition-all cursor-pointer"
                     onClick={() => setSelectedEvent(event)}
                   >
                     <div className="flex items-center gap-3 mb-3">
@@ -774,7 +774,7 @@ export default function PortugueseCulturalCalendar() {
                         <h5 className="font-semibold text-gray-900">
                           {language === 'pt' ? event.namePt : event.nameEn}
                         </h5>
-                        <p className="text-xs text-gray-600">
+                        <p className="text-xs text-secondary-600">
                           {event.celebrationDate ? 
                             new Date(event.celebrationDate).toLocaleDateString(
                               language === 'pt' ? 'pt-PT' : 'en-GB', { month: 'short', day: 'numeric' }
@@ -785,7 +785,7 @@ export default function PortugueseCulturalCalendar() {
                       </div>
                     </div>
                     
-                    <p className="text-sm text-gray-600 mb-3 line-clamp-2">
+                    <p className="text-sm text-secondary-600 mb-3 line-clamp-2">
                       {language === 'pt' ? event.descriptionPt : event.descriptionEn}
                     </p>
                     
@@ -832,7 +832,7 @@ export default function PortugueseCulturalCalendar() {
             animate={{ opacity: 1, y: 0 }}
             className="inline-flex items-center gap-3 bg-gradient-to-r from-green-50 to-red-50 border border-green-200 rounded-3xl px-6 py-3 mb-6"
           >
-            <CalendarDaysIcon className="w-5 h-5 text-green-600" />
+            <CalendarDaysIcon className="w-5 h-5 text-action-600" />
             <span className="font-semibold text-green-700">
               {t('calendar.badge', 'Portuguese Cultural Calendar')}
             </span>
@@ -855,18 +855,18 @@ export default function PortugueseCulturalCalendar() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl sm:text-2xl text-gray-700 max-w-4xl mx-auto"
+            className="text-xl sm:text-2xl text-secondary-700 max-w-4xl mx-auto"
           >
             {t('calendar.subtitle', 'Discover, celebrate, and never miss Portuguese cultural holidays, saint days, and traditional celebrations in London')}
           </motion.p>
         </div>
 
         {/* Filters and View Controls */}
-        <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 mb-8">
+        <div className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100 mb-8">
           <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
             <div className="flex flex-wrap items-center gap-4">
               {/* View Mode Toggle */}
-              <div className="flex bg-gray-100 rounded-xl p-1">
+              <div className="flex bg-secondary-100 rounded-xl p-1">
                 {[
                   { key: 'calendar', label: t('calendar.view.calendar', 'Calendar'), icon: CalendarDaysIcon },
                   { key: 'timeline', label: t('calendar.view.timeline', 'Timeline'), icon: ClockIcon },
@@ -880,7 +880,7 @@ export default function PortugueseCulturalCalendar() {
                       className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all text-sm ${
                         viewMode === view.key
                           ? 'bg-white text-secondary-600 shadow-sm'
-                          : 'text-gray-600 hover:text-gray-800'
+                          : 'text-secondary-600 hover:text-secondary-800'
                       }`}
                     >
                       <Icon className="w-4 h-4" />
@@ -896,16 +896,16 @@ export default function PortugueseCulturalCalendar() {
                   type="checkbox"
                   checked={filters.isFavorite}
                   onChange={(e) => setFilters(prev => ({ ...prev, isFavorite: e.target.checked }))}
-                  className="rounded border-gray-300 text-secondary-600 focus:ring-secondary-500"
+                  className="rounded border-secondary-300 text-secondary-600 focus:ring-secondary-500"
                 />
-                <HeartIcon className="w-4 h-4 text-red-500" />
-                <span className="text-sm font-medium text-gray-700">
+                <HeartIcon className="w-4 h-4 text-coral-500" />
+                <span className="text-sm font-medium text-secondary-700">
                   {t('calendar.my_favorites', 'My Favorites')}
                 </span>
               </label>
             </div>
 
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {filteredEvents.length} {t('calendar.events_shown', 'events shown')}
             </div>
           </div>
@@ -915,7 +915,7 @@ export default function PortugueseCulturalCalendar() {
             <select
               value={filters.celebrationType}
               onChange={(e) => setFilters(prev => ({ ...prev, celebrationType: e.target.value }))}
-              className="rounded-xl border-gray-300 focus:border-secondary-500 focus:ring-secondary-500"
+              className="rounded-xl border-secondary-300 focus:border-secondary-500 focus:ring-secondary-500"
             >
               <option value="">{t('calendar.all_types', 'All Celebration Types')}</option>
               {celebrationTypes.map(type => (
@@ -928,7 +928,7 @@ export default function PortugueseCulturalCalendar() {
             <select
               value={filters.originRegion}
               onChange={(e) => setFilters(prev => ({ ...prev, originRegion: e.target.value }))}
-              className="rounded-xl border-gray-300 focus:border-secondary-500 focus:ring-secondary-500"
+              className="rounded-xl border-secondary-300 focus:border-secondary-500 focus:ring-secondary-500"
             >
               <option value="">{t('calendar.all_regions', 'All Portuguese Regions')}</option>
               {originRegions.map(region => (
@@ -941,7 +941,7 @@ export default function PortugueseCulturalCalendar() {
             <select
               value={filters.participationLevel}
               onChange={(e) => setFilters(prev => ({ ...prev, participationLevel: e.target.value }))}
-              className="rounded-xl border-gray-300 focus:border-secondary-500 focus:ring-secondary-500"
+              className="rounded-xl border-secondary-300 focus:border-secondary-500 focus:ring-secondary-500"
             >
               <option value="">{t('calendar.all_participation', 'All Participation Levels')}</option>
               <option value="5">{t('calendar.very_high', 'Very High (5★)')}</option>
@@ -995,14 +995,14 @@ export default function PortugueseCulturalCalendar() {
                       <h3 className="text-3xl font-bold text-gray-900 mb-2">
                         {language === 'pt' ? selectedEvent.namePt : selectedEvent.nameEn}
                       </h3>
-                      <p className="text-lg text-gray-600">
+                      <p className="text-lg text-secondary-600">
                         {language === 'pt' ? selectedEvent.descriptionPt : selectedEvent.descriptionEn}
                       </p>
                     </div>
                   </div>
                   <button
                     onClick={() => setSelectedEvent(null)}
-                    className="text-gray-400 hover:text-gray-600 text-3xl font-light"
+                    className="text-gray-400 hover:text-secondary-600 text-3xl font-light"
                   >
                     ×
                   </button>
@@ -1015,7 +1015,7 @@ export default function PortugueseCulturalCalendar() {
                       <h4 className="text-xl font-bold text-gray-900 mb-3">
                         {t('calendar.cultural_significance', 'Cultural Significance')}
                       </h4>
-                      <p className="text-gray-700 leading-relaxed">
+                      <p className="text-secondary-700 leading-relaxed">
                         {language === 'pt' ? selectedEvent.culturalSignificancePt : selectedEvent.culturalSignificanceEn}
                       </p>
                     </div>
@@ -1024,7 +1024,7 @@ export default function PortugueseCulturalCalendar() {
                       <h4 className="text-xl font-bold text-gray-900 mb-3">
                         {t('calendar.historical_background', 'Historical Background')}
                       </h4>
-                      <p className="text-gray-700 leading-relaxed">
+                      <p className="text-secondary-700 leading-relaxed">
                         {selectedEvent.historicalBackground}
                       </p>
                     </div>
@@ -1035,7 +1035,7 @@ export default function PortugueseCulturalCalendar() {
                       </h4>
                       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {selectedEvent.typicalActivities.map((activity) => (
-                          <li key={activity} className="flex items-center gap-2 text-gray-700">
+                          <li key={activity} className="flex items-center gap-2 text-secondary-700">
                             <div className="w-2 h-2 bg-secondary-500 rounded-full" />
                             {activity}
                           </li>
@@ -1091,7 +1091,7 @@ export default function PortugueseCulturalCalendar() {
                                 </div>
                               </div>
                               <div className="mt-3">
-                                <button className="bg-green-600 text-white px-4 py-2 rounded-xl font-semibold text-sm hover:bg-green-700 transition-colors">
+                                <button className="bg-action-600 text-white px-4 py-2 rounded-xl font-semibold text-sm hover:bg-green-700 transition-colors">
                                   {londonEvent.ticketPrice === 0 ? t('common.free_entry', 'Free Entry') : `£${londonEvent.ticketPrice}`}
                                 </button>
                               </div>
@@ -1099,9 +1099,9 @@ export default function PortugueseCulturalCalendar() {
                           ))}
                         </div>
                       ) : (
-                        <div className="bg-gray-50 rounded-2xl p-6 text-center">
+                        <div className="bg-secondary-50 rounded-2xl p-6 text-center">
                           <CalendarDaysIcon className="w-12 h-12 text-gray-300 mx-auto mb-3" />
-                          <p className="text-gray-600 mb-4">
+                          <p className="text-secondary-600 mb-4">
                             {t('calendar.no_london_events', 'No London events scheduled yet')}
                           </p>
                           <button className="bg-secondary-600 text-white px-4 py-2 rounded-xl font-semibold text-sm hover:bg-secondary-700 transition-colors">
@@ -1117,8 +1117,8 @@ export default function PortugueseCulturalCalendar() {
                       </h4>
                       <ul className="space-y-2">
                         {selectedEvent.modernAdaptations.map((adaptation) => (
-                          <li key={adaptation} className="flex items-center gap-2 text-gray-700">
-                            <div className="w-2 h-2 bg-blue-500 rounded-full" />
+                          <li key={adaptation} className="flex items-center gap-2 text-secondary-700">
+                            <div className="w-2 h-2 bg-primary-500 rounded-full" />
                             {adaptation}
                           </li>
                         ))}
@@ -1131,7 +1131,7 @@ export default function PortugueseCulturalCalendar() {
                         className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-semibold transition-all ${
                           selectedEvent.isUserFavorite
                             ? 'bg-red-100 text-red-700 hover:bg-red-200'
-                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                            : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
                         }`}
                       >
                         {selectedEvent.isUserFavorite ? <HeartSolid className="w-5 h-5" /> : <HeartIcon className="w-5 h-5" />}
@@ -1142,8 +1142,8 @@ export default function PortugueseCulturalCalendar() {
                         onClick={() => toggleReminder(selectedEvent.id)}
                         className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-semibold transition-all ${
                           selectedEvent.reminderSet
-                            ? 'bg-blue-100 text-blue-700 hover:bg-blue-200'
-                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                            ? 'bg-blue-100 text-primary-700 hover:bg-blue-200'
+                            : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
                         }`}
                       >
                         <BellIcon className="w-5 h-5" />

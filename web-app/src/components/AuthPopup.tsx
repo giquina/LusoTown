@@ -148,13 +148,13 @@ export default function AuthPopup() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden"
+            className="relative w-full max-w-md bg-white rounded-2xl shadow-2xl border border-secondary-200 overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               onClick={hidePopup}
-              className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full transition-all z-10"
+              className="absolute top-4 right-4 p-2 text-gray-400 hover:text-secondary-600 hover:bg-secondary-100 rounded-full transition-all z-10"
             >
               <XMarkIcon className="w-5 h-5" />
             </button>
@@ -163,8 +163,8 @@ export default function AuthPopup() {
             <div className={`bg-gradient-to-r ${content.iconColor} px-6 pt-8 pb-6 text-white relative overflow-hidden`}>
               {/* Background pattern */}
               <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-0 left-0 w-32 h-32 bg-white rounded-full -translate-x-16 -translate-y-16"></div>
-                <div className="absolute bottom-0 right-0 w-24 h-24 bg-white rounded-full translate-x-12 translate-y-12"></div>
+                <div className="absolute top-0 left-0 w-32 h-32 bg-white rounded-full -transecondary-x-16 -transecondary-y-16"></div>
+                <div className="absolute bottom-0 right-0 w-24 h-24 bg-white rounded-full transecondary-x-12 transecondary-y-12"></div>
               </div>
               
               <div className="relative">
@@ -200,7 +200,7 @@ export default function AuthPopup() {
                     transition={{ delay: 0.1 + index * 0.1, duration: 0.4 }}
                     className="flex items-start gap-3"
                   >
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center bg-gray-50 flex-shrink-0`}>
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center bg-secondary-50 flex-shrink-0`}>
                       <benefit.icon className={`w-4 h-4 ${benefit.color}`} />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -241,7 +241,7 @@ export default function AuthPopup() {
               <div className="space-y-3">
                 <button
                   onClick={handleSignupClick}
-                  className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-3 px-4 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                  className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-3 px-4 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-transecondary-y-0.5 flex items-center justify-center gap-2"
                 >
                   <SparklesIcon className="w-5 h-5" />
                   <span>{content.primaryCTA}</span>
@@ -249,14 +249,14 @@ export default function AuthPopup() {
                 
                 <button
                   onClick={handleLoginClick}
-                  className="w-full text-gray-600 hover:text-primary-600 font-medium py-2 px-4 transition-colors text-sm"
+                  className="w-full text-secondary-600 hover:text-primary-600 font-medium py-2 px-4 transition-colors text-sm"
                 >
                   {isPortuguese ? 'Já tem conta? Entrar aqui' : 'Already have an account? Sign in here'}
                 </button>
               </div>
               
               {/* Trust Signals */}
-              <div className="mt-6 pt-4 border-t border-gray-100">
+              <div className="mt-6 pt-4 border-t border-secondary-100">
                 <div className="flex items-center justify-center gap-4 text-xs text-gray-500">
                   <div className="flex items-center gap-1">
                     <ShieldCheckIcon className="w-4 h-4 text-secondary-500" />

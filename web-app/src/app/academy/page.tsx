@@ -104,7 +104,7 @@ export default function AcademyHomePage() {
       descriptionPortuguese:
         "Aprenda sobre alojamento, apoio académico e conectar-se com outros estudantes portugueses",
       icon: GraduationCap,
-      color: "from-blue-500 to-purple-500",
+      color: "from-blue-500 to-accent-500",
       services: [
         "housing-assistance",
         "student-support",
@@ -140,7 +140,7 @@ export default function AcademyHomePage() {
       descriptionPortuguese:
         "Aprenda streaming, construção de comunidade e estratégias de monetização",
       icon: Video,
-      color: "from-purple-500 to-pink-500",
+      color: "from-accent-500 to-pink-500",
       services: [
         "live-streaming",
         "community-forums",
@@ -355,7 +355,7 @@ export default function AcademyHomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
+              className="text-xl text-secondary-600 mb-8 max-w-3xl mx-auto"
             >
               {isPortuguese
                 ? "Guias interativos para dominar cada serviço da plataforma. Crie confiança antes de usar nossos serviços."
@@ -371,20 +371,20 @@ export default function AcademyHomePage() {
                 className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 max-w-md mx-auto mb-8 border border-white/40"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-sm font-medium text-gray-700">
+                  <span className="text-sm font-medium text-secondary-700">
                     {isPortuguese ? "Seu Progresso" : "Your Progress"}
                   </span>
                   <span className="text-sm font-bold text-primary-600">
                     {getCompletionPercentage()}%
                   </span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
+                <div className="w-full bg-secondary-200 rounded-full h-2">
                   <div
                     className="bg-gradient-to-r from-primary-500 to-secondary-500 h-2 rounded-full transition-all duration-500"
                     style={{ width: `${getCompletionPercentage()}%` }}
                   ></div>
                 </div>
-                <p className="text-xs text-gray-600 mt-2">
+                <p className="text-xs text-secondary-600 mt-2">
                   {completedServices.length} {isPortuguese ? "de" : "of"}{" "}
                   {services.length}{" "}
                   {isPortuguese ? "serviços concluídos" : "services completed"}
@@ -407,9 +407,9 @@ export default function AcademyHomePage() {
                   }
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full px-4 py-3 pl-12 rounded-2xl border border-gray-200 shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-4 py-3 pl-12 rounded-2xl border border-secondary-200 shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 />
-                <BookOpenIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <BookOpenIcon className="absolute left-4 top-1/2 transform -transecondary-y-1/2 w-5 h-5 text-gray-400" />
               </div>
             </motion.div>
           </div>
@@ -424,7 +424,7 @@ export default function AcademyHomePage() {
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-5">
                 {isPortuguese ? "Qual é o Seu Perfil?" : "What's Your Profile?"}
               </h2>
-              <p className="text-gray-600 max-w-3xl mx-auto">
+              <p className="text-secondary-600 max-w-3xl mx-auto">
                 {isPortuguese
                   ? "Escolha o seu perfil para receber um plano de aprendizado personalizado"
                   : "Choose your profile to get a personalized learning plan"}
@@ -442,7 +442,7 @@ export default function AcademyHomePage() {
                     setSelectedUserType(userType.id);
                     saveProgress(userType.id, completedServices);
                   }}
-                  className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 cursor-pointer"
+                  className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-transecondary-y-2 border border-secondary-100 cursor-pointer"
                 >
                   <div
                     className={`w-16 h-16 bg-gradient-to-r ${userType.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
@@ -454,7 +454,7 @@ export default function AcademyHomePage() {
                     {isPortuguese ? userType.namePortuguese : userType.name}
                   </h3>
 
-                  <p className="text-gray-600 mb-4 leading-relaxed">
+                  <p className="text-secondary-600 mb-4 leading-relaxed">
                     {isPortuguese
                       ? userType.descriptionPortuguese
                       : userType.description}
@@ -465,7 +465,7 @@ export default function AcademyHomePage() {
                       {userType.estimatedTime}{" "}
                       {isPortuguese ? "de aprendizado" : "learning time"}
                     </span>
-                    <ArrowRightIcon className="w-5 h-5 text-gray-400 group-hover:text-primary-600 group-hover:translate-x-1 transition-all duration-200" />
+                    <ArrowRightIcon className="w-5 h-5 text-gray-400 group-hover:text-primary-600 group-hover:transecondary-x-1 transition-all duration-200" />
                   </div>
                 </motion.div>
               ))}
@@ -487,7 +487,7 @@ export default function AcademyHomePage() {
                 ? "Todos os Serviços"
                 : "All Services"}
             </h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
+            <p className="text-secondary-600 max-w-3xl mx-auto">
               {selectedUserType
                 ? isPortuguese
                   ? "Serviços recomendados para o seu perfil"
@@ -508,7 +508,7 @@ export default function AcademyHomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="group bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
+                className="group bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-secondary-100"
               >
                 {service.featured && (
                   <div className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white text-center py-2">
@@ -521,10 +521,10 @@ export default function AcademyHomePage() {
                 <div className="p-8">
                   <div className="flex items-start justify-between mb-4">
                     <div className="w-14 h-14 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <service.icon className="w-8 h-8 text-gray-600" />
+                      <service.icon className="w-8 h-8 text-secondary-600" />
                     </div>
                     {completedServices.includes(service.id) && (
-                      <CheckCircleIcon className="w-6 h-6 text-green-500" />
+                      <CheckCircleIcon className="w-6 h-6 text-action-500" />
                     )}
                   </div>
 
@@ -532,7 +532,7 @@ export default function AcademyHomePage() {
                     {isPortuguese ? service.namePortuguese : service.name}
                   </h3>
 
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                  <p className="text-secondary-600 text-sm mb-4 leading-relaxed">
                     {isPortuguese
                       ? service.descriptionPortuguese
                       : service.description}
@@ -584,7 +584,7 @@ export default function AcademyHomePage() {
               <div className="text-2xl font-bold text-gray-900 mb-1">
                 {services.length}
               </div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-secondary-600">
                 {isPortuguese ? "Guias de Serviços" : "Service Guides"}
               </div>
             </div>
@@ -596,7 +596,7 @@ export default function AcademyHomePage() {
               <div className="text-2xl font-bold text-gray-900 mb-1">
                 {services.reduce((acc, service) => acc + service.modules, 0)}
               </div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-secondary-600">
                 {isPortuguese ? "Módulos Interativos" : "Interactive Modules"}
               </div>
             </div>
@@ -608,7 +608,7 @@ export default function AcademyHomePage() {
               <div className="text-2xl font-bold text-gray-900 mb-1">
                 {getCompletionPercentage()}%
               </div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-secondary-600">
                 {isPortuguese ? "Concluído" : "Completed"}
               </div>
             </div>
@@ -620,7 +620,7 @@ export default function AcademyHomePage() {
               <div className="text-2xl font-bold text-gray-900 mb-1">
                 2,150+
               </div>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-secondary-600">
                 {isPortuguese ? "Estudantes Ativos" : "Active Learners"}
               </div>
             </div>

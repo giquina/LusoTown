@@ -278,7 +278,7 @@ export default function PortugueseLanguageLearning() {
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
-          className="py-12 bg-gray-900 text-white"
+          className="py-12 bg-secondary-900 text-white"
         >
           <div className="container-width">
             <h2 className="text-3xl font-bold text-center mb-12">
@@ -310,7 +310,7 @@ export default function PortugueseLanguageLearning() {
                 <p className="text-blue-100 text-sm">{isPortuguese ? '+250 este mês' : '+250 this month'}</p>
               </div>
 
-              <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-6">
+              <div className="bg-gradient-to-br from-accent-500 to-accent-600 rounded-2xl p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <TrophyIcon className="w-8 h-8" />
                   <h3 className="text-lg font-semibold">
@@ -318,7 +318,7 @@ export default function PortugueseLanguageLearning() {
                   </h3>
                 </div>
                 <p className="text-3xl font-bold">89%</p>
-                <p className="text-purple-100 text-sm">{isPortuguese ? 'Acima da média' : 'Above average'}</p>
+                <p className="text-accent-100 text-sm">{isPortuguese ? 'Acima da média' : 'Above average'}</p>
               </div>
 
               <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-6">
@@ -366,7 +366,7 @@ export default function PortugueseLanguageLearning() {
                 className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all ${
                   activeTab === tab.id
                     ? 'bg-accent-500 text-white'
-                    : 'text-gray-600 hover:bg-gray-100'
+                    : 'text-secondary-600 hover:bg-secondary-100'
                 }`}
               >
                 <tab.icon className="w-5 h-5" />
@@ -389,7 +389,7 @@ export default function PortugueseLanguageLearning() {
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
                 {isPortuguese ? 'Cursos de Português' : 'Portuguese Courses'}
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
                 {isPortuguese
                   ? 'Cursos estruturados por níveis, com certificação internacional e professores nativos qualificados'
                   : 'Structured courses by levels, with international certification and qualified native teachers'
@@ -407,7 +407,7 @@ export default function PortugueseLanguageLearning() {
                   className={`bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border-2 ${
                     course.featured 
                       ? 'border-accent-200 ring-4 ring-accent-50' 
-                      : 'border-gray-100'
+                      : 'border-secondary-100'
                   }`}
                 >
                   {course.featured && (
@@ -428,7 +428,7 @@ export default function PortugueseLanguageLearning() {
                             course.level === 'beginner' ? 'bg-green-100 text-green-800' :
                             course.level === 'intermediate' ? 'bg-yellow-100 text-yellow-800' :
                             course.level === 'advanced' ? 'bg-red-100 text-red-800' :
-                            'bg-purple-100 text-purple-800'
+                            'bg-accent-100 text-accent-800'
                           }`}>
                             {course.level === 'beginner' ? (isPortuguese ? 'Iniciante' : 'Beginner') :
                              course.level === 'intermediate' ? (isPortuguese ? 'Intermédio' : 'Intermediate') :
@@ -446,7 +446,7 @@ export default function PortugueseLanguageLearning() {
                           )}
                         </div>
 
-                        <p className="text-gray-600 mb-4">
+                        <p className="text-secondary-600 mb-4">
                           {isPortuguese ? course.description : course.descriptionEn}
                         </p>
 
@@ -458,19 +458,19 @@ export default function PortugueseLanguageLearning() {
                             </div>
                             <div className="flex items-center gap-2">
                               <BookOpenIcon className="w-4 h-4 text-gray-400" />
-                              <span className="text-gray-600">{course.lessons} {isPortuguese ? 'aulas' : 'lessons'}</span>
+                              <span className="text-secondary-600">{course.lessons} {isPortuguese ? 'aulas' : 'lessons'}</span>
                             </div>
                           </div>
 
                           <div className="text-sm">
                             <div className="flex items-center gap-2 mb-1">
-                              <StarIconSolid className="w-4 h-4 text-yellow-500" />
+                              <StarIconSolid className="w-4 h-4 text-accent-500" />
                               <span className="font-bold">{course.rating}</span>
-                              <span className="text-gray-600">({course.reviews})</span>
+                              <span className="text-secondary-600">({course.reviews})</span>
                             </div>
                             <div className="flex items-center gap-2">
                               <UserGroupIcon className="w-4 h-4 text-gray-400" />
-                              <span className="text-gray-600">{course.students.toLocaleString()} {isPortuguese ? 'alunos' : 'students'}</span>
+                              <span className="text-secondary-600">{course.students.toLocaleString()} {isPortuguese ? 'alunos' : 'students'}</span>
                             </div>
                           </div>
                         </div>
@@ -482,8 +482,8 @@ export default function PortugueseLanguageLearning() {
                           <div className="space-y-2">
                             {(isPortuguese ? course.features : course.featuresEn).slice(0, 4).map((feature, idx) => (
                               <div key={idx} className="flex items-center gap-2 text-sm">
-                                <CheckCircleIcon className="w-4 h-4 text-green-500" />
-                                <span className="text-gray-600">{feature}</span>
+                                <CheckCircleIcon className="w-4 h-4 text-action-500" />
+                                <span className="text-secondary-600">{feature}</span>
                               </div>
                             ))}
                           </div>
@@ -496,7 +496,7 @@ export default function PortugueseLanguageLearning() {
                             </div>
                             <div>
                               <h5 className="font-semibold text-gray-900">{course.instructor}</h5>
-                              <p className="text-sm text-gray-600">
+                              <p className="text-sm text-secondary-600">
                                 {isPortuguese ? course.instructorBio : course.instructorBioEn}
                               </p>
                             </div>
@@ -516,14 +516,14 @@ export default function PortugueseLanguageLearning() {
                               )}
                             </div>
                             {course.originalPrice && (
-                              <div className="text-sm text-green-600 font-medium">
+                              <div className="text-sm text-action-600 font-medium">
                                 {Math.round((1 - course.price / course.originalPrice) * 100)}% {isPortuguese ? 'desconto' : 'off'}
                               </div>
                             )}
                           </div>
 
                           <div className="text-right">
-                            <div className="text-sm text-gray-600">
+                            <div className="text-sm text-secondary-600">
                               {isPortuguese ? 'Taxa de conclusão:' : 'Completion rate:'}
                             </div>
                             <div className="text-2xl font-bold text-accent-600">
@@ -566,7 +566,7 @@ export default function PortugueseLanguageLearning() {
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
                 {isPortuguese ? 'Percursos de Aprendizagem' : 'Learning Paths'}
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
                 {isPortuguese
                   ? 'Programas estruturados que combinam múltiplos cursos para objetivos específicos de aprendizagem'
                   : 'Structured programs that combine multiple courses for specific learning objectives'
@@ -587,7 +587,7 @@ export default function PortugueseLanguageLearning() {
                     <h3 className="text-2xl font-bold text-gray-900 mb-3">
                       {isPortuguese ? path.name : path.nameEn}
                     </h3>
-                    <p className="text-gray-600 mb-4">
+                    <p className="text-secondary-600 mb-4">
                       {isPortuguese ? path.description : path.descriptionEn}
                     </p>
                     
@@ -597,7 +597,7 @@ export default function PortugueseLanguageLearning() {
                           {isPortuguese ? path.level : path.levelEn}
                         </span>
                       </div>
-                      <div className="flex items-center gap-2 text-gray-600">
+                      <div className="flex items-center gap-2 text-secondary-600">
                         <ClockIcon className="w-4 h-4" />
                         <span className="text-sm">{path.totalHours}h {isPortuguese ? 'totais' : 'total'}</span>
                       </div>
@@ -612,13 +612,13 @@ export default function PortugueseLanguageLearning() {
                       {path.courses.map((courseId) => {
                         const course = courses.find(c => c.id === courseId);
                         return course && (
-                          <div key={courseId} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                          <div key={courseId} className="flex items-center gap-3 p-3 bg-secondary-50 rounded-lg">
                             <BookOpenIcon className="w-5 h-5 text-accent-600" />
                             <div className="flex-1">
                               <h5 className="font-medium text-gray-900">
                                 {isPortuguese ? course.title : course.titleEn}
                               </h5>
-                              <p className="text-sm text-gray-600">
+                              <p className="text-sm text-secondary-600">
                                 {course.lessons} {isPortuguese ? 'aulas' : 'lessons'} " {isPortuguese ? course.duration : course.durationEn}
                               </p>
                             </div>
@@ -638,7 +638,7 @@ export default function PortugueseLanguageLearning() {
                           {path.discount}% {isPortuguese ? 'desconto' : 'off'}
                         </span>
                       </div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-sm text-secondary-600">
                         {isPortuguese 
                           ? `Em vez de £${path.courses.reduce((sum, courseId) => {
                               const course = courses.find(c => c.id === courseId);
@@ -681,7 +681,7 @@ export default function PortugueseLanguageLearning() {
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
                 {isPortuguese ? 'Aulas ao Vivo' : 'Live Classes'}
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
                 {isPortuguese
                   ? 'Interaja ao vivo com professores nativos e outros estudantes em tempo real'
                   : 'Interact live with native teachers and other students in real time'
@@ -696,7 +696,7 @@ export default function PortugueseLanguageLearning() {
                 {isPortuguese ? 'Aulas ao Vivo - Em Breve!' : 'Live Classes - Coming Soon!'}
               </h3>
               
-              <p className="text-gray-600 mb-8">
+              <p className="text-secondary-600 mb-8">
                 {isPortuguese
                   ? 'Estamos a desenvolver uma experiência única de aulas ao vivo com professores nativos. Registe o seu interesse para ser notificado quando lançarmos.'
                   : "We're developing a unique live class experience with native teachers. Register your interest to be notified when we launch."
@@ -709,7 +709,7 @@ export default function PortugueseLanguageLearning() {
                   <h4 className="font-semibold mb-2">
                     {isPortuguese ? 'Interação em Tempo Real' : 'Real-time Interaction'}
                   </h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {isPortuguese
                       ? 'Conversação direta com professores e colegas'
                       : 'Direct conversation with teachers and peers'
@@ -722,7 +722,7 @@ export default function PortugueseLanguageLearning() {
                   <h4 className="font-semibold mb-2">
                     {isPortuguese ? 'Acesso Global' : 'Global Access'}
                   </h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {isPortuguese
                       ? 'Participe de qualquer lugar do mundo'
                       : 'Join from anywhere in the world'
@@ -735,7 +735,7 @@ export default function PortugueseLanguageLearning() {
                   <h4 className="font-semibold mb-2">
                     {isPortuguese ? 'Prática de Pronúncia' : 'Pronunciation Practice'}
                   </h4>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-secondary-600">
                     {isPortuguese
                       ? 'Correção instantânea da pronúncia'
                       : 'Instant pronunciation correction'

@@ -112,13 +112,13 @@ export default function StreamCard({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay }}
-      className={`bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer ${
+      className={`bg-white rounded-xl shadow-sm border border-secondary-200 overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer ${
         !canWatch ? 'opacity-75' : ''
       }`}
       onClick={() => canWatch && onSelect(stream)}
     >
       {/* Thumbnail */}
-      <div className="relative aspect-video bg-gray-200">
+      <div className="relative aspect-video bg-secondary-200">
         <img
           src={stream.thumbnail || '/events/networking.jpg'}
           alt={stream.title}
@@ -194,8 +194,8 @@ export default function StreamCard({
         {/* Category and Region */}
         <div className="flex items-center justify-between mb-2">
           <div className="flex items-center gap-2">
-            <div className="bg-gray-100 p-1 rounded">
-              <IconComponent className="w-3 h-3 text-gray-600" />
+            <div className="bg-secondary-100 p-1 rounded">
+              <IconComponent className="w-3 h-3 text-secondary-600" />
             </div>
             <span className="text-xs text-gray-500">{stream.categoryName}</span>
           </div>
@@ -215,7 +215,7 @@ export default function StreamCard({
         </h3>
 
         {/* Description */}
-        <p className={`text-gray-600 line-clamp-2 mb-3 ${
+        <p className={`text-secondary-600 line-clamp-2 mb-3 ${
           compact ? 'text-xs' : 'text-sm'
         }`}>
           {stream.description}
@@ -245,7 +245,7 @@ export default function StreamCard({
           {stream.tags.slice(0, compact ? 2 : 3).map(tag => (
             <span 
               key={tag}
-              className="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded-full"
+              className="px-2 py-0.5 bg-secondary-100 text-secondary-600 text-xs rounded-full"
             >
               #{tag}
             </span>

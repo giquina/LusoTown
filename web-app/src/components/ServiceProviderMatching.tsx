@@ -262,9 +262,9 @@ export default function ServiceProviderMatching({
 
   const getAvailabilityColor = (availability: ServiceProvider['availability']) => {
     switch (availability) {
-      case 'available': return 'text-green-600 bg-green-100'
+      case 'available': return 'text-action-600 bg-green-100'
       case 'busy': return 'text-yellow-600 bg-yellow-100'
-      case 'unavailable': return 'text-red-600 bg-red-100'
+      case 'unavailable': return 'text-coral-600 bg-red-100'
     }
   }
 
@@ -278,7 +278,7 @@ export default function ServiceProviderMatching({
 
   const handleServiceRequest = (provider: ServiceProvider) => {
     if (!selectedMatch) {
-      alert(isPortuguese ? 'Selecione um match primeiro' : 'Please select a match first')
+      toast.error(isPortuguese ? 'Selecione um match primeiro' : 'Please select a match first')
       return
     }
     
@@ -297,7 +297,7 @@ export default function ServiceProviderMatching({
   return (
     <div className={`space-y-6 ${className}`}>
       {/* Service Provider Matching Header */}
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+      <div className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-6">
         <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
           <TruckIcon className="w-5 h-5 text-secondary-500" />
           {isPortuguese ? 'Fornecedores de Serviços Compatíveis' : 'Compatible Service Providers'}
@@ -305,13 +305,13 @@ export default function ServiceProviderMatching({
         
         {/* Match Selection */}
         <div className="mb-6">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-secondary-700 mb-2">
             {isPortuguese ? 'Selecionar Match para Recomendações' : 'Select Match for Recommendations'}
           </label>
           <select
             value={selectedMatch || ''}
             onChange={(e) => setSelectedMatch(e.target.value || null)}
-            className="w-full md:w-auto rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+            className="w-full md:w-auto rounded-lg border-secondary-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
           >
             <option value="">{isPortuguese ? 'Todos os Matches' : 'All Matches'}</option>
             {matches.map(match => (
@@ -333,7 +333,7 @@ export default function ServiceProviderMatching({
                 className={`px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors ${
                   serviceFilter === type
                     ? 'bg-secondary-500 text-white'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
                 }`}
               >
                 {type === 'all' ? (isPortuguese ? 'Todos' : 'All') : getServiceTypeLabel(type as any)}
@@ -345,7 +345,7 @@ export default function ServiceProviderMatching({
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as any)}
-            className="rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+            className="rounded-lg border-secondary-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
           >
             <option value="compatibility">{isPortuguese ? 'Compatibilidade' : 'Compatibility'}</option>
             <option value="rating">{isPortuguese ? 'Avaliação' : 'Rating'}</option>
@@ -399,7 +399,7 @@ export default function ServiceProviderMatching({
               layout
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow"
+              className="bg-white rounded-2xl shadow-sm border border-secondary-100 overflow-hidden hover:shadow-md transition-shadow"
             >
               {/* Provider Header */}
               <div className="p-6 pb-4">
@@ -410,7 +410,7 @@ export default function ServiceProviderMatching({
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">{provider.name}</h3>
-                      <p className="text-sm text-gray-600">{getServiceTypeLabel(provider.type)}</p>
+                      <p className="text-sm text-secondary-600">{getServiceTypeLabel(provider.type)}</p>
                     </div>
                   </div>
                   
@@ -428,7 +428,7 @@ export default function ServiceProviderMatching({
                       </span>
                       <div className="flex items-center gap-2">
                         <div className="text-lg font-bold text-primary-600">{compatibility}%</div>
-                        <HeartIcon className="w-4 h-4 text-red-500" />
+                        <HeartIcon className="w-4 h-4 text-coral-500" />
                       </div>
                     </div>
                   </div>
@@ -439,7 +439,7 @@ export default function ServiceProviderMatching({
                   <div className="flex items-center gap-1">
                     <StarSolidIcon className="w-4 h-4 text-yellow-400" />
                     <span className="font-semibold text-gray-900">{provider.rating}</span>
-                    <span className="text-sm text-gray-600">({provider.reviews})</span>
+                    <span className="text-sm text-secondary-600">({provider.reviews})</span>
                   </div>
                   <span className={`px-2 py-1 rounded-full text-xs font-medium ${getAvailabilityColor(provider.availability)}`}>
                     {getAvailabilityLabel(provider.availability)}
@@ -447,7 +447,7 @@ export default function ServiceProviderMatching({
                 </div>
 
                 {/* Location and Price */}
-                <div className="flex items-center justify-between mb-3 text-sm text-gray-600">
+                <div className="flex items-center justify-between mb-3 text-sm text-secondary-600">
                   <div className="flex items-center gap-1">
                     <MapPinIcon className="w-4 h-4" />
                     {provider.location}
@@ -459,13 +459,13 @@ export default function ServiceProviderMatching({
                 </div>
 
                 {/* Description */}
-                <p className="text-sm text-gray-700 mb-4 line-clamp-2">{provider.description}</p>
+                <p className="text-sm text-secondary-700 mb-4 line-clamp-2">{provider.description}</p>
 
                 {/* Specialties */}
                 <div className="mb-4">
                   <div className="flex flex-wrap gap-1">
                     {provider.specialties.slice(0, 3).map(specialty => (
-                      <span key={specialty} className="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs">
+                      <span key={specialty} className="bg-secondary-100 text-secondary-700 px-2 py-1 rounded-full text-xs">
                         {specialty}
                       </span>
                     ))}
@@ -488,7 +488,7 @@ export default function ServiceProviderMatching({
 
                 {/* Response Time and Pricing */}
                 <div className="flex items-center justify-between text-sm mb-4">
-                  <div className="flex items-center gap-1 text-gray-600">
+                  <div className="flex items-center gap-1 text-secondary-600">
                     <ClockIcon className="w-4 h-4" />
                     {provider.responseTime}
                   </div>
@@ -508,7 +508,7 @@ export default function ServiceProviderMatching({
                     disabled={provider.availability === 'unavailable' || !selectedMatch}
                     className={`w-full py-2 px-4 rounded-lg font-semibold transition-colors ${
                       provider.availability === 'unavailable' || !selectedMatch
-                        ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                        ? 'bg-secondary-100 text-gray-400 cursor-not-allowed'
                         : 'bg-gradient-to-r from-secondary-500 to-accent-500 text-white hover:from-secondary-600 hover:to-accent-600'
                     }`}
                   >
@@ -516,10 +516,10 @@ export default function ServiceProviderMatching({
                   </button>
                   
                   {provider.bookingPrice && (
-                    <div className="text-center text-sm text-gray-600">
+                    <div className="text-center text-sm text-secondary-600">
                       {isPortuguese ? 'A partir de' : 'Starting from'} £{provider.bookingPrice}
                       {provider.discount && isPremiumUser && (
-                        <span className="text-green-600 ml-1">
+                        <span className="text-action-600 ml-1">
                           (£{Math.round(provider.bookingPrice * (1 - provider.discount / 100))})
                         </span>
                       )}
@@ -555,17 +555,17 @@ export default function ServiceProviderMatching({
               
               <div className="space-y-4 mb-6">
                 <div>
-                  <span className="text-sm text-gray-600">{isPortuguese ? 'Fornecedor' : 'Provider'}:</span>
+                  <span className="text-sm text-secondary-600">{isPortuguese ? 'Fornecedor' : 'Provider'}:</span>
                   <p className="font-semibold text-gray-900">{selectedProvider.name}</p>
                 </div>
                 
                 <div>
-                  <span className="text-sm text-gray-600">{isPortuguese ? 'Serviço' : 'Service'}:</span>
+                  <span className="text-sm text-secondary-600">{isPortuguese ? 'Serviço' : 'Service'}:</span>
                   <p className="font-semibold text-gray-900">{getServiceTypeLabel(selectedProvider.type)}</p>
                 </div>
                 
                 <div>
-                  <span className="text-sm text-gray-600">{isPortuguese ? 'Para Match' : 'For Match'}:</span>
+                  <span className="text-sm text-secondary-600">{isPortuguese ? 'Para Match' : 'For Match'}:</span>
                   <p className="font-semibold text-gray-900">
                     {matches.find(m => m.id === selectedMatch)?.name}
                   </p>
@@ -573,11 +573,11 @@ export default function ServiceProviderMatching({
                 
                 {selectedProvider.bookingPrice && (
                   <div>
-                    <span className="text-sm text-gray-600">{isPortuguese ? 'Preço Estimado' : 'Estimated Price'}:</span>
+                    <span className="text-sm text-secondary-600">{isPortuguese ? 'Preço Estimado' : 'Estimated Price'}:</span>
                     <p className="font-semibold text-gray-900">
                       £{selectedProvider.bookingPrice}
                       {selectedProvider.discount && isPremiumUser && (
-                        <span className="text-green-600 ml-2">
+                        <span className="text-action-600 ml-2">
                           ({selectedProvider.discount}% {isPortuguese ? 'desconto' : 'discount'})
                         </span>
                       )}
@@ -589,7 +589,7 @@ export default function ServiceProviderMatching({
               <div className="flex gap-3">
                 <button
                   onClick={() => setShowRequestModal(false)}
-                  className="flex-1 bg-gray-100 text-gray-700 py-2 px-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
+                  className="flex-1 bg-secondary-100 text-secondary-700 py-2 px-4 rounded-lg font-semibold hover:bg-secondary-200 transition-colors"
                 >
                   {isPortuguese ? 'Cancelar' : 'Cancel'}
                 </button>
@@ -613,7 +613,7 @@ export default function ServiceProviderMatching({
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {isPortuguese ? 'Benefícios Premium para Serviços' : 'Premium Service Benefits'}
               </h3>
-              <ul className="text-sm text-gray-600 space-y-1">
+              <ul className="text-sm text-secondary-600 space-y-1">
                 <li>• {isPortuguese ? 'Descontos exclusivos nos serviços' : 'Exclusive service discounts'}</li>
                 <li>• {isPortuguese ? 'Prioridade nas reservas' : 'Priority booking'}</li>
                 <li>• {isPortuguese ? 'Recomendações personalizadas' : 'Personalized recommendations'}</li>

@@ -1,3 +1,4 @@
+import { SOCIAL_URLS } from '@/config'
 'use client'
 
 // Portuguese Embassy and Cultural Center Partnerships

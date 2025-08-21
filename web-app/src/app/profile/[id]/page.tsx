@@ -75,7 +75,7 @@ export default function ProfileViewPage() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="flex flex-col items-center space-y-4">
           <div className="w-8 h-8 border-4 border-primary-500 border-t-transparent rounded-full animate-spin" />
-          <p className="text-gray-600">Loading profile...</p>
+          <p className="text-secondary-600">Loading profile...</p>
         </div>
       </div>
     )
@@ -85,7 +85,7 @@ export default function ProfileViewPage() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <p className="text-gray-600 mb-4">Profile not found</p>
+          <p className="text-secondary-600 mb-4">Profile not found</p>
           <button
             onClick={() => router.push('/my-network')}
             className="bg-primary-500 text-white px-6 py-2 rounded-lg hover:bg-primary-600 transition-colors"

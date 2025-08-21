@@ -36,7 +36,6 @@ export default function HousingAssistanceModule() {
 
   const handleModuleComplete = () => {
     // Module completion logic
-    console.log('Housing Assistance module completed!');
   };
 
   // Define the learning module structure

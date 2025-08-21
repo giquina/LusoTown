@@ -301,6 +301,24 @@ export const annualMembershipPrice = () => membership.annual;
 export const studentAnnualPrice = () => membership.studentAnnual;
 export const groupAnnualPrice = () => membership.groupAnnual;
 
+// Student pricing utilities
+export const getStudentPrice = (
+  planId: keyof typeof SUBSCRIPTION_PLANS, 
+  billing: 'monthly' | 'annual' = 'monthly'
+): number => {
+  const regularPrice = getPlanPrice(planId, billing);
+  return calculateDiscount(regularPrice, 'student');
+};
+
+export const getFormattedStudentPrice = (
+  planId: keyof typeof SUBSCRIPTION_PLANS, 
+  billing: 'monthly' | 'annual' = 'monthly',
+  currency: Currency = 'GBP'
+): string => {
+  const studentPrice = getStudentPrice(planId, billing);
+  return formatPrice(studentPrice, currency);
+};
+
 // Type definitions
 export type SubscriptionPlan = keyof typeof SUBSCRIPTION_PLANS;
 export type TransportService = keyof typeof TRANSPORT_PRICING;

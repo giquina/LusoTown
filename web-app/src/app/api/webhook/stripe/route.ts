@@ -52,7 +52,6 @@ export async function POST(request: NextRequest) {
         break
 
       default:
-        console.log(`Unhandled event type: ${event.type}`)
     }
 
     return NextResponse.json({ received: true })
@@ -69,7 +68,6 @@ async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Session) 
   const userId = session.metadata?.lusotown_user_id
   if (!userId) return
 
-  console.log('Checkout session completed for user:', userId)
 
   // Mark trial as used if they had one
   await supabase
@@ -85,7 +83,6 @@ async function handleSubscriptionCreated(subscription: Stripe.Subscription) {
   
   if (!userId) return
 
-  console.log('Subscription created for user:', userId, 'tier:', tier, 'planType:', planType)
 
   // Determine amount based on tier and plan type
   const pricing = {
@@ -122,7 +119,6 @@ async function handleSubscriptionUpdated(subscription: Stripe.Subscription) {
   const userId = subscription.metadata?.lusotown_user_id
   if (!userId) return
 
-  console.log('Subscription updated for user:', userId)
 
   // Update subscription record
   await supabase
@@ -153,7 +149,6 @@ async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
   const userId = subscription.metadata?.lusotown_user_id
   if (!userId) return
 
-  console.log('Subscription deleted for user:', userId)
 
   // Update subscription record
   await supabase
@@ -178,7 +173,6 @@ async function handlePaymentSucceeded(invoice: Stripe.Invoice) {
   const userId = subscription.metadata?.lusotown_user_id
   if (!userId) return
 
-  console.log('Payment succeeded for user:', userId)
 
   // Record payment
   const { data: subscriptionData } = await supabase
@@ -215,7 +209,6 @@ async function handlePaymentFailed(invoice: Stripe.Invoice) {
   const userId = subscription.metadata?.lusotown_user_id
   if (!userId) return
 
-  console.log('Payment failed for user:', userId)
 
   // Record failed payment
   const { data: subscriptionData } = await supabase

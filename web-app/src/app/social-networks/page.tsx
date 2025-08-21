@@ -50,35 +50,35 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
 
   const getPlatformColor = (platform: SocialPlatform) => {
     const colors = {
-      whatsapp: 'bg-green-500',
+      whatsapp: 'bg-action-500',
       facebook: 'bg-primary-600',
       telegram: 'bg-primary-400',
-      discord: 'bg-indigo-600',
+      discord: 'bg-primary-600',
       linkedin: 'bg-primary-700',
       instagram: 'bg-pink-500',
-      signal: 'bg-gray-700',
-      meetup: 'bg-red-500',
+      signal: 'bg-secondary-700',
+      meetup: 'bg-coral-500',
       reddit: 'bg-orange-500',
-      viber: 'bg-purple-500'
+      viber: 'bg-accent-500'
     }
-    return colors[platform] || 'bg-gray-500'
+    return colors[platform] || 'bg-secondary-500'
   }
 
   const getActivityLevelColor = (level: string) => {
     const colors = {
-      very_high: 'text-green-600 bg-green-50',
+      very_high: 'text-action-600 bg-green-50',
       high: 'text-primary-600 bg-primary-50',
       medium: 'text-yellow-600 bg-yellow-50',
-      low: 'text-gray-600 bg-gray-50'
+      low: 'text-secondary-600 bg-secondary-50'
     }
-    return colors[level as keyof typeof colors] || 'text-gray-600 bg-gray-50'
+    return colors[level as keyof typeof colors] || 'text-secondary-600 bg-secondary-50'
   }
 
   const getPartnershipBadge = (status: string) => {
     const badges = {
       official_partner: { 
         label: language === 'pt' ? 'Parceiro Oficial' : 'Official Partner', 
-        color: 'bg-green-500 text-white'
+        color: 'bg-action-500 text-white'
       },
       community_partner: { 
         label: language === 'pt' ? 'Parceiro Comunitário' : 'Community Partner', 
@@ -86,11 +86,11 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
       },
       affiliated: { 
         label: language === 'pt' ? 'Afiliado' : 'Affiliated', 
-        color: 'bg-purple-500 text-white'
+        color: 'bg-accent-500 text-white'
       },
       listed: { 
         label: language === 'pt' ? 'Listado' : 'Listed', 
-        color: 'bg-gray-500 text-white'
+        color: 'bg-secondary-500 text-white'
       }
     }
     return badges[status as keyof typeof badges] || badges.listed
@@ -99,15 +99,15 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
   const handleJoinRequest = async () => {
     try {
       const result = await socialNetworksService.requestNetworkJoin(network.id, {
-        name: 'Demo User',
-        email: 'demo@lusotown.com',
+        name: process.env.NEXT_PUBLIC_DEMO_USER_NAME || 'Demo User',
+        email: process.env.NEXT_PUBLIC_DEMO_EMAIL || 'demo@lusotown.com',
         reason: 'I want to connect with the Portuguese community',
         lusoTownMember: true
       })
       
       if (result.success) {
         setJoinRequested(true)
-        alert(result.message)
+        toast.error(result.message)
       }
     } catch (error) {
       console.error('Error requesting to join network:', error)
@@ -115,9 +115,9 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
   }
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group">
+    <div className="bg-white rounded-2xl shadow-lg border border-secondary-100 overflow-hidden hover:shadow-xl transition-all duration-300 group">
       {/* Header with Platform and Partnership */}
-      <div className="p-4 border-b border-gray-100">
+      <div className="p-4 border-b border-secondary-100">
         <div className="flex items-center justify-between mb-2">
           <div className="flex items-center gap-3">
             <div className={`w-10 h-10 ${getPlatformColor(network.platform)} rounded-lg flex items-center justify-center text-white text-lg`}>
@@ -127,7 +127,7 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
               <h3 className="font-bold text-lg text-gray-900 group-hover:text-primary-600 transition-colors">
                 {language === 'pt' ? network.namePortuguese : network.name}
               </h3>
-              <p className="text-sm text-gray-600 capitalize">{network.platform}</p>
+              <p className="text-sm text-secondary-600 capitalize">{network.platform}</p>
             </div>
           </div>
           
@@ -136,7 +136,7 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
               {getPartnershipBadge(network.partnershipStatus).label}
             </span>
             {network.verified && (
-              <div className="flex items-center gap-1 text-green-600 text-xs">
+              <div className="flex items-center gap-1 text-action-600 text-xs">
                 <CheckBadgeIcon className="w-3 h-3" />
                 <span>{language === 'pt' ? 'Verificado' : 'Verified'}</span>
               </div>
@@ -147,37 +147,37 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
       
       {/* Content */}
       <div className="p-6">
-        <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+        <p className="text-secondary-600 text-sm mb-4 line-clamp-3">
           {language === 'pt' ? network.descriptionPortuguese : network.description}
         </p>
         
         {/* Network Stats */}
         <div className="grid grid-cols-3 gap-3 mb-4 text-center">
-          <div className="bg-gray-50 rounded-lg p-3">
+          <div className="bg-secondary-50 rounded-lg p-3">
             <div className="text-lg font-bold text-primary-600">{network.memberCount.toLocaleString()}</div>
-            <div className="text-xs text-gray-600">{language === 'pt' ? 'Membros' : 'Members'}</div>
+            <div className="text-xs text-secondary-600">{language === 'pt' ? 'Membros' : 'Members'}</div>
           </div>
-          <div className="bg-gray-50 rounded-lg p-3">
+          <div className="bg-secondary-50 rounded-lg p-3">
             <div className="text-lg font-bold text-secondary-600">{network.activeMembers.toLocaleString()}</div>
-            <div className="text-xs text-gray-600">{language === 'pt' ? 'Ativos' : 'Active'}</div>
+            <div className="text-xs text-secondary-600">{language === 'pt' ? 'Ativos' : 'Active'}</div>
           </div>
-          <div className="bg-gray-50 rounded-lg p-3">
+          <div className="bg-secondary-50 rounded-lg p-3">
             <div className="text-lg font-bold text-accent-600">{network.safetyRating}</div>
-            <div className="text-xs text-gray-600">{language === 'pt' ? 'Segurança' : 'Safety'}</div>
+            <div className="text-xs text-secondary-600">{language === 'pt' ? 'Segurança' : 'Safety'}</div>
           </div>
         </div>
         
         {/* Activity Level */}
         <div className="mb-4">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-medium text-gray-700">
+            <span className="text-sm font-medium text-secondary-700">
               {language === 'pt' ? 'Nível de Atividade' : 'Activity Level'}
             </span>
             <span className={`px-2 py-1 rounded-full text-xs font-medium ${getActivityLevelColor(network.activityLevel)}`}>
               {network.activityLevel.replace('_', ' ').toUpperCase()}
             </span>
           </div>
-          <div className="text-xs text-gray-600">
+          <div className="text-xs text-secondary-600">
             <div className="flex items-center gap-1 mb-1">
               <ChatBubbleLeftRightIcon className="w-3 h-3" />
               <span>{network.postFrequency}</span>
@@ -204,7 +204,7 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
               </span>
             ))}
             {network.focus.length > 3 && (
-              <span className="px-2 py-1 bg-gray-50 text-gray-600 text-xs rounded-full">
+              <span className="px-2 py-1 bg-secondary-50 text-secondary-600 text-xs rounded-full">
                 +{network.focus.length - 3} {language === 'pt' ? 'mais' : 'more'}
               </span>
             )}
@@ -218,7 +218,7 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
           </h4>
           <div className="space-y-2">
             <div className="flex items-center justify-between text-xs">
-              <span className="text-gray-600">{language === 'pt' ? 'Segurança' : 'Safety'}</span>
+              <span className="text-secondary-600">{language === 'pt' ? 'Segurança' : 'Safety'}</span>
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
                   <StarIcon 
@@ -226,11 +226,11 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
                     className={`w-3 h-3 ${i < network.safetyRating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
                   />
                 ))}
-                <span className="text-gray-600 ml-1">{network.safetyRating}</span>
+                <span className="text-secondary-600 ml-1">{network.safetyRating}</span>
               </div>
             </div>
             <div className="flex items-center justify-between text-xs">
-              <span className="text-gray-600">{language === 'pt' ? 'Qualidade' : 'Quality'}</span>
+              <span className="text-secondary-600">{language === 'pt' ? 'Qualidade' : 'Quality'}</span>
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
                   <StarIcon 
@@ -238,11 +238,11 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
                     className={`w-3 h-3 ${i < network.contentQuality ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
                   />
                 ))}
-                <span className="text-gray-600 ml-1">{network.contentQuality}</span>
+                <span className="text-secondary-600 ml-1">{network.contentQuality}</span>
               </div>
             </div>
             <div className="flex items-center justify-between text-xs">
-              <span className="text-gray-600">{language === 'pt' ? 'Utilidade' : 'Helpfulness'}</span>
+              <span className="text-secondary-600">{language === 'pt' ? 'Utilidade' : 'Helpfulness'}</span>
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
                   <StarIcon 
@@ -250,7 +250,7 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
                     className={`w-3 h-3 ${i < network.helpfulness ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} 
                   />
                 ))}
-                <span className="text-gray-600 ml-1">{network.helpfulness}</span>
+                <span className="text-secondary-600 ml-1">{network.helpfulness}</span>
               </div>
             </div>
           </div>
@@ -262,10 +262,10 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
             <h4 className="font-medium text-gray-900 mb-2 text-sm">
               {language === 'pt' ? 'Benefícios para Membros' : 'Member Benefits'}
             </h4>
-            <ul className="text-xs text-gray-600 space-y-1">
+            <ul className="text-xs text-secondary-600 space-y-1">
               {network.memberBenefits.slice(0, 3).map((benefit, index) => (
                 <li key={index} className="flex items-center gap-2">
-                  <CheckBadgeIcon className="w-3 h-3 text-green-500 flex-shrink-0" />
+                  <CheckBadgeIcon className="w-3 h-3 text-action-500 flex-shrink-0" />
                   <span>{benefit}</span>
                 </li>
               ))}
@@ -274,7 +274,7 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
         )}
         
         {/* Network Info */}
-        <div className="mb-4 text-xs text-gray-600 space-y-1">
+        <div className="mb-4 text-xs text-secondary-600 space-y-1">
           <div className="flex items-center gap-2">
             <MapPinIcon className="w-3 h-3" />
             <span>{network.location}</span>
@@ -294,12 +294,12 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
         </div>
         
         {/* Join Method Info */}
-        <div className="mb-4 p-3 bg-gray-50 rounded-lg">
+        <div className="mb-4 p-3 bg-secondary-50 rounded-lg">
           <div className="flex items-center gap-2 mb-1">
-            {network.joinMethod === 'open' && <CheckBadgeIcon className="w-4 h-4 text-green-500" />}
-            {network.joinMethod === 'invite_only' && <ExclamationTriangleIcon className="w-4 h-4 text-yellow-500" />}
+            {network.joinMethod === 'open' && <CheckBadgeIcon className="w-4 h-4 text-action-500" />}
+            {network.joinMethod === 'invite_only' && <ExclamationTriangleIcon className="w-4 h-4 text-accent-500" />}
             {network.joinMethod === 'admin_approval' && <ShieldCheckIcon className="w-4 h-4 text-primary-500" />}
-            {network.joinMethod === 'partner_referral' && <StarIcon className="w-4 h-4 text-purple-500" />}
+            {network.joinMethod === 'partner_referral' && <StarIcon className="w-4 h-4 text-accent-500" />}
             <span className="text-sm font-medium text-gray-900">
               {network.joinMethod === 'open' && (language === 'pt' ? 'Acesso Aberto' : 'Open Access')}
               {network.joinMethod === 'invite_only' && (language === 'pt' ? 'Apenas por Convite' : 'Invite Only')}
@@ -307,7 +307,7 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
               {network.joinMethod === 'partner_referral' && (language === 'pt' ? 'Parceiro LusoTown' : 'LusoTown Partner')}
             </span>
           </div>
-          <p className="text-xs text-gray-600">
+          <p className="text-xs text-secondary-600">
             {network.joinMethod === 'open' && (language === 'pt' ? 'Pode aderir diretamente' : 'Can join directly')}
             {network.joinMethod === 'invite_only' && (language === 'pt' ? 'Precisa de convite de membro' : 'Requires member invitation')}
             {network.joinMethod === 'admin_approval' && (language === 'pt' ? 'Requer aprovação do administrador' : 'Requires admin approval')}
@@ -327,7 +327,7 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
           ) : (
             <button 
               disabled
-              className="flex-1 bg-green-500 text-white font-semibold py-3 px-4 rounded-lg opacity-75"
+              className="flex-1 bg-action-500 text-white font-semibold py-3 px-4 rounded-lg opacity-75"
             >
               {language === 'pt' ? 'Solicitação Enviada' : 'Request Sent'}
             </button>
@@ -338,7 +338,7 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
               href={network.joinLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+              className="px-4 py-3 bg-secondary-100 text-secondary-700 rounded-lg hover:bg-secondary-200 transition-colors"
             >
               <ArrowTopRightOnSquareIcon className="w-5 h-5" />
             </a>
@@ -414,21 +414,21 @@ export default function SocialNetworks() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center pt-20">
+      <div className="min-h-screen bg-secondary-50 flex items-center justify-center pt-20">
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-500"></div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-secondary-50 pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
             {language === 'pt' ? 'Redes Sociais da Comunidade Portuguesa' : 'Portuguese Community Social Networks'}
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
             {language === 'pt' 
               ? 'Conecte-se com grupos, canais e comunidades portuguesas ativas em Londres. WhatsApp, Facebook, Telegram e muito mais.'
               : 'Connect with active Portuguese groups, channels, and communities in London. WhatsApp, Facebook, Telegram, and more.'}
@@ -439,19 +439,19 @@ export default function SocialNetworks() {
             <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="bg-white rounded-lg p-4 shadow-sm">
                 <div className="text-2xl font-bold text-primary-600">{statistics.totalNetworks}</div>
-                <div className="text-sm text-gray-600">{language === 'pt' ? 'Redes' : 'Networks'}</div>
+                <div className="text-sm text-secondary-600">{language === 'pt' ? 'Redes' : 'Networks'}</div>
               </div>
               <div className="bg-white rounded-lg p-4 shadow-sm">
                 <div className="text-2xl font-bold text-secondary-600">{statistics.totalMembers.toLocaleString()}</div>
-                <div className="text-sm text-gray-600">{language === 'pt' ? 'Membros' : 'Members'}</div>
+                <div className="text-sm text-secondary-600">{language === 'pt' ? 'Membros' : 'Members'}</div>
               </div>
               <div className="bg-white rounded-lg p-4 shadow-sm">
                 <div className="text-2xl font-bold text-accent-600">{statistics.verifiedNetworks}</div>
-                <div className="text-sm text-gray-600">{language === 'pt' ? 'Verificadas' : 'Verified'}</div>
+                <div className="text-sm text-secondary-600">{language === 'pt' ? 'Verificadas' : 'Verified'}</div>
               </div>
               <div className="bg-white rounded-lg p-4 shadow-sm">
                 <div className="text-2xl font-bold text-premium-600">{statistics.averageSafetyRating}</div>
-                <div className="text-sm text-gray-600">{language === 'pt' ? 'Segurança' : 'Safety'}</div>
+                <div className="text-sm text-secondary-600">{language === 'pt' ? 'Segurança' : 'Safety'}</div>
               </div>
             </div>
           )}
@@ -470,7 +470,7 @@ export default function SocialNetworks() {
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
                   selectedPlatform === platform.value
                     ? 'bg-primary-500 text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                    : 'bg-white text-secondary-700 hover:bg-secondary-100'
                 }`}
               >
                 <span>{platform.icon}</span>
@@ -492,7 +492,7 @@ export default function SocialNetworks() {
                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                   selectedType === type.value
                     ? 'bg-secondary-500 text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
+                    : 'bg-white text-secondary-700 hover:bg-secondary-100'
                 }`}
               >
                 {type.label[language]}
@@ -508,7 +508,7 @@ export default function SocialNetworks() {
             <h3 className="text-lg font-medium text-gray-900 mb-2">
               {language === 'pt' ? 'Nenhuma rede encontrada' : 'No networks found'}
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-secondary-600 mb-6">
               {language === 'pt' 
                 ? 'Tente ajustar seus filtros para encontrar mais redes sociais.'
                 : 'Try adjusting your filters to find more social networks.'}
@@ -550,7 +550,7 @@ export default function SocialNetworks() {
               ? 'Ajude-nos a construir um diretório completo das redes sociais portuguesas em Londres.'
               : 'Help us build a comprehensive directory of Portuguese social networks in London.'}
           </p>
-          <button className="bg-white text-primary-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors">
+          <button className="bg-white text-primary-600 font-semibold px-8 py-3 rounded-lg hover:bg-secondary-100 transition-colors">
             {language === 'pt' ? 'Sugerir Rede' : 'Suggest Network'}
           </button>
         </div>

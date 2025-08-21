@@ -148,14 +148,12 @@ export default function PerformanceOptimization({
           const observer = new PerformanceObserver((list) => {
             const entries = list.getEntries();
             entries.forEach(entry => {
-              console.log('[Performance]', entry.name, entry.duration);
             });
           });
           
           observer.observe({ entryTypes: ['measure', 'navigation', 'paint'] });
           performanceObserverRef.current = observer;
         } catch (error) {
-          console.log('[Performance] Observer not supported:', error);
         }
       }
     }
@@ -186,7 +184,6 @@ export default function PerformanceOptimization({
     };
 
     setMetrics(newMetrics);
-    console.log('[Performance] Metrics collected:', newMetrics);
   };
 
   const measureCoreWebVitals = () => {
@@ -229,7 +226,6 @@ export default function PerformanceOptimization({
         clsObserver.observe({ entryTypes: ['layout-shift'] });
 
       } catch (error) {
-        console.log('[Performance] Core Web Vitals measurement not supported:', error);
       }
     }
   };
@@ -453,7 +449,6 @@ export default function PerformanceOptimization({
           await preloadContent(contentType);
           await new Promise(resolve => setTimeout(resolve, 200));
         } catch (error) {
-          console.log(`[Performance] Failed to preload ${contentType}:`, error);
         }
       }
 
@@ -660,9 +655,9 @@ export default function PerformanceOptimization({
       }`}>
         <div className="flex items-center space-x-3">
           <div className="flex-shrink-0">
-            {performanceScore === 'good' && <CheckCircle className="h-8 w-8 text-green-600" />}
+            {performanceScore === 'good' && <CheckCircle className="h-8 w-8 text-action-600" />}
             {performanceScore === 'needs-improvement' && <Clock className="h-8 w-8 text-yellow-600" />}
-            {performanceScore === 'poor' && <AlertTriangle className="h-8 w-8 text-red-600" />}
+            {performanceScore === 'poor' && <AlertTriangle className="h-8 w-8 text-coral-600" />}
           </div>
           <div className="flex-1">
             <h2 className={`text-lg font-semibold ${
@@ -686,9 +681,9 @@ export default function PerformanceOptimization({
             onClick={optimizePortugueseContent}
             disabled={isOptimizing}
             className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-              performanceScore === 'good' ? 'bg-green-600 hover:bg-green-700' :
+              performanceScore === 'good' ? 'bg-action-600 hover:bg-green-700' :
               performanceScore === 'needs-improvement' ? 'bg-yellow-600 hover:bg-yellow-700' :
-              'bg-red-600 hover:bg-red-700'
+              'bg-coral-600 hover:bg-red-700'
             } text-white disabled:opacity-50`}
           >
             {isOptimizing ? (
@@ -709,9 +704,9 @@ export default function PerformanceOptimization({
       {/* Performance Metrics */}
       {metrics && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="bg-white border border-gray-200 rounded-lg p-4">
+          <div className="bg-white border border-secondary-200 rounded-lg p-4">
             <div className="flex items-center space-x-2">
-              <Clock className="h-5 w-5 text-blue-600" />
+              <Clock className="h-5 w-5 text-primary-600" />
               <h3 className="font-medium text-gray-900">
                 {language === 'pt' ? 'Tempo de Carregamento' : 'Load Time'}
               </h3>
@@ -719,43 +714,43 @@ export default function PerformanceOptimization({
             <p className="text-2xl font-semibold text-gray-900 mt-2">
               {formatMilliseconds(metrics.loadTime)}
             </p>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-secondary-600">
               {language === 'pt' ? 'Página completa' : 'Full page load'}
             </p>
           </div>
 
-          <div className="bg-white border border-gray-200 rounded-lg p-4">
+          <div className="bg-white border border-secondary-200 rounded-lg p-4">
             <div className="flex items-center space-x-2">
-              <Gauge className="h-5 w-5 text-green-600" />
+              <Gauge className="h-5 w-5 text-action-600" />
               <h3 className="font-medium text-gray-900">LCP</h3>
             </div>
             <p className="text-2xl font-semibold text-gray-900 mt-2">
               {formatMilliseconds(metrics.lcp)}
             </p>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-secondary-600">
               {language === 'pt' ? 'Conteúdo principal' : 'Largest content'}
             </p>
           </div>
 
-          <div className="bg-white border border-gray-200 rounded-lg p-4">
+          <div className="bg-white border border-secondary-200 rounded-lg p-4">
             <div className="flex items-center space-x-2">
-              <BarChart3 className="h-5 w-5 text-purple-600" />
+              <BarChart3 className="h-5 w-5 text-accent-600" />
               <h3 className="font-medium text-gray-900">CLS</h3>
             </div>
             <p className="text-2xl font-semibold text-gray-900 mt-2">
               {metrics.cls.toFixed(3)}
             </p>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-secondary-600">
               {language === 'pt' ? 'Estabilidade visual' : 'Visual stability'}
             </p>
           </div>
 
-          <div className="bg-white border border-gray-200 rounded-lg p-4">
+          <div className="bg-white border border-secondary-200 rounded-lg p-4">
             <div className="flex items-center space-x-2">
               {networkInfo.online ? (
-                <Wifi className="h-5 w-5 text-green-600" />
+                <Wifi className="h-5 w-5 text-action-600" />
               ) : (
-                <WifiOff className="h-5 w-5 text-red-600" />
+                <WifiOff className="h-5 w-5 text-coral-600" />
               )}
               <h3 className="font-medium text-gray-900">
                 {language === 'pt' ? 'Rede' : 'Network'}
@@ -764,7 +759,7 @@ export default function PerformanceOptimization({
             <p className="text-2xl font-semibold text-gray-900 mt-2">
               {networkInfo.effectiveType.toUpperCase()}
             </p>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-secondary-600">
               {networkInfo.downlink}Mbps • {networkInfo.rtt}ms
             </p>
           </div>
@@ -772,15 +767,15 @@ export default function PerformanceOptimization({
       )}
 
       {/* Cache Statistics */}
-      <div className="bg-white border border-gray-200 rounded-lg p-6">
+      <div className="bg-white border border-secondary-200 rounded-lg p-6">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-lg font-semibold text-gray-900 flex items-center space-x-2">
-            <HardDrive className="h-5 w-5 text-gray-600" />
+            <HardDrive className="h-5 w-5 text-secondary-600" />
             <span>{language === 'pt' ? 'Cache da Comunidade' : 'Community Cache'}</span>
           </h3>
           <button
             onClick={clearAllCache}
-            className="text-red-600 hover:text-red-800 text-sm font-medium"
+            className="text-coral-600 hover:text-red-800 text-sm font-medium"
           >
             {language === 'pt' ? 'Limpar Cache' : 'Clear Cache'}
           </button>
@@ -788,19 +783,19 @@ export default function PerformanceOptimization({
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div>
-            <p className="text-sm text-gray-600">{language === 'pt' ? 'Tamanho Total' : 'Total Size'}</p>
+            <p className="text-sm text-secondary-600">{language === 'pt' ? 'Tamanho Total' : 'Total Size'}</p>
             <p className="text-lg font-semibold text-gray-900">{formatBytes(cacheStats.totalSize)}</p>
           </div>
           <div>
-            <p className="text-sm text-gray-600">{language === 'pt' ? 'Itens' : 'Items'}</p>
+            <p className="text-sm text-secondary-600">{language === 'pt' ? 'Itens' : 'Items'}</p>
             <p className="text-lg font-semibold text-gray-900">{cacheStats.itemCount}</p>
           </div>
           <div>
-            <p className="text-sm text-gray-600">{language === 'pt' ? 'Taxa de Acerto' : 'Hit Rate'}</p>
+            <p className="text-sm text-secondary-600">{language === 'pt' ? 'Taxa de Acerto' : 'Hit Rate'}</p>
             <p className="text-lg font-semibold text-gray-900">{cacheStats.hitRate.toFixed(1)}%</p>
           </div>
           <div>
-            <p className="text-sm text-gray-600">{language === 'pt' ? 'Última Limpeza' : 'Last Cleared'}</p>
+            <p className="text-sm text-secondary-600">{language === 'pt' ? 'Última Limpeza' : 'Last Cleared'}</p>
             <p className="text-lg font-semibold text-gray-900">
               {cacheStats.lastCleared 
                 ? new Date(cacheStats.lastCleared).toLocaleDateString()
@@ -820,7 +815,7 @@ export default function PerformanceOptimization({
           <ul className="space-y-2">
             {optimizationSuggestions.map((suggestion, index) => (
               <li key={index} className="flex items-start space-x-2 text-blue-800">
-                <span className="text-blue-600 mt-1">•</span>
+                <span className="text-primary-600 mt-1">•</span>
                 <span className="text-sm">{suggestion}</span>
               </li>
             ))}
@@ -829,7 +824,7 @@ export default function PerformanceOptimization({
       )}
 
       {/* Feature Toggles */}
-      <div className="bg-white border border-gray-200 rounded-lg p-6">
+      <div className="bg-white border border-secondary-200 rounded-lg p-6">
         <h3 className="text-lg font-semibold text-gray-900 mb-4">
           {language === 'pt' ? 'Otimizações Ativas' : 'Active Optimizations'}
         </h3>
@@ -837,12 +832,12 @@ export default function PerformanceOptimization({
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <Image className="h-5 w-5 text-green-600" />
+              <Image className="h-5 w-5 text-action-600" />
               <div>
                 <h4 className="font-medium text-gray-900">
                   {language === 'pt' ? 'Carregamento Lazy' : 'Lazy Loading'}
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-secondary-600">
                   {language === 'pt' ? 'Imagens portuguesas carregadas sob demanda' : 'Portuguese images loaded on demand'}
                 </p>
               </div>
@@ -850,23 +845,23 @@ export default function PerformanceOptimization({
             <button
               onClick={() => setLazyLoadingEnabled(!lazyLoadingEnabled)}
               className={`w-12 h-6 rounded-full transition-colors ${
-                lazyLoadingEnabled ? 'bg-green-600' : 'bg-gray-300'
+                lazyLoadingEnabled ? 'bg-action-600' : 'bg-secondary-300'
               }`}
             >
               <div className={`w-5 h-5 bg-white rounded-full transition-transform ${
-                lazyLoadingEnabled ? 'translate-x-6' : 'translate-x-1'
+                lazyLoadingEnabled ? 'transecondary-x-6' : 'transecondary-x-1'
               }`} />
             </button>
           </div>
 
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <Cpu className="h-5 w-5 text-blue-600" />
+              <Cpu className="h-5 w-5 text-primary-600" />
               <div>
                 <h4 className="font-medium text-gray-900">
                   {language === 'pt' ? 'Otimização de Imagens' : 'Image Optimization'}
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-secondary-600">
                   {language === 'pt' ? 'Compressão automática de conteúdo cultural' : 'Automatic cultural content compression'}
                 </p>
               </div>
@@ -874,23 +869,23 @@ export default function PerformanceOptimization({
             <button
               onClick={() => setImageOptimizationEnabled(!imageOptimizationEnabled)}
               className={`w-12 h-6 rounded-full transition-colors ${
-                imageOptimizationEnabled ? 'bg-blue-600' : 'bg-gray-300'
+                imageOptimizationEnabled ? 'bg-primary-600' : 'bg-secondary-300'
               }`}
             >
               <div className={`w-5 h-5 bg-white rounded-full transition-transform ${
-                imageOptimizationEnabled ? 'translate-x-6' : 'translate-x-1'
+                imageOptimizationEnabled ? 'transecondary-x-6' : 'transecondary-x-1'
               }`} />
             </button>
           </div>
 
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <Network className="h-5 w-5 text-purple-600" />
+              <Network className="h-5 w-5 text-accent-600" />
               <div>
                 <h4 className="font-medium text-gray-900">
                   {language === 'pt' ? 'Modo Rede Inteligente' : 'Network-Aware Mode'}
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-secondary-600">
                   {language === 'pt' ? 'Adapta conteúdo à velocidade da ligação' : 'Adapts content to connection speed'}
                 </p>
               </div>
@@ -898,11 +893,11 @@ export default function PerformanceOptimization({
             <button
               onClick={() => setNetworkAwareEnabled(!networkAwareEnabled)}
               className={`w-12 h-6 rounded-full transition-colors ${
-                networkAwareEnabled ? 'bg-purple-600' : 'bg-gray-300'
+                networkAwareEnabled ? 'bg-accent-600' : 'bg-secondary-300'
               }`}
             >
               <div className={`w-5 h-5 bg-white rounded-full transition-transform ${
-                networkAwareEnabled ? 'translate-x-6' : 'translate-x-1'
+                networkAwareEnabled ? 'transecondary-x-6' : 'transecondary-x-1'
               }`} />
             </button>
           </div>

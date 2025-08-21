@@ -1,7 +1,9 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { ROUTES } from '@/config'
 import { motion, AnimatePresence } from 'framer-motion'
+import { ROUTES } from '@/config'
 import { 
   UserIcon,
   HeartIcon,
@@ -25,6 +27,7 @@ import {
   StarIcon as StarIconSolid 
 } from '@heroicons/react/24/solid'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config'
 
 export default function MatchHowItWorks() {
   const [mounted, setMounted] = useState(false)
@@ -252,9 +255,9 @@ export default function MatchHowItWorks() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header Section */}
-        <div className={`text-center mb-16 transition-all duration-1000 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+        <div className={`text-center mb-16 transition-all duration-1000 ${mounted ? 'opacity-100 transecondary-y-0' : 'opacity-0 transecondary-y-5'}`}>
           {/* Badge */}
-          <div className={`inline-flex items-center gap-3 bg-gradient-to-r from-secondary-50 via-accent-50 to-coral-50 border border-secondary-200/50 rounded-2xl px-8 py-4 shadow-xl transition-all duration-700 delay-100 ${mounted ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-5'} mb-8`}>
+          <div className={`inline-flex items-center gap-3 bg-gradient-to-r from-secondary-50 via-accent-50 to-coral-50 border border-secondary-200/50 rounded-2xl px-8 py-4 shadow-xl transition-all duration-700 delay-100 ${mounted ? 'opacity-100 scale-100 transecondary-y-0' : 'opacity-0 scale-95 -transecondary-y-5'} mb-8`}>
             <div className="flex items-center gap-3">
               <div className="w-3 h-3 rounded-full bg-gradient-to-r from-green-500 to-red-500 animate-pulse"></div>
               <HeartIconSolid className="h-5 w-5 text-secondary-600" />
@@ -283,11 +286,11 @@ export default function MatchHowItWorks() {
             )}
           </h2>
           
-          <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 leading-relaxed max-w-4xl mx-auto font-medium mb-6">
+          <p className="text-xl sm:text-2xl md:text-3xl text-secondary-700 leading-relaxed max-w-4xl mx-auto font-medium mb-6">
             {t('match_how_it_works.subtitle')}
           </p>
           
-          <p className="text-lg text-gray-600 italic max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-secondary-600 italic max-w-3xl mx-auto leading-relaxed">
             "{t('match_how_it_works.quote')}"
           </p>
         </div>
@@ -315,7 +318,7 @@ export default function MatchHowItWorks() {
                     <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
                       <div className="absolute top-4 right-4 text-4xl opacity-30">{step.emoji}</div>
                       <div className="absolute bottom-4 left-4 text-3xl opacity-40">🇵🇹</div>
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-6xl opacity-10">{step.emoji}</div>
+                      <div className="absolute top-1/2 left-1/2 transform -transecondary-x-1/2 -transecondary-y-1/2 text-6xl opacity-10">{step.emoji}</div>
                     </div>
                     
                     {/* Cultural Elements */}
@@ -354,7 +357,7 @@ export default function MatchHowItWorks() {
                           {language === 'pt' ? step.titlePt : step.title}
                         </h3>
                         
-                        <p className="text-sm text-gray-600 leading-relaxed">
+                        <p className="text-sm text-secondary-600 leading-relaxed">
                           {language === 'pt' ? step.descriptionPt : step.description}
                         </p>
                         
@@ -362,7 +365,7 @@ export default function MatchHowItWorks() {
                         <div className="space-y-2">
                           {(language === 'pt' ? step.featuresPt : step.features).slice(0, 3).map((feature, idx) => (
                             <div key={idx} className="flex items-center gap-2 text-xs text-gray-500">
-                              <CheckBadgeIcon className="h-3 w-3 text-green-500 flex-shrink-0" />
+                              <CheckBadgeIcon className="h-3 w-3 text-action-500 flex-shrink-0" />
                               <span>{feature}</span>
                             </div>
                           ))}
@@ -376,7 +379,7 @@ export default function MatchHowItWorks() {
                           whileTap={{ scale: 0.98 }}
                         >
                           <span>{language === 'pt' ? 'Saber Mais' : 'Learn More'}</span>
-                          <ArrowRightIcon className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
+                          <ArrowRightIcon className="h-4 w-4 group-hover/btn:transecondary-x-1 transition-transform duration-200" />
                         </motion.button>
                       </div>
                     </div>
@@ -384,16 +387,16 @@ export default function MatchHowItWorks() {
 
                   {/* Step connector arrows */}
                   {index < steps.length - 1 && (
-                    <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                    <div className="hidden lg:block absolute top-1/2 -right-4 transform -transecondary-y-1/2 z-10">
                       <motion.div
                         className="w-8 h-8 bg-white border-2 border-secondary-300 rounded-full flex items-center justify-center shadow-lg"
                         animate={{ 
-                          borderColor: isActive ? '#059669' : '#d1d5db',
+                          borderColor: isActive ? 'var(--color-action-500)' : '#d1d5db',
                           backgroundColor: isActive ? '#f0fdf4' : '#ffffff'
                         }}
                         transition={{ duration: 0.3 }}
                       >
-                        <ArrowRightIcon className={`h-4 w-4 transition-colors duration-300 ${isActive ? 'text-green-600' : 'text-gray-400'}`} />
+                        <ArrowRightIcon className={`h-4 w-4 transition-colors duration-300 ${isActive ? 'text-action-600' : 'text-gray-400'}`} />
                       </motion.div>
                     </div>
                   )}
@@ -418,12 +421,12 @@ export default function MatchHowItWorks() {
         </div>
 
         {/* Benefits Grid */}
-        <div className={`mb-20 transition-all duration-1000 delay-300 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+        <div className={`mb-20 transition-all duration-1000 delay-300 ${mounted ? 'opacity-100 transecondary-y-0' : 'opacity-0 transecondary-y-5'}`}>
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               {language === 'pt' ? 'Por Que Escolher o LusoTown?' : 'Why Choose LusoTown?'}
             </h3>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
               {language === 'pt' 
                 ? 'Mais que um app de encontros - uma comunidade portuguesa autêntica em Londres'
                 : 'More than a dating app - an authentic Portuguese community in London'
@@ -449,7 +452,7 @@ export default function MatchHowItWorks() {
                   <h4 className="text-lg font-bold text-gray-900 mb-3 text-center">
                     {language === 'pt' ? benefit.titlePt : benefit.title}
                   </h4>
-                  <p className="text-gray-600 text-sm leading-relaxed text-center">
+                  <p className="text-secondary-600 text-sm leading-relaxed text-center">
                     {language === 'pt' ? benefit.descriptionPt : benefit.description}
                   </p>
                 </motion.div>
@@ -459,7 +462,7 @@ export default function MatchHowItWorks() {
         </div>
 
         {/* Statistics Section */}
-        <div className={`mb-20 transition-all duration-1000 delay-500 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+        <div className={`mb-20 transition-all duration-1000 delay-500 ${mounted ? 'opacity-100 transecondary-y-0' : 'opacity-0 transecondary-y-5'}`}>
           <div className="bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 rounded-3xl p-6 sm:p-8 md:p-12 text-white shadow-2xl mx-4 sm:mx-0">
             <div className="text-center mb-8 md:mb-10">
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
@@ -495,12 +498,12 @@ export default function MatchHowItWorks() {
         </div>
 
         {/* Testimonials */}
-        <div className={`mb-20 transition-all duration-1000 delay-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+        <div className={`mb-20 transition-all duration-1000 delay-700 ${mounted ? 'opacity-100 transecondary-y-0' : 'opacity-0 transecondary-y-5'}`}>
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               {language === 'pt' ? 'Histórias de Sucesso' : 'Success Stories'}
             </h3>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-secondary-600">
               {language === 'pt' 
                 ? 'Conexões reais que se tornaram relacionamentos duradouros'
                 : 'Real connections that became lasting relationships'
@@ -522,14 +525,14 @@ export default function MatchHowItWorks() {
                     <StarIconSolid key={i} className="w-5 h-5 text-yellow-400" />
                   ))}
                 </div>
-                <blockquote className="text-gray-800 italic text-lg leading-relaxed mb-4">
+                <blockquote className="text-secondary-800 italic text-lg leading-relaxed mb-4">
                   "{language === 'pt' ? testimonial.textPt : testimonial.text}"
                 </blockquote>
-                <div className="border-t border-gray-200 pt-4">
+                <div className="border-t border-secondary-200 pt-4">
                   <div className="font-semibold text-gray-900 mb-1">
                     {testimonial.author}
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-secondary-600">
                     {language === 'pt' ? testimonial.matchPt : testimonial.match}
                   </div>
                 </div>
@@ -539,7 +542,7 @@ export default function MatchHowItWorks() {
         </div>
 
         {/* CTA Section */}
-        <div className={`text-center transition-all duration-1000 delay-900 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+        <div className={`text-center transition-all duration-1000 delay-900 ${mounted ? 'opacity-100 transecondary-y-0' : 'opacity-0 transecondary-y-5'}`}>
           <div className="bg-gradient-to-r from-white/70 via-secondary-50/50 to-accent-50/50 backdrop-blur-lg border border-white/40 rounded-3xl p-12 shadow-2xl max-w-4xl mx-auto">
             <div className="mb-8">
               <div className="text-5xl mb-4">💕</div>
@@ -560,7 +563,7 @@ export default function MatchHowItWorks() {
                   </>
                 )}
               </h3>
-              <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg sm:text-xl text-secondary-700 mb-8 max-w-3xl mx-auto leading-relaxed">
                 {language === 'pt' 
                   ? 'Junte-se a milhares de falantes de português em Londres. Encontre alguém que entende a sua cultura, tradições e sonhos.'
                   : 'Join thousands of Portuguese speakers in London. Find someone who understands your culture, traditions, and dreams.'
@@ -570,13 +573,13 @@ export default function MatchHowItWorks() {
             
             {/* Portuguese cultural quote */}
             <div className="bg-white/60 rounded-2xl p-6 mb-10 max-w-2xl mx-auto border border-secondary-100">
-              <p className="text-gray-700 italic text-lg mb-2">
+              <p className="text-secondary-700 italic text-lg mb-2">
                 {language === 'pt' 
                   ? '"Quem tem amigos tem tudo" - Who has friends has everything'
                   : '"Quem tem amigos tem tudo" - Who has friends has everything'
                 }
               </p>
-              <p className="text-gray-600 text-sm">
+              <p className="text-secondary-600 text-sm">
                 {language === 'pt' 
                   ? 'Provérbio português sobre o valor das conexões humanas'
                   : 'Portuguese proverb about the value of human connections'
@@ -586,7 +589,7 @@ export default function MatchHowItWorks() {
             
             <div className="flex flex-row gap-3 sm:gap-4 justify-center">
               <motion.a
-                href="/matches"
+                href={ROUTES.matches}
                 className="group relative text-base sm:text-lg font-bold px-6 sm:px-8 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden flex-1 max-w-[180px] sm:max-w-none"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
@@ -598,8 +601,8 @@ export default function MatchHowItWorks() {
                 </span>
               </motion.a>
               <motion.a
-                href="/signup"
-                className="text-base sm:text-lg font-bold px-6 sm:px-8 py-4 bg-white/80 backdrop-blur-lg text-gray-800 border-2 border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:border-secondary-300 whitespace-nowrap flex-1 max-w-[180px] sm:max-w-none text-center"
+                href={ROUTES.auth.signup}
+                className="text-base sm:text-lg font-bold px-6 sm:px-8 py-4 bg-white/80 backdrop-blur-lg text-secondary-800 border-2 border-secondary-200 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:border-secondary-300 whitespace-nowrap flex-1 max-w-[180px] sm:max-w-none text-center"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -610,20 +613,20 @@ export default function MatchHowItWorks() {
             {/* Trust indicators */}
             <div className="flex justify-center items-center gap-6 mt-8 flex-wrap">
               <div className="flex items-center gap-2 bg-white/50 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg">
-                <ShieldCheckIcon className="h-5 w-5 text-green-600" />
-                <span className="text-sm font-medium text-gray-700">
+                <ShieldCheckIcon className="h-5 w-5 text-action-600" />
+                <span className="text-sm font-medium text-secondary-700">
                   {language === 'pt' ? 'Perfis Verificados' : 'Verified Profiles'}
                 </span>
               </div>
               <div className="flex items-center gap-2 bg-white/50 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg">
-                <GlobeAltIcon className="h-5 w-5 text-blue-600" />
-                <span className="text-sm font-medium text-gray-700">
+                <GlobeAltIcon className="h-5 w-5 text-primary-600" />
+                <span className="text-sm font-medium text-secondary-700">
                   {language === 'pt' ? 'Comunidade Global' : 'Global Community'}
                 </span>
               </div>
               <div className="flex items-center gap-2 bg-white/50 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg">
-                <LanguageIcon className="h-5 w-5 text-purple-600" />
-                <span className="text-sm font-medium text-gray-700">
+                <LanguageIcon className="h-5 w-5 text-accent-600" />
+                <span className="text-sm font-medium text-secondary-700">
                   {language === 'pt' ? 'Bilingue PT/EN' : 'Bilingual PT/EN'}
                 </span>
               </div>

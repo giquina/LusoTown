@@ -69,10 +69,10 @@ export default function CulturalCompatibilityResults({
   };
 
   const getScoreColor = (score: number) => {
-    if (score >= 8) return 'text-green-600 bg-green-100';
-    if (score >= 6) return 'text-blue-600 bg-blue-100';
+    if (score >= 8) return 'text-action-600 bg-green-100';
+    if (score >= 6) return 'text-primary-600 bg-blue-100';
     if (score >= 4) return 'text-yellow-600 bg-yellow-100';
-    return 'text-red-600 bg-red-100';
+    return 'text-coral-600 bg-red-100';
   };
 
   const getScoreDescription = (score: number) => {
@@ -186,13 +186,13 @@ export default function CulturalCompatibilityResults({
         className="bg-white rounded-3xl max-w-4xl w-full max-h-[95vh] overflow-y-auto"
       >
         {/* Header */}
-        <div className="sticky top-0 bg-white rounded-t-3xl border-b border-gray-100 p-6 z-10">
+        <div className="sticky top-0 bg-white rounded-t-3xl border-b border-secondary-100 p-6 z-10">
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-2xl font-bold text-primary-900 mb-2">
                 {language === 'pt' ? 'Seu Perfil Cultural Português' : 'Your Portuguese Cultural Profile'}
               </h2>
-              <p className="text-gray-600">
+              <p className="text-secondary-600">
                 {language === 'pt' 
                   ? 'Descubra sua compatibilidade cultural e encontre pessoas com valores similares'
                   : 'Discover your cultural compatibility and find people with similar values'}
@@ -200,7 +200,7 @@ export default function CulturalCompatibilityResults({
             </div>
             <button
               onClick={onClose}
-              className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
+              className="w-10 h-10 bg-secondary-100 rounded-full flex items-center justify-center hover:bg-secondary-200 transition-colors"
             >
               ×
             </button>
@@ -220,7 +220,7 @@ export default function CulturalCompatibilityResults({
                 {language === 'pt' ? 'Força Cultural Portuguesa' : 'Portuguese Cultural Strength'}
               </h3>
               <div className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-primary-300">
-                <TrophyIcon className="w-5 h-5 text-yellow-500" />
+                <TrophyIcon className="w-5 h-5 text-accent-500" />
                 <span className="font-semibold text-primary-800">
                   {profile.culturalStrength === 'Very Strong' && language === 'pt' ? 'Muito Forte' :
                    profile.culturalStrength === 'Strong' && language === 'pt' ? 'Forte' :
@@ -240,19 +240,19 @@ export default function CulturalCompatibilityResults({
           </div>
 
           {/* Profile Type */}
-          <div className="bg-white rounded-2xl border border-gray-200 p-6 mb-8">
+          <div className="bg-white rounded-2xl border border-secondary-200 p-6 mb-8">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-12 h-12 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-full flex items-center justify-center">
                 <HeartIcon className="w-6 h-6 text-white" />
               </div>
               <div>
                 <h4 className="text-lg font-bold text-gray-900">{profile.profileType}</h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-secondary-600">
                   {language === 'pt' ? 'Seu tipo de personalidade cultural' : 'Your cultural personality type'}
                 </p>
               </div>
             </div>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-secondary-700 leading-relaxed">
               {profileDescriptions[profile.profileType]?.[language] || 
                profileDescriptions[profile.profileType]?.en ||
                'A unique cultural personality with strong Portuguese connections.'}
@@ -260,7 +260,7 @@ export default function CulturalCompatibilityResults({
           </div>
 
           {/* Category Breakdown */}
-          <div className="bg-white rounded-2xl border border-gray-200 p-6 mb-8">
+          <div className="bg-white rounded-2xl border border-secondary-200 p-6 mb-8">
             <h4 className="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
               <ChartBarIcon className="w-5 h-5 text-primary-600" />
               {language === 'pt' ? 'Análise Detalhada por Categoria' : 'Detailed Category Analysis'}
@@ -276,7 +276,7 @@ export default function CulturalCompatibilityResults({
                 if (!IconComponent) return null;
 
                 return (
-                  <div key={category} className="bg-gray-50 rounded-xl p-4">
+                  <div key={category} className="bg-secondary-50 rounded-xl p-4">
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-3">
                         <IconComponent className="w-5 h-5 text-primary-600" />
@@ -289,7 +289,7 @@ export default function CulturalCompatibilityResults({
                       </span>
                     </div>
                     
-                    <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
+                    <div className="w-full bg-secondary-200 rounded-full h-2 mb-2">
                       <motion.div
                         className="bg-gradient-to-r from-primary-500 to-secondary-500 h-2 rounded-full"
                         initial={{ width: 0 }}
@@ -298,7 +298,7 @@ export default function CulturalCompatibilityResults({
                       />
                     </div>
                     
-                    <div className="text-right text-sm font-semibold text-gray-700">
+                    <div className="text-right text-sm font-semibold text-secondary-700">
                       {score.toFixed(1)}/10
                     </div>
                   </div>
@@ -308,12 +308,12 @@ export default function CulturalCompatibilityResults({
           </div>
 
           {/* Compatibility Insights */}
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl border border-blue-200 p-6 mb-8">
+          <div className="bg-gradient-to-r from-blue-50 to-accent-50 rounded-2xl border border-blue-200 p-6 mb-8">
             <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-              <SparklesIcon className="w-5 h-5 text-blue-600" />
+              <SparklesIcon className="w-5 h-5 text-primary-600" />
               {language === 'pt' ? 'Insights de Compatibilidade' : 'Compatibility Insights'}
             </h4>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-secondary-700 leading-relaxed mb-4">
               {getCompatibilityInsight()[language]}
             </p>
             
@@ -331,16 +331,16 @@ export default function CulturalCompatibilityResults({
                     <div key={category} className="bg-white rounded-xl p-4 border border-blue-200">
                       <div className="flex items-center gap-2 mb-2">
                         <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white ${
-                          index === 0 ? 'bg-yellow-500' : index === 1 ? 'bg-gray-400' : 'bg-orange-500'
+                          index === 0 ? 'bg-accent-500' : index === 1 ? 'bg-secondary-400' : 'bg-orange-500'
                         }`}>
                           {index + 1}
                         </div>
-                        <IconComponent className="w-4 h-4 text-gray-600" />
+                        <IconComponent className="w-4 h-4 text-secondary-600" />
                       </div>
                       <div className="text-sm font-medium text-gray-900">
                         {getCategoryLabel(category)}
                       </div>
-                      <div className="text-xs text-gray-600">
+                      <div className="text-xs text-secondary-600">
                         {(score as number).toFixed(1)}/10
                       </div>
                     </div>
@@ -350,15 +350,15 @@ export default function CulturalCompatibilityResults({
           </div>
 
           {/* Recommendations */}
-          <div className="bg-white rounded-2xl border border-gray-200 p-6 mb-8">
+          <div className="bg-white rounded-2xl border border-secondary-200 p-6 mb-8">
             <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-              <AcademicCapIcon className="w-5 h-5 text-green-600" />
+              <AcademicCapIcon className="w-5 h-5 text-action-600" />
               {language === 'pt' ? 'Recomendações Personalizadas' : 'Personalized Recommendations'}
             </h4>
             <div className="space-y-3">
               {profile.recommendations.map((recommendation, index) => (
                 <div key={index} className="flex items-start gap-3 p-3 bg-green-50 rounded-lg border border-green-200">
-                  <CheckCircleIcon className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
+                  <CheckCircleIcon className="w-5 h-5 text-action-600 mt-0.5 flex-shrink-0" />
                   <p className="text-sm text-green-800">{recommendation}</p>
                 </div>
               ))}
@@ -380,7 +380,7 @@ export default function CulturalCompatibilityResults({
                 <ul className="space-y-2">
                   {profile.overallScore >= 7 && (
                     <li className="flex items-center gap-2 text-sm">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-action-500 rounded-full"></div>
                       {language === 'pt' 
                         ? 'Portugueses que mantêm tradições familiares'
                         : 'Portuguese speakers who maintain family traditions'}
@@ -388,7 +388,7 @@ export default function CulturalCompatibilityResults({
                   )}
                   {profile.music >= 7 && (
                     <li className="flex items-center gap-2 text-sm">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-action-500 rounded-full"></div>
                       {language === 'pt' 
                         ? 'Amantes de fado e música portuguesa'
                         : 'Fado and Portuguese music lovers'}
@@ -396,7 +396,7 @@ export default function CulturalCompatibilityResults({
                   )}
                   {profile.food >= 7 && (
                     <li className="flex items-center gap-2 text-sm">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-action-500 rounded-full"></div>
                       {language === 'pt' 
                         ? 'Entusiastas da culinária portuguesa'
                         : 'Portuguese cuisine enthusiasts'}
@@ -404,7 +404,7 @@ export default function CulturalCompatibilityResults({
                   )}
                   {profile.community >= 6 && (
                     <li className="flex items-center gap-2 text-sm">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-action-500 rounded-full"></div>
                       {language === 'pt' 
                         ? 'Membros ativos da comunidade'
                         : 'Active community members'}
@@ -418,7 +418,7 @@ export default function CulturalCompatibilityResults({
                   <div className="text-2xl font-bold text-pink-600 mb-1">
                     {Math.round((profile.overallScore / 10) * 100)}%
                   </div>
-                  <div className="text-sm text-gray-600 mb-3">
+                  <div className="text-sm text-secondary-600 mb-3">
                     {language === 'pt' ? 'Taxa de Compatibilidade Média' : 'Average Compatibility Rate'}
                   </div>
                   <div className="text-xs text-gray-500">
@@ -444,7 +444,7 @@ export default function CulturalCompatibilityResults({
             <div className="grid grid-cols-2 gap-3">
               <button
                 onClick={onRetakeQuiz}
-                className="bg-gray-100 text-gray-700 py-3 rounded-xl font-medium hover:bg-gray-200 transition-colors"
+                className="bg-secondary-100 text-secondary-700 py-3 rounded-xl font-medium hover:bg-secondary-200 transition-colors"
               >
                 {language === 'pt' ? 'Refazer Quiz' : 'Retake Quiz'}
               </button>

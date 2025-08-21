@@ -8,7 +8,7 @@ export default function TestStudentSection() {
   const [showVerification, setShowVerification] = useState(false)
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       <div className="pt-24">
         <StudentSupportSection 
           onStudentVerificationClick={() => setShowVerification(true)}
@@ -18,7 +18,6 @@ export default function TestStudentSection() {
           <StudentVerificationSystem
             onClose={() => setShowVerification(false)}
             onVerificationComplete={(id) => {
-              console.log('Verification completed:', id)
               setShowVerification(false)
             }}
           />

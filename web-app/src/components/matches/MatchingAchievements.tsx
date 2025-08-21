@@ -119,7 +119,7 @@ export default function MatchingAchievements({
         currentProgress: 3,
         requiredProgress: 3,
         badgeIcon: "🎵",
-        badgeColor: "from-purple-500 to-purple-600",
+        badgeColor: "from-accent-500 to-accent-600",
         pointsAwarded: 25,
         unlockedAt: "2025-08-18",
         isUnlocked: true,
@@ -257,7 +257,7 @@ export default function MatchingAchievements({
       case 'rare':
         return 'from-blue-400 to-blue-600';
       case 'epic':
-        return 'from-purple-500 to-purple-700';
+        return 'from-accent-500 to-accent-700';
       case 'legendary':
         return 'from-yellow-400 to-orange-600';
       default:
@@ -411,7 +411,7 @@ export default function MatchingAchievements({
               className={`relative border rounded-xl p-4 cursor-pointer transition-all duration-300 ${
                 achievement.isUnlocked
                   ? "border-primary-200 hover:border-primary-300 hover:shadow-lg bg-white"
-                  : "border-gray-200 bg-gray-50 opacity-75"
+                  : "border-secondary-200 bg-secondary-50 opacity-75"
               }`}
             >
               {/* Achievement Header */}
@@ -428,7 +428,7 @@ export default function MatchingAchievements({
                   
                   {/* Featured Badge */}
                   {achievement.isFeatured && achievement.isUnlocked && (
-                    <div className="absolute -top-1 -right-1 w-5 h-5 bg-yellow-400 rounded-full flex items-center justify-center">
+                    <div className="absolute -top-1 -right-1 w-5 h-5 bg-accent-400 rounded-full flex items-center justify-center">
                       <StarSolid className="w-3 h-3 text-white" />
                     </div>
                   )}
@@ -438,7 +438,7 @@ export default function MatchingAchievements({
                   <div className="flex items-start justify-between mb-2">
                     <div className="min-w-0 flex-1">
                       <h4 className={`font-bold text-base leading-tight ${
-                        achievement.isUnlocked ? 'text-primary-900' : 'text-gray-600'
+                        achievement.isUnlocked ? 'text-primary-900' : 'text-secondary-600'
                       }`}>
                         {achievement.name}
                       </h4>
@@ -446,7 +446,7 @@ export default function MatchingAchievements({
                         <span className={`text-xs px-2 py-1 rounded ${
                           achievement.isUnlocked 
                             ? `bg-gradient-to-r ${getRarityColor(achievement.rarity)} text-white`
-                            : 'bg-gray-200 text-gray-600'
+                            : 'bg-secondary-200 text-secondary-600'
                         }`}>
                           {getRarityText(achievement.rarity)}
                         </span>
@@ -473,14 +473,14 @@ export default function MatchingAchievements({
                   {!achievement.isUnlocked && showProgressBar && (
                     <div className="mb-3">
                       <div className="flex items-center justify-between mb-1">
-                        <span className="text-xs text-gray-600">
+                        <span className="text-xs text-secondary-600">
                           {language === "pt" ? "Progresso" : "Progress"}
                         </span>
-                        <span className="text-xs text-gray-600">
+                        <span className="text-xs text-secondary-600">
                           {achievement.currentProgress}/{achievement.requiredProgress}
                         </span>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div className="w-full bg-secondary-200 rounded-full h-2">
                         <div
                           className="bg-gradient-to-r from-primary-400 to-secondary-400 h-2 rounded-full transition-all duration-500"
                           style={{
@@ -528,12 +528,12 @@ export default function MatchingAchievements({
                           </span>
                         )}
                         {achievement.rewards.priorityMatching && (
-                          <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">
+                          <span className="text-xs bg-blue-100 text-primary-700 px-2 py-1 rounded">
                             {language === "pt" ? "Prioridade" : "Priority"}
                           </span>
                         )}
                         {achievement.rewards.exclusiveEvents && (
-                          <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded">
+                          <span className="text-xs bg-accent-100 text-accent-700 px-2 py-1 rounded">
                             {language === "pt" ? "Eventos VIP" : "VIP Events"}
                           </span>
                         )}
@@ -568,22 +568,22 @@ export default function MatchingAchievements({
 
       {/* Premium Upgrade Prompt */}
       {!hasActiveSubscription && achievements.some(a => a.isUnlocked) && (
-        <div className="mt-6 bg-gradient-to-r from-purple-50 to-purple-100 border border-purple-200 rounded-xl p-4">
+        <div className="mt-6 bg-gradient-to-r from-accent-50 to-accent-100 border border-accent-200 rounded-xl p-4">
           <div className="flex items-center gap-3">
-            <GiftIcon className="w-5 h-5 text-purple-600" />
+            <GiftIcon className="w-5 h-5 text-accent-600" />
             <div className="flex-1">
-              <h5 className="font-semibold text-purple-900 mb-1">
+              <h5 className="font-semibold text-accent-900 mb-1">
                 {language === "pt" 
                   ? "Desbloqueie mais conquistas!" 
                   : "Unlock more achievements!"}
               </h5>
-              <p className="text-purple-700 text-sm">
+              <p className="text-accent-700 text-sm">
                 {language === "pt"
                   ? "Membros Premium têm acesso a conquistas exclusivas e recompensas especiais."
                   : "Premium members get access to exclusive achievements and special rewards."}
               </p>
             </div>
-            <button className="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-purple-700 transition-colors">
+            <button className="bg-accent-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-accent-700 transition-colors">
               {language === "pt" ? "Upgrade" : "Upgrade"}
             </button>
           </div>

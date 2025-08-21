@@ -189,12 +189,12 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
                   onKeyDown={handleKeyDown}
                   onFocus={handleFocus}
                   placeholder={t('search.placeholder.short')}
-                  className="w-full text-base sm:text-lg lg:text-xl font-medium text-gray-800 placeholder-gray-500 bg-transparent focus:outline-none pr-8 sm:pr-10 lg:pr-12"
+                  className="w-full text-base sm:text-lg lg:text-xl font-medium text-secondary-800 placeholder-gray-500 bg-transparent focus:outline-none pr-8 sm:pr-10 lg:pr-12"
                 />
                 {query && (
                   <button
                     onClick={clearSearch}
-                    className="absolute right-0 top-1/2 transform -translate-y-1/2 p-1.5 sm:p-2 hover:bg-gray-100 rounded-full transition-all duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center shadow-lg hover:shadow-xl"
+                    className="absolute right-0 top-1/2 transform -transecondary-y-1/2 p-1.5 sm:p-2 hover:bg-secondary-100 rounded-full transition-all duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center shadow-lg hover:shadow-xl"
                   >
                     <XMarkIcon className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
                   </button>
@@ -219,7 +219,7 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
 
           {/* Search Suggestions Dropdown */}
           {showSuggestions && suggestions.length > 0 && (
-            <div className="absolute top-full left-2 right-2 sm:left-0 sm:right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-gray-200/60 backdrop-blur-lg z-50 overflow-hidden">
+            <div className="absolute top-full left-2 right-2 sm:left-0 sm:right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-secondary-200/60 backdrop-blur-lg z-50 overflow-hidden">
               <div className="p-3 sm:p-4">
                 <div className="text-sm font-semibold text-gray-500 mb-3 flex items-center gap-2">
                   <MagnifyingGlassIcon className="w-4 h-4" />
@@ -243,7 +243,7 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
                               {getResultTypeLabel(suggestion.type)}
                             </span>
                           </div>
-                          <p className="text-xs sm:text-sm text-gray-600 line-clamp-2 leading-relaxed">{suggestion.description}</p>
+                          <p className="text-xs sm:text-sm text-secondary-600 line-clamp-2 leading-relaxed">{suggestion.description}</p>
                           {suggestion.location && (
                             <div className="flex items-center gap-1 mt-1 text-xs text-gray-500">
                               <MapPinIcon className="w-3 h-3" />
@@ -263,7 +263,7 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
                 </div>
               </div>
               
-              <div className="border-t border-gray-100 p-3 bg-gray-50">
+              <div className="border-t border-secondary-100 p-3 bg-secondary-50">
                 <button
                   onClick={() => handleSearch()}
                   className="w-full text-sm text-primary-600 font-medium hover:text-primary-700 flex items-center justify-center gap-2 min-h-[44px] hover:bg-primary-50 rounded-lg transition-all duration-200 py-2 px-3 shadow-lg hover:shadow-xl"
@@ -277,7 +277,7 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
 
           {/* Loading indicator */}
           {isLoading && (
-            <div className="absolute top-full left-2 right-2 sm:left-0 sm:right-0 mt-2 bg-white rounded-2xl shadow-lg border border-gray-200/60 p-3 sm:p-4 z-50">
+            <div className="absolute top-full left-2 right-2 sm:left-0 sm:right-0 mt-2 bg-white rounded-2xl shadow-lg border border-secondary-200/60 p-3 sm:p-4 z-50">
               <div className="flex items-center justify-center gap-2 sm:gap-3 text-gray-500">
                 <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-primary-200 border-t-primary-600 rounded-full animate-spin"></div>
                 <span className="text-sm sm:text-base">{t('search.searching')}</span>
@@ -300,12 +300,12 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
                 setIsExpanded(true)
                 setTimeout(() => inputRef.current?.focus(), 100)
               }}
-              className="p-3 hover:bg-gray-100 rounded-full transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
+              className="p-3 hover:bg-secondary-100 rounded-full transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
             >
-              <MagnifyingGlassIcon className="w-5 h-5 text-gray-600" />
+              <MagnifyingGlassIcon className="w-5 h-5 text-secondary-600" />
             </button>
           ) : (
-            <div className="flex items-center w-full bg-white border border-gray-200 rounded-full shadow-lg">
+            <div className="flex items-center w-full bg-white border border-secondary-200 rounded-full shadow-lg">
               <div className="flex-1 relative">
                 <input
                   ref={inputRef}
@@ -315,14 +315,14 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
                   onKeyDown={handleKeyDown}
                   onFocus={handleFocus}
                   placeholder={t('search.placeholder.short')}
-                  className="w-full px-4 py-2 text-sm text-gray-800 placeholder-gray-500 bg-transparent focus:outline-none"
+                  className="w-full px-4 py-2 text-sm text-secondary-800 placeholder-gray-500 bg-transparent focus:outline-none"
                 />
               </div>
               <div className="flex items-center gap-1 pr-2">
                 {query && (
                   <button
                     onClick={clearSearch}
-                    className="p-2 hover:bg-gray-100 rounded-full transition-colors min-h-[36px] min-w-[36px] flex items-center justify-center"
+                    className="p-2 hover:bg-secondary-100 rounded-full transition-colors min-h-[36px] min-w-[36px] flex items-center justify-center"
                   >
                     <XMarkIcon className="w-4 h-4 text-gray-400" />
                   </button>
@@ -340,13 +340,13 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
 
         {/* Header Search Suggestions */}
         {isExpanded && showSuggestions && suggestions.length > 0 && (
-          <div className="absolute top-full right-0 mt-2 w-96 bg-white rounded-xl shadow-2xl border border-gray-200 z-50 overflow-hidden">
+          <div className="absolute top-full right-0 mt-2 w-96 bg-white rounded-xl shadow-2xl border border-secondary-200 z-50 overflow-hidden">
             <div className="max-h-80 overflow-y-auto">
               {suggestions.map((suggestion, index) => (
                 <button
                   key={`${suggestion.type}-${suggestion.id}-${index}`}
                   onClick={() => handleSuggestionClick(suggestion)}
-                  className="w-full text-left p-3 hover:bg-gray-50 border-b border-gray-100 last:border-b-0 min-h-[44px] transition-all duration-200 hover:shadow-lg"
+                  className="w-full text-left p-3 hover:bg-secondary-50 border-b border-secondary-100 last:border-b-0 min-h-[44px] transition-all duration-200 hover:shadow-lg"
                 >
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 rounded-md bg-primary-100 flex items-center justify-center text-primary-600">
@@ -354,7 +354,7 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
                     </div>
                     <div className="flex-1 min-w-0">
                       <h4 className="font-medium text-gray-900 break-words line-clamp-1 text-sm leading-tight">{suggestion.title}</h4>
-                      <p className="text-xs text-gray-600 line-clamp-1 leading-relaxed">{suggestion.description}</p>
+                      <p className="text-xs text-secondary-600 line-clamp-1 leading-relaxed">{suggestion.description}</p>
                     </div>
                     <span className="flex-shrink-0 text-xs text-primary-600 bg-primary-50 px-2 py-1 rounded whitespace-nowrap">
                       {getResultTypeLabel(suggestion.type)}
@@ -372,7 +372,7 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
   // Default/page variant - standard search bar
   return (
     <div className={`relative ${className}`} ref={searchRef}>
-      <div className="relative bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
+      <div className="relative bg-white border border-secondary-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
         <div className="flex items-center p-4">
           <MagnifyingGlassIcon className="w-5 h-5 text-gray-400 mr-3" />
           <input
@@ -383,12 +383,12 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
             onKeyDown={handleKeyDown}
             onFocus={handleFocus}
             placeholder={t('search.placeholder')}
-            className="flex-1 text-gray-800 placeholder-gray-500 bg-transparent focus:outline-none min-h-[44px]"
+            className="flex-1 text-secondary-800 placeholder-gray-500 bg-transparent focus:outline-none min-h-[44px]"
           />
           {query && (
             <button
               onClick={clearSearch}
-              className="p-2 ml-2 hover:bg-gray-100 rounded-full transition-colors min-h-[36px] min-w-[36px] flex items-center justify-center"
+              className="p-2 ml-2 hover:bg-secondary-100 rounded-full transition-colors min-h-[36px] min-w-[36px] flex items-center justify-center"
             >
               <XMarkIcon className="w-4 h-4 text-gray-400" />
             </button>
@@ -398,13 +398,13 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
 
       {/* Page Search Suggestions */}
       {showSuggestions && suggestions.length > 0 && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-xl border border-gray-200 z-50 overflow-hidden">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-xl border border-secondary-200 z-50 overflow-hidden">
           <div className="p-2">
             {suggestions.map((suggestion, index) => (
               <button
                 key={`${suggestion.type}-${suggestion.id}-${index}`}
                 onClick={() => handleSuggestionClick(suggestion)}
-                className="w-full text-left p-3 rounded-lg hover:bg-gray-50 transition-all duration-200 min-h-[44px] hover:shadow-lg"
+                className="w-full text-left p-3 rounded-lg hover:bg-secondary-50 transition-all duration-200 min-h-[44px] hover:shadow-lg"
               >
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-primary-100 flex items-center justify-center text-primary-600">
@@ -417,7 +417,7 @@ export default function SearchBar({ variant = 'homepage', className = '', onSear
                         {getResultTypeLabel(suggestion.type)}
                       </span>
                     </div>
-                    <p className="text-sm text-gray-600 line-clamp-2 leading-relaxed">{suggestion.description}</p>
+                    <p className="text-sm text-secondary-600 line-clamp-2 leading-relaxed">{suggestion.description}</p>
                   </div>
                 </div>
               </button>

@@ -209,10 +209,10 @@ export default function MatchEventSuggestions({
   };
 
   const getCompatibilityColor = (score: number) => {
-    if (score >= 90) return "text-green-600 bg-green-50 border-green-200";
-    if (score >= 80) return "text-blue-600 bg-blue-50 border-blue-200";
+    if (score >= 90) return "text-action-600 bg-green-50 border-green-200";
+    if (score >= 80) return "text-primary-600 bg-blue-50 border-blue-200";
     if (score >= 70) return "text-orange-600 bg-orange-50 border-orange-200";
-    return "text-gray-600 bg-gray-50 border-gray-200";
+    return "text-secondary-600 bg-secondary-50 border-secondary-200";
   };
 
   if (loading) {
@@ -248,7 +248,7 @@ export default function MatchEventSuggestions({
         <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-4 rounded-xl border border-primary-200">
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-2">
-              <HeartSolid className="w-5 h-5 text-red-500" />
+              <HeartSolid className="w-5 h-5 text-coral-500" />
               <span className="font-semibold text-primary-900">
                 {language === "pt" 
                   ? `Você e ${matchedUserName}` 
@@ -256,7 +256,7 @@ export default function MatchEventSuggestions({
               </span>
             </div>
             <div className="flex items-center gap-1">
-              <StarIcon className="w-4 h-4 text-yellow-500" />
+              <StarIcon className="w-4 h-4 text-accent-500" />
               <span className="text-sm font-bold text-primary-700">
                 {compatibilityScore}% {language === "pt" ? "compatíveis" : "compatible"}
               </span>
@@ -330,7 +330,7 @@ export default function MatchEventSuggestions({
                       <TicketIcon className="w-3 h-3" />
                       <span>{formatPrice(event.price)}</span>
                       {event.buddyDiscountPercent > 0 && (
-                        <span className="text-green-600 font-semibold">
+                        <span className="text-action-600 font-semibold">
                           (-{event.buddyDiscountPercent}% juntos!)
                         </span>
                       )}
@@ -359,7 +359,7 @@ export default function MatchEventSuggestions({
                   {(event.isFadoFeatured || event.culturalAuthenticity >= 95) && (
                     <div className="flex flex-wrap gap-2 mb-3 overflow-hidden">
                       {event.isFadoFeatured && (
-                        <span className="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-2 py-1 rounded-lg text-xs font-bold whitespace-nowrap">
+                        <span className="bg-gradient-to-r from-accent-500 to-accent-600 text-white px-2 py-1 rounded-lg text-xs font-bold whitespace-nowrap">
                           🎵 Fado Autêntico
                         </span>
                       )}

@@ -553,11 +553,11 @@ export default function EventBasedMatchingSystem({
       case "Ambassador":
         return { icon: "👑", color: "text-yellow-600", bg: "bg-yellow-100" };
       case "Community":
-        return { icon: "⭐", color: "text-blue-600", bg: "bg-blue-100" };
+        return { icon: "⭐", color: "text-primary-600", bg: "bg-blue-100" };
       case "Free":
-        return { icon: "🌟", color: "text-gray-600", bg: "bg-gray-100" };
+        return { icon: "🌟", color: "text-secondary-600", bg: "bg-secondary-100" };
       default:
-        return { icon: "👤", color: "text-gray-600", bg: "bg-gray-100" };
+        return { icon: "👤", color: "text-secondary-600", bg: "bg-secondary-100" };
     }
   };
 
@@ -746,14 +746,14 @@ export default function EventBasedMatchingSystem({
                             </div>
                           ))}
                         </div>
-                        <span className="text-xs text-gray-600">
+                        <span className="text-xs text-secondary-600">
                           {event.attendeeProfiles.filter(a => a.isMatch).length > 0 && (
-                            <span className="text-red-600 font-semibold">
+                            <span className="text-coral-600 font-semibold">
                               {event.attendeeProfiles.filter(a => a.isMatch).length} {language === "pt" ? "matches" : "matches"}
                             </span>
                           )}
                           {event.attendeeProfiles.filter(a => a.hasSharedInterests).length > 0 && (
-                            <span className="text-blue-600 font-semibold ml-2">
+                            <span className="text-primary-600 font-semibold ml-2">
                               {event.attendeeProfiles.filter(a => a.hasSharedInterests).length} {language === "pt" ? "interesses comuns" : "shared interests"}
                             </span>
                           )}
@@ -815,7 +815,7 @@ export default function EventBasedMatchingSystem({
                       👤
                       {/* Match indicator */}
                       {match.matchProfile.isMatch && (
-                        <div className="absolute -top-1 -right-1 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
+                        <div className="absolute -top-1 -right-1 w-6 h-6 bg-coral-500 rounded-full flex items-center justify-center">
                           <HeartSolid className="w-3 h-3 text-white" />
                         </div>
                       )}
@@ -887,7 +887,7 @@ export default function EventBasedMatchingSystem({
 
                     {/* Conversation Starters */}
                     <div className="mb-3">
-                      <h6 className="text-xs font-semibold text-gray-700 mb-2">
+                      <h6 className="text-xs font-semibold text-secondary-700 mb-2">
                         {language === "pt" ? "Como iniciar conversa:" : "Conversation starters:"}
                       </h6>
                       <div className="space-y-1">
@@ -895,7 +895,7 @@ export default function EventBasedMatchingSystem({
                           <button
                             key={idx}
                             onClick={() => handleConversationStart(match.matchId, match.eventId, starter)}
-                            className="block w-full text-left bg-gray-50 hover:bg-primary-50 p-2 rounded-lg text-xs text-gray-700 hover:text-primary-700 transition-colors"
+                            className="block w-full text-left bg-secondary-50 hover:bg-primary-50 p-2 rounded-lg text-xs text-secondary-700 hover:text-primary-700 transition-colors"
                           >
                             💬 "{starter}"
                           </button>

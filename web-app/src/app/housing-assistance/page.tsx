@@ -177,7 +177,7 @@ export default function HousingAssistancePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
+              className="text-xl text-secondary-600 mb-8 max-w-3xl mx-auto leading-relaxed"
             >
               {isPortuguese
                 ? "Encontre habitação com famílias e falantes de português em Londres. Mantenha-se conectado à comunidade mesmo quando se muda para novas áreas."
@@ -196,7 +196,7 @@ export default function HousingAssistancePage() {
                   <div className="text-2xl font-bold text-primary-600">
                     750+
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-secondary-600">
                     {isPortuguese
                       ? "Falantes de Português em Londres"
                       : "Portuguese Speakers in London"}
@@ -206,7 +206,7 @@ export default function HousingAssistancePage() {
                   <div className="text-2xl font-bold text-secondary-600">
                     9,009
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-secondary-600">
                     {isPortuguese
                       ? "Em Lambeth (Maior Concentração)"
                       : "In Lambeth (Largest Hub)"}
@@ -223,13 +223,13 @@ export default function HousingAssistancePage() {
         <div className="container-width">
           {/* Tab Navigation */}
           <div className="flex justify-center mb-12">
-            <div className="bg-gray-100 p-1 rounded-2xl">
+            <div className="bg-secondary-100 p-1 rounded-2xl">
               <button
                 onClick={() => setActiveTab("browse")}
                 className={`px-6 py-3 rounded-xl font-semibold transition-all ${
                   activeTab === "browse"
                     ? "bg-white text-primary-600 shadow-md"
-                    : "text-gray-600 hover:text-gray-900"
+                    : "text-secondary-600 hover:text-gray-900"
                 }`}
               >
                 <MagnifyingGlassIcon className="w-5 h-5 inline mr-2" />
@@ -240,7 +240,7 @@ export default function HousingAssistancePage() {
                 className={`px-6 py-3 rounded-xl font-semibold transition-all ${
                   activeTab === "post"
                     ? "bg-white text-primary-600 shadow-md"
-                    : "text-gray-600 hover:text-gray-900"
+                    : "text-secondary-600 hover:text-gray-900"
                 }`}
               >
                 <PlusIcon className="w-5 h-5 inline mr-2" />
@@ -252,10 +252,10 @@ export default function HousingAssistancePage() {
           {activeTab === "browse" && (
             <div>
               {/* Search Filters */}
-              <div className="bg-white rounded-2xl shadow-lg p-6 mb-8 border border-gray-200">
+              <div className="bg-white rounded-2xl shadow-lg p-6 mb-8 border border-secondary-200">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPortuguese ? "Localização" : "Location"}
                     </label>
                     <input
@@ -267,17 +267,17 @@ export default function HousingAssistancePage() {
                           ? "Ex: Stockwell, Vauxhall..."
                           : "e.g. Stockwell, Vauxhall..."
                       }
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPortuguese ? "Tipo" : "Type"}
                     </label>
                     <select
                       value={searchType}
                       onChange={(e) => setSearchType(e.target.value as any)}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     >
                       <option value="all">{getTypeLabel("all")}</option>
                       <option value="room">{getTypeLabel("room")}</option>
@@ -305,7 +305,7 @@ export default function HousingAssistancePage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300"
+                    className="bg-white rounded-2xl shadow-lg border border-secondary-200 overflow-hidden hover:shadow-xl transition-all duration-300"
                   >
                     <div className="p-6">
                       <div className="flex items-start justify-between mb-4">
@@ -324,7 +324,7 @@ export default function HousingAssistancePage() {
                         {listing.title}
                       </h3>
 
-                      <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                      <p className="text-secondary-600 text-sm mb-4 line-clamp-2">
                         {listing.description}
                       </p>
 
@@ -337,7 +337,7 @@ export default function HousingAssistancePage() {
                         {listing.features.slice(0, 2).map((feature, idx) => (
                           <div
                             key={idx}
-                            className="flex items-center text-xs text-gray-600"
+                            className="flex items-center text-xs text-secondary-600"
                           >
                             <HeartIcon className="w-3 h-3 mr-2 text-secondary-500" />
                             {feature}
@@ -345,7 +345,7 @@ export default function HousingAssistancePage() {
                         ))}
                       </div>
 
-                      <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <div className="flex items-center justify-between pt-4 border-t border-secondary-100">
                         <div className="text-xs text-gray-500">
                           {isPortuguese ? "Por" : "By"} {listing.postedBy}
                         </div>
@@ -366,7 +366,7 @@ export default function HousingAssistancePage() {
                       ? "Nenhuma habitação encontrada"
                       : "No housing found"}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {isPortuguese
                       ? "Tente ajustar os seus critérios de pesquisa ou seja o primeiro a anunciar habitação!"
                       : "Try adjusting your search criteria or be the first to post housing!"}
@@ -378,17 +378,17 @@ export default function HousingAssistancePage() {
 
           {activeTab === "post" && (
             <div className="max-w-2xl mx-auto">
-              <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
+              <div className="bg-white rounded-2xl shadow-lg p-8 border border-secondary-200">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
                   {isPortuguese ? "Anunciar Habitação" : "Post Housing Listing"}
                 </h2>
 
                 <form className="space-y-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPortuguese ? "Tipo de Habitação" : "Housing Type"}
                     </label>
-                    <select className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                    <select className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent">
                       <option value="room">{getTypeLabel("room")}</option>
                       <option value="flat">{getTypeLabel("flat")}</option>
                       <option value="house">{getTypeLabel("house")}</option>
@@ -399,7 +399,7 @@ export default function HousingAssistancePage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPortuguese ? "Título" : "Title"}
                     </label>
                     <input
@@ -409,12 +409,12 @@ export default function HousingAssistancePage() {
                           ? "Ex: Quarto em casa portuguesa em Stockwell"
                           : "e.g. Room in Portuguese household in Stockwell"
                       }
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPortuguese ? "Descrição" : "Description"}
                     </label>
                     <textarea
@@ -424,13 +424,13 @@ export default function HousingAssistancePage() {
                           ? "Descreva a habitação, características especiais, proximidade à comunidade portuguesa..."
                           : "Describe the housing, special features, proximity to Portuguese community..."
                       }
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     />
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-secondary-700 mb-2">
                         {isPortuguese ? "Localização" : "Location"}
                       </label>
                       <input
@@ -440,23 +440,23 @@ export default function HousingAssistancePage() {
                             ? "Ex: Stockwell, SW9"
                             : "e.g. Stockwell, SW9"
                         }
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-secondary-700 mb-2">
                         {isPortuguese ? "Preço (£/mês)" : "Price (£/month)"}
                       </label>
                       <input
                         type="number"
                         placeholder="650"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                        className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPortuguese ? "Contacto" : "Contact Information"}
                     </label>
                     <input
@@ -466,7 +466,7 @@ export default function HousingAssistancePage() {
                           ? "Telefone, email ou WhatsApp"
                           : "Phone, email or WhatsApp"
                       }
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     />
                   </div>
 
@@ -490,7 +490,7 @@ export default function HousingAssistancePage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
             {isPortuguese ? "Apoio da Comunidade" : "Community Support"}
           </h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-secondary-600 mb-8 max-w-2xl mx-auto">
             {isPortuguese
               ? "Não está sozinho nesta jornada. A comunidade portuguesa está aqui para ajudar com conselhos, apoio e conexões."
               : "You're not alone in this journey. The Portuguese community is here to help with advice, support, and connections."}
@@ -501,7 +501,7 @@ export default function HousingAssistancePage() {
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {isPortuguese ? "Comunidade" : "Community"}
               </h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-secondary-600 text-sm">
                 {isPortuguese
                   ? "Conecte-se com famílias portuguesas"
                   : "Connect with Portuguese families"}
@@ -512,7 +512,7 @@ export default function HousingAssistancePage() {
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {isPortuguese ? "Apoio" : "Support"}
               </h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-secondary-600 text-sm">
                 {isPortuguese
                   ? "Conselhos e orientação"
                   : "Advice and guidance"}
@@ -523,7 +523,7 @@ export default function HousingAssistancePage() {
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
                 {isPortuguese ? "Localização" : "Location"}
               </h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-secondary-600 text-sm">
                 {isPortuguese
                   ? "Perto da comunidade portuguesa"
                   : "Near Portuguese community"}

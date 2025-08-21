@@ -1,8 +1,11 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { buildUnsplashUrl } from '@/config'
 import Image from 'next/image'
+import { buildUnsplashUrl } from '@/config'
 import { motion } from 'framer-motion'
+import { buildUnsplashUrl } from '@/config'
 import { 
   CalendarDaysIcon,
   MapPinIcon,
@@ -17,10 +20,15 @@ import {
   CameraIcon
 } from '@heroicons/react/24/outline'
 import { HeartIcon as HeartSolidIcon, CheckBadgeIcon } from '@heroicons/react/24/solid'
+import { buildUnsplashUrl } from '@/config'
 import { useLanguage } from '@/context/LanguageContext'
+import { buildUnsplashUrl } from '@/config'
 import { useFavorites } from '@/context/FavoritesContext'
+import { buildUnsplashUrl } from '@/config'
 import FavoriteButton from '@/components/FavoriteButton'
+import { buildUnsplashUrl } from '@/config'
 import { formatEventDate } from '@/lib/dateUtils'
+import { buildUnsplashUrl } from '@/config'
 
 export interface EventFeedPost {
   id: string
@@ -68,18 +76,18 @@ const generateEventFeedPosts = (): EventFeedPost[] => [
     eventDate: '2025-08-16',
     eventTime: '19:00',
     eventLocation: 'A Toca Restaurant, Stockwell',
-    eventImage: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&auto=format',
+    eventImage: buildUnsplashUrl('photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&auto=format'),
     eventPrice: 45,
     eventCategory: 'Music & Entertainment',
     eventSpotsLeft: 13,
     eventMaxAttendees: 35,
     hostName: 'Miguel Santos',
-    hostImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face&auto=format',
+    hostImage: buildUnsplashUrl('photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face&auto=format'),
     hostVerified: true,
     content: 'Estou muito entusiasmado em anunciar a nossa próxima noite de Fado! Teremos a fadista Maria Fernandes diretamente de Lisboa, acompanhada por guitarristas autênticos. Incluímos jantar tradicional português e degustação de Vinho Verde. Será uma noite especial para celebrar a nossa cultura! 🎶🍷 #FadoNight #PortugueseCulture #LittlePortugal',
     images: [
-      'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop&auto=format'
+      buildUnsplashUrl('photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop&auto=format'),
+      buildUnsplashUrl('photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop&auto=format')
     ],
     createdAt: '2 hours ago',
     likes: 34,
@@ -103,13 +111,13 @@ const generateEventFeedPosts = (): EventFeedPost[] => [
     eventDate: '2025-08-19',
     eventTime: '19:45',
     eventLocation: 'The Fentiman Arms, Vauxhall',
-    eventImage: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&h=400&fit=crop&auto=format',
+    eventImage: buildUnsplashUrl('photo-1574629810360-7efbbe195018?w=600&h=400&fit=crop&auto=format'),
     eventPrice: 15,
     eventCategory: 'Sports Viewing',
     eventSpotsLeft: 12,
     eventMaxAttendees: 40,
     hostName: 'Ricardo Ferreira',
-    hostImage: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face&auto=format',
+    hostImage: buildUnsplashUrl('photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face&auto=format'),
     content: 'Acabei de me inscrever para ver o grande jogo! Vai ser épico! Bifanas e Super Bock esperando por todos nós. Força Portugal! 🇵🇹⚽',
     createdAt: '4 hours ago',
     likes: 19,
@@ -118,7 +126,7 @@ const generateEventFeedPosts = (): EventFeedPost[] => [
     liked: true,
     userId: 'user-carlos',
     userName: 'Carlos Oliveira',
-    userImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face&auto=format',
+    userImage: buildUnsplashUrl('photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face&auto=format'),
     priority: 'medium',
     reactions: {
       interested: 15,
@@ -135,13 +143,13 @@ const generateEventFeedPosts = (): EventFeedPost[] => [
     eventDate: '2025-08-17',
     eventTime: '18:30',
     eventLocation: 'Champor-Champor Restaurant, Elephant & Castle',
-    eventImage: 'https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&h=400&fit=crop&auto=format',
+    eventImage: buildUnsplashUrl('photo-1470337458703-46ad1756a187?w=600&h=400&fit=crop&auto=format'),
     eventPrice: 38,
     eventCategory: 'Wine & Dining',
     eventSpotsLeft: 0,
     eventMaxAttendees: 12,
     hostName: 'Fernanda Costa',
-    hostImage: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&crop=face&auto=format',
+    hostImage: buildUnsplashUrl('photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&crop=face&auto=format'),
     hostVerified: true,
     content: 'O nosso evento íntimo para mulheres portuguesas está LOTADO! 🎉 Mas temos waitlist disponível. Esta vai ser uma noite especial de conexões autênticas e vinhos dos países lusófonos. Próximo evento já está sendo planejado para setembro!',
     createdAt: '6 hours ago',
@@ -165,18 +173,18 @@ const generateEventFeedPosts = (): EventFeedPost[] => [
     eventDate: '2025-08-20',
     eventTime: '18:00',
     eventLocation: 'Bar Elixir, Battersea Power Station',
-    eventImage: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&h=400&fit=crop&auto=format',
+    eventImage: buildUnsplashUrl('photo-1514933651103-005eec06c04b?w=600&h=400&fit=crop&auto=format'),
     eventPrice: 8,
     eventCategory: 'Language Exchange',
     eventSpotsLeft: 14,
     eventMaxAttendees: 45,
     hostName: 'Joana Ribeiro',
-    hostImage: 'https://images.unsplash.com/photo-1494790108755-2616b612b1ac?w=100&h=100&fit=crop&crop=face&auto=format',
+    hostImage: buildUnsplashUrl('photo-1494790108755-2616b612b1ac?w=100&h=100&fit=crop&crop=face&auto=format'),
     content: 'Sneak peek dos cocktails especiais do próximo Language Exchange! 🍹 O Caipirinha Tropical e o Porto Tónico estão incríveis. Cada drink conta uma história cultural. Ainda temos vagas!',
     images: [
-      'https://images.unsplash.com/photo-1567696911980-2eed69a46042?w=600&h=400&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&h=400&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&h=400&fit=crop&auto=format'
+      buildUnsplashUrl('photo-1567696911980-2eed69a46042?w=600&h=400&fit=crop&auto=format'),
+      buildUnsplashUrl('photo-1582268611958-ebfd161ef9cf?w=600&h=400&fit=crop&auto=format'),
+      buildUnsplashUrl('photo-1514362545857-3bc16c4c7d1b?w=600&h=400&fit=crop&auto=format')
     ],
     createdAt: '8 hours ago',
     likes: 31,
@@ -199,13 +207,13 @@ const generateEventFeedPosts = (): EventFeedPost[] => [
     eventDate: '2025-08-23',
     eventTime: '18:00',
     eventLocation: 'Portuguese Club of London, Bayswater',
-    eventImage: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&auto=format',
+    eventImage: buildUnsplashUrl('photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&auto=format'),
     eventPrice: 55,
     eventCategory: 'Cultural Events',
     eventSpotsLeft: 28,
     eventMaxAttendees: 80,
     hostName: 'António Pereira',
-    hostImage: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face&auto=format',
+    hostImage: buildUnsplashUrl('photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face&auto=format'),
     hostVerified: true,
     content: 'LEMBRETE: Só faltam 7 dias para a nossa Festa de São João! 🔨✨ Já temos sardinhas frescas encomendadas, a decoração tradicional está quase pronta, e a fogueira será acesa no pátio do clube. Tragam os vossos martelos de plástico para a tradição da sorte! Últimas vagas disponíveis.',
     createdAt: '12 hours ago',
@@ -229,13 +237,13 @@ const generateEventFeedPosts = (): EventFeedPost[] => [
     eventDate: '2025-08-21',
     eventTime: '08:00',
     eventLocation: 'O Cantinho de Portugal, Stockwell',
-    eventImage: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop&auto=format',
+    eventImage: buildUnsplashUrl('photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop&auto=format'),
     eventPrice: 25,
     eventCategory: 'Professional Meetups',
     eventSpotsLeft: 7,
     eventMaxAttendees: 25,
     hostName: 'Patrícia Gomes',
-    hostImage: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&crop=face&auto=format',
+    hostImage: buildUnsplashUrl('photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&crop=face&auto=format'),
     content: '⭐⭐⭐⭐⭐ Review do último networking breakfast: "Conexões autênticas, pastéis de nata divinos, e oportunidades de negócio reais. A Patrícia sabe como juntar as pessoas certas!" - João M., Empresário. Próximo breakfast tem foco em "Digital Innovation". Inscrições abertas!',
     createdAt: '1 day ago',
     likes: 16,
@@ -303,19 +311,19 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
   const getPostTypeIcon = (type: EventFeedPost['type']) => {
     switch (type) {
       case 'event_created':
-        return <CalendarDaysIcon className="w-4 h-4 text-green-500" />
+        return <CalendarDaysIcon className="w-4 h-4 text-action-500" />
       case 'event_update':
         return <ClockIcon className="w-4 h-4 text-primary-500" />
       case 'event_photo':
-        return <PhotoIcon className="w-4 h-4 text-purple-500" />
+        return <PhotoIcon className="w-4 h-4 text-accent-500" />
       case 'event_review':
-        return <StarIcon className="w-4 h-4 text-yellow-500" />
+        return <StarIcon className="w-4 h-4 text-accent-500" />
       case 'event_reminder':
         return <ClockIcon className="w-4 h-4 text-orange-500" />
       case 'user_joined':
         return <UserGroupIcon className="w-4 h-4 text-secondary-500" />
       case 'event_full':
-        return <EyeIcon className="w-4 h-4 text-red-500" />
+        return <EyeIcon className="w-4 h-4 text-coral-500" />
       default:
         return <CalendarDaysIcon className="w-4 h-4 text-gray-500" />
     }
@@ -342,18 +350,18 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
     return (
       <div className={`space-y-6 ${className}`}>
         {[1, 2, 3].map((i) => (
-          <div key={i} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden animate-pulse">
+          <div key={i} className="bg-white rounded-2xl shadow-sm border border-secondary-100 overflow-hidden animate-pulse">
             <div className="p-6">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-gray-200 rounded-full"></div>
+                <div className="w-12 h-12 bg-secondary-200 rounded-full"></div>
                 <div className="flex-1">
-                  <div className="h-4 bg-gray-200 rounded w-1/2 mb-2"></div>
-                  <div className="h-3 bg-gray-200 rounded w-1/4"></div>
+                  <div className="h-4 bg-secondary-200 rounded w-1/2 mb-2"></div>
+                  <div className="h-3 bg-secondary-200 rounded w-1/4"></div>
                 </div>
               </div>
-              <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
-              <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-              <div className="h-48 bg-gray-200 rounded-lg mt-4"></div>
+              <div className="h-4 bg-secondary-200 rounded w-3/4 mb-2"></div>
+              <div className="h-4 bg-secondary-200 rounded w-1/2"></div>
+              <div className="h-48 bg-secondary-200 rounded-lg mt-4"></div>
             </div>
           </div>
         ))}
@@ -365,7 +373,7 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
     <div className={`space-y-6 ${className}`}>
       {/* Filter Bar */}
       {!limit && (
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4">
+        <div className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-4">
           <div className="flex flex-wrap gap-2">
             {[
               { key: 'all', label: isPortuguese ? 'Todos' : 'All Updates' },
@@ -379,7 +387,7 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
                 className={`px-4 py-2 text-sm rounded-lg font-medium transition-colors ${
                   filter === filterOption.key
                     ? 'bg-primary-100 text-primary-700'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
                 }`}
               >
                 {filterOption.label}
@@ -397,7 +405,7 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className={`bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow h-full flex flex-col ${
+            className={`bg-white rounded-2xl shadow-sm border border-secondary-100 overflow-hidden hover:shadow-md transition-shadow h-full flex flex-col ${
               post.priority === 'high' ? 'ring-2 ring-primary-100' : ''
             }`}
           >
@@ -452,7 +460,7 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
               </div>
 
               {/* Post Content */}
-              <p className="text-gray-700 mb-4 whitespace-pre-line">{post.content}</p>
+              <p className="text-secondary-700 mb-4 whitespace-pre-line">{post.content}</p>
 
               {/* Post Images */}
               {post.images && post.images.length > 0 && (
@@ -502,7 +510,7 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
                   <div className="flex-1 min-w-0">
                     <h5 className="font-semibold text-gray-900 mb-2 line-clamp-2">{post.eventTitle}</h5>
                     
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-600 mb-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-secondary-600 mb-3">
                       <div className="flex items-center gap-1">
                         <CalendarDaysIcon className="w-4 h-4 text-primary-500" />
                         <span>{formatDate(post.eventDate)} • {post.eventTime}</span>
@@ -512,7 +520,7 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
                         <span className="truncate">{post.eventLocation}</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <UserGroupIcon className="w-4 h-4 text-purple-500" />
+                        <UserGroupIcon className="w-4 h-4 text-accent-500" />
                         <span>
                           {post.eventSpotsLeft > 0 
                             ? `${post.eventSpotsLeft} ${isPortuguese ? 'vagas' : 'spots'}`
@@ -576,7 +584,7 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
                 
                 <button 
                   onClick={() => handleReaction(post.id, 'love')}
-                  className="flex items-center gap-1 hover:text-red-500 transition-colors"
+                  className="flex items-center gap-1 hover:text-coral-500 transition-colors"
                 >
                   <span>❤️</span>
                   <span>{post.reactions.love}</span>
@@ -584,7 +592,7 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
                 
                 <button 
                   onClick={() => handleReaction(post.id, 'wow')}
-                  className="flex items-center gap-1 hover:text-yellow-500 transition-colors"
+                  className="flex items-center gap-1 hover:text-accent-500 transition-colors"
                 >
                   <span>😍</span>
                   <span>{post.reactions.wow}</span>
@@ -593,27 +601,27 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
             </div>
 
             {/* Post Actions */}
-            <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
+            <div className="px-6 py-4 bg-secondary-50 border-t border-secondary-100">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-6">
                   <button 
                     onClick={() => handleLike(post.id)}
-                    className="flex items-center gap-2 text-gray-600 hover:text-red-500 transition-colors"
+                    className="flex items-center gap-2 text-secondary-600 hover:text-coral-500 transition-colors"
                   >
                     {post.liked ? (
-                      <HeartSolidIcon className="w-5 h-5 text-red-500" />
+                      <HeartSolidIcon className="w-5 h-5 text-coral-500" />
                     ) : (
                       <HeartOutlineIcon className="w-5 h-5" />
                     )}
                     <span className="text-sm font-medium">{post.likes}</span>
                   </button>
                   
-                  <button className="flex items-center gap-2 text-gray-600 hover:text-primary-500 transition-colors">
+                  <button className="flex items-center gap-2 text-secondary-600 hover:text-primary-500 transition-colors">
                     <ChatBubbleLeftRightIcon className="w-5 h-5" />
                     <span className="text-sm font-medium">{post.comments}</span>
                   </button>
                   
-                  <button className="flex items-center gap-2 text-gray-600 hover:text-secondary-500 transition-colors">
+                  <button className="flex items-center gap-2 text-secondary-600 hover:text-secondary-500 transition-colors">
                     <ShareIcon className="w-5 h-5" />
                     <span className="text-sm font-medium">{post.shares}</span>
                   </button>

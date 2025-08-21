@@ -334,7 +334,7 @@ export default function StreamSchedule({
                   className={`px-2.5 py-1 rounded-full text-xs border transition-colors focus:outline-none focus:ring-2 focus:ring-offset-1 ${
                     active
                       ? "bg-primary-600 text-white border-primary-600"
-                      : "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100"
+                      : "bg-secondary-50 text-secondary-700 border-secondary-200 hover:bg-secondary-100"
                   }`}
                   aria-pressed={active}
                 >
@@ -387,14 +387,14 @@ export default function StreamSchedule({
                 transition={{ delay: 0.1 * index }}
                 className={`border rounded-lg p-4 transition-all duration-200 ${
                   hasStreamAccess
-                    ? "border-gray-200 hover:border-gray-300 hover:shadow-md"
-                    : "border-gray-200 bg-gray-50 opacity-75"
+                    ? "border-secondary-200 hover:border-secondary-300 hover:shadow-md"
+                    : "border-secondary-200 bg-secondary-50 opacity-75"
                 }`}
               >
                 <div className="flex gap-4 items-start">
                   {/* Stream Thumbnail */}
                   <div className="flex-shrink-0">
-                    <div className="relative w-24 h-16 md:w-32 md:h-20 rounded-lg overflow-hidden bg-gray-200">
+                    <div className="relative w-24 h-16 md:w-32 md:h-20 rounded-lg overflow-hidden bg-secondary-200">
                       <Image
                         src={stream.thumbnail || "/events/networking.jpg"}
                         alt={stream.title}
@@ -439,7 +439,7 @@ export default function StreamSchedule({
                             className={`p-2 rounded-lg transition-colors ${
                               hasReminder
                                 ? "bg-accent-100 text-accent-600"
-                                : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+                                : "bg-secondary-100 text-gray-500 hover:bg-secondary-200"
                             }`}
                             title={
                               language === "pt"
@@ -463,7 +463,7 @@ export default function StreamSchedule({
                       </div>
                     </div>
 
-                    <p className="text-sm text-gray-600 line-clamp-2 mb-3">
+                    <p className="text-sm text-secondary-600 line-clamp-2 mb-3">
                       {stream.description}
                     </p>
 
@@ -516,7 +516,7 @@ export default function StreamSchedule({
                               className={`px-2 py-1 rounded-full text-xs border transition-colors focus:outline-none focus:ring-2 focus:ring-offset-1 ${
                                 active
                                   ? "bg-primary-600 text-white border-primary-600"
-                                  : "bg-gray-100 text-gray-700 border-gray-200 hover:bg-gray-200"
+                                  : "bg-secondary-100 text-secondary-700 border-secondary-200 hover:bg-secondary-200"
                               }`}
                               aria-pressed={active}
                               aria-label={`#${tag}`}

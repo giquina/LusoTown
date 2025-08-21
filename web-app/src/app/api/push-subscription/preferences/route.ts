@@ -21,7 +21,6 @@ export async function PUT(request: NextRequest) {
     }
 
     // Update Portuguese cultural notification preferences
-    console.log('[Push Preferences] Updating Portuguese cultural preferences:', {
       endpoint: subscription.endpoint,
       preferences: {
         culturalEvents: preferences.culturalEvents,
@@ -100,7 +99,6 @@ export async function GET(request: NextRequest) {
     }
 
     // Get preferences from database
-    console.log('[Push Preferences] Fetching preferences for endpoint:', endpoint);
 
     // In production, fetch from database
     /*

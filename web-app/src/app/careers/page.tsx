@@ -922,7 +922,7 @@ export default function CareersPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               {isPortuguese ? 'Porquê Trabalhar Connosco?' : 'Why Work With Us?'}
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-secondary-600">
               {isPortuguese 
                 ? 'Somos uma startup em crescimento dedicada a unir a comunidade portuguesa em Londres através de experiências autênticas.'
                 : 'We\'re a growing startup dedicated to uniting the Portuguese community in London through authentic experiences.'
@@ -938,7 +938,7 @@ export default function CareersPage() {
               <h3 className="text-xl font-semibold mb-3">
                 {isPortuguese ? 'Missão Significativa' : 'Meaningful Mission'}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-secondary-600">
                 {isPortuguese 
                   ? 'Trabalhe numa missão que importa - conectar portugueses e preservar a nossa cultura em Londres.'
                   : 'Work on a mission that matters - connecting Portuguese people and preserving our culture in London.'
@@ -953,7 +953,7 @@ export default function CareersPage() {
               <h3 className="text-xl font-semibold mb-3">
                 {isPortuguese ? 'Crescimento Profissional' : 'Professional Growth'}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-secondary-600">
                 {isPortuguese 
                   ? 'Oportunidades de desenvolvimento em uma startup dinâmica com foco na comunidade portuguesa.'
                   : 'Development opportunities in a dynamic startup focused on the Portuguese community.'
@@ -968,7 +968,7 @@ export default function CareersPage() {
               <h3 className="text-xl font-semibold mb-3">
                 {isPortuguese ? 'Equipa Diversa' : 'Diverse Team'}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-secondary-600">
                 {isPortuguese 
                   ? 'Trabalhe com uma equipa multicultural que valoriza a diversidade e a inclusão.'
                   : 'Work with a multicultural team that values diversity and inclusion.'
@@ -980,13 +980,13 @@ export default function CareersPage() {
       </div>
 
       {/* Job Listings */}
-      <div className="section-padding bg-gray-50">
+      <div className="section-padding bg-secondary-50">
         <div className="container-width">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               {isPortuguese ? 'Posições Abertas' : 'Open Positions'}
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-secondary-600">
               {isPortuguese 
                 ? 'Encontre a posição perfeita para ajudar a nossa comunidade portuguesa a crescer'
                 : 'Find the perfect position to help our Portuguese community grow'
@@ -996,7 +996,7 @@ export default function CareersPage() {
 
           <div className="grid gap-8">
             {jobRoles.map((job) => (
-              <div key={job.id} className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <div key={job.id} className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 border border-secondary-100">
                 <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                   {/* Left Column - Job Info */}
                   <div className="flex-1">
@@ -1015,7 +1015,7 @@ export default function CareersPage() {
                             </span>
                           )}
                         </div>
-                        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3">
+                        <div className="flex flex-wrap items-center gap-4 text-sm text-secondary-600 mb-3">
                           <span className="flex items-center gap-1">
                             <BriefcaseIcon className="w-4 h-4" />
                             {isPortuguese ? job.departmentPt : job.department}
@@ -1029,7 +1029,7 @@ export default function CareersPage() {
                             {isPortuguese ? job.typePt : job.type}
                           </span>
                         </div>
-                        <p className="text-gray-700 mb-4">
+                        <p className="text-secondary-700 mb-4">
                           {isPortuguese ? job.descriptionPt : job.description}
                         </p>
                       </div>
@@ -1042,7 +1042,7 @@ export default function CareersPage() {
                       </h4>
                       <ul className="space-y-1">
                         {(isPortuguese ? job.responsibilitiesPt : job.responsibilities).map((responsibility, index) => (
-                          <li key={index} className="flex items-start gap-2 text-gray-600">
+                          <li key={index} className="flex items-start gap-2 text-secondary-600">
                             <CheckCircleIcon className="w-4 h-4 text-secondary-500 mt-0.5 flex-shrink-0" />
                             <span className="text-sm">{responsibility}</span>
                           </li>
@@ -1057,7 +1057,7 @@ export default function CareersPage() {
                       </h4>
                       <ul className="space-y-1">
                         {(isPortuguese ? job.requirementsPt : job.requirements).map((requirement, index) => (
-                          <li key={index} className="flex items-start gap-2 text-gray-600">
+                          <li key={index} className="flex items-start gap-2 text-secondary-600">
                             <CheckCircleIcon className="w-4 h-4 text-primary-500 mt-0.5 flex-shrink-0" />
                             <span className="text-sm">{requirement}</span>
                           </li>

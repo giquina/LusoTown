@@ -191,10 +191,10 @@ export default function PhotoUpload({
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
         onClick={openFileDialog}
-        className={`relative border-2 border-dashed rounded-xl p-6 transition-all duration-200 cursor-pointer hover:bg-gray-50 ${
+        className={`relative border-2 border-dashed rounded-xl p-6 transition-all duration-200 cursor-pointer hover:bg-secondary-50 ${
           isDragging 
             ? 'border-primary-400 bg-primary-50' 
-            : 'border-gray-300'
+            : 'border-secondary-300'
         } ${
           photos.length >= maxPhotos ? 'opacity-50 pointer-events-none' : ''
         }`}
@@ -214,7 +214,7 @@ export default function PhotoUpload({
           <h3 className="text-lg font-semibold text-gray-900 mb-2">
             {isPortuguese ? 'Adicionar Fotos do Evento' : 'Add Event Photos'}
           </h3>
-          <p className="text-gray-600 mb-4">
+          <p className="text-secondary-600 mb-4">
             {isPortuguese 
               ? 'Arraste fotos aqui ou clique para selecionar'
               : 'Drag photos here or click to select'
@@ -249,11 +249,11 @@ export default function PhotoUpload({
             exit={{ opacity: 0, y: -10 }}
             className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-center gap-3"
           >
-            <ExclamationTriangleIcon className="w-5 h-5 text-red-500 flex-shrink-0" />
+            <ExclamationTriangleIcon className="w-5 h-5 text-coral-500 flex-shrink-0" />
             <p className="text-red-700 text-sm">{uploadError}</p>
             <button
               onClick={() => setUploadError(null)}
-              className="ml-auto text-red-500 hover:text-red-700"
+              className="ml-auto text-coral-500 hover:text-red-700"
             >
               <XMarkIcon className="w-4 h-4" />
             </button>
@@ -271,7 +271,7 @@ export default function PhotoUpload({
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
-                className="relative group aspect-square rounded-lg overflow-hidden bg-gray-100"
+                className="relative group aspect-square rounded-lg overflow-hidden bg-secondary-100"
               >
                 <Image
                   src={photo.preview}
@@ -292,14 +292,14 @@ export default function PhotoUpload({
                 {/* Upload Complete */}
                 {!photo.isUploading && photo.uploadProgress === 100 && (
                   <div className="absolute top-2 right-2">
-                    <CheckCircleIcon className="w-5 h-5 text-green-500 bg-white rounded-full" />
+                    <CheckCircleIcon className="w-5 h-5 text-action-500 bg-white rounded-full" />
                   </div>
                 )}
 
                 {/* Remove Button */}
                 <button
                   onClick={() => removePhoto(photo.id)}
-                  className="absolute top-2 left-2 bg-red-500 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-600"
+                  className="absolute top-2 left-2 bg-coral-500 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-coral-600"
                 >
                   <XMarkIcon className="w-4 h-4" />
                 </button>

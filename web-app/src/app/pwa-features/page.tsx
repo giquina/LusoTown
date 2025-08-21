@@ -123,27 +123,27 @@ export default function PWAFeaturesPage() {
     blue: 'bg-blue-50 border-blue-200 text-blue-800',
     green: 'bg-green-50 border-green-200 text-green-800',
     red: 'bg-red-50 border-red-200 text-red-800',
-    purple: 'bg-purple-50 border-purple-200 text-purple-800',
+    purple: 'bg-accent-50 border-accent-200 text-accent-800',
     yellow: 'bg-yellow-50 border-yellow-200 text-yellow-800',
-    indigo: 'bg-indigo-50 border-indigo-200 text-indigo-800'
+    indigo: 'bg-primary-50 border-primary-200 text-primary-800'
   };
 
   const iconColorClasses = {
-    blue: 'text-blue-600',
-    green: 'text-green-600',
-    red: 'text-red-600',
-    purple: 'text-purple-600',
+    blue: 'text-primary-600',
+    green: 'text-action-600',
+    red: 'text-coral-600',
+    purple: 'text-accent-600',
     yellow: 'text-yellow-600',
-    indigo: 'text-indigo-600'
+    indigo: 'text-primary-600'
   };
 
   const buttonColorClasses = {
-    blue: 'bg-blue-600 hover:bg-blue-700',
-    green: 'bg-green-600 hover:bg-green-700',
-    red: 'bg-red-600 hover:bg-red-700',
-    purple: 'bg-purple-600 hover:bg-purple-700',
+    blue: 'bg-primary-600 hover:bg-primary-700',
+    green: 'bg-action-600 hover:bg-green-700',
+    red: 'bg-coral-600 hover:bg-red-700',
+    purple: 'bg-accent-600 hover:bg-accent-700',
     yellow: 'bg-yellow-600 hover:bg-yellow-700',
-    indigo: 'bg-indigo-600 hover:bg-indigo-700'
+    indigo: 'bg-primary-600 hover:bg-primary-700'
   };
 
   const toggleDemo = (featureId: string) => {
@@ -196,8 +196,8 @@ export default function PWAFeaturesPage() {
           {/* PWA Support Status */}
           <div className={`inline-flex items-center space-x-2 px-6 py-3 rounded-full ${
             pwaSupported 
-              ? 'bg-green-500 bg-opacity-20 border border-green-300' 
-              : 'bg-red-500 bg-opacity-20 border border-red-300'
+              ? 'bg-action-500 bg-opacity-20 border border-green-300' 
+              : 'bg-coral-500 bg-opacity-20 border border-red-300'
           }`}>
             {pwaSupported ? (
               <>
@@ -226,21 +226,21 @@ export default function PWAFeaturesPage() {
               {language === 'pt' ? 'Progresso da Exploração' : 'Exploration Progress'}
             </h2>
             <div className="flex items-center space-x-2">
-              <Star className="h-5 w-5 text-yellow-500" />
+              <Star className="h-5 w-5 text-accent-500" />
               <span className="font-semibold text-gray-900">
                 {completedFeatures}/5
               </span>
             </div>
           </div>
           
-          <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
+          <div className="w-full bg-secondary-200 rounded-full h-3 mb-4">
             <div 
               className="bg-gradient-to-r from-red-600 to-green-600 h-3 rounded-full transition-all duration-500 ease-out"
               style={{ width: `${progressPercentage}%` }}
             />
           </div>
           
-          <p className="text-gray-600">
+          <p className="text-secondary-600">
             {language === 'pt'
               ? `Explora todas as funcionalidades PWA da comunidade portuguesa. ${completedFeatures === 5 ? 'Parabéns! Completaste toda a experiência.' : `${5 - completedFeatures} funcionalidades por explorar.`}`
               : `Explore all PWA features for the Portuguese community. ${completedFeatures === 5 ? 'Congratulations! You\'ve completed the entire experience.' : `${5 - completedFeatures} features left to explore.`}`
@@ -283,7 +283,7 @@ export default function PWAFeaturesPage() {
                         )}
                       </div>
                       
-                      <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                      <p className="text-secondary-600 text-lg leading-relaxed mb-6">
                         {feature.description}
                       </p>
                       
@@ -305,12 +305,12 @@ export default function PWAFeaturesPage() {
 
                 {/* Feature Demo */}
                 {isActive && (
-                  <div className="p-8 bg-gray-50 border-t border-gray-200">
+                  <div className="p-8 bg-secondary-50 border-t border-secondary-200">
                     <div className="mb-6">
                       <h4 className="text-lg font-semibold text-gray-900 mb-2">
                         {language === 'pt' ? 'Demonstração Interativa' : 'Interactive Demo'}
                       </h4>
-                      <p className="text-gray-600">
+                      <p className="text-secondary-600">
                         {language === 'pt' 
                           ? 'Experimenta esta funcionalidade diretamente na plataforma LusoTown'
                           : 'Try this feature directly on the LusoTown platform'
@@ -323,8 +323,8 @@ export default function PWAFeaturesPage() {
                     {feature.id === 'camera-integration' && (
                       <MobileCameraIntegration
                         mode="cultural"
-                        onCapture={(imageData) => console.log('Photo captured:', imageData)}
-                        onQRScan={(data) => console.log('QR scanned:', data)}
+                        onCapture={(imageData) => }
+                        onQRScan={(data) => }
                       />
                     )}
                     {feature.id === 'geolocation-services' && <MobileGeolocationServices />}
@@ -362,7 +362,7 @@ export default function PWAFeaturesPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href={ROUTES.home}
-                className="inline-flex items-center space-x-2 bg-white text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                className="inline-flex items-center space-x-2 bg-white text-action-600 px-8 py-4 rounded-lg font-semibold hover:bg-secondary-100 transition-colors"
               >
                 <span>{language === 'pt' ? 'Voltar à Comunidade' : 'Back to Community'}</span>
                 <ArrowRight className="h-5 w-5" />
@@ -370,7 +370,7 @@ export default function PWAFeaturesPage() {
               
               <a
                 href={ROUTES.events}
-                className="inline-flex items-center space-x-2 bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors"
+                className="inline-flex items-center space-x-2 bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-action-600 transition-colors"
               >
                 <span>{language === 'pt' ? 'Ver Eventos' : 'View Events'}</span>
                 <ArrowRight className="h-5 w-5" />

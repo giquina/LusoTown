@@ -336,15 +336,15 @@ export default function PostEventConnections({
   const getInteractionQualityColor = (quality: string) => {
     switch (quality) {
       case "excellent":
-        return "text-green-600 bg-green-100";
+        return "text-action-600 bg-green-100";
       case "good":
-        return "text-blue-600 bg-blue-100";
+        return "text-primary-600 bg-blue-100";
       case "neutral":
-        return "text-gray-600 bg-gray-100";
+        return "text-secondary-600 bg-secondary-100";
       case "poor":
-        return "text-red-600 bg-red-100";
+        return "text-coral-600 bg-red-100";
       default:
-        return "text-gray-600 bg-gray-100";
+        return "text-secondary-600 bg-secondary-100";
     }
   };
 
@@ -493,12 +493,12 @@ export default function PostEventConnections({
                           <StarSolid
                             key={i}
                             className={`w-4 h-4 ${
-                              i < event.rating ? 'text-yellow-500' : 'text-gray-300'
+                              i < event.rating ? 'text-accent-500' : 'text-gray-300'
                             }`}
                           />
                         ))}
                       </div>
-                      <span className="text-sm text-gray-600">
+                      <span className="text-sm text-secondary-600">
                         {event.rating}/5 • {event.culturalAuthenticity}% {language === "pt" ? "autêntico" : "authentic"}
                       </span>
                     </div>
@@ -530,7 +530,7 @@ export default function PostEventConnections({
 
                 {/* Attendee Connections Preview */}
                 <div className="mb-4">
-                  <h5 className="text-sm font-semibold text-gray-700 mb-2">
+                  <h5 className="text-sm font-semibold text-secondary-700 mb-2">
                     {language === "pt" ? "Pessoas que conheceu:" : "People you met:"}
                   </h5>
                   <div className="flex items-center gap-2">
@@ -546,11 +546,11 @@ export default function PostEventConnections({
                       </div>
                     ))}
                     {event.attendees.length > 3 && (
-                      <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-xs font-bold text-gray-600">
+                      <div className="w-10 h-10 rounded-full bg-secondary-200 flex items-center justify-center text-xs font-bold text-secondary-600">
                         +{event.attendees.length - 3}
                       </div>
                     )}
-                    <span className="text-sm text-gray-600 ml-2">
+                    <span className="text-sm text-secondary-600 ml-2">
                       {event.attendees.filter(a => a.mutualInterest).length} {language === "pt" ? "interesse mútuo" : "mutual interest"}
                     </span>
                   </div>
@@ -560,7 +560,7 @@ export default function PostEventConnections({
                 {event.nextSimilarEvent && (
                   <div className="bg-gradient-to-r from-green-50 to-green-100 border border-green-200 rounded-lg p-3 mb-4">
                     <div className="flex items-center gap-2 mb-1">
-                      <CalendarDaysIcon className="w-4 h-4 text-green-600" />
+                      <CalendarDaysIcon className="w-4 h-4 text-action-600" />
                       <span className="text-sm font-semibold text-green-800">
                         {language === "pt" ? "Próximo evento similar:" : "Next similar event:"}
                       </span>
@@ -614,7 +614,7 @@ export default function PostEventConnections({
                 {/* Attendee Connections */}
                 <div className="space-y-3">
                   {selectedEvent.attendees.map((attendee) => (
-                    <div key={attendee.id} className="border border-gray-200 rounded-xl p-4">
+                    <div key={attendee.id} className="border border-secondary-200 rounded-xl p-4">
                       <div className="flex items-start gap-4">
                         <div className="w-12 h-12 bg-gradient-to-br from-primary-200 to-secondary-200 rounded-full flex items-center justify-center text-xl">
                           👤
@@ -629,10 +629,10 @@ export default function PostEventConnections({
                                 </h5>
                                 <span className="text-lg">{getOriginFlag(attendee.origin)}</span>
                                 {attendee.mutualInterest && (
-                                  <HeartSolid className="w-4 h-4 text-red-500" />
+                                  <HeartSolid className="w-4 h-4 text-coral-500" />
                                 )}
                               </div>
-                              <p className="text-sm text-gray-600">{attendee.profession}</p>
+                              <p className="text-sm text-secondary-600">{attendee.profession}</p>
                             </div>
                             
                             <div className="text-center">
@@ -647,11 +647,11 @@ export default function PostEventConnections({
 
                           {/* Connection Details */}
                           <div className="grid grid-cols-2 gap-3 mb-3">
-                            <div className="bg-gray-50 p-2 rounded-lg">
-                              <div className="text-xs text-gray-600 mb-1">
+                            <div className="bg-secondary-50 p-2 rounded-lg">
+                              <div className="text-xs text-secondary-600 mb-1">
                                 {language === "pt" ? "Tipo de conexão" : "Connection type"}
                               </div>
-                              <div className="text-sm font-semibold text-gray-800">
+                              <div className="text-sm font-semibold text-secondary-800">
                                 {getConnectionTypeLabel(attendee.connectionType)}
                               </div>
                             </div>
@@ -668,7 +668,7 @@ export default function PostEventConnections({
                           {/* Shared Moments */}
                           {attendee.sharedMoments.length > 0 && (
                             <div className="mb-3">
-                              <div className="text-xs text-gray-600 mb-1">
+                              <div className="text-xs text-secondary-600 mb-1">
                                 {language === "pt" ? "Momentos partilhados:" : "Shared moments:"}
                               </div>
                               <div className="flex flex-wrap gap-1">
@@ -694,7 +694,7 @@ export default function PostEventConnections({
                                   placeholder={language === "pt" 
                                     ? `Olá ${attendee.name}! Foi um prazer conhecer-te no evento...`
                                     : `Hi ${attendee.name}! It was great meeting you at the event...`}
-                                  className="w-full p-2 border border-gray-300 rounded-lg text-sm resize-none"
+                                  className="w-full p-2 border border-secondary-300 rounded-lg text-sm resize-none"
                                   rows={2}
                                 />
                                 <div className="flex gap-2 mt-2">
@@ -709,7 +709,7 @@ export default function PostEventConnections({
                                   {onReportIssue && (
                                     <button
                                       onClick={() => onReportIssue(selectedEvent.id, attendee.id, 'inappropriate_behavior')}
-                                      className="px-3 py-2 border border-red-300 text-red-600 rounded-lg hover:bg-red-50 transition-colors text-sm"
+                                      className="px-3 py-2 border border-red-300 text-coral-600 rounded-lg hover:bg-red-50 transition-colors text-sm"
                                     >
                                       <ShieldCheckIcon className="w-4 h-4" />
                                     </button>
@@ -721,7 +721,7 @@ export default function PostEventConnections({
                             {attendee.followUpStatus === 'contacted' && (
                               <div className="bg-blue-50 border border-blue-200 rounded-lg p-2">
                                 <div className="flex items-center gap-2">
-                                  <CheckCircleIcon className="w-4 h-4 text-blue-600" />
+                                  <CheckCircleIcon className="w-4 h-4 text-primary-600" />
                                   <span className="text-sm text-blue-800">
                                     {language === "pt" ? "Mensagem enviada" : "Message sent"}
                                   </span>
@@ -732,7 +732,7 @@ export default function PostEventConnections({
                             {attendee.followUpStatus === 'responded' && (
                               <div className="bg-green-50 border border-green-200 rounded-lg p-2">
                                 <div className="flex items-center gap-2">
-                                  <CheckCircleIcon className="w-4 h-4 text-green-600" />
+                                  <CheckCircleIcon className="w-4 h-4 text-action-600" />
                                   <span className="text-sm text-green-800">
                                     {language === "pt" ? "Respondeu à mensagem" : "Responded to message"}
                                   </span>
@@ -749,7 +749,7 @@ export default function PostEventConnections({
             ) : (
               <div className="text-center py-8">
                 <UsersIcon className="w-12 h-12 text-gray-400 mx-auto mb-3" />
-                <p className="text-gray-600">
+                <p className="text-secondary-600">
                   {language === "pt" 
                     ? "Selecione um evento para ver as suas conexões"
                     : "Select an event to view your connections"}
@@ -800,25 +800,25 @@ export default function PostEventConnections({
 
                     {/* Suggestion Details */}
                     <div className="grid grid-cols-2 gap-2 mb-3 text-sm">
-                      <div className="flex items-center gap-1 text-gray-600">
+                      <div className="flex items-center gap-1 text-secondary-600">
                         <CalendarDaysIcon className="w-3 h-3" />
                         <span>{suggestion.suggestedDate}</span>
                       </div>
-                      <div className="flex items-center gap-1 text-gray-600">
+                      <div className="flex items-center gap-1 text-secondary-600">
                         <MapPinIcon className="w-3 h-3" />
                         <span>{suggestion.location}</span>
                       </div>
-                      <div className="flex items-center gap-1 text-gray-600">
+                      <div className="flex items-center gap-1 text-secondary-600">
                         <ShieldCheckIcon className="w-3 h-3" />
                         <span className="capitalize">{suggestion.safetyLevel}</span>
                       </div>
-                      <div className="flex items-center gap-1 text-gray-600">
+                      <div className="flex items-center gap-1 text-secondary-600">
                         <span>£{suggestion.estimatedCost}</span>
                       </div>
                     </div>
 
-                    <div className="bg-gray-50 p-2 rounded-lg mb-3">
-                      <p className="text-xs text-gray-700">
+                    <div className="bg-secondary-50 p-2 rounded-lg mb-3">
+                      <p className="text-xs text-secondary-700">
                         <strong>{language === "pt" ? "Razão:" : "Reason:"}</strong> {suggestion.reasonForSuggestion}
                       </p>
                     </div>
@@ -833,7 +833,7 @@ export default function PostEventConnections({
                         {language === "pt" ? "Planear Encontro" : "Plan Meetup"}
                       </button>
                       
-                      <button className="px-3 py-2 border border-gray-300 text-gray-600 rounded-lg hover:bg-gray-50 transition-colors text-sm">
+                      <button className="px-3 py-2 border border-secondary-300 text-secondary-600 rounded-lg hover:bg-secondary-50 transition-colors text-sm">
                         {language === "pt" ? "Talvez depois" : "Maybe later"}
                       </button>
                     </div>

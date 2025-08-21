@@ -186,14 +186,14 @@ export default function UserTypeSelection() {
                     <HeartIcon className="h-6 w-6 text-white" />
                   </div>
                   <h2 className="text-lg font-bold text-gray-900 mb-1">{t.title}</h2>
-                  <p className="text-xs text-gray-600 leading-tight">{t.subtitle}</p>
+                  <p className="text-xs text-secondary-600 leading-tight">{t.subtitle}</p>
                 </div>
                 <button
                   aria-label="Close"
                   onClick={closeAndRemember}
                   className="absolute top-3 right-3 p-2 rounded-full bg-white/80 hover:bg-white transition-colors"
                 >
-                  <XMarkIcon className="h-4 w-4 text-gray-600" />
+                  <XMarkIcon className="h-4 w-4 text-secondary-600" />
                 </button>
               </div>
 
@@ -207,17 +207,17 @@ export default function UserTypeSelection() {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 0.1 * index }}
                       onClick={() => go(card.href)}
-                      className="group text-left rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-all bg-white overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-300 active:scale-95"
+                      className="group text-left rounded-xl border border-secondary-200 shadow-sm hover:shadow-lg transition-all bg-white overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-300 active:scale-95"
                     >
                       <div className={`h-1.5 w-full bg-gradient-to-r ${card.color}`} />
                       <div className="p-3">
                         <div className="flex flex-col items-center text-center mb-2">
-                          <div className="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center mb-2">
+                          <div className="w-10 h-10 rounded-xl bg-secondary-50 flex items-center justify-center mb-2">
                             <card.icon className="h-5 w-5 text-primary-600" />
                           </div>
                           <div className="text-sm font-bold text-gray-900">{card.title}</div>
                         </div>
-                        <div className="text-xs text-gray-600 leading-snug mb-2 line-clamp-3">{card.desc}</div>
+                        <div className="text-xs text-secondary-600 leading-snug mb-2 line-clamp-3">{card.desc}</div>
                         <div className="text-xs text-primary-700 font-semibold group-hover:underline text-center">
                           {card.cta}
                         </div>
@@ -228,10 +228,10 @@ export default function UserTypeSelection() {
               </div>
 
               {/* Mobile Footer - Compact Skip Button */}
-              <div className="p-4 border-t bg-gray-50">
+              <div className="p-4 border-t bg-secondary-50">
                 <button
                   onClick={closeAndRemember}
-                  className="w-full py-2 px-4 text-sm text-gray-600 hover:text-gray-800 text-center font-medium rounded-lg hover:bg-gray-100 transition-colors"
+                  className="w-full py-2 px-4 text-sm text-secondary-600 hover:text-secondary-800 text-center font-medium rounded-lg hover:bg-secondary-100 transition-colors"
                 >
                   {t.skip}
                 </button>
@@ -255,14 +255,14 @@ export default function UserTypeSelection() {
                     <HeartIcon className="h-8 w-8 text-white" />
                   </div>
                   <h2 className="text-2xl font-bold text-gray-900 mb-2">{t.title}</h2>
-                  <p className="text-sm text-gray-600">{t.subtitle}</p>
+                  <p className="text-sm text-secondary-600">{t.subtitle}</p>
                 </div>
                 <button
                   aria-label="Close"
                   onClick={closeAndRemember}
-                  className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition-colors"
+                  className="absolute top-4 right-4 p-2 rounded-full hover:bg-secondary-100 transition-colors"
                 >
-                  <XMarkIcon className="h-5 w-5 text-gray-600" />
+                  <XMarkIcon className="h-5 w-5 text-secondary-600" />
                 </button>
               </div>
 
@@ -276,12 +276,12 @@ export default function UserTypeSelection() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.1 * index }}
                       onClick={() => go(card.href)}
-                      className="group text-left rounded-xl border border-gray-200 shadow-sm hover:shadow-lg transition-all bg-white overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-300 hover:scale-[1.02] active:scale-[0.98]"
+                      className="group text-left rounded-xl border border-secondary-200 shadow-sm hover:shadow-lg transition-all bg-white overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary-300 hover:scale-[1.02] active:scale-[0.98]"
                     >
                       <div className={`h-1.5 w-full bg-gradient-to-r ${card.color}`} />
                       <div className="p-4">
                         <div className="flex items-start gap-3 mb-3">
-                          <div className="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center flex-shrink-0">
+                          <div className="w-12 h-12 rounded-xl bg-secondary-50 flex items-center justify-center flex-shrink-0">
                             <card.icon className="h-6 w-6 text-primary-600" />
                           </div>
                           <div className="flex-1 min-w-0">
@@ -289,12 +289,12 @@ export default function UserTypeSelection() {
                             <div className="text-xs text-primary-600 font-medium">{card.benefit}</div>
                           </div>
                         </div>
-                        <div className="text-sm text-gray-600 leading-relaxed mb-3 line-clamp-3">{card.desc}</div>
+                        <div className="text-sm text-secondary-600 leading-relaxed mb-3 line-clamp-3">{card.desc}</div>
                         <div className="flex items-center justify-between">
                           <div className="text-xs text-gray-500 font-medium">{card.stats}</div>
                           <div className="inline-flex items-center text-primary-700 text-sm font-semibold group-hover:underline">
                             {card.cta}
-                            <svg className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="ml-1 w-4 h-4 transition-transform group-hover:transecondary-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                             </svg>
                           </div>
@@ -306,10 +306,10 @@ export default function UserTypeSelection() {
               </div>
 
               {/* Desktop Footer - Compact Skip Button */}
-              <div className="p-4 border-t bg-gray-50 text-center">
+              <div className="p-4 border-t bg-secondary-50 text-center">
                 <button
                   onClick={closeAndRemember}
-                  className="px-6 py-2 text-sm text-gray-600 hover:text-gray-800 font-medium rounded-lg hover:bg-gray-100 transition-colors"
+                  className="px-6 py-2 text-sm text-secondary-600 hover:text-secondary-800 font-medium rounded-lg hover:bg-secondary-100 transition-colors"
                 >
                   {t.skip}
                 </button>

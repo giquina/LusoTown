@@ -522,9 +522,9 @@ const PortugalGovernmentIntegration: React.FC = () => {
       proposed: 'bg-blue-100 text-blue-800',
       open: 'bg-green-100 text-green-800',
       closed: 'bg-red-100 text-red-800',
-      upcoming: 'bg-purple-100 text-purple-800'
+      upcoming: 'bg-accent-100 text-accent-800'
     }
-    return colors[status as keyof typeof colors] || 'bg-gray-100 text-gray-800'
+    return colors[status as keyof typeof colors] || 'bg-secondary-100 text-secondary-800'
   }
 
   const formatCurrency = (amount: number): string => {
@@ -570,7 +570,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
             : 'Portuguese Government Integration'
           }
         </h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
           {language === 'pt'
             ? 'Parcerias oficiais com instituições governamentais portuguesas para apoiar a comunidade portuguesa no Reino Unido através de programas culturais, educacionais e de apoio à diáspora.'
             : 'Official partnerships with Portuguese government institutions to support the Portuguese community in the United Kingdom through cultural, educational, and diaspora support programs.'
@@ -627,13 +627,13 @@ const PortugalGovernmentIntegration: React.FC = () => {
         
         <div className="grid gap-6">
           {governmentPartnerships.map((partnership) => (
-            <div key={partnership.id} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
+            <div key={partnership.id} className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6 hover:shadow-md transition-shadow">
               <div className="flex items-start justify-between mb-6">
                 <div className="flex items-center space-x-4">
                   <img 
                     src={partnership.logo} 
                     alt={`${partnership.institution} logo`}
-                    className="w-16 h-16 rounded-lg object-contain bg-gray-50 p-2"
+                    className="w-16 h-16 rounded-lg object-contain bg-secondary-50 p-2"
                     onError={(e) => {
                       e.currentTarget.src = '/images/government/placeholder-gov.png'
                     }}
@@ -642,7 +642,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
                     <h3 className="text-xl font-semibold text-gray-900">
                       {language === 'pt' ? partnership.institutionPortuguese : partnership.institution}
                     </h3>
-                    <p className="text-gray-600">{partnership.location}</p>
+                    <p className="text-secondary-600">{partnership.location}</p>
                     <div className="flex items-center space-x-2 mt-2">
                       <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(partnership.status)}`}>
                         {partnership.status.charAt(0).toUpperCase() + partnership.status.slice(1)}
@@ -666,61 +666,61 @@ const PortugalGovernmentIntegration: React.FC = () => {
                 </div>
               </div>
 
-              <p className="text-gray-700 mb-6">
+              <p className="text-secondary-700 mb-6">
                 {language === 'pt' ? partnership.descriptionPortuguese : partnership.description}
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                <div className="bg-gray-50 rounded-lg p-4">
+                <div className="bg-secondary-50 rounded-lg p-4">
                   <h4 className="font-semibold text-gray-900 mb-3">
                     {language === 'pt' ? 'Serviços Oferecidos' : 'Services Offered'}
                   </h4>
                   <ul className="space-y-2">
                     {(language === 'pt' ? partnership.servicesPortuguese : partnership.services).slice(0, 3).map((service, index) => (
-                      <li key={index} className="flex items-center text-sm text-gray-700">
-                        <CheckBadgeIcon className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                      <li key={index} className="flex items-center text-sm text-secondary-700">
+                        <CheckBadgeIcon className="w-4 h-4 text-action-500 mr-2 flex-shrink-0" />
                         {service}
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="bg-gray-50 rounded-lg p-4">
+                <div className="bg-secondary-50 rounded-lg p-4">
                   <h4 className="font-semibold text-gray-900 mb-3">
                     {language === 'pt' ? 'Impacto Comunitário' : 'Community Impact'}
                   </h4>
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">{language === 'pt' ? 'Alcance:' : 'Reach:'}</span>
+                      <span className="text-secondary-600">{language === 'pt' ? 'Alcance:' : 'Reach:'}</span>
                       <span className="font-medium">{partnership.communityReach.toLocaleString()}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">{language === 'pt' ? 'Engajamento:' : 'Engagement:'}</span>
+                      <span className="text-secondary-600">{language === 'pt' ? 'Engajamento:' : 'Engagement:'}</span>
                       <span className="font-medium">{partnership.monthlyEngagement}/mês</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">{language === 'pt' ? 'Programas:' : 'Programs:'}</span>
+                      <span className="text-secondary-600">{language === 'pt' ? 'Programas:' : 'Programs:'}</span>
                       <span className="font-medium">{partnership.programsOffered}</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-gray-50 rounded-lg p-4">
+                <div className="bg-secondary-50 rounded-lg p-4">
                   <h4 className="font-semibold text-gray-900 mb-3">
                     {language === 'pt' ? 'Contacto Principal' : 'Key Contact'}
                   </h4>
                   <div className="space-y-2 text-sm">
                     <p className="font-medium">{partnership.keyContact.name}</p>
-                    <p className="text-gray-600">
+                    <p className="text-secondary-600">
                       {language === 'pt' ? partnership.keyContact.titlePortuguese : partnership.keyContact.title}
                     </p>
-                    <div className="flex items-center text-gray-600">
+                    <div className="flex items-center text-secondary-600">
                       <EnvelopeIcon className="w-4 h-4 mr-2" />
                       <a href={`mailto:${partnership.keyContact.email}`} className="hover:text-primary-600">
                         {partnership.keyContact.email}
                       </a>
                     </div>
-                    <div className="flex items-center text-gray-600">
+                    <div className="flex items-center text-secondary-600">
                       <PhoneIcon className="w-4 h-4 mr-2" />
                       <a href={`tel:${partnership.keyContact.phone}`} className="hover:text-primary-600">
                         {partnership.keyContact.phone}
@@ -730,9 +730,9 @@ const PortugalGovernmentIntegration: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex justify-between items-center pt-4 border-t border-gray-200">
-                <div className="text-sm text-gray-600">
-                  {language === 'pt' ? 'Financiamento disponibilizado:' : 'Funding provided:'} <span className="font-semibold text-green-600">{formatCurrency(partnership.fundingProvided)}</span>
+              <div className="flex justify-between items-center pt-4 border-t border-secondary-200">
+                <div className="text-sm text-secondary-600">
+                  {language === 'pt' ? 'Financiamento disponibilizado:' : 'Funding provided:'} <span className="font-semibold text-action-600">{formatCurrency(partnership.fundingProvided)}</span>
                 </div>
                 <button className="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors font-medium">
                   {language === 'pt' ? 'Ver Programas' : 'View Programs'}
@@ -751,7 +751,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {culturalPrograms.map((program) => (
-            <div key={program.id} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
+            <div key={program.id} className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6 hover:shadow-md transition-shadow">
               <div className="flex items-center justify-between mb-4">
                 <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(program.status)}`}>
                   {program.status.charAt(0).toUpperCase() + program.status.slice(1)}
@@ -766,7 +766,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
                 {language === 'pt' ? program.namePortuguese : program.name}
               </h3>
               
-              <p className="text-sm text-gray-600 mb-4">
+              <p className="text-sm text-secondary-600 mb-4">
                 {language === 'pt' ? 'Fornecido por:' : 'Provided by:'} <span className="font-medium">{program.provider}</span>
               </p>
 
@@ -776,8 +776,8 @@ const PortugalGovernmentIntegration: React.FC = () => {
                 </h4>
                 <ul className="space-y-1">
                   {(language === 'pt' ? program.benefitsPortuguese : program.benefits).slice(0, 3).map((benefit, index) => (
-                    <li key={index} className="flex items-center text-xs text-gray-700">
-                      <CheckBadgeIcon className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" />
+                    <li key={index} className="flex items-center text-xs text-secondary-700">
+                      <CheckBadgeIcon className="w-3 h-3 text-action-500 mr-2 flex-shrink-0" />
                       {benefit}
                     </li>
                   ))}
@@ -790,7 +790,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
                 </h4>
                 <ul className="space-y-1">
                   {(language === 'pt' ? program.eligibilityPortuguese : program.eligibility).slice(0, 2).map((criterion, index) => (
-                    <li key={index} className="text-xs text-gray-600">
+                    <li key={index} className="text-xs text-secondary-600">
                       • {criterion}
                     </li>
                   ))}
@@ -798,16 +798,16 @@ const PortugalGovernmentIntegration: React.FC = () => {
               </div>
 
               <div className="flex items-center justify-between mb-4 text-sm">
-                <span className="text-gray-600">
+                <span className="text-secondary-600">
                   {language === 'pt' ? 'Financiamento:' : 'Funding:'}
                 </span>
-                <span className="font-semibold text-green-600">
+                <span className="font-semibold text-action-600">
                   {formatCurrency(program.fundingAmount)}
                 </span>
               </div>
 
               <div className="flex items-center justify-between mb-4 text-sm">
-                <span className="text-gray-600">
+                <span className="text-secondary-600">
                   {language === 'pt' ? 'Prazo:' : 'Deadline:'}
                 </span>
                 <span className="font-medium">
@@ -840,13 +840,13 @@ const PortugalGovernmentIntegration: React.FC = () => {
         
         <div className="space-y-6">
           {diasporaSupport.map((service) => (
-            <div key={service.id} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div key={service.id} className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
                     {language === 'pt' ? service.programPortuguese : service.program}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {language === 'pt' ? service.descriptionPortuguese : service.description}
                   </p>
                 </div>
@@ -862,8 +862,8 @@ const PortugalGovernmentIntegration: React.FC = () => {
                   </h4>
                   <ul className="space-y-2">
                     {(language === 'pt' ? service.benefitsPortuguese : service.benefits).map((benefit, index) => (
-                      <li key={index} className="flex items-center text-sm text-gray-700">
-                        <CheckBadgeIcon className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                      <li key={index} className="flex items-center text-sm text-secondary-700">
+                        <CheckBadgeIcon className="w-4 h-4 text-action-500 mr-2 flex-shrink-0" />
                         {benefit}
                       </li>
                     ))}
@@ -876,7 +876,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
                   </h4>
                   <ol className="space-y-2">
                     {(language === 'pt' ? service.applicationProcessPortuguese : service.applicationProcess).map((step, index) => (
-                      <li key={index} className="flex items-start text-sm text-gray-700">
+                      <li key={index} className="flex items-start text-sm text-secondary-700">
                         <span className="bg-primary-100 text-primary-800 rounded-full w-5 h-5 flex items-center justify-center text-xs font-medium mr-2 mt-0.5 flex-shrink-0">
                           {index + 1}
                         </span>
@@ -887,32 +887,32 @@ const PortugalGovernmentIntegration: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-4 mb-6">
+              <div className="bg-secondary-50 rounded-lg p-4 mb-6">
                 <h4 className="font-semibold text-gray-900 mb-3">
                   {language === 'pt' ? 'Informações de Contacto:' : 'Contact Information:'}
                 </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                   <div>
                     <p className="font-medium">{service.contactInfo.office}</p>
-                    <div className="flex items-center text-gray-600 mt-1">
+                    <div className="flex items-center text-secondary-600 mt-1">
                       <MapPinIcon className="w-4 h-4 mr-2" />
                       {service.contactInfo.address}
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <div className="flex items-center text-gray-600">
+                    <div className="flex items-center text-secondary-600">
                       <PhoneIcon className="w-4 h-4 mr-2" />
                       <a href={`tel:${service.contactInfo.phone}`} className="hover:text-primary-600">
                         {service.contactInfo.phone}
                       </a>
                     </div>
-                    <div className="flex items-center text-gray-600">
+                    <div className="flex items-center text-secondary-600">
                       <EnvelopeIcon className="w-4 h-4 mr-2" />
                       <a href={`mailto:${service.contactInfo.email}`} className="hover:text-primary-600">
                         {service.contactInfo.email}
                       </a>
                     </div>
-                    <div className="flex items-center text-gray-600">
+                    <div className="flex items-center text-secondary-600">
                       <ClockIcon className="w-4 h-4 mr-2" />
                       {service.contactInfo.hours}
                     </div>
@@ -921,7 +921,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
               </div>
 
               <div className="flex items-center justify-between">
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-secondary-600">
                   <span className="font-medium">
                     {language === 'pt' ? 'Tempo de processamento:' : 'Processing time:'} 
                   </span> {service.processingTime}
@@ -933,7 +933,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
                     </span>
                   )}
                   {service.fees === 0 && (
-                    <span className="ml-4 text-green-600 font-medium">
+                    <span className="ml-4 text-action-600 font-medium">
                       {language === 'pt' ? 'Gratuito' : 'Free'}
                     </span>
                   )}
@@ -953,7 +953,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
         <h2 className="text-2xl font-bold text-gray-900 mb-4">
           {language === 'pt' ? 'Fortaleça Sua Conexão com Portugal' : 'Strengthen Your Connection with Portugal'}
         </h2>
-        <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+        <p className="text-secondary-600 mb-6 max-w-2xl mx-auto">
           {language === 'pt'
             ? 'Acesse programas oficiais, serviços consulares e oportunidades de financiamento através das nossas parcerias governamentais estratégicas.'
             : 'Access official programs, consular services, and funding opportunities through our strategic government partnerships.'

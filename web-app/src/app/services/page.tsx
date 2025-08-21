@@ -37,7 +37,7 @@ const services = [
     priceUnitPortuguese: 'hora',
     icon: Car,
     color: 'secondary',
-    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/executive-transport-london_dlqxkx.jpg',
+    image: buildCloudinaryUrl('dqhbeqttp/image/upload/v1734535200/executive-transport-london_dlqxkx.jpg'),
     description: 'Professional transport services with Portuguese cultural expertise',
     descriptionPortuguese: 'Serviços de transporte profissional com especialização cultural portuguesa',
     features: [
@@ -71,7 +71,7 @@ const services = [
     priceUnitPortuguese: 'dia',
     icon: ShieldCheckIcon,
     color: 'premium',
-    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/close-protection-london_dlqxkx.jpg',
+    image: buildCloudinaryUrl('dqhbeqttp/image/upload/v1734535200/close-protection-london_dlqxkx.jpg'),
     description: 'SIA-licensed CPOs providing discrete, culturally-aware security',
     descriptionPortuguese: 'CPOs licenciados SIA fornecendo segurança discreta e culturalmente consciente',
     features: [
@@ -203,7 +203,7 @@ export default function ServicesPage() {
       
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
-        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/executive-transport-london_dlqxkx.jpg')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url(buildCloudinaryUrl('dqhbeqttp/image/upload/v1734535200/executive-transport-london_dlqxkx.jpg'))] bg-cover bg-center opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-primary-900/10 via-transparent to-secondary-900/10"></div>
         <div className="relative container-width py-16 lg:py-24">
           <div className="text-center max-w-4xl mx-auto">
@@ -277,7 +277,7 @@ export default function ServicesPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
+              className="text-xl text-secondary-600 mb-8 max-w-3xl mx-auto"
             >
               {/* Desktop full subtitle */}
               <span className="hidden sm:block">
@@ -299,7 +299,7 @@ export default function ServicesPage() {
               transition={{ duration: 0.6, delay: 0.25 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6"
             >
-              <div className="flex items-center gap-2 text-sm text-gray-600">
+              <div className="flex items-center gap-2 text-sm text-secondary-600">
                 <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
                 <span>
                   {isPortuguese
@@ -307,7 +307,7 @@ export default function ServicesPage() {
                     : "SIA Licensed & TfL Approved"}
                 </span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-600">
+              <div className="flex items-center gap-2 text-sm text-secondary-600">
                 <div className="w-2 h-2 bg-secondary-500 rounded-full"></div>
                 <span>
                   {isPortuguese
@@ -315,7 +315,7 @@ export default function ServicesPage() {
                     : "Cultural Expertise"}
                 </span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-600">
+              <div className="flex items-center gap-2 text-sm text-secondary-600">
                 <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
                 <span>
                   {isPortuguese
@@ -333,13 +333,13 @@ export default function ServicesPage() {
             >
               <button
                 onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1"
+                className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-transecondary-y-1"
               >
                 {isPortuguese ? "Explorar Serviços" : "Explore Services"}
               </button>
               <button
                 onClick={() => document.getElementById('trust-badges')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="border border-secondary-300 text-secondary-700 px-8 py-4 rounded-2xl font-semibold hover:bg-secondary-50 hover:border-secondary-400 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 {isPortuguese ? "Ver Credenciais" : "View Credentials"}
               </button>
@@ -354,25 +354,25 @@ export default function ServicesPage() {
             >
               <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
                 <div className="text-2xl font-bold text-primary-600 mb-1">500+</div>
-                <div className="text-xs text-gray-600">
+                <div className="text-xs text-secondary-600">
                   {isPortuguese ? 'Clientes Satisfeitos' : 'Satisfied Clients'}
                 </div>
               </div>
               <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
                 <div className="text-2xl font-bold text-secondary-600 mb-1">4.9</div>
-                <div className="text-xs text-gray-600">
+                <div className="text-xs text-secondary-600">
                   {isPortuguese ? 'Avaliação Média' : 'Average Rating'}
                 </div>
               </div>
               <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
                 <div className="text-2xl font-bold text-accent-600 mb-1">24/7</div>
-                <div className="text-xs text-gray-600">
+                <div className="text-xs text-secondary-600">
                   {isPortuguese ? 'Disponibilidade' : 'Availability'}
                 </div>
               </div>
               <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg">
                 <div className="text-2xl font-bold text-premium-600 mb-1">£5M+</div>
-                <div className="text-xs text-gray-600">
+                <div className="text-xs text-secondary-600">
                   {isPortuguese ? 'Cobertura de Seguro' : 'Insurance Coverage'}
                 </div>
               </div>
@@ -385,13 +385,13 @@ export default function ServicesPage() {
       <TrustBadges trustIndicators={trustIndicators} isPortuguese={isPortuguese} />
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-50">
+      <section id="services" className="py-20 bg-secondary-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               {isPortuguese ? 'Nossos Serviços Premium' : 'Our Premium Services'}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
               {isPortuguese
                 ? 'Serviços especializados projetados para a comunidade portuguesa em Londres e no Reino Unido'
                 : 'Specialized services designed for the Portuguese community in London & UK'
@@ -424,7 +424,7 @@ export default function ServicesPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               {isPortuguese ? 'Casos de Sucesso' : 'Success Stories'}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
               {isPortuguese
                 ? 'Como ajudamos clientes a alcançar seus objetivos com excelência'
                 : 'How we help clients achieve their goals with excellence'
@@ -440,7 +440,7 @@ export default function ServicesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gray-50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300"
+                className="bg-secondary-50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-xl font-bold text-gray-900">
@@ -466,7 +466,7 @@ export default function ServicesPage() {
                     <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">
                       {isPortuguese ? 'Desafio' : 'Challenge'}
                     </span>
-                    <p className="text-gray-700">
+                    <p className="text-secondary-700">
                       {isPortuguese ? study.challengePortuguese : study.challenge}
                     </p>
                   </div>
@@ -475,7 +475,7 @@ export default function ServicesPage() {
                     <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">
                       {isPortuguese ? 'Solução' : 'Solution'}
                     </span>
-                    <p className="text-gray-700">
+                    <p className="text-secondary-700">
                       {isPortuguese ? study.solutionPortuguese : study.solution}
                     </p>
                   </div>
@@ -484,7 +484,7 @@ export default function ServicesPage() {
                     <span className="text-sm font-medium text-gray-500 uppercase tracking-wide">
                       {isPortuguese ? 'Resultado' : 'Result'}
                     </span>
-                    <p className="text-gray-700 font-medium">
+                    <p className="text-secondary-700 font-medium">
                       {isPortuguese ? study.resultPortuguese : study.result}
                     </p>
                   </div>
@@ -522,7 +522,7 @@ export default function ServicesPage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => handleBookService('consultation')}
-                className="bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-200 shadow-lg"
+                className="bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold hover:bg-secondary-50 transition-all duration-200 shadow-lg"
               >
                 {isPortuguese ? 'Agendar Consulta' : 'Book Consultation'}
               </motion.button>

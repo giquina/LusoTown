@@ -1,8 +1,11 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import { buildUnsplashUrl } from '@/config'
 import { motion } from 'framer-motion'
+import { buildUnsplashUrl } from '@/config'
 import Image from 'next/image'
+import { buildUnsplashUrl } from '@/config'
 import { 
   TruckIcon,
   MapPinIcon,
@@ -18,8 +21,11 @@ import {
   EyeIcon
 } from '@heroicons/react/24/outline'
 import { HeartIcon as HeartSolid } from '@heroicons/react/24/solid'
+import { buildUnsplashUrl } from '@/config'
 import { useLanguage } from '@/context/LanguageContext'
+import { buildUnsplashUrl } from '@/config'
 import { useSubscription } from '@/context/SubscriptionContext'
+import { buildUnsplashUrl } from '@/config'
 
 interface ServicePost {
   id: string
@@ -84,7 +90,7 @@ const mockServicePosts: ServicePost[] = [
       includes: ['Cultural commentary', 'Portuguese community areas', 'Historical context'],
       booking: 'WhatsApp: +44 7xxx xxx xxx'
     },
-    images: ['https://images.unsplash.com/photo-1583677995106-1594c4bf5d90?w=600&h=400&fit=crop'],
+    images: [buildUnsplashUrl('photo-1583677995106-1594c4bf5d90?w=600&h=400&fit=crop')],
     createdAt: '2 hours ago',
     timeAgo: '2h',
     metrics: { likes: 34, comments: 12, shares: 8, views: 156, bookings: 3 },
@@ -114,8 +120,8 @@ const mockServicePosts: ServicePost[] = [
       includes: ['Portuguese bakery visits', 'Cultural history', 'Local insights', 'Pastéis de nata tasting']
     },
     images: [
-      'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600&h=400&fit=crop',
-      'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=400&fit=crop'
+      buildUnsplashUrl('photo-1513475382585-d06e58bcb0e0?w=600&h=400&fit=crop'),
+      buildUnsplashUrl('photo-1509440159596-0249088772ff?w=600&h=400&fit=crop')
     ],
     createdAt: '5 hours ago',
     timeAgo: '5h',
@@ -217,7 +223,7 @@ export default function ServiceIntegrationFeed() {
   const getServiceColor = (type: string) => {
     if (type.includes('transport')) return 'from-blue-500 to-blue-600'
     if (type.includes('tour')) return 'from-green-500 to-green-600'
-    if (type.includes('event')) return 'from-purple-500 to-purple-600'
+    if (type.includes('event')) return 'from-accent-500 to-accent-600'
     if (type.includes('protection')) return 'from-red-500 to-red-600'
     return 'from-gray-500 to-gray-600'
   }
@@ -225,14 +231,14 @@ export default function ServiceIntegrationFeed() {
   return (
     <div className="space-y-6">
       {/* Filter Header */}
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+      <div className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-6">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-2 flex items-center gap-2">
               <TruckIcon className="w-6 h-6 text-primary-500" />
               {isPortuguese ? 'Serviços da Comunidade' : 'Community Services'}
             </h2>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {isPortuguese 
                 ? 'Serviços disponíveis de membros verificados da comunidade portuguesa'
                 : 'Available services from verified Portuguese community members'
@@ -258,7 +264,7 @@ export default function ServiceIntegrationFeed() {
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all whitespace-nowrap ${
                   isActive 
                     ? 'bg-primary-500 text-white shadow-lg' 
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    : 'bg-secondary-100 text-secondary-700 hover:bg-secondary-200'
                 }`}
               >
                 <Icon className="w-4 h-4" />
@@ -282,7 +288,7 @@ export default function ServiceIntegrationFeed() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               className={`bg-white rounded-2xl shadow-sm border overflow-hidden ${
-                post.featured ? 'border-primary-200 bg-gradient-to-r from-primary-50/30 to-transparent' : 'border-gray-100'
+                post.featured ? 'border-primary-200 bg-gradient-to-r from-primary-50/30 to-transparent' : 'border-secondary-100'
               }`}
             >
               {/* Featured Badge */}
@@ -310,7 +316,7 @@ export default function ServiceIntegrationFeed() {
                         />
                       </div>
                       {post.author.verified && (
-                        <CheckBadgeIcon className="absolute -bottom-1 -right-1 w-5 h-5 text-blue-500 bg-white rounded-full" />
+                        <CheckBadgeIcon className="absolute -bottom-1 -right-1 w-5 h-5 text-primary-500 bg-white rounded-full" />
                       )}
                     </div>
                     <div>
@@ -329,13 +335,13 @@ export default function ServiceIntegrationFeed() {
                         </div>
                         {post.author.rating && (
                           <div className="flex items-center gap-1">
-                            <StarIcon className="w-3 h-3 text-yellow-500" />
+                            <StarIcon className="w-3 h-3 text-accent-500" />
                             <span>{post.author.rating}</span>
                           </div>
                         )}
                         {post.author.completedServices && (
                           <div className="flex items-center gap-1">
-                            <CheckBadgeIcon className="w-3 h-3 text-green-500" />
+                            <CheckBadgeIcon className="w-3 h-3 text-action-500" />
                             <span>{post.author.completedServices} services</span>
                           </div>
                         )}
@@ -349,11 +355,11 @@ export default function ServiceIntegrationFeed() {
                 </div>
 
                 {/* Post Content */}
-                <p className="text-gray-700 mb-4 leading-relaxed">{post.content}</p>
+                <p className="text-secondary-700 mb-4 leading-relaxed">{post.content}</p>
 
                 {/* Service Details Card */}
                 {post.serviceDetails && (
-                  <div className="bg-gradient-to-r from-gray-50 to-gray-50/50 rounded-xl p-4 mb-4 border border-gray-100">
+                  <div className="bg-gradient-to-r from-gray-50 to-gray-50/50 rounded-xl p-4 mb-4 border border-secondary-100">
                     <div className="flex items-center justify-between mb-3">
                       <h5 className="font-semibold text-gray-900 flex items-center gap-2">
                         <ServiceIcon className="w-4 h-4 text-primary-600" />
@@ -368,36 +374,36 @@ export default function ServiceIntegrationFeed() {
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
                       <div>
-                        <span className="text-gray-600 font-medium">
+                        <span className="text-secondary-600 font-medium">
                           {isPortuguese ? 'Disponibilidade:' : 'Availability:'}
                         </span>
-                        <p className="text-gray-800">{post.serviceDetails.availability}</p>
+                        <p className="text-secondary-800">{post.serviceDetails.availability}</p>
                       </div>
                       <div>
-                        <span className="text-gray-600 font-medium">
+                        <span className="text-secondary-600 font-medium">
                           {isPortuguese ? 'Áreas:' : 'Areas:'}
                         </span>
-                        <p className="text-gray-800">{post.serviceDetails.areas.join(', ')}</p>
+                        <p className="text-secondary-800">{post.serviceDetails.areas.join(', ')}</p>
                       </div>
                       <div>
-                        <span className="text-gray-600 font-medium">
+                        <span className="text-secondary-600 font-medium">
                           {isPortuguese ? 'Idiomas:' : 'Languages:'}
                         </span>
-                        <p className="text-gray-800">{post.serviceDetails.languages.join(', ')}</p>
+                        <p className="text-secondary-800">{post.serviceDetails.languages.join(', ')}</p>
                       </div>
                       {post.serviceDetails.booking && (
                         <div>
-                          <span className="text-gray-600 font-medium">
+                          <span className="text-secondary-600 font-medium">
                             {isPortuguese ? 'Reservas:' : 'Booking:'}
                           </span>
-                          <p className="text-gray-800">{post.serviceDetails.booking}</p>
+                          <p className="text-secondary-800">{post.serviceDetails.booking}</p>
                         </div>
                       )}
                     </div>
 
                     {post.serviceDetails.includes && (
-                      <div className="mt-3 pt-3 border-t border-gray-200">
-                        <span className="text-gray-600 font-medium text-sm">
+                      <div className="mt-3 pt-3 border-t border-secondary-200">
+                        <span className="text-secondary-600 font-medium text-sm">
                           {isPortuguese ? 'Inclui:' : 'Includes:'}
                         </span>
                         <div className="flex flex-wrap gap-2 mt-1">
@@ -452,8 +458,8 @@ export default function ServiceIntegrationFeed() {
               </div>
               
               {/* Metrics */}
-              <div className="px-6 py-3 bg-gray-50/80 border-t border-gray-100">
-                <div className="flex items-center justify-between text-sm text-gray-600">
+              <div className="px-6 py-3 bg-secondary-50/80 border-t border-secondary-100">
+                <div className="flex items-center justify-between text-sm text-secondary-600">
                   <div className="flex items-center gap-4">
                     <span className="flex items-center gap-1">
                       <HeartIcon className="w-4 h-4" />
@@ -468,7 +474,7 @@ export default function ServiceIntegrationFeed() {
                       {post.metrics.shares}
                     </span>
                     {post.metrics.bookings && post.metrics.bookings > 0 && (
-                      <span className="flex items-center gap-1 text-green-600 font-medium">
+                      <span className="flex items-center gap-1 text-action-600 font-medium">
                         <CheckBadgeIcon className="w-4 h-4" />
                         {post.metrics.bookings} {isPortuguese ? 'reservas' : 'bookings'}
                       </span>
@@ -482,15 +488,15 @@ export default function ServiceIntegrationFeed() {
               </div>
               
               {/* Action Buttons */}
-              <div className="px-6 py-4 border-t border-gray-100">
+              <div className="px-6 py-4 border-t border-secondary-100">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
                     <button 
                       onClick={() => handleLike(post.id)}
                       className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300 ${
                         post.userInteraction.liked 
-                          ? 'text-red-600 bg-red-50 hover:bg-red-100' 
-                          : 'text-gray-600 hover:text-red-500 hover:bg-red-50'
+                          ? 'text-coral-600 bg-red-50 hover:bg-red-100' 
+                          : 'text-secondary-600 hover:text-coral-500 hover:bg-red-50'
                       }`}
                     >
                       {post.userInteraction.liked ? (
@@ -501,7 +507,7 @@ export default function ServiceIntegrationFeed() {
                       <span>{isPortuguese ? 'Gosto' : 'Like'}</span>
                     </button>
                     
-                    <button className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg font-medium text-sm transition-all duration-300">
+                    <button className="flex items-center gap-2 px-4 py-2 text-secondary-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg font-medium text-sm transition-all duration-300">
                       <ChatBubbleLeftRightIcon className="w-5 h-5" />
                       <span>{isPortuguese ? 'Comentar' : 'Comment'}</span>
                     </button>
@@ -511,7 +517,7 @@ export default function ServiceIntegrationFeed() {
                       className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300 ${
                         post.userInteraction.bookmarked
                           ? 'text-yellow-600 bg-yellow-50 hover:bg-yellow-100'
-                          : 'text-gray-600 hover:text-yellow-600 hover:bg-yellow-50'
+                          : 'text-secondary-600 hover:text-yellow-600 hover:bg-yellow-50'
                       }`}
                     >
                       <StarIcon className={`w-5 h-5 ${post.userInteraction.bookmarked ? 'fill-current' : ''}`} />

@@ -1,3 +1,4 @@
+import { buildUnsplashUrl, SOCIAL_URLS, buildCloudinaryUrl } from '@/config'
 /**
  * CDN and External Resource URL Management
  * 
@@ -8,7 +9,7 @@
 // CDN and Image Providers
 export const CDN_PROVIDERS = {
   unsplash: 'https://images.unsplash.com',
-  cloudinary: 'https://res.cloudinary.com/lusotown',
+  cloudinary: buildCloudinaryUrl('lusotown'),
   bunnycdn: 'https://lusotown.b-cdn.net',
   gravatar: 'https://www.gravatar.com/avatar',
   youtube: 'https://img.youtube.com/vi',
@@ -46,7 +47,11 @@ export const UNIVERSITY_URLS = {
   qmul: 'https://qmul.ac.uk/international-students',
   greenwich: 'https://gre.ac.uk/international',
   westminster: 'https://westminster.ac.uk/international',
-  roehampton: 'https://roehampton.ac.uk/international'
+  roehampton: 'https://roehampton.ac.uk/international',
+  oxford: 'https://www.ox.ac.uk',
+  cambridge: 'https://www.cam.ac.uk',
+  manchester: 'https://www.manchester.ac.uk',
+  edinburgh: 'https://www.ed.ac.uk'
 } as const;
 
 // External Service URLs

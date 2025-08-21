@@ -236,7 +236,7 @@ export default function CreatorTestimonials() {
         <h2 className="text-3xl font-bold text-gray-900 mb-4">
           {isPt ? 'Histórias de Sucesso dos Criadores' : 'Creator Success Stories'}
         </h2>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+        <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
           {isPt
             ? 'Conheça criadores portugueses reais que transformaram a sua paixão cultural numa fonte de rendimento sustentável na LusoTown.'
             : 'Meet real Portuguese creators who have transformed their cultural passion into sustainable income on LusoTown.'}
@@ -244,7 +244,7 @@ export default function CreatorTestimonials() {
       </div>
 
       {/* Main Testimonial Display */}
-      <div className="relative bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+      <div className="relative bg-white rounded-2xl shadow-lg border border-secondary-200 overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentTestimonial}
@@ -264,7 +264,7 @@ export default function CreatorTestimonials() {
                   <h3 className="text-xl font-bold text-gray-900 mb-1">
                     {currentCreator.name}
                   </h3>
-                  <div className="flex items-center justify-center gap-1 text-sm text-gray-600 mb-2">
+                  <div className="flex items-center justify-center gap-1 text-sm text-secondary-600 mb-2">
                     <MapPin className="w-4 h-4" />
                     <span>{currentCreator.location}</span>
                   </div>
@@ -284,7 +284,7 @@ export default function CreatorTestimonials() {
                         }`}
                       />
                     ))}
-                    <span className="text-sm text-gray-600 ml-1">
+                    <span className="text-sm text-secondary-600 ml-1">
                       {currentCreator.rating}/5
                     </span>
                   </div>
@@ -292,7 +292,7 @@ export default function CreatorTestimonials() {
                   {/* Key Stats */}
                   <div className="grid grid-cols-2 gap-4 text-center">
                     <div className="bg-green-50 rounded-lg p-3">
-                      <div className="text-xl font-bold text-green-600">
+                      <div className="text-xl font-bold text-action-600">
                         £{currentCreator.monthlyEarnings.toLocaleString()}
                       </div>
                       <div className="text-xs text-green-700">
@@ -300,10 +300,10 @@ export default function CreatorTestimonials() {
                       </div>
                     </div>
                     <div className="bg-blue-50 rounded-lg p-3">
-                      <div className="text-xl font-bold text-blue-600">
+                      <div className="text-xl font-bold text-primary-600">
                         {currentCreator.followers.toLocaleString()}
                       </div>
-                      <div className="text-xs text-blue-700">
+                      <div className="text-xs text-primary-700">
                         {isPt ? 'Seguidores' : 'Followers'}
                       </div>
                     </div>
@@ -315,17 +315,17 @@ export default function CreatorTestimonials() {
               <div className="lg:col-span-2">
                 <div className="relative">
                   <Quote className="w-12 h-12 text-primary-200 absolute -top-2 -left-2" />
-                  <blockquote className="text-lg text-gray-700 leading-relaxed pl-8">
+                  <blockquote className="text-lg text-secondary-700 leading-relaxed pl-8">
                     {currentCreator.quote}
                   </blockquote>
                 </div>
 
                 {/* Content Highlight */}
-                <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+                <div className="mt-6 p-4 bg-secondary-50 rounded-lg">
                   <h4 className="font-semibold text-gray-900 mb-2">
                     {isPt ? 'Especialização:' : 'Specialization:'}
                   </h4>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-secondary-600 text-sm">
                     {currentCreator.contentHighlight}
                   </p>
                 </div>
@@ -339,7 +339,7 @@ export default function CreatorTestimonials() {
                     {currentCreator.achievements.map((achievement, index) => (
                       <div 
                         key={index}
-                        className="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-200"
+                        className="flex items-center gap-3 p-3 bg-white rounded-lg border border-secondary-200"
                       >
                         <div className="p-2 bg-primary-100 rounded-lg">
                           <achievement.icon className="w-4 h-4 text-primary-600" />
@@ -348,7 +348,7 @@ export default function CreatorTestimonials() {
                           <div className="font-bold text-gray-900">
                             {achievement.value}
                           </div>
-                          <div className="text-xs text-gray-600">
+                          <div className="text-xs text-secondary-600">
                             {achievement.label}
                           </div>
                         </div>
@@ -358,7 +358,7 @@ export default function CreatorTestimonials() {
                 </div>
 
                 {/* Timeline */}
-                <div className="mt-6 flex items-center gap-4 text-sm text-gray-600">
+                <div className="mt-6 flex items-center gap-4 text-sm text-secondary-600">
                   <div className="flex items-center gap-1">
                     <Calendar className="w-4 h-4" />
                     <span>
@@ -386,17 +386,17 @@ export default function CreatorTestimonials() {
         <div className="absolute inset-y-0 left-4 flex items-center">
           <button
             onClick={prevTestimonial}
-            className="p-2 rounded-full bg-white shadow-lg border border-gray-200 hover:bg-gray-50 transition-colors"
+            className="p-2 rounded-full bg-white shadow-lg border border-secondary-200 hover:bg-secondary-50 transition-colors"
           >
-            <ChevronLeft className="w-5 h-5 text-gray-600" />
+            <ChevronLeft className="w-5 h-5 text-secondary-600" />
           </button>
         </div>
         <div className="absolute inset-y-0 right-4 flex items-center">
           <button
             onClick={nextTestimonial}
-            className="p-2 rounded-full bg-white shadow-lg border border-gray-200 hover:bg-gray-50 transition-colors"
+            className="p-2 rounded-full bg-white shadow-lg border border-secondary-200 hover:bg-secondary-50 transition-colors"
           >
-            <ChevronRight className="w-5 h-5 text-gray-600" />
+            <ChevronRight className="w-5 h-5 text-secondary-600" />
           </button>
         </div>
       </div>
@@ -413,7 +413,7 @@ export default function CreatorTestimonials() {
             className={`w-3 h-3 rounded-full transition-colors ${
               index === currentTestimonial
                 ? 'bg-primary-600'
-                : 'bg-gray-300 hover:bg-gray-400'
+                : 'bg-secondary-300 hover:bg-secondary-400'
             }`}
           />
         ))}
@@ -425,7 +425,7 @@ export default function CreatorTestimonials() {
           <h3 className="text-xl font-bold text-gray-900 mb-2">
             {isPt ? 'Impacto Coletivo dos Nossos Criadores' : 'Collective Impact of Our Creators'}
           </h3>
-          <p className="text-gray-600">
+          <p className="text-secondary-600">
             {isPt 
               ? 'Números reais da nossa comunidade de criadores portugueses'
               : 'Real numbers from our Portuguese creator community'
@@ -438,7 +438,7 @@ export default function CreatorTestimonials() {
             <div className="text-2xl font-bold text-primary-600">
               £{testimonials.reduce((sum, creator) => sum + creator.totalEarnings, 0).toLocaleString()}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPt ? 'Total Pago' : 'Total Paid Out'}
             </div>
           </div>
@@ -446,7 +446,7 @@ export default function CreatorTestimonials() {
             <div className="text-2xl font-bold text-secondary-600">
               {testimonials.reduce((sum, creator) => sum + creator.followers, 0).toLocaleString()}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPt ? 'Seguidores Totais' : 'Total Followers'}
             </div>
           </div>
@@ -454,7 +454,7 @@ export default function CreatorTestimonials() {
             <div className="text-2xl font-bold text-accent-600">
               {testimonials.reduce((sum, creator) => sum + creator.streams, 0)}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPt ? 'Streams Realizadas' : 'Streams Completed'}
             </div>
           </div>
@@ -462,7 +462,7 @@ export default function CreatorTestimonials() {
             <div className="text-2xl font-bold text-action-600">
               {(testimonials.reduce((sum, creator) => sum + creator.rating, 0) / testimonials.length).toFixed(1)}/5
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {isPt ? 'Avaliação Média' : 'Average Rating'}
             </div>
           </div>

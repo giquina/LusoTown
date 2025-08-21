@@ -1,8 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { ROUTES } from '@/config'
 import { HeartIcon, StarIcon } from '@heroicons/react/24/outline'
+import { ROUTES } from '@/config'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config'
 
 interface QuickTestimonial {
   name: string
@@ -83,7 +86,7 @@ export default function QuickTestimonials() {
           <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             {language === 'pt' ? 'Histórias de Sucesso' : 'Success Stories'}
           </h3>
-          <p className="text-gray-600">
+          <p className="text-secondary-600">
             {language === 'pt' 
               ? 'Verdadeiras conexões portuguesas que mudaram vidas em Londres'
               : 'Real Portuguese connections that changed lives in London'}
@@ -122,18 +125,18 @@ export default function QuickTestimonials() {
                 </div>
 
                 {/* Quote */}
-                <blockquote className="text-gray-700 italic mb-4 leading-relaxed flex-grow">
+                <blockquote className="text-secondary-700 italic mb-4 leading-relaxed flex-grow">
                   "{language === 'pt' ? testimonial.quote_pt : testimonial.quote_en}"
                 </blockquote>
 
                 {/* Attribution */}
-                <div className="pt-4 border-t border-gray-100">
+                <div className="pt-4 border-t border-secondary-100">
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="font-semibold text-gray-900">
                         {testimonial.name}, {testimonial.age}
                       </div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-sm text-secondary-600">
                         {language === 'pt' ? 'Do' : 'From'} {testimonial.origin}
                       </div>
                     </div>
@@ -159,7 +162,7 @@ export default function QuickTestimonials() {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="text-center mt-10"
         >
-          <p className="text-gray-600 mb-6">
+          <p className="text-secondary-600 mb-6">
             {language === 'pt'
               ? 'Junte-se a centenas de portugueses que já encontraram conexões autênticas'
               : 'Join hundreds of Portuguese speakers who found authentic connections'}
@@ -167,12 +170,12 @@ export default function QuickTestimonials() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="/success-stories" 
-              className="inline-flex items-center justify-center bg-white text-secondary-600 hover:bg-gray-50 border-2 border-secondary-200 hover:border-secondary-300 font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="inline-flex items-center justify-center bg-white text-secondary-600 hover:bg-secondary-50 border-2 border-secondary-200 hover:border-secondary-300 font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
               {language === 'pt' ? 'Ver Mais Histórias' : 'Read More Stories'}
             </a>
             <a 
-              href="/signup" 
+              href={ROUTES.auth.signup} 
               className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
               {language === 'pt' ? 'Começar Agora' : 'Start Now'}

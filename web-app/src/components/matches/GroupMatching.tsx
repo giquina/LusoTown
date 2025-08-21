@@ -261,10 +261,10 @@ export default function GroupMatching({
   };
 
   const getCompatibilityColor = (score: number) => {
-    if (score >= 90) return "text-green-600 bg-green-50";
-    if (score >= 80) return "text-blue-600 bg-blue-50";
+    if (score >= 90) return "text-action-600 bg-green-50";
+    if (score >= 80) return "text-primary-600 bg-blue-50";
     if (score >= 70) return "text-orange-600 bg-orange-50";
-    return "text-gray-600 bg-gray-50";
+    return "text-secondary-600 bg-secondary-50";
   };
 
   const tabs = [
@@ -305,7 +305,7 @@ export default function GroupMatching({
       {/* Header */}
       <div className="mb-6">
         <div className="flex items-center gap-3 mb-4">
-          <div className="p-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl">
+          <div className="p-2 bg-gradient-to-r from-accent-500 to-pink-500 rounded-xl">
             <UserGroupSolid className="w-5 h-5 text-white" />
           </div>
           <h3 className="text-xl font-bold text-primary-900">
@@ -339,7 +339,7 @@ export default function GroupMatching({
       {activeTab === 'browse' && (
         <div className="space-y-4">
           {/* Quick Stats */}
-          <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-xl border border-purple-200">
+          <div className="bg-gradient-to-r from-accent-50 to-pink-50 p-4 rounded-xl border border-accent-200">
             <div className="grid grid-cols-3 gap-4 text-center">
               <div>
                 <div className="text-lg font-bold text-primary-900">{groupRequests.length}</div>
@@ -390,7 +390,7 @@ export default function GroupMatching({
                   {/* Request Header */}
                   <div className="flex items-start gap-4 mb-4">
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-pink-100 rounded-xl flex items-center justify-center text-2xl">
+                      <div className="w-16 h-16 bg-gradient-to-br from-accent-100 to-pink-100 rounded-xl flex items-center justify-center text-2xl">
                         {typeInfo.icon}
                       </div>
                     </div>
@@ -469,7 +469,7 @@ export default function GroupMatching({
                           {request.preferredActivityTypes.slice(0, 3).map((activity, idx) => (
                             <span
                               key={idx}
-                              className="bg-purple-50 text-purple-700 px-2 py-1 rounded text-xs font-medium"
+                              className="bg-accent-50 text-accent-700 px-2 py-1 rounded text-xs font-medium"
                             >
                               {activity}
                             </span>
@@ -495,7 +495,7 @@ export default function GroupMatching({
                       </div>
 
                       {/* Compatibility Metrics */}
-                      <div className="grid grid-cols-2 gap-4 mb-4 p-3 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg">
+                      <div className="grid grid-cols-2 gap-4 mb-4 p-3 bg-gradient-to-r from-accent-50 to-pink-50 rounded-lg">
                         <div className="text-center">
                           <div className="text-lg font-bold text-primary-900">{request.groupCompatibilityScore}%</div>
                           <div className="text-xs text-primary-600">
@@ -514,7 +514,7 @@ export default function GroupMatching({
                       <div className="flex gap-3">
                         <button
                           onClick={() => handleAcceptGroupMatch(request)}
-                          className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 px-4 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all flex items-center justify-center gap-2"
+                          className="flex-1 bg-gradient-to-r from-accent-600 to-pink-600 text-white py-3 px-4 rounded-lg font-semibold hover:from-accent-700 hover:to-pink-700 transition-all flex items-center justify-center gap-2"
                         >
                           <UserGroupIcon className="w-4 h-4" />
                           {language === "pt" ? "Juntar ao Grupo" : "Join Group"}
@@ -536,8 +536,8 @@ export default function GroupMatching({
           {/* Empty State */}
           {groupRequests.length === 0 && (
             <div className="text-center py-8">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <UserGroupIcon className="w-8 h-8 text-purple-600" />
+              <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <UserGroupIcon className="w-8 h-8 text-accent-600" />
               </div>
               <h4 className="font-semibold text-primary-900 mb-2">
                 {language === "pt" 
@@ -558,7 +558,7 @@ export default function GroupMatching({
       {activeTab === 'create' && showCreateForm && (
         <div className="space-y-4">
           <div className="text-center py-8">
-            <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-gradient-to-r from-accent-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
               <PlusIcon className="w-8 h-8 text-white" />
             </div>
             <h4 className="font-semibold text-primary-900 mb-2">
@@ -591,7 +591,7 @@ export default function GroupMatching({
 
             <button 
               onClick={() => setShowCreateModal(true)}
-              className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-purple-700 hover:to-pink-700 transition-all"
+              className="bg-gradient-to-r from-accent-600 to-pink-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-accent-700 hover:to-pink-700 transition-all"
             >
               {language === "pt" ? "Criar Pedido" : "Create Request"}
             </button>
@@ -650,30 +650,30 @@ export default function GroupMatching({
               </div>
 
               {/* Group Details */}
-              <div className="bg-purple-50 p-4 rounded-xl mb-4">
+              <div className="bg-accent-50 p-4 rounded-xl mb-4">
                 <div className="text-center mb-3">
-                  <h4 className="font-bold text-purple-900">
+                  <h4 className="font-bold text-accent-900">
                     {getRequestTypeInfo(selectedRequest.requestType).name}
                   </h4>
-                  <p className="text-sm text-purple-700">
+                  <p className="text-sm text-accent-700">
                     {selectedRequest.targetGroupSize} {language === "pt" ? "pessoas no total" : "people total"}
                   </p>
                 </div>
 
                 <div className="space-y-2 text-sm">
                   <div className="flex items-center justify-between">
-                    <span className="text-purple-700">
+                    <span className="text-accent-700">
                       {language === "pt" ? "Compatibilidade:" : "Compatibility:"}
                     </span>
-                    <span className="font-bold text-purple-900">
+                    <span className="font-bold text-accent-900">
                       {selectedRequest.groupCompatibilityScore}%
                     </span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-purple-700">
+                    <span className="text-accent-700">
                       {language === "pt" ? "Alinhamento Cultural:" : "Cultural Alignment:"}
                     </span>
-                    <span className="font-bold text-purple-900">
+                    <span className="font-bold text-accent-900">
                       {selectedRequest.culturalAlignmentScore}%
                     </span>
                   </div>
@@ -701,7 +701,7 @@ export default function GroupMatching({
                           </div>
                         </div>
                         {member.isVerified && (
-                          <CheckCircleIcon className="w-4 h-4 text-green-500" />
+                          <CheckCircleIcon className="w-4 h-4 text-action-500" />
                         )}
                       </div>
                     ))}
@@ -718,7 +718,7 @@ export default function GroupMatching({
                 </button>
                 <button
                   onClick={confirmGroupMatch}
-                  className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 rounded-xl font-semibold hover:from-purple-700 hover:to-pink-700 transition-all"
+                  className="flex-1 bg-gradient-to-r from-accent-600 to-pink-600 text-white py-3 rounded-xl font-semibold hover:from-accent-700 hover:to-pink-700 transition-all"
                 >
                   {language === "pt" ? "Juntar" : "Join"}
                 </button>
@@ -730,22 +730,22 @@ export default function GroupMatching({
 
       {/* Premium Feature Promotion */}
       {!hasActiveSubscription && (
-        <div className="mt-6 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-xl p-4">
+        <div className="mt-6 bg-gradient-to-r from-accent-50 to-pink-50 border border-accent-200 rounded-xl p-4">
           <div className="flex items-center gap-3">
-            <GiftIcon className="w-5 h-5 text-purple-600" />
+            <GiftIcon className="w-5 h-5 text-accent-600" />
             <div className="flex-1">
-              <h5 className="font-semibold text-purple-900 mb-1">
+              <h5 className="font-semibold text-accent-900 mb-1">
                 {language === "pt" 
                   ? "Quer criar grupos ilimitados?" 
                   : "Want unlimited group creation?"}
               </h5>
-              <p className="text-purple-700 text-sm">
+              <p className="text-accent-700 text-sm">
                 {language === "pt"
                   ? "Membros Premium podem criar grupos ilimitados e têm acesso a recursos avançados."
                   : "Premium members can create unlimited groups and access advanced features."}
               </p>
             </div>
-            <button className="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-purple-700 transition-colors">
+            <button className="bg-accent-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-accent-700 transition-colors">
               {language === "pt" ? "Upgrade" : "Upgrade"}
             </button>
           </div>

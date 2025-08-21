@@ -409,7 +409,7 @@ export default function NeighborhoodGroups() {
                   </span>
                 </h1>
 
-                <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-5xl mx-auto">
+                <p className="text-xl text-secondary-600 leading-relaxed mb-8 max-w-5xl mx-auto">
                   <span className="hidden sm:block">
                     {isPortuguese ? (
                       'Mantém conexões da tua comunidade portuguesa mesmo após mudanças devido à gentrificação. Encontra o teu grupo de bairro, coordena transporte para eventos e constrói redes de apoio local em toda Londres.'
@@ -431,28 +431,28 @@ export default function NeighborhoodGroups() {
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-white/50">
                     <UsersIcon className="h-8 w-8 text-primary-400 mx-auto mb-2" />
                     <p className="text-2xl font-bold text-gray-900">26,000+</p>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-secondary-600">
                       {isPortuguese ? 'Portugueses em Londres' : 'Portuguese in London'}
                     </p>
                   </div>
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-white/50">
                     <MapPinIcon className="h-8 w-8 text-secondary-400 mx-auto mb-2" />
                     <p className="text-2xl font-bold text-gray-900">28</p>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-secondary-600">
                       {isPortuguese ? 'Grupos de Bairro' : 'Neighborhood Groups'}
                     </p>
                   </div>
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-white/50">
                     <TruckIcon className="h-8 w-8 text-accent-400 mx-auto mb-2" />
                     <p className="text-2xl font-bold text-gray-900">15</p>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-secondary-600">
                       {isPortuguese ? 'Rotas Transporte/Semana' : 'Transport Routes/Week'}
                     </p>
                   </div>
                   <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-white/50">
                     <CalendarDaysIcon className="h-8 w-8 text-coral-400 mx-auto mb-2" />
                     <p className="text-2xl font-bold text-gray-900">43</p>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-secondary-600">
                       {isPortuguese ? 'Eventos/Semana' : 'Events/Week'}
                     </p>
                   </div>
@@ -463,19 +463,19 @@ export default function NeighborhoodGroups() {
         </section>
 
         {/* Search and Filter Section */}
-        <section className="py-8 bg-white border-b border-gray-200">
+        <section className="py-8 bg-white border-b border-secondary-200">
           <div className="container-width">
             <div className="max-w-4xl mx-auto">
               <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
                 {/* Search Bar */}
                 <div className="relative flex-1 max-w-md">
-                  <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                  <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -transecondary-y-1/2 h-5 w-5 text-gray-400" />
                   <input
                     type="text"
                     placeholder={isPortuguese ? 'Procurar bairros...' : 'Search neighborhoods...'}
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                    className="w-full pl-10 pr-4 py-3 border border-secondary-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   />
                 </div>
 
@@ -486,7 +486,7 @@ export default function NeighborhoodGroups() {
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                       selectedFilter === 'all'
                         ? 'bg-primary-500 text-white'
-                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                        : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
                     }`}
                   >
                     {isPortuguese ? 'Todos' : 'All'}
@@ -496,7 +496,7 @@ export default function NeighborhoodGroups() {
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                       selectedFilter === 'needs-support'
                         ? 'bg-action-500 text-white'
-                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                        : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
                     }`}
                   >
                     {isPortuguese ? 'Precisam Apoio' : 'Needs Support'}
@@ -506,7 +506,7 @@ export default function NeighborhoodGroups() {
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                       selectedFilter === 'established'
                         ? 'bg-secondary-500 text-white'
-                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                        : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
                     }`}
                   >
                     {isPortuguese ? 'Estabelecidos' : 'Established'}
@@ -516,7 +516,7 @@ export default function NeighborhoodGroups() {
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                       selectedFilter === 'growing'
                         ? 'bg-accent-500 text-white'
-                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                        : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
                     }`}
                   >
                     {isPortuguese ? 'Crescendo' : 'Growing'}
@@ -537,7 +537,7 @@ export default function NeighborhoodGroups() {
         </section>
 
         {/* Neighborhood Groups Directory */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-secondary-50">
           <div className="container-width">
             <div className="max-w-7xl mx-auto">
               <motion.div
@@ -554,7 +554,7 @@ export default function NeighborhoodGroups() {
                     <>Portuguese <span className="gradient-text">Neighborhood Groups</span></>
                   )}
                 </h2>
-                <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+                <p className="text-lg text-secondary-600 max-w-4xl mx-auto">
                   {isPortuguese ? (
                     'Encontra a tua comunidade local portuguesa em Londres. Cada bairro tem a sua própria personalidade e necessidades únicas.'
                   ) : (
@@ -571,7 +571,7 @@ export default function NeighborhoodGroups() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 * index, duration: 0.6 }}
-                    className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300"
+                    className="bg-white rounded-2xl shadow-lg border border-secondary-200 overflow-hidden hover:shadow-xl transition-all duration-300"
                   >
                     <div className="p-6">
                       {/* Header */}
@@ -630,30 +630,30 @@ export default function NeighborhoodGroups() {
                       </div>
 
                       {/* Description */}
-                      <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                      <p className="text-secondary-600 text-sm mb-4 leading-relaxed">
                         {isPortuguese ? group.descriptionPt : group.description}
                       </p>
 
                       {/* Displacement Status */}
-                      <div className="bg-gray-50 rounded-lg p-3 mb-4">
-                        <p className="text-xs text-gray-600 font-medium mb-1">
+                      <div className="bg-secondary-50 rounded-lg p-3 mb-4">
+                        <p className="text-xs text-secondary-600 font-medium mb-1">
                           {isPortuguese ? 'Estado da Comunidade:' : 'Community Status:'}
                         </p>
-                        <p className="text-sm text-gray-700">
+                        <p className="text-sm text-secondary-700">
                           {isPortuguese ? group.displacementPt : group.displacement}
                         </p>
                       </div>
 
                       {/* Highlights */}
                       <div className="mb-4">
-                        <p className="text-sm font-medium text-gray-700 mb-2">
+                        <p className="text-sm font-medium text-secondary-700 mb-2">
                           {isPortuguese ? 'Destaques:' : 'Highlights:'}
                         </p>
                         <div className="grid grid-cols-2 gap-1">
                           {(isPortuguese ? group.highlightsPt : group.highlights).slice(0, 4).map((highlight, idx) => (
                             <div key={idx} className="flex items-center gap-1">
                               <CheckCircleIconSolid className="h-3 w-3 text-secondary-400 flex-shrink-0" />
-                              <span className="text-xs text-gray-600">{highlight}</span>
+                              <span className="text-xs text-secondary-600">{highlight}</span>
                             </div>
                           ))}
                         </div>
@@ -661,13 +661,13 @@ export default function NeighborhoodGroups() {
 
                       {/* Recent Events */}
                       <div className="mb-4">
-                        <p className="text-sm font-medium text-gray-700 mb-2">
+                        <p className="text-sm font-medium text-secondary-700 mb-2">
                           {isPortuguese ? 'Eventos Recentes:' : 'Recent Events:'}
                         </p>
                         <div className="space-y-1">
                           {group.recentEvents.slice(0, 2).map((event, idx) => (
                             <div key={idx} className="flex items-center justify-between text-xs">
-                              <span className="text-gray-600">
+                              <span className="text-secondary-600">
                                 {isPortuguese ? event.namePt : event.name}
                               </span>
                               <span className="text-primary-600 font-medium">
@@ -680,7 +680,7 @@ export default function NeighborhoodGroups() {
 
                       {/* Transport Links */}
                       <div className="mb-6">
-                        <p className="text-sm font-medium text-gray-700 mb-2">
+                        <p className="text-sm font-medium text-secondary-700 mb-2">
                           {isPortuguese ? 'Transportes:' : 'Transport:'}
                         </p>
                         <div className="flex flex-wrap gap-1">
@@ -708,13 +708,13 @@ export default function NeighborhoodGroups() {
 
               {filteredGroups.length === 0 && (
                 <div className="text-center py-12">
-                  <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-24 h-24 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <MagnifyingGlassIcon className="h-12 w-12 text-gray-400" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
                     {isPortuguese ? 'Nenhum grupo encontrado' : 'No groups found'}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {isPortuguese ? 
                       'Tenta ajustar os filtros ou criar um novo grupo para a tua área.' :
                       'Try adjusting your filters or create a new group for your area.'
@@ -744,7 +744,7 @@ export default function NeighborhoodGroups() {
                     <>Transport <span className="gradient-text">Coordination</span></>
                   )}
                 </h2>
-                <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+                <p className="text-lg text-secondary-600 max-w-4xl mx-auto">
                   {isPortuguese ? (
                     'Partilha transporte para eventos centrais portugueses. Economiza dinheiro e mantenha-te conectado com a comunidade mesmo vivendo longe dos centros tradicionais.'
                   ) : (
@@ -780,19 +780,19 @@ export default function NeighborhoodGroups() {
                     <div className="space-y-3 mb-4">
                       <div className="flex items-center gap-2">
                         <ClockIcon className="h-4 w-4 text-accent-500" />
-                        <span className="text-sm text-gray-600">
+                        <span className="text-sm text-secondary-600">
                           {isPortuguese ? route.schedulePt : route.schedule}
                         </span>
                       </div>
                       <div className="flex items-center gap-2">
                         <span className="text-lg">💰</span>
-                        <span className="text-sm text-gray-600">
+                        <span className="text-sm text-secondary-600">
                           {isPortuguese ? route.costPt : route.cost}
                         </span>
                       </div>
                       <div className="flex items-center gap-2">
                         <UsersIcon className="h-4 w-4 text-accent-500" />
-                        <span className="text-sm text-gray-600">
+                        <span className="text-sm text-secondary-600">
                           {route.participants}/{route.maxCapacity} {isPortuguese ? 'lugares' : 'spots'}
                         </span>
                       </div>
@@ -801,7 +801,7 @@ export default function NeighborhoodGroups() {
                     <div className="flex items-center justify-between mb-4">
                       <div className="text-sm">
                         <span className="text-gray-500">{isPortuguese ? 'Organizador:' : 'Organizer:'}</span>
-                        <span className="font-medium text-gray-700 ml-1">{route.organizer}</span>
+                        <span className="font-medium text-secondary-700 ml-1">{route.organizer}</span>
                       </div>
                       <div className={`w-3 h-3 rounded-full ${
                         route.participants < route.maxCapacity ? 'bg-green-400' : 'bg-red-400'
@@ -846,7 +846,7 @@ export default function NeighborhoodGroups() {
                     <>Community <span className="gradient-text">Resources</span> by Area</>
                   )}
                 </h2>
-                <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+                <p className="text-lg text-secondary-600 max-w-4xl mx-auto">
                   {isPortuguese ? (
                     'Encontra negócios portugueses, centros culturais e serviços de apoio em cada bairro de Londres.'
                   ) : (
@@ -876,7 +876,7 @@ export default function NeighborhoodGroups() {
                       <div className="space-y-3">
                         {resource.items.map((item, idx) => (
                           <div key={idx} className="flex items-center justify-between">
-                            <span className="text-sm text-gray-600">
+                            <span className="text-sm text-secondary-600">
                               {isPortuguese ? item.namePt : item.name}
                             </span>
                             <span className="text-sm font-semibold text-primary-600">
@@ -912,7 +912,7 @@ export default function NeighborhoodGroups() {
                       <>Communities that <span className="text-action-600">Need Support</span></>
                     )}
                   </h2>
-                  <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+                  <p className="text-lg text-secondary-600 max-w-4xl mx-auto">
                     {isPortuguese ? (
                       'Algumas comunidades portuguesas em novas áreas precisam da nossa ajuda para estabelecer grupos locais fortes e manter conexões culturais.'
                     ) : (
@@ -937,7 +937,7 @@ export default function NeighborhoodGroups() {
                           </p>
                         </div>
                       </div>
-                      <p className="text-sm text-gray-600 mb-4">
+                      <p className="text-sm text-secondary-600 mb-4">
                         {isPortuguese ? group.displacementPt : group.displacement}
                       </p>
                       <div className="flex gap-2">
@@ -962,7 +962,7 @@ export default function NeighborhoodGroups() {
                       <h4 className="font-semibold text-gray-900">
                         {isPortuguese ? 'Voluntário Organizador' : 'Volunteer Organizer'}
                       </h4>
-                      <p className="text-sm text-gray-600 text-center">
+                      <p className="text-sm text-secondary-600 text-center">
                         {isPortuguese ? 
                           'Ajuda a organizar eventos locais na tua área' :
                           'Help organize local events in your area'
@@ -974,7 +974,7 @@ export default function NeighborhoodGroups() {
                       <h4 className="font-semibold text-gray-900">
                         {isPortuguese ? 'Coordenador Transporte' : 'Transport Coordinator'}
                       </h4>
-                      <p className="text-sm text-gray-600 text-center">
+                      <p className="text-sm text-secondary-600 text-center">
                         {isPortuguese ? 
                           'Organiza transporte privado para eventos centrais' :
                           'Organize private transport to central events'
@@ -986,7 +986,7 @@ export default function NeighborhoodGroups() {
                       <h4 className="font-semibold text-gray-900">
                         {isPortuguese ? 'Embaixador Cultural' : 'Cultural Ambassador'}
                       </h4>
-                      <p className="text-sm text-gray-600 text-center">
+                      <p className="text-sm text-secondary-600 text-center">
                         {isPortuguese ? 
                           'Partilha cultura portuguesa na tua comunidade local' :
                           'Share Portuguese culture in your local community'
@@ -1021,7 +1021,7 @@ export default function NeighborhoodGroups() {
                     <>Find Your <span className="gradient-text">Neighborhood Group</span></>
                   )}
                 </h2>
-                <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+                <p className="text-xl text-secondary-600 mb-8 max-w-4xl mx-auto leading-relaxed">
                   {isPortuguese ? (
                     'Não deixes que a gentrificação quebre as tuas conexões portuguesas. Junta-te ao teu grupo de bairro local e mantém a comunidade unida em toda Londres.'
                   ) : (
@@ -1032,7 +1032,7 @@ export default function NeighborhoodGroups() {
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-10">
                   <a 
                     href="#neighborhood-groups" 
-                    className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 hover:from-secondary-700 hover:via-primary-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+                    className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 hover:from-secondary-700 hover:via-primary-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-transecondary-y-1 hover:scale-105"
                   >
                     {isPortuguese ? 'Encontrar Grupo' : 'Find Group'}
                     <ArrowRightIcon className="h-6 w-6 ml-3" />
@@ -1048,26 +1048,26 @@ export default function NeighborhoodGroups() {
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm">
                   <div className="flex flex-col items-center gap-2">
-                    <CheckCircleIconSolid className="h-6 w-6 text-green-500" />
-                    <span className="text-gray-600 font-medium">
+                    <CheckCircleIconSolid className="h-6 w-6 text-action-500" />
+                    <span className="text-secondary-600 font-medium">
                       {isPortuguese ? 'Grátis para participar' : 'Free to join'}
                     </span>
                   </div>
                   <div className="flex flex-col items-center gap-2">
-                    <CheckCircleIconSolid className="h-6 w-6 text-green-500" />
-                    <span className="text-gray-600 font-medium">
+                    <CheckCircleIconSolid className="h-6 w-6 text-action-500" />
+                    <span className="text-secondary-600 font-medium">
                       {isPortuguese ? 'Transporte privado' : 'Private transport'}
                     </span>
                   </div>
                   <div className="flex flex-col items-center gap-2">
-                    <CheckCircleIconSolid className="h-6 w-6 text-green-500" />
-                    <span className="text-gray-600 font-medium">
+                    <CheckCircleIconSolid className="h-6 w-6 text-action-500" />
+                    <span className="text-secondary-600 font-medium">
                       {isPortuguese ? 'Apoio local' : 'Local support'}
                     </span>
                   </div>
                   <div className="flex flex-col items-center gap-2">
-                    <CheckCircleIconSolid className="h-6 w-6 text-green-500" />
-                    <span className="text-gray-600 font-medium">
+                    <CheckCircleIconSolid className="h-6 w-6 text-action-500" />
+                    <span className="text-secondary-600 font-medium">
                       {isPortuguese ? 'Cultura portuguesa' : 'Portuguese culture'}
                     </span>
                   </div>
@@ -1103,7 +1103,7 @@ export default function NeighborhoodGroups() {
               </h3>
               <button
                 onClick={() => setShowCreateForm(false)}
-                className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                className="p-2 hover:bg-secondary-100 rounded-lg transition-colors"
               >
                 ✕
               </button>
@@ -1111,43 +1111,43 @@ export default function NeighborhoodGroups() {
             
             <form className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {isPortuguese ? 'Nome do Bairro' : 'Neighborhood Name'}
                 </label>
                 <input
                   type="text"
                   placeholder={isPortuguese ? 'ex: Clapham, Brixton, etc.' : 'e.g. Clapham, Brixton, etc.'}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-secondary-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {isPortuguese ? 'Descrição da Comunidade' : 'Community Description'}
                 </label>
                 <textarea
                   rows={4}
                   placeholder={isPortuguese ? 'Descreve a comunidade portuguesa na tua área...' : 'Describe the Portuguese community in your area...'}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-secondary-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 />
               </div>
               
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {isPortuguese ? 'Local de Encontro' : 'Meeting Location'}
                   </label>
                   <input
                     type="text"
                     placeholder={isPortuguese ? 'Centro comunitário, café, etc.' : 'Community center, cafe, etc.'}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-secondary-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {isPortuguese ? 'Frequência de Encontros' : 'Meeting Frequency'}
                   </label>
-                  <select className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent">
+                  <select className="w-full px-4 py-3 border border-secondary-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent">
                     <option>{isPortuguese ? 'Semanal' : 'Weekly'}</option>
                     <option>{isPortuguese ? 'Quinzenal' : 'Bi-weekly'}</option>
                     <option>{isPortuguese ? 'Mensal' : 'Monthly'}</option>
@@ -1156,25 +1156,25 @@ export default function NeighborhoodGroups() {
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {isPortuguese ? 'Necessidades de Transporte' : 'Transport Needs'}
                 </label>
                 <div className="space-y-2">
                   <label className="flex items-center gap-2">
-                    <input type="checkbox" className="rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
-                    <span className="text-sm text-gray-700">
+                    <input type="checkbox" className="rounded border-secondary-300 text-primary-600 focus:ring-primary-500" />
+                    <span className="text-sm text-secondary-700">
                       {isPortuguese ? 'Organizar transporte para eventos em Stockwell' : 'Organize transport to Stockwell events'}
                     </span>
                   </label>
                   <label className="flex items-center gap-2">
-                    <input type="checkbox" className="rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
-                    <span className="text-sm text-gray-700">
+                    <input type="checkbox" className="rounded border-secondary-300 text-primary-600 focus:ring-primary-500" />
+                    <span className="text-sm text-secondary-700">
                       {isPortuguese ? 'Coordenar boleia para eventos culturais' : 'Coordinate carpools to cultural events'}
                     </span>
                   </label>
                   <label className="flex items-center gap-2">
-                    <input type="checkbox" className="rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
-                    <span className="text-sm text-gray-700">
+                    <input type="checkbox" className="rounded border-secondary-300 text-primary-600 focus:ring-primary-500" />
+                    <span className="text-sm text-secondary-700">
                       {isPortuguese ? 'Criar rede transporte familiar' : 'Create family transport network'}
                     </span>
                   </label>
@@ -1191,7 +1191,7 @@ export default function NeighborhoodGroups() {
                 <button
                   type="button"
                   onClick={() => setShowCreateForm(false)}
-                  className="px-6 py-3 border-2 border-gray-300 text-gray-600 rounded-xl hover:bg-gray-50 transition-all duration-300 font-semibold"
+                  className="px-6 py-3 border-2 border-secondary-300 text-secondary-600 rounded-xl hover:bg-secondary-50 transition-all duration-300 font-semibold"
                 >
                   {isPortuguese ? 'Cancelar' : 'Cancel'}
                 </button>

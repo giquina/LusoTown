@@ -149,12 +149,12 @@ export default function CulturalVerificationBadges({
     const baseColors = {
       emerald: 'from-emerald-400 to-emerald-600',
       blue: 'from-blue-400 to-blue-600',
-      purple: 'from-purple-400 to-purple-600',
+      purple: 'from-accent-400 to-accent-600',
       pink: 'from-pink-400 to-pink-600',
-      indigo: 'from-indigo-400 to-indigo-600',
+      indigo: 'from-primary-400 to-primary-600',
       yellow: 'from-yellow-400 to-yellow-600',
       orange: 'from-orange-400 to-orange-600',
-      slate: 'from-slate-400 to-slate-600',
+      slate: 'from-secondary-400 to-secondary-600',
       green: 'from-green-400 to-green-600'
     }
 
@@ -174,13 +174,13 @@ export default function CulturalVerificationBadges({
   const getTextColor = (color: string) => {
     const colors = {
       emerald: 'text-emerald-700',
-      blue: 'text-blue-700',
-      purple: 'text-purple-700',
+      blue: 'text-primary-700',
+      purple: 'text-accent-700',
       pink: 'text-pink-700',
-      indigo: 'text-indigo-700',
+      indigo: 'text-primary-700',
       yellow: 'text-yellow-700',
       orange: 'text-orange-700',
-      slate: 'text-slate-700',
+      slate: 'text-secondary-700',
       green: 'text-green-700'
     }
     return colors[color as keyof typeof colors] || colors.emerald
@@ -222,7 +222,7 @@ export default function CulturalVerificationBadges({
 
           {/* Legendary badge glow effect */}
           {badge.rarity === 'legendary' && (
-            <div className="absolute inset-0 rounded-full bg-yellow-400 opacity-20 animate-ping" />
+            <div className="absolute inset-0 rounded-full bg-accent-400 opacity-20 animate-ping" />
           )}
 
           {/* Epic badge sparkles */}
@@ -234,7 +234,7 @@ export default function CulturalVerificationBadges({
 
           {/* Detailed tooltip on hover */}
           {showTooltips && (
-            <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10 whitespace-nowrap">
+            <div className="absolute bottom-full left-1/2 transform -transecondary-x-1/2 mb-2 px-3 py-2 bg-secondary-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10 whitespace-nowrap">
               <div className="font-semibold mb-1">
                 {language === 'pt' ? badge.namePortuguese : badge.name}
               </div>
@@ -245,7 +245,7 @@ export default function CulturalVerificationBadges({
                 <StarSolidIcon className="w-3 h-3" />
                 <span>{badge.verificationScore}% {language === 'pt' ? 'verificado' : 'verified'}</span>
               </div>
-              <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900" />
+              <div className="absolute top-full left-1/2 transform -transecondary-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900" />
             </div>
           )}
         </motion.div>
@@ -259,8 +259,8 @@ export default function CulturalVerificationBadges({
           transition={animated ? { delay: displayBadges.length * 0.1 } : undefined}
           className={`
             ${sizeClasses.badge}
-            bg-gray-100 border-2 border-gray-300 rounded-full flex items-center justify-center
-            text-gray-600 font-bold cursor-pointer hover:bg-gray-200 transition-colors
+            bg-secondary-100 border-2 border-secondary-300 rounded-full flex items-center justify-center
+            text-secondary-600 font-bold cursor-pointer hover:bg-secondary-200 transition-colors
           `}
           title={language === 'pt' ? `Mais ${hiddenCount} distintivos` : `${hiddenCount} more badges`}
         >
@@ -290,9 +290,9 @@ export function VerificationSummary({
 
   const getVerificationLevel = (score: number) => {
     if (score >= 95) return { level: 'Legendary', color: 'text-yellow-600', bg: 'bg-yellow-100' }
-    if (score >= 85) return { level: 'Epic', color: 'text-purple-600', bg: 'bg-purple-100' }
-    if (score >= 75) return { level: 'Rare', color: 'text-blue-600', bg: 'bg-blue-100' }
-    return { level: 'Common', color: 'text-gray-600', bg: 'bg-gray-100' }
+    if (score >= 85) return { level: 'Epic', color: 'text-accent-600', bg: 'bg-accent-100' }
+    if (score >= 75) return { level: 'Rare', color: 'text-primary-600', bg: 'bg-blue-100' }
+    return { level: 'Common', color: 'text-secondary-600', bg: 'bg-secondary-100' }
   }
 
   const verificationLevel = getVerificationLevel(verificationScore)
@@ -320,7 +320,7 @@ export function VerificationSummary({
       )}
 
       {showDetails && (
-        <div className="text-xs text-gray-600">
+        <div className="text-xs text-secondary-600">
           {badges.length} {language === 'pt' ? 'distintivos' : 'badges'}
           {rarityCount.legendary && ` • ${rarityCount.legendary} legendary`}
           {rarityCount.epic && ` • ${rarityCount.epic} epic`}

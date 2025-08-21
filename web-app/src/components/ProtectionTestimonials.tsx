@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { buildCloudinaryUrl } from '@/config'
 import { motion } from "framer-motion";
+import { buildCloudinaryUrl } from '@/config'
 import {
   StarIcon,
   BuildingOffice2Icon,
@@ -12,8 +14,11 @@ import {
   QuoteIcon,
 } from "@heroicons/react/24/outline";
 import { ClockIcon } from "@heroicons/react/24/outline";
+import { buildCloudinaryUrl } from '@/config'
 import { Crown, Shield, Users, Quote, Clock } from "lucide-react";
+import { buildCloudinaryUrl } from '@/config'
 import { useLanguage } from "@/context/LanguageContext";
+import { buildCloudinaryUrl } from '@/config'
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -51,7 +56,7 @@ export default function ProtectionTestimonials() {
       rating: 5,
       duration: "3 Days",
       image:
-        "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/portuguese-businessman-testimonial_lk9dex.jpg",
+        buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535200/portuguese-businessman-testimonial_lk9dex.jpg"),
       testimonial: {
         en: "The 7 Ps Framework exceeded every expectation. Their cultural understanding of Portuguese business practices was impeccable, and the discrete professionalism allowed me to focus entirely on the summit. The advance planning was extraordinary - they anticipated challenges I hadn't even considered. This is the gold standard for executive protection.",
         pt: "O Framework 7 Ps superou todas as expectativas. Sua compreensão cultural das práticas empresariais portuguesas foi impecável, e o profissionalismo discreto me permitiu focar inteiramente no summit. O planejamento antecipado foi extraordinário - eles anteciparam desafios que eu nem tinha considerado. Este é o padrão ouro para proteção executiva.",
@@ -78,7 +83,7 @@ export default function ProtectionTestimonials() {
       rating: 5,
       duration: "1 Week",
       image:
-        "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/portuguese-family-testimonial_mk3pqz.jpg",
+        buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535200/portuguese-family-testimonial_mk3pqz.jpg"),
       testimonial: {
         en: "Traveling with our children across the UK required a unique approach to security. The team's preparation was meticulous - they understood our family dynamics and created a protection plan that felt natural, not intrusive. Our children felt safe and comfortable throughout the entire journey. The Portuguese cultural guidance made our experience even more enriching.",
         pt: "Viajar com nossos filhos pelo Reino Unido exigiu uma abordagem única à segurança. A preparação da equipe foi meticulosa - eles entenderam nossa dinâmica familiar e criaram um plano de proteção que pareceu natural, não intrusivo. Nossos filhos se sentiram seguros e confortáveis durante toda a jornada. A orientação cultural portuguesa tornou nossa experiência ainda mais enriquecedora.",
@@ -105,7 +110,7 @@ export default function ProtectionTestimonials() {
       rating: 5,
       duration: "2 Days",
       image:
-        "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/portuguese-diplomat-testimonial_qw8rty.jpg",
+        buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535200/portuguese-diplomat-testimonial_qw8rty.jpg"),
       testimonial: {
         en: "Working with Royal Protocol requires absolute precision and cultural sensitivity. The team's proactive approach and prevention strategies were flawless. They seamlessly integrated with Royal Protection Service while maintaining our Portuguese delegation's dignity and protocol requirements. Their professionalism reflected excellently on Portugal's representation.",
         pt: "Trabalhar com Protocolo Real requer precisão absoluta e sensibilidade cultural. A abordagem proativa da equipe e estratégias de prevenção foram impecáveis. Eles se integraram perfeitamente ao Serviço de Proteção Real enquanto mantinham a dignidade da nossa delegação portuguesa e requisitos de protocolo. Seu profissionalismo refletiu excelentemente na representação de Portugal.",
@@ -132,7 +137,7 @@ export default function ProtectionTestimonials() {
       rating: 5,
       duration: "5 Days",
       image:
-        "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/portuguese-entrepreneur-testimonial_zx9vbn.jpg",
+        buildCloudinaryUrl("dqhbeqttp/image/upload/v1734535200/portuguese-entrepreneur-testimonial_zx9vbn.jpg"),
       testimonial: {
         en: "As someone who values privacy and discrete service, the team's presence was exactly what I needed. Their protection allowed me to engage naturally with investors and partners while maintaining complete security. The cultural bridge they provided with other Portuguese business leaders was invaluable for networking.",
         pt: "Como alguém que valoriza privacidade e serviço discreto, a presença da equipe foi exatamente o que eu precisava. Sua proteção me permitiu me envolver naturalmente com investidores e parceiros enquanto mantinha segurança completa. A ponte cultural que eles forneceram com outros líderes empresariais portugueses foi inestimável para networking.",
@@ -174,7 +179,7 @@ export default function ProtectionTestimonials() {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-neutral-50 to-primary-50">
+    <section className="py-16 bg-gradient-to-br from-secondary-50 to-primary-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -185,7 +190,7 @@ export default function ProtectionTestimonials() {
         >
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4"
+            className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4"
           >
             {t(
               "framework.testimonials.title",
@@ -194,7 +199,7 @@ export default function ProtectionTestimonials() {
           </motion.h2>
           <motion.p
             variants={fadeInUp}
-            className="text-lg text-neutral-600 max-w-3xl mx-auto"
+            className="text-lg text-secondary-600 max-w-3xl mx-auto"
           >
             {language === "pt"
               ? "Testemunhos reais de líderes empresariais portugueses que experimentaram nosso Framework de Excelência 7 Ps em operações de proteção de alto perfil."
@@ -223,11 +228,11 @@ export default function ProtectionTestimonials() {
                         className="w-5 h-5 text-accent-500 fill-current"
                       />
                     ))}
-                    <span className="ml-2 text-sm text-neutral-500">
+                    <span className="ml-2 text-sm text-secondary-500">
                       {activeTestimony.rating}/5
                     </span>
                   </div>
-                  <p className="text-neutral-700 leading-relaxed text-lg mb-6">
+                  <p className="text-secondary-700 leading-relaxed text-lg mb-6">
                     "
                     {language === "pt"
                       ? activeTestimony.testimonial.pt
@@ -249,27 +254,27 @@ export default function ProtectionTestimonials() {
               </div>
 
               {/* Client Information */}
-              <div className="border-t border-neutral-200 pt-6">
+              <div className="border-t border-secondary-200 pt-6">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <h4 className="text-xl font-bold text-neutral-900">
+                    <h4 className="text-xl font-bold text-secondary-900">
                       {activeTestimony.name}
                     </h4>
-                    <p className="text-neutral-600">
+                    <p className="text-secondary-600">
                       {language === "pt"
                         ? activeTestimony.title.pt
                         : activeTestimony.title.en}
                     </p>
-                    <p className="text-sm text-neutral-500">
+                    <p className="text-sm text-secondary-500">
                       {activeTestimony.company}
                     </p>
                   </div>
                   <div className="text-right">
-                    <div className="flex items-center text-sm text-neutral-500 mb-1">
+                    <div className="flex items-center text-sm text-secondary-500 mb-1">
                       <ClockIcon className="w-4 h-4 mr-1" />
                       {activeTestimony.duration}
                     </div>
-                    <div className="text-sm text-neutral-500">
+                    <div className="text-sm text-secondary-500">
                       {activeTestimony.location}
                     </div>
                   </div>
@@ -308,8 +313,8 @@ export default function ProtectionTestimonials() {
 
             {/* Client Image */}
             <div className="relative bg-gradient-to-br from-premium-100 to-primary-100 lg:min-h-full flex items-center justify-center p-12">
-              <div className="w-48 h-48 bg-neutral-300 rounded-full flex items-center justify-center">
-                <Users className="w-20 h-20 text-neutral-500" />
+              <div className="w-48 h-48 bg-secondary-300 rounded-full flex items-center justify-center">
+                <Users className="w-20 h-20 text-secondary-500" />
               </div>
 
               {/* Service Badge */}
@@ -329,9 +334,9 @@ export default function ProtectionTestimonials() {
         <div className="flex items-center justify-center gap-4 mb-8">
           <button
             onClick={prevTestimonial}
-            className="p-3 bg-white border border-neutral-300 rounded-lg hover:bg-neutral-50 transition-colors"
+            className="p-3 bg-white border border-secondary-300 rounded-lg hover:bg-secondary-50 transition-colors"
           >
-            <ChevronLeftIcon className="w-5 h-5 text-neutral-600" />
+            <ChevronLeftIcon className="w-5 h-5 text-secondary-600" />
           </button>
 
           <div className="flex gap-2">
@@ -342,7 +347,7 @@ export default function ProtectionTestimonials() {
                 className={`w-3 h-3 rounded-full transition-colors ${
                   index === activeTestimonial
                     ? "bg-premium-600"
-                    : "bg-neutral-300 hover:bg-neutral-400"
+                    : "bg-secondary-300 hover:bg-secondary-400"
                 }`}
               />
             ))}
@@ -350,9 +355,9 @@ export default function ProtectionTestimonials() {
 
           <button
             onClick={nextTestimonial}
-            className="p-3 bg-white border border-neutral-300 rounded-lg hover:bg-neutral-50 transition-colors"
+            className="p-3 bg-white border border-secondary-300 rounded-lg hover:bg-secondary-50 transition-colors"
           >
-            <ChevronRightIcon className="w-5 h-5 text-neutral-600" />
+            <ChevronRightIcon className="w-5 h-5 text-secondary-600" />
           </button>
         </div>
 
@@ -363,13 +368,13 @@ export default function ProtectionTestimonials() {
         >
           <motion.div variants={fadeInUp} className="text-center">
             <div className="text-3xl font-bold text-premium-600 mb-2">100%</div>
-            <div className="text-neutral-600 text-sm">
+            <div className="text-secondary-600 text-sm">
               {t("framework.testimonials.satisfaction", "Client Satisfaction")}
             </div>
           </motion.div>
           <motion.div variants={fadeInUp} className="text-center">
             <div className="text-3xl font-bold text-premium-600 mb-2">50+</div>
-            <div className="text-neutral-600 text-sm">
+            <div className="text-secondary-600 text-sm">
               {t(
                 "framework.testimonials.executives",
                 "Portuguese Executives Protected"
@@ -378,13 +383,13 @@ export default function ProtectionTestimonials() {
           </motion.div>
           <motion.div variants={fadeInUp} className="text-center">
             <div className="text-3xl font-bold text-premium-600 mb-2">5.0</div>
-            <div className="text-neutral-600 text-sm">
+            <div className="text-secondary-600 text-sm">
               {t("framework.testimonials.rating", "Average Rating")}
             </div>
           </motion.div>
           <motion.div variants={fadeInUp} className="text-center">
             <div className="text-3xl font-bold text-premium-600 mb-2">24/7</div>
-            <div className="text-neutral-600 text-sm">
+            <div className="text-secondary-600 text-sm">
               {t("framework.testimonials.availability", "Service Availability")}
             </div>
           </motion.div>

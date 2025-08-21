@@ -45,7 +45,7 @@ const EmojiReaction = ({
     className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs transition-colors ${
       hasReacted 
         ? 'bg-primary-100 text-primary-700 border border-primary-200' 
-        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+        : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
     }`}
   >
     <span>{emoji}</span>
@@ -82,7 +82,7 @@ const MessageBubble = ({
 
   const getMembershipBadgeColor = (tier: string) => {
     switch (tier) {
-      case 'premium': return 'bg-purple-100 text-purple-700'
+      case 'premium': return 'bg-accent-100 text-accent-700'
       case 'core': return 'bg-primary-100 text-primary-700'
       default: return 'bg-green-100 text-green-700'
     }
@@ -142,7 +142,7 @@ const MessageBubble = ({
 
         {/* Reply context */}
         {message.replyTo && (
-          <div className="mb-2 p-2 bg-gray-50 rounded-lg border-l-4 border-gray-300 text-sm text-gray-600">
+          <div className="mb-2 p-2 bg-secondary-50 rounded-lg border-l-4 border-secondary-300 text-sm text-secondary-600">
             <div className="font-medium">Replying to message</div>
             <div className="truncate">Original message content...</div>
           </div>
@@ -154,7 +154,7 @@ const MessageBubble = ({
             className={`px-4 py-2 rounded-2xl ${
               isOwnMessage
                 ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white'
-                : 'bg-white border border-gray-200 text-gray-900'
+                : 'bg-white border border-secondary-200 text-gray-900'
             }`}
           >
             <div className="whitespace-pre-wrap break-words">{message.content}</div>
@@ -185,25 +185,25 @@ const MessageBubble = ({
               >
                 <button
                   onClick={() => setShowEmojiPicker(!showEmojiPicker)}
-                  className="p-1 bg-white rounded-full shadow-md hover:bg-gray-50 transition-colors"
+                  className="p-1 bg-white rounded-full shadow-md hover:bg-secondary-50 transition-colors"
                   title="Add reaction"
                 >
-                  <FaceSmileIcon className="w-4 h-4 text-gray-600" />
+                  <FaceSmileIcon className="w-4 h-4 text-secondary-600" />
                 </button>
                 <button
                   onClick={() => onReply(message)}
-                  className="p-1 bg-white rounded-full shadow-md hover:bg-gray-50 transition-colors"
+                  className="p-1 bg-white rounded-full shadow-md hover:bg-secondary-50 transition-colors"
                   title="Reply"
                 >
-                  <ChatBubbleLeftRightIcon className="w-4 h-4 text-gray-600" />
+                  <ChatBubbleLeftRightIcon className="w-4 h-4 text-secondary-600" />
                 </button>
                 {isOwnMessage && (
                   <button
                     onClick={() => onEdit(message)}
-                    className="p-1 bg-white rounded-full shadow-md hover:bg-gray-50 transition-colors"
+                    className="p-1 bg-white rounded-full shadow-md hover:bg-secondary-50 transition-colors"
                     title="Edit"
                   >
-                    <EllipsisVerticalIcon className="w-4 h-4 text-gray-600" />
+                    <EllipsisVerticalIcon className="w-4 h-4 text-secondary-600" />
                   </button>
                 )}
               </motion.div>
@@ -229,7 +229,7 @@ const MessageBubble = ({
                         onReact(message.id, emoji)
                         setShowEmojiPicker(false)
                       }}
-                      className="p-1 hover:bg-gray-100 rounded text-lg"
+                      className="p-1 hover:bg-secondary-100 rounded text-lg"
                     >
                       {emoji}
                     </button>
@@ -286,12 +286,12 @@ const TypingIndicators = ({ indicators }: { indicators: TypingIndicator[] }) => 
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 10 }}
-      className="flex items-center gap-2 px-4 py-2 text-sm text-gray-600"
+      className="flex items-center gap-2 px-4 py-2 text-sm text-secondary-600"
     >
       <div className="flex space-x-1">
-        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+        <div className="w-2 h-2 bg-secondary-400 rounded-full animate-bounce"></div>
+        <div className="w-2 h-2 bg-secondary-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+        <div className="w-2 h-2 bg-secondary-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
       </div>
       <span>
         {names.join(', ')}
@@ -378,7 +378,7 @@ const MessageInput = ({
   }, [])
 
   return (
-    <div className="border-t border-gray-200 bg-white">
+    <div className="border-t border-secondary-200 bg-white">
       {/* Reply context */}
       <AnimatePresence>
         {replyTo && (
@@ -386,20 +386,20 @@ const MessageInput = ({
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="p-4 border-b border-gray-100 bg-gray-50"
+            className="p-4 border-b border-secondary-100 bg-secondary-50"
           >
             <div className="flex items-start justify-between">
               <div className="flex-1">
                 <div className="text-sm font-medium text-gray-900 mb-1">
                   Replying to {replyTo.userName}
                 </div>
-                <div className="text-sm text-gray-600 truncate">
+                <div className="text-sm text-secondary-600 truncate">
                   {replyTo.content}
                 </div>
               </div>
               <button
                 onClick={onCancelReply}
-                className="ml-2 p-1 text-gray-400 hover:text-gray-600"
+                className="ml-2 p-1 text-gray-400 hover:text-secondary-600"
               >
                 <XMarkIcon className="w-4 h-4" />
               </button>
@@ -413,7 +413,7 @@ const MessageInput = ({
         <div className="flex items-end gap-3">
           <button
             type="button"
-            className="flex-shrink-0 p-2 text-gray-400 hover:text-gray-600 transition-colors"
+            className="flex-shrink-0 p-2 text-gray-400 hover:text-secondary-600 transition-colors"
             title="Add photo"
           >
             <PhotoIcon className="w-5 h-5" />
@@ -434,7 +434,7 @@ const MessageInput = ({
               onKeyDown={handleKeyDown}
               placeholder="Type a message..."
               rows={1}
-              className="w-full px-4 py-2 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent resize-none"
+              className="w-full px-4 py-2 border border-secondary-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent resize-none"
               style={{ maxHeight: '120px' }}
               onInput={(e) => {
                 const target = e.target as HTMLTextAreaElement
@@ -446,7 +446,7 @@ const MessageInput = ({
 
           <button
             type="button"
-            className="flex-shrink-0 p-2 text-gray-400 hover:text-gray-600 transition-colors"
+            className="flex-shrink-0 p-2 text-gray-400 hover:text-secondary-600 transition-colors"
             title="Add emoji"
           >
             <FaceSmileIcon className="w-5 h-5" />
@@ -581,7 +581,7 @@ export default function ChatRoomPage() {
     )
 
     if (!result.success) {
-      alert(result.error || 'Failed to send message')
+      toast.error(result.error || 'Failed to send message')
     }
 
     setReplyTo(undefined)
@@ -614,11 +614,11 @@ export default function ChatRoomPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-secondary-50">
         <div className="pt-16 flex items-center justify-center min-h-screen">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
-            <p className="text-gray-600">Loading chat room...</p>
+            <p className="text-secondary-600">Loading chat room...</p>
           </div>
         </div>
       </div>
@@ -627,12 +627,12 @@ export default function ChatRoomPage() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-secondary-50">
         <div className="pt-16 flex items-center justify-center min-h-screen">
           <div className="text-center">
-            <ExclamationTriangleIcon className="w-16 h-16 text-red-500 mx-auto mb-4" />
+            <ExclamationTriangleIcon className="w-16 h-16 text-coral-500 mx-auto mb-4" />
             <h2 className="text-xl font-semibold text-gray-900 mb-2">Error</h2>
-            <p className="text-gray-600 mb-4">{error}</p>
+            <p className="text-secondary-600 mb-4">{error}</p>
             <button
               onClick={() => router.push('/chat')}
               className="bg-primary-500 text-white px-6 py-2 rounded-lg hover:bg-primary-600 transition-colors"
@@ -652,15 +652,15 @@ export default function ChatRoomPage() {
   const onlineMembers = userPresence.filter(p => p.isOnline).length
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen bg-secondary-50 flex flex-col">
       
       {/* Chat header */}
-      <div className="pt-16 bg-white border-b border-gray-200 sticky top-16 z-10">
+      <div className="pt-16 bg-white border-b border-secondary-200 sticky top-16 z-10">
         <div className="flex items-center justify-between p-4">
           <div className="flex items-center gap-3">
             <button
               onClick={() => router.push('/chat')}
-              className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors"
+              className="p-2 text-secondary-600 hover:text-gray-900 hover:bg-secondary-100 rounded-full transition-colors"
             >
               <ArrowLeftIcon className="w-5 h-5" />
             </button>
@@ -676,13 +676,13 @@ export default function ChatRoomPage() {
               
               <div>
                 <h1 className="font-semibold text-gray-900">{room.name}</h1>
-                <div className="flex items-center gap-2 text-sm text-gray-600">
+                <div className="flex items-center gap-2 text-sm text-secondary-600">
                   <UsersIcon className="w-4 h-4" />
                   <span>{room.currentMembers} members</span>
                   {onlineMembers > 0 && (
                     <>
                       <span>•</span>
-                      <span className="text-green-600">{onlineMembers} online</span>
+                      <span className="text-action-600">{onlineMembers} online</span>
                     </>
                   )}
                 </div>
@@ -691,7 +691,7 @@ export default function ChatRoomPage() {
           </div>
 
           <button
-            className="p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors"
+            className="p-2 text-secondary-600 hover:text-gray-900 hover:bg-secondary-100 rounded-full transition-colors"
             title="Room info"
           >
             <InformationCircleIcon className="w-5 h-5" />

@@ -333,7 +333,7 @@ export default function ConversationStarters({
       <div className="flex items-center gap-2 mb-4">
         {unlockReason === 'mutual_match' && (
           <div className="flex items-center gap-2 bg-green-50 border border-green-200 px-3 py-2 rounded-lg">
-            <HeartSolid className="w-4 h-4 text-green-600" />
+            <HeartSolid className="w-4 h-4 text-action-600" />
             <span className="text-sm font-medium text-green-800">
               {t('messaging.mutual_match') || (language === 'pt' ? 'Match Mútuo' : 'Mutual Match')}
             </span>
@@ -342,7 +342,7 @@ export default function ConversationStarters({
         
         {unlockReason === 'shared_events' && (
           <div className="flex items-center gap-2 bg-blue-50 border border-blue-200 px-3 py-2 rounded-lg">
-            <CalendarIcon className="w-4 h-4 text-blue-600" />
+            <CalendarIcon className="w-4 h-4 text-primary-600" />
             <span className="text-sm font-medium text-blue-800">
               {t('messaging.event_connection') || (language === 'pt' ? 'Conexão de Evento' : 'Event Connection')}
             </span>
@@ -350,9 +350,9 @@ export default function ConversationStarters({
         )}
 
         {unlockReason === 'both' && (
-          <div className="flex items-center gap-2 bg-purple-50 border border-purple-200 px-3 py-2 rounded-lg">
-            <SparklesIcon className="w-4 h-4 text-purple-600" />
-            <span className="text-sm font-medium text-purple-800">
+          <div className="flex items-center gap-2 bg-accent-50 border border-accent-200 px-3 py-2 rounded-lg">
+            <SparklesIcon className="w-4 h-4 text-accent-600" />
+            <span className="text-sm font-medium text-accent-800">
               {language === 'pt' ? 'Match + Eventos' : 'Match + Events'}
             </span>
           </div>
@@ -504,7 +504,7 @@ export default function ConversationStarters({
       {/* Safety Reminder */}
       <div className="mt-4 pt-4 border-t border-primary-100">
         <div className="flex items-start gap-2 text-xs text-primary-600">
-          <ExclamationTriangleIcon className="w-4 h-4 text-yellow-500 mt-0.5 flex-shrink-0" />
+          <ExclamationTriangleIcon className="w-4 h-4 text-accent-500 mt-0.5 flex-shrink-0" />
           <p>
             {t('messaging.safety_reminder') || (language === 'pt' 
               ? 'Mantenha as conversas respeitosas e reporte qualquer comportamento inadequado'

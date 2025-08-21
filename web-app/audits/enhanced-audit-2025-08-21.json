@@ -1,0 +1,2114 @@
+{
+  "summary": {
+    "totalViolations": 101480,
+    "filesAffected": 510,
+    "categoriesAffected": 8,
+    "timestamp": "2025-08-21T05:22:30.465Z",
+    "estimatedRemediationTime": "3 months"
+  },
+  "categoryBreakdown": {
+    "hardcoded_text": {
+      "total": 99355,
+      "high": 99355,
+      "medium": 0,
+      "low": 0,
+      "critical": 0
+    },
+    "hardcoded_routes": {
+      "total": 379,
+      "high": 379,
+      "medium": 0,
+      "low": 0,
+      "critical": 0
+    },
+    "console_logs": {
+      "total": 137,
+      "high": 0,
+      "medium": 0,
+      "low": 137,
+      "critical": 0
+    },
+    "hardcoded_prices": {
+      "total": 537,
+      "high": 0,
+      "medium": 537,
+      "low": 0,
+      "critical": 0
+    },
+    "hardcoded_urls": {
+      "total": 627,
+      "high": 0,
+      "medium": 627,
+      "low": 0,
+      "critical": 0
+    },
+    "hardcoded_colors": {
+      "total": 381,
+      "high": 0,
+      "medium": 381,
+      "low": 0,
+      "critical": 0
+    },
+    "demo_credentials": {
+      "total": 4,
+      "high": 0,
+      "medium": 0,
+      "low": 0,
+      "critical": 4
+    },
+    "hardcoded_analytics": {
+      "total": 60,
+      "high": 0,
+      "medium": 60,
+      "low": 0,
+      "critical": 0
+    }
+  },
+  "fileTypeDistribution": {
+    "critical": 25072,
+    "pages": 1248,
+    "components": 58724,
+    "config": 622,
+    "other": 3273,
+    "utilities": 12208,
+    "types": 333
+  },
+  "priorityMatrix": [
+    {
+      "category": "demo_credentials",
+      "severity": "critical",
+      "priority": 0,
+      "count": 4,
+      "files": {},
+      "examples": [
+        {
+          "file": "src/app/social-networks/page.tsx",
+          "line": 1,
+          "code": "demo@lusotown.com",
+          "fix": "Use process.env.NEXT_PUBLIC_DEMO_*"
+        },
+        {
+          "file": "src/lib/auth.ts",
+          "line": 1,
+          "code": "demo@lusotown.com",
+          "fix": "Use process.env.NEXT_PUBLIC_DEMO_*"
+        },
+        {
+          "file": "src/lib/auth.ts",
+          "line": 1,
+          "code": "LusoTown2025!",
+          "fix": "Use process.env.NEXT_PUBLIC_DEMO_*"
+        }
+      ]
+    },
+    {
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "count": 99355,
+      "files": {},
+      "examples": [
+        {
+          "file": "src/app/about/page.tsx",
+          "line": 1,
+          "code": "'use client'",
+          "fix": "Replace with {t('category.key')}"
+        },
+        {
+          "file": "src/app/about/page.tsx",
+          "line": 1,
+          "code": "'@/components/Footer'",
+          "fix": "Replace with {t('category.key')}"
+        },
+        {
+          "file": "src/app/about/page.tsx",
+          "line": 1,
+          "code": "'@/config/routes'",
+          "fix": "Replace with {t('category.key')}"
+        }
+      ]
+    },
+    {
+      "category": "hardcoded_routes",
+      "severity": "high",
+      "priority": 2,
+      "count": 379,
+      "files": {},
+      "examples": [
+        {
+          "file": "src/app/academy/business-networking/page.tsx",
+          "line": 1,
+          "code": "\"/business-networking/chamber-events\"",
+          "fix": "Replace with ROUTES.routeName"
+        },
+        {
+          "file": "src/app/academy/business-networking/page.tsx",
+          "line": 1,
+          "code": "\"/guides/portuguese-business-etiquette\"",
+          "fix": "Replace with ROUTES.routeName"
+        },
+        {
+          "file": "src/app/academy/cultural-events/page.tsx",
+          "line": 1,
+          "code": "'/cultural-events/calendar'",
+          "fix": "Replace with ROUTES.routeName"
+        }
+      ]
+    },
+    {
+      "category": "hardcoded_urls",
+      "severity": "medium",
+      "priority": 3,
+      "count": 627,
+      "files": {},
+      "examples": [
+        {
+          "file": "src/app/academy/live-streaming/page.tsx",
+          "line": 1,
+          "code": "'https://obsproject.com/help'",
+          "fix": "Move to CDN config or use helper functions"
+        },
+        {
+          "file": "src/app/api/email/send/route.ts",
+          "line": 1,
+          "code": "\"https://api.sendgrid.com/v3/mail/send\"",
+          "fix": "Move to CDN config or use helper functions"
+        },
+        {
+          "file": "src/app/api/email/send/route.ts",
+          "line": 1,
+          "code": "\"https://api.resend.com/emails\"",
+          "fix": "Move to CDN config or use helper functions"
+        }
+      ]
+    },
+    {
+      "category": "hardcoded_prices",
+      "severity": "medium",
+      "priority": 4,
+      "count": 537,
+      "files": {},
+      "examples": [
+        {
+          "file": "src/app/academy/housing-assistance/page.tsx",
+          "line": 1,
+          "code": "£1,200",
+          "fix": "Replace with formatPrice() calls"
+        },
+        {
+          "file": "src/app/academy/housing-assistance/page.tsx",
+          "line": 1,
+          "code": "£2,000",
+          "fix": "Replace with formatPrice() calls"
+        },
+        {
+          "file": "src/app/academy/housing-assistance/page.tsx",
+          "line": 1,
+          "code": "£1,500",
+          "fix": "Replace with formatPrice() calls"
+        }
+      ]
+    },
+    {
+      "category": "hardcoded_colors",
+      "severity": "medium",
+      "priority": 5,
+      "count": 381,
+      "files": {},
+      "examples": [
+        {
+          "file": "src/app/admin/page.tsx",
+          "line": 1,
+          "code": "#FF6B6B",
+          "fix": "Replace with brandColors constants"
+        },
+        {
+          "file": "src/app/admin/page.tsx",
+          "line": 1,
+          "code": "#FF6B6B",
+          "fix": "Replace with brandColors constants"
+        },
+        {
+          "file": "src/app/admin/page.tsx",
+          "line": 1,
+          "code": "#FF6B6B",
+          "fix": "Replace with brandColors constants"
+        }
+      ]
+    },
+    {
+      "category": "console_logs",
+      "severity": "low",
+      "priority": 6,
+      "count": 137,
+      "files": {},
+      "examples": [
+        {
+          "file": "src/app/academy/business-networking/page.tsx",
+          "line": 1,
+          "code": "console.log(",
+          "fix": "Remove or replace with proper logging"
+        },
+        {
+          "file": "src/app/academy/cultural-events/page.tsx",
+          "line": 1,
+          "code": "console.log(",
+          "fix": "Remove or replace with proper logging"
+        },
+        {
+          "file": "src/app/academy/dating-matching/page.tsx",
+          "line": 1,
+          "code": "console.log(",
+          "fix": "Remove or replace with proper logging"
+        }
+      ]
+    },
+    {
+      "category": "hardcoded_analytics",
+      "severity": "medium",
+      "priority": 7,
+      "count": 60,
+      "files": {},
+      "examples": [
+        {
+          "file": "src/components/ConversionOptimizationEngine.tsx",
+          "line": 1,
+          "code": "'attended_business_event'",
+          "fix": "Use ANALYTICS_EVENTS constants"
+        },
+        {
+          "file": "src/components/ConversionOptimizationEngine.tsx",
+          "line": 1,
+          "code": "'attended_cultural_event'",
+          "fix": "Use ANALYTICS_EVENTS constants"
+        },
+        {
+          "file": "src/components/LiveUpdateIndicator.tsx",
+          "line": 1,
+          "code": "'new_event'",
+          "fix": "Use ANALYTICS_EVENTS constants"
+        }
+      ]
+    }
+  ],
+  "remediationPlan": [
+    {
+      "phase": 1,
+      "category": "demo_credentials",
+      "severity": "critical",
+      "priority": 0,
+      "violationCount": 4,
+      "filesAffected": 2,
+      "timeEstimate": "1 day",
+      "description": "Fix 4 demo_credentials violations across 2 files",
+      "examples": [
+        {
+          "file": "src/app/social-networks/page.tsx",
+          "line": 1,
+          "code": "demo@lusotown.com",
+          "fix": "Use process.env.NEXT_PUBLIC_DEMO_*"
+        },
+        {
+          "file": "src/lib/auth.ts",
+          "line": 1,
+          "code": "demo@lusotown.com",
+          "fix": "Use process.env.NEXT_PUBLIC_DEMO_*"
+        },
+        {
+          "file": "src/lib/auth.ts",
+          "line": 1,
+          "code": "LusoTown2025!",
+          "fix": "Use process.env.NEXT_PUBLIC_DEMO_*"
+        }
+      ],
+      "actionItems": [
+        "Review and fix demo_credentials violations",
+        "Test changes thoroughly"
+      ]
+    },
+    {
+      "phase": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "violationCount": 99355,
+      "filesAffected": 510,
+      "timeEstimate": "2 weeks",
+      "description": "Fix 99355 hardcoded_text violations across 510 files",
+      "examples": [
+        {
+          "file": "src/app/about/page.tsx",
+          "line": 1,
+          "code": "'use client'",
+          "fix": "Replace with {t('category.key')}"
+        },
+        {
+          "file": "src/app/about/page.tsx",
+          "line": 1,
+          "code": "'@/components/Footer'",
+          "fix": "Replace with {t('category.key')}"
+        },
+        {
+          "file": "src/app/about/page.tsx",
+          "line": 1,
+          "code": "'@/config/routes'",
+          "fix": "Replace with {t('category.key')}"
+        }
+      ],
+      "actionItems": [
+        "Add missing translation keys to en.json and pt.json",
+        "Import useLanguage hook in affected components",
+        "Replace hardcoded strings with t() calls",
+        "Test language switching functionality"
+      ]
+    },
+    {
+      "phase": 2,
+      "category": "hardcoded_routes",
+      "severity": "high",
+      "priority": 2,
+      "violationCount": 379,
+      "filesAffected": 84,
+      "timeEstimate": "2 weeks",
+      "description": "Fix 379 hardcoded_routes violations across 84 files",
+      "examples": [
+        {
+          "file": "src/app/academy/business-networking/page.tsx",
+          "line": 1,
+          "code": "\"/business-networking/chamber-events\"",
+          "fix": "Replace with ROUTES.routeName"
+        },
+        {
+          "file": "src/app/academy/business-networking/page.tsx",
+          "line": 1,
+          "code": "\"/guides/portuguese-business-etiquette\"",
+          "fix": "Replace with ROUTES.routeName"
+        },
+        {
+          "file": "src/app/academy/cultural-events/page.tsx",
+          "line": 1,
+          "code": "'/cultural-events/calendar'",
+          "fix": "Replace with ROUTES.routeName"
+        }
+      ],
+      "actionItems": [
+        "Import ROUTES from @/config",
+        "Replace string literals with ROUTES constants",
+        "Update Link and router.push calls",
+        "Verify route navigation works correctly"
+      ]
+    },
+    {
+      "phase": 2,
+      "category": "hardcoded_urls",
+      "severity": "medium",
+      "priority": 3,
+      "violationCount": 627,
+      "filesAffected": 89,
+      "timeEstimate": "2 weeks",
+      "description": "Fix 627 hardcoded_urls violations across 89 files",
+      "examples": [
+        {
+          "file": "src/app/academy/live-streaming/page.tsx",
+          "line": 1,
+          "code": "'https://obsproject.com/help'",
+          "fix": "Move to CDN config or use helper functions"
+        },
+        {
+          "file": "src/app/api/email/send/route.ts",
+          "line": 1,
+          "code": "\"https://api.sendgrid.com/v3/mail/send\"",
+          "fix": "Move to CDN config or use helper functions"
+        },
+        {
+          "file": "src/app/api/email/send/route.ts",
+          "line": 1,
+          "code": "\"https://api.resend.com/emails\"",
+          "fix": "Move to CDN config or use helper functions"
+        }
+      ],
+      "actionItems": [
+        "Identify URL category (CDN, social, external)",
+        "Add to appropriate config file if missing",
+        "Import and use config constants",
+        "Test external links and image loading"
+      ]
+    },
+    {
+      "phase": 3,
+      "category": "hardcoded_prices",
+      "severity": "medium",
+      "priority": 4,
+      "violationCount": 537,
+      "filesAffected": 71,
+      "timeEstimate": "2 weeks",
+      "description": "Fix 537 hardcoded_prices violations across 71 files",
+      "examples": [
+        {
+          "file": "src/app/academy/housing-assistance/page.tsx",
+          "line": 1,
+          "code": "£1,200",
+          "fix": "Replace with formatPrice() calls"
+        },
+        {
+          "file": "src/app/academy/housing-assistance/page.tsx",
+          "line": 1,
+          "code": "£2,000",
+          "fix": "Replace with formatPrice() calls"
+        },
+        {
+          "file": "src/app/academy/housing-assistance/page.tsx",
+          "line": 1,
+          "code": "£1,500",
+          "fix": "Replace with formatPrice() calls"
+        }
+      ],
+      "actionItems": [
+        "Import formatPrice from @/config/pricing",
+        "Replace price strings with formatPrice() calls",
+        "Ensure currency consistency",
+        "Test price display across locales"
+      ]
+    },
+    {
+      "phase": 3,
+      "category": "hardcoded_colors",
+      "severity": "medium",
+      "priority": 5,
+      "violationCount": 381,
+      "filesAffected": 30,
+      "timeEstimate": "2 weeks",
+      "description": "Fix 381 hardcoded_colors violations across 30 files",
+      "examples": [
+        {
+          "file": "src/app/admin/page.tsx",
+          "line": 1,
+          "code": "#FF6B6B",
+          "fix": "Replace with brandColors constants"
+        },
+        {
+          "file": "src/app/admin/page.tsx",
+          "line": 1,
+          "code": "#FF6B6B",
+          "fix": "Replace with brandColors constants"
+        },
+        {
+          "file": "src/app/admin/page.tsx",
+          "line": 1,
+          "code": "#FF6B6B",
+          "fix": "Replace with brandColors constants"
+        }
+      ],
+      "actionItems": [
+        "Import brandColors from @/config",
+        "Replace hex values with brand color constants",
+        "Update CSS custom properties",
+        "Verify design consistency"
+      ]
+    },
+    {
+      "phase": 4,
+      "category": "console_logs",
+      "severity": "low",
+      "priority": 6,
+      "violationCount": 137,
+      "filesAffected": 62,
+      "timeEstimate": "1 week",
+      "description": "Fix 137 console_logs violations across 62 files",
+      "examples": [
+        {
+          "file": "src/app/academy/business-networking/page.tsx",
+          "line": 1,
+          "code": "console.log(",
+          "fix": "Remove or replace with proper logging"
+        },
+        {
+          "file": "src/app/academy/cultural-events/page.tsx",
+          "line": 1,
+          "code": "console.log(",
+          "fix": "Remove or replace with proper logging"
+        },
+        {
+          "file": "src/app/academy/dating-matching/page.tsx",
+          "line": 1,
+          "code": "console.log(",
+          "fix": "Remove or replace with proper logging"
+        }
+      ],
+      "actionItems": [
+        "Review and fix console_logs violations",
+        "Test changes thoroughly"
+      ]
+    },
+    {
+      "phase": 4,
+      "category": "hardcoded_analytics",
+      "severity": "medium",
+      "priority": 7,
+      "violationCount": 60,
+      "filesAffected": 13,
+      "timeEstimate": "1 week",
+      "description": "Fix 60 hardcoded_analytics violations across 13 files",
+      "examples": [
+        {
+          "file": "src/components/ConversionOptimizationEngine.tsx",
+          "line": 1,
+          "code": "'attended_business_event'",
+          "fix": "Use ANALYTICS_EVENTS constants"
+        },
+        {
+          "file": "src/components/ConversionOptimizationEngine.tsx",
+          "line": 1,
+          "code": "'attended_cultural_event'",
+          "fix": "Use ANALYTICS_EVENTS constants"
+        },
+        {
+          "file": "src/components/LiveUpdateIndicator.tsx",
+          "line": 1,
+          "code": "'new_event'",
+          "fix": "Use ANALYTICS_EVENTS constants"
+        }
+      ],
+      "actionItems": [
+        "Review and fix hardcoded_analytics violations",
+        "Test changes thoroughly"
+      ]
+    }
+  ],
+  "mostProblematicFiles": [
+    {
+      "file": "src/lib/events.ts",
+      "violationCount": 2127
+    },
+    {
+      "file": "src/lib/partnerships.ts",
+      "violationCount": 1277
+    },
+    {
+      "file": "src/app/transport/page.tsx",
+      "violationCount": 1033
+    },
+    {
+      "file": "src/lib/networkingEvents.ts",
+      "violationCount": 1013
+    },
+    {
+      "file": "src/app/students/page.tsx",
+      "violationCount": 993
+    },
+    {
+      "file": "src/app/pricing/page.tsx",
+      "violationCount": 831
+    },
+    {
+      "file": "src/components/FestaIntegrationHub.tsx",
+      "violationCount": 746
+    },
+    {
+      "file": "src/app/careers/page.tsx",
+      "violationCount": 728
+    },
+    {
+      "file": "src/app/matches/page.tsx",
+      "violationCount": 724
+    },
+    {
+      "file": "src/app/neighborhood-groups/page.tsx",
+      "violationCount": 699
+    }
+  ],
+  "quickWins": [
+    {
+      "file": "src/app/academy/business-networking/page.tsx",
+      "line": 1,
+      "category": "console_logs",
+      "severity": "low",
+      "priority": 6,
+      "message": "Console.log detected - remove before production",
+      "code": "console.log(",
+      "fixPattern": "Remove or replace with proper logging",
+      "example": "console.log(...) → // Remove or use logger",
+      "timestamp": "2025-08-21T05:22:29.376Z"
+    },
+    {
+      "file": "src/app/academy/cultural-events/page.tsx",
+      "line": 1,
+      "category": "console_logs",
+      "severity": "low",
+      "priority": 6,
+      "message": "Console.log detected - remove before production",
+      "code": "console.log(",
+      "fixPattern": "Remove or replace with proper logging",
+      "example": "console.log(...) → // Remove or use logger",
+      "timestamp": "2025-08-21T05:22:29.378Z"
+    },
+    {
+      "file": "src/app/academy/dating-matching/page.tsx",
+      "line": 1,
+      "category": "console_logs",
+      "severity": "low",
+      "priority": 6,
+      "message": "Console.log detected - remove before production",
+      "code": "console.log(",
+      "fixPattern": "Remove or replace with proper logging",
+      "example": "console.log(...) → // Remove or use logger",
+      "timestamp": "2025-08-21T05:22:29.379Z"
+    },
+    {
+      "file": "src/app/academy/housing-assistance/page.tsx",
+      "line": 1,
+      "category": "console_logs",
+      "severity": "low",
+      "priority": 6,
+      "message": "Console.log detected - remove before production",
+      "code": "console.log(",
+      "fixPattern": "Remove or replace with proper logging",
+      "example": "console.log(...) → // Remove or use logger",
+      "timestamp": "2025-08-21T05:22:29.381Z"
+    },
+    {
+      "file": "src/app/academy/live-streaming/page.tsx",
+      "line": 1,
+      "category": "console_logs",
+      "severity": "low",
+      "priority": 6,
+      "message": "Console.log detected - remove before production",
+      "code": "console.log(",
+      "fixPattern": "Remove or replace with proper logging",
+      "example": "console.log(...) → // Remove or use logger",
+      "timestamp": "2025-08-21T05:22:29.384Z"
+    },
+    {
+      "file": "src/app/academy/transport-chauffeur/page.tsx",
+      "line": 1,
+      "category": "console_logs",
+      "severity": "low",
+      "priority": 6,
+      "message": "Console.log detected - remove before production",
+      "code": "console.log(",
+      "fixPattern": "Remove or replace with proper logging",
+      "example": "console.log(...) → // Remove or use logger",
+      "timestamp": "2025-08-21T05:22:29.388Z"
+    },
+    {
+      "file": "src/app/api/push-subscription/preferences/route.ts",
+      "line": 1,
+      "category": "console_logs",
+      "severity": "low",
+      "priority": 6,
+      "message": "Console.log detected - remove before production",
+      "code": "console.log(",
+      "fixPattern": "Remove or replace with proper logging",
+      "example": "console.log(...) → // Remove or use logger",
+      "timestamp": "2025-08-21T05:22:29.394Z"
+    },
+    {
+      "file": "src/app/api/push-subscription/preferences/route.ts",
+      "line": 1,
+      "category": "console_logs",
+      "severity": "low",
+      "priority": 6,
+      "message": "Console.log detected - remove before production",
+      "code": "console.log(",
+      "fixPattern": "Remove or replace with proper logging",
+      "example": "console.log(...) → // Remove or use logger",
+      "timestamp": "2025-08-21T05:22:29.394Z"
+    },
+    {
+      "file": "src/app/api/push-subscription/route.ts",
+      "line": 1,
+      "category": "console_logs",
+      "severity": "low",
+      "priority": 6,
+      "message": "Console.log detected - remove before production",
+      "code": "console.log(",
+      "fixPattern": "Remove or replace with proper logging",
+      "example": "console.log(...) → // Remove or use logger",
+      "timestamp": "2025-08-21T05:22:29.394Z"
+    },
+    {
+      "file": "src/app/api/push-subscription/route.ts",
+      "line": 1,
+      "category": "console_logs",
+      "severity": "low",
+      "priority": 6,
+      "message": "Console.log detected - remove before production",
+      "code": "console.log(",
+      "fixPattern": "Remove or replace with proper logging",
+      "example": "console.log(...) → // Remove or use logger",
+      "timestamp": "2025-08-21T05:22:29.394Z"
+    },
+    {
+      "file": "src/app/api/push-subscription/route.ts",
+      "line": 1,
+      "category": "console_logs",
+      "severity": "low",
+      "priority": 6,
+      "message": "Console.log detected - remove before production",
+      "code": "console.log(",
+      "fixPattern": "Remove or replace with proper logging",
+      "example": "console.log(...) → // Remove or use logger",
+      "timestamp": "2025-08-21T05:22:29.394Z"
+    },
+    {
+      "file": "src/app/api/push-subscription/route.ts",
+      "line": 1,
+      "category": "console_logs",
+      "severity": "low",
+      "priority": 6,
+      "message": "Console.log detected - remove before production",
+      "code": "console.log(",
+      "fixPattern": "Remove or replace with proper logging",
+      "example": "console.log(...) → // Remove or use logger",
+      "timestamp": "2025-08-21T05:22:29.394Z"
+    },
+    {
+      "file": "src/app/api/push-subscription/route.ts",
+      "line": 1,
+      "category": "console_logs",
+      "severity": "low",
+      "priority": 6,
+      "message": "Console.log detected - remove before production",
+      "code": "console.log(",
+      "fixPattern": "Remove or replace with proper logging",
+      "example": "console.log(...) → // Remove or use logger",
+      "timestamp": "2025-08-21T05:22:29.394Z"
+    },
+    {
+      "file": "src/app/api/webhook/stripe/route.ts",
+      "line": 1,
+      "category": "console_logs",
+      "severity": "low",
+      "priority": 6,
+      "message": "Console.log detected - remove before production",
+      "code": "console.log(",
+      "fixPattern": "Remove or replace with proper logging",
+      "example": "console.log(...) → // Remove or use logger",
+      "timestamp": "2025-08-21T05:22:29.396Z"
+    },
+    {
+      "file": "src/app/api/webhook/stripe/route.ts",
+      "line": 1,
+      "category": "console_logs",
+      "severity": "low",
+      "priority": 6,
+      "message": "Console.log detected - remove before production",
+      "code": "console.log(",
+      "fixPattern": "Remove or replace with proper logging",
+      "example": "console.log(...) → // Remove or use logger",
+      "timestamp": "2025-08-21T05:22:29.396Z"
+    },
+    {
+      "file": "src/app/api/webhook/stripe/route.ts",
+      "line": 1,
+      "category": "console_logs",
+      "severity": "low",
+      "priority": 6,
+      "message": "Console.log detected - remove before production",
+      "code": "console.log(",
+      "fixPattern": "Remove or replace with proper logging",
+      "example": "console.log(...) → // Remove or use logger",
+      "timestamp": "2025-08-21T05:22:29.396Z"
+    },
+    {
+      "file": "src/app/api/webhook/stripe/route.ts",
+      "line": 1,
+      "category": "console_logs",
+      "severity": "low",
+      "priority": 6,
+      "message": "Console.log detected - remove before production",
+      "code": "console.log(",
+      "fixPattern": "Remove or replace with proper logging",
+      "example": "console.log(...) → // Remove or use logger",
+      "timestamp": "2025-08-21T05:22:29.396Z"
+    },
+    {
+      "file": "src/app/api/webhook/stripe/route.ts",
+      "line": 1,
+      "category": "console_logs",
+      "severity": "low",
+      "priority": 6,
+      "message": "Console.log detected - remove before production",
+      "code": "console.log(",
+      "fixPattern": "Remove or replace with proper logging",
+      "example": "console.log(...) → // Remove or use logger",
+      "timestamp": "2025-08-21T05:22:29.396Z"
+    },
+    {
+      "file": "src/app/api/webhook/stripe/route.ts",
+      "line": 1,
+      "category": "console_logs",
+      "severity": "low",
+      "priority": 6,
+      "message": "Console.log detected - remove before production",
+      "code": "console.log(",
+      "fixPattern": "Remove or replace with proper logging",
+      "example": "console.log(...) → // Remove or use logger",
+      "timestamp": "2025-08-21T05:22:29.396Z"
+    },
+    {
+      "file": "src/app/api/webhook/stripe/route.ts",
+      "line": 1,
+      "category": "console_logs",
+      "severity": "low",
+      "priority": 6,
+      "message": "Console.log detected - remove before production",
+      "code": "console.log(",
+      "fixPattern": "Remove or replace with proper logging",
+      "example": "console.log(...) → // Remove or use logger",
+      "timestamp": "2025-08-21T05:22:29.396Z"
+    }
+  ],
+  "criticalIssues": [
+    {
+      "file": "src/app/social-networks/page.tsx",
+      "line": 1,
+      "category": "demo_credentials",
+      "severity": "critical",
+      "priority": 0,
+      "message": "Demo credentials detected - move to environment variables",
+      "code": "demo@lusotown.com",
+      "fixPattern": "Use process.env.NEXT_PUBLIC_DEMO_*",
+      "example": "\"demo@lusotown.com\" → process.env.NEXT_PUBLIC_DEMO_EMAIL",
+      "timestamp": "2025-08-21T05:22:29.554Z"
+    },
+    {
+      "file": "src/lib/auth.ts",
+      "line": 1,
+      "category": "demo_credentials",
+      "severity": "critical",
+      "priority": 0,
+      "message": "Demo credentials detected - move to environment variables",
+      "code": "demo@lusotown.com",
+      "fixPattern": "Use process.env.NEXT_PUBLIC_DEMO_*",
+      "example": "\"demo@lusotown.com\" → process.env.NEXT_PUBLIC_DEMO_EMAIL",
+      "timestamp": "2025-08-21T05:22:30.156Z"
+    },
+    {
+      "file": "src/lib/auth.ts",
+      "line": 1,
+      "category": "demo_credentials",
+      "severity": "critical",
+      "priority": 0,
+      "message": "Demo credentials detected - move to environment variables",
+      "code": "LusoTown2025!",
+      "fixPattern": "Use process.env.NEXT_PUBLIC_DEMO_*",
+      "example": "\"demo@lusotown.com\" → process.env.NEXT_PUBLIC_DEMO_EMAIL",
+      "timestamp": "2025-08-21T05:22:30.156Z"
+    },
+    {
+      "file": "src/lib/auth.ts",
+      "line": 1,
+      "category": "demo_credentials",
+      "severity": "critical",
+      "priority": 0,
+      "message": "Demo credentials detected - move to environment variables",
+      "code": "demo@lusotown.com",
+      "fixPattern": "Use process.env.NEXT_PUBLIC_DEMO_*",
+      "example": "\"demo@lusotown.com\" → process.env.NEXT_PUBLIC_DEMO_EMAIL",
+      "timestamp": "2025-08-21T05:22:30.156Z"
+    }
+  ],
+  "violations": [
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "'use client'",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "'@/components/Footer'",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "'@/config/routes'",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "'@heroicons/react/24/outline'",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "'@/context/LanguageContext'",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"min-h-screen\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n        {/* Hero Section */}\n        <section className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n          <div className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n            <div className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n              <div className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                <GlobeAltIcon className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "'about.hero.badge'",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "'Unidos pela Língua • United by Language'",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-4xl sm:text-5xl font-bold text-gray-900 mb-6\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"hidden sm:block\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"gradient-text\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"sm:hidden\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"gradient-text\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-xl text-gray-600 leading-relaxed\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"hidden sm:block\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "'re new to the city, have roots in a Portuguese-speaking country, or simply love our culture and language, this is your space to meet people in person, share, and celebrate.\n                </span>\n                {/* Mobile short subtitle */}\n                <span className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                  Connecting Portuguese speakers in London through real-life meetups!\n                </span>\n              </p>\n            </div>\n          </div>\n        </section>\n\n        {/* Founder Story Section */}\n        <section className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n          <div className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n            <div className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n              <div className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                <div>\n                  <div className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                    <div className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                      <div className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                        LT\n                      </div>\n                      <p className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">LusoTown Team</p>\n                      <p className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">Community Builders</p>\n                      <p className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">London • Portuguese Heritage</p>\n                    </div>\n                  </div>\n                </div>\n                <div>\n                  <h2 className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"We Know How Much It Means to Keep the Language Alive\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"prose text-gray-600 space-y-4\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "'re \n                      from Portugal, Brazil, Angola, or any Portuguese-speaking nation, the UK is now home.\n                    </p>\n                    <p>\n                      <strong>We'",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "'s Portuguese diaspora is rich and diverse,</strong> but we'",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"bg-gradient-to-br from-primary-50 to-white rounded-2xl p-8 mb-16\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-xl text-gray-700 font-medium italic text-center mb-6\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"A saudade que sentimos da nossa terra natal nunca desaparece, mas em Londres, \n                  podemos criar um pedacinho de casa juntos. LusoTown é onde nos encontramos, \n                  onde celebramos quem somos.\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-center\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"w-12 h-12 bg-gradient-to-br from-primary-400 to-secondary-400 rounded-full flex items-center justify-center text-white text-sm font-bold mx-auto mb-2\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-sm text-gray-600 font-medium\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"bg-white rounded-2xl p-8 shadow-lg mb-16\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-2xl font-semibold text-gray-900 mb-6 text-center\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"grid md:grid-cols-2 gap-6\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"flex items-start gap-3\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"w-8 h-8 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"font-semibold text-gray-900 mb-1\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-gray-600\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"flex items-start gap-3\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"w-8 h-8 bg-secondary-100 text-secondary-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"font-semibold text-gray-900 mb-1\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-gray-600\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"flex items-start gap-3\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"w-8 h-8 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"font-semibold text-gray-900 mb-1\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-gray-600\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"flex items-start gap-3\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"w-8 h-8 bg-pink-100 text-pink-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"font-semibold text-gray-900 mb-1\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-gray-600\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"flex items-start gap-3\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"w-8 h-8 bg-green-100 text-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"font-semibold text-gray-900 mb-1\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-gray-600\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"flex items-start gap-3\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"w-8 h-8 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"font-semibold text-gray-900 mb-1\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-gray-600\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"mt-8 pt-6 border-t border-gray-200\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-gray-600 text-center\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"Aha\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"py-20 bg-gray-50\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"container-width\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"max-w-4xl mx-auto\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-3xl font-bold text-gray-900 text-center mb-12\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"grid md:grid-cols-3 gap-8 mb-16\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"text-center\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\"w-16 h-16 bg-primary-100 text-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-4\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\" />\n                  </div>\n                  <h3 className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">Saudade & Connection</h3>\n                  <p className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                    That feeling of missing home, our culture, and speaking Portuguese naturally with people who understand. \n                    We created a space where saudade becomes connection.\n                  </p>\n                </div>\n                <div className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                  <div className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                    <BookOpenIcon className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\" />\n                  </div>\n                  <h3 className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">Language Preservation</h3>\n                  <p className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                    Helping preserve Portuguese language and culture, supporting those who are proud of their heritage, \n                    and keeping our beautiful language alive in London.\n                  </p>\n                </div>\n                <div className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                  <div className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                    <UserGroupIcon className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\" />\n                  </div>\n                  <h3 className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">Community Support</h3>\n                  <p className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                    From finding Portuguese schools to navigating UK systems, we help each other with the practical \n                    and emotional challenges of life in London as Portuguese speakers.\n                  </p>\n                </div>\n              </div>\n            </div>\n          </div>\n        </section>\n\n        {/* Our Mission & Impact */}\n        <section className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n          <div className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n            <div className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n              <div className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                <h2 className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                  Nossa Missão: Preservar a Cultura, Conectar Corações\n                </h2>\n                <p className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                  We believe every Portuguese speaker in London deserves a community that celebrates \n                  our heritage, supports our community, and keeps our beautiful language thriving.\n                </p>\n              </div>\n\n              <div className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                <div className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    },
+    {
+      "file": "src/app/about/page.tsx",
+      "line": 1,
+      "category": "hardcoded_text",
+      "severity": "high",
+      "priority": 1,
+      "message": "Hardcoded text detected - should use t() function",
+      "code": "\">\n                  <h3 className=\"",
+      "fixPattern": "Replace with {t('category.key')}",
+      "example": "\"Welcome\" → {t('welcome.message')}",
+      "timestamp": "2025-08-21T05:22:29.372Z"
+    }
+  ]
+}

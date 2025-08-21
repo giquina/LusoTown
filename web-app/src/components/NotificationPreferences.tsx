@@ -302,24 +302,24 @@ export default function NotificationPreferences({ className = '' }: Notification
   if (!localPreferences) {
     return (
       <div className={`animate-pulse ${className}`}>
-        <div className="h-8 bg-neutral-200 rounded mb-4"></div>
+        <div className="h-8 bg-secondary-200 rounded mb-4"></div>
         <div className="space-y-3">
-          <div className="h-4 bg-neutral-200 rounded"></div>
-          <div className="h-4 bg-neutral-200 rounded"></div>
-          <div className="h-4 bg-neutral-200 rounded"></div>
+          <div className="h-4 bg-secondary-200 rounded"></div>
+          <div className="h-4 bg-secondary-200 rounded"></div>
+          <div className="h-4 bg-secondary-200 rounded"></div>
         </div>
       </div>
     )
   }
 
   return (
-    <div className={`bg-white rounded-lg shadow-sm border border-neutral-200 ${className}`}>
+    <div className={`bg-white rounded-lg shadow-sm border border-secondary-200 ${className}`}>
       {/* Header */}
-      <div className="border-b border-neutral-200 p-6">
-        <h2 className="text-xl font-semibold text-neutral-900 mb-2">
+      <div className="border-b border-secondary-200 p-6">
+        <h2 className="text-xl font-semibold text-secondary-900 mb-2">
           {language === 'pt' ? 'Preferências de Notificação' : 'Notification Preferences'}
         </h2>
-        <p className="text-sm text-neutral-600">
+        <p className="text-sm text-secondary-600">
           {language === 'pt' 
             ? 'Personalize como e quando recebe notificações da comunidade portuguesa em Londres'
             : 'Customize how and when you receive notifications from the Portuguese community in London'
@@ -328,7 +328,7 @@ export default function NotificationPreferences({ className = '' }: Notification
       </div>
 
       {/* Tabs */}
-      <div className="border-b border-neutral-200">
+      <div className="border-b border-secondary-200">
         <nav className="flex space-x-8 px-6">
           {tabs.map((tab) => (
             <button
@@ -337,7 +337,7 @@ export default function NotificationPreferences({ className = '' }: Notification
               className={`flex items-center space-x-2 py-4 text-sm font-medium border-b-2 transition-colors ${
                 activeTab === tab.key
                   ? 'border-primary-500 text-primary-600'
-                  : 'border-transparent text-neutral-500 hover:text-neutral-700'
+                  : 'border-transparent text-secondary-500 hover:text-secondary-700'
               }`}
             >
               <tab.icon className="h-4 w-4" />
@@ -356,7 +356,7 @@ export default function NotificationPreferences({ className = '' }: Notification
             className="space-y-6"
           >
             <div>
-              <h3 className="text-lg font-medium text-neutral-900 mb-4">
+              <h3 className="text-lg font-medium text-secondary-900 mb-4">
                 {language === 'pt' ? 'Canais de Entrega' : 'Delivery Channels'}
               </h3>
               <div className="space-y-4">
@@ -365,17 +365,17 @@ export default function NotificationPreferences({ className = '' }: Notification
                   const Icon = channel.icon
                   
                   return (
-                    <div key={channel.key} className="flex items-start space-x-4 p-4 rounded-lg border border-neutral-200">
+                    <div key={channel.key} className="flex items-start space-x-4 p-4 rounded-lg border border-secondary-200">
                       <div className="flex-shrink-0">
-                        <Icon className={`h-6 w-6 ${channel.available ? 'text-primary-600' : 'text-neutral-400'}`} />
+                        <Icon className={`h-6 w-6 ${channel.available ? 'text-primary-600' : 'text-secondary-400'}`} />
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center justify-between">
                           <div>
-                            <h4 className="text-sm font-medium text-neutral-900">
+                            <h4 className="text-sm font-medium text-secondary-900">
                               {language === 'pt' ? channel.labelPT : channel.label}
                             </h4>
-                            <p className="text-xs text-neutral-500 mt-1">
+                            <p className="text-xs text-secondary-500 mt-1">
                               {language === 'pt' ? channel.descriptionPT : channel.description}
                             </p>
                           </div>
@@ -384,14 +384,14 @@ export default function NotificationPreferences({ className = '' }: Notification
                             onChange={(enabled) => handleChannelToggle(channel.key, enabled)}
                             disabled={!channel.available}
                             className={`${
-                              channelSettings.enabled && channel.available ? 'bg-primary-600' : 'bg-neutral-200'
+                              channelSettings.enabled && channel.available ? 'bg-primary-600' : 'bg-secondary-200'
                             } relative inline-flex h-5 w-9 items-center rounded-full transition-colors ${
                               !channel.available ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
                             }`}
                           >
                             <span
                               className={`${
-                                channelSettings.enabled && channel.available ? 'translate-x-5' : 'translate-x-1'
+                                channelSettings.enabled && channel.available ? 'transecondary-x-5' : 'transecondary-x-1'
                               } inline-block h-3 w-3 transform rounded-full bg-white transition-transform`}
                             />
                           </Switch>
@@ -452,19 +452,19 @@ export default function NotificationPreferences({ className = '' }: Notification
             className="space-y-6"
           >
             <div>
-              <h3 className="text-lg font-medium text-neutral-900 mb-4">
+              <h3 className="text-lg font-medium text-secondary-900 mb-4">
                 {language === 'pt' ? 'Categorias de Notificação' : 'Notification Categories'}
               </h3>
               <div className="space-y-6">
                 {categories.map((category) => (
-                  <div key={category.key} className="border border-neutral-200 rounded-lg p-4">
+                  <div key={category.key} className="border border-secondary-200 rounded-lg p-4">
                     <div className="flex items-start space-x-3 mb-4">
                       <span className="text-lg">{category.icon}</span>
                       <div className="flex-1">
-                        <h4 className="text-sm font-medium text-neutral-900">
+                        <h4 className="text-sm font-medium text-secondary-900">
                           {language === 'pt' ? category.labelPT : category.label}
                         </h4>
-                        <p className="text-xs text-neutral-500 mt-1">
+                        <p className="text-xs text-secondary-500 mt-1">
                           {language === 'pt' ? category.descriptionPT : category.description}
                         </p>
                         <div className="mt-2">
@@ -472,7 +472,7 @@ export default function NotificationPreferences({ className = '' }: Notification
                             <summary className="text-xs text-primary-600 cursor-pointer">
                               {language === 'pt' ? 'Ver exemplos' : 'View examples'}
                             </summary>
-                            <ul className="mt-2 text-xs text-neutral-500 space-y-1 pl-4">
+                            <ul className="mt-2 text-xs text-secondary-500 space-y-1 pl-4">
                               {category.examples.map((example, index) => (
                                 <li key={index}>• {language === 'pt' ? example.pt : example.en}</li>
                               ))}
@@ -489,7 +489,7 @@ export default function NotificationPreferences({ className = '' }: Notification
                         
                         return (
                           <div key={channel.key} className="flex items-center justify-between">
-                            <span className="text-xs text-neutral-600">
+                            <span className="text-xs text-secondary-600">
                               {language === 'pt' ? channel.labelPT : channel.label}
                             </span>
                             <Switch
@@ -497,14 +497,14 @@ export default function NotificationPreferences({ className = '' }: Notification
                               onChange={(enabled) => handleCategoryToggle(channel.key, category.key, enabled)}
                               disabled={!channelSettings.enabled}
                               className={`${
-                                isEnabled ? 'bg-primary-600' : 'bg-neutral-200'
+                                isEnabled ? 'bg-primary-600' : 'bg-secondary-200'
                               } relative inline-flex h-4 w-7 items-center rounded-full transition-colors ${
                                 !channelSettings.enabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
                               }`}
                             >
                               <span
                                 className={`${
-                                  isEnabled ? 'translate-x-4' : 'translate-x-1'
+                                  isEnabled ? 'transecondary-x-4' : 'transecondary-x-1'
                                 } inline-block h-2 w-2 transform rounded-full bg-white transition-transform`}
                               />
                             </Switch>
@@ -529,11 +529,11 @@ export default function NotificationPreferences({ className = '' }: Notification
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <GlobeAltIcon className="h-5 w-5 text-primary-600" />
-                <h3 className="text-lg font-medium text-neutral-900">
+                <h3 className="text-lg font-medium text-secondary-900">
                   {language === 'pt' ? 'Interesses Culturais' : 'Cultural Interests'}
                 </h3>
               </div>
-              <p className="text-sm text-neutral-600 mb-4">
+              <p className="text-sm text-secondary-600 mb-4">
                 {language === 'pt' 
                   ? 'Selecione os seus interesses culturais portugueses para receber notificações relevantes'
                   : 'Select your Portuguese cultural interests to receive relevant notifications'
@@ -552,9 +552,9 @@ export default function NotificationPreferences({ className = '' }: Notification
                           : localPersonalization.interests.filter(i => i !== interest.value)
                         handlePersonalizationUpdate({ interests })
                       }}
-                      className="w-4 h-4 text-primary-600 rounded border-neutral-300"
+                      className="w-4 h-4 text-primary-600 rounded border-secondary-300"
                     />
-                    <span className="text-sm text-neutral-700">
+                    <span className="text-sm text-secondary-700">
                       {language === 'pt' ? interest.labelPT : interest.label}
                     </span>
                   </label>
@@ -566,11 +566,11 @@ export default function NotificationPreferences({ className = '' }: Notification
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <BriefcaseIcon className="h-5 w-5 text-primary-600" />
-                <h3 className="text-lg font-medium text-neutral-900">
+                <h3 className="text-lg font-medium text-secondary-900">
                   {language === 'pt' ? 'Interesses Profissionais' : 'Professional Interests'}
                 </h3>
               </div>
-              <p className="text-sm text-neutral-600 mb-4">
+              <p className="text-sm text-secondary-600 mb-4">
                 {language === 'pt' 
                   ? 'Selecione as suas áreas profissionais para networking e oportunidades'
                   : 'Select your professional areas for networking and opportunities'
@@ -589,9 +589,9 @@ export default function NotificationPreferences({ className = '' }: Notification
                           : localPersonalization.professionalSector.filter(i => i !== interest.value)
                         handlePersonalizationUpdate({ professionalSector })
                       }}
-                      className="w-4 h-4 text-primary-600 rounded border-neutral-300"
+                      className="w-4 h-4 text-primary-600 rounded border-secondary-300"
                     />
-                    <span className="text-sm text-neutral-700">
+                    <span className="text-sm text-secondary-700">
                       {language === 'pt' ? interest.labelPT : interest.label}
                     </span>
                   </label>
@@ -603,11 +603,11 @@ export default function NotificationPreferences({ className = '' }: Notification
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <MapPinIcon className="h-5 w-5 text-primary-600" />
-                <h3 className="text-lg font-medium text-neutral-900">
+                <h3 className="text-lg font-medium text-secondary-900">
                   {language === 'pt' ? 'Preferências de Localização' : 'Location Preferences'}
                 </h3>
               </div>
-              <p className="text-sm text-neutral-600 mb-4">
+              <p className="text-sm text-secondary-600 mb-4">
                 {language === 'pt' 
                   ? 'Selecione as áreas de interesse para eventos e atividades'
                   : 'Select areas of interest for events and activities'
@@ -626,9 +626,9 @@ export default function NotificationPreferences({ className = '' }: Notification
                           : localPersonalization.locationPreferences.filter(l => l !== location.value)
                         handlePersonalizationUpdate({ locationPreferences })
                       }}
-                      className="w-4 h-4 text-primary-600 rounded border-neutral-300"
+                      className="w-4 h-4 text-primary-600 rounded border-secondary-300"
                     />
-                    <span className="text-sm text-neutral-700">
+                    <span className="text-sm text-secondary-700">
                       {language === 'pt' ? location.labelPT : location.label}
                     </span>
                   </label>
@@ -648,11 +648,11 @@ export default function NotificationPreferences({ className = '' }: Notification
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <ClockIcon className="h-5 w-5 text-primary-600" />
-                <h3 className="text-lg font-medium text-neutral-900">
+                <h3 className="text-lg font-medium text-secondary-900">
                   {language === 'pt' ? 'Horas de Silêncio' : 'Quiet Hours'}
                 </h3>
               </div>
-              <p className="text-sm text-neutral-600 mb-4">
+              <p className="text-sm text-secondary-600 mb-4">
                 {language === 'pt' 
                   ? 'Configure quando não quer receber notificações'
                   : 'Configure when you don\'t want to receive notifications'
@@ -661,7 +661,7 @@ export default function NotificationPreferences({ className = '' }: Notification
               
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-neutral-700">
+                  <span className="text-sm font-medium text-secondary-700">
                     {language === 'pt' ? 'Ativar horas de silêncio' : 'Enable quiet hours'}
                   </span>
                   <Switch
@@ -672,12 +672,12 @@ export default function NotificationPreferences({ className = '' }: Notification
                       })
                     }
                     className={`${
-                      localPreferences.quietHours.enabled ? 'bg-primary-600' : 'bg-neutral-200'
+                      localPreferences.quietHours.enabled ? 'bg-primary-600' : 'bg-secondary-200'
                     } relative inline-flex h-5 w-9 items-center rounded-full transition-colors cursor-pointer`}
                   >
                     <span
                       className={`${
-                        localPreferences.quietHours.enabled ? 'translate-x-5' : 'translate-x-1'
+                        localPreferences.quietHours.enabled ? 'transecondary-x-5' : 'transecondary-x-1'
                       } inline-block h-3 w-3 transform rounded-full bg-white transition-transform`}
                     />
                   </Switch>
@@ -686,7 +686,7 @@ export default function NotificationPreferences({ className = '' }: Notification
                 {localPreferences.quietHours.enabled && (
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-neutral-700 mb-1">
+                      <label className="block text-sm font-medium text-secondary-700 mb-1">
                         {language === 'pt' ? 'Início' : 'Start Time'}
                       </label>
                       <input
@@ -697,11 +697,11 @@ export default function NotificationPreferences({ className = '' }: Notification
                             quietHours: { ...localPreferences.quietHours, startTime: e.target.value } 
                           })
                         }
-                        className="w-full rounded-lg border border-neutral-300 px-3 py-2 text-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
+                        className="w-full rounded-lg border border-secondary-300 px-3 py-2 text-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-neutral-700 mb-1">
+                      <label className="block text-sm font-medium text-secondary-700 mb-1">
                         {language === 'pt' ? 'Fim' : 'End Time'}
                       </label>
                       <input
@@ -712,7 +712,7 @@ export default function NotificationPreferences({ className = '' }: Notification
                             quietHours: { ...localPreferences.quietHours, endTime: e.target.value } 
                           })
                         }
-                        className="w-full rounded-lg border border-neutral-300 px-3 py-2 text-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
+                        className="w-full rounded-lg border border-secondary-300 px-3 py-2 text-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
                       />
                     </div>
                   </div>
@@ -722,13 +722,13 @@ export default function NotificationPreferences({ className = '' }: Notification
 
             {/* Analytics Insights */}
             {analytics && (
-              <div className="bg-neutral-50 rounded-lg p-4">
-                <h4 className="text-sm font-medium text-neutral-900 mb-3">
+              <div className="bg-secondary-50 rounded-lg p-4">
+                <h4 className="text-sm font-medium text-secondary-900 mb-3">
                   {language === 'pt' ? 'Insights de Notificação' : 'Notification Insights'}
                 </h4>
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div>
-                    <span className="text-neutral-600">
+                    <span className="text-secondary-600">
                       {language === 'pt' ? 'Taxa de Leitura:' : 'Read Rate:'}
                     </span>
                     <span className="font-medium text-primary-600 ml-1">
@@ -736,7 +736,7 @@ export default function NotificationPreferences({ className = '' }: Notification
                     </span>
                   </div>
                   <div>
-                    <span className="text-neutral-600">
+                    <span className="text-secondary-600">
                       {language === 'pt' ? 'Pontuação de Engajamento:' : 'Engagement Score:'}
                     </span>
                     <span className="font-medium text-primary-600 ml-1">
@@ -744,7 +744,7 @@ export default function NotificationPreferences({ className = '' }: Notification
                     </span>
                   </div>
                   <div className="col-span-2">
-                    <span className="text-neutral-600">
+                    <span className="text-secondary-600">
                       {language === 'pt' ? 'Melhores horários:' : 'Optimal times:'}
                     </span>
                     <span className="font-medium text-primary-600 ml-1">

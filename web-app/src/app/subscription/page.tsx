@@ -99,7 +99,7 @@ export default function SubscriptionPage() {
                 <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                   {isPortuguese ? 'A Sua Subscrição' : 'Your Subscription'}
                 </h1>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
                   {isPortuguese 
                     ? 'Gerir a sua subscrição da comunidade portuguesa de Londres'
                     : 'Manage your London Portuguese community subscription'
@@ -123,7 +123,7 @@ export default function SubscriptionPage() {
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 mb-8"
+                    className="bg-white rounded-2xl shadow-lg border border-secondary-200 p-6 mb-8"
                   >
                     <h2 className="text-xl font-bold text-gray-900 mb-6">
                       {isPortuguese ? 'Estado da Subscrição' : 'Subscription Status'}
@@ -136,7 +136,7 @@ export default function SubscriptionPage() {
                     ) : hasActiveSubscription ? (
                       <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
                         <div className="flex items-center gap-3 mb-4">
-                          <CheckCircleIcon className="w-6 h-6 text-green-500" />
+                          <CheckCircleIcon className="w-6 h-6 text-action-500" />
                           <span className="font-semibold text-green-900">
                             {isPortuguese ? 'Subscrição Ativa' : 'Active Subscription'}
                           </span>
@@ -165,7 +165,7 @@ export default function SubscriptionPage() {
                           <button
                             onClick={handleCancel}
                             disabled={isCancelling}
-                            className="text-sm text-red-600 hover:text-red-700 underline disabled:opacity-50"
+                            className="text-sm text-coral-600 hover:text-red-700 underline disabled:opacity-50"
                           >
                             {isCancelling 
                               ? (isPortuguese ? 'Cancelando...' : 'Cancelling...')
@@ -219,7 +219,7 @@ export default function SubscriptionPage() {
                     ) : (
                       <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
                         <div className="flex items-center gap-3 mb-4">
-                          <ExclamationTriangleIcon className="w-6 h-6 text-red-600" />
+                          <ExclamationTriangleIcon className="w-6 h-6 text-coral-600" />
                           <span className="font-semibold text-red-900">
                             {isPortuguese ? 'Subscrição Necessária' : 'Subscription Required'}
                           </span>
@@ -256,7 +256,7 @@ export default function SubscriptionPage() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 }}
-                    className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6"
+                    className="bg-white rounded-2xl shadow-lg border border-secondary-200 p-6"
                   >
                     <h3 className="text-lg font-bold text-gray-900 mb-6">
                       {isPortuguese ? 'O que está incluído na sua subscrição:' : 'What\'s included in your subscription:'}
@@ -292,7 +292,7 @@ export default function SubscriptionPage() {
                             </div>
                             <div>
                               <h4 className="font-medium text-gray-900 text-sm">{feature.title}</h4>
-                              <p className="text-xs text-gray-600 mt-1">{feature.description}</p>
+                              <p className="text-xs text-secondary-600 mt-1">{feature.description}</p>
                             </div>
                           </div>
                         )
@@ -306,14 +306,14 @@ export default function SubscriptionPage() {
                   <motion.div
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 mb-6"
+                    className="bg-white rounded-2xl shadow-lg border border-secondary-200 p-6 mb-6"
                   >
                     <h3 className="text-lg font-bold text-gray-900 mb-4">
                       {isPortuguese ? 'Preço' : 'Pricing'}
                     </h3>
                     <div className="text-center">
                       <div className="text-3xl font-bold text-gray-900 mb-1">£19.99</div>
-                      <div className="text-sm text-gray-600 mb-3">
+                      <div className="text-sm text-secondary-600 mb-3">
                         {isPortuguese ? 'por mês' : 'per month'}
                       </div>
                       <div className="text-xs text-gray-500 mb-4">
@@ -338,7 +338,7 @@ export default function SubscriptionPage() {
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 }}
-                    className="bg-gray-50 rounded-2xl p-6"
+                    className="bg-secondary-50 rounded-2xl p-6"
                   >
                     <h3 className="text-sm font-semibold text-gray-900 mb-4">
                       {isPortuguese ? 'Precisa de ajuda?' : 'Need help?'}
@@ -346,21 +346,21 @@ export default function SubscriptionPage() {
                     <div className="space-y-3">
                       <a 
                         href={ROUTES.contact} 
-                        className="flex items-center gap-2 text-sm text-gray-600 hover:text-primary-600 transition-colors"
+                        className="flex items-center gap-2 text-sm text-secondary-600 hover:text-primary-600 transition-colors"
                       >
                         <span>{isPortuguese ? 'Contactar Suporte' : 'Contact Support'}</span>
                         <ArrowRightIcon className="w-4 h-4" />
                       </a>
                       <a 
                         href={ROUTES.faq} 
-                        className="flex items-center gap-2 text-sm text-gray-600 hover:text-primary-600 transition-colors"
+                        className="flex items-center gap-2 text-sm text-secondary-600 hover:text-primary-600 transition-colors"
                       >
                         <span>{isPortuguese ? 'Perguntas Frequentes' : 'Frequently Asked Questions'}</span>
                         <ArrowRightIcon className="w-4 h-4" />
                       </a>
                       <a 
                         href={ROUTES.terms} 
-                        className="flex items-center gap-2 text-sm text-gray-600 hover:text-primary-600 transition-colors"
+                        className="flex items-center gap-2 text-sm text-secondary-600 hover:text-primary-600 transition-colors"
                       >
                         <span>{isPortuguese ? 'Termos de Serviço' : 'Terms of Service'}</span>
                         <ArrowRightIcon className="w-4 h-4" />

@@ -70,7 +70,7 @@ export default function SmartRecommendations() {
       
       <div className="space-y-4">
         {recommendations.slice(0, 3).map((rec) => (
-          <div key={rec.id} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <div key={rec.id} className="border border-secondary-200 rounded-lg p-4 hover:shadow-md transition-shadow">
             <div className="flex items-start justify-between mb-3">
               <div className="flex items-center space-x-3">
                 <div className="flex-shrink-0 w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center text-white">
@@ -78,7 +78,7 @@ export default function SmartRecommendations() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900">{rec.title}</h3>
-                  <p className="text-sm text-gray-600">{rec.description}</p>
+                  <p className="text-sm text-secondary-600">{rec.description}</p>
                 </div>
               </div>
               <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium border ${getUrgencyColor(rec.urgency)}`}>
@@ -89,7 +89,7 @@ export default function SmartRecommendations() {
             </div>
             
             <div className="flex items-center justify-between mb-3">
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-secondary-600">
                 <span className="font-medium">
                   {language === 'pt' ? 'Baseado em:' : 'Based on:'}{' '}
                 </span>
@@ -133,7 +133,7 @@ export default function SmartRecommendations() {
         {recommendations.length === 0 && (
           <div className="text-center py-8">
             <Sparkles className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {language === 'pt' 
                 ? 'Nenhuma recomendação disponível no momento' 
                 : 'No recommendations available right now'

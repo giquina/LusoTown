@@ -1,8 +1,11 @@
 "use client";
 
 import Footer from "@/components/Footer";
+import { buildCloudinaryUrl } from '@/config'
 import { useLanguage } from "@/context/LanguageContext";
+import { buildCloudinaryUrl } from '@/config'
 import { motion } from "framer-motion";
+import { buildCloudinaryUrl } from '@/config'
 import { 
   MapPinIcon, 
   SparklesIcon,
@@ -17,6 +20,7 @@ import {
   ExclamationTriangleIcon
 } from "@heroicons/react/24/outline";
 import { isServiceAvailable, getServiceStatus, getAvailabilityStyles, getAvailabilityLabel } from "@/lib/serviceAvailability";
+import { buildCloudinaryUrl } from '@/config'
 
 export default function ToursPage() {
   const { language } = useLanguage();
@@ -150,10 +154,10 @@ export default function ToursPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
-        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535204/london-skyline-heritage_kqw8xr.jpg')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url(buildCloudinaryUrl('dqhbeqttp/image/upload/v1734535204/london-skyline-heritage_kqw8xr.jpg'))] bg-cover bg-center opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-primary-900/10 via-transparent to-secondary-900/10"></div>
         <div className="relative container-width py-16 lg:py-24">
           <div className="text-center max-w-4xl mx-auto">
@@ -227,7 +231,7 @@ export default function ToursPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
+              className="text-xl text-secondary-600 mb-8 max-w-3xl mx-auto"
             >
               {/* Desktop full subtitle */}
               <span className="hidden sm:block">
@@ -249,7 +253,7 @@ export default function ToursPage() {
               transition={{ duration: 0.6, delay: 0.25 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6"
             >
-              <div className="flex items-center gap-2 text-sm text-gray-600">
+              <div className="flex items-center gap-2 text-sm text-secondary-600">
                 <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
                 <span>
                   {isPortuguese
@@ -257,7 +261,7 @@ export default function ToursPage() {
                     : "Experienced Portuguese Guides"}
                 </span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-600">
+              <div className="flex items-center gap-2 text-sm text-secondary-600">
                 <div className="w-2 h-2 bg-secondary-500 rounded-full"></div>
                 <span>
                   {isPortuguese
@@ -265,7 +269,7 @@ export default function ToursPage() {
                     : "Iconic Historic Landmarks"}
                 </span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-600">
+              <div className="flex items-center gap-2 text-sm text-secondary-600">
                 <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
                 <span>
                   {isPortuguese
@@ -283,13 +287,13 @@ export default function ToursPage() {
             >
               <button
                 onClick={() => document.getElementById('tours')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1"
+                className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-transecondary-y-1"
               >
                 {isPortuguese ? "Ver Tours" : "View Tours"}
               </button>
               <button
                 onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="border border-secondary-300 text-secondary-700 px-8 py-4 rounded-2xl font-semibold hover:bg-secondary-50 hover:border-secondary-400 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 {isPortuguese ? "Testemunhos" : "Testimonials"}
               </button>
@@ -306,7 +310,7 @@ export default function ToursPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {isPortuguese ? "Tours Autênticos com Guias Portugueses" : "Authentic Tours with Portuguese Guides"}
               </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
                 {isPortuguese 
                   ? "Explore os marcos mais famosos de Londres com guias portugueses qualificados que explicam tudo na nossa língua."
                   : "Explore London's most famous landmarks with qualified Portuguese guides who explain everything in our language."
@@ -369,15 +373,15 @@ export default function ToursPage() {
                     </div>
                     
                     {/* Description */}
-                    <p className="text-gray-600 mb-6 leading-relaxed">{tour.description}</p>
+                    <p className="text-secondary-600 mb-6 leading-relaxed">{tour.description}</p>
                     
                     {/* Tour Details */}
                     <div className="grid grid-cols-2 gap-4 mb-6">
-                      <div className="flex items-center gap-2 text-gray-600">
+                      <div className="flex items-center gap-2 text-secondary-600">
                         <ClockIcon className="w-5 h-5 text-primary-600" />
                         <span className="text-sm">{tour.duration}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-gray-600">
+                      <div className="flex items-center gap-2 text-secondary-600">
                         <UserGroupIcon className="w-5 h-5 text-secondary-600" />
                         <span className="text-sm">{tour.groupSize} {isPortuguese ? "pessoas" : "people"}</span>
                       </div>
@@ -391,8 +395,8 @@ export default function ToursPage() {
                       <div className="space-y-2">
                         {tour.highlights.slice(0, 3).map((highlight, idx) => (
                           <div key={idx} className="flex items-start gap-2">
-                            <CheckCircleIcon className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
-                            <span className="text-sm text-gray-600">{highlight}</span>
+                            <CheckCircleIcon className="w-4 h-4 text-action-600 mt-0.5 flex-shrink-0" />
+                            <span className="text-sm text-secondary-600">{highlight}</span>
                           </div>
                         ))}
                         {tour.highlights.length > 3 && (
@@ -404,14 +408,14 @@ export default function ToursPage() {
                     </div>
                     
                     {/* Guide Information */}
-                    <div className="bg-gray-50 rounded-2xl p-4 mb-6">
+                    <div className="bg-secondary-50 rounded-2xl p-4 mb-6">
                       <div className="flex items-center gap-3">
                         <div className="w-12 h-12 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-full flex items-center justify-center">
                           <UserIcon className="w-6 h-6 text-white" />
                         </div>
                         <div className="flex-1">
                           <div className="font-semibold text-gray-900">{tour.guide.name}</div>
-                          <div className="text-sm text-gray-600 mb-1">{tour.guide.credentials}</div>
+                          <div className="text-sm text-secondary-600 mb-1">{tour.guide.credentials}</div>
                           <div className="flex items-center gap-1 text-xs text-gray-500">
                             <GlobeAltIcon className="w-3 h-3" />
                             <span>{tour.guide.languages}</span>
@@ -436,7 +440,7 @@ export default function ToursPage() {
                       ) : (
                         <div className="space-y-2">
                           <button 
-                            className="w-full bg-gray-400 text-white py-3 px-6 rounded-xl font-bold cursor-not-allowed opacity-60"
+                            className="w-full bg-secondary-400 text-white py-3 px-6 rounded-xl font-bold cursor-not-allowed opacity-60"
                             disabled
                           >
                             {serviceStatus?.status === 'fully_booked' 
@@ -447,7 +451,6 @@ export default function ToursPage() {
                           {serviceStatus?.waitingListAvailable && (
                             <button
                               onClick={() => {
-                                console.log(`Join waiting list for tour ${tour.serviceKey}`);
                               }}
                               className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white py-2.5 px-6 rounded-xl font-bold transition-all duration-300"
                             >
@@ -455,7 +458,7 @@ export default function ToursPage() {
                             </button>
                           )}
                           {serviceStatus?.estimatedAvailability && (
-                            <p className="text-xs text-gray-600 text-center">
+                            <p className="text-xs text-secondary-600 text-center">
                               {isPortuguese ? 'Estimativa: ' : 'Estimated: '}
                               {isPortuguese ? serviceStatus.estimatedAvailabilityPortuguese : serviceStatus.estimatedAvailability}
                             </p>
@@ -480,7 +483,7 @@ export default function ToursPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {isPortuguese ? "O Que Dizem os Nossos Visitantes" : "What Our Visitors Say"}
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-secondary-600">
                 {isPortuguese 
                   ? "Experiências reais de portugueses que descobriram Londres connosco"
                   : "Real experiences from Portuguese people who discovered London with us"
@@ -497,7 +500,7 @@ export default function ToursPage() {
                     ))}
                   </div>
                 </div>
-                <p className="text-gray-600 mb-4 italic">
+                <p className="text-secondary-600 mb-4 italic">
                   {isPortuguese 
                     ? "\"O tour clássico de Londres foi fantástico! Ver Big Ben, Tower Bridge e Buckingham Palace com explicações em português fez toda a diferença. O Carlos é um guia excelente!\""
                     : "\"The classic London tour was fantastic! Seeing Big Ben, Tower Bridge and Buckingham Palace with explanations in Portuguese made all the difference. Carlos is an excellent guide!\""
@@ -522,7 +525,7 @@ export default function ToursPage() {
                     ))}
                   </div>
                 </div>
-                <p className="text-gray-600 mb-4 italic">
+                <p className="text-secondary-600 mb-4 italic">
                   {isPortuguese 
                     ? "\"O tour dos mercados foi incrível! Borough Market e Camden Market com um guia português que explica tudo na nossa língua. Experimentámos comidas deliciosas!\""
                     : "\"The markets tour was incredible! Borough Market and Camden Market with a Portuguese guide who explains everything in our language. We tried delicious foods!\""
@@ -547,7 +550,7 @@ export default function ToursPage() {
                     ))}
                   </div>
                 </div>
-                <p className="text-gray-600 mb-4 italic">
+                <p className="text-secondary-600 mb-4 italic">
                   {isPortuguese 
                     ? "\"Os museus de Londres são impressionantes! British Museum e National Gallery com explicações detalhadas em português. A Ana conhece tudo sobre arte e história!\""
                     : "\"London's museums are impressive! British Museum and National Gallery with detailed explanations in Portuguese. Ana knows everything about art and history!\""
@@ -576,7 +579,7 @@ export default function ToursPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {isPortuguese ? "Porquê Somos Diferentes?" : "Why We're Different?"}
               </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
                 {isPortuguese 
                   ? "Não somos apenas mais uma empresa de tours. Somos portugueses que vivem em Londres e queremos partilhar as nossas descobertas."
                   : "We're not just another tour company. We're Portuguese people living in London who want to share our discoveries."
@@ -592,7 +595,7 @@ export default function ToursPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {isPortuguese ? "Guias Autênticos" : "Authentic Guides"}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-secondary-600 leading-relaxed">
                   {isPortuguese 
                     ? "Historiadores, chefs e líderes comunitários portugueses com anos de experiência em Londres"
                     : "Portuguese historians, chefs and community leaders with years of London experience"
@@ -607,7 +610,7 @@ export default function ToursPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {isPortuguese ? "Grupos Íntimos" : "Intimate Groups"}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-secondary-600 leading-relaxed">
                   {isPortuguese 
                     ? "Máximo 12 pessoas por grupo para experiências personalizadas e interação genuína"
                     : "Maximum 12 people per group for personalized experiences and genuine interaction"
@@ -622,7 +625,7 @@ export default function ToursPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {isPortuguese ? "Locais Secretos" : "Secret Locations"}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-secondary-600 leading-relaxed">
                   {isPortuguese 
                     ? "Descobrimos locais que só a comunidade portuguesa conhece - restaurantes, lojas e marcos históricos"
                     : "We uncover places only the Portuguese community knows - restaurants, shops and historic landmarks"
@@ -637,7 +640,7 @@ export default function ToursPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {isPortuguese ? "Conexão Cultural" : "Cultural Connection"}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-secondary-600 leading-relaxed">
                   {isPortuguese 
                     ? "Não apenas vemos Londres - conectamos com a nossa herança portuguesa e criamos novas amizades"
                     : "We don't just see London - we connect with our Portuguese heritage and create new friendships"
@@ -664,7 +667,7 @@ export default function ToursPage() {
               }
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="bg-white text-primary-600 font-bold py-4 px-8 rounded-xl hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg">
+              <button className="bg-white text-primary-600 font-bold py-4 px-8 rounded-xl hover:bg-secondary-100 transition-all duration-200 transform hover:scale-105 shadow-lg">
                 {isPortuguese ? "Ver Todos os Tours" : "View All Tours"}
               </button>
               <button className="border-2 border-white text-white font-bold py-4 px-8 rounded-xl hover:bg-white hover:text-primary-600 transition-all duration-200">

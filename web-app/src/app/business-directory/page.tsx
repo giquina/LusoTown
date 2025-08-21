@@ -111,7 +111,7 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ business, featured = false,
   }
 
   return (
-    <div className={`bg-white rounded-2xl shadow-lg border ${featured ? 'border-accent-300 ring-2 ring-accent-200' : 'border-gray-100'} overflow-hidden hover:shadow-xl transition-all duration-300 group`}>
+    <div className={`bg-white rounded-2xl shadow-lg border ${featured ? 'border-accent-300 ring-2 ring-accent-200' : 'border-secondary-100'} overflow-hidden hover:shadow-xl transition-all duration-300 group`}>
       {featured && (
         <div className="bg-gradient-to-r from-accent-400 to-premium-400 text-white px-4 py-2 text-sm font-medium flex items-center gap-2">
           <SparklesIcon className="w-4 h-4" />
@@ -136,7 +136,7 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ business, featured = false,
         {/* Verification Badge */}
         {business.verificationStatus === 'verified' && (
           <div className="absolute top-3 left-3">
-            <div className="bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1">
+            <div className="bg-action-500 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1">
               <CheckBadgeIcon className="w-3 h-3" />
               {isPortuguese ? 'Verificado' : 'Verified'}
             </div>
@@ -145,10 +145,10 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ business, featured = false,
         
         {/* Category & Region */}
         <div className="absolute top-3 right-3 flex flex-col gap-2">
-          <span className="bg-white/90 backdrop-blur-sm text-gray-700 text-xs font-medium px-3 py-1 rounded-full">
+          <span className="bg-white/90 backdrop-blur-sm text-secondary-700 text-xs font-medium px-3 py-1 rounded-full">
             {getCategoryLabel(business.category)}
           </span>
-          <span className="bg-white/90 backdrop-blur-sm text-gray-700 text-xs font-medium px-3 py-1 rounded-full flex items-center gap-1">
+          <span className="bg-white/90 backdrop-blur-sm text-secondary-700 text-xs font-medium px-3 py-1 rounded-full flex items-center gap-1">
             {getRegionFlag(business.ownerRegion)}
             {getRegionName(business.ownerRegion)}
           </span>
@@ -159,7 +159,7 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ business, featured = false,
           onClick={() => setIsFavorited(!isFavorited)}
           className="absolute bottom-3 right-3 w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white transition-colors"
         >
-          <HeartIcon className={`w-5 h-5 ${isFavorited ? 'text-red-500 fill-current' : 'text-gray-600'}`} />
+          <HeartIcon className={`w-5 h-5 ${isFavorited ? 'text-coral-500 fill-current' : 'text-secondary-600'}`} />
         </button>
       </div>
       
@@ -169,7 +169,7 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ business, featured = false,
           <h3 className="font-bold text-xl text-gray-900 group-hover:text-primary-600 transition-colors mb-1">
             {isPortuguese && business.namePortuguese ? business.namePortuguese : business.name}
           </h3>
-          <div className="flex items-center gap-2 text-sm text-gray-600">
+          <div className="flex items-center gap-2 text-sm text-secondary-600">
             <span>{getRegionFlag(business.ownerRegion)}</span>
             <span>{isPortuguese ? `Proprietário: ${business.ownerName}` : `Owner: ${business.ownerName}`}</span>
             <span>•</span>
@@ -177,7 +177,7 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ business, featured = false,
           </div>
         </div>
         
-        <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+        <p className="text-secondary-600 text-sm mb-4 line-clamp-3">
           {isPortuguese && business.descriptionPortuguese ? business.descriptionPortuguese : business.description}
         </p>
         
@@ -191,7 +191,7 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ business, featured = false,
               />
             ))}
           </div>
-          <span className="text-sm text-gray-600">
+          <span className="text-sm text-secondary-600">
             {business.rating} ({business.reviewCount} {isPortuguese ? 'avaliações' : 'reviews'})
           </span>
         </div>
@@ -232,7 +232,7 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ business, featured = false,
         
         {/* Details */}
         <div className="space-y-3 mb-6">
-          <div className="flex items-start gap-3 text-sm text-gray-600">
+          <div className="flex items-start gap-3 text-sm text-secondary-600">
             <MapPinIcon className="w-4 h-4 mt-0.5 flex-shrink-0" />
             <div className="flex-1 min-w-0">
               <span className="truncate block">{business.address}, {business.postcode}</span>
@@ -242,13 +242,13 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ business, featured = false,
             </div>
           </div>
           
-          <div className="flex items-center gap-3 text-sm text-gray-600">
+          <div className="flex items-center gap-3 text-sm text-secondary-600">
             <PhoneIcon className="w-4 h-4 flex-shrink-0" />
             <span>{business.phone}</span>
           </div>
           
           {business.website && (
-            <div className="flex items-center gap-3 text-sm text-gray-600">
+            <div className="flex items-center gap-3 text-sm text-secondary-600">
               <GlobeAltIcon className="w-4 h-4 flex-shrink-0" />
               <a 
                 href={business.website} 
@@ -261,7 +261,7 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ business, featured = false,
             </div>
           )}
           
-          <div className="flex items-center gap-3 text-sm text-gray-600">
+          <div className="flex items-center gap-3 text-sm text-secondary-600">
             <ClockIcon className="w-4 h-4 flex-shrink-0" />
             <span>{formatHours(business.openingHours.monday)}</span>
           </div>
@@ -286,7 +286,7 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ business, featured = false,
         {business.communityBadges.length > 0 && (
           <div className="mb-4">
             <div className="flex items-center space-x-1 mb-2">
-              <span className="text-xs text-gray-600">{isPortuguese ? 'Distintivos' : 'Badges'}</span>
+              <span className="text-xs text-secondary-600">{isPortuguese ? 'Distintivos' : 'Badges'}</span>
             </div>
             <div className="flex space-x-1">
               {business.communityBadges.slice(0, 3).map(badge => (
@@ -307,7 +307,7 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ business, featured = false,
           <button className="flex-1 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-3 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200">
             {isPortuguese ? 'Ver Detalhes' : 'View Details'}
           </button>
-          <button className="px-4 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+          <button className="px-4 py-3 bg-secondary-100 text-secondary-700 rounded-lg hover:bg-secondary-200 transition-colors">
             <PhoneIcon className="w-5 h-5" />
           </button>
         </div>
@@ -428,14 +428,14 @@ export default function BusinessDirectory() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center pt-20">
+      <div className="min-h-screen bg-secondary-50 flex items-center justify-center pt-20">
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-500"></div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       <div className="pt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
@@ -443,12 +443,12 @@ export default function BusinessDirectory() {
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
               {t('business_directory.title', 'Portuguese Business Directory')}
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
               {t('business_directory.subtitle', 'Discover and support authentic Portuguese-owned businesses across London. United by language, united by business.')}
             </p>
-            <div className="mt-4 flex items-center justify-center gap-4 text-sm text-gray-600">
+            <div className="mt-4 flex items-center justify-center gap-4 text-sm text-secondary-600">
               <div className="flex items-center gap-1">
-                <CheckBadgeIcon className="w-4 h-4 text-green-500" />
+                <CheckBadgeIcon className="w-4 h-4 text-action-500" />
                 <span>{total} {isPortuguese ? 'negócios verificados' : 'verified businesses'}</span>
               </div>
               <div className="flex items-center gap-1">
@@ -459,13 +459,13 @@ export default function BusinessDirectory() {
             
             {/* View Toggle and Add Business Button */}
             <div className="flex items-center justify-center gap-4 mt-6">
-              <div className="flex items-center bg-white rounded-lg border border-gray-200 p-1">
+              <div className="flex items-center bg-white rounded-lg border border-secondary-200 p-1">
                 <button
                   onClick={() => setViewMode('list')}
                   className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                     viewMode === 'list'
                       ? 'bg-primary-500 text-white'
-                      : 'text-gray-600 hover:text-gray-800'
+                      : 'text-secondary-600 hover:text-secondary-800'
                   }`}
                 >
                   <ListBulletIcon className="w-4 h-4" />
@@ -476,7 +476,7 @@ export default function BusinessDirectory() {
                   className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                     viewMode === 'map'
                       ? 'bg-primary-500 text-white'
-                      : 'text-gray-600 hover:text-gray-800'
+                      : 'text-secondary-600 hover:text-secondary-800'
                   }`}
                 >
                   <MapIcon className="w-4 h-4" />
@@ -498,13 +498,13 @@ export default function BusinessDirectory() {
           <div className="bg-white rounded-xl shadow-sm p-6 mb-6">
             <div className="flex flex-col lg:flex-row gap-4">
               <div className="flex-1 relative">
-                <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -transecondary-y-1/2 text-gray-400 w-5 h-5" />
                 <input
                   type="text"
                   placeholder={isPortuguese ? 'Buscar negócios...' : 'Search businesses...'}
                   value={filters.search || ''}
                   onChange={(e) => handleFilterChange('search', e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full pl-10 pr-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 />
               </div>
               
@@ -520,7 +520,7 @@ export default function BusinessDirectory() {
                 <select
                   value={filters.sortBy}
                   onChange={(e) => handleFilterChange('sortBy', e.target.value)}
-                  className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 >
                   <option value="featured">{isPortuguese ? 'Em Destaque' : 'Featured'}</option>
                   <option value="rating">{isPortuguese ? 'Melhor Avaliação' : 'Highest Rated'}</option>
@@ -534,7 +534,7 @@ export default function BusinessDirectory() {
                   className={`px-4 py-3 border rounded-lg flex items-center space-x-2 transition-colors ${
                     showFilters || activeFiltersCount > 0
                       ? 'bg-primary-500 text-white border-primary-500'
-                      : 'border-gray-300 hover:bg-gray-50'
+                      : 'border-secondary-300 hover:bg-secondary-50'
                   }`}
                 >
                   <FunnelIcon className="w-4 h-4" />
@@ -550,11 +550,11 @@ export default function BusinessDirectory() {
 
             {/* Advanced Filters */}
             {showFilters && (
-              <div className="mt-6 pt-6 border-t border-gray-200">
+              <div className="mt-6 pt-6 border-t border-secondary-200">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                   {/* Category Filter */}
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPortuguese ? 'Categoria' : 'Category'}
                     </label>
                     <select
@@ -565,7 +565,7 @@ export default function BusinessDirectory() {
                         }
                         e.target.value = ''
                       }}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     >
                       <option value="">{isPortuguese ? 'Adicionar categoria...' : 'Add category...'}</option>
                       {categories.map(cat => (
@@ -576,7 +576,7 @@ export default function BusinessDirectory() {
 
                   {/* Location Filter */}
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPortuguese ? 'Área de Londres' : 'London Area'}
                     </label>
                     <select
@@ -587,7 +587,7 @@ export default function BusinessDirectory() {
                         }
                         e.target.value = ''
                       }}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     >
                       <option value="">{isPortuguese ? 'Adicionar área...' : 'Add area...'}</option>
                       {londonAreas.map(area => (
@@ -598,13 +598,13 @@ export default function BusinessDirectory() {
 
                   {/* Verification Status */}
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPortuguese ? 'Status' : 'Status'}
                     </label>
                     <select
                       value={filters.verificationStatus}
                       onChange={(e) => handleFilterChange('verificationStatus', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     >
                       <option value="verified">{isPortuguese ? 'Apenas Verificados' : 'Verified Only'}</option>
                       <option value="all">{isPortuguese ? 'Todos' : 'All'}</option>
@@ -615,7 +615,7 @@ export default function BusinessDirectory() {
                   <div className="flex items-end">
                     <button
                       onClick={clearAllFilters}
-                      className="w-full px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+                      className="w-full px-4 py-2 bg-secondary-100 text-secondary-700 rounded-lg hover:bg-secondary-200 transition-colors"
                     >
                       {isPortuguese ? 'Limpar Tudo' : 'Clear All'}
                     </button>
@@ -702,7 +702,7 @@ export default function BusinessDirectory() {
             <h3 className="text-lg font-medium text-gray-900 mb-2">
               {isPortuguese ? 'Nenhum negócio encontrado' : 'No businesses found'}
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-secondary-600 mb-6">
               {isPortuguese 
                 ? 'Tente ajustar seus filtros para encontrar mais negócios.'
                 : 'Try adjusting your search filters to find more businesses.'}
@@ -729,12 +729,12 @@ export default function BusinessDirectory() {
         )}
 
         {/* Portuguese Cultural Celebrations Section */}
-        <div className="mt-12 bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100">
+        <div className="mt-12 bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-secondary-100">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-2">
               {isPortuguese ? 'Celebrações Culturais Portuguesas' : 'Portuguese Cultural Celebrations'}
             </h3>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {isPortuguese 
                 ? 'Encontre negócios que participam nas nossas tradições culturais'
                 : 'Find businesses that participate in our cultural traditions'}
@@ -782,13 +782,13 @@ export default function BusinessDirectory() {
             ].map((celebration, index) => (
               <div
                 key={index}
-                className="text-center p-4 rounded-xl bg-gradient-to-br from-gray-50 to-secondary-50/30 hover:from-secondary-50 hover:to-primary-50 transition-all duration-300 cursor-pointer border border-gray-100 hover:shadow-md"
+                className="text-center p-4 rounded-xl bg-gradient-to-br from-gray-50 to-secondary-50/30 hover:from-secondary-50 hover:to-primary-50 transition-all duration-300 cursor-pointer border border-secondary-100 hover:shadow-md"
               >
                 <div className="text-3xl mb-2">{celebration.icon}</div>
                 <div className="text-sm font-semibold text-gray-900 mb-1 leading-tight">
                   {celebration.name}
                 </div>
-                <div className="text-xs text-gray-600 mb-2">
+                <div className="text-xs text-secondary-600 mb-2">
                   {celebration.date}
                 </div>
                 <div className="text-xs text-primary-600 font-medium bg-primary-50 px-2 py-1 rounded-full">
@@ -800,12 +800,12 @@ export default function BusinessDirectory() {
 
           {/* Portuguese Cultural Quote */}
           <div className="mt-8 text-center p-4 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl border border-primary-100">
-            <p className="text-sm italic text-gray-700 mb-2">
+            <p className="text-sm italic text-secondary-700 mb-2">
               {isPortuguese 
                 ? "\"O comércio une os povos e as culturas\" - Provérbio Lusófono"
                 : "\"Commerce unites peoples and cultures\" - Portuguese Proverb"}
             </p>
-            <div className="flex items-center justify-center gap-2 text-xs text-gray-600">
+            <div className="flex items-center justify-center gap-2 text-xs text-secondary-600">
               <span>🌍</span>
               <span>{isPortuguese ? 'Comunidade Lusófona Mundial' : 'Global Portuguese Community'}</span>
             </div>
@@ -838,7 +838,7 @@ export default function BusinessDirectory() {
             </div>
             <button 
               onClick={() => setShowSubmissionForm(true)}
-              className="bg-white text-primary-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors shadow-lg"
+              className="bg-white text-primary-600 font-semibold px-8 py-3 rounded-lg hover:bg-secondary-100 transition-colors shadow-lg"
             >
               {t('business_directory.add_business', 'Add My Business')}
             </button>

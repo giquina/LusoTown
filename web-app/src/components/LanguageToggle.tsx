@@ -59,7 +59,7 @@ export default function LanguageToggle() {
               <span className="w-2 h-2 rounded-full bg-gradient-to-r from-green-500 to-red-500 animate-pulse"></span>
               Unidos pela Língua • United by Language
             </p>
-            <p className="text-xs text-gray-600 mt-1">Connecting All Portuguese-Speaking Communities</p>
+            <p className="text-xs text-secondary-600 mt-1">Connecting All Portuguese-Speaking Communities</p>
           </div>
           {[
             { value: 'en', ...getLanguageDisplay('en') },
@@ -75,7 +75,7 @@ export default function LanguageToggle() {
               className={`group w-full flex items-center gap-4 px-5 py-3 text-sm hover:bg-gradient-to-r hover:from-secondary-50/60 hover:to-accent-50/40 transition-all duration-300 min-h-[44px] ${
                 language === lang.value 
                   ? 'bg-gradient-to-r from-secondary-100/80 to-accent-100/60 text-secondary-800 shadow-sm' 
-                  : 'text-gray-700 hover:text-secondary-700'
+                  : 'text-secondary-700 hover:text-secondary-700'
               }`}
             >
               <span className="text-xl group-hover:scale-110 transition-transform duration-300 block" style={{ lineHeight: 1, fontFamily: 'system-ui, -apple-system, Segoe UI, Roboto, sans-serif' }}>{lang.flag}</span>

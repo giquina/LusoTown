@@ -139,7 +139,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
       description: 'Universities, cultural centers, and educational institutions',
       descriptionPortuguese: 'Universidades, centros culturais e instituições educacionais',
       icon: <AcademicCapIcon className="w-6 h-6" />,
-      color: 'from-purple-500 to-purple-600',
+      color: 'from-accent-500 to-accent-600',
       institutions: 15,
       totalReach: 25000,
       averageValue: 45000,
@@ -217,7 +217,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
       totalValue: outreachPipeline.filter(p => p.outreachStage === 'research').reduce((sum, p) => sum + p.proposalValue, 0),
       averageTime: '2-4 weeks',
       successRate: 95,
-      color: 'bg-gray-100 text-gray-800'
+      color: 'bg-secondary-100 text-secondary-800'
     },
     {
       stage: 'initial_contact',
@@ -244,7 +244,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
       totalValue: outreachPipeline.filter(p => p.outreachStage === 'proposal_sent').reduce((sum, p) => sum + p.proposalValue, 0),
       averageTime: '4-6 weeks',
       successRate: 65,
-      color: 'bg-purple-100 text-purple-800'
+      color: 'bg-accent-100 text-accent-800'
     },
     {
       stage: 'negotiations',
@@ -320,7 +320,6 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
       metadata: { strategyId, timestamp: new Date().toISOString() }
     })
     // In real implementation, this would navigate to strategy detail page
-    console.log('Viewing strategy:', strategyId)
   }
 
   const handleContactInstitution = (outreachId: string) => {
@@ -329,7 +328,6 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
       metadata: { outreachId, timestamp: new Date().toISOString() }
     })
     // In real implementation, this would open contact modal
-    console.log('Contacting institution:', outreachId)
   }
 
   if (loading) {
@@ -354,7 +352,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
             : 'Strategic Institutional Partnerships'
           }
         </h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
           {language === 'pt'
             ? 'Conectando a comunidade portuguesa mundial através de parcerias oficiais com governos, universidades, organizações culturais e meios de comunicação para criar uma plataforma autêntica e reconhecida oficialmente.'
             : 'Connecting the global Portuguese community through official partnerships with governments, universities, cultural organizations, and media outlets to create an authentic and officially recognized platform.'
@@ -407,7 +405,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
 
       {/* Tab Navigation */}
       <div className="mb-8">
-        <div className="border-b border-gray-200">
+        <div className="border-b border-secondary-200">
           <nav className="flex space-x-8">
             {['overview', 'strategies', 'pipeline', 'global', 'analytics'].map((tab) => (
               <button
@@ -416,7 +414,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
                 className={`py-4 px-1 border-b-2 font-medium text-sm ${
                   selectedTab === tab
                     ? 'border-primary-500 text-primary-600'
-                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                    : 'border-transparent text-gray-500 hover:text-secondary-700 hover:border-secondary-300'
                 }`}
               >
                 {tab === 'overview' && (language === 'pt' ? 'Visão Geral' : 'Overview')}
@@ -441,7 +439,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {partnershipCategories.map((category) => (
-                <div key={category.id} className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
+                <div key={category.id} className="bg-white rounded-xl shadow-sm border border-secondary-200 overflow-hidden hover:shadow-md transition-shadow">
                   <div className={`bg-gradient-to-r ${category.color} p-6 text-white`}>
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center space-x-3">
@@ -464,15 +462,15 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
                     <div className="grid grid-cols-3 gap-4 mb-6">
                       <div className="text-center">
                         <p className="text-lg font-bold text-gray-900">{(category.totalReach / 1000).toFixed(0)}K</p>
-                        <p className="text-xs text-gray-600">{language === 'pt' ? 'Alcance' : 'Reach'}</p>
+                        <p className="text-xs text-secondary-600">{language === 'pt' ? 'Alcance' : 'Reach'}</p>
                       </div>
                       <div className="text-center">
                         <p className="text-lg font-bold text-gray-900">{formatCurrency(category.averageValue)}</p>
-                        <p className="text-xs text-gray-600">{language === 'pt' ? 'Valor Médio' : 'Avg Value'}</p>
+                        <p className="text-xs text-secondary-600">{language === 'pt' ? 'Valor Médio' : 'Avg Value'}</p>
                       </div>
                       <div className="text-center">
-                        <p className="text-lg font-bold text-green-600">+{category.growthRate}%</p>
-                        <p className="text-xs text-gray-600">{language === 'pt' ? 'Crescimento' : 'Growth'}</p>
+                        <p className="text-lg font-bold text-action-600">+{category.growthRate}%</p>
+                        <p className="text-xs text-secondary-600">{language === 'pt' ? 'Crescimento' : 'Growth'}</p>
                       </div>
                     </div>
 
@@ -482,8 +480,8 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
                       </h4>
                       <ul className="space-y-2">
                         {(language === 'pt' ? category.keyBenefitsPortuguese : category.keyBenefits).map((benefit, index) => (
-                          <li key={index} className="flex items-center text-sm text-gray-700">
-                            <CheckBadgeIcon className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                          <li key={index} className="flex items-center text-sm text-secondary-700">
+                            <CheckBadgeIcon className="w-4 h-4 text-action-500 mr-2 flex-shrink-0" />
                             {benefit}
                           </li>
                         ))}
@@ -509,13 +507,13 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
           
           <div className="space-y-6">
             {strategies.map((strategy) => (
-              <div key={strategy.id} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <div key={strategy.id} className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">
                       {language === 'pt' ? strategy.namePortuguese : strategy.name}
                     </h3>
-                    <p className="text-gray-600 mb-4">{strategy.description}</p>
+                    <p className="text-secondary-600 mb-4">{strategy.description}</p>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
@@ -524,7 +522,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
                         </h4>
                         <ul className="space-y-1">
                           {strategy.targetInstitutions.slice(0, 3).map((institution, index) => (
-                            <li key={index} className="text-sm text-gray-700 flex items-center">
+                            <li key={index} className="text-sm text-secondary-700 flex items-center">
                               <ArrowRightIcon className="w-3 h-3 text-gray-400 mr-2" />
                               {institution}
                             </li>
@@ -543,8 +541,8 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
                         </h4>
                         <ul className="space-y-1">
                           {strategy.expectedOutcomes.slice(0, 3).map((outcome, index) => (
-                            <li key={index} className="text-sm text-gray-700 flex items-center">
-                              <CheckBadgeIcon className="w-3 h-3 text-green-500 mr-2" />
+                            <li key={index} className="text-sm text-secondary-700 flex items-center">
+                              <CheckBadgeIcon className="w-3 h-3 text-action-500 mr-2" />
                               {outcome}
                             </li>
                           ))}
@@ -564,17 +562,17 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
                 </div>
 
                 {/* Timeline */}
-                <div className="border-t border-gray-200 pt-6">
+                <div className="border-t border-secondary-200 pt-6">
                   <h4 className="font-medium text-gray-900 mb-4">
                     {language === 'pt' ? 'Cronograma:' : 'Timeline:'}
                   </h4>
                   <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                     <div className="flex items-center">
                       <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-                        <span className="text-xs font-medium text-blue-600">1</span>
+                        <span className="text-xs font-medium text-primary-600">1</span>
                       </div>
                       <div>
-                        <p className="text-xs text-gray-600">{strategy.timeline.phase1}</p>
+                        <p className="text-xs text-secondary-600">{strategy.timeline.phase1}</p>
                       </div>
                     </div>
                     <div className="flex items-center">
@@ -582,7 +580,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
                         <span className="text-xs font-medium text-yellow-600">2</span>
                       </div>
                       <div>
-                        <p className="text-xs text-gray-600">{strategy.timeline.phase2}</p>
+                        <p className="text-xs text-secondary-600">{strategy.timeline.phase2}</p>
                       </div>
                     </div>
                     <div className="flex items-center">
@@ -590,15 +588,15 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
                         <span className="text-xs font-medium text-orange-600">3</span>
                       </div>
                       <div>
-                        <p className="text-xs text-gray-600">{strategy.timeline.phase3}</p>
+                        <p className="text-xs text-secondary-600">{strategy.timeline.phase3}</p>
                       </div>
                     </div>
                     <div className="flex items-center">
                       <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
-                        <CheckBadgeIcon className="w-4 h-4 text-green-600" />
+                        <CheckBadgeIcon className="w-4 h-4 text-action-600" />
                       </div>
                       <div>
-                        <p className="text-xs text-gray-600">{strategy.timeline.completion}</p>
+                        <p className="text-xs text-secondary-600">{strategy.timeline.completion}</p>
                       </div>
                     </div>
                   </div>
@@ -618,13 +616,13 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
           {/* Pipeline Stages Overview */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
             {pipelineStages.map((stage) => (
-              <div key={stage.stage} className="bg-white rounded-lg border border-gray-200 p-4 text-center">
+              <div key={stage.stage} className="bg-white rounded-lg border border-secondary-200 p-4 text-center">
                 <div className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${stage.color} mb-2`}>
                   {language === 'pt' ? stage.stagePortuguese : stage.stage}
                 </div>
                 <p className="text-2xl font-bold text-gray-900">{stage.count}</p>
-                <p className="text-xs text-gray-600 mb-1">{formatCurrency(stage.totalValue)}</p>
-                <p className="text-xs text-green-600">{stage.successRate}% {language === 'pt' ? 'sucesso' : 'success'}</p>
+                <p className="text-xs text-secondary-600 mb-1">{formatCurrency(stage.totalValue)}</p>
+                <p className="text-xs text-action-600">{stage.successRate}% {language === 'pt' ? 'sucesso' : 'success'}</p>
               </div>
             ))}
           </div>
@@ -637,13 +635,13 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
             
             <div className="space-y-4">
               {outreachPipeline.map((outreach) => (
-                <div key={outreach.id} className="bg-white rounded-lg border border-gray-200 p-6">
+                <div key={outreach.id} className="bg-white rounded-lg border border-secondary-200 p-6">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center space-x-3 mb-2">
                         <h4 className="text-lg font-semibold text-gray-900">{outreach.institutionName}</h4>
                         <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                          pipelineStages.find(s => s.stage === outreach.outreachStage)?.color || 'bg-gray-100 text-gray-800'
+                          pipelineStages.find(s => s.stage === outreach.outreachStage)?.color || 'bg-secondary-100 text-secondary-800'
                         }`}>
                           {language === 'pt' 
                             ? pipelineStages.find(s => s.stage === outreach.outreachStage)?.stagePortuguese 
@@ -651,19 +649,19 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
                           }
                         </span>
                         <span className={`text-xs font-medium ${
-                          outreach.priority === 'high' ? 'text-red-600' :
-                          outreach.priority === 'medium' ? 'text-yellow-600' : 'text-green-600'
+                          outreach.priority === 'high' ? 'text-coral-600' :
+                          outreach.priority === 'medium' ? 'text-yellow-600' : 'text-action-600'
                         }`}>
                           {outreach.priority.toUpperCase()}
                         </span>
                       </div>
                       
-                      <p className="text-sm text-gray-600 mb-3">{outreach.institutionType}</p>
+                      <p className="text-sm text-secondary-600 mb-3">{outreach.institutionType}</p>
                       
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                         <div>
                           <p className="text-xs text-gray-500">{language === 'pt' ? 'Valor da Proposta' : 'Proposal Value'}</p>
-                          <p className="font-semibold text-green-600">{formatCurrency(outreach.proposalValue)}</p>
+                          <p className="font-semibold text-action-600">{formatCurrency(outreach.proposalValue)}</p>
                         </div>
                         <div>
                           <p className="text-xs text-gray-500">{language === 'pt' ? 'Último Contacto' : 'Last Contact'}</p>
@@ -681,7 +679,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
                         </h5>
                         <ul className="space-y-1">
                           {outreach.nextActions.slice(0, 2).map((action, index) => (
-                            <li key={index} className="text-sm text-gray-700 flex items-center">
+                            <li key={index} className="text-sm text-secondary-700 flex items-center">
                               <ArrowRightIcon className="w-3 h-3 text-gray-400 mr-2" />
                               {action}
                             </li>
@@ -689,7 +687,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
                         </ul>
                       </div>
 
-                      <div className="text-sm text-gray-600 italic">{outreach.notes}</div>
+                      <div className="text-sm text-secondary-600 italic">{outreach.notes}</div>
                     </div>
                     
                     <div className="ml-6 space-y-2">
@@ -726,7 +724,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {globalPresence.map((region) => (
-              <div key={region.region} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <div key={region.region} className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-lg font-semibold text-gray-900">
                     {language === 'pt' ? region.regionPortuguese : region.region}
@@ -734,7 +732,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
                   <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                     region.status === 'active' ? 'bg-green-100 text-green-800' :
                     region.status === 'developing' ? 'bg-yellow-100 text-yellow-800' :
-                    'bg-gray-100 text-gray-800'
+                    'bg-secondary-100 text-secondary-800'
                   }`}>
                     {region.status === 'active' ? (language === 'pt' ? 'Ativo' : 'Active') :
                      region.status === 'developing' ? (language === 'pt' ? 'Desenvolvendo' : 'Developing') :
@@ -745,15 +743,15 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
                 <div className="grid grid-cols-3 gap-4 mb-6">
                   <div className="text-center">
                     <p className="text-2xl font-bold text-gray-900">{region.institutions}</p>
-                    <p className="text-xs text-gray-600">{language === 'pt' ? 'Instituições' : 'Institutions'}</p>
+                    <p className="text-xs text-secondary-600">{language === 'pt' ? 'Instituições' : 'Institutions'}</p>
                   </div>
                   <div className="text-center">
                     <p className="text-2xl font-bold text-gray-900">{(region.reach / 1000).toFixed(0)}K</p>
-                    <p className="text-xs text-gray-600">{language === 'pt' ? 'Alcance' : 'Reach'}</p>
+                    <p className="text-xs text-secondary-600">{language === 'pt' ? 'Alcance' : 'Reach'}</p>
                   </div>
                   <div className="text-center">
                     <p className="text-2xl font-bold text-gray-900">{region.programs}</p>
-                    <p className="text-xs text-gray-600">{language === 'pt' ? 'Programas' : 'Programs'}</p>
+                    <p className="text-xs text-secondary-600">{language === 'pt' ? 'Programas' : 'Programs'}</p>
                   </div>
                 </div>
 
@@ -763,7 +761,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
                   </h4>
                   <ul className="space-y-2">
                     {region.keyPartnerships.map((partnership, index) => (
-                      <li key={index} className="flex items-center text-sm text-gray-700">
+                      <li key={index} className="flex items-center text-sm text-secondary-700">
                         <HandRaisedIcon className="w-4 h-4 text-primary-500 mr-2 flex-shrink-0" />
                         {partnership}
                       </li>
@@ -784,31 +782,31 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
 
           {analytics && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-white rounded-lg border border-gray-200 p-6">
+              <div className="bg-white rounded-lg border border-secondary-200 p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-semibold text-gray-900">{language === 'pt' ? 'Taxa de Crescimento' : 'Growth Rate'}</h3>
-                  <TrophyIcon className="w-6 h-6 text-green-500" />
+                  <TrophyIcon className="w-6 h-6 text-action-500" />
                 </div>
-                <p className="text-3xl font-bold text-green-600">+{analytics.communityGrowthRate}%</p>
-                <p className="text-sm text-gray-600">{language === 'pt' ? 'Crescimento anual da comunidade' : 'Annual community growth'}</p>
+                <p className="text-3xl font-bold text-action-600">+{analytics.communityGrowthRate}%</p>
+                <p className="text-sm text-secondary-600">{language === 'pt' ? 'Crescimento anual da comunidade' : 'Annual community growth'}</p>
               </div>
 
-              <div className="bg-white rounded-lg border border-gray-200 p-6">
+              <div className="bg-white rounded-lg border border-secondary-200 p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-semibold text-gray-900">{language === 'pt' ? 'Utilização de Benefícios' : 'Benefit Utilization'}</h3>
-                  <ChartBarIcon className="w-6 h-6 text-blue-500" />
+                  <ChartBarIcon className="w-6 h-6 text-primary-500" />
                 </div>
-                <p className="text-3xl font-bold text-blue-600">{analytics.benefitUtilizationRate}%</p>
-                <p className="text-sm text-gray-600">{language === 'pt' ? 'Membros utilizando benefícios' : 'Members using benefits'}</p>
+                <p className="text-3xl font-bold text-primary-600">{analytics.benefitUtilizationRate}%</p>
+                <p className="text-sm text-secondary-600">{language === 'pt' ? 'Membros utilizando benefícios' : 'Members using benefits'}</p>
               </div>
 
-              <div className="bg-white rounded-lg border border-gray-200 p-6">
+              <div className="bg-white rounded-lg border border-secondary-200 p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-semibold text-gray-900">{language === 'pt' ? 'Duração Média' : 'Avg Duration'}</h3>
-                  <ClockIcon className="w-6 h-6 text-purple-500" />
+                  <ClockIcon className="w-6 h-6 text-accent-500" />
                 </div>
-                <p className="text-3xl font-bold text-purple-600">{analytics.averagePartnershipDuration.toFixed(1)}</p>
-                <p className="text-sm text-gray-600">{language === 'pt' ? 'Anos por parceria' : 'Years per partnership'}</p>
+                <p className="text-3xl font-bold text-accent-600">{analytics.averagePartnershipDuration.toFixed(1)}</p>
+                <p className="text-sm text-secondary-600">{language === 'pt' ? 'Anos por parceria' : 'Years per partnership'}</p>
               </div>
             </div>
           )}
@@ -821,7 +819,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
         <h2 className="text-2xl font-bold text-gray-900 mb-4">
           {language === 'pt' ? 'Torne-se um Parceiro Institucional' : 'Become an Institutional Partner'}
         </h2>
-        <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+        <p className="text-secondary-600 mb-6 max-w-2xl mx-auto">
           {language === 'pt'
             ? 'Junte-se à nossa rede global de instituições portuguesas de prestígio e ajude-nos a construir a maior plataforma comunitária portuguesa do mundo.'
             : 'Join our global network of prestigious Portuguese institutions and help us build the world\'s largest Portuguese community platform.'

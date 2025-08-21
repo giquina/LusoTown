@@ -84,7 +84,7 @@ export default function UserPathwayAssessment({
       detailedDescriptionPortuguese:
         "Obtenha apoio abrangente para a vida académica, alojamento e conexões sociais com outros estudantes portugueses nas universidades de Londres.",
       icon: GraduationCap,
-      color: "from-blue-500 to-purple-500",
+      color: "from-blue-500 to-accent-500",
       services: [
         "housing-assistance",
         "student-support",
@@ -176,7 +176,7 @@ export default function UserPathwayAssessment({
       detailedDescriptionPortuguese:
         "Aprenda streaming, construção de comunidade, estratégias de monetização e como aumentar a sua audiência portuguesa em Londres.",
       icon: Video,
-      color: "from-purple-500 to-pink-500",
+      color: "from-accent-500 to-pink-500",
       services: [
         "live-streaming",
         "community-forums",
@@ -331,7 +331,7 @@ export default function UserPathwayAssessment({
         <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
           {isPortuguese ? "Qual é o Seu Perfil?" : "What's Your Profile?"}
         </h2>
-        <p className="text-gray-600 max-w-3xl mx-auto">
+        <p className="text-secondary-600 max-w-3xl mx-auto">
           {isPortuguese
             ? "Escolha o seu perfil para receber um plano de aprendizado personalizado com os serviços mais relevantes para si"
             : "Choose your profile to get a personalized learning plan with the most relevant services for you"}
@@ -362,7 +362,7 @@ export default function UserPathwayAssessment({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="group bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 cursor-pointer relative overflow-hidden"
+                className="group bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-transecondary-y-2 border border-secondary-100 cursor-pointer relative overflow-hidden"
                 onClick={() => handleTypeSelection(userType)}
                 onMouseEnter={() => setShowDetails(userType.id)}
                 onMouseLeave={() => setShowDetails(null)}
@@ -385,7 +385,7 @@ export default function UserPathwayAssessment({
                     {isPortuguese ? userType.namePortuguese : userType.name}
                   </h3>
 
-                  <p className="text-gray-600 mb-4 leading-relaxed text-sm">
+                  <p className="text-secondary-600 mb-4 leading-relaxed text-sm">
                     {isPortuguese ? userType.description : userType.description}
                   </p>
 
@@ -415,7 +415,7 @@ export default function UserPathwayAssessment({
                         ? "Clique para selecionar"
                         : "Click to select"}
                     </span>
-                    <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-primary-600 group-hover:translate-x-1 transition-all duration-200" />
+                    <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-primary-600 group-hover:transecondary-x-1 transition-all duration-200" />
                   </div>
                 </div>
 
@@ -433,7 +433,7 @@ export default function UserPathwayAssessment({
                           ? "Recomendado para:"
                           : "Recommended for:"}
                       </h4>
-                      <ul className="space-y-1 text-sm text-gray-700">
+                      <ul className="space-y-1 text-sm text-secondary-700">
                         {(isPortuguese
                           ? userType.recommendedForPortuguese
                           : userType.recommendedFor
@@ -441,7 +441,7 @@ export default function UserPathwayAssessment({
                           .slice(0, 3)
                           .map((item, idx) => (
                             <li key={idx} className="flex items-center gap-2">
-                              <CheckCircle className="w-3 h-3 text-green-500 flex-shrink-0" />
+                              <CheckCircle className="w-3 h-3 text-action-500 flex-shrink-0" />
                               {item}
                             </li>
                           ))}
@@ -462,7 +462,7 @@ export default function UserPathwayAssessment({
             exit={{ opacity: 0, y: -20 }}
             className="max-w-4xl mx-auto"
           >
-            <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
+            <div className="bg-white rounded-3xl p-8 shadow-xl border border-secondary-100">
               {/* Selected type header */}
               <div className="text-center mb-8">
                 <div
@@ -475,7 +475,7 @@ export default function UserPathwayAssessment({
                     ? selectedUserType.namePortuguese
                     : selectedUserType.name}
                 </h3>
-                <p className="text-gray-600 max-w-2xl mx-auto">
+                <p className="text-secondary-600 max-w-2xl mx-auto">
                   {isPortuguese
                     ? selectedUserType.detailedDescriptionPortuguese
                     : selectedUserType.detailedDescription}
@@ -486,7 +486,7 @@ export default function UserPathwayAssessment({
               <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <div>
                   <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-500" />
+                    <CheckCircle className="w-5 h-5 text-action-500" />
                     {isPortuguese ? "Principais Benefícios" : "Key Benefits"}
                   </h4>
                   <ul className="space-y-3">
@@ -496,7 +496,7 @@ export default function UserPathwayAssessment({
                     ).map((benefit, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-gray-700">{benefit}</span>
+                        <span className="text-secondary-700">{benefit}</span>
                       </li>
                     ))}
                   </ul>
@@ -514,7 +514,7 @@ export default function UserPathwayAssessment({
                     ).map((item, idx) => (
                       <li key={idx} className="flex items-start gap-3">
                         <div className="w-2 h-2 bg-secondary-500 rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-gray-700">{item}</span>
+                        <span className="text-secondary-700">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -533,7 +533,7 @@ export default function UserPathwayAssessment({
                         ? "Tempo Estimado de Aprendizado"
                         : "Estimated Learning Time"}
                     </h4>
-                    <p className="text-gray-600">
+                    <p className="text-secondary-600">
                       {isPortuguese
                         ? selectedUserType.estimatedTimePortuguese
                         : selectedUserType.estimatedTime}{" "}
@@ -556,7 +556,7 @@ export default function UserPathwayAssessment({
                 </button>
                 <button
                   onClick={() => setCurrentStep("assessment")}
-                  className="border border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300"
+                  className="border border-secondary-300 text-secondary-700 px-8 py-4 rounded-2xl font-semibold hover:bg-secondary-50 hover:border-secondary-400 transition-all duration-300"
                 >
                   {isPortuguese ? "Voltar" : "Go Back"}
                 </button>

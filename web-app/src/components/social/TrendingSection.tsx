@@ -101,9 +101,9 @@ export default function TrendingSection({ className = '' }: { className?: string
   ]
 
   const getGrowthColor = (growth: number) => {
-    if (growth > 50) return 'text-green-600'
+    if (growth > 50) return 'text-action-600'
     if (growth > 20) return 'text-yellow-600'
-    return 'text-gray-600'
+    return 'text-secondary-600'
   }
 
   const getCategoryColor = (category: string) => {
@@ -115,12 +115,12 @@ export default function TrendingSection({ className = '' }: { className?: string
       case 'service':
         return 'bg-accent-100 text-accent-700'
       default:
-        return 'bg-gray-100 text-gray-700'
+        return 'bg-secondary-100 text-secondary-700'
     }
   }
 
   return (
-    <div className={`bg-white rounded-xl shadow-sm border border-gray-200 ${className}`}>
+    <div className={`bg-white rounded-xl shadow-sm border border-secondary-200 ${className}`}>
       <div className="p-6">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
@@ -132,7 +132,7 @@ export default function TrendingSection({ className = '' }: { className?: string
               <h3 className="text-lg font-semibold text-gray-900">
                 {t('trending.title') || 'Trending'}
               </h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-secondary-600">
                 {t('trending.subtitle') || 'Popular in Portuguese community'}
               </p>
             </div>
@@ -145,11 +145,11 @@ export default function TrendingSection({ className = '' }: { className?: string
           {trendingItems.map((item, index) => (
             <div
               key={item.id}
-              className="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer group"
+              className="flex items-center justify-between p-3 hover:bg-secondary-50 rounded-lg transition-colors cursor-pointer group"
             >
               <div className="flex items-center space-x-3 flex-1">
                 {/* Ranking */}
-                <div className="w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center text-xs font-semibold text-gray-600">
+                <div className="w-6 h-6 bg-secondary-100 rounded-full flex items-center justify-center text-xs font-semibold text-secondary-600">
                   {index + 1}
                 </div>
 
@@ -172,7 +172,7 @@ export default function TrendingSection({ className = '' }: { className?: string
                     )}
                   </div>
                   <div className="flex items-center space-x-2 text-sm">
-                    <span className="text-gray-600">
+                    <span className="text-secondary-600">
                       {item.count} {t('trending.posts') || 'posts'}
                     </span>
                     <span className="text-gray-400">•</span>
@@ -195,7 +195,7 @@ export default function TrendingSection({ className = '' }: { className?: string
         </div>
 
         {/* View All Button */}
-        <div className="mt-6 pt-4 border-t border-gray-100">
+        <div className="mt-6 pt-4 border-t border-secondary-100">
           <button className="w-full px-4 py-2 text-primary-600 hover:text-primary-700 hover:bg-primary-50 rounded-lg transition-colors text-sm font-medium">
             {t('trending.view_all') || 'View All Trending'}
           </button>

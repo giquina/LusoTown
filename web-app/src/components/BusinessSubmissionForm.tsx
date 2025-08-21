@@ -318,7 +318,7 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
           <div className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {t('form.business_name', 'Business Name')} *
                 </label>
                 <input
@@ -326,38 +326,38 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
                   value={formData.name}
                   onChange={(e) => updateFormData('name', e.target.value)}
                   className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                    validationErrors.name ? 'border-red-300' : 'border-gray-300'
+                    validationErrors.name ? 'border-red-300' : 'border-secondary-300'
                   }`}
                   placeholder={t('form.business_name_placeholder', 'Your business name')}
                 />
                 {validationErrors.name && (
-                  <p className="text-red-600 text-sm mt-1">{validationErrors.name}</p>
+                  <p className="text-coral-600 text-sm mt-1">{validationErrors.name}</p>
                 )}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {t('form.business_name_portuguese', 'Business Name (Portuguese)')}
                 </label>
                 <input
                   type="text"
                   value={formData.namePortuguese}
                   onChange={(e) => updateFormData('namePortuguese', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   placeholder={t('form.business_name_portuguese_placeholder', 'Nome em português (opcional)')}
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {t('form.category', 'Category')} *
               </label>
               <select
                 value={formData.category}
                 onChange={(e) => updateFormData('category', e.target.value)}
                 className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                  validationErrors.category ? 'border-red-300' : 'border-gray-300'
+                  validationErrors.category ? 'border-red-300' : 'border-secondary-300'
                 }`}
               >
                 <option value="">{t('form.select_category', 'Select a category')}</option>
@@ -368,12 +368,12 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
                 ))}
               </select>
               {validationErrors.category && (
-                <p className="text-red-600 text-sm mt-1">{validationErrors.category}</p>
+                <p className="text-coral-600 text-sm mt-1">{validationErrors.category}</p>
               )}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {t('form.description', 'Description')} *
               </label>
               <textarea
@@ -381,24 +381,24 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
                 onChange={(e) => updateFormData('description', e.target.value)}
                 rows={4}
                 className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                  validationErrors.description ? 'border-red-300' : 'border-gray-300'
+                  validationErrors.description ? 'border-red-300' : 'border-secondary-300'
                 }`}
                 placeholder={t('form.description_placeholder', 'Describe your business and what makes it special')}
               />
               {validationErrors.description && (
-                <p className="text-red-600 text-sm mt-1">{validationErrors.description}</p>
+                <p className="text-coral-600 text-sm mt-1">{validationErrors.description}</p>
               )}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {t('form.description_portuguese', 'Description (Portuguese)')}
               </label>
               <textarea
                 value={formData.descriptionPortuguese}
                 onChange={(e) => updateFormData('descriptionPortuguese', e.target.value)}
                 rows={4}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 placeholder={t('form.description_portuguese_placeholder', 'Descrição em português (opcional)')}
               />
             </div>
@@ -410,7 +410,7 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
           <div className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {t('form.address', 'Address')} *
                 </label>
                 <input
@@ -418,15 +418,15 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
                   value={formData.address}
                   onChange={(e) => handleAddressChange(e.target.value)}
                   className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                    validationErrors.address ? 'border-red-300' : 'border-gray-300'
+                    validationErrors.address ? 'border-red-300' : 'border-secondary-300'
                   }`}
                   placeholder={t('form.address_placeholder', 'Full business address in London')}
                 />
                 {validationErrors.address && (
-                  <p className="text-red-600 text-sm mt-1">{validationErrors.address}</p>
+                  <p className="text-coral-600 text-sm mt-1">{validationErrors.address}</p>
                 )}
                 {geocodedLocation && (
-                  <p className="text-green-600 text-sm mt-1 flex items-center gap-1">
+                  <p className="text-action-600 text-sm mt-1 flex items-center gap-1">
                     <MapPinIcon className="w-4 h-4" />
                     {t('form.location_found', 'Location found and verified')}
                   </p>
@@ -434,7 +434,7 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {t('form.postcode', 'Postcode')} *
                 </label>
                 <input
@@ -442,24 +442,24 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
                   value={formData.postcode}
                   onChange={(e) => updateFormData('postcode', e.target.value.toUpperCase())}
                   className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                    validationErrors.postcode ? 'border-red-300' : 'border-gray-300'
+                    validationErrors.postcode ? 'border-red-300' : 'border-secondary-300'
                   }`}
                   placeholder="SW1A 1AA"
                 />
                 {validationErrors.postcode && (
-                  <p className="text-red-600 text-sm mt-1">{validationErrors.postcode}</p>
+                  <p className="text-coral-600 text-sm mt-1">{validationErrors.postcode}</p>
                 )}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {t('form.london_area', 'London Area')} *
                 </label>
                 <select
                   value={formData.londonArea}
                   onChange={(e) => updateFormData('londonArea', e.target.value)}
                   className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                    validationErrors.londonArea ? 'border-red-300' : 'border-gray-300'
+                    validationErrors.londonArea ? 'border-red-300' : 'border-secondary-300'
                   }`}
                 >
                   <option value="">{t('form.select_area', 'Select London area')}</option>
@@ -470,12 +470,12 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
                   ))}
                 </select>
                 {validationErrors.londonArea && (
-                  <p className="text-red-600 text-sm mt-1">{validationErrors.londonArea}</p>
+                  <p className="text-coral-600 text-sm mt-1">{validationErrors.londonArea}</p>
                 )}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {t('form.phone', 'Phone Number')} *
                 </label>
                 <input
@@ -483,17 +483,17 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
                   value={formData.phone}
                   onChange={(e) => updateFormData('phone', e.target.value)}
                   className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                    validationErrors.phone ? 'border-red-300' : 'border-gray-300'
+                    validationErrors.phone ? 'border-red-300' : 'border-secondary-300'
                   }`}
                   placeholder="+44 20 7123 4567"
                 />
                 {validationErrors.phone && (
-                  <p className="text-red-600 text-sm mt-1">{validationErrors.phone}</p>
+                  <p className="text-coral-600 text-sm mt-1">{validationErrors.phone}</p>
                 )}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {t('form.email', 'Email Address')} *
                 </label>
                 <input
@@ -501,24 +501,24 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
                   value={formData.email}
                   onChange={(e) => updateFormData('email', e.target.value)}
                   className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                    validationErrors.email ? 'border-red-300' : 'border-gray-300'
+                    validationErrors.email ? 'border-red-300' : 'border-secondary-300'
                   }`}
                   placeholder="info@yourbusiness.com"
                 />
                 {validationErrors.email && (
-                  <p className="text-red-600 text-sm mt-1">{validationErrors.email}</p>
+                  <p className="text-coral-600 text-sm mt-1">{validationErrors.email}</p>
                 )}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {t('form.website', 'Website')}
                 </label>
                 <input
                   type="url"
                   value={formData.website}
                   onChange={(e) => updateFormData('website', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                   placeholder="https://yourbusiness.com"
                 />
               </div>
@@ -531,7 +531,7 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
           <div className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {t('form.owner_name', 'Owner Name')} *
                 </label>
                 <input
@@ -539,17 +539,17 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
                   value={formData.ownerName}
                   onChange={(e) => updateFormData('ownerName', e.target.value)}
                   className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                    validationErrors.ownerName ? 'border-red-300' : 'border-gray-300'
+                    validationErrors.ownerName ? 'border-red-300' : 'border-secondary-300'
                   }`}
                   placeholder={t('form.owner_name_placeholder', 'Business owner full name')}
                 />
                 {validationErrors.ownerName && (
-                  <p className="text-red-600 text-sm mt-1">{validationErrors.ownerName}</p>
+                  <p className="text-coral-600 text-sm mt-1">{validationErrors.ownerName}</p>
                 )}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {t('form.year_established', 'Year Established')} *
                 </label>
                 <input
@@ -559,24 +559,24 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
                   min="1900"
                   max={new Date().getFullYear()}
                   className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                    validationErrors.yearEstablished ? 'border-red-300' : 'border-gray-300'
+                    validationErrors.yearEstablished ? 'border-red-300' : 'border-secondary-300'
                   }`}
                 />
                 {validationErrors.yearEstablished && (
-                  <p className="text-red-600 text-sm mt-1">{validationErrors.yearEstablished}</p>
+                  <p className="text-coral-600 text-sm mt-1">{validationErrors.yearEstablished}</p>
                 )}
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {t('form.owner_region', 'Portuguese Connection')} *
               </label>
               <select
                 value={formData.ownerRegion}
                 onChange={(e) => updateFormData('ownerRegion', e.target.value)}
                 className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
-                  validationErrors.ownerRegion ? 'border-red-300' : 'border-gray-300'
+                  validationErrors.ownerRegion ? 'border-red-300' : 'border-secondary-300'
                 }`}
               >
                 <option value="">{t('form.select_region', 'Select Portuguese region/country')}</option>
@@ -587,12 +587,12 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
                 ))}
               </select>
               {validationErrors.ownerRegion && (
-                <p className="text-red-600 text-sm mt-1">{validationErrors.ownerRegion}</p>
+                <p className="text-coral-600 text-sm mt-1">{validationErrors.ownerRegion}</p>
               )}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {t('form.languages_spoken', 'Languages Spoken at Business')}
               </label>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -608,9 +608,9 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
                           updateFormData('languagesSpoken', formData.languagesSpoken.filter(l => l !== lang.value))
                         }
                       }}
-                      className="rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                      className="rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
                     />
-                    <span className="ml-2 text-sm text-gray-700">
+                    <span className="ml-2 text-sm text-secondary-700">
                       {lang.label[language]}
                     </span>
                   </label>
@@ -624,9 +624,9 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
                   type="checkbox"
                   checked={formData.supportsCulture}
                   onChange={(e) => updateFormData('supportsCulture', e.target.checked)}
-                  className="rounded border-gray-300 text-secondary-600 focus:ring-secondary-500"
+                  className="rounded border-secondary-300 text-secondary-600 focus:ring-secondary-500"
                 />
-                <span className="ml-3 text-sm text-gray-700">
+                <span className="ml-3 text-sm text-secondary-700">
                   {t('form.supports_culture', 'This business actively supports Portuguese cultural events and community activities')}
                 </span>
               </label>
@@ -644,14 +644,14 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {Object.entries(formData.openingHours).map(([day, hours]) => (
                   <div key={day} className="flex items-center gap-3">
-                    <label className="w-20 text-sm font-medium text-gray-700 capitalize">
+                    <label className="w-20 text-sm font-medium text-secondary-700 capitalize">
                       {t(`days.${day}`, day)}:
                     </label>
                     <input
                       type="text"
                       value={hours}
                       onChange={(e) => updateOpeningHours(day as keyof FormData['openingHours'], e.target.value)}
-                      className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm"
+                      className="flex-1 px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm"
                       placeholder="09:00-17:00 or Closed"
                     />
                   </div>
@@ -660,17 +660,17 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {t('form.keywords', 'Search Keywords')}
               </label>
               <input
                 type="text"
                 value={formData.keywords.join(', ')}
                 onChange={(e) => updateFormData('keywords', e.target.value.split(',').map(k => k.trim()).filter(Boolean))}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 placeholder={t('form.keywords_placeholder', 'e.g., pastéis de nata, traditional Portuguese, fado music')}
               />
-              <p className="text-sm text-gray-600 mt-1">
+              <p className="text-sm text-secondary-600 mt-1">
                 {t('form.keywords_help', 'Separate keywords with commas. These help people find your business.')}
               </p>
             </div>
@@ -678,7 +678,7 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
             {submitStatus === 'success' && (
               <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                 <div className="flex items-center">
-                  <CheckCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0" />
+                  <CheckCircleIcon className="w-5 h-5 text-action-500 flex-shrink-0" />
                   <div className="ml-3">
                     <h3 className="text-sm font-medium text-green-800">
                       {t('form.success_title', 'Business Submitted Successfully')}
@@ -692,7 +692,7 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
             {submitStatus === 'error' && (
               <div className="bg-red-50 border border-red-200 rounded-lg p-4">
                 <div className="flex items-center">
-                  <ExclamationTriangleIcon className="w-5 h-5 text-red-500 flex-shrink-0" />
+                  <ExclamationTriangleIcon className="w-5 h-5 text-coral-500 flex-shrink-0" />
                   <div className="ml-3">
                     <h3 className="text-sm font-medium text-red-800">
                       {t('form.error_title', 'Submission Failed')}
@@ -713,11 +713,11 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
   if (submitStatus === 'success') {
     return (
       <div className={`bg-white rounded-lg shadow-xl p-8 text-center ${className}`}>
-        <CheckCircleIcon className="w-16 h-16 text-green-500 mx-auto mb-4" />
+        <CheckCircleIcon className="w-16 h-16 text-action-500 mx-auto mb-4" />
         <h2 className="text-2xl font-bold text-gray-900 mb-4">
           {t('form.submission_complete', 'Submission Complete!')}
         </h2>
-        <p className="text-gray-600 mb-6">{submitMessage}</p>
+        <p className="text-secondary-600 mb-6">{submitMessage}</p>
         <button
           onClick={onClose}
           className="btn-primary"
@@ -751,7 +751,7 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
       </div>
 
       {/* Step Indicator */}
-      <div className="px-6 py-4 border-b border-gray-200">
+      <div className="px-6 py-4 border-b border-secondary-200">
         <div className="flex items-center justify-between">
           {steps.map((step, index) => (
             <div key={step.id} className="flex items-center">
@@ -759,8 +759,8 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
                 currentStep === step.id 
                   ? 'bg-primary-500 text-white' 
                   : currentStep > step.id
-                    ? 'bg-green-500 text-white'
-                    : 'bg-gray-200 text-gray-600'
+                    ? 'bg-action-500 text-white'
+                    : 'bg-secondary-200 text-secondary-600'
               }`}>
                 {currentStep > step.id ? (
                   <CheckCircleIcon className="w-5 h-5" />
@@ -769,13 +769,13 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
                 )}
               </div>
               <span className={`ml-2 text-sm ${
-                currentStep === step.id ? 'text-primary-600 font-medium' : 'text-gray-600'
+                currentStep === step.id ? 'text-primary-600 font-medium' : 'text-secondary-600'
               }`}>
                 {step.title}
               </span>
               {index < steps.length - 1 && (
                 <div className={`w-8 h-px mx-4 ${
-                  currentStep > step.id ? 'bg-green-500' : 'bg-gray-200'
+                  currentStep > step.id ? 'bg-action-500' : 'bg-secondary-200'
                 }`} />
               )}
             </div>
@@ -789,11 +789,11 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
       </div>
 
       {/* Footer */}
-      <div className="px-6 py-4 border-t border-gray-200 bg-gray-50 flex justify-between">
+      <div className="px-6 py-4 border-t border-secondary-200 bg-secondary-50 flex justify-between">
         <button
           onClick={handlePrevStep}
           disabled={currentStep === 1}
-          className="px-4 py-2 text-gray-600 hover:text-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="px-4 py-2 text-secondary-600 hover:text-secondary-800 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {t('buttons.back', 'Back')}
         </button>

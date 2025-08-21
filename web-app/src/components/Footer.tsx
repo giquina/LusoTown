@@ -63,7 +63,7 @@ export default function Footer() {
   const footerLinks = getFooterLinks(t);
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-secondary-900 text-white">
       {/* Main Footer Content - Enhanced Multi-Column Responsive Layout */}
       <div className="container-width py-12 sm:py-16">
         <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 xl:gap-12">
@@ -189,7 +189,7 @@ export default function Footer() {
         </div>
 
         {/* Newsletter Signup */}
-        <div className="mt-16 pt-8 border-t border-gray-800">
+        <div className="mt-16 pt-8 border-t border-secondary-800">
           <div className="max-w-md">
             <h3 className="text-lg font-semibold mb-4 text-white">
               {t("footer.newsletter.title")}
@@ -201,7 +201,7 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent min-w-0 min-h-[44px]"
+                className="flex-1 px-4 py-3 bg-secondary-800 border border-secondary-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent min-w-0 min-h-[44px]"
               />
               <button
                 type="submit"
@@ -215,7 +215,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Footer */}
-      <div className="border-t border-gray-800">
+      <div className="border-t border-secondary-800">
         <div className="container-width py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm break-words leading-relaxed">
@@ -234,7 +234,7 @@ export default function Footer() {
                   <span className="text-white text-xs font-bold">VISA</span>
                 </div>
                 {/* Mastercard */}
-                <div className="w-8 h-5 bg-red-600 rounded-sm flex items-center justify-center">
+                <div className="w-8 h-5 bg-coral-600 rounded-sm flex items-center justify-center">
                   <span className="text-white text-xs font-bold">MC</span>
                 </div>
                 {/* Apple Pay */}
@@ -249,8 +249,8 @@ export default function Footer() {
                   </svg>
                 </div>
                 {/* Google Pay */}
-                <div className="w-8 h-5 bg-gray-100 rounded-sm flex items-center justify-center">
-                  <span className="text-xs font-bold text-gray-700">G</span>
+                <div className="w-8 h-5 bg-secondary-100 rounded-sm flex items-center justify-center">
+                  <span className="text-xs font-bold text-secondary-700">G</span>
                 </div>
                 {/* PayPal */}
                 <div className="w-8 h-5 bg-primary-700 rounded-sm flex items-center justify-center">

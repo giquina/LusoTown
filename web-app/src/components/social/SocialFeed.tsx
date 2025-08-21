@@ -1,13 +1,21 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import { buildUnsplashUrl } from '@/config'
 import { useLanguage } from '@/context/LanguageContext'
+import { buildUnsplashUrl } from '@/config'
 import { useSubscription } from '@/context/SubscriptionContext'
+import { buildUnsplashUrl } from '@/config'
 import PostCreator from './PostCreator'
+import { buildUnsplashUrl } from '@/config'
 import PostCard from './PostCard'
+import { buildUnsplashUrl } from '@/config'
 import FeedFilters from './FeedFilters'
+import { buildUnsplashUrl } from '@/config'
 import TrendingSection from './TrendingSection'
+import { buildUnsplashUrl } from '@/config'
 import PeopleYouMayKnow from './PeopleYouMayKnow'
+import { buildUnsplashUrl } from '@/config'
 import { 
   Users, 
   Heart, 
@@ -70,7 +78,7 @@ const MOCK_POSTS: SocialPost[] = [
     user: {
       id: 'user1',
       name: 'Maria Santos',
-      avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face',
+      avatar: buildUnsplashUrl('photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face'),
       verified: true,
       membershipTier: 'cultural_ambassador'
     },
@@ -100,7 +108,7 @@ const MOCK_POSTS: SocialPost[] = [
     user: {
       id: 'user2',
       name: 'João Silva',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
+      avatar: buildUnsplashUrl('photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face'),
       verified: false,
       membershipTier: 'community'
     },
@@ -130,7 +138,7 @@ const MOCK_POSTS: SocialPost[] = [
     user: {
       id: 'user3',
       name: 'LusoTown Transport',
-      avatar: 'https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=100&h=100&fit=crop',
+      avatar: buildUnsplashUrl('photo-1556075798-4825dfaaf498?w=100&h=100&fit=crop'),
       verified: true,
       membershipTier: 'cultural_ambassador'
     },
@@ -197,7 +205,7 @@ export default function SocialFeed({ className = '', initialFilter = 'all' }: So
       user: {
         id: 'current_user',
         name: 'Current User',
-        avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
+        avatar: buildUnsplashUrl('photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face'),
         verified: false,
         membershipTier: membershipTier as any || 'free'
       },
@@ -257,7 +265,7 @@ export default function SocialFeed({ className = '', initialFilter = 'all' }: So
   return (
     <div className={`space-y-6 ${className}`}>
       {/* Feed Header */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+      <div className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
@@ -267,7 +275,7 @@ export default function SocialFeed({ className = '', initialFilter = 'all' }: So
               <h2 className="text-xl font-semibold text-gray-900">
                 {t('social_feed.title') || 'Portuguese Community Feed'}
               </h2>
-              <p className="text-gray-600">
+              <p className="text-secondary-600">
                 {t('social_feed.subtitle') || 'Connect with Portuguese speakers in London'}
               </p>
             </div>
@@ -286,28 +294,28 @@ export default function SocialFeed({ className = '', initialFilter = 'all' }: So
         {/* Stats Bar */}
         <div className="grid grid-cols-4 gap-4">
           <div className="text-center">
-            <div className="flex items-center justify-center space-x-1 text-sm text-gray-600">
+            <div className="flex items-center justify-center space-x-1 text-sm text-secondary-600">
               <Users className="w-4 h-4" />
               <span>{t('social_feed.community_members') || 'Members'}</span>
             </div>
             <p className="text-lg font-semibold text-primary-600">2,347</p>
           </div>
           <div className="text-center">
-            <div className="flex items-center justify-center space-x-1 text-sm text-gray-600">
+            <div className="flex items-center justify-center space-x-1 text-sm text-secondary-600">
               <MessageCircle className="w-4 h-4" />
               <span>{t('social_feed.daily_posts') || 'Daily Posts'}</span>
             </div>
             <p className="text-lg font-semibold text-secondary-600">127</p>
           </div>
           <div className="text-center">
-            <div className="flex items-center justify-center space-x-1 text-sm text-gray-600">
+            <div className="flex items-center justify-center space-x-1 text-sm text-secondary-600">
               <TrendingUp className="w-4 h-4" />
               <span>{t('social_feed.trending') || 'Trending'}</span>
             </div>
             <p className="text-lg font-semibold text-accent-600">#Fado</p>
           </div>
           <div className="text-center">
-            <div className="flex items-center justify-center space-x-1 text-sm text-gray-600">
+            <div className="flex items-center justify-center space-x-1 text-sm text-secondary-600">
               <Globe className="w-4 h-4" />
               <span>{t('social_feed.cities') || 'Cities'}</span>
             </div>
@@ -339,23 +347,23 @@ export default function SocialFeed({ className = '', initialFilter = 'all' }: So
               // Loading skeleton
               <div className="space-y-4">
                 {[1, 2, 3].map(i => (
-                  <div key={i} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                  <div key={i} className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
                     <div className="animate-pulse space-y-4">
                       <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-gray-200 rounded-full"></div>
+                        <div className="w-10 h-10 bg-secondary-200 rounded-full"></div>
                         <div className="space-y-2 flex-1">
-                          <div className="h-4 bg-gray-200 rounded w-1/3"></div>
-                          <div className="h-3 bg-gray-200 rounded w-1/4"></div>
+                          <div className="h-4 bg-secondary-200 rounded w-1/3"></div>
+                          <div className="h-3 bg-secondary-200 rounded w-1/4"></div>
                         </div>
                       </div>
                       <div className="space-y-2">
-                        <div className="h-4 bg-gray-200 rounded"></div>
-                        <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+                        <div className="h-4 bg-secondary-200 rounded"></div>
+                        <div className="h-4 bg-secondary-200 rounded w-5/6"></div>
                       </div>
                       <div className="flex space-x-4">
-                        <div className="h-8 bg-gray-200 rounded w-16"></div>
-                        <div className="h-8 bg-gray-200 rounded w-16"></div>
-                        <div className="h-8 bg-gray-200 rounded w-16"></div>
+                        <div className="h-8 bg-secondary-200 rounded w-16"></div>
+                        <div className="h-8 bg-secondary-200 rounded w-16"></div>
+                        <div className="h-8 bg-secondary-200 rounded w-16"></div>
                       </div>
                     </div>
                   </div>
@@ -371,12 +379,12 @@ export default function SocialFeed({ className = '', initialFilter = 'all' }: So
               ))
             ) : (
               // Empty state
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-12 text-center">
+              <div className="bg-white rounded-xl shadow-sm border border-secondary-200 p-12 text-center">
                 <MessageCircle className="w-16 h-16 text-gray-300 mx-auto mb-4" />
                 <h3 className="text-lg font-medium text-gray-900 mb-2">
                   {t('social_feed.no_posts_title') || 'No posts yet'}
                 </h3>
-                <p className="text-gray-600 mb-6">
+                <p className="text-secondary-600 mb-6">
                   {t('social_feed.no_posts_subtitle') || 'Be the first to share something with the Portuguese community!'}
                 </p>
                 <button
@@ -399,43 +407,43 @@ export default function SocialFeed({ className = '', initialFilter = 'all' }: So
           <PeopleYouMayKnow />
 
           {/* Community Stats */}
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
               {t('social_feed.community_stats') || 'Community Stats'}
             </h3>
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <span className="text-gray-600">{t('social_feed.active_today') || 'Active Today'}</span>
+                <span className="text-secondary-600">{t('social_feed.active_today') || 'Active Today'}</span>
                 <span className="font-semibold text-primary-600">341</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-gray-600">{t('social_feed.new_members') || 'New Members'}</span>
+                <span className="text-secondary-600">{t('social_feed.new_members') || 'New Members'}</span>
                 <span className="font-semibold text-secondary-600">+23</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-gray-600">{t('social_feed.events_this_week') || 'Events This Week'}</span>
+                <span className="text-secondary-600">{t('social_feed.events_this_week') || 'Events This Week'}</span>
                 <span className="font-semibold text-accent-600">12</span>
               </div>
             </div>
           </div>
 
           {/* Quick Actions */}
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
               {t('social_feed.quick_actions') || 'Quick Actions'}
             </h3>
             <div className="space-y-3">
-              <button className="w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-gray-50 rounded-lg transition-colors">
+              <button className="w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-secondary-50 rounded-lg transition-colors">
                 <UserPlus className="w-5 h-5 text-primary-500" />
-                <span className="text-gray-700">{t('social_feed.find_friends') || 'Find Friends'}</span>
+                <span className="text-secondary-700">{t('social_feed.find_friends') || 'Find Friends'}</span>
               </button>
-              <button className="w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-gray-50 rounded-lg transition-colors">
+              <button className="w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-secondary-50 rounded-lg transition-colors">
                 <Heart className="w-5 h-5 text-secondary-500" />
-                <span className="text-gray-700">{t('social_feed.join_events') || 'Join Events'}</span>
+                <span className="text-secondary-700">{t('social_feed.join_events') || 'Join Events'}</span>
               </button>
-              <button className="w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-gray-50 rounded-lg transition-colors">
+              <button className="w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-secondary-50 rounded-lg transition-colors">
                 <Share className="w-5 h-5 text-accent-500" />
-                <span className="text-gray-700">{t('social_feed.share_experience') || 'Share Experience'}</span>
+                <span className="text-secondary-700">{t('social_feed.share_experience') || 'Share Experience'}</span>
               </button>
             </div>
           </div>

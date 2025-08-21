@@ -318,11 +318,10 @@ function SignupInner() {
 
   const handleOnboardingClose = () => {
     setShowOnboarding(false);
-    router.push("/signup/success");
+    router.push(ROUTES.signup/success);
   };
 
   const handleGrowthFeaturesComplete = (action: string, data?: any) => {
-    console.log('Growth feature action:', action, data);
     // Handle different growth actions
     switch (action) {
       case 'claim_welcome_bonus':
@@ -344,7 +343,7 @@ function SignupInner() {
 
   const handleGrowthFeaturesClose = () => {
     setShowGrowthFeatures(false);
-    router.push("/signup/success");
+    router.push(ROUTES.signup/success);
   };
 
   return (
@@ -379,7 +378,7 @@ function SignupInner() {
                   </span>
                 </h1>
 
-                <p className="text-lg sm:text-xl text-gray-600 mb-3 sm:mb-4 leading-relaxed">
+                <p className="text-lg sm:text-xl text-secondary-600 mb-3 sm:mb-4 leading-relaxed">
                   No barriers to community participation. Start free, explore
                   events, connect with {communityStats.members} Portuguese speakers, and upgrade
                   only when you're ready for premium experiences.
@@ -407,7 +406,7 @@ function SignupInner() {
                           <span className="font-semibold text-gray-900 block">
                             {benefit.text}
                           </span>
-                          <span className="text-sm text-gray-600">
+                          <span className="text-sm text-secondary-600">
                             {benefit.subtext}
                           </span>
                         </div>
@@ -423,7 +422,7 @@ function SignupInner() {
                     return (
                       <div
                         key={index}
-                        className="flex items-center gap-2 text-sm text-gray-600"
+                        className="flex items-center gap-2 text-sm text-secondary-600"
                       >
                         <IconComponent className="h-4 w-4 text-secondary-400" />
                         <span>{signal.text}</span>
@@ -450,7 +449,7 @@ function SignupInner() {
                         className="rounded-full object-cover ring-2 ring-white shadow-sm"
                       />
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm text-gray-700 italic mb-1">
+                        <p className="text-sm text-secondary-700 italic mb-1">
                           "{testimonial.quote}"
                         </p>
                         <p className="text-xs text-gray-500">
@@ -472,14 +471,14 @@ function SignupInner() {
               >
                 <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-2xl p-6 sm:p-8 border border-white/50">
                   <div className="text-center mb-6 sm:mb-8">
-                    <div className="inline-flex items-center gap-2 bg-green-50 rounded-full px-4 py-2 text-green-600 font-medium mb-4 text-sm">
+                    <div className="inline-flex items-center gap-2 bg-green-50 rounded-full px-4 py-2 text-action-600 font-medium mb-4 text-sm">
                       <CheckIcon className="h-4 w-4" />
                       Free to Join
                     </div>
                     <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
                       Start Free Today
                     </h2>
-                    <p className="text-gray-600 text-sm sm:text-base mb-4">
+                    <p className="text-secondary-600 text-sm sm:text-base mb-4">
                       Free community access • No barriers to participation
                     </p>
 
@@ -513,7 +512,7 @@ function SignupInner() {
                         <button
                           type="button"
                           onClick={() => setShowOnboarding(true)}
-                          className="text-xs text-purple-600 hover:text-purple-700 underline"
+                          className="text-xs text-accent-600 hover:text-accent-700 underline"
                         >
                           🚀 Demo Onboarding Flow
                         </button>
@@ -524,7 +523,7 @@ function SignupInner() {
                   {/* Error Display */}
                   {error && (
                     <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3">
-                      <ExclamationCircleIcon className="h-5 w-5 text-red-500 flex-shrink-0" />
+                      <ExclamationCircleIcon className="h-5 w-5 text-coral-500 flex-shrink-0" />
                       <p className="text-sm text-red-700">{error}</p>
                     </div>
                   )}
@@ -532,7 +531,7 @@ function SignupInner() {
                   {/* Success Display */}
                   {success && (
                     <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3">
-                      <CheckIcon className="h-5 w-5 text-green-500 flex-shrink-0" />
+                      <CheckIcon className="h-5 w-5 text-action-500 flex-shrink-0" />
                       <p className="text-sm text-green-700">{success}</p>
                     </div>
                   )}
@@ -544,7 +543,7 @@ function SignupInner() {
                     <div>
                       <label
                         htmlFor="email"
-                        className="block text-sm font-medium text-gray-700 mb-2"
+                        className="block text-sm font-medium text-secondary-700 mb-2"
                       >
                         Professional Email Address
                       </label>
@@ -561,17 +560,17 @@ function SignupInner() {
                             ? "border-red-300 focus:ring-red-400"
                             : formData.email && !emailError
                             ? "border-green-300 focus:ring-green-400"
-                            : "border-gray-300 focus:ring-primary-400"
+                            : "border-secondary-300 focus:ring-primary-400"
                         }`}
                         placeholder="sarah@company.com"
                       />
                       {emailError && (
-                        <p className="mt-1 text-sm text-red-600">
+                        <p className="mt-1 text-sm text-coral-600">
                           {emailError}
                         </p>
                       )}
                       {formData.email && !emailError && (
-                        <p className="mt-1 text-sm text-green-600 flex items-center gap-1">
+                        <p className="mt-1 text-sm text-action-600 flex items-center gap-1">
                           <CheckIcon className="h-4 w-4" />
                           Valid email address
                         </p>
@@ -581,7 +580,7 @@ function SignupInner() {
                     <div>
                       <label
                         htmlFor="firstName"
-                        className="block text-sm font-medium text-gray-700 mb-2"
+                        className="block text-sm font-medium text-secondary-700 mb-2"
                       >
                         First Name
                       </label>
@@ -593,7 +592,7 @@ function SignupInner() {
                         onChange={handleInputChange}
                         disabled={isSubmitting}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50"
+                        className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50"
                         placeholder="Sarah"
                       />
                     </div>
@@ -602,10 +601,10 @@ function SignupInner() {
                     <div>
                       <label
                         htmlFor="referralCode"
-                        className="block text-sm font-medium text-gray-700 mb-2"
+                        className="block text-sm font-medium text-secondary-700 mb-2"
                       >
                         <div className="flex items-center gap-2">
-                          <GiftIcon className="h-4 w-4 text-green-600" />
+                          <GiftIcon className="h-4 w-4 text-action-600" />
                           {language === "pt"
                             ? "Código de Indicação (Opcional)"
                             : "Referral Code (Optional)"}
@@ -618,14 +617,14 @@ function SignupInner() {
                         value={formData.referralCode}
                         onChange={handleInputChange}
                         disabled={isSubmitting}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50 uppercase"
+                        className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50 uppercase"
                         placeholder={
                           language === "pt" ? "Ex: JOÃO1234" : "e.g., MARIA1234"
                         }
                         maxLength={20}
                       />
                       {formData.referralCode && (
-                        <p className="mt-1 text-sm text-green-600 flex items-center gap-1">
+                        <p className="mt-1 text-sm text-action-600 flex items-center gap-1">
                           <GiftIcon className="h-4 w-4" />
                           {language === "pt"
                             ? "Ganhe 25% de desconto no primeiro mês!"
@@ -637,7 +636,7 @@ function SignupInner() {
                     <div>
                       <label
                         htmlFor="password"
-                        className="block text-sm font-medium text-gray-700 mb-2"
+                        className="block text-sm font-medium text-secondary-700 mb-2"
                       >
                         Password
                       </label>
@@ -649,7 +648,7 @@ function SignupInner() {
                         onChange={handleInputChange}
                         disabled={isSubmitting}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50"
+                        className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50"
                         placeholder="Enter a secure password"
                         minLength={6}
                       />
@@ -664,11 +663,11 @@ function SignupInner() {
                                     ? passwordStrength <= 1
                                       ? "bg-red-400"
                                       : passwordStrength <= 2
-                                      ? "bg-yellow-400"
+                                      ? "bg-accent-400"
                                       : passwordStrength <= 3
                                       ? "bg-blue-400"
                                       : "bg-green-400"
-                                    : "bg-gray-200"
+                                    : "bg-secondary-200"
                                 }`}
                               />
                             ))}
@@ -676,12 +675,12 @@ function SignupInner() {
                           <p
                             className={`text-xs ${
                               passwordStrength <= 1
-                                ? "text-red-600"
+                                ? "text-coral-600"
                                 : passwordStrength <= 2
                                 ? "text-yellow-600"
                                 : passwordStrength <= 3
-                                ? "text-blue-600"
-                                : "text-green-600"
+                                ? "text-primary-600"
+                                : "text-action-600"
                             }`}
                           >
                             {passwordStrength <= 1
@@ -703,7 +702,7 @@ function SignupInner() {
                     <div>
                       <label
                         htmlFor="confirmPassword"
-                        className="block text-sm font-medium text-gray-700 mb-2"
+                        className="block text-sm font-medium text-secondary-700 mb-2"
                       >
                         {t("signup.confirm-password", "Confirm Password")}
                       </label>
@@ -715,7 +714,7 @@ function SignupInner() {
                         onChange={handleInputChange}
                         disabled={isSubmitting}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50"
+                        className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90 backdrop-blur-sm disabled:opacity-50"
                         placeholder={t(
                           "signup.confirm-password-placeholder",
                           "Confirm your password"
@@ -738,7 +737,7 @@ function SignupInner() {
                         <div>
                           <label
                             htmlFor="portugueseOrigin"
-                            className="block text-sm font-medium text-gray-700 mb-2"
+                            className="block text-sm font-medium text-secondary-700 mb-2"
                           >
                             {t("signup.portuguese-origin", "Portuguese Origin")}
                           </label>
@@ -747,7 +746,7 @@ function SignupInner() {
                             name="portugueseOrigin"
                             value={formData.portugueseOrigin}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
+                            className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
                           >
                             <option value="">
                               {t(
@@ -780,7 +779,7 @@ function SignupInner() {
                         <div>
                           <label
                             htmlFor="londonArea"
-                            className="block text-sm font-medium text-gray-700 mb-2"
+                            className="block text-sm font-medium text-secondary-700 mb-2"
                           >
                             {t("signup.london-area", "London Area")}
                           </label>
@@ -789,7 +788,7 @@ function SignupInner() {
                             name="londonArea"
                             value={formData.londonArea}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
+                            className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
                           >
                             <option value="">
                               {t(
@@ -842,7 +841,7 @@ function SignupInner() {
                       <div className="mb-4">
                         <label
                           htmlFor="languagePreference"
-                          className="block text-sm font-medium text-gray-700 mb-2"
+                          className="block text-sm font-medium text-secondary-700 mb-2"
                         >
                           {t(
                             "signup.language-preference",
@@ -854,7 +853,7 @@ function SignupInner() {
                           name="languagePreference"
                           value={formData.languagePreference}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
+                          className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-400 focus:border-transparent bg-white/90"
                         >
                           <option value="en">
                             🇬🇧 English (I prefer events in English)
@@ -870,7 +869,7 @@ function SignupInner() {
 
                       {/* Interests */}
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-3">
+                        <label className="block text-sm font-medium text-secondary-700 mb-3">
                           {t(
                             "signup.interests",
                             "What interests you? (Select all that apply)"
@@ -946,7 +945,7 @@ function SignupInner() {
                               className={`text-left p-2 rounded-lg text-xs transition-all ${
                                 formData.interests.includes(interest.key)
                                   ? "bg-primary-500 text-white shadow-md transform scale-105"
-                                  : "bg-white/60 text-gray-700 hover:bg-white border border-gray-200 hover:shadow-sm"
+                                  : "bg-white/60 text-secondary-700 hover:bg-white border border-secondary-200 hover:shadow-sm"
                               }`}
                               title={interest.description}
                             >
@@ -960,11 +959,11 @@ function SignupInner() {
                     <div>
                       <label
                         htmlFor="ageConfirmation"
-                        className="block text-sm font-medium text-gray-700 mb-2"
+                        className="block text-sm font-medium text-secondary-700 mb-2"
                       >
                         Community Guidelines
                       </label>
-                      <div className="flex items-center p-3 border border-gray-300 rounded-lg bg-white/90 backdrop-blur-sm">
+                      <div className="flex items-center p-3 border border-secondary-300 rounded-lg bg-white/90 backdrop-blur-sm">
                         <input
                           id="ageConfirmation"
                           name="ageConfirmation"
@@ -973,11 +972,11 @@ function SignupInner() {
                           onChange={handleInputChange}
                           disabled={isSubmitting}
                           required
-                          className="h-4 w-4 text-primary-400 focus:ring-primary-400 border-gray-300 rounded disabled:opacity-50"
+                          className="h-4 w-4 text-primary-400 focus:ring-primary-400 border-secondary-300 rounded disabled:opacity-50"
                         />
                         <label
                           htmlFor="ageConfirmation"
-                          className="ml-3 text-sm text-gray-700"
+                          className="ml-3 text-sm text-secondary-700"
                         >
                           I agree to follow community guidelines and respect all
                           members regardless of age
@@ -990,7 +989,7 @@ function SignupInner() {
                       <h3 className="font-semibold text-gray-900 mb-3 text-sm flex items-center gap-2">
                         🎉 {t("signup.what-happens-next", "What happens next?")}
                       </h3>
-                      <div className="space-y-2 text-xs text-gray-600">
+                      <div className="space-y-2 text-xs text-secondary-600">
                         <div className="flex items-center gap-2">
                           <div className="w-4 h-4 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0">
                             <span className="text-white text-xs font-bold">
@@ -1010,7 +1009,7 @@ function SignupInner() {
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <div className="w-4 h-4 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-4 h-4 bg-accent-500 rounded-full flex items-center justify-center flex-shrink-0">
                             <span className="text-white text-xs font-bold">
                               3
                             </span>
@@ -1020,7 +1019,7 @@ function SignupInner() {
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <div className="w-4 h-4 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-4 h-4 bg-action-500 rounded-full flex items-center justify-center flex-shrink-0">
                             <span className="text-white text-xs font-bold">
                               4
                             </span>
@@ -1033,7 +1032,7 @@ function SignupInner() {
 
                       {/* Popular first events */}
                       <div className="mt-4 pt-3 border-t border-primary-200">
-                        <p className="text-xs text-gray-600 mb-2 font-medium">
+                        <p className="text-xs text-secondary-600 mb-2 font-medium">
                           🔥{" "}
                           {t(
                             "signup.popular-first-events",
@@ -1041,13 +1040,13 @@ function SignupInner() {
                           )}
                         </p>
                         <div className="flex flex-wrap gap-1">
-                          <span className="text-xs bg-white/60 text-gray-700 px-2 py-1 rounded-full">
+                          <span className="text-xs bg-white/60 text-secondary-700 px-2 py-1 rounded-full">
                             ☕ Coffee Meetup (Stockwell)
                           </span>
-                          <span className="text-xs bg-white/60 text-gray-700 px-2 py-1 rounded-full">
+                          <span className="text-xs bg-white/60 text-secondary-700 px-2 py-1 rounded-full">
                             🎵 Fado Night (Camden)
                           </span>
-                          <span className="text-xs bg-white/60 text-gray-700 px-2 py-1 rounded-full">
+                          <span className="text-xs bg-white/60 text-secondary-700 px-2 py-1 rounded-full">
                             🍽️ Sunday Brunch (Vauxhall)
                           </span>
                         </div>
@@ -1063,29 +1062,29 @@ function SignupInner() {
                         onChange={handleInputChange}
                         disabled={isSubmitting}
                         required
-                        className="h-4 w-4 text-primary-400 focus:ring-primary-400 border-gray-300 rounded mt-1 flex-shrink-0 disabled:opacity-50"
+                        className="h-4 w-4 text-primary-400 focus:ring-primary-400 border-secondary-300 rounded mt-1 flex-shrink-0 disabled:opacity-50"
                       />
                       <label
                         htmlFor="agreeTerms"
-                        className="text-sm text-gray-700"
+                        className="text-sm text-secondary-700"
                       >
                         I agree to LusoTown's{" "}
                         <a
-                          href="/terms"
+                          href={ROUTES.legal.terms}
                           className="text-primary-400 hover:text-primary-500 underline"
                         >
                           Terms of Service
                         </a>
                         ,{" "}
                         <a
-                          href="/privacy"
+                          href={ROUTES.legal.privacy}
                           className="text-primary-400 hover:text-primary-500 underline"
                         >
                           Privacy Policy
                         </a>
                         , and{" "}
                         <a
-                          href="/community-guidelines"
+                          href={ROUTES.communityGuidelines}
                           className="text-primary-400 hover:text-primary-500 underline"
                         >
                           Community Guidelines
@@ -1096,7 +1095,7 @@ function SignupInner() {
                     <button
                       type="submit"
                       disabled={isSubmitting || !!success}
-                      className="btn-primary w-full text-lg py-4 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                      className="btn-primary w-full text-lg py-4 font-semibold shadow-lg hover:shadow-xl transform hover:-transecondary-y-1 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                     >
                       {isSubmitting ? (
                         <span className="flex items-center justify-center gap-2">
@@ -1114,12 +1113,12 @@ function SignupInner() {
                     </button>
 
                     {/* Security footer */}
-                    <div className="text-center pt-4 border-t border-gray-200">
+                    <div className="text-center pt-4 border-t border-secondary-200">
                       <p className="text-xs text-gray-500 mb-3">
                         🔒 Your information is encrypted and never shared with
                         third parties
                       </p>
-                      <p className="text-gray-600 text-sm">
+                      <p className="text-secondary-600 text-sm">
                         Already a member?{" "}
                         <a
                           href={ROUTES.login}
@@ -1147,7 +1146,7 @@ function SignupInner() {
                         className="w-10 h-10 rounded-full object-cover ring-2 ring-white shadow-sm flex-shrink-0"
                       />
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm text-gray-700 italic mb-1">
+                        <p className="text-sm text-secondary-700 italic mb-1">
                           "{testimonial.quote}"
                         </p>
                         <p className="text-xs text-gray-500">

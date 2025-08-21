@@ -88,8 +88,8 @@ export default function AboutLusoTown() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className={`text-center mb-16 transition-all duration-1000 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
-          <div className={`inline-flex items-center gap-3 bg-gradient-to-r from-secondary-50 via-primary-50 to-accent-50 border border-secondary-200 rounded-2xl px-6 py-3 shadow-lg mb-6 transition-all duration-700 delay-100 ${mounted ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-5'}`}>
+        <div className={`text-center mb-16 transition-all duration-1000 ${mounted ? 'opacity-100 transecondary-y-0' : 'opacity-0 transecondary-y-5'}`}>
+          <div className={`inline-flex items-center gap-3 bg-gradient-to-r from-secondary-50 via-primary-50 to-accent-50 border border-secondary-200 rounded-2xl px-6 py-3 shadow-lg mb-6 transition-all duration-700 delay-100 ${mounted ? 'opacity-100 scale-100 transecondary-y-0' : 'opacity-0 scale-95 -transecondary-y-5'}`}>
             <Globe className="h-5 w-5 text-secondary-600" />
             <span className="text-sm font-bold bg-gradient-to-r from-secondary-600 to-primary-600 bg-clip-text text-transparent">
               {t('about.hero.badge', 'Unidos pela Língua • Portuguese Community')}
@@ -101,18 +101,18 @@ export default function AboutLusoTown() {
             About <span className="bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 bg-clip-text text-transparent">LusoTown</span>
           </h2>
           
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto font-medium">
+          <p className="text-lg sm:text-xl md:text-2xl text-secondary-700 leading-relaxed max-w-4xl mx-auto font-medium">
             LusoTown is where Portuguese hearts find their London network. Whether you're homesick, building your career while honoring your heritage, 
             or simply miss the warmth of Portuguese conversation, this is your professional home. Every person here understands your journey and opens their networks to support you.
           </p>
         </div>
 
         {/* Main Features Section */}
-        <div className={`mb-20 transition-all duration-1000 delay-300 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+        <div className={`mb-20 transition-all duration-1000 delay-300 ${mounted ? 'opacity-100 transecondary-y-0' : 'opacity-0 transecondary-y-5'}`}>
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-3 bg-white/70 backdrop-blur-sm border border-gray-200 rounded-2xl px-6 py-3 shadow-lg mb-6">
+            <div className="inline-flex items-center gap-3 bg-white/70 backdrop-blur-sm border border-secondary-200 rounded-2xl px-6 py-3 shadow-lg mb-6">
               <Heart className="h-5 w-5 text-action-500" />
-              <span className="text-lg font-bold text-gray-800">When you join LusoTown, you can:</span>
+              <span className="text-lg font-bold text-secondary-800">When you join LusoTown, you can:</span>
             </div>
           </div>
 
@@ -121,7 +121,7 @@ export default function AboutLusoTown() {
             {features.map((feature, index) => (
               <div
                 key={feature.title}
-                className={`group relative bg-white/60 backdrop-blur-lg rounded-3xl p-4 sm:p-6 md:p-7 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 border border-white/30 ${feature.shadowColor} hover:shadow-xl transition-all duration-700 delay-${100 + index * 100} ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                className={`group relative bg-white/60 backdrop-blur-lg rounded-3xl p-4 sm:p-6 md:p-7 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:-transecondary-y-2 border border-white/30 ${feature.shadowColor} hover:shadow-xl transition-all duration-700 delay-${100 + index * 100} ${mounted ? 'opacity-100 transecondary-y-0' : 'opacity-0 transecondary-y-8'}`}
                 style={{ transitionDelay: `${100 + index * 100}ms` }}
               >
                 {/* Background gradient overlay */}
@@ -136,16 +136,16 @@ export default function AboutLusoTown() {
                 
                 {/* Content */}
                 <div className="relative z-10">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-secondary-800 transition-colors duration-300">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                  <p className="text-secondary-600 leading-relaxed group-hover:text-secondary-700 transition-colors duration-300">
                     {feature.description}
                   </p>
                 </div>
                 
                 {/* Hover arrow indicator */}
-                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
+                <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-300 transform transecondary-x-2 group-hover:transecondary-x-0">
                   <ArrowRight className="h-5 w-5 text-gray-400" />
                 </div>
               </div>
@@ -155,11 +155,11 @@ export default function AboutLusoTown() {
 
 
         {/* Call-to-Action */}
-        <div className={`text-center mt-12 transition-all duration-1000 delay-900 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
+        <div className={`text-center mt-12 transition-all duration-1000 delay-900 ${mounted ? 'opacity-100 transecondary-y-0' : 'opacity-0 transecondary-y-5'}`}>
           <div className="inline-flex items-center gap-3 text-accent-600 hover:text-accent-700 transition-colors duration-300">
             <Sparkles className="h-6 w-6 animate-pulse" />
             <span className="text-lg font-bold">Ready to book experiences with Portuguese speakers across London?</span>
-            <ArrowRight className="h-6 w-6 transform group-hover:translate-x-1 transition-transform duration-200" />
+            <ArrowRight className="h-6 w-6 transform group-hover:transecondary-x-1 transition-transform duration-200" />
           </div>
         </div>
       </div>

@@ -1,9 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { ROUTES } from '@/config'
 import { motion, AnimatePresence } from "framer-motion";
+import { ROUTES } from '@/config'
 import Link from "next/link";
+import { ROUTES } from '@/config'
 import { useRouter, usePathname } from "next/navigation";
+import { ROUTES } from '@/config'
 import {
   BookOpenIcon,
   ChartBarIcon,
@@ -31,6 +35,7 @@ import {
   X,
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { ROUTES } from '@/config'
 
 interface AcademyLayoutProps {
   children: React.ReactNode;
@@ -168,13 +173,13 @@ export default function AcademyLayout({ children }: AcademyLayoutProps) {
       case "Advanced":
         return "bg-red-100 text-red-700";
       default:
-        return "bg-gray-100 text-gray-700";
+        return "bg-secondary-100 text-secondary-700";
     }
   };
 
   const isCurrentPath = (href: string) => {
     if (href === "/academy") {
-      return pathname === "/academy";
+      return pathname === ROUTES.academy;
     }
     return pathname.startsWith(href);
   };
@@ -182,14 +187,14 @@ export default function AcademyLayout({ children }: AcademyLayoutProps) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50">
       {/* Academy Header */}
-      <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-sm border-b border-gray-200 shadow-sm">
+      <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-sm border-b border-secondary-200 shadow-sm">
         <div className="container-width">
           <div className="flex items-center justify-between h-16">
             {/* Logo and Title */}
             <div className="flex items-center gap-4">
               <button
-                onClick={() => router.push("/")}
-                className="flex items-center gap-2 text-gray-600 hover:text-primary-600 transition-colors"
+                onClick={() => router.push({ROUTES.home})}
+                className="flex items-center gap-2 text-secondary-600 hover:text-primary-600 transition-colors"
                 title={
                   isPortuguese
                     ? "Voltar ao site principal"
@@ -202,7 +207,7 @@ export default function AcademyLayout({ children }: AcademyLayoutProps) {
                 </span>
               </button>
 
-              <div className="h-6 w-px bg-gray-300"></div>
+              <div className="h-6 w-px bg-secondary-300"></div>
 
               <Link href="/academy" className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
@@ -212,7 +217,7 @@ export default function AcademyLayout({ children }: AcademyLayoutProps) {
                   <h1 className="text-lg font-bold text-gray-900">
                     {isPortuguese ? "Academia LusoTown" : "LusoTown Academy"}
                   </h1>
-                  <p className="text-xs text-gray-600 hidden sm:block">
+                  <p className="text-xs text-secondary-600 hidden sm:block">
                     {isPortuguese ? "Centro de Aprendizado" : "Learning Center"}
                   </p>
                 </div>
@@ -222,7 +227,7 @@ export default function AcademyLayout({ children }: AcademyLayoutProps) {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="lg:hidden p-2 text-gray-600 hover:text-primary-600 transition-colors"
+              className="lg:hidden p-2 text-secondary-600 hover:text-primary-600 transition-colors"
               aria-label={isPortuguese ? "Abrir menu" : "Open menu"}
             >
               {sidebarOpen ? (
@@ -234,10 +239,10 @@ export default function AcademyLayout({ children }: AcademyLayoutProps) {
 
             {/* Desktop Progress Indicator */}
             <div className="hidden lg:flex items-center gap-4">
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-secondary-600">
                 {isPortuguese ? "Progresso:" : "Progress:"}
               </div>
-              <div className="w-32 bg-gray-200 rounded-full h-2">
+              <div className="w-32 bg-secondary-200 rounded-full h-2">
                 <div className="bg-gradient-to-r from-primary-500 to-secondary-500 h-2 rounded-full w-0 transition-all duration-500"></div>
               </div>
               <div className="text-sm font-medium text-primary-600">0%</div>
@@ -256,7 +261,7 @@ export default function AcademyLayout({ children }: AcademyLayoutProps) {
               animate={{ x: 0 }}
               exit={{ x: -320 }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed lg:sticky top-16 left-0 z-30 w-80 h-[calc(100vh-4rem)] bg-white border-r border-gray-200 overflow-y-auto lg:block"
+              className="fixed lg:sticky top-16 left-0 z-30 w-80 h-[calc(100vh-4rem)] bg-white border-r border-secondary-200 overflow-y-auto lg:block"
             >
               <div className="p-6">
                 {/* Academy Stats */}
@@ -266,7 +271,7 @@ export default function AcademyLayout({ children }: AcademyLayoutProps) {
                       <div className="text-lg font-bold text-primary-600">
                         8
                       </div>
-                      <div className="text-xs text-gray-600">
+                      <div className="text-xs text-secondary-600">
                         {isPortuguese ? "Serviços" : "Services"}
                       </div>
                     </div>
@@ -274,7 +279,7 @@ export default function AcademyLayout({ children }: AcademyLayoutProps) {
                       <div className="text-lg font-bold text-secondary-600">
                         32
                       </div>
-                      <div className="text-xs text-gray-600">
+                      <div className="text-xs text-secondary-600">
                         {isPortuguese ? "Módulos" : "Modules"}
                       </div>
                     </div>
@@ -297,7 +302,7 @@ export default function AcademyLayout({ children }: AcademyLayoutProps) {
                               className={`group flex items-start gap-3 p-3 rounded-xl transition-all duration-200 ${
                                 isCurrentPath(item.href)
                                   ? "bg-primary-50 text-primary-700 border border-primary-200"
-                                  : "text-gray-700 hover:bg-gray-50 hover:text-primary-600"
+                                  : "text-secondary-700 hover:bg-secondary-50 hover:text-primary-600"
                               }`}
                             >
                               <item.icon
@@ -344,14 +349,14 @@ export default function AcademyLayout({ children }: AcademyLayoutProps) {
                 </nav>
 
                 {/* Help Section */}
-                <div className="mt-8 p-4 bg-gray-50 rounded-2xl">
+                <div className="mt-8 p-4 bg-secondary-50 rounded-2xl">
                   <div className="flex items-center gap-2 mb-2">
-                    <BookOpen className="w-4 h-4 text-gray-600" />
+                    <BookOpen className="w-4 h-4 text-secondary-600" />
                     <h4 className="text-sm font-semibold text-gray-900">
                       {isPortuguese ? "Precisa de Ajuda?" : "Need Help?"}
                     </h4>
                   </div>
-                  <p className="text-xs text-gray-600 mb-3">
+                  <p className="text-xs text-secondary-600 mb-3">
                     {isPortuguese
                       ? "Contacte a nossa equipa de apoio para assistência personalizada."
                       : "Contact our support team for personalized assistance."}

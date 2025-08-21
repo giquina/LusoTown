@@ -69,10 +69,10 @@ export default function ConnectionNotificationBanner({ notifications }: Connecti
 
   const getNotificationColor = (type: string) => {
     const colors = {
-      new_connection: 'from-blue-500 to-purple-500',
+      new_connection: 'from-blue-500 to-accent-500',
       milestone: 'from-yellow-500 to-orange-500',
       upcoming_event_with_connections: 'from-green-500 to-emerald-500',
-      connection_activity: 'from-purple-500 to-pink-500'
+      connection_activity: 'from-accent-500 to-pink-500'
     }
     return colors[type as keyof typeof colors] || 'from-gray-500 to-gray-600'
   }
@@ -82,7 +82,7 @@ export default function ConnectionNotificationBanner({ notifications }: Connecti
   }
 
   return (
-    <div className="bg-white border-b border-gray-200 shadow-sm">
+    <div className="bg-white border-b border-secondary-200 shadow-sm">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatePresence>
           {unreadNotifications.slice(0, 3).map((notification) => {
@@ -96,7 +96,7 @@ export default function ConnectionNotificationBanner({ notifications }: Connecti
                 animate={{ opacity: 1, y: 0, height: 'auto' }}
                 exit={{ opacity: 0, y: -20, height: 0 }}
                 transition={{ duration: 0.3 }}
-                className="py-3 border-b border-gray-100 last:border-b-0"
+                className="py-3 border-b border-secondary-100 last:border-b-0"
               >
                 <div className="flex items-center gap-4">
                   {/* Notification Icon */}
@@ -109,7 +109,7 @@ export default function ConnectionNotificationBanner({ notifications }: Connecti
                     <h4 className="text-sm font-semibold text-gray-900 mb-1">
                       {notification.title}
                     </h4>
-                    <p className="text-sm text-gray-600 truncate">
+                    <p className="text-sm text-secondary-600 truncate">
                       {getPortugueseNotificationText(notification.type, notification.message)}
                     </p>
                     {/* Portuguese cultural context */}
@@ -137,14 +137,14 @@ export default function ConnectionNotificationBanner({ notifications }: Connecti
                       </button>
                     )}
                     {notification.type === 'upcoming_event_with_connections' && (
-                      <button className="text-sm font-medium text-green-600 hover:text-green-700 transition-colors">
+                      <button className="text-sm font-medium text-action-600 hover:text-green-700 transition-colors">
                         {isPortuguese ? 'Ver Evento' : 'View Event'}
                       </button>
                     )}
                     
                     <button
                       onClick={() => handleDismiss(notification.id)}
-                      className="p-1 text-gray-400 hover:text-gray-600 transition-colors"
+                      className="p-1 text-gray-400 hover:text-secondary-600 transition-colors"
                       title={isPortuguese ? 'Dispensar' : 'Dismiss'}
                     >
                       <XMarkIcon className="w-4 h-4" />

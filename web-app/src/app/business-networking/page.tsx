@@ -278,7 +278,7 @@ export default function BusinessNetworkingPage() {
                       <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">
                         {story.achievement}
                       </span>
-                      <CheckCircleIcon className="w-5 h-5 text-green-500" />
+                      <CheckCircleIcon className="w-5 h-5 text-action-500" />
                     </div>
                   </motion.div>
                 ))}
@@ -314,13 +314,10 @@ export default function BusinessNetworkingPage() {
             <BusinessNetworkingMatch
               currentUserId="demo-user"
               onBusinessMatchAction={(matchId, action) => {
-                console.log('Demo: Business match action:', matchId, action);
               }}
               onMentorshipRequest={(menteeId, mentorId) => {
-                console.log('Demo: Mentorship request:', menteeId, mentorId);
               }}
               onBusinessEventBooking={(eventId, matchId) => {
-                console.log('Demo: Business event booking:', eventId, matchId);
               }}
             />
           </motion.div>

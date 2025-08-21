@@ -36,7 +36,6 @@ export default function DatingMatchingModule() {
 
   const handleModuleComplete = () => {
     // Module completion logic
-    console.log('Dating & Matching module completed!');
   };
 
   // Define the learning module structure

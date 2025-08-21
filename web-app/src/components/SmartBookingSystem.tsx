@@ -280,13 +280,13 @@ export default function SmartBookingSystem({
             onClick={e => e.stopPropagation()}
           >
             {/* Header with Progress */}
-            <div className="bg-gradient-to-r from-primary-50 via-secondary-50 to-accent-50 p-6 border-b border-gray-200">
+            <div className="bg-gradient-to-r from-primary-50 via-secondary-50 to-accent-50 p-6 border-b border-secondary-200">
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <h1 className="text-2xl font-bold text-gray-900">
                     {isPortuguese ? 'Sistema de Reserva Inteligente' : 'Smart Booking System'}
                   </h1>
-                  <p className="text-gray-600 mt-1">
+                  <p className="text-secondary-600 mt-1">
                     {isPortuguese 
                       ? 'Fluxo automatizado baseado no tipo de serviço selecionado'
                       : 'Automated flow based on your selected service type'
@@ -295,7 +295,7 @@ export default function SmartBookingSystem({
                 </div>
                 <button
                   onClick={handleClose}
-                  className="p-2 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-100 transition-colors"
+                  className="p-2 text-gray-400 hover:text-secondary-600 rounded-lg hover:bg-secondary-100 transition-colors"
                 >
                   <CheckCircleIcon className="w-6 h-6" />
                 </button>
@@ -313,12 +313,12 @@ export default function SmartBookingSystem({
                           ? 'bg-primary-100 text-primary-700 border-2 border-primary-300' 
                           : step.isCompleted 
                           ? 'bg-green-100 text-green-700 border-2 border-green-300'
-                          : 'bg-gray-100 text-gray-500 border-2 border-gray-200'
+                          : 'bg-secondary-100 text-gray-500 border-2 border-secondary-200'
                         }
                       `}>
                         <div className={`
                           w-8 h-8 rounded-full flex items-center justify-center
-                          ${step.isCompleted ? 'bg-green-500 text-white' : 'bg-white'}
+                          ${step.isCompleted ? 'bg-action-500 text-white' : 'bg-white'}
                         `}>
                           {step.isCompleted ? (
                             <CheckCircleIcon className="w-5 h-5" />
@@ -348,7 +348,7 @@ export default function SmartBookingSystem({
 
               {/* Dynamic Status */}
               <div className="mt-4 flex items-center justify-between">
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-secondary-600">
                   {bookingData?.serviceType && (
                     <span>
                       {isPortuguese ? 'Serviço: ' : 'Service: '}
@@ -361,7 +361,7 @@ export default function SmartBookingSystem({
                 
                 {pricingResult && (
                   <div className="text-sm">
-                    <span className="text-gray-600">
+                    <span className="text-secondary-600">
                       {isPortuguese ? 'Total: ' : 'Total: '}
                     </span>
                     <span className="font-bold text-lg text-primary-600">
@@ -371,7 +371,7 @@ export default function SmartBookingSystem({
                 )}
                 
                 {isProcessing && (
-                  <div className="flex items-center space-x-2 text-sm text-gray-600">
+                  <div className="flex items-center space-x-2 text-sm text-secondary-600">
                     <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary-600"></div>
                     <span>{isPortuguese ? 'Processando...' : 'Processing...'}</span>
                   </div>
@@ -408,7 +408,7 @@ export default function SmartBookingSystem({
                         <h3 className="text-xl font-bold text-gray-900 mb-2">
                           {isPortuguese ? 'Acesso Concedido!' : 'Access Granted!'}
                         </h3>
-                        <p className="text-gray-600 mb-6">
+                        <p className="text-secondary-600 mb-6">
                           {isPortuguese 
                             ? 'Pode agora prosseguir com o pagamento do seu serviço premium.'
                             : 'You can now proceed with payment for your premium service.'
@@ -465,21 +465,21 @@ export default function SmartBookingSystem({
                     exit={{ opacity: 0, scale: 0.8 }}
                     className="p-8 text-center"
                   >
-                    <CheckCircleIcon className="w-20 h-20 text-green-500 mx-auto mb-6" />
+                    <CheckCircleIcon className="w-20 h-20 text-action-500 mx-auto mb-6" />
                     <h3 className="text-3xl font-bold text-gray-900 mb-4">
                       {isPortuguese ? 'Reserva Confirmada!' : 'Booking Confirmed!'}
                     </h3>
-                    <p className="text-lg text-gray-600 mb-6">
+                    <p className="text-lg text-secondary-600 mb-6">
                       {isPortuguese 
                         ? 'A sua reserva foi processada com sucesso.'
                         : 'Your booking has been processed successfully.'
                       }
                     </p>
                     
-                    <div className="bg-gray-50 rounded-lg p-6 mb-6 max-w-md mx-auto">
+                    <div className="bg-secondary-50 rounded-lg p-6 mb-6 max-w-md mx-auto">
                       <div className="space-y-3 text-left">
                         <div className="flex justify-between">
-                          <span className="text-gray-600">
+                          <span className="text-secondary-600">
                             {isPortuguese ? 'ID da Reserva:' : 'Booking ID:'}
                           </span>
                           <span className="font-mono font-bold">{completedBookingId}</span>
@@ -488,7 +488,7 @@ export default function SmartBookingSystem({
                         {bookingData && (
                           <>
                             <div className="flex justify-between">
-                              <span className="text-gray-600">
+                              <span className="text-secondary-600">
                                 {isPortuguese ? 'Serviço:' : 'Service:'}
                               </span>
                               <span className="font-medium">
@@ -497,7 +497,7 @@ export default function SmartBookingSystem({
                             </div>
                             
                             <div className="flex justify-between">
-                              <span className="text-gray-600">
+                              <span className="text-secondary-600">
                                 {isPortuguese ? 'Data:' : 'Date:'}
                               </span>
                               <span className="font-medium">
@@ -509,7 +509,7 @@ export default function SmartBookingSystem({
                         
                         {pricingResult && (
                           <div className="flex justify-between border-t pt-3">
-                            <span className="text-gray-600">
+                            <span className="text-secondary-600">
                               {isPortuguese ? 'Total Pago:' : 'Total Paid:'}
                             </span>
                             <span className="font-bold text-lg">
@@ -520,7 +520,7 @@ export default function SmartBookingSystem({
                       </div>
                     </div>
 
-                    <div className="text-sm text-gray-600 mb-6">
+                    <div className="text-sm text-secondary-600 mb-6">
                       {isPortuguese 
                         ? 'Receberá um email de confirmação em breve com todos os detalhes.'
                         : 'You will receive a confirmation email shortly with all details.'
@@ -537,7 +537,7 @@ export default function SmartBookingSystem({
                       
                       <button
                         onClick={resetBookingFlow}
-                        className="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
+                        className="px-6 py-3 bg-secondary-200 text-secondary-700 rounded-lg hover:bg-secondary-300 transition-colors"
                       >
                         {isPortuguese ? 'Nova Reserva' : 'New Booking'}
                       </button>

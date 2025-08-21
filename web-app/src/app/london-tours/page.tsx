@@ -45,7 +45,7 @@ export default function LondonToursPage() {
   }, [tours, category, search]);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       {/* Hero */}
       <section className="pt-28 md:pt-32 pb-16 bg-gradient-to-br from-primary-50 to-secondary-50 relative overflow-hidden">
         {/* Background decorative elements */}
@@ -88,7 +88,7 @@ export default function LondonToursPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-xl sm:text-2xl lg:text-3xl text-gray-700 mb-6 font-medium max-w-4xl mx-auto leading-relaxed"
+              className="text-xl sm:text-2xl lg:text-3xl text-secondary-700 mb-6 font-medium max-w-4xl mx-auto leading-relaxed"
             >
               {isPortuguese
                 ? "Descubra os destinos turísticos mais populares de Londres com a comunidade portuguesa — tours culturais, marcos icónicos e experiências autênticas."
@@ -115,7 +115,7 @@ export default function LondonToursPage() {
       </section>
 
       {/* Main Content */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-secondary-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             {/* Header with Search and Filters */}
@@ -132,7 +132,7 @@ export default function LondonToursPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 }}
-                  className="text-lg text-gray-600 max-w-3xl mx-auto"
+                  className="text-lg text-secondary-600 max-w-3xl mx-auto"
                 >
                   {isPortuguese 
                     ? "Explore Londres com guias que falam português e grupos autênticos da comunidade lusófona."
@@ -146,13 +146,13 @@ export default function LondonToursPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="bg-white rounded-2xl p-6 shadow-xl border border-gray-100 mb-8"
+                className="bg-white rounded-2xl p-6 shadow-xl border border-secondary-100 mb-8"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                   {/* Search */}
                   <div className="lg:col-span-2">
                     <div className="relative">
-                      <MagnifyingGlassIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                      <MagnifyingGlassIcon className="absolute left-4 top-1/2 transform -transecondary-y-1/2 h-5 w-5 text-gray-400" />
                       <input
                         type="text"
                         value={search}
@@ -162,7 +162,7 @@ export default function LondonToursPage() {
                             ? "Procurar por tours, destinos, experiências..." 
                             : "Search for tours, destinations, experiences..."
                         }
-                        className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-base"
+                        className="w-full pl-12 pr-4 py-4 border border-secondary-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-base"
                       />
                     </div>
                   </div>
@@ -170,11 +170,11 @@ export default function LondonToursPage() {
                   {/* Category Filter */}
                   <div>
                     <div className="relative">
-                      <AdjustmentsHorizontalIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                      <AdjustmentsHorizontalIcon className="absolute left-4 top-1/2 transform -transecondary-y-1/2 h-5 w-5 text-gray-400" />
                       <select
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}
-                        className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-base appearance-none bg-white"
+                        className="w-full pl-12 pr-4 py-4 border border-secondary-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 text-base appearance-none bg-white"
                       >
                         <option value="">{isPortuguese ? "Todas as Categorias" : "All Categories"}</option>
                         <option value="Cultural Tours">{isPortuguese ? "Tours Culturais" : "Cultural Tours"}</option>
@@ -204,7 +204,7 @@ export default function LondonToursPage() {
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">
                       {isPortuguese ? "Nenhum tour encontrado" : "No tours found"}
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-secondary-600">
                       {isPortuguese
                         ? "Tente ajustar os filtros ou procurar por algo diferente."
                         : "Try adjusting your filters or searching for something different."}
@@ -215,7 +215,7 @@ export default function LondonToursPage() {
                 <>
                   {/* Results Count */}
                   <div className="mb-8">
-                    <p className="text-gray-600 text-lg">
+                    <p className="text-secondary-600 text-lg">
                       {isPortuguese 
                         ? `${filteredTours.length} tour${filteredTours.length !== 1 ? 's' : ''} encontrado${filteredTours.length !== 1 ? 's' : ''}`
                         : `${filteredTours.length} tour${filteredTours.length !== 1 ? 's' : ''} found`

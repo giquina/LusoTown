@@ -96,7 +96,6 @@ export default function SaudadeMatchingIntegration({
 
   const handleMatchSelect = (match: any) => {
     // Handle match selection
-    console.log('Selected match:', match);
   };
 
   const handleStartConversation = (matchId: string) => {
@@ -105,12 +104,10 @@ export default function SaudadeMatchingIntegration({
 
   const handleActivitySelect = (activity: any) => {
     // Handle activity selection - could open event booking, community page, etc.
-    console.log('Selected activity:', activity);
   };
 
   const handleScheduleActivity = (activityId: string, partnerId?: string) => {
     // Handle activity scheduling
-    console.log('Schedule activity:', activityId, partnerId);
   };
 
   const retakeAssessment = () => {
@@ -146,7 +143,7 @@ export default function SaudadeMatchingIntegration({
                 ? 'Encontre Sua Alma Gémea de Saudade'
                 : 'Find Your Saudade Soulmate'}
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
               {language === 'pt'
                 ? 'Descubra conexões emocionais autênticas com pessoas que compreendem profundamente a sua saudade e herança portuguesa. Vá além do superficial.'
                 : 'Discover authentic emotional connections with people who deeply understand your saudade and Portuguese heritage. Go beyond the surface.'}
@@ -157,12 +154,12 @@ export default function SaudadeMatchingIntegration({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div className="bg-white/60 backdrop-blur-sm rounded-xl p-6">
               <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                <HeartSolid className="w-6 h-6 text-red-600" />
+                <HeartSolid className="w-6 h-6 text-coral-600" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">
                 {language === 'pt' ? 'Compatibilidade de Saudade' : 'Saudade Compatibility'}
               </h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-secondary-600">
                 {language === 'pt'
                   ? 'Combine com base na intensidade e frequência da sua saudade'
                   : 'Match based on your saudade intensity and frequency'}
@@ -171,12 +168,12 @@ export default function SaudadeMatchingIntegration({
 
             <div className="bg-white/60 backdrop-blur-sm rounded-xl p-6">
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                <SparklesIcon className="w-6 h-6 text-blue-600" />
+                <SparklesIcon className="w-6 h-6 text-primary-600" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">
                 {language === 'pt' ? 'Cura Cultural' : 'Cultural Healing'}
               </h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-secondary-600">
                 {language === 'pt'
                   ? 'Atividades personalizadas para curar a saudade juntos'
                   : 'Personalized activities to heal saudade together'}
@@ -185,12 +182,12 @@ export default function SaudadeMatchingIntegration({
 
             <div className="bg-white/60 backdrop-blur-sm rounded-xl p-6">
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                <UserGroupIcon className="w-6 h-6 text-green-600" />
+                <UserGroupIcon className="w-6 h-6 text-action-600" />
               </div>
               <h3 className="font-semibold text-gray-900 mb-2">
                 {language === 'pt' ? 'Apoio Emocional' : 'Emotional Support'}
               </h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-secondary-600">
                 {language === 'pt'
                   ? 'Conecte-se com quem compreende a sua jornada emocional'
                   : 'Connect with those who understand your emotional journey'}
@@ -240,7 +237,7 @@ export default function SaudadeMatchingIntegration({
                   ? 'Avaliação de Saudade e Compatibilidade Cultural'
                   : 'Saudade & Cultural Compatibility Assessment'}
               </h2>
-              <p className="text-gray-600 max-w-xl mx-auto">
+              <p className="text-secondary-600 max-w-xl mx-auto">
                 {language === 'pt'
                   ? 'Esta avaliação vai compreender a profundidade da sua saudade, triggers emocionais, e como você se conecta com a sua herança portuguesa.'
                   : 'This assessment will understand the depth of your saudade, emotional triggers, and how you connect with your Portuguese heritage.'}
@@ -251,21 +248,21 @@ export default function SaudadeMatchingIntegration({
               <h3 className="font-semibold text-gray-900 mb-3">
                 {language === 'pt' ? 'O que vamos descobrir:' : 'What we\'ll discover:'}
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-gray-700">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-secondary-700">
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                  <div className="w-2 h-2 bg-coral-500 rounded-full"></div>
                   <span>{language === 'pt' ? 'Intensidade da sua saudade' : 'Your saudade intensity'}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
                   <span>{language === 'pt' ? 'Triggers emocionais únicos' : 'Unique emotional triggers'}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <div className="w-2 h-2 bg-action-500 rounded-full"></div>
                   <span>{language === 'pt' ? 'Estratégias de adaptação' : 'Coping strategies'}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                  <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
                   <span>{language === 'pt' ? 'Necessidades de apoio' : 'Support needs'}</span>
                 </div>
               </div>
@@ -305,7 +302,7 @@ export default function SaudadeMatchingIntegration({
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 {language === 'pt' ? 'Perfil Completo!' : 'Profile Complete!'}
               </h2>
-              <p className="text-gray-600">
+              <p className="text-secondary-600">
                 {language === 'pt' 
                   ? 'Agora você pode encontrar conexões emocionais autênticas baseadas na sua saudade'
                   : 'Now you can find authentic emotional connections based on your saudade'}
@@ -317,10 +314,10 @@ export default function SaudadeMatchingIntegration({
                 <h3 className="font-semibold text-gray-900 mb-3">
                   {language === 'pt' ? 'Seu Tipo de Compatibilidade:' : 'Your Compatibility Type:'}
                 </h3>
-                <div className="text-lg font-bold text-red-600 mb-2">
+                <div className="text-lg font-bold text-coral-600 mb-2">
                   {userCulturalProfile.saudadeProfile.emotionalCompatibilityType}
                 </div>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-secondary-600">
                   {language === 'pt' 
                     ? `Intensidade de Saudade: ${userCulturalProfile.saudadeProfile.saudadeIntensity}/10`
                     : `Saudade Intensity: ${userCulturalProfile.saudadeProfile.saudadeIntensity}/10`}
@@ -352,7 +349,7 @@ export default function SaudadeMatchingIntegration({
                 <h2 className="text-lg font-semibold text-gray-900">
                   {userCulturalProfile.saudadeProfile.emotionalCompatibilityType}
                 </h2>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-secondary-600">
                   {language === 'pt' 
                     ? `Saudade ${userCulturalProfile.saudadeProfile.saudadeIntensity}/10 • ${userCulturalProfile.saudadeProfile.frequency}`
                     : `Saudade ${userCulturalProfile.saudadeProfile.saudadeIntensity}/10 • ${userCulturalProfile.saudadeProfile.frequency}`}
@@ -362,14 +359,14 @@ export default function SaudadeMatchingIntegration({
             <div className="flex gap-2">
               <button
                 onClick={retakeAssessment}
-                className="p-2 text-gray-600 hover:text-gray-800 hover:bg-white rounded-lg transition-colors"
+                className="p-2 text-secondary-600 hover:text-secondary-800 hover:bg-white rounded-lg transition-colors"
                 title={language === 'pt' ? 'Refazer avaliação' : 'Retake assessment'}
               >
                 <ArrowPathIcon className="w-5 h-5" />
               </button>
               <button
                 onClick={() => setShowHealing(!showHealing)}
-                className="p-2 text-gray-600 hover:text-gray-800 hover:bg-white rounded-lg transition-colors"
+                className="p-2 text-secondary-600 hover:text-secondary-800 hover:bg-white rounded-lg transition-colors"
                 title={language === 'pt' ? 'Recomendações de cura' : 'Healing recommendations'}
               >
                 <SparklesIcon className="w-5 h-5" />
@@ -380,7 +377,7 @@ export default function SaudadeMatchingIntegration({
       )}
 
       {/* Tab Navigation */}
-      <div className="flex gap-4 border-b border-gray-200">
+      <div className="flex gap-4 border-b border-secondary-200">
         <button
           onClick={() => {
             setShowMatches(true);
@@ -388,8 +385,8 @@ export default function SaudadeMatchingIntegration({
           }}
           className={`px-4 py-2 font-medium transition-colors ${
             showMatches
-              ? 'text-red-600 border-b-2 border-red-600'
-              : 'text-gray-600 hover:text-gray-800'
+              ? 'text-coral-600 border-b-2 border-red-600'
+              : 'text-secondary-600 hover:text-secondary-800'
           }`}
         >
           {language === 'pt' ? 'Matches de Saudade' : 'Saudade Matches'}
@@ -401,8 +398,8 @@ export default function SaudadeMatchingIntegration({
           }}
           className={`px-4 py-2 font-medium transition-colors ${
             showHealing
-              ? 'text-red-600 border-b-2 border-red-600'
-              : 'text-gray-600 hover:text-gray-800'
+              ? 'text-coral-600 border-b-2 border-red-600'
+              : 'text-secondary-600 hover:text-secondary-800'
           }`}
         >
           {language === 'pt' ? 'Cura Cultural' : 'Cultural Healing'}

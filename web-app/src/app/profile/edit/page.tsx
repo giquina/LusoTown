@@ -63,7 +63,7 @@ export default function ProfileEditPage() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="flex flex-col items-center space-y-4">
           <div className="w-8 h-8 border-4 border-primary-500 border-t-transparent rounded-full animate-spin" />
-          <p className="text-gray-600">Loading your profile...</p>
+          <p className="text-secondary-600">Loading your profile...</p>
         </div>
       </div>
     )
@@ -73,7 +73,7 @@ export default function ProfileEditPage() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <p className="text-gray-600 mb-4">Profile not found</p>
+          <p className="text-secondary-600 mb-4">Profile not found</p>
           <button
             onClick={() => router.push('/signup')}
             className="bg-primary-500 text-white px-6 py-2 rounded-lg hover:bg-primary-600 transition-colors"
@@ -98,7 +98,7 @@ export default function ProfileEditPage() {
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
                 Edit Your Profile
               </h1>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              <p className="text-xl text-secondary-600 max-w-2xl mx-auto">
                 Update your information to connect better with the Portuguese community
               </p>
             </div>

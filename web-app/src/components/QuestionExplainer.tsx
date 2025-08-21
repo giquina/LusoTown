@@ -93,7 +93,7 @@ export default function QuestionExplainer({ step, isVisible = true }: QuestionEx
     >
       <div className="flex items-start space-x-3">
         <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-          <IconComponent className="w-5 h-5 text-blue-600" />
+          <IconComponent className="w-5 h-5 text-primary-600" />
         </div>
         <div className="flex-1">
           <h4 className="font-semibold text-blue-900 mb-2">
@@ -105,8 +105,8 @@ export default function QuestionExplainer({ step, isVisible = true }: QuestionEx
           
           {/* Compliance badge */}
           <div className="flex items-center space-x-2">
-            <InformationCircleIcon className="w-4 h-4 text-blue-600" />
-            <span className="text-xs text-blue-700 font-medium">
+            <InformationCircleIcon className="w-4 h-4 text-primary-600" />
+            <span className="text-xs text-primary-700 font-medium">
               {isPortuguese ? explanation.compliancePt : explanation.complianceEn}
             </span>
           </div>

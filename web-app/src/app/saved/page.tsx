@@ -58,9 +58,9 @@ export default function SavedItemsPage() {
       case 'business':
         return <BuildingStorefrontIcon className="w-5 h-5 text-secondary-500" />
       case 'feed':
-        return <ChatBubbleLeftRightIcon className="w-5 h-5 text-purple-500" />
+        return <ChatBubbleLeftRightIcon className="w-5 h-5 text-accent-500" />
       case 'group':
-        return <UserGroupIcon className="w-5 h-5 text-green-500" />
+        return <UserGroupIcon className="w-5 h-5 text-action-500" />
       default:
         return <HeartIcon className="w-5 h-5 text-gray-500" />
     }
@@ -111,7 +111,7 @@ export default function SavedItemsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       
       <main className="pt-16">
         {/* Hero Section */}
@@ -130,7 +130,7 @@ export default function SavedItemsPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-xl text-gray-600 mb-8"
+                className="text-xl text-secondary-600 mb-8"
               >
                 {isPortuguese 
                   ? 'Todos os eventos, negócios e publicações que guardaste. Acede facilmente ao conteúdo que mais gostas.'
@@ -147,11 +147,11 @@ export default function SavedItemsPage() {
                 >
                   <div className="bg-white rounded-lg px-4 py-2 shadow-sm">
                     <div className="text-2xl font-bold text-primary-600">{savedItems.length}</div>
-                    <div className="text-sm text-gray-600">{isPortuguese ? 'Itens Guardados' : 'Saved Items'}</div>
+                    <div className="text-sm text-secondary-600">{isPortuguese ? 'Itens Guardados' : 'Saved Items'}</div>
                   </div>
                   <div className="bg-white rounded-lg px-4 py-2 shadow-sm">
                     <div className="text-2xl font-bold text-secondary-600">{cartCount}</div>
-                    <div className="text-sm text-gray-600">{isPortuguese ? 'No Carrinho' : 'In Cart'}</div>
+                    <div className="text-sm text-secondary-600">{isPortuguese ? 'No Carrinho' : 'In Cart'}</div>
                   </div>
                 </motion.div>
               )}
@@ -174,7 +174,7 @@ export default function SavedItemsPage() {
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     {isPortuguese ? 'Nenhum item guardado' : 'No saved items yet'}
                   </h3>
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-secondary-600 mb-6">
                     {isPortuguese 
                       ? 'Começa a guardar os teus eventos, negócios e publicações favoritas clicando no ícone do coração.'
                       : 'Start saving your favorite events, businesses, and posts by clicking the heart icon.'
@@ -191,7 +191,7 @@ export default function SavedItemsPage() {
               ) : (
                 <>
                   {/* Filters and Controls */}
-                  <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-8">
+                  <div className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-6 mb-8">
                     {/* Tabs */}
                     <div className="flex flex-wrap gap-2 mb-6">
                       {[
@@ -209,7 +209,7 @@ export default function SavedItemsPage() {
                             className={`px-4 py-2 rounded-lg font-medium transition-colors flex items-center gap-2 ${
                               activeTab === tab.key
                                 ? 'bg-primary-100 text-primary-700'
-                                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
                             }`}
                           >
                             {getTypeIcon(tab.key)}
@@ -226,7 +226,7 @@ export default function SavedItemsPage() {
                         <select
                           value={sortBy}
                           onChange={(e) => setSortBy(e.target.value as any)}
-                          className="bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-400"
+                          className="bg-white border border-secondary-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-400"
                         >
                           <option value="recent">{isPortuguese ? 'Mais Recentes' : 'Most Recent'}</option>
                           <option value="alphabetical">{isPortuguese ? 'Alfabética' : 'Alphabetical'}</option>
@@ -234,7 +234,7 @@ export default function SavedItemsPage() {
                         </select>
                       </div>
                       
-                      <div className="text-sm text-gray-600">
+                      <div className="text-sm text-secondary-600">
                         {sortedItems.length} {isPortuguese ? (sortedItems.length === 1 ? 'item' : 'itens') : (sortedItems.length === 1 ? 'item' : 'items')}
                       </div>
                     </div>
@@ -251,7 +251,7 @@ export default function SavedItemsPage() {
                           animate={{ opacity: 1, scale: 1 }}
                           exit={{ opacity: 0, scale: 0.9 }}
                           transition={{ duration: 0.2 }}
-                          className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow"
+                          className="bg-white rounded-2xl shadow-sm border border-secondary-100 overflow-hidden hover:shadow-md transition-shadow"
                         >
                           {/* Image */}
                           <div className="relative h-48 overflow-hidden">
@@ -273,7 +273,7 @@ export default function SavedItemsPage() {
                             
                             {/* Type Badge */}
                             <div className="absolute top-3 left-3">
-                              <div className="flex items-center gap-1 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-medium text-gray-700">
+                              <div className="flex items-center gap-1 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-medium text-secondary-700">
                                 {getTypeIcon(item.type)}
                                 {getTypeLabel(item.type)}
                               </div>
@@ -282,7 +282,7 @@ export default function SavedItemsPage() {
                             {/* Remove Button */}
                             <button
                               onClick={() => removeFromSaved(item.id)}
-                              className="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-600 hover:text-red-500 transition-colors"
+                              className="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-secondary-600 hover:text-coral-500 transition-colors"
                               title={isPortuguese ? 'Remover dos guardados' : 'Remove from saved'}
                             >
                               <XMarkIcon className="w-4 h-4" />
@@ -290,7 +290,7 @@ export default function SavedItemsPage() {
                             
                             {/* Saved Indicator */}
                             <div className="absolute bottom-3 right-3">
-                              <HeartSolidIcon className="w-6 h-6 text-red-500" />
+                              <HeartSolidIcon className="w-6 h-6 text-coral-500" />
                             </div>
                           </div>
                           
@@ -301,7 +301,7 @@ export default function SavedItemsPage() {
                             </h3>
                             
                             {item.description && (
-                              <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                              <p className="text-secondary-600 text-sm mb-4 line-clamp-2">
                                 {item.description}
                               </p>
                             )}
@@ -311,13 +311,13 @@ export default function SavedItemsPage() {
                               {item.type === 'event' && (
                                 <>
                                   {item.eventDate && (
-                                    <div className="flex items-center gap-2 text-sm text-gray-600">
+                                    <div className="flex items-center gap-2 text-sm text-secondary-600">
                                       <CalendarDaysIcon className="w-4 h-4" />
                                       <span>{formatDate(item.eventDate)} • {item.eventTime}</span>
                                     </div>
                                   )}
                                   {item.eventLocation && (
-                                    <div className="flex items-center gap-2 text-sm text-gray-600">
+                                    <div className="flex items-center gap-2 text-sm text-secondary-600">
                                       <MapPinIcon className="w-4 h-4" />
                                       <span className="truncate">{item.eventLocation}</span>
                                     </div>
@@ -333,14 +333,14 @@ export default function SavedItemsPage() {
                               {item.type === 'business' && (
                                 <>
                                   {item.businessLocation && (
-                                    <div className="flex items-center gap-2 text-sm text-gray-600">
+                                    <div className="flex items-center gap-2 text-sm text-secondary-600">
                                       <MapPinIcon className="w-4 h-4" />
                                       <span>{item.businessLocation}</span>
                                     </div>
                                   )}
                                   {item.businessRating && (
-                                    <div className="flex items-center gap-1 text-sm text-gray-600">
-                                      <StarIcon className="w-4 h-4 text-yellow-500" />
+                                    <div className="flex items-center gap-1 text-sm text-secondary-600">
+                                      <StarIcon className="w-4 h-4 text-accent-500" />
                                       <span>{item.businessRating} rating</span>
                                     </div>
                                   )}
@@ -348,7 +348,7 @@ export default function SavedItemsPage() {
                               )}
                               
                               {item.category && (
-                                <div className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full inline-block">
+                                <div className="text-xs bg-secondary-100 text-secondary-600 px-2 py-1 rounded-full inline-block">
                                   {item.category}
                                 </div>
                               )}

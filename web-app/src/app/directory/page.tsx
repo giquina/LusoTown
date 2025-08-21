@@ -1,8 +1,11 @@
 "use client";
 import Image from "next/image";
+import { ROUTES } from '@/config'
 
 import React, { useState, useEffect, useCallback } from "react";
+import { ROUTES } from '@/config'
 import { authService, User } from "@/lib/auth";
+import { ROUTES } from '@/config'
 import {
   directoryService,
   DirectoryFilters,
@@ -10,8 +13,11 @@ import {
   COMMON_INTERESTS,
 } from "@/lib/directory";
 import { connectionService } from "@/lib/connections";
+import { ROUTES } from '@/config'
 import { UserProfile } from "@/lib/connections";
+import { ROUTES } from '@/config'
 import { useRouter } from "next/navigation";
+import { ROUTES } from '@/config'
 import {
   Search,
   Filter,
@@ -55,7 +61,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
     const badges = {
       free: {
         icon: <Users className="w-3 h-3" />,
-        color: "bg-gray-100 text-gray-600",
+        color: "bg-secondary-100 text-secondary-600",
         label: "Free",
       },
       core: {
@@ -65,7 +71,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
       },
       premium: {
         icon: <Crown className="w-3 h-3" />,
-        color: "bg-gradient-to-r from-purple-500 to-pink-500 text-white",
+        color: "bg-gradient-to-r from-accent-500 to-pink-500 text-white",
         label: "Premium",
       },
     };
@@ -120,7 +126,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
               </div>
             </div>
             {member.isOnline && (
-              <div className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white"></div>
+              <div className="absolute -top-1 -right-1 w-5 h-5 bg-action-500 rounded-full border-2 border-white"></div>
             )}
           </div>
         </div>
@@ -142,7 +148,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
       <div className="pt-10 p-6">
         <div className="mb-4">
           <h3 className="text-lg font-semibold text-gray-900">{member.name}</h3>
-          <div className="flex items-center space-x-2 text-sm text-gray-600 mt-1">
+          <div className="flex items-center space-x-2 text-sm text-secondary-600 mt-1">
             {member.privacy.showAge && (
               <>
                 <span>{member.age} years old</span>
@@ -159,7 +165,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
         </div>
 
         {/* Bio */}
-        <p className="text-gray-600 text-sm mb-4 line-clamp-3">{member.bio}</p>
+        <p className="text-secondary-600 text-sm mb-4 line-clamp-3">{member.bio}</p>
 
         {/* Interests */}
         <div className="mb-4">
@@ -167,13 +173,13 @@ const MemberCard: React.FC<MemberCardProps> = ({
             {member.interests.slice(0, 3).map((interest) => (
               <span
                 key={interest}
-                className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full"
+                className="px-2 py-1 bg-secondary-100 text-secondary-600 text-xs rounded-full"
               >
                 {interest}
               </span>
             ))}
             {member.interests.length > 3 && (
-              <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full">
+              <span className="px-2 py-1 bg-secondary-100 text-secondary-600 text-xs rounded-full">
                 +{member.interests.length - 3} more
               </span>
             )}
@@ -186,19 +192,19 @@ const MemberCard: React.FC<MemberCardProps> = ({
             <div className="text-lg font-semibold text-gray-900">
               {member.connectionsCount}
             </div>
-            <div className="text-xs text-gray-600">Connections</div>
+            <div className="text-xs text-secondary-600">Connections</div>
           </div>
           <div>
             <div className="text-lg font-semibold text-gray-900">
               {member.eventsAttended}
             </div>
-            <div className="text-xs text-gray-600">Events</div>
+            <div className="text-xs text-secondary-600">Events</div>
           </div>
           <div>
             <div className="text-lg font-semibold text-gray-900">
               {member.photos.length}
             </div>
-            <div className="text-xs text-gray-600">Photos</div>
+            <div className="text-xs text-secondary-600">Photos</div>
           </div>
         </div>
 
@@ -207,7 +213,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
           <div className="mb-4">
             <div className="flex items-center space-x-1 mb-2">
               <Award className="w-3 h-3 text-gray-400" />
-              <span className="text-xs text-gray-600">Achievements</span>
+              <span className="text-xs text-secondary-600">Achievements</span>
             </div>
             <div className="flex space-x-1">
               {member.badges.slice(0, 3).map((badge) => (
@@ -238,7 +244,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
         <div className="flex space-x-2">
           <button
             onClick={() => onViewProfile(member.id)}
-            className="flex-1 px-3 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm font-medium flex items-center justify-center space-x-1"
+            className="flex-1 px-3 py-2 bg-secondary-100 text-secondary-700 rounded-lg hover:bg-secondary-200 transition-colors text-sm font-medium flex items-center justify-center space-x-1"
           >
             <Eye className="w-4 h-4" />
             <span>View</span>
@@ -403,7 +409,7 @@ export default function Directory() {
 
   const handleSendConnection = async (memberId: string) => {
     if (!user) {
-      router.push("/login");
+      router.push({ROUTES.auth.login});
       return;
     }
 
@@ -414,16 +420,16 @@ export default function Directory() {
         memberId,
         "Hi! I'd love to connect with you through LusoTown!"
       );
-      alert("Connection request sent!");
+      toast.error("Connection request sent!");
     } catch (error) {
       console.error("Error sending connection request:", error);
-      alert("Error sending connection request");
+      toast.error("Error sending connection request");
     }
   };
 
   const handleSendMessage = (memberId: string) => {
     if (!user) {
-      router.push("/login");
+      router.push({ROUTES.auth.login});
       return;
     }
     router.push(`/chat/direct/${memberId}`);
@@ -431,7 +437,7 @@ export default function Directory() {
 
   if (loading && members.length === 0) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-secondary-50 flex items-center justify-center">
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#FF6B6B]"></div>
       </div>
     );
@@ -447,7 +453,7 @@ export default function Directory() {
   ].filter(Boolean).length;
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-secondary-50 pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
@@ -456,12 +462,12 @@ export default function Directory() {
               <h1 className="text-3xl font-bold text-gray-900">
                 Member Directory
               </h1>
-              <p className="text-gray-600 mt-1">
+              <p className="text-secondary-600 mt-1">
                 Discover and connect with amazing women in your community
               </p>
             </div>
             <div className="flex items-center space-x-4">
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-secondary-600">
                 <span className="font-medium">{total.toLocaleString()}</span>{" "}
                 members found
               </div>
@@ -472,13 +478,13 @@ export default function Directory() {
           <div className="bg-white rounded-xl shadow-sm p-6 mb-6">
             <div className="flex flex-col lg:flex-row gap-4">
               <div className="flex-1 relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Search className="absolute left-3 top-1/2 transform -transecondary-y-1/2 text-gray-400 w-5 h-5" />
                 <input
                   type="text"
                   placeholder="Search directory..."
                   value={filters.search || ""}
                   onChange={(e) => handleFilterChange("search", e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
+                  className="w-full pl-10 pr-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
                 />
               </div>
 
@@ -486,7 +492,7 @@ export default function Directory() {
                 <select
                   value={filters.sortBy}
                   onChange={(e) => handleFilterChange("sortBy", e.target.value)}
-                  className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
+                  className="px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
                 >
                   <option value="newest">Newest Members</option>
                   <option value="active">Most Active</option>
@@ -500,7 +506,7 @@ export default function Directory() {
                   className={`px-4 py-3 border rounded-lg flex items-center space-x-2 transition-colors ${
                     showFilters || activeFiltersCount > 0
                       ? "bg-[#FF6B6B] text-white border-[#FF6B6B]"
-                      : "border-gray-300 hover:bg-gray-50"
+                      : "border-secondary-300 hover:bg-secondary-50"
                   }`}
                 >
                   <SlidersHorizontal className="w-4 h-4" />
@@ -516,11 +522,11 @@ export default function Directory() {
 
             {/* Advanced Filters */}
             {showFilters && (
-              <div className="mt-6 pt-6 border-t border-gray-200">
+              <div className="mt-6 pt-6 border-t border-secondary-200">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                   {/* Location Filter */}
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       Location
                     </label>
                     <select
@@ -534,7 +540,7 @@ export default function Directory() {
                         }
                         e.target.value = "";
                       }}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
                     >
                       <option value="">Add location...</option>
                       {LONDON_AREAS.map((area) => (
@@ -547,7 +553,7 @@ export default function Directory() {
 
                   {/* Interests Filter */}
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       Interests
                     </label>
                     <select
@@ -564,7 +570,7 @@ export default function Directory() {
                         }
                         e.target.value = "";
                       }}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
                     >
                       <option value="">Add interest...</option>
                       {COMMON_INTERESTS.map((interest) => (
@@ -577,7 +583,7 @@ export default function Directory() {
 
                   {/* Membership Tier */}
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       Membership
                     </label>
                     <select
@@ -585,7 +591,7 @@ export default function Directory() {
                       onChange={(e) =>
                         handleFilterChange("membershipTier", e.target.value)
                       }
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-[#FF6B6B] focus:border-transparent"
                     >
                       <option value="all">All Members</option>
                       <option value="free">Free Members</option>
@@ -598,7 +604,7 @@ export default function Directory() {
                   <div className="flex items-end">
                     <button
                       onClick={clearAllFilters}
-                      className="w-full px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+                      className="w-full px-4 py-2 bg-secondary-100 text-secondary-700 rounded-lg hover:bg-secondary-200 transition-colors"
                     >
                       Clear All
                     </button>
@@ -651,14 +657,14 @@ export default function Directory() {
                     ))}
                     {filters.membershipTier &&
                       filters.membershipTier !== "all" && (
-                        <span className="inline-flex items-center px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full">
+                        <span className="inline-flex items-center px-3 py-1 bg-accent-100 text-accent-700 text-sm rounded-full">
                           <Crown className="w-3 h-3 mr-1" />
                           {filters.membershipTier} members
                           <button
                             onClick={() =>
                               handleFilterChange("membershipTier", "all")
                             }
-                            className="ml-2 hover:bg-purple-200 rounded-full p-0.5"
+                            className="ml-2 hover:bg-accent-200 rounded-full p-0.5"
                           >
                             <X className="w-3 h-3" />
                           </button>
@@ -677,13 +683,13 @@ export default function Directory() {
               {suggestedMembers.length > 0 && (
                 <div className="bg-white rounded-xl shadow-sm p-4">
                   <div className="flex items-center space-x-2 mb-3">
-                    <Sparkles className="w-5 h-5 text-yellow-500" />
+                    <Sparkles className="w-5 h-5 text-accent-500" />
                     <h3 className="font-semibold text-gray-900">Suggested</h3>
                   </div>
                   <p className="text-2xl font-bold text-gray-900">
                     {suggestedMembers.length}
                   </p>
-                  <p className="text-xs text-gray-600">
+                  <p className="text-xs text-secondary-600">
                     Based on your interests
                   </p>
                 </div>
@@ -692,13 +698,13 @@ export default function Directory() {
               {/* New Members */}
               <div className="bg-white rounded-xl shadow-sm p-4">
                 <div className="flex items-center space-x-2 mb-3">
-                  <Users className="w-5 h-5 text-green-500" />
+                  <Users className="w-5 h-5 text-action-500" />
                   <h3 className="font-semibold text-gray-900">New</h3>
                 </div>
                 <p className="text-2xl font-bold text-gray-900">
                   {newMembers.length}
                 </p>
-                <p className="text-xs text-gray-600">Joined this month</p>
+                <p className="text-xs text-secondary-600">Joined this month</p>
               </div>
 
               {/* Online Now */}
@@ -710,7 +716,7 @@ export default function Directory() {
                 <p className="text-2xl font-bold text-gray-900">
                   {onlineMembers.length}
                 </p>
-                <p className="text-xs text-gray-600">Active right now</p>
+                <p className="text-xs text-secondary-600">Active right now</p>
               </div>
 
               {/* Total Members */}
@@ -720,7 +726,7 @@ export default function Directory() {
                   <h3 className="font-semibold text-gray-900">Total</h3>
                 </div>
                 <p className="text-2xl font-bold text-gray-900">{total}</p>
-                <p className="text-xs text-gray-600">Community members</p>
+                <p className="text-xs text-secondary-600">Community members</p>
               </div>
             </div>
           )}
@@ -733,7 +739,7 @@ export default function Directory() {
             <h3 className="text-lg font-medium text-gray-900 mb-2">
               No members found
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-secondary-600 mb-6">
               Try adjusting your search filters to find more members.
             </p>
             <button onClick={clearAllFilters} className="btn-primary">
@@ -763,11 +769,11 @@ export default function Directory() {
                     loadMembers(user || ({ id: "" } as User), false)
                   }
                   disabled={loadingMore}
-                  className="px-6 py-3 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="px-6 py-3 bg-white border border-secondary-300 rounded-lg hover:bg-secondary-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loadingMore ? (
                     <div className="flex items-center space-x-2">
-                      <div className="w-4 h-4 border-2 border-gray-300 border-t-[#FF6B6B] rounded-full animate-spin"></div>
+                      <div className="w-4 h-4 border-2 border-secondary-300 border-t-[#FF6B6B] rounded-full animate-spin"></div>
                       <span>Loading...</span>
                     </div>
                   ) : (

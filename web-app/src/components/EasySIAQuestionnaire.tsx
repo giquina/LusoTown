@@ -421,7 +421,7 @@ export default function EasySIAQuestionnaire({
             onClick={e => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200 bg-gradient-to-r from-secondary-50 to-accent-50 rounded-t-2xl">
+            <div className="flex items-center justify-between p-4 sm:p-6 border-b border-secondary-200 bg-gradient-to-r from-secondary-50 to-accent-50 rounded-t-2xl">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-xl flex items-center justify-center">
                   <ShieldCheckIcon className="w-5 h-5 sm:w-6 sm:h-6 text-secondary-600" />
@@ -430,7 +430,7 @@ export default function EasySIAQuestionnaire({
                   <h2 className="text-lg sm:text-2xl font-bold text-gray-900">
                     {isPortuguese ? 'SIA Proteção Rápida' : 'Easy SIA Protection'}
                   </h2>
-                  <p className="text-xs sm:text-sm text-gray-600">
+                  <p className="text-xs sm:text-sm text-secondary-600">
                     {isPortuguese 
                       ? 'Questionário simplificado - 2-3 minutos'
                       : 'Simplified questionnaire - 2-3 minutes'
@@ -440,23 +440,23 @@ export default function EasySIAQuestionnaire({
               </div>
               <button
                 onClick={onCancel}
-                className="p-2 text-gray-400 hover:text-gray-600 rounded-lg hover:bg-gray-100 transition-colors"
+                className="p-2 text-gray-400 hover:text-secondary-600 rounded-lg hover:bg-secondary-100 transition-colors"
               >
                 <XMarkIcon className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
             </div>
 
             {/* Progress Bar */}
-            <div className="px-4 sm:px-6 py-3 bg-gray-50">
+            <div className="px-4 sm:px-6 py-3 bg-secondary-50">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium text-gray-700">
+                <span className="text-sm font-medium text-secondary-700">
                   {isPortuguese ? `Passo ${currentStep} de ${totalSteps}` : `Step ${currentStep} of ${totalSteps}`}
                 </span>
                 <span className="text-sm text-gray-500">
                   {Math.round((currentStep / totalSteps) * 100)}%
                 </span>
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-2">
+              <div className="w-full bg-secondary-200 rounded-full h-2">
                 <div 
                   className="bg-gradient-to-r from-secondary-500 to-accent-500 h-2 rounded-full transition-all duration-300"
                   style={{ width: `${(currentStep / totalSteps) * 100}%` }}
@@ -480,7 +480,7 @@ export default function EasySIAQuestionnaire({
                       <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
                         {isPortuguese ? 'Que tipo de serviço precisa?' : 'What type of service do you need?'}
                       </h3>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-secondary-600">
                         {isPortuguese 
                           ? 'Selecione a opção que melhor descreve o seu serviço'
                           : 'Select the option that best describes your service'
@@ -505,7 +505,7 @@ export default function EasySIAQuestionnaire({
                               p-4 border-2 rounded-xl transition-all text-center
                               ${formData.serviceType === option.value
                                 ? 'border-secondary-500 bg-secondary-50 text-secondary-700'
-                                : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300'
+                                : 'border-secondary-200 bg-white text-secondary-600 hover:border-secondary-300'
                               }
                             `}>
                               <IconComponent className="w-8 h-8 mx-auto mb-2" />
@@ -525,18 +525,18 @@ export default function EasySIAQuestionnaire({
                           value={formData.customService || ''}
                           onChange={(e) => updateFormData('customService', e.target.value)}
                           className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent ${
-                            errors.customService ? 'border-red-500' : 'border-gray-300'
+                            errors.customService ? 'border-coral-500' : 'border-secondary-300'
                           }`}
                           placeholder={isPortuguese ? 'Especifique o tipo de serviço...' : 'Specify service type...'}
                         />
                         {errors.customService && (
-                          <p className="text-red-500 text-sm mt-1">{errors.customService}</p>
+                          <p className="text-coral-500 text-sm mt-1">{errors.customService}</p>
                         )}
                       </div>
                     )}
 
                     {errors.serviceType && (
-                      <p className="text-red-500 text-sm mt-2">{errors.serviceType}</p>
+                      <p className="text-coral-500 text-sm mt-2">{errors.serviceType}</p>
                     )}
                   </motion.div>
                 )}
@@ -554,7 +554,7 @@ export default function EasySIAQuestionnaire({
                       <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
                         {isPortuguese ? 'Quando e onde?' : 'When and where?'}
                       </h3>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-secondary-600">
                         {isPortuguese 
                           ? 'Datas, horários e locais do seu serviço'
                           : 'Dates, times and locations for your service'
@@ -564,7 +564,7 @@ export default function EasySIAQuestionnaire({
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-secondary-700 mb-2">
                           <CalendarDaysIcon className="w-4 h-4 inline mr-2" />
                           {isPortuguese ? 'Data do Serviço' : 'Service Date'}
                         </label>
@@ -574,16 +574,16 @@ export default function EasySIAQuestionnaire({
                           onChange={(e) => updateFormData('serviceDate', e.target.value)}
                           min={new Date().toISOString().split('T')[0]}
                           className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent ${
-                            errors.serviceDate ? 'border-red-500' : 'border-gray-300'
+                            errors.serviceDate ? 'border-coral-500' : 'border-secondary-300'
                           }`}
                         />
                         {errors.serviceDate && (
-                          <p className="text-red-500 text-sm mt-1">{errors.serviceDate}</p>
+                          <p className="text-coral-500 text-sm mt-1">{errors.serviceDate}</p>
                         )}
                       </div>
 
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-secondary-700 mb-2">
                           <ClockIcon className="w-4 h-4 inline mr-2" />
                           {isPortuguese ? 'Hora do Serviço' : 'Service Time'}
                         </label>
@@ -592,16 +592,16 @@ export default function EasySIAQuestionnaire({
                           value={formData.serviceTime}
                           onChange={(e) => updateFormData('serviceTime', e.target.value)}
                           className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent ${
-                            errors.serviceTime ? 'border-red-500' : 'border-gray-300'
+                            errors.serviceTime ? 'border-coral-500' : 'border-secondary-300'
                           }`}
                         />
                         {errors.serviceTime && (
-                          <p className="text-red-500 text-sm mt-1">{errors.serviceTime}</p>
+                          <p className="text-coral-500 text-sm mt-1">{errors.serviceTime}</p>
                         )}
                       </div>
 
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-secondary-700 mb-2">
                           <MapPinIcon className="w-4 h-4 inline mr-2" />
                           {isPortuguese ? 'Local de Recolha' : 'Pickup Location'}
                         </label>
@@ -610,17 +610,17 @@ export default function EasySIAQuestionnaire({
                           value={formData.pickupLocation}
                           onChange={(e) => updateFormData('pickupLocation', e.target.value)}
                           className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent ${
-                            errors.pickupLocation ? 'border-red-500' : 'border-gray-300'
+                            errors.pickupLocation ? 'border-coral-500' : 'border-secondary-300'
                           }`}
                           placeholder={isPortuguese ? 'Hotel, aeroporto, endereço...' : 'Hotel, airport, address...'}
                         />
                         {errors.pickupLocation && (
-                          <p className="text-red-500 text-sm mt-1">{errors.pickupLocation}</p>
+                          <p className="text-coral-500 text-sm mt-1">{errors.pickupLocation}</p>
                         )}
                       </div>
 
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-secondary-700 mb-2">
                           <MapPinIcon className="w-4 h-4 inline mr-2" />
                           {isPortuguese ? 'Destino (Opcional)' : 'Destination (Optional)'}
                         </label>
@@ -628,13 +628,13 @@ export default function EasySIAQuestionnaire({
                           type="text"
                           value={formData.dropoffLocation}
                           onChange={(e) => updateFormData('dropoffLocation', e.target.value)}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
+                          className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
                           placeholder={isPortuguese ? 'Destino final...' : 'Final destination...'}
                         />
                       </div>
 
                       <div className="sm:col-span-2">
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-secondary-700 mb-2">
                           <UserGroupIcon className="w-4 h-4 inline mr-2" />
                           {isPortuguese ? 'Número de Passageiros' : 'Number of Passengers'}
                         </label>
@@ -642,7 +642,7 @@ export default function EasySIAQuestionnaire({
                           value={formData.passengerCount}
                           onChange={(e) => updateFormData('passengerCount', parseInt(e.target.value))}
                           className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent ${
-                            errors.passengerCount ? 'border-red-500' : 'border-gray-300'
+                            errors.passengerCount ? 'border-coral-500' : 'border-secondary-300'
                           }`}
                         >
                           {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
@@ -655,7 +655,7 @@ export default function EasySIAQuestionnaire({
                           ))}
                         </select>
                         {errors.passengerCount && (
-                          <p className="text-red-500 text-sm mt-1">{errors.passengerCount}</p>
+                          <p className="text-coral-500 text-sm mt-1">{errors.passengerCount}</p>
                         )}
                       </div>
                     </div>
@@ -675,7 +675,7 @@ export default function EasySIAQuestionnaire({
                       <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
                         {isPortuguese ? 'Avaliação de Segurança da Comunidade' : 'Community Security Assessment'}
                       </h3>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-secondary-600">
                         {isPortuguese 
                           ? 'Ajude-nos a entender o ambiente para garantir a sua segurança'
                           : 'Help us understand the environment to ensure your safety'
@@ -689,7 +689,7 @@ export default function EasySIAQuestionnaire({
                         <p className="font-medium text-gray-900 mb-3">
                           {isPortuguese ? 'Existem preocupações de segurança específicas para esta ocasião?' : 'Are there any specific security concerns for this occasion?'}
                         </p>
-                        <p className="text-xs text-gray-600 mb-3">
+                        <p className="text-xs text-secondary-600 mb-3">
                           {isPortuguese 
                             ? 'Considere: local desconhecido, evento público, disputas pessoais, etc.'
                             : 'Consider: unfamiliar location, public event, personal disputes, etc.'
@@ -708,8 +708,8 @@ export default function EasySIAQuestionnaire({
                             <div className={`
                               px-6 py-3 border-2 rounded-lg transition-all
                               ${!formData.hasKnownRisks
-                                ? 'border-green-500 bg-green-50 text-green-700'
-                                : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300'
+                                ? 'border-action-500 bg-green-50 text-green-700'
+                                : 'border-secondary-200 bg-white text-secondary-600 hover:border-secondary-300'
                               }
                             `}>
                               <div className="font-medium">
@@ -733,8 +733,8 @@ export default function EasySIAQuestionnaire({
                             <div className={`
                               px-6 py-3 border-2 rounded-lg transition-all
                               ${formData.hasKnownRisks
-                                ? 'border-yellow-500 bg-yellow-50 text-yellow-700'
-                                : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300'
+                                ? 'border-accent-500 bg-yellow-50 text-yellow-700'
+                                : 'border-secondary-200 bg-white text-secondary-600 hover:border-secondary-300'
                               }
                             `}>
                               <div className="font-medium">
@@ -767,15 +767,15 @@ export default function EasySIAQuestionnaire({
                               <div className={`
                                 p-3 border-2 rounded-lg transition-all text-sm
                                 ${formData.riskFactors.includes(option.value)
-                                  ? 'border-red-500 bg-red-50 text-red-700'
-                                  : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300'
+                                  ? 'border-coral-500 bg-red-50 text-red-700'
+                                  : 'border-secondary-200 bg-white text-secondary-600 hover:border-secondary-300'
                                 }
                               `}>
                                 <div className="flex items-center space-x-2">
                                   <div className={`w-4 h-4 border-2 rounded ${
                                     formData.riskFactors.includes(option.value) 
-                                      ? 'bg-red-500 border-red-500' 
-                                      : 'border-gray-300'
+                                      ? 'bg-coral-500 border-coral-500' 
+                                      : 'border-secondary-300'
                                   }`}>
                                     {formData.riskFactors.includes(option.value) && (
                                       <CheckCircleIcon className="w-3 h-3 text-white" />
@@ -807,13 +807,13 @@ export default function EasySIAQuestionnaire({
                       <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
                         {isPortuguese ? 'Nível de Serviço de Segurança' : 'Security Service Level'}
                       </h3>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-secondary-600">
                         {isPortuguese 
                           ? 'Escolha o nível apropriado para a sua situação na comunidade'
                           : 'Choose the appropriate level for your community situation'
                         }
                       </p>
-                      <div className="mt-2 text-xs text-blue-600">
+                      <div className="mt-2 text-xs text-primary-600">
                         {isPortuguese 
                           ? 'Todos os oficiais são verificados e licenciados SIA'
                           : 'All officers are verified and SIA licensed'
@@ -836,14 +836,14 @@ export default function EasySIAQuestionnaire({
                             p-4 border-2 rounded-lg transition-all
                             ${formData.protectionLevel === option.value
                               ? 'border-secondary-500 bg-secondary-50 text-secondary-700'
-                              : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300'
+                              : 'border-secondary-200 bg-white text-secondary-600 hover:border-secondary-300'
                             }
                           `}>
                             <div className="flex items-center space-x-3">
                               <div className={`w-5 h-5 border-2 rounded-full ${
                                 formData.protectionLevel === option.value 
                                   ? 'bg-secondary-500 border-secondary-500' 
-                                  : 'border-gray-300'
+                                  : 'border-secondary-300'
                               }`}>
                                 {formData.protectionLevel === option.value && (
                                   <div className="w-2 h-2 bg-white rounded-full mx-auto mt-0.5"></div>
@@ -885,7 +885,7 @@ export default function EasySIAQuestionnaire({
                       <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
                         {isPortuguese ? 'Requisitos para a Comunidade Portuguesa' : 'Portuguese Community Requirements'}
                       </h3>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-secondary-600">
                         {isPortuguese 
                           ? 'Personalize o serviço para as suas necessidades específicas'
                           : 'Customize the service for your specific needs'
@@ -912,14 +912,14 @@ export default function EasySIAQuestionnaire({
                               p-4 border-2 rounded-lg transition-all text-sm
                               ${formData.specialRequirements.includes(option.value)
                                 ? 'border-accent-500 bg-accent-50 text-accent-700'
-                                : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300'
+                                : 'border-secondary-200 bg-white text-secondary-600 hover:border-secondary-300'
                               }
                             `}>
                               <div className="flex items-center space-x-3">
                                 <div className={`w-5 h-5 border-2 rounded ${
                                   formData.specialRequirements.includes(option.value) 
                                     ? 'bg-accent-500 border-accent-500' 
-                                    : 'border-gray-300'
+                                    : 'border-secondary-300'
                                 }`}>
                                   {formData.specialRequirements.includes(option.value) && (
                                     <CheckCircleIcon className="w-4 h-4 text-white" />
@@ -953,14 +953,14 @@ export default function EasySIAQuestionnaire({
                               p-3 border-2 rounded-lg transition-all text-sm
                               ${formData.specialRequirements.includes(option.value)
                                 ? 'border-secondary-500 bg-secondary-50 text-secondary-700'
-                                : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300'
+                                : 'border-secondary-200 bg-white text-secondary-600 hover:border-secondary-300'
                               }
                             `}>
                               <div className="flex items-center space-x-2">
                                 <div className={`w-4 h-4 border-2 rounded ${
                                   formData.specialRequirements.includes(option.value) 
                                     ? 'bg-secondary-500 border-secondary-500' 
-                                    : 'border-gray-300'
+                                    : 'border-secondary-300'
                                 }`}>
                                   {formData.specialRequirements.includes(option.value) && (
                                     <CheckCircleIcon className="w-3 h-3 text-white" />
@@ -979,14 +979,14 @@ export default function EasySIAQuestionnaire({
                     {/* Medical notes if medical conditions selected */}
                     {formData.specialRequirements.includes('medical-conditions') && (
                       <div className="mt-4">
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-secondary-700 mb-2">
                           {isPortuguese ? 'Detalhes médicos (opcional)' : 'Medical details (optional)'}
                         </label>
                         <textarea
                           value={formData.medicalNotes || ''}
                           onChange={(e) => updateFormData('medicalNotes', e.target.value)}
                           rows={3}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
+                          className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
                           placeholder={isPortuguese 
                             ? 'Condições médicas, medicamentos, alergias...'
                             : 'Medical conditions, medications, allergies...'
@@ -999,7 +999,7 @@ export default function EasySIAQuestionnaire({
                     {formData.specialRequirements.includes('armed-protection') && (
                       <div className="bg-red-50 border border-red-200 rounded-lg p-4">
                         <div className="flex items-start space-x-2">
-                          <ExclamationTriangleIcon className="w-5 h-5 text-red-600 mt-0.5" />
+                          <ExclamationTriangleIcon className="w-5 h-5 text-coral-600 mt-0.5" />
                           <div>
                             <p className="text-sm font-medium text-red-800">
                               {isPortuguese ? 'Proteção Armada' : 'Armed Protection'}
@@ -1030,13 +1030,13 @@ export default function EasySIAQuestionnaire({
                       <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">
                         {isPortuguese ? 'Finalizando o Seu Pedido!' : 'Finalizing Your Request!'}
                       </h3>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-secondary-600">
                         {isPortuguese 
                           ? 'Contacto de emergência e confirmação legal obrigatória'
                           : 'Emergency contact and required legal confirmation'
                         }
                       </p>
-                      <div className="mt-2 text-xs text-green-600">
+                      <div className="mt-2 text-xs text-action-600">
                         {isPortuguese 
                           ? 'Está quase a garantir o seu serviço de segurança profissional'
                           : 'You are almost ready to secure your professional security service'
@@ -1046,7 +1046,7 @@ export default function EasySIAQuestionnaire({
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-secondary-700 mb-2">
                           <PhoneIcon className="w-4 h-4 inline mr-2" />
                           {isPortuguese ? 'Contacto de Emergência' : 'Emergency Contact'}
                         </label>
@@ -1055,17 +1055,17 @@ export default function EasySIAQuestionnaire({
                           value={formData.emergencyContact}
                           onChange={(e) => updateFormData('emergencyContact', e.target.value)}
                           className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent ${
-                            errors.emergencyContact ? 'border-red-500' : 'border-gray-300'
+                            errors.emergencyContact ? 'border-coral-500' : 'border-secondary-300'
                           }`}
                           placeholder={isPortuguese ? 'Nome do contacto' : 'Contact name'}
                         />
                         {errors.emergencyContact && (
-                          <p className="text-red-500 text-sm mt-1">{errors.emergencyContact}</p>
+                          <p className="text-coral-500 text-sm mt-1">{errors.emergencyContact}</p>
                         )}
                       </div>
 
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-secondary-700 mb-2">
                           <PhoneIcon className="w-4 h-4 inline mr-2" />
                           {isPortuguese ? 'Telefone de Emergência' : 'Emergency Phone'}
                         </label>
@@ -1074,12 +1074,12 @@ export default function EasySIAQuestionnaire({
                           value={formData.emergencyPhone}
                           onChange={(e) => updateFormData('emergencyPhone', e.target.value)}
                           className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent ${
-                            errors.emergencyPhone ? 'border-red-500' : 'border-gray-300'
+                            errors.emergencyPhone ? 'border-coral-500' : 'border-secondary-300'
                           }`}
                           placeholder="+44 7XXX XXX XXX"
                         />
                         {errors.emergencyPhone && (
-                          <p className="text-red-500 text-sm mt-1">{errors.emergencyPhone}</p>
+                          <p className="text-coral-500 text-sm mt-1">{errors.emergencyPhone}</p>
                         )}
                       </div>
                     </div>
@@ -1091,7 +1091,7 @@ export default function EasySIAQuestionnaire({
                           type="checkbox"
                           checked={formData.confidentialityAccepted}
                           onChange={(e) => updateFormData('confidentialityAccepted', e.target.checked)}
-                          className="w-4 h-4 text-secondary-600 border-gray-300 rounded focus:ring-secondary-500 mt-0.5"
+                          className="w-4 h-4 text-secondary-600 border-secondary-300 rounded focus:ring-secondary-500 mt-0.5"
                         />
                         <div className="flex-1">
                           <label className="text-sm font-medium text-gray-900 cursor-pointer">
@@ -1100,7 +1100,7 @@ export default function EasySIAQuestionnaire({
                               : 'I accept the confidentiality agreement'
                             }
                           </label>
-                          <p className="text-xs text-gray-600 mt-1">
+                          <p className="text-xs text-secondary-600 mt-1">
                             {isPortuguese 
                               ? 'Todas as informações serão mantidas confidenciais'
                               : 'All information will be kept strictly confidential'
@@ -1109,7 +1109,7 @@ export default function EasySIAQuestionnaire({
                         </div>
                       </div>
                       {errors.confidentialityAccepted && (
-                        <p className="text-red-500 text-sm">{errors.confidentialityAccepted}</p>
+                        <p className="text-coral-500 text-sm">{errors.confidentialityAccepted}</p>
                       )}
 
                       <div className="flex items-start space-x-3">
@@ -1117,7 +1117,7 @@ export default function EasySIAQuestionnaire({
                           type="checkbox"
                           checked={formData.dataProcessingAccepted}
                           onChange={(e) => updateFormData('dataProcessingAccepted', e.target.checked)}
-                          className="w-4 h-4 text-secondary-600 border-gray-300 rounded focus:ring-secondary-500 mt-0.5"
+                          className="w-4 h-4 text-secondary-600 border-secondary-300 rounded focus:ring-secondary-500 mt-0.5"
                         />
                         <div className="flex-1">
                           <label className="text-sm font-medium text-gray-900 cursor-pointer">
@@ -1126,7 +1126,7 @@ export default function EasySIAQuestionnaire({
                               : 'I consent to data processing (GDPR)'
                             }
                           </label>
-                          <p className="text-xs text-gray-600 mt-1">
+                          <p className="text-xs text-secondary-600 mt-1">
                             {isPortuguese 
                               ? 'Para fins de segurança e conformidade legal'
                               : 'For security and legal compliance purposes'
@@ -1135,7 +1135,7 @@ export default function EasySIAQuestionnaire({
                         </div>
                       </div>
                       {errors.dataProcessingAccepted && (
-                        <p className="text-red-500 text-sm">{errors.dataProcessingAccepted}</p>
+                        <p className="text-coral-500 text-sm">{errors.dataProcessingAccepted}</p>
                       )}
                     </div>
                   </motion.div>
@@ -1144,13 +1144,13 @@ export default function EasySIAQuestionnaire({
             </div>
 
             {/* Footer Navigation */}
-            <div className="border-t border-gray-200 bg-gradient-to-r from-gray-50 to-secondary-50 rounded-b-2xl">
+            <div className="border-t border-secondary-200 bg-gradient-to-r from-gray-50 to-secondary-50 rounded-b-2xl">
               {/* Progress summary */}
-              <div className="px-4 sm:px-6 py-3 border-b border-gray-100">
+              <div className="px-4 sm:px-6 py-3 border-b border-secondary-100">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
                     <SIABadge variant="mini" showAnimation={false} />
-                    <span className="text-xs text-gray-600">
+                    <span className="text-xs text-secondary-600">
                       {isPortuguese 
                         ? 'Serviço profissional licenciado'
                         : 'Professional licensed service'
@@ -1172,7 +1172,7 @@ export default function EasySIAQuestionnaire({
                   className={`flex items-center px-4 py-2 rounded-lg transition-colors ${
                     currentStep === 1 
                       ? 'text-gray-400 cursor-not-allowed' 
-                      : 'text-gray-600 border border-gray-300 hover:bg-gray-100'
+                      : 'text-secondary-600 border border-secondary-300 hover:bg-secondary-100'
                   }`}
                 >
                   <ChevronLeftIcon className="w-4 h-4 mr-2" />
@@ -1180,7 +1180,7 @@ export default function EasySIAQuestionnaire({
                 </button>
                 
                 <div className="flex flex-col items-center">
-                  <div className="text-sm font-medium text-gray-700">
+                  <div className="text-sm font-medium text-secondary-700">
                     {stepTitles[currentStep - 1]}
                   </div>
                   <div className="text-xs text-gray-500">

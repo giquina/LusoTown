@@ -222,14 +222,14 @@ export default function WhatsAppWidget() {
           </div>
 
           {/* Messages */}
-          <div className="h-96 overflow-y-auto p-4 bg-gray-50">
+          <div className="h-96 overflow-y-auto p-4 bg-secondary-50">
             {messages.map((message, index) => (
               <div key={index} className="mb-4">
                 <div
                   className={`max-w-xs p-3 rounded-lg ${
                     message.isUser
                       ? 'bg-primary-600 text-white ml-auto'
-                      : 'bg-white text-gray-800 shadow-sm border'
+                      : 'bg-white text-secondary-800 shadow-sm border'
                   }`}
                 >
                   <p className="text-sm whitespace-pre-line">{message.text}</p>
@@ -262,7 +262,7 @@ export default function WhatsAppWidget() {
                 onChange={(e) => setUserInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
                 placeholder={isPortuguese ? 'Escreve uma mensagem...' : 'Type a message...'}
-                className="flex-1 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-primary-500"
+                className="flex-1 border border-secondary-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-primary-500"
               />
               <button
                 onClick={handleSendMessage}

@@ -302,10 +302,10 @@ export default function CulturalCompatibilityIntegration({
   };
 
   const getCompatibilityIcon = (score: number) => {
-    if (score >= 90) return { icon: FireIcon, color: 'text-red-500', bg: 'bg-red-100' };
+    if (score >= 90) return { icon: FireIcon, color: 'text-coral-500', bg: 'bg-red-100' };
     if (score >= 80) return { icon: HeartIcon, color: 'text-pink-500', bg: 'bg-pink-100' };
-    if (score >= 70) return { icon: StarIcon, color: 'text-yellow-500', bg: 'bg-yellow-100' };
-    return { icon: SparklesIcon, color: 'text-blue-500', bg: 'bg-blue-100' };
+    if (score >= 70) return { icon: StarIcon, color: 'text-accent-500', bg: 'bg-yellow-100' };
+    return { icon: SparklesIcon, color: 'text-primary-500', bg: 'bg-blue-100' };
   };
 
   const getCategoryIcon = (category: string) => {
@@ -359,7 +359,7 @@ export default function CulturalCompatibilityIntegration({
     <div className="space-y-6">
       {/* Cultural Profile Summary */}
       {currentUserProfile && (
-        <div className="bg-white rounded-2xl border border-gray-200 p-6">
+        <div className="bg-white rounded-2xl border border-secondary-200 p-6">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
@@ -369,7 +369,7 @@ export default function CulturalCompatibilityIntegration({
                 <h3 className="font-bold text-gray-900">
                   {language === 'pt' ? 'Seu Perfil Cultural' : 'Your Cultural Profile'}
                 </h3>
-                <p className="text-sm text-gray-600">{currentUserProfile.profileType}</p>
+                <p className="text-sm text-secondary-600">{currentUserProfile.profileType}</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
@@ -383,10 +383,10 @@ export default function CulturalCompatibilityIntegration({
               </div>
               <button
                 onClick={() => setShowQuiz(true)}
-                className="p-2 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
+                className="p-2 bg-secondary-100 rounded-lg hover:bg-secondary-200 transition-colors"
                 title={language === 'pt' ? 'Refazer quiz' : 'Retake quiz'}
               >
-                <AdjustmentsHorizontalIcon className="w-4 h-4 text-gray-600" />
+                <AdjustmentsHorizontalIcon className="w-4 h-4 text-secondary-600" />
               </button>
             </div>
           </div>
@@ -400,9 +400,9 @@ export default function CulturalCompatibilityIntegration({
               .map(([category, score], index) => {
                 const IconComponent = getCategoryIcon(category);
                 return (
-                  <div key={category} className="text-center p-3 bg-gray-50 rounded-lg">
+                  <div key={category} className="text-center p-3 bg-secondary-50 rounded-lg">
                     <IconComponent className="w-5 h-5 text-primary-600 mx-auto mb-1" />
-                    <div className="text-xs font-medium text-gray-700 mb-1">
+                    <div className="text-xs font-medium text-secondary-700 mb-1">
                       {category === 'food' ? (language === 'pt' ? 'Culinária' : 'Food') :
                        category === 'music' ? (language === 'pt' ? 'Música' : 'Music') :
                        category === 'traditions' ? (language === 'pt' ? 'Tradições' : 'Traditions') :
@@ -422,7 +422,7 @@ export default function CulturalCompatibilityIntegration({
 
       {/* Compatibility Filters */}
       {currentUserProfile && (
-        <div className="bg-white rounded-2xl border border-gray-200 p-6">
+        <div className="bg-white rounded-2xl border border-secondary-200 p-6">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-bold text-gray-900 flex items-center gap-2">
               <AdjustmentsHorizontalIcon className="w-5 h-5 text-primary-600" />
@@ -447,7 +447,7 @@ export default function CulturalCompatibilityIntegration({
                 className="space-y-4"
               >
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {language === 'pt' ? 'Compatibilidade Mínima' : 'Minimum Compatibility'}
                   </label>
                   <input
@@ -472,7 +472,7 @@ export default function CulturalCompatibilityIntegration({
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {language === 'pt' ? 'Força Cultural' : 'Cultural Strength'}
                   </label>
                   <select
@@ -481,7 +481,7 @@ export default function CulturalCompatibilityIntegration({
                       ...prev,
                       culturalStrength: e.target.value as any
                     }))}
-                    className="w-full p-2 border border-gray-300 rounded-lg"
+                    className="w-full p-2 border border-secondary-300 rounded-lg"
                   >
                     <option value="any">{language === 'pt' ? 'Qualquer' : 'Any'}</option>
                     <option value="Very Strong">{language === 'pt' ? 'Muito Forte' : 'Very Strong'}</option>
@@ -505,7 +505,7 @@ export default function CulturalCompatibilityIntegration({
               <UserGroupIcon className="w-5 h-5 text-primary-600" />
               {language === 'pt' ? 'Matches Culturalmente Compatíveis' : 'Culturally Compatible Matches'}
             </h3>
-            <span className="text-sm text-gray-600">
+            <span className="text-sm text-secondary-600">
               {filteredMatches.length} {language === 'pt' ? 'encontrados' : 'found'}
             </span>
           </div>
@@ -516,7 +516,7 @@ export default function CulturalCompatibilityIntegration({
               const IconComponent = compatibilityStyle.icon;
 
               return (
-                <div key={match.id} className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition-shadow">
+                <div key={match.id} className="bg-white rounded-2xl border border-secondary-200 p-6 hover:shadow-lg transition-shadow">
                   <div className="flex items-start gap-4">
                     {/* Profile Image Placeholder */}
                     <div className="w-16 h-16 bg-gradient-to-br from-primary-200 to-secondary-200 rounded-full flex items-center justify-center text-2xl">
@@ -528,7 +528,7 @@ export default function CulturalCompatibilityIntegration({
                       <div className="flex items-start justify-between mb-3">
                         <div>
                           <h4 className="font-bold text-gray-900">{match.name}, {match.age}</h4>
-                          <p className="text-sm text-gray-600">{match.profession} • {match.location}</p>
+                          <p className="text-sm text-secondary-600">{match.profession} • {match.location}</p>
                           <p className="text-xs text-gray-500">{match.lastActive}</p>
                         </div>
                         <div className={`flex items-center gap-2 px-3 py-1 rounded-full ${compatibilityStyle.bg}`}>
@@ -540,16 +540,16 @@ export default function CulturalCompatibilityIntegration({
                       </div>
 
                       {/* Bio */}
-                      <p className="text-sm text-gray-700 mb-4">{match.bio}</p>
+                      <p className="text-sm text-secondary-700 mb-4">{match.bio}</p>
 
                       {/* Cultural Alignment */}
                       <div className="grid grid-cols-5 gap-2 mb-4">
                         {Object.entries(match.culturalAlignment).map(([category, score]) => {
                           const IconComponent = getCategoryIcon(category);
                           return (
-                            <div key={category} className="text-center p-2 bg-gray-50 rounded-lg">
+                            <div key={category} className="text-center p-2 bg-secondary-50 rounded-lg">
                               <IconComponent className="w-4 h-4 text-primary-600 mx-auto mb-1" />
-                              <div className="text-xs font-bold text-gray-700">{score}%</div>
+                              <div className="text-xs font-bold text-secondary-700">{score}%</div>
                             </div>
                           );
                         })}

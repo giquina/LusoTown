@@ -136,24 +136,24 @@ export default function CulturallyVerifiedMatchCard({
     if (score >= 85) {
       return {
         level: language === 'pt' ? 'Herança Épica' : 'Epic Heritage',
-        color: 'text-purple-600',
-        bg: 'bg-gradient-to-r from-purple-100 to-indigo-100',
-        border: 'border-purple-300'
+        color: 'text-accent-600',
+        bg: 'bg-gradient-to-r from-accent-100 to-primary-100',
+        border: 'border-accent-300'
       }
     }
     if (score >= 75) {
       return {
         level: language === 'pt' ? 'Cultura Rara' : 'Rare Culture',
-        color: 'text-blue-600',
+        color: 'text-primary-600',
         bg: 'bg-gradient-to-r from-blue-100 to-cyan-100',
         border: 'border-blue-300'
       }
     }
     return {
       level: language === 'pt' ? 'Herança Comum' : 'Common Heritage',
-      color: 'text-gray-600',
-      bg: 'bg-gray-100',
-      border: 'border-gray-300'
+      color: 'text-secondary-600',
+      bg: 'bg-secondary-100',
+      border: 'border-secondary-300'
     }
   }
 
@@ -233,7 +233,7 @@ export default function CulturallyVerifiedMatchCard({
 
         {/* Regular Verification Badge */}
         {profile.isVerified && (
-          <div className="absolute top-16 right-4 bg-green-500 text-white px-2 py-1 rounded-full shadow-lg">
+          <div className="absolute top-16 right-4 bg-action-500 text-white px-2 py-1 rounded-full shadow-lg">
             <CheckCircleIcon className="w-4 h-4" />
           </div>
         )}
@@ -241,7 +241,7 @@ export default function CulturallyVerifiedMatchCard({
         {/* Activity Status */}
         <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full border border-primary-100">
           <div className="flex items-center gap-1">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+            <div className="w-2 h-2 bg-action-500 rounded-full"></div>
             <span className="text-xs font-medium text-primary-700">
               {language === "pt" ? "Ativo recentemente" : "Recently active"}
             </span>
@@ -305,7 +305,7 @@ export default function CulturallyVerifiedMatchCard({
                 <Icon className="w-4 h-4" />
                 {tab.label}
                 {tab.badge && tab.badge > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 bg-coral-500 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">
                     {tab.badge}
                   </span>
                 )}
@@ -351,7 +351,7 @@ export default function CulturallyVerifiedMatchCard({
                     </span>
                   </div>
                   <div className="flex items-center gap-1">
-                    <StarSolid className="w-4 h-4 text-yellow-500" />
+                    <StarSolid className="w-4 h-4 text-accent-500" />
                     <span className="font-bold text-primary-900">
                       {Math.round(profile.verificationScore)}%
                     </span>
@@ -361,19 +361,19 @@ export default function CulturallyVerifiedMatchCard({
                 <div className="grid grid-cols-3 gap-2 mb-3">
                   <div className="text-center">
                     <div className="text-sm font-bold text-emerald-600">{Math.round(profile.heritageAuthenticity)}%</div>
-                    <div className="text-xs text-gray-600">
+                    <div className="text-xs text-secondary-600">
                       {language === 'pt' ? 'Herança' : 'Heritage'}
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-sm font-bold text-blue-600">{Math.round(profile.communityInvolvement)}%</div>
-                    <div className="text-xs text-gray-600">
+                    <div className="text-sm font-bold text-primary-600">{Math.round(profile.communityInvolvement)}%</div>
+                    <div className="text-xs text-secondary-600">
                       {language === 'pt' ? 'Comunidade' : 'Community'}
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-sm font-bold text-purple-600">{Math.round(profile.culturalKnowledge)}%</div>
-                    <div className="text-xs text-gray-600">
+                    <div className="text-sm font-bold text-accent-600">{Math.round(profile.culturalKnowledge)}%</div>
+                    <div className="text-xs text-secondary-600">
                       {language === 'pt' ? 'Cultura' : 'Culture'}
                     </div>
                   </div>
@@ -381,7 +381,7 @@ export default function CulturallyVerifiedMatchCard({
 
                 {profile.verificationBadges.length > 0 && (
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-medium text-gray-700">
+                    <span className="text-xs font-medium text-secondary-700">
                       {profile.verificationBadges.length} {language === 'pt' ? 'distintivos culturais' : 'cultural badges'}
                     </span>
                     <CulturalVerificationBadges 
@@ -443,8 +443,8 @@ export default function CulturallyVerifiedMatchCard({
                 </div>
               </div>
               <div className="bg-blue-50 border border-blue-200 rounded-xl p-3 text-center">
-                <div className="text-lg font-bold text-blue-600">{profile.verificationBadges.length}</div>
-                <div className="text-xs text-blue-700">
+                <div className="text-lg font-bold text-primary-600">{profile.verificationBadges.length}</div>
+                <div className="text-xs text-primary-700">
                   {language === 'pt' ? 'Distintivos' : 'Badges'}
                 </div>
               </div>
@@ -460,18 +460,18 @@ export default function CulturallyVerifiedMatchCard({
                   {profile.verificationBadges.slice(0, 4).map((badge) => (
                     <div
                       key={badge.id}
-                      className="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-xl hover:shadow-md transition-shadow"
+                      className="flex items-center gap-3 p-3 bg-white border border-secondary-200 rounded-xl hover:shadow-md transition-shadow"
                     >
                       <span className="text-2xl">{badge.icon}</span>
                       <div className="flex-1">
                         <div className="font-medium text-gray-900">
                           {language === 'pt' ? badge.namePortuguese : badge.name}
                         </div>
-                        <div className="text-sm text-gray-600">
+                        <div className="text-sm text-secondary-600">
                           {language === 'pt' ? badge.descriptionPortuguese : badge.description}
                         </div>
                       </div>
-                      <div className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full capitalize">
+                      <div className="text-xs bg-secondary-100 text-secondary-600 px-2 py-1 rounded-full capitalize">
                         {badge.rarity}
                       </div>
                     </div>
@@ -585,7 +585,7 @@ export default function CulturallyVerifiedMatchCard({
                     </p>
                     <div className="flex items-center gap-1 ml-2">
                       <FireIcon className="w-3 h-3 text-orange-500" />
-                      <span className="text-xs text-gray-600 font-medium">
+                      <span className="text-xs text-secondary-600 font-medium">
                         {starter.popularity}
                       </span>
                     </div>
@@ -608,9 +608,9 @@ export default function CulturallyVerifiedMatchCard({
         <div className="flex justify-center gap-6 mt-6 pt-4 border-t border-primary-100">
           <button
             onClick={() => onSkip(profile.id)}
-            className="w-16 h-16 bg-white border-3 border-gray-200 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:border-red-300 group"
+            className="w-16 h-16 bg-white border-3 border-secondary-200 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:border-red-300 group"
           >
-            <XMarkIcon className="w-8 h-8 text-gray-600 group-hover:text-red-600 transition-colors" />
+            <XMarkIcon className="w-8 h-8 text-secondary-600 group-hover:text-coral-600 transition-colors" />
           </button>
 
           <button
@@ -663,7 +663,7 @@ export default function CulturallyVerifiedMatchCard({
                   {language === 'pt' ? 'Foto Cultural Verificada' : 'Verified Cultural Photo'}
                 </span>
                 <div className="flex items-center gap-1">
-                  <StarSolid className="w-4 h-4 text-yellow-500" />
+                  <StarSolid className="w-4 h-4 text-accent-500" />
                   <span className="text-sm font-bold">{Math.round(selectedCulturalPhoto.verificationScore)}%</span>
                 </div>
               </div>

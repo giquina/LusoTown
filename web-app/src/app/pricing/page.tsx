@@ -372,7 +372,7 @@ export default function Pricing() {
                   </>
                 )}
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              <p className="text-xl text-secondary-600 max-w-3xl mx-auto mb-8">
                 {isPortuguese ? 
                   'Escolha o plano perfeito para se conectar com a comunidade portuguesa de Londres.' :
                   'Choose the perfect plan to connect with London\'s Portuguese community.'
@@ -380,7 +380,7 @@ export default function Pricing() {
               </p>
               
               {/* Trust Badges */}
-              <div className="flex flex-wrap justify-center gap-6 mb-12 text-sm text-gray-600">
+              <div className="flex flex-wrap justify-center gap-6 mb-12 text-sm text-secondary-600">
                 <div className="flex items-center">
                   <HomeIcon className="w-4 h-4 mr-2 text-primary-500" />
                   {isPortuguese ? 'Locais Autênticos' : 'Authentic Venues'}
@@ -408,7 +408,7 @@ export default function Pricing() {
                       className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
                         billingCycle === 'monthly'
                           ? 'bg-white shadow-lg text-primary-600 border border-primary-200'
-                          : 'text-gray-600 hover:text-primary-600'
+                          : 'text-secondary-600 hover:text-primary-600'
                       }`}
                     >
                       {isPortuguese ? 'Mensal' : 'Monthly'}
@@ -418,12 +418,12 @@ export default function Pricing() {
                       className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 relative ${
                         billingCycle === 'yearly'
                           ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg'
-                          : 'text-gray-600 hover:text-primary-600'
+                          : 'text-secondary-600 hover:text-primary-600'
                       }`}
                     >
                       {isPortuguese ? 'Anual' : 'Yearly'}
                       {/* Savings Badge */}
-                      <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+                      <span className="absolute -top-2 -right-2 bg-action-500 text-white text-xs px-2 py-1 rounded-full font-bold">
                         {isPortuguese ? 'Poupa 17%' : 'Save 17%'}
                       </span>
                     </button>
@@ -434,7 +434,7 @@ export default function Pricing() {
               {/* Cultural Quote */}
               <div className="max-w-2xl mx-auto mb-12">
                 <blockquote className="text-center">
-                  <p className="text-lg italic text-gray-700 mb-3">
+                  <p className="text-lg italic text-secondary-700 mb-3">
                     {isPortuguese ? 
                       '"Onde há portugueses, há sempre uma mesa para mais um"' : 
                       '"Where there are Portuguese people, there\'s always room for one more at the table"'
@@ -453,12 +453,12 @@ export default function Pricing() {
                 const getColorClasses = (color: string) => {
                   const colorMap = {
                     gray: {
-                      border: 'border-gray-200',
-                      bg: 'bg-gray-50',
-                      iconBg: 'bg-gray-100',
-                      iconText: 'text-gray-600',
-                      button: 'bg-gray-500 hover:bg-gray-600 text-white',
-                      badge: 'bg-gray-100 text-gray-800'
+                      border: 'border-secondary-200',
+                      bg: 'bg-secondary-50',
+                      iconBg: 'bg-secondary-100',
+                      iconText: 'text-secondary-600',
+                      button: 'bg-secondary-500 hover:bg-secondary-600 text-white',
+                      badge: 'bg-secondary-100 text-secondary-800'
                     },
                     primary: {
                       border: 'border-primary-300',
@@ -487,12 +487,12 @@ export default function Pricing() {
                   <div 
                     key={plan.id}
                     className={`relative rounded-3xl p-8 bg-white shadow-2xl ${
-                      isHighlighted ? 'border-4 border-primary-400 ring-4 ring-primary-100 scale-105' : 'border-2 border-gray-200'
+                      isHighlighted ? 'border-4 border-primary-400 ring-4 ring-primary-100 scale-105' : 'border-2 border-secondary-200'
                     }`}
                   >
                     {/* Badge */}
                     {plan.badge && (
-                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                      <div className="absolute -top-4 left-1/2 transform -transecondary-x-1/2">
                         <span className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-2 rounded-full text-sm font-bold">
                           {isPortuguese ? plan.badge : plan.badgeEn}
                         </span>
@@ -509,7 +509,7 @@ export default function Pricing() {
                       
                       {/* Cultural Context */}
                       <div className={`${colors.bg} rounded-xl p-4 mb-6`}>
-                        <p className="text-base text-gray-700 italic">
+                        <p className="text-base text-secondary-700 italic">
                           {isPortuguese ? plan.culturalContext : plan.culturalContextEn}
                         </p>
                       </div>
@@ -530,12 +530,12 @@ export default function Pricing() {
                                       <div className="text-4xl font-bold text-gray-900">
                                         {formatPrice(pricing.price)}
                                       </div>
-                                      <div className="text-lg text-gray-600">
+                                      <div className="text-lg text-secondary-600">
                                         /{billingCycle === 'yearly' ? (isPortuguese ? 'ano' : 'year') : (isPortuguese ? 'mês' : 'month')}
                                       </div>
                                     </div>
                                     {billingCycle === 'yearly' && pricing.savings > 0 && (
-                                      <div className="text-sm text-green-600 font-medium mt-1">
+                                      <div className="text-sm text-action-600 font-medium mt-1">
                                         {isPortuguese 
                                           ? `${formatPrice(pricing.monthlyEquivalent)}/mês • Poupa ${formatPrice(pricing.savings)}/ano` 
                                           : `${formatPrice(pricing.monthlyEquivalent)}/month • Save ${formatPrice(pricing.savings)}/year`
@@ -556,7 +556,7 @@ export default function Pricing() {
                             </>
                           )}
                         </div>
-                        <p className="text-gray-600 text-base">
+                        <p className="text-secondary-600 text-base">
                           {isPortuguese ? plan.description : plan.descriptionEn}
                         </p>
                       </div>
@@ -564,7 +564,7 @@ export default function Pricing() {
                       <button className={`w-full py-4 px-6 rounded-2xl font-semibold text-lg transition-all duration-200 group mb-8 ${colors.button} ${isHighlighted ? 'shadow-xl hover:shadow-2xl' : 'shadow-lg hover:shadow-xl'}`}>
                         <span className="flex items-center justify-center">
                           {isPortuguese ? plan.buttonText : plan.buttonTextEn}
-                          <ArrowRightIcon className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                          <ArrowRightIcon className="ml-3 w-5 h-5 group-hover:transecondary-x-1 transition-transform" />
                         </span>
                       </button>
                     </div>
@@ -573,8 +573,8 @@ export default function Pricing() {
                     <div className="space-y-3">
                       {(isPortuguese ? plan.features : plan.featuresEn).map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-start space-x-3">
-                          <CheckIconSolid className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                          <span className="text-gray-700 text-sm leading-relaxed break-words">{feature}</span>
+                          <CheckIconSolid className="w-5 h-5 text-action-500 flex-shrink-0 mt-1" />
+                          <span className="text-secondary-700 text-sm leading-relaxed break-words">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -594,7 +594,7 @@ export default function Pricing() {
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                   {isPortuguese ? 'Por que Escolher LusoTown?' : 'Why Choose LusoTown?'}
                 </h2>
-                <p className="text-xl text-gray-600 leading-relaxed mb-8">
+                <p className="text-xl text-secondary-600 leading-relaxed mb-8">
                   {isPortuguese ?
                     'A única plataforma dedicada exclusivamente à comunidade portuguesa de Londres.' :
                     'The only platform dedicated exclusively to London\'s Portuguese community.'
@@ -608,31 +608,31 @@ export default function Pricing() {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                   <div className="p-6">
-                    <div className="text-4xl font-bold text-gray-600 mb-2">
+                    <div className="text-4xl font-bold text-secondary-600 mb-2">
                       {isPortuguese ? 'Gratuito' : 'Free'}
                     </div>
-                    <div className="text-sm text-gray-600 mb-4">
+                    <div className="text-sm text-secondary-600 mb-4">
                       {isPortuguese ? 'Explore a comunidade' : 'Explore the community'}
                     </div>
-                    <p className="text-sm text-gray-700">
+                    <p className="text-sm text-secondary-700">
                       {isPortuguese ? 'Perfeito para conhecer a plataforma e começar a conectar-se' : 'Perfect for getting to know the platform and start connecting'}
                     </p>
                   </div>
                   <div className="p-6 border-2 border-primary-200 rounded-lg bg-primary-50">
                     <div className="text-4xl font-bold text-primary-600 mb-2">£19.99</div>
-                    <div className="text-sm text-gray-600 mb-4">
+                    <div className="text-sm text-secondary-600 mb-4">
                       {isPortuguese ? 'Por mês' : 'Per month'}
                     </div>
-                    <p className="text-sm text-gray-700">
+                    <p className="text-sm text-secondary-700">
                       {isPortuguese ? 'Acesso completo à comunidade portuguesa de Londres' : 'Full access to London\'s Portuguese community'}
                     </p>
                   </div>
                   <div className="p-6">
                     <div className="text-4xl font-bold text-premium-600 mb-2">£39.99</div>
-                    <div className="text-sm text-gray-600 mb-4">
+                    <div className="text-sm text-secondary-600 mb-4">
                       {isPortuguese ? 'Por mês' : 'Per month'}
                     </div>
-                    <p className="text-sm text-gray-700">
+                    <p className="text-sm text-secondary-700">
                       {isPortuguese ? 'Para líderes da comunidade e organizadores de eventos' : 'For community leaders and event organizers'}
                     </p>
                   </div>
@@ -654,7 +654,7 @@ export default function Pricing() {
                         <h4 className="font-semibold text-gray-900">
                           {isPortuguese ? 'Comunidade Verificada' : 'Verified Community'}
                         </h4>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-secondary-600">
                           {isPortuguese ? 'Todos os membros são portugueses verificados' : 'All members are verified Portuguese speakers'}
                         </p>
                       </div>
@@ -667,7 +667,7 @@ export default function Pricing() {
                         <h4 className="font-semibold text-gray-900">
                           {isPortuguese ? 'Eventos Culturais' : 'Cultural Events'}
                         </h4>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-secondary-600">
                           {isPortuguese ? 'Noites de fado, festivais portugueses, networking' : 'Fado nights, Portuguese festivals, networking'}
                         </p>
                       </div>
@@ -682,7 +682,7 @@ export default function Pricing() {
                         <h4 className="font-semibold text-gray-900">
                           {isPortuguese ? 'Flexibilidade Total' : 'Complete Flexibility'}
                         </h4>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-secondary-600">
                           {isPortuguese ? 'Cancele ou mude de plano a qualquer momento' : 'Cancel or change plan anytime'}
                         </p>
                       </div>
@@ -695,7 +695,7 @@ export default function Pricing() {
                         <h4 className="font-semibold text-gray-900">
                           {isPortuguese ? 'Suporte em Português' : 'Portuguese Support'}
                         </h4>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-secondary-600">
                           {isPortuguese ? 'Atendimento na nossa língua materna' : 'Customer service in our native language'}
                         </p>
                       </div>
@@ -708,13 +708,13 @@ export default function Pricing() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-secondary-50">
           <div className="container-width">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {isPortuguese ? 'Histórias da Nossa Comunidade' : 'Stories from Our Community'}
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
                 {isPortuguese ?
                   'Ouça como outros portugueses, profissionais e indivíduos encontraram o seu lugar em Londres através da nossa comunidade' :
                   'Hear how other Portuguese individuals and professionals found their place in London through our community'
@@ -735,13 +735,13 @@ export default function Pricing() {
                       {testimonial.roi}
                     </div>
                   </div>
-                  <blockquote className="text-gray-700 mb-6 italic text-lg leading-relaxed">
+                  <blockquote className="text-secondary-700 mb-6 italic text-lg leading-relaxed">
                     "{isPortuguese ? testimonial.quote : testimonial.quoteEn}"
                   </blockquote>
                   <div className="flex items-start justify-between">
                     <div>
                       <div className="font-semibold text-gray-900 text-lg">{testimonial.name}</div>
-                      <div className="text-sm text-gray-600 mb-1">{testimonial.location} • {isPortuguese ? `${testimonial.age} anos` : `Age ${testimonial.age}`}</div>
+                      <div className="text-sm text-secondary-600 mb-1">{testimonial.location} • {isPortuguese ? `${testimonial.age} anos` : `Age ${testimonial.age}`}</div>
                       <div className="text-sm text-primary-600 italic">{testimonial.cultural}</div>
                     </div>
                     <div className="text-xs bg-gradient-to-r from-primary-100 to-secondary-100 text-primary-700 px-3 py-1 rounded-full font-medium">
@@ -755,13 +755,13 @@ export default function Pricing() {
             {/* Community Impact Quote */}
             <div className="text-center mt-16">
               <div className="max-w-3xl mx-auto bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8">
-                <blockquote className="text-2xl italic text-gray-800 mb-4">
+                <blockquote className="text-2xl italic text-secondary-800 mb-4">
                   {isPortuguese ?
                     '"Comecei grátis só para experimentar. Agora não consigo imaginar Londres sem o LusoTown - encontrei a minha família portuguesa aqui."' :
                     '"I started free just to try it out. Now I can\'t imagine London without LusoTown - I found my Portuguese family here."'
                   }
                 </blockquote>
-                <footer className="text-gray-600">
+                <footer className="text-secondary-600">
                   {isPortuguese ? 'Membro Grátis que se tornou VIP' : 'Free Member who became VIP'}
                 </footer>
               </div>
@@ -776,7 +776,7 @@ export default function Pricing() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {isPortuguese ? 'Opções de Pagamento Flexíveis' : 'Flexible Payment Options'}
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
                 {isPortuguese ? 
                   'Criamos opções de pagamento que funcionam para todos os membros da comunidade portuguesa, com descontos especiais e flexibilidade total' :
                   'We\'ve created payment options that work for all Portuguese Portuguese speakers, with special discounts and full flexibility'
@@ -793,7 +793,7 @@ export default function Pricing() {
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">
                     {isPortuguese ? option.title : option.titleEn}
                   </h3>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-secondary-600 text-sm">
                     {isPortuguese ? option.description : option.descriptionEn}
                   </p>
                 </div>
@@ -811,26 +811,26 @@ export default function Pricing() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="bg-white rounded-xl p-6">
                       <div className="text-3xl font-bold text-secondary-600 mb-2">£9.99</div>
-                      <div className="text-sm text-gray-600 mb-2">
+                      <div className="text-sm text-secondary-600 mb-2">
                         {isPortuguese ? 'Estudantes Portugueses/mês' : 'Portuguese Students/month'}
                       </div>
-                      <div className="text-xs text-green-600 font-medium">50% {isPortuguese ? 'desconto no plano Comunidade' : 'discount on Community plan'}</div>
+                      <div className="text-xs text-action-600 font-medium">50% {isPortuguese ? 'desconto no plano Comunidade' : 'discount on Community plan'}</div>
                       <div className="text-xs text-gray-500 mt-1">
                         {isPortuguese ? '(Com comprovativo estudante)' : '(With valid student ID)'}
                       </div>
                     </div>
                     <div className="bg-white rounded-xl p-6">
-                      <div className="text-3xl font-bold text-purple-600 mb-2">£14.99</div>
-                      <div className="text-sm text-gray-600 mb-2">
+                      <div className="text-3xl font-bold text-accent-600 mb-2">£14.99</div>
+                      <div className="text-sm text-secondary-600 mb-2">
                         {isPortuguese ? 'Sénior (60+)/mês' : 'Senior (60+)/month'}
                       </div>
-                      <div className="text-xs text-green-600 font-medium">25% {isPortuguese ? 'desconto no plano Comunidade' : 'discount on Community plan'}</div>
+                      <div className="text-xs text-action-600 font-medium">25% {isPortuguese ? 'desconto no plano Comunidade' : 'discount on Community plan'}</div>
                       <div className="text-xs text-gray-500 mt-1">
                         {isPortuguese ? '(Com verificação de idade)' : '(With age verification)'}
                       </div>
                     </div>
                   </div>
-                  <div className="mt-6 text-sm text-gray-600">
+                  <div className="mt-6 text-sm text-secondary-600">
                     {isPortuguese 
                       ? '🇵🇹 Apoiamos estudantes e seniores da comunidade portuguesa com preços especiais'
                       : '🇵🇹 We support Portuguese community students and seniors with special pricing'
@@ -843,13 +843,13 @@ export default function Pricing() {
         </section>
 
         {/* Feature Comparison Table */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-secondary-50">
           <div className="container-width">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {isPortuguese ? 'O Que Está Incluído na Sua Adesão' : 'What\'s Included in Your Membership'}
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
                 {isPortuguese ?
                   'Escolha o plano perfeito para si e desbloqueie o acesso à comunidade portuguesa de Londres' :
                   'Choose the perfect plan for you and unlock access to London\'s Portuguese community'
@@ -953,14 +953,14 @@ export default function Pricing() {
                       }
                     ].map((section, index) => (
                       <div key={index} className="space-y-4">
-                        <h4 className="text-lg font-semibold text-gray-900 border-b border-gray-200 pb-2">
+                        <h4 className="text-lg font-semibold text-gray-900 border-b border-secondary-200 pb-2">
                           {section.category}
                         </h4>
                         <div className="space-y-3">
                           {section.features.map((feature, featureIndex) => (
                             <div key={featureIndex} className="flex items-start space-x-3">
-                              <CheckIconSolid className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                              <span className="text-gray-700 text-sm leading-relaxed">{feature}</span>
+                              <CheckIconSolid className="w-5 h-5 text-action-500 flex-shrink-0 mt-0.5" />
+                              <span className="text-secondary-700 text-sm leading-relaxed">{feature}</span>
                             </div>
                           ))}
                         </div>
@@ -968,22 +968,22 @@ export default function Pricing() {
                     ))}
                   </div>
 
-                  <div className="mt-8 pt-6 border-t border-gray-200">
+                  <div className="mt-8 pt-6 border-t border-secondary-200">
                     <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-lg p-6">
                       <div className="flex items-center justify-center space-x-4 text-center">
                         <div>
                           <div className="text-2xl font-bold text-primary-600">{communityStats.members}</div>
-                          <div className="text-xs text-gray-600">{isPortuguese ? 'Membros ativos' : 'Active members'}</div>
+                          <div className="text-xs text-secondary-600">{isPortuguese ? 'Membros ativos' : 'Active members'}</div>
                         </div>
-                        <div className="w-px h-8 bg-gray-300"></div>
+                        <div className="w-px h-8 bg-secondary-300"></div>
                         <div>
                           <div className="text-2xl font-bold text-secondary-600">35+</div>
-                          <div className="text-xs text-gray-600">{isPortuguese ? 'Eventos/mês' : 'Events/month'}</div>
+                          <div className="text-xs text-secondary-600">{isPortuguese ? 'Eventos/mês' : 'Events/month'}</div>
                         </div>
-                        <div className="w-px h-8 bg-gray-300"></div>
+                        <div className="w-px h-8 bg-secondary-300"></div>
                         <div>
                           <div className="text-2xl font-bold text-accent-600">4.9★</div>
-                          <div className="text-xs text-gray-600">{isPortuguese ? 'Avaliação média' : 'Average rating'}</div>
+                          <div className="text-xs text-secondary-600">{isPortuguese ? 'Avaliação média' : 'Average rating'}</div>
                         </div>
                       </div>
                     </div>
@@ -1001,7 +1001,7 @@ export default function Pricing() {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {isPortuguese ? 'O Melhor Investimento na Sua Vida em Londres' : 'The Best Investment in Your London Life'}
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
                 {isPortuguese ?
                   'Por apenas £19.99/mês, obtenha acesso a uma comunidade que vale centenas de libras em experiências e ligações' :
                   'For just £19.99/month, get access to a community worth hundreds of pounds in experiences and connections'
@@ -1039,7 +1039,7 @@ export default function Pricing() {
                       </div>
                       <div className="border-t pt-2 flex justify-between text-lg font-bold">
                         <span>{isPortuguese ? 'Total individual:' : 'Individual total:'}</span>
-                        <span className="text-red-600">£340+/ano</span>
+                        <span className="text-coral-600">£340+/ano</span>
                       </div>
                     </div>
                   </div>
@@ -1050,30 +1050,30 @@ export default function Pricing() {
                     <div className="space-y-3 text-sm">
                       <div className="flex justify-between">
                         <span>{isPortuguese ? 'Eventos ilimitados' : 'Unlimited events'}</span>
-                        <span className="font-medium text-green-600">✓</span>
+                        <span className="font-medium text-action-600">✓</span>
                       </div>
                       <div className="flex justify-between">
                         <span>{isPortuguese ? 'Networking profissional' : 'Professional networking'}</span>
-                        <span className="font-medium text-green-600">✓</span>
+                        <span className="font-medium text-action-600">✓</span>
                       </div>
                       <div className="flex justify-between">
                         <span>{isPortuguese ? 'Workshops premium' : 'Premium workshops'}</span>
-                        <span className="font-medium text-green-600">✓</span>
+                        <span className="font-medium text-action-600">✓</span>
                       </div>
                       <div className="flex justify-between">
                         <span>{isPortuguese ? 'Tours exclusivos' : 'Exclusive tours'}</span>
-                        <span className="font-medium text-green-600">✓</span>
+                        <span className="font-medium text-action-600">✓</span>
                       </div>
                       <div className="border-t pt-2 flex justify-between text-lg font-bold">
                         <span>{isPortuguese ? 'Custo anual (Comunidade):' : 'Annual cost (Community):'}</span>
-                        <span className="text-green-600">£239.88</span>
+                        <span className="text-action-600">£239.88</span>
                       </div>
                     </div>
                     <div className="mt-4 p-4 bg-green-100 rounded-lg text-center">
                       <div className="text-2xl font-bold text-green-700">
                         {isPortuguese ? 'Poupança: £100+' : 'Savings: £100+'}
                       </div>
-                      <div className="text-sm text-green-600">
+                      <div className="text-sm text-action-600">
                         {isPortuguese ? '(Retorno de 42%)' : '(42% return)'}
                       </div>
                     </div>
@@ -1083,14 +1083,14 @@ export default function Pricing() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              <div className="text-center p-8 bg-gray-50 rounded-2xl">
+              <div className="text-center p-8 bg-secondary-50 rounded-2xl">
                 <div className="w-16 h-16 bg-primary-100 text-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <CurrencyPoundIcon className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   {isPortuguese ? 'Valor Excecional' : 'Exceptional Value'}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-secondary-600 leading-relaxed">
                   {isPortuguese ?
                     'Apenas £2.08 por mês para acesso a centenas de libras em experiências portuguesas autênticas e networking profissional.' :
                     'Just £2.08 per month for access to hundreds of pounds in authentic Portuguese experiences and professional networking.'
@@ -1098,14 +1098,14 @@ export default function Pricing() {
                 </p>
               </div>
               
-              <div className="text-center p-8 bg-gray-50 rounded-2xl">
+              <div className="text-center p-8 bg-secondary-50 rounded-2xl">
                 <div className="w-16 h-16 bg-secondary-100 text-secondary-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <UsersIcon className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   {isPortuguese ? 'Rede Profissional' : 'Professional Network'}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-secondary-600 leading-relaxed">
                   {isPortuguese ?
                     'Conecte-se com empresários, profissionais e criativos portugueses. Uma única conexão pode valer milhares em oportunidades de negócio.' :
                     'Connect with Portuguese entrepreneurs, professionals and creatives. One connection could be worth thousands in business opportunities.'
@@ -1113,14 +1113,14 @@ export default function Pricing() {
                 </p>
               </div>
               
-              <div className="text-center p-8 bg-gray-50 rounded-2xl">
+              <div className="text-center p-8 bg-secondary-50 rounded-2xl">
                 <div className="w-16 h-16 bg-accent-100 text-accent-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <HeartIcon className="w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
                   {isPortuguese ? 'Bem-estar Cultural' : 'Cultural Wellbeing'}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-secondary-600 leading-relaxed">
                   {isPortuguese ?
                     'Combata a solidão e saudades de casa. Encontre a sua "família" portuguesa em Londres - valor inestimável para a sua saúde mental.' :
                     'Combat loneliness and homesickness. Find your Portuguese "family" in London - invaluable for your mental health and wellbeing.'
@@ -1135,33 +1135,33 @@ export default function Pricing() {
         <section className="py-16 bg-green-50">
           <div className="container-width">
             <div className="text-center max-w-4xl mx-auto">
-              <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-green-100 text-action-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <ShieldCheckIconSolid className="w-8 h-8" />
               </div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 {isPortuguese ? 'Garantia 100% de Satisfação' : '100% Satisfaction Guarantee'}
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-xl text-secondary-600 mb-8">
                 {isPortuguese ?
                   'Estamos tão confiantes de que vai adorar fazer parte da nossa comunidade portuguesa que oferecemos uma garantia completa de 30 dias. Se não se sentir completamente em casa, devolvemos todo o dinheiro - sem perguntas.' :
                   'We\'re so confident you\'ll love being part of our Portuguese community that we offer a complete 30-day guarantee. If you don\'t feel completely at home, we\'ll refund everything - no questions asked.'
                 }
               </p>
               <div className="bg-white rounded-lg p-6 inline-block">
-                <p className="text-sm text-gray-600 mb-2">
+                <p className="text-sm text-secondary-600 mb-2">
                   {isPortuguese ? 'Protegido pela nossa garantia:' : 'Protected by our guarantee:'}
                 </p>
-                <div className="flex items-center justify-center space-x-8 text-sm text-gray-700">
+                <div className="flex items-center justify-center space-x-8 text-sm text-secondary-700">
                   <div className="flex items-center">
-                    <CheckIconSolid className="w-4 h-4 text-green-500 mr-2" />
+                    <CheckIconSolid className="w-4 h-4 text-action-500 mr-2" />
                     {isPortuguese ? 'Reembolso total em 30 dias' : '30-day full refund'}
                   </div>
                   <div className="flex items-center">
-                    <CheckIconSolid className="w-4 h-4 text-green-500 mr-2" />
+                    <CheckIconSolid className="w-4 h-4 text-action-500 mr-2" />
                     {isPortuguese ? 'Sem perguntas' : 'No questions asked'}
                   </div>
                   <div className="flex items-center">
-                    <CheckIconSolid className="w-4 h-4 text-green-500 mr-2" />
+                    <CheckIconSolid className="w-4 h-4 text-action-500 mr-2" />
                     {isPortuguese ? 'Cancele a qualquer momento' : 'Cancel anytime'}
                   </div>
                 </div>
@@ -1171,13 +1171,13 @@ export default function Pricing() {
         </section>
 
         {/* Portuguese Community FAQ Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-secondary-50">
           <div className="container-width">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                 {isPortuguese ? 'Perguntas? Temos Respostas' : 'Questions? We Have Answers'}
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
                 {isPortuguese ?
                   'Tudo o que precisa de saber sobre se juntar à comunidade portuguesa de Londres' :
                   'Everything you need to know about joining London\'s Portuguese community'
@@ -1240,7 +1240,7 @@ export default function Pricing() {
                   <h3 className="text-xl font-semibold text-gray-900 mb-4">
                     {isPortuguese ? faq.questionPt : faq.questionEn}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-secondary-600 leading-relaxed">
                     {isPortuguese ? faq.answerPt : faq.answerEn}
                   </p>
                 </div>
@@ -1248,7 +1248,7 @@ export default function Pricing() {
             </div>
 
             <div className="text-center mt-12">
-              <p className="text-gray-600 mb-4">
+              <p className="text-secondary-600 mb-4">
                 {isPortuguese ? 'Ainda tem perguntas?' : 'Still have questions?'}
               </p>
               <a href={ROUTES.contact} className="inline-flex items-center gap-2 border-2 border-primary-400 text-primary-600 hover:bg-primary-400 hover:text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200">
@@ -1326,9 +1326,9 @@ export default function Pricing() {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <a href={ROUTES.signup} className="inline-flex items-center gap-2 bg-white text-primary-600 hover:bg-gray-100 text-lg font-semibold px-8 py-4 rounded-xl group transform hover:scale-105 transition-all duration-200 shadow-lg">
+                <a href={ROUTES.signup} className="inline-flex items-center gap-2 bg-white text-primary-600 hover:bg-secondary-100 text-lg font-semibold px-8 py-4 rounded-xl group transform hover:scale-105 transition-all duration-200 shadow-lg">
                   {isPortuguese ? 'Começar Grátis' : 'Start Free'}
-                  <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRightIcon className="w-5 h-5 group-hover:transecondary-x-1 transition-transform" />
                 </a>
                 <a href={ROUTES.login} className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-primary-600 text-lg font-semibold px-8 py-4 rounded-xl transform hover:scale-105 transition-all duration-200">
                   {isPortuguese ? 'Já é Membro? Entrar' : 'Already a Member? Sign In'}

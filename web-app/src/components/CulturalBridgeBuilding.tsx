@@ -1,8 +1,11 @@
 'use client'
 
 import React, { useState } from 'react'
+import { ROUTES } from '@/config'
 import { motion } from 'framer-motion'
+import { ROUTES } from '@/config'
 import Image from 'next/image'
+import { ROUTES } from '@/config'
 import { 
   HandRaisedIcon,
   HeartIcon,
@@ -18,6 +21,7 @@ import {
   MegaphoneIcon
 } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config'
 
 interface BridgeInitiative {
   id: string
@@ -538,7 +542,7 @@ export default function CulturalBridgeBuilding() {
               ? 'Conectando Comunidades, Construindo Compreensão'
               : 'Connecting Communities, Building Understanding'}
           </h2>
-          <p className="text-xl text-gray-700 mb-8 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-secondary-700 mb-8 max-w-4xl mx-auto leading-relaxed">
             {language === 'pt' 
               ? 'Iniciativas inovadoras que conectam a comunidade portuguesa com comunidades britânicas e outras, construindo pontes de compreensão mútua, amizade e colaboração através de programas educacionais, profissionais e sociais.'
               : 'Innovative initiatives connecting the Portuguese community with British and other communities, building bridges of mutual understanding, friendship, and collaboration through educational, professional, and social programmes.'}
@@ -555,25 +559,25 @@ export default function CulturalBridgeBuilding() {
         >
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/50">
             <div className="text-3xl font-bold text-primary-600 mb-2">{totals.total.toLocaleString()}+</div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {language === 'pt' ? 'Total de Participantes' : 'Total Participants'}
             </div>
           </div>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/50">
             <div className="text-3xl font-bold text-secondary-600 mb-2">{totals.portuguese.toLocaleString()}+</div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {language === 'pt' ? 'Participantes Portugueses' : 'Portuguese Participants'}
             </div>
           </div>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/50">
             <div className="text-3xl font-bold text-accent-600 mb-2">{totals.british.toLocaleString()}+</div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {language === 'pt' ? 'Participantes Britânicos' : 'British Participants'}
             </div>
           </div>
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg border border-white/50">
             <div className="text-3xl font-bold text-coral-600 mb-2">{BRIDGE_INITIATIVES.length}</div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-secondary-600">
               {language === 'pt' ? 'Iniciativas Ativas' : 'Active Initiatives'}
             </div>
           </div>
@@ -587,7 +591,7 @@ export default function CulturalBridgeBuilding() {
               className={`flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all duration-300 ${
                 selectedCategory === 'all'
                   ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg'
-                  : 'bg-white/80 text-gray-700 hover:bg-gray-100 hover:text-primary-600 border border-gray-200'
+                  : 'bg-white/80 text-secondary-700 hover:bg-secondary-100 hover:text-primary-600 border border-secondary-200'
               }`}
             >
               <GlobeAltIcon className="w-4 h-4" />
@@ -602,7 +606,7 @@ export default function CulturalBridgeBuilding() {
                   className={`flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all duration-300 ${
                     selectedCategory === key
                       ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg'
-                      : 'bg-white/80 text-gray-700 hover:bg-gray-100 hover:text-primary-600 border border-gray-200'
+                      : 'bg-white/80 text-secondary-700 hover:bg-secondary-100 hover:text-primary-600 border border-secondary-200'
                   }`}
                 >
                   <IconComponent className="w-4 h-4" />
@@ -714,7 +718,7 @@ export default function CulturalBridgeBuilding() {
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="mt-6 space-y-6 border-t border-gray-200 pt-6"
+                      className="mt-6 space-y-6 border-t border-secondary-200 pt-6"
                     >
                       {/* Objectives */}
                       <div>
@@ -724,7 +728,7 @@ export default function CulturalBridgeBuilding() {
                         </h4>
                         <ul className="space-y-2">
                           {(language === 'pt' ? initiative.objectivesPortuguese : initiative.objectives).map((objective, index) => (
-                            <li key={index} className="flex items-start gap-2 text-sm text-gray-700">
+                            <li key={index} className="flex items-start gap-2 text-sm text-secondary-700">
                               <div className="w-1.5 h-1.5 bg-primary-500 rounded-full mt-2 flex-shrink-0" />
                               {objective}
                             </li>
@@ -737,7 +741,7 @@ export default function CulturalBridgeBuilding() {
                         <h4 className="font-medium text-gray-900 mb-3">
                           {language === 'pt' ? 'Resultados Detalhados:' : 'Detailed Outcomes:'}
                         </h4>
-                        <p className="text-gray-700 text-sm">
+                        <p className="text-secondary-700 text-sm">
                           {language === 'pt' ? initiative.outcomes.descriptionPortuguese : initiative.outcomes.description}
                         </p>
                       </div>
@@ -751,7 +755,7 @@ export default function CulturalBridgeBuilding() {
                         <div className="space-y-4">
                           {initiative.testimonials.map((testimonial, index) => (
                             <div key={index} className="bg-gradient-to-r from-gray-50 to-white rounded-lg p-4 border-l-4 border-primary-500">
-                              <blockquote className="text-gray-700 italic text-sm mb-3">
+                              <blockquote className="text-secondary-700 italic text-sm mb-3">
                                 "{language === 'pt' ? testimonial.quotePortuguese : testimonial.quote}"
                               </blockquote>
                               <cite className="text-primary-600 font-semibold text-sm">
@@ -771,7 +775,7 @@ export default function CulturalBridgeBuilding() {
                           {initiative.partnerships.map(partner => (
                             <span
                               key={partner}
-                              className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
+                              className="px-3 py-1 bg-secondary-100 text-secondary-700 text-xs rounded-full"
                             >
                               {partner}
                             </span>
@@ -784,7 +788,7 @@ export default function CulturalBridgeBuilding() {
                         <h4 className="font-medium text-gray-900 mb-2">
                           {language === 'pt' ? 'Planos Futuros:' : 'Future Plans:'}
                         </h4>
-                        <p className="text-gray-700 text-sm">
+                        <p className="text-secondary-700 text-sm">
                           {language === 'pt' ? initiative.futurePlansPortuguese : initiative.futurePlans}
                         </p>
                       </div>
@@ -834,13 +838,13 @@ export default function CulturalBridgeBuilding() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <a
-                href="/signup"
-                className="bg-white text-primary-600 font-bold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors shadow-lg"
+                href={ROUTES.auth.signup}
+                className="bg-white text-primary-600 font-bold px-8 py-4 rounded-xl hover:bg-secondary-100 transition-colors shadow-lg"
               >
                 {language === 'pt' ? 'Participar Agora' : 'Get Involved'}
               </a>
               <a
-                href="/events"
+                href={ROUTES.events}
                 className="border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white hover:text-primary-600 transition-colors"
               >
                 {language === 'pt' ? 'Ver Eventos' : 'View Events'}

@@ -250,7 +250,7 @@ export default function ProfileCreationWizard() {
           </span>
         </div>
         
-        <div className="w-full bg-gray-200 rounded-full h-2 mb-4">
+        <div className="w-full bg-secondary-200 rounded-full h-2 mb-4">
           <motion.div
             className="bg-gradient-to-r from-primary-500 to-secondary-500 h-2 rounded-full"
             initial={{ width: 0 }}
@@ -259,7 +259,7 @@ export default function ProfileCreationWizard() {
           />
         </div>
 
-        <p className="text-gray-600">
+        <p className="text-secondary-600">
           {isPortuguese ? currentStepData.descriptionPortuguese : currentStepData.description}
         </p>
       </div>
@@ -292,7 +292,7 @@ export default function ProfileCreationWizard() {
         <button
           onClick={prevStep}
           disabled={currentStep === 0}
-          className="flex items-center gap-2 px-6 py-3 text-gray-600 bg-gray-100 rounded-xl hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          className="flex items-center gap-2 px-6 py-3 text-secondary-600 bg-secondary-100 rounded-xl hover:bg-secondary-200 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         >
           <ChevronLeftIcon className="w-5 h-5" />
           {isPortuguese ? 'Anterior' : 'Previous'}
@@ -338,28 +338,28 @@ function BasicInfoStep({ formData, updateFormData, isPortuguese, options }: any)
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-secondary-700 mb-2">
             {isPortuguese ? 'Nome' : 'First Name'} *
           </label>
           <input
             type="text"
             value={formData.first_name}
             onChange={(e) => updateFormData('first_name', e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+            className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
             placeholder={isPortuguese ? 'Seu nome' : 'Your first name'}
             required
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-secondary-700 mb-2">
             {isPortuguese ? 'Apelido' : 'Last Name'} *
           </label>
           <input
             type="text"
             value={formData.last_name}
             onChange={(e) => updateFormData('last_name', e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+            className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
             placeholder={isPortuguese ? 'Seu apelido' : 'Your last name'}
             required
           />
@@ -367,14 +367,14 @@ function BasicInfoStep({ formData, updateFormData, isPortuguese, options }: any)
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+        <label className="block text-sm font-medium text-secondary-700 mb-2">
           {isPortuguese ? 'Data de Nascimento' : 'Date of Birth'} *
         </label>
         <input
           type="date"
           value={formData.date_of_birth}
           onChange={(e) => updateFormData('date_of_birth', e.target.value)}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+          className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
           required
           max={new Date(new Date().setFullYear(new Date().getFullYear() - 18)).toISOString().split('T')[0]}
         />
@@ -384,13 +384,13 @@ function BasicInfoStep({ formData, updateFormData, isPortuguese, options }: any)
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+        <label className="block text-sm font-medium text-secondary-700 mb-2">
           {isPortuguese ? 'Área de Londres' : 'London Area'} *
         </label>
         <select
           value={formData.location}
           onChange={(e) => updateFormData('location', e.target.value)}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+          className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
           required
         >
           <option value="">
@@ -403,14 +403,14 @@ function BasicInfoStep({ formData, updateFormData, isPortuguese, options }: any)
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+        <label className="block text-sm font-medium text-secondary-700 mb-2">
           {isPortuguese ? 'Biografia' : 'Bio'} *
         </label>
         <textarea
           value={formData.bio}
           onChange={(e) => updateFormData('bio', e.target.value)}
           rows={4}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+          className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
           placeholder={isPortuguese ? 
             'Conte-nos um pouco sobre si, seus interesses e o que procura na comunidade...' : 
             'Tell us about yourself, your interests and what you are looking for in the community...'
@@ -434,7 +434,7 @@ function PhotoStep({ formData, updateFormData, isPortuguese }: any) {
         <h3 className="text-xl font-semibold text-gray-900 mb-2">
           {isPortuguese ? 'Adicione suas fotos' : 'Add your photos'}
         </h3>
-        <p className="text-gray-600 mb-6">
+        <p className="text-secondary-600 mb-6">
           {isPortuguese ? 
             'Adicione pelo menos uma foto para que outros membros da comunidade possam conhecê-lo melhor' :
             'Add at least one photo so other community members can get to know you better'
@@ -456,7 +456,7 @@ function CulturalStep({ formData, updateFormData, isPortuguese, options }: any) 
   return (
     <div className="space-y-6">
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-4">
+        <label className="block text-sm font-medium text-secondary-700 mb-4">
           {isPortuguese ? 'Origem Portuguesa' : 'Portuguese Origin'} *
         </label>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -468,7 +468,7 @@ function CulturalStep({ formData, updateFormData, isPortuguese, options }: any) 
               className={`p-3 rounded-lg border-2 text-sm font-medium transition-all ${
                 formData.portuguese_origin === origin.value
                   ? 'border-primary-500 bg-primary-50 text-primary-700'
-                  : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300'
+                  : 'border-secondary-200 bg-white text-secondary-700 hover:border-secondary-300'
               }`}
             >
               {isPortuguese ? origin.labelPt : origin.label}
@@ -478,7 +478,7 @@ function CulturalStep({ formData, updateFormData, isPortuguese, options }: any) 
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-4">
+        <label className="block text-sm font-medium text-secondary-700 mb-4">
           {isPortuguese ? 'Preferência de Idioma' : 'Language Preference'} *
         </label>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -494,7 +494,7 @@ function CulturalStep({ formData, updateFormData, isPortuguese, options }: any) 
               className={`p-4 rounded-lg border-2 text-sm font-medium transition-all ${
                 formData.language_preference === lang.value
                   ? 'border-primary-500 bg-primary-50 text-primary-700'
-                  : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300'
+                  : 'border-secondary-200 bg-white text-secondary-700 hover:border-secondary-300'
               }`}
             >
               {isPortuguese ? lang.labelPt : lang.label}
@@ -521,7 +521,7 @@ function InterestsStep({ formData, updateFormData, isPortuguese, options }: any)
         <h3 className="text-xl font-semibold text-gray-900 mb-2">
           {isPortuguese ? 'Seus Interesses Culturais' : 'Your Cultural Interests'}
         </h3>
-        <p className="text-gray-600">
+        <p className="text-secondary-600">
           {isPortuguese ? 
             'Selecione pelo menos 3 interesses para nos ajudar a conectá-lo com pessoas similares' :
             'Select at least 3 interests to help us connect you with like-minded people'
@@ -531,7 +531,7 @@ function InterestsStep({ formData, updateFormData, isPortuguese, options }: any)
 
       {Object.entries(options.culturalInterests).map(([category, interests]) => (
         <div key={category}>
-          <h4 className="text-lg font-semibold text-gray-800 mb-3">{category}</h4>
+          <h4 className="text-lg font-semibold text-secondary-800 mb-3">{category}</h4>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             {(interests as string[]).map((interest) => (
               <button
@@ -541,7 +541,7 @@ function InterestsStep({ formData, updateFormData, isPortuguese, options }: any)
                 className={`p-3 rounded-lg border-2 text-sm font-medium transition-all ${
                   (formData.interests || []).includes(interest)
                     ? 'border-primary-500 bg-primary-50 text-primary-700'
-                    : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300'
+                    : 'border-secondary-200 bg-white text-secondary-700 hover:border-secondary-300'
                 }`}
               >
                 {interest}

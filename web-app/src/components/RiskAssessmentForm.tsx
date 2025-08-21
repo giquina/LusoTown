@@ -234,25 +234,25 @@ export default function RiskAssessmentForm({
       {/* Content */}
       <div className="p-6 space-y-8">
         {/* Service Overview */}
-        <div className="bg-gray-50 rounded-lg p-4">
+        <div className="bg-secondary-50 rounded-lg p-4">
           <h3 className="text-lg font-semibold text-gray-900 mb-3">
             {isPortuguese ? 'Resumo do Serviço' : 'Service Overview'}
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
             <div>
-              <span className="text-gray-600">{isPortuguese ? 'Propósito:' : 'Purpose:'}</span>
+              <span className="text-secondary-600">{isPortuguese ? 'Propósito:' : 'Purpose:'}</span>
               <p className="font-medium">{complianceData.servicePurpose}</p>
             </div>
             <div>
-              <span className="text-gray-600">{isPortuguese ? 'Data:' : 'Date:'}</span>
+              <span className="text-secondary-600">{isPortuguese ? 'Data:' : 'Date:'}</span>
               <p className="font-medium">{new Date(complianceData.serviceDate).toLocaleDateString()}</p>
             </div>
             <div>
-              <span className="text-gray-600">{isPortuguese ? 'Passageiros:' : 'Passengers:'}</span>
+              <span className="text-secondary-600">{isPortuguese ? 'Passageiros:' : 'Passengers:'}</span>
               <p className="font-medium">{complianceData.passengerCount}</p>
             </div>
             <div>
-              <span className="text-gray-600">{isPortuguese ? 'Pontuação Inicial:' : 'Initial Score:'}</span>
+              <span className="text-secondary-600">{isPortuguese ? 'Pontuação Inicial:' : 'Initial Score:'}</span>
               <p className="font-medium">{complianceData.riskScore}/20</p>
             </div>
           </div>
@@ -265,7 +265,7 @@ export default function RiskAssessmentForm({
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {isPortuguese ? 'Nome do Avaliador *' : 'Assessor Name *'}
               </label>
               <input
@@ -273,17 +273,17 @@ export default function RiskAssessmentForm({
                 value={assessment.assessorName || ''}
                 onChange={(e) => handleInputChange('assessorName', e.target.value)}
                 className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent ${
-                  errors.assessorName ? 'border-red-500' : 'border-gray-300'
+                  errors.assessorName ? 'border-coral-500' : 'border-secondary-300'
                 }`}
                 placeholder={isPortuguese ? 'Nome completo do oficial SIA' : 'Full name of SIA officer'}
               />
               {errors.assessorName && (
-                <p className="text-red-500 text-sm mt-1">{errors.assessorName}</p>
+                <p className="text-coral-500 text-sm mt-1">{errors.assessorName}</p>
               )}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {isPortuguese ? 'Número da Licença SIA *' : 'SIA License Number *'}
               </label>
               <input
@@ -291,12 +291,12 @@ export default function RiskAssessmentForm({
                 value={assessment.assessorLicense || ''}
                 onChange={(e) => handleInputChange('assessorLicense', e.target.value)}
                 className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent ${
-                  errors.assessorLicense ? 'border-red-500' : 'border-gray-300'
+                  errors.assessorLicense ? 'border-coral-500' : 'border-secondary-300'
                 }`}
                 placeholder="SIA-XXXXXXXX"
               />
               {errors.assessorLicense && (
-                <p className="text-red-500 text-sm mt-1">{errors.assessorLicense}</p>
+                <p className="text-coral-500 text-sm mt-1">{errors.assessorLicense}</p>
               )}
             </div>
           </div>
@@ -314,7 +314,7 @@ export default function RiskAssessmentForm({
               { key: 'clientRisk', labelEn: 'Client Risk', labelPt: 'Risco do Cliente', icon: UserGroupIcon },
               { key: 'operationalRisk', labelEn: 'Operational Risk', labelPt: 'Risco Operacional', icon: ShieldCheckIcon }
             ].map(({ key, labelEn, labelPt, icon: Icon }) => (
-              <div key={key} className="border border-gray-200 rounded-lg p-4">
+              <div key={key} className="border border-secondary-200 rounded-lg p-4">
                 <div className="flex items-center space-x-2 mb-3">
                   <Icon className="w-5 h-5 text-secondary-600" />
                   <h4 className="font-medium text-gray-900">
@@ -330,11 +330,11 @@ export default function RiskAssessmentForm({
                         value={level}
                         checked={assessment[key as keyof RiskAssessment] === level}
                         onChange={(e) => handleInputChange(key as keyof RiskAssessment, e.target.value)}
-                        className="w-4 h-4 text-secondary-600 border-gray-300 focus:ring-secondary-500"
+                        className="w-4 h-4 text-secondary-600 border-secondary-300 focus:ring-secondary-500"
                       />
                       <span className={`text-sm font-medium ${
-                        level === 'high' ? 'text-red-600' : 
-                        level === 'medium' ? 'text-yellow-600' : 'text-green-600'
+                        level === 'high' ? 'text-coral-600' : 
+                        level === 'medium' ? 'text-yellow-600' : 'text-action-600'
                       }`}>
                         {level === 'low' ? (isPortuguese ? 'Baixo' : 'Low') :
                          level === 'medium' ? (isPortuguese ? 'Médio' : 'Medium') :
@@ -353,8 +353,8 @@ export default function RiskAssessmentForm({
           <h3 className="text-lg font-semibold text-gray-900 mb-4">
             {isPortuguese ? 'Análise de Ameaças' : 'Threat Analysis'}
           </h3>
-          <div className="bg-gray-50 rounded-lg p-4">
-            <label className="block text-sm font-medium text-gray-700 mb-3">
+          <div className="bg-secondary-50 rounded-lg p-4">
+            <label className="block text-sm font-medium text-secondary-700 mb-3">
               <ExclamationTriangleIcon className="w-4 h-4 inline mr-2" />
               {isPortuguese ? 'Tipos de Ameaça Identificados *' : 'Identified Threat Types *'}
             </label>
@@ -365,16 +365,16 @@ export default function RiskAssessmentForm({
                     type="checkbox"
                     checked={assessment.threatTypes?.includes(threat.value) || false}
                     onChange={(e) => handleArrayChange('threatTypes', threat.value, e.target.checked)}
-                    className="w-4 h-4 text-secondary-600 border-gray-300 rounded focus:ring-secondary-500"
+                    className="w-4 h-4 text-secondary-600 border-secondary-300 rounded focus:ring-secondary-500"
                   />
-                  <span className="text-sm text-gray-700">
+                  <span className="text-sm text-secondary-700">
                     {isPortuguese ? threat.labelPt : threat.labelEn}
                   </span>
                 </label>
               ))}
             </div>
             {errors.threatTypes && (
-              <p className="text-red-500 text-sm mt-1">{errors.threatTypes}</p>
+              <p className="text-coral-500 text-sm mt-1">{errors.threatTypes}</p>
             )}
           </div>
         </div>
@@ -384,8 +384,8 @@ export default function RiskAssessmentForm({
           <h3 className="text-lg font-semibold text-gray-900 mb-4">
             {isPortuguese ? 'Medidas de Mitigação' : 'Mitigation Measures'}
           </h3>
-          <div className="bg-gray-50 rounded-lg p-4">
-            <label className="block text-sm font-medium text-gray-700 mb-3">
+          <div className="bg-secondary-50 rounded-lg p-4">
+            <label className="block text-sm font-medium text-secondary-700 mb-3">
               <ShieldCheckIcon className="w-4 h-4 inline mr-2" />
               {isPortuguese ? 'Medidas de Mitigação Recomendadas *' : 'Recommended Mitigation Measures *'}
             </label>
@@ -396,16 +396,16 @@ export default function RiskAssessmentForm({
                     type="checkbox"
                     checked={assessment.mitigationMeasures?.includes(measure.value) || false}
                     onChange={(e) => handleArrayChange('mitigationMeasures', measure.value, e.target.checked)}
-                    className="w-4 h-4 text-secondary-600 border-gray-300 rounded focus:ring-secondary-500"
+                    className="w-4 h-4 text-secondary-600 border-secondary-300 rounded focus:ring-secondary-500"
                   />
-                  <span className="text-sm text-gray-700">
+                  <span className="text-sm text-secondary-700">
                     {isPortuguese ? measure.labelPt : measure.labelEn}
                   </span>
                 </label>
               ))}
             </div>
             {errors.mitigationMeasures && (
-              <p className="text-red-500 text-sm mt-1">{errors.mitigationMeasures}</p>
+              <p className="text-coral-500 text-sm mt-1">{errors.mitigationMeasures}</p>
             )}
           </div>
         </div>
@@ -417,7 +417,7 @@ export default function RiskAssessmentForm({
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {isPortuguese ? 'Número de Pessoal' : 'Personnel Count'}
               </label>
               <input
@@ -426,18 +426,18 @@ export default function RiskAssessmentForm({
                 max="10"
                 value={assessment.personnelCount || 1}
                 onChange={(e) => handleInputChange('personnelCount', parseInt(e.target.value))}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {isPortuguese ? 'Tipo de Veículo' : 'Vehicle Type'}
               </label>
               <select
                 value={assessment.vehicleType || 'standard'}
                 onChange={(e) => handleInputChange('vehicleType', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
               >
                 <option value="standard">{isPortuguese ? 'Padrão' : 'Standard'}</option>
                 <option value="luxury">{isPortuguese ? 'Luxo' : 'Luxury'}</option>
@@ -447,13 +447,13 @@ export default function RiskAssessmentForm({
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-secondary-700 mb-2">
                 {isPortuguese ? 'Nível de Monitoramento' : 'Monitoring Level'}
               </label>
               <select
                 value={assessment.monitoringLevel || 'standard'}
                 onChange={(e) => handleInputChange('monitoringLevel', e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
               >
                 <option value="standard">{isPortuguese ? 'Padrão' : 'Standard'}</option>
                 <option value="enhanced">{isPortuguese ? 'Melhorado' : 'Enhanced'}</option>
@@ -465,7 +465,7 @@ export default function RiskAssessmentForm({
 
         {/* Assessment Notes */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-secondary-700 mb-2">
             <DocumentTextIcon className="w-4 h-4 inline mr-2" />
             {isPortuguese ? 'Notas da Avaliação' : 'Assessment Notes'}
           </label>
@@ -473,7 +473,7 @@ export default function RiskAssessmentForm({
             value={assessment.notes || ''}
             onChange={(e) => handleInputChange('notes', e.target.value)}
             rows={4}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
+            className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-secondary-500 focus:border-transparent"
             placeholder={isPortuguese 
               ? 'Observações adicionais, preocupações ou recomendações específicas...'
               : 'Additional observations, concerns, or specific recommendations...'
@@ -488,7 +488,7 @@ export default function RiskAssessmentForm({
               <h4 className="text-lg font-semibold text-gray-900">
                 {isPortuguese ? 'Avaliação Geral de Risco' : 'Overall Risk Assessment'}
               </h4>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-secondary-600">
                 {isPortuguese ? 'Baseado em todos os fatores analisados' : 'Based on all analyzed factors'}
               </p>
             </div>
@@ -505,17 +505,17 @@ export default function RiskAssessmentForm({
         </div>
 
         {/* Action Buttons */}
-        <div className="flex justify-end space-x-4 pt-6 border-t border-gray-200">
+        <div className="flex justify-end space-x-4 pt-6 border-t border-secondary-200">
           <button
             onClick={onCancel}
-            className="px-6 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+            className="px-6 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-secondary-50 transition-colors"
           >
             {isPortuguese ? 'Cancelar' : 'Cancel'}
           </button>
           
           <button
             onClick={() => handleSubmit(false)}
-            className="px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors flex items-center space-x-2"
+            className="px-6 py-2 bg-coral-600 text-white rounded-lg hover:bg-red-700 transition-colors flex items-center space-x-2"
           >
             <XCircleIcon className="w-4 h-4" />
             <span>{isPortuguese ? 'Rejeitar' : 'Reject'}</span>
@@ -523,7 +523,7 @@ export default function RiskAssessmentForm({
           
           <button
             onClick={() => handleSubmit(true)}
-            className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors flex items-center space-x-2"
+            className="px-6 py-2 bg-action-600 text-white rounded-lg hover:bg-green-700 transition-colors flex items-center space-x-2"
           >
             <CheckCircleIcon className="w-4 h-4" />
             <span>{isPortuguese ? 'Aprovar' : 'Approve'}</span>

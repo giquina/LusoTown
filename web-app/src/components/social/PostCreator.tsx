@@ -139,7 +139,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
   }
 
   return (
-    <div className={`bg-white rounded-xl shadow-sm border border-gray-200 ${className}`}>
+    <div className={`bg-white rounded-xl shadow-sm border border-secondary-200 ${className}`}>
       <div className="p-6">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
@@ -148,7 +148,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
           </h3>
           <button
             onClick={onCancel}
-            className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            className="p-2 hover:bg-secondary-100 rounded-lg transition-colors"
           >
             <X className="w-5 h-5 text-gray-400" />
           </button>
@@ -161,14 +161,14 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
               value={content}
               onChange={(e) => setContent(e.target.value)}
               placeholder={t('post_creator.placeholder') || "What's happening in the Portuguese community?"}
-              className="w-full min-h-[120px] p-4 border border-gray-200 rounded-lg resize-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400"
+              className="w-full min-h-[120px] p-4 border border-secondary-200 rounded-lg resize-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400"
               maxLength={maxContentLength}
             />
             <div className="flex items-center justify-between mt-2">
               <span className="text-xs text-gray-500">
                 {t('post_creator.supports_emojis') || 'Portuguese emojis: 🇵🇹 🇧🇷 🥧 🎵 ❤️'}
               </span>
-              <span className={`text-xs ${content.length > maxContentLength * 0.9 ? 'text-red-500' : 'text-gray-400'}`}>
+              <span className={`text-xs ${content.length > maxContentLength * 0.9 ? 'text-coral-500' : 'text-gray-400'}`}>
                 {content.length}/{maxContentLength}
               </span>
             </div>
@@ -176,13 +176,13 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
 
           {/* Content Type Selection */}
           <div className="flex items-center space-x-4">
-            <label className="text-sm font-medium text-gray-700">
+            <label className="text-sm font-medium text-secondary-700">
               {t('post_creator.content_type') || 'Post Type:'}
             </label>
             <select
               value={contentType}
               onChange={(e) => setContentType(e.target.value)}
-              className="px-3 py-1 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              className="px-3 py-1 border border-secondary-200 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
             >
               <option value="text">{t('post_creator.type_text') || 'Text Post'}</option>
               <option value="image">{t('post_creator.type_image') || 'Photo'}</option>
@@ -198,7 +198,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
             {/* Cultural Tags */}
             <div>
               <div className="flex items-center justify-between mb-2">
-                <label className="text-sm font-medium text-gray-700">
+                <label className="text-sm font-medium text-secondary-700">
                   {t('post_creator.cultural_tags') || 'Portuguese Cultural Elements'}
                 </label>
                 <button
@@ -237,7 +237,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
 
               {/* Cultural Tag Selector */}
               {showTagSelector === 'cultural' && (
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 p-4 bg-gray-50 rounded-lg">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 p-4 bg-secondary-50 rounded-lg">
                   {CULTURAL_TAGS.map(tag => (
                     <button
                       key={tag.id}
@@ -246,7 +246,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
                       className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm transition-colors ${
                         selectedCulturalTags.includes(tag.id)
                           ? 'bg-primary-500 text-white'
-                          : 'bg-white text-gray-700 hover:bg-gray-100'
+                          : 'bg-white text-secondary-700 hover:bg-secondary-100'
                       }`}
                     >
                       {tag.icon}
@@ -260,7 +260,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
             {/* Location Tags */}
             <div>
               <div className="flex items-center justify-between mb-2">
-                <label className="text-sm font-medium text-gray-700">
+                <label className="text-sm font-medium text-secondary-700">
                   <MapPin className="w-4 h-4 inline mr-1" />
                   {t('post_creator.location_tags') || 'London Areas'}
                 </label>
@@ -300,7 +300,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
 
               {/* Location Tag Selector */}
               {showTagSelector === 'location' && (
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 p-4 bg-gray-50 rounded-lg">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 p-4 bg-secondary-50 rounded-lg">
                   {LOCATION_TAGS.map(tag => (
                     <button
                       key={tag.id}
@@ -309,7 +309,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
                       className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm transition-colors ${
                         selectedLocationTags.includes(tag.id)
                           ? 'bg-secondary-500 text-white'
-                          : 'bg-white text-gray-700 hover:bg-gray-100'
+                          : 'bg-white text-secondary-700 hover:bg-secondary-100'
                       }`}
                     >
                       <MapPin className="w-3 h-3" />
@@ -324,7 +324,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
             {canCreateServicePosts && (
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <label className="text-sm font-medium text-gray-700">
+                  <label className="text-sm font-medium text-secondary-700">
                     <Tag className="w-4 h-4 inline mr-1" />
                     {t('post_creator.service_tags') || 'Services'}
                   </label>
@@ -364,7 +364,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
 
                 {/* Service Tag Selector */}
                 {showTagSelector === 'service' && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-4 bg-gray-50 rounded-lg">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-4 bg-secondary-50 rounded-lg">
                     {SERVICE_TAGS.map(tag => (
                       <button
                         key={tag.id}
@@ -373,7 +373,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
                         className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm transition-colors ${
                           selectedServiceTags.includes(tag.id)
                             ? 'bg-accent-500 text-white'
-                            : 'bg-white text-gray-700 hover:bg-gray-100'
+                            : 'bg-white text-secondary-700 hover:bg-secondary-100'
                         }`}
                       >
                         {tag.icon}
@@ -387,17 +387,17 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
           </div>
 
           {/* Visibility and Actions */}
-          <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+          <div className="flex items-center justify-between pt-4 border-t border-secondary-200">
             <div className="flex items-center space-x-4">
               {/* Visibility Selector */}
               <div className="flex items-center space-x-2">
-                <label className="text-sm text-gray-600">
+                <label className="text-sm text-secondary-600">
                   {t('post_creator.visibility') || 'Visibility:'}
                 </label>
                 <select
                   value={visibility}
                   onChange={(e) => setVisibility(e.target.value)}
-                  className="flex items-center space-x-1 px-2 py-1 border border-gray-200 rounded text-sm focus:ring-2 focus:ring-primary-500"
+                  className="flex items-center space-x-1 px-2 py-1 border border-secondary-200 rounded text-sm focus:ring-2 focus:ring-primary-500"
                 >
                   <option value="public">{t('post_creator.public') || 'Public'}</option>
                   <option value="members_only">{t('post_creator.members_only') || 'Members Only'}</option>
@@ -411,7 +411,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
               <button
                 type="button"
                 onClick={onCancel}
-                className="px-4 py-2 text-gray-600 hover:text-gray-800 transition-colors"
+                className="px-4 py-2 text-secondary-600 hover:text-secondary-800 transition-colors"
               >
                 {t('post_creator.cancel') || 'Cancel'}
               </button>

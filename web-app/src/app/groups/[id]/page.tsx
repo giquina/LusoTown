@@ -204,7 +204,7 @@ export default function GroupDetailPage({ params }: PageProps) {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 pt-16 flex items-center justify-center">
+      <div className="min-h-screen bg-secondary-50 pt-16 flex items-center justify-center">
         <div className="w-8 h-8 border-2 border-primary-600 border-t-transparent rounded-full animate-spin"></div>
       </div>
     )
@@ -212,11 +212,11 @@ export default function GroupDetailPage({ params }: PageProps) {
 
   if (!group) {
     return (
-      <div className="min-h-screen bg-gray-50 pt-16 flex items-center justify-center">
+      <div className="min-h-screen bg-secondary-50 pt-16 flex items-center justify-center">
         <div className="text-center">
           <UserGroupIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
           <h2 className="text-xl font-semibold text-gray-900 mb-2">Group not found</h2>
-          <p className="text-gray-600 mb-6">This group may have been removed or doesn't exist.</p>
+          <p className="text-secondary-600 mb-6">This group may have been removed or doesn't exist.</p>
           <button
             onClick={() => router.push('/groups')}
             className="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700"
@@ -229,7 +229,7 @@ export default function GroupDetailPage({ params }: PageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-16">
+    <div className="min-h-screen bg-secondary-50 pt-16">
       <div className="container-width py-12">
         <div className="max-w-4xl mx-auto">
           {/* Group Header */}
@@ -259,16 +259,16 @@ export default function GroupDetailPage({ params }: PageProps) {
                   className="p-3 bg-white/90 rounded-full hover:bg-white transition-colors"
                 >
                   {isSaved ? (
-                    <HeartSolidIcon className="w-6 h-6 text-red-500" />
+                    <HeartSolidIcon className="w-6 h-6 text-coral-500" />
                   ) : (
-                    <HeartIcon className="w-6 h-6 text-gray-600" />
+                    <HeartIcon className="w-6 h-6 text-secondary-600" />
                   )}
                 </button>
                 <button
                   onClick={handleReportGroup}
                   className="p-3 bg-white/90 rounded-full hover:bg-white transition-colors"
                 >
-                  <FlagIcon className="w-6 h-6 text-gray-600" />
+                  <FlagIcon className="w-6 h-6 text-secondary-600" />
                 </button>
               </div>
 
@@ -287,7 +287,7 @@ export default function GroupDetailPage({ params }: PageProps) {
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
                 <div className="flex-1 mb-6 lg:mb-0">
                   <h1 className="text-3xl font-bold text-gray-900 mb-4">{group.name}</h1>
-                  <p className="text-lg text-gray-600 leading-relaxed">
+                  <p className="text-lg text-secondary-600 leading-relaxed">
                     {group.description}
                   </p>
                 </div>
@@ -308,7 +308,7 @@ export default function GroupDetailPage({ params }: PageProps) {
                     <button
                       onClick={group.is_private ? () => setShowJoinModal(true) : handleJoinGroup}
                       disabled={joinLoading}
-                      className="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center"
+                      className="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 disabled:bg-secondary-300 disabled:cursor-not-allowed flex items-center justify-center"
                     >
                       {joinLoading ? (
                         <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
@@ -321,7 +321,7 @@ export default function GroupDetailPage({ params }: PageProps) {
                     </button>
                   )}
                   
-                  <div className="text-center text-sm text-gray-600">
+                  <div className="text-center text-sm text-secondary-600">
                     {group.current_member_count} {group.current_member_count === 1 ? t('groups.member') : t('groups.members')}
                     {group.max_members && ` / ${group.max_members}`}
                   </div>
@@ -336,7 +336,7 @@ export default function GroupDetailPage({ params }: PageProps) {
                     <MapPinIcon className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" />
                     <div>
                       <div className="font-medium text-gray-900">Location</div>
-                      <div className="text-gray-600">
+                      <div className="text-secondary-600">
                         {group.london_borough}
                         {group.location && group.london_borough && ', '}
                         {group.location}
@@ -351,7 +351,7 @@ export default function GroupDetailPage({ params }: PageProps) {
                     <GlobeAltIcon className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" />
                     <div>
                       <div className="font-medium text-gray-900">Language</div>
-                      <div className="text-gray-600">
+                      <div className="text-secondary-600">
                         {group.language_preference === 'both' && 'English & Portuguese'}
                         {group.language_preference === 'english' && 'English'}
                         {group.language_preference === 'portuguese' && 'Portuguese'}
@@ -368,7 +368,7 @@ export default function GroupDetailPage({ params }: PageProps) {
                     <CalendarIcon className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" />
                     <div>
                       <div className="font-medium text-gray-900">Meetings</div>
-                      <div className="text-gray-600">
+                      <div className="text-secondary-600">
                         {t(`frequency.${group.meeting_frequency}`)}
                       </div>
                     </div>
@@ -381,7 +381,7 @@ export default function GroupDetailPage({ params }: PageProps) {
                     <FlagIcon className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" />
                     <div>
                       <div className="font-medium text-gray-900">Portuguese Origin</div>
-                      <div className="text-gray-600">
+                      <div className="text-secondary-600">
                         {t(`origin.${group.portuguese_origin}`)}
                       </div>
                     </div>
@@ -394,7 +394,7 @@ export default function GroupDetailPage({ params }: PageProps) {
                     <ShieldCheckIcon className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" />
                     <div>
                       <div className="font-medium text-gray-900">Verification</div>
-                      <div className="text-gray-600">
+                      <div className="text-secondary-600">
                         {t(`verification.${group.verification_level}`)}
                       </div>
                     </div>
@@ -407,7 +407,7 @@ export default function GroupDetailPage({ params }: PageProps) {
                     <UsersIcon className="w-5 h-5 text-gray-400 mt-0.5 flex-shrink-0" />
                     <div>
                       <div className="font-medium text-gray-900">Age Range</div>
-                      <div className="text-gray-600">
+                      <div className="text-secondary-600">
                         {group.age_restrictions.min_age && `${group.age_restrictions.min_age}+`}
                         {group.age_restrictions.min_age && group.age_restrictions.max_age && ' - '}
                         {group.age_restrictions.max_age && `${group.age_restrictions.max_age}`}
@@ -434,7 +434,7 @@ export default function GroupDetailPage({ params }: PageProps) {
                       </span>
                     )}
                     {group.cultural_focus.traditional_activities && (
-                      <span className="inline-flex items-center px-3 py-2 rounded-full text-sm bg-purple-100 text-purple-800">
+                      <span className="inline-flex items-center px-3 py-2 rounded-full text-sm bg-accent-100 text-accent-800">
                         🎭 Traditional Portuguese activities
                       </span>
                     )}
@@ -455,7 +455,7 @@ export default function GroupDetailPage({ params }: PageProps) {
                     {group.group_tags.map((tag, index) => (
                       <span
                         key={index}
-                        className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-700"
+                        className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-secondary-100 text-secondary-700"
                       >
                         {tag}
                       </span>
@@ -468,8 +468,8 @@ export default function GroupDetailPage({ params }: PageProps) {
               {group.rules && (
                 <div className="mb-8">
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Group Rules</h3>
-                  <div className="bg-gray-50 rounded-lg p-4">
-                    <p className="text-gray-700 whitespace-pre-wrap">{group.rules}</p>
+                  <div className="bg-secondary-50 rounded-lg p-4">
+                    <p className="text-secondary-700 whitespace-pre-wrap">{group.rules}</p>
                   </div>
                 </div>
               )}
@@ -504,13 +504,13 @@ export default function GroupDetailPage({ params }: PageProps) {
                     {group.contact_info.whatsapp && (
                       <div className="flex items-center space-x-3">
                         <ChatBubbleLeftRightIcon className="w-5 h-5 text-gray-400" />
-                        <span className="text-gray-700">WhatsApp: {group.contact_info.whatsapp}</span>
+                        <span className="text-secondary-700">WhatsApp: {group.contact_info.whatsapp}</span>
                       </div>
                     )}
                     {group.contact_info.telegram && (
                       <div className="flex items-center space-x-3">
                         <ChatBubbleLeftRightIcon className="w-5 h-5 text-gray-400" />
-                        <span className="text-gray-700">Telegram: {group.contact_info.telegram}</span>
+                        <span className="text-secondary-700">Telegram: {group.contact_info.telegram}</span>
                       </div>
                     )}
                   </div>
@@ -519,7 +519,7 @@ export default function GroupDetailPage({ params }: PageProps) {
 
               {/* Created By */}
               {group.creator_profile && (
-                <div className="border-t border-gray-200 pt-6">
+                <div className="border-t border-secondary-200 pt-6">
                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white font-bold">
                       {group.creator_profile.first_name[0]}
@@ -564,27 +564,27 @@ export default function GroupDetailPage({ params }: PageProps) {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-xl max-w-md w-full p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Join Private Group</h3>
-            <p className="text-gray-600 mb-4">
+            <p className="text-secondary-600 mb-4">
               This is a private group. Please introduce yourself and explain why you'd like to join.
             </p>
             <textarea
               value={joinMessage}
               onChange={(e) => setJoinMessage(e.target.value)}
               rows={4}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent mb-4"
+              className="w-full px-4 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent mb-4"
               placeholder="Tell the group admin why you'd like to join..."
             />
             <div className="flex space-x-3">
               <button
                 onClick={() => setShowJoinModal(false)}
-                className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50"
+                className="flex-1 px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-secondary-50"
               >
                 Cancel
               </button>
               <button
                 onClick={handleJoinGroup}
                 disabled={joinLoading || !joinMessage.trim()}
-                className="flex-1 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 disabled:bg-gray-300 disabled:cursor-not-allowed"
+                className="flex-1 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 disabled:bg-secondary-300 disabled:cursor-not-allowed"
               >
                 {joinLoading ? 'Sending...' : 'Send Request'}
               </button>

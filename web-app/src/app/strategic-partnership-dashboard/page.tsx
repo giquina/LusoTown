@@ -6,7 +6,7 @@ import StrategicPartnershipDashboard from '@/components/StrategicPartnershipDash
 
 export default function StrategicPartnershipDashboardPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       <main>
         <StrategicPartnershipDashboard />
       </main>

@@ -221,7 +221,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
       description: 'Official Portuguese government institutions and diplomatic missions',
       descriptionPortuguese: 'Instituições oficiais do governo português e missões diplomáticas',
       icon: <BuildingLibraryIcon className="w-6 h-6" />,
-      color: 'bg-blue-100 text-blue-700',
+      color: 'bg-blue-100 text-primary-700',
       partnerCount: partnerships.filter(p => p.type === 'embassy' || p.type === 'consulate').length,
       memberBenefits: ['Consular service discounts', 'Cultural event access', 'Document assistance'],
       totalCommunityReach: partnerships.filter(p => p.type === 'embassy' || p.type === 'consulate').reduce((sum, p) => sum + p.communitySize, 0),
@@ -235,7 +235,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
       description: 'Cultural centers, educational institutions, and heritage organizations',
       descriptionPortuguese: 'Centros culturais, instituições educacionais e organizações de património',
       icon: <AcademicCapIcon className="w-6 h-6" />,
-      color: 'bg-purple-100 text-purple-700',
+      color: 'bg-accent-100 text-accent-700',
       partnerCount: partnerships.filter(p => p.type === 'cultural_center' || p.type === 'educational_institution').length,
       memberBenefits: ['Course discounts', 'Cultural programming', 'Heritage workshops'],
       totalCommunityReach: partnerships.filter(p => p.type === 'cultural_center' || p.type === 'educational_institution').reduce((sum, p) => sum + p.communitySize, 0),
@@ -288,10 +288,10 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
 
   const getStageColor = (stage: PartnershipDevelopmentPipeline['stage']) => {
     const colors = {
-      initial_contact: 'bg-gray-100 text-gray-700',
-      proposal_sent: 'bg-blue-100 text-blue-700',
+      initial_contact: 'bg-secondary-100 text-secondary-700',
+      proposal_sent: 'bg-blue-100 text-primary-700',
       negotiations: 'bg-yellow-100 text-yellow-700',
-      agreement_draft: 'bg-purple-100 text-purple-700',
+      agreement_draft: 'bg-accent-100 text-accent-700',
       final_approval: 'bg-green-100 text-green-700'
     }
     return colors[stage]
@@ -299,9 +299,9 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
 
   const getPriorityColor = (priority: PartnershipDevelopmentPipeline['priority']) => {
     const colors = {
-      high: 'text-red-600',
+      high: 'text-coral-600',
       medium: 'text-yellow-600',
-      low: 'text-green-600'
+      low: 'text-action-600'
     }
     return colors[priority]
   }
@@ -333,7 +333,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
             : 'Portuguese Institutional Partnerships'
           }
         </h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
           {language === 'pt'
             ? 'Construindo pontes estratégicas entre a comunidade portuguesa e instituições de prestígio no Reino Unido para fortalecer conexões culturais, empresariais e educacionais.'
             : 'Building strategic bridges between the Portuguese community and prestigious institutions in the United Kingdom to strengthen cultural, business, and educational connections.'
@@ -386,7 +386,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {institutionalCategories.map((category) => (
-            <div key={category.id} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
+            <div key={category.id} className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6 hover:shadow-md transition-shadow">
               <div className="flex items-center mb-4">
                 <div className={`p-3 rounded-lg ${category.color} mr-4`}>
                   {category.icon}
@@ -395,22 +395,22 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
                   <h3 className="font-semibold text-gray-900">
                     {language === 'pt' ? category.namePortuguese : category.name}
                   </h3>
-                  <p className="text-sm text-gray-600">{category.partnerCount} {language === 'pt' ? 'parceiros' : 'partners'}</p>
+                  <p className="text-sm text-secondary-600">{category.partnerCount} {language === 'pt' ? 'parceiros' : 'partners'}</p>
                 </div>
               </div>
               
-              <p className="text-gray-600 text-sm mb-4">
+              <p className="text-secondary-600 text-sm mb-4">
                 {language === 'pt' ? category.descriptionPortuguese : category.description}
               </p>
               
               <div className="space-y-2 mb-4">
-                <p className="text-xs font-medium text-gray-700">
+                <p className="text-xs font-medium text-secondary-700">
                   {language === 'pt' ? 'Benefícios Principais:' : 'Key Benefits:'}
                 </p>
-                <ul className="text-xs text-gray-600 space-y-1">
+                <ul className="text-xs text-secondary-600 space-y-1">
                   {category.memberBenefits.slice(0, 3).map((benefit, index) => (
                     <li key={index} className="flex items-center">
-                      <CheckBadgeIcon className="w-3 h-3 text-green-500 mr-1 flex-shrink-0" />
+                      <CheckBadgeIcon className="w-3 h-3 text-action-500 mr-1 flex-shrink-0" />
                       {benefit}
                     </li>
                   ))}
@@ -418,7 +418,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
               </div>
               
               <div className="flex items-center justify-between text-sm">
-                <span className="text-gray-600">
+                <span className="text-secondary-600">
                   {category.totalCommunityReach.toLocaleString()} {language === 'pt' ? 'membros' : 'members'}
                 </span>
                 <button
@@ -440,12 +440,12 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
           {language === 'pt' ? 'Pipeline de Desenvolvimento de Parcerias' : 'Partnership Development Pipeline'}
         </h2>
         
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-          <div className="px-6 py-4 bg-gray-50 border-b border-gray-200">
+        <div className="bg-white rounded-xl shadow-sm border border-secondary-200 overflow-hidden">
+          <div className="px-6 py-4 bg-secondary-50 border-b border-secondary-200">
             <h3 className="font-semibold text-gray-900">
               {language === 'pt' ? 'Novas Parcerias em Desenvolvimento' : 'New Partnerships in Development'}
             </h3>
-            <p className="text-sm text-gray-600 mt-1">
+            <p className="text-sm text-secondary-600 mt-1">
               {language === 'pt' 
                 ? 'Instituições portuguesas estratégicas em processo de parceria'
                 : 'Strategic Portuguese institutions in partnership process'
@@ -455,7 +455,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
           
           <div className="divide-y divide-gray-200">
             {developmentPipeline.map((item) => (
-              <div key={item.id} className="p-6 hover:bg-gray-50 transition-colors">
+              <div key={item.id} className="p-6 hover:bg-secondary-50 transition-colors">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex items-center space-x-3 mb-2">
@@ -468,12 +468,12 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
                       </span>
                     </div>
                     
-                    <p className="text-sm text-gray-600 mb-3">{item.institutionType}</p>
+                    <p className="text-sm text-secondary-600 mb-3">{item.institutionType}</p>
                     
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                       <div>
                         <p className="text-xs text-gray-500">{language === 'pt' ? 'Valor Esperado' : 'Expected Value'}</p>
-                        <p className="font-medium text-green-600">{formatCurrency(item.expectedValue)}</p>
+                        <p className="font-medium text-action-600">{formatCurrency(item.expectedValue)}</p>
                       </div>
                       <div>
                         <p className="text-xs text-gray-500">{language === 'pt' ? 'Cronograma' : 'Timeline'}</p>
@@ -487,7 +487,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
                     
                     <div className="mb-3">
                       <p className="text-xs text-gray-500 mb-1">{language === 'pt' ? 'Próximos Passos:' : 'Next Steps:'}</p>
-                      <ul className="text-sm text-gray-700 space-y-1">
+                      <ul className="text-sm text-secondary-700 space-y-1">
                         {item.nextSteps.slice(0, 2).map((step, index) => (
                           <li key={index} className="flex items-center">
                             <ArrowRightIcon className="w-3 h-3 text-gray-400 mr-2 flex-shrink-0" />
@@ -497,7 +497,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
                       </ul>
                     </div>
                     
-                    <p className="text-xs text-gray-600 italic">{item.strategicImportance}</p>
+                    <p className="text-xs text-secondary-600 italic">{item.strategicImportance}</p>
                   </div>
                   
                   <div className="flex flex-col items-end space-y-2 ml-4">
@@ -506,7 +506,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
                     </button>
                     <div className="flex items-center space-x-2">
                       <EnvelopeIcon className="w-4 h-4 text-gray-400" />
-                      <a href={`mailto:${item.keyContact.email}`} className="text-xs text-gray-600 hover:text-gray-800">
+                      <a href={`mailto:${item.keyContact.email}`} className="text-xs text-secondary-600 hover:text-secondary-800">
                         {language === 'pt' ? 'Contactar' : 'Contact'}
                       </a>
                     </div>
@@ -530,7 +530,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
             <h3 className="font-semibold text-gray-900 mb-2">
               {language === 'pt' ? 'Preservação Cultural' : 'Cultural Preservation'}
             </h3>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-secondary-600">
               {language === 'pt'
                 ? 'Programas dedicados à preservação e promoção da cultura portuguesa no Reino Unido'
                 : 'Dedicated programs for preserving and promoting Portuguese culture in the United Kingdom'
@@ -543,7 +543,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
             <h3 className="font-semibold text-gray-900 mb-2">
               {language === 'pt' ? 'Desenvolvimento Profissional' : 'Professional Development'}
             </h3>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-secondary-600">
               {language === 'pt'
                 ? 'Oportunidades de networking e crescimento profissional para a comunidade portuguesa'
                 : 'Networking opportunities and professional growth for the Portuguese community'
@@ -556,7 +556,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
             <h3 className="font-semibold text-gray-900 mb-2">
               {language === 'pt' ? 'Acesso Educacional' : 'Educational Access'}
             </h3>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-secondary-600">
               {language === 'pt'
                 ? 'Descontos e programas especiais em instituições educacionais de prestígio'
                 : 'Discounts and special programs at prestigious educational institutions'
@@ -569,7 +569,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
             <h3 className="font-semibold text-gray-900 mb-2">
               {language === 'pt' ? 'Benefícios Exclusivos' : 'Exclusive Benefits'}
             </h3>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-secondary-600">
               {language === 'pt'
                 ? 'Acesso prioritário a eventos e serviços exclusivos para membros da LusoTown'
                 : 'Priority access to exclusive events and services for LusoTown members'
@@ -580,11 +580,11 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
       </div>
 
       {/* Call to Action */}
-      <div className="text-center bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+      <div className="text-center bg-white rounded-xl shadow-sm border border-secondary-200 p-8">
         <h2 className="text-2xl font-bold text-gray-900 mb-4">
           {language === 'pt' ? 'Junte-se à Nossa Rede de Parcerias' : 'Join Our Partnership Network'}
         </h2>
-        <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+        <p className="text-secondary-600 mb-6 max-w-2xl mx-auto">
           {language === 'pt'
             ? 'Seja parte de uma rede exclusiva de instituições portuguesas que estão a construir o futuro da comunidade portuguesa no Reino Unido.'
             : 'Be part of an exclusive network of Portuguese institutions building the future of the Portuguese community in the United Kingdom.'

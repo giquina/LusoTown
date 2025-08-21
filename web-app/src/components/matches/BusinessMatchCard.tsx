@@ -136,7 +136,7 @@ export default function BusinessMatchCard({
   };
 
   const getExperienceColor = (experience: string) => {
-    if (experience.includes("12+") || experience.includes("15+")) return "from-purple-500 to-purple-600";
+    if (experience.includes("12+") || experience.includes("15+")) return "from-accent-500 to-accent-600";
     if (experience.includes("8+") || experience.includes("10+")) return "from-blue-500 to-blue-600";
     if (experience.includes("5+")) return "from-green-500 to-green-600";
     return "from-gray-500 to-gray-600";
@@ -212,7 +212,7 @@ export default function BusinessMatchCard({
 
         {/* Verification Badge */}
         {profile.isVerified && (
-          <div className="absolute top-16 right-4 bg-green-500 text-white px-2 py-1 rounded-full shadow-lg">
+          <div className="absolute top-16 right-4 bg-action-500 text-white px-2 py-1 rounded-full shadow-lg">
             <CheckCircleIcon className="w-4 h-4" />
           </div>
         )}
@@ -228,7 +228,7 @@ export default function BusinessMatchCard({
         {/* Activity Status */}
         <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full border border-primary-100">
           <div className="flex items-center gap-1">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+            <div className="w-2 h-2 bg-action-500 rounded-full"></div>
             <span className="text-xs font-medium text-primary-700">
               {language === "pt" ? "Ativo recentemente" : "Recently active"}
             </span>
@@ -244,7 +244,7 @@ export default function BusinessMatchCard({
           )}
           {profile.linkedInUrl && (
             <div className="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center border border-primary-100">
-              <LinkIcon className="w-4 h-4 text-blue-600" />
+              <LinkIcon className="w-4 h-4 text-primary-600" />
             </div>
           )}
         </div>
@@ -367,19 +367,19 @@ export default function BusinessMatchCard({
                 </h5>
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
-                    <CheckCircleIcon className="w-3 h-3 text-green-500" />
+                    <CheckCircleIcon className="w-3 h-3 text-action-500" />
                     <span className="text-xs text-accent-700">
                       {language === "pt" ? "Herança cultural portuguesa partilhada" : "Shared Portuguese cultural heritage"}
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <BriefcaseIcon className="w-3 h-3 text-blue-500" />
+                    <BriefcaseIcon className="w-3 h-3 text-primary-500" />
                     <span className="text-xs text-accent-700">
                       {language === "pt" ? "Objetivos de networking alinhados" : "Aligned networking goals"}
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <SparklesIcon className="w-3 h-3 text-purple-500" />
+                    <SparklesIcon className="w-3 h-3 text-accent-500" />
                     <span className="text-xs text-accent-700">
                       {language === "pt" ? "Interesses comerciais complementares" : "Complementary business interests"}
                     </span>
@@ -524,9 +524,9 @@ export default function BusinessMatchCard({
         <div className="flex justify-center gap-4 mt-6 pt-4 border-t border-primary-100">
           <button
             onClick={() => onSkip(profile.id)}
-            className="w-14 h-14 bg-white border-3 border-gray-200 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:border-red-300 group"
+            className="w-14 h-14 bg-white border-3 border-secondary-200 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:border-red-300 group"
           >
-            <span className="text-xl group-hover:text-red-600 transition-colors">❌</span>
+            <span className="text-xl group-hover:text-coral-600 transition-colors">❌</span>
           </button>
 
           {onMentorshipRequest && profile.availableForMentorship && (

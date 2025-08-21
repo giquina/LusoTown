@@ -153,7 +153,7 @@ const ServiceIntegration: React.FC<ServiceIntegrationProps> = ({ isPortuguese })
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               {isPortuguese ? 'Serviços que Funcionam em Conjunto' : 'Services That Work Together'}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-secondary-600 max-w-3xl mx-auto">
               {isPortuguese
                 ? 'Combine nossos serviços premium para uma experiência perfeita e economias significativas'
                 : 'Combine our premium services for a seamless experience and significant savings'
@@ -171,7 +171,7 @@ const ServiceIntegration: React.FC<ServiceIntegrationProps> = ({ isPortuguese })
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`relative bg-white rounded-2xl shadow-lg border-2 ${scenario.popular ? 'border-primary-200' : 'border-gray-200'} overflow-hidden`}
+              className={`relative bg-white rounded-2xl shadow-lg border-2 ${scenario.popular ? 'border-primary-200' : 'border-secondary-200'} overflow-hidden`}
             >
               {/* Popular Badge */}
               {scenario.popular && (
@@ -189,7 +189,7 @@ const ServiceIntegration: React.FC<ServiceIntegrationProps> = ({ isPortuguese })
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">
                       {isPortuguese ? scenario.titlePortuguese : scenario.title}
                     </h3>
-                    <p className="text-gray-600 mb-6">
+                    <p className="text-secondary-600 mb-6">
                       {isPortuguese ? scenario.descriptionPortuguese : scenario.description}
                     </p>
 
@@ -215,7 +215,7 @@ const ServiceIntegration: React.FC<ServiceIntegrationProps> = ({ isPortuguese })
                       className="bg-primary-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-primary-700 transition-all duration-200 flex items-center group"
                     >
                       <span>{isPortuguese ? 'Personalizar Pacote' : 'Customize Package'}</span>
-                      <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                      <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:transecondary-x-1 transition-transform duration-200" />
                     </motion.button>
                   </div>
 
@@ -240,12 +240,12 @@ const ServiceIntegration: React.FC<ServiceIntegrationProps> = ({ isPortuguese })
                                   {isPortuguese ? 'Passo' : 'Step'} {step.step}
                                 </span>
                               </div>
-                              <p className="text-gray-700 text-sm">
+                              <p className="text-secondary-700 text-sm">
                                 {isPortuguese ? step.actionPortuguese : step.action}
                               </p>
                             </div>
                             {stepIndex < scenario.flow.length - 1 && (
-                              <div className="absolute left-9 mt-10 w-0.5 h-6 bg-gray-200" />
+                              <div className="absolute left-9 mt-10 w-0.5 h-6 bg-secondary-200" />
                             )}
                           </div>
                         )
@@ -270,7 +270,7 @@ const ServiceIntegration: React.FC<ServiceIntegrationProps> = ({ isPortuguese })
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               {isPortuguese ? 'Vantagens dos Serviços Integrados' : 'Integrated Service Benefits'}
             </h3>
-            <p className="text-gray-600">
+            <p className="text-secondary-600">
               {isPortuguese
                 ? 'Por que escolher nossos pacotes de serviços integrados'
                 : 'Why choose our integrated service packages'
@@ -296,7 +296,7 @@ const ServiceIntegration: React.FC<ServiceIntegrationProps> = ({ isPortuguese })
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">
                     {isPortuguese ? benefit.titlePortuguese : benefit.title}
                   </h4>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-secondary-600 text-sm">
                     {isPortuguese ? benefit.descriptionPortuguese : benefit.description}
                   </p>
                 </motion.div>
@@ -316,7 +316,7 @@ const ServiceIntegration: React.FC<ServiceIntegrationProps> = ({ isPortuguese })
           <h3 className="text-xl font-bold text-gray-900 mb-4">
             {isPortuguese ? 'Precisa de uma Solução Personalizada?' : 'Need a Custom Solution?'}
           </h3>
-          <p className="text-gray-600 mb-6">
+          <p className="text-secondary-600 mb-6">
             {isPortuguese
               ? 'Nossa equipa pode criar um pacote de serviços personalizado para suas necessidades específicas'
               : 'Our team can create a custom service package for your specific needs'

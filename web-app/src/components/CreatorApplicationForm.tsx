@@ -482,97 +482,97 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                   <h3 className="text-xl font-bold text-gray-900">
                     {isPt ? 'Informações Pessoais' : 'Personal Information'}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {isPt ? 'Conte-nos sobre si' : 'Tell us about yourself'}
                   </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPt ? 'Primeiro Nome' : 'First Name'} *
                     </label>
                     <input
                       type="text"
                       value={formData.firstName}
                       onChange={(e) => handleInputChange('firstName', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                       placeholder={isPt ? 'Seu primeiro nome' : 'Your first name'}
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPt ? 'Último Nome' : 'Last Name'} *
                     </label>
                     <input
                       type="text"
                       value={formData.lastName}
                       onChange={(e) => handleInputChange('lastName', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                       placeholder={isPt ? 'Seu último nome' : 'Your last name'}
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       Email *
                     </label>
                     <input
                       type="email"
                       value={formData.email}
                       onChange={(e) => handleInputChange('email', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-gray-50"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-secondary-50"
                       disabled
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPt ? 'Telefone' : 'Phone'} *
                     </label>
                     <input
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => handleInputChange('phone', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                       placeholder="+44 7XXX XXXXXX"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPt ? 'Data de Nascimento' : 'Date of Birth'} *
                     </label>
                     <input
                       type="date"
                       value={formData.dateOfBirth}
                       onChange={(e) => handleInputChange('dateOfBirth', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPt ? 'Localização' : 'Location'} *
                     </label>
                     <input
                       type="text"
                       value={formData.location}
                       onChange={(e) => handleInputChange('location', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                       placeholder={isPt ? 'Londres, Reino Unido' : 'London, UK'}
                     />
                   </div>
 
                   <div className="md:col-span-2">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPt ? 'Nacionalidade' : 'Nationality'} *
                     </label>
                     <select
                       value={formData.nationality}
                       onChange={(e) => handleInputChange('nationality', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     >
                       <option value="">{isPt ? 'Selecione...' : 'Select...'}</option>
                       <option value="portuguese">🇵🇹 {isPt ? 'Portuguesa' : 'Portuguese'}</option>
@@ -601,14 +601,14 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                   <h3 className="text-xl font-bold text-gray-900">
                     {isPt ? 'Informações sobre Conteúdo' : 'Content Information'}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {isPt ? 'Que tipo de conteúdo pretende criar?' : 'What type of content do you plan to create?'}
                   </p>
                 </div>
 
                 {/* Content Categories */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-3">
+                  <label className="block text-sm font-medium text-secondary-700 mb-3">
                     {isPt ? 'Categorias de Conteúdo' : 'Content Categories'} *
                   </label>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -619,20 +619,20 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                         className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
                           formData.contentType.includes(category.id)
                             ? 'border-primary-500 bg-primary-50'
-                            : 'border-gray-200 hover:border-gray-300'
+                            : 'border-secondary-200 hover:border-secondary-300'
                         }`}
                       >
                         <div className="flex items-center gap-3">
                           <div className={`p-2 rounded-lg ${
                             formData.contentType.includes(category.id)
                               ? 'bg-primary-600 text-white'
-                              : 'bg-gray-100 text-gray-600'
+                              : 'bg-secondary-100 text-secondary-600'
                           }`}>
                             <category.icon className="w-5 h-5" />
                           </div>
                           <div>
                             <h4 className="font-medium text-gray-900">{category.name}</h4>
-                            <p className="text-sm text-gray-600">{category.description}</p>
+                            <p className="text-sm text-secondary-600">{category.description}</p>
                           </div>
                         </div>
                       </div>
@@ -642,7 +642,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
 
                 {/* Cultural Background */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-3">
+                  <label className="block text-sm font-medium text-secondary-700 mb-3">
                     {isPt ? 'Herança Cultural' : 'Cultural Heritage'} *
                   </label>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -653,7 +653,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                         className={`p-3 rounded-lg border-2 cursor-pointer transition-all text-center ${
                           formData.culturalBackground.includes(region.id)
                             ? 'border-primary-500 bg-primary-50'
-                            : 'border-gray-200 hover:border-gray-300'
+                            : 'border-secondary-200 hover:border-secondary-300'
                         }`}
                       >
                         <div className="text-2xl mb-1">{region.flag}</div>
@@ -666,13 +666,13 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                 {/* Other fields */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPt ? 'Língua Preferida' : 'Preferred Language'} *
                     </label>
                     <select
                       value={formData.preferredLanguage}
                       onChange={(e) => handleInputChange('preferredLanguage', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     >
                       <option value="pt">{isPt ? 'Português' : 'Portuguese'}</option>
                       <option value="en">{isPt ? 'Inglês' : 'English'}</option>
@@ -682,13 +682,13 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPt ? 'Nível de Experiência' : 'Experience Level'} *
                     </label>
                     <select
                       value={formData.experienceLevel}
                       onChange={(e) => handleInputChange('experienceLevel', e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     >
                       {experienceLevels.map((level) => (
                         <option key={level.id} value={level.id}>
@@ -699,28 +699,28 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPt ? 'Seguidores em Redes Sociais' : 'Social Media Following'}
                     </label>
                     <input
                       type="number"
                       value={formData.socialMediaFollowing}
                       onChange={(e) => handleInputChange('socialMediaFollowing', parseInt(e.target.value) || 0)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                       placeholder="0"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {isPt ? 'Descrição do Conteúdo' : 'Content Description'} *
                   </label>
                   <textarea
                     value={formData.contentDescription}
                     onChange={(e) => handleInputChange('contentDescription', e.target.value)}
                     rows={4}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                    className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                     placeholder={isPt 
                       ? 'Descreva o tipo de conteúdo que pretende criar, o seu público-alvo, e como planeia envolver a comunidade portuguesa...'
                       : 'Describe the type of content you plan to create, your target audience, and how you plan to engage the Portuguese community...'
@@ -729,7 +729,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                   <div className="text-sm text-gray-500 mt-1">
                     {formData.contentDescription.length}/500 {isPt ? 'caracteres' : 'characters'} 
                     {formData.contentDescription.length < 50 && (
-                      <span className="text-red-500"> ({isPt ? 'mínimo 50' : 'minimum 50'})</span>
+                      <span className="text-coral-500"> ({isPt ? 'mínimo 50' : 'minimum 50'})</span>
                     )}
                   </div>
                 </div>
@@ -750,13 +750,13 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                   <h3 className="text-xl font-bold text-gray-900">
                     {isPt ? 'Informações de Negócio' : 'Business Information'}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {isPt ? 'Detalhes para pagamentos e impostos' : 'Details for payments and taxes'}
                   </p>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-3">
+                  <label className="block text-sm font-medium text-secondary-700 mb-3">
                     {isPt ? 'Tipo de Negócio' : 'Business Type'} *
                   </label>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -767,11 +767,11 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                         className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
                           formData.businessType === type.id
                             ? 'border-primary-500 bg-primary-50'
-                            : 'border-gray-200 hover:border-gray-300'
+                            : 'border-secondary-200 hover:border-secondary-300'
                         }`}
                       >
                         <h4 className="font-medium text-gray-900">{type.name}</h4>
-                        <p className="text-sm text-gray-600">{type.description}</p>
+                        <p className="text-sm text-secondary-600">{type.description}</p>
                       </div>
                     ))}
                   </div>
@@ -781,40 +781,40 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                   {formData.businessType !== 'individual' && (
                     <>
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-secondary-700 mb-2">
                           {isPt ? 'Nome da Empresa' : 'Business Name'}
                         </label>
                         <input
                           type="text"
                           value={formData.businessName}
                           onChange={(e) => handleInputChange('businessName', e.target.value)}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                          className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                           placeholder={isPt ? 'Nome oficial da empresa' : 'Official business name'}
                         />
                       </div>
 
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-secondary-700 mb-2">
                           {isPt ? 'Número de Contribuinte' : 'Tax Number'}
                         </label>
                         <input
                           type="text"
                           value={formData.taxNumber}
                           onChange={(e) => handleInputChange('taxNumber', e.target.value)}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                          className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                           placeholder={isPt ? 'NIF/VAT número' : 'VAT/Tax number'}
                         />
                       </div>
 
                       <div className="md:col-span-2">
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-secondary-700 mb-2">
                           {isPt ? 'Morada da Empresa' : 'Business Address'}
                         </label>
                         <textarea
                           value={formData.businessAddress}
                           onChange={(e) => handleInputChange('businessAddress', e.target.value)}
                           rows={3}
-                          className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                          className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                           placeholder={isPt ? 'Morada completa da empresa' : 'Complete business address'}
                         />
                       </div>
@@ -822,14 +822,14 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                   )}
 
                   <div className="md:col-span-2">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPt ? 'Detalhes da Conta Bancária' : 'Bank Account Details'}
                     </label>
                     <textarea
                       value={formData.bankAccountDetails}
                       onChange={(e) => handleInputChange('bankAccountDetails', e.target.value)}
                       rows={3}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                       placeholder={isPt 
                         ? 'Nome do banco, IBAN, nome do titular (será encriptado)'
                         : 'Bank name, IBAN, account holder name (will be encrypted)'
@@ -859,7 +859,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                   <h3 className="text-xl font-bold text-gray-900">
                     {isPt ? 'Verificação e Acordos' : 'Verification & Agreements'}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {isPt ? 'Documentos e termos finais' : 'Documents and final terms'}
                   </p>
                 </div>
@@ -867,10 +867,10 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                 {/* File Uploads */}
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPt ? 'Foto de Perfil' : 'Profile Photo'} {isPt ? '(Recomendado)' : '(Recommended)'}
                     </label>
-                    <div className="border-2 border-dashed border-gray-300 rounded-lg p-4">
+                    <div className="border-2 border-dashed border-secondary-300 rounded-lg p-4">
                       <input
                         type="file"
                         accept="image/*"
@@ -883,7 +883,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                         className="cursor-pointer flex flex-col items-center gap-2"
                       >
                         <Upload className="w-8 h-8 text-gray-400" />
-                        <span className="text-sm text-gray-600">
+                        <span className="text-sm text-secondary-600">
                           {formData.profilePhoto 
                             ? formData.profilePhoto.name
                             : (isPt ? 'Carregar foto de perfil' : 'Upload profile photo')
@@ -894,10 +894,10 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {isPt ? 'Documento de Identificação' : 'ID Document'} {isPt ? '(Obrigatório)' : '(Required)'}
                     </label>
-                    <div className="border-2 border-dashed border-gray-300 rounded-lg p-4">
+                    <div className="border-2 border-dashed border-secondary-300 rounded-lg p-4">
                       <input
                         type="file"
                         accept="image/*,.pdf"
@@ -910,7 +910,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                         className="cursor-pointer flex flex-col items-center gap-2"
                       >
                         <Upload className="w-8 h-8 text-gray-400" />
-                        <span className="text-sm text-gray-600">
+                        <span className="text-sm text-secondary-600">
                           {formData.idDocument 
                             ? formData.idDocument.name
                             : (isPt ? 'Carregar documento de identificação' : 'Upload ID document')
@@ -922,10 +922,10 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
 
                   {formData.businessType !== 'individual' && (
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-secondary-700 mb-2">
                         {isPt ? 'Documentos da Empresa' : 'Business Documents'} {isPt ? '(Obrigatório)' : '(Required)'}
                       </label>
-                      <div className="border-2 border-dashed border-gray-300 rounded-lg p-4">
+                      <div className="border-2 border-dashed border-secondary-300 rounded-lg p-4">
                         <input
                           type="file"
                           accept=".pdf"
@@ -938,7 +938,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                           className="cursor-pointer flex flex-col items-center gap-2"
                         >
                           <Upload className="w-8 h-8 text-gray-400" />
-                          <span className="text-sm text-gray-600">
+                          <span className="text-sm text-secondary-600">
                             {formData.businessDocument 
                               ? formData.businessDocument.name
                               : (isPt ? 'Carregar documentos da empresa' : 'Upload business documents')
@@ -952,11 +952,11 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
 
                 {/* Agreements */}
                 <div className="space-y-4">
-                  <div className="bg-gray-50 rounded-lg p-4">
+                  <div className="bg-secondary-50 rounded-lg p-4">
                     <h4 className="font-medium text-gray-900 mb-3">
                       {isPt ? 'Acordo de Receitas (85/15)' : 'Revenue Share Agreement (85/15)'}
                     </h4>
-                    <div className="text-sm text-gray-600 space-y-2">
+                    <div className="text-sm text-secondary-600 space-y-2">
                       <p>
                         {isPt 
                           ? '• Receberá 85% de todas as receitas geradas (doações, subscrições, workshops)'
@@ -989,9 +989,9 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                       type="checkbox"
                       checked={formData.agreesToRevenueSplit}
                       onChange={(e) => handleInputChange('agreesToRevenueSplit', e.target.checked)}
-                      className="mt-1 rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                      className="mt-1 rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
                     />
-                    <span className="text-sm text-gray-700">
+                    <span className="text-sm text-secondary-700">
                       {isPt 
                         ? 'Aceito o acordo de divisão de receitas 85/15 *'
                         : 'I agree to the 85/15 revenue split agreement *'
@@ -1004,9 +1004,9 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                       type="checkbox"
                       checked={formData.agreesToTerms}
                       onChange={(e) => handleInputChange('agreesToTerms', e.target.checked)}
-                      className="mt-1 rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                      className="mt-1 rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
                     />
-                    <span className="text-sm text-gray-700">
+                    <span className="text-sm text-secondary-700">
                       {isPt 
                         ? 'Aceito os termos e condições do programa de criadores LusoTown *'
                         : 'I agree to the LusoTown creator program terms and conditions *'
@@ -1019,9 +1019,9 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                       type="checkbox"
                       checked={formData.marketingConsent}
                       onChange={(e) => handleInputChange('marketingConsent', e.target.checked)}
-                      className="mt-1 rounded border-gray-300 text-primary-600 focus:ring-primary-500"
+                      className="mt-1 rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
                     />
-                    <span className="text-sm text-gray-700">
+                    <span className="text-sm text-secondary-700">
                       {isPt 
                         ? 'Aceito receber comunicações de marketing sobre o programa de criadores'
                         : 'I consent to receive marketing communications about the creator program'
@@ -1041,14 +1041,14 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                 className="text-center space-y-6"
               >
                 <div className="bg-green-50 rounded-full w-20 h-20 flex items-center justify-center mx-auto">
-                  <Check className="w-10 h-10 text-green-600" />
+                  <Check className="w-10 h-10 text-action-600" />
                 </div>
 
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     {isPt ? 'Candidatura Submetida!' : 'Application Submitted!'}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-secondary-600">
                     {isPt 
                       ? 'A sua candidatura foi submetida com sucesso. Receberá uma resposta em 24-48 horas.'
                       : 'Your application has been submitted successfully. You will receive a response within 24-48 hours.'
@@ -1057,7 +1057,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                 </div>
 
                 {generatedStreamKey && (
-                  <div className="bg-gray-50 rounded-lg p-6">
+                  <div className="bg-secondary-50 rounded-lg p-6">
                     <h4 className="font-medium text-gray-900 mb-3">
                       {isPt ? 'A Sua Chave de Stream' : 'Your Stream Key'}
                     </h4>
@@ -1066,17 +1066,17 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                         type={showStreamKey ? 'text' : 'password'}
                         value={generatedStreamKey}
                         readOnly
-                        className="flex-1 px-3 py-2 bg-white border border-gray-300 rounded-lg font-mono text-sm"
+                        className="flex-1 px-3 py-2 bg-white border border-secondary-300 rounded-lg font-mono text-sm"
                       />
                       <button
                         onClick={() => setShowStreamKey(!showStreamKey)}
-                        className="p-2 text-gray-500 hover:text-gray-700"
+                        className="p-2 text-gray-500 hover:text-secondary-700"
                       >
                         {showStreamKey ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                       </button>
                       <button
                         onClick={copyStreamKey}
-                        className="p-2 text-gray-500 hover:text-gray-700"
+                        className="p-2 text-gray-500 hover:text-secondary-700"
                       >
                         <Copy className="w-5 h-5" />
                       </button>
@@ -1092,7 +1092,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
 
                 <div className="bg-blue-50 rounded-lg p-4">
                   <div className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div className="text-sm text-blue-800 text-left">
@@ -1142,7 +1142,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
 
         {/* Footer Navigation */}
         {currentStep < 5 && (
-          <div className="border-t border-gray-200 p-6">
+          <div className="border-t border-secondary-200 p-6">
             <div className="flex justify-between">
               <button
                 onClick={prevStep}
@@ -1150,7 +1150,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
                   currentStep === 1
                     ? 'text-gray-400 cursor-not-allowed'
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                    : 'text-secondary-600 hover:text-gray-900 hover:bg-secondary-50'
                 }`}
               >
                 <ArrowLeft className="w-4 h-4" />
@@ -1164,7 +1164,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                   className={`flex items-center gap-2 px-6 py-2 rounded-lg font-medium transition-colors ${
                     validateStep(currentStep) && !isSubmitting
                       ? 'bg-primary-600 hover:bg-primary-700 text-white'
-                      : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                      : 'bg-secondary-300 text-gray-500 cursor-not-allowed'
                   }`}
                 >
                   {isSubmitting ? (
@@ -1186,7 +1186,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                   className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
                     validateStep(currentStep)
                       ? 'bg-primary-600 hover:bg-primary-700 text-white'
-                      : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                      : 'bg-secondary-300 text-gray-500 cursor-not-allowed'
                   }`}
                 >
                   {isPt ? 'Próximo' : 'Next'}

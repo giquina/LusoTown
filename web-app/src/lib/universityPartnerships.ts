@@ -630,7 +630,6 @@ export class UniversityPartnershipsService {
     const proposalId = `proposal-${universityId}-${Date.now()}`
     
     // Mock implementation
-    console.log('Partnership proposal created:', { universityId, proposalData, proposalId })
     
     return proposalId
   }

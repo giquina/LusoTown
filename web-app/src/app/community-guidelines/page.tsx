@@ -8,36 +8,38 @@ export const metadata = {
 }
 
 export default function CommunityGuidelines() {
+  const { t } = useLanguage()
+  
   const guidelines = [
     {
       icon: ShieldCheckIcon,
-      title: "Respeito (Respect)",
-      description: "Treat all community members with dignity and respect. Value cultural diversity across all Portuguese-speaking countries including Portugal, Brazil, Angola, Mozambique, and others."
+      title: t('community_guidelines.respect.title'),
+      description: t('community_guidelines.respect.description')
     },
     {
       icon: GlobeAltIcon,
-      title: "Inclusão (Inclusion)",
-      description: "Welcome all Portuguese speakers regardless of country of origin. Embrace our shared language while celebrating our unique cultural differences."
+      title: t('community_guidelines.inclusion.title'),
+      description: t('community_guidelines.inclusion.description')
     },
     {
       icon: HeartIcon,
-      title: "Rede (Network)",
-      description: "Support each other through professional and personal connections. Help fellow Portuguese speakers navigate life in London and build strong community networks."
+      title: t('community_guidelines.network.title'),
+      description: t('community_guidelines.network.description')
     },
     {
       icon: UserGroupIcon,
-      title: "Cultura (Culture)",
-      description: "Preserve and celebrate Portuguese culture through language, traditions, and cultural events. Share our rich cultural diversity with the wider London community."
+      title: t('community_guidelines.culture.title'),
+      description: t('community_guidelines.culture.description')
     },
     {
       icon: BuildingOfficeIcon,
-      title: "Comunidade (Community)",
-      description: "Foster professional networking and mutual support. Help fellow Portuguese speakers thrive in London's business environment while maintaining our cultural identity."
+      title: t('community_guidelines.community.title'),
+      description: t('community_guidelines.community.description')
     },
     {
       icon: ExclamationTriangleIcon,
-      title: "Report Concerns",
-      description: "If you encounter any behavior that makes you uncomfortable or violates our community standards, please report it to our moderation team immediately."
+      title: t('community_guidelines.report.title'),
+      description: t('community_guidelines.report.description')
     }
   ]
 
@@ -48,10 +50,10 @@ export default function CommunityGuidelines() {
           <div className="container-width">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Community Guidelines
+                {t('community_guidelines.hero.title')}
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed">
-                Creating a respectful, inclusive environment for the Portuguese diaspora community in London to connect, support each other, and celebrate our shared heritage.
+              <p className="text-xl text-secondary-600 leading-relaxed">
+                {t('community_guidelines.hero.description')}
               </p>
             </div>
           </div>
@@ -64,12 +66,12 @@ export default function CommunityGuidelines() {
                 {guidelines.map((guideline, index) => {
                   const IconComponent = guideline.icon
                   return (
-                    <div key={index} className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                    <div key={index} className="bg-white p-8 rounded-2xl shadow-lg border border-secondary-100 hover:shadow-xl transition-shadow duration-300">
                       <div className="w-12 h-12 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-lg flex items-center justify-center mb-6">
                         <IconComponent className="h-6 w-6 text-white" />
                       </div>
                       <h3 className="text-xl font-bold text-gray-900 mb-4">{guideline.title}</h3>
-                      <p className="text-gray-600 leading-relaxed">{guideline.description}</p>
+                      <p className="text-secondary-600 leading-relaxed">{guideline.description}</p>
                     </div>
                   )
                 })}
@@ -77,7 +79,7 @@ export default function CommunityGuidelines() {
 
               <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 mb-16">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Nossa Comunidade (Our Community)</h2>
-                <div className="prose prose-lg text-gray-700 space-y-4">
+                <div className="prose prose-lg text-secondary-700 space-y-4">
                   <p>
                     LusoTown London is committed to maintaining a respectful, inclusive environment for all Portuguese speakers and working professionals. 
                     Our community guidelines ensure everyone feels welcome, valued, and supported while advancing careers and celebrating Portuguese culture.
@@ -85,7 +87,7 @@ export default function CommunityGuidelines() {
                   
                   <div className="bg-white border-l-4 border-primary-500 p-4 rounded-r-lg my-6">
                     <p className="font-semibold text-primary-700 mb-2">Inclusive Community Statement</p>
-                    <p className="text-gray-700">
+                    <p className="text-secondary-700">
                       This platform is for open-minded people, and we do not discriminate in any way. You are welcome to join our staff, which comes from all the countries that speak Portuguese. 
                       Whether you're Muslim, atheist, agnostic, or Christian, we just ask you to be respectful and share and teach and help one another in any way you can, 
                       as life is already challenging as it is. We're making an effort so everyone can get along. That's why we have strict guidelines before attending one of our events. 
@@ -109,11 +111,11 @@ export default function CommunityGuidelines() {
                         <span>Celebrate the beautiful diversity across all Portuguese-speaking nations</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span className="w-2 h-2 bg-accent-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                         <span>Use language that welcomes professionals, students, and adults from all backgrounds</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span className="w-2 h-2 bg-action-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                         <span>Share professional opportunities with generosity and integrity</span>
                       </li>
                     </ul>
@@ -121,12 +123,12 @@ export default function CommunityGuidelines() {
                   
                   <div className="bg-white/60 backdrop-blur-sm rounded-xl p-6 mt-6">
                     <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                      <HeartIcon className="w-5 h-5 mr-2 text-red-500" />
+                      <HeartIcon className="w-5 h-5 mr-2 text-coral-500" />
                       Cultural Celebration & Heritage
                     </h3>
                     <ul className="list-none space-y-3">
                       <li className="flex items-start">
-                        <span className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span className="w-2 h-2 bg-coral-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                         <span>Honor traditional festivals—from Festa do Avante to Festa Junina, São João to Carnival</span>
                       </li>
                       <li className="flex items-start">
@@ -134,7 +136,7 @@ export default function CommunityGuidelines() {
                         <span>Share stories, recipes, music, and traditions with younger generations</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="w-2 h-2 bg-yellow-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span className="w-2 h-2 bg-accent-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                         <span>Keep our beautiful language alive and thriving in London</span>
                       </li>
                       <li className="flex items-start">
@@ -146,12 +148,12 @@ export default function CommunityGuidelines() {
                   
                   <div className="bg-white/60 backdrop-blur-sm rounded-xl p-6 mt-6">
                     <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                      <UserGroupIcon className="w-5 h-5 mr-2 text-indigo-500" />
+                      <UserGroupIcon className="w-5 h-5 mr-2 text-primary-500" />
                       Professional & Community Support
                     </h3>
                     <ul className="list-none space-y-3">
                       <li className="flex items-start">
-                        <span className="w-2 h-2 bg-indigo-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span className="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                         <span>Welcome newcomers with open arms and practical guidance for London life</span>
                       </li>
                       <li className="flex items-start">
@@ -183,7 +185,7 @@ export default function CommunityGuidelines() {
                 </p>
                  <a 
                    href={ROUTES.contact} 
-                  className="inline-flex items-center gap-2 bg-white text-primary-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+                  className="inline-flex items-center gap-2 bg-white text-primary-600 font-semibold px-6 py-3 rounded-lg hover:bg-secondary-50 transition-colors duration-200"
                 >
                   Entre em Contato / Contact Our Team
                 </a>

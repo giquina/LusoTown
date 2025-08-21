@@ -186,7 +186,6 @@ export default function MessageModerationDashboard() {
   const handleModerationAction = async (item: ModerationItem, action: string, notes: string) => {
     try {
       // Mock API call to moderate message
-      console.log('Moderating message:', {
         messageId: item.messageId,
         action,
         notes,
@@ -355,11 +354,11 @@ export default function MessageModerationDashboard() {
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
-      case 'urgent': return 'text-red-600 bg-red-50 border-red-200'
+      case 'urgent': return 'text-coral-600 bg-red-50 border-red-200'
       case 'high': return 'text-orange-600 bg-orange-50 border-orange-200'
       case 'medium': return 'text-yellow-600 bg-yellow-50 border-yellow-200'
-      case 'low': return 'text-blue-600 bg-blue-50 border-blue-200'
-      default: return 'text-gray-600 bg-gray-50 border-gray-200'
+      case 'low': return 'text-primary-600 bg-blue-50 border-blue-200'
+      default: return 'text-secondary-600 bg-secondary-50 border-secondary-200'
     }
   }
 
@@ -386,76 +385,76 @@ export default function MessageModerationDashboard() {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-neutral-900">{t.title}</h1>
-        <p className="text-neutral-600 mt-1">{t.subtitle}</p>
+        <h1 className="text-2xl font-bold text-secondary-900">{t.title}</h1>
+        <p className="text-secondary-600 mt-1">{t.subtitle}</p>
       </div>
 
       {/* Stats Grid */}
       {stats && (
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="bg-white rounded-lg shadow-sm border border-neutral-100 p-4">
+          <div className="bg-white rounded-lg shadow-sm border border-secondary-100 p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-neutral-600">{t.stats.totalPending}</p>
+                <p className="text-sm text-secondary-600">{t.stats.totalPending}</p>
                 <p className="text-2xl font-bold text-orange-600">{stats.totalPending}</p>
               </div>
               <Clock className="h-8 w-8 text-orange-600" />
             </div>
           </div>
           
-          <div className="bg-white rounded-lg shadow-sm border border-neutral-100 p-4">
+          <div className="bg-white rounded-lg shadow-sm border border-secondary-100 p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-neutral-600">{t.stats.totalResolved}</p>
-                <p className="text-2xl font-bold text-green-600">{stats.totalResolved}</p>
+                <p className="text-sm text-secondary-600">{t.stats.totalResolved}</p>
+                <p className="text-2xl font-bold text-action-600">{stats.totalResolved}</p>
               </div>
-              <CheckCircle className="h-8 w-8 text-green-600" />
+              <CheckCircle className="h-8 w-8 text-action-600" />
             </div>
           </div>
           
-          <div className="bg-white rounded-lg shadow-sm border border-neutral-100 p-4">
+          <div className="bg-white rounded-lg shadow-sm border border-secondary-100 p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-neutral-600">{t.stats.averageResponseTime}</p>
-                <p className="text-2xl font-bold text-blue-600">
+                <p className="text-sm text-secondary-600">{t.stats.averageResponseTime}</p>
+                <p className="text-2xl font-bold text-primary-600">
                   {stats.averageResponseTime}
-                  <span className="text-sm text-neutral-500 ml-1">{t.stats.hours}</span>
+                  <span className="text-sm text-secondary-500 ml-1">{t.stats.hours}</span>
                 </p>
               </div>
-              <TrendingDown className="h-8 w-8 text-blue-600" />
+              <TrendingDown className="h-8 w-8 text-primary-600" />
             </div>
           </div>
           
-          <div className="bg-white rounded-lg shadow-sm border border-neutral-100 p-4">
+          <div className="bg-white rounded-lg shadow-sm border border-secondary-100 p-4">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-neutral-600">{t.stats.approvalRate}</p>
-                <p className="text-2xl font-bold text-green-600">{stats.approvalRate}%</p>
+                <p className="text-sm text-secondary-600">{t.stats.approvalRate}</p>
+                <p className="text-2xl font-bold text-action-600">{stats.approvalRate}%</p>
               </div>
-              <TrendingUp className="h-8 w-8 text-green-600" />
+              <TrendingUp className="h-8 w-8 text-action-600" />
             </div>
           </div>
         </div>
       )}
 
       {/* Filters */}
-      <div className="bg-white rounded-lg shadow-sm border border-neutral-100 p-4">
+      <div className="bg-white rounded-lg shadow-sm border border-secondary-100 p-4">
         <div className="flex flex-col sm:flex-row gap-4">
           <div className="flex-1 relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-neutral-400" />
+            <Search className="absolute left-3 top-1/2 transform -transecondary-y-1/2 h-4 w-4 text-secondary-400" />
             <input
               type="text"
               placeholder={t.filters.search}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-neutral-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+              className="w-full pl-10 pr-4 py-2 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
             />
           </div>
           
           <select
             value={filterPriority}
             onChange={(e) => setFilterPriority(e.target.value)}
-            className="px-4 py-2 border border-neutral-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+            className="px-4 py-2 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
           >
             <option value="all">{t.filters.all}</option>
             <option value="urgent">{t.filters.urgent}</option>
@@ -467,15 +466,15 @@ export default function MessageModerationDashboard() {
       </div>
 
       {/* Moderation Queue */}
-      <div className="bg-white rounded-lg shadow-sm border border-neutral-100">
+      <div className="bg-white rounded-lg shadow-sm border border-secondary-100">
         {filteredQueue.length === 0 ? (
           <div className="p-8 text-center">
-            <Shield className="h-12 w-12 text-green-600 mx-auto mb-3" />
-            <h3 className="font-medium text-neutral-900 mb-2">{t.queue.noItems}</h3>
-            <p className="text-sm text-neutral-600">{t.queue.allClear}</p>
+            <Shield className="h-12 w-12 text-action-600 mx-auto mb-3" />
+            <h3 className="font-medium text-secondary-900 mb-2">{t.queue.noItems}</h3>
+            <p className="text-sm text-secondary-600">{t.queue.allClear}</p>
           </div>
         ) : (
-          <div className="divide-y divide-neutral-100">
+          <div className="divide-y divide-secondary-100">
             {filteredQueue.map((item) => (
               <div key={item.id} className="p-6">
                 <div className="flex items-start justify-between">
@@ -485,7 +484,7 @@ export default function MessageModerationDashboard() {
                       <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${getPriorityColor(item.priorityLevel)}`}>
                         {t.filters[item.priorityLevel as keyof typeof t.filters]}
                       </span>
-                      <span className="text-sm text-neutral-500">
+                      <span className="text-sm text-secondary-500">
                         {formatTimeAgo(item.createdAt)}
                       </span>
                     </div>
@@ -493,24 +492,24 @@ export default function MessageModerationDashboard() {
                     {/* Users */}
                     <div className="flex items-center gap-4 text-sm">
                       <div className="flex items-center gap-1">
-                        <span className="text-neutral-500">{t.queue.from}:</span>
-                        <span className="font-medium text-neutral-900">{item.senderName}</span>
+                        <span className="text-secondary-500">{t.queue.from}:</span>
+                        <span className="font-medium text-secondary-900">{item.senderName}</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <span className="text-neutral-500">{t.queue.to}:</span>
-                        <span className="font-medium text-neutral-900">{item.receiverName}</span>
+                        <span className="text-secondary-500">{t.queue.to}:</span>
+                        <span className="font-medium text-secondary-900">{item.receiverName}</span>
                       </div>
                     </div>
 
                     {/* Message Content */}
-                    <div className="bg-neutral-50 rounded-lg p-3">
-                      <p className="text-sm text-neutral-700 line-clamp-2">{item.content}</p>
+                    <div className="bg-secondary-50 rounded-lg p-3">
+                      <p className="text-sm text-secondary-700 line-clamp-2">{item.content}</p>
                     </div>
 
                     {/* Flagged Reasons and Safety Score */}
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <span className="text-sm text-neutral-500">{t.queue.flaggedReasons}:</span>
+                        <span className="text-sm text-secondary-500">{t.queue.flaggedReasons}:</span>
                         <div className="flex flex-wrap gap-1">
                           {item.flaggedReasons.map((reason) => (
                             <span key={reason} className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-red-100 text-red-800">
@@ -521,11 +520,11 @@ export default function MessageModerationDashboard() {
                       </div>
                       
                       <div className="flex items-center gap-2">
-                        <span className="text-sm text-neutral-500">{t.queue.aiScore}:</span>
+                        <span className="text-sm text-secondary-500">{t.queue.aiScore}:</span>
                         <span className={`text-sm font-medium ${
-                          item.aiAnalysis.score >= 80 ? 'text-green-600' :
+                          item.aiAnalysis.score >= 80 ? 'text-action-600' :
                           item.aiAnalysis.score >= 50 ? 'text-yellow-600' :
-                          'text-red-600'
+                          'text-coral-600'
                         }`}>
                           {item.aiAnalysis.score}%
                         </span>
@@ -560,12 +559,12 @@ export default function MessageModerationDashboard() {
               exit={{ opacity: 0, scale: 0.9 }}
               className="bg-white rounded-2xl shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
             >
-              <div className="p-6 border-b border-neutral-100">
+              <div className="p-6 border-b border-secondary-100">
                 <div className="flex items-center justify-between">
-                  <h2 className="text-xl font-bold text-neutral-900">{t.moderation.title}</h2>
+                  <h2 className="text-xl font-bold text-secondary-900">{t.moderation.title}</h2>
                   <button
                     onClick={() => setSelectedItem(null)}
-                    className="p-2 text-neutral-400 hover:text-neutral-600 rounded-lg hover:bg-neutral-50"
+                    className="p-2 text-secondary-400 hover:text-secondary-600 rounded-lg hover:bg-secondary-50"
                   >
                     <X className="h-5 w-5" />
                   </button>
@@ -577,22 +576,22 @@ export default function MessageModerationDashboard() {
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm text-neutral-500">{t.queue.from}</p>
-                      <p className="font-medium text-neutral-900">{selectedItem.senderName}</p>
+                      <p className="text-sm text-secondary-500">{t.queue.from}</p>
+                      <p className="font-medium text-secondary-900">{selectedItem.senderName}</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-sm text-neutral-500">{t.queue.to}</p>
-                      <p className="font-medium text-neutral-900">{selectedItem.receiverName}</p>
+                      <p className="text-sm text-secondary-500">{t.queue.to}</p>
+                      <p className="font-medium text-secondary-900">{selectedItem.receiverName}</p>
                     </div>
                   </div>
 
-                  <div className="bg-neutral-50 rounded-lg p-4">
-                    <p className="text-neutral-900">{selectedItem.content}</p>
+                  <div className="bg-secondary-50 rounded-lg p-4">
+                    <p className="text-secondary-900">{selectedItem.content}</p>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <p className="text-sm text-neutral-500 mb-2">{t.queue.flaggedReasons}</p>
+                      <p className="text-sm text-secondary-500 mb-2">{t.queue.flaggedReasons}</p>
                       <div className="flex flex-wrap gap-1">
                         {selectedItem.flaggedReasons.map((reason) => (
                           <span key={reason} className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-red-100 text-red-800">
@@ -603,11 +602,11 @@ export default function MessageModerationDashboard() {
                     </div>
                     
                     <div>
-                      <p className="text-sm text-neutral-500 mb-2">{t.queue.aiScore}</p>
+                      <p className="text-sm text-secondary-500 mb-2">{t.queue.aiScore}</p>
                       <div className={`text-2xl font-bold ${
-                        selectedItem.aiAnalysis.score >= 80 ? 'text-green-600' :
+                        selectedItem.aiAnalysis.score >= 80 ? 'text-action-600' :
                         selectedItem.aiAnalysis.score >= 50 ? 'text-yellow-600' :
-                        'text-red-600'
+                        'text-coral-600'
                       }`}>
                         {selectedItem.aiAnalysis.score}%
                       </div>
@@ -617,7 +616,7 @@ export default function MessageModerationDashboard() {
 
                 {/* Moderation Actions */}
                 <div className="space-y-4">
-                  <label className="block text-sm font-medium text-neutral-700">
+                  <label className="block text-sm font-medium text-secondary-700">
                     {t.moderation.action}
                   </label>
                   <div className="space-y-2">
@@ -628,7 +627,7 @@ export default function MessageModerationDashboard() {
                         className={`w-full text-left p-3 rounded-lg border-2 transition-all ${
                           moderationAction === action
                             ? 'border-primary-500 bg-primary-50'
-                            : 'border-neutral-200 hover:border-neutral-300'
+                            : 'border-secondary-200 hover:border-secondary-300'
                         }`}
                       >
                         {label}
@@ -639,7 +638,7 @@ export default function MessageModerationDashboard() {
 
                 {/* Moderator Notes */}
                 <div>
-                  <label className="block text-sm font-medium text-neutral-700 mb-2">
+                  <label className="block text-sm font-medium text-secondary-700 mb-2">
                     {t.moderation.notes}
                   </label>
                   <textarea
@@ -647,15 +646,15 @@ export default function MessageModerationDashboard() {
                     onChange={(e) => setModeratorNotes(e.target.value)}
                     placeholder={t.moderation.notesPlaceholder}
                     rows={4}
-                    className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
                   />
                 </div>
               </div>
 
-              <div className="flex items-center justify-end gap-3 p-6 border-t border-neutral-100">
+              <div className="flex items-center justify-end gap-3 p-6 border-t border-secondary-100">
                 <button
                   onClick={() => setSelectedItem(null)}
-                  className="px-6 py-2 text-neutral-600 hover:text-neutral-900"
+                  className="px-6 py-2 text-secondary-600 hover:text-secondary-900"
                 >
                   {t.moderation.cancel}
                 </button>

@@ -122,14 +122,14 @@ export const getEventAvailabilityColor = (event: Event) => {
         bg: 'bg-yellow-100',
         text: 'text-yellow-800',
         border: 'border-yellow-200',
-        badge: 'bg-yellow-500'
+        badge: 'bg-accent-500'
       };
     }
     return {
       bg: 'bg-green-100',
       text: 'text-green-800', 
       border: 'border-green-200',
-      badge: 'bg-green-500'
+      badge: 'bg-action-500'
     };
   }
   
@@ -137,7 +137,7 @@ export const getEventAvailabilityColor = (event: Event) => {
     bg: 'bg-red-100',
     text: 'text-red-800',
     border: 'border-red-200', 
-    badge: 'bg-red-500'
+    badge: 'bg-coral-500'
   };
 };
 

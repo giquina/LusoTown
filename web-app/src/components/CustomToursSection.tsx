@@ -46,28 +46,28 @@ const popularDestinations = [
   {
     name: 'London Landmarks',
     namePortuguese: 'Marcos de Londres',
-    image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&h=300&fit=crop',
+    image: buildUnsplashUrl('photo-1513635269975-59663e0ac1ad?w=400&h=300&fit=crop'),
     description: 'Big Ben, Tower Bridge, Buckingham Palace, Westminster',
     descriptionPortuguese: 'Big Ben, Tower Bridge, Palácio de Buckingham, Westminster'
   },
   {
     name: 'Windsor & Countryside',
     namePortuguese: 'Windsor e Campo',
-    image: 'https://images.unsplash.com/photo-1571771019784-3ff35f4f4277?w=400&h=300&fit=crop',
+    image: buildUnsplashUrl('photo-1571771019784-3ff35f4f4277?w=400&h=300&fit=crop'),
     description: 'Windsor Castle, Cotswolds villages, English countryside',
     descriptionPortuguese: 'Castelo de Windsor, aldeias dos Cotswolds, campo inglês'
   },
   {
     name: 'Oxford & Cambridge',
     namePortuguese: 'Oxford e Cambridge',
-    image: 'https://images.unsplash.com/photo-1542977604-16df8b66d0be?w=400&h=300&fit=crop',
+    image: buildUnsplashUrl('photo-1542977604-16df8b66d0be?w=400&h=300&fit=crop'),
     description: 'Historic universities, beautiful architecture, academic heritage',
     descriptionPortuguese: 'Universidades históricas, arquitetura bela, herança académica'
   },
   {
     name: 'Bath & Stonehenge',
     namePortuguese: 'Bath e Stonehenge',
-    image: 'https://images.unsplash.com/photo-1539650116574-75c0c6d00ad8?w=400&h=300&fit=crop',
+    image: buildUnsplashUrl('photo-1539650116574-75c0c6d00ad8?w=400&h=300&fit=crop'),
     description: 'Roman baths, ancient mysteries, Georgian architecture',
     descriptionPortuguese: 'Banhos romanos, mistérios antigos, arquitetura georgiana'
   }
@@ -107,7 +107,7 @@ export default function CustomToursSection({ onBookTour, showHeader = true }: Cu
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               {isPortuguese ? 'Crie o Seu Tour Perfeito' : 'Create Your Perfect Tour'}
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+            <p className="text-xl text-secondary-600 max-w-4xl mx-auto">
               {isPortuguese 
                 ? 'Com um motorista de segurança dedicado que conhece profundamente o Reino Unido e Londres, pode ir a qualquer lugar com total segurança e apoio em português'
                 : 'With a dedicated security driver who knows the UK and London inside out, you can go anywhere with complete safety and Portuguese-speaking support'
@@ -133,7 +133,7 @@ export default function CustomToursSection({ onBookTour, showHeader = true }: Cu
               <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-gray-900 mb-2 leading-tight">
                 {isPortuguese ? feature.titlePortuguese : feature.title}
               </h3>
-              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+              <p className="text-secondary-600 text-xs sm:text-sm leading-relaxed">
                 {isPortuguese ? feature.descriptionPortuguese : feature.description}
               </p>
             </motion.div>
@@ -170,7 +170,7 @@ export default function CustomToursSection({ onBookTour, showHeader = true }: Cu
                   </div>
                 </div>
                 <div className="p-2 sm:p-3 lg:p-4">
-                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                  <p className="text-secondary-600 text-xs sm:text-sm leading-relaxed">
                     {isPortuguese ? destination.descriptionPortuguese : destination.description}
                   </p>
                 </div>
@@ -191,7 +191,7 @@ export default function CustomToursSection({ onBookTour, showHeader = true }: Cu
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               {isPortuguese ? 'Pronto para a Sua Aventura?' : 'Ready for Your Adventure?'}
             </h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-secondary-600 mb-6 max-w-2xl mx-auto">
               {isPortuguese 
                 ? 'Contacte-nos para desenhar a sua experiência perfeita no Reino Unido. Desde castelos históricos a paisagens deslumbrantes, levamo-lo onde quiser ir com total segurança e conforto.'
                 : 'Contact us to design your perfect UK experience. From historic castles to stunning landscapes, we\'ll take you wherever you want to go with complete safety and comfort.'

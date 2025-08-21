@@ -102,17 +102,17 @@ return isPortuguese ? 'Seguir' : 'Follow'
   const variantClasses = {
     default: `px-4 py-2 rounded-lg ${
       isCurrentlyFollowing 
-        ? `bg-gray-100 text-gray-700 border border-gray-300 hover:bg-red-50 hover:text-red-600 hover:border-red-300`
+        ? `bg-secondary-100 text-secondary-700 border border-secondary-300 hover:bg-red-50 hover:text-coral-600 hover:border-red-300`
         : `bg-gradient-to-r from-primary-500 to-secondary-500 text-white hover:from-primary-600 hover:to-secondary-600 shadow-sm hover:shadow-md`
     }`,
     compact: `px-3 py-1.5 text-sm rounded-md ${
       isCurrentlyFollowing 
-        ? `bg-gray-100 text-gray-700 border border-gray-300 hover:bg-red-50 hover:text-red-600 hover:border-red-300`
+        ? `bg-secondary-100 text-secondary-700 border border-secondary-300 hover:bg-red-50 hover:text-coral-600 hover:border-red-300`
         : `bg-gradient-to-r from-primary-500 to-secondary-500 text-white hover:from-primary-600 hover:to-secondary-600`
     }`,
     'icon-only': `p-2 rounded-full ${
       isCurrentlyFollowing 
-        ? `bg-gray-100 text-gray-700 hover:bg-red-50 hover:text-red-600`
+        ? `bg-secondary-100 text-secondary-700 hover:bg-red-50 hover:text-coral-600`
         : `bg-gradient-to-r from-primary-500 to-secondary-500 text-white hover:from-primary-600 hover:to-secondary-600`
     }`
   }
@@ -130,7 +130,7 @@ return isPortuguese ? 'Seguir' : 'Follow'
       >
         {getIcon()}
         {variant !== 'icon-only' && (
-          <span className={isCurrentlyFollowing && isHovered ? 'text-red-600' : ''}>
+          <span className={isCurrentlyFollowing && isHovered ? 'text-coral-600' : ''}>
             {getButtonText()}
           </span>
         )}
@@ -140,7 +140,7 @@ return isPortuguese ? 'Seguir' : 'Follow'
       {showNotificationToggle && isCurrentlyFollowing && (
         <button
           onClick={handleNotificationToggle}
-          className="p-2 rounded-full text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-colors"
+          className="p-2 rounded-full text-secondary-600 hover:text-primary-600 hover:bg-primary-50 transition-colors"
           title={
             notificationsEnabled 
 ? (isPortuguese ? 'Desativar notificações' : 'Turn off notifications')

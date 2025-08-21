@@ -175,12 +175,12 @@ export default function MembershipTiers({
   const getColorClasses = (color: string) => {
     const colorMap = {
       gray: {
-        border: "border-gray-200",
-        bg: "bg-gray-50",
-        iconBg: "bg-gray-100",
-        iconText: "text-gray-600",
-        button: "bg-gray-500 hover:bg-gray-600 text-white",
-        badge: "bg-gray-100 text-gray-800",
+        border: "border-secondary-200",
+        bg: "bg-secondary-50",
+        iconBg: "bg-secondary-100",
+        iconText: "text-secondary-600",
+        button: "bg-secondary-500 hover:bg-secondary-600 text-white",
+        badge: "bg-secondary-100 text-secondary-800",
       },
       primary: {
         border: "border-primary-300",
@@ -220,7 +220,7 @@ export default function MembershipTiers({
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             {isPortuguese ? "Planos de Adesão" : "Membership Plans"}
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
+          <p className="text-lg text-secondary-600 max-w-3xl mx-auto mb-6">
             {isPortuguese
               ? "Escolha o plano ideal para se conectar com a comunidade portuguesa de Londres."
               : "Choose the perfect plan to connect with London's Portuguese community."}
@@ -277,7 +277,7 @@ export default function MembershipTiers({
 
                 {/* Current Tier Badge */}
                 {isCurrentTier && (
-                  <div className="absolute top-0 left-0 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-br-lg">
+                  <div className="absolute top-0 left-0 bg-action-500 text-white text-xs font-bold px-3 py-1 rounded-br-lg">
                     {isPortuguese ? "Atual" : "Current"}
                   </div>
                 )}
@@ -314,7 +314,7 @@ export default function MembershipTiers({
 
                 {/* Description */}
                 <p
-                  className={`text-gray-600 mb-6 text-center ${
+                  className={`text-secondary-600 mb-6 text-center ${
                     compact ? "text-sm" : ""
                   }`}
                 >
@@ -329,9 +329,9 @@ export default function MembershipTiers({
                         key={featureIndex}
                         className="flex items-start gap-3"
                       >
-                        <CheckCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                        <CheckCircleIcon className="w-5 h-5 text-action-500 flex-shrink-0 mt-0.5" />
                         <span
-                          className={`text-gray-700 ${
+                          className={`text-secondary-700 ${
                             compact ? "text-sm" : ""
                           }`}
                         >
@@ -400,7 +400,7 @@ export default function MembershipTiers({
                     ? "Comunidade Autêntica"
                     : "Authentic Community"}
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-secondary-600">
                   {isPortuguese
                     ? "Conecte-se com portugueses reais em Londres"
                     : "Connect with real Portuguese speakers in London"}
@@ -413,7 +413,7 @@ export default function MembershipTiers({
                 <h4 className="font-semibold text-gray-900 mb-2">
                   {isPortuguese ? "Perfis Verificados" : "Verified Profiles"}
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-secondary-600">
                   {isPortuguese
                     ? "Todos os membros são verificados para segurança"
                     : "All members are verified for safety"}
@@ -426,7 +426,7 @@ export default function MembershipTiers({
                 <h4 className="font-semibold text-gray-900 mb-2">
                   {isPortuguese ? "Eventos Culturais" : "Cultural Events"}
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-secondary-600">
                   {isPortuguese
                     ? "Participe em eventos e atividades portuguesas"
                     : "Join Portuguese events and activities"}
@@ -434,7 +434,7 @@ export default function MembershipTiers({
               </div>
             </div>
             <div className="mt-8 text-center">
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-secondary-600">
                 {isPortuguese
                   ? `Junte-se a ${communityStats.members} portugueses que já encontraram a sua comunidade`
                   : `Join ${communityStats.members} Portuguese speakers who found their community`}

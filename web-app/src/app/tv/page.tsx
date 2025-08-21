@@ -170,7 +170,7 @@ export default function TVPage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=1200&h=600&fit=crop&crop=center')] bg-cover bg-center opacity-5"></div>
+        <div className="absolute inset-0 bg-[url(buildUnsplashUrl('photo-1522869635100-9f4c5e86aa37?w=1200&h=600&fit=crop&crop=center'))] bg-cover bg-center opacity-5"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-primary-900/5 via-transparent to-secondary-900/5"></div>
 
         <div className="relative container-width py-16 lg:py-24">
@@ -214,7 +214,7 @@ export default function TVPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
+              className="text-xl text-secondary-600 mb-8 max-w-3xl mx-auto"
             >
               {isPortuguese
                 ? "Assista programação portuguesa ao vivo, participe em eventos culturais e conecte-se com a comunidade portuguesa em Londres."
@@ -225,7 +225,7 @@ export default function TVPage() {
       </section>
 
       {/* Navigation Tabs */}
-      <section className="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
+      <section className="sticky top-16 z-40 bg-white border-b border-secondary-200 shadow-sm">
         <div className="container-width">
           <div className="flex overflow-x-auto">
             {navigationTabs.map((tab) => (
@@ -235,7 +235,7 @@ export default function TVPage() {
                 className={`flex items-center gap-2 px-6 py-4 text-sm font-medium whitespace-nowrap border-b-2 transition-colors duration-200 min-w-[120px] ${
                   activeTab === tab.id
                     ? "border-primary-500 text-primary-600 bg-primary-50"
-                    : "border-transparent text-gray-600 hover:text-primary-600 hover:bg-gray-50"
+                    : "border-transparent text-secondary-600 hover:text-primary-600 hover:bg-secondary-50"
                 }`}
               >
                 <tab.icon className="w-4 h-4" />
@@ -257,7 +257,7 @@ export default function TVPage() {
                 <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
                   {isPortuguese ? "Transmissões Ao Vivo" : "Live Broadcasts"}
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-secondary-600">
                   {isPortuguese
                     ? "Assista programação portuguesa ao vivo direto de Londres"
                     : "Watch Portuguese programming live from London"}
@@ -310,7 +310,7 @@ export default function TVPage() {
                     ? "Programação Portuguesa"
                     : "Portuguese Programming"}
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-secondary-600">
                   {isPortuguese
                     ? "Descubra a programação completa dos nossos canais portugueses"
                     : "Discover the complete schedule of our Portuguese channels"}
@@ -328,7 +328,7 @@ export default function TVPage() {
                 <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
                   {isPortuguese ? "Biblioteca de Gravações" : "Replay Library"}
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-secondary-600">
                   {isPortuguese
                     ? "Assista conteúdo gravado quando quiser"
                     : "Watch recorded content whenever you want"}
@@ -350,7 +350,7 @@ export default function TVPage() {
                 <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
                   {isPortuguese ? "Chat Comunitário" : "Community Chat"}
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-secondary-600">
                   {isPortuguese
                     ? "Converse com outros portugueses enquanto assiste"
                     : "Chat with other Portuguese speakers while watching"}
@@ -370,7 +370,7 @@ export default function TVPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-secondary-50">
         <div className="container-width">
           <HowStreamingWorks />
         </div>

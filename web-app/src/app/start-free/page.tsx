@@ -1,12 +1,19 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { ROUTES } from '@/config'
 import { useRouter } from "next/navigation";
+import { ROUTES } from '@/config'
 import { motion, AnimatePresence } from "framer-motion";
+import { ROUTES } from '@/config'
 import Image from "next/image";
+import { ROUTES } from '@/config'
 import Link from "next/link";
+import { ROUTES } from '@/config'
 import { useLanguage } from "@/context/LanguageContext";
+import { ROUTES } from '@/config'
 import { communityStats } from "@/config/community";
+import { ROUTES } from '@/config'
 import {
   HeartIcon,
   CheckIcon,
@@ -23,7 +30,9 @@ import {
   CalendarIcon,
 } from "@heroicons/react/24/outline";
 import { getImageWithFallback } from "@/lib/profileImages";
+import { ROUTES } from '@/config'
 import Footer from "@/components/Footer";
+import { ROUTES } from '@/config'
 
 const freeFeatures = [
   {
@@ -122,7 +131,7 @@ export default function StartFree() {
   }, []);
 
   const handleStartFree = () => {
-    router.push("/signup?origin=start-free&highlight=free");
+    router.push(ROUTES.signup?origin=start-free&highlight=free);
   };
 
   const handleUpgrade = (tier: string) => {
@@ -160,12 +169,12 @@ export default function StartFree() {
                     <span className="bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent block">
                       {isPortuguese ? "Comunidade Portuguesa" : "Portuguese Community"}
                     </span>
-                    <span className="block text-2xl sm:text-3xl lg:text-4xl text-gray-600 mt-2">
+                    <span className="block text-2xl sm:text-3xl lg:text-4xl text-secondary-600 mt-2">
                       {isPortuguese ? "em Londres" : "in London"}
                     </span>
                   </h1>
 
-                  <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
+                  <p className="text-lg sm:text-xl text-secondary-600 mb-8 leading-relaxed">
                     {isPortuguese
                       ? "Comece grátis hoje. Conecte-se com portugueses, junte-se a eventos culturais, e descubra a sua nova família londrina."
                       : "Start free today. Connect with Portuguese speakers, join cultural events, and discover your new London family."}
@@ -177,20 +186,20 @@ export default function StartFree() {
                       <div className="text-2xl sm:text-3xl font-bold text-primary-600">
                         {communityStats.members}
                       </div>
-                      <div className="text-xs text-gray-600">
+                      <div className="text-xs text-secondary-600">
                         {isPortuguese ? "Membros" : "Members"}
                       </div>
                     </div>
                     <div className="text-center">
                       <div className="text-2xl sm:text-3xl font-bold text-secondary-600">4.9</div>
-                      <div className="text-xs text-gray-600 flex items-center justify-center gap-1">
+                      <div className="text-xs text-secondary-600 flex items-center justify-center gap-1">
                         <StarIcon className="h-3 w-3 text-yellow-400" />
                         {isPortuguese ? "Avaliação" : "Rating"}
                       </div>
                     </div>
                     <div className="text-center col-span-2 sm:col-span-1">
                       <div className="text-2xl sm:text-3xl font-bold text-accent-600">Free</div>
-                      <div className="text-xs text-gray-600">
+                      <div className="text-xs text-secondary-600">
                         {isPortuguese ? "Para Sempre" : "Forever"}
                       </div>
                     </div>
@@ -200,7 +209,7 @@ export default function StartFree() {
                   <div className="space-y-4">
                     <button
                       onClick={handleStartFree}
-                      className="btn-primary w-full sm:w-auto text-lg font-semibold px-8 py-4 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-200 flex items-center justify-center gap-3"
+                      className="btn-primary w-full sm:w-auto text-lg font-semibold px-8 py-4 shadow-xl hover:shadow-2xl transform hover:-transecondary-y-1 transition-all duration-200 flex items-center justify-center gap-3"
                     >
                       <HeartIcon className="h-6 w-6" />
                       {isPortuguese ? "Começar Grátis Agora" : "Start Free Now"}
@@ -262,7 +271,7 @@ export default function StartFree() {
                           className="w-10 h-10 rounded-full object-cover ring-2 ring-primary-200"
                         />
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm text-gray-700 italic mb-1 line-clamp-2">
+                          <p className="text-sm text-secondary-700 italic mb-1 line-clamp-2">
                             "{isPortuguese 
                               ? testimonials[currentTestimonial].quotePt 
                               : testimonials[currentTestimonial].quote}"
@@ -295,7 +304,7 @@ export default function StartFree() {
                 <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                   {isPortuguese ? "O Que Obtém Gratuitamente" : "What You Get for Free"}
                 </h2>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
                   {isPortuguese 
                     ? "Tudo o que precisa para começar a sua jornada na comunidade portuguesa de Londres."
                     : "Everything you need to start your journey in London's Portuguese community."}
@@ -314,12 +323,12 @@ export default function StartFree() {
                       className="text-center p-6 rounded-xl border-2 border-green-100 bg-green-50 hover:border-green-200 transition-colors"
                     >
                       <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <IconComponent className="h-8 w-8 text-green-600" />
+                        <IconComponent className="h-8 w-8 text-action-600" />
                       </div>
                       <h3 className="font-semibold text-gray-900 mb-2">
                         {isPortuguese ? feature.titlePt : feature.title}
                       </h3>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-secondary-600">
                         {isPortuguese ? feature.subtitlePt : feature.subtitle}
                       </p>
                     </motion.div>
@@ -338,7 +347,7 @@ export default function StartFree() {
                 <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
                   {isPortuguese ? "Pronto Para Mais?" : "Ready for More?"}
                 </h2>
-                <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
+                <p className="text-lg text-secondary-600 max-w-2xl mx-auto mb-6">
                   {isPortuguese 
                     ? "85% dos nossos membros gratuitos fazem upgrade dentro de 2 semanas para desbloquear todo o potencial."
                     : "85% of our free members upgrade within 2 weeks to unlock their full potential."}
@@ -410,7 +419,7 @@ export default function StartFree() {
                 >
                   {isPortuguese ? "Ou Continue Grátis Para Sempre" : "Or Stay Free Forever"}
                 </button>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-secondary-600">
                   {isPortuguese 
                     ? "Sem compromisso • Pode fazer upgrade a qualquer momento"
                     : "No commitment • Upgrade anytime"}
@@ -435,7 +444,7 @@ export default function StartFree() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-all"
+                    className="bg-white rounded-xl shadow-lg border border-secondary-100 p-6 hover:shadow-xl transition-all"
                   >
                     <div className="flex items-center gap-3 mb-4">
                       <Image
@@ -456,7 +465,7 @@ export default function StartFree() {
                       </div>
                     </div>
                     
-                    <p className="text-sm text-gray-700 italic mb-4">
+                    <p className="text-sm text-secondary-700 italic mb-4">
                       "{isPortuguese ? testimonial.quotePt : testimonial.quote}"
                     </p>
                     
@@ -489,7 +498,7 @@ export default function StartFree() {
               <div className="space-y-4">
                 <button
                   onClick={handleStartFree}
-                  className="bg-white text-primary-600 hover:bg-primary-50 font-bold text-xl px-10 py-5 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:-translate-y-1"
+                  className="bg-white text-primary-600 hover:bg-primary-50 font-bold text-xl px-10 py-5 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:-transecondary-y-1"
                 >
                   {isPortuguese ? "Começar Grátis Agora" : "Start Free Now"}
                 </button>
@@ -515,7 +524,7 @@ export default function StartFree() {
               <h3 className="text-2xl font-bold mb-4">
                 {isPortuguese ? "Conheça a LusoTown" : "Meet LusoTown"}
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-secondary-600 mb-6">
                 {isPortuguese 
                   ? "Descubra como a nossa comunidade está a transformar vidas de portugueses em Londres."
                   : "Discover how our community is transforming Portuguese lives in London."}
@@ -529,7 +538,7 @@ export default function StartFree() {
                 </button>
                 <button
                   onClick={() => setShowVideoModal(false)}
-                  className="text-gray-500 hover:text-gray-700 text-sm"
+                  className="text-gray-500 hover:text-secondary-700 text-sm"
                 >
                   {isPortuguese ? "Fechar" : "Close"}
                 </button>
