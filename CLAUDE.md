@@ -12,7 +12,7 @@ LusoTown is a production-ready Portuguese community platform serving London & UK
 
 **Tech Stack**: Next.js 14 App Router (TypeScript), Tailwind CSS, Supabase PostgreSQL with PostGIS, Simple Relay Server (SRS) for streaming, OpenStreetMap/Leaflet for mapping, Twitter API, Stripe, React Context state management.
 
-**Status**: Production-ready with 111+ pages, 421+ components, complete bilingual EN/PT system, mobile-first responsive design.
+**Status**: Production-ready with 116+ pages, 455+ components, complete bilingual EN/PT system, mobile-first responsive design.
 
 ## Development Commands
 
@@ -263,6 +263,106 @@ Build configuration optimized for production with bundle splitting, image optimi
 5. Test mobile-first (375px breakpoint)
 6. Run quality checks before commits
 7. Portuguese cultural context should guide all decisions
+
+## Core Architecture
+
+### Component Architecture
+- **455+ React Components**: Modular, reusable components with Portuguese cultural theming
+- **TypeScript First**: Strict typing throughout the codebase
+- **Context-Based State**: Multiple React contexts for state management
+- **Configuration-Driven**: All dynamic data centralized in `/src/config/`
+
+### Data Flow
+- **Supabase Backend**: PostgreSQL with PostGIS for geospatial data
+- **React Context**: Client-side state management
+- **API Routes**: Next.js API routes for server-side operations
+- **Real-time Updates**: Supabase real-time subscriptions
+
+## Critical Patterns
+
+### Import Patterns
+```typescript
+// Always import from config
+import { SUBSCRIPTION_PLANS } from '@/config/pricing'
+import { UNIVERSITY_PARTNERSHIPS } from '@/config/universities'
+import { CULTURAL_CENTERS } from '@/config/cultural-centers'
+
+// Always use translation context
+import { useLanguage } from '@/context/LanguageContext'
+const { t } = useLanguage()
+```
+
+### Component Patterns
+```typescript
+// Standard component structure
+export default function ComponentName() {
+  const { t } = useLanguage()
+  const { colors } = useHeritage()
+  
+  return (
+    <div className="bg-primary-50 text-primary-900">
+      <h1>{t('component.title')}</h1>
+    </div>
+  )
+}
+```
+
+## Hardcoding Prevention Rules
+
+### Pricing & Financial Data
+- **NEVER** hardcode prices: Use `@/config/pricing`
+- **NEVER** hardcode currencies: Use `formatPrice()` function
+- **NEVER** hardcode subscription tiers: Import from config
+
+### Contact & Business Information
+- **NEVER** hardcode emails: Use `@/config/contact`
+- **NEVER** hardcode phone numbers: Use `@/config/contact`
+- **NEVER** hardcode addresses: Use `@/config/contact`
+
+### Cultural & Community Data
+- **NEVER** hardcode university names: Use `@/config/universities`
+- **NEVER** hardcode cultural centers: Use `@/config/cultural-centers`
+- **NEVER** hardcode community metrics: Use environment variables
+
+### Text & Translations
+- **NEVER** hardcode user-facing text: Use `t('translation.key')`
+- **NEVER** hardcode URLs: Use `@/config/routes`
+- **NEVER** hardcode labels: Add to translation files
+
+## Testing Framework
+
+### Unit Testing
+```bash
+npm run test              # Run Jest unit tests
+npm run test:watch        # Watch mode for development
+npm run test:coverage     # Generate coverage reports
+```
+
+### Integration Testing
+```bash
+npm run test:integration  # API and context integration tests
+npm run test:mobile-ux    # Mobile UX validation tests
+```
+
+### End-to-End Testing
+```bash
+npm run test:e2e          # Playwright E2E tests
+npm run test:e2e:headed   # Visual E2E testing
+```
+
+### Portuguese-Specific Testing
+```bash
+npm run test:portuguese   # Portuguese language tests
+npm run test:mobile-validation  # Mobile UX for Portuguese community
+```
+
+### Quality Assurance
+```bash
+npm run audit:hardcoding  # Critical: No hardcoded values
+npm run audit:security    # Security vulnerability scan
+npm run lint              # ESLint validation
+npx tsc --noEmit         # TypeScript compilation check
+```
 
 ## Special Considerations
 
