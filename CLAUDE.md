@@ -93,9 +93,11 @@ npm run test:all            # Run comprehensive test suite
 npm test                    # Run all tests
 npm run test:watch          # Watch mode
 npm run test:coverage       # Coverage report (generates /coverage/)
+npm run test:ci             # CI mode with coverage
 npm run test:unit           # Components/contexts/utils only
 npm run test:integration    # User journey tests
 npm run test:performance    # Performance benchmarks
+npm run test:all            # Comprehensive test suite
 
 # E2E tests (Playwright)
 npm run test:e2e            # Headless E2E tests
@@ -115,16 +117,19 @@ npm run test:accessibility  # A11y compliance
 npm run db:migrate                    # General database migrations
 npm run db:migrate:streaming          # Streaming platform schema
 npm run db:migrate:streaming:complete # Complete streaming migration
-npm run db:migrate:business           # Business directory with PostGIS
 
 # Verification scripts
 npm run verify:creator-monetization   # Verify streaming setup
+
+# Note: Business directory migrations are in supabase/migrations/
+# Apply via Supabase Dashboard or supabase CLI
 ```
 
 ### Streaming Infrastructure
 ```bash
 # Streaming server health
 cd streaming && npm run health-check  # Verify streaming infrastructure
+cd streaming && npm test              # Run streaming tests
 
 # Streamlabs mobile configuration
 node streaming/streamlabs-setup.js    # Generate mobile streaming config
@@ -132,6 +137,17 @@ node streaming/streamlabs-setup.js    # Generate mobile streaming config
 # Production URLs (for deployment)
 # RTMP: rtmp://stream.lusotown.com:1935/live/
 # HLS: https://stream.lusotown.com/live/[stream_key].m3u8
+```
+
+### Development Tools
+```bash
+# Image optimization (from web-app directory)
+npm run optimize-images          # Optimize Portuguese community images
+npm run generate-placeholders    # Generate image placeholders
+
+# Development utilities
+npm run export                   # Static site export
+npm run deploy                   # Deploy to Vercel
 ```
 
 **Demo Login:** demo@lusotown.com / LusoTown2025!
@@ -243,133 +259,32 @@ return <h1>{t('page.hero.title')}</h1>
 
 ## Hardcoding Prevention Rules (CRITICAL)
 
-### Overview
-LusoTown is a production platform requiring strict configurability for multi-language support, dynamic pricing, geographic expansion, and content management.
+**Overview:** LusoTown requires strict configurability for bilingual support, dynamic pricing, and content management.
 
-### ❌ NEVER Hardcode These Values:
+### ❌ NEVER Hardcode:
+1. **Text strings** - Use `t('key')` from i18n files
+2. **Routes** - Use `ROUTES.events` from config/routes.ts
+3. **API keys/credentials** - Use environment variables
+4. **User data/prices** - Fetch from database/config
+5. **Feature flags** - Store in config files
+6. **Brand info** - Use config/brand.ts
 
-#### 1. Content Strings (Service Descriptions, Headers, Labels, etc.)
-**Rule**: All user-facing text MUST come from config/CMS/localization for easy updates and translation
-```typescript
-// ❌ BAD
-<button>Join Community</button>
-<h1>Welcome to LusoTown</h1>
+### ✅ Safe to Hardcode:
+- CSS classes and layout structure
+- Permanent design assets with documentation
+- Fallback values with clear comments
 
-// ✅ GOOD  
-<button>{t('buttons.join_community')}</button>
-<h1>{t('hero.title')}</h1>
-```
-
-#### 2. Links, URLs, and Routes
-**Rule**: All routes MUST be referenced from routes/config file
-```typescript
-// ❌ BAD
-<a href="/events/create">Create Event</a>
-
-// ✅ GOOD
-<a href={`${ROUTES.events}/create`}>{t('actions.create_event')}</a>
-```
-
-#### 3. API Keys, Tokens, Credentials, and Secrets
-**Rule**: MUST NEVER be hardcoded. Store in .env files and reference securely
-```typescript
-// ❌ BAD - SECURITY VIOLATION
-const STRIPE_KEY = "pk_test_51Demo123456789"
-
-// ✅ GOOD
-const STRIPE_KEY = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
-```
-
-#### 4. User Data (Names, IDs, Emails, Permissions, Prices, Account Tiers)
-**Rule**: User data MUST NOT be hardcoded. Should come from database
-```typescript
-// ❌ BAD
-const membershipPrice = 19.99;
-const userEmail = "demo@lusotown.com";
-
-// ✅ GOOD
-const membershipPrice = await getPricing('community');
-const userEmail = user.email;
-```
-
-#### 5. Feature Flags (Streaming Enabled, Feeds Visible, Account Tier Limits)
-**Rule**: Must be configurable, not hardcoded
-```typescript
-// ❌ BAD
-const isStreamingEnabled = true;
-
-// ✅ GOOD
-const isStreamingEnabled = featureFlags.streaming.enabled;
-```
-
-#### 6. Brand Identity Values (Site Name, Logo Path, Contact Email, Phone, Social Links)
-**Rule**: Should be dynamic, pulled from config or CMS
-```typescript
-// ❌ BAD
-const siteName = "LusoTown";
-const supportEmail = "hello@lusotown.com";
-
-// ✅ GOOD
-const siteName = brand.name;
-const supportEmail = contact.support.email;
-```
-
-#### 7. Pricing, Packages, and Booking Rules
-**Rule**: Must be stored in config/database for easy updates
-```typescript
-// ❌ BAD
-const transportPrice = 45;
-const membershipTiers = ['Free', 'Community'];
-
-// ✅ GOOD
-const transportPrice = await getServicePricing('transport');
-const membershipTiers = await getMembershipTiers();
-```
-
-### ✅ Exceptions (Safe to Hardcode):
-
-#### Static Layout Structure
-```typescript
-// ✅ OK - HTML structure and CSS classes
-<div className="flex items-center justify-between p-6">
-```
-
-#### Icons and Images (Permanent Design Assets)
-```typescript
-// ✅ OK - Permanent design assets with documentation
-<img src="/icons/hero-icon.svg" alt="Hero decoration" /> // Permanent UI element
-```
-
-#### Fallback Values (Only if Clearly Documented)
-```typescript
-// ✅ OK - With clear comments explaining why
-const maxRetries = config.api.maxRetries || 3; // Fallback for API reliability
-```
-
-### Code Review Checklist - Hardcoding Prevention:
-
-**Before Every Commit:**
-- [ ] No hardcoded text strings in JSX (`"Hello World"` → `{t('greeting')}`)
+### Code Review Checklist:
+- [ ] No hardcoded text (`"Hello"` → `{t('greeting')}`)
 - [ ] No hardcoded routes (`"/events"` → `{ROUTES.events}`)
-- [ ] No hardcoded URLs or CDN links (use config functions)
-- [ ] No hardcoded prices or business rules (use config/database)
-- [ ] No hardcoded feature flags or user limits
-- [ ] No hardcoded contact info or brand details
-- [ ] No hardcoded API keys or credentials (use env vars)
-- [ ] No hardcoded user data (fetch from database)
+- [ ] No credentials in code (use .env files)
 - [ ] All user-facing text supports EN/PT translation
-- [ ] All exceptions are clearly documented with comments
 
-### Enforcement Strategy:
-1. **ESLint checks** prevent new violations
-2. **Pre-commit hooks** scan for hardcoded content  
-3. **Code reviews** verify compliance with checklist
-4. **Monthly audits** catch missed violations
-5. **Automated testing** validates configuration loading
-
-### Current Status (August 2025):
-**🚨 Critical**: 97,904+ violations across 508 files
-**Priority**: Content strings (95,828), routes (826), URLs (575), pricing/user data
+### Audit Tools:
+```bash
+npm run audit:hardcoding     # Scan for violations
+npm run audit:monthly        # Compliance check
+```
 
 ## Content Guidelines
 
@@ -436,32 +351,30 @@ Language, Cart, Favorites, Following, Networking, Subscription, PlatformIntegrat
 Copy `web-app/.env.local.example` to `web-app/.env.local` and configure:
 
 ```env
-# Supabase (Required)
+# Essential Configuration
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 
-# Stripe Payments (Required for subscriptions)
+# Stripe (Required for subscriptions)
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_key
 STRIPE_SECRET_KEY=sk_test_your_stripe_secret
-STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret
 
-# Streaming Infrastructure
-NEXT_PUBLIC_STREAMING_SERVER_URL=http://localhost:8080
-NEXT_PUBLIC_RTMP_SERVER_URL=rtmp://localhost:1935
-STREAMING_API_SECRET=your_streaming_secret
+# Maps & Business Directory
+NEXT_PUBLIC_MAP_PROVIDER=openstreetmap  # Free alternative to Google Maps
+NEXT_PUBLIC_BUSINESS_VERIFICATION_REQUIRED=true
 
-# Maps & Geolocation (OpenStreetMap is free alternative)
-NEXT_PUBLIC_MAP_SERVICE=openstreetmap
-NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=optional_google_maps_key
-NEXT_PUBLIC_IP_GEOLOCATION_API_KEY=optional_ip_geolocation_key
-
-# Twitter Feed Integration
+# Portuguese Community Social Features
 NEXT_PUBLIC_TWITTER_BEARER_TOKEN=your_twitter_bearer_token
 NEXT_PUBLIC_PORTUGUESE_HASHTAGS=LusoLondon PortugueseUK LusoTown
 
-# Business Directory
-NEXT_PUBLIC_BUSINESS_VERIFICATION_REQUIRED=true
-NEXT_PUBLIC_MAX_BUSINESS_PHOTOS=5
+# Streaming Platform (Optional)
+NEXT_PUBLIC_STREAMING_SERVER_URL=http://localhost:8080
+NEXT_PUBLIC_RTMP_SERVER_URL=rtmp://localhost:1935
+
+# Brand & Community Stats (Update regularly)
+NEXT_PUBLIC_TOTAL_MEMBERS=750
+NEXT_PUBLIC_TOTAL_STUDENTS=2150
+NEXT_PUBLIC_UNIVERSITY_PARTNERSHIPS=8
 ```
 
 ### Path Aliases & Imports
@@ -493,12 +406,13 @@ cd ../streaming && npm run health-check  # Streaming infrastructure
 ### Key Testing Areas
 - **Bilingual:** EN/PT language toggle works on all pages
 - **Mobile:** Responsive design at 375px, 768px, 1024px breakpoints
-- **Authentication:** Demo login, subscription gates, protected routes
+- **Authentication:** Demo login (demo@lusotown.com / LusoTown2025!), subscription gates, protected routes
 - **Portuguese Features:** Cultural elements, brand colors, messaging
 - **Core Pages:** /events, /transport, /matches, /live, /business-directory
 - **Maps:** Business directory, geolocation, clustering, "Near Me"
 - **Streaming:** Live streaming, chat, creator dashboard
 - **Subscriptions:** Payment flow, tier enforcement, usage limits
+- **Twitter Feed:** Post-login social integration with Portuguese hashtags
 
 ## Deployment & Automation
 
