@@ -7,6 +7,7 @@ import { useLanguage } from '@/context/LanguageContext'
 import { useHeritage } from '@/context/HeritageContext'
 import { getImageWithFallback } from '@/lib/profileImages'
 import { useMemo } from 'react'
+import { ROUTES } from '@/config/routes'
 
 interface SuccessStory {
   id: string
@@ -363,13 +364,13 @@ export default function SuccessStories() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="/signup" 
+              href={ROUTES.signup} 
               className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
             >
               JOIN NOW
             </a>
             <a 
-              href="/case-studies" 
+              href={ROUTES.caseStudies} 
               className="inline-flex items-center justify-center bg-white text-secondary-600 hover:bg-gray-50 border-2 border-secondary-200 hover:border-secondary-300 font-bold text-lg px-10 py-4 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1"
             >
               Read Detailed Case Studies

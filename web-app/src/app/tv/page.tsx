@@ -170,7 +170,15 @@ export default function TVPage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=1200&h=600&fit=crop&crop=center')] bg-cover bg-center opacity-5"></div>
+        {/* Clean background pattern instead of image */}
+        <div className="absolute inset-0 opacity-30">
+          <div 
+            className="absolute inset-0" 
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23059669' fill-opacity='0.1'%3E%3Cpath d='M20 20.5V18h-2v2.5h-2.5V22H18v2.5h2V22h2.5v-1.5H20zM0 38.59l2.59-2.59 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.59 2.59L1.41 5.59 0 4.18V1.41z'/%3E%3C/g%3E%3C/svg%3E")`
+            }}
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-br from-primary-900/5 via-transparent to-secondary-900/5"></div>
 
         <div className="relative container-width py-16 lg:py-24">

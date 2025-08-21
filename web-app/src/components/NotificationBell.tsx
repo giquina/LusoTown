@@ -46,7 +46,7 @@ export default function NotificationBell({ className, showDropdown = false }: No
             </div>
             <ul className="divide-y divide-gray-100 max-h-96 overflow-y-auto">
               {notifications.map(notification => (
-                <li key={notification.id} className={`p-4 hover:bg-gray-50 ${!notification.read ? 'bg-blue-50' : ''}`}>
+                <li key={notification.id} className={`p-4 hover:bg-gray-50 ${!notification.read ? 'bg-primary-50' : ''}`}>
                   <p className="text-sm text-gray-800">{notification.message}</p>
                   <p className="text-xs text-gray-500 mt-1">{notification.time}</p>
                 </li>

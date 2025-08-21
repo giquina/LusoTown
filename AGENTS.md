@@ -1,6 +1,9 @@
-# AI Agent Instructions
+# 🤖 AI Agent Instructions
 
-This file provides guidance to AI coding agents (Claude, GPT, Cursor, GitHub Copilot, etc.) when working with the LusoTown codebase.
+> **Universal Instructions for AI Coding Agents**  
+> Compatible with Claude, GPT-4/4o, Cursor, GitHub Copilot, Replit Agent, and all AI development tools.
+
+This file contains comprehensive guidance for AI agents working on the LusoTown Portuguese community platform.
 
 ## 🌍 Project Overview
 
@@ -14,29 +17,34 @@ This file provides guidance to AI coding agents (Claude, GPT, Cursor, GitHub Cop
 
 ## 🚀 Quick Start for AI Agents
 
-### Essential Commands
+### ⚡ 30-Second Setup
 ```bash
-# Development (from repository root)
-cd web-app && npm install && npm run dev    # Start at localhost:3000
-cd streaming && npm install && npm start    # Streaming server at localhost:8080
+# 1. Start development (parallel terminals)
+cd web-app && npm install && npm run dev    # http://localhost:3001
+cd streaming && npm install && npm start    # http://localhost:8080
 
-# Quality Checks (ALWAYS run before commits)
-cd web-app
-npm run lint                 # ESLint check - must pass
-npx tsc --noEmit            # TypeScript check - must pass  
-npm run build               # Production build test
-npm run test:all            # Comprehensive test suite
-npm run audit:hardcoding    # Check for hardcoded values
+# 2. Essential environment setup
+cp web-app/.env.local.example web-app/.env.local  # Configure Supabase keys
+
+# 3. Test demo access
+# Login: demo@lusotown.com / LusoTown2025!
 ```
 
-### Environment Setup
-Copy `web-app/.env.local.example` to `web-app/.env.local` and configure Supabase keys + optional services.
+### 🔥 Critical Pre-Commit Checks
+```bash
+cd web-app
+npm run lint                 # ❌ Must pass - ESLint validation
+npx tsc --noEmit            # ❌ Must pass - TypeScript check
+npm run build               # ❌ Must pass - Production build
+npm run audit:hardcoding    # ❌ Must pass - Zero hardcoded values
+npm run test:all            # ✅ Optional - Full test suite
+```
 
 ---
 
 ## 🎯 Core Principles for AI Agents
 
-### 1. 🚨 NEVER HARDCODE ANYTHING
+### 1. 🚨 ZERO HARDCODING POLICY (CRITICAL)
 ```typescript
 // ❌ NEVER DO THIS:
 const price = "£19.99"
@@ -49,9 +57,10 @@ import { UNIVERSITY_PARTNERSHIPS } from '@/config/universities'
 const price = formatPrice(SUBSCRIPTION_PLANS.community.monthly)
 ```
 
-**Critical Rule**: All prices, contacts, URLs, cultural data must come from `/src/config/` files.
+**❌ INSTANT REJECTION:** Any hardcoded values will break the build and fail audits.  
+**✅ ALWAYS:** Import from `/src/config/` - prices, contacts, URLs, cultural data, university info.
 
-### 2. 🌐 Bilingual First
+### 2. 🌍 BILINGUAL-FIRST DEVELOPMENT (MANDATORY)
 ```typescript
 // ❌ NEVER hardcode text:
 <h1>Welcome to LusoTown</h1>
@@ -61,13 +70,13 @@ const { t } = useLanguage()
 <h1>{t('welcome.title')}</h1>
 ```
 
-### 3. 🎨 Portuguese Cultural Design
+### 3. 🇵🇹 PORTUGUESE CULTURAL AUTHENTICITY (NON-NEGOTIABLE)
 - Use Portuguese brand colors from `@/config/brand.ts`
 - No generic blue/gray colors
 - Mobile-first responsive design
 - Cultural elements integrated, not separate
 
-### 4. 🔧 Configuration-Driven Development
+### 4. ⚙️ CONFIGURATION-DRIVEN ARCHITECTURE (REQUIRED)
 All dynamic data lives in `/src/config/`:
 - `pricing.ts` - All pricing, subscriptions, discounts
 - `universities.ts` - University partnerships, student counts  
@@ -148,6 +157,50 @@ href={ROUTES.events} // Not "/events"
 - [ ] Environment variables set correctly
 - [ ] Portuguese cultural elements present (not generic)
 - [ ] Mobile responsive design working
+
+---
+
+## ⚡ RAPID DEVELOPMENT PATTERNS
+
+### 🛠️ Quick Component Creation
+```typescript
+// 1. Always start with this template:
+import { useLanguage } from '@/context/LanguageContext'
+import { formatPrice } from '@/config/pricing'
+import { ROUTES } from '@/config/routes'
+
+export default function MyComponent() {
+  const { t, language } = useLanguage()
+  
+  return (
+    <div className="bg-primary-50 text-primary-900"> {/* Portuguese colors */}
+      <h1>{t('component.title')}</h1> {/* Never hardcode text */}
+      <p>{formatPrice(29.99)}</p> {/* Never hardcode prices */}
+    </div>
+  )
+}
+```
+
+### 📊 Data Fetching Pattern
+```typescript
+// Always use this pattern for data:
+import { UNIVERSITY_PARTNERSHIPS } from '@/config/universities'
+import { CULTURAL_CENTERS } from '@/config/cultural-centers'
+
+// Not hardcoded arrays - always from config!
+const universities = UNIVERSITY_PARTNERSHIPS.filter(uni => uni.region === 'london')
+```
+
+### 🎨 Styling Guidelines
+```typescript
+// ✅ USE: Portuguese brand colors
+className="bg-primary-600 text-white hover:bg-primary-700"
+className="border-secondary-300 text-secondary-600"
+
+// ❌ NEVER: Generic Tailwind colors  
+className="bg-blue-600"    // ❌ Wrong!
+className="bg-gray-500"    // ❌ Wrong!
+```
 
 ---
 
@@ -238,6 +291,35 @@ NEXT_PUBLIC_AMBASSADOR_PRICE_MONTHLY=39.99
 - Shared packages transpiled (`@lusotown/ui`, `@lusotown/design-tokens`)
 - Image optimization for Unsplash, Cloudinary, BunnyCDN
 - Aggressive bundle optimization for production
+
+---
+
+## 🤖 AI AGENT OPTIMIZATION STRATEGIES
+
+### 🏆 Performance Tips
+1. **Batch Operations** - Always read multiple config files in parallel
+2. **Context Awareness** - Remember Portuguese cultural context throughout conversation
+3. **Pattern Recognition** - Look for established patterns before creating new ones
+4. **Mobile Priority** - Test mobile experience before desktop
+5. **Bilingual Validation** - Always verify both EN and PT work correctly
+
+### 🗺️ Navigation Shortcuts
+```bash
+# Quick file access for AI agents:
+cat /workspaces/LusoTown/AGENTS.md                    # This file
+ls /workspaces/LusoTown/web-app/src/config/           # All config files
+grep -r "t('" /workspaces/LusoTown/web-app/src/i18n/  # Find translation patterns
+find . -name "*.tsx" | head -10                      # Sample components
+```
+
+### 🧠 Context Preservation
+**Remember These Key Facts Throughout Conversation:**
+- LusoTown serves **Portuguese speakers in London & UK**
+- **750+ community members**, **2,150+ Portuguese students**
+- **8 university partnerships** (UCL, King's, Imperial, LSE, Oxford, Cambridge, Manchester, Edinburgh)
+- **Never generic** - always Portuguese cultural context
+- **Mobile-first** - Portuguese community uses mobile heavily
+- **Production-ready** - 111+ pages, 421+ components
 
 ---
 

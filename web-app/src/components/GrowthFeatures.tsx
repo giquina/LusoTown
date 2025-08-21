@@ -34,6 +34,9 @@ import {
 } from '@/lib/pricingHelpers'
 import { SUBSCRIPTION_PLANS, getPlanPrice, getFormattedPlanPrice, formatPrice } from '@/config/pricing'
 
+// Mobile UX optimization imports
+import { mobileStandardHelpers } from '@/config/mobile-development-standards'
+
 interface GrowthFeaturesProps {
   isOpen: boolean
   onClose: () => void
@@ -509,7 +512,7 @@ export default function GrowthFeatures({
                   <h4 className={`font-semibold text-gray-900 ${isMobile ? 'text-sm' : 'text-base'}`}>
                     {benefit.title}
                   </h4>
-                  <span className="text-sm font-bold text-blue-600">
+                  <span className="text-sm font-bold text-primary-600">
                     {benefit.value}
                   </span>
                 </div>
@@ -526,7 +529,7 @@ export default function GrowthFeatures({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-200"
+          className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-xl p-6 border border-primary-200"
         >
           <h4 className={`font-bold text-gray-900 mb-4 ${isMobile ? 'text-base' : 'text-lg'}`}>
             {isPortuguese ? 'Verificar Estado de Estudante' : 'Verify Student Status'}
@@ -674,7 +677,7 @@ export default function GrowthFeatures({
                 
                 <button
                   onClick={() => onActionComplete?.('share_referral_generic', { code: referralCode })}
-                  className="flex-1 flex items-center justify-center gap-2 py-3 px-4 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition-colors"
+                  className="flex-1 flex items-center justify-center gap-2 py-3 px-4 bg-primary-500 text-white rounded-xl hover:bg-primary-600 transition-colors"
                 >
                   <ShareIcon className="w-4 h-4" />
                   <span className="text-sm font-medium">

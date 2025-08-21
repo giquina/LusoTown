@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react'
 
 // ✅ PUBLIC ACCESS: This page is accessible to all users without authentication
 import { useLanguage } from '@/context/LanguageContext'
+import { ROUTES } from '@/config/routes'
 import { portugueseBusinessService, PortugueseBusiness, BusinessFilters, BusinessCategory, LondonArea, PortugueseRegion } from '@/lib/businessDirectory'
 import { geolocationService, BusinessDistance } from '@/lib/geolocation'
 import BusinessMap from '@/components/BusinessMap'
@@ -507,7 +508,7 @@ export default function BusinessDirectory() {
                 </div>
               </div>
               <a 
-                href="/directory"
+                href={ROUTES.directory}
                 className="flex items-center gap-2 bg-white text-secondary-600 px-4 py-2 rounded-lg hover:bg-gray-50 transition-colors border border-secondary-200"
               >
                 <Users className="w-4 h-4" />
@@ -856,7 +857,7 @@ export default function BusinessDirectory() {
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a 
-                href="/directory"
+                href={ROUTES.directory}
                 className="bg-white text-accent-600 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors shadow-lg flex items-center gap-2"
               >
                 <UsersIcon className="w-5 h-5" />

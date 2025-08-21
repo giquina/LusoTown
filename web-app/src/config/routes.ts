@@ -90,6 +90,8 @@ export const ROUTES = {
   terms: '/terms',
   privacy: '/privacy',
   cookies: '/cookies',
+  unsubscribe: '/unsubscribe',
+  emailPreferences: '/email-preferences',
   
   // Marketing & Growth
   referrals: '/referrals',

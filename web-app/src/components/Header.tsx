@@ -12,6 +12,17 @@ import {
   ChevronDownIcon,
   MapPinIcon,
   EnvelopeIcon,
+  MusicalNoteIcon,
+  BriefcaseIcon,
+  UserGroupIcon,
+  ChatBubbleLeftRightIcon,
+  FireIcon,
+  PaintBrushIcon,
+  TrophyIcon,
+  CalendarDaysIcon,
+  TruckIcon,
+  TvIcon,
+  CurrencyPoundIcon,
 } from "@heroicons/react/24/outline";
 import { Crown, LogOut } from "lucide-react";
 // import { authService, User } from '@/lib/auth'
@@ -43,12 +54,16 @@ const getToursDropdownLinks = (t: any) => [
   { 
     name: t("nav.london-tours", "London Tours"), 
     href: ROUTES.londonTours,
-    description: t("nav.london-tours-desc", "Portuguese-guided tours of Westminster, Camden Market, Tower Bridge & London attractions")
+    description: t("nav.london-tours-desc", "Portuguese-guided tours of Westminster, Camden Market, Tower Bridge & London attractions"),
+    icon: MapPinIcon,
+    iconColor: "text-primary-500"
   },
   { 
     name: t("nav.london-transport", "London Transport"), 
     href: ROUTES.transport,
-    description: t("nav.london-transport-desc", "Airport transfers, London city rides with verified Portuguese-speaking drivers")
+    description: t("nav.london-transport-desc", "Airport transfers, London city rides with verified Portuguese-speaking drivers"),
+    icon: TruckIcon,
+    iconColor: "text-secondary-500"
   },
 ];
 
@@ -57,42 +72,58 @@ const getEventsDropdownLinks = (t: any) => [
   { 
     name: t("nav.cultural-events", "Cultural Events"), 
     href: `${ROUTES.events}?category=Cultural`,
-    description: t("nav.cultural-events-desc", "Music nights in Camden, cultural celebrations in Stockwell, festivals for Portuguese speakers across London & UK")
+    description: t("nav.cultural-events-desc", "Music nights in Camden, cultural celebrations in Stockwell, festivals for Portuguese speakers across London & UK"),
+    icon: MusicalNoteIcon,
+    iconColor: "text-purple-500"
   },
   { 
     name: t("nav.business-networking", "Business Networking"), 
     href: ROUTES.businessNetworking,
-    description: t("nav.business-networking-desc", "Professional meetups for Portuguese speakers in London, startup events, UK career workshops")
+    description: t("nav.business-networking-desc", "Professional meetups for Portuguese speakers in London, startup events, UK career workshops"),
+    icon: BriefcaseIcon,
+    iconColor: "text-blue-500"
   },
   { 
     name: t("nav.social-meetups", "Social Meetups"), 
     href: `${ROUTES.events}?category=Social`,
-    description: t("nav.social-meetups-desc", "Portuguese-speaking community gatherings in London pubs, UK social events, weekend meetups")
+    description: t("nav.social-meetups-desc", "Portuguese-speaking community gatherings in London pubs, UK social events, weekend meetups"),
+    icon: UserGroupIcon,
+    iconColor: "text-green-500"
   },
   { 
     name: t("nav.portuguese-language", "Portuguese Language"), 
     href: `${ROUTES.events}?category=Language`,
-    description: t("nav.portuguese-language-desc", "Portuguese conversation groups in London, language practice sessions across UK cities")
+    description: t("nav.portuguese-language-desc", "Portuguese conversation groups in London, language practice sessions across UK cities"),
+    icon: ChatBubbleLeftRightIcon,
+    iconColor: "text-orange-500"
   },
   { 
     name: t("nav.food-dining", "Food & Dining"), 
     href: `${ROUTES.events}?category=Food`,
-    description: t("nav.food-dining-desc", "Cooking classes in London, wine tastings, dining experiences at UK restaurants")
+    description: t("nav.food-dining-desc", "Cooking classes in London, wine tastings, dining experiences at UK restaurants"),
+    icon: FireIcon,
+    iconColor: "text-red-500"
   },
   { 
     name: t("nav.arts-entertainment", "Arts & Entertainment"), 
     href: `${ROUTES.events}?category=Arts`,
-    description: t("nav.arts-entertainment-desc", "Live music in London venues, cultural shows, art exhibitions across the UK")
+    description: t("nav.arts-entertainment-desc", "Live music in London venues, cultural shows, art exhibitions across the UK"),
+    icon: PaintBrushIcon,
+    iconColor: "text-pink-500"
   },
   { 
     name: t("nav.sports-fitness", "Sports & Fitness"), 
     href: `${ROUTES.events}?category=Sports`,
-    description: t("nav.sports-fitness-desc", "Football viewing parties in London pubs, sports clubs, fitness groups across UK")
+    description: t("nav.sports-fitness-desc", "Football viewing parties in London pubs, sports clubs, fitness groups across UK"),
+    icon: TrophyIcon,
+    iconColor: "text-yellow-500"
   },
   { 
     name: t("nav.all-events", "All Events"), 
     href: ROUTES.events,
-    description: t("nav.all-events-desc", "Complete calendar of events for Portuguese speakers happening across London & the UK")
+    description: t("nav.all-events-desc", "Complete calendar of events for Portuguese speakers happening across London & the UK"),
+    icon: CalendarDaysIcon,
+    iconColor: "text-indigo-500"
   },
 ];
 
@@ -102,17 +133,23 @@ const getMoreDropdownLinks = (t: any) => ({
     { 
       name: "Find Your Match", 
       href: ROUTES.matches,
-      description: "Connect with Portuguese speakers throughout the United Kingdom who share your interests and lifestyle"
+      description: "Connect with Portuguese speakers throughout the United Kingdom who share your interests and lifestyle",
+      icon: HeartIcon,
+      iconColor: "text-red-500"
     },
     { 
       name: "Live TV", 
       href: ROUTES.tv,
-      description: "Watch shows for Portuguese speakers, UK business workshops, and cultural content from London"
+      description: "Watch shows for Portuguese speakers, UK business workshops, and cultural content from London",
+      icon: TvIcon,
+      iconColor: "text-purple-500"
     },
     { 
       name: "Streaming Income", 
       href: ROUTES.live,
-      description: "Monetize your expertise through live streaming - create content and earn revenue"
+      description: "Monetize your expertise through live streaming - create content and earn revenue",
+      icon: CurrencyPoundIcon,
+      iconColor: "text-green-500"
     },
   ],
   company: [
@@ -231,23 +268,26 @@ export default function Header() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] max-w-[calc(100vw-2rem)] bg-white rounded-xl shadow-xl border border-gray-200 py-6 z-50"
+                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[1000px] max-w-[calc(100vw-2rem)] bg-white rounded-xl shadow-xl border border-gray-200 py-6 z-50"
                     style={{
                       left: "50%",
                       transform: "translateX(-50%)",
                       maxWidth: "calc(100vw - 2rem)",
-                      marginLeft: "max(-400px, calc(-50vw + 1rem))",
-                      marginRight: "max(-400px, calc(-50vw + 1rem))",
+                      marginLeft: "max(-500px, calc(-50vw + 1rem))",
+                      marginRight: "max(-500px, calc(-50vw + 1rem))",
                     }}
                   >
-                    <div className="grid grid-cols-3 gap-4 px-6">
+                    <div className="grid grid-cols-4 gap-4 px-6">
                       {getEventsDropdownLinks(t).map((link) => (
                         <a
                           key={link.name}
                           href={link.href}
                           className="block p-4 text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-colors duration-200 rounded-lg border border-gray-100 hover:border-primary-200"
                         >
-                          <div className="font-medium text-sm mb-2">{link.name}</div>
+                          <div className="flex items-center gap-3 mb-2">
+                            <link.icon className={`w-5 h-5 ${link.iconColor}`} />
+                            <div className="font-medium text-sm">{link.name}</div>
+                          </div>
                           <div className="text-xs text-gray-500 leading-relaxed">{link.description}</div>
                         </a>
                       ))}
@@ -274,23 +314,26 @@ export default function Header() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[600px] max-w-[calc(100vw-2rem)] bg-white rounded-xl shadow-xl border border-gray-200 py-6 z-50"
+                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[1000px] max-w-[calc(100vw-2rem)] bg-white rounded-xl shadow-xl border border-gray-200 py-6 z-50"
                     style={{
                       left: "50%",
                       transform: "translateX(-50%)",
                       maxWidth: "calc(100vw - 2rem)",
-                      marginLeft: "max(-300px, calc(-50vw + 1rem))",
-                      marginRight: "max(-300px, calc(-50vw + 1rem))",
+                      marginLeft: "max(-500px, calc(-50vw + 1rem))",
+                      marginRight: "max(-500px, calc(-50vw + 1rem))",
                     }}
                   >
-                    <div className="grid grid-cols-2 gap-4 px-6">
+                    <div className="grid grid-cols-3 gap-4 px-6">
                       {getToursDropdownLinks(t).map((link) => (
                         <a
                           key={link.name}
                           href={link.href}
                           className="block p-4 text-gray-600 hover:text-secondary-600 hover:bg-secondary-50 transition-colors duration-200 rounded-lg border border-gray-100 hover:border-secondary-200"
                         >
-                          <div className="font-medium text-sm mb-2">{link.name}</div>
+                          <div className="flex items-center gap-2 mb-2">
+                            {link.icon && <link.icon className={`w-5 h-5 ${link.iconColor}`} />}
+                            <span className="font-medium text-sm">{link.name}</span>
+                          </div>
                           <div className="text-xs text-gray-500 leading-relaxed">{link.description}</div>
                         </a>
                       ))}
@@ -317,20 +360,20 @@ export default function Header() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[700px] max-w-[calc(100vw-2rem)] bg-white rounded-xl shadow-xl border border-gray-200 py-6 z-50"
+                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[1000px] max-w-[calc(100vw-2rem)] bg-white rounded-xl shadow-xl border border-gray-200 py-6 z-50"
                     style={{
                       left: "50%",
                       transform: "translateX(-50%)",
                       maxWidth: "calc(100vw - 2rem)",
-                      marginLeft: "max(-350px, calc(-50vw + 1rem))",
-                      marginRight: "max(-350px, calc(-50vw + 1rem))",
+                      marginLeft: "max(-500px, calc(-50vw + 1rem))",
+                      marginRight: "max(-500px, calc(-50vw + 1rem))",
                     }}
                   >
                     <div className="px-6">
                       <h3 className="text-lg font-semibold mb-4 text-premium-600 text-center">
                         Services
                       </h3>
-                      <div className="grid grid-cols-3 gap-4">
+                      <div className="grid grid-cols-4 gap-4">
                         {moreDropdownLinks.services.map((link) => (
                           <a
                             key={link.name}
@@ -338,6 +381,7 @@ export default function Header() {
                             className="block p-4 text-gray-600 hover:text-premium-600 hover:bg-premium-50 transition-colors duration-200 rounded-lg border border-gray-100 hover:border-premium-200"
                           >
                             <div className="flex items-center gap-2 mb-2">
+                              {link.icon && <link.icon className={`w-5 h-5 ${link.iconColor}`} />}
                               <span className="font-medium text-sm">{link.name}</span>
                               {link.href === "/matches" && (
                                 <span

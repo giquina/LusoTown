@@ -36,6 +36,7 @@ import EnhancedMatchDashboard from "@/components/matches/EnhancedMatchDashboard"
 import MatchTestimonials from "@/components/MatchTestimonials";
 import HowItWorksSection from "@/components/matches/HowItWorksSection";
 import PageHeader from "@/components/PageHeader";
+import Footer from "@/components/Footer";
 
 // Mock Portuguese profiles for demonstration
 const mockProfiles = [
@@ -1003,7 +1004,7 @@ function MatchesContent() {
                             </span>
                           </div>
                           <div className="flex items-center gap-1.5 bg-white/60 p-1.5 rounded-lg">
-                            <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                            <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
                             <span className="text-xs font-medium text-secondary-700">
                               Traditions
                             </span>
@@ -1042,7 +1043,7 @@ function MatchesContent() {
                                 </div>
                               ))}
                             <div className="flex items-center gap-2">
-                              <MapPinIcon className="w-3 h-3 text-blue-500 flex-shrink-0" />
+                              <MapPinIcon className="w-3 h-3 text-primary-500 flex-shrink-0" />
                               <span className="text-xs text-secondary-700 truncate">
                                 Near: {currentProfile.location}
                               </span>
@@ -1904,11 +1905,9 @@ export default function MatchesPage() {
         {/* How It Works Section */}
         <HowItWorksSection />
       </main>
-      <footer className="bg-gray-900 text-white py-8">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-400">© 2025 LusoTown. All rights reserved.</p>
-        </div>
-      </footer>
+      
+      {/* Proper Footer Component */}
+      <Footer />
     </>
   );
 }

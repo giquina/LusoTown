@@ -2216,7 +2216,7 @@ export default function TransportPage() {
                 </span>
               </div>
               <div className="flex items-center gap-2 text-gray-300">
-                <ClockIcon className="w-5 h-5 text-blue-400" />
+                <ClockIcon className="w-5 h-5 text-primary-400" />
                 <span className="font-semibold">
                   {isPortuguese ? "Disponível 24/7" : "Available 24/7"}
                 </span>

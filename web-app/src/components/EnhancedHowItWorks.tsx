@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { EVENTS_PRICING, formatPrice } from '@/config/pricing';
+import { ROUTES } from '@/config/routes';
 import {
   HeartIcon,
   PlayIcon,
@@ -476,7 +477,7 @@ export default function EnhancedHowItWorks() {
                 : "Join hundreds of Portuguese speakers who have already discovered their community in London"}
             </p>
             <a
-              href="/signup"
+              href={ROUTES.signup}
               className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-600 to-secondary-600 text-white font-semibold py-4 px-8 rounded-xl text-lg hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               {isPortuguese ? "Começar Grátis" : "Start Free"}

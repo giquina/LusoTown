@@ -319,87 +319,192 @@ export default function EnhancedMatchDashboard({
   return (
     <div className="min-h-screen pt-20 bg-gradient-to-br from-primary-50 via-white to-coral-50">
       <div className="max-w-7xl mx-auto px-4 py-8">
-        {/* Header */}
-        <div className="mb-8">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="p-3 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl">
-              <HeartSolid className="w-8 h-8 text-white" />
-            </div>
-            <div>
-              <h1 className="text-3xl font-bold text-primary-900">
-                {language === "pt" ? "Matches Portugueses" : "Portuguese Matches"}
-              </h1>
-              <p className="text-primary-600">
+        {/* Enhanced Header */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="relative mb-8 bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 rounded-3xl p-8 text-white overflow-hidden"
+        >
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-20">
+            <div 
+              className="absolute inset-0" 
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+              }}
+            />
+          </div>
+          
+          {/* Floating Elements */}
+          <div className="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-pulse"></div>
+          <div className="absolute -bottom-10 -left-10 w-24 h-24 bg-white/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+          
+          <div className="relative z-10 flex items-center gap-6">
+            <motion.div 
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              className="p-4 bg-white/20 backdrop-blur-sm rounded-2xl border border-white/30"
+            >
+              <HeartSolid className="w-12 h-12 text-red-500" />
+            </motion.div>
+            <div className="flex-1">
+              <motion.h1 
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-4xl font-bold mb-3"
+              >
+                {language === "pt" ? "Falantes de Português" : "Portuguese Speakers"}
+              </motion.h1>
+              <motion.p 
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3 }}
+                className="text-white/90 text-lg"
+              >
                 {language === "pt" 
-                  ? "Conecte-se com a comunidade portuguesa no Reino Unido"
-                  : "Connect with the Portuguese community in the United Kingdom"}
-              </p>
+                  ? "Conecte-se com falantes de português em todo o Reino Unido"
+                  : "Connect with Portuguese speakers across the United Kingdom"}
+              </motion.p>
             </div>
           </div>
+        </motion.div>
 
-          {/* Daily Stats */}
-          <div className="bg-white rounded-2xl p-6 shadow-lg border border-primary-100 mb-6">
-            <h3 className="text-lg font-bold text-primary-900 mb-4">
+        {/* Enhanced Daily Stats */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="mb-8"
+        >
+          <div className="text-center mb-6">
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent mb-2">
               {language === "pt" ? "Atividade de Hoje" : "Today's Activity"}
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary-900">{dailyStats.likesGiven}</div>
-                <div className="text-sm text-primary-600">
-                  {language === "pt" ? "Likes Dados" : "Likes Given"}
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary-900">{dailyStats.matchesReceived}</div>
-                <div className="text-sm text-primary-600">
-                  {language === "pt" ? "Matches Recebidos" : "Matches Received"}
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary-900">{dailyStats.conversationsStarted}</div>
-                <div className="text-sm text-primary-600">
-                  {language === "pt" ? "Conversas Iniciadas" : "Conversations Started"}
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary-900">{dailyStats.eventsBooked}</div>
-                <div className="text-sm text-primary-600">
-                  {language === "pt" ? "Eventos Reservados" : "Events Booked"}
-                </div>
-              </div>
-            </div>
+            <p className="text-gray-600">
+              {language === "pt" ? "Seu progresso diário conectando-se com outros falantes de português" : "Your daily progress connecting with fellow Portuguese speakers"}
+            </p>
           </div>
+          
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            <motion.div 
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl p-6 border border-primary-200 shadow-lg"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div className="p-3 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl">
+                  <HeartIcon className="w-6 h-6 text-white" />
+                </div>
+                <div className="text-3xl font-bold text-primary-900">{dailyStats.likesGiven}</div>
+              </div>
+              <div className="text-primary-700 font-semibold">
+                {language === "pt" ? "Likes Dados" : "Likes Given"}
+              </div>
+            </motion.div>
 
-          {/* Tab Navigation */}
-          <div className="flex bg-white rounded-2xl p-2 shadow-lg border border-primary-100 overflow-x-auto">
+            <motion.div 
+              whileHover={{ scale: 1.05, y: -5 }}
+              transition={{ delay: 0.1 }}
+              className="bg-gradient-to-br from-secondary-50 to-secondary-100 rounded-2xl p-6 border border-secondary-200 shadow-lg"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div className="p-3 bg-gradient-to-r from-secondary-500 to-secondary-600 rounded-xl">
+                  <SparklesIcon className="w-6 h-6 text-white" />
+                </div>
+                <div className="text-3xl font-bold text-secondary-900">{dailyStats.matchesReceived}</div>
+              </div>
+              <div className="text-secondary-700 font-semibold">
+                {language === "pt" ? "Matches Recebidos" : "Matches Received"}
+              </div>
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ scale: 1.05, y: -5 }}
+              transition={{ delay: 0.2 }}
+              className="bg-gradient-to-br from-accent-50 to-accent-100 rounded-2xl p-6 border border-accent-200 shadow-lg"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div className="p-3 bg-gradient-to-r from-accent-500 to-accent-600 rounded-xl">
+                  <ChatBubbleLeftRightIcon className="w-6 h-6 text-white" />
+                </div>
+                <div className="text-3xl font-bold text-accent-900">{dailyStats.conversationsStarted}</div>
+              </div>
+              <div className="text-accent-700 font-semibold">
+                {language === "pt" ? "Conversas Iniciadas" : "Conversations Started"}
+              </div>
+            </motion.div>
+
+            <motion.div 
+              whileHover={{ scale: 1.05, y: -5 }}
+              transition={{ delay: 0.3 }}
+              className="bg-gradient-to-br from-coral-50 to-coral-100 rounded-2xl p-6 border border-coral-200 shadow-lg"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div className="p-3 bg-gradient-to-r from-coral-500 to-coral-600 rounded-xl">
+                  <CalendarDaysIcon className="w-6 h-6 text-white" />
+                </div>
+                <div className="text-3xl font-bold text-coral-900">{dailyStats.eventsBooked}</div>
+              </div>
+              <div className="text-coral-700 font-semibold">
+                {language === "pt" ? "Eventos Reservados" : "Events Booked"}
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+
+          {/* Enhanced Tab Navigation */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            className="mb-8"
+          >
+            <div className="bg-white rounded-2xl p-3 shadow-xl border border-primary-200 overflow-x-auto">
+              <div className="flex gap-2">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               return (
-                <button
+                <motion.button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium whitespace-nowrap transition-all ${
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className={`flex items-center gap-3 px-6 py-4 rounded-xl text-sm font-semibold whitespace-nowrap transition-all duration-300 relative overflow-hidden ${
                     activeTab === tab.id
-                      ? "bg-gradient-to-r from-primary-600 to-secondary-600 text-white shadow-lg"
-                      : "text-primary-600 hover:text-primary-700 hover:bg-primary-50"
+                      ? "bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white shadow-xl"
+                      : "text-primary-700 hover:text-primary-800 hover:bg-gradient-to-r hover:from-primary-50 hover:to-secondary-50 hover:shadow-md"
                   }`}
                 >
-                  <Icon className="w-4 h-4" />
-                  {tab.label}
-                  {tab.count > 0 && (
-                    <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${
-                      activeTab === tab.id
-                        ? "bg-white/20 text-white"
-                        : "bg-primary-100 text-primary-700"
-                    }`}>
-                      {tab.count}
-                    </span>
+                  {/* Active Tab Glow Effect */}
+                  {activeTab === tab.id && (
+                    <motion.div
+                      layoutId="activeTab"
+                      className="absolute inset-0 bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 rounded-xl"
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                    />
                   )}
-                </button>
+                  
+                  <div className="relative z-10 flex items-center gap-3">
+                    <Icon className="w-5 h-5" />
+                    {tab.label}
+                    {tab.count > 0 && (
+                      <motion.span 
+                        whileHover={{ scale: 1.1 }}
+                        className={`px-3 py-1 rounded-full text-xs font-bold transition-colors ${
+                          activeTab === tab.id
+                            ? "bg-white/25 text-white backdrop-blur-sm"
+                            : "bg-gradient-to-r from-primary-500 to-secondary-500 text-white"
+                        }`}
+                      >
+                        {tab.count}
+                      </motion.span>
+                    )}
+                  </div>
+                </motion.button>
               );
             })}
-          </div>
-        </div>
+              </div>
+            </div>
+          </motion.div>
 
         {/* Content Area */}
         <AnimatePresence mode="wait">
