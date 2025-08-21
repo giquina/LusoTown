@@ -277,4 +277,6 @@ You are the Platform Architecture specialist overseeing the overall LusoTown pla
 5. Verify bilingual support
 6. Quality check against benchmarks
 
-*All agents must maintain these standards to ensure LusoTown platform excellence.*
+*All agents must maintain these standards to ensure LusoTown platform excellence.*- Bug fixes and improvements
+- Portuguese community enhancements
+

@@ -1,6 +1,6 @@
 # LusoTown Development Status & TODO
 
-**Last Updated: 2025-08-21**  
+**Last Updated: 8/21/2025
 **Status: Production-ready platform with 75+ pages, 180+ components**
 
 ## ✅ COMPLETED FEATURES
@@ -43,7 +43,7 @@
 ### 🔄 IN PROGRESS (Priority: URGENT)
 - [ ] **Update 61 Remaining Files** - Migrate hardcoded pricing to centralized system
 - [ ] **Translation File Cleanup** - Remove 200+ pricing strings from i18n files
-- [ ] **Business Contact Centralization** - Move university/partnership data to config
+- [x] **Business Contact Centralization** - Move university/partnership data to config
 - [ ] **Portuguese Cultural Data Config** - Centralize embassy, cultural institution data
 - [ ] **Mobile CTA Button Audit** - Fix button layouts and text overflow issues
 - [ ] **Cross-Device Testing** - Verify alignment on all screen sizes
@@ -58,9 +58,9 @@
 
 ### 🎓 Student Platform Expansion
 - [ ] **Academic Networking by University** - University-specific networking groups
-- [ ] **Career Hub Integration** - Internships and job listings for Portuguese students
-- [ ] **Study Abroad Pre-arrival** - Connect incoming students before arrival
-- [ ] **Accommodation Support Groups** - Student housing assistance networks
+- [x] **Career Hub Integration** - Internships and job listings for Portuguese students
+- [x] **Study Abroad Pre-arrival** - Connect incoming students before arrival
+- [x] **Accommodation Support Groups** - Student housing assistance networks
 
 ### 📱 Mobile App Development
 - [ ] **React Native App Completion** - Finish onboarding flow (currently at Step 3)

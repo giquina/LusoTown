@@ -4,7 +4,7 @@
  */
 
 import { brand } from './brand';
-import { contact } from './contact';
+import { contact, socialMedia, officeLocations } from './contact';
 
 // SEO Configuration
 export const seo = {

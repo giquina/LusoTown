@@ -6,7 +6,7 @@
  * This automated agent maintains up-to-date documentation by:
  * - Scanning codebase for implemented features
  * - Updating TODO.md with completion status
- * - Maintaining CLAUDE.md with current architecture
+ * - Maintaining AGENTS.md with current architecture
  * - Capturing new instructions and patterns
  * - Generating component/page counts automatically
  */
@@ -183,24 +183,24 @@ class DocumentationAgent {
   }
 
   async updateCLAUDE() {
-    console.log('📚 Updating CLAUDE.md...');
+    console.log('📚 Updating AGENTS.md...');
     
-    const claudePath = path.join(this.projectRoot, 'CLAUDE.md');
+    const agentsPath = path.join(this.projectRoot, 'AGENTS.md');
     
-    if (!fs.existsSync(claudePath)) {
-      console.warn('CLAUDE.md not found, skipping update');
+    if (!fs.existsSync(agentsPath)) {
+      console.warn('AGENTS.md not found, skipping update');
       return;
     }
 
-    let claudeContent = fs.readFileSync(claudePath, 'utf8');
+    let agentsContent = fs.readFileSync(agentsPath, 'utf8');
     let updated = false;
 
     // Update component and page counts
     const componentPattern = /(\d+)\+ components/;
     const pagePattern = /(\d+)\+ pages/;
     
-    if (componentPattern.test(claudeContent)) {
-      claudeContent = claudeContent.replace(
+    if (componentPattern.test(agentsContent)) {
+      agentsContent = agentsContent.replace(
         componentPattern,
         `${this.componentCount}+ components`
       );
@@ -208,8 +208,8 @@ class DocumentationAgent {
       this.changesSummary.push(`Updated component count to ${this.componentCount}`);
     }
 
-    if (pagePattern.test(claudeContent)) {
-      claudeContent = claudeContent.replace(
+    if (pagePattern.test(agentsContent)) {
+      agentsContent = agentsContent.replace(
         pagePattern,
         `${this.pageCount}+ pages`
       );
@@ -219,8 +219,8 @@ class DocumentationAgent {
 
     // Update status information
     const statusPattern = /\*\*Status:\*\* Production-ready - (\d+)\+ pages, (\d+)\+ components/;
-    if (statusPattern.test(claudeContent)) {
-      claudeContent = claudeContent.replace(
+    if (statusPattern.test(agentsContent)) {
+      agentsContent = agentsContent.replace(
         statusPattern,
         `**Status:** Production-ready - ${this.pageCount}+ pages, ${this.componentCount}+ components`
       );
@@ -233,8 +233,8 @@ class DocumentationAgent {
       
       // Find the latest features section and update it
       const latestFeaturesPattern = /### Recent Major Features \(.*?\)/;
-      if (latestFeaturesPattern.test(claudeContent)) {
-        claudeContent = claudeContent.replace(
+      if (latestFeaturesPattern.test(agentsContent)) {
+        agentsContent = agentsContent.replace(
           latestFeaturesPattern,
           `### Recent Major Features (${new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })})`
         );
@@ -243,8 +243,8 @@ class DocumentationAgent {
     }
 
     if (updated) {
-      fs.writeFileSync(claudePath, claudeContent);
-      this.changesSummary.push('Updated CLAUDE.md with current architecture');
+      fs.writeFileSync(agentsPath, agentsContent);
+      this.changesSummary.push('Updated AGENTS.md with current architecture');
     }
   }
 
