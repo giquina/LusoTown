@@ -27,6 +27,12 @@ import {
   GiftIcon as GiftSolidIcon 
 } from '@heroicons/react/24/solid'
 import { useLanguage } from '@/context/LanguageContext'
+import { 
+  getFormattedSubscriptionPrice,
+  getFormattedEventPrice,
+  getPricingLabels
+} from '@/lib/pricingHelpers'
+import { SUBSCRIPTION_PLANS, getPlanPrice, getFormattedPlanPrice, formatPrice } from '@/config/pricing'
 
 interface GrowthFeaturesProps {
   isOpen: boolean
@@ -292,7 +298,7 @@ export default function GrowthFeatures({
         description: isPortuguese 
           ? 'Participe no seu primeiro evento português sem custos'
           : 'Join your first Portuguese event at no cost',
-        value: '£25',
+        value: formatPrice(25),
         color: 'from-blue-500 to-blue-600',
         available: true
       },
@@ -302,7 +308,7 @@ export default function GrowthFeatures({
         description: isPortuguese
           ? 'Acesso completo a todos os recursos premium'
           : 'Full access to all premium features',
-        value: '£19.99',
+        value: getFormattedSubscriptionPrice('community', 'monthly', false, isPortuguese ? 'pt' : 'en'),
         color: 'from-purple-500 to-purple-600',
         available: userType === 'new_member'
       },
@@ -312,7 +318,7 @@ export default function GrowthFeatures({
         description: isPortuguese
           ? 'Apareça em destaque para outros portugueses'
           : 'Get highlighted to other Portuguese speakers',
-        value: '£15',
+        value: formatPrice(15),
         color: 'from-green-500 to-green-600',
         available: true
       },
@@ -322,7 +328,7 @@ export default function GrowthFeatures({
         description: isPortuguese
           ? 'Sem limites nos seus matches portugueses'
           : 'No limits on your Portuguese matches',
-        value: '£9.99',
+        value: formatPrice(9.99),
         color: 'from-pink-500 to-red-500',
         available: true
       }
@@ -405,7 +411,7 @@ export default function GrowthFeatures({
               {isPortuguese ? 'Valor Total' : 'Total Value'}
             </span>
           </div>
-          <div className="text-3xl font-bold text-purple-600 mb-2">£69.97</div>
+          <div className="text-3xl font-bold text-purple-600 mb-2">{formatPrice(69.97)}</div>
           <p className="text-purple-700 text-sm">
             {isPortuguese 
               ? 'Benefícios exclusivos para novos membros portugueses'
@@ -445,7 +451,7 @@ export default function GrowthFeatures({
         icon: CurrencyPoundIcon,
         title: isPortuguese ? '50% Desconto' : '50% Discount',
         description: isPortuguese ? 'Em todos os eventos e serviços' : 'On all events and services',
-        value: '£12.50/mês'
+        value: getFormattedPlanPrice('community', 'monthly', isPortuguese ? 'pt' : 'en').replace('£19.99', formatPrice(SUBSCRIPTION_PLANS.community.monthly * 0.5))
       },
       {
         icon: CalendarDaysIcon,
@@ -581,28 +587,28 @@ export default function GrowthFeatures({
       {
         referrals: 1,
         reward: isPortuguese ? 'Evento Grátis' : 'Free Event',
-        value: '£25',
+        value: formatPrice(25),
         icon: CalendarDaysIcon,
         color: 'from-green-500 to-green-600'
       },
       {
         referrals: 3,
         reward: isPortuguese ? 'Mês Premium' : 'Premium Month',
-        value: '£19.99',
+        value: getFormattedSubscriptionPrice('community', 'monthly', false, isPortuguese ? 'pt' : 'en'),
         icon: StarSolidIcon,
         color: 'from-purple-500 to-purple-600'
       },
       {
         referrals: 5,
         reward: isPortuguese ? '3 Meses Premium' : '3 Premium Months',
-        value: '£59.97',
+        value: formatPrice(getPlanPrice('community', 'monthly') * 3),
         icon: TrophyIcon,
         color: 'from-yellow-500 to-orange-500'
       },
       {
         referrals: 10,
         reward: isPortuguese ? 'Ano Premium Grátis' : 'Free Premium Year',
-        value: '£239.88',
+        value: formatPrice(getPlanPrice('community', 'annual')),
         icon: CreditCardIcon,
         color: 'from-blue-500 to-blue-600'
       }
@@ -834,9 +840,9 @@ export default function GrowthFeatures({
               <div className="text-3xl font-bold text-yellow-600 mb-2">
                 {isPortuguese ? '7 Dias Grátis' : '7 Days Free'}
               </div>
-              <div className="text-sm text-gray-600 line-through mb-1">£19.99/mês</div>
+              <div className="text-sm text-gray-600 line-through mb-1">{getFormattedPlanPrice('community', 'monthly', isPortuguese ? 'pt' : 'en')}</div>
               <div className="text-lg font-bold text-gray-900">
-                {isPortuguese ? 'Depois £19.99/mês' : 'Then £19.99/month'}
+                {isPortuguese ? `Depois ${getFormattedPlanPrice('community', 'monthly', 'pt')}` : `Then ${getFormattedPlanPrice('community', 'monthly', 'en')}`}
               </div>
             </div>
             

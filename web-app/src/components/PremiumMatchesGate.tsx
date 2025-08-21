@@ -16,7 +16,7 @@ import {
   Lock,
   Zap,
 } from "lucide-react";
-import { SUBSCRIPTION_PLANS, formatPrice, getPlanLabel, getFormattedPlanPrice } from "@/config/pricing";
+import { SUBSCRIPTION_PLANS, formatPrice, getPlanLabel, getFormattedPlanPrice, plans } from "@/config/pricing";
 
 export default function PremiumMatchesGate() {
   const { language } = useLanguage();
@@ -55,22 +55,6 @@ export default function PremiumMatchesGate() {
         monthly: "Monthly",
         yearly: "Yearly",
         save: "Save 20%",
-        community: {
-          name: "Community Member",
-          price: formatPrice(plans.community.monthly),
-          period: "/month",
-          yearlyPrice: formatPrice(199),
-          yearlyMonthly: `${formatPrice(16.58)}/month`,
-          description: "Perfect for connecting with Portuguese speakers",
-        },
-        ambassador: {
-          name: "Cultural Ambassador",
-          price: formatPrice(plans.ambassador.monthly),
-          period: "/month",
-          yearlyPrice: formatPrice(399),
-          yearlyMonthly: `${formatPrice(33.25)}/month`,
-          description: "Ideal for active community builders",
-        },
       },
       buttons: {
         upgrade: "Upgrade to Premium",
@@ -122,22 +106,6 @@ export default function PremiumMatchesGate() {
         monthly: "Mensal",
         yearly: "Anual",
         save: "Poupe 20%",
-        community: {
-          name: "Membro da Comunidade",
-          price: formatPrice(plans.community.monthly),
-          period: "/mês",
-          yearlyPrice: formatPrice(199),
-          yearlyMonthly: `${formatPrice(16.58)}/mês`,
-          description: "Perfeito para conectar com falantes de português",
-        },
-        ambassador: {
-          name: "Embaixador Cultural",
-          price: formatPrice(plans.ambassador.monthly),
-          period: "/mês",
-          yearlyPrice: formatPrice(399),
-          yearlyMonthly: `${formatPrice(33.25)}/mês`,
-          description: "Ideal para construtores ativos da comunidade",
-        },
       },
       buttons: {
         upgrade: "Upgrade para Premium",
@@ -168,9 +136,9 @@ export default function PremiumMatchesGate() {
   const tiers = [
     {
       name: "Free Matching",
-      price: "£0",
-      yearlyPrice: "£0",
-      period: "/month",
+      price: formatPrice(0),
+      yearlyPrice: formatPrice(0),
+      period: language === 'pt' ? '/mês' : '/month',
       description:
         language === "pt"
           ? "Comece a conectar com a comunidade"
@@ -453,20 +421,16 @@ export default function PremiumMatchesGate() {
                 className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-lg"
               >
                 {language === "pt"
-                  ? `Começar por ${formatPrice(plans.community.monthly)}/mês`
-                  : `Start at ${formatPrice(plans.community.monthly)}/month`}
+                  ? `Começar por ${getFormattedPlanPrice('community', 'monthly', 'pt')}`
+                  : `Start at ${getFormattedPlanPrice('community', 'monthly', 'en')}`}
               </button>
               <button
                 onClick={() => handleUpgrade("ambassador")}
                 className="bg-secondary-600 hover:bg-secondary-700 text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-lg"
               >
                 {language === "pt"
-                  ? `Embaixador por ${formatPrice(
-                      plans.ambassador.monthly
-                    )}/mês`
-                  : `Ambassador at ${formatPrice(
-                      plans.ambassador.monthly
-                    )}/month`}
+                  ? `Embaixador por ${getFormattedPlanPrice('ambassador', 'monthly', 'pt')}`
+                  : `Ambassador at ${getFormattedPlanPrice('ambassador', 'monthly', 'en')}`}
               </button>
             </div>
           </div>
