@@ -223,7 +223,7 @@ export default function PortugueseCulturalCalendar() {
         familyFriendly: true,
         religiousSignificance: 'Honors the Holy Spirit through acts of charity and community sharing',
         emoji: '👑',
-        color: 'from-red-600 to-purple-600',
+        color: 'from-red-600 to-accent-600',
         isUserFavorite: false,
         reminderSet: false
       },
@@ -339,7 +339,7 @@ export default function PortugueseCulturalCalendar() {
         modernAdaptations: ['indoor celebrations', 'multicultural influences', 'family-friendly timing'],
         familyFriendly: true,
         emoji: '🎭',
-        color: 'from-purple-500 to-pink-500',
+        color: 'from-accent-500 to-pink-500',
         isUserFavorite: false,
         reminderSet: false
       }
@@ -347,7 +347,7 @@ export default function PortugueseCulturalCalendar() {
   }, [])
 
   const celebrationTypes = [
-    { key: 'religious', nameEn: 'Religious', namePt: 'Religiosas', color: 'bg-purple-100 text-purple-700', icon: '⛪' },
+    { key: 'religious', nameEn: 'Religious', namePt: 'Religiosas', color: 'bg-accent-100 text-accent-700', icon: '⛪' },
     { key: 'national', nameEn: 'National', namePt: 'Nacionais', color: 'bg-green-100 text-green-700', icon: '🇵🇹' },
     { key: 'regional', nameEn: 'Regional', namePt: 'Regionais', color: 'bg-blue-100 text-primary-700', icon: '🏝️' },
     { key: 'traditional', nameEn: 'Traditional', namePt: 'Tradicionais', color: 'bg-yellow-100 text-yellow-700', icon: '🎉' },
@@ -451,7 +451,7 @@ export default function PortugueseCulturalCalendar() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 whileHover={{ y: -5 }}
-                className="bg-white rounded-3xl p-6 shadow-xl border border-gray-100 cursor-pointer transform transition-all hover:shadow-2xl"
+                className="bg-white rounded-3xl p-6 shadow-xl border border-secondary-100 cursor-pointer transform transition-all hover:shadow-2xl"
                 onClick={() => setSelectedEvent(event)}
               >
                 {/* Event Header */}
@@ -636,7 +636,7 @@ export default function PortugueseCulturalCalendar() {
               >
                 <div className="absolute left-6 w-5 h-5 bg-white border-4 border-secondary-500 rounded-full"></div>
                 
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                <div className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
                       <div className="text-2xl">{event.emoji}</div>
@@ -746,7 +746,7 @@ export default function PortugueseCulturalCalendar() {
             key={region.key}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+            className="bg-white rounded-3xl p-8 shadow-xl border border-secondary-100"
           >
             <div className="flex items-center gap-4 mb-6">
               <div className="text-4xl">{region.flag}</div>
@@ -765,7 +765,7 @@ export default function PortugueseCulturalCalendar() {
                 {regionEvents.map((event) => (
                   <div
                     key={event.id}
-                    className="border border-gray-200 rounded-2xl p-4 hover:shadow-lg transition-all cursor-pointer"
+                    className="border border-secondary-200 rounded-2xl p-4 hover:shadow-lg transition-all cursor-pointer"
                     onClick={() => setSelectedEvent(event)}
                   >
                     <div className="flex items-center gap-3 mb-3">
@@ -862,7 +862,7 @@ export default function PortugueseCulturalCalendar() {
         </div>
 
         {/* Filters and View Controls */}
-        <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 mb-8">
+        <div className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100 mb-8">
           <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
             <div className="flex flex-wrap items-center gap-4">
               {/* View Mode Toggle */}
@@ -1099,7 +1099,7 @@ export default function PortugueseCulturalCalendar() {
                           ))}
                         </div>
                       ) : (
-                        <div className="bg-gray-50 rounded-2xl p-6 text-center">
+                        <div className="bg-secondary-50 rounded-2xl p-6 text-center">
                           <CalendarDaysIcon className="w-12 h-12 text-gray-300 mx-auto mb-3" />
                           <p className="text-secondary-600 mb-4">
                             {t('calendar.no_london_events', 'No London events scheduled yet')}

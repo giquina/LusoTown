@@ -109,19 +109,19 @@ const StrategicPartnershipDashboard: React.FC = () => {
   const getCategoryColor = (category: string) => {
     const colors = {
       government_diplomatic: 'bg-blue-100 text-primary-700 border-blue-200',
-      cultural_educational: 'bg-purple-100 text-purple-700 border-purple-200',
+      cultural_educational: 'bg-accent-100 text-accent-700 border-accent-200',
       business_professional: 'bg-green-100 text-green-700 border-green-200',
       community_religious: 'bg-red-100 text-red-700 border-red-200',
       media_sports: 'bg-yellow-100 text-yellow-700 border-yellow-200'
     }
-    return colors[category as keyof typeof colors] || 'bg-secondary-100 text-secondary-700 border-gray-200'
+    return colors[category as keyof typeof colors] || 'bg-secondary-100 text-secondary-700 border-secondary-200'
   }
 
   const getStageColor = (stage: PartnershipOutreach['outreachStage']) => {
     const colors = {
       research: 'bg-secondary-100 text-secondary-700',
       initial_contact: 'bg-blue-100 text-primary-700',
-      meeting_scheduled: 'bg-purple-100 text-purple-700',
+      meeting_scheduled: 'bg-accent-100 text-accent-700',
       proposal_sent: 'bg-yellow-100 text-yellow-700',
       negotiations: 'bg-orange-100 text-orange-700',
       agreement: 'bg-green-100 text-green-700'
@@ -221,7 +221,7 @@ const StrategicPartnershipDashboard: React.FC = () => {
           {/* Key Metrics */}
           {metrics && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+              <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
                 <div className="flex items-center">
                   <HeartIcon className="w-8 h-8 text-primary-500" />
                   <div className="ml-4">
@@ -236,7 +236,7 @@ const StrategicPartnershipDashboard: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+              <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
                 <div className="flex items-center">
                   <CurrencyPoundIcon className="w-8 h-8 text-accent-500" />
                   <div className="ml-4">
@@ -251,7 +251,7 @@ const StrategicPartnershipDashboard: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+              <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
                 <div className="flex items-center">
                   <StarIcon className="w-8 h-8 text-premium-500" />
                   <div className="ml-4">
@@ -269,7 +269,7 @@ const StrategicPartnershipDashboard: React.FC = () => {
           )}
 
           {/* High Priority Actions */}
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+          <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
               {language === 'pt' ? 'Ações Prioritárias' : 'Priority Actions'}
             </h3>
@@ -299,14 +299,14 @@ const StrategicPartnershipDashboard: React.FC = () => {
           </div>
 
           {/* Recommendations */}
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+          <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
               {language === 'pt' ? 'Recomendações Estratégicas' : 'Strategic Recommendations'}
             </h3>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {recommendations.slice(0, 4).map((rec, index) => (
-                <div key={index} className="p-4 border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                <div key={index} className="p-4 border border-secondary-200 rounded-lg hover:shadow-md transition-shadow">
                   <div className="flex items-center justify-between mb-2">
                     <h4 className="font-medium text-gray-900">{rec.institution}</h4>
                     <span className={`text-xs font-semibold ${getPriorityColor(rec.priority)}`}>
@@ -350,7 +350,7 @@ const StrategicPartnershipDashboard: React.FC = () => {
             {strategies
               .filter(strategy => selectedCategory === 'all' || strategy.category === selectedCategory)
               .map((strategy) => (
-                <div key={strategy.id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                <div key={strategy.id} className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center space-x-3">
                       <div className={`p-2 rounded-lg ${getCategoryColor(strategy.category)}`}>
@@ -412,10 +412,10 @@ const StrategicPartnershipDashboard: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <div className="bg-white rounded-xl shadow-sm border border-secondary-100 overflow-hidden">
             <div className="divide-y divide-gray-200">
               {outreachPipeline.map((item) => (
-                <div key={item.id} className="p-6 hover:bg-gray-50 transition-colors">
+                <div key={item.id} className="p-6 hover:bg-secondary-50 transition-colors">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center space-x-3 mb-2">
@@ -497,7 +497,7 @@ const StrategicPartnershipDashboard: React.FC = () => {
           {/* Performance Metrics Grid */}
           {metrics && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+              <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-secondary-600">
@@ -510,7 +510,7 @@ const StrategicPartnershipDashboard: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+              <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-secondary-600">
@@ -523,7 +523,7 @@ const StrategicPartnershipDashboard: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+              <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-secondary-600">
@@ -536,7 +536,7 @@ const StrategicPartnershipDashboard: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+              <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-secondary-600">
@@ -552,7 +552,7 @@ const StrategicPartnershipDashboard: React.FC = () => {
           )}
 
           {/* Success Stories */}
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+          <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
               {language === 'pt' ? 'Histórias de Sucesso' : 'Success Stories'}
             </h3>

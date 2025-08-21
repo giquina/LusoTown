@@ -414,7 +414,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
     { id: 'common', name: 'Common', namePt: 'Comum', color: 'text-secondary-600' },
     { id: 'uncommon', name: 'Uncommon', namePt: 'Incomum', color: 'text-action-600' },
     { id: 'rare', name: 'Rare', namePt: 'Raro', color: 'text-primary-600' },
-    { id: 'epic', name: 'Epic', namePt: 'Épico', color: 'text-purple-600' },
+    { id: 'epic', name: 'Epic', namePt: 'Épico', color: 'text-accent-600' },
     { id: 'legendary', name: 'Legendary', namePt: 'Lendário', color: 'text-yellow-600' }
   ];
 
@@ -494,7 +494,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-accent-50 via-pink-50 to-primary-50">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -523,13 +523,13 @@ const PortugueseCulturalNFTs: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={connectWallet}
-                className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-3 rounded-lg font-semibold flex items-center space-x-2 shadow-lg hover:shadow-xl transition-all"
+                className="bg-gradient-to-r from-accent-600 to-primary-600 text-white px-8 py-3 rounded-lg font-semibold flex items-center space-x-2 shadow-lg hover:shadow-xl transition-all"
               >
                 <Wallet className="h-5 w-5" />
                 <span>{language === 'pt' ? 'Conectar Carteira' : 'Connect Wallet'}</span>
               </motion.button>
             ) : (
-              <div className="bg-white border border-gray-200 rounded-lg px-6 py-3 flex items-center space-x-3 shadow-sm">
+              <div className="bg-white border border-secondary-200 rounded-lg px-6 py-3 flex items-center space-x-3 shadow-sm">
                 <div className="w-3 h-3 bg-action-500 rounded-full"></div>
                 <span className="text-sm font-medium text-secondary-700">
                   {language === 'pt' ? 'Conectado:' : 'Connected:'} {userAddress}
@@ -577,15 +577,15 @@ const PortugueseCulturalNFTs: React.FC = () => {
                     <div className="p-6">
                       <div className="grid grid-cols-3 gap-4 text-center">
                         <div>
-                          <div className="text-2xl font-bold text-purple-600">{collection.totalItems}</div>
+                          <div className="text-2xl font-bold text-accent-600">{collection.totalItems}</div>
                           <div className="text-sm text-gray-500">{language === 'pt' ? 'Itens' : 'Items'}</div>
                         </div>
                         <div>
-                          <div className="text-2xl font-bold text-purple-600">{collection.floorPrice} ETH</div>
+                          <div className="text-2xl font-bold text-accent-600">{collection.floorPrice} ETH</div>
                           <div className="text-sm text-gray-500">{language === 'pt' ? 'Preço Mínimo' : 'Floor Price'}</div>
                         </div>
                         <div>
-                          <div className="text-2xl font-bold text-purple-600">{collection.totalVolume}</div>
+                          <div className="text-2xl font-bold text-accent-600">{collection.totalVolume}</div>
                           <div className="text-sm text-gray-500">{language === 'pt' ? 'Volume Total' : 'Total Volume'}</div>
                         </div>
                       </div>
@@ -597,7 +597,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
 
             {/* Filters */}
             <div className="mb-8">
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <div className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                   <div>
                     <label className="block text-sm font-medium text-secondary-700 mb-2">
@@ -608,7 +608,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
                       placeholder={language === 'pt' ? 'Pesquisar NFTs...' : 'Search NFTs...'}
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-transparent"
                     />
                   </div>
                   
@@ -619,7 +619,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
                     <select
                       value={selectedCategory}
                       onChange={(e) => setSelectedCategory(e.target.value)}
-                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-transparent"
                     >
                       {categories.map(category => (
                         <option key={category.id} value={category.id}>
@@ -636,7 +636,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
                     <select
                       value={rarityFilter}
                       onChange={(e) => setRarityFilter(e.target.value)}
-                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-transparent"
                     >
                       {rarities.map(rarity => (
                         <option key={rarity.id} value={rarity.id}>
@@ -653,7 +653,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
                     <select
                       value={sortBy}
                       onChange={(e) => setSortBy(e.target.value)}
-                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-accent-500 focus:border-transparent"
                     >
                       <option value="newest">{language === 'pt' ? 'Mais Recente' : 'Newest'}</option>
                       <option value="oldest">{language === 'pt' ? 'Mais Antigo' : 'Oldest'}</option>
@@ -672,7 +672,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
                     <button
                       onClick={() => setViewMode('grid')}
                       className={`p-2 rounded-lg transition-colors ${
-                        viewMode === 'grid' ? 'bg-purple-100 text-purple-600' : 'text-gray-400 hover:text-secondary-600'
+                        viewMode === 'grid' ? 'bg-accent-100 text-accent-600' : 'text-gray-400 hover:text-secondary-600'
                       }`}
                     >
                       🗳️
@@ -680,7 +680,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
                     <button
                       onClick={() => setViewMode('list')}
                       className={`p-2 rounded-lg transition-colors ${
-                        viewMode === 'list' ? 'bg-purple-100 text-purple-600' : 'text-gray-400 hover:text-secondary-600'
+                        viewMode === 'list' ? 'bg-accent-100 text-accent-600' : 'text-gray-400 hover:text-secondary-600'
                       }`}
                     >
                       📋
@@ -757,7 +757,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
                       </div>
                       <div className="ml-4">
                         <div className="text-right">
-                          <div className="text-2xl font-bold text-purple-600">
+                          <div className="text-2xl font-bold text-accent-600">
                             {formatPrice(nft.nft.currentPrice.amount, nft.nft.currentPrice.currency)}
                           </div>
                           <div className="text-xs text-gray-500">
@@ -818,13 +818,13 @@ const PortugueseCulturalNFTs: React.FC = () => {
           /* NFT Detail View */
           <div className="bg-white rounded-xl shadow-lg overflow-hidden">
             {/* NFT Header */}
-            <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-6">
+            <div className="bg-gradient-to-r from-accent-600 to-primary-600 text-white p-6">
               <div className="flex items-center justify-between">
                 <div>
                   <h2 className="text-3xl font-bold mb-2">
                     {language === 'pt' ? selectedNFT.titlePt : selectedNFT.title}
                   </h2>
-                  <p className="text-purple-100">
+                  <p className="text-accent-100">
                     {language === 'pt' ? selectedNFT.culturalOrigin.regionPt : selectedNFT.culturalOrigin.region} • {selectedNFT.culturalOrigin.period}
                   </p>
                 </div>
@@ -834,7 +834,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
                   </button>
                   <button
                     onClick={() => setSelectedNFT(null)}
-                    className="text-purple-100 hover:text-white transition-colors"
+                    className="text-accent-100 hover:text-white transition-colors"
                   >
                     ← {language === 'pt' ? 'Voltar' : 'Back'}
                   </button>
@@ -886,7 +886,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
                 
                 {/* Audio Player */}
                 {selectedNFT.nft.audioUrl && (
-                  <div className="mt-4 bg-gray-50 rounded-lg p-4">
+                  <div className="mt-4 bg-secondary-50 rounded-lg p-4">
                     <div className="flex items-center space-x-3 mb-2">
                       <div className="text-lg">🎵</div>
                       <div className="font-semibold">
@@ -903,13 +903,13 @@ const PortugueseCulturalNFTs: React.FC = () => {
               {/* NFT Information */}
               <div className="space-y-6">
                 {/* Price and Purchase */}
-                <div className="bg-gray-50 rounded-xl p-6">
+                <div className="bg-secondary-50 rounded-xl p-6">
                   <div className="flex items-center justify-between mb-4">
                     <div>
                       <div className="text-sm text-gray-500 mb-1">
                         {language === 'pt' ? 'Preço Atual' : 'Current Price'}
                       </div>
-                      <div className="text-3xl font-bold text-purple-600">
+                      <div className="text-3xl font-bold text-accent-600">
                         {formatPrice(selectedNFT.nft.currentPrice.amount, selectedNFT.nft.currentPrice.currency)}
                       </div>
                     </div>
@@ -929,7 +929,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
                         <motion.button
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
-                          className="bg-purple-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-purple-700 transition-colors flex items-center justify-center space-x-2"
+                          className="bg-accent-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-accent-700 transition-colors flex items-center justify-center space-x-2"
                         >
                           <Wallet className="h-5 w-5" />
                           <span>{language === 'pt' ? 'Comprar Agora' : 'Buy Now'}</span>
@@ -937,7 +937,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
                         <motion.button
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
-                          className="border border-purple-600 text-purple-600 py-3 px-4 rounded-lg font-semibold hover:bg-purple-50 transition-colors flex items-center justify-center space-x-2"
+                          className="border border-accent-600 text-accent-600 py-3 px-4 rounded-lg font-semibold hover:bg-accent-50 transition-colors flex items-center justify-center space-x-2"
                         >
                           <Tag className="h-5 w-5" />
                           <span>{language === 'pt' ? 'Fazer Oferta' : 'Make Offer'}</span>
@@ -948,7 +948,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         onClick={connectWallet}
-                        className="col-span-2 bg-gray-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-gray-700 transition-colors flex items-center justify-center space-x-2"
+                        className="col-span-2 bg-secondary-600 text-white py-3 px-4 rounded-lg font-semibold hover:bg-secondary-700 transition-colors flex items-center justify-center space-x-2"
                       >
                         <Wallet className="h-5 w-5" />
                         <span>{language === 'pt' ? 'Conectar Carteira para Comprar' : 'Connect Wallet to Purchase'}</span>
@@ -1027,7 +1027,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
                         <div className="flex items-center space-x-2">
                           <div className="flex-1 bg-secondary-200 rounded-full h-2">
                             <div
-                              className="bg-purple-500 h-2 rounded-full"
+                              className="bg-accent-500 h-2 rounded-full"
                               style={{ width: `${selectedNFT.culturalAuthenticity.culturalSignificance}%` }}
                             ></div>
                           </div>
@@ -1057,7 +1057,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
                   </h3>
                   <div className="grid grid-cols-1 gap-3">
                     {selectedNFT.metadata.attributes.map((attribute, index) => (
-                      <div key={index} className="bg-gray-50 rounded-lg p-4">
+                      <div key={index} className="bg-secondary-50 rounded-lg p-4">
                         <div className="flex items-center justify-between">
                           <div>
                             <div className="font-semibold text-secondary-800">{attribute.trait_type}</div>
@@ -1067,7 +1067,7 @@ const PortugueseCulturalNFTs: React.FC = () => {
                             <div className="text-sm text-gray-500">
                               {language === 'pt' ? 'Raridade' : 'Rarity'}
                             </div>
-                            <div className="font-semibold text-purple-600">{attribute.rarity_percentage}%</div>
+                            <div className="font-semibold text-accent-600">{attribute.rarity_percentage}%</div>
                           </div>
                         </div>
                       </div>
@@ -1081,20 +1081,20 @@ const PortugueseCulturalNFTs: React.FC = () => {
                     {language === 'pt' ? 'Envolvimento' : 'Engagement'}
                   </h3>
                   <div className="grid grid-cols-4 gap-4 text-center">
-                    <div className="bg-gray-50 rounded-lg p-4">
+                    <div className="bg-secondary-50 rounded-lg p-4">
                       <div className="text-2xl font-bold text-secondary-800">{selectedNFT.engagement.views.toLocaleString()}</div>
                       <div className="text-sm text-gray-500">{language === 'pt' ? 'Visualizações' : 'Views'}</div>
                     </div>
-                    <div className="bg-gray-50 rounded-lg p-4">
+                    <div className="bg-secondary-50 rounded-lg p-4">
                       <div className="text-2xl font-bold text-coral-500">{selectedNFT.engagement.likes.toLocaleString()}</div>
                       <div className="text-sm text-gray-500">{language === 'pt' ? 'Curtidas' : 'Likes'}</div>
                     </div>
-                    <div className="bg-gray-50 rounded-lg p-4">
+                    <div className="bg-secondary-50 rounded-lg p-4">
                       <div className="text-2xl font-bold text-primary-500">{selectedNFT.engagement.shares.toLocaleString()}</div>
                       <div className="text-sm text-gray-500">{language === 'pt' ? 'Compartilhamentos' : 'Shares'}</div>
                     </div>
-                    <div className="bg-gray-50 rounded-lg p-4">
-                      <div className="text-2xl font-bold text-purple-500">{selectedNFT.engagement.favorites.toLocaleString()}</div>
+                    <div className="bg-secondary-50 rounded-lg p-4">
+                      <div className="text-2xl font-bold text-accent-500">{selectedNFT.engagement.favorites.toLocaleString()}</div>
                       <div className="text-sm text-gray-500">{language === 'pt' ? 'Favoritos' : 'Favorites'}</div>
                     </div>
                   </div>

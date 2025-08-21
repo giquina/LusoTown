@@ -29,7 +29,7 @@ export default function UnifiedExperiencePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
 
       <main className="pt-20">
         {/* Hero Section */}

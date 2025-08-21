@@ -736,7 +736,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
               className={`px-6 py-3 rounded-lg font-medium transition-colors ${
                 selectedCenter === center.id
                   ? 'bg-primary-500 text-white'
-                  : 'bg-white border border-secondary-300 text-secondary-700 hover:bg-gray-50'
+                  : 'bg-white border border-secondary-300 text-secondary-700 hover:bg-secondary-50'
               }`}
             >
               {language === 'pt' ? center.namePortuguese : center.name}
@@ -748,7 +748,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
       {/* Selected Center Details */}
       {selectedCenterData && (
         <div className="mb-12">
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+          <div className="bg-white rounded-xl shadow-sm border border-secondary-200 overflow-hidden">
             <div className="bg-gradient-to-r from-primary-500 to-secondary-500 p-6 text-white">
               <div className="flex items-start justify-between">
                 <div>
@@ -833,7 +833,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
               </div>
 
               {/* Director Information */}
-              <div className="bg-gray-50 rounded-lg p-6 mb-8">
+              <div className="bg-secondary-50 rounded-lg p-6 mb-8">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">
                   {language === 'pt' ? 'Informações de Contacto' : 'Contact Information'}
                 </h3>
@@ -881,7 +881,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {selectedCenterData.membershipTiers.map((tier) => (
-                    <div key={tier.id} className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+                    <div key={tier.id} className="bg-white border border-secondary-200 rounded-lg p-6 hover:shadow-md transition-shadow">
                       <div className="text-center mb-4">
                         <h4 className="text-lg font-semibold text-gray-900">
                           {language === 'pt' ? tier.namePortuguese : tier.name}
@@ -940,7 +940,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {featuredPrograms.map((program) => (
-            <div key={program.id} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
+            <div key={program.id} className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6 hover:shadow-md transition-shadow">
               <div className="flex items-center justify-between mb-4">
                 <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
                   {program.category.replace('_', ' ')}
@@ -984,7 +984,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
                 </div>
               </div>
 
-              <div className="border-t border-gray-200 pt-4 mb-4">
+              <div className="border-t border-secondary-200 pt-4 mb-4">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-lg font-bold text-gray-900">{formatCurrency(program.memberPrice)}</p>
@@ -1027,7 +1027,7 @@ const CamoesInstitutesIntegration: React.FC = () => {
         
         <div className="space-y-6">
           {languageCertifications.map((cert) => (
-            <div key={cert.id} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div key={cert.id} className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <div className="flex items-center space-x-3 mb-2">

@@ -522,7 +522,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
       proposed: 'bg-blue-100 text-blue-800',
       open: 'bg-green-100 text-green-800',
       closed: 'bg-red-100 text-red-800',
-      upcoming: 'bg-purple-100 text-purple-800'
+      upcoming: 'bg-accent-100 text-accent-800'
     }
     return colors[status as keyof typeof colors] || 'bg-secondary-100 text-secondary-800'
   }
@@ -627,13 +627,13 @@ const PortugalGovernmentIntegration: React.FC = () => {
         
         <div className="grid gap-6">
           {governmentPartnerships.map((partnership) => (
-            <div key={partnership.id} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
+            <div key={partnership.id} className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6 hover:shadow-md transition-shadow">
               <div className="flex items-start justify-between mb-6">
                 <div className="flex items-center space-x-4">
                   <img 
                     src={partnership.logo} 
                     alt={`${partnership.institution} logo`}
-                    className="w-16 h-16 rounded-lg object-contain bg-gray-50 p-2"
+                    className="w-16 h-16 rounded-lg object-contain bg-secondary-50 p-2"
                     onError={(e) => {
                       e.currentTarget.src = '/images/government/placeholder-gov.png'
                     }}
@@ -671,7 +671,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                <div className="bg-gray-50 rounded-lg p-4">
+                <div className="bg-secondary-50 rounded-lg p-4">
                   <h4 className="font-semibold text-gray-900 mb-3">
                     {language === 'pt' ? 'Serviços Oferecidos' : 'Services Offered'}
                   </h4>
@@ -685,7 +685,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
                   </ul>
                 </div>
 
-                <div className="bg-gray-50 rounded-lg p-4">
+                <div className="bg-secondary-50 rounded-lg p-4">
                   <h4 className="font-semibold text-gray-900 mb-3">
                     {language === 'pt' ? 'Impacto Comunitário' : 'Community Impact'}
                   </h4>
@@ -705,7 +705,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-gray-50 rounded-lg p-4">
+                <div className="bg-secondary-50 rounded-lg p-4">
                   <h4 className="font-semibold text-gray-900 mb-3">
                     {language === 'pt' ? 'Contacto Principal' : 'Key Contact'}
                   </h4>
@@ -730,7 +730,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex justify-between items-center pt-4 border-t border-gray-200">
+              <div className="flex justify-between items-center pt-4 border-t border-secondary-200">
                 <div className="text-sm text-secondary-600">
                   {language === 'pt' ? 'Financiamento disponibilizado:' : 'Funding provided:'} <span className="font-semibold text-action-600">{formatCurrency(partnership.fundingProvided)}</span>
                 </div>
@@ -751,7 +751,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {culturalPrograms.map((program) => (
-            <div key={program.id} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
+            <div key={program.id} className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6 hover:shadow-md transition-shadow">
               <div className="flex items-center justify-between mb-4">
                 <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(program.status)}`}>
                   {program.status.charAt(0).toUpperCase() + program.status.slice(1)}
@@ -840,7 +840,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
         
         <div className="space-y-6">
           {diasporaSupport.map((service) => (
-            <div key={service.id} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div key={service.id} className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
@@ -887,7 +887,7 @@ const PortugalGovernmentIntegration: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-4 mb-6">
+              <div className="bg-secondary-50 rounded-lg p-4 mb-6">
                 <h4 className="font-semibold text-gray-900 mb-3">
                   {language === 'pt' ? 'Informações de Contacto:' : 'Contact Information:'}
                 </h4>

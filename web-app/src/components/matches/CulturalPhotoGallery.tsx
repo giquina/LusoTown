@@ -57,10 +57,10 @@ export default function CulturalPhotoGallery({
       emerald: 'bg-emerald-100 text-emerald-700 border-emerald-200',
       blue: 'bg-blue-100 text-primary-700 border-blue-200',
       orange: 'bg-orange-100 text-orange-700 border-orange-200',
-      purple: 'bg-purple-100 text-purple-700 border-purple-200',
+      purple: 'bg-accent-100 text-accent-700 border-accent-200',
       pink: 'bg-pink-100 text-pink-700 border-pink-200',
-      indigo: 'bg-indigo-100 text-indigo-700 border-indigo-200',
-      slate: 'bg-slate-100 text-slate-700 border-slate-200',
+      indigo: 'bg-primary-100 text-primary-700 border-primary-200',
+      slate: 'bg-secondary-100 text-secondary-700 border-secondary-200',
       yellow: 'bg-yellow-100 text-yellow-700 border-yellow-200'
     }
     return colors[color as keyof typeof colors] || colors.emerald
@@ -75,7 +75,7 @@ export default function CulturalPhotoGallery({
       case 'rejected':
         return 'bg-red-100 text-red-700 border-red-200'
       default:
-        return 'bg-secondary-100 text-secondary-700 border-gray-200'
+        return 'bg-secondary-100 text-secondary-700 border-secondary-200'
     }
   }
 
@@ -332,7 +332,7 @@ export default function CulturalPhotoGallery({
                     </h4>
                     <div className="space-y-2">
                       {currentPhoto.detectedElements.map((element) => (
-                        <div key={element.id} className="bg-gray-50 rounded-lg p-3">
+                        <div key={element.id} className="bg-secondary-50 rounded-lg p-3">
                           <div className="flex items-center justify-between mb-1">
                             <span className="font-medium text-gray-900">
                               {language === 'pt' ? element.namePortuguese : element.name}
@@ -358,7 +358,7 @@ export default function CulturalPhotoGallery({
                     </h4>
                     <div className="space-y-2">
                       {currentPhoto.verificationBadges.map((badge) => (
-                        <div key={badge.id} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                        <div key={badge.id} className="flex items-center gap-3 p-3 bg-secondary-50 rounded-lg">
                           <span className="text-2xl">{badge.icon}</span>
                           <div className="flex-1">
                             <div className="font-medium text-gray-900">

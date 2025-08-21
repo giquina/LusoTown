@@ -258,7 +258,7 @@ export default function PortugueseBusinessConversationStarters({
     if (popularity >= 90) return "text-action-600 bg-green-50";
     if (popularity >= 80) return "text-primary-600 bg-blue-50";
     if (popularity >= 70) return "text-yellow-600 bg-yellow-50";
-    return "text-secondary-600 bg-gray-50";
+    return "text-secondary-600 bg-secondary-50";
   };
 
   const getPopularityIcon = (popularity: number) => {
@@ -454,7 +454,7 @@ export default function PortugueseBusinessConversationStarters({
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <ArrowTrendingUpIcon className="w-3 h-3 text-purple-500" />
+              <ArrowTrendingUpIcon className="w-3 h-3 text-accent-500" />
               <span>
                 {language === "pt"
                   ? "Partilhe insights sobre mercados português e britânico"

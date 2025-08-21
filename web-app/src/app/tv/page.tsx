@@ -225,7 +225,7 @@ export default function TVPage() {
       </section>
 
       {/* Navigation Tabs */}
-      <section className="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
+      <section className="sticky top-16 z-40 bg-white border-b border-secondary-200 shadow-sm">
         <div className="container-width">
           <div className="flex overflow-x-auto">
             {navigationTabs.map((tab) => (
@@ -235,7 +235,7 @@ export default function TVPage() {
                 className={`flex items-center gap-2 px-6 py-4 text-sm font-medium whitespace-nowrap border-b-2 transition-colors duration-200 min-w-[120px] ${
                   activeTab === tab.id
                     ? "border-primary-500 text-primary-600 bg-primary-50"
-                    : "border-transparent text-secondary-600 hover:text-primary-600 hover:bg-gray-50"
+                    : "border-transparent text-secondary-600 hover:text-primary-600 hover:bg-secondary-50"
                 }`}
               >
                 <tab.icon className="w-4 h-4" />
@@ -370,7 +370,7 @@ export default function TVPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-secondary-50">
         <div className="container-width">
           <HowStreamingWorks />
         </div>

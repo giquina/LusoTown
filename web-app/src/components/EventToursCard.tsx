@@ -92,7 +92,7 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
     const badges = {
       free: { icon: '🌟', color: 'text-action-600', label: isPortuguese ? 'Grátis' : 'Free' },
       core: { icon: '❤️', color: 'text-orange-600', label: isPortuguese ? 'Core+' : 'Core+' },
-      premium: { icon: <Crown className="w-3 h-3" />, color: 'text-purple-600', label: isPortuguese ? 'Premium' : 'Premium' }
+      premium: { icon: <Crown className="w-3 h-3" />, color: 'text-accent-600', label: isPortuguese ? 'Premium' : 'Premium' }
     }
     return badges[tier as keyof typeof badges] || badges.free
   }
@@ -178,7 +178,7 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      className={`bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group h-full flex flex-col ${
+      className={`bg-white rounded-2xl shadow-lg border border-secondary-100 overflow-hidden hover:shadow-xl transition-all duration-300 group h-full flex flex-col ${
         event.featured ? 'ring-2 ring-yellow-300' : ''
       } ${className}`}
     >
@@ -315,7 +315,7 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
           </div>
           
           <div className="flex items-center gap-3 text-sm text-secondary-600">
-            <UserGroupIcon className="w-5 h-5 text-purple-500 flex-shrink-0" />
+            <UserGroupIcon className="w-5 h-5 text-accent-500 flex-shrink-0" />
             <div className="flex-1">
               <div className="font-semibold text-gray-900 text-sm">
                 {event.currentAttendees}/{event.maxAttendees} {isPortuguese ? 'Participantes' : 'Attending'}
@@ -365,7 +365,7 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
 
         {/* Highlights */}
         {event.highlights && event.highlights.length > 0 && (
-          <div className="mb-4 p-3 bg-gray-50 rounded-lg">
+          <div className="mb-4 p-3 bg-secondary-50 rounded-lg">
             <h4 className="text-sm font-semibold text-gray-900 mb-2">
               {isPortuguese ? 'Destaques da Experiência:' : 'Experience Highlights:'}
             </h4>
@@ -424,11 +424,11 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
                 className={`font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg transition-all duration-200 text-center text-xs sm:text-sm flex items-center justify-center gap-1 sm:gap-2 ${
                   inCart 
                     ? 'bg-green-100 text-green-700 border border-green-300'
-                    : 'border border-secondary-300 text-secondary-700 hover:bg-gray-50'
+                    : 'border border-secondary-300 text-secondary-700 hover:bg-secondary-50'
                 }`}
               >
                 {addingToCart ? (
-                  <div className="w-4 h-4 border-2 border-gray-400 border-t-transparent rounded-full animate-spin" />
+                  <div className="w-4 h-4 border-2 border-secondary-400 border-t-transparent rounded-full animate-spin" />
                 ) : inCart ? (
                   <>
                     <CheckIcon className="w-4 h-4" />

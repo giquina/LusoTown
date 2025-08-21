@@ -212,7 +212,7 @@ export default function MatchEventSuggestions({
     if (score >= 90) return "text-action-600 bg-green-50 border-green-200";
     if (score >= 80) return "text-primary-600 bg-blue-50 border-blue-200";
     if (score >= 70) return "text-orange-600 bg-orange-50 border-orange-200";
-    return "text-secondary-600 bg-gray-50 border-gray-200";
+    return "text-secondary-600 bg-secondary-50 border-secondary-200";
   };
 
   if (loading) {
@@ -359,7 +359,7 @@ export default function MatchEventSuggestions({
                   {(event.isFadoFeatured || event.culturalAuthenticity >= 95) && (
                     <div className="flex flex-wrap gap-2 mb-3 overflow-hidden">
                       {event.isFadoFeatured && (
-                        <span className="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-2 py-1 rounded-lg text-xs font-bold whitespace-nowrap">
+                        <span className="bg-gradient-to-r from-accent-500 to-accent-600 text-white px-2 py-1 rounded-lg text-xs font-bold whitespace-nowrap">
                           🎵 Fado Autêntico
                         </span>
                       )}

@@ -58,7 +58,7 @@ export default function SavedItemsPage() {
       case 'business':
         return <BuildingStorefrontIcon className="w-5 h-5 text-secondary-500" />
       case 'feed':
-        return <ChatBubbleLeftRightIcon className="w-5 h-5 text-purple-500" />
+        return <ChatBubbleLeftRightIcon className="w-5 h-5 text-accent-500" />
       case 'group':
         return <UserGroupIcon className="w-5 h-5 text-action-500" />
       default:
@@ -111,7 +111,7 @@ export default function SavedItemsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       
       <main className="pt-16">
         {/* Hero Section */}
@@ -191,7 +191,7 @@ export default function SavedItemsPage() {
               ) : (
                 <>
                   {/* Filters and Controls */}
-                  <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-8">
+                  <div className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-6 mb-8">
                     {/* Tabs */}
                     <div className="flex flex-wrap gap-2 mb-6">
                       {[
@@ -251,7 +251,7 @@ export default function SavedItemsPage() {
                           animate={{ opacity: 1, scale: 1 }}
                           exit={{ opacity: 0, scale: 0.9 }}
                           transition={{ duration: 0.2 }}
-                          className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow"
+                          className="bg-white rounded-2xl shadow-sm border border-secondary-100 overflow-hidden hover:shadow-md transition-shadow"
                         >
                           {/* Image */}
                           <div className="relative h-48 overflow-hidden">

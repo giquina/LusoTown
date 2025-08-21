@@ -301,7 +301,7 @@ export default function CloseProtectionPage() {
       <TrustBadges trustIndicators={trustIndicators} isPortuguese={isPortuguese} />
 
       {/* Seven Piece Framework Section */}
-      <section id="framework" className="py-20 bg-gray-50">
+      <section id="framework" className="py-20 bg-secondary-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <motion.div
@@ -353,11 +353,11 @@ export default function CloseProtectionPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className={`relative bg-white rounded-2xl p-8 border-2 hover:shadow-xl transition-all duration-300 ${
-                  pkg.popular ? 'border-premium-500 shadow-lg' : 'border-gray-200'
+                  pkg.popular ? 'border-premium-500 shadow-lg' : 'border-secondary-200'
                 }`}
               >
                 {pkg.popular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <div className="absolute -top-3 left-1/2 transform -transecondary-x-1/2">
                     <span className="bg-premium-500 text-white px-3 py-1 rounded-full text-sm font-medium">
                       {isPortuguese ? 'Mais Popular' : 'Most Popular'}
                     </span>
@@ -415,7 +415,7 @@ export default function CloseProtectionPage() {
       </section>
 
       {/* Case Studies Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-secondary-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -519,7 +519,7 @@ export default function CloseProtectionPage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => handleBookService('consultation')}
-                className="bg-white text-premium-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-200 shadow-lg"
+                className="bg-white text-premium-600 px-8 py-4 rounded-xl font-semibold hover:bg-secondary-50 transition-all duration-200 shadow-lg"
               >
                 {isPortuguese ? 'Consulta Gratuita' : 'Free Consultation'}
               </motion.button>

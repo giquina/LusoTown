@@ -449,7 +449,7 @@ const ImprovedEventCard = ({
                 </button>
 
                 {/* Benefits preview */}
-                <div className="mt-3 pt-3 border-t border-gray-200">
+                <div className="mt-3 pt-3 border-t border-secondary-200">
                   <div className="flex items-center justify-between text-xs">
                     <span className="text-gray-500">
                       {isPortuguese

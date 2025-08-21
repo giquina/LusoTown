@@ -238,25 +238,25 @@ const CorporatePartnershipProgram: React.FC = () => {
         
         {/* Key Statistics */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
-          <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+          <div className="bg-white rounded-lg p-6 shadow-sm border border-secondary-100">
             <div className="text-2xl font-bold text-primary-600">450,000+</div>
             <div className="text-sm text-secondary-600">
               {language === 'pt' ? 'Portugueses no Reino Unido' : 'Portuguese in UK'}
             </div>
           </div>
-          <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+          <div className="bg-white rounded-lg p-6 shadow-sm border border-secondary-100">
             <div className="text-2xl font-bold text-secondary-600">£450M</div>
             <div className="text-sm text-secondary-600">
               {language === 'pt' ? 'Poder de Compra Anual' : 'Annual Spending Power'}
             </div>
           </div>
-          <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+          <div className="bg-white rounded-lg p-6 shadow-sm border border-secondary-100">
             <div className="text-2xl font-bold text-accent-600">25,000+</div>
             <div className="text-sm text-secondary-600">
               {language === 'pt' ? 'Membros Ativos' : 'Active Members'}
             </div>
           </div>
-          <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+          <div className="bg-white rounded-lg p-6 shadow-sm border border-secondary-100">
             <div className="text-2xl font-bold text-premium-600">380%</div>
             <div className="text-sm text-secondary-600">
               {language === 'pt' ? 'ROI Médio' : 'Average ROI'}
@@ -281,12 +281,12 @@ const CorporatePartnershipProgram: React.FC = () => {
               className={`relative bg-white rounded-2xl shadow-lg border-2 p-6 cursor-pointer transition-all duration-300 ${
                 selectedPackage === pkg.id 
                   ? 'border-primary-500 ring-2 ring-primary-200' 
-                  : 'border-gray-200 hover:border-primary-300'
+                  : 'border-secondary-200 hover:border-primary-300'
               } ${pkg.recommended ? 'ring-2 ring-accent-200' : ''}`}
               onClick={() => setSelectedPackage(pkg.id)}
             >
               {pkg.recommended && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                <div className="absolute -top-3 left-1/2 transform -transecondary-x-1/2">
                   <span className="bg-accent-500 text-white px-4 py-1 rounded-full text-sm font-medium">
                     {language === 'pt' ? 'Recomendado' : 'Recommended'}
                   </span>
@@ -386,7 +386,7 @@ const CorporatePartnershipProgram: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {partnershipROI.map((roi, index) => (
-              <div key={index} className="border border-gray-200 rounded-lg p-6">
+              <div key={index} className="border border-secondary-200 rounded-lg p-6">
                 <div className="flex items-center mb-3">
                   <ChartBarIcon className="w-5 h-5 text-primary-500 mr-2" />
                   <h4 className="font-semibold text-gray-900">
@@ -406,7 +406,7 @@ const CorporatePartnershipProgram: React.FC = () => {
       )}
 
       {/* Success Stories */}
-      <div className="bg-gray-50 rounded-2xl p-8 mb-12">
+      <div className="bg-secondary-50 rounded-2xl p-8 mb-12">
         <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
           {language === 'pt' ? 'Histórias de Sucesso de Parceiros' : 'Partner Success Stories'}
         </h3>

@@ -246,7 +246,7 @@ export default function ServiceCommunityBridge({
             className={`flex items-center space-x-3 p-3 rounded-lg border cursor-pointer transition-all ${
               selectedConnections.includes(connection.id)
                 ? "border-primary-500 bg-primary-50"
-                : "border-gray-200 hover:border-secondary-300"
+                : "border-secondary-200 hover:border-secondary-300"
             }`}
             onClick={() => {
               if (selectedConnections.includes(connection.id)) {
@@ -305,7 +305,7 @@ export default function ServiceCommunityBridge({
       <div className="flex space-x-3">
         <button
           onClick={() => setGroupBookingMode(false)}
-          className="flex-1 px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50"
+          className="flex-1 px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-secondary-50"
         >
           {isPortuguese ? "Cancelar" : "Cancel"}
         </button>
@@ -458,7 +458,7 @@ export default function ServiceCommunityBridge({
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
+                className="bg-white rounded-xl shadow-lg border border-secondary-200 overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
                 onClick={() => handleIntegrationClick(integration)}
               >
                 <div className="p-6">
@@ -515,7 +515,7 @@ export default function ServiceCommunityBridge({
                     className="text-accent-600 font-medium text-sm hover:text-accent-700 flex items-center group"
                   >
                     {isPortuguese ? "Explorar" : "Explore"}
-                    <ArrowRightIcon className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRightIcon className="w-4 h-4 ml-1 group-hover:transecondary-x-1 transition-transform" />
                   </button>
                 </div>
               ))}

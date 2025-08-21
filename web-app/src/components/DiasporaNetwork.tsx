@@ -223,7 +223,7 @@ export default function DiasporaNetwork({
           <div className="text-sm text-blue-200">Monthly Active</div>
         </div>
         <div className="bg-white/10 rounded-lg p-4">
-          <div className="text-2xl font-bold text-purple-300">{globalNetwork.crossBorderConnections.toLocaleString()}</div>
+          <div className="text-2xl font-bold text-accent-300">{globalNetwork.crossBorderConnections.toLocaleString()}</div>
           <div className="text-sm text-blue-200">Cross-Border Connections</div>
         </div>
         <div className="bg-white/10 rounded-lg p-4">
@@ -242,7 +242,7 @@ export default function DiasporaNetwork({
         { label: 'Cultural Projects', value: globalNetwork.culturalPreservationProjects, color: 'purple' },
         { label: 'Family Reunifications', value: globalNetwork.familyReunifications, color: 'red' }
       ].map(stat => (
-        <div key={stat.label} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+        <div key={stat.label} className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
           <div className={`text-3xl font-bold mb-2 text-${stat.color}-600`}>
             {stat.value.toLocaleString()}
           </div>
@@ -261,13 +261,13 @@ export default function DiasporaNetwork({
             key={story.id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden"
+            className="bg-white rounded-xl shadow-lg border border-secondary-100 overflow-hidden"
           >
             <div className="p-6">
               <div className="flex items-center justify-between mb-4">
                 <span className={`px-3 py-1 text-xs font-medium rounded-full ${
                   story.type === 'business' ? 'bg-blue-100 text-blue-800' :
-                  story.type === 'cultural' ? 'bg-purple-100 text-purple-800' :
+                  story.type === 'cultural' ? 'bg-accent-100 text-accent-800' :
                   story.type === 'personal' ? 'bg-green-100 text-green-800' :
                   'bg-secondary-100 text-secondary-800'
                 }`}>
@@ -296,7 +296,7 @@ export default function DiasporaNetwork({
               </div>
 
               {story.testimonials.length > 0 && (
-                <div className="bg-gray-50 rounded-lg p-4">
+                <div className="bg-secondary-50 rounded-lg p-4">
                   <p className="text-sm font-medium text-gray-900 mb-2">Testimonial:</p>
                   <p className="text-sm text-secondary-700 italic">"{story.testimonials[0]}"</p>
                 </div>
@@ -328,7 +328,7 @@ export default function DiasporaNetwork({
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {diasporaFamilies.slice(0, maxConnections).map(family => (
-          <div key={family.id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+          <div key={family.id} className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h4 className="font-bold text-gray-900">{family.familyName}</h4>
@@ -379,7 +379,7 @@ export default function DiasporaNetwork({
       <h3 className="text-2xl font-bold text-gray-900">Professional Network</h3>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {professionalNetwork.slice(0, maxConnections).map(professional => (
-          <div key={professional.id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+          <div key={professional.id} className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h4 className="font-bold text-gray-900">{professional.name}</h4>
@@ -476,7 +476,7 @@ export default function DiasporaNetwork({
           >
             {showStats && <NetworkStats />}
             <div className="grid lg:grid-cols-2 gap-8">
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+              <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Language Preservation</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
@@ -490,15 +490,15 @@ export default function DiasporaNetwork({
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+              <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Cultural Impact</h3>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
                     <span className="text-secondary-700">Cultural Preservation Projects</span>
-                    <span className="font-semibold text-purple-600">{globalNetwork.culturalPreservationProjects}</span>
+                    <span className="font-semibold text-accent-600">{globalNetwork.culturalPreservationProjects}</span>
                   </div>
                   <div className="w-full bg-secondary-200 rounded-full h-2">
-                    <div className="bg-purple-600 h-2 rounded-full" style={{ width: '75%' }}></div>
+                    <div className="bg-accent-600 h-2 rounded-full" style={{ width: '75%' }}></div>
                   </div>
                   <p className="text-sm text-secondary-600">Active projects documenting and preserving Portuguese cultural heritage globally</p>
                 </div>

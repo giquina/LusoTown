@@ -373,7 +373,7 @@ export default function ProfileViewer({
 
             {/* Quick Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="text-center p-4 bg-gray-50 rounded-xl">
+              <div className="text-center p-4 bg-secondary-50 rounded-xl">
                 <div className="text-2xl font-bold text-gray-900">
                   {profile.stats?.connections_count || 0}
                 </div>
@@ -382,7 +382,7 @@ export default function ProfileViewer({
                 </div>
               </div>
               
-              <div className="text-center p-4 bg-gray-50 rounded-xl">
+              <div className="text-center p-4 bg-secondary-50 rounded-xl">
                 <div className="text-2xl font-bold text-gray-900">
                   {profile.stats?.events_attended || 0}
                 </div>
@@ -391,7 +391,7 @@ export default function ProfileViewer({
                 </div>
               </div>
               
-              <div className="text-center p-4 bg-gray-50 rounded-xl">
+              <div className="text-center p-4 bg-secondary-50 rounded-xl">
                 <div className="text-2xl font-bold text-primary-600">
                   {profile.membership_tier === 'premium' ? 'Premium' : 'Membro'}
                 </div>
@@ -400,7 +400,7 @@ export default function ProfileViewer({
                 </div>
               </div>
               
-              <div className="text-center p-4 bg-gray-50 rounded-xl">
+              <div className="text-center p-4 bg-secondary-50 rounded-xl">
                 <div className="text-2xl font-bold text-action-600">
                   {profile.stats?.profile_completion || 0}%
                 </div>
@@ -492,7 +492,7 @@ export default function ProfileViewer({
         </div>
         
         <div className="space-y-4">
-          <div className="p-4 bg-gray-50 rounded-xl">
+          <div className="p-4 bg-secondary-50 rounded-xl">
             <p className="text-secondary-600">
               {isPortuguese ? 
                 'Informações profissionais disponíveis para membros conectados' :

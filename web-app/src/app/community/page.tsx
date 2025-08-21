@@ -478,7 +478,7 @@ export default function Community() {
                     transition={{ delay: 0.1 * index, duration: 0.6 }}
                     className="group"
                   >
-                    <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg p-6 text-center hover:scale-105 transition-all duration-300 border border-gray-200 h-full">
+                    <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg p-6 text-center hover:scale-105 transition-all duration-300 border border-secondary-200 h-full">
                       <div className="w-20 h-20 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                         <span className="text-4xl">{community.flag}</span>
                       </div>
@@ -833,7 +833,7 @@ export default function Community() {
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-10">
                   <a 
                     href={ROUTES.signup} 
-                    className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 hover:from-secondary-700 hover:via-primary-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+                    className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 hover:from-secondary-700 hover:via-primary-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-transecondary-y-1 hover:scale-105"
                   >
                     {isPortuguese ? 'JUNTAR À REDE' : 'JOIN THE NETWORK'}
                     <ArrowRightIcon className="h-6 w-6 ml-3" />

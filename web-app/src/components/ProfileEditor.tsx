@@ -216,7 +216,7 @@ export default function ProfileEditor({ profile, onSave, saving }: ProfileEditor
       )}
 
       {/* Tab Navigation */}
-      <div className="border-b border-gray-200">
+      <div className="border-b border-secondary-200">
         <div className="flex flex-wrap gap-2 pb-4">
           {tabs.map((tab) => {
             const Icon = tab.icon
@@ -227,7 +227,7 @@ export default function ProfileEditor({ profile, onSave, saving }: ProfileEditor
                 className={`flex items-center gap-2 px-4 py-3 rounded-lg font-medium text-sm transition-all ${
                   activeTab === tab.id
                     ? 'bg-primary-50 text-primary-600 border-2 border-primary-200'
-                    : 'text-secondary-600 hover:bg-gray-50 border-2 border-transparent'
+                    : 'text-secondary-600 hover:bg-secondary-50 border-2 border-transparent'
                 }`}
               >
                 <Icon className="w-4 h-4" />
@@ -258,7 +258,7 @@ export default function ProfileEditor({ profile, onSave, saving }: ProfileEditor
       </motion.div>
 
       {/* Save Button */}
-      <div className="flex justify-end pt-6 border-t border-gray-200">
+      <div className="flex justify-end pt-6 border-t border-secondary-200">
         <motion.button
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
@@ -450,7 +450,7 @@ function InterestsTab({ formData, updateFormData, isPortuguese, options }: any) 
                   className={`p-3 rounded-lg border-2 text-sm font-medium transition-all ${
                     (formData.interests || []).includes(interest)
                       ? 'border-primary-500 bg-primary-50 text-primary-700'
-                      : 'border-gray-200 bg-white text-secondary-700 hover:border-secondary-300'
+                      : 'border-secondary-200 bg-white text-secondary-700 hover:border-secondary-300'
                   }`}
                 >
                   {interest}

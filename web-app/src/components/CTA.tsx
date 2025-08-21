@@ -68,7 +68,7 @@ export default function CTA() {
       <div className="absolute inset-0">
         <div className="absolute top-10 right-10 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 left-10 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div>
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-white/5 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-white/5 rounded-full blur-3xl transform -transecondary-x-1/2 -transecondary-y-1/2"></div>
       </div>
 
       <div className="container-width section-padding relative z-10">
@@ -169,10 +169,10 @@ export default function CTA() {
               {/* Primary Action */}
               <a
                 href={ROUTES.auth.signup}
-                className="bg-white text-secondary-700 hover:bg-gray-50 font-bold text-xl px-12 py-6 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-2 hover:scale-105 transition-all duration-300 group inline-flex items-center justify-center"
+                className="bg-white text-secondary-700 hover:bg-secondary-50 font-bold text-xl px-12 py-6 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-transecondary-y-2 hover:scale-105 transition-all duration-300 group inline-flex items-center justify-center"
               >
                 Quick Join
-                <ArrowRightIcon className="h-6 w-6 ml-3 group-hover:translate-x-1 transition-transform duration-200" />
+                <ArrowRightIcon className="h-6 w-6 ml-3 group-hover:transecondary-x-1 transition-transform duration-200" />
               </a>
 
               {/* Social Login Options */}

@@ -59,7 +59,7 @@ export default function CreateTopic() {
     const badges = {
       free: { icon: <Users className="w-3 h-3" />, color: 'bg-secondary-100 text-secondary-600', label: 'Free' },
       core: { icon: <Star className="w-3 h-3" />, color: 'bg-[#FF6B6B] text-white', label: 'Core' },
-      premium: { icon: <Crown className="w-3 h-3" />, color: 'bg-gradient-to-r from-purple-500 to-pink-500 text-white', label: 'Premium' }
+      premium: { icon: <Crown className="w-3 h-3" />, color: 'bg-gradient-to-r from-accent-500 to-pink-500 text-white', label: 'Premium' }
     }
     return badges[tier as keyof typeof badges] || badges.free
   }
@@ -128,11 +128,11 @@ export default function CreateTopic() {
       if (result.success && result.topic) {
         router.push(`/forums/topic/${result.topic.id}`)
       } else {
-        alert(result.error || 'Error creating topic')
+        toast.error(result.error || 'Error creating topic')
       }
     } catch (error) {
       console.error('Error creating topic:', error)
-      alert('Error creating topic')
+      toast.error('Error creating topic')
     } finally {
       setSubmitting(false)
     }
@@ -146,7 +146,7 @@ export default function CreateTopic() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-secondary-50 flex items-center justify-center">
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#FF6B6B]"></div>
       </div>
     )
@@ -157,7 +157,7 @@ export default function CreateTopic() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-secondary-50 pt-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Breadcrumb */}
         <div className="mb-6">
@@ -216,7 +216,7 @@ export default function CreateTopic() {
               {formData.categoryId && (() => {
                 const selectedCategory = categories.find(c => c.id === formData.categoryId)
                 return selectedCategory ? (
-                  <div className="mt-3 p-3 bg-gray-50 rounded-lg">
+                  <div className="mt-3 p-3 bg-secondary-50 rounded-lg">
                     <div className="flex items-center space-x-3 mb-2">
                       <span className="text-2xl">{selectedCategory.icon}</span>
                       <div>
@@ -376,11 +376,11 @@ export default function CreateTopic() {
             </div>
 
             {/* Submit */}
-            <div className="flex items-center justify-end space-x-4 pt-6 border-t border-gray-200">
+            <div className="flex items-center justify-end space-x-4 pt-6 border-t border-secondary-200">
               <button
                 type="button"
                 onClick={() => router.push('/forums')}
-                className="px-6 py-3 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 transition-colors"
+                className="px-6 py-3 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-secondary-50 transition-colors"
               >
                 Cancel
               </button>

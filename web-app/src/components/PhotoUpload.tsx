@@ -191,7 +191,7 @@ export default function PhotoUpload({
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
         onClick={openFileDialog}
-        className={`relative border-2 border-dashed rounded-xl p-6 transition-all duration-200 cursor-pointer hover:bg-gray-50 ${
+        className={`relative border-2 border-dashed rounded-xl p-6 transition-all duration-200 cursor-pointer hover:bg-secondary-50 ${
           isDragging 
             ? 'border-primary-400 bg-primary-50' 
             : 'border-secondary-300'

@@ -132,10 +132,10 @@ const TechnologyWorkshopBookingPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       <main className="pt-16">
         {/* Header */}
-        <section className="bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 text-white py-12">
+        <section className="bg-gradient-to-r from-blue-600 via-accent-600 to-teal-600 text-white py-12">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               {/* Back Button */}
@@ -232,7 +232,7 @@ const TechnologyWorkshopBookingPage = () => {
                       </div>
                       <div className="w-full bg-secondary-200 rounded-full h-2">
                         <div 
-                          className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full transition-all duration-300"
+                          className="bg-gradient-to-r from-blue-500 to-accent-600 h-2 rounded-full transition-all duration-300"
                           style={{ width: `${(step / 3) * 100}%` }}
                         ></div>
                       </div>
@@ -259,7 +259,7 @@ const TechnologyWorkshopBookingPage = () => {
                                   First Name *
                                 </label>
                                 <div className="relative">
-                                  <UserIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                                  <UserIcon className="absolute left-3 top-1/2 transform -transecondary-y-1/2 w-5 h-5 text-gray-400" />
                                   <input
                                     type="text"
                                     name="firstName"
@@ -277,7 +277,7 @@ const TechnologyWorkshopBookingPage = () => {
                                   Last Name *
                                 </label>
                                 <div className="relative">
-                                  <UserIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                                  <UserIcon className="absolute left-3 top-1/2 transform -transecondary-y-1/2 w-5 h-5 text-gray-400" />
                                   <input
                                     type="text"
                                     name="lastName"
@@ -296,7 +296,7 @@ const TechnologyWorkshopBookingPage = () => {
                                 Email Address *
                               </label>
                               <div className="relative">
-                                <EnvelopeIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                                <EnvelopeIcon className="absolute left-3 top-1/2 transform -transecondary-y-1/2 w-5 h-5 text-gray-400" />
                                 <input
                                   type="email"
                                   name="email"
@@ -314,7 +314,7 @@ const TechnologyWorkshopBookingPage = () => {
                                 Phone Number (Optional)
                               </label>
                               <div className="relative">
-                                <PhoneIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                                <PhoneIcon className="absolute left-3 top-1/2 transform -transecondary-y-1/2 w-5 h-5 text-gray-400" />
                                 <input
                                   type="tel"
                                   name="phone"
@@ -331,7 +331,7 @@ const TechnologyWorkshopBookingPage = () => {
                                 type="button"
                                 onClick={nextStep}
                                 disabled={!isStepComplete(1)}
-                                className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+                                className="px-6 py-3 bg-gradient-to-r from-blue-500 to-accent-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-accent-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
                               >
                                 Continue
                               </button>
@@ -418,14 +418,14 @@ const TechnologyWorkshopBookingPage = () => {
                               <button
                                 type="button"
                                 onClick={prevStep}
-                                className="px-6 py-3 border border-secondary-300 text-secondary-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors"
+                                className="px-6 py-3 border border-secondary-300 text-secondary-700 font-semibold rounded-lg hover:bg-secondary-50 transition-colors"
                               >
                                 Back
                               </button>
                               <button
                                 type="button"
                                 onClick={nextStep}
-                                className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-200"
+                                className="px-6 py-3 bg-gradient-to-r from-blue-500 to-accent-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-accent-700 transition-all duration-200"
                               >
                                 Continue
                               </button>
@@ -447,7 +447,7 @@ const TechnologyWorkshopBookingPage = () => {
                             </div>
 
                             {/* Booking Summary */}
-                            <div className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-6">
+                            <div className="bg-gradient-to-r from-blue-50 to-accent-50 border border-blue-200 rounded-lg p-6">
                               <h3 className="font-semibold text-gray-900 mb-4">Booking Summary</h3>
                               <div className="space-y-2 text-sm">
                                 <div className="flex justify-between">
@@ -518,7 +518,7 @@ const TechnologyWorkshopBookingPage = () => {
                               <button
                                 type="button"
                                 onClick={prevStep}
-                                className="px-6 py-3 border border-secondary-300 text-secondary-700 font-semibold rounded-lg hover:bg-gray-50 transition-colors"
+                                className="px-6 py-3 border border-secondary-300 text-secondary-700 font-semibold rounded-lg hover:bg-secondary-50 transition-colors"
                               >
                                 Back
                               </button>
@@ -559,7 +559,7 @@ const TechnologyWorkshopBookingPage = () => {
                           <span className="text-sm text-secondary-700">Technology tools overview (platforms, apps, etc.)</span>
                         </div>
                         <div className="flex items-start gap-3">
-                          <SparklesIcon className="w-5 h-5 text-purple-500 mt-0.5" />
+                          <SparklesIcon className="w-5 h-5 text-accent-500 mt-0.5" />
                           <span className="text-sm text-secondary-700">Hands-on business app creation</span>
                         </div>
                         <div className="flex items-start gap-3">
@@ -579,7 +579,7 @@ const TechnologyWorkshopBookingPage = () => {
                       <div className="space-y-3">
                         {event.agenda.map((item, index) => (
                           <div key={index} className="flex items-start gap-3">
-                            <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-xs font-bold rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-accent-600 text-white text-xs font-bold rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                               {index + 1}
                             </div>
                             <span className="text-sm text-secondary-700">{item}</span>

@@ -136,7 +136,7 @@ export default function Header() {
   const moreDropdownLinks = getMoreDropdownLinks(t);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 min-h-[80px] lg:min-h-[88px]">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-secondary-200 min-h-[80px] lg:min-h-[88px]">
       <nav className="container-width" aria-label="Top">
         <div className="flex items-center justify-between py-3 sm:py-4 lg:py-5 gap-2 sm:gap-4">
           {/* Logo - Compact design for header */}
@@ -175,7 +175,7 @@ export default function Header() {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-[800px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 py-8 z-50"
+                    className="absolute top-full left-1/2 transform -transecondary-x-1/2 mt-2 w-[800px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-secondary-200 py-8 z-50"
                     style={{
                       left: "50%",
                       transform: "translateX(-50%)",
@@ -186,7 +186,7 @@ export default function Header() {
                   >
                     <div className="grid grid-cols-2 gap-8 px-8">
                       {/* Services Section */}
-                      <div className="border-r border-gray-200 pr-6">
+                      <div className="border-r border-secondary-200 pr-6">
                         <h3 className="text-lg font-semibold mb-4 text-premium-600">
                           Services
                         </h3>
@@ -278,7 +278,7 @@ export default function Header() {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1"
+                      className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-secondary-200 py-1"
                     >
                       <a
                         href={`/profile/${user.id}`}
@@ -314,7 +314,7 @@ export default function Header() {
                           <span>Admin Panel</span>
                         </a>
                       )}
-                      <div className="border-t border-gray-100 my-1"></div>
+                      <div className="border-t border-secondary-100 my-1"></div>
                       <button
                         onClick={handleLogout}
                         className="flex items-center space-x-2 w-full px-4 py-3 text-sm text-action-700 hover:bg-action-50 text-left min-h-[44px]"
@@ -406,7 +406,7 @@ export default function Header() {
               >
                 <div className="px-4 pt-6 pb-4 space-y-2">
                   {/* Quick Actions Section */}
-                  <div className="pb-4 border-b border-gray-200">
+                  <div className="pb-4 border-b border-secondary-200">
                     <h3 className="text-lg font-semibold text-gray-900 mb-3">
                       Quick Actions
                     </h3>
@@ -429,7 +429,7 @@ export default function Header() {
                   </div>
 
                   {/* Main Navigation Links */}
-                  <div className="pb-4 border-b border-gray-200">
+                  <div className="pb-4 border-b border-secondary-200">
                     <h3 className="text-lg font-semibold text-primary-600 mb-3">
                       Navigation
                     </h3>
@@ -446,7 +446,7 @@ export default function Header() {
                   </div>
 
                   {/* Tours & Transport Section */}
-                  <div className="pb-4 border-b border-gray-200">
+                  <div className="pb-4 border-b border-secondary-200">
                     <h3 className="text-lg font-semibold text-premium-600 mb-3">
                       Tours & Transport
                     </h3>
@@ -488,7 +488,7 @@ export default function Header() {
                   </div>
 
                   {/* Contact Section */}
-                  <div className="pb-4 border-b border-gray-200">
+                  <div className="pb-4 border-b border-secondary-200">
                     <h3 className="text-lg font-semibold text-secondary-700 mb-3">
                       Contact
                     </h3>
@@ -496,7 +496,7 @@ export default function Header() {
                       <a
                         key={link.name}
                         href={link.href}
-                        className="text-secondary-700 hover:text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-gray-200 min-h-[44px] flex items-center"
+                        className="text-secondary-700 hover:text-gray-900 hover:bg-secondary-50 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {link.name}
@@ -505,7 +505,7 @@ export default function Header() {
                   </div>
 
                   {/* Services Section */}
-                  <div className="pb-4 border-b border-gray-200">
+                  <div className="pb-4 border-b border-secondary-200">
                     <h3 className="text-lg font-semibold text-premium-600 mb-3">
                       Services
                     </h3>
@@ -530,7 +530,7 @@ export default function Header() {
                   </div>
 
                   {/* Community Section */}
-                  <div className="pb-4 border-b border-gray-200">
+                  <div className="pb-4 border-b border-secondary-200">
                     <h3 className="text-lg font-semibold text-primary-600 mb-3">
                       Community
                     </h3>
@@ -547,7 +547,7 @@ export default function Header() {
                   </div>
 
                   {/* Company & Legal Section */}
-                  <div className="pb-4 border-b border-gray-200">
+                  <div className="pb-4 border-b border-secondary-200">
                     <h3 className="text-lg font-semibold text-accent-600 mb-3">
                       Company & Legal
                     </h3>
@@ -565,7 +565,7 @@ export default function Header() {
                       <a
                         key={link.name}
                         href={link.href}
-                        className="text-secondary-700 hover:text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 border border-transparent hover:border-gray-200 min-h-[44px] flex items-center"
+                        className="text-secondary-700 hover:text-gray-900 hover:bg-secondary-50 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 border border-transparent hover:border-secondary-200 min-h-[44px] flex items-center"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {link.name}

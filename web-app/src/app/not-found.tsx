@@ -48,7 +48,7 @@ export default function NotFound() {
 
             <Link
               href={ROUTES.events}
-              className="w-full inline-flex items-center justify-center gap-2 bg-white text-secondary-700 font-semibold px-6 py-3 rounded-xl border-2 border-gray-200 hover:border-primary-300 hover:text-primary-700 transition-all duration-200"
+              className="w-full inline-flex items-center justify-center gap-2 bg-white text-secondary-700 font-semibold px-6 py-3 rounded-xl border-2 border-secondary-200 hover:border-primary-300 hover:text-primary-700 transition-all duration-200"
             >
               <MagnifyingGlassIcon className="w-5 h-5" />
               {isPortuguese ? 'Explorar Eventos' : 'Explore Events'}
@@ -64,7 +64,7 @@ export default function NotFound() {
           </div>
 
           {/* Helpful Links */}
-          <div className="border-t border-gray-200 pt-6">
+          <div className="border-t border-secondary-200 pt-6">
             <p className="text-sm text-gray-500 mb-4">
               {isPortuguese ? 'Páginas Populares:' : 'Popular Pages:'}
             </p>

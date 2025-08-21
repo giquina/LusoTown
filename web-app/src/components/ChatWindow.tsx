@@ -236,7 +236,7 @@ export default function ChatWindow({
       className={`bg-white rounded-xl shadow-sm overflow-hidden flex flex-col ${className}`}
     >
       {/* Chat Header */}
-      <div className="p-4 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-primary-50">
+      <div className="p-4 border-b border-secondary-200 bg-gradient-to-r from-gray-50 to-primary-50">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="bg-gradient-to-r from-primary-500 to-secondary-500 p-2 rounded-lg">
@@ -264,7 +264,7 @@ export default function ChatWindow({
                   </>
                 ) : (
                   <>
-                    <div className="w-2 h-2 bg-gray-400 rounded-full" />
+                    <div className="w-2 h-2 bg-secondary-400 rounded-full" />
                     <span>{language === 'pt' ? 'Desconectado' : 'Disconnected'}</span>
                   </>
                 )}
@@ -314,7 +314,7 @@ export default function ChatWindow({
       </div>
 
       {/* Messages Container */}
-      <div className="flex-1 overflow-y-auto p-3 space-y-3 bg-gray-50 min-h-0">
+      <div className="flex-1 overflow-y-auto p-3 space-y-3 bg-secondary-50 min-h-0">
         <AnimatePresence initial={false}>
           {messages.map((message) => (
             <ChatMessageComponent
@@ -361,7 +361,7 @@ export default function ChatWindow({
       </AnimatePresence>
 
       {/* Message Input */}
-      <div className="p-3 border-t border-gray-200">
+      <div className="p-3 border-t border-secondary-200">
         {canParticipate ? (
           <div className="space-y-2">
             <div className="flex gap-2 relative">

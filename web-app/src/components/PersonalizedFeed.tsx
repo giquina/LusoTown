@@ -366,7 +366,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
   return (
     <div className={`space-y-6 ${className}`}>
       {/* Feed Header */}
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+      <div className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-6">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-2 flex items-center gap-2">
@@ -451,7 +451,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
         {filteredPosts.map((post, index) => (
           <div
             key={post.id}
-            className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden opacity-0 translate-y-5"
+            className="bg-white rounded-2xl shadow-sm border border-secondary-100 overflow-hidden opacity-0 transecondary-y-5"
             style={{
               animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`
             }}
@@ -492,7 +492,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
                           post.serviceType === 'transport' ? 'bg-blue-100 text-primary-700' :
                           post.serviceType === 'business' ? 'bg-green-100 text-green-700' :
                           post.serviceType === 'housing' ? 'bg-orange-100 text-orange-700' :
-                          post.serviceType === 'event' ? 'bg-purple-100 text-purple-700' :
+                          post.serviceType === 'event' ? 'bg-accent-100 text-accent-700' :
                           'bg-secondary-100 text-secondary-700'
                         }`}>
                           {post.serviceType === 'transport' ? (isPortuguese ? 'Transporte' : 'Transport') :
@@ -596,7 +596,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
             </div>
             
             {/* Post Actions */}
-            <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
+            <div className="px-6 py-4 bg-secondary-50 border-t border-secondary-100">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-6">
                   <button 
@@ -628,7 +628,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
                   <button className="p-1 text-gray-400 hover:text-coral-500">❤️</button>
                   <button className="p-1 text-gray-400 hover:text-primary-500">👍</button>
                   <button className="p-1 text-gray-400 hover:text-accent-500">😂</button>
-                  <button className="p-1 text-gray-400 hover:text-purple-500">😮</button>
+                  <button className="p-1 text-gray-400 hover:text-accent-500">😮</button>
                 </div>
               </div>
             </div>
@@ -671,7 +671,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             <button
               onClick={() => setFilter('services')}
-              className="flex flex-col items-center p-3 bg-white rounded-lg hover:bg-primary-50 transition-colors border border-gray-200"
+              className="flex flex-col items-center p-3 bg-white rounded-lg hover:bg-primary-50 transition-colors border border-secondary-200"
             >
               <TruckIcon className="w-6 h-6 text-primary-600 mb-2" />
               <span className="text-sm font-medium text-secondary-700">
@@ -684,9 +684,9 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
 
             <button
               onClick={() => setFilter('services')}
-              className="flex flex-col items-center p-3 bg-white rounded-lg hover:bg-primary-50 transition-colors border border-gray-200"
+              className="flex flex-col items-center p-3 bg-white rounded-lg hover:bg-primary-50 transition-colors border border-secondary-200"
             >
-              <CalendarDaysIcon className="w-6 h-6 text-purple-600 mb-2" />
+              <CalendarDaysIcon className="w-6 h-6 text-accent-600 mb-2" />
               <span className="text-sm font-medium text-secondary-700">
                 {isPortuguese ? 'Eventos' : 'Events'}
               </span>
@@ -697,7 +697,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
 
             <button
               onClick={() => setFilter('services')}
-              className="flex flex-col items-center p-3 bg-white rounded-lg hover:bg-primary-50 transition-colors border border-gray-200"
+              className="flex flex-col items-center p-3 bg-white rounded-lg hover:bg-primary-50 transition-colors border border-secondary-200"
             >
               <BriefcaseIcon className="w-6 h-6 text-action-600 mb-2" />
               <span className="text-sm font-medium text-secondary-700">
@@ -710,7 +710,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
 
             <button
               onClick={() => setFilter('services')}
-              className="flex flex-col items-center p-3 bg-white rounded-lg hover:bg-primary-50 transition-colors border border-gray-200"
+              className="flex flex-col items-center p-3 bg-white rounded-lg hover:bg-primary-50 transition-colors border border-secondary-200"
             >
               <HomeIcon className="w-6 h-6 text-orange-600 mb-2" />
               <span className="text-sm font-medium text-secondary-700">

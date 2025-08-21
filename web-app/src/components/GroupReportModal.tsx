@@ -146,14 +146,14 @@ export default function GroupReportModal({ groupId, groupName, isOpen, onClose }
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50"
+              className="flex-1 px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-secondary-50"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={loading || !reportType || !description.trim()}
-              className="flex-1 px-4 py-2 bg-coral-600 text-white rounded-lg hover:bg-red-700 disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center"
+              className="flex-1 px-4 py-2 bg-coral-600 text-white rounded-lg hover:bg-red-700 disabled:bg-secondary-300 disabled:cursor-not-allowed flex items-center justify-center"
             >
               {loading ? (
                 <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>

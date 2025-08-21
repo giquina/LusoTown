@@ -685,7 +685,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
         </button>
 
         {showSettings && (
-          <div className="absolute top-14 right-0 bg-white border border-gray-200 rounded-lg shadow-xl p-6 w-80 max-h-96 overflow-y-auto">
+          <div className="absolute top-14 right-0 bg-white border border-secondary-200 rounded-lg shadow-xl p-6 w-80 max-h-96 overflow-y-auto">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-semibold text-gray-900">
                 {language === 'pt' ? 'Acessibilidade' : 'Accessibility'}
@@ -716,12 +716,12 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
                 <button
                   onClick={() => updateSetting('highContrast', !settings.highContrast)}
                   className={`w-10 h-6 rounded-full transition-colors ${
-                    settings.highContrast ? 'bg-primary-600' : 'bg-gray-300'
+                    settings.highContrast ? 'bg-primary-600' : 'bg-secondary-300'
                   }`}
                   aria-label={`${language === 'pt' ? 'Alto contraste' : 'High contrast'} ${settings.highContrast ? (language === 'pt' ? 'ativado' : 'enabled') : (language === 'pt' ? 'desativado' : 'disabled')}`}
                 >
                   <div className={`w-4 h-4 bg-white rounded-full transition-transform ${
-                    settings.highContrast ? 'translate-x-5' : 'translate-x-1'
+                    settings.highContrast ? 'transecondary-x-5' : 'transecondary-x-1'
                   }`} />
                 </button>
               </div>
@@ -742,11 +742,11 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
                 <button
                   onClick={() => updateSetting('largeText', !settings.largeText)}
                   className={`w-10 h-6 rounded-full transition-colors ${
-                    settings.largeText ? 'bg-primary-600' : 'bg-gray-300'
+                    settings.largeText ? 'bg-primary-600' : 'bg-secondary-300'
                   }`}
                 >
                   <div className={`w-4 h-4 bg-white rounded-full transition-transform ${
-                    settings.largeText ? 'translate-x-5' : 'translate-x-1'
+                    settings.largeText ? 'transecondary-x-5' : 'transecondary-x-1'
                   }`} />
                 </button>
               </div>
@@ -767,11 +767,11 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
                 <button
                   onClick={() => updateSetting('portugueseScreenReader', !settings.portugueseScreenReader)}
                   className={`w-10 h-6 rounded-full transition-colors ${
-                    settings.portugueseScreenReader ? 'bg-primary-600' : 'bg-gray-300'
+                    settings.portugueseScreenReader ? 'bg-primary-600' : 'bg-secondary-300'
                   }`}
                 >
                   <div className={`w-4 h-4 bg-white rounded-full transition-transform ${
-                    settings.portugueseScreenReader ? 'translate-x-5' : 'translate-x-1'
+                    settings.portugueseScreenReader ? 'transecondary-x-5' : 'transecondary-x-1'
                   }`} />
                 </button>
               </div>
@@ -794,7 +794,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
                   className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
                     isListening 
                       ? 'bg-action-600 text-white' 
-                      : 'bg-gray-300 text-secondary-700 hover:bg-gray-400'
+                      : 'bg-secondary-300 text-secondary-700 hover:bg-secondary-400'
                   }`}
                 >
                   {isListening 
@@ -820,11 +820,11 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
                 <button
                   onClick={() => updateSetting('keyboardNavigation', !settings.keyboardNavigation)}
                   className={`w-10 h-6 rounded-full transition-colors ${
-                    settings.keyboardNavigation ? 'bg-primary-600' : 'bg-gray-300'
+                    settings.keyboardNavigation ? 'bg-primary-600' : 'bg-secondary-300'
                   }`}
                 >
                   <div className={`w-4 h-4 bg-white rounded-full transition-transform ${
-                    settings.keyboardNavigation ? 'translate-x-5' : 'translate-x-1'
+                    settings.keyboardNavigation ? 'transecondary-x-5' : 'transecondary-x-1'
                   }`} />
                 </button>
               </div>
@@ -845,11 +845,11 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
                 <button
                   onClick={() => updateSetting('culturalAudioGuides', !settings.culturalAudioGuides)}
                   className={`w-10 h-6 rounded-full transition-colors ${
-                    settings.culturalAudioGuides ? 'bg-primary-600' : 'bg-gray-300'
+                    settings.culturalAudioGuides ? 'bg-primary-600' : 'bg-secondary-300'
                   }`}
                 >
                   <div className={`w-4 h-4 bg-white rounded-full transition-transform ${
-                    settings.culturalAudioGuides ? 'translate-x-5' : 'translate-x-1'
+                    settings.culturalAudioGuides ? 'transecondary-x-5' : 'transecondary-x-1'
                   }`} />
                 </button>
               </div>
@@ -857,7 +857,7 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
 
             {/* Audio Controls */}
             {speechSynth && (
-              <div className="mt-6 pt-4 border-t border-gray-200">
+              <div className="mt-6 pt-4 border-t border-secondary-200">
                 <h4 className="text-sm font-medium text-gray-900 mb-3">
                   {language === 'pt' ? 'Controlo de Áudio' : 'Audio Control'}
                 </h4>

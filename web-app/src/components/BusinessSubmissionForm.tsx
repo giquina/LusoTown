@@ -751,7 +751,7 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
       </div>
 
       {/* Step Indicator */}
-      <div className="px-6 py-4 border-b border-gray-200">
+      <div className="px-6 py-4 border-b border-secondary-200">
         <div className="flex items-center justify-between">
           {steps.map((step, index) => (
             <div key={step.id} className="flex items-center">
@@ -789,7 +789,7 @@ const BusinessSubmissionForm: React.FC<BusinessSubmissionFormProps> = ({
       </div>
 
       {/* Footer */}
-      <div className="px-6 py-4 border-t border-gray-200 bg-gray-50 flex justify-between">
+      <div className="px-6 py-4 border-t border-secondary-200 bg-secondary-50 flex justify-between">
         <button
           onClick={handlePrevStep}
           disabled={currentStep === 1}

@@ -91,7 +91,7 @@ export default function PrimeirosPassosPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       
       <main className="pt-20">
         {/* Hero Section */}
@@ -150,7 +150,7 @@ export default function PrimeirosPassosPage() {
 
             <div className="grid md:grid-cols-3 gap-8">
               {features.map((feature, index) => (
-                <div key={index} className="text-center p-6 bg-gray-50 rounded-lg">
+                <div key={index} className="text-center p-6 bg-secondary-50 rounded-lg">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-6">
                     <feature.icon className="w-8 h-8 text-primary-600" />
                   </div>
@@ -167,7 +167,7 @@ export default function PrimeirosPassosPage() {
         </section>
 
         {/* Steps Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-secondary-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">

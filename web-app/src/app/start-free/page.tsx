@@ -209,7 +209,7 @@ export default function StartFree() {
                   <div className="space-y-4">
                     <button
                       onClick={handleStartFree}
-                      className="btn-primary w-full sm:w-auto text-lg font-semibold px-8 py-4 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-200 flex items-center justify-center gap-3"
+                      className="btn-primary w-full sm:w-auto text-lg font-semibold px-8 py-4 shadow-xl hover:shadow-2xl transform hover:-transecondary-y-1 transition-all duration-200 flex items-center justify-center gap-3"
                     >
                       <HeartIcon className="h-6 w-6" />
                       {isPortuguese ? "Começar Grátis Agora" : "Start Free Now"}
@@ -444,7 +444,7 @@ export default function StartFree() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-all"
+                    className="bg-white rounded-xl shadow-lg border border-secondary-100 p-6 hover:shadow-xl transition-all"
                   >
                     <div className="flex items-center gap-3 mb-4">
                       <Image
@@ -498,7 +498,7 @@ export default function StartFree() {
               <div className="space-y-4">
                 <button
                   onClick={handleStartFree}
-                  className="bg-white text-primary-600 hover:bg-primary-50 font-bold text-xl px-10 py-5 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:-translate-y-1"
+                  className="bg-white text-primary-600 hover:bg-primary-50 font-bold text-xl px-10 py-5 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:-transecondary-y-1"
                 >
                   {isPortuguese ? "Começar Grátis Agora" : "Start Free Now"}
                 </button>

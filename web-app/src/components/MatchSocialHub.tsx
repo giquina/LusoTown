@@ -344,7 +344,7 @@ export default function MatchSocialHub({
       </div>
 
       {/* Navigation Tabs */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-1">
+      <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-1">
         <div className="flex gap-1 overflow-x-auto">
           {[
             { id: 'overview', label: isPortuguese ? 'Visão Geral' : 'Overview', icon: SparklesIcon },
@@ -359,7 +359,7 @@ export default function MatchSocialHub({
               className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-colors whitespace-nowrap ${
                 activeTab === tab.id
                   ? 'bg-primary-500 text-white'
-                  : 'text-secondary-600 hover:text-gray-900 hover:bg-gray-50'
+                  : 'text-secondary-600 hover:text-gray-900 hover:bg-secondary-50'
               }`}
             >
               <tab.icon className="w-4 h-4" />
@@ -381,7 +381,7 @@ export default function MatchSocialHub({
           {activeTab === 'overview' && (
             <div className="space-y-6">
               {/* Enhanced Matches Overview */}
-              <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+              <div className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
                   <HeartSolidIcon className="w-5 h-5 text-coral-500" />
                   {isPortuguese ? 'Matches Integrados' : 'Integrated Matches'}
@@ -389,7 +389,7 @@ export default function MatchSocialHub({
                 
                 <div className="space-y-4">
                   {enhancedMatches.map((match) => (
-                    <div key={match.id} className="border border-gray-200 rounded-xl p-4">
+                    <div key={match.id} className="border border-secondary-200 rounded-xl p-4">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex items-center gap-3">
                           <div className="w-12 h-12 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full flex items-center justify-center text-white font-bold">
@@ -505,7 +505,7 @@ export default function MatchSocialHub({
                 }
               </p>
             </div>
-            <button className="bg-white text-primary-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+            <button className="bg-white text-primary-600 px-4 py-2 rounded-lg font-semibold hover:bg-secondary-50 transition-colors">
               {isPortuguese ? 'Upgrade' : 'Upgrade'}
             </button>
           </div>

@@ -334,7 +334,7 @@ export default function StreamSchedule({
                   className={`px-2.5 py-1 rounded-full text-xs border transition-colors focus:outline-none focus:ring-2 focus:ring-offset-1 ${
                     active
                       ? "bg-primary-600 text-white border-primary-600"
-                      : "bg-gray-50 text-secondary-700 border-gray-200 hover:bg-secondary-100"
+                      : "bg-secondary-50 text-secondary-700 border-secondary-200 hover:bg-secondary-100"
                   }`}
                   aria-pressed={active}
                 >
@@ -387,8 +387,8 @@ export default function StreamSchedule({
                 transition={{ delay: 0.1 * index }}
                 className={`border rounded-lg p-4 transition-all duration-200 ${
                   hasStreamAccess
-                    ? "border-gray-200 hover:border-secondary-300 hover:shadow-md"
-                    : "border-gray-200 bg-gray-50 opacity-75"
+                    ? "border-secondary-200 hover:border-secondary-300 hover:shadow-md"
+                    : "border-secondary-200 bg-secondary-50 opacity-75"
                 }`}
               >
                 <div className="flex gap-4 items-start">
@@ -516,7 +516,7 @@ export default function StreamSchedule({
                               className={`px-2 py-1 rounded-full text-xs border transition-colors focus:outline-none focus:ring-2 focus:ring-offset-1 ${
                                 active
                                   ? "bg-primary-600 text-white border-primary-600"
-                                  : "bg-secondary-100 text-secondary-700 border-gray-200 hover:bg-secondary-200"
+                                  : "bg-secondary-100 text-secondary-700 border-secondary-200 hover:bg-secondary-200"
                               }`}
                               aria-pressed={active}
                               aria-label={`#${tag}`}

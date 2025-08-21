@@ -87,7 +87,7 @@ export default function CulturalCompatibilityBadge({
       color: 'text-primary-600',
       bg: 'bg-blue-100',
       border: 'border-blue-300',
-      gradient: 'from-blue-500 to-purple-500',
+      gradient: 'from-blue-500 to-accent-500',
       labelEn: 'Good Match',
       labelPt: 'Boa Compatibilidade',
       emoji: '✨'
@@ -274,7 +274,7 @@ export function CulturalCompatibilityMiniWidget({
   return (
     <motion.div
       className={`
-        bg-white rounded-xl border border-gray-200 p-3 shadow-sm
+        bg-white rounded-xl border border-secondary-200 p-3 shadow-sm
         ${onClick ? 'cursor-pointer hover:shadow-md hover:scale-[1.02]' : ''}
       `}
       whileHover={onClick ? { y: -2 } : {}}

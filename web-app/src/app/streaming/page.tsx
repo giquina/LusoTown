@@ -27,7 +27,7 @@ export default function StreamingPage() {
               </a>
               <a
                 href={ROUTES.about}
-                className="inline-flex items-center gap-2 bg-white border text-primary-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+                className="inline-flex items-center gap-2 bg-white border text-primary-600 font-semibold px-6 py-3 rounded-lg hover:bg-secondary-50 transition-colors duration-200"
               >
                 {STREAMING_COPY.hero.ctaSecondary}
               </a>
@@ -42,7 +42,7 @@ export default function StreamingPage() {
             {STREAMING_COPY.features.map((f) => (
               <li
                 key={f}
-                className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 text-center"
+                className="bg-white p-6 rounded-2xl shadow-lg border border-secondary-100 text-center"
               >
                 <span className="text-secondary-800 font-medium">{f}</span>
               </li>

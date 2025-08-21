@@ -93,11 +93,11 @@ export default function SaudadeMatchCard({
       case 'cultural_healer':
         return 'from-green-500 to-emerald-500';
       case 'heritage_guardian':
-        return 'from-blue-500 to-indigo-500';
+        return 'from-blue-500 to-primary-500';
       case 'integration_partner':
-        return 'from-purple-500 to-violet-500';
+        return 'from-accent-500 to-violet-500';
       default:
-        return 'from-gray-500 to-slate-500';
+        return 'from-gray-500 to-secondary-500';
     }
   };
 
@@ -172,7 +172,7 @@ export default function SaudadeMatchCard({
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.9 }}
-      className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden max-w-sm mx-auto"
+      className="bg-white rounded-3xl shadow-xl border border-secondary-100 overflow-hidden max-w-sm mx-auto"
     >
       {/* Header Image with Connection Type Overlay */}
       <div className="relative h-64 overflow-hidden">
@@ -335,11 +335,11 @@ export default function SaudadeMatchCard({
               {language === 'pt' ? 'Apoio' : 'Support'}
             </div>
           </div>
-          <div className="bg-purple-50 rounded-lg p-2">
-            <div className="text-lg font-bold text-purple-600">
+          <div className="bg-accent-50 rounded-lg p-2">
+            <div className="text-lg font-bold text-accent-600">
               {match.compatibilityResult.culturalDepth}%
             </div>
-            <div className="text-xs text-purple-700">
+            <div className="text-xs text-accent-700">
               {language === 'pt' ? 'Cultura' : 'Culture'}
             </div>
           </div>

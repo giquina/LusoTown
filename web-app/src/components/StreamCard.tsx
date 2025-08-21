@@ -112,7 +112,7 @@ export default function StreamCard({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay }}
-      className={`bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer ${
+      className={`bg-white rounded-xl shadow-sm border border-secondary-200 overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer ${
         !canWatch ? 'opacity-75' : ''
       }`}
       onClick={() => canWatch && onSelect(stream)}

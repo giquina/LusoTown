@@ -88,7 +88,7 @@ export default function FollowingPage() {
   const tabData = getTabData()
 
   return (
-    <main className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-secondary-50">
       
       <div className="pt-16">
         {/* Hero Section */}
@@ -144,7 +144,7 @@ export default function FollowingPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                     activeTab === 'all'
                       ? 'bg-primary-500 text-white shadow-lg'
-                      : 'bg-white text-secondary-700 hover:bg-gray-50'
+                      : 'bg-white text-secondary-700 hover:bg-secondary-50'
                   }`}
                 >
 {isPortuguese ? 'Todos' : 'All'} ({following.length})
@@ -154,7 +154,7 @@ export default function FollowingPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-colors flex items-center gap-2 ${
                     activeTab === 'people'
                       ? 'bg-primary-500 text-white shadow-lg'
-                      : 'bg-white text-secondary-700 hover:bg-gray-50'
+                      : 'bg-white text-secondary-700 hover:bg-secondary-50'
                   }`}
                 >
                   <UserIcon className="w-4 h-4" />
@@ -165,7 +165,7 @@ export default function FollowingPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-colors flex items-center gap-2 ${
                     activeTab === 'groups'
                       ? 'bg-primary-500 text-white shadow-lg'
-                      : 'bg-white text-secondary-700 hover:bg-gray-50'
+                      : 'bg-white text-secondary-700 hover:bg-secondary-50'
                   }`}
                 >
                   <UserGroupIcon className="w-4 h-4" />
@@ -176,7 +176,7 @@ export default function FollowingPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-colors flex items-center gap-2 ${
                     activeTab === 'communities'
                       ? 'bg-primary-500 text-white shadow-lg'
-                      : 'bg-white text-secondary-700 hover:bg-gray-50'
+                      : 'bg-white text-secondary-700 hover:bg-secondary-50'
                   }`}
                 >
                   <UsersIcon className="w-4 h-4" />
@@ -187,7 +187,7 @@ export default function FollowingPage() {
                   className={`px-4 py-2 rounded-lg font-medium transition-colors flex items-center gap-2 ${
                     activeTab === 'organizers'
                       ? 'bg-primary-500 text-white shadow-lg'
-                      : 'bg-white text-secondary-700 hover:bg-gray-50'
+                      : 'bg-white text-secondary-700 hover:bg-secondary-50'
                   }`}
                 >
                   <CalendarDaysIcon className="w-4 h-4" />
@@ -323,7 +323,7 @@ export default function FollowingPage() {
                       key={entity.id}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 hover:shadow-lg transition-all duration-300"
+                      className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-6 hover:shadow-lg transition-all duration-300"
                     >
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex items-center gap-3">
@@ -360,7 +360,7 @@ export default function FollowingPage() {
                           className={`p-2 rounded-full transition-colors ${
                             notificationsEnabled
                               ? 'text-primary-600 bg-primary-50 hover:bg-primary-100'
-                              : 'text-gray-400 hover:text-secondary-600 hover:bg-gray-50'
+                              : 'text-gray-400 hover:text-secondary-600 hover:bg-secondary-50'
                           }`}
                           title={
                             notificationsEnabled 

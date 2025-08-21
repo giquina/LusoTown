@@ -1,3 +1,4 @@
+import { SOCIAL_URLS } from '@/config'
 /**
  * Social Media URLs Configuration
  * 

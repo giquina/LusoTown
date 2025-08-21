@@ -33,7 +33,7 @@ export default function Testimonials() {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-gray-50 rounded-lg p-8 shadow-sm">
+            <div key={index} className="bg-secondary-50 rounded-lg p-8 shadow-sm">
               <div className="flex items-center mb-4">
                 {[...Array(5)].map((_, i) => (
                   <StarIcon key={i} className="w-5 h-5 text-yellow-400" />

@@ -68,7 +68,7 @@ export default function BusinessNetworkingAlgorithm({
         : "Calculates mutual value potential and collaboration opportunities",
       weight: 20,
       icon: UserGroupIcon,
-      color: "from-purple-500 to-purple-600",
+      color: "from-accent-500 to-accent-600",
       factors: [
         language === "pt" ? "Complementaridade de competências" : "Skill complementarity",
         language === "pt" ? "Potencial de referências" : "Referral potential",

@@ -223,7 +223,7 @@ export default function ServiceIntegrationFeed() {
   const getServiceColor = (type: string) => {
     if (type.includes('transport')) return 'from-blue-500 to-blue-600'
     if (type.includes('tour')) return 'from-green-500 to-green-600'
-    if (type.includes('event')) return 'from-purple-500 to-purple-600'
+    if (type.includes('event')) return 'from-accent-500 to-accent-600'
     if (type.includes('protection')) return 'from-red-500 to-red-600'
     return 'from-gray-500 to-gray-600'
   }
@@ -231,7 +231,7 @@ export default function ServiceIntegrationFeed() {
   return (
     <div className="space-y-6">
       {/* Filter Header */}
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+      <div className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-6">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-2 flex items-center gap-2">
@@ -288,7 +288,7 @@ export default function ServiceIntegrationFeed() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               className={`bg-white rounded-2xl shadow-sm border overflow-hidden ${
-                post.featured ? 'border-primary-200 bg-gradient-to-r from-primary-50/30 to-transparent' : 'border-gray-100'
+                post.featured ? 'border-primary-200 bg-gradient-to-r from-primary-50/30 to-transparent' : 'border-secondary-100'
               }`}
             >
               {/* Featured Badge */}
@@ -359,7 +359,7 @@ export default function ServiceIntegrationFeed() {
 
                 {/* Service Details Card */}
                 {post.serviceDetails && (
-                  <div className="bg-gradient-to-r from-gray-50 to-gray-50/50 rounded-xl p-4 mb-4 border border-gray-100">
+                  <div className="bg-gradient-to-r from-gray-50 to-gray-50/50 rounded-xl p-4 mb-4 border border-secondary-100">
                     <div className="flex items-center justify-between mb-3">
                       <h5 className="font-semibold text-gray-900 flex items-center gap-2">
                         <ServiceIcon className="w-4 h-4 text-primary-600" />
@@ -402,7 +402,7 @@ export default function ServiceIntegrationFeed() {
                     </div>
 
                     {post.serviceDetails.includes && (
-                      <div className="mt-3 pt-3 border-t border-gray-200">
+                      <div className="mt-3 pt-3 border-t border-secondary-200">
                         <span className="text-secondary-600 font-medium text-sm">
                           {isPortuguese ? 'Inclui:' : 'Includes:'}
                         </span>
@@ -458,7 +458,7 @@ export default function ServiceIntegrationFeed() {
               </div>
               
               {/* Metrics */}
-              <div className="px-6 py-3 bg-gray-50/80 border-t border-gray-100">
+              <div className="px-6 py-3 bg-secondary-50/80 border-t border-secondary-100">
                 <div className="flex items-center justify-between text-sm text-secondary-600">
                   <div className="flex items-center gap-4">
                     <span className="flex items-center gap-1">
@@ -488,7 +488,7 @@ export default function ServiceIntegrationFeed() {
               </div>
               
               {/* Action Buttons */}
-              <div className="px-6 py-4 border-t border-gray-100">
+              <div className="px-6 py-4 border-t border-secondary-100">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
                     <button 

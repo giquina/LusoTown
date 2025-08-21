@@ -129,7 +129,7 @@ export default function FavoritesPage() {
                   className={`px-6 py-3 rounded-lg font-medium transition-colors ${
                     activeTab === 'all'
                       ? 'bg-primary-500 text-white shadow-lg'
-                      : 'bg-white text-secondary-700 hover:bg-gray-50'
+                      : 'bg-white text-secondary-700 hover:bg-secondary-50'
                   }`}
                 >
                   All Favorites
@@ -139,7 +139,7 @@ export default function FavoritesPage() {
                   className={`px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2 ${
                     activeTab === 'event'
                       ? 'bg-primary-500 text-white shadow-lg'
-                      : 'bg-white text-secondary-700 hover:bg-gray-50'
+                      : 'bg-white text-secondary-700 hover:bg-secondary-50'
                   }`}
                 >
                   <CalendarDaysIcon className="w-5 h-5" />
@@ -150,7 +150,7 @@ export default function FavoritesPage() {
                   className={`px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2 ${
                     activeTab === 'business'
                       ? 'bg-primary-500 text-white shadow-lg'
-                      : 'bg-white text-secondary-700 hover:bg-gray-50'
+                      : 'bg-white text-secondary-700 hover:bg-secondary-50'
                   }`}
                 >
                   <BuildingStorefrontIcon className="w-5 h-5" />
@@ -161,7 +161,7 @@ export default function FavoritesPage() {
                   className={`px-6 py-3 rounded-lg font-medium transition-colors flex items-center gap-2 ${
                     activeTab === 'feed'
                       ? 'bg-primary-500 text-white shadow-lg'
-                      : 'bg-white text-secondary-700 hover:bg-gray-50'
+                      : 'bg-white text-secondary-700 hover:bg-secondary-50'
                   }`}
                 >
                   <ChatBubbleLeftRightIcon className="w-5 h-5" />
@@ -196,7 +196,7 @@ export default function FavoritesPage() {
                   {filteredFavorites.map((favorite) => (
                     <div 
                       key={favorite.id} 
-                      className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group"
+                      className="bg-white rounded-2xl shadow-lg border border-secondary-100 overflow-hidden hover:shadow-xl transition-all duration-300 group"
                     >
                       {/* Image */}
                       <div className="relative h-48 overflow-hidden">

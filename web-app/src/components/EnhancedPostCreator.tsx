@@ -457,8 +457,8 @@ Contact: {contact}
                       disabled={!canUse}
                       className={`p-4 rounded-lg border text-left transition-all ${
                         canUse
-                          ? 'border-gray-200 hover:border-primary-300 hover:bg-primary-50'
-                          : 'border-gray-100 bg-gray-50 opacity-60 cursor-not-allowed'
+                          ? 'border-secondary-200 hover:border-primary-300 hover:bg-primary-50'
+                          : 'border-secondary-100 bg-secondary-50 opacity-60 cursor-not-allowed'
                       }`}
                     >
                       <div className="flex items-center gap-3 mb-2">
@@ -484,7 +484,7 @@ Contact: {contact}
                 })}
               </div>
               
-              <div className="mt-4 pt-4 border-t border-gray-200">
+              <div className="mt-4 pt-4 border-t border-secondary-200">
                 <button
                   onClick={() => setSelectedTemplate(null)}
                   className="text-primary-600 hover:text-primary-700 font-medium"
@@ -628,7 +628,7 @@ Contact: {contact}
           </AnimatePresence>
 
           {/* Actions */}
-          <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+          <div className="flex items-center justify-between pt-4 border-t border-secondary-200">
             <div className="flex gap-2">
               <button 
                 onClick={() => fileInputRef.current?.click()}

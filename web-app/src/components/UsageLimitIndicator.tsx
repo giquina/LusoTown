@@ -135,7 +135,7 @@ export default function UsageLimitIndicator({
       case 'bottom':
         return 'fixed bottom-4 left-4 right-4 z-40'
       case 'floating':
-        return 'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40'
+        return 'fixed top-1/2 left-1/2 transform -transecondary-x-1/2 -transecondary-y-1/2 z-40'
       default:
         return 'sticky top-20 z-30 mx-4'
     }

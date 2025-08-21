@@ -181,7 +181,7 @@ export default function TransportBookingFlow({
               onClick={e => e.stopPropagation()}
             >
               {/* Header */}
-              <div className="flex items-center justify-between p-6 border-b border-gray-200">
+              <div className="flex items-center justify-between p-6 border-b border-secondary-200">
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900">
                     {isPortuguese ? 'Detalhes da Reserva' : 'Booking Details'}
@@ -200,7 +200,7 @@ export default function TransportBookingFlow({
 
               {/* Risk Assessment Summary */}
               {complianceData && (
-                <div className="p-6 border-b border-gray-200 bg-gray-50">
+                <div className="p-6 border-b border-secondary-200 bg-secondary-50">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-lg font-semibold text-gray-900">
                       {isPortuguese ? 'Avaliação de Risco' : 'Risk Assessment'}
@@ -310,7 +310,7 @@ export default function TransportBookingFlow({
                 </h3>
                 
                 {complianceData && (
-                  <div className="bg-gray-50 rounded-lg p-4 mb-6 text-left">
+                  <div className="bg-secondary-50 rounded-lg p-4 mb-6 text-left">
                     <div className="flex justify-between items-center mb-2">
                       <span className="font-medium">
                         {isPortuguese ? 'Serviço de Transporte SIA' : 'SIA Transport Service'}
@@ -351,7 +351,7 @@ export default function TransportBookingFlow({
                   
                   <button
                     onClick={onClose}
-                    className="w-full border border-secondary-300 text-secondary-700 py-3 px-4 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
+                    className="w-full border border-secondary-300 text-secondary-700 py-3 px-4 rounded-lg font-semibold hover:bg-secondary-50 transition-colors"
                   >
                     {isPortuguese ? 'Cancelar' : 'Cancel'}
                   </button>

@@ -290,7 +290,7 @@ export default function SaudadeConnectionMatcher() {
         </div>
 
         {/* Saudade Intensity Scale */}
-        <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 mb-8">
+        <div className="bg-white rounded-3xl p-8 shadow-xl border border-secondary-100 mb-8">
           <div className="flex justify-between items-center mb-6">
             <span className="text-sm text-gray-500">
               {t('saudade.scale.none', 'Not at all')}
@@ -336,7 +336,7 @@ export default function SaudadeConnectionMatcher() {
           <button
             onClick={() => assessmentStep > 0 && setAssessmentStep(assessmentStep - 1)}
             disabled={assessmentStep === 0}
-            className="px-6 py-3 rounded-xl border-2 border-secondary-300 text-secondary-600 font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:border-gray-400 transition-colors"
+            className="px-6 py-3 rounded-xl border-2 border-secondary-300 text-secondary-600 font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:border-secondary-400 transition-colors"
           >
             {t('common.back', 'Back')}
           </button>
@@ -387,7 +387,7 @@ export default function SaudadeConnectionMatcher() {
         namePt: 'Saudade Cultural',
         descEn: 'You deeply miss Portuguese culture, language, and traditions',
         descPt: 'Sente profundamente a falta da cultura, língua e tradições portuguesas',
-        color: 'from-purple-500 to-indigo-500',
+        color: 'from-accent-500 to-primary-500',
         icon: MusicalNoteIcon
       },
       balanced_saudade: {
@@ -415,7 +415,7 @@ export default function SaudadeConnectionMatcher() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, type: 'spring' }}
-            className="inline-flex items-center gap-4 bg-white rounded-3xl p-8 shadow-2xl border border-gray-100 mb-8"
+            className="inline-flex items-center gap-4 bg-white rounded-3xl p-8 shadow-2xl border border-secondary-100 mb-8"
           >
             <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${typeInfo.color} flex items-center justify-center`}>
               <Icon className="w-10 h-10 text-white" />
@@ -461,7 +461,7 @@ export default function SaudadeConnectionMatcher() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+            className="bg-white rounded-3xl p-8 shadow-xl border border-secondary-100"
           >
             <div className="text-center mb-6">
               <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -477,7 +477,7 @@ export default function SaudadeConnectionMatcher() {
             
             <div className="space-y-4 mb-6">
               {matches.slice(0, 2).map((match) => (
-                <div key={match.id} className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
+                <div key={match.id} className="flex items-center gap-3 p-4 bg-secondary-50 rounded-xl">
                   <div className="w-12 h-12 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full flex items-center justify-center">
                     <span className="text-white font-semibold text-lg">
                       {match.name.charAt(0)}
@@ -514,10 +514,10 @@ export default function SaudadeConnectionMatcher() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+            className="bg-white rounded-3xl p-8 shadow-xl border border-secondary-100"
           >
             <div className="text-center mb-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-accent-500 to-primary-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <UsersIcon className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
@@ -530,7 +530,7 @@ export default function SaudadeConnectionMatcher() {
             
             <div className="space-y-4 mb-6">
               {supportGroups.map((group) => (
-                <div key={group.id} className="p-4 bg-gray-50 rounded-xl">
+                <div key={group.id} className="p-4 bg-secondary-50 rounded-xl">
                   <h4 className="font-semibold text-gray-900 mb-2">
                     {language === 'pt' ? group.namePt : group.nameEn}
                   </h4>
@@ -545,7 +545,7 @@ export default function SaudadeConnectionMatcher() {
               ))}
             </div>
             
-            <button className="w-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
+            <button className="w-full bg-gradient-to-r from-accent-500 to-primary-500 text-white py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
               {t('saudade.groups.cta', 'Join a Group')}
             </button>
           </motion.div>
@@ -555,7 +555,7 @@ export default function SaudadeConnectionMatcher() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+            className="bg-white rounded-3xl p-8 shadow-xl border border-secondary-100"
           >
             <div className="text-center mb-6">
               <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -571,7 +571,7 @@ export default function SaudadeConnectionMatcher() {
             
             <div className="space-y-4 mb-6">
               {comfortActivities.map((activity) => (
-                <div key={activity.id} className="p-4 bg-gray-50 rounded-xl">
+                <div key={activity.id} className="p-4 bg-secondary-50 rounded-xl">
                   <h4 className="font-semibold text-gray-900 mb-2">
                     {language === 'pt' ? activity.namePt : activity.nameEn}
                   </h4>
@@ -650,7 +650,7 @@ export default function SaudadeConnectionMatcher() {
           >
             {t('saudade.title', 'Find Others Who Understand Your')}
             <br />
-            <span className="bg-gradient-to-r from-red-600 via-pink-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-red-600 via-pink-600 to-accent-600 bg-clip-text text-transparent">
               {t('saudade.saudade', 'Saudade')}
             </span>
           </motion.h1>

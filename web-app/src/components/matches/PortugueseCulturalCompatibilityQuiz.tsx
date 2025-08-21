@@ -647,7 +647,7 @@ export default function PortugueseCulturalCompatibilityQuiz({ onComplete, onClos
                 className={`w-full p-4 rounded-xl border-2 text-left transition-all duration-200 ${
                   selectedOptions.includes(option.id)
                     ? 'border-primary-500 bg-primary-50 text-primary-900'
-                    : 'border-gray-200 bg-white hover:border-primary-300 hover:bg-primary-25'
+                    : 'border-secondary-200 bg-white hover:border-primary-300 hover:bg-primary-25'
                 }`}
               >
                 <div className="flex items-center gap-3">
@@ -681,7 +681,7 @@ export default function PortugueseCulturalCompatibilityQuiz({ onComplete, onClos
                   className={`p-4 rounded-xl border-2 text-center transition-all duration-200 ${
                     selectedOptions.includes(option.id)
                       ? 'border-primary-500 bg-primary-50 text-primary-900 scale-95'
-                      : 'border-gray-200 bg-white hover:border-primary-300 hover:bg-primary-25'
+                      : 'border-secondary-200 bg-white hover:border-primary-300 hover:bg-primary-25'
                   }`}
                   disabled={!selectedOptions.includes(option.id) && selectedOptions.length >= 3}
                 >
@@ -738,7 +738,7 @@ export default function PortugueseCulturalCompatibilityQuiz({ onComplete, onClos
               return (
                 <div
                   key={optionId}
-                  className="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-lg cursor-move"
+                  className="flex items-center gap-3 p-3 bg-white border border-secondary-200 rounded-lg cursor-move"
                 >
                   <span className="w-8 h-8 bg-primary-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
                     {index + 1}

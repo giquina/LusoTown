@@ -145,7 +145,7 @@ export default function TwitterHashtagTabs({
   return (
     <div className={`space-y-6 ${className}`}>
       {/* Tab Navigation */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-1">
+      <div className="bg-white rounded-xl shadow-sm border border-secondary-200 p-1">
         <div className="grid grid-cols-5 gap-1">
           {HASHTAG_TABS.map(tab => (
             <button
@@ -174,7 +174,7 @@ export default function TwitterHashtagTabs({
               
               {/* Active indicator */}
               {activeTab === tab.id && (
-                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-8 h-1 bg-current rounded-full opacity-60" />
+                <div className="absolute -bottom-1 left-1/2 transform -transecondary-x-1/2 w-8 h-1 bg-current rounded-full opacity-60" />
               )}
             </button>
           ))}
@@ -182,7 +182,7 @@ export default function TwitterHashtagTabs({
       </div>
 
       {/* Tab Description */}
-      <div className="bg-gray-50 rounded-lg p-4">
+      <div className="bg-secondary-50 rounded-lg p-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
@@ -220,7 +220,7 @@ export default function TwitterHashtagTabs({
       />
 
       {/* Additional Hashtag Suggestions */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+      <div className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
         <h3 className="text-sm font-medium text-gray-900 mb-3">
           {t('twitter_tabs.popular_hashtags')}
         </h3>
@@ -245,7 +245,7 @@ export default function TwitterHashtagTabs({
 
       {/* Community Engagement Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+        <div className="bg-white rounded-lg shadow-sm border border-secondary-200 p-4">
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
               <Users className="w-4 h-4 text-primary-600" />
@@ -259,7 +259,7 @@ export default function TwitterHashtagTabs({
           </div>
         </div>
         
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+        <div className="bg-white rounded-lg shadow-sm border border-secondary-200 p-4">
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
               <TrendingUp className="w-4 h-4 text-action-600" />
@@ -273,10 +273,10 @@ export default function TwitterHashtagTabs({
           </div>
         </div>
         
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+        <div className="bg-white rounded-lg shadow-sm border border-secondary-200 p-4">
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-              <Activity className="w-4 h-4 text-purple-600" />
+            <div className="w-8 h-8 bg-accent-100 rounded-lg flex items-center justify-center">
+              <Activity className="w-4 h-4 text-accent-600" />
             </div>
             <div>
               <p className="text-sm font-medium text-gray-900">

@@ -180,7 +180,7 @@ export default function TransportTestimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-lg p-6 border border-gray-200"
+              className="bg-white rounded-xl shadow-lg p-6 border border-secondary-200"
             >
               {/* Quote Icon */}
               <div className="flex justify-center mb-4">
@@ -250,7 +250,7 @@ export default function TransportTestimonials() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-xl shadow-lg p-6 border border-gray-200"
+                className="bg-white rounded-xl shadow-lg p-6 border border-secondary-200"
               >
                 {/* Quote Icon */}
                 <div className="flex justify-center mb-4">

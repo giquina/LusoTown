@@ -510,7 +510,7 @@ export default function MobileOptimizationFeatures({
   const renderPullToRefresh = () => (
     <div 
       className={`fixed top-0 left-0 right-0 z-40 bg-gradient-to-r from-red-600 to-green-600 text-white transition-transform duration-200 ease-out ${
-        pullDistance > 0 ? 'translate-y-0' : '-translate-y-full'
+        pullDistance > 0 ? 'transecondary-y-0' : '-transecondary-y-full'
       }`}
       style={{ 
         height: `${Math.min(pullDistance, 80)}px`,
@@ -543,7 +543,7 @@ export default function MobileOptimizationFeatures({
   );
 
   const renderMobileNavigation = () => (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 safe-area-bottom">
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-secondary-200 safe-area-bottom">
       <div className="grid grid-cols-5 h-16">
         {PORTUGUESE_MOBILE_NAVIGATION.map((item) => {
           const Icon = item.icon;
@@ -593,7 +593,7 @@ export default function MobileOptimizationFeatures({
       </button>
       
       {showMobileMenu && (
-        <div className="absolute top-12 left-0 bg-white border border-gray-200 rounded-lg shadow-lg p-4 w-64">
+        <div className="absolute top-12 left-0 bg-white border border-secondary-200 rounded-lg shadow-lg p-4 w-64">
           <h3 className="font-semibold text-gray-900 mb-3">
             {language === 'pt' ? 'Acessibilidade' : 'Accessibility'}
           </h3>
@@ -611,7 +611,7 @@ export default function MobileOptimizationFeatures({
                   {language === 'pt' ? 'Alto Contraste' : 'High Contrast'}
                 </span>
               </div>
-              <div className={`w-4 h-4 rounded ${highContrast ? 'bg-primary-600' : 'bg-gray-300'}`} />
+              <div className={`w-4 h-4 rounded ${highContrast ? 'bg-primary-600' : 'bg-secondary-300'}`} />
             </button>
             
             <button
@@ -626,13 +626,13 @@ export default function MobileOptimizationFeatures({
                   {language === 'pt' ? 'Texto Grande' : 'Large Text'}
                 </span>
               </div>
-              <div className={`w-4 h-4 rounded ${largeText ? 'bg-action-600' : 'bg-gray-300'}`} />
+              <div className={`w-4 h-4 rounded ${largeText ? 'bg-action-600' : 'bg-secondary-300'}`} />
             </button>
             
             <button
               onClick={() => toggleAccessibilityFeature('haptic')}
               className={`flex items-center justify-between w-full text-left p-2 rounded ${
-                hapticEnabled ? 'bg-purple-100 text-purple-800' : 'text-secondary-600'
+                hapticEnabled ? 'bg-accent-100 text-accent-800' : 'text-secondary-600'
               }`}
             >
               <div className="flex items-center space-x-2">
@@ -641,7 +641,7 @@ export default function MobileOptimizationFeatures({
                   {language === 'pt' ? 'Vibração' : 'Haptic Feedback'}
                 </span>
               </div>
-              <div className={`w-4 h-4 rounded ${hapticEnabled ? 'bg-purple-600' : 'bg-gray-300'}`} />
+              <div className={`w-4 h-4 rounded ${hapticEnabled ? 'bg-accent-600' : 'bg-secondary-300'}`} />
             </button>
             
             <button
@@ -656,7 +656,7 @@ export default function MobileOptimizationFeatures({
                   {language === 'pt' ? 'Sons' : 'Sound Effects'}
                 </span>
               </div>
-              <div className={`w-4 h-4 rounded ${soundEnabled ? 'bg-yellow-600' : 'bg-gray-300'}`} />
+              <div className={`w-4 h-4 rounded ${soundEnabled ? 'bg-yellow-600' : 'bg-secondary-300'}`} />
             </button>
           </div>
         </div>

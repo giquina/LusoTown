@@ -174,14 +174,14 @@ export default function CulturalVerificationDemoPage() {
                 </span>
               </Link>
               
-              <div className="w-px h-6 bg-gray-300" />
+              <div className="w-px h-6 bg-secondary-300" />
               
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center">
                   <ShieldCheckSolid className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold text-gray-900">
+                  <h1 className="text-2xl font-bold text-secondary-900">
                     {language === 'pt' ? 'Demo: Verificação Cultural Portuguesa' : 'Demo: Portuguese Cultural Verification'}
                   </h1>
                   <p className="text-secondary-600">
@@ -220,9 +220,9 @@ export default function CulturalVerificationDemoPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Feature Overview */}
         <div className="mb-8">
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8">
+          <div className="bg-white rounded-2xl shadow-lg border border-secondary-200 p-8">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-secondary-900 mb-4">
                 {language === 'pt' ? 'Sistema de Verificação Cultural' : 'Cultural Verification System'}
               </h2>
               <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
@@ -238,7 +238,7 @@ export default function CulturalVerificationDemoPage() {
                 <div className="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <ShieldCheckSolid className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">
+                <h3 className="font-bold text-secondary-900 mb-2">
                   {language === 'pt' ? 'Verificação IA' : 'AI Verification'}
                 </h3>
                 <p className="text-sm text-secondary-600">
@@ -249,11 +249,11 @@ export default function CulturalVerificationDemoPage() {
                 </p>
               </div>
 
-              <div className="text-center p-6 bg-gradient-to-b from-blue-50 to-blue-100 rounded-xl">
+              <div className="text-center p-6 bg-gradient-to-b from-primary-50 to-primary-100 rounded-xl">
                 <div className="w-16 h-16 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <StarIcon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">
+                <h3 className="font-bold text-secondary-900 mb-2">
                   {language === 'pt' ? 'Sistema de Distintivos' : 'Badge System'}
                 </h3>
                 <p className="text-sm text-secondary-600">
@@ -264,11 +264,11 @@ export default function CulturalVerificationDemoPage() {
                 </p>
               </div>
 
-              <div className="text-center p-6 bg-gradient-to-b from-purple-50 to-purple-100 rounded-xl">
-                <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="text-center p-6 bg-gradient-to-b from-accent-50 to-accent-100 rounded-xl">
+                <div className="w-16 h-16 bg-accent-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <HeartIcon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">
+                <h3 className="font-bold text-secondary-900 mb-2">
                   {language === 'pt' ? 'Matches Melhorados' : 'Enhanced Matches'}
                 </h3>
                 <p className="text-sm text-secondary-600">
@@ -283,7 +283,7 @@ export default function CulturalVerificationDemoPage() {
                 <div className="w-16 h-16 bg-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <UserGroupIcon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">
+                <h3 className="font-bold text-secondary-900 mb-2">
                   {language === 'pt' ? 'Confiança da Comunidade' : 'Community Trust'}
                 </h3>
                 <p className="text-sm text-secondary-600">
@@ -307,7 +307,7 @@ export default function CulturalVerificationDemoPage() {
                 className={`px-6 py-3 rounded-xl font-semibold transition-all ${
                   activeDemo === tab.id
                     ? 'bg-primary-600 text-white shadow-lg'
-                    : 'bg-white text-secondary-700 border border-gray-200 hover:bg-gray-50'
+                    : 'bg-white text-secondary-700 border border-secondary-200 hover:bg-secondary-50'
                 }`}
               >
                 <div className="text-left">
@@ -341,7 +341,7 @@ export default function CulturalVerificationDemoPage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8"
+              className="bg-white rounded-2xl shadow-lg border border-secondary-200 p-8"
             >
               <PortugueseCulturalPhotoVerification
                 photos={userPhotos}
@@ -360,7 +360,7 @@ export default function CulturalVerificationDemoPage() {
               className="space-y-8"
             >
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                <h3 className="text-2xl font-bold text-secondary-900 mb-2">
                   {language === 'pt' ? 'Perfil Culturalmente Verificado' : 'Culturally Verified Profile'}
                 </h3>
                 <p className="text-secondary-600">
@@ -374,11 +374,11 @@ export default function CulturalVerificationDemoPage() {
               <div className="flex justify-center">
                 <CulturallyVerifiedMatchCard
                   profile={MOCK_VERIFIED_PROFILE}
-                  onLike={(id) => }
-                  onSkip={(id) => }
-                  onSuperLike={(id) => }
-                  onStartConversation={(id, starter) => }
-                  onViewCulturalPhotos={(id) => }
+                  onLike={(id) => {}}
+                  onSkip={(id) => {}}
+                  onSuperLike={(id) => {}}
+                  onStartConversation={(id, starter) => {}}
+                  onViewCulturalPhotos={(id) => {}}
                   showCulturalDetails={true}
                 />
               </div>
@@ -406,7 +406,7 @@ export default function CulturalVerificationDemoPage() {
                 <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <SparklesIcon className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="font-bold text-gray-900 mb-2">
+                <h4 className="font-bold text-secondary-900 mb-2">
                   {language === 'pt' ? 'Matches de Maior Qualidade' : 'Higher Quality Matches'}
                 </h4>
                 <p className="text-secondary-600 text-sm">
@@ -418,10 +418,10 @@ export default function CulturalVerificationDemoPage() {
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <UserGroupIcon className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="font-bold text-gray-900 mb-2">
+                <h4 className="font-bold text-secondary-900 mb-2">
                   {language === 'pt' ? 'Prioridade na Comunidade' : 'Community Priority'}
                 </h4>
                 <p className="text-secondary-600 text-sm">
@@ -433,10 +433,10 @@ export default function CulturalVerificationDemoPage() {
               </div>
 
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-accent-500 to-accent-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <HeartIcon className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="font-bold text-gray-900 mb-2">
+                <h4 className="font-bold text-secondary-900 mb-2">
                   {language === 'pt' ? 'Confiança Aumentada' : 'Increased Trust'}
                 </h4>
                 <p className="text-secondary-600 text-sm">

@@ -841,7 +841,7 @@ const CulturalLandmarkVR: React.FC = () => {
                         top: `${50 + element.position.y}%`
                       }}
                       onClick={() => {
-                        alert(language === 'pt' ? element.contentPt : element.content);
+                        toast.error(language === 'pt' ? element.contentPt : element.content);
                       }}
                     >
                       {element.type === 'info-panel' && <Info className="h-5 w-5" />}
@@ -895,7 +895,7 @@ const CulturalLandmarkVR: React.FC = () => {
                       className={`p-3 rounded-lg text-left transition-colors ${
                         currentViewpoint?.id === viewpoint.id
                           ? 'bg-amber-600 text-white'
-                          : 'bg-gray-700 hover:bg-gray-600'
+                          : 'bg-secondary-700 hover:bg-secondary-600'
                       }`}
                     >
                       <div className="font-semibold text-sm mb-1">
@@ -915,7 +915,7 @@ const CulturalLandmarkVR: React.FC = () => {
                   <button
                     onClick={() => setShowInteractiveElements(!showInteractiveElements)}
                     className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
-                      showInteractiveElements ? 'bg-amber-600 text-white' : 'bg-gray-700 hover:bg-gray-600'
+                      showInteractiveElements ? 'bg-amber-600 text-white' : 'bg-secondary-700 hover:bg-secondary-600'
                     }`}
                   >
                     <Info className="h-4 w-4" />
@@ -927,7 +927,7 @@ const CulturalLandmarkVR: React.FC = () => {
                   <button
                     onClick={() => setAudioEnabled(!audioEnabled)}
                     className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
-                      audioEnabled ? 'bg-amber-600 text-white' : 'bg-gray-700 hover:bg-gray-600'
+                      audioEnabled ? 'bg-amber-600 text-white' : 'bg-secondary-700 hover:bg-secondary-600'
                     }`}
                   >
                     <Volume2 className="h-4 w-4" />
@@ -938,13 +938,13 @@ const CulturalLandmarkVR: React.FC = () => {
                 </div>
 
                 <div className="flex items-center space-x-2">
-                  <button className="p-2 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
+                  <button className="p-2 rounded-lg bg-secondary-700 hover:bg-secondary-600 transition-colors">
                     <Share className="h-4 w-4" />
                   </button>
-                  <button className="p-2 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
+                  <button className="p-2 rounded-lg bg-secondary-700 hover:bg-secondary-600 transition-colors">
                     <Camera className="h-4 w-4" />
                   </button>
-                  <button className="p-2 rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors">
+                  <button className="p-2 rounded-lg bg-secondary-700 hover:bg-secondary-600 transition-colors">
                     <Settings className="h-4 w-4" />
                   </button>
                 </div>
@@ -952,7 +952,7 @@ const CulturalLandmarkVR: React.FC = () => {
             </div>
 
             {/* Landmark Information */}
-            <div className="p-6 bg-gray-50">
+            <div className="p-6 bg-secondary-50">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div>
                   <h4 className="font-bold text-secondary-800 mb-3">

@@ -328,7 +328,7 @@ const PortugueseCulturalQuotes: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto mb-12"
         >
-          <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden">
+          <div className="bg-white rounded-3xl shadow-2xl border border-secondary-100 overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentQuoteIndex}
@@ -394,10 +394,10 @@ const PortugueseCulturalQuotes: React.FC = () => {
             </AnimatePresence>
 
             {/* Navigation */}
-            <div className="bg-gray-50 px-8 py-6 flex items-center justify-between">
+            <div className="bg-secondary-50 px-8 py-6 flex items-center justify-between">
               <button
                 onClick={prevQuote}
-                className="flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors"
+                className="flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-secondary-200 hover:bg-secondary-50 transition-colors"
               >
                 <ArrowLeftIcon className="w-4 h-4" />
                 <span className="text-sm font-medium">
@@ -417,7 +417,7 @@ const PortugueseCulturalQuotes: React.FC = () => {
                     className={`w-2 h-2 rounded-full transition-all duration-300 ${
                       index === currentQuoteIndex
                         ? 'bg-primary-500 w-6'
-                        : 'bg-gray-300 hover:bg-gray-400'
+                        : 'bg-secondary-300 hover:bg-secondary-400'
                     }`}
                   />
                 ))}
@@ -425,7 +425,7 @@ const PortugueseCulturalQuotes: React.FC = () => {
 
               <button
                 onClick={nextQuote}
-                className="flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors"
+                className="flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-secondary-200 hover:bg-secondary-50 transition-colors"
               >
                 <span className="text-sm font-medium">
                   {language === "pt" ? "Próxima" : "Next"}

@@ -114,7 +114,7 @@ export default function Features() {
 
         {/* Features Grid - Enhanced Multi-Column Responsive Layout */}
         <div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-7 lg:gap-8 xl:gap-10 opacity-0 translate-y-5 animate-fade-in-up"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-7 lg:gap-8 xl:gap-10 opacity-0 transecondary-y-5 animate-fade-in-up"
           style={{
             animation: 'fadeInUp 0.6s ease-out 0.2s forwards'
           }}
@@ -122,7 +122,7 @@ export default function Features() {
           {features.map((feature, index) => (
             <div
               key={feature.title}
-              className="group opacity-0 translate-y-5"
+              className="group opacity-0 transecondary-y-5"
               style={{
                 animation: `fadeInUp 0.6s ease-out ${0.3 + index * 0.1}s both`
               }}

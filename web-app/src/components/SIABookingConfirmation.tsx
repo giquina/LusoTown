@@ -195,7 +195,7 @@ export default function SIABookingConfirmation({
             </div>
 
             {/* Status Banner */}
-            <div className={`px-6 py-4 border-b border-gray-200 ${getStatusColor(bookingData.status)}`}>
+            <div className={`px-6 py-4 border-b border-secondary-200 ${getStatusColor(bookingData.status)}`}>
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
                   <ShieldCheckIcon className="w-6 h-6" />
@@ -228,7 +228,7 @@ export default function SIABookingConfirmation({
                 {/* Left Column - Service Details */}
                 <div className="space-y-6">
                   {/* Service Information */}
-                  <div className="bg-gray-50 rounded-lg p-4">
+                  <div className="bg-secondary-50 rounded-lg p-4">
                     <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
                       <DocumentTextIcon className="w-5 h-5 mr-2 text-secondary-600" />
                       {isPortuguese ? 'Detalhes do Serviço' : 'Service Details'}
@@ -256,7 +256,7 @@ export default function SIABookingConfirmation({
                   </div>
 
                   {/* Location Details */}
-                  <div className="bg-gray-50 rounded-lg p-4">
+                  <div className="bg-secondary-50 rounded-lg p-4">
                     <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
                       <MapPinIcon className="w-5 h-5 mr-2 text-secondary-600" />
                       {isPortuguese ? 'Localizações' : 'Locations'}
@@ -280,7 +280,7 @@ export default function SIABookingConfirmation({
                   </div>
 
                   {/* Risk Assessment */}
-                  <div className="bg-gray-50 rounded-lg p-4">
+                  <div className="bg-secondary-50 rounded-lg p-4">
                     <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
                       <ExclamationTriangleIcon className="w-5 h-5 mr-2 text-secondary-600" />
                       {isPortuguese ? 'Avaliação de Risco' : 'Risk Assessment'}
@@ -378,7 +378,7 @@ export default function SIABookingConfirmation({
                   )}
 
                   {/* Contact Information */}
-                  <div className="bg-gray-50 rounded-lg p-4">
+                  <div className="bg-secondary-50 rounded-lg p-4">
                     <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
                       <PhoneIcon className="w-5 h-5 mr-2 text-secondary-600" />
                       {isPortuguese ? 'Informações de Contacto' : 'Contact Information'}
@@ -449,7 +449,7 @@ export default function SIABookingConfirmation({
                             </span>
                           </div>
                           <div className="flex items-start space-x-2">
-                            <div className="w-2 h-2 bg-gray-400 rounded-full mt-1.5" />
+                            <div className="w-2 h-2 bg-secondary-400 rounded-full mt-1.5" />
                             <span>
                               {isPortuguese 
                                 ? 'Designação e contacto do oficial'
@@ -458,7 +458,7 @@ export default function SIABookingConfirmation({
                             </span>
                           </div>
                           <div className="flex items-start space-x-2">
-                            <div className="w-2 h-2 bg-gray-400 rounded-full mt-1.5" />
+                            <div className="w-2 h-2 bg-secondary-400 rounded-full mt-1.5" />
                             <span>
                               {isPortuguese 
                                 ? 'Briefing pré-serviço (24 horas antes)'
@@ -496,7 +496,7 @@ export default function SIABookingConfirmation({
             </div>
 
             {/* Footer */}
-            <div className="bg-gray-50 px-6 py-4 border-t border-gray-200">
+            <div className="bg-secondary-50 px-6 py-4 border-t border-secondary-200">
               <div className="flex items-center justify-between text-sm text-secondary-600">
                 <div>
                   {isPortuguese ? 'Documento gerado em:' : 'Document generated at:'} {currentTime.toLocaleString()}

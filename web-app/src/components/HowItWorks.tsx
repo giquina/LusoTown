@@ -135,15 +135,15 @@ export default function HowItWorks() {
         {/* Enhanced Header Section */}
         <div
           className={`text-center mb-20 transition-all duration-1000 ${
-            mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+            mounted ? "opacity-100 transecondary-y-0" : "opacity-0 transecondary-y-5"
           }`}
         >
           {/* Enhanced Badge with Portuguese flag colors */}
           <div
             className={`inline-flex items-center gap-3 bg-gradient-to-r from-secondary-50 via-accent-50 to-coral-50 border border-secondary-200/50 rounded-2xl px-8 py-4 shadow-xl transition-all duration-700 delay-100 ${
               mounted
-                ? "opacity-100 scale-100 translate-y-0"
-                : "opacity-0 scale-95 -translate-y-5"
+                ? "opacity-100 scale-100 transecondary-y-0"
+                : "opacity-0 scale-95 -transecondary-y-5"
             } mb-8`}
           >
             <div className="flex items-center gap-3">
@@ -267,7 +267,7 @@ export default function HowItWorks() {
                     <div className="absolute bottom-4 left-4 text-4xl opacity-40">
                       {pattern.emoji2}
                     </div>
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-8xl opacity-10">
+                    <div className="absolute top-1/2 left-1/2 transform -transecondary-x-1/2 -transecondary-y-1/2 text-8xl opacity-10">
                       {pattern.emoji3}
                     </div>
                   </div>
@@ -309,7 +309,7 @@ export default function HowItWorks() {
                         className={`group/btn inline-flex items-center gap-2 ${buttonColor} text-white font-bold px-4 py-3 rounded-xl w-full justify-center transition-all duration-300 shadow-lg hover:shadow-xl`}
                       >
                         <span>Learn More</span>
-                        <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
+                        <ArrowRight className="h-4 w-4 group-hover/btn:transecondary-x-1 transition-transform duration-200" />
                       </button>
                     </div>
                   </div>
@@ -322,7 +322,7 @@ export default function HowItWorks() {
         {/* Enhanced Stats Section with Portuguese Cultural Context */}
         <div
           className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20 transition-all duration-1000 delay-500 ${
-            mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+            mounted ? "opacity-100 transecondary-y-0" : "opacity-0 transecondary-y-5"
           }`}
         >
           <div className="group text-center bg-white/60 backdrop-blur-lg border border-white/40 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
@@ -383,7 +383,7 @@ export default function HowItWorks() {
         {/* Enhanced CTA Section with Portuguese Cultural Messaging */}
         <div
           className={`text-center transition-all duration-1000 delay-700 ${
-            mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+            mounted ? "opacity-100 transecondary-y-0" : "opacity-0 transecondary-y-5"
           }`}
         >
           <div className="bg-gradient-to-r from-white/70 via-secondary-50/50 to-accent-50/50 backdrop-blur-lg border border-white/40 rounded-3xl p-12 shadow-2xl max-w-5xl mx-auto">
@@ -418,17 +418,17 @@ export default function HowItWorks() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href={ROUTES.events}
-                className="group relative text-lg font-bold px-8 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-xl shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden"
+                className="group relative text-lg font-bold px-8 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-xl shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:-transecondary-y-1 hover:scale-105 overflow-hidden"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-secondary-700 via-action-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10 flex items-center justify-center gap-2 whitespace-nowrap">
                   Browse Events
-                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
+                  <ArrowRight className="h-5 w-5 group-hover:transecondary-x-1 transition-transform duration-200" />
                 </span>
               </a>
               <a
                 href={ROUTES.signup}
-                className="text-lg font-bold px-8 py-4 bg-white/80 backdrop-blur-lg text-secondary-800 border-2 border-gray-200 rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 whitespace-nowrap"
+                className="text-lg font-bold px-8 py-4 bg-white/80 backdrop-blur-lg text-secondary-800 border-2 border-secondary-200 rounded-xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-transecondary-y-1 whitespace-nowrap"
               >
                 Join Now
               </a>

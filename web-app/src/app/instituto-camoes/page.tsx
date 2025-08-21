@@ -643,7 +643,7 @@ export default function InstitutoCamoes() {
                           </span>
                         ))}
                         {program.benefits.length > 3 && (
-                          <span className="px-2 py-1 bg-gray-50 text-secondary-600 text-xs rounded-full">
+                          <span className="px-2 py-1 bg-secondary-50 text-secondary-600 text-xs rounded-full">
                             +{program.benefits.length - 3} {language === 'pt' ? 'mais' : 'more'}
                           </span>
                         )}
@@ -663,7 +663,7 @@ export default function InstitutoCamoes() {
                     </div>
                     
                     {selectedProgram === program.id && (
-                      <div className="mt-4 p-4 bg-gray-50 rounded-lg">
+                      <div className="mt-4 p-4 bg-secondary-50 rounded-lg">
                         <h5 className="font-medium text-gray-900 mb-2">
                           {language === 'pt' ? 'Público-alvo:' : 'Target audience:'}
                         </h5>

@@ -377,19 +377,19 @@ export default function EventEnhancedMatchCard({
 
                 {/* Quick Stats */}
                 <div className="grid grid-cols-3 gap-3">
-                  <div className="text-center p-3 bg-gray-50 rounded-lg">
+                  <div className="text-center p-3 bg-secondary-50 rounded-lg">
                     <div className="text-lg font-bold text-primary-600">{matchProfile.eventResponseRate}%</div>
                     <div className="text-xs text-secondary-600">
                       {language === "pt" ? "Taxa resposta" : "Response rate"}
                     </div>
                   </div>
-                  <div className="text-center p-3 bg-gray-50 rounded-lg">
+                  <div className="text-center p-3 bg-secondary-50 rounded-lg">
                     <div className="text-lg font-bold text-secondary-600">{matchProfile.pastEventInteractions}</div>
                     <div className="text-xs text-secondary-600">
                       {language === "pt" ? "Eventos passados" : "Past events"}
                     </div>
                   </div>
-                  <div className="text-center p-3 bg-gray-50 rounded-lg">
+                  <div className="text-center p-3 bg-secondary-50 rounded-lg">
                     <div className="text-lg font-bold text-accent-600">{matchProfile.culturalAlignment}%</div>
                     <div className="text-xs text-secondary-600">
                       {language === "pt" ? "Alinhamento" : "Alignment"}
@@ -564,7 +564,7 @@ export default function EventEnhancedMatchCard({
                 </div>
 
                 {/* Cultural Event Participation */}
-                <div className="bg-gray-50 p-4 rounded-xl">
+                <div className="bg-secondary-50 p-4 rounded-xl">
                   <h5 className="font-semibold text-gray-900 mb-3">
                     {language === "pt" ? "Participação em Eventos Culturais" : "Cultural Event Participation"}
                   </h5>

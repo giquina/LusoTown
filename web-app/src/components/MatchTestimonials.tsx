@@ -208,7 +208,7 @@ export default function MatchTestimonials() {
             { label: t('success_stories.found_love'), count: 2, color: 'bg-red-100 text-red-700' },
             { label: t('success_stories.business_partners'), count: 1, color: 'bg-blue-100 text-primary-700' },
             { label: t('success_stories.community_family'), count: 1, color: 'bg-green-100 text-green-700' },
-            { label: t('success_stories.student_success'), count: 1, color: 'bg-purple-100 text-purple-700' },
+            { label: t('success_stories.student_success'), count: 1, color: 'bg-accent-100 text-accent-700' },
             { label: t('success_stories.cultural_connection'), count: 1, color: 'bg-orange-100 text-orange-700' }
           ].map((category, index) => (
             <div key={index} className={`${category.color} px-4 py-2 rounded-full text-sm font-semibold`}>
@@ -342,13 +342,13 @@ export default function MatchTestimonials() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href={ROUTES.auth.signup} 
-              className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+              className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-transecondary-y-1 hover:scale-105"
             >
               {t('success_stories.start_now')}
             </a>
             <a 
               href="/success-stories" 
-              className="inline-flex items-center justify-center bg-white text-secondary-600 hover:bg-gray-50 border-2 border-secondary-200 hover:border-secondary-300 font-bold text-lg px-10 py-4 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1"
+              className="inline-flex items-center justify-center bg-white text-secondary-600 hover:bg-secondary-50 border-2 border-secondary-200 hover:border-secondary-300 font-bold text-lg px-10 py-4 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-transecondary-y-1"
             >
               {t('success_stories.read_more')}
             </a>

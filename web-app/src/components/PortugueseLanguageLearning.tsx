@@ -310,7 +310,7 @@ export default function PortugueseLanguageLearning() {
                 <p className="text-blue-100 text-sm">{isPortuguese ? '+250 este mês' : '+250 this month'}</p>
               </div>
 
-              <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-6">
+              <div className="bg-gradient-to-br from-accent-500 to-accent-600 rounded-2xl p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <TrophyIcon className="w-8 h-8" />
                   <h3 className="text-lg font-semibold">
@@ -318,7 +318,7 @@ export default function PortugueseLanguageLearning() {
                   </h3>
                 </div>
                 <p className="text-3xl font-bold">89%</p>
-                <p className="text-purple-100 text-sm">{isPortuguese ? 'Acima da média' : 'Above average'}</p>
+                <p className="text-accent-100 text-sm">{isPortuguese ? 'Acima da média' : 'Above average'}</p>
               </div>
 
               <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-6">
@@ -407,7 +407,7 @@ export default function PortugueseLanguageLearning() {
                   className={`bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border-2 ${
                     course.featured 
                       ? 'border-accent-200 ring-4 ring-accent-50' 
-                      : 'border-gray-100'
+                      : 'border-secondary-100'
                   }`}
                 >
                   {course.featured && (
@@ -428,7 +428,7 @@ export default function PortugueseLanguageLearning() {
                             course.level === 'beginner' ? 'bg-green-100 text-green-800' :
                             course.level === 'intermediate' ? 'bg-yellow-100 text-yellow-800' :
                             course.level === 'advanced' ? 'bg-red-100 text-red-800' :
-                            'bg-purple-100 text-purple-800'
+                            'bg-accent-100 text-accent-800'
                           }`}>
                             {course.level === 'beginner' ? (isPortuguese ? 'Iniciante' : 'Beginner') :
                              course.level === 'intermediate' ? (isPortuguese ? 'Intermédio' : 'Intermediate') :
@@ -612,7 +612,7 @@ export default function PortugueseLanguageLearning() {
                       {path.courses.map((courseId) => {
                         const course = courses.find(c => c.id === courseId);
                         return course && (
-                          <div key={courseId} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                          <div key={courseId} className="flex items-center gap-3 p-3 bg-secondary-50 rounded-lg">
                             <BookOpenIcon className="w-5 h-5 text-accent-600" />
                             <div className="flex-1">
                               <h5 className="font-medium text-gray-900">

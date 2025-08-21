@@ -820,15 +820,15 @@ export default function TransportPage() {
             >
               <button
                 onClick={() => handleBookService('premium')}
-                className="group bg-gradient-to-r from-secondary-600 to-secondary-700 hover:from-secondary-700 hover:to-secondary-800 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-3 min-w-[280px] justify-center"
+                className="group bg-gradient-to-r from-secondary-600 to-secondary-700 hover:from-secondary-700 hover:to-secondary-800 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-transecondary-y-1 transition-all duration-300 flex items-center gap-3 min-w-[280px] justify-center"
               >
                 <Crown className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                 {isPortuguese ? "Reserve Agora" : "Book Now"}
-                <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRightIcon className="w-5 h-5 group-hover:transecondary-x-1 transition-transform" />
               </button>
               <button
                 onClick={() => setShowBookingForm(true)}
-                className="group bg-white hover:bg-gray-50 text-secondary-700 border-2 border-secondary-200 hover:border-secondary-300 px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-3 min-w-[280px] justify-center"
+                className="group bg-white hover:bg-secondary-50 text-secondary-700 border-2 border-secondary-200 hover:border-secondary-300 px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-transecondary-y-1 transition-all duration-300 flex items-center gap-3 min-w-[280px] justify-center"
               >
                 <PhoneIcon className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                 {isPortuguese ? "Falar Connosco" : "Contact Us"}
@@ -843,13 +843,13 @@ export default function TransportPage() {
               className="bg-white/80 backdrop-blur-sm border border-white/50 rounded-2xl p-6 max-w-2xl mx-auto shadow-lg"
             >
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-                <div className="border-r border-gray-200 last:border-r-0 pr-4 last:pr-0">
+                <div className="border-r border-secondary-200 last:border-r-0 pr-4 last:pr-0">
                   <div className="text-2xl font-bold text-secondary-700">£65+</div>
                   <div className="text-sm text-secondary-600">
                     {isPortuguese ? "Por Hora" : "Per Hour"}
                   </div>
                 </div>
-                <div className="border-r border-gray-200 last:border-r-0 pr-4 last:pr-0">
+                <div className="border-r border-secondary-200 last:border-r-0 pr-4 last:pr-0">
                   <div className="text-2xl font-bold text-secondary-700">£320+</div>
                   <div className="text-sm text-secondary-600">
                     {isPortuguese ? "Tours Londres" : "London Tours"}
@@ -864,7 +864,7 @@ export default function TransportPage() {
               </div>
               
               {/* Additional pricing info */}
-              <div className="text-center mt-6 pt-4 border-t border-gray-200">
+              <div className="text-center mt-6 pt-4 border-t border-secondary-200">
                 <p className="text-sm text-secondary-600 font-medium">
                   {isPortuguese 
                     ? "Todos os preços incluem motorista português certificado" 
@@ -882,7 +882,7 @@ export default function TransportPage() {
       </section>
 
       {/* How SIA Close Protection Works Section */}
-      <section className="py-24 bg-white border-t border-gray-100">
+      <section className="py-24 bg-white border-t border-secondary-100">
         <div className="container-width">
           <div className="text-center mb-16">
             <motion.div
@@ -935,7 +935,7 @@ export default function TransportPage() {
                 </p>
               </div>
               {/* Arrow */}
-              <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+              <div className="hidden lg:block absolute top-1/2 -right-4 transform -transecondary-y-1/2">
                 <ArrowRightIcon className="w-6 h-6 text-secondary-400" />
               </div>
             </motion.div>
@@ -961,7 +961,7 @@ export default function TransportPage() {
                     : "Complete mandatory safety & compliance assessment"}
                 </p>
               </div>
-              <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+              <div className="hidden lg:block absolute top-1/2 -right-4 transform -transecondary-y-1/2">
                 <ArrowRightIcon className="w-6 h-6 text-accent-400" />
               </div>
             </motion.div>
@@ -987,7 +987,7 @@ export default function TransportPage() {
                     : "Provide personal details and secure booking"}
                 </p>
               </div>
-              <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+              <div className="hidden lg:block absolute top-1/2 -right-4 transform -transecondary-y-1/2">
                 <ArrowRightIcon className="w-6 h-6 text-premium-400" />
               </div>
             </motion.div>
@@ -1013,7 +1013,7 @@ export default function TransportPage() {
                     : "Licensed officer reviews and confirms booking"}
                 </p>
               </div>
-              <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
+              <div className="hidden lg:block absolute top-1/2 -right-4 transform -transecondary-y-1/2">
                 <ArrowRightIcon className="w-6 h-6 text-action-400" />
               </div>
             </motion.div>
@@ -1138,7 +1138,7 @@ export default function TransportPage() {
       </section>
 
       {/* Cultural Authenticity Section */}
-      <section className="py-24 bg-gradient-to-br from-secondary-50/60 via-white to-accent-50/40 border-t border-gray-100 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-br from-secondary-50/60 via-white to-accent-50/40 border-t border-secondary-100 relative overflow-hidden">
         {/* Portuguese-inspired background decorative elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-secondary-200/40 via-accent-100/30 to-coral-100/30 rounded-full opacity-60 animate-pulse" />
@@ -1189,7 +1189,7 @@ export default function TransportPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="bg-white/90 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/60 hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 group"
+              className="bg-white/90 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/60 hover:shadow-3xl transition-all duration-500 hover:-transecondary-y-3 hover:scale-105 group"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
                 <svg
@@ -1243,7 +1243,7 @@ export default function TransportPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/90 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/60 hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 group"
+              className="bg-white/90 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/60 hover:shadow-3xl transition-all duration-500 hover:-transecondary-y-3 hover:scale-105 group"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-premium-100 to-premium-200 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
                 <svg
@@ -1297,7 +1297,7 @@ export default function TransportPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-white/90 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/60 hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 group"
+              className="bg-white/90 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/60 hover:shadow-3xl transition-all duration-500 hover:-transecondary-y-3 hover:scale-105 group"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-accent-100 to-accent-200 rounded-2xl flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-xl">
                 <ShieldCheckIcon className="w-8 h-8 text-accent-600" />
@@ -1444,7 +1444,7 @@ export default function TransportPage() {
                   className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform transecondary-y-full group-hover:transecondary-y-0 transition-transform duration-300">
                   <h4 className="font-bold text-sm">
                     {isPortuguese ? attraction.titlePt : attraction.title}
                   </h4>
@@ -1848,19 +1848,19 @@ export default function TransportPage() {
               viewport={{ once: true }}
               className="flex flex-wrap justify-center gap-6 mt-12 max-w-4xl mx-auto"
             >
-              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-md border border-gray-100">
+              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-md border border-secondary-100">
                 <CheckCircleIcon className="w-5 h-5 text-secondary-600" />
                 <span className="font-semibold text-secondary-800">
                   {isPortuguese ? "Comunicação em Português" : "Portuguese Communication"}
                 </span>
               </div>
-              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-md border border-gray-100">
+              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-md border border-secondary-100">
                 <CheckCircleIcon className="w-5 h-5 text-secondary-600" />
                 <span className="font-semibold text-secondary-800">
                   {isPortuguese ? "Licenciados SIA" : "SIA Licensed"}
                 </span>
               </div>
-              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-md border border-gray-100">
+              <div className="flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-md border border-secondary-100">
                 <CheckCircleIcon className="w-5 h-5 text-secondary-600" />
                 <span className="font-semibold text-secondary-800">
                   {isPortuguese ? "Disponível 24/7" : "Available 24/7"}
@@ -2039,7 +2039,7 @@ export default function TransportPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 flex flex-col h-full"
+                  className="bg-white rounded-xl shadow-lg border border-secondary-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 flex flex-col h-full"
                 >
                   <div className="p-6 flex flex-col flex-1">
                     <div className="text-center mb-4">
@@ -2089,7 +2089,7 @@ export default function TransportPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow flex flex-col h-full"
+                  className="bg-white rounded-xl shadow-lg border border-secondary-200 overflow-hidden hover:shadow-xl transition-shadow flex flex-col h-full"
                 >
                   <div className="p-6 flex flex-col flex-1">
                     <div className="flex justify-between items-start mb-4">
@@ -2148,7 +2148,7 @@ export default function TransportPage() {
             className="absolute bottom-10 left-10 w-24 h-24 bg-gradient-to-tr from-action-400/30 via-secondary-300/30 to-accent-300/30 rounded-full opacity-50 animate-bounce"
             style={{ animationDuration: "6s" }}
           />
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-gradient-to-br from-premium-400/20 via-accent-400/20 to-coral-400/20 rounded-full opacity-40 animate-ping" />
+          <div className="absolute top-1/2 left-1/2 transform -transecondary-x-1/2 -transecondary-y-1/2 w-40 h-40 bg-gradient-to-br from-premium-400/20 via-accent-400/20 to-coral-400/20 rounded-full opacity-40 animate-ping" />
         </div>
 
         <div className="container-width relative z-10">
@@ -2203,7 +2203,7 @@ export default function TransportPage() {
             >
               <a
                 href="tel:+447777777777"
-                className="group inline-flex items-center justify-center bg-gradient-to-r from-action-600 to-coral-600 hover:from-action-700 hover:to-coral-700 text-white px-10 py-5 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300 min-w-[280px]"
+                className="group inline-flex items-center justify-center bg-gradient-to-r from-action-600 to-coral-600 hover:from-action-700 hover:to-coral-700 text-white px-10 py-5 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transform hover:-transecondary-y-1 transition-all duration-300 min-w-[280px]"
               >
                 <PhoneIcon className="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform" />
                 {isPortuguese ? "Ligar Agora" : "Call Now"}
@@ -2211,11 +2211,11 @@ export default function TransportPage() {
               </a>
               <button
                 onClick={() => setShowSIABookingFlow(true)}
-                className="group border-2 border-white hover:bg-white hover:text-secondary-900 text-white px-10 py-5 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 min-w-[280px] flex items-center justify-center"
+                className="group border-2 border-white hover:bg-white hover:text-secondary-900 text-white px-10 py-5 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:-transecondary-y-1 transition-all duration-300 min-w-[280px] flex items-center justify-center"
               >
                 <Crown className="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform" />
                 {isPortuguese ? "Reserva Online" : "Book Online"}
-                <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:transecondary-x-1 transition-transform" />
               </button>
             </motion.div>
             

@@ -436,7 +436,7 @@ export default function EventsDiscovery({
             return (
               <div
                 key={event.id}
-                className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer"
+                className="border border-secondary-200 rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer"
               >
                 <div className="flex items-start justify-between mb-2">
                   <div className="flex items-center space-x-2">
@@ -484,7 +484,7 @@ export default function EventsDiscovery({
   return (
     <div className={`bg-white rounded-2xl shadow-lg overflow-hidden ${className}`}>
       {/* Header */}
-      <div className="p-4 sm:p-6 border-b border-gray-100">
+      <div className="p-4 sm:p-6 border-b border-secondary-100">
         <div className="flex items-start sm:items-center justify-between mb-4 gap-4">
           <div className="flex items-start sm:items-center space-x-3 min-w-0 flex-1">
             <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -512,7 +512,7 @@ export default function EventsDiscovery({
         {/* Search and Quick Filters */}
         <div className="space-y-4">
           <div className="relative">
-            <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+            <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -transecondary-y-1/2 w-5 h-5 text-gray-400" />
             <input
               type="text"
               placeholder={isPortuguese ? 'Procurar eventos...' : 'Search events...'}
@@ -582,7 +582,7 @@ export default function EventsDiscovery({
                 layout
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="border border-gray-200 rounded-xl p-4 sm:p-6 hover:shadow-lg transition-all cursor-pointer group overflow-hidden"
+                className="border border-secondary-200 rounded-xl p-4 sm:p-6 hover:shadow-lg transition-all cursor-pointer group overflow-hidden"
               >
                 <div className="flex flex-col sm:flex-row gap-4">
                   {/* Event Image */}
@@ -671,7 +671,7 @@ export default function EventsDiscovery({
                     {/* Special Features */}
                     <div className="flex flex-wrap gap-2 mt-3">
                       {event.fado_music_featured && (
-                        <span className="inline-block px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">
+                        <span className="inline-block px-2 py-1 bg-accent-100 text-accent-800 text-xs rounded-full">
                           🎵 Fado
                         </span>
                       )}

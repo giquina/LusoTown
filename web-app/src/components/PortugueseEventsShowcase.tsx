@@ -306,7 +306,7 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
           {eventStats.map((stat, index) => (
             <div
               key={index}
-              className="text-center p-6 bg-white rounded-2xl border border-gray-100 hover:border-primary-200 transition-all duration-300 shadow-sm hover:shadow-lg"
+              className="text-center p-6 bg-white rounded-2xl border border-secondary-100 hover:border-primary-200 transition-all duration-300 shadow-sm hover:shadow-lg"
             >
               <div className="flex justify-center mb-3">{stat.icon}</div>
               <div className="text-2xl font-bold text-gray-900 mb-1">
@@ -335,7 +335,7 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
                   className={`flex items-center px-6 py-3 rounded-full border transition-all duration-300 ${
                     selectedFilter === filter.value
                       ? "bg-primary-500 text-white border-primary-500 shadow-lg shadow-primary-500/25"
-                      : "bg-white text-secondary-700 border-gray-200 hover:border-primary-300 hover:text-primary-700 hover:shadow-md"
+                      : "bg-white text-secondary-700 border-secondary-200 hover:border-primary-300 hover:text-primary-700 hover:shadow-md"
                   }`}
                 >
                   <Icon className="w-5 h-5 mr-2" />
@@ -355,7 +355,7 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-primary-200 hover:-translate-y-2"
+              className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-secondary-100 hover:border-primary-200 hover:-transecondary-y-2"
             >
               <PortugueseEventImage event={event} />
 
@@ -418,7 +418,7 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
                 {/* Portuguese Cultural Badges */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {event.fado_music_featured && (
-                    <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full">
+                    <span className="text-xs bg-accent-100 text-accent-700 px-2 py-1 rounded-full">
                       🎵 Fado Music
                     </span>
                   )}
@@ -447,12 +447,12 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
                   {event.price > 0 ? (
                     <>
                       Book for {PortugueseServiceUtils.formatEuroPrice(event.price)}
-                      <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:transecondary-x-1 transition-transform" />
                     </>
                   ) : (
                     <>
                       Join Free Event
-                      <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:transecondary-x-1 transition-transform" />
                     </>
                   )}
                 </Link>

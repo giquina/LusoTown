@@ -176,7 +176,7 @@ export default function CulturalQuizDemo({ showAsPrompt = true, className = "" }
       </div>
 
       {/* Quiz Preview */}
-      <div className="bg-white rounded-2xl border border-gray-200 p-6">
+      <div className="bg-white rounded-2xl border border-secondary-200 p-6">
         <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
           <SparklesIcon className="w-5 h-5 text-primary-600" />
           {language === 'pt' ? 'Exemplo de Perguntas do Quiz' : 'Sample Quiz Questions'}

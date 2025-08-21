@@ -746,13 +746,13 @@ export default function StudentsPage() {
               >
                 <button
                   onClick={handleVerification}
-                  className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1"
+                  className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-transecondary-y-1"
                 >
                   {language === 'pt' ? "Verificar Email Estudante" : "Verify Student Email"}
                 </button>
                 <button
                   onClick={() => document.getElementById('partner-universities')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="border border-secondary-300 text-secondary-700 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="border border-secondary-300 text-secondary-700 px-8 py-4 rounded-2xl font-semibold hover:bg-secondary-50 hover:border-secondary-400 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   {language === 'pt' ? "Ver Universidades Parceiras" : "View Partner Universities"}
                 </button>
@@ -821,7 +821,7 @@ export default function StudentsPage() {
             {/* Benefits Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
               {filteredBenefits.map(benefit => (
-                <div key={benefit.id} className="bg-white rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+                <div key={benefit.id} className="bg-white rounded-2xl border border-secondary-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
                   <div className="p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
@@ -903,7 +903,7 @@ export default function StudentsPage() {
         </section>
 
         {/* Partner Universities Section */}
-        <section id="partner-universities" className="py-20 bg-gray-50">
+        <section id="partner-universities" className="py-20 bg-secondary-50">
           <div className="container-width">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -937,12 +937,12 @@ export default function StudentsPage() {
             {/* Universities Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
               {filteredUniversities.map(university => (
-                <div key={university.id} className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300">
+                <div key={university.id} className="bg-white rounded-2xl shadow-lg border border-secondary-100 overflow-hidden hover:shadow-xl transition-all duration-300">
                   {/* Header with Partnership Level */}
                   <div className={`px-6 py-3 ${
                     university.partnershipLevel === 'strategic' ? 'bg-primary-500' :
                     university.partnershipLevel === 'official' ? 'bg-secondary-500' :
-                    'bg-gray-500'
+                    'bg-secondary-500'
                   } text-white`}>
                     <div className="flex items-center justify-between">
                       <span className="font-medium text-sm">
@@ -975,15 +975,15 @@ export default function StudentsPage() {
                     
                     {/* Student Statistics */}
                     <div className="grid grid-cols-3 gap-3 mb-4 text-center">
-                      <div className="bg-gray-50 rounded-lg p-2">
+                      <div className="bg-secondary-50 rounded-lg p-2">
                         <div className="text-lg font-bold text-primary-600">{university.portugueseStudents}</div>
                         <div className="text-xs text-secondary-600">{language === 'pt' ? 'Estudantes PT' : 'PT Students'}</div>
                       </div>
-                      <div className="bg-gray-50 rounded-lg p-2">
+                      <div className="bg-secondary-50 rounded-lg p-2">
                         <div className="text-lg font-bold text-secondary-600">{(university.internationalStudents/1000).toFixed(0)}k</div>
                         <div className="text-xs text-secondary-600">{language === 'pt' ? 'Internacionais' : 'International'}</div>
                       </div>
-                      <div className="bg-gray-50 rounded-lg p-2">
+                      <div className="bg-secondary-50 rounded-lg p-2">
                         <div className="text-lg font-bold text-accent-600">{(university.studentPopulation/1000).toFixed(0)}k</div>
                         <div className="text-xs text-secondary-600">{language === 'pt' ? 'Total' : 'Total'}</div>
                       </div>
@@ -1026,7 +1026,7 @@ export default function StudentsPage() {
                     </div>
                     
                     {/* Contact */}
-                    <div className="mb-4 bg-gray-50 rounded-lg p-3">
+                    <div className="mb-4 bg-secondary-50 rounded-lg p-3">
                       <h4 className="font-medium text-gray-900 mb-2 text-sm">
                         {language === 'pt' ? 'Contacto LusoTown' : 'LusoTown Contact'}
                       </h4>
@@ -1100,7 +1100,7 @@ export default function StudentsPage() {
         <AccommodationSupportSection />
 
         {/* Student Verification Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-secondary-50">
           <div className="container-width">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-16">
@@ -1287,7 +1287,7 @@ export default function StudentsPage() {
                   benefits: ['Acesso biblioteca digital', 'Apoio académico', 'Conferências gratuitas']
                 }
               ].map((testimonial, index) => (
-                <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
                       <span className="text-primary-600 font-bold text-lg">
@@ -1364,7 +1364,7 @@ export default function StudentsPage() {
                 >
                   <span className="flex items-center justify-center">
                     {language === 'pt' ? 'Verificar Email Universitário' : 'Verify University Email'}
-                    <ArrowRightIcon className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRightIcon className="ml-3 w-6 h-6 group-hover:transecondary-x-1 transition-transform" />
                   </span>
                 </button>
                 <button className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-bold py-4 px-8 rounded-xl transition-all duration-200">

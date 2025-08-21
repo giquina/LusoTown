@@ -546,7 +546,7 @@ export default function DigitalCulturalArchive({
               </button>
               <button
                 onClick={() => setShowUploadModal(false)}
-                className="flex-1 bg-secondary-200 text-secondary-800 font-semibold py-3 px-6 rounded-lg hover:bg-gray-300 transition-colors"
+                className="flex-1 bg-secondary-200 text-secondary-800 font-semibold py-3 px-6 rounded-lg hover:bg-secondary-300 transition-colors"
               >
                 Cancel
               </button>
@@ -621,13 +621,13 @@ export default function DigitalCulturalArchive({
               {item.preservationNotes && (
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2">Preservation Notes</h3>
-                  <p className="text-sm text-secondary-600 bg-gray-50 rounded-lg p-3">{item.preservationNotes}</p>
+                  <p className="text-sm text-secondary-600 bg-secondary-50 rounded-lg p-3">{item.preservationNotes}</p>
                 </div>
               )}
             </div>
 
             <div className="space-y-4">
-              <div className="bg-gray-50 rounded-lg p-4">
+              <div className="bg-secondary-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-900 mb-3">Details</h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
@@ -660,7 +660,7 @@ export default function DigitalCulturalArchive({
                 </div>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-4">
+              <div className="bg-secondary-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-900 mb-3">Contributor</h3>
                 <div className="space-y-1 text-sm">
                   <p className="font-medium">{item.contributor.name}</p>
@@ -668,7 +668,7 @@ export default function DigitalCulturalArchive({
                 </div>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-4">
+              <div className="bg-secondary-50 rounded-lg p-4">
                 <h3 className="font-semibold text-gray-900 mb-3">Engagement</h3>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
@@ -743,26 +743,26 @@ export default function DigitalCulturalArchive({
 
       {/* Stats Overview */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+        <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
           <div className="text-3xl font-bold text-primary-600 mb-2">{mockArchiveItems.length.toLocaleString()}</div>
           <div className="text-sm text-secondary-600">Archived Items</div>
         </div>
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+        <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
           <div className="text-3xl font-bold text-action-600 mb-2">15</div>
           <div className="text-sm text-secondary-600">Countries Represented</div>
         </div>
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-          <div className="text-3xl font-bold text-purple-600 mb-2">{mockPreservationProjects.length}</div>
+        <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
+          <div className="text-3xl font-bold text-accent-600 mb-2">{mockPreservationProjects.length}</div>
           <div className="text-sm text-secondary-600">Active Preservation Projects</div>
         </div>
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+        <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
           <div className="text-3xl font-bold text-coral-600 mb-2">1,650</div>
           <div className="text-sm text-secondary-600">Community Contributors</div>
         </div>
       </div>
 
       {/* Filters */}
-      <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-6">
+      <div className="bg-white rounded-lg shadow-sm border border-secondary-100 p-6">
         <h3 className="font-semibold text-gray-900 mb-4">Search & Filter</h3>
         <div className="grid md:grid-cols-4 gap-4">
           <div>
@@ -832,7 +832,7 @@ export default function DigitalCulturalArchive({
             key={item.id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all cursor-pointer"
+            className="bg-white rounded-xl shadow-sm border border-secondary-100 overflow-hidden hover:shadow-lg transition-all cursor-pointer"
             onClick={() => setSelectedItem(item)}
           >
             <div className="p-6">
@@ -884,7 +884,7 @@ export default function DigitalCulturalArchive({
         <h2 className="text-3xl font-bold text-gray-900">Active Preservation Projects</h2>
         <div className="grid lg:grid-cols-2 gap-8">
           {mockPreservationProjects.map(project => (
-            <div key={project.id} className="bg-white rounded-xl shadow-lg border border-gray-100 p-6">
+            <div key={project.id} className="bg-white rounded-xl shadow-lg border border-secondary-100 p-6">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{project.name}</h3>
@@ -893,7 +893,7 @@ export default function DigitalCulturalArchive({
                 <span className={`px-3 py-1 text-xs font-medium rounded-full ${
                   project.type === 'digitization' ? 'bg-blue-100 text-blue-800' :
                   project.type === 'documentation' ? 'bg-green-100 text-green-800' :
-                  'bg-purple-100 text-purple-800'
+                  'bg-accent-100 text-accent-800'
                 }`}>
                   {project.type}
                 </span>
@@ -927,7 +927,7 @@ export default function DigitalCulturalArchive({
                 <button className="flex-1 bg-gradient-to-r from-green-600 via-red-500 to-yellow-500 text-white font-semibold py-2 px-4 rounded-lg hover:shadow-lg transition-all">
                   Support Project
                 </button>
-                <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 transition-colors">
+                <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-secondary-50 transition-colors">
                   Learn More
                 </button>
               </div>

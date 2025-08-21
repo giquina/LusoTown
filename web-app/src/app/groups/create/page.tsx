@@ -628,7 +628,7 @@ export default function CreateGroupPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-16">
+    <div className="min-h-screen bg-secondary-50 pt-16">
       <div className="container-width py-12">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
@@ -709,12 +709,12 @@ export default function CreateGroupPage() {
               {renderStepContent()}
 
               {/* Navigation Buttons */}
-              <div className="flex justify-between mt-8 pt-6 border-t border-gray-200">
+              <div className="flex justify-between mt-8 pt-6 border-t border-secondary-200">
                 {currentStep > 1 && (
                   <button
                     type="button"
                     onClick={prevStep}
-                    className="px-6 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50"
+                    className="px-6 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-secondary-50"
                   >
                     Previous
                   </button>
@@ -725,7 +725,7 @@ export default function CreateGroupPage() {
                       type="button"
                       onClick={nextStep}
                       disabled={!validateStep(currentStep)}
-                      className="px-6 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 disabled:bg-gray-300 disabled:cursor-not-allowed"
+                      className="px-6 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 disabled:bg-secondary-300 disabled:cursor-not-allowed"
                     >
                       Next
                     </button>
@@ -733,7 +733,7 @@ export default function CreateGroupPage() {
                     <button
                       type="submit"
                       disabled={loading || !validateStep(1) || !validateStep(2)}
-                      className="px-8 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center"
+                      className="px-8 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 disabled:bg-secondary-300 disabled:cursor-not-allowed flex items-center"
                     >
                       {loading ? (
                         <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>

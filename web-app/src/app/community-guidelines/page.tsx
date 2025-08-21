@@ -66,7 +66,7 @@ export default function CommunityGuidelines() {
                 {guidelines.map((guideline, index) => {
                   const IconComponent = guideline.icon
                   return (
-                    <div key={index} className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                    <div key={index} className="bg-white p-8 rounded-2xl shadow-lg border border-secondary-100 hover:shadow-xl transition-shadow duration-300">
                       <div className="w-12 h-12 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-lg flex items-center justify-center mb-6">
                         <IconComponent className="h-6 w-6 text-white" />
                       </div>
@@ -111,7 +111,7 @@ export default function CommunityGuidelines() {
                         <span>Celebrate the beautiful diversity across all Portuguese-speaking nations</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span className="w-2 h-2 bg-accent-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                         <span>Use language that welcomes professionals, students, and adults from all backgrounds</span>
                       </li>
                       <li className="flex items-start">
@@ -148,12 +148,12 @@ export default function CommunityGuidelines() {
                   
                   <div className="bg-white/60 backdrop-blur-sm rounded-xl p-6 mt-6">
                     <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                      <UserGroupIcon className="w-5 h-5 mr-2 text-indigo-500" />
+                      <UserGroupIcon className="w-5 h-5 mr-2 text-primary-500" />
                       Professional & Community Support
                     </h3>
                     <ul className="list-none space-y-3">
                       <li className="flex items-start">
-                        <span className="w-2 h-2 bg-indigo-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                        <span className="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                         <span>Welcome newcomers with open arms and practical guidance for London life</span>
                       </li>
                       <li className="flex items-start">
@@ -185,7 +185,7 @@ export default function CommunityGuidelines() {
                 </p>
                  <a 
                    href={ROUTES.contact} 
-                  className="inline-flex items-center gap-2 bg-white text-primary-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors duration-200"
+                  className="inline-flex items-center gap-2 bg-white text-primary-600 font-semibold px-6 py-3 rounded-lg hover:bg-secondary-50 transition-colors duration-200"
                 >
                   Entre em Contato / Contact Our Team
                 </a>

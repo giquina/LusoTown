@@ -117,7 +117,7 @@ export default function Home() {
           <MatchHowItWorks />
           <AboutLusoTown />
           {/* Portuguese Community Activities Section */}
-          <section className="py-24 bg-gradient-to-br from-white via-secondary-50/30 to-accent-50/30 relative overflow-hidden border-t border-gray-100" aria-labelledby="community-activities">
+          <section className="py-24 bg-gradient-to-br from-white via-secondary-50/30 to-accent-50/30 relative overflow-hidden border-t border-secondary-100" aria-labelledby="community-activities">
             {/* Portuguese-inspired background decorative elements */}
             <div className="absolute inset-0" aria-hidden="true">
               <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-secondary-200/40 via-accent-100/30 to-coral-100/30 rounded-full opacity-60 animate-pulse" />
@@ -156,7 +156,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-20" role="group" aria-label="Portuguese community activities">
                   {/* Find & Join Events */}
                   <article className="group relative">
-                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-transecondary-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
                       <div className="absolute inset-0 bg-gradient-to-br from-secondary-50/60 via-transparent to-accent-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" aria-hidden="true" />
                       
                       <div className="relative z-10 flex flex-col h-full">
@@ -178,7 +178,7 @@ export default function Home() {
                           aria-describedby="events-description"
                         >
                           {t('what-you-can-do.events.cta')}
-                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                          <ArrowRight className="w-4 h-4 transition-transform group-hover:transecondary-x-1" aria-hidden="true" />
                         </a>
                       </div>
                     </div>
@@ -186,7 +186,7 @@ export default function Home() {
 
                   {/* Create Your Own Groups */}
                   <div className="group relative">
-                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-transecondary-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
                       <div className="absolute inset-0 bg-gradient-to-br from-accent-50/60 via-transparent to-coral-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
                       
                       <div className="relative z-10 flex flex-col h-full">
@@ -207,7 +207,7 @@ export default function Home() {
                             className="inline-flex items-center gap-2 text-accent-600 font-semibold hover:text-accent-700 transition-colors group-hover:gap-3 duration-300 text-base lg:text-lg"
                           >
                             {t('what-you-can-do.groups.cta')}
-                            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                            <ArrowRight className="w-4 h-4 transition-transform group-hover:transecondary-x-1" />
                           </a>
                       </div>
                     </div>
@@ -215,7 +215,7 @@ export default function Home() {
 
                   {/* Stay Updated on LusoFeed */}
                   <div className="group relative">
-                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-transecondary-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
                       <div className="absolute inset-0 bg-gradient-to-br from-coral-50/60 via-transparent to-secondary-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
                       
                       <div className="relative z-10 flex flex-col h-full">
@@ -236,7 +236,7 @@ export default function Home() {
                           className="inline-flex items-center gap-2 text-coral-500 font-semibold hover:text-coral-600 transition-colors group-hover:gap-3 duration-300 text-base lg:text-lg"
                         >
                           {t('what-you-can-do.feed.cta')}
-                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                          <ArrowRight className="w-4 h-4 transition-transform group-hover:transecondary-x-1" />
                         </a>
                       </div>
                     </div>
@@ -244,7 +244,7 @@ export default function Home() {
 
                   {/* Save Your Favourites */}
                   <div className="group relative">
-                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-transecondary-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
                       <div className="absolute inset-0 bg-gradient-to-br from-action-50/60 via-transparent to-premium-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
                       
                       <div className="relative z-10 flex flex-col h-full">
@@ -265,7 +265,7 @@ export default function Home() {
                           className="inline-flex items-center gap-2 text-action-600 font-semibold hover:text-action-700 transition-colors group-hover:gap-3 duration-300 text-base lg:text-lg"
                         >
                           {t('what-you-can-do.favorites.cta')}
-                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                          <ArrowRight className="w-4 h-4 transition-transform group-hover:transecondary-x-1" />
                         </a>
                       </div>
                     </div>
@@ -273,7 +273,7 @@ export default function Home() {
 
                   {/* Share Your Expertise - NEW */}
                   <div className="group relative">
-                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+                    <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-3xl p-6 lg:p-8 min-h-[380px] sm:min-h-[420px] lg:min-h-[450px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-transecondary-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
                       <div className="absolute inset-0 bg-gradient-to-br from-premium-50/60 via-transparent to-coral-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
                       
                       <div className="relative z-10 flex flex-col h-full">
@@ -294,7 +294,7 @@ export default function Home() {
                             className="inline-flex items-center gap-2 text-premium-600 font-semibold hover:text-premium-700 transition-colors group-hover:gap-3 duration-300 text-base lg:text-lg"
                           >
                             {t('what-you-can-do.host.cta')}
-                            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                            <ArrowRight className="w-4 h-4 transition-transform group-hover:transecondary-x-1" />
                           </a>
                       </div>
                     </div>
@@ -313,17 +313,17 @@ export default function Home() {
                     <div className="flex flex-row gap-3 sm:gap-4 justify-center">
                       <a
                         href={ROUTES.signup}
-                        className="group relative text-base sm:text-lg font-bold px-6 sm:px-10 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden flex-1 max-w-[180px] sm:max-w-none"
+                        className="group relative text-base sm:text-lg font-bold px-6 sm:px-10 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-transecondary-y-1 hover:scale-105 overflow-hidden flex-1 max-w-[180px] sm:max-w-none"
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-secondary-700 via-action-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3 whitespace-nowrap">
                           {t('hero.cta.secondary')}
-                          <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6 group-hover:translate-x-1 transition-transform duration-200" />
+                          <ArrowRight className="h-5 w-5 sm:h-6 sm:w-6 group-hover:transecondary-x-1 transition-transform duration-200" />
                         </span>
                       </a>
                       <a
                         href={ROUTES.events}
-                        className="text-base sm:text-lg font-bold px-6 sm:px-10 py-4 bg-white/80 backdrop-blur-lg text-secondary-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 hover:bg-white/90 whitespace-nowrap flex-1 max-w-[180px] sm:max-w-none text-center"
+                        className="text-base sm:text-lg font-bold px-6 sm:px-10 py-4 bg-white/80 backdrop-blur-lg text-secondary-800 border-2 border-secondary-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-transecondary-y-1 hover:bg-white/90 whitespace-nowrap flex-1 max-w-[180px] sm:max-w-none text-center"
                       >
                         {t('core_features.explore_features')}
                       </a>

@@ -312,7 +312,7 @@ const EventsShowcase = memo(() => {
             ].map((location, index) => (
               <div
                 key={index}
-                className="bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 shadow-md border border-gray-200"
+                className="bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 flex items-center gap-2 shadow-md border border-secondary-200"
               >
                 <span className="text-base">{location.icon}</span>
                 <span className="font-medium text-secondary-800">{location.area}</span>
@@ -333,7 +333,7 @@ const EventsShowcase = memo(() => {
           {eventStats.map((stat, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 text-center border border-gray-100 hover:border-primary-200"
+              className="bg-white rounded-xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 text-center border border-secondary-100 hover:border-primary-200"
             >
               <div className="w-12 h-12 bg-gradient-to-br from-primary-100 to-secondary-100 text-primary-600 rounded-xl flex items-center justify-center mx-auto mb-3 relative">
                 {stat.icon}
@@ -356,7 +356,7 @@ const EventsShowcase = memo(() => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -8, scale: 1.03 }}
-              className="bg-white rounded-3xl shadow-xl border border-gray-100/50 overflow-hidden group h-full flex flex-col hover:shadow-2xl transition-all duration-300"
+              className="bg-white rounded-3xl shadow-xl border border-secondary-100/50 overflow-hidden group h-full flex flex-col hover:shadow-2xl transition-all duration-300"
             >
               {/* Event Image */}
               <EventImage event={event} />
@@ -495,7 +495,7 @@ const EventsShowcase = memo(() => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-white rounded-2xl p-4 sm:p-6 md:p-7 lg:p-8 shadow-lg mb-12 border border-gray-100"
+          className="bg-white rounded-2xl p-4 sm:p-6 md:p-7 lg:p-8 shadow-lg mb-12 border border-secondary-100"
         >
           <div className="text-center mb-6">
             <h3 className="text-2xl font-bold text-gray-900 mb-2">
@@ -585,7 +585,7 @@ const EventsShowcase = memo(() => {
             ].map((category, index) => (
               <div
                 key={index}
-                className="text-center p-4 rounded-2xl bg-gradient-to-br from-gray-50 to-secondary-50/30 hover:from-secondary-50 hover:to-primary-50 transition-all duration-300 cursor-pointer group border border-gray-100/50 hover:border-secondary-200/50 shadow-lg hover:shadow-xl relative"
+                className="text-center p-4 rounded-2xl bg-gradient-to-br from-gray-50 to-secondary-50/30 hover:from-secondary-50 hover:to-primary-50 transition-all duration-300 cursor-pointer group border border-secondary-100/50 hover:border-secondary-200/50 shadow-lg hover:shadow-xl relative"
               >
                 <div className="absolute top-2 right-2 text-sm">{category.flag}</div>
                 <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">
@@ -620,7 +620,7 @@ const EventsShowcase = memo(() => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-white rounded-2xl p-6 md:p-8 shadow-lg mb-12 border border-gray-100"
+          className="bg-white rounded-2xl p-6 md:p-8 shadow-lg mb-12 border border-secondary-100"
         >
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-2">
@@ -663,7 +663,7 @@ const EventsShowcase = memo(() => {
                 event: language === "pt" ? "Workshop Pastéis de Nata" : "Pastéis de Nata Workshop"
               }
             ].map((testimonial, index) => (
-              <div key={index} className="bg-gradient-to-br from-gray-50 to-secondary-50/30 rounded-xl p-6 border border-gray-100">
+              <div key={index} className="bg-gradient-to-br from-gray-50 to-secondary-50/30 rounded-xl p-6 border border-secondary-100">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white font-bold">
                     {testimonial.name.split(' ').map(n => n[0]).join('')}
@@ -693,25 +693,25 @@ const EventsShowcase = memo(() => {
               {language === "pt" ? "Expressões que Nos Unem" : "Expressions That Unite Us"}
             </h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-              <div className="text-center p-3 bg-white rounded-lg border border-gray-100">
+              <div className="text-center p-3 bg-white rounded-lg border border-secondary-100">
                 <div className="font-medium text-gray-900">Saudade</div>
                 <div className="text-secondary-600 text-xs">
                   {language === "pt" ? "Sentimento únicamente português" : "Uniquely Portuguese feeling"}
                 </div>
               </div>
-              <div className="text-center p-3 bg-white rounded-lg border border-gray-100">
+              <div className="text-center p-3 bg-white rounded-lg border border-secondary-100">
                 <div className="font-medium text-gray-900">Desenrascanço</div>
                 <div className="text-secondary-600 text-xs">
                   {language === "pt" ? "Arte de resolver problemas" : "Art of problem-solving"}
                 </div>
               </div>
-              <div className="text-center p-3 bg-white rounded-lg border border-gray-100">
+              <div className="text-center p-3 bg-white rounded-lg border border-secondary-100">
                 <div className="font-medium text-gray-900">Cafezinho</div>
                 <div className="text-secondary-600 text-xs">
                   {language === "pt" ? "Pausa brasileira essencial" : "Essential Brazilian break"}
                 </div>
               </div>
-              <div className="text-center p-3 bg-white rounded-lg border border-gray-100">
+              <div className="text-center p-3 bg-white rounded-lg border border-secondary-100">
                 <div className="font-medium text-gray-900">Convívio</div>
                 <div className="text-secondary-600 text-xs">
                   {language === "pt" ? "Partilhar momentos juntos" : "Sharing moments together"}
@@ -735,7 +735,7 @@ const EventsShowcase = memo(() => {
               <div className="absolute top-4 right-4 text-6xl">🇧🇷</div>
               <div className="absolute bottom-4 left-1/4 text-4xl">⚽</div>
               <div className="absolute bottom-4 right-1/4 text-4xl">🎵</div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-8xl opacity-5">🍷</div>
+              <div className="absolute top-1/2 left-1/2 transform -transecondary-x-1/2 -transecondary-y-1/2 text-8xl opacity-5">🍷</div>
             </div>
             
             <div className="relative z-10">
@@ -761,10 +761,10 @@ const EventsShowcase = memo(() => {
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <Link
                   href={ROUTES.events}
-                  className="inline-flex items-center bg-white text-secondary-600 font-bold px-10 py-4 rounded-2xl hover:bg-gray-50 transition-all duration-300 group shadow-xl hover:shadow-2xl min-h-[44px]"
+                  className="inline-flex items-center bg-white text-secondary-600 font-bold px-10 py-4 rounded-2xl hover:bg-secondary-50 transition-all duration-300 group shadow-xl hover:shadow-2xl min-h-[44px]"
                 >
                   {language === "pt" ? "Ver Eventos" : "View Events"}
-                  <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:transecondary-x-1 transition-transform" />
                 </Link>
                 <Link
                   href={ROUTES.signup}

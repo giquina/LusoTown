@@ -170,7 +170,7 @@ const NearMeButton: React.FC<NearMeButtonProps> = ({
 
       {/* Help Text for First Time Users */}
       {permissionStatus === 'unknown' && (
-        <div className="absolute top-full mt-2 left-0 right-0 text-xs text-secondary-600 px-3 py-1 bg-secondary-100 rounded-md border border-gray-200 z-10">
+        <div className="absolute top-full mt-2 left-0 right-0 text-xs text-secondary-600 px-3 py-1 bg-secondary-100 rounded-md border border-secondary-200 z-10">
           {t('location.help_text', 'Find Portuguese businesses near your location')}
         </div>
       )}

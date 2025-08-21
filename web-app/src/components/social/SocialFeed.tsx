@@ -265,7 +265,7 @@ export default function SocialFeed({ className = '', initialFilter = 'all' }: So
   return (
     <div className={`space-y-6 ${className}`}>
       {/* Feed Header */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+      <div className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
@@ -347,7 +347,7 @@ export default function SocialFeed({ className = '', initialFilter = 'all' }: So
               // Loading skeleton
               <div className="space-y-4">
                 {[1, 2, 3].map(i => (
-                  <div key={i} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                  <div key={i} className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
                     <div className="animate-pulse space-y-4">
                       <div className="flex items-center space-x-3">
                         <div className="w-10 h-10 bg-secondary-200 rounded-full"></div>
@@ -379,7 +379,7 @@ export default function SocialFeed({ className = '', initialFilter = 'all' }: So
               ))
             ) : (
               // Empty state
-              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-12 text-center">
+              <div className="bg-white rounded-xl shadow-sm border border-secondary-200 p-12 text-center">
                 <MessageCircle className="w-16 h-16 text-gray-300 mx-auto mb-4" />
                 <h3 className="text-lg font-medium text-gray-900 mb-2">
                   {t('social_feed.no_posts_title') || 'No posts yet'}
@@ -407,7 +407,7 @@ export default function SocialFeed({ className = '', initialFilter = 'all' }: So
           <PeopleYouMayKnow />
 
           {/* Community Stats */}
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
               {t('social_feed.community_stats') || 'Community Stats'}
             </h3>
@@ -428,20 +428,20 @@ export default function SocialFeed({ className = '', initialFilter = 'all' }: So
           </div>
 
           {/* Quick Actions */}
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
               {t('social_feed.quick_actions') || 'Quick Actions'}
             </h3>
             <div className="space-y-3">
-              <button className="w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-gray-50 rounded-lg transition-colors">
+              <button className="w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-secondary-50 rounded-lg transition-colors">
                 <UserPlus className="w-5 h-5 text-primary-500" />
                 <span className="text-secondary-700">{t('social_feed.find_friends') || 'Find Friends'}</span>
               </button>
-              <button className="w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-gray-50 rounded-lg transition-colors">
+              <button className="w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-secondary-50 rounded-lg transition-colors">
                 <Heart className="w-5 h-5 text-secondary-500" />
                 <span className="text-secondary-700">{t('social_feed.join_events') || 'Join Events'}</span>
               </button>
-              <button className="w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-gray-50 rounded-lg transition-colors">
+              <button className="w-full flex items-center space-x-3 px-4 py-3 text-left hover:bg-secondary-50 rounded-lg transition-colors">
                 <Share className="w-5 h-5 text-accent-500" />
                 <span className="text-secondary-700">{t('social_feed.share_experience') || 'Share Experience'}</span>
               </button>

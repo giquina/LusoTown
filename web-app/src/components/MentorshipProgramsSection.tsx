@@ -188,10 +188,10 @@ export default function MentorshipProgramsSection() {
                     {/* CTA Button */}
                     <a
                       href="#mentorship-registration"
-                      className="inline-flex items-center gap-3 bg-gradient-to-r from-secondary-600 to-action-600 text-white font-bold px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 group"
+                      className="inline-flex items-center gap-3 bg-gradient-to-r from-secondary-600 to-action-600 text-white font-bold px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-transecondary-y-1 group"
                     >
                       {program.cta}
-                      <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+                      <ArrowRightIcon className="w-5 h-5 group-hover:transecondary-x-1 transition-transform duration-200" />
                     </a>
                   </div>
 

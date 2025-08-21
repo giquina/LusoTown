@@ -181,7 +181,7 @@ export default function JobsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-secondary-600 via-action-600 to-accent-600 pt-32 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -229,13 +229,13 @@ export default function JobsPage() {
       </section>
 
       {/* Search and Filters */}
-      <section className="bg-white border-b border-gray-200">
+      <section className="bg-white border-b border-secondary-200">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="max-w-6xl mx-auto">
             {/* Search Bar */}
             <div className="flex flex-col lg:flex-row gap-4 mb-6">
               <div className="flex-1 relative">
-                <MagnifyingGlassIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <MagnifyingGlassIcon className="absolute left-4 top-1/2 transform -transecondary-y-1/2 w-5 h-5 text-gray-400" />
                 <input
                   type="text"
                   placeholder="Search jobs, companies, or keywords..."
@@ -271,7 +271,7 @@ export default function JobsPage() {
                 ))}
               </select>
 
-              <label className="flex items-center gap-2 px-4 py-2 border border-secondary-300 rounded-lg cursor-pointer hover:bg-gray-50">
+              <label className="flex items-center gap-2 px-4 py-2 border border-secondary-300 rounded-lg cursor-pointer hover:bg-secondary-50">
                 <input
                   type="checkbox"
                   checked={showRemoteOnly}
@@ -305,7 +305,7 @@ export default function JobsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                className={`bg-white rounded-xl border ${job.featured ? 'border-secondary-300 ring-2 ring-secondary-100' : 'border-gray-200'} p-6 shadow-sm hover:shadow-lg transition-all duration-300`}
+                className={`bg-white rounded-xl border ${job.featured ? 'border-secondary-300 ring-2 ring-secondary-100' : 'border-secondary-200'} p-6 shadow-sm hover:shadow-lg transition-all duration-300`}
               >
                 {job.featured && (
                   <div className="inline-flex items-center gap-1 bg-secondary-100 text-secondary-700 px-3 py-1 rounded-full text-sm font-semibold mb-4">

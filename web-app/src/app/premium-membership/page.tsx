@@ -149,7 +149,7 @@ export default function PremiumMembershipPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="mt-16 bg-white rounded-2xl shadow-lg border border-gray-200 p-8"
+                className="mt-16 bg-white rounded-2xl shadow-lg border border-secondary-200 p-8"
               >
                 <div className="text-center mb-8">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">
@@ -164,28 +164,28 @@ export default function PremiumMembershipPage() {
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  <div className="text-center p-4 bg-gray-50 rounded-xl">
+                  <div className="text-center p-4 bg-secondary-50 rounded-xl">
                     <div className="text-2xl font-bold text-primary-600 mb-2">£450K-750K</div>
                     <div className="text-sm text-secondary-600">
                       {isPortuguese ? 'Receita Projetada Anual' : 'Projected Annual Revenue'}
                     </div>
                   </div>
 
-                  <div className="text-center p-4 bg-gray-50 rounded-xl">
+                  <div className="text-center p-4 bg-secondary-50 rounded-xl">
                     <div className="text-2xl font-bold text-secondary-600 mb-2">150-250</div>
                     <div className="text-sm text-secondary-600">
                       {isPortuguese ? 'Membros Objetivo' : 'Target Members'}
                     </div>
                   </div>
 
-                  <div className="text-center p-4 bg-gray-50 rounded-xl">
+                  <div className="text-center p-4 bg-secondary-50 rounded-xl">
                     <div className="text-2xl font-bold text-accent-600 mb-2">4</div>
                     <div className="text-sm text-secondary-600">
                       {isPortuguese ? 'Níveis Premium' : 'Premium Tiers'}
                     </div>
                   </div>
 
-                  <div className="text-center p-4 bg-gray-50 rounded-xl">
+                  <div className="text-center p-4 bg-secondary-50 rounded-xl">
                     <div className="text-2xl font-bold text-action-600 mb-2">25%</div>
                     <div className="text-sm text-secondary-600">
                       {isPortuguese ? 'Desconto Máximo' : 'Maximum Discount'}
@@ -215,7 +215,7 @@ export default function PremiumMembershipPage() {
                     </p>
                     <button
                       onClick={() => router.push('/subscription')}
-                      className="inline-flex items-center gap-2 bg-white text-primary-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-200"
+                      className="inline-flex items-center gap-2 bg-white text-primary-600 px-6 py-3 rounded-lg font-semibold hover:bg-secondary-50 transition-colors duration-200"
                     >
                       {isPortuguese ? 'Ver Planos' : 'View Plans'}
                       <ArrowRightIcon className="w-4 h-4" />

@@ -30,7 +30,7 @@ export default function HowStreamingWorks() {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-secondary-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900">{t('how_streaming_works.title', 'How LusoTown Streaming Works')}</h2>

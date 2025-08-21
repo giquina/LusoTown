@@ -234,7 +234,7 @@ export default function TransportBookingForm({
             onClick={e => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-200">
+            <div className="flex items-center justify-between p-6 border-b border-secondary-200">
               <div>
                 <h2 className="text-2xl font-bold text-gray-900">
                   {isPortuguese ? 'Reservar Serviço de Transporte Privado' : 'Book Private Transport Service'}
@@ -244,7 +244,7 @@ export default function TransportBookingForm({
                     <div
                       key={step}
                       className={`w-3 h-3 rounded-full ${
-                        step <= currentStep ? 'bg-primary-500' : 'bg-gray-300'
+                        step <= currentStep ? 'bg-primary-500' : 'bg-secondary-300'
                       }`}
                     />
                   ))}
@@ -505,7 +505,7 @@ export default function TransportBookingForm({
                   )}
 
                   {/* Footer */}
-                  <div className="flex justify-between items-center pt-6 border-t border-gray-200">
+                  <div className="flex justify-between items-center pt-6 border-t border-secondary-200">
                     <div className="text-sm text-gray-500">
                       {isPortuguese ? `Passo ${currentStep} de 3` : `Step ${currentStep} of 3`}
                     </div>
@@ -514,7 +514,7 @@ export default function TransportBookingForm({
                       {currentStep > 1 && (
                         <button
                           onClick={handlePrevious}
-                          className="flex items-center px-4 py-2 text-secondary-600 border border-secondary-300 rounded-lg hover:bg-gray-50 transition-colors"
+                          className="flex items-center px-4 py-2 text-secondary-600 border border-secondary-300 rounded-lg hover:bg-secondary-50 transition-colors"
                         >
                           <ArrowLeftIcon className="w-4 h-4 mr-2" />
                           {isPortuguese ? 'Anterior' : 'Previous'}

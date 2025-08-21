@@ -494,7 +494,7 @@ export default function EventsPage() {
       : {};
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
 
       <main className="pt-16">
         {/* Hero Section - Clean Modern Design */}
@@ -611,7 +611,7 @@ export default function EventsPage() {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="flex justify-center mb-8 px-4"
               >
-                <div className="bg-white/90 backdrop-blur-sm p-2 sm:p-2 rounded-2xl shadow-xl border border-gray-200 w-full max-w-4xl">
+                <div className="bg-white/90 backdrop-blur-sm p-2 sm:p-2 rounded-2xl shadow-xl border border-secondary-200 w-full max-w-4xl">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
                     <button
                       onClick={() => handleTabChange("events")}
@@ -748,12 +748,12 @@ export default function EventsPage() {
                   onKeyPress={(e) => e.key === "Enter" && handleSearch()}
                   className="w-full pl-10 sm:pl-12 pr-20 sm:pr-32 py-3 sm:py-4 text-base sm:text-lg rounded-2xl border border-secondary-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent shadow-lg bg-white backdrop-blur-sm"
                 />
-                <MagnifyingGlassIcon className="absolute left-6 sm:left-8 top-1/2 transform -translate-y-1/2 w-5 h-5 sm:w-6 sm:h-6 text-gray-400" />
+                <MagnifyingGlassIcon className="absolute left-6 sm:left-8 top-1/2 transform -transecondary-y-1/2 w-5 h-5 sm:w-6 sm:h-6 text-gray-400" />
                 <button
                   onClick={handleSearch}
                   className={cn(
                     ButtonStyles.legacy.smallButton,
-                    "absolute right-6 sm:right-8 top-1/2 -translate-y-1/2 px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm"
+                    "absolute right-6 sm:right-8 top-1/2 -transecondary-y-1/2 px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm"
                   )}
                 >
                   <span className="hidden sm:inline">
@@ -819,7 +819,7 @@ export default function EventsPage() {
                           className={`group px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 touch-manipulation ${
                             eventFilters.category === filter.key
                               ? "bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg transform scale-105"
-                              : "bg-white/80 text-secondary-700 hover:bg-white hover:shadow-md border border-gray-200"
+                              : "bg-white/80 text-secondary-700 hover:bg-white hover:shadow-md border border-secondary-200"
                           }`}
                           title={filter.description}
                         >
@@ -841,7 +841,7 @@ export default function EventsPage() {
                             className={`group px-2 sm:px-3 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 flex items-center gap-1 touch-manipulation justify-center text-center ${
                               tourFilters.category === category
                                 ? "bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg transform scale-105"
-                                : "bg-white/80 text-secondary-700 hover:bg-white hover:shadow-md border border-gray-200"
+                                : "bg-white/80 text-secondary-700 hover:bg-white hover:shadow-md border border-secondary-200"
                             }`}
                           >
                             <span className="text-sm sm:text-base">
@@ -1006,7 +1006,7 @@ export default function EventsPage() {
                   <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value as any)}
-                    className="bg-white border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 w-full sm:w-auto min-w-[120px]"
+                    className="bg-white border border-secondary-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-400 w-full sm:w-auto min-w-[120px]"
                   >
                     <option value="date">
                       {isPortuguese ? "Ordenar por Data" : "Sort by Date"}
@@ -1242,7 +1242,7 @@ export default function EventsPage() {
               <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 mb-8">
                 <a
                   href={ROUTES.events + "/create"}
-                  className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+                  className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-transecondary-y-1 border border-secondary-100"
                 >
                   <CalendarIcon className="w-8 h-8 text-premium-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
                   <h3 className="font-bold text-gray-900 mb-2">
@@ -1257,7 +1257,7 @@ export default function EventsPage() {
 
                 <a
                   href={ROUTES.groups + "/create"}
-                  className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+                  className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-transecondary-y-1 border border-secondary-100"
                 >
                   <UserGroupIcon className="w-8 h-8 text-coral-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
                   <h3 className="font-bold text-gray-900 mb-2">
@@ -1272,7 +1272,7 @@ export default function EventsPage() {
 
                 <a
                   href={ROUTES.host}
-                  className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+                  className="group bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-transecondary-y-1 border border-secondary-100"
                 >
                   <SparklesIcon className="w-8 h-8 text-accent-600 mx-auto mb-3 group-hover:scale-110 transition-transform" />
                   <h3 className="font-bold text-gray-900 mb-2">
@@ -1289,7 +1289,7 @@ export default function EventsPage() {
               {/* Main CTA */}
               <a
                 href={ROUTES.host}
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-premium-600 via-coral-600 to-accent-600 text-white font-bold px-8 py-4 rounded-2xl hover:from-premium-700 hover:via-coral-700 hover:to-accent-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-premium-600 via-coral-600 to-accent-600 text-white font-bold px-8 py-4 rounded-2xl hover:from-premium-700 hover:via-coral-700 hover:to-accent-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-transecondary-y-1 text-lg"
               >
                 <AcademicCapIcon className="w-6 h-6" />
                 {isPortuguese ? "Começar a Organizar" : "Start Hosting"}

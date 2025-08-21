@@ -756,7 +756,7 @@ const PortugueseUniversityNetwork: React.FC = () => {
               className={`px-6 py-3 rounded-lg font-medium transition-colors ${
                 selectedUniversity === university.id
                   ? 'bg-primary-500 text-white'
-                  : 'bg-white border border-secondary-300 text-secondary-700 hover:bg-gray-50'
+                  : 'bg-white border border-secondary-300 text-secondary-700 hover:bg-secondary-50'
               }`}
             >
               {language === 'pt' ? university.namePortuguese : university.name}
@@ -768,7 +768,7 @@ const PortugueseUniversityNetwork: React.FC = () => {
       {/* Selected University Details */}
       {selectedUniversityData && (
         <div className="mb-12">
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+          <div className="bg-white rounded-xl shadow-sm border border-secondary-200 overflow-hidden">
             <div className="bg-gradient-to-r from-primary-500 to-secondary-500 p-6 text-white">
               <div className="flex items-start justify-between">
                 <div className="flex items-center space-x-4">
@@ -812,7 +812,7 @@ const PortugueseUniversityNetwork: React.FC = () => {
             </div>
 
             {/* Tab Navigation */}
-            <div className="border-b border-gray-200">
+            <div className="border-b border-secondary-200">
               <nav className="flex space-x-8 px-6">
                 {['overview', 'programs', 'research', 'admissions'].map((tab) => (
                   <button
@@ -901,7 +901,7 @@ const PortugueseUniversityNetwork: React.FC = () => {
                   </div>
 
                   {/* Contact Information */}
-                  <div className="bg-gray-50 rounded-lg p-6">
+                  <div className="bg-secondary-50 rounded-lg p-6">
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">
                       {language === 'pt' ? 'Gabinete Internacional' : 'International Office'}
                     </h3>
@@ -996,7 +996,7 @@ const PortugueseUniversityNetwork: React.FC = () => {
                   </div>
 
                   {/* Application Information */}
-                  <div className="bg-gray-50 rounded-lg p-6">
+                  <div className="bg-secondary-50 rounded-lg p-6">
                     <h3 className="text-lg font-semibold text-gray-900 mb-4">
                       {language === 'pt' ? 'Informações de Candidatura' : 'Application Information'}
                     </h3>
@@ -1039,12 +1039,12 @@ const PortugueseUniversityNetwork: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {featuredScholarships.map((scholarship) => (
-            <div key={scholarship.id} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
+            <div key={scholarship.id} className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6 hover:shadow-md transition-shadow">
               <div className="flex items-center justify-between mb-4">
                 <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                   scholarship.type === 'merit' ? 'bg-blue-100 text-blue-800' :
                   scholarship.type === 'need_based' ? 'bg-green-100 text-green-800' :
-                  scholarship.type === 'research' ? 'bg-purple-100 text-purple-800' :
+                  scholarship.type === 'research' ? 'bg-accent-100 text-accent-800' :
                   scholarship.type === 'mobility' ? 'bg-yellow-100 text-yellow-800' :
                   'bg-secondary-100 text-secondary-800'
                 }`}>
@@ -1127,7 +1127,7 @@ const PortugueseUniversityNetwork: React.FC = () => {
         
         <div className="space-y-6">
           {researchOpportunities.map((opportunity) => (
-            <div key={opportunity.id} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div key={opportunity.id} className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
                   <div className="flex items-center space-x-3 mb-2">
@@ -1135,7 +1135,7 @@ const PortugueseUniversityNetwork: React.FC = () => {
                       {language === 'pt' ? opportunity.titlePortuguese : opportunity.title}
                     </h3>
                     <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                      opportunity.level === 'phd' ? 'bg-purple-100 text-purple-800' :
+                      opportunity.level === 'phd' ? 'bg-accent-100 text-accent-800' :
                       opportunity.level === 'masters' ? 'bg-blue-100 text-blue-800' :
                       'bg-green-100 text-green-800'
                     }`}>

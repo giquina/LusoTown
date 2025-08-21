@@ -82,13 +82,13 @@ export default function Forums() {
     const badges = {
       free: { icon: <Users className="w-3 h-3" />, color: 'bg-secondary-100 text-secondary-600', label: 'Free' },
       core: { icon: <Star className="w-3 h-3" />, color: 'bg-[#FF6B6B] text-white', label: 'Core' },
-      premium: { icon: <Crown className="w-3 h-3" />, color: 'bg-gradient-to-r from-purple-500 to-pink-500 text-white', label: 'Premium' }
+      premium: { icon: <Crown className="w-3 h-3" />, color: 'bg-gradient-to-r from-accent-500 to-pink-500 text-white', label: 'Premium' }
     }
     return badges[tier as keyof typeof badges] || badges.free
   }
 
   const getRoleBadge = (role: string) => {
-    if (role === 'admin') return <span className="px-1.5 py-0.5 bg-purple-100 text-purple-600 text-xs rounded font-medium">Admin</span>
+    if (role === 'admin') return <span className="px-1.5 py-0.5 bg-accent-100 text-accent-600 text-xs rounded font-medium">Admin</span>
     if (role === 'moderator') return <span className="px-1.5 py-0.5 bg-primary-100 text-primary-600 text-xs rounded font-medium">Mod</span>
     return null
   }
@@ -120,7 +120,7 @@ export default function Forums() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-secondary-50 flex items-center justify-center">
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#FF6B6B]"></div>
       </div>
     )
@@ -131,7 +131,7 @@ export default function Forums() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       <div className="pt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
@@ -152,7 +152,7 @@ export default function Forums() {
           {/* Search and Filters */}
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="flex-1 relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <Search className="absolute left-3 top-1/2 transform -transecondary-y-1/2 text-gray-400 w-5 h-5" />
               <input
                 type="text"
                 placeholder="Search topics, posts, or tags..."
@@ -173,7 +173,7 @@ export default function Forums() {
               </select>
               <button
                 onClick={() => setShowFilters(!showFilters)}
-                className="px-4 py-2 border border-secondary-300 rounded-lg hover:bg-gray-50 flex items-center space-x-2"
+                className="px-4 py-2 border border-secondary-300 rounded-lg hover:bg-secondary-50 flex items-center space-x-2"
               >
                 <Filter className="w-4 h-4" />
                 <span>Filters</span>
@@ -194,7 +194,7 @@ export default function Forums() {
                 className={`w-full flex items-center justify-between p-3 rounded-lg mb-2 transition-colors ${
                   selectedCategory === null
                     ? 'bg-[#FF6B6B] text-white'
-                    : 'hover:bg-gray-50 text-secondary-700'
+                    : 'hover:bg-secondary-50 text-secondary-700'
                 }`}
               >
                 <div className="flex items-center space-x-3">
@@ -217,7 +217,7 @@ export default function Forums() {
                       selectedCategory === category.id
                         ? 'bg-[#FF6B6B] text-white'
                         : canAccessCategory(category)
-                          ? 'hover:bg-gray-50 text-secondary-700'
+                          ? 'hover:bg-secondary-50 text-secondary-700'
                           : 'opacity-50 cursor-not-allowed text-gray-400'
                     }`}
                   >
@@ -271,7 +271,7 @@ export default function Forums() {
 
             {/* Topics List */}
             <div className="bg-white rounded-xl shadow-sm overflow-hidden">
-              <div className="p-4 border-b border-gray-200 bg-gray-50">
+              <div className="p-4 border-b border-secondary-200 bg-secondary-50">
                 <div className="flex items-center justify-between">
                   <h3 className="font-medium text-gray-900">
                     {selectedCategory ? 'Category Topics' : 'All Topics'} ({topics.length})
@@ -302,7 +302,7 @@ export default function Forums() {
               ) : (
                 <div className="divide-y divide-gray-200">
                   {topics.map(topic => (
-                    <div key={topic.id} className="p-6 hover:bg-gray-50 transition-colors">
+                    <div key={topic.id} className="p-6 hover:bg-secondary-50 transition-colors">
                       <div className="flex items-start justify-between">
                         <div className="flex-1 min-w-0">
                           {/* Topic Header */}
@@ -381,7 +381,7 @@ export default function Forums() {
 
                           {/* Last Reply */}
                           {topic.lastReply && (
-                            <div className="bg-gray-50 rounded-lg p-3">
+                            <div className="bg-secondary-50 rounded-lg p-3">
                               <div className="flex items-center justify-between text-sm">
                                 <div className="flex items-center space-x-2">
                                   <MessageCircle className="w-4 h-4 text-gray-400" />

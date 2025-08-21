@@ -190,7 +190,7 @@ const contentCategories = [
     description: "Professional development, technology workshops, startup talks",
     descriptionPortuguese: "Desenvolvimento profissional, workshops de tecnologia, conversas sobre startups",
     streamers: 28,
-    color: "from-blue-500 to-purple-500",
+    color: "from-blue-500 to-accent-500",
   },
   {
     id: "gaming",
@@ -332,13 +332,13 @@ export default function StreamingPage() {
             >
               <button 
                 onClick={() => setShowBookingForm(true)}
-                className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-6 sm:px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1 flex-1 max-w-[180px] sm:max-w-none text-center whitespace-nowrap"
+                className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-6 sm:px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-transecondary-y-1 flex-1 max-w-[180px] sm:max-w-none text-center whitespace-nowrap"
               >
                 {isPortuguese ? "Começar Streaming" : "Start Streaming"}
               </button>
               <a 
                 href="#packages" 
-                className="border border-secondary-300 text-secondary-700 px-6 sm:px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-lg hover:shadow-xl flex-1 max-w-[180px] sm:max-w-none text-center whitespace-nowrap"
+                className="border border-secondary-300 text-secondary-700 px-6 sm:px-8 py-4 rounded-2xl font-semibold hover:bg-secondary-50 hover:border-secondary-400 transition-all duration-300 shadow-lg hover:shadow-xl flex-1 max-w-[180px] sm:max-w-none text-center whitespace-nowrap"
               >
                 {isPortuguese ? "Ver Pacotes" : "View Packages"}
               </a>
@@ -389,7 +389,7 @@ export default function StreamingPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 overflow-hidden"
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-transecondary-y-2 border border-secondary-100 overflow-hidden"
               >
                 <div className={`h-2 bg-gradient-to-r ${category.color}`}></div>
                 <div className="p-6">
@@ -552,7 +552,7 @@ export default function StreamingPage() {
                 transition={{ delay: index * 0.2 }}
                 className="text-center group"
               >
-                <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-transecondary-y-2 border border-secondary-100">
                   <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                     <step.icon className="w-8 h-8 text-white" />
                   </div>
@@ -649,7 +649,7 @@ export default function StreamingPage() {
           <div className="flex flex-row gap-4 justify-center">
             <button 
               onClick={() => setShowBookingForm(true)}
-              className="bg-white text-primary-600 px-8 py-4 rounded-2xl font-bold hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-2xl flex-1 max-w-[200px]"
+              className="bg-white text-primary-600 px-8 py-4 rounded-2xl font-bold hover:bg-secondary-50 transition-all duration-300 transform hover:scale-105 shadow-2xl flex-1 max-w-[200px]"
             >
               {isPortuguese ? "Começar Agora" : "Start Now"}
             </button>

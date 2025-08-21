@@ -503,7 +503,7 @@ function MatchesContent() {
             <div className="flex flex-row gap-3 sm:gap-4 justify-center">
               <a
                 href={ROUTES.signup}
-                className="bg-white text-primary-600 px-4 sm:px-5 py-3 rounded-xl font-semibold text-sm md:text-base hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg flex-1 max-w-[160px] sm:max-w-none text-center"
+                className="bg-white text-primary-600 px-4 sm:px-5 py-3 rounded-xl font-semibold text-sm md:text-base hover:bg-secondary-50 transition-all duration-300 transform hover:scale-105 shadow-lg flex-1 max-w-[160px] sm:max-w-none text-center"
               >
                 {language === "pt" ? "Start Free" : "Start Free"}
               </a>
@@ -589,7 +589,7 @@ function MatchesContent() {
       </div>
 
       {/* Portuguese-Speaking Nations Section */}
-      <section className="py-8 md:py-12 bg-white border-b border-gray-100">
+      <section className="py-8 md:py-12 bg-white border-b border-secondary-100">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-8">
             <h2 className="text-xl md:text-2xl font-bold text-primary-900 mb-3">
@@ -864,7 +864,7 @@ function MatchesContent() {
                             </span>
                           </div>
                           <div className="flex items-center gap-1.5 bg-white/60 p-1.5 rounded-lg">
-                            <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                            <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
                             <span className="text-xs font-medium text-secondary-700">
                               Values
                             </span>
@@ -911,8 +911,8 @@ function MatchesContent() {
               </AnimatePresence>
 
               {/* Background Cards for Stack Effect */}
-              <div className="absolute inset-0 bg-white rounded-3xl shadow-lg transform translate-y-2 translate-x-1 border border-primary-50 -z-10"></div>
-              <div className="absolute inset-0 bg-white rounded-3xl shadow-md transform translate-y-4 translate-x-2 border border-primary-50 -z-20"></div>
+              <div className="absolute inset-0 bg-white rounded-3xl shadow-lg transform transecondary-y-2 transecondary-x-1 border border-primary-50 -z-10"></div>
+              <div className="absolute inset-0 bg-white rounded-3xl shadow-md transform transecondary-y-4 transecondary-x-2 border border-primary-50 -z-20"></div>
             </div>
 
             {/* Enhanced Action Buttons */}
@@ -920,12 +920,12 @@ function MatchesContent() {
               <button
                 onClick={handleSkip}
                 disabled={isLiking || isSkipping || !currentProfile}
-                className="group relative w-18 h-18 bg-white border-3 border-gray-200 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:border-red-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="group relative w-18 h-18 bg-white border-3 border-secondary-200 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:border-red-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 aria-label={language === "pt" ? "Passar" : "Skip"}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-red-50 to-orange-50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <XMarkIcon className="relative w-8 h-8 text-secondary-600 group-hover:text-coral-600 transition-colors duration-300" />
-                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute -bottom-8 left-1/2 transform -transecondary-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <span className="bg-secondary-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
                     {language === "pt" ? "Passar" : "Skip"}
                   </span>
@@ -940,7 +940,7 @@ function MatchesContent() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-action-600 via-secondary-600 to-accent-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <HeartIconSolid className="relative w-9 h-9 text-white animate-pulse" />
-                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute -bottom-8 left-1/2 transform -transecondary-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <span className="bg-secondary-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
                     {language === "pt" ? "Gostar" : "Like"}
                   </span>
@@ -959,7 +959,7 @@ function MatchesContent() {
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <StarIcon className="relative w-8 h-8 text-white" />
-                  <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute -bottom-8 left-1/2 transform -transecondary-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span className="bg-secondary-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
                       Super Like
                     </span>
@@ -1149,7 +1149,7 @@ function MatchesContent() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
             {steps.map((step, index) => (
               <div key={index} className="text-center group">
-                <div className="bg-white p-5 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-primary-100">
+                <div className="bg-white p-5 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-transecondary-y-2 border border-primary-100">
                   <div className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-5 md:mb-6 group-hover:scale-110 transition-transform duration-300">
                     <step.icon className="w-8 h-8 text-white" />
                   </div>
@@ -1182,7 +1182,7 @@ function MatchesContent() {
 
             <div className="grid md:grid-cols-3 gap-6">
               {/* Free Plan */}
-              <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-md">
+              <div className="bg-white rounded-2xl p-6 border border-secondary-200 shadow-md">
                 <div className="text-center mb-6">
                   <div className="text-2xl font-bold text-secondary-600 mb-2">FREE</div>
                   <div className="text-sm text-gray-500 mb-4">
@@ -1225,7 +1225,7 @@ function MatchesContent() {
 
               {/* Community Plan */}
               <div className="bg-white rounded-2xl p-6 border-2 border-primary-300 shadow-lg relative">
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                <div className="absolute -top-3 left-1/2 transform -transecondary-x-1/2">
                   <div className="bg-primary-600 text-white px-4 py-1 rounded-full text-xs font-semibold">
                     {language === "pt" ? "MAIS POPULAR" : "MOST POPULAR"}
                   </div>
@@ -1368,7 +1368,7 @@ function MatchesContent() {
                       : "Membership Plans"}
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="text-center p-4 border border-gray-200 rounded-xl">
+                    <div className="text-center p-4 border border-secondary-200 rounded-xl">
                       <div className="text-2xl font-bold text-secondary-600 mb-1">
                         FREE
                       </div>
@@ -1560,7 +1560,7 @@ export default function MatchesPage() {
       <main className="min-h-screen">
         <Suspense
           fallback={
-            <div className="min-h-screen bg-gray-50 pt-20 flex items-center justify-center">
+            <div className="min-h-screen bg-secondary-50 pt-20 flex items-center justify-center">
               <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-600"></div>
             </div>
           }

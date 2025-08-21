@@ -252,7 +252,7 @@ export default function GroupsPage() {
                 </span>
               )}
               {group.cultural_focus.traditional_activities && (
-                <span className="inline-flex items-center px-2 py-1 rounded text-xs bg-purple-100 text-purple-800">
+                <span className="inline-flex items-center px-2 py-1 rounded text-xs bg-accent-100 text-accent-800">
                   🎭 Traditional
                 </span>
               )}
@@ -289,7 +289,7 @@ export default function GroupsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       <div className="pt-16 container-width py-12">
         {/* Header */}
         <div className="text-center mb-12">
@@ -343,7 +343,7 @@ export default function GroupsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Search */}
             <div className="relative">
-              <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -transecondary-y-1/2 w-5 h-5 text-gray-400" />
               <input
                 type="text"
                 placeholder="Search groups..."

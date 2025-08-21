@@ -76,7 +76,7 @@ const BookingConfirmationPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       <main className="pt-16">
         {/* Success Header */}
         <section className="bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 text-white py-16">
@@ -137,7 +137,7 @@ const BookingConfirmationPage = () => {
                     className="bg-white rounded-2xl shadow-lg p-6 lg:p-8"
                   >
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-accent-600 rounded-xl flex items-center justify-center">
                         <CpuChipIcon className="w-6 h-6 text-white" />
                       </div>
                       <div>
@@ -165,8 +165,8 @@ const BookingConfirmationPage = () => {
                       </div>
 
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                          <ClockIcon className="w-5 h-5 text-purple-600" />
+                        <div className="w-10 h-10 bg-accent-100 rounded-lg flex items-center justify-center">
+                          <ClockIcon className="w-5 h-5 text-accent-600" />
                         </div>
                         <div>
                           <div className="font-semibold text-gray-900">{event.time}</div>
@@ -215,8 +215,8 @@ const BookingConfirmationPage = () => {
                       </div>
 
                       <div className="flex items-start gap-3">
-                        <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                          <span className="text-purple-600 font-bold text-sm">2</span>
+                        <div className="w-8 h-8 bg-accent-100 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="text-accent-600 font-bold text-sm">2</span>
                         </div>
                         <div>
                           <h4 className="font-semibold text-gray-900 mb-1">Hands-on Workshop</h4>
@@ -313,10 +313,10 @@ const BookingConfirmationPage = () => {
 
                         <Link
                           href={ROUTES.myEvents}
-                          className="w-full flex items-center gap-3 p-3 bg-purple-50 border border-purple-200 rounded-lg hover:bg-purple-100 transition-colors"
+                          className="w-full flex items-center gap-3 p-3 bg-accent-50 border border-accent-200 rounded-lg hover:bg-accent-100 transition-colors"
                         >
-                          <UserGroupIcon className="w-5 h-5 text-purple-600" />
-                          <span className="text-purple-700 font-medium">View My Events</span>
+                          <UserGroupIcon className="w-5 h-5 text-accent-600" />
+                          <span className="text-accent-700 font-medium">View My Events</span>
                         </Link>
                       </div>
                     </motion.div>
@@ -384,7 +384,7 @@ const BookingConfirmationPage = () => {
                         </div>
                       </div>
 
-                      <div className="mt-4 text-xs text-gray-500 bg-gray-50 p-3 rounded-lg">
+                      <div className="mt-4 text-xs text-gray-500 bg-secondary-50 p-3 rounded-lg">
                         Save this booking reference: <strong>{event.bookingReference}</strong>
                       </div>
                     </motion.div>

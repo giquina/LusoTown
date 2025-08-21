@@ -545,7 +545,7 @@ export default function ConversionOptimizationEngine({
               className={`bg-white rounded-2xl border-2 shadow-2xl p-6 backdrop-blur-sm ${
                 opportunity.priority === 'high' 
                   ? `border-${opportunity.color}-200 shadow-${opportunity.color}-100` 
-                  : 'border-gray-200'
+                  : 'border-secondary-200'
               }`}
             >
               {/* Priority Badge */}
@@ -629,7 +629,7 @@ export default function ConversionOptimizationEngine({
 
               {/* Urgency/Expiry Indicator */}
               {opportunity.timing.expiresAfter && (
-                <div className="mt-4 pt-3 border-t border-gray-100">
+                <div className="mt-4 pt-3 border-t border-secondary-100">
                   <div className="flex items-center gap-2 text-xs text-amber-600">
                     <ClockIcon className="w-3 h-3" />
                     <span>
@@ -640,7 +640,7 @@ export default function ConversionOptimizationEngine({
               )}
 
               {/* Trust Indicators */}
-              <div className="mt-3 pt-3 border-t border-gray-100">
+              <div className="mt-3 pt-3 border-t border-secondary-100">
                 <div className="flex items-center justify-between text-xs text-gray-500">
                   <div className="flex items-center gap-1">
                     <CheckCircleIcon className="w-3 h-3 text-action-500" />

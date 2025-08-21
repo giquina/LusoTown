@@ -512,7 +512,7 @@ function SignupInner() {
                         <button
                           type="button"
                           onClick={() => setShowOnboarding(true)}
-                          className="text-xs text-purple-600 hover:text-purple-700 underline"
+                          className="text-xs text-accent-600 hover:text-accent-700 underline"
                         >
                           🚀 Demo Onboarding Flow
                         </button>
@@ -945,7 +945,7 @@ function SignupInner() {
                               className={`text-left p-2 rounded-lg text-xs transition-all ${
                                 formData.interests.includes(interest.key)
                                   ? "bg-primary-500 text-white shadow-md transform scale-105"
-                                  : "bg-white/60 text-secondary-700 hover:bg-white border border-gray-200 hover:shadow-sm"
+                                  : "bg-white/60 text-secondary-700 hover:bg-white border border-secondary-200 hover:shadow-sm"
                               }`}
                               title={interest.description}
                             >
@@ -1009,7 +1009,7 @@ function SignupInner() {
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <div className="w-4 h-4 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-4 h-4 bg-accent-500 rounded-full flex items-center justify-center flex-shrink-0">
                             <span className="text-white text-xs font-bold">
                               3
                             </span>
@@ -1084,7 +1084,7 @@ function SignupInner() {
                         </a>
                         , and{" "}
                         <a
-                          href="/community-guidelines"
+                          href={ROUTES.communityGuidelines}
                           className="text-primary-400 hover:text-primary-500 underline"
                         >
                           Community Guidelines
@@ -1095,7 +1095,7 @@ function SignupInner() {
                     <button
                       type="submit"
                       disabled={isSubmitting || !!success}
-                      className="btn-primary w-full text-lg py-4 font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                      className="btn-primary w-full text-lg py-4 font-semibold shadow-lg hover:shadow-xl transform hover:-transecondary-y-1 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                     >
                       {isSubmitting ? (
                         <span className="flex items-center justify-center gap-2">
@@ -1113,7 +1113,7 @@ function SignupInner() {
                     </button>
 
                     {/* Security footer */}
-                    <div className="text-center pt-4 border-t border-gray-200">
+                    <div className="text-center pt-4 border-t border-secondary-200">
                       <p className="text-xs text-gray-500 mb-3">
                         🔒 Your information is encrypted and never shared with
                         third parties

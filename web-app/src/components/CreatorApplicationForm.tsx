@@ -522,7 +522,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                       type="email"
                       value={formData.email}
                       onChange={(e) => handleInputChange('email', e.target.value)}
-                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-gray-50"
+                      className="w-full px-3 py-2 border border-secondary-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-secondary-50"
                       disabled
                     />
                   </div>
@@ -619,7 +619,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                         className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
                           formData.contentType.includes(category.id)
                             ? 'border-primary-500 bg-primary-50'
-                            : 'border-gray-200 hover:border-secondary-300'
+                            : 'border-secondary-200 hover:border-secondary-300'
                         }`}
                       >
                         <div className="flex items-center gap-3">
@@ -653,7 +653,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                         className={`p-3 rounded-lg border-2 cursor-pointer transition-all text-center ${
                           formData.culturalBackground.includes(region.id)
                             ? 'border-primary-500 bg-primary-50'
-                            : 'border-gray-200 hover:border-secondary-300'
+                            : 'border-secondary-200 hover:border-secondary-300'
                         }`}
                       >
                         <div className="text-2xl mb-1">{region.flag}</div>
@@ -767,7 +767,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                         className={`p-4 rounded-lg border-2 cursor-pointer transition-all ${
                           formData.businessType === type.id
                             ? 'border-primary-500 bg-primary-50'
-                            : 'border-gray-200 hover:border-secondary-300'
+                            : 'border-secondary-200 hover:border-secondary-300'
                         }`}
                       >
                         <h4 className="font-medium text-gray-900">{type.name}</h4>
@@ -952,7 +952,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
 
                 {/* Agreements */}
                 <div className="space-y-4">
-                  <div className="bg-gray-50 rounded-lg p-4">
+                  <div className="bg-secondary-50 rounded-lg p-4">
                     <h4 className="font-medium text-gray-900 mb-3">
                       {isPt ? 'Acordo de Receitas (85/15)' : 'Revenue Share Agreement (85/15)'}
                     </h4>
@@ -1057,7 +1057,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                 </div>
 
                 {generatedStreamKey && (
-                  <div className="bg-gray-50 rounded-lg p-6">
+                  <div className="bg-secondary-50 rounded-lg p-6">
                     <h4 className="font-medium text-gray-900 mb-3">
                       {isPt ? 'A Sua Chave de Stream' : 'Your Stream Key'}
                     </h4>
@@ -1142,7 +1142,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
 
         {/* Footer Navigation */}
         {currentStep < 5 && (
-          <div className="border-t border-gray-200 p-6">
+          <div className="border-t border-secondary-200 p-6">
             <div className="flex justify-between">
               <button
                 onClick={prevStep}
@@ -1150,7 +1150,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
                   currentStep === 1
                     ? 'text-gray-400 cursor-not-allowed'
-                    : 'text-secondary-600 hover:text-gray-900 hover:bg-gray-50'
+                    : 'text-secondary-600 hover:text-gray-900 hover:bg-secondary-50'
                 }`}
               >
                 <ArrowLeft className="w-4 h-4" />
@@ -1164,7 +1164,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                   className={`flex items-center gap-2 px-6 py-2 rounded-lg font-medium transition-colors ${
                     validateStep(currentStep) && !isSubmitting
                       ? 'bg-primary-600 hover:bg-primary-700 text-white'
-                      : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                      : 'bg-secondary-300 text-gray-500 cursor-not-allowed'
                   }`}
                 >
                   {isSubmitting ? (
@@ -1186,7 +1186,7 @@ export default function CreatorApplicationForm({ onClose, onComplete }: CreatorA
                   className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-colors ${
                     validateStep(currentStep)
                       ? 'bg-primary-600 hover:bg-primary-700 text-white'
-                      : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                      : 'bg-secondary-300 text-gray-500 cursor-not-allowed'
                   }`}
                 >
                   {isPt ? 'Próximo' : 'Next'}

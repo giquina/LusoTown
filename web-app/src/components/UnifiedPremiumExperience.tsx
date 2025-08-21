@@ -479,7 +479,7 @@ export default function UnifiedPremiumExperience({
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 * index }}
                   viewport={{ once: true }}
-                  className="bg-white rounded-xl shadow-lg border border-gray-200 p-6 text-center"
+                  className="bg-white rounded-xl shadow-lg border border-secondary-200 p-6 text-center"
                 >
                   <div className="w-12 h-12 bg-primary-100 text-primary-600 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <Icon className="w-6 h-6" />

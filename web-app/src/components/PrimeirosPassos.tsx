@@ -300,7 +300,7 @@ export default function PrimeirosPassos({ isOpen, onClose, onComplete }: Primeir
                 </div>
 
                 {/* Step Content */}
-                <div className="bg-gray-50 rounded-lg p-6">
+                <div className="bg-secondary-50 rounded-lg p-6">
                   {currentStepData.id === 'welcome' && (
                     <div className="space-y-4">
                       <div className="grid grid-cols-2 gap-4">
@@ -374,7 +374,7 @@ export default function PrimeirosPassos({ isOpen, onClose, onComplete }: Primeir
 
         {/* Footer Navigation */}
         {!isCompleting && (
-          <div className="border-t border-gray-200 p-6">
+          <div className="border-t border-secondary-200 p-6">
             <div className="flex justify-between items-center">
               <button
                 onClick={prevStep}
@@ -394,7 +394,7 @@ export default function PrimeirosPassos({ isOpen, onClose, onComplete }: Primeir
                         ? 'bg-primary-600' 
                         : index < currentStep 
                           ? 'bg-secondary-500' 
-                          : 'bg-gray-300'
+                          : 'bg-secondary-300'
                     }`}
                   />
                 ))}

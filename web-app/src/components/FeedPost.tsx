@@ -95,7 +95,7 @@ export default function FeedPost({
   }
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+    <div className="bg-white rounded-2xl shadow-sm border border-secondary-100 overflow-hidden">
       {/* Post Header */}
       <div className="p-6 pb-4">
         <div className="flex items-center justify-between mb-4">
@@ -207,7 +207,7 @@ export default function FeedPost({
       </div>
       
       {/* Post Actions */}
-      <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
+      <div className="px-6 py-4 bg-secondary-50 border-t border-secondary-100">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1">
             <ReactionButton 
@@ -249,7 +249,7 @@ export default function FeedPost({
       </div>
       
       {/* Action Buttons */}
-      <div className="px-6 py-3 border-t border-gray-100">
+      <div className="px-6 py-3 border-t border-secondary-100">
         <div className="flex items-center justify-between">
           <button 
             onClick={handleLike}

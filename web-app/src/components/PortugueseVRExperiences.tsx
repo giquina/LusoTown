@@ -523,7 +523,7 @@ const PortugueseVRExperiences: React.FC = () => {
                     top: `${50 + interaction.position.y}%`
                   }}
                   onClick={() => {
-                    alert(language === 'pt' ? interaction.contentPt : interaction.content);
+                    toast.error(language === 'pt' ? interaction.contentPt : interaction.content);
                   }}
                 >
                   {interaction.type === 'info' && 'ℹ️'}
@@ -564,7 +564,7 @@ const PortugueseVRExperiences: React.FC = () => {
                   <button
                     onClick={() => setShowInteractions(!showInteractions)}
                     className={`px-3 py-1 rounded-full text-sm transition-colors ${
-                      showInteractions ? 'bg-emerald-600 text-white' : 'bg-gray-700 text-gray-300'
+                      showInteractions ? 'bg-emerald-600 text-white' : 'bg-secondary-700 text-gray-300'
                     }`}
                   >
                     {language === 'pt' ? 'Interações' : 'Interactions'}
@@ -582,7 +582,7 @@ const PortugueseVRExperiences: React.FC = () => {
                       className={`px-3 py-1 rounded-full text-sm transition-colors ${
                         playerState.viewMode === mode
                           ? 'bg-emerald-600 text-white'
-                          : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                          : 'bg-secondary-700 text-gray-300 hover:bg-secondary-600'
                       }`}
                     >
                       {mode.toUpperCase()}
@@ -592,7 +592,7 @@ const PortugueseVRExperiences: React.FC = () => {
               </div>
 
               {/* Progress Bar */}
-              <div className="w-full bg-gray-700 rounded-full h-2 mb-4">
+              <div className="w-full bg-secondary-700 rounded-full h-2 mb-4">
                 <div
                   className="bg-emerald-600 h-2 rounded-full transition-all duration-300"
                   style={{ width: `${(playerState.currentTime / selectedExperience.duration) * 100}%` }}

@@ -42,7 +42,7 @@ export default function NetworkAnalytics() {
       value: analytics.connectionGrowthRate,
       label: isPortuguese ? 'Crescimento' : 'Growth Rate',
       description: isPortuguese ? 'conexões por mês' : 'connections per month',
-      color: 'from-blue-500 to-indigo-500',
+      color: 'from-blue-500 to-primary-500',
       unit: '/mês'
     },
     {
@@ -50,7 +50,7 @@ export default function NetworkAnalytics() {
       value: analytics.strongConnectionsPercent,
       label: isPortuguese ? 'Conexões Fortes' : 'Strong Connections',
       description: isPortuguese ? 'conexões com força ≥7' : 'connections with strength ≥7',
-      color: 'from-purple-500 to-pink-500',
+      color: 'from-accent-500 to-pink-500',
       unit: '%'
     }
   ]
@@ -81,7 +81,7 @@ export default function NetworkAnalytics() {
         <div className="flex gap-2">
           <button
             onClick={() => handleExport('csv')}
-            className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-secondary-600 hover:text-secondary-800 border border-gray-200 rounded-lg hover:border-secondary-300 transition-colors"
+            className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-secondary-600 hover:text-secondary-800 border border-secondary-200 rounded-lg hover:border-secondary-300 transition-colors"
             title={isPortuguese ? 'Exportar como CSV' : 'Export as CSV'}
           >
             <ArrowDownTrayIcon className="w-4 h-4" />
@@ -89,7 +89,7 @@ export default function NetworkAnalytics() {
           </button>
           <button
             onClick={() => handleExport('json')}
-            className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-secondary-600 hover:text-secondary-800 border border-gray-200 rounded-lg hover:border-secondary-300 transition-colors"
+            className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-secondary-600 hover:text-secondary-800 border border-secondary-200 rounded-lg hover:border-secondary-300 transition-colors"
             title={isPortuguese ? 'Exportar como JSON' : 'Export as JSON'}
           >
             <ArrowDownTrayIcon className="w-4 h-4" />
@@ -106,7 +106,7 @@ export default function NetworkAnalytics() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="bg-gray-50 rounded-xl p-4 text-center"
+            className="bg-secondary-50 rounded-xl p-4 text-center"
           >
             <div className={`w-10 h-10 bg-gradient-to-r ${item.color} rounded-full flex items-center justify-center mx-auto mb-3`}>
               <item.icon className="w-5 h-5 text-white" />
@@ -142,7 +142,7 @@ export default function NetworkAnalytics() {
       </div>
 
       {/* Tips */}
-      <div className="mt-4 p-3 bg-gray-50 rounded-lg">
+      <div className="mt-4 p-3 bg-secondary-50 rounded-lg">
         <h5 className="text-sm font-medium text-secondary-700 mb-2">
           💡 {isPortuguese ? 'Dicas para Melhorar a Sua Rede:' : 'Tips to Improve Your Network:'}
         </h5>

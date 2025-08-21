@@ -164,7 +164,7 @@ export default function BookingConfirmationPage() {
       </section>
 
       {/* Contact Information */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-secondary-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-2xl p-8 shadow-lg">
             <div className="text-center mb-8">

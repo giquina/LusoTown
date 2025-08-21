@@ -105,7 +105,7 @@ export default function StreamViewerStats({
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.1 * index }}
-              className="flex items-center justify-between p-4 rounded-lg border border-gray-200 hover:border-secondary-300 transition-colors"
+              className="flex items-center justify-between p-4 rounded-lg border border-secondary-200 hover:border-secondary-300 transition-colors"
             >
               <div className="flex items-center gap-3">
                 <div className={`p-2 rounded-lg ${stat.bgColor}`}>
@@ -127,7 +127,7 @@ export default function StreamViewerStats({
       </div>
 
       {/* Engagement Metrics */}
-      <div className="border-t border-gray-200 pt-6">
+      <div className="border-t border-secondary-200 pt-6">
         <h4 className="text-sm font-semibold text-gray-900 mb-4">
           {language === "pt" ? "Métricas de Engagement" : "Engagement Metrics"}
         </h4>
@@ -182,7 +182,7 @@ export default function StreamViewerStats({
       </motion.div>
 
       {/* Community Insights */}
-      <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+      <div className="mt-6 p-4 bg-secondary-50 rounded-lg">
         <h4 className="text-sm font-semibold text-gray-900 mb-3">
           {language === "pt" ? "Insights da Comunidade" : "Community Insights"}
         </h4>

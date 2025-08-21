@@ -76,13 +76,13 @@ const communityForumsModule = {
             </ul>
           </div>
           
-          <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
-            <h5 class="font-semibold text-purple-800 flex items-center gap-2">
+          <div class="bg-accent-50 border border-accent-200 rounded-lg p-4">
+            <h5 class="font-semibold text-accent-800 flex items-center gap-2">
               <HeartIcon class="h-4 w-4" />
               Cultural Heritage
             </h5>
-            <p class="text-sm text-purple-700">Portuguese traditions, festivals, cultural discussions</p>
-            <ul class="text-xs text-purple-600 mt-2 list-disc list-inside">
+            <p class="text-sm text-accent-700">Portuguese traditions, festivals, cultural discussions</p>
+            <ul class="text-xs text-accent-600 mt-2 list-disc list-inside">
               <li>Traditional celebrations</li>
               <li>Language preservation</li>
               <li>Cultural exchange stories</li>
@@ -147,13 +147,13 @@ const communityForumsModule = {
             </ul>
           </div>
           
-          <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
-            <h5 class="font-semibold text-purple-800 flex items-center gap-2">
+          <div class="bg-accent-50 border border-accent-200 rounded-lg p-4">
+            <h5 class="font-semibold text-accent-800 flex items-center gap-2">
               <HeartIcon class="h-4 w-4" />
               Herança Cultural
             </h5>
-            <p class="text-sm text-purple-700">Tradições portuguesas, festivais, discussões culturais</p>
-            <ul class="text-xs text-purple-600 mt-2 list-disc list-inside">
+            <p class="text-sm text-accent-700">Tradições portuguesas, festivais, discussões culturais</p>
+            <ul class="text-xs text-accent-600 mt-2 list-disc list-inside">
               <li>Celebrações tradicionais</li>
               <li>Preservação da língua</li>
               <li>Histórias de intercâmbio cultural</li>
@@ -249,10 +249,10 @@ const communityForumsModule = {
             </ul>
           </div>
           
-          <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
-            <h5 class="font-semibold text-purple-800">Detailed Context</h5>
-            <p class="text-sm text-purple-700 mt-2">Provide helpful background information:</p>
-            <ul class="text-xs text-purple-600 mt-2 list-disc list-inside">
+          <div class="bg-accent-50 border border-accent-200 rounded-lg p-4">
+            <h5 class="font-semibold text-accent-800">Detailed Context</h5>
+            <p class="text-sm text-accent-700 mt-2">Provide helpful background information:</p>
+            <ul class="text-xs text-accent-600 mt-2 list-disc list-inside">
               <li>Your location in London (area/borough)</li>
               <li>Timeline for your question (urgent vs. general inquiry)</li>
               <li>Previous steps you've already taken</li>
@@ -311,10 +311,10 @@ const communityForumsModule = {
             </ul>
           </div>
           
-          <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
-            <h5 class="font-semibold text-purple-800">Contexto Detalhado</h5>
-            <p class="text-sm text-purple-700 mt-2">Forneça informações de background úteis:</p>
-            <ul class="text-xs text-purple-600 mt-2 list-disc list-inside">
+          <div class="bg-accent-50 border border-accent-200 rounded-lg p-4">
+            <h5 class="font-semibold text-accent-800">Contexto Detalhado</h5>
+            <p class="text-sm text-accent-700 mt-2">Forneça informações de background úteis:</p>
+            <ul class="text-xs text-accent-600 mt-2 list-disc list-inside">
               <li>A sua localização em Londres (área/borough)</li>
               <li>Cronograma para a sua pergunta (urgente vs. consulta geral)</li>
               <li>Passos anteriores que já tomou</li>
@@ -592,12 +592,12 @@ const communityForumsModule = {
         
         <h4>Advanced Engagement Strategies</h4>
         <div class="space-y-4">
-          <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
-            <h5 class="font-semibold text-purple-800 flex items-center gap-2">
+          <div class="bg-accent-50 border border-accent-200 rounded-lg p-4">
+            <h5 class="font-semibold text-accent-800 flex items-center gap-2">
               <StarIcon class="h-4 w-4" />
               Becoming a Valued Community Member
             </h5>
-            <ul class="text-sm text-purple-700 mt-2 list-disc list-inside space-y-1">
+            <ul class="text-sm text-accent-700 mt-2 list-disc list-inside space-y-1">
               <li><strong>Consistent Participation:</strong> Regular, thoughtful contributions rather than sporadic posting</li>
               <li><strong>Expertise Sharing:</strong> Share your unique knowledge (your profession, neighborhood, hobbies)</li>
               <li><strong>Question Following:</strong> Return to threads you've participated in to see outcomes</li>
@@ -676,12 +676,12 @@ const communityForumsModule = {
         
         <h4>Estratégias Avançadas de Envolvimento</h4>
         <div class="space-y-4">
-          <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
-            <h5 class="font-semibold text-purple-800 flex items-center gap-2">
+          <div class="bg-accent-50 border border-accent-200 rounded-lg p-4">
+            <h5 class="font-semibold text-accent-800 flex items-center gap-2">
               <StarIcon class="h-4 w-4" />
               Tornar-se um Membro Valioso da Comunidade
             </h5>
-            <ul class="text-sm text-purple-700 mt-2 list-disc list-inside space-y-1">
+            <ul class="text-sm text-accent-700 mt-2 list-disc list-inside space-y-1">
               <li><strong>Participação Consistente:</strong> Contribuições regulares e ponderadas em vez de publicações esporádicas</li>
               <li><strong>Partilha de Expertise:</strong> Partilhe o seu conhecimento único (sua profissão, bairro, hobbies)</li>
               <li><strong>Acompanhamento de Perguntas:</strong> Retorne a threads em que participou para ver resultados</li>

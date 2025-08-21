@@ -181,21 +181,21 @@ export default function ReferralDashboard({ className = '' }: ReferralDashboardP
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg">
+              <div className="bg-gradient-to-br from-accent-50 to-accent-100 p-6 rounded-lg">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-purple-600">{t('referral.stats.bonus-unlocked')}</p>
-                    <p className="text-2xl font-bold text-purple-900">
+                    <p className="text-sm font-medium text-accent-600">{t('referral.stats.bonus-unlocked')}</p>
+                    <p className="text-2xl font-bold text-accent-900">
                       {stats?.bonusUnlocked ? (language === 'pt' ? 'Sim' : 'Yes') : (language === 'pt' ? 'Não' : 'No')}
                     </p>
                   </div>
-                  <Award className="h-8 w-8 text-purple-500" />
+                  <Award className="h-8 w-8 text-accent-500" />
                 </div>
               </div>
             </div>
 
             {/* Your Referral Code */}
-            <div className="bg-gray-50 rounded-lg p-6">
+            <div className="bg-secondary-50 rounded-lg p-6">
               <h3 className="text-lg font-semibold mb-4">{t('referral.code.title')}</h3>
               <p className="text-secondary-600 mb-4">{t('referral.code.description')}</p>
               <div className="flex items-center gap-3">
@@ -275,7 +275,7 @@ export default function ReferralDashboard({ className = '' }: ReferralDashboardP
               {/* Copy Link */}
               <button
                 onClick={() => copyToClipboard(shareData.url, 'link')}
-                className="bg-gray-500 text-white p-4 rounded-lg hover:bg-gray-600 transition-colors flex items-center gap-3"
+                className="bg-secondary-500 text-white p-4 rounded-lg hover:bg-secondary-600 transition-colors flex items-center gap-3"
               >
                 <Copy className="h-6 w-6" />
                 <span>{t('referral.share.link')}</span>
@@ -304,7 +304,7 @@ export default function ReferralDashboard({ className = '' }: ReferralDashboardP
               {/* QR Code placeholder */}
               <button
                 onClick={() => copyToClipboard(shareData.url, 'link')}
-                className="bg-gray-700 text-white p-4 rounded-lg hover:bg-secondary-800 transition-colors flex items-center gap-3"
+                className="bg-secondary-700 text-white p-4 rounded-lg hover:bg-secondary-800 transition-colors flex items-center gap-3"
               >
                 <QrCode className="h-6 w-6" />
                 <span>{t('referral.share.qr')}</span>
@@ -312,7 +312,7 @@ export default function ReferralDashboard({ className = '' }: ReferralDashboardP
             </div>
 
             {/* Share Messages Preview */}
-            <div className="bg-gray-50 rounded-lg p-6">
+            <div className="bg-secondary-50 rounded-lg p-6">
               <h4 className="font-semibold mb-4">{language === 'pt' ? 'Mensagem de Partilha' : 'Share Message Preview'}</h4>
               <div className="bg-white border rounded-lg p-4">
                 <p className="text-secondary-700">{shareData.messages.generic}</p>
@@ -336,7 +336,7 @@ export default function ReferralDashboard({ className = '' }: ReferralDashboardP
 
             <div className="bg-white border rounded-lg overflow-hidden">
               <table className="w-full">
-                <thead className="bg-gray-50">
+                <thead className="bg-secondary-50">
                   <tr>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       {t('referral.leaderboard.position')}

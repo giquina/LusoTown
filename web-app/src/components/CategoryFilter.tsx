@@ -74,7 +74,7 @@ export default function CategoryFilter({
         className={`w-full p-4 rounded-xl border-2 transition-all duration-200 text-left ${
           !selectedCategory
             ? 'border-primary-500 bg-primary-50 shadow-md'
-            : 'border-gray-200 hover:border-secondary-300 hover:bg-gray-50'
+            : 'border-secondary-200 hover:border-secondary-300 hover:bg-secondary-50'
         }`}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
@@ -119,7 +119,7 @@ export default function CategoryFilter({
             className={`w-full p-4 rounded-xl border-2 transition-all duration-200 text-left ${
               selectedCategory === category
                 ? 'border-primary-500 bg-primary-50 shadow-md'
-                : 'border-gray-200 hover:border-secondary-300 hover:bg-gray-50'
+                : 'border-secondary-200 hover:border-secondary-300 hover:bg-secondary-50'
             }`}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -159,7 +159,7 @@ export default function CategoryFilter({
       </div>
 
       {/* Filter Stats */}
-      <div className="p-4 bg-gray-50 rounded-lg">
+      <div className="p-4 bg-secondary-50 rounded-lg">
         <h4 className="text-sm font-semibold text-gray-900 mb-2">
           {isPortuguese ? 'Estatísticas de Experiências' : 'Experience Statistics'}
         </h4>
@@ -201,7 +201,7 @@ export default function CategoryFilter({
                   className={`flex items-center gap-1.5 px-2 py-2 rounded-lg text-xs font-medium transition-colors min-w-0 ${
                     selectedCategory === category
                       ? 'bg-primary-500 text-white'
-                      : 'bg-secondary-200 text-secondary-700 hover:bg-gray-300'
+                      : 'bg-secondary-200 text-secondary-700 hover:bg-secondary-300'
                   }`}
                 >
                   <span className="flex-shrink-0">{EVENT_TOUR_CATEGORIES[category as keyof typeof EVENT_TOUR_CATEGORIES]?.icon}</span>

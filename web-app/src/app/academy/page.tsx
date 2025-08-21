@@ -104,7 +104,7 @@ export default function AcademyHomePage() {
       descriptionPortuguese:
         "Aprenda sobre alojamento, apoio académico e conectar-se com outros estudantes portugueses",
       icon: GraduationCap,
-      color: "from-blue-500 to-purple-500",
+      color: "from-blue-500 to-accent-500",
       services: [
         "housing-assistance",
         "student-support",
@@ -140,7 +140,7 @@ export default function AcademyHomePage() {
       descriptionPortuguese:
         "Aprenda streaming, construção de comunidade e estratégias de monetização",
       icon: Video,
-      color: "from-purple-500 to-pink-500",
+      color: "from-accent-500 to-pink-500",
       services: [
         "live-streaming",
         "community-forums",
@@ -407,9 +407,9 @@ export default function AcademyHomePage() {
                   }
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full px-4 py-3 pl-12 rounded-2xl border border-gray-200 shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-4 py-3 pl-12 rounded-2xl border border-secondary-200 shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 />
-                <BookOpenIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <BookOpenIcon className="absolute left-4 top-1/2 transform -transecondary-y-1/2 w-5 h-5 text-gray-400" />
               </div>
             </motion.div>
           </div>
@@ -442,7 +442,7 @@ export default function AcademyHomePage() {
                     setSelectedUserType(userType.id);
                     saveProgress(userType.id, completedServices);
                   }}
-                  className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 cursor-pointer"
+                  className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-transecondary-y-2 border border-secondary-100 cursor-pointer"
                 >
                   <div
                     className={`w-16 h-16 bg-gradient-to-r ${userType.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
@@ -465,7 +465,7 @@ export default function AcademyHomePage() {
                       {userType.estimatedTime}{" "}
                       {isPortuguese ? "de aprendizado" : "learning time"}
                     </span>
-                    <ArrowRightIcon className="w-5 h-5 text-gray-400 group-hover:text-primary-600 group-hover:translate-x-1 transition-all duration-200" />
+                    <ArrowRightIcon className="w-5 h-5 text-gray-400 group-hover:text-primary-600 group-hover:transecondary-x-1 transition-all duration-200" />
                   </div>
                 </motion.div>
               ))}
@@ -508,7 +508,7 @@ export default function AcademyHomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="group bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
+                className="group bg-white rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-secondary-100"
               >
                 {service.featured && (
                   <div className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white text-center py-2">

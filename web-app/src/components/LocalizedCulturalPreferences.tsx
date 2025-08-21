@@ -177,7 +177,7 @@ export default function LocalizedCulturalPreferences({
 
   if (compactMode) {
     return (
-      <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-4">
+      <div className="bg-white rounded-lg shadow-sm border border-secondary-100 p-4">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center space-x-3">
             <span className="text-2xl">{getRegionFlag(currentCountry)}</span>
@@ -216,7 +216,7 @@ export default function LocalizedCulturalPreferences({
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
+    <div className="bg-white rounded-xl shadow-lg border border-secondary-100 overflow-hidden">
       {/* Header */}
       <div className="bg-gradient-to-r from-green-600 via-red-500 to-yellow-500 p-6 text-white">
         <div className="flex items-center justify-between">
@@ -272,13 +272,13 @@ export default function LocalizedCulturalPreferences({
             <p className="text-sm text-action-600 mt-1">Example: {formatCurrency(25)}</p>
           </div>
           
-          <div className="bg-purple-50 rounded-lg p-4">
+          <div className="bg-accent-50 rounded-lg p-4">
             <div className="flex items-center space-x-2 mb-2">
-              <span className="text-purple-600">🗣️</span>
-              <h3 className="font-semibold text-purple-900">Dialect</h3>
+              <span className="text-accent-600">🗣️</span>
+              <h3 className="font-semibold text-accent-900">Dialect</h3>
             </div>
-            <p className="text-purple-800">{currentRegion?.dialect.replace('-', ' ')}</p>
-            <p className="text-sm text-purple-600 mt-1">Regional Portuguese variant</p>
+            <p className="text-accent-800">{currentRegion?.dialect.replace('-', ' ')}</p>
+            <p className="text-sm text-accent-600 mt-1">Regional Portuguese variant</p>
           </div>
         </div>
 
@@ -287,7 +287,7 @@ export default function LocalizedCulturalPreferences({
           <h3 className="text-xl font-bold text-gray-900 mb-4">Cultural Features</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {currentRegion?.culturalFeatures.map((feature, index) => (
-              <div key={index} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+              <div key={index} className="bg-secondary-50 rounded-lg p-4 border border-secondary-200">
                 <div className="flex items-center space-x-2 mb-2">
                   <span className="text-coral-600">🎭</span>
                   <h4 className="font-medium text-gray-900">{feature}</h4>
@@ -321,7 +321,7 @@ export default function LocalizedCulturalPreferences({
                 className="space-y-4"
               >
                 {getCulturalInsights(currentRegion).map(insight => (
-                  <div key={insight.id} className="border border-gray-200 rounded-lg p-4">
+                  <div key={insight.id} className="border border-secondary-200 rounded-lg p-4">
                     <div className="flex items-center justify-between mb-2">
                       <h4 className="font-semibold text-gray-900">{insight.name}</h4>
                       <span className={`px-2 py-1 text-xs rounded-full ${
@@ -484,10 +484,10 @@ export default function LocalizedCulturalPreferences({
               </ul>
             </div>
             
-            <div className="bg-purple-50 rounded-lg p-4 border border-purple-200">
-              <h4 className="font-medium text-purple-900 mb-2">Time Zone</h4>
-              <p className="text-sm text-purple-800">{currentRegion?.timezone}</p>
-              <p className="text-xs text-purple-600 mt-1">
+            <div className="bg-accent-50 rounded-lg p-4 border border-accent-200">
+              <h4 className="font-medium text-accent-900 mb-2">Time Zone</h4>
+              <p className="text-sm text-accent-800">{currentRegion?.timezone}</p>
+              <p className="text-xs text-accent-600 mt-1">
                 Current time: {formatTime(new Date())}
               </p>
             </div>

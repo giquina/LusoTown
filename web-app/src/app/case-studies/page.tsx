@@ -297,7 +297,7 @@ export default function CaseStudiesPage() {
                     </a>
                     <a
                       href={ROUTES.signup}
-                      className="bg-white text-secondary-600 hover:bg-gray-50 border-2 border-secondary-200 font-semibold px-8 py-4 rounded-xl transition-colors duration-200 flex items-center justify-center"
+                      className="bg-white text-secondary-600 hover:bg-secondary-50 border-2 border-secondary-200 font-semibold px-8 py-4 rounded-xl transition-colors duration-200 flex items-center justify-center"
                     >
                       <UserGroupIcon className="w-5 h-5 mr-2" />
                       Join the Community
@@ -309,7 +309,7 @@ export default function CaseStudiesPage() {
           </section>
 
           {/* Newsletter Signup */}
-          <section className="py-16 bg-gray-50">
+          <section className="py-16 bg-secondary-50">
             <div className="container-width">
               <div className="max-w-2xl mx-auto text-center">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">

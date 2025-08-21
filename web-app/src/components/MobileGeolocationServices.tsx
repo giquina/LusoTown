@@ -445,12 +445,12 @@ export default function MobileGeolocationServices({
       ) : (
         <div className="space-y-3">
           {nearbyBusinesses.slice(0, 5).map((business) => (
-            <div key={business.id} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+            <div key={business.id} className="bg-white border border-secondary-200 rounded-lg p-4 shadow-sm">
               <div className="flex items-start space-x-3">
                 <div className="flex-shrink-0">
                   {business.type === 'restaurant' && <Coffee className="h-6 w-6 text-orange-600" />}
                   {business.type === 'services' && <Settings className="h-6 w-6 text-primary-600" />}
-                  {business.type === 'cultural' && <Music className="h-6 w-6 text-purple-600" />}
+                  {business.type === 'cultural' && <Music className="h-6 w-6 text-accent-600" />}
                   {!['restaurant', 'services', 'cultural'].includes(business.type) && <Store className="h-6 w-6 text-secondary-600" />}
                 </div>
                 <div className="flex-1 min-w-0">
@@ -518,7 +518,7 @@ export default function MobileGeolocationServices({
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {nearbyMembers.slice(0, 6).map((member) => (
-            <div key={member.id} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+            <div key={member.id} className="bg-white border border-secondary-200 rounded-lg p-4 shadow-sm">
               <div className="flex items-center space-x-3">
                 <div className="relative">
                   <img
@@ -561,7 +561,7 @@ export default function MobileGeolocationServices({
   const renderNearbyEvents = () => (
     <div className="space-y-4">
       <h3 className="text-lg font-semibold text-gray-900 flex items-center space-x-2">
-        <Calendar className="h-5 w-5 text-purple-600" />
+        <Calendar className="h-5 w-5 text-accent-600" />
         <span>{language === 'pt' ? 'Eventos Culturais' : 'Cultural Events'}</span>
         <span className="text-sm text-gray-500 font-normal">({nearbyEvents.length})</span>
       </h3>
@@ -573,10 +573,10 @@ export default function MobileGeolocationServices({
       ) : (
         <div className="space-y-3">
           {nearbyEvents.slice(0, 4).map((event) => (
-            <div key={event.id} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+            <div key={event.id} className="bg-white border border-secondary-200 rounded-lg p-4 shadow-sm">
               <div className="flex items-start space-x-3">
                 <div className="flex-shrink-0">
-                  {event.type === 'fado' && <Music className="h-6 w-6 text-purple-600" />}
+                  {event.type === 'fado' && <Music className="h-6 w-6 text-accent-600" />}
                   {event.type === 'festa' && <Heart className="h-6 w-6 text-coral-600" />}
                   {event.type === 'food' && <Coffee className="h-6 w-6 text-orange-600" />}
                   {!['fado', 'festa', 'food'].includes(event.type) && <Calendar className="h-6 w-6 text-primary-600" />}
@@ -680,7 +680,7 @@ export default function MobileGeolocationServices({
           </h3>
           <div className="space-y-3">
             {PORTUGUESE_CULTURAL_SITES.map((site) => (
-              <div key={site.id} className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+              <div key={site.id} className="bg-white border border-secondary-200 rounded-lg p-4 shadow-sm">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <h4 className="font-medium text-gray-900">

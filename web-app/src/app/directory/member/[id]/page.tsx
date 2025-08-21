@@ -85,7 +85,7 @@ export default function MemberProfile() {
     const badges = {
       free: { icon: <Users className="w-4 h-4" />, color: 'bg-secondary-100 text-secondary-600', label: 'Free Member' },
       core: { icon: <Star className="w-4 h-4" />, color: 'bg-[#FF6B6B] text-white', label: 'Core Member' },
-      premium: { icon: <Crown className="w-4 h-4" />, color: 'bg-gradient-to-r from-purple-500 to-pink-500 text-white', label: 'Premium Member' }
+      premium: { icon: <Crown className="w-4 h-4" />, color: 'bg-gradient-to-r from-accent-500 to-pink-500 text-white', label: 'Premium Member' }
     }
     return badges[tier as keyof typeof badges] || badges.free
   }
@@ -115,13 +115,13 @@ export default function MemberProfile() {
       
       if (result.success) {
         setConnectionRequestSent(true)
-        alert('Connection request sent!')
+        toast.error('Connection request sent!')
       } else {
-        alert(result.message)
+        toast.error(result.message)
       }
     } catch (error) {
       console.error('Error sending connection request:', error)
-      alert('Error sending connection request')
+      toast.error('Error sending connection request')
     }
   }
 
@@ -140,7 +140,7 @@ export default function MemberProfile() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-secondary-50 flex items-center justify-center">
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#FF6B6B]"></div>
       </div>
     )
@@ -148,7 +148,7 @@ export default function MemberProfile() {
 
   if (!user || !member) {
     return (
-      <div className="min-h-screen bg-gray-50 pt-20">
+      <div className="min-h-screen bg-secondary-50 pt-20">
         <div className="max-w-4xl mx-auto px-4 py-8 text-center">
           <Users className="w-16 h-16 text-gray-300 mx-auto mb-4" />
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Member Not Found</h1>
@@ -167,7 +167,7 @@ export default function MemberProfile() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-secondary-50 pt-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Breadcrumb */}
         <div className="mb-6">
@@ -254,12 +254,12 @@ export default function MemberProfile() {
                 </button>
               )}
 
-              <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 transition-colors flex items-center space-x-2">
+              <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-secondary-50 transition-colors flex items-center space-x-2">
                 <Share className="w-4 h-4" />
                 <span>Share</span>
               </button>
 
-              <button className="px-3 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 transition-colors">
+              <button className="px-3 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-secondary-50 transition-colors">
                 <MoreVertical className="w-4 h-4" />
               </button>
             </div>
@@ -346,7 +346,7 @@ export default function MemberProfile() {
               {mutualConnections.length > 0 && (
                 <div className="mb-4">
                   <div className="flex items-center space-x-2 mb-2">
-                    <Sparkles className="w-4 h-4 text-purple-500" />
+                    <Sparkles className="w-4 h-4 text-accent-500" />
                     <span className="text-sm font-medium text-gray-900">
                       {mutualConnections.length} mutual connection{mutualConnections.length !== 1 ? 's' : ''}
                     </span>
@@ -372,7 +372,7 @@ export default function MemberProfile() {
                       </div>
                     ))}
                     {mutualConnections.length > 5 && (
-                      <div className="w-8 h-8 bg-gray-300 rounded-full border-2 border-white flex items-center justify-center text-secondary-600 text-xs font-bold">
+                      <div className="w-8 h-8 bg-secondary-300 rounded-full border-2 border-white flex items-center justify-center text-secondary-600 text-xs font-bold">
                         +{mutualConnections.length - 5}
                       </div>
                     )}
@@ -386,7 +386,7 @@ export default function MemberProfile() {
         {/* Tabs */}
         <div className="bg-white rounded-xl shadow-sm overflow-hidden">
           {/* Tab Navigation */}
-          <div className="border-b border-gray-200">
+          <div className="border-b border-secondary-200">
             <nav className="flex space-x-8 px-6">
               {[
                 { id: 'about', label: 'About', icon: <Users className="w-4 h-4" /> },
@@ -436,7 +436,7 @@ export default function MemberProfile() {
                       {member.badges.map(badge => (
                         <div
                           key={badge.id}
-                          className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg"
+                          className="flex items-center space-x-3 p-3 bg-secondary-50 rounded-lg"
                         >
                           <div className="text-2xl">{badge.icon}</div>
                           <div>

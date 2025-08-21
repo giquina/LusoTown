@@ -145,7 +145,7 @@ export default function EcosystemOverview() {
             <Users className="w-5 h-5 text-secondary-500" />
           </div>
           <div className="space-y-4">
-            <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+            <div className="flex items-center justify-between p-3 bg-secondary-50 rounded-lg">
               <div className="flex items-center space-x-3">
                 <Heart className="w-4 h-4 text-action-500" />
                 <span className="text-secondary-700">
@@ -156,7 +156,7 @@ export default function EcosystemOverview() {
                 {communityInsights.activeLastMonth.toLocaleString()}
               </span>
             </div>
-            <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+            <div className="flex items-center justify-between p-3 bg-secondary-50 rounded-lg">
               <div className="flex items-center space-x-3">
                 <TrendingUp className="w-4 h-4 text-secondary-500" />
                 <span className="text-secondary-700">
@@ -167,7 +167,7 @@ export default function EcosystemOverview() {
                 {communityInsights.communityGrowth}
               </span>
             </div>
-            <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+            <div className="flex items-center justify-between p-3 bg-secondary-50 rounded-lg">
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-primary-500" />
                 <span className="text-secondary-700">
@@ -190,7 +190,7 @@ export default function EcosystemOverview() {
             <Car className="w-5 h-5 text-accent-500" />
           </div>
           <div className="space-y-4">
-            <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+            <div className="flex items-center justify-between p-3 bg-secondary-50 rounded-lg">
               <div className="flex items-center space-x-3">
                 <Crown className="w-4 h-4 text-premium-500" />
                 <span className="text-secondary-700">
@@ -201,7 +201,7 @@ export default function EcosystemOverview() {
                 {membershipTier}
               </span>
             </div>
-            <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+            <div className="flex items-center justify-between p-3 bg-secondary-50 rounded-lg">
               <div className="flex items-center space-x-3">
                 <Star className="w-4 h-4 text-accent-500" />
                 <span className="text-secondary-700">
@@ -212,7 +212,7 @@ export default function EcosystemOverview() {
                 {membershipBenefits.transportDiscount}%
               </span>
             </div>
-            <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+            <div className="flex items-center justify-between p-3 bg-secondary-50 rounded-lg">
               <div className="flex items-center space-x-3">
                 <Clock className="w-4 h-4 text-secondary-500" />
                 <span className="text-secondary-700">
@@ -237,7 +237,7 @@ export default function EcosystemOverview() {
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {communityInsights.topEvents.map((event, index) => (
-            <div key={index} className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+            <div key={index} className="flex items-center justify-between p-4 border border-secondary-200 rounded-lg">
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center text-white text-sm font-medium">
                   {index + 1}

@@ -6,7 +6,7 @@ import PortugueseInstitutionalPartnerships from '@/components/PortugueseInstitut
 
 export default function PortugueseInstitutionalPartnershipsPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       <main>
         <PortugueseInstitutionalPartnerships />
       </main>

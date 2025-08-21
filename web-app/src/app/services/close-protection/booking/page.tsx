@@ -310,7 +310,7 @@ function BookingContent() {
         </div>
       </section>
 
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-secondary-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
             {isPortuguese ? "Selecionar Pacote" : "Select Package"}
@@ -322,7 +322,7 @@ function BookingContent() {
                 className={`p-6 rounded-xl border-2 cursor-pointer transition-all duration-200 ${
                   selectedPackage === pkg.id
                     ? "border-premium-500 bg-premium-50"
-                    : "border-gray-200 bg-white hover:border-premium-300"
+                    : "border-secondary-200 bg-white hover:border-premium-300"
                 }`}
                 onClick={() => setSelectedPackage(pkg.id)}
               >
@@ -406,7 +406,7 @@ function BookingContent() {
                   )
                 }
                 disabled={currentStep === 1}
-                className="px-6 py-3 border border-secondary-300 text-secondary-700 rounded-xl font-medium hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-6 py-3 border border-secondary-300 text-secondary-700 rounded-xl font-medium hover:bg-secondary-50 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isPortuguese ? "Anterior" : "Previous"}
               </button>

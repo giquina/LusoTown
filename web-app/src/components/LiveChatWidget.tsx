@@ -101,7 +101,7 @@ export default function LiveChatWidget({
       }`}
     >
       {/* Header - Mobile Optimized */}
-      <div className="p-3 sm:p-4 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-primary-50">
+      <div className="p-3 sm:p-4 border-b border-secondary-200 bg-gradient-to-r from-gray-50 to-primary-50">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 sm:gap-3 flex-1">
             <div className="bg-gradient-to-r from-primary-500 to-secondary-500 p-1.5 sm:p-2 rounded-lg">
@@ -268,7 +268,7 @@ export default function LiveChatWidget({
 
       {/* Footer - Portuguese Cultural Touch */}
       {isExpanded && (
-        <div className="border-t border-gray-200 p-3 bg-gradient-to-r from-primary-50 to-secondary-50">
+        <div className="border-t border-secondary-200 p-3 bg-gradient-to-r from-primary-50 to-secondary-50">
           <div className="flex items-center justify-between text-xs text-secondary-600">
             <div className="flex items-center gap-2">
               <span className="flex items-center gap-1">

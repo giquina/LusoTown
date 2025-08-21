@@ -33,37 +33,37 @@ export default function StreamCategories({
   const getColorClasses = (color: string, isSelected: boolean, isPremium: boolean, hasAccess: boolean) => {
     const colorMap = {
       primary: {
-        bg: isSelected ? 'bg-primary-100 border-primary-500' : 'bg-white border-gray-200 hover:border-primary-300',
+        bg: isSelected ? 'bg-primary-100 border-primary-500' : 'bg-white border-secondary-200 hover:border-primary-300',
         text: isSelected ? 'text-primary-700' : 'text-secondary-700',
         icon: isSelected ? 'text-primary-600' : 'text-primary-500',
         gradient: 'from-primary-500 to-primary-600'
       },
       secondary: {
-        bg: isSelected ? 'bg-secondary-100 border-secondary-500' : 'bg-white border-gray-200 hover:border-secondary-300',
+        bg: isSelected ? 'bg-secondary-100 border-secondary-500' : 'bg-white border-secondary-200 hover:border-secondary-300',
         text: isSelected ? 'text-secondary-700' : 'text-secondary-700',
         icon: isSelected ? 'text-secondary-600' : 'text-secondary-500',
         gradient: 'from-secondary-500 to-secondary-600'
       },
       action: {
-        bg: isSelected ? 'bg-action-100 border-action-500' : 'bg-white border-gray-200 hover:border-action-300',
+        bg: isSelected ? 'bg-action-100 border-action-500' : 'bg-white border-secondary-200 hover:border-action-300',
         text: isSelected ? 'text-action-700' : 'text-secondary-700',
         icon: isSelected ? 'text-action-600' : 'text-action-500',
         gradient: 'from-action-500 to-action-600'
       },
       accent: {
-        bg: isSelected ? 'bg-accent-100 border-accent-500' : 'bg-white border-gray-200 hover:border-accent-300',
+        bg: isSelected ? 'bg-accent-100 border-accent-500' : 'bg-white border-secondary-200 hover:border-accent-300',
         text: isSelected ? 'text-accent-700' : 'text-secondary-700',
         icon: isSelected ? 'text-accent-600' : 'text-accent-500',
         gradient: 'from-accent-500 to-accent-600'
       },
       premium: {
-        bg: isSelected ? 'bg-premium-100 border-premium-500' : 'bg-white border-gray-200 hover:border-premium-300',
+        bg: isSelected ? 'bg-premium-100 border-premium-500' : 'bg-white border-secondary-200 hover:border-premium-300',
         text: isSelected ? 'text-premium-700' : 'text-secondary-700',
         icon: isSelected ? 'text-premium-600' : 'text-premium-500',
         gradient: 'from-premium-500 to-premium-600'
       },
       coral: {
-        bg: isSelected ? 'bg-coral-100 border-coral-500' : 'bg-white border-gray-200 hover:border-coral-300',
+        bg: isSelected ? 'bg-coral-100 border-coral-500' : 'bg-white border-secondary-200 hover:border-coral-300',
         text: isSelected ? 'text-coral-700' : 'text-secondary-700',
         icon: isSelected ? 'text-coral-600' : 'text-coral-500',
         gradient: 'from-coral-500 to-coral-600'
@@ -120,8 +120,8 @@ export default function StreamCategories({
         onClick={() => onCategorySelect('all')}
         className={`w-full p-4 rounded-lg border-2 transition-all duration-200 mb-4 ${
           selectedCategory === 'all'
-            ? 'bg-secondary-100 border-gray-500 text-secondary-700'
-            : 'bg-white border-gray-200 hover:border-secondary-300 text-secondary-700'
+            ? 'bg-secondary-100 border-secondary-500 text-secondary-700'
+            : 'bg-white border-secondary-200 hover:border-secondary-300 text-secondary-700'
         }`}
       >
         <div className="flex items-center justify-between">
@@ -157,7 +157,7 @@ export default function StreamCategories({
             className={`flex items-center gap-2 px-4 py-2 rounded-full whitespace-nowrap border-2 transition-all touch-manipulation ${
               selectedCategory === 'all'
                 ? 'bg-primary-100 border-primary-500 text-primary-700'
-                : 'bg-white border-gray-200 text-secondary-700 active:bg-gray-50'
+                : 'bg-white border-secondary-200 text-secondary-700 active:bg-secondary-50'
             }`}
           >
             <Users className="w-4 h-4" />

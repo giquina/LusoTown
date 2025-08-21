@@ -207,7 +207,7 @@ export default function SaveFavoriteCartButton({
     if (iconOnly) {
       return cn(
         'transition-all duration-200 rounded-lg flex items-center justify-center relative',
-        active ? 'bg-primary-100 text-primary-600' : 'bg-white hover:bg-gray-50 text-secondary-600 shadow-sm border border-gray-200'
+        active ? 'bg-primary-100 text-primary-600' : 'bg-white hover:bg-secondary-50 text-secondary-600 shadow-sm border border-secondary-200'
       )
     }
     
@@ -282,7 +282,7 @@ export default function SaveFavoriteCartButton({
           
           {/* Save Tooltip */}
           {showTooltip && (
-            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-secondary-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap z-10">
+            <div className="absolute -top-8 left-1/2 transform -transecondary-x-1/2 bg-secondary-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap z-10">
               {showTooltip}
             </div>
           )}
@@ -345,7 +345,7 @@ export default function SaveFavoriteCartButton({
           
           {/* Warnings */}
           {spotsLeft !== undefined && spotsLeft <= 3 && spotsLeft > 0 && (
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 text-xs text-orange-600 whitespace-nowrap flex items-center gap-1">
+            <div className="absolute -bottom-6 left-1/2 transform -transecondary-x-1/2 text-xs text-orange-600 whitespace-nowrap flex items-center gap-1">
               <ExclamationTriangleIcon className={IconSystem.sizes.xs} />
               {spotsLeft} {t('event.spots-left')}
             </div>
@@ -353,7 +353,7 @@ export default function SaveFavoriteCartButton({
           
           {/* Cart Tooltip */}
           {showTooltip && (
-            <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-secondary-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap z-10">
+            <div className="absolute -top-8 left-1/2 transform -transecondary-x-1/2 bg-secondary-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap z-10">
               {showTooltip}
             </div>
           )}

@@ -9,7 +9,7 @@ export default function FeaturedStream() {
 
   return (
     <section className="my-8">
-      <div className="bg-gradient-to-br from-secondary-50 via-accent-50 to-coral-50 rounded-2xl p-8 shadow-lg border border-gray-200">
+      <div className="bg-gradient-to-br from-secondary-50 via-accent-50 to-coral-50 rounded-2xl p-8 shadow-lg border border-secondary-200">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div>
             <h3 className="text-sm font-bold uppercase text-secondary-600 mb-2">{t('featured_stream.badge', 'Don\'t Miss')}</h3>

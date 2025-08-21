@@ -139,7 +139,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
   }
 
   return (
-    <div className={`bg-white rounded-xl shadow-sm border border-gray-200 ${className}`}>
+    <div className={`bg-white rounded-xl shadow-sm border border-secondary-200 ${className}`}>
       <div className="p-6">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
@@ -161,7 +161,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
               value={content}
               onChange={(e) => setContent(e.target.value)}
               placeholder={t('post_creator.placeholder') || "What's happening in the Portuguese community?"}
-              className="w-full min-h-[120px] p-4 border border-gray-200 rounded-lg resize-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400"
+              className="w-full min-h-[120px] p-4 border border-secondary-200 rounded-lg resize-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 placeholder-gray-400"
               maxLength={maxContentLength}
             />
             <div className="flex items-center justify-between mt-2">
@@ -182,7 +182,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
             <select
               value={contentType}
               onChange={(e) => setContentType(e.target.value)}
-              className="px-3 py-1 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+              className="px-3 py-1 border border-secondary-200 rounded-lg text-sm focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
             >
               <option value="text">{t('post_creator.type_text') || 'Text Post'}</option>
               <option value="image">{t('post_creator.type_image') || 'Photo'}</option>
@@ -237,7 +237,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
 
               {/* Cultural Tag Selector */}
               {showTagSelector === 'cultural' && (
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 p-4 bg-gray-50 rounded-lg">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 p-4 bg-secondary-50 rounded-lg">
                   {CULTURAL_TAGS.map(tag => (
                     <button
                       key={tag.id}
@@ -300,7 +300,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
 
               {/* Location Tag Selector */}
               {showTagSelector === 'location' && (
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 p-4 bg-gray-50 rounded-lg">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 p-4 bg-secondary-50 rounded-lg">
                   {LOCATION_TAGS.map(tag => (
                     <button
                       key={tag.id}
@@ -364,7 +364,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
 
                 {/* Service Tag Selector */}
                 {showTagSelector === 'service' && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-4 bg-gray-50 rounded-lg">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-4 bg-secondary-50 rounded-lg">
                     {SERVICE_TAGS.map(tag => (
                       <button
                         key={tag.id}
@@ -387,7 +387,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
           </div>
 
           {/* Visibility and Actions */}
-          <div className="flex items-center justify-between pt-4 border-t border-gray-200">
+          <div className="flex items-center justify-between pt-4 border-t border-secondary-200">
             <div className="flex items-center space-x-4">
               {/* Visibility Selector */}
               <div className="flex items-center space-x-2">
@@ -397,7 +397,7 @@ export default function PostCreator({ onSubmit, onCancel, className = '' }: Post
                 <select
                   value={visibility}
                   onChange={(e) => setVisibility(e.target.value)}
-                  className="flex items-center space-x-1 px-2 py-1 border border-gray-200 rounded text-sm focus:ring-2 focus:ring-primary-500"
+                  className="flex items-center space-x-1 px-2 py-1 border border-secondary-200 rounded text-sm focus:ring-2 focus:ring-primary-500"
                 >
                   <option value="public">{t('post_creator.public') || 'Public'}</option>
                   <option value="members_only">{t('post_creator.members_only') || 'Members Only'}</option>

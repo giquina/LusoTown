@@ -445,7 +445,7 @@ export default function SaudadeCompatibilityEngine({
     if (score >= 85) return 'text-action-600 bg-green-50';
     if (score >= 70) return 'text-primary-600 bg-blue-50';
     if (score >= 55) return 'text-yellow-600 bg-yellow-50';
-    return 'text-secondary-600 bg-gray-50';
+    return 'text-secondary-600 bg-secondary-50';
   };
 
   if (loading) {
@@ -487,7 +487,7 @@ export default function SaudadeCompatibilityEngine({
               key={match.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+              className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100 hover:shadow-xl transition-all duration-300"
             >
               {/* Profile Header */}
               <div className="flex items-center gap-4 mb-4">
@@ -570,7 +570,7 @@ export default function SaudadeCompatibilityEngine({
                   </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-lg font-bold text-purple-600">
+                  <div className="text-lg font-bold text-accent-600">
                     {match.compatibilityResult.heritageAlignment}%
                   </div>
                   <div className="text-xs text-secondary-600">
@@ -612,7 +612,7 @@ export default function SaudadeCompatibilityEngine({
                     setSelectedMatch(match);
                     setShowAnalysis(true);
                   }}
-                  className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors"
+                  className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg text-sm font-medium hover:bg-secondary-50 transition-colors"
                 >
                   {language === 'pt' ? 'Análise' : 'Analysis'}
                 </button>

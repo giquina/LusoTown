@@ -208,7 +208,7 @@ export default function CrossPlatformNavigationWidget({
               initial={{ opacity: 0, scale: 0.8, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.8, y: 20 }}
-              className="bg-white rounded-2xl shadow-2xl border border-gray-200 w-80 max-h-96 overflow-y-auto"
+              className="bg-white rounded-2xl shadow-2xl border border-secondary-200 w-80 max-h-96 overflow-y-auto"
             >
               <div className="p-4">
                 {/* Header */}
@@ -282,7 +282,7 @@ export default function CrossPlatformNavigationWidget({
                         key={opportunity.id}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
-                        className="bg-gray-50 rounded-lg p-3 cursor-pointer hover:bg-secondary-100 transition-colors"
+                        className="bg-secondary-50 rounded-lg p-3 cursor-pointer hover:bg-secondary-100 transition-colors"
                         onClick={() => handleOpportunityClick(opportunity)}
                       >
                         <div className="flex items-start space-x-3">
@@ -313,7 +313,7 @@ export default function CrossPlatformNavigationWidget({
 
                 {/* Recommendations */}
                 {activeRecommendations.length > 0 && (
-                  <div className="mt-4 pt-4 border-t border-gray-200">
+                  <div className="mt-4 pt-4 border-t border-secondary-200">
                     <h4 className="text-sm font-semibold text-gray-900 mb-2">
                       {isPortuguese ? 'Recomendado' : 'Recommended'}
                     </h4>

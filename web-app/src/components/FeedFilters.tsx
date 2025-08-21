@@ -168,7 +168,7 @@ export default function FeedFilters({
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      className={`bg-white rounded-2xl shadow-lg border border-gray-200 p-6 ${className}`}
+      className={`bg-white rounded-2xl shadow-lg border border-secondary-200 p-6 ${className}`}
     >
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
@@ -221,7 +221,7 @@ export default function FeedFilters({
                 className={`px-3 py-2 text-sm rounded-full border transition-colors whitespace-nowrap min-h-[36px] ${
                   localFilters.eventType.includes(type.key)
                     ? 'bg-primary-100 text-primary-700 border-primary-300'
-                    : 'bg-gray-50 text-secondary-700 border-gray-200 hover:bg-secondary-100'
+                    : 'bg-secondary-50 text-secondary-700 border-secondary-200 hover:bg-secondary-100'
                 }`}
               >
                 <span className="break-keep">{type.label}</span>
@@ -246,7 +246,7 @@ export default function FeedFilters({
                 className={`px-3 py-2 text-sm rounded-full border transition-colors whitespace-nowrap min-h-[36px] ${
                   localFilters.location.includes(location.key)
                     ? 'bg-secondary-100 text-secondary-700 border-secondary-300'
-                    : 'bg-gray-50 text-secondary-700 border-gray-200 hover:bg-secondary-100'
+                    : 'bg-secondary-50 text-secondary-700 border-secondary-200 hover:bg-secondary-100'
                 }`}
               >
                 <span className="break-keep">{location.label}</span>
@@ -271,7 +271,7 @@ export default function FeedFilters({
                 className={`px-3 py-2 text-sm rounded-full border transition-colors min-h-[36px] ${
                   localFilters.dateRange === range.key
                     ? 'bg-accent-100 text-accent-700 border-accent-300'
-                    : 'bg-gray-50 text-secondary-700 border-gray-200 hover:bg-secondary-100'
+                    : 'bg-secondary-50 text-secondary-700 border-secondary-200 hover:bg-secondary-100'
                 }`}
               >
                 {range.label}
@@ -296,7 +296,7 @@ export default function FeedFilters({
                 className={`px-3 py-2 text-sm rounded-full border transition-colors min-h-[36px] ${
                   localFilters.priceRange === range.key
                     ? 'bg-premium-100 text-premium-700 border-premium-300'
-                    : 'bg-gray-50 text-secondary-700 border-gray-200 hover:bg-secondary-100'
+                    : 'bg-secondary-50 text-secondary-700 border-secondary-200 hover:bg-secondary-100'
                 }`}
               >
                 {range.label}
@@ -322,7 +322,7 @@ export default function FeedFilters({
               className={`px-3 py-2 text-sm rounded-full border transition-colors whitespace-nowrap min-h-[36px] ${
                 localFilters.culturalTags.includes(tag.key)
                   ? 'bg-coral-100 text-coral-700 border-coral-300'
-                  : 'bg-gray-50 text-secondary-700 border-gray-200 hover:bg-secondary-100'
+                  : 'bg-secondary-50 text-secondary-700 border-secondary-200 hover:bg-secondary-100'
               }`}
             >
               <span className="break-keep">{tag.label}</span>
@@ -332,7 +332,7 @@ export default function FeedFilters({
       </div>
 
       {/* Additional Options */}
-      <div className="mt-6 pt-6 border-t border-gray-200">
+      <div className="mt-6 pt-6 border-t border-secondary-200">
         <h4 className="font-semibold text-gray-900 mb-3">
           {isPortuguese ? 'Opções Adicionais' : 'Additional Options'}
         </h4>

@@ -85,7 +85,7 @@ export default function ModeratorPanel({
         className="fixed right-0 top-0 h-full w-80 bg-white shadow-xl z-50 flex flex-col"
       >
         {/* Header */}
-        <div className="p-4 border-b border-gray-200 bg-gradient-to-r from-blue-50 to-primary-50">
+        <div className="p-4 border-b border-secondary-200 bg-gradient-to-r from-blue-50 to-primary-50">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Shield className="w-5 h-5 text-primary-600" />
@@ -169,7 +169,7 @@ export default function ModeratorPanel({
                 >
                   <span
                     className={`inline-block h-3 w-3 transform rounded-full bg-white transition-transform ${
-                      roomSettings.subscriberOnly ? 'translate-x-5' : 'translate-x-1'
+                      roomSettings.subscriberOnly ? 'transecondary-x-5' : 'transecondary-x-1'
                     }`}
                   />
                 </button>
@@ -191,7 +191,7 @@ export default function ModeratorPanel({
                 >
                   <span
                     className={`inline-block h-3 w-3 transform rounded-full bg-white transition-transform ${
-                      roomSettings.emoteOnly ? 'translate-x-5' : 'translate-x-1'
+                      roomSettings.emoteOnly ? 'transecondary-x-5' : 'transecondary-x-1'
                     }`}
                   />
                 </button>
@@ -213,7 +213,7 @@ export default function ModeratorPanel({
                 >
                   <span
                     className={`inline-block h-3 w-3 transform rounded-full bg-white transition-transform ${
-                      roomSettings.portugueseOnly ? 'translate-x-5' : 'translate-x-1'
+                      roomSettings.portugueseOnly ? 'transecondary-x-5' : 'transecondary-x-1'
                     }`}
                   />
                 </button>
@@ -332,7 +332,7 @@ export default function ModeratorPanel({
                   {moderationHistory.map((action, index) => (
                     <div
                       key={index}
-                      className="p-3 bg-gray-50 rounded-lg border-l-4 border-amber-400"
+                      className="p-3 bg-secondary-50 rounded-lg border-l-4 border-amber-400"
                     >
                       <div className="flex justify-between items-start text-xs">
                         <span className="font-medium">{action.type}</span>
@@ -350,7 +350,7 @@ export default function ModeratorPanel({
         </div>
 
         {/* Footer */}
-        <div className="p-4 border-t border-gray-200 bg-gray-50">
+        <div className="p-4 border-t border-secondary-200 bg-secondary-50">
           <div className="text-xs text-gray-500 text-center">
             {language === 'pt' 
               ? 'Moderação Portuguesa • LusoTown'
@@ -379,7 +379,7 @@ function UserRow({
   const canModerate = currentUser?.isHost || (currentUser?.isModerator && !user.isHost && !user.isModerator)
 
   return (
-    <div className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 group">
+    <div className="flex items-center justify-between p-2 rounded-lg hover:bg-secondary-50 group">
       <div className="flex items-center gap-2">
         <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white ${
           user.isHost 
@@ -423,7 +423,7 @@ function UserRow({
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="absolute right-0 top-full mt-1 bg-white border border-gray-200 rounded-lg 
+              className="absolute right-0 top-full mt-1 bg-white border border-secondary-200 rounded-lg 
                 shadow-lg z-50 py-1 min-w-32"
             >
               <button
@@ -431,7 +431,7 @@ function UserRow({
                   onAction(user.id, 'timeout', 60)
                   setShowActions(false)
                 }}
-                className="flex items-center gap-2 w-full px-3 py-1.5 text-xs hover:bg-gray-50 
+                className="flex items-center gap-2 w-full px-3 py-1.5 text-xs hover:bg-secondary-50 
                   text-amber-600 hover:text-amber-700"
               >
                 <Clock className="w-3 h-3" />
@@ -443,7 +443,7 @@ function UserRow({
                   onAction(user.id, 'timeout', 600)
                   setShowActions(false)
                 }}
-                className="flex items-center gap-2 w-full px-3 py-1.5 text-xs hover:bg-gray-50 
+                className="flex items-center gap-2 w-full px-3 py-1.5 text-xs hover:bg-secondary-50 
                   text-amber-600 hover:text-amber-700"
               >
                 <Clock className="w-3 h-3" />
@@ -457,7 +457,7 @@ function UserRow({
                   onAction(user.id, 'ban')
                   setShowActions(false)
                 }}
-                className="flex items-center gap-2 w-full px-3 py-1.5 text-xs hover:bg-gray-50 
+                className="flex items-center gap-2 w-full px-3 py-1.5 text-xs hover:bg-secondary-50 
                   text-coral-600 hover:text-red-700"
               >
                 <Ban className="w-3 h-3" />

@@ -143,7 +143,7 @@ export default function GroupsShowcase() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1, duration: 0.6 }}
       whileHover={{ y: -8, scale: 1.02 }}
-      className="bg-white rounded-3xl shadow-xl border border-gray-100/50 overflow-hidden hover:shadow-2xl transition-all duration-500 group relative"
+      className="bg-white rounded-3xl shadow-xl border border-secondary-100/50 overflow-hidden hover:shadow-2xl transition-all duration-500 group relative"
     >
       {/* Group Image */}
       <div className="h-48 sm:h-52 bg-gradient-to-br from-secondary-500 via-primary-500 to-accent-500 relative overflow-hidden">
@@ -240,7 +240,7 @@ export default function GroupsShowcase() {
           className="inline-flex items-center gap-3 w-full bg-gradient-to-r from-secondary-500 via-primary-500 to-accent-500 text-white font-semibold px-6 py-4 rounded-2xl hover:from-secondary-600 hover:via-primary-600 hover:to-accent-600 transition-all duration-300 group-hover:scale-105 shadow-xl hover:shadow-2xl text-center justify-center min-h-[44px]"
         >
             Join Group
-          <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          <ArrowRightIcon className="w-5 h-5 group-hover:transecondary-x-1 transition-transform" />
         </Link>
       </div>
     </motion.div>
@@ -325,11 +325,11 @@ export default function GroupsShowcase() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href={ROUTES.groups}
-                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-secondary-600 font-bold rounded-2xl hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl group min-h-[44px]"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-secondary-600 font-bold rounded-2xl hover:bg-secondary-50 transition-all duration-300 shadow-xl hover:shadow-2xl group min-h-[44px]"
               >
                 <UserGroupIcon className="w-6 h-6" />
                 Browse Groups
-                <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRightIcon className="w-5 h-5 group-hover:transecondary-x-1 transition-transform" />
               </Link>
               <Link
                 href={ROUTES.groupsCreate}
@@ -349,21 +349,21 @@ export default function GroupsShowcase() {
           transition={{ delay: 0.5 }}
           className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8"
         >
-          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-100/50 text-center group hover:shadow-2xl transition-all duration-300">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-secondary-100/50 text-center group hover:shadow-2xl transition-all duration-300">
             <div className="w-16 h-16 bg-gradient-to-br from-secondary-500 to-primary-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
               <UserGroupIcon className="w-8 h-8 text-white" />
             </div>
             <div className="text-3xl font-bold text-secondary-600 mb-2">15+</div>
             <div className="text-secondary-600 font-medium">Active Groups</div>
           </div>
-          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-100/50 text-center group hover:shadow-2xl transition-all duration-300">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-secondary-100/50 text-center group hover:shadow-2xl transition-all duration-300">
             <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
               <UsersIcon className="w-8 h-8 text-white" />
             </div>
             <div className="text-3xl font-bold text-primary-600 mb-2">200+</div>
             <div className="text-secondary-600 font-medium">Community Members</div>
           </div>
-          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-gray-100/50 text-center group hover:shadow-2xl transition-all duration-300">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-secondary-100/50 text-center group hover:shadow-2xl transition-all duration-300">
             <div className="w-16 h-16 bg-gradient-to-br from-accent-500 to-coral-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
               <HeartIcon className="w-8 h-8 text-white" />
             </div>

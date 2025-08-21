@@ -213,7 +213,7 @@ export default function PhotoUploadSystem({
         className={`relative border-2 border-dashed rounded-xl p-8 text-center transition-all ${
           dragOver 
             ? 'border-primary-400 bg-primary-50' 
-            : 'border-secondary-300 hover:border-gray-400'
+            : 'border-secondary-300 hover:border-secondary-400'
         }`}
         onDrop={handleDrop}
         onDragOver={handleDragOver}

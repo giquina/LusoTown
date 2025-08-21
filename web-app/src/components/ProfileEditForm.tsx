@@ -137,7 +137,7 @@ export default function ProfileEditForm({
       </div>
 
       {/* Save Button */}
-      <div className="flex justify-end pt-6 border-t border-gray-200">
+      <div className="flex justify-end pt-6 border-t border-secondary-200">
         <motion.button
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}

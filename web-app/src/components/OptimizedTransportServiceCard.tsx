@@ -170,7 +170,7 @@ const OptimizedTransportServiceCard = memo<OptimizedTransportServiceCardProps>((
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 + index * 0.1 }}
-          className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10"
+          className="absolute -top-4 left-1/2 transform -transecondary-x-1/2 z-10"
         >
           <div className="bg-gradient-to-r from-premium-600 to-premium-700 text-white px-6 py-2 rounded-full text-sm font-bold shadow-xl">
             <div className="flex items-center space-x-2">
@@ -258,7 +258,7 @@ const OptimizedTransportServiceCard = memo<OptimizedTransportServiceCardProps>((
               transition={{ delay: 0.7 + index * 0.1 }}
               className={`mt-3 inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
                 membershipLevel === 'ambassador' 
-                  ? 'bg-purple-100 text-purple-800' 
+                  ? 'bg-accent-100 text-accent-800' 
                   : 'bg-blue-100 text-blue-800'
               }`}
             >

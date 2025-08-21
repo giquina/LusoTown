@@ -143,7 +143,7 @@ export default function CreatorEarningsCalculator() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               onClick={() => applyPreset(preset)}
-              className="p-4 bg-white border-2 border-gray-200 rounded-xl hover:border-primary-300 hover:bg-primary-50 transition-all text-left group"
+              className="p-4 bg-white border-2 border-secondary-200 rounded-xl hover:border-primary-300 hover:bg-primary-50 transition-all text-left group"
             >
               <h4 className="font-semibold text-gray-900 mb-1 group-hover:text-primary-700">
                 {preset.name}
@@ -159,7 +159,7 @@ export default function CreatorEarningsCalculator() {
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="bg-white rounded-xl shadow-sm border border-gray-200 p-6"
+          className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6"
         >
           <div className="flex items-center gap-2 mb-6">
             <Calculator className="w-5 h-5 text-primary-600" />
@@ -371,7 +371,7 @@ export default function CreatorEarningsCalculator() {
           </div>
 
           {/* Revenue Breakdown */}
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
               {isPt ? 'Divisão de Receitas' : 'Revenue Breakdown'}
             </h3>
@@ -421,7 +421,7 @@ export default function CreatorEarningsCalculator() {
           </div>
 
           {/* Additional Insights */}
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+          <div className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
               {isPt ? 'Insights Adicionais' : 'Additional Insights'}
             </h3>
@@ -443,7 +443,7 @@ export default function CreatorEarningsCalculator() {
                 </span>
               </div>
               <div className="flex items-start gap-2">
-                <Info className="w-4 h-4 text-purple-500 mt-0.5 flex-shrink-0" />
+                <Info className="w-4 h-4 text-accent-500 mt-0.5 flex-shrink-0" />
                 <span className="text-secondary-600">
                   {isPt
                     ? 'Ganhos podem aumentar significativamente com crescimento da audiência.'

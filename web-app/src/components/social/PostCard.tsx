@@ -43,7 +43,7 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
     switch (post.user.membershipTier) {
       case 'cultural_ambassador':
         return (
-          <div className="flex items-center space-x-1 px-2 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full text-xs">
+          <div className="flex items-center space-x-1 px-2 py-1 bg-gradient-to-r from-accent-500 to-pink-500 text-white rounded-full text-xs">
             <Crown className="w-3 h-3" />
             <span>{t('membership.cultural_ambassador') || 'Cultural Ambassador'}</span>
           </div>
@@ -108,7 +108,7 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
   }
 
   return (
-    <div className={`bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow ${className}`}>
+    <div className={`bg-white rounded-xl shadow-sm border border-secondary-200 hover:shadow-md transition-shadow ${className}`}>
       <div className="p-6">
         {/* Post Header */}
         <div className="flex items-start justify-between mb-4">
@@ -158,12 +158,12 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
             </button>
 
             {showMoreMenu && (
-              <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-10">
-                <button className="w-full px-4 py-2 text-left text-sm text-secondary-700 hover:bg-gray-50 flex items-center space-x-2">
+              <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-lg shadow-lg border border-secondary-200 py-2 z-10">
+                <button className="w-full px-4 py-2 text-left text-sm text-secondary-700 hover:bg-secondary-50 flex items-center space-x-2">
                   <Flag className="w-4 h-4" />
                   <span>{t('post.report') || 'Report Post'}</span>
                 </button>
-                <button className="w-full px-4 py-2 text-left text-sm text-secondary-700 hover:bg-gray-50 flex items-center space-x-2">
+                <button className="w-full px-4 py-2 text-left text-sm text-secondary-700 hover:bg-secondary-50 flex items-center space-x-2">
                   <ExternalLink className="w-4 h-4" />
                   <span>{t('post.view_profile') || 'View Profile'}</span>
                 </button>
@@ -192,7 +192,7 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
 
           {/* Link Preview (if applicable) */}
           {post.linkPreview && (
-            <div className="mt-4 border border-gray-200 rounded-lg overflow-hidden">
+            <div className="mt-4 border border-secondary-200 rounded-lg overflow-hidden">
               <img
                 src={post.linkPreview.image}
                 alt={post.linkPreview.title}
@@ -267,7 +267,7 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
         </div>
 
         {/* Engagement Stats */}
-        <div className="flex items-center justify-between text-sm text-gray-500 mb-4 pt-4 border-t border-gray-100">
+        <div className="flex items-center justify-between text-sm text-gray-500 mb-4 pt-4 border-t border-secondary-100">
           <div className="flex items-center space-x-4">
             {post.engagement.likes > 0 && (
               <span>{post.engagement.likes} {t('post.likes') || 'likes'}</span>
@@ -287,7 +287,7 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
         </div>
 
         {/* Action Buttons */}
-        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+        <div className="flex items-center justify-between pt-4 border-t border-secondary-100">
           <div className="flex items-center space-x-1">
             {/* Like Button */}
             <button
@@ -295,7 +295,7 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
               className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
                 post.userInteractions.liked
                   ? 'bg-red-50 text-coral-600 hover:bg-red-100'
-                  : 'text-secondary-600 hover:bg-gray-50'
+                  : 'text-secondary-600 hover:bg-secondary-50'
               }`}
             >
               <Heart className={`w-4 h-4 ${post.userInteractions.liked ? 'fill-current' : ''}`} />
@@ -305,7 +305,7 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
             </button>
 
             {/* Comment Button */}
-            <button className="flex items-center space-x-2 px-4 py-2 text-secondary-600 hover:bg-gray-50 rounded-lg transition-colors">
+            <button className="flex items-center space-x-2 px-4 py-2 text-secondary-600 hover:bg-secondary-50 rounded-lg transition-colors">
               <MessageCircle className="w-4 h-4" />
               <span className="text-sm font-medium">
                 {t('post.comment') || 'Comment'}
@@ -316,7 +316,7 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
             <div className="relative">
               <button
                 onClick={() => setShowShareMenu(!showShareMenu)}
-                className="flex items-center space-x-2 px-4 py-2 text-secondary-600 hover:bg-gray-50 rounded-lg transition-colors"
+                className="flex items-center space-x-2 px-4 py-2 text-secondary-600 hover:bg-secondary-50 rounded-lg transition-colors"
               >
                 <Share2 className="w-4 h-4" />
                 <span className="text-sm font-medium">
@@ -325,24 +325,24 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
               </button>
 
               {showShareMenu && (
-                <div className="absolute left-0 top-full mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-10">
+                <div className="absolute left-0 top-full mt-2 w-48 bg-white rounded-lg shadow-lg border border-secondary-200 py-2 z-10">
                   <button
                     onClick={() => handleShare('twitter')}
-                    className="w-full px-4 py-2 text-left text-sm text-secondary-700 hover:bg-gray-50 flex items-center space-x-2"
+                    className="w-full px-4 py-2 text-left text-sm text-secondary-700 hover:bg-secondary-50 flex items-center space-x-2"
                   >
                     <Twitter className="w-4 h-4" />
                     <span>{t('post.share_twitter') || 'Share on Twitter'}</span>
                   </button>
                   <button
                     onClick={() => handleShare('facebook')}
-                    className="w-full px-4 py-2 text-left text-sm text-secondary-700 hover:bg-gray-50 flex items-center space-x-2"
+                    className="w-full px-4 py-2 text-left text-sm text-secondary-700 hover:bg-secondary-50 flex items-center space-x-2"
                   >
                     <Facebook className="w-4 h-4" />
                     <span>{t('post.share_facebook') || 'Share on Facebook'}</span>
                   </button>
                   <button
                     onClick={() => handleShare('copy')}
-                    className="w-full px-4 py-2 text-left text-sm text-secondary-700 hover:bg-gray-50 flex items-center space-x-2"
+                    className="w-full px-4 py-2 text-left text-sm text-secondary-700 hover:bg-secondary-50 flex items-center space-x-2"
                   >
                     <Copy className="w-4 h-4" />
                     <span>{t('post.copy_link') || 'Copy Link'}</span>
@@ -358,7 +358,7 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
             className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-colors ${
               post.userInteractions.saved
                 ? 'bg-amber-50 text-amber-600 hover:bg-amber-100'
-                : 'text-secondary-600 hover:bg-gray-50'
+                : 'text-secondary-600 hover:bg-secondary-50'
             }`}
           >
             <Bookmark className={`w-4 h-4 ${post.userInteractions.saved ? 'fill-current' : ''}`} />
@@ -373,7 +373,7 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
 
         {/* Portuguese Community Relevance Score (for development) */}
         {process.env.NODE_ENV === 'development' && (
-          <div className="mt-4 pt-4 border-t border-gray-100">
+          <div className="mt-4 pt-4 border-t border-secondary-100">
             <div className="flex items-center justify-between text-xs text-gray-400">
               <span>Cultural Relevance: {Math.round(post.culturalRelevanceScore * 100)}%</span>
               <span>Language: {post.language}</span>

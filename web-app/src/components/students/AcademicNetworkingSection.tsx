@@ -578,7 +578,7 @@ export default function AcademicNetworkingSection() {
       case "thesis_support":
         return "bg-green-100 text-green-700";
       case "language_practice":
-        return "bg-purple-100 text-purple-700";
+        return "bg-accent-100 text-accent-700";
       case "assignment_help":
         return "bg-yellow-100 text-yellow-700";
       default:
@@ -600,7 +600,7 @@ export default function AcademicNetworkingSection() {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-secondary-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -610,7 +610,7 @@ export default function AcademicNetworkingSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-white border border-gray-200 shadow-lg mb-6">
+          <div className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-white border border-secondary-200 shadow-lg mb-6">
             <UserGroupIcon className="w-4 h-4 mr-2 text-primary-600" />
             <span className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent font-bold">
               {language === "pt"
@@ -650,7 +650,7 @@ export default function AcademicNetworkingSection() {
                   className={`flex-1 p-6 rounded-2xl border transition-all duration-300 ${
                     activeTab === tab.id
                       ? "bg-white border-primary-300 shadow-lg"
-                      : "bg-white/50 border-gray-200 hover:bg-white hover:shadow-md"
+                      : "bg-white/50 border-secondary-200 hover:bg-white hover:shadow-md"
                   }`}
                 >
                   <div className="flex items-center justify-center mb-3">
@@ -736,7 +736,7 @@ export default function AcademicNetworkingSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.1 * index }}
-                  className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+                  className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100 hover:shadow-xl transition-all duration-300"
                 >
                   {/* Header */}
                   <div className="flex items-start justify-between mb-4">
@@ -765,7 +765,7 @@ export default function AcademicNetworkingSection() {
                     <div className="flex items-center">
                       <div
                         className={`w-3 h-3 rounded-full ${
-                          connection.isOnline ? "bg-action-500" : "bg-gray-300"
+                          connection.isOnline ? "bg-action-500" : "bg-secondary-300"
                         }`}
                       ></div>
                     </div>
@@ -869,7 +869,7 @@ export default function AcademicNetworkingSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 * index }}
-                className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+                className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100 hover:shadow-xl transition-all duration-300"
               >
                 {/* Header */}
                 <div className="flex items-start justify-between mb-4">
@@ -983,7 +983,7 @@ export default function AcademicNetworkingSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 * index }}
-                className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+                className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100 hover:shadow-xl transition-all duration-300"
               >
                 {/* Header */}
                 <div className="flex items-start justify-between mb-4">

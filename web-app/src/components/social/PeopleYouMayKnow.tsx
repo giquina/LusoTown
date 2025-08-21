@@ -110,7 +110,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
     switch (tier) {
       case 'cultural_ambassador':
         return (
-          <div className="flex items-center space-x-1 text-purple-600">
+          <div className="flex items-center space-x-1 text-accent-600">
             <Crown className="w-3 h-3" />
             <span className="text-xs">Ambassador</span>
           </div>
@@ -133,7 +133,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
   }
 
   return (
-    <div className={`bg-white rounded-xl shadow-sm border border-gray-200 ${className}`}>
+    <div className={`bg-white rounded-xl shadow-sm border border-secondary-200 ${className}`}>
       <div className="p-6">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
@@ -156,7 +156,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
         <div className="space-y-4">
           {suggestions.slice(0, 4).map(user => (
             <div key={user.id} className="group">
-              <div className="flex items-start space-x-3 p-3 hover:bg-gray-50 rounded-lg transition-colors">
+              <div className="flex items-start space-x-3 p-3 hover:bg-secondary-50 rounded-lg transition-colors">
                 {/* Avatar */}
                 <div className="relative flex-shrink-0">
                   <img
@@ -254,7 +254,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
                         : (t('suggestions.follow') || 'Follow')
                       }
                     </button>
-                    <button className="px-3 py-2 border border-gray-200 text-secondary-600 hover:bg-gray-50 rounded-lg text-sm font-medium transition-colors">
+                    <button className="px-3 py-2 border border-secondary-200 text-secondary-600 hover:bg-secondary-50 rounded-lg text-sm font-medium transition-colors">
                       <MessageCircle className="w-4 h-4" />
                     </button>
                   </div>
@@ -265,7 +265,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
         </div>
 
         {/* View All Button */}
-        <div className="mt-6 pt-4 border-t border-gray-100">
+        <div className="mt-6 pt-4 border-t border-secondary-100">
           <button className="w-full px-4 py-2 text-primary-600 hover:text-primary-700 hover:bg-primary-50 rounded-lg transition-colors text-sm font-medium">
             {t('suggestions.view_all') || 'View All Suggestions'}
           </button>

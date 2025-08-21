@@ -143,7 +143,7 @@ export default function ConversationsList({
       case 'event_based':
         return <Calendar className="w-4 h-4 text-primary-500" />
       case 'professional':
-        return <Users className="w-4 h-4 text-purple-500" />
+        return <Users className="w-4 h-4 text-accent-500" />
       default:
         return <MessageCircle className="w-4 h-4 text-gray-500" />
     }
@@ -202,7 +202,7 @@ export default function ConversationsList({
   return (
     <div className={`flex flex-col h-full bg-white ${className}`}>
       {/* Header */}
-      <div className="p-4 border-b border-gray-200 bg-white sticky top-0 z-10">
+      <div className="p-4 border-b border-secondary-200 bg-white sticky top-0 z-10">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-xl font-bold text-gray-900">{t.conversations}</h2>
           <button className="p-2 hover:bg-secondary-100 rounded-full transition-colors">
@@ -212,7 +212,7 @@ export default function ConversationsList({
 
         {/* Search Bar */}
         <div className="relative mb-4">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+          <Search className="absolute left-3 top-1/2 transform -transecondary-y-1/2 w-4 h-4 text-gray-400" />
           <input
             type="text"
             placeholder={t.search}
@@ -278,7 +278,7 @@ export default function ConversationsList({
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ delay: index * 0.05 }}
                   onClick={() => onConversationSelect(conversation)}
-                  className={`w-full p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors text-left ${
+                  className={`w-full p-4 border-b border-secondary-100 hover:bg-secondary-50 transition-colors text-left ${
                     isSelected ? 'bg-primary-50 border-primary-200' : ''
                   }`}
                 >

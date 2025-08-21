@@ -297,7 +297,7 @@ const BusinessMap: React.FC<BusinessMapProps> = ({
               {businessMarkers.slice(0, 20).map((marker, index) => (
                 <div
                   key={marker.business.id}
-                  className="absolute cursor-pointer transform -translate-x-1/2 -translate-y-1/2"
+                  className="absolute cursor-pointer transform -transecondary-x-1/2 -transecondary-y-1/2"
                   style={{
                     left: `${20 + (index % 8) * 10}%`,
                     top: `${30 + Math.floor(index / 8) * 15}%`,
@@ -320,7 +320,7 @@ const BusinessMap: React.FC<BusinessMapProps> = ({
                     )}
 
                     {/* Hover tooltip */}
-                    <div className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-secondary-900 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-20">
+                    <div className="absolute bottom-full mb-2 left-1/2 transform -transecondary-x-1/2 bg-secondary-900 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-20">
                       {marker.business.name}
                     </div>
                   </div>
@@ -330,7 +330,7 @@ const BusinessMap: React.FC<BusinessMapProps> = ({
               {/* User location marker */}
               {userLocation && (
                 <div
-                  className="absolute transform -translate-x-1/2 -translate-y-1/2"
+                  className="absolute transform -transecondary-x-1/2 -transecondary-y-1/2"
                   style={{
                     left: '50%',
                     top: '50%'

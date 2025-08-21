@@ -416,7 +416,7 @@ export default function EventConversationStarters({
           </AnimatePresence>
 
           {/* Header */}
-          <div className="p-6 border-b border-gray-200">
+          <div className="p-6 border-b border-secondary-200">
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 bg-gradient-to-br from-primary-200 to-secondary-200 rounded-full flex items-center justify-center text-xl">
                 👤
@@ -517,7 +517,7 @@ export default function EventConversationStarters({
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-all cursor-pointer"
+                    className="border border-secondary-200 rounded-lg p-4 hover:shadow-md transition-all cursor-pointer"
                     onClick={() => handleStartConversation(starter)}
                   >
                     <div className="flex items-start gap-3">
@@ -563,7 +563,7 @@ export default function EventConversationStarters({
             </div>
 
             {/* Custom Message */}
-            <div className="border border-gray-200 rounded-lg p-4">
+            <div className="border border-secondary-200 rounded-lg p-4">
               <h4 className="font-semibold text-gray-900 mb-3">
                 {language === "pt" ? "Mensagem Personalizada:" : "Custom Message:"}
               </h4>
@@ -607,7 +607,7 @@ export default function EventConversationStarters({
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    className="mt-3 bg-gray-50 rounded-lg p-4"
+                    className="mt-3 bg-secondary-50 rounded-lg p-4"
                   >
                     <ul className="text-sm text-secondary-700 space-y-2">
                       <li className="flex items-start gap-2">

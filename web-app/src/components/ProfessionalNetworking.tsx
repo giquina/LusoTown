@@ -257,7 +257,7 @@ export default function ProfessionalNetworking({
                     className={`p-4 rounded-xl border-2 text-left transition-all ${
                       formData.career_stage === stage.value
                         ? 'border-primary-500 bg-primary-50'
-                        : 'border-gray-200 bg-white hover:border-secondary-300'
+                        : 'border-secondary-200 bg-white hover:border-secondary-300'
                     }`}
                   >
                     <div className="flex items-start gap-3">
@@ -310,7 +310,7 @@ export default function ProfessionalNetworking({
                   className={`p-3 rounded-lg border-2 text-sm font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed ${
                     (formData.industries || []).includes(industry.value)
                       ? 'border-primary-500 bg-primary-50 text-primary-700'
-                      : 'border-gray-200 bg-white text-secondary-700 hover:border-secondary-300'
+                      : 'border-secondary-200 bg-white text-secondary-700 hover:border-secondary-300'
                   }`}
                 >
                   {isPortuguese ? industry.labelPt : industry.label}
@@ -387,7 +387,7 @@ export default function ProfessionalNetworking({
                     className={`p-4 rounded-xl border-2 text-left transition-all ${
                       (formData.professional_goals || []).includes(goal.id)
                         ? 'border-primary-500 bg-primary-50'
-                        : 'border-gray-200 bg-white hover:border-secondary-300'
+                        : 'border-secondary-200 bg-white hover:border-secondary-300'
                     }`}
                   >
                     <div className="flex items-start gap-3">
@@ -468,7 +468,7 @@ export default function ProfessionalNetworking({
                   className={`p-3 rounded-lg border-2 text-sm font-medium transition-all ${
                     (formData.professional_skills || []).includes(skill)
                       ? 'border-primary-500 bg-primary-50 text-primary-700'
-                      : 'border-gray-200 bg-white text-secondary-700 hover:border-secondary-300'
+                      : 'border-secondary-200 bg-white text-secondary-700 hover:border-secondary-300'
                   }`}
                 >
                   {skill}
@@ -533,7 +533,7 @@ export default function ProfessionalNetworking({
                       className={`p-4 rounded-xl border-2 text-center transition-all ${
                         formData.networking_availability === option.value
                           ? 'border-primary-500 bg-primary-50 text-primary-700'
-                          : 'border-gray-200 bg-white text-secondary-700 hover:border-secondary-300'
+                          : 'border-secondary-200 bg-white text-secondary-700 hover:border-secondary-300'
                       }`}
                     >
                       <div className="font-semibold">
@@ -562,7 +562,7 @@ export default function ProfessionalNetworking({
                       className={`p-4 rounded-xl border-2 text-center transition-all ${
                         formData.networking_format === option.value
                           ? 'border-primary-500 bg-primary-50 text-primary-700'
-                          : 'border-gray-200 bg-white text-secondary-700 hover:border-secondary-300'
+                          : 'border-secondary-200 bg-white text-secondary-700 hover:border-secondary-300'
                       }`}
                     >
                       <div className="font-semibold">
@@ -604,7 +604,7 @@ export default function ProfessionalNetworking({
       )}
 
       {/* Summary */}
-      <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl border border-blue-200">
+      <div className="bg-gradient-to-r from-blue-50 to-accent-50 p-6 rounded-xl border border-blue-200">
         <h4 className="font-semibold text-gray-900 mb-4">
           {isPortuguese ? 'Resumo Profissional' : 'Professional Summary'}
         </h4>

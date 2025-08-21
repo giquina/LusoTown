@@ -64,7 +64,7 @@ export default function NotificationPreferencesPage() {
   ] : []
 
   return (
-    <div className="min-h-screen bg-neutral-50">
+    <div className="min-h-screen bg-secondary-50">
       
       <main className="pt-20 pb-16">
         {/* Hero Section */}
@@ -101,7 +101,7 @@ export default function NotificationPreferencesPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
             >
-              <h2 className="text-2xl font-bold text-neutral-900 mb-8 text-center">
+              <h2 className="text-2xl font-bold text-secondary-900 mb-8 text-center">
                 {language === 'pt' ? 'Os Seus Insights de Notificação' : 'Your Notification Insights'}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -117,7 +117,7 @@ export default function NotificationPreferencesPage() {
                     <div className={`text-3xl font-bold ${card.color} mb-2`}>
                       {card.value}
                     </div>
-                    <div className="text-sm text-neutral-600">
+                    <div className="text-sm text-secondary-600">
                       {card.title}
                     </div>
                   </motion.div>
@@ -147,10 +147,10 @@ export default function NotificationPreferencesPage() {
             className="bg-gradient-to-r from-secondary-50 to-accent-50 rounded-xl p-8 lg:p-12"
           >
             <div className="text-center mb-8">
-              <h2 className="text-2xl lg:text-3xl font-bold text-neutral-900 mb-4">
+              <h2 className="text-2xl lg:text-3xl font-bold text-secondary-900 mb-4">
                 🇵🇹 {language === 'pt' ? 'Funcionalidades da Comunidade Portuguesa' : 'Portuguese Community Features'}
               </h2>
-              <p className="text-lg text-neutral-600">
+              <p className="text-lg text-secondary-600">
                 {language === 'pt' 
                   ? 'Descubra notificações especializadas para a nossa comunidade em Londres & Reino Unido'
                   : 'Discover specialized notifications for our community in London & UK'
@@ -164,10 +164,10 @@ export default function NotificationPreferencesPage() {
                 <div className="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl">🎭</span>
                 </div>
-                <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                <h3 className="text-lg font-semibold text-secondary-900 mb-2">
                   {language === 'pt' ? 'Eventos Culturais' : 'Cultural Events'}
                 </h3>
-                <p className="text-sm text-neutral-600">
+                <p className="text-sm text-secondary-600">
                   {language === 'pt' 
                     ? 'Noites de Fado, festivais portugueses, celebrações tradicionais'
                     : 'Fado nights, Portuguese festivals, traditional celebrations'
@@ -180,10 +180,10 @@ export default function NotificationPreferencesPage() {
                 <div className="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl">💼</span>
                 </div>
-                <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                <h3 className="text-lg font-semibold text-secondary-900 mb-2">
                   {language === 'pt' ? 'Networking Empresarial' : 'Business Networking'}
                 </h3>
-                <p className="text-sm text-neutral-600">
+                <p className="text-sm text-secondary-600">
                   {language === 'pt' 
                     ? 'Oportunidades de negócio, parcerias, eventos profissionais'
                     : 'Business opportunities, partnerships, professional events'
@@ -196,10 +196,10 @@ export default function NotificationPreferencesPage() {
                 <div className="w-16 h-16 bg-premium-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl">🏛️</span>
                 </div>
-                <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                <h3 className="text-lg font-semibold text-secondary-900 mb-2">
                   {language === 'pt' ? 'Património Cultural' : 'Cultural Heritage'}
                 </h3>
-                <p className="text-sm text-neutral-600">
+                <p className="text-sm text-secondary-600">
                   {language === 'pt' 
                     ? 'Preservação cultural, histórias da comunidade, tradições'
                     : 'Cultural preservation, community stories, traditions'
@@ -216,14 +216,14 @@ export default function NotificationPreferencesPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="bg-white rounded-lg shadow-sm border border-neutral-200 p-6"
+            className="bg-white rounded-lg shadow-sm border border-secondary-200 p-6"
           >
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                <h3 className="text-lg font-semibold text-secondary-900 mb-2">
                   {language === 'pt' ? 'Guardar Preferências' : 'Save Preferences'}
                 </h3>
-                <p className="text-sm text-neutral-600">
+                <p className="text-sm text-secondary-600">
                   {language === 'pt' 
                     ? 'As suas preferências são guardadas automaticamente'
                     : 'Your preferences are saved automatically'

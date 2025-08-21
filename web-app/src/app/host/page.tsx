@@ -194,7 +194,7 @@ export default function HostPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       <main className="pt-16">
         {/* Hero Section */}
         <section className="relative bg-gradient-to-r from-premium-50 via-white to-coral-50 py-20 overflow-hidden">
@@ -256,16 +256,16 @@ export default function HostPage() {
               >
                 <a
                   href="#apply"
-                  className="group relative text-sm sm:text-base font-bold px-6 sm:px-8 py-4 bg-gradient-to-r from-premium-600 to-coral-600 text-white rounded-2xl shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+                  className="group relative text-sm sm:text-base font-bold px-6 sm:px-8 py-4 bg-gradient-to-r from-premium-600 to-coral-600 text-white rounded-2xl shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:-transecondary-y-1 hover:scale-105"
                 >
                   <span className="flex items-center justify-center gap-2 sm:gap-3">
                     {isPortuguese ? "Começar Agora" : "Start Now"}
-                    <ArrowRightIcon className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-200" />
+                    <ArrowRightIcon className="h-4 w-4 sm:h-5 sm:w-5 group-hover:transecondary-x-1 transition-transform duration-200" />
                   </span>
                 </a>
                 <a
                   href="#benefits"
-                  className="text-sm sm:text-base font-bold px-6 sm:px-8 py-4 bg-white text-secondary-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-premium-300 hover:-translate-y-1"
+                  className="text-sm sm:text-base font-bold px-6 sm:px-8 py-4 bg-white text-secondary-800 border-2 border-secondary-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-premium-300 hover:-transecondary-y-1"
                 >
                   {isPortuguese ? "Saber Mais" : "Learn More"}
                 </a>
@@ -304,7 +304,7 @@ export default function HostPage() {
                     className={`relative cursor-pointer p-3 sm:p-4 lg:p-8 rounded-2xl lg:rounded-3xl border-2 transition-all duration-300 min-h-[240px] sm:min-h-[280px] lg:min-h-[320px] ${
                       isSelected
                         ? `border-${category.color}-500 bg-${category.color}-50 shadow-xl scale-105`
-                        : "border-gray-200 bg-white hover:border-secondary-300 hover:shadow-lg"
+                        : "border-secondary-200 bg-white hover:border-secondary-300 hover:shadow-lg"
                     }`}
                     onClick={() => setSelectedCategory(category.id as any)}
                   >
@@ -377,7 +377,7 @@ export default function HostPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
               {/* Creator Free */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+              <div className="bg-white rounded-2xl p-8 shadow-lg border border-secondary-200">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     Creator Free
@@ -420,7 +420,7 @@ export default function HostPage() {
 
               {/* Creator Pro */}
               <div className="bg-white rounded-2xl p-8 shadow-xl border-2 border-premium-400 relative">
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <div className="absolute -top-4 left-1/2 transform -transecondary-x-1/2">
                   <span className="bg-premium-500 text-white px-4 py-2 rounded-full text-sm font-medium">
                     {isPortuguese ? "Recomendado" : "Recommended"}
                   </span>
@@ -472,7 +472,7 @@ export default function HostPage() {
               </div>
 
               {/* Transaction Model */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+              <div className="bg-white rounded-2xl p-8 shadow-lg border border-secondary-200">
                 <div className="text-center mb-6">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     {isPortuguese ? "Por Transação" : "Per Transaction"}
@@ -540,7 +540,7 @@ export default function HostPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="text-center p-3 sm:p-4 lg:p-6 rounded-xl lg:rounded-2xl bg-gray-50 hover:bg-white hover:shadow-lg transition-all duration-300 min-h-[180px] sm:min-h-[200px]"
+                    className="text-center p-3 sm:p-4 lg:p-6 rounded-xl lg:rounded-2xl bg-secondary-50 hover:bg-white hover:shadow-lg transition-all duration-300 min-h-[180px] sm:min-h-[200px]"
                   >
                     <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-r from-premium-500 to-coral-500 rounded-xl lg:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
                       <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" />
@@ -836,7 +836,7 @@ export default function HostPage() {
                 <div className="pt-6">
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-premium-600 to-coral-600 text-white font-bold py-4 px-8 rounded-2xl hover:from-premium-700 hover:to-coral-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-sm sm:text-base"
+                    className="w-full bg-gradient-to-r from-premium-600 to-coral-600 text-white font-bold py-4 px-8 rounded-2xl hover:from-premium-700 hover:to-coral-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-transecondary-y-1 text-sm sm:text-base"
                   >
                     {isPortuguese ? "Enviar Candidatura" : "Submit Now"}
                   </button>

@@ -111,7 +111,7 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ business, featured = false,
   }
 
   return (
-    <div className={`bg-white rounded-2xl shadow-lg border ${featured ? 'border-accent-300 ring-2 ring-accent-200' : 'border-gray-100'} overflow-hidden hover:shadow-xl transition-all duration-300 group`}>
+    <div className={`bg-white rounded-2xl shadow-lg border ${featured ? 'border-accent-300 ring-2 ring-accent-200' : 'border-secondary-100'} overflow-hidden hover:shadow-xl transition-all duration-300 group`}>
       {featured && (
         <div className="bg-gradient-to-r from-accent-400 to-premium-400 text-white px-4 py-2 text-sm font-medium flex items-center gap-2">
           <SparklesIcon className="w-4 h-4" />
@@ -428,14 +428,14 @@ export default function BusinessDirectory() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center pt-20">
+      <div className="min-h-screen bg-secondary-50 flex items-center justify-center pt-20">
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-500"></div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       <div className="pt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
@@ -459,7 +459,7 @@ export default function BusinessDirectory() {
             
             {/* View Toggle and Add Business Button */}
             <div className="flex items-center justify-center gap-4 mt-6">
-              <div className="flex items-center bg-white rounded-lg border border-gray-200 p-1">
+              <div className="flex items-center bg-white rounded-lg border border-secondary-200 p-1">
                 <button
                   onClick={() => setViewMode('list')}
                   className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-colors ${
@@ -498,7 +498,7 @@ export default function BusinessDirectory() {
           <div className="bg-white rounded-xl shadow-sm p-6 mb-6">
             <div className="flex flex-col lg:flex-row gap-4">
               <div className="flex-1 relative">
-                <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -transecondary-y-1/2 text-gray-400 w-5 h-5" />
                 <input
                   type="text"
                   placeholder={isPortuguese ? 'Buscar negócios...' : 'Search businesses...'}
@@ -534,7 +534,7 @@ export default function BusinessDirectory() {
                   className={`px-4 py-3 border rounded-lg flex items-center space-x-2 transition-colors ${
                     showFilters || activeFiltersCount > 0
                       ? 'bg-primary-500 text-white border-primary-500'
-                      : 'border-secondary-300 hover:bg-gray-50'
+                      : 'border-secondary-300 hover:bg-secondary-50'
                   }`}
                 >
                   <FunnelIcon className="w-4 h-4" />
@@ -550,7 +550,7 @@ export default function BusinessDirectory() {
 
             {/* Advanced Filters */}
             {showFilters && (
-              <div className="mt-6 pt-6 border-t border-gray-200">
+              <div className="mt-6 pt-6 border-t border-secondary-200">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                   {/* Category Filter */}
                   <div>
@@ -729,7 +729,7 @@ export default function BusinessDirectory() {
         )}
 
         {/* Portuguese Cultural Celebrations Section */}
-        <div className="mt-12 bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100">
+        <div className="mt-12 bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-secondary-100">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-2">
               {isPortuguese ? 'Celebrações Culturais Portuguesas' : 'Portuguese Cultural Celebrations'}
@@ -782,7 +782,7 @@ export default function BusinessDirectory() {
             ].map((celebration, index) => (
               <div
                 key={index}
-                className="text-center p-4 rounded-xl bg-gradient-to-br from-gray-50 to-secondary-50/30 hover:from-secondary-50 hover:to-primary-50 transition-all duration-300 cursor-pointer border border-gray-100 hover:shadow-md"
+                className="text-center p-4 rounded-xl bg-gradient-to-br from-gray-50 to-secondary-50/30 hover:from-secondary-50 hover:to-primary-50 transition-all duration-300 cursor-pointer border border-secondary-100 hover:shadow-md"
               >
                 <div className="text-3xl mb-2">{celebration.icon}</div>
                 <div className="text-sm font-semibold text-gray-900 mb-1 leading-tight">

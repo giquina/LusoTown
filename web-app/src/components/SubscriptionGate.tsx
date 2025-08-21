@@ -142,7 +142,7 @@ export default function SubscriptionGate({
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="max-w-md w-full bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden"
+        className="max-w-md w-full bg-white rounded-2xl shadow-2xl border border-secondary-200 overflow-hidden"
       >
         {/* Header */}
         <div className="bg-gradient-to-r from-primary-500 to-secondary-500 p-6 text-white text-center">
@@ -244,7 +244,7 @@ export default function SubscriptionGate({
               </div>
 
               {/* Cultural Ambassador */}
-              <div className="p-3 bg-gray-50 rounded-lg border border-gray-200">
+              <div className="p-3 bg-secondary-50 rounded-lg border border-secondary-200">
                 <div className="text-center">
                   <div className="text-lg font-bold text-gray-900 mb-1">
                     {formatPrice(plans.ambassador.monthly)}

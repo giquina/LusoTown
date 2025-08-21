@@ -359,7 +359,7 @@ export default function CulturalCompatibilityIntegration({
     <div className="space-y-6">
       {/* Cultural Profile Summary */}
       {currentUserProfile && (
-        <div className="bg-white rounded-2xl border border-gray-200 p-6">
+        <div className="bg-white rounded-2xl border border-secondary-200 p-6">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center">
@@ -400,7 +400,7 @@ export default function CulturalCompatibilityIntegration({
               .map(([category, score], index) => {
                 const IconComponent = getCategoryIcon(category);
                 return (
-                  <div key={category} className="text-center p-3 bg-gray-50 rounded-lg">
+                  <div key={category} className="text-center p-3 bg-secondary-50 rounded-lg">
                     <IconComponent className="w-5 h-5 text-primary-600 mx-auto mb-1" />
                     <div className="text-xs font-medium text-secondary-700 mb-1">
                       {category === 'food' ? (language === 'pt' ? 'Culinária' : 'Food') :
@@ -422,7 +422,7 @@ export default function CulturalCompatibilityIntegration({
 
       {/* Compatibility Filters */}
       {currentUserProfile && (
-        <div className="bg-white rounded-2xl border border-gray-200 p-6">
+        <div className="bg-white rounded-2xl border border-secondary-200 p-6">
           <div className="flex items-center justify-between mb-4">
             <h3 className="font-bold text-gray-900 flex items-center gap-2">
               <AdjustmentsHorizontalIcon className="w-5 h-5 text-primary-600" />
@@ -516,7 +516,7 @@ export default function CulturalCompatibilityIntegration({
               const IconComponent = compatibilityStyle.icon;
 
               return (
-                <div key={match.id} className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition-shadow">
+                <div key={match.id} className="bg-white rounded-2xl border border-secondary-200 p-6 hover:shadow-lg transition-shadow">
                   <div className="flex items-start gap-4">
                     {/* Profile Image Placeholder */}
                     <div className="w-16 h-16 bg-gradient-to-br from-primary-200 to-secondary-200 rounded-full flex items-center justify-center text-2xl">
@@ -547,7 +547,7 @@ export default function CulturalCompatibilityIntegration({
                         {Object.entries(match.culturalAlignment).map(([category, score]) => {
                           const IconComponent = getCategoryIcon(category);
                           return (
-                            <div key={category} className="text-center p-2 bg-gray-50 rounded-lg">
+                            <div key={category} className="text-center p-2 bg-secondary-50 rounded-lg">
                               <IconComponent className="w-4 h-4 text-primary-600 mx-auto mb-1" />
                               <div className="text-xs font-bold text-secondary-700">{score}%</div>
                             </div>

@@ -154,7 +154,7 @@ export default function ToursPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
         <div className="absolute inset-0 bg-[url(buildCloudinaryUrl('dqhbeqttp/image/upload/v1734535204/london-skyline-heritage_kqw8xr.jpg'))] bg-cover bg-center opacity-10"></div>
@@ -287,13 +287,13 @@ export default function ToursPage() {
             >
               <button
                 onClick={() => document.getElementById('tours')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1"
+                className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-transecondary-y-1"
               >
                 {isPortuguese ? "Ver Tours" : "View Tours"}
               </button>
               <button
                 onClick={() => document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border border-secondary-300 text-secondary-700 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="border border-secondary-300 text-secondary-700 px-8 py-4 rounded-2xl font-semibold hover:bg-secondary-50 hover:border-secondary-400 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 {isPortuguese ? "Testemunhos" : "Testimonials"}
               </button>
@@ -408,7 +408,7 @@ export default function ToursPage() {
                     </div>
                     
                     {/* Guide Information */}
-                    <div className="bg-gray-50 rounded-2xl p-4 mb-6">
+                    <div className="bg-secondary-50 rounded-2xl p-4 mb-6">
                       <div className="flex items-center gap-3">
                         <div className="w-12 h-12 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-full flex items-center justify-center">
                           <UserIcon className="w-6 h-6 text-white" />
@@ -440,7 +440,7 @@ export default function ToursPage() {
                       ) : (
                         <div className="space-y-2">
                           <button 
-                            className="w-full bg-gray-400 text-white py-3 px-6 rounded-xl font-bold cursor-not-allowed opacity-60"
+                            className="w-full bg-secondary-400 text-white py-3 px-6 rounded-xl font-bold cursor-not-allowed opacity-60"
                             disabled
                           >
                             {serviceStatus?.status === 'fully_booked' 

@@ -34,7 +34,7 @@ export default function FavoriteNotification() {
           exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.2 } }}
           className="fixed bottom-6 right-6 z-50"
         >
-          <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-4 max-w-xs">
+          <div className="bg-white rounded-2xl shadow-xl border border-secondary-200 p-4 max-w-xs">
             <div className="flex items-start gap-3">
               <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
                 <HeartIcon className="w-4 h-4 text-coral-500" />

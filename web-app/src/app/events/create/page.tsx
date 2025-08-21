@@ -152,7 +152,7 @@ export default function CreateEventPage() {
       }
     } catch (error) {
       console.error('Error creating event:', error)
-      alert('Failed to create event. Please try again.')
+      toast.error('Failed to create event. Please try again.')
     }
     
     setIsSubmitting(false)
@@ -166,7 +166,7 @@ export default function CreateEventPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       
       <main className="pt-16">
         {/* Enhanced Hero Section */}
@@ -213,7 +213,7 @@ export default function CreateEventPage() {
                   <div className="text-sm text-secondary-600">Success Rate</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl sm:text-2xl font-bold text-purple-600 mb-1">4.8</div>
+                  <div className="text-xl sm:text-2xl font-bold text-accent-600 mb-1">4.8</div>
                   <div className="text-sm text-secondary-600">Avg Rating</div>
                 </div>
               </motion.div>
@@ -222,7 +222,7 @@ export default function CreateEventPage() {
         </section>
 
         {/* Progress Steps */}
-        <section className="bg-white border-b border-gray-200">
+        <section className="bg-white border-b border-secondary-200">
           <div className="container-width py-6">
             <div className="flex items-center justify-between max-w-4xl mx-auto">
               {steps.map((step) => (
@@ -740,12 +740,12 @@ export default function CreateEventPage() {
                 )}
 
                 {/* Navigation Buttons */}
-                <div className="flex justify-between pt-8 border-t border-gray-200">
+                <div className="flex justify-between pt-8 border-t border-secondary-200">
                   <button
                     type="button"
                     onClick={() => setCurrentStep(Math.max(1, currentStep - 1))}
                     disabled={currentStep === 1}
-                    className="px-6 py-3 text-secondary-700 border border-secondary-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    className="px-6 py-3 text-secondary-700 border border-secondary-300 rounded-lg hover:bg-secondary-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                   >
                     Previous
                   </button>

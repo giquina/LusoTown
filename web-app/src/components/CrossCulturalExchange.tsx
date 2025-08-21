@@ -293,7 +293,7 @@ export default function CrossCulturalExchange({
           <div className="space-y-6">
             <div>
               <h3 className="font-semibold text-gray-900 mb-3">Program Details</h3>
-              <div className="bg-gray-50 rounded-lg p-4 space-y-2">
+              <div className="bg-secondary-50 rounded-lg p-4 space-y-2">
                 <p><strong>Duration:</strong> {program.duration}</p>
                 <p><strong>Type:</strong> {program.type}</p>
                 <p><strong>Age Range:</strong> {program.ageRange}</p>
@@ -335,7 +335,7 @@ export default function CrossCulturalExchange({
               </button>
               <button
                 onClick={() => setShowApplicationModal(null)}
-                className="flex-1 bg-secondary-200 text-secondary-800 font-semibold py-3 px-6 rounded-lg hover:bg-gray-300 transition-colors"
+                className="flex-1 bg-secondary-200 text-secondary-800 font-semibold py-3 px-6 rounded-lg hover:bg-secondary-300 transition-colors"
               >
                 Cancel
               </button>
@@ -386,7 +386,7 @@ export default function CrossCulturalExchange({
 
       {/* Filters */}
       {showFilters && (
-        <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-6">
+        <div className="bg-white rounded-lg shadow-sm border border-secondary-100 p-6">
           <h3 className="font-semibold text-gray-900 mb-4">Filters</h3>
           <div className="grid md:grid-cols-3 gap-4">
             <div>
@@ -448,7 +448,7 @@ export default function CrossCulturalExchange({
             className="grid lg:grid-cols-2 gap-8"
           >
             {filteredPrograms.map(program => (
-              <div key={program.id} className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow">
+              <div key={program.id} className="bg-white rounded-xl shadow-lg border border-secondary-100 overflow-hidden hover:shadow-xl transition-shadow">
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
@@ -456,7 +456,7 @@ export default function CrossCulturalExchange({
                       <p className="text-secondary-600 mb-4">{program.description}</p>
                     </div>
                     <span className={`px-3 py-1 text-xs font-medium rounded-full ${
-                      program.type === 'cultural' ? 'bg-purple-100 text-purple-800' :
+                      program.type === 'cultural' ? 'bg-accent-100 text-accent-800' :
                       program.type === 'professional' ? 'bg-blue-100 text-blue-800' :
                       program.type === 'student' ? 'bg-green-100 text-green-800' :
                       'bg-secondary-100 text-secondary-800'
@@ -502,7 +502,7 @@ export default function CrossCulturalExchange({
                     >
                       Apply Now
                     </button>
-                    <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 transition-colors">
+                    <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-secondary-50 transition-colors">
                       Learn More
                     </button>
                   </div>
@@ -521,7 +521,7 @@ export default function CrossCulturalExchange({
             className="grid lg:grid-cols-2 gap-8"
           >
             {filteredFamilies.map(family => (
-              <div key={family.id} className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-shadow">
+              <div key={family.id} className="bg-white rounded-xl shadow-lg border border-secondary-100 p-6 hover:shadow-xl transition-shadow">
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-bold text-gray-900">{family.familyName}</h3>
@@ -553,7 +553,7 @@ export default function CrossCulturalExchange({
                   <p className="text-sm text-secondary-600 mb-2">Cultural Activities:</p>
                   <div className="flex flex-wrap gap-2">
                     {family.culturalActivities.slice(0, 3).map((activity, index) => (
-                      <span key={index} className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded">
+                      <span key={index} className="px-2 py-1 bg-accent-100 text-accent-800 text-xs rounded">
                         {activity}
                       </span>
                     ))}
@@ -563,7 +563,7 @@ export default function CrossCulturalExchange({
                 <div className="mb-6">
                   <p className="text-sm text-secondary-600 mb-2">Family Traditions:</p>
                   {family.familyTraditions.slice(0, 1).map(tradition => (
-                    <div key={tradition.id} className="bg-gray-50 rounded-lg p-3">
+                    <div key={tradition.id} className="bg-secondary-50 rounded-lg p-3">
                       <p className="font-medium text-gray-900">{tradition.name}</p>
                       <p className="text-sm text-secondary-600 mt-1">{tradition.description}</p>
                     </div>
@@ -577,7 +577,7 @@ export default function CrossCulturalExchange({
                   >
                     Connect
                   </button>
-                  <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 transition-colors">
+                  <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-secondary-50 transition-colors">
                     View Profile
                   </button>
                 </div>
@@ -595,7 +595,7 @@ export default function CrossCulturalExchange({
             className="grid lg:grid-cols-2 gap-8"
           >
             {filteredProfessionals.map(professional => (
-              <div key={professional.id} className="bg-white rounded-xl shadow-lg border border-gray-100 p-6 hover:shadow-xl transition-shadow">
+              <div key={professional.id} className="bg-white rounded-xl shadow-lg border border-secondary-100 p-6 hover:shadow-xl transition-shadow">
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-bold text-gray-900">{professional.name}</h3>
@@ -629,7 +629,7 @@ export default function CrossCulturalExchange({
                   <p className="text-sm text-secondary-600 mb-2">Cultural Specialization:</p>
                   <div className="flex flex-wrap gap-2">
                     {professional.culturalSpecialization?.slice(0, 2).map((spec, index) => (
-                      <span key={index} className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded">
+                      <span key={index} className="px-2 py-1 bg-accent-100 text-accent-800 text-xs rounded">
                         {spec}
                       </span>
                     ))}
@@ -647,7 +647,7 @@ export default function CrossCulturalExchange({
                   <button className="flex-1 bg-gradient-to-r from-green-600 via-red-500 to-yellow-500 text-white font-semibold py-2 px-4 rounded-lg hover:shadow-lg transition-all">
                     Connect
                   </button>
-                  <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 transition-colors">
+                  <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-secondary-50 transition-colors">
                     View Profile
                   </button>
                 </div>

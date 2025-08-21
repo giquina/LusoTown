@@ -205,7 +205,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-50 backdrop-blur-sm transition-opacity" />
+          <div className="fixed inset-0 bg-secondary-500 bg-opacity-50 backdrop-blur-sm transition-opacity" />
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-hidden">
@@ -214,11 +214,11 @@ export default function Cart({ isOpen, onClose }: CartProps) {
               <Transition.Child
                 as={Fragment}
                 enter="transform transition ease-in-out duration-300"
-                enterFrom="translate-x-full"
-                enterTo="translate-x-0"
+                enterFrom="transecondary-x-full"
+                enterTo="transecondary-x-0"
                 leave="transform transition ease-in-out duration-300"
-                leaveFrom="translate-x-0"
-                leaveTo="translate-x-full"
+                leaveFrom="transecondary-x-0"
+                leaveTo="transecondary-x-full"
               >
                 <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
                   <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
@@ -280,7 +280,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                   >
-                                    <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-lg border border-gray-200">
+                                    <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-lg border border-secondary-200">
                                       {item.imageUrl ? (
                                         <Image
                                           src={item.imageUrl}
@@ -407,7 +407,7 @@ export default function Cart({ isOpen, onClose }: CartProps) {
 
                     {/* Footer with Checkout */}
                     {cartItems.length > 0 && (
-                      <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
+                      <div className="border-t border-secondary-200 px-4 py-6 sm:px-6">
                         {/* Summary */}
                         <div className="space-y-4 mb-6">
                           <div className="flex justify-between text-base font-medium text-gray-900">

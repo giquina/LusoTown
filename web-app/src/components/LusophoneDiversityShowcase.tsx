@@ -765,7 +765,7 @@ export default function LusophoneDiversityShowcase() {
                 className={`p-4 rounded-xl transition-all duration-300 ${
                   selectedCountry === country.id
                     ? "bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg scale-105"
-                    : "bg-white/80 text-secondary-700 hover:bg-secondary-100 hover:scale-102 shadow-md border border-gray-200"
+                    : "bg-white/80 text-secondary-700 hover:bg-secondary-100 hover:scale-102 shadow-md border border-secondary-200"
                 }`}
               >
                 <div className="text-3xl mb-2">{country.flag}</div>
@@ -880,7 +880,7 @@ export default function LusophoneDiversityShowcase() {
             </div>
 
             {/* Section Navigation */}
-            <div className="border-b border-gray-200">
+            <div className="border-b border-secondary-200">
               <div className="flex overflow-x-auto">
                 {[
                   {
@@ -1170,7 +1170,7 @@ export default function LusophoneDiversityShowcase() {
                     </p>
                   </div>
 
-                  <div className="bg-white rounded-lg p-6 border border-gray-200">
+                  <div className="bg-white rounded-lg p-6 border border-secondary-200">
                     <h5 className="font-semibold text-gray-900 mb-4">
                       {language === "pt"
                         ? "Impacto na Diversidade Londrina"
@@ -1183,7 +1183,7 @@ export default function LusophoneDiversityShowcase() {
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-                      <div className="text-center p-4 bg-gray-50 rounded-lg">
+                      <div className="text-center p-4 bg-secondary-50 rounded-lg">
                         <div className="text-2xl font-bold text-primary-600">
                           {currentCountry.londonCommunity.size}
                         </div>
@@ -1193,7 +1193,7 @@ export default function LusophoneDiversityShowcase() {
                             : "Community Members"}
                         </div>
                       </div>
-                      <div className="text-center p-4 bg-gray-50 rounded-lg">
+                      <div className="text-center p-4 bg-secondary-50 rounded-lg">
                         <div className="text-2xl font-bold text-secondary-600">
                           {currentCountry.londonCommunity.mainAreas.length}
                         </div>
@@ -1203,7 +1203,7 @@ export default function LusophoneDiversityShowcase() {
                             : "Main Areas"}
                         </div>
                       </div>
-                      <div className="text-center p-4 bg-gray-50 rounded-lg">
+                      <div className="text-center p-4 bg-secondary-50 rounded-lg">
                         <div className="text-2xl font-bold text-accent-600">
                           {currentCountry.londonCommunity.culturalEvents.length}
                           +

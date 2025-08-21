@@ -333,13 +333,13 @@ export default function ServicesPage() {
             >
               <button
                 onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1"
+                className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-transecondary-y-1"
               >
                 {isPortuguese ? "Explorar Serviços" : "Explore Services"}
               </button>
               <button
                 onClick={() => document.getElementById('trust-badges')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border border-secondary-300 text-secondary-700 px-8 py-4 rounded-2xl font-semibold hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="border border-secondary-300 text-secondary-700 px-8 py-4 rounded-2xl font-semibold hover:bg-secondary-50 hover:border-secondary-400 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 {isPortuguese ? "Ver Credenciais" : "View Credentials"}
               </button>
@@ -385,7 +385,7 @@ export default function ServicesPage() {
       <TrustBadges trustIndicators={trustIndicators} isPortuguese={isPortuguese} />
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-50">
+      <section id="services" className="py-20 bg-secondary-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -440,7 +440,7 @@ export default function ServicesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gray-50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300"
+                className="bg-secondary-50 p-8 rounded-2xl hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-xl font-bold text-gray-900">
@@ -522,7 +522,7 @@ export default function ServicesPage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => handleBookService('consultation')}
-                className="bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-200 shadow-lg"
+                className="bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold hover:bg-secondary-50 transition-all duration-200 shadow-lg"
               >
                 {isPortuguese ? 'Agendar Consulta' : 'Book Consultation'}
               </motion.button>

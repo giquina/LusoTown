@@ -315,7 +315,7 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
       case 'event_update':
         return <ClockIcon className="w-4 h-4 text-primary-500" />
       case 'event_photo':
-        return <PhotoIcon className="w-4 h-4 text-purple-500" />
+        return <PhotoIcon className="w-4 h-4 text-accent-500" />
       case 'event_review':
         return <StarIcon className="w-4 h-4 text-accent-500" />
       case 'event_reminder':
@@ -350,7 +350,7 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
     return (
       <div className={`space-y-6 ${className}`}>
         {[1, 2, 3].map((i) => (
-          <div key={i} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden animate-pulse">
+          <div key={i} className="bg-white rounded-2xl shadow-sm border border-secondary-100 overflow-hidden animate-pulse">
             <div className="p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-secondary-200 rounded-full"></div>
@@ -373,7 +373,7 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
     <div className={`space-y-6 ${className}`}>
       {/* Filter Bar */}
       {!limit && (
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4">
+        <div className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-4">
           <div className="flex flex-wrap gap-2">
             {[
               { key: 'all', label: isPortuguese ? 'Todos' : 'All Updates' },
@@ -405,7 +405,7 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className={`bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow h-full flex flex-col ${
+            className={`bg-white rounded-2xl shadow-sm border border-secondary-100 overflow-hidden hover:shadow-md transition-shadow h-full flex flex-col ${
               post.priority === 'high' ? 'ring-2 ring-primary-100' : ''
             }`}
           >
@@ -520,7 +520,7 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
                         <span className="truncate">{post.eventLocation}</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <UserGroupIcon className="w-4 h-4 text-purple-500" />
+                        <UserGroupIcon className="w-4 h-4 text-accent-500" />
                         <span>
                           {post.eventSpotsLeft > 0 
                             ? `${post.eventSpotsLeft} ${isPortuguese ? 'vagas' : 'spots'}`
@@ -601,7 +601,7 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
             </div>
 
             {/* Post Actions */}
-            <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
+            <div className="px-6 py-4 bg-secondary-50 border-t border-secondary-100">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-6">
                   <button 

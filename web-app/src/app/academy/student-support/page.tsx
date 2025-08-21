@@ -156,10 +156,10 @@ const studentSupportModule = {
             <p class="text-sm text-primary-700">£8,000/year for Portuguese students in STEM fields</p>
             <p class="text-xs text-primary-600 mt-2">Application deadline: February 2025</p>
           </div>
-          <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
-            <h5 class="font-semibold text-purple-800">Portuguese Heritage Award</h5>
-            <p class="text-sm text-purple-700">£5,000 one-time grant for cultural studies</p>
-            <p class="text-xs text-purple-600 mt-2">Application deadline: April 2025</p>
+          <div class="bg-accent-50 border border-accent-200 rounded-lg p-4">
+            <h5 class="font-semibold text-accent-800">Portuguese Heritage Award</h5>
+            <p class="text-sm text-accent-700">£5,000 one-time grant for cultural studies</p>
+            <p class="text-xs text-accent-600 mt-2">Application deadline: April 2025</p>
           </div>
           <div class="bg-orange-50 border border-orange-200 rounded-lg p-4">
             <h5 class="font-semibold text-orange-800">Atlantic Bridge Scholarship</h5>
@@ -196,10 +196,10 @@ const studentSupportModule = {
             <p class="text-sm text-primary-700">£8.000/ano para estudantes portugueses em áreas STEM</p>
             <p class="text-xs text-primary-600 mt-2">Prazo de candidatura: Fevereiro 2025</p>
           </div>
-          <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
-            <h5 class="font-semibold text-purple-800">Prémio Herança Portuguesa</h5>
-            <p class="text-sm text-purple-700">£5.000 bolsa única para estudos culturais</p>
-            <p class="text-xs text-purple-600 mt-2">Prazo de candidatura: Abril 2025</p>
+          <div class="bg-accent-50 border border-accent-200 rounded-lg p-4">
+            <h5 class="font-semibold text-accent-800">Prémio Herança Portuguesa</h5>
+            <p class="text-sm text-accent-700">£5.000 bolsa única para estudos culturais</p>
+            <p class="text-xs text-accent-600 mt-2">Prazo de candidatura: Abril 2025</p>
           </div>
           <div class="bg-orange-50 border border-orange-200 rounded-lg p-4">
             <h5 class="font-semibold text-orange-800">Bolsa Atlantic Bridge</h5>
@@ -288,13 +288,13 @@ const studentSupportModule = {
             </ul>
           </div>
           
-          <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
-            <h5 class="font-semibold text-purple-800 flex items-center gap-2">
+          <div class="bg-accent-50 border border-accent-200 rounded-lg p-4">
+            <h5 class="font-semibold text-accent-800 flex items-center gap-2">
               <ChatBubbleLeftEllipsisIcon class="h-5 w-5" />
               Language Bridge Support
             </h5>
-            <p class="text-sm text-purple-700 mt-2">Academic English support while maintaining Portuguese cultural identity and communication style.</p>
-            <ul class="text-xs text-purple-600 mt-2 list-disc list-inside">
+            <p class="text-sm text-accent-700 mt-2">Academic English support while maintaining Portuguese cultural identity and communication style.</p>
+            <ul class="text-xs text-accent-600 mt-2 list-disc list-inside">
               <li>Academic writing workshops</li>
               <li>Presentation skills development</li>
               <li>Research methodology guidance</li>
@@ -346,13 +346,13 @@ const studentSupportModule = {
             </ul>
           </div>
           
-          <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
-            <h5 class="font-semibold text-purple-800 flex items-center gap-2">
+          <div class="bg-accent-50 border border-accent-200 rounded-lg p-4">
+            <h5 class="font-semibold text-accent-800 flex items-center gap-2">
               <ChatBubbleLeftEllipsisIcon class="h-5 w-5" />
               Apoio Ponte Linguística
             </h5>
-            <p class="text-sm text-purple-700 mt-2">Apoio ao inglês académico mantendo a identidade cultural portuguesa e estilo de comunicação.</p>
-            <ul class="text-xs text-purple-600 mt-2 list-disc list-inside">
+            <p class="text-sm text-accent-700 mt-2">Apoio ao inglês académico mantendo a identidade cultural portuguesa e estilo de comunicação.</p>
+            <ul class="text-xs text-accent-600 mt-2 list-disc list-inside">
               <li>Workshops de escrita académica</li>
               <li>Desenvolvimento de competências de apresentação</li>
               <li>Orientação de metodologia de investigação</li>
@@ -429,13 +429,13 @@ const studentSupportModule = {
             <p class="text-xs text-pink-600 mt-1">Free for LusoTown student members</p>
           </div>
           
-          <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
-            <h5 class="font-semibold text-indigo-800 flex items-center gap-2">
+          <div class="bg-primary-50 border border-primary-200 rounded-lg p-4">
+            <h5 class="font-semibold text-primary-800 flex items-center gap-2">
               <UserGroupIcon class="h-4 w-4" />
               Study Sessions
             </h5>
-            <p class="text-sm text-indigo-700">Group study sessions at London libraries with Portuguese students</p>
-            <p class="text-xs text-indigo-600 mt-1">Organized by subject and university</p>
+            <p class="text-sm text-primary-700">Group study sessions at London libraries with Portuguese students</p>
+            <p class="text-xs text-primary-600 mt-1">Organized by subject and university</p>
           </div>
           
           <div class="bg-green-50 border border-green-200 rounded-lg p-4">
@@ -494,13 +494,13 @@ const studentSupportModule = {
             <p class="text-xs text-pink-600 mt-1">Grátis para membros estudantes da LusoTown</p>
           </div>
           
-          <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
-            <h5 class="font-semibold text-indigo-800 flex items-center gap-2">
+          <div class="bg-primary-50 border border-primary-200 rounded-lg p-4">
+            <h5 class="font-semibold text-primary-800 flex items-center gap-2">
               <UserGroupIcon class="h-4 w-4" />
               Sessões de Estudo
             </h5>
-            <p class="text-sm text-indigo-700">Sessões de estudo em grupo em bibliotecas de Londres com estudantes portugueses</p>
-            <p class="text-xs text-indigo-600 mt-1">Organizadas por disciplina e universidade</p>
+            <p class="text-sm text-primary-700">Sessões de estudo em grupo em bibliotecas de Londres com estudantes portugueses</p>
+            <p class="text-xs text-primary-600 mt-1">Organizadas por disciplina e universidade</p>
           </div>
           
           <div class="bg-green-50 border border-green-200 rounded-lg p-4">

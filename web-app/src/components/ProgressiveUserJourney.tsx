@@ -413,7 +413,7 @@ export default function ProgressiveUserJourney({
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-white rounded-2xl border border-gray-200 p-6 shadow-lg"
+        className="bg-white rounded-2xl border border-secondary-200 p-6 shadow-lg"
       >
         <div className="flex items-center gap-4 mb-4">
           <div className={`w-12 h-12 rounded-xl bg-${currentStage.color}-100 flex items-center justify-center`}>
@@ -509,7 +509,7 @@ export default function ProgressiveUserJourney({
                   ? `border-${stage.color}-200 shadow-lg` 
                   : stage.isCompleted 
                     ? 'border-green-200 bg-green-50' 
-                    : 'border-gray-200'
+                    : 'border-secondary-200'
               }`}
             >
               {/* Stage Header */}
@@ -579,7 +579,7 @@ export default function ProgressiveUserJourney({
                           ? `bg-${stage.color}-500 text-white border-${stage.color}-500 hover:bg-${stage.color}-600`
                           : action.type === 'secondary'
                           ? `bg-white text-${stage.color}-600 border-${stage.color}-200 hover:bg-${stage.color}-50`
-                          : 'bg-gray-50 text-secondary-700 border-gray-200 hover:bg-secondary-100'
+                          : 'bg-secondary-50 text-secondary-700 border-secondary-200 hover:bg-secondary-100'
                       }`}
                     >
                       <div className="flex items-center justify-between">

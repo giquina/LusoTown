@@ -222,7 +222,7 @@ const PortugueseCulturalHeritage: React.FC = () => {
               className={`flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300 ${
                 selectedCategory === category.id
                   ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg'
-                  : 'bg-white text-secondary-700 hover:bg-gray-50 border border-gray-200 hover:shadow-md'
+                  : 'bg-white text-secondary-700 hover:bg-secondary-50 border border-secondary-200 hover:shadow-md'
               }`}
             >
               <span className="text-base">{category.icon}</span>
@@ -241,7 +241,7 @@ const PortugueseCulturalHeritage: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer group"
+              className="bg-white rounded-2xl shadow-lg border border-secondary-100 overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer group"
               onClick={() => setSelectedElement(element)}
             >
               {/* Header */}

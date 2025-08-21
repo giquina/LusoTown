@@ -193,11 +193,11 @@ export default function AgeVerificationModal({
   const handleContinue = () => {
     if (step === 1) {
       if (!verificationData.dateOfBirth || age === null) {
-        alert(t.errors.invalidDate)
+        toast.error(t.errors.invalidDate)
         return
       }
       if (age < 18) {
-        alert(t.errors.under18)
+        toast.error(t.errors.under18)
         return
       }
       setStep(2)
@@ -228,7 +228,7 @@ export default function AgeVerificationModal({
       setStep(4)
     } catch (error) {
       console.error('Verification submission error:', error)
-      alert('Error submitting verification. Please try again.')
+      toast.error('Error submitting verification. Please try again.')
     } finally {
       setLoading(false)
     }
@@ -257,14 +257,14 @@ export default function AgeVerificationModal({
           className="bg-white rounded-2xl shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto"
         >
           {/* Header */}
-          <div className="flex items-center justify-between p-6 border-b border-neutral-100">
+          <div className="flex items-center justify-between p-6 border-b border-secondary-100">
             <div>
-              <h2 className="text-xl font-bold text-neutral-900">{t.title}</h2>
-              <p className="text-sm text-neutral-600 mt-1">{t.subtitle}</p>
+              <h2 className="text-xl font-bold text-secondary-900">{t.title}</h2>
+              <p className="text-sm text-secondary-600 mt-1">{t.subtitle}</p>
             </div>
             <button
               onClick={onClose}
-              className="p-2 text-neutral-400 hover:text-neutral-600 rounded-lg hover:bg-neutral-50"
+              className="p-2 text-secondary-400 hover:text-secondary-600 rounded-lg hover:bg-secondary-50"
             >
               <X className="h-5 w-5" />
             </button>
@@ -276,11 +276,11 @@ export default function AgeVerificationModal({
               <span className="text-xs font-medium text-primary-600">
                 Step {step} of 4
               </span>
-              <span className="text-xs text-neutral-500">
+              <span className="text-xs text-secondary-500">
                 {Math.round((step / 4) * 100)}%
               </span>
             </div>
-            <div className="w-full bg-neutral-200 rounded-full h-2">
+            <div className="w-full bg-secondary-200 rounded-full h-2">
               <div 
                 className="bg-primary-600 h-2 rounded-full transition-all duration-300"
                 style={{ width: `${(step / 4) * 100}%` }}
@@ -295,15 +295,15 @@ export default function AgeVerificationModal({
               <div className="space-y-6">
                 <div className="text-center">
                   <Calendar className="h-12 w-12 text-primary-600 mx-auto mb-3" />
-                  <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                  <h3 className="text-lg font-semibold text-secondary-900 mb-2">
                     {t.step1.title}
                   </h3>
-                  <p className="text-neutral-600">{t.step1.description}</p>
+                  <p className="text-secondary-600">{t.step1.description}</p>
                 </div>
 
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {t.step1.dateLabel}
                     </label>
                     <input
@@ -314,14 +314,14 @@ export default function AgeVerificationModal({
                         dateOfBirth: e.target.value 
                       }))}
                       max={new Date().toISOString().split('T')[0]}
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+                      className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
                     />
                   </div>
 
                   {age !== null && (
-                    <div className="bg-neutral-50 rounded-lg p-4">
+                    <div className="bg-secondary-50 rounded-lg p-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-medium text-neutral-700">
+                        <span className="text-sm font-medium text-secondary-700">
                           {t.step1.ageDisplay}:
                         </span>
                         <span className="text-lg font-bold text-primary-600">
@@ -348,10 +348,10 @@ export default function AgeVerificationModal({
               <div className="space-y-6">
                 <div className="text-center">
                   <Shield className="h-12 w-12 text-primary-600 mx-auto mb-3" />
-                  <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                  <h3 className="text-lg font-semibold text-secondary-900 mb-2">
                     {t.step2.title}
                   </h3>
-                  <p className="text-neutral-600">{t.step2.description}</p>
+                  <p className="text-secondary-600">{t.step2.description}</p>
                 </div>
 
                 <div className="space-y-3">
@@ -364,16 +364,16 @@ export default function AgeVerificationModal({
                     className={`w-full p-4 rounded-lg border-2 transition-all ${
                       verificationData.verificationMethod === 'document_upload'
                         ? 'border-primary-500 bg-primary-50'
-                        : 'border-neutral-200 hover:border-neutral-300'
+                        : 'border-secondary-200 hover:border-secondary-300'
                     }`}
                   >
                     <div className="flex items-start gap-3">
                       <Upload className="h-5 w-5 text-primary-600 mt-1" />
                       <div className="text-left">
-                        <div className="font-medium text-neutral-900">
+                        <div className="font-medium text-secondary-900">
                           {t.step2.documentUpload}
                         </div>
-                        <div className="text-sm text-neutral-600 mt-1">
+                        <div className="text-sm text-secondary-600 mt-1">
                           {t.step2.documentDesc}
                         </div>
                       </div>
@@ -389,16 +389,16 @@ export default function AgeVerificationModal({
                     className={`w-full p-4 rounded-lg border-2 transition-all ${
                       verificationData.verificationMethod === 'selfie_verification'
                         ? 'border-primary-500 bg-primary-50'
-                        : 'border-neutral-200 hover:border-neutral-300'
+                        : 'border-secondary-200 hover:border-secondary-300'
                     }`}
                   >
                     <div className="flex items-start gap-3">
                       <Camera className="h-5 w-5 text-primary-600 mt-1" />
                       <div className="text-left">
-                        <div className="font-medium text-neutral-900">
+                        <div className="font-medium text-secondary-900">
                           {t.step2.selfieVerification}
                         </div>
-                        <div className="text-sm text-neutral-600 mt-1">
+                        <div className="text-sm text-secondary-600 mt-1">
                           {t.step2.selfieDesc}
                         </div>
                       </div>
@@ -415,16 +415,16 @@ export default function AgeVerificationModal({
                       className={`w-full p-4 rounded-lg border-2 transition-all ${
                         verificationData.verificationMethod === 'parent_guardian'
                           ? 'border-primary-500 bg-primary-50'
-                          : 'border-neutral-200 hover:border-neutral-300'
+                          : 'border-secondary-200 hover:border-secondary-300'
                       }`}
                     >
                       <div className="flex items-start gap-3">
                         <User className="h-5 w-5 text-primary-600 mt-1" />
                         <div className="text-left">
-                          <div className="font-medium text-neutral-900">
+                          <div className="font-medium text-secondary-900">
                             {t.step2.parentGuardian}
                           </div>
-                          <div className="text-sm text-neutral-600 mt-1">
+                          <div className="text-sm text-secondary-600 mt-1">
                             {t.step2.parentDesc}
                           </div>
                         </div>
@@ -440,7 +440,7 @@ export default function AgeVerificationModal({
               <div className="space-y-6">
                 <div className="text-center">
                   <FileText className="h-12 w-12 text-primary-600 mx-auto mb-3" />
-                  <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                  <h3 className="text-lg font-semibold text-secondary-900 mb-2">
                     {t.step3.title}
                   </h3>
                 </div>
@@ -448,7 +448,7 @@ export default function AgeVerificationModal({
                 {verificationData.verificationMethod !== 'parent_guardian' && (
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-sm font-medium text-neutral-700 mb-2">
+                      <label className="block text-sm font-medium text-secondary-700 mb-2">
                         {t.step3.documentType}
                       </label>
                       <select
@@ -457,7 +457,7 @@ export default function AgeVerificationModal({
                           ...prev, 
                           documentType: e.target.value 
                         }))}
-                        className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+                        className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
                       >
                         <option value="">Select document type</option>
                         <option value="passport">{t.step3.documentTypes.passport}</option>
@@ -467,20 +467,20 @@ export default function AgeVerificationModal({
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-neutral-700 mb-2">
+                      <label className="block text-sm font-medium text-secondary-700 mb-2">
                         {t.step3.uploadDocument}
                       </label>
                       <input
                         type="file"
                         accept="image/*"
                         onChange={(e) => handleFileUpload(e, 'document')}
-                        className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+                        className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
                       />
                     </div>
 
                     {verificationData.verificationMethod === 'selfie_verification' && (
                       <div>
-                        <label className="block text-sm font-medium text-neutral-700 mb-2">
+                        <label className="block text-sm font-medium text-secondary-700 mb-2">
                           {t.step3.takeSelfie}
                         </label>
                         <input
@@ -488,7 +488,7 @@ export default function AgeVerificationModal({
                           accept="image/*"
                           capture="user"
                           onChange={(e) => handleFileUpload(e, 'selfie')}
-                          className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+                          className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
                         />
                       </div>
                     )}
@@ -497,7 +497,7 @@ export default function AgeVerificationModal({
 
                 {(verificationData.verificationMethod === 'parent_guardian' || requiresParentConsent) && (
                   <div>
-                    <label className="block text-sm font-medium text-neutral-700 mb-2">
+                    <label className="block text-sm font-medium text-secondary-700 mb-2">
                       {t.step3.parentEmail}
                     </label>
                     <input
@@ -508,9 +508,9 @@ export default function AgeVerificationModal({
                         parentEmail: e.target.value 
                       }))}
                       placeholder="parent@example.com"
-                      className="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
+                      className="w-full px-4 py-3 border border-secondary-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"
                     />
-                    <p className="text-sm text-neutral-600 mt-2">
+                    <p className="text-sm text-secondary-600 mt-2">
                       {t.step3.parentEmailDesc}
                     </p>
                   </div>
@@ -523,10 +523,10 @@ export default function AgeVerificationModal({
               <div className="space-y-6 text-center">
                 <div>
                   <CheckCircle className="h-12 w-12 text-action-600 mx-auto mb-3" />
-                  <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                  <h3 className="text-lg font-semibold text-secondary-900 mb-2">
                     {t.step4.title}
                   </h3>
-                  <p className="text-neutral-600">{t.step4.description}</p>
+                  <p className="text-secondary-600">{t.step4.description}</p>
                 </div>
 
                 <div className="bg-green-50 rounded-lg p-4 space-y-2">
@@ -554,18 +554,18 @@ export default function AgeVerificationModal({
           </div>
 
           {/* Footer */}
-          <div className="flex items-center justify-between p-6 border-t border-neutral-100">
+          <div className="flex items-center justify-between p-6 border-t border-secondary-100">
             {step > 1 && step < 4 ? (
               <button
                 onClick={() => setStep(step - 1)}
-                className="px-6 py-2 text-neutral-600 hover:text-neutral-900"
+                className="px-6 py-2 text-secondary-600 hover:text-secondary-900"
               >
                 {t.buttons.back}
               </button>
             ) : (
               <button
                 onClick={onClose}
-                className="px-6 py-2 text-neutral-600 hover:text-neutral-900"
+                className="px-6 py-2 text-secondary-600 hover:text-secondary-900"
               >
                 {step === 4 ? t.buttons.close : t.buttons.cancel}
               </button>

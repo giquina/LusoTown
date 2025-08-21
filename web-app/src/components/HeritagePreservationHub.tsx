@@ -386,7 +386,7 @@ export default function HeritagePreservationHub() {
               className={`flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all duration-300 ${
                 selectedCategory === 'all'
                   ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg'
-                  : 'bg-white/80 text-secondary-700 hover:bg-secondary-100 hover:text-primary-600 border border-gray-200'
+                  : 'bg-white/80 text-secondary-700 hover:bg-secondary-100 hover:text-primary-600 border border-secondary-200'
               }`}
             >
               <GlobeAltIcon className="w-4 h-4" />
@@ -401,7 +401,7 @@ export default function HeritagePreservationHub() {
                   className={`flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all duration-300 ${
                     selectedCategory === key
                       ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white shadow-lg'
-                      : 'bg-white/80 text-secondary-700 hover:bg-secondary-100 hover:text-primary-600 border border-gray-200'
+                      : 'bg-white/80 text-secondary-700 hover:bg-secondary-100 hover:text-primary-600 border border-secondary-200'
                   }`}
                 >
                   <IconComponent className="w-4 h-4" />
@@ -507,7 +507,7 @@ export default function HeritagePreservationHub() {
                       animate={{ opacity: 1, height: 'auto' }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="mt-6 space-y-4 border-t border-gray-200 pt-6"
+                      className="mt-6 space-y-4 border-t border-secondary-200 pt-6"
                     >
                       {/* Outcomes */}
                       <div>

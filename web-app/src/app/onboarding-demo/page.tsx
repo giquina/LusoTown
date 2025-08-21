@@ -106,7 +106,7 @@ export default function OnboardingDemo() {
         ? 'Descontos e benefícios para estudantes'
         : 'Discounts and benefits for students',
       icon: AcademicCapIcon,
-      color: 'from-purple-500 to-pink-500',
+      color: 'from-accent-500 to-pink-500',
       onClick: () => {
         setGrowthUserType('student')
         setShowGrowthFeatures(true)
@@ -177,7 +177,7 @@ export default function OnboardingDemo() {
                     className={`px-4 py-2 rounded-lg font-medium transition-all ${
                       language === 'en' 
                         ? 'bg-primary-500 text-white shadow-lg' 
-                        : 'bg-white text-secondary-600 hover:bg-gray-50 border border-gray-200'
+                        : 'bg-white text-secondary-600 hover:bg-secondary-50 border border-secondary-200'
                     }`}
                   >
                     🇬🇧 English
@@ -187,7 +187,7 @@ export default function OnboardingDemo() {
                     className={`px-4 py-2 rounded-lg font-medium transition-all ${
                       language === 'pt' 
                         ? 'bg-primary-500 text-white shadow-lg' 
-                        : 'bg-white text-secondary-600 hover:bg-gray-50 border border-gray-200'
+                        : 'bg-white text-secondary-600 hover:bg-secondary-50 border border-secondary-200'
                     }`}
                   >
                     🇵🇹 Português
@@ -207,7 +207,7 @@ export default function OnboardingDemo() {
                   >
                     <button
                       onClick={button.onClick}
-                      className="w-full p-6 bg-white border border-gray-200 rounded-2xl hover:shadow-xl hover:scale-105 transition-all duration-200 text-left"
+                      className="w-full p-6 bg-white border border-secondary-200 rounded-2xl hover:shadow-xl hover:scale-105 transition-all duration-200 text-left"
                     >
                       <div className={`w-12 h-12 bg-gradient-to-r ${button.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                         <button.icon className="w-6 h-6 text-white" />
@@ -230,13 +230,13 @@ export default function OnboardingDemo() {
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="bg-white rounded-2xl shadow-lg p-6 border border-gray-200"
+                  className="bg-white rounded-2xl shadow-lg p-6 border border-secondary-200"
                 >
                   <h3 className="text-lg font-bold text-gray-900 mb-4">
                     {isPortuguese ? 'Dados do Onboarding Coletados:' : 'Collected Onboarding Data:'}
                   </h3>
                   
-                  <pre className="bg-gray-50 rounded-lg p-4 text-sm text-secondary-700 overflow-auto">
+                  <pre className="bg-secondary-50 rounded-lg p-4 text-sm text-secondary-700 overflow-auto">
                     {JSON.stringify(onboardingData, null, 2)}
                   </pre>
                   

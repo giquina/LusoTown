@@ -325,7 +325,7 @@ export default function MatchSuccessStoryGenerator({
   return (
     <div className={`space-y-6 ${className}`}>
       {/* Success Story Generator Header */}
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+      <div className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-6">
         <div className="flex items-center justify-between mb-4">
           <div>
             <h2 className="text-xl font-bold text-gray-900 flex items-center gap-2">
@@ -440,7 +440,7 @@ export default function MatchSuccessStoryGenerator({
                           className={`flex flex-col items-center p-3 rounded-lg border-2 transition-colors ${
                             storyType === type
                               ? 'border-accent-500 bg-accent-50'
-                              : 'border-gray-200 hover:border-secondary-300'
+                              : 'border-secondary-200 hover:border-secondary-300'
                           }`}
                         >
                           <IconComponent className="w-6 h-6 mb-2 text-accent-600" />
@@ -527,7 +527,7 @@ export default function MatchSuccessStoryGenerator({
                   disabled={!selectedMatch || isGenerating}
                   className={`flex-1 py-3 px-4 rounded-lg font-semibold transition-colors ${
                     !selectedMatch || isGenerating
-                      ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                      ? 'bg-secondary-300 text-gray-500 cursor-not-allowed'
                       : 'bg-gradient-to-r from-accent-500 to-coral-500 text-white hover:from-accent-600 hover:to-coral-600'
                   }`}
                 >
@@ -561,7 +561,7 @@ export default function MatchSuccessStoryGenerator({
               layout
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden"
+              className="bg-white rounded-2xl shadow-sm border border-secondary-100 overflow-hidden"
             >
               {/* Story Header */}
               <div className="p-6 pb-4">
@@ -633,7 +633,7 @@ export default function MatchSuccessStoryGenerator({
               </div>
 
               {/* Story Actions */}
-              <div className="px-6 py-4 bg-gray-50 border-t border-gray-100">
+              <div className="px-6 py-4 bg-secondary-50 border-t border-secondary-100">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
                     <button 

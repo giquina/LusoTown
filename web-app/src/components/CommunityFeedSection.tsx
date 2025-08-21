@@ -469,7 +469,7 @@ export default function CommunityFeedSection() {
                     className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap ${
                       isActive 
                         ? 'bg-gradient-to-r from-secondary-500 to-accent-500 text-white shadow-lg transform scale-105' 
-                        : 'bg-white/80 text-secondary-700 hover:bg-secondary-50 border border-gray-200/60 hover:border-secondary-200'
+                        : 'bg-white/80 text-secondary-700 hover:bg-secondary-50 border border-secondary-200/60 hover:border-secondary-200'
                     }`}
                   >
                     <Icon className="w-4 h-4" />
@@ -643,7 +643,7 @@ export default function CommunityFeedSection() {
                   </div>
                   
                   {/* Post Metrics */}
-                  <div className="px-6 py-3 bg-gray-50/80 border-t border-gray-100">
+                  <div className="px-6 py-3 bg-secondary-50/80 border-t border-secondary-100">
                     <div className="flex items-center justify-between text-sm text-secondary-600">
                       <div className="flex items-center gap-4">
                         <span className="flex items-center gap-1">
@@ -667,7 +667,7 @@ export default function CommunityFeedSection() {
                   </div>
                   
                   {/* Action Buttons */}
-                  <div className="px-6 py-4 border-t border-gray-100">
+                  <div className="px-6 py-4 border-t border-secondary-100">
                     <div className="flex items-center justify-between">
                       <button 
                         onClick={() => handleLike(post.id)}
@@ -713,17 +713,17 @@ export default function CommunityFeedSection() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href={ROUTES.signup}
-                  className="group relative text-lg font-bold px-8 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden"
+                  className="group relative text-lg font-bold px-8 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:-transecondary-y-1 hover:scale-105 overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-secondary-700 via-action-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <span className="relative z-10 flex items-center justify-center gap-3">
                     {t('community_feed.cta.join_button')}
-                    <ArrowRightIcon className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
+                    <ArrowRightIcon className="h-5 w-5 group-hover:transecondary-x-1 transition-transform duration-200" />
                   </span>
                 </a>
                 <a
                   href={ROUTES.events}
-                  className="text-lg font-bold px-8 py-4 bg-white/80 backdrop-blur-lg text-secondary-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 hover:bg-white/90"
+                  className="text-lg font-bold px-8 py-4 bg-white/80 backdrop-blur-lg text-secondary-800 border-2 border-secondary-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-transecondary-y-1 hover:bg-white/90"
                 >
                   {t('community_feed.cta.browse_button')}
                 </a>

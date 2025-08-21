@@ -379,7 +379,7 @@ export default function PaymentProcessor({
             onClick={e => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-t-2xl">
+            <div className="flex items-center justify-between p-6 border-b border-secondary-200 bg-gradient-to-r from-primary-50 to-secondary-50 rounded-t-2xl">
               <div>
                 <h2 className="text-2xl font-bold text-gray-900">
                   {isPortuguese ? 'Processamento de Pagamento' : 'Payment Processing'}
@@ -443,7 +443,7 @@ export default function PaymentProcessor({
                                 p-4 border-2 rounded-lg transition-all
                                 ${selectedPaymentMethod?.id === method.id
                                   ? 'border-primary-500 bg-primary-50'
-                                  : 'border-gray-200 bg-white hover:border-secondary-300'
+                                  : 'border-secondary-200 bg-white hover:border-secondary-300'
                                 }
                               `}>
                                 <div className="flex items-start space-x-4">
@@ -479,7 +479,7 @@ export default function PaymentProcessor({
                                         <ul className="text-xs text-secondary-600 space-y-1">
                                           {(isPortuguese ? method.requirementsPortuguese : method.requirements)?.map((req, index) => (
                                             <li key={index} className="flex items-center">
-                                              <div className="w-1 h-1 bg-gray-400 rounded-full mr-2" />
+                                              <div className="w-1 h-1 bg-secondary-400 rounded-full mr-2" />
                                               {req}
                                             </li>
                                           ))}
@@ -521,7 +521,7 @@ export default function PaymentProcessor({
                               p-3 border-2 rounded-lg text-center transition-all
                               ${selectedCurrency === currency.code
                                 ? 'border-secondary-500 bg-secondary-50 text-secondary-700'
-                                : 'border-gray-200 bg-white hover:border-secondary-300'
+                                : 'border-secondary-200 bg-white hover:border-secondary-300'
                               }
                             `}>
                               <div className="font-semibold">{currency.symbol}</div>
@@ -619,7 +619,7 @@ export default function PaymentProcessor({
 
                   {/* Payment Summary */}
                   <div className="lg:col-span-1">
-                    <div className="bg-gray-50 rounded-lg p-6 sticky top-6">
+                    <div className="bg-secondary-50 rounded-lg p-6 sticky top-6">
                       <h3 className="text-lg font-semibold text-gray-900 mb-4">
                         {isPortuguese ? 'Resumo do Pagamento' : 'Payment Summary'}
                       </h3>

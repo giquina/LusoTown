@@ -149,7 +149,7 @@ export default function WhatsAppNotificationWidget({
             exit={{ opacity: 0, scale: 0.8, y: 50 }}
             className={`fixed bottom-4 right-4 z-50 ${className}`}
           >
-            <div className="bg-white rounded-lg shadow-lg border border-neutral-200 p-6 max-w-sm">
+            <div className="bg-white rounded-lg shadow-lg border border-secondary-200 p-6 max-w-sm">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center space-x-3">
                   <div className="flex-shrink-0">
@@ -158,10 +158,10 @@ export default function WhatsAppNotificationWidget({
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-sm font-semibold text-neutral-900">
+                    <h3 className="text-sm font-semibold text-secondary-900">
                       🇵🇹 {language === 'pt' ? 'Comunidade WhatsApp' : 'WhatsApp Community'}
                     </h3>
-                    <p className="text-xs text-neutral-600">
+                    <p className="text-xs text-secondary-600">
                       {language === 'pt' 
                         ? 'Junte-se à nossa comunidade portuguesa'
                         : 'Join our Portuguese community'
@@ -171,21 +171,21 @@ export default function WhatsAppNotificationWidget({
                 </div>
                 <button
                   onClick={() => setIsVisible(false)}
-                  className="text-neutral-400 hover:text-neutral-600"
+                  className="text-secondary-400 hover:text-secondary-600"
                 >
                   <XMarkIcon className="h-4 w-4" />
                 </button>
               </div>
 
               <div className="space-y-3">
-                <p className="text-sm text-neutral-700">
+                <p className="text-sm text-secondary-700">
                   {language === 'pt' 
                     ? 'Receba atualizações exclusivas da comunidade portuguesa em Londres via WhatsApp:'
                     : 'Get exclusive Portuguese community updates in London via WhatsApp:'
                   }
                 </p>
                 
-                <ul className="text-xs text-neutral-600 space-y-1">
+                <ul className="text-xs text-secondary-600 space-y-1">
                   <li>• {language === 'pt' ? 'Eventos culturais urgentes' : 'Urgent cultural events'}</li>
                   <li>• {language === 'pt' ? 'Atualizações de transporte' : 'Transport updates'}</li>
                   <li>• {language === 'pt' ? 'Oportunidades de negócio' : 'Business opportunities'}</li>
@@ -194,17 +194,17 @@ export default function WhatsAppNotificationWidget({
 
                 <div className="space-y-3">
                   <div>
-                    <label className="block text-xs font-medium text-neutral-700 mb-1">
+                    <label className="block text-xs font-medium text-secondary-700 mb-1">
                       {language === 'pt' ? 'Número de WhatsApp' : 'WhatsApp Number'}
                     </label>
                     <div className="relative">
-                      <PhoneIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-neutral-400" />
+                      <PhoneIcon className="absolute left-3 top-1/2 transform -transecondary-y-1/2 h-4 w-4 text-secondary-400" />
                       <input
                         type="tel"
                         value={phoneNumber}
                         onChange={(e) => setPhoneNumber(e.target.value)}
                         placeholder={language === 'pt' ? '+44 7XXX XXXXXX' : '+44 7XXX XXXXXX'}
-                        className="w-full pl-10 pr-4 py-2 text-sm border border-neutral-300 rounded-lg focus:border-secondary-500 focus:outline-none focus:ring-1 focus:ring-secondary-500"
+                        className="w-full pl-10 pr-4 py-2 text-sm border border-secondary-300 rounded-lg focus:border-secondary-500 focus:outline-none focus:ring-1 focus:ring-secondary-500"
                       />
                     </div>
                   </div>
@@ -217,7 +217,7 @@ export default function WhatsAppNotificationWidget({
                     {language === 'pt' ? 'Ativar WhatsApp' : 'Enable WhatsApp'}
                   </button>
 
-                  <p className="text-xs text-neutral-500 text-center">
+                  <p className="text-xs text-secondary-500 text-center">
                     {language === 'pt' 
                       ? 'Pode cancelar a qualquer momento nas configurações'
                       : 'You can unsubscribe anytime in settings'
@@ -244,7 +244,7 @@ export default function WhatsAppNotificationWidget({
             
             {/* Tooltip */}
             <div className="absolute bottom-full right-0 mb-2 opacity-0 group-hover:opacity-100 transition-opacity">
-              <div className="bg-neutral-900 text-white text-xs py-1 px-2 rounded whitespace-nowrap">
+              <div className="bg-secondary-900 text-white text-xs py-1 px-2 rounded whitespace-nowrap">
                 {language === 'pt' ? 'WhatsApp Ativo' : 'WhatsApp Active'}
               </div>
             </div>
@@ -256,15 +256,15 @@ export default function WhatsAppNotificationWidget({
                 initial={{ opacity: 0, scale: 0.8, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.8, y: 20 }}
-                className="absolute bottom-full right-0 mb-4 bg-white rounded-lg shadow-lg border border-neutral-200 p-4 w-64"
+                className="absolute bottom-full right-0 mb-4 bg-white rounded-lg shadow-lg border border-secondary-200 p-4 w-64"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <h4 className="text-sm font-semibold text-neutral-900">
+                  <h4 className="text-sm font-semibold text-secondary-900">
                     {language === 'pt' ? 'WhatsApp Ativo' : 'WhatsApp Active'}
                   </h4>
                   <button
                     onClick={() => setIsExpanded(false)}
-                    className="text-neutral-400 hover:text-neutral-600"
+                    className="text-secondary-400 hover:text-secondary-600"
                   >
                     <XMarkIcon className="h-4 w-4" />
                   </button>
@@ -272,14 +272,14 @@ export default function WhatsAppNotificationWidget({
                 
                 <div className="space-y-3 text-sm">
                   <div>
-                    <span className="text-neutral-600">
+                    <span className="text-secondary-600">
                       {language === 'pt' ? 'Número:' : 'Number:'}
                     </span>
-                    <span className="font-mono text-neutral-900 ml-1">{phoneNumber}</span>
+                    <span className="font-mono text-secondary-900 ml-1">{phoneNumber}</span>
                   </div>
                   
                   <div>
-                    <span className="text-neutral-600">
+                    <span className="text-secondary-600">
                       {language === 'pt' ? 'Status:' : 'Status:'}
                     </span>
                     <span className="text-secondary-600 font-medium ml-1">
@@ -287,7 +287,7 @@ export default function WhatsAppNotificationWidget({
                     </span>
                   </div>
 
-                  <div className="pt-2 border-t border-neutral-200">
+                  <div className="pt-2 border-t border-secondary-200">
                     <button
                       onClick={handleOptOut}
                       className="text-xs text-action-600 hover:text-action-700"

@@ -277,7 +277,7 @@ export default function EnhancedHowItWorks() {
               className="group relative cursor-pointer"
             >
               <div
-                className={`bg-white/90 backdrop-blur-sm border border-white/60 rounded-3xl p-8 min-h-[440px] shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 relative overflow-hidden flex flex-col ${
+                className={`bg-white/90 backdrop-blur-sm border border-white/60 rounded-3xl p-8 min-h-[440px] shadow-xl hover:shadow-2xl transition-all duration-500 hover:-transecondary-y-2 hover:scale-105 relative overflow-hidden flex flex-col ${
                   hoveredFeature === feature.id ? "border-primary-300/50" : ""
                 }`}
               >
@@ -450,7 +450,7 @@ export default function EnhancedHowItWorks() {
                     className={`inline-flex items-center gap-2 bg-gradient-to-r ${feature.gradient} text-white font-semibold py-3 px-6 rounded-xl hover:shadow-lg transition-all duration-300 group-hover:scale-105 text-center justify-center`}
                   >
                     {feature.cta}
-                    <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRightIcon className="w-4 h-4 group-hover:transecondary-x-1 transition-transform" />
                   </a>
                 </div>
               </div>

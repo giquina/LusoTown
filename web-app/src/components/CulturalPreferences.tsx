@@ -312,7 +312,7 @@ export default function CulturalPreferences({
                   className={`p-4 rounded-xl border-2 text-left transition-all ${
                     (formData.origins || []).includes(origin.value)
                       ? 'border-primary-500 bg-primary-50'
-                      : 'border-gray-200 bg-white hover:border-secondary-300'
+                      : 'border-secondary-200 bg-white hover:border-secondary-300'
                   }`}
                 >
                   <div className="flex items-center gap-3">
@@ -345,7 +345,7 @@ export default function CulturalPreferences({
                   className={`p-4 rounded-xl border-2 text-center transition-all ${
                     formData.language_preference === lang.value
                       ? 'border-primary-500 bg-primary-50 text-primary-700'
-                      : 'border-gray-200 bg-white text-secondary-700 hover:border-secondary-300'
+                      : 'border-secondary-200 bg-white text-secondary-700 hover:border-secondary-300'
                   }`}
                 >
                   <div className="font-semibold">
@@ -387,7 +387,7 @@ export default function CulturalPreferences({
                   className={`p-4 rounded-xl border-2 text-left transition-all ${
                     (formData.cultural_celebrations || []).includes(celebration.id)
                       ? 'border-primary-500 bg-primary-50'
-                      : 'border-gray-200 bg-white hover:border-secondary-300'
+                      : 'border-secondary-200 bg-white hover:border-secondary-300'
                   }`}
                 >
                   <div className="space-y-2">
@@ -437,7 +437,7 @@ export default function CulturalPreferences({
                 return (
                   <div
                     key={value.id}
-                    className="p-4 bg-gray-50 rounded-xl border border-gray-200"
+                    className="p-4 bg-secondary-50 rounded-xl border border-secondary-200"
                   >
                     <div className="flex items-start justify-between">
                       <div className="flex items-start gap-4 flex-1">
@@ -494,7 +494,7 @@ export default function CulturalPreferences({
                   className={`p-4 rounded-xl border-2 text-left transition-all ${
                     (formData.lifestyle_preferences || []).includes(preference.id)
                       ? 'border-primary-500 bg-primary-50'
-                      : 'border-gray-200 bg-white hover:border-secondary-300'
+                      : 'border-secondary-200 bg-white hover:border-secondary-300'
                   }`}
                 >
                   <div className="space-y-2">

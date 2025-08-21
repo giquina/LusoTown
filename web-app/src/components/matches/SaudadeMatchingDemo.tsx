@@ -91,7 +91,7 @@ export default function SaudadeMatchingDemo({
       descriptionEn: 'Advanced algorithm matches based on saudade levels, cultural support needs, and heritage preservation.',
       descriptionPt: 'Algoritmo avançado que combina baseado em níveis de saudade, necessidades de apoio cultural e preservação da herança.',
       icon: SparklesIcon,
-      color: 'from-blue-500 to-purple-500',
+      color: 'from-blue-500 to-accent-500',
     },
     {
       titleEn: 'Cultural Healing',
@@ -165,7 +165,7 @@ export default function SaudadeMatchingDemo({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
-                className={`relative bg-white rounded-2xl p-6 shadow-lg border border-gray-100 ${
+                className={`relative bg-white rounded-2xl p-6 shadow-lg border border-secondary-100 ${
                   currentStep === index ? 'ring-2 ring-red-500' : ''
                 }`}
               >
@@ -183,7 +183,7 @@ export default function SaudadeMatchingDemo({
                 </p>
                 
                 {index < demoSteps.length - 1 && (
-                  <div className="hidden md:block absolute -right-3 top-1/2 transform -translate-y-1/2">
+                  <div className="hidden md:block absolute -right-3 top-1/2 transform -transecondary-y-1/2">
                     <ArrowRightIcon className="w-6 h-6 text-gray-300" />
                   </div>
                 )}
@@ -269,7 +269,7 @@ export default function SaudadeMatchingDemo({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 + index * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100"
+                className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100"
               >
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-gradient-to-r from-red-500 to-primary-500 rounded-xl">

@@ -234,7 +234,7 @@ export default function RiskAssessmentForm({
       {/* Content */}
       <div className="p-6 space-y-8">
         {/* Service Overview */}
-        <div className="bg-gray-50 rounded-lg p-4">
+        <div className="bg-secondary-50 rounded-lg p-4">
           <h3 className="text-lg font-semibold text-gray-900 mb-3">
             {isPortuguese ? 'Resumo do Serviço' : 'Service Overview'}
           </h3>
@@ -314,7 +314,7 @@ export default function RiskAssessmentForm({
               { key: 'clientRisk', labelEn: 'Client Risk', labelPt: 'Risco do Cliente', icon: UserGroupIcon },
               { key: 'operationalRisk', labelEn: 'Operational Risk', labelPt: 'Risco Operacional', icon: ShieldCheckIcon }
             ].map(({ key, labelEn, labelPt, icon: Icon }) => (
-              <div key={key} className="border border-gray-200 rounded-lg p-4">
+              <div key={key} className="border border-secondary-200 rounded-lg p-4">
                 <div className="flex items-center space-x-2 mb-3">
                   <Icon className="w-5 h-5 text-secondary-600" />
                   <h4 className="font-medium text-gray-900">
@@ -353,7 +353,7 @@ export default function RiskAssessmentForm({
           <h3 className="text-lg font-semibold text-gray-900 mb-4">
             {isPortuguese ? 'Análise de Ameaças' : 'Threat Analysis'}
           </h3>
-          <div className="bg-gray-50 rounded-lg p-4">
+          <div className="bg-secondary-50 rounded-lg p-4">
             <label className="block text-sm font-medium text-secondary-700 mb-3">
               <ExclamationTriangleIcon className="w-4 h-4 inline mr-2" />
               {isPortuguese ? 'Tipos de Ameaça Identificados *' : 'Identified Threat Types *'}
@@ -384,7 +384,7 @@ export default function RiskAssessmentForm({
           <h3 className="text-lg font-semibold text-gray-900 mb-4">
             {isPortuguese ? 'Medidas de Mitigação' : 'Mitigation Measures'}
           </h3>
-          <div className="bg-gray-50 rounded-lg p-4">
+          <div className="bg-secondary-50 rounded-lg p-4">
             <label className="block text-sm font-medium text-secondary-700 mb-3">
               <ShieldCheckIcon className="w-4 h-4 inline mr-2" />
               {isPortuguese ? 'Medidas de Mitigação Recomendadas *' : 'Recommended Mitigation Measures *'}
@@ -505,10 +505,10 @@ export default function RiskAssessmentForm({
         </div>
 
         {/* Action Buttons */}
-        <div className="flex justify-end space-x-4 pt-6 border-t border-gray-200">
+        <div className="flex justify-end space-x-4 pt-6 border-t border-secondary-200">
           <button
             onClick={onCancel}
-            className="px-6 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 transition-colors"
+            className="px-6 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-secondary-50 transition-colors"
           >
             {isPortuguese ? 'Cancelar' : 'Cancel'}
           </button>

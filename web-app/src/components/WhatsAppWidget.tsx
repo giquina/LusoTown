@@ -222,7 +222,7 @@ export default function WhatsAppWidget() {
           </div>
 
           {/* Messages */}
-          <div className="h-96 overflow-y-auto p-4 bg-gray-50">
+          <div className="h-96 overflow-y-auto p-4 bg-secondary-50">
             {messages.map((message, index) => (
               <div key={index} className="mb-4">
                 <div

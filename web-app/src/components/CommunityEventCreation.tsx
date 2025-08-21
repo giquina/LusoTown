@@ -357,7 +357,7 @@ export default function CommunityEventCreation({
   return (
     <div className={`bg-white rounded-2xl shadow-lg ${className}`}>
       {/* Header */}
-      <div className="p-6 border-b border-gray-100">
+      <div className="p-6 border-b border-secondary-100">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center space-x-3">
             <div className="w-12 h-12 bg-gradient-to-br from-accent-500 to-coral-500 rounded-xl flex items-center justify-center">
@@ -477,7 +477,7 @@ export default function CommunityEventCreation({
                       className={`text-left p-3 border rounded-lg transition-all ${
                         formData.cultural_category === category.id
                           ? 'border-primary-500 bg-primary-50'
-                          : 'border-secondary-300 hover:border-gray-400'
+                          : 'border-secondary-300 hover:border-secondary-400'
                       }`}
                     >
                       <div className="flex items-center space-x-3">
@@ -747,7 +747,7 @@ export default function CommunityEventCreation({
                       className="rounded border-secondary-300 text-primary-600 focus:ring-primary-500"
                     />
                     <div className="flex items-center space-x-2">
-                      <MusicalNoteIcon className="w-5 h-5 text-purple-500" />
+                      <MusicalNoteIcon className="w-5 h-5 text-accent-500" />
                       <span className="text-sm text-secondary-700">
                         {isPortuguese ? 'Música de Fado em destaque' : 'Fado music featured'}
                       </span>
@@ -802,7 +802,7 @@ export default function CommunityEventCreation({
               </div>
 
               {/* Event Preview */}
-              <div className="bg-gray-50 rounded-lg p-4">
+              <div className="bg-secondary-50 rounded-lg p-4">
                 <h5 className="font-medium text-gray-900 mb-3">
                   {isPortuguese ? 'Pré-visualização do Evento' : 'Event Preview'}
                 </h5>
@@ -834,14 +834,14 @@ export default function CommunityEventCreation({
         </AnimatePresence>
 
         {/* Navigation Buttons */}
-        <div className="flex items-center justify-between pt-6 border-t border-gray-200">
+        <div className="flex items-center justify-between pt-6 border-t border-secondary-200">
           <button
             onClick={handleBack}
             disabled={currentStep === 1}
             className={`px-6 py-2 rounded-lg font-medium transition-colors ${
               currentStep === 1
                 ? 'bg-secondary-100 text-gray-400 cursor-not-allowed'
-                : 'bg-secondary-200 text-secondary-700 hover:bg-gray-300'
+                : 'bg-secondary-200 text-secondary-700 hover:bg-secondary-300'
             }`}
           >
             {isPortuguese ? 'Anterior' : 'Back'}
@@ -875,7 +875,7 @@ export default function CommunityEventCreation({
 
       {/* Usage Limit Info */}
       {verificationStatus && (
-        <div className="p-4 bg-gray-50 border-t border-gray-200">
+        <div className="p-4 bg-secondary-50 border-t border-secondary-200">
           <div className="flex items-center space-x-2 text-sm text-secondary-600">
             <InformationCircleIcon className="w-4 h-4" />
             <span>

@@ -159,7 +159,7 @@ export default function FestaIntegrationHub() {
       nameEn: 'Carnaval',
       namePt: 'Carnaval',
       emoji: '🎭',
-      color: 'from-purple-500 to-pink-500',
+      color: 'from-accent-500 to-pink-500',
       season: 'winter',
       significance: 'Pre-Lenten celebrations with masks, parades, and music'
     },
@@ -186,7 +186,7 @@ export default function FestaIntegrationHub() {
       nameEn: 'Marchas Populares',
       namePt: 'Marchas Populares',
       emoji: '🚶‍♀️',
-      color: 'from-blue-500 to-indigo-500',
+      color: 'from-blue-500 to-primary-500',
       season: 'summer',
       significance: 'Neighborhood parade competitions in Lisbon tradition'
     }
@@ -406,7 +406,7 @@ export default function FestaIntegrationHub() {
       </div>
 
       {/* Filters */}
-      <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+      <div className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <select
             value={filters.festaType}
@@ -470,7 +470,7 @@ export default function FestaIntegrationHub() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               whileHover={{ y: -5 }}
-              className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden cursor-pointer transform transition-all hover:shadow-2xl"
+              className="bg-white rounded-3xl shadow-xl border border-secondary-100 overflow-hidden cursor-pointer transform transition-all hover:shadow-2xl"
               onClick={() => setSelectedEvent(event)}
             >
               {/* Event Header */}
@@ -633,7 +633,7 @@ export default function FestaIntegrationHub() {
               key={planning.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+              className="bg-white rounded-3xl p-8 shadow-xl border border-secondary-100"
             >
               {/* Planning Header */}
               <div className="flex justify-between items-start mb-6">
@@ -665,15 +665,15 @@ export default function FestaIntegrationHub() {
 
               {/* Progress Metrics */}
               <div className="grid grid-cols-3 gap-4 mb-6">
-                <div className="text-center p-3 bg-gray-50 rounded-xl">
+                <div className="text-center p-3 bg-secondary-50 rounded-xl">
                   <div className="text-lg font-bold text-gray-900">{planning.currentVolunteers}</div>
                   <div className="text-xs text-secondary-600">/ {planning.volunteersNeeded} Volunteers</div>
                 </div>
-                <div className="text-center p-3 bg-gray-50 rounded-xl">
+                <div className="text-center p-3 bg-secondary-50 rounded-xl">
                   <div className="text-lg font-bold text-gray-900">£{planning.currentFunding}</div>
                   <div className="text-xs text-secondary-600">/ £{planning.fundingGoal} Budget</div>
                 </div>
-                <div className="text-center p-3 bg-gray-50 rounded-xl">
+                <div className="text-center p-3 bg-secondary-50 rounded-xl">
                   <div className="text-lg font-bold text-gray-900">{planning.estimatedAttendees}</div>
                   <div className="text-xs text-secondary-600">Expected</div>
                 </div>
@@ -728,7 +728,7 @@ export default function FestaIntegrationHub() {
       </div>
 
       {/* Planning Resources */}
-      <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
+      <div className="bg-white rounded-3xl p-8 shadow-xl border border-secondary-100">
         <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
           {t('festa.planning.resources', 'Festa Planning Resources')}
         </h3>
@@ -758,7 +758,7 @@ export default function FestaIntegrationHub() {
           ].map((resource, index) => {
             const Icon = resource.icon
             return (
-              <div key={index} className="text-center p-4 rounded-2xl hover:bg-gray-50 transition-colors cursor-pointer">
+              <div key={index} className="text-center p-4 rounded-2xl hover:bg-secondary-50 transition-colors cursor-pointer">
                 <div className="w-12 h-12 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                   <Icon className="w-6 h-6 text-white" />
                 </div>
@@ -779,10 +779,10 @@ export default function FestaIntegrationHub() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-3xl px-6 py-3 mb-6"
+          className="inline-flex items-center gap-3 bg-gradient-to-r from-accent-50 to-pink-50 border border-accent-200 rounded-3xl px-6 py-3 mb-6"
         >
-          <CameraIcon className="w-5 h-5 text-purple-600" />
-          <span className="font-semibold text-purple-700">
+          <CameraIcon className="w-5 h-5 text-accent-600" />
+          <span className="font-semibold text-accent-700">
             {t('festa.memories.badge', 'Cultural Memory Bank')}
           </span>
         </motion.div>
@@ -796,9 +796,9 @@ export default function FestaIntegrationHub() {
       </div>
 
       {/* Upload Section */}
-      <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-3xl p-8 border border-indigo-200">
+      <div className="bg-gradient-to-br from-primary-50 to-accent-50 rounded-3xl p-8 border border-primary-200">
         <div className="text-center">
-          <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-4">
             <ShareIcon className="w-8 h-8 text-white" />
           </div>
           <h3 className="text-xl font-bold text-gray-900 mb-4">
@@ -807,7 +807,7 @@ export default function FestaIntegrationHub() {
           <p className="text-secondary-700 mb-6">
             {t('festa.memories.upload_desc', 'Help preserve Portuguese culture by sharing your authentic festa photos and videos with cultural context')}
           </p>
-          <button className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
+          <button className="bg-gradient-to-r from-primary-600 to-accent-600 text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all">
             {t('festa.memories.upload_btn', 'Upload Memories')}
           </button>
         </div>
@@ -821,7 +821,7 @@ export default function FestaIntegrationHub() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             whileHover={{ y: -5 }}
-            className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden cursor-pointer transform transition-all hover:shadow-2xl"
+            className="bg-white rounded-3xl shadow-xl border border-secondary-100 overflow-hidden cursor-pointer transform transition-all hover:shadow-2xl"
           >
             {/* Media Preview */}
             <div className="relative h-48 bg-gradient-to-br from-gray-200 to-gray-300">
@@ -914,7 +914,7 @@ export default function FestaIntegrationHub() {
       </div>
 
       {/* Memory Collection Stats */}
-      <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
+      <div className="bg-white rounded-3xl p-8 shadow-xl border border-secondary-100">
         <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
           {t('festa.memories.stats', 'Community Memory Archive Stats')}
         </h3>
@@ -1037,7 +1037,7 @@ export default function FestaIntegrationHub() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+            className="bg-white rounded-3xl p-8 shadow-xl border border-secondary-100"
           >
             {/* Tradition Header */}
             <div className="flex justify-between items-start mb-6">
@@ -1132,7 +1132,7 @@ export default function FestaIntegrationHub() {
       </div>
 
       {/* Regional Variations */}
-      <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
+      <div className="bg-white rounded-3xl p-8 shadow-xl border border-secondary-100">
         <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
           {t('festa.traditions.regional', 'Regional Portuguese Festa Traditions')}
         </h3>
@@ -1140,9 +1140,9 @@ export default function FestaIntegrationHub() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             { region: 'Lisboa', specialties: ['Santos Populares', 'Marchas', 'Sardines'], color: 'from-red-500 to-orange-500' },
-            { region: 'Porto', specialties: ['São João', 'Plastic Hammers', 'Sky Lanterns'], color: 'from-blue-500 to-purple-500' },
+            { region: 'Porto', specialties: ['São João', 'Plastic Hammers', 'Sky Lanterns'], color: 'from-blue-500 to-accent-500' },
             { region: 'Açores', specialties: ['Festa do Divino', 'Sopas', 'Holy Spirit Crown'], color: 'from-green-500 to-blue-500' },
-            { region: 'Madeira', specialties: ['Festa da Flor', 'Wine Festival', 'Folklore'], color: 'from-purple-500 to-pink-500' }
+            { region: 'Madeira', specialties: ['Festa da Flor', 'Wine Festival', 'Folklore'], color: 'from-accent-500 to-pink-500' }
           ].map((region) => (
             <div
               key={region.region}
@@ -1202,7 +1202,7 @@ export default function FestaIntegrationHub() {
 
         {/* Navigation Tabs */}
         <div className="flex justify-center mb-12">
-          <div className="bg-white rounded-2xl p-2 shadow-lg border border-gray-100">
+          <div className="bg-white rounded-2xl p-2 shadow-lg border border-secondary-100">
             <div className="flex space-x-2">
               {[
                 { key: 'discover', label: t('festa.tabs.discover', 'Discover Festas'), icon: CalendarDaysIcon },
@@ -1218,7 +1218,7 @@ export default function FestaIntegrationHub() {
                     className={`flex items-center gap-2 px-4 py-3 rounded-xl font-semibold transition-all text-sm ${
                       activeTab === tab.key
                         ? 'bg-gradient-to-r from-orange-600 to-red-600 text-white shadow-lg'
-                        : 'text-secondary-600 hover:text-secondary-800 hover:bg-gray-50'
+                        : 'text-secondary-600 hover:text-secondary-800 hover:bg-secondary-50'
                     }`}
                   >
                     <Icon className="w-4 h-4" />

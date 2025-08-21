@@ -70,7 +70,7 @@ export default function ConnectionFilters({
         className={`flex items-center gap-2 px-4 py-3 rounded-lg border transition-all duration-200 ${
           hasActiveFilters || showFilters
             ? 'bg-primary-50 border-primary-200 text-primary-700'
-            : 'bg-white border-gray-200 text-secondary-600 hover:border-secondary-300'
+            : 'bg-white border-secondary-200 text-secondary-600 hover:border-secondary-300'
         }`}
       >
         <FunnelIcon className="w-5 h-5" />
@@ -91,7 +91,7 @@ export default function ConnectionFilters({
             initial={{ opacity: 0, y: -10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
-            className="absolute top-full left-0 mt-2 w-80 bg-white rounded-2xl shadow-xl border border-gray-200 z-20 p-6"
+            className="absolute top-full left-0 mt-2 w-80 bg-white rounded-2xl shadow-xl border border-secondary-200 z-20 p-6"
           >
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
@@ -119,7 +119,7 @@ export default function ConnectionFilters({
                 <select
                   value={activeFilters.membershipTier || ''}
                   onChange={(e) => handleFilterChange('membershipTier', e.target.value as any)}
-                  className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
                 >
                   {membershipOptions.map((option) => (
                     <option key={option.value} value={option.value}>
@@ -140,7 +140,7 @@ export default function ConnectionFilters({
                   placeholder={isPortuguese ? 'ex: Camberwell, Kennington...' : 'e.g. Camberwell, Kennington...'}
                   value={activeFilters.location || ''}
                   onChange={(e) => handleFilterChange('location', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
                 />
               </div>
 
@@ -153,7 +153,7 @@ export default function ConnectionFilters({
                 <select
                   value={activeFilters.connectionStrength || ''}
                   onChange={(e) => handleFilterChange('connectionStrength', e.target.value as any)}
-                  className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
                 >
                   {strengthOptions.map((option) => (
                     <option key={option.value} value={option.value}>
@@ -176,7 +176,7 @@ export default function ConnectionFilters({
                   placeholder="0"
                   value={activeFilters.minSharedEvents || ''}
                   onChange={(e) => handleFilterChange('minSharedEvents', parseInt(e.target.value) || undefined)}
-                  className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
                 />
               </div>
 
@@ -189,7 +189,7 @@ export default function ConnectionFilters({
                 <select
                   value={activeFilters.lastInteractionDays || ''}
                   onChange={(e) => handleFilterChange('lastInteractionDays', parseInt(e.target.value) || undefined)}
-                  className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                  className="w-full px-3 py-2 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
                 >
                   {interactionOptions.map((option) => (
                     <option key={option.value} value={option.value}>
@@ -219,7 +219,7 @@ export default function ConnectionFilters({
             </div>
 
             {/* Actions */}
-            <div className="flex gap-3 mt-6 pt-6 border-t border-gray-200">
+            <div className="flex gap-3 mt-6 pt-6 border-t border-secondary-200">
               <button
                 onClick={onClearFilters}
                 className="flex-1 px-4 py-2 text-secondary-600 hover:text-secondary-800 transition-colors text-sm font-medium"

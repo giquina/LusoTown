@@ -525,7 +525,7 @@ export default function CulturalPersonalityAssessment() {
               <span>{t('assessment.tradition', 'Tradition Adherence')}</span>
             </div>
             <div className="flex items-center gap-2">
-              <GlobeEuropeAfricaIcon className="w-4 h-4 text-purple-500" />
+              <GlobeEuropeAfricaIcon className="w-4 h-4 text-accent-500" />
               <span>{t('assessment.adaptation', 'Cultural Adaptation')}</span>
             </div>
           </div>
@@ -570,7 +570,7 @@ export default function CulturalPersonalityAssessment() {
         </div>
 
         {/* Question */}
-        <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 mb-8">
+        <div className="bg-white rounded-3xl p-8 shadow-xl border border-secondary-100 mb-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
             {language === 'pt' ? question.questionPt : question.questionEn}
           </h3>
@@ -581,7 +581,7 @@ export default function CulturalPersonalityAssessment() {
 
           {/* Scenario Questions */}
           {question.responseType === 'scenario' && (
-            <div className="bg-gray-50 rounded-xl p-6 mb-6">
+            <div className="bg-secondary-50 rounded-xl p-6 mb-6">
               <pre className="text-secondary-700 whitespace-pre-line font-sans">
                 {language === 'pt' ? question.scenarioPt : question.scenarioEn}
               </pre>
@@ -638,7 +638,7 @@ export default function CulturalPersonalityAssessment() {
                   className={`p-4 rounded-xl border-2 font-semibold transition-all ${
                     currentResponse === index * 2.5
                       ? 'border-secondary-500 bg-secondary-50 text-secondary-700'
-                      : 'border-secondary-300 text-secondary-700 hover:border-gray-400'
+                      : 'border-secondary-300 text-secondary-700 hover:border-secondary-400'
                   }`}
                 >
                   {option}
@@ -653,7 +653,7 @@ export default function CulturalPersonalityAssessment() {
           <button
             onClick={previousQuestion}
             disabled={currentQuestion === 0}
-            className="flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-secondary-300 text-secondary-600 font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:border-gray-400 transition-colors"
+            className="flex items-center gap-2 px-6 py-3 rounded-xl border-2 border-secondary-300 text-secondary-600 font-semibold disabled:opacity-50 disabled:cursor-not-allowed hover:border-secondary-400 transition-colors"
           >
             <ArrowLeftIcon className="w-5 h-5" />
             {t('common.back', 'Back')}
@@ -774,7 +774,7 @@ export default function CulturalPersonalityAssessment() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100"
+              className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100"
             >
               <div className="flex items-start gap-4">
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${

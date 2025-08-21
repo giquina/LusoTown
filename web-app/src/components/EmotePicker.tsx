@@ -72,10 +72,10 @@ export default function EmotePicker({
         exit={{ opacity: 0, scale: 0.9, y: position === 'top' ? 10 : -10 }}
         className={`fixed sm:absolute ${position === 'top' ? 'bottom-4 sm:bottom-full sm:mb-2' : 'top-4 sm:top-full sm:mt-2'} 
           left-4 right-4 sm:left-auto sm:right-0 sm:w-80 z-50 
-          bg-white rounded-xl shadow-xl border border-gray-200 max-h-96 overflow-hidden`}
+          bg-white rounded-xl shadow-xl border border-secondary-200 max-h-96 overflow-hidden`}
       >
         {/* Header Tabs - Mobile Optimized */}
-        <div className="flex border-b border-gray-200 bg-gray-50">
+        <div className="flex border-b border-secondary-200 bg-secondary-50">
           <button
             onClick={() => setActiveTab('reactions')}
             className={`flex-1 px-2 sm:px-3 py-3 sm:py-2 text-xs sm:text-sm font-medium transition-colors touch-manipulation ${
@@ -270,7 +270,7 @@ export default function EmotePicker({
         </div>
 
         {/* Footer */}
-        <div className="border-t border-gray-200 px-3 py-2 bg-gray-50">
+        <div className="border-t border-secondary-200 px-3 py-2 bg-secondary-50">
           <p className="text-xs text-gray-500 text-center">
             {language === 'pt' 
               ? 'Emotes culturais portugueses • LusoTown'

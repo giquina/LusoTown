@@ -123,7 +123,7 @@ export default function SubscriptionPage() {
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 mb-8"
+                    className="bg-white rounded-2xl shadow-lg border border-secondary-200 p-6 mb-8"
                   >
                     <h2 className="text-xl font-bold text-gray-900 mb-6">
                       {isPortuguese ? 'Estado da Subscrição' : 'Subscription Status'}
@@ -256,7 +256,7 @@ export default function SubscriptionPage() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 }}
-                    className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6"
+                    className="bg-white rounded-2xl shadow-lg border border-secondary-200 p-6"
                   >
                     <h3 className="text-lg font-bold text-gray-900 mb-6">
                       {isPortuguese ? 'O que está incluído na sua subscrição:' : 'What\'s included in your subscription:'}
@@ -306,7 +306,7 @@ export default function SubscriptionPage() {
                   <motion.div
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6 mb-6"
+                    className="bg-white rounded-2xl shadow-lg border border-secondary-200 p-6 mb-6"
                   >
                     <h3 className="text-lg font-bold text-gray-900 mb-4">
                       {isPortuguese ? 'Preço' : 'Pricing'}
@@ -338,7 +338,7 @@ export default function SubscriptionPage() {
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 }}
-                    className="bg-gray-50 rounded-2xl p-6"
+                    className="bg-secondary-50 rounded-2xl p-6"
                   >
                     <h3 className="text-sm font-semibold text-gray-900 mb-4">
                       {isPortuguese ? 'Precisa de ajuda?' : 'Need help?'}

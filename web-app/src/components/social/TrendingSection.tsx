@@ -120,7 +120,7 @@ export default function TrendingSection({ className = '' }: { className?: string
   }
 
   return (
-    <div className={`bg-white rounded-xl shadow-sm border border-gray-200 ${className}`}>
+    <div className={`bg-white rounded-xl shadow-sm border border-secondary-200 ${className}`}>
       <div className="p-6">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
@@ -145,7 +145,7 @@ export default function TrendingSection({ className = '' }: { className?: string
           {trendingItems.map((item, index) => (
             <div
               key={item.id}
-              className="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer group"
+              className="flex items-center justify-between p-3 hover:bg-secondary-50 rounded-lg transition-colors cursor-pointer group"
             >
               <div className="flex items-center space-x-3 flex-1">
                 {/* Ranking */}
@@ -195,7 +195,7 @@ export default function TrendingSection({ className = '' }: { className?: string
         </div>
 
         {/* View All Button */}
-        <div className="mt-6 pt-4 border-t border-gray-100">
+        <div className="mt-6 pt-4 border-t border-secondary-100">
           <button className="w-full px-4 py-2 text-primary-600 hover:text-primary-700 hover:bg-primary-50 rounded-lg transition-colors text-sm font-medium">
             {t('trending.view_all') || 'View All Trending'}
           </button>

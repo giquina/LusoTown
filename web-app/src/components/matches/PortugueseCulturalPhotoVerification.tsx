@@ -501,7 +501,7 @@ export default function PortugueseCulturalPhotoVerification({
     switch (rarity) {
       case 'common': return 'text-secondary-600 bg-secondary-100'
       case 'rare': return 'text-primary-600 bg-blue-100'
-      case 'epic': return 'text-purple-600 bg-purple-100'
+      case 'epic': return 'text-accent-600 bg-accent-100'
       case 'legendary': return 'text-yellow-600 bg-yellow-100'
       default: return 'text-secondary-600 bg-secondary-100'
     }
@@ -512,10 +512,10 @@ export default function PortugueseCulturalPhotoVerification({
       emerald: 'bg-emerald-100 text-emerald-700 border-emerald-200',
       blue: 'bg-blue-100 text-primary-700 border-blue-200',
       orange: 'bg-orange-100 text-orange-700 border-orange-200',
-      purple: 'bg-purple-100 text-purple-700 border-purple-200',
+      purple: 'bg-accent-100 text-accent-700 border-accent-200',
       pink: 'bg-pink-100 text-pink-700 border-pink-200',
-      indigo: 'bg-indigo-100 text-indigo-700 border-indigo-200',
-      slate: 'bg-slate-100 text-slate-700 border-slate-200',
+      indigo: 'bg-primary-100 text-primary-700 border-primary-200',
+      slate: 'bg-secondary-100 text-secondary-700 border-secondary-200',
       yellow: 'bg-yellow-100 text-yellow-700 border-yellow-200'
     }
     return colors[color as keyof typeof colors] || colors.emerald
@@ -563,7 +563,7 @@ export default function PortugueseCulturalPhotoVerification({
               </div>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-purple-600">{Math.round(verificationResults.heritageAuthenticity)}%</div>
+              <div className="text-2xl font-bold text-accent-600">{Math.round(verificationResults.heritageAuthenticity)}%</div>
               <div className="text-sm text-secondary-600">
                 {language === 'pt' ? 'Autenticidade' : 'Authenticity'}
               </div>
@@ -981,7 +981,7 @@ export default function PortugueseCulturalPhotoVerification({
                     </h4>
                     <div className="space-y-2">
                       {selectedPhoto.detectedElements.map((element) => (
-                        <div key={element.id} className="bg-gray-50 rounded-lg p-3">
+                        <div key={element.id} className="bg-secondary-50 rounded-lg p-3">
                           <div className="flex items-center justify-between mb-1">
                             <span className="font-medium text-gray-900">
                               {language === 'pt' ? element.namePortuguese : element.name}
@@ -1032,7 +1032,7 @@ export default function PortugueseCulturalPhotoVerification({
       )}
 
       {/* Guidelines */}
-      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-6">
+      <div className="bg-gradient-to-r from-blue-50 to-primary-50 border border-blue-200 rounded-2xl p-6">
         <h4 className="font-bold text-blue-900 mb-4 flex items-center gap-2">
           <InformationCircleIcon className="w-5 h-5" />
           {language === 'pt' ? 'Diretrizes para Verificação Cultural' : 'Cultural Verification Guidelines'}

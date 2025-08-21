@@ -53,7 +53,7 @@ export default function MentorshipHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl lg:text-6xl font-black text-neutral-900 mb-6 leading-tight"
+              className="text-4xl lg:text-6xl font-black text-secondary-900 mb-6 leading-tight"
             >
               <span className="hidden sm:block">
                 Conecte-se com mentores
@@ -75,7 +75,7 @@ export default function MentorshipHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-xl text-neutral-600 mb-8 max-w-3xl mx-auto"
+              className="text-xl text-secondary-600 mb-8 max-w-3xl mx-auto"
             >
               <span className="hidden sm:block">
                 LusoTown conecta-o com mentores portugueses estabelecidos em Londres. Desenvolva competências profissionais, pratique idiomas e preserve tradições culturais através do nosso sistema de mentoria em três níveis.
@@ -93,7 +93,7 @@ export default function MentorshipHero() {
               className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-5xl mx-auto"
             >
               {/* Professional Integration */}
-              <div className="bg-white/80 backdrop-blur-lg border border-white/60 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div className="bg-white/80 backdrop-blur-lg border border-white/60 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-transecondary-y-2">
                 <div className="w-12 h-12 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-xl flex items-center justify-center mb-4 mx-auto">
                   <AcademicCapIcon className="w-6 h-6 text-white" />
                 </div>
@@ -106,7 +106,7 @@ export default function MentorshipHero() {
               </div>
 
               {/* Language Exchange */}
-              <div className="bg-white/80 backdrop-blur-lg border border-white/60 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div className="bg-white/80 backdrop-blur-lg border border-white/60 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-transecondary-y-2">
                 <div className="w-12 h-12 bg-gradient-to-br from-accent-500 to-coral-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
                   <ChatBubbleLeftRightIcon className="w-6 h-6 text-white" />
                 </div>
@@ -119,7 +119,7 @@ export default function MentorshipHero() {
               </div>
 
               {/* Skill Sharing */}
-              <div className="bg-white/80 backdrop-blur-lg border border-white/60 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+              <div className="bg-white/80 backdrop-blur-lg border border-white/60 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-transecondary-y-2">
                 <div className="w-12 h-12 bg-gradient-to-br from-action-500 to-premium-500 rounded-xl flex items-center justify-center mb-4 mx-auto">
                   <UserGroupIcon className="w-6 h-6 text-white" />
                 </div>
@@ -138,15 +138,15 @@ export default function MentorshipHero() {
               transition={{ duration: 0.6, delay: 0.25 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6"
             >
-              <div className="flex items-center gap-2 text-sm text-neutral-600">
+              <div className="flex items-center gap-2 text-sm text-secondary-600">
                 <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
                 <span>Mentores Certificados</span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-neutral-600">
+              <div className="flex items-center gap-2 text-sm text-secondary-600">
                 <div className="w-2 h-2 bg-secondary-500 rounded-full"></div>
                 <span>Intercâmbio Cultural</span>
               </div>
-              <div className="flex items-center gap-2 text-sm text-neutral-600">
+              <div className="flex items-center gap-2 text-sm text-secondary-600">
                 <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
                 <span>Desenvolvimento Profissional</span>
               </div>
@@ -159,13 +159,13 @@ export default function MentorshipHero() {
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
               <button
-                className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-translate-y-1"
+                className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 hover:-transecondary-y-1"
               >
                 Juntar-se à Mentoria
               </button>
               <a
                 href="#mentorship-programs"
-                className="border border-neutral-300 text-neutral-700 px-8 py-4 rounded-2xl font-semibold hover:bg-neutral-50 hover:border-neutral-400 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="border border-secondary-300 text-secondary-700 px-8 py-4 rounded-2xl font-semibold hover:bg-secondary-50 hover:border-secondary-400 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Saber Mais
               </a>
@@ -175,7 +175,7 @@ export default function MentorshipHero() {
       </div>
 
       {/* Community Stats */}
-      <section className="py-20 bg-neutral-50">
+      <section className="py-20 bg-secondary-50">
         <div className="container-width">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -186,15 +186,15 @@ export default function MentorshipHero() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="text-3xl font-black text-secondary-600 mb-2">150+</div>
-                <div className="text-neutral-700 font-medium">Mentores Ativos</div>
+                <div className="text-secondary-700 font-medium">Mentores Ativos</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-black text-accent-600 mb-2">750+</div>
-                <div className="text-neutral-700 font-medium">Conexões Bem-sucedidas</div>
+                <div className="text-secondary-700 font-medium">Conexões Bem-sucedidas</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-black text-action-600 mb-2">25</div>
-                <div className="text-neutral-700 font-medium">Indústrias Cobertas</div>
+                <div className="text-secondary-700 font-medium">Indústrias Cobertas</div>
               </div>
             </div>
           </motion.div>

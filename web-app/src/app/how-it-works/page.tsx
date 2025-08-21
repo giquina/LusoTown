@@ -117,7 +117,7 @@ export default function HowItWorks() {
               ].map((s) => (
                 <div
                   key={s.step}
-                  className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-5 text-center"
+                  className="bg-gradient-to-br from-gray-50 to-white border border-secondary-200 rounded-xl p-5 text-center"
                 >
                   <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-100 text-primary-700 font-bold mb-3">
                     {s.step}
@@ -297,7 +297,7 @@ export default function HowItWorks() {
                   </div>
                 </div>
                 
-                <div className="bg-white rounded-xl p-6 border border-gray-200">
+                <div className="bg-white rounded-xl p-6 border border-secondary-200">
                   <h3 className="font-semibold text-gray-900 mb-3">How It Works:</h3>
                   <ol className="list-decimal pl-5 space-y-2 text-secondary-700">
                     <li>When you see a real-life event you like, click the heart icon ❤️</li>
@@ -322,7 +322,7 @@ export default function HowItWorks() {
                 </h2>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
+                <div className="bg-white border border-secondary-200 rounded-xl p-5">
                   <h3 className="font-semibold text-gray-900 mb-2 text-lg">
                     Is it free?
                   </h3>
@@ -330,7 +330,7 @@ export default function HowItWorks() {
                     Yes. Start free. Optional VIP upgrade for premium events.
                   </p>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
+                <div className="bg-white border border-secondary-200 rounded-xl p-5">
                   <h3 className="font-semibold text-gray-900 mb-2 text-lg">
                     Language
                   </h3>
@@ -339,7 +339,7 @@ export default function HowItWorks() {
                     preference.
                   </p>
                 </div>
-                <div className="bg-white border border-gray-200 rounded-xl p-5">
+                <div className="bg-white border border-secondary-200 rounded-xl p-5">
                   <h3 className="font-semibold text-gray-900 mb-2 text-lg">
                     Safety & verification
                   </h3>

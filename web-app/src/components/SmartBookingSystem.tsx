@@ -280,7 +280,7 @@ export default function SmartBookingSystem({
             onClick={e => e.stopPropagation()}
           >
             {/* Header with Progress */}
-            <div className="bg-gradient-to-r from-primary-50 via-secondary-50 to-accent-50 p-6 border-b border-gray-200">
+            <div className="bg-gradient-to-r from-primary-50 via-secondary-50 to-accent-50 p-6 border-b border-secondary-200">
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <h1 className="text-2xl font-bold text-gray-900">
@@ -313,7 +313,7 @@ export default function SmartBookingSystem({
                           ? 'bg-primary-100 text-primary-700 border-2 border-primary-300' 
                           : step.isCompleted 
                           ? 'bg-green-100 text-green-700 border-2 border-green-300'
-                          : 'bg-secondary-100 text-gray-500 border-2 border-gray-200'
+                          : 'bg-secondary-100 text-gray-500 border-2 border-secondary-200'
                         }
                       `}>
                         <div className={`
@@ -476,7 +476,7 @@ export default function SmartBookingSystem({
                       }
                     </p>
                     
-                    <div className="bg-gray-50 rounded-lg p-6 mb-6 max-w-md mx-auto">
+                    <div className="bg-secondary-50 rounded-lg p-6 mb-6 max-w-md mx-auto">
                       <div className="space-y-3 text-left">
                         <div className="flex justify-between">
                           <span className="text-secondary-600">
@@ -537,7 +537,7 @@ export default function SmartBookingSystem({
                       
                       <button
                         onClick={resetBookingFlow}
-                        className="px-6 py-3 bg-secondary-200 text-secondary-700 rounded-lg hover:bg-gray-300 transition-colors"
+                        className="px-6 py-3 bg-secondary-200 text-secondary-700 rounded-lg hover:bg-secondary-300 transition-colors"
                       >
                         {isPortuguese ? 'Nova Reserva' : 'New Booking'}
                       </button>

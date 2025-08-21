@@ -17,7 +17,7 @@ export default function HostWithUsSection() {
   const { t } = useLanguage()
 
   return (
-    <section className="py-24 bg-gradient-to-br from-premium-50/30 via-white to-coral-50/30 relative overflow-hidden border-t border-gray-100">
+    <section className="py-24 bg-gradient-to-br from-premium-50/30 via-white to-coral-50/30 relative overflow-hidden border-t border-secondary-100">
       {/* Portuguese-inspired background decorative elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-premium-200/40 via-coral-100/30 to-accent-100/30 rounded-full opacity-60 animate-pulse" />
@@ -56,7 +56,7 @@ export default function HostWithUsSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-8 mb-20">
             {/* Professional Services & Workshops */}
             <div className="group relative h-full">
-              <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-8 min-h-[300px] sm:min-h-[340px] lg:min-h-[380px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+              <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-8 min-h-[300px] sm:min-h-[340px] lg:min-h-[380px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-transecondary-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-br from-premium-50/60 via-transparent to-coral-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl lg:rounded-3xl" />
                 
                 <div className="relative z-10 flex flex-col h-full">
@@ -77,7 +77,7 @@ export default function HostWithUsSection() {
                     className="inline-flex items-center gap-1 sm:gap-2 text-premium-600 font-semibold hover:text-premium-700 transition-colors group-hover:gap-3 duration-300 text-xs sm:text-sm mt-auto"
                   >
                     List Services
-                    <ArrowRightIcon className="w-3 h-3 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-1" />
+                    <ArrowRightIcon className="w-3 h-3 sm:w-4 sm:h-4 transition-transform group-hover:transecondary-x-1" />
                   </a>
                 </div>
               </div>
@@ -85,7 +85,7 @@ export default function HostWithUsSection() {
 
             {/* Cultural Events & Experiences */}
             <div className="group relative h-full">
-              <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-8 min-h-[300px] sm:min-h-[340px] lg:min-h-[380px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+              <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-8 min-h-[300px] sm:min-h-[340px] lg:min-h-[380px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-transecondary-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-br from-secondary-50/60 via-transparent to-accent-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl lg:rounded-3xl" />
                 
                 <div className="relative z-10 flex flex-col h-full">
@@ -106,7 +106,7 @@ export default function HostWithUsSection() {
                     className="inline-flex items-center gap-1 sm:gap-2 text-secondary-600 font-semibold hover:text-secondary-700 transition-colors group-hover:gap-3 duration-300 text-xs sm:text-sm mt-auto"
                   >
                     Host Events
-                    <ArrowRightIcon className="w-3 h-3 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-1" />
+                    <ArrowRightIcon className="w-3 h-3 sm:w-4 sm:h-4 transition-transform group-hover:transecondary-x-1" />
                   </a>
                 </div>
               </div>
@@ -114,7 +114,7 @@ export default function HostWithUsSection() {
 
             {/* Portuguese Business Promotion */}
             <div className="group relative h-full col-span-2 lg:col-span-1">
-              <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-8 min-h-[300px] sm:min-h-[340px] lg:min-h-[380px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
+              <div className="bg-white/90 backdrop-blur-lg border border-white/60 rounded-xl sm:rounded-2xl lg:rounded-3xl p-3 sm:p-4 lg:p-8 min-h-[300px] sm:min-h-[340px] lg:min-h-[380px] shadow-2xl hover:shadow-3xl transition-all duration-500 hover:-transecondary-y-3 hover:scale-105 relative overflow-hidden flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-br from-coral-50/60 via-transparent to-action-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl lg:rounded-3xl" />
                 
                 <div className="relative z-10 flex flex-col h-full">
@@ -135,7 +135,7 @@ export default function HostWithUsSection() {
                     className="inline-flex items-center gap-1 sm:gap-2 text-coral-600 font-semibold hover:text-coral-700 transition-colors group-hover:gap-3 duration-300 text-xs sm:text-sm mt-auto"
                   >
                     Promote Business
-                    <ArrowRightIcon className="w-3 h-3 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-1" />
+                    <ArrowRightIcon className="w-3 h-3 sm:w-4 sm:h-4 transition-transform group-hover:transecondary-x-1" />
                   </a>
                 </div>
               </div>
@@ -247,17 +247,17 @@ export default function HostWithUsSection() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/host"
-                  className="group relative text-sm sm:text-base font-bold px-6 sm:px-8 lg:px-10 py-3 sm:py-4 bg-gradient-to-r from-premium-600 via-coral-600 to-secondary-600 text-white rounded-xl lg:rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden"
+                  className="group relative text-sm sm:text-base font-bold px-6 sm:px-8 lg:px-10 py-3 sm:py-4 bg-gradient-to-r from-premium-600 via-coral-600 to-secondary-600 text-white rounded-xl lg:rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-transecondary-y-1 hover:scale-105 overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-premium-700 via-coral-700 to-secondary-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
                     Start Hosting
-                    <ArrowRightIcon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 group-hover:translate-x-1 transition-transform duration-200" />
+                    <ArrowRightIcon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 group-hover:transecondary-x-1 transition-transform duration-200" />
                   </span>
                 </a>
                 <a
                   href="/host/learn-more"
-                  className="text-sm sm:text-base font-bold px-6 sm:px-8 lg:px-10 py-3 sm:py-4 bg-white/80 backdrop-blur-lg text-secondary-800 border-2 border-gray-200/60 rounded-xl lg:rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-premium-300 hover:-translate-y-1 hover:bg-white/90"
+                  className="text-sm sm:text-base font-bold px-6 sm:px-8 lg:px-10 py-3 sm:py-4 bg-white/80 backdrop-blur-lg text-secondary-800 border-2 border-secondary-200/60 rounded-xl lg:rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-premium-300 hover:-transecondary-y-1 hover:bg-white/90"
                 >
                   Learn More
                 </a>

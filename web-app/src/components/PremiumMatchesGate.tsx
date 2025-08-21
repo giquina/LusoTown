@@ -237,13 +237,13 @@ export default function PremiumMatchesGate() {
         >
           <div className="flex items-center justify-center gap-3 mb-4">
             <Lock className="h-8 w-8 text-coral-500" />
-            <h1 className="text-4xl lg:text-5xl font-bold text-neutral-900">
+            <h1 className="text-4xl lg:text-5xl font-bold text-secondary-900">
               {t.title}
             </h1>
             <Crown className="h-8 w-8 text-premium-500" />
           </div>
 
-          <p className="text-xl text-neutral-600 mb-6">{t.subtitle}</p>
+          <p className="text-xl text-secondary-600 mb-6">{t.subtitle}</p>
 
           <div className="bg-primary-50 border border-primary-200 rounded-xl p-6 max-w-2xl mx-auto">
             <div className="flex items-center justify-center gap-2 mb-3">
@@ -265,7 +265,7 @@ export default function PremiumMatchesGate() {
           transition={{ delay: 0.2 }}
           className="mb-16"
         >
-          <h2 className="text-2xl font-bold text-center text-neutral-900 mb-8">
+          <h2 className="text-2xl font-bold text-center text-secondary-900 mb-8">
             Premium Features
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -284,10 +284,10 @@ export default function PremiumMatchesGate() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3 + index * 0.1 }}
-                className="text-center p-4 bg-white rounded-xl shadow-sm border border-neutral-100"
+                className="text-center p-4 bg-white rounded-xl shadow-sm border border-secondary-100"
               >
                 <feature.icon className="h-8 w-8 text-primary-600 mx-auto mb-3" />
-                <p className="text-sm font-medium text-neutral-900">
+                <p className="text-sm font-medium text-secondary-900">
                   {feature.text}
                 </p>
               </motion.div>
@@ -302,7 +302,7 @@ export default function PremiumMatchesGate() {
           transition={{ delay: 0.4 }}
           className="mb-16"
         >
-          <h2 className="text-2xl font-bold text-center text-neutral-900 mb-8">
+          <h2 className="text-2xl font-bold text-center text-secondary-900 mb-8">
             {t.pricing.title}
           </h2>
 
@@ -319,11 +319,11 @@ export default function PremiumMatchesGate() {
                   className={`relative bg-white rounded-xl p-6 shadow-lg border-2 ${
                     tier.popular
                       ? "border-primary-300 ring-2 ring-primary-100"
-                      : "border-neutral-200"
+                      : "border-secondary-200"
                   } ${isFree ? "opacity-75" : ""}`}
                 >
                   {tier.popular && (
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <div className="absolute -top-3 left-1/2 transform -transecondary-x-1/2">
                       <span className="bg-primary-600 text-white px-3 py-1 rounded-full text-xs font-medium">
                         {language === "pt" ? "Mais Popular" : "Most Popular"}
                       </span>
@@ -334,22 +334,22 @@ export default function PremiumMatchesGate() {
                     <TierIcon
                       className={`h-10 w-10 mx-auto mb-3 text-${tier.color}-600`}
                     />
-                    <h3 className="text-xl font-bold text-neutral-900">
+                    <h3 className="text-xl font-bold text-secondary-900">
                       {tier.name}
                     </h3>
-                    <p className="text-sm text-neutral-600 mb-4">
+                    <p className="text-sm text-secondary-600 mb-4">
                       {tier.description}
                     </p>
 
                     <div className="mb-4">
-                      <span className="text-3xl font-bold text-neutral-900">
+                      <span className="text-3xl font-bold text-secondary-900">
                         {tier.price}
                       </span>
-                      <span className="text-neutral-600">{tier.period}</span>
+                      <span className="text-secondary-600">{tier.period}</span>
                     </div>
 
                     {!isFree && tier.yearlyMonthly && (
-                      <div className="text-sm text-neutral-500">
+                      <div className="text-sm text-secondary-500">
                         {t.pricing.yearly}: {tier.yearlyPrice} (
                         {tier.yearlyMonthly})
                       </div>
@@ -365,7 +365,7 @@ export default function PremiumMatchesGate() {
                         <div
                           className={`w-2 h-2 rounded-full bg-${tier.color}-500`}
                         ></div>
-                        <span className="text-sm text-neutral-700">
+                        <span className="text-sm text-secondary-700">
                           {feature}
                         </span>
                       </div>
@@ -373,7 +373,7 @@ export default function PremiumMatchesGate() {
                   </div>
 
                   {isFree ? (
-                    <button className="w-full py-3 rounded-lg font-medium bg-neutral-200 text-neutral-600 cursor-default">
+                    <button className="w-full py-3 rounded-lg font-medium bg-secondary-200 text-secondary-600 cursor-default">
                       {language === "pt" ? "Sempre Gratuito" : "Always Free"}
                     </button>
                   ) : (
@@ -401,7 +401,7 @@ export default function PremiumMatchesGate() {
           transition={{ delay: 0.6 }}
           className="mb-12"
         >
-          <h2 className="text-2xl font-bold text-center text-neutral-900 mb-8">
+          <h2 className="text-2xl font-bold text-center text-secondary-900 mb-8">
             {t.testimonials.title}
           </h2>
 
@@ -416,12 +416,12 @@ export default function PremiumMatchesGate() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 + index * 0.1 }}
-                className="bg-white rounded-xl p-6 shadow-sm border border-neutral-100"
+                className="bg-white rounded-xl p-6 shadow-sm border border-secondary-100"
               >
-                <p className="text-neutral-700 mb-4 italic">
+                <p className="text-secondary-700 mb-4 italic">
                   "{testimonial.text}"
                 </p>
-                <p className="text-sm font-medium text-neutral-900">
+                <p className="text-sm font-medium text-secondary-900">
                   — {testimonial.author}
                 </p>
               </motion.div>
@@ -474,7 +474,7 @@ export default function PremiumMatchesGate() {
           <div>
             <button
               onClick={() => window.history.back()}
-              className="text-neutral-600 hover:text-neutral-900 font-medium"
+              className="text-secondary-600 hover:text-secondary-900 font-medium"
             >
               {t.buttons.backToMatches}
             </button>

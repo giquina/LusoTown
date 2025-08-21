@@ -670,7 +670,7 @@ export default function SaudadeMatchingSystem({
                 className={`w-full p-4 rounded-xl border-2 text-left transition-all duration-200 ${
                   selectedOptions.includes(option.id)
                     ? 'border-coral-500 bg-red-50 text-red-900 shadow-lg'
-                    : 'border-gray-200 bg-white hover:border-red-300 hover:bg-red-25'
+                    : 'border-secondary-200 bg-white hover:border-red-300 hover:bg-red-25'
                 }`}
               >
                 <div className="flex items-center gap-4">

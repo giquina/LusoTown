@@ -416,7 +416,7 @@ export default function StudentEventsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 * index }}
-                className="bg-white rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+                className="bg-white rounded-2xl border border-secondary-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
               >
                 {/* Header */}
                 <div className={`px-6 py-4 bg-gradient-to-r ${getEventColor(event.type)} text-white relative`}>
@@ -539,7 +539,7 @@ export default function StudentEventsSection() {
                   <button className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-3 px-4 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 group-hover:scale-105 shadow-lg hover:shadow-xl">
                     <span className="flex items-center justify-center">
                       {language === 'pt' ? 'Reservar Lugar' : 'Book Spot'}
-                      <ArrowRightIcon className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRightIcon className="ml-2 w-4 h-4 group-hover:transecondary-x-1 transition-transform" />
                     </span>
                   </button>
                 </div>
@@ -597,7 +597,7 @@ export default function StudentEventsSection() {
             <button className="bg-primary-500 text-white font-semibold px-8 py-3 rounded-xl hover:bg-primary-600 transition-colors">
               {language === 'pt' ? 'Ativar Notificações' : 'Enable Notifications'}
             </button>
-            <button className="border border-secondary-300 text-secondary-700 font-semibold px-8 py-3 rounded-xl hover:bg-gray-50 transition-colors">
+            <button className="border border-secondary-300 text-secondary-700 font-semibold px-8 py-3 rounded-xl hover:bg-secondary-50 transition-colors">
               {language === 'pt' ? 'Ver Calendário Completo' : 'View Full Calendar'}
             </button>
           </div>

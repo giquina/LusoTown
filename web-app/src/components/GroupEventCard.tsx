@@ -85,7 +85,7 @@ export default function GroupEventCard({
       case 'Family-Friendly':
         return 'bg-secondary-100 text-secondary-700 border-secondary-200'
       default:
-        return 'bg-secondary-100 text-secondary-700 border-gray-200'
+        return 'bg-secondary-100 text-secondary-700 border-secondary-200'
     }
   }
 
@@ -118,7 +118,7 @@ export default function GroupEventCard({
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className={`h-[320px] sm:h-[360px] flex flex-col bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300 ${className}`}
+        className={`h-[320px] sm:h-[360px] flex flex-col bg-white rounded-xl shadow-sm border border-secondary-100 overflow-hidden hover:shadow-lg transition-all duration-300 ${className}`}
       >
         <div className="flex gap-3 sm:gap-4 p-3 sm:p-4">
           {/* Event Image */}
@@ -181,7 +181,7 @@ export default function GroupEventCard({
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className={`h-[500px] sm:h-[550px] lg:h-[600px] flex flex-col bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 ${className}`}
+        className={`h-[500px] sm:h-[550px] lg:h-[600px] flex flex-col bg-white rounded-2xl shadow-lg border border-secondary-100 overflow-hidden hover:shadow-xl transition-all duration-300 ${className}`}
       >
         {/* Featured Badge */}
         <div className="absolute top-4 left-4 z-10">
@@ -252,7 +252,7 @@ export default function GroupEventCard({
               <span className="truncate">{event.location}</span>
             </div>
             <div className="flex items-center gap-2">
-              <UserGroupIcon className="w-4 h-4 text-purple-500" />
+              <UserGroupIcon className="w-4 h-4 text-accent-500" />
               <span>
                 {event.spotsLeft > 0 
                   ? `${event.spotsLeft} ${isPortuguese ? 'vagas' : 'spots'}`
@@ -267,7 +267,7 @@ export default function GroupEventCard({
           </div>
 
           {/* Host Info */}
-          <div className="flex items-center gap-3 mb-4 p-3 bg-gray-50 rounded-lg">
+          <div className="flex items-center gap-3 mb-4 p-3 bg-secondary-50 rounded-lg">
             <div className="relative">
               <div className="w-8 h-8 rounded-full overflow-hidden">
                 {event.hostImage ? (
@@ -304,7 +304,7 @@ export default function GroupEventCard({
               className={`w-full py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 min-h-[44px] flex items-center justify-center ${
                 event.spotsLeft === 0
                   ? 'bg-secondary-100 text-gray-400 cursor-not-allowed'
-                  : 'bg-gradient-to-r from-secondary-500 to-action-500 text-white hover:from-secondary-600 hover:to-action-600 hover:shadow-lg transform hover:-translate-y-0.5'
+                  : 'bg-gradient-to-r from-secondary-500 to-action-500 text-white hover:from-secondary-600 hover:to-action-600 hover:shadow-lg transform hover:-transecondary-y-0.5'
               }`}
             >
               <span className="hidden sm:inline">
@@ -331,7 +331,7 @@ export default function GroupEventCard({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`h-[500px] sm:h-[550px] lg:h-[600px] flex flex-col bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300 group ${className}`}
+      className={`h-[500px] sm:h-[550px] lg:h-[600px] flex flex-col bg-white rounded-2xl shadow-sm border border-secondary-100 overflow-hidden hover:shadow-md transition-all duration-300 group ${className}`}
     >
       {/* Event Image */}
       <div className="relative h-48 overflow-hidden">
@@ -408,7 +408,7 @@ export default function GroupEventCard({
           </div>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <UserGroupIcon className="w-4 h-4 text-purple-500" />
+              <UserGroupIcon className="w-4 h-4 text-accent-500" />
               <span>
                 {event.spotsLeft > 0 
                   ? `${event.spotsLeft} ${isPortuguese ? 'vagas restantes' : 'spots left'}`
@@ -464,7 +464,7 @@ export default function GroupEventCard({
               className={`flex-1 py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 min-h-[44px] flex items-center justify-center ${
                 event.spotsLeft === 0
                   ? 'bg-secondary-100 text-gray-400 cursor-not-allowed'
-                  : 'bg-gradient-to-r from-secondary-500 to-action-500 text-white hover:from-secondary-600 hover:to-action-600 hover:shadow-lg transform hover:-translate-y-0.5'
+                  : 'bg-gradient-to-r from-secondary-500 to-action-500 text-white hover:from-secondary-600 hover:to-action-600 hover:shadow-lg transform hover:-transecondary-y-0.5'
               }`}
             >
               <span className="hidden sm:inline">

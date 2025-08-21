@@ -326,7 +326,7 @@ export default function SocialDiscoveryIntegration({
   return (
     <div className={`space-y-6 ${className}`}>
       {/* Social Discovery Header */}
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+      <div className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-6">
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-xl font-bold text-gray-900 flex items-center gap-2">
@@ -362,7 +362,7 @@ export default function SocialDiscoveryIntegration({
         <div className="space-y-4">
           {/* Search Bar */}
           <div className="relative">
-            <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+            <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -transecondary-y-1/2 w-5 h-5 text-gray-400" />
             <input
               type="text"
               value={searchQuery}
@@ -461,7 +461,7 @@ export default function SocialDiscoveryIntegration({
               layout
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow"
+              className="bg-white rounded-2xl shadow-sm border border-secondary-100 overflow-hidden hover:shadow-md transition-shadow"
             >
               {/* Match Header */}
               <div className="p-6 pb-4">
@@ -514,11 +514,11 @@ export default function SocialDiscoveryIntegration({
 
                 {/* Compatibility Scores */}
                 <div className="grid grid-cols-2 gap-3 mb-4">
-                  <div className="text-center p-2 bg-gray-50 rounded-lg">
+                  <div className="text-center p-2 bg-secondary-50 rounded-lg">
                     <div className="text-sm font-bold text-primary-600">{match.culturalScore}%</div>
                     <div className="text-xs text-secondary-600">{isPortuguese ? 'Cultural' : 'Cultural'}</div>
                   </div>
-                  <div className="text-center p-2 bg-gray-50 rounded-lg">
+                  <div className="text-center p-2 bg-secondary-50 rounded-lg">
                     <div className="text-sm font-bold text-secondary-600">{match.socialScore}%</div>
                     <div className="text-xs text-secondary-600">{isPortuguese ? 'Social' : 'Social'}</div>
                   </div>
@@ -539,7 +539,7 @@ export default function SocialDiscoveryIntegration({
                 </div>
 
                 {/* Recent Activity */}
-                <div className="mb-4 p-3 bg-gray-50 rounded-lg">
+                <div className="mb-4 p-3 bg-secondary-50 rounded-lg">
                   <div className="flex items-center gap-2 mb-1">
                     <CalendarIcon className="w-4 h-4 text-secondary-600" />
                     <span className="text-xs font-medium text-secondary-700">
@@ -644,11 +644,11 @@ export default function SocialDiscoveryIntegration({
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center p-4 bg-gray-50 rounded-lg">
+                  <div className="text-center p-4 bg-secondary-50 rounded-lg">
                     <div className="text-lg font-bold text-primary-600">{selectedMatch.culturalScore}%</div>
                     <div className="text-xs text-secondary-600">{isPortuguese ? 'Compatibilidade Cultural' : 'Cultural Compatibility'}</div>
                   </div>
-                  <div className="text-center p-4 bg-gray-50 rounded-lg">
+                  <div className="text-center p-4 bg-secondary-50 rounded-lg">
                     <div className="text-lg font-bold text-secondary-600">{selectedMatch.socialScore}%</div>
                     <div className="text-xs text-secondary-600">{isPortuguese ? 'Pontuação Social' : 'Social Score'}</div>
                   </div>

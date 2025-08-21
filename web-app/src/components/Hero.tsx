@@ -45,16 +45,16 @@ export default function Hero() {
           <div
             className={`space-y-6 sm:space-y-8 transition-all duration-1000 ${
               mounted
-                ? "opacity-100 translate-x-0"
-                : "opacity-0 -translate-x-12"
+                ? "opacity-100 transecondary-x-0"
+                : "opacity-0 -transecondary-x-12"
             }`}
           >
             {/* Smart Welcome Badge */}
             <div
               className={`inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-secondary-50 via-accent-50 to-action-50 border border-secondary-200 rounded-2xl px-4 sm:px-6 py-2 sm:py-3 shadow-lg transition-all duration-700 delay-100 ${
                 mounted
-                  ? "opacity-100 scale-100 translate-y-0"
-                  : "opacity-0 scale-95 -translate-y-5"
+                  ? "opacity-100 scale-100 transecondary-y-0"
+                  : "opacity-0 scale-95 -transecondary-y-5"
               }`}
             >
               <div className="flex items-center gap-2">
@@ -74,8 +74,8 @@ export default function Hero() {
             <div
               className={`space-y-4 transition-all duration-1000 delay-300 ${
                 mounted
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-5"
+                  ? "opacity-100 transecondary-y-0"
+                  : "opacity-0 transecondary-y-5"
               }`}
             >
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 leading-tight tracking-tight">
@@ -90,8 +90,8 @@ export default function Hero() {
             <div
               className={`transition-all duration-1000 delay-400 ${
                 mounted
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-5"
+                  ? "opacity-100 transecondary-y-0"
+                  : "opacity-0 transecondary-y-5"
               }`}
             >
               <SearchBar variant="homepage" className="max-w-3xl w-full" />
@@ -101,8 +101,8 @@ export default function Hero() {
             <div
               className={`grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 transition-all duration-1000 delay-600 ${
                 mounted
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-5"
+                  ? "opacity-100 transecondary-y-0"
+                  : "opacity-0 transecondary-y-5"
               }`}
             >
               <a
@@ -155,8 +155,8 @@ export default function Hero() {
             <div
               className={`transition-all duration-1000 delay-700 lg:hidden ${
                 mounted
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-5"
+                  ? "opacity-100 transecondary-y-0"
+                  : "opacity-0 transecondary-y-5"
               }`}
             >
               <div className="bg-white/60 backdrop-blur-lg rounded-2xl p-4 sm:p-6 border border-white/20 shadow-lg">
@@ -205,29 +205,29 @@ export default function Hero() {
             <div
               className={`flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6 transition-all duration-1000 delay-800 ${
                 mounted
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-5"
+                  ? "opacity-100 transecondary-y-0"
+                  : "opacity-0 transecondary-y-5"
               }`}
             >
               <a
                 href={ROUTES.events}
-                className="group relative text-base sm:text-lg font-bold px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden w-full sm:w-auto text-center"
+                className="group relative text-base sm:text-lg font-bold px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-transecondary-y-1 hover:scale-105 overflow-hidden w-full sm:w-auto text-center"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-secondary-700 via-action-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   {t("hero.cta.primary")}
-                  <ArrowRightIcon className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-200" />
+                  <ArrowRightIcon className="h-6 w-6 group-hover:transecondary-x-1 transition-transform duration-200" />
                 </span>
               </a>
               <a
                 href={ROUTES.services}
-                className="text-base sm:text-lg font-bold px-6 sm:px-8 py-3 sm:py-4 bg-white/70 backdrop-blur-lg text-secondary-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:text-secondary-700 hover:-translate-y-1 w-full sm:w-auto text-center"
+                className="text-base sm:text-lg font-bold px-6 sm:px-8 py-3 sm:py-4 bg-white/70 backdrop-blur-lg text-secondary-800 border-2 border-secondary-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:text-secondary-700 hover:-transecondary-y-1 w-full sm:w-auto text-center"
               >
                 {t("hero.cta.services", "Premium Services")}
               </a>
               <a
                 href={ROUTES.host}
-                className="group relative text-base sm:text-lg font-bold px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-premium-600 via-coral-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden w-full sm:w-auto text-center"
+                className="group relative text-base sm:text-lg font-bold px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-premium-600 via-coral-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-transecondary-y-1 hover:scale-105 overflow-hidden w-full sm:w-auto text-center"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-premium-700 via-coral-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative z-10 flex items-center justify-center gap-3">
@@ -241,7 +241,7 @@ export default function Hero() {
           {/* Right Column - Community Showcase */}
           <div
             className={`relative transition-all duration-1000 delay-600 ${
-              mounted ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
+              mounted ? "opacity-100 transecondary-x-0" : "opacity-0 transecondary-x-12"
             } self-start lg:-mt-8`}
           >
             <div className="relative z-10 bg-white/20 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/30">

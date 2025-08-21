@@ -350,9 +350,9 @@ export default function ConversationStarters({
         )}
 
         {unlockReason === 'both' && (
-          <div className="flex items-center gap-2 bg-purple-50 border border-purple-200 px-3 py-2 rounded-lg">
-            <SparklesIcon className="w-4 h-4 text-purple-600" />
-            <span className="text-sm font-medium text-purple-800">
+          <div className="flex items-center gap-2 bg-accent-50 border border-accent-200 px-3 py-2 rounded-lg">
+            <SparklesIcon className="w-4 h-4 text-accent-600" />
+            <span className="text-sm font-medium text-accent-800">
               {language === 'pt' ? 'Match + Eventos' : 'Match + Events'}
             </span>
           </div>

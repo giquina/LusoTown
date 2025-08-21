@@ -438,7 +438,7 @@ const LusoCommunityToken: React.FC = () => {
       case 'common': return 'text-secondary-600 bg-secondary-100';
       case 'uncommon': return 'text-action-600 bg-green-100';
       case 'rare': return 'text-primary-600 bg-blue-100';
-      case 'epic': return 'text-purple-600 bg-purple-100';
+      case 'epic': return 'text-accent-600 bg-accent-100';
       case 'legendary': return 'text-yellow-600 bg-yellow-100';
       default: return 'text-secondary-600 bg-secondary-100';
     }
@@ -484,7 +484,7 @@ const LusoCommunityToken: React.FC = () => {
                 <span>{language === 'pt' ? 'Conectar Carteira' : 'Connect Wallet'}</span>
               </motion.button>
             ) : (
-              <div className="bg-white border border-gray-200 rounded-lg px-6 py-3 flex items-center space-x-3 shadow-sm">
+              <div className="bg-white border border-secondary-200 rounded-lg px-6 py-3 flex items-center space-x-3 shadow-sm">
                 <div className="w-3 h-3 bg-action-500 rounded-full"></div>
                 <span className="text-sm font-medium text-secondary-700">
                   {language === 'pt' ? 'Carteira Conectada' : 'Wallet Connected'}
@@ -506,7 +506,7 @@ const LusoCommunityToken: React.FC = () => {
               <div className="text-sm text-gray-500">{language === 'pt' ? 'Disponível' : 'Available'}</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-purple-600">{formatTokenAmount(tokenBalance.staked)}</div>
+              <div className="text-3xl font-bold text-accent-600">{formatTokenAmount(tokenBalance.staked)}</div>
               <div className="text-sm text-gray-500">{language === 'pt' ? 'Investido' : 'Staked'}</div>
             </div>
             <div>
@@ -562,7 +562,7 @@ const LusoCommunityToken: React.FC = () => {
                       key={reward.id}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="bg-gray-50 rounded-xl p-6 hover:shadow-md transition-all duration-300"
+                      className="bg-secondary-50 rounded-xl p-6 hover:shadow-md transition-all duration-300"
                     >
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex-1">
@@ -602,7 +602,7 @@ const LusoCommunityToken: React.FC = () => {
                         
                         <div className="flex items-center justify-between">
                           <div className="flex items-center space-x-2">
-                            <div className="w-4 h-4 bg-purple-500 rounded-full"></div>
+                            <div className="w-4 h-4 bg-accent-500 rounded-full"></div>
                             <span className="text-xs text-secondary-600">
                               {language === 'pt' ? 'Significância Cultural:' : 'Cultural Significance:'} {reward.culturalSignificance}%
                             </span>
@@ -630,7 +630,7 @@ const LusoCommunityToken: React.FC = () => {
                       key={pool.id}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="bg-gradient-to-br from-white to-gray-50 rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-all duration-300"
+                      className="bg-gradient-to-br from-white to-gray-50 rounded-xl p-6 border border-secondary-200 hover:shadow-lg transition-all duration-300"
                     >
                       <div className="text-center mb-6">
                         <h3 className="text-xl font-bold text-secondary-800 mb-2">
@@ -725,7 +725,7 @@ const LusoCommunityToken: React.FC = () => {
                       key={proposal.id}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-all duration-300"
+                      className="bg-white border border-secondary-200 rounded-xl p-6 hover:shadow-md transition-all duration-300"
                     >
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex-1">
@@ -745,7 +745,7 @@ const LusoCommunityToken: React.FC = () => {
                           <p className="text-secondary-600 mb-3">
                             {language === 'pt' ? proposal.descriptionPt : proposal.description}
                           </p>
-                          <p className="text-sm text-purple-600 mb-3">
+                          <p className="text-sm text-accent-600 mb-3">
                             💡 {language === 'pt' ? proposal.culturalImpactPt : proposal.culturalImpact}
                           </p>
                         </div>
@@ -761,7 +761,7 @@ const LusoCommunityToken: React.FC = () => {
                           <div className="text-gray-500">{language === 'pt' ? 'Votos Contra' : 'Votes Against'}</div>
                         </div>
                         <div>
-                          <div className="font-semibold text-purple-600">{formatTokenAmount(proposal.fundingRequired)}</div>
+                          <div className="font-semibold text-accent-600">{formatTokenAmount(proposal.fundingRequired)}</div>
                           <div className="text-gray-500">{language === 'pt' ? 'Financiamento' : 'Funding'}</div>
                         </div>
                         <div>
@@ -808,7 +808,7 @@ const LusoCommunityToken: React.FC = () => {
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                             onClick={() => setSelectedProposal(proposal)}
-                            className="px-6 bg-gray-600 text-white py-3 rounded-lg font-semibold hover:bg-gray-700 transition-colors"
+                            className="px-6 bg-secondary-600 text-white py-3 rounded-lg font-semibold hover:bg-secondary-700 transition-colors"
                           >
                             <ChevronRight className="h-5 w-5" />
                           </motion.button>
@@ -835,7 +835,7 @@ const LusoCommunityToken: React.FC = () => {
                       className={`rounded-xl p-6 border-2 transition-all duration-300 ${
                         achievement.unlockedAt
                           ? 'bg-gradient-to-br from-yellow-50 to-amber-50 border-yellow-300 shadow-lg'
-                          : 'bg-white border-gray-200 hover:border-secondary-300'
+                          : 'bg-white border-secondary-200 hover:border-secondary-300'
                       }`}
                     >
                       <div className="text-center mb-4">
@@ -915,7 +915,7 @@ const LusoCommunityToken: React.FC = () => {
           </h2>
           <div className="space-y-4">
             {transactions.map((tx) => (
-              <div key={tx.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+              <div key={tx.id} className="flex items-center justify-between p-4 bg-secondary-50 rounded-lg">
                 <div className="flex items-center space-x-4">
                   <div className={`p-2 rounded-full ${
                     tx.type === 'earned' ? 'bg-green-100 text-action-600' :
@@ -935,7 +935,7 @@ const LusoCommunityToken: React.FC = () => {
                     <div className="text-sm text-gray-500">
                       {new Date(tx.timestamp).toLocaleDateString()}
                       {tx.culturalActivity && (
-                        <span className="ml-2 text-purple-600">• {tx.culturalActivity}</span>
+                        <span className="ml-2 text-accent-600">• {tx.culturalActivity}</span>
                       )}
                     </div>
                   </div>

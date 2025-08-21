@@ -73,7 +73,7 @@ export default function SubscriptionCancelledPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="bg-white rounded-xl p-6 shadow-lg border border-gray-200 mb-8"
+                className="bg-white rounded-xl p-6 shadow-lg border border-secondary-200 mb-8"
               >
                 <h2 className="text-xl font-bold text-gray-900 mb-4">
                   {isPortuguese ? 'O que aconteceu?' : 'What happened?'}
@@ -86,7 +86,7 @@ export default function SubscriptionCancelledPage() {
                 </p>
                 <div className="text-left space-y-2 text-sm text-secondary-600">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-gray-400 rounded-full" />
+                    <div className="w-2 h-2 bg-secondary-400 rounded-full" />
                     <span>
                       {isPortuguese 
                         ? 'Cancelou o processo de pagamento'
@@ -95,7 +95,7 @@ export default function SubscriptionCancelledPage() {
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-gray-400 rounded-full" />
+                    <div className="w-2 h-2 bg-secondary-400 rounded-full" />
                     <span>
                       {isPortuguese 
                         ? 'Problema temporário com o pagamento'
@@ -104,7 +104,7 @@ export default function SubscriptionCancelledPage() {
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-gray-400 rounded-full" />
+                    <div className="w-2 h-2 bg-secondary-400 rounded-full" />
                     <span>
                       {isPortuguese 
                         ? 'Fechou a janela do navegador'
@@ -123,7 +123,7 @@ export default function SubscriptionCancelledPage() {
                 className="grid md:grid-cols-3 gap-6 mb-8"
               >
                 {reasons.map((reason, index) => (
-                  <div key={index} className="bg-white rounded-xl p-6 shadow-lg border border-gray-200">
+                  <div key={index} className="bg-white rounded-xl p-6 shadow-lg border border-secondary-200">
                     <QuestionMarkCircleIcon className="w-8 h-8 text-primary-500 mx-auto mb-4" />
                     <h3 className="font-bold text-gray-900 mb-2">{reason.title}</h3>
                     <p className="text-sm text-secondary-600 mb-4">{reason.description}</p>
@@ -158,7 +158,7 @@ export default function SubscriptionCancelledPage() {
                 
                 <button
                   onClick={() => router.push('/')}
-                  className="border-2 border-secondary-300 text-secondary-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
+                  className="border-2 border-secondary-300 text-secondary-700 px-6 py-3 rounded-lg font-semibold hover:bg-secondary-50 transition-colors flex items-center justify-center gap-2"
                 >
                   <ArrowLeftIcon className="w-5 h-5" />
                   {isPortuguese ? 'Voltar ao Início' : 'Back to Home'}
@@ -170,7 +170,7 @@ export default function SubscriptionCancelledPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.8 }}
-                className="bg-gray-50 rounded-xl p-6 border border-gray-200"
+                className="bg-secondary-50 rounded-xl p-6 border border-secondary-200"
               >
                 <HeartIcon className="w-8 h-8 text-primary-500 mx-auto mb-4" />
                 <h3 className="font-bold text-gray-900 mb-2">

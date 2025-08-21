@@ -158,7 +158,7 @@ export default function UnifiedExperienceHub({
                   className="text-primary-600 font-semibold text-sm hover:text-primary-700 flex items-center group"
                 >
                   {isPortuguese ? "Explorar" : "Explore"}
-                  <ArrowRightIcon className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRightIcon className="w-4 h-4 ml-1 group-hover:transecondary-x-1 transition-transform" />
                 </button>
               </motion.div>
             ))}
@@ -178,7 +178,7 @@ export default function UnifiedExperienceHub({
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden"
+              className="bg-white rounded-xl shadow-lg border border-secondary-200 overflow-hidden"
             >
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
@@ -302,7 +302,7 @@ export default function UnifiedExperienceHub({
               key={pairing.eventId}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="bg-white rounded-xl shadow-lg border border-gray-200 p-6"
+              className="bg-white rounded-xl shadow-lg border border-secondary-200 p-6"
             >
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
                 <div className="flex-1 mb-4 lg:mb-0">
@@ -358,7 +358,7 @@ export default function UnifiedExperienceHub({
               : `You have ${connections.length} connections. Save up to 30% on group bookings!`}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-white rounded-lg p-4 border border-gray-200">
+            <div className="bg-white rounded-lg p-4 border border-secondary-200">
               <div className="flex items-center space-x-3 mb-3">
                 <Car className="w-6 h-6 text-primary-600" />
                 <div>
@@ -378,7 +378,7 @@ export default function UnifiedExperienceHub({
                 {isPortuguese ? "Criar Grupo" : "Create Group"}
               </button>
             </div>
-            <div className="bg-white rounded-lg p-4 border border-gray-200">
+            <div className="bg-white rounded-lg p-4 border border-secondary-200">
               <div className="flex items-center space-x-3 mb-3">
                 <Shield className="w-6 h-6 text-secondary-600" />
                 <div>
@@ -416,7 +416,7 @@ export default function UnifiedExperienceHub({
                 key={connection.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-white rounded-xl shadow-lg border border-gray-200 p-4"
+                className="bg-white rounded-xl shadow-lg border border-secondary-200 p-4"
               >
                 <div className="flex items-center space-x-4">
                   <img
@@ -511,7 +511,7 @@ export default function UnifiedExperienceHub({
 
       {/* Upgrade Benefits */}
       {!hasActiveSubscription && (
-        <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-xl shadow-lg border border-secondary-200 p-6">
           <h3 className="text-xl font-bold text-gray-900 mb-6">
             {isPortuguese
               ? "Desbloqueie Mais Benefícios"

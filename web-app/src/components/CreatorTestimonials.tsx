@@ -244,7 +244,7 @@ export default function CreatorTestimonials() {
       </div>
 
       {/* Main Testimonial Display */}
-      <div className="relative bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+      <div className="relative bg-white rounded-2xl shadow-lg border border-secondary-200 overflow-hidden">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentTestimonial}
@@ -321,7 +321,7 @@ export default function CreatorTestimonials() {
                 </div>
 
                 {/* Content Highlight */}
-                <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+                <div className="mt-6 p-4 bg-secondary-50 rounded-lg">
                   <h4 className="font-semibold text-gray-900 mb-2">
                     {isPt ? 'Especialização:' : 'Specialization:'}
                   </h4>
@@ -339,7 +339,7 @@ export default function CreatorTestimonials() {
                     {currentCreator.achievements.map((achievement, index) => (
                       <div 
                         key={index}
-                        className="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-200"
+                        className="flex items-center gap-3 p-3 bg-white rounded-lg border border-secondary-200"
                       >
                         <div className="p-2 bg-primary-100 rounded-lg">
                           <achievement.icon className="w-4 h-4 text-primary-600" />
@@ -386,7 +386,7 @@ export default function CreatorTestimonials() {
         <div className="absolute inset-y-0 left-4 flex items-center">
           <button
             onClick={prevTestimonial}
-            className="p-2 rounded-full bg-white shadow-lg border border-gray-200 hover:bg-gray-50 transition-colors"
+            className="p-2 rounded-full bg-white shadow-lg border border-secondary-200 hover:bg-secondary-50 transition-colors"
           >
             <ChevronLeft className="w-5 h-5 text-secondary-600" />
           </button>
@@ -394,7 +394,7 @@ export default function CreatorTestimonials() {
         <div className="absolute inset-y-0 right-4 flex items-center">
           <button
             onClick={nextTestimonial}
-            className="p-2 rounded-full bg-white shadow-lg border border-gray-200 hover:bg-gray-50 transition-colors"
+            className="p-2 rounded-full bg-white shadow-lg border border-secondary-200 hover:bg-secondary-50 transition-colors"
           >
             <ChevronRight className="w-5 h-5 text-secondary-600" />
           </button>
@@ -413,7 +413,7 @@ export default function CreatorTestimonials() {
             className={`w-3 h-3 rounded-full transition-colors ${
               index === currentTestimonial
                 ? 'bg-primary-600'
-                : 'bg-gray-300 hover:bg-gray-400'
+                : 'bg-secondary-300 hover:bg-secondary-400'
             }`}
           />
         ))}

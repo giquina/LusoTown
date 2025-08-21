@@ -53,15 +53,15 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
       whatsapp: 'bg-action-500',
       facebook: 'bg-primary-600',
       telegram: 'bg-primary-400',
-      discord: 'bg-indigo-600',
+      discord: 'bg-primary-600',
       linkedin: 'bg-primary-700',
       instagram: 'bg-pink-500',
-      signal: 'bg-gray-700',
+      signal: 'bg-secondary-700',
       meetup: 'bg-coral-500',
       reddit: 'bg-orange-500',
-      viber: 'bg-purple-500'
+      viber: 'bg-accent-500'
     }
-    return colors[platform] || 'bg-gray-500'
+    return colors[platform] || 'bg-secondary-500'
   }
 
   const getActivityLevelColor = (level: string) => {
@@ -69,9 +69,9 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
       very_high: 'text-action-600 bg-green-50',
       high: 'text-primary-600 bg-primary-50',
       medium: 'text-yellow-600 bg-yellow-50',
-      low: 'text-secondary-600 bg-gray-50'
+      low: 'text-secondary-600 bg-secondary-50'
     }
-    return colors[level as keyof typeof colors] || 'text-secondary-600 bg-gray-50'
+    return colors[level as keyof typeof colors] || 'text-secondary-600 bg-secondary-50'
   }
 
   const getPartnershipBadge = (status: string) => {
@@ -86,11 +86,11 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
       },
       affiliated: { 
         label: language === 'pt' ? 'Afiliado' : 'Affiliated', 
-        color: 'bg-purple-500 text-white'
+        color: 'bg-accent-500 text-white'
       },
       listed: { 
         label: language === 'pt' ? 'Listado' : 'Listed', 
-        color: 'bg-gray-500 text-white'
+        color: 'bg-secondary-500 text-white'
       }
     }
     return badges[status as keyof typeof badges] || badges.listed
@@ -107,7 +107,7 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
       
       if (result.success) {
         setJoinRequested(true)
-        alert(result.message)
+        toast.error(result.message)
       }
     } catch (error) {
       console.error('Error requesting to join network:', error)
@@ -115,9 +115,9 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
   }
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group">
+    <div className="bg-white rounded-2xl shadow-lg border border-secondary-100 overflow-hidden hover:shadow-xl transition-all duration-300 group">
       {/* Header with Platform and Partnership */}
-      <div className="p-4 border-b border-gray-100">
+      <div className="p-4 border-b border-secondary-100">
         <div className="flex items-center justify-between mb-2">
           <div className="flex items-center gap-3">
             <div className={`w-10 h-10 ${getPlatformColor(network.platform)} rounded-lg flex items-center justify-center text-white text-lg`}>
@@ -153,15 +153,15 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
         
         {/* Network Stats */}
         <div className="grid grid-cols-3 gap-3 mb-4 text-center">
-          <div className="bg-gray-50 rounded-lg p-3">
+          <div className="bg-secondary-50 rounded-lg p-3">
             <div className="text-lg font-bold text-primary-600">{network.memberCount.toLocaleString()}</div>
             <div className="text-xs text-secondary-600">{language === 'pt' ? 'Membros' : 'Members'}</div>
           </div>
-          <div className="bg-gray-50 rounded-lg p-3">
+          <div className="bg-secondary-50 rounded-lg p-3">
             <div className="text-lg font-bold text-secondary-600">{network.activeMembers.toLocaleString()}</div>
             <div className="text-xs text-secondary-600">{language === 'pt' ? 'Ativos' : 'Active'}</div>
           </div>
-          <div className="bg-gray-50 rounded-lg p-3">
+          <div className="bg-secondary-50 rounded-lg p-3">
             <div className="text-lg font-bold text-accent-600">{network.safetyRating}</div>
             <div className="text-xs text-secondary-600">{language === 'pt' ? 'Segurança' : 'Safety'}</div>
           </div>
@@ -204,7 +204,7 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
               </span>
             ))}
             {network.focus.length > 3 && (
-              <span className="px-2 py-1 bg-gray-50 text-secondary-600 text-xs rounded-full">
+              <span className="px-2 py-1 bg-secondary-50 text-secondary-600 text-xs rounded-full">
                 +{network.focus.length - 3} {language === 'pt' ? 'mais' : 'more'}
               </span>
             )}
@@ -294,12 +294,12 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
         </div>
         
         {/* Join Method Info */}
-        <div className="mb-4 p-3 bg-gray-50 rounded-lg">
+        <div className="mb-4 p-3 bg-secondary-50 rounded-lg">
           <div className="flex items-center gap-2 mb-1">
             {network.joinMethod === 'open' && <CheckBadgeIcon className="w-4 h-4 text-action-500" />}
             {network.joinMethod === 'invite_only' && <ExclamationTriangleIcon className="w-4 h-4 text-accent-500" />}
             {network.joinMethod === 'admin_approval' && <ShieldCheckIcon className="w-4 h-4 text-primary-500" />}
-            {network.joinMethod === 'partner_referral' && <StarIcon className="w-4 h-4 text-purple-500" />}
+            {network.joinMethod === 'partner_referral' && <StarIcon className="w-4 h-4 text-accent-500" />}
             <span className="text-sm font-medium text-gray-900">
               {network.joinMethod === 'open' && (language === 'pt' ? 'Acesso Aberto' : 'Open Access')}
               {network.joinMethod === 'invite_only' && (language === 'pt' ? 'Apenas por Convite' : 'Invite Only')}
@@ -414,14 +414,14 @@ export default function SocialNetworks() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center pt-20">
+      <div className="min-h-screen bg-secondary-50 flex items-center justify-center pt-20">
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-500"></div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-secondary-50 pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">

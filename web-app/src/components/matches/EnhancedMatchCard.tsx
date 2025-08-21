@@ -330,7 +330,7 @@ export default function EnhancedMatchCard({
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <MapPinIcon className="w-3 h-3 text-purple-500" />
+                    <MapPinIcon className="w-3 h-3 text-accent-500" />
                     <span className="text-xs text-secondary-700">
                       {language === "pt" ? `Ambos em ${profile.location}` : `Both in ${profile.location}`}
                     </span>
@@ -413,7 +413,7 @@ export default function EnhancedMatchCard({
               {profile.conversationStarters.slice(0, 3).map((starter) => (
                 <div
                   key={starter.id}
-                  className="border border-gray-200 rounded-xl p-3 bg-gray-50 opacity-60"
+                  className="border border-secondary-200 rounded-xl p-3 bg-secondary-50 opacity-60"
                 >
                   <div className="flex items-start justify-between mb-2">
                     <p className="text-sm text-secondary-600 leading-relaxed flex-1">
@@ -460,7 +460,7 @@ export default function EnhancedMatchCard({
         <div className="flex justify-center gap-6 mt-6 pt-4 border-t border-primary-100">
           <button
             onClick={() => onSkip(profile.id)}
-            className="w-16 h-16 bg-white border-3 border-gray-200 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:border-red-300 group"
+            className="w-16 h-16 bg-white border-3 border-secondary-200 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:border-red-300 group"
           >
             <XMarkIcon className="w-8 h-8 text-secondary-600 group-hover:text-coral-600 transition-colors" />
           </button>

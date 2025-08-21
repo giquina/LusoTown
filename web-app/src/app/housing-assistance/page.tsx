@@ -252,7 +252,7 @@ export default function HousingAssistancePage() {
           {activeTab === "browse" && (
             <div>
               {/* Search Filters */}
-              <div className="bg-white rounded-2xl shadow-lg p-6 mb-8 border border-gray-200">
+              <div className="bg-white rounded-2xl shadow-lg p-6 mb-8 border border-secondary-200">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-secondary-700 mb-2">
@@ -305,7 +305,7 @@ export default function HousingAssistancePage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300"
+                    className="bg-white rounded-2xl shadow-lg border border-secondary-200 overflow-hidden hover:shadow-xl transition-all duration-300"
                   >
                     <div className="p-6">
                       <div className="flex items-start justify-between mb-4">
@@ -345,7 +345,7 @@ export default function HousingAssistancePage() {
                         ))}
                       </div>
 
-                      <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <div className="flex items-center justify-between pt-4 border-t border-secondary-100">
                         <div className="text-xs text-gray-500">
                           {isPortuguese ? "Por" : "By"} {listing.postedBy}
                         </div>
@@ -378,7 +378,7 @@ export default function HousingAssistancePage() {
 
           {activeTab === "post" && (
             <div className="max-w-2xl mx-auto">
-              <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
+              <div className="bg-white rounded-2xl shadow-lg p-8 border border-secondary-200">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
                   {isPortuguese ? "Anunciar Habitação" : "Post Housing Listing"}
                 </h2>

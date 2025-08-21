@@ -171,7 +171,7 @@ export default function UserJourneyPage() {
 
   return (
     <>
-      <main className="min-h-screen bg-gray-50 pt-16">
+      <main className="min-h-screen bg-secondary-50 pt-16">
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white py-16">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -213,7 +213,7 @@ export default function UserJourneyPage() {
         </section>
 
         {/* Navigation Tabs */}
-        <section className="bg-white border-b border-gray-200 sticky top-16 z-30">
+        <section className="bg-white border-b border-secondary-200 sticky top-16 z-30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <nav className="flex space-x-8 overflow-x-auto">
               {tabs.map((tab) => {
@@ -284,7 +284,7 @@ export default function UserJourneyPage() {
                   className="space-y-8"
                 >
                   {/* Community Growth Metrics */}
-                  <div className="bg-white rounded-2xl p-8 border border-gray-200">
+                  <div className="bg-white rounded-2xl p-8 border border-secondary-200">
                     <h2 className="text-2xl font-bold text-gray-900 mb-6">
                       {isPortuguese ? 'Métricas da Comunidade' : 'Community Metrics'}
                     </h2>
@@ -313,12 +313,12 @@ export default function UserJourneyPage() {
                   </div>
 
                   {/* User Journey Flow */}
-                  <div className="bg-white rounded-2xl p-8 border border-gray-200">
+                  <div className="bg-white rounded-2xl p-8 border border-secondary-200">
                     <h3 className="text-xl font-bold text-gray-900 mb-6">
                       {isPortuguese ? 'Fluxo da Jornada do Utilizador' : 'User Journey Flow'}
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                      <div className="text-center p-6 border border-gray-200 rounded-xl">
+                      <div className="text-center p-6 border border-secondary-200 rounded-xl">
                         <div className="text-2xl font-bold text-primary-600 mb-2">
                           {analyticsData.userJourneyMetrics.discoveryToEngagement}
                         </div>
@@ -326,7 +326,7 @@ export default function UserJourneyPage() {
                           {isPortuguese ? 'Descoberta → Envolvimento' : 'Discovery → Engagement'}
                         </div>
                       </div>
-                      <div className="text-center p-6 border border-gray-200 rounded-xl">
+                      <div className="text-center p-6 border border-secondary-200 rounded-xl">
                         <div className="text-2xl font-bold text-secondary-600 mb-2">
                           {analyticsData.userJourneyMetrics.engagementToInvestment}
                         </div>
@@ -334,7 +334,7 @@ export default function UserJourneyPage() {
                           {isPortuguese ? 'Envolvimento → Investimento' : 'Engagement → Investment'}
                         </div>
                       </div>
-                      <div className="text-center p-6 border border-gray-200 rounded-xl">
+                      <div className="text-center p-6 border border-secondary-200 rounded-xl">
                         <div className="text-2xl font-bold text-accent-600 mb-2">
                           {analyticsData.userJourneyMetrics.investmentToAdvocacy}
                         </div>
@@ -346,13 +346,13 @@ export default function UserJourneyPage() {
                   </div>
 
                   {/* Top Conversion Paths */}
-                  <div className="bg-white rounded-2xl p-8 border border-gray-200">
+                  <div className="bg-white rounded-2xl p-8 border border-secondary-200">
                     <h3 className="text-xl font-bold text-gray-900 mb-6">
                       {isPortuguese ? 'Principais Caminhos de Conversão' : 'Top Conversion Paths'}
                     </h3>
                     <div className="space-y-4">
                       {analyticsData.topConversionPaths.map((path: any, index: number) => (
-                        <div key={index} className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                        <div key={index} className="flex items-center justify-between p-4 border border-secondary-200 rounded-lg">
                           <div className="flex-1">
                             <div className="font-semibold text-gray-900">{path.path}</div>
                             <div className="text-sm text-secondary-600">{path.users} {isPortuguese ? 'utilizadores' : 'users'}</div>
@@ -377,13 +377,13 @@ export default function UserJourneyPage() {
                   transition={{ duration: 0.3 }}
                   className="space-y-8"
                 >
-                  <div className="bg-white rounded-2xl p-8 border border-gray-200">
+                  <div className="bg-white rounded-2xl p-8 border border-secondary-200">
                     <h2 className="text-2xl font-bold text-gray-900 mb-6">
                       {isPortuguese ? 'Configurações da Jornada' : 'Journey Settings'}
                     </h2>
                     
                     <div className="space-y-6">
-                      <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                      <div className="flex items-center justify-between p-4 border border-secondary-200 rounded-lg">
                         <div>
                           <h3 className="font-semibold text-gray-900">
                             {isPortuguese ? 'Reiniciar Onboarding' : 'Reset Onboarding'}
@@ -403,7 +403,7 @@ export default function UserJourneyPage() {
                         </button>
                       </div>
 
-                      <div className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
+                      <div className="flex items-center justify-between p-4 border border-secondary-200 rounded-lg">
                         <div>
                           <h3 className="font-semibold text-gray-900">
                             {isPortuguese ? 'Limpar Dados de Progresso' : 'Clear Progress Data'}

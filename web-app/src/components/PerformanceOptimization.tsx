@@ -704,7 +704,7 @@ export default function PerformanceOptimization({
       {/* Performance Metrics */}
       {metrics && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="bg-white border border-gray-200 rounded-lg p-4">
+          <div className="bg-white border border-secondary-200 rounded-lg p-4">
             <div className="flex items-center space-x-2">
               <Clock className="h-5 w-5 text-primary-600" />
               <h3 className="font-medium text-gray-900">
@@ -719,7 +719,7 @@ export default function PerformanceOptimization({
             </p>
           </div>
 
-          <div className="bg-white border border-gray-200 rounded-lg p-4">
+          <div className="bg-white border border-secondary-200 rounded-lg p-4">
             <div className="flex items-center space-x-2">
               <Gauge className="h-5 w-5 text-action-600" />
               <h3 className="font-medium text-gray-900">LCP</h3>
@@ -732,9 +732,9 @@ export default function PerformanceOptimization({
             </p>
           </div>
 
-          <div className="bg-white border border-gray-200 rounded-lg p-4">
+          <div className="bg-white border border-secondary-200 rounded-lg p-4">
             <div className="flex items-center space-x-2">
-              <BarChart3 className="h-5 w-5 text-purple-600" />
+              <BarChart3 className="h-5 w-5 text-accent-600" />
               <h3 className="font-medium text-gray-900">CLS</h3>
             </div>
             <p className="text-2xl font-semibold text-gray-900 mt-2">
@@ -745,7 +745,7 @@ export default function PerformanceOptimization({
             </p>
           </div>
 
-          <div className="bg-white border border-gray-200 rounded-lg p-4">
+          <div className="bg-white border border-secondary-200 rounded-lg p-4">
             <div className="flex items-center space-x-2">
               {networkInfo.online ? (
                 <Wifi className="h-5 w-5 text-action-600" />
@@ -767,7 +767,7 @@ export default function PerformanceOptimization({
       )}
 
       {/* Cache Statistics */}
-      <div className="bg-white border border-gray-200 rounded-lg p-6">
+      <div className="bg-white border border-secondary-200 rounded-lg p-6">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-lg font-semibold text-gray-900 flex items-center space-x-2">
             <HardDrive className="h-5 w-5 text-secondary-600" />
@@ -824,7 +824,7 @@ export default function PerformanceOptimization({
       )}
 
       {/* Feature Toggles */}
-      <div className="bg-white border border-gray-200 rounded-lg p-6">
+      <div className="bg-white border border-secondary-200 rounded-lg p-6">
         <h3 className="text-lg font-semibold text-gray-900 mb-4">
           {language === 'pt' ? 'Otimizações Ativas' : 'Active Optimizations'}
         </h3>
@@ -845,11 +845,11 @@ export default function PerformanceOptimization({
             <button
               onClick={() => setLazyLoadingEnabled(!lazyLoadingEnabled)}
               className={`w-12 h-6 rounded-full transition-colors ${
-                lazyLoadingEnabled ? 'bg-action-600' : 'bg-gray-300'
+                lazyLoadingEnabled ? 'bg-action-600' : 'bg-secondary-300'
               }`}
             >
               <div className={`w-5 h-5 bg-white rounded-full transition-transform ${
-                lazyLoadingEnabled ? 'translate-x-6' : 'translate-x-1'
+                lazyLoadingEnabled ? 'transecondary-x-6' : 'transecondary-x-1'
               }`} />
             </button>
           </div>
@@ -869,18 +869,18 @@ export default function PerformanceOptimization({
             <button
               onClick={() => setImageOptimizationEnabled(!imageOptimizationEnabled)}
               className={`w-12 h-6 rounded-full transition-colors ${
-                imageOptimizationEnabled ? 'bg-primary-600' : 'bg-gray-300'
+                imageOptimizationEnabled ? 'bg-primary-600' : 'bg-secondary-300'
               }`}
             >
               <div className={`w-5 h-5 bg-white rounded-full transition-transform ${
-                imageOptimizationEnabled ? 'translate-x-6' : 'translate-x-1'
+                imageOptimizationEnabled ? 'transecondary-x-6' : 'transecondary-x-1'
               }`} />
             </button>
           </div>
 
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <Network className="h-5 w-5 text-purple-600" />
+              <Network className="h-5 w-5 text-accent-600" />
               <div>
                 <h4 className="font-medium text-gray-900">
                   {language === 'pt' ? 'Modo Rede Inteligente' : 'Network-Aware Mode'}
@@ -893,11 +893,11 @@ export default function PerformanceOptimization({
             <button
               onClick={() => setNetworkAwareEnabled(!networkAwareEnabled)}
               className={`w-12 h-6 rounded-full transition-colors ${
-                networkAwareEnabled ? 'bg-purple-600' : 'bg-gray-300'
+                networkAwareEnabled ? 'bg-accent-600' : 'bg-secondary-300'
               }`}
             >
               <div className={`w-5 h-5 bg-white rounded-full transition-transform ${
-                networkAwareEnabled ? 'translate-x-6' : 'translate-x-1'
+                networkAwareEnabled ? 'transecondary-x-6' : 'transecondary-x-1'
               }`} />
             </button>
           </div>

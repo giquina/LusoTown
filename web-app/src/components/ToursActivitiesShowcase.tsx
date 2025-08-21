@@ -3,7 +3,6 @@
 import React, { useState, memo, useMemo } from "react";
 import { ROUTES } from '@/config'
 import { motion } from "framer-motion";
-import { ROUTES } from '@/config'
 import {
   MapPinIcon,
   ClockIcon,
@@ -419,7 +418,7 @@ const TourFilters = memo(({ activeFilter, onFilterChange }: {
           className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
             activeFilter === filter.key
               ? 'bg-gradient-to-r from-secondary-500 to-primary-500 text-white shadow-lg'
-              : 'bg-white text-secondary-700 border border-gray-200 hover:border-secondary-300 hover:text-secondary-600'
+              : 'bg-white text-secondary-700 border border-secondary-200 hover:border-secondary-300 hover:text-secondary-600'
           }`}
         >
           {t(filter.label)}
@@ -461,7 +460,7 @@ const TrustIndicators = memo(() => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: index * 0.1 }}
-          className="flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-gray-100 shadow-sm"
+          className="flex items-center gap-3 bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-secondary-100 shadow-sm"
         >
           <div className="flex-shrink-0 w-10 h-10 bg-secondary-100 text-secondary-600 rounded-lg flex items-center justify-center">
             {feature.icon}
@@ -578,7 +577,7 @@ const ToursActivitiesShowcase = memo(() => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="bg-white rounded-3xl shadow-xl border border-gray-100/50 overflow-hidden group h-full flex flex-col hover:shadow-2xl transition-all duration-300"
+              className="bg-white rounded-3xl shadow-xl border border-secondary-100/50 overflow-hidden group h-full flex flex-col hover:shadow-2xl transition-all duration-300"
             >
               {/* Tour Image */}
               <div className="h-48 relative overflow-hidden">
@@ -669,7 +668,7 @@ const ToursActivitiesShowcase = memo(() => {
                 </div>
 
                 {/* Guide Info */}
-                <div className="bg-gray-50 rounded-xl p-3 mb-4">
+                <div className="bg-secondary-50 rounded-xl p-3 mb-4">
                   <div className="flex items-center gap-3">
                     <img
                       src={tour.guide.image}
@@ -776,7 +775,7 @@ const ToursActivitiesShowcase = memo(() => {
                   ) : (
                     <button
                       disabled
-                      className="w-full bg-gray-400 text-white font-semibold py-4 rounded-2xl cursor-not-allowed min-h-[44px] flex items-center justify-center"
+                      className="w-full bg-secondary-400 text-white font-semibold py-4 rounded-2xl cursor-not-allowed min-h-[44px] flex items-center justify-center"
                     >
                       Fully Booked - {tour.nextAvailableDate}
                     </button>
@@ -805,11 +804,11 @@ const ToursActivitiesShowcase = memo(() => {
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link
-                href="/tours"
-                className="inline-flex items-center bg-white text-secondary-600 font-bold px-10 py-4 rounded-2xl hover:bg-gray-50 transition-all duration-300 group shadow-xl hover:shadow-2xl min-h-[44px]"
+                href={ROUTES.tours}
+                className="inline-flex items-center bg-white text-secondary-600 font-bold px-10 py-4 rounded-2xl hover:bg-secondary-50 transition-all duration-300 group shadow-xl hover:shadow-2xl min-h-[44px]"
               >
                 {t('tours.showcase.view_all_tours')}
-                <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:transecondary-x-1 transition-transform" />
               </Link>
               <Link
                 href={ROUTES.auth.signup}

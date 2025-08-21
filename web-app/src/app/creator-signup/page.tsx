@@ -320,7 +320,7 @@ export default function CreatorSignupPage() {
               </button>
               <button
                 onClick={() => setActiveTab('calculator')}
-                className="px-8 py-4 bg-white hover:bg-gray-50 text-gray-900 border-2 border-gray-200 rounded-xl font-semibold text-lg flex items-center justify-center gap-2 transition-all"
+                className="px-8 py-4 bg-white hover:bg-secondary-50 text-gray-900 border-2 border-secondary-200 rounded-xl font-semibold text-lg flex items-center justify-center gap-2 transition-all"
               >
                 <DollarSign className="w-5 h-5" />
                 {isPt ? 'Calcular Ganhos' : 'Calculate Earnings'}
@@ -331,7 +331,7 @@ export default function CreatorSignupPage() {
       </section>
 
       {/* Navigation Tabs */}
-      <section className="bg-white border-b border-gray-200 sticky top-16 lg:top-20 z-40">
+      <section className="bg-white border-b border-secondary-200 sticky top-16 lg:top-20 z-40">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center">
             <nav className="flex space-x-1 p-2 bg-secondary-100 rounded-xl">
@@ -390,7 +390,7 @@ export default function CreatorSignupPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.1 }}
-                        className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow"
+                        className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6 hover:shadow-md transition-shadow"
                       >
                         <div className={`w-12 h-12 bg-gradient-to-r ${region.color} rounded-xl flex items-center justify-center text-white text-2xl mb-4`}>
                           {region.flag}
@@ -431,10 +431,10 @@ export default function CreatorSignupPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.1 }}
-                        className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-all hover:border-primary-200"
+                        className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6 hover:shadow-md transition-all hover:border-primary-200"
                       >
                         <div className="flex items-start gap-4">
-                          <div className="bg-gray-50 p-3 rounded-xl">
+                          <div className="bg-secondary-50 p-3 rounded-xl">
                             <category.icon className={`w-6 h-6 ${category.color}`} />
                           </div>
                           <div className="flex-1">
@@ -477,7 +477,7 @@ export default function CreatorSignupPage() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.1 }}
-                        className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow"
+                        className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6 hover:shadow-md transition-shadow"
                       >
                         <div className="flex items-start gap-4">
                           <div className={`p-3 rounded-xl ${stream.color}`}>
@@ -533,7 +533,7 @@ export default function CreatorSignupPage() {
       </div>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-secondary-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -552,11 +552,11 @@ export default function CreatorSignupPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-xl shadow-sm border border-gray-200"
+                  className="bg-white rounded-xl shadow-sm border border-secondary-200"
                 >
                   <button
                     onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
-                    className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                    className="w-full p-6 text-left flex items-center justify-between hover:bg-secondary-50 transition-colors"
                   >
                     <h3 className="font-semibold text-gray-900 pr-4">{faq.question}</h3>
                     {expandedFaq === index ? (

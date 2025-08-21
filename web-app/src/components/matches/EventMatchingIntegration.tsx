@@ -271,10 +271,10 @@ export default function EventMatchingIntegration({
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
                   eventMatchingEnabled
                     ? 'bg-green-100 text-green-700 border border-green-200'
-                    : 'bg-secondary-100 text-secondary-600 border border-gray-200'
+                    : 'bg-secondary-100 text-secondary-600 border border-secondary-200'
                 }`}
               >
-                <div className={`w-2 h-2 rounded-full ${eventMatchingEnabled ? 'bg-action-500' : 'bg-gray-400'}`} />
+                <div className={`w-2 h-2 rounded-full ${eventMatchingEnabled ? 'bg-action-500' : 'bg-secondary-400'}`} />
                 {language === "pt" ? "Ativo" : "Active"}
               </button>
               
@@ -302,7 +302,7 @@ export default function EventMatchingIntegration({
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl border border-gray-200"
+                    className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl border border-secondary-200"
                   >
                     <div className="flex items-center justify-between mb-2">
                       <div className={`p-2 rounded-lg ${stat.color}`}>
@@ -387,7 +387,7 @@ export default function EventMatchingIntegration({
               <button
                 key={section.key}
                 onClick={() => setActiveSection(section.key as any)}
-                className="p-4 bg-white border border-gray-200 rounded-xl hover:shadow-lg transition-all text-left group"
+                className="p-4 bg-white border border-secondary-200 rounded-xl hover:shadow-lg transition-all text-left group"
               >
                 <div className={`w-10 h-10 bg-gradient-to-r ${section.color} rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
                   <section.icon className="w-5 h-5 text-white" />

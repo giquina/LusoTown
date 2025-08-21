@@ -15,11 +15,11 @@ export default function NetworkBadges({ achievements }: NetworkBadgesProps) {
 
   const getAchievementColor = (type: string) => {
     const colors = {
-      connector: 'from-blue-500 to-purple-500',
+      connector: 'from-blue-500 to-accent-500',
       regular_attendee: 'from-green-500 to-emerald-500',
       event_starter: 'from-orange-500 to-red-500',
-      culture_preserver: 'from-indigo-500 to-blue-500',
-      community_builder: 'from-purple-500 to-pink-500'
+      culture_preserver: 'from-primary-500 to-blue-500',
+      community_builder: 'from-accent-500 to-pink-500'
     }
     return colors[type as keyof typeof colors] || 'from-gray-500 to-gray-600'
   }
@@ -61,7 +61,7 @@ export default function NetworkBadges({ achievements }: NetworkBadgesProps) {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl hover:bg-secondary-100 transition-colors"
+              className="flex items-center gap-3 p-3 bg-secondary-50 rounded-xl hover:bg-secondary-100 transition-colors"
             >
               {/* Achievement Icon */}
               <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${getAchievementColor(achievement.type)} flex items-center justify-center text-white text-lg shadow-md`}>

@@ -229,7 +229,7 @@ export default function AdminDashboard() {
     const badges = {
       free: { icon: <UserIcon className="w-3 h-3" />, color: 'bg-secondary-100 text-secondary-600', label: 'Free' },
       core: { icon: <Star className="w-3 h-3" />, color: 'bg-[#FF6B6B] text-white', label: 'Core' },
-      premium: { icon: <Crown className="w-3 h-3" />, color: 'bg-gradient-to-r from-purple-500 to-pink-500 text-white', label: 'Premium' }
+      premium: { icon: <Crown className="w-3 h-3" />, color: 'bg-gradient-to-r from-accent-500 to-pink-500 text-white', label: 'Premium' }
     }
     return badges[tier as keyof typeof badges] || badges.free
   }
@@ -248,7 +248,7 @@ export default function AdminDashboard() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-secondary-50 flex items-center justify-center">
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#FF6B6B]"></div>
       </div>
     )
@@ -259,7 +259,7 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       {/* Header */}
       <div className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -271,7 +271,7 @@ export default function AdminDashboard() {
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
                 <div className="flex items-center space-x-2">
-                  <Shield className="w-4 h-4 text-purple-600" />
+                  <Shield className="w-4 h-4 text-accent-600" />
                   <span className="text-sm text-secondary-600">Welcome back, {user.name}</span>
                 </div>
               </div>
@@ -301,7 +301,7 @@ export default function AdminDashboard() {
           <div className="lg:col-span-1">
             <div className="bg-white rounded-xl shadow-sm p-6">
               <div className="text-center mb-6">
-                <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
+                <div className="w-20 h-20 bg-gradient-to-r from-accent-500 to-pink-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
                   <Shield className="w-8 h-8" />
                 </div>
                 <h3 className="font-semibold text-gray-900">Admin Panel</h3>
@@ -321,7 +321,7 @@ export default function AdminDashboard() {
                     onClick={() => setActiveTab(tab.id)}
                     className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors ${
                       activeTab === tab.id
-                        ? 'bg-purple-600 text-white'
+                        ? 'bg-accent-600 text-white'
                         : 'text-secondary-600 hover:bg-secondary-100'
                     }`}
                   >
@@ -374,7 +374,7 @@ export default function AdminDashboard() {
                         <p className="text-2xl font-bold text-gray-900">{ADMIN_STATS.totalEvents}</p>
                         <p className="text-primary-600 text-sm">{ADMIN_STATS.upcomingEvents} upcoming</p>
                       </div>
-                      <Calendar className="w-8 h-8 text-purple-500" />
+                      <Calendar className="w-8 h-8 text-accent-500" />
                     </div>
                   </div>
 
@@ -401,7 +401,7 @@ export default function AdminDashboard() {
                       const badge = getMembershipBadge(tier)
                       const percentage = Math.round((count / ADMIN_STATS.totalUsers) * 100)
                       return (
-                        <div key={tier} className="p-4 border border-gray-200 rounded-lg">
+                        <div key={tier} className="p-4 border border-secondary-200 rounded-lg">
                           <div className="flex items-center space-x-2 mb-2">
                             {badge.icon}
                             <span className={`px-2 py-1 rounded-full text-xs font-medium ${badge.color}`}>
@@ -422,23 +422,23 @@ export default function AdminDashboard() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     <button 
                       onClick={() => setActiveTab('users')}
-                      className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-center"
+                      className="p-4 border border-secondary-200 rounded-lg hover:bg-secondary-50 transition-colors text-center"
                     >
                       <Users className="w-6 h-6 text-[#FF6B6B] mx-auto mb-2" />
                       <p className="text-sm font-medium">Manage Users</p>
                     </button>
                     <button 
                       onClick={() => setActiveTab('events')}
-                      className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-center"
+                      className="p-4 border border-secondary-200 rounded-lg hover:bg-secondary-50 transition-colors text-center"
                     >
                       <Plus className="w-6 h-6 text-[#4ECDC4] mx-auto mb-2" />
                       <p className="text-sm font-medium">Create Event</p>
                     </button>
-                    <button className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-center">
-                      <MessageCircle className="w-6 h-6 text-purple-500 mx-auto mb-2" />
+                    <button className="p-4 border border-secondary-200 rounded-lg hover:bg-secondary-50 transition-colors text-center">
+                      <MessageCircle className="w-6 h-6 text-accent-500 mx-auto mb-2" />
                       <p className="text-sm font-medium">Moderation Queue</p>
                     </button>
-                    <button className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-center">
+                    <button className="p-4 border border-secondary-200 rounded-lg hover:bg-secondary-50 transition-colors text-center">
                       <Settings className="w-6 h-6 text-orange-500 mx-auto mb-2" />
                       <p className="text-sm font-medium">Platform Settings</p>
                     </button>
@@ -455,7 +455,7 @@ export default function AdminDashboard() {
                     <button className="px-4 py-2 bg-[#FF6B6B] text-white rounded-lg hover:bg-[#e55a5a] transition-colors text-sm">
                       Export Users
                     </button>
-                    <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 transition-colors text-sm">
+                    <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-secondary-50 transition-colors text-sm">
                       Filter Users
                     </button>
                   </div>
@@ -464,7 +464,7 @@ export default function AdminDashboard() {
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <thead>
-                      <tr className="border-b border-gray-200">
+                      <tr className="border-b border-secondary-200">
                         <th className="text-left py-3 px-4 font-medium text-secondary-700">User</th>
                         <th className="text-left py-3 px-4 font-medium text-secondary-700">Email</th>
                         <th className="text-left py-3 px-4 font-medium text-secondary-700">Membership</th>
@@ -478,7 +478,7 @@ export default function AdminDashboard() {
                         const membershipBadge = getMembershipBadge(user.membershipTier)
                         const statusBadge = getStatusBadge(user.status)
                         return (
-                          <tr key={user.id} className="border-b border-gray-100 hover:bg-gray-50">
+                          <tr key={user.id} className="border-b border-secondary-100 hover:bg-secondary-50">
                             <td className="py-4 px-4">
                               <div className="flex items-center space-x-3">
                                 <div className="w-10 h-10 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] rounded-full flex items-center justify-center text-white text-sm font-bold">
@@ -541,7 +541,7 @@ export default function AdminDashboard() {
                     const statusBadge = getStatusBadge(event.status)
                     const membershipBadge = getMembershipBadge(event.membershipRequired)
                     return (
-                      <div key={event.id} className="border border-gray-200 rounded-xl p-4 hover:shadow-md transition-shadow">
+                      <div key={event.id} className="border border-secondary-200 rounded-xl p-4 hover:shadow-md transition-shadow">
                         <div className="flex justify-between items-start mb-3">
                           <h3 className="font-semibold text-gray-900 text-sm">{event.title}</h3>
                           <div className="flex space-x-1">

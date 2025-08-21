@@ -24,7 +24,7 @@ export default function ProgressTracker({
   const timeRemaining = Math.max(1, Math.ceil((totalSteps - currentStep + 1) * 0.5)) // 30 seconds per step
   
   return (
-    <div className="bg-gradient-to-r from-secondary-50 to-accent-50 border-b border-gray-200">
+    <div className="bg-gradient-to-r from-secondary-50 to-accent-50 border-b border-secondary-200">
       <div className="px-4 sm:px-6 py-4">
         {/* Header Info */}
         <div className="flex items-center justify-between mb-4">
@@ -46,7 +46,7 @@ export default function ProgressTracker({
           </div>
           
           {/* SIA Badge */}
-          <div className="flex items-center space-x-2 bg-white px-3 py-2 rounded-lg border border-gray-200">
+          <div className="flex items-center space-x-2 bg-white px-3 py-2 rounded-lg border border-secondary-200">
             <div className="w-8 h-8 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-full flex items-center justify-center">
               <CheckIcon className="w-4 h-4 text-white" />
             </div>

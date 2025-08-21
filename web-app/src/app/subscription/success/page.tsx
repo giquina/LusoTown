@@ -108,7 +108,7 @@ function SuccessPageContent() {
                     </p>
                     
                     {/* Welcome Badge */}
-                    <div className="inline-flex items-center gap-3 bg-white rounded-full px-6 py-3 shadow-lg border border-gray-200">
+                    <div className="inline-flex items-center gap-3 bg-white rounded-full px-6 py-3 shadow-lg border border-secondary-200">
                       <HeartIcon className="w-5 h-5 text-primary-500" />
                       <span className="font-semibold text-gray-900">
                         {isPortuguese ? 'Membro Ativo da LusoTown' : 'Active LusoTown Member'}
@@ -135,7 +135,7 @@ function SuccessPageContent() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3 + index * 0.1 }}
-                            className="bg-white rounded-xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-shadow"
+                            className="bg-white rounded-xl p-6 shadow-lg border border-secondary-200 hover:shadow-xl transition-shadow"
                           >
                             <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
                               <IconComponent className="w-6 h-6 text-primary-600" />

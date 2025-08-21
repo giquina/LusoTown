@@ -189,7 +189,7 @@ export default function Footer() {
         </div>
 
         {/* Newsletter Signup */}
-        <div className="mt-16 pt-8 border-t border-gray-800">
+        <div className="mt-16 pt-8 border-t border-secondary-800">
           <div className="max-w-md">
             <h3 className="text-lg font-semibold mb-4 text-white">
               {t("footer.newsletter.title")}
@@ -201,7 +201,7 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-secondary-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent min-w-0 min-h-[44px]"
+                className="flex-1 px-4 py-3 bg-secondary-800 border border-secondary-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent min-w-0 min-h-[44px]"
               />
               <button
                 type="submit"
@@ -215,7 +215,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Footer */}
-      <div className="border-t border-gray-800">
+      <div className="border-t border-secondary-800">
         <div className="container-width py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm break-words leading-relaxed">

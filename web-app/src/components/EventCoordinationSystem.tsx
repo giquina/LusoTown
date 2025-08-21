@@ -494,7 +494,7 @@ export default function EventCoordinationSystem({
   return (
     <div className={`space-y-6 ${className}`}>
       {/* Header */}
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+      <div className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-6">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 mb-6">
           <div>
             <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
@@ -579,7 +579,7 @@ export default function EventCoordinationSystem({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow"
+            className="bg-white rounded-2xl shadow-sm border border-secondary-100 overflow-hidden hover:shadow-md transition-shadow"
           >
             <div className="p-6">
               {/* Event Header */}
@@ -587,7 +587,7 @@ export default function EventCoordinationSystem({
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-2">
                     <div className={`p-2 rounded-lg bg-gradient-to-r ${
-                      event.category === 'cultural' ? 'from-purple-500 to-violet-500' :
+                      event.category === 'cultural' ? 'from-accent-500 to-violet-500' :
                       event.category === 'social' ? 'from-blue-500 to-cyan-500' :
                       event.category === 'professional' ? 'from-green-500 to-emerald-500' :
                       event.category === 'food' ? 'from-orange-500 to-amber-500' :
@@ -767,7 +767,7 @@ export default function EventCoordinationSystem({
               )}
 
               {/* Actions */}
-              <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+              <div className="flex items-center justify-between pt-4 border-t border-secondary-100">
                 <div className="flex gap-2">
                   {!event.rsvpStatus && (
                     <>

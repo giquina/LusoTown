@@ -137,7 +137,7 @@ export default function TermsOfService() {
         </section>
 
         {/* Main Content */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-secondary-50">
           <div className="container-width">
             <div className="max-w-4xl mx-auto space-y-12">
               {/* Eligibility and Account Creation */}
@@ -320,7 +320,7 @@ export default function TermsOfService() {
                       Membership Tiers
                     </h3>
                     <div className="grid md:grid-cols-3 gap-4">
-                      <div className="bg-gray-50 rounded-lg p-4">
+                      <div className="bg-secondary-50 rounded-lg p-4">
                         <h4 className="font-semibold text-gray-900 mb-2">
                           Free Membership
                         </h4>
@@ -376,7 +376,7 @@ export default function TermsOfService() {
                         </p>
                       </div>
                       <div className="flex items-start">
-                        <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-accent-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                         <p>
                           <strong>Platform integrity:</strong> Do not attempt to
                           hack, exploit, or reverse engineer our system

@@ -463,13 +463,13 @@ export default function NeighborhoodGroups() {
         </section>
 
         {/* Search and Filter Section */}
-        <section className="py-8 bg-white border-b border-gray-200">
+        <section className="py-8 bg-white border-b border-secondary-200">
           <div className="container-width">
             <div className="max-w-4xl mx-auto">
               <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
                 {/* Search Bar */}
                 <div className="relative flex-1 max-w-md">
-                  <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                  <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -transecondary-y-1/2 h-5 w-5 text-gray-400" />
                   <input
                     type="text"
                     placeholder={isPortuguese ? 'Procurar bairros...' : 'Search neighborhoods...'}
@@ -537,7 +537,7 @@ export default function NeighborhoodGroups() {
         </section>
 
         {/* Neighborhood Groups Directory */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-secondary-50">
           <div className="container-width">
             <div className="max-w-7xl mx-auto">
               <motion.div
@@ -571,7 +571,7 @@ export default function NeighborhoodGroups() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 * index, duration: 0.6 }}
-                    className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300"
+                    className="bg-white rounded-2xl shadow-lg border border-secondary-200 overflow-hidden hover:shadow-xl transition-all duration-300"
                   >
                     <div className="p-6">
                       {/* Header */}
@@ -635,7 +635,7 @@ export default function NeighborhoodGroups() {
                       </p>
 
                       {/* Displacement Status */}
-                      <div className="bg-gray-50 rounded-lg p-3 mb-4">
+                      <div className="bg-secondary-50 rounded-lg p-3 mb-4">
                         <p className="text-xs text-secondary-600 font-medium mb-1">
                           {isPortuguese ? 'Estado da Comunidade:' : 'Community Status:'}
                         </p>
@@ -1032,7 +1032,7 @@ export default function NeighborhoodGroups() {
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-10">
                   <a 
                     href="#neighborhood-groups" 
-                    className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 hover:from-secondary-700 hover:via-primary-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+                    className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 hover:from-secondary-700 hover:via-primary-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-transecondary-y-1 hover:scale-105"
                   >
                     {isPortuguese ? 'Encontrar Grupo' : 'Find Group'}
                     <ArrowRightIcon className="h-6 w-6 ml-3" />
@@ -1191,7 +1191,7 @@ export default function NeighborhoodGroups() {
                 <button
                   type="button"
                   onClick={() => setShowCreateForm(false)}
-                  className="px-6 py-3 border-2 border-secondary-300 text-secondary-600 rounded-xl hover:bg-gray-50 transition-all duration-300 font-semibold"
+                  className="px-6 py-3 border-2 border-secondary-300 text-secondary-600 rounded-xl hover:bg-secondary-50 transition-all duration-300 font-semibold"
                 >
                   {isPortuguese ? 'Cancelar' : 'Cancel'}
                 </button>

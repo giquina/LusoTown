@@ -174,7 +174,7 @@ export default function ForgotPassword() {
                 </form>
                 
                 {/* Footer Links */}
-                <div className="mt-6 pt-6 border-t border-gray-200">
+                <div className="mt-6 pt-6 border-t border-secondary-200">
                   <div className="flex flex-col space-y-3">
                     <a
                       href={ROUTES.login}
@@ -232,7 +232,7 @@ export default function ForgotPassword() {
         </section>
 
         {/* Security Notice */}
-        <section className="py-12 bg-gray-50">
+        <section className="py-12 bg-secondary-50">
           <div className="container-width">
             <div className="max-w-2xl mx-auto">
               <div className="bg-secondary-100 rounded-xl p-6 text-center">

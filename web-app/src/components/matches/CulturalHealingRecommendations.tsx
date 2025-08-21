@@ -84,7 +84,7 @@ const culturalActivities: CulturalActivity[] = [
     emotionalBenefit: 'Emotional release and cultural connection',
     culturalConnection: 10,
     icon: MusicalNoteIcon,
-    color: 'from-purple-500 to-pink-500',
+    color: 'from-accent-500 to-pink-500',
     healingPotential: 9,
   },
   {
@@ -160,7 +160,7 @@ const culturalActivities: CulturalActivity[] = [
     emotionalBenefit: 'Intellectual and emotional stimulation',
     culturalConnection: 8,
     icon: BookOpenIcon,
-    color: 'from-indigo-500 to-purple-500',
+    color: 'from-primary-500 to-accent-500',
     healingPotential: 6,
   },
   {
@@ -485,7 +485,7 @@ export default function CulturalHealingRecommendations({
               key={activity.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+              className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100 hover:shadow-xl transition-all duration-300"
             >
               {/* Header */}
               <div className="flex items-start gap-4 mb-4">
@@ -569,7 +569,7 @@ export default function CulturalHealingRecommendations({
                 </button>
                 <button
                   onClick={() => onScheduleActivity(activity.id)}
-                  className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg text-sm font-medium hover:bg-gray-50 transition-colors"
+                  className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg text-sm font-medium hover:bg-secondary-50 transition-colors"
                 >
                   {language === 'pt' ? 'Agendar' : 'Schedule'}
                 </button>

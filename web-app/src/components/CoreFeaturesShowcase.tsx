@@ -128,9 +128,9 @@ const coreFeatures: CoreFeature[] = [
     },
     ctaKey: 'core_features.tours.cta',
     ctaUrl: '/tours',
-    gradient: 'from-violet-500 via-purple-500 to-indigo-500',
+    gradient: 'from-violet-500 via-accent-500 to-primary-500',
     accentColor: 'text-violet-600',
-    bgPattern: 'bg-gradient-to-br from-violet-50/60 via-purple-50/40 to-indigo-50/30',
+    bgPattern: 'bg-gradient-to-br from-violet-50/60 via-accent-50/40 to-primary-50/30',
     liveActivity: {
       count: 5,
       labelKey: 'core_features.tours.live_activity'
@@ -182,9 +182,9 @@ const coreFeatures: CoreFeature[] = [
     },
     ctaKey: 'core_features.community.cta',
     ctaUrl: '/community',
-    gradient: 'from-blue-500 via-indigo-500 to-purple-500',
+    gradient: 'from-blue-500 via-primary-500 to-accent-500',
     accentColor: 'text-primary-600',
-    bgPattern: 'bg-gradient-to-br from-blue-50/60 via-indigo-50/40 to-purple-50/30',
+    bgPattern: 'bg-gradient-to-br from-blue-50/60 via-primary-50/40 to-accent-50/30',
     liveActivity: {
       count: 67,
       labelKey: 'core_features.community.live_activity'
@@ -302,7 +302,7 @@ export default function CoreFeaturesShowcase() {
               </div>
               <div className="flex flex-wrap items-center justify-center gap-4">
                 {audienceSegments.map((segment, index) => (
-                  <div key={index} className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-gray-200/60 rounded-full px-4 py-2 shadow-md">
+                  <div key={index} className="flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-secondary-200/60 rounded-full px-4 py-2 shadow-md">
                     <div className={`w-3 h-3 rounded-full ${segment.color}`} />
                     <span className="text-sm font-medium text-secondary-700">
                       {t(segment.labelKey)} ({segment.count})
@@ -350,7 +350,7 @@ export default function CoreFeaturesShowcase() {
                 <div className={`min-h-[600px] lg:min-h-[700px] p-8 lg:p-12 ${currentFeature.bgPattern} backdrop-blur-sm border border-white/60 shadow-2xl transition-all duration-500 transform`}>
                   {/* Live Activity Indicator */}
                   {currentFeature.liveActivity && (
-                    <div className="absolute top-6 right-6 flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-gray-200/60 rounded-full px-4 py-2 shadow-lg">
+                    <div className="absolute top-6 right-6 flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-secondary-200/60 rounded-full px-4 py-2 shadow-lg">
                       <div className="w-2 h-2 bg-action-500 rounded-full animate-pulse" />
                       <span className="text-sm font-semibold text-secondary-800">
                         {currentFeature.liveActivity.count} {t(currentFeature.liveActivity.labelKey)}
@@ -399,12 +399,12 @@ export default function CoreFeaturesShowcase() {
                       <div className="flex flex-col sm:flex-row gap-4">
                         <a
                           href={currentFeature.ctaUrl}
-                          className={`group inline-flex items-center justify-center gap-3 text-lg font-bold px-8 py-4 bg-gradient-to-r ${currentFeature.gradient} text-white rounded-2xl shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105`}
+                          className={`group inline-flex items-center justify-center gap-3 text-lg font-bold px-8 py-4 bg-gradient-to-r ${currentFeature.gradient} text-white rounded-2xl shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:-transecondary-y-1 hover:scale-105`}
                         >
                           <span>{t(currentFeature.ctaKey)}</span>
-                          <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+                          <ArrowRightIcon className="w-5 h-5 group-hover:transecondary-x-1 transition-transform duration-200" />
                         </a>
-                        <button className="inline-flex items-center justify-center gap-3 text-lg font-semibold px-8 py-4 bg-white/80 backdrop-blur-sm text-secondary-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white/90">
+                        <button className="inline-flex items-center justify-center gap-3 text-lg font-semibold px-8 py-4 bg-white/80 backdrop-blur-sm text-secondary-800 border-2 border-secondary-200/60 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white/90">
                           <span>{t('core_features.learn_more')}</span>
                         </button>
                       </div>
@@ -433,11 +433,11 @@ export default function CoreFeaturesShowcase() {
                               {t('core_features.stats.secondary')}
                             </div>
                           </div>
-                          <div className="text-center p-4 bg-gradient-to-r from-purple-50 to-violet-50 rounded-xl border border-purple-200/60">
-                            <div className="text-3xl font-black text-purple-600 mb-1">
+                          <div className="text-center p-4 bg-gradient-to-r from-accent-50 to-violet-50 rounded-xl border border-accent-200/60">
+                            <div className="text-3xl font-black text-accent-600 mb-1">
                               {t(currentFeature.statsKey.highlight)}
                             </div>
-                            <div className="text-sm font-medium text-purple-700">
+                            <div className="text-sm font-medium text-accent-700">
                               {t('core_features.stats.highlight')}
                             </div>
                           </div>
@@ -468,7 +468,7 @@ export default function CoreFeaturesShowcase() {
                     setActiveFeature(prev => prev === 0 ? coreFeatures.length - 1 : prev - 1)
                     setIsAutoPlaying(false)
                   }}
-                  className="flex items-center justify-center w-12 h-12 bg-white/90 backdrop-blur-sm border border-gray-200/60 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white group"
+                  className="flex items-center justify-center w-12 h-12 bg-white/90 backdrop-blur-sm border border-secondary-200/60 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white group"
                 >
                   <ArrowLeftIcon className="w-5 h-5 text-secondary-600 group-hover:text-secondary-800" />
                 </button>
@@ -485,7 +485,7 @@ export default function CoreFeaturesShowcase() {
                       className={`transition-all duration-300 rounded-full ${
                         index === activeFeature
                           ? 'w-12 h-3 bg-secondary-600'
-                          : 'w-3 h-3 bg-gray-300 hover:bg-gray-400'
+                          : 'w-3 h-3 bg-secondary-300 hover:bg-secondary-400'
                       }`}
                     />
                   ))}
@@ -495,7 +495,7 @@ export default function CoreFeaturesShowcase() {
                 <div className="flex items-center gap-3">
                   <button
                     onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-                    className="flex items-center justify-center w-12 h-12 bg-white/90 backdrop-blur-sm border border-gray-200/60 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white group"
+                    className="flex items-center justify-center w-12 h-12 bg-white/90 backdrop-blur-sm border border-secondary-200/60 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white group"
                   >
                     {isAutoPlaying ? (
                       <PauseIcon className="w-5 h-5 text-secondary-600 group-hover:text-secondary-800" />
@@ -508,7 +508,7 @@ export default function CoreFeaturesShowcase() {
                       setActiveFeature(prev => prev === coreFeatures.length - 1 ? 0 : prev + 1)
                       setIsAutoPlaying(false)
                     }}
-                    className="flex items-center justify-center w-12 h-12 bg-white/90 backdrop-blur-sm border border-gray-200/60 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white group"
+                    className="flex items-center justify-center w-12 h-12 bg-white/90 backdrop-blur-sm border border-secondary-200/60 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-white group"
                   >
                     <ArrowRightIcon className="w-5 h-5 text-secondary-600 group-hover:text-secondary-800" />
                   </button>
@@ -523,7 +523,7 @@ export default function CoreFeaturesShowcase() {
               {coreFeatures.map((feature, index) => (
                 <div
                   key={feature.id}
-                  className={`group relative ${feature.bgPattern} backdrop-blur-sm border border-white/60 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:scale-105 cursor-pointer`}
+                  className={`group relative ${feature.bgPattern} backdrop-blur-sm border border-white/60 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-transecondary-y-2 hover:scale-105 cursor-pointer`}
                   onClick={() => {
                     setViewMode('carousel')
                     setActiveFeature(index)
@@ -563,7 +563,7 @@ export default function CoreFeaturesShowcase() {
                       ))}
                     </div>
 
-                    <div className="pt-4 border-t border-gray-200/60">
+                    <div className="pt-4 border-t border-secondary-200/60">
                       <div className="text-center">
                         <div className="text-2xl font-black text-secondary-800 mb-1">
                           {t(feature.statsKey.primary).split(' ')[0]}
@@ -580,7 +580,7 @@ export default function CoreFeaturesShowcase() {
                       onClick={(e) => e.stopPropagation()}
                     >
                       {t(feature.ctaKey)}
-                      <ArrowRightIcon className="w-4 h-4 group-hover/cta:translate-x-1 transition-transform duration-200" />
+                      <ArrowRightIcon className="w-4 h-4 group-hover/cta:transecondary-x-1 transition-transform duration-200" />
                     </a>
                   </div>
                 </div>
@@ -601,17 +601,17 @@ export default function CoreFeaturesShowcase() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href={ROUTES.signup}
-                  className="group relative text-lg font-bold px-10 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden"
+                  className="group relative text-lg font-bold px-10 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-transecondary-y-1 hover:scale-105 overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-secondary-700 via-action-700 to-accent-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <span className="relative z-10 flex items-center justify-center gap-3">
                     {t('core_features.join_now')}
-                    <ArrowRightIcon className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-200" />
+                    <ArrowRightIcon className="h-6 w-6 group-hover:transecondary-x-1 transition-transform duration-200" />
                   </span>
                 </a>
                 <a
                   href={ROUTES.events}
-                  className="text-lg font-bold px-10 py-4 bg-white/80 backdrop-blur-lg text-secondary-800 border-2 border-gray-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-translate-y-1 hover:bg-white/90"
+                  className="text-lg font-bold px-10 py-4 bg-white/80 backdrop-blur-lg text-secondary-800 border-2 border-secondary-200/60 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-secondary-300 hover:-transecondary-y-1 hover:bg-white/90"
                 >
                   {t('core_features.explore_features')}
                 </a>

@@ -71,7 +71,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
       },
       premium: {
         icon: <Crown className="w-3 h-3" />,
-        color: "bg-gradient-to-r from-purple-500 to-pink-500 text-white",
+        color: "bg-gradient-to-r from-accent-500 to-pink-500 text-white",
         label: "Premium",
       },
     };
@@ -420,10 +420,10 @@ export default function Directory() {
         memberId,
         "Hi! I'd love to connect with you through LusoTown!"
       );
-      alert("Connection request sent!");
+      toast.error("Connection request sent!");
     } catch (error) {
       console.error("Error sending connection request:", error);
-      alert("Error sending connection request");
+      toast.error("Error sending connection request");
     }
   };
 
@@ -437,7 +437,7 @@ export default function Directory() {
 
   if (loading && members.length === 0) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-secondary-50 flex items-center justify-center">
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#FF6B6B]"></div>
       </div>
     );
@@ -453,7 +453,7 @@ export default function Directory() {
   ].filter(Boolean).length;
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-secondary-50 pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
@@ -478,7 +478,7 @@ export default function Directory() {
           <div className="bg-white rounded-xl shadow-sm p-6 mb-6">
             <div className="flex flex-col lg:flex-row gap-4">
               <div className="flex-1 relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Search className="absolute left-3 top-1/2 transform -transecondary-y-1/2 text-gray-400 w-5 h-5" />
                 <input
                   type="text"
                   placeholder="Search directory..."
@@ -506,7 +506,7 @@ export default function Directory() {
                   className={`px-4 py-3 border rounded-lg flex items-center space-x-2 transition-colors ${
                     showFilters || activeFiltersCount > 0
                       ? "bg-[#FF6B6B] text-white border-[#FF6B6B]"
-                      : "border-secondary-300 hover:bg-gray-50"
+                      : "border-secondary-300 hover:bg-secondary-50"
                   }`}
                 >
                   <SlidersHorizontal className="w-4 h-4" />
@@ -522,7 +522,7 @@ export default function Directory() {
 
             {/* Advanced Filters */}
             {showFilters && (
-              <div className="mt-6 pt-6 border-t border-gray-200">
+              <div className="mt-6 pt-6 border-t border-secondary-200">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                   {/* Location Filter */}
                   <div>
@@ -657,14 +657,14 @@ export default function Directory() {
                     ))}
                     {filters.membershipTier &&
                       filters.membershipTier !== "all" && (
-                        <span className="inline-flex items-center px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full">
+                        <span className="inline-flex items-center px-3 py-1 bg-accent-100 text-accent-700 text-sm rounded-full">
                           <Crown className="w-3 h-3 mr-1" />
                           {filters.membershipTier} members
                           <button
                             onClick={() =>
                               handleFilterChange("membershipTier", "all")
                             }
-                            className="ml-2 hover:bg-purple-200 rounded-full p-0.5"
+                            className="ml-2 hover:bg-accent-200 rounded-full p-0.5"
                           >
                             <X className="w-3 h-3" />
                           </button>
@@ -769,7 +769,7 @@ export default function Directory() {
                     loadMembers(user || ({ id: "" } as User), false)
                   }
                   disabled={loadingMore}
-                  className="px-6 py-3 bg-white border border-secondary-300 rounded-lg hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="px-6 py-3 bg-white border border-secondary-300 rounded-lg hover:bg-secondary-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loadingMore ? (
                     <div className="flex items-center space-x-2">

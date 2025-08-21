@@ -229,21 +229,21 @@ export const EventReviewSystem: React.FC<EventReviewSystemProps> = ({
           <div className="text-xs text-primary-600">Highly Rated Reviews</div>
         </div>
         
-        <div className="bg-gradient-to-r from-purple-50 to-fuchsia-50 p-4 rounded-lg border border-purple-100">
+        <div className="bg-gradient-to-r from-accent-50 to-fuchsia-50 p-4 rounded-lg border border-accent-100">
           <div className="flex items-center gap-2 mb-1">
-            <HandThumbUpIcon className="w-5 h-5 text-purple-600" />
-            <span className="text-sm font-medium text-purple-800">Recommendation</span>
+            <HandThumbUpIcon className="w-5 h-5 text-accent-600" />
+            <span className="text-sm font-medium text-accent-800">Recommendation</span>
           </div>
-          <div className="text-2xl font-bold text-purple-700">
+          <div className="text-2xl font-bold text-accent-700">
             {Math.round(((event.reviews?.filter(r => r.rating >= 4).length || 0) / (event.reviews?.length || 1)) * 100)}%
           </div>
-          <div className="text-xs text-purple-600">Would Recommend</div>
+          <div className="text-xs text-accent-600">Would Recommend</div>
         </div>
       </div>
 
       {/* Review Form */}
       {userAttended && currentUser && !event.reviews?.some(r => r.userId === currentUser.id) && (
-        <div className="border-t border-gray-100 pt-6 mb-6">
+        <div className="border-t border-secondary-100 pt-6 mb-6">
           {!showReviewForm ? (
             <div className="text-center">
               <button
@@ -259,7 +259,7 @@ export const EventReviewSystem: React.FC<EventReviewSystemProps> = ({
           ) : (
             <form
               onSubmit={handleSubmitReview}
-              className="space-y-6 opacity-0 translate-y-5 animate-fade-in-up"
+              className="space-y-6 opacity-0 transecondary-y-5 animate-fade-in-up"
               style={{ animationDelay: '0.1s' }}
             >
               <div className="bg-gradient-to-r from-primary-50 to-secondary-50 p-4 rounded-lg border border-primary-100">
@@ -387,7 +387,7 @@ Partilhe o que tornou este evento especial para si e para a nossa comunidade por
                 <button
                   type="button"
                   onClick={() => setShowReviewForm(false)}
-                  className="flex-1 px-4 py-2 text-secondary-700 border border-secondary-300 rounded-lg hover:bg-gray-50 transition-colors"
+                  className="flex-1 px-4 py-2 text-secondary-700 border border-secondary-300 rounded-lg hover:bg-secondary-50 transition-colors"
                 >
                   Cancel
                 </button>
@@ -473,7 +473,7 @@ const ReviewCard: React.FC<{ review: EventReview }> = ({ review }) => {
 
   return (
     <div
-      className="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:border-gray-200 transition-colors opacity-0 translate-y-5 animate-fade-in-up"
+      className="bg-secondary-50 p-6 rounded-xl border border-secondary-100 hover:border-secondary-200 transition-colors opacity-0 transecondary-y-5 animate-fade-in-up"
       style={{ animationDelay: '0.2s' }}
     >
       <div className="flex items-start gap-4">
@@ -504,7 +504,7 @@ const ReviewCard: React.FC<{ review: EventReview }> = ({ review }) => {
               ))}
             </div>
             <span className={`text-xs font-medium px-2 py-1 rounded-full ${
-              review.membershipTier === 'premium' ? 'bg-purple-100 text-purple-700' :
+              review.membershipTier === 'premium' ? 'bg-accent-100 text-accent-700' :
               review.membershipTier === 'core' ? 'bg-secondary-100 text-secondary-700' :
               'bg-green-100 text-green-700'
             }`}>

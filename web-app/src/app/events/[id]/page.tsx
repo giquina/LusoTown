@@ -125,7 +125,7 @@ const RSVPModal = ({
                     <button
                       type="button"
                       onClick={onClose}
-                      className="flex-1 px-4 py-2 text-secondary-700 border border-secondary-300 rounded-lg hover:bg-gray-50 transition-colors"
+                      className="flex-1 px-4 py-2 text-secondary-700 border border-secondary-300 rounded-lg hover:bg-secondary-50 transition-colors"
                     >
                       Cancel
                     </button>
@@ -246,13 +246,13 @@ export default function EventDetailsPage() {
         
         // In a real implementation, this would call an API to create the post
         
-        alert('success', `Successfully ${status === 'going' ? 'RSVPed' : 'joined waitlist'}!`)
+        toast.error('success', `Successfully ${status === 'going' ? 'RSVPed' : 'joined waitlist'}!`)
       } else {
-        alert('error', result.message)
+        toast.error('error', result.message)
       }
     } catch (error) {
       console.error('Error with RSVP:', error)
-      alert('error', 'Failed to process RSVP. Please try again.')
+      toast.error('error', 'Failed to process RSVP. Please try again.')
     }
     
     setIsSubmitting(false)
@@ -267,13 +267,13 @@ export default function EventDetailsPage() {
       if (result.success) {
         setUserRSVP(null)
         loadEvent() // Refresh event data
-        alert('success', 'RSVP cancelled successfully!')
+        toast.error('success', 'RSVP cancelled successfully!')
       } else {
-        alert('error', result.message)
+        toast.error('error', result.message)
       }
     } catch (error) {
       console.error('Error cancelling RSVP:', error)
-      alert('error', 'Failed to cancel RSVP. Please try again.')
+      toast.error('error', 'Failed to cancel RSVP. Please try again.')
     }
   }
 
@@ -310,7 +310,7 @@ export default function EventDetailsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-secondary-50">
         <div className="pt-16 flex items-center justify-center min-h-[60vh]">
           <div className="text-center">
             <div className="w-12 h-12 border-4 border-primary-200 border-t-primary-500 rounded-full animate-spin mx-auto mb-4"></div>
@@ -324,7 +324,7 @@ export default function EventDetailsPage() {
 
   if (error || !event) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-secondary-50">
         <div className="pt-16 flex items-center justify-center min-h-[60vh]">
           <div className="text-center">
             <div className="text-6xl mb-4">😔</div>
@@ -348,7 +348,7 @@ export default function EventDetailsPage() {
   const isFull = spotsLeft <= 0
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       
       <main className="pt-16">
         {/* Hero Section */}
@@ -367,18 +367,18 @@ export default function EventDetailsPage() {
                   <>
                     <button
                       onClick={() => setCurrentImageIndex((prev) => prev > 0 ? prev - 1 : event.images.length - 1)}
-                      className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-black/50 text-white rounded-full flex items-center justify-center hover:bg-black/70 transition-colors"
+                      className="absolute left-4 top-1/2 transform -transecondary-y-1/2 w-12 h-12 bg-black/50 text-white rounded-full flex items-center justify-center hover:bg-black/70 transition-colors"
                     >
                       <ChevronLeftIcon className="w-6 h-6" />
                     </button>
                     <button
                       onClick={() => setCurrentImageIndex((prev) => prev < event.images.length - 1 ? prev + 1 : 0)}
-                      className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-black/50 text-white rounded-full flex items-center justify-center hover:bg-black/70 transition-colors"
+                      className="absolute right-4 top-1/2 transform -transecondary-y-1/2 w-12 h-12 bg-black/50 text-white rounded-full flex items-center justify-center hover:bg-black/70 transition-colors"
                     >
                       <ChevronRightIcon className="w-6 h-6" />
                     </button>
                     
-                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+                    <div className="absolute bottom-4 left-1/2 transform -transecondary-x-1/2 flex gap-2">
                       {event.images.map((_, index) => (
                         <button
                           key={index}
@@ -511,8 +511,8 @@ export default function EventDetailsPage() {
                     </div>
 
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                        <MapPinIcon className="w-5 h-5 text-purple-600" />
+                      <div className="w-10 h-10 bg-accent-100 rounded-lg flex items-center justify-center">
+                        <MapPinIcon className="w-5 h-5 text-accent-600" />
                       </div>
                       <div className="flex-1">
                         <div className="font-medium text-gray-900">{event.location}</div>
@@ -525,7 +525,7 @@ export default function EventDetailsPage() {
                         )}
                         {/* Venue Type Indicators */}
                         {event.location.includes('Church') && (
-                          <div className="text-xs text-purple-600 bg-purple-50 px-2 py-1 rounded-full inline-block ml-2">
+                          <div className="text-xs text-accent-600 bg-accent-50 px-2 py-1 rounded-full inline-block ml-2">
                             ⛪ {t('event.community-space', 'Community Space')}
                           </div>
                         )}
@@ -704,7 +704,7 @@ export default function EventDetailsPage() {
                             
                             {/* Membership Badge */}
                             <div className={`absolute -bottom-1 -right-1 w-6 h-6 rounded-full border-2 border-white flex items-center justify-center text-xs font-bold text-white ${
-                              attendee.membershipTier === 'premium' ? 'bg-purple-500' : 
+                              attendee.membershipTier === 'premium' ? 'bg-accent-500' : 
                               attendee.membershipTier === 'core' ? 'bg-secondary-500' : 'bg-action-500'
                             }`}>
                               {attendee.membershipTier === 'premium' ? 'P' : 
@@ -723,15 +723,15 @@ export default function EventDetailsPage() {
                     </div>
                     
                     {/* Membership Distribution */}
-                    <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+                    <div className="mt-6 p-4 bg-secondary-50 rounded-lg">
                       <div className="flex items-center justify-between text-sm">
                         <div className="flex items-center gap-4">
                           <span className="text-secondary-600">Community Mix:</span>
                           <div className="flex items-center gap-3">
                             {event.attendees.filter(a => a.membershipTier === 'premium').length > 0 && (
                               <div className="flex items-center gap-1">
-                                <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-                                <span className="text-purple-700 font-medium">
+                                <div className="w-3 h-3 bg-accent-500 rounded-full"></div>
+                                <span className="text-accent-700 font-medium">
                                   {event.attendees.filter(a => a.membershipTier === 'premium').length} Premium
                                 </span>
                               </div>
@@ -904,7 +904,7 @@ export default function EventDetailsPage() {
                           </div>
                         </button>
                         
-                        <button className="w-full flex items-center gap-3 p-3 bg-gray-50 border border-gray-200 rounded-lg hover:bg-secondary-100 transition-colors">
+                        <button className="w-full flex items-center gap-3 p-3 bg-secondary-50 border border-secondary-200 rounded-lg hover:bg-secondary-100 transition-colors">
                           <span className="text-secondary-600">✉️</span>
                           <div className="text-left">
                             <div className="text-sm font-medium text-secondary-700">{t('event.email-contact', 'Email')}</div>
@@ -918,7 +918,7 @@ export default function EventDetailsPage() {
                       <button className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium py-3 px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all">
                         {t('event.view-host-profile', 'View Host Profile')}
                       </button>
-                      <button className="w-full border border-gray-200 text-secondary-700 font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors">
+                      <button className="w-full border border-secondary-200 text-secondary-700 font-medium py-2 px-4 rounded-lg hover:bg-secondary-50 transition-colors">
                         {t('event.message-organizer', 'Message Organizer')}
                       </button>
                     </div>
@@ -938,7 +938,7 @@ export default function EventDetailsPage() {
                         <div className="text-sm text-secondary-600">Favorites</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-2xl font-bold text-purple-600">{event.shares || 0}</div>
+                        <div className="text-2xl font-bold text-accent-600">{event.shares || 0}</div>
                         <div className="text-sm text-secondary-600">Shares</div>
                       </div>
                       <div className="text-center">

@@ -380,7 +380,7 @@ export default function SafetyCenter() {
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {safetyFeatures.map((feature, index) => (
-                  <div key={index} className="group bg-white/80 backdrop-blur-sm border border-white/60 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105 relative overflow-hidden">
+                  <div key={index} className="group bg-white/80 backdrop-blur-sm border border-white/60 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-transecondary-y-2 hover:scale-105 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-secondary-50/40 via-transparent to-accent-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
                     
                     <div className="relative z-10">
@@ -402,7 +402,7 @@ export default function SafetyCenter() {
         </section>
 
         {/* Meeting Safely Guide */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-secondary-50">
           <div className="container-width">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
@@ -591,7 +591,7 @@ export default function SafetyCenter() {
                     <p className="text-secondary-600 text-sm">Appropriate measures are implemented, from warnings to permanent bans</p>
                   </div>
                   <div className="text-center">
-                    <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <div className="w-12 h-12 bg-accent-100 text-accent-600 rounded-full flex items-center justify-center mx-auto mb-3">
                       <span className="font-bold">4</span>
                     </div>
                     <h4 className="font-semibold text-gray-900 mb-2">Follow-Up</h4>
@@ -649,9 +649,9 @@ export default function SafetyCenter() {
                   </div>
                 </div>
 
-                <div className="bg-purple-50 border border-purple-200 rounded-xl p-6">
-                  <h3 className="text-lg font-semibold text-purple-800 mb-4">Online Safety</h3>
-                  <div className="space-y-3 text-purple-700">
+                <div className="bg-accent-50 border border-accent-200 rounded-xl p-6">
+                  <h3 className="text-lg font-semibold text-accent-800 mb-4">Online Safety</h3>
+                  <div className="space-y-3 text-accent-700">
                     <div>
                       <h4 className="font-semibold">Get Safe Online</h4>
                       <p className="text-sm">Website: getsafeonline.org</p>

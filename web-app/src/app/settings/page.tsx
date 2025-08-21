@@ -74,7 +74,7 @@ export default function SettingsPage() {
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
               <div className="p-8">
                 <div className="space-y-6">
-                  <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                  <div className="flex items-center justify-between p-4 bg-secondary-50 rounded-lg">
                     <div>
                       <p className="font-medium text-gray-900">Language</p>
                       <p className="text-sm text-secondary-600">Interface language</p>
@@ -87,7 +87,7 @@ export default function SettingsPage() {
                     </button>
                   </div>
 
-                  <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                  <div className="flex items-center justify-between p-4 bg-secondary-50 rounded-lg">
                     <div>
                       <p className="font-medium text-gray-900">Edit Profile</p>
                       <p className="text-sm text-secondary-600">Update your profile information</p>

@@ -195,7 +195,7 @@ export default function EventBuddyFinder({
     if (score >= 90) return "text-action-600 bg-green-50";
     if (score >= 80) return "text-primary-600 bg-blue-50";
     if (score >= 70) return "text-orange-600 bg-orange-50";
-    return "text-secondary-600 bg-gray-50";
+    return "text-secondary-600 bg-secondary-50";
   };
 
   const getCategoryIcon = (category: string) => {

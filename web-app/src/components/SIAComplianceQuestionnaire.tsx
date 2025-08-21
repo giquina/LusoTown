@@ -302,7 +302,7 @@ export default function SIAComplianceQuestionnaire({
             onClick={e => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-gradient-to-r from-secondary-50 to-accent-50 rounded-t-2xl">
+            <div className="flex items-center justify-between p-6 border-b border-secondary-200 bg-gradient-to-r from-secondary-50 to-accent-50 rounded-t-2xl">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-xl flex items-center justify-center">
                   <ShieldCheckIcon className="w-6 h-6 text-secondary-600" />
@@ -328,7 +328,7 @@ export default function SIAComplianceQuestionnaire({
             </div>
 
             {/* Progress Indicator */}
-            <div className="px-6 py-4 bg-gray-50">
+            <div className="px-6 py-4 bg-secondary-50">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm font-medium text-secondary-700">
                   {isPortuguese ? `Passo ${currentStep} de 4` : `Step ${currentStep} of 4`}
@@ -597,7 +597,7 @@ export default function SIAComplianceQuestionnaire({
                             <div className={`p-3 border-2 rounded-lg text-center transition-all ${
                               formData.threatLevel === level.value
                                 ? `border-${level.color}-500 bg-${level.color}-50 text-${level.color}-700`
-                                : 'border-gray-200 bg-white text-secondary-600 hover:border-secondary-300'
+                                : 'border-secondary-200 bg-white text-secondary-600 hover:border-secondary-300'
                             }`}>
                               <div className="font-medium">
                                 {isPortuguese ? level.labelPt : level.labelEn}
@@ -1056,7 +1056,7 @@ export default function SIAComplianceQuestionnaire({
             </div>
 
             {/* Footer */}
-            <div className="flex justify-between items-center p-6 border-t border-gray-200 bg-gray-50 rounded-b-2xl">
+            <div className="flex justify-between items-center p-6 border-t border-secondary-200 bg-secondary-50 rounded-b-2xl">
               <div className="text-sm text-gray-500">
                 {isPortuguese ? `Passo ${currentStep} de 4` : `Step ${currentStep} of 4`}
               </div>
@@ -1065,7 +1065,7 @@ export default function SIAComplianceQuestionnaire({
                 {currentStep > 1 && (
                   <button
                     onClick={handlePrevious}
-                    className="flex items-center px-4 py-2 text-secondary-600 border border-secondary-300 rounded-lg hover:bg-gray-50 transition-colors"
+                    className="flex items-center px-4 py-2 text-secondary-600 border border-secondary-300 rounded-lg hover:bg-secondary-50 transition-colors"
                   >
                     <ArrowLeftIcon className="w-4 h-4 mr-2" />
                     {isPortuguese ? 'Anterior' : 'Previous'}

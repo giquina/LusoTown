@@ -136,9 +136,9 @@ export default function CulturallyVerifiedMatchCard({
     if (score >= 85) {
       return {
         level: language === 'pt' ? 'Herança Épica' : 'Epic Heritage',
-        color: 'text-purple-600',
-        bg: 'bg-gradient-to-r from-purple-100 to-indigo-100',
-        border: 'border-purple-300'
+        color: 'text-accent-600',
+        bg: 'bg-gradient-to-r from-accent-100 to-primary-100',
+        border: 'border-accent-300'
       }
     }
     if (score >= 75) {
@@ -372,7 +372,7 @@ export default function CulturallyVerifiedMatchCard({
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-sm font-bold text-purple-600">{Math.round(profile.culturalKnowledge)}%</div>
+                    <div className="text-sm font-bold text-accent-600">{Math.round(profile.culturalKnowledge)}%</div>
                     <div className="text-xs text-secondary-600">
                       {language === 'pt' ? 'Cultura' : 'Culture'}
                     </div>
@@ -460,7 +460,7 @@ export default function CulturallyVerifiedMatchCard({
                   {profile.verificationBadges.slice(0, 4).map((badge) => (
                     <div
                       key={badge.id}
-                      className="flex items-center gap-3 p-3 bg-white border border-gray-200 rounded-xl hover:shadow-md transition-shadow"
+                      className="flex items-center gap-3 p-3 bg-white border border-secondary-200 rounded-xl hover:shadow-md transition-shadow"
                     >
                       <span className="text-2xl">{badge.icon}</span>
                       <div className="flex-1">
@@ -608,7 +608,7 @@ export default function CulturallyVerifiedMatchCard({
         <div className="flex justify-center gap-6 mt-6 pt-4 border-t border-primary-100">
           <button
             onClick={() => onSkip(profile.id)}
-            className="w-16 h-16 bg-white border-3 border-gray-200 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:border-red-300 group"
+            className="w-16 h-16 bg-white border-3 border-secondary-200 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:border-red-300 group"
           >
             <XMarkIcon className="w-8 h-8 text-secondary-600 group-hover:text-coral-600 transition-colors" />
           </button>

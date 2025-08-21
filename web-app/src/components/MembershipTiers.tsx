@@ -175,11 +175,11 @@ export default function MembershipTiers({
   const getColorClasses = (color: string) => {
     const colorMap = {
       gray: {
-        border: "border-gray-200",
-        bg: "bg-gray-50",
+        border: "border-secondary-200",
+        bg: "bg-secondary-50",
         iconBg: "bg-secondary-100",
         iconText: "text-secondary-600",
-        button: "bg-gray-500 hover:bg-gray-600 text-white",
+        button: "bg-secondary-500 hover:bg-secondary-600 text-white",
         badge: "bg-secondary-100 text-secondary-800",
       },
       primary: {

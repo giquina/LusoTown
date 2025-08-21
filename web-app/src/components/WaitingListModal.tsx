@@ -177,10 +177,10 @@ export default function WaitingListModal({ isOpen, onClose, event }: WaitingList
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-gray-100 max-h-[90vh] overflow-y-auto"
+            className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-secondary-100 max-h-[90vh] overflow-y-auto"
           >
             {/* Header */}
-            <div className="p-6 border-b border-gray-100">
+            <div className="p-6 border-b border-secondary-100">
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">
@@ -276,7 +276,7 @@ export default function WaitingListModal({ isOpen, onClose, event }: WaitingList
                     className={`w-full px-4 py-3 border rounded-xl transition-colors ${
                       fieldErrors.name 
                         ? 'border-red-300 focus:border-coral-500 focus:ring-red-500'
-                        : 'border-gray-200 focus:border-primary-500 focus:ring-primary-500'
+                        : 'border-secondary-200 focus:border-primary-500 focus:ring-primary-500'
                     }`}
                     placeholder={language === 'pt' ? 'Digite seu nome completo' : 'Enter your full name'}
                   />
@@ -299,11 +299,11 @@ export default function WaitingListModal({ isOpen, onClose, event }: WaitingList
                       className={`w-full pl-10 pr-4 py-3 border rounded-xl transition-colors ${
                         fieldErrors.email 
                           ? 'border-red-300 focus:border-coral-500 focus:ring-red-500'
-                          : 'border-gray-200 focus:border-primary-500 focus:ring-primary-500'
+                          : 'border-secondary-200 focus:border-primary-500 focus:ring-primary-500'
                       }`}
                       placeholder={language === 'pt' ? 'seu@email.com' : 'your@email.com'}
                     />
-                    <EnvelopeIcon className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
+                    <EnvelopeIcon className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -transecondary-y-1/2" />
                   </div>
                   {fieldErrors.email && (
                     <p className="text-sm text-coral-600 mt-1">{fieldErrors.email}</p>
@@ -324,11 +324,11 @@ export default function WaitingListModal({ isOpen, onClose, event }: WaitingList
                       className={`w-full pl-10 pr-4 py-3 border rounded-xl transition-colors ${
                         fieldErrors.phone 
                           ? 'border-red-300 focus:border-coral-500 focus:ring-red-500'
-                          : 'border-gray-200 focus:border-primary-500 focus:ring-primary-500'
+                          : 'border-secondary-200 focus:border-primary-500 focus:ring-primary-500'
                       }`}
                       placeholder={language === 'pt' ? '+44 20 1234 5678' : '+44 20 1234 5678'}
                     />
-                    <PhoneIcon className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
+                    <PhoneIcon className="w-5 h-5 text-gray-400 absolute left-3 top-1/2 transform -transecondary-y-1/2" />
                   </div>
                   {fieldErrors.phone && (
                     <p className="text-sm text-coral-600 mt-1">{fieldErrors.phone}</p>
@@ -343,7 +343,7 @@ export default function WaitingListModal({ isOpen, onClose, event }: WaitingList
                   <select
                     value={formData.portuguesePreference}
                     onChange={(e) => handleInputChange('portuguesePreference', e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-primary-500 focus:ring-primary-500"
+                    className="w-full px-4 py-3 border border-secondary-200 rounded-xl focus:border-primary-500 focus:ring-primary-500"
                   >
                     <option value="both">{language === 'pt' ? 'Português e Inglês' : 'Portuguese and English'}</option>
                     <option value="portuguese">{language === 'pt' ? 'Apenas Português' : 'Portuguese only'}</option>
@@ -359,7 +359,7 @@ export default function WaitingListModal({ isOpen, onClose, event }: WaitingList
                   <select
                     value={formData.notificationPreference}
                     onChange={(e) => handleInputChange('notificationPreference', e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-primary-500 focus:ring-primary-500"
+                    className="w-full px-4 py-3 border border-secondary-200 rounded-xl focus:border-primary-500 focus:ring-primary-500"
                   >
                     <option value="email">{language === 'pt' ? 'Por Email' : 'By Email'}</option>
                     <option value="phone">{language === 'pt' ? 'Por Telefone' : 'By Phone'}</option>
@@ -377,7 +377,7 @@ export default function WaitingListModal({ isOpen, onClose, event }: WaitingList
                     value={formData.eventSpecificQuestions}
                     onChange={(e) => handleInputChange('eventSpecificQuestions', e.target.value)}
                     rows={3}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-primary-500 focus:ring-primary-500"
+                    className="w-full px-4 py-3 border border-secondary-200 rounded-xl focus:border-primary-500 focus:ring-primary-500"
                     placeholder={language === 'pt' 
                       ? 'Alguma pergunta específica sobre este evento?'
                       : 'Any specific questions about this event?'

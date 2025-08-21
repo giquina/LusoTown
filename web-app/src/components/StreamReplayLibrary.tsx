@@ -394,7 +394,7 @@ export default function StreamReplayLibrary({
       {/* Search and Filters */}
       <div className="flex flex-col sm:flex-row gap-4 mb-6">
         <div className="flex-1 relative">
-          <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+          <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -transecondary-y-1/2 w-4 h-4 text-gray-400" />
           <input
             type="text"
             placeholder={
@@ -425,7 +425,7 @@ export default function StreamReplayLibrary({
 
           <button
             onClick={() => setShowFilters(!showFilters)}
-            className="px-3 py-2 border border-secondary-300 rounded-lg hover:bg-gray-50 transition-colors"
+            className="px-3 py-2 border border-secondary-300 rounded-lg hover:bg-secondary-50 transition-colors"
           >
             <FunnelIcon className="w-4 h-4" />
           </button>
@@ -458,7 +458,7 @@ export default function StreamReplayLibrary({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
-                className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-all duration-200 group"
+                className="border border-secondary-200 rounded-lg overflow-hidden hover:shadow-md transition-all duration-200 group"
               >
                 {/* Thumbnail */}
                 <div className="relative aspect-video bg-secondary-200">
@@ -654,7 +654,7 @@ export default function StreamReplayLibrary({
                       {selectedReplay.keyMoments.map((moment, index) => (
                         <div
                           key={index}
-                          className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50"
+                          className="flex items-center gap-3 p-2 rounded-lg hover:bg-secondary-50"
                         >
                           <div className="text-sm font-medium text-primary-600 min-w-0">
                             {Math.floor(moment.time / 60)}:

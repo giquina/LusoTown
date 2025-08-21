@@ -170,7 +170,7 @@ export default function Login() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
-                className="bg-white rounded-2xl shadow-xl p-8 border border-gray-200"
+                className="bg-white rounded-2xl shadow-xl p-8 border border-secondary-200"
               >
                 {/* Form Header */}
                 <div className="text-center mb-8">
@@ -414,7 +414,7 @@ export default function Login() {
                 </form>
 
                 {/* Social Login & Alternative Options */}
-                <div className="mt-6 pt-6 border-t border-gray-200">
+                <div className="mt-6 pt-6 border-t border-secondary-200">
                   {/* Social Login Buttons */}
                   <div className="mb-6">
                     <SocialLogin mode="login" />
@@ -435,7 +435,7 @@ export default function Login() {
                 </div>
 
                 {/* Terms & Privacy */}
-                <div className="mt-6 pt-4 border-t border-gray-100">
+                <div className="mt-6 pt-4 border-t border-secondary-100">
                   <p className="text-center text-xs text-gray-500 leading-relaxed">
                     {isPortuguese
                       ? "Ao entrar, concorda com os nossos"

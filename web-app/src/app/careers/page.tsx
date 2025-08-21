@@ -980,7 +980,7 @@ export default function CareersPage() {
       </div>
 
       {/* Job Listings */}
-      <div className="section-padding bg-gray-50">
+      <div className="section-padding bg-secondary-50">
         <div className="container-width">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -996,7 +996,7 @@ export default function CareersPage() {
 
           <div className="grid gap-8">
             {jobRoles.map((job) => (
-              <div key={job.id} className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <div key={job.id} className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 border border-secondary-100">
                 <div className="flex flex-col lg:flex-row lg:items-start gap-6">
                   {/* Left Column - Job Info */}
                   <div className="flex-1">

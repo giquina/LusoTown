@@ -286,7 +286,7 @@ export default function PortugueseBusinessEcosystem() {
                 <p className="text-blue-100 text-sm">65% {isPortuguese ? 'da receita total' : 'of total revenue'}</p>
               </div>
 
-              <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl p-6">
+              <div className="bg-gradient-to-br from-accent-500 to-accent-600 rounded-2xl p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <HandRaisedIcon className="w-8 h-8" />
                   <h3 className="text-lg font-semibold">
@@ -294,7 +294,7 @@ export default function PortugueseBusinessEcosystem() {
                   </h3>
                 </div>
                 <p className="text-3xl font-bold">�{Math.round(revenueBreakdown.commissions).toLocaleString()}</p>
-                <p className="text-purple-100 text-sm">25% {isPortuguese ? 'da receita total' : 'of total revenue'}</p>
+                <p className="text-accent-100 text-sm">25% {isPortuguese ? 'da receita total' : 'of total revenue'}</p>
               </div>
 
               <div className="bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-6">
@@ -358,7 +358,7 @@ export default function PortugueseBusinessEcosystem() {
                 className={`group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border-2 ${
                   category.featured 
                     ? 'border-primary-200 ring-4 ring-primary-50' 
-                    : 'border-gray-100 hover:border-primary-200'
+                    : 'border-secondary-100 hover:border-primary-200'
                 }`}
               >
                 {category.featured && (
@@ -414,7 +414,7 @@ export default function PortugueseBusinessEcosystem() {
       </section>
 
       {/* Featured Businesses */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-secondary-50">
         <div className="container-width">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

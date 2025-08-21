@@ -219,7 +219,7 @@ export default function AppDownloadSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.8 + index * 0.1, duration: 0.6 }}
-                    className="group bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white/60 hover:border-primary-200/50 hover:bg-white/95 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl shadow-lg relative overflow-hidden"
+                    className="group bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-white/60 hover:border-primary-200/50 hover:bg-white/95 transition-all duration-500 hover:-transecondary-y-1 hover:shadow-xl shadow-lg relative overflow-hidden"
                   >
                     {/* Background Gradient on Hover */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-2xl`}></div>
@@ -264,7 +264,7 @@ export default function AppDownloadSection() {
                 {/* Premium App Store Button */}
                 <a 
                   href="https://apps.apple.com/app/lusotown-london" 
-                  className="group inline-flex items-center bg-gradient-to-r from-gray-900 to-black hover:from-black hover:to-gray-900 text-white px-10 py-6 rounded-3xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl shadow-xl border border-gray-700/30 hover:border-gray-600/50 min-w-[200px] justify-center"
+                  className="group inline-flex items-center bg-gradient-to-r from-gray-900 to-black hover:from-black hover:to-gray-900 text-white px-10 py-6 rounded-3xl transition-all duration-500 transform hover:-transecondary-y-3 hover:shadow-2xl shadow-xl border border-secondary-700/30 hover:border-secondary-600/50 min-w-[200px] justify-center"
                   aria-label={isPortuguese ? 'Descarregar LusoTown na App Store' : 'Download LusoTown on the App Store'}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -287,7 +287,7 @@ export default function AppDownloadSection() {
                 {/* Premium Google Play Button */}
                 <a 
                   href="https://play.google.com/store/apps/details?id=com.lusotown.london" 
-                  className="group inline-flex items-center bg-gradient-to-r from-gray-900 to-black hover:from-black hover:to-gray-900 text-white px-10 py-6 rounded-3xl transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl shadow-xl border border-gray-700/30 hover:border-gray-600/50 min-w-[200px] justify-center"
+                  className="group inline-flex items-center bg-gradient-to-r from-gray-900 to-black hover:from-black hover:to-gray-900 text-white px-10 py-6 rounded-3xl transition-all duration-500 transform hover:-transecondary-y-3 hover:shadow-2xl shadow-xl border border-secondary-700/30 hover:border-secondary-600/50 min-w-[200px] justify-center"
                   aria-label={isPortuguese ? 'Obter LusoTown no Google Play' : 'Get LusoTown on Google Play'}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -359,11 +359,11 @@ export default function AppDownloadSection() {
               <div className="absolute inset-0 bg-gradient-to-tr from-coral-400/20 to-action-400/15 blur-2xl transform scale-110 animate-pulse" style={{ animationDuration: '6s', animationDelay: '2s' }}></div>
               
               {/* Premium Phone Frame */}
-              <div className="relative bg-gradient-to-b from-gray-800 to-black rounded-[3rem] p-3 shadow-2xl border border-gray-700/50" style={{ width: '340px', height: '680px' }}>
+              <div className="relative bg-gradient-to-b from-gray-800 to-black rounded-[3rem] p-3 shadow-2xl border border-secondary-700/50" style={{ width: '340px', height: '680px' }}>
                 <div className="bg-white rounded-[2.5rem] overflow-hidden w-full h-full shadow-inner">
                   
                   {/* Enhanced Status Bar */}
-                  <div className="bg-white px-6 py-3 flex justify-between items-center text-xs font-medium text-gray-900 border-b border-gray-100">
+                  <div className="bg-white px-6 py-3 flex justify-between items-center text-xs font-medium text-gray-900 border-b border-secondary-100">
                     <div className="flex items-center gap-2">
                       <span className="font-bold">9:41</span>
                       <div className="flex items-center gap-1">
@@ -373,8 +373,8 @@ export default function AppDownloadSection() {
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="flex items-center gap-1">
-                        <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
-                        <div className="w-1 h-1 bg-gray-400 rounded-full"></div>
+                        <div className="w-1 h-1 bg-secondary-400 rounded-full"></div>
+                        <div className="w-1 h-1 bg-secondary-400 rounded-full"></div>
                         <div className="w-1 h-1 bg-secondary-900 rounded-full"></div>
                       </div>
                       <div className="w-6 h-3 border border-secondary-300 rounded-sm relative">
@@ -441,7 +441,7 @@ export default function AppDownloadSection() {
                             </div>
                           </div>
                         </div>
-                        <div className="bg-gradient-to-r from-gray-50 to-primary-50/30 rounded-xl p-4 border border-gray-100/50">
+                        <div className="bg-gradient-to-r from-gray-50 to-primary-50/30 rounded-xl p-4 border border-secondary-100/50">
                           <p className="text-sm text-secondary-700 font-medium">
                             &quot;{isPortuguese ? 'Alguém já leu \'Os Maias\' do Eça de Queirós?' : 'Anyone read \'Os Maias\' by Eça de Queirós?'}&quot;
                           </p>

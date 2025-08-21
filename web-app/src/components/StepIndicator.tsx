@@ -37,7 +37,7 @@ export default function StepIndicator({
   const titles = stepTitles.length > 0 ? stepTitles : defaultStepTitles
   
   return (
-    <div className="bg-white border-b border-gray-100 sticky top-0 z-10">
+    <div className="bg-white border-b border-secondary-100 sticky top-0 z-10">
       <div className="px-4 sm:px-6 py-3">
         {/* Mobile Progress Bar */}
         <div className="block sm:hidden">
@@ -141,7 +141,7 @@ export default function StepIndicator({
           
           {/* Time estimate and percentage */}
           {showTimeEstimate && (
-            <div className="flex items-center justify-between mt-4 pt-3 border-t border-gray-100">
+            <div className="flex items-center justify-between mt-4 pt-3 border-t border-secondary-100">
               <div className="flex items-center space-x-2 text-xs text-gray-500">
                 <ClockIcon className="w-4 h-4" />
                 <span>

@@ -246,7 +246,7 @@ export default function HelpCenter() {
                   placeholder="Search help..."
                   className="w-full px-6 py-4 text-lg border border-secondary-300 rounded-xl focus:ring-2 focus:ring-primary-400 focus:border-transparent"
                 />
-                <button className="absolute right-3 top-1/2 transform -translate-y-1/2 btn-primary px-6 py-2">
+                <button className="absolute right-3 top-1/2 transform -transecondary-y-1/2 btn-primary px-6 py-2">
                   Search
                 </button>
               </div>
@@ -259,7 +259,7 @@ export default function HelpCenter() {
         </section>
 
         {/* Quick Support Options */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-secondary-50">
           <div className="container-width">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
@@ -344,7 +344,7 @@ export default function HelpCenter() {
                 {faqCategories.map((category) => (
                   <div
                     key={category.title}
-                    className="bg-white rounded-2xl border border-gray-200 overflow-hidden"
+                    className="bg-white rounded-2xl border border-secondary-200 overflow-hidden"
                   >
                     <div
                       className={`bg-${category.color}-50 px-6 py-4 border-b border-${category.color}-100`}
@@ -443,7 +443,7 @@ export default function HelpCenter() {
         </section>
 
         {/* Additional Resources */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-secondary-50">
           <div className="container-width">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
@@ -486,7 +486,7 @@ export default function HelpCenter() {
                 </div>
 
                 <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow">
-                  <ChatBubbleLeftRightIcon className="w-8 h-8 text-purple-600 mb-4" />
+                  <ChatBubbleLeftRightIcon className="w-8 h-8 text-accent-600 mb-4" />
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">
                     Success Stories
                   </h3>
@@ -496,7 +496,7 @@ export default function HelpCenter() {
                   </p>
                   <a
                     href={ROUTES.successStories}
-                    className="text-purple-600 hover:underline font-medium"
+                    className="text-accent-600 hover:underline font-medium"
                   >
                     Read Stories →
                   </a>
@@ -520,7 +520,7 @@ export default function HelpCenter() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href={`mailto:${contactInfo.general}`}
-                  className="bg-white text-primary-600 hover:bg-gray-50 font-semibold px-8 py-4 rounded-xl transition-colors duration-200 flex items-center justify-center"
+                  className="bg-white text-primary-600 hover:bg-secondary-50 font-semibold px-8 py-4 rounded-xl transition-colors duration-200 flex items-center justify-center"
                 >
                   <EnvelopeIcon className="w-5 h-5 mr-2" />
                   Email Support

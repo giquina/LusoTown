@@ -229,7 +229,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isPortuguese, onBook
         </div>
 
         {/* Social Proof */}
-        <div className="flex items-center justify-between mb-6 py-3 border-t border-gray-100">
+        <div className="flex items-center justify-between mb-6 py-3 border-t border-secondary-100">
           <div className="flex items-center space-x-4">
             <div className="flex items-center">
               <StarIcon className="w-4 h-4 text-yellow-400 mr-1" />
@@ -259,7 +259,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, isPortuguese, onBook
               : (isPortuguese ? 'Reservar Agora' : 'Book Now')
             }
           </span>
-          <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+          <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:transecondary-x-1 transition-transform duration-200" />
         </motion.button>
       </div>
     </motion.div>

@@ -137,11 +137,11 @@ function SearchContent() {
   }
   
   return (
-    <main className="min-h-screen w-full overflow-x-hidden bg-gray-50">
+    <main className="min-h-screen w-full overflow-x-hidden bg-secondary-50">
       
       <div className="pt-16 w-full">
         {/* Search Header */}
-        <section className="py-12 bg-gradient-to-br from-white via-gray-50 to-primary-50/30 border-b border-gray-200">
+        <section className="py-12 bg-gradient-to-br from-white via-gray-50 to-primary-50/30 border-b border-secondary-200">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-8">
@@ -185,7 +185,7 @@ function SearchContent() {
               {query && (
                 <>
                   {/* Filters and Sort */}
-                  <div className="mb-8 bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
+                  <div className="mb-8 bg-white rounded-2xl p-6 shadow-sm border border-secondary-200">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                       {/* Category Filters */}
                       <div className="flex items-center gap-2">
@@ -233,7 +233,7 @@ function SearchContent() {
                         <select
                           value={sortBy}
                           onChange={(e) => setSortBy(e.target.value as any)}
-                          className="px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                          className="px-3 py-2 border border-secondary-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                         >
                           <option value="relevance">
                             {language === 'pt' ? 'Relevância' : 'Relevance'}
@@ -265,7 +265,7 @@ function SearchContent() {
                         <Link
                           key={`${result.type}-${result.id}`}
                           href={result.url}
-                          className="group bg-white rounded-2xl p-6 shadow-sm border border-gray-200 hover:shadow-lg hover:border-primary-200 transition-all duration-300"
+                          className="group bg-white rounded-2xl p-6 shadow-sm border border-secondary-200 hover:shadow-lg hover:border-primary-200 transition-all duration-300"
                         >
                           <div className="flex items-start gap-4">
                             {/* Result Icon */}
@@ -407,7 +407,7 @@ function SearchContent() {
 export default function SearchPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen w-full overflow-x-hidden bg-gray-50">
+      <div className="min-h-screen w-full overflow-x-hidden bg-secondary-50">
         <div className="pt-16 w-full">
           <div className="flex items-center justify-center py-20">
             <div className="text-center">

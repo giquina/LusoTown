@@ -45,7 +45,7 @@ export default function LondonToursPage() {
   }, [tours, category, search]);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       {/* Hero */}
       <section className="pt-28 md:pt-32 pb-16 bg-gradient-to-br from-primary-50 to-secondary-50 relative overflow-hidden">
         {/* Background decorative elements */}
@@ -115,7 +115,7 @@ export default function LondonToursPage() {
       </section>
 
       {/* Main Content */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-secondary-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             {/* Header with Search and Filters */}
@@ -146,13 +146,13 @@ export default function LondonToursPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="bg-white rounded-2xl p-6 shadow-xl border border-gray-100 mb-8"
+                className="bg-white rounded-2xl p-6 shadow-xl border border-secondary-100 mb-8"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
                   {/* Search */}
                   <div className="lg:col-span-2">
                     <div className="relative">
-                      <MagnifyingGlassIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                      <MagnifyingGlassIcon className="absolute left-4 top-1/2 transform -transecondary-y-1/2 h-5 w-5 text-gray-400" />
                       <input
                         type="text"
                         value={search}
@@ -170,7 +170,7 @@ export default function LondonToursPage() {
                   {/* Category Filter */}
                   <div>
                     <div className="relative">
-                      <AdjustmentsHorizontalIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                      <AdjustmentsHorizontalIcon className="absolute left-4 top-1/2 transform -transecondary-y-1/2 h-5 w-5 text-gray-400" />
                       <select
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}

@@ -23,7 +23,7 @@ function ReferralsPageInner() {
 
   if (!user) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-secondary-50">
         <main className="container mx-auto px-4 pt-24 pb-8">
           <div className="max-w-2xl mx-auto text-center">
             <div className="bg-white rounded-xl shadow-lg p-8">
@@ -53,7 +53,7 @@ function ReferralsPageInner() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       <main className="container mx-auto px-4 pt-24 pb-8">
         {/* Hero Section */}
         <div className="max-w-4xl mx-auto mb-8">

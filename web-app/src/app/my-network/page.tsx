@@ -83,7 +83,7 @@ export default function MyNetworkPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-secondary-50">
         <main className="pt-16">
           <div className="container mx-auto px-4 py-12">
             <div className="animate-pulse">
@@ -106,7 +106,7 @@ export default function MyNetworkPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       
       <main className="pt-16">
         {/* Hero Section */}
@@ -162,13 +162,13 @@ export default function MyNetworkPage() {
                 <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
                   {/* Search Bar */}
                   <div className="relative flex-1 max-w-md">
-                    <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -transecondary-y-1/2 w-5 h-5 text-gray-400" />
                     <input
                       type="text"
                       placeholder={isPortuguese ? 'Procurar conexões...' : 'Search connections...'}
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                      className="w-full pl-10 pr-4 py-3 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
                     />
                   </div>
 

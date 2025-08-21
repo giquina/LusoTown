@@ -81,7 +81,7 @@ export default function FeedFilters({ activeFilter, onFilterChange, className = 
   }
 
   return (
-    <div className={`bg-white rounded-xl shadow-sm border border-gray-200 p-6 ${className}`}>
+    <div className={`bg-white rounded-xl shadow-sm border border-secondary-200 p-6 ${className}`}>
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center space-x-2">
           <Filter className="w-5 h-5 text-gray-400" />
@@ -117,7 +117,7 @@ export default function FeedFilters({ activeFilter, onFilterChange, className = 
             
             {/* Active indicator */}
             {activeFilter === filter.id && (
-              <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-8 h-1 bg-current rounded-full opacity-60" />
+              <div className="absolute -bottom-1 left-1/2 transform -transecondary-x-1/2 w-8 h-1 bg-current rounded-full opacity-60" />
             )}
           </button>
         ))}
@@ -143,7 +143,7 @@ export default function FeedFilters({ activeFilter, onFilterChange, className = 
       </div>
 
       {/* Active Filter Description */}
-      <div className="mt-4 p-3 bg-gray-50 rounded-lg">
+      <div className="mt-4 p-3 bg-secondary-50 rounded-lg">
         <div className="flex items-center space-x-2">
           <div className={`
             w-8 h-8 rounded-lg flex items-center justify-center

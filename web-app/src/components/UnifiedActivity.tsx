@@ -59,7 +59,7 @@ export default function UnifiedActivity({ activities = [] }: UnifiedActivityProp
       
       <div className="space-y-4">
         {displayActivities.map((activity, index) => (
-          <div key={activity.id} className="flex items-start space-x-4 p-4 bg-gray-50 rounded-lg hover:bg-secondary-100 transition-colors">
+          <div key={activity.id} className="flex items-start space-x-4 p-4 bg-secondary-50 rounded-lg hover:bg-secondary-100 transition-colors">
             <div className="flex-shrink-0 w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center text-white">
               {activity.icon}
             </div>

@@ -61,7 +61,7 @@ function MessagesContent() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 to-secondary-50">
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 shadow-sm">
+      <div className="bg-white border-b border-secondary-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-4">
@@ -136,7 +136,7 @@ function MessagesContent() {
                 <MessagingInterface conversationId={selectedConversationId} />
               </div>
             ) : (
-              <div className="h-full bg-white rounded-lg border border-gray-200 flex flex-col items-center justify-center p-8">
+              <div className="h-full bg-white rounded-lg border border-secondary-200 flex flex-col items-center justify-center p-8">
                 <div className="text-center max-w-md">
                   <div className="flex justify-center mb-6">
                     <div className="relative">
@@ -153,7 +153,7 @@ function MessagesContent() {
                     {content.instructions}
                   </p>
 
-                  <div className="text-left bg-gray-50 rounded-lg p-4 mb-6">
+                  <div className="text-left bg-secondary-50 rounded-lg p-4 mb-6">
                     <h4 className="font-medium text-gray-900 mb-3">{content.getStarted}</h4>
                     <ul className="space-y-2 text-sm text-secondary-600">
                       <li className="flex items-start space-x-2">
@@ -175,7 +175,7 @@ function MessagesContent() {
                     <button className="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-medium">
                       {content.findMatches}
                     </button>
-                    <button className="px-6 py-3 bg-white border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 transition-colors font-medium">
+                    <button className="px-6 py-3 bg-white border border-secondary-300 text-secondary-700 rounded-lg hover:bg-secondary-50 transition-colors font-medium">
                       {content.browseEvents}
                     </button>
                   </div>

@@ -39,7 +39,7 @@ const ChatRoomCard = ({
 
   const getMembershipBadgeColor = (tier: string) => {
     switch (tier) {
-      case 'premium': return 'bg-purple-100 text-purple-700 border-purple-200'
+      case 'premium': return 'bg-accent-100 text-accent-700 border-accent-200'
       case 'core': return 'bg-primary-100 text-primary-700 border-primary-200'
       default: return 'bg-green-100 text-green-700 border-green-200'
     }
@@ -86,7 +86,7 @@ const ChatRoomCard = ({
             </span>
           )}
           {room.type === 'private' && (
-            <span className="bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
+            <span className="bg-accent-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1">
               <LockClosedIcon className="w-3 h-3" />
               PRIVATE
             </span>
@@ -151,7 +151,7 @@ const ChatRoomCard = ({
 
         {/* Last message preview */}
         {room.lastMessage && (
-          <div className="bg-gray-50 rounded-lg p-3 mb-4">
+          <div className="bg-secondary-50 rounded-lg p-3 mb-4">
             <div className="flex items-center gap-2 mb-1">
               <div className="w-5 h-5 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full flex items-center justify-center text-white text-xs font-bold">
                 {room.lastMessage.userName[0]}
@@ -286,7 +286,6 @@ export default function ChatRoomsPage() {
       )
       setChatRooms(rooms)
     } catch (error) {
-      console.error('Error loading chat rooms:', error)
       setChatRooms([])
     } finally {
       setLoading(false)
@@ -311,11 +310,10 @@ export default function ChatRoomsPage() {
         // Refresh rooms to update joined status
         await loadChatRooms()
       } else {
-        alert(result.message)
+        toast.error(result.message)
       }
     } catch (error) {
-      console.error('Error joining room:', error)
-      alert('Failed to join room. Please try again.')
+      toast.error('Failed to join room. Please try again.')
     }
   }
 
@@ -355,7 +353,7 @@ export default function ChatRoomsPage() {
   const currentUser = authService.getCurrentUser()
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       
       <main className="pt-16">
         {/* Hero Section */}
@@ -377,9 +375,9 @@ export default function ChatRoomsPage() {
                   placeholder="Search chat rooms by name or topic..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 text-lg rounded-2xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
+                  className="w-full pl-12 pr-4 py-4 text-lg rounded-2xl border border-secondary-200 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent"
                 />
-                <MagnifyingGlassIcon className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" />
+                <MagnifyingGlassIcon className="absolute left-4 top-1/2 transform -transecondary-y-1/2 w-6 h-6 text-gray-400" />
               </div>
               
               {currentUser && joinedRoomsCount > 0 && (
@@ -497,8 +495,8 @@ export default function ChatRoomsPage() {
                       <p className="text-sm text-secondary-600">Dedicated moderators ensure positive conversations</p>
                     </div>
                     <div className="text-center">
-                      <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
-                        <ChatBubbleLeftRightIcon className="w-6 h-6 text-purple-600" />
+                      <div className="w-12 h-12 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                        <ChatBubbleLeftRightIcon className="w-6 h-6 text-accent-600" />
                       </div>
                       <h3 className="font-semibold text-gray-900 mb-1">Diverse Topics</h3>
                       <p className="text-sm text-secondary-600">Find conversations that match your interests</p>

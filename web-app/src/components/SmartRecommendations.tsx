@@ -70,7 +70,7 @@ export default function SmartRecommendations() {
       
       <div className="space-y-4">
         {recommendations.slice(0, 3).map((rec) => (
-          <div key={rec.id} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+          <div key={rec.id} className="border border-secondary-200 rounded-lg p-4 hover:shadow-md transition-shadow">
             <div className="flex items-start justify-between mb-3">
               <div className="flex items-center space-x-3">
                 <div className="flex-shrink-0 w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center text-white">

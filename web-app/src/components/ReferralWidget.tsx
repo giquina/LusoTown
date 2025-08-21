@@ -170,14 +170,14 @@ export default function ReferralWidget({
               <p className="text-2xl font-bold text-green-900">£{stats.totalEarnings}</p>
               <p className="text-sm text-action-600">{t('referral.stats.total-earnings')}</p>
             </div>
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-lg text-center">
-              <p className="text-2xl font-bold text-purple-900">{stats.activeReferrals}</p>
-              <p className="text-sm text-purple-600">{t('referral.stats.active-friends')}</p>
+            <div className="bg-gradient-to-br from-accent-50 to-accent-100 p-4 rounded-lg text-center">
+              <p className="text-2xl font-bold text-accent-900">{stats.activeReferrals}</p>
+              <p className="text-sm text-accent-600">{t('referral.stats.active-friends')}</p>
             </div>
           </div>
         )}
 
-        <div className="bg-gray-50 rounded-lg p-4 mb-6">
+        <div className="bg-secondary-50 rounded-lg p-4 mb-6">
           <h3 className="font-semibold mb-3">{t('referral.code.title')}</h3>
           <div className="flex items-center gap-3">
             <div className="bg-white border-2 border-dashed border-red-300 rounded-lg px-4 py-3 flex-1">

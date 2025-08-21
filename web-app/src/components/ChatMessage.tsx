@@ -159,12 +159,12 @@ export default function ChatMessageComponent({
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="absolute right-0 top-full mt-1 bg-white border border-gray-200 rounded-lg 
+                  className="absolute right-0 top-full mt-1 bg-white border border-secondary-200 rounded-lg 
                     shadow-lg z-50 py-1 min-w-32"
                 >
                   <button
                     onClick={handleDeleteMessage}
-                    className="flex items-center gap-2 w-full px-3 py-1.5 text-xs hover:bg-gray-50 
+                    className="flex items-center gap-2 w-full px-3 py-1.5 text-xs hover:bg-secondary-50 
                       text-coral-600 hover:text-red-700"
                   >
                     <Trash2 className="w-3 h-3" />
@@ -175,7 +175,7 @@ export default function ChatMessageComponent({
                     <>
                       <button
                         onClick={() => handleTimeoutUser(60)}
-                        className="flex items-center gap-2 w-full px-3 py-1.5 text-xs hover:bg-gray-50 
+                        className="flex items-center gap-2 w-full px-3 py-1.5 text-xs hover:bg-secondary-50 
                           text-amber-600 hover:text-amber-700"
                       >
                         <Clock className="w-3 h-3" />
@@ -184,7 +184,7 @@ export default function ChatMessageComponent({
                       
                       <button
                         onClick={() => handleTimeoutUser(600)}
-                        className="flex items-center gap-2 w-full px-3 py-1.5 text-xs hover:bg-gray-50 
+                        className="flex items-center gap-2 w-full px-3 py-1.5 text-xs hover:bg-secondary-50 
                           text-amber-600 hover:text-amber-700"
                       >
                         <Clock className="w-3 h-3" />
@@ -195,7 +195,7 @@ export default function ChatMessageComponent({
                       
                       <button
                         onClick={handleBanUser}
-                        className="flex items-center gap-2 w-full px-3 py-1.5 text-xs hover:bg-gray-50 
+                        className="flex items-center gap-2 w-full px-3 py-1.5 text-xs hover:bg-secondary-50 
                           text-coral-600 hover:text-red-700"
                       >
                         <Ban className="w-3 h-3" />

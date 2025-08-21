@@ -457,7 +457,7 @@ export default function AccommodationSupportSection() {
     switch (type) {
       case 'shared_house': return 'bg-blue-100 text-primary-700'
       case 'student_halls': return 'bg-green-100 text-green-700'
-      case 'private_studio': return 'bg-purple-100 text-purple-700'
+      case 'private_studio': return 'bg-accent-100 text-accent-700'
       case 'homestay': return 'bg-pink-100 text-pink-700'
       case 'flat_share': return 'bg-yellow-100 text-yellow-700'
       default: return 'bg-secondary-100 text-secondary-700'
@@ -480,7 +480,7 @@ export default function AccommodationSupportSection() {
       case 'high': return 'border-red-200 bg-red-50'
       case 'medium': return 'border-yellow-200 bg-yellow-50'
       case 'low': return 'border-green-200 bg-green-50'
-      default: return 'border-gray-200 bg-gray-50'
+      default: return 'border-secondary-200 bg-secondary-50'
     }
   }
 
@@ -495,9 +495,9 @@ export default function AccommodationSupportSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-blue-100 via-indigo-50 to-purple-100 border border-blue-200 shadow-lg mb-6">
+          <div className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-blue-100 via-primary-50 to-accent-100 border border-blue-200 shadow-lg mb-6">
             <HomeIcon className="w-4 h-4 mr-2 text-primary-600" />
-            <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent font-bold">
+            <span className="bg-gradient-to-r from-blue-600 via-primary-600 to-accent-600 bg-clip-text text-transparent font-bold">
               {language === 'pt' 
                 ? "Apoio de Alojamento para Estudantes Portugueses"
                 : "Portuguese Student Accommodation Support"}
@@ -518,19 +518,19 @@ export default function AccommodationSupportSection() {
 
           {/* Quick Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
-            <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100">
+            <div className="bg-white rounded-xl p-4 shadow-lg border border-secondary-100">
               <div className="text-2xl font-bold text-primary-600 mb-1">{ACCOMMODATION_LISTINGS.length}</div>
               <div className="text-sm text-secondary-600">{language === 'pt' ? 'Listagens verificadas' : 'Verified listings'}</div>
             </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100">
-              <div className="text-2xl font-bold text-indigo-600 mb-1">{ROOMMATE_REQUESTS.length}</div>
+            <div className="bg-white rounded-xl p-4 shadow-lg border border-secondary-100">
+              <div className="text-2xl font-bold text-primary-600 mb-1">{ROOMMATE_REQUESTS.length}</div>
               <div className="text-sm text-secondary-600">{language === 'pt' ? 'Estudantes procuram' : 'Students seeking'}</div>
             </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100">
-              <div className="text-2xl font-bold text-purple-600 mb-1">3</div>
+            <div className="bg-white rounded-xl p-4 shadow-lg border border-secondary-100">
+              <div className="text-2xl font-bold text-accent-600 mb-1">3</div>
               <div className="text-sm text-secondary-600">{language === 'pt' ? 'Áreas portuguesas' : 'Portuguese areas'}</div>
             </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100">
+            <div className="bg-white rounded-xl p-4 shadow-lg border border-secondary-100">
               <div className="text-2xl font-bold text-pink-600 mb-1">24h</div>
               <div className="text-sm text-secondary-600">{language === 'pt' ? 'Tempo de resposta' : 'Response time'}</div>
             </div>
@@ -555,7 +555,7 @@ export default function AccommodationSupportSection() {
                   className={`flex-1 p-6 rounded-2xl border transition-all duration-300 ${
                     activeTab === tab.id
                       ? 'bg-white border-blue-300 shadow-lg'
-                      : 'bg-white/50 border-gray-200 hover:bg-white hover:shadow-md'
+                      : 'bg-white/50 border-secondary-200 hover:bg-white hover:shadow-md'
                   }`}
                 >
                   <div className="flex items-center justify-center mb-3">
@@ -585,7 +585,7 @@ export default function AccommodationSupportSection() {
         {activeTab === 'listings' && (
           <div>
             {/* Filters */}
-            <div className="mb-8 bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+            <div className="mb-8 bg-white rounded-2xl p-6 shadow-lg border border-secondary-100">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-secondary-700 mb-2">
@@ -639,10 +639,10 @@ export default function AccommodationSupportSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.1 * index }}
-                  className="bg-white rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                  className="bg-white rounded-2xl border border-secondary-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
                 >
                   {/* Header */}
-                  <div className="p-6 border-b border-gray-100">
+                  <div className="p-6 border-b border-secondary-100">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex-1">
                         <h3 className="font-bold text-lg text-gray-900 mb-2 line-clamp-2">
@@ -750,7 +750,7 @@ export default function AccommodationSupportSection() {
                     </div>
 
                     {/* Contact */}
-                    <div className="mb-4 p-3 bg-gray-50 rounded-lg">
+                    <div className="mb-4 p-3 bg-secondary-50 rounded-lg">
                       <div className="text-xs font-medium text-gray-500 uppercase tracking-wide mb-1">
                         {language === 'pt' ? 'Contacto:' : 'Contact:'}
                       </div>
@@ -759,7 +759,7 @@ export default function AccommodationSupportSection() {
 
                     {/* Action Buttons */}
                     <div className="flex gap-2">
-                      <button className="flex-1 bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold py-3 px-4 rounded-xl hover:from-blue-600 hover:to-indigo-600 transition-all duration-200">
+                      <button className="flex-1 bg-gradient-to-r from-blue-500 to-primary-500 text-white font-semibold py-3 px-4 rounded-xl hover:from-blue-600 hover:to-primary-600 transition-all duration-200">
                         {language === 'pt' ? 'Ver Detalhes' : 'View Details'}
                       </button>
                       <button className="px-4 py-3 bg-secondary-100 text-secondary-700 rounded-xl hover:bg-secondary-200 transition-colors">
@@ -783,10 +783,10 @@ export default function AccommodationSupportSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 * index }}
-                className="bg-white rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="bg-white rounded-2xl border border-secondary-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
                 {/* Header */}
-                <div className="p-6 border-b border-gray-100">
+                <div className="p-6 border-b border-secondary-100">
                   <div className="flex items-start gap-4">
                     <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
                       <span className="text-primary-600 font-bold text-xl">
@@ -860,11 +860,11 @@ export default function AccommodationSupportSection() {
 
                   {/* Stats */}
                   <div className="grid grid-cols-2 gap-4 mb-4 text-center">
-                    <div className="bg-gray-50 rounded-lg p-3">
+                    <div className="bg-secondary-50 rounded-lg p-3">
                       <div className="text-lg font-bold text-gray-900">{request.responseRate}%</div>
                       <div className="text-xs text-secondary-600">{language === 'pt' ? 'Taxa resposta' : 'Response rate'}</div>
                     </div>
-                    <div className="bg-gray-50 rounded-lg p-3">
+                    <div className="bg-secondary-50 rounded-lg p-3">
                       <div className="text-sm font-bold text-gray-900">{request.lastActive}</div>
                       <div className="text-xs text-secondary-600">{language === 'pt' ? 'Última atividade' : 'Last active'}</div>
                     </div>
@@ -877,7 +877,7 @@ export default function AccommodationSupportSection() {
                   </div>
 
                   {/* Action Button */}
-                  <button className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold py-3 px-4 rounded-xl hover:from-blue-600 hover:to-indigo-600 transition-all duration-200">
+                  <button className="w-full bg-gradient-to-r from-blue-500 to-primary-500 text-white font-semibold py-3 px-4 rounded-xl hover:from-blue-600 hover:to-primary-600 transition-all duration-200">
                     <span className="flex items-center justify-center">
                       <ChatBubbleLeftRightIcon className="w-4 h-4 mr-2" />
                       {language === 'pt' ? 'Enviar Mensagem' : 'Send Message'}
@@ -949,7 +949,7 @@ export default function AccommodationSupportSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl p-8 text-center text-white"
+          className="mt-16 bg-gradient-to-r from-blue-500 to-primary-500 rounded-2xl p-8 text-center text-white"
         >
           <HomeIcon className="w-16 h-16 text-white mx-auto mb-4" />
           <h3 className="text-2xl font-bold mb-4">

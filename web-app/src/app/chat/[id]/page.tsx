@@ -82,7 +82,7 @@ const MessageBubble = ({
 
   const getMembershipBadgeColor = (tier: string) => {
     switch (tier) {
-      case 'premium': return 'bg-purple-100 text-purple-700'
+      case 'premium': return 'bg-accent-100 text-accent-700'
       case 'core': return 'bg-primary-100 text-primary-700'
       default: return 'bg-green-100 text-green-700'
     }
@@ -142,7 +142,7 @@ const MessageBubble = ({
 
         {/* Reply context */}
         {message.replyTo && (
-          <div className="mb-2 p-2 bg-gray-50 rounded-lg border-l-4 border-secondary-300 text-sm text-secondary-600">
+          <div className="mb-2 p-2 bg-secondary-50 rounded-lg border-l-4 border-secondary-300 text-sm text-secondary-600">
             <div className="font-medium">Replying to message</div>
             <div className="truncate">Original message content...</div>
           </div>
@@ -154,7 +154,7 @@ const MessageBubble = ({
             className={`px-4 py-2 rounded-2xl ${
               isOwnMessage
                 ? 'bg-gradient-to-r from-primary-500 to-secondary-500 text-white'
-                : 'bg-white border border-gray-200 text-gray-900'
+                : 'bg-white border border-secondary-200 text-gray-900'
             }`}
           >
             <div className="whitespace-pre-wrap break-words">{message.content}</div>
@@ -185,14 +185,14 @@ const MessageBubble = ({
               >
                 <button
                   onClick={() => setShowEmojiPicker(!showEmojiPicker)}
-                  className="p-1 bg-white rounded-full shadow-md hover:bg-gray-50 transition-colors"
+                  className="p-1 bg-white rounded-full shadow-md hover:bg-secondary-50 transition-colors"
                   title="Add reaction"
                 >
                   <FaceSmileIcon className="w-4 h-4 text-secondary-600" />
                 </button>
                 <button
                   onClick={() => onReply(message)}
-                  className="p-1 bg-white rounded-full shadow-md hover:bg-gray-50 transition-colors"
+                  className="p-1 bg-white rounded-full shadow-md hover:bg-secondary-50 transition-colors"
                   title="Reply"
                 >
                   <ChatBubbleLeftRightIcon className="w-4 h-4 text-secondary-600" />
@@ -200,7 +200,7 @@ const MessageBubble = ({
                 {isOwnMessage && (
                   <button
                     onClick={() => onEdit(message)}
-                    className="p-1 bg-white rounded-full shadow-md hover:bg-gray-50 transition-colors"
+                    className="p-1 bg-white rounded-full shadow-md hover:bg-secondary-50 transition-colors"
                     title="Edit"
                   >
                     <EllipsisVerticalIcon className="w-4 h-4 text-secondary-600" />
@@ -289,9 +289,9 @@ const TypingIndicators = ({ indicators }: { indicators: TypingIndicator[] }) => 
       className="flex items-center gap-2 px-4 py-2 text-sm text-secondary-600"
     >
       <div className="flex space-x-1">
-        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-        <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+        <div className="w-2 h-2 bg-secondary-400 rounded-full animate-bounce"></div>
+        <div className="w-2 h-2 bg-secondary-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+        <div className="w-2 h-2 bg-secondary-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
       </div>
       <span>
         {names.join(', ')}
@@ -378,7 +378,7 @@ const MessageInput = ({
   }, [])
 
   return (
-    <div className="border-t border-gray-200 bg-white">
+    <div className="border-t border-secondary-200 bg-white">
       {/* Reply context */}
       <AnimatePresence>
         {replyTo && (
@@ -386,7 +386,7 @@ const MessageInput = ({
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="p-4 border-b border-gray-100 bg-gray-50"
+            className="p-4 border-b border-secondary-100 bg-secondary-50"
           >
             <div className="flex items-start justify-between">
               <div className="flex-1">
@@ -581,7 +581,7 @@ export default function ChatRoomPage() {
     )
 
     if (!result.success) {
-      alert(result.error || 'Failed to send message')
+      toast.error(result.error || 'Failed to send message')
     }
 
     setReplyTo(undefined)
@@ -614,7 +614,7 @@ export default function ChatRoomPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-secondary-50">
         <div className="pt-16 flex items-center justify-center min-h-screen">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
@@ -627,7 +627,7 @@ export default function ChatRoomPage() {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-secondary-50">
         <div className="pt-16 flex items-center justify-center min-h-screen">
           <div className="text-center">
             <ExclamationTriangleIcon className="w-16 h-16 text-coral-500 mx-auto mb-4" />
@@ -652,10 +652,10 @@ export default function ChatRoomPage() {
   const onlineMembers = userPresence.filter(p => p.isOnline).length
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen bg-secondary-50 flex flex-col">
       
       {/* Chat header */}
-      <div className="pt-16 bg-white border-b border-gray-200 sticky top-16 z-10">
+      <div className="pt-16 bg-white border-b border-secondary-200 sticky top-16 z-10">
         <div className="flex items-center justify-between p-4">
           <div className="flex items-center gap-3">
             <button

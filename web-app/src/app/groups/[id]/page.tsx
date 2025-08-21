@@ -204,7 +204,7 @@ export default function GroupDetailPage({ params }: PageProps) {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 pt-16 flex items-center justify-center">
+      <div className="min-h-screen bg-secondary-50 pt-16 flex items-center justify-center">
         <div className="w-8 h-8 border-2 border-primary-600 border-t-transparent rounded-full animate-spin"></div>
       </div>
     )
@@ -212,7 +212,7 @@ export default function GroupDetailPage({ params }: PageProps) {
 
   if (!group) {
     return (
-      <div className="min-h-screen bg-gray-50 pt-16 flex items-center justify-center">
+      <div className="min-h-screen bg-secondary-50 pt-16 flex items-center justify-center">
         <div className="text-center">
           <UserGroupIcon className="w-16 h-16 text-gray-300 mx-auto mb-4" />
           <h2 className="text-xl font-semibold text-gray-900 mb-2">Group not found</h2>
@@ -229,7 +229,7 @@ export default function GroupDetailPage({ params }: PageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-16">
+    <div className="min-h-screen bg-secondary-50 pt-16">
       <div className="container-width py-12">
         <div className="max-w-4xl mx-auto">
           {/* Group Header */}
@@ -308,7 +308,7 @@ export default function GroupDetailPage({ params }: PageProps) {
                     <button
                       onClick={group.is_private ? () => setShowJoinModal(true) : handleJoinGroup}
                       disabled={joinLoading}
-                      className="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 disabled:bg-gray-300 disabled:cursor-not-allowed flex items-center justify-center"
+                      className="px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 disabled:bg-secondary-300 disabled:cursor-not-allowed flex items-center justify-center"
                     >
                       {joinLoading ? (
                         <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
@@ -434,7 +434,7 @@ export default function GroupDetailPage({ params }: PageProps) {
                       </span>
                     )}
                     {group.cultural_focus.traditional_activities && (
-                      <span className="inline-flex items-center px-3 py-2 rounded-full text-sm bg-purple-100 text-purple-800">
+                      <span className="inline-flex items-center px-3 py-2 rounded-full text-sm bg-accent-100 text-accent-800">
                         🎭 Traditional Portuguese activities
                       </span>
                     )}
@@ -468,7 +468,7 @@ export default function GroupDetailPage({ params }: PageProps) {
               {group.rules && (
                 <div className="mb-8">
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Group Rules</h3>
-                  <div className="bg-gray-50 rounded-lg p-4">
+                  <div className="bg-secondary-50 rounded-lg p-4">
                     <p className="text-secondary-700 whitespace-pre-wrap">{group.rules}</p>
                   </div>
                 </div>
@@ -519,7 +519,7 @@ export default function GroupDetailPage({ params }: PageProps) {
 
               {/* Created By */}
               {group.creator_profile && (
-                <div className="border-t border-gray-200 pt-6">
+                <div className="border-t border-secondary-200 pt-6">
                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white font-bold">
                       {group.creator_profile.first_name[0]}
@@ -577,14 +577,14 @@ export default function GroupDetailPage({ params }: PageProps) {
             <div className="flex space-x-3">
               <button
                 onClick={() => setShowJoinModal(false)}
-                className="flex-1 px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50"
+                className="flex-1 px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-secondary-50"
               >
                 Cancel
               </button>
               <button
                 onClick={handleJoinGroup}
                 disabled={joinLoading || !joinMessage.trim()}
-                className="flex-1 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 disabled:bg-gray-300 disabled:cursor-not-allowed"
+                className="flex-1 px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 disabled:bg-secondary-300 disabled:cursor-not-allowed"
               >
                 {joinLoading ? 'Sending...' : 'Send Request'}
               </button>

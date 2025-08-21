@@ -189,7 +189,7 @@ export default function UserOnboardingFlow({
               className="min-h-full bg-white"
             >
               {/* Mobile Header */}
-              <div className="sticky top-0 z-10 bg-white border-b border-gray-200 px-6 py-4">
+              <div className="sticky top-0 z-10 bg-white border-b border-secondary-200 px-6 py-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-full flex items-center justify-center">
@@ -401,7 +401,7 @@ function WelcomeStep({ onNext, isPortuguese, isMobile }: any) {
           <span>{isPortuguese ? 'Verificado' : 'Verified'}</span>
         </div>
         <div className="flex items-center gap-2">
-          <GiftIcon className="w-5 h-5 text-purple-500" />
+          <GiftIcon className="w-5 h-5 text-accent-500" />
           <span>{isPortuguese ? 'Gratuito' : 'Free'}</span>
         </div>
       </motion.div>
@@ -411,7 +411,7 @@ function WelcomeStep({ onNext, isPortuguese, isMobile }: any) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7 }}
         onClick={onNext}
-        className={`${isMobile ? 'w-full py-4' : 'px-8 py-4'} bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center gap-2`}
+        className={`${isMobile ? 'w-full py-4' : 'px-8 py-4'} bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-transecondary-y-0.5 flex items-center justify-center gap-2`}
       >
         <span>{isPortuguese ? 'Vamos Começar!' : 'Let\'s Get Started!'}</span>
         <ArrowRightIcon className="w-5 h-5" />
@@ -480,7 +480,7 @@ function SocialLoginStep({ onNext, onPrevious, data, onDataChange, isPortuguese,
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
             onClick={() => handleSelection(option.id)}
-            className={`group relative p-6 bg-white border-2 border-gray-200 rounded-xl hover:border-primary-300 hover:shadow-lg transition-all duration-200 text-left ${
+            className={`group relative p-6 bg-white border-2 border-secondary-200 rounded-xl hover:border-primary-300 hover:shadow-lg transition-all duration-200 text-left ${
               data.socialLogin === option.id ? 'border-primary-500 bg-primary-50' : ''
             }`}
           >
@@ -616,7 +616,7 @@ function HeritageStep({ onNext, onPrevious, data, onDataChange, isPortuguese, is
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.05 }}
             onClick={() => handleSelection(option.id)}
-            className={`group relative p-4 bg-white border-2 border-gray-200 rounded-xl hover:border-primary-300 hover:shadow-lg transition-all duration-200 text-left ${
+            className={`group relative p-4 bg-white border-2 border-secondary-200 rounded-xl hover:border-primary-300 hover:shadow-lg transition-all duration-200 text-left ${
               data.heritage === option.id ? 'border-primary-500 bg-primary-50' : ''
             }`}
           >
@@ -738,7 +738,7 @@ function LocationStep({ onNext, onPrevious, data, onDataChange, isPortuguese, is
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
             onClick={() => handleSelection(area.id)}
-            className={`group relative p-5 bg-white border-2 border-gray-200 rounded-xl hover:border-primary-300 hover:shadow-lg transition-all duration-200 text-left ${
+            className={`group relative p-5 bg-white border-2 border-secondary-200 rounded-xl hover:border-primary-300 hover:shadow-lg transition-all duration-200 text-left ${
               data.location === area.id ? 'border-primary-500 bg-primary-50' : ''
             }`}
           >
@@ -801,7 +801,7 @@ function InterestsStep({ onNext, onPrevious, data, onDataChange, isPortuguese, i
       name: isPortuguese ? 'Eventos Culturais' : 'Cultural Events',
       description: isPortuguese ? 'Fado, Santos Populares, festas tradicionais' : 'Fado, Santos Populares, traditional festivals',
       icon: CalendarDaysIcon,
-      color: 'from-purple-500 to-purple-600'
+      color: 'from-accent-500 to-accent-600'
     },
     {
       id: 'business_networking',
@@ -893,7 +893,7 @@ function InterestsStep({ onNext, onPrevious, data, onDataChange, isPortuguese, i
               className={`group relative p-4 bg-white border-2 rounded-xl hover:shadow-lg transition-all duration-200 text-left ${
                 isSelected 
                   ? 'border-primary-500 bg-primary-50' 
-                  : 'border-gray-200 hover:border-primary-300'
+                  : 'border-secondary-200 hover:border-primary-300'
               }`}
             >
               <div className="flex items-start gap-3">
@@ -1037,7 +1037,7 @@ function GuidelinesStep({ onNext, onPrevious, data, onDataChange, isPortuguese, 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="p-4 bg-white border border-gray-200 rounded-xl"
+            className="p-4 bg-white border border-secondary-200 rounded-xl"
           >
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 bg-gradient-to-r from-primary-100 to-secondary-100 rounded-full flex items-center justify-center flex-shrink-0">
@@ -1172,7 +1172,7 @@ function GrowthStep({ onNext, onPrevious, data, onDataChange, isPortuguese, isMo
             icon: AcademicCapIcon,
             title: isPortuguese ? 'Desconto de Estudante' : 'Student Discount',
             description: isPortuguese ? '50% de desconto se for estudante' : '50% discount if you\'re a student',
-            color: 'from-purple-500 to-purple-600'
+            color: 'from-accent-500 to-accent-600'
           },
           {
             icon: StarSolidIcon,
@@ -1192,7 +1192,7 @@ function GrowthStep({ onNext, onPrevious, data, onDataChange, isPortuguese, isMo
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 + index * 0.1 }}
-            className="flex items-center gap-4 p-4 bg-white border border-gray-200 rounded-xl"
+            className="flex items-center gap-4 p-4 bg-white border border-secondary-200 rounded-xl"
           >
             <div className={`w-12 h-12 bg-gradient-to-r ${benefit.color} rounded-full flex items-center justify-center flex-shrink-0`}>
               <benefit.icon className="w-6 h-6 text-white" />
@@ -1218,7 +1218,7 @@ function GrowthStep({ onNext, onPrevious, data, onDataChange, isPortuguese, isMo
       >
         <button
           onClick={onNext}
-          className={`${isMobile ? 'w-full py-4' : 'px-8 py-4'} bg-gradient-to-r from-green-500 via-primary-500 to-secondary-500 text-white font-bold rounded-xl hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2`}
+          className={`${isMobile ? 'w-full py-4' : 'px-8 py-4'} bg-gradient-to-r from-green-500 via-primary-500 to-secondary-500 text-white font-bold rounded-xl hover:shadow-xl transform hover:-transecondary-y-0.5 transition-all duration-200 flex items-center justify-center gap-2`}
         >
           <span>{isPortuguese ? 'Explorar Comunidade' : 'Explore Community'}</span>
           <ArrowRightIcon className="w-5 h-5" />

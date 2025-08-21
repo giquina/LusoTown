@@ -453,11 +453,11 @@ export default function Pricing() {
                 const getColorClasses = (color: string) => {
                   const colorMap = {
                     gray: {
-                      border: 'border-gray-200',
-                      bg: 'bg-gray-50',
+                      border: 'border-secondary-200',
+                      bg: 'bg-secondary-50',
                       iconBg: 'bg-secondary-100',
                       iconText: 'text-secondary-600',
-                      button: 'bg-gray-500 hover:bg-gray-600 text-white',
+                      button: 'bg-secondary-500 hover:bg-secondary-600 text-white',
                       badge: 'bg-secondary-100 text-secondary-800'
                     },
                     primary: {
@@ -487,12 +487,12 @@ export default function Pricing() {
                   <div 
                     key={plan.id}
                     className={`relative rounded-3xl p-8 bg-white shadow-2xl ${
-                      isHighlighted ? 'border-4 border-primary-400 ring-4 ring-primary-100 scale-105' : 'border-2 border-gray-200'
+                      isHighlighted ? 'border-4 border-primary-400 ring-4 ring-primary-100 scale-105' : 'border-2 border-secondary-200'
                     }`}
                   >
                     {/* Badge */}
                     {plan.badge && (
-                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                      <div className="absolute -top-4 left-1/2 transform -transecondary-x-1/2">
                         <span className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-6 py-2 rounded-full text-sm font-bold">
                           {isPortuguese ? plan.badge : plan.badgeEn}
                         </span>
@@ -564,7 +564,7 @@ export default function Pricing() {
                       <button className={`w-full py-4 px-6 rounded-2xl font-semibold text-lg transition-all duration-200 group mb-8 ${colors.button} ${isHighlighted ? 'shadow-xl hover:shadow-2xl' : 'shadow-lg hover:shadow-xl'}`}>
                         <span className="flex items-center justify-center">
                           {isPortuguese ? plan.buttonText : plan.buttonTextEn}
-                          <ArrowRightIcon className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                          <ArrowRightIcon className="ml-3 w-5 h-5 group-hover:transecondary-x-1 transition-transform" />
                         </span>
                       </button>
                     </div>
@@ -708,7 +708,7 @@ export default function Pricing() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-secondary-50">
           <div className="container-width">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -820,7 +820,7 @@ export default function Pricing() {
                       </div>
                     </div>
                     <div className="bg-white rounded-xl p-6">
-                      <div className="text-3xl font-bold text-purple-600 mb-2">£14.99</div>
+                      <div className="text-3xl font-bold text-accent-600 mb-2">£14.99</div>
                       <div className="text-sm text-secondary-600 mb-2">
                         {isPortuguese ? 'Sénior (60+)/mês' : 'Senior (60+)/month'}
                       </div>
@@ -843,7 +843,7 @@ export default function Pricing() {
         </section>
 
         {/* Feature Comparison Table */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-secondary-50">
           <div className="container-width">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -953,7 +953,7 @@ export default function Pricing() {
                       }
                     ].map((section, index) => (
                       <div key={index} className="space-y-4">
-                        <h4 className="text-lg font-semibold text-gray-900 border-b border-gray-200 pb-2">
+                        <h4 className="text-lg font-semibold text-gray-900 border-b border-secondary-200 pb-2">
                           {section.category}
                         </h4>
                         <div className="space-y-3">
@@ -968,19 +968,19 @@ export default function Pricing() {
                     ))}
                   </div>
 
-                  <div className="mt-8 pt-6 border-t border-gray-200">
+                  <div className="mt-8 pt-6 border-t border-secondary-200">
                     <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-lg p-6">
                       <div className="flex items-center justify-center space-x-4 text-center">
                         <div>
                           <div className="text-2xl font-bold text-primary-600">{communityStats.members}</div>
                           <div className="text-xs text-secondary-600">{isPortuguese ? 'Membros ativos' : 'Active members'}</div>
                         </div>
-                        <div className="w-px h-8 bg-gray-300"></div>
+                        <div className="w-px h-8 bg-secondary-300"></div>
                         <div>
                           <div className="text-2xl font-bold text-secondary-600">35+</div>
                           <div className="text-xs text-secondary-600">{isPortuguese ? 'Eventos/mês' : 'Events/month'}</div>
                         </div>
-                        <div className="w-px h-8 bg-gray-300"></div>
+                        <div className="w-px h-8 bg-secondary-300"></div>
                         <div>
                           <div className="text-2xl font-bold text-accent-600">4.9★</div>
                           <div className="text-xs text-secondary-600">{isPortuguese ? 'Avaliação média' : 'Average rating'}</div>
@@ -1083,7 +1083,7 @@ export default function Pricing() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              <div className="text-center p-8 bg-gray-50 rounded-2xl">
+              <div className="text-center p-8 bg-secondary-50 rounded-2xl">
                 <div className="w-16 h-16 bg-primary-100 text-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <CurrencyPoundIcon className="w-8 h-8" />
                 </div>
@@ -1098,7 +1098,7 @@ export default function Pricing() {
                 </p>
               </div>
               
-              <div className="text-center p-8 bg-gray-50 rounded-2xl">
+              <div className="text-center p-8 bg-secondary-50 rounded-2xl">
                 <div className="w-16 h-16 bg-secondary-100 text-secondary-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <UsersIcon className="w-8 h-8" />
                 </div>
@@ -1113,7 +1113,7 @@ export default function Pricing() {
                 </p>
               </div>
               
-              <div className="text-center p-8 bg-gray-50 rounded-2xl">
+              <div className="text-center p-8 bg-secondary-50 rounded-2xl">
                 <div className="w-16 h-16 bg-accent-100 text-accent-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <HeartIcon className="w-8 h-8" />
                 </div>
@@ -1171,7 +1171,7 @@ export default function Pricing() {
         </section>
 
         {/* Portuguese Community FAQ Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-secondary-50">
           <div className="container-width">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -1328,7 +1328,7 @@ export default function Pricing() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <a href={ROUTES.signup} className="inline-flex items-center gap-2 bg-white text-primary-600 hover:bg-secondary-100 text-lg font-semibold px-8 py-4 rounded-xl group transform hover:scale-105 transition-all duration-200 shadow-lg">
                   {isPortuguese ? 'Começar Grátis' : 'Start Free'}
-                  <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRightIcon className="w-5 h-5 group-hover:transecondary-x-1 transition-transform" />
                 </a>
                 <a href={ROUTES.login} className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-primary-600 text-lg font-semibold px-8 py-4 rounded-xl transform hover:scale-105 transition-all duration-200">
                   {isPortuguese ? 'Já é Membro? Entrar' : 'Already a Member? Sign In'}

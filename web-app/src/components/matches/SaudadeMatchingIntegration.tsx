@@ -262,7 +262,7 @@ export default function SaudadeMatchingIntegration({
                   <span>{language === 'pt' ? 'Estratégias de adaptação' : 'Coping strategies'}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                  <div className="w-2 h-2 bg-accent-500 rounded-full"></div>
                   <span>{language === 'pt' ? 'Necessidades de apoio' : 'Support needs'}</span>
                 </div>
               </div>
@@ -377,7 +377,7 @@ export default function SaudadeMatchingIntegration({
       )}
 
       {/* Tab Navigation */}
-      <div className="flex gap-4 border-b border-gray-200">
+      <div className="flex gap-4 border-b border-secondary-200">
         <button
           onClick={() => {
             setShowMatches(true);

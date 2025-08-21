@@ -235,7 +235,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
       description: 'Cultural centers, educational institutions, and heritage organizations',
       descriptionPortuguese: 'Centros culturais, instituições educacionais e organizações de património',
       icon: <AcademicCapIcon className="w-6 h-6" />,
-      color: 'bg-purple-100 text-purple-700',
+      color: 'bg-accent-100 text-accent-700',
       partnerCount: partnerships.filter(p => p.type === 'cultural_center' || p.type === 'educational_institution').length,
       memberBenefits: ['Course discounts', 'Cultural programming', 'Heritage workshops'],
       totalCommunityReach: partnerships.filter(p => p.type === 'cultural_center' || p.type === 'educational_institution').reduce((sum, p) => sum + p.communitySize, 0),
@@ -291,7 +291,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
       initial_contact: 'bg-secondary-100 text-secondary-700',
       proposal_sent: 'bg-blue-100 text-primary-700',
       negotiations: 'bg-yellow-100 text-yellow-700',
-      agreement_draft: 'bg-purple-100 text-purple-700',
+      agreement_draft: 'bg-accent-100 text-accent-700',
       final_approval: 'bg-green-100 text-green-700'
     }
     return colors[stage]
@@ -386,7 +386,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {institutionalCategories.map((category) => (
-            <div key={category.id} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow">
+            <div key={category.id} className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6 hover:shadow-md transition-shadow">
               <div className="flex items-center mb-4">
                 <div className={`p-3 rounded-lg ${category.color} mr-4`}>
                   {category.icon}
@@ -440,8 +440,8 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
           {language === 'pt' ? 'Pipeline de Desenvolvimento de Parcerias' : 'Partnership Development Pipeline'}
         </h2>
         
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-          <div className="px-6 py-4 bg-gray-50 border-b border-gray-200">
+        <div className="bg-white rounded-xl shadow-sm border border-secondary-200 overflow-hidden">
+          <div className="px-6 py-4 bg-secondary-50 border-b border-secondary-200">
             <h3 className="font-semibold text-gray-900">
               {language === 'pt' ? 'Novas Parcerias em Desenvolvimento' : 'New Partnerships in Development'}
             </h3>
@@ -455,7 +455,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
           
           <div className="divide-y divide-gray-200">
             {developmentPipeline.map((item) => (
-              <div key={item.id} className="p-6 hover:bg-gray-50 transition-colors">
+              <div key={item.id} className="p-6 hover:bg-secondary-50 transition-colors">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex items-center space-x-3 mb-2">
@@ -580,7 +580,7 @@ const PortugueseInstitutionalPartnerships: React.FC = () => {
       </div>
 
       {/* Call to Action */}
-      <div className="text-center bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+      <div className="text-center bg-white rounded-xl shadow-sm border border-secondary-200 p-8">
         <h2 className="text-2xl font-bold text-gray-900 mb-4">
           {language === 'pt' ? 'Junte-se à Nossa Rede de Parcerias' : 'Join Our Partnership Network'}
         </h2>

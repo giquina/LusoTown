@@ -130,7 +130,7 @@ export default function QuickTestimonials() {
                 </blockquote>
 
                 {/* Attribution */}
-                <div className="pt-4 border-t border-gray-100">
+                <div className="pt-4 border-t border-secondary-100">
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="font-semibold text-gray-900">
@@ -170,7 +170,7 @@ export default function QuickTestimonials() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="/success-stories" 
-              className="inline-flex items-center justify-center bg-white text-secondary-600 hover:bg-gray-50 border-2 border-secondary-200 hover:border-secondary-300 font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              className="inline-flex items-center justify-center bg-white text-secondary-600 hover:bg-secondary-50 border-2 border-secondary-200 hover:border-secondary-300 font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
               {language === 'pt' ? 'Ver Mais Histórias' : 'Read More Stories'}
             </a>

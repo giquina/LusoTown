@@ -421,7 +421,7 @@ export default function EasySIAQuestionnaire({
             onClick={e => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200 bg-gradient-to-r from-secondary-50 to-accent-50 rounded-t-2xl">
+            <div className="flex items-center justify-between p-4 sm:p-6 border-b border-secondary-200 bg-gradient-to-r from-secondary-50 to-accent-50 rounded-t-2xl">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-xl flex items-center justify-center">
                   <ShieldCheckIcon className="w-5 h-5 sm:w-6 sm:h-6 text-secondary-600" />
@@ -447,7 +447,7 @@ export default function EasySIAQuestionnaire({
             </div>
 
             {/* Progress Bar */}
-            <div className="px-4 sm:px-6 py-3 bg-gray-50">
+            <div className="px-4 sm:px-6 py-3 bg-secondary-50">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm font-medium text-secondary-700">
                   {isPortuguese ? `Passo ${currentStep} de ${totalSteps}` : `Step ${currentStep} of ${totalSteps}`}
@@ -505,7 +505,7 @@ export default function EasySIAQuestionnaire({
                               p-4 border-2 rounded-xl transition-all text-center
                               ${formData.serviceType === option.value
                                 ? 'border-secondary-500 bg-secondary-50 text-secondary-700'
-                                : 'border-gray-200 bg-white text-secondary-600 hover:border-secondary-300'
+                                : 'border-secondary-200 bg-white text-secondary-600 hover:border-secondary-300'
                               }
                             `}>
                               <IconComponent className="w-8 h-8 mx-auto mb-2" />
@@ -709,7 +709,7 @@ export default function EasySIAQuestionnaire({
                               px-6 py-3 border-2 rounded-lg transition-all
                               ${!formData.hasKnownRisks
                                 ? 'border-action-500 bg-green-50 text-green-700'
-                                : 'border-gray-200 bg-white text-secondary-600 hover:border-secondary-300'
+                                : 'border-secondary-200 bg-white text-secondary-600 hover:border-secondary-300'
                               }
                             `}>
                               <div className="font-medium">
@@ -734,7 +734,7 @@ export default function EasySIAQuestionnaire({
                               px-6 py-3 border-2 rounded-lg transition-all
                               ${formData.hasKnownRisks
                                 ? 'border-accent-500 bg-yellow-50 text-yellow-700'
-                                : 'border-gray-200 bg-white text-secondary-600 hover:border-secondary-300'
+                                : 'border-secondary-200 bg-white text-secondary-600 hover:border-secondary-300'
                               }
                             `}>
                               <div className="font-medium">
@@ -768,7 +768,7 @@ export default function EasySIAQuestionnaire({
                                 p-3 border-2 rounded-lg transition-all text-sm
                                 ${formData.riskFactors.includes(option.value)
                                   ? 'border-coral-500 bg-red-50 text-red-700'
-                                  : 'border-gray-200 bg-white text-secondary-600 hover:border-secondary-300'
+                                  : 'border-secondary-200 bg-white text-secondary-600 hover:border-secondary-300'
                                 }
                               `}>
                                 <div className="flex items-center space-x-2">
@@ -836,7 +836,7 @@ export default function EasySIAQuestionnaire({
                             p-4 border-2 rounded-lg transition-all
                             ${formData.protectionLevel === option.value
                               ? 'border-secondary-500 bg-secondary-50 text-secondary-700'
-                              : 'border-gray-200 bg-white text-secondary-600 hover:border-secondary-300'
+                              : 'border-secondary-200 bg-white text-secondary-600 hover:border-secondary-300'
                             }
                           `}>
                             <div className="flex items-center space-x-3">
@@ -912,7 +912,7 @@ export default function EasySIAQuestionnaire({
                               p-4 border-2 rounded-lg transition-all text-sm
                               ${formData.specialRequirements.includes(option.value)
                                 ? 'border-accent-500 bg-accent-50 text-accent-700'
-                                : 'border-gray-200 bg-white text-secondary-600 hover:border-secondary-300'
+                                : 'border-secondary-200 bg-white text-secondary-600 hover:border-secondary-300'
                               }
                             `}>
                               <div className="flex items-center space-x-3">
@@ -953,7 +953,7 @@ export default function EasySIAQuestionnaire({
                               p-3 border-2 rounded-lg transition-all text-sm
                               ${formData.specialRequirements.includes(option.value)
                                 ? 'border-secondary-500 bg-secondary-50 text-secondary-700'
-                                : 'border-gray-200 bg-white text-secondary-600 hover:border-secondary-300'
+                                : 'border-secondary-200 bg-white text-secondary-600 hover:border-secondary-300'
                               }
                             `}>
                               <div className="flex items-center space-x-2">
@@ -1144,9 +1144,9 @@ export default function EasySIAQuestionnaire({
             </div>
 
             {/* Footer Navigation */}
-            <div className="border-t border-gray-200 bg-gradient-to-r from-gray-50 to-secondary-50 rounded-b-2xl">
+            <div className="border-t border-secondary-200 bg-gradient-to-r from-gray-50 to-secondary-50 rounded-b-2xl">
               {/* Progress summary */}
-              <div className="px-4 sm:px-6 py-3 border-b border-gray-100">
+              <div className="px-4 sm:px-6 py-3 border-b border-secondary-100">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
                     <SIABadge variant="mini" showAnimation={false} />

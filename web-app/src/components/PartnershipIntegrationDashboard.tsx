@@ -167,7 +167,7 @@ const PartnershipIntegrationDashboard: React.FC = () => {
     const colors = {
       new_partnership: 'text-action-600 bg-green-100',
       renewal: 'text-primary-600 bg-blue-100',
-      event: 'text-purple-600 bg-purple-100',
+      event: 'text-accent-600 bg-accent-100',
       benefit_claimed: 'text-yellow-600 bg-yellow-100',
       meeting: 'text-secondary-600 bg-secondary-100'
     }
@@ -239,7 +239,7 @@ const PartnershipIntegrationDashboard: React.FC = () => {
       {/* Key Metrics */}
       {metrics && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+          <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
             <div className="flex items-center">
               <HandRaisedIcon className="w-8 h-8 text-primary-500" />
               <div className="ml-4">
@@ -254,7 +254,7 @@ const PartnershipIntegrationDashboard: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+          <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
             <div className="flex items-center">
               <UserGroupIcon className="w-8 h-8 text-secondary-500" />
               <div className="ml-4">
@@ -271,7 +271,7 @@ const PartnershipIntegrationDashboard: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+          <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
             <div className="flex items-center">
               <CurrencyPoundIcon className="w-8 h-8 text-accent-500" />
               <div className="ml-4">
@@ -288,7 +288,7 @@ const PartnershipIntegrationDashboard: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+          <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
             <div className="flex items-center">
               <TrophyIcon className="w-8 h-8 text-premium-500" />
               <div className="ml-4">
@@ -308,14 +308,14 @@ const PartnershipIntegrationDashboard: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Recent Activities */}
         <div className="lg:col-span-2">
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+          <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-6">
               {language === 'pt' ? 'Atividades Recentes' : 'Recent Activities'}
             </h3>
             
             <div className="space-y-4">
               {activities.map((activity) => (
-                <div key={activity.id} className="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-50 transition-colors">
+                <div key={activity.id} className="flex items-start space-x-4 p-4 rounded-lg hover:bg-secondary-50 transition-colors">
                   <div className={`flex items-center justify-center w-10 h-10 rounded-full ${getActivityColor(activity.type)}`}>
                     {getActivityIcon(activity.type)}
                   </div>
@@ -353,7 +353,7 @@ const PartnershipIntegrationDashboard: React.FC = () => {
         {/* Partnership Status & Alerts */}
         <div className="space-y-6">
           {/* Urgent Actions */}
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+          <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
               {language === 'pt' ? 'Ações Urgentes' : 'Urgent Actions'}
             </h3>
@@ -386,7 +386,7 @@ const PartnershipIntegrationDashboard: React.FC = () => {
           </div>
 
           {/* Top Performing Partners */}
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+          <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
               {language === 'pt' ? 'Parceiros de Destaque' : 'Top Performing Partners'}
             </h3>
@@ -419,7 +419,7 @@ const PartnershipIntegrationDashboard: React.FC = () => {
           </div>
 
           {/* Quick Actions */}
-          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+          <div className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">
               {language === 'pt' ? 'Ações Rápidas' : 'Quick Actions'}
             </h3>
@@ -445,21 +445,21 @@ const PartnershipIntegrationDashboard: React.FC = () => {
       </div>
 
       {/* Partnership Benefits Summary */}
-      <div className="mt-8 bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+      <div className="mt-8 bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
         <h3 className="text-lg font-semibold text-gray-900 mb-6">
           {language === 'pt' ? 'Resumo de Benefícios Ativos' : 'Active Benefits Summary'}
         </h3>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {benefits.slice(0, 8).map((benefit) => (
-            <div key={benefit.id} className="p-4 border border-gray-200 rounded-lg">
+            <div key={benefit.id} className="p-4 border border-secondary-200 rounded-lg">
               <h4 className="text-sm font-medium text-gray-900 mb-2">
                 {language === 'pt' ? benefit.titlePortuguese : benefit.title}
               </h4>
               <div className="flex items-center justify-between">
                 <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
                   benefit.category === 'business' ? 'bg-blue-100 text-primary-700' :
-                  benefit.category === 'cultural' ? 'bg-purple-100 text-purple-700' :
+                  benefit.category === 'cultural' ? 'bg-accent-100 text-accent-700' :
                   benefit.category === 'education' ? 'bg-green-100 text-green-700' :
                   'bg-secondary-100 text-secondary-700'
                 }`}>

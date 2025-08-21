@@ -70,13 +70,13 @@ const PartnershipCard: React.FC<PartnershipCardProps> = ({ partnership }) => {
       strategic_partner: { label: language === 'pt' ? 'Parceiro Estratégico' : 'Strategic Partner', color: 'bg-primary-500' },
       official_partner: { label: language === 'pt' ? 'Parceiro Oficial' : 'Official Partner', color: 'bg-secondary-500' },
       community_partner: { label: language === 'pt' ? 'Parceiro Comunitário' : 'Community Partner', color: 'bg-premium-500' },
-      supporting_partner: { label: language === 'pt' ? 'Parceiro Apoiante' : 'Supporting Partner', color: 'bg-gray-500' }
+      supporting_partner: { label: language === 'pt' ? 'Parceiro Apoiante' : 'Supporting Partner', color: 'bg-secondary-500' }
     }
     return badges[level] || badges.supporting_partner
   }
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 group">
+    <div className="bg-white rounded-2xl shadow-lg border border-secondary-100 overflow-hidden hover:shadow-xl transition-all duration-300 group">
       {/* Header with Partnership Level */}
       <div className={`${getLevelBadge(partnership.partnershipLevel).color} text-white px-6 py-3`}>
         <div className="flex items-center justify-between">
@@ -123,11 +123,11 @@ const PartnershipCard: React.FC<PartnershipCardProps> = ({ partnership }) => {
         
         {/* Community Impact */}
         <div className="grid grid-cols-2 gap-4 mb-4 text-center">
-          <div className="bg-gray-50 rounded-lg p-3">
+          <div className="bg-secondary-50 rounded-lg p-3">
             <div className="text-lg font-bold text-primary-600">{partnership.communitySize.toLocaleString()}</div>
             <div className="text-xs text-secondary-600">{language === 'pt' ? 'Membros' : 'Members'}</div>
           </div>
-          <div className="bg-gray-50 rounded-lg p-3">
+          <div className="bg-secondary-50 rounded-lg p-3">
             <div className="text-lg font-bold text-secondary-600">{partnership.programs.length}</div>
             <div className="text-xs text-secondary-600">{language === 'pt' ? 'Programas' : 'Programs'}</div>
           </div>
@@ -149,7 +149,7 @@ const PartnershipCard: React.FC<PartnershipCardProps> = ({ partnership }) => {
               </span>
             ))}
             {partnership.servicesOffered.length > 3 && (
-              <span className="px-2 py-1 bg-gray-50 text-secondary-600 text-xs rounded-full">
+              <span className="px-2 py-1 bg-secondary-50 text-secondary-600 text-xs rounded-full">
                 +{partnership.servicesOffered.length - 3} {language === 'pt' ? 'mais' : 'more'}
               </span>
             )}
@@ -220,7 +220,7 @@ const PartnershipCard: React.FC<PartnershipCardProps> = ({ partnership }) => {
         </div>
         
         {/* Contact Person */}
-        <div className="mb-4 bg-gray-50 rounded-lg p-3">
+        <div className="mb-4 bg-secondary-50 rounded-lg p-3">
           <h4 className="font-medium text-gray-900 mb-2 text-sm">
             {language === 'pt' ? 'Contacto Principal' : 'Main Contact'}
           </h4>
@@ -312,14 +312,14 @@ export default function Partnerships() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center pt-20">
+      <div className="min-h-screen bg-secondary-50 flex items-center justify-center pt-20">
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-primary-500"></div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-secondary-50 pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="text-center mb-8">
@@ -394,7 +394,7 @@ export default function Partnerships() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {benefits.map(benefit => (
-              <div key={benefit.id} className="border border-gray-200 rounded-lg p-6">
+              <div key={benefit.id} className="border border-secondary-200 rounded-lg p-6">
                 <h3 className="font-semibold text-gray-900 mb-2">
                   {language === 'pt' ? benefit.titlePortuguese : benefit.title}
                 </h3>
@@ -403,7 +403,7 @@ export default function Partnerships() {
                 </p>
                 <div className="flex items-center gap-2">
                   <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                    benefit.category === 'cultural' ? 'bg-purple-100 text-purple-700' :
+                    benefit.category === 'cultural' ? 'bg-accent-100 text-accent-700' :
                     benefit.category === 'business' ? 'bg-primary-100 text-primary-700' :
                     benefit.category === 'education' ? 'bg-green-100 text-green-700' :
                     'bg-secondary-100 text-secondary-700'

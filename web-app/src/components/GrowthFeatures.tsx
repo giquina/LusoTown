@@ -151,10 +151,10 @@ export default function GrowthFeatures({
               className="min-h-full bg-white"
             >
               {/* Mobile Header */}
-              <div className="sticky top-0 z-10 bg-white border-b border-gray-200 px-6 py-4">
+              <div className="sticky top-0 z-10 bg-white border-b border-secondary-200 px-6 py-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-gradient-to-br from-accent-600 to-pink-600 rounded-full flex items-center justify-center">
                       <GiftIcon className="w-4 h-4 text-white" />
                     </div>
                     <div>
@@ -182,7 +182,7 @@ export default function GrowthFeatures({
                       onClick={() => setActiveTab(tab.id)}
                       className={`flex-shrink-0 px-4 py-2 rounded-full text-xs font-medium transition-all ${
                         activeTab === tab.id
-                          ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
+                          ? 'bg-gradient-to-r from-accent-500 to-pink-500 text-white shadow-lg'
                           : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
                       }`}
                     >
@@ -211,10 +211,10 @@ export default function GrowthFeatures({
               className="bg-white max-w-5xl w-full rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
             >
               {/* Desktop Header */}
-              <div className="flex-shrink-0 relative px-8 py-6 border-b bg-gradient-to-r from-purple-50 via-pink-50 to-orange-50">
+              <div className="flex-shrink-0 relative px-8 py-6 border-b bg-gradient-to-r from-accent-50 via-pink-50 to-orange-50">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 bg-gradient-to-br from-accent-600 to-pink-600 rounded-full flex items-center justify-center">
                       <GiftIcon className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -245,8 +245,8 @@ export default function GrowthFeatures({
                       onClick={() => setActiveTab(tab.id)}
                       className={`px-6 py-3 rounded-xl text-sm font-medium transition-all ${
                         activeTab === tab.id
-                          ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg'
-                          : 'bg-white text-secondary-600 hover:bg-gray-50 border border-gray-200'
+                          ? 'bg-gradient-to-r from-accent-500 to-pink-500 text-white shadow-lg'
+                          : 'bg-white text-secondary-600 hover:bg-secondary-50 border border-secondary-200'
                       }`}
                     >
                       <div className="flex items-center gap-2">
@@ -303,7 +303,7 @@ export default function GrowthFeatures({
           ? 'Acesso completo a todos os recursos premium'
           : 'Full access to all premium features',
         value: '£19.99',
-        color: 'from-purple-500 to-purple-600',
+        color: 'from-accent-500 to-accent-600',
         available: userType === 'new_member'
       },
       {
@@ -335,7 +335,7 @@ export default function GrowthFeatures({
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2 }}
-            className={`${isMobile ? 'w-16 h-16' : 'w-20 h-20'} mx-auto bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-xl`}
+            className={`${isMobile ? 'w-16 h-16' : 'w-20 h-20'} mx-auto bg-gradient-to-br from-accent-500 to-pink-500 rounded-full flex items-center justify-center shadow-xl`}
           >
             <GiftSolidIcon className={`${isMobile ? 'w-8 h-8' : 'w-10 h-10'} text-white`} />
           </motion.div>
@@ -361,8 +361,8 @@ export default function GrowthFeatures({
               transition={{ delay: index * 0.1 }}
               className={`p-6 bg-white border-2 rounded-xl shadow-sm relative ${
                 bonus.available 
-                  ? 'border-gray-200 hover:border-purple-300 hover:shadow-lg' 
-                  : 'border-gray-100 opacity-60'
+                  ? 'border-secondary-200 hover:border-accent-300 hover:shadow-lg' 
+                  : 'border-secondary-100 opacity-60'
               } transition-all`}
             >
               {bonus.available && (
@@ -380,7 +380,7 @@ export default function GrowthFeatures({
                     <h4 className={`font-bold text-gray-900 ${isMobile ? 'text-sm' : 'text-base'}`}>
                       {bonus.title}
                     </h4>
-                    <span className="text-sm font-bold text-purple-600">
+                    <span className="text-sm font-bold text-accent-600">
                       {bonus.value}
                     </span>
                   </div>
@@ -397,16 +397,16 @@ export default function GrowthFeatures({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="text-center bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 border border-purple-200"
+          className="text-center bg-gradient-to-r from-accent-50 to-pink-50 rounded-xl p-6 border border-accent-200"
         >
           <div className="flex items-center justify-center gap-2 mb-3">
-            <TrophyIcon className="w-6 h-6 text-purple-600" />
-            <span className="text-lg font-bold text-purple-900">
+            <TrophyIcon className="w-6 h-6 text-accent-600" />
+            <span className="text-lg font-bold text-accent-900">
               {isPortuguese ? 'Valor Total' : 'Total Value'}
             </span>
           </div>
-          <div className="text-3xl font-bold text-purple-600 mb-2">£69.97</div>
-          <p className="text-purple-700 text-sm">
+          <div className="text-3xl font-bold text-accent-600 mb-2">£69.97</div>
+          <p className="text-accent-700 text-sm">
             {isPortuguese 
               ? 'Benefícios exclusivos para novos membros portugueses'
               : 'Exclusive benefits for new Portuguese members'
@@ -419,7 +419,7 @@ export default function GrowthFeatures({
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
           onClick={() => onActionComplete?.('claim_welcome_bonus')}
-          className={`${isMobile ? 'w-full' : 'mx-auto'} flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5`}
+          className={`${isMobile ? 'w-full' : 'mx-auto'} flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-accent-500 to-pink-500 text-white font-bold rounded-xl hover:from-accent-600 hover:to-pink-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-transecondary-y-0.5`}
         >
           <BoltIcon className="w-5 h-5" />
           <span>{isPortuguese ? 'Ativar Benefícios' : 'Activate Benefits'}</span>
@@ -468,7 +468,7 @@ export default function GrowthFeatures({
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2 }}
-            className={`${isMobile ? 'w-16 h-16' : 'w-20 h-20'} mx-auto bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-xl`}
+            className={`${isMobile ? 'w-16 h-16' : 'w-20 h-20'} mx-auto bg-gradient-to-br from-blue-500 to-accent-500 rounded-full flex items-center justify-center shadow-xl`}
           >
             <AcademicCapIcon className={`${isMobile ? 'w-8 h-8' : 'w-10 h-10'} text-white`} />
           </motion.div>
@@ -493,9 +493,9 @@ export default function GrowthFeatures({
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="flex items-center gap-4 p-4 bg-white border border-gray-200 rounded-xl hover:shadow-lg transition-all"
+              className="flex items-center gap-4 p-4 bg-white border border-secondary-200 rounded-xl hover:shadow-lg transition-all"
             >
-              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-accent-500 rounded-full flex items-center justify-center flex-shrink-0">
                 <benefit.icon className="w-6 h-6 text-white" />
               </div>
               <div className="flex-1">
@@ -520,7 +520,7 @@ export default function GrowthFeatures({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 border border-blue-200"
+          className="bg-gradient-to-r from-blue-50 to-accent-50 rounded-xl p-6 border border-blue-200"
         >
           <h4 className={`font-bold text-gray-900 mb-4 ${isMobile ? 'text-base' : 'text-lg'}`}>
             {isPortuguese ? 'Verificar Estado de Estudante' : 'Verify Student Status'}
@@ -564,7 +564,7 @@ export default function GrowthFeatures({
             disabled={!studentVerification.university || !studentVerification.email}
             className={`w-full mt-6 flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-semibold transition-all ${
               studentVerification.university && studentVerification.email
-                ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 shadow-lg hover:shadow-xl'
+                ? 'bg-gradient-to-r from-blue-500 to-accent-500 text-white hover:from-blue-600 hover:to-accent-600 shadow-lg hover:shadow-xl'
                 : 'bg-secondary-100 text-gray-400 cursor-not-allowed'
             }`}
           >
@@ -590,7 +590,7 @@ export default function GrowthFeatures({
         reward: isPortuguese ? 'Mês Premium' : 'Premium Month',
         value: '£19.99',
         icon: StarSolidIcon,
-        color: 'from-purple-500 to-purple-600'
+        color: 'from-accent-500 to-accent-600'
       },
       {
         referrals: 5,
@@ -710,7 +710,7 @@ export default function GrowthFeatures({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 + index * 0.1 }}
-              className="p-4 bg-white border-2 border-gray-200 rounded-xl hover:border-green-300 hover:shadow-lg transition-all"
+              className="p-4 bg-white border-2 border-secondary-200 rounded-xl hover:border-green-300 hover:shadow-lg transition-all"
             >
               <div className="flex items-center gap-3 mb-3">
                 <div className={`w-10 h-10 bg-gradient-to-r ${reward.color} rounded-full flex items-center justify-center flex-shrink-0`}>
@@ -805,7 +805,7 @@ export default function GrowthFeatures({
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="flex items-start gap-4 p-4 bg-white border border-gray-200 rounded-xl"
+              className="flex items-start gap-4 p-4 bg-white border border-secondary-200 rounded-xl"
             >
               <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
                 <feature.icon className="w-6 h-6 text-white" />
@@ -854,7 +854,7 @@ export default function GrowthFeatures({
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
           onClick={() => onActionComplete?.('start_premium_trial')}
-          className={`${isMobile ? 'w-full' : 'mx-auto'} flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-bold rounded-xl hover:from-yellow-600 hover:to-orange-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5`}
+          className={`${isMobile ? 'w-full' : 'mx-auto'} flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-bold rounded-xl hover:from-yellow-600 hover:to-orange-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-transecondary-y-0.5`}
         >
           <BoltIcon className="w-5 h-5" />
           <span>{isPortuguese ? 'Iniciar Teste Grátis' : 'Start Free Trial'}</span>

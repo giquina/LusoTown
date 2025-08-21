@@ -60,7 +60,7 @@ export default function CorporatePartnerships() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       
       <div className="pt-20">
         {/* Hero Section */}
@@ -118,7 +118,7 @@ export default function CorporatePartnerships() {
         </div>
 
         {/* Partnership Success Stories Banner */}
-        <div className="bg-white border-b border-gray-200">
+        <div className="bg-white border-b border-secondary-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="text-center">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
@@ -169,7 +169,7 @@ export default function CorporatePartnerships() {
         {/* Navigation Tabs */}
         <div className="bg-white shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="border-b border-gray-200">
+            <div className="border-b border-secondary-200">
               <nav className="-mb-px flex space-x-8">
                 {tabs.map((tab) => (
                   <button

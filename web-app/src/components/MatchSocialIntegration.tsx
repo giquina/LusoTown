@@ -189,7 +189,7 @@ export default function MatchSocialIntegration({
   return (
     <div className={`space-y-6 ${className}`}>
       {/* Match Social Header */}
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+      <div className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-6">
         <div className="flex items-center justify-between mb-4">
           <div>
             <h2 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
@@ -217,7 +217,7 @@ export default function MatchSocialIntegration({
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex gap-2 border-b border-gray-200">
+        <div className="flex gap-2 border-b border-secondary-200">
           <button
             onClick={() => setSelectedTab('posts')}
             className={`px-4 py-2 text-sm font-medium transition-colors border-b-2 ${
@@ -262,7 +262,7 @@ export default function MatchSocialIntegration({
           >
             {/* Current Match Profile Posts */}
             {currentProfile && (
-              <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+              <div className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-6">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary-400 to-secondary-400 flex items-center justify-center text-white font-bold">
@@ -340,7 +340,7 @@ export default function MatchSocialIntegration({
             {mockMatchedPosts.map((post, index) => (
               <div 
                 key={post.id}
-                className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6"
+                className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-6"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-r from-green-400 to-emerald-400 flex items-center justify-center text-white font-bold">
@@ -383,7 +383,7 @@ export default function MatchSocialIntegration({
                 )}
                 
                 {/* Post Actions */}
-                <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                <div className="flex items-center justify-between pt-3 border-t border-secondary-100">
                   <div className="flex items-center gap-4">
                     <button className="flex items-center gap-1 text-secondary-600 hover:text-coral-500 transition-colors">
                       {post.liked ? (
@@ -423,7 +423,7 @@ export default function MatchSocialIntegration({
             {recentMatches.map((match, index) => (
               <div 
                 key={match.id}
-                className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6"
+                className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-6"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
@@ -470,7 +470,7 @@ export default function MatchSocialIntegration({
             className="space-y-4"
           >
             {/* Suggested events for matches */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+            <div className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-6">
               <h4 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
                 <CalendarDaysIcon className="w-5 h-5 text-primary-500" />
                 {isPortuguese ? 'Eventos Recomendados para Matches' : 'Recommended Events for Matches'}

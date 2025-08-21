@@ -344,9 +344,9 @@ export default function StudentDiscountsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-green-100 via-blue-50 to-purple-100 border border-green-200 shadow-lg mb-6">
+          <div className="inline-flex items-center px-6 py-3 rounded-full text-sm font-medium bg-gradient-to-r from-green-100 via-blue-50 to-accent-100 border border-green-200 shadow-lg mb-6">
             <TagIcon className="w-4 h-4 mr-2 text-action-600" />
-            <span className="bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent font-bold">
+            <span className="bg-gradient-to-r from-green-600 via-blue-600 to-accent-600 bg-clip-text text-transparent font-bold">
               {language === 'pt' 
                 ? "Descontos Exclusivos para Estudantes Portugueses"
                 : "Exclusive Discounts for Portuguese Students"}
@@ -367,19 +367,19 @@ export default function StudentDiscountsSection() {
 
           {/* Savings Overview */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-8">
-            <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100">
+            <div className="bg-white rounded-xl p-4 shadow-lg border border-secondary-100">
               <div className="text-2xl font-bold text-action-600 mb-1">£{totalPotentialSavings}</div>
               <div className="text-sm text-secondary-600">{language === 'pt' ? 'Poupanças anuais' : 'Annual savings'}</div>
             </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100">
+            <div className="bg-white rounded-xl p-4 shadow-lg border border-secondary-100">
               <div className="text-2xl font-bold text-primary-600 mb-1">{STUDENT_DISCOUNTS.length}</div>
               <div className="text-sm text-secondary-600">{language === 'pt' ? 'Descontos ativos' : 'Active discounts'}</div>
             </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100">
-              <div className="text-2xl font-bold text-purple-600 mb-1">50%</div>
+            <div className="bg-white rounded-xl p-4 shadow-lg border border-secondary-100">
+              <div className="text-2xl font-bold text-accent-600 mb-1">50%</div>
               <div className="text-sm text-secondary-600">{language === 'pt' ? 'Desconto médio' : 'Average discount'}</div>
             </div>
-            <div className="bg-white rounded-xl p-4 shadow-lg border border-gray-100">
+            <div className="bg-white rounded-xl p-4 shadow-lg border border-secondary-100">
               <div className="text-2xl font-bold text-coral-600 mb-1">24h</div>
               <div className="text-sm text-secondary-600">{language === 'pt' ? 'Verificação' : 'Verification'}</div>
             </div>
@@ -438,8 +438,8 @@ export default function StudentDiscountsSection() {
                   onClick={() => setSelectedCategory(category.value)}
                   className={`flex items-center gap-2 px-4 py-3 rounded-xl font-medium transition-all duration-300 ${
                     selectedCategory === category.value
-                      ? 'bg-white text-gray-900 shadow-lg border border-gray-200'
-                      : 'bg-white/50 text-secondary-600 hover:bg-white hover:shadow-md border border-gray-100'
+                      ? 'bg-white text-gray-900 shadow-lg border border-secondary-200'
+                      : 'bg-white/50 text-secondary-600 hover:bg-white hover:shadow-md border border-secondary-100'
                   }`}
                 >
                   <IconComponent className="w-4 h-4" />
@@ -462,7 +462,7 @@ export default function StudentDiscountsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 * index }}
-                className="bg-white rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+                className="bg-white rounded-2xl border border-secondary-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
               >
                 {/* Header */}
                 <div className={`px-6 py-4 bg-gradient-to-r ${getCategoryColor(discount.category)} text-white relative`}>
@@ -618,7 +618,7 @@ export default function StudentDiscountsSection() {
             {VERIFICATION_STEPS.map((step, index) => {
               const IconComponent = step.icon
               return (
-                <div key={step.id} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center">
+                <div key={step.id} className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100 text-center">
                   <div className="w-16 h-16 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <IconComponent className="w-8 h-8 text-primary-600" />
                   </div>

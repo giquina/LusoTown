@@ -139,7 +139,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
       description: 'Universities, cultural centers, and educational institutions',
       descriptionPortuguese: 'Universidades, centros culturais e instituições educacionais',
       icon: <AcademicCapIcon className="w-6 h-6" />,
-      color: 'from-purple-500 to-purple-600',
+      color: 'from-accent-500 to-accent-600',
       institutions: 15,
       totalReach: 25000,
       averageValue: 45000,
@@ -244,7 +244,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
       totalValue: outreachPipeline.filter(p => p.outreachStage === 'proposal_sent').reduce((sum, p) => sum + p.proposalValue, 0),
       averageTime: '4-6 weeks',
       successRate: 65,
-      color: 'bg-purple-100 text-purple-800'
+      color: 'bg-accent-100 text-accent-800'
     },
     {
       stage: 'negotiations',
@@ -405,7 +405,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
 
       {/* Tab Navigation */}
       <div className="mb-8">
-        <div className="border-b border-gray-200">
+        <div className="border-b border-secondary-200">
           <nav className="flex space-x-8">
             {['overview', 'strategies', 'pipeline', 'global', 'analytics'].map((tab) => (
               <button
@@ -439,7 +439,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {partnershipCategories.map((category) => (
-                <div key={category.id} className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow">
+                <div key={category.id} className="bg-white rounded-xl shadow-sm border border-secondary-200 overflow-hidden hover:shadow-md transition-shadow">
                   <div className={`bg-gradient-to-r ${category.color} p-6 text-white`}>
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center space-x-3">
@@ -507,7 +507,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
           
           <div className="space-y-6">
             {strategies.map((strategy) => (
-              <div key={strategy.id} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <div key={strategy.id} className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">
@@ -562,7 +562,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
                 </div>
 
                 {/* Timeline */}
-                <div className="border-t border-gray-200 pt-6">
+                <div className="border-t border-secondary-200 pt-6">
                   <h4 className="font-medium text-gray-900 mb-4">
                     {language === 'pt' ? 'Cronograma:' : 'Timeline:'}
                   </h4>
@@ -616,7 +616,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
           {/* Pipeline Stages Overview */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-8">
             {pipelineStages.map((stage) => (
-              <div key={stage.stage} className="bg-white rounded-lg border border-gray-200 p-4 text-center">
+              <div key={stage.stage} className="bg-white rounded-lg border border-secondary-200 p-4 text-center">
                 <div className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${stage.color} mb-2`}>
                   {language === 'pt' ? stage.stagePortuguese : stage.stage}
                 </div>
@@ -635,7 +635,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
             
             <div className="space-y-4">
               {outreachPipeline.map((outreach) => (
-                <div key={outreach.id} className="bg-white rounded-lg border border-gray-200 p-6">
+                <div key={outreach.id} className="bg-white rounded-lg border border-secondary-200 p-6">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center space-x-3 mb-2">
@@ -724,7 +724,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {globalPresence.map((region) => (
-              <div key={region.region} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+              <div key={region.region} className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-lg font-semibold text-gray-900">
                     {language === 'pt' ? region.regionPortuguese : region.region}
@@ -782,7 +782,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
 
           {analytics && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-white rounded-lg border border-gray-200 p-6">
+              <div className="bg-white rounded-lg border border-secondary-200 p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-semibold text-gray-900">{language === 'pt' ? 'Taxa de Crescimento' : 'Growth Rate'}</h3>
                   <TrophyIcon className="w-6 h-6 text-action-500" />
@@ -791,7 +791,7 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
                 <p className="text-sm text-secondary-600">{language === 'pt' ? 'Crescimento anual da comunidade' : 'Annual community growth'}</p>
               </div>
 
-              <div className="bg-white rounded-lg border border-gray-200 p-6">
+              <div className="bg-white rounded-lg border border-secondary-200 p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-semibold text-gray-900">{language === 'pt' ? 'Utilização de Benefícios' : 'Benefit Utilization'}</h3>
                   <ChartBarIcon className="w-6 h-6 text-primary-500" />
@@ -800,12 +800,12 @@ const ComprehensiveInstitutionalPartnerships: React.FC = () => {
                 <p className="text-sm text-secondary-600">{language === 'pt' ? 'Membros utilizando benefícios' : 'Members using benefits'}</p>
               </div>
 
-              <div className="bg-white rounded-lg border border-gray-200 p-6">
+              <div className="bg-white rounded-lg border border-secondary-200 p-6">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-semibold text-gray-900">{language === 'pt' ? 'Duração Média' : 'Avg Duration'}</h3>
-                  <ClockIcon className="w-6 h-6 text-purple-500" />
+                  <ClockIcon className="w-6 h-6 text-accent-500" />
                 </div>
-                <p className="text-3xl font-bold text-purple-600">{analytics.averagePartnershipDuration.toFixed(1)}</p>
+                <p className="text-3xl font-bold text-accent-600">{analytics.averagePartnershipDuration.toFixed(1)}</p>
                 <p className="text-sm text-secondary-600">{language === 'pt' ? 'Anos por parceria' : 'Years per partnership'}</p>
               </div>
             </div>

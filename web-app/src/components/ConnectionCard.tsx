@@ -38,7 +38,7 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
   // Get membership badge
   const getMembershipBadge = () => {
     const badges = {
-      free: { icon: '🆓', color: 'text-neutral-600', label: 'Free' },
+      free: { icon: '🆓', color: 'text-secondary-600', label: 'Free' },
       core: { icon: '❤️', color: 'text-coral-600', label: 'Core' },
       premium: { icon: <CrownIcon className="w-4 h-4" />, color: 'text-premium-600', label: 'Premium' }
     }
@@ -51,7 +51,7 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
     return Array.from({ length: 5 }, (_, i) => (
       <StarIcon 
         key={i} 
-        className={`w-4 h-4 ${i < rating ? 'text-accent-400 fill-current' : 'text-neutral-300'}`} 
+        className={`w-4 h-4 ${i < rating ? 'text-accent-400 fill-current' : 'text-secondary-300'}`} 
       />
     ))
   }
@@ -88,7 +88,7 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
 
   return (
     <motion.div 
-      className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-neutral-100 min-h-[380px] sm:min-h-[420px] flex flex-col group"
+      className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-secondary-100 min-h-[380px] sm:min-h-[420px] flex flex-col group"
       whileHover={{ scale: 1.02 }}
     >
       {/* Header with profile info */}
@@ -112,7 +112,7 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
             {/* Name and Location */}
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-1">
-                <h3 className="text-base sm:text-lg font-semibold text-neutral-900 break-words line-clamp-1 leading-tight flex-1 min-w-0">
+                <h3 className="text-base sm:text-lg font-semibold text-secondary-900 break-words line-clamp-1 leading-tight flex-1 min-w-0">
                   {connectedUser.firstName} {connectedUser.lastName || ''}
                 </h3>
                 <div className={`flex items-center gap-1 ${badge.color}`} title={`${badge.label} Member`}>
@@ -124,7 +124,7 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
                 </div>
               </div>
               {connectedUser.location && (
-                <div className="flex items-center text-neutral-500 text-sm min-w-0">
+                <div className="flex items-center text-secondary-500 text-sm min-w-0">
                   <MapPinIcon className="w-4 h-4 mr-1 flex-shrink-0" />
                   <span className="truncate max-w-full">{connectedUser.location}</span>
                 </div>
@@ -136,24 +136,24 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
           <div className="relative">
             <button
               onClick={() => setShowOptions(!showOptions)}
-              className="p-2 hover:bg-neutral-100 rounded-lg transition-colors"
+              className="p-2 hover:bg-secondary-100 rounded-lg transition-colors"
             >
-              <EllipsisVerticalIcon className="w-5 h-5 text-neutral-400" />
+              <EllipsisVerticalIcon className="w-5 h-5 text-secondary-400" />
             </button>
             
             {showOptions && (
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="absolute right-0 top-full mt-1 w-48 bg-white rounded-lg shadow-lg border border-neutral-200 py-1 z-10"
+                className="absolute right-0 top-full mt-1 w-48 bg-white rounded-lg shadow-lg border border-secondary-200 py-1 z-10"
               >
-                <button className="w-full text-left px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100">
+                <button className="w-full text-left px-4 py-2 text-sm text-secondary-700 hover:bg-secondary-100">
                   {isPortuguese ? 'Ver Perfil' : 'View Profile'}
                 </button>
-                <button className="w-full text-left px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100">
+                <button className="w-full text-left px-4 py-2 text-sm text-secondary-700 hover:bg-secondary-100">
                   {isPortuguese ? 'Enviar Mensagem' : 'Send Message'}
                 </button>
-                <button className="w-full text-left px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100">
+                <button className="w-full text-left px-4 py-2 text-sm text-secondary-700 hover:bg-secondary-100">
                   {isPortuguese ? 'Eventos em Comum' : 'Shared Events'}
                 </button>
               </motion.div>
@@ -166,7 +166,7 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
           <div className="flex items-center gap-1">
             {getConnectionStrengthStars()}
           </div>
-          <div className="text-xs text-neutral-500">
+          <div className="text-xs text-secondary-500">
             {isPortuguese ? 'Força da conexão' : 'Connection strength'}
           </div>
         </div>
@@ -175,16 +175,16 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
       {/* First Met Event */}
       {firstMetEvent && (
         <div className="px-4 sm:px-6 pb-3 sm:pb-4">
-          <div className="bg-neutral-50 rounded-xl p-4">
+          <div className="bg-secondary-50 rounded-xl p-4">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-medium text-neutral-500 uppercase tracking-wide">
+              <span className="text-xs font-medium text-secondary-500 uppercase tracking-wide">
                 {isPortuguese ? 'Conheceram-se em' : 'Met at'}
               </span>
-              <span className="text-xs text-neutral-500">
+              <span className="text-xs text-secondary-500">
                 {formatEventDate(firstMetEvent.date)}
               </span>
             </div>
-            <h4 className="text-sm font-medium text-neutral-900 break-words line-clamp-2 leading-tight">
+            <h4 className="text-sm font-medium text-secondary-900 break-words line-clamp-2 leading-tight">
               {firstMetEvent.title}
             </h4>
           </div>
@@ -195,14 +195,14 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
       <div className="px-4 sm:px-6 pb-3 sm:pb-4">
         <div className="flex items-center justify-between text-sm min-w-0">
           <div className="flex items-center gap-4 min-w-0 flex-1">
-            <div className="flex items-center gap-1 text-neutral-600 flex-shrink-0">
+            <div className="flex items-center gap-1 text-secondary-600 flex-shrink-0">
               <CalendarIcon className="w-4 h-4" />
               <span>{sharedEventsCount}</span>
               <span className="text-xs">
                 {isPortuguese ? 'eventos' : 'events'}
               </span>
             </div>
-            <div className="text-neutral-500 text-xs truncate">
+            <div className="text-secondary-500 text-xs truncate">
               {isPortuguese ? 'Última interação' : 'Last seen'} {getTimeAgo(lastInteractionAt)}
             </div>
           </div>
@@ -224,7 +224,7 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
               className={`p-2.5 sm:p-3 rounded-lg transition-all duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center ${
                 isLiked 
                   ? 'bg-action-50 text-action-500 hover:bg-action-100' 
-                  : 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200'
+                  : 'bg-secondary-100 text-secondary-600 hover:bg-secondary-200'
               }`}
             >
               {isLiked ? (
@@ -234,7 +234,7 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
               )}
             </button>
             
-            <button className="p-2.5 sm:p-3 bg-neutral-100 text-neutral-600 rounded-lg hover:bg-neutral-200 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
+            <button className="p-2.5 sm:p-3 bg-secondary-100 text-secondary-600 rounded-lg hover:bg-secondary-200 transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
               <ShareIcon className="w-4 h-4" />
             </button>
           </div>

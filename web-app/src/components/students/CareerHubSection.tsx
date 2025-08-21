@@ -482,8 +482,8 @@ export default function CareerHubSection() {
       case 'internship': return 'bg-blue-100 text-primary-700'
       case 'graduate_program': return 'bg-green-100 text-green-700'
       case 'part_time': return 'bg-yellow-100 text-yellow-700'
-      case 'research': return 'bg-purple-100 text-purple-700'
-      case 'placement': return 'bg-indigo-100 text-indigo-700'
+      case 'research': return 'bg-accent-100 text-accent-700'
+      case 'placement': return 'bg-primary-100 text-primary-700'
       case 'volunteer': return 'bg-red-100 text-red-700'
       default: return 'bg-secondary-100 text-secondary-700'
     }
@@ -572,7 +572,7 @@ export default function CareerHubSection() {
                   className={`flex-1 p-6 rounded-2xl border transition-all duration-300 ${
                     activeTab === tab.id
                       ? 'bg-white border-secondary-300 shadow-lg'
-                      : 'bg-gray-50 border-gray-200 hover:bg-white hover:shadow-md'
+                      : 'bg-secondary-50 border-secondary-200 hover:bg-white hover:shadow-md'
                   }`}
                 >
                   <div className="flex items-center justify-center mb-3">
@@ -602,7 +602,7 @@ export default function CareerHubSection() {
         {activeTab === 'opportunities' && (
           <div>
             {/* Filters */}
-            <div className="mb-8 bg-gray-50 rounded-2xl p-6">
+            <div className="mb-8 bg-secondary-50 rounded-2xl p-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-secondary-700 mb-2">
@@ -648,10 +648,10 @@ export default function CareerHubSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.1 * index }}
-                  className="bg-white rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                  className="bg-white rounded-2xl border border-secondary-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
                 >
                   {/* Header */}
-                  <div className="p-6 border-b border-gray-100">
+                  <div className="p-6 border-b border-secondary-100">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex-1">
                         <h3 className="font-bold text-lg text-gray-900 mb-2 line-clamp-2">
@@ -787,10 +787,10 @@ export default function CareerHubSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 * index }}
-                className="bg-white rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="bg-white rounded-2xl border border-secondary-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
                 {/* Header */}
-                <div className="p-6 border-b border-gray-100">
+                <div className="p-6 border-b border-secondary-100">
                   <div className="flex items-start gap-4">
                     <div className="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center">
                       <span className="text-secondary-600 font-bold text-xl">
@@ -814,15 +814,15 @@ export default function CareerHubSection() {
                 <div className="p-6">
                   {/* Stats */}
                   <div className="grid grid-cols-3 gap-3 mb-4 text-center">
-                    <div className="bg-gray-50 rounded-lg p-2">
+                    <div className="bg-secondary-50 rounded-lg p-2">
                       <div className="text-lg font-bold text-gray-900">{mentor.experience}</div>
                       <div className="text-xs text-secondary-600">{language === 'pt' ? 'anos exp.' : 'years exp.'}</div>
                     </div>
-                    <div className="bg-gray-50 rounded-lg p-2">
+                    <div className="bg-secondary-50 rounded-lg p-2">
                       <div className="text-lg font-bold text-secondary-600">{mentor.successStories}</div>
                       <div className="text-xs text-secondary-600">{language === 'pt' ? 'sucessos' : 'successes'}</div>
                     </div>
-                    <div className="bg-gray-50 rounded-lg p-2">
+                    <div className="bg-secondary-50 rounded-lg p-2">
                       <div className="flex items-center justify-center mb-1">
                         <StarIconSolid className="w-4 h-4 text-yellow-400 mr-1" />
                         <span className="text-lg font-bold text-gray-900">{mentor.rating}</span>
@@ -910,10 +910,10 @@ export default function CareerHubSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 * index }}
-                className="bg-white rounded-2xl border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                className="bg-white rounded-2xl border border-secondary-200 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
               >
                 {/* Header */}
-                <div className="p-6 border-b border-gray-100">
+                <div className="p-6 border-b border-secondary-100">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
                       <h3 className="font-bold text-lg text-gray-900 mb-2 line-clamp-2">

@@ -128,10 +128,10 @@ export default function HowConnectionsWork() {
               >
                 {/* Connection Line - only between adjacent cards on desktop */}
                 {index % 2 === 1 && index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-gray-200 to-transparent -translate-x-4 z-0"></div>
+                  <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-gray-200 to-transparent -transecondary-x-4 z-0"></div>
                 )}
                 
-                <div className="bg-white rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 relative z-10 group min-h-[200px] sm:min-h-[240px] lg:min-h-[280px] flex flex-col">
+                <div className="bg-white rounded-lg sm:rounded-xl lg:rounded-2xl p-3 sm:p-4 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-secondary-100 relative z-10 group min-h-[200px] sm:min-h-[240px] lg:min-h-[280px] flex flex-col">
                   <div className={`w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-r ${step.color} rounded-lg lg:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 lg:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg flex-shrink-0`}>
                     <step.icon className="w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-white" />
                   </div>
@@ -162,7 +162,7 @@ export default function HowConnectionsWork() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-gray-100"
+          className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-secondary-100"
         >
           <div className="text-center mb-12">
             <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
@@ -219,7 +219,7 @@ export default function HowConnectionsWork() {
             
             <a
               href={ROUTES.myNetwork}
-              className="bg-white text-secondary-700 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl border-2 border-gray-200 hover:border-primary-300 hover:text-primary-700 transition-all duration-200 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm sm:text-base"
+              className="bg-white text-secondary-700 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl border-2 border-secondary-200 hover:border-primary-300 hover:text-primary-700 transition-all duration-200 shadow-lg hover:shadow-xl inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm sm:text-base"
             >
               <UserGroupIcon className="w-4 h-4 sm:w-5 sm:h-5" />
               {isPortuguese ? 'Minha Rede' : 'My Network'}

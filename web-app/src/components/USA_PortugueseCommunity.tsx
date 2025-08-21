@@ -316,7 +316,7 @@ export default function USA_PortugueseCommunity({
   }
 
   const CitySelector = () => (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-4">
+    <div className="bg-white rounded-lg shadow-sm border border-secondary-100 p-4">
       <h3 className="font-semibold text-gray-900 mb-3">Select Focus City</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
         <button
@@ -367,9 +367,9 @@ export default function USA_PortugueseCommunity({
               <div className="text-2xl font-bold text-action-600">155</div>
               <div className="text-sm text-green-800">Years of Heritage</div>
             </div>
-            <div className="bg-purple-50 rounded-lg p-4">
-              <div className="text-2xl font-bold text-purple-600">45</div>
-              <div className="text-sm text-purple-800">States with Communities</div>
+            <div className="bg-accent-50 rounded-lg p-4">
+              <div className="text-2xl font-bold text-accent-600">45</div>
+              <div className="text-sm text-accent-800">States with Communities</div>
             </div>
             <div className="bg-red-50 rounded-lg p-4">
               <div className="text-2xl font-bold text-coral-600">250+</div>
@@ -384,7 +384,7 @@ export default function USA_PortugueseCommunity({
         <h3 className="text-2xl font-bold text-gray-900 mb-6">Major Portuguese American Cities</h3>
         <div className="grid md:grid-cols-2 gap-6">
           {Object.entries(usaCommunityData.majorCities).map(([key, city]) => (
-            <div key={key} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+            <div key={key} className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
               <div className="flex items-center justify-between mb-4">
                 <h4 className="text-xl font-bold text-gray-900">{city.name}</h4>
                 <span className="text-2xl font-bold text-primary-600">{city.population.toLocaleString()}</span>
@@ -418,7 +418,7 @@ export default function USA_PortugueseCommunity({
                   </div>
                 </div>
                 
-                <div className="pt-2 border-t border-gray-200">
+                <div className="pt-2 border-t border-secondary-200">
                   <p className="text-sm text-secondary-600">
                     <strong>Established:</strong> {city.establishedSince}
                   </p>
@@ -436,7 +436,7 @@ export default function USA_PortugueseCommunity({
       <h3 className="text-2xl font-bold text-gray-900">Portuguese American Events</h3>
       <div className="grid lg:grid-cols-2 gap-6">
         {usaPortugueseEvents.map(event => (
-          <div key={event.id} className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
+          <div key={event.id} className="bg-white rounded-xl shadow-lg border border-secondary-100 overflow-hidden">
             <div className="p-6">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
@@ -444,7 +444,7 @@ export default function USA_PortugueseCommunity({
                   <p className="text-secondary-600 mb-3">{event.description}</p>
                 </div>
                 <span className={`px-3 py-1 text-xs font-medium rounded-full ${
-                  event.type === 'cultural' ? 'bg-purple-100 text-purple-800' :
+                  event.type === 'cultural' ? 'bg-accent-100 text-accent-800' :
                   event.type === 'religious' ? 'bg-blue-100 text-blue-800' :
                   'bg-secondary-100 text-secondary-800'
                 }`}>
@@ -485,7 +485,7 @@ export default function USA_PortugueseCommunity({
                 >
                   {event.registrationRequired ? 'Register' : 'Get Details'}
                 </button>
-                <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 transition-colors">
+                <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-secondary-50 transition-colors">
                   Share
                 </button>
               </div>
@@ -501,7 +501,7 @@ export default function USA_PortugueseCommunity({
       <h3 className="text-2xl font-bold text-gray-900">Portuguese American Businesses</h3>
       <div className="grid lg:grid-cols-2 gap-6">
         {usaPortugueseBusinesses.map(business => (
-          <div key={business.id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+          <div key={business.id} className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h4 className="text-xl font-bold text-gray-900">{business.businessName}</h4>
@@ -549,7 +549,7 @@ export default function USA_PortugueseCommunity({
               <button className="flex-1 bg-gradient-to-r from-blue-600 to-red-600 text-white font-semibold py-2 px-4 rounded-lg hover:shadow-lg transition-all">
                 Contact Business
               </button>
-              <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 transition-colors">
+              <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-secondary-50 transition-colors">
                 View Profile
               </button>
             </div>
@@ -564,7 +564,7 @@ export default function USA_PortugueseCommunity({
       <h3 className="text-2xl font-bold text-gray-900">Portuguese American Professionals</h3>
       <div className="grid lg:grid-cols-3 gap-6">
         {usaPortugueseProfessionals.map(professional => (
-          <div key={professional.id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+          <div key={professional.id} className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
             <div className="text-center mb-4">
               <h4 className="text-lg font-bold text-gray-900">{professional.name}</h4>
               <p className="text-secondary-600">{professional.profession}</p>
@@ -620,7 +620,7 @@ export default function USA_PortugueseCommunity({
       <h3 className="text-2xl font-bold text-gray-900">Portuguese American Organizations</h3>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {usaPortugueseOrganizations.map(org => (
-          <div key={org.id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+          <div key={org.id} className="bg-white rounded-xl shadow-sm border border-secondary-100 p-6">
             <div className="mb-4">
               <h4 className="text-lg font-bold text-gray-900">{org.name}</h4>
               <p className="text-sm text-secondary-600">Est. {org.foundedYear}</p>
@@ -628,7 +628,7 @@ export default function USA_PortugueseCommunity({
 
             <div className="mb-4">
               <span className={`px-2 py-1 text-xs rounded-full ${
-                org.type === 'cultural' ? 'bg-purple-100 text-purple-800' :
+                org.type === 'cultural' ? 'bg-accent-100 text-accent-800' :
                 org.type === 'educational' ? 'bg-green-100 text-green-800' :
                 org.type === 'professional' ? 'bg-blue-100 text-blue-800' :
                 'bg-secondary-100 text-secondary-800'
@@ -659,7 +659,7 @@ export default function USA_PortugueseCommunity({
                 Join
               </button>
               {org.website && (
-                <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 transition-colors">
+                <button className="px-4 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-secondary-50 transition-colors">
                   Website
                 </button>
               )}

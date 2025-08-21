@@ -113,7 +113,7 @@ export default function ConsultationBookingPage() {
               className={`relative flex items-start p-4 border-2 rounded-xl cursor-pointer transition-all duration-200 ${
                 formData.consultationType === type.id
                   ? 'border-primary-500 bg-primary-50'
-                  : 'border-gray-200 hover:border-primary-300'
+                  : 'border-secondary-200 hover:border-primary-300'
               }`}
             >
               <input
@@ -370,7 +370,7 @@ export default function ConsultationBookingPage() {
   )
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-secondary-50">
       
       <div className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -437,11 +437,11 @@ export default function ConsultationBookingPage() {
             {currentStep === 3 && renderStep3()}
 
             {/* Navigation Buttons */}
-            <div className="flex justify-between mt-8 pt-6 border-t border-gray-200">
+            <div className="flex justify-between mt-8 pt-6 border-t border-secondary-200">
               <button
                 onClick={handlePrevStep}
                 disabled={currentStep === 1}
-                className="px-6 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-6 py-2 border border-secondary-300 text-secondary-700 rounded-lg hover:bg-secondary-50 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isPortuguese ? 'Anterior' : 'Previous'}
               </button>

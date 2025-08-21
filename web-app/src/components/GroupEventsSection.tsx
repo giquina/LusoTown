@@ -307,7 +307,7 @@ export default function GroupEventsSection({
                       className={`px-6 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
                         selectedCategory === category.id
                           ? "bg-gradient-to-r from-coral-500 to-secondary-500 text-white shadow-lg"
-                          : "text-secondary-600 hover:text-secondary-800 hover:bg-gray-50"
+                          : "text-secondary-600 hover:text-secondary-800 hover:bg-secondary-50"
                       }`}
                     >
                       <span>{category.label}</span>
@@ -418,20 +418,20 @@ export default function GroupEventsSection({
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
-                    href="/events/groups"
-                    className="group relative text-lg font-bold px-8 py-4 bg-gradient-to-r from-coral-500 via-secondary-500 to-premium-500 text-white rounded-2xl shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden"
+                    href={ROUTES.groups}
+                    className="group relative text-lg font-bold px-8 py-4 bg-gradient-to-r from-coral-500 via-secondary-500 to-premium-500 text-white rounded-2xl shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:-transecondary-y-1 hover:scale-105 overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-coral-600 via-secondary-600 to-premium-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <span className="relative z-10 flex items-center justify-center gap-3">
                       {isPortuguese
                         ? "Ver Todos os Eventos de Grupo"
                         : "View All Group Events"}
-                      <ArrowRightIcon className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
+                      <ArrowRightIcon className="h-5 w-5 group-hover:transecondary-x-1 transition-transform duration-200" />
                     </span>
                   </a>
                   <a
                     href={ROUTES.groupsCreate}
-                    className="text-lg font-bold px-8 py-4 bg-white/70 backdrop-blur-lg text-secondary-800 border-2 border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-coral-300 hover:-translate-y-1"
+                    className="text-lg font-bold px-8 py-4 bg-white/70 backdrop-blur-lg text-secondary-800 border-2 border-secondary-200 rounded-2xl shadow-lg hover:shadow-xl transform transition-all duration-300 hover:border-coral-300 hover:-transecondary-y-1"
                   >
                     {isPortuguese
                       ? "Criar Evento de Grupo"
@@ -470,7 +470,7 @@ export default function GroupEventsSection({
           {/* Filters and Search */}
           {showFilters && (
             <div className="mb-8">
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6">
+              <div className="bg-white rounded-2xl shadow-lg border border-secondary-100 p-6">
                 <div className="flex flex-wrap gap-4 items-center justify-between">
                   <div className="flex gap-2">
                     {categories.map((category) => (

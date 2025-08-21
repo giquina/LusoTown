@@ -266,7 +266,7 @@ export default function MessagingInterface({
   return (
     <div className={`flex flex-col h-full bg-white ${className}`}>
       {/* Header */}
-      <div className="flex items-center space-x-4 p-4 border-b border-gray-200 bg-white sticky top-0 z-10">
+      <div className="flex items-center space-x-4 p-4 border-b border-secondary-200 bg-white sticky top-0 z-10">
         {onBack && (
           <button
             onClick={onBack}
@@ -331,7 +331,7 @@ export default function MessagingInterface({
                   <button
                     key={index}
                     onClick={() => setNewMessage(starter)}
-                    className="block w-full p-2 text-left text-sm text-secondary-600 hover:bg-gray-50 rounded-lg transition-colors"
+                    className="block w-full p-2 text-left text-sm text-secondary-600 hover:bg-secondary-50 rounded-lg transition-colors"
                   >
                     "{starter}"
                   </button>
@@ -361,7 +361,7 @@ export default function MessagingInterface({
         </div>
 
         {/* Message Input */}
-        <div className="p-4 border-t border-gray-200 bg-white">
+        <div className="p-4 border-t border-secondary-200 bg-white">
           {error && (
             <div className="mb-3 p-3 bg-red-50 border border-red-200 rounded-lg text-sm text-red-700">
               {error}

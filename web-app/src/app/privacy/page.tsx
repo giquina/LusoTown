@@ -105,7 +105,7 @@ export default function PrivacyPolicy() {
         </section>
 
         {/* Main Content */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-secondary-50">
           <div className="container-width">
             <div className="max-w-4xl mx-auto space-y-12">
 
@@ -121,7 +121,7 @@ export default function PrivacyPolicy() {
                     We are committed to protecting and respecting your privacy in accordance with the 
                     UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
                   </p>
-                  <div className="bg-gray-50 rounded-lg p-4">
+                  <div className="bg-secondary-50 rounded-lg p-4">
                     <p className="font-semibold text-gray-900 mb-2">Data Controller Details:</p>
                     <p>LusoTown Ltd<br />
                     Email: privacy@lusotown.com<br />
@@ -218,8 +218,8 @@ export default function PrivacyPolicy() {
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl p-6">
-                    <h3 className="text-lg font-semibold text-purple-700 mb-3">Platform Improvement (With Your Consent)</h3>
+                  <div className="bg-gradient-to-r from-accent-50 to-primary-50 rounded-xl p-6">
+                    <h3 className="text-lg font-semibold text-accent-700 mb-3">Platform Improvement (With Your Consent)</h3>
                     <p className="text-secondary-600 mb-3">
                       We may use anonymized data to improve our platform, but only with your explicit consent:
                     </p>
@@ -228,7 +228,7 @@ export default function PrivacyPolicy() {
                       <li>• Develop new features and services</li>
                       <li>• Conduct research on community building and women's networking</li>
                     </ul>
-                    <p className="text-sm text-purple-600 mt-3 font-medium">
+                    <p className="text-sm text-accent-600 mt-3 font-medium">
                       You can withdraw consent at any time in your account settings.
                     </p>
                   </div>
@@ -257,7 +257,7 @@ export default function PrivacyPolicy() {
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <div className="w-4 h-4 bg-purple-400 rounded-full mt-1 mr-4 flex-shrink-0"></div>
+                    <div className="w-4 h-4 bg-accent-400 rounded-full mt-1 mr-4 flex-shrink-0"></div>
                     <div>
                       <h3 className="font-semibold text-gray-900">Consent</h3>
                       <p className="text-secondary-600">Marketing communications and optional data analysis for platform improvement</p>
@@ -304,7 +304,7 @@ export default function PrivacyPolicy() {
                           safety of our community members.
                         </p>
                       </div>
-                      <div className="border-l-4 border-purple-400 pl-4">
+                      <div className="border-l-4 border-accent-400 pl-4">
                         <h4 className="font-semibold text-gray-900">Business Transfers</h4>
                         <p className="text-secondary-600">
                           In the event of a merger or acquisition, user data would be transferred under 
@@ -332,8 +332,8 @@ export default function PrivacyPolicy() {
                       <h3 className="font-semibold text-secondary-700 mb-2">Rectification</h3>
                       <p className="text-secondary-600 text-sm">Correct any inaccurate or incomplete information</p>
                     </div>
-                    <div className="bg-purple-50 rounded-lg p-4">
-                      <h3 className="font-semibold text-purple-700 mb-2">Erasure</h3>
+                    <div className="bg-accent-50 rounded-lg p-4">
+                      <h3 className="font-semibold text-accent-700 mb-2">Erasure</h3>
                       <p className="text-secondary-600 text-sm">Request deletion of your personal data ('right to be forgotten')</p>
                     </div>
                     <div className="bg-green-50 rounded-lg p-4">
@@ -342,8 +342,8 @@ export default function PrivacyPolicy() {
                     </div>
                   </div>
                   <div className="space-y-4">
-                    <div className="bg-indigo-50 rounded-lg p-4">
-                      <h3 className="font-semibold text-indigo-700 mb-2">Restriction</h3>
+                    <div className="bg-primary-50 rounded-lg p-4">
+                      <h3 className="font-semibold text-primary-700 mb-2">Restriction</h3>
                       <p className="text-secondary-600 text-sm">Limit how we process your personal data</p>
                     </div>
                     <div className="bg-pink-50 rounded-lg p-4">
@@ -361,7 +361,7 @@ export default function PrivacyPolicy() {
                   </div>
                 </div>
                 
-                <div className="mt-6 bg-gray-50 rounded-xl p-6">
+                <div className="mt-6 bg-secondary-50 rounded-xl p-6">
                   <h3 className="font-semibold text-gray-900 mb-3">How to Exercise Your Rights</h3>
                   <p className="text-secondary-600 mb-3">
                     You can exercise most of these rights directly in your account settings. For other requests:
@@ -393,7 +393,7 @@ export default function PrivacyPolicy() {
                       <span><strong>Deleted accounts:</strong> Most data deleted within 30 days, some safety records retained for 12 months</span>
                     </li>
                     <li className="flex items-start">
-                      <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-accent-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                       <span><strong>Legal requirements:</strong> Some data may be retained longer to comply with legal obligations</span>
                     </li>
                   </ul>

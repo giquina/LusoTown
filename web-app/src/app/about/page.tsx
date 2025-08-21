@@ -132,7 +132,7 @@ export default function About() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-8 h-8 bg-accent-100 text-accent-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       📝
                     </div>
                     <div>
@@ -169,7 +169,7 @@ export default function About() {
                   </div>
                 </div>
                 
-                <div className="mt-8 pt-6 border-t border-gray-200">
+                <div className="mt-8 pt-6 border-t border-secondary-200">
                   <p className="text-secondary-600 text-center">
                     LusoTown is completely free to join and built for people from: Portugal, Brazil, Angola, Mozambique, Cape Verde, Guinea-Bissau, São Tomé and Príncipe, East Timor, Macau, and Equatorial Guinea — and for anyone who feels part of our Portuguese-speaking world.
                   </p>
@@ -180,7 +180,7 @@ export default function About() {
         </section>
 
         {/* The "Aha" Moment Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-secondary-50">
           <div className="container-width">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
@@ -209,7 +209,7 @@ export default function About() {
                   </p>
                 </div>
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-accent-100 text-accent-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <UserGroupIcon className="w-8 h-8" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">Community Support</h3>
@@ -330,7 +330,7 @@ export default function About() {
                   </div>
                   
                   {/* Angola */}
-                  <div className="border-2 border-purple-100 rounded-xl p-6 hover:shadow-lg transition-all hover:border-purple-200 bg-gradient-to-br from-white to-purple-50/30">
+                  <div className="border-2 border-accent-100 rounded-xl p-6 hover:shadow-lg transition-all hover:border-accent-200 bg-gradient-to-br from-white to-accent-50/30">
                     <div className="flex items-center gap-3 mb-4">
                       <span className="text-4xl">🇦🇴</span>
                       <div>
@@ -471,7 +471,7 @@ export default function About() {
                       <div className="text-xs text-secondary-600">Most Spoken Language</div>
                     </div>
                     <div className="bg-white/70 rounded-lg p-3">
-                      <div className="text-2xl font-bold text-purple-600">4</div>
+                      <div className="text-2xl font-bold text-accent-600">4</div>
                       <div className="text-xs text-secondary-600">Continents</div>
                     </div>
                     <div className="bg-white/70 rounded-lg p-3">
@@ -518,7 +518,7 @@ export default function About() {
                   <div className="text-xs text-gray-500 mt-1">Portuguese-speaking nations</div>
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-sm">
-                  <div className="text-3xl font-bold text-purple-600 mb-2">95%</div>
+                  <div className="text-3xl font-bold text-accent-600 mb-2">95%</div>
                   <div className="text-sm text-secondary-600">Heritage Pride</div>
                   <div className="text-xs text-gray-500 mt-1">Feel more connected</div>
                 </div>
@@ -572,8 +572,8 @@ export default function About() {
                     where Portuguese speakers feel at home, supported, and understood.
                   </p>
                 </div>
-                <div className="bg-gradient-to-br from-purple-50 to-white rounded-2xl p-8">
-                  <h3 className="text-xl font-semibold text-purple-600 mb-4">👨‍👩‍👧‍👦 Family Support</h3>
+                <div className="bg-gradient-to-br from-accent-50 to-white rounded-2xl p-8">
+                  <h3 className="text-xl font-semibold text-accent-600 mb-4">👨‍👩‍👧‍👦 Family Support</h3>
                   <p className="text-secondary-600">
                     Supporting Portuguese families in London with resources, connections, and community that 
                     help children grow proud of their heritage while thriving in British society.
@@ -704,7 +704,7 @@ export default function About() {
               </p>
               <a 
                 href={ROUTES.signup}
-                className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105"
+                className="inline-flex items-center justify-center bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 hover:from-secondary-700 hover:via-action-700 hover:to-accent-700 text-white font-bold text-lg px-10 py-4 rounded-2xl shadow-2xl hover:shadow-3xl transform transition-all duration-300 hover:-transecondary-y-1 hover:scale-105"
               >
                 JOIN NOW
               </a>

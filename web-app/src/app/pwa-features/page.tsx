@@ -123,27 +123,27 @@ export default function PWAFeaturesPage() {
     blue: 'bg-blue-50 border-blue-200 text-blue-800',
     green: 'bg-green-50 border-green-200 text-green-800',
     red: 'bg-red-50 border-red-200 text-red-800',
-    purple: 'bg-purple-50 border-purple-200 text-purple-800',
+    purple: 'bg-accent-50 border-accent-200 text-accent-800',
     yellow: 'bg-yellow-50 border-yellow-200 text-yellow-800',
-    indigo: 'bg-indigo-50 border-indigo-200 text-indigo-800'
+    indigo: 'bg-primary-50 border-primary-200 text-primary-800'
   };
 
   const iconColorClasses = {
     blue: 'text-primary-600',
     green: 'text-action-600',
     red: 'text-coral-600',
-    purple: 'text-purple-600',
+    purple: 'text-accent-600',
     yellow: 'text-yellow-600',
-    indigo: 'text-indigo-600'
+    indigo: 'text-primary-600'
   };
 
   const buttonColorClasses = {
     blue: 'bg-primary-600 hover:bg-primary-700',
     green: 'bg-action-600 hover:bg-green-700',
     red: 'bg-coral-600 hover:bg-red-700',
-    purple: 'bg-purple-600 hover:bg-purple-700',
+    purple: 'bg-accent-600 hover:bg-accent-700',
     yellow: 'bg-yellow-600 hover:bg-yellow-700',
-    indigo: 'bg-indigo-600 hover:bg-indigo-700'
+    indigo: 'bg-primary-600 hover:bg-primary-700'
   };
 
   const toggleDemo = (featureId: string) => {
@@ -305,7 +305,7 @@ export default function PWAFeaturesPage() {
 
                 {/* Feature Demo */}
                 {isActive && (
-                  <div className="p-8 bg-gray-50 border-t border-gray-200">
+                  <div className="p-8 bg-secondary-50 border-t border-secondary-200">
                     <div className="mb-6">
                       <h4 className="text-lg font-semibold text-gray-900 mb-2">
                         {language === 'pt' ? 'Demonstração Interativa' : 'Interactive Demo'}

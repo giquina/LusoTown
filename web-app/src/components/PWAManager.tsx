@@ -451,7 +451,7 @@ export default function PWAManager({ className = '' }: PWAManagerProps) {
 
       {/* Enable Notifications */}
       {notificationPermission === 'default' && (
-        <div className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-4">
+        <div className="bg-gradient-to-r from-blue-50 to-accent-50 border border-blue-200 rounded-lg p-4">
           <div className="flex items-start space-x-3">
             <div className="flex-shrink-0">
               <Bell className="h-6 w-6 text-primary-600" />

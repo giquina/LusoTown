@@ -380,7 +380,7 @@ export default function ContentModerationSystem({
       className="space-y-4"
     >
       {/* Validation Score */}
-      <div className="bg-white border border-gray-200 rounded-lg p-4">
+      <div className="bg-white border border-secondary-200 rounded-lg p-4">
         <div className="flex items-center justify-between mb-3">
           <h4 className="font-semibold text-gray-900 flex items-center gap-2">
             <ShieldCheckIcon className="w-5 h-5 text-primary-600" />
@@ -431,7 +431,7 @@ export default function ContentModerationSystem({
             </span>
             <span className={`ml-2 px-2 py-1 rounded-full text-xs font-medium ${
               validation.category === 'transport' ? 'bg-blue-100 text-primary-700' :
-              validation.category === 'cultural' ? 'bg-purple-100 text-purple-700' :
+              validation.category === 'cultural' ? 'bg-accent-100 text-accent-700' :
               validation.category === 'business' ? 'bg-green-100 text-green-700' :
               validation.category === 'housing' ? 'bg-orange-100 text-orange-700' :
               validation.category === 'event' ? 'bg-pink-100 text-pink-700' :

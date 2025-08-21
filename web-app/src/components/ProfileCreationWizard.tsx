@@ -468,7 +468,7 @@ function CulturalStep({ formData, updateFormData, isPortuguese, options }: any) 
               className={`p-3 rounded-lg border-2 text-sm font-medium transition-all ${
                 formData.portuguese_origin === origin.value
                   ? 'border-primary-500 bg-primary-50 text-primary-700'
-                  : 'border-gray-200 bg-white text-secondary-700 hover:border-secondary-300'
+                  : 'border-secondary-200 bg-white text-secondary-700 hover:border-secondary-300'
               }`}
             >
               {isPortuguese ? origin.labelPt : origin.label}
@@ -494,7 +494,7 @@ function CulturalStep({ formData, updateFormData, isPortuguese, options }: any) 
               className={`p-4 rounded-lg border-2 text-sm font-medium transition-all ${
                 formData.language_preference === lang.value
                   ? 'border-primary-500 bg-primary-50 text-primary-700'
-                  : 'border-gray-200 bg-white text-secondary-700 hover:border-secondary-300'
+                  : 'border-secondary-200 bg-white text-secondary-700 hover:border-secondary-300'
               }`}
             >
               {isPortuguese ? lang.labelPt : lang.label}
@@ -541,7 +541,7 @@ function InterestsStep({ formData, updateFormData, isPortuguese, options }: any)
                 className={`p-3 rounded-lg border-2 text-sm font-medium transition-all ${
                   (formData.interests || []).includes(interest)
                     ? 'border-primary-500 bg-primary-50 text-primary-700'
-                    : 'border-gray-200 bg-white text-secondary-700 hover:border-secondary-300'
+                    : 'border-secondary-200 bg-white text-secondary-700 hover:border-secondary-300'
                 }`}
               >
                 {interest}

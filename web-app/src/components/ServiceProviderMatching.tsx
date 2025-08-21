@@ -278,7 +278,7 @@ export default function ServiceProviderMatching({
 
   const handleServiceRequest = (provider: ServiceProvider) => {
     if (!selectedMatch) {
-      alert(isPortuguese ? 'Selecione um match primeiro' : 'Please select a match first')
+      toast.error(isPortuguese ? 'Selecione um match primeiro' : 'Please select a match first')
       return
     }
     
@@ -297,7 +297,7 @@ export default function ServiceProviderMatching({
   return (
     <div className={`space-y-6 ${className}`}>
       {/* Service Provider Matching Header */}
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+      <div className="bg-white rounded-2xl shadow-sm border border-secondary-100 p-6">
         <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
           <TruckIcon className="w-5 h-5 text-secondary-500" />
           {isPortuguese ? 'Fornecedores de Serviços Compatíveis' : 'Compatible Service Providers'}
@@ -399,7 +399,7 @@ export default function ServiceProviderMatching({
               layout
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow"
+              className="bg-white rounded-2xl shadow-sm border border-secondary-100 overflow-hidden hover:shadow-md transition-shadow"
             >
               {/* Provider Header */}
               <div className="p-6 pb-4">

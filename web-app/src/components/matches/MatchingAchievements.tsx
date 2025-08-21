@@ -119,7 +119,7 @@ export default function MatchingAchievements({
         currentProgress: 3,
         requiredProgress: 3,
         badgeIcon: "🎵",
-        badgeColor: "from-purple-500 to-purple-600",
+        badgeColor: "from-accent-500 to-accent-600",
         pointsAwarded: 25,
         unlockedAt: "2025-08-18",
         isUnlocked: true,
@@ -257,7 +257,7 @@ export default function MatchingAchievements({
       case 'rare':
         return 'from-blue-400 to-blue-600';
       case 'epic':
-        return 'from-purple-500 to-purple-700';
+        return 'from-accent-500 to-accent-700';
       case 'legendary':
         return 'from-yellow-400 to-orange-600';
       default:
@@ -411,7 +411,7 @@ export default function MatchingAchievements({
               className={`relative border rounded-xl p-4 cursor-pointer transition-all duration-300 ${
                 achievement.isUnlocked
                   ? "border-primary-200 hover:border-primary-300 hover:shadow-lg bg-white"
-                  : "border-gray-200 bg-gray-50 opacity-75"
+                  : "border-secondary-200 bg-secondary-50 opacity-75"
               }`}
             >
               {/* Achievement Header */}
@@ -533,7 +533,7 @@ export default function MatchingAchievements({
                           </span>
                         )}
                         {achievement.rewards.exclusiveEvents && (
-                          <span className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded">
+                          <span className="text-xs bg-accent-100 text-accent-700 px-2 py-1 rounded">
                             {language === "pt" ? "Eventos VIP" : "VIP Events"}
                           </span>
                         )}
@@ -568,22 +568,22 @@ export default function MatchingAchievements({
 
       {/* Premium Upgrade Prompt */}
       {!hasActiveSubscription && achievements.some(a => a.isUnlocked) && (
-        <div className="mt-6 bg-gradient-to-r from-purple-50 to-purple-100 border border-purple-200 rounded-xl p-4">
+        <div className="mt-6 bg-gradient-to-r from-accent-50 to-accent-100 border border-accent-200 rounded-xl p-4">
           <div className="flex items-center gap-3">
-            <GiftIcon className="w-5 h-5 text-purple-600" />
+            <GiftIcon className="w-5 h-5 text-accent-600" />
             <div className="flex-1">
-              <h5 className="font-semibold text-purple-900 mb-1">
+              <h5 className="font-semibold text-accent-900 mb-1">
                 {language === "pt" 
                   ? "Desbloqueie mais conquistas!" 
                   : "Unlock more achievements!"}
               </h5>
-              <p className="text-purple-700 text-sm">
+              <p className="text-accent-700 text-sm">
                 {language === "pt"
                   ? "Membros Premium têm acesso a conquistas exclusivas e recompensas especiais."
                   : "Premium members get access to exclusive achievements and special rewards."}
               </p>
             </div>
-            <button className="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-purple-700 transition-colors">
+            <button className="bg-accent-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-accent-700 transition-colors">
               {language === "pt" ? "Upgrade" : "Upgrade"}
             </button>
           </div>

@@ -186,7 +186,7 @@ export default function CulturalCompatibilityResults({
         className="bg-white rounded-3xl max-w-4xl w-full max-h-[95vh] overflow-y-auto"
       >
         {/* Header */}
-        <div className="sticky top-0 bg-white rounded-t-3xl border-b border-gray-100 p-6 z-10">
+        <div className="sticky top-0 bg-white rounded-t-3xl border-b border-secondary-100 p-6 z-10">
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-2xl font-bold text-primary-900 mb-2">
@@ -240,7 +240,7 @@ export default function CulturalCompatibilityResults({
           </div>
 
           {/* Profile Type */}
-          <div className="bg-white rounded-2xl border border-gray-200 p-6 mb-8">
+          <div className="bg-white rounded-2xl border border-secondary-200 p-6 mb-8">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-12 h-12 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-full flex items-center justify-center">
                 <HeartIcon className="w-6 h-6 text-white" />
@@ -260,7 +260,7 @@ export default function CulturalCompatibilityResults({
           </div>
 
           {/* Category Breakdown */}
-          <div className="bg-white rounded-2xl border border-gray-200 p-6 mb-8">
+          <div className="bg-white rounded-2xl border border-secondary-200 p-6 mb-8">
             <h4 className="text-lg font-bold text-gray-900 mb-6 flex items-center gap-2">
               <ChartBarIcon className="w-5 h-5 text-primary-600" />
               {language === 'pt' ? 'Análise Detalhada por Categoria' : 'Detailed Category Analysis'}
@@ -276,7 +276,7 @@ export default function CulturalCompatibilityResults({
                 if (!IconComponent) return null;
 
                 return (
-                  <div key={category} className="bg-gray-50 rounded-xl p-4">
+                  <div key={category} className="bg-secondary-50 rounded-xl p-4">
                     <div className="flex items-center justify-between mb-3">
                       <div className="flex items-center gap-3">
                         <IconComponent className="w-5 h-5 text-primary-600" />
@@ -308,7 +308,7 @@ export default function CulturalCompatibilityResults({
           </div>
 
           {/* Compatibility Insights */}
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl border border-blue-200 p-6 mb-8">
+          <div className="bg-gradient-to-r from-blue-50 to-accent-50 rounded-2xl border border-blue-200 p-6 mb-8">
             <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
               <SparklesIcon className="w-5 h-5 text-primary-600" />
               {language === 'pt' ? 'Insights de Compatibilidade' : 'Compatibility Insights'}
@@ -331,7 +331,7 @@ export default function CulturalCompatibilityResults({
                     <div key={category} className="bg-white rounded-xl p-4 border border-blue-200">
                       <div className="flex items-center gap-2 mb-2">
                         <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white ${
-                          index === 0 ? 'bg-accent-500' : index === 1 ? 'bg-gray-400' : 'bg-orange-500'
+                          index === 0 ? 'bg-accent-500' : index === 1 ? 'bg-secondary-400' : 'bg-orange-500'
                         }`}>
                           {index + 1}
                         </div>
@@ -350,7 +350,7 @@ export default function CulturalCompatibilityResults({
           </div>
 
           {/* Recommendations */}
-          <div className="bg-white rounded-2xl border border-gray-200 p-6 mb-8">
+          <div className="bg-white rounded-2xl border border-secondary-200 p-6 mb-8">
             <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
               <AcademicCapIcon className="w-5 h-5 text-action-600" />
               {language === 'pt' ? 'Recomendações Personalizadas' : 'Personalized Recommendations'}

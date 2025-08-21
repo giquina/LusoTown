@@ -179,7 +179,7 @@ export default function ProtectionTestimonials() {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-neutral-50 to-primary-50">
+    <section className="py-16 bg-gradient-to-br from-secondary-50 to-primary-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -190,7 +190,7 @@ export default function ProtectionTestimonials() {
         >
           <motion.h2
             variants={fadeInUp}
-            className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4"
+            className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4"
           >
             {t(
               "framework.testimonials.title",
@@ -199,7 +199,7 @@ export default function ProtectionTestimonials() {
           </motion.h2>
           <motion.p
             variants={fadeInUp}
-            className="text-lg text-neutral-600 max-w-3xl mx-auto"
+            className="text-lg text-secondary-600 max-w-3xl mx-auto"
           >
             {language === "pt"
               ? "Testemunhos reais de líderes empresariais portugueses que experimentaram nosso Framework de Excelência 7 Ps em operações de proteção de alto perfil."
@@ -228,11 +228,11 @@ export default function ProtectionTestimonials() {
                         className="w-5 h-5 text-accent-500 fill-current"
                       />
                     ))}
-                    <span className="ml-2 text-sm text-neutral-500">
+                    <span className="ml-2 text-sm text-secondary-500">
                       {activeTestimony.rating}/5
                     </span>
                   </div>
-                  <p className="text-neutral-700 leading-relaxed text-lg mb-6">
+                  <p className="text-secondary-700 leading-relaxed text-lg mb-6">
                     "
                     {language === "pt"
                       ? activeTestimony.testimonial.pt
@@ -254,27 +254,27 @@ export default function ProtectionTestimonials() {
               </div>
 
               {/* Client Information */}
-              <div className="border-t border-neutral-200 pt-6">
+              <div className="border-t border-secondary-200 pt-6">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <h4 className="text-xl font-bold text-neutral-900">
+                    <h4 className="text-xl font-bold text-secondary-900">
                       {activeTestimony.name}
                     </h4>
-                    <p className="text-neutral-600">
+                    <p className="text-secondary-600">
                       {language === "pt"
                         ? activeTestimony.title.pt
                         : activeTestimony.title.en}
                     </p>
-                    <p className="text-sm text-neutral-500">
+                    <p className="text-sm text-secondary-500">
                       {activeTestimony.company}
                     </p>
                   </div>
                   <div className="text-right">
-                    <div className="flex items-center text-sm text-neutral-500 mb-1">
+                    <div className="flex items-center text-sm text-secondary-500 mb-1">
                       <ClockIcon className="w-4 h-4 mr-1" />
                       {activeTestimony.duration}
                     </div>
-                    <div className="text-sm text-neutral-500">
+                    <div className="text-sm text-secondary-500">
                       {activeTestimony.location}
                     </div>
                   </div>
@@ -313,8 +313,8 @@ export default function ProtectionTestimonials() {
 
             {/* Client Image */}
             <div className="relative bg-gradient-to-br from-premium-100 to-primary-100 lg:min-h-full flex items-center justify-center p-12">
-              <div className="w-48 h-48 bg-neutral-300 rounded-full flex items-center justify-center">
-                <Users className="w-20 h-20 text-neutral-500" />
+              <div className="w-48 h-48 bg-secondary-300 rounded-full flex items-center justify-center">
+                <Users className="w-20 h-20 text-secondary-500" />
               </div>
 
               {/* Service Badge */}
@@ -334,9 +334,9 @@ export default function ProtectionTestimonials() {
         <div className="flex items-center justify-center gap-4 mb-8">
           <button
             onClick={prevTestimonial}
-            className="p-3 bg-white border border-neutral-300 rounded-lg hover:bg-neutral-50 transition-colors"
+            className="p-3 bg-white border border-secondary-300 rounded-lg hover:bg-secondary-50 transition-colors"
           >
-            <ChevronLeftIcon className="w-5 h-5 text-neutral-600" />
+            <ChevronLeftIcon className="w-5 h-5 text-secondary-600" />
           </button>
 
           <div className="flex gap-2">
@@ -347,7 +347,7 @@ export default function ProtectionTestimonials() {
                 className={`w-3 h-3 rounded-full transition-colors ${
                   index === activeTestimonial
                     ? "bg-premium-600"
-                    : "bg-neutral-300 hover:bg-neutral-400"
+                    : "bg-secondary-300 hover:bg-secondary-400"
                 }`}
               />
             ))}
@@ -355,9 +355,9 @@ export default function ProtectionTestimonials() {
 
           <button
             onClick={nextTestimonial}
-            className="p-3 bg-white border border-neutral-300 rounded-lg hover:bg-neutral-50 transition-colors"
+            className="p-3 bg-white border border-secondary-300 rounded-lg hover:bg-secondary-50 transition-colors"
           >
-            <ChevronRightIcon className="w-5 h-5 text-neutral-600" />
+            <ChevronRightIcon className="w-5 h-5 text-secondary-600" />
           </button>
         </div>
 
@@ -368,13 +368,13 @@ export default function ProtectionTestimonials() {
         >
           <motion.div variants={fadeInUp} className="text-center">
             <div className="text-3xl font-bold text-premium-600 mb-2">100%</div>
-            <div className="text-neutral-600 text-sm">
+            <div className="text-secondary-600 text-sm">
               {t("framework.testimonials.satisfaction", "Client Satisfaction")}
             </div>
           </motion.div>
           <motion.div variants={fadeInUp} className="text-center">
             <div className="text-3xl font-bold text-premium-600 mb-2">50+</div>
-            <div className="text-neutral-600 text-sm">
+            <div className="text-secondary-600 text-sm">
               {t(
                 "framework.testimonials.executives",
                 "Portuguese Executives Protected"
@@ -383,13 +383,13 @@ export default function ProtectionTestimonials() {
           </motion.div>
           <motion.div variants={fadeInUp} className="text-center">
             <div className="text-3xl font-bold text-premium-600 mb-2">5.0</div>
-            <div className="text-neutral-600 text-sm">
+            <div className="text-secondary-600 text-sm">
               {t("framework.testimonials.rating", "Average Rating")}
             </div>
           </motion.div>
           <motion.div variants={fadeInUp} className="text-center">
             <div className="text-3xl font-bold text-premium-600 mb-2">24/7</div>
-            <div className="text-neutral-600 text-sm">
+            <div className="text-secondary-600 text-sm">
               {t("framework.testimonials.availability", "Service Availability")}
             </div>
           </motion.div>

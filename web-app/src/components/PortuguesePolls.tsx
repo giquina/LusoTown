@@ -375,7 +375,7 @@ export default function PortuguesePolls({
                         onClick={addPollOption}
                         className="flex items-center gap-2 px-3 py-2 text-sm text-secondary-600 
                           hover:text-secondary-800 border-2 border-dashed border-secondary-300 rounded-lg 
-                          hover:border-gray-400 transition-colors w-full"
+                          hover:border-secondary-400 transition-colors w-full"
                       >
                         <PlusIcon className="w-4 h-4" />
                         {language === "pt" ? "Adicionar opção" : "Add option"}
@@ -504,7 +504,7 @@ function PollCard({
       className={`p-4 rounded-xl border-2 ${
         isActive
           ? "border-primary-200 bg-primary-50"
-          : "border-gray-200 bg-gray-50"
+          : "border-secondary-200 bg-secondary-50"
       }`}
     >
       <div className="flex items-center justify-between mb-3">
@@ -535,8 +535,8 @@ function PollCard({
                 isSelected
                   ? "border-primary-300 bg-primary-100 text-primary-800"
                   : hasVoted || !isActive
-                  ? "border-gray-200 bg-secondary-100 cursor-default"
-                  : "border-gray-200 bg-white hover:border-primary-300 hover:bg-primary-50"
+                  ? "border-secondary-200 bg-secondary-100 cursor-default"
+                  : "border-secondary-200 bg-white hover:border-primary-300 hover:bg-primary-50"
               }`}
             >
               {/* Progress Bar */}

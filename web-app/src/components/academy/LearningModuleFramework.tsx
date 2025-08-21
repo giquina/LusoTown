@@ -158,7 +158,7 @@ export default function LearningModuleFramework({
       case 'Beginner': return 'bg-green-100 text-green-700 border-green-200';
       case 'Intermediate': return 'bg-yellow-100 text-yellow-700 border-yellow-200';
       case 'Advanced': return 'bg-red-100 text-red-700 border-red-200';
-      default: return 'bg-secondary-100 text-secondary-700 border-gray-200';
+      default: return 'bg-secondary-100 text-secondary-700 border-secondary-200';
     }
   };
 
@@ -168,7 +168,7 @@ export default function LearningModuleFramework({
     switch (step.interactive.type) {
       case 'checklist':
         return (
-          <div className="bg-gray-50 rounded-2xl p-6 mt-6">
+          <div className="bg-secondary-50 rounded-2xl p-6 mt-6">
             <h4 className="font-bold text-gray-900 mb-4">
               {isPortuguese ? 'Lista de Verificação' : 'Checklist'}
             </h4>
@@ -218,7 +218,7 @@ export default function LearningModuleFramework({
       exit={{ opacity: 0, y: -20 }}
       className="prose prose-lg max-w-none"
     >
-      <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+      <div className="bg-white rounded-3xl p-8 shadow-lg border border-secondary-100">
         {/* Step header */}
         <div className="flex items-start gap-4 mb-6">
           <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center flex-shrink-0">
@@ -332,7 +332,7 @@ export default function LearningModuleFramework({
         {renderInteractiveElement(step)}
 
         {/* Navigation */}
-        <div className="flex items-center justify-between mt-8 pt-6 border-t border-gray-200">
+        <div className="flex items-center justify-between mt-8 pt-6 border-t border-secondary-200">
           <button
             onClick={goToPreviousStep}
             disabled={currentStepIndex === 0}
@@ -370,7 +370,7 @@ export default function LearningModuleFramework({
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50">
       {/* Module header */}
-      <div className="bg-white border-b border-gray-200 sticky top-0 z-10">
+      <div className="bg-white border-b border-secondary-200 sticky top-0 z-10">
         <div className="container-width py-6">
           <div className="flex items-start gap-6">
             <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center">
@@ -420,7 +420,7 @@ export default function LearningModuleFramework({
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Step navigation sidebar */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 sticky top-24">
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100 sticky top-24">
               <h3 className="font-bold text-gray-900 mb-4">
                 {isPortuguese ? 'Passos do Módulo' : 'Module Steps'}
               </h3>
@@ -434,7 +434,7 @@ export default function LearningModuleFramework({
                         ? 'bg-primary-50 text-primary-700 border border-primary-200'
                         : isStepCompleted(step.id)
                         ? 'bg-green-50 text-green-700 hover:bg-green-100'
-                        : 'text-secondary-600 hover:bg-gray-50'
+                        : 'text-secondary-600 hover:bg-secondary-50'
                     }`}
                   >
                     <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
@@ -442,7 +442,7 @@ export default function LearningModuleFramework({
                         ? 'bg-action-500 text-white'
                         : currentStepIndex === index
                         ? 'bg-primary-500 text-white'
-                        : 'bg-gray-300 text-secondary-600'
+                        : 'bg-secondary-300 text-secondary-600'
                     }`}>
                       {isStepCompleted(step.id) ? <CheckCircle className="w-4 h-4" /> : index + 1}
                     </div>
@@ -469,7 +469,7 @@ export default function LearningModuleFramework({
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 text-center"
+                  className="bg-white rounded-3xl p-8 shadow-lg border border-secondary-100 text-center"
                 >
                   <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                     <Award className="w-10 h-10 text-white" />
@@ -489,7 +489,7 @@ export default function LearningModuleFramework({
                     </button>
                     <button 
                       onClick={() => setShowingSummary(false)}
-                      className="border border-secondary-300 text-secondary-700 px-8 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-200"
+                      className="border border-secondary-300 text-secondary-700 px-8 py-3 rounded-xl font-semibold hover:bg-secondary-50 transition-all duration-200"
                     >
                       {isPortuguese ? 'Revisar Módulo' : 'Review Module'}
                     </button>

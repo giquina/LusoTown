@@ -105,7 +105,7 @@ export default function TwitterFeedWidget({
   }
 
   const fallbackContent = () => (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+    <div className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
       <div className="text-center">
         <Twitter className="w-12 h-12 text-[#1DA1F2] mx-auto mb-4" />
         <h3 className="text-lg font-semibold text-gray-900 mb-2">
@@ -140,7 +140,7 @@ export default function TwitterFeedWidget({
   )
 
   const loadingContent = () => (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+    <div className="bg-white rounded-xl shadow-sm border border-secondary-200 p-6">
       <div className="animate-pulse space-y-4">
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 bg-secondary-200 rounded-full"></div>
@@ -197,7 +197,7 @@ export default function TwitterFeedWidget({
       </div>
 
       {/* Stats Bar */}
-      <div className="bg-gray-50 rounded-lg p-3">
+      <div className="bg-secondary-50 rounded-lg p-3">
         <div className="grid grid-cols-3 gap-4 text-center">
           <div>
             <div className="flex items-center justify-center space-x-1 text-xs text-secondary-600">
@@ -221,7 +221,7 @@ export default function TwitterFeedWidget({
       </div>
 
       {/* Twitter Timeline */}
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+      <div className="bg-white rounded-xl shadow-sm border border-secondary-200 overflow-hidden">
         {isLoading && loadingContent()}
         
         {!isLoading && !hasError && (

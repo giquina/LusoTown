@@ -337,7 +337,7 @@ export default function Contact() {
                       
                       {/* Support Hours */}
                       <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+                        <div className="w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
                           <ClockIcon className="h-6 w-6 text-white" />
                         </div>
                         <div>

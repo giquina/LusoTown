@@ -114,7 +114,7 @@ export default function EventFeedCard({
       case 'event_full':
         return <EyeIcon className="w-4 h-4 text-action-500" />
       default:
-        return <CalendarDaysIcon className="w-4 h-4 text-neutral-500" />
+        return <CalendarDaysIcon className="w-4 h-4 text-secondary-500" />
     }
   }
 
@@ -139,7 +139,7 @@ export default function EventFeedCard({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`bg-white rounded-3xl shadow-xl hover:shadow-2xl border border-neutral-100 overflow-hidden transition-all duration-300 min-h-[520px] sm:min-h-[580px] flex flex-col group ${
+      className={`bg-white rounded-3xl shadow-xl hover:shadow-2xl border border-secondary-100 overflow-hidden transition-all duration-300 min-h-[520px] sm:min-h-[580px] flex flex-col group ${
         post.priority === 'high' ? 'ring-2 ring-primary-100' : ''
       } ${className}`}
     >
@@ -169,14 +169,14 @@ export default function EventFeedCard({
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h4 className="font-semibold text-neutral-900">{post.hostName}</h4>
+                <h4 className="font-semibold text-secondary-900">{post.hostName}</h4>
                 {post.isSponsored && (
                   <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">
                     {isPortuguese ? 'Patrocinado' : 'Sponsored'}
                   </span>
                 )}
               </div>
-              <div className="flex items-center gap-2 text-sm text-neutral-500">
+              <div className="flex items-center gap-2 text-sm text-secondary-500">
                 {getPostTypeIcon(post.type)}
                 <span>{getPostTypeLabel(post.type)}</span>
                 <span>•</span>
@@ -196,7 +196,7 @@ export default function EventFeedCard({
         </div>
 
         {/* Post Content */}
-        <p className="text-neutral-700 mb-4 whitespace-pre-line text-sm sm:text-base break-words leading-relaxed">{post.content}</p>
+        <p className="text-secondary-700 mb-4 whitespace-pre-line text-sm sm:text-base break-words leading-relaxed">{post.content}</p>
 
         {/* Post Images Grid */}
         {post.images && post.images.length > 0 && (
@@ -286,9 +286,9 @@ export default function EventFeedCard({
             )}
             
             <div className="flex-1 min-w-0">
-              <h5 className="font-semibold text-neutral-900 mb-2 line-clamp-2 text-sm sm:text-base break-words">{post.eventTitle}</h5>
+              <h5 className="font-semibold text-secondary-900 mb-2 line-clamp-2 text-sm sm:text-base break-words">{post.eventTitle}</h5>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-neutral-600 mb-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-secondary-600 mb-3">
                 <div className="flex items-center gap-1">
                   <CalendarDaysIcon className="w-4 h-4 text-primary-500" />
                   <span>{formatDate(post.eventDate)} • {post.eventTime}</span>
@@ -364,7 +364,7 @@ export default function EventFeedCard({
                 </p>
               </button>
             ) : (
-              <div className="bg-neutral-50 rounded-xl p-4">
+              <div className="bg-secondary-50 rounded-xl p-4">
                 <PhotoUpload
                   onPhotosUploaded={handlePhotoUpload}
                   eventId={post.eventId}
@@ -373,7 +373,7 @@ export default function EventFeedCard({
                 <div className="flex justify-end gap-2 mt-4">
                   <button
                     onClick={() => setShowPhotoUpload(false)}
-                    className="px-4 py-2 text-neutral-600 hover:text-secondary-800 text-sm"
+                    className="px-4 py-2 text-secondary-600 hover:text-secondary-800 text-sm"
                   >
                     {isPortuguese ? 'Cancelar' : 'Cancel'}
                   </button>
@@ -393,7 +393,7 @@ export default function EventFeedCard({
         )}
 
         {/* Reactions Bar */}
-        <div className="flex items-center gap-4 text-sm text-neutral-500 mb-4">
+        <div className="flex items-center gap-4 text-sm text-secondary-500 mb-4">
           <button 
             onClick={() => handleReaction('interested')}
             className="flex items-center gap-1 hover:text-primary-500 transition-colors"
@@ -429,12 +429,12 @@ export default function EventFeedCard({
       </div>
 
       {/* Post Actions */}
-      <div className="px-4 sm:px-6 py-3 sm:py-4 bg-neutral-50 border-t border-neutral-100 mt-auto">
+      <div className="px-4 sm:px-6 py-3 sm:py-4 bg-secondary-50 border-t border-secondary-100 mt-auto">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center gap-4 sm:gap-6">
             <button 
               onClick={handleLike}
-              className="flex items-center gap-2 text-neutral-600 hover:text-action-500 transition-colors min-h-[44px] px-2"
+              className="flex items-center gap-2 text-secondary-600 hover:text-action-500 transition-colors min-h-[44px] px-2"
             >
               {post.liked ? (
                 <HeartSolidIcon className="w-5 h-5 text-action-500" />
@@ -444,12 +444,12 @@ export default function EventFeedCard({
               <span className="text-xs sm:text-sm font-medium">{post.likes}</span>
             </button>
             
-            <button className="flex items-center gap-2 text-neutral-600 hover:text-primary-500 transition-colors min-h-[44px] px-2">
+            <button className="flex items-center gap-2 text-secondary-600 hover:text-primary-500 transition-colors min-h-[44px] px-2">
               <ChatBubbleLeftRightIcon className="w-5 h-5" />
               <span className="text-xs sm:text-sm font-medium">{post.comments}</span>
             </button>
             
-            <button className="flex items-center gap-2 text-neutral-600 hover:text-secondary-500 transition-colors min-h-[44px] px-2">
+            <button className="flex items-center gap-2 text-secondary-600 hover:text-secondary-500 transition-colors min-h-[44px] px-2">
               <ShareIcon className="w-5 h-5" />
               <span className="text-xs sm:text-sm font-medium">{post.shares}</span>
             </button>

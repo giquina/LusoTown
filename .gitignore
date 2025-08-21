@@ -80,3 +80,7 @@ Thumbs.db
 .firebase/
 *-debug.log
 .runtimeconfig.json
+
+# Backup directories from automated scripts
+backups/
+web-app/audits/

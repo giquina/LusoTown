@@ -462,7 +462,7 @@ export default function MobileCameraIntegration({
       <div className="flex items-center justify-between p-4 bg-black text-white">
         <button
           onClick={closeCamera}
-          className="p-2 rounded-full bg-secondary-800 hover:bg-gray-700 transition-colors"
+          className="p-2 rounded-full bg-secondary-800 hover:bg-secondary-700 transition-colors"
         >
           <X className="h-6 w-6" />
         </button>
@@ -487,7 +487,7 @@ export default function MobileCameraIntegration({
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <div className="relative">
                 <div className="w-64 h-64 border-2 border-white rounded-lg"></div>
-                <ScanLine className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-8 w-8 text-white animate-pulse" />
+                <ScanLine className="absolute top-1/2 left-1/2 transform -transecondary-x-1/2 -transecondary-y-1/2 h-8 w-8 text-white animate-pulse" />
               </div>
             </div>
             
@@ -541,7 +541,7 @@ export default function MobileCameraIntegration({
                 </div>
 
                 {/* Capture button */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+                <div className="absolute bottom-8 left-1/2 transform -transecondary-x-1/2">
                   <button
                     onClick={capturePhoto}
                     disabled={isProcessing}
@@ -565,7 +565,7 @@ export default function MobileCameraIntegration({
                 />
                 
                 {/* Photo actions */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4">
+                <div className="absolute bottom-8 left-1/2 transform -transecondary-x-1/2 flex space-x-4">
                   <button
                     onClick={retakePhoto}
                     className="flex items-center space-x-2 bg-secondary-800 text-white px-4 py-2 rounded-lg"

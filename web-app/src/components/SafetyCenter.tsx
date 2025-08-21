@@ -251,9 +251,9 @@ export default function SafetyCenter() {
       >
         <div className="flex items-center justify-center gap-3 mb-4">
           <Shield className="h-8 w-8 text-secondary-600" />
-          <h2 className="text-2xl font-bold text-neutral-900">{t.title}</h2>
+          <h2 className="text-2xl font-bold text-secondary-900">{t.title}</h2>
         </div>
-        <p className="text-neutral-600">{t.subtitle}</p>
+        <p className="text-secondary-600">{t.subtitle}</p>
       </motion.div>
 
       {/* Quick Actions */}
@@ -294,7 +294,7 @@ export default function SafetyCenter() {
         transition={{ delay: 0.2 }}
         className="space-y-6"
       >
-        <h3 className="text-xl font-semibold text-neutral-900">{t.sections.features.title}</h3>
+        <h3 className="text-xl font-semibold text-secondary-900">{t.sections.features.title}</h3>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
@@ -340,11 +340,11 @@ export default function SafetyCenter() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3 + index * 0.1 }}
-              className="bg-white p-6 rounded-xl shadow-sm border border-neutral-100"
+              className="bg-white p-6 rounded-xl shadow-sm border border-secondary-100"
             >
               <feature.icon className={`h-8 w-8 text-${feature.color}-600 mb-4`} />
-              <h4 className="font-semibold text-neutral-900 mb-2">{feature.title}</h4>
-              <p className="text-sm text-neutral-600">{feature.description}</p>
+              <h4 className="font-semibold text-secondary-900 mb-2">{feature.title}</h4>
+              <p className="text-sm text-secondary-600">{feature.description}</p>
             </motion.div>
           ))}
         </div>
@@ -355,14 +355,14 @@ export default function SafetyCenter() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
-        className="bg-white p-6 rounded-xl shadow-sm border border-neutral-100"
+        className="bg-white p-6 rounded-xl shadow-sm border border-secondary-100"
       >
-        <h3 className="text-xl font-semibold text-neutral-900 mb-4">{t.sections.guidelines.title}</h3>
+        <h3 className="text-xl font-semibold text-secondary-900 mb-4">{t.sections.guidelines.title}</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {t.sections.guidelines.items.map((guideline, index) => (
             <div key={index} className="flex items-start gap-3">
               <CheckCircle className="h-5 w-5 text-secondary-600 mt-0.5 flex-shrink-0" />
-              <span className="text-sm text-neutral-700">{guideline}</span>
+              <span className="text-sm text-secondary-700">{guideline}</span>
             </div>
           ))}
         </div>
@@ -426,22 +426,22 @@ export default function SafetyCenter() {
             animate={{ scale: 1 }}
             className="bg-white rounded-xl p-6 max-w-md w-full"
           >
-            <h3 className="text-lg font-semibold text-neutral-900 mb-4">
+            <h3 className="text-lg font-semibold text-secondary-900 mb-4">
               {t.sections.report.title}
             </h3>
-            <p className="text-sm text-neutral-600 mb-6">
+            <p className="text-sm text-secondary-600 mb-6">
               {t.sections.report.description}
             </p>
             
             <form onSubmit={handleReportSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-neutral-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {t.sections.report.form.type}
                 </label>
                 <select
                   value={reportForm.type}
                   onChange={(e) => setReportForm(prev => ({ ...prev, type: e.target.value }))}
-                  className="w-full rounded-md border-neutral-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                  className="w-full rounded-md border-secondary-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
                   required
                 >
                   <option value="">Select a type</option>
@@ -452,26 +452,26 @@ export default function SafetyCenter() {
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-neutral-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {t.sections.report.form.description}
                 </label>
                 <textarea
                   value={reportForm.description}
                   onChange={(e) => setReportForm(prev => ({ ...prev, description: e.target.value }))}
-                  className="w-full rounded-md border-neutral-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                  className="w-full rounded-md border-secondary-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
                   rows={4}
                   required
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-neutral-700 mb-2">
+                <label className="block text-sm font-medium text-secondary-700 mb-2">
                   {t.sections.report.form.evidence}
                 </label>
                 <textarea
                   value={reportForm.evidence}
                   onChange={(e) => setReportForm(prev => ({ ...prev, evidence: e.target.value }))}
-                  className="w-full rounded-md border-neutral-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                  className="w-full rounded-md border-secondary-300 shadow-sm focus:border-primary-500 focus:ring-primary-500"
                   rows={2}
                 />
               </div>
@@ -480,7 +480,7 @@ export default function SafetyCenter() {
                 <button
                   type="button"
                   onClick={() => setShowReportForm(false)}
-                  className="flex-1 bg-neutral-100 text-neutral-700 py-2 px-4 rounded-lg font-medium hover:bg-neutral-200 transition-colors"
+                  className="flex-1 bg-secondary-100 text-secondary-700 py-2 px-4 rounded-lg font-medium hover:bg-secondary-200 transition-colors"
                 >
                   {t.sections.report.form.cancel}
                 </button>

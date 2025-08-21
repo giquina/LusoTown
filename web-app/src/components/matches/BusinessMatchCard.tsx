@@ -136,7 +136,7 @@ export default function BusinessMatchCard({
   };
 
   const getExperienceColor = (experience: string) => {
-    if (experience.includes("12+") || experience.includes("15+")) return "from-purple-500 to-purple-600";
+    if (experience.includes("12+") || experience.includes("15+")) return "from-accent-500 to-accent-600";
     if (experience.includes("8+") || experience.includes("10+")) return "from-blue-500 to-blue-600";
     if (experience.includes("5+")) return "from-green-500 to-green-600";
     return "from-gray-500 to-gray-600";
@@ -379,7 +379,7 @@ export default function BusinessMatchCard({
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <SparklesIcon className="w-3 h-3 text-purple-500" />
+                    <SparklesIcon className="w-3 h-3 text-accent-500" />
                     <span className="text-xs text-accent-700">
                       {language === "pt" ? "Interesses comerciais complementares" : "Complementary business interests"}
                     </span>
@@ -524,7 +524,7 @@ export default function BusinessMatchCard({
         <div className="flex justify-center gap-4 mt-6 pt-4 border-t border-primary-100">
           <button
             onClick={() => onSkip(profile.id)}
-            className="w-14 h-14 bg-white border-3 border-gray-200 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:border-red-300 group"
+            className="w-14 h-14 bg-white border-3 border-secondary-200 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-110 hover:border-red-300 group"
           >
             <span className="text-xl group-hover:text-coral-600 transition-colors">❌</span>
           </button>

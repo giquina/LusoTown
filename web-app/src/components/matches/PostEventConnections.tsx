@@ -614,7 +614,7 @@ export default function PostEventConnections({
                 {/* Attendee Connections */}
                 <div className="space-y-3">
                   {selectedEvent.attendees.map((attendee) => (
-                    <div key={attendee.id} className="border border-gray-200 rounded-xl p-4">
+                    <div key={attendee.id} className="border border-secondary-200 rounded-xl p-4">
                       <div className="flex items-start gap-4">
                         <div className="w-12 h-12 bg-gradient-to-br from-primary-200 to-secondary-200 rounded-full flex items-center justify-center text-xl">
                           👤
@@ -647,7 +647,7 @@ export default function PostEventConnections({
 
                           {/* Connection Details */}
                           <div className="grid grid-cols-2 gap-3 mb-3">
-                            <div className="bg-gray-50 p-2 rounded-lg">
+                            <div className="bg-secondary-50 p-2 rounded-lg">
                               <div className="text-xs text-secondary-600 mb-1">
                                 {language === "pt" ? "Tipo de conexão" : "Connection type"}
                               </div>
@@ -817,7 +817,7 @@ export default function PostEventConnections({
                       </div>
                     </div>
 
-                    <div className="bg-gray-50 p-2 rounded-lg mb-3">
+                    <div className="bg-secondary-50 p-2 rounded-lg mb-3">
                       <p className="text-xs text-secondary-700">
                         <strong>{language === "pt" ? "Razão:" : "Reason:"}</strong> {suggestion.reasonForSuggestion}
                       </p>
@@ -833,7 +833,7 @@ export default function PostEventConnections({
                         {language === "pt" ? "Planear Encontro" : "Plan Meetup"}
                       </button>
                       
-                      <button className="px-3 py-2 border border-secondary-300 text-secondary-600 rounded-lg hover:bg-gray-50 transition-colors text-sm">
+                      <button className="px-3 py-2 border border-secondary-300 text-secondary-600 rounded-lg hover:bg-secondary-50 transition-colors text-sm">
                         {language === "pt" ? "Talvez depois" : "Maybe later"}
                       </button>
                     </div>

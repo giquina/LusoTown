@@ -895,7 +895,7 @@ export default function EventBasedMatchingSystem({
                           <button
                             key={idx}
                             onClick={() => handleConversationStart(match.matchId, match.eventId, starter)}
-                            className="block w-full text-left bg-gray-50 hover:bg-primary-50 p-2 rounded-lg text-xs text-secondary-700 hover:text-primary-700 transition-colors"
+                            className="block w-full text-left bg-secondary-50 hover:bg-primary-50 p-2 rounded-lg text-xs text-secondary-700 hover:text-primary-700 transition-colors"
                           >
                             💬 "{starter}"
                           </button>

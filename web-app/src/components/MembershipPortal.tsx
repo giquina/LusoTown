@@ -137,7 +137,7 @@ export default function MembershipPortal({ userId }: MembershipPortalProps) {
         animate={{ opacity: 1, y: 0 }}
         className="text-center"
       >
-        <div className={`inline-flex items-center gap-3 px-6 py-3 rounded-full mb-4 ${tierConfig.color === 'amber' ? 'bg-amber-100 text-amber-800' : tierConfig.color === 'gray' ? 'bg-secondary-100 text-secondary-800' : tierConfig.color === 'yellow' ? 'bg-yellow-100 text-yellow-800' : 'bg-purple-100 text-purple-800'}`}>
+        <div className={`inline-flex items-center gap-3 px-6 py-3 rounded-full mb-4 ${tierConfig.color === 'amber' ? 'bg-amber-100 text-amber-800' : tierConfig.color === 'gray' ? 'bg-secondary-100 text-secondary-800' : tierConfig.color === 'yellow' ? 'bg-yellow-100 text-yellow-800' : 'bg-accent-100 text-accent-800'}`}>
           <SparklesIcon className="w-5 h-5" />
           <span className="font-semibold">
             {isPortuguese ? tierConfig.namePortuguese : tierConfig.name}
@@ -158,7 +158,7 @@ export default function MembershipPortal({ userId }: MembershipPortalProps) {
         transition={{ delay: 0.1 }}
         className="grid grid-cols-2 lg:grid-cols-4 gap-4"
       >
-        <div className="bg-white p-4 rounded-xl border border-gray-200">
+        <div className="bg-white p-4 rounded-xl border border-secondary-200">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">
               <CurrencyPoundIcon className="w-4 h-4 text-action-600" />
@@ -175,7 +175,7 @@ export default function MembershipPortal({ userId }: MembershipPortalProps) {
           </div>
         </div>
 
-        <div className="bg-white p-4 rounded-xl border border-gray-200">
+        <div className="bg-white p-4 rounded-xl border border-secondary-200">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
               <ChartBarIcon className="w-4 h-4 text-primary-600" />
@@ -192,10 +192,10 @@ export default function MembershipPortal({ userId }: MembershipPortalProps) {
           </div>
         </div>
 
-        <div className="bg-white p-4 rounded-xl border border-gray-200">
+        <div className="bg-white p-4 rounded-xl border border-secondary-200">
           <div className="flex items-center gap-3 mb-2">
-            <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-              <CalendarDaysIcon className="w-4 h-4 text-purple-600" />
+            <div className="w-8 h-8 bg-accent-100 rounded-lg flex items-center justify-center">
+              <CalendarDaysIcon className="w-4 h-4 text-accent-600" />
             </div>
             <span className="text-sm font-medium text-secondary-600">
               {isPortuguese ? 'Eventos' : 'Events'}
@@ -209,7 +209,7 @@ export default function MembershipPortal({ userId }: MembershipPortalProps) {
           </div>
         </div>
 
-        <div className="bg-white p-4 rounded-xl border border-gray-200">
+        <div className="bg-white p-4 rounded-xl border border-secondary-200">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center">
               <UserGroupIcon className="w-4 h-4 text-amber-600" />
@@ -266,7 +266,7 @@ export default function MembershipPortal({ userId }: MembershipPortalProps) {
         </h3>
         <div className="grid md:grid-cols-2 gap-4">
           {benefits.map((benefit, index) => (
-            <div key={benefit.id} className="bg-white p-4 rounded-xl border border-gray-200">
+            <div key={benefit.id} className="bg-white p-4 rounded-xl border border-secondary-200">
               <div className="flex items-start gap-3">
                 <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
                   <GiftIcon className="w-4 h-4 text-action-600" />
@@ -300,7 +300,7 @@ export default function MembershipPortal({ userId }: MembershipPortalProps) {
           </h3>
           <div className="grid md:grid-cols-2 gap-4">
             {partnerships.map((partnership) => (
-              <div key={partnership.id} className="bg-white p-4 rounded-xl border border-gray-200">
+              <div key={partnership.id} className="bg-white p-4 rounded-xl border border-secondary-200">
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
                     <UserGroupIcon className="w-4 h-4 text-primary-600" />
@@ -331,10 +331,10 @@ export default function MembershipPortal({ userId }: MembershipPortalProps) {
           <h3 className="text-lg font-semibold text-gray-900 mb-4">
             {isPortuguese ? 'Uso Recente' : 'Recent Usage'}
           </h3>
-          <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <div className="bg-white rounded-xl border border-secondary-200 overflow-hidden">
             <div className="max-h-64 overflow-y-auto">
               {usage.slice(0, 10).map((usageItem, index) => (
-                <div key={usageItem.id} className={`p-4 ${index !== usage.length - 1 ? 'border-b border-gray-100' : ''}`}>
+                <div key={usageItem.id} className={`p-4 ${index !== usage.length - 1 ? 'border-b border-secondary-100' : ''}`}>
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="font-medium text-gray-900 capitalize">

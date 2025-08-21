@@ -171,7 +171,7 @@ export default function MessageAuthorizationGate({
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      className="p-6 bg-gray-50 border border-gray-200 rounded-lg"
+      className="p-6 bg-secondary-50 border border-secondary-200 rounded-lg"
     >
       <div className="flex items-center space-x-3 text-secondary-700 mb-4">
         <Lock className="h-5 w-5" />

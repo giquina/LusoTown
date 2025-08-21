@@ -546,7 +546,7 @@ export default function OnboardingFlowEnhanced({
                             className={`block p-4 rounded-xl border-2 cursor-pointer transition-all ${
                               value === option.value
                                 ? `border-${currentStepData.color}-500 bg-${currentStepData.color}-50`
-                                : 'border-gray-200 hover:border-secondary-300'
+                                : 'border-secondary-200 hover:border-secondary-300'
                             }`}
                           >
                             <div className="flex items-start gap-3">
@@ -579,7 +579,7 @@ export default function OnboardingFlowEnhanced({
                         value={value || ''}
                         onChange={(e) => handleFieldChange(field.id, e.target.value)}
                         className={`w-full p-4 border-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-${currentStepData.color}-500 ${
-                          hasError ? 'border-coral-500' : 'border-gray-200 focus:border-secondary-300'
+                          hasError ? 'border-coral-500' : 'border-secondary-200 focus:border-secondary-300'
                         }`}
                       >
                         <option value="">
@@ -604,7 +604,7 @@ export default function OnboardingFlowEnhanced({
                               className={`block p-3 rounded-lg border cursor-pointer transition-all ${
                                 isSelected
                                   ? `border-${currentStepData.color}-500 bg-${currentStepData.color}-50`
-                                  : 'border-gray-200 hover:border-secondary-300'
+                                  : 'border-secondary-200 hover:border-secondary-300'
                               }`}
                             >
                               <div className="flex items-center gap-3">
@@ -639,7 +639,7 @@ export default function OnboardingFlowEnhanced({
             </div>
 
             {/* Navigation */}
-            <div className="flex items-center justify-between mt-8 pt-6 border-t border-gray-200">
+            <div className="flex items-center justify-between mt-8 pt-6 border-t border-secondary-200">
               <button
                 onClick={handlePrevious}
                 disabled={currentStep === 0}

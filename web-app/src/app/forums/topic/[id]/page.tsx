@@ -55,13 +55,13 @@ const PostComponent: React.FC<PostComponentProps> = ({
     const badges = {
       free: { icon: <Users className="w-3 h-3" />, color: 'bg-secondary-100 text-secondary-600', label: 'Free' },
       core: { icon: <Star className="w-3 h-3" />, color: 'bg-[#FF6B6B] text-white', label: 'Core' },
-      premium: { icon: <Crown className="w-3 h-3" />, color: 'bg-gradient-to-r from-purple-500 to-pink-500 text-white', label: 'Premium' }
+      premium: { icon: <Crown className="w-3 h-3" />, color: 'bg-gradient-to-r from-accent-500 to-pink-500 text-white', label: 'Premium' }
     }
     return badges[tier as keyof typeof badges] || badges.free
   }
 
   const getRoleBadge = (role: string) => {
-    if (role === 'admin') return <span className="px-1.5 py-0.5 bg-purple-100 text-purple-600 text-xs rounded font-medium">Admin</span>
+    if (role === 'admin') return <span className="px-1.5 py-0.5 bg-accent-100 text-accent-600 text-xs rounded font-medium">Admin</span>
     if (role === 'moderator') return <span className="px-1.5 py-0.5 bg-primary-100 text-primary-600 text-xs rounded font-medium">Mod</span>
     return null
   }
@@ -93,7 +93,7 @@ const PostComponent: React.FC<PostComponentProps> = ({
   }
 
   return (
-    <div className={`bg-white rounded-lg ${isReply ? 'ml-8 mt-4 border-l-4 border-gray-200' : 'shadow-sm'} ${isReply ? 'p-4' : 'p-6'}`}>
+    <div className={`bg-white rounded-lg ${isReply ? 'ml-8 mt-4 border-l-4 border-secondary-200' : 'shadow-sm'} ${isReply ? 'p-4' : 'p-6'}`}>
       {/* Post Header */}
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-start space-x-3">
@@ -148,7 +148,7 @@ const PostComponent: React.FC<PostComponentProps> = ({
       </div>
 
       {/* Post Actions */}
-      <div className="flex items-center justify-between border-t border-gray-100 pt-4">
+      <div className="flex items-center justify-between border-t border-secondary-100 pt-4">
         <div className="flex items-center space-x-4">
           {/* Vote buttons */}
           <div className="flex items-center space-x-2">
@@ -203,7 +203,7 @@ const PostComponent: React.FC<PostComponentProps> = ({
 
       {/* Reply Form */}
       {showReplyForm && (
-        <div className="mt-4 pt-4 border-t border-gray-100">
+        <div className="mt-4 pt-4 border-t border-secondary-100">
           <textarea
             value={replyContent}
             onChange={(e) => setReplyContent(e.target.value)}
@@ -343,7 +343,7 @@ export default function TopicDetail() {
     if (!user || !topic || !newPostContent.trim()) return
     
     if (topic.isLocked) {
-      alert('This topic is locked for new posts.')
+      toast.error('This topic is locked for new posts.')
       return
     }
     
@@ -351,10 +351,10 @@ export default function TopicDetail() {
       await forumsService.createPost(topic.id, newPostContent, user)
       setNewPostContent('')
       // In real app, would refresh the data
-      alert('Post created successfully!')
+      toast.error('Post created successfully!')
     } catch (error) {
       console.error('Error creating post:', error)
-      alert('Error creating post')
+      toast.error('Error creating post')
     }
   }
 
@@ -362,13 +362,13 @@ export default function TopicDetail() {
     const badges = {
       free: { icon: <Users className="w-3 h-3" />, color: 'bg-secondary-100 text-secondary-600', label: 'Free' },
       core: { icon: <Star className="w-3 h-3" />, color: 'bg-[#FF6B6B] text-white', label: 'Core' },
-      premium: { icon: <Crown className="w-3 h-3" />, color: 'bg-gradient-to-r from-purple-500 to-pink-500 text-white', label: 'Premium' }
+      premium: { icon: <Crown className="w-3 h-3" />, color: 'bg-gradient-to-r from-accent-500 to-pink-500 text-white', label: 'Premium' }
     }
     return badges[tier as keyof typeof badges] || badges.free
   }
 
   const getRoleBadge = (role: string) => {
-    if (role === 'admin') return <span className="px-1.5 py-0.5 bg-purple-100 text-purple-600 text-xs rounded font-medium">Admin</span>
+    if (role === 'admin') return <span className="px-1.5 py-0.5 bg-accent-100 text-accent-600 text-xs rounded font-medium">Admin</span>
     if (role === 'moderator') return <span className="px-1.5 py-0.5 bg-primary-100 text-primary-600 text-xs rounded font-medium">Mod</span>
     return null
   }
@@ -394,7 +394,7 @@ export default function TopicDetail() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-secondary-50 flex items-center justify-center">
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#FF6B6B]"></div>
       </div>
     )
@@ -402,7 +402,7 @@ export default function TopicDetail() {
 
   if (!user || !topic || !canAccessTopic()) {
     return (
-      <div className="min-h-screen bg-gray-50 pt-20">
+      <div className="min-h-screen bg-secondary-50 pt-20">
         <div className="max-w-4xl mx-auto px-4 py-8 text-center">
           <Crown className="w-16 h-16 text-gray-300 mx-auto mb-4" />
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Access Required</h1>
@@ -422,7 +422,7 @@ export default function TopicDetail() {
 
   return (
     <>
-      <div className="min-h-screen bg-gray-50 pt-20">
+      <div className="min-h-screen bg-secondary-50 pt-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Breadcrumb */}
           <div className="mb-6">
@@ -518,7 +518,7 @@ export default function TopicDetail() {
               )}
 
               {/* Topic Actions */}
-              <div className="flex items-center justify-between border-t border-gray-100 pt-4">
+              <div className="flex items-center justify-between border-t border-secondary-100 pt-4">
                 <div className="flex items-center space-x-4">
                   {/* Vote buttons */}
                   <div className="flex items-center space-x-2">
@@ -560,7 +560,7 @@ export default function TopicDetail() {
                   </button>
 
                   {/* Share button */}
-                  <button className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-gray-50 text-gray-500 hover:text-secondary-700 transition-colors">
+                  <button className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-secondary-50 text-gray-500 hover:text-secondary-700 transition-colors">
                     <Share className="w-4 h-4" />
                     <span>Share</span>
                   </button>

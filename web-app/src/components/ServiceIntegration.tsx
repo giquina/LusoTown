@@ -171,7 +171,7 @@ const ServiceIntegration: React.FC<ServiceIntegrationProps> = ({ isPortuguese })
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`relative bg-white rounded-2xl shadow-lg border-2 ${scenario.popular ? 'border-primary-200' : 'border-gray-200'} overflow-hidden`}
+              className={`relative bg-white rounded-2xl shadow-lg border-2 ${scenario.popular ? 'border-primary-200' : 'border-secondary-200'} overflow-hidden`}
             >
               {/* Popular Badge */}
               {scenario.popular && (
@@ -215,7 +215,7 @@ const ServiceIntegration: React.FC<ServiceIntegrationProps> = ({ isPortuguese })
                       className="bg-primary-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-primary-700 transition-all duration-200 flex items-center group"
                     >
                       <span>{isPortuguese ? 'Personalizar Pacote' : 'Customize Package'}</span>
-                      <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                      <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:transecondary-x-1 transition-transform duration-200" />
                     </motion.button>
                   </div>
 

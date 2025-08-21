@@ -240,7 +240,7 @@ export default function PadrinhoMentorshipSystem() {
   const renderFindMentor = () => (
     <div className="space-y-8">
       {/* Filters */}
-      <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+      <div className="bg-white rounded-2xl p-6 shadow-lg border border-secondary-100">
         <h3 className="text-lg font-semibold text-gray-900 mb-4">
           {t('mentorship.filters.title', 'Find Your Perfect Padrinho/Madrinha')}
         </h3>
@@ -307,7 +307,7 @@ export default function PadrinhoMentorshipSystem() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             whileHover={{ y: -5 }}
-            className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 hover:shadow-2xl transition-all cursor-pointer"
+            className="bg-white rounded-3xl p-8 shadow-xl border border-secondary-100 hover:shadow-2xl transition-all cursor-pointer"
             onClick={() => setSelectedMentor(mentor)}
           >
             {/* Mentor Header */}
@@ -364,11 +364,11 @@ export default function PadrinhoMentorshipSystem() {
 
             {/* Quick Stats */}
             <div className="grid grid-cols-2 gap-4 mb-6">
-              <div className="text-center p-3 bg-gray-50 rounded-xl">
+              <div className="text-center p-3 bg-secondary-50 rounded-xl">
                 <div className="text-2xl font-bold text-secondary-600">{mentor.successfulMentorships}</div>
                 <div className="text-xs text-secondary-600">{t('mentorship.successful', 'Successful Mentorships')}</div>
               </div>
-              <div className="text-center p-3 bg-gray-50 rounded-xl">
+              <div className="text-center p-3 bg-secondary-50 rounded-xl">
                 <div className="text-2xl font-bold text-accent-600">{mentor.portugueseRegion}</div>
                 <div className="text-xs text-secondary-600">{t('mentorship.origin', 'Origin')}</div>
               </div>
@@ -423,7 +423,7 @@ export default function PadrinhoMentorshipSystem() {
 
       {/* Benefits Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+        <div className="bg-white rounded-2xl p-8 shadow-lg border border-secondary-100">
           <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
             <HeartIcon className="w-6 h-6 text-white" />
           </div>
@@ -435,7 +435,7 @@ export default function PadrinhoMentorshipSystem() {
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+        <div className="bg-white rounded-2xl p-8 shadow-lg border border-secondary-100">
           <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4">
             <AcademicCapIcon className="w-6 h-6 text-white" />
           </div>
@@ -447,8 +447,8 @@ export default function PadrinhoMentorshipSystem() {
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-          <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+        <div className="bg-white rounded-2xl p-8 shadow-lg border border-secondary-100">
+          <div className="w-12 h-12 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center mb-4">
             <BriefcaseIcon className="w-6 h-6 text-white" />
           </div>
           <h3 className="text-xl font-bold text-gray-900 mb-4">
@@ -459,7 +459,7 @@ export default function PadrinhoMentorshipSystem() {
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+        <div className="bg-white rounded-2xl p-8 shadow-lg border border-secondary-100">
           <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mb-4">
             <GlobeAltIcon className="w-6 h-6 text-white" />
           </div>
@@ -542,7 +542,7 @@ export default function PadrinhoMentorshipSystem() {
             key={program.id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+            className="bg-white rounded-3xl p-8 shadow-xl border border-secondary-100"
           >
             <div className="text-center mb-6">
               <div className="w-16 h-16 bg-gradient-to-br from-secondary-500 to-accent-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -611,7 +611,7 @@ export default function PadrinhoMentorshipSystem() {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-3xl px-6 py-3 mb-6"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-50 to-primary-50 border border-blue-200 rounded-3xl px-6 py-3 mb-6"
           >
             <HandRaisedIcon className="w-5 h-5 text-primary-600" />
             <span className="font-semibold text-primary-700">
@@ -644,7 +644,7 @@ export default function PadrinhoMentorshipSystem() {
 
         {/* Navigation Tabs */}
         <div className="flex justify-center mb-12">
-          <div className="bg-white rounded-2xl p-2 shadow-lg border border-gray-100">
+          <div className="bg-white rounded-2xl p-2 shadow-lg border border-secondary-100">
             <div className="flex space-x-2">
               {[
                 { key: 'find-mentor', label: t('mentorship.tabs.find', 'Find Mentor'), icon: UserCircleIcon },
@@ -659,7 +659,7 @@ export default function PadrinhoMentorshipSystem() {
                     className={`flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all ${
                       activeTab === tab.key
                         ? 'bg-gradient-to-r from-secondary-600 to-accent-600 text-white shadow-lg'
-                        : 'text-secondary-600 hover:text-secondary-800 hover:bg-gray-50'
+                        : 'text-secondary-600 hover:text-secondary-800 hover:bg-secondary-50'
                     }`}
                   >
                     <Icon className="w-5 h-5" />
@@ -772,7 +772,7 @@ export default function PadrinhoMentorshipSystem() {
                     </button>
                     <button
                       onClick={() => setSelectedMentor(null)}
-                      className="px-6 py-3 border-2 border-secondary-300 text-secondary-600 rounded-xl font-semibold hover:border-gray-400 transition-colors"
+                      className="px-6 py-3 border-2 border-secondary-300 text-secondary-600 rounded-xl font-semibold hover:border-secondary-400 transition-colors"
                     >
                       {t('common.close', 'Close')}
                     </button>

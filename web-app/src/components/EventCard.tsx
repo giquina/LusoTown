@@ -66,7 +66,7 @@ export default function EventCard({
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: index * 0.1 }}
         whileHover={{ y: -8, scale: 1.03 }}
-        className={`bg-white rounded-3xl shadow-xl border border-gray-100/50 overflow-hidden group h-full flex flex-col hover:shadow-2xl transition-all duration-300 ${className}`}
+        className={`bg-white rounded-3xl shadow-xl border border-secondary-100/50 overflow-hidden group h-full flex flex-col hover:shadow-2xl transition-all duration-300 ${className}`}
       >
         {/* Event Image */}
         <div className="h-48 relative overflow-hidden">

@@ -329,7 +329,7 @@ export default function StudentVerificationSystem({
                   <span className="text-coral-500 ml-1">*</span>
                 </label>
                 <div className="relative">
-                  <EnvelopeIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <EnvelopeIcon className="absolute left-3 top-1/2 transform -transecondary-y-1/2 w-5 h-5 text-gray-400" />
                   <input
                     type="email"
                     value={formData.email}
@@ -385,7 +385,7 @@ export default function StudentVerificationSystem({
               <button
                 onClick={handleEmailVerification}
                 disabled={!formData.email}
-                className="w-full bg-primary-500 text-white font-medium py-3 px-4 rounded-lg hover:bg-primary-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+                className="w-full bg-primary-500 text-white font-medium py-3 px-4 rounded-lg hover:bg-primary-600 disabled:bg-secondary-300 disabled:cursor-not-allowed transition-colors"
               >
                 {language === 'pt' ? 'Verificar Email' : 'Verify Email'}
               </button>
@@ -518,7 +518,7 @@ export default function StudentVerificationSystem({
             <div className="flex gap-3 mt-6">
               <button
                 onClick={() => setCurrentStep(1)}
-                className="flex-1 border border-secondary-300 text-secondary-700 font-medium py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors"
+                className="flex-1 border border-secondary-300 text-secondary-700 font-medium py-3 px-4 rounded-lg hover:bg-secondary-50 transition-colors"
               >
                 {language === 'pt' ? 'Voltar' : 'Back'}
               </button>
@@ -570,7 +570,7 @@ export default function StudentVerificationSystem({
                   />
                   <label
                     htmlFor="student-id"
-                    className="inline-flex items-center px-4 py-2 bg-white border border-secondary-300 rounded-lg text-sm font-medium text-secondary-700 hover:bg-gray-50 cursor-pointer"
+                    className="inline-flex items-center px-4 py-2 bg-white border border-secondary-300 rounded-lg text-sm font-medium text-secondary-700 hover:bg-secondary-50 cursor-pointer"
                   >
                     <PaperClipIcon className="w-4 h-4 mr-2" />
                     {language === 'pt' ? 'Selecionar Arquivo' : 'Select File'}
@@ -600,7 +600,7 @@ export default function StudentVerificationSystem({
                   />
                   <label
                     htmlFor="enrollment-letter"
-                    className="inline-flex items-center px-4 py-2 bg-white border border-secondary-300 rounded-lg text-sm font-medium text-secondary-700 hover:bg-gray-50 cursor-pointer"
+                    className="inline-flex items-center px-4 py-2 bg-white border border-secondary-300 rounded-lg text-sm font-medium text-secondary-700 hover:bg-secondary-50 cursor-pointer"
                   >
                     <PaperClipIcon className="w-4 h-4 mr-2" />
                     {language === 'pt' ? 'Selecionar Arquivo' : 'Select File'}
@@ -616,7 +616,7 @@ export default function StudentVerificationSystem({
                   </h4>
                   <div className="space-y-3">
                     {documents.map((doc) => (
-                      <div key={doc.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                      <div key={doc.id} className="flex items-center justify-between p-3 bg-secondary-50 rounded-lg">
                         <div className="flex items-center">
                           <DocumentTextIcon className="w-5 h-5 text-gray-400 mr-3" />
                           <div>
@@ -660,14 +660,14 @@ export default function StudentVerificationSystem({
             <div className="flex gap-3 mt-6">
               <button
                 onClick={() => setCurrentStep(2)}
-                className="flex-1 border border-secondary-300 text-secondary-700 font-medium py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors"
+                className="flex-1 border border-secondary-300 text-secondary-700 font-medium py-3 px-4 rounded-lg hover:bg-secondary-50 transition-colors"
               >
                 {language === 'pt' ? 'Voltar' : 'Back'}
               </button>
               <button
                 onClick={handleSubmitVerification}
                 disabled={documents.length === 0 || isSubmitting}
-                className="flex-1 bg-primary-500 text-white font-medium py-3 px-4 rounded-lg hover:bg-primary-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+                className="flex-1 bg-primary-500 text-white font-medium py-3 px-4 rounded-lg hover:bg-primary-600 disabled:bg-secondary-300 disabled:cursor-not-allowed transition-colors"
               >
                 {isSubmitting ? 
                   (language === 'pt' ? 'Submetendo...' : 'Submitting...') :
@@ -764,7 +764,7 @@ export default function StudentVerificationSystem({
               </button>
               <button
                 onClick={() => window.open('/students/events', '_blank')}
-                className="flex-1 border border-secondary-300 text-secondary-700 font-medium py-3 px-4 rounded-lg hover:bg-gray-50 transition-colors"
+                className="flex-1 border border-secondary-300 text-secondary-700 font-medium py-3 px-4 rounded-lg hover:bg-secondary-50 transition-colors"
               >
                 {language === 'pt' ? 'Ver Eventos' : 'View Events'}
               </button>
