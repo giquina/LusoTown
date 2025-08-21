@@ -64,9 +64,6 @@ const VIOLATION_PATTERNS = [
     pattern: /['"`](?!className|key|id|data-|aria-|role|type|placeholder|alt|&|\s|·|•)[^'"`]*[a-zA-Z]{3,}[^'"`]*['"`]/g,
     severity: 'high',
     message: 'Hardcoded text detected - should use t() function'
-  }
-];
-    message: 'Hardcoded color detected - use Portuguese brand colors'
   },
   {
     category: 'console_logs',
@@ -222,20 +219,13 @@ function runAudit() {
   
   return report;
 }
-  
-  // Ensure audit directory exists
-  const auditDir = path.dirname(AUDIT_CONFIG.outputFile);
-  if (!fs.existsSync(auditDir)) {
-    fs.mkdirSync(auditDir, { recursive: true });
-  }
-  
-  // Save report
-  fs.writeFileSync(AUDIT_CONFIG.outputFile, JSON.stringify(report, null, 2));
-  
-  // Console output
+
+// Print summary function
+function printSummary(report) {
   console.log('\n📊 AUDIT RESULTS:');
   console.log(`Total violations: ${report.summary.totalViolations}`);
   console.log(`Files affected: ${report.summary.filesAffected}`);
+  console.log(`Critical severity: ${report.summary.bySeverity.critical || 0}`);
   console.log(`High severity: ${report.summary.bySeverity.high}`);
   console.log(`Medium severity: ${report.summary.bySeverity.medium}`);
   console.log(`Low severity: ${report.summary.bySeverity.low}`);
@@ -251,14 +241,14 @@ function runAudit() {
   }
   
   console.log(`\n📄 Full report saved to: ${AUDIT_CONFIG.outputFile}`);
-  
-  // Return exit code based on severity
-  return report.summary.bySeverity.high > 50 ? 1 : 0;
 }
 
 // CLI execution
 if (require.main === module) {
-  const exitCode = runAudit();
+  const report = runAudit();
+  // Return exit code based on severity
+  const exitCode = report.summary.bySeverity.critical > 0 ? 2 : 
+                   report.summary.bySeverity.high > 50 ? 1 : 0;
   process.exit(exitCode);
 }
 
