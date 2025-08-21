@@ -1,0 +1,570 @@
+/* PWA and Mobile Optimization Styles for LusoTown Portuguese Community Platform */
+
+/* Mobile-first responsive design with Portuguese cultural elements */
+.mobile-optimized {
+  /* Enhanced touch targets for mobile devices */
+  --touch-target-size: 48px;
+  --mobile-padding: 16px;
+  --portuguese-red: #DC2626;
+  --portuguese-green: #16A34A;
+  --portuguese-gold: #F59E0B;
+}
+
+/* PWA Installation Styles */
+.pwa-install-banner {
+  background: linear-gradient(135deg, var(--portuguese-red), var(--portuguese-green));
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(220, 38, 38, 0.2);
+  animation: slideInFromTop 0.5s ease-out;
+}
+
+.pwa-install-button {
+  min-height: var(--touch-target-size);
+  min-width: var(--touch-target-size);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--portuguese-red);
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pwa-install-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile Camera Integration Styles */
+.camera-overlay {
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.camera-controls {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.camera-capture-button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--portuguese-red);
+  border: 4px solid white;
+  box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
+  transition: all 0.2s ease;
+}
+
+.camera-capture-button:active {
+  transform: scale(0.95);
+}
+
+.portuguese-filter-overlay {
+  position: relative;
+}
+
+.portuguese-filter-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(220, 38, 38, 0.1), rgba(22, 163, 74, 0.1));
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* QR Scanner Styles */
+.qr-scanner-overlay {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.qr-scanner-frame {
+  border: 2px solid var(--portuguese-red);
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+  animation: pulse 2s infinite;
+}
+
+/* Geolocation Services Styles */
+.location-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid var(--portuguese-red);
+  transition: all 0.3s ease;
+}
+
+.location-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.portuguese-business-marker {
+  background: var(--portuguese-red);
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.cultural-site-marker {
+  background: var(--portuguese-green);
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3);
+}
+
+/* Push Notifications Styles */
+.notification-permission-card {
+  background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+  border-radius: 16px;
+  color: white;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+}
+
+.notification-settings-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.notification-toggle {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.notification-toggle:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.notification-switch {
+  width: 48px;
+  height: 24px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.notification-switch-handle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+.notification-switch.active {
+  background: var(--portuguese-green);
+}
+
+.notification-switch.active .notification-switch-handle {
+  transform: translateX(24px);
+}
+
+/* Performance Optimization Styles */
+.performance-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.performance-metric-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.performance-metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.performance-score-good {
+  background: linear-gradient(135deg, #10B981, #16A34A);
+  color: white;
+}
+
+.performance-score-needs-improvement {
+  background: linear-gradient(135deg, #F59E0B, #F97316);
+  color: white;
+}
+
+.performance-score-poor {
+  background: linear-gradient(135deg, #EF4444, #DC2626);
+  color: white;
+}
+
+/* Accessibility Features Styles */
+.accessibility-controls {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+}
+
+.accessibility-menu {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  min-width: 300px;
+  animation: slideInFromRight 0.3s ease-out;
+}
+
+.accessibility-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.accessibility-option:hover {
+  background: rgba(220, 38, 38, 0.05);
+}
+
+.focus-indicator {
+  border: 3px solid var(--portuguese-red);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(220, 38, 38, 0.4);
+  animation: focusPulse 0.3s ease-out;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+  --text-color: #000000;
+  --bg-color: #FFFFFF;
+  --accent-color: #0000FF;
+  --secondary-color: #FF0000;
+}
+
+.high-contrast * {
+  color: var(--text-color) !important;
+  background-color: var(--bg-color) !important;
+  border-color: var(--text-color) !important;
+}
+
+.high-contrast a,
+.high-contrast button {
+  color: var(--accent-color) !important;
+  text-decoration: underline !important;
+}
+
+.high-contrast .portuguese-red {
+  background-color: var(--secondary-color) !important;
+}
+
+/* Large Text Mode */
+.large-text {
+  font-size: 1.125rem !important;
+}
+
+.large-text h1 { font-size: 3rem !important; }
+.large-text h2 { font-size: 2.5rem !important; }
+.large-text h3 { font-size: 2rem !important; }
+.large-text h4 { font-size: 1.75rem !important; }
+.large-text h5 { font-size: 1.5rem !important; }
+.large-text h6 { font-size: 1.25rem !important; }
+
+/* Reduced Motion */
+.reduced-motion *,
+.reduced-motion *::before,
+.reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* Keyboard Navigation Enhancements */
+.keyboard-navigation *:focus {
+  outline: 3px solid var(--portuguese-red);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.keyboard-navigation button:focus,
+.keyboard-navigation a:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.3);
+}
+
+/* Mobile Touch Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .mobile-optimized button,
+  .mobile-optimized a,
+  .mobile-optimized [role="button"] {
+    min-height: var(--touch-target-size);
+    min-width: var(--touch-target-size);
+    padding: 12px 16px;
+  }
+  
+  .mobile-optimized .touch-enhanced {
+    transform: scale(1.1);
+    margin: 8px;
+  }
+}
+
+/* Pull to Refresh Indicator */
+.pull-to-refresh {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(180deg, var(--portuguese-red), var(--portuguese-green));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.pull-to-refresh.active {
+  transform: translateY(0);
+}
+
+/* Portuguese Cultural Animations */
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes focusPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+  }
+}
+
+/* Portuguese Flag Colors Animation */
+@keyframes portugueseFlagColors {
+  0%, 100% {
+    background: linear-gradient(90deg, var(--portuguese-green) 0%, var(--portuguese-red) 50%);
+  }
+  50% {
+    background: linear-gradient(90deg, var(--portuguese-red) 0%, var(--portuguese-green) 50%);
+  }
+}
+
+.portuguese-gradient {
+  animation: portugueseFlagColors 3s ease-in-out infinite;
+}
+
+/* Offline Indicator */
+.offline-indicator {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #374151;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  animation: slideInFromBottom 0.3s ease-out;
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Network Speed Indicators */
+.network-fast::before {
+  content: '🚀';
+  margin-right: 8px;
+}
+
+.network-slow::before {
+  content: '🐌';
+  margin-right: 8px;
+}
+
+/* Portuguese Cultural Content Prioritization */
+.portuguese-priority-high {
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(22, 163, 74, 0.1));
+  border-left: 4px solid var(--portuguese-red);
+}
+
+.portuguese-priority-medium {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(34, 197, 94, 0.1));
+  border-left: 4px solid var(--portuguese-gold);
+}
+
+.portuguese-priority-low {
+  background: rgba(107, 114, 128, 0.1);
+  border-left: 4px solid #6B7280;
+}
+
+/* Voice Control Indicator */
+.voice-control-active {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(220, 38, 38, 0.95);
+  color: white;
+  padding: 20px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(220, 38, 38, 0.4);
+  z-index: 1000;
+  animation: voicePulse 1.5s ease-in-out infinite;
+}
+
+@keyframes voicePulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 10px 40px rgba(220, 38, 38, 0.4);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 15px 50px rgba(220, 38, 38, 0.6);
+  }
+}
+
+/* Loading States for Portuguese Content */
+.loading-portuguese {
+  background: linear-gradient(90deg, #f0f0f0 0%, #e0e0e0 50%, #f0f0f0 100%);
+  background-size: 200% 100%;
+  animation: loadingShimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes loadingShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Portuguese Cultural Toast Notifications */
+.toast-cultural {
+  background: linear-gradient(135deg, var(--portuguese-red), var(--portuguese-green));
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(220, 38, 38, 0.3);
+}
+
+.toast-cultural::before {
+  content: '🇵🇹';
+  margin-right: 8px;
+  font-size: 1.2em;
+}
+
+/* Responsive Design Breakpoints for Portuguese Community */
+@media (max-width: 640px) {
+  .mobile-optimized {
+    padding: var(--mobile-padding);
+  }
+  
+  .portuguese-mobile-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .portuguese-mobile-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .portuguese-desktop-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .portuguese-desktop-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}
+
+/* Safe Area Support for iOS */
+@supports (padding: max(0px)) {
+  .safe-area-bottom {
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+  }
+  
+  .safe-area-top {
+    padding-top: max(16px, env(safe-area-inset-top));
+  }
+}

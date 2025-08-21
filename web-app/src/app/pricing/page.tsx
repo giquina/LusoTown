@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { communityStats } from '@/config/community'
+import { SUBSCRIPTION_PLANS, formatPrice, getFormattedPlanPrice } from '@/config/pricing'
 import { 
   CheckIcon, 
   XMarkIcon, 
@@ -102,7 +103,7 @@ const membershipPlans = [
     id: 'community',
     name: 'Membro da Comunidade',
     nameEn: 'Community Member',
-    price: 19.99,
+    price: SUBSCRIPTION_PLANS.community.monthly,
     description: 'Acesso completo à comunidade portuguesa',
     descriptionEn: 'Full access to Portuguese community',
     culturalContext: 'Investimento na preservação da nossa cultura e língua em Londres',
@@ -136,7 +137,7 @@ const membershipPlans = [
     id: 'ambassador',
     name: 'Embaixador Cultural',
     nameEn: 'Cultural Ambassador',
-    price: 39.99,
+    price: SUBSCRIPTION_PLANS.ambassador.monthly,
     description: 'Lidere a comunidade portuguesa em Londres',
     descriptionEn: 'Lead the Portuguese community in London',
     culturalContext: 'Torne-se um líder da comunidade portuguesa',

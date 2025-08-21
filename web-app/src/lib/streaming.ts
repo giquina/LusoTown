@@ -1,6 +1,8 @@
 import { createClient } from '@/lib/supabase'
 import { sign, verify } from 'jsonwebtoken'
 
+import { STREAMING_URLS } from '@/config/streaming';
+import { CDN_URLS } from '@/config/cdn';
 const JWT_SECRET = process.env.STREAMING_JWT_SECRET || 'your-streaming-jwt-secret-key'
 const STREAM_SERVER_URL = process.env.STREAM_SERVER_URL || 'stream.lusotown.com'
 
@@ -107,8 +109,8 @@ export function generateRTMPUrls(streamKey: string): {
   rtmpKey: string
 } {
   return {
-    rtmpUrl: `rtmp://${STREAM_SERVER_URL}/live/${streamKey}`,
-    rtmpEndpoint: `rtmp://${STREAM_SERVER_URL}/live`,
+    rtmpUrl: STREAMING_URLS.rtmpBase,
+    rtmpEndpoint: STREAMING_URLS.rtmpBase,
     rtmpKey: streamKey
   }
 }
@@ -123,10 +125,10 @@ export function generatePlaybackUrls(streamKey: string): {
   embedUrl: string
 } {
   return {
-    hlsUrl: `https://${STREAM_SERVER_URL}/live/${streamKey}.m3u8`,
-    dashUrl: `https://${STREAM_SERVER_URL}/live/${streamKey}.mpd`,
-    rtmpUrl: `rtmp://${STREAM_SERVER_URL}/play/${streamKey}`,
-    embedUrl: `https://${STREAM_SERVER_URL}/embed/${streamKey}`
+    hlsUrl: STREAMING_URLS.hlsPlayback,
+    dashUrl: CDN_URLS.external,
+    rtmpUrl: STREAMING_URLS.rtmpBase,
+    embedUrl: CDN_URLS.external
   }
 }
 
@@ -144,7 +146,7 @@ export function generateOBSConfiguration(
   const maxBitrate = userSettings?.maxBitrate || 3000
   
   return {
-    server: `rtmp://${STREAM_SERVER_URL}/live`,
+    server: STREAMING_URLS.rtmpBase,
     streamKey: streamKey,
     maxBitrate: maxBitrate,
     keyframeInterval: 2,

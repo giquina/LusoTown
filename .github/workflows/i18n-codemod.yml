@@ -1,0 +1,156 @@
+name: 🔍 i18n Codemod Validation
+
+on:
+  pull_request:
+    paths:
+      - 'web-app/src/**/*.tsx'
+      - 'web-app/src/**/*.jsx'
+      - 'web-app/src/**/*.ts'
+      - 'web-app/src/**/*.js'
+      - 'web-app/src/i18n/**/*.json'
+
+jobs:
+  i18n-validation:
+    name: 🌐 Validate i18n Extraction
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v4
+        
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: 'web-app/package-lock.json'
+          
+      - name: 📥 Install Dependencies
+        working-directory: ./web-app
+        run: PUPPETEER_SKIP_DOWNLOAD=true npm ci
+        
+      - name: 🔍 Run i18n Extraction (Dry Run)
+        working-directory: ./web-app
+        run: |
+          echo "🔍 Checking for hardcoded strings that need i18n extraction..."
+          node ../scripts/codemods/extract-i18n.js --dry-run --path=src > i18n-check.log
+          
+          # Check if any extractions would be made
+          if grep -q "extractions" i18n-check.log; then
+            echo "❌ Found hardcoded strings that need i18n extraction!"
+            echo "📋 Summary:"
+            cat i18n-check.log
+            echo ""
+            echo "🔧 To fix: Run 'node scripts/codemods/extract-i18n.js --path=src' and commit the changes"
+            exit 1
+          else
+            echo "✅ No hardcoded strings found - i18n extraction up to date!"
+          fi
+          
+      - name: 🔍 Run URL Replacement (Dry Run)
+        working-directory: ./web-app
+        run: |
+          echo "🔍 Checking for hardcoded URLs that need config extraction..."
+          node ../scripts/codemods/replace-urls.js --dry-run --path=src > url-check.log
+          
+          # Check if any replacements would be made
+          if grep -q "replacements" url-check.log; then
+            echo "❌ Found hardcoded URLs that need config constants!"
+            echo "📋 Summary:"
+            cat url-check.log
+            echo ""
+            echo "🔧 To fix: Run 'node scripts/codemods/replace-urls.js --path=src' and commit the changes"
+            exit 1
+          else
+            echo "✅ No hardcoded URLs found - config constants up to date!"
+          fi
+          
+      - name: 🧹 Lint Check
+        working-directory: ./web-app
+        run: |
+          echo "🔍 Running ESLint hardcoding prevention rules..."
+          npm run lint
+          
+      - name: 🔒 Secret Pattern Check
+        working-directory: ./web-app
+        run: |
+          echo "🔍 Checking for potential secret patterns..."
+          
+          # Check for common secret patterns (excluding allowed files)
+          SECRET_PATTERNS=(
+            "api[_-]?key"
+            "secret[_-]?key"
+            "private[_-]?key"
+            "auth[_-]?token"
+            "password"
+            "pk_live_"
+            "sk_live_"
+            "xoxp-"
+            "ya29\."
+          )
+          
+          FOUND_SECRETS=false
+          
+          for pattern in "${SECRET_PATTERNS[@]}"; do
+            # Search in source files, excluding config and example files
+            if grep -r -i "$pattern" src/ \
+              --exclude-dir=node_modules \
+              --exclude-dir=.next \
+              --exclude="*.example.*" \
+              --exclude="*.config.*" \
+              --exclude="*.md" \
+              --exclude-dir=__tests__ \
+              | grep -v "process.env" \
+              | grep -v "placeholder" \
+              | grep -v "example" \
+              | head -5; then
+              echo "❌ Found potential secret pattern: $pattern"
+              FOUND_SECRETS=true
+            fi
+          done
+          
+          if [ "$FOUND_SECRETS" = true ]; then
+            echo ""
+            echo "🚨 Potential secrets detected in source code!"
+            echo "🔧 Please use environment variables or config files for sensitive data"
+            exit 1
+          else
+            echo "✅ No secret patterns detected in source code"
+          fi
+          
+      - name: 📊 Generate Report
+        if: always()
+        working-directory: ./web-app
+        run: |
+          echo "📊 Hardcoding Prevention Report" > hardcoding-report.md
+          echo "Generated: $(date)" >> hardcoding-report.md
+          echo "" >> hardcoding-report.md
+          
+          echo "## 🌐 i18n Status" >> hardcoding-report.md
+          if [ -f i18n-check.log ]; then
+            echo '```' >> hardcoding-report.md
+            cat i18n-check.log >> hardcoding-report.md
+            echo '```' >> hardcoding-report.md
+          fi
+          
+          echo "" >> hardcoding-report.md
+          echo "## 🔗 URL Status" >> hardcoding-report.md
+          if [ -f url-check.log ]; then
+            echo '```' >> hardcoding-report.md
+            cat url-check.log >> hardcoding-report.md
+            echo '```' >> hardcoding-report.md
+          fi
+          
+          echo "" >> hardcoding-report.md
+          echo "## 📋 Next Steps" >> hardcoding-report.md
+          echo "- Run codemods if any hardcoded patterns detected" >> hardcoding-report.md
+          echo "- Update Portuguese translations for new i18n keys" >> hardcoding-report.md
+          echo "- Verify all config constants are properly configured" >> hardcoding-report.md
+          
+      - name: 📤 Upload Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hardcoding-prevention-report
+          path: web-app/hardcoding-report.md
+          retention-days: 30
