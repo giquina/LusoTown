@@ -14,24 +14,31 @@ const { Server } = require('socket.io');
 const path = require('path');
 const fs = require('fs');
 const Redis = require('redis');
+const { requireEnv, getEnv, validateRequiredEnvVars } = require('./env-helper');
+
+// Validate critical environment variables at startup
+validateRequiredEnvVars([
+  'LUSOTOWN_STREAMING_SECRET',
+  'REDIS_URL'
+]);
 
 // Configuration for Portuguese community streaming
 const config = {
   // Server configuration
   server: {
-    port: process.env.PORT || 3002,
-    host: process.env.HOST || '0.0.0.0'
+    port: getEnv('PORT', '3002'),
+    host: getEnv('HOST', '0.0.0.0')
   },
   
   // Redis configuration for Portuguese community features
   redis: {
-    url: process.env.REDIS_URL || 'redis://localhost:6379',
-    password: process.env.REDIS_PASSWORD || 'lusotown_redis_2025'
+    url: requireEnv('REDIS_URL', 'Redis connection URL for streaming features'),
+    password: process.env.REDIS_PASSWORD // Optional, may be in REDIS_URL
   },
   
   // RTMP configuration for content ingestion
   rtmp: {
-    port: process.env.RTMP_PORT || 1935,
+    port: getEnv('RTMP_PORT', '1935'),
     chunk_size: 60000,
     gop_cache: true,
     ping: 30,
@@ -40,7 +47,7 @@ const config = {
   
   // HLS configuration for Portuguese mobile optimization
   http: {
-    port: process.env.HTTP_PORT || 8080,
+    port: getEnv('HTTP_PORT', '8080'),
     allow_origin: '*',
     mediaroot: './media',
     webroot: './www',
@@ -51,14 +58,14 @@ const config = {
   auth: {
     api: true,
     api_user: 'lusotown',
-    api_pass: process.env.LUSOTOWN_STREAMING_SECRET || 'lusotown_dev_secret_2025',
+    api_pass: requireEnv('LUSOTOWN_STREAMING_SECRET', 'LusoTown streaming API secret'),
     play: false,
     publish: false
   },
   
   // Portuguese content relay configuration
   relay: {
-    ffmpeg: process.env.FFMPEG_PATH || require('ffmpeg-static'),
+    ffmpeg: getEnv('FFMPEG_PATH', require('ffmpeg-static')),
     tasks: [
       {
         app: 'live',

@@ -1,19 +1,40 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import { supabase } from '@/lib/supabase'
+import { requireEnv } from '@/config/env'
 
 const getStripe = () => {
-  const key = process.env.STRIPE_SECRET_KEY || 'sk_test_51Demo123456789012345678901234567890Demo'
-  return new Stripe(key, {
-    apiVersion: '2024-06-20',
-  })
+  try {
+    const key = requireEnv('STRIPE_SECRET_KEY', 'Stripe secret key for payment processing')
+    return new Stripe(key, {
+      apiVersion: '2024-06-20',
+    })
+  } catch (error) {
+    console.error('Failed to initialize Stripe:', error)
+    throw new Error('Stripe configuration error: Missing STRIPE_SECRET_KEY')
+  }
 }
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.text()
-    const signature = request.headers.get('stripe-signature')!
-    const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || 'whsec_demo123456789012345678901234567890'
+    const signature = request.headers.get('stripe-signature')
+    
+    if (!signature) {
+      console.error('Missing Stripe signature header')
+      return NextResponse.json({ error: 'Missing signature' }, { status: 400 })
+    }
+
+    let webhookSecret: string
+    try {
+      webhookSecret = requireEnv('STRIPE_WEBHOOK_SECRET', 'Stripe webhook endpoint secret')
+    } catch (error) {
+      console.error('Stripe webhook configuration error:', error)
+      return NextResponse.json(
+        { error: 'Server configuration error: Missing STRIPE_WEBHOOK_SECRET' }, 
+        { status: 500 }
+      )
+    }
 
     let event: Stripe.Event
 

@@ -1,10 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import jwt from 'jsonwebtoken'
+import { requireEnv } from '@/config/env'
 
 // Mock streaming authentication endpoint
 // In production, this would integrate with your actual streaming server
-
-const JWT_SECRET = process.env.JWT_SECRET || 'lusotown-streaming-secret-key'
 
 export async function POST(request: NextRequest) {
   try {
@@ -12,6 +11,17 @@ export async function POST(request: NextRequest) {
 
     if (!userId) {
       return NextResponse.json({ error: 'User ID required' }, { status: 400 })
+    }
+
+    let jwtSecret: string
+    try {
+      jwtSecret = requireEnv('STREAMING_JWT_SECRET', 'JWT secret for streaming authentication')
+    } catch (error) {
+      console.error('Streaming JWT configuration error:', error)
+      return NextResponse.json(
+        { error: 'Server configuration error: Missing STREAMING_JWT_SECRET' }, 
+        { status: 500 }
+      )
     }
 
     // Generate streaming token
@@ -29,7 +39,7 @@ export async function POST(request: NextRequest) {
         },
         exp: Math.floor(Date.now() / 1000) + (60 * 60 * 24), // 24 hours
       },
-      JWT_SECRET
+      jwtSecret
     )
 
     // Mock streaming URLs (would be real in production)
@@ -67,9 +77,17 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const decoded = jwt.verify(token, JWT_SECRET)
+    const jwtSecret = requireEnv('STREAMING_JWT_SECRET', 'JWT secret for streaming authentication')
+    const decoded = jwt.verify(token, jwtSecret)
     return NextResponse.json({ valid: true, payload: decoded })
-  } catch (error) {
+  } catch (configError) {
+    if (configError instanceof Error && configError.message.includes('Missing required environment variable')) {
+      console.error('Streaming JWT configuration error:', configError)
+      return NextResponse.json(
+        { error: 'Server configuration error: Missing STREAMING_JWT_SECRET' }, 
+        { status: 500 }
+      )
+    }
     return NextResponse.json({ valid: false, error: 'Invalid token' }, { status: 401 })
   }
 }
