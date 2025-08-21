@@ -1,5 +1,6 @@
 'use client';
 
+import { ROUTES } from '@/config';
 import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useNotification } from '@/context/NotificationContext';
@@ -461,11 +462,11 @@ export default function AccessibilityFeatures({ className = '' }: AccessibilityF
   const navigateToSection = (section: string) => {
     const sectionMap = {
       'home': '/',
-      'events': '/events',
-      'businesses': '/business-directory',
+      'events': ROUTES.events,
+      'businesses': ROUTES.businessDirectory,
       'community': '/my-network',
-      'matches': '/matches',
-      'live': '/live'
+      'matches': ROUTES.matches,
+      'live': ROUTES.live
     };
 
     const url = sectionMap[section as keyof typeof sectionMap];

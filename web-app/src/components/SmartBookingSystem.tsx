@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import { useState, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
@@ -212,7 +213,7 @@ export default function SmartBookingSystem({
           : `Confirmed booking - ${bookingId}`,
         price: pricingResult.totalPrice,
         currency: pricingResult.currency,
-        imageUrl: '/transport-service-premium.jpg',
+        imageUrl: ROUTES.transport,
         quantity: 1,
         transportServiceId: bookingData.serviceType!.id,
         pickupDateTime: bookingData.dateTime,

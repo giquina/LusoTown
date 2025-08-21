@@ -1,5 +1,6 @@
 'use client'
 
+import { buildUnsplashUrl } from '@/config';
 import React, { useState, useEffect } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { useSubscription } from '@/context/SubscriptionContext'
@@ -70,7 +71,7 @@ const MOCK_POSTS: SocialPost[] = [
     user: {
       id: 'user1',
       name: 'Maria Santos',
-      avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face',
+      avatar: buildUnsplashUrl('1494790108755-2616b612b786'),
       verified: true,
       membershipTier: 'cultural_ambassador'
     },
@@ -100,7 +101,7 @@ const MOCK_POSTS: SocialPost[] = [
     user: {
       id: 'user2',
       name: 'João Silva',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
+      avatar: buildUnsplashUrl('1507003211169-0a1dd7228f2d'),
       verified: false,
       membershipTier: 'community'
     },
@@ -130,7 +131,7 @@ const MOCK_POSTS: SocialPost[] = [
     user: {
       id: 'user3',
       name: 'LusoTown Transport',
-      avatar: 'https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=100&h=100&fit=crop',
+      avatar: buildUnsplashUrl('1556075798-4825dfaaf498'),
       verified: true,
       membershipTier: 'cultural_ambassador'
     },
@@ -197,7 +198,7 @@ export default function SocialFeed({ className = '', initialFilter = 'all' }: So
       user: {
         id: 'current_user',
         name: 'Current User',
-        avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
+        avatar: buildUnsplashUrl('1472099645785-5658abf4ff4e'),
         verified: false,
         membershipTier: membershipTier as any || 'free'
       },

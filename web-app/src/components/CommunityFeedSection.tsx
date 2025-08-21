@@ -1,5 +1,6 @@
 'use client'
 
+import { buildUnsplashUrl } from '@/config';
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { useLanguage } from '@/context/LanguageContext'
@@ -85,7 +86,7 @@ export default function CommunityFeedSection() {
           badges: ['Event Host', 'Community Leader']
         },
         content: 'Excited to announce our next Fado night at the Portuguese Cultural Centre! Join us for an evening of traditional music, pastéis de nata, and connecting with fellow Portuguese speakers. Bring your saudade and let\'s create beautiful memories together! 🎵🇵🇹',
-        images: ['https://images.unsplash.com/photo-1567336273898-ebbf9eb3c2bf?w=400&h=300&fit=crop&crop=center'],
+        images: [buildUnsplashUrl('1567336273898-ebbf9eb3c2bf')],
         timestamp: new Date().toISOString(),
         timeAgo: '2 hours ago',
         metrics: { likes: 47, comments: 12, shares: 8, views: 234 },
@@ -114,7 +115,7 @@ export default function CommunityFeedSection() {
           badges: ['Food Enthusiast']
         },
         content: 'Found the most authentic pastéis de nata outside of Portugal at this hidden gem in Borough Market! The owner is from Porto and uses his grandmother\'s recipe. Already planning my next visit! Who wants to join? 🥮✨',
-        images: ['https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&h=300&fit=crop&crop=center', 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&h=300&fit=crop&crop=center'],
+        images: [buildUnsplashUrl('1551632811-561732d1e306'), buildUnsplashUrl('1551024601-bec78aea704b')],
         timestamp: new Date(Date.now() - 4 * 60 * 60 * 1000).toISOString(),
         timeAgo: '4 hours ago',
         metrics: { likes: 89, comments: 23, shares: 15, views: 456 },
@@ -168,7 +169,7 @@ export default function CommunityFeedSection() {
           badges: ['Property Expert']
         },
         content: 'Beautiful 2-bedroom flat available in Elephant & Castle! Perfect for Portuguese speakers - there\'s a strong community here. Walking distance to Portuguese shops and the Mercado restaurant. Looking for respectful tenants who appreciate good neighbours. 🏠',
-        images: ['https://images.unsplash.com/photo-1567336273898-ebbf9eb3c2bf?w=400&h=300&fit=crop&crop=center'],
+        images: [buildUnsplashUrl('1567336273898-ebbf9eb3c2bf')],
         timestamp: new Date(Date.now() - 8 * 60 * 60 * 1000).toISOString(),
         timeAgo: '8 hours ago',
         metrics: { likes: 56, comments: 31, shares: 19, views: 389 },
@@ -196,7 +197,7 @@ export default function CommunityFeedSection() {
           badges: ['Embaixadora Cultural', 'Professora de Idiomas']
         },
         content: '🇧🇷 Ensinei os meus amigos ingleses sobre as tradições da Festa Junina hoje! Fiz pamonha, dançámos quadrilha e expliquei porque saltamos por cima das fogueiras. As caras deles quando provaram paçoca pela primeira vez! 😂 Amo partilhar a nossa cultura linda aqui em Londres! A saudade do Brasil fica mais leve quando partilhamos as nossas tradições. 🎪🌽 #BrasileirosEmLondres',
-        images: ['https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&h=300&fit=crop&crop=center', 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&h=300&fit=crop&crop=center'],
+        images: [buildUnsplashUrl('1551632811-561732d1e306'), buildUnsplashUrl('1551024601-bec78aea704b')],
         timestamp: new Date(Date.now() - 12 * 60 * 60 * 1000).toISOString(),
         timeAgo: '12 hours ago',
         metrics: { likes: 127, comments: 45, shares: 33, views: 678 },
@@ -239,7 +240,7 @@ export default function CommunityFeedSection() {
           badges: ['Organizadora de Eventos', 'Adepta de Futebol']
         },
         content: '🇵🇹 JOGO DE PORTUGAL AMANHÃ! ⚽ Festa no pub português em Notting Hill. Ecrã grande, Super Bock à pressão e comentários apaixonados garantidos! Venham celebrar os nossos rapazes de vermelho e verde! Força Portugal! A união faz a força, principalmente aqui em Londres longe da nossa terra. Que bela forma de matar as saudades! 💪 #PortugalCaralho',
-        images: ['https://images.unsplash.com/photo-1567336273898-ebbf9eb3c2bf?w=400&h=300&fit=crop&crop=center'],
+        images: [buildUnsplashUrl('1567336273898-ebbf9eb3c2bf')],
         timestamp: new Date(Date.now() - 22 * 60 * 60 * 1000).toISOString(),
         timeAgo: '22 hours ago',
         metrics: { likes: 156, comments: 67, shares: 44, views: 892 },
@@ -268,7 +269,7 @@ export default function CommunityFeedSection() {
           badges: ['Mestre Fadista', 'Guia Turístico']
         },
         content: '🇵🇹 Ontem foi noite de fado no nosso quintal português aqui em Stockwell! Que saudades senti da minha Lisboa quando a guitarra começou a chorar... A Mariazinha cantou "Lágrima" e não houve olho seco. É isto que nos faz portugueses: a capacidade de transformar a dor em beleza. Aqui em Londres, o fado ganha um sabor especial - mistura-se a saudade da terra com a esperança do futuro. 🎸💔 #FadoEmLondres #Saudade',
-        images: ['https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop&crop=center'],
+        images: [buildUnsplashUrl('1493225457124-a3eb161ffa5f')],
         timestamp: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(),
         timeAgo: '1 day ago',
         metrics: { likes: 203, comments: 67, shares: 45, views: 1024 },
@@ -290,7 +291,7 @@ export default function CommunityFeedSection() {
           badges: ['Chef Brasileira', 'Influencer Gastronômica']
         },
         content: '🇧🇷 Gente, hoje fiz um almoço de domingo brasileiro completo aqui em Londres! Feijoada, farofa, couve, laranja... Os ingleses da vizinhança vieram provar e ficaram apaixonados! Uma senhora me disse que nunca tinha comido algo tão saboroso. Chorei de emoção! É assim que levamos o Brasil no coração: um prato de cada vez, uma história de cada vez. Quem aí tá sentindo cheiro de dendê? 😭❤️ #BrasilNoPrato #SaudadeBoa',
-        images: ['https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=300&fit=crop&crop=center'],
+        images: [buildUnsplashUrl('1544025162-d76694265947')],
         timestamp: new Date(Date.now() - 30 * 60 * 60 * 1000).toISOString(),
         timeAgo: '1 day ago',
         metrics: { likes: 289, comments: 89, shares: 67, views: 1456 },

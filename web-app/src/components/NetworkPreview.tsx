@@ -1,5 +1,6 @@
 'use client'
 
+import { buildUnsplashUrl } from '@/config';
 import { motion } from 'framer-motion'
 import { UserGroupIcon, PlusIcon } from '@heroicons/react/24/outline'
 import { useLanguage } from '@/context/LanguageContext'
@@ -58,7 +59,7 @@ export default function NetworkPreview({
               className="relative"
             >
               <img
-                src={connection.connectedUser.profilePictureUrl || `https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face&auto=format`}
+                src={connection.connectedUser.profilePictureUrl || buildUnsplashUrl('1472099645785-5658abf4ff4e')}
                 alt={connection.connectedUser.firstName}
                 className="w-8 h-8 rounded-full border-2 border-white shadow-sm"
                 title={`${connection.connectedUser.firstName} ${connection.connectedUser.lastName || ''}`}

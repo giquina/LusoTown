@@ -1,3 +1,4 @@
+import { buildUnsplashUrl } from '@/config';
 // Beginner-Friendly Business Events for Portuguese Community in London
 
 export const businessEventsLondon = [
@@ -29,8 +30,8 @@ export const businessEventsLondon = [
     status: 'published',
     featured: true,
     images: [
-      'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=600&h=400&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&h=400&fit=crop&auto=format'
+      buildUnsplashUrl('1556740738-b6a63e27c4df'),
+      buildUnsplashUrl('1559136555-9303baea8ebd')
     ],
     whatToBring: ['Notebook', 'Pen', 'Business ideas (even just rough thoughts)'],
     dresscode: 'Casual and comfortable',
@@ -71,8 +72,8 @@ export const businessEventsLondon = [
     status: 'published',
     featured: false,
     images: [
-      'https://images.unsplash.com/photo-1611262588024-d12430b98920?w=600&h=400&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1493612276216-ee3925520721?w=600&h=400&fit=crop&auto=format'
+      buildUnsplashUrl('1611262588024-d12430b98920'),
+      buildUnsplashUrl('1493612276216-ee3925520721')
     ],
     whatToBring: ['Smartphone', 'Notebook', 'Any business photos you have'],
     dresscode: 'Casual and comfortable',
@@ -113,8 +114,8 @@ export const businessEventsLondon = [
     status: 'published',
     featured: false,
     images: [
-      'https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&h=400&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?w=600&h=400&fit=crop&auto=format'
+      buildUnsplashUrl('1579621970563-ebec7560ff3e'),
+      buildUnsplashUrl('1633158829585-23ba8f7c8caf')
     ],
     whatToBring: ['Notebook', 'Calculator (or phone)', 'Any bank letters or bills you have questions about'],
     dresscode: 'Casual and comfortable',
@@ -155,8 +156,8 @@ export const businessEventsLondon = [
     status: 'published',
     featured: false,
     images: [
-      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&auto=format'
+      buildUnsplashUrl('1516321318423-f06f85e504b3'),
+      buildUnsplashUrl('1551288049-bebda4e38f71')
     ],
     whatToBring: ['Notebook for taking notes', 'Any business documents you want to practice with', 'Reading glasses if you need them'],
     dresscode: 'Comfortable and casual',
@@ -197,8 +198,8 @@ export const businessEventsLondon = [
     status: 'published',
     featured: false,
     images: [
-      'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&h=400&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&auto=format'
+      buildUnsplashUrl('1515187029135-18ee286d815b'),
+      buildUnsplashUrl('1552664730-d307ca884978')
     ],
     whatToBring: ['Business cards if you have them (we can help make simple ones)', 'Notebook', 'Comfortable shoes for mingling'],
     dresscode: 'Smart casual (practice for real networking events)',

@@ -1,5 +1,6 @@
 'use client';
 
+import { ROUTES } from '@/config';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { useNotification } from '@/context/NotificationContext';
@@ -52,9 +53,9 @@ interface SwipeAction {
 // Portuguese cultural UI elements optimized for mobile
 const PORTUGUESE_MOBILE_NAVIGATION = [
   { id: 'home', label: 'Início', labelEnglish: 'Home', icon: Home, route: '/' },
-  { id: 'events', label: 'Eventos', labelEnglish: 'Events', icon: Calendar, route: '/events' },
+  { id: 'events', label: 'Eventos', labelEnglish: 'Events', icon: Calendar, route: ROUTES.events },
   { id: 'community', label: 'Pessoas', labelEnglish: 'People', icon: Users, route: '/my-network' },
-  { id: 'matches', label: 'Matches', labelEnglish: 'Matches', icon: Heart, route: '/matches' },
+  { id: 'matches', label: 'Matches', labelEnglish: 'Matches', icon: Heart, route: ROUTES.matches },
   { id: 'chat', label: 'Chat', labelEnglish: 'Chat', icon: MessageCircle, route: '/messages' }
 ];
 

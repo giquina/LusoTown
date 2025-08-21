@@ -3,6 +3,7 @@
 // Force dynamic rendering to avoid prerender/export issues on complex live TV page
 export const dynamic = "force-dynamic";
 
+import { ROUTES, buildUnsplashUrl } from '@/config';
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -170,7 +171,7 @@ export default function TVPage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=1200&h=600&fit=crop&crop=center')] bg-cover bg-center opacity-5"></div>
+        <div className="absolute inset-0 bg-[url(buildUnsplashUrl('1522869635100-9f4c5e86aa37'))] bg-cover bg-center opacity-5"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-primary-900/5 via-transparent to-secondary-900/5"></div>
 
         <div className="relative container-width py-16 lg:py-24">
@@ -273,7 +274,7 @@ export default function TVPage() {
                       youtubeVideoId: "dQw4w9WgXcQ",
                       isLive: true,
                       isPremium: false,
-                      thumbnail: "/events/networking.jpg",
+                      thumbnail: buildRoute(ROUTES.events, { id: 'event-id' }),
                       viewerCount: 0,
                       previewDuration: 300,
                     }}

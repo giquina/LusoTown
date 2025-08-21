@@ -1,3 +1,4 @@
+import { SOCIAL_URLS } from '@/config';
 'use client'
 
 // Portuguese Community Social Networks Integration
@@ -205,7 +206,7 @@ export const PORTUGUESE_SOCIAL_NETWORKS: PortugueseSocialNetwork[] = [
     ageGroup: '20-45',
     
     joinMethod: 'admin_approval',
-    joinLink: 'https://facebook.com/groups/brasileiros-londres',
+    joinLink: SOCIAL_URLS.facebook.page,
     partnershipStatus: 'community_partner',
     
     activityLevel: 'very_high',

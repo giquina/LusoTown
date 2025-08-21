@@ -1,4 +1,5 @@
 'use client'
+import { ROUTES } from '@/config';
 import Image from 'next/image'
 
 import { useState, useEffect } from 'react'
@@ -212,7 +213,7 @@ export default function EventDetailsPage() {
   const handleRSVP = async (status: 'going' | 'waitlist') => {
     const user = authService.getCurrentUser()
     if (!user) {
-      router.push('/login')
+      router.push(ROUTES.auth.login)
       return
     }
 

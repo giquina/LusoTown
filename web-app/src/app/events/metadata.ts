@@ -1,3 +1,4 @@
+import { ROUTES } from '@/config';
 import { Metadata } from 'next'
 import { SITE_URL, absoluteUrl } from '@/config/site'
 import { ROUTES } from '@/config/routes'
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
     alternateLocale: ['pt_PT', 'pt_BR'],
   images: [
       {
-        url: '/events-og.jpg',
+        url: ROUTES.events,
         width: 1200,
         height: 630,
         alt: 'Portuguese Events in London - LusoTown Community Calendar',
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Portuguese Events in London | Join Your Community',
     description: 'Discover authentic Portuguese events, workshops, and cultural gatherings in London. Connect with your lusophone community today.',
-    images: ['/events-og.jpg'],
+    images: [ROUTES.events],
   },
   alternates: {
     canonical: absoluteUrl(ROUTES.events),

@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import { useEffect } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 
@@ -9,7 +10,7 @@ export default function CulturalToursBookingRedirect() {
 
   useEffect(() => {
     // Redirect to transport page as cultural tours are no longer offered
-    window.location.replace('/transport')
+    window.location.replace(ROUTES.transport)
   }, [])
 
   return (

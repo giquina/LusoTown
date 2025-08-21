@@ -1,5 +1,6 @@
 'use client'
 
+import { buildUnsplashUrl } from '@/config';
 import { createContext, useContext, useState, ReactNode, useEffect } from 'react'
 
 export interface FollowableEntity {
@@ -145,7 +146,7 @@ export function FollowingProvider({ children }: { children: ReactNode }) {
         type: 'person',
         name: 'Maria Santos',
         description: 'Cultural events organizer and Fado enthusiast',
-        imageUrl: 'https://images.unsplash.com/photo-1494790108755-2616b612b1ac?w=150&h=150&fit=crop&crop=face&auto=format',
+        imageUrl: buildUnsplashUrl('1494790108755-2616b612b1ac'),
         location: 'London, UK',
         followers: 245,
         isVerified: true,
@@ -158,7 +159,7 @@ export function FollowingProvider({ children }: { children: ReactNode }) {
         name: 'Fado Lovers London',
         title: 'Traditional Portuguese Music Community',
         description: 'Dedicated to preserving and celebrating Fado music in London',
-        imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=150&h=150&fit=crop&auto=format',
+        imageUrl: buildUnsplashUrl('1493225457124-a3eb161ffa5f'),
         location: 'London, UK',
         followers: 1240,
         category: 'Music & Culture',
@@ -170,7 +171,7 @@ export function FollowingProvider({ children }: { children: ReactNode }) {
         name: 'Portuguese Families UK',
         title: 'Supporting Portuguese families across Britain',
         description: 'A supportive community for Portuguese families living in the UK',
-        imageUrl: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?w=150&h=150&fit=crop&auto=format',
+        imageUrl: buildUnsplashUrl('1511895426328-dc8714191300'),
         location: 'United Kingdom',
         followers: 2180,
         category: 'Family & Community',
@@ -182,7 +183,7 @@ export function FollowingProvider({ children }: { children: ReactNode }) {
         name: 'Carlos Oliveira Events',
         title: 'Portuguese Cultural Events Organizer',
         description: 'Organizing authentic Portuguese cultural experiences across London',
-        imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format',
+        imageUrl: buildUnsplashUrl('1507003211169-0a1dd7228f2d'),
         location: 'London, UK',
         followers: 892,
         isVerified: true,
@@ -194,7 +195,7 @@ export function FollowingProvider({ children }: { children: ReactNode }) {
         name: 'Portuguese Business Network UK',
         title: 'Connecting Portuguese entrepreneurs',
         description: 'Network of Portuguese business owners and entrepreneurs in the UK',
-        imageUrl: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=150&h=150&fit=crop&auto=format',
+        imageUrl: buildUnsplashUrl('1600880292203-757bb62b4baf'),
         location: 'United Kingdom',
         followers: 756,
         category: 'Business & Professional',
@@ -205,7 +206,7 @@ export function FollowingProvider({ children }: { children: ReactNode }) {
         type: 'person',
         name: 'Ana Pereira',
         description: 'Portuguese literature enthusiast and book club organizer',
-        imageUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face&auto=format',
+        imageUrl: buildUnsplashUrl('1580489944761-15a19d654956'),
         location: 'London, UK',
         followers: 423,
         culturalFocus: ['Portuguese Literature', 'Language Education', 'Book Clubs'],

@@ -1,5 +1,6 @@
 "use client";
 
+import { buildUnsplashUrl } from '@/config';
 import React, { useState, memo, useMemo } from "react";
 import { motion } from "framer-motion";
 import {
@@ -74,7 +75,7 @@ const portugueseGuides: TourGuide[] = [
     name: "Maria Santos",
     rating: 4.9,
     reviews: 127,
-    image: "https://images.unsplash.com/photo-1494790108755-2616b332-3a6?w=100&h=100&fit=crop&crop=face",
+    image: buildUnsplashUrl('1494790108755-2616b332-3a6'),
     specialties: ["Portuguese Culture", "London History", "Food Tours"],
     languages: ["Portuguese", "English", "Spanish"],
     experience: "8 years",
@@ -85,7 +86,7 @@ const portugueseGuides: TourGuide[] = [
     name: "João Oliveira",
     rating: 4.8,
     reviews: 89,
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+    image: buildUnsplashUrl('1472099645785-5658abf4ff4e'),
     specialties: ["Business Tours", "Architecture", "Portuguese Districts"],
     languages: ["Portuguese", "English", "French"],
     experience: "12 years",
@@ -96,7 +97,7 @@ const portugueseGuides: TourGuide[] = [
     name: "Ana Rodrigues",
     rating: 4.9,
     reviews: 156,
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+    image: buildUnsplashUrl('1438761681033-6461ffad8d80'),
     specialties: ["Family Tours", "Cultural Immersion", "Portuguese Markets"],
     languages: ["Portuguese", "English"],
     experience: "6 years",
@@ -135,8 +136,8 @@ const toursData: Tour[] = [
     targetAudience: ['solo', 'families', 'couples'],
     guide: portugueseGuides[0],
     images: [
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&h=400&fit=crop"
+      buildUnsplashUrl('1558618666-fcd25c85cd64'),
+      buildUnsplashUrl('1509440159596-0249088772ff')
     ],
     featured: true,
     availability: 'limited',
@@ -174,8 +175,8 @@ const toursData: Tour[] = [
     targetAudience: ['business'],
     guide: portugueseGuides[1],
     images: [
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=400&fit=crop"
+      buildUnsplashUrl('1486406146926-c627a92ad1ab'),
+      buildUnsplashUrl('1556761175-b413da4baf72')
     ],
     featured: false,
     availability: 'available',
@@ -212,8 +213,8 @@ const toursData: Tour[] = [
     targetAudience: ['solo', 'families', 'couples'],
     guide: portugueseGuides[2],
     images: [
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=800&h=400&fit=crop"
+      buildUnsplashUrl('1513635269975-59663e0ac1ad'),
+      buildUnsplashUrl('1533929736458-ca588d08c8be')
     ],
     featured: true,
     availability: 'available',
@@ -250,8 +251,8 @@ const toursData: Tour[] = [
     targetAudience: ['solo', 'families', 'couples'],
     guide: portugueseGuides[0],
     images: [
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1520637836862-4d197d17c936?w=800&h=400&fit=crop"
+      buildUnsplashUrl('1578662996442-48f60103fc96'),
+      buildUnsplashUrl('1520637836862-4d197d17c936')
     ],
     featured: false,
     availability: 'available',
@@ -289,8 +290,8 @@ const toursData: Tour[] = [
     targetAudience: ['solo', 'families', 'couples'],
     guide: portugueseGuides[1],
     images: [
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop"
+      buildUnsplashUrl('1578662996442-48f60103fc96'),
+      buildUnsplashUrl('1506905925346-21bda4d32df4')
     ],
     featured: false,
     availability: 'available',
@@ -328,8 +329,8 @@ const toursData: Tour[] = [
     targetAudience: ['families'],
     guide: portugueseGuides[2],
     images: [
-      "https://images.unsplash.com/photo-1560707303-4e980ce876ad?w=800&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=800&h=400&fit=crop"
+      buildUnsplashUrl('1560707303-4e980ce876ad'),
+      buildUnsplashUrl('1533929736458-ca588d08c8be')
     ],
     featured: false,
     availability: 'available',

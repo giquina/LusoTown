@@ -12,23 +12,28 @@ const { execSync } = require('child_process');
 // Configuration
 const AUDIT_CONFIG = {
   sourceDir: './src',
+  scriptsDir: './scripts',
+  publicDir: './public', 
   outputFile: `./audits/hardcoding-audit-${new Date().toISOString().split('T')[0]}.json`,
   excludePatterns: [
     '*.test.tsx',
     '*.test.ts', 
     '*.config.js',
     '*.config.ts',
-    'i18n/*.json'
+    'i18n/*.json',
+    '*.example',
+    '*.backup',
+    'node_modules/*'
   ]
 };
 
 // Hardcoding violation patterns
 const VIOLATION_PATTERNS = [
   {
-    category: 'hardcoded_text',
-    pattern: /['"`](?!className|key|id|data-|aria-|role|type|placeholder|alt|&|\s|·|•)[^'"`]*[a-zA-Z]{3,}[^'"`]*['"`]/g,
-    severity: 'high',
-    message: 'Hardcoded text detected - should use t() function'
+    category: 'hardcoded_secrets',
+    pattern: /(api[_-]?key|secret[_-]?key|password|token)\s*[=:]\s*['"`][a-zA-Z0-9._-]{20,}['"`]/gi,
+    severity: 'critical',
+    message: 'Potential secret detected - use environment variables'
   },
   {
     category: 'hardcoded_urls',
@@ -37,14 +42,14 @@ const VIOLATION_PATTERNS = [
     message: 'Hardcoded URL detected - use config/cdn.ts or env vars'
   },
   {
-    category: 'hardcoded_routes',
+    category: 'hardcoded_routes', 
     pattern: /['"`]\/[a-zA-Z][^'"`]*['"`]/g,
     severity: 'medium',
     message: 'Potential hardcoded route - use ROUTES constants'
   },
   {
     category: 'hardcoded_prices',
-    pattern: /['"`][£$€]\d+[^'"`]*['"`]/g,
+    pattern: /['"`][£$€][\d,]+(\.\d{2})?[^'"`]*['"`]/g,
     severity: 'high',
     message: 'Hardcoded price detected - use formatPrice() function'
   },
@@ -52,7 +57,13 @@ const VIOLATION_PATTERNS = [
     category: 'hardcoded_colors',
     pattern: /#[0-9a-fA-F]{3,6}|rgb\(|rgba\(/g,
     severity: 'medium',
-    message: 'Hardcoded color detected - use Portuguese brand colors'
+    message: 'Hardcoded color - use brand color constants'
+  },
+  {
+    category: 'hardcoded_text',
+    pattern: /['"`](?!className|key|id|data-|aria-|role|type|placeholder|alt|&|\s|·|•)[^'"`]*[a-zA-Z]{3,}[^'"`]*['"`]/g,
+    severity: 'high',
+    message: 'Hardcoded text detected - should use t() function'
   },
   {
     category: 'console_logs',
@@ -168,33 +179,53 @@ function generateReport(violations) {
 
 // Main audit function
 function runAudit() {
-  console.log('🔍 Starting LusoTown Hardcoding Audit...');
+  console.log('🔍 LusoTown Hardcoding Audit');
+  console.log('Scanning for hardcoded values, secrets, and violations...\n');
   
-  const files = getFiles(AUDIT_CONFIG.sourceDir);
-  console.log(`📁 Scanning ${files.length} files...`);
+  const allViolations = [];
+  const directories = [
+    AUDIT_CONFIG.sourceDir,
+    AUDIT_CONFIG.scriptsDir,
+    AUDIT_CONFIG.publicDir
+  ].filter(dir => fs.existsSync(dir));
   
-  let allViolations = [];
-  
-  files.forEach(file => {
-    const violations = scanFile(file);
-    allViolations = allViolations.concat(violations);
+  directories.forEach(dir => {
+    console.log(`📁 Scanning ${dir}/...`);
+    const files = getFiles(dir);
+    
+    files.forEach(file => {
+      try {
+        const violations = scanFile(file);
+        allViolations.push(...violations);
+      } catch (error) {
+        console.error(`❌ Error scanning ${file}:`, error.message);
+      }
+    });
   });
   
   const report = generateReport(allViolations);
   
-  // Ensure audit directory exists
-  const auditDir = path.dirname(AUDIT_CONFIG.outputFile);
-  if (!fs.existsSync(auditDir)) {
-    fs.mkdirSync(auditDir, { recursive: true });
+  // Create audits directory if it doesn't exist
+  const auditsDir = path.dirname(AUDIT_CONFIG.outputFile);
+  if (!fs.existsSync(auditsDir)) {
+    fs.mkdirSync(auditsDir, { recursive: true });
   }
   
-  // Save report
+  // Save detailed report
   fs.writeFileSync(AUDIT_CONFIG.outputFile, JSON.stringify(report, null, 2));
   
-  // Console output
+  // Print summary
+  printSummary(report);
+  
+  return report;
+}
+
+// Print summary function
+function printSummary(report) {
   console.log('\n📊 AUDIT RESULTS:');
   console.log(`Total violations: ${report.summary.totalViolations}`);
   console.log(`Files affected: ${report.summary.filesAffected}`);
+  console.log(`Critical severity: ${report.summary.bySeverity.critical || 0}`);
   console.log(`High severity: ${report.summary.bySeverity.high}`);
   console.log(`Medium severity: ${report.summary.bySeverity.medium}`);
   console.log(`Low severity: ${report.summary.bySeverity.low}`);
@@ -210,14 +241,14 @@ function runAudit() {
   }
   
   console.log(`\n📄 Full report saved to: ${AUDIT_CONFIG.outputFile}`);
-  
-  // Return exit code based on severity
-  return report.summary.bySeverity.high > 50 ? 1 : 0;
 }
 
 // CLI execution
 if (require.main === module) {
-  const exitCode = runAudit();
+  const report = runAudit();
+  // Return exit code based on severity
+  const exitCode = report.summary.bySeverity.critical > 0 ? 2 : 
+                   report.summary.bySeverity.high > 50 ? 1 : 0;
   process.exit(exitCode);
 }
 

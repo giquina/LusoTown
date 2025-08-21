@@ -1,5 +1,6 @@
 "use client";
 
+import { buildCloudinaryUrl } from '@/config';
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -51,7 +52,7 @@ export default function ProtectionTestimonials() {
       rating: 5,
       duration: "3 Days",
       image:
-        "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/portuguese-businessman-testimonial_lk9dex.jpg",
+        buildCloudinaryUrl('image-id'),
       testimonial: {
         en: "The 7 Ps Framework exceeded every expectation. Their cultural understanding of Portuguese business practices was impeccable, and the discrete professionalism allowed me to focus entirely on the summit. The advance planning was extraordinary - they anticipated challenges I hadn't even considered. This is the gold standard for executive protection.",
         pt: "O Framework 7 Ps superou todas as expectativas. Sua compreensão cultural das práticas empresariais portuguesas foi impecável, e o profissionalismo discreto me permitiu focar inteiramente no summit. O planejamento antecipado foi extraordinário - eles anteciparam desafios que eu nem tinha considerado. Este é o padrão ouro para proteção executiva.",
@@ -78,7 +79,7 @@ export default function ProtectionTestimonials() {
       rating: 5,
       duration: "1 Week",
       image:
-        "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/portuguese-family-testimonial_mk3pqz.jpg",
+        buildCloudinaryUrl('image-id'),
       testimonial: {
         en: "Traveling with our children across the UK required a unique approach to security. The team's preparation was meticulous - they understood our family dynamics and created a protection plan that felt natural, not intrusive. Our children felt safe and comfortable throughout the entire journey. The Portuguese cultural guidance made our experience even more enriching.",
         pt: "Viajar com nossos filhos pelo Reino Unido exigiu uma abordagem única à segurança. A preparação da equipe foi meticulosa - eles entenderam nossa dinâmica familiar e criaram um plano de proteção que pareceu natural, não intrusivo. Nossos filhos se sentiram seguros e confortáveis durante toda a jornada. A orientação cultural portuguesa tornou nossa experiência ainda mais enriquecedora.",
@@ -105,7 +106,7 @@ export default function ProtectionTestimonials() {
       rating: 5,
       duration: "2 Days",
       image:
-        "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/portuguese-diplomat-testimonial_qw8rty.jpg",
+        buildCloudinaryUrl('image-id'),
       testimonial: {
         en: "Working with Royal Protocol requires absolute precision and cultural sensitivity. The team's proactive approach and prevention strategies were flawless. They seamlessly integrated with Royal Protection Service while maintaining our Portuguese delegation's dignity and protocol requirements. Their professionalism reflected excellently on Portugal's representation.",
         pt: "Trabalhar com Protocolo Real requer precisão absoluta e sensibilidade cultural. A abordagem proativa da equipe e estratégias de prevenção foram impecáveis. Eles se integraram perfeitamente ao Serviço de Proteção Real enquanto mantinham a dignidade da nossa delegação portuguesa e requisitos de protocolo. Seu profissionalismo refletiu excelentemente na representação de Portugal.",
@@ -132,7 +133,7 @@ export default function ProtectionTestimonials() {
       rating: 5,
       duration: "5 Days",
       image:
-        "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/portuguese-entrepreneur-testimonial_zx9vbn.jpg",
+        buildCloudinaryUrl('image-id'),
       testimonial: {
         en: "As someone who values privacy and discrete service, the team's presence was exactly what I needed. Their protection allowed me to engage naturally with investors and partners while maintaining complete security. The cultural bridge they provided with other Portuguese business leaders was invaluable for networking.",
         pt: "Como alguém que valoriza privacidade e serviço discreto, a presença da equipe foi exatamente o que eu precisava. Sua proteção me permitiu me envolver naturalmente com investidores e parceiros enquanto mantinha segurança completa. A ponte cultural que eles forneceram com outros líderes empresariais portugueses foi inestimável para networking.",

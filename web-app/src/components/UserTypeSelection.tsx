@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { PlayCircleIcon, HeartIcon, WrenchScrewdriverIcon, CalendarDaysIcon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -69,7 +70,7 @@ export default function UserTypeSelection() {
           title: 'Meet Your Match', 
           desc: 'Find love, friendships & business connections with Portuguese speakers who share your values, culture, and location in London', 
           cta: 'Start Matching', 
-          href: '/matches', 
+          href: ROUTES.matches, 
           icon: HeartIcon, 
           color: 'from-secondary-600 via-action-600 to-accent-600',
           benefit: '2,750+ verified Portuguese speakers',
@@ -89,7 +90,7 @@ export default function UserTypeSelection() {
           title: 'LusoTown TV', 
           desc: 'Watch live Portuguese cultural content, business workshops, fado performances & community discussions - exclusive to UK Portuguese speakers', 
           cta: 'Watch Now', 
-          href: '/live', 
+          href: ROUTES.live, 
           icon: PlayCircleIcon, 
           color: 'from-accent-600 via-action-600 to-secondary-600',
           benefit: '24/7 Portuguese content',
@@ -116,7 +117,7 @@ export default function UserTypeSelection() {
           title: 'Encontra o Teu Match', 
           desc: 'Encontra amor, amizades e conexões de negócio com falantes de português que partilham os teus valores, cultura e localização em Londres', 
           cta: 'Começar Matching', 
-          href: '/matches', 
+          href: ROUTES.matches, 
           icon: HeartIcon, 
           color: 'from-secondary-600 via-action-600 to-accent-600',
           benefit: '2.750+ falantes de português verificados',
@@ -136,7 +137,7 @@ export default function UserTypeSelection() {
           title: 'LusoTown TV', 
           desc: 'Vê conteúdo cultural português ao vivo, workshops de negócios, apresentações de fado e discussões comunitárias - exclusivo para portugueses no Reino Unido', 
           cta: 'Ver Agora', 
-          href: '/live', 
+          href: ROUTES.live, 
           icon: PlayCircleIcon, 
           color: 'from-accent-600 via-action-600 to-secondary-600',
           benefit: 'Conteúdo português 24/7',

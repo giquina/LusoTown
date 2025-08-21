@@ -1,3 +1,4 @@
+import { ROUTES } from '@/config';
 // Service Worker for LusoTown Portuguese Community Platform
 // Version: 2.0.0 - Portuguese Cultural PWA
 
@@ -10,12 +11,12 @@ const API_CACHE = 'api-cache-v1';
 const PORTUGUESE_ASSETS = [
   '/',
   '/offline',
-  '/events',
+  ROUTES.events,
   '/my-network',
-  '/business-directory',
-  '/live',
-  '/transport',
-  '/matches',
+  ROUTES.businessDirectory,
+  ROUTES.live,
+  ROUTES.transport,
+  ROUTES.matches,
   '/students',
   '/premium-membership',
   // Portuguese cultural images
@@ -26,10 +27,10 @@ const PORTUGUESE_ASSETS = [
   '/images/christ-the-king.jpg',
   '/images/ponte-25-abril.jpg',
   // Cultural event assets
-  '/events/fado-night.jpg',
-  '/events/festa-junina.jpg',
-  '/events/santo-antonio.jpg',
-  '/events/festa-do-avante.jpg',
+  buildRoute(ROUTES.events, { id: 'event-id' }),
+  buildRoute(ROUTES.events, { id: 'event-id' }),
+  buildRoute(ROUTES.events, { id: 'event-id' }),
+  buildRoute(ROUTES.events, { id: 'event-id' }),
   // Business directory assets
   '/icons/restaurant.svg',
   '/icons/business.svg',
@@ -312,16 +313,16 @@ async function handleOfflineRequest(request) {
 // Utility functions
 function isPortugueseCulturalContent(pathname) {
   const culturalPaths = [
-    '/events/fado',
-    '/events/festa',
-    '/events/santo',
-    '/events/portuguese',
-    '/events/brazilian',
-    '/events/angolan',
-    '/events/cape-verdean',
-    '/events/mozambican',
-    '/business-directory/portuguese',
-    '/business-directory/restaurants',
+    buildRoute(ROUTES.events, { id: 'event-id' }),
+    buildRoute(ROUTES.events, { id: 'event-id' }),
+    buildRoute(ROUTES.events, { id: 'event-id' }),
+    buildRoute(ROUTES.events, { id: 'event-id' }),
+    buildRoute(ROUTES.events, { id: 'event-id' }),
+    buildRoute(ROUTES.events, { id: 'event-id' }),
+    buildRoute(ROUTES.events, { id: 'event-id' }),
+    buildRoute(ROUTES.events, { id: 'event-id' }),
+    ROUTES.businessDirectory,
+    ROUTES.businessDirectory,
     '/cultural-calendar',
     '/portuguese-heritage'
   ];

@@ -1,0 +1,151 @@
+name: i18n and Config Validation
+
+on:
+  pull_request:
+    branches: [ main, develop ]
+    paths:
+      - 'web-app/src/**/*.tsx'
+      - 'web-app/src/**/*.ts' 
+      - 'web-app/src/**/*.jsx'
+      - 'web-app/src/**/*.js'
+      - 'web-app/src/i18n/**/*.json'
+      - 'web-app/src/config/**/*.ts'
+
+jobs:
+  validate-i18n:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+        cache: 'npm'
+        cache-dependency-path: 'web-app/package-lock.json'
+        
+    - name: Install dependencies
+      run: |
+        cd web-app
+        npm ci
+        
+    - name: Run i18n extraction codemod in dry-run mode
+      run: |
+        cd web-app
+        npm run codemod:i18n:dry > i18n-check.log 2>&1
+        
+    - name: Check if i18n extraction would make changes
+      run: |
+        cd web-app
+        if grep -q "Files modified: [1-9]" i18n-check.log; then
+          echo "❌ Found hardcoded strings that need i18n extraction:"
+          cat i18n-check.log
+          echo ""
+          echo "Please run: npm run codemod:i18n"
+          echo "Then review and commit the generated translations."
+          exit 1
+        else
+          echo "✅ No hardcoded strings requiring extraction found"
+        fi
+        
+    - name: Run URL replacement codemod in dry-run mode  
+      run: |
+        cd web-app
+        npm run codemod:urls:dry > url-check.log 2>&1
+        
+    - name: Check if URL replacement would make changes
+      run: |
+        cd web-app
+        if grep -q "Files modified: [1-9]" url-check.log; then
+          echo "❌ Found hardcoded URLs that need replacement:"
+          cat url-check.log
+          echo ""
+          echo "Please run: npm run codemod:urls"
+          echo "Then review and commit the config constants."
+          exit 1
+        else
+          echo "✅ No hardcoded URLs requiring replacement found"
+        fi
+        
+    - name: Validate translation file syntax
+      run: |
+        cd web-app
+        echo "🔍 Validating translation files..."
+        node -e "
+          const fs = require('fs');
+          const files = ['src/i18n/en.json', 'src/i18n/pt.json'];
+          
+          for (const file of files) {
+            try {
+              const content = fs.readFileSync(file, 'utf8');
+              const parsed = JSON.parse(content);
+              console.log(\`✅ \${file}: \${Object.keys(parsed).length} keys\`);
+            } catch (error) {
+              console.error(\`❌ \${file}: \${error.message}\`);
+              process.exit(1);
+            }
+          }
+        "
+        
+    - name: Check for translation key consistency
+      run: |
+        cd web-app
+        echo "🔍 Checking translation key consistency..."
+        node -e "
+          const fs = require('fs');
+          const en = JSON.parse(fs.readFileSync('src/i18n/en.json', 'utf8'));
+          const pt = JSON.parse(fs.readFileSync('src/i18n/pt.json', 'utf8'));
+          
+          const enKeys = new Set(Object.keys(en));
+          const ptKeys = new Set(Object.keys(pt));
+          
+          const missingInPt = [...enKeys].filter(key => !ptKeys.has(key));
+          const missingInEn = [...ptKeys].filter(key => !enKeys.has(key));
+          
+          if (missingInPt.length > 0) {
+            console.error('❌ Keys missing in Portuguese translations:');
+            missingInPt.forEach(key => console.error(\`  - \${key}\`));
+          }
+          
+          if (missingInEn.length > 0) {
+            console.error('❌ Keys missing in English translations:');
+            missingInEn.forEach(key => console.error(\`  - \${key}\`));
+          }
+          
+          if (missingInPt.length > 0 || missingInEn.length > 0) {
+            process.exit(1);
+          }
+          
+          console.log(\`✅ Translation files are consistent: \${enKeys.size} keys each\`);
+        "
+        
+    - name: Run secret detection
+      run: |
+        cd web-app
+        echo "🔍 Running secret detection..."
+        npm run audit:hardcoding > hardcoding-audit.log 2>&1 || true
+        
+        if grep -q "CRITICAL\|HIGH" hardcoding-audit.log; then
+          echo "❌ Found potential secrets or hardcoded values:"
+          cat hardcoding-audit.log
+          exit 1
+        else
+          echo "✅ No secrets or critical hardcoding violations found"
+        fi
+        
+    - name: Lint check for hardcoded strings
+      run: |
+        cd web-app  
+        echo "🔍 Checking for new hardcoded strings in JSX..."
+        npm run lint 2>&1 | grep "react/jsx-no-literals" > jsx-literals.log || true
+        
+        if [ -s jsx-literals.log ]; then
+          echo "⚠️  Found JSX literal strings that should use i18n:"
+          head -20 jsx-literals.log
+          echo ""
+          echo "Note: These should be extracted using npm run codemod:i18n"
+        else
+          echo "✅ No JSX literal violations found"
+        fi

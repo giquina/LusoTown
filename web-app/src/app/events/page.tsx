@@ -1,5 +1,6 @@
 "use client";
 
+import { ROUTES } from '@/config';
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -1036,8 +1037,8 @@ export default function EventsPage() {
                         style={{
                           backgroundImage:
                             activeTab === "events"
-                              ? "url('/events/jazz-networking.jpg')"
-                              : "url('/events/book-brunch.jpg')",
+                              ? "url(buildRoute(ROUTES.events, { id: 'event-id' }))"
+                              : "url(buildRoute(ROUTES.events, { id: 'event-id' }))",
                         }}
                       ></div>
                     </div>
@@ -1222,7 +1223,7 @@ export default function EventsPage() {
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
               style={{
-                backgroundImage: "url('/events/ceramic-art.jpg')",
+                backgroundImage: "url(buildRoute(ROUTES.events, { id: 'event-id' }))",
               }}
             ></div>
           </div>

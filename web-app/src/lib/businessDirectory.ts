@@ -1,3 +1,4 @@
+import { buildUnsplashUrl } from '@/config';
 'use client'
 
 // Portuguese Business Directory Service
@@ -260,8 +261,8 @@ export const MOCK_PORTUGUESE_BUSINESSES: PortugueseBusiness[] = [
     rating: 4.7,
     reviewCount: 234,
     photos: [
-      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      buildUnsplashUrl('1414235077428-338989a2e8c0'),
+      buildUnsplashUrl('1555396273-367ea4eb4db5')
     ],
     
     keywords: ['portuguese restaurant', 'bacalhau', 'fado', 'traditional portuguese', 'golborne road'],
@@ -366,8 +367,8 @@ export const MOCK_PORTUGUESE_BUSINESSES: PortugueseBusiness[] = [
     rating: 4.9,
     reviewCount: 187,
     photos: [
-      'https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      buildUnsplashUrl('1509440159596-0249088772ff'),
+      buildUnsplashUrl('1578985545062-69928b1d9587')
     ],
     
     keywords: ['pastéis de nata', 'portuguese bakery', 'portuguese pastries', 'bolo de arroz', 'south lambeth'],
@@ -462,8 +463,8 @@ export const MOCK_PORTUGUESE_BUSINESSES: PortugueseBusiness[] = [
     rating: 4.8,
     reviewCount: 156,
     photos: [
-      'https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1539650116574-75c0c6d5ce4f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      buildUnsplashUrl('1488646953014-85cb44e25828'),
+      buildUnsplashUrl('1539650116574-75c0c6d5ce4f')
     ],
     
     keywords: ['portugal travel', 'azores travel', 'portuguese travel agency', 'family trips portugal', 'harrow road'],
@@ -557,8 +558,8 @@ export const MOCK_PORTUGUESE_BUSINESSES: PortugueseBusiness[] = [
     rating: 4.9,
     reviewCount: 312,
     photos: [
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      buildUnsplashUrl('1507003211169-0a1dd7228f2d'),
+      buildUnsplashUrl('1524995997946-a1c2e315a42f')
     ],
     
     keywords: ['portuguese cultural center', 'portuguese language classes', 'portuguese community', 'cultural events london', 'high street'],

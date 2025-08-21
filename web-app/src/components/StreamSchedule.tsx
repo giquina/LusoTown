@@ -1,5 +1,6 @@
 "use client";
 
+import { ROUTES } from '@/config';
 import { useState, useEffect, useMemo, useCallback } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -84,7 +85,7 @@ export default function StreamSchedule({
         language === "pt"
           ? "Masterclasses Culturais"
           : "Cultural Masterclasses",
-      thumbnail: "/events/art-tour.jpg",
+      thumbnail: buildRoute(ROUTES.events, { id: 'event-id' }),
       tags: ["fado", "music", "masterclass", "tradition"],
       registeredCount: 34,
     },
@@ -106,7 +107,7 @@ export default function StreamSchedule({
       host: "Carlos Mendes",
       isPremium: true,
       isRecurring: false,
-      thumbnail: "/events/book-club.jpg",
+      thumbnail: buildRoute(ROUTES.events, { id: 'event-id' }),
       tags: ["ai", "business", "workshop", "technology"],
       viewerCapacity: 50,
       registeredCount: 42,
@@ -135,7 +136,7 @@ export default function StreamSchedule({
         language === "pt"
           ? "Café Comunitário Semanal"
           : "Weekly Community Coffee",
-      thumbnail: "/events/networking.jpg",
+      thumbnail: buildRoute(ROUTES.events, { id: 'event-id' }),
       tags: ["community", "networking", "coffee", "social"],
       registeredCount: 28,
     },
@@ -160,7 +161,7 @@ export default function StreamSchedule({
       isPremium: false,
       isRecurring: true,
       seriesName: language === "pt" ? "Apoio ao Estudante" : "Student Support",
-      thumbnail: "/events/yoga.jpg",
+      thumbnail: buildRoute(ROUTES.events, { id: 'event-id' }),
       tags: ["students", "career", "advice", "internships"],
       registeredCount: 19,
     },
@@ -183,7 +184,7 @@ export default function StreamSchedule({
       host: "Miguel Santos & Guests",
       isPremium: true,
       isRecurring: false,
-      thumbnail: "/events/jazz-networking.jpg",
+      thumbnail: buildRoute(ROUTES.events, { id: 'event-id' }),
       tags: ["vip", "business", "roundtable", "ceo"],
       viewerCapacity: 25,
       registeredCount: 23,
@@ -396,7 +397,7 @@ export default function StreamSchedule({
                   <div className="flex-shrink-0">
                     <div className="relative w-24 h-16 md:w-32 md:h-20 rounded-lg overflow-hidden bg-gray-200">
                       <Image
-                        src={stream.thumbnail || "/events/networking.jpg"}
+                        src={stream.thumbnail || buildRoute(ROUTES.events, { id: 'event-id' })}
                         alt={stream.title}
                         fill
                         sizes="(max-width: 768px) 128px, 192px"
@@ -580,7 +581,7 @@ export default function StreamSchedule({
           className="mt-6 text-center"
         >
           <a
-            href="/live?view=schedule"
+            href=ROUTES.live
             className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium transition-colors"
           >
             <span>

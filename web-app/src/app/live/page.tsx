@@ -1,5 +1,6 @@
 "use client";
 
+import { buildCloudinaryUrl } from '@/config';
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
@@ -44,7 +45,7 @@ const creatorTiers = [
     namePortuguese: "Criador Iniciante", 
     price: 19,
     originalPrice: 29,
-    image: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/creator-starter-setup_dlqxkx.jpg",
+    image: buildCloudinaryUrl('image-id'),
     imageAlt: "Portuguese content creator setup with professional streaming equipment",
     imageAltPortuguese: "Configuração de criador de conteúdo português com equipamento de streaming profissional",
     membershipDiscounts: {
@@ -84,7 +85,7 @@ const creatorTiers = [
     namePortuguese: "Criador Profissional",
     price: 49,
     originalPrice: 69,
-    image: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535201/professional-creator-studio_hml2nr.jpg",
+    image: buildCloudinaryUrl('image-id'),
     imageAlt: "Professional Portuguese streaming studio with advanced equipment and London backdrop",
     imageAltPortuguese: "Estúdio de streaming português profissional com equipamento avançado e cenário de Londres",
     membershipDiscounts: {
@@ -127,7 +128,7 @@ const creatorTiers = [
     namePortuguese: "Criador Empresarial",
     price: 199,
     originalPrice: 299,
-    image: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535202/enterprise-streaming-setup_abc123.jpg",
+    image: buildCloudinaryUrl('image-id'),
     imageAlt: "Enterprise Portuguese streaming setup for business events and community broadcasts",
     imageAltPortuguese: "Configuração de streaming empresarial português para eventos de negócios e transmissões comunitárias",
     membershipDiscounts: {
@@ -243,7 +244,7 @@ export default function StreamingPage() {
     <div className="min-h-screen">
       {/* Hero Section - Similar to London Transport style */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
-        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/portuguese-streaming-london_dlqxkx.jpg')] bg-cover bg-center opacity-5"></div>
+        <div className="absolute inset-0 bg-[url(buildCloudinaryUrl('image-id'))] bg-cover bg-center opacity-5"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-primary-900/5 via-transparent to-secondary-900/5"></div>
         
         <div className="relative container-width py-16 lg:py-24">

@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import { useEffect, useState, Suspense } from 'react'
 import { ROUTES } from '@/config/routes'
 import { motion } from 'framer-motion'
@@ -62,7 +63,7 @@ function SuccessPageContent() {
       title: isPortuguese ? 'Reserve Transporte' : 'Book Transport',
       description: isPortuguese ? 'Acesso aos nossos serviços premium de transporte' : 'Access our premium transport services',
       action: isPortuguese ? 'Ver Serviços' : 'View Services',
-      link: '/transport'
+      link: ROUTES.transport
     }
   ]
 

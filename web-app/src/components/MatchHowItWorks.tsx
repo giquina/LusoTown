@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
@@ -586,7 +587,7 @@ export default function MatchHowItWorks() {
             
             <div className="flex flex-row gap-3 sm:gap-4 justify-center">
               <motion.a
-                href="/matches"
+                href=ROUTES.matches
                 className="group relative text-base sm:text-lg font-bold px-6 sm:px-8 py-4 bg-gradient-to-r from-secondary-600 via-action-600 to-accent-600 text-white rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden flex-1 max-w-[180px] sm:max-w-none"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}

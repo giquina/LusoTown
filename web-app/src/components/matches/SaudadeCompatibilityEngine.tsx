@@ -1,5 +1,6 @@
 "use client";
 
+import { buildUnsplashUrl } from '@/config';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
@@ -168,7 +169,7 @@ export default function SaudadeCompatibilityEngine({
         userId: 'user_1',
         name: 'Sofia',
         age: 29,
-        photo: 'https://images.unsplash.com/photo-1494790108755-2616b612b1c5?w=150&h=150&fit=crop&crop=face',
+        photo: buildUnsplashUrl('1494790108755-2616b612b1c5'),
         distance: 2.3,
         lastActive: '2 hours ago',
         saudadeProfile: {
@@ -202,7 +203,7 @@ export default function SaudadeCompatibilityEngine({
         userId: 'user_2',
         name: 'Miguel',
         age: 34,
-        photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+        photo: buildUnsplashUrl('1472099645785-5658abf4ff4e'),
         distance: 5.7,
         lastActive: '1 day ago',
         saudadeProfile: {
@@ -236,7 +237,7 @@ export default function SaudadeCompatibilityEngine({
         userId: 'user_3',
         name: 'Ana',
         age: 26,
-        photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
+        photo: buildUnsplashUrl('1438761681033-6461ffad8d80'),
         distance: 1.2,
         lastActive: '30 minutes ago',
         saudadeProfile: {

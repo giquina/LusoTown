@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import React, { useState, useEffect } from 'react'
 import { authService, User } from '@/lib/auth'
 import { useRouter } from 'next/navigation'
@@ -207,7 +208,7 @@ export default function AdminDashboard() {
   useEffect(() => {
     const currentUser = authService.getCurrentUser()
     if (!currentUser) {
-      router.push('/login')
+      router.push(ROUTES.auth.login)
       return
     }
     

@@ -1,5 +1,6 @@
 'use client'
 
+import { buildUnsplashUrl } from '@/config';
 import { User } from '@/lib/auth'
 import { supabase, supabaseUrl, supabaseAnonKey } from '@/lib/supabase'
 import { getImageWithFallback } from '@/lib/profileImages'
@@ -399,8 +400,8 @@ export class EventService {
         status: 'fully-booked',
         featured: true,
         images: [
-          'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1493225457124-a3eb161ffa5f'),
+          buildUnsplashUrl('1544551763-46a013bb70d5')
         ],
         photos: [],
         attendees: [
@@ -463,8 +464,8 @@ export class EventService {
         status: 'fully-booked',
         featured: false,
         images: [
-          'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1574629810360-7efbbe195018'),
+          buildUnsplashUrl('1431324155629-1a6deb1dec8d')
         ],
         photos: [],
         attendees: [
@@ -523,8 +524,8 @@ export class EventService {
         status: 'fully-booked',
         featured: true,
         images: [
-          'https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1608064093346-88115553b5c8?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1470337458703-46ad1756a187'),
+          buildUnsplashUrl('1608064093346-88115553b5c8')
         ],
         photos: [],
         attendees: [
@@ -589,8 +590,8 @@ export class EventService {
         status: 'fully-booked',
         featured: false,
         images: [
-          'https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1567696911980-2eed69a46042?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1514933651103-005eec06c04b'),
+          buildUnsplashUrl('1567696911980-2eed69a46042')
         ],
         photos: [],
         attendees: [
@@ -653,8 +654,8 @@ export class EventService {
         status: 'fully-booked',
         featured: true,
         images: [
-          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1578662996442-48f60103fc96'),
+          buildUnsplashUrl('1533174072545-7a4b6ad7a6c3')
         ],
         photos: [],
         attendees: [
@@ -719,8 +720,8 @@ export class EventService {
         status: 'fully-booked',
         featured: false,
         images: [
-          'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1556909114-f6e7ad7d3136'),
+          buildUnsplashUrl('1521017432531-fbd92d768814')
         ],
         photos: [],
         attendees: [
@@ -782,8 +783,8 @@ export class EventService {
         status: 'fully-booked',
         featured: true,
         images: [
-          'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1552664730-d307ca884978'),
+          buildUnsplashUrl('1460925895917-afdab827c52f')
         ],
         photos: [],
         attendees: [
@@ -849,8 +850,8 @@ export class EventService {
         status: 'fully-booked',
         featured: true,
         images: [
-          'https://images.unsplash.com/photo-1539650116574-75c0c6d0d200?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1539650116574-75c0c6d0d200'),
+          buildUnsplashUrl('1523906834658-6e24ef2386f9')
         ],
         photos: [],
         attendees: [
@@ -915,8 +916,8 @@ export class EventService {
         status: 'fully-booked',
         featured: true,
         images: [
-          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1578662996442-48f60103fc96'),
+          buildUnsplashUrl('1513475382585-d06e58bcb0e0')
         ],
         photos: [],
         attendees: [
@@ -981,8 +982,8 @@ export class EventService {
         status: 'fully-booked',
         featured: true,
         images: [
-          'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1513635269975-59663e0ac1ad'),
+          buildUnsplashUrl('1486299267070-83823f5448dd')
         ],
         photos: [],
         attendees: [
@@ -1047,8 +1048,8 @@ export class EventService {
         status: 'fully-booked',
         featured: true,
         images: [
-          'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1555939594-58d7cb561ad1'),
+          buildUnsplashUrl('1578662996442-48f60103fc96')
         ],
         photos: [],
         attendees: [
@@ -1115,13 +1116,13 @@ export class EventService {
         status: 'fully-booked',
         featured: true,
         images: [
-          'https://images.unsplash.com/photo-1566737236500-c8ac43014a8e?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1524841811905-6d2b2c735db8?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1566737236500-c8ac43014a8e'),
+          buildUnsplashUrl('1578662996442-48f60103fc96'),
+          buildUnsplashUrl('1524841811905-6d2b2c735db8')
         ],
         photos: [
-          { id: 'photo-sa-1', eventId: 'santo-antonio-festival-2025', url: 'https://images.unsplash.com/photo-1566737236500-c8ac43014a8e?w=400&h=400&fit=crop&auto=format', caption: 'Marchas Populares parade 2024', uploadedBy: 'PCC London', uploadedAt: '2024-06-14T00:30:00Z', featured: true },
-          { id: 'photo-sa-2', eventId: 'santo-antonio-festival-2025', url: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=400&fit=crop&auto=format', caption: 'Grilled sardines station', uploadedBy: 'Maria Santos', uploadedAt: '2024-06-13T21:15:00Z', featured: false }
+          { id: 'photo-sa-1', eventId: 'santo-antonio-festival-2025', url: buildUnsplashUrl('1566737236500-c8ac43014a8e'), caption: 'Marchas Populares parade 2024', uploadedBy: 'PCC London', uploadedAt: '2024-06-14T00:30:00Z', featured: true },
+          { id: 'photo-sa-2', eventId: 'santo-antonio-festival-2025', url: buildUnsplashUrl('1578662996442-48f60103fc96'), caption: 'Grilled sardines station', uploadedBy: 'Maria Santos', uploadedAt: '2024-06-13T21:15:00Z', featured: false }
         ],
         attendees: [
           { id: 'att-sa-1', userId: 'user-sa-1', eventId: 'santo-antonio-festival-2025', name: 'José Silva', email: 'jose@example.com', membershipTier: 'free', joinedAt: '2025-05-20T14:00:00Z', status: 'confirmed' },
@@ -1185,13 +1186,13 @@ export class EventService {
         status: 'fully-booked',
         featured: true,
         images: [
-          'https://images.unsplash.com/photo-1533472842400-c44cb5a7ac01?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1533472842400-c44cb5a7ac01'),
+          buildUnsplashUrl('1578662996442-48f60103fc96'),
+          buildUnsplashUrl('1504674900247-0877df9cc836')
         ],
         photos: [
-          { id: 'photo-sj-1', eventId: 'sao-joao-festival-2025', url: 'https://images.unsplash.com/photo-1533472842400-c44cb5a7ac01?w=400&h=400&fit=crop&auto=format', caption: 'Traditional folk dancing 2024', uploadedBy: 'Folclore Group', uploadedAt: '2024-06-24T01:00:00Z', featured: true },
-          { id: 'photo-sj-2', eventId: 'sao-joao-festival-2025', url: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=400&fit=crop&auto=format', caption: 'Midnight bonfire jumping', uploadedBy: 'Community Photos', uploadedAt: '2024-06-24T00:15:00Z', featured: false }
+          { id: 'photo-sj-1', eventId: 'sao-joao-festival-2025', url: buildUnsplashUrl('1533472842400-c44cb5a7ac01'), caption: 'Traditional folk dancing 2024', uploadedBy: 'Folclore Group', uploadedAt: '2024-06-24T01:00:00Z', featured: true },
+          { id: 'photo-sj-2', eventId: 'sao-joao-festival-2025', url: buildUnsplashUrl('1504674900247-0877df9cc836'), caption: 'Midnight bonfire jumping', uploadedBy: 'Community Photos', uploadedAt: '2024-06-24T00:15:00Z', featured: false }
         ],
         attendees: [
           { id: 'att-sj-1', userId: 'user-sj-1', eventId: 'sao-joao-festival-2025', name: 'Teresa Costa', email: 'teresa@example.com', membershipTier: 'free', joinedAt: '2025-05-28T09:00:00Z', status: 'confirmed' },
@@ -1255,13 +1256,13 @@ export class EventService {
         status: 'fully-booked',
         featured: true,
         images: [
-          'https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1524841811905-6d2b2c735db8?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1566737236500-c8ac43014a8e?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1570197788417-0e82375c9371'),
+          buildUnsplashUrl('1524841811905-6d2b2c735db8'),
+          buildUnsplashUrl('1566737236500-c8ac43014a8e')
         ],
         photos: [
-          { id: 'photo-pd-1', eventId: 'portugal-day-2025', url: 'https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=400&h=400&fit=crop&auto=format', caption: 'Folk dance performances 2024', uploadedBy: 'Embassy Photos', uploadedAt: '2024-06-10T16:00:00Z', featured: true },
-          { id: 'photo-pd-2', eventId: 'portugal-day-2025', url: 'https://images.unsplash.com/photo-1524841811905-6d2b2c735db8?w=400&h=400&fit=crop&auto=format', caption: 'Community gathering', uploadedBy: 'Community Photos', uploadedAt: '2024-06-10T14:30:00Z', featured: false }
+          { id: 'photo-pd-1', eventId: 'portugal-day-2025', url: buildUnsplashUrl('1570197788417-0e82375c9371'), caption: 'Folk dance performances 2024', uploadedBy: 'Embassy Photos', uploadedAt: '2024-06-10T16:00:00Z', featured: true },
+          { id: 'photo-pd-2', eventId: 'portugal-day-2025', url: buildUnsplashUrl('1524841811905-6d2b2c735db8'), caption: 'Community gathering', uploadedBy: 'Community Photos', uploadedAt: '2024-06-10T14:30:00Z', featured: false }
         ],
         attendees: [
           { id: 'att-pd-1', userId: 'user-pd-1', eventId: 'portugal-day-2025', name: 'Maria Fernandes', email: 'maria@example.com', membershipTier: 'free', joinedAt: '2025-05-15T10:00:00Z', status: 'confirmed' },
@@ -1327,13 +1328,13 @@ export class EventService {
         status: 'fully-booked',
         featured: true,
         images: [
-          'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1493225457124-a3eb161ffa5f'),
+          buildUnsplashUrl('1578662996442-48f60103fc96'),
+          buildUnsplashUrl('1544025162-d76694265947')
         ],
         photos: [
-          { id: 'photo-fado-1', eventId: 'fado-night-three-lions-2025', url: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop&auto=format', caption: 'Helena Vieira performing at The Three Lions', uploadedBy: 'The Three Lions', uploadedAt: '2025-08-15T20:30:00Z', featured: true },
-          { id: 'photo-fado-2', eventId: 'fado-night-three-lions-2025', url: 'https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=400&fit=crop&auto=format', caption: 'Traditional Portuguese dinner setting', uploadedBy: 'Guest Photos', uploadedAt: '2025-08-15T19:45:00Z', featured: false }
+          { id: 'photo-fado-1', eventId: 'fado-night-three-lions-2025', url: buildUnsplashUrl('1493225457124-a3eb161ffa5f'), caption: 'Helena Vieira performing at The Three Lions', uploadedBy: 'The Three Lions', uploadedAt: '2025-08-15T20:30:00Z', featured: true },
+          { id: 'photo-fado-2', eventId: 'fado-night-three-lions-2025', url: buildUnsplashUrl('1544025162-d76694265947'), caption: 'Traditional Portuguese dinner setting', uploadedBy: 'Guest Photos', uploadedAt: '2025-08-15T19:45:00Z', featured: false }
         ],
         attendees: [
           { id: 'att-fado-1', userId: 'user-fado-1', eventId: 'fado-night-three-lions-2025', name: 'Maria Santos', email: 'maria.s@example.com', membershipTier: 'core', joinedAt: '2025-08-20T14:00:00Z', status: 'confirmed' },
@@ -1399,13 +1400,13 @@ export class EventService {
         status: 'fully-booked',
         featured: true,
         images: [
-          'https://images.unsplash.com/photo-1529258283598-8d6fe60b27f4?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1529258283598-8d6fe60b27f4'),
+          buildUnsplashUrl('1578662996442-48f60103fc96'),
+          buildUnsplashUrl('1504674900247-0877df9cc836')
         ],
         photos: [
-          { id: 'photo-casa-1', eventId: 'casa-madeira-cultural-evening-2025', url: 'https://images.unsplash.com/photo-1529258283598-8d6fe60b27f4?w=400&h=400&fit=crop&auto=format', caption: 'Community dancing at Casa Madeira', uploadedBy: 'Casa Madeira', uploadedAt: '2025-08-30T21:00:00Z', featured: true },
-          { id: 'photo-casa-2', eventId: 'casa-madeira-cultural-evening-2025', url: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=400&fit=crop&auto=format', caption: 'Three generations celebrating together', uploadedBy: 'Community Photos', uploadedAt: '2025-08-30T20:15:00Z', featured: false }
+          { id: 'photo-casa-1', eventId: 'casa-madeira-cultural-evening-2025', url: buildUnsplashUrl('1529258283598-8d6fe60b27f4'), caption: 'Community dancing at Casa Madeira', uploadedBy: 'Casa Madeira', uploadedAt: '2025-08-30T21:00:00Z', featured: true },
+          { id: 'photo-casa-2', eventId: 'casa-madeira-cultural-evening-2025', url: buildUnsplashUrl('1504674900247-0877df9cc836'), caption: 'Three generations celebrating together', uploadedBy: 'Community Photos', uploadedAt: '2025-08-30T20:15:00Z', featured: false }
         ],
         attendees: [
           { id: 'att-casa-1', userId: 'user-casa-1', eventId: 'casa-madeira-cultural-evening-2025', name: 'Manuel Silva', email: 'manuel@example.com', membershipTier: 'free', joinedAt: '2025-08-25T09:00:00Z', status: 'confirmed' },
@@ -1472,9 +1473,9 @@ export class EventService {
         status: 'fully-booked',
         featured: true,
         images: [
-          'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1544025162-d76694265947'),
+          buildUnsplashUrl('1578662996442-48f60103fc96'),
+          buildUnsplashUrl('1493225457124-a3eb161ffa5f')
         ],
         photos: [],
         attendees: [
@@ -1537,13 +1538,13 @@ export class EventService {
         status: 'fully-booked',
         featured: true,
         images: [
-          'https://images.unsplash.com/photo-1529258283598-8d6fe60b27f4?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1533472842400-c44cb5a7ac01?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1529258283598-8d6fe60b27f4'),
+          buildUnsplashUrl('1504674900247-0877df9cc836'),
+          buildUnsplashUrl('1533472842400-c44cb5a7ac01')
         ],
         photos: [
-          { id: 'photo-fj-1', eventId: 'festa-junina-brazilian-2025', url: 'https://images.unsplash.com/photo-1529258283598-8d6fe60b27f4?w=400&h=400&fit=crop&auto=format', caption: 'Quadrilha dancing 2024', uploadedBy: 'Brazilian Centre', uploadedAt: '2024-06-22T22:30:00Z', featured: true },
-          { id: 'photo-fj-2', eventId: 'festa-junina-brazilian-2025', url: 'https://images.unsplash.com/photo-1533472842400-c44cb5a7ac01?w=400&h=400&fit=crop&auto=format', caption: 'Traditional Festa Junina decorations', uploadedBy: 'Community Photos', uploadedAt: '2024-06-21T20:00:00Z', featured: false }
+          { id: 'photo-fj-1', eventId: 'festa-junina-brazilian-2025', url: buildUnsplashUrl('1529258283598-8d6fe60b27f4'), caption: 'Quadrilha dancing 2024', uploadedBy: 'Brazilian Centre', uploadedAt: '2024-06-22T22:30:00Z', featured: true },
+          { id: 'photo-fj-2', eventId: 'festa-junina-brazilian-2025', url: buildUnsplashUrl('1533472842400-c44cb5a7ac01'), caption: 'Traditional Festa Junina decorations', uploadedBy: 'Community Photos', uploadedAt: '2024-06-21T20:00:00Z', featured: false }
         ],
         attendees: [
           { id: 'att-fj-1', userId: 'user-fj-1', eventId: 'festa-junina-brazilian-2025', name: 'Carla Santos', email: 'carla@example.com', membershipTier: 'free', joinedAt: '2025-05-25T09:00:00Z', status: 'confirmed' },
@@ -1608,12 +1609,12 @@ export class EventService {
         status: 'fully-booked',
         featured: true,
         images: [
-          'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1544025162-d76694265947?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1493225457124-a3eb161ffa5f'),
+          buildUnsplashUrl('1578662996442-48f60103fc96'),
+          buildUnsplashUrl('1544025162-d76694265947')
         ],
         photos: [
-          { id: 'photo-cv-1', eventId: 'cape-verde-morna-night-2025', url: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=400&fit=crop&auto=format', caption: 'Morna performance 2024', uploadedBy: 'Cape Verdean Association', uploadedAt: '2024-07-20T22:00:00Z', featured: true }
+          { id: 'photo-cv-1', eventId: 'cape-verde-morna-night-2025', url: buildUnsplashUrl('1493225457124-a3eb161ffa5f'), caption: 'Morna performance 2024', uploadedBy: 'Cape Verdean Association', uploadedAt: '2024-07-20T22:00:00Z', featured: true }
         ],
         attendees: [
           { id: 'att-cv-1', userId: 'user-cv-1', eventId: 'cape-verde-morna-night-2025', name: 'Maria Évora', email: 'maria.evora@example.com', membershipTier: 'core', joinedAt: '2025-06-20T10:00:00Z', status: 'confirmed' },
@@ -1677,8 +1678,8 @@ export class EventService {
         status: 'fully-booked',
         featured: true,
         images: [
-          'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1510812431401-41d2bd2722f3'),
+          buildUnsplashUrl('1544551763-46a013bb70d5')
         ],
         photos: [],
         attendees: [],
@@ -1735,8 +1736,8 @@ export class EventService {
         status: 'fully-booked',
         featured: true,
         images: [
-          'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1571019613454-1cb2f99b2d8b'),
+          buildUnsplashUrl('1493225457124-a3eb161ffa5f')
         ],
         photos: [],
         attendees: [],
@@ -1794,8 +1795,8 @@ export class EventService {
         status: 'fully-booked',
         featured: true,
         images: [
-          'https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1547036967-23d11aacaee0'),
+          buildUnsplashUrl('1504609773096-104ff2c73ba4')
         ],
         photos: [],
         attendees: [],
@@ -1853,8 +1854,8 @@ export class EventService {
         status: 'fully-booked',
         featured: false,
         images: [
-          'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1607770803261-e05b13b19505?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1555939594-58d7cb561ad1'),
+          buildUnsplashUrl('1607770803261-e05b13b19505')
         ],
         photos: [],
         attendees: [],
@@ -1912,8 +1913,8 @@ export class EventService {
         status: 'fully-booked',
         featured: false,
         images: [
-          'https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1510152346280-8d0c8bc11d1a?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1547036967-23d11aacaee0'),
+          buildUnsplashUrl('1510152346280-8d0c8bc11d1a')
         ],
         photos: [],
         attendees: [],
@@ -1971,8 +1972,8 @@ export class EventService {
         status: 'fully-booked',
         featured: false,
         images: [
-          'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&auto=format',
-          'https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600&h=400&fit=crop&auto=format'
+          buildUnsplashUrl('1493225457124-a3eb161ffa5f'),
+          buildUnsplashUrl('1516280440614-37939bbacd81')
         ],
         photos: [],
         attendees: [],

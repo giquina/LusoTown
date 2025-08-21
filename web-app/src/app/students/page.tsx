@@ -1,5 +1,6 @@
 'use client'
 
+import { buildCloudinaryUrl, UNIVERSITY_URLS } from '@/config';
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Footer from '@/components/Footer'
@@ -126,7 +127,7 @@ const UNIVERSITIES: University[] = [
       'Career mentorship with Portuguese professionals',
       'Exclusive networking events with Portuguese Alumni'
     ],
-    website: 'https://www.ucl.ac.uk',
+    website: UNIVERSITY_URLS.partner,
     contact: {
       name: 'Dr. Maria Fernandes',
       title: 'Portuguese Studies Coordinator & LusoTown Liaison',
@@ -158,7 +159,7 @@ const UNIVERSITIES: University[] = [
       'Study abroad support for Portugal/Brazil',
       'Career services with Portuguese connections'
     ],
-    website: 'https://www.kcl.ac.uk',
+    website: UNIVERSITY_URLS.partner,
     contact: {
       name: 'Prof. João Silva',
       title: 'Head of Portuguese Department',
@@ -190,7 +191,7 @@ const UNIVERSITIES: University[] = [
       'Research collaboration opportunities',
       'Alumni network in Portuguese-speaking countries'
     ],
-    website: 'https://www.ox.ac.uk',
+    website: UNIVERSITY_URLS.partner,
     contact: {
       name: 'Dr. Ana Rebelo',
       title: 'Lecturer in Portuguese Literature',
@@ -222,7 +223,7 @@ const UNIVERSITIES: University[] = [
       'Research funding for Portuguese studies',
       'International exchange program support'
     ],
-    website: 'https://www.cam.ac.uk',
+    website: UNIVERSITY_URLS.partner,
     contact: {
       name: 'Dr. Carlos Mendes',
       title: 'Director of Portuguese Studies',
@@ -254,7 +255,7 @@ const UNIVERSITIES: University[] = [
       'Portuguese economist speaker series',
       'Brazil-UK business connections'
     ],
-    website: 'https://www.lse.ac.uk',
+    website: UNIVERSITY_URLS.partner,
     contact: {
       name: 'Dr. Ricardo Costa',
       title: 'Latin American Studies Programme Director',
@@ -286,7 +287,7 @@ const UNIVERSITIES: University[] = [
       'Portuguese startup ecosystem connections',
       'Research collaboration with Portuguese institutions'
     ],
-    website: 'https://www.imperial.ac.uk',
+    website: UNIVERSITY_URLS.partner,
     contact: {
       name: 'Dr. Miguel Santos',
       title: 'International Student Support Coordinator',
@@ -318,7 +319,7 @@ const UNIVERSITIES: University[] = [
       'Portuguese cultural event organization support',
       'Mentorship with Portuguese alumni network'
     ],
-    website: 'https://www.manchester.ac.uk',
+    website: UNIVERSITY_URLS.partner,
     contact: {
       name: 'Dr. Luisa Rodrigues',
       title: 'Portuguese Studies Programme Leader',
@@ -350,7 +351,7 @@ const UNIVERSITIES: University[] = [
       'Research funding for Portuguese studies',
       'Virtual connection to London Portuguese community'
     ],
-    website: 'https://www.ed.ac.uk',
+    website: UNIVERSITY_URLS.partner,
     contact: {
       name: 'Dr. Fernando Alves',
       title: 'Senior Lecturer in Portuguese Studies',
@@ -616,7 +617,7 @@ export default function StudentsPage() {
       <div className="pt-16">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
-          <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535201/university-students-london_q8w9xr.jpg')] bg-cover bg-center opacity-10"></div>
+          <div className="absolute inset-0 bg-[url(buildCloudinaryUrl('image-id'))] bg-cover bg-center opacity-10"></div>
           <div className="absolute inset-0 bg-gradient-to-br from-primary-900/10 via-transparent to-secondary-900/10"></div>
           <div className="relative container-width py-16 lg:py-24">
             <div className="text-center max-w-4xl mx-auto">

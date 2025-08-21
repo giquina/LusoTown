@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
@@ -8,7 +9,7 @@ export default function ChauffeurRedirectPage() {
   
   useEffect(() => {
     // Redirect to the new transport page
-    router.replace('/transport')
+    router.replace(ROUTES.transport)
   }, [router])
 
   return (

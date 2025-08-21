@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
@@ -75,7 +76,7 @@ export default function GroupsShowcase() {
           created_at: new Date().toISOString(),
           updated_at: new Date().toISOString(),
           created_by: 'mock-user-id',
-          cover_image_url: '/events/networking.jpg',
+          cover_image_url: buildRoute(ROUTES.events, { id: 'event-id' }),
           category_info: {
             id: 'professional',
             name: 'Professional',
@@ -97,7 +98,7 @@ export default function GroupsShowcase() {
           created_at: new Date().toISOString(),
           updated_at: new Date().toISOString(),
           created_by: 'mock-user-id',
-          cover_image_url: '/events/jazz-networking.jpg',
+          cover_image_url: buildRoute(ROUTES.events, { id: 'event-id' }),
           category_info: {
             id: 'cultural',
             name: 'Cultural',
@@ -119,7 +120,7 @@ export default function GroupsShowcase() {
           created_at: new Date().toISOString(),
           updated_at: new Date().toISOString(),
           created_by: 'mock-user-id',
-          cover_image_url: '/events/book-club.jpg',
+          cover_image_url: buildRoute(ROUTES.events, { id: 'event-id' }),
           category_info: {
             id: 'family',
             name: 'Family',

@@ -1,5 +1,6 @@
 'use client';
 
+import { ROUTES } from '@/config';
 import { CalendarIcon, PlayCircleIcon } from '@heroicons/react/24/outline';
 import { useLanguage } from '@/context/LanguageContext';
 import Image from 'next/image';
@@ -27,7 +28,7 @@ export default function FeaturedStream() {
             </a>
           </div>
           <div className="relative h-64 w-full rounded-lg overflow-hidden shadow-2xl">
-            <Image src="/events/fado.jpg" alt="Fado Night" layout="fill" objectFit="cover" />
+            <Image src=buildRoute(ROUTES.events, { id: 'event-id' }) alt="Fado Night" layout="fill" objectFit="cover" />
           </div>
         </div>
       </div>

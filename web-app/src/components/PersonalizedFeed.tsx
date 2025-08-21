@@ -1,5 +1,6 @@
 'use client'
 
+import { buildUnsplashUrl } from '@/config';
 import { useState, useEffect, useMemo } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
@@ -77,7 +78,7 @@ const generatePersonalizedPosts = (followedEntities: FollowableEntity[]): FeedPo
       id: 'post-1',
       authorVerified: true,
       content: 'Acabei de terminar a organização da próxima noite de Fado! Vai ser uma experiência inesquecível com músicos autênticos vindos diretamente de Lisboa. 🎶 #Fado #CulturaPortuguesa',
-      imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&auto=format',
+      imageUrl: buildUnsplashUrl('1493225457124-a3eb161ffa5f'),
       createdAt: '2 hours ago',
       likes: 34,
       comments: 8,
@@ -119,7 +120,7 @@ const generatePersonalizedPosts = (followedEntities: FollowableEntity[]): FeedPo
       id: 'post-4',
       authorVerified: true,
       content: 'Great turnout at our Portuguese business networking event! So proud to see our community supporting each other. Próximo encontro será em Manchester! 💼',
-      imageUrl: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop&auto=format',
+      imageUrl: buildUnsplashUrl('1600880292203-757bb62b4baf'),
       createdAt: '8 hours ago',
       likes: 52,
       comments: 18,
@@ -290,7 +291,7 @@ export default function PersonalizedFeed({ className = '' }: PersonalizedFeedPro
       id: `post-${Date.now()}`,
       authorId: 'currentUser',
       authorName: isPortuguese ? 'Tu' : 'You',
-      authorAvatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop&crop=face&auto=format',
+      authorAvatar: buildUnsplashUrl('1535713875002-d1d0cf377fde'),
       authorType: 'person',
       content,
       createdAt: isPortuguese ? 'Agora mesmo' : 'Just now',

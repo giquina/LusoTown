@@ -1,5 +1,6 @@
 "use client";
 
+import { ROUTES } from '@/config';
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -324,7 +325,7 @@ const ImprovedEventCard = ({
             <div className="mt-auto">
               <div className={cn("flex", Spacing.sm)}>
                 <a
-                  href={`/events/${event.id}`}
+                  href={buildRoute(ROUTES.events, { id: 'event-id' })}
                   className={cn(
                     getButtonStyles('primary', 'medium'),
                     "flex-1 text-center"

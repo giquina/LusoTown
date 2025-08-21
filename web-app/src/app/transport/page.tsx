@@ -1,5 +1,6 @@
 "use client";
 
+import { buildCloudinaryUrl } from '@/config';
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
@@ -33,7 +34,7 @@ const serviceTiers = [
     price: 400,
     originalPrice: 450,
     image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/premium-security-service_dlqxkx.jpg",
+      buildCloudinaryUrl('image-id'),
     imageAlt:
       "Professional security service with professional vehicle at London landmark",
     imageAltPortuguese:
@@ -80,7 +81,7 @@ const serviceTiers = [
     price: 800,
     originalPrice: 900,
     image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535201/vip-london-bridge_hml2nr.jpg",
+      buildCloudinaryUrl('image-id'),
     imageAlt:
       "VIP London experience with Tower Bridge and professional service",
     imageAltPortuguese:
@@ -129,7 +130,7 @@ const serviceTiers = [
     price: 65,
     originalPrice: 75,
     image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535202/elite-protection-service_dqmxvr.jpg",
+      buildCloudinaryUrl('image-id'),
     imageAlt: "Elite protection service with professional vehicle in London",
     imageAltPortuguese:
       "Serviço de proteção elite com veículo profissional em Londres",
@@ -184,7 +185,7 @@ const londonTourismExperiences = [
     originalPrice: 350,
     duration: "4 hours",
     image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535203/big-ben-westminster_zlkd5m.jpg",
+      buildCloudinaryUrl('image-id'),
     imageAlt: "Big Ben and Westminster Bridge - Classic London landmarks",
     imageAltPortuguese:
       "Big Ben e Westminster Bridge - Marcos clássicos de Londres",
@@ -230,7 +231,7 @@ const londonTourismExperiences = [
     originalPrice: 420,
     duration: "6 hours",
     image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535204/buckingham-palace_xnr8wp.jpg",
+      buildCloudinaryUrl('image-id'),
     imageAlt: "Buckingham Palace with royal guards - Royal London experience",
     imageAltPortuguese:
       "Palácio de Buckingham com guardas reais - Experiência real de Londres",
@@ -276,7 +277,7 @@ const londonTourismExperiences = [
     originalPrice: 495,
     duration: "6 hours",
     image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535205/the-shard-london_kqe9xr.jpg",
+      buildCloudinaryUrl('image-id'),
     imageAlt: "The Shard and modern London skyline with Thames river",
     imageAltPortuguese: "The Shard e skyline moderno de Londres com rio Tâmisa",
     membershipDiscounts: {
@@ -321,7 +322,7 @@ const londonTourismExperiences = [
     originalPrice: 580,
     duration: "8 hours",
     image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535206/covent-garden_dxh3qm.jpg",
+      buildCloudinaryUrl('image-id'),
     imageAlt: "Covent Garden market and shopping area in London",
     imageAltPortuguese: "Mercado de Covent Garden e área de compras em Londres",
     membershipDiscounts: {
@@ -397,7 +398,7 @@ const multiDayPackages = [
     originalPrice: 650,
     duration: "8 hours",
     image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535207/tower-bridge-sunset_kml8pr.jpg",
+      buildCloudinaryUrl('image-id'),
     imageAlt: "Tower Bridge at sunset - Complete London exploration",
     imageAltPortuguese:
       "Tower Bridge ao pôr do sol - Exploração completa de Londres",
@@ -458,7 +459,7 @@ const multiDayPackages = [
     originalPrice: 470,
     duration: "5 hours",
     image:
-      "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535209/london-attractions-collage_dxh4mn.jpg",
+      buildCloudinaryUrl('image-id'),
     imageAlt: "London family attractions - Adventure and cultural activities",
     imageAltPortuguese:
       "Atrações familiares de Londres - Aventura e atividades culturais",
@@ -661,7 +662,7 @@ export default function TransportPage() {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-secondary-50 via-white to-accent-50 pt-20">
-        <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535205/the-shard-london_kqe9xr.jpg')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-[url(buildCloudinaryUrl('image-id'))] bg-cover bg-center opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-secondary-900/10 via-transparent to-accent-900/10"></div>
         <div className="relative container-width py-16 lg:py-24">
           <div className="text-center max-w-4xl mx-auto">
@@ -1361,56 +1362,56 @@ export default function TransportPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {[
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535203/big-ben-westminster_zlkd5m.jpg",
+                src: buildCloudinaryUrl('image-id'),
                 alt: "Big Ben and Westminster",
                 altPt: "Big Ben e Westminster",
                 title: "Westminster & Big Ben",
                 titlePt: "Westminster e Big Ben",
               },
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535204/buckingham-palace_xnr8wp.jpg",
+                src: buildCloudinaryUrl('image-id'),
                 alt: "Buckingham Palace",
                 altPt: "Palácio de Buckingham",
                 title: "Buckingham Palace",
                 titlePt: "Palácio de Buckingham",
               },
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535201/vip-london-bridge_hml2nr.jpg",
+                src: buildCloudinaryUrl('image-id'),
                 alt: "Tower Bridge",
                 altPt: "Tower Bridge",
                 title: "Tower Bridge",
                 titlePt: "Tower Bridge",
               },
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535205/the-shard-london_kqe9xr.jpg",
+                src: buildCloudinaryUrl('image-id'),
                 alt: "The Shard",
                 altPt: "The Shard",
                 title: "The Shard",
                 titlePt: "The Shard",
               },
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535206/covent-garden_dxh3qm.jpg",
+                src: buildCloudinaryUrl('image-id'),
                 alt: "Covent Garden",
                 altPt: "Covent Garden",
                 title: "Covent Garden",
                 titlePt: "Covent Garden",
               },
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535204/buckingham-palace_xnr8wp.jpg",
+                src: buildCloudinaryUrl('image-id'),
                 alt: "London Eye",
                 altPt: "London Eye",
                 title: "London Eye",
                 titlePt: "London Eye",
               },
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535207/tower-of-london_kmlr5p.jpg",
+                src: buildCloudinaryUrl('image-id'),
                 alt: "Tower of London",
                 altPt: "Torre de Londres",
                 title: "Tower of London",
                 titlePt: "Torre de Londres",
               },
               {
-                src: "https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535208/st-pauls-cathedral_r9nxhw.jpg",
+                src: buildCloudinaryUrl('image-id'),
                 alt: "St Paul's Cathedral",
                 altPt: "Catedral de St. Paul",
                 title: "St Paul's Cathedral",

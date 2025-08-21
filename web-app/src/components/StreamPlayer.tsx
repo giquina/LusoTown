@@ -1,5 +1,6 @@
 "use client";
 
+import { ROUTES } from '@/config';
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -171,7 +172,7 @@ export default function StreamPlayer({
           {/* Stream Thumbnail */}
           <div className="absolute inset-0">
             <Image
-              src={stream.thumbnail || "/events/networking.jpg"}
+              src={stream.thumbnail || buildRoute(ROUTES.events, { id: 'event-id' })}
               alt={stream.title}
               fill
               priority={false}

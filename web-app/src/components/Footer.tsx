@@ -1,5 +1,6 @@
 "use client";
 
+import { SOCIAL_URLS, ROUTES } from '@/config';
 import {
   HeartIcon,
   MapPinIcon,
@@ -24,7 +25,7 @@ const getFooterLinks = (t: any) => ({
     { name: "Premium Services", href: "/services" },
     { name: "Executive Transport", href: "/services#executive-transport" },
     { name: "Close Protection", href: "/services#close-protection" },
-    { name: "Transport & SIA", href: "/transport" },
+    { name: "Transport & SIA", href: ROUTES.transport },
     { name: "Business Networking", href: "/business-networking" },
   ],
   support: [
@@ -34,13 +35,13 @@ const getFooterLinks = (t: any) => ({
     { name: "Safety & Verification", href: "/safety" },
   ],
   company: [
-    { name: "About LusoTown", href: "/about" },
-    { name: "Pricing", href: "/pricing" },
+    { name: "About LusoTown", href: ROUTES.about },
+    { name: "Pricing", href: ROUTES.pricing },
     { name: "Success Stories", href: "/success-stories" },
     { name: "Community Chat", href: "/forums" },
     { name: "Case Studies", href: "/case-studies" },
     { name: "Careers", href: "/careers" },
-    { name: "Streams", href: "/live" },
+    { name: "Streams", href: ROUTES.live },
     { name: "Partnerships", href: "/partnerships" },
     { name: "Corporate Partnerships", href: "/corporate-partnerships" },
     {
@@ -293,7 +294,7 @@ export default function Footer() {
                 </a>
 
                 <a
-                  href="https://twitter.com/LusoTownUK"
+                  href=SOCIAL_URLS.twitter.profile
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-primary-500 transition-colors duration-200 p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"

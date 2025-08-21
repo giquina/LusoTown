@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import { useState, useEffect, useCallback, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
@@ -74,8 +75,8 @@ export default function ProgressiveUserJourney({
     const hasCompletedProfile = typeof window !== 'undefined' ? localStorage.getItem('lusotown-profile-completed') : null
     if (hasCompletedProfile) progress += 40
     const visitedPages = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('lusotown-visited-pages') || '[]') : []
-    if (visitedPages.includes('/events')) progress += 30
-    if (visitedPages.includes('/transport')) progress += 30
+    if (visitedPages.includes(ROUTES.events)) progress += 30
+    if (visitedPages.includes(ROUTES.transport)) progress += 30
     return Math.min(progress, 100)
   }, [])
 
@@ -154,7 +155,7 @@ export default function ProgressiveUserJourney({
           titlePortuguese: 'Explorar Serviços de Transporte',
           description: 'Check out our Portuguese-speaking driver and security services',
           descriptionPortuguese: 'Conheça os nossos serviços de motorista e segurança falantes de português',
-          href: '/transport',
+          href: ROUTES.transport,
           type: 'tertiary',
           estimatedTime: '5 minutes',
           estimatedTimePortuguese: '5 minutos',
@@ -203,7 +204,7 @@ export default function ProgressiveUserJourney({
           titlePortuguese: 'Reservar Serviço de Transporte',
           description: 'Experience our Portuguese-speaking transport for events or tours',
           descriptionPortuguese: 'Experimente o nosso transporte falante de português para eventos ou tours',
-          href: '/transport',
+          href: ROUTES.transport,
           type: 'secondary',
           estimatedTime: '15 minutes',
           estimatedTimePortuguese: '15 minutos',

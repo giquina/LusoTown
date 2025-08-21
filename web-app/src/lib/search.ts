@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES, buildCloudinaryUrl } from '@/config';
 import { Event, eventService } from '@/lib/events'
 import { ROUTES } from '@/config/routes'
 
@@ -26,7 +27,7 @@ const mockBusinesses = [
     description: 'Authentic Portuguese pastéis de nata bakery in Borough Market',
     category: 'Food & Drink',
     location: 'Borough Market, London',
-    url: '/business-directory/nata-lisboa',
+    url: ROUTES.businessDirectory,
     image: '/images/businesses/nata-lisboa.jpg',
     rating: 4.8,
     tags: ['pastéis de nata', 'portuguese bakery', 'borough market', 'desserts', 'coffee']
@@ -37,7 +38,7 @@ const mockBusinesses = [
     description: 'Traditional Portuguese restaurant with live Fado performances',
     category: 'Restaurant',
     location: 'Vauxhall, London',
-    url: '/business-directory/casa-do-fado',
+    url: ROUTES.businessDirectory,
     image: '/images/businesses/casa-do-fado.jpg',
     rating: 4.6,
     tags: ['fado', 'portuguese restaurant', 'live music', 'traditional', 'dinner']
@@ -48,7 +49,7 @@ const mockBusinesses = [
     description: 'Professional Portuguese language courses for all levels',
     category: 'Education',
     location: 'Camden, London',
-    url: '/business-directory/portuguese-language-academy',
+    url: ROUTES.businessDirectory,
     image: '/images/businesses/language-academy.jpg',
     rating: 4.9,
     tags: ['portuguese lessons', 'language learning', 'education', 'classes', 'tutoring']
@@ -59,7 +60,7 @@ const mockBusinesses = [
     description: 'Specialized Portuguese grocery store and delicatessen',
     category: 'Grocery',
     location: 'Stockwell, London',
-    url: '/business-directory/lusitania-market',
+    url: ROUTES.businessDirectory,
     image: '/images/businesses/lusitania-market.jpg',
     rating: 4.7,
     tags: ['portuguese food', 'grocery', 'delicatessen', 'imported goods', 'stockwell']
@@ -112,7 +113,7 @@ const premiumServices = [
     category: 'Transportation',
     location: 'London & UK',
     url: '/services#executive-transport',
-    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/executive-transport-london_dlqxkx.jpg',
+    image: buildCloudinaryUrl('image-id'),
     price: 35,
     rating: 4.8,
     tags: ['executive transport', 'professional driver', 'premium vehicles', 'airport transfer', 'business transport']
@@ -124,7 +125,7 @@ const premiumServices = [
     category: 'Security',
     location: 'London & UK',
     url: '/services#close-protection',
-    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/close-protection-london_dlqxkx.jpg',
+    image: buildCloudinaryUrl('image-id'),
     price: 800,
     rating: 5.0,
     tags: ['close protection', 'security', 'sia licensed', 'vip escort', 'personal protection']
@@ -135,8 +136,8 @@ const premiumServices = [
     description: 'Comprehensive transport services with full SIA compliance and luxury fleet',
     category: 'Premium Transport',
     location: 'London & UK',
-    url: '/transport',
-    image: 'https://res.cloudinary.com/dqhbeqttp/image/upload/v1734535200/premium-security-service_dlqxkx.jpg',
+    url: ROUTES.transport,
+    image: buildCloudinaryUrl('image-id'),
     price: 75,
     rating: 4.9,
     tags: ['transport', 'sia compliance', 'luxury fleet', 'security transport', 'bentley', 'mercedes']
@@ -157,7 +158,7 @@ const mockPages = [
     id: 'business-directory',
     title: 'Portuguese Business Directory',
     description: 'Find Portuguese-owned businesses and services in London',
-    url: '/business-directory',
+    url: ROUTES.businessDirectory,
     category: 'Directory',
     tags: ['businesses', 'services', 'directory', 'portuguese owned', 'support local']
   },
@@ -181,7 +182,7 @@ const mockPages = [
     id: 'pricing',
     title: 'Membership Pricing',
     description: 'Explore our membership plans and find the perfect fit for your Portuguese social calendar',
-    url: '/pricing',
+    url: ROUTES.pricing,
     category: 'Membership',
     tags: ['pricing', 'membership', 'plans', 'subscription', 'premium']
   },
@@ -270,7 +271,7 @@ export async function searchEvents(query: string): Promise<SearchResult[]> {
           type: 'event',
           title: event.title,
           description: event.description,
-          url: `/events/${event.id}`,
+          url: buildRoute(ROUTES.events, { id: 'event-id' }),
           location: event.location,
           date: event.date,
           category: event.category,

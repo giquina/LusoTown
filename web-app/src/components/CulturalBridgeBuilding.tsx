@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
@@ -840,7 +841,7 @@ export default function CulturalBridgeBuilding() {
                 {language === 'pt' ? 'Participar Agora' : 'Get Involved'}
               </a>
               <a
-                href="/events"
+                href=ROUTES.events
                 className="border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white hover:text-primary-600 transition-colors"
               >
                 {language === 'pt' ? 'Ver Eventos' : 'View Events'}

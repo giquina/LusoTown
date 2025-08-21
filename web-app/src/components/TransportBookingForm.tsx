@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
@@ -163,7 +164,7 @@ export default function TransportBookingForm({
           : `Private transport service for ${hours} hours`,
         price: totalPrice,
         currency: 'GBP',
-        imageUrl: '/transport-service.jpg',
+        imageUrl: ROUTES.transport,
         quantity: 1,
         transportServiceId: selectedService?.id,
         pickupDateTime: formData.dateTime,

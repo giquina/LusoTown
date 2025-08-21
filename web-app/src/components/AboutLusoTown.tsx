@@ -26,48 +26,48 @@ export default function AboutLusoTown() {
   const features = [
     {
       icon: Calendar,
-      title: 'Discover & Join Events',
-      description: 'Find Portuguese cultural events at authentic London venues - from Fado nights to food festivals at real Portuguese locations.',
+      title: t('components.about_luso_town.discover_join_events_cta'),
+      description: t('components.about_luso_town.find_portuguese_cultural_event_description'),
       gradient: 'from-action-500 to-action-600',
       lightBg: 'from-action-50 to-action-100/50',
       shadowColor: 'shadow-action-500/20'
     },
     {
       icon: Smartphone,
-      title: 'Stay Updated on LusoTown Feed',
-      description: 'See the latest events, posts, and community updates in real time.',
+      title: t('components.about_luso_town.stay_updated_on_lusotown_feed_text'),
+      description: t('components.about_luso_town.see_the_latest_events_posts_an_text'),
       gradient: 'from-primary-500 to-primary-600',
       lightBg: 'from-primary-50 to-primary-100/50',
       shadowColor: 'shadow-primary-500/20'
     },
     {
       icon: Edit3,
-      title: 'Post & Share with the Community',
-      description: 'Add your own updates, photos, and tips, and tag events or businesses.',
+      title: t('components.about_luso_town.post_share_with_the_community_text'),
+      description: t('components.about_luso_town.add_your_own_updates_photos_an_text'),
       gradient: 'from-secondary-500 to-secondary-600',
       lightBg: 'from-secondary-50 to-secondary-100/50',
       shadowColor: 'shadow-secondary-500/20'
     },
     {
       icon: Bookmark,
-      title: 'Save Your Favourites',
-      description: 'Bookmark events, businesses, and posts you love so you never miss out.',
+      title: t('components.about_luso_town.save_your_favourites_text'),
+      description: t('components.about_luso_town.bookmark_events_businesses_and_text'),
       gradient: 'from-premium-500 to-premium-600',
       lightBg: 'from-premium-50 to-premium-100/50',
       shadowColor: 'shadow-premium-500/20'
     },
     {
       icon: Store,
-      title: 'Support Portuguese Businesses',
-      description: 'Explore our directory and discover places run by or for Portuguese speakers.',
+      title: t('components.about_luso_town.support_portuguese_businesses_text'),
+      description: t('components.about_luso_town.explore_our_directory_and_disc_text'),
       gradient: 'from-accent-500 to-coral-500',
       lightBg: 'from-accent-50 to-coral-100/50',
       shadowColor: 'shadow-accent-500/20'
     },
     {
       icon: Users,
-      title: 'Connect with Portuguese Speakers',
-      description: 'Find Your Match among Portuguese speakers through real-life meetups at authentic London venues, share experiences, and keep your language and traditions alive.',
+      title: t('components.about_luso_town.connect_with_portuguese_speake_text'),
+      description: t('components.about_luso_town.find_your_match_among_portugue_description'),
       gradient: 'from-coral-500 to-action-500',
       lightBg: 'from-coral-50 to-action-100/50',
       shadowColor: 'shadow-coral-500/20'
@@ -97,14 +97,10 @@ export default function AboutLusoTown() {
             <div className="w-2 h-2 bg-secondary-400 rounded-full animate-pulse"></div>
           </div>
           
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight tracking-tight">
-            About <span className="bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 bg-clip-text text-transparent">LusoTown</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight tracking-tight">{t('components.about_luso_town.about_description')}<span className="bg-gradient-to-r from-secondary-600 via-primary-600 to-accent-600 bg-clip-text text-transparent">{t('components.about_luso_town.lusotown_label')}</span>
           </h2>
           
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto font-medium">
-            LusoTown is where Portuguese hearts find their London network. Whether you're homesick, building your career while honoring your heritage, 
-            or simply miss the warmth of Portuguese conversation, this is your professional home. Every person here understands your journey and opens their networks to support you.
-          </p>
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-700 leading-relaxed max-w-4xl mx-auto font-medium">{t('components.about_luso_town.lusotown_is_where_portuguese_h_description')}</p>
         </div>
 
         {/* Main Features Section */}
@@ -112,7 +108,7 @@ export default function AboutLusoTown() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-3 bg-white/70 backdrop-blur-sm border border-gray-200 rounded-2xl px-6 py-3 shadow-lg mb-6">
               <Heart className="h-5 w-5 text-action-500" />
-              <span className="text-lg font-bold text-gray-800">When you join LusoTown, you can:</span>
+              <span className="text-lg font-bold text-gray-800">{t('components.about_luso_town.when_you_join_lusotown_you_can_text')}</span>
             </div>
           </div>
 
@@ -158,7 +154,7 @@ export default function AboutLusoTown() {
         <div className={`text-center mt-12 transition-all duration-1000 delay-900 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}>
           <div className="inline-flex items-center gap-3 text-accent-600 hover:text-accent-700 transition-colors duration-300">
             <Sparkles className="h-6 w-6 animate-pulse" />
-            <span className="text-lg font-bold">Ready to book experiences with Portuguese speakers across London?</span>
+            <span className="text-lg font-bold">{t('components.about_luso_town.ready_to_book_experiences_with_question')}</span>
             <ArrowRight className="h-6 w-6 transform group-hover:translate-x-1 transition-transform duration-200" />
           </div>
         </div>

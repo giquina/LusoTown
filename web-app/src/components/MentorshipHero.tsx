@@ -1,5 +1,6 @@
 'use client'
 
+import { buildUnsplashUrl } from '@/config';
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/context/LanguageContext'
 import { 
@@ -28,7 +29,7 @@ export default function MentorshipHero() {
         <div className="absolute bottom-40 right-10 w-12 h-12 border-2 border-accent-200/30 rotate-12 opacity-25" />
       </div>
 
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=1080&fit=crop&auto=format')] bg-cover bg-center opacity-10"></div>
+      <div className="absolute inset-0 bg-[url(buildUnsplashUrl('1522071820081-009f0129c71c'))] bg-cover bg-center opacity-10"></div>
       <div className="absolute inset-0 bg-gradient-to-br from-primary-900/10 via-transparent to-secondary-900/10"></div>
       <div className="relative container-width py-16 lg:py-24">
         <div className="text-center max-w-4xl mx-auto">
