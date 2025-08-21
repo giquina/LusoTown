@@ -6,9 +6,7 @@ import { SUBSCRIPTION_PLANS, getPriceForStripe } from '@/config/pricing'
 const getStripe = () => {
   const key = process.env.STRIPE_SECRET_KEY as string
   return new Stripe(key, {
-  // Use the SDK's default pinned version to avoid type mismatches
-  // See types in node-stripe SDK for allowed literal values
-  apiVersion: undefined,
+    apiVersion: '2024-06-20'
   })
 }
 
