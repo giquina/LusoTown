@@ -1,5 +1,6 @@
 "use client";
 
+import { ROUTES } from '@/config';
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
@@ -44,7 +45,7 @@ export default function EnhancedHowItWorks() {
         ? "Conecte-se com portugueses que partilham a sua saudade, lealdades futebolísticas e património cultural"
         : "Connect with Portuguese speakers who share your saudade, football loyalties, and cultural heritage",
       cta: isPortuguese ? "Começar a Procurar" : "Start Matching",
-      link: "/matches",
+      link: ROUTES.matches,
       icon: HeartIcon,
       solidIcon: HeartSolidIcon,
       gradient: "from-action-500 via-secondary-500 to-action-500",
@@ -99,7 +100,7 @@ export default function EnhancedHowItWorks() {
         ? "Desde noites íntimas de Fado em Stockwell até networking empresarial português na City"
         : "From intimate Fado nights in Stockwell to Portuguese business networking in the City",
       cta: isPortuguese ? "Descobrir Eventos" : "Discover Events",
-      link: "/events",
+      link: ROUTES.events,
       icon: CalendarDaysIcon,
       solidIcon: CalendarDaysIcon,
       gradient: "from-secondary-500 via-accent-500 to-secondary-500",
@@ -180,7 +181,7 @@ export default function EnhancedHowItWorks() {
         ? "Serviços de transporte profissional com motoristas que falam português para conforto cultural"
         : "Professional transport services with Portuguese-speaking drivers for cultural comfort",
       cta: isPortuguese ? "Reservar Transporte" : "Book Transport",
-      link: "/transport",
+      link: ROUTES.transport,
       icon: TruckIcon,
       solidIcon: TruckIcon,
       gradient: "from-coral-500 via-action-500 to-coral-500",

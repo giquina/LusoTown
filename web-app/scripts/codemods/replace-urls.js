@@ -94,8 +94,8 @@ const URL_PATTERNS = [
     configImport: 'ROUTES',
     replacement: (match, context) => {
       const url = match.slice(1, -1); // Remove quotes
-      if (url === '/events') return 'ROUTES.events';
-      if (url.includes('/events/')) return 'buildRoute(ROUTES.events, { id: \'event-id\' })';
+      if (url === ROUTES.events) return 'ROUTES.events';
+      if (url.includes(buildRoute(ROUTES.events, { id: 'event-id' }))) return 'buildRoute(ROUTES.events, { id: \'event-id\' })';
       return 'ROUTES.events';
     }
   },

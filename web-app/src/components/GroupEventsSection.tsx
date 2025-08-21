@@ -1,5 +1,6 @@
 "use client";
 
+import { ROUTES, buildUnsplashUrl } from '@/config';
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ROUTES } from '@/config/routes'
@@ -31,7 +32,7 @@ const sampleGroupEvents: GroupEventData[] = [
     currency: "£",
     category: "Women 30+",
     image:
-      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80",
+      buildUnsplashUrl('1513635269975-59663e0ac1ad'),
     spotsLeft: 0,
     maxAttendees: 15,
     hostName: "Ana Rodrigues",
@@ -56,12 +57,12 @@ const sampleGroupEvents: GroupEventData[] = [
     price: 45,
     currency: "£",
     category: "Women 30+",
-    image: "/events/jazz-networking.jpg",
+    image: buildRoute(ROUTES.events, { id: 'event-id' }),
     spotsLeft: 0,
     maxAttendees: 12,
     hostName: "Carla Santos",
     hostImage:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80",
+      buildUnsplashUrl('1438761681033-6461ffad8d80'),
     hostVerified: true,
     rating: 4.8,
     reviewCount: 34,
@@ -82,12 +83,12 @@ const sampleGroupEvents: GroupEventData[] = [
     price: 28,
     currency: "£",
     category: "Women 40+",
-    image: "/events/art-tour.jpg",
+    image: buildRoute(ROUTES.events, { id: 'event-id' }),
     spotsLeft: 0,
     maxAttendees: 18,
     hostName: "Isabel Fernandes",
     hostImage:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+      buildUnsplashUrl('1507003211169-0a1dd7228f2d'),
     hostVerified: true,
     rating: 4.9,
     reviewCount: 63,
@@ -108,12 +109,12 @@ const sampleGroupEvents: GroupEventData[] = [
     currency: "£",
     category: "All Welcome",
     image:
-      "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?auto=format&fit=crop&w=800&q=80",
+      buildUnsplashUrl('1551269901-5c5e14c25df7'),
     spotsLeft: 0,
     maxAttendees: 25,
     hostName: "Miguel Silva",
     hostImage:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80",
+      buildUnsplashUrl('1472099645785-5658abf4ff4e'),
     hostVerified: true,
     rating: 4.7,
     reviewCount: 89,
@@ -135,12 +136,12 @@ const sampleGroupEvents: GroupEventData[] = [
     currency: "£",
     category: "Women 30+",
     image:
-      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
+      buildUnsplashUrl('1555939594-58d7cb561ad1'),
     spotsLeft: 0,
     maxAttendees: 14,
     hostName: "Beatriz Costa",
     hostImage:
-      "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?auto=format&fit=crop&w=150&q=80",
+      buildUnsplashUrl('1544725176-7c40e5a71c5e'),
     hostVerified: true,
     rating: 4.8,
     reviewCount: 52,
@@ -161,12 +162,12 @@ const sampleGroupEvents: GroupEventData[] = [
     currency: "£",
     category: "All Welcome",
     image:
-      "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&fit=crop&w=800&q=80",
+      buildUnsplashUrl('1564349683136-77e08dba1ef7'),
     spotsLeft: 0,
     maxAttendees: 20,
     hostName: "João Pereira",
     hostImage:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+      buildUnsplashUrl('1507003211169-0a1dd7228f2d'),
     hostVerified: true,
     rating: 4.6,
     reviewCount: 71,
@@ -420,7 +421,7 @@ export default function GroupEventsSection({
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
-                    href="/events/groups"
+                    href=buildRoute(ROUTES.events, { id: 'event-id' })
                     className="group relative text-lg font-bold px-8 py-4 bg-gradient-to-r from-coral-500 via-secondary-500 to-premium-500 text-white rounded-2xl shadow-xl hover:shadow-2xl transform transition-all duration-300 hover:-translate-y-1 hover:scale-105 overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-r from-coral-600 via-secondary-600 to-premium-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

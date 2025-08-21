@@ -1,5 +1,6 @@
 'use client'
 
+import { SOCIAL_URLS, ROUTES } from '@/config';
 import React, { useState, useEffect } from 'react'
 import { authService, User } from '@/lib/auth'
 import { useRouter } from 'next/navigation'
@@ -69,7 +70,7 @@ const DUMMY_EVENTS: Event[] = [
     category: 'Books & Reading',
     attendees: 12,
     maxAttendees: 15,
-    image: '/events/book-club.jpg',
+    image: buildRoute(ROUTES.events, { id: 'event-id' }),
     isFavorite: false,
     membershipRequired: 'core'
   },
@@ -83,7 +84,7 @@ const DUMMY_EVENTS: Event[] = [
     category: 'Wine & Dining',
     attendees: 8,
     maxAttendees: 12,
-    image: '/events/wine-tasting.jpg',
+    image: buildRoute(ROUTES.events, { id: 'event-id' }),
     isFavorite: false,
     membershipRequired: 'premium'
   },
@@ -97,7 +98,7 @@ const DUMMY_EVENTS: Event[] = [
     category: 'Fitness & Wellness',
     attendees: 18,
     maxAttendees: 20,
-    image: '/events/yoga.jpg',
+    image: buildRoute(ROUTES.events, { id: 'event-id' }),
     isFavorite: false,
     membershipRequired: 'free'
   },
@@ -111,7 +112,7 @@ const DUMMY_EVENTS: Event[] = [
     category: 'Arts & Culture',
     attendees: 6,
     maxAttendees: 10,
-    image: '/events/art-tour.jpg',
+    image: buildRoute(ROUTES.events, { id: 'event-id' }),
     isFavorite: false,
     membershipRequired: 'free'
   },
@@ -125,7 +126,7 @@ const DUMMY_EVENTS: Event[] = [
     category: 'Networking',
     attendees: 15,
     maxAttendees: 25,
-    image: '/events/networking.jpg',
+    image: buildRoute(ROUTES.events, { id: 'event-id' }),
     isFavorite: false,
     membershipRequired: 'premium'
   }
@@ -151,7 +152,7 @@ export default function Dashboard() {
   useEffect(() => {
     const currentUser = authService.getCurrentUser()
     if (!currentUser) {
-      router.push('/login')
+      router.push(ROUTES.auth.login)
       return
     }
     
@@ -504,7 +505,7 @@ export default function Dashboard() {
                       {t('dashboard.social.follow_desc')}
                     </p>
                     <a
-                      href="https://twitter.com/lusotown"
+                      href=SOCIAL_URLS.twitter.profile
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full px-4 py-2 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4] text-white rounded-lg hover:shadow-lg transition-all flex items-center justify-center space-x-2"

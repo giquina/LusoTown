@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import React from 'react'
 import { motion } from 'framer-motion'
 import { 
@@ -188,7 +189,7 @@ export default function EventCard({
           <div className="mt-auto">
             {bookingStatus.status === 'available' ? (
               <Link 
-                href={`/events/${event.id}/book`}
+                href={buildRoute(ROUTES.events, { id: 'event-id' })}
                 className="w-full bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 text-white font-semibold py-4 rounded-2xl hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 transition-all duration-300 group-hover:scale-105 block text-center shadow-lg hover:shadow-xl animate-pulse"
               >
                 {statusMessages.buttonText}

@@ -1,3 +1,4 @@
+import { SOCIAL_URLS, UNIVERSITY_URLS } from '@/config';
 'use client'
 
 // Portuguese Embassy and Cultural Center Partnerships
@@ -150,8 +151,8 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     regionsServed: ['London', 'UK', 'Ireland'],
     
     socialMedia: {
-      facebook: 'https://facebook.com/EmbaixadaPortugalLondres',
-      twitter: 'https://twitter.com/PortugalUK',
+      facebook: SOCIAL_URLS.facebook.page,
+      twitter: SOCIAL_URLS.twitter.profile,
       linkedin: 'https://linkedin.com/company/portugal-embassy-uk'
     },
     
@@ -262,9 +263,9 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     regionsServed: ['United Kingdom', 'Ireland', 'Channel Islands'],
     
     socialMedia: {
-      facebook: 'https://facebook.com/InstitutoCamoesLondres',
-      instagram: 'https://instagram.com/camoes_london',
-      twitter: 'https://twitter.com/CamoesLondon',
+      facebook: SOCIAL_URLS.facebook.page,
+      instagram: SOCIAL_URLS.instagram.profile,
+      twitter: SOCIAL_URLS.twitter.profile,
       youtube: 'https://youtube.com/InstitutoCamoesUK'
     },
     
@@ -422,7 +423,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     
     socialMedia: {
       linkedin: 'https://linkedin.com/company/portugal-uk-chamber',
-      twitter: 'https://twitter.com/PortugalUK_Biz'
+      twitter: SOCIAL_URLS.twitter.profile
     },
     
     officialStatus: true,
@@ -520,9 +521,9 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     regionsServed: ['London', 'South England'],
     
     socialMedia: {
-      facebook: 'https://facebook.com/CasaDoBrasilLondon',
-      instagram: 'https://instagram.com/casadobrasillondon',
-      twitter: 'https://twitter.com/CasaBrasilLDN'
+      facebook: SOCIAL_URLS.facebook.page,
+      instagram: SOCIAL_URLS.instagram.profile,
+      twitter: SOCIAL_URLS.twitter.profile
     },
     
     officialStatus: true,
@@ -622,7 +623,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     regionsServed: ['London', 'Greater London'],
     
     socialMedia: {
-      facebook: 'https://facebook.com/MissaoPortuguesaLondres'
+      facebook: SOCIAL_URLS.facebook.page
     },
     
     officialStatus: true,
@@ -735,8 +736,8 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     
     socialMedia: {
       linkedin: 'https://linkedin.com/company/anglo-portuguese-society',
-      twitter: 'https://twitter.com/AngloPortSoc',
-      facebook: 'https://facebook.com/AngloPortugueseSociety'
+      twitter: SOCIAL_URLS.twitter.profile,
+      facebook: SOCIAL_URLS.facebook.page
     },
     
     officialStatus: true,
@@ -858,7 +859,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     
     socialMedia: {
       linkedin: 'https://linkedin.com/company/millennium-bank-uk',
-      twitter: 'https://twitter.com/MillenniumUK'
+      twitter: SOCIAL_URLS.twitter.profile
     },
     
     officialStatus: true,
@@ -965,9 +966,9 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     regionsServed: ['United Kingdom', 'Portugal', 'Portuguese-speaking Africa', 'Brazil'],
     
     socialMedia: {
-      instagram: 'https://instagram.com/tapairportugal',
-      facebook: 'https://facebook.com/TAPAirPortugal',
-      twitter: 'https://twitter.com/tapairportugal',
+      instagram: SOCIAL_URLS.instagram.profile,
+      facebook: SOCIAL_URLS.facebook.page,
+      twitter: SOCIAL_URLS.twitter.profile,
       linkedin: 'https://linkedin.com/company/tap-air-portugal'
     },
     
@@ -1074,8 +1075,8 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     regionsServed: ['United Kingdom', 'Ireland'],
     
     socialMedia: {
-      instagram: 'https://instagram.com/portugalfoodsuk',
-      facebook: 'https://facebook.com/PortugalFoodsUK'
+      instagram: SOCIAL_URLS.instagram.profile,
+      facebook: SOCIAL_URLS.facebook.page
     },
     
     officialStatus: true,
@@ -1140,7 +1141,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     description: 'University College London\'s Portuguese Studies Department offering comprehensive Portuguese language, literature, and cultural studies programs. Strategic academic partner providing exclusive educational benefits to LusoTown student members.',
     descriptionPortuguese: 'Departamento de Estudos Portugueses da University College London oferecendo programas abrangentes de língua portuguesa, literatura e estudos culturais. Parceiro acadêmico estratégico fornecendo benefícios educacionais exclusivos aos membros estudantes da LusoTown.',
     
-    website: 'https://www.ucl.ac.uk/spanish-portuguese-latin-american-studies',
+    website: UNIVERSITY_URLS.partner,
     email: 'portuguese.studies@ucl.ac.uk',
     phone: '+44 20 7679 7178',
     address: 'UCL School of European Languages, Culture and Society, Gower Street',
@@ -1180,8 +1181,8 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     regionsServed: ['London', 'UK', 'International'],
     
     socialMedia: {
-      twitter: 'https://twitter.com/UCLPortuguese',
-      facebook: 'https://facebook.com/UCLPortugueseStudies'
+      twitter: SOCIAL_URLS.twitter.profile,
+      facebook: SOCIAL_URLS.facebook.page
     },
     
     officialStatus: true,
@@ -1245,7 +1246,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     description: 'King\'s College London Portuguese Centre promoting Portuguese language education, cultural studies, and academic research. Official academic partner supporting Portuguese language maintenance and cultural preservation.',
     descriptionPortuguese: 'Centro Português do King\'s College London promovendo educação em língua portuguesa, estudos culturais e pesquisa acadêmica. Parceiro acadêmico oficial apoiando a manutenção da língua portuguesa e preservação cultural.',
     
-    website: 'https://www.kcl.ac.uk/modern-language-centre/portuguese',
+    website: UNIVERSITY_URLS.partner,
     email: 'portuguese.centre@kcl.ac.uk',
     phone: '+44 20 7848 2029',
     address: 'King\'s College London, Virginia Woolf Building, 22 Kingsway',
@@ -1285,8 +1286,8 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     regionsServed: ['London', 'South East England'],
     
     socialMedia: {
-      instagram: 'https://instagram.com/kclportuguese',
-      facebook: 'https://facebook.com/KingsPortugueseCentre'
+      instagram: SOCIAL_URLS.instagram.profile,
+      facebook: SOCIAL_URLS.facebook.page
     },
     
     officialStatus: true,
@@ -1393,7 +1394,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     
     socialMedia: {
       linkedin: 'https://linkedin.com/company/portuguese-medical-association-uk',
-      twitter: 'https://twitter.com/PMAUK_Official'
+      twitter: SOCIAL_URLS.twitter.profile
     },
     
     officialStatus: true,
@@ -1500,7 +1501,7 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     
     socialMedia: {
       linkedin: 'https://linkedin.com/company/portuguese-lawyers-network-uk',
-      twitter: 'https://twitter.com/PLNUK_Legal'
+      twitter: SOCIAL_URLS.twitter.profile
     },
     
     officialStatus: true,
@@ -1606,8 +1607,8 @@ export const PARTNERSHIP_ORGANIZATIONS: PartnershipOrganization[] = [
     regionsServed: ['United Kingdom'],
     
     socialMedia: {
-      facebook: 'https://facebook.com/PortugueseHeritageTrustUK',
-      instagram: 'https://instagram.com/portugueseheritageuk'
+      facebook: SOCIAL_URLS.facebook.page,
+      instagram: SOCIAL_URLS.instagram.profile
     },
     
     officialStatus: true,

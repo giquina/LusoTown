@@ -1,5 +1,6 @@
 "use client";
 
+import { ROUTES } from '@/config';
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -125,7 +126,7 @@ export default function PostEventConnections({
       attendedAt: "2 days ago",
       duration: "3 hours",
       rating: 5,
-      photos: ["/events/fado-night-1.jpg", "/events/fado-night-2.jpg"],
+      photos: [buildRoute(ROUTES.events, { id: 'event-id' }), buildRoute(ROUTES.events, { id: 'event-id' })],
       highlights: [
         language === "pt" ? "Fadista incrível" : "Amazing fadista",
         language === "pt" ? "Ambiente autêntico" : "Authentic atmosphere",
@@ -192,7 +193,7 @@ export default function PostEventConnections({
       attendedAt: "2 months ago",
       duration: "5 hours",
       rating: 4,
-      photos: ["/events/santos-1.jpg", "/events/santos-2.jpg", "/events/santos-3.jpg"],
+      photos: [buildRoute(ROUTES.events, { id: 'event-id' }), buildRoute(ROUTES.events, { id: 'event-id' }), buildRoute(ROUTES.events, { id: 'event-id' })],
       highlights: [
         language === "pt" ? "Sardinhas deliciosas" : "Delicious sardines",
         language === "pt" ? "Dança tradicional" : "Traditional dancing",

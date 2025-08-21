@@ -1,3 +1,4 @@
+import { ROUTES } from '@/config';
 import { Metadata } from 'next'
 import Footer from '@/components/Footer'
 import SuccessStoriesComponent from '@/components/SuccessStories'
@@ -108,7 +109,7 @@ export default function SuccessStories() {
                   Join LusoTown
                 </a>
                 <a
-                  href="/matches"
+                  href=ROUTES.matches
                   className="bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 font-semibold px-8 py-4 rounded-xl transition-colors duration-200 flex items-center justify-center"
                 >
                   <ChatBubbleLeftRightIcon className="w-5 h-5 mr-2" />

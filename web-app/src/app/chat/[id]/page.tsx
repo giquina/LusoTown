@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import Image from 'next/image'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useParams, useRouter } from 'next/navigation'
@@ -495,7 +496,7 @@ export default function ChatRoomPage() {
   useEffect(() => {
     const loadRoom = async () => {
       if (!currentUser) {
-        router.push('/login')
+        router.push(ROUTES.auth.login)
         return
       }
 

@@ -1,5 +1,6 @@
 'use client'
 
+import { SOCIAL_URLS } from '@/config';
 import React, { useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import TwitterFeedWidget from './TwitterFeedWidget'
@@ -229,7 +230,7 @@ export default function TwitterHashtagTabs({
           ].map(hashtag => (
             <a
               key={hashtag}
-              href={`https://twitter.com/hashtag/${hashtag}`}
+              href={SOCIAL_URLS.twitter.profile}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-2 py-1 bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-gray-800 rounded-full text-xs transition-colors"

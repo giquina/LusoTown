@@ -1,5 +1,6 @@
 "use client";
 
+import { ROUTES } from '@/config';
 import React, { useState, memo, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
@@ -51,7 +52,7 @@ const PortugueseEventImage = memo(({ event }: { event: PortugueseEvent }) => {
   return (
     <div className="h-48 relative overflow-hidden">
       <EventImageWithFallback
-        src={event.image_url || `/events/portuguese/${event.cultural_category || 'default'}.jpg`}
+        src={event.image_url || buildRoute(ROUTES.events, { id: 'event-id' })default'}.jpg`}
         alt={`${event.title} event image`}
         category={event.cultural_category || 'cultural'}
         className="object-cover"
@@ -441,7 +442,7 @@ const PortugueseEventsShowcase: React.FC<PortugueseEventsShowcaseProps> = ({
 
                 {/* Action Button */}
                 <Link
-                  href={`/events/${event.id}`}
+                  href={buildRoute(ROUTES.events, { id: 'event-id' })}
                   className="w-full bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-3 px-6 rounded-xl hover:from-primary-600 hover:to-secondary-600 transition-all duration-300 flex items-center justify-center group shadow-lg hover:shadow-xl"
                 >
                   {event.price > 0 ? (

@@ -1,3 +1,4 @@
+import { ROUTES } from '@/config';
 import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/config/site";
 
@@ -9,10 +10,10 @@ export default function robots(): MetadataRoute.Robots {
         allow: [
           "/",
           "/?lang=pt",
-          "/events",
-          "/events?lang=pt",
-          "/business-directory",
-          "/business-directory?lang=pt",
+          ROUTES.events,
+          ROUTES.events,
+          ROUTES.businessDirectory,
+          ROUTES.businessDirectory,
           "/business-networking",
           "/business-networking?lang=pt",
           "/community",

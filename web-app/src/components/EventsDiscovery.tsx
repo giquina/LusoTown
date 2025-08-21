@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
@@ -210,7 +211,7 @@ export default function EventsDiscovery({
       football_viewing_party: false,
       cultural_preservation_focus: true,
       tags: ['traditional', 'family-friendly', 'authentic', 'community'],
-      image: '/events/santos-populares.jpg',
+      image: buildRoute(ROUTES.events, { id: 'event-id' }),
       partner_venue: {
         name: 'Portuguese Centre',
         type: 'cultural_center',
@@ -241,7 +242,7 @@ export default function EventsDiscovery({
       football_viewing_party: false,
       cultural_preservation_focus: true,
       tags: ['music', 'intimate', 'professional', 'evening'],
-      image: '/events/fado-night.jpg',
+      image: buildRoute(ROUTES.events, { id: 'event-id' }),
       partner_venue: {
         name: 'Bar do Fado',
         type: 'restaurant',
@@ -272,7 +273,7 @@ export default function EventsDiscovery({
       football_viewing_party: true,
       cultural_preservation_focus: false,
       tags: ['sports', 'social', 'competitive', 'casual'],
-      image: '/events/football-watching.jpg',
+      image: buildRoute(ROUTES.events, { id: 'event-id' }),
       partner_venue: {
         name: 'Portuguese Sports Club',
         type: 'club',
@@ -303,7 +304,7 @@ export default function EventsDiscovery({
       football_viewing_party: false,
       cultural_preservation_focus: false,
       tags: ['professional', 'networking', 'business', 'formal'],
-      image: '/events/business-networking.jpg',
+      image: buildRoute(ROUTES.events, { id: 'event-id' }),
       partner_venue: {
         name: 'Portuguese Business Hub',
         type: 'business_center',
@@ -334,7 +335,7 @@ export default function EventsDiscovery({
       football_viewing_party: false,
       cultural_preservation_focus: true,
       tags: ['cooking', 'hands-on', 'traditional', 'educational'],
-      image: '/events/cooking-class.jpg',
+      image: buildRoute(ROUTES.events, { id: 'event-id' }),
       partner_venue: {
         name: 'Casa da Culinária',
         type: 'cooking_school',
@@ -710,7 +711,7 @@ export default function EventsDiscovery({
                         )}
                       </div>
                       <Link
-                        href={`/events/${event.id}`}
+                        href={buildRoute(ROUTES.events, { id: 'event-id' })}
                         className="bg-primary-500 text-white px-4 py-2 rounded-lg hover:bg-primary-600 transition-colors font-medium text-sm"
                       >
                         {isPortuguese ? 'Ver Detalhes' : 'View Details'}

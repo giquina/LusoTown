@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
@@ -329,7 +330,7 @@ export default function EventFeedCard({
                 </div>
                 
                 <a
-                  href={`/events/${post.eventId}`}
+                  href={buildRoute(ROUTES.events, { id: 'event-id' })}
                   className="text-primary-600 text-sm font-medium hover:underline"
                 >
                   {post.eventSpotsLeft > 0 
@@ -456,7 +457,7 @@ export default function EventFeedCard({
           </div>
           
           <a
-            href={`/events/${post.eventId}`}
+            href={buildRoute(ROUTES.events, { id: 'event-id' })}
             className="bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 text-white text-xs sm:text-sm px-3 sm:px-4 py-2.5 sm:py-2 rounded-lg hover:from-primary-700 hover:via-secondary-700 hover:to-accent-700 transition-all duration-200 font-medium min-h-[44px] flex items-center justify-center text-center shadow-lg hover:shadow-xl"
           >
             <span className="hidden sm:inline">{isPortuguese ? 'Ver Evento Completo' : 'View Full Event'}</span>

@@ -1,5 +1,6 @@
 "use client";
 
+import { ROUTES } from '@/config';
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -26,24 +27,24 @@ import { useLanguage } from "@/context/LanguageContext";
 import { ROUTES } from '@/config/routes'
 
 const getNavigationLinks = (t: any) => [
-  { name: t("nav.events", "London Events"), href: "/events" },
+  { name: t("nav.events", "London Events"), href: ROUTES.events },
   { name: t("nav.students", "Students"), href: "/students" },
-  { name: t("nav.pricing", "Pricing"), href: "/pricing" },
+  { name: t("nav.pricing", "Pricing"), href: ROUTES.pricing },
 ];
 
 const getAuthenticatedNavigationLinks = (t: any) => [
-  { name: t("nav.events", "London Events"), href: "/events" },
+  { name: t("nav.events", "London Events"), href: ROUTES.events },
   { name: t("nav.students", "Students"), href: "/students" },
   { name: t("referral.title", "Referrals"), href: "/referrals" },
-  { name: t("nav.pricing", "Pricing"), href: "/pricing" },
+  { name: t("nav.pricing", "Pricing"), href: ROUTES.pricing },
 ];
 
 // Simplified navigation dropdown links - Services & Community only
 const getMoreDropdownLinks = (t: any) => ({
   services: [
-    { name: "Find Your Match", href: "/matches" },
+    { name: "Find Your Match", href: ROUTES.matches },
     { name: "Live TV", href: "/tv" },
-    { name: "Streaming", href: "/live" },
+    { name: "Streaming", href: ROUTES.live },
   ],
   community: [
     { name: "Events & Culture", href: ROUTES.events },
@@ -198,7 +199,7 @@ export default function Header() {
                                 className="flex items-center gap-2 text-sm text-gray-600 hover:text-premium-600 hover:bg-premium-50 px-2 py-1 rounded transition-colors duration-200 whitespace-nowrap"
                               >
                                 <span>{link.name}</span>
-                                {link.href === "/matches" && (
+                                {link.href === ROUTES.matches && (
                                   <span
                                     className="ml-1 inline-block text-[10px] leading-4 font-semibold uppercase bg-secondary-100 text-secondary-700 px-2 py-0.5 rounded-full border border-secondary-200"
                                     aria-label="New feature"
@@ -517,7 +518,7 @@ export default function Header() {
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         <span>{link.name}</span>
-                        {link.href === "/matches" && (
+                        {link.href === ROUTES.matches && (
                           <span
                             className="ml-1 inline-block text-[10px] leading-4 font-semibold uppercase bg-secondary-100 text-secondary-700 px-2 py-0.5 rounded-full border border-secondary-200"
                             aria-label="New feature"

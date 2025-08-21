@@ -1,4 +1,5 @@
 'use client'
+import { buildUnsplashUrl } from '@/config';
 import Image from 'next/image'
 import { ROUTES } from '@/config/routes'
 
@@ -28,7 +29,7 @@ const mockFavorites = [
     date: '2025-08-16',
     time: '19:00',
     location: 'A Toca Restaurant, Stockwell',
-    imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&auto=format',
+    imageUrl: buildUnsplashUrl('1493225457124-a3eb161ffa5f'),
     category: 'Music & Entertainment',
     liked: true
   },
@@ -41,7 +42,7 @@ const mockFavorites = [
     location: 'Shoreditch, London',
     rating: 4.8,
     reviewCount: 42,
-    imageUrl: 'https://images.unsplash.com/photo-1574329818413-10376febd3f0?w=600&h=400&fit=crop&auto=format',
+    imageUrl: buildUnsplashUrl('1574329818413-10376febd3f0'),
     liked: true
   },
   {
@@ -50,11 +51,11 @@ const mockFavorites = [
     title: 'Beautiful sunset at Hyde Park',
     description: 'Just enjoyed a lovely evening walk at Hyde Park. The sunset was absolutely magical! #HydePark #Sunset #London',
     author: 'Maria Santos',
-    authorAvatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b1ac?w=100&h=100&fit=crop&crop=face&auto=format',
+    authorAvatar: buildUnsplashUrl('1494790108755-2616b612b1ac'),
     timestamp: '2 hours ago',
     likes: 24,
     comments: 5,
-    imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&auto=format',
+    imageUrl: buildUnsplashUrl('1506905925346-21bda4d32df4'),
     liked: true
   },
   {
@@ -65,7 +66,7 @@ const mockFavorites = [
     date: '2025-08-18',
     time: '18:30',
     location: 'Champor-Champor Restaurant, Elephant & Castle',
-    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&auto=format',
+    imageUrl: buildUnsplashUrl('1507003211169-0a1dd7228f2d'),
     category: 'Books & Reading',
     liked: true
   }

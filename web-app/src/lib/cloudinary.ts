@@ -1,3 +1,4 @@
+import { buildCloudinaryUrl } from '@/config';
 /**
  * Cloudinary CDN Integration for LusoTown
  * Provides optimized image delivery for Portuguese community platform
@@ -5,7 +6,7 @@
 
 // Cloudinary configuration
 const CLOUDINARY_CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || 'lusotown'
-const CLOUDINARY_BASE_URL = `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}`
+const CLOUDINARY_BASE_URL = buildCloudinaryUrl('image-id')
 
 // Image quality presets for different use cases
 export const QUALITY_PRESETS = {

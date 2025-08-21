@@ -1,5 +1,6 @@
 "use client";
 
+import { buildUnsplashUrl } from '@/config';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
@@ -39,7 +40,7 @@ export default function SaudadeMatchingDemo({
     {
       name: 'Sofia',
       age: 29,
-      photo: 'https://images.unsplash.com/photo-1494790108755-2616b612b1c5?w=150&h=150&fit=crop&crop=face',
+      photo: buildUnsplashUrl('1494790108755-2616b612b1c5'),
       type: language === 'pt' ? 'Alma Saudosa' : 'Saudade Soul',
       saudadeIntensity: 8,
       compatibility: 94,
@@ -50,7 +51,7 @@ export default function SaudadeMatchingDemo({
     {
       name: 'Miguel',
       age: 34,
-      photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+      photo: buildUnsplashUrl('1472099645785-5658abf4ff4e'),
       type: language === 'pt' ? 'Curador Cultural' : 'Cultural Healer',
       saudadeIntensity: 6,
       compatibility: 87,
@@ -61,7 +62,7 @@ export default function SaudadeMatchingDemo({
     {
       name: 'Ana',
       age: 26,
-      photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
+      photo: buildUnsplashUrl('1438761681033-6461ffad8d80'),
       type: language === 'pt' ? 'Guardião da Herança' : 'Heritage Guardian',
       saudadeIntensity: 9,
       compatibility: 91,

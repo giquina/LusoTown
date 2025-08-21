@@ -1,5 +1,6 @@
 'use client';
 
+import { ROUTES } from '@/config';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Users, Shield, Star, Camera, MessageCircle, Map, Gift } from 'lucide-react';
@@ -610,7 +611,7 @@ export default function DatingMatchingModule() {
       {
         title: 'Portuguese Community Events Calendar',
         titlePortuguese: 'Calendário de Eventos da Comunidade Portuguesa',
-        url: '/events',
+        url: ROUTES.events,
         type: 'external'
       }
     ]

@@ -1,4 +1,5 @@
 'use client'
+import { buildUnsplashUrl } from '@/config';
 import Image from 'next/image'
 
 import { useState, useEffect } from 'react'
@@ -68,7 +69,7 @@ const mockPosts: FeedPost[] = [
     id: '1',
     userId: 'user1',
     userName: 'Maria Santos',
-    userAvatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b1ac?w=100&h=100&fit=crop&crop=face&auto=format',
+    userAvatar: buildUnsplashUrl('1494790108755-2616b612b1ac'),
     content: 'Just attended the most amazing Fado night at A Toca! The music was incredible and I met so many wonderful people. #FadoNight #PortugueseCulture',
     createdAt: '2 hours ago',
     likes: 24,
@@ -94,9 +95,9 @@ const mockPosts: FeedPost[] = [
     id: '2',
     userId: 'user2',
     userName: 'Carlos Oliveira',
-    userAvatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face&auto=format',
+    userAvatar: buildUnsplashUrl('1507003211169-0a1dd7228f2d'),
     content: 'Found this amazing pastelaria in Shoreditch that reminds me of home! Their pastéis de nata are authentic and delicious. Check it out!',
-    imageUrl: 'https://images.unsplash.com/photo-1574329818413-10376febd3f0?w=600&h=400&fit=crop&auto=format',
+    imageUrl: buildUnsplashUrl('1574329818413-10376febd3f0'),
     createdAt: '5 hours ago',
     likes: 18,
     comments: 3,
@@ -120,7 +121,7 @@ const mockPosts: FeedPost[] = [
     id: '3',
     userId: 'user3',
     userName: 'Ana Pereira',
-    userAvatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&crop=face&auto=format',
+    userAvatar: buildUnsplashUrl('1580489944761-15a19d654956'),
     content: 'Looking forward to the weekend Portuguese Book Club meeting! We\'re discussing "O Guarani" by José de Alencar. Anyone interested in joining? 📚',
     linkUrl: 'https://lusotown-london.vercel.app/events/book-club',
     createdAt: '1 day ago',
@@ -182,7 +183,7 @@ export default function CommunityFeed() {
         id: `post-${Date.now()}`,
         userId: 'currentUser',
         userName: isPortuguese ? 'Tu' : 'You',
-        userAvatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop&crop=face&auto=format',
+        userAvatar: buildUnsplashUrl('1535713875002-d1d0cf377fde'),
         content: newPost,
         createdAt: isPortuguese ? 'Agora mesmo' : 'Just now',
         likes: 0,

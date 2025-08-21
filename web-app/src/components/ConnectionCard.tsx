@@ -1,5 +1,6 @@
 'use client'
 
+import { buildUnsplashUrl } from '@/config';
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { 
@@ -92,7 +93,7 @@ export default function ConnectionCard({ connection }: ConnectionCardProps) {
             {/* Profile Picture */}
             <div className="relative">
               <img
-                src={connectedUser.profilePictureUrl || `https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop&crop=face&auto=format`}
+                src={connectedUser.profilePictureUrl || buildUnsplashUrl('1472099645785-5658abf4ff4e')}
                 alt={`${connectedUser.firstName} ${connectedUser.lastName || ''}`}
                 className="w-14 h-14 rounded-full object-cover border-2 border-white shadow-md"
               />

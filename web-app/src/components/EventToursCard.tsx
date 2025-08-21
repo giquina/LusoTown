@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
@@ -404,7 +405,7 @@ export default function EventToursCard({ event, className = '' }: EventToursCard
           {/* Primary Actions */}
           <div className="grid grid-cols-2 gap-2 sm:gap-3">
             <a 
-              href={`/events/${event.id}?type=tour`}
+              href={buildRoute(ROUTES.events, { id: 'event-id' })}
               className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 text-center text-xs sm:text-sm"
             >
               {isPortuguese ? 'Ver Detalhes' : 'View Details'}

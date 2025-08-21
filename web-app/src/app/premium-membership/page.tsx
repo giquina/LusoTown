@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import MembershipTiers from '@/components/MembershipTiers'
@@ -27,7 +28,7 @@ export default function PremiumMembershipPage() {
 
   useEffect(() => {
     if (!user) {
-      router.push('/login')
+      router.push(ROUTES.auth.login)
     }
   }, [user, router])
 

@@ -1,3 +1,4 @@
+import { ROUTES } from '@/config';
 import { supabase } from '@/lib/supabase'
 
 export interface UserNotification {
@@ -241,7 +242,7 @@ class NotificationService {
       notification_type: 'cultural',
       title: `🎉 ${eventData.event_title}`,
       message: `A Portuguese cultural event is coming up on ${new Date(eventData.event_date).toLocaleDateString()}. ${eventData.cultural_significance || 'Join fellow Portuguese speakers for this special celebration!'}`,
-      action_url: `/events/${eventData.event_id}`,
+      action_url: buildRoute(ROUTES.events, { id: 'event-id' }),
       action_data: {
         type: 'cultural_event',
         event_id: eventData.event_id,
@@ -269,7 +270,7 @@ class NotificationService {
       notification_type: 'match',
       title: `Nova conexão! 💫`,
       message: `You have a ${matchData.compatibility_score}% compatibility with ${matchData.matched_user_name} from the Portuguese community.${sharedInterestsText}`,
-      action_url: `/matches/${matchData.match_id}`,
+      action_url: ROUTES.matches,
       action_data: {
         type: 'new_match',
         match_id: matchData.match_id,

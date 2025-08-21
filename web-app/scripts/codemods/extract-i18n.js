@@ -13,7 +13,8 @@ const { execSync } = require('child_process');
 
 // Configuration
 const CONFIG = {
-  sourceDir: process.argv.includes('--about-only') ? './src/components/AboutLusoTown.tsx' : './src',
+  sourceDir: process.argv.includes('--about-only') ? './src/components/AboutLusoTown.tsx' : 
+             process.argv.includes('--critical-only') ? 'CRITICAL_COMPONENTS' : './src',
   i18nDir: './src/i18n',
   excludePatterns: [
     '*.test.tsx',
@@ -264,6 +265,27 @@ function applyReplacements(content, replacements) {
  */
 function processFiles() {
   const files = [];
+  
+  // Handle critical components mode
+  if (CONFIG.sourceDir === 'CRITICAL_COMPONENTS') {
+    const criticalFiles = [
+      './src/components/Header.tsx',
+      './src/components/Footer.tsx', 
+      './src/components/SafetyCenter.tsx',
+      './src/components/WelcomeBanner.tsx',
+      './src/app/about/page.tsx',
+      './src/app/pricing/page.tsx'
+    ];
+    
+    for (const file of criticalFiles) {
+      if (fs.existsSync(file)) {
+        files.push(file);
+      } else {
+        console.log(`⚠️  Warning: ${file} not found`);
+      }
+    }
+    return files;
+  }
   
   // Handle single file mode
   if (CONFIG.sourceDir.endsWith('.tsx') || CONFIG.sourceDir.endsWith('.ts')) {

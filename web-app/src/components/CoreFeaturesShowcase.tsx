@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import React, { useState, useEffect } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { communityStats } from '@/config/community'
@@ -73,7 +74,7 @@ const coreFeatures: CoreFeature[] = [
       highlight: 'core_features.matches.stats.highlight'
     },
     ctaKey: 'core_features.matches.cta',
-    ctaUrl: '/matches',
+    ctaUrl: ROUTES.matches,
     gradient: 'from-pink-500 via-rose-500 to-red-500',
     accentColor: 'text-rose-600',
     bgPattern: 'bg-gradient-to-br from-rose-50/60 via-pink-50/40 to-red-50/30',

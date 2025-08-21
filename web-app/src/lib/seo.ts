@@ -3,6 +3,7 @@
 // Portuguese Community SEO Strategy
 // Optimized for Portuguese speakers seeking community and business connections in London
 
+import { ROUTES, SOCIAL_URLS } from '@/config';
 import { SITE_URL, absoluteUrl } from "@/config/site";
 import { ROUTES } from "@/config/routes";
 
@@ -197,8 +198,8 @@ export const SEO_PAGES: { [key: string]: SEOMetadata } = {
       url: SITE_URL,
       logo: absoluteUrl("/logo.png"),
       sameAs: [
-        "https://facebook.com/lusotownlondon",
-        "https://instagram.com/lusotownlondon",
+        SOCIAL_URLS.facebook.page,
+        SOCIAL_URLS.instagram.profile,
         "https://linkedin.com/company/lusotown",
       ],
       areaServed: {
@@ -491,10 +492,10 @@ export class SEOService {
     const pages = [
       { url: "/", priority: "1.0", changefreq: "daily" },
       { url: ROUTES.events, priority: "0.9", changefreq: "daily" },
-      { url: "/business-directory", priority: "0.9", changefreq: "weekly" },
+      { url: ROUTES.businessDirectory, priority: "0.9", changefreq: "weekly" },
       { url: "/business-networking", priority: "0.8", changefreq: "weekly" },
       { url: "/community", priority: "0.8", changefreq: "weekly" },
-      { url: "/about", priority: "0.7", changefreq: "monthly" },
+      { url: ROUTES.about, priority: "0.7", changefreq: "monthly" },
       { url: "/contact", priority: "0.6", changefreq: "monthly" },
       { url: "/feed", priority: "0.8", changefreq: "daily" },
       { url: ROUTES.directory, priority: "0.7", changefreq: "weekly" },

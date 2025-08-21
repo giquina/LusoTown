@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
@@ -316,7 +317,7 @@ export default function ConversionOptimizationEngine({
       cta: {
         primary: 'Get Event Package',
         primaryPortuguese: 'Obter Pacote de Eventos',
-        href: '/events/packages'
+        href: buildRoute(ROUTES.events, { id: 'event-id' })
       },
       conditions: {
         userSegment: ['active', 'engaged'],

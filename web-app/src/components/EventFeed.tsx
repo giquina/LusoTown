@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES, buildUnsplashUrl } from '@/config';
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
@@ -68,18 +69,18 @@ const generateEventFeedPosts = (): EventFeedPost[] => [
     eventDate: '2025-08-16',
     eventTime: '19:00',
     eventLocation: 'A Toca Restaurant, Stockwell',
-    eventImage: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop&auto=format',
+    eventImage: buildUnsplashUrl('1493225457124-a3eb161ffa5f'),
     eventPrice: 45,
     eventCategory: 'Music & Entertainment',
     eventSpotsLeft: 13,
     eventMaxAttendees: 35,
     hostName: 'Miguel Santos',
-    hostImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face&auto=format',
+    hostImage: buildUnsplashUrl('1507003211169-0a1dd7228f2d'),
     hostVerified: true,
     content: 'Estou muito entusiasmado em anunciar a nossa próxima noite de Fado! Teremos a fadista Maria Fernandes diretamente de Lisboa, acompanhada por guitarristas autênticos. Incluímos jantar tradicional português e degustação de Vinho Verde. Será uma noite especial para celebrar a nossa cultura! 🎶🍷 #FadoNight #PortugueseCulture #LittlePortugal',
     images: [
-      'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop&auto=format'
+      buildUnsplashUrl('1544551763-46a013bb70d5'),
+      buildUnsplashUrl('1571019613454-1cb2f99b2d8b')
     ],
     createdAt: '2 hours ago',
     likes: 34,
@@ -103,13 +104,13 @@ const generateEventFeedPosts = (): EventFeedPost[] => [
     eventDate: '2025-08-19',
     eventTime: '19:45',
     eventLocation: 'The Fentiman Arms, Vauxhall',
-    eventImage: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&h=400&fit=crop&auto=format',
+    eventImage: buildUnsplashUrl('1574629810360-7efbbe195018'),
     eventPrice: 15,
     eventCategory: 'Sports Viewing',
     eventSpotsLeft: 12,
     eventMaxAttendees: 40,
     hostName: 'Ricardo Ferreira',
-    hostImage: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face&auto=format',
+    hostImage: buildUnsplashUrl('1472099645785-5658abf4ff4e'),
     content: 'Acabei de me inscrever para ver o grande jogo! Vai ser épico! Bifanas e Super Bock esperando por todos nós. Força Portugal! 🇵🇹⚽',
     createdAt: '4 hours ago',
     likes: 19,
@@ -118,7 +119,7 @@ const generateEventFeedPosts = (): EventFeedPost[] => [
     liked: true,
     userId: 'user-carlos',
     userName: 'Carlos Oliveira',
-    userImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face&auto=format',
+    userImage: buildUnsplashUrl('1507003211169-0a1dd7228f2d'),
     priority: 'medium',
     reactions: {
       interested: 15,
@@ -135,13 +136,13 @@ const generateEventFeedPosts = (): EventFeedPost[] => [
     eventDate: '2025-08-17',
     eventTime: '18:30',
     eventLocation: 'Champor-Champor Restaurant, Elephant & Castle',
-    eventImage: 'https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&h=400&fit=crop&auto=format',
+    eventImage: buildUnsplashUrl('1470337458703-46ad1756a187'),
     eventPrice: 38,
     eventCategory: 'Wine & Dining',
     eventSpotsLeft: 0,
     eventMaxAttendees: 12,
     hostName: 'Fernanda Costa',
-    hostImage: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&crop=face&auto=format',
+    hostImage: buildUnsplashUrl('1580489944761-15a19d654956'),
     hostVerified: true,
     content: 'O nosso evento íntimo para mulheres portuguesas está LOTADO! 🎉 Mas temos waitlist disponível. Esta vai ser uma noite especial de conexões autênticas e vinhos dos países lusófonos. Próximo evento já está sendo planejado para setembro!',
     createdAt: '6 hours ago',
@@ -165,18 +166,18 @@ const generateEventFeedPosts = (): EventFeedPost[] => [
     eventDate: '2025-08-20',
     eventTime: '18:00',
     eventLocation: 'Bar Elixir, Battersea Power Station',
-    eventImage: 'https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&h=400&fit=crop&auto=format',
+    eventImage: buildUnsplashUrl('1514933651103-005eec06c04b'),
     eventPrice: 8,
     eventCategory: 'Language Exchange',
     eventSpotsLeft: 14,
     eventMaxAttendees: 45,
     hostName: 'Joana Ribeiro',
-    hostImage: 'https://images.unsplash.com/photo-1494790108755-2616b612b1ac?w=100&h=100&fit=crop&crop=face&auto=format',
+    hostImage: buildUnsplashUrl('1494790108755-2616b612b1ac'),
     content: 'Sneak peek dos cocktails especiais do próximo Language Exchange! 🍹 O Caipirinha Tropical e o Porto Tónico estão incríveis. Cada drink conta uma história cultural. Ainda temos vagas!',
     images: [
-      'https://images.unsplash.com/photo-1567696911980-2eed69a46042?w=600&h=400&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&h=400&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&h=400&fit=crop&auto=format'
+      buildUnsplashUrl('1567696911980-2eed69a46042'),
+      buildUnsplashUrl('1582268611958-ebfd161ef9cf'),
+      buildUnsplashUrl('1514362545857-3bc16c4c7d1b')
     ],
     createdAt: '8 hours ago',
     likes: 31,
@@ -199,13 +200,13 @@ const generateEventFeedPosts = (): EventFeedPost[] => [
     eventDate: '2025-08-23',
     eventTime: '18:00',
     eventLocation: 'Portuguese Club of London, Bayswater',
-    eventImage: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&auto=format',
+    eventImage: buildUnsplashUrl('1578662996442-48f60103fc96'),
     eventPrice: 55,
     eventCategory: 'Cultural Events',
     eventSpotsLeft: 28,
     eventMaxAttendees: 80,
     hostName: 'António Pereira',
-    hostImage: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face&auto=format',
+    hostImage: buildUnsplashUrl('1560250097-0b93528c311a'),
     hostVerified: true,
     content: 'LEMBRETE: Só faltam 7 dias para a nossa Festa de São João! 🔨✨ Já temos sardinhas frescas encomendadas, a decoração tradicional está quase pronta, e a fogueira será acesa no pátio do clube. Tragam os vossos martelos de plástico para a tradição da sorte! Últimas vagas disponíveis.',
     createdAt: '12 hours ago',
@@ -229,13 +230,13 @@ const generateEventFeedPosts = (): EventFeedPost[] => [
     eventDate: '2025-08-21',
     eventTime: '08:00',
     eventLocation: 'O Cantinho de Portugal, Stockwell',
-    eventImage: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop&auto=format',
+    eventImage: buildUnsplashUrl('1556909114-f6e7ad7d3136'),
     eventPrice: 25,
     eventCategory: 'Professional Meetups',
     eventSpotsLeft: 7,
     eventMaxAttendees: 25,
     hostName: 'Patrícia Gomes',
-    hostImage: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&crop=face&auto=format',
+    hostImage: buildUnsplashUrl('1573496359142-b8d87734a5a2'),
     content: '⭐⭐⭐⭐⭐ Review do último networking breakfast: "Conexões autênticas, pastéis de nata divinos, e oportunidades de negócio reais. A Patrícia sabe como juntar as pessoas certas!" - João M., Empresário. Próximo breakfast tem foco em "Digital Innovation". Inscrições abertas!',
     createdAt: '1 day ago',
     likes: 16,
@@ -543,7 +544,7 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
                       </div>
                       
                       <a
-                        href={`/events/${post.eventId}`}
+                        href={buildRoute(ROUTES.events, { id: 'event-id' })}
                         className="text-primary-600 text-sm font-medium hover:underline"
                       >
                         {post.eventSpotsLeft > 0 
@@ -620,7 +621,7 @@ export default function EventFeed({ className = '', limit }: EventFeedProps) {
                 </div>
                 
                 <a
-                  href={`/events/${post.eventId}`}
+                  href={buildRoute(ROUTES.events, { id: 'event-id' })}
                   className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white text-sm px-4 py-2 rounded-lg hover:from-primary-600 hover:to-secondary-600 transition-all duration-200 font-medium"
                 >
                   {isPortuguese ? 'Ver Evento' : 'View Event'}

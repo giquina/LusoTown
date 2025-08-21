@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { ROUTES } from '@/config/routes'
@@ -116,7 +117,7 @@ export default function CreateEventPage() {
   const handleSubmit = async () => {
     const currentUser = authService.getCurrentUser()
     if (!currentUser) {
-      router.push('/login')
+      router.push(ROUTES.auth.login)
       return
     }
 

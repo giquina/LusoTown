@@ -1,9 +1,10 @@
+import { ROUTES } from '@/config';
 import type { Metadata } from "next";
 import { metadataFor } from "@/lib/next-metadata";
 
 export const metadata: Metadata = metadataFor(
   "businessDirectory",
-  "/business-directory"
+  ROUTES.businessDirectory
 );
 
 export default function BusinessDirectoryLayout({

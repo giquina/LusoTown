@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/navigation'
@@ -57,7 +58,7 @@ export default function AuthPopup() {
     if (authIntent) {
       localStorage.setItem('lusotown-auth-intent', JSON.stringify(authIntent))
     }
-    router.push('/login')
+    router.push(ROUTES.auth.login)
   }
   
   const getPopupContent = () => {

@@ -1,4 +1,5 @@
 "use client";
+import { ROUTES } from '@/config';
 import Image from "next/image";
 
 import React, { useState, useEffect, useCallback } from "react";
@@ -403,7 +404,7 @@ export default function Directory() {
 
   const handleSendConnection = async (memberId: string) => {
     if (!user) {
-      router.push("/login");
+      router.push(ROUTES.auth.login);
       return;
     }
 
@@ -423,7 +424,7 @@ export default function Directory() {
 
   const handleSendMessage = (memberId: string) => {
     if (!user) {
-      router.push("/login");
+      router.push(ROUTES.auth.login);
       return;
     }
     router.push(`/chat/direct/${memberId}`);

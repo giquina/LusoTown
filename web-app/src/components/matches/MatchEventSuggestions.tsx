@@ -1,5 +1,6 @@
 "use client";
 
+import { ROUTES } from '@/config';
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -390,7 +391,7 @@ export default function MatchEventSuggestions({
                     </button>
                     
                     <Link 
-                      href={`/events/${event.id}`}
+                      href={buildRoute(ROUTES.events, { id: 'event-id' })}
                       className="p-2 border border-primary-300 text-primary-600 rounded-lg hover:bg-primary-50 transition-colors"
                       aria-label={language === "pt" ? "Ver detalhes" : "View details"}
                     >

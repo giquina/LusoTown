@@ -1,5 +1,6 @@
 'use client'
 
+import { SOCIAL_URLS } from '@/config';
 import type { Metadata } from 'next'
 import { useLanguage } from '@/context/LanguageContext'
 import { communityStats } from '@/config/community'
@@ -75,9 +76,9 @@ const jsonLd = {
   url: 'https://lusotown.london',
   logo: 'https://lusotown.london/logo.png',
   sameAs: [
-    'https://facebook.com/lusotownlondon',
-    'https://instagram.com/lusotownlondon',
-    'https://twitter.com/lusotownlondon'
+    SOCIAL_URLS.facebook.page,
+    SOCIAL_URLS.instagram.profile,
+    SOCIAL_URLS.twitter.profile
   ],
   areaServed: {
     '@type': 'Country',

@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import {
@@ -156,7 +157,7 @@ export default function CulturalVerificationDemoPage() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <Link
-                href="/matches"
+                href=ROUTES.matches
                 className="flex items-center gap-2 text-primary-600 hover:text-primary-700 transition-colors"
               >
                 <ArrowLeftIcon className="w-5 h-5" />
@@ -441,7 +442,7 @@ export default function CulturalVerificationDemoPage() {
 
             <div className="text-center mt-8">
               <Link
-                href="/matches"
+                href=ROUTES.matches
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-600 to-secondary-600 text-white rounded-xl font-bold hover:from-primary-700 hover:to-secondary-700 transition-all transform hover:scale-105 shadow-lg"
               >
                 {language === 'pt' ? 'Começar Verificação' : 'Start Verification'}

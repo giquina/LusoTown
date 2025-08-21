@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import { motion } from 'framer-motion'
 import { PlayIcon, EyeIcon, ClockIcon, UserGroupIcon } from '@heroicons/react/24/outline'
 import { Crown, Users, Briefcase, GraduationCap, Music, Camera, MapPin, Calendar } from 'lucide-react'
@@ -120,9 +121,9 @@ export default function StreamCard({
       {/* Thumbnail */}
       <div className="relative aspect-video bg-gray-200">
         <img
-          src={stream.thumbnail || '/events/networking.jpg'}
+          src={stream.thumbnail || buildRoute(ROUTES.events, { id: 'event-id' })}
           alt={stream.title}
-          onError={(e) => { (e.currentTarget as HTMLImageElement).src = '/events/networking.jpg' }}
+          onError={(e) => { (e.currentTarget as HTMLImageElement).src = buildRoute(ROUTES.events, { id: 'event-id' }) }}
           className="w-full h-full object-cover"
         />
 

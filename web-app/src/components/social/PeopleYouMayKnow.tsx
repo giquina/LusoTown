@@ -1,5 +1,6 @@
 'use client'
 
+import { buildUnsplashUrl } from '@/config';
 import React, { useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { 
@@ -37,7 +38,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
     {
       id: '1',
       name: 'Ana Ferreira',
-      avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face',
+      avatar: buildUnsplashUrl('1494790108755-2616b612b786'),
       bio: 'Portuguese chef sharing traditional recipes from Porto',
       location: 'Stockwell, London',
       membershipTier: 'cultural_ambassador',
@@ -51,7 +52,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
     {
       id: '2',
       name: 'Carlos Silva',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
+      avatar: buildUnsplashUrl('1507003211169-0a1dd7228f2d'),
       bio: 'Brazilian engineer passionate about Samba and London nightlife',
       location: 'Vauxhall, London',
       membershipTier: 'community',
@@ -65,7 +66,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
     {
       id: '3',
       name: 'Maria Santos',
-      avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&h=100&fit=crop&crop=face',
+      avatar: buildUnsplashUrl('1517841905240-472988babdf9'),
       bio: 'Fado singer and Portuguese language teacher',
       location: 'Borough Market, London',
       membershipTier: 'cultural_ambassador',
@@ -79,7 +80,7 @@ export default function PeopleYouMayKnow({ className = '' }: { className?: strin
     {
       id: '4',
       name: 'João Rodrigues',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
+      avatar: buildUnsplashUrl('1472099645785-5658abf4ff4e'),
       bio: 'Transport service owner helping Portuguese families in London',
       location: 'South London',
       membershipTier: 'community',

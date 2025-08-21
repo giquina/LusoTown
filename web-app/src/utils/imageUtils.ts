@@ -1,3 +1,4 @@
+import { ROUTES } from '@/config';
 import { mockProfileImages, mockEventImages } from '@/config/mockData';
 
 // Get profile image with fallback
@@ -25,7 +26,7 @@ export const convertStaticImagePath = (imagePath: string): string => {
   }
   
   // Handle event images  
-  if (imagePath.includes('/events/')) {
+  if (imagePath.includes(buildRoute(ROUTES.events, { id: 'event-id' }))) {
     const filename = imagePath.split('/').pop()?.replace('.jpg', '') || 'networking';
     return getEventImage(filename);
   }

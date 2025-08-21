@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import { useState, useEffect, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -61,7 +62,7 @@ function ProfilesPageContent() {
     try {
       const user = authService.getCurrentUser()
       if (!user) {
-        router.push('/login')
+        router.push(ROUTES.auth.login)
         return
       }
       

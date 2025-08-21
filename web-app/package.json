@@ -41,7 +41,8 @@
     "codemod:i18n:dry": "node scripts/codemods/extract-i18n.js --dry-run",
     "codemod:urls": "node scripts/codemods/replace-urls.js",
     "codemod:urls:dry": "node scripts/codemods/replace-urls.js --dry-run",
-    "i18n-check": "npm run lint | grep 'react/jsx-no-literals'"
+    "i18n-check": "npm run codemod:i18n:dry && npm run codemod:urls:dry",
+    "i18n-extract-critical": "node scripts/codemods/extract-i18n.js --critical-only"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.7",

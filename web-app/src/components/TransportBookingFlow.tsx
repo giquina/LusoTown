@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
@@ -89,7 +90,7 @@ export default function TransportBookingFlow({
           : `SIA close protection service for ${complianceData.serviceType}`,
         price: totalPrice,
         currency: 'GBP',
-        imageUrl: selectedService?.image || '/transport-service.jpg',
+        imageUrl: selectedService?.image || ROUTES.transport,
         quantity: 1,
         transportServiceId: selectedService?.id,
         pickupDateTime: `${complianceData.serviceDate}T${complianceData.serviceTime}`,

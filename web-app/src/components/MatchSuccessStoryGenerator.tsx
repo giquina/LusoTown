@@ -1,5 +1,6 @@
 'use client'
 
+import { buildUnsplashUrl } from '@/config';
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
@@ -145,7 +146,7 @@ const mockSuccessStories: SuccessStory[] = [
     culturalElement: 'pastéis de nata',
     location: 'Borough Market',
     date: '2 days ago',
-    imageUrl: 'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=400&h=300&fit=crop&auto=format',
+    imageUrl: buildUnsplashUrl('1559925393-8be0ec4767c8'),
     likes: 23,
     shares: 5,
     comments: 8,
@@ -163,7 +164,7 @@ const mockSuccessStories: SuccessStory[] = [
     culturalElement: 'fado music',
     location: 'Portuguese Cultural Centre',
     date: '1 week ago',
-    imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop&auto=format',
+    imageUrl: buildUnsplashUrl('1493225457124-a3eb161ffa5f'),
     likes: 45,
     shares: 12,
     comments: 15,

@@ -1,4 +1,5 @@
 'use client'
+import { ROUTES } from '@/config';
 import Image from 'next/image'
 
 import React, { useState, useEffect } from 'react'
@@ -279,7 +280,7 @@ export default function TopicDetail() {
   useEffect(() => {
     const currentUser = authService.getCurrentUser()
     if (!currentUser) {
-      router.push('/login')
+      router.push(ROUTES.auth.login)
       return
     }
     
@@ -412,7 +413,7 @@ export default function TopicDetail() {
             This topic requires {topic?.membershipRequired === 'premium' ? 'Premium' : 'Core'} membership to view.
           </p>
           <button
-            onClick={() => router.push('/pricing')}
+            onClick={() => router.push(ROUTES.pricing)}
             className="btn-primary"
           >
             Upgrade Membership

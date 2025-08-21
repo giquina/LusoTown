@@ -1,5 +1,6 @@
 'use client'
 
+import { SOCIAL_URLS, UNIVERSITY_URLS } from '@/config';
 import React, { useState, useEffect } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { usePlatformIntegration } from '@/context/PlatformIntegrationContext'
@@ -282,11 +283,11 @@ const CamoesInstitutesIntegration: React.FC = () => {
           studentsEnrolled: 485,
           partnerInstitutions: 8,
           culturalExchanges: 6,
-          website: 'https://www.kcl.ac.uk/camoes',
+          website: UNIVERSITY_URLS.partner,
           socialMedia: {
-            facebook: 'https://facebook.com/CamoesKCL',
-            instagram: 'https://instagram.com/camoes_kcl',
-            twitter: 'https://twitter.com/CamoesKCL'
+            facebook: SOCIAL_URLS.facebook.page,
+            instagram: SOCIAL_URLS.instagram.profile,
+            twitter: SOCIAL_URLS.twitter.profile
           },
           openingHours: {
             weekdays: 'Monday-Friday: 9:00-21:00',
@@ -366,11 +367,11 @@ const CamoesInstitutesIntegration: React.FC = () => {
           studentsEnrolled: 245,
           partnerInstitutions: 5,
           culturalExchanges: 3,
-          website: 'https://www.manchester.ac.uk/camoes',
+          website: UNIVERSITY_URLS.partner,
           socialMedia: {
-            facebook: 'https://facebook.com/CamoesManchester',
-            instagram: 'https://instagram.com/camoes_manchester',
-            twitter: 'https://twitter.com/CamoesManchester'
+            facebook: SOCIAL_URLS.facebook.page,
+            instagram: SOCIAL_URLS.instagram.profile,
+            twitter: SOCIAL_URLS.twitter.profile
           },
           openingHours: {
             weekdays: 'Monday-Friday: 9:30-20:00',

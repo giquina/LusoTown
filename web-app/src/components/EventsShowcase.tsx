@@ -1,5 +1,6 @@
 "use client";
 
+import { ROUTES } from '@/config';
 import React, { useState, memo, useMemo, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
@@ -187,7 +188,7 @@ const EventsShowcase = memo(() => {
           maxAttendees: event.max_attendees || 0,
           price: event.price,
           category: event.cultural_category || 'Cultural Event',
-          image: event.image_url || `/events/portuguese/${event.cultural_category || 'default'}.jpg`,
+          image: event.image_url || buildRoute(ROUTES.events, { id: 'event-id' })default'}.jpg`,
           color: "from-primary-500 to-secondary-500",
           icon: getCategoryIcon(event.cultural_category),
           ageRestriction: "Welcome to Portuguese speakers and friends",

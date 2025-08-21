@@ -1,3 +1,4 @@
+import { STREAMING_URLS } from '@/config';
 import { NextRequest, NextResponse } from 'next/server'
 import jwt from 'jsonwebtoken'
 
@@ -34,11 +35,11 @@ export async function POST(request: NextRequest) {
 
     // Mock streaming URLs (would be real in production)
     const streamUrls = {
-      rtmp: `rtmp://localhost:1935/live/${streamId}`,
+      rtmp: STREAMING_URLS.rtmp.local,
       // Align with SRS/dev scripts: HLS served at /live/<streamId>.m3u8
       hls: `http://localhost:8080/live/${streamId}.m3u8`,
-      webrtc: `ws://localhost:8080/webrtc/${streamId}`,
-      chat: `ws://localhost:3001/chat/${streamId}`
+      webrtc: STREAMING_URLS.websocket.local,
+      chat: STREAMING_URLS.websocket.local
     }
 
     return NextResponse.json({

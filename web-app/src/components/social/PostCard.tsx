@@ -1,5 +1,6 @@
 'use client'
 
+import { SOCIAL_URLS } from '@/config';
 import React, { useState } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { SocialPost } from './SocialFeed'
@@ -89,7 +90,7 @@ export default function PostCard({ post, onInteraction, className = '' }: PostCa
       
       switch (platform) {
         case 'twitter':
-          window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(postUrl)}`, '_blank')
+          window.open(SOCIAL_URLS.twitter.profile, '_blank')
           break
         case 'facebook':
           window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}`, '_blank')

@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import { createContext, useContext, useState, ReactNode, useEffect, useCallback } from 'react'
 import { useLanguage } from './LanguageContext'
 import { useNetworking } from './NetworkingContext'
@@ -466,7 +467,7 @@ export function NotificationProvider({ children }: { children: ReactNode }) {
         isRead: false,
         priority: 'medium',
         createdAt: new Date().toISOString(),
-        actionUrl: '/events',
+        actionUrl: ROUTES.events,
         actionLabel: 'Explore Events',
         actionLabelPT: 'Explorar Eventos'
       },
@@ -482,7 +483,7 @@ export function NotificationProvider({ children }: { children: ReactNode }) {
         isRead: false,
         priority: 'medium',
         createdAt: new Date(Date.now() - 60000).toISOString(),
-        actionUrl: '/transport',
+        actionUrl: ROUTES.transport,
         actionLabel: 'View Services',
         actionLabelPT: 'Ver Serviços'
       },
@@ -498,7 +499,7 @@ export function NotificationProvider({ children }: { children: ReactNode }) {
         isRead: false,
         priority: 'high',
         createdAt: new Date(Date.now() - 120000).toISOString(),
-        actionUrl: '/events',
+        actionUrl: ROUTES.events,
         actionLabel: 'Join Event',
         actionLabelPT: 'Participar no Evento'
       }
@@ -752,7 +753,7 @@ export function NotificationProvider({ children }: { children: ReactNode }) {
       userId: 'current-user',
       priority: 'high',
       data,
-      actionUrl: '/transport',
+      actionUrl: ROUTES.transport,
       actionLabel: language === 'pt' ? 'Ver Detalhes' : 'View Details'
     })
   }
@@ -772,7 +773,7 @@ export function NotificationProvider({ children }: { children: ReactNode }) {
       userId: 'current-user',
       priority: 'medium',
       data,
-      actionUrl: '/events',
+      actionUrl: ROUTES.events,
       actionLabel: language === 'pt' ? 'Ver Comunidade' : 'View Community'
     })
   }
@@ -840,7 +841,7 @@ export function NotificationProvider({ children }: { children: ReactNode }) {
         isRead: false,
         priority: 'medium',
         createdAt: new Date().toISOString(),
-        actionUrl: '/events',
+        actionUrl: ROUTES.events,
         actionLabel: 'Book Now',
         actionLabelPT: 'Reservar Agora'
       })

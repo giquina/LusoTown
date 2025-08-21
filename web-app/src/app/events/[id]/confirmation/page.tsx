@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import { useState, useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { ROUTES } from '@/config/routes'
@@ -67,7 +68,7 @@ const BookingConfirmationPage = () => {
       navigator.share({
         title: 'I\'m attending the AI Business App Creation Workshop!',
         text: `Just booked my spot at the ${event.title} on ${event.date}. Excited to learn AI tools and get a free app created for my business idea!`,
-        url: window.location.origin + `/events/${eventId}`
+        url: window.location.origin + buildRoute(ROUTES.events, { id: 'event-id' })
       })
     } else {
       // Fallback to copying to clipboard

@@ -1,5 +1,6 @@
 "use client";
 
+import { ROUTES } from '@/config';
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -88,7 +89,7 @@ export default function StreamReplayLibrary({
       likes: 189,
       host: "Maria Santos & Convidados",
       isPremium: false,
-      thumbnail: "/events/art-tour.jpg",
+      thumbnail: buildRoute(ROUTES.events, { id: 'event-id' }),
       youtubeVideoId: "dQw4w9WgXcQ",
       tags: ["fado", "music", "tradition", "portugal", "culture"],
       keyMoments: [
@@ -136,7 +137,7 @@ export default function StreamReplayLibrary({
       likes: 156,
       host: "Carlos Mendes",
       isPremium: true,
-      thumbnail: "/events/book-club.jpg",
+      thumbnail: buildRoute(ROUTES.events, { id: 'event-id' }),
       youtubeVideoId: "dQw4w9WgXcQ",
       tags: ["ai", "business", "workshop", "technology", "automation"],
       keyMoments: [
@@ -183,7 +184,7 @@ export default function StreamReplayLibrary({
       likes: 298,
       host: "LusoTown Community Team",
       isPremium: false,
-      thumbnail: "/events/networking.jpg",
+      thumbnail: buildRoute(ROUTES.events, { id: 'event-id' }),
       youtubeVideoId: "dQw4w9WgXcQ",
       tags: ["community", "stories", "london", "experiences", "networking"],
       keyMoments: [
@@ -232,7 +233,7 @@ export default function StreamReplayLibrary({
       likes: 78,
       host: "Ana Ribeiro",
       isPremium: false,
-      thumbnail: "/events/yoga.jpg",
+      thumbnail: buildRoute(ROUTES.events, { id: 'event-id' }),
       youtubeVideoId: "dQw4w9WgXcQ",
       tags: ["students", "career", "uk", "advice", "opportunities"],
       keyMoments: [
@@ -276,7 +277,7 @@ export default function StreamReplayLibrary({
       likes: 124,
       host: "Miguel Santos & CEOs",
       isPremium: true,
-      thumbnail: "/events/jazz-networking.jpg",
+      thumbnail: buildRoute(ROUTES.events, { id: 'event-id' }),
       youtubeVideoId: "dQw4w9WgXcQ",
       tags: ["vip", "ceo", "business", "brexit", "strategy"],
       keyMoments: [
@@ -463,7 +464,7 @@ export default function StreamReplayLibrary({
                 {/* Thumbnail */}
                 <div className="relative aspect-video bg-gray-200">
                   <Image
-                    src={replay.thumbnail || "/events/networking.jpg"}
+                    src={replay.thumbnail || buildRoute(ROUTES.events, { id: 'event-id' })}
                     alt={replay.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"

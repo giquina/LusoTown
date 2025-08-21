@@ -1,5 +1,6 @@
 'use client'
 
+import { buildUnsplashUrl } from '@/config';
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
@@ -84,7 +85,7 @@ const mockServicePosts: ServicePost[] = [
       includes: ['Cultural commentary', 'Portuguese community areas', 'Historical context'],
       booking: 'WhatsApp: +44 7xxx xxx xxx'
     },
-    images: ['https://images.unsplash.com/photo-1583677995106-1594c4bf5d90?w=600&h=400&fit=crop'],
+    images: [buildUnsplashUrl('1583677995106-1594c4bf5d90')],
     createdAt: '2 hours ago',
     timeAgo: '2h',
     metrics: { likes: 34, comments: 12, shares: 8, views: 156, bookings: 3 },
@@ -114,8 +115,8 @@ const mockServicePosts: ServicePost[] = [
       includes: ['Portuguese bakery visits', 'Cultural history', 'Local insights', 'Pastéis de nata tasting']
     },
     images: [
-      'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600&h=400&fit=crop',
-      'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&h=400&fit=crop'
+      buildUnsplashUrl('1513475382585-d06e58bcb0e0'),
+      buildUnsplashUrl('1509440159596-0249088772ff')
     ],
     createdAt: '5 hours ago',
     timeAgo: '5h',

@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import { useCallback, useEffect } from 'react'
 import { useNotifications } from '@/context/NotificationContext'
 import { useNetworking } from '@/context/NetworkingContext'
@@ -292,7 +293,7 @@ export function useNotificationIntegration() {
       userId: 'current-user',
       priority: 'medium',
       data: streamData,
-      actionUrl: '/live',
+      actionUrl: ROUTES.live,
       actionLabel: language === 'pt' ? 'Assistir' : 'Watch'
     })
   }, [addNotification, language])

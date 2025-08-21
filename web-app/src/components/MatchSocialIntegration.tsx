@@ -1,5 +1,6 @@
 'use client'
 
+import { buildUnsplashUrl } from '@/config';
 import React, { useState, useEffect, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
@@ -126,7 +127,7 @@ export default function MatchSocialIntegration({
       type: 'person',
       name: profile.name,
       description: `${profile.profession} from ${profile.origin}`,
-      imageUrl: `https://images.unsplash.com/photo-${Math.random().toString(36)}?w=150&h=150&fit=crop&crop=face&auto=format`,
+      imageUrl: buildUnsplashUrl('placeholder'),
       location: profile.location,
       followers: Math.floor(Math.random() * 500) + 50,
       culturalFocus: profile.interests,

@@ -1,3 +1,4 @@
+import { buildUnsplashUrl } from '@/config';
 // Additional London Events for Portuguese Community - Women 40+ and Community Events
 
 export const additionalLondonEvents = [
@@ -29,8 +30,8 @@ export const additionalLondonEvents = [
     status: 'fully-booked',
     featured: true,
     images: [
-      'https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=600&h=400&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1533929736458-ca588d08c8be?w=600&h=400&fit=crop&auto=format'
+      buildUnsplashUrl('1574362848149-11496d93a7c7'),
+      buildUnsplashUrl('1533929736458-ca588d08c8be')
     ],
     whatToBring: ['Comfortable walking/climbing shoes with good grip', 'Light jacket', 'Water bottle', 'Sense of adventure and achievement'],
     dresscode: 'Active wear or comfortable casual, suitable for climbing',
@@ -69,8 +70,8 @@ export const additionalLondonEvents = [
     status: 'fully-booked',
     featured: true,
     images: [
-      'https://images.unsplash.com/photo-1594736797933-d0d3a34c0df4?w=600&h=400&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=600&h=400&fit=crop&auto=format'
+      buildUnsplashUrl('1594736797933-d0d3a34c0df4'),
+      buildUnsplashUrl('1581833971358-2c8b550f87b3')
     ],
     whatToBring: ['Notebook for cultural insights', 'Camera for personal documentation', 'Appreciation for Portuguese artistry'],
     dresscode: 'Smart casual, comfortable for museum walking',
@@ -109,8 +110,8 @@ export const additionalLondonEvents = [
     status: 'fully-booked',
     featured: true,
     images: [
-      'https://images.unsplash.com/photo-1507924538820-ede94a04019d?w=600&h=400&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1489599408746-f2562b0d4592?w=600&h=400&fit=crop&auto=format'
+      buildUnsplashUrl('1507924538820-ede94a04019d'),
+      buildUnsplashUrl('1489599408746-f2562b0d4592')
     ],
     whatToBring: ['Evening attire', 'Appreciation for performing arts', 'Open mind for cultural discussion'],
     dresscode: 'Elegant evening wear, suitable for West End theatre',
@@ -151,8 +152,8 @@ export const additionalLondonEvents = [
     status: 'fully-booked',
     featured: true,
     images: [
-      'https://images.unsplash.com/photo-1551269901-5c5e14c25df7?w=600&h=400&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&auto=format'
+      buildUnsplashUrl('1551269901-5c5e14c25df7'),
+      buildUnsplashUrl('1578662996442-48f60103fc96')
     ],
     whatToBring: ['Camera for magical community photos', 'Comfortable walking shoes', 'Excitement for movie magic'],
     dresscode: 'Casual, comfortable for walking and community fun',
@@ -191,8 +192,8 @@ export const additionalLondonEvents = [
     status: 'fully-booked',
     featured: true,
     images: [
-      'https://images.unsplash.com/photo-1549366021-9f761d040a94?w=600&h=400&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&h=400&fit=crop&auto=format'
+      buildUnsplashUrl('1549366021-9f761d040a94'),
+      buildUnsplashUrl('1544735716-392fe2489ffa')
     ],
     whatToBring: ['Comfortable walking shoes', 'Camera for community photos', 'Reusable water bottle'],
     dresscode: 'Casual, weather-appropriate for outdoor walking',
@@ -231,8 +232,8 @@ export const additionalLondonEvents = [
     status: 'fully-booked',
     featured: true,
     images: [
-      'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1551269901-5c5e14c25df7?w=600&h=400&fit=crop&auto=format'
+      buildUnsplashUrl('1578662996442-48f60103fc96'),
+      buildUnsplashUrl('1551269901-5c5e14c25df7')
     ],
     whatToBring: ['Comfortable walking shoes', 'Notebook for discoveries', 'Curiosity about natural world'],
     dresscode: 'Casual, comfortable for museum exploration',
@@ -271,8 +272,8 @@ export const additionalLondonEvents = [
     status: 'fully-booked',
     featured: true,
     images: [
-      'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600&h=400&fit=crop&auto=format',
-      'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&auto=format'
+      buildUnsplashUrl('1513475382585-d06e58bcb0e0'),
+      buildUnsplashUrl('1578662996442-48f60103fc96')
     ],
     whatToBring: ['Light jacket for evening river breeze', 'Camera for community photos', 'Appetite for celebration'],
     dresscode: 'Smart casual, suitable for community dinner cruise',

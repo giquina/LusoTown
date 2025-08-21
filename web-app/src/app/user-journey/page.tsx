@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
@@ -83,7 +84,7 @@ export default function UserJourneyPage() {
     
     // Add mock activity based on page visits
     const visitedPages = JSON.parse(localStorage.getItem('lusotown-visited-pages') || '[]')
-    if (visitedPages.includes('/transport')) activity.push('viewed_transport')
+    if (visitedPages.includes(ROUTES.transport)) activity.push('viewed_transport')
   if (visitedPages.includes(ROUTES.events)) activity.push('viewed_events')
     if (visitedPages.includes('/my-network')) activity.push('viewed_networking')
     

@@ -1,3 +1,4 @@
+import { STREAMING_URLS } from '@/config';
 import { createClient } from '@/lib/supabase'
 import { sign, verify } from 'jsonwebtoken'
 
@@ -107,8 +108,8 @@ export function generateRTMPUrls(streamKey: string): {
   rtmpKey: string
 } {
   return {
-    rtmpUrl: `rtmp://${STREAM_SERVER_URL}/live/${streamKey}`,
-    rtmpEndpoint: `rtmp://${STREAM_SERVER_URL}/live`,
+    rtmpUrl: STREAMING_URLS.rtmp.default,
+    rtmpEndpoint: STREAMING_URLS.rtmp.default,
     rtmpKey: streamKey
   }
 }
@@ -125,7 +126,7 @@ export function generatePlaybackUrls(streamKey: string): {
   return {
     hlsUrl: `https://${STREAM_SERVER_URL}/live/${streamKey}.m3u8`,
     dashUrl: `https://${STREAM_SERVER_URL}/live/${streamKey}.mpd`,
-    rtmpUrl: `rtmp://${STREAM_SERVER_URL}/play/${streamKey}`,
+    rtmpUrl: STREAMING_URLS.rtmp.default,
     embedUrl: `https://${STREAM_SERVER_URL}/embed/${streamKey}`
   }
 }
@@ -144,7 +145,7 @@ export function generateOBSConfiguration(
   const maxBitrate = userSettings?.maxBitrate || 3000
   
   return {
-    server: `rtmp://${STREAM_SERVER_URL}/live`,
+    server: STREAMING_URLS.rtmp.default,
     streamKey: streamKey,
     maxBitrate: maxBitrate,
     keyframeInterval: 2,

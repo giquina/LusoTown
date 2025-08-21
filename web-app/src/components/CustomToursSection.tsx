@@ -1,5 +1,6 @@
 'use client'
 
+import { buildUnsplashUrl } from '@/config';
 import { motion } from 'framer-motion'
 import { MapPinIcon, ShieldCheckIcon, StarIcon, CameraIcon } from '@heroicons/react/24/outline'
 import { CheckCircleIcon, Crown, Users } from 'lucide-react'
@@ -46,28 +47,28 @@ const popularDestinations = [
   {
     name: 'London Landmarks',
     namePortuguese: 'Marcos de Londres',
-    image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&h=300&fit=crop',
+    image: buildUnsplashUrl('1513635269975-59663e0ac1ad'),
     description: 'Big Ben, Tower Bridge, Buckingham Palace, Westminster',
     descriptionPortuguese: 'Big Ben, Tower Bridge, Palácio de Buckingham, Westminster'
   },
   {
     name: 'Windsor & Countryside',
     namePortuguese: 'Windsor e Campo',
-    image: 'https://images.unsplash.com/photo-1571771019784-3ff35f4f4277?w=400&h=300&fit=crop',
+    image: buildUnsplashUrl('1571771019784-3ff35f4f4277'),
     description: 'Windsor Castle, Cotswolds villages, English countryside',
     descriptionPortuguese: 'Castelo de Windsor, aldeias dos Cotswolds, campo inglês'
   },
   {
     name: 'Oxford & Cambridge',
     namePortuguese: 'Oxford e Cambridge',
-    image: 'https://images.unsplash.com/photo-1542977604-16df8b66d0be?w=400&h=300&fit=crop',
+    image: buildUnsplashUrl('1542977604-16df8b66d0be'),
     description: 'Historic universities, beautiful architecture, academic heritage',
     descriptionPortuguese: 'Universidades históricas, arquitetura bela, herança académica'
   },
   {
     name: 'Bath & Stonehenge',
     namePortuguese: 'Bath e Stonehenge',
-    image: 'https://images.unsplash.com/photo-1539650116574-75c0c6d00ad8?w=400&h=300&fit=crop',
+    image: buildUnsplashUrl('1539650116574-75c0c6d00ad8'),
     description: 'Roman baths, ancient mysteries, Georgian architecture',
     descriptionPortuguese: 'Banhos romanos, mistérios antigos, arquitetura georgiana'
   }

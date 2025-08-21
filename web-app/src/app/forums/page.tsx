@@ -1,5 +1,6 @@
 'use client'
 
+import { ROUTES } from '@/config';
 import React, { useState, useEffect } from 'react'
 import { authService, User } from '@/lib/auth'
 import { forumsService, ForumCategory, ForumTopic } from '@/lib/forums'
@@ -40,7 +41,7 @@ export default function Forums() {
   useEffect(() => {
     const currentUser = authService.getCurrentUser()
     if (!currentUser) {
-      router.push('/login')
+      router.push(ROUTES.auth.login)
       return
     }
     
