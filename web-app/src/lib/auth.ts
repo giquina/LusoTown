@@ -94,17 +94,20 @@ export class AuthService {
 
   // Demo authentication methods
   private isDemoLogin(email: string, password: string): boolean {
+    const demoEmail = process.env.NEXT_PUBLIC_DEMO_EMAIL || "demo@lusotown.com";
+    const demoPassword = process.env.NEXT_PUBLIC_DEMO_PASSWORD || "LusoTown2025!";
+    
     return (
-      email.trim().toLowerCase() === "demo@lusotown.com" &&
-      password === "LusoTown2025!"
+      email.trim().toLowerCase() === demoEmail &&
+      password === demoPassword
     );
   }
 
   private createDemoUser(): User {
     return {
       id: "demo-user-id",
-      email: "demo@lusotown.com",
-      name: "Maria Silva",
+      email: process.env.NEXT_PUBLIC_DEMO_EMAIL || "demo@lusotown.com",
+      name: process.env.NEXT_PUBLIC_DEMO_USER_NAME || "Maria Silva",
       role: "user",
       membershipTier: "premium",
       profileImage: "/profiles/default-avatar.svg",
@@ -117,7 +120,7 @@ export class AuthService {
         "Portuguese Literature",
       ],
       favoriteEvents: ["event-1", "event-3", "event-5"],
-      location: "Camden, London",
+      location: process.env.NEXT_PUBLIC_DEMO_USER_LOCATION || "Camden, London",
     };
   }
 

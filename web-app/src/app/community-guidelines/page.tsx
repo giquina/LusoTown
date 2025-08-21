@@ -8,36 +8,38 @@ export const metadata = {
 }
 
 export default function CommunityGuidelines() {
+  const { t } = useLanguage()
+  
   const guidelines = [
     {
       icon: ShieldCheckIcon,
-      title: "Respeito (Respect)",
-      description: "Treat all community members with dignity and respect. Value cultural diversity across all Portuguese-speaking countries including Portugal, Brazil, Angola, Mozambique, and others."
+      title: t('community_guidelines.respect.title'),
+      description: t('community_guidelines.respect.description')
     },
     {
       icon: GlobeAltIcon,
-      title: "Inclusão (Inclusion)",
-      description: "Welcome all Portuguese speakers regardless of country of origin. Embrace our shared language while celebrating our unique cultural differences."
+      title: t('community_guidelines.inclusion.title'),
+      description: t('community_guidelines.inclusion.description')
     },
     {
       icon: HeartIcon,
-      title: "Rede (Network)",
-      description: "Support each other through professional and personal connections. Help fellow Portuguese speakers navigate life in London and build strong community networks."
+      title: t('community_guidelines.network.title'),
+      description: t('community_guidelines.network.description')
     },
     {
       icon: UserGroupIcon,
-      title: "Cultura (Culture)",
-      description: "Preserve and celebrate Portuguese culture through language, traditions, and cultural events. Share our rich cultural diversity with the wider London community."
+      title: t('community_guidelines.culture.title'),
+      description: t('community_guidelines.culture.description')
     },
     {
       icon: BuildingOfficeIcon,
-      title: "Comunidade (Community)",
-      description: "Foster professional networking and mutual support. Help fellow Portuguese speakers thrive in London's business environment while maintaining our cultural identity."
+      title: t('community_guidelines.community.title'),
+      description: t('community_guidelines.community.description')
     },
     {
       icon: ExclamationTriangleIcon,
-      title: "Report Concerns",
-      description: "If you encounter any behavior that makes you uncomfortable or violates our community standards, please report it to our moderation team immediately."
+      title: t('community_guidelines.report.title'),
+      description: t('community_guidelines.report.description')
     }
   ]
 
@@ -48,10 +50,10 @@ export default function CommunityGuidelines() {
           <div className="container-width">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Community Guidelines
+                {t('community_guidelines.hero.title')}
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Creating a respectful, inclusive environment for the Portuguese diaspora community in London to connect, support each other, and celebrate our shared heritage.
+                {t('community_guidelines.hero.description')}
               </p>
             </div>
           </div>

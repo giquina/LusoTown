@@ -46,7 +46,11 @@ export const UNIVERSITY_URLS = {
   qmul: 'https://qmul.ac.uk/international-students',
   greenwich: 'https://gre.ac.uk/international',
   westminster: 'https://westminster.ac.uk/international',
-  roehampton: 'https://roehampton.ac.uk/international'
+  roehampton: 'https://roehampton.ac.uk/international',
+  oxford: 'https://www.ox.ac.uk',
+  cambridge: 'https://www.cam.ac.uk',
+  manchester: 'https://www.manchester.ac.uk',
+  edinburgh: 'https://www.ed.ac.uk'
 } as const;
 
 // External Service URLs

@@ -99,8 +99,8 @@ const SocialNetworkCard: React.FC<SocialNetworkCardProps> = ({ network }) => {
   const handleJoinRequest = async () => {
     try {
       const result = await socialNetworksService.requestNetworkJoin(network.id, {
-        name: 'Demo User',
-        email: 'demo@lusotown.com',
+        name: process.env.NEXT_PUBLIC_DEMO_USER_NAME || 'Demo User',
+        email: process.env.NEXT_PUBLIC_DEMO_EMAIL || 'demo@lusotown.com',
         reason: 'I want to connect with the Portuguese community',
         lusoTownMember: true
       })
