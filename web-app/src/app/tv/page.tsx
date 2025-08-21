@@ -63,6 +63,9 @@ export default function TVPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [showMiniPlayer, setShowMiniPlayer] = useState(false);
   const playerContainerRef = useRef<HTMLDivElement | null>(null);
+  const liveRef = useRef<HTMLDivElement | null>(null);
+  const scheduleRef = useRef<HTMLDivElement | null>(null);
+  const replaysRef = useRef<HTMLDivElement | null>(null);
 
   const isPortuguese = language === "pt";
 
@@ -166,16 +169,29 @@ export default function TVPage() {
     }
   }, []);
 
+  const goToTab = (tabId: string) => {
+    setActiveTab(tabId);
+    setTimeout(() => {
+      const map: Record<string, HTMLDivElement | null> = {
+        live: liveRef.current,
+        programs: scheduleRef.current,
+        replays: replaysRef.current,
+      };
+      const el = map[tabId];
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 0);
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-secondary-50 pt-20">
         {/* Clean background pattern instead of image */}
         <div className="absolute inset-0 opacity-30">
-          <div 
-            className="absolute inset-0" 
+          <div
+            className="absolute inset-0"
             style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23059669' fill-opacity='0.1'%3E%3Cpath d='M20 20.5V18h-2v2.5h-2.5V22H18v2.5h2V22h2.5v-1.5H20zM0 38.59l2.59-2.59 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.59 2.59L1.41 5.59 0 4.18V1.41z'/%3E%3C/g%3E%3C/svg%3E")`
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23059669' fill-opacity='0.1'%3E%3Cpath d='M20 20.5V18h-2v2.5h-2.5V22H18v2.5h2V22h2.5v-1.5H20zM0 38.59l2.59-2.59 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.59 2.59L1.41 5.59 0 4.18V1.41z'/%3E%3C/g%3E%3C/svg%3E")`,
             }}
           />
         </div>
@@ -228,6 +244,35 @@ export default function TVPage() {
                 ? "Acompanhe transmissões culturais ao vivo ocasionalmente, quando o nosso canal entra no ar diretamente de Londres."
                 : "Follow occasional live cultural broadcasts when our channel goes live directly from London."}
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-3 justify-center"
+            >
+              <button
+                onClick={() => goToTab("live")}
+                className="inline-flex items-center justify-center bg-primary-600 text-white font-semibold py-3 px-6 rounded-xl hover:bg-primary-700 transition-colors"
+              >
+                <Play className="w-4 h-4 mr-2" />
+                {isPortuguese ? "Assistir Agora" : "Watch Live"}
+              </button>
+              <button
+                onClick={() => goToTab("programs")}
+                className="inline-flex items-center justify-center bg-white text-primary-700 border border-primary-200 font-semibold py-3 px-6 rounded-xl hover:bg-gray-50 transition-colors"
+              >
+                <Calendar className="w-4 h-4 mr-2" />
+                {isPortuguese ? "Ver Horários" : "View Schedule"}
+              </button>
+              <button
+                onClick={() => goToTab("replays")}
+                className="inline-flex items-center justify-center bg-gray-900 text-white font-semibold py-3 px-6 rounded-xl hover:bg-black transition-colors"
+              >
+                <Library className="w-4 h-4 mr-2" />
+                {isPortuguese ? "Ver Gravações" : "Explore Replays"}
+              </button>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -239,7 +284,7 @@ export default function TVPage() {
             {navigationTabs.map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
+                onClick={() => goToTab(tab.id)}
                 className={`flex items-center gap-2 px-6 py-4 text-sm font-medium whitespace-nowrap border-b-2 transition-colors duration-200 min-w-[120px] ${
                   activeTab === tab.id
                     ? "border-primary-500 text-primary-600 bg-primary-50"
@@ -260,7 +305,7 @@ export default function TVPage() {
         <div className="container-width">
           {/* Live Tab */}
           {activeTab === "live" && (
-            <div className="space-y-8">
+            <div ref={liveRef} className="space-y-8">
               <div className="text-center mb-8">
                 <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
                   {isPortuguese ? "Canal Ao Vivo" : "Live Channel"}
@@ -311,7 +356,7 @@ export default function TVPage() {
 
           {/* Programs Tab */}
           {activeTab === "programs" && (
-            <div className="space-y-8">
+            <div ref={scheduleRef} className="space-y-8">
               <div className="text-center mb-8">
                 <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
                   {isPortuguese
@@ -331,7 +376,7 @@ export default function TVPage() {
 
           {/* Replays Tab */}
           {activeTab === "replays" && (
-            <div className="space-y-8">
+            <div ref={replaysRef} className="space-y-8">
               <div className="text-center mb-8">
                 <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4">
                   {isPortuguese ? "Biblioteca de Gravações" : "Replay Library"}

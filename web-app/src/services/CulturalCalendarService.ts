@@ -157,7 +157,7 @@ class CulturalCalendarService {
             title: evt.title,
             location: evt.location,
             start_datetime: evt.start_datetime,
-            venue_name: evt.venue?.name
+            venue_name: (evt.venue as any)?.name || ''
           }))
         })
       }

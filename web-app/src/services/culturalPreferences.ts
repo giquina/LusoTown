@@ -7,9 +7,9 @@ import type {
   CulturalCompatibility,
   QuizResults,
   MatchProfile,
-  CulturalMatchingConfig,
-  DEFAULT_MATCHING_CONFIG
+  CulturalMatchingConfig
 } from '@/types/cultural-preferences'
+import { DEFAULT_MATCHING_CONFIG } from '@/types/cultural-preferences'
 
 export class CulturalPreferencesService {
   /**

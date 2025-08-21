@@ -5,6 +5,7 @@
  * Portuguese community platform requirements and cultural considerations.
  */
 
+import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { validateMobileComponent, generateMobileReport } from '@/utils/mobile-ux-validator';
 import { MOBILE_UX_AGENT_CONFIG } from '@/config/mobile-ux-agent';

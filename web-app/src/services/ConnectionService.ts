@@ -402,7 +402,13 @@ class ConnectionService {
       start_datetime: event.start_datetime,
       location: event.location,
       attendee_count: event.current_attendee_count,
-      attendees: event.event_attendees?.map(attendee => attendee.user).filter(Boolean) || []
+      attendees: (event.event_attendees || []).map((attendee: any) => ({
+        id: attendee.user?.id || attendee.id || '',
+        first_name: attendee.user?.first_name || attendee.first_name || '',
+        last_name: attendee.user?.last_name || attendee.last_name || '',
+        profile_picture_url: attendee.user?.profile_picture_url || attendee.profile_picture_url,
+        professional_status: attendee.user?.professional_status || attendee.professional_status
+      })).filter(user => user.id)
     }))
   }
 

@@ -373,10 +373,9 @@ class NotificationService {
     onNewNotification: (notification: UserNotification) => void,
     onNotificationUpdate: (notification: UserNotification) => void
   ): () => void {
-    const { data: user } = this.supabaseClient.auth.getUser()
-    if (!user) return () => {}
-
-    user.then(({ data: userData }) => {
+    const userPromise = this.supabaseClient.auth.getUser()
+    
+    userPromise.then(({ data: userData }) => {
       if (!userData.user) return
 
       this.realtimeSubscription = this.supabaseClient
@@ -407,7 +406,7 @@ class NotificationService {
         )
         .subscribe()
     })
-
+    
     return () => {
       if (this.realtimeSubscription) {
         this.supabaseClient.removeChannel(this.realtimeSubscription)

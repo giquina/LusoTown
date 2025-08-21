@@ -5,7 +5,7 @@ export const getProfileImage = (userId: string | undefined): string => {
   if (!userId) return mockProfileImages.default;
   
   const imageKey = userId.toLowerCase().replace(/[^a-z0-9-]/g, '-');
-  return mockProfileImages[imageKey] || mockProfileImages.default;
+  return (mockProfileImages as Record<string, string>)[imageKey] || mockProfileImages.default;
 };
 
 // Get event image with fallback
@@ -13,7 +13,7 @@ export const getEventImage = (eventType: string | undefined): string => {
   if (!eventType) return mockEventImages.networking;
   
   const imageKey = eventType.toLowerCase().replace(/[^a-z0-9-]/g, '-');
-  return mockEventImages[imageKey] || mockEventImages.networking;
+  return (mockEventImages as Record<string, string>)[imageKey] || mockEventImages.networking;
 };
 
 // Convert old static image paths to dynamic ones

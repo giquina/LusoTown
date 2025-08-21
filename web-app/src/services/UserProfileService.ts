@@ -150,7 +150,7 @@ class UserProfileService {
 
     return {
       user_id: targetUserId,
-      interests: data.map(item => item.interest).filter(Boolean)
+      interests: (data || []).map((item: any) => item.interest).filter(Boolean)
     }
   }
 
@@ -231,7 +231,7 @@ class UserProfileService {
     const { data: user } = await this.supabaseClient.auth.getUser()
     if (!user.user) throw new Error('User not authenticated')
 
-    const { id, user_id, created_at, updated_at, ...preferenceData } = preferences
+    const { id, user_id, ...preferenceData } = preferences
 
     const { data, error } = await this.supabaseClient
       .from('cultural_preferences')

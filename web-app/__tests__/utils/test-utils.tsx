@@ -314,4 +314,5 @@ export const culturalTestUtils = {
 
 // Re-export everything from testing-library
 export * from '@testing-library/react'
+export { screen, fireEvent, waitFor } from '@testing-library/react'
 export { customRender as render }

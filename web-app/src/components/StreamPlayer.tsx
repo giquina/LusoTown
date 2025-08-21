@@ -243,10 +243,15 @@ export default function StreamPlayer({
       )}
 
       {/* Viewer Count */}
-      <div className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm backdrop-blur-sm">
-        {stream.viewerCount.toLocaleString()}{" "}
-        {language === "pt" ? "espectadores" : "viewers"}
-      </div>
+      {stream.viewerCount > 0 ? (
+        <div className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm backdrop-blur-sm">
+          {stream.viewerCount.toLocaleString()} {language === "pt" ? "espectadores" : "viewers"}
+        </div>
+      ) : (
+        <div className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm backdrop-blur-sm">
+          {language === "pt" ? "Seja o primeiro a assistir" : "Be the first to join"}
+        </div>
+      )}
 
       {/* Preview Timer for Premium Content */}
       {isPreviewMode && isPlaying && previewTimeLeft > 0 && (

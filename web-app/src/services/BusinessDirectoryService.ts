@@ -557,7 +557,7 @@ class BusinessDirectoryService {
     if (!businessHours) return true // Assume open if no hours specified
 
     const now = new Date()
-    const currentDay = now.toLocaleLowerCase() // e.g., 'monday'
+    const currentDay = now.toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase() // e.g., 'monday'
     const currentTime = now.toTimeString().slice(0, 5) // e.g., '14:30'
 
     const daySchedule = businessHours[currentDay]

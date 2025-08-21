@@ -242,6 +242,7 @@ export const initializePortugueseServices = async (): Promise<{
   culturalPreferences: any
 }> => {
   try {
+    const { userProfileService } = await import('./UserProfileService')
     const userProfile = await userProfileService.getCurrentUserProfile()
     const culturalPreferences = userProfile ? await userProfileService.getUserCulturalPreferences() : null
     

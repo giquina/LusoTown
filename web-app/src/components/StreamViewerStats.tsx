@@ -21,10 +21,12 @@ export default function StreamViewerStats({
   totalViews,
   language,
 }: StreamViewerStatsProps) {
-  // Calculate growth percentage (mock data for demo)
-  const viewerGrowth = Math.round(
+  // Calculate growth percentage (mock heuristic). If low traffic, keep neutral to avoid misleading negatives.
+  let viewerGrowth = Math.round(
     ((currentViewers - peakViewers * 0.8) / (peakViewers * 0.8)) * 100
   );
+  const isLowTraffic = peakViewers <= 5 || currentViewers <= 1;
+  if (isLowTraffic || !isFinite(viewerGrowth)) viewerGrowth = 0;
 
   const stats = [
     {
@@ -34,8 +36,13 @@ export default function StreamViewerStats({
       icon: EyeIcon,
       color: "text-action-600",
       bgColor: "bg-action-100",
-      change: viewerGrowth > 0 ? `+${viewerGrowth}%` : `${viewerGrowth}%`,
-      changeColor: viewerGrowth > 0 ? "text-secondary-600" : "text-gray-500",
+      change:
+        currentViewers === 0
+          ? language === "pt" ? "aguardando" : "waiting"
+          : viewerGrowth > 0
+          ? `+${viewerGrowth}%`
+          : "—",
+      changeColor: viewerGrowth > 0 ? "text-secondary-600" : "text-gray-400",
     },
     {
       id: "peak",

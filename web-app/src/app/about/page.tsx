@@ -24,8 +24,9 @@ export default function About() {
   const { t } = useLanguage()
   return (
     <main className="min-h-screen">
-      {/* Premium PageHeader with luxury styling */}
-      <PageHeader
+      <div>
+        {/* Premium PageHeader with luxury styling */}
+        <PageHeader
         title="About LusoTown London"
         titlePt="Sobre LusoTown London"
         subtitle="LusoTown connects Portuguese speakers and friends through real-life meetups in London. Whether you're new to the city, have roots in a Portuguese-speaking country, or simply love our culture and language, this is your space to meet people in person, share, and celebrate."
