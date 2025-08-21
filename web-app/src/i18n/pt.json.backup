@@ -48,6 +48,7 @@
   "marketing.cultural.testimonials.joao_sao_paulo": "A festa junina em Londres foi incrível! As crianças adoraram e senti-me conectado às minhas raízes.",
   "marketing.cultural.testimonials.ana_luanda": "O workshop de pastéis de nata ensinou-me receitas da minha avó. Que experiência especial!",
   "marketing.cultural.quotes.teixeira_pascoaes": "A cultura é a nossa segunda alma - Teixeira de Pascoaes",
+
   "cultural_quiz.title": "Quiz de Compatibilidade Cultural Portuguesa",
   "cultural_quiz.description": "Descubra o seu perfil cultural português e encontre pessoas que realmente partilham os seus valores e tradições",
   "cultural_quiz.start": "Iniciar Quiz Cultural",
@@ -69,8 +70,9 @@
   "cultural_quiz.most_compatible": "Você será mais compatível com:",
   "cultural_quiz.average_compatibility": "Taxa de Compatibilidade Média",
   "cultural_quiz.based_on_profile": "Baseado no seu perfil cultural",
+
   "cultural_categories.food": "Culinária",
-  "cultural_categories.music": "Música",
+  "cultural_categories.music": "Música", 
   "cultural_categories.traditions": "Tradições",
   "cultural_categories.family": "Família",
   "cultural_categories.language": "Idioma",
@@ -79,11 +81,13 @@
   "cultural_categories.values": "Valores",
   "cultural_categories.holidays": "Celebrações",
   "cultural_categories.regional": "Regional",
+
   "cultural_strength.very_strong": "Muito Forte",
   "cultural_strength.strong": "Forte",
   "cultural_strength.moderate": "Moderado",
   "cultural_strength.developing": "Em Desenvolvimento",
   "cultural_strength.flexible": "Flexível",
+
   "cultural_compatibility.exceptional": "Match Excepcional",
   "cultural_compatibility.excellent": "Match Excelente",
   "cultural_compatibility.very_good": "Muito Boa Compatibilidade",
@@ -94,6 +98,7 @@
   "cultural_compatibility.details": "Ver Detalhes",
   "cultural_compatibility.filters": "Filtros de Compatibilidade",
   "cultural_compatibility.minimum": "Compatibilidade Mínima",
+  
   "cultural_verification.title": "Verificação Cultural Portuguesa",
   "cultural_verification.subtitle": "Aumente a sua credibilidade através da autenticidade cultural",
   "cultural_verification.score": "Pontuação de Verificação",
@@ -122,6 +127,7 @@
   "cultural_verification.epic": "Herança Épica",
   "cultural_verification.rare": "Cultura Rara",
   "cultural_verification.common": "Herança Comum",
+  
   "cultural_photos.title": "Galeria de Fotos Culturais",
   "cultural_photos.upload_title": "Adicionar Fotos Culturais Portuguesas",
   "cultural_photos.upload_description": "Partilhe fotos que mostrem a sua ligação à cultura portuguesa - eventos, tradições, família, comida, ou locais especiais",
@@ -144,6 +150,7 @@
   "cultural_photos.fado_nights": "Noites de fado, música portuguesa",
   "cultural_photos.portugal_photos": "Fotos de Portugal, azulejos",
   "cultural_photos.family_traditions": "Família, tradições familiares",
+  
   "cultural_badges.heritage_verified": "Herança Verificada",
   "cultural_badges.heritage_verified_desc": "Herança cultural portuguesa verificada através de fotos autênticas",
   "cultural_badges.event_verified": "Evento Verificado",
@@ -158,6 +165,7 @@
   "cultural_badges.fado_lover_desc": "Apreço profundo pela música Fado portuguesa",
   "cultural_badges.santos_populares_champion": "Campeão dos Santos Populares",
   "cultural_badges.santos_populares_champion_desc": "Celebra as festas dos Santos Populares com paixão",
+  
   "verification_steps.heritage_photos": "Fotos de Herança",
   "verification_steps.heritage_photos_desc": "Carregue fotos que mostrem herança cultural portuguesa",
   "verification_steps.event_photos": "Fotos de Eventos",
@@ -166,9 +174,11 @@
   "verification_steps.cuisine_photos_desc": "Mostre o seu apreço pela culinária portuguesa",
   "verification_steps.community_photos": "Fotos da Comunidade",
   "verification_steps.community_photos_desc": "Demonstre envolvimento na comunidade portuguesa",
+
   "saudade.matching.title": "Matching Baseado em Saudade",
   "saudade.matching.subtitle": "Encontre a Sua Alma Gémea Emocional",
   "saudade.matching.description": "Conecte-se com lusófonos que compreendem a sua experiência única de saudade e profundidade da herança cultural",
+  
   "saudade.assessment.title": "Avaliação de Saudade e Compatibilidade Cultural",
   "saudade.assessment.subtitle": "Compreendendo a sua saudade",
   "saudade.assessment.description": "Descubra conexões emocionais autênticas baseadas na sua experiência de saudade",
@@ -179,6 +189,7 @@
   "saudade.assessment.next": "Próxima",
   "saudade.assessment.question": "Pergunta",
   "saudade.assessment.of": "de",
+  
   "saudade.profile.intensity": "Intensidade de Saudade",
   "saudade.profile.frequency": "Frequência",
   "saudade.profile.triggers": "Gatilhos Emocionais",
@@ -186,11 +197,13 @@
   "saudade.profile.support": "Apoio Cultural",
   "saudade.profile.heritage": "Conexão à Herança",
   "saudade.profile.regional": "Identidade Regional",
+  
   "saudade.types.saudade_soulmate": "Alma Gémea de Saudade",
   "saudade.types.cultural_healer": "Curador Cultural",
   "saudade.types.heritage_guardian": "Guardião da Herança",
   "saudade.types.integration_partner": "Parceiro de Integração",
   "saudade.types.gentle_companion": "Companheiro Gentil",
+  
   "saudade.compatibility.score": "Compatibilidade Emocional",
   "saudade.compatibility.saudade_alignment": "Alinhamento de Saudade",
   "saudade.compatibility.emotional_support": "Apoio Emocional",
@@ -200,6 +213,7 @@
   "saudade.compatibility.strengths": "Pontos Fortes de Apoio",
   "saudade.compatibility.activities": "Atividades Recomendadas",
   "saudade.compatibility.challenges": "Áreas para Conversação",
+  
   "saudade.healing.title": "Recomendações de Cura Cultural",
   "saudade.healing.subtitle": "Atividades personalizadas para curar a saudade e fortalecer a conexão cultural",
   "saudade.healing.categories.all": "Todas as Atividades",
@@ -209,16 +223,19 @@
   "saudade.healing.categories.spiritual": "Apoio Emocional",
   "saudade.healing.categories.educational": "Aprendizagem e Cultura",
   "saudade.healing.categories.nature": "Natureza e Reflexão",
+
   "business_networking.title": "Networking Profissional Português",
   "business_networking.subtitle": "Conecte-se com profissionais portugueses para crescimento de carreira e oportunidades de negócio",
   "business_networking.discover": "Descobrir",
   "business_networking.mentorship": "Mentoria",
   "business_networking.partnerships": "Parcerias",
   "business_networking.events": "Eventos",
+  
   "business_networking.stats.connections_today": "Conexões Feitas",
   "business_networking.stats.mentorship_requests": "Pedidos Mentoria",
   "business_networking.stats.business_events_booked": "Eventos Marcados",
   "business_networking.stats.partnership_opportunities": "Oportunidades",
+  
   "business_networking.filters.industry": "Setor",
   "business_networking.filters.company_size": "Tamanho da Empresa",
   "business_networking.filters.experience": "Experiência",
@@ -232,17 +249,20 @@
   "business_networking.filters.available_mentors": "Mentores Disponíveis",
   "business_networking.filters.startup_ecosystem": "Ecossistema Startup",
   "business_networking.filters.portuguese_market": "Mercado Português",
+  
   "business_networking.match_types.mentorship": "Mentoria",
   "business_networking.match_types.collaboration": "Colaboração",
   "business_networking.match_types.networking": "Networking",
   "business_networking.match_types.partnership": "Parceria",
   "business_networking.match_types.investment": "Investimento",
+  
   "business_networking.mentorship.available_as_mentor": "Disponível como Mentor",
   "business_networking.mentorship.seeking_mentor": "Procura Mentor",
   "business_networking.mentorship.peer_networking": "Networking Entre Pares",
   "business_networking.mentorship.mentor_and_mentee": "Mentor e Mentorando",
   "business_networking.mentorship.request": "Solicitar Mentoria",
   "business_networking.mentorship.available": "Disponível",
+  
   "business_networking.conversation.title": "Conversa de Negócios",
   "business_networking.conversation.subtitle": "Inicie conexões profissionais autênticas",
   "business_networking.conversation.categories.all": "Todos",
@@ -255,10 +275,12 @@
   "business_networking.conversation.business_relevance": "Relevância Profissional:",
   "business_networking.conversation.no_conversations": "Nenhuma conversa encontrada",
   "business_networking.conversation.try_different_category": "Tente selecionar uma categoria diferente.",
+  
   "business_networking.conversation.tips.title": "Dicas de Networking Português",
   "business_networking.conversation.tips.specific_experiences": "Mencione experiências ou desafios específicos de portugueses em Londres",
   "business_networking.conversation.tips.collaboration_opportunities": "Procure oportunidades de colaboração e apoio mútuo",
   "business_networking.conversation.tips.market_insights": "Partilhe insights sobre mercados português e britânico",
+  
   "business_networking.profile.professional_profile": "Perfil Profissional",
   "business_networking.profile.core_skills": "Competências Principais",
   "business_networking.profile.networking_goals": "Objetivos de Networking",
@@ -269,19 +291,23 @@
   "business_networking.profile.shared_heritage": "Herança cultural portuguesa partilhada",
   "business_networking.profile.aligned_goals": "Objetivos de networking alinhados",
   "business_networking.profile.complementary_interests": "Interesses comerciais complementares",
+  
   "business_networking.events.suggested_business_events": "Eventos de Negócio Sugeridos",
   "business_networking.events.based_on_interests": "Baseado nos vossos interesses profissionais comuns",
   "business_networking.events.view_all": "Ver Todos os Eventos",
   "business_networking.events.book_now": "Reservar",
   "business_networking.events.free": "Grátis",
+  
   "business_networking.actions.connect": "Conectar",
   "business_networking.actions.skip": "Saltar",
   "business_networking.actions.collaborate": "Colaborar",
   "business_networking.actions.chat": "Conversar",
+  
   "business_networking.empty_states.no_mentorship": "Nenhuma oportunidade de mentoria encontrada",
   "business_networking.empty_states.adjust_filters_mentorship": "Ajuste os filtros para encontrar mentores ou mentorandos na sua área.",
   "business_networking.empty_states.no_partnerships": "Nenhuma parceria estabelecida ainda",
   "business_networking.empty_states.keep_connecting": "Continue fazendo conexões para estabelecer as suas primeiras parcerias de negócio!",
+  
   "business_networking.premium.title": "Desbloqueie Networking Profissional Premium",
   "business_networking.premium.description": "Membros Premium têm acesso a conexões ilimitadas, eventos exclusivos, mentorship priority e oportunidades de investimento.",
   "business_networking.premium.upgrade": "Upgrade Premium",
@@ -291,6 +317,7 @@
   "saudade.healing.learn_more": "Mais Detalhes",
   "saudade.healing.schedule": "Agendar",
   "saudade.healing.ideal_for_couples": "Ideal para casais com saudade partilhada",
+  
   "saudade.triggers.fado_music": "Música de Fado",
   "saudade.triggers.family_voices": "Vozes da Família",
   "saudade.triggers.childhood_foods": "Comidas da Infância",
@@ -303,6 +330,7 @@
   "saudade.triggers.childhood_friends": "Amigos de Infância",
   "saudade.triggers.portuguese_films": "Filmes Portugueses",
   "saudade.triggers.festival_memories": "Memórias de Festivais",
+  
   "saudade.coping.cook_portuguese": "Cozinhar Comida Portuguesa",
   "saudade.coping.call_family": "Ligar para a Família",
   "saudade.coping.listen_fado": "Ouvir Fado",
@@ -315,20 +343,24 @@
   "saudade.coping.embrace_sadness": "Abraçar o Sentimento",
   "saudade.coping.share_culture": "Partilhar Cultura",
   "saudade.coping.keep_busy": "Manter-se Ocupado",
+  
   "saudade.frequency.constant": "Constante",
   "saudade.frequency.weekly": "Semanal",
   "saudade.frequency.monthly": "Mensal",
   "saudade.frequency.seasonal": "Sazonal",
   "saudade.frequency.rare": "Raro",
+  
   "saudade.support.high": "Necessidades Altas de Apoio",
   "saudade.support.moderate": "Apoio Moderado",
   "saudade.support.low": "Poucas Necessidades de Apoio",
   "saudade.support.independent": "Abordagem Independente",
+  
   "saudade.conversation_starters.fado": "Que música de fado mais desperta a sua saudade?",
   "saudade.conversation_starters.cooking": "Qual é o prato português que mais lhe lembra casa?",
   "saudade.conversation_starters.general": "Como sente a saudade vivendo em Londres?",
   "saudade.conversation_starters.family": "Como se mantém conectado(a) com a família em casa?",
   "saudade.conversation_starters.traditions": "Que tradições portuguesas mantém em Londres?",
+  
   "saudade.matches.title": "Matches Baseados em Saudade",
   "saudade.matches.subtitle": "Encontre conexões emocionais autênticas",
   "saudade.matches.description": "Conecte-se com lusófonos que compreendem a sua saudade e herança cultural",
@@ -336,6 +368,7 @@
   "saudade.matches.detailed_analysis": "Análise Detalhada",
   "saudade.matches.shared_connections": "Conexões Partilhadas:",
   "saudade.matches.compatibility_breakdown": "Análise de Compatibilidade",
+  
   "saudade.regional.minho": "Minho - Raízes Regionais Profundas",
   "saudade.regional.porto_norte": "Porto/Norte - Orgulho Nortista",
   "saudade.regional.lisboa_area": "Lisboa - Energia da Capital",
@@ -350,8 +383,9 @@
   "cultural_compatibility.any": "Qualquer",
   "cultural_compatibility.matches_found": "matches encontrados",
   "cultural_compatibility.culturally_compatible": "Matches Culturalmente Compatíveis",
+
   "profile_types.tradition_guardian": "Guardião da Tradição",
-  "profile_types.cultural_bridge": "Ponte Cultural",
+  "profile_types.cultural_bridge": "Ponte Cultural", 
   "profile_types.culture_enthusiast": "Amante da Cultura",
   "profile_types.family_heart": "Coração Familiar",
   "profile_types.cultural_explorer": "Explorador Cultural",
@@ -437,6 +471,7 @@
   "messaging.write_custom_message": "Escrever Mensagem Personalizada",
   "messaging.shared_events": "Eventos Partilhados",
   "messaging.more": "mais",
+
   "match_how_it_works.badge": "Como Encontrar o Seu Match",
   "match_how_it_works.title": "Encontre Seu Match Português",
   "match_how_it_works.subtitle": "Conecte-se com falantes de português no Reino Unido através de compatibilidade cultural e experiências partilhadas",
@@ -510,6 +545,7 @@
   "match_how_it_works.trust.verified_profiles": "Perfis Verificados",
   "match_how_it_works.trust.global_community": "Comunidade Global",
   "match_how_it_works.trust.bilingual": "Bilingue PT/EN",
+
   "chat.preview.badge": "Comunidade em Tempo Real",
   "chat.preview.title": "Conversas da Comunidade Portuguesa",
   "chat.preview.subtitle": "Junte-se a milhares de portugueses em Londres. Chat em tempo real, grupos culturais, coordenação de eventos - tudo num só lugar.",
@@ -522,6 +558,7 @@
   "chat.preview.groups": "Grupos",
   "chat.preview.events": "Eventos",
   "chat.preview.general_community": "Comunidade Geral",
+
   "onboarding.welcome.title": "Bem-vindo à LusoTown!",
   "onboarding.welcome.subtitle": "A sua comunidade portuguesa em Londres",
   "onboarding.welcome.description": "A maior comunidade de falantes de português em Londres. Conecte-se, descubra eventos, faça amigos e sinta-se em casa.",
@@ -532,12 +569,14 @@
   "onboarding.welcome.trust.verified": "Verificado",
   "onboarding.welcome.trust.free": "Gratuito",
   "onboarding.welcome.cta": "Vamos Começar!",
+
   "onboarding.social_login.title": "Como prefere entrar?",
   "onboarding.social_login.subtitle": "Escolha o método mais conveniente para si",
   "onboarding.social_login.google.description": "Rápido e seguro",
   "onboarding.social_login.facebook.description": "Conecte com amigos",
   "onboarding.social_login.linkedin.description": "Profissional",
   "onboarding.social_login.email.description": "Email tradicional",
+
   "onboarding.heritage.title": "Partilhe a sua herança",
   "onboarding.heritage.subtitle": "De onde vem a sua conexão com a língua portuguesa?",
   "onboarding.heritage.portugal.description": "Nascido em Portugal ou ascendência portuguesa",
@@ -549,6 +588,7 @@
   "onboarding.heritage.guinea_bissau.description": "Nascido na Guiné-Bissau ou ascendência guineense",
   "onboarding.heritage.sao_tome.description": "Nascido em São Tomé e Príncipe ou ascendência são-tomense",
   "onboarding.heritage.diaspora.description": "Segunda geração ou aprendeu português",
+
   "onboarding.location.title": "Onde está localizado?",
   "onboarding.location.subtitle": "Ajude-nos a conectá-lo com portugueses perto de si",
   "onboarding.location.central": "Centro de Londres",
@@ -557,6 +597,7 @@
   "onboarding.location.east": "Este de Londres",
   "onboarding.location.west": "Oeste de Londres",
   "onboarding.location.outside": "Fora de Londres",
+
   "onboarding.interests.title": "O que lhe interessa?",
   "onboarding.interests.subtitle": "Selecione as categorias que mais lhe interessam (pode escolher várias)",
   "onboarding.interests.cultural_events": "Eventos Culturais",
@@ -577,6 +618,7 @@
   "onboarding.interests.families.description": "Atividades para toda a família",
   "onboarding.interests.selected": "categoria selecionada",
   "onboarding.interests.selected_plural": "categorias selecionadas",
+
   "onboarding.guidelines.title": "Diretrizes da Comunidade",
   "onboarding.guidelines.subtitle": "Estas diretrizes ajudam a manter a nossa comunidade segura e acolhedora",
   "onboarding.guidelines.respect.title": "Respeito e Segurança",
@@ -594,13 +636,16 @@
   "onboarding.guidelines.accept": "Concordo com as diretrizes da comunidade",
   "onboarding.guidelines.accept.description": "Comprometo-me a seguir estas diretrizes para manter a nossa comunidade segura",
   "onboarding.guidelines.accept_button": "Aceitar Diretrizes",
+
   "onboarding.growth.title": "Parabéns! Bem-vindo!",
   "onboarding.growth.subtitle": "Agora faz parte da maior comunidade portuguesa em Londres! Aqui estão os seus benefícios de boas-vindas:",
   "onboarding.growth.explore": "Explorar Comunidade",
   "onboarding.growth.settings_note": "Pode alterar as suas preferências a qualquer momento no seu perfil",
+
   "onboarding.navigation.progress": "Progresso",
   "onboarding.navigation.back": "Voltar",
   "onboarding.navigation.continue": "Continuar",
+
   "growth.welcome_bonus.title": "Bónus de Boas-vindas!",
   "growth.welcome_bonus.subtitle": "Como novo membro, tem acesso a estes benefícios exclusivos",
   "growth.welcome_bonus.first_event.title": "Primeiro Evento Grátis",
@@ -614,6 +659,7 @@
   "growth.welcome_bonus.total_value": "Valor Total",
   "growth.welcome_bonus.exclusive_note": "Benefícios exclusivos para novos membros portugueses",
   "growth.welcome_bonus.activate": "Ativar Benefícios",
+
   "growth.student_perks.title": "Benefícios de Estudante",
   "growth.student_perks.subtitle": "Descontos especiais para estudantes portugueses em Londres",
   "growth.student_perks.discount.title": "50% Desconto",
@@ -628,6 +674,7 @@
   "growth.student_perks.email": "Email Universitário",
   "growth.student_perks.email.placeholder": "seuemail@university.ac.uk",
   "growth.student_perks.verify_button": "Verificar Estado",
+
   "growth.referral_rewards.title": "Convide Amigos & Ganhe",
   "growth.referral_rewards.subtitle": "Convide outros portugueses e ganhe recompensas incríveis",
   "growth.referral_rewards.code_title": "O Seu Código de Convite",
@@ -642,6 +689,7 @@
   "growth.referral_rewards.referral": "Convite",
   "growth.referral_rewards.referrals": "Convites",
   "growth.referral_rewards.value": "valor",
+
   "growth.premium_trial.title": "Teste Premium Grátis",
   "growth.premium_trial.subtitle": "Experimente todas as funcionalidades premium por 7 dias",
   "growth.premium_trial.unlimited_matches.title": "Matches Ilimitados",
@@ -675,6 +723,7 @@
   "chat.preview.ai_anti_toxicity": "IA Anti-Toxicidade",
   "chat.preview.cultural_filters": "Filtros Culturais",
   "chat.preview.manual_review": "Verificação Manual",
+
   "success_stories.title": "Histórias Reais de Sucesso",
   "success_stories.subtitle": "Almas Portuguesas Conectadas em Londres",
   "success_stories.description": "Verdadeiras histórias de portugueses que encontraram amor, amizade, parceiros de negócio e mentores através da compatibilidade cultural do LusoTown.",
@@ -689,6 +738,7 @@
   "success_stories.ready_description": "Junte-se a centenas de portugueses que já encontraram conexões autênticas através da compatibilidade cultural. A sua história pode ser a próxima!",
   "success_stories.start_now": "COMEÇAR AGORA",
   "success_stories.read_more": "Ver Mais Histórias",
+
   "buttons.view_more": "Ver Mais",
   "buttons.view_details": "Ver Detalhes",
   "buttons.add_to_cart": "Adicionar ao Carrinho",
@@ -732,18 +782,22 @@
   "buttons.log_out": "Sair",
   "buttons.upgrade": "Atualizar",
   "buttons.downgrade": "Reduzir",
+
   "favorites.save": "Guardar",
   "favorites.saved": "Guardado",
   "favorites.remove": "Remover dos Favoritos",
   "favorites.added": "Adicionado aos Favoritos",
   "favorites.removed": "Removido dos Favoritos",
+
   "cart.add_to_cart": "Adicionar ao Carrinho",
   "cart.added": "Adicionado",
   "cart.in_cart": "No Carrinho",
   "cart.already_in_cart": "Já no carrinho",
+
   "event.full": "Esgotado",
   "event.spots_left": "lugares restantes",
   "event.waitlist": "Lista de Espera",
+
   "status.loading": "A carregar...",
   "status.error": "Erro",
   "status.success": "Sucesso",
@@ -1007,10 +1061,12 @@
   "profile.professional.availability_title": "Disponibilidade e Preferências",
   "profile.completion.title": "Completude do Perfil",
   "profile.completion.missing_steps": "Passos em falta:",
+
   "map.loading": "Carregando mapa...",
   "map.error_title": "Mapa Indisponível",
   "map.initialization_error": "Falha ao carregar o mapa",
   "map.portuguese_areas": "Áreas Portuguesas",
+
   "location.near_me": "Perto de Mim",
   "location.update_location": "Atualizar Localização",
   "location.loading": "Obtendo Localização...",
@@ -1021,12 +1077,14 @@
   "location.help_text": "Encontre negócios portugueses perto de você",
   "location.radius": "Raio:",
   "location.location_found": "Localização encontrada e verificada",
+
   "business_directory.title": "Diretório de Negócios Portugueses",
   "business_directory.subtitle": "Descubra e apoie negócios autênticos de proprietários portugueses em Londres. Unidos pela língua, unidos pelo negócio.",
   "business_directory.list_view": "Vista em Lista",
   "business_directory.map_view": "Vista no Mapa",
   "business_directory.add_business": "Adicionar Meu Negócio",
   "business_directory.submit_business": "Enviar Negócio",
+
   "form.submit_business": "Envie Seu Negócio Português",
   "form.subtitle": "Junte-se ao maior diretório de negócios portugueses no Reino Unido",
   "form.step_business_info": "Informações do Negócio",
@@ -1066,10 +1124,12 @@
   "form.error_title": "Falha no Envio",
   "form.submission_complete": "Envio Completo!",
   "form.submission_error": "Falha ao enviar negócio. Tente novamente.",
+
   "validation.required": "Este campo é obrigatório",
   "validation.email_invalid": "Insira um endereço de email válido",
   "validation.postcode_invalid": "Insira um código postal válido do Reino Unido",
   "validation.year_invalid": "Insira um ano válido",
+
   "days.monday": "Segunda",
   "days.tuesday": "Terça",
   "days.wednesday": "Quarta",
@@ -1114,6 +1174,7 @@
   "nav.partnerships.dashboard": "Painel de Parcerias",
   "nav.partnerships.universities": "Rede Universitária",
   "nav.partnerships.business": "Parceiros Empresariais",
+
   "chat.live": "Chat ao Vivo",
   "chat.interactive": "Chat Interativo",
   "chat.portuguese": "Chat Português",
@@ -1148,6 +1209,7 @@
   "chat.expand": "Expandir",
   "chat.minimize": "Minimizar",
   "chat.portuguese_community": "Comunidade Portuguesa",
+
   "polls.portuguese_polls": "Sondagens Portuguesas",
   "polls.new_poll": "Nova Sondagem",
   "polls.active_polls": "Sondagens Ativas",
@@ -1155,6 +1217,7 @@
   "polls.create_poll": "Criar Sondagem",
   "polls.cultural_templates": "Modelos Culturais",
   "polls.question": "Pergunta",
+
   "conversion.upgrade_prompts.matches_limit.title": "Limite Diário de Matches Atingido",
   "conversion.upgrade_prompts.matches_limit.subtitle": "Continue a conectar com falantes de português",
   "conversion.upgrade_prompts.matches_limit.description": "Usou os seus 3 matches diários. Faça upgrade para matches ilimitados e conecte-se com mais membros da comunidade portuguesa em Londres.",
@@ -1166,6 +1229,7 @@
   "conversion.upgrade_prompts.premium_event.subtitle": "Participe em eventos culturais portugueses exclusivos",
   "conversion.upgrade_prompts.general.title": "Desbloqueie Funcionalidades Premium",
   "conversion.upgrade_prompts.general.subtitle": "Junte-se à comunidade portuguesa em Londres",
+
   "conversion.trial.active": "Teste Gratuito Ativo",
   "conversion.trial.time_remaining": "Tempo Restante",
   "conversion.trial.days": "dias",
@@ -1179,6 +1243,7 @@
   "conversion.trial.continue_with": "Continuar com Comunidade",
   "conversion.trial.ambassador_upgrade": "Upgrade para Embaixador",
   "conversion.trial.dismiss": "Dispensar",
+
   "conversion.usage.matches.title": "Matches Diários",
   "conversion.usage.matches.remaining": "restantes hoje",
   "conversion.usage.matches.unlimited": "Matches ilimitados",
@@ -1200,6 +1265,7 @@
   "conversion.usage.upgrade_button": "Fazer Upgrade",
   "conversion.usage.unlocked": "Desbloqueado",
   "conversion.usage.limit_reached": "Limite atingido",
+
   "conversion.subscription.community.name": "Membro da Comunidade",
   "conversion.subscription.community.price": "£19.99",
   "conversion.subscription.community.period": "/mês",
@@ -1247,6 +1313,7 @@
   "polls.favorite_tradition": "Tradição favorita?",
   "polls.reaction": "reação",
   "polls.reactions": "reações",
+
   "moderation.panel": "Painel Moderação",
   "moderation.settings": "Config",
   "moderation.users": "Usuários",
@@ -1262,6 +1329,7 @@
   "moderation.moderation_actions": "Ações de Moderação",
   "moderation.no_actions_yet": "Nenhuma ação de moderação ainda",
   "moderation.portuguese_moderation": "Moderação Portuguesa",
+
   "framework.title": "Framework de Excelência 7 Ps",
   "framework.badge": "Framework de Excelência Profissional",
   "framework.hero.title": "Framework de Excelência",
@@ -1279,6 +1347,7 @@
   "framework.pillars.preparation.description": "Briefings detalhados, verificações de equipamentos e planeamento de contingência",
   "framework.pillars.protection.name": "Proteção",
   "framework.pillars.protection.description": "Segurança física e mitigação de ameaças durante operações",
+
   "user-journey.title": "A Sua Jornada na Comunidade Portuguesa",
   "user-journey.description": "Acompanhe o seu progresso e descubra novas oportunidades para se conectar com a comunidade portuguesa em Londres e Reino Unido.",
   "user-journey.hero.title": "A Sua Jornada na Comunidade Portuguesa",
@@ -1303,6 +1372,7 @@
   "user-journey.cta.browse-events": "Explorar Eventos",
   "user-journey.cta.upgrade-premium": "Atualizar para Premium",
   "user-journey.view-full": "Ver Jornada Completa",
+
   "seo.portuguese-community": "comunidade portuguesa londres",
   "seo.brazilian-community": "comunidade brasileira londres",
   "seo.portuguese-events": "eventos portugueses londres",
@@ -1311,6 +1381,7 @@
   "seo.little-portugal": "pequena portugal londres",
   "seo.portuguese-mentorship": "mentoria portuguesa reino unido",
   "seo.portuguese-housing": "assistência habitacional portuguesa londres",
+
   "growth.dashboard.title": "Painel de Análise de Crescimento",
   "growth.dashboard.subtitle": "Insights abrangentes sobre o crescimento da comunidade portuguesa",
   "growth.metrics.total-users": "Total de Membros da Comunidade",
@@ -1321,6 +1392,7 @@
   "growth.metrics.satisfaction": "Pontuação de Satisfação do Cliente",
   "growth.metrics.revenue": "Receita Recorrente Mensal",
   "growth.metrics.retention": "Taxa de Retenção de 30 Dias",
+
   "referral.title": "Convide Amigos Portugueses",
   "referral.subtitle": "Ajude a crescer a nossa comunidade portuguesa em Londres e Reino Unido. Ganhe recompensas por cada amigo português que trouxer!",
   "referral.campaign.title": "Convide Amigos Portugueses para o LusoTown",
@@ -1376,6 +1448,7 @@
   "referral.success.friend-joined": "O seu amigo juntou-se! Recompensa pendente de ativação.",
   "referral.success.reward-earned": "Parabéns! Ganhou um mês grátis.",
   "referral.success.bonus-unlocked": "Fantástico! Desbloqueou o bónus de 5 amigos!",
+
   "conversion.premium-upgrade": "Desbloqueie o Acesso Premium à Comunidade Portuguesa",
   "conversion.transport-bundle": "Pacote de Experiência Portuguesa Completa",
   "conversion.mentorship-access": "Acesso a Mentoria Profissional Portuguesa",
@@ -1447,6 +1520,7 @@
   "framework.ecosystem.cta_title": "Experimente a Excelência Portuguesa Integrada",
   "framework.ecosystem.cta_consultation": "Agendar Consulta do Ecossistema",
   "framework.ecosystem.cta_services": "Explorar Todos os Serviços",
+
   "instituto.badge": "Parceria Oficial do Governo Português",
   "instituto.title": "Reconhecida pelo Instituto Camões",
   "instituto.description": "A LusoTown é oficialmente reconhecida pelo Instituto Camões como a plataforma digital preferida para promoção cultural portuguesa e envolvimento comunitário no Reino Unido.",
@@ -1466,6 +1540,7 @@
   "instituto.benefit3.value": "Valor £200/ano",
   "instituto.cta.primary": "Explorar Programas Oficiais",
   "instituto.cta.secondary": "Património Cultural",
+
   "hero.badge": "🇵🇹 Unidos pela Língua • United by Language 🇬🇧",
   "hero.title": "Centro da Comunidade Portuguesa do Reino Unido",
   "hero.title.mobile": "Comunidade Portuguesa Reino Unido",
@@ -1474,7 +1549,9 @@
   "hero.cta.primary": "Explorar Eventos",
   "hero.cta.secondary": "Juntar-se à Comunidade",
   "hero.cta.host": "Organizar Eventos",
+
   "how-it-works.title": "Encontre a Sua Rede Profissional Lusófona em Londres e Reino Unido",
+
   "security.service.title": "Reserva de Serviço de Segurança",
   "security.service.subtitle": "Serviços de proteção profissional em Londres",
   "security.service.step1": "Detalhes do Serviço e Requisitos",
@@ -1484,6 +1561,7 @@
   "security.service.progress": "Progresso da Reserva",
   "security.service.secure": "Serviço Seguro e Profissional",
   "security.service.privacy": "Todas as informações são mantidas estritamente confidenciais. Profissionais licenciados e conformidade total garantida.",
+
   "security.booking.title": "Confirmação de Serviço de Segurança",
   "security.booking.subtitle": "Serviço de Proteção Profissional",
   "security.booking.pending": "Reserva em Análise",
@@ -1491,12 +1569,14 @@
   "security.booking.review_time": "Um profissional de segurança licenciado confirmará a sua reserva dentro de 2-4 horas",
   "security.booking.assignment": "Designação Profissional Pendente",
   "security.booking.next_steps": "Próximos Passos",
+
   "security.assessment.low": "Serviço Padrão",
   "security.assessment.medium": "Serviço Melhorado",
   "security.assessment.high": "Serviço Premium",
   "security.assessment.level": "Avaliação do Serviço",
   "security.assessment.score": "Nível de Serviço",
   "security.assessment.requirements": "Requisitos do Serviço",
+
   "security.simple.title": "Reserva Simples de Segurança",
   "security.simple.subtitle": "Formulário de reserva rápido - 2-3 minutos",
   "security.simple.service_type": "Que tipo de serviço precisa?",
@@ -1514,6 +1594,7 @@
   "security.simple.no_concerns": "Sem preocupações especiais",
   "security.simple.yes_concerns": "Considerações especiais necessárias",
   "security.simple.concern_types": "Que considerações são necessárias? (Selecione todas as aplicáveis)",
+
   "availability.available": "Disponível",
   "availability.fully_booked": "Esgotado",
   "availability.unavailable": "Indisponível",
@@ -1539,55 +1620,68 @@
   "how-it-works.step5.subtitle": "Construa Redes Culturais",
   "how-it-works.step6.title": "Preserva e Partilha o Património",
   "how-it-works.step6.subtitle": "Preserve e Partilhe o Património",
+
   "quick-start.title": "Encontre o Seu Match Entre Falantes de Português em Locais Reais",
   "quick-start.subtitle": "Desde cafés portugueses aconchegantes a festivais culturais vibrantes, conecta-te com a tua comunidade em locais autênticos por Londres e Reino Unido",
   "quick-start.quote": "\"Onde há portugueses, há sempre uma mesa para mais um\" - Onde há portugueses, há sempre lugar para mais um",
+
   "what-you-can-do.badge": "O Seu Calendário Social Português • Your Portuguese Social Calendar",
   "what-you-can-do.title": "Descubra a Comunidade Portuguesa de Londres - À Sua Maneira",
   "what-you-can-do.subtitle": "Desde noites íntimas de Fado a aventuras de fim de semana, jogos de futebol a atrações de Londres - viva Londres com portugueses que o compreendem.",
   "what-you-can-do.testimonial": "\"Finalmente encontrei a minha tribo portuguesa em Londres! Todos os fins de semana são uma aventura agora.\" - Maria, Londres",
+
   "what-you-can-do.events.title": "🎭 Viva Londres em Conjunto",
   "what-you-can-do.events.description": "Participe em experiências únicas criadas para portugueses - desde tours exclusivos a museus com guias portugueses a noites de futebol, concertos íntimos de Fado a escapadas de fim de semana. Nunca mais explore Londres sozinho.",
   "what-you-can-do.events.cta": "Explorar Eventos",
   "what-you-can-do.events.locations": "Tours com Guias Portugueses • Noites de Futebol • Sessões de Fado • Escapadas de Fim de Semana",
+
   "what-you-can-do.groups.title": "🤝 Encontre o Seu Círculo Português",
   "what-you-can-do.groups.description": "Seja você dos 25 ou 65 anos, de Lisboa ou São Paulo, profissional de tecnologia ou artista - crie conexões que importam. Inicie grupos baseados em idade, interesses, ou património português.",
   "what-you-can-do.groups.cta": "Criar Grupo",
   "what-you-can-do.groups.examples": "Mulheres 30+ • Jovens Profissionais • Rede de Negócios • Entusiastas Culturais",
+
   "what-you-can-do.feed.title": "📱 Mantenha-se Conectado Diariamente",
   "what-you-can-do.feed.description": "Nunca perca momentos da comunidade portuguesa. Veja o que está a acontecer nos eventos deste fim de semana, partilhe as suas fotos de festivais, descubra novos negócios portugueses, e celebre vitórias juntos.",
   "what-you-can-do.feed.cta": "Ver Feed",
   "what-you-can-do.feed.features": "Atualizações de Eventos • Histórias em Fotos • Destaque de Negócios • Celebrações Comunitárias",
+
   "what-you-can-do.favorites.title": "💝 Construa a Sua Coleção de Londres",
   "what-you-can-do.favorites.description": "Crie o seu guia pessoal da Londres portuguesa. Guarde aquela padaria incrível em Stockwell, marque próximas noites de Fado, lembre-se de eventos culturais que tocaram o seu coração.",
   "what-you-can-do.favorites.cta": "Minha Coleção",
   "what-you-can-do.favorites.types": "Jóias Escondidas • Eventos Culturais • Negócios Portugueses • Momentos Especiais",
+
   "what-you-can-do.host.title": "💼 Partilhe a Sua Especialidade Portuguesa",
   "what-you-can-do.host.description": "Transforme as suas competências em impacto comunitário. Organize workshops de criação de websites para empreendedores portugueses, ensine culinária tradicional, lidere networking empresarial, ou partilhe conhecimento cultural. Construa a sua reputação enquanto gera receita.",
   "what-you-can-do.host.cta": "Começar a Organizar",
   "what-you-can-do.host.examples": "Workshops Tecnológicos • Aulas Culturais • Formação Empresarial • Eventos de Networking",
+
   "host-with-us.badge": "Para Profissionais Portugueses • For Portuguese Professionals",
   "host-with-us.title": "Partilhe a Sua Especialidade Portuguesa com a Nossa Comunidade de Londres e Reino Unido",
   "host-with-us.subtitle": "Junte-se a centenas de profissionais portugueses, criadores de eventos e especialistas culturais que apresentam os seus serviços à nossa comunidade crescente de lusófonos que vivem em Londres e Reino Unido. A LusoTown conecta-o com a sua comunidade portuguesa local através de workshops de negócios e experiências culturais.",
   "host-with-us.testimonial": "\"Já organizei 15 workshops de desenvolvimento web através da LusoTown e construí uma base de clientes portugueses próspera. O apoio da comunidade é incrível!\" - Maria Santos, Empresária Tecnológica",
+
   "host-with-us.professionals.title": "Serviços Profissionais & Workshops",
   "host-with-us.professionals.description": "Apresente a sua especialidade a profissionais portugueses através da nossa plataforma. A LusoTown facilita a ligação para workshops de desenvolvimento web, coaching empresarial, formação em criação de apps, seminários de investimento e eventos de networking profissional.",
   "host-with-us.professionals.cta": "Anuncie os Seus Serviços",
   "host-with-us.professionals.examples": "Desenvolvimento Web • Coaching Empresarial • Consultoria Investimento • Networking Profissional",
+
   "host-with-us.cultural.title": "Eventos & Experiências Culturais",
   "host-with-us.cultural.description": "Partilhe o património português através da nossa plataforma que conecta organizadores com participantes para workshops de Cataplana & Pastéis, noites de Fado, Santos Populares, tertúlias culturais, convívios e experiências de Londres. Preserve a nossa cultura - Unidos pela Língua.",
   "host-with-us.cultural.cta": "Organize Eventos Culturais",
   "host-with-us.cultural.examples": "Workshops Cataplana • Noites Fado • Santos Populares • Tertúlias • Convívios • Festa Junina",
+
   "host-with-us.business.title": "Promoção de Negócios Portugueses",
   "host-with-us.business.description": "A LusoTown conecta o seu negócio, restaurante, loja ou serviço português com clientes que partilham a sua herança e valores. Construa relações duradouras com a comunidade portuguesa através da nossa plataforma.",
   "host-with-us.business.cta": "Promova o Seu Negócio",
   "host-with-us.business.examples": "Restaurantes • Lojas • Serviços Profissionais • Serviços Comunitários",
+
   "host-with-us.success.title": "Histórias de Sucesso de Anfitriões Portugueses",
   "host-with-us.success.subtitle": "Profissionais portugueses reais a construir negócios prósperos através da nossa comunidade",
   "host-with-us.success.story1.quote": "\"A minha padaria portuguesa passou de local para Londres inteira graças à LusoTown. Agora organizo workshops mensais de padaria e a minha base de clientes triplicou!\"",
   "host-with-us.success.story1.author": "João Silva, Proprietário de Padaria",
   "host-with-us.success.story2.quote": "\"Ensino workshops de marketing digital português através da LusoTown. Construí uma rede de 200+ empresários portugueses em apenas 6 meses.\"",
   "host-with-us.success.story2.author": "Ana Costa, Consultora de Marketing",
+
   "host-with-us.benefits.title": "Porquê Profissionais Portugueses Escolhem a LusoTown",
   "host-with-us.benefits.reach.title": "Alcança 750+ Falantes de Português",
   "host-with-us.benefits.reach.description": "Conecte-se com profissionais e membros da comunidade portuguesa em Londres e Reino Unido através da nossa plataforma",
@@ -1597,10 +1691,12 @@
   "host-with-us.benefits.community.description": "Conecte-se com outros profissionais portugueses e crie relações de negócio duradouras através da LusoTown",
   "host-with-us.benefits.heritage.title": "Preserve o Património Português",
   "host-with-us.benefits.heritage.description": "Partilhe a sua cultura enquanto constrói ligações sustentáveis em torno das tradições portuguesas",
+
   "host-with-us.cta.title": "Pronto para Partilhar a Sua Especialidade Portuguesa?",
   "host-with-us.cta.description": "Junte-se a profissionais portugueses bem-sucedidos que estão a construir negócios prósperos através da nossa plataforma. Desde workshops a serviços, eventos a experiências culturais - comece a apresentar a sua especialidade hoje.",
   "host-with-us.cta.primary": "Começar a Organizar Hoje",
   "host-with-us.cta.secondary": "Saber Mais Sobre Organizar",
+
   "features.title": "Porquê Escolher a LusoTown",
   "features.subtitle": "O Seu Centro Social & Profissional para Lusófonos que Vivem em Londres e Reino Unido",
   "features.events.title": "Eventos Culturais & Encontros",
@@ -1621,9 +1717,11 @@
   "features.language.description": "Pratique português com falantes nativos e ajude outros a aprender inglês através da nossa plataforma. Construa ligações através da aprendizagem de línguas.",
   "features.heritage.title": "Ligação da Herança",
   "features.heritage.description": "Conecte-se com as suas raízes portuguesas e partilhe histórias com outros que entendem a jornada de preservar a cultura no estrangeiro.",
+
   "testimonials.badge": "Corações Unidos, Histórias Partilhadas",
   "testimonials.title": "Da Saudade à Comunidade - Vidas Reais em Londres",
   "testimonials.subtitle": "Descubra como lusos encontraram a sua família londrina através de experiências culturais, ligações sociais e networking natural facilitado pela LusoTown. De noites de cinema em Camden a workshops de dança em Stockwell - histórias autênticas de comunidade, amizade e herança partilhada.",
+
   "footer.description": "A LusoTown conecta lusófonos que vivem em Londres e Reino Unido através de experiências sociais e profissionais. Onde falantes de português descobrem, aprendem, e prosperam juntos. Unidos pela Língua, ligados pela comunidade.",
   "footer.housing-assistance": "Assistência de Habitação",
   "footer.neighborhood-groups": "Grupos de Bairro",
@@ -1631,11 +1729,13 @@
   "footer.newsletter.description": "Receba na sua caixa de correio as melhores histórias da nossa comunidade, eventos imperdíveis e momentos que aquecem o coração português.",
   "footer.tagline": "Onde a saudade se transforma em alegria",
   "footer.bottom": "Unidos pela Língua, Unidos pelo Coração • A Sua Família Lusófona no Reino Unido",
+
   "about.hero.badge": "Unidos pela Língua • United by Language",
   "about.hero.title": "Sobre a LusoTown Londres",
   "about.hero.title.mobile": "Sobre LusoTown Londres",
   "about.mission.title": "Nossa Missão: Preservar a Cultura, Conectar Corações",
   "about.mission.subtitle": "Our Mission: Preserve Culture, Connect Hearts",
+
   "cart.title": "Seu Carrinho",
   "cart.description": "Veja e gira os seus eventos, tours e serviços guardados. Complete a sua reserva aqui.",
   "cart.empty": "Carrinho vazio",
@@ -1645,23 +1745,29 @@
   "cart.total": "Total",
   "cart.item": "item",
   "cart.items": "itens",
+
   "cart.removed": "Removido do carrinho",
   "cart.clear": "Limpar Carrinho",
   "cart.save-later": "Guardar para mais tarde",
+
   "favorites.title": "Itens Guardados",
   "favorites.description": "Aceda aos seus eventos, locais e serviços favoritos. Acompanhe o que mais lhe interessa.",
   "favorites.empty": "Nenhum item guardado",
+
   "favorites.view-all": "Ver Todos os Guardados",
+
   "event.save": "Guardar Evento",
   "event.saved": "Evento Guardado",
   "event.add-to-cart": "Adicionar ao Carrinho",
   "event.view-details": "Ver Detalhes",
   "event.register": "Inscrever-se",
   "event.join-waitlist": "Juntar à Lista de Espera",
+
   "event.spots-left": "vagas restantes",
   "event.free": "GRÁTIS",
   "event.people-on-waitlist": "pessoas na lista de espera",
   "event.on-waitlist": "na lista de espera",
+
   "waitlist.title": "Juntar à Lista de Espera",
   "waitlist.form.name": "Nome Completo *",
   "waitlist.form.name-placeholder": "Digite o seu nome completo",
@@ -1694,11 +1800,14 @@
   "waitlist.error.phone-required": "Telefone é obrigatório",
   "waitlist.error.phone-invalid": "Número de telefone inválido",
   "waitlist.error.privacy-required": "Deve aceitar a política de privacidade",
+
   "business.save": "Guardar Negócio",
   "business.saved": "Negócio Guardado",
   "business.view": "Ver Negócio",
+
   "language.switch-to-portuguese": "Português",
   "language.switch-to-english": "English",
+
   "login.title": "Bem-vindo de volta à comunidade!",
   "login.subtitle": "Entre na sua conta para conectar com a comunidade portuguesa",
   "login.membership-badge": "Lusófonos que vivem em Londres e Reino Unido",
@@ -1733,6 +1842,7 @@
   "login.fill-fields-error": "Por favor, preencha todos os campos",
   "login.login-failed": "Erro no login",
   "login.unexpected-error": "Ocorreu um erro inesperado. Tente novamente.",
+
   "login.fado-night": "Noite de Fado no Camden",
   "login.fado-tonight": "Hoje às 20:00 • Bar do Fado",
   "login.new-bakery": "Nova Padaria em Stockwell",
@@ -1742,15 +1852,19 @@
   "login.attendees": "participantes",
   "login.participants": "participantes",
   "login.table-quote": "\"Onde há portugueses, há sempre uma mesa para mais um\"",
+
   "transport.hero.title": "Ligue-se a Serviços de Transporte com Falantes de Português",
   "transport.hero.title.mobile": "Transporte Português Londres",
   "transport.hero.subtitle": "A LusoTown conecta-o com prestadores de serviços de transporte e turismo que falam português fluentemente. Descubra os principais pontos turísticos de Londres através de profissionais que compreendem a sua cultura.",
   "transport.hero.subtitle.mobile": "Conectamos com motoristas e guias portugueses!",
+
   "pricing.hero.title": "Junte-se à Sua Comunidade Portuguesa - Londres e Reino Unido",
   "pricing.hero.title.mobile": "Comunidade Portuguesa Londres",
   "pricing.hero.subtitle": "Escolha a membresía que se adequa ao seu estilo de vida. De eventos culturais a networking profissional - encontre o seu lugar na comunidade portuguesa de Londres.",
   "pricing.hero.subtitle.mobile": "Encontre a sua comunidade portuguesa!",
+
   "signup.subtitle": "Conecte-se com lusófonos que vivem em Londres e Reino Unido através de experiências sociais e oportunidades profissionais. De eventos culturais e tours guiados a workshops empresariais e networking - descubra a sua comunidade.",
+
   "groups.title": "Grupos da Comunidade Portuguesa",
   "groups.subtitle": "Encontre a sua comunidade e conecte-se com falantes de português",
   "groups.create": "Criar Grupo",
@@ -1763,6 +1877,7 @@
   "groups.save": "Guardar Grupo",
   "groups.saved": "Grupo Guardado",
   "groups.report": "Reportar Grupo",
+
   "group.create.title": "Criar Grupo da Comunidade Portuguesa",
   "group.create.subtitle": "Constrói conexões com falantes de português em Londres",
   "group.create.name": "Nome do Grupo",
@@ -1784,6 +1899,7 @@
   "group.create.preview": "Pré-visualizar Grupo",
   "group.create.success": "Grupo criado com sucesso!",
   "group.create.error": "Erro ao criar grupo",
+
   "search.placeholder": "Pesquisar eventos...",
   "search.placeholder.short": "Pesquisar...",
   "search.button": "Pesquisar",
@@ -1811,12 +1927,14 @@
   "search.suggestions.check-spelling": "Verifique a ortografia",
   "search.suggestions.use-general": "Use termos mais gerais",
   "search.suggestions.try-different": "Tente palavras-chave diferentes",
+
   "age.18-25": "18-25 anos",
   "age.25-35": "25-35 anos",
   "age.35-50": "35-50 anos",
   "age.50+": "50+ anos",
   "age.young-professionals": "Jovens profissionais (22-35)",
   "age.all-ages": "Todas as idades bem-vindas",
+
   "origin.portugal": "Portugal",
   "origin.brazil": "Brasil",
   "origin.angola": "Angola",
@@ -1829,16 +1947,19 @@
   "origin.equatorial-guinea": "Guiné Equatorial",
   "origin.mixed": "Origens Mistas",
   "origin.any": "Todas as origens lusófonas",
+
   "frequency.weekly": "Semanalmente",
   "frequency.biweekly": "Quinzenalmente",
   "frequency.monthly": "Mensalmente",
   "frequency.quarterly": "Trimestralmente",
   "frequency.irregular": "Irregular/Conforme necessário",
   "frequency.one-time": "Evento único",
+
   "verification.none": "Sem verificação necessária",
   "verification.basic": "Verificação básica (email)",
   "verification.verified": "Apenas utilizadores verificados",
   "verification.premium": "Apenas membros premium",
+
   "community.hero.title": "A Comunidade Portuguesa de Londres e Reino Unido",
   "community.hero.title.mobile": "Rede Portuguesa Londres",
   "community.hero.subtitle": "Descobre a vibrante comunidade lusófona de Londres e Reino Unido. Desde padarias em Stockwell a centros culturais em Vauxhall - onde 750+ corações portugueses se sentem em casa.",
@@ -1862,6 +1983,7 @@
   "community.cta.title": "Pronto para se Juntar à Rede Portuguesa?",
   "community.cta.subtitle": "A sua comunidade portuguesa está à espera. Junte-se a 750+ falantes de português que fizeram de Londres a sua casa, através de experiências sociais e oportunidades profissionais facilitadas pela LusoTown. Unidos pela língua, ligados pela comunidade.",
   "community.cta.tagline": "\"Unidos pela Língua\" - Onde quer que venha no mundo lusófono, aqui tem casa em Londres.",
+
   "app.badge": "Agora Disponível no Móvel",
   "app.heading.part1": "Leve a Sua",
   "app.heading.membership": "Comunidade",
@@ -1888,6 +2010,7 @@
   "app.mockup.weekend-walks": "Caminhadas de Fim de Semana",
   "app.mockup.tomorrow-time": "Amanhã, 10:00",
   "app.mockup.new-in-area": "Novos na Sua Área",
+
   "cta.badge": "Oferta Limitada - Junte-se Hoje",
   "cta.title": "A Sua Comunidade Está Aqui",
   "cta.subtitle": "Junte-se a lusófonos que vivem em Londres e Reino Unido hoje através da LusoTown e descubra a comunidade portuguesa autêntica que procurava.",
@@ -1904,6 +2027,7 @@
   "cta.benefits.active-social-life": "Preencha o seu calendário social",
   "cta.benefits.safe-environment": "Ambiente seguro e acolhedor",
   "cta.benefits.free-start": "Gratuito para começar",
+
   "events.hero.title": "O Seu Calendário Social Português - Londres e Reino Unido",
   "events.hero.title.mobile": "Eventos Portugueses Londres",
   "events.hero.subtitle": "A LusoTown conecta-o para viver a vida em conjunto com falantes de português em Londres e Reino Unido. Desde tours de museus a noites de concerto, futebol a escapadas - o seu calendário social espera por si!",
@@ -1913,6 +2037,7 @@
   "events.stats-events": "Experiências Mensais",
   "events.stats-members": "Falantes de Português",
   "events.stats-venues": "Países Lusófonos",
+
   "events-tours.hero.title": "Experiências Grupais & Tours",
   "events-tours.hero.subtitle": "A LusoTown conecta-o a experiências exclusivas com falantes de português em Londres. Desde grupos especializados para mulheres 30+ e 40+ até experiências familiares - encontre a sua comunidade e viva Londres juntos.",
   "events-tours.search-placeholder": "Pesquisar tours e experiências...",
@@ -1949,6 +2074,7 @@
   "events-tours.experience-found": "experiência encontrada",
   "events-tours.experiences-found": "experiências encontradas",
   "events-tours.loading": "Carregando...",
+
   "feed.filters.advanced": "Filtros Avançados",
   "feed.filters.event-type": "Tipo de Evento",
   "feed.filters.location": "Localização",
@@ -1957,6 +2083,7 @@
   "feed.filters.culture-origin": "Cultura & Origem",
   "feed.filters.additional-options": "Opções Adicionais",
   "feed.filters.spots-available": "Apenas eventos com vagas disponíveis",
+
   "ai-workshop.title": "Workshop de Criação de Apps de Negócio com IA",
   "ai-workshop.description": "Sessão para principiantes sobre como usar apps de IA e ferramentas de IA generativa para criar aplicações de negócio",
   "ai-workshop.special-offer": "Criação gratuita de app para ideias de negócio",
@@ -2006,6 +2133,7 @@
   "feed.filters.traditional": "Tradicional",
   "feed.filters.modern": "Moderno",
   "feed.filters.professional": "Profissional",
+
   "culture.lusophone-world": "Mundo Lusófono",
   "culture.portuguese-heritage": "Herança Portuguesa",
   "culture.african-lusophone": "Países Africanos de Língua Portuguesa",
@@ -2021,6 +2149,7 @@
   "culture.goan-portuguese": "Herança Portuguesa de Goa",
   "culture.diaspora-stories": "Histórias da Diáspora",
   "culture.mixed-heritage": "Herança Portuguesa Mista",
+
   "events.fado-night": "Noite de Fado Autêntico",
   "events.portuguese-dinner": "Jantar Tradicional Português",
   "events.carnival-celebration": "Celebração de Carnaval Português",
@@ -2040,9 +2169,11 @@
   "events.weekend-trip": "Escapadinha de Fim de Semana",
   "events.beach-day": "Dia de Praia ao Estilo Português",
   "events.cultural-festival": "Festival das Tradições Lusófonas",
+
   "stories.member-success": "História de Sucesso do Membro",
   "stories.community-impact": "Impacto na Comunidade",
   "stories.cultural-preservation": "Preservação Cultural",
+
   "matches.find_your_match": "Encontre o Seu Match",
   "matches.discover_matches": "Descubra os Seus Matches",
   "matches.connect_portuguese_speakers": "Conecte-se com falantes de português em Londres que partilham os seus interesses, valores e património cultural. Mais que um app de encontros - uma comunidade.",
@@ -2098,11 +2229,13 @@
   "stories.language-learning": "Jornada de Aprendizagem de Línguas",
   "stories.business-support": "Apoio à Comunidade Empresarial",
   "stories.heritage-discovery": "Descoberta da Herança",
+
   "seo.title-suffix": "| LusoTown Londres",
   "seo.description.default": "Plataforma para lusófonos que vivem em Londres e Reino Unido. Conecte-se com a vibrante comunidade lusófona, descubra eventos autênticos, faça amigos e celebre a nossa cultura rica.",
   "seo.keywords": "comunidade portuguesa Londres, familia portuguesa Londres, casa portuguesa Londres, brasileiros em Londres, angolanos em Londres, moçambicanos em Londres, cabo-verdianos Londres, eventos portugueses, fado em londres, pastéis de nata, francesinha, santos populares, festa das vindimas, comunidade lusófona, calendário social português, networking português Londres, cultura portuguesa reino unido",
   "seo.og.site-name": "LusoTown Londres - A Sua Casa Portuguesa",
   "seo.og.locale": "pt_PT",
+
   "error.boundary.title": "Algo correu mal",
   "error.boundary.description": "Ocorreu um erro inesperado. Por favor, tenta novamente ou contacta o apoio se o problema persistir.",
   "error.boundary.details-title": "Detalhes do erro (modo desenvolvimento)",
@@ -2111,6 +2244,7 @@
   "error.boundary.contact-support": "Contactar apoio técnico",
   "error.component.loading-error": "Erro ao carregar",
   "error.component.reload": "Recarregar página",
+
   "onboarding.first-steps": "Primeiros Passos",
   "onboarding.setup": "Vamos configurar a sua experiência LusoTown",
   "onboarding.progress": "Progresso",
@@ -2122,6 +2256,7 @@
   "onboarding.all-set": "Está tudo pronto! Vamos explorar a sua comunidade portuguesa.",
   "onboarding.skip": "Saltar por agora",
   "onboarding.later": "Farei isto mais tarde",
+
   "streaming.live": "AO VIVO",
   "streaming.viewers": "espectadores",
   "streaming.viewer": "espectador",
@@ -2224,6 +2359,7 @@
   "streaming.hero.categories.culture": "Celebrações e Eventos Culturais",
   "streaming.hero.categories.student": "Apoio aos Estudantes e Conselhos de Carreira",
   "streaming.hero.social_proof": "Junta-te aos 2,150+ falantes de português que já transmitem e assistem",
+
   "streaming.info.badge": "Transmissões LusoTown",
   "streaming.info.title": "Transmita connosco",
   "streaming.info.subtitle": "Partilhe música, cultura, workshops e eventos com a comunidade portuguesa em Londres e no Reino Unido. Simples de começar, generoso para criadores.",
@@ -2284,6 +2420,7 @@
   "notifications.heritage-preservation": "Património Cultural",
   "notifications.subscription-required": "Subscrição Necessária",
   "notifications.unlock-features": "Desbloquear Mais Funcionalidades",
+
   "waitlist.join": "Entrar na Lista de Espera",
   "waitlist.join-button": "ENTRAR NA LISTA DE ESPERA",
   "waitlist.full-name": "Nome Completo",
@@ -2291,6 +2428,7 @@
   "waitlist.phone": "Telefone",
   "waitlist.language-preference": "Preferência de Idioma",
   "waitlist.notifications": "Receber notificações por email quando vagas estiverem disponíveis",
+
   "waitlist.success": "Adicionado à lista de espera para \"{title}\"! Você será notificado se houver vagas.",
   "waitlist.error": "Erro ao entrar na lista de espera",
   "waitlist.required-fields": "Por favor, preencha todos os campos obrigatórios",
@@ -2298,6 +2436,7 @@
   "waitlist.count": "{count} na lista de espera",
   "waitlist.fully-booked": "LOTADO",
   "waitlist.event-full": "Evento lotado",
+
   "match_events.title": "Eventos Perfeitos para Vocês Dois",
   "match_events.subtitle": "Baseado nos vossos interesses partilhados e preferências culturais",
   "match_events.compatibility_score": "Pontuação de Compatibilidade",
@@ -2309,6 +2448,7 @@
   "match_events.suggest_to_match": "Sugerir ao Match",
   "match_events.no_recommendations": "Ainda não há recomendações de eventos",
   "match_events.explore_events": "Explorar Eventos Portugueses",
+
   "event_buddy.title": "Companheiros de Evento",
   "event_buddy.subtitle": "Encontre companheiros para eventos culturais portugueses",
   "event_buddy.request_buddy": "Pedir Companheiro de Evento",
@@ -2329,6 +2469,7 @@
   "event_buddy.request_accepted": "Pedido de companheiro aceite!",
   "event_buddy.group_discount": "Desconto de Grupo Disponível",
   "event_buddy.save_per_person": "Poupe {amount} por pessoa",
+
   "book_together.title": "Reservar Juntos",
   "book_together.subtitle": "Coordenar reserva de grupo com amigos",
   "book_together.create_group": "Criar Reserva de Grupo",
@@ -2358,6 +2499,7 @@
   "book_together.payment_required": "Pagamento necessário para confirmar",
   "book_together.expires_in": "Expira em",
   "book_together.expired": "Reserva expirada",
+
   "cultural_events.fado_nights": "Noites de Fado",
   "cultural_events.portuguese_cuisine": "Cozinha Portuguesa",
   "cultural_events.santos_populares": "Santos Populares",
@@ -2370,6 +2512,7 @@
   "cultural_events.business_networking": "Networking Empresarial",
   "cultural_events.football_events": "Eventos de Futebol",
   "cultural_events.heritage_tours": "Tours do Património",
+
   "cultural_preferences.title": "Preferências Culturais",
   "cultural_preferences.subtitle": "Ajude-nos a recomendar eventos portugueses perfeitos",
   "cultural_preferences.portuguese_origin": "Origem Portuguesa",
@@ -2386,6 +2529,7 @@
   "cultural_preferences.heritage_levels.heritage_seeker": "Procurador de Património",
   "cultural_preferences.save_preferences": "Guardar Preferências",
   "cultural_preferences.preferences_saved": "Preferências culturais guardadas!",
+
   "compatibility_matcher.title": "Matcher de Compatibilidade de Eventos",
   "compatibility_matcher.analyzing": "A analisar compatibilidade...",
   "compatibility_matcher.perfect_match": "Match Perfeito!",
@@ -2397,6 +2541,7 @@
   "compatibility_matcher.recommendation_reasons.location": "Localização conveniente para ambos",
   "compatibility_matcher.recommendation_reasons.heritage": "Perfeito para celebrar o património português",
   "compatibility_matcher.recommendation_reasons.networking": "Óptimo para networking profissional",
+
   "twitter_feed.title": "Comunidade Portuguesa",
   "twitter_feed.subtitle": "Últimas do Twitter",
   "twitter_feed.view_more": "Ver Mais",
@@ -2409,6 +2554,7 @@
   "twitter_feed.loading": "A carregar tweets...",
   "twitter_feed.error": "Não foi possível carregar o feed do Twitter",
   "twitter_feed.retry": "Tentar novamente",
+
   "twitter_tabs.community": "Comunidade",
   "twitter_tabs.events": "Eventos",
   "twitter_tabs.business": "Negócios",
@@ -2426,6 +2572,7 @@
   "twitter_tabs.this_week": "esta semana",
   "twitter_tabs.daily": "Diariamente",
   "twitter_tabs.popular_hashtags": "Outras hashtags populares",
+
   "dashboard.social.title": "Comunidade Portuguesa no Twitter",
   "dashboard.social.subtitle": "Acompanhe as últimas conversas da nossa comunidade",
   "dashboard.social.share_events": "Partilhar Eventos",
@@ -2434,6 +2581,7 @@
   "dashboard.social.follow_desc": "Mantenha-se atualizado com as nossas novidades",
   "dashboard.social.view_events": "Ver Eventos",
   "dashboard.social.follow": "Seguir",
+
   "core_features.badge": "Centro da Comunidade Portuguesa",
   "core_features.title": "A Sua Vida Portuguesa em Londres",
   "core_features.subtitle": "Tudo o que precisa para se conectar, explorar, aprender e prosperar na comunidade portuguesa de Londres",
@@ -2454,6 +2602,7 @@
   "core_features.join_description": "Conecte-se com {members} falantes de português em Londres e Reino Unido. De eventos culturais ao networking profissional, a sua jornada portuguesa começa aqui.",
   "core_features.join_now": "Juntar à Comunidade",
   "core_features.explore_features": "Explorar Funcionalidades",
+
   "core_features.matches.title": "Encontre o Seu Match",
   "core_features.matches.description": "Conecte-se com falantes de português em Londres através de compatibilidade cultural e conexões autênticas. Encontre romance, amizade ou parcerias profissionais com pessoas que partilham a sua herança.",
   "core_features.matches.features.cultural_compatibility": "Matching de compatibilidade cultural",
@@ -2463,6 +2612,7 @@
   "core_features.matches.cta": "Encontrar Matches",
   "core_features.matches.live_activity": "ativos agora",
   "core_features.matches.how_it_works": "O nosso algoritmo cultural faz match com base em tradições portuguesas, preferências de idioma, conexões regionais e interesses partilhados - criando conexões mais profundas que apps de encontros genéricas.",
+
   "core_features.events.title": "Eventos Portugueses",
   "core_features.events.description": "Descubra eventos culturais portugueses autênticos em Londres. Das noites íntimas de fado em Stockwell ao networking profissional em Canary Wharf - conecte-se com a sua comunidade através de experiências partilhadas.",
   "core_features.events.features.cultural_events": "Celebrações culturais autênticas",
@@ -2472,6 +2622,7 @@
   "core_features.events.cta": "Explorar Eventos",
   "core_features.events.live_activity": "acontecendo hoje",
   "core_features.events.how_it_works": "Explore eventos focados culturalmente organizados por falantes de português. Confirme presença instantaneamente, conecte-se com participantes antecipadamente e construa conexões duradouras através de experiências culturais partilhadas.",
+
   "core_features.tours.title": "Tours com Guias Portugueses",
   "core_features.tours.description": "Explore Londres e o Reino Unido com guias portugueses apaixonados. Descubra joias escondidas, conexões culturais e experiências autênticas pensadas para falantes de português que vivem ou visitam Londres.",
   "core_features.tours.features.portuguese_guides": "Guias nativos que falam português",
@@ -2481,6 +2632,7 @@
   "core_features.tours.cta": "Reservar Tours",
   "core_features.tours.live_activity": "reservando agora",
   "core_features.tours.how_it_works": "Reserve experiências únicas de Londres lideradas por guias portugueses que compreendem a sua perspetiva cultural. Dos distritos empresariais portugueses às joias culturais escondidas - veja Londres através de olhos portugueses.",
+
   "core_features.students.title": "Comunidade de Estudantes",
   "core_features.students.description": "Apoio abrangente para estudantes portugueses no Reino Unido. Orientação académica, mentoria profissional, conexões sociais e apoio prático através das nossas parcerias universitárias em toda a Grã-Bretanha.",
   "core_features.students.features.university_partnerships": "8+ parcerias universitárias",
@@ -2493,6 +2645,7 @@
   "core_features.students.cta": "Juntar aos Estudantes",
   "core_features.students.live_activity": "estudantes ativos",
   "core_features.students.how_it_works": "Conecte-se com estudantes e mentores portugueses em universidades do Reino Unido. Obtenha apoio académico, orientação profissional, conexões sociais e conselhos práticos de estudantes que compreendem o seu background cultural.",
+
   "core_features.community.title": "Chat da Comunidade",
   "core_features.community.description": "Junte-se a conversas em tempo real com falantes de português em Londres. Discussões culturais, coordenação de eventos, networking profissional e construção de amizades - tudo em português e inglês.",
   "core_features.community.features.real_time_chat": "Mensagens em tempo real",
@@ -2502,6 +2655,7 @@
   "core_features.community.cta": "Juntar ao Chat",
   "core_features.community.live_activity": "mensagens hoje",
   "core_features.community.how_it_works": "Participe em discussões da comunidade portuguesa em Londres. Conecte-se em tempo real com grupos culturais, coordene eventos, partilhe experiências e construa amizades com falantes de português na sua área.",
+
   "community_feed.badge": "Pulso da Comunidade",
   "community_feed.title": "Feed da Comunidade Portuguesa",
   "community_feed.subtitle": "Veja o que está a acontecer na comunidade portuguesa por Londres",
@@ -2554,6 +2708,7 @@
   "feed.quick_services.active": "ativos",
   "feed.quick_services.recommendations": "recomendações",
   "feed.quick_services.opportunities": "oportunidades",
+
   "matches.enhanced.title": "Matches Portugueses",
   "matches.enhanced.subtitle": "Conecte-se com a comunidade portuguesa em Londres",
   "matches.enhanced.discover": "Descobrir",
@@ -2570,6 +2725,7 @@
   "matches.enhanced.keep_discovering": "Continue descobrindo pessoas para fazer seus primeiros matches!",
   "matches.enhanced.unlock_potential": "Desbloqueie o Potencial Completo dos Matches",
   "matches.enhanced.premium_benefits": "Membros Premium têm matches ilimitados, sugestões de eventos exclusivas, acesso a grupos VIP e muito mais.",
+
   "matches.events.suggested_for_you": "Eventos Sugeridos para Vocês",
   "matches.events.you_and": "Você e",
   "matches.events.compatible": "compatíveis",
@@ -2588,6 +2744,7 @@
   "matches.events.compatibility": "Compatibilidade",
   "matches.events.maybe_later": "Talvez depois",
   "matches.events.book_now": "Reservar Agora",
+
   "matches.buddy.find_event_buddies": "Encontrar Companheiros de Evento",
   "matches.buddy.find_buddies": "Encontrar Companheiros",
   "matches.buddy.create_request": "Criar Pedido",
@@ -2601,6 +2758,7 @@
   "matches.buddy.find_together": "Encontre alguém para participar em eventos portugueses juntos!",
   "matches.buddy.want_more_options": "Quer mais opções de companheiros?",
   "matches.buddy.premium_more_requests": "Membros Premium veem 5x mais pedidos e têm descontos exclusivos.",
+
   "matches.achievements.cultural_achievements": "Conquistas Culturais",
   "matches.achievements.total_points": "Pontos Totais",
   "matches.achievements.level": "Nível",
@@ -2621,6 +2779,7 @@
   "matches.achievements.participate_events": "Participe em eventos e faça matches para desbloquear conquistas!",
   "matches.achievements.unlock_more": "Desbloqueie mais conquistas!",
   "matches.achievements.premium_exclusive": "Membros Premium têm acesso a conquistas exclusivas e recompensas especiais.",
+
   "matches.groups.group_matching": "Matches de Grupo",
   "matches.groups.browse_groups": "Procurar Grupos",
   "matches.groups.create_request": "Criar Pedido",
@@ -2657,22 +2816,5 @@
   "matches.groups.cancel": "Cancelar",
   "matches.groups.join": "Juntar",
   "matches.groups.want_unlimited_groups": "Quer criar grupos ilimitados?",
-  "matches.groups.premium_unlimited": "Membros Premium podem criar grupos ilimitados e têm acesso a recursos avançados.",
-  "components.about_luso_town.about_description": "[PT] About",
-  "components.about_luso_town.lusotown_label": "[PT] LusoTown",
-  "components.about_luso_town.lusotown_is_where_portuguese_h_description": "[PT] LusoTown is where Portuguese hearts find their London network. Whether you're homesick, building your career while honoring your heritage, \n            or simply miss the warmth of Portuguese conversation, this is your professional home. Every person here understands your journey and opens their networks to support you.",
-  "components.about_luso_town.when_you_join_lusotown_you_can_text": "[PT] When you join LusoTown, you can:",
-  "components.about_luso_town.ready_to_book_experiences_with_question": "[PT] Ready to book experiences with Portuguese speakers across London?",
-  "components.about_luso_town.discover_join_events_cta": "[PT] Discover & Join Events",
-  "components.about_luso_town.find_portuguese_cultural_event_description": "[PT] Find Portuguese cultural events at authentic London venues - from Fado nights to food festivals at real Portuguese locations.",
-  "components.about_luso_town.stay_updated_on_lusotown_feed_text": "[PT] Stay Updated on LusoTown Feed",
-  "components.about_luso_town.see_the_latest_events_posts_an_text": "[PT] See the latest events, posts, and community updates in real time.",
-  "components.about_luso_town.post_share_with_the_community_text": "[PT] Post & Share with the Community",
-  "components.about_luso_town.add_your_own_updates_photos_an_text": "[PT] Add your own updates, photos, and tips, and tag events or businesses.",
-  "components.about_luso_town.save_your_favourites_text": "[PT] Save Your Favourites",
-  "components.about_luso_town.bookmark_events_businesses_and_text": "[PT] Bookmark events, businesses, and posts you love so you never miss out.",
-  "components.about_luso_town.support_portuguese_businesses_text": "[PT] Support Portuguese Businesses",
-  "components.about_luso_town.explore_our_directory_and_disc_text": "[PT] Explore our directory and discover places run by or for Portuguese speakers.",
-  "components.about_luso_town.connect_with_portuguese_speake_text": "[PT] Connect with Portuguese Speakers",
-  "components.about_luso_town.find_your_match_among_portugue_description": "[PT] Find Your Match among Portuguese speakers through real-life meetups at authentic London venues, share experiences, and keep your language and traditions alive."
+  "matches.groups.premium_unlimited": "Membros Premium podem criar grupos ilimitados e têm acesso a recursos avançados."
 }

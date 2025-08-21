@@ -13,7 +13,7 @@ const { execSync } = require('child_process');
 
 // Configuration
 const CONFIG = {
-  sourceDir: './src',
+  sourceDir: process.argv.includes('--about-only') ? './src/components/AboutLusoTown.tsx' : './src',
   i18nDir: './src/i18n',
   excludePatterns: [
     '*.test.tsx',
@@ -169,10 +169,26 @@ function extractStringsFromFile(filePath, content) {
     const beforeMatch = content.substring(Math.max(0, match.index - 30), match.index);
     if (beforeMatch.match(/(className|style|id|data-|aria-|type|role|key|ref)=$/)) continue;
     
+    // Skip strings that are already inside t() function calls
+    const beforeLargeMatch = content.substring(Math.max(0, match.index - 100), match.index);
+    if (beforeLargeMatch.match(/\bt\(\s*['"]/)) continue;
+    
     if (shouldExtractString(text, context)) {
       const key = generateTranslationKey(text, context);
       extractedStrings.set(key, text);
-      extractedFromFile.push({ type: 'string-literal', text, key, match: match[0], index: match.index });
+      
+      // Check if this is inside an object property (key: "value")
+      const isObjectProperty = beforeMatch.match(/\w+:\s*$/);
+      const replacement = isObjectProperty ? `t('${key}')` : `{t('${key}')}`;
+      
+      extractedFromFile.push({ 
+        type: 'string-literal', 
+        text, 
+        key, 
+        match: match[0], 
+        index: match.index,
+        replacement 
+      });
     }
   }
   
@@ -190,15 +206,15 @@ function applyReplacements(content, replacements) {
   let hasUseLanguage = content.includes('useLanguage');
   
   for (const replacement of replacements) {
-    const { type, match, key, index } = replacement;
+    const { type, match, key, index, replacement: customReplacement } = replacement;
     
     if (type === 'jsx-text') {
       // Replace >{text}< with >{t('key')}<
       const newContent = `>{t('${key}')}<`;
       modifiedContent = modifiedContent.substring(0, index) + newContent + modifiedContent.substring(index + match.length);
     } else if (type === 'string-literal') {
-      // Replace "text" with {t('key')}
-      const newContent = `{t('${key}')}`;
+      // Use custom replacement if provided (for object properties)
+      const newContent = customReplacement || `{t('${key}')}`;
       modifiedContent = modifiedContent.substring(0, index) + newContent + modifiedContent.substring(index + match.length);
     }
   }
