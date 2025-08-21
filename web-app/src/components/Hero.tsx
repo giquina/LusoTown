@@ -60,7 +60,8 @@ export default function Hero() {
               <div className="flex items-center gap-2">
                 <SparklesIcon className="h-5 w-5 text-secondary-600" />
                 <span className="text-sm font-bold bg-gradient-to-r from-secondary-600 to-action-600 bg-clip-text text-transparent">
-                  COMMUNITY MEMBER - FROM {formatPrice(plans.community.monthly)}/MONTH
+                  COMMUNITY MEMBER - FROM {formatPrice(plans.community.monthly)}
+                  /MONTH
                 </span>
               </div>
               <div className="bg-gradient-to-r from-primary-600 to-secondary-600 text-white text-xs font-bold px-2 py-1 rounded-full shadow-sm">
@@ -250,15 +251,22 @@ export default function Hero() {
                     Join the Portuguese Community
                   </h3>
                   <p className="text-gray-600">
-                    From {formatPrice(plans.community.monthly)}/month - Connect with Portuguese speakers
-                    across the United Kingdom. Unlimited matches, events, and networking nationwide.
+                    From {formatPrice(plans.community.monthly)}/month - Connect
+                    with Portuguese speakers across the United Kingdom.
+                    Unlimited matches, events, and networking nationwide.
                   </p>
                   <div className="mt-4 space-y-2">
                     <div className="text-sm text-gray-500">
-                      <span className="font-semibold text-primary-600">Community Member:</span> {formatPrice(plans.community.monthly)}/month
+                      <span className="font-semibold text-primary-600">
+                        Community Member:
+                      </span>{" "}
+                      {formatPrice(plans.community.monthly)}/month
                     </div>
                     <div className="text-sm text-gray-500">
-                      <span className="font-semibold text-premium-600">Cultural Ambassador:</span> {formatPrice(plans.ambassador.monthly)}/month
+                      <span className="font-semibold text-premium-600">
+                        Cultural Ambassador:
+                      </span>{" "}
+                      {formatPrice(plans.ambassador.monthly)}/month
                     </div>
                   </div>
                 </div>
@@ -294,9 +302,7 @@ export default function Hero() {
                     <div className="text-3xl font-bold text-action-600">
                       25+
                     </div>
-                    <div className="text-sm text-gray-600">
-                      UK Cities
-                    </div>
+                    <div className="text-sm text-gray-600">UK Cities</div>
                   </div>
                 </div>
 
