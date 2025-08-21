@@ -9,14 +9,20 @@ LusoTown: Production-ready bilingual Portuguese community platform serving Londo
 
 ## Contributor Quick Start
 
-- Dev: from repo root run in web app folder
-  - cd web-app && npm install && npm run dev
-- Build checks (run from web-app directory)
-  - npm run lint
-  - npx tsc --noEmit
-  - npm run build (TypeScript/ESLint errors are ignored during build per next.config.js)
-- Env
-  - Copy .env.local.example to .env.local and set Supabase keys
+- **Development**: From repository root
+  ```bash
+  cd web-app && npm install && npm run dev    # Start at localhost:3000
+  cd streaming && npm install && npm start    # Streaming server at localhost:8080
+  cd mobile-app && npm install && npm start   # Expo development server
+  ```
+- **Build checks** (run from web-app directory - ALWAYS before commits)
+  ```bash
+  npm run lint                 # ESLint check - must pass
+  npx tsc --noEmit            # TypeScript check - must pass  
+  npm run build               # Production build test
+  npm run test:all            # Comprehensive test suite
+  ```
+- **Environment**: Copy `.env.local.example` to `.env.local` and configure Supabase keys + optional services
 
 ## Quick links
 
@@ -75,6 +81,29 @@ cd streaming && npm install && npm start    # Streaming at localhost:8080
 
 # Start mobile app (optional - React Native/Expo)
 cd mobile-app && npm install && npm start   # Expo dev server
+```
+
+### Key npm Scripts (50+ available - most important listed)
+```bash
+# Testing (comprehensive test framework)
+npm run test:all            # Complete test suite (unit + integration + performance)  
+npm run test:unit           # Components/contexts/utils only
+npm run test:integration    # User journey tests
+npm run test:e2e           # Playwright end-to-end tests
+npm run test:portuguese    # Portuguese-specific feature tests
+npm run test:mobile        # Mobile responsive tests
+npm run test:security      # Security validation tests
+
+# Documentation & Automation (intelligent system)
+npm run docs:orchestrator  # Master documentation system
+npm run docs:health-check  # System health monitoring
+npm run docs:cultural-audit # Portuguese cultural consistency
+npm run audit:hardcoding   # Scan for hardcoded strings/values
+
+# Database operations
+npm run db:migrate              # Apply all migrations
+npm run db:migrate:streaming    # Streaming platform schema only
+npm run verify:creator-monetization # Verify streaming setup
 ```
 
 ### Quality Assurance (ALWAYS run before commits)
@@ -150,8 +179,8 @@ npm run export                   # Static site export
 npm run deploy                   # Deploy to Vercel
 ```
 
-**Demo Login:** demo@lusotown.com / LusoTown2025!
-**TypeScript:** Errors ignored in builds (`ignoreBuildErrors: true`)
+**Demo Login:** demo@lusotown.com / LusoTown2025!  
+**Build Configuration:** TypeScript/ESLint errors ignored during builds (`ignoreBuildErrors: true`, `ignoreDuringBuilds: true`) for faster deployment
 
 ## Mobile App Structure
 
@@ -191,29 +220,56 @@ npm run deploy                   # Deploy to Vercel
 
 ## Core Architecture
 
-### Project Structure
+### Project Structure (Monorepo)
 ```
 /workspaces/LusoTown/
-├── web-app/           # Next.js 14 main application
-│   ├── src/app/       # App Router pages (layout.tsx, page.tsx, etc.)
-│   ├── src/components/ # React components (180+ components)
-│   ├── src/context/   # React Context providers (state management)
-│   ├── src/i18n/      # Bilingual translations (en.json, pt.json)
-│   └── src/lib/       # Utility functions and services
-├── streaming/         # Node.js streaming server (SRS)
-├── mobile-app/        # React Native/Expo mobile app
-├── supabase/          # Database migrations and configuration
-└── packages/          # Shared design tokens and UI components
+├── web-app/                    # Next.js 14 main application (75+ pages)
+│   ├── src/app/               # App Router pages & layouts
+│   ├── src/components/        # 180+ React components
+│   ├── src/context/          # React Context providers (Language, Subscription, etc.)
+│   ├── src/i18n/             # Bilingual translations (en.json, pt.json)
+│   ├── src/lib/              # Utilities, API clients, geolocation services
+│   ├── __tests__/            # Jest tests (unit, integration, e2e)
+│   ├── jest.config.js        # Testing configuration
+│   ├── next.config.js        # Next.js build configuration
+│   └── package.json          # 50+ comprehensive npm scripts
+├── streaming/                 # Node.js Simple Relay Server (SRS)
+│   ├── server.js             # Main streaming server
+│   ├── health-check.js       # Health monitoring
+│   └── package.json          # Streaming dependencies
+├── mobile-app/               # React Native/Expo mobile app
+│   └── package.json          # Mobile dependencies (early development)
+├── supabase/migrations/      # 20+ database migrations with PostGIS
+├── packages/                 # Shared monorepo packages
+│   ├── design-tokens/        # Portuguese brand colors & tokens
+│   └── ui/                  # Shared React components
+└── package.json             # Root workspace configuration
 ```
 
 ### Technology Stack
-- **Frontend:** Next.js 14 App Router, TypeScript, Tailwind CSS
-- **State:** React Context + localStorage (no Redux)
-- **Backend:** Supabase PostgreSQL with PostGIS extension
-- **Streaming:** Simple Relay Server (SRS) with RTMP/WebRTC/HLS
-- **Maps:** OpenStreetMap/Leaflet with geolocation services
-- **Testing:** Jest + Testing Library + Playwright E2E
-- **Deployment:** Vercel (web), Railway (streaming)
+- **Frontend:** Next.js 14 App Router, TypeScript, Tailwind CSS, React Context
+- **State Management:** React Context + localStorage (NO Redux by design)
+- **Backend:** Supabase PostgreSQL with PostGIS geospatial extension
+- **Streaming:** Simple Relay Server (SRS) with RTMP→WebRTC→HLS pipeline  
+- **Maps:** OpenStreetMap/Leaflet (no Google Maps dependency)
+- **Testing:** Jest + Testing Library + Playwright E2E (comprehensive test suite)
+- **i18n:** Custom bilingual system (English/Portuguese) via React Context
+- **Deployment:** Vercel (web app), Railway (streaming server)
+- **Monorepo:** npm workspaces with shared packages
+
+### Next.js Build Configuration (Critical for Understanding)
+
+**Production Build Optimization:**
+- **TypeScript/ESLint errors ignored** during builds (`next.config.js` lines 83-87) for faster deployment
+- **Chunk splitting strategy**: Separate chunks for vendor, React, Heroicons, Framer Motion 
+- **Image optimization**: Multiple CDN domains configured (Unsplash, Cloudinary, BunnyCDN)
+- **Bundle analysis**: Available with `ANALYZE=true npm run dev`
+- **Performance**: `removeConsole: true` in production, advanced webpack optimization
+
+**Monorepo Setup:**
+- **Workspaces**: Root package.json defines `web-app`, `mobile-app`, `streaming`, `packages/*`
+- **Shared packages**: `@lusotown/design-tokens`, `@lusotown/ui` transpiled via Next.js
+- **React Native Web**: Configured for potential shared components
 
 ### Critical Architecture Patterns
 
