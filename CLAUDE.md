@@ -150,6 +150,22 @@ npm run export                   # Static site export
 npm run deploy                   # Deploy to Vercel
 ```
 
+### Hardcoding Prevention (New!)
+```bash
+# Check for violations
+npm run i18n-check              # Check for hardcoded UI strings
+npm run url-check               # Check for hardcoded URLs  
+npm run secret-check            # Check for hardcoded secrets
+npm run hardcoding-prevention   # Run all checks
+
+# Automated fixes
+npm run codemod:i18n            # Extract strings to i18n files
+npm run codemod:urls            # Replace URLs with config constants
+
+# See HARDCODING_PREVENTION.md for full documentation
+```
+```
+
 **Demo Login:** demo@lusotown.com / LusoTown2025!
 **TypeScript:** Errors ignored in builds (`ignoreBuildErrors: true`)
 

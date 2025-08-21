@@ -66,7 +66,6 @@
   "messaging.write_custom_message": "Write Custom Message",
   "messaging.shared_events": "Shared Events",
   "messaging.more": "more",
-
   "success_stories.title": "Real Success Stories",
   "success_stories.subtitle": "Portuguese Hearts Connected in London",
   "success_stories.description": "Real stories of Portuguese speakers who found love, friendship, business partners, and mentors through LusoTown's cultural compatibility matching.",
@@ -81,7 +80,6 @@
   "success_stories.ready_description": "Join hundreds of Portuguese speakers who have found authentic connections through cultural compatibility. Your story could be next!",
   "success_stories.start_now": "START NOW",
   "success_stories.read_more": "Read More Stories",
-
   "buttons.view_more": "View More",
   "buttons.view_details": "View Details",
   "buttons.add_to_cart": "Add to Cart",
@@ -98,7 +96,6 @@
   "buttons.edit": "Edit",
   "buttons.delete": "Delete",
   "buttons.share": "Share",
-  
   "cultural_verification.title": "Portuguese Cultural Verification",
   "cultural_verification.subtitle": "Boost your credibility through cultural authenticity",
   "cultural_verification.score": "Verification Score",
@@ -127,7 +124,6 @@
   "cultural_verification.epic": "Epic Heritage",
   "cultural_verification.rare": "Rare Culture",
   "cultural_verification.common": "Common Heritage",
-  
   "cultural_photos.title": "Cultural Photo Gallery",
   "cultural_photos.upload_title": "Add Portuguese Cultural Photos",
   "cultural_photos.upload_description": "Share photos that show your connection to Portuguese culture - events, traditions, family, food, or special places",
@@ -150,7 +146,6 @@
   "cultural_photos.fado_nights": "Fado nights, Portuguese music",
   "cultural_photos.portugal_photos": "Photos from Portugal, azulejos",
   "cultural_photos.family_traditions": "Family, family traditions",
-  
   "cultural_badges.heritage_verified": "Heritage Verified",
   "cultural_badges.heritage_verified_desc": "Verified Portuguese cultural heritage through authentic photos",
   "cultural_badges.event_verified": "Event Verified",
@@ -165,7 +160,6 @@
   "cultural_badges.fado_lover_desc": "Deep appreciation for Portuguese Fado music",
   "cultural_badges.santos_populares_champion": "Santos Populares Champion",
   "cultural_badges.santos_populares_champion_desc": "Celebrates Portuguese Saints festivals with passion",
-  
   "verification_steps.heritage_photos": "Heritage Photos",
   "verification_steps.heritage_photos_desc": "Upload photos showing Portuguese cultural heritage",
   "verification_steps.event_photos": "Event Photos",
@@ -174,11 +168,9 @@
   "verification_steps.cuisine_photos_desc": "Show your appreciation for Portuguese cuisine",
   "verification_steps.community_photos": "Community Photos",
   "verification_steps.community_photos_desc": "Demonstrate involvement in Portuguese community",
-
   "saudade.matching.title": "Saudade-Based Matching",
   "saudade.matching.subtitle": "Find Your Emotional Soulmate",
   "saudade.matching.description": "Connect with Portuguese speakers who understand your unique saudade experience and cultural heritage depth",
-  
   "saudade.assessment.title": "Saudade & Cultural Compatibility Assessment",
   "saudade.assessment.subtitle": "Understanding your saudade",
   "saudade.assessment.description": "Discover authentic emotional connections based on your saudade experience",
@@ -189,7 +181,6 @@
   "saudade.assessment.next": "Next",
   "saudade.assessment.question": "Question",
   "saudade.assessment.of": "of",
-  
   "saudade.profile.intensity": "Saudade Intensity",
   "saudade.profile.frequency": "Frequency",
   "saudade.profile.triggers": "Emotional Triggers",
@@ -197,13 +188,11 @@
   "saudade.profile.support": "Cultural Support",
   "saudade.profile.heritage": "Heritage Connection",
   "saudade.profile.regional": "Regional Identity",
-  
   "saudade.types.saudade_soulmate": "Saudade Soulmate",
   "saudade.types.cultural_healer": "Cultural Healer",
   "saudade.types.heritage_guardian": "Heritage Guardian",
   "saudade.types.integration_partner": "Integration Partner",
   "saudade.types.gentle_companion": "Gentle Companion",
-  
   "saudade.compatibility.score": "Emotional Compatibility",
   "saudade.compatibility.saudade_alignment": "Saudade Alignment",
   "saudade.compatibility.emotional_support": "Emotional Support",
@@ -213,7 +202,6 @@
   "saudade.compatibility.strengths": "Support Strengths",
   "saudade.compatibility.activities": "Recommended Activities",
   "saudade.compatibility.challenges": "Areas for Discussion",
-  
   "saudade.healing.title": "Cultural Healing Recommendations",
   "saudade.healing.subtitle": "Personalized activities to heal saudade and strengthen cultural connection",
   "saudade.healing.categories.all": "All Activities",
@@ -223,19 +211,16 @@
   "saudade.healing.categories.spiritual": "Emotional Support",
   "saudade.healing.categories.educational": "Learning & Culture",
   "saudade.healing.categories.nature": "Nature & Reflection",
-
   "business_networking.title": "Portuguese Professional Networking",
   "business_networking.subtitle": "Connect with Portuguese professionals for career growth and business opportunities",
   "business_networking.discover": "Discover",
   "business_networking.mentorship": "Mentorship",
   "business_networking.partnerships": "Partnerships",
   "business_networking.events": "Events",
-  
   "business_networking.stats.connections_today": "Connections Made",
-  "business_networking.stats.mentorship_requests": "Mentorship Requests", 
+  "business_networking.stats.mentorship_requests": "Mentorship Requests",
   "business_networking.stats.business_events_booked": "Events Booked",
   "business_networking.stats.partnership_opportunities": "Opportunities",
-  
   "business_networking.filters.industry": "Industry",
   "business_networking.filters.company_size": "Company Size",
   "business_networking.filters.experience": "Experience",
@@ -249,20 +234,17 @@
   "business_networking.filters.available_mentors": "Available Mentors",
   "business_networking.filters.startup_ecosystem": "Startup Ecosystem",
   "business_networking.filters.portuguese_market": "Portuguese Market",
-  
   "business_networking.match_types.mentorship": "Mentorship",
   "business_networking.match_types.collaboration": "Collaboration",
   "business_networking.match_types.networking": "Networking",
   "business_networking.match_types.partnership": "Partnership",
   "business_networking.match_types.investment": "Investment",
-  
   "business_networking.mentorship.available_as_mentor": "Available as Mentor",
   "business_networking.mentorship.seeking_mentor": "Seeking Mentor",
   "business_networking.mentorship.peer_networking": "Peer Networking",
   "business_networking.mentorship.mentor_and_mentee": "Mentor & Mentee",
   "business_networking.mentorship.request": "Request Mentorship",
   "business_networking.mentorship.available": "Available",
-  
   "business_networking.conversation.title": "Business Conversation",
   "business_networking.conversation.subtitle": "Start authentic professional connections",
   "business_networking.conversation.categories.all": "All",
@@ -275,12 +257,10 @@
   "business_networking.conversation.business_relevance": "Business Relevance:",
   "business_networking.conversation.no_conversations": "No conversations found",
   "business_networking.conversation.try_different_category": "Try selecting a different category.",
-  
   "business_networking.conversation.tips.title": "Portuguese Networking Tips",
   "business_networking.conversation.tips.specific_experiences": "Mention specific experiences or challenges of Portuguese in London",
   "business_networking.conversation.tips.collaboration_opportunities": "Look for collaboration opportunities and mutual support",
   "business_networking.conversation.tips.market_insights": "Share insights about Portuguese and British markets",
-  
   "business_networking.profile.professional_profile": "Professional Profile",
   "business_networking.profile.core_skills": "Core Skills",
   "business_networking.profile.networking_goals": "Networking Goals",
@@ -291,23 +271,19 @@
   "business_networking.profile.shared_heritage": "Shared Portuguese cultural heritage",
   "business_networking.profile.aligned_goals": "Aligned networking goals",
   "business_networking.profile.complementary_interests": "Complementary business interests",
-  
   "business_networking.events.suggested_business_events": "Suggested Business Events",
   "business_networking.events.based_on_interests": "Based on your shared professional interests",
   "business_networking.events.view_all": "View All Events",
   "business_networking.events.book_now": "Book Now",
   "business_networking.events.free": "Free",
-  
   "business_networking.actions.connect": "Connect",
   "business_networking.actions.skip": "Skip",
   "business_networking.actions.collaborate": "Collaborate",
   "business_networking.actions.chat": "Chat",
-  
   "business_networking.empty_states.no_mentorship": "No mentorship opportunities found",
   "business_networking.empty_states.adjust_filters_mentorship": "Adjust filters to find mentors or mentees in your field.",
   "business_networking.empty_states.no_partnerships": "No partnerships established yet",
   "business_networking.empty_states.keep_connecting": "Keep making connections to establish your first business partnerships!",
-  
   "business_networking.premium.title": "Unlock Premium Professional Networking",
   "business_networking.premium.description": "Premium members get unlimited connections, exclusive events, priority mentorship and investment opportunities.",
   "business_networking.premium.upgrade": "Upgrade Premium",
@@ -317,7 +293,6 @@
   "saudade.healing.learn_more": "Learn More",
   "saudade.healing.schedule": "Schedule",
   "saudade.healing.ideal_for_couples": "Ideal for couples with shared saudade",
-  
   "saudade.triggers.fado_music": "Fado Music",
   "saudade.triggers.family_voices": "Family Voices",
   "saudade.triggers.childhood_foods": "Childhood Foods",
@@ -330,7 +305,6 @@
   "saudade.triggers.childhood_friends": "Childhood Friends",
   "saudade.triggers.portuguese_films": "Portuguese Films",
   "saudade.triggers.festival_memories": "Festival Memories",
-  
   "saudade.coping.cook_portuguese": "Cook Portuguese Food",
   "saudade.coping.call_family": "Call Family",
   "saudade.coping.listen_fado": "Listen to Fado",
@@ -343,24 +317,20 @@
   "saudade.coping.embrace_sadness": "Embrace the Feeling",
   "saudade.coping.share_culture": "Share Culture",
   "saudade.coping.keep_busy": "Stay Busy",
-  
   "saudade.frequency.constant": "Constant",
   "saudade.frequency.weekly": "Weekly",
   "saudade.frequency.monthly": "Monthly",
   "saudade.frequency.seasonal": "Seasonal",
   "saudade.frequency.rare": "Rare",
-  
   "saudade.support.high": "High Support Needs",
   "saudade.support.moderate": "Moderate Support",
   "saudade.support.low": "Low Support Needs",
   "saudade.support.independent": "Independent Approach",
-  
   "saudade.conversation_starters.fado": "Which fado song most awakens your saudade?",
   "saudade.conversation_starters.cooking": "What Portuguese dish most reminds you of home?",
   "saudade.conversation_starters.general": "How do you experience saudade living in London?",
   "saudade.conversation_starters.family": "How do you stay connected with family back home?",
   "saudade.conversation_starters.traditions": "Which Portuguese traditions do you maintain in London?",
-  
   "saudade.matches.title": "Saudade-Based Matches",
   "saudade.matches.subtitle": "Find authentic emotional connections",
   "saudade.matches.description": "Connect with Portuguese speakers who understand your saudade and cultural heritage",
@@ -368,7 +338,6 @@
   "saudade.matches.detailed_analysis": "Detailed Analysis",
   "saudade.matches.shared_connections": "Shared Connections:",
   "saudade.matches.compatibility_breakdown": "Compatibility Breakdown",
-  
   "saudade.regional.minho": "Minho - Deep Regional Roots",
   "saudade.regional.porto_norte": "Porto/North - Northern Pride",
   "saudade.regional.lisboa_area": "Lisbon - Capital Energy",
@@ -379,7 +348,6 @@
   "saudade.regional.madeira": "Madeira - Island Traditions",
   "saudade.regional.general_portuguese": "Generally Portuguese",
   "saudade.regional.mixed_regions": "Multiple Regions",
-
   "cultural_quiz.title": "Portuguese Cultural Compatibility Quiz",
   "cultural_quiz.description": "Discover your Portuguese cultural profile and find people who truly share your values and traditions",
   "cultural_quiz.start": "Start Cultural Quiz",
@@ -401,9 +369,8 @@
   "cultural_quiz.most_compatible": "You will be most compatible with:",
   "cultural_quiz.average_compatibility": "Average Compatibility Rate",
   "cultural_quiz.based_on_profile": "Based on your cultural profile",
-
   "cultural_categories.food": "Cuisine",
-  "cultural_categories.music": "Music", 
+  "cultural_categories.music": "Music",
   "cultural_categories.traditions": "Traditions",
   "cultural_categories.family": "Family",
   "cultural_categories.language": "Language",
@@ -412,13 +379,11 @@
   "cultural_categories.values": "Values",
   "cultural_categories.holidays": "Holidays",
   "cultural_categories.regional": "Regional",
-
   "cultural_strength.very_strong": "Very Strong",
   "cultural_strength.strong": "Strong",
   "cultural_strength.moderate": "Moderate",
   "cultural_strength.developing": "Developing",
   "cultural_strength.flexible": "Flexible",
-
   "cultural_compatibility.exceptional": "Exceptional Match",
   "cultural_compatibility.excellent": "Excellent Match",
   "cultural_compatibility.very_good": "Very Good Match",
@@ -433,9 +398,8 @@
   "cultural_compatibility.any": "Any",
   "cultural_compatibility.matches_found": "matches found",
   "cultural_compatibility.culturally_compatible": "Culturally Compatible Matches",
-
   "profile_types.tradition_guardian": "Tradition Guardian",
-  "profile_types.cultural_bridge": "Cultural Bridge", 
+  "profile_types.cultural_bridge": "Cultural Bridge",
   "profile_types.culture_enthusiast": "Culture Enthusiast",
   "profile_types.family_heart": "Family Heart",
   "profile_types.cultural_explorer": "Cultural Explorer",
@@ -466,7 +430,6 @@
   "buttons.log_out": "Log Out",
   "buttons.upgrade": "Upgrade",
   "buttons.downgrade": "Downgrade",
-
   "matches.enhanced.title": "Portuguese Matches",
   "matches.enhanced.subtitle": "Connect with the Portuguese community in the United Kingdom",
   "matches.enhanced.discover": "Discover",
@@ -483,7 +446,6 @@
   "matches.enhanced.keep_discovering": "Keep discovering people to make your first matches!",
   "matches.enhanced.unlock_potential": "Unlock Full Matching Potential",
   "matches.enhanced.premium_benefits": "Premium members get unlimited matches, exclusive event suggestions, VIP group access and much more.",
-
   "matches.events.suggested_for_you": "Suggested Events for You Two",
   "matches.events.you_and": "You and",
   "matches.events.compatible": "compatible",
@@ -502,7 +464,6 @@
   "matches.events.compatibility": "Compatibility",
   "matches.events.maybe_later": "Maybe later",
   "matches.events.book_now": "Book Now",
-
   "matches.buddy.find_event_buddies": "Find Event Buddies",
   "matches.buddy.find_buddies": "Find Buddies",
   "matches.buddy.create_request": "Create Request",
@@ -516,7 +477,6 @@
   "matches.buddy.find_together": "Find someone to attend Portuguese events together!",
   "matches.buddy.want_more_options": "Want more buddy options?",
   "matches.buddy.premium_more_requests": "Premium members see 5x more requests and get exclusive discounts.",
-
   "matches.achievements.cultural_achievements": "Cultural Achievements",
   "matches.achievements.total_points": "Total Points",
   "matches.achievements.level": "Level",
@@ -537,7 +497,6 @@
   "matches.achievements.participate_events": "Participate in events and make matches to unlock achievements!",
   "matches.achievements.unlock_more": "Unlock more achievements!",
   "matches.achievements.premium_exclusive": "Premium members get access to exclusive achievements and special rewards.",
-
   "matches.groups.group_matching": "Group Matching",
   "matches.groups.browse_groups": "Browse Groups",
   "matches.groups.create_request": "Create Request",
@@ -575,7 +534,6 @@
   "matches.groups.join": "Join",
   "matches.groups.want_unlimited_groups": "Want unlimited group creation?",
   "matches.groups.premium_unlimited": "Premium members can create unlimited groups and access advanced features.",
-
   "status.loading": "Loading...",
   "status.error": "Error",
   "status.success": "Success",
@@ -817,7 +775,6 @@
   "nav.partnerships.dashboard": "Partnership Dashboard",
   "nav.partnerships.universities": "University Network",
   "nav.partnerships.business": "Business Partners",
-
   "chat.live": "Live Chat",
   "chat.interactive": "Interactive Chat",
   "chat.portuguese": "Portuguese Chat",
@@ -852,7 +809,6 @@
   "chat.expand": "Expand",
   "chat.minimize": "Minimize",
   "chat.portuguese_community": "Portuguese Community",
-
   "polls.portuguese_polls": "Portuguese Polls",
   "polls.new_poll": "New Poll",
   "polls.active_polls": "Active Polls",
@@ -861,7 +817,6 @@
   "polls.cultural_templates": "Cultural Templates",
   "polls.question": "Question",
   "polls.whats_your_question": "What's your question?",
-
   "conversion.upgrade_prompts.matches_limit.title": "Daily Match Limit Reached",
   "conversion.upgrade_prompts.matches_limit.subtitle": "Continue connecting with Portuguese speakers",
   "conversion.upgrade_prompts.matches_limit.description": "You've used your 3 daily matches. Upgrade to get unlimited matches and connect with more Portuguese community members in London.",
@@ -873,7 +828,6 @@
   "conversion.upgrade_prompts.premium_event.subtitle": "Join exclusive Portuguese cultural events",
   "conversion.upgrade_prompts.general.title": "Unlock Premium Features",
   "conversion.upgrade_prompts.general.subtitle": "Join the Portuguese community in London",
-
   "conversion.trial.active": "Free Trial Active",
   "conversion.trial.time_remaining": "Time Remaining",
   "conversion.trial.days": "days",
@@ -887,7 +841,6 @@
   "conversion.trial.continue_with": "Continue with Community",
   "conversion.trial.ambassador_upgrade": "Upgrade to Ambassador",
   "conversion.trial.dismiss": "Dismiss",
-
   "conversion.usage.matches.title": "Daily Matches",
   "conversion.usage.matches.remaining": "remaining today",
   "conversion.usage.matches.unlimited": "Unlimited matches",
@@ -909,7 +862,6 @@
   "conversion.usage.upgrade_button": "Upgrade Now",
   "conversion.usage.unlocked": "Unlocked",
   "conversion.usage.limit_reached": "Limit reached",
-
   "conversion.subscription.community.name": "Community Member",
   "conversion.subscription.community.price": "£19.99",
   "conversion.subscription.community.period": "/month",
@@ -956,7 +908,6 @@
   "polls.favorite_tradition": "Favorite tradition?",
   "polls.reaction": "reaction",
   "polls.reactions": "reactions",
-
   "moderation.panel": "Moderation Panel",
   "moderation.settings": "Settings",
   "moderation.users": "Users",
@@ -972,7 +923,6 @@
   "moderation.moderation_actions": "Moderation Actions",
   "moderation.no_actions_yet": "No moderation actions yet",
   "moderation.portuguese_moderation": "Portuguese Moderation",
-
   "framework.title": "7 Ps Excellence Framework",
   "framework.badge": "Professional Excellence Framework",
   "framework.hero.title": "Excellence Framework",
@@ -990,7 +940,6 @@
   "framework.pillars.preparation.description": "Detailed briefings, equipment checks, and contingency planning",
   "framework.pillars.protection.name": "Protection",
   "framework.pillars.protection.description": "Physical security and threat mitigation during operations",
-
   "user-journey.title": "Your Portuguese Community Journey",
   "user-journey.description": "Track your progress and discover new opportunities to connect with the Portuguese community across London and the UK.",
   "user-journey.hero.title": "Your Portuguese Community Journey",
@@ -1015,7 +964,6 @@
   "user-journey.cta.browse-events": "Browse Events",
   "user-journey.cta.upgrade-premium": "Upgrade to Premium",
   "user-journey.view-full": "View Full Journey",
-
   "seo.portuguese-community": "portuguese community london",
   "seo.brazilian-community": "brazilian community london",
   "seo.portuguese-events": "portuguese events london",
@@ -1024,7 +972,6 @@
   "seo.little-portugal": "little portugal london",
   "seo.portuguese-mentorship": "portuguese mentorship uk",
   "seo.portuguese-housing": "portuguese housing assistance london",
-
   "growth.dashboard.title": "Growth Analytics Dashboard",
   "growth.dashboard.subtitle": "Comprehensive insights into Portuguese community growth",
   "growth.metrics.total-users": "Total Community Members",
@@ -1035,7 +982,6 @@
   "growth.metrics.satisfaction": "Customer Satisfaction Score",
   "growth.metrics.revenue": "Monthly Recurring Revenue",
   "growth.metrics.retention": "30-Day Retention Rate",
-
   "referral.title": "Bring Portuguese Friends",
   "referral.subtitle": "Help grow our Portuguese community across London and the UK. Earn rewards for every Portuguese friend you bring!",
   "referral.campaign.title": "Bring Portuguese Friends to LusoTown",
@@ -1091,7 +1037,6 @@
   "referral.success.friend-joined": "Your friend has joined! Reward pending activation.",
   "referral.success.reward-earned": "Congratulations! You've earned a free month.",
   "referral.success.bonus-unlocked": "Amazing! You've unlocked the 5-friend bonus!",
-
   "conversion.premium-upgrade": "Unlock Premium Portuguese Community Access",
   "conversion.transport-bundle": "Complete Portuguese Experience Bundle",
   "conversion.mentorship-access": "Portuguese Professional Mentorship Access",
@@ -1163,7 +1108,6 @@
   "framework.ecosystem.cta_title": "Experience Integrated Portuguese Excellence",
   "framework.ecosystem.cta_consultation": "Book Ecosystem Consultation",
   "framework.ecosystem.cta_services": "Explore All Services",
-
   "instituto.badge": "Official Portuguese Government Partnership",
   "instituto.title": "Recognized by Instituto Camões",
   "instituto.description": "LusoTown is officially recognized by Instituto Camões as the preferred digital platform for Portuguese cultural promotion and community engagement in the United Kingdom.",
@@ -1183,7 +1127,6 @@
   "instituto.benefit3.value": "£200/year value",
   "instituto.cta.primary": "Explore Official Programs",
   "instituto.cta.secondary": "Cultural Heritage",
-
   "hero.badge": "🇵🇹 Unidos pela Língua • United by Language 🇬🇧",
   "hero.title": "United Kingdom's Portuguese Community Hub",
   "hero.title.mobile": "UK Portuguese Community",
@@ -1192,9 +1135,7 @@
   "hero.cta.primary": "Explore Events",
   "hero.cta.secondary": "Join Community",
   "hero.cta.host": "Host Events",
-
   "how-it-works.title": "Connect with Your Portuguese Community across the United Kingdom",
-
   "security.service.title": "Security Service Booking",
   "security.service.subtitle": "Professional protection services in London",
   "security.service.step1": "Service Details & Requirements",
@@ -1204,7 +1145,6 @@
   "security.service.progress": "Booking Progress",
   "security.service.secure": "Secure & Professional Service",
   "security.service.privacy": "All information is kept strictly confidential. Licensed professionals and full compliance guaranteed.",
-
   "security.booking.title": "Security Service Confirmation",
   "security.booking.subtitle": "Professional Protection Service",
   "security.booking.pending": "Booking Under Review",
@@ -1212,14 +1152,12 @@
   "security.booking.review_time": "A licensed security professional will confirm your booking within 2-4 hours",
   "security.booking.assignment": "Professional Assignment Pending",
   "security.booking.next_steps": "Next Steps",
-
   "security.assessment.low": "Standard Service",
   "security.assessment.medium": "Enhanced Service",
   "security.assessment.high": "Premium Service",
   "security.assessment.level": "Service Assessment",
   "security.assessment.score": "Service Level",
   "security.assessment.requirements": "Service Requirements",
-
   "security.simple.title": "Simple Security Booking",
   "security.simple.subtitle": "Quick booking form - 2-3 minutes",
   "security.simple.service_type": "What type of service do you need?",
@@ -1237,7 +1175,6 @@
   "security.simple.no_concerns": "No special concerns",
   "security.simple.yes_concerns": "Special considerations needed",
   "security.simple.concern_types": "What considerations are needed? (Select all that apply)",
-
   "availability.available": "Available",
   "availability.fully_booked": "Fully Booked",
   "availability.unavailable": "Unavailable",
@@ -1263,68 +1200,55 @@
   "how-it-works.step5.subtitle": "Construa Redes Culturais",
   "how-it-works.step6.title": "Preserve & Share Heritage",
   "how-it-works.step6.subtitle": "Preserve e Partilhe o Património",
-
   "quick-start.title": "Find Your Match Among Portuguese Speakers at Real UK Venues",
   "quick-start.subtitle": "Book experiences at authentic Portuguese venues from Stockwell to Vauxhall - live life together at real London locations.",
   "quick-start.quote": "\"Onde há portugueses, há sempre uma mesa para mais um\" - Where there are Portuguese people in London, there's always room for one more at the table",
-
   "what-you-can-do.badge": "Your UK Portuguese Social Calendar • O Seu Calendário Social no Reino Unido",
   "what-you-can-do.title": "Discover the UK's Portuguese Community - Your Way",
   "what-you-can-do.subtitle": "From intimate Fado nights in London to weekend adventures across the UK, football matches in Manchester to cultural events in Birmingham - experience Britain with Portuguese speakers who get you.",
   "what-you-can-do.testimonial": "\"Finally found my Portuguese tribe across the UK! Every weekend brings new adventures in different cities.\" - Maria, London",
-
   "what-you-can-do.events.title": "🎭 Experience the UK Together",
   "what-you-can-do.events.description": "Join unique experiences crafted for Portuguese speakers across the United Kingdom - from exclusive museum tours in London to football watch parties in Manchester, intimate Fado concerts in Edinburgh to weekend escapes across the British Isles. Never explore the UK alone again.",
   "what-you-can-do.events.cta": "Explore UK Events",
   "what-you-can-do.events.locations": "Portuguese-guided UK Tours • Football Nights Nationwide • Fado Sessions • British Isles Getaways",
-
   "what-you-can-do.groups.title": "🤝 Find Your Portuguese Circle",
   "what-you-can-do.groups.description": "Whether you're 25 or 65, from Lisbon or São Paulo, tech professional or artist - create connections that matter. Start groups based on age, interests, or Portuguese heritage.",
   "what-you-can-do.groups.cta": "Create Group",
   "what-you-can-do.groups.examples": "Women 30+ • Young Professionals • Business Network • Cultural Enthusiasts",
-
   "what-you-can-do.feed.title": "📱 Stay Connected Daily",
   "what-you-can-do.feed.description": "Never miss Portuguese community moments. See what's happening at this weekend's events, share your festival photos, discover new Portuguese businesses, and celebrate wins together.",
   "what-you-can-do.feed.cta": "View Feed",
   "what-you-can-do.feed.features": "Live Event Updates • Photo Stories • Business Spotlights • Community Celebrations",
-
   "what-you-can-do.favorites.title": "💝 Build Your UK Portuguese Collection",
   "what-you-can-do.favorites.description": "Create your personal guide to Portuguese UK. Save that amazing bakery in Stockwell, bookmark upcoming Fado nights in Edinburgh, remember cultural events across Britain that touched your heart.",
   "what-you-can-do.favorites.cta": "My UK Collection",
   "what-you-can-do.favorites.types": "UK Hidden Gems • Cultural Events Nationwide • Portuguese Businesses • Special UK Moments",
-
   "what-you-can-do.host.title": "💼 Share Your Portuguese Expertise",
   "what-you-can-do.host.description": "Turn your skills into community impact. Host website creation workshops for Portuguese entrepreneurs, teach traditional cooking, lead business networking, or share cultural knowledge. Build your reputation while earning revenue.",
   "what-you-can-do.host.cta": "Start Hosting",
   "what-you-can-do.host.examples": "Tech Workshops • Cultural Classes • Business Training • Networking Events",
-
   "host-with-us.badge": "For Portuguese Professionals • Para Profissionais Portugueses",
   "host-with-us.title": "Share Your Portuguese Expertise with Our London & UK Community",
   "host-with-us.subtitle": "Join hundreds of Portuguese professionals, event creators, and cultural experts who showcase their services to our growing community of Portuguese speakers living in London and the UK. LusoTown connects you with your local Portuguese community through business workshops and cultural experiences.",
   "host-with-us.testimonial": "\"I've hosted 15 website development workshops through LusoTown and built a thriving Portuguese client base. The community support is incredible!\" - Maria Santos, Tech Entrepreneur",
-
   "host-with-us.professionals.title": "Professional Services & Workshops",
   "host-with-us.professionals.description": "Showcase your expertise to Portuguese professionals through our platform. LusoTown facilitates connections for website development workshops, business coaching, app creation training, investment seminars, and professional networking events.",
   "host-with-us.professionals.cta": "List Your Services",
   "host-with-us.professionals.examples": "Website Development • Business Coaching • Investment Advice • Cafezinho & Negócios • Networking à Portuguesa",
-
   "host-with-us.cultural.title": "Cultural Events & Experiences",
   "host-with-us.cultural.description": "Share Portuguese heritage through cooking classes (Cataplana & Pastéis workshops), Fado nights, Santos Populares celebrations, traditional crafts workshops, and London cultural experiences. Preserve our culture while earning revenue - Unidos pela Língua.",
   "host-with-us.cultural.cta": "Host Cultural Events",
   "host-with-us.cultural.examples": "Cataplana Workshops • Fado Nights • Santos Populares • Tertúlias • Convívios • Festa Junina",
-
   "host-with-us.business.title": "Portuguese Business Promotion",
   "host-with-us.business.description": "LusoTown connects your Portuguese business, restaurant, shop, or service with customers who share your heritage and values. Build lasting relationships with the Portuguese community through our platform.",
   "host-with-us.business.cta": "Promote Your Business",
   "host-with-us.business.examples": "Restaurants • Shops • Professional Services • Community Services",
-
   "host-with-us.success.title": "Success Stories from Portuguese Hosts",
   "host-with-us.success.subtitle": "Real Portuguese professionals building thriving businesses through our community",
   "host-with-us.success.story1.quote": "\"My Portuguese bakery went from local to London-wide thanks to LusoTown. I now host monthly baking workshops and my customer base tripled!\"",
   "host-with-us.success.story1.author": "João Silva, Bakery Owner",
   "host-with-us.success.story2.quote": "\"I teach Portuguese digital marketing workshops through LusoTown. Built a network of 200+ Portuguese entrepreneurs in just 6 months.\"",
   "host-with-us.success.story2.author": "Ana Costa, Marketing Consultant",
-
   "host-with-us.benefits.title": "Why Portuguese Professionals Choose LusoTown",
   "host-with-us.benefits.reach.title": "Reach 750+ Portuguese Speakers",
   "host-with-us.benefits.reach.description": "Connect with Portuguese professionals and Portuguese speakers across London and UK",
@@ -1334,12 +1258,10 @@
   "host-with-us.benefits.community.description": "Connect with fellow Portuguese professionals and create lasting business relationships",
   "host-with-us.benefits.heritage.title": "Preserve Portuguese Heritage",
   "host-with-us.benefits.heritage.description": "Share your culture while building a sustainable business around Portuguese traditions",
-
   "host-with-us.cta.title": "Ready to Share Your Portuguese Expertise?",
   "host-with-us.cta.description": "Join successful Portuguese professionals who are building thriving businesses through our community. From workshops to services, events to cultural experiences - start showcasing your expertise today.",
   "host-with-us.cta.primary": "Start Hosting Today",
   "host-with-us.cta.secondary": "Learn More About Hosting",
-
   "features.title": "Why Portuguese Hearts Choose LusoTown",
   "features.subtitle": "Your Social & Professional Hub for Portuguese Speakers Living in London & UK",
   "features.events.title": "Network and Celebrate Together",
@@ -1360,11 +1282,9 @@
   "features.language.description": "Book Portuguese language sessions with native speakers at coffee shops, cultural centers, and activity spaces across London. Build real connections through active language exchange experiences.",
   "features.heritage.title": "Heritage Preservation",
   "features.heritage.description": "Experience Portuguese culture through real cultural activities - book sessions at Portuguese churches, cultural associations, and family-run businesses that celebrate our traditions in London.",
-
   "testimonials.badge": "Portuguese Hearts United, Stories Shared",
   "testimonials.title": "From Saudade to Community - Real London Lives",
   "testimonials.subtitle": "Discover how Portuguese speakers found their London family through cultural experiences, social connections, and natural networking. From cinema nights in Camden to dance workshops in Stockwell - authentic stories of community, friendship, and shared culture.",
-
   "footer.description": "LusoTown connects Portuguese speakers living in London & UK through social and professional experiences. Where Portuguese speakers discover, learn, and thrive together. Unidos pela Língua - United by Language.",
   "footer.housing-assistance": "Housing Assistance",
   "footer.neighborhood-groups": "Neighborhood Groups",
@@ -1372,13 +1292,11 @@
   "footer.newsletter.description": "Get updates on Portuguese cultural events, social activities, and experiences happening at authentic venues across London.",
   "footer.tagline": "Book experiences with Portuguese hearts at real London venues",
   "footer.bottom": "Unidos pela Língua • London Community",
-
   "about.hero.badge": "Unidos pela Língua • United by Language",
   "about.hero.title": "About LusoTown London",
   "about.hero.title.mobile": "About LusoTown London",
   "about.mission.title": "Nossa Missão: Preservar a Cultura, Conectar Corações",
   "about.mission.subtitle": "Our Mission: Preserve Culture, Connect Hearts",
-
   "cart.title": "Your Cart",
   "cart.description": "View and manage your saved events, tours, and services. Complete your booking from here.",
   "cart.empty": "Empty cart",
@@ -1392,7 +1310,6 @@
   "cart.removed": "Removed from cart",
   "cart.clear": "Clear Cart",
   "cart.save-later": "Save for later",
-
   "favorites.title": "Saved Items",
   "favorites.description": "Access your favorite events, places, and services. Keep track of what interests you most.",
   "favorites.empty": "No saved items yet",
@@ -1402,7 +1319,6 @@
   "favorites.added": "Added to favorites",
   "favorites.removed": "Removed from favorites",
   "favorites.view-all": "View All Saved",
-
   "event.save": "Save Event",
   "event.saved": "Event Saved",
   "event.add-to-cart": "Add to Cart",
@@ -1414,7 +1330,6 @@
   "event.free": "FREE",
   "event.people-on-waitlist": "people on waiting list",
   "event.on-waitlist": "on waiting list",
-
   "waitlist.form.name": "Full Name *",
   "waitlist.form.name-placeholder": "Enter your full name",
   "waitlist.form.email": "Email Address *",
@@ -1446,14 +1361,11 @@
   "waitlist.error.phone-required": "Phone number is required",
   "waitlist.error.phone-invalid": "Invalid phone number",
   "waitlist.error.privacy-required": "You must agree to the privacy policy",
-
   "business.save": "Save Business",
   "business.saved": "Business Saved",
   "business.view": "View Business",
-
   "language.switch-to-portuguese": "Português",
   "language.switch-to-english": "English",
-
   "login.title": "Welcome Back to Your Network!",
   "login.subtitle": "Sign in to your Portuguese social calendar",
   "login.membership-badge": "Portuguese speakers living in London & UK",
@@ -1488,7 +1400,6 @@
   "login.fill-fields-error": "Please fill in all fields",
   "login.login-failed": "Login failed",
   "login.unexpected-error": "An unexpected error occurred. Please try again.",
-
   "login.fado-night": "Fado Night in Camden",
   "login.fado-tonight": "Today at 8pm • Bar do Fado",
   "login.new-bakery": "New Bakery in Stockwell",
@@ -1498,19 +1409,15 @@
   "login.attendees": "attendees",
   "login.participants": "participants",
   "login.table-quote": "\"Where there are Portuguese people, there's always room for one more at the table\"",
-
   "transport.hero.title": "Connect with Portuguese-Speaking Transport Services",
   "transport.hero.title.mobile": "Portuguese Transport London",
   "transport.hero.subtitle": "LusoTown connects you with transport and tourism service providers who speak fluent Portuguese. Discover London's top attractions through professionals who understand your culture.",
   "transport.hero.subtitle.mobile": "We connect with Portuguese drivers & guides!",
-
   "pricing.hero.title": "Join Your Portuguese Community - London & UK",
   "pricing.hero.title.mobile": "Portuguese London Community",
   "pricing.hero.subtitle": "Choose the membership that fits your lifestyle. From cultural events to professional networking - find your place in London's Portuguese community.",
   "pricing.hero.subtitle.mobile": "Find your Portuguese community!",
-
   "signup.subtitle": "Connect with Portuguese speakers living in London & UK through social experiences and professional opportunities. From cultural events and guided tours to business workshops and networking - discover your community.",
-
   "groups.title": "Portuguese Member Groups",
   "groups.subtitle": "Book activities and experiences with Portuguese speakers",
   "groups.create": "Create Group",
@@ -1523,7 +1430,6 @@
   "groups.save": "Save Group",
   "groups.saved": "Group Saved",
   "groups.report": "Report Group",
-
   "group.create.title": "Create Portuguese Member Group",
   "group.create.subtitle": "Build connections with Portuguese speakers in London",
   "group.create.name": "Group Name",
@@ -1545,7 +1451,6 @@
   "group.create.preview": "Preview Group",
   "group.create.success": "Group created successfully!",
   "group.create.error": "Error creating group",
-
   "search.placeholder": "Search events...",
   "search.placeholder.short": "Search...",
   "search.button": "Search",
@@ -1573,14 +1478,12 @@
   "search.suggestions.check-spelling": "Check your spelling",
   "search.suggestions.use-general": "Use more general terms",
   "search.suggestions.try-different": "Try different keywords",
-
   "age.18-25": "18-25 years old",
   "age.25-35": "25-35 years old",
   "age.35-50": "35-50 years old",
   "age.50+": "50+ years old",
   "age.young-professionals": "Young professionals (22-35)",
   "age.all-ages": "All ages welcome",
-
   "origin.portugal": "Portugal",
   "origin.brazil": "Brazil",
   "origin.angola": "Angola",
@@ -1593,19 +1496,16 @@
   "origin.equatorial-guinea": "Equatorial Guinea",
   "origin.mixed": "Mixed/Multiple Origins",
   "origin.any": "All Portuguese-speaking origins",
-
   "frequency.weekly": "Weekly",
   "frequency.biweekly": "Every 2 weeks",
   "frequency.monthly": "Monthly",
   "frequency.quarterly": "Quarterly",
   "frequency.irregular": "Irregular/As needed",
   "frequency.one-time": "One-time event",
-
   "verification.none": "No verification required",
   "verification.basic": "Basic verification (email)",
   "verification.verified": "Verified users only",
   "verification.premium": "Premium members only",
-
   "community.hero.title": "The Portuguese Network in London & UK",
   "community.hero.title.mobile": "Portuguese Network London",
   "community.hero.subtitle": "Discover the vibrant Portuguese-speaking network in London & UK. Connect with 750+ Portuguese speakers across authentic venues from Stockwell to Vauxhall.",
@@ -1629,7 +1529,6 @@
   "community.cta.title": "Ready to Join the Portuguese Network?",
   "community.cta.subtitle": "Your Portuguese community is waiting. Join 750+ Portuguese speakers who have made London their home, through social experiences and professional opportunities. United by language, connected by community.",
   "community.cta.tagline": "\"Unidos pela Língua\" - Wherever you come from in the Portuguese-speaking world, you have a home here in London.",
-
   "app.badge": "Now Available on Mobile",
   "app.heading.part1": "Take Your",
   "app.heading.membership": "Network",
@@ -1656,7 +1555,6 @@
   "app.mockup.weekend-walks": "Weekend Walks",
   "app.mockup.tomorrow-time": "Tomorrow, 10:00",
   "app.mockup.new-in-area": "New in Your Area",
-
   "cta.badge": "Limited Time - Join Today",
   "cta.title": "Your Social Calendar Awaits",
   "cta.subtitle": "Join Portuguese speakers living in London & UK today and fill your social calendar with authentic Portuguese experiences.",
@@ -1673,7 +1571,6 @@
   "cta.benefits.active-social-life": "Fill your social calendar",
   "cta.benefits.safe-environment": "Safe and welcoming environment",
   "cta.benefits.free-start": "Free to get started",
-
   "events.hero.title": "Your Portuguese Social Calendar - London & UK",
   "events.hero.title.mobile": "Portuguese Events London",
   "events.hero.subtitle": "Book experiences and live life together with Portuguese speakers across London and the UK. From museum tours to concert nights, football matches to weekend getaways - your social calendar awaits!",
@@ -1683,7 +1580,6 @@
   "events.stats-events": "Monthly Experiences",
   "events.stats-members": "Portuguese Speakers",
   "events.stats-venues": "Portuguese-Speaking Countries",
-
   "events-tours.hero.title": "Upcoming Group Events & Tours",
   "events-tours.hero.subtitle": "Book exclusive group experiences with Portuguese speakers in London. From specialized groups for Women 30+ and 40+ to professional networking - find your community and live London together.",
   "events-tours.search-placeholder": "Search tours & experiences...",
@@ -1720,7 +1616,6 @@
   "events-tours.experience-found": "experience found",
   "events-tours.experiences-found": "experiences found",
   "events-tours.loading": "Loading...",
-
   "feed.filters.advanced": "Advanced Filters",
   "feed.filters.event-type": "Event Type",
   "feed.filters.location": "Location",
@@ -1729,7 +1624,6 @@
   "feed.filters.culture-origin": "Culture & Origin",
   "feed.filters.additional-options": "Additional Options",
   "feed.filters.spots-available": "Only events with spots available",
-
   "ai-workshop.title": "AI Business App Creation Workshop",
   "ai-workshop.description": "Beginners session on using AI apps and generative AI tools to create business applications",
   "ai-workshop.special-offer": "Free app creation for business ideas",
@@ -1779,7 +1673,6 @@
   "feed.filters.traditional": "Traditional",
   "feed.filters.modern": "Modern",
   "feed.filters.professional": "Professional",
-
   "culture.lusophone-world": "Lusophone World",
   "culture.portuguese-heritage": "Portuguese Heritage",
   "culture.african-lusophone": "African Portuguese-speaking",
@@ -1795,7 +1688,6 @@
   "culture.goan-portuguese": "Goan Portuguese Heritage",
   "culture.diaspora-stories": "Diaspora Stories",
   "culture.mixed-heritage": "Mixed Portuguese Heritage",
-
   "events.fado-night": "Fado Night",
   "events.portuguese-dinner": "Portuguese Dinner",
   "events.carnival-celebration": "Carnival Celebration",
@@ -1815,11 +1707,9 @@
   "events.weekend-trip": "Weekend Trip",
   "events.beach-day": "Beach Day Trip",
   "events.cultural-festival": "Cultural Festival",
-
   "stories.member-success": "Member Success Story",
   "stories.community-impact": "Community Impact",
   "stories.cultural-preservation": "Cultural Preservation",
-
   "matches.find_your_match": "Find Your Match",
   "matches.discover_matches": "Discover Your Matches",
   "matches.connect_portuguese_speakers": "Connect with Portuguese speakers in the United Kingdom who share your interests, values, and cultural heritage. More than a dating app - a community.",
@@ -1875,13 +1765,11 @@
   "stories.language-learning": "Language Learning Journey",
   "stories.business-support": "Business Community Support",
   "stories.heritage-discovery": "Heritage Discovery",
-
   "seo.title-suffix": "| LusoTown London",
   "seo.description.default": "Portuguese community platform for Portuguese speakers living in London and the UK. Connect, book experiences, join activities, live life together.",
   "seo.keywords": "Portuguese community London, Brazilian community UK, Angolan community London, Mozambican community UK, Cape Verdean London, Portuguese events, Lusophone community, Portuguese social calendar, Portuguese networking London",
   "seo.og.site-name": "LusoTown London",
   "seo.og.locale": "en_GB",
-
   "error.boundary.title": "Something went wrong",
   "error.boundary.description": "An unexpected error occurred. Please try again or contact support if the problem persists.",
   "error.boundary.details-title": "Error details (development mode)",
@@ -1890,7 +1778,6 @@
   "error.boundary.contact-support": "Contact technical support",
   "error.component.loading-error": "Error loading component",
   "error.component.reload": "Reload page",
-
   "onboarding.first-steps": "First Steps",
   "onboarding.setup": "Let's set up your LusoTown experience",
   "onboarding.progress": "Progress",
@@ -1902,7 +1789,6 @@
   "onboarding.all-set": "You're all set! Let's explore your Portuguese community.",
   "onboarding.skip": "Skip for now",
   "onboarding.later": "I'll do this later",
-
   "streaming.live": "LIVE",
   "streaming.viewers": "viewers",
   "streaming.viewer": "viewer",
@@ -2005,7 +1891,6 @@
   "streaming.hero.categories.culture": "Cultural Celebrations & Events",
   "streaming.hero.categories.student": "Student Support & Career Advice",
   "streaming.hero.social_proof": "Join 2,150+ Portuguese speakers already streaming and watching",
-
   "streaming.info.badge": "LusoTown Streaming",
   "streaming.info.title": "Stream with us",
   "streaming.info.subtitle": "Share music, culture, workshops, and events with the Portuguese community in London and the UK. Easy to start, generous for creators.",
@@ -2019,7 +1904,6 @@
   "streaming.info.hiw.title": "How it works",
   "streaming.info.hiw.cta": "Apply now",
   "streaming.info.benefits.title": "Benefits for creators",
-
   "notifications.title": "Notifications",
   "notifications.preferences": "Notification Preferences",
   "notifications.mark-all-read": "Mark all as read",
@@ -2067,7 +1951,6 @@
   "notifications.heritage-preservation": "Cultural Heritage",
   "notifications.subscription-required": "Subscription Required",
   "notifications.unlock-features": "Unlock More Features",
-
   "waitlist.join": "Join Waiting List",
   "waitlist.join-button": "JOIN WAITING LIST",
   "waitlist.full-name": "Full Name",
@@ -2083,7 +1966,6 @@
   "waitlist.count": "{count} on waiting list",
   "waitlist.fully-booked": "FULLY BOOKED",
   "waitlist.event-full": "Event full",
-
   "match_events.title": "Perfect Events for You Two",
   "match_events.subtitle": "Based on your shared interests and cultural preferences",
   "match_events.compatibility_score": "Compatibility Score",
@@ -2095,7 +1977,6 @@
   "match_events.suggest_to_match": "Suggest to Match",
   "match_events.no_recommendations": "No event recommendations yet",
   "match_events.explore_events": "Explore Portuguese Events",
-
   "event_buddy.title": "Event Buddies",
   "event_buddy.subtitle": "Find companions for Portuguese cultural events",
   "event_buddy.request_buddy": "Request Event Buddy",
@@ -2116,7 +1997,6 @@
   "event_buddy.request_accepted": "Buddy request accepted!",
   "event_buddy.group_discount": "Group Discount Available",
   "event_buddy.save_per_person": "Save {amount} per person",
-
   "book_together.title": "Book Together",
   "book_together.subtitle": "Coordinate group booking with friends",
   "book_together.create_group": "Create Group Booking",
@@ -2146,7 +2026,6 @@
   "book_together.payment_required": "Payment required to confirm",
   "book_together.expires_in": "Expires in",
   "book_together.expired": "Booking expired",
-
   "cultural_events.fado_nights": "Fado Nights",
   "cultural_events.portuguese_cuisine": "Portuguese Cuisine",
   "cultural_events.santos_populares": "Santos Populares",
@@ -2159,7 +2038,6 @@
   "cultural_events.business_networking": "Business Networking",
   "cultural_events.football_events": "Football Events",
   "cultural_events.heritage_tours": "Heritage Tours",
-
   "cultural_preferences.title": "Cultural Preferences",
   "cultural_preferences.subtitle": "Help us recommend perfect Portuguese events",
   "cultural_preferences.portuguese_origin": "Portuguese Origin",
@@ -2176,7 +2054,6 @@
   "cultural_preferences.heritage_levels.heritage_seeker": "Heritage Seeker",
   "cultural_preferences.save_preferences": "Save Preferences",
   "cultural_preferences.preferences_saved": "Cultural preferences saved!",
-
   "compatibility_matcher.title": "Event Compatibility Matcher",
   "compatibility_matcher.analyzing": "Analyzing compatibility...",
   "compatibility_matcher.perfect_match": "Perfect Match!",
@@ -2188,7 +2065,6 @@
   "compatibility_matcher.recommendation_reasons.location": "Convenient location for both",
   "compatibility_matcher.recommendation_reasons.heritage": "Perfect for celebrating Portuguese heritage",
   "compatibility_matcher.recommendation_reasons.networking": "Great for professional networking",
-
   "core_features.badge": "Portuguese Community Hub",
   "core_features.title": "Your Portuguese Life in London",
   "core_features.subtitle": "Everything you need to connect, explore, learn, and thrive in London's Portuguese community",
@@ -2209,7 +2085,6 @@
   "core_features.join_description": "Connect with {members} Portuguese speakers across London and the UK. From cultural events to professional networking—your Portuguese journey starts here.",
   "core_features.join_now": "Join the Community",
   "core_features.explore_features": "Explore Features",
-
   "core_features.matches.title": "Find Your Match",
   "core_features.matches.description": "Connect with Portuguese speakers in London through cultural compatibility and authentic connections. Find romance, friendship, or professional partnerships with people who share your heritage.",
   "core_features.matches.features.cultural_compatibility": "Cultural compatibility matching",
@@ -2222,7 +2097,6 @@
   "core_features.matches.cta": "Find Matches",
   "core_features.matches.live_activity": "active now",
   "core_features.matches.how_it_works": "Our cultural algorithm matches based on Portuguese traditions, language preferences, regional connections, and shared interests—creating deeper connections than generic dating apps.",
-
   "core_features.events.title": "Portuguese Events",
   "core_features.events.description": "Discover authentic Portuguese cultural events in London. From intimate Fado nights in Stockwell to professional networking in Canary Wharf—connect with your community through shared experiences.",
   "core_features.events.features.cultural_events": "Authentic cultural celebrations",
@@ -2230,12 +2104,11 @@
   "core_features.events.features.portuguese_hosts": "Portuguese-speaking hosts",
   "core_features.events.features.community_calendar": "Integrated community calendar",
   "core_features.events.stats.primary": "12+ events/month",
-  "core_features.events.stats.secondary": "450+ participants", 
+  "core_features.events.stats.secondary": "450+ participants",
   "core_features.events.stats.highlight": "18 this weekend",
   "core_features.events.cta": "Explore Events",
   "core_features.events.live_activity": "happening today",
   "core_features.events.how_it_works": "Explore culturally focused events organized by Portuguese speakers. RSVP instantly, connect with attendees beforehand, and build lasting connections through shared cultural experiences.",
-
   "core_features.tours.title": "Portuguese-led Tours",
   "core_features.tours.description": "Explore London and the UK with passionate Portuguese guides. Discover hidden gems, cultural connections, and authentic experiences created for Portuguese speakers living in or visiting London.",
   "core_features.tours.features.portuguese_guides": "Native Portuguese-speaking guides",
@@ -2248,7 +2121,6 @@
   "core_features.tours.cta": "Book Tours",
   "core_features.tours.live_activity": "booking now",
   "core_features.tours.how_it_works": "Book unique London experiences led by Portuguese guides who understand your cultural perspective. From Portuguese business districts to hidden cultural gems—see London through Portuguese eyes.",
-
   "core_features.students.title": "Student Community",
   "core_features.students.description": "Comprehensive support for Portuguese students in the UK. Academic guidance, professional mentoring, social connections, and practical support through our university partnerships across Britain.",
   "core_features.students.features.university_partnerships": "8+ university partnerships",
@@ -2261,7 +2133,6 @@
   "core_features.students.cta": "Join Students",
   "core_features.students.live_activity": "active students",
   "core_features.students.how_it_works": "Connect with Portuguese students and mentors at UK universities. Get academic support, career guidance, social connections, and practical advice from students who understand your cultural background.",
-
   "core_features.community.title": "Community Chat",
   "core_features.community.description": "Join real-time conversations with Portuguese speakers in London. Cultural discussions, event coordination, professional networking, and friendship building—fully in Portuguese and English.",
   "core_features.community.features.real_time_chat": "Real-time messaging",
@@ -2274,16 +2145,14 @@
   "core_features.community.cta": "Join Chat",
   "core_features.community.live_activity": "messages today",
   "core_features.community.how_it_works": "Join discussions in London's Portuguese community. Connect in real time with cultural groups, coordinate events, share experiences, and build friendships with Portuguese speakers in your area.",
-
   "community_feed.badge": "Community Pulse",
-  "community_feed.title": "Portuguese Community Feed", 
+  "community_feed.title": "Portuguese Community Feed",
   "community_feed.subtitle": "See what's happening in the Portuguese community across London",
   "community_feed.description": "From cultural events to job opportunities, housing tips to business networking - discover the vibrant pulse of Portuguese life in London through authentic community posts and connections.",
   "community_feed.cta.title": "Join the Conversation",
   "community_feed.cta.description": "Share your stories, connect with fellow Portuguese speakers, and be part of the UK's most vibrant Portuguese community.",
-  "community_feed.cta.join_button": "Join Community", 
+  "community_feed.cta.join_button": "Join Community",
   "community_feed.cta.browse_button": "Explore Events",
-
   "students.title": "Portuguese Students in the UK",
   "students.subtitle": "Comprehensive support for Portuguese-speaking students at UK universities",
   "students.stats.title": "Portuguese Students in the UK",
@@ -2310,7 +2179,7 @@
   "students.cities.london": "London Universities",
   "students.cities.london_desc": "LSE, UCL, Imperial, King's College and more",
   "students.cities.manchester": "Manchester Area",
-  "students.cities.manchester_desc": "University of Manchester and local institutions", 
+  "students.cities.manchester_desc": "University of Manchester and local institutions",
   "students.cities.birmingham": "Birmingham Region",
   "students.cities.birmingham_desc": "University of Birmingham and surrounding colleges",
   "students.cities.edinburgh": "Scotland Universities",
@@ -2342,5 +2211,37 @@
   "students.cta.subtitle": "Connect with 2,150+ Portuguese students across 8 universities",
   "students.cta.verify": "Verify Student Status",
   "students.cta.join": "Join Student Network",
-  "students.cta.learn_more": "Learn More"
+  "students.cta.learn_more": "Learn More",
+  "components.CTA.portuguese_community_in_the_uk": "Portuguese Community in the UK",
+  "components.CTA.connect_with_portuguese_speakers_across_the_united": "Connect with Portuguese speakers across the United Kingdom",
+  "components.CTA.uk_community_member": "UK Community Member",
+  "components.CTA.connect_with_portuguese_speakers_across_england_sc": "Connect with Portuguese speakers across England, Scotland, Wales & Northern Ireland",
+  "components.CTA.most_popular": "Most Popular",
+  "components.CTA.cultural_ambassador": "Cultural Ambassador",
+  "components.CTA.premium_access_priority_visibility_across_all_uk_p": "Premium access + priority visibility across all UK Portuguese events",
+  "components.CTA.quick_join": "Quick Join",
+  "components.CTA.or_continue_with": "or continue with",
+  "components.CTA.or_continue_with_email": "or continue with email",
+  "components.CTA.23_portuguese_speakers_from_across_the_uk_joined_t": "23 Portuguese speakers from across the UK joined today",
+  "components.CTA.connect_with_your_portuguese_community_nationwide_": "Connect with your Portuguese community nationwide within 48 hours",
+  "components.CTA.verified_profiles": "Verified Profiles",
+  "components.CTA.community_support": "Community Support",
+  "components.CTA.30day": "30-Day",
+  "components.CTA.money_back_guarantee": "Money Back Guarantee",
+  "components.Footer.portuguese_speakers_in_london_uk_unidos_pela_lngua": "Portuguese speakers in London & UK | Unidos pela Língua",
+  "components.Footer.connectlusotowncouk": "connect@lusotown.co.uk",
+  "components.Footer.community": "Community",
+  "components.Footer.services": "Services",
+  "components.Footer.support": "Support",
+  "components.Footer.company": "Company",
+  "components.Footer.legal": "Legal",
+  "components.Footer.subscribe": "Subscribe",
+  "components.Footer.we_accept": "We Accept:",
+  "components.Footer.enter_your_email": "Enter your email",
+  "components.Footer.follow_us_on_facebook": "Follow us on Facebook",
+  "components.Footer.follow_us_on_instagram": "Follow us on Instagram",
+  "components.Footer.follow_us_on_twitter": "Follow us on Twitter",
+  "components.Footer.follow_us_on_linkedin": "Follow us on LinkedIn",
+  "components.Footer.subscribe_to_our_youtube_channel": "Subscribe to our YouTube channel",
+  "components.Footer.contact_us_on_whatsapp": "Contact us on WhatsApp"
 }

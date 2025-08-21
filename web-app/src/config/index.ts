@@ -107,6 +107,24 @@ export {
   trackPortugueseCulturalEngagement
 } from './analytics';
 
+// Brand and contact configuration
+export { 
+  brandConfig, 
+  contactInfo, 
+  socialLinks, 
+  defaultImages, 
+  venues,
+  brandColors,
+  PORTUGUESE_COLORS,
+  DESIGN_TOKENS,
+  CULTURAL_SYMBOLS,
+  CULTURAL_EMOJIS 
+} from './brand';
+
+// Streaming and API configuration
+export { STREAMING_URLS, RTMP_CONFIG } from './streaming';
+export { API_ENDPOINTS } from './api';
+
 // Mock data and testing
 export { mockProfileImages, mockEventImages, getProfileImage, getEventImage } from './mockData';
 

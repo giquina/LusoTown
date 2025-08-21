@@ -36,7 +36,13 @@
     "db:migrate:streaming:complete": "node scripts/apply-complete-streaming-migration.js",
     "verify:creator-monetization": "node scripts/verify-creator-monetization.js",
     "audit:hardcoding": "node scripts/hardcoding-audit.js",
-    "audit:monthly": "npm run audit:hardcoding && npm run lint"
+    "audit:monthly": "npm run audit:hardcoding && npm run lint",
+    "i18n-check": "node ../scripts/codemods/extract-i18n.js --dry-run --path=src",
+    "url-check": "node ../scripts/codemods/replace-urls.js --dry-run --path=src",
+    "secret-check": "node scripts/secret-checker.js",
+    "codemod:i18n": "node ../scripts/codemods/extract-i18n.js --path=src",
+    "codemod:urls": "node ../scripts/codemods/replace-urls.js --path=src",
+    "hardcoding-prevention": "npm run i18n-check && npm run url-check && npm run secret-check && npm run lint"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.7",
